@@ -73,7 +73,6 @@ public enum UpgradeResourceType implements com.google.protobuf.ProtocolMessageEn
    * <code>UPGRADE_RESOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int UPGRADE_RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum UpgradeResourceType implements com.google.protobuf.ProtocolMessageEn
    * <code>MASTER = 1;</code>
    */
   public static final int MASTER_VALUE = 1;
-
   /**
    *
    *

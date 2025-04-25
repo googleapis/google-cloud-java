@@ -38,7 +38,6 @@ public interface TranscriptOutputConfigOrBuilder
    * @return Whether the gcsUri field is set.
    */
   boolean hasGcsUri();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TranscriptOutputConfigOrBuilder
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
-
   /**
    *
    *

@@ -25,7 +25,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.ListStreamsResponse)
     ListStreamsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListStreamsResponse.newBuilder() to construct.
   private ListStreamsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -62,7 +61,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.Stream> streams_;
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.datastream.v1alpha1.Stream> getStreamsList() {
     return streams_;
   }
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       getStreamsOrBuilderList() {
     return streams_;
   }
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   public int getStreamsCount() {
     return streams_.size();
   }
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.datastream.v1alpha1.Stream getStreams(int index) {
     return streams_.get(index);
   }
-
   /**
    *
    *
@@ -138,7 +132,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -444,7 +432,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.datastream.v1alpha1.ListStreamsResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -735,7 +722,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return streamsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return streamsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return streamsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +879,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datastream.v1alpha1.Stream.Builder getStreamsBuilder(int index) {
       return getStreamsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return streamsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1009,7 +982,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(streams_);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +995,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       return getStreamsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1alpha1.Stream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1037,7 +1008,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       return getStreamsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1alpha1.Stream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1070,7 +1040,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1094,7 +1063,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1086,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1108,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1126,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1159,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1210,7 +1174,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1225,7 +1188,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1241,7 +1203,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1257,7 +1218,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1281,7 +1241,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1263,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1282,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1300,6 @@ public final class ListStreamsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

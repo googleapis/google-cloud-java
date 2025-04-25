@@ -38,7 +38,6 @@ public interface ListCalculatedMetricsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface ListCalculatedMetricsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

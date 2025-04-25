@@ -51,7 +51,6 @@ public interface SpeechAdaptationInfoOrBuilder
    * @return The timeoutMessage.
    */
   java.lang.String getTimeoutMessage();
-
   /**
    *
    *

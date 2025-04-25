@@ -34,7 +34,6 @@ public interface ListProductSetsResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSet product_sets = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.ProductSet> getProductSetsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListProductSetsResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSet product_sets = 1;</code>
    */
   com.google.cloud.vision.v1p3beta1.ProductSet getProductSets(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListProductSetsResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSet product_sets = 1;</code>
    */
   int getProductSetsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListProductSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder>
       getProductSetsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListProductSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

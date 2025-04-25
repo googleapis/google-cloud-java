@@ -36,7 +36,6 @@ public interface BackupCollectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BackupCollectionOrBuilder
    * @return The clusterUid.
    */
   java.lang.String getClusterUid();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface BackupCollectionOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface BackupCollectionOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public interface BackupCollectionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *

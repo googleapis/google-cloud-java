@@ -33,7 +33,6 @@ public final class UndeployIssueModelResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse)
     UndeployIssueModelResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UndeployIssueModelResponse.newBuilder() to construct.
   private UndeployIssueModelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class UndeployIssueModelResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

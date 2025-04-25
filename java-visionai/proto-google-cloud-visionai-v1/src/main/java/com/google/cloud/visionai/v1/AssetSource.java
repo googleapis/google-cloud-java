@@ -33,7 +33,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AssetSource)
     AssetSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AssetSource.newBuilder() to construct.
   private AssetSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
      * @return The gcsUri.
      */
     java.lang.String getGcsUri();
-
     /**
      *
      *
@@ -93,7 +91,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getGcsUriBytes();
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AssetSource.AssetGcsSource)
       AssetGcsSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AssetGcsSource.newBuilder() to construct.
     private AssetGcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -143,7 +139,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcsUri_ = "";
-
     /**
      *
      *
@@ -167,7 +162,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -353,7 +347,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -541,7 +534,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object gcsUri_ = "";
-
       /**
        *
        *
@@ -564,7 +556,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -587,7 +578,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -609,7 +599,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -627,7 +616,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -727,7 +715,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAssetContentData();
   }
-
   /**
    *
    *
@@ -742,7 +729,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AssetSource.AssetContentData)
       AssetContentDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AssetContentData.newBuilder() to construct.
     private AssetContentData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -775,7 +761,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ASSET_CONTENT_DATA_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString assetContentData_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      * <code>bytes asset_content_data = 1;</code>
      *
@@ -947,7 +932,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1134,7 +1118,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.ByteString assetContentData_ =
           com.google.protobuf.ByteString.EMPTY;
-
       /**
        * <code>bytes asset_content_data = 1;</code>
        *
@@ -1144,7 +1127,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAssetContentData() {
         return assetContentData_;
       }
-
       /**
        * <code>bytes asset_content_data = 1;</code>
        *
@@ -1160,7 +1142,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>bytes asset_content_data = 1;</code>
        *
@@ -1254,7 +1235,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     private SourceFormCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1288,7 +1268,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_GCS_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -1304,7 +1283,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAssetGcsSource() {
     return sourceFormCase_ == 1;
   }
-
   /**
    *
    *
@@ -1323,7 +1301,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.AssetSource.AssetGcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1343,7 +1320,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_CONTENT_DATA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1359,7 +1335,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAssetContentData() {
     return sourceFormCase_ == 2;
   }
-
   /**
    *
    *
@@ -1378,7 +1353,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.AssetSource.AssetContentData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1586,7 +1560,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1822,7 +1795,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.AssetSource.AssetGcsSource.Builder,
             com.google.cloud.visionai.v1.AssetSource.AssetGcsSourceOrBuilder>
         assetGcsSourceBuilder_;
-
     /**
      *
      *
@@ -1838,7 +1810,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAssetGcsSource() {
       return sourceFormCase_ == 1;
     }
-
     /**
      *
      *
@@ -1864,7 +1835,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.AssetSource.AssetGcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1888,7 +1858,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       sourceFormCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1878,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       sourceFormCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1944,7 +1912,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       sourceFormCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1970,7 +1937,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1950,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         getAssetGcsSourceBuilder() {
       return getAssetGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2006,7 +1971,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.AssetSource.AssetGcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2046,7 +2010,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.AssetSource.AssetContentData.Builder,
             com.google.cloud.visionai.v1.AssetSource.AssetContentDataOrBuilder>
         assetContentDataBuilder_;
-
     /**
      *
      *
@@ -2062,7 +2025,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAssetContentData() {
       return sourceFormCase_ == 2;
     }
-
     /**
      *
      *
@@ -2088,7 +2050,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.AssetSource.AssetContentData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2112,7 +2073,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       sourceFormCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2093,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       sourceFormCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2168,7 +2127,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       sourceFormCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2194,7 +2152,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2208,7 +2165,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         getAssetContentDataBuilder() {
       return getAssetContentDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2230,7 +2186,6 @@ public final class AssetSource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.AssetSource.AssetContentData.getDefaultInstance();
       }
     }
-
     /**
      *
      *

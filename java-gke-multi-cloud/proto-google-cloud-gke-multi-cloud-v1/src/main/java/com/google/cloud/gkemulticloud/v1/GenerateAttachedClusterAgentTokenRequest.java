@@ -26,7 +26,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest)
     GenerateAttachedClusterAgentTokenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateAttachedClusterAgentTokenRequest.newBuilder() to construct.
   private GenerateAttachedClusterAgentTokenRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attachedCluster_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subjectToken_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subjectTokenType_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object grantType_ = "";
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object audience_ = "";
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +380,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
-
   /**
    *
    *
@@ -417,7 +403,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -446,7 +431,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestedTokenType_ = "";
-
   /**
    *
    *
@@ -470,7 +454,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -499,7 +482,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object options_ = "";
-
   /**
    *
    *
@@ -523,7 +505,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -787,7 +768,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest}
    */
@@ -1097,7 +1077,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     private int bitField0_;
 
     private java.lang.Object attachedCluster_ = "";
-
     /**
      *
      *
@@ -1122,7 +1101,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1125,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1148,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1167,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1193,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object subjectToken_ = "";
-
     /**
      *
      *
@@ -1241,7 +1215,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1237,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1258,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1275,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1299,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object subjectTokenType_ = "";
-
     /**
      *
      *
@@ -1352,7 +1321,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1343,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1397,7 +1364,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1381,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1440,7 +1405,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1463,7 +1427,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1449,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1508,7 +1470,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1487,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1511,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object grantType_ = "";
-
     /**
      *
      *
@@ -1574,7 +1533,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1597,7 +1555,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1619,7 +1576,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1637,7 +1593,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1617,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object audience_ = "";
-
     /**
      *
      *
@@ -1685,7 +1639,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1708,7 +1661,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1730,7 +1682,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1748,7 +1699,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1723,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object scope_ = "";
-
     /**
      *
      *
@@ -1796,7 +1745,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1767,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1841,7 +1788,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1859,7 +1805,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1829,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object requestedTokenType_ = "";
-
     /**
      *
      *
@@ -1907,7 +1851,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1930,7 +1873,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1952,7 +1894,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1970,7 +1911,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1935,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
     }
 
     private java.lang.Object options_ = "";
-
     /**
      *
      *
@@ -2018,7 +1957,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2041,7 +1979,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2063,7 +2000,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2017,6 @@ public final class GenerateAttachedClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

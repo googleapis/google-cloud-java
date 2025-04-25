@@ -36,7 +36,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest)
     AdvancedCompleteQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdvancedCompleteQueryRequest.newBuilder() to construct.
   private AdvancedCompleteQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,7 +154,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * <code>SUGGESTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SUGGESTION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -166,7 +164,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * <code>QUERY = 1;</code>
      */
     public static final int QUERY_VALUE = 1;
-
     /**
      *
      *
@@ -177,7 +174,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * <code>PEOPLE = 2;</code>
      */
     public static final int PEOPLE_VALUE = 2;
-
     /**
      *
      *
@@ -188,7 +184,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * <code>CONTENT = 3;</code>
      */
     public static final int CONTENT_VALUE = 3;
-
     /**
      *
      *
@@ -199,7 +194,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * <code>RECENT_SEARCH = 4;</code>
      */
     public static final int RECENT_SEARCH_VALUE = 4;
-
     /**
      *
      *
@@ -327,7 +321,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
                 .ConditionBoostSpec>
         getConditionBoostSpecsList();
-
     /**
      *
      *
@@ -347,7 +340,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
             .ConditionBoostSpec
         getConditionBoostSpecs(int index);
-
     /**
      *
      *
@@ -365,7 +357,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * </code>
      */
     int getConditionBoostSpecsCount();
-
     /**
      *
      *
@@ -387,7 +378,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
                 com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
                     .ConditionBoostSpecOrBuilder>
         getConditionBoostSpecsOrBuilderList();
-
     /**
      *
      *
@@ -408,7 +398,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             .ConditionBoostSpecOrBuilder
         getConditionBoostSpecsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -424,7 +413,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec)
       BoostSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BoostSpec.newBuilder() to construct.
     private BoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -481,7 +469,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        * @return The condition.
        */
       java.lang.String getCondition();
-
       /**
        *
        *
@@ -526,7 +513,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        */
       float getBoost();
     }
-
     /**
      *
      *
@@ -542,7 +528,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec.ConditionBoostSpec)
         ConditionBoostSpecOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ConditionBoostSpec.newBuilder() to construct.
       private ConditionBoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -579,7 +564,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object condition_ = "";
-
       /**
        *
        *
@@ -611,7 +595,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           return s;
         }
       }
-
       /**
        *
        *
@@ -646,7 +629,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
       public static final int BOOST_FIELD_NUMBER = 2;
       private float boost_ = 0F;
-
       /**
        *
        *
@@ -873,7 +855,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1104,7 +1085,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         private int bitField0_;
 
         private java.lang.Object condition_ = "";
-
         /**
          *
          *
@@ -1135,7 +1115,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1166,7 +1145,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1196,7 +1174,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1222,7 +1199,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1255,7 +1231,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
 
         private float boost_;
-
         /**
          *
          *
@@ -1281,7 +1256,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         public float getBoost() {
           return boost_;
         }
-
         /**
          *
          *
@@ -1311,7 +1285,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1419,7 +1392,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
                 .ConditionBoostSpec>
         conditionBoostSpecs_;
-
     /**
      *
      *
@@ -1443,7 +1415,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         getConditionBoostSpecsList() {
       return conditionBoostSpecs_;
     }
-
     /**
      *
      *
@@ -1468,7 +1439,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         getConditionBoostSpecsOrBuilderList() {
       return conditionBoostSpecs_;
     }
-
     /**
      *
      *
@@ -1489,7 +1459,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public int getConditionBoostSpecsCount() {
       return conditionBoostSpecs_.size();
     }
-
     /**
      *
      *
@@ -1512,7 +1481,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         getConditionBoostSpecs(int index) {
       return conditionBoostSpecs_.get(index);
     }
-
     /**
      *
      *
@@ -1709,7 +1677,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2013,7 +1980,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           return conditionBoostSpecsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2037,7 +2003,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           return conditionBoostSpecsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2063,7 +2028,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           return conditionBoostSpecsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2097,7 +2061,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2128,7 +2091,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2161,7 +2123,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2195,7 +2156,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2225,7 +2185,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2256,7 +2215,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2288,7 +2246,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2315,7 +2272,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2342,7 +2298,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -2364,7 +2319,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           getConditionBoostSpecsBuilder(int index) {
         return getConditionBoostSpecsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2390,7 +2344,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           return conditionBoostSpecsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2418,7 +2371,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
         }
       }
-
       /**
        *
        *
@@ -2443,7 +2395,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
                 com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
                     .ConditionBoostSpec.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2469,7 +2420,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
                 com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
                     .ConditionBoostSpec.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2593,7 +2543,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object completionConfig_ = "";
-
   /**
    *
    *
@@ -2622,7 +2571,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -2656,7 +2604,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
-
   /**
    *
    *
@@ -2687,7 +2634,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -2723,7 +2669,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryModel_ = "";
-
   /**
    *
    *
@@ -2763,7 +2708,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -2808,7 +2752,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userPseudoId_ = "";
-
   /**
    *
    *
@@ -2844,7 +2787,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -2883,7 +2825,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   public static final int USER_INFO_FIELD_NUMBER = 9;
   private com.google.cloud.discoveryengine.v1beta.UserInfo userInfo_;
-
   /**
    *
    *
@@ -2906,7 +2847,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
   public boolean hasUserInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2931,7 +2871,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         ? com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()
         : userInfo_;
   }
-
   /**
    *
    *
@@ -2957,7 +2896,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   public static final int INCLUDE_TAIL_SUGGESTIONS_FIELD_NUMBER = 5;
   private boolean includeTailSuggestions_ = false;
-
   /**
    *
    *
@@ -2979,7 +2917,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   public static final int BOOST_SPEC_FIELD_NUMBER = 6;
   private com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec boostSpec_;
-
   /**
    *
    *
@@ -2997,7 +2934,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
   public boolean hasBoostSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3019,7 +2955,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             .getDefaultInstance()
         : boostSpec_;
   }
-
   /**
    *
    *
@@ -3066,7 +3001,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
                   : result;
             }
           };
-
   /**
    *
    *
@@ -3091,7 +3025,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType>(
         suggestionTypes_, suggestionTypes_converter_);
   }
-
   /**
    *
    *
@@ -3111,7 +3044,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
   public int getSuggestionTypesCount() {
     return suggestionTypes_.size();
   }
-
   /**
    *
    *
@@ -3133,7 +3065,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       getSuggestionTypes(int index) {
     return suggestionTypes_converter_.convert(suggestionTypes_.get(index));
   }
-
   /**
    *
    *
@@ -3153,7 +3084,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
   public java.util.List<java.lang.Integer> getSuggestionTypesValueList() {
     return suggestionTypes_;
   }
-
   /**
    *
    *
@@ -3428,7 +3358,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3770,7 +3699,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object completionConfig_ = "";
-
     /**
      *
      *
@@ -3798,7 +3726,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3826,7 +3753,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3853,7 +3779,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3876,7 +3801,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3906,7 +3830,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -3936,7 +3859,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3966,7 +3888,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3995,7 +3916,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4020,7 +3940,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4052,7 +3971,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object queryModel_ = "";
-
     /**
      *
      *
@@ -4091,7 +4009,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4130,7 +4047,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4168,7 +4084,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4202,7 +4117,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4243,7 +4157,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object userPseudoId_ = "";
-
     /**
      *
      *
@@ -4278,7 +4191,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4313,7 +4225,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4347,7 +4258,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4377,7 +4287,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4419,7 +4328,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             com.google.cloud.discoveryengine.v1beta.UserInfo.Builder,
             com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder>
         userInfoBuilder_;
-
     /**
      *
      *
@@ -4441,7 +4349,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public boolean hasUserInfo() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4469,7 +4376,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return userInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4499,7 +4405,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4527,7 +4432,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4562,7 +4466,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -4589,7 +4492,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4611,7 +4513,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4637,7 +4538,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             : userInfo_;
       }
     }
-
     /**
      *
      *
@@ -4672,7 +4572,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     }
 
     private boolean includeTailSuggestions_;
-
     /**
      *
      *
@@ -4691,7 +4590,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public boolean getIncludeTailSuggestions() {
       return includeTailSuggestions_;
     }
-
     /**
      *
      *
@@ -4714,7 +4612,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4743,7 +4640,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec.Builder,
             com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpecOrBuilder>
         boostSpecBuilder_;
-
     /**
      *
      *
@@ -4760,7 +4656,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public boolean hasBoostSpec() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4785,7 +4680,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         return boostSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4811,7 +4705,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4835,7 +4728,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4868,7 +4760,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -4890,7 +4781,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4908,7 +4798,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4931,7 +4820,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
             : boostSpec_;
       }
     }
-
     /**
      *
      *
@@ -4969,7 +4857,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000080;
       }
     }
-
     /**
      *
      *
@@ -4993,7 +4880,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
           com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType>(
           suggestionTypes_, suggestionTypes_converter_);
     }
-
     /**
      *
      *
@@ -5012,7 +4898,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public int getSuggestionTypesCount() {
       return suggestionTypes_.size();
     }
-
     /**
      *
      *
@@ -5033,7 +4918,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         getSuggestionTypes(int index) {
       return suggestionTypes_converter_.convert(suggestionTypes_.get(index));
     }
-
     /**
      *
      *
@@ -5062,7 +4946,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5089,7 +4972,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5120,7 +5002,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5142,7 +5023,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5161,7 +5041,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public java.util.List<java.lang.Integer> getSuggestionTypesValueList() {
       return java.util.Collections.unmodifiableList(suggestionTypes_);
     }
-
     /**
      *
      *
@@ -5181,7 +5060,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public int getSuggestionTypesValue(int index) {
       return suggestionTypes_.get(index);
     }
-
     /**
      *
      *
@@ -5205,7 +5083,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5228,7 +5105,6 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

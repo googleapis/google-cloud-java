@@ -34,7 +34,6 @@ public interface ListTranscriptsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Transcript transcripts = 1;</code>
    */
   java.util.List<com.google.apps.meet.v2beta.Transcript> getTranscriptsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTranscriptsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Transcript transcripts = 1;</code>
    */
   com.google.apps.meet.v2beta.Transcript getTranscripts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTranscriptsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Transcript transcripts = 1;</code>
    */
   int getTranscriptsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTranscriptsResponseOrBuilder
    */
   java.util.List<? extends com.google.apps.meet.v2beta.TranscriptOrBuilder>
       getTranscriptsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTranscriptsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

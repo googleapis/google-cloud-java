@@ -76,7 +76,6 @@ public enum DatapathProvider implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPATH_PROVIDER_UNSPECIFIED = 0;</code>
    */
   public static final int DATAPATH_PROVIDER_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum DatapathProvider implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LEGACY_DATAPATH = 1;</code>
    */
   public static final int LEGACY_DATAPATH_VALUE = 1;
-
   /**
    *
    *

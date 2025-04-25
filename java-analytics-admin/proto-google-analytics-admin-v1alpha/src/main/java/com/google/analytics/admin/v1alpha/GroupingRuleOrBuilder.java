@@ -36,7 +36,6 @@ public interface GroupingRuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface GroupingRuleOrBuilder
    * @return Whether the expression field is set.
    */
   boolean hasExpression();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GroupingRuleOrBuilder
    * @return The expression.
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilterExpression getExpression();
-
   /**
    *
    *

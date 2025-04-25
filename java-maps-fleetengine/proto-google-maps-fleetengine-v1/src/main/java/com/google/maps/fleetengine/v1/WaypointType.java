@@ -82,7 +82,6 @@ public enum WaypointType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_WAYPOINT_TYPE = 0;</code>
    */
   public static final int UNKNOWN_WAYPOINT_TYPE_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum WaypointType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PICKUP_WAYPOINT_TYPE = 1;</code>
    */
   public static final int PICKUP_WAYPOINT_TYPE_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum WaypointType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DROP_OFF_WAYPOINT_TYPE = 2;</code>
    */
   public static final int DROP_OFF_WAYPOINT_TYPE_VALUE = 2;
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface TerraformVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TerraformVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface TerraformVersionOrBuilder
    * @return Whether the supportTime field is set.
    */
   boolean hasSupportTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface TerraformVersionOrBuilder
    * @return The supportTime.
    */
   com.google.protobuf.Timestamp getSupportTime();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface TerraformVersionOrBuilder
    * @return Whether the deprecateTime field is set.
    */
   boolean hasDeprecateTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface TerraformVersionOrBuilder
    * @return The deprecateTime.
    */
   com.google.protobuf.Timestamp getDeprecateTime();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface TerraformVersionOrBuilder
    * @return Whether the obsoleteTime field is set.
    */
   boolean hasObsoleteTime();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface TerraformVersionOrBuilder
    * @return The obsoleteTime.
    */
   com.google.protobuf.Timestamp getObsoleteTime();
-
   /**
    *
    *

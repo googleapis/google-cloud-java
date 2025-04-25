@@ -37,7 +37,6 @@ public interface SecurityProjectionOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SecurityProjectionOrBuilder
    * @return The details.
    */
   com.google.protobuf.Struct getDetails();
-
   /**
    *
    *

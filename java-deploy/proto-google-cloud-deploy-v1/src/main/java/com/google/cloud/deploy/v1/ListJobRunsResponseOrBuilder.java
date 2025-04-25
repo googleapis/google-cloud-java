@@ -34,7 +34,6 @@ public interface ListJobRunsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.JobRun job_runs = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.JobRun> getJobRunsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListJobRunsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.JobRun job_runs = 1;</code>
    */
   com.google.cloud.deploy.v1.JobRun getJobRuns(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListJobRunsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.JobRun job_runs = 1;</code>
    */
   int getJobRunsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListJobRunsResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.JobRun job_runs = 1;</code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.JobRunOrBuilder> getJobRunsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListJobRunsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ListJobRunsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface ListJobRunsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface ListJobRunsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

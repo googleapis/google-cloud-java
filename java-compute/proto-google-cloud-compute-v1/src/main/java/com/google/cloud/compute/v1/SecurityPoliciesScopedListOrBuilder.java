@@ -34,7 +34,6 @@ public interface SecurityPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SecurityPolicy security_policies = 127783791;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicy> getSecurityPoliciesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SecurityPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SecurityPolicy security_policies = 127783791;</code>
    */
   com.google.cloud.compute.v1.SecurityPolicy getSecurityPolicies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SecurityPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.SecurityPolicy security_policies = 127783791;</code>
    */
   int getSecurityPoliciesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SecurityPoliciesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyOrBuilder>
       getSecurityPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface SecurityPoliciesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface SecurityPoliciesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

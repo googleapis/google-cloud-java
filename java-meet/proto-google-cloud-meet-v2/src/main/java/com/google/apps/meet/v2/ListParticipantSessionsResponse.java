@@ -33,7 +33,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2.ListParticipantSessionsResponse)
     ListParticipantSessionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListParticipantSessionsResponse.newBuilder() to construct.
   private ListParticipantSessionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.meet.v2.ParticipantSession> participantSessions_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
   public java.util.List<com.google.apps.meet.v2.ParticipantSession> getParticipantSessionsList() {
     return participantSessions_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       getParticipantSessionsOrBuilderList() {
     return participantSessions_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
   public int getParticipantSessionsCount() {
     return participantSessions_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
   public com.google.apps.meet.v2.ParticipantSession getParticipantSessions(int index) {
     return participantSessions_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return participantSessionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return participantSessionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return participantSessionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         int index) {
       return getParticipantSessionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -910,7 +888,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return participantSessionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(participantSessions_);
       }
     }
-
     /**
      *
      *
@@ -942,7 +918,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       return getParticipantSessionsFieldBuilder()
           .addBuilder(com.google.apps.meet.v2.ParticipantSession.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -957,7 +932,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       return getParticipantSessionsFieldBuilder()
           .addBuilder(index, com.google.apps.meet.v2.ParticipantSession.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -993,7 +967,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1013,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1053,6 @@ public final class ListParticipantSessionsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

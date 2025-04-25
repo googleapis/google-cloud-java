@@ -42,7 +42,6 @@ public interface ReplayResultOrBuilder
    * @return Whether the diff field is set.
    */
   boolean hasDiff();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface ReplayResultOrBuilder
    * @return The diff.
    */
   com.google.cloud.policysimulator.v1.ReplayDiff getDiff();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ReplayResultOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ReplayResultOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ReplayResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface ReplayResultOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public interface ReplayResultOrBuilder
    * @return Whether the accessTuple field is set.
    */
   boolean hasAccessTuple();
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public interface ReplayResultOrBuilder
    * @return The accessTuple.
    */
   com.google.cloud.policysimulator.v1.AccessTuple getAccessTuple();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public interface ReplayResultOrBuilder
    * @return Whether the lastSeenDate field is set.
    */
   boolean hasLastSeenDate();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface ReplayResultOrBuilder
    * @return The lastSeenDate.
    */
   com.google.type.Date getLastSeenDate();
-
   /**
    *
    *

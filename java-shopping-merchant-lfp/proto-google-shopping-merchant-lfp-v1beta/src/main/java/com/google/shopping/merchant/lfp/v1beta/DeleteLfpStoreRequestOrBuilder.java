@@ -39,7 +39,6 @@ public interface DeleteLfpStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

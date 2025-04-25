@@ -38,7 +38,6 @@ public interface ToolParameterKVMatchInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ToolParameterKVMatchInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.ToolParameterKVMatchSpec getMetricSpec();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ToolParameterKVMatchInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.ToolParameterKVMatchInstance> getInstancesList();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ToolParameterKVMatchInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ToolParameterKVMatchInstance getInstances(int index);
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ToolParameterKVMatchInputOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ToolParameterKVMatchInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolParameterKVMatchInstanceOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *

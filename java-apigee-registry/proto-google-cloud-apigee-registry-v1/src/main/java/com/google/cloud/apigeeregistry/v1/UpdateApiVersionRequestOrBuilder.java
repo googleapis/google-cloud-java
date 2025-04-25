@@ -41,7 +41,6 @@ public interface UpdateApiVersionRequestOrBuilder
    * @return Whether the apiVersion field is set.
    */
   boolean hasApiVersion();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateApiVersionRequestOrBuilder
    * @return The apiVersion.
    */
   com.google.cloud.apigeeregistry.v1.ApiVersion getApiVersion();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateApiVersionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateApiVersionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

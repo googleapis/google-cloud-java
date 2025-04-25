@@ -33,7 +33,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.UpdateSessionRequest)
     UpdateSessionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSessionRequest.newBuilder() to construct.
   private UpdateSessionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1alpha.Session session_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
   public boolean hasSession() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.discoveryengine.v1alpha.Session.getDefaultInstance()
         : session_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -368,7 +361,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +586,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.discoveryengine.v1alpha.Session.Builder,
             com.google.cloud.discoveryengine.v1alpha.SessionOrBuilder>
         sessionBuilder_;
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
     public boolean hasSession() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
         return sessionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSessionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
             : session_;
       }
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +889,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +947,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class UpdateSessionRequest extends com.google.protobuf.GeneratedMes
             : updateMask_;
       }
     }
-
     /**
      *
      *

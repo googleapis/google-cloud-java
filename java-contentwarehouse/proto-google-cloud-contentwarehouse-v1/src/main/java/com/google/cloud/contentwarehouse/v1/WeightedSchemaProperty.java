@@ -33,7 +33,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.WeightedSchemaProperty)
     WeightedSchemaPropertyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WeightedSchemaProperty.newBuilder() to construct.
   private WeightedSchemaProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentSchemaName_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList propertyNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getPropertyNamesList() {
     return propertyNames_;
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
   public int getPropertyNamesCount() {
     return propertyNames_.size();
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
   public java.lang.String getPropertyNames(int index) {
     return propertyNames_.get(index);
   }
-
   /**
    *
    *
@@ -362,7 +355,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +561,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object documentSchemaName_ = "";
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       propertyNames_.makeImmutable();
       return propertyNames_;
     }
-
     /**
      *
      *
@@ -719,7 +704,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     public int getPropertyNamesCount() {
       return propertyNames_.size();
     }
-
     /**
      *
      *
@@ -735,7 +719,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     public java.lang.String getPropertyNames(int index) {
       return propertyNames_.get(index);
     }
-
     /**
      *
      *
@@ -751,7 +734,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getPropertyNamesBytes(int index) {
       return propertyNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -775,7 +757,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +779,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +798,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +816,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -54,7 +54,6 @@ public interface AutoMlImageSegmentationMetadataOrBuilder
    * @return The enum numeric value on the wire for successfulStopReason.
    */
   int getSuccessfulStopReasonValue();
-
   /**
    *
    *

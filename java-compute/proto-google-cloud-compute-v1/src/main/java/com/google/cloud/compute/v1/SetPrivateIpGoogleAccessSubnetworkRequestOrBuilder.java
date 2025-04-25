@@ -38,7 +38,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * @return Whether the subnetworksSetPrivateIpGoogleAccessRequestResource field is set.
    */
   boolean hasSubnetworksSetPrivateIpGoogleAccessRequestResource();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    */
   com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest
       getSubnetworksSetPrivateIpGoogleAccessRequestResource();
-
   /**
    *
    *

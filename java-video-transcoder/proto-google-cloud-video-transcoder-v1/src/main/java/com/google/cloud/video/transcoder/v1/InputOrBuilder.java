@@ -37,7 +37,6 @@ public interface InputOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface InputOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface InputOrBuilder
    * @return Whether the preprocessingConfig field is set.
    */
   boolean hasPreprocessingConfig();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InputOrBuilder
    * @return The preprocessingConfig.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig getPreprocessingConfig();
-
   /**
    *
    *

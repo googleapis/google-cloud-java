@@ -38,7 +38,6 @@ public interface PatchTargetGrpcProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PatchTargetGrpcProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchTargetGrpcProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface PatchTargetGrpcProxyRequestOrBuilder
    * @return The targetGrpcProxy.
    */
   java.lang.String getTargetGrpcProxy();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface PatchTargetGrpcProxyRequestOrBuilder
    * @return Whether the targetGrpcProxyResource field is set.
    */
   boolean hasTargetGrpcProxyResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchTargetGrpcProxyRequestOrBuilder
    * @return The targetGrpcProxyResource.
    */
   com.google.cloud.compute.v1.TargetGrpcProxy getTargetGrpcProxyResource();
-
   /**
    *
    *

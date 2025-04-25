@@ -41,7 +41,6 @@ public interface UpdateStreamRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateStreamRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateStreamRequestOrBuilder
    * @return Whether the stream field is set.
    */
   boolean hasStream();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateStreamRequestOrBuilder
    * @return The stream.
    */
   com.google.cloud.datastream.v1alpha1.Stream getStream();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateStreamRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

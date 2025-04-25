@@ -38,7 +38,6 @@ public interface InsertPacketMirroringRequestOrBuilder
    * @return Whether the packetMirroringResource field is set.
    */
   boolean hasPacketMirroringResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertPacketMirroringRequestOrBuilder
    * @return The packetMirroringResource.
    */
   com.google.cloud.compute.v1.PacketMirroring getPacketMirroringResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertPacketMirroringRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InsertPacketMirroringRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InsertPacketMirroringRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface InsertPacketMirroringRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

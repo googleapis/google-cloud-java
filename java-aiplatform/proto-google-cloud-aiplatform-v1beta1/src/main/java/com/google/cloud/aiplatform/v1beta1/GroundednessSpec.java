@@ -33,7 +33,6 @@ public final class GroundednessSpec extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundednessSpec)
     GroundednessSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundednessSpec.newBuilder() to construct.
   private GroundednessSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class GroundednessSpec extends com.google.protobuf.GeneratedMessage
 
   public static final int VERSION_FIELD_NUMBER = 1;
   private int version_ = 0;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class GroundednessSpec extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class GroundednessSpec extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int version_;
-
     /**
      *
      *
@@ -439,7 +435,6 @@ public final class GroundednessSpec extends com.google.protobuf.GeneratedMessage
     public int getVersion() {
       return version_;
     }
-
     /**
      *
      *
@@ -459,7 +454,6 @@ public final class GroundednessSpec extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

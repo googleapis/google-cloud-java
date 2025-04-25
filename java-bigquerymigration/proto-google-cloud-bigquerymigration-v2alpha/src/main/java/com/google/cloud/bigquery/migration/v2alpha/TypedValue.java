@@ -33,7 +33,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.TypedValue)
     TypedValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TypedValue.newBuilder() to construct.
   private TypedValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,7 +120,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolValue() {
     return valueCase_ == 1;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT64_VALUE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInt64Value() {
     return valueCase_ == 2;
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDoubleValue() {
     return valueCase_ == 3;
   }
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return valueCase_ == 4;
   }
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISTRIBUTION_VALUE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDistributionValue() {
     return valueCase_ == 5;
   }
-
   /**
    *
    *
@@ -345,7 +332,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.Distribution.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -600,7 +586,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -876,7 +861,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return valueCase_ == 1;
     }
-
     /**
      *
      *
@@ -894,7 +878,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +931,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInt64Value() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -967,7 +948,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1003,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoubleValue() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -1044,7 +1022,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return valueCase_ == 4;
     }
-
     /**
      *
      *
@@ -1133,7 +1108,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1136,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1157,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1176,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1204,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
             com.google.api.Distribution.Builder,
             com.google.api.DistributionOrBuilder>
         distributionValueBuilder_;
-
     /**
      *
      *
@@ -1249,7 +1219,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDistributionValue() {
       return valueCase_ == 5;
     }
-
     /**
      *
      *
@@ -1275,7 +1244,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.Distribution.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1266,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1285,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1315,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1340,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1352,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.Distribution.Builder getDistributionValueBuilder() {
       return getDistributionValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1409,7 +1372,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.Distribution.getDefaultInstance();
       }
     }
-
     /**
      *
      *

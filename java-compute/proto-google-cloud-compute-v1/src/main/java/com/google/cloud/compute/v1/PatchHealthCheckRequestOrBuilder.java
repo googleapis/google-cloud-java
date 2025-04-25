@@ -36,7 +36,6 @@ public interface PatchHealthCheckRequestOrBuilder
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PatchHealthCheckRequestOrBuilder
    * @return Whether the healthCheckResource field is set.
    */
   boolean hasHealthCheckResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchHealthCheckRequestOrBuilder
    * @return The healthCheckResource.
    */
   com.google.cloud.compute.v1.HealthCheck getHealthCheckResource();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface PatchHealthCheckRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface PatchHealthCheckRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchHealthCheckRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

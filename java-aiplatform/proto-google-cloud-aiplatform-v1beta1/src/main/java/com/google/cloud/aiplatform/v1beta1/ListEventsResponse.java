@@ -34,7 +34,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListEventsResponse)
     ListEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEventsResponse.newBuilder() to construct.
   private ListEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,13 +69,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.SessionEvent> sessionEvents_;
-
   /**
    *
    *
    * <pre>
-   * A list of events matching the request. Ordered by timestamp in ascending
-   * order.
+   * A list of events matching the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -85,13 +82,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.aiplatform.v1beta1.SessionEvent> getSessionEventsList() {
     return sessionEvents_;
   }
-
   /**
    *
    *
    * <pre>
-   * A list of events matching the request. Ordered by timestamp in ascending
-   * order.
+   * A list of events matching the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -101,13 +96,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       getSessionEventsOrBuilderList() {
     return sessionEvents_;
   }
-
   /**
    *
    *
    * <pre>
-   * A list of events matching the request. Ordered by timestamp in ascending
-   * order.
+   * A list of events matching the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -116,13 +109,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public int getSessionEventsCount() {
     return sessionEvents_.size();
   }
-
   /**
    *
    *
    * <pre>
-   * A list of events matching the request. Ordered by timestamp in ascending
-   * order.
+   * A list of events matching the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -131,13 +122,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1beta1.SessionEvent getSessionEvents(int index) {
     return sessionEvents_.get(index);
   }
-
   /**
    *
    *
    * <pre>
-   * A list of events matching the request. Ordered by timestamp in ascending
-   * order.
+   * A list of events matching the request.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -152,7 +141,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +167,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +365,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,8 +633,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -660,13 +645,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return sessionEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -678,13 +661,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return sessionEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -696,13 +677,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return sessionEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -721,13 +700,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -743,13 +720,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -767,13 +742,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -792,13 +765,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -814,13 +785,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -836,13 +805,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -858,13 +825,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -879,13 +844,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -900,13 +863,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -915,13 +876,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         int index) {
       return getSessionEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -934,13 +893,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return sessionEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -953,13 +910,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(sessionEvents_);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -968,13 +923,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return getSessionEventsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.SessionEvent.getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -984,13 +937,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return getSessionEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.SessionEvent.getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
-     * A list of events matching the request. Ordered by timestamp in ascending
-     * order.
+     * A list of events matching the request.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -1021,7 +972,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1047,7 +997,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1022,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1046,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1066,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

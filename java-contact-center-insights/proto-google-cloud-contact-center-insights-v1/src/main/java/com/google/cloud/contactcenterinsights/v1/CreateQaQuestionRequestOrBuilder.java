@@ -38,7 +38,6 @@ public interface CreateQaQuestionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateQaQuestionRequestOrBuilder
    * @return Whether the qaQuestion field is set.
    */
   boolean hasQaQuestion();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateQaQuestionRequestOrBuilder
    * @return The qaQuestion.
    */
   com.google.cloud.contactcenterinsights.v1.QaQuestion getQaQuestion();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface CreateQaQuestionRequestOrBuilder
    * @return The qaQuestionId.
    */
   java.lang.String getQaQuestionId();
-
   /**
    *
    *

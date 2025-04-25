@@ -39,7 +39,6 @@ public interface ListEnginesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface ListEnginesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface ListEnginesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest)
     UpdateCustomConstraintRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateCustomConstraintRequest.newBuilder() to construct.
   private UpdateCustomConstraintRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int CUSTOM_CONSTRAINT_FIELD_NUMBER = 1;
   private com.google.cloud.orgpolicy.v2.CustomConstraint customConstraint_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
   public boolean hasCustomConstraint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
         ? com.google.cloud.orgpolicy.v2.CustomConstraint.getDefaultInstance()
         : customConstraint_;
   }
-
   /**
    *
    *
@@ -288,7 +284,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -495,7 +490,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
             com.google.cloud.orgpolicy.v2.CustomConstraint.Builder,
             com.google.cloud.orgpolicy.v2.CustomConstraintOrBuilder>
         customConstraintBuilder_;
-
     /**
      *
      *
@@ -512,7 +506,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
     public boolean hasCustomConstraint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
         return customConstraintBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -560,7 +552,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -583,7 +574,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +641,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return getCustomConstraintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -674,7 +661,6 @@ public final class UpdateCustomConstraintRequest extends com.google.protobuf.Gen
             : customConstraint_;
       }
     }
-
     /**
      *
      *

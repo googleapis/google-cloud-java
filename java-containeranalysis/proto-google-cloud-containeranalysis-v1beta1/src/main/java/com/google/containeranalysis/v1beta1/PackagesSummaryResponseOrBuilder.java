@@ -37,7 +37,6 @@ public interface PackagesSummaryResponseOrBuilder
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface PackagesSummaryResponseOrBuilder
    */
   java.util.List<com.google.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummary>
       getLicensesSummaryList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PackagesSummaryResponseOrBuilder
    */
   com.google.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummary getLicensesSummary(
       int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface PackagesSummaryResponseOrBuilder
    * </code>
    */
   int getLicensesSummaryCount();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface PackagesSummaryResponseOrBuilder
           ? extends
               com.google.containeranalysis.v1beta1.PackagesSummaryResponse.LicensesSummaryOrBuilder>
       getLicensesSummaryOrBuilderList();
-
   /**
    *
    *

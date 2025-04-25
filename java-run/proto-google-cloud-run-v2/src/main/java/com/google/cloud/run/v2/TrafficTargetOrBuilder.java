@@ -36,7 +36,6 @@ public interface TrafficTargetOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface TrafficTargetOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface TrafficTargetOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.ListChildAccountsRequest)
     ListChildAccountsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListChildAccountsRequest.newBuilder() to construct.
   private ListChildAccountsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
 
   public static final int LABEL_ID_FIELD_NUMBER = 2;
   private long labelId_ = 0L;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
   public boolean hasLabelId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullName_ = "";
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
   public boolean hasFullName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -521,7 +510,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -766,7 +754,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -792,7 +779,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -843,7 +828,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     }
 
     private long labelId_;
-
     /**
      *
      *
@@ -908,7 +890,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     public boolean hasLabelId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -924,7 +905,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     public long getLabelId() {
       return labelId_;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object fullName_ = "";
-
     /**
      *
      *
@@ -980,7 +958,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     public boolean hasFullName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1044,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1115,7 +1087,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1138,7 +1109,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1131,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1188,7 +1157,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1183,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1208,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1229,6 @@ public final class ListChildAccountsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

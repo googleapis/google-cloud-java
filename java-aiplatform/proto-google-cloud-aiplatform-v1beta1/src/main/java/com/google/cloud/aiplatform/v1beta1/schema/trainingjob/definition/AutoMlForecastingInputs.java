@@ -29,7 +29,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs)
     AutoMlForecastingInputsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlForecastingInputs.newBuilder() to construct.
   private AutoMlForecastingInputs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return Whether the auto field is set.
      */
     boolean hasAuto();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -97,7 +95,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
             .Transformation.AutoTransformation
         getAuto();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -115,7 +112,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return Whether the numeric field is set.
      */
     boolean hasNumeric();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -126,7 +122,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
             .Transformation.NumericTransformation
         getNumeric();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -144,7 +139,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return Whether the categorical field is set.
      */
     boolean hasCategorical();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -155,7 +149,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
             .Transformation.CategoricalTransformation
         getCategorical();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -173,7 +166,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -184,7 +176,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
             .Transformation.TimestampTransformation
         getTimestamp();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -202,7 +193,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return Whether the text field is set.
      */
     boolean hasText();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -213,7 +203,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
             .Transformation.TextTransformation
         getText();
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -227,7 +216,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             .Transformation.TransformationDetailCase
         getTransformationDetailCase();
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation}
@@ -237,7 +225,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation)
       TransformationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Transformation.newBuilder() to construct.
     private Transformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -281,7 +268,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * @return The columnName.
        */
       java.lang.String getColumnName();
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -289,7 +275,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getColumnNameBytes();
     }
-
     /**
      *
      *
@@ -306,7 +291,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation)
         AutoTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use AutoTransformation.newBuilder() to construct.
       private AutoTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -345,7 +329,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object columnName_ = "";
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -363,7 +346,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -572,7 +554,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -795,7 +776,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object columnName_ = "";
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -812,7 +792,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -829,7 +808,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -845,7 +823,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -857,7 +834,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -958,7 +934,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * @return The columnName.
        */
       java.lang.String getColumnName();
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -966,7 +941,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getColumnNameBytes();
     }
-
     /**
      *
      *
@@ -996,7 +970,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation)
         NumericTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use NumericTransformation.newBuilder() to construct.
       private NumericTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1035,7 +1008,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object columnName_ = "";
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -1053,7 +1025,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -1262,7 +1233,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1498,7 +1468,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object columnName_ = "";
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -1515,7 +1484,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -1532,7 +1500,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -1548,7 +1515,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -1560,7 +1526,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -1661,7 +1626,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * @return The columnName.
        */
       java.lang.String getColumnName();
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -1669,7 +1633,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getColumnNameBytes();
     }
-
     /**
      *
      *
@@ -1696,7 +1659,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation)
         CategoricalTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use CategoricalTransformation.newBuilder() to construct.
       private CategoricalTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1736,7 +1698,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object columnName_ = "";
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -1754,7 +1715,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -1963,7 +1923,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2197,7 +2156,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object columnName_ = "";
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -2214,7 +2172,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -2231,7 +2188,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -2247,7 +2203,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -2259,7 +2214,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -2360,7 +2314,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * @return The columnName.
        */
       java.lang.String getColumnName();
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -2398,7 +2351,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * @return The timeFormat.
        */
       java.lang.String getTimeFormat();
-
       /**
        *
        *
@@ -2430,7 +2382,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getTimeFormatBytes();
     }
-
     /**
      *
      *
@@ -2455,7 +2406,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation)
         TimestampTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use TimestampTransformation.newBuilder() to construct.
       private TimestampTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2495,7 +2445,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object columnName_ = "";
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -2513,7 +2462,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -2536,7 +2484,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object timeFormat_ = "";
-
       /**
        *
        *
@@ -2578,7 +2525,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        *
        *
@@ -2820,7 +2766,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3067,7 +3012,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object columnName_ = "";
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3084,7 +3028,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3101,7 +3044,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3117,7 +3059,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3129,7 +3070,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3148,7 +3088,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         private java.lang.Object timeFormat_ = "";
-
         /**
          *
          *
@@ -3189,7 +3128,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3230,7 +3168,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3270,7 +3207,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3306,7 +3242,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3431,7 +3366,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * @return The columnName.
        */
       java.lang.String getColumnName();
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -3439,7 +3373,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getColumnNameBytes();
     }
-
     /**
      *
      *
@@ -3461,7 +3394,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation)
         TextTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use TextTransformation.newBuilder() to construct.
       private TextTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3500,7 +3432,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object columnName_ = "";
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -3518,7 +3449,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        * <code>string column_name = 1;</code>
        *
@@ -3727,7 +3657,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3955,7 +3884,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object columnName_ = "";
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3972,7 +3900,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -3989,7 +3916,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -4005,7 +3931,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -4017,7 +3942,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          * <code>string column_name = 1;</code>
          *
@@ -4127,7 +4051,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       private TransformationDetailCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4167,7 +4090,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     public static final int AUTO_FIELD_NUMBER = 1;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -4179,7 +4101,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasAuto() {
       return transformationDetailCase_ == 1;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -4199,7 +4120,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs.Transformation.AutoTransformation.getDefaultInstance();
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -4219,7 +4139,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     public static final int NUMERIC_FIELD_NUMBER = 2;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -4231,7 +4150,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasNumeric() {
       return transformationDetailCase_ == 2;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -4251,7 +4169,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs.Transformation.NumericTransformation.getDefaultInstance();
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -4271,7 +4188,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     public static final int CATEGORICAL_FIELD_NUMBER = 3;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -4283,7 +4199,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasCategorical() {
       return transformationDetailCase_ == 3;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -4303,7 +4218,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs.Transformation.CategoricalTransformation.getDefaultInstance();
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -4323,7 +4237,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -4335,7 +4248,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasTimestamp() {
       return transformationDetailCase_ == 4;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -4355,7 +4267,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs.Transformation.TimestampTransformation.getDefaultInstance();
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -4375,7 +4286,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     public static final int TEXT_FIELD_NUMBER = 5;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -4387,7 +4297,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasText() {
       return transformationDetailCase_ == 5;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -4407,7 +4316,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs.Transformation.TextTransformation.getDefaultInstance();
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -4724,7 +4632,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation}
@@ -5047,7 +4954,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.AutoTransformationOrBuilder>
           autoBuilder_;
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5059,7 +4965,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public boolean hasAuto() {
         return transformationDetailCase_ == 1;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5087,7 +4992,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.AutoTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5109,7 +5013,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 1;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5128,7 +5031,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 1;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5166,7 +5068,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 1;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5188,7 +5089,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5199,7 +5099,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           getAutoBuilder() {
         return getAutoFieldBuilder().getBuilder();
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5221,7 +5120,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.AutoTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
@@ -5269,7 +5167,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.NumericTransformationOrBuilder>
           numericBuilder_;
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5281,7 +5178,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public boolean hasNumeric() {
         return transformationDetailCase_ == 2;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5309,7 +5205,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.NumericTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5331,7 +5226,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 2;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5350,7 +5244,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 2;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5388,7 +5281,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 2;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5410,7 +5302,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5421,7 +5312,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           getNumericBuilder() {
         return getNumericFieldBuilder().getBuilder();
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5443,7 +5333,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.NumericTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
@@ -5492,7 +5381,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.CategoricalTransformationOrBuilder>
           categoricalBuilder_;
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5504,7 +5392,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public boolean hasCategorical() {
         return transformationDetailCase_ == 3;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5534,7 +5421,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5556,7 +5442,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 3;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5575,7 +5460,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 3;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5613,7 +5497,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 3;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5635,7 +5518,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5646,7 +5528,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           getCategoricalBuilder() {
         return getCategoricalFieldBuilder().getBuilder();
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5669,7 +5550,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
@@ -5718,7 +5598,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.TimestampTransformationOrBuilder>
           timestampBuilder_;
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5730,7 +5609,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public boolean hasTimestamp() {
         return transformationDetailCase_ == 4;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5758,7 +5636,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.TimestampTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5780,7 +5657,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 4;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5799,7 +5675,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 4;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5837,7 +5712,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 4;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5859,7 +5733,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5870,7 +5743,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           getTimestampBuilder() {
         return getTimestampFieldBuilder().getBuilder();
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5892,7 +5764,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.TimestampTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
@@ -5941,7 +5812,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.TextTransformationOrBuilder>
           textBuilder_;
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -5953,7 +5823,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public boolean hasText() {
         return transformationDetailCase_ == 5;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -5981,7 +5850,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.TextTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6003,7 +5871,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 5;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6022,7 +5889,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 5;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6060,7 +5926,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 5;
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6082,7 +5947,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6093,7 +5957,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           getTextBuilder() {
         return getTextFieldBuilder().getBuilder();
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6115,7 +5978,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               .AutoMlForecastingInputs.Transformation.TextTransformation.getDefaultInstance();
         }
       }
-
       /**
        * <code>
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
@@ -6257,7 +6119,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return The unit.
      */
     java.lang.String getUnit();
-
     /**
      *
      *
@@ -6300,7 +6161,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      */
     long getQuantity();
   }
-
   /**
    *
    *
@@ -6316,7 +6176,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity)
       GranularityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Granularity.newBuilder() to construct.
     private Granularity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6355,7 +6214,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object unit_ = "";
-
     /**
      *
      *
@@ -6392,7 +6250,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -6432,7 +6289,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
     public static final int QUANTITY_FIELD_NUMBER = 2;
     private long quantity_ = 0L;
-
     /**
      *
      *
@@ -6649,7 +6505,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6883,7 +6738,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object unit_ = "";
-
       /**
        *
        *
@@ -6919,7 +6773,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6955,7 +6808,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6990,7 +6842,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7021,7 +6872,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7059,7 +6909,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       private long quantity_;
-
       /**
        *
        *
@@ -7078,7 +6927,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public long getQuantity() {
         return quantity_;
       }
-
       /**
        *
        *
@@ -7101,7 +6949,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7200,7 +7047,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetColumn_ = "";
-
   /**
    *
    *
@@ -7224,7 +7070,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -7253,7 +7098,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeSeriesIdentifierColumn_ = "";
-
   /**
    *
    *
@@ -7277,7 +7121,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -7306,7 +7149,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeColumn_ = "";
-
   /**
    *
    *
@@ -7330,7 +7172,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -7362,7 +7203,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
               .Transformation>
       transformations_;
-
   /**
    *
    *
@@ -7384,7 +7224,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       getTransformationsList() {
     return transformations_;
   }
-
   /**
    *
    *
@@ -7407,7 +7246,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       getTransformationsOrBuilderList() {
     return transformations_;
   }
-
   /**
    *
    *
@@ -7426,7 +7264,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public int getTransformationsCount() {
     return transformations_.size();
   }
-
   /**
    *
    *
@@ -7447,7 +7284,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       getTransformations(int index) {
     return transformations_.get(index);
   }
-
   /**
    *
    *
@@ -7473,7 +7309,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object optimizationObjective_ = "";
-
   /**
    *
    *
@@ -7515,7 +7350,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -7560,7 +7394,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   public static final int TRAIN_BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 6;
   private long trainBudgetMilliNodeHours_ = 0L;
-
   /**
    *
    *
@@ -7594,7 +7427,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object weightColumn_ = "";
-
   /**
    *
    *
@@ -7623,7 +7455,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -7658,7 +7489,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList timeSeriesAttributeColumns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -7675,7 +7505,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getTimeSeriesAttributeColumnsList() {
     return timeSeriesAttributeColumns_;
   }
-
   /**
    *
    *
@@ -7692,7 +7521,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public int getTimeSeriesAttributeColumnsCount() {
     return timeSeriesAttributeColumns_.size();
   }
-
   /**
    *
    *
@@ -7710,7 +7538,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public java.lang.String getTimeSeriesAttributeColumns(int index) {
     return timeSeriesAttributeColumns_.get(index);
   }
-
   /**
    *
    *
@@ -7734,7 +7561,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unavailableAtForecastColumns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -7752,7 +7578,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getUnavailableAtForecastColumnsList() {
     return unavailableAtForecastColumns_;
   }
-
   /**
    *
    *
@@ -7770,7 +7595,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public int getUnavailableAtForecastColumnsCount() {
     return unavailableAtForecastColumns_.size();
   }
-
   /**
    *
    *
@@ -7789,7 +7613,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public java.lang.String getUnavailableAtForecastColumns(int index) {
     return unavailableAtForecastColumns_.get(index);
   }
-
   /**
    *
    *
@@ -7814,7 +7637,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableAtForecastColumns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -7833,7 +7655,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getAvailableAtForecastColumnsList() {
     return availableAtForecastColumns_;
   }
-
   /**
    *
    *
@@ -7852,7 +7673,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public int getAvailableAtForecastColumnsCount() {
     return availableAtForecastColumns_.size();
   }
-
   /**
    *
    *
@@ -7872,7 +7692,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public java.lang.String getAvailableAtForecastColumns(int index) {
     return availableAtForecastColumns_.get(index);
   }
-
   /**
    *
    *
@@ -7897,7 +7716,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
           .Granularity
       dataGranularity_;
-
   /**
    *
    *
@@ -7915,7 +7733,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public boolean hasDataGranularity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -7938,7 +7755,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             .Granularity.getDefaultInstance()
         : dataGranularity_;
   }
-
   /**
    *
    *
@@ -7962,7 +7778,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   public static final int FORECAST_HORIZON_FIELD_NUMBER = 23;
   private long forecastHorizon_ = 0L;
-
   /**
    *
    *
@@ -7983,7 +7798,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   public static final int CONTEXT_WINDOW_FIELD_NUMBER = 24;
   private long contextWindow_ = 0L;
-
   /**
    *
    *
@@ -8006,7 +7820,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .ExportEvaluatedDataItemsConfig
       exportEvaluatedDataItemsConfig_;
-
   /**
    *
    *
@@ -8025,7 +7838,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public boolean hasExportEvaluatedDataItemsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -8049,7 +7861,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             .ExportEvaluatedDataItemsConfig.getDefaultInstance()
         : exportEvaluatedDataItemsConfig_;
   }
-
   /**
    *
    *
@@ -8076,7 +7887,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList quantiles_ = emptyDoubleList();
-
   /**
    *
    *
@@ -8095,7 +7905,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public java.util.List<java.lang.Double> getQuantilesList() {
     return quantiles_;
   }
-
   /**
    *
    *
@@ -8113,7 +7922,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public int getQuantilesCount() {
     return quantiles_.size();
   }
-
   /**
    *
    *
@@ -8139,7 +7947,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationOptions_ = "";
-
   /**
    *
    *
@@ -8169,7 +7976,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -8205,7 +8011,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -8220,7 +8025,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
     return additionalExperiments_;
   }
-
   /**
    *
    *
@@ -8235,7 +8039,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public int getAdditionalExperimentsCount() {
     return additionalExperiments_.size();
   }
-
   /**
    *
    *
@@ -8251,7 +8054,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public java.lang.String getAdditionalExperiments(int index) {
     return additionalExperiments_.get(index);
   }
-
   /**
    *
    *
@@ -8664,7 +8466,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs}
@@ -9227,7 +9028,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object targetColumn_ = "";
-
     /**
      *
      *
@@ -9250,7 +9050,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9273,7 +9072,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9295,7 +9093,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9313,7 +9110,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9338,7 +9134,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private java.lang.Object timeSeriesIdentifierColumn_ = "";
-
     /**
      *
      *
@@ -9361,7 +9156,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9384,7 +9178,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9406,7 +9199,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9424,7 +9216,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9449,7 +9240,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private java.lang.Object timeColumn_ = "";
-
     /**
      *
      *
@@ -9472,7 +9262,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9495,7 +9284,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9517,7 +9305,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9535,7 +9322,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9607,7 +9393,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return transformationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -9629,7 +9414,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return transformationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -9653,7 +9437,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return transformationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -9685,7 +9468,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9714,7 +9496,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9745,7 +9526,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9777,7 +9557,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9805,7 +9584,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9834,7 +9612,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9864,7 +9641,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9889,7 +9665,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9914,7 +9689,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -9934,7 +9708,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         getTransformationsBuilder(int index) {
       return getTransformationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9958,7 +9731,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return transformationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -9984,7 +9756,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(transformations_);
       }
     }
-
     /**
      *
      *
@@ -10007,7 +9778,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10031,7 +9801,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10080,7 +9849,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private java.lang.Object optimizationObjective_ = "";
-
     /**
      *
      *
@@ -10121,7 +9889,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -10162,7 +9929,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -10202,7 +9968,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10238,7 +10003,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10281,7 +10045,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private long trainBudgetMilliNodeHours_;
-
     /**
      *
      *
@@ -10310,7 +10073,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public long getTrainBudgetMilliNodeHours() {
       return trainBudgetMilliNodeHours_;
     }
-
     /**
      *
      *
@@ -10343,7 +10105,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10376,7 +10137,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private java.lang.Object weightColumn_ = "";
-
     /**
      *
      *
@@ -10404,7 +10164,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -10432,7 +10191,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -10459,7 +10217,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10482,7 +10239,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10521,7 +10277,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -10539,7 +10294,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       timeSeriesAttributeColumns_.makeImmutable();
       return timeSeriesAttributeColumns_;
     }
-
     /**
      *
      *
@@ -10556,7 +10310,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public int getTimeSeriesAttributeColumnsCount() {
       return timeSeriesAttributeColumns_.size();
     }
-
     /**
      *
      *
@@ -10574,7 +10327,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public java.lang.String getTimeSeriesAttributeColumns(int index) {
       return timeSeriesAttributeColumns_.get(index);
     }
-
     /**
      *
      *
@@ -10592,7 +10344,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getTimeSeriesAttributeColumnsBytes(int index) {
       return timeSeriesAttributeColumns_.getByteString(index);
     }
-
     /**
      *
      *
@@ -10618,7 +10369,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10643,7 +10393,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10665,7 +10414,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10686,7 +10434,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10723,7 +10470,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -10742,7 +10488,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       unavailableAtForecastColumns_.makeImmutable();
       return unavailableAtForecastColumns_;
     }
-
     /**
      *
      *
@@ -10760,7 +10505,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public int getUnavailableAtForecastColumnsCount() {
       return unavailableAtForecastColumns_.size();
     }
-
     /**
      *
      *
@@ -10779,7 +10523,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public java.lang.String getUnavailableAtForecastColumns(int index) {
       return unavailableAtForecastColumns_.get(index);
     }
-
     /**
      *
      *
@@ -10798,7 +10541,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getUnavailableAtForecastColumnsBytes(int index) {
       return unavailableAtForecastColumns_.getByteString(index);
     }
-
     /**
      *
      *
@@ -10825,7 +10567,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10851,7 +10592,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10874,7 +10614,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10896,7 +10635,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10934,7 +10672,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000200;
     }
-
     /**
      *
      *
@@ -10954,7 +10691,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       availableAtForecastColumns_.makeImmutable();
       return availableAtForecastColumns_;
     }
-
     /**
      *
      *
@@ -10973,7 +10709,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public int getAvailableAtForecastColumnsCount() {
       return availableAtForecastColumns_.size();
     }
-
     /**
      *
      *
@@ -10993,7 +10728,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public java.lang.String getAvailableAtForecastColumns(int index) {
       return availableAtForecastColumns_.get(index);
     }
-
     /**
      *
      *
@@ -11013,7 +10747,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getAvailableAtForecastColumnsBytes(int index) {
       return availableAtForecastColumns_.getByteString(index);
     }
-
     /**
      *
      *
@@ -11041,7 +10774,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11068,7 +10800,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11092,7 +10823,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11115,7 +10845,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11155,7 +10884,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingInputs.GranularityOrBuilder>
         dataGranularityBuilder_;
-
     /**
      *
      *
@@ -11172,7 +10900,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasDataGranularity() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -11198,7 +10925,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return dataGranularityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11226,7 +10952,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11251,7 +10976,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11286,7 +11010,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -11308,7 +11031,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11327,7 +11049,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return getDataGranularityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11351,7 +11072,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             : dataGranularity_;
       }
     }
-
     /**
      *
      *
@@ -11387,7 +11107,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private long forecastHorizon_;
-
     /**
      *
      *
@@ -11405,7 +11124,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public long getForecastHorizon() {
       return forecastHorizon_;
     }
-
     /**
      *
      *
@@ -11427,7 +11145,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11449,7 +11166,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private long contextWindow_;
-
     /**
      *
      *
@@ -11467,7 +11183,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public long getContextWindow() {
       return contextWindow_;
     }
-
     /**
      *
      *
@@ -11489,7 +11204,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11521,7 +11235,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .ExportEvaluatedDataItemsConfigOrBuilder>
         exportEvaluatedDataItemsConfigBuilder_;
-
     /**
      *
      *
@@ -11539,7 +11252,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public boolean hasExportEvaluatedDataItemsConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -11566,7 +11278,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return exportEvaluatedDataItemsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11595,7 +11306,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11621,7 +11331,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11657,7 +11366,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -11680,7 +11388,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11700,7 +11407,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return getExportEvaluatedDataItemsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11725,7 +11431,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             : exportEvaluatedDataItemsConfig_;
       }
     }
-
     /**
      *
      *
@@ -11776,7 +11481,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00004000;
     }
-
     /**
      *
      *
@@ -11795,7 +11499,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       quantiles_.makeImmutable();
       return quantiles_;
     }
-
     /**
      *
      *
@@ -11813,7 +11516,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public int getQuantilesCount() {
       return quantiles_.size();
     }
-
     /**
      *
      *
@@ -11832,7 +11534,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public double getQuantiles(int index) {
       return quantiles_.getDouble(index);
     }
-
     /**
      *
      *
@@ -11857,7 +11558,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11881,7 +11581,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11904,7 +11603,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11927,7 +11625,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private java.lang.Object validationOptions_ = "";
-
     /**
      *
      *
@@ -11956,7 +11653,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11985,7 +11681,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -12013,7 +11708,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12037,7 +11731,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12077,7 +11770,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00010000;
     }
-
     /**
      *
      *
@@ -12093,7 +11785,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       additionalExperiments_.makeImmutable();
       return additionalExperiments_;
     }
-
     /**
      *
      *
@@ -12108,7 +11799,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public int getAdditionalExperimentsCount() {
       return additionalExperiments_.size();
     }
-
     /**
      *
      *
@@ -12124,7 +11814,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public java.lang.String getAdditionalExperiments(int index) {
       return additionalExperiments_.get(index);
     }
-
     /**
      *
      *
@@ -12140,7 +11829,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index) {
       return additionalExperiments_.getByteString(index);
     }
-
     /**
      *
      *
@@ -12164,7 +11852,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12187,7 +11874,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12207,7 +11893,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12226,7 +11911,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

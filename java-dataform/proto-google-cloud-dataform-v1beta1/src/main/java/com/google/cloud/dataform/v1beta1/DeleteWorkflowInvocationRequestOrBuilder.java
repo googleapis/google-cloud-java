@@ -38,7 +38,6 @@ public interface DeleteWorkflowInvocationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

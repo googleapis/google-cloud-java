@@ -33,7 +33,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.Table)
     TableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Table.newBuilder() to construct.
   private Table(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,7 +108,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -219,7 +217,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     private OptionsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -251,7 +248,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HIVE_OPTIONS_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -267,7 +263,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHiveOptions() {
     return optionsCase_ == 7;
   }
-
   /**
    *
    *
@@ -286,7 +281,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -309,7 +303,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -337,7 +330,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -385,7 +376,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -402,7 +392,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -420,7 +409,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -437,7 +425,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -454,7 +441,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -472,7 +458,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp deleteTime_;
-
   /**
    *
    *
@@ -490,7 +475,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -508,7 +492,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
-
   /**
    *
    *
@@ -527,7 +510,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp expireTime_;
-
   /**
    *
    *
@@ -545,7 +527,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -563,7 +544,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
-
   /**
    *
    *
@@ -582,7 +562,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 6;
   private int type_ = 0;
-
   /**
    *
    *
@@ -598,7 +577,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -623,7 +601,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -650,7 +627,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -938,7 +914,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1286,7 +1261,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.Builder,
             com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptionsOrBuilder>
         hiveOptionsBuilder_;
-
     /**
      *
      *
@@ -1302,7 +1276,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHiveOptions() {
       return optionsCase_ == 7;
     }
-
     /**
      *
      *
@@ -1328,7 +1301,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1352,7 +1324,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1344,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1379,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1404,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1417,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getHiveOptionsBuilder() {
       return getHiveOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1471,7 +1438,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1507,7 +1473,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1534,7 +1499,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1561,7 +1525,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1587,7 +1550,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1571,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1604,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1660,7 +1620,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1683,7 +1642,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1708,7 +1666,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1687,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1716,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1782,7 +1737,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1753,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1820,7 +1773,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1855,7 +1807,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1872,7 +1823,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1895,7 +1845,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1920,7 +1869,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1942,7 +1890,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1972,7 +1919,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1940,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2011,7 +1956,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2032,7 +1976,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2067,7 +2010,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
-
     /**
      *
      *
@@ -2085,7 +2027,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2109,7 +2050,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2135,7 +2075,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2158,7 +2097,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2189,7 +2127,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2212,7 +2149,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2230,7 +2166,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2252,7 +2187,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
-
     /**
      *
      *
@@ -2288,7 +2222,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -2306,7 +2239,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2330,7 +2262,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2356,7 +2287,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2379,7 +2309,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2410,7 +2339,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2433,7 +2361,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2378,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2473,7 +2399,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
-
     /**
      *
      *
@@ -2504,7 +2429,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -2520,7 +2444,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2539,7 +2462,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2481,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.biglake.v1alpha1.Table.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2581,7 +2502,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2601,7 +2521,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -2627,7 +2546,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2653,7 +2571,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2678,7 +2595,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2615,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

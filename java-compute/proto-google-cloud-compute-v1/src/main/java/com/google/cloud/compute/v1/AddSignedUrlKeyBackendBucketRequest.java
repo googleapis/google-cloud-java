@@ -34,7 +34,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddSignedUrlKeyBackendBucketRequest)
     AddSignedUrlKeyBackendBucketRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddSignedUrlKeyBackendBucketRequest.newBuilder() to construct.
   private AddSignedUrlKeyBackendBucketRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backendBucket_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
 
   public static final int SIGNED_URL_KEY_RESOURCE_FIELD_NUMBER = 457625985;
   private com.google.cloud.compute.v1.SignedUrlKey signedUrlKeyResource_;
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
   public boolean hasSignedUrlKeyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         ? com.google.cloud.compute.v1.SignedUrlKey.getDefaultInstance()
         : signedUrlKeyResource_;
   }
-
   /**
    *
    *
@@ -506,7 +495,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +747,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     private int bitField0_;
 
     private java.lang.Object backendBucket_ = "";
-
     /**
      *
      *
@@ -782,7 +769,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -827,7 +812,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +829,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +853,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +969,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1029,7 +1005,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1027,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1065,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
             com.google.cloud.compute.v1.SignedUrlKey.Builder,
             com.google.cloud.compute.v1.SignedUrlKeyOrBuilder>
         signedUrlKeyResourceBuilder_;
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
     public boolean hasSignedUrlKeyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1162,7 +1132,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
         return signedUrlKeyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1156,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1178,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1208,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1229,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1245,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
       onChanged();
       return getSignedUrlKeyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1301,7 +1265,6 @@ public final class AddSignedUrlKeyBackendBucketRequest
             : signedUrlKeyResource_;
       }
     }
-
     /**
      *
      *

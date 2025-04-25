@@ -39,7 +39,6 @@ public interface GetDataAttributeBindingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

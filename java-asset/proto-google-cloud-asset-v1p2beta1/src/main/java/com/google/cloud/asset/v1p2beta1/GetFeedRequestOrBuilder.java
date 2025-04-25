@@ -41,7 +41,6 @@ public interface GetFeedRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

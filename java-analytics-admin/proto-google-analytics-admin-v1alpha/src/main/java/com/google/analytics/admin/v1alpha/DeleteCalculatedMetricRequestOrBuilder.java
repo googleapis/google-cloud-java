@@ -40,7 +40,6 @@ public interface DeleteCalculatedMetricRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ListDataSchemasResponse)
     ListDataSchemasResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDataSchemasResponse.newBuilder() to construct.
   private ListDataSchemasResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.DataSchema> dataSchemas_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.visionai.v1.DataSchema> getDataSchemasList() {
     return dataSchemas_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       getDataSchemasOrBuilderList() {
     return dataSchemas_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
   public int getDataSchemasCount() {
     return dataSchemas_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
   public com.google.cloud.visionai.v1.DataSchema getDataSchemas(int index) {
     return dataSchemas_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return dataSchemasBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return dataSchemasBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return dataSchemasBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
     public com.google.cloud.visionai.v1.DataSchema.Builder getDataSchemasBuilder(int index) {
       return getDataSchemasFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return dataSchemasBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(dataSchemas_);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       return getDataSchemasFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.DataSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       return getDataSchemasFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.DataSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ListDataSchemasResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.SummaryOptions)
     SummaryOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SummaryOptions.newBuilder() to construct.
   private SummaryOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>LENGTH_UNSPECIFIED = 0;</code>
      */
     public static final int LENGTH_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>BRIEF = 1;</code>
      */
     public static final int BRIEF_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>MODERATE = 2;</code>
      */
     public static final int MODERATE_VALUE = 2;
-
     /**
      *
      *
@@ -302,7 +298,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -313,7 +308,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>PARAGRAPH = 1;</code>
      */
     public static final int PARAGRAPH_VALUE = 1;
-
     /**
      *
      *
@@ -412,7 +406,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LENGTH_FIELD_NUMBER = 1;
   private int length_ = 0;
-
   /**
    *
    *
@@ -428,7 +421,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
   public int getLengthValue() {
     return length_;
   }
-
   /**
    *
    *
@@ -451,7 +443,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORMAT_FIELD_NUMBER = 2;
   private int format_ = 0;
-
   /**
    *
    *
@@ -467,7 +458,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -664,7 +654,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -860,7 +849,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int length_ = 0;
-
     /**
      *
      *
@@ -876,7 +864,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
     public int getLengthValue() {
       return length_;
     }
-
     /**
      *
      *
@@ -895,7 +882,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +901,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.documentai.v1beta3.SummaryOptions.Length.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -937,7 +922,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +941,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -973,7 +956,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -992,7 +974,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +993,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.documentai.v1beta3.SummaryOptions.Format.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1034,7 +1014,6 @@ public final class SummaryOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

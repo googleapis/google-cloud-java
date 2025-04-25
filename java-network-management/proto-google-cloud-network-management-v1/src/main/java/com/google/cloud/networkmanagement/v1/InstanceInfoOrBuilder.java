@@ -36,7 +36,6 @@ public interface InstanceInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface InstanceInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface InstanceInfoOrBuilder
    * @return The interface.
    */
   java.lang.String getInterface();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface InstanceInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface InstanceInfoOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface InstanceInfoOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface InstanceInfoOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface InstanceInfoOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public interface InstanceInfoOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public interface InstanceInfoOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public interface InstanceInfoOrBuilder
    * @return The pscNetworkAttachmentUri.
    */
   java.lang.String getPscNetworkAttachmentUri();
-
   /**
    *
    *

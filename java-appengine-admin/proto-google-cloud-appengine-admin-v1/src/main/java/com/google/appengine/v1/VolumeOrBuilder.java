@@ -36,7 +36,6 @@ public interface VolumeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VolumeOrBuilder
    * @return The volumeType.
    */
   java.lang.String getVolumeType();
-
   /**
    *
    *

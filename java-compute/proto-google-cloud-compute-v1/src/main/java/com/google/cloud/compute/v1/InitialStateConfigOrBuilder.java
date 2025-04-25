@@ -34,7 +34,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer dbs = 99253;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FileContentBuffer> getDbsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer dbs = 99253;</code>
    */
   com.google.cloud.compute.v1.FileContentBuffer getDbs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer dbs = 99253;</code>
    */
   int getDbsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface InitialStateConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FileContentBufferOrBuilder>
       getDbsOrBuilderList();
-
   /**
    *
    *
@@ -90,7 +86,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer dbxs = 3077113;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FileContentBuffer> getDbxsList();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer dbxs = 3077113;</code>
    */
   com.google.cloud.compute.v1.FileContentBuffer getDbxs(int index);
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer dbxs = 3077113;</code>
    */
   int getDbxsCount();
-
   /**
    *
    *
@@ -124,7 +117,6 @@ public interface InitialStateConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FileContentBufferOrBuilder>
       getDbxsOrBuilderList();
-
   /**
    *
    *
@@ -146,7 +138,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer keks = 3288130;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FileContentBuffer> getKeksList();
-
   /**
    *
    *
@@ -157,7 +148,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer keks = 3288130;</code>
    */
   com.google.cloud.compute.v1.FileContentBuffer getKeks(int index);
-
   /**
    *
    *
@@ -168,7 +158,6 @@ public interface InitialStateConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.FileContentBuffer keks = 3288130;</code>
    */
   int getKeksCount();
-
   /**
    *
    *
@@ -180,7 +169,6 @@ public interface InitialStateConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FileContentBufferOrBuilder>
       getKeksOrBuilderList();
-
   /**
    *
    *
@@ -204,7 +192,6 @@ public interface InitialStateConfigOrBuilder
    * @return Whether the pk field is set.
    */
   boolean hasPk();
-
   /**
    *
    *
@@ -217,7 +204,6 @@ public interface InitialStateConfigOrBuilder
    * @return The pk.
    */
   com.google.cloud.compute.v1.FileContentBuffer getPk();
-
   /**
    *
    *

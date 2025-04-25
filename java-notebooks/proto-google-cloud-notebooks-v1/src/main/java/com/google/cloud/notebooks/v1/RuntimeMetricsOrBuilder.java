@@ -36,7 +36,6 @@ public interface RuntimeMetricsOrBuilder
    * </code>
    */
   int getSystemMetricsCount();
-
   /**
    *
    *
@@ -49,11 +48,9 @@ public interface RuntimeMetricsOrBuilder
    * </code>
    */
   boolean containsSystemMetrics(java.lang.String key);
-
   /** Use {@link #getSystemMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSystemMetrics();
-
   /**
    *
    *
@@ -66,7 +63,6 @@ public interface RuntimeMetricsOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSystemMetricsMap();
-
   /**
    *
    *
@@ -83,7 +79,6 @@ public interface RuntimeMetricsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

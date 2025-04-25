@@ -40,7 +40,6 @@ public interface GetDataLabelingJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

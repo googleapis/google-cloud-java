@@ -36,7 +36,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -88,12 +85,10 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.NetworkAttachmentsScopedList>
       getItems();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.NetworkAttachmentsScopedList>
       getItemsMap();
-
   /**
    *
    *
@@ -124,7 +118,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.NetworkAttachmentsScopedList defaultValue);
-
   /**
    *
    *
@@ -144,14 +137,12 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    * <code>optional string kind = 3292052;</code>
    *
@@ -171,7 +162,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -184,7 +174,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -210,7 +199,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -223,7 +211,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -249,7 +236,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -262,7 +248,6 @@ public interface NetworkAttachmentAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

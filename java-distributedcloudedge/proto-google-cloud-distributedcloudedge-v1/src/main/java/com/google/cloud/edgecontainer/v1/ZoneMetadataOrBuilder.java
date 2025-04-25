@@ -34,7 +34,6 @@ public interface ZoneMetadataOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Quota quota = 1;</code>
    */
   java.util.List<com.google.cloud.edgecontainer.v1.Quota> getQuotaList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ZoneMetadataOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Quota quota = 1;</code>
    */
   com.google.cloud.edgecontainer.v1.Quota getQuota(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ZoneMetadataOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Quota quota = 1;</code>
    */
   int getQuotaCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ZoneMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgecontainer.v1.QuotaOrBuilder>
       getQuotaOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   int getRackTypesCount();
-
   /**
    *
    *
@@ -103,12 +98,10 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   boolean containsRackTypes(java.lang.String key);
-
   /** Use {@link #getRackTypesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
       getRackTypes();
-
   /**
    *
    *
@@ -121,7 +114,6 @@ public interface ZoneMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
       getRackTypesMap();
-
   /**
    *
    *
@@ -137,7 +129,6 @@ public interface ZoneMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType defaultValue);
-
   /**
    *
    *
@@ -149,11 +140,9 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType getRackTypesOrThrow(java.lang.String key);
-
   /** Use {@link #getRackTypesValueMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValue();
-
   /**
    *
    *
@@ -165,7 +154,6 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValueMap();
-
   /**
    *
    *
@@ -177,7 +165,6 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   int getRackTypesValueOrDefault(java.lang.String key, int defaultValue);
-
   /**
    *
    *
@@ -202,7 +189,6 @@ public interface ZoneMetadataOrBuilder
    * @return Whether the configData field is set.
    */
   boolean hasConfigData();
-
   /**
    *
    *
@@ -215,7 +201,6 @@ public interface ZoneMetadataOrBuilder
    * @return The configData.
    */
   com.google.cloud.edgecontainer.v1.ConfigData getConfigData();
-
   /**
    *
    *

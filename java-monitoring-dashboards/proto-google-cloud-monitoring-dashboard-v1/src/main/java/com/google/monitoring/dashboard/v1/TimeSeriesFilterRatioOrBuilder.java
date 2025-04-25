@@ -36,7 +36,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return Whether the numerator field is set.
    */
   boolean hasNumerator();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return The numerator.
    */
   com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart getNumerator();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return Whether the denominator field is set.
    */
   boolean hasDenominator();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return The denominator.
    */
   com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart getDenominator();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return Whether the secondaryAggregation field is set.
    */
   boolean hasSecondaryAggregation();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return The secondaryAggregation.
    */
   com.google.monitoring.dashboard.v1.Aggregation getSecondaryAggregation();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return Whether the pickTimeSeriesFilter field is set.
    */
   boolean hasPickTimeSeriesFilter();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    * @return The pickTimeSeriesFilter.
    */
   com.google.monitoring.dashboard.v1.PickTimeSeriesFilter getPickTimeSeriesFilter();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    */
   @java.lang.Deprecated
   boolean hasStatisticalTimeSeriesFilter();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface TimeSeriesFilterRatioOrBuilder
    */
   @java.lang.Deprecated
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter getStatisticalTimeSeriesFilter();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ImportDocumentsMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportDocumentsMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ImportDocumentsMetadataOrBuilder
    */
   java.util.List<com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.IndividualImportStatus>
       getIndividualImportStatusesList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ImportDocumentsMetadataOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.IndividualImportStatus
       getIndividualImportStatuses(int index);
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface ImportDocumentsMetadataOrBuilder
    * </code>
    */
   int getIndividualImportStatusesCount();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ImportDocumentsMetadataOrBuilder
               com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata
                   .IndividualImportStatusOrBuilder>
       getIndividualImportStatusesOrBuilderList();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface ImportDocumentsMetadataOrBuilder
   java.util.List<
           com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.ImportConfigValidationResult>
       getImportConfigValidationResultsList();
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface ImportDocumentsMetadataOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata.ImportConfigValidationResult
       getImportConfigValidationResults(int index);
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public interface ImportDocumentsMetadataOrBuilder
    * </code>
    */
   int getImportConfigValidationResultsCount();
-
   /**
    *
    *
@@ -191,7 +182,6 @@ public interface ImportDocumentsMetadataOrBuilder
               com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata
                   .ImportConfigValidationResultOrBuilder>
       getImportConfigValidationResultsOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ColumnEntity columns = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.ColumnEntity> getColumnsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ColumnEntity columns = 1;</code>
    */
   com.google.cloud.clouddms.v1.ColumnEntity getColumns(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ColumnEntity columns = 1;</code>
    */
   int getColumnsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TableEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.ColumnEntityOrBuilder>
       getColumnsOrBuilderList();
-
   /**
    *
    *
@@ -90,7 +86,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConstraintEntity constraints = 2;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.ConstraintEntity> getConstraintsList();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConstraintEntity constraints = 2;</code>
    */
   com.google.cloud.clouddms.v1.ConstraintEntity getConstraints(int index);
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConstraintEntity constraints = 2;</code>
    */
   int getConstraintsCount();
-
   /**
    *
    *
@@ -124,7 +117,6 @@ public interface TableEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.ConstraintEntityOrBuilder>
       getConstraintsOrBuilderList();
-
   /**
    *
    *
@@ -146,7 +138,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.IndexEntity indices = 3;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.IndexEntity> getIndicesList();
-
   /**
    *
    *
@@ -157,7 +148,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.IndexEntity indices = 3;</code>
    */
   com.google.cloud.clouddms.v1.IndexEntity getIndices(int index);
-
   /**
    *
    *
@@ -168,7 +158,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.IndexEntity indices = 3;</code>
    */
   int getIndicesCount();
-
   /**
    *
    *
@@ -180,7 +169,6 @@ public interface TableEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.IndexEntityOrBuilder>
       getIndicesOrBuilderList();
-
   /**
    *
    *
@@ -202,7 +190,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.TriggerEntity triggers = 4;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.TriggerEntity> getTriggersList();
-
   /**
    *
    *
@@ -213,7 +200,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.TriggerEntity triggers = 4;</code>
    */
   com.google.cloud.clouddms.v1.TriggerEntity getTriggers(int index);
-
   /**
    *
    *
@@ -224,7 +210,6 @@ public interface TableEntityOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.TriggerEntity triggers = 4;</code>
    */
   int getTriggersCount();
-
   /**
    *
    *
@@ -236,7 +221,6 @@ public interface TableEntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.TriggerEntityOrBuilder>
       getTriggersOrBuilderList();
-
   /**
    *
    *
@@ -260,7 +244,6 @@ public interface TableEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -273,7 +256,6 @@ public interface TableEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *
@@ -297,7 +279,6 @@ public interface TableEntityOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
-
   /**
    *
    *

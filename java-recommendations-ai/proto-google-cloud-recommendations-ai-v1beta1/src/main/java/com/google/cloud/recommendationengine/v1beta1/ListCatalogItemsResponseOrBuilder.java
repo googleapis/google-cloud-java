@@ -34,7 +34,6 @@ public interface ListCatalogItemsResponseOrBuilder
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem> getCatalogItemsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCatalogItemsResponseOrBuilder
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItems(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCatalogItemsResponseOrBuilder
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
   int getCatalogItemsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCatalogItemsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder>
       getCatalogItemsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListCatalogItemsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

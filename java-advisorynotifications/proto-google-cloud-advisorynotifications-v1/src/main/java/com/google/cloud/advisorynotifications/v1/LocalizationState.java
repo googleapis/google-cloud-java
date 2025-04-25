@@ -87,7 +87,6 @@ public enum LocalizationState implements com.google.protobuf.ProtocolMessageEnum
    * <code>LOCALIZATION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int LOCALIZATION_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum LocalizationState implements com.google.protobuf.ProtocolMessageEnum
    * <code>LOCALIZATION_STATE_NOT_APPLICABLE = 1;</code>
    */
   public static final int LOCALIZATION_STATE_NOT_APPLICABLE_VALUE = 1;
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public enum LocalizationState implements com.google.protobuf.ProtocolMessageEnum
    * <code>LOCALIZATION_STATE_PENDING = 2;</code>
    */
   public static final int LOCALIZATION_STATE_PENDING_VALUE = 2;
-
   /**
    *
    *

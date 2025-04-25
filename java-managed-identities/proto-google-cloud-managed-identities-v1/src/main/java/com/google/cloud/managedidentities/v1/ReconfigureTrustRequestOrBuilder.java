@@ -39,7 +39,6 @@ public interface ReconfigureTrustRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ReconfigureTrustRequestOrBuilder
    * @return The targetDomainName.
    */
   java.lang.String getTargetDomainName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface ReconfigureTrustRequestOrBuilder
    * @return A list containing the targetDnsIpAddresses.
    */
   java.util.List<java.lang.String> getTargetDnsIpAddressesList();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ReconfigureTrustRequestOrBuilder
    * @return The count of targetDnsIpAddresses.
    */
   int getTargetDnsIpAddressesCount();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface ReconfigureTrustRequestOrBuilder
    * @return The targetDnsIpAddresses at the given index.
    */
   java.lang.String getTargetDnsIpAddresses(int index);
-
   /**
    *
    *

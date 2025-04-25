@@ -57,7 +57,6 @@ public interface ListTablesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

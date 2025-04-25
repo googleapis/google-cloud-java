@@ -33,7 +33,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileFindingLocation)
     DataProfileFindingLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataProfileFindingLocation.newBuilder() to construct.
   private DataProfileFindingLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
     private LocationExtraDetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerName_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
   }
 
   public static final int DATA_PROFILE_FINDING_RECORD_LOCATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
   public boolean hasDataProfileFindingRecordLocation() {
     return locationExtraDetailsCase_ == 2;
   }
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
     }
     return com.google.privacy.dlp.v2.DataProfileFindingRecordLocation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -425,7 +418,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +649,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object containerName_ = "";
-
     /**
      *
      *
@@ -685,7 +676,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -713,7 +703,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -740,7 +729,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +751,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +784,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
             com.google.privacy.dlp.v2.DataProfileFindingRecordLocation.Builder,
             com.google.privacy.dlp.v2.DataProfileFindingRecordLocationOrBuilder>
         dataProfileFindingRecordLocationBuilder_;
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
     public boolean hasDataProfileFindingRecordLocation() {
       return locationExtraDetailsCase_ == 2;
     }
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
         return com.google.privacy.dlp.v2.DataProfileFindingRecordLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -873,7 +857,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       locationExtraDetailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +880,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       locationExtraDetailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       locationExtraDetailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
         getDataProfileFindingRecordLocationBuilder() {
       return getDataProfileFindingRecordLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class DataProfileFindingLocation extends com.google.protobuf.Genera
         return com.google.privacy.dlp.v2.DataProfileFindingRecordLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface GetAuthorizationPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeconnect.v1.Header)
     HeaderOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Header.newBuilder() to construct.
   private Header(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    * <code>string key = 1;</code>
    *
@@ -87,7 +85,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    * <code>string key = 1;</code>
    *
@@ -111,7 +108,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    * <code>repeated string values = 2;</code>
    *
@@ -120,7 +116,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
-
   /**
    * <code>repeated string values = 2;</code>
    *
@@ -129,7 +124,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    * <code>repeated string values = 2;</code>
    *
@@ -139,7 +133,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
-
   /**
    * <code>repeated string values = 2;</code>
    *
@@ -324,7 +317,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -530,7 +522,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object key_ = "";
-
     /**
      * <code>string key = 1;</code>
      *
@@ -547,7 +538,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string key = 1;</code>
      *
@@ -564,7 +554,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string key = 1;</code>
      *
@@ -580,7 +569,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>string key = 1;</code>
      *
@@ -592,7 +580,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>string key = 1;</code>
      *
@@ -619,7 +606,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -629,7 +615,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       values_.makeImmutable();
       return values_;
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -638,7 +623,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -648,7 +632,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -658,7 +641,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -676,7 +658,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -693,7 +674,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -707,7 +687,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *
@@ -720,7 +699,6 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string values = 2;</code>
      *

@@ -33,7 +33,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.Dialect)
     DialectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Dialect.newBuilder() to construct.
   private Dialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,7 +93,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     private DialectValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -158,7 +156,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_DIALECT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -174,7 +171,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigqueryDialect() {
     return dialectValueCase_ == 1;
   }
-
   /**
    *
    *
@@ -193,7 +189,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.BigQueryDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -213,7 +208,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HIVEQL_DIALECT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -229,7 +223,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHiveqlDialect() {
     return dialectValueCase_ == 2;
   }
-
   /**
    *
    *
@@ -248,7 +241,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.HiveQLDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -267,7 +259,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDSHIFT_DIALECT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedshiftDialect() {
     return dialectValueCase_ == 3;
   }
-
   /**
    *
    *
@@ -302,7 +292,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.RedshiftDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TERADATA_DIALECT_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTeradataDialect() {
     return dialectValueCase_ == 4;
   }
-
   /**
    *
    *
@@ -357,7 +344,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.TeradataDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -377,7 +363,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORACLE_DIALECT_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -393,7 +378,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOracleDialect() {
     return dialectValueCase_ == 5;
   }
-
   /**
    *
    *
@@ -412,7 +396,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.OracleDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -431,7 +414,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPARKSQL_DIALECT_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -447,7 +429,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSparksqlDialect() {
     return dialectValueCase_ == 6;
   }
-
   /**
    *
    *
@@ -466,7 +447,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.SparkSQLDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -486,7 +466,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SNOWFLAKE_DIALECT_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -502,7 +481,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSnowflakeDialect() {
     return dialectValueCase_ == 7;
   }
-
   /**
    *
    *
@@ -521,7 +499,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.SnowflakeDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -541,7 +518,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETEZZA_DIALECT_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -557,7 +533,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetezzaDialect() {
     return dialectValueCase_ == 8;
   }
-
   /**
    *
    *
@@ -576,7 +551,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.NetezzaDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -596,7 +570,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AZURE_SYNAPSE_DIALECT_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -612,7 +585,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAzureSynapseDialect() {
     return dialectValueCase_ == 9;
   }
-
   /**
    *
    *
@@ -631,7 +603,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.AzureSynapseDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -651,7 +622,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTICA_DIALECT_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -667,7 +637,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVerticaDialect() {
     return dialectValueCase_ == 10;
   }
-
   /**
    *
    *
@@ -686,7 +655,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.VerticaDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -706,7 +674,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SQL_SERVER_DIALECT_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -722,7 +689,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSqlServerDialect() {
     return dialectValueCase_ == 11;
   }
-
   /**
    *
    *
@@ -741,7 +707,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -761,7 +726,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POSTGRESQL_DIALECT_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -777,7 +741,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostgresqlDialect() {
     return dialectValueCase_ == 12;
   }
-
   /**
    *
    *
@@ -796,7 +759,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -816,7 +778,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRESTO_DIALECT_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -832,7 +793,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrestoDialect() {
     return dialectValueCase_ == 13;
   }
-
   /**
    *
    *
@@ -851,7 +811,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -870,7 +829,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MYSQL_DIALECT_FIELD_NUMBER = 14;
-
   /**
    *
    *
@@ -886,7 +844,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMysqlDialect() {
     return dialectValueCase_ == 14;
   }
-
   /**
    *
    *
@@ -905,7 +862,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -924,7 +880,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DB2_DIALECT_FIELD_NUMBER = 15;
-
   /**
    *
    *
@@ -940,7 +895,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDb2Dialect() {
     return dialectValueCase_ == 15;
   }
-
   /**
    *
    *
@@ -959,7 +913,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.DB2Dialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -978,7 +931,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SQLITE_DIALECT_FIELD_NUMBER = 16;
-
   /**
    *
    *
@@ -994,7 +946,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSqliteDialect() {
     return dialectValueCase_ == 16;
   }
-
   /**
    *
    *
@@ -1013,7 +964,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.SQLiteDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1032,7 +982,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GREENPLUM_DIALECT_FIELD_NUMBER = 17;
-
   /**
    *
    *
@@ -1048,7 +997,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGreenplumDialect() {
     return dialectValueCase_ == 17;
   }
-
   /**
    *
    *
@@ -1067,7 +1015,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.GreenplumDialect.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1510,7 +1457,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2005,7 +1951,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.BigQueryDialect.Builder,
             com.google.cloud.bigquery.migration.v2.BigQueryDialectOrBuilder>
         bigqueryDialectBuilder_;
-
     /**
      *
      *
@@ -2021,7 +1966,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigqueryDialect() {
       return dialectValueCase_ == 1;
     }
-
     /**
      *
      *
@@ -2047,7 +1991,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.BigQueryDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2071,7 +2014,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2092,7 +2034,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2127,7 +2068,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2153,7 +2093,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2167,7 +2106,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getBigqueryDialectBuilder() {
       return getBigqueryDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2189,7 +2127,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.BigQueryDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2229,7 +2166,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.HiveQLDialect.Builder,
             com.google.cloud.bigquery.migration.v2.HiveQLDialectOrBuilder>
         hiveqlDialectBuilder_;
-
     /**
      *
      *
@@ -2245,7 +2181,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHiveqlDialect() {
       return dialectValueCase_ == 2;
     }
-
     /**
      *
      *
@@ -2271,7 +2206,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.HiveQLDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2294,7 +2228,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2315,7 +2248,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2281,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2375,7 +2306,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2388,7 +2318,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.HiveQLDialect.Builder getHiveqlDialectBuilder() {
       return getHiveqlDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2410,7 +2339,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.HiveQLDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2449,7 +2377,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.RedshiftDialect.Builder,
             com.google.cloud.bigquery.migration.v2.RedshiftDialectOrBuilder>
         redshiftDialectBuilder_;
-
     /**
      *
      *
@@ -2465,7 +2392,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedshiftDialect() {
       return dialectValueCase_ == 3;
     }
-
     /**
      *
      *
@@ -2491,7 +2417,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.RedshiftDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2515,7 +2440,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2536,7 +2460,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2571,7 +2494,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2597,7 +2519,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2611,7 +2532,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getRedshiftDialectBuilder() {
       return getRedshiftDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2633,7 +2553,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.RedshiftDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2673,7 +2592,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.TeradataDialect.Builder,
             com.google.cloud.bigquery.migration.v2.TeradataDialectOrBuilder>
         teradataDialectBuilder_;
-
     /**
      *
      *
@@ -2689,7 +2607,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTeradataDialect() {
       return dialectValueCase_ == 4;
     }
-
     /**
      *
      *
@@ -2715,7 +2632,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.TeradataDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2739,7 +2655,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2760,7 +2675,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2795,7 +2709,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2734,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2835,7 +2747,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getTeradataDialectBuilder() {
       return getTeradataDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2857,7 +2768,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.TeradataDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2897,7 +2807,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.OracleDialect.Builder,
             com.google.cloud.bigquery.migration.v2.OracleDialectOrBuilder>
         oracleDialectBuilder_;
-
     /**
      *
      *
@@ -2913,7 +2822,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOracleDialect() {
       return dialectValueCase_ == 5;
     }
-
     /**
      *
      *
@@ -2939,7 +2847,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.OracleDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2962,7 +2869,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2983,7 +2889,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2922,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3043,7 +2947,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3056,7 +2959,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.OracleDialect.Builder getOracleDialectBuilder() {
       return getOracleDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3078,7 +2980,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.OracleDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3117,7 +3018,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.SparkSQLDialect.Builder,
             com.google.cloud.bigquery.migration.v2.SparkSQLDialectOrBuilder>
         sparksqlDialectBuilder_;
-
     /**
      *
      *
@@ -3133,7 +3033,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSparksqlDialect() {
       return dialectValueCase_ == 6;
     }
-
     /**
      *
      *
@@ -3159,7 +3058,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SparkSQLDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3183,7 +3081,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3101,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3239,7 +3135,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3265,7 +3160,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3279,7 +3173,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getSparksqlDialectBuilder() {
       return getSparksqlDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3301,7 +3194,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SparkSQLDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3341,7 +3233,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.SnowflakeDialect.Builder,
             com.google.cloud.bigquery.migration.v2.SnowflakeDialectOrBuilder>
         snowflakeDialectBuilder_;
-
     /**
      *
      *
@@ -3357,7 +3248,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSnowflakeDialect() {
       return dialectValueCase_ == 7;
     }
-
     /**
      *
      *
@@ -3383,7 +3273,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SnowflakeDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3407,7 +3296,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3428,7 +3316,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3463,7 +3350,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3489,7 +3375,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3503,7 +3388,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getSnowflakeDialectBuilder() {
       return getSnowflakeDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3525,7 +3409,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SnowflakeDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3565,7 +3448,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.NetezzaDialect.Builder,
             com.google.cloud.bigquery.migration.v2.NetezzaDialectOrBuilder>
         netezzaDialectBuilder_;
-
     /**
      *
      *
@@ -3581,7 +3463,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetezzaDialect() {
       return dialectValueCase_ == 8;
     }
-
     /**
      *
      *
@@ -3607,7 +3488,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.NetezzaDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3630,7 +3510,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -3651,7 +3530,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -3686,7 +3564,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -3712,7 +3589,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3726,7 +3602,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getNetezzaDialectBuilder() {
       return getNetezzaDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3748,7 +3623,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.NetezzaDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3788,7 +3662,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.AzureSynapseDialect.Builder,
             com.google.cloud.bigquery.migration.v2.AzureSynapseDialectOrBuilder>
         azureSynapseDialectBuilder_;
-
     /**
      *
      *
@@ -3805,7 +3678,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAzureSynapseDialect() {
       return dialectValueCase_ == 9;
     }
-
     /**
      *
      *
@@ -3832,7 +3704,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.AzureSynapseDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3857,7 +3728,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3879,7 +3749,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3916,7 +3785,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3943,7 +3811,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3825,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getAzureSynapseDialectBuilder() {
       return getAzureSynapseDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3981,7 +3847,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.AzureSynapseDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4022,7 +3887,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.VerticaDialect.Builder,
             com.google.cloud.bigquery.migration.v2.VerticaDialectOrBuilder>
         verticaDialectBuilder_;
-
     /**
      *
      *
@@ -4038,7 +3902,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVerticaDialect() {
       return dialectValueCase_ == 10;
     }
-
     /**
      *
      *
@@ -4064,7 +3927,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.VerticaDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4087,7 +3949,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -4108,7 +3969,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -4143,7 +4003,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -4169,7 +4028,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4183,7 +4041,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getVerticaDialectBuilder() {
       return getVerticaDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4205,7 +4062,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.VerticaDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4245,7 +4101,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder,
             com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder>
         sqlServerDialectBuilder_;
-
     /**
      *
      *
@@ -4261,7 +4116,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSqlServerDialect() {
       return dialectValueCase_ == 11;
     }
-
     /**
      *
      *
@@ -4287,7 +4141,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4311,7 +4164,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -4332,7 +4184,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -4367,7 +4218,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -4393,7 +4243,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4407,7 +4256,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getSqlServerDialectBuilder() {
       return getSqlServerDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4429,7 +4277,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4469,7 +4316,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder,
             com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder>
         postgresqlDialectBuilder_;
-
     /**
      *
      *
@@ -4485,7 +4331,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostgresqlDialect() {
       return dialectValueCase_ == 12;
     }
-
     /**
      *
      *
@@ -4511,7 +4356,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4535,7 +4379,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -4556,7 +4399,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -4591,7 +4433,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -4617,7 +4458,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4631,7 +4471,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getPostgresqlDialectBuilder() {
       return getPostgresqlDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4653,7 +4492,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4693,7 +4531,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder,
             com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder>
         prestoDialectBuilder_;
-
     /**
      *
      *
@@ -4709,7 +4546,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrestoDialect() {
       return dialectValueCase_ == 13;
     }
-
     /**
      *
      *
@@ -4735,7 +4571,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4758,7 +4593,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -4779,7 +4613,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -4813,7 +4646,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -4839,7 +4671,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4852,7 +4683,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder getPrestoDialectBuilder() {
       return getPrestoDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4874,7 +4704,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4913,7 +4742,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder,
             com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder>
         mysqlDialectBuilder_;
-
     /**
      *
      *
@@ -4929,7 +4757,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMysqlDialect() {
       return dialectValueCase_ == 14;
     }
-
     /**
      *
      *
@@ -4955,7 +4782,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4978,7 +4804,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -4999,7 +4824,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -5033,7 +4857,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -5059,7 +4882,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5072,7 +4894,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder getMysqlDialectBuilder() {
       return getMysqlDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5093,7 +4914,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5132,7 +4952,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.DB2Dialect.Builder,
             com.google.cloud.bigquery.migration.v2.DB2DialectOrBuilder>
         db2DialectBuilder_;
-
     /**
      *
      *
@@ -5148,7 +4967,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDb2Dialect() {
       return dialectValueCase_ == 15;
     }
-
     /**
      *
      *
@@ -5174,7 +4992,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.DB2Dialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5197,7 +5014,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -5218,7 +5034,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -5252,7 +5067,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -5278,7 +5092,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5291,7 +5104,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.DB2Dialect.Builder getDb2DialectBuilder() {
       return getDb2DialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5312,7 +5124,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.DB2Dialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5351,7 +5162,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.SQLiteDialect.Builder,
             com.google.cloud.bigquery.migration.v2.SQLiteDialectOrBuilder>
         sqliteDialectBuilder_;
-
     /**
      *
      *
@@ -5367,7 +5177,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSqliteDialect() {
       return dialectValueCase_ == 16;
     }
-
     /**
      *
      *
@@ -5393,7 +5202,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SQLiteDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5416,7 +5224,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 16;
       return this;
     }
-
     /**
      *
      *
@@ -5437,7 +5244,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 16;
       return this;
     }
-
     /**
      *
      *
@@ -5471,7 +5277,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 16;
       return this;
     }
-
     /**
      *
      *
@@ -5497,7 +5302,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5510,7 +5314,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.SQLiteDialect.Builder getSqliteDialectBuilder() {
       return getSqliteDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5532,7 +5335,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.SQLiteDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5571,7 +5373,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.GreenplumDialect.Builder,
             com.google.cloud.bigquery.migration.v2.GreenplumDialectOrBuilder>
         greenplumDialectBuilder_;
-
     /**
      *
      *
@@ -5587,7 +5388,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGreenplumDialect() {
       return dialectValueCase_ == 17;
     }
-
     /**
      *
      *
@@ -5613,7 +5413,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.GreenplumDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5637,7 +5436,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -5658,7 +5456,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -5693,7 +5490,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       dialectValueCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -5719,7 +5515,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5733,7 +5528,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         getGreenplumDialectBuilder() {
       return getGreenplumDialectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5755,7 +5549,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.GreenplumDialect.getDefaultInstance();
       }
     }
-
     /**
      *
      *

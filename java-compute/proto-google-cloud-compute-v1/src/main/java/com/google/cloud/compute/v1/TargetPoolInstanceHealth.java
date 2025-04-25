@@ -32,7 +32,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetPoolInstanceHealth)
     TargetPoolInstanceHealthOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetPoolInstanceHealth.newBuilder() to construct.
   private TargetPoolInstanceHealth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,32 +68,27 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthStatus> healthStatus_;
-
   /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList() {
     return healthStatus_;
   }
-
   /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
       getHealthStatusOrBuilderList() {
     return healthStatus_;
   }
-
   /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   @java.lang.Override
   public int getHealthStatusCount() {
     return healthStatus_.size();
   }
-
   /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index) {
     return healthStatus_.get(index);
   }
-
   /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthStatusOrBuilder getHealthStatusOrBuilder(int index) {
@@ -105,7 +99,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -121,7 +114,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
   public boolean hasKind() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -145,7 +137,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +337,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -618,7 +608,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return healthStatusBuilder_.getMessageList();
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public int getHealthStatusCount() {
       if (healthStatusBuilder_ == null) {
@@ -627,7 +616,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return healthStatusBuilder_.getCount();
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index) {
       if (healthStatusBuilder_ == null) {
@@ -636,7 +624,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return healthStatusBuilder_.getMessage(index);
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder setHealthStatus(int index, com.google.cloud.compute.v1.HealthStatus value) {
       if (healthStatusBuilder_ == null) {
@@ -651,7 +638,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder setHealthStatus(
         int index, com.google.cloud.compute.v1.HealthStatus.Builder builderForValue) {
@@ -664,7 +650,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder addHealthStatus(com.google.cloud.compute.v1.HealthStatus value) {
       if (healthStatusBuilder_ == null) {
@@ -679,7 +664,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder addHealthStatus(int index, com.google.cloud.compute.v1.HealthStatus value) {
       if (healthStatusBuilder_ == null) {
@@ -694,7 +678,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder addHealthStatus(
         com.google.cloud.compute.v1.HealthStatus.Builder builderForValue) {
@@ -707,7 +690,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder addHealthStatus(
         int index, com.google.cloud.compute.v1.HealthStatus.Builder builderForValue) {
@@ -720,7 +702,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder addAllHealthStatus(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.HealthStatus> values) {
@@ -733,7 +714,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder clearHealthStatus() {
       if (healthStatusBuilder_ == null) {
@@ -745,7 +725,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public Builder removeHealthStatus(int index) {
       if (healthStatusBuilder_ == null) {
@@ -757,12 +736,10 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public com.google.cloud.compute.v1.HealthStatus.Builder getHealthStatusBuilder(int index) {
       return getHealthStatusFieldBuilder().getBuilder(index);
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public com.google.cloud.compute.v1.HealthStatusOrBuilder getHealthStatusOrBuilder(int index) {
       if (healthStatusBuilder_ == null) {
@@ -771,7 +748,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return healthStatusBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
         getHealthStatusOrBuilderList() {
@@ -781,19 +757,16 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(healthStatus_);
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public com.google.cloud.compute.v1.HealthStatus.Builder addHealthStatusBuilder() {
       return getHealthStatusFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HealthStatus.getDefaultInstance());
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public com.google.cloud.compute.v1.HealthStatus.Builder addHealthStatusBuilder(int index) {
       return getHealthStatusFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HealthStatus.getDefaultInstance());
     }
-
     /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
     public java.util.List<com.google.cloud.compute.v1.HealthStatus.Builder>
         getHealthStatusBuilderList() {
@@ -818,7 +791,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -833,7 +805,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
     public boolean hasKind() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -856,7 +827,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +849,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -901,7 +870,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +887,6 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

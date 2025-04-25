@@ -34,7 +34,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListCompaniesResponse)
     ListCompaniesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCompaniesResponse.newBuilder() to construct.
   private ListCompaniesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Company> companies_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.ads.admanager.v1.Company> getCompaniesList() {
     return companies_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       getCompaniesOrBuilderList() {
     return companies_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public int getCompaniesCount() {
     return companies_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public com.google.ads.admanager.v1.Company getCompanies(int index) {
     return companies_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -405,7 +396,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -696,7 +686,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -713,7 +702,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     public com.google.ads.admanager.v1.Company.Builder getCompaniesBuilder(int index) {
       return getCompaniesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -952,7 +929,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(companies_);
       }
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       return getCompaniesFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Company.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -998,7 +972,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       return getCompaniesFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Company.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1030,7 +1003,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1089,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1114,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1172,7 +1139,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1202,7 +1168,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

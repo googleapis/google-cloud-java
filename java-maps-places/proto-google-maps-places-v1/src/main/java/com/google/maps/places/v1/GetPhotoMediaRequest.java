@@ -33,7 +33,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.GetPhotoMediaRequest)
     GetPhotoMediaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetPhotoMediaRequest.newBuilder() to construct.
   private GetPhotoMediaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MAX_WIDTH_PX_FIELD_NUMBER = 2;
   private int maxWidthPx_ = 0;
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MAX_HEIGHT_PX_FIELD_NUMBER = 3;
   private int maxHeightPx_ = 0;
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
 
   public static final int SKIP_HTTP_REDIRECT_FIELD_NUMBER = 4;
   private boolean skipHttpRedirect_ = false;
-
   /**
    *
    *
@@ -399,7 +393,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -622,7 +615,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -653,7 +645,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -684,7 +675,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +704,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +729,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +761,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int maxWidthPx_;
-
     /**
      *
      *
@@ -799,7 +786,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     public int getMaxWidthPx() {
       return maxWidthPx_;
     }
-
     /**
      *
      *
@@ -829,7 +815,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +844,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int maxHeightPx_;
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     public int getMaxHeightPx() {
       return maxHeightPx_;
     }
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +927,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean skipHttpRedirect_;
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
     public boolean getSkipHttpRedirect() {
       return skipHttpRedirect_;
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class GetPhotoMediaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

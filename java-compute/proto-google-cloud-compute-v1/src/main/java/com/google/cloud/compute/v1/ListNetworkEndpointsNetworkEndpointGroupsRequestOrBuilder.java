@@ -36,7 +36,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the networkEndpointGroupsListEndpointsRequestResource field is set.
    */
   boolean hasNetworkEndpointGroupsListEndpointsRequestResource();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest
       getNetworkEndpointGroupsListEndpointsRequestResource();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

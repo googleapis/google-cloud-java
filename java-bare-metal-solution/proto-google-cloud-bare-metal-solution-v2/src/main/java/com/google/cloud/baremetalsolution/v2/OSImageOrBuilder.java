@@ -36,7 +36,6 @@ public interface OSImageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface OSImageOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface OSImageOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface OSImageOrBuilder
    * @return A list containing the applicableInstanceTypes.
    */
   java.util.List<java.lang.String> getApplicableInstanceTypesList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface OSImageOrBuilder
    * @return The count of applicableInstanceTypes.
    */
   int getApplicableInstanceTypesCount();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface OSImageOrBuilder
    * @return The applicableInstanceTypes at the given index.
    */
   java.lang.String getApplicableInstanceTypes(int index);
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface OSImageOrBuilder
    * @return A list containing the supportedNetworkTemplates.
    */
   java.util.List<java.lang.String> getSupportedNetworkTemplatesList();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface OSImageOrBuilder
    * @return The count of supportedNetworkTemplates.
    */
   int getSupportedNetworkTemplatesCount();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface OSImageOrBuilder
    * @return The supportedNetworkTemplates at the given index.
    */
   java.lang.String getSupportedNetworkTemplates(int index);
-
   /**
    *
    *

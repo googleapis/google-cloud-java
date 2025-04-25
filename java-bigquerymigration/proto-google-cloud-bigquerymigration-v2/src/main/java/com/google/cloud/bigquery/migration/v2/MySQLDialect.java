@@ -33,7 +33,6 @@ public final class MySQLDialect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.MySQLDialect)
     MySQLDialectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MySQLDialect.newBuilder() to construct.
   private MySQLDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class MySQLDialect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

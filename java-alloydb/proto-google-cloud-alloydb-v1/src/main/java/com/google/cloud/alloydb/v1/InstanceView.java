@@ -76,7 +76,6 @@ public enum InstanceView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSTANCE_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int INSTANCE_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public enum InstanceView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSTANCE_VIEW_BASIC = 1;</code>
    */
   public static final int INSTANCE_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

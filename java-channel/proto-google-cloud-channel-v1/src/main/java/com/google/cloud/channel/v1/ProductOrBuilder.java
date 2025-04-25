@@ -37,7 +37,6 @@ public interface ProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ProductOrBuilder
    * @return Whether the marketingInfo field is set.
    */
   boolean hasMarketingInfo();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ProductOrBuilder
    * @return The marketingInfo.
    */
   com.google.cloud.channel.v1.MarketingInfo getMarketingInfo();
-
   /**
    *
    *

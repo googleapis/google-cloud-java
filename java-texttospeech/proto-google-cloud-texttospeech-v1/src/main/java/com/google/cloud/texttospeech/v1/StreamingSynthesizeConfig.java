@@ -33,7 +33,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.StreamingSynthesizeConfig)
     StreamingSynthesizeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingSynthesizeConfig.newBuilder() to construct.
   private StreamingSynthesizeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int VOICE_FIELD_NUMBER = 1;
   private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   public boolean hasVoice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
         : voice_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
 
   public static final int STREAMING_AUDIO_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.texttospeech.v1.StreamingAudioConfig streamingAudioConfig_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   public boolean hasStreamingAudioConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
         : streamingAudioConfig_;
   }
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
 
   public static final int CUSTOM_PRONUNCIATIONS_FIELD_NUMBER = 5;
   private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   public boolean hasCustomPronunciations() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
         : customPronunciations_;
   }
-
   /**
    *
    *
@@ -464,7 +454,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -714,7 +703,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
             com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>
         voiceBuilder_;
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     public boolean hasVoice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -754,7 +741,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         return voiceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             : voice_;
       }
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder,
             com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder>
         streamingAudioConfigBuilder_;
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     public boolean hasStreamingAudioConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         return streamingAudioConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -994,7 +971,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1024,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1062,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return getStreamingAudioConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             : streamingAudioConfig_;
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1117,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
             com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>
         customPronunciationsBuilder_;
-
     /**
      *
      *
@@ -1172,7 +1142,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     public boolean hasCustomPronunciations() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1204,7 +1173,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         return customPronunciationsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1207,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1238,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1278,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1308,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1334,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return getCustomPronunciationsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1401,7 +1364,6 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             : customPronunciations_;
       }
     }
-
     /**
      *
      *

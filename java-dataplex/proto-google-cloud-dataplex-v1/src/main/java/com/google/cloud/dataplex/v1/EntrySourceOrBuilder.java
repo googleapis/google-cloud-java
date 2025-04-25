@@ -37,7 +37,6 @@ public interface EntrySourceOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface EntrySourceOrBuilder
    * @return The system.
    */
   java.lang.String getSystem();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface EntrySourceOrBuilder
    * @return The platform.
    */
   java.lang.String getPlatform();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface EntrySourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface EntrySourceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface EntrySourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -187,11 +181,9 @@ public interface EntrySourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface EntrySourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface EntrySourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface EntrySourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.EntrySource.Ancestor> getAncestorsList();
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface EntrySourceOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.EntrySource.Ancestor getAncestors(int index);
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface EntrySourceOrBuilder
    * </code>
    */
   int getAncestorsCount();
-
   /**
    *
    *
@@ -288,7 +275,6 @@ public interface EntrySourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EntrySource.AncestorOrBuilder>
       getAncestorsOrBuilderList();
-
   /**
    *
    *
@@ -315,7 +301,6 @@ public interface EntrySourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -328,7 +313,6 @@ public interface EntrySourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -355,7 +339,6 @@ public interface EntrySourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public interface EntrySourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface EntrySourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

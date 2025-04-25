@@ -37,7 +37,6 @@ public interface RatingFilterOrBuilder
    * @return Whether the minRating field is set.
    */
   boolean hasMinRating();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface RatingFilterOrBuilder
    * @return Whether the maxRating field is set.
    */
   boolean hasMaxRating();
-
   /**
    *
    *

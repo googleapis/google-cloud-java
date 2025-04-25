@@ -34,7 +34,6 @@ public interface ListRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1.Runtime runtimes = 1;</code>
    */
   java.util.List<com.google.cloud.notebooks.v1.Runtime> getRuntimesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1.Runtime runtimes = 1;</code>
    */
   com.google.cloud.notebooks.v1.Runtime getRuntimes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRuntimesResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1.Runtime runtimes = 1;</code>
    */
   int getRuntimesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRuntimesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1.RuntimeOrBuilder>
       getRuntimesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRuntimesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface ListRuntimesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface ListRuntimesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -153,7 +146,6 @@ public interface ListRuntimesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

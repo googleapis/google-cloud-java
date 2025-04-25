@@ -40,7 +40,6 @@ public interface StatusConditionOrBuilder
    */
   @java.lang.Deprecated
   int getCodeValue();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface StatusConditionOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface StatusConditionOrBuilder
    * @return The enum numeric value on the wire for canonicalCode.
    */
   int getCanonicalCodeValue();
-
   /**
    *
    *

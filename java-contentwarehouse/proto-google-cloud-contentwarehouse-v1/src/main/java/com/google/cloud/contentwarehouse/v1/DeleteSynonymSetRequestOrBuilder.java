@@ -40,7 +40,6 @@ public interface DeleteSynonymSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

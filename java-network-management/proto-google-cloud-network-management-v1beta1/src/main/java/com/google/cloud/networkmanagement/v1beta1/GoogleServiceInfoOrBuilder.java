@@ -36,7 +36,6 @@ public interface GoogleServiceInfoOrBuilder
    * @return The sourceIp.
    */
   java.lang.String getSourceIp();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface GoogleServiceInfoOrBuilder
    * @return The enum numeric value on the wire for googleServiceType.
    */
   int getGoogleServiceTypeValue();
-
   /**
    *
    *

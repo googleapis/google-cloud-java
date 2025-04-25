@@ -36,7 +36,6 @@ public interface InterconnectOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface InterconnectOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface InterconnectOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface InterconnectOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface InterconnectOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface InterconnectOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -151,11 +145,9 @@ public interface InterconnectOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface InterconnectOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface InterconnectOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -206,7 +196,6 @@ public interface InterconnectOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -236,7 +225,6 @@ public interface InterconnectOrBuilder
    * @return The enum numeric value on the wire for interconnectType.
    */
   int getInterconnectTypeValue();
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public interface InterconnectOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
-
   /**
    *
    *
@@ -292,7 +279,6 @@ public interface InterconnectOrBuilder
    * @return The deviceCloudResourceName.
    */
   java.lang.String getDeviceCloudResourceName();
-
   /**
    *
    *
@@ -320,7 +306,6 @@ public interface InterconnectOrBuilder
    * @return A list containing the physicalPorts.
    */
   java.util.List<java.lang.String> getPhysicalPortsList();
-
   /**
    *
    *
@@ -334,7 +319,6 @@ public interface InterconnectOrBuilder
    * @return The count of physicalPorts.
    */
   int getPhysicalPortsCount();
-
   /**
    *
    *
@@ -349,7 +333,6 @@ public interface InterconnectOrBuilder
    * @return The physicalPorts at the given index.
    */
   java.lang.String getPhysicalPorts(int index);
-
   /**
    *
    *

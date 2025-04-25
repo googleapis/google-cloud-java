@@ -35,7 +35,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.CssProductInput)
     CssProductInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CssProductInput.newBuilder() to construct.
   private CssProductInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object finalName_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rawProvidedId_ = "";
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -259,7 +252,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentLanguage_ = "";
-
   /**
    *
    *
@@ -285,7 +277,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +307,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object feedLabel_ = "";
-
   /**
    *
    *
@@ -344,7 +334,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +364,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   public static final int FRESHNESS_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp freshnessTime_;
-
   /**
    *
    *
@@ -411,7 +399,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
   public boolean hasFreshnessTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -449,7 +436,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : freshnessTime_;
   }
-
   /**
    *
    *
@@ -486,7 +472,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   public static final int ATTRIBUTES_FIELD_NUMBER = 7;
   private com.google.shopping.css.v1.Attributes attributes_;
-
   /**
    *
    *
@@ -502,7 +487,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
   public boolean hasAttributes() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -520,7 +504,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         ? com.google.shopping.css.v1.Attributes.getDefaultInstance()
         : attributes_;
   }
-
   /**
    *
    *
@@ -541,7 +524,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.type.CustomAttribute> customAttributes_;
-
   /**
    *
    *
@@ -560,7 +542,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
     return customAttributes_;
   }
-
   /**
    *
    *
@@ -580,7 +561,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       getCustomAttributesOrBuilderList() {
     return customAttributes_;
   }
-
   /**
    *
    *
@@ -599,7 +579,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
   public int getCustomAttributesCount() {
     return customAttributes_.size();
   }
-
   /**
    *
    *
@@ -618,7 +597,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
   public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
     return customAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -872,7 +850,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1228,7 +1205,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1256,7 +1232,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1259,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1311,7 +1285,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1307,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1336,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object finalName_ = "";
-
     /**
      *
      *
@@ -1390,7 +1361,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1416,7 +1386,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1441,7 +1410,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1430,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1457,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object rawProvidedId_ = "";
-
     /**
      *
      *
@@ -1517,7 +1483,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1544,7 +1509,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1570,7 +1534,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1555,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1583,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object contentLanguage_ = "";
-
     /**
      *
      *
@@ -1646,7 +1607,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1671,7 +1631,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1695,7 +1654,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1715,7 +1673,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1699,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object feedLabel_ = "";
-
     /**
      *
      *
@@ -1769,7 +1725,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1796,7 +1751,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1822,7 +1776,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1844,7 +1797,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1830,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         freshnessTimeBuilder_;
-
     /**
      *
      *
@@ -1913,7 +1864,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     public boolean hasFreshnessTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1954,7 +1904,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return freshnessTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1995,7 +1944,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2033,7 +1981,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2079,7 +2026,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2117,7 +2063,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2095,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getFreshnessTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2187,7 +2131,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
             : freshnessTime_;
       }
     }
-
     /**
      *
      *
@@ -2237,7 +2180,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
             com.google.shopping.css.v1.Attributes.Builder,
             com.google.shopping.css.v1.AttributesOrBuilder>
         attributesBuilder_;
-
     /**
      *
      *
@@ -2252,7 +2194,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     public boolean hasAttributes() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2273,7 +2214,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return attributesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2296,7 +2236,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2316,7 +2255,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2344,7 +2282,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2364,7 +2301,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2379,7 +2315,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getAttributesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2398,7 +2333,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
             : attributes_;
       }
     }
-
     /**
      *
      *
@@ -2463,7 +2397,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return customAttributesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2485,7 +2418,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return customAttributesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2507,7 +2439,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return customAttributesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2535,7 +2466,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2561,7 +2491,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2589,7 +2518,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2617,7 +2545,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2570,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2669,7 +2595,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2620,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2720,7 +2644,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2745,7 +2668,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2685,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
     public com.google.shopping.type.CustomAttribute.Builder getCustomAttributesBuilder(int index) {
       return getCustomAttributesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2786,7 +2707,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return customAttributesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2809,7 +2729,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(customAttributes_);
       }
     }
-
     /**
      *
      *
@@ -2828,7 +2747,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return getCustomAttributesFieldBuilder()
           .addBuilder(com.google.shopping.type.CustomAttribute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2847,7 +2765,6 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
       return getCustomAttributesFieldBuilder()
           .addBuilder(index, com.google.shopping.type.CustomAttribute.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ProgressEvent)
     ProgressEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProgressEvent.newBuilder() to construct.
   private ProgressEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TIME_OFFSET_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration timeOffset_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.Event> events_;
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.stitcher.v1.Event> getEventsList() {
     return events_;
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       getEventsOrBuilderList() {
     return events_;
   }
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
   public int getEventsCount() {
     return events_.size();
   }
-
   /**
    *
    *
@@ -191,7 +183,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.stitcher.v1.Event getEvents(int index) {
     return events_.get(index);
   }
-
   /**
    *
    *
@@ -384,7 +375,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +641,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         return timeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -820,7 +802,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
             : timeOffset_;
       }
     }
-
     /**
      *
      *
@@ -883,7 +864,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +950,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1022,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1068,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1090,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1112,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1127,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.Event.Builder getEventsBuilder(int index) {
       return getEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1178,7 +1146,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1166,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(events_);
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1182,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       return getEventsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.Event.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1233,7 +1198,6 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
       return getEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.Event.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest)
     DeleteDisplayVideo360AdvertiserLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteDisplayVideo360AdvertiserLinkRequest.newBuilder() to construct.
   private DeleteDisplayVideo360AdvertiserLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -293,7 +290,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -490,7 +486,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -516,7 +511,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -542,7 +536,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -567,7 +560,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class DeleteDisplayVideo360AdvertiserLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

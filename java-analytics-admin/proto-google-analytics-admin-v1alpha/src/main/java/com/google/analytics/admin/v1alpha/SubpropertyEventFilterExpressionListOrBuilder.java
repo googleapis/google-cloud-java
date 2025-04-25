@@ -37,7 +37,6 @@ public interface SubpropertyEventFilterExpressionListOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.SubpropertyEventFilterExpression>
       getFilterExpressionsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SubpropertyEventFilterExpressionListOrBuilder
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterExpression getFilterExpressions(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface SubpropertyEventFilterExpressionListOrBuilder
    * </code>
    */
   int getFilterExpressionsCount();
-
   /**
    *
    *
@@ -79,7 +76,6 @@ public interface SubpropertyEventFilterExpressionListOrBuilder
   java.util.List<
           ? extends com.google.analytics.admin.v1alpha.SubpropertyEventFilterExpressionOrBuilder>
       getFilterExpressionsOrBuilderList();
-
   /**
    *
    *

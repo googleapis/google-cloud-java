@@ -38,7 +38,6 @@ public interface SpannerSourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SpannerSourceOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface SpannerSourceOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface SpannerSourceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *

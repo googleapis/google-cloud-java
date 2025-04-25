@@ -33,7 +33,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.RecurringTimeWindow)
     RecurringTimeWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecurringTimeWindow.newBuilder() to construct.
   private RecurringTimeWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.cloud.edgecontainer.v1.TimeWindow window_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
   public boolean hasWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.edgecontainer.v1.TimeWindow.getDefaultInstance()
         : window_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object recurrence_ = "";
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -349,7 +343,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
             com.google.cloud.edgecontainer.v1.TimeWindow.Builder,
             com.google.cloud.edgecontainer.v1.TimeWindowOrBuilder>
         windowBuilder_;
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     public boolean hasWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
         return windowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
             : window_;
       }
     }
-
     /**
      *
      *
@@ -757,7 +741,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object recurrence_ = "";
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +789,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +812,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +831,6 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

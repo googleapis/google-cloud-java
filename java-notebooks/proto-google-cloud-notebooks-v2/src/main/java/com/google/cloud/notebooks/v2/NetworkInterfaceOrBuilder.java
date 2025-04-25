@@ -38,7 +38,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The enum numeric value on the wire for nicType.
    */
   int getNicTypeValue();
-
   /**
    *
    *

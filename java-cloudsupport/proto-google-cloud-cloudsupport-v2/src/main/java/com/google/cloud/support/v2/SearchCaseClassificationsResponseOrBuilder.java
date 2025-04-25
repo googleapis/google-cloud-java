@@ -34,7 +34,6 @@ public interface SearchCaseClassificationsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.CaseClassification case_classifications = 1;</code>
    */
   java.util.List<com.google.cloud.support.v2.CaseClassification> getCaseClassificationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchCaseClassificationsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.CaseClassification case_classifications = 1;</code>
    */
   com.google.cloud.support.v2.CaseClassification getCaseClassifications(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchCaseClassificationsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.CaseClassification case_classifications = 1;</code>
    */
   int getCaseClassificationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchCaseClassificationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.support.v2.CaseClassificationOrBuilder>
       getCaseClassificationsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface SearchCaseClassificationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

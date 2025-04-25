@@ -42,7 +42,6 @@ public interface CreateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CreateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return Whether the eventThreatDetectionCustomModule field is set.
    */
   boolean hasEventThreatDetectionCustomModule();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateEventThreatDetectionCustomModuleRequestOrBuilder
    */
   com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
       getEventThreatDetectionCustomModule();
-
   /**
    *
    *

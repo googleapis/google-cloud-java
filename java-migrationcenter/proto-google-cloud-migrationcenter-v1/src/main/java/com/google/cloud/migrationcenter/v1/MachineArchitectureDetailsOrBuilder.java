@@ -36,7 +36,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return The cpuArchitecture.
    */
   java.lang.String getCpuArchitecture();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return The cpuName.
    */
   java.lang.String getCpuName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return The vendor.
    */
   java.lang.String getVendor();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return Whether the bios field is set.
    */
   boolean hasBios();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return The bios.
    */
   com.google.cloud.migrationcenter.v1.BiosDetails getBios();
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return The enum numeric value on the wire for firmwareType.
    */
   int getFirmwareTypeValue();
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public interface MachineArchitectureDetailsOrBuilder
    * @return The enum numeric value on the wire for hyperthreading.
    */
   int getHyperthreadingValue();
-
   /**
    *
    *

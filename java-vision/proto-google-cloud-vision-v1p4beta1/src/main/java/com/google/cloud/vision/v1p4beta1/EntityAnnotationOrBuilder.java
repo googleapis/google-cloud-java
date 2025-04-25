@@ -38,7 +38,6 @@ public interface EntityAnnotationOrBuilder
    * @return The mid.
    */
   java.lang.String getMid();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface EntityAnnotationOrBuilder
    * @return The locale.
    */
   java.lang.String getLocale();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface EntityAnnotationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -171,7 +168,6 @@ public interface EntityAnnotationOrBuilder
    * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
-
   /**
    *
    *
@@ -185,7 +181,6 @@ public interface EntityAnnotationOrBuilder
    * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly();
-
   /**
    *
    *
@@ -212,7 +207,6 @@ public interface EntityAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.LocationInfo> getLocationsList();
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public interface EntityAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
   com.google.cloud.vision.v1p4beta1.LocationInfo getLocations(int index);
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public interface EntityAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public interface EntityAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.LocationInfoOrBuilder>
       getLocationsOrBuilderList();
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public interface EntityAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.Property> getPropertiesList();
-
   /**
    *
    *
@@ -297,7 +287,6 @@ public interface EntityAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
   com.google.cloud.vision.v1p4beta1.Property getProperties(int index);
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public interface EntityAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -322,7 +310,6 @@ public interface EntityAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.PropertyOrBuilder>
       getPropertiesOrBuilderList();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface GetHostProjectRegistrationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

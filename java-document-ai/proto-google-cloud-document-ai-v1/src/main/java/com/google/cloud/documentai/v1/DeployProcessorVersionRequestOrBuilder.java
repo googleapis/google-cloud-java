@@ -38,7 +38,6 @@ public interface DeployProcessorVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

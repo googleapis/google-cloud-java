@@ -47,7 +47,6 @@ public interface ListWorkflowTemplatesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface ListWorkflowTemplatesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * @return The systemInstruction.
    */
   com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent getSystemInstruction();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent>
       getContentsList();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent getContents(int index);
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * </code>
    */
   int getContentsCount();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface GenerateGroundedContentRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1beta.GroundedGenerationContentOrBuilder>
       getContentsOrBuilderList();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * @return Whether the generationSpec field is set.
    */
   boolean hasGenerationSpec();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentRequest.GenerationSpec
       getGenerationSpec();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * @return Whether the groundingSpec field is set.
    */
   boolean hasGroundingSpec();
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentRequest.GroundingSpec
       getGroundingSpec();
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 6;</code>
    */
   int getUserLabelsCount();
-
   /**
    *
    *
@@ -335,11 +323,9 @@ public interface GenerateGroundedContentRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 6;</code>
    */
   boolean containsUserLabels(java.lang.String key);
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
-
   /**
    *
    *
@@ -397,7 +382,6 @@ public interface GenerateGroundedContentRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

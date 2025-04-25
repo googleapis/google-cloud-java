@@ -41,7 +41,6 @@ public interface UpdateEndpointPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateEndpointPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateEndpointPolicyRequestOrBuilder
    * @return Whether the endpointPolicy field is set.
    */
   boolean hasEndpointPolicy();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateEndpointPolicyRequestOrBuilder
    * @return The endpointPolicy.
    */
   com.google.cloud.networkservices.v1.EndpointPolicy getEndpointPolicy();
-
   /**
    *
    *

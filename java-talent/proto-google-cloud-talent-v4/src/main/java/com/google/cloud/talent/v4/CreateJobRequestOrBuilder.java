@@ -41,7 +41,6 @@ public interface CreateJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateJobRequestOrBuilder
    * @return The job.
    */
   com.google.cloud.talent.v4.Job getJob();
-
   /**
    *
    *

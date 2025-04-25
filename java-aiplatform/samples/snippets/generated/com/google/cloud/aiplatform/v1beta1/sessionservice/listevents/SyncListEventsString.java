@@ -35,7 +35,8 @@ public class SyncListEventsString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       String parent =
-          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
+          SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+              .toString();
       for (SessionEvent element : sessionServiceClient.listEvents(parent).iterateAll()) {
         // doThingsWith(element);
       }

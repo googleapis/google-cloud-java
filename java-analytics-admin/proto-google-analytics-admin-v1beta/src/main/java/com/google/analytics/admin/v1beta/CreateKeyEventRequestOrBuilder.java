@@ -38,7 +38,6 @@ public interface CreateKeyEventRequestOrBuilder
    * @return Whether the keyEvent field is set.
    */
   boolean hasKeyEvent();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateKeyEventRequestOrBuilder
    * @return The keyEvent.
    */
   com.google.analytics.admin.v1beta.KeyEvent getKeyEvent();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface CreateKeyEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

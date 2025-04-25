@@ -33,7 +33,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Threshold)
     ThresholdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Threshold.newBuilder() to construct.
   private Threshold(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * <code>COLOR_UNSPECIFIED = 0;</code>
      */
     public static final int COLOR_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * <code>YELLOW = 4;</code>
      */
     public static final int YELLOW_VALUE = 4;
-
     /**
      *
      *
@@ -284,7 +281,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
      */
     public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -296,7 +292,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * <code>ABOVE = 1;</code>
      */
     public static final int ABOVE_VALUE = 1;
-
     /**
      *
      *
@@ -445,7 +440,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * <code>TARGET_AXIS_UNSPECIFIED = 0;</code>
      */
     public static final int TARGET_AXIS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -456,7 +450,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * <code>Y1 = 1;</code>
      */
     public static final int Y1_VALUE = 1;
-
     /**
      *
      *
@@ -555,7 +548,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object label_ = "";
-
   /**
    *
    *
@@ -579,7 +571,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -606,7 +597,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private double value_ = 0D;
-
   /**
    *
    *
@@ -626,7 +616,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COLOR_FIELD_NUMBER = 3;
   private int color_ = 0;
-
   /**
    *
    *
@@ -642,7 +631,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
   public int getColorValue() {
     return color_;
   }
-
   /**
    *
    *
@@ -665,7 +653,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECTION_FIELD_NUMBER = 4;
   private int direction_ = 0;
-
   /**
    *
    *
@@ -682,7 +669,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
   public int getDirectionValue() {
     return direction_;
   }
-
   /**
    *
    *
@@ -706,7 +692,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_AXIS_FIELD_NUMBER = 5;
   private int targetAxis_ = 0;
-
   /**
    *
    *
@@ -723,7 +708,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
   public int getTargetAxisValue() {
     return targetAxis_;
   }
-
   /**
    *
    *
@@ -953,7 +937,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1189,7 +1172,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object label_ = "";
-
     /**
      *
      *
@@ -1212,7 +1194,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1216,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1237,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1254,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1278,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double value_;
-
     /**
      *
      *
@@ -1317,7 +1294,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public double getValue() {
       return value_;
     }
-
     /**
      *
      *
@@ -1338,7 +1314,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1334,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int color_ = 0;
-
     /**
      *
      *
@@ -1375,7 +1349,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public int getColorValue() {
       return color_;
     }
-
     /**
      *
      *
@@ -1394,7 +1367,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1386,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.Threshold.Color.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1436,7 +1407,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1426,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int direction_ = 0;
-
     /**
      *
      *
@@ -1473,7 +1442,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public int getDirectionValue() {
       return direction_;
     }
-
     /**
      *
      *
@@ -1493,7 +1461,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1481,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.Threshold.Direction.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1537,7 +1503,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1523,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int targetAxis_ = 0;
-
     /**
      *
      *
@@ -1575,7 +1539,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public int getTargetAxisValue() {
       return targetAxis_;
     }
-
     /**
      *
      *
@@ -1595,7 +1558,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1616,7 +1578,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.Threshold.TargetAxis.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1639,7 +1600,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

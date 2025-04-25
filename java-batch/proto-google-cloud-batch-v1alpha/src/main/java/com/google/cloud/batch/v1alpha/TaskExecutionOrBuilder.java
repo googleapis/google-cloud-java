@@ -60,7 +60,6 @@ public interface TaskExecutionOrBuilder
    * @return The stderrSnippet.
    */
   java.lang.String getStderrSnippet();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return The registration.
    */
   java.lang.String getRegistration();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return Whether the contactSettings field is set.
    */
   boolean hasContactSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return The contactSettings.
    */
   com.google.cloud.domains.v1alpha2.ContactSettings getContactSettings();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return A list containing the contactNotices.
    */
   java.util.List<com.google.cloud.domains.v1alpha2.ContactNotice> getContactNoticesList();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return The count of contactNotices.
    */
   int getContactNoticesCount();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return The contactNotices at the given index.
    */
   com.google.cloud.domains.v1alpha2.ContactNotice getContactNotices(int index);
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface ConfigureContactSettingsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for contactNotices.
    */
   java.util.List<java.lang.Integer> getContactNoticesValueList();
-
   /**
    *
    *

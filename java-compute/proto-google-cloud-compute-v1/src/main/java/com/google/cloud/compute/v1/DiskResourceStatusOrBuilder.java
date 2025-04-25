@@ -32,7 +32,6 @@ public interface DiskResourceStatusOrBuilder
    * @return Whether the asyncPrimaryDisk field is set.
    */
   boolean hasAsyncPrimaryDisk();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -41,7 +40,6 @@ public interface DiskResourceStatusOrBuilder
    * @return The asyncPrimaryDisk.
    */
   com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus getAsyncPrimaryDisk();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -62,7 +60,6 @@ public interface DiskResourceStatusOrBuilder
    * </code>
    */
   int getAsyncSecondaryDisksCount();
-
   /**
    *
    *
@@ -75,13 +72,11 @@ public interface DiskResourceStatusOrBuilder
    * </code>
    */
   boolean containsAsyncSecondaryDisks(java.lang.String key);
-
   /** Use {@link #getAsyncSecondaryDisksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus>
       getAsyncSecondaryDisks();
-
   /**
    *
    *
@@ -96,7 +91,6 @@ public interface DiskResourceStatusOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus>
       getAsyncSecondaryDisksMap();
-
   /**
    *
    *
@@ -114,7 +108,6 @@ public interface DiskResourceStatusOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus defaultValue);
-
   /**
    *
    *

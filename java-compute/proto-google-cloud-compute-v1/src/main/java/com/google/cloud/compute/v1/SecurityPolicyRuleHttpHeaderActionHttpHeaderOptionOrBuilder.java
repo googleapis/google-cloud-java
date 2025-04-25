@@ -36,7 +36,6 @@ public interface SecurityPolicyRuleHttpHeaderActionHttpHeaderOptionOrBuilder
    * @return Whether the headerName field is set.
    */
   boolean hasHeaderName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SecurityPolicyRuleHttpHeaderActionHttpHeaderOptionOrBuilder
    * @return The headerName.
    */
   java.lang.String getHeaderName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SecurityPolicyRuleHttpHeaderActionHttpHeaderOptionOrBuilder
    * @return Whether the headerValue field is set.
    */
   boolean hasHeaderValue();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SecurityPolicyRuleHttpHeaderActionHttpHeaderOptionOrBuilder
    * @return The headerValue.
    */
   java.lang.String getHeaderValue();
-
   /**
    *
    *

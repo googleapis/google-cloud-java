@@ -35,7 +35,6 @@ public interface SearchOrganizationsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Organization organizations = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.Organization> getOrganizationsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SearchOrganizationsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Organization organizations = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.Organization getOrganizations(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SearchOrganizationsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.Organization organizations = 1;</code>
    */
   int getOrganizationsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SearchOrganizationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.OrganizationOrBuilder>
       getOrganizationsOrBuilderList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface SearchOrganizationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

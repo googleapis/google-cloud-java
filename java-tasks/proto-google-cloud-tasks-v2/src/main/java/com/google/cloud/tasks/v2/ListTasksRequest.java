@@ -34,7 +34,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2.ListTasksRequest)
     ListTasksRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTasksRequest.newBuilder() to construct.
   private ListTasksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 2;
   private int responseView_ = 0;
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
   public int getResponseViewValue() {
     return responseView_;
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -466,7 +458,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +683,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -718,7 +708,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -744,7 +733,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -769,7 +757,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int responseView_ = 0;
-
     /**
      *
      *
@@ -845,7 +830,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     public int getResponseViewValue() {
       return responseView_;
     }
-
     /**
      *
      *
@@ -875,7 +859,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +887,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
           com.google.cloud.tasks.v2.Task.View.forNumber(responseView_);
       return result == null ? com.google.cloud.tasks.v2.Task.View.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -991,7 +971,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1018,7 +997,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1076,7 +1053,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1107,7 +1083,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1137,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

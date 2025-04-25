@@ -36,7 +36,6 @@ public interface MessageItemOrBuilder
    * @return The enum numeric value on the wire for messageType.
    */
   int getMessageTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MessageItemOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

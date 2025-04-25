@@ -39,7 +39,6 @@ public interface ContainerdConfigOrBuilder
    * @return Whether the privateRegistryAccessConfig field is set.
    */
   boolean hasPrivateRegistryAccessConfig();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface ContainerdConfigOrBuilder
    */
   com.google.container.v1beta1.ContainerdConfig.PrivateRegistryAccessConfig
       getPrivateRegistryAccessConfig();
-
   /**
    *
    *

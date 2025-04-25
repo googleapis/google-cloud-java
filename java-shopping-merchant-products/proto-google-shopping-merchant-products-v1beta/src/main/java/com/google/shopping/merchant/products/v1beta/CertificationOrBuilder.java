@@ -37,7 +37,6 @@ public interface CertificationOrBuilder
    * @return Whether the certificationAuthority field is set.
    */
   boolean hasCertificationAuthority();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CertificationOrBuilder
    * @return The certificationAuthority.
    */
   java.lang.String getCertificationAuthority();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CertificationOrBuilder
    * @return Whether the certificationName field is set.
    */
   boolean hasCertificationName();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface CertificationOrBuilder
    * @return The certificationName.
    */
   java.lang.String getCertificationName();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface CertificationOrBuilder
    * @return Whether the certificationCode field is set.
    */
   boolean hasCertificationCode();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface CertificationOrBuilder
    * @return The certificationCode.
    */
   java.lang.String getCertificationCode();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface CertificationOrBuilder
    * @return Whether the certificationValue field is set.
    */
   boolean hasCertificationValue();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface CertificationOrBuilder
    * @return The certificationValue.
    */
   java.lang.String getCertificationValue();
-
   /**
    *
    *

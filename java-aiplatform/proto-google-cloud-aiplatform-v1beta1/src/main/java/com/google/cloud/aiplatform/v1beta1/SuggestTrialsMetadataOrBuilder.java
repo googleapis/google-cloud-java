@@ -36,7 +36,6 @@ public interface SuggestTrialsMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SuggestTrialsMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SuggestTrialsMetadataOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
-
   /**
    *
    *

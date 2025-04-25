@@ -92,7 +92,6 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int NOTIFICATION_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY = 1;</code>
    */
   public static final int NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY_VALUE = 1;
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_TYPE_SENSITIVE_ACTIONS = 2;</code>
    */
   public static final int NOTIFICATION_TYPE_SENSITIVE_ACTIONS_VALUE = 2;
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public enum NotificationType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_TYPE_SECURITY_MSA = 3;</code>
    */
   public static final int NOTIFICATION_TYPE_SECURITY_MSA_VALUE = 3;
-
   /**
    *
    *

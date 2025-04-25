@@ -39,7 +39,6 @@ public interface DeleteDeviceRegistryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

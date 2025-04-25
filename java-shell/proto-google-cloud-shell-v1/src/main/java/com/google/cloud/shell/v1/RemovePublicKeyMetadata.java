@@ -34,7 +34,6 @@ public final class RemovePublicKeyMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.RemovePublicKeyMetadata)
     RemovePublicKeyMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemovePublicKeyMetadata.newBuilder() to construct.
   private RemovePublicKeyMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class RemovePublicKeyMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

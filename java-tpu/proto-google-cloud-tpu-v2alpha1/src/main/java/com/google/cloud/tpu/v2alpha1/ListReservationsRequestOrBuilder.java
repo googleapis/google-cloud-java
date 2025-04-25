@@ -38,7 +38,6 @@ public interface ListReservationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ListReservationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

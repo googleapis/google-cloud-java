@@ -74,7 +74,6 @@ public enum TransferType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRANSFER_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TRANSFER_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public enum TransferType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BATCH = 1;</code>
    */
   public static final int BATCH_VALUE = 1;
-
   /**
    *
    *

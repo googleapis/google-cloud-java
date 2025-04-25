@@ -33,7 +33,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.NamespacedNames)
     NamespacedNamesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NamespacedNames.newBuilder() to construct.
   private NamespacedNames(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> namespacedNames_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> getNamespacedNamesList() {
     return namespacedNames_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       getNamespacedNamesOrBuilderList() {
     return namespacedNames_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
   public int getNamespacedNamesCount() {
     return namespacedNames_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.gkebackup.v1.NamespacedName getNamespacedNames(int index) {
     return namespacedNames_.get(index);
   }
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
         return namespacedNamesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
         return namespacedNamesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
         return namespacedNamesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +766,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getNamespacedNamesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
         return namespacedNamesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(namespacedNames_);
       }
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       return getNamespacedNamesFieldBuilder()
           .addBuilder(com.google.cloud.gkebackup.v1.NamespacedName.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       return getNamespacedNamesFieldBuilder()
           .addBuilder(index, com.google.cloud.gkebackup.v1.NamespacedName.getDefaultInstance());
     }
-
     /**
      *
      *

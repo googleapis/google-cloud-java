@@ -33,7 +33,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ListIngressRulesResponse)
     ListIngressRulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListIngressRulesResponse.newBuilder() to construct.
   private ListIngressRulesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.firewall.FirewallRule> ingressRules_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.appengine.v1.firewall.FirewallRule> getIngressRulesList() {
     return ingressRules_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       getIngressRulesOrBuilderList() {
     return ingressRules_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
   public int getIngressRulesCount() {
     return ingressRules_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
   public com.google.appengine.v1.firewall.FirewallRule getIngressRules(int index) {
     return ingressRules_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return ingressRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return ingressRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return ingressRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
     public com.google.appengine.v1.firewall.FirewallRule.Builder getIngressRulesBuilder(int index) {
       return getIngressRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return ingressRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(ingressRules_);
       }
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       return getIngressRulesFieldBuilder()
           .addBuilder(com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       return getIngressRulesFieldBuilder()
           .addBuilder(index, com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -980,7 +954,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1019,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1036,6 @@ public final class ListIngressRulesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

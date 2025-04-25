@@ -33,7 +33,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse)
     SearchEvaluationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchEvaluationsResponse.newBuilder() to construct.
   private SearchEvaluationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.Evaluation> evaluations_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Evaluation> getEvaluationsList() {
     return evaluations_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       getEvaluationsOrBuilderList() {
     return evaluations_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
   public int getEvaluationsCount() {
     return evaluations_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
   public com.google.cloud.datalabeling.v1beta1.Evaluation getEvaluations(int index) {
     return evaluations_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return evaluationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return evaluationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return evaluationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         int index) {
       return getEvaluationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -910,7 +888,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return evaluationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(evaluations_);
       }
     }
-
     /**
      *
      *
@@ -942,7 +918,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       return getEvaluationsFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.Evaluation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -957,7 +932,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       return getEvaluationsFieldBuilder()
           .addBuilder(index, com.google.cloud.datalabeling.v1beta1.Evaluation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -990,7 +964,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1013,7 +986,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1008,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1029,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1046,6 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

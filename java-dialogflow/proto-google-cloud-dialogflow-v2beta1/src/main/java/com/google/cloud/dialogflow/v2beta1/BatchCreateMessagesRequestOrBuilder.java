@@ -40,7 +40,6 @@ public interface BatchCreateMessagesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface BatchCreateMessagesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.CreateMessageRequest> getRequestsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface BatchCreateMessagesRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.CreateMessageRequest getRequests(int index);
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface BatchCreateMessagesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface BatchCreateMessagesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.CreateMessageRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

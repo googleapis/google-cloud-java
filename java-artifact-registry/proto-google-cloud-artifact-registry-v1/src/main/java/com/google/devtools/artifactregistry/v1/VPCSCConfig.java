@@ -33,7 +33,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.VPCSCConfig)
     VPCSCConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VPCSCConfig.newBuilder() to construct.
   private VPCSCConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,7 +123,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>VPCSC_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int VPCSC_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -136,7 +134,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DENY = 1;</code>
      */
     public static final int DENY_VALUE = 1;
-
     /**
      *
      *
@@ -238,7 +235,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -268,7 +264,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -301,7 +296,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VPCSC_POLICY_FIELD_NUMBER = 2;
   private int vpcscPolicy_ = 0;
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
   public int getVpcscPolicyValue() {
     return vpcscPolicy_;
   }
-
   /**
    *
    *
@@ -512,7 +505,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -710,7 +702,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -739,7 +730,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -768,7 +758,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +785,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +808,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +838,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vpcscPolicy_ = 0;
-
     /**
      *
      *
@@ -868,7 +854,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
     public int getVpcscPolicyValue() {
       return vpcscPolicy_;
     }
-
     /**
      *
      *
@@ -888,7 +873,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +893,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.artifactregistry.v1.VPCSCConfig.VPCSCPolicy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -933,7 +916,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

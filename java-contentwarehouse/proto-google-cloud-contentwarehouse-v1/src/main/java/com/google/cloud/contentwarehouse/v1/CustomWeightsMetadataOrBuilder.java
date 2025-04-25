@@ -38,7 +38,6 @@ public interface CustomWeightsMetadataOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty>
       getWeightedSchemaPropertiesList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CustomWeightsMetadataOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty getWeightedSchemaProperties(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface CustomWeightsMetadataOrBuilder
    * </code>
    */
   int getWeightedSchemaPropertiesCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface CustomWeightsMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.WeightedSchemaPropertyOrBuilder>
       getWeightedSchemaPropertiesOrBuilderList();
-
   /**
    *
    *

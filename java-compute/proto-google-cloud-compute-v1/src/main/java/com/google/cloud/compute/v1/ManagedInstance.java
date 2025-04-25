@@ -33,7 +33,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ManagedInstance)
     ManagedInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManagedInstance.newBuilder() to construct.
   private ManagedInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_CURRENT_ACTION = 0;</code>
      */
     public static final int UNDEFINED_CURRENT_ACTION_VALUE = 0;
-
     /**
      *
      *
@@ -225,7 +223,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>ABANDONING = 388244813;</code>
      */
     public static final int ABANDONING_VALUE = 388244813;
-
     /**
      *
      *
@@ -236,7 +233,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>CREATING = 455564985;</code>
      */
     public static final int CREATING_VALUE = 455564985;
-
     /**
      *
      *
@@ -247,7 +243,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
      */
     public static final int CREATING_WITHOUT_RETRIES_VALUE = 428843785;
-
     /**
      *
      *
@@ -258,7 +253,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>DELETING = 528602024;</code>
      */
     public static final int DELETING_VALUE = 528602024;
-
     /**
      *
      *
@@ -269,7 +263,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>NONE = 2402104;</code>
      */
     public static final int NONE_VALUE = 2402104;
-
     /**
      *
      *
@@ -280,7 +273,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>RECREATING = 287278572;</code>
      */
     public static final int RECREATING_VALUE = 287278572;
-
     /**
      *
      *
@@ -291,7 +283,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>REFRESHING = 163266343;</code>
      */
     public static final int REFRESHING_VALUE = 163266343;
-
     /**
      *
      *
@@ -302,7 +293,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>RESTARTING = 320534387;</code>
      */
     public static final int RESTARTING_VALUE = 320534387;
-
     /**
      *
      *
@@ -313,7 +303,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>RESUMING = 446856618;</code>
      */
     public static final int RESUMING_VALUE = 446856618;
-
     /**
      *
      *
@@ -324,7 +313,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>STARTING = 488820800;</code>
      */
     public static final int STARTING_VALUE = 488820800;
-
     /**
      *
      *
@@ -557,7 +545,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_INSTANCE_STATUS = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -568,7 +555,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>DEPROVISIONING = 428935662;</code>
      */
     public static final int DEPROVISIONING_VALUE = 428935662;
-
     /**
      *
      *
@@ -579,7 +565,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>PROVISIONING = 290896621;</code>
      */
     public static final int PROVISIONING_VALUE = 290896621;
-
     /**
      *
      *
@@ -590,7 +575,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>REPAIRING = 413483285;</code>
      */
     public static final int REPAIRING_VALUE = 413483285;
-
     /**
      *
      *
@@ -601,7 +585,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>RUNNING = 121282975;</code>
      */
     public static final int RUNNING_VALUE = 121282975;
-
     /**
      *
      *
@@ -612,7 +595,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>STAGING = 431072283;</code>
      */
     public static final int STAGING_VALUE = 431072283;
-
     /**
      *
      *
@@ -623,10 +605,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>STOPPED = 444276141;</code>
      */
     public static final int STOPPED_VALUE = 444276141;
-
     /** <code>STOPPING = 350791796;</code> */
     public static final int STOPPING_VALUE = 350791796;
-
     /**
      *
      *
@@ -637,10 +617,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>SUSPENDED = 51223995;</code>
      */
     public static final int SUSPENDED_VALUE = 51223995;
-
     /** <code>SUSPENDING = 514206246;</code> */
     public static final int SUSPENDING_VALUE = 514206246;
-
     /**
      *
      *
@@ -756,7 +734,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currentAction_ = "";
-
   /**
    *
    *
@@ -773,7 +750,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasCurrentAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -798,7 +774,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -826,7 +801,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -842,7 +816,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -863,7 +836,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -879,7 +851,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -903,7 +874,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -932,7 +902,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth> instanceHealth_;
-
   /**
    *
    *
@@ -949,7 +918,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       getInstanceHealthList() {
     return instanceHealth_;
   }
-
   /**
    *
    *
@@ -967,7 +935,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       getInstanceHealthOrBuilderList() {
     return instanceHealth_;
   }
-
   /**
    *
    *
@@ -983,7 +950,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public int getInstanceHealthCount() {
     return instanceHealth_.size();
   }
-
   /**
    *
    *
@@ -999,7 +965,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth getInstanceHealth(int index) {
     return instanceHealth_.get(index);
   }
-
   /**
    *
    *
@@ -1021,7 +986,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceStatus_ = "";
-
   /**
    *
    *
@@ -1038,7 +1002,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasInstanceStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1063,7 +1026,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -1091,7 +1053,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   public static final int LAST_ATTEMPT_FIELD_NUMBER = 434771492;
   private com.google.cloud.compute.v1.ManagedInstanceLastAttempt lastAttempt_;
-
   /**
    *
    *
@@ -1108,7 +1069,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasLastAttempt() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1127,7 +1087,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.ManagedInstanceLastAttempt.getDefaultInstance()
         : lastAttempt_;
   }
-
   /**
    *
    *
@@ -1149,7 +1108,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1165,7 +1123,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1189,7 +1146,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -1216,7 +1172,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRESERVED_STATE_FROM_CONFIG_FIELD_NUMBER = 98661858;
   private com.google.cloud.compute.v1.PreservedState preservedStateFromConfig_;
-
   /**
    *
    *
@@ -1233,7 +1188,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasPreservedStateFromConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1252,7 +1206,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.PreservedState.getDefaultInstance()
         : preservedStateFromConfig_;
   }
-
   /**
    *
    *
@@ -1273,7 +1226,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRESERVED_STATE_FROM_POLICY_FIELD_NUMBER = 470783954;
   private com.google.cloud.compute.v1.PreservedState preservedStateFromPolicy_;
-
   /**
    *
    *
@@ -1290,7 +1242,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasPreservedStateFromPolicy() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1309,7 +1260,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.PreservedState.getDefaultInstance()
         : preservedStateFromPolicy_;
   }
-
   /**
    *
    *
@@ -1331,7 +1281,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public static final int PROPERTIES_FROM_FLEXIBILITY_POLICY_FIELD_NUMBER = 155525825;
   private com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
       propertiesFromFlexibilityPolicy_;
-
   /**
    *
    *
@@ -1349,7 +1298,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasPropertiesFromFlexibilityPolicy() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1371,7 +1319,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance()
         : propertiesFromFlexibilityPolicy_;
   }
-
   /**
    *
    *
@@ -1394,7 +1341,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
-
   /**
    *
    *
@@ -1410,7 +1356,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1428,7 +1373,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()
         : version_;
   }
-
   /**
    *
    *
@@ -1756,7 +1700,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2184,7 +2127,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object currentAction_ = "";
-
     /**
      *
      *
@@ -2200,7 +2142,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasCurrentAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2224,7 +2165,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2248,7 +2188,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2271,7 +2210,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2228,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2316,7 +2253,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2332,7 +2268,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2348,7 +2283,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2368,7 +2302,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2388,7 +2321,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -2403,7 +2335,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2426,7 +2357,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2449,7 +2379,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2471,7 +2400,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2489,7 +2417,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2477,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return instanceHealthBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2569,7 +2495,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return instanceHealthBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2588,7 +2513,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return instanceHealthBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2614,7 +2538,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2638,7 +2561,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2664,7 +2586,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2690,7 +2611,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2713,7 +2633,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2737,7 +2656,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2761,7 +2679,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2783,7 +2700,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2721,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2736,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         getInstanceHealthBuilder(int index) {
       return getInstanceHealthFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2841,7 +2755,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return instanceHealthBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2862,7 +2775,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(instanceHealth_);
       }
     }
-
     /**
      *
      *
@@ -2880,7 +2792,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2899,7 +2810,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2937,7 +2847,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object instanceStatus_ = "";
-
     /**
      *
      *
@@ -2953,7 +2862,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasInstanceStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2977,7 +2885,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3001,7 +2908,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3024,7 +2930,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3043,7 +2948,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3074,7 +2978,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.ManagedInstanceLastAttempt.Builder,
             com.google.cloud.compute.v1.ManagedInstanceLastAttemptOrBuilder>
         lastAttemptBuilder_;
-
     /**
      *
      *
@@ -3090,7 +2993,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasLastAttempt() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3112,7 +3014,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return lastAttemptBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3136,7 +3037,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3158,7 +3058,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3188,7 +3087,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3209,7 +3107,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3225,7 +3122,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLastAttemptFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3246,7 +3142,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             : lastAttempt_;
       }
     }
-
     /**
      *
      *
@@ -3275,7 +3170,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3290,7 +3184,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasName() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3313,7 +3206,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3336,7 +3228,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3358,7 +3249,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3376,7 +3266,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3406,7 +3295,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.PreservedState.Builder,
             com.google.cloud.compute.v1.PreservedStateOrBuilder>
         preservedStateFromConfigBuilder_;
-
     /**
      *
      *
@@ -3423,7 +3311,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasPreservedStateFromConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3446,7 +3333,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return preservedStateFromConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3471,7 +3357,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3494,7 +3379,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3525,7 +3409,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3547,7 +3430,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3564,7 +3446,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPreservedStateFromConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3586,7 +3467,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             : preservedStateFromConfig_;
       }
     }
-
     /**
      *
      *
@@ -3621,7 +3501,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.PreservedState.Builder,
             com.google.cloud.compute.v1.PreservedStateOrBuilder>
         preservedStateFromPolicyBuilder_;
-
     /**
      *
      *
@@ -3638,7 +3517,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasPreservedStateFromPolicy() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3661,7 +3539,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return preservedStateFromPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3686,7 +3563,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3709,7 +3585,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3740,7 +3615,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3762,7 +3636,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3779,7 +3652,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPreservedStateFromPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3801,7 +3673,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             : preservedStateFromPolicy_;
       }
     }
-
     /**
      *
      *
@@ -3837,7 +3708,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy.Builder,
             com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder>
         propertiesFromFlexibilityPolicyBuilder_;
-
     /**
      *
      *
@@ -3854,7 +3724,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasPropertiesFromFlexibilityPolicy() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3879,7 +3748,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return propertiesFromFlexibilityPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3905,7 +3773,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3929,7 +3796,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3962,7 +3828,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3984,7 +3849,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4002,7 +3866,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPropertiesFromFlexibilityPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4025,7 +3888,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             : propertiesFromFlexibilityPolicy_;
       }
     }
-
     /**
      *
      *
@@ -4061,7 +3923,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.ManagedInstanceVersion.Builder,
             com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder>
         versionBuilder_;
-
     /**
      *
      *
@@ -4076,7 +3937,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4097,7 +3957,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         return versionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4120,7 +3979,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4141,7 +3999,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4170,7 +4027,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4190,7 +4046,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4205,7 +4060,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4224,7 +4078,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             : version_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface BatchSearchLinkProcessesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.ProcessLinks process_links = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.ProcessLinks> getProcessLinksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchSearchLinkProcessesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.ProcessLinks process_links = 1;</code>
    */
   com.google.cloud.datacatalog.lineage.v1.ProcessLinks getProcessLinks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchSearchLinkProcessesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.ProcessLinks process_links = 1;</code>
    */
   int getProcessLinksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchSearchLinkProcessesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.ProcessLinksOrBuilder>
       getProcessLinksOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface BatchSearchLinkProcessesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

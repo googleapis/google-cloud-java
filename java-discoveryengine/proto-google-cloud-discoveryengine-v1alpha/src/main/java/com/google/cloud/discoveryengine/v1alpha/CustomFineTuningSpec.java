@@ -33,7 +33,6 @@ public final class CustomFineTuningSpec extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec)
     CustomFineTuningSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomFineTuningSpec.newBuilder() to construct.
   private CustomFineTuningSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class CustomFineTuningSpec extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_SEARCH_ADAPTOR_FIELD_NUMBER = 1;
   private boolean enableSearchAdaptor_ = false;
-
   /**
    *
    *
@@ -242,7 +240,6 @@ public final class CustomFineTuningSpec extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -428,7 +425,6 @@ public final class CustomFineTuningSpec extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enableSearchAdaptor_;
-
     /**
      *
      *
@@ -445,7 +441,6 @@ public final class CustomFineTuningSpec extends com.google.protobuf.GeneratedMes
     public boolean getEnableSearchAdaptor() {
       return enableSearchAdaptor_;
     }
-
     /**
      *
      *
@@ -466,7 +461,6 @@ public final class CustomFineTuningSpec extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListReasoningEnginesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine reasoning_engines = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ReasoningEngine> getReasoningEnginesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReasoningEnginesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine reasoning_engines = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ReasoningEngine getReasoningEngines(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReasoningEnginesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine reasoning_engines = 1;</code>
    */
   int getReasoningEnginesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListReasoningEnginesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ReasoningEngineOrBuilder>
       getReasoningEnginesOrBuilderList();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface ListReasoningEnginesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface InsertNodeTemplateRequestOrBuilder
    * @return Whether the nodeTemplateResource field is set.
    */
   boolean hasNodeTemplateResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertNodeTemplateRequestOrBuilder
    * @return The nodeTemplateResource.
    */
   com.google.cloud.compute.v1.NodeTemplate getNodeTemplateResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertNodeTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InsertNodeTemplateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InsertNodeTemplateRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface InsertNodeTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

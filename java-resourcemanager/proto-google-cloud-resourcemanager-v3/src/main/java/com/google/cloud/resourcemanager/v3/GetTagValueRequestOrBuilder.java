@@ -39,7 +39,6 @@ public interface GetTagValueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

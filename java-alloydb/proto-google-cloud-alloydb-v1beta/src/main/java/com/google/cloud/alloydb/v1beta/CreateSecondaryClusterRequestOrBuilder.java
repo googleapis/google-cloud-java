@@ -39,7 +39,6 @@ public interface CreateSecondaryClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateSecondaryClusterRequestOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateSecondaryClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateSecondaryClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.cloud.alloydb.v1beta.Cluster getCluster();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface CreateSecondaryClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

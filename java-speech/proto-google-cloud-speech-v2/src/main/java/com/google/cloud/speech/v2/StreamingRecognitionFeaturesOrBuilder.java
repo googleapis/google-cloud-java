@@ -69,7 +69,6 @@ public interface StreamingRecognitionFeaturesOrBuilder
    * @return Whether the voiceActivityTimeout field is set.
    */
   boolean hasVoiceActivityTimeout();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface StreamingRecognitionFeaturesOrBuilder
    */
   com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout
       getVoiceActivityTimeout();
-
   /**
    *
    *

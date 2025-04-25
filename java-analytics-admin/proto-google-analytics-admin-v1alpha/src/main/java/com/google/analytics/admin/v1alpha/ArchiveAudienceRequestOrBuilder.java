@@ -38,7 +38,6 @@ public interface ArchiveAudienceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return The reservation.
    */
   java.lang.String getReservation();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return Whether the reservationsResizeRequestResource field is set.
    */
   boolean hasReservationsResizeRequestResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return The reservationsResizeRequestResource.
    */
   com.google.cloud.compute.v1.ReservationsResizeRequest getReservationsResizeRequestResource();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface ResizeReservationRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

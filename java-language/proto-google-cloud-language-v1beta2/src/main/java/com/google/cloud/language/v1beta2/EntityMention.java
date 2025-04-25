@@ -34,7 +34,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.EntityMention)
     EntityMentionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EntityMention.newBuilder() to construct.
   private EntityMention(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNKNOWN = 0;</code>
      */
     public static final int TYPE_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPER = 1;</code>
      */
     public static final int PROPER_VALUE = 1;
-
     /**
      *
      *
@@ -227,7 +224,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TEXT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1beta2.TextSpan text_;
-
   /**
    *
    *
@@ -243,7 +239,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -259,7 +254,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.language.v1beta2.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1beta2.TextSpan.getDefaultInstance() : text_;
   }
-
   /**
    *
    *
@@ -276,7 +270,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -292,7 +285,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -315,7 +307,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SENTIMENT_FIELD_NUMBER = 3;
   private com.google.cloud.language.v1beta2.Sentiment sentiment_;
-
   /**
    *
    *
@@ -334,7 +325,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSentiment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -355,7 +345,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
         : sentiment_;
   }
-
   /**
    *
    *
@@ -562,7 +551,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -799,7 +787,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.language.v1beta2.TextSpan.Builder,
             com.google.cloud.language.v1beta2.TextSpanOrBuilder>
         textBuilder_;
-
     /**
      *
      *
@@ -814,7 +801,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -835,7 +821,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
         return textBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -858,7 +843,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +862,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +908,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +922,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -960,7 +940,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
             : text_;
       }
     }
-
     /**
      *
      *
@@ -988,7 +967,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1004,7 +982,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.EntityMention.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1065,7 +1040,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.language.v1beta2.Sentiment.Builder,
             com.google.cloud.language.v1beta2.SentimentOrBuilder>
         sentimentBuilder_;
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSentiment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
         return sentimentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1158,7 +1129,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1152,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1182,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1204,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1221,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSentimentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1276,7 +1242,6 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
             : sentiment_;
       }
     }
-
     /**
      *
      *

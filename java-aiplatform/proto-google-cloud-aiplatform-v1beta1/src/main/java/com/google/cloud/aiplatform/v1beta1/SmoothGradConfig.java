@@ -38,7 +38,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SmoothGradConfig)
     SmoothGradConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SmoothGradConfig.newBuilder() to construct.
   private SmoothGradConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     private GradientNoiseSigmaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NOISE_SIGMA_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasNoiseSigma() {
     return gradientNoiseSigmaCase_ == 1;
   }
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FEATURE_NOISE_SIGMA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasFeatureNoiseSigma() {
     return gradientNoiseSigmaCase_ == 2;
   }
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -256,7 +249,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int NOISY_SAMPLE_COUNT_FIELD_NUMBER = 3;
   private int noisySampleCount_ = 0;
-
   /**
    *
    *
@@ -476,7 +468,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -746,7 +737,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasNoiseSigma() {
       return gradientNoiseSigmaCase_ == 1;
     }
-
     /**
      *
      *
@@ -776,7 +766,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       }
       return 0F;
     }
-
     /**
      *
      *
@@ -808,7 +797,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +834,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigmaOrBuilder>
         featureNoiseSigmaBuilder_;
-
     /**
      *
      *
@@ -869,7 +856,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasFeatureNoiseSigma() {
       return gradientNoiseSigmaCase_ == 2;
     }
-
     /**
      *
      *
@@ -902,7 +888,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -933,7 +918,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       gradientNoiseSigmaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +945,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       gradientNoiseSigmaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +986,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       gradientNoiseSigmaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1018,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1038,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
         getFeatureNoiseSigmaBuilder() {
       return getFeatureNoiseSigmaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1086,7 +1066,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1108,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int noisySampleCount_;
-
     /**
      *
      *
@@ -1148,7 +1126,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
     public int getNoisySampleCount() {
       return noisySampleCount_;
     }
-
     /**
      *
      *
@@ -1171,7 +1148,6 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

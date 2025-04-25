@@ -33,7 +33,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CompleteQueryRequest)
     CompleteQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompleteQueryRequest.newBuilder() to construct.
   private CompleteQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalog_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object visitorId_ = "";
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languageCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -283,7 +275,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
   }
-
   /**
    *
    *
@@ -306,7 +297,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   public int getLanguageCodesCount() {
     return languageCodes_.size();
   }
-
   /**
    *
    *
@@ -330,7 +320,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
   }
-
   /**
    *
    *
@@ -359,7 +348,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceType_ = "";
-
   /**
    *
    *
@@ -398,7 +386,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -442,7 +429,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -478,7 +464,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -517,7 +502,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MAX_SUGGESTIONS_FIELD_NUMBER = 5;
   private int maxSuggestions_ = 0;
-
   /**
    *
    *
@@ -541,7 +525,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_ATTRIBUTE_SUGGESTIONS_FIELD_NUMBER = 9;
   private boolean enableAttributeSuggestions_ = false;
-
   /**
    *
    *
@@ -564,7 +547,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entity_ = "";
-
   /**
    *
    *
@@ -593,7 +575,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -861,7 +842,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1169,7 +1149,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object catalog_ = "";
-
     /**
      *
      *
@@ -1197,7 +1176,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1225,7 +1203,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1229,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1251,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1280,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -1330,7 +1304,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1355,7 +1328,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1379,7 +1351,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1370,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1396,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object visitorId_ = "";
-
     /**
      *
      *
@@ -1455,7 +1424,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1484,7 +1452,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1479,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1536,7 +1502,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1575,7 +1540,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1599,7 +1563,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       languageCodes_.makeImmutable();
       return languageCodes_;
     }
-
     /**
      *
      *
@@ -1622,7 +1585,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public int getLanguageCodesCount() {
       return languageCodes_.size();
     }
-
     /**
      *
      *
@@ -1646,7 +1608,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
     }
-
     /**
      *
      *
@@ -1670,7 +1631,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1702,7 +1662,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1733,7 +1692,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1719,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1745,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1778,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object deviceType_ = "";
-
     /**
      *
      *
@@ -1860,7 +1815,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1898,7 +1852,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1935,7 +1888,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1920,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2008,7 +1959,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -2043,7 +1993,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2078,7 +2027,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2112,7 +2060,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2142,7 +2089,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2179,7 +2125,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int maxSuggestions_;
-
     /**
      *
      *
@@ -2200,7 +2145,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public int getMaxSuggestions() {
       return maxSuggestions_;
     }
-
     /**
      *
      *
@@ -2225,7 +2169,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2250,7 +2193,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean enableAttributeSuggestions_;
-
     /**
      *
      *
@@ -2268,7 +2210,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public boolean getEnableAttributeSuggestions() {
       return enableAttributeSuggestions_;
     }
-
     /**
      *
      *
@@ -2290,7 +2231,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2312,7 +2252,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object entity_ = "";
-
     /**
      *
      *
@@ -2340,7 +2279,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2368,7 +2306,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2395,7 +2332,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2418,7 +2354,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

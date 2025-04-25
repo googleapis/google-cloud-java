@@ -39,7 +39,6 @@ public interface UndeleteServiceAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

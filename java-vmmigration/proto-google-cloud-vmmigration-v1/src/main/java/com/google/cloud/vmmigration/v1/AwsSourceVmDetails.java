@@ -33,7 +33,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.AwsSourceVmDetails)
     AwsSourceVmDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsSourceVmDetails.newBuilder() to construct.
   private AwsSourceVmDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      * <code>FIRMWARE_UNSPECIFIED = 0;</code>
      */
     public static final int FIRMWARE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      * <code>EFI = 1;</code>
      */
     public static final int EFI_VALUE = 1;
-
     /**
      *
      *
@@ -227,7 +224,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int FIRMWARE_FIELD_NUMBER = 1;
   private int firmware_ = 0;
-
   /**
    *
    *
@@ -243,7 +239,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
   public int getFirmwareValue() {
     return firmware_;
   }
-
   /**
    *
    *
@@ -266,7 +261,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int COMMITTED_STORAGE_BYTES_FIELD_NUMBER = 2;
   private long committedStorageBytes_ = 0L;
-
   /**
    *
    *
@@ -455,7 +449,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +644,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int firmware_ = 0;
-
     /**
      *
      *
@@ -667,7 +659,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     public int getFirmwareValue() {
       return firmware_;
     }
-
     /**
      *
      *
@@ -686,7 +677,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +696,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     }
 
     private long committedStorageBytes_;
-
     /**
      *
      *
@@ -764,7 +751,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     public long getCommittedStorageBytes() {
       return committedStorageBytes_;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

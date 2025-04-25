@@ -38,7 +38,6 @@ public interface QaQuestionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface QaQuestionOrBuilder
    * @return The abbreviation.
    */
   java.lang.String getAbbreviation();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface QaQuestionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface QaQuestionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface QaQuestionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface QaQuestionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface QaQuestionOrBuilder
    * @return The questionBody.
    */
   java.lang.String getQuestionBody();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface QaQuestionOrBuilder
    * @return The answerInstructions.
    */
   java.lang.String getAnswerInstructions();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface QaQuestionOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaQuestion.AnswerChoice>
       getAnswerChoicesList();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface QaQuestionOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.QaQuestion.AnswerChoice getAnswerChoices(int index);
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public interface QaQuestionOrBuilder
    * </code>
    */
   int getAnswerChoicesCount();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface QaQuestionOrBuilder
   java.util.List<
           ? extends com.google.cloud.contactcenterinsights.v1.QaQuestion.AnswerChoiceOrBuilder>
       getAnswerChoicesOrBuilderList();
-
   /**
    *
    *
@@ -296,7 +284,6 @@ public interface QaQuestionOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface QaQuestionOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface QaQuestionOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -369,7 +354,6 @@ public interface QaQuestionOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -385,7 +369,6 @@ public interface QaQuestionOrBuilder
    * @return The metrics.
    */
   com.google.cloud.contactcenterinsights.v1.QaQuestion.Metrics getMetrics();
-
   /**
    *
    *
@@ -415,7 +398,6 @@ public interface QaQuestionOrBuilder
    * @return Whether the tuningMetadata field is set.
    */
   boolean hasTuningMetadata();
-
   /**
    *
    *
@@ -431,7 +413,6 @@ public interface QaQuestionOrBuilder
    * @return The tuningMetadata.
    */
   com.google.cloud.contactcenterinsights.v1.QaQuestion.TuningMetadata getTuningMetadata();
-
   /**
    *
    *

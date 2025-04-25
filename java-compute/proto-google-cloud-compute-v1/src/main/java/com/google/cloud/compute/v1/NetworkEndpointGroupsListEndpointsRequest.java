@@ -33,7 +33,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest)
     NetworkEndpointGroupsListEndpointsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkEndpointGroupsListEndpointsRequest.newBuilder() to construct.
   private NetworkEndpointGroupsListEndpointsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -119,7 +118,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * <code>UNDEFINED_HEALTH_STATUS = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * <code>SHOW = 2544381;</code>
      */
     public static final int SHOW_VALUE = 2544381;
-
     /**
      *
      *
@@ -232,7 +229,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthStatus_ = "";
-
   /**
    *
    *
@@ -249,7 +245,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
   public boolean hasHealthStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +269,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -466,7 +460,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +653,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     private int bitField0_;
 
     private java.lang.Object healthStatus_ = "";
-
     /**
      *
      *
@@ -676,7 +668,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     public boolean hasHealthStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -700,7 +691,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -724,7 +714,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -747,7 +736,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +754,6 @@ public final class NetworkEndpointGroupsListEndpointsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

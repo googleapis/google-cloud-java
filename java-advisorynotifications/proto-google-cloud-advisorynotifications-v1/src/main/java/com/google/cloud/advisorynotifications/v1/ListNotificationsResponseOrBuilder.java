@@ -34,7 +34,6 @@ public interface ListNotificationsResponseOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Notification notifications = 1;</code>
    */
   java.util.List<com.google.cloud.advisorynotifications.v1.Notification> getNotificationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNotificationsResponseOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Notification notifications = 1;</code>
    */
   com.google.cloud.advisorynotifications.v1.Notification getNotifications(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNotificationsResponseOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Notification notifications = 1;</code>
    */
   int getNotificationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListNotificationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.advisorynotifications.v1.NotificationOrBuilder>
       getNotificationsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListNotificationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeSnapshot volume_snapshots = 1;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.VolumeSnapshot> getVolumeSnapshotsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeSnapshot volume_snapshots = 1;</code>
    */
   com.google.cloud.baremetalsolution.v2.VolumeSnapshot getVolumeSnapshots(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeSnapshot volume_snapshots = 1;</code>
    */
   int getVolumeSnapshotsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VolumeSnapshotOrBuilder>
       getVolumeSnapshotsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface ListVolumeSnapshotsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

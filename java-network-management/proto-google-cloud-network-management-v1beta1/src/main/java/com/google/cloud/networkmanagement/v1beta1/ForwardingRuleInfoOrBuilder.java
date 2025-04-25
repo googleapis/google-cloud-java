@@ -36,7 +36,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The matchedProtocol.
    */
   java.lang.String getMatchedProtocol();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The matchedPortRange.
    */
   java.lang.String getMatchedPortRange();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The vip.
    */
   java.lang.String getVip();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The loadBalancerName.
    */
   java.lang.String getLoadBalancerName();
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The pscServiceAttachmentUri.
    */
   java.lang.String getPscServiceAttachmentUri();
-
   /**
    *
    *
@@ -300,7 +290,6 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The pscGoogleApiTarget.
    */
   java.lang.String getPscGoogleApiTarget();
-
   /**
    *
    *

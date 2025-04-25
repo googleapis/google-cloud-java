@@ -35,7 +35,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IntegratedGradientsAttribution)
     IntegratedGradientsAttributionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IntegratedGradientsAttribution.newBuilder() to construct.
   private IntegratedGradientsAttribution(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int STEP_COUNT_FIELD_NUMBER = 1;
   private int stepCount_ = 0;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
 
   public static final int SMOOTH_GRAD_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.SmoothGradConfig smoothGradConfig_;
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
   public boolean hasSmoothGradConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
         ? com.google.cloud.aiplatform.v1.SmoothGradConfig.getDefaultInstance()
         : smoothGradConfig_;
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
 
   public static final int BLUR_BASELINE_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.BlurBaselineConfig blurBaselineConfig_;
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
   public boolean hasBlurBaselineConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
         ? com.google.cloud.aiplatform.v1.BlurBaselineConfig.getDefaultInstance()
         : blurBaselineConfig_;
   }
-
   /**
    *
    *
@@ -414,7 +406,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     private int bitField0_;
 
     private int stepCount_;
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     public int getStepCount() {
       return stepCount_;
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
             com.google.cloud.aiplatform.v1.SmoothGradConfig.Builder,
             com.google.cloud.aiplatform.v1.SmoothGradConfigOrBuilder>
         smoothGradConfigBuilder_;
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     public boolean hasSmoothGradConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
         return smoothGradConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +889,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return getSmoothGradConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
             : smoothGradConfig_;
       }
     }
-
     /**
      *
      *
@@ -970,7 +949,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
             com.google.cloud.aiplatform.v1.BlurBaselineConfig.Builder,
             com.google.cloud.aiplatform.v1.BlurBaselineConfigOrBuilder>
         blurBaselineConfigBuilder_;
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     public boolean hasBlurBaselineConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1016,7 +993,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
         return blurBaselineConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1045,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1123,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
       onChanged();
       return getBlurBaselineConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1176,7 +1147,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
             : blurBaselineConfig_;
       }
     }
-
     /**
      *
      *

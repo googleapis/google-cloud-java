@@ -24,7 +24,7 @@ package com.google.cloud.orgpolicy.v2;
  *
  * <pre>
  * Similar to PolicySpec but with an extra 'launch' field for launch reference.
- * The PolicySpec here is specific for dry-run.
+ * The PolicySpec here is specific for dry-run/darklaunch.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orgpolicy.v2.AlternatePolicySpec}
@@ -34,7 +34,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.AlternatePolicySpec)
     AlternatePolicySpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AlternatePolicySpec.newBuilder() to construct.
   private AlternatePolicySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object launch_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
 
   public static final int SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.orgpolicy.v2.PolicySpec spec_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
   public com.google.cloud.orgpolicy.v2.PolicySpec getSpec() {
     return spec_ == null ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance() : spec_;
   }
-
   /**
    *
    *
@@ -345,13 +339,12 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
    * Similar to PolicySpec but with an extra 'launch' field for launch reference.
-   * The PolicySpec here is specific for dry-run.
+   * The PolicySpec here is specific for dry-run/darklaunch.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.AlternatePolicySpec}
@@ -560,7 +553,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object launch_ = "";
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
             com.google.cloud.orgpolicy.v2.PolicySpec.Builder,
             com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder>
         specBuilder_;
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
         return specBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -745,7 +730,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +776,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +795,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -847,7 +827,6 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
             : spec_;
       }
     }
-
     /**
      *
      *

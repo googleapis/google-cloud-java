@@ -34,7 +34,6 @@ public interface NearestNeighborsOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor neighbors = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor> getNeighborsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface NearestNeighborsOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor neighbors = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor getNeighbors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface NearestNeighborsOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor neighbors = 1;</code>
    */
   int getNeighborsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface NearestNeighborsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NearestNeighbors.NeighborOrBuilder>
       getNeighborsOrBuilderList();
-
   /**
    *
    *

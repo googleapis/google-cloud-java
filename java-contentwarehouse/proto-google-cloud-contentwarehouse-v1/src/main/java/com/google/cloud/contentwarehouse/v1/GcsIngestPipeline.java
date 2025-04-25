@@ -33,7 +33,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.GcsIngestPipeline)
     GcsIngestPipelineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsIngestPipeline.newBuilder() to construct.
   private GcsIngestPipeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputPath_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaName_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processorType_ = "";
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
 
   public static final int SKIP_INGESTED_DOCUMENTS_FIELD_NUMBER = 4;
   private boolean skipIngestedDocuments_ = false;
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
 
   public static final int PIPELINE_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.contentwarehouse.v1.IngestPipelineConfig pipelineConfig_;
-
   /**
    *
    *
@@ -281,7 +272,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
   public boolean hasPipelineConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.contentwarehouse.v1.IngestPipelineConfig.getDefaultInstance()
         : pipelineConfig_;
   }
-
   /**
    *
    *
@@ -526,7 +515,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -784,7 +772,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object inputPath_ = "";
-
     /**
      *
      *
@@ -809,7 +796,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +820,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +843,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +862,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +888,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object schemaName_ = "";
-
     /**
      *
      *
@@ -931,7 +913,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -957,7 +938,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -982,7 +962,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +982,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1009,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object processorType_ = "";
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1077,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1120,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean skipIngestedDocuments_;
-
     /**
      *
      *
@@ -1165,7 +1137,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     public boolean getSkipIngestedDocuments() {
       return skipIngestedDocuments_;
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
             com.google.cloud.contentwarehouse.v1.IngestPipelineConfig.Builder,
             com.google.cloud.contentwarehouse.v1.IngestPipelineConfigOrBuilder>
         pipelineConfigBuilder_;
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
     public boolean hasPipelineConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1258,7 +1226,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
         return pipelineConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1253,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1277,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1310,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1333,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1352,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPipelineConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1413,7 +1375,6 @@ public final class GcsIngestPipeline extends com.google.protobuf.GeneratedMessag
             : pipelineConfig_;
       }
     }
-
     /**
      *
      *

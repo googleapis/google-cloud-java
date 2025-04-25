@@ -34,7 +34,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.UserEventImportSummary)
     UserEventImportSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserEventImportSummary.newBuilder() to construct.
   private UserEventImportSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
 
   public static final int JOINED_EVENTS_COUNT_FIELD_NUMBER = 1;
   private long joinedEventsCount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
 
   public static final int UNJOINED_EVENTS_COUNT_FIELD_NUMBER = 2;
   private long unjoinedEventsCount_ = 0L;
-
   /**
    *
    *
@@ -272,7 +269,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -476,7 +472,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private long joinedEventsCount_;
-
     /**
      *
      *
@@ -492,7 +487,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     public long getJoinedEventsCount() {
       return joinedEventsCount_;
     }
-
     /**
      *
      *
@@ -512,7 +506,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -532,7 +525,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     }
 
     private long unjoinedEventsCount_;
-
     /**
      *
      *
@@ -549,7 +541,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
     public long getUnjoinedEventsCount() {
       return unjoinedEventsCount_;
     }
-
     /**
      *
      *
@@ -570,7 +561,6 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

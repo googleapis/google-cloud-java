@@ -34,7 +34,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest)
     CreatePolicyTagRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePolicyTagRequest.newBuilder() to construct.
   private CreatePolicyTagRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
 
   public static final int POLICY_TAG_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1beta1.PolicyTag policyTag_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
   public boolean hasPolicyTag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.datacatalog.v1beta1.PolicyTag.getDefaultInstance()
         : policyTag_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -615,7 +606,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.datacatalog.v1beta1.PolicyTag.Builder,
             com.google.cloud.datacatalog.v1beta1.PolicyTagOrBuilder>
         policyTagBuilder_;
-
     /**
      *
      *
@@ -706,7 +693,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
     public boolean hasPolicyTag() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -727,7 +713,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
         return policyTagBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +755,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +801,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +815,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getPolicyTagFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -853,7 +833,6 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
             : policyTag_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v1.ListNodesResponse)
     ListNodesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNodesResponse.newBuilder() to construct.
   private ListNodesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tpu.v1.Node> nodes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.tpu.v1.Node> getNodesList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.cloud.tpu.v1.NodeOrBuilder> getNodesOrBuilderList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public int getNodesCount() {
     return nodes_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.tpu.v1.Node getNodes(int index) {
     return nodes_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -245,7 +234,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -448,7 +436,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -743,7 +730,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return nodesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return nodesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return nodesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +904,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +942,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +954,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.tpu.v1.Node.Builder getNodesBuilder(int index) {
       return getNodesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -996,7 +970,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return nodesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1013,7 +986,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(nodes_);
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.tpu.v1.Node.Builder addNodesBuilder() {
       return getNodesFieldBuilder().addBuilder(com.google.cloud.tpu.v1.Node.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1040,7 +1011,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       return getNodesFieldBuilder()
           .addBuilder(index, com.google.cloud.tpu.v1.Node.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1072,7 +1042,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1095,7 +1064,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1086,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1107,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1124,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1156,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1207,7 +1171,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1222,7 +1185,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1238,7 +1200,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1254,7 +1215,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1278,7 +1238,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1260,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1279,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1297,6 @@ public final class ListNodesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

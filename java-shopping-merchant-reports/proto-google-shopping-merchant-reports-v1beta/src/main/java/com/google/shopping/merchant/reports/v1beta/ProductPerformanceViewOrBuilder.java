@@ -38,7 +38,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the marketingMethod field is set.
    */
   boolean hasMarketingMethod();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The enum numeric value on the wire for marketingMethod.
    */
   int getMarketingMethodValue();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the date field is set.
    */
   boolean hasDate();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The date.
    */
   com.google.type.Date getDate();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the week field is set.
    */
   boolean hasWeek();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The week.
    */
   com.google.type.Date getWeek();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the customerCountryCode field is set.
    */
   boolean hasCustomerCountryCode();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The customerCountryCode.
    */
   java.lang.String getCustomerCountryCode();
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the offerId field is set.
    */
   boolean hasOfferId();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
-
   /**
    *
    *
@@ -307,7 +294,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
-
   /**
    *
    *
@@ -335,7 +321,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the categoryL1 field is set.
    */
   boolean hasCategoryL1();
-
   /**
    *
    *
@@ -350,7 +335,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The categoryL1.
    */
   java.lang.String getCategoryL1();
-
   /**
    *
    *
@@ -380,7 +364,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the categoryL2 field is set.
    */
   boolean hasCategoryL2();
-
   /**
    *
    *
@@ -395,7 +378,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The categoryL2.
    */
   java.lang.String getCategoryL2();
-
   /**
    *
    *
@@ -425,7 +407,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the categoryL3 field is set.
    */
   boolean hasCategoryL3();
-
   /**
    *
    *
@@ -440,7 +421,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The categoryL3.
    */
   java.lang.String getCategoryL3();
-
   /**
    *
    *
@@ -470,7 +450,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the categoryL4 field is set.
    */
   boolean hasCategoryL4();
-
   /**
    *
    *
@@ -485,7 +464,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The categoryL4.
    */
   java.lang.String getCategoryL4();
-
   /**
    *
    *
@@ -515,7 +493,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the categoryL5 field is set.
    */
   boolean hasCategoryL5();
-
   /**
    *
    *
@@ -530,7 +507,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The categoryL5.
    */
   java.lang.String getCategoryL5();
-
   /**
    *
    *
@@ -560,7 +536,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the productTypeL1 field is set.
    */
   boolean hasProductTypeL1();
-
   /**
    *
    *
@@ -575,7 +550,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The productTypeL1.
    */
   java.lang.String getProductTypeL1();
-
   /**
    *
    *
@@ -605,7 +579,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the productTypeL2 field is set.
    */
   boolean hasProductTypeL2();
-
   /**
    *
    *
@@ -620,7 +593,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The productTypeL2.
    */
   java.lang.String getProductTypeL2();
-
   /**
    *
    *
@@ -650,7 +622,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the productTypeL3 field is set.
    */
   boolean hasProductTypeL3();
-
   /**
    *
    *
@@ -665,7 +636,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The productTypeL3.
    */
   java.lang.String getProductTypeL3();
-
   /**
    *
    *
@@ -695,7 +665,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the productTypeL4 field is set.
    */
   boolean hasProductTypeL4();
-
   /**
    *
    *
@@ -710,7 +679,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The productTypeL4.
    */
   java.lang.String getProductTypeL4();
-
   /**
    *
    *
@@ -740,7 +708,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the productTypeL5 field is set.
    */
   boolean hasProductTypeL5();
-
   /**
    *
    *
@@ -755,7 +722,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The productTypeL5.
    */
   java.lang.String getProductTypeL5();
-
   /**
    *
    *
@@ -783,7 +749,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the customLabel0 field is set.
    */
   boolean hasCustomLabel0();
-
   /**
    *
    *
@@ -796,7 +761,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The customLabel0.
    */
   java.lang.String getCustomLabel0();
-
   /**
    *
    *
@@ -822,7 +786,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the customLabel1 field is set.
    */
   boolean hasCustomLabel1();
-
   /**
    *
    *
@@ -835,7 +798,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The customLabel1.
    */
   java.lang.String getCustomLabel1();
-
   /**
    *
    *
@@ -861,7 +823,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the customLabel2 field is set.
    */
   boolean hasCustomLabel2();
-
   /**
    *
    *
@@ -874,7 +835,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The customLabel2.
    */
   java.lang.String getCustomLabel2();
-
   /**
    *
    *
@@ -900,7 +860,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the customLabel3 field is set.
    */
   boolean hasCustomLabel3();
-
   /**
    *
    *
@@ -913,7 +872,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The customLabel3.
    */
   java.lang.String getCustomLabel3();
-
   /**
    *
    *
@@ -939,7 +897,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the customLabel4 field is set.
    */
   boolean hasCustomLabel4();
-
   /**
    *
    *
@@ -952,7 +909,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The customLabel4.
    */
   java.lang.String getCustomLabel4();
-
   /**
    *
    *
@@ -978,7 +934,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the clicks field is set.
    */
   boolean hasClicks();
-
   /**
    *
    *
@@ -1004,7 +959,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the impressions field is set.
    */
   boolean hasImpressions();
-
   /**
    *
    *
@@ -1032,7 +986,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the clickThroughRate field is set.
    */
   boolean hasClickThroughRate();
-
   /**
    *
    *
@@ -1065,7 +1018,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the conversions field is set.
    */
   boolean hasConversions();
-
   /**
    *
    *
@@ -1099,7 +1051,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the conversionValue field is set.
    */
   boolean hasConversionValue();
-
   /**
    *
    *
@@ -1115,7 +1066,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return The conversionValue.
    */
   com.google.shopping.type.Price getConversionValue();
-
   /**
    *
    *
@@ -1145,7 +1095,6 @@ public interface ProductPerformanceViewOrBuilder
    * @return Whether the conversionRate field is set.
    */
   boolean hasConversionRate();
-
   /**
    *
    *

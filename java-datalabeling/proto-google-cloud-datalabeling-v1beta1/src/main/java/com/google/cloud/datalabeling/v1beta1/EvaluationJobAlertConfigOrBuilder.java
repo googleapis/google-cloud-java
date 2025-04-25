@@ -36,7 +36,6 @@ public interface EvaluationJobAlertConfigOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *

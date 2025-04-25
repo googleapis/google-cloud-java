@@ -38,7 +38,6 @@ public interface PscConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface NatInfoOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NatInfoOrBuilder
    * @return The protocol.
    */
   java.lang.String getProtocol();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface NatInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface NatInfoOrBuilder
    * @return The oldSourceIp.
    */
   java.lang.String getOldSourceIp();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface NatInfoOrBuilder
    * @return The newSourceIp.
    */
   java.lang.String getNewSourceIp();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface NatInfoOrBuilder
    * @return The oldDestinationIp.
    */
   java.lang.String getOldDestinationIp();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface NatInfoOrBuilder
    * @return The newDestinationIp.
    */
   java.lang.String getNewDestinationIp();
-
   /**
    *
    *
@@ -272,7 +265,6 @@ public interface NatInfoOrBuilder
    * @return The routerUri.
    */
   java.lang.String getRouterUri();
-
   /**
    *
    *
@@ -298,7 +290,6 @@ public interface NatInfoOrBuilder
    * @return The natGatewayName.
    */
   java.lang.String getNatGatewayName();
-
   /**
    *
    *

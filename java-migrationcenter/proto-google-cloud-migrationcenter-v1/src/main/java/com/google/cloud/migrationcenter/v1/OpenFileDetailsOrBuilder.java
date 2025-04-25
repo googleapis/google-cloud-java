@@ -36,7 +36,6 @@ public interface OpenFileDetailsOrBuilder
    * @return The command.
    */
   java.lang.String getCommand();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface OpenFileDetailsOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface OpenFileDetailsOrBuilder
    * @return The fileType.
    */
   java.lang.String getFileType();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface OpenFileDetailsOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
-
   /**
    *
    *

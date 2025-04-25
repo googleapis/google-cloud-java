@@ -40,7 +40,6 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * @return The conversionWorkspace.
    */
   java.lang.String getConversionWorkspace();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * @return The enum numeric value on the wire for tree.
    */
   int getTreeValue();
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * @return The commitId.
    */
   java.lang.String getCommitId();
-
   /**
    *
    *
@@ -193,7 +189,6 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -221,7 +216,6 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

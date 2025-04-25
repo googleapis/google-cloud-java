@@ -40,7 +40,6 @@ public interface UpdateResourceAllowanceRequestOrBuilder
    * @return Whether the resourceAllowance field is set.
    */
   boolean hasResourceAllowance();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateResourceAllowanceRequestOrBuilder
    * @return The resourceAllowance.
    */
   com.google.cloud.batch.v1alpha.ResourceAllowance getResourceAllowance();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface UpdateResourceAllowanceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface UpdateResourceAllowanceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface UpdateResourceAllowanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

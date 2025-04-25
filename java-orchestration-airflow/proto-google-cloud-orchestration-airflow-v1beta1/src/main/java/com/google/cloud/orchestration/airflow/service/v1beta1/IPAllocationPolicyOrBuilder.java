@@ -59,7 +59,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The clusterSecondaryRangeName.
    */
   java.lang.String getClusterSecondaryRangeName();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesSecondaryRangeName.
    */
   java.lang.String getServicesSecondaryRangeName();
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The clusterIpv4CidrBlock.
    */
   java.lang.String getClusterIpv4CidrBlock();
-
   /**
    *
    *
@@ -205,7 +202,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesIpv4CidrBlock.
    */
   java.lang.String getServicesIpv4CidrBlock();
-
   /**
    *
    *

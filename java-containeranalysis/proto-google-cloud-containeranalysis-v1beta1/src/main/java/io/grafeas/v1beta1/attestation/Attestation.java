@@ -40,7 +40,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Attestation)
     AttestationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Attestation.newBuilder() to construct.
   private Attestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     private SignatureCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PGP_SIGNED_ATTESTATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPgpSignedAttestation() {
     return signatureCase_ == 1;
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENERIC_SIGNED_ATTESTATION_FIELD_NUMBER = 2;
-
   /**
    * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
    * </code>
@@ -186,7 +180,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGenericSignedAttestation() {
     return signatureCase_ == 2;
   }
-
   /**
    * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
    * </code>
@@ -200,7 +193,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
   }
-
   /**
    * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
    * </code>
@@ -404,7 +396,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder,
             io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder>
         pgpSignedAttestationBuilder_;
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPgpSignedAttestation() {
       return signatureCase_ == 1;
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       signatureCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       signatureCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       signatureCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
         getPgpSignedAttestationBuilder() {
       return getPgpSignedAttestationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.attestation.GenericSignedAttestation.Builder,
             io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder>
         genericSignedAttestationBuilder_;
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -882,7 +863,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGenericSignedAttestation() {
       return signatureCase_ == 2;
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -903,7 +883,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
       }
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -922,7 +901,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       signatureCase_ = 2;
       return this;
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -938,7 +916,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       signatureCase_ = 2;
       return this;
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -968,7 +945,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       signatureCase_ = 2;
       return this;
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -989,7 +965,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -998,7 +973,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
         getGenericSignedAttestationBuilder() {
       return getGenericSignedAttestationFieldBuilder().getBuilder();
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
@@ -1015,7 +989,6 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.attestation.GenericSignedAttestation.getDefaultInstance();
       }
     }
-
     /**
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>

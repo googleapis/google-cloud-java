@@ -36,7 +36,6 @@ public interface WriteFeatureValuesPayloadOrBuilder
    * @return The entityId.
    */
   java.lang.String getEntityId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface WriteFeatureValuesPayloadOrBuilder
    * </code>
    */
   int getFeatureValuesCount();
-
   /**
    *
    *
@@ -81,11 +79,9 @@ public interface WriteFeatureValuesPayloadOrBuilder
    * </code>
    */
   boolean containsFeatureValues(java.lang.String key);
-
   /** Use {@link #getFeatureValuesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.FeatureValue> getFeatureValues();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface WriteFeatureValuesPayloadOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.FeatureValue>
       getFeatureValuesMap();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface WriteFeatureValuesPayloadOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1.FeatureValue defaultValue);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeregistry.v1.ListApiSpecsResponse)
     ListApiSpecsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListApiSpecsResponse.newBuilder() to construct.
   private ListApiSpecsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apigeeregistry.v1.ApiSpec> apiSpecs_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.apigeeregistry.v1.ApiSpec> getApiSpecsList() {
     return apiSpecs_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       getApiSpecsOrBuilderList() {
     return apiSpecs_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
   public int getApiSpecsCount() {
     return apiSpecs_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpecs(int index) {
     return apiSpecs_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return apiSpecsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return apiSpecsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return apiSpecsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.apigeeregistry.v1.ApiSpec.Builder getApiSpecsBuilder(int index) {
       return getApiSpecsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return apiSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(apiSpecs_);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       return getApiSpecsFieldBuilder()
           .addBuilder(com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       return getApiSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ListApiSpecsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

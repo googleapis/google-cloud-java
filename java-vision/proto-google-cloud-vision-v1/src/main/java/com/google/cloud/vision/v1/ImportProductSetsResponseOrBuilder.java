@@ -34,7 +34,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1.ReferenceImage> getReferenceImagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
   com.google.cloud.vision.v1.ReferenceImage getReferenceImages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
   int getReferenceImagesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ImportProductSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getStatusesList();
-
   /**
    *
    *
@@ -111,7 +106,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
   com.google.rpc.Status getStatuses(int index);
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
   int getStatusesCount();
-
   /**
    *
    *
@@ -143,7 +136,6 @@ public interface ImportProductSetsResponseOrBuilder
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusesOrBuilderList();
-
   /**
    *
    *

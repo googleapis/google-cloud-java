@@ -33,7 +33,6 @@ public final class SafetySpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SafetySpec)
     SafetySpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SafetySpec.newBuilder() to construct.
   private SafetySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class SafetySpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_FIELD_NUMBER = 1;
   private int version_ = 0;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class SafetySpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -422,7 +419,6 @@ public final class SafetySpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int version_;
-
     /**
      *
      *
@@ -438,7 +434,6 @@ public final class SafetySpec extends com.google.protobuf.GeneratedMessageV3
     public int getVersion() {
       return version_;
     }
-
     /**
      *
      *
@@ -458,7 +453,6 @@ public final class SafetySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

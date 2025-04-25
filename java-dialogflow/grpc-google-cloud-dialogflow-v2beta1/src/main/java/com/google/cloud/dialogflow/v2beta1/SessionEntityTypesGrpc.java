@@ -303,19 +303,6 @@ public final class SessionEntityTypesGrpc {
     return SessionEntityTypesStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static SessionEntityTypesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<SessionEntityTypesBlockingV2Stub>() {
-          @java.lang.Override
-          public SessionEntityTypesBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new SessionEntityTypesBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return SessionEntityTypesBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -589,111 +576,6 @@ public final class SessionEntityTypesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SessionEntityTypes.
-   *
-   * <pre>
-   * Service for managing
-   * [SessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityType].
-   * </pre>
-   */
-  public static final class SessionEntityTypesBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<SessionEntityTypesBlockingV2Stub> {
-    private SessionEntityTypesBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected SessionEntityTypesBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SessionEntityTypesBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all session entity types in the specified session.
-     * This method doesn't work with Google Assistant integration.
-     * Contact Dialogflow support if you need to use session entities
-     * with Google Assistant integration.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse
-        listSessionEntityTypes(
-            com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSessionEntityTypesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified session entity type.
-     * This method doesn't work with Google Assistant integration.
-     * Contact Dialogflow support if you need to use session entities
-     * with Google Assistant integration.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetSessionEntityTypeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a session entity type.
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
-     * This method doesn't work with Google Assistant integration.
-     * Contact Dialogflow support if you need to use session entities
-     * with Google Assistant integration.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityType createSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateSessionEntityTypeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified session entity type.
-     * This method doesn't work with Google Assistant integration.
-     * Contact Dialogflow support if you need to use session entities
-     * with Google Assistant integration.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityType updateSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateSessionEntityTypeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified session entity type.
-     * This method doesn't work with Google Assistant integration.
-     * Contact Dialogflow support if you need to use session entities
-     * with Google Assistant integration.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteSessionEntityTypeMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service SessionEntityTypes.
    *
    * <pre>
    * Service for managing

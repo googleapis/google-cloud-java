@@ -38,7 +38,6 @@ public interface FlowOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface FlowOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface FlowOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface FlowOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 4;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.TransitionRoute> getTransitionRoutesList();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface FlowOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 4;</code>
    */
   com.google.cloud.dialogflow.cx.v3.TransitionRoute getTransitionRoutes(int index);
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public interface FlowOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.TransitionRoute transition_routes = 4;</code>
    */
   int getTransitionRoutesCount();
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public interface FlowOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.TransitionRouteOrBuilder>
       getTransitionRoutesOrBuilderList();
-
   /**
    *
    *
@@ -262,7 +255,6 @@ public interface FlowOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.EventHandler> getEventHandlersList();
-
   /**
    *
    *
@@ -285,7 +277,6 @@ public interface FlowOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
    */
   com.google.cloud.dialogflow.cx.v3.EventHandler getEventHandlers(int index);
-
   /**
    *
    *
@@ -308,7 +299,6 @@ public interface FlowOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.EventHandler event_handlers = 10;</code>
    */
   int getEventHandlersCount();
-
   /**
    *
    *
@@ -332,7 +322,6 @@ public interface FlowOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.EventHandlerOrBuilder>
       getEventHandlersOrBuilderList();
-
   /**
    *
    *
@@ -381,7 +370,6 @@ public interface FlowOrBuilder
    * @return A list containing the transitionRouteGroups.
    */
   java.util.List<java.lang.String> getTransitionRouteGroupsList();
-
   /**
    *
    *
@@ -407,7 +395,6 @@ public interface FlowOrBuilder
    * @return The count of transitionRouteGroups.
    */
   int getTransitionRouteGroupsCount();
-
   /**
    *
    *
@@ -434,7 +421,6 @@ public interface FlowOrBuilder
    * @return The transitionRouteGroups at the given index.
    */
   java.lang.String getTransitionRouteGroups(int index);
-
   /**
    *
    *
@@ -474,7 +460,6 @@ public interface FlowOrBuilder
    * @return Whether the nluSettings field is set.
    */
   boolean hasNluSettings();
-
   /**
    *
    *
@@ -487,7 +472,6 @@ public interface FlowOrBuilder
    * @return The nluSettings.
    */
   com.google.cloud.dialogflow.cx.v3.NluSettings getNluSettings();
-
   /**
    *
    *
@@ -512,7 +496,6 @@ public interface FlowOrBuilder
    * @return Whether the advancedSettings field is set.
    */
   boolean hasAdvancedSettings();
-
   /**
    *
    *
@@ -526,7 +509,6 @@ public interface FlowOrBuilder
    * @return The advancedSettings.
    */
   com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings();
-
   /**
    *
    *
@@ -553,7 +535,6 @@ public interface FlowOrBuilder
    * @return Whether the knowledgeConnectorSettings field is set.
    */
   boolean hasKnowledgeConnectorSettings();
-
   /**
    *
    *
@@ -568,7 +549,6 @@ public interface FlowOrBuilder
    * @return The knowledgeConnectorSettings.
    */
   com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings getKnowledgeConnectorSettings();
-
   /**
    *
    *
@@ -597,7 +577,6 @@ public interface FlowOrBuilder
    * @return Whether the multiLanguageSettings field is set.
    */
   boolean hasMultiLanguageSettings();
-
   /**
    *
    *
@@ -612,7 +591,6 @@ public interface FlowOrBuilder
    * @return The multiLanguageSettings.
    */
   com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings getMultiLanguageSettings();
-
   /**
    *
    *

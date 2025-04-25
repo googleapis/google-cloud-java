@@ -74,8 +74,7 @@ public class MockLocalInventoryServiceImpl extends LocalInventoryServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListLocalInventories, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListLocalInventories, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListLocalInventoriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockLocalInventoryServiceImpl extends LocalInventoryServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InsertLocalInventory, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method InsertLocalInventory, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   LocalInventory.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockLocalInventoryServiceImpl extends LocalInventoryServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteLocalInventory, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteLocalInventory, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

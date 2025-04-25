@@ -38,7 +38,6 @@ public interface ListOSPolicyAssignmentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface ListOSPolicyAssignmentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface StorageConfigOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *

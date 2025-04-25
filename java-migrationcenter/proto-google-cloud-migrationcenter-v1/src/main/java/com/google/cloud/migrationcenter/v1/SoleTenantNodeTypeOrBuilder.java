@@ -37,7 +37,6 @@ public interface SoleTenantNodeTypeOrBuilder
    * @return The nodeName.
    */
   java.lang.String getNodeName();
-
   /**
    *
    *

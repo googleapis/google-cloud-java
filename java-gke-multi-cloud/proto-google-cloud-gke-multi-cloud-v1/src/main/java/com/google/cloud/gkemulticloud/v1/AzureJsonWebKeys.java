@@ -33,7 +33,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureJsonWebKeys)
     AzureJsonWebKeysOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureJsonWebKeys.newBuilder() to construct.
   private AzureJsonWebKeys(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.Jwk> keys_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.gkemulticloud.v1.Jwk> getKeysList() {
     return keys_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       getKeysOrBuilderList() {
     return keys_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
   public int getKeysCount() {
     return keys_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.gkemulticloud.v1.Jwk getKeys(int index) {
     return keys_.get(index);
   }
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
         return keysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
         return keysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
         return keysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +706,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkemulticloud.v1.Jwk.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -838,7 +818,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -857,7 +836,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(keys_);
       }
     }
-
     /**
      *
      *
@@ -872,7 +850,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       return getKeysFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.Jwk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -887,7 +864,6 @@ public final class AzureJsonWebKeys extends com.google.protobuf.GeneratedMessage
       return getKeysFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.Jwk.getDefaultInstance());
     }
-
     /**
      *
      *

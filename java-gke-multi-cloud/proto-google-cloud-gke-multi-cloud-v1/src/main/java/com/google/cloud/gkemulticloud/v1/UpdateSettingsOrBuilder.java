@@ -38,7 +38,6 @@ public interface UpdateSettingsOrBuilder
    * @return Whether the surgeSettings field is set.
    */
   boolean hasSurgeSettings();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateSettingsOrBuilder
    * @return The surgeSettings.
    */
   com.google.cloud.gkemulticloud.v1.SurgeSettings getSurgeSettings();
-
   /**
    *
    *

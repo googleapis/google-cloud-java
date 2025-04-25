@@ -93,8 +93,7 @@ public class MockAccountsServiceImpl extends AccountsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAndConfigureAccount, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateAndConfigureAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Account.class.getName(),
                   Exception.class.getName())));

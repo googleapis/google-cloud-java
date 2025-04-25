@@ -36,7 +36,6 @@ public interface ApplicationInstanceOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ApplicationInstanceOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ApplicationInstanceOrBuilder
    * @return The instance.
    */
   com.google.cloud.visionai.v1.Instance getInstance();
-
   /**
    *
    *

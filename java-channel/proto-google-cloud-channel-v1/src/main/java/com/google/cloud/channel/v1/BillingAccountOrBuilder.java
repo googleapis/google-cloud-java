@@ -37,7 +37,6 @@ public interface BillingAccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BillingAccountOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface BillingAccountOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface BillingAccountOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface BillingAccountOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface BillingAccountOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *

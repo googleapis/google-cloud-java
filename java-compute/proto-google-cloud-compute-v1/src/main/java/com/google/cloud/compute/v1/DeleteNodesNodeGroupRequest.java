@@ -33,7 +33,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteNodesNodeGroupRequest)
     DeleteNodesNodeGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteNodesNodeGroupRequest.newBuilder() to construct.
   private DeleteNodesNodeGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeGroup_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
   public static final int NODE_GROUPS_DELETE_NODES_REQUEST_RESOURCE_FIELD_NUMBER = 183298962;
   private com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequest
       nodeGroupsDeleteNodesRequestResource_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
   public boolean hasNodeGroupsDeleteNodesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequest.getDefaultInstance()
         : nodeGroupsDeleteNodesRequestResource_;
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -576,7 +563,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -841,7 +827,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object nodeGroup_ = "";
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +871,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +909,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +939,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequest.Builder,
             com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequestOrBuilder>
         nodeGroupsDeleteNodesRequestResourceBuilder_;
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     public boolean hasNodeGroupsDeleteNodesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -999,7 +978,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return nodeGroupsDeleteNodesRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1003,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1025,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1056,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1077,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1094,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return getNodeGroupsDeleteNodesRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1142,7 +1115,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
             : nodeGroupsDeleteNodesRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1144,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1192,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1246,7 +1215,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1234,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1260,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1331,7 +1296,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1354,7 +1318,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1376,7 +1339,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1356,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1419,7 +1380,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1444,7 +1404,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1469,7 +1428,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1493,7 +1451,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1470,6 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -47,7 +47,6 @@ public interface DeleteEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

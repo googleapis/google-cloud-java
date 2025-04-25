@@ -34,7 +34,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.DateRange)
     DateRangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DateRange.newBuilder() to construct.
   private DateRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int USAGE_START_DATE_TIME_FIELD_NUMBER = 1;
   private com.google.type.DateTime usageStartDateTime_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUsageStartDateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.DateTime.getDefaultInstance()
         : usageStartDateTime_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USAGE_END_DATE_TIME_FIELD_NUMBER = 2;
   private com.google.type.DateTime usageEndDateTime_;
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUsageEndDateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.DateTime.getDefaultInstance()
         : usageEndDateTime_;
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INVOICE_START_DATE_FIELD_NUMBER = 3;
   private com.google.type.Date invoiceStartDate_;
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInvoiceStartDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Date.getDefaultInstance()
         : invoiceStartDate_;
   }
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INVOICE_END_DATE_FIELD_NUMBER = 4;
   private com.google.type.Date invoiceEndDate_;
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInvoiceEndDate() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getInvoiceEndDate() {
     return invoiceEndDate_ == null ? com.google.type.Date.getDefaultInstance() : invoiceEndDate_;
   }
-
   /**
    *
    *
@@ -524,7 +511,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -793,7 +779,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             com.google.type.DateTime.Builder,
             com.google.type.DateTimeOrBuilder>
         usageStartDateTimeBuilder_;
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUsageStartDateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         return usageStartDateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +906,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +949,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUsageStartDateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             : usageStartDateTime_;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1009,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             com.google.type.DateTime.Builder,
             com.google.type.DateTimeOrBuilder>
         usageEndDateTimeBuilder_;
-
     /**
      *
      *
@@ -1052,7 +1028,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUsageEndDateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         return usageEndDateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1080,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1104,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1160,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUsageEndDateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             : usageEndDateTime_;
       }
     }
-
     /**
      *
      *
@@ -1269,7 +1237,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         invoiceStartDateBuilder_;
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInvoiceStartDate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1311,7 +1277,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         return invoiceStartDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1324,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1354,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1376,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1393,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInvoiceStartDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1454,7 +1414,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             : invoiceStartDate_;
       }
     }
-
     /**
      *
      *
@@ -1484,7 +1443,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         invoiceEndDateBuilder_;
-
     /**
      *
      *
@@ -1502,7 +1460,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInvoiceEndDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1526,7 +1483,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         return invoiceEndDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1552,7 +1508,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1575,7 +1530,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1560,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1629,7 +1582,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1647,7 +1599,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInvoiceEndDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1669,7 +1620,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             : invoiceEndDate_;
       }
     }
-
     /**
      *
      *

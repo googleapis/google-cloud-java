@@ -33,7 +33,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse)
     ListAnnotationSpecSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAnnotationSpecSetsResponse.newBuilder() to construct.
   private ListAnnotationSpecSetsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>
       annotationSpecSets_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       getAnnotationSpecSetsList() {
     return annotationSpecSets_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       getAnnotationSpecSetsOrBuilderList() {
     return annotationSpecSets_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
   public int getAnnotationSpecSetsCount() {
     return annotationSpecSets_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSets(int index) {
     return annotationSpecSets_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return annotationSpecSetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return annotationSpecSetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return annotationSpecSetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +904,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         getAnnotationSpecSetsBuilder(int index) {
       return getAnnotationSpecSetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return annotationSpecSetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(annotationSpecSets_);
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       return getAnnotationSpecSetsFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
           .addBuilder(
               index, com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1057,7 +1030,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1073,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1090,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OperatorDefinition)
     OperatorDefinitionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OperatorDefinition.newBuilder() to construct.
   private OperatorDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,7 +91,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      * @return The argument.
      */
     java.lang.String getArgument();
-
     /**
      *
      *
@@ -123,7 +121,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -139,7 +136,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getTypeBytes();
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition)
       ArgumentDefinitionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ArgumentDefinition.newBuilder() to construct.
     private ArgumentDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -192,7 +187,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object argument_ = "";
-
     /**
      *
      *
@@ -219,7 +213,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -251,7 +244,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -277,7 +269,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -475,7 +466,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -687,7 +677,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object argument_ = "";
-
       /**
        *
        *
@@ -713,7 +702,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -739,7 +727,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -764,7 +751,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -785,7 +771,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -813,7 +798,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -838,7 +822,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -863,7 +846,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -887,7 +869,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -907,7 +888,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1020,7 +1000,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      * @return The attribute.
      */
     java.lang.String getAttribute();
-
     /**
      *
      *
@@ -1051,7 +1030,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -1079,7 +1057,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      * @return Whether the defaultValue field is set.
      */
     boolean hasDefaultValue();
-
     /**
      *
      *
@@ -1092,7 +1069,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      * @return The defaultValue.
      */
     com.google.cloud.visionai.v1.AttributeValue getDefaultValue();
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.visionai.v1.AttributeValueOrBuilder getDefaultValueOrBuilder();
   }
-
   /**
    *
    *
@@ -1119,7 +1094,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OperatorDefinition.AttributeDefinition)
       AttributeDefinitionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AttributeDefinition.newBuilder() to construct.
     private AttributeDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1156,7 +1130,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attribute_ = "";
-
     /**
      *
      *
@@ -1183,7 +1156,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1187,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1241,7 +1212,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1240,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
     public static final int DEFAULT_VALUE_FIELD_NUMBER = 3;
     private com.google.cloud.visionai.v1.AttributeValue defaultValue_;
-
     /**
      *
      *
@@ -1286,7 +1255,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasDefaultValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1304,7 +1272,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.visionai.v1.AttributeValue.getDefaultInstance()
           : defaultValue_;
     }
-
     /**
      *
      *
@@ -1506,7 +1473,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1746,7 +1712,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object attribute_ = "";
-
       /**
        *
        *
@@ -1772,7 +1737,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1798,7 +1762,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1823,7 +1786,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1844,7 +1806,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1872,7 +1833,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -1897,7 +1857,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1922,7 +1881,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1946,7 +1904,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1966,7 +1923,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1998,7 +1954,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.AttributeValue.Builder,
               com.google.cloud.visionai.v1.AttributeValueOrBuilder>
           defaultValueBuilder_;
-
       /**
        *
        *
@@ -2013,7 +1968,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       public boolean hasDefaultValue() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -2034,7 +1988,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
           return defaultValueBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2057,7 +2010,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2078,7 +2030,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2107,7 +2058,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -2127,7 +2077,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2142,7 +2091,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getDefaultValueFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2161,7 +2109,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               : defaultValue_;
         }
       }
-
       /**
        *
        *
@@ -2260,7 +2207,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operator_ = "";
-
   /**
    *
    *
@@ -2287,7 +2233,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2320,7 +2265,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition>
       inputArgs_;
-
   /**
    *
    *
@@ -2336,7 +2280,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       getInputArgsList() {
     return inputArgs_;
   }
-
   /**
    *
    *
@@ -2353,7 +2296,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       getInputArgsOrBuilderList() {
     return inputArgs_;
   }
-
   /**
    *
    *
@@ -2368,7 +2310,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   public int getInputArgsCount() {
     return inputArgs_.size();
   }
-
   /**
    *
    *
@@ -2384,7 +2325,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       int index) {
     return inputArgs_.get(index);
   }
-
   /**
    *
    *
@@ -2406,7 +2346,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition>
       outputArgs_;
-
   /**
    *
    *
@@ -2422,7 +2361,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       getOutputArgsList() {
     return outputArgs_;
   }
-
   /**
    *
    *
@@ -2439,7 +2377,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       getOutputArgsOrBuilderList() {
     return outputArgs_;
   }
-
   /**
    *
    *
@@ -2454,7 +2391,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   public int getOutputArgsCount() {
     return outputArgs_.size();
   }
-
   /**
    *
    *
@@ -2470,7 +2406,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       int index) {
     return outputArgs_.get(index);
   }
-
   /**
    *
    *
@@ -2492,7 +2427,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.OperatorDefinition.AttributeDefinition>
       attributes_;
-
   /**
    *
    *
@@ -2508,7 +2442,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       getAttributesList() {
     return attributes_;
   }
-
   /**
    *
    *
@@ -2525,7 +2458,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       getAttributesOrBuilderList() {
     return attributes_;
   }
-
   /**
    *
    *
@@ -2540,7 +2472,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   public int getAttributesCount() {
     return attributes_.size();
   }
-
   /**
    *
    *
@@ -2556,7 +2487,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       int index) {
     return attributes_.get(index);
   }
-
   /**
    *
    *
@@ -2575,7 +2505,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCES_FIELD_NUMBER = 5;
   private com.google.cloud.visionai.v1.ResourceSpecification resources_;
-
   /**
    *
    *
@@ -2591,7 +2520,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
   public boolean hasResources() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2609,7 +2537,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.visionai.v1.ResourceSpecification.getDefaultInstance()
         : resources_;
   }
-
   /**
    *
    *
@@ -2630,7 +2557,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shortDescription_ = "";
-
   /**
    *
    *
@@ -2654,7 +2580,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2683,7 +2608,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -2707,7 +2631,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2956,7 +2879,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3383,7 +3305,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object operator_ = "";
-
     /**
      *
      *
@@ -3409,7 +3330,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3435,7 +3355,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3460,7 +3379,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3481,7 +3399,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3545,7 +3462,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return inputArgsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3564,7 +3480,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return inputArgsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3584,7 +3499,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return inputArgsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3610,7 +3524,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3635,7 +3548,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3661,7 +3573,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3687,7 +3598,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3711,7 +3621,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3736,7 +3645,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3761,7 +3669,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3783,7 +3690,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3805,7 +3711,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3821,7 +3726,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         getInputArgsBuilder(int index) {
       return getInputArgsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3841,7 +3745,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return inputArgsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3862,7 +3765,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(inputArgs_);
       }
     }
-
     /**
      *
      *
@@ -3881,7 +3783,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3901,7 +3802,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3973,7 +3873,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return outputArgsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3992,7 +3891,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return outputArgsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4012,7 +3910,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return outputArgsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4038,7 +3935,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4063,7 +3959,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4089,7 +3984,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4115,7 +4009,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4139,7 +4032,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4164,7 +4056,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4189,7 +4080,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4211,7 +4101,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4233,7 +4122,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4249,7 +4137,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         getOutputArgsBuilder(int index) {
       return getOutputArgsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4269,7 +4156,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return outputArgsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4290,7 +4176,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(outputArgs_);
       }
     }
-
     /**
      *
      *
@@ -4309,7 +4194,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4329,7 +4213,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.OperatorDefinition.ArgumentDefinition
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4401,7 +4284,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return attributesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4420,7 +4302,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return attributesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4440,7 +4321,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return attributesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4466,7 +4346,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4491,7 +4370,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4517,7 +4395,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4543,7 +4420,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4567,7 +4443,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4592,7 +4467,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4617,7 +4491,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4639,7 +4512,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4661,7 +4533,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4677,7 +4548,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         getAttributesBuilder(int index) {
       return getAttributesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4697,7 +4567,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return attributesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4718,7 +4587,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(attributes_);
       }
     }
-
     /**
      *
      *
@@ -4737,7 +4605,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.OperatorDefinition.AttributeDefinition
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4757,7 +4624,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.OperatorDefinition.AttributeDefinition
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4798,7 +4664,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.ResourceSpecification.Builder,
             com.google.cloud.visionai.v1.ResourceSpecificationOrBuilder>
         resourcesBuilder_;
-
     /**
      *
      *
@@ -4813,7 +4678,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     public boolean hasResources() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4834,7 +4698,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return resourcesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4857,7 +4720,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4878,7 +4740,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4907,7 +4768,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4927,7 +4787,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4942,7 +4801,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getResourcesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4961,7 +4819,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
             : resources_;
       }
     }
-
     /**
      *
      *
@@ -4989,7 +4846,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object shortDescription_ = "";
-
     /**
      *
      *
@@ -5012,7 +4868,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5035,7 +4890,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5057,7 +4911,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5075,7 +4928,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5100,7 +4952,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -5123,7 +4974,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5146,7 +4996,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5168,7 +5017,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5186,7 +5034,6 @@ public final class OperatorDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

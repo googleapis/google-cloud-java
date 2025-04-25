@@ -39,7 +39,6 @@ public interface CreateWebhookRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateWebhookRequestOrBuilder
    * @return Whether the webhook field is set.
    */
   boolean hasWebhook();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateWebhookRequestOrBuilder
    * @return The webhook.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Webhook getWebhook();
-
   /**
    *
    *

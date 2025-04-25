@@ -16,13 +16,9 @@
 
 package com.google.cloud.gkebackup.v1.stub;
 
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -45,45 +41,27 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.Backup;
-import com.google.cloud.gkebackup.v1.BackupChannel;
 import com.google.cloud.gkebackup.v1.BackupPlan;
-import com.google.cloud.gkebackup.v1.BackupPlanBinding;
-import com.google.cloud.gkebackup.v1.CreateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupRequest;
-import com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.CreateRestoreRequest;
-import com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
-import com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
-import com.google.cloud.gkebackup.v1.GetBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
-import com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
-import com.google.cloud.gkebackup.v1.GetRestoreChannelRequest;
-import com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.GetRestoreRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeBackupRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest;
-import com.google.cloud.gkebackup.v1.ListBackupChannelsRequest;
-import com.google.cloud.gkebackup.v1.ListBackupChannelsResponse;
-import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest;
-import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListBackupPlansRequest;
 import com.google.cloud.gkebackup.v1.ListBackupPlansResponse;
 import com.google.cloud.gkebackup.v1.ListBackupsRequest;
 import com.google.cloud.gkebackup.v1.ListBackupsResponse;
-import com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest;
-import com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse;
-import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest;
-import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListRestorePlansRequest;
 import com.google.cloud.gkebackup.v1.ListRestorePlansResponse;
 import com.google.cloud.gkebackup.v1.ListRestoresRequest;
@@ -94,13 +72,9 @@ import com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest;
 import com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse;
 import com.google.cloud.gkebackup.v1.OperationMetadata;
 import com.google.cloud.gkebackup.v1.Restore;
-import com.google.cloud.gkebackup.v1.RestoreChannel;
 import com.google.cloud.gkebackup.v1.RestorePlan;
-import com.google.cloud.gkebackup.v1.RestorePlanBinding;
-import com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupRequest;
-import com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestoreRequest;
 import com.google.cloud.gkebackup.v1.VolumeBackup;
@@ -138,12 +112,10 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
       TypeRegistry.newBuilder()
           .add(BackupPlan.getDescriptor())
           .add(Empty.getDescriptor())
-          .add(BackupChannel.getDescriptor())
           .add(Restore.getDescriptor())
           .add(RestorePlan.getDescriptor())
           .add(Backup.getDescriptor())
           .add(OperationMetadata.getDescriptor())
-          .add(RestoreChannel.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateBackupPlanRequest, Operation>
@@ -340,275 +312,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
-  private static final ApiMethodDescriptor<CreateBackupChannelRequest, Operation>
-      createBackupChannelMethodDescriptor =
-          ApiMethodDescriptor.<CreateBackupChannelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/CreateBackupChannel")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<CreateBackupChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*}/backupChannels",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(
-                                fields, "backupChannelId", request.getBackupChannelId());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("backupChannel", request.getBackupChannel(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (CreateBackupChannelRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<ListBackupChannelsRequest, ListBackupChannelsResponse>
-      listBackupChannelsMethodDescriptor =
-          ApiMethodDescriptor.<ListBackupChannelsRequest, ListBackupChannelsResponse>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListBackupChannels")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListBackupChannelsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*}/backupChannels",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListBackupChannelsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListBackupChannelsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListBackupChannelsResponse>newBuilder()
-                      .setDefaultInstance(ListBackupChannelsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetBackupChannelRequest, BackupChannel>
-      getBackupChannelMethodDescriptor =
-          ApiMethodDescriptor.<GetBackupChannelRequest, BackupChannel>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackupChannel")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetBackupChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/backupChannels/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<BackupChannel>newBuilder()
-                      .setDefaultInstance(BackupChannel.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<UpdateBackupChannelRequest, Operation>
-      updateBackupChannelMethodDescriptor =
-          ApiMethodDescriptor.<UpdateBackupChannelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/UpdateBackupChannel")
-              .setHttpMethod("PATCH")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UpdateBackupChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{backupChannel.name=projects/*/locations/*/backupChannels/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields, "backupChannel.name", request.getBackupChannel().getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("backupChannel", request.getBackupChannel(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (UpdateBackupChannelRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<DeleteBackupChannelRequest, Operation>
-      deleteBackupChannelMethodDescriptor =
-          ApiMethodDescriptor.<DeleteBackupChannelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/DeleteBackupChannel")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteBackupChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/backupChannels/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteBackupChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "etag", request.getEtag());
-                            serializer.putQueryParam(fields, "force", request.getForce());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (DeleteBackupChannelRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<
-          ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-      listBackupPlanBindingsMethodDescriptor =
-          ApiMethodDescriptor
-              .<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListBackupPlanBindings")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListBackupPlanBindingsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*/backupChannels/*}/backupPlanBindings",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListBackupPlanBindingsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListBackupPlanBindingsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListBackupPlanBindingsResponse>newBuilder()
-                      .setDefaultInstance(ListBackupPlanBindingsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingMethodDescriptor =
-          ApiMethodDescriptor.<GetBackupPlanBindingRequest, BackupPlanBinding>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackupPlanBinding")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetBackupPlanBindingRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/backupChannels/*/backupPlanBindings/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetBackupPlanBindingRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetBackupPlanBindingRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<BackupPlanBinding>newBuilder()
-                      .setDefaultInstance(BackupPlanBinding.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<CreateBackupRequest, Operation>
       createBackupMethodDescriptor =
           ApiMethodDescriptor.<CreateBackupRequest, Operation>newBuilder()
@@ -676,8 +379,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(
-                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1069,276 +770,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
               .setOperationSnapshotFactory(
                   (DeleteRestorePlanRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<CreateRestoreChannelRequest, Operation>
-      createRestoreChannelMethodDescriptor =
-          ApiMethodDescriptor.<CreateRestoreChannelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/CreateRestoreChannel")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<CreateRestoreChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*}/restoreChannels",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(
-                                fields, "restoreChannelId", request.getRestoreChannelId());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("restoreChannel", request.getRestoreChannel(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (CreateRestoreChannelRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-      listRestoreChannelsMethodDescriptor =
-          ApiMethodDescriptor.<ListRestoreChannelsRequest, ListRestoreChannelsResponse>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListRestoreChannels")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListRestoreChannelsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*}/restoreChannels",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListRestoreChannelsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListRestoreChannelsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListRestoreChannelsResponse>newBuilder()
-                      .setDefaultInstance(ListRestoreChannelsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetRestoreChannelRequest, RestoreChannel>
-      getRestoreChannelMethodDescriptor =
-          ApiMethodDescriptor.<GetRestoreChannelRequest, RestoreChannel>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetRestoreChannel")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetRestoreChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/restoreChannels/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<RestoreChannel>newBuilder()
-                      .setDefaultInstance(RestoreChannel.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<UpdateRestoreChannelRequest, Operation>
-      updateRestoreChannelMethodDescriptor =
-          ApiMethodDescriptor.<UpdateRestoreChannelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/UpdateRestoreChannel")
-              .setHttpMethod("PATCH")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UpdateRestoreChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{restoreChannel.name=projects/*/locations/*/restoreChannels/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields,
-                                "restoreChannel.name",
-                                request.getRestoreChannel().getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("restoreChannel", request.getRestoreChannel(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (UpdateRestoreChannelRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<DeleteRestoreChannelRequest, Operation>
-      deleteRestoreChannelMethodDescriptor =
-          ApiMethodDescriptor.<DeleteRestoreChannelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/DeleteRestoreChannel")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteRestoreChannelRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/restoreChannels/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteRestoreChannelRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "etag", request.getEtag());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Operation>newBuilder()
-                      .setDefaultInstance(Operation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .setOperationSnapshotFactory(
-                  (DeleteRestoreChannelRequest request, Operation response) ->
-                      HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<
-          ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-      listRestorePlanBindingsMethodDescriptor =
-          ApiMethodDescriptor
-              .<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListRestorePlanBindings")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListRestorePlanBindingsRequest>newBuilder()
-                      .setPath(
-                          "/v1/{parent=projects/*/locations/*/restoreChannels/*}/restorePlanBindings",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListRestorePlanBindingsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListRestorePlanBindingsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListRestorePlanBindingsResponse>newBuilder()
-                      .setDefaultInstance(ListRestorePlanBindingsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingMethodDescriptor =
-          ApiMethodDescriptor.<GetRestorePlanBindingRequest, RestorePlanBinding>newBuilder()
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetRestorePlanBinding")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetRestorePlanBindingRequest>newBuilder()
-                      .setPath(
-                          "/v1/{name=projects/*/locations/*/restoreChannels/*/restorePlanBindings/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetRestorePlanBindingRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetRestorePlanBindingRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<RestorePlanBinding>newBuilder()
-                      .setDefaultInstance(RestorePlanBinding.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CreateRestoreRequest, Operation>
@@ -1850,26 +1281,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
   private final UnaryCallable<DeleteBackupPlanRequest, Operation> deleteBackupPlanCallable;
   private final OperationCallable<DeleteBackupPlanRequest, Empty, OperationMetadata>
       deleteBackupPlanOperationCallable;
-  private final UnaryCallable<CreateBackupChannelRequest, Operation> createBackupChannelCallable;
-  private final OperationCallable<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
-      createBackupChannelOperationCallable;
-  private final UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsResponse>
-      listBackupChannelsCallable;
-  private final UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsPagedResponse>
-      listBackupChannelsPagedCallable;
-  private final UnaryCallable<GetBackupChannelRequest, BackupChannel> getBackupChannelCallable;
-  private final UnaryCallable<UpdateBackupChannelRequest, Operation> updateBackupChannelCallable;
-  private final OperationCallable<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
-      updateBackupChannelOperationCallable;
-  private final UnaryCallable<DeleteBackupChannelRequest, Operation> deleteBackupChannelCallable;
-  private final OperationCallable<DeleteBackupChannelRequest, Empty, OperationMetadata>
-      deleteBackupChannelOperationCallable;
-  private final UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-      listBackupPlanBindingsCallable;
-  private final UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsPagedResponse>
-      listBackupPlanBindingsPagedCallable;
-  private final UnaryCallable<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingCallable;
   private final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable;
   private final OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
       createBackupOperationCallable;
@@ -1902,26 +1313,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
   private final UnaryCallable<DeleteRestorePlanRequest, Operation> deleteRestorePlanCallable;
   private final OperationCallable<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationCallable;
-  private final UnaryCallable<CreateRestoreChannelRequest, Operation> createRestoreChannelCallable;
-  private final OperationCallable<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      createRestoreChannelOperationCallable;
-  private final UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-      listRestoreChannelsCallable;
-  private final UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsPagedResponse>
-      listRestoreChannelsPagedCallable;
-  private final UnaryCallable<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelCallable;
-  private final UnaryCallable<UpdateRestoreChannelRequest, Operation> updateRestoreChannelCallable;
-  private final OperationCallable<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      updateRestoreChannelOperationCallable;
-  private final UnaryCallable<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelCallable;
-  private final OperationCallable<DeleteRestoreChannelRequest, Empty, OperationMetadata>
-      deleteRestoreChannelOperationCallable;
-  private final UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-      listRestorePlanBindingsCallable;
-  private final UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsPagedResponse>
-      listRestorePlanBindingsPagedCallable;
-  private final UnaryCallable<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingCallable;
   private final UnaryCallable<CreateRestoreRequest, Operation> createRestoreCallable;
   private final OperationCallable<CreateRestoreRequest, Restore, OperationMetadata>
       createRestoreOperationCallable;
@@ -2078,92 +1469,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<CreateBackupChannelRequest, Operation>
-        createBackupChannelTransportSettings =
-            HttpJsonCallSettings.<CreateBackupChannelRequest, Operation>newBuilder()
-                .setMethodDescriptor(createBackupChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<ListBackupChannelsRequest, ListBackupChannelsResponse>
-        listBackupChannelsTransportSettings =
-            HttpJsonCallSettings.<ListBackupChannelsRequest, ListBackupChannelsResponse>newBuilder()
-                .setMethodDescriptor(listBackupChannelsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelTransportSettings =
-        HttpJsonCallSettings.<GetBackupChannelRequest, BackupChannel>newBuilder()
-            .setMethodDescriptor(getBackupChannelMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<UpdateBackupChannelRequest, Operation>
-        updateBackupChannelTransportSettings =
-            HttpJsonCallSettings.<UpdateBackupChannelRequest, Operation>newBuilder()
-                .setMethodDescriptor(updateBackupChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add(
-                          "backup_channel.name",
-                          String.valueOf(request.getBackupChannel().getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<DeleteBackupChannelRequest, Operation>
-        deleteBackupChannelTransportSettings =
-            HttpJsonCallSettings.<DeleteBackupChannelRequest, Operation>newBuilder()
-                .setMethodDescriptor(deleteBackupChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-        listBackupPlanBindingsTransportSettings =
-            HttpJsonCallSettings
-                .<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>newBuilder()
-                .setMethodDescriptor(listBackupPlanBindingsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
-        getBackupPlanBindingTransportSettings =
-            HttpJsonCallSettings.<GetBackupPlanBindingRequest, BackupPlanBinding>newBuilder()
-                .setMethodDescriptor(getBackupPlanBindingMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupMethodDescriptor)
@@ -2299,94 +1604,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<CreateRestoreChannelRequest, Operation>
-        createRestoreChannelTransportSettings =
-            HttpJsonCallSettings.<CreateRestoreChannelRequest, Operation>newBuilder()
-                .setMethodDescriptor(createRestoreChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-        listRestoreChannelsTransportSettings =
-            HttpJsonCallSettings
-                .<ListRestoreChannelsRequest, ListRestoreChannelsResponse>newBuilder()
-                .setMethodDescriptor(listRestoreChannelsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<GetRestoreChannelRequest, RestoreChannel>
-        getRestoreChannelTransportSettings =
-            HttpJsonCallSettings.<GetRestoreChannelRequest, RestoreChannel>newBuilder()
-                .setMethodDescriptor(getRestoreChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<UpdateRestoreChannelRequest, Operation>
-        updateRestoreChannelTransportSettings =
-            HttpJsonCallSettings.<UpdateRestoreChannelRequest, Operation>newBuilder()
-                .setMethodDescriptor(updateRestoreChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add(
-                          "restore_channel.name",
-                          String.valueOf(request.getRestoreChannel().getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<DeleteRestoreChannelRequest, Operation>
-        deleteRestoreChannelTransportSettings =
-            HttpJsonCallSettings.<DeleteRestoreChannelRequest, Operation>newBuilder()
-                .setMethodDescriptor(deleteRestoreChannelMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-        listRestorePlanBindingsTransportSettings =
-            HttpJsonCallSettings
-                .<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>newBuilder()
-                .setMethodDescriptor(listRestorePlanBindingsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
-        getRestorePlanBindingTransportSettings =
-            HttpJsonCallSettings.<GetRestorePlanBindingRequest, RestorePlanBinding>newBuilder()
-                .setMethodDescriptor(getRestorePlanBindingMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<CreateRestoreRequest, Operation> createRestoreTransportSettings =
         HttpJsonCallSettings.<CreateRestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(createRestoreMethodDescriptor)
@@ -2572,67 +1789,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
             settings.deleteBackupPlanOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
-    this.createBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            createBackupChannelTransportSettings,
-            settings.createBackupChannelSettings(),
-            clientContext);
-    this.createBackupChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            createBackupChannelTransportSettings,
-            settings.createBackupChannelOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.listBackupChannelsCallable =
-        callableFactory.createUnaryCallable(
-            listBackupChannelsTransportSettings,
-            settings.listBackupChannelsSettings(),
-            clientContext);
-    this.listBackupChannelsPagedCallable =
-        callableFactory.createPagedCallable(
-            listBackupChannelsTransportSettings,
-            settings.listBackupChannelsSettings(),
-            clientContext);
-    this.getBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            getBackupChannelTransportSettings, settings.getBackupChannelSettings(), clientContext);
-    this.updateBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            updateBackupChannelTransportSettings,
-            settings.updateBackupChannelSettings(),
-            clientContext);
-    this.updateBackupChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            updateBackupChannelTransportSettings,
-            settings.updateBackupChannelOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.deleteBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            deleteBackupChannelTransportSettings,
-            settings.deleteBackupChannelSettings(),
-            clientContext);
-    this.deleteBackupChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteBackupChannelTransportSettings,
-            settings.deleteBackupChannelOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.listBackupPlanBindingsCallable =
-        callableFactory.createUnaryCallable(
-            listBackupPlanBindingsTransportSettings,
-            settings.listBackupPlanBindingsSettings(),
-            clientContext);
-    this.listBackupPlanBindingsPagedCallable =
-        callableFactory.createPagedCallable(
-            listBackupPlanBindingsTransportSettings,
-            settings.listBackupPlanBindingsSettings(),
-            clientContext);
-    this.getBackupPlanBindingCallable =
-        callableFactory.createUnaryCallable(
-            getBackupPlanBindingTransportSettings,
-            settings.getBackupPlanBindingSettings(),
-            clientContext);
     this.createBackupCallable =
         callableFactory.createUnaryCallable(
             createBackupTransportSettings, settings.createBackupSettings(), clientContext);
@@ -2724,69 +1880,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
             settings.deleteRestorePlanOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
-    this.createRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            createRestoreChannelTransportSettings,
-            settings.createRestoreChannelSettings(),
-            clientContext);
-    this.createRestoreChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            createRestoreChannelTransportSettings,
-            settings.createRestoreChannelOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.listRestoreChannelsCallable =
-        callableFactory.createUnaryCallable(
-            listRestoreChannelsTransportSettings,
-            settings.listRestoreChannelsSettings(),
-            clientContext);
-    this.listRestoreChannelsPagedCallable =
-        callableFactory.createPagedCallable(
-            listRestoreChannelsTransportSettings,
-            settings.listRestoreChannelsSettings(),
-            clientContext);
-    this.getRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            getRestoreChannelTransportSettings,
-            settings.getRestoreChannelSettings(),
-            clientContext);
-    this.updateRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            updateRestoreChannelTransportSettings,
-            settings.updateRestoreChannelSettings(),
-            clientContext);
-    this.updateRestoreChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            updateRestoreChannelTransportSettings,
-            settings.updateRestoreChannelOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.deleteRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            deleteRestoreChannelTransportSettings,
-            settings.deleteRestoreChannelSettings(),
-            clientContext);
-    this.deleteRestoreChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteRestoreChannelTransportSettings,
-            settings.deleteRestoreChannelOperationSettings(),
-            clientContext,
-            httpJsonOperationsStub);
-    this.listRestorePlanBindingsCallable =
-        callableFactory.createUnaryCallable(
-            listRestorePlanBindingsTransportSettings,
-            settings.listRestorePlanBindingsSettings(),
-            clientContext);
-    this.listRestorePlanBindingsPagedCallable =
-        callableFactory.createPagedCallable(
-            listRestorePlanBindingsTransportSettings,
-            settings.listRestorePlanBindingsSettings(),
-            clientContext);
-    this.getRestorePlanBindingCallable =
-        callableFactory.createUnaryCallable(
-            getRestorePlanBindingTransportSettings,
-            settings.getRestorePlanBindingSettings(),
-            clientContext);
     this.createRestoreCallable =
         callableFactory.createUnaryCallable(
             createRestoreTransportSettings, settings.createRestoreSettings(), clientContext);
@@ -2874,13 +1967,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
     methodDescriptors.add(getBackupPlanMethodDescriptor);
     methodDescriptors.add(updateBackupPlanMethodDescriptor);
     methodDescriptors.add(deleteBackupPlanMethodDescriptor);
-    methodDescriptors.add(createBackupChannelMethodDescriptor);
-    methodDescriptors.add(listBackupChannelsMethodDescriptor);
-    methodDescriptors.add(getBackupChannelMethodDescriptor);
-    methodDescriptors.add(updateBackupChannelMethodDescriptor);
-    methodDescriptors.add(deleteBackupChannelMethodDescriptor);
-    methodDescriptors.add(listBackupPlanBindingsMethodDescriptor);
-    methodDescriptors.add(getBackupPlanBindingMethodDescriptor);
     methodDescriptors.add(createBackupMethodDescriptor);
     methodDescriptors.add(listBackupsMethodDescriptor);
     methodDescriptors.add(getBackupMethodDescriptor);
@@ -2893,13 +1979,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
     methodDescriptors.add(getRestorePlanMethodDescriptor);
     methodDescriptors.add(updateRestorePlanMethodDescriptor);
     methodDescriptors.add(deleteRestorePlanMethodDescriptor);
-    methodDescriptors.add(createRestoreChannelMethodDescriptor);
-    methodDescriptors.add(listRestoreChannelsMethodDescriptor);
-    methodDescriptors.add(getRestoreChannelMethodDescriptor);
-    methodDescriptors.add(updateRestoreChannelMethodDescriptor);
-    methodDescriptors.add(deleteRestoreChannelMethodDescriptor);
-    methodDescriptors.add(listRestorePlanBindingsMethodDescriptor);
-    methodDescriptors.add(getRestorePlanBindingMethodDescriptor);
     methodDescriptors.add(createRestoreMethodDescriptor);
     methodDescriptors.add(listRestoresMethodDescriptor);
     methodDescriptors.add(getRestoreMethodDescriptor);
@@ -2967,74 +2046,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
   public OperationCallable<DeleteBackupPlanRequest, Empty, OperationMetadata>
       deleteBackupPlanOperationCallable() {
     return deleteBackupPlanOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateBackupChannelRequest, Operation> createBackupChannelCallable() {
-    return createBackupChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
-      createBackupChannelOperationCallable() {
-    return createBackupChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsResponse>
-      listBackupChannelsCallable() {
-    return listBackupChannelsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsPagedResponse>
-      listBackupChannelsPagedCallable() {
-    return listBackupChannelsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetBackupChannelRequest, BackupChannel> getBackupChannelCallable() {
-    return getBackupChannelCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateBackupChannelRequest, Operation> updateBackupChannelCallable() {
-    return updateBackupChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
-      updateBackupChannelOperationCallable() {
-    return updateBackupChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteBackupChannelRequest, Operation> deleteBackupChannelCallable() {
-    return deleteBackupChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteBackupChannelRequest, Empty, OperationMetadata>
-      deleteBackupChannelOperationCallable() {
-    return deleteBackupChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-      listBackupPlanBindingsCallable() {
-    return listBackupPlanBindingsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsPagedResponse>
-      listBackupPlanBindingsPagedCallable() {
-    return listBackupPlanBindingsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingCallable() {
-    return getBackupPlanBindingCallable;
   }
 
   @Override
@@ -3150,74 +2161,6 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
   public OperationCallable<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationCallable() {
     return deleteRestorePlanOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateRestoreChannelRequest, Operation> createRestoreChannelCallable() {
-    return createRestoreChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      createRestoreChannelOperationCallable() {
-    return createRestoreChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-      listRestoreChannelsCallable() {
-    return listRestoreChannelsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsPagedResponse>
-      listRestoreChannelsPagedCallable() {
-    return listRestoreChannelsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelCallable() {
-    return getRestoreChannelCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateRestoreChannelRequest, Operation> updateRestoreChannelCallable() {
-    return updateRestoreChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      updateRestoreChannelOperationCallable() {
-    return updateRestoreChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelCallable() {
-    return deleteRestoreChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteRestoreChannelRequest, Empty, OperationMetadata>
-      deleteRestoreChannelOperationCallable() {
-    return deleteRestoreChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-      listRestorePlanBindingsCallable() {
-    return listRestorePlanBindingsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsPagedResponse>
-      listRestorePlanBindingsPagedCallable() {
-    return listRestorePlanBindingsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingCallable() {
-    return getRestorePlanBindingCallable;
   }
 
   @Override

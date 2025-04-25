@@ -38,7 +38,6 @@ public interface RouteTableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface RouteTableOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface RouteTableOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface RouteTableOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface RouteTableOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface RouteTableOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -159,11 +153,9 @@ public interface RouteTableOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface RouteTableOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -193,7 +184,6 @@ public interface RouteTableOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public interface RouteTableOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface RouteTableOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface RouteTableOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

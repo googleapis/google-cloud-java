@@ -33,7 +33,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeregistry.v1.ListApiSpecRevisionsResponse)
     ListApiSpecRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListApiSpecRevisionsResponse.newBuilder() to construct.
   private ListApiSpecRevisionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apigeeregistry.v1.ApiSpec> apiSpecs_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.apigeeregistry.v1.ApiSpec> getApiSpecsList() {
     return apiSpecs_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       getApiSpecsOrBuilderList() {
     return apiSpecs_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
   public int getApiSpecsCount() {
     return apiSpecs_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
   public com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpecs(int index) {
     return apiSpecs_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return apiSpecsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return apiSpecsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return apiSpecsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
     public com.google.cloud.apigeeregistry.v1.ApiSpec.Builder getApiSpecsBuilder(int index) {
       return getApiSpecsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return apiSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +899,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(apiSpecs_);
       }
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       return getApiSpecsFieldBuilder()
           .addBuilder(com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       return getApiSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1003,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1025,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

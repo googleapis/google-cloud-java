@@ -34,7 +34,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.BatchUpdateGenerativeQuestionConfigsResponse)
     BatchUpdateGenerativeQuestionConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchUpdateGenerativeQuestionConfigsResponse.newBuilder() to construct.
   private BatchUpdateGenerativeQuestionConfigsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.GenerativeQuestionConfig>
       generativeQuestionConfigs_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       getGenerativeQuestionConfigsList() {
     return generativeQuestionConfigs_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       getGenerativeQuestionConfigsOrBuilderList() {
     return generativeQuestionConfigs_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
   public int getGenerativeQuestionConfigsCount() {
     return generativeQuestionConfigs_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       int index) {
     return generativeQuestionConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -329,7 +323,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +602,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
         return generativeQuestionConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -628,7 +620,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
         return generativeQuestionConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -648,7 +639,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
         return generativeQuestionConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
         getGenerativeQuestionConfigsBuilder(int index) {
       return getGenerativeQuestionConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +881,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
         return generativeQuestionConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
         return java.util.Collections.unmodifiableList(generativeQuestionConfigs_);
       }
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
       return getGenerativeQuestionConfigsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.GenerativeQuestionConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class BatchUpdateGenerativeQuestionConfigsResponse
           .addBuilder(
               index, com.google.cloud.retail.v2beta.GenerativeQuestionConfig.getDefaultInstance());
     }
-
     /**
      *
      *

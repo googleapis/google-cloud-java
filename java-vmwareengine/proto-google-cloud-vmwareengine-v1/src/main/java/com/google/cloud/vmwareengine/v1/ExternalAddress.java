@@ -34,7 +34,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.ExternalAddress)
     ExternalAddressOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExternalAddress.newBuilder() to construct.
   private ExternalAddress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,7 +142,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -154,7 +152,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -165,7 +162,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
-
     /**
      *
      *
@@ -176,7 +172,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
-
     /**
      *
      *
@@ -280,7 +275,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -308,7 +302,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -339,7 +332,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -356,7 +348,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -373,7 +364,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -391,7 +381,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -408,7 +397,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -425,7 +413,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -445,7 +432,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object internalIp_ = "";
-
   /**
    *
    *
@@ -469,7 +455,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +483,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalIp_ = "";
-
   /**
    *
    *
@@ -522,7 +506,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -549,7 +532,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
-
   /**
    *
    *
@@ -567,7 +549,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -594,7 +575,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -618,7 +598,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -647,7 +626,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -671,7 +649,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -930,7 +907,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1237,7 +1213,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1264,7 +1239,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1291,7 +1265,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1317,7 +1290,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1311,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1344,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1390,7 +1360,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1413,7 +1382,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1406,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1427,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1456,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1477,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1493,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1550,7 +1513,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1585,7 +1547,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1602,7 +1563,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1625,7 +1585,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1650,7 +1609,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1630,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1659,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1724,7 +1680,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1696,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1762,7 +1716,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1792,7 +1745,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object internalIp_ = "";
-
     /**
      *
      *
@@ -1815,7 +1767,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1838,7 +1789,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1860,7 +1810,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1827,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1903,7 +1851,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object externalIp_ = "";
-
     /**
      *
      *
@@ -1926,7 +1873,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1949,7 +1895,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1971,7 +1916,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1989,7 +1933,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1957,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2032,7 +1974,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2053,7 +1994,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2015,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.vmwareengine.v1.ExternalAddress.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2099,7 +2038,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2121,7 +2059,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -2144,7 +2081,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2167,7 +2103,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2189,7 +2124,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2207,7 +2141,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2232,7 +2165,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2255,7 +2187,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2278,7 +2209,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2300,7 +2230,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2318,7 +2247,6 @@ public final class ExternalAddress extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

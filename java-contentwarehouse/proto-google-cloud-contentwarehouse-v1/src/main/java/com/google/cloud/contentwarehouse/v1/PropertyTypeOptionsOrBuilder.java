@@ -37,7 +37,6 @@ public interface PropertyTypeOptionsOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition>
       getPropertyDefinitionsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface PropertyTypeOptionsOrBuilder
    * </code>
    */
   com.google.cloud.contentwarehouse.v1.PropertyDefinition getPropertyDefinitions(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface PropertyTypeOptionsOrBuilder
    * </code>
    */
   int getPropertyDefinitionsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface PropertyTypeOptionsOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.PropertyDefinitionOrBuilder>
       getPropertyDefinitionsOrBuilderList();
-
   /**
    *
    *

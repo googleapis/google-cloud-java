@@ -38,7 +38,6 @@ public interface ContainerInfoOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
-
   /**
    *
    *

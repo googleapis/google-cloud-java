@@ -33,7 +33,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.ListWorkspacesResponse)
     ListWorkspacesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListWorkspacesResponse.newBuilder() to construct.
   private ListWorkspacesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.Workspace> workspaces_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.area120.tables.v1alpha1.Workspace> getWorkspacesList() {
     return workspaces_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       getWorkspacesOrBuilderList() {
     return workspaces_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
   public int getWorkspacesCount() {
     return workspaces_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
   public com.google.area120.tables.v1alpha1.Workspace getWorkspaces(int index) {
     return workspaces_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return workspacesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return workspacesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return workspacesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
     public com.google.area120.tables.v1alpha1.Workspace.Builder getWorkspacesBuilder(int index) {
       return getWorkspacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return workspacesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(workspaces_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       return getWorkspacesFieldBuilder()
           .addBuilder(com.google.area120.tables.v1alpha1.Workspace.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       return getWorkspacesFieldBuilder()
           .addBuilder(index, com.google.area120.tables.v1alpha1.Workspace.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1041,6 @@ public final class ListWorkspacesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

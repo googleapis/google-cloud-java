@@ -94,19 +94,6 @@ public final class AssetServiceGrpc {
     return AssetServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static AssetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public AssetServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new AssetServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return AssetServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -213,40 +200,6 @@ public final class AssetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AssetService.
-   *
-   * <pre>
-   * Asset service definition.
-   * </pre>
-   */
-  public static final class AssetServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingV2Stub> {
-    private AssetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected AssetServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new AssetServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists assets with time and resource types and returns paged results in
-     * response.
-     * </pre>
-     */
-    public com.google.cloud.asset.v1p5beta1.ListAssetsResponse listAssets(
-        com.google.cloud.asset.v1p5beta1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAssetsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.

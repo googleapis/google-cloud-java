@@ -36,7 +36,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return Whether the interconnectAttachment field is set.
    */
   boolean hasInterconnectAttachment();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return The interconnectAttachment.
    */
   java.lang.String getInterconnectAttachment();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
-
   /**
    *
    *

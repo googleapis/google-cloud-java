@@ -40,7 +40,6 @@ public interface CreateKeyRingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateKeyRingRequestOrBuilder
    * @return The keyRingId.
    */
   java.lang.String getKeyRingId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CreateKeyRingRequestOrBuilder
    * @return Whether the keyRing field is set.
    */
   boolean hasKeyRing();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateKeyRingRequestOrBuilder
    * @return The keyRing.
    */
   com.google.cloud.kms.v1.KeyRing getKeyRing();
-
   /**
    *
    *

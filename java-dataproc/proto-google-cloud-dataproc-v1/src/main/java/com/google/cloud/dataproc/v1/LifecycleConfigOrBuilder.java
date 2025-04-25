@@ -41,7 +41,6 @@ public interface LifecycleConfigOrBuilder
    * @return Whether the idleDeleteTtl field is set.
    */
   boolean hasIdleDeleteTtl();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface LifecycleConfigOrBuilder
    * @return The idleDeleteTtl.
    */
   com.google.protobuf.Duration getIdleDeleteTtl();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface LifecycleConfigOrBuilder
    * @return Whether the autoDeleteTime field is set.
    */
   boolean hasAutoDeleteTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface LifecycleConfigOrBuilder
    * @return The autoDeleteTime.
    */
   com.google.protobuf.Timestamp getAutoDeleteTime();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface LifecycleConfigOrBuilder
    * @return Whether the autoDeleteTtl field is set.
    */
   boolean hasAutoDeleteTtl();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface LifecycleConfigOrBuilder
    * @return The autoDeleteTtl.
    */
   com.google.protobuf.Duration getAutoDeleteTtl();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface LifecycleConfigOrBuilder
    * @return Whether the idleStartTime field is set.
    */
   boolean hasIdleStartTime();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface LifecycleConfigOrBuilder
    * @return The idleStartTime.
    */
   com.google.protobuf.Timestamp getIdleStartTime();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TransformationDescriptionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface TransformationDescriptionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface TransformationDescriptionOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface TransformationDescriptionOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface TransformationDescriptionOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateDeploymentRequestOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateDeploymentRequestOrBuilder
    * @return The deployment.
    */
   com.google.cloud.telcoautomation.v1.Deployment getDeployment();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateDeploymentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateDeploymentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

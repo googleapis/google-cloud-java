@@ -32,7 +32,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PacketMirroringFilter)
     PacketMirroringFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PacketMirroringFilter.newBuilder() to construct.
   private PacketMirroringFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>BOTH = 2044801;</code>
      */
     public static final int BOTH_VALUE = 2044801;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>EGRESS = 432880501;</code>
      */
     public static final int EGRESS_VALUE = 432880501;
-
     /**
      *
      *
@@ -255,7 +251,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList iPProtocols_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -270,7 +265,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getIPProtocolsList() {
     return iPProtocols_;
   }
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public int getIPProtocolsCount() {
     return iPProtocols_.size();
   }
-
   /**
    *
    *
@@ -301,7 +294,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public java.lang.String getIPProtocols(int index) {
     return iPProtocols_.get(index);
   }
-
   /**
    *
    *
@@ -323,7 +315,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList cidrRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -338,7 +329,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getCidrRangesList() {
     return cidrRanges_;
   }
-
   /**
    *
    *
@@ -353,7 +343,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public int getCidrRangesCount() {
     return cidrRanges_.size();
   }
-
   /**
    *
    *
@@ -369,7 +358,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public java.lang.String getCidrRanges(int index) {
     return cidrRanges_.get(index);
   }
-
   /**
    *
    *
@@ -390,7 +378,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object direction_ = "";
-
   /**
    *
    *
@@ -407,7 +394,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public boolean hasDirection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -432,7 +418,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -654,7 +639,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -893,7 +877,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       iPProtocols_.makeImmutable();
       return iPProtocols_;
     }
-
     /**
      *
      *
@@ -924,7 +906,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public int getIPProtocolsCount() {
       return iPProtocols_.size();
     }
-
     /**
      *
      *
@@ -940,7 +921,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public java.lang.String getIPProtocols(int index) {
       return iPProtocols_.get(index);
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getIPProtocolsBytes(int index) {
       return iPProtocols_.getByteString(index);
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1018,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1092,7 +1066,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       cidrRanges_.makeImmutable();
       return cidrRanges_;
     }
-
     /**
      *
      *
@@ -1107,7 +1080,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public int getCidrRangesCount() {
       return cidrRanges_.size();
     }
-
     /**
      *
      *
@@ -1123,7 +1095,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public java.lang.String getCidrRanges(int index) {
       return cidrRanges_.get(index);
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getCidrRangesBytes(int index) {
       return cidrRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1163,7 +1133,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1174,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1192,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1217,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object direction_ = "";
-
     /**
      *
      *
@@ -1267,7 +1232,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public boolean hasDirection() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1291,7 +1255,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1278,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1338,7 +1300,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1318,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

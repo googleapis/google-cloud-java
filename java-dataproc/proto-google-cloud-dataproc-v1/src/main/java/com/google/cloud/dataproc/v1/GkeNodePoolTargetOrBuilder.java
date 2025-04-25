@@ -38,7 +38,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return The nodePool.
    */
   java.lang.String getNodePool();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return A list containing the roles.
    */
   java.util.List<com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role> getRolesList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return The count of roles.
    */
   int getRolesCount();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return The roles at the given index.
    */
   com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role getRoles(int index);
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return A list containing the enum numeric values on the wire for roles.
    */
   java.util.List<java.lang.Integer> getRolesValueList();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return Whether the nodePoolConfig field is set.
    */
   boolean hasNodePoolConfig();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface GkeNodePoolTargetOrBuilder
    * @return The nodePoolConfig.
    */
   com.google.cloud.dataproc.v1.GkeNodePoolConfig getNodePoolConfig();
-
   /**
    *
    *

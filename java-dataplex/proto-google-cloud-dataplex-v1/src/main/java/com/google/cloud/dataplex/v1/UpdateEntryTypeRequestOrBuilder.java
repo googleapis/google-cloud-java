@@ -38,7 +38,6 @@ public interface UpdateEntryTypeRequestOrBuilder
    * @return Whether the entryType field is set.
    */
   boolean hasEntryType();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateEntryTypeRequestOrBuilder
    * @return The entryType.
    */
   com.google.cloud.dataplex.v1.EntryType getEntryType();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateEntryTypeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateEntryTypeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface LatencyDistributionOrBuilder
    */
   java.util.List<com.google.cloud.networkmanagement.v1.LatencyPercentile>
       getLatencyPercentilesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface LatencyDistributionOrBuilder
    * </code>
    */
   com.google.cloud.networkmanagement.v1.LatencyPercentile getLatencyPercentiles(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface LatencyDistributionOrBuilder
    * </code>
    */
   int getLatencyPercentilesCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface LatencyDistributionOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkmanagement.v1.LatencyPercentileOrBuilder>
       getLatencyPercentilesOrBuilderList();
-
   /**
    *
    *

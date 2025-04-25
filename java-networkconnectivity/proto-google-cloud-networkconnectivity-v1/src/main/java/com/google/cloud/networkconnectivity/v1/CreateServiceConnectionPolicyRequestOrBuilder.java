@@ -39,7 +39,6 @@ public interface CreateServiceConnectionPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateServiceConnectionPolicyRequestOrBuilder
    * @return The serviceConnectionPolicyId.
    */
   java.lang.String getServiceConnectionPolicyId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface CreateServiceConnectionPolicyRequestOrBuilder
    * @return Whether the serviceConnectionPolicy field is set.
    */
   boolean hasServiceConnectionPolicy();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateServiceConnectionPolicyRequestOrBuilder
    * @return The serviceConnectionPolicy.
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy getServiceConnectionPolicy();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface CreateServiceConnectionPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

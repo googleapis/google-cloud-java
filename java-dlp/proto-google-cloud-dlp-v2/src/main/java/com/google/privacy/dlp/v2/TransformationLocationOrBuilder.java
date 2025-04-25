@@ -40,7 +40,6 @@ public interface TransformationLocationOrBuilder
    * @return Whether the findingId field is set.
    */
   boolean hasFindingId();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface TransformationLocationOrBuilder
    * @return The findingId.
    */
   java.lang.String getFindingId();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface TransformationLocationOrBuilder
    * @return Whether the recordTransformation field is set.
    */
   boolean hasRecordTransformation();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface TransformationLocationOrBuilder
    * @return The recordTransformation.
    */
   com.google.privacy.dlp.v2.RecordTransformation getRecordTransformation();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface TransformationLocationOrBuilder
    * @return The enum numeric value on the wire for containerType.
    */
   int getContainerTypeValue();
-
   /**
    *
    *

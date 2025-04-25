@@ -33,7 +33,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Trajectory)
     TrajectoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Trajectory.newBuilder() to construct.
   private Trajectory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ToolCall> toolCalls_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1beta1.ToolCall> getToolCallsList() {
     return toolCalls_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       getToolCallsOrBuilderList() {
     return toolCalls_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
   public int getToolCallsCount() {
     return toolCalls_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.ToolCall getToolCalls(int index) {
     return toolCalls_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
         return toolCallsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
         return toolCallsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
         return toolCallsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +819,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.ToolCall.Builder getToolCallsBuilder(int index) {
       return getToolCallsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
         return toolCallsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -877,7 +856,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(toolCalls_);
       }
     }
-
     /**
      *
      *
@@ -893,7 +871,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       return getToolCallsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.ToolCall.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class Trajectory extends com.google.protobuf.GeneratedMessageV3
       return getToolCallsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.ToolCall.getDefaultInstance());
     }
-
     /**
      *
      *

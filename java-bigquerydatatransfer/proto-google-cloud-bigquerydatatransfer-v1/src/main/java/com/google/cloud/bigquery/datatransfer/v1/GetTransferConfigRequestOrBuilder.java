@@ -40,7 +40,6 @@ public interface GetTransferConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

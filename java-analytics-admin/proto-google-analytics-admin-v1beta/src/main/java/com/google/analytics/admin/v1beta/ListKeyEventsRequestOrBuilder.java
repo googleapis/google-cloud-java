@@ -39,7 +39,6 @@ public interface ListKeyEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface ListKeyEventsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

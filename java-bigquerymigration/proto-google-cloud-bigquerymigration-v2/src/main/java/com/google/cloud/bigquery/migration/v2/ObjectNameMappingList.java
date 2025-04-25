@@ -34,7 +34,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.ObjectNameMappingList)
     ObjectNameMappingListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ObjectNameMappingList.newBuilder() to construct.
   private ObjectNameMappingList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.ObjectNameMapping> nameMap_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.bigquery.migration.v2.ObjectNameMapping> getNameMapList() {
     return nameMap_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       getNameMapOrBuilderList() {
     return nameMap_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
   public int getNameMapCount() {
     return nameMap_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
   public com.google.cloud.bigquery.migration.v2.ObjectNameMapping getNameMap(int index) {
     return nameMap_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
         return nameMapBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -591,7 +583,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
         return nameMapBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
         return nameMapBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +750,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
         int index) {
       return getNameMapFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -838,7 +818,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
         return nameMapBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -857,7 +836,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(nameMap_);
       }
     }
-
     /**
      *
      *
@@ -872,7 +850,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.bigquery.migration.v2.ObjectNameMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -888,7 +865,6 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.bigquery.migration.v2.ObjectNameMapping.getDefaultInstance());
     }
-
     /**
      *
      *

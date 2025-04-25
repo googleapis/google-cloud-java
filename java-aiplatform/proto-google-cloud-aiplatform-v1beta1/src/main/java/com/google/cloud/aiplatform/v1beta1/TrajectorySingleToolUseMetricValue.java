@@ -33,7 +33,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseMetricValue)
     TrajectorySingleToolUseMetricValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrajectorySingleToolUseMetricValue.newBuilder() to construct.
   private TrajectorySingleToolUseMetricValue(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -266,7 +263,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -460,7 +456,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -476,7 +471,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -492,7 +486,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -512,7 +505,6 @@ public final class TrajectorySingleToolUseMetricValue extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

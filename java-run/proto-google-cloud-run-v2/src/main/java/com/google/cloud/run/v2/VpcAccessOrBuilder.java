@@ -40,7 +40,6 @@ public interface VpcAccessOrBuilder
    * @return The connector.
    */
   java.lang.String getConnector();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface VpcAccessOrBuilder
    * @return The enum numeric value on the wire for egress.
    */
   int getEgressValue();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface VpcAccessOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface> getNetworkInterfacesList();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface VpcAccessOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index);
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface VpcAccessOrBuilder
    * </code>
    */
   int getNetworkInterfacesCount();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface VpcAccessOrBuilder
    */
   java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
-
   /**
    *
    *

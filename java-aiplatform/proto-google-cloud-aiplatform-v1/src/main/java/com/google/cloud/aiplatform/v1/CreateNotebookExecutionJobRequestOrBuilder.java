@@ -39,7 +39,6 @@ public interface CreateNotebookExecutionJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateNotebookExecutionJobRequestOrBuilder
    * @return Whether the notebookExecutionJob field is set.
    */
   boolean hasNotebookExecutionJob();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateNotebookExecutionJobRequestOrBuilder
    * @return The notebookExecutionJob.
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob getNotebookExecutionJob();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateNotebookExecutionJobRequestOrBuilder
    * @return The notebookExecutionJobId.
    */
   java.lang.String getNotebookExecutionJobId();
-
   /**
    *
    *

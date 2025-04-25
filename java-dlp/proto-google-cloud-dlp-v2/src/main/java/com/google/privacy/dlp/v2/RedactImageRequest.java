@@ -34,7 +34,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RedactImageRequest)
     RedactImageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RedactImageRequest.newBuilder() to construct.
   private RedactImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the infoType field is set.
      */
     boolean hasInfoType();
-
     /**
      *
      *
@@ -103,7 +101,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * @return The infoType.
      */
     com.google.privacy.dlp.v2.InfoType getInfoType();
-
     /**
      *
      *
@@ -131,7 +128,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the redactAllText field is set.
      */
     boolean hasRedactAllText();
-
     /**
      *
      *
@@ -159,7 +155,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the redactionColor field is set.
      */
     boolean hasRedactionColor();
-
     /**
      *
      *
@@ -173,7 +168,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * @return The redactionColor.
      */
     com.google.privacy.dlp.v2.Color getRedactionColor();
-
     /**
      *
      *
@@ -188,7 +182,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
     com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.TargetCase getTargetCase();
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig)
       ImageRedactionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ImageRedactionConfig.newBuilder() to construct.
     private ImageRedactionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -250,7 +242,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       private TargetCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -284,7 +275,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int INFO_TYPE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -303,7 +293,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasInfoType() {
       return targetCase_ == 1;
     }
-
     /**
      *
      *
@@ -325,7 +314,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -347,7 +335,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int REDACT_ALL_TEXT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -364,7 +351,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRedactAllText() {
       return targetCase_ == 2;
     }
-
     /**
      *
      *
@@ -387,7 +373,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int REDACTION_COLOR_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.Color redactionColor_;
-
     /**
      *
      *
@@ -404,7 +389,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRedactionColor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -423,7 +407,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
           ? com.google.privacy.dlp.v2.Color.getDefaultInstance()
           : redactionColor_;
     }
-
     /**
      *
      *
@@ -647,7 +630,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               com.google.privacy.dlp.v2.InfoType.Builder,
               com.google.privacy.dlp.v2.InfoTypeOrBuilder>
           infoTypeBuilder_;
-
       /**
        *
        *
@@ -938,7 +919,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasInfoType() {
         return targetCase_ == 1;
       }
-
       /**
        *
        *
@@ -967,7 +947,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
           return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -993,7 +972,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         targetCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1016,7 +994,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         targetCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1052,7 +1029,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         targetCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1081,7 +1057,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1097,7 +1072,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
         return getInfoTypeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1121,7 +1095,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
           return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1171,7 +1144,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasRedactAllText() {
         return targetCase_ == 2;
       }
-
       /**
        *
        *
@@ -1190,7 +1162,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         }
         return false;
       }
-
       /**
        *
        *
@@ -1211,7 +1182,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1239,7 +1209,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               com.google.privacy.dlp.v2.Color.Builder,
               com.google.privacy.dlp.v2.ColorOrBuilder>
           redactionColorBuilder_;
-
       /**
        *
        *
@@ -1255,7 +1224,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasRedactionColor() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1277,7 +1245,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
           return redactionColorBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1301,7 +1268,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1322,7 +1288,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1351,7 +1316,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1372,7 +1336,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1388,7 +1351,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getRedactionColorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1408,7 +1370,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               : redactionColor_;
         }
       }
-
       /**
        *
        *
@@ -1508,7 +1469,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1547,7 +1507,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1591,7 +1550,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
-
   /**
    *
    *
@@ -1615,7 +1573,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1642,7 +1599,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
-
   /**
    *
    *
@@ -1658,7 +1614,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasInspectConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1676,7 +1631,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
         : inspectConfig_;
   }
-
   /**
    *
    *
@@ -1698,7 +1652,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>
       imageRedactionConfigs_;
-
   /**
    *
    *
@@ -1715,7 +1668,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       getImageRedactionConfigsList() {
     return imageRedactionConfigs_;
   }
-
   /**
    *
    *
@@ -1733,7 +1685,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       getImageRedactionConfigsOrBuilderList() {
     return imageRedactionConfigs_;
   }
-
   /**
    *
    *
@@ -1749,7 +1700,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
   public int getImageRedactionConfigsCount() {
     return imageRedactionConfigs_.size();
   }
-
   /**
    *
    *
@@ -1766,7 +1716,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       int index) {
     return imageRedactionConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -1786,7 +1735,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int INCLUDE_FINDINGS_FIELD_NUMBER = 6;
   private boolean includeFindings_ = false;
-
   /**
    *
    *
@@ -1806,7 +1754,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int BYTE_ITEM_FIELD_NUMBER = 7;
   private com.google.privacy.dlp.v2.ByteContentItem byteItem_;
-
   /**
    *
    *
@@ -1822,7 +1769,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasByteItem() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1840,7 +1786,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance()
         : byteItem_;
   }
-
   /**
    *
    *
@@ -2075,7 +2020,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2399,7 +2343,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2437,7 +2380,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2475,7 +2417,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2512,7 +2453,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2545,7 +2485,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2585,7 +2524,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -2608,7 +2546,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2631,7 +2568,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2653,7 +2589,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2671,7 +2606,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2701,7 +2635,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.InspectConfig.Builder,
             com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         inspectConfigBuilder_;
-
     /**
      *
      *
@@ -2716,7 +2649,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasInspectConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2737,7 +2669,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return inspectConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2760,7 +2691,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2781,7 +2711,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2809,7 +2738,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2829,7 +2757,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2844,7 +2771,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2863,7 +2789,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             : inspectConfig_;
       }
     }
-
     /**
      *
      *
@@ -2928,7 +2853,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return imageRedactionConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2947,7 +2871,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return imageRedactionConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2967,7 +2890,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return imageRedactionConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2993,7 +2915,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2938,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3043,7 +2963,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3069,7 +2988,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3092,7 +3010,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3116,7 +3033,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3141,7 +3057,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3163,7 +3078,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3185,7 +3099,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3201,7 +3114,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         getImageRedactionConfigsBuilder(int index) {
       return getImageRedactionConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3221,7 +3133,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return imageRedactionConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3242,7 +3153,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(imageRedactionConfigs_);
       }
     }
-
     /**
      *
      *
@@ -3261,7 +3171,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3281,7 +3190,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3319,7 +3227,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean includeFindings_;
-
     /**
      *
      *
@@ -3336,7 +3243,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public boolean getIncludeFindings() {
       return includeFindings_;
     }
-
     /**
      *
      *
@@ -3357,7 +3263,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3383,7 +3288,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.ByteContentItem.Builder,
             com.google.privacy.dlp.v2.ByteContentItemOrBuilder>
         byteItemBuilder_;
-
     /**
      *
      *
@@ -3398,7 +3302,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasByteItem() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3419,7 +3322,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return byteItemBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3442,7 +3344,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3462,7 +3363,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3490,7 +3390,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3510,7 +3409,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3525,7 +3423,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getByteItemFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3544,7 +3441,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             : byteItem_;
       }
     }
-
     /**
      *
      *

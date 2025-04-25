@@ -34,7 +34,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AttachedServerConfig)
     AttachedServerConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttachedServerConfig.newBuilder() to construct.
   private AttachedServerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo>
       validVersions_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       getValidVersionsList() {
     return validVersions_;
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       getValidVersionsOrBuilderList() {
     return validVersions_;
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
   public int getValidVersionsCount() {
     return validVersions_.size();
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
   public com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo getValidVersions(int index) {
     return validVersions_.get(index);
   }
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -623,7 +614,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return validVersionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return validVersionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return validVersionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +905,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +989,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1003,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         getValidVersionsBuilder(int index) {
       return getValidVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1048,7 +1021,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return validVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1040,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(validVersions_);
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1056,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo.getDefaultInstance());
     }
-
     /**
      *
      *

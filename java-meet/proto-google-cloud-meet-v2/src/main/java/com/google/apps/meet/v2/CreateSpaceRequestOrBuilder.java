@@ -37,7 +37,6 @@ public interface CreateSpaceRequestOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CreateSpaceRequestOrBuilder
    * @return The space.
    */
   com.google.apps.meet.v2.Space getSpace();
-
   /**
    *
    *

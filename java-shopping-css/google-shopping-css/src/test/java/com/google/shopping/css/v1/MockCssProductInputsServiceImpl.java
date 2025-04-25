@@ -73,8 +73,7 @@ public class MockCssProductInputsServiceImpl extends CssProductInputsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InsertCssProductInput, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method InsertCssProductInput, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CssProductInput.class.getName(),
                   Exception.class.getName())));
@@ -95,8 +94,7 @@ public class MockCssProductInputsServiceImpl extends CssProductInputsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCssProductInput, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateCssProductInput, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CssProductInput.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +115,7 @@ public class MockCssProductInputsServiceImpl extends CssProductInputsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCssProductInput, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteCssProductInput, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

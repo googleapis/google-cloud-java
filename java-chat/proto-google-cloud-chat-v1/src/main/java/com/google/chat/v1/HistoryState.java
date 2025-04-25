@@ -76,7 +76,6 @@ public enum HistoryState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HISTORY_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int HISTORY_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public enum HistoryState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HISTORY_OFF = 1;</code>
    */
   public static final int HISTORY_OFF_VALUE = 1;
-
   /**
    *
    *

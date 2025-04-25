@@ -38,7 +38,6 @@ public interface CreateModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateModelRequestOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CreateModelRequestOrBuilder
    * @return The model.
    */
   com.google.cloud.automl.v1.Model getModel();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface AccessDimensionHeaderOrBuilder
    * @return The dimensionName.
    */
   java.lang.String getDimensionName();
-
   /**
    *
    *

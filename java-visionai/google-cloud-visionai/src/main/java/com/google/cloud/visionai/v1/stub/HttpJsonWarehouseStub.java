@@ -4479,8 +4479,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
   @Override
   public BidiStreamingCallable<IngestAssetRequest, IngestAssetResponse> ingestAssetCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: ingestAssetCallable(). REST transport is not implemented for this method"
-            + " yet.");
+        "Not implemented: ingestAssetCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

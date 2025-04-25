@@ -40,7 +40,6 @@ public interface BatchUpdateEntitySignalsMappingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BatchUpdateEntitySignalsMappingsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest> getRequestsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface BatchUpdateEntitySignalsMappingsRequestOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest getRequests(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface BatchUpdateEntitySignalsMappingsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface BatchUpdateEntitySignalsMappingsRequestOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

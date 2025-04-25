@@ -39,7 +39,6 @@ public interface ReportPhishingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ReportPhishingRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

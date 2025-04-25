@@ -40,7 +40,6 @@ public interface ListSpecsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -120,7 +119,6 @@ public interface ListSpecsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -216,7 +214,6 @@ public interface ListSpecsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

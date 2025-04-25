@@ -34,7 +34,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest)
     InstantiateInlineWorkflowTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstantiateInlineWorkflowTemplateRequest.newBuilder() to construct.
   private InstantiateInlineWorkflowTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
 
   public static final int TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.WorkflowTemplate template_;
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
   public boolean hasTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
         ? com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()
         : template_;
   }
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -455,7 +447,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +682,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -725,7 +715,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +748,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +780,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +808,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +848,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
             com.google.cloud.dataproc.v1.WorkflowTemplate.Builder,
             com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder>
         templateBuilder_;
-
     /**
      *
      *
@@ -879,7 +864,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
     public boolean hasTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -902,7 +886,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
         return templateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -927,7 +910,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +961,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +982,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
             : template_;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1047,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1101,7 +1077,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1107,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1136,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1161,6 @@ public final class InstantiateInlineWorkflowTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

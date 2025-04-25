@@ -36,7 +36,6 @@ public interface ConfigSyncErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.DnsAuthorization)
     DnsAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DnsAuthorization.newBuilder() to construct.
   private DnsAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,7 +134,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -146,7 +144,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * <code>FIXED_RECORD = 1;</code>
      */
     public static final int FIXED_RECORD_VALUE = 1;
-
     /**
      *
      *
@@ -263,7 +260,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -291,7 +287,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -318,7 +313,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      * @return The data.
      */
     java.lang.String getData();
-
     /**
      *
      *
@@ -332,7 +326,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getDataBytes();
   }
-
   /**
    *
    *
@@ -349,7 +342,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord)
       DnsResourceRecordOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DnsResourceRecord.newBuilder() to construct.
     private DnsResourceRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -387,7 +379,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -412,7 +403,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -442,7 +432,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -467,7 +456,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -497,7 +485,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object data_ = "";
-
     /**
      *
      *
@@ -521,7 +508,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -963,7 +948,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -987,7 +971,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1011,7 +994,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1034,7 +1016,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1053,7 +1034,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1079,7 +1059,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -1103,7 +1082,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1127,7 +1105,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1150,7 +1127,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1169,7 +1145,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1195,7 +1170,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object data_ = "";
-
       /**
        *
        *
@@ -1218,7 +1192,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1241,7 +1214,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1263,7 +1235,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1281,7 +1252,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1378,7 +1348,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1404,7 +1373,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1433,7 +1401,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1450,7 +1417,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1467,7 +1433,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1485,7 +1450,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1502,7 +1466,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1519,7 +1482,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1561,7 +1523,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1578,14 +1539,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1599,7 +1558,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1620,7 +1578,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1646,7 +1603,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1670,7 +1626,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1699,7 +1654,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
-
   /**
    *
    *
@@ -1728,7 +1682,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1761,7 +1714,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public static final int DNS_RESOURCE_RECORD_FIELD_NUMBER = 10;
   private com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord
       dnsResourceRecord_;
-
   /**
    *
    *
@@ -1780,7 +1732,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public boolean hasDnsResourceRecord() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1803,7 +1754,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : dnsResourceRecord_;
   }
-
   /**
    *
    *
@@ -1827,7 +1777,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
   public static final int TYPE_FIELD_NUMBER = 11;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1847,7 +1796,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -2122,7 +2070,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2463,7 +2410,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2488,7 +2434,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2513,7 +2458,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2537,7 +2481,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2557,7 +2500,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2589,7 +2531,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2606,7 +2547,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2629,7 +2569,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2654,7 +2593,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2676,7 +2614,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2706,7 +2643,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2728,7 +2664,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2745,7 +2680,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2766,7 +2700,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2801,7 +2734,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2818,7 +2750,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2841,7 +2772,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2866,7 +2796,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2888,7 +2817,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2918,7 +2846,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2940,7 +2867,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2957,7 +2883,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2978,7 +2903,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3032,7 +2956,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3049,14 +2972,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3070,7 +2991,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3091,7 +3011,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3118,7 +3037,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3135,14 +3053,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3163,7 +3079,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -3180,7 +3095,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3203,7 +3117,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3226,7 +3139,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3248,7 +3160,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3266,7 +3177,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3291,7 +3201,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object domain_ = "";
-
     /**
      *
      *
@@ -3319,7 +3228,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3347,7 +3255,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3374,7 +3281,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3397,7 +3303,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3433,7 +3338,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord.Builder,
             com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecordOrBuilder>
         dnsResourceRecordBuilder_;
-
     /**
      *
      *
@@ -3451,7 +3355,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public boolean hasDnsResourceRecord() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3477,7 +3380,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         return dnsResourceRecordBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3504,7 +3406,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3529,7 +3430,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3563,7 +3463,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3586,7 +3485,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3605,7 +3503,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDnsResourceRecordFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3629,7 +3526,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             : dnsResourceRecord_;
       }
     }
-
     /**
      *
      *
@@ -3660,7 +3556,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -3680,7 +3575,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -3703,7 +3597,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3727,7 +3620,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3753,7 +3645,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

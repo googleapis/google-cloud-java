@@ -37,7 +37,6 @@ public interface CancelInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CancelInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CancelInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface CancelInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface CancelInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The resizeRequest.
    */
   java.lang.String getResizeRequest();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface CancelInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1.WorkloadMetadataConfig)
     WorkloadMetadataConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkloadMetadataConfig.newBuilder() to construct.
   private WorkloadMetadataConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,7 +122,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * <code>GCE_METADATA = 1;</code>
      */
     public static final int GCE_METADATA_VALUE = 1;
-
     /**
      *
      *
@@ -235,7 +232,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
 
   public static final int MODE_FIELD_NUMBER = 2;
   private int mode_ = 0;
-
   /**
    *
    *
@@ -252,7 +248,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
   public int getModeValue() {
     return mode_;
   }
-
   /**
    *
    *
@@ -433,7 +428,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -616,7 +610,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int mode_ = 0;
-
     /**
      *
      *
@@ -633,7 +626,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -653,7 +645,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +665,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
           ? com.google.container.v1.WorkloadMetadataConfig.Mode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

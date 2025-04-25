@@ -36,7 +36,6 @@ public final class ListRuntimeProjectAttachmentsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ListRuntimeProjectAttachmentsResponse)
     ListRuntimeProjectAttachmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRuntimeProjectAttachmentsResponse.newBuilder() to construct.
   private ListRuntimeProjectAttachmentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ListRuntimeProjectAttachmentsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.RuntimeProjectAttachment>
       runtimeProjectAttachments_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       getRuntimeProjectAttachmentsList() {
     return runtimeProjectAttachments_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       getRuntimeProjectAttachmentsOrBuilderList() {
     return runtimeProjectAttachments_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ListRuntimeProjectAttachmentsResponse
   public int getRuntimeProjectAttachmentsCount() {
     return runtimeProjectAttachments_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       int index) {
     return runtimeProjectAttachments_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ListRuntimeProjectAttachmentsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -388,7 +380,6 @@ public final class ListRuntimeProjectAttachmentsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -678,7 +669,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return runtimeProjectAttachmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return runtimeProjectAttachmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return runtimeProjectAttachmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -743,7 +731,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +847,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +869,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +911,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         getRuntimeProjectAttachmentsBuilder(int index) {
       return getRuntimeProjectAttachmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return runtimeProjectAttachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return java.util.Collections.unmodifiableList(runtimeProjectAttachments_);
       }
     }
-
     /**
      *
      *
@@ -1004,7 +980,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       return getRuntimeProjectAttachmentsFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.RuntimeProjectAttachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1022,7 +997,6 @@ public final class ListRuntimeProjectAttachmentsResponse
           .addBuilder(
               index, com.google.cloud.apihub.v1.RuntimeProjectAttachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1060,7 +1034,6 @@ public final class ListRuntimeProjectAttachmentsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1084,7 +1057,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1080,6 @@ public final class ListRuntimeProjectAttachmentsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1102,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1120,6 @@ public final class ListRuntimeProjectAttachmentsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

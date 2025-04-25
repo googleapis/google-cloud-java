@@ -55,7 +55,6 @@ public interface TokenPropertiesOrBuilder
    * @return The enum numeric value on the wire for invalidReason.
    */
   int getInvalidReasonValue();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface TokenPropertiesOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface TokenPropertiesOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface TokenPropertiesOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface TokenPropertiesOrBuilder
    * @return The androidPackageName.
    */
   java.lang.String getAndroidPackageName();
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public interface TokenPropertiesOrBuilder
    * @return The iosBundleId.
    */
   java.lang.String getIosBundleId();
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public interface TokenPropertiesOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *

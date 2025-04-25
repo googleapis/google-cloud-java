@@ -33,7 +33,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.NumericFilter)
     NumericFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NumericFilter.newBuilder() to construct.
   private NumericFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -147,7 +146,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>OPERATION_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -158,7 +156,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>EQUAL = 1;</code>
      */
     public static final int EQUAL_VALUE = 1;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>LESS_THAN = 2;</code>
      */
     public static final int LESS_THAN_VALUE = 2;
-
     /**
      *
      *
@@ -180,7 +176,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>LESS_THAN_OR_EQUAL = 3;</code>
      */
     public static final int LESS_THAN_OR_EQUAL_VALUE = 3;
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>GREATER_THAN = 4;</code>
      */
     public static final int GREATER_THAN_VALUE = 4;
-
     /**
      *
      *
@@ -295,7 +289,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int OPERATION_FIELD_NUMBER = 1;
   private int operation_ = 0;
-
   /**
    *
    *
@@ -311,7 +304,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
   public int getOperationValue() {
     return operation_;
   }
-
   /**
    *
    *
@@ -334,7 +326,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.NumericValue value_;
-
   /**
    *
    *
@@ -350,7 +341,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -368,7 +358,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1alpha.NumericValue.getDefaultInstance()
         : value_;
   }
-
   /**
    *
    *
@@ -562,7 +551,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -774,7 +762,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int operation_ = 0;
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
     public int getOperationValue() {
       return operation_;
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.data.v1alpha.NumericFilter.Operation.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1alpha.NumericValue.Builder,
             com.google.analytics.data.v1alpha.NumericValueOrBuilder>
         valueBuilder_;
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
         return valueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -935,7 +915,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +962,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +995,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class NumericFilter extends com.google.protobuf.GeneratedMessageV3
             : value_;
       }
     }
-
     /**
      *
      *

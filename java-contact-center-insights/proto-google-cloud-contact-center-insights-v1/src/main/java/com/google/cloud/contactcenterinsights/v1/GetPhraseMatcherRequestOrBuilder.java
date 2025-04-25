@@ -38,7 +38,6 @@ public interface GetPhraseMatcherRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

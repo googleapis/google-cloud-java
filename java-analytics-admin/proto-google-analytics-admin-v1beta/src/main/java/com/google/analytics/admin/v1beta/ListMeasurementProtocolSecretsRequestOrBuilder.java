@@ -40,7 +40,6 @@ public interface ListMeasurementProtocolSecretsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface ListMeasurementProtocolSecretsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface TensorboardOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TensorboardOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TensorboardOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface TensorboardOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface TensorboardOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface TensorboardOrBuilder
    * @return The blobStoragePathPrefix.
    */
   java.lang.String getBlobStoragePathPrefix();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface TensorboardOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public interface TensorboardOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public interface TensorboardOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface TensorboardOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public interface TensorboardOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -311,11 +300,9 @@ public interface TensorboardOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -336,7 +323,6 @@ public interface TensorboardOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -361,7 +347,6 @@ public interface TensorboardOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -396,7 +381,6 @@ public interface TensorboardOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

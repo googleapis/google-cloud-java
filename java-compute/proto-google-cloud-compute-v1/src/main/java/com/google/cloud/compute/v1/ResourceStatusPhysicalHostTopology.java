@@ -33,7 +33,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourceStatusPhysicalHostTopology)
     ResourceStatusPhysicalHostTopologyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceStatusPhysicalHostTopology.newBuilder() to construct.
   private ResourceStatusPhysicalHostTopology(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object block_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
   public boolean hasBlock() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cluster_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
   public boolean hasCluster() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
   public boolean hasHost() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subblock_ = "";
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
   public boolean hasSubblock() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -320,7 +308,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -552,7 +539,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -791,7 +777,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object block_ = "";
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     public boolean hasBlock() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +897,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     }
 
     private java.lang.Object cluster_ = "";
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     public boolean hasCluster() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1017,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     }
 
     private java.lang.Object host_ = "";
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     public boolean hasHost() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1075,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1096,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1113,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1137,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     }
 
     private java.lang.Object subblock_ = "";
-
     /**
      *
      *
@@ -1184,7 +1151,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     public boolean hasSubblock() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1207,7 +1173,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1195,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1216,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1233,6 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

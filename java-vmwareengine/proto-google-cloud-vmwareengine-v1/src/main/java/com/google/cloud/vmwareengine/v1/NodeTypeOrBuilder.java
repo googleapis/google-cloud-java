@@ -40,7 +40,6 @@ public interface NodeTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface NodeTypeOrBuilder
    * @return The nodeTypeId.
    */
   java.lang.String getNodeTypeId();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface NodeTypeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -180,7 +177,6 @@ public interface NodeTypeOrBuilder
    * @return A list containing the availableCustomCoreCounts.
    */
   java.util.List<java.lang.Integer> getAvailableCustomCoreCountsList();
-
   /**
    *
    *
@@ -195,7 +191,6 @@ public interface NodeTypeOrBuilder
    * @return The count of availableCustomCoreCounts.
    */
   int getAvailableCustomCoreCountsCount();
-
   /**
    *
    *
@@ -226,7 +221,6 @@ public interface NodeTypeOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -256,7 +250,6 @@ public interface NodeTypeOrBuilder
    * @return A list containing the families.
    */
   java.util.List<java.lang.String> getFamiliesList();
-
   /**
    *
    *
@@ -271,7 +264,6 @@ public interface NodeTypeOrBuilder
    * @return The count of families.
    */
   int getFamiliesCount();
-
   /**
    *
    *
@@ -287,7 +279,6 @@ public interface NodeTypeOrBuilder
    * @return The families at the given index.
    */
   java.lang.String getFamilies(int index);
-
   /**
    *
    *
@@ -318,7 +309,6 @@ public interface NodeTypeOrBuilder
    * @return A list containing the capabilities.
    */
   java.util.List<com.google.cloud.vmwareengine.v1.NodeType.Capability> getCapabilitiesList();
-
   /**
    *
    *
@@ -333,7 +323,6 @@ public interface NodeTypeOrBuilder
    * @return The count of capabilities.
    */
   int getCapabilitiesCount();
-
   /**
    *
    *
@@ -349,7 +338,6 @@ public interface NodeTypeOrBuilder
    * @return The capabilities at the given index.
    */
   com.google.cloud.vmwareengine.v1.NodeType.Capability getCapabilities(int index);
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public interface NodeTypeOrBuilder
    * @return A list containing the enum numeric values on the wire for capabilities.
    */
   java.util.List<java.lang.Integer> getCapabilitiesValueList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse)
     BatchSearchLinkProcessesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchSearchLinkProcessesResponse.newBuilder() to construct.
   private BatchSearchLinkProcessesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.lineage.v1.ProcessLinks> processLinks_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       getProcessLinksList() {
     return processLinks_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       getProcessLinksOrBuilderList() {
     return processLinks_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
   public int getProcessLinksCount() {
     return processLinks_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
   public com.google.cloud.datacatalog.lineage.v1.ProcessLinks getProcessLinks(int index) {
     return processLinks_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return processLinksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return processLinksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return processLinksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +887,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         int index) {
       return getProcessLinksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -926,7 +904,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return processLinksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(processLinks_);
       }
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       return getProcessLinksFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.lineage.v1.ProcessLinks.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.datacatalog.lineage.v1.ProcessLinks.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1031,7 +1004,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1027,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1067,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

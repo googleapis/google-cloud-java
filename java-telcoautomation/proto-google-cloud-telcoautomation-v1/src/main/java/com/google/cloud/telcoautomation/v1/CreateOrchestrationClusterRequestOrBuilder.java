@@ -38,7 +38,6 @@ public interface CreateOrchestrationClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateOrchestrationClusterRequestOrBuilder
    * @return The orchestrationClusterId.
    */
   java.lang.String getOrchestrationClusterId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateOrchestrationClusterRequestOrBuilder
    * @return Whether the orchestrationCluster field is set.
    */
   boolean hasOrchestrationCluster();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateOrchestrationClusterRequestOrBuilder
    * @return The orchestrationCluster.
    */
   com.google.cloud.telcoautomation.v1.OrchestrationCluster getOrchestrationCluster();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface CreateOrchestrationClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

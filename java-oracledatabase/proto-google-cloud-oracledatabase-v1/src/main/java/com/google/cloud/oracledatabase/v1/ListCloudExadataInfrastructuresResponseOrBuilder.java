@@ -37,7 +37,6 @@ public interface ListCloudExadataInfrastructuresResponseOrBuilder
    */
   java.util.List<com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure>
       getCloudExadataInfrastructuresList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListCloudExadataInfrastructuresResponseOrBuilder
    */
   com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure getCloudExadataInfrastructures(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListCloudExadataInfrastructuresResponseOrBuilder
    * </code>
    */
   int getCloudExadataInfrastructuresCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListCloudExadataInfrastructuresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureOrBuilder>
       getCloudExadataInfrastructuresOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListCloudExadataInfrastructuresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

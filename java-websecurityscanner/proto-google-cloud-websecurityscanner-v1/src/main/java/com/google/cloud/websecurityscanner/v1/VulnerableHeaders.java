@@ -33,7 +33,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.VulnerableHeaders)
     VulnerableHeadersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VulnerableHeaders.newBuilder() to construct.
   private VulnerableHeaders(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      * @return The value.
      */
     java.lang.String getValue();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getValueBytes();
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.VulnerableHeaders.Header)
       HeaderOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Header.newBuilder() to construct.
     private Header(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -173,7 +168,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -197,7 +191,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -226,7 +219,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -250,7 +242,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -446,7 +437,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -677,7 +666,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -700,7 +688,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -722,7 +709,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -740,7 +726,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -765,7 +750,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -788,7 +772,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -811,7 +794,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -833,7 +815,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -851,7 +832,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -946,7 +926,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header> headers_;
-
   /**
    *
    *
@@ -961,7 +940,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       getHeadersList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -977,7 +955,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       getHeadersOrBuilderList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -991,7 +968,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
   public int getHeadersCount() {
     return headers_.size();
   }
-
   /**
    *
    *
@@ -1005,7 +981,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header getHeaders(int index) {
     return headers_.get(index);
   }
-
   /**
    *
    *
@@ -1026,7 +1001,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header>
       missingHeaders_;
-
   /**
    *
    *
@@ -1043,7 +1017,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       getMissingHeadersList() {
     return missingHeaders_;
   }
-
   /**
    *
    *
@@ -1061,7 +1034,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       getMissingHeadersOrBuilderList() {
     return missingHeaders_;
   }
-
   /**
    *
    *
@@ -1077,7 +1049,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
   public int getMissingHeadersCount() {
     return missingHeaders_.size();
   }
-
   /**
    *
    *
@@ -1094,7 +1065,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       int index) {
     return missingHeaders_.get(index);
   }
-
   /**
    *
    *
@@ -1285,7 +1255,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1609,7 +1578,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return headersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1627,7 +1595,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return headersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1645,7 +1612,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return headersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1670,7 +1636,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1658,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1682,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1743,7 +1706,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1765,7 +1727,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1749,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1772,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1792,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1854,7 +1812,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1869,7 +1826,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         getHeadersBuilder(int index) {
       return getHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1888,7 +1844,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return headersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1908,7 +1863,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(headers_);
       }
     }
-
     /**
      *
      *
@@ -1925,7 +1879,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1943,7 +1896,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2013,7 +1965,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return missingHeadersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2032,7 +1983,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return missingHeadersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2052,7 +2002,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return missingHeadersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2078,7 +2027,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2050,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2128,7 +2075,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2154,7 +2100,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2177,7 +2122,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2201,7 +2145,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2226,7 +2169,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2190,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2270,7 +2211,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2286,7 +2226,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         getMissingHeadersBuilder(int index) {
       return getMissingHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2306,7 +2245,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return missingHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2327,7 +2265,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(missingHeaders_);
       }
     }
-
     /**
      *
      *
@@ -2345,7 +2282,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2364,7 +2300,6 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ShowEffectiveAutokeyConfigResponseOrBuilder
    * @return The keyProject.
    */
   java.lang.String getKeyProject();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * @return The cryptoKey.
    */
   com.google.cloud.kms.v1.CryptoKey getCryptoKey();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface UpdateCryptoKeyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

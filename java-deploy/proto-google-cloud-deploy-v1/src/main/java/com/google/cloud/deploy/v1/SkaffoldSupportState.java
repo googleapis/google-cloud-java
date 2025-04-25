@@ -82,7 +82,6 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    * <code>SKAFFOLD_SUPPORT_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int SKAFFOLD_SUPPORT_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    * <code>SKAFFOLD_SUPPORT_STATE_SUPPORTED = 1;</code>
    */
   public static final int SKAFFOLD_SUPPORT_STATE_SUPPORTED_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    * <code>SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE = 2;</code>
    */
   public static final int SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE_VALUE = 2;
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.DataSourceReference)
     DataSourceReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSourceReference.newBuilder() to construct.
   private DataSourceReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     private DataSourceIdCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,7 +115,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SELF_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
   public boolean hasSelf() {
     return dataSourceIdCase_ == 1;
   }
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PRIMARY_DATA_SOURCE_NAME_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
   public boolean hasPrimaryDataSourceName() {
     return dataSourceIdCase_ == 3;
   }
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SUPPLEMENTAL_DATA_SOURCE_NAME_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
   public boolean hasSupplementalDataSourceName() {
     return dataSourceIdCase_ == 2;
   }
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -517,7 +507,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -776,7 +765,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     public boolean hasSelf() {
       return dataSourceIdCase_ == 1;
     }
-
     /**
      *
      *
@@ -794,7 +782,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       }
       return false;
     }
-
     /**
      *
      *
@@ -814,7 +801,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +838,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     public boolean hasPrimaryDataSourceName() {
       return dataSourceIdCase_ == 3;
     }
-
     /**
      *
      *
@@ -883,7 +868,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +898,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +921,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +942,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +985,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     public boolean hasSupplementalDataSourceName() {
       return dataSourceIdCase_ == 2;
     }
-
     /**
      *
      *
@@ -1036,7 +1016,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1047,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1071,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1093,6 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *

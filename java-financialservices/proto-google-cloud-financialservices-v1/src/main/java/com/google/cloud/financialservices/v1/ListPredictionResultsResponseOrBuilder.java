@@ -35,7 +35,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.financialservices.v1.PredictionResult> getPredictionResultsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * </code>
    */
   com.google.cloud.financialservices.v1.PredictionResult getPredictionResults(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * </code>
    */
   int getPredictionResultsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListPredictionResultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.financialservices.v1.PredictionResultOrBuilder>
       getPredictionResultsOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -155,7 +148,6 @@ public interface ListPredictionResultsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

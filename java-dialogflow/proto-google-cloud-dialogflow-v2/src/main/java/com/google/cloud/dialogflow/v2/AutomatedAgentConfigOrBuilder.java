@@ -54,7 +54,6 @@ public interface AutomatedAgentConfigOrBuilder
    * @return The agent.
    */
   java.lang.String getAgent();
-
   /**
    *
    *
@@ -102,7 +101,6 @@ public interface AutomatedAgentConfigOrBuilder
    * @return Whether the sessionTtl field is set.
    */
   boolean hasSessionTtl();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface AutomatedAgentConfigOrBuilder
    * @return The sessionTtl.
    */
   com.google.protobuf.Duration getSessionTtl();
-
   /**
    *
    *

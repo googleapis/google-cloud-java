@@ -43,7 +43,6 @@ public interface UpdateDeploymentResourcePoolRequestOrBuilder
    * @return Whether the deploymentResourcePool field is set.
    */
   boolean hasDeploymentResourcePool();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UpdateDeploymentResourcePoolRequestOrBuilder
    * @return The deploymentResourcePool.
    */
   com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool getDeploymentResourcePool();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface UpdateDeploymentResourcePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface UpdateDeploymentResourcePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse)
     SslPoliciesListAvailableFeaturesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SslPoliciesListAvailableFeaturesResponse.newBuilder() to construct.
   private SslPoliciesListAvailableFeaturesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList features_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    * <code>repeated string features = 246211645;</code>
    *
@@ -79,7 +77,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
   public com.google.protobuf.ProtocolStringList getFeaturesList() {
     return features_;
   }
-
   /**
    * <code>repeated string features = 246211645;</code>
    *
@@ -88,7 +85,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
   public int getFeaturesCount() {
     return features_.size();
   }
-
   /**
    * <code>repeated string features = 246211645;</code>
    *
@@ -98,7 +94,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
   public java.lang.String getFeatures(int index) {
     return features_.get(index);
   }
-
   /**
    * <code>repeated string features = 246211645;</code>
    *
@@ -277,7 +272,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +477,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -493,7 +486,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
       features_.makeImmutable();
       return features_;
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -502,7 +494,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public int getFeaturesCount() {
       return features_.size();
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -512,7 +503,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public java.lang.String getFeatures(int index) {
       return features_.get(index);
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -522,7 +512,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public com.google.protobuf.ByteString getFeaturesBytes(int index) {
       return features_.getByteString(index);
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -540,7 +529,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -557,7 +545,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -571,7 +558,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *
@@ -584,7 +570,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>repeated string features = 246211645;</code>
      *

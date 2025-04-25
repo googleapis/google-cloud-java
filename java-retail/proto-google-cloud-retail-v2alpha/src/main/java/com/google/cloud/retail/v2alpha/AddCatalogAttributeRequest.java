@@ -35,7 +35,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.AddCatalogAttributeRequest)
     AddCatalogAttributeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddCatalogAttributeRequest.newBuilder() to construct.
   private AddCatalogAttributeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributesConfig_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
 
   public static final int CATALOG_ATTRIBUTE_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.CatalogAttribute catalogAttribute_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
   public boolean hasCatalogAttribute() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         ? com.google.cloud.retail.v2alpha.CatalogAttribute.getDefaultInstance()
         : catalogAttribute_;
   }
-
   /**
    *
    *
@@ -362,7 +356,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object attributesConfig_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
             com.google.cloud.retail.v2alpha.CatalogAttribute.Builder,
             com.google.cloud.retail.v2alpha.CatalogAttributeOrBuilder>
         catalogAttributeBuilder_;
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
     public boolean hasCatalogAttribute() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
         return catalogAttributeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
       onChanged();
       return getCatalogAttributeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
             : catalogAttribute_;
       }
     }
-
     /**
      *
      *

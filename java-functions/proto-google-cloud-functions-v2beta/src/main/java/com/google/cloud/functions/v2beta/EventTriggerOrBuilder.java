@@ -39,7 +39,6 @@ public interface EventTriggerOrBuilder
    * @return The trigger.
    */
   java.lang.String getTrigger();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface EventTriggerOrBuilder
    * @return The triggerRegion.
    */
   java.lang.String getTriggerRegion();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface EventTriggerOrBuilder
    * @return The eventType.
    */
   java.lang.String getEventType();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface EventTriggerOrBuilder
    * <code>repeated .google.cloud.functions.v2beta.EventFilter event_filters = 4;</code>
    */
   java.util.List<com.google.cloud.functions.v2beta.EventFilter> getEventFiltersList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface EventTriggerOrBuilder
    * <code>repeated .google.cloud.functions.v2beta.EventFilter event_filters = 4;</code>
    */
   com.google.cloud.functions.v2beta.EventFilter getEventFilters(int index);
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface EventTriggerOrBuilder
    * <code>repeated .google.cloud.functions.v2beta.EventFilter event_filters = 4;</code>
    */
   int getEventFiltersCount();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface EventTriggerOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v2beta.EventFilterOrBuilder>
       getEventFiltersOrBuilderList();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface EventTriggerOrBuilder
    * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface EventTriggerOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public interface EventTriggerOrBuilder
    * @return The enum numeric value on the wire for retryPolicy.
    */
   int getRetryPolicyValue();
-
   /**
    *
    *
@@ -298,7 +288,6 @@ public interface EventTriggerOrBuilder
    * @return The channel.
    */
   java.lang.String getChannel();
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public interface EventTriggerOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *

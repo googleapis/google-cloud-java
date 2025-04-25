@@ -33,7 +33,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.advisorynotifications.v1.ListNotificationsResponse)
     ListNotificationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotificationsResponse.newBuilder() to construct.
   private ListNotificationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.advisorynotifications.v1.Notification> notifications_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       getNotificationsList() {
     return notifications_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       getNotificationsOrBuilderList() {
     return notifications_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
   public int getNotificationsCount() {
     return notifications_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
   public com.google.cloud.advisorynotifications.v1.Notification getNotifications(int index) {
     return notifications_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -398,7 +389,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -699,7 +689,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return notificationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return notificationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return notificationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         int index) {
       return getNotificationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return notificationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -979,7 +955,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(notifications_);
       }
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       return getNotificationsFieldBuilder()
           .addBuilder(com.google.cloud.advisorynotifications.v1.Notification.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1010,7 +984,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.advisorynotifications.v1.Notification.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1046,7 +1019,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1070,7 +1042,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1094,7 +1065,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1087,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1105,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1130,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1178,7 +1145,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

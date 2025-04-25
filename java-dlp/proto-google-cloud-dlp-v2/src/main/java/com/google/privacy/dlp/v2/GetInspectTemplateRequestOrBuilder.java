@@ -40,7 +40,6 @@ public interface GetInspectTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

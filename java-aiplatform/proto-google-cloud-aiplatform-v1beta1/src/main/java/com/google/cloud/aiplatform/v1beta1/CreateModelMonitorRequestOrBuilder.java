@@ -39,7 +39,6 @@ public interface CreateModelMonitorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateModelMonitorRequestOrBuilder
    * @return Whether the modelMonitor field is set.
    */
   boolean hasModelMonitor();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateModelMonitorRequestOrBuilder
    * @return The modelMonitor.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitor getModelMonitor();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateModelMonitorRequestOrBuilder
    * @return The modelMonitorId.
    */
   java.lang.String getModelMonitorId();
-
   /**
    *
    *

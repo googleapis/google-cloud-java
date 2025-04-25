@@ -36,7 +36,6 @@ public interface ImageClassificationConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ImageClassificationConfigOrBuilder
    * @return The enum numeric value on the wire for answerAggregationType.
    */
   int getAnswerAggregationTypeValue();
-
   /**
    *
    *

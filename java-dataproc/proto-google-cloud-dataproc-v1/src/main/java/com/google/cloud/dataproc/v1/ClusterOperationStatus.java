@@ -33,7 +33,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ClusterOperationStatus)
     ClusterOperationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClusterOperationStatus.newBuilder() to construct.
   private ClusterOperationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -253,7 +249,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -298,7 +292,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object innerState_ = "";
-
   /**
    *
    *
@@ -322,7 +315,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +343,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object details_ = "";
-
   /**
    *
    *
@@ -375,7 +366,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -402,7 +392,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
 
   public static final int STATE_START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp stateStartTime_;
-
   /**
    *
    *
@@ -420,7 +409,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
   public boolean hasStateStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -440,7 +428,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : stateStartTime_;
   }
-
   /**
    *
    *
@@ -650,7 +637,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -893,7 +879,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -911,7 +896,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -932,7 +916,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +937,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
           ? com.google.cloud.dataproc.v1.ClusterOperationStatus.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -978,7 +960,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +981,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object innerState_ = "";
-
     /**
      *
      *
@@ -1023,7 +1003,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1025,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1046,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1063,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1087,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object details_ = "";
-
     /**
      *
      *
@@ -1134,7 +1109,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1131,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1152,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1169,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1198,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         stateStartTimeBuilder_;
-
     /**
      *
      *
@@ -1244,7 +1214,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
     public boolean hasStateStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1267,7 +1236,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         return stateStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1292,7 +1260,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1281,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1310,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1331,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1347,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
       onChanged();
       return getStateStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1404,7 +1367,6 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
             : stateStartTime_;
       }
     }
-
     /**
      *
      *

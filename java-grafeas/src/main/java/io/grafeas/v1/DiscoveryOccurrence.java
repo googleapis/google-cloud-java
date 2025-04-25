@@ -34,7 +34,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence)
     DiscoveryOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryOccurrence.newBuilder() to construct.
   private DiscoveryOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>CONTINUOUS_ANALYSIS_UNSPECIFIED = 0;</code>
      */
     public static final int CONTINUOUS_ANALYSIS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -313,7 +310,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>COMPLETE = 3;</code>
      */
     public static final AnalysisStatus COMPLETE = FINISHED_SUCCESS;
-
     /**
      *
      *
@@ -324,7 +320,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>ANALYSIS_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int ANALYSIS_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -335,7 +330,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -346,7 +340,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>SCANNING = 2;</code>
      */
     public static final int SCANNING_VALUE = 2;
-
     /**
      *
      *
@@ -357,7 +350,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>FINISHED_SUCCESS = 3;</code>
      */
     public static final int FINISHED_SUCCESS_VALUE = 3;
-
     /**
      *
      *
@@ -368,7 +360,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>COMPLETE = 3;</code>
      */
     public static final int COMPLETE_VALUE = 3;
-
     /**
      *
      *
@@ -380,7 +371,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>FINISHED_FAILED = 4;</code>
      */
     public static final int FINISHED_FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -506,14 +496,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return A list containing the analysisType.
      */
     java.util.List<java.lang.String> getAnalysisTypeList();
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
      * @return The count of analysisType.
      */
     int getAnalysisTypeCount();
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -521,7 +509,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return The analysisType at the given index.
      */
     java.lang.String getAnalysisType(int index);
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -530,7 +517,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getAnalysisTypeBytes(int index);
   }
-
   /**
    *
    *
@@ -546,7 +532,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)
       AnalysisCompletedOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnalysisCompleted.newBuilder() to construct.
     private AnalysisCompleted(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -582,7 +567,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList analysisType_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -591,7 +575,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ProtocolStringList getAnalysisTypeList() {
       return analysisType_;
     }
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -600,7 +583,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public int getAnalysisTypeCount() {
       return analysisType_.size();
     }
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -610,7 +592,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public java.lang.String getAnalysisType(int index) {
       return analysisType_.get(index);
     }
-
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -789,7 +770,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1003,7 +982,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         analysisType_.makeImmutable();
         return analysisType_;
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1012,7 +990,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public int getAnalysisTypeCount() {
         return analysisType_.size();
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1022,7 +999,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public java.lang.String getAnalysisType(int index) {
         return analysisType_.get(index);
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1032,7 +1008,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ByteString getAnalysisTypeBytes(int index) {
         return analysisType_.getByteString(index);
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1050,7 +1025,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1067,7 +1041,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1081,7 +1054,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1094,7 +1066,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        * <code>repeated string analysis_type = 1;</code>
        *
@@ -1194,7 +1165,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for sbomState.
      */
     int getSbomStateValue();
-
     /**
      *
      *
@@ -1221,7 +1191,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return The error.
      */
     java.lang.String getError();
-
     /**
      *
      *
@@ -1236,7 +1205,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getErrorBytes();
   }
-
   /**
    *
    *
@@ -1251,7 +1219,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence.SBOMStatus)
       SBOMStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SBOMStatus.newBuilder() to construct.
     private SBOMStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1336,7 +1303,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
        * <code>SBOM_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int SBOM_STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1347,7 +1313,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
        * <code>PENDING = 1;</code>
        */
       public static final int PENDING_VALUE = 1;
-
       /**
        *
        *
@@ -1444,7 +1409,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
     public static final int SBOM_STATE_FIELD_NUMBER = 1;
     private int sbomState_ = 0;
-
     /**
      *
      *
@@ -1460,7 +1424,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public int getSbomStateValue() {
       return sbomState_;
     }
-
     /**
      *
      *
@@ -1485,7 +1448,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object error_ = "";
-
     /**
      *
      *
@@ -1510,7 +1472,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -1709,7 +1670,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1909,7 +1869,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int sbomState_ = 0;
-
       /**
        *
        *
@@ -1925,7 +1884,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public int getSbomStateValue() {
         return sbomState_;
       }
-
       /**
        *
        *
@@ -1944,7 +1902,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1964,7 +1921,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             ? io.grafeas.v1.DiscoveryOccurrence.SBOMStatus.SBOMState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1986,7 +1942,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2006,7 +1961,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object error_ = "";
-
       /**
        *
        *
@@ -2030,7 +1984,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2054,7 +2007,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2077,7 +2029,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2096,7 +2047,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2202,7 +2152,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return Whether the lastAttemptTime field is set.
      */
     boolean hasLastAttemptTime();
-
     /**
      *
      *
@@ -2215,7 +2164,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return The lastAttemptTime.
      */
     com.google.protobuf.Timestamp getLastAttemptTime();
-
     /**
      *
      *
@@ -2241,7 +2189,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
-
     /**
      *
      *
@@ -2270,7 +2217,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return The error.
      */
     java.lang.String getError();
-
     /**
      *
      *
@@ -2284,7 +2230,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getErrorBytes();
   }
-
   /**
    *
    *
@@ -2299,7 +2244,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)
       VulnerabilityAttestationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VulnerabilityAttestation.newBuilder() to construct.
     private VulnerabilityAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2385,7 +2329,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
        * <code>VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2396,7 +2339,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
        * <code>SUCCESS = 1;</code>
        */
       public static final int SUCCESS_VALUE = 1;
-
       /**
        *
        *
@@ -2499,7 +2441,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     private int bitField0_;
     public static final int LAST_ATTEMPT_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp lastAttemptTime_;
-
     /**
      *
      *
@@ -2515,7 +2456,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasLastAttemptTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2533,7 +2473,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : lastAttemptTime_;
     }
-
     /**
      *
      *
@@ -2552,7 +2491,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
     public static final int STATE_FIELD_NUMBER = 2;
     private int state_ = 0;
-
     /**
      *
      *
@@ -2570,7 +2508,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2601,7 +2538,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object error_ = "";
-
     /**
      *
      *
@@ -2625,7 +2561,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -2840,7 +2775,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3080,7 +3014,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           lastAttemptTimeBuilder_;
-
       /**
        *
        *
@@ -3095,7 +3028,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public boolean hasLastAttemptTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3116,7 +3048,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           return lastAttemptTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3139,7 +3070,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3159,7 +3089,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3187,7 +3116,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -3207,7 +3135,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3222,7 +3149,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return getLastAttemptTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3241,7 +3167,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
               : lastAttemptTime_;
         }
       }
-
       /**
        *
        *
@@ -3269,7 +3194,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
 
       private int state_ = 0;
-
       /**
        *
        *
@@ -3287,7 +3211,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public int getStateValue() {
         return state_;
       }
-
       /**
        *
        *
@@ -3308,7 +3231,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3335,7 +3257,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
                 .VulnerabilityAttestationState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3361,7 +3282,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3383,7 +3303,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object error_ = "";
-
       /**
        *
        *
@@ -3406,7 +3325,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3429,7 +3347,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3451,7 +3368,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3469,7 +3385,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3561,7 +3476,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
   private int continuousAnalysis_ = 0;
-
   /**
    *
    *
@@ -3577,7 +3491,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public int getContinuousAnalysisValue() {
     return continuousAnalysis_;
   }
-
   /**
    *
    *
@@ -3600,7 +3513,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int ANALYSIS_STATUS_FIELD_NUMBER = 2;
   private int analysisStatus_ = 0;
-
   /**
    *
    *
@@ -3616,7 +3528,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public int getAnalysisStatusValue() {
     return analysisStatus_;
   }
-
   /**
    *
    *
@@ -3637,7 +3548,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int ANALYSIS_COMPLETED_FIELD_NUMBER = 7;
   private io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysisCompleted_;
-
   /**
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
    *
@@ -3647,7 +3557,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public boolean hasAnalysisCompleted() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
    *
@@ -3659,7 +3568,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         ? io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance()
         : analysisCompleted_;
   }
-
   /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
   @java.lang.Override
   public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder
@@ -3673,7 +3581,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> analysisError_;
-
   /**
    *
    *
@@ -3688,7 +3595,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.rpc.Status> getAnalysisErrorList() {
     return analysisError_;
   }
-
   /**
    *
    *
@@ -3703,7 +3609,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getAnalysisErrorOrBuilderList() {
     return analysisError_;
   }
-
   /**
    *
    *
@@ -3718,7 +3623,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public int getAnalysisErrorCount() {
     return analysisError_.size();
   }
-
   /**
    *
    *
@@ -3733,7 +3637,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public com.google.rpc.Status getAnalysisError(int index) {
     return analysisError_.get(index);
   }
-
   /**
    *
    *
@@ -3751,7 +3654,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int ANALYSIS_STATUS_ERROR_FIELD_NUMBER = 3;
   private com.google.rpc.Status analysisStatusError_;
-
   /**
    *
    *
@@ -3769,7 +3671,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public boolean hasAnalysisStatusError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3789,7 +3690,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         ? com.google.rpc.Status.getDefaultInstance()
         : analysisStatusError_;
   }
-
   /**
    *
    *
@@ -3812,7 +3712,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpe_ = "";
-
   /**
    *
    *
@@ -3836,7 +3735,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -3863,7 +3761,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int LAST_SCAN_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp lastScanTime_;
-
   /**
    *
    *
@@ -3879,7 +3776,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public boolean hasLastScanTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3897,7 +3793,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastScanTime_;
   }
-
   /**
    *
    *
@@ -3916,7 +3811,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int ARCHIVE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp archiveTime_;
-
   /**
    *
    *
@@ -3933,7 +3827,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public boolean hasArchiveTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3950,7 +3843,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getArchiveTime() {
     return archiveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : archiveTime_;
   }
-
   /**
    *
    *
@@ -3968,7 +3860,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int SBOM_STATUS_FIELD_NUMBER = 9;
   private io.grafeas.v1.DiscoveryOccurrence.SBOMStatus sbomStatus_;
-
   /**
    *
    *
@@ -3984,7 +3875,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public boolean hasSbomStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -4002,7 +3892,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         ? io.grafeas.v1.DiscoveryOccurrence.SBOMStatus.getDefaultInstance()
         : sbomStatus_;
   }
-
   /**
    *
    *
@@ -4021,7 +3910,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
   public static final int VULNERABILITY_ATTESTATION_FIELD_NUMBER = 10;
   private io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerabilityAttestation_;
-
   /**
    *
    *
@@ -4038,7 +3926,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   public boolean hasVulnerabilityAttestation() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -4057,7 +3944,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance()
         : vulnerabilityAttestation_;
   }
-
   /**
    *
    *
@@ -4356,7 +4242,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4761,7 +4646,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int continuousAnalysis_ = 0;
-
     /**
      *
      *
@@ -4777,7 +4661,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public int getContinuousAnalysisValue() {
       return continuousAnalysis_;
     }
-
     /**
      *
      *
@@ -4796,7 +4679,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4816,7 +4698,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           ? io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4839,7 +4720,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4859,7 +4739,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
 
     private int analysisStatus_ = 0;
-
     /**
      *
      *
@@ -4875,7 +4754,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public int getAnalysisStatusValue() {
       return analysisStatus_;
     }
-
     /**
      *
      *
@@ -4894,7 +4772,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4914,7 +4791,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           ? io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4936,7 +4812,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4961,7 +4836,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder,
             io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder>
         analysisCompletedBuilder_;
-
     /**
      * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
      *
@@ -4970,7 +4844,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasAnalysisCompleted() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
      *
@@ -4985,7 +4858,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return analysisCompletedBuilder_.getMessage();
       }
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public Builder setAnalysisCompleted(io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted value) {
       if (analysisCompletedBuilder_ == null) {
@@ -5000,7 +4872,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public Builder setAnalysisCompleted(
         io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder builderForValue) {
@@ -5013,7 +4884,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public Builder mergeAnalysisCompleted(
         io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted value) {
@@ -5035,7 +4905,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public Builder clearAnalysisCompleted() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -5047,7 +4916,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder
         getAnalysisCompletedBuilder() {
@@ -5055,7 +4923,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAnalysisCompletedFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder
         getAnalysisCompletedOrBuilder() {
@@ -5067,7 +4934,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             : analysisCompleted_;
       }
     }
-
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted,
@@ -5117,7 +4983,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return analysisErrorBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5135,7 +5000,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return analysisErrorBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5153,7 +5017,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return analysisErrorBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5177,7 +5040,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5198,7 +5060,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5222,7 +5083,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5246,7 +5106,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5267,7 +5126,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5288,7 +5146,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5309,7 +5166,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5330,7 +5186,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5351,7 +5206,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5365,7 +5219,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public com.google.rpc.Status.Builder getAnalysisErrorBuilder(int index) {
       return getAnalysisErrorFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5383,7 +5236,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return analysisErrorBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5402,7 +5254,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(analysisError_);
       }
     }
-
     /**
      *
      *
@@ -5416,7 +5267,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public com.google.rpc.Status.Builder addAnalysisErrorBuilder() {
       return getAnalysisErrorFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5431,7 +5281,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       return getAnalysisErrorFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5468,7 +5317,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         analysisStatusErrorBuilder_;
-
     /**
      *
      *
@@ -5485,7 +5333,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasAnalysisStatusError() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -5508,7 +5355,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return analysisStatusErrorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5533,7 +5379,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5555,7 +5400,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5585,7 +5429,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5607,7 +5450,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5624,7 +5466,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAnalysisStatusErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5645,7 +5486,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             : analysisStatusError_;
       }
     }
-
     /**
      *
      *
@@ -5673,7 +5513,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object cpe_ = "";
-
     /**
      *
      *
@@ -5696,7 +5535,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5719,7 +5557,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5741,7 +5578,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5759,7 +5595,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5789,7 +5624,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastScanTimeBuilder_;
-
     /**
      *
      *
@@ -5804,7 +5638,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasLastScanTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -5825,7 +5658,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return lastScanTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5848,7 +5680,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5868,7 +5699,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5896,7 +5726,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5916,7 +5745,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5931,7 +5759,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLastScanTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5950,7 +5777,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             : lastScanTime_;
       }
     }
-
     /**
      *
      *
@@ -5983,7 +5809,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         archiveTimeBuilder_;
-
     /**
      *
      *
@@ -6000,7 +5825,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasArchiveTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -6023,7 +5847,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return archiveTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6048,7 +5871,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6070,7 +5892,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6100,7 +5921,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -6122,7 +5942,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6139,7 +5958,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return getArchiveTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6160,7 +5978,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             : archiveTime_;
       }
     }
-
     /**
      *
      *
@@ -6195,7 +6012,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             io.grafeas.v1.DiscoveryOccurrence.SBOMStatus.Builder,
             io.grafeas.v1.DiscoveryOccurrence.SBOMStatusOrBuilder>
         sbomStatusBuilder_;
-
     /**
      *
      *
@@ -6210,7 +6026,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasSbomStatus() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -6231,7 +6046,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return sbomStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6254,7 +6068,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6275,7 +6088,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6303,7 +6115,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -6323,7 +6134,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6338,7 +6148,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSbomStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6357,7 +6166,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             : sbomStatus_;
       }
     }
-
     /**
      *
      *
@@ -6390,7 +6198,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder,
             io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder>
         vulnerabilityAttestationBuilder_;
-
     /**
      *
      *
@@ -6407,7 +6214,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public boolean hasVulnerabilityAttestation() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -6431,7 +6237,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return vulnerabilityAttestationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6457,7 +6262,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6480,7 +6284,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6513,7 +6316,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -6535,7 +6337,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6553,7 +6354,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       onChanged();
       return getVulnerabilityAttestationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6575,7 +6375,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             : vulnerabilityAttestation_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ExportTaxonomiesRequest)
     ExportTaxonomiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportTaxonomiesRequest.newBuilder() to construct.
   private ExportTaxonomiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,7 +115,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList taxonomies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getTaxonomiesList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   public java.lang.String getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   public static final int SERIALIZED_TAXONOMIES_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   public boolean hasSerializedTaxonomies() {
     return destinationCase_ == 3;
   }
-
   /**
    *
    *
@@ -487,7 +477,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -735,7 +724,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -761,7 +749,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +774,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -812,7 +798,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +818,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +853,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       taxonomies_.makeImmutable();
       return taxonomies_;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     public int getTaxonomiesCount() {
       return taxonomies_.size();
     }
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     public java.lang.String getTaxonomies(int index) {
       return taxonomies_.get(index);
     }
-
     /**
      *
      *
@@ -940,7 +920,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getTaxonomiesBytes(int index) {
       return taxonomies_.getByteString(index);
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +969,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +990,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1010,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     public boolean hasSerializedTaxonomies() {
       return destinationCase_ == 3;
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       }
       return false;
     }
-
     /**
      *
      *
@@ -1116,7 +1089,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

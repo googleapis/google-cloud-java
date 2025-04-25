@@ -40,7 +40,6 @@ public interface ListMerchantCenterAccountLinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

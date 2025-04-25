@@ -88,7 +88,6 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    * <code>SUBJECT_REQUEST_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int SUBJECT_REQUEST_MODE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    * <code>DEFAULT = 1;</code>
    */
   public static final int DEFAULT_VALUE = 1;
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
       getCertificateIssuanceConfigsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    */
   com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig getCertificateIssuanceConfigs(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    * </code>
    */
   int getCertificateIssuanceConfigsCount();
-
   /**
    *
    *
@@ -79,7 +76,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.certificatemanager.v1.CertificateIssuanceConfigOrBuilder>
       getCertificateIssuanceConfigsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface ListCertificateIssuanceConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

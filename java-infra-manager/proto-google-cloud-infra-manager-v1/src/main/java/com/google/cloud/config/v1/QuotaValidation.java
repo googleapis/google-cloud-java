@@ -79,7 +79,6 @@ public enum QuotaValidation implements com.google.protobuf.ProtocolMessageEnum {
    * <code>QUOTA_VALIDATION_UNSPECIFIED = 0;</code>
    */
   public static final int QUOTA_VALIDATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public enum QuotaValidation implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENABLED = 1;</code>
    */
   public static final int ENABLED_VALUE = 1;
-
   /**
    *
    *

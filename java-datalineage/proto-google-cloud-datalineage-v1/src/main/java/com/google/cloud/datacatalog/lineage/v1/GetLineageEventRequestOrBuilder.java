@@ -38,7 +38,6 @@ public interface GetLineageEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

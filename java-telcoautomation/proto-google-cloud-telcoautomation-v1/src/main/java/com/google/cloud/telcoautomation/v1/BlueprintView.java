@@ -72,7 +72,6 @@ public enum BlueprintView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BLUEPRINT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int BLUEPRINT_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum BlueprintView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BLUEPRINT_VIEW_BASIC = 1;</code>
    */
   public static final int BLUEPRINT_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

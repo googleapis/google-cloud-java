@@ -33,7 +33,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.DoubleRange)
     DoubleRangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DoubleRange.newBuilder() to construct.
   private DoubleRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_FIELD_NUMBER = 1;
   private double start_ = 0D;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_FIELD_NUMBER = 2;
   private double end_ = 0D;
-
   /**
    *
    *
@@ -274,7 +271,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -469,7 +465,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double start_;
-
     /**
      *
      *
@@ -485,7 +480,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     public double getStart() {
       return start_;
     }
-
     /**
      *
      *
@@ -505,7 +499,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double end_;
-
     /**
      *
      *
@@ -541,7 +533,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     public double getEnd() {
       return end_;
     }
-
     /**
      *
      *
@@ -561,7 +552,6 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

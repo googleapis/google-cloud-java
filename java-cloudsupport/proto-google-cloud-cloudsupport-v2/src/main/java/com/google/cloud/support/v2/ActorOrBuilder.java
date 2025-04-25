@@ -39,7 +39,6 @@ public interface ActorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ActorOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *

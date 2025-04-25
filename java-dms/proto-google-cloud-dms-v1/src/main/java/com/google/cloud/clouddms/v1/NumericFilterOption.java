@@ -84,7 +84,6 @@ public enum NumericFilterOption implements com.google.protobuf.ProtocolMessageEn
    * <code>NUMERIC_FILTER_OPTION_UNSPECIFIED = 0;</code>
    */
   public static final int NUMERIC_FILTER_OPTION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -95,7 +94,6 @@ public enum NumericFilterOption implements com.google.protobuf.ProtocolMessageEn
    * <code>NUMERIC_FILTER_OPTION_ALL = 1;</code>
    */
   public static final int NUMERIC_FILTER_OPTION_ALL_VALUE = 1;
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public enum NumericFilterOption implements com.google.protobuf.ProtocolMessageEn
    * <code>NUMERIC_FILTER_OPTION_LIMIT = 2;</code>
    */
   public static final int NUMERIC_FILTER_OPTION_LIMIT_VALUE = 2;
-
   /**
    *
    *

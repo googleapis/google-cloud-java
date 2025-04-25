@@ -34,7 +34,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Service services = 1;</code>
    */
   java.util.List<com.google.appengine.v1.Service> getServicesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Service services = 1;</code>
    */
   com.google.appengine.v1.Service getServices(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Service services = 1;</code>
    */
   int getServicesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Service services = 1;</code>
    */
   java.util.List<? extends com.google.appengine.v1.ServiceOrBuilder> getServicesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListServicesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

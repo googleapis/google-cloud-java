@@ -43,7 +43,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return The query.
    */
   com.google.cloud.discoveryengine.v1alpha.TextInput getQuery();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return The servingConfig.
    */
   java.lang.String getServingConfig();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return Whether the conversation field is set.
    */
   boolean hasConversation();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return The conversation.
    */
   com.google.cloud.discoveryengine.v1alpha.Conversation getConversation();
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public interface ConverseConversationRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 7;</code>
    */
   int getUserLabelsCount();
-
   /**
    *
    *
@@ -246,11 +239,9 @@ public interface ConverseConversationRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 7;</code>
    */
   boolean containsUserLabels(java.lang.String key);
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface ConverseConversationRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
-
   /**
    *
    *
@@ -308,7 +298,6 @@ public interface ConverseConversationRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -350,7 +339,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return Whether the summarySpec field is set.
    */
   boolean hasSummarySpec();
-
   /**
    *
    *
@@ -366,7 +354,6 @@ public interface ConverseConversationRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
       getSummarySpec();
-
   /**
    *
    *
@@ -408,7 +395,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -451,7 +437,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return Whether the boostSpec field is set.
    */
   boolean hasBoostSpec();
-
   /**
    *
    *
@@ -466,7 +451,6 @@ public interface ConverseConversationRequestOrBuilder
    * @return The boostSpec.
    */
   com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec getBoostSpec();
-
   /**
    *
    *

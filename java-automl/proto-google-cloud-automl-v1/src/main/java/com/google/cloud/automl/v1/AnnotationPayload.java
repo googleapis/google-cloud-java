@@ -33,7 +33,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.AnnotationPayload)
     AnnotationPayloadOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnnotationPayload.newBuilder() to construct.
   private AnnotationPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     private DetailCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,7 +123,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TRANSLATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   public boolean hasTranslation() {
     return detailCase_ == 2;
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.automl.v1.TranslationAnnotation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CLASSIFICATION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   public boolean hasClassification() {
     return detailCase_ == 3;
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int IMAGE_OBJECT_DETECTION_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   public boolean hasImageObjectDetection() {
     return detailCase_ == 4;
   }
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.automl.v1.ImageObjectDetectionAnnotation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -288,7 +277,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TEXT_EXTRACTION_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   public boolean hasTextExtraction() {
     return detailCase_ == 6;
   }
-
   /**
    *
    *
@@ -323,7 +310,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.automl.v1.TextExtractionAnnotation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TEXT_SENTIMENT_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -358,7 +343,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   public boolean hasTextSentiment() {
     return detailCase_ == 7;
   }
-
   /**
    *
    *
@@ -377,7 +361,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -399,7 +382,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationSpecId_ = "";
-
   /**
    *
    *
@@ -425,7 +407,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -456,7 +437,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -485,7 +465,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -767,7 +746,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1084,7 +1062,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1.TranslationAnnotation.Builder,
             com.google.cloud.automl.v1.TranslationAnnotationOrBuilder>
         translationBuilder_;
-
     /**
      *
      *
@@ -1100,7 +1077,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public boolean hasTranslation() {
       return detailCase_ == 2;
     }
-
     /**
      *
      *
@@ -1126,7 +1102,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.TranslationAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1149,7 +1124,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1144,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1176,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1201,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1213,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.automl.v1.TranslationAnnotation.Builder getTranslationBuilder() {
       return getTranslationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1263,7 +1233,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.TranslationAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1302,7 +1271,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1.ClassificationAnnotation.Builder,
             com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder>
         classificationBuilder_;
-
     /**
      *
      *
@@ -1318,7 +1286,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public boolean hasClassification() {
       return detailCase_ == 3;
     }
-
     /**
      *
      *
@@ -1344,7 +1311,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1367,7 +1333,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1353,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1386,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1411,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1423,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.automl.v1.ClassificationAnnotation.Builder getClassificationBuilder() {
       return getClassificationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1483,7 +1444,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1522,7 +1482,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1.ImageObjectDetectionAnnotation.Builder,
             com.google.cloud.automl.v1.ImageObjectDetectionAnnotationOrBuilder>
         imageObjectDetectionBuilder_;
-
     /**
      *
      *
@@ -1539,7 +1498,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public boolean hasImageObjectDetection() {
       return detailCase_ == 4;
     }
-
     /**
      *
      *
@@ -1566,7 +1524,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.ImageObjectDetectionAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1591,7 +1548,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1569,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1604,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1676,7 +1630,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1644,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         getImageObjectDetectionBuilder() {
       return getImageObjectDetectionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1714,7 +1666,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.ImageObjectDetectionAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1754,7 +1705,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1.TextExtractionAnnotation.Builder,
             com.google.cloud.automl.v1.TextExtractionAnnotationOrBuilder>
         textExtractionBuilder_;
-
     /**
      *
      *
@@ -1770,7 +1720,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public boolean hasTextExtraction() {
       return detailCase_ == 6;
     }
-
     /**
      *
      *
@@ -1796,7 +1745,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.TextExtractionAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1767,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1840,7 +1787,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1874,7 +1820,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1900,7 +1845,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1913,7 +1857,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.automl.v1.TextExtractionAnnotation.Builder getTextExtractionBuilder() {
       return getTextExtractionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1935,7 +1878,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.TextExtractionAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1974,7 +1916,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1.TextSentimentAnnotation.Builder,
             com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder>
         textSentimentBuilder_;
-
     /**
      *
      *
@@ -1990,7 +1931,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public boolean hasTextSentiment() {
       return detailCase_ == 7;
     }
-
     /**
      *
      *
@@ -2016,7 +1956,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2039,7 +1978,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2060,7 +1998,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2030,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       detailCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2119,7 +2055,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2132,7 +2067,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.automl.v1.TextSentimentAnnotation.Builder getTextSentimentBuilder() {
       return getTextSentimentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2153,7 +2087,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2188,7 +2121,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object annotationSpecId_ = "";
-
     /**
      *
      *
@@ -2213,7 +2145,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2238,7 +2169,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2192,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2282,7 +2211,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2309,7 +2237,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2337,7 +2264,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2365,7 +2291,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2392,7 +2317,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2415,7 +2339,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

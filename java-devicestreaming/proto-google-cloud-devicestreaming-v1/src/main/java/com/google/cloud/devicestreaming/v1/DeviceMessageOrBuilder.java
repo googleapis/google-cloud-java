@@ -36,7 +36,6 @@ public interface DeviceMessageOrBuilder
    * @return Whether the statusUpdate field is set.
    */
   boolean hasStatusUpdate();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DeviceMessageOrBuilder
    * @return The statusUpdate.
    */
   com.google.cloud.devicestreaming.v1.StatusUpdate getStatusUpdate();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DeviceMessageOrBuilder
    * @return Whether the streamStatus field is set.
    */
   boolean hasStreamStatus();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DeviceMessageOrBuilder
    * @return The streamStatus.
    */
   com.google.cloud.devicestreaming.v1.StreamStatus getStreamStatus();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface DeviceMessageOrBuilder
    * @return Whether the streamData field is set.
    */
   boolean hasStreamData();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface DeviceMessageOrBuilder
    * @return The streamData.
    */
   com.google.cloud.devicestreaming.v1.StreamData getStreamData();
-
   /**
    *
    *

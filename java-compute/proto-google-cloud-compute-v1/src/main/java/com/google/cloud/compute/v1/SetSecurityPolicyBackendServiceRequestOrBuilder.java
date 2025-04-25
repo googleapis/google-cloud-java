@@ -36,7 +36,6 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * @return Whether the securityPolicyReferenceResource field is set.
    */
   boolean hasSecurityPolicyReferenceResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * @return The securityPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyReference getSecurityPolicyReferenceResource();
-
   /**
    *
    *

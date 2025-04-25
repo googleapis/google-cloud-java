@@ -38,7 +38,6 @@ public interface ReceivePacketsRequestOrBuilder
    * @return Whether the setupRequest field is set.
    */
   boolean hasSetupRequest();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ReceivePacketsRequestOrBuilder
    * @return The setupRequest.
    */
   com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest getSetupRequest();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface ReceivePacketsRequestOrBuilder
    * @return Whether the commitRequest field is set.
    */
   boolean hasCommitRequest();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface ReceivePacketsRequestOrBuilder
    * @return The commitRequest.
    */
   com.google.cloud.visionai.v1.CommitRequest getCommitRequest();
-
   /**
    *
    *

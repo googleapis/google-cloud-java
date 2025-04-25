@@ -43,7 +43,6 @@ public interface VideoClassificationConfigOrBuilder
   java.util.List<
           com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig>
       getAnnotationSpecSetConfigsList();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VideoClassificationConfigOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig
       getAnnotationSpecSetConfigs(int index);
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface VideoClassificationConfigOrBuilder
    * </code>
    */
   int getAnnotationSpecSetConfigsCount();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface VideoClassificationConfigOrBuilder
               com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
                   .AnnotationSpecSetConfigOrBuilder>
       getAnnotationSpecSetConfigsOrBuilderList();
-
   /**
    *
    *

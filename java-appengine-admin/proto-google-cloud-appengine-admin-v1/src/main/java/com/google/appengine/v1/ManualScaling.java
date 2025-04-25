@@ -34,7 +34,6 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ManualScaling)
     ManualScalingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManualScaling.newBuilder() to construct.
   private ManualScaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTANCES_FIELD_NUMBER = 1;
   private int instances_ = 0;
-
   /**
    *
    *
@@ -242,7 +240,6 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -425,7 +422,6 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int instances_;
-
     /**
      *
      *
@@ -444,7 +440,6 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     public int getInstances() {
       return instances_;
     }
-
     /**
      *
      *
@@ -467,7 +462,6 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

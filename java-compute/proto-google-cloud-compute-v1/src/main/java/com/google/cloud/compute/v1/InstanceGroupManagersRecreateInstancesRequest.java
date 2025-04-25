@@ -33,7 +33,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest)
     InstanceGroupManagersRecreateInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersRecreateInstancesRequest.newBuilder() to construct.
   private InstanceGroupManagersRecreateInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +298,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -513,7 +507,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -560,7 +551,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -576,7 +566,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
-
     /**
      *
      *
@@ -600,7 +589,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +611,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +630,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +648,6 @@ public final class InstanceGroupManagersRecreateInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

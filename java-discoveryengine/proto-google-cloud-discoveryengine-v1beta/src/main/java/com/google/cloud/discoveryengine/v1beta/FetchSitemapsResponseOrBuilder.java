@@ -37,7 +37,6 @@ public interface FetchSitemapsResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.SitemapMetadata>
       getSitemapsMetadataList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface FetchSitemapsResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.SitemapMetadata getSitemapsMetadata(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface FetchSitemapsResponseOrBuilder
    * </code>
    */
   int getSitemapsMetadataCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface FetchSitemapsResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse
                   .SitemapMetadataOrBuilder>
       getSitemapsMetadataOrBuilderList();
-
   /**
    *
    *

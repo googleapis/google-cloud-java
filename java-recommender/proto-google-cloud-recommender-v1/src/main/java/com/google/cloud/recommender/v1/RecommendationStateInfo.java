@@ -33,7 +33,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.RecommendationStateInfo)
     RecommendationStateInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecommendationStateInfo.newBuilder() to construct.
   private RecommendationStateInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -174,7 +173,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -188,7 +186,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -202,7 +199,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <code>CLAIMED = 6;</code>
      */
     public static final int CLAIMED_VALUE = 6;
-
     /**
      *
      *
@@ -216,7 +212,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -230,7 +225,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -338,7 +332,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -354,7 +347,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -403,7 +395,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
   public int getStateMetadataCount() {
     return internalGetStateMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -420,14 +411,12 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     }
     return internalGetStateMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getStateMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
     return getStateMetadataMap();
   }
-
   /**
    *
    *
@@ -441,7 +430,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
     return internalGetStateMetadata().getMap();
   }
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     java.util.Map<java.lang.String, java.lang.String> map = internalGetStateMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -665,7 +652,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -889,7 +875,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -905,7 +890,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -924,7 +908,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +927,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
           ? com.google.cloud.recommender.v1.RecommendationStateInfo.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +994,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     public int getStateMetadataCount() {
       return internalGetStateMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -1030,14 +1010,12 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       }
       return internalGetStateMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getStateMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
       return getStateMetadataMap();
     }
-
     /**
      *
      *
@@ -1051,7 +1029,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
       return internalGetStateMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1072,7 +1049,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       java.util.Map<java.lang.String, java.lang.String> map = internalGetStateMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1099,7 +1075,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       internalGetMutableStateMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1116,14 +1091,12 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       internalGetMutableStateMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableStateMetadata() {
       bitField0_ |= 0x00000002;
       return internalGetMutableStateMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1144,7 +1117,6 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

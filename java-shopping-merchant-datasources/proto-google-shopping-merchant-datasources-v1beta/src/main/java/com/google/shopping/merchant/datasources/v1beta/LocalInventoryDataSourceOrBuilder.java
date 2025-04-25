@@ -45,7 +45,6 @@ public interface LocalInventoryDataSourceOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface LocalInventoryDataSourceOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
-
   /**
    *
    *

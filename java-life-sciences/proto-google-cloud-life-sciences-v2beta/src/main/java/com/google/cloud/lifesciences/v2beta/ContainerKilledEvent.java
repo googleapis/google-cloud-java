@@ -35,7 +35,6 @@ public final class ContainerKilledEvent extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.ContainerKilledEvent)
     ContainerKilledEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContainerKilledEvent.newBuilder() to construct.
   private ContainerKilledEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ContainerKilledEvent extends com.google.protobuf.GeneratedMes
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
   private int actionId_ = 0;
-
   /**
    *
    *
@@ -243,7 +241,6 @@ public final class ContainerKilledEvent extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -428,7 +425,6 @@ public final class ContainerKilledEvent extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int actionId_;
-
     /**
      *
      *
@@ -444,7 +440,6 @@ public final class ContainerKilledEvent extends com.google.protobuf.GeneratedMes
     public int getActionId() {
       return actionId_;
     }
-
     /**
      *
      *
@@ -464,7 +459,6 @@ public final class ContainerKilledEvent extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

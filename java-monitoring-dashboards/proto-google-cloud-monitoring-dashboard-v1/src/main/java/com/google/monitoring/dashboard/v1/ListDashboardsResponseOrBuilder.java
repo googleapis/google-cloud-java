@@ -34,7 +34,6 @@ public interface ListDashboardsResponseOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Dashboard dashboards = 1;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.Dashboard> getDashboardsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDashboardsResponseOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Dashboard dashboards = 1;</code>
    */
   com.google.monitoring.dashboard.v1.Dashboard getDashboards(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDashboardsResponseOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Dashboard dashboards = 1;</code>
    */
   int getDashboardsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDashboardsResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.DashboardOrBuilder>
       getDashboardsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListDashboardsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

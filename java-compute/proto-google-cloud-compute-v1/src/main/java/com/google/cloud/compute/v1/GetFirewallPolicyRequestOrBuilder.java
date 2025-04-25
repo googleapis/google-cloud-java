@@ -36,7 +36,6 @@ public interface GetFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
-
   /**
    *
    *

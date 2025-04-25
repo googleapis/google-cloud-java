@@ -33,7 +33,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.ListTagsResponse)
     ListTagsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTagsResponse.newBuilder() to construct.
   private ListTagsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.Tag> tags_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.devtools.artifactregistry.v1beta2.Tag> getTagsList() {
     return tags_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       getTagsOrBuilderList() {
     return tags_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
   public int getTagsCount() {
     return tags_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
   public com.google.devtools.artifactregistry.v1beta2.Tag getTags(int index) {
     return tags_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return tagsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return tagsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return tagsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.devtools.artifactregistry.v1beta2.Tag.Builder getTagsBuilder(int index) {
       return getTagsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return tagsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(tags_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       return getTagsFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1beta2.Tag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       return getTagsFieldBuilder()
           .addBuilder(index, com.google.devtools.artifactregistry.v1beta2.Tag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1026,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1044,6 @@ public final class ListTagsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

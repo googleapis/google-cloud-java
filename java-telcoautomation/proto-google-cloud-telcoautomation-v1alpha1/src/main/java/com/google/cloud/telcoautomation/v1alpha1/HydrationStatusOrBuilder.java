@@ -38,7 +38,6 @@ public interface HydrationStatusOrBuilder
    * @return Whether the siteVersion field is set.
    */
   boolean hasSiteVersion();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface HydrationStatusOrBuilder
    * @return The siteVersion.
    */
   com.google.cloud.telcoautomation.v1alpha1.SiteVersion getSiteVersion();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface HydrationStatusOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *

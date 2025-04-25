@@ -37,7 +37,6 @@ public interface TrajectoryExactMatchResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchMetricValue>
       getTrajectoryExactMatchMetricValuesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TrajectoryExactMatchResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchMetricValue
       getTrajectoryExactMatchMetricValues(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface TrajectoryExactMatchResultsOrBuilder
    * </code>
    */
   int getTrajectoryExactMatchMetricValuesCount();
-
   /**
    *
    *
@@ -79,7 +76,6 @@ public interface TrajectoryExactMatchResultsOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchMetricValueOrBuilder>
       getTrajectoryExactMatchMetricValuesOrBuilderList();
-
   /**
    *
    *

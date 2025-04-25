@@ -33,7 +33,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DistillationDataStats)
     DistillationDataStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DistillationDataStats.newBuilder() to construct.
   private DistillationDataStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int TRAINING_DATASET_STATS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.DatasetStats trainingDatasetStats_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
   public boolean hasTrainingDatasetStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.aiplatform.v1beta1.DatasetStats.getDefaultInstance()
         : trainingDatasetStats_;
   }
-
   /**
    *
    *
@@ -289,7 +285,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +492,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.DatasetStats.Builder,
             com.google.cloud.aiplatform.v1beta1.DatasetStatsOrBuilder>
         trainingDatasetStatsBuilder_;
-
     /**
      *
      *
@@ -514,7 +508,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
     public boolean hasTrainingDatasetStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -537,7 +530,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
         return trainingDatasetStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -562,7 +554,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -585,7 +576,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +645,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTrainingDatasetStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -679,7 +666,6 @@ public final class DistillationDataStats extends com.google.protobuf.GeneratedMe
             : trainingDatasetStats_;
       }
     }
-
     /**
      *
      *

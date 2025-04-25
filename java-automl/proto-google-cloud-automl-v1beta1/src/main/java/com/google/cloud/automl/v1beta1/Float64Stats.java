@@ -33,7 +33,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.Float64Stats)
     Float64StatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Float64Stats.newBuilder() to construct.
   private Float64Stats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,7 +110,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      */
     long getCount();
   }
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.Float64Stats.HistogramBucket)
       HistogramBucketOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use HistogramBucket.newBuilder() to construct.
     private HistogramBucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -157,7 +154,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MIN_FIELD_NUMBER = 1;
     private double min_ = 0D;
-
     /**
      *
      *
@@ -176,7 +172,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MAX_FIELD_NUMBER = 2;
     private double max_ = 0D;
-
     /**
      *
      *
@@ -196,7 +191,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 3;
     private long count_ = 0L;
-
     /**
      *
      *
@@ -399,7 +393,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -614,7 +607,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double min_;
-
       /**
        *
        *
@@ -630,7 +622,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       public double getMin() {
         return min_;
       }
-
       /**
        *
        *
@@ -650,7 +641,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -670,7 +660,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double max_;
-
       /**
        *
        *
@@ -687,7 +676,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       public double getMax() {
         return max_;
       }
-
       /**
        *
        *
@@ -708,7 +696,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -729,7 +716,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long count_;
-
       /**
        *
        *
@@ -746,7 +732,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       public long getCount() {
         return count_;
       }
-
       /**
        *
        *
@@ -767,7 +752,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -856,7 +840,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEAN_FIELD_NUMBER = 1;
   private double mean_ = 0D;
-
   /**
    *
    *
@@ -875,7 +858,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STANDARD_DEVIATION_FIELD_NUMBER = 2;
   private double standardDeviation_ = 0D;
-
   /**
    *
    *
@@ -896,7 +878,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList quantiles_ = emptyDoubleList();
-
   /**
    *
    *
@@ -915,7 +896,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Double> getQuantilesList() {
     return quantiles_;
   }
-
   /**
    *
    *
@@ -933,7 +913,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
   public int getQuantilesCount() {
     return quantiles_.size();
   }
-
   /**
    *
    *
@@ -960,7 +939,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket>
       histogramBuckets_;
-
   /**
    *
    *
@@ -980,7 +958,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       getHistogramBucketsList() {
     return histogramBuckets_;
   }
-
   /**
    *
    *
@@ -1001,7 +978,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       getHistogramBucketsOrBuilderList() {
     return histogramBuckets_;
   }
-
   /**
    *
    *
@@ -1020,7 +996,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
   public int getHistogramBucketsCount() {
     return histogramBuckets_.size();
   }
-
   /**
    *
    *
@@ -1040,7 +1015,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return histogramBuckets_.get(index);
   }
-
   /**
    *
    *
@@ -1270,7 +1244,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1561,7 +1534,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double mean_;
-
     /**
      *
      *
@@ -1577,7 +1549,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     public double getMean() {
       return mean_;
     }
-
     /**
      *
      *
@@ -1597,7 +1568,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1587,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double standardDeviation_;
-
     /**
      *
      *
@@ -1633,7 +1602,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     public double getStandardDeviation() {
       return standardDeviation_;
     }
-
     /**
      *
      *
@@ -1653,7 +1621,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1654,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1706,7 +1672,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       quantiles_.makeImmutable();
       return quantiles_;
     }
-
     /**
      *
      *
@@ -1724,7 +1689,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     public int getQuantilesCount() {
       return quantiles_.size();
     }
-
     /**
      *
      *
@@ -1743,7 +1707,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     public double getQuantiles(int index) {
       return quantiles_.getDouble(index);
     }
-
     /**
      *
      *
@@ -1768,7 +1731,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1792,7 +1754,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1815,7 +1776,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1838,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         return histogramBucketsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1901,7 +1860,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         return histogramBucketsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1925,7 +1883,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         return histogramBucketsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1955,7 +1912,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1983,7 +1939,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2013,7 +1968,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2043,7 +1997,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2070,7 +2023,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2098,7 +2050,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2126,7 +2077,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2152,7 +2102,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2127,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2198,7 +2146,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         getHistogramBucketsBuilder(int index) {
       return getHistogramBucketsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2222,7 +2169,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         return histogramBucketsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2247,7 +2193,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(histogramBuckets_);
       }
     }
-
     /**
      *
      *
@@ -2269,7 +2214,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2292,7 +2236,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket.getDefaultInstance());
     }
-
     /**
      *
      *

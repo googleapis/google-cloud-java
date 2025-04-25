@@ -112,7 +112,6 @@ public enum OperationsInsightsState implements com.google.protobuf.ProtocolMessa
    * <code>OPERATIONS_INSIGHTS_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int OPERATIONS_INSIGHTS_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -123,7 +122,6 @@ public enum OperationsInsightsState implements com.google.protobuf.ProtocolMessa
    * <code>ENABLING = 1;</code>
    */
   public static final int ENABLING_VALUE = 1;
-
   /**
    *
    *
@@ -134,7 +132,6 @@ public enum OperationsInsightsState implements com.google.protobuf.ProtocolMessa
    * <code>ENABLED = 2;</code>
    */
   public static final int ENABLED_VALUE = 2;
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public enum OperationsInsightsState implements com.google.protobuf.ProtocolMessa
    * <code>DISABLING = 3;</code>
    */
   public static final int DISABLING_VALUE = 3;
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public enum OperationsInsightsState implements com.google.protobuf.ProtocolMessa
    * <code>NOT_ENABLED = 4;</code>
    */
   public static final int NOT_ENABLED_VALUE = 4;
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public enum OperationsInsightsState implements com.google.protobuf.ProtocolMessa
    * <code>FAILED_ENABLING = 5;</code>
    */
   public static final int FAILED_ENABLING_VALUE = 5;
-
   /**
    *
    *

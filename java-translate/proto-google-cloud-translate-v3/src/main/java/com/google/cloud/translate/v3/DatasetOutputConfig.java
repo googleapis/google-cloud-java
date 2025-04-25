@@ -33,7 +33,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DatasetOutputConfig)
     DatasetOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatasetOutputConfig.newBuilder() to construct.
   private DatasetOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.translate.v3.GcsOutputDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +550,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.translate.v3.GcsOutputDestination.Builder,
             com.google.cloud.translate.v3.GcsOutputDestinationOrBuilder>
         gcsDestinationBuilder_;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
         return com.google.cloud.translate.v3.GcsOutputDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.translate.v3.GcsOutputDestination.Builder getGcsDestinationBuilder() {
       return getGcsDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class DatasetOutputConfig extends com.google.protobuf.GeneratedMess
         return com.google.cloud.translate.v3.GcsOutputDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *

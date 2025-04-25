@@ -33,7 +33,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Attachment)
     AttachmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Attachment.newBuilder() to construct.
   private Attachment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int SOURCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
      * <code>DRIVE_FILE = 1;</code>
      */
     public static final int DRIVE_FILE_VALUE = 1;
-
     /**
      *
      *
@@ -243,7 +240,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     private DataRefCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -280,7 +276,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -305,7 +300,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -335,7 +329,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentName_ = "";
-
   /**
    *
    *
@@ -359,7 +352,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -388,7 +380,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentType_ = "";
-
   /**
    *
    *
@@ -412,7 +403,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -438,7 +428,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTACHMENT_DATA_REF_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -458,7 +447,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttachmentDataRef() {
     return dataRefCase_ == 4;
   }
-
   /**
    *
    *
@@ -481,7 +469,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.AttachmentDataRef.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -504,7 +491,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DRIVE_DATA_REF_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -523,7 +509,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDriveDataRef() {
     return dataRefCase_ == 7;
   }
-
   /**
    *
    *
@@ -545,7 +530,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.DriveDataRef.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -570,7 +554,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object thumbnailUri_ = "";
-
   /**
    *
    *
@@ -596,7 +579,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -627,7 +609,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object downloadUri_ = "";
-
   /**
    *
    *
@@ -653,7 +634,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -682,7 +662,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FIELD_NUMBER = 9;
   private int source_ = 0;
-
   /**
    *
    *
@@ -700,7 +679,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
   public int getSourceValue() {
     return source_;
   }
-
   /**
    *
    *
@@ -962,7 +940,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1280,7 +1257,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1304,7 +1280,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1303,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1325,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1343,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1368,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contentName_ = "";
-
     /**
      *
      *
@@ -1419,7 +1390,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1442,7 +1412,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1433,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1482,7 +1450,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1474,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contentType_ = "";
-
     /**
      *
      *
@@ -1530,7 +1496,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1553,7 +1518,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1575,7 +1539,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1593,7 +1556,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1584,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.AttachmentDataRef.Builder,
             com.google.chat.v1.AttachmentDataRefOrBuilder>
         attachmentDataRefBuilder_;
-
     /**
      *
      *
@@ -1642,7 +1603,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttachmentDataRef() {
       return dataRefCase_ == 4;
     }
-
     /**
      *
      *
@@ -1672,7 +1632,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.AttachmentDataRef.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1699,7 +1658,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       dataRefCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1724,7 +1682,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       dataRefCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1718,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       dataRefCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1747,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1808,7 +1763,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.AttachmentDataRef.Builder getAttachmentDataRefBuilder() {
       return getAttachmentDataRefFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1833,7 +1787,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.AttachmentDataRef.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1874,7 +1827,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.DriveDataRef.Builder,
             com.google.chat.v1.DriveDataRefOrBuilder>
         driveDataRefBuilder_;
-
     /**
      *
      *
@@ -1893,7 +1845,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDriveDataRef() {
       return dataRefCase_ == 7;
     }
-
     /**
      *
      *
@@ -1922,7 +1873,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.DriveDataRef.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1948,7 +1898,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       dataRefCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -1971,7 +1920,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       dataRefCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1953,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       dataRefCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2034,7 +1981,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2050,7 +1996,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.DriveDataRef.Builder getDriveDataRefBuilder() {
       return getDriveDataRefFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2074,7 +2019,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.DriveDataRef.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2110,7 +2054,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object thumbnailUri_ = "";
-
     /**
      *
      *
@@ -2135,7 +2078,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2160,7 +2102,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2184,7 +2125,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2204,7 +2144,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2231,7 +2170,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object downloadUri_ = "";
-
     /**
      *
      *
@@ -2256,7 +2194,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2281,7 +2218,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2305,7 +2241,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2325,7 +2260,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2352,7 +2286,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int source_ = 0;
-
     /**
      *
      *
@@ -2370,7 +2303,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     public int getSourceValue() {
       return source_;
     }
-
     /**
      *
      *
@@ -2391,7 +2323,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2411,7 +2342,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.Attachment.Source.forNumber(source_);
       return result == null ? com.google.chat.v1.Attachment.Source.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2435,7 +2365,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

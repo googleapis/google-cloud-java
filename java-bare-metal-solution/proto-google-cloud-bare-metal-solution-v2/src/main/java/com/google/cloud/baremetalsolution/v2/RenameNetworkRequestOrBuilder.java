@@ -39,7 +39,6 @@ public interface RenameNetworkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface RenameNetworkRequestOrBuilder
    * @return The newNetworkId.
    */
   java.lang.String getNewNetworkId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface AttachedClusterGroupOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateGeneratorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateGeneratorRequestOrBuilder
    * @return Whether the generator field is set.
    */
   boolean hasGenerator();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateGeneratorRequestOrBuilder
    * @return The generator.
    */
   com.google.cloud.dialogflow.v2.Generator getGenerator();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface CreateGeneratorRequestOrBuilder
    * @return The generatorId.
    */
   java.lang.String getGeneratorId();
-
   /**
    *
    *

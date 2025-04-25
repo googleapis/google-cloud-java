@@ -33,7 +33,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Retrieval)
     RetrievalOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Retrieval.newBuilder() to construct.
   private Retrieval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTEX_AI_SEARCH_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVertexAiSearch() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.VertexAISearch.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTEX_RAG_STORE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVertexRagStore() {
     return sourceCase_ == 4;
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.VertexRagStore.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLE_ATTRIBUTION_FIELD_NUMBER = 3;
   private boolean disableAttribution_ = false;
-
   /**
    *
    *
@@ -444,7 +435,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.VertexAISearch.Builder,
             com.google.cloud.aiplatform.v1.VertexAISearchOrBuilder>
         vertexAiSearchBuilder_;
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVertexAiSearch() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VertexAISearch.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.VertexAISearch.Builder getVertexAiSearchBuilder() {
       return getVertexAiSearchFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VertexAISearch.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.VertexRagStore.Builder,
             com.google.cloud.aiplatform.v1.VertexRagStoreOrBuilder>
         vertexRagStoreBuilder_;
-
     /**
      *
      *
@@ -927,7 +907,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVertexRagStore() {
       return sourceCase_ == 4;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VertexRagStore.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1010,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1049,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.VertexRagStore.Builder getVertexRagStoreBuilder() {
       return getVertexRagStoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VertexRagStore.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1105,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disableAttribution_;
-
     /**
      *
      *
@@ -1154,7 +1125,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisableAttribution() {
       return disableAttribution_;
     }
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

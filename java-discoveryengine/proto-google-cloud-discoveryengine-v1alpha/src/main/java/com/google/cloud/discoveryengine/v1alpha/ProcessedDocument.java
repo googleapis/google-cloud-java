@@ -34,7 +34,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ProcessedDocument)
     ProcessedDocumentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProcessedDocument.newBuilder() to construct.
   private ProcessedDocument(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
     private ProcessedDataFormatCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int JSON_DATA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
   public boolean hasJsonData() {
     return processedDataFormatCase_ == 2;
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object document_ = "";
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -426,7 +419,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +661,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
     public boolean hasJsonData() {
       return processedDataFormatCase_ == 2;
     }
-
     /**
      *
      *
@@ -698,7 +689,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -727,7 +717,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +738,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +757,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +781,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object document_ = "";
-
     /**
      *
      *
@@ -820,7 +806,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class ProcessedDocument extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

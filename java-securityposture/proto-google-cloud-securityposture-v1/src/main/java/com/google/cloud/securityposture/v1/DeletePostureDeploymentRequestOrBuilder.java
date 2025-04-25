@@ -38,7 +38,6 @@ public interface DeletePostureDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeletePostureDeploymentRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

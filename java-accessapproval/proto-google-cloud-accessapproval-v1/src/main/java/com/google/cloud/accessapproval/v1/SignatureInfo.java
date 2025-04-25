@@ -33,7 +33,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.SignatureInfo)
     SignatureInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SignatureInfo.newBuilder() to construct.
   private SignatureInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     private VerificationInfoCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIGNATURE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_PUBLIC_KEY_PEM_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGooglePublicKeyPem() {
     return verificationInfoCase_ == 2;
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOMER_KMS_KEY_VERSION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerKmsKeyVersion() {
     return verificationInfoCase_ == 3;
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -479,7 +470,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -718,7 +708,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
-
     /**
      *
      *
@@ -756,7 +744,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +779,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGooglePublicKeyPem() {
       return verificationInfoCase_ == 2;
     }
-
     /**
      *
      *
@@ -823,7 +809,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +862,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +883,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerKmsKeyVersion() {
       return verificationInfoCase_ == 3;
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +1000,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1019,6 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.GetAclConfigRequest)
     GetAclConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetAclConfigRequest.newBuilder() to construct.
   private GetAclConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -293,7 +290,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +477,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -512,7 +507,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -543,7 +537,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class GetAclConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

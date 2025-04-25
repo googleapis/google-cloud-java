@@ -38,7 +38,6 @@ public interface ConnectionInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ConnectionInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ConnectionInfoOrBuilder
    * @return The publicIpAddress.
    */
   java.lang.String getPublicIpAddress();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface ConnectionInfoOrBuilder
    * @return The instanceUid.
    */
   java.lang.String getInstanceUid();
-
   /**
    *
    *

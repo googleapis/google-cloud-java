@@ -33,7 +33,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1.BlueGreenSettings)
     BlueGreenSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BlueGreenSettings.newBuilder() to construct.
   private BlueGreenSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * @return Whether the batchPercentage field is set.
      */
     boolean hasBatchPercentage();
-
     /**
      *
      *
@@ -107,7 +105,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * @return Whether the batchNodeCount field is set.
      */
     boolean hasBatchNodeCount();
-
     /**
      *
      *
@@ -133,7 +130,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * @return Whether the batchSoakDuration field is set.
      */
     boolean hasBatchSoakDuration();
-
     /**
      *
      *
@@ -146,7 +142,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * @return The batchSoakDuration.
      */
     com.google.protobuf.Duration getBatchSoakDuration();
-
     /**
      *
      *
@@ -161,7 +156,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.UpdateBatchSizeCase
         getUpdateBatchSizeCase();
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.container.v1.BlueGreenSettings.StandardRolloutPolicy)
       StandardRolloutPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use StandardRolloutPolicy.newBuilder() to construct.
     private StandardRolloutPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -223,7 +216,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       private UpdateBatchSizeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -257,7 +249,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int BATCH_PERCENTAGE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -274,7 +265,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchPercentage() {
       return updateBatchSizeCase_ == 1;
     }
-
     /**
      *
      *
@@ -296,7 +286,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int BATCH_NODE_COUNT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -312,7 +301,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchNodeCount() {
       return updateBatchSizeCase_ == 2;
     }
-
     /**
      *
      *
@@ -334,7 +322,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
     public static final int BATCH_SOAK_DURATION_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration batchSoakDuration_;
-
     /**
      *
      *
@@ -350,7 +337,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchSoakDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -368,7 +354,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
           ? com.google.protobuf.Duration.getDefaultInstance()
           : batchSoakDuration_;
     }
-
     /**
      *
      *
@@ -592,7 +577,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -868,7 +852,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       public boolean hasBatchPercentage() {
         return updateBatchSizeCase_ == 1;
       }
-
       /**
        *
        *
@@ -887,7 +870,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         }
         return 0F;
       }
-
       /**
        *
        *
@@ -908,7 +890,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -944,7 +925,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       public boolean hasBatchNodeCount() {
         return updateBatchSizeCase_ == 2;
       }
-
       /**
        *
        *
@@ -962,7 +942,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         }
         return 0;
       }
-
       /**
        *
        *
@@ -982,7 +961,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1009,7 +987,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           batchSoakDurationBuilder_;
-
       /**
        *
        *
@@ -1024,7 +1001,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       public boolean hasBatchSoakDuration() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1045,7 +1021,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
           return batchSoakDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1068,7 +1043,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1088,7 +1062,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1116,7 +1089,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1136,7 +1108,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1151,7 +1122,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getBatchSoakDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1170,7 +1140,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
               : batchSoakDuration_;
         }
       }
-
       /**
        *
        *
@@ -1281,7 +1250,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     private RolloutPolicyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1313,7 +1281,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STANDARD_ROLLOUT_POLICY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -1330,7 +1297,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
   public boolean hasStandardRolloutPolicy() {
     return rolloutPolicyCase_ == 1;
   }
-
   /**
    *
    *
@@ -1351,7 +1317,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     }
     return com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1373,7 +1338,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
   public static final int NODE_POOL_SOAK_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration nodePoolSoakDuration_;
-
   /**
    *
    *
@@ -1390,7 +1354,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
   public boolean hasNodePoolSoakDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1409,7 +1372,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : nodePoolSoakDuration_;
   }
-
   /**
    *
    *
@@ -1617,7 +1579,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1869,7 +1830,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
             com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.Builder,
             com.google.container.v1.BlueGreenSettings.StandardRolloutPolicyOrBuilder>
         standardRolloutPolicyBuilder_;
-
     /**
      *
      *
@@ -1887,7 +1847,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasStandardRolloutPolicy() {
       return rolloutPolicyCase_ == 1;
     }
-
     /**
      *
      *
@@ -1916,7 +1875,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         return com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1942,7 +1900,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       rolloutPolicyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1965,7 +1922,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       rolloutPolicyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2004,7 +1960,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       rolloutPolicyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2032,7 +1987,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +2002,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         getStandardRolloutPolicyBuilder() {
       return getStandardRolloutPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2072,7 +2025,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         return com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2115,7 +2067,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         nodePoolSoakDurationBuilder_;
-
     /**
      *
      *
@@ -2131,7 +2082,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasNodePoolSoakDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2153,7 +2103,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         return nodePoolSoakDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2177,7 +2126,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2198,7 +2146,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2227,7 +2174,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2194,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2209,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNodePoolSoakDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2284,7 +2228,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
             : nodePoolSoakDuration_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ServiceOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface ServiceOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ServiceOrBuilder
    * @return The config.
    */
   com.google.api.serviceusage.v1beta1.ServiceConfig getConfig();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ServiceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

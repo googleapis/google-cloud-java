@@ -217,8 +217,7 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDatasetVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateDatasetVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -239,8 +238,7 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDatasetVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateDatasetVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DatasetVersion.class.getName(),
                   Exception.class.getName())));
@@ -261,8 +259,7 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDatasetVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteDatasetVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -326,8 +323,7 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RestoreDatasetVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method RestoreDatasetVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -33,7 +33,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ToolCallResult)
     ToolCallResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ToolCallResult.newBuilder() to construct.
   private ToolCallResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
-
     /**
      *
      *
@@ -96,7 +94,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getMessageBytes();
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error)
       ErrorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Error.newBuilder() to construct.
     private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -146,7 +142,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -170,7 +165,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -356,7 +350,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -547,7 +540,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object message_ = "";
-
       /**
        *
        *
@@ -570,7 +562,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -593,7 +584,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -615,7 +605,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -633,7 +622,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -739,7 +727,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     private ResultCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -776,7 +763,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tool_ = "";
-
   /**
    *
    *
@@ -804,7 +790,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -837,7 +822,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
-
   /**
    *
    *
@@ -861,7 +845,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -887,7 +870,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -903,7 +885,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasError() {
     return resultCase_ == 3;
   }
-
   /**
    *
    *
@@ -922,7 +903,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -941,7 +921,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_PARAMETERS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -957,7 +936,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOutputParameters() {
     return resultCase_ == 4;
   }
-
   /**
    *
    *
@@ -976,7 +954,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1202,7 +1179,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1465,7 +1441,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object tool_ = "";
-
     /**
      *
      *
@@ -1492,7 +1467,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1519,7 +1493,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1545,7 +1518,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1567,7 +1539,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1567,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object action_ = "";
-
     /**
      *
      *
@@ -1619,7 +1589,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1642,7 +1611,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1664,7 +1632,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1649,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1677,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.ErrorOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -1727,7 +1692,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasError() {
       return resultCase_ == 3;
     }
-
     /**
      *
      *
@@ -1753,7 +1717,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1776,7 +1739,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1759,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1832,7 +1793,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1858,7 +1818,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1830,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1893,7 +1851,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1933,7 +1890,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         outputParametersBuilder_;
-
     /**
      *
      *
@@ -1949,7 +1905,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutputParameters() {
       return resultCase_ == 4;
     }
-
     /**
      *
      *
@@ -1975,7 +1930,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1998,7 +1952,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1971,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +2001,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2026,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2088,7 +2038,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Struct.Builder getOutputParametersBuilder() {
       return getOutputParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2109,7 +2058,6 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
-
     /**
      *
      *

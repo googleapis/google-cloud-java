@@ -34,7 +34,6 @@ public interface ListViolationsResponseOrBuilder
    * <code>repeated .google.cloud.assuredworkloads.v1.Violation violations = 1;</code>
    */
   java.util.List<com.google.cloud.assuredworkloads.v1.Violation> getViolationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListViolationsResponseOrBuilder
    * <code>repeated .google.cloud.assuredworkloads.v1.Violation violations = 1;</code>
    */
   com.google.cloud.assuredworkloads.v1.Violation getViolations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListViolationsResponseOrBuilder
    * <code>repeated .google.cloud.assuredworkloads.v1.Violation violations = 1;</code>
    */
   int getViolationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListViolationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.assuredworkloads.v1.ViolationOrBuilder>
       getViolationsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListViolationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

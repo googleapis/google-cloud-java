@@ -36,7 +36,6 @@ public interface ComputeInsightsResponseOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface ComputeInsightsResponseOrBuilder
    * <code>repeated .google.maps.areainsights.v1.PlaceInsight place_insights = 5;</code>
    */
   java.util.List<com.google.maps.areainsights.v1.PlaceInsight> getPlaceInsightsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface ComputeInsightsResponseOrBuilder
    * <code>repeated .google.maps.areainsights.v1.PlaceInsight place_insights = 5;</code>
    */
   com.google.maps.areainsights.v1.PlaceInsight getPlaceInsights(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface ComputeInsightsResponseOrBuilder
    * <code>repeated .google.maps.areainsights.v1.PlaceInsight place_insights = 5;</code>
    */
   int getPlaceInsightsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ComputeInsightsResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.areainsights.v1.PlaceInsightOrBuilder>
       getPlaceInsightsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SkuConfigOrBuilder
    * @return The cpu.
    */
   java.lang.String getCpu();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SkuConfigOrBuilder
    * @return The gpu.
    */
   java.lang.String getGpu();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SkuConfigOrBuilder
    * @return The ram.
    */
   java.lang.String getRam();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface SkuConfigOrBuilder
    * @return The storage.
    */
   java.lang.String getStorage();
-
   /**
    *
    *

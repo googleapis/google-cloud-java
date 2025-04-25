@@ -37,7 +37,6 @@ public interface InputConfigOrBuilder
    * @return The enum numeric value on the wire for inputSwitchMode.
    */
   int getInputSwitchModeValue();
-
   /**
    *
    *

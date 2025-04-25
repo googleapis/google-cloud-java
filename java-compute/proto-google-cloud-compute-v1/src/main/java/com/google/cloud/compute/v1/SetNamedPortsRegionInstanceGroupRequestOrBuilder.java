@@ -36,7 +36,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    * @return The instanceGroup.
    */
   java.lang.String getInstanceGroup();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    * @return Whether the regionInstanceGroupsSetNamedPortsRequestResource field is set.
    */
   boolean hasRegionInstanceGroupsSetNamedPortsRequestResource();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest
       getRegionInstanceGroupsSetNamedPortsRequestResource();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface SetNamedPortsRegionInstanceGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

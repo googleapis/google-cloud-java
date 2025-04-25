@@ -40,7 +40,6 @@ public interface DeleteGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

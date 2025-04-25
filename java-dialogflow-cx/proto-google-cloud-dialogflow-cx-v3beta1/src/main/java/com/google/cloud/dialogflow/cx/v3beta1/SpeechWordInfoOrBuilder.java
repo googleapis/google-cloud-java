@@ -36,7 +36,6 @@ public interface SpeechWordInfoOrBuilder
    * @return The word.
    */
   java.lang.String getWord();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SpeechWordInfoOrBuilder
    * @return Whether the startOffset field is set.
    */
   boolean hasStartOffset();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SpeechWordInfoOrBuilder
    * @return The startOffset.
    */
   com.google.protobuf.Duration getStartOffset();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SpeechWordInfoOrBuilder
    * @return Whether the endOffset field is set.
    */
   boolean hasEndOffset();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SpeechWordInfoOrBuilder
    * @return The endOffset.
    */
   com.google.protobuf.Duration getEndOffset();
-
   /**
    *
    *

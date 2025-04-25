@@ -64,7 +64,6 @@ public enum PolicyMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POLICY_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int POLICY_MODE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

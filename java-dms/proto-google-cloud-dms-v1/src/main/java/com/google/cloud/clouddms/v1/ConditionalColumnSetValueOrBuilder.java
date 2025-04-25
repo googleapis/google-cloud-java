@@ -39,7 +39,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return Whether the sourceTextFilter field is set.
    */
   boolean hasSourceTextFilter();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return The sourceTextFilter.
    */
   com.google.cloud.clouddms.v1.SourceTextFilter getSourceTextFilter();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return Whether the sourceNumericFilter field is set.
    */
   boolean hasSourceNumericFilter();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return The sourceNumericFilter.
    */
   com.google.cloud.clouddms.v1.SourceNumericFilter getSourceNumericFilter();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return Whether the valueTransformation field is set.
    */
   boolean hasValueTransformation();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return The valueTransformation.
    */
   com.google.cloud.clouddms.v1.ValueTransformation getValueTransformation();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface ConditionalColumnSetValueOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *

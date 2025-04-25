@@ -33,7 +33,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RollbackTargetResponse)
     RollbackTargetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RollbackTargetResponse.newBuilder() to construct.
   private RollbackTargetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ROLLBACK_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.RollbackTargetConfig rollbackConfig_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
   public boolean hasRollbackConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.deploy.v1.RollbackTargetConfig.getDefaultInstance()
         : rollbackConfig_;
   }
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.deploy.v1.RollbackTargetConfig.Builder,
             com.google.cloud.deploy.v1.RollbackTargetConfigOrBuilder>
         rollbackConfigBuilder_;
-
     /**
      *
      *
@@ -500,7 +494,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
     public boolean hasRollbackConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -521,7 +514,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
         return rollbackConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -565,7 +556,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +603,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +617,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getRollbackConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -648,7 +635,6 @@ public final class RollbackTargetResponse extends com.google.protobuf.GeneratedM
             : rollbackConfig_;
       }
     }
-
     /**
      *
      *

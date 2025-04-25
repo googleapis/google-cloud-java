@@ -33,7 +33,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.OutputFormatConfig)
     OutputFormatConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OutputFormatConfig.newBuilder() to construct.
   private OutputFormatConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int NATIVE_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v2.NativeOutputFileFormatConfig native_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasNative() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.speech.v2.NativeOutputFileFormatConfig.getDefaultInstance()
         : native_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int VTT_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v2.VttOutputFileFormatConfig vtt_;
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasVtt() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.speech.v2.VttOutputFileFormatConfig.getDefaultInstance()
         : vtt_;
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int SRT_FIELD_NUMBER = 3;
   private com.google.cloud.speech.v2.SrtOutputFileFormatConfig srt_;
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasSrt() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.speech.v2.SrtOutputFileFormatConfig.getDefaultInstance()
         : srt_;
   }
-
   /**
    *
    *
@@ -426,7 +416,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +656,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.speech.v2.NativeOutputFileFormatConfig.Builder,
             com.google.cloud.speech.v2.NativeOutputFileFormatConfigOrBuilder>
         nativeBuilder_;
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasNative() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
         return nativeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNativeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
             : native_;
       }
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.speech.v2.VttOutputFileFormatConfig.Builder,
             com.google.cloud.speech.v2.VttOutputFileFormatConfigOrBuilder>
         vttBuilder_;
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasVtt() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
         return vttBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +989,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1004,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getVttFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1051,7 +1023,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
             : vtt_;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1056,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.speech.v2.SrtOutputFileFormatConfig.Builder,
             com.google.cloud.speech.v2.SrtOutputFileFormatConfigOrBuilder>
         srtBuilder_;
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasSrt() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
         return srtBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1115,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1136,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1184,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1199,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSrtFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1255,7 +1218,6 @@ public final class OutputFormatConfig extends com.google.protobuf.GeneratedMessa
             : srt_;
       }
     }
-
     /**
      *
      *

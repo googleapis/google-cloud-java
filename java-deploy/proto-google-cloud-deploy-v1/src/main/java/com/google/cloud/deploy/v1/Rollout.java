@@ -35,7 +35,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Rollout)
     RolloutOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Rollout.newBuilder() to construct.
   private Rollout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -167,7 +166,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVAL_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int APPROVAL_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -178,7 +176,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>NEEDS_APPROVAL = 1;</code>
      */
     public static final int NEEDS_APPROVAL_VALUE = 1;
-
     /**
      *
      *
@@ -189,7 +186,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>DOES_NOT_NEED_APPROVAL = 2;</code>
      */
     public static final int DOES_NOT_NEED_APPROVAL_VALUE = 2;
-
     /**
      *
      *
@@ -200,7 +196,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVED = 3;</code>
      */
     public static final int APPROVED_VALUE = 3;
-
     /**
      *
      *
@@ -433,7 +428,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -444,7 +438,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -455,7 +448,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 2;</code>
      */
     public static final int FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -466,7 +458,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 3;</code>
      */
     public static final int IN_PROGRESS_VALUE = 3;
-
     /**
      *
      *
@@ -477,7 +468,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_APPROVAL = 4;</code>
      */
     public static final int PENDING_APPROVAL_VALUE = 4;
-
     /**
      *
      *
@@ -488,7 +478,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVAL_REJECTED = 5;</code>
      */
     public static final int APPROVAL_REJECTED_VALUE = 5;
-
     /**
      *
      *
@@ -500,7 +489,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 6;</code>
      */
     public static final int PENDING_VALUE = 6;
-
     /**
      *
      *
@@ -511,7 +499,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_RELEASE = 7;</code>
      */
     public static final int PENDING_RELEASE_VALUE = 7;
-
     /**
      *
      *
@@ -522,7 +509,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLING = 8;</code>
      */
     public static final int CANCELLING_VALUE = 8;
-
     /**
      *
      *
@@ -533,7 +519,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 9;</code>
      */
     public static final int CANCELLED_VALUE = 9;
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILURE_CAUSE_UNSPECIFIED = 0;</code>
      */
     public static final int FAILURE_CAUSE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
      */
     public static final int CLOUD_BUILD_UNAVAILABLE_VALUE = 1;
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>EXECUTION_FAILED = 2;</code>
      */
     public static final int EXECUTION_FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -797,7 +779,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>DEADLINE_EXCEEDED = 3;</code>
      */
     public static final int DEADLINE_EXCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -808,7 +789,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>RELEASE_FAILED = 4;</code>
      */
     public static final int RELEASE_FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -819,7 +799,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>RELEASE_ABANDONED = 5;</code>
      */
     public static final int RELEASE_ABANDONED_VALUE = 5;
-
     /**
      *
      *
@@ -830,7 +809,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
      */
     public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 6;
-
     /**
      *
      *
@@ -842,7 +820,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
      */
     public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 7;
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -980,7 +956,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1011,7 +986,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -1035,7 +1009,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1064,7 +1037,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1089,7 +1061,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1142,7 +1113,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -1163,14 +1133,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -1188,7 +1156,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -1213,7 +1180,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1265,7 +1231,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1292,14 +1257,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1323,7 +1286,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1354,7 +1316,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1388,7 +1349,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1405,7 +1365,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1422,7 +1381,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1440,7 +1398,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROVE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp approveTime_;
-
   /**
    *
    *
@@ -1457,7 +1414,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApproveTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1474,7 +1430,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getApproveTime() {
     return approveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : approveTime_;
   }
-
   /**
    *
    *
@@ -1492,7 +1447,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENQUEUE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp enqueueTime_;
-
   /**
    *
    *
@@ -1509,7 +1463,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnqueueTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1526,7 +1479,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEnqueueTime() {
     return enqueueTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : enqueueTime_;
   }
-
   /**
    *
    *
@@ -1544,7 +1496,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOY_START_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp deployStartTime_;
-
   /**
    *
    *
@@ -1562,7 +1513,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeployStartTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1582,7 +1532,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : deployStartTime_;
   }
-
   /**
    *
    *
@@ -1603,7 +1552,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOY_END_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp deployEndTime_;
-
   /**
    *
    *
@@ -1621,7 +1569,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeployEndTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1641,7 +1588,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : deployEndTime_;
   }
-
   /**
    *
    *
@@ -1664,7 +1610,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetId_ = "";
-
   /**
    *
    *
@@ -1688,7 +1633,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1715,7 +1659,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROVAL_STATE_FIELD_NUMBER = 12;
   private int approvalState_ = 0;
-
   /**
    *
    *
@@ -1733,7 +1676,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getApprovalStateValue() {
     return approvalState_;
   }
-
   /**
    *
    *
@@ -1756,7 +1698,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 13;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1774,7 +1715,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1799,7 +1739,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureReason_ = "";
-
   /**
    *
    *
@@ -1824,7 +1763,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1854,7 +1792,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployingBuild_ = "";
-
   /**
    *
    *
@@ -1882,7 +1819,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1915,7 +1851,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1941,7 +1876,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1970,7 +1904,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOY_FAILURE_CAUSE_FIELD_NUMBER = 19;
   private int deployFailureCause_ = 0;
-
   /**
    *
    *
@@ -1989,7 +1922,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getDeployFailureCauseValue() {
     return deployFailureCause_;
   }
-
   /**
    *
    *
@@ -2015,7 +1947,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Phase> phases_;
-
   /**
    *
    *
@@ -2031,7 +1962,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.deploy.v1.Phase> getPhasesList() {
     return phases_;
   }
-
   /**
    *
    *
@@ -2048,7 +1978,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       getPhasesOrBuilderList() {
     return phases_;
   }
-
   /**
    *
    *
@@ -2064,7 +1993,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getPhasesCount() {
     return phases_.size();
   }
-
   /**
    *
    *
@@ -2080,7 +2008,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.Phase getPhases(int index) {
     return phases_.get(index);
   }
-
   /**
    *
    *
@@ -2099,7 +2026,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 24;
   private com.google.cloud.deploy.v1.Metadata metadata_;
-
   /**
    *
    *
@@ -2117,7 +2043,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -2135,7 +2060,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.Metadata getMetadata() {
     return metadata_ == null ? com.google.cloud.deploy.v1.Metadata.getDefaultInstance() : metadata_;
   }
-
   /**
    *
    *
@@ -2156,7 +2080,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object controllerRollout_ = "";
-
   /**
    *
    *
@@ -2181,7 +2104,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2211,7 +2133,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rollbackOfRollout_ = "";
-
   /**
    *
    *
@@ -2236,7 +2157,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2267,7 +2187,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList rolledBackByRollouts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2284,7 +2203,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRolledBackByRolloutsList() {
     return rolledBackByRollouts_;
   }
-
   /**
    *
    *
@@ -2301,7 +2219,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getRolledBackByRolloutsCount() {
     return rolledBackByRollouts_.size();
   }
-
   /**
    *
    *
@@ -2319,7 +2236,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRolledBackByRollouts(int index) {
     return rolledBackByRollouts_.get(index);
   }
-
   /**
    *
    *
@@ -2342,7 +2258,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activeRepairAutomationRun_ = "";
-
   /**
    *
    *
@@ -2367,7 +2282,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2811,7 +2725,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3444,7 +3357,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3469,7 +3381,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3494,7 +3405,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3518,7 +3428,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3538,7 +3447,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3565,7 +3473,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -3588,7 +3495,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3611,7 +3517,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3633,7 +3538,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3651,7 +3555,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3676,7 +3579,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3700,7 +3602,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3724,7 +3625,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3747,7 +3647,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3766,7 +3665,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3819,7 +3717,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -3840,14 +3737,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -3865,7 +3760,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -3890,7 +3784,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3921,7 +3814,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3942,14 +3834,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000008;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -3974,7 +3864,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3908,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -4046,14 +3934,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -4077,7 +3963,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -4108,7 +3993,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4145,7 +4029,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4172,14 +4055,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -4210,7 +4091,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -4242,7 +4122,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4259,7 +4138,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -4282,7 +4160,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4307,7 +4184,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4329,7 +4205,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4359,7 +4234,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4381,7 +4255,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4398,7 +4271,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4419,7 +4291,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4454,7 +4325,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         approveTimeBuilder_;
-
     /**
      *
      *
@@ -4471,7 +4341,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApproveTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4494,7 +4363,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return approveTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4519,7 +4387,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4541,7 +4408,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4571,7 +4437,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4593,7 +4458,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4610,7 +4474,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getApproveTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4631,7 +4494,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : approveTime_;
       }
     }
-
     /**
      *
      *
@@ -4666,7 +4528,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         enqueueTimeBuilder_;
-
     /**
      *
      *
@@ -4683,7 +4544,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnqueueTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4706,7 +4566,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return enqueueTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4731,7 +4590,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4753,7 +4611,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4783,7 +4640,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4805,7 +4661,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4822,7 +4677,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnqueueTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4843,7 +4697,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : enqueueTime_;
       }
     }
-
     /**
      *
      *
@@ -4878,7 +4731,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deployStartTimeBuilder_;
-
     /**
      *
      *
@@ -4895,7 +4747,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployStartTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4918,7 +4769,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return deployStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4943,7 +4793,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4965,7 +4814,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4995,7 +4843,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5017,7 +4864,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5034,7 +4880,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeployStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5055,7 +4900,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : deployStartTime_;
       }
     }
-
     /**
      *
      *
@@ -5090,7 +4934,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deployEndTimeBuilder_;
-
     /**
      *
      *
@@ -5107,7 +4950,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployEndTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -5130,7 +4972,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return deployEndTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5155,7 +4996,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5177,7 +5017,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5207,7 +5046,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5229,7 +5067,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5246,7 +5083,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeployEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5267,7 +5103,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : deployEndTime_;
       }
     }
-
     /**
      *
      *
@@ -5297,7 +5132,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object targetId_ = "";
-
     /**
      *
      *
@@ -5320,7 +5154,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5343,7 +5176,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5365,7 +5197,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5383,7 +5214,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5408,7 +5238,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int approvalState_ = 0;
-
     /**
      *
      *
@@ -5426,7 +5255,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getApprovalStateValue() {
       return approvalState_;
     }
-
     /**
      *
      *
@@ -5447,7 +5275,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5469,7 +5296,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.deploy.v1.Rollout.ApprovalState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5493,7 +5319,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5515,7 +5340,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -5533,7 +5357,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -5554,7 +5377,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5574,7 +5396,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.deploy.v1.Rollout.State.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.Rollout.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -5598,7 +5419,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5620,7 +5440,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object failureReason_ = "";
-
     /**
      *
      *
@@ -5644,7 +5463,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5668,7 +5486,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5691,7 +5508,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5710,7 +5526,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5736,7 +5551,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object deployingBuild_ = "";
-
     /**
      *
      *
@@ -5763,7 +5577,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5790,7 +5603,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5816,7 +5628,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5838,7 +5649,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5867,7 +5677,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -5892,7 +5701,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5917,7 +5725,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5941,7 +5748,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5961,7 +5767,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5988,7 +5793,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int deployFailureCause_ = 0;
-
     /**
      *
      *
@@ -6007,7 +5811,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getDeployFailureCauseValue() {
       return deployFailureCause_;
     }
-
     /**
      *
      *
@@ -6029,7 +5832,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6050,7 +5852,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.deploy.v1.Rollout.FailureCause.forNumber(deployFailureCause_);
       return result == null ? com.google.cloud.deploy.v1.Rollout.FailureCause.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -6075,7 +5876,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6131,7 +5931,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return phasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6150,7 +5949,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return phasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6169,7 +5967,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return phasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6194,7 +5991,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6216,7 +6012,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6241,7 +6036,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6266,7 +6060,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6288,7 +6081,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6310,7 +6102,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6333,7 +6124,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6355,7 +6145,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6377,7 +6166,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6392,7 +6180,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.Phase.Builder getPhasesBuilder(int index) {
       return getPhasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6411,7 +6198,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return phasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6431,7 +6217,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(phases_);
       }
     }
-
     /**
      *
      *
@@ -6447,7 +6232,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return getPhasesFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.Phase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6463,7 +6247,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return getPhasesFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.Phase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6502,7 +6285,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Metadata.Builder,
             com.google.cloud.deploy.v1.MetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -6519,7 +6301,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -6542,7 +6323,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6567,7 +6347,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6589,7 +6368,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6619,7 +6397,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6641,7 +6418,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6658,7 +6434,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6679,7 +6454,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -6709,7 +6483,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object controllerRollout_ = "";
-
     /**
      *
      *
@@ -6733,7 +6506,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6757,7 +6529,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6780,7 +6551,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6799,7 +6569,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6825,7 +6594,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object rollbackOfRollout_ = "";
-
     /**
      *
      *
@@ -6849,7 +6617,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6873,7 +6640,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6896,7 +6662,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6915,7 +6680,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6949,7 +6713,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00200000;
     }
-
     /**
      *
      *
@@ -6967,7 +6730,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       rolledBackByRollouts_.makeImmutable();
       return rolledBackByRollouts_;
     }
-
     /**
      *
      *
@@ -6984,7 +6746,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getRolledBackByRolloutsCount() {
       return rolledBackByRollouts_.size();
     }
-
     /**
      *
      *
@@ -7002,7 +6763,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRolledBackByRollouts(int index) {
       return rolledBackByRollouts_.get(index);
     }
-
     /**
      *
      *
@@ -7020,7 +6780,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRolledBackByRolloutsBytes(int index) {
       return rolledBackByRollouts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -7046,7 +6805,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7071,7 +6829,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7093,7 +6850,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7114,7 +6870,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7142,7 +6897,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object activeRepairAutomationRun_ = "";
-
     /**
      *
      *
@@ -7166,7 +6920,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7190,7 +6943,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7213,7 +6965,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7232,7 +6983,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

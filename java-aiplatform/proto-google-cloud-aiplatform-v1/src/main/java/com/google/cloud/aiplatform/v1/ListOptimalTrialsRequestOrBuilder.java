@@ -38,7 +38,6 @@ public interface ListOptimalTrialsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

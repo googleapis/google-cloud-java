@@ -33,7 +33,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.TemplateMetadata)
     TemplateMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TemplateMetadata.newBuilder() to construct.
   private TemplateMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> parameters_;
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> getParametersList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       getParametersOrBuilderList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
   public int getParametersCount() {
     return parameters_.size();
   }
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.dataflow.v1beta3.ParameterMetadata getParameters(int index) {
     return parameters_.get(index);
   }
-
   /**
    *
    *
@@ -427,7 +417,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -686,7 +675,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +846,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -974,7 +951,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -997,7 +973,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1015,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1077,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1116,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1135,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1147,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.ParameterMetadata.Builder getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1181,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1194,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       return getParametersFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.ParameterMetadata.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1244,7 +1207,6 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       return getParametersFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.ParameterMetadata.getDefaultInstance());
     }
-
     /**
      *
      *

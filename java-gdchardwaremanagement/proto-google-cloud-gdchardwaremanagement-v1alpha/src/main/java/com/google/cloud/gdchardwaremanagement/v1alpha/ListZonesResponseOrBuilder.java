@@ -34,7 +34,6 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Zone zones = 1;</code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Zone> getZonesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Zone zones = 1;</code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Zone getZones(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListZonesResponseOrBuilder
    * <code>repeated .google.cloud.gdchardwaremanagement.v1alpha.Zone zones = 1;</code>
    */
   int getZonesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListZonesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.ZoneOrBuilder>
       getZonesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListZonesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ListZonesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListZonesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface ListZonesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

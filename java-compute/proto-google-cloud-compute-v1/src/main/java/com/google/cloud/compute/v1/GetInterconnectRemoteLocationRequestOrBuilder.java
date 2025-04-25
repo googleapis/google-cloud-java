@@ -38,7 +38,6 @@ public interface GetInterconnectRemoteLocationRequestOrBuilder
    * @return The interconnectRemoteLocation.
    */
   java.lang.String getInterconnectRemoteLocation();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetInterconnectRemoteLocationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IntRangeArray)
     IntRangeArrayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IntRangeArray.newBuilder() to construct.
   private IntRangeArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.IntRange> intRanges_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.visionai.v1.IntRange> getIntRangesList() {
     return intRanges_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       getIntRangesOrBuilderList() {
     return intRanges_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
   public int getIntRangesCount() {
     return intRanges_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.IntRange getIntRanges(int index) {
     return intRanges_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
         return intRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
         return intRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
         return intRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +672,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +691,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +711,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +731,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +750,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +769,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +781,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.IntRange.Builder getIntRangesBuilder(int index) {
       return getIntRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -817,7 +797,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
         return intRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -835,7 +814,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(intRanges_);
       }
     }
-
     /**
      *
      *
@@ -849,7 +827,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       return getIntRangesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.IntRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -863,7 +840,6 @@ public final class IntRangeArray extends com.google.protobuf.GeneratedMessageV3
       return getIntRangesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.IntRange.getDefaultInstance());
     }
-
     /**
      *
      *

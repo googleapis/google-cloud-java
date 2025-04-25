@@ -45,7 +45,6 @@ public interface UpdateEngineRequestOrBuilder
    * @return Whether the engine field is set.
    */
   boolean hasEngine();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface UpdateEngineRequestOrBuilder
    * @return The engine.
    */
   com.google.cloud.discoveryengine.v1.Engine getEngine();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface UpdateEngineRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface UpdateEngineRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ListConversationModelEvaluationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ListConversationModelEvaluationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

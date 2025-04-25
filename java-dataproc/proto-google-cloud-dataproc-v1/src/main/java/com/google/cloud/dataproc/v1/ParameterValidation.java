@@ -33,7 +33,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ParameterValidation)
     ParameterValidationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ParameterValidation.newBuilder() to construct.
   private ParameterValidation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     private ValidationTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REGEX_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
   public boolean hasRegex() {
     return validationTypeCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.dataproc.v1.RegexValidation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VALUES_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
   public boolean hasValues() {
     return validationTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.dataproc.v1.ValueValidation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.RegexValidation.Builder,
             com.google.cloud.dataproc.v1.RegexValidationOrBuilder>
         regexBuilder_;
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     public boolean hasRegex() {
       return validationTypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dataproc.v1.RegexValidation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       validationTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       validationTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       validationTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dataproc.v1.RegexValidation.Builder getRegexBuilder() {
       return getRegexFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dataproc.v1.RegexValidation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.ValueValidation.Builder,
             com.google.cloud.dataproc.v1.ValueValidationOrBuilder>
         valuesBuilder_;
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     public boolean hasValues() {
       return validationTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -905,7 +885,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dataproc.v1.ValueValidation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       validationTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       validationTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       validationTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +984,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dataproc.v1.ValueValidation.Builder getValuesBuilder() {
       return getValuesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1042,7 +1016,6 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dataproc.v1.ValueValidation.getDefaultInstance();
       }
     }
-
     /**
      *
      *

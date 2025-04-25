@@ -38,7 +38,6 @@ public interface DeleteSubnetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface DeleteSubnetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface AccessSecretVersionResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AccessSecretVersionResponseOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AccessSecretVersionResponseOrBuilder
    * @return The payload.
    */
   com.google.cloud.secretmanager.v1beta2.SecretPayload getPayload();
-
   /**
    *
    *

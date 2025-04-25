@@ -34,7 +34,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AttachNetworkEndpointsNetworkEndpointGroupRequest)
     AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder() to construct.
   private AttachNetworkEndpointsNetworkEndpointGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkEndpointGroup_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       531079;
   private com.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest
       networkEndpointGroupsAttachEndpointsRequestResource_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
   public boolean hasNetworkEndpointGroupsAttachEndpointsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
             .getDefaultInstance()
         : networkEndpointGroupsAttachEndpointsRequestResource_;
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -347,7 +335,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -593,7 +580,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -872,7 +858,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     private int bitField0_;
 
     private java.lang.Object networkEndpointGroup_ = "";
-
     /**
      *
      *
@@ -896,7 +881,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +904,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -943,7 +926,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +944,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +975,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
             com.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequestOrBuilder>
         networkEndpointGroupsAttachEndpointsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1011,7 +991,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     public boolean hasNetworkEndpointGroupsAttachEndpointsRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1036,7 +1015,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return networkEndpointGroupsAttachEndpointsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1040,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1064,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1096,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1117,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1134,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return getNetworkEndpointGroupsAttachEndpointsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1183,7 +1156,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
             : networkEndpointGroupsAttachEndpointsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1187,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1240,7 +1211,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1265,7 +1235,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1258,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1277,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1303,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1351,7 +1317,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1374,7 +1339,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1397,7 +1361,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1419,7 +1382,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1399,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1423,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1487,7 +1447,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1471,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1536,7 +1494,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1556,7 +1513,6 @@ public final class AttachNetworkEndpointsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

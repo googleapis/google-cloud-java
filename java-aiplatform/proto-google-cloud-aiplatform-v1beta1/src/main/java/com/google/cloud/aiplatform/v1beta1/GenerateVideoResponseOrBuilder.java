@@ -36,7 +36,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return A list containing the generatedSamples.
    */
   java.util.List<java.lang.String> getGeneratedSamplesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return The count of generatedSamples.
    */
   int getGeneratedSamplesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return The generatedSamples at the given index.
    */
   java.lang.String getGeneratedSamples(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return Whether the raiMediaFilteredCount field is set.
    */
   boolean hasRaiMediaFilteredCount();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return A list containing the raiMediaFilteredReasons.
    */
   java.util.List<java.lang.String> getRaiMediaFilteredReasonsList();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return The count of raiMediaFilteredReasons.
    */
   int getRaiMediaFilteredReasonsCount();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface GenerateVideoResponseOrBuilder
    * @return The raiMediaFilteredReasons at the given index.
    */
   java.lang.String getRaiMediaFilteredReasons(int index);
-
   /**
    *
    *

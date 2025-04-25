@@ -36,7 +36,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryGenerationCadence)
     DiscoveryGenerationCadenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryGenerationCadence.newBuilder() to construct.
   private DiscoveryGenerationCadence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int SCHEMA_MODIFIED_CADENCE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DiscoverySchemaModifiedCadence schemaModifiedCadence_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
   public boolean hasSchemaModifiedCadence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         ? com.google.privacy.dlp.v2.DiscoverySchemaModifiedCadence.getDefaultInstance()
         : schemaModifiedCadence_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
 
   public static final int TABLE_MODIFIED_CADENCE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryTableModifiedCadence tableModifiedCadence_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
   public boolean hasTableModifiedCadence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         ? com.google.privacy.dlp.v2.DiscoveryTableModifiedCadence.getDefaultInstance()
         : tableModifiedCadence_;
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
   public static final int INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
       inspectTemplateModifiedCadence_;
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
   public boolean hasInspectTemplateModifiedCadence() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
         : inspectTemplateModifiedCadence_;
   }
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
 
   public static final int REFRESH_FREQUENCY_FIELD_NUMBER = 4;
   private int refreshFrequency_ = 0;
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
   public int getRefreshFrequencyValue() {
     return refreshFrequency_;
   }
-
   /**
    *
    *
@@ -496,7 +484,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -767,7 +754,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
             com.google.privacy.dlp.v2.DiscoverySchemaModifiedCadence.Builder,
             com.google.privacy.dlp.v2.DiscoverySchemaModifiedCadenceOrBuilder>
         schemaModifiedCadenceBuilder_;
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     public boolean hasSchemaModifiedCadence() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         return schemaModifiedCadenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +885,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return getSchemaModifiedCadenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
             : schemaModifiedCadence_;
       }
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
             com.google.privacy.dlp.v2.DiscoveryTableModifiedCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryTableModifiedCadenceOrBuilder>
         tableModifiedCadenceBuilder_;
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     public boolean hasTableModifiedCadence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1012,7 +988,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         return tableModifiedCadenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1011,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1094,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return getTableModifiedCadenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1143,7 +1113,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
             : tableModifiedCadence_;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1146,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>
         inspectTemplateModifiedCadenceBuilder_;
-
     /**
      *
      *
@@ -1196,7 +1164,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     public boolean hasInspectTemplateModifiedCadence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1222,7 +1189,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         return inspectTemplateModifiedCadenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1216,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1240,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1274,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1297,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1316,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return getInspectTemplateModifiedCadenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1378,7 +1339,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
             : inspectTemplateModifiedCadence_;
       }
     }
-
     /**
      *
      *
@@ -1410,7 +1370,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     }
 
     private int refreshFrequency_ = 0;
-
     /**
      *
      *
@@ -1427,7 +1386,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     public int getRefreshFrequencyValue() {
       return refreshFrequency_;
     }
-
     /**
      *
      *
@@ -1447,7 +1405,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1425,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
           ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1491,7 +1447,6 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

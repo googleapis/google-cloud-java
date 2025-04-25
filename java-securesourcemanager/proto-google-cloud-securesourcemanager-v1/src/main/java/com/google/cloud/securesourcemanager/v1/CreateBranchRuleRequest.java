@@ -33,7 +33,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.CreateBranchRuleRequest)
     CreateBranchRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBranchRuleRequest.newBuilder() to construct.
   private CreateBranchRuleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -90,7 +88,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -113,7 +110,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
 
   public static final int BRANCH_RULE_FIELD_NUMBER = 2;
   private com.google.cloud.securesourcemanager.v1.BranchRule branchRule_;
-
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -125,7 +121,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
   public boolean hasBranchRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -139,7 +134,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
         ? com.google.cloud.securesourcemanager.v1.BranchRule.getDefaultInstance()
         : branchRule_;
   }
-
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -156,7 +150,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branchRuleId_ = "";
-
   /**
    * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -174,7 +167,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -376,7 +368,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +600,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -628,7 +618,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -647,7 +636,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -665,7 +653,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -679,7 +666,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -705,7 +691,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
             com.google.cloud.securesourcemanager.v1.BranchRule.Builder,
             com.google.cloud.securesourcemanager.v1.BranchRuleOrBuilder>
         branchRuleBuilder_;
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -716,7 +701,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
     public boolean hasBranchRule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -733,7 +717,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
         return branchRuleBuilder_.getMessage();
       }
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -752,7 +735,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -769,7 +751,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -794,7 +775,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -810,7 +790,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -821,7 +800,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return getBranchRuleFieldBuilder().getBuilder();
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -836,7 +814,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
             : branchRule_;
       }
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -860,7 +837,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object branchRuleId_ = "";
-
     /**
      * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -877,7 +853,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -894,7 +869,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -910,7 +884,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -922,7 +895,6 @@ public final class CreateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>string branch_rule_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *

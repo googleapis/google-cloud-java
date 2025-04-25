@@ -34,7 +34,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest)
     ReceiveTriggerWebhookRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReceiveTriggerWebhookRequest.newBuilder() to construct.
   private ReceiveTriggerWebhookRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
 
   public static final int BODY_FIELD_NUMBER = 1;
   private com.google.api.HttpBody body_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
   public boolean hasBody() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
   public com.google.api.HttpBody getBody() {
     return body_ == null ? com.google.api.HttpBody.getDefaultInstance() : body_;
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trigger_ = "";
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secret_ = "";
-
   /**
    *
    *
@@ -307,7 +296,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -533,7 +521,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -793,7 +780,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -841,7 +826,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
             com.google.api.HttpBody.Builder,
             com.google.api.HttpBodyOrBuilder>
         bodyBuilder_;
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     public boolean hasBody() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return bodyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -971,7 +950,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +969,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1015,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return getBodyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return body_ == null ? com.google.api.HttpBody.getDefaultInstance() : body_;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1071,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1121,7 +1093,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1115,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1136,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1153,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1177,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object trigger_ = "";
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1255,7 +1221,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1277,7 +1242,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1259,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1283,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object secret_ = "";
-
     /**
      *
      *
@@ -1343,7 +1305,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1327,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1388,7 +1348,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1365,6 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

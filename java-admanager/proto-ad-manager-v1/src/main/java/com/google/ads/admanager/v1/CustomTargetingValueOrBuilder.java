@@ -38,7 +38,6 @@ public interface CustomTargetingValueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CustomTargetingValueOrBuilder
    * @return The adTagName.
    */
   java.lang.String getAdTagName();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CustomTargetingValueOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface CustomTargetingValueOrBuilder
    * @return The enum numeric value on the wire for matchType.
    */
   int getMatchTypeValue();
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public interface CustomTargetingValueOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

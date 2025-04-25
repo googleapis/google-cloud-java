@@ -38,7 +38,6 @@ public interface FeatureSelectionConfigOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfig>
       getFeatureConfigsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface FeatureSelectionConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfig getFeatureConfigs(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface FeatureSelectionConfigOrBuilder
    * </code>
    */
   int getFeatureConfigsCount();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface FeatureSelectionConfigOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfigOrBuilder>
       getFeatureConfigsOrBuilderList();
-
   /**
    *
    *

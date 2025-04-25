@@ -36,7 +36,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return A list containing the sourceUris.
    */
   java.util.List<java.lang.String> getSourceUrisList();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The count of sourceUris.
    */
   int getSourceUrisCount();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The sourceUris at the given index.
    */
   java.lang.String getSourceUris(int index);
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return A list containing the blockingOperationIds.
    */
   java.util.List<java.lang.Long> getBlockingOperationIdsList();
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The count of blockingOperationIds.
    */
   int getBlockingOperationIdsCount();
-
   /**
    *
    *

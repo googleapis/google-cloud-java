@@ -73,7 +73,6 @@ public enum DatabaseType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DB_UNKNOWN = 0;</code>
    */
   public static final int DB_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum DatabaseType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DB_INFRA_SPANNER = 1;</code>
    */
   public static final int DB_INFRA_SPANNER_VALUE = 1;
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface RegionOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RegionOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RegionOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface RegionOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface RegionOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface RegionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface RegionOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface RegionOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface RegionOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public interface RegionOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public interface RegionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public interface RegionOrBuilder
    * @return Whether the quotaStatusWarning field is set.
    */
   boolean hasQuotaStatusWarning();
-
   /**
    *
    *
@@ -270,7 +258,6 @@ public interface RegionOrBuilder
    * @return The quotaStatusWarning.
    */
   com.google.cloud.compute.v1.QuotaStatusWarning getQuotaStatusWarning();
-
   /**
    *
    *
@@ -293,7 +280,6 @@ public interface RegionOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Quota> getQuotasList();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface RegionOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   com.google.cloud.compute.v1.Quota getQuotas(int index);
-
   /**
    *
    *
@@ -315,7 +300,6 @@ public interface RegionOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   int getQuotasCount();
-
   /**
    *
    *
@@ -326,7 +310,6 @@ public interface RegionOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.QuotaOrBuilder> getQuotasOrBuilderList();
-
   /**
    *
    *
@@ -350,7 +333,6 @@ public interface RegionOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -363,7 +345,6 @@ public interface RegionOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -390,7 +371,6 @@ public interface RegionOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -404,7 +384,6 @@ public interface RegionOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -431,7 +410,6 @@ public interface RegionOrBuilder
    * @return Whether the supportsPzs field is set.
    */
   boolean hasSupportsPzs();
-
   /**
    *
    *
@@ -457,7 +435,6 @@ public interface RegionOrBuilder
    * @return A list containing the zones.
    */
   java.util.List<java.lang.String> getZonesList();
-
   /**
    *
    *
@@ -470,7 +447,6 @@ public interface RegionOrBuilder
    * @return The count of zones.
    */
   int getZonesCount();
-
   /**
    *
    *
@@ -484,7 +460,6 @@ public interface RegionOrBuilder
    * @return The zones at the given index.
    */
   java.lang.String getZones(int index);
-
   /**
    *
    *

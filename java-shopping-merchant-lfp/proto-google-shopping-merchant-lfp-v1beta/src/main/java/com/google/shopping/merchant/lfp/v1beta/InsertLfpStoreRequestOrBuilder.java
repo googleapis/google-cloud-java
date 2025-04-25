@@ -39,7 +39,6 @@ public interface InsertLfpStoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface InsertLfpStoreRequestOrBuilder
    * @return Whether the lfpStore field is set.
    */
   boolean hasLfpStore();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface InsertLfpStoreRequestOrBuilder
    * @return The lfpStore.
    */
   com.google.shopping.merchant.lfp.v1beta.LfpStore getLfpStore();
-
   /**
    *
    *

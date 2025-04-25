@@ -35,7 +35,6 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DeidentifyTemplate> getDeidentifyTemplatesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
   com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplates(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
   int getDeidentifyTemplatesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
       getDeidentifyTemplatesOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

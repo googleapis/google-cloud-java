@@ -33,7 +33,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.CreateRollupPropertyRequest)
     CreateRollupPropertyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateRollupPropertyRequest.newBuilder() to construct.
   private CreateRollupPropertyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int ROLLUP_PROPERTY_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.Property rollupProperty_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
   public boolean hasRollupProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
         ? com.google.analytics.admin.v1alpha.Property.getDefaultInstance()
         : rollupProperty_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceProperties_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getSourcePropertiesList() {
     return sourceProperties_;
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
   public int getSourcePropertiesCount() {
     return sourceProperties_.size();
   }
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
   public java.lang.String getSourceProperties(int index) {
     return sourceProperties_.get(index);
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -607,7 +598,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
             com.google.analytics.admin.v1alpha.Property.Builder,
             com.google.analytics.admin.v1alpha.PropertyOrBuilder>
         rollupPropertyBuilder_;
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
     public boolean hasRollupProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
         return rollupPropertyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +733,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return getRollupPropertyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
             : rollupProperty_;
       }
     }
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       sourceProperties_.makeImmutable();
       return sourceProperties_;
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
     public int getSourcePropertiesCount() {
       return sourceProperties_.size();
     }
-
     /**
      *
      *
@@ -874,7 +853,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
     public java.lang.String getSourceProperties(int index) {
       return sourceProperties_.get(index);
     }
-
     /**
      *
      *
@@ -891,7 +869,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getSourcePropertiesBytes(int index) {
       return sourceProperties_.getByteString(index);
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class CreateRollupPropertyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

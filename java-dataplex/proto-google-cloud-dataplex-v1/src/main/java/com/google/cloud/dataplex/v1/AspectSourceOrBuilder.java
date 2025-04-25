@@ -36,7 +36,6 @@ public interface AspectSourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AspectSourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AspectSourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AspectSourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface AspectSourceOrBuilder
    * @return The dataVersion.
    */
   java.lang.String getDataVersion();
-
   /**
    *
    *

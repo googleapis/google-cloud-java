@@ -36,7 +36,6 @@ public interface ErrorOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ErrorOrBuilder
    * @return The details.
    */
   com.google.rpc.Status getDetails();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface ErrorOrBuilder
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
   java.util.List<com.google.protobuf.Timestamp> getTimestampsList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface ErrorOrBuilder
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
   com.google.protobuf.Timestamp getTimestamps(int index);
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface ErrorOrBuilder
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
   int getTimestampsCount();
-
   /**
    *
    *
@@ -108,7 +103,6 @@ public interface ErrorOrBuilder
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
   java.util.List<? extends com.google.protobuf.TimestampOrBuilder> getTimestampsOrBuilderList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ErrorOrBuilder
    * @return The enum numeric value on the wire for extraInfo.
    */
   int getExtraInfoValue();
-
   /**
    *
    *

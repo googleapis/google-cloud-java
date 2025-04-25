@@ -38,7 +38,6 @@ public interface GetHubRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

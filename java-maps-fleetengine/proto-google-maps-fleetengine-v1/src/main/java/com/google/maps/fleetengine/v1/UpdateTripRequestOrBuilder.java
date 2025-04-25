@@ -36,7 +36,6 @@ public interface UpdateTripRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateTripRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateTripRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public interface UpdateTripRequestOrBuilder
    * @return Whether the trip field is set.
    */
   boolean hasTrip();
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public interface UpdateTripRequestOrBuilder
    * @return The trip.
    */
   com.google.maps.fleetengine.v1.Trip getTrip();
-
   /**
    *
    *
@@ -264,7 +259,6 @@ public interface UpdateTripRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -279,7 +273,6 @@ public interface UpdateTripRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

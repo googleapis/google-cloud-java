@@ -39,7 +39,6 @@ public interface DeployRequestOrBuilder
    * @return Whether the publisherModelName field is set.
    */
   boolean hasPublisherModelName();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface DeployRequestOrBuilder
    * @return The publisherModelName.
    */
   java.lang.String getPublisherModelName();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface DeployRequestOrBuilder
    * @return Whether the huggingFaceModelId field is set.
    */
   boolean hasHuggingFaceModelId();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface DeployRequestOrBuilder
    * @return The huggingFaceModelId.
    */
   java.lang.String getHuggingFaceModelId();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface DeployRequestOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface DeployRequestOrBuilder
    * @return Whether the modelConfig field is set.
    */
   boolean hasModelConfig();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface DeployRequestOrBuilder
    * @return The modelConfig.
    */
   com.google.cloud.aiplatform.v1beta1.DeployRequest.ModelConfig getModelConfig();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface DeployRequestOrBuilder
    * @return Whether the endpointConfig field is set.
    */
   boolean hasEndpointConfig();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface DeployRequestOrBuilder
    * @return The endpointConfig.
    */
   com.google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig getEndpointConfig();
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public interface DeployRequestOrBuilder
    * @return Whether the deployConfig field is set.
    */
   boolean hasDeployConfig();
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public interface DeployRequestOrBuilder
    * @return The deployConfig.
    */
   com.google.cloud.aiplatform.v1beta1.DeployRequest.DeployConfig getDeployConfig();
-
   /**
    *
    *

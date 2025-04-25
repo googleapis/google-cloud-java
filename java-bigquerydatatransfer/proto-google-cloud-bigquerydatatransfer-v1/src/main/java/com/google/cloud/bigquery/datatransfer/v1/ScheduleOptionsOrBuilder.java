@@ -56,7 +56,6 @@ public interface ScheduleOptionsOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface ScheduleOptionsOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface ScheduleOptionsOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ScheduleOptionsOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface DiscoveryNoteOrBuilder
    * @return The enum numeric value on the wire for analysisKind.
    */
   int getAnalysisKindValue();
-
   /**
    *
    *

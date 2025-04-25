@@ -33,7 +33,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec)
     DataProfileSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataProfileSpec.newBuilder() to construct.
   private DataProfileSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      * @return Whether the bigqueryExport field is set.
      */
     boolean hasBigqueryExport();
-
     /**
      *
      *
@@ -100,7 +98,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      * @return The bigqueryExport.
      */
     com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport getBigqueryExport();
-
     /**
      *
      *
@@ -116,7 +113,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder
         getBigqueryExportOrBuilder();
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)
       PostScanActionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PostScanActions.newBuilder() to construct.
     private PostScanActions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -172,8 +167,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -181,7 +174,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * @return The resultsTable.
        */
       java.lang.String getResultsTable();
-
       /**
        *
        *
@@ -189,8 +181,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -199,7 +189,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        */
       com.google.protobuf.ByteString getResultsTableBytes();
     }
-
     /**
      *
      *
@@ -214,7 +203,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
         BigQueryExportOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use BigQueryExport.newBuilder() to construct.
       private BigQueryExport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -250,7 +238,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object resultsTable_ = "";
-
       /**
        *
        *
@@ -258,8 +245,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -278,7 +263,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
           return s;
         }
       }
-
       /**
        *
        *
@@ -286,8 +270,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -478,7 +460,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -680,7 +661,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         private int bitField0_;
 
         private java.lang.Object resultsTable_ = "";
-
         /**
          *
          *
@@ -688,8 +668,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -707,7 +685,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -715,8 +692,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -734,7 +709,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -742,8 +716,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -760,7 +732,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -768,8 +739,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -782,7 +751,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -790,8 +758,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -883,7 +849,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public static final int BIGQUERY_EXPORT_FIELD_NUMBER = 1;
     private com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
         bigqueryExport_;
-
     /**
      *
      *
@@ -902,7 +867,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public boolean hasBigqueryExport() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -925,7 +889,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
               .getDefaultInstance()
           : bigqueryExport_;
     }
-
     /**
      *
      *
@@ -1113,7 +1076,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1326,7 +1288,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.Builder,
               com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder>
           bigqueryExportBuilder_;
-
       /**
        *
        *
@@ -1344,7 +1305,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       public boolean hasBigqueryExport() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1370,7 +1330,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
           return bigqueryExportBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1397,7 +1356,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1422,7 +1380,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1456,7 +1413,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1479,7 +1435,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1498,7 +1453,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getBigqueryExportFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1522,7 +1476,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
               : bigqueryExport_;
         }
       }
-
       /**
        *
        *
@@ -1644,7 +1597,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the fieldNames.
      */
     java.util.List<java.lang.String> getFieldNamesList();
-
     /**
      *
      *
@@ -1663,7 +1615,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      * @return The count of fieldNames.
      */
     int getFieldNamesCount();
-
     /**
      *
      *
@@ -1683,7 +1634,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      * @return The fieldNames at the given index.
      */
     java.lang.String getFieldNames(int index);
-
     /**
      *
      *
@@ -1704,7 +1654,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getFieldNamesBytes(int index);
   }
-
   /**
    *
    *
@@ -1719,7 +1668,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)
       SelectedFieldsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SelectedFields.newBuilder() to construct.
     private SelectedFields(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1755,7 +1703,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList fieldNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1776,7 +1723,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ProtocolStringList getFieldNamesList() {
       return fieldNames_;
     }
-
     /**
      *
      *
@@ -1797,7 +1743,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public int getFieldNamesCount() {
       return fieldNames_.size();
     }
-
     /**
      *
      *
@@ -1819,7 +1764,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getFieldNames(int index) {
       return fieldNames_.get(index);
     }
-
     /**
      *
      *
@@ -2010,7 +1954,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2216,7 +2159,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -2238,7 +2180,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         fieldNames_.makeImmutable();
         return fieldNames_;
       }
-
       /**
        *
        *
@@ -2259,7 +2200,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       public int getFieldNamesCount() {
         return fieldNames_.size();
       }
-
       /**
        *
        *
@@ -2281,7 +2221,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       public java.lang.String getFieldNames(int index) {
         return fieldNames_.get(index);
       }
-
       /**
        *
        *
@@ -2303,7 +2242,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.ByteString getFieldNamesBytes(int index) {
         return fieldNames_.getByteString(index);
       }
-
       /**
        *
        *
@@ -2333,7 +2271,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2362,7 +2299,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2388,7 +2324,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2413,7 +2348,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2512,7 +2446,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SAMPLING_PERCENT_FIELD_NUMBER = 2;
   private float samplingPercent_ = 0F;
-
   /**
    *
    *
@@ -2539,7 +2472,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rowFilter_ = "";
-
   /**
    *
    *
@@ -2568,7 +2500,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -2600,7 +2531,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
   public static final int POST_SCAN_ACTIONS_FIELD_NUMBER = 4;
   private com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions postScanActions_;
-
   /**
    *
    *
@@ -2618,7 +2548,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
   public boolean hasPostScanActions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2638,7 +2567,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance()
         : postScanActions_;
   }
-
   /**
    *
    *
@@ -2660,7 +2588,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
   public static final int INCLUDE_FIELDS_FIELD_NUMBER = 5;
   private com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields includeFields_;
-
   /**
    *
    *
@@ -2681,7 +2608,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
   public boolean hasIncludeFields() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2704,7 +2630,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
         : includeFields_;
   }
-
   /**
    *
    *
@@ -2729,7 +2654,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
   public static final int EXCLUDE_FIELDS_FIELD_NUMBER = 6;
   private com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields excludeFields_;
-
   /**
    *
    *
@@ -2750,7 +2674,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
   public boolean hasExcludeFields() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2773,7 +2696,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
         : excludeFields_;
   }
-
   /**
    *
    *
@@ -3007,7 +2929,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3274,7 +3195,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private float samplingPercent_;
-
     /**
      *
      *
@@ -3296,7 +3216,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public float getSamplingPercent() {
       return samplingPercent_;
     }
-
     /**
      *
      *
@@ -3322,7 +3241,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3348,7 +3266,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object rowFilter_ = "";
-
     /**
      *
      *
@@ -3376,7 +3293,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3404,7 +3320,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3431,7 +3346,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3454,7 +3368,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3489,7 +3402,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder,
             com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder>
         postScanActionsBuilder_;
-
     /**
      *
      *
@@ -3506,7 +3418,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public boolean hasPostScanActions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3529,7 +3440,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         return postScanActionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3555,7 +3465,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3578,7 +3487,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3611,7 +3519,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3633,7 +3540,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3651,7 +3557,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPostScanActionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3673,7 +3578,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             : postScanActions_;
       }
     }
-
     /**
      *
      *
@@ -3708,7 +3612,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
             com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>
         includeFieldsBuilder_;
-
     /**
      *
      *
@@ -3728,7 +3631,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public boolean hasIncludeFields() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3754,7 +3656,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         return includeFieldsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3783,7 +3684,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3809,7 +3709,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3845,7 +3744,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3870,7 +3768,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3891,7 +3788,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getIncludeFieldsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3916,7 +3812,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             : includeFields_;
       }
     }
-
     /**
      *
      *
@@ -3954,7 +3849,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
             com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>
         excludeFieldsBuilder_;
-
     /**
      *
      *
@@ -3974,7 +3868,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public boolean hasExcludeFields() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4000,7 +3893,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         return excludeFieldsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4029,7 +3921,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4055,7 +3946,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4091,7 +3981,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4116,7 +4005,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4137,7 +4025,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getExcludeFieldsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4162,7 +4049,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             : excludeFields_;
       }
     }
-
     /**
      *
      *

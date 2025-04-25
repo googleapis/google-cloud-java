@@ -36,7 +36,6 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * @return A list containing the sslCertificates.
    */
   java.util.List<java.lang.String> getSslCertificatesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * @return The count of sslCertificates.
    */
   int getSslCertificatesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * @return The sslCertificates at the given index.
    */
   java.lang.String getSslCertificates(int index);
-
   /**
    *
    *

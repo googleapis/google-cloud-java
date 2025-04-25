@@ -39,7 +39,6 @@ public interface GcsSourcesOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface GcsSourcesOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface GcsSourcesOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
-
   /**
    *
    *

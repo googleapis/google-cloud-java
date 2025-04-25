@@ -34,7 +34,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataTaxonomy data_taxonomies = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataTaxonomy> getDataTaxonomiesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataTaxonomy data_taxonomies = 1;</code>
    */
   com.google.cloud.dataplex.v1.DataTaxonomy getDataTaxonomies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataTaxonomy data_taxonomies = 1;</code>
    */
   int getDataTaxonomiesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataTaxonomyOrBuilder>
       getDataTaxonomiesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListDataTaxonomiesResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
-
   /**
    *
    *

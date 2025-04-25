@@ -40,7 +40,6 @@ public interface FailoverInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface FailoverInstanceRequestOrBuilder
    * @return The enum numeric value on the wire for dataProtectionMode.
    */
   int getDataProtectionModeValue();
-
   /**
    *
    *

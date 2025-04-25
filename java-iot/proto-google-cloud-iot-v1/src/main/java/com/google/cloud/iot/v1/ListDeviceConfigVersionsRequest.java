@@ -33,7 +33,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDeviceConfigVersionsRequest)
     ListDeviceConfigVersionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDeviceConfigVersionsRequest.newBuilder() to construct.
   private ListDeviceConfigVersionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
 
   public static final int NUM_VERSIONS_FIELD_NUMBER = 2;
   private int numVersions_ = 0;
-
   /**
    *
    *
@@ -316,7 +312,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -514,7 +509,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -541,7 +535,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -568,7 +561,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
     }
 
     private int numVersions_;
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
     public int getNumVersions() {
       return numVersions_;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class ListDeviceConfigVersionsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

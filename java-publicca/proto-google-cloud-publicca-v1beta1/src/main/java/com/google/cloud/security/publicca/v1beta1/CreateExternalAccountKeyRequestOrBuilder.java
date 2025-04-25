@@ -40,7 +40,6 @@ public interface CreateExternalAccountKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateExternalAccountKeyRequestOrBuilder
    * @return Whether the externalAccountKey field is set.
    */
   boolean hasExternalAccountKey();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateExternalAccountKeyRequestOrBuilder
    * @return The externalAccountKey.
    */
   com.google.cloud.security.publicca.v1beta1.ExternalAccountKey getExternalAccountKey();
-
   /**
    *
    *

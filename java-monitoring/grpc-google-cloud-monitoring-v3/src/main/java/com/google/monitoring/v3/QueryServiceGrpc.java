@@ -96,19 +96,6 @@ public final class QueryServiceGrpc {
     return QueryServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static QueryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<QueryServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<QueryServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public QueryServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new QueryServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return QueryServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -230,45 +217,6 @@ public final class QueryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service QueryService.
-   *
-   * <pre>
-   * The QueryService API is used to manage time series data in Cloud
-   * Monitoring. Time series data is a collection of data points that describes
-   * the time-varying values of a metric.
-   * </pre>
-   */
-  public static final class QueryServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<QueryServiceBlockingV2Stub> {
-    private QueryServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected QueryServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new QueryServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Queries time series by using Monitoring Query Language (MQL). We recommend
-     * using PromQL instead of MQL. For more information about the status of MQL,
-     * see the [MQL deprecation
-     * notice](https://cloud.google.com/stackdriver/docs/deprecations/mql).
-     * </pre>
-     */
-    @java.lang.Deprecated
-    public com.google.monitoring.v3.QueryTimeSeriesResponse queryTimeSeries(
-        com.google.monitoring.v3.QueryTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getQueryTimeSeriesMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service QueryService.
    *
    * <pre>
    * The QueryService API is used to manage time series data in Cloud

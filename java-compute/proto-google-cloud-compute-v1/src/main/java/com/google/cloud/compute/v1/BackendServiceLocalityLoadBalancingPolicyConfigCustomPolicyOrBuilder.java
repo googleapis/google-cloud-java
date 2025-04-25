@@ -36,7 +36,6 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicyOrBu
    * @return Whether the data field is set.
    */
   boolean hasData();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicyOrBu
    * @return The data.
    */
   java.lang.String getData();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicyOrBu
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicyOrBu
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.GenerativeQuestionConfig)
     GenerativeQuestionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerativeQuestionConfig.newBuilder() to construct.
   private GenerativeQuestionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalog_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object facet_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object generatedQuestion_ = "";
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object finalQuestion_ = "";
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exampleValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getExampleValuesList() {
     return exampleValues_;
   }
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
   public int getExampleValuesCount() {
     return exampleValues_.size();
   }
-
   /**
    *
    *
@@ -337,7 +325,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
   public java.lang.String getExampleValues(int index) {
     return exampleValues_.get(index);
   }
-
   /**
    *
    *
@@ -356,7 +343,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
 
   public static final int FREQUENCY_FIELD_NUMBER = 6;
   private float frequency_ = 0F;
-
   /**
    *
    *
@@ -375,7 +361,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
 
   public static final int ALLOWED_IN_CONVERSATION_FIELD_NUMBER = 7;
   private boolean allowedInConversation_ = false;
-
   /**
    *
    *
@@ -613,7 +598,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -891,7 +875,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object catalog_ = "";
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -962,7 +943,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +961,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +986,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object facet_ = "";
-
     /**
      *
      *
@@ -1030,7 +1008,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1051,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object generatedQuestion_ = "";
-
     /**
      *
      *
@@ -1141,7 +1114,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1198,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object finalQuestion_ = "";
-
     /**
      *
      *
@@ -1254,7 +1222,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1279,7 +1246,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1303,7 +1269,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1288,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1322,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1374,7 +1337,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       exampleValues_.makeImmutable();
       return exampleValues_;
     }
-
     /**
      *
      *
@@ -1389,7 +1351,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     public int getExampleValuesCount() {
       return exampleValues_.size();
     }
-
     /**
      *
      *
@@ -1405,7 +1366,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     public java.lang.String getExampleValues(int index) {
       return exampleValues_.get(index);
     }
-
     /**
      *
      *
@@ -1421,7 +1381,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getExampleValuesBytes(int index) {
       return exampleValues_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1445,7 +1404,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1426,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1445,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1463,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1533,7 +1488,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     }
 
     private float frequency_;
-
     /**
      *
      *
@@ -1549,7 +1503,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     public float getFrequency() {
       return frequency_;
     }
-
     /**
      *
      *
@@ -1569,7 +1522,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1541,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     }
 
     private boolean allowedInConversation_;
-
     /**
      *
      *
@@ -1605,7 +1556,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
     public boolean getAllowedInConversation() {
       return allowedInConversation_;
     }
-
     /**
      *
      *
@@ -1625,7 +1575,6 @@ public final class GenerativeQuestionConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

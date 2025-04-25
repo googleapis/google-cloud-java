@@ -36,7 +36,6 @@ public interface DataQualityColumnResultOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DataQualityColumnResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *

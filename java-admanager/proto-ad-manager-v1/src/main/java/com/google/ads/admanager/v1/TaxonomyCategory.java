@@ -33,7 +33,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.TaxonomyCategory)
     TaxonomyCategoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaxonomyCategory.newBuilder() to construct.
   private TaxonomyCategory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   public static final int TAXONOMY_CATEGORY_ID_FIELD_NUMBER = 2;
   private long taxonomyCategoryId_ = 0L;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   public static final int GROUPING_ONLY_FIELD_NUMBER = 5;
   private boolean groupingOnly_ = false;
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   public static final int PARENT_TAXONOMY_CATEGORY_ID_FIELD_NUMBER = 6;
   private long parentTaxonomyCategoryId_ = 0L;
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   public static final int TAXONOMY_TYPE_FIELD_NUMBER = 9;
   private int taxonomyType_ = 0;
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   public int getTaxonomyTypeValue() {
     return taxonomyType_;
   }
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ancestorNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getAncestorNamesList() {
     return ancestorNames_;
   }
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   public int getAncestorNamesCount() {
     return ancestorNames_.size();
   }
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   public java.lang.String getAncestorNames(int index) {
     return ancestorNames_.get(index);
   }
-
   /**
    *
    *
@@ -351,7 +337,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList ancestorTaxonomyCategoryIds_ = emptyLongList();
-
   /**
    *
    *
@@ -369,7 +354,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Long> getAncestorTaxonomyCategoryIdsList() {
     return ancestorTaxonomyCategoryIds_;
   }
-
   /**
    *
    *
@@ -386,7 +370,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
   public int getAncestorTaxonomyCategoryIdsCount() {
     return ancestorTaxonomyCategoryIds_.size();
   }
-
   /**
    *
    *
@@ -659,7 +642,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -966,7 +948,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -990,7 +971,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +994,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1016,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1034,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1059,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     }
 
     private long taxonomyCategoryId_;
-
     /**
      *
      *
@@ -1098,7 +1074,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public long getTaxonomyCategoryId() {
       return taxonomyCategoryId_;
     }
-
     /**
      *
      *
@@ -1118,7 +1093,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1112,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1161,7 +1134,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1156,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1206,7 +1177,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1194,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1218,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean groupingOnly_;
-
     /**
      *
      *
@@ -1266,7 +1234,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public boolean getGroupingOnly() {
       return groupingOnly_;
     }
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     }
 
     private long parentTaxonomyCategoryId_;
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public long getParentTaxonomyCategoryId() {
       return parentTaxonomyCategoryId_;
     }
-
     /**
      *
      *
@@ -1348,7 +1312,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1333,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     }
 
     private int taxonomyType_ = 0;
-
     /**
      *
      *
@@ -1388,7 +1350,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public int getTaxonomyTypeValue() {
       return taxonomyType_;
     }
-
     /**
      *
      *
@@ -1409,7 +1370,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1391,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
           ? com.google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1456,7 +1415,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1444,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -1502,7 +1459,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       ancestorNames_.makeImmutable();
       return ancestorNames_;
     }
-
     /**
      *
      *
@@ -1517,7 +1473,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public int getAncestorNamesCount() {
       return ancestorNames_.size();
     }
-
     /**
      *
      *
@@ -1533,7 +1488,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public java.lang.String getAncestorNames(int index) {
       return ancestorNames_.get(index);
     }
-
     /**
      *
      *
@@ -1549,7 +1503,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getAncestorNamesBytes(int index) {
       return ancestorNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1573,7 +1526,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1548,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1616,7 +1567,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1585,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1668,7 +1617,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -1686,7 +1634,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       ancestorTaxonomyCategoryIds_.makeImmutable();
       return ancestorTaxonomyCategoryIds_;
     }
-
     /**
      *
      *
@@ -1703,7 +1650,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public int getAncestorTaxonomyCategoryIdsCount() {
       return ancestorTaxonomyCategoryIds_.size();
     }
-
     /**
      *
      *
@@ -1721,7 +1667,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     public long getAncestorTaxonomyCategoryIds(int index) {
       return ancestorTaxonomyCategoryIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -1745,7 +1690,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1768,7 +1712,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1734,6 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

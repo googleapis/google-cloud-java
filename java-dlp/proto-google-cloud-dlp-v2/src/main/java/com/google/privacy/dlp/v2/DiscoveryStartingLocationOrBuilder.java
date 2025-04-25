@@ -36,7 +36,6 @@ public interface DiscoveryStartingLocationOrBuilder
    * @return Whether the organizationId field is set.
    */
   boolean hasOrganizationId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DiscoveryStartingLocationOrBuilder
    * @return Whether the folderId field is set.
    */
   boolean hasFolderId();
-
   /**
    *
    *

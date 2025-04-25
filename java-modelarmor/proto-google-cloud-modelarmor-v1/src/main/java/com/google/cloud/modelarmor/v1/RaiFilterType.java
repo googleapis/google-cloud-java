@@ -92,7 +92,6 @@ public enum RaiFilterType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RAI_FILTER_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RAI_FILTER_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum RaiFilterType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEXUALLY_EXPLICIT = 2;</code>
    */
   public static final int SEXUALLY_EXPLICIT_VALUE = 2;
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public enum RaiFilterType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HATE_SPEECH = 3;</code>
    */
   public static final int HATE_SPEECH_VALUE = 3;
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public enum RaiFilterType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARASSMENT = 6;</code>
    */
   public static final int HARASSMENT_VALUE = 6;
-
   /**
    *
    *

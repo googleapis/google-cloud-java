@@ -38,7 +38,6 @@ public interface BulkAnalyzeConversationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BulkAnalyzeConversationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface BulkAnalyzeConversationsRequestOrBuilder
    * @return Whether the annotatorSelector field is set.
    */
   boolean hasAnnotatorSelector();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface BulkAnalyzeConversationsRequestOrBuilder
    * @return The annotatorSelector.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector();
-
   /**
    *
    *

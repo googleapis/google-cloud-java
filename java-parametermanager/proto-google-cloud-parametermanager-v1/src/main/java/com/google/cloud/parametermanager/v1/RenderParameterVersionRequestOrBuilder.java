@@ -38,7 +38,6 @@ public interface RenderParameterVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

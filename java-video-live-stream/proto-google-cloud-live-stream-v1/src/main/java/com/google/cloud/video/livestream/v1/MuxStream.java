@@ -33,7 +33,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.MuxStream)
     MuxStreamOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MuxStream.newBuilder() to construct.
   private MuxStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object container_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList elementaryStreams_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getElementaryStreamsList() {
     return elementaryStreams_;
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   public int getElementaryStreamsCount() {
     return elementaryStreams_.size();
   }
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getElementaryStreams(int index) {
     return elementaryStreams_.get(index);
   }
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEGMENT_SETTINGS_FIELD_NUMBER = 5;
   private com.google.cloud.video.livestream.v1.SegmentSettings segmentSettings_;
-
   /**
    *
    *
@@ -298,7 +288,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSegmentSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.SegmentSettings.getDefaultInstance()
         : segmentSettings_;
   }
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object encryptionId_ = "";
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +582,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -862,7 +847,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -887,7 +871,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +895,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -936,7 +918,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object container_ = "";
-
     /**
      *
      *
@@ -1011,7 +990,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1017,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1065,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1102,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1149,7 +1123,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       elementaryStreams_.makeImmutable();
       return elementaryStreams_;
     }
-
     /**
      *
      *
@@ -1170,7 +1143,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public int getElementaryStreamsCount() {
       return elementaryStreams_.size();
     }
-
     /**
      *
      *
@@ -1192,7 +1164,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getElementaryStreams(int index) {
       return elementaryStreams_.get(index);
     }
-
     /**
      *
      *
@@ -1214,7 +1185,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getElementaryStreamsBytes(int index) {
       return elementaryStreams_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1244,7 +1214,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1242,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1267,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1291,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1327,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.SegmentSettings.Builder,
             com.google.cloud.video.livestream.v1.SegmentSettingsOrBuilder>
         segmentSettingsBuilder_;
-
     /**
      *
      *
@@ -1376,7 +1341,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSegmentSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1397,7 +1361,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return segmentSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1383,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1403,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1432,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1451,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1466,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSegmentSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1527,7 +1485,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
             : segmentSettings_;
       }
     }
-
     /**
      *
      *
@@ -1555,7 +1512,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object encryptionId_ = "";
-
     /**
      *
      *
@@ -1579,7 +1535,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1603,7 +1558,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1626,7 +1580,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1598,6 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

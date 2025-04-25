@@ -38,7 +38,6 @@ public interface BootDiskConfigOrBuilder
    * @return Whether the customerEncryptionKey field is set.
    */
   boolean hasCustomerEncryptionKey();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface BootDiskConfigOrBuilder
    * @return The customerEncryptionKey.
    */
   com.google.cloud.tpu.v2alpha1.CustomerEncryptionKey getCustomerEncryptionKey();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.inventories.v1beta.DeleteLocalInventoryRequest)
     DeleteLocalInventoryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteLocalInventoryRequest.newBuilder() to construct.
   private DeleteLocalInventoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -293,7 +290,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +485,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -516,7 +511,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -543,7 +537,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -569,7 +562,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -591,7 +583,6 @@ public final class DeleteLocalInventoryRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.ListDataSourcesResponse)
     ListDataSourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDataSourcesResponse.newBuilder() to construct.
   private ListDataSourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.datasources.v1beta.DataSource> dataSources_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       getDataSourcesList() {
     return dataSources_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       getDataSourcesOrBuilderList() {
     return dataSources_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
   public int getDataSourcesCount() {
     return dataSources_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
   public com.google.shopping.merchant.datasources.v1beta.DataSource getDataSources(int index) {
     return dataSources_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +654,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return dataSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return dataSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return dataSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         int index) {
       return getDataSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return dataSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(dataSources_);
       }
     }
-
     /**
      *
      *
@@ -978,7 +954,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
           .addBuilder(
               com.google.shopping.merchant.datasources.v1beta.DataSource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +971,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
               index,
               com.google.shopping.merchant.datasources.v1beta.DataSource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1030,7 +1004,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1054,7 +1027,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1050,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1072,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1090,6 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

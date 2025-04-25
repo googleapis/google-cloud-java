@@ -35,7 +35,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1.WindowsNodeConfig)
     WindowsNodeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WindowsNodeConfig.newBuilder() to construct.
   private WindowsNodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      * <code>OS_VERSION_UNSPECIFIED = 0;</code>
      */
     public static final int OS_VERSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      * <code>OS_VERSION_LTSC2019 = 1;</code>
      */
     public static final int OS_VERSION_LTSC2019_VALUE = 1;
-
     /**
      *
      *
@@ -227,7 +224,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int OS_VERSION_FIELD_NUMBER = 1;
   private int osVersion_ = 0;
-
   /**
    *
    *
@@ -243,7 +239,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
   public int getOsVersionValue() {
     return osVersion_;
   }
-
   /**
    *
    *
@@ -425,7 +420,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +603,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int osVersion_ = 0;
-
     /**
      *
      *
@@ -625,7 +618,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
     public int getOsVersionValue() {
       return osVersion_;
     }
-
     /**
      *
      *
@@ -644,7 +636,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +655,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.container.v1.WindowsNodeConfig.OSVersion.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -686,7 +676,6 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

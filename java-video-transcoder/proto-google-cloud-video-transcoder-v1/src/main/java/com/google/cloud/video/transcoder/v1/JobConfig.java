@@ -33,7 +33,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.JobConfig)
     JobConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobConfig.newBuilder() to construct.
   private JobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Input> inputs_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.Input> getInputsList() {
     return inputs_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getInputsOrBuilderList() {
     return inputs_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getInputsCount() {
     return inputs_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.Input getInputs(int index) {
     return inputs_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.EditAtom> editList_;
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.EditAtom> getEditListList() {
     return editList_;
   }
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getEditListOrBuilderList() {
     return editList_;
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getEditListCount() {
     return editList_.size();
   }
-
   /**
    *
    *
@@ -214,7 +204,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.EditAtom getEditList(int index) {
     return editList_.get(index);
   }
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.ElementaryStream> elementaryStreams_;
-
   /**
    *
    *
@@ -250,7 +238,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getElementaryStreamsList() {
     return elementaryStreams_;
   }
-
   /**
    *
    *
@@ -266,7 +253,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getElementaryStreamsOrBuilderList() {
     return elementaryStreams_;
   }
-
   /**
    *
    *
@@ -281,7 +267,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getElementaryStreamsCount() {
     return elementaryStreams_.size();
   }
-
   /**
    *
    *
@@ -296,7 +281,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.ElementaryStream getElementaryStreams(int index) {
     return elementaryStreams_.get(index);
   }
-
   /**
    *
    *
@@ -317,7 +301,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.MuxStream> muxStreams_;
-
   /**
    *
    *
@@ -331,7 +314,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.MuxStream> getMuxStreamsList() {
     return muxStreams_;
   }
-
   /**
    *
    *
@@ -346,7 +328,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getMuxStreamsOrBuilderList() {
     return muxStreams_;
   }
-
   /**
    *
    *
@@ -360,7 +341,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getMuxStreamsCount() {
     return muxStreams_.size();
   }
-
   /**
    *
    *
@@ -374,7 +354,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.MuxStream getMuxStreams(int index) {
     return muxStreams_.get(index);
   }
-
   /**
    *
    *
@@ -393,7 +372,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Manifest> manifests_;
-
   /**
    *
    *
@@ -407,7 +385,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.Manifest> getManifestsList() {
     return manifests_;
   }
-
   /**
    *
    *
@@ -422,7 +399,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getManifestsOrBuilderList() {
     return manifests_;
   }
-
   /**
    *
    *
@@ -436,7 +412,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getManifestsCount() {
     return manifests_.size();
   }
-
   /**
    *
    *
@@ -450,7 +425,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.Manifest getManifests(int index) {
     return manifests_.get(index);
   }
-
   /**
    *
    *
@@ -467,7 +441,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OUTPUT_FIELD_NUMBER = 6;
   private com.google.cloud.video.transcoder.v1.Output output_;
-
   /**
    *
    *
@@ -483,7 +456,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOutput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -501,7 +473,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.transcoder.v1.Output.getDefaultInstance()
         : output_;
   }
-
   /**
    *
    *
@@ -522,7 +493,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.AdBreak> adBreaks_;
-
   /**
    *
    *
@@ -537,7 +507,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.AdBreak> getAdBreaksList() {
     return adBreaks_;
   }
-
   /**
    *
    *
@@ -553,7 +522,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getAdBreaksOrBuilderList() {
     return adBreaks_;
   }
-
   /**
    *
    *
@@ -568,7 +536,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAdBreaksCount() {
     return adBreaks_.size();
   }
-
   /**
    *
    *
@@ -583,7 +550,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.AdBreak getAdBreaks(int index) {
     return adBreaks_.get(index);
   }
-
   /**
    *
    *
@@ -601,7 +567,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PUBSUB_DESTINATION_FIELD_NUMBER = 8;
   private com.google.cloud.video.transcoder.v1.PubsubDestination pubsubDestination_;
-
   /**
    *
    *
@@ -617,7 +582,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPubsubDestination() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -635,7 +599,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.transcoder.v1.PubsubDestination.getDefaultInstance()
         : pubsubDestination_;
   }
-
   /**
    *
    *
@@ -657,7 +620,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.SpriteSheet> spriteSheets_;
-
   /**
    *
    *
@@ -672,7 +634,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.SpriteSheet> getSpriteSheetsList() {
     return spriteSheets_;
   }
-
   /**
    *
    *
@@ -688,7 +649,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getSpriteSheetsOrBuilderList() {
     return spriteSheets_;
   }
-
   /**
    *
    *
@@ -703,7 +663,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getSpriteSheetsCount() {
     return spriteSheets_.size();
   }
-
   /**
    *
    *
@@ -718,7 +677,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.SpriteSheet getSpriteSheets(int index) {
     return spriteSheets_.get(index);
   }
-
   /**
    *
    *
@@ -739,7 +697,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Overlay> overlays_;
-
   /**
    *
    *
@@ -753,7 +710,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.Overlay> getOverlaysList() {
     return overlays_;
   }
-
   /**
    *
    *
@@ -768,7 +724,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getOverlaysOrBuilderList() {
     return overlays_;
   }
-
   /**
    *
    *
@@ -782,7 +737,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getOverlaysCount() {
     return overlays_.size();
   }
-
   /**
    *
    *
@@ -796,7 +750,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.Overlay getOverlays(int index) {
     return overlays_.get(index);
   }
-
   /**
    *
    *
@@ -815,7 +768,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.Encryption> encryptions_;
-
   /**
    *
    *
@@ -832,7 +784,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.transcoder.v1.Encryption> getEncryptionsList() {
     return encryptions_;
   }
-
   /**
    *
    *
@@ -850,7 +801,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       getEncryptionsOrBuilderList() {
     return encryptions_;
   }
-
   /**
    *
    *
@@ -867,7 +817,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public int getEncryptionsCount() {
     return encryptions_.size();
   }
-
   /**
    *
    *
@@ -884,7 +833,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.transcoder.v1.Encryption getEncryptions(int index) {
     return encryptions_.get(index);
   }
-
   /**
    *
    *
@@ -1181,7 +1129,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1953,7 +1900,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return inputsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1970,7 +1916,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return inputsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1987,7 +1932,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return inputsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2010,7 +1954,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2031,7 +1974,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2054,7 +1996,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2077,7 +2018,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2097,7 +2037,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2118,7 +2057,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2077,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2159,7 +2096,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2179,7 +2115,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2192,7 +2127,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Input.Builder getInputsBuilder(int index) {
       return getInputsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2209,7 +2143,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return inputsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2227,7 +2160,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(inputs_);
       }
     }
-
     /**
      *
      *
@@ -2241,7 +2173,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getInputsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.Input.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2255,7 +2186,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getInputsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.Input.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2321,7 +2251,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return editListBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2339,7 +2268,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return editListBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2357,7 +2285,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return editListBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2381,7 +2308,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2403,7 +2329,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2427,7 +2352,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2375,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2396,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2495,7 +2417,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2517,7 +2438,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2458,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2478,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2573,7 +2491,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.EditAtom.Builder getEditListBuilder(int index) {
       return getEditListFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2591,7 +2508,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return editListBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2610,7 +2526,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(editList_);
       }
     }
-
     /**
      *
      *
@@ -2625,7 +2540,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getEditListFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.EditAtom.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2640,7 +2554,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getEditListFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.EditAtom.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2709,7 +2622,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2727,7 +2639,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2745,7 +2656,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2770,7 +2680,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2792,7 +2701,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2817,7 +2725,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2842,7 +2749,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2864,7 +2770,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2886,7 +2791,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2909,7 +2813,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2930,7 +2833,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2951,7 +2853,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2966,7 +2867,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         getElementaryStreamsBuilder(int index) {
       return getElementaryStreamsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2985,7 +2885,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3004,7 +2903,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(elementaryStreams_);
       }
     }
-
     /**
      *
      *
@@ -3020,7 +2918,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getElementaryStreamsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.ElementaryStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3037,7 +2934,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.transcoder.v1.ElementaryStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3106,7 +3002,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3123,7 +3018,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3140,7 +3034,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3163,7 +3056,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3184,7 +3076,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3207,7 +3098,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3230,7 +3120,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3140,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3272,7 +3160,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3293,7 +3180,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3199,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3333,7 +3218,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3346,7 +3230,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.MuxStream.Builder getMuxStreamsBuilder(int index) {
       return getMuxStreamsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3364,7 +3247,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3382,7 +3264,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(muxStreams_);
       }
     }
-
     /**
      *
      *
@@ -3396,7 +3277,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getMuxStreamsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.MuxStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3410,7 +3290,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getMuxStreamsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.MuxStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3475,7 +3354,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3492,7 +3370,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3509,7 +3386,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3532,7 +3408,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3553,7 +3428,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3576,7 +3450,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3599,7 +3472,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3620,7 +3492,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3641,7 +3512,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3662,7 +3532,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3682,7 +3551,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3702,7 +3570,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3715,7 +3582,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Manifest.Builder getManifestsBuilder(int index) {
       return getManifestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3732,7 +3598,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3750,7 +3615,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(manifests_);
       }
     }
-
     /**
      *
      *
@@ -3764,7 +3628,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getManifestsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.Manifest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3778,7 +3641,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getManifestsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.Manifest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3816,7 +3678,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Output.Builder,
             com.google.cloud.video.transcoder.v1.OutputOrBuilder>
         outputBuilder_;
-
     /**
      *
      *
@@ -3831,7 +3692,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutput() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3852,7 +3712,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return outputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3875,7 +3734,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3895,7 +3753,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3923,7 +3780,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3943,7 +3799,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3813,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOutputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3977,7 +3831,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             : output_;
       }
     }
-
     /**
      *
      *
@@ -4038,7 +3891,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4056,7 +3908,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4074,7 +3925,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4098,7 +3948,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4120,7 +3969,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4144,7 +3992,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4168,7 +4015,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4190,7 +4036,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4212,7 +4057,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4234,7 +4078,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4255,7 +4098,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4276,7 +4118,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4290,7 +4131,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.AdBreak.Builder getAdBreaksBuilder(int index) {
       return getAdBreaksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4308,7 +4148,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4327,7 +4166,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(adBreaks_);
       }
     }
-
     /**
      *
      *
@@ -4342,7 +4180,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getAdBreaksFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.AdBreak.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4357,7 +4194,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getAdBreaksFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.AdBreak.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4396,7 +4232,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.PubsubDestination.Builder,
             com.google.cloud.video.transcoder.v1.PubsubDestinationOrBuilder>
         pubsubDestinationBuilder_;
-
     /**
      *
      *
@@ -4411,7 +4246,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPubsubDestination() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4432,7 +4266,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return pubsubDestinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4456,7 +4289,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4477,7 +4309,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4507,7 +4338,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4527,7 +4357,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4543,7 +4372,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPubsubDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4563,7 +4391,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             : pubsubDestination_;
       }
     }
-
     /**
      *
      *
@@ -4625,7 +4452,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4643,7 +4469,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4661,7 +4486,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4686,7 +4510,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4708,7 +4531,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4732,7 +4554,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4757,7 +4578,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4779,7 +4599,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4801,7 +4620,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4823,7 +4641,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4844,7 +4661,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4865,7 +4681,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4880,7 +4695,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSpriteSheetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4899,7 +4713,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4918,7 +4731,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spriteSheets_);
       }
     }
-
     /**
      *
      *
@@ -4933,7 +4745,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getSpriteSheetsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.SpriteSheet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4949,7 +4760,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getSpriteSheetsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.SpriteSheet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5015,7 +4825,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return overlaysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5032,7 +4841,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return overlaysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5049,7 +4857,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return overlaysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5072,7 +4879,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5093,7 +4899,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5116,7 +4921,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5139,7 +4943,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5160,7 +4963,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5181,7 +4983,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5202,7 +5003,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5222,7 +5022,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5242,7 +5041,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5255,7 +5053,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Overlay.Builder getOverlaysBuilder(int index) {
       return getOverlaysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5272,7 +5069,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return overlaysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5290,7 +5086,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(overlays_);
       }
     }
-
     /**
      *
      *
@@ -5304,7 +5099,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getOverlaysFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.Overlay.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5318,7 +5112,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getOverlaysFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.Overlay.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5386,7 +5179,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5406,7 +5198,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5426,7 +5217,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5453,7 +5243,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5477,7 +5266,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5503,7 +5291,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5530,7 +5317,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5554,7 +5340,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5578,7 +5363,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5602,7 +5386,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5625,7 +5408,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5648,7 +5430,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5665,7 +5446,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEncryptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5686,7 +5466,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5707,7 +5486,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(encryptions_);
       }
     }
-
     /**
      *
      *
@@ -5724,7 +5502,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getEncryptionsFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5742,7 +5519,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       return getEncryptionsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance());
     }
-
     /**
      *
      *

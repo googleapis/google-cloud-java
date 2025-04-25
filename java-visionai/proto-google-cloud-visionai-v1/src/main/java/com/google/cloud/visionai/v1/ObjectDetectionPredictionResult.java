@@ -33,7 +33,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ObjectDetectionPredictionResult)
     ObjectDetectionPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ObjectDetectionPredictionResult.newBuilder() to construct.
   private ObjectDetectionPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -95,7 +94,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
      * @return The labelString.
      */
     java.lang.String getLabelString();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getLabelStringBytes();
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ObjectDetectionPredictionResult.Entity)
       EntityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Entity.newBuilder() to construct.
     private Entity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -157,7 +153,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
     public static final int LABEL_ID_FIELD_NUMBER = 1;
     private long labelId_ = 0L;
-
     /**
      *
      *
@@ -178,7 +173,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object labelString_ = "";
-
     /**
      *
      *
@@ -202,7 +196,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return s;
       }
     }
-
     /**
      *
      *
@@ -398,7 +391,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       private int bitField0_;
 
       private long labelId_;
-
       /**
        *
        *
@@ -622,7 +613,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       public long getLabelId() {
         return labelId_;
       }
-
       /**
        *
        *
@@ -642,7 +632,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -662,7 +651,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
 
       private java.lang.Object labelString_ = "";
-
       /**
        *
        *
@@ -685,7 +673,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -708,7 +695,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -730,7 +716,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -748,7 +733,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -871,7 +855,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
      * @return Whether the normalizedBoundingBox field is set.
      */
     boolean hasNormalizedBoundingBox();
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
      */
     com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox.NormalizedBoundingBox
         getNormalizedBoundingBox();
-
     /**
      *
      *
@@ -928,7 +910,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
      * @return Whether the entity field is set.
      */
     boolean hasEntity();
-
     /**
      *
      *
@@ -941,7 +922,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
      * @return The entity.
      */
     com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.Entity getEntity();
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.EntityOrBuilder
         getEntityOrBuilder();
   }
-
   /**
    *
    *
@@ -969,7 +948,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox)
       IdentifiedBoxOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IdentifiedBox.newBuilder() to construct.
     private IdentifiedBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1056,7 +1034,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
        */
       float getHeight();
     }
-
     /**
      *
      *
@@ -1072,7 +1049,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox.NormalizedBoundingBox)
         NormalizedBoundingBoxOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use NormalizedBoundingBox.newBuilder() to construct.
       private NormalizedBoundingBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1105,7 +1081,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
       public static final int XMIN_FIELD_NUMBER = 1;
       private float xmin_ = 0F;
-
       /**
        *
        *
@@ -1124,7 +1099,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
       public static final int YMIN_FIELD_NUMBER = 2;
       private float ymin_ = 0F;
-
       /**
        *
        *
@@ -1143,7 +1117,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
       public static final int WIDTH_FIELD_NUMBER = 3;
       private float width_ = 0F;
-
       /**
        *
        *
@@ -1162,7 +1135,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
       public static final int HEIGHT_FIELD_NUMBER = 4;
       private float height_ = 0F;
-
       /**
        *
        *
@@ -1400,7 +1372,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1655,7 +1626,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         private int bitField0_;
 
         private float xmin_;
-
         /**
          *
          *
@@ -1671,7 +1641,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         public float getXmin() {
           return xmin_;
         }
-
         /**
          *
          *
@@ -1691,7 +1660,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1711,7 +1679,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         }
 
         private float ymin_;
-
         /**
          *
          *
@@ -1727,7 +1694,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         public float getYmin() {
           return ymin_;
         }
-
         /**
          *
          *
@@ -1747,7 +1713,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1767,7 +1732,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         }
 
         private float width_;
-
         /**
          *
          *
@@ -1783,7 +1747,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         public float getWidth() {
           return width_;
         }
-
         /**
          *
          *
@@ -1803,7 +1766,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1823,7 +1785,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         }
 
         private float height_;
-
         /**
          *
          *
@@ -1839,7 +1800,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         public float getHeight() {
           return height_;
         }
-
         /**
          *
          *
@@ -1859,7 +1819,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1953,7 +1912,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     private int bitField0_;
     public static final int BOX_ID_FIELD_NUMBER = 1;
     private long boxId_ = 0L;
-
     /**
      *
      *
@@ -1974,7 +1932,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     private com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox
             .NormalizedBoundingBox
         normalizedBoundingBox_;
-
     /**
      *
      *
@@ -1992,7 +1949,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     public boolean hasNormalizedBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2015,7 +1971,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               .NormalizedBoundingBox.getDefaultInstance()
           : normalizedBoundingBox_;
     }
-
     /**
      *
      *
@@ -2039,7 +1994,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
     public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 3;
     private float confidenceScore_ = 0F;
-
     /**
      *
      *
@@ -2058,7 +2012,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
 
     public static final int ENTITY_FIELD_NUMBER = 4;
     private com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.Entity entity_;
-
     /**
      *
      *
@@ -2074,7 +2027,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     public boolean hasEntity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2092,7 +2044,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           ? com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.Entity.getDefaultInstance()
           : entity_;
     }
-
     /**
      *
      *
@@ -2317,7 +2268,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2579,7 +2529,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       private int bitField0_;
 
       private long boxId_;
-
       /**
        *
        *
@@ -2595,7 +2544,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       public long getBoxId() {
         return boxId_;
       }
-
       /**
        *
        *
@@ -2615,7 +2563,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2645,7 +2592,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox
                   .NormalizedBoundingBoxOrBuilder>
           normalizedBoundingBoxBuilder_;
-
       /**
        *
        *
@@ -2662,7 +2608,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       public boolean hasNormalizedBoundingBox() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2688,7 +2633,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           return normalizedBoundingBoxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2716,7 +2660,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2741,7 +2684,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2776,7 +2718,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         }
         return this;
       }
-
       /**
        *
        *
@@ -2798,7 +2739,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2817,7 +2757,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return getNormalizedBoundingBoxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2841,7 +2780,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               : normalizedBoundingBox_;
         }
       }
-
       /**
        *
        *
@@ -2877,7 +2815,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
 
       private float confidenceScore_;
-
       /**
        *
        *
@@ -2893,7 +2830,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       public float getConfidenceScore() {
         return confidenceScore_;
       }
-
       /**
        *
        *
@@ -2913,7 +2849,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2938,7 +2873,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.Entity.Builder,
               com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.EntityOrBuilder>
           entityBuilder_;
-
       /**
        *
        *
@@ -2953,7 +2887,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       public boolean hasEntity() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -2975,7 +2908,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
           return entityBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2999,7 +2931,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3021,7 +2952,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3052,7 +2982,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         }
         return this;
       }
-
       /**
        *
        *
@@ -3072,7 +3001,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3088,7 +3016,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         onChanged();
         return getEntityFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3109,7 +3036,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               : entity_;
         }
       }
-
       /**
        *
        *
@@ -3207,7 +3133,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
   private int bitField0_;
   public static final int CURRENT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp currentTime_;
-
   /**
    *
    *
@@ -3223,7 +3148,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
   public boolean hasCurrentTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3239,7 +3163,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getCurrentTime() {
     return currentTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentTime_;
   }
-
   /**
    *
    *
@@ -3259,7 +3182,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox>
       identifiedBoxes_;
-
   /**
    *
    *
@@ -3276,7 +3198,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       getIdentifiedBoxesList() {
     return identifiedBoxes_;
   }
-
   /**
    *
    *
@@ -3295,7 +3216,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       getIdentifiedBoxesOrBuilderList() {
     return identifiedBoxes_;
   }
-
   /**
    *
    *
@@ -3311,7 +3231,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
   public int getIdentifiedBoxesCount() {
     return identifiedBoxes_.size();
   }
-
   /**
    *
    *
@@ -3328,7 +3247,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       getIdentifiedBoxes(int index) {
     return identifiedBoxes_.get(index);
   }
-
   /**
    *
    *
@@ -3522,7 +3440,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3794,7 +3711,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentTimeBuilder_;
-
     /**
      *
      *
@@ -3809,7 +3725,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
     public boolean hasCurrentTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3830,7 +3745,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return currentTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3853,7 +3767,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3873,7 +3786,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3901,7 +3813,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -3921,7 +3832,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3936,7 +3846,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       onChanged();
       return getCurrentTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3955,7 +3864,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
             : currentTime_;
       }
     }
-
     /**
      *
      *
@@ -4022,7 +3930,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return identifiedBoxesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4041,7 +3948,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return identifiedBoxesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4061,7 +3967,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return identifiedBoxesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4088,7 +3993,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4113,7 +4017,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4139,7 +4042,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4166,7 +4068,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4190,7 +4091,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4215,7 +4115,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4241,7 +4140,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4263,7 +4161,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4285,7 +4182,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4301,7 +4197,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         getIdentifiedBoxesBuilder(int index) {
       return getIdentifiedBoxesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4321,7 +4216,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return identifiedBoxesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4343,7 +4237,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(identifiedBoxes_);
       }
     }
-
     /**
      *
      *
@@ -4362,7 +4255,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4382,7 +4274,6 @@ public final class ObjectDetectionPredictionResult extends com.google.protobuf.G
               com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox
                   .getDefaultInstance());
     }
-
     /**
      *
      *

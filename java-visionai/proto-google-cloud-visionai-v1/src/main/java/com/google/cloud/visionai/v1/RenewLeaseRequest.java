@@ -33,7 +33,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RenewLeaseRequest)
     RenewLeaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RenewLeaseRequest.newBuilder() to construct.
   private RenewLeaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object series_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object owner_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int TERM_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration term_;
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTerm() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Duration getTerm() {
     return term_ == null ? com.google.protobuf.Duration.getDefaultInstance() : term_;
   }
-
   /**
    *
    *
@@ -466,7 +456,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -709,7 +698,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -732,7 +720,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object series_ = "";
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object owner_ = "";
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -977,7 +954,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         termBuilder_;
-
     /**
      *
      *
@@ -1062,7 +1035,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTerm() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return termBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1075,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1121,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1140,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1154,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTermFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1204,7 +1170,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return term_ == null ? com.google.protobuf.Duration.getDefaultInstance() : term_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ApprovalConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ApprovalConfig)
     ApprovalConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApprovalConfig.newBuilder() to construct.
   private ApprovalConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ApprovalConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROVAL_REQUIRED_FIELD_NUMBER = 1;
   private boolean approvalRequired_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class ApprovalConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class ApprovalConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean approvalRequired_;
-
     /**
      *
      *
@@ -441,7 +437,6 @@ public final class ApprovalConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getApprovalRequired() {
       return approvalRequired_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class ApprovalConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

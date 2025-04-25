@@ -35,7 +35,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest)
     GetDisplayVideo360AdvertiserLinkProposalRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetDisplayVideo360AdvertiserLinkProposalRequest.newBuilder() to construct.
   private GetDisplayVideo360AdvertiserLinkProposalRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -297,7 +294,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -499,7 +495,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -525,7 +520,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -551,7 +545,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -576,7 +569,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -597,7 +589,6 @@ public final class GetDisplayVideo360AdvertiserLinkProposalRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

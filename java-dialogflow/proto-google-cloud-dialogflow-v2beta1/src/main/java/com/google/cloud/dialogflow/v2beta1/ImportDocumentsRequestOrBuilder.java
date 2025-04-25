@@ -40,7 +40,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.dialogflow.v2beta1.GcsSources getGcsSource();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the documentTemplate field is set.
    */
   boolean hasDocumentTemplate();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The documentTemplate.
    */
   com.google.cloud.dialogflow.v2beta1.ImportDocumentTemplate getDocumentTemplate();
-
   /**
    *
    *

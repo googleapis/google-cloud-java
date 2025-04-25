@@ -45,7 +45,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MultiColumnDatatypeChange)
     MultiColumnDatatypeChangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MultiColumnDatatypeChange.newBuilder() to construct.
   private MultiColumnDatatypeChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     private SourceFilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -132,7 +130,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceDataTypeFilter_ = "";
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +178,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_TEXT_FILTER_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
   public boolean hasSourceTextFilter() {
     return sourceFilterCase_ == 100;
   }
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
     return com.google.cloud.clouddms.v1.SourceTextFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_NUMERIC_FILTER_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
   public boolean hasSourceNumericFilter() {
     return sourceFilterCase_ == 101;
   }
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
     return com.google.cloud.clouddms.v1.SourceNumericFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object newDataType_ = "";
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -360,7 +348,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   public static final int OVERRIDE_LENGTH_FIELD_NUMBER = 3;
   private long overrideLength_ = 0L;
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   public static final int OVERRIDE_SCALE_FIELD_NUMBER = 4;
   private int overrideScale_ = 0;
-
   /**
    *
    *
@@ -400,7 +386,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   public static final int OVERRIDE_PRECISION_FIELD_NUMBER = 5;
   private int overridePrecision_ = 0;
-
   /**
    *
    *
@@ -420,7 +405,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   public static final int OVERRIDE_FRACTIONAL_SECONDS_PRECISION_FIELD_NUMBER = 6;
   private int overrideFractionalSecondsPrecision_ = 0;
-
   /**
    *
    *
@@ -443,7 +427,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 7;
   private com.google.protobuf.Struct customFeatures_;
-
   /**
    *
    *
@@ -460,7 +443,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -479,7 +461,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
-
   /**
    *
    *
@@ -758,7 +739,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1116,7 +1096,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object sourceDataTypeFilter_ = "";
-
     /**
      *
      *
@@ -1139,7 +1118,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1140,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1161,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1178,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1206,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
             com.google.cloud.clouddms.v1.SourceTextFilter.Builder,
             com.google.cloud.clouddms.v1.SourceTextFilterOrBuilder>
         sourceTextFilterBuilder_;
-
     /**
      *
      *
@@ -1249,7 +1223,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public boolean hasSourceTextFilter() {
       return sourceFilterCase_ == 100;
     }
-
     /**
      *
      *
@@ -1277,7 +1250,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceTextFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1302,7 +1274,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       sourceFilterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1296,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       sourceFilterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1331,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       sourceFilterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1358,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1372,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public com.google.cloud.clouddms.v1.SourceTextFilter.Builder getSourceTextFilterBuilder() {
       return getSourceTextFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1427,7 +1394,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceTextFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1468,7 +1434,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
             com.google.cloud.clouddms.v1.SourceNumericFilter.Builder,
             com.google.cloud.clouddms.v1.SourceNumericFilterOrBuilder>
         sourceNumericFilterBuilder_;
-
     /**
      *
      *
@@ -1487,7 +1452,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public boolean hasSourceNumericFilter() {
       return sourceFilterCase_ == 101;
     }
-
     /**
      *
      *
@@ -1516,7 +1480,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceNumericFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1542,7 +1505,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       sourceFilterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1528,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       sourceFilterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1565,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       sourceFilterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1633,7 +1593,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1650,7 +1609,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         getSourceNumericFilterBuilder() {
       return getSourceNumericFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1675,7 +1633,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceNumericFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1670,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
 
     private java.lang.Object newDataType_ = "";
-
     /**
      *
      *
@@ -1736,7 +1692,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1759,7 +1714,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1781,7 +1735,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1752,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1824,7 +1776,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
 
     private long overrideLength_;
-
     /**
      *
      *
@@ -1841,7 +1792,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public long getOverrideLength() {
       return overrideLength_;
     }
-
     /**
      *
      *
@@ -1862,7 +1812,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1832,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
 
     private int overrideScale_;
-
     /**
      *
      *
@@ -1900,7 +1848,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public int getOverrideScale() {
       return overrideScale_;
     }
-
     /**
      *
      *
@@ -1921,7 +1868,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1942,7 +1888,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
 
     private int overridePrecision_;
-
     /**
      *
      *
@@ -1959,7 +1904,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public int getOverridePrecision() {
       return overridePrecision_;
     }
-
     /**
      *
      *
@@ -1980,7 +1924,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1944,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     }
 
     private int overrideFractionalSecondsPrecision_;
-
     /**
      *
      *
@@ -2021,7 +1963,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public int getOverrideFractionalSecondsPrecision() {
       return overrideFractionalSecondsPrecision_;
     }
-
     /**
      *
      *
@@ -2045,7 +1986,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2074,7 +2014,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
-
     /**
      *
      *
@@ -2090,7 +2029,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2112,7 +2050,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
         return customFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2136,7 +2073,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2157,7 +2093,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2186,7 +2121,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2207,7 +2141,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2223,7 +2156,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2243,7 +2175,6 @@ public final class MultiColumnDatatypeChange extends com.google.protobuf.Generat
             : customFeatures_;
       }
     }
-
     /**
      *
      *

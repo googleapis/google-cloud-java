@@ -38,7 +38,6 @@ public interface DeleteVolumeSnapshotRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

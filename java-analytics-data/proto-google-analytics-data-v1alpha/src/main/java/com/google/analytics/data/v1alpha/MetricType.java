@@ -172,7 +172,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>METRIC_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int METRIC_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -183,7 +182,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_INTEGER = 1;</code>
    */
   public static final int TYPE_INTEGER_VALUE = 1;
-
   /**
    *
    *
@@ -194,7 +192,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_FLOAT = 2;</code>
    */
   public static final int TYPE_FLOAT_VALUE = 2;
-
   /**
    *
    *
@@ -205,7 +202,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_SECONDS = 4;</code>
    */
   public static final int TYPE_SECONDS_VALUE = 4;
-
   /**
    *
    *
@@ -216,7 +212,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_MILLISECONDS = 5;</code>
    */
   public static final int TYPE_MILLISECONDS_VALUE = 5;
-
   /**
    *
    *
@@ -227,7 +222,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_MINUTES = 6;</code>
    */
   public static final int TYPE_MINUTES_VALUE = 6;
-
   /**
    *
    *
@@ -238,7 +232,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_HOURS = 7;</code>
    */
   public static final int TYPE_HOURS_VALUE = 7;
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_STANDARD = 8;</code>
    */
   public static final int TYPE_STANDARD_VALUE = 8;
-
   /**
    *
    *
@@ -260,7 +252,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_CURRENCY = 9;</code>
    */
   public static final int TYPE_CURRENCY_VALUE = 9;
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_FEET = 10;</code>
    */
   public static final int TYPE_FEET_VALUE = 10;
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_MILES = 11;</code>
    */
   public static final int TYPE_MILES_VALUE = 11;
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_METERS = 12;</code>
    */
   public static final int TYPE_METERS_VALUE = 12;
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.CreateHardwareGroupRequest)
     CreateHardwareGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateHardwareGroupRequest.newBuilder() to construct.
   private CreateHardwareGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hardwareGroupId_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
 
   public static final int HARDWARE_GROUP_FIELD_NUMBER = 3;
   private com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup hardwareGroup_;
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
   public boolean hasHardwareGroup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         ? com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.getDefaultInstance()
         : hardwareGroup_;
   }
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -503,7 +493,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +748,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -785,7 +773,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +798,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -836,7 +822,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +842,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object hardwareGroupId_ = "";
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -945,7 +927,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -974,7 +955,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1015,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
             com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroupOrBuilder>
         hardwareGroupBuilder_;
-
     /**
      *
      *
@@ -1053,7 +1031,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
     public boolean hasHardwareGroup() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1076,7 +1053,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return hardwareGroupBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1078,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1100,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1132,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1153,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1170,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return getHardwareGroupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1220,7 +1191,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
             : hardwareGroup_;
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1220,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1274,7 +1243,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1266,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1321,7 +1288,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1306,6 @@ public final class CreateHardwareGroupRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

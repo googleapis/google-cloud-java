@@ -38,7 +38,6 @@ public interface DeploymentJobsOrBuilder
    * @return Whether the predeployJob field is set.
    */
   boolean hasPredeployJob();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DeploymentJobsOrBuilder
    * @return The predeployJob.
    */
   com.google.cloud.deploy.v1.Job getPredeployJob();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface DeploymentJobsOrBuilder
    * @return Whether the deployJob field is set.
    */
   boolean hasDeployJob();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface DeploymentJobsOrBuilder
    * @return The deployJob.
    */
   com.google.cloud.deploy.v1.Job getDeployJob();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface DeploymentJobsOrBuilder
    * @return Whether the verifyJob field is set.
    */
   boolean hasVerifyJob();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface DeploymentJobsOrBuilder
    * @return The verifyJob.
    */
   com.google.cloud.deploy.v1.Job getVerifyJob();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface DeploymentJobsOrBuilder
    * @return Whether the postdeployJob field is set.
    */
   boolean hasPostdeployJob();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface DeploymentJobsOrBuilder
    * @return The postdeployJob.
    */
   com.google.cloud.deploy.v1.Job getPostdeployJob();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ChannelConfigOrBuilder
    * @return The defaultVersion.
    */
   java.lang.String getDefaultVersion();
-
   /**
    *
    *

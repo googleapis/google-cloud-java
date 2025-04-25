@@ -36,7 +36,6 @@ public interface PrincipalOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PrincipalOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PrincipalOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PrincipalOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

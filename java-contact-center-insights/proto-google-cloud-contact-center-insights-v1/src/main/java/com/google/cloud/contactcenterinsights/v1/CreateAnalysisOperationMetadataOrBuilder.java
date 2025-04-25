@@ -37,7 +37,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return Whether the annotatorSelector field is set.
    */
   boolean hasAnnotatorSelector();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return The annotatorSelector.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector();
-
   /**
    *
    *

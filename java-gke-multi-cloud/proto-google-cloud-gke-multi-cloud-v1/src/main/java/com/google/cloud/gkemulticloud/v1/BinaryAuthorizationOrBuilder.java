@@ -38,7 +38,6 @@ public interface BinaryAuthorizationOrBuilder
    * @return The enum numeric value on the wire for evaluationMode.
    */
   int getEvaluationModeValue();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ListBrandsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

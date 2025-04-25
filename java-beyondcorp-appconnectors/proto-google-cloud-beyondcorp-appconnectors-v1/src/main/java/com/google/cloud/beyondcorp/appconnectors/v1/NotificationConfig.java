@@ -33,7 +33,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnectors.v1.NotificationConfig)
     NotificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationConfig.newBuilder() to construct.
   private NotificationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return The pubsubSubscription.
      */
     java.lang.String getPubsubSubscription();
-
     /**
      *
      *
@@ -93,7 +91,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getPubsubSubscriptionBytes();
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnectors.v1.NotificationConfig.CloudPubSubNotificationConfig)
       CloudPubSubNotificationConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CloudPubSubNotificationConfig.newBuilder() to construct.
     private CloudPubSubNotificationConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -148,7 +144,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pubsubSubscription_ = "";
-
     /**
      *
      *
@@ -172,7 +167,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -384,7 +378,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -602,7 +595,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object pubsubSubscription_ = "";
-
       /**
        *
        *
@@ -625,7 +617,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -648,7 +639,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -670,7 +660,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -688,7 +677,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -800,7 +788,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     private ConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -832,7 +819,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PUBSUB_NOTIFICATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -850,7 +836,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasPubsubNotification() {
     return configCase_ == 1;
   }
-
   /**
    *
    *
@@ -876,7 +861,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig
         .CloudPubSubNotificationConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1083,7 +1067,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1311,7 +1294,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig
                 .CloudPubSubNotificationConfigOrBuilder>
         pubsubNotificationBuilder_;
-
     /**
      *
      *
@@ -1329,7 +1311,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasPubsubNotification() {
       return configCase_ == 1;
     }
-
     /**
      *
      *
@@ -1363,7 +1344,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             .CloudPubSubNotificationConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1391,7 +1371,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       configCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1395,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       configCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1437,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       configCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1464,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1480,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         getPubsubNotificationBuilder() {
       return getPubsubNotificationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1532,7 +1507,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             .CloudPubSubNotificationConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

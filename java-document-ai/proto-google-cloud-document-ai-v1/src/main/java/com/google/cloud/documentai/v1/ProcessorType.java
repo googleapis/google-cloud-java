@@ -34,7 +34,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessorType)
     ProcessorTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProcessorType.newBuilder() to construct.
   private ProcessorType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return The locationId.
      */
     java.lang.String getLocationId();
-
     /**
      *
      *
@@ -103,7 +101,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getLocationIdBytes();
   }
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessorType.LocationInfo)
       LocationInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LocationInfo.newBuilder() to construct.
     private LocationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -153,7 +149,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -178,7 +173,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -365,7 +359,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -553,7 +546,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object locationId_ = "";
-
       /**
        *
        *
@@ -577,7 +569,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -601,7 +592,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -624,7 +614,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -643,7 +632,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -736,7 +724,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -761,7 +748,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -791,7 +777,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -815,7 +800,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -844,7 +828,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object category_ = "";
-
   /**
    *
    *
@@ -868,7 +851,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -898,7 +880,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1.ProcessorType.LocationInfo>
       availableLocations_;
-
   /**
    *
    *
@@ -914,7 +895,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       getAvailableLocationsList() {
     return availableLocations_;
   }
-
   /**
    *
    *
@@ -931,7 +911,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       getAvailableLocationsOrBuilderList() {
     return availableLocations_;
   }
-
   /**
    *
    *
@@ -946,7 +925,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   public int getAvailableLocationsCount() {
     return availableLocations_.size();
   }
-
   /**
    *
    *
@@ -962,7 +940,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return availableLocations_.get(index);
   }
-
   /**
    *
    *
@@ -981,7 +958,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOW_CREATION_FIELD_NUMBER = 6;
   private boolean allowCreation_ = false;
-
   /**
    *
    *
@@ -1001,7 +977,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 8;
   private int launchStage_ = 0;
-
   /**
    *
    *
@@ -1017,7 +992,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   public int getLaunchStageValue() {
     return launchStage_;
   }
-
   /**
    *
    *
@@ -1040,7 +1014,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sampleDocumentUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1055,7 +1028,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSampleDocumentUrisList() {
     return sampleDocumentUris_;
   }
-
   /**
    *
    *
@@ -1070,7 +1042,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   public int getSampleDocumentUrisCount() {
     return sampleDocumentUris_.size();
   }
-
   /**
    *
    *
@@ -1086,7 +1057,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSampleDocumentUris(int index) {
     return sampleDocumentUris_.get(index);
   }
-
   /**
    *
    *
@@ -1326,7 +1296,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1650,7 +1619,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1674,7 +1642,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1698,7 +1665,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1721,7 +1687,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1740,7 +1705,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1730,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1789,7 +1752,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1812,7 +1774,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1834,7 +1795,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1852,7 +1812,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1877,7 +1836,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object category_ = "";
-
     /**
      *
      *
@@ -1900,7 +1858,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1923,7 +1880,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1945,7 +1901,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1963,7 +1918,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2024,7 +1978,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return availableLocationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2043,7 +1996,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return availableLocationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2063,7 +2015,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return availableLocationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2089,7 +2040,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2113,7 +2063,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2088,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2165,7 +2113,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2188,7 +2135,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2212,7 +2158,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2236,7 +2181,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2258,7 +2202,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2280,7 +2223,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2296,7 +2238,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         getAvailableLocationsBuilder(int index) {
       return getAvailableLocationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2316,7 +2257,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return availableLocationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2337,7 +2277,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(availableLocations_);
       }
     }
-
     /**
      *
      *
@@ -2355,7 +2294,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.documentai.v1.ProcessorType.LocationInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2374,7 +2312,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.documentai.v1.ProcessorType.LocationInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2412,7 +2349,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean allowCreation_;
-
     /**
      *
      *
@@ -2429,7 +2365,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowCreation() {
       return allowCreation_;
     }
-
     /**
      *
      *
@@ -2450,7 +2385,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2471,7 +2405,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int launchStage_ = 0;
-
     /**
      *
      *
@@ -2487,7 +2420,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public int getLaunchStageValue() {
       return launchStage_;
     }
-
     /**
      *
      *
@@ -2506,7 +2438,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2523,7 +2454,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
       return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2545,7 +2475,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2573,7 +2502,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -2589,7 +2517,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       sampleDocumentUris_.makeImmutable();
       return sampleDocumentUris_;
     }
-
     /**
      *
      *
@@ -2604,7 +2531,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public int getSampleDocumentUrisCount() {
       return sampleDocumentUris_.size();
     }
-
     /**
      *
      *
@@ -2620,7 +2546,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSampleDocumentUris(int index) {
       return sampleDocumentUris_.get(index);
     }
-
     /**
      *
      *
@@ -2636,7 +2561,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSampleDocumentUrisBytes(int index) {
       return sampleDocumentUris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2660,7 +2584,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2683,7 +2606,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2703,7 +2625,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2722,7 +2643,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

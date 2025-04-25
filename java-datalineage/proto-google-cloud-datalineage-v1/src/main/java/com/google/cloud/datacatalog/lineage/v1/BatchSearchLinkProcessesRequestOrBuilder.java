@@ -38,7 +38,6 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    * @return A list containing the links.
    */
   java.util.List<java.lang.String> getLinksList();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    * @return The count of links.
    */
   int getLinksCount();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    * @return The links at the given index.
    */
   java.lang.String getLinks(int index);
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

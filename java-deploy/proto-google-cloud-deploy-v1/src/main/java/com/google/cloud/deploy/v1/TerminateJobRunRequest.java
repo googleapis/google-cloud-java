@@ -33,7 +33,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TerminateJobRunRequest)
     TerminateJobRunRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TerminateJobRunRequest.newBuilder() to construct.
   private TerminateJobRunRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
     return overrideDeployPolicy_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
   public int getOverrideDeployPolicyCount() {
     return overrideDeployPolicy_.size();
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
   public java.lang.String getOverrideDeployPolicy(int index) {
     return overrideDeployPolicy_.get(index);
   }
-
   /**
    *
    *
@@ -380,7 +373,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +579,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       overrideDeployPolicy_.makeImmutable();
       return overrideDeployPolicy_;
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
     public int getOverrideDeployPolicyCount() {
       return overrideDeployPolicy_.size();
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
     public java.lang.String getOverrideDeployPolicy(int index) {
       return overrideDeployPolicy_.get(index);
     }
-
     /**
      *
      *
@@ -796,7 +779,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
       return overrideDeployPolicy_.getByteString(index);
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +873,6 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

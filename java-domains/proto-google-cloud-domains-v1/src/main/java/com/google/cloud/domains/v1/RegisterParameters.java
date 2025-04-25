@@ -33,7 +33,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1.RegisterParameters)
     RegisterParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegisterParameters.newBuilder() to construct.
   private RegisterParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,7 +142,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * <code>AVAILABILITY_UNSPECIFIED = 0;</code>
      */
     public static final int AVAILABILITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -154,7 +152,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * <code>AVAILABLE = 1;</code>
      */
     public static final int AVAILABLE_VALUE = 1;
-
     /**
      *
      *
@@ -166,7 +163,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * <code>UNAVAILABLE = 2;</code>
      */
     public static final int UNAVAILABLE_VALUE = 2;
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * <code>UNSUPPORTED = 3;</code>
      */
     public static final int UNSUPPORTED_VALUE = 3;
-
     /**
      *
      *
@@ -283,7 +278,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domainName_ = "";
-
   /**
    *
    *
@@ -307,7 +301,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -334,7 +327,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
 
   public static final int AVAILABILITY_FIELD_NUMBER = 2;
   private int availability_ = 0;
-
   /**
    *
    *
@@ -352,7 +344,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public int getAvailabilityValue() {
     return availability_;
   }
-
   /**
    *
    *
@@ -393,7 +384,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
-
   /**
    *
    *
@@ -411,7 +401,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.domains.v1.ContactPrivacy>(
         supportedPrivacy_, supportedPrivacy_converter_);
   }
-
   /**
    *
    *
@@ -427,7 +416,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public int getSupportedPrivacyCount() {
     return supportedPrivacy_.size();
   }
-
   /**
    *
    *
@@ -444,7 +432,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.domains.v1.ContactPrivacy getSupportedPrivacy(int index) {
     return supportedPrivacy_converter_.convert(supportedPrivacy_.get(index));
   }
-
   /**
    *
    *
@@ -460,7 +447,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getSupportedPrivacyValueList() {
     return supportedPrivacy_;
   }
-
   /**
    *
    *
@@ -498,7 +484,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
-
   /**
    *
    *
@@ -516,7 +501,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.domains.v1.DomainNotice>(
         domainNotices_, domainNotices_converter_);
   }
-
   /**
    *
    *
@@ -532,7 +516,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public int getDomainNoticesCount() {
     return domainNotices_.size();
   }
-
   /**
    *
    *
@@ -549,7 +532,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.domains.v1.DomainNotice getDomainNotices(int index) {
     return domainNotices_converter_.convert(domainNotices_.get(index));
   }
-
   /**
    *
    *
@@ -565,7 +547,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getDomainNoticesValueList() {
     return domainNotices_;
   }
-
   /**
    *
    *
@@ -587,7 +568,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
 
   public static final int YEARLY_PRICE_FIELD_NUMBER = 5;
   private com.google.type.Money yearlyPrice_;
-
   /**
    *
    *
@@ -603,7 +583,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public boolean hasYearlyPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -619,7 +598,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   public com.google.type.Money getYearlyPrice() {
     return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
   }
-
   /**
    *
    *
@@ -871,7 +849,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1174,7 +1151,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object domainName_ = "";
-
     /**
      *
      *
@@ -1197,7 +1173,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1195,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1216,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1233,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1257,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     }
 
     private int availability_ = 0;
-
     /**
      *
      *
@@ -1303,7 +1274,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public int getAvailabilityValue() {
       return availability_;
     }
-
     /**
      *
      *
@@ -1324,7 +1294,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1315,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.domains.v1.RegisterParameters.Availability.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1371,7 +1339,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1367,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1417,7 +1383,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.cloud.domains.v1.ContactPrivacy>(
           supportedPrivacy_, supportedPrivacy_converter_);
     }
-
     /**
      *
      *
@@ -1432,7 +1397,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public int getSupportedPrivacyCount() {
       return supportedPrivacy_.size();
     }
-
     /**
      *
      *
@@ -1448,7 +1412,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.domains.v1.ContactPrivacy getSupportedPrivacy(int index) {
       return supportedPrivacy_converter_.convert(supportedPrivacy_.get(index));
     }
-
     /**
      *
      *
@@ -1472,7 +1435,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1494,7 +1456,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1477,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1494,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1508,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getSupportedPrivacyValueList() {
       return java.util.Collections.unmodifiableList(supportedPrivacy_);
     }
-
     /**
      *
      *
@@ -1565,7 +1523,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public int getSupportedPrivacyValue(int index) {
       return supportedPrivacy_.get(index);
     }
-
     /**
      *
      *
@@ -1585,7 +1542,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1560,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1589,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000008;
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1605,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.cloud.domains.v1.DomainNotice>(
           domainNotices_, domainNotices_converter_);
     }
-
     /**
      *
      *
@@ -1666,7 +1619,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public int getDomainNoticesCount() {
       return domainNotices_.size();
     }
-
     /**
      *
      *
@@ -1682,7 +1634,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.domains.v1.DomainNotice getDomainNotices(int index) {
       return domainNotices_converter_.convert(domainNotices_.get(index));
     }
-
     /**
      *
      *
@@ -1705,7 +1656,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1677,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1698,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1767,7 +1715,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1782,7 +1729,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getDomainNoticesValueList() {
       return java.util.Collections.unmodifiableList(domainNotices_);
     }
-
     /**
      *
      *
@@ -1798,7 +1744,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public int getDomainNoticesValue(int index) {
       return domainNotices_.get(index);
     }
-
     /**
      *
      *
@@ -1818,7 +1763,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1837,7 +1781,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1806,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         yearlyPriceBuilder_;
-
     /**
      *
      *
@@ -1878,7 +1820,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public boolean hasYearlyPrice() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1897,7 +1838,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         return yearlyPriceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1920,7 +1860,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1940,7 +1879,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1906,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1988,7 +1925,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1939,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getYearlyPriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2020,7 +1955,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
       }
     }
-
     /**
      *
      *

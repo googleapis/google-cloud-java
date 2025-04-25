@@ -34,7 +34,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest)
     PatchPublicAdvertisedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchPublicAdvertisedPrefixeRequest.newBuilder() to construct.
   private PatchPublicAdvertisedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicAdvertisedPrefix_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
 
   public static final int PUBLIC_ADVERTISED_PREFIX_RESOURCE_FIELD_NUMBER = 233614223;
   private com.google.cloud.compute.v1.PublicAdvertisedPrefix publicAdvertisedPrefixResource_;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
   public boolean hasPublicAdvertisedPrefixResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         ? com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDefaultInstance()
         : publicAdvertisedPrefixResource_;
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -514,7 +503,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -768,7 +756,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -842,7 +827,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +846,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +872,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     }
 
     private java.lang.Object publicAdvertisedPrefix_ = "";
-
     /**
      *
      *
@@ -913,7 +895,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -937,7 +918,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -960,7 +940,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +958,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
             com.google.cloud.compute.v1.PublicAdvertisedPrefix.Builder,
             com.google.cloud.compute.v1.PublicAdvertisedPrefixOrBuilder>
         publicAdvertisedPrefixResourceBuilder_;
-
     /**
      *
      *
@@ -1027,7 +1004,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     public boolean hasPublicAdvertisedPrefixResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1050,7 +1026,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return publicAdvertisedPrefixResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1104,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1125,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return getPublicAdvertisedPrefixResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1193,7 +1163,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
             : publicAdvertisedPrefixResource_;
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1192,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1238,7 +1206,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1261,7 +1228,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1250,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1306,7 +1271,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1288,6 @@ public final class PatchPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

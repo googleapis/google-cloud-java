@@ -36,7 +36,6 @@ public interface GamLiveConfigOrBuilder
    * @return The networkCode.
    */
   java.lang.String getNetworkCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GamLiveConfigOrBuilder
    * @return The assetKey.
    */
   java.lang.String getAssetKey();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GamLiveConfigOrBuilder
    * @return The customAssetKey.
    */
   java.lang.String getCustomAssetKey();
-
   /**
    *
    *

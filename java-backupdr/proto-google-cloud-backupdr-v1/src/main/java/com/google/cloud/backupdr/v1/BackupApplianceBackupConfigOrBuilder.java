@@ -36,7 +36,6 @@ public interface BackupApplianceBackupConfigOrBuilder
    * @return The backupApplianceName.
    */
   java.lang.String getBackupApplianceName();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface BackupApplianceBackupConfigOrBuilder
    * @return The applicationName.
    */
   java.lang.String getApplicationName();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface BackupApplianceBackupConfigOrBuilder
    * @return The hostName.
    */
   java.lang.String getHostName();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface BackupApplianceBackupConfigOrBuilder
    * @return The sltName.
    */
   java.lang.String getSltName();
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public interface BackupApplianceBackupConfigOrBuilder
    * @return The slpName.
    */
   java.lang.String getSlpName();
-
   /**
    *
    *

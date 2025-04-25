@@ -33,7 +33,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.CropHintsParams)
     CropHintsParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CropHintsParams.newBuilder() to construct.
   private CropHintsParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList aspectRatios_ = emptyFloatList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
   public java.util.List<java.lang.Float> getAspectRatiosList() {
     return aspectRatios_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
   public int getAspectRatiosCount() {
     return aspectRatios_.size();
   }
-
   /**
    *
    *
@@ -306,7 +302,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -525,7 +520,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -546,7 +540,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       aspectRatios_.makeImmutable();
       return aspectRatios_;
     }
-
     /**
      *
      *
@@ -566,7 +559,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     public int getAspectRatiosCount() {
       return aspectRatios_.size();
     }
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     public float getAspectRatios(int index) {
       return aspectRatios_.getFloat(index);
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

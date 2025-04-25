@@ -43,7 +43,6 @@ public interface SearchRequestOrBuilder
    * @return The servingConfig.
    */
   java.lang.String getServingConfig();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface SearchRequestOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface SearchRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the imageQuery field is set.
    */
   boolean hasImageQuery();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface SearchRequestOrBuilder
    * @return The imageQuery.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery getImageQuery();
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public interface SearchRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -276,7 +270,6 @@ public interface SearchRequestOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec>
       getDataStoreSpecsList();
-
   /**
    *
    *
@@ -295,7 +288,6 @@ public interface SearchRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec getDataStoreSpecs(int index);
-
   /**
    *
    *
@@ -314,7 +306,6 @@ public interface SearchRequestOrBuilder
    * </code>
    */
   int getDataStoreSpecsCount();
-
   /**
    *
    *
@@ -334,7 +325,6 @@ public interface SearchRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpecOrBuilder>
       getDataStoreSpecsOrBuilderList();
-
   /**
    *
    *
@@ -381,7 +371,6 @@ public interface SearchRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -432,7 +421,6 @@ public interface SearchRequestOrBuilder
    * @return The canonicalFilter.
    */
   java.lang.String getCanonicalFilter();
-
   /**
    *
    *
@@ -480,7 +468,6 @@ public interface SearchRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -520,7 +507,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
-
   /**
    *
    *
@@ -536,7 +522,6 @@ public interface SearchRequestOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.discoveryengine.v1.UserInfo getUserInfo();
-
   /**
    *
    *
@@ -567,7 +552,6 @@ public interface SearchRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -598,7 +582,6 @@ public interface SearchRequestOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec> getFacetSpecsList();
-
   /**
    *
    *
@@ -612,7 +595,6 @@ public interface SearchRequestOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec getFacetSpecs(int index);
-
   /**
    *
    *
@@ -626,7 +608,6 @@ public interface SearchRequestOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
    */
   int getFacetSpecsCount();
-
   /**
    *
    *
@@ -641,7 +622,6 @@ public interface SearchRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>
       getFacetSpecsOrBuilderList();
-
   /**
    *
    *
@@ -671,7 +651,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the boostSpec field is set.
    */
   boolean hasBoostSpec();
-
   /**
    *
    *
@@ -686,7 +665,6 @@ public interface SearchRequestOrBuilder
    * @return The boostSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getBoostSpec();
-
   /**
    *
    *
@@ -724,7 +702,6 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
    */
   int getParamsCount();
-
   /**
    *
    *
@@ -749,11 +726,9 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
    */
   boolean containsParams(java.lang.String key);
-
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParams();
-
   /**
    *
    *
@@ -778,7 +753,6 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap();
-
   /**
    *
    *
@@ -807,7 +781,6 @@ public interface SearchRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *
@@ -848,7 +821,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the queryExpansionSpec field is set.
    */
   boolean hasQueryExpansionSpec();
-
   /**
    *
    *
@@ -864,7 +836,6 @@ public interface SearchRequestOrBuilder
    * @return The queryExpansionSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec getQueryExpansionSpec();
-
   /**
    *
    *
@@ -895,7 +866,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the spellCorrectionSpec field is set.
    */
   boolean hasSpellCorrectionSpec();
-
   /**
    *
    *
@@ -911,7 +881,6 @@ public interface SearchRequestOrBuilder
    * @return The spellCorrectionSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec getSpellCorrectionSpec();
-
   /**
    *
    *
@@ -952,7 +921,6 @@ public interface SearchRequestOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
-
   /**
    *
    *
@@ -993,7 +961,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the contentSearchSpec field is set.
    */
   boolean hasContentSearchSpec();
-
   /**
    *
    *
@@ -1008,7 +975,6 @@ public interface SearchRequestOrBuilder
    * @return The contentSearchSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec getContentSearchSpec();
-
   /**
    *
    *
@@ -1063,7 +1029,6 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   int getUserLabelsCount();
-
   /**
    *
    *
@@ -1090,11 +1055,9 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   boolean containsUserLabels(java.lang.String key);
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
-
   /**
    *
    *
@@ -1121,7 +1084,6 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
-
   /**
    *
    *
@@ -1152,7 +1114,6 @@ public interface SearchRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -1196,7 +1157,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the searchAsYouTypeSpec field is set.
    */
   boolean hasSearchAsYouTypeSpec();
-
   /**
    *
    *
@@ -1213,7 +1173,6 @@ public interface SearchRequestOrBuilder
    * @return The searchAsYouTypeSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec getSearchAsYouTypeSpec();
-
   /**
    *
    *
@@ -1245,7 +1204,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the displaySpec field is set.
    */
   boolean hasDisplaySpec();
-
   /**
    *
    *
@@ -1261,7 +1219,6 @@ public interface SearchRequestOrBuilder
    * @return The displaySpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.DisplaySpec getDisplaySpec();
-
   /**
    *
    *
@@ -1313,7 +1270,6 @@ public interface SearchRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
-
   /**
    *
    *
@@ -1366,7 +1322,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the sessionSpec field is set.
    */
   boolean hasSessionSpec();
-
   /**
    *
    *
@@ -1381,7 +1336,6 @@ public interface SearchRequestOrBuilder
    * @return The sessionSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec getSessionSpec();
-
   /**
    *
    *
@@ -1415,7 +1369,6 @@ public interface SearchRequestOrBuilder
    * @return The enum numeric value on the wire for relevanceThreshold.
    */
   int getRelevanceThresholdValue();
-
   /**
    *
    *
@@ -1451,7 +1404,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the relevanceScoreSpec field is set.
    */
   boolean hasRelevanceScoreSpec();
-
   /**
    *
    *
@@ -1466,7 +1418,6 @@ public interface SearchRequestOrBuilder
    * @return The relevanceScoreSpec.
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec getRelevanceScoreSpec();
-
   /**
    *
    *

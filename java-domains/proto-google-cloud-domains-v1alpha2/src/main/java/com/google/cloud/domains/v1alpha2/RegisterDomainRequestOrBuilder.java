@@ -39,7 +39,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return Whether the registration field is set.
    */
   boolean hasRegistration();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The registration.
    */
   com.google.cloud.domains.v1alpha2.Registration getRegistration();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return A list containing the domainNotices.
    */
   java.util.List<com.google.cloud.domains.v1alpha2.DomainNotice> getDomainNoticesList();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The count of domainNotices.
    */
   int getDomainNoticesCount();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The domainNotices at the given index.
    */
   com.google.cloud.domains.v1alpha2.DomainNotice getDomainNotices(int index);
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for domainNotices.
    */
   java.util.List<java.lang.Integer> getDomainNoticesValueList();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return A list containing the contactNotices.
    */
   java.util.List<com.google.cloud.domains.v1alpha2.ContactNotice> getContactNoticesList();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The count of contactNotices.
    */
   int getContactNoticesCount();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The contactNotices at the given index.
    */
   com.google.cloud.domains.v1alpha2.ContactNotice getContactNotices(int index);
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for contactNotices.
    */
   java.util.List<java.lang.Integer> getContactNoticesValueList();
-
   /**
    *
    *
@@ -262,7 +251,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return Whether the yearlyPrice field is set.
    */
   boolean hasYearlyPrice();
-
   /**
    *
    *
@@ -277,7 +265,6 @@ public interface RegisterDomainRequestOrBuilder
    * @return The yearlyPrice.
    */
   com.google.type.Money getYearlyPrice();
-
   /**
    *
    *

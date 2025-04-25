@@ -36,7 +36,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The sourceId.
    */
   java.lang.String getSourceId();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The sourceDescription.
    */
   java.lang.String getSourceDescription();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The enum numeric value on the wire for powerState.
    */
   int getPowerStateValue();
-
   /**
    *
    *
@@ -222,7 +217,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The osDescription.
    */
   java.lang.String getOsDescription();
-
   /**
    *
    *
@@ -248,7 +242,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The enum numeric value on the wire for bootOption.
    */
   int getBootOptionValue();
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The instanceType.
    */
   java.lang.String getInstanceType();
-
   /**
    *
    *
@@ -300,7 +292,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The vpcId.
    */
   java.lang.String getVpcId();
-
   /**
    *
    *
@@ -324,7 +315,6 @@ public interface AwsVmDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.AwsSecurityGroup security_groups = 14;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.AwsSecurityGroup> getSecurityGroupsList();
-
   /**
    *
    *
@@ -335,7 +325,6 @@ public interface AwsVmDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.AwsSecurityGroup security_groups = 14;</code>
    */
   com.google.cloud.vmmigration.v1.AwsSecurityGroup getSecurityGroups(int index);
-
   /**
    *
    *
@@ -346,7 +335,6 @@ public interface AwsVmDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.AwsSecurityGroup security_groups = 14;</code>
    */
   int getSecurityGroupsCount();
-
   /**
    *
    *
@@ -358,7 +346,6 @@ public interface AwsVmDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.AwsSecurityGroupOrBuilder>
       getSecurityGroupsOrBuilderList();
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public interface AwsVmDetailsOrBuilder
    * <code>map&lt;string, string&gt; tags = 15;</code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -391,11 +377,9 @@ public interface AwsVmDetailsOrBuilder
    * <code>map&lt;string, string&gt; tags = 15;</code>
    */
   boolean containsTags(java.lang.String key);
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
-
   /**
    *
    *
@@ -406,7 +390,6 @@ public interface AwsVmDetailsOrBuilder
    * <code>map&lt;string, string&gt; tags = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
-
   /**
    *
    *
@@ -421,7 +404,6 @@ public interface AwsVmDetailsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -445,7 +427,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -472,7 +453,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The enum numeric value on the wire for virtualizationType.
    */
   int getVirtualizationTypeValue();
-
   /**
    *
    *
@@ -499,7 +479,6 @@ public interface AwsVmDetailsOrBuilder
    * @return The enum numeric value on the wire for architecture.
    */
   int getArchitectureValue();
-
   /**
    *
    *

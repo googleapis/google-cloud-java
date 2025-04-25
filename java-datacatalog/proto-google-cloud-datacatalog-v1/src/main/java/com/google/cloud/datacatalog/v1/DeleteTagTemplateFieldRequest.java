@@ -34,7 +34,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest)
     DeleteTagTemplateFieldRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteTagTemplateFieldRequest.newBuilder() to construct.
   private DeleteTagTemplateFieldRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
 
   public static final int FORCE_FIELD_NUMBER = 2;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -312,7 +308,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -514,7 +509,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -539,7 +533,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -564,7 +557,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

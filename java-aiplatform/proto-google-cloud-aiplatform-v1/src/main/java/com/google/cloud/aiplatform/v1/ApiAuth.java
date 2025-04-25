@@ -33,7 +33,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ApiAuth)
     ApiAuthOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApiAuth.newBuilder() to construct.
   private ApiAuth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
      * @return The apiKeySecretVersion.
      */
     java.lang.String getApiKeySecretVersion();
-
     /**
      *
      *
@@ -99,7 +97,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getApiKeySecretVersionBytes();
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig)
       ApiKeyConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ApiKeyConfig.newBuilder() to construct.
     private ApiKeyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -149,7 +145,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object apiKeySecretVersion_ = "";
-
     /**
      *
      *
@@ -176,7 +171,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -365,7 +359,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -553,7 +546,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object apiKeySecretVersion_ = "";
-
       /**
        *
        *
@@ -579,7 +571,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -605,7 +596,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -630,7 +620,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -651,7 +640,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -758,7 +746,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     private AuthConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -790,7 +777,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_KEY_CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -806,7 +792,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApiKeyConfig() {
     return authConfigCase_ == 1;
   }
-
   /**
    *
    *
@@ -825,7 +810,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1016,7 +1000,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1234,7 +1217,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.Builder,
             com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfigOrBuilder>
         apiKeyConfigBuilder_;
-
     /**
      *
      *
@@ -1250,7 +1232,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApiKeyConfig() {
       return authConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -1276,7 +1257,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1299,7 +1279,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1299,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1332,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1357,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1369,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.Builder getApiKeyConfigBuilder() {
       return getApiKeyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1414,7 +1389,6 @@ public final class ApiAuth extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

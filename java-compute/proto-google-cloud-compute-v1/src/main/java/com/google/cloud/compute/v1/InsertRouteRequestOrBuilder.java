@@ -38,7 +38,6 @@ public interface InsertRouteRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertRouteRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InsertRouteRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface InsertRouteRequestOrBuilder
    * @return Whether the routeResource field is set.
    */
   boolean hasRouteResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertRouteRequestOrBuilder
    * @return The routeResource.
    */
   com.google.cloud.compute.v1.Route getRouteResource();
-
   /**
    *
    *

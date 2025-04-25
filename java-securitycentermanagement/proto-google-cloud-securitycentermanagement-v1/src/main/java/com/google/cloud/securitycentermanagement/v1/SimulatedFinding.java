@@ -34,7 +34,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.SimulatedFinding)
     SimulatedFindingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SimulatedFinding.newBuilder() to construct.
   private SimulatedFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,7 +136,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -355,7 +352,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -374,7 +370,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>CRITICAL = 1;</code>
      */
     public static final int CRITICAL_VALUE = 1;
-
     /**
      *
      *
@@ -395,7 +390,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>HIGH = 2;</code>
      */
     public static final int HIGH_VALUE = 2;
-
     /**
      *
      *
@@ -416,7 +410,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>MEDIUM = 3;</code>
      */
     public static final int MEDIUM_VALUE = 3;
-
     /**
      *
      *
@@ -633,7 +626,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>FINDING_CLASS_UNSPECIFIED = 0;</code>
      */
     public static final int FINDING_CLASS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -644,7 +636,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>THREAT = 1;</code>
      */
     public static final int THREAT_VALUE = 1;
-
     /**
      *
      *
@@ -656,7 +647,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>VULNERABILITY = 2;</code>
      */
     public static final int VULNERABILITY_VALUE = 2;
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>MISCONFIGURATION = 3;</code>
      */
     public static final int MISCONFIGURATION_VALUE = 3;
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>OBSERVATION = 4;</code>
      */
     public static final int OBSERVATION_VALUE = 4;
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>SCC_ERROR = 5;</code>
      */
     public static final int SCC_ERROR_VALUE = 5;
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>POSTURE_VIOLATION = 6;</code>
      */
     public static final int POSTURE_VIOLATION_VALUE = 6;
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -845,7 +830,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -879,7 +863,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -906,7 +889,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -938,7 +920,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceName_ = "";
-
   /**
    *
    *
@@ -966,7 +947,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -999,7 +979,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object category_ = "";
-
   /**
    *
    *
@@ -1025,7 +1004,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1054,7 +1032,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1072,7 +1049,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1126,7 +1102,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public int getSourcePropertiesCount() {
     return internalGetSourceProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -1146,14 +1121,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
     return internalGetSourceProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getSourcePropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties() {
     return getSourcePropertiesMap();
   }
-
   /**
    *
    *
@@ -1170,7 +1143,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap() {
     return internalGetSourceProperties().getMap();
   }
-
   /**
    *
    *
@@ -1195,7 +1167,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         internalGetSourceProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1223,7 +1194,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   public static final int EVENT_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp eventTime_;
-
   /**
    *
    *
@@ -1248,7 +1218,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1273,7 +1242,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
-
   /**
    *
    *
@@ -1299,7 +1267,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   public static final int SEVERITY_FIELD_NUMBER = 8;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -1316,7 +1283,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -1340,7 +1306,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
 
   public static final int FINDING_CLASS_FIELD_NUMBER = 9;
   private int findingClass_ = 0;
-
   /**
    *
    *
@@ -1358,7 +1323,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
   public int getFindingClassValue() {
     return findingClass_;
   }
-
   /**
    *
    *
@@ -1644,7 +1608,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1988,7 +1951,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2016,7 +1978,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2044,7 +2005,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2071,7 +2031,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2094,7 +2053,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2124,7 +2082,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2150,7 +2107,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2176,7 +2132,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2201,7 +2156,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2222,7 +2176,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2250,7 +2203,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object resourceName_ = "";
-
     /**
      *
      *
@@ -2277,7 +2229,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2304,7 +2255,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2330,7 +2280,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2352,7 +2301,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2381,7 +2329,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object category_ = "";
-
     /**
      *
      *
@@ -2406,7 +2353,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2431,7 +2377,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2455,7 +2400,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2475,7 +2419,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2502,7 +2445,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2520,7 +2462,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2541,7 +2482,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2563,7 +2503,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.securitycentermanagement.v1.SimulatedFinding.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2588,7 +2527,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2625,8 +2563,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return SourcePropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SourcePropertiesConverter sourcePropertiesConverter =
         new SourcePropertiesConverter();
@@ -2667,7 +2604,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     public int getSourcePropertiesCount() {
       return internalGetSourceProperties().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -2687,14 +2623,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       }
       return internalGetSourceProperties().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getSourcePropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties() {
       return getSourcePropertiesMap();
     }
-
     /**
      *
      *
@@ -2711,7 +2645,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap() {
       return internalGetSourceProperties().getImmutableMap();
     }
-
     /**
      *
      *
@@ -2736,7 +2669,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           internalGetMutableSourceProperties().ensureBuilderMap();
       return map.containsKey(key) ? sourcePropertiesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -2767,7 +2699,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       internalGetMutableSourceProperties().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2787,14 +2718,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       internalGetMutableSourceProperties().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableSourceProperties() {
       bitField0_ |= 0x00000020;
       return internalGetMutableSourceProperties().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2818,7 +2747,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -2842,7 +2770,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -2877,7 +2804,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
-
     /**
      *
      *
@@ -2901,7 +2827,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2929,7 +2854,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return eventTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2961,7 +2885,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2990,7 +2913,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3027,7 +2949,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3056,7 +2977,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3080,7 +3000,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3106,7 +3025,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
-
     /**
      *
      *
@@ -3143,7 +3061,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -3161,7 +3078,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -3182,7 +3098,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3205,7 +3120,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.securitycentermanagement.v1.SimulatedFinding.Severity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3230,7 +3144,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3252,7 +3165,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     }
 
     private int findingClass_ = 0;
-
     /**
      *
      *
@@ -3270,7 +3182,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
     public int getFindingClassValue() {
       return findingClass_;
     }
-
     /**
      *
      *
@@ -3291,7 +3202,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3315,7 +3225,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.securitycentermanagement.v1.SimulatedFinding.FindingClass.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3340,7 +3249,6 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

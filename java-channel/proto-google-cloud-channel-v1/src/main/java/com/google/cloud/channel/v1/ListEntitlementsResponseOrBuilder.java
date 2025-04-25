@@ -34,7 +34,6 @@ public interface ListEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Entitlement> getEntitlementsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
    */
   com.google.cloud.channel.v1.Entitlement getEntitlements(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
    */
   int getEntitlementsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEntitlementsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.EntitlementOrBuilder>
       getEntitlementsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListEntitlementsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

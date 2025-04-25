@@ -38,7 +38,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return Whether the allInstancesConfig field is set.
    */
   boolean hasAllInstancesConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return The allInstancesConfig.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusAllInstancesConfig getAllInstancesConfig();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return Whether the autoscaler field is set.
    */
   boolean hasAutoscaler();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return The autoscaler.
    */
   java.lang.String getAutoscaler();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return Whether the isStable field is set.
    */
   boolean hasIsStable();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return Whether the stateful field is set.
    */
   boolean hasStateful();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return The stateful.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful getStateful();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return Whether the versionTarget field is set.
    */
   boolean hasVersionTarget();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface InstanceGroupManagerStatusOrBuilder
    * @return The versionTarget.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget getVersionTarget();
-
   /**
    *
    *

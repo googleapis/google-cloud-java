@@ -36,7 +36,6 @@ public interface ObjectDetectionMetricsOrBuilder
    * @return Whether the prCurve field is set.
    */
   boolean hasPrCurve();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ObjectDetectionMetricsOrBuilder
    * @return The prCurve.
    */
   com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve();
-
   /**
    *
    *

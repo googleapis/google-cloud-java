@@ -72,7 +72,6 @@ public enum TripType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_TRIP_TYPE = 0;</code>
    */
   public static final int UNKNOWN_TRIP_TYPE_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum TripType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHARED = 1;</code>
    */
   public static final int SHARED_VALUE = 1;
-
   /**
    *
    *

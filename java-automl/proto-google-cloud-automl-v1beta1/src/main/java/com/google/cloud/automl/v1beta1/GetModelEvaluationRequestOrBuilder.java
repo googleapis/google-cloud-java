@@ -38,7 +38,6 @@ public interface GetModelEvaluationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

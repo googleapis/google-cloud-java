@@ -39,7 +39,6 @@ public interface DiscoveryOtherCloudGenerationCadenceOrBuilder
    * @return The enum numeric value on the wire for refreshFrequency.
    */
   int getRefreshFrequencyValue();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface DiscoveryOtherCloudGenerationCadenceOrBuilder
    * @return Whether the inspectTemplateModifiedCadence field is set.
    */
   boolean hasInspectTemplateModifiedCadence();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface DiscoveryOtherCloudGenerationCadenceOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
       getInspectTemplateModifiedCadence();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.LinkProposalStatusDetails)
     LinkProposalStatusDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LinkProposalStatusDetails.newBuilder() to construct.
   private LinkProposalStatusDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
 
   public static final int LINK_PROPOSAL_INITIATING_PRODUCT_FIELD_NUMBER = 1;
   private int linkProposalInitiatingProduct_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
   public int getLinkProposalInitiatingProductValue() {
     return linkProposalInitiatingProduct_;
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestorEmail_ = "";
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
 
   public static final int LINK_PROPOSAL_STATE_FIELD_NUMBER = 3;
   private int linkProposalState_ = 0;
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
   public int getLinkProposalStateValue() {
     return linkProposalState_;
   }
-
   /**
    *
    *
@@ -396,7 +389,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -610,7 +602,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int linkProposalInitiatingProduct_ = 0;
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     public int getLinkProposalInitiatingProductValue() {
       return linkProposalInitiatingProduct_;
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
           ? com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestorEmail_ = "";
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     }
 
     private int linkProposalState_ = 0;
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     public int getLinkProposalStateValue() {
       return linkProposalState_;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
           ? com.google.analytics.admin.v1alpha.LinkProposalState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

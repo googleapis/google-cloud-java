@@ -33,7 +33,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FunctionCallingConfig)
     FunctionCallingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FunctionCallingConfig.newBuilder() to construct.
   private FunctionCallingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -145,7 +143,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      * <code>AUTO = 1;</code>
      */
     public static final int AUTO_VALUE = 1;
-
     /**
      *
      *
@@ -159,7 +156,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      * <code>ANY = 2;</code>
      */
     public static final int ANY_VALUE = 2;
-
     /**
      *
      *
@@ -261,7 +257,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
-
   /**
    *
    *
@@ -279,7 +274,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
   public int getModeValue() {
     return mode_;
   }
-
   /**
    *
    *
@@ -307,7 +301,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedFunctionNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -325,7 +318,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getAllowedFunctionNamesList() {
     return allowedFunctionNames_;
   }
-
   /**
    *
    *
@@ -343,7 +335,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
   public int getAllowedFunctionNamesCount() {
     return allowedFunctionNames_.size();
   }
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
   public java.lang.String getAllowedFunctionNames(int index) {
     return allowedFunctionNames_.get(index);
   }
-
   /**
    *
    *
@@ -560,7 +550,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -765,7 +754,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int mode_ = 0;
-
     /**
      *
      *
@@ -783,7 +771,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -804,7 +791,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +812,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.aiplatform.v1.FunctionCallingConfig.Mode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +864,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -899,7 +882,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       allowedFunctionNames_.makeImmutable();
       return allowedFunctionNames_;
     }
-
     /**
      *
      *
@@ -917,7 +899,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     public int getAllowedFunctionNamesCount() {
       return allowedFunctionNames_.size();
     }
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     public java.lang.String getAllowedFunctionNames(int index) {
       return allowedFunctionNames_.get(index);
     }
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getAllowedFunctionNamesBytes(int index) {
       return allowedFunctionNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -982,7 +961,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +986,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1008,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1029,6 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

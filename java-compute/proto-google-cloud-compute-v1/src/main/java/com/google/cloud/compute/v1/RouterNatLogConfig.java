@@ -33,7 +33,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterNatLogConfig)
     RouterNatLogConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterNatLogConfig.newBuilder() to construct.
   private RouterNatLogConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_FILTER = 0;</code>
      */
     public static final int UNDEFINED_FILTER_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>ALL = 64897;</code>
      */
     public static final int ALL_VALUE = 64897;
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>ERRORS_ONLY = 307484672;</code>
      */
     public static final int ERRORS_ONLY_VALUE = 307484672;
-
     /**
      *
      *
@@ -249,7 +245,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_ = false;
-
   /**
    *
    *
@@ -265,7 +260,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +280,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -303,7 +296,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -328,7 +320,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -532,7 +523,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -733,7 +723,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean enable_;
-
     /**
      *
      *
@@ -749,7 +738,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public boolean getEnable() {
       return enable_;
     }
-
     /**
      *
      *
@@ -785,7 +772,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -821,7 +806,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -845,7 +829,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

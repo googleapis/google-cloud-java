@@ -38,7 +38,6 @@ public interface ReplaceDeploymentRequestOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ReplaceDeploymentRequestOrBuilder
    * @return The deployment.
    */
   com.google.cloud.gsuiteaddons.v1.Deployment getDeployment();
-
   /**
    *
    *

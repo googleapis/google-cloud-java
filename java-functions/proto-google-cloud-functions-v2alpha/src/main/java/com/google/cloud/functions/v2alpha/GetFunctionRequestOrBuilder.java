@@ -38,7 +38,6 @@ public interface GetFunctionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface GetFunctionRequestOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *

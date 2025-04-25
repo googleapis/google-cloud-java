@@ -41,7 +41,6 @@ public interface UpdateBacktestResultRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateBacktestResultRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateBacktestResultRequestOrBuilder
    * @return Whether the backtestResult field is set.
    */
   boolean hasBacktestResult();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateBacktestResultRequestOrBuilder
    * @return The backtestResult.
    */
   com.google.cloud.financialservices.v1.BacktestResult getBacktestResult();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface UpdateBacktestResultRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

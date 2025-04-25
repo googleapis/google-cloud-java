@@ -39,7 +39,6 @@ public interface ImportTestCasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface ImportTestCasesRequestOrBuilder
    * @return Whether the gcsUri field is set.
    */
   boolean hasGcsUri();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ImportTestCasesRequestOrBuilder
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface ImportTestCasesRequestOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *

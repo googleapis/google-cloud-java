@@ -38,7 +38,6 @@ public interface AddDnsPeeringRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AddDnsPeeringRequestOrBuilder
    * @return Whether the dnsPeering field is set.
    */
   boolean hasDnsPeering();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AddDnsPeeringRequestOrBuilder
    * @return The dnsPeering.
    */
   com.google.cloud.datafusion.v1beta1.DnsPeering getDnsPeering();
-
   /**
    *
    *

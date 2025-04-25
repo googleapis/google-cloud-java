@@ -34,7 +34,6 @@ public final class ValidateIapAttributeExpressionRequest
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ValidateIapAttributeExpressionRequest)
     ValidateIapAttributeExpressionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ValidateIapAttributeExpressionRequest.newBuilder() to construct.
   private ValidateIapAttributeExpressionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ValidateIapAttributeExpressionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ValidateIapAttributeExpressionRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ValidateIapAttributeExpressionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expression_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class ValidateIapAttributeExpressionRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +341,6 @@ public final class ValidateIapAttributeExpressionRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -549,7 +543,6 @@ public final class ValidateIapAttributeExpressionRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class ValidateIapAttributeExpressionRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class ValidateIapAttributeExpressionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class ValidateIapAttributeExpressionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class ValidateIapAttributeExpressionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class ValidateIapAttributeExpressionRequest
     }
 
     private java.lang.Object expression_ = "";
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class ValidateIapAttributeExpressionRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class ValidateIapAttributeExpressionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class ValidateIapAttributeExpressionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class ValidateIapAttributeExpressionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

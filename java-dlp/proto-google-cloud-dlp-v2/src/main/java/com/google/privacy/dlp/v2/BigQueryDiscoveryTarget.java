@@ -33,7 +33,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryDiscoveryTarget)
     BigQueryDiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryDiscoveryTarget.newBuilder() to construct.
   private BigQueryDiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     private FrequencyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
 
   public static final int FILTER_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DiscoveryBigQueryFilter filter_;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.getDefaultInstance()
         : filter_;
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
 
   public static final int CONDITIONS_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryBigQueryConditions conditions_;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasConditions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.getDefaultInstance()
         : conditions_;
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
   }
 
   public static final int CADENCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasCadence() {
     return frequencyCase_ == 3;
   }
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.DiscoveryGenerationCadence.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
   }
 
   public static final int DISABLED_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasDisabled() {
     return frequencyCase_ == 4;
   }
-
   /**
    *
    *
@@ -327,7 +314,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -562,7 +548,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -847,7 +832,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.Builder,
             com.google.privacy.dlp.v2.DiscoveryBigQueryFilterOrBuilder>
         filterBuilder_;
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -889,7 +872,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         return filterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +920,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +950,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1033,7 +1010,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
             : filter_;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1045,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.Builder,
             com.google.privacy.dlp.v2.DiscoveryBigQueryConditionsOrBuilder>
         conditionsBuilder_;
-
     /**
      *
      *
@@ -1085,7 +1060,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasConditions() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1107,7 +1081,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         return conditionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1104,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1125,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1189,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return getConditionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1240,7 +1208,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
             : conditions_;
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1240,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryGenerationCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryGenerationCadenceOrBuilder>
         cadenceBuilder_;
-
     /**
      *
      *
@@ -1291,7 +1257,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasCadence() {
       return frequencyCase_ == 3;
     }
-
     /**
      *
      *
@@ -1319,7 +1284,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DiscoveryGenerationCadence.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1344,7 +1308,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       frequencyCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1330,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       frequencyCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1403,7 +1365,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       frequencyCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1392,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1406,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.DiscoveryGenerationCadence.Builder getCadenceBuilder() {
       return getCadenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1469,7 +1428,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DiscoveryGenerationCadence.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1510,7 +1468,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.Disabled.Builder,
             com.google.privacy.dlp.v2.DisabledOrBuilder>
         disabledBuilder_;
-
     /**
      *
      *
@@ -1526,7 +1483,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasDisabled() {
       return frequencyCase_ == 4;
     }
-
     /**
      *
      *
@@ -1552,7 +1508,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1575,7 +1530,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       frequencyCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1549,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       frequencyCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1581,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       frequencyCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1654,7 +1606,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1618,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.Disabled.Builder getDisabledBuilder() {
       return getDisabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1688,7 +1638,6 @@ public final class BigQueryDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
-
     /**
      *
      *

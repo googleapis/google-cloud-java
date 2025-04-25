@@ -36,7 +36,6 @@ public interface AwsNodePoolErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListRulesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Rule rules = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.Rule> getRulesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRulesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Rule rules = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.Rule getRules(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRulesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Rule rules = 1;</code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.RuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

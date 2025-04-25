@@ -43,7 +43,6 @@ public interface ListChannelPartnerRepricingConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface ListChannelPartnerRepricingConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -135,7 +133,6 @@ public interface ListChannelPartnerRepricingConfigsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

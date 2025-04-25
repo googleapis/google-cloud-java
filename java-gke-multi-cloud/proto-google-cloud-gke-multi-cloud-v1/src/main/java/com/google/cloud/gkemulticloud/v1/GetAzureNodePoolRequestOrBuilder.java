@@ -46,7 +46,6 @@ public interface GetAzureNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

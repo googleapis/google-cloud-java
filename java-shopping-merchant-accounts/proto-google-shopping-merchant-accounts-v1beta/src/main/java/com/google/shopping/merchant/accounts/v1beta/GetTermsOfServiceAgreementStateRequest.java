@@ -35,7 +35,6 @@ public final class GetTermsOfServiceAgreementStateRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.GetTermsOfServiceAgreementStateRequest)
     GetTermsOfServiceAgreementStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetTermsOfServiceAgreementStateRequest.newBuilder() to construct.
   private GetTermsOfServiceAgreementStateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class GetTermsOfServiceAgreementStateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class GetTermsOfServiceAgreementStateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +296,6 @@ public final class GetTermsOfServiceAgreementStateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -502,7 +498,6 @@ public final class GetTermsOfServiceAgreementStateRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -529,7 +524,6 @@ public final class GetTermsOfServiceAgreementStateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -556,7 +550,6 @@ public final class GetTermsOfServiceAgreementStateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -582,7 +575,6 @@ public final class GetTermsOfServiceAgreementStateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +596,6 @@ public final class GetTermsOfServiceAgreementStateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

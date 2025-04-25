@@ -33,7 +33,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ApproveRolloutRequest)
     ApproveRolloutRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApproveRolloutRequest.newBuilder() to construct.
   private ApproveRolloutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
 
   public static final int APPROVED_FIELD_NUMBER = 2;
   private boolean approved_ = false;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
     return overrideDeployPolicy_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
   public int getOverrideDeployPolicyCount() {
     return overrideDeployPolicy_.size();
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
   public java.lang.String getOverrideDeployPolicy(int index) {
     return overrideDeployPolicy_.get(index);
   }
-
   /**
    *
    *
@@ -408,7 +400,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -628,7 +619,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean approved_;
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     public boolean getApproved() {
       return approved_;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       overrideDeployPolicy_.makeImmutable();
       return overrideDeployPolicy_;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     public int getOverrideDeployPolicyCount() {
       return overrideDeployPolicy_.size();
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getOverrideDeployPolicy(int index) {
       return overrideDeployPolicy_.get(index);
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
       return overrideDeployPolicy_.getByteString(index);
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +945,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +966,6 @@ public final class ApproveRolloutRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

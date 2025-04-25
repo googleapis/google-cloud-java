@@ -33,7 +33,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.apps.script.type.gmail.GmailAddOnManifest)
     GmailAddOnManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GmailAddOnManifest.newBuilder() to construct.
   private GmailAddOnManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int HOMEPAGE_TRIGGER_FIELD_NUMBER = 14;
   private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   public boolean hasHomepageTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
         : homepageTrigger_;
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.gmail.ContextualTrigger> contextualTriggers_;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       getContextualTriggersList() {
     return contextualTriggers_;
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       getContextualTriggersOrBuilderList() {
     return contextualTriggers_;
   }
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   public int getContextualTriggersCount() {
     return contextualTriggers_.size();
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   public com.google.apps.script.type.gmail.ContextualTrigger getContextualTriggers(int index) {
     return contextualTriggers_.get(index);
   }
-
   /**
    *
    *
@@ -220,7 +211,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.gmail.UniversalAction> universalActions_;
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       getUniversalActionsList() {
     return universalActions_;
   }
-
   /**
    *
    *
@@ -254,7 +243,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       getUniversalActionsOrBuilderList() {
     return universalActions_;
   }
-
   /**
    *
    *
@@ -270,7 +258,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   public int getUniversalActionsCount() {
     return universalActions_.size();
   }
-
   /**
    *
    *
@@ -286,7 +273,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   public com.google.apps.script.type.gmail.UniversalAction getUniversalActions(int index) {
     return universalActions_.get(index);
   }
-
   /**
    *
    *
@@ -306,7 +292,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
 
   public static final int COMPOSE_TRIGGER_FIELD_NUMBER = 12;
   private com.google.apps.script.type.gmail.ComposeTrigger composeTrigger_;
-
   /**
    *
    *
@@ -327,7 +312,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   public boolean hasComposeTrigger() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -350,7 +334,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         ? com.google.apps.script.type.gmail.ComposeTrigger.getDefaultInstance()
         : composeTrigger_;
   }
-
   /**
    *
    *
@@ -376,7 +359,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object authorizationCheckFunction_ = "";
-
   /**
    *
    *
@@ -404,7 +386,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -645,7 +626,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1006,7 +986,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             com.google.apps.script.type.HomepageExtensionPoint.Builder,
             com.google.apps.script.type.HomepageExtensionPointOrBuilder>
         homepageTriggerBuilder_;
-
     /**
      *
      *
@@ -1027,7 +1006,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     public boolean hasHomepageTrigger() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1054,7 +1032,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return homepageTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1060,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1086,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1120,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1145,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1165,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1218,7 +1190,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             : homepageTrigger_;
       }
     }
-
     /**
      *
      *
@@ -1287,7 +1258,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return contextualTriggersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1275,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return contextualTriggersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1323,7 +1292,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return contextualTriggersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1348,7 +1316,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1337,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1361,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1420,7 +1385,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1406,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1427,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1448,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1468,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1488,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1543,7 +1502,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         int index) {
       return getContextualTriggersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1562,7 +1520,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return contextualTriggersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1581,7 +1538,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(contextualTriggers_);
       }
     }
-
     /**
      *
      *
@@ -1597,7 +1553,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       return getContextualTriggersFieldBuilder()
           .addBuilder(com.google.apps.script.type.gmail.ContextualTrigger.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1614,7 +1569,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.apps.script.type.gmail.ContextualTrigger.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1687,7 +1641,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return universalActionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1706,7 +1659,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return universalActionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1725,7 +1677,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return universalActionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1751,7 +1702,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1774,7 +1724,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1748,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1825,7 +1773,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1848,7 +1795,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1817,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1839,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1916,7 +1860,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1938,7 +1881,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1954,7 +1896,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         int index) {
       return getUniversalActionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1974,7 +1915,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return universalActionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1994,7 +1934,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(universalActions_);
       }
     }
-
     /**
      *
      *
@@ -2010,7 +1949,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       return getUniversalActionsFieldBuilder()
           .addBuilder(com.google.apps.script.type.gmail.UniversalAction.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2028,7 +1966,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.apps.script.type.gmail.UniversalAction.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2071,7 +2008,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             com.google.apps.script.type.gmail.ComposeTrigger.Builder,
             com.google.apps.script.type.gmail.ComposeTriggerOrBuilder>
         composeTriggerBuilder_;
-
     /**
      *
      *
@@ -2091,7 +2027,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     public boolean hasComposeTrigger() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2117,7 +2052,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return composeTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2145,7 +2079,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2171,7 +2104,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2205,7 +2137,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2230,7 +2161,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2250,7 +2180,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getComposeTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2274,7 +2203,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             : composeTrigger_;
       }
     }
-
     /**
      *
      *
@@ -2307,7 +2235,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object authorizationCheckFunction_ = "";
-
     /**
      *
      *
@@ -2334,7 +2261,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2361,7 +2287,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2387,7 +2312,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2409,7 +2333,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

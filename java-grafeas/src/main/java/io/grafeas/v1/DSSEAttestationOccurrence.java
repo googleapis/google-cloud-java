@@ -35,7 +35,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:grafeas.v1.DSSEAttestationOccurrence)
     DSSEAttestationOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DSSEAttestationOccurrence.newBuilder() to construct.
   private DSSEAttestationOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     private DecodedPayloadCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
 
   public static final int ENVELOPE_FIELD_NUMBER = 1;
   private io.grafeas.v1.Envelope envelope_;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
   public boolean hasEnvelope() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
   public io.grafeas.v1.Envelope getEnvelope() {
     return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
   }
 
   public static final int STATEMENT_FIELD_NUMBER = 2;
-
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
    *
@@ -175,7 +169,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
   public boolean hasStatement() {
     return decodedPayloadCase_ == 2;
   }
-
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
    *
@@ -188,7 +181,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     }
     return io.grafeas.v1.InTotoStatement.getDefaultInstance();
   }
-
   /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder() {
@@ -385,7 +377,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -632,7 +623,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
         envelopeBuilder_;
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     public boolean hasEnvelope() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
         return envelopeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       onChanged();
       return getEnvelopeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
         return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
       }
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
             io.grafeas.v1.InTotoStatement.Builder,
             io.grafeas.v1.InTotoStatementOrBuilder>
         statementBuilder_;
-
     /**
      * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
      *
@@ -837,7 +818,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     public boolean hasStatement() {
       return decodedPayloadCase_ == 2;
     }
-
     /**
      * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
      *
@@ -857,7 +837,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
         return io.grafeas.v1.InTotoStatement.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder setStatement(io.grafeas.v1.InTotoStatement value) {
       if (statementBuilder_ == null) {
@@ -872,7 +851,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       decodedPayloadCase_ = 2;
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder setStatement(io.grafeas.v1.InTotoStatement.Builder builderForValue) {
       if (statementBuilder_ == null) {
@@ -884,7 +862,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       decodedPayloadCase_ = 2;
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder mergeStatement(io.grafeas.v1.InTotoStatement value) {
       if (statementBuilder_ == null) {
@@ -909,7 +886,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       decodedPayloadCase_ = 2;
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder clearStatement() {
       if (statementBuilder_ == null) {
@@ -927,12 +903,10 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public io.grafeas.v1.InTotoStatement.Builder getStatementBuilder() {
       return getStatementFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder() {
@@ -945,7 +919,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
         return io.grafeas.v1.InTotoStatement.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.InTotoStatement,

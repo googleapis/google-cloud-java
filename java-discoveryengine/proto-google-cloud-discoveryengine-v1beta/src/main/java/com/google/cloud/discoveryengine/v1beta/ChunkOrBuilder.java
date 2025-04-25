@@ -41,7 +41,6 @@ public interface ChunkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ChunkOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface ChunkOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface ChunkOrBuilder
    * @return Whether the relevanceScore field is set.
    */
   boolean hasRelevanceScore();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface ChunkOrBuilder
    * @return Whether the documentMetadata field is set.
    */
   boolean hasDocumentMetadata();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface ChunkOrBuilder
    * @return The documentMetadata.
    */
   com.google.cloud.discoveryengine.v1beta.Chunk.DocumentMetadata getDocumentMetadata();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface ChunkOrBuilder
    * @return Whether the derivedStructData field is set.
    */
   boolean hasDerivedStructData();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface ChunkOrBuilder
    * @return The derivedStructData.
    */
   com.google.protobuf.Struct getDerivedStructData();
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public interface ChunkOrBuilder
    * @return Whether the pageSpan field is set.
    */
   boolean hasPageSpan();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface ChunkOrBuilder
    * @return The pageSpan.
    */
   com.google.cloud.discoveryengine.v1beta.Chunk.PageSpan getPageSpan();
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public interface ChunkOrBuilder
    * @return Whether the chunkMetadata field is set.
    */
   boolean hasChunkMetadata();
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public interface ChunkOrBuilder
    * @return The chunkMetadata.
    */
   com.google.cloud.discoveryengine.v1beta.Chunk.ChunkMetadata getChunkMetadata();
-
   /**
    *
    *

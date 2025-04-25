@@ -37,7 +37,6 @@ public interface BackendOrBuilder
    * @return Whether the balancingMode field is set.
    */
   boolean hasBalancingMode();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface BackendOrBuilder
    * @return The balancingMode.
    */
   java.lang.String getBalancingMode();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface BackendOrBuilder
    * @return Whether the capacityScaler field is set.
    */
   boolean hasCapacityScaler();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface BackendOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
    */
   java.util.List<com.google.cloud.compute.v1.BackendCustomMetric> getCustomMetricsList();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface BackendOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
    */
   com.google.cloud.compute.v1.BackendCustomMetric getCustomMetrics(int index);
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface BackendOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
    */
   int getCustomMetricsCount();
-
   /**
    *
    *
@@ -136,7 +130,6 @@ public interface BackendOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>
       getCustomMetricsOrBuilderList();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface BackendOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface BackendOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public interface BackendOrBuilder
    * @return Whether the failover field is set.
    */
   boolean hasFailover();
-
   /**
    *
    *
@@ -225,7 +215,6 @@ public interface BackendOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
-
   /**
    *
    *
@@ -238,7 +227,6 @@ public interface BackendOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
-
   /**
    *
    *
@@ -264,7 +252,6 @@ public interface BackendOrBuilder
    * @return Whether the maxConnections field is set.
    */
   boolean hasMaxConnections();
-
   /**
    *
    *
@@ -290,7 +277,6 @@ public interface BackendOrBuilder
    * @return Whether the maxConnectionsPerEndpoint field is set.
    */
   boolean hasMaxConnectionsPerEndpoint();
-
   /**
    *
    *
@@ -316,7 +302,6 @@ public interface BackendOrBuilder
    * @return Whether the maxConnectionsPerInstance field is set.
    */
   boolean hasMaxConnectionsPerInstance();
-
   /**
    *
    *
@@ -342,7 +327,6 @@ public interface BackendOrBuilder
    * @return Whether the maxRate field is set.
    */
   boolean hasMaxRate();
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public interface BackendOrBuilder
    * @return Whether the maxRatePerEndpoint field is set.
    */
   boolean hasMaxRatePerEndpoint();
-
   /**
    *
    *
@@ -394,7 +377,6 @@ public interface BackendOrBuilder
    * @return Whether the maxRatePerInstance field is set.
    */
   boolean hasMaxRatePerInstance();
-
   /**
    *
    *
@@ -420,7 +402,6 @@ public interface BackendOrBuilder
    * @return Whether the maxUtilization field is set.
    */
   boolean hasMaxUtilization();
-
   /**
    *
    *
@@ -447,7 +428,6 @@ public interface BackendOrBuilder
    * @return Whether the preference field is set.
    */
   boolean hasPreference();
-
   /**
    *
    *
@@ -461,7 +441,6 @@ public interface BackendOrBuilder
    * @return The preference.
    */
   java.lang.String getPreference();
-
   /**
    *
    *

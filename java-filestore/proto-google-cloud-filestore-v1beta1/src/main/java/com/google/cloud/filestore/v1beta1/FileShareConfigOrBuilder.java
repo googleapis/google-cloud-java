@@ -39,7 +39,6 @@ public interface FileShareConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface FileShareConfigOrBuilder
    * @return Whether the sourceBackup field is set.
    */
   boolean hasSourceBackup();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface FileShareConfigOrBuilder
    * @return The sourceBackup.
    */
   java.lang.String getSourceBackup();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface FileShareConfigOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.NfsExportOptions nfs_export_options = 8;</code>
    */
   java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions> getNfsExportOptionsList();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface FileShareConfigOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.NfsExportOptions nfs_export_options = 8;</code>
    */
   com.google.cloud.filestore.v1beta1.NfsExportOptions getNfsExportOptions(int index);
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface FileShareConfigOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.NfsExportOptions nfs_export_options = 8;</code>
    */
   int getNfsExportOptionsCount();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface FileShareConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.filestore.v1beta1.NfsExportOptionsOrBuilder>
       getNfsExportOptionsOrBuilderList();
-
   /**
    *
    *

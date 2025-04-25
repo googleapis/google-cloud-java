@@ -98,19 +98,6 @@ public final class QuotaControllerGrpc {
     return QuotaControllerStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static QuotaControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<QuotaControllerBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<QuotaControllerBlockingV2Stub>() {
-          @java.lang.Override
-          public QuotaControllerBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new QuotaControllerBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return QuotaControllerBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -240,50 +227,6 @@ public final class QuotaControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service QuotaController.
-   *
-   * <pre>
-   * [Google Quota Control API](/service-control/overview)
-   * Allows clients to allocate and release quota against a [managed
-   * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
-   * </pre>
-   */
-  public static final class QuotaControllerBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<QuotaControllerBlockingV2Stub> {
-    private QuotaControllerBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected QuotaControllerBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new QuotaControllerBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Attempts to allocate quota for the specified consumer. It should be called
-     * before the operation is executed.
-     * This method requires the `servicemanagement.services.quota`
-     * permission on the specified service. For more information, see
-     * [Cloud IAM](https://cloud.google.com/iam).
-     * **NOTE:** The client **must** fail-open on server errors `INTERNAL`,
-     * `UNKNOWN`, `DEADLINE_EXCEEDED`, and `UNAVAILABLE`. To ensure system
-     * reliability, the server may inject these errors to prohibit any hard
-     * dependency on the quota functionality.
-     * </pre>
-     */
-    public com.google.api.servicecontrol.v1.AllocateQuotaResponse allocateQuota(
-        com.google.api.servicecontrol.v1.AllocateQuotaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAllocateQuotaMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service QuotaController.
    *
    * <pre>
    * [Google Quota Control API](/service-control/overview)

@@ -37,7 +37,6 @@ public interface AutomationRunEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AutomationRunEventOrBuilder
    * @return The automationRun.
    */
   java.lang.String getAutomationRun();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AutomationRunEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface AutomationRunEventOrBuilder
    * @return The automationId.
    */
   java.lang.String getAutomationId();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface AutomationRunEventOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface AutomationRunEventOrBuilder
    * @return The destinationTargetId.
    */
   java.lang.String getDestinationTargetId();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface AutomationRunEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

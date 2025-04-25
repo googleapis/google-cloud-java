@@ -37,7 +37,6 @@ public interface ReportStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ReportStatusOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ReportStatusOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface ReportStatusOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface ReportStatusOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

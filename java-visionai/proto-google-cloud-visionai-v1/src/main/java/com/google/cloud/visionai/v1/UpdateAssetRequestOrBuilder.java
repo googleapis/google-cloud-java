@@ -41,7 +41,6 @@ public interface UpdateAssetRequestOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateAssetRequestOrBuilder
    * @return The asset.
    */
   com.google.cloud.visionai.v1.Asset getAsset();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateAssetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateAssetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

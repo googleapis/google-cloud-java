@@ -38,7 +38,6 @@ public interface InTotoSlsaProvenanceV1OrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -55,16 +54,12 @@ public interface InTotoSlsaProvenanceV1OrBuilder
 
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   java.util.List<io.grafeas.v1.Subject> getSubjectList();
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   io.grafeas.v1.Subject getSubject(int index);
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   int getSubjectCount();
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList();
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index);
 
@@ -74,7 +69,6 @@ public interface InTotoSlsaProvenanceV1OrBuilder
    * @return The predicateType.
    */
   java.lang.String getPredicateType();
-
   /**
    * <code>string predicate_type = 3;</code>
    *
@@ -88,14 +82,12 @@ public interface InTotoSlsaProvenanceV1OrBuilder
    * @return Whether the predicate field is set.
    */
   boolean hasPredicate();
-
   /**
    * <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code>
    *
    * @return The predicate.
    */
   io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 getPredicate();
-
   /** <code>.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1 predicate = 4;</code> */
   io.grafeas.v1.InTotoSlsaProvenanceV1.SlsaProvenanceV1OrBuilder getPredicateOrBuilder();
 }

@@ -39,7 +39,6 @@ public interface ManagedActiveDirectoryConfigOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ManagedActiveDirectoryConfigOrBuilder
    * @return The computer.
    */
   java.lang.String getComputer();
-
   /**
    *
    *

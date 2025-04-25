@@ -103,7 +103,6 @@ public enum SnapshotState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_SNAPSHOT_STATE = 0;</code>
    */
   public static final int UNKNOWN_SNAPSHOT_STATE_VALUE = 0;
-
   /**
    *
    *
@@ -115,7 +114,6 @@ public enum SnapshotState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PENDING = 1;</code>
    */
   public static final int PENDING_VALUE = 1;
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public enum SnapshotState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RUNNING = 2;</code>
    */
   public static final int RUNNING_VALUE = 2;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public enum SnapshotState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>READY = 3;</code>
    */
   public static final int READY_VALUE = 3;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public enum SnapshotState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FAILED = 4;</code>
    */
   public static final int FAILED_VALUE = 4;
-
   /**
    *
    *

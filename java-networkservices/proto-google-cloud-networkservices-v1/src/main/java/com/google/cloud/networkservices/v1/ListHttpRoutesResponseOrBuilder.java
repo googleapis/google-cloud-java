@@ -34,7 +34,6 @@ public interface ListHttpRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.HttpRoute http_routes = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.HttpRoute> getHttpRoutesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListHttpRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.HttpRoute http_routes = 1;</code>
    */
   com.google.cloud.networkservices.v1.HttpRoute getHttpRoutes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListHttpRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.HttpRoute http_routes = 1;</code>
    */
   int getHttpRoutesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListHttpRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.HttpRouteOrBuilder>
       getHttpRoutesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListHttpRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

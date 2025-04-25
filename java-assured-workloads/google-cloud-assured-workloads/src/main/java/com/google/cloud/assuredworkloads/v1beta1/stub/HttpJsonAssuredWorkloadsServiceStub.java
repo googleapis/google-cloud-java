@@ -356,30 +356,26 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: updateWorkloadCallable(). REST transport is not implemented for this"
-            + " method yet.");
+        "Not implemented: updateWorkloadCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override
   public UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: getWorkloadCallable(). REST transport is not implemented for this method"
-            + " yet.");
+        "Not implemented: getWorkloadCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override
   public UnaryCallable<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
       analyzeWorkloadMoveCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: analyzeWorkloadMoveCallable(). REST transport is not implemented for this"
-            + " method yet.");
+        "Not implemented: analyzeWorkloadMoveCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: listWorkloadsCallable(). REST transport is not implemented for this"
-            + " method yet.");
+        "Not implemented: listWorkloadsCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

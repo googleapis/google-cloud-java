@@ -34,7 +34,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegTravelAdvisory)
     RouteLegTravelAdvisoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouteLegTravelAdvisory.newBuilder() to construct.
   private RouteLegTravelAdvisory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int TOLL_INFO_FIELD_NUMBER = 1;
   private com.google.maps.routing.v2.TollInfo tollInfo_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
   public boolean hasTollInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
   public com.google.maps.routing.v2.TollInfo getTollInfo() {
     return tollInfo_ == null ? com.google.maps.routing.v2.TollInfo.getDefaultInstance() : tollInfo_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.SpeedReadingInterval> speedReadingIntervals_;
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       getSpeedReadingIntervalsList() {
     return speedReadingIntervals_;
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       getSpeedReadingIntervalsOrBuilderList() {
     return speedReadingIntervals_;
   }
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
   public int getSpeedReadingIntervalsCount() {
     return speedReadingIntervals_.size();
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
   public com.google.maps.routing.v2.SpeedReadingInterval getSpeedReadingIntervals(int index) {
     return speedReadingIntervals_.get(index);
   }
-
   /**
    *
    *
@@ -430,7 +421,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +688,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
             com.google.maps.routing.v2.TollInfo.Builder,
             com.google.maps.routing.v2.TollInfoOrBuilder>
         tollInfoBuilder_;
-
     /**
      *
      *
@@ -718,7 +707,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
     public boolean hasTollInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         return tollInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       onChanged();
       return getTollInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
             : tollInfo_;
       }
     }
-
     /**
      *
      *
@@ -976,7 +957,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         return speedReadingIntervalsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1003,7 +983,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         return speedReadingIntervalsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1009,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         return speedReadingIntervalsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1042,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1072,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1104,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1137,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1167,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1197,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1227,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1256,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1285,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1308,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         int index) {
       return getSpeedReadingIntervalsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1367,7 +1335,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         return speedReadingIntervalsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1395,7 +1362,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(speedReadingIntervals_);
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1386,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       return getSpeedReadingIntervalsFieldBuilder()
           .addBuilder(com.google.maps.routing.v2.SpeedReadingInterval.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1445,7 +1410,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
       return getSpeedReadingIntervalsFieldBuilder()
           .addBuilder(index, com.google.maps.routing.v2.SpeedReadingInterval.getDefaultInstance());
     }
-
     /**
      *
      *

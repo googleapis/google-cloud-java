@@ -39,7 +39,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.discoveryengine.v1.Document getDocument();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The documentId.
    */
   java.lang.String getDocumentId();
-
   /**
    *
    *

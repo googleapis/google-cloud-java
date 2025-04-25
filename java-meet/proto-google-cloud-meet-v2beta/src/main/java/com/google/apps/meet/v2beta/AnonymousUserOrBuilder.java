@@ -36,7 +36,6 @@ public interface AnonymousUserOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateServingConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateServingConfigRequestOrBuilder
    * @return Whether the servingConfig field is set.
    */
   boolean hasServingConfig();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateServingConfigRequestOrBuilder
    * @return The servingConfig.
    */
   com.google.cloud.retail.v2.ServingConfig getServingConfig();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateServingConfigRequestOrBuilder
    * @return The servingConfigId.
    */
   java.lang.String getServingConfigId();
-
   /**
    *
    *

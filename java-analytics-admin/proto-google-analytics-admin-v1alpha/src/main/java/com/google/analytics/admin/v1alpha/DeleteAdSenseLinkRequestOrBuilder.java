@@ -40,7 +40,6 @@ public interface DeleteAdSenseLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

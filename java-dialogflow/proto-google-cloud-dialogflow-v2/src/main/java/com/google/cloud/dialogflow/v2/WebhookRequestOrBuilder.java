@@ -40,7 +40,6 @@ public interface WebhookRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface WebhookRequestOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface WebhookRequestOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2.QueryResult getQueryResult();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the originalDetectIntentRequest field is set.
    */
   boolean hasOriginalDetectIntentRequest();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface WebhookRequestOrBuilder
    * @return The originalDetectIntentRequest.
    */
   com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest getOriginalDetectIntentRequest();
-
   /**
    *
    *

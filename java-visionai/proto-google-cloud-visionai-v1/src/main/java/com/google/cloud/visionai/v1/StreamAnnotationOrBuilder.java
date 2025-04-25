@@ -36,7 +36,6 @@ public interface StreamAnnotationOrBuilder
    * @return Whether the activeZone field is set.
    */
   boolean hasActiveZone();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StreamAnnotationOrBuilder
    * @return The activeZone.
    */
   com.google.cloud.visionai.v1.NormalizedPolygon getActiveZone();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface StreamAnnotationOrBuilder
    * @return Whether the crossingLine field is set.
    */
   boolean hasCrossingLine();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface StreamAnnotationOrBuilder
    * @return The crossingLine.
    */
   com.google.cloud.visionai.v1.NormalizedPolyline getCrossingLine();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface StreamAnnotationOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface StreamAnnotationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface StreamAnnotationOrBuilder
    * @return The sourceStream.
    */
   java.lang.String getSourceStream();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface StreamAnnotationOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

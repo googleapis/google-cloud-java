@@ -33,7 +33,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UpdateOptions)
     UpdateOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateOptions.newBuilder() to construct.
   private UpdateOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int UPDATE_TYPE_FIELD_NUMBER = 1;
   private int updateType_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
   public int getUpdateTypeValue() {
     return updateType_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MERGE_FIELDS_OPTIONS_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.MergeFieldsOptions mergeFieldsOptions_;
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMergeFieldsOptions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contentwarehouse.v1.MergeFieldsOptions.getDefaultInstance()
         : mergeFieldsOptions_;
   }
-
   /**
    *
    *
@@ -403,7 +394,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -638,7 +628,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int updateType_ = 0;
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     public int getUpdateTypeValue() {
       return updateType_;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.contentwarehouse.v1.UpdateType.forNumber(updateType_);
       return result == null ? com.google.cloud.contentwarehouse.v1.UpdateType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +723,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -959,7 +935,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.MergeFieldsOptions.Builder,
             com.google.cloud.contentwarehouse.v1.MergeFieldsOptionsOrBuilder>
         mergeFieldsOptionsBuilder_;
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMergeFieldsOptions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -995,7 +969,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
         return mergeFieldsOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1019,7 +992,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1041,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1075,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMergeFieldsOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1126,7 +1094,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
             : mergeFieldsOptions_;
       }
     }
-
     /**
      *
      *

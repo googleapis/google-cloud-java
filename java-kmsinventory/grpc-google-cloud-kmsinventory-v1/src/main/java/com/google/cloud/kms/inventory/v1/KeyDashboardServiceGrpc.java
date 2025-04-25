@@ -96,19 +96,6 @@ public final class KeyDashboardServiceGrpc {
     return KeyDashboardServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static KeyDashboardServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<KeyDashboardServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<KeyDashboardServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public KeyDashboardServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new KeyDashboardServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return KeyDashboardServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -221,42 +208,6 @@ public final class KeyDashboardServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service KeyDashboardService.
-   *
-   * <pre>
-   * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
-   * </pre>
-   */
-  public static final class KeyDashboardServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<KeyDashboardServiceBlockingV2Stub> {
-    private KeyDashboardServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected KeyDashboardServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new KeyDashboardServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns cryptographic keys managed by Cloud KMS in a given Cloud project.
-     * Note that this data is sourced from snapshots, meaning it may not
-     * completely reflect the actual state of key metadata at call time.
-     * </pre>
-     */
-    public com.google.cloud.kms.inventory.v1.ListCryptoKeysResponse listCryptoKeys(
-        com.google.cloud.kms.inventory.v1.ListCryptoKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListCryptoKeysMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service KeyDashboardService.
    *
    * <pre>
    * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.

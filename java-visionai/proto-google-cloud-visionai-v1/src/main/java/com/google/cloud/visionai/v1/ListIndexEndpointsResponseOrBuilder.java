@@ -34,7 +34,6 @@ public interface ListIndexEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IndexEndpoint index_endpoints = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.IndexEndpoint> getIndexEndpointsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListIndexEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IndexEndpoint index_endpoints = 1;</code>
    */
   com.google.cloud.visionai.v1.IndexEndpoint getIndexEndpoints(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListIndexEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IndexEndpoint index_endpoints = 1;</code>
    */
   int getIndexEndpointsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListIndexEndpointsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.IndexEndpointOrBuilder>
       getIndexEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListIndexEndpointsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface CssProductStatusOrBuilder
    */
   java.util.List<com.google.shopping.css.v1.CssProductStatus.DestinationStatus>
       getDestinationStatusesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface CssProductStatusOrBuilder
    * </code>
    */
   com.google.shopping.css.v1.CssProductStatus.DestinationStatus getDestinationStatuses(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface CssProductStatusOrBuilder
    * </code>
    */
   int getDestinationStatusesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface CssProductStatusOrBuilder
    */
   java.util.List<? extends com.google.shopping.css.v1.CssProductStatus.DestinationStatusOrBuilder>
       getDestinationStatusesOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface CssProductStatusOrBuilder
    */
   java.util.List<com.google.shopping.css.v1.CssProductStatus.ItemLevelIssue>
       getItemLevelIssuesList();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface CssProductStatusOrBuilder
    * </code>
    */
   com.google.shopping.css.v1.CssProductStatus.ItemLevelIssue getItemLevelIssues(int index);
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface CssProductStatusOrBuilder
    * </code>
    */
   int getItemLevelIssuesCount();
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public interface CssProductStatusOrBuilder
    */
   java.util.List<? extends com.google.shopping.css.v1.CssProductStatus.ItemLevelIssueOrBuilder>
       getItemLevelIssuesOrBuilderList();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface CssProductStatusOrBuilder
    * @return Whether the creationDate field is set.
    */
   boolean hasCreationDate();
-
   /**
    *
    *
@@ -182,7 +173,6 @@ public interface CssProductStatusOrBuilder
    * @return The creationDate.
    */
   com.google.protobuf.Timestamp getCreationDate();
-
   /**
    *
    *
@@ -208,7 +198,6 @@ public interface CssProductStatusOrBuilder
    * @return Whether the lastUpdateDate field is set.
    */
   boolean hasLastUpdateDate();
-
   /**
    *
    *
@@ -222,7 +211,6 @@ public interface CssProductStatusOrBuilder
    * @return The lastUpdateDate.
    */
   com.google.protobuf.Timestamp getLastUpdateDate();
-
   /**
    *
    *
@@ -248,7 +236,6 @@ public interface CssProductStatusOrBuilder
    * @return Whether the googleExpirationDate field is set.
    */
   boolean hasGoogleExpirationDate();
-
   /**
    *
    *
@@ -262,7 +249,6 @@ public interface CssProductStatusOrBuilder
    * @return The googleExpirationDate.
    */
   com.google.protobuf.Timestamp getGoogleExpirationDate();
-
   /**
    *
    *

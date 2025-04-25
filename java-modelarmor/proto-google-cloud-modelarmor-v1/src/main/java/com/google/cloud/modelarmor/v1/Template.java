@@ -33,7 +33,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.Template)
     TemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Template.newBuilder() to construct.
   private Template(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,7 +125,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
      * @return The customPromptSafetyErrorMessage.
      */
     java.lang.String getCustomPromptSafetyErrorMessage();
-
     /**
      *
      *
@@ -174,7 +172,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
      * @return The customLlmResponseSafetyErrorMessage.
      */
     java.lang.String getCustomLlmResponseSafetyErrorMessage();
-
     /**
      *
      *
@@ -217,7 +214,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getLogSanitizeOperations();
   }
-
   /**
    *
    *
@@ -232,7 +228,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.Template.TemplateMetadata)
       TemplateMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TemplateMetadata.newBuilder() to construct.
     private TemplateMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -266,7 +261,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     public static final int IGNORE_PARTIAL_INVOCATION_FAILURES_FIELD_NUMBER = 1;
     private boolean ignorePartialInvocationFailures_ = false;
-
     /**
      *
      *
@@ -286,7 +280,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CUSTOM_PROMPT_SAFETY_ERROR_CODE_FIELD_NUMBER = 2;
     private int customPromptSafetyErrorCode_ = 0;
-
     /**
      *
      *
@@ -310,7 +303,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object customPromptSafetyErrorMessage_ = "";
-
     /**
      *
      *
@@ -337,7 +329,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -367,7 +358,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CUSTOM_LLM_RESPONSE_SAFETY_ERROR_CODE_FIELD_NUMBER = 4;
     private int customLlmResponseSafetyErrorCode_ = 0;
-
     /**
      *
      *
@@ -391,7 +381,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object customLlmResponseSafetyErrorMessage_ = "";
-
     /**
      *
      *
@@ -418,7 +407,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -448,7 +436,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOG_TEMPLATE_OPERATIONS_FIELD_NUMBER = 6;
     private boolean logTemplateOperations_ = false;
-
     /**
      *
      *
@@ -467,7 +454,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOG_SANITIZE_OPERATIONS_FIELD_NUMBER = 7;
     private boolean logSanitizeOperations_ = false;
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -986,7 +971,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean ignorePartialInvocationFailures_;
-
       /**
        *
        *
@@ -1004,7 +988,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       public boolean getIgnorePartialInvocationFailures() {
         return ignorePartialInvocationFailures_;
       }
-
       /**
        *
        *
@@ -1026,7 +1009,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1048,7 +1030,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int customPromptSafetyErrorCode_;
-
       /**
        *
        *
@@ -1067,7 +1048,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       public int getCustomPromptSafetyErrorCode() {
         return customPromptSafetyErrorCode_;
       }
-
       /**
        *
        *
@@ -1090,7 +1070,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1113,7 +1092,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object customPromptSafetyErrorMessage_ = "";
-
       /**
        *
        *
@@ -1139,7 +1117,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1165,7 +1142,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1190,7 +1166,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1211,7 +1186,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1239,7 +1213,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int customLlmResponseSafetyErrorCode_;
-
       /**
        *
        *
@@ -1258,7 +1231,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       public int getCustomLlmResponseSafetyErrorCode() {
         return customLlmResponseSafetyErrorCode_;
       }
-
       /**
        *
        *
@@ -1281,7 +1253,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1304,7 +1275,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object customLlmResponseSafetyErrorMessage_ = "";
-
       /**
        *
        *
@@ -1330,7 +1300,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1356,7 +1325,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1381,7 +1349,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1403,7 +1370,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1432,7 +1398,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean logTemplateOperations_;
-
       /**
        *
        *
@@ -1448,7 +1413,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       public boolean getLogTemplateOperations() {
         return logTemplateOperations_;
       }
-
       /**
        *
        *
@@ -1468,7 +1432,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1488,7 +1451,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean logSanitizeOperations_;
-
       /**
        *
        *
@@ -1504,7 +1466,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       public boolean getLogSanitizeOperations() {
         return logSanitizeOperations_;
       }
-
       /**
        *
        *
@@ -1524,7 +1485,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1612,7 +1572,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1636,7 +1595,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1663,7 +1621,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1680,7 +1637,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1697,7 +1653,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1715,7 +1670,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1732,7 +1686,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1749,7 +1702,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1791,7 +1743,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1808,14 +1759,12 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1829,7 +1778,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1850,7 +1798,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1874,7 +1821,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILTER_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.modelarmor.v1.FilterConfig filterConfig_;
-
   /**
    *
    *
@@ -1892,7 +1838,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilterConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1912,7 +1857,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.FilterConfig.getDefaultInstance()
         : filterConfig_;
   }
-
   /**
    *
    *
@@ -1933,7 +1877,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEMPLATE_METADATA_FIELD_NUMBER = 6;
   private com.google.cloud.modelarmor.v1.Template.TemplateMetadata templateMetadata_;
-
   /**
    *
    *
@@ -1951,7 +1894,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTemplateMetadata() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1971,7 +1913,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.Template.TemplateMetadata.getDefaultInstance()
         : templateMetadata_;
   }
-
   /**
    *
    *
@@ -2222,7 +2163,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2536,7 +2476,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2559,7 +2498,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2582,7 +2520,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2604,7 +2541,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2622,7 +2558,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2652,7 +2587,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2669,7 +2603,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2692,7 +2625,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2717,7 +2649,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2739,7 +2670,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2769,7 +2699,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2720,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2808,7 +2736,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2829,7 +2756,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2864,7 +2790,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2881,7 +2806,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2904,7 +2828,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2929,7 +2852,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2951,7 +2873,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2981,7 +2902,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3003,7 +2923,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3020,7 +2939,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3041,7 +2959,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3095,7 +3012,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3112,14 +3028,12 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3133,7 +3047,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3154,7 +3067,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3181,7 +3093,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3198,14 +3109,12 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3226,7 +3135,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -3248,7 +3156,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.FilterConfig.Builder,
             com.google.cloud.modelarmor.v1.FilterConfigOrBuilder>
         filterConfigBuilder_;
-
     /**
      *
      *
@@ -3265,7 +3172,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilterConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3288,7 +3194,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return filterConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3313,7 +3218,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3336,7 +3240,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3366,7 +3269,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3388,7 +3290,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3405,7 +3306,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFilterConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3426,7 +3326,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             : filterConfig_;
       }
     }
-
     /**
      *
      *
@@ -3461,7 +3360,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.Template.TemplateMetadata.Builder,
             com.google.cloud.modelarmor.v1.Template.TemplateMetadataOrBuilder>
         templateMetadataBuilder_;
-
     /**
      *
      *
@@ -3478,7 +3376,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTemplateMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3501,7 +3398,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
         return templateMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3527,7 +3423,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3550,7 +3445,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3582,7 +3476,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3604,7 +3497,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3622,7 +3514,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTemplateMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3644,7 +3535,6 @@ public final class Template extends com.google.protobuf.GeneratedMessageV3
             : templateMetadata_;
       }
     }
-
     /**
      *
      *

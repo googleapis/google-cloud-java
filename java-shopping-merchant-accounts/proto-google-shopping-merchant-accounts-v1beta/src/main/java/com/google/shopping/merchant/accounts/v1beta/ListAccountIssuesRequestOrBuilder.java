@@ -39,7 +39,6 @@ public interface ListAccountIssuesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface ListAccountIssuesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface ListAccountIssuesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -151,7 +148,6 @@ public interface ListAccountIssuesRequestOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *

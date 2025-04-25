@@ -98,7 +98,6 @@ public enum RoutingPreference implements com.google.protobuf.ProtocolMessageEnum
    * <code>ROUTING_PREFERENCE_UNSPECIFIED = 0;</code>
    */
   public static final int ROUTING_PREFERENCE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -120,7 +119,6 @@ public enum RoutingPreference implements com.google.protobuf.ProtocolMessageEnum
    * <code>TRAFFIC_UNAWARE = 1;</code>
    */
   public static final int TRAFFIC_UNAWARE_VALUE = 1;
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public enum RoutingPreference implements com.google.protobuf.ProtocolMessageEnum
    * <code>TRAFFIC_AWARE = 2;</code>
    */
   public static final int TRAFFIC_AWARE_VALUE = 2;
-
   /**
    *
    *

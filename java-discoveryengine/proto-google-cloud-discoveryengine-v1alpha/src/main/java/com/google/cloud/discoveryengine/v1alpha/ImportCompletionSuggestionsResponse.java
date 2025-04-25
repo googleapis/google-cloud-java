@@ -38,7 +38,6 @@ public final class ImportCompletionSuggestionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportCompletionSuggestionsResponse)
     ImportCompletionSuggestionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportCompletionSuggestionsResponse.newBuilder() to construct.
   private ImportCompletionSuggestionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,7 +75,6 @@ public final class ImportCompletionSuggestionsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ImportCompletionSuggestionsResponse
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ImportCompletionSuggestionsResponse
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ImportCompletionSuggestionsResponse
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class ImportCompletionSuggestionsResponse
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ImportCompletionSuggestionsResponse
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig errorConfig_;
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public final class ImportCompletionSuggestionsResponse
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class ImportCompletionSuggestionsResponse
         ? com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
-
   /**
    *
    *
@@ -384,7 +375,6 @@ public final class ImportCompletionSuggestionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class ImportCompletionSuggestionsResponse
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class ImportCompletionSuggestionsResponse
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class ImportCompletionSuggestionsResponse
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -745,7 +732,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class ImportCompletionSuggestionsResponse
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class ImportCompletionSuggestionsResponse
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class ImportCompletionSuggestionsResponse
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ImportCompletionSuggestionsResponse
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -985,7 +959,6 @@ public final class ImportCompletionSuggestionsResponse
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1020,7 +993,6 @@ public final class ImportCompletionSuggestionsResponse
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
-
     /**
      *
      *
@@ -1035,7 +1007,6 @@ public final class ImportCompletionSuggestionsResponse
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1056,7 +1027,6 @@ public final class ImportCompletionSuggestionsResponse
         return errorConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1050,6 @@ public final class ImportCompletionSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1070,6 @@ public final class ImportCompletionSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1100,6 @@ public final class ImportCompletionSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1119,6 @@ public final class ImportCompletionSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1134,6 @@ public final class ImportCompletionSuggestionsResponse
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1188,7 +1153,6 @@ public final class ImportCompletionSuggestionsResponse
             : errorConfig_;
       }
     }
-
     /**
      *
      *

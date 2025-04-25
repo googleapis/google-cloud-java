@@ -36,7 +36,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the baseEjectionTime field is set.
    */
   boolean hasBaseEjectionTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OutlierDetectionOrBuilder
    * @return The baseEjectionTime.
    */
   com.google.cloud.compute.v1.Duration getBaseEjectionTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the consecutiveErrors field is set.
    */
   boolean hasConsecutiveErrors();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the consecutiveGatewayFailure field is set.
    */
   boolean hasConsecutiveGatewayFailure();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the enforcingConsecutiveErrors field is set.
    */
   boolean hasEnforcingConsecutiveErrors();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the enforcingConsecutiveGatewayFailure field is set.
    */
   boolean hasEnforcingConsecutiveGatewayFailure();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the enforcingSuccessRate field is set.
    */
   boolean hasEnforcingSuccessRate();
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface OutlierDetectionOrBuilder
    * @return The interval.
    */
   com.google.cloud.compute.v1.Duration getInterval();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the maxEjectionPercent field is set.
    */
   boolean hasMaxEjectionPercent();
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the successRateMinimumHosts field is set.
    */
   boolean hasSuccessRateMinimumHosts();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the successRateRequestVolume field is set.
    */
   boolean hasSuccessRateRequestVolume();
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public interface OutlierDetectionOrBuilder
    * @return Whether the successRateStdevFactor field is set.
    */
   boolean hasSuccessRateStdevFactor();
-
   /**
    *
    *

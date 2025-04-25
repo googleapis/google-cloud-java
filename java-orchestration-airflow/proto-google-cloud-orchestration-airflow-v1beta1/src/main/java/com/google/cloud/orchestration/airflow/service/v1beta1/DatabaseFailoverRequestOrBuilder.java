@@ -37,7 +37,6 @@ public interface DatabaseFailoverRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *

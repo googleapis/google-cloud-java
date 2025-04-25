@@ -33,7 +33,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p1beta1.StandardResourceMetadata)
     StandardResourceMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StandardResourceMetadata.newBuilder() to construct.
   private StandardResourceMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetType_ = "";
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -258,7 +251,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -282,7 +274,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -311,7 +302,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -336,7 +326,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +356,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalAttributes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -384,7 +372,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getAdditionalAttributesList() {
     return additionalAttributes_;
   }
-
   /**
    *
    *
@@ -401,7 +388,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public int getAdditionalAttributesCount() {
     return additionalAttributes_.size();
   }
-
   /**
    *
    *
@@ -419,7 +405,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public java.lang.String getAdditionalAttributes(int index) {
     return additionalAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -442,7 +427,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -467,7 +451,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -519,7 +502,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -539,14 +521,12 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -563,7 +543,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -587,7 +566,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -617,7 +595,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -636,7 +613,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
     return networkTags_;
   }
-
   /**
    *
    *
@@ -655,7 +631,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public int getNetworkTagsCount() {
     return networkTags_.size();
   }
-
   /**
    *
    *
@@ -675,7 +650,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public java.lang.String getNetworkTags(int index) {
     return networkTags_.get(index);
   }
-
   /**
    *
    *
@@ -951,7 +925,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1296,7 +1269,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1323,7 +1295,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1350,7 +1321,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1376,7 +1346,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1367,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1395,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object assetType_ = "";
-
     /**
      *
      *
@@ -1451,7 +1418,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1475,7 +1441,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1498,7 +1463,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1517,7 +1481,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1543,7 +1506,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1567,7 +1529,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1591,7 +1552,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1614,7 +1574,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1633,7 +1592,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1659,7 +1617,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1682,7 +1639,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1705,7 +1661,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1727,7 +1682,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1745,7 +1699,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1723,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1794,7 +1746,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1818,7 +1769,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1841,7 +1791,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1809,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1842,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -1912,7 +1859,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       additionalAttributes_.makeImmutable();
       return additionalAttributes_;
     }
-
     /**
      *
      *
@@ -1929,7 +1875,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public int getAdditionalAttributesCount() {
       return additionalAttributes_.size();
     }
-
     /**
      *
      *
@@ -1947,7 +1892,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public java.lang.String getAdditionalAttributes(int index) {
       return additionalAttributes_.get(index);
     }
-
     /**
      *
      *
@@ -1965,7 +1909,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getAdditionalAttributesBytes(int index) {
       return additionalAttributes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1991,7 +1934,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2016,7 +1958,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2038,7 +1979,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2059,7 +1999,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2087,7 +2026,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -2111,7 +2049,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2135,7 +2072,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2158,7 +2094,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2177,7 +2112,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2227,7 +2161,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2247,14 +2180,12 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2271,7 +2202,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2295,7 +2225,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2325,7 +2254,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2345,14 +2273,12 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2376,7 +2302,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       bitField0_ |= 0x00000080;
       return this;
     }
-
     /**
      *
      *
@@ -2404,7 +2329,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -2424,7 +2348,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       networkTags_.makeImmutable();
       return networkTags_;
     }
-
     /**
      *
      *
@@ -2443,7 +2366,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public int getNetworkTagsCount() {
       return networkTags_.size();
     }
-
     /**
      *
      *
@@ -2463,7 +2385,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public java.lang.String getNetworkTags(int index) {
       return networkTags_.get(index);
     }
-
     /**
      *
      *
@@ -2483,7 +2404,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
       return networkTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2511,7 +2431,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2457,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2562,7 +2480,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2585,7 +2502,6 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

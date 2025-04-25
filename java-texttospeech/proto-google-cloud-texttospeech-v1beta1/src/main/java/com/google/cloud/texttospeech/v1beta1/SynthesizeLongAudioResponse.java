@@ -33,7 +33,6 @@ public final class SynthesizeLongAudioResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.SynthesizeLongAudioResponse)
     SynthesizeLongAudioResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SynthesizeLongAudioResponse.newBuilder() to construct.
   private SynthesizeLongAudioResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class SynthesizeLongAudioResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

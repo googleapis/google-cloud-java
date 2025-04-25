@@ -36,7 +36,6 @@ public interface AliasContextOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AliasContextOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

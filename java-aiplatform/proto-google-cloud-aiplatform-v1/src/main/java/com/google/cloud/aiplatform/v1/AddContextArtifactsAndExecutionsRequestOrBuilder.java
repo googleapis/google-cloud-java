@@ -40,7 +40,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return A list containing the artifacts.
    */
   java.util.List<java.lang.String> getArtifactsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return The count of artifacts.
    */
   int getArtifactsCount();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return The artifacts at the given index.
    */
   java.lang.String getArtifacts(int index);
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return A list containing the executions.
    */
   java.util.List<java.lang.String> getExecutionsList();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return The count of executions.
    */
   int getExecutionsCount();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * @return The executions at the given index.
    */
   java.lang.String getExecutions(int index);
-
   /**
    *
    *

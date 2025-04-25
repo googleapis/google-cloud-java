@@ -39,7 +39,6 @@ public interface JobEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface JobEventOrBuilder
    * @return A list containing the jobs.
    */
   java.util.List<java.lang.String> getJobsList();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface JobEventOrBuilder
    * @return The count of jobs.
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface JobEventOrBuilder
    * @return The jobs at the given index.
    */
   java.lang.String getJobs(int index);
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface JobEventOrBuilder
    * @return The profile.
    */
   java.lang.String getProfile();
-
   /**
    *
    *

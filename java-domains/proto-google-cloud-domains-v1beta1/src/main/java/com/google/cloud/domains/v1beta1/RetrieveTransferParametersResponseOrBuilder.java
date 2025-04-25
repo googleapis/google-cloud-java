@@ -36,7 +36,6 @@ public interface RetrieveTransferParametersResponseOrBuilder
    * @return Whether the transferParameters field is set.
    */
   boolean hasTransferParameters();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RetrieveTransferParametersResponseOrBuilder
    * @return The transferParameters.
    */
   com.google.cloud.domains.v1beta1.TransferParameters getTransferParameters();
-
   /**
    *
    *

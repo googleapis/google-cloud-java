@@ -33,7 +33,6 @@ public final class RemoveIndexAssetResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RemoveIndexAssetResponse)
     RemoveIndexAssetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveIndexAssetResponse.newBuilder() to construct.
   private RemoveIndexAssetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class RemoveIndexAssetResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UpdateServiceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateServiceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface UpdateServiceRequestOrBuilder
    * @return The service.
    */
   com.google.cloud.metastore.v1alpha.Service getService();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface UpdateServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

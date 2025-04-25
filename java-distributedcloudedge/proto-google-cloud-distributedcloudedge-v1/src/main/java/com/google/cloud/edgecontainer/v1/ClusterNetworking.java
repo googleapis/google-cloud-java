@@ -33,7 +33,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.ClusterNetworking)
     ClusterNetworkingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClusterNetworking.newBuilder() to construct.
   private ClusterNetworking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList clusterIpv4CidrBlocks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getClusterIpv4CidrBlocksList() {
     return clusterIpv4CidrBlocks_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public int getClusterIpv4CidrBlocksCount() {
     return clusterIpv4CidrBlocks_.size();
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public java.lang.String getClusterIpv4CidrBlocks(int index) {
     return clusterIpv4CidrBlocks_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList servicesIpv4CidrBlocks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getServicesIpv4CidrBlocksList() {
     return servicesIpv4CidrBlocks_;
   }
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public int getServicesIpv4CidrBlocksCount() {
     return servicesIpv4CidrBlocks_.size();
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public java.lang.String getServicesIpv4CidrBlocks(int index) {
     return servicesIpv4CidrBlocks_.get(index);
   }
-
   /**
    *
    *
@@ -410,7 +401,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -633,7 +623,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -652,7 +641,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       clusterIpv4CidrBlocks_.makeImmutable();
       return clusterIpv4CidrBlocks_;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public int getClusterIpv4CidrBlocksCount() {
       return clusterIpv4CidrBlocks_.size();
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public java.lang.String getClusterIpv4CidrBlocks(int index) {
       return clusterIpv4CidrBlocks_.get(index);
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getClusterIpv4CidrBlocksBytes(int index) {
       return clusterIpv4CidrBlocks_.getByteString(index);
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +825,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -864,7 +844,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       servicesIpv4CidrBlocks_.makeImmutable();
       return servicesIpv4CidrBlocks_;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public int getServicesIpv4CidrBlocksCount() {
       return servicesIpv4CidrBlocks_.size();
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public java.lang.String getServicesIpv4CidrBlocks(int index) {
       return servicesIpv4CidrBlocks_.get(index);
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getServicesIpv4CidrBlocksBytes(int index) {
       return servicesIpv4CidrBlocks_.getByteString(index);
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +976,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +998,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

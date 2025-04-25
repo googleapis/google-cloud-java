@@ -36,7 +36,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the destAddressGroups.
    */
   java.util.List<java.lang.String> getDestAddressGroupsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of destAddressGroups.
    */
   int getDestAddressGroupsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The destAddressGroups at the given index.
    */
   java.lang.String getDestAddressGroups(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the destFqdns.
    */
   java.util.List<java.lang.String> getDestFqdnsList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of destFqdns.
    */
   int getDestFqdnsCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The destFqdns at the given index.
    */
   java.lang.String getDestFqdns(int index);
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the destIpRanges.
    */
   java.util.List<java.lang.String> getDestIpRangesList();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of destIpRanges.
    */
   int getDestIpRangesCount();
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The destIpRanges at the given index.
    */
   java.lang.String getDestIpRanges(int index);
-
   /**
    *
    *
@@ -198,7 +189,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the destRegionCodes.
    */
   java.util.List<java.lang.String> getDestRegionCodesList();
-
   /**
    *
    *
@@ -211,7 +201,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of destRegionCodes.
    */
   int getDestRegionCodesCount();
-
   /**
    *
    *
@@ -225,7 +214,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The destRegionCodes at the given index.
    */
   java.lang.String getDestRegionCodes(int index);
-
   /**
    *
    *
@@ -252,7 +240,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the destThreatIntelligences.
    */
   java.util.List<java.lang.String> getDestThreatIntelligencesList();
-
   /**
    *
    *
@@ -265,7 +252,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of destThreatIntelligences.
    */
   int getDestThreatIntelligencesCount();
-
   /**
    *
    *
@@ -279,7 +265,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The destThreatIntelligences at the given index.
    */
   java.lang.String getDestThreatIntelligences(int index);
-
   /**
    *
    *
@@ -307,7 +292,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config>
       getLayer4ConfigsList();
-
   /**
    *
    *
@@ -320,7 +304,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config getLayer4Configs(int index);
-
   /**
    *
    *
@@ -333,7 +316,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * </code>
    */
   int getLayer4ConfigsCount();
-
   /**
    *
    *
@@ -348,7 +330,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4ConfigOrBuilder>
       getLayer4ConfigsOrBuilderList();
-
   /**
    *
    *
@@ -375,7 +356,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the srcAddressGroups.
    */
   java.util.List<java.lang.String> getSrcAddressGroupsList();
-
   /**
    *
    *
@@ -388,7 +368,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of srcAddressGroups.
    */
   int getSrcAddressGroupsCount();
-
   /**
    *
    *
@@ -402,7 +381,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The srcAddressGroups at the given index.
    */
   java.lang.String getSrcAddressGroups(int index);
-
   /**
    *
    *
@@ -429,7 +407,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the srcFqdns.
    */
   java.util.List<java.lang.String> getSrcFqdnsList();
-
   /**
    *
    *
@@ -442,7 +419,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of srcFqdns.
    */
   int getSrcFqdnsCount();
-
   /**
    *
    *
@@ -456,7 +432,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The srcFqdns at the given index.
    */
   java.lang.String getSrcFqdns(int index);
-
   /**
    *
    *
@@ -483,7 +458,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the srcIpRanges.
    */
   java.util.List<java.lang.String> getSrcIpRangesList();
-
   /**
    *
    *
@@ -496,7 +470,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of srcIpRanges.
    */
   int getSrcIpRangesCount();
-
   /**
    *
    *
@@ -510,7 +483,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The srcIpRanges at the given index.
    */
   java.lang.String getSrcIpRanges(int index);
-
   /**
    *
    *
@@ -537,7 +509,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the srcRegionCodes.
    */
   java.util.List<java.lang.String> getSrcRegionCodesList();
-
   /**
    *
    *
@@ -550,7 +521,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of srcRegionCodes.
    */
   int getSrcRegionCodesCount();
-
   /**
    *
    *
@@ -564,7 +534,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The srcRegionCodes at the given index.
    */
   java.lang.String getSrcRegionCodes(int index);
-
   /**
    *
    *
@@ -591,7 +560,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> getSrcSecureTagsList();
-
   /**
    *
    *
@@ -604,7 +572,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getSrcSecureTags(int index);
-
   /**
    *
    *
@@ -617,7 +584,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * </code>
    */
   int getSrcSecureTagsCount();
-
   /**
    *
    *
@@ -631,7 +597,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
       getSrcSecureTagsOrBuilderList();
-
   /**
    *
    *
@@ -658,7 +623,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return A list containing the srcThreatIntelligences.
    */
   java.util.List<java.lang.String> getSrcThreatIntelligencesList();
-
   /**
    *
    *
@@ -671,7 +635,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The count of srcThreatIntelligences.
    */
   int getSrcThreatIntelligencesCount();
-
   /**
    *
    *
@@ -685,7 +648,6 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The srcThreatIntelligences at the given index.
    */
   java.lang.String getSrcThreatIntelligences(int index);
-
   /**
    *
    *

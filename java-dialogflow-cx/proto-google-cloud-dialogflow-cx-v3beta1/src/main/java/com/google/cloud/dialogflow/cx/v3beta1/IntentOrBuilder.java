@@ -43,7 +43,6 @@ public interface IntentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface IntentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface IntentOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase>
       getTrainingPhrasesList();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface IntentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase getTrainingPhrases(int index);
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface IntentOrBuilder
    * </code>
    */
   int getTrainingPhrasesCount();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhraseOrBuilder>
       getTrainingPhrasesOrBuilderList();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface IntentOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent.Parameter parameters = 4;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Intent.Parameter> getParametersList();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface IntentOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent.Parameter parameters = 4;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Intent.Parameter getParameters(int index);
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface IntentOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent.Parameter parameters = 4;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Intent.ParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface IntentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -296,11 +285,9 @@ public interface IntentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public interface IntentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -348,7 +334,6 @@ public interface IntentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -384,7 +369,6 @@ public interface IntentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

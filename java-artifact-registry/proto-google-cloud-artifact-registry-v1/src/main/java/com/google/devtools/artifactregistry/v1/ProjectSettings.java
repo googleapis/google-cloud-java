@@ -33,7 +33,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ProjectSettings)
     ProjectSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProjectSettings.newBuilder() to construct.
   private ProjectSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,7 +148,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * <code>REDIRECTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int REDIRECTION_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -160,7 +158,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * <code>REDIRECTION_FROM_GCR_IO_DISABLED = 1;</code>
      */
     public static final int REDIRECTION_FROM_GCR_IO_DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -171,7 +168,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * <code>REDIRECTION_FROM_GCR_IO_ENABLED = 2;</code>
      */
     public static final int REDIRECTION_FROM_GCR_IO_ENABLED_VALUE = 2;
-
     /**
      *
      *
@@ -182,7 +178,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * <code>REDIRECTION_FROM_GCR_IO_FINALIZED = 3 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int REDIRECTION_FROM_GCR_IO_FINALIZED_VALUE = 3;
-
     /**
      *
      *
@@ -193,7 +188,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * <code>REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING = 5;</code>
      */
     public static final int REDIRECTION_FROM_GCR_IO_ENABLED_AND_COPYING_VALUE = 5;
-
     /**
      *
      *
@@ -302,7 +296,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -332,7 +325,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
 
   public static final int LEGACY_REDIRECTION_STATE_FIELD_NUMBER = 2;
   private int legacyRedirectionState_ = 0;
-
   /**
    *
    *
@@ -383,7 +374,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
   public int getLegacyRedirectionStateValue() {
     return legacyRedirectionState_;
   }
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
 
   public static final int PULL_PERCENT_FIELD_NUMBER = 3;
   private int pullPercent_ = 0;
-
   /**
    *
    *
@@ -612,7 +601,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -823,7 +811,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -852,7 +839,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -881,7 +867,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +894,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +917,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +947,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     }
 
     private int legacyRedirectionState_ = 0;
-
     /**
      *
      *
@@ -982,7 +964,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     public int getLegacyRedirectionStateValue() {
       return legacyRedirectionState_;
     }
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1007,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
           ? com.google.devtools.artifactregistry.v1.ProjectSettings.RedirectionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1052,7 +1031,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1052,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     }
 
     private int pullPercent_;
-
     /**
      *
      *
@@ -1091,7 +1068,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     public int getPullPercent() {
       return pullPercent_;
     }
-
     /**
      *
      *
@@ -1112,7 +1088,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

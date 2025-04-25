@@ -35,7 +35,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DisableProcessorMetadata)
     DisableProcessorMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisableProcessorMetadata.newBuilder() to construct.
   private DisableProcessorMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.documentai.v1.CommonOperationMetadata commonMetadata_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
         ? com.google.cloud.documentai.v1.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
-
   /**
    *
    *
@@ -284,7 +280,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -491,7 +486,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
             com.google.cloud.documentai.v1.CommonOperationMetadata.Builder,
             com.google.cloud.documentai.v1.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -527,7 +520,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
         return commonMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -550,7 +542,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -571,7 +562,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -601,7 +591,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +610,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +625,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -657,7 +644,6 @@ public final class DisableProcessorMetadata extends com.google.protobuf.Generate
             : commonMetadata_;
       }
     }
-
     /**
      *
      *

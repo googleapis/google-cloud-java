@@ -34,7 +34,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.CloudShellErrorDetails)
     CloudShellErrorDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudShellErrorDetails.newBuilder() to construct.
   private CloudShellErrorDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,7 +152,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>CLOUD_SHELL_ERROR_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CLOUD_SHELL_ERROR_CODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -165,7 +163,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>IMAGE_UNAVAILABLE = 1;</code>
      */
     public static final int IMAGE_UNAVAILABLE_VALUE = 1;
-
     /**
      *
      *
@@ -177,7 +174,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>CLOUD_SHELL_DISABLED = 2;</code>
      */
     public static final int CLOUD_SHELL_DISABLED_VALUE = 2;
-
     /**
      *
      *
@@ -189,7 +185,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>TOS_VIOLATION = 4;</code>
      */
     public static final int TOS_VIOLATION_VALUE = 4;
-
     /**
      *
      *
@@ -201,7 +196,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>QUOTA_EXCEEDED = 5;</code>
      */
     public static final int QUOTA_EXCEEDED_VALUE = 5;
-
     /**
      *
      *
@@ -308,7 +302,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
-
   /**
    *
    *
@@ -324,7 +317,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
   public int getCodeValue() {
     return code_;
   }
-
   /**
    *
    *
@@ -510,7 +502,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -694,7 +685,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int code_ = 0;
-
     /**
      *
      *
@@ -710,7 +700,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
     public int getCodeValue() {
       return code_;
     }
-
     /**
      *
      *
@@ -729,7 +718,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
           ? com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

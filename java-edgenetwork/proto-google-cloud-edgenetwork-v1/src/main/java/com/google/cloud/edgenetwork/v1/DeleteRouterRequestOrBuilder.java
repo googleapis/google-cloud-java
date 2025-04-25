@@ -38,7 +38,6 @@ public interface DeleteRouterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface DeleteRouterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

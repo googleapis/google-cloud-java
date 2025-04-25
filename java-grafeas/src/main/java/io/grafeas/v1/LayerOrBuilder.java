@@ -38,7 +38,6 @@ public interface LayerOrBuilder
    * @return The directive.
    */
   java.lang.String getDirective();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface LayerOrBuilder
    * @return The arguments.
    */
   java.lang.String getArguments();
-
   /**
    *
    *

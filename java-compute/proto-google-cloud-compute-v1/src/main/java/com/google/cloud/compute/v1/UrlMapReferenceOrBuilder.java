@@ -30,14 +30,12 @@ public interface UrlMapReferenceOrBuilder
    * @return Whether the urlMap field is set.
    */
   boolean hasUrlMap();
-
   /**
    * <code>optional string url_map = 367020684;</code>
    *
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    * <code>optional string url_map = 367020684;</code>
    *

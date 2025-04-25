@@ -34,7 +34,6 @@ public interface ListPhraseMatchersResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matchers = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.PhraseMatcher> getPhraseMatchersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPhraseMatchersResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matchers = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatcher getPhraseMatchers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPhraseMatchersResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matchers = 1;</code>
    */
   int getPhraseMatchersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPhraseMatchersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.PhraseMatcherOrBuilder>
       getPhraseMatchersOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListPhraseMatchersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

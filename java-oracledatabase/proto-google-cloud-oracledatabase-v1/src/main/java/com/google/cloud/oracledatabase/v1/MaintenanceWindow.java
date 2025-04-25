@@ -34,7 +34,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.MaintenanceWindow)
     MaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaintenanceWindow.newBuilder() to construct.
   private MaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,7 +123,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>MAINTENANCE_WINDOW_PREFERENCE_UNSPECIFIED = 0;</code>
      */
     public static final int MAINTENANCE_WINDOW_PREFERENCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>CUSTOM_PREFERENCE = 1;</code>
      */
     public static final int CUSTOM_PREFERENCE_VALUE = 1;
-
     /**
      *
      *
@@ -289,7 +286,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>PATCHING_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int PATCHING_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -300,7 +296,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>ROLLING = 1;</code>
      */
     public static final int ROLLING_VALUE = 1;
-
     /**
      *
      *
@@ -400,7 +395,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   public static final int PREFERENCE_FIELD_NUMBER = 1;
   private int preference_ = 0;
-
   /**
    *
    *
@@ -418,7 +412,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getPreferenceValue() {
     return preference_;
   }
-
   /**
    *
    *
@@ -459,7 +452,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
               return result == null ? com.google.type.Month.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -476,7 +468,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return new com.google.protobuf.Internal.ListAdapter<java.lang.Integer, com.google.type.Month>(
         months_, months_converter_);
   }
-
   /**
    *
    *
@@ -492,7 +483,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getMonthsCount() {
     return months_.size();
   }
-
   /**
    *
    *
@@ -509,7 +499,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public com.google.type.Month getMonths(int index) {
     return months_converter_.convert(months_.get(index));
   }
-
   /**
    *
    *
@@ -525,7 +514,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getMonthsValueList() {
     return months_;
   }
-
   /**
    *
    *
@@ -549,7 +537,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList weeksOfMonth_ = emptyIntList();
-
   /**
    *
    *
@@ -568,7 +555,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getWeeksOfMonthList() {
     return weeksOfMonth_;
   }
-
   /**
    *
    *
@@ -586,7 +572,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getWeeksOfMonthCount() {
     return weeksOfMonth_.size();
   }
-
   /**
    *
    *
@@ -623,7 +608,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
               return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -642,7 +626,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
   }
-
   /**
    *
    *
@@ -660,7 +643,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getDaysOfWeekCount() {
     return daysOfWeek_.size();
   }
-
   /**
    *
    *
@@ -679,7 +661,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public com.google.type.DayOfWeek getDaysOfWeek(int index) {
     return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
   }
-
   /**
    *
    *
@@ -697,7 +678,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
     return daysOfWeek_;
   }
-
   /**
    *
    *
@@ -723,7 +703,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList hoursOfDay_ = emptyIntList();
-
   /**
    *
    *
@@ -746,7 +725,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getHoursOfDayList() {
     return hoursOfDay_;
   }
-
   /**
    *
    *
@@ -768,7 +746,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getHoursOfDayCount() {
     return hoursOfDay_.size();
   }
-
   /**
    *
    *
@@ -796,7 +773,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   public static final int LEAD_TIME_WEEK_FIELD_NUMBER = 6;
   private int leadTimeWeek_ = 0;
-
   /**
    *
    *
@@ -816,7 +792,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   public static final int PATCHING_MODE_FIELD_NUMBER = 7;
   private int patchingMode_ = 0;
-
   /**
    *
    *
@@ -835,7 +810,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getPatchingModeValue() {
     return patchingMode_;
   }
-
   /**
    *
    *
@@ -861,7 +835,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   public static final int CUSTOM_ACTION_TIMEOUT_MINS_FIELD_NUMBER = 8;
   private int customActionTimeoutMins_ = 0;
-
   /**
    *
    *
@@ -882,7 +855,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   public static final int IS_CUSTOM_ACTION_TIMEOUT_ENABLED_FIELD_NUMBER = 9;
   private boolean isCustomActionTimeoutEnabled_ = false;
-
   /**
    *
    *
@@ -1209,7 +1181,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1590,7 +1561,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int preference_ = 0;
-
     /**
      *
      *
@@ -1608,7 +1578,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getPreferenceValue() {
       return preference_;
     }
-
     /**
      *
      *
@@ -1629,7 +1598,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1654,7 +1622,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1679,7 +1646,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1708,7 +1674,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1725,7 +1690,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return new com.google.protobuf.Internal.ListAdapter<java.lang.Integer, com.google.type.Month>(
           months_, months_converter_);
     }
-
     /**
      *
      *
@@ -1741,7 +1705,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getMonthsCount() {
       return months_.size();
     }
-
     /**
      *
      *
@@ -1758,7 +1721,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.type.Month getMonths(int index) {
       return months_converter_.convert(months_.get(index));
     }
-
     /**
      *
      *
@@ -1782,7 +1744,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1766,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1787,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1805,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1862,7 +1820,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getMonthsValueList() {
       return java.util.Collections.unmodifiableList(months_);
     }
-
     /**
      *
      *
@@ -1879,7 +1836,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getMonthsValue(int index) {
       return months_.get(index);
     }
-
     /**
      *
      *
@@ -1900,7 +1856,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1920,7 +1875,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1951,7 +1905,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1970,7 +1923,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       weeksOfMonth_.makeImmutable();
       return weeksOfMonth_;
     }
-
     /**
      *
      *
@@ -1988,7 +1940,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getWeeksOfMonthCount() {
       return weeksOfMonth_.size();
     }
-
     /**
      *
      *
@@ -2007,7 +1958,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getWeeksOfMonth(int index) {
       return weeksOfMonth_.getInt(index);
     }
-
     /**
      *
      *
@@ -2032,7 +1982,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2056,7 +2005,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2079,7 +2027,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2109,7 +2056,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000008;
       }
     }
-
     /**
      *
      *
@@ -2127,7 +2073,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
     }
-
     /**
      *
      *
@@ -2144,7 +2089,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getDaysOfWeekCount() {
       return daysOfWeek_.size();
     }
-
     /**
      *
      *
@@ -2162,7 +2106,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.type.DayOfWeek getDaysOfWeek(int index) {
       return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
     }
-
     /**
      *
      *
@@ -2187,7 +2130,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2211,7 +2153,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2235,7 +2176,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2255,7 +2195,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2272,7 +2211,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
       return java.util.Collections.unmodifiableList(daysOfWeek_);
     }
-
     /**
      *
      *
@@ -2290,7 +2228,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getDaysOfWeekValue(int index) {
       return daysOfWeek_.get(index);
     }
-
     /**
      *
      *
@@ -2312,7 +2249,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2333,7 +2269,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2365,7 +2300,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2388,7 +2322,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       hoursOfDay_.makeImmutable();
       return hoursOfDay_;
     }
-
     /**
      *
      *
@@ -2410,7 +2343,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getHoursOfDayCount() {
       return hoursOfDay_.size();
     }
-
     /**
      *
      *
@@ -2433,7 +2365,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getHoursOfDay(int index) {
       return hoursOfDay_.getInt(index);
     }
-
     /**
      *
      *
@@ -2462,7 +2393,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2490,7 +2420,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2517,7 +2446,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2544,7 +2472,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     private int leadTimeWeek_;
-
     /**
      *
      *
@@ -2561,7 +2488,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getLeadTimeWeek() {
       return leadTimeWeek_;
     }
-
     /**
      *
      *
@@ -2582,7 +2508,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2603,7 +2528,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     private int patchingMode_ = 0;
-
     /**
      *
      *
@@ -2622,7 +2546,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getPatchingModeValue() {
       return patchingMode_;
     }
-
     /**
      *
      *
@@ -2644,7 +2567,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2668,7 +2590,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.oracledatabase.v1.MaintenanceWindow.PatchingMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2694,7 +2615,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2717,7 +2637,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     private int customActionTimeoutMins_;
-
     /**
      *
      *
@@ -2735,7 +2654,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getCustomActionTimeoutMins() {
       return customActionTimeoutMins_;
     }
-
     /**
      *
      *
@@ -2757,7 +2675,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2779,7 +2696,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean isCustomActionTimeoutEnabled_;
-
     /**
      *
      *
@@ -2797,7 +2713,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public boolean getIsCustomActionTimeoutEnabled() {
       return isCustomActionTimeoutEnabled_;
     }
-
     /**
      *
      *
@@ -2819,7 +2734,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * @return The conversationDataset.
    */
   java.lang.String getConversationDataset();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.Status getPartialFailures(int index);
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   int getPartialFailuresCount();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface ImportConversationDataOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

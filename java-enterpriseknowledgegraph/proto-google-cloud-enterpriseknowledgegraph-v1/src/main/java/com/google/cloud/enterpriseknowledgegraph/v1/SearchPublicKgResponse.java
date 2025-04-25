@@ -34,7 +34,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse)
     SearchPublicKgResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchPublicKgResponse.newBuilder() to construct.
   private SearchPublicKgResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int CONTEXT_FIELD_NUMBER = 1;
   private com.google.protobuf.Value context_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Value getContext() {
     return context_ == null ? com.google.protobuf.Value.getDefaultInstance() : context_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private com.google.protobuf.Value type_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Value getType() {
     return type_ == null ? com.google.protobuf.Value.getDefaultInstance() : type_;
   }
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
 
   public static final int ITEM_LIST_ELEMENT_FIELD_NUMBER = 3;
   private com.google.protobuf.ListValue itemListElement_;
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
   public boolean hasItemListElement() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.ListValue.getDefaultInstance()
         : itemListElement_;
   }
-
   /**
    *
    *
@@ -412,7 +402,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +652,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
     public boolean hasContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +777,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +792,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
         return context_ == null ? com.google.protobuf.Value.getDefaultInstance() : context_;
       }
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         typeBuilder_;
-
     /**
      *
      *
@@ -877,7 +856,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -896,7 +874,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
         return typeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +915,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +942,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +961,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +975,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1019,7 +991,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
         return type_ == null ? com.google.protobuf.Value.getDefaultInstance() : type_;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1022,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.ListValue.Builder,
             com.google.protobuf.ListValueOrBuilder>
         itemListElementBuilder_;
-
     /**
      *
      *
@@ -1066,7 +1036,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
     public boolean hasItemListElement() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1087,7 +1056,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
         return itemListElementBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1078,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1097,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1124,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1143,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1157,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getItemListElementFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1212,7 +1175,6 @@ public final class SearchPublicKgResponse extends com.google.protobuf.GeneratedM
             : itemListElement_;
       }
     }
-
     /**
      *
      *

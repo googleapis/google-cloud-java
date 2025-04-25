@@ -36,7 +36,6 @@ public interface SlashCommandMetadataOrBuilder
    * @return Whether the bot field is set.
    */
   boolean hasBot();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SlashCommandMetadataOrBuilder
    * @return The bot.
    */
   com.google.chat.v1.User getBot();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SlashCommandMetadataOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface SlashCommandMetadataOrBuilder
    * @return The commandName.
    */
   java.lang.String getCommandName();
-
   /**
    *
    *

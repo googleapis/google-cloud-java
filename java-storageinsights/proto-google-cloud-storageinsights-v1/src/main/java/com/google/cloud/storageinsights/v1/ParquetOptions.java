@@ -33,7 +33,6 @@ public final class ParquetOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storageinsights.v1.ParquetOptions)
     ParquetOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ParquetOptions.newBuilder() to construct.
   private ParquetOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class ParquetOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

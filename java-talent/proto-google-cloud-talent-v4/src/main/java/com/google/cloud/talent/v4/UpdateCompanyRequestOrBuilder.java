@@ -38,7 +38,6 @@ public interface UpdateCompanyRequestOrBuilder
    * @return Whether the company field is set.
    */
   boolean hasCompany();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateCompanyRequestOrBuilder
    * @return The company.
    */
   com.google.cloud.talent.v4.Company getCompany();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateCompanyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface UpdateCompanyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

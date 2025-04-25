@@ -33,7 +33,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ListDeliveryPipelinesResponse)
     ListDeliveryPipelinesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDeliveryPipelinesResponse.newBuilder() to construct.
   private ListDeliveryPipelinesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.DeliveryPipeline> deliveryPipelines_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.deploy.v1.DeliveryPipeline> getDeliveryPipelinesList() {
     return deliveryPipelines_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       getDeliveryPipelinesOrBuilderList() {
     return deliveryPipelines_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   public int getDeliveryPipelinesCount() {
     return deliveryPipelines_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   public com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipelines(int index) {
     return deliveryPipelines_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -454,7 +442,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +742,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return deliveryPipelinesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return deliveryPipelinesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return deliveryPipelinesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +973,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         int index) {
       return getDeliveryPipelinesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1016,7 +990,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return deliveryPipelinesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(deliveryPipelines_);
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       return getDeliveryPipelinesFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1063,7 +1034,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       return getDeliveryPipelinesFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1099,7 +1069,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1115,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1137,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1155,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1188,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1239,7 +1203,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1254,7 +1217,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1270,7 +1232,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1286,7 +1247,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1310,7 +1270,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1292,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1311,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1329,6 @@ public final class ListDeliveryPipelinesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

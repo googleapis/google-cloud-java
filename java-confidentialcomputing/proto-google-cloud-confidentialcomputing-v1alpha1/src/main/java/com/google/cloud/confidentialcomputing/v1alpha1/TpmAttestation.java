@@ -34,7 +34,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1alpha1.TpmAttestation)
     TpmAttestationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TpmAttestation.newBuilder() to construct.
   private TpmAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, bytes&gt; pcr_values = 2;</code>
      */
     int getPcrValuesCount();
-
     /**
      *
      *
@@ -108,11 +106,9 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, bytes&gt; pcr_values = 2;</code>
      */
     boolean containsPcrValues(int key);
-
     /** Use {@link #getPcrValuesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, com.google.protobuf.ByteString> getPcrValues();
-
     /**
      *
      *
@@ -123,7 +119,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, bytes&gt; pcr_values = 2;</code>
      */
     java.util.Map<java.lang.Integer, com.google.protobuf.ByteString> getPcrValuesMap();
-
     /**
      *
      *
@@ -138,7 +133,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         int key,
         /* nullable */
         com.google.protobuf.ByteString defaultValue);
-
     /**
      *
      *
@@ -176,7 +170,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRawSignature();
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote)
       QuoteOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Quote.newBuilder() to construct.
     private Quote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -238,7 +230,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HASH_ALGO_FIELD_NUMBER = 1;
     private int hashAlgo_ = 0;
-
     /**
      *
      *
@@ -285,7 +276,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public int getPcrValuesCount() {
       return internalGetPcrValues().getMap().size();
     }
-
     /**
      *
      *
@@ -300,14 +290,12 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
       return internalGetPcrValues().getMap().containsKey(key);
     }
-
     /** Use {@link #getPcrValuesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, com.google.protobuf.ByteString> getPcrValues() {
       return getPcrValuesMap();
     }
-
     /**
      *
      *
@@ -321,7 +309,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.Integer, com.google.protobuf.ByteString> getPcrValuesMap() {
       return internalGetPcrValues().getMap();
     }
-
     /**
      *
      *
@@ -341,7 +328,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
           internalGetPcrValues().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -364,7 +350,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RAW_QUOTE_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString rawQuote_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -383,7 +368,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RAW_SIGNATURE_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString rawSignature_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -598,7 +582,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -861,7 +844,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int hashAlgo_;
-
       /**
        *
        *
@@ -877,7 +859,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       public int getHashAlgo() {
         return hashAlgo_;
       }
-
       /**
        *
        *
@@ -897,7 +878,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -945,7 +925,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       public int getPcrValuesCount() {
         return internalGetPcrValues().getMap().size();
       }
-
       /**
        *
        *
@@ -960,14 +939,12 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
         return internalGetPcrValues().getMap().containsKey(key);
       }
-
       /** Use {@link #getPcrValuesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, com.google.protobuf.ByteString> getPcrValues() {
         return getPcrValuesMap();
       }
-
       /**
        *
        *
@@ -981,7 +958,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.Integer, com.google.protobuf.ByteString> getPcrValuesMap() {
         return internalGetPcrValues().getMap();
       }
-
       /**
        *
        *
@@ -1001,7 +977,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
             internalGetPcrValues().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -1027,7 +1002,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         internalGetMutablePcrValues().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -1042,7 +1016,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         internalGetMutablePcrValues().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, com.google.protobuf.ByteString>
@@ -1050,7 +1023,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return internalGetMutablePcrValues().getMutableMap();
       }
-
       /**
        *
        *
@@ -1069,7 +1041,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /**
        *
        *
@@ -1087,7 +1058,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private com.google.protobuf.ByteString rawQuote_ = com.google.protobuf.ByteString.EMPTY;
-
       /**
        *
        *
@@ -1103,7 +1073,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getRawQuote() {
         return rawQuote_;
       }
-
       /**
        *
        *
@@ -1125,7 +1094,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1145,7 +1113,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private com.google.protobuf.ByteString rawSignature_ = com.google.protobuf.ByteString.EMPTY;
-
       /**
        *
        *
@@ -1161,7 +1128,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getRawSignature() {
         return rawSignature_;
       }
-
       /**
        *
        *
@@ -1183,7 +1149,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1274,7 +1239,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote>
       quotes_;
-
   /**
    *
    *
@@ -1290,7 +1254,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       getQuotesList() {
     return quotes_;
   }
-
   /**
    *
    *
@@ -1307,7 +1270,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       getQuotesOrBuilderList() {
     return quotes_;
   }
-
   /**
    *
    *
@@ -1322,7 +1284,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
   public int getQuotesCount() {
     return quotes_.size();
   }
-
   /**
    *
    *
@@ -1337,7 +1298,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote getQuotes(int index) {
     return quotes_.get(index);
   }
-
   /**
    *
    *
@@ -1356,7 +1316,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TCG_EVENT_LOG_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString tcgEventLog_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1377,7 +1336,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CANONICAL_EVENT_LOG_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString canonicalEventLog_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1398,7 +1356,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AK_CERT_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString akCert_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1421,7 +1378,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> certChain_ =
       emptyList(com.google.protobuf.ByteString.class);
-
   /**
    *
    *
@@ -1438,7 +1394,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.ByteString> getCertChainList() {
     return certChain_;
   }
-
   /**
    *
    *
@@ -1454,7 +1409,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
   public int getCertChainCount() {
     return certChain_.size();
   }
-
   /**
    *
    *
@@ -1677,7 +1631,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2011,7 +1964,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         return quotesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2029,7 +1981,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         return quotesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2048,7 +1999,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         return quotesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2073,7 +2023,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2097,7 +2046,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2122,7 +2070,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2147,7 +2094,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2170,7 +2116,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2194,7 +2139,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2218,7 +2162,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2182,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2260,7 +2202,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2275,7 +2216,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         getQuotesBuilder(int index) {
       return getQuotesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2294,7 +2234,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         return quotesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2314,7 +2253,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(quotes_);
       }
     }
-
     /**
      *
      *
@@ -2332,7 +2270,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2351,7 +2288,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2386,7 +2322,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString tcgEventLog_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2404,7 +2339,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTcgEventLog() {
       return tcgEventLog_;
     }
-
     /**
      *
      *
@@ -2428,7 +2362,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2384,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.ByteString canonicalEventLog_ =
         com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2469,7 +2401,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCanonicalEventLog() {
       return canonicalEventLog_;
     }
-
     /**
      *
      *
@@ -2493,7 +2424,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2515,7 +2445,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString akCert_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2532,7 +2461,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAkCert() {
       return akCert_;
     }
-
     /**
      *
      *
@@ -2555,7 +2483,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2584,7 +2511,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2601,7 +2527,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       certChain_.makeImmutable();
       return certChain_;
     }
-
     /**
      *
      *
@@ -2617,7 +2542,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public int getCertChainCount() {
       return certChain_.size();
     }
-
     /**
      *
      *
@@ -2634,7 +2558,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCertChain(int index) {
       return certChain_.get(index);
     }
-
     /**
      *
      *
@@ -2659,7 +2582,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2683,7 +2605,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2705,7 +2626,6 @@ public final class TpmAttestation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

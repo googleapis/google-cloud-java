@@ -34,7 +34,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ListAnswerRecordsResponse)
     ListAnswerRecordsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAnswerRecordsResponse.newBuilder() to construct.
   private ListAnswerRecordsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.AnswerRecord> answerRecords_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.dialogflow.v2beta1.AnswerRecord> getAnswerRecordsList() {
     return answerRecords_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       getAnswerRecordsOrBuilderList() {
     return answerRecords_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
   public int getAnswerRecordsCount() {
     return answerRecords_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
   public com.google.cloud.dialogflow.v2beta1.AnswerRecord getAnswerRecords(int index) {
     return answerRecords_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return answerRecordsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return answerRecordsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return answerRecordsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         int index) {
       return getAnswerRecordsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return answerRecordsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(answerRecords_);
       }
     }
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       return getAnswerRecordsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.AnswerRecord.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -969,7 +944,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       return getAnswerRecordsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.AnswerRecord.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1033,7 +1006,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1059,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1081,6 @@ public final class ListAnswerRecordsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

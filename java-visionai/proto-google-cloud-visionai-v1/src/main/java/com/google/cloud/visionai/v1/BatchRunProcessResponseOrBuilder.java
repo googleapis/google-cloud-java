@@ -36,7 +36,6 @@ public interface BatchRunProcessResponseOrBuilder
    * @return The batchId.
    */
   java.lang.String getBatchId();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface BatchRunProcessResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Process processes = 2;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Process> getProcessesList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface BatchRunProcessResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Process processes = 2;</code>
    */
   com.google.cloud.visionai.v1.Process getProcesses(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface BatchRunProcessResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Process processes = 2;</code>
    */
   int getProcessesCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface BatchRunProcessResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ProcessOrBuilder>
       getProcessesOrBuilderList();
-
   /**
    *
    *

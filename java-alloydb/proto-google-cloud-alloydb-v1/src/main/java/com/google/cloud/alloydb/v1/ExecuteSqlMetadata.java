@@ -33,7 +33,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.ExecuteSqlMetadata)
     ExecuteSqlMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExecuteSqlMetadata.newBuilder() to construct.
   private ExecuteSqlMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
      * <code>OK = 1;</code>
      */
     public static final int OK_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
      * <code>PARTIAL = 2;</code>
      */
     public static final int PARTIAL_VALUE = 2;
-
     /**
      *
      *
@@ -268,7 +264,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -295,7 +290,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -325,7 +319,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int PARTIAL_RESULT_FIELD_NUMBER = 2;
   private boolean partialResult_ = false;
-
   /**
    *
    *
@@ -345,7 +338,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int SQL_STATEMENT_EXECUTION_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration sqlStatementExecutionDuration_;
-
   /**
    *
    *
@@ -361,7 +353,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasSqlStatementExecutionDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -379,7 +370,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Duration.getDefaultInstance()
         : sqlStatementExecutionDuration_;
   }
-
   /**
    *
    *
@@ -398,7 +388,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int STATUS_FIELD_NUMBER = 4;
   private int status_ = 0;
-
   /**
    *
    *
@@ -414,7 +403,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -632,7 +620,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -875,7 +862,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -901,7 +887,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +912,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -952,7 +936,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +956,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +983,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean partialResult_;
-
     /**
      *
      *
@@ -1018,7 +999,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     public boolean getPartialResult() {
       return partialResult_;
     }
-
     /**
      *
      *
@@ -1039,7 +1019,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1044,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         sqlStatementExecutionDurationBuilder_;
-
     /**
      *
      *
@@ -1080,7 +1058,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasSqlStatementExecutionDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1101,7 +1078,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
         return sqlStatementExecutionDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1100,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1120,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1148,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1167,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1181,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSqlStatementExecutionDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1228,7 +1199,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
             : sqlStatementExecutionDuration_;
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1226,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -1272,7 +1241,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -1291,7 +1259,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1278,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.alloydb.v1.ExecuteSqlMetadata.Status.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1333,7 +1299,6 @@ public final class ExecuteSqlMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

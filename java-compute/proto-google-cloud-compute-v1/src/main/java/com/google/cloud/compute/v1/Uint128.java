@@ -32,7 +32,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Uint128)
     Uint128OrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Uint128.newBuilder() to construct.
   private Uint128(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HIGH_FIELD_NUMBER = 3202466;
   private long high_ = 0L;
-
   /**
    * <code>optional uint64 high = 3202466;</code>
    *
@@ -74,7 +72,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHigh() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional uint64 high = 3202466;</code>
    *
@@ -87,7 +84,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOW_FIELD_NUMBER = 107348;
   private long low_ = 0L;
-
   /**
    * <code>optional uint64 low = 107348;</code>
    *
@@ -97,7 +93,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLow() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional uint64 low = 107348;</code>
    *
@@ -284,7 +279,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +475,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long high_;
-
     /**
      * <code>optional uint64 high = 3202466;</code>
      *
@@ -491,7 +484,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHigh() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional uint64 high = 3202466;</code>
      *
@@ -501,7 +493,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     public long getHigh() {
       return high_;
     }
-
     /**
      * <code>optional uint64 high = 3202466;</code>
      *
@@ -515,7 +506,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional uint64 high = 3202466;</code>
      *
@@ -529,7 +519,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long low_;
-
     /**
      * <code>optional uint64 low = 107348;</code>
      *
@@ -539,7 +528,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLow() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>optional uint64 low = 107348;</code>
      *
@@ -549,7 +537,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
     public long getLow() {
       return low_;
     }
-
     /**
      * <code>optional uint64 low = 107348;</code>
      *
@@ -563,7 +550,6 @@ public final class Uint128 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional uint64 low = 107348;</code>
      *

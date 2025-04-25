@@ -33,7 +33,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StateFamilyConfig)
     StateFamilyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StateFamilyConfig.newBuilder() to construct.
   private StateFamilyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateFamily_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int IS_READ_FIELD_NUMBER = 2;
   private boolean isRead_ = false;
-
   /**
    *
    *
@@ -304,7 +300,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -501,7 +496,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object stateFamily_ = "";
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -547,7 +540,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +578,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -612,7 +602,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean isRead_;
-
     /**
      *
      *
@@ -628,7 +617,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
     public boolean getIsRead() {
       return isRead_;
     }
-
     /**
      *
      *
@@ -648,7 +636,6 @@ public final class StateFamilyConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

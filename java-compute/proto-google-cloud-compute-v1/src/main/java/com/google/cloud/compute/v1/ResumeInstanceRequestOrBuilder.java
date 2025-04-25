@@ -36,7 +36,6 @@ public interface ResumeInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ResumeInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ResumeInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ResumeInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ResumeInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

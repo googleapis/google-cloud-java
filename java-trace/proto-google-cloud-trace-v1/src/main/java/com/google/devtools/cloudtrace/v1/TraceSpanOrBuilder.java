@@ -52,7 +52,6 @@ public interface TraceSpanOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface TraceSpanOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface TraceSpanOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface TraceSpanOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface TraceSpanOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface TraceSpanOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -237,7 +231,6 @@ public interface TraceSpanOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -282,11 +275,9 @@ public interface TraceSpanOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -331,7 +322,6 @@ public interface TraceSpanOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -380,7 +370,6 @@ public interface TraceSpanOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

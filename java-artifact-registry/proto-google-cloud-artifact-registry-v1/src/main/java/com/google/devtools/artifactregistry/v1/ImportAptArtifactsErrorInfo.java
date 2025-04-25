@@ -33,7 +33,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ImportAptArtifactsErrorInfo)
     ImportAptArtifactsErrorInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportAptArtifactsErrorInfo.newBuilder() to construct.
   private ImportAptArtifactsErrorInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     }
     return com.google.devtools.artifactregistry.v1.ImportAptArtifactsGcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
 
   public static final int ERROR_FIELD_NUMBER = 2;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -405,7 +397,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
             com.google.devtools.artifactregistry.v1.ImportAptArtifactsGcsSource.Builder,
             com.google.devtools.artifactregistry.v1.ImportAptArtifactsGcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
         getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     public boolean hasError() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +972,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *

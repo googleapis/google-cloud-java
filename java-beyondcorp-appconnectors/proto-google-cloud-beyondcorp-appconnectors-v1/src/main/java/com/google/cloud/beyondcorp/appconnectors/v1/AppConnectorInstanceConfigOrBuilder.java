@@ -51,7 +51,6 @@ public interface AppConnectorInstanceConfigOrBuilder
    * @return Whether the instanceConfig field is set.
    */
   boolean hasInstanceConfig();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AppConnectorInstanceConfigOrBuilder
    * @return The instanceConfig.
    */
   com.google.protobuf.Any getInstanceConfig();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AppConnectorInstanceConfigOrBuilder
    * @return Whether the notificationConfig field is set.
    */
   boolean hasNotificationConfig();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AppConnectorInstanceConfigOrBuilder
    * @return The notificationConfig.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig getNotificationConfig();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface AppConnectorInstanceConfigOrBuilder
    * @return Whether the imageConfig field is set.
    */
   boolean hasImageConfig();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface AppConnectorInstanceConfigOrBuilder
    * @return The imageConfig.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.ImageConfig getImageConfig();
-
   /**
    *
    *

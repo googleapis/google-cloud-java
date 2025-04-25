@@ -41,7 +41,6 @@ public interface CreateDataScanRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface CreateDataScanRequestOrBuilder
    * @return Whether the dataScan field is set.
    */
   boolean hasDataScan();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CreateDataScanRequestOrBuilder
    * @return The dataScan.
    */
   com.google.cloud.dataplex.v1.DataScan getDataScan();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateDataScanRequestOrBuilder
    * @return The dataScanId.
    */
   java.lang.String getDataScanId();
-
   /**
    *
    *

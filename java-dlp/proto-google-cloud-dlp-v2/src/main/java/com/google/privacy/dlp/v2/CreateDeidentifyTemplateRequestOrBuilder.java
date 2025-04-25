@@ -57,7 +57,6 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -106,7 +105,6 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    * @return Whether the deidentifyTemplate field is set.
    */
   boolean hasDeidentifyTemplate();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    * @return The deidentifyTemplate.
    */
   com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate();
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    * @return The templateId.
    */
   java.lang.String getTemplateId();
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

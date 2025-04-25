@@ -36,7 +36,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring)
     PolicyControllerMonitoringOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PolicyControllerMonitoring.newBuilder() to construct.
   private PolicyControllerMonitoring(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
      * <code>MONITORING_BACKEND_UNSPECIFIED = 0;</code>
      */
     public static final int MONITORING_BACKEND_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
      * <code>PROMETHEUS = 1;</code>
      */
     public static final int PROMETHEUS_VALUE = 1;
-
     /**
      *
      *
@@ -262,7 +259,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
                   : result;
             }
           };
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
         com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
             .MonitoringBackend>(backends_, backends_converter_);
   }
-
   /**
    *
    *
@@ -306,7 +301,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
   public int getBackendsCount() {
     return backends_.size();
   }
-
   /**
    *
    *
@@ -328,7 +322,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       getBackends(int index) {
     return backends_converter_.convert(backends_.get(index));
   }
-
   /**
    *
    *
@@ -347,7 +340,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
   public java.util.List<java.lang.Integer> getBackendsValueList() {
     return backends_;
   }
-
   /**
    *
    *
@@ -553,7 +545,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -785,7 +776,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -809,7 +799,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
           com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring
               .MonitoringBackend>(backends_, backends_converter_);
     }
-
     /**
      *
      *
@@ -827,7 +816,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
     public int getBackendsCount() {
       return backends_.size();
     }
-
     /**
      *
      *
@@ -848,7 +836,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
         getBackends(int index) {
       return backends_converter_.convert(backends_.get(index));
     }
-
     /**
      *
      *
@@ -877,7 +864,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +890,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +920,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +940,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +957,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
     public java.util.List<java.lang.Integer> getBackendsValueList() {
       return java.util.Collections.unmodifiableList(backends_);
     }
-
     /**
      *
      *
@@ -993,7 +975,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
     public int getBackendsValue(int index) {
       return backends_.get(index);
     }
-
     /**
      *
      *
@@ -1016,7 +997,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1018,6 @@ public final class PolicyControllerMonitoring extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

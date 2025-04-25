@@ -40,7 +40,6 @@ public interface CreateDatasetVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface CreateDatasetVersionRequestOrBuilder
    * @return Whether the datasetVersion field is set.
    */
   boolean hasDatasetVersion();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateDatasetVersionRequestOrBuilder
    * @return The datasetVersion.
    */
   com.google.cloud.aiplatform.v1.DatasetVersion getDatasetVersion();
-
   /**
    *
    *

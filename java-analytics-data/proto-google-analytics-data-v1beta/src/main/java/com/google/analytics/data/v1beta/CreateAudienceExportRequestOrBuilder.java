@@ -39,7 +39,6 @@ public interface CreateAudienceExportRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateAudienceExportRequestOrBuilder
    * @return Whether the audienceExport field is set.
    */
   boolean hasAudienceExport();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateAudienceExportRequestOrBuilder
    * @return The audienceExport.
    */
   com.google.analytics.data.v1beta.AudienceExport getAudienceExport();
-
   /**
    *
    *

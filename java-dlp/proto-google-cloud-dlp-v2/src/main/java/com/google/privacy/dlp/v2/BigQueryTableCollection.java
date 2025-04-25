@@ -33,7 +33,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryTableCollection)
     BigQueryTableCollectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryTableCollection.newBuilder() to construct.
   private BigQueryTableCollection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
     private PatternCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
   }
 
   public static final int INCLUDE_REGEXES_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
   public boolean hasIncludeRegexes() {
     return patternCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.BigQueryRegexes.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +550,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.BigQueryRegexes.Builder,
             com.google.privacy.dlp.v2.BigQueryRegexesOrBuilder>
         includeRegexesBuilder_;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
     public boolean hasIncludeRegexes() {
       return patternCase_ == 1;
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BigQueryRegexes.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.BigQueryRegexes.Builder getIncludeRegexesBuilder() {
       return getIncludeRegexesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class BigQueryTableCollection extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BigQueryRegexes.getDefaultInstance();
       }
     }
-
     /**
      *
      *

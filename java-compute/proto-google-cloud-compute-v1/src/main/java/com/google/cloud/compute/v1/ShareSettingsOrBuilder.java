@@ -36,7 +36,6 @@ public interface ShareSettingsOrBuilder
    * </code>
    */
   int getProjectMapCount();
-
   /**
    *
    *
@@ -49,12 +48,10 @@ public interface ShareSettingsOrBuilder
    * </code>
    */
   boolean containsProjectMap(java.lang.String key);
-
   /** Use {@link #getProjectMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig>
       getProjectMap();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ShareSettingsOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig>
       getProjectMapMap();
-
   /**
    *
    *
@@ -85,7 +81,6 @@ public interface ShareSettingsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.ShareSettingsProjectConfig defaultValue);
-
   /**
    *
    *
@@ -112,7 +107,6 @@ public interface ShareSettingsOrBuilder
    * @return Whether the shareType field is set.
    */
   boolean hasShareType();
-
   /**
    *
    *
@@ -126,7 +120,6 @@ public interface ShareSettingsOrBuilder
    * @return The shareType.
    */
   java.lang.String getShareType();
-
   /**
    *
    *

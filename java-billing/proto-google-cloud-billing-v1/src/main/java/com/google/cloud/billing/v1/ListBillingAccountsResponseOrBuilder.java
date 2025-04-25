@@ -34,7 +34,6 @@ public interface ListBillingAccountsResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
   java.util.List<com.google.cloud.billing.v1.BillingAccount> getBillingAccountsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBillingAccountsResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
   com.google.cloud.billing.v1.BillingAccount getBillingAccounts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBillingAccountsResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
   int getBillingAccountsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListBillingAccountsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.billing.v1.BillingAccountOrBuilder>
       getBillingAccountsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListBillingAccountsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface HostMaintenancePolicyOrBuilder
    * @return Whether the maintenanceInterval field is set.
    */
   boolean hasMaintenanceInterval();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface HostMaintenancePolicyOrBuilder
    * @return The enum numeric value on the wire for maintenanceInterval.
    */
   int getMaintenanceIntervalValue();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface HostMaintenancePolicyOrBuilder
    * @return Whether the opportunisticMaintenanceStrategy field is set.
    */
   boolean hasOpportunisticMaintenanceStrategy();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface HostMaintenancePolicyOrBuilder
    */
   com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
       getOpportunisticMaintenanceStrategy();
-
   /**
    *
    *

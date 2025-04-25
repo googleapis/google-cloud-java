@@ -36,7 +36,6 @@ public interface AccountVerificationInfoOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.EndpointVerificationInfo> getEndpointsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AccountVerificationInfoOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.EndpointVerificationInfo getEndpoints(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface AccountVerificationInfoOrBuilder
    * </code>
    */
   int getEndpointsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AccountVerificationInfoOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.EndpointVerificationInfoOrBuilder>
       getEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface AccountVerificationInfoOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface AccountVerificationInfoOrBuilder
    * @return The enum numeric value on the wire for latestVerificationResult.
    */
   int getLatestVerificationResultValue();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface AccountVerificationInfoOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getUsername();
-
   /**
    *
    *

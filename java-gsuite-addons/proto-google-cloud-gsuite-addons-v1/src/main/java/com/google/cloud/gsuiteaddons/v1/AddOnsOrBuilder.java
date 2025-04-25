@@ -36,7 +36,6 @@ public interface AddOnsOrBuilder
    * @return Whether the common field is set.
    */
   boolean hasCommon();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AddOnsOrBuilder
    * @return The common.
    */
   com.google.apps.script.type.CommonAddOnManifest getCommon();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AddOnsOrBuilder
    * @return Whether the gmail field is set.
    */
   boolean hasGmail();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AddOnsOrBuilder
    * @return The gmail.
    */
   com.google.apps.script.type.gmail.GmailAddOnManifest getGmail();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface AddOnsOrBuilder
    * @return Whether the drive field is set.
    */
   boolean hasDrive();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface AddOnsOrBuilder
    * @return The drive.
    */
   com.google.apps.script.type.drive.DriveAddOnManifest getDrive();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface AddOnsOrBuilder
    * @return Whether the calendar field is set.
    */
   boolean hasCalendar();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface AddOnsOrBuilder
    * @return The calendar.
    */
   com.google.apps.script.type.calendar.CalendarAddOnManifest getCalendar();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface AddOnsOrBuilder
    * @return Whether the docs field is set.
    */
   boolean hasDocs();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface AddOnsOrBuilder
    * @return The docs.
    */
   com.google.apps.script.type.docs.DocsAddOnManifest getDocs();
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public interface AddOnsOrBuilder
    * @return Whether the sheets field is set.
    */
   boolean hasSheets();
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public interface AddOnsOrBuilder
    * @return The sheets.
    */
   com.google.apps.script.type.sheets.SheetsAddOnManifest getSheets();
-
   /**
    *
    *
@@ -258,7 +246,6 @@ public interface AddOnsOrBuilder
    * @return Whether the slides field is set.
    */
   boolean hasSlides();
-
   /**
    *
    *
@@ -271,7 +258,6 @@ public interface AddOnsOrBuilder
    * @return The slides.
    */
   com.google.apps.script.type.slides.SlidesAddOnManifest getSlides();
-
   /**
    *
    *
@@ -295,7 +281,6 @@ public interface AddOnsOrBuilder
    * @return Whether the httpOptions field is set.
    */
   boolean hasHttpOptions();
-
   /**
    *
    *
@@ -308,7 +293,6 @@ public interface AddOnsOrBuilder
    * @return The httpOptions.
    */
   com.google.apps.script.type.HttpOptions getHttpOptions();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MetricxSpec)
     MetricxSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MetricxSpec.newBuilder() to construct.
   private MetricxSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>METRICX_VERSION_UNSPECIFIED = 0;</code>
      */
     public static final int METRICX_VERSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>METRICX_24_REF = 1;</code>
      */
     public static final int METRICX_24_REF_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>METRICX_24_SRC = 2;</code>
      */
     public static final int METRICX_24_SRC_VALUE = 2;
-
     /**
      *
      *
@@ -253,7 +249,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int VERSION_FIELD_NUMBER = 1;
   private int version_ = 0;
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -289,7 +283,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
   public int getVersionValue() {
     return version_;
   }
-
   /**
    *
    *
@@ -316,7 +309,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLanguage_ = "";
-
   /**
    *
    *
@@ -340,7 +332,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +360,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetLanguage_ = "";
-
   /**
    *
    *
@@ -394,7 +384,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -602,7 +591,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -818,7 +806,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int version_ = 0;
-
     /**
      *
      *
@@ -836,7 +823,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +840,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     public int getVersionValue() {
       return version_;
     }
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +881,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.MetricxSpec.MetricxVersion.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -922,7 +905,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +926,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceLanguage_ = "";
-
     /**
      *
      *
@@ -967,7 +948,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -990,7 +970,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1012,7 +991,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1008,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object targetLanguage_ = "";
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1078,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class MetricxSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

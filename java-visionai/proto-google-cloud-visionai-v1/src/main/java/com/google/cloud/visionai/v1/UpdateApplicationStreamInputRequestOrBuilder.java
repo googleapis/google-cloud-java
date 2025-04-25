@@ -40,7 +40,6 @@ public interface UpdateApplicationStreamInputRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface UpdateApplicationStreamInputRequestOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ApplicationStreamInput>
       getApplicationStreamInputsList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateApplicationStreamInputRequestOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.ApplicationStreamInput getApplicationStreamInputs(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateApplicationStreamInputRequestOrBuilder
    * </code>
    */
   int getApplicationStreamInputsCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface UpdateApplicationStreamInputRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ApplicationStreamInputOrBuilder>
       getApplicationStreamInputsOrBuilderList();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface UpdateApplicationStreamInputRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

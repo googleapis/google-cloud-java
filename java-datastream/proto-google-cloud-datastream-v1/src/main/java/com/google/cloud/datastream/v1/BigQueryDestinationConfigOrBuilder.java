@@ -38,7 +38,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the singleTargetDataset field is set.
    */
   boolean hasSingleTargetDataset();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset
       getSingleTargetDataset();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the sourceHierarchyDatasets field is set.
    */
   boolean hasSourceHierarchyDatasets();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
       getSourceHierarchyDatasets();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the dataFreshness field is set.
    */
   boolean hasDataFreshness();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The dataFreshness.
    */
   com.google.protobuf.Duration getDataFreshness();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the blmtConfig field is set.
    */
   boolean hasBlmtConfig();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The blmtConfig.
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig getBlmtConfig();
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the merge field is set.
    */
   boolean hasMerge();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The merge.
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge getMerge();
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the appendOnly field is set.
    */
   boolean hasAppendOnly();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The appendOnly.
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly getAppendOnly();
-
   /**
    *
    *

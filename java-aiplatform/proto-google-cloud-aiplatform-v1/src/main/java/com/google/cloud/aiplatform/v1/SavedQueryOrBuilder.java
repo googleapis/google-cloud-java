@@ -36,7 +36,6 @@ public interface SavedQueryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SavedQueryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface SavedQueryOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SavedQueryOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface SavedQueryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface SavedQueryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface SavedQueryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface SavedQueryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface SavedQueryOrBuilder
    * @return The annotationFilter.
    */
   java.lang.String getAnnotationFilter();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface SavedQueryOrBuilder
    * @return The problemType.
    */
   java.lang.String getProblemType();
-
   /**
    *
    *
@@ -299,7 +289,6 @@ public interface SavedQueryOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

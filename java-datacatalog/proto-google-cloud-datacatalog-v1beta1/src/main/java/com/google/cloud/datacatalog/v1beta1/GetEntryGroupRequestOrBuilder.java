@@ -39,7 +39,6 @@ public interface GetEntryGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface GetEntryGroupRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface GetEntryGroupRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
-
   /**
    *
    *

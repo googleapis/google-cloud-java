@@ -38,7 +38,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return Whether the aggregation field is set.
    */
   boolean hasAggregation();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return The aggregation.
    */
   com.google.monitoring.dashboard.v1.Aggregation getAggregation();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return Whether the secondaryAggregation field is set.
    */
   boolean hasSecondaryAggregation();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return The secondaryAggregation.
    */
   com.google.monitoring.dashboard.v1.Aggregation getSecondaryAggregation();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return Whether the pickTimeSeriesFilter field is set.
    */
   boolean hasPickTimeSeriesFilter();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface TimeSeriesFilterOrBuilder
    * @return The pickTimeSeriesFilter.
    */
   com.google.monitoring.dashboard.v1.PickTimeSeriesFilter getPickTimeSeriesFilter();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface TimeSeriesFilterOrBuilder
    */
   @java.lang.Deprecated
   boolean hasStatisticalTimeSeriesFilter();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface TimeSeriesFilterOrBuilder
    */
   @java.lang.Deprecated
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter getStatisticalTimeSeriesFilter();
-
   /**
    *
    *

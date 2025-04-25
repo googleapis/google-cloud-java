@@ -33,7 +33,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.SetAclRequest)
     SetAclRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetAclRequest.newBuilder() to construct.
   private SetAclRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_FIELD_NUMBER = 2;
   private com.google.iam.v1.Policy policy_;
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
-
   /**
    *
    *
@@ -233,7 +227,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROJECT_OWNER_FIELD_NUMBER = 4;
   private boolean projectOwner_ = false;
-
   /**
    *
    *
@@ -504,7 +494,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +740,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -779,7 +767,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +820,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +842,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +876,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.iam.v1.Policy.Builder,
             com.google.iam.v1.PolicyOrBuilder>
         policyBuilder_;
-
     /**
      *
      *
@@ -925,7 +908,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -962,7 +944,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         return policyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1021,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1066,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1103,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1135,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1193,7 +1169,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1218,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
-
     /**
      *
      *
@@ -1259,7 +1233,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1281,7 +1254,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         return requestMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1277,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1298,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1328,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1348,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1364,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1417,7 +1384,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
             : requestMetadata_;
       }
     }
-
     /**
      *
      *
@@ -1446,7 +1412,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean projectOwner_;
-
     /**
      *
      *
@@ -1463,7 +1428,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean getProjectOwner() {
       return projectOwner_;
     }
-
     /**
      *
      *
@@ -1484,7 +1448,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

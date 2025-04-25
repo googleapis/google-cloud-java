@@ -34,7 +34,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateModelRequest)
     UpdateModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateModelRequest.newBuilder() to construct.
   private UpdateModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int MODEL_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Model model_;
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1beta1.Model getModel() {
     return model_ == null ? com.google.cloud.aiplatform.v1beta1.Model.getDefaultInstance() : model_;
   }
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -407,7 +400,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -631,7 +623,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.Model.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelOrBuilder>
         modelBuilder_;
-
     /**
      *
      *
@@ -665,7 +656,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasModel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -705,7 +695,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
         return modelBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -747,7 +736,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +774,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +820,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +858,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +891,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -944,7 +928,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
             : model_;
       }
     }
-
     /**
      *
      *
@@ -996,7 +979,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1014,7 +996,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1038,7 +1019,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1044,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1066,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1096,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1118,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1135,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1181,7 +1156,6 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface TestCaseResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface TestCaseResultOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface TestCaseResultOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn>
       getConversationTurnsList();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface TestCaseResultOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn getConversationTurns(int index);
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface TestCaseResultOrBuilder
    * </code>
    */
   int getConversationTurnsCount();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface TestCaseResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ConversationTurnOrBuilder>
       getConversationTurnsOrBuilderList();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface TestCaseResultOrBuilder
    * @return The enum numeric value on the wire for testResult.
    */
   int getTestResultValue();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface TestCaseResultOrBuilder
    * @return Whether the testTime field is set.
    */
   boolean hasTestTime();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface TestCaseResultOrBuilder
    * @return The testTime.
    */
   com.google.protobuf.Timestamp getTestTime();
-
   /**
    *
    *

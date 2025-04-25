@@ -35,7 +35,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.StandardSchedule)
     StandardScheduleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StandardSchedule.newBuilder() to construct.
   private StandardSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,7 +152,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
      * <code>RECURRENCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RECURRENCE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -164,7 +162,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
      * <code>HOURLY = 1;</code>
      */
     public static final int HOURLY_VALUE = 1;
-
     /**
      *
      *
@@ -175,7 +172,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
      * <code>DAILY = 2;</code>
      */
     public static final int DAILY_VALUE = 2;
-
     /**
      *
      *
@@ -186,7 +182,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
      * <code>WEEKLY = 3;</code>
      */
     public static final int WEEKLY_VALUE = 3;
-
     /**
      *
      *
@@ -197,7 +192,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
      * <code>MONTHLY = 4;</code>
      */
     public static final int MONTHLY_VALUE = 4;
-
     /**
      *
      *
@@ -301,7 +295,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int RECURRENCE_TYPE_FIELD_NUMBER = 1;
   private int recurrenceType_ = 0;
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public int getRecurrenceTypeValue() {
     return recurrenceType_;
   }
-
   /**
    *
    *
@@ -344,7 +336,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
 
   public static final int HOURLY_FREQUENCY_FIELD_NUMBER = 2;
   private int hourlyFrequency_ = 0;
-
   /**
    *
    *
@@ -388,7 +379,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
               return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -412,7 +402,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
   }
-
   /**
    *
    *
@@ -435,7 +424,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public int getDaysOfWeekCount() {
     return daysOfWeek_.size();
   }
-
   /**
    *
    *
@@ -459,7 +447,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public com.google.type.DayOfWeek getDaysOfWeek(int index) {
     return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
   }
-
   /**
    *
    *
@@ -482,7 +469,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
     return daysOfWeek_;
   }
-
   /**
    *
    *
@@ -513,7 +499,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList daysOfMonth_ = emptyIntList();
-
   /**
    *
    *
@@ -533,7 +518,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getDaysOfMonthList() {
     return daysOfMonth_;
   }
-
   /**
    *
    *
@@ -552,7 +536,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public int getDaysOfMonthCount() {
     return daysOfMonth_.size();
   }
-
   /**
    *
    *
@@ -577,7 +560,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
 
   public static final int WEEK_DAY_OF_MONTH_FIELD_NUMBER = 5;
   private com.google.cloud.backupdr.v1.WeekDayOfMonth weekDayOfMonth_;
-
   /**
    *
    *
@@ -601,7 +583,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public boolean hasWeekDayOfMonth() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -627,7 +608,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.backupdr.v1.WeekDayOfMonth.getDefaultInstance()
         : weekDayOfMonth_;
   }
-
   /**
    *
    *
@@ -667,7 +647,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
               return result == null ? com.google.type.Month.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -688,7 +667,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     return new com.google.protobuf.Internal.ListAdapter<java.lang.Integer, com.google.type.Month>(
         months_, months_converter_);
   }
-
   /**
    *
    *
@@ -708,7 +686,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public int getMonthsCount() {
     return months_.size();
   }
-
   /**
    *
    *
@@ -729,7 +706,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public com.google.type.Month getMonths(int index) {
     return months_converter_.convert(months_.get(index));
   }
-
   /**
    *
    *
@@ -749,7 +725,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getMonthsValueList() {
     return months_;
   }
-
   /**
    *
    *
@@ -775,7 +750,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
 
   public static final int BACKUP_WINDOW_FIELD_NUMBER = 7;
   private com.google.cloud.backupdr.v1.BackupWindow backupWindow_;
-
   /**
    *
    *
@@ -797,7 +771,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
   public boolean hasBackupWindow() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -821,7 +794,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.backupdr.v1.BackupWindow.getDefaultInstance()
         : backupWindow_;
   }
-
   /**
    *
    *
@@ -848,7 +820,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
-
   /**
    *
    *
@@ -875,7 +846,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1186,7 +1156,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1558,7 +1527,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int recurrenceType_ = 0;
-
     /**
      *
      *
@@ -1576,7 +1544,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getRecurrenceTypeValue() {
       return recurrenceType_;
     }
-
     /**
      *
      *
@@ -1597,7 +1564,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1585,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.backupdr.v1.StandardSchedule.RecurrenceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1644,7 +1609,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1630,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     }
 
     private int hourlyFrequency_;
-
     /**
      *
      *
@@ -1694,7 +1657,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getHourlyFrequency() {
       return hourlyFrequency_;
     }
-
     /**
      *
      *
@@ -1726,7 +1688,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1765,7 +1726,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1788,7 +1748,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
     }
-
     /**
      *
      *
@@ -1810,7 +1769,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getDaysOfWeekCount() {
       return daysOfWeek_.size();
     }
-
     /**
      *
      *
@@ -1833,7 +1791,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public com.google.type.DayOfWeek getDaysOfWeek(int index) {
       return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
     }
-
     /**
      *
      *
@@ -1863,7 +1820,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1848,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1921,7 +1876,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1946,7 +1900,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1921,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
       return java.util.Collections.unmodifiableList(daysOfWeek_);
     }
-
     /**
      *
      *
@@ -1991,7 +1943,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getDaysOfWeekValue(int index) {
       return daysOfWeek_.get(index);
     }
-
     /**
      *
      *
@@ -2018,7 +1969,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2044,7 +1994,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2030,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2101,7 +2049,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       daysOfMonth_.makeImmutable();
       return daysOfMonth_;
     }
-
     /**
      *
      *
@@ -2120,7 +2067,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getDaysOfMonthCount() {
       return daysOfMonth_.size();
     }
-
     /**
      *
      *
@@ -2140,7 +2086,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getDaysOfMonth(int index) {
       return daysOfMonth_.getInt(index);
     }
-
     /**
      *
      *
@@ -2166,7 +2111,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2191,7 +2135,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2158,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2244,7 +2186,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
             com.google.cloud.backupdr.v1.WeekDayOfMonth.Builder,
             com.google.cloud.backupdr.v1.WeekDayOfMonthOrBuilder>
         weekDayOfMonthBuilder_;
-
     /**
      *
      *
@@ -2267,7 +2208,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public boolean hasWeekDayOfMonth() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2296,7 +2236,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         return weekDayOfMonthBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2327,7 +2266,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2356,7 +2294,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2393,7 +2330,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2421,7 +2357,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2444,7 +2379,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getWeekDayOfMonthFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2471,7 +2405,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
             : weekDayOfMonth_;
       }
     }
-
     /**
      *
      *
@@ -2514,7 +2447,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
       }
     }
-
     /**
      *
      *
@@ -2535,7 +2467,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       return new com.google.protobuf.Internal.ListAdapter<java.lang.Integer, com.google.type.Month>(
           months_, months_converter_);
     }
-
     /**
      *
      *
@@ -2555,7 +2486,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getMonthsCount() {
       return months_.size();
     }
-
     /**
      *
      *
@@ -2576,7 +2506,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public com.google.type.Month getMonths(int index) {
       return months_converter_.convert(months_.get(index));
     }
-
     /**
      *
      *
@@ -2604,7 +2533,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2559,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2657,7 +2584,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2680,7 +2606,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2700,7 +2625,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getMonthsValueList() {
       return java.util.Collections.unmodifiableList(months_);
     }
-
     /**
      *
      *
@@ -2721,7 +2645,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public int getMonthsValue(int index) {
       return months_.get(index);
     }
-
     /**
      *
      *
@@ -2746,7 +2669,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2770,7 +2692,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2803,7 +2724,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
             com.google.cloud.backupdr.v1.BackupWindow.Builder,
             com.google.cloud.backupdr.v1.BackupWindowOrBuilder>
         backupWindowBuilder_;
-
     /**
      *
      *
@@ -2824,7 +2744,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     public boolean hasBackupWindow() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2851,7 +2770,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         return backupWindowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2880,7 +2798,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2907,7 +2824,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2941,7 +2857,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2967,7 +2882,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2988,7 +2902,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getBackupWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3013,7 +2926,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
             : backupWindow_;
       }
     }
-
     /**
      *
      *
@@ -3047,7 +2959,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object timeZone_ = "";
-
     /**
      *
      *
@@ -3073,7 +2984,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3099,7 +3009,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3124,7 +3033,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3145,7 +3053,6 @@ public final class StandardSchedule extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

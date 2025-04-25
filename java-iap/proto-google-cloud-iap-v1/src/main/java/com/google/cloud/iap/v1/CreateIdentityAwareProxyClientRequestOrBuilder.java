@@ -39,7 +39,6 @@ public interface CreateIdentityAwareProxyClientRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateIdentityAwareProxyClientRequestOrBuilder
    * @return Whether the identityAwareProxyClient field is set.
    */
   boolean hasIdentityAwareProxyClient();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateIdentityAwareProxyClientRequestOrBuilder
    * @return The identityAwareProxyClient.
    */
   com.google.cloud.iap.v1.IdentityAwareProxyClient getIdentityAwareProxyClient();
-
   /**
    *
    *

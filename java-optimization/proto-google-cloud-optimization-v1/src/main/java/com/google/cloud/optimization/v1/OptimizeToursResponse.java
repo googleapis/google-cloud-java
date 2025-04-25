@@ -35,7 +35,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.OptimizeToursResponse)
     OptimizeToursResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OptimizeToursResponse.newBuilder() to construct.
   private OptimizeToursResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the aggregatedRouteMetrics field is set.
      */
     boolean hasAggregatedRouteMetrics();
-
     /**
      *
      *
@@ -105,7 +103,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return The aggregatedRouteMetrics.
      */
     com.google.cloud.optimization.v1.AggregatedMetrics getAggregatedRouteMetrics();
-
     /**
      *
      *
@@ -163,7 +160,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the earliestVehicleStartTime field is set.
      */
     boolean hasEarliestVehicleStartTime();
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return The earliestVehicleStartTime.
      */
     com.google.protobuf.Timestamp getEarliestVehicleStartTime();
-
     /**
      *
      *
@@ -206,7 +201,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the latestVehicleEndTime field is set.
      */
     boolean hasLatestVehicleEndTime();
-
     /**
      *
      *
@@ -221,7 +215,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return The latestVehicleEndTime.
      */
     com.google.protobuf.Timestamp getLatestVehicleEndTime();
-
     /**
      *
      *
@@ -253,7 +246,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, double&gt; costs = 10;</code>
      */
     int getCostsCount();
-
     /**
      *
      *
@@ -272,11 +264,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, double&gt; costs = 10;</code>
      */
     boolean containsCosts(java.lang.String key);
-
     /** Use {@link #getCostsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.Double> getCosts();
-
     /**
      *
      *
@@ -295,7 +285,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, double&gt; costs = 10;</code>
      */
     java.util.Map<java.lang.String, java.lang.Double> getCostsMap();
-
     /**
      *
      *
@@ -314,7 +303,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, double&gt; costs = 10;</code>
      */
     double getCostsOrDefault(java.lang.String key, double defaultValue);
-
     /**
      *
      *
@@ -347,7 +335,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      */
     double getTotalCost();
   }
-
   /**
    *
    *
@@ -362,7 +349,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.OptimizeToursResponse.Metrics)
       MetricsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Metrics.newBuilder() to construct.
     private Metrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -406,7 +392,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int AGGREGATED_ROUTE_METRICS_FIELD_NUMBER = 1;
     private com.google.cloud.optimization.v1.AggregatedMetrics aggregatedRouteMetrics_;
-
     /**
      *
      *
@@ -425,7 +410,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public boolean hasAggregatedRouteMetrics() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -446,7 +430,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.optimization.v1.AggregatedMetrics.getDefaultInstance()
           : aggregatedRouteMetrics_;
     }
-
     /**
      *
      *
@@ -469,7 +452,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
     public static final int SKIPPED_MANDATORY_SHIPMENT_COUNT_FIELD_NUMBER = 2;
     private int skippedMandatoryShipmentCount_ = 0;
-
     /**
      *
      *
@@ -488,7 +470,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
     public static final int USED_VEHICLE_COUNT_FIELD_NUMBER = 3;
     private int usedVehicleCount_ = 0;
-
     /**
      *
      *
@@ -509,7 +490,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
     public static final int EARLIEST_VEHICLE_START_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp earliestVehicleStartTime_;
-
     /**
      *
      *
@@ -527,7 +507,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public boolean hasEarliestVehicleStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -547,7 +526,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : earliestVehicleStartTime_;
     }
-
     /**
      *
      *
@@ -568,7 +546,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
     public static final int LATEST_VEHICLE_END_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp latestVehicleEndTime_;
-
     /**
      *
      *
@@ -586,7 +563,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public boolean hasLatestVehicleEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -606,7 +582,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : latestVehicleEndTime_;
     }
-
     /**
      *
      *
@@ -651,7 +626,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public int getCostsCount() {
       return internalGetCosts().getMap().size();
     }
-
     /**
      *
      *
@@ -676,14 +650,12 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return internalGetCosts().getMap().containsKey(key);
     }
-
     /** Use {@link #getCostsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getCosts() {
       return getCostsMap();
     }
-
     /**
      *
      *
@@ -705,7 +677,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.Double> getCostsMap() {
       return internalGetCosts().getMap();
     }
-
     /**
      *
      *
@@ -731,7 +702,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -763,7 +733,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
     public static final int TOTAL_COST_FIELD_NUMBER = 6;
     private double totalCost_ = 0D;
-
     /**
      *
      *
@@ -1031,7 +1000,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1372,7 +1340,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.optimization.v1.AggregatedMetrics.Builder,
               com.google.cloud.optimization.v1.AggregatedMetricsOrBuilder>
           aggregatedRouteMetricsBuilder_;
-
       /**
        *
        *
@@ -1390,7 +1357,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public boolean hasAggregatedRouteMetrics() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1414,7 +1380,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           return aggregatedRouteMetricsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1441,7 +1406,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1465,7 +1429,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1498,7 +1461,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1521,7 +1483,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1540,7 +1501,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return getAggregatedRouteMetricsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1563,7 +1523,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               : aggregatedRouteMetrics_;
         }
       }
-
       /**
        *
        *
@@ -1594,7 +1553,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
 
       private int skippedMandatoryShipmentCount_;
-
       /**
        *
        *
@@ -1610,7 +1568,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public int getSkippedMandatoryShipmentCount() {
         return skippedMandatoryShipmentCount_;
       }
-
       /**
        *
        *
@@ -1630,7 +1587,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1650,7 +1606,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
 
       private int usedVehicleCount_;
-
       /**
        *
        *
@@ -1668,7 +1623,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public int getUsedVehicleCount() {
         return usedVehicleCount_;
       }
-
       /**
        *
        *
@@ -1690,7 +1644,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1717,7 +1670,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           earliestVehicleStartTimeBuilder_;
-
       /**
        *
        *
@@ -1734,7 +1686,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public boolean hasEarliestVehicleStartTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1757,7 +1708,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           return earliestVehicleStartTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1782,7 +1732,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1805,7 +1754,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1835,7 +1783,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1857,7 +1804,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1874,7 +1820,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return getEarliestVehicleStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1895,7 +1840,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               : earliestVehicleStartTime_;
         }
       }
-
       /**
        *
        *
@@ -1930,7 +1874,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           latestVehicleEndTimeBuilder_;
-
       /**
        *
        *
@@ -1947,7 +1890,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public boolean hasLatestVehicleEndTime() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1970,7 +1912,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           return latestVehicleEndTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1995,7 +1936,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2018,7 +1958,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2048,7 +1987,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2070,7 +2008,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2087,7 +2024,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return getLatestVehicleEndTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2108,7 +2044,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               : latestVehicleEndTime_;
         }
       }
-
       /**
        *
        *
@@ -2162,7 +2097,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public int getCostsCount() {
         return internalGetCosts().getMap().size();
       }
-
       /**
        *
        *
@@ -2187,14 +2121,12 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         }
         return internalGetCosts().getMap().containsKey(key);
       }
-
       /** Use {@link #getCostsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Double> getCosts() {
         return getCostsMap();
       }
-
       /**
        *
        *
@@ -2216,7 +2148,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public java.util.Map<java.lang.String, java.lang.Double> getCostsMap() {
         return internalGetCosts().getMap();
       }
-
       /**
        *
        *
@@ -2242,7 +2173,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -2277,7 +2207,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         internalGetMutableCosts().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -2302,14 +2231,12 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         internalGetMutableCosts().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Double> getMutableCosts() {
         bitField0_ |= 0x00000020;
         return internalGetMutableCosts().getMutableMap();
       }
-
       /**
        *
        *
@@ -2336,7 +2263,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000020;
         return this;
       }
-
       /**
        *
        *
@@ -2361,7 +2287,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
 
       private double totalCost_;
-
       /**
        *
        *
@@ -2377,7 +2302,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       public double getTotalCost() {
         return totalCost_;
       }
-
       /**
        *
        *
@@ -2397,7 +2321,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2488,7 +2411,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> routes_;
-
   /**
    *
    *
@@ -2503,7 +2425,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> getRoutesList() {
     return routes_;
   }
-
   /**
    *
    *
@@ -2519,7 +2440,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       getRoutesOrBuilderList() {
     return routes_;
   }
-
   /**
    *
    *
@@ -2534,7 +2454,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public int getRoutesCount() {
     return routes_.size();
   }
-
   /**
    *
    *
@@ -2549,7 +2468,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.optimization.v1.ShipmentRoute getRoutes(int index) {
     return routes_.get(index);
   }
-
   /**
    *
    *
@@ -2569,7 +2487,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestLabel_ = "";
-
   /**
    *
    *
@@ -2595,7 +2512,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -2626,7 +2542,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.SkippedShipment> skippedShipments_;
-
   /**
    *
    *
@@ -2641,7 +2556,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       getSkippedShipmentsList() {
     return skippedShipments_;
   }
-
   /**
    *
    *
@@ -2656,7 +2570,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       getSkippedShipmentsOrBuilderList() {
     return skippedShipments_;
   }
-
   /**
    *
    *
@@ -2670,7 +2583,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public int getSkippedShipmentsCount() {
     return skippedShipments_.size();
   }
-
   /**
    *
    *
@@ -2684,7 +2596,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.optimization.v1.SkippedShipment getSkippedShipments(int index) {
     return skippedShipments_.get(index);
   }
-
   /**
    *
    *
@@ -2705,7 +2616,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.OptimizeToursValidationError>
       validationErrors_;
-
   /**
    *
    *
@@ -2725,7 +2635,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       getValidationErrorsList() {
     return validationErrors_;
   }
-
   /**
    *
    *
@@ -2746,7 +2655,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       getValidationErrorsOrBuilderList() {
     return validationErrors_;
   }
-
   /**
    *
    *
@@ -2765,7 +2673,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public int getValidationErrorsCount() {
     return validationErrors_.size();
   }
-
   /**
    *
    *
@@ -2785,7 +2692,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       int index) {
     return validationErrors_.get(index);
   }
-
   /**
    *
    *
@@ -2808,7 +2714,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
   public static final int METRICS_FIELD_NUMBER = 6;
   private com.google.cloud.optimization.v1.OptimizeToursResponse.Metrics metrics_;
-
   /**
    *
    *
@@ -2824,7 +2729,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
   public boolean hasMetrics() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2842,7 +2746,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.optimization.v1.OptimizeToursResponse.Metrics.getDefaultInstance()
         : metrics_;
   }
-
   /**
    *
    *
@@ -2862,7 +2765,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
 
   public static final int TOTAL_COST_FIELD_NUMBER = 2;
   private double totalCost_ = 0D;
-
   /**
    *
    *
@@ -3106,7 +3008,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3545,7 +3446,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return routesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3563,7 +3463,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return routesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3581,7 +3480,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return routesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3605,7 +3503,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3627,7 +3524,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3651,7 +3547,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3675,7 +3570,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3697,7 +3591,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3719,7 +3612,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3741,7 +3633,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3762,7 +3653,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3783,7 +3673,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3797,7 +3686,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.optimization.v1.ShipmentRoute.Builder getRoutesBuilder(int index) {
       return getRoutesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3815,7 +3703,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return routesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3834,7 +3721,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(routes_);
       }
     }
-
     /**
      *
      *
@@ -3849,7 +3735,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       return getRoutesFieldBuilder()
           .addBuilder(com.google.cloud.optimization.v1.ShipmentRoute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3864,7 +3749,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       return getRoutesFieldBuilder()
           .addBuilder(index, com.google.cloud.optimization.v1.ShipmentRoute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3898,7 +3782,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestLabel_ = "";
-
     /**
      *
      *
@@ -3923,7 +3806,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3948,7 +3830,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3972,7 +3853,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3992,7 +3872,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4053,7 +3932,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return skippedShipmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4070,7 +3948,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return skippedShipmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4087,7 +3964,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return skippedShipmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4111,7 +3987,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4132,7 +4007,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4155,7 +4029,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4179,7 +4052,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4200,7 +4072,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4221,7 +4092,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4242,7 +4112,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4262,7 +4131,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4282,7 +4150,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4296,7 +4163,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getSkippedShipmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4314,7 +4180,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return skippedShipmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4332,7 +4197,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(skippedShipments_);
       }
     }
-
     /**
      *
      *
@@ -4346,7 +4210,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       return getSkippedShipmentsFieldBuilder()
           .addBuilder(com.google.cloud.optimization.v1.SkippedShipment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4361,7 +4224,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       return getSkippedShipmentsFieldBuilder()
           .addBuilder(index, com.google.cloud.optimization.v1.SkippedShipment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4436,7 +4298,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return validationErrorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4458,7 +4319,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return validationErrorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4481,7 +4341,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return validationErrorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4510,7 +4369,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4537,7 +4395,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4566,7 +4423,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4595,7 +4451,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4621,7 +4476,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4648,7 +4502,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4675,7 +4528,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4700,7 +4552,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4725,7 +4576,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4744,7 +4594,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         getValidationErrorsBuilder(int index) {
       return getValidationErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4767,7 +4616,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return validationErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4791,7 +4639,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(validationErrors_);
       }
     }
-
     /**
      *
      *
@@ -4812,7 +4659,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.optimization.v1.OptimizeToursValidationError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4834,7 +4680,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
               index,
               com.google.cloud.optimization.v1.OptimizeToursValidationError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4880,7 +4725,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.optimization.v1.OptimizeToursResponse.Metrics.Builder,
             com.google.cloud.optimization.v1.OptimizeToursResponse.MetricsOrBuilder>
         metricsBuilder_;
-
     /**
      *
      *
@@ -4895,7 +4739,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public boolean hasMetrics() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4916,7 +4759,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         return metricsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4940,7 +4782,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4961,7 +4802,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4992,7 +4832,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5012,7 +4851,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5028,7 +4866,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5048,7 +4885,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
             : metrics_;
       }
     }
-
     /**
      *
      *
@@ -5076,7 +4912,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     }
 
     private double totalCost_;
-
     /**
      *
      *
@@ -5099,7 +4934,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public double getTotalCost() {
       return totalCost_;
     }
-
     /**
      *
      *
@@ -5126,7 +4960,6 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface GetSslPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetSslPolicyRequestOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
-
   /**
    *
    *

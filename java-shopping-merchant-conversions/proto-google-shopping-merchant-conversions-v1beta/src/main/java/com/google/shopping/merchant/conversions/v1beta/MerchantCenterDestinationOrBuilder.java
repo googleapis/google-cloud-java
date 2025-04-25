@@ -36,7 +36,6 @@ public interface MerchantCenterDestinationOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface MerchantCenterDestinationOrBuilder
    * @return Whether the attributionSettings field is set.
    */
   boolean hasAttributionSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface MerchantCenterDestinationOrBuilder
    * @return The attributionSettings.
    */
   com.google.shopping.merchant.conversions.v1beta.AttributionSettings getAttributionSettings();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface MerchantCenterDestinationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface MerchantCenterDestinationOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *

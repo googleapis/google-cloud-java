@@ -34,7 +34,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest)
     MergeCapacityCommitmentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MergeCapacityCommitmentsRequest.newBuilder() to construct.
   private MergeCapacityCommitmentsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList capacityCommitmentIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getCapacityCommitmentIdsList() {
     return capacityCommitmentIds_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   public int getCapacityCommitmentIdsCount() {
     return capacityCommitmentIds_.size();
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   public java.lang.String getCapacityCommitmentIds(int index) {
     return capacityCommitmentIds_.get(index);
   }
-
   /**
    *
    *
@@ -385,7 +378,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -603,7 +595,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       capacityCommitmentIds_.makeImmutable();
       return capacityCommitmentIds_;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     public int getCapacityCommitmentIdsCount() {
       return capacityCommitmentIds_.size();
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     public java.lang.String getCapacityCommitmentIds(int index) {
       return capacityCommitmentIds_.get(index);
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     public com.google.protobuf.ByteString getCapacityCommitmentIdsBytes(int index) {
       return capacityCommitmentIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +888,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

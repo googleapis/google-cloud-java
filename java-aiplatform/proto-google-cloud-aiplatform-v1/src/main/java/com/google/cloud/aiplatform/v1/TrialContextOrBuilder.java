@@ -37,7 +37,6 @@ public interface TrialContextOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface TrialContextOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial.Parameter parameters = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Trial.Parameter> getParametersList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface TrialContextOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial.Parameter parameters = 2;</code>
    */
   com.google.cloud.aiplatform.v1.Trial.Parameter getParameters(int index);
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface TrialContextOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial.Parameter parameters = 2;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface TrialContextOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.Trial.ParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *

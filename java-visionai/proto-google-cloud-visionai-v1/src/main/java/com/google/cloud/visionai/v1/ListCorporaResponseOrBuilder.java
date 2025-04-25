@@ -34,7 +34,6 @@ public interface ListCorporaResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Corpus corpora = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Corpus> getCorporaList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCorporaResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Corpus corpora = 1;</code>
    */
   com.google.cloud.visionai.v1.Corpus getCorpora(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCorporaResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Corpus corpora = 1;</code>
    */
   int getCorporaCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListCorporaResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Corpus corpora = 1;</code>
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CorpusOrBuilder> getCorporaOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListCorporaResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

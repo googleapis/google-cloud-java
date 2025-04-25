@@ -36,7 +36,6 @@ public interface JobMessageOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface JobMessageOrBuilder
    * @return Whether the time field is set.
    */
   boolean hasTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface JobMessageOrBuilder
    * @return The time.
    */
   com.google.protobuf.Timestamp getTime();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface JobMessageOrBuilder
    * @return The messageText.
    */
   java.lang.String getMessageText();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface JobMessageOrBuilder
    * @return The enum numeric value on the wire for messageImportance.
    */
   int getMessageImportanceValue();
-
   /**
    *
    *

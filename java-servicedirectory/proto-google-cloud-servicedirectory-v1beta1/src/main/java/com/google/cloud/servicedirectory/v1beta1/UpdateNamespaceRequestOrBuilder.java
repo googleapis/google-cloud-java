@@ -38,7 +38,6 @@ public interface UpdateNamespaceRequestOrBuilder
    * @return Whether the namespace field is set.
    */
   boolean hasNamespace();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateNamespaceRequestOrBuilder
    * @return The namespace.
    */
   com.google.cloud.servicedirectory.v1beta1.Namespace getNamespace();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateNamespaceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateNamespaceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

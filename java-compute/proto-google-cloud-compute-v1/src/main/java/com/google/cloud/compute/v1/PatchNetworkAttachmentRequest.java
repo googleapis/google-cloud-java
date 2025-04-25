@@ -33,7 +33,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchNetworkAttachmentRequest)
     PatchNetworkAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchNetworkAttachmentRequest.newBuilder() to construct.
   private PatchNetworkAttachmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkAttachment_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
 
   public static final int NETWORK_ATTACHMENT_RESOURCE_FIELD_NUMBER = 210974745;
   private com.google.cloud.compute.v1.NetworkAttachment networkAttachmentResource_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
   public boolean hasNetworkAttachmentResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.NetworkAttachment.getDefaultInstance()
         : networkAttachmentResource_;
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +289,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -838,7 +824,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object networkAttachment_ = "";
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -884,7 +868,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +906,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.NetworkAttachment.Builder,
             com.google.cloud.compute.v1.NetworkAttachmentOrBuilder>
         networkAttachmentResourceBuilder_;
-
     /**
      *
      *
@@ -971,7 +951,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     public boolean hasNetworkAttachmentResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -994,7 +973,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return networkAttachmentResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1020,7 +998,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1020,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1051,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1072,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1089,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return getNetworkAttachmentResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1137,7 +1110,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
             : networkAttachmentResource_;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1192,7 +1163,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1187,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1229,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1255,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1338,7 +1303,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1362,7 +1326,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1345,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1371,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1424,7 +1385,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1447,7 +1407,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1470,7 +1429,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1450,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1510,7 +1467,6 @@ public final class PatchNetworkAttachmentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

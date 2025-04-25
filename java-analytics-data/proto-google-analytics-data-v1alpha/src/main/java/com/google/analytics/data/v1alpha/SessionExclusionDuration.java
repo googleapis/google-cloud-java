@@ -75,7 +75,6 @@ public enum SessionExclusionDuration implements com.google.protobuf.ProtocolMess
    * <code>SESSION_EXCLUSION_DURATION_UNSPECIFIED = 0;</code>
    */
   public static final int SESSION_EXCLUSION_DURATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum SessionExclusionDuration implements com.google.protobuf.ProtocolMess
    * <code>SESSION_EXCLUSION_TEMPORARY = 1;</code>
    */
   public static final int SESSION_EXCLUSION_TEMPORARY_VALUE = 1;
-
   /**
    *
    *

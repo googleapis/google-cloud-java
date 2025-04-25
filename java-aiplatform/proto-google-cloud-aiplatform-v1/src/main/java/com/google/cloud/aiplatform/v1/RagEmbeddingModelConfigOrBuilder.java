@@ -42,7 +42,6 @@ public interface RagEmbeddingModelConfigOrBuilder
    * @return Whether the vertexPredictionEndpoint field is set.
    */
   boolean hasVertexPredictionEndpoint();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RagEmbeddingModelConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.RagEmbeddingModelConfig.VertexPredictionEndpoint
       getVertexPredictionEndpoint();
-
   /**
    *
    *

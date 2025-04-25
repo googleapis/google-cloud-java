@@ -36,7 +36,6 @@ public interface TrajectoryPrecisionMetricValueOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *

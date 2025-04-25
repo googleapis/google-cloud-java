@@ -36,7 +36,6 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -76,7 +74,6 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * @return Whether the resourceGroupReferenceResource field is set.
    */
   boolean hasResourceGroupReferenceResource();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * @return The resourceGroupReferenceResource.
    */
   com.google.cloud.compute.v1.ResourceGroupReference getResourceGroupReferenceResource();
-
   /**
    *
    *

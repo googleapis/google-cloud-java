@@ -40,7 +40,6 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The config.
    */
   com.google.cloud.securityposture.v1.CustomConfig getConfig();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The enum numeric value on the wire for moduleEnablementState.
    */
   int getModuleEnablementStateValue();
-
   /**
    *
    *

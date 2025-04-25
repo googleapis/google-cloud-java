@@ -33,7 +33,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ProductRecognizerConfig)
     ProductRecognizerConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductRecognizerConfig.newBuilder() to construct.
   private ProductRecognizerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object retailEndpoint_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
 
   public static final int RECOGNITION_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 2;
   private float recognitionConfidenceThreshold_ = 0F;
-
   /**
    *
    *
@@ -308,7 +304,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -506,7 +501,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object retailEndpoint_ = "";
-
     /**
      *
      *
@@ -529,7 +523,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -552,7 +545,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -574,7 +566,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
     }
 
     private float recognitionConfidenceThreshold_;
-
     /**
      *
      *
@@ -634,7 +623,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
     public float getRecognitionConfidenceThreshold() {
       return recognitionConfidenceThreshold_;
     }
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class ProductRecognizerConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

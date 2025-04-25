@@ -34,7 +34,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.NetworkTags)
     NetworkTagsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkTags.newBuilder() to construct.
   private NetworkTags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
   public int getTagsCount() {
     return tags_.size();
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
-
   /**
    *
    *
@@ -297,7 +292,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -496,7 +490,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -512,7 +505,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
       tags_.makeImmutable();
       return tags_;
     }
-
     /**
      *
      *
@@ -527,7 +519,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     public int getTagsCount() {
       return tags_.size();
     }
-
     /**
      *
      *
@@ -543,7 +534,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
-
     /**
      *
      *
@@ -559,7 +549,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -583,7 +572,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -606,7 +594,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +613,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +631,6 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

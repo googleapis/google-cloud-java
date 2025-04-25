@@ -36,7 +36,6 @@ public interface GitFileSourceOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface GitFileSourceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface GitFileSourceOrBuilder
    * @return Whether the repository field is set.
    */
   boolean hasRepository();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface GitFileSourceOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface GitFileSourceOrBuilder
    * @return The enum numeric value on the wire for repoType.
    */
   int getRepoTypeValue();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface GitFileSourceOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public interface GitFileSourceOrBuilder
    * @return Whether the githubEnterpriseConfig field is set.
    */
   boolean hasGithubEnterpriseConfig();
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public interface GitFileSourceOrBuilder
    * @return The githubEnterpriseConfig.
    */
   java.lang.String getGithubEnterpriseConfig();
-
   /**
    *
    *

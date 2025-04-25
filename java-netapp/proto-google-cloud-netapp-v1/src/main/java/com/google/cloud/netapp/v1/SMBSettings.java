@@ -143,7 +143,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SMB_SETTINGS_UNSPECIFIED = 0;</code>
    */
   public static final int SMB_SETTINGS_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -154,7 +153,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENCRYPT_DATA = 1;</code>
    */
   public static final int ENCRYPT_DATA_VALUE = 1;
-
   /**
    *
    *
@@ -165,7 +163,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BROWSABLE = 2;</code>
    */
   public static final int BROWSABLE_VALUE = 2;
-
   /**
    *
    *
@@ -176,7 +173,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CHANGE_NOTIFY = 3;</code>
    */
   public static final int CHANGE_NOTIFY_VALUE = 3;
-
   /**
    *
    *
@@ -187,7 +183,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NON_BROWSABLE = 4;</code>
    */
   public static final int NON_BROWSABLE_VALUE = 4;
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPLOCKS = 5;</code>
    */
   public static final int OPLOCKS_VALUE = 5;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHOW_SNAPSHOT = 6;</code>
    */
   public static final int SHOW_SNAPSHOT_VALUE = 6;
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHOW_PREVIOUS_VERSIONS = 7;</code>
    */
   public static final int SHOW_PREVIOUS_VERSIONS_VALUE = 7;
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public enum SMBSettings implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCESS_BASED_ENUMERATION = 8;</code>
    */
   public static final int ACCESS_BASED_ENUMERATION_VALUE = 8;
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface BackendBucketCdnPolicyNegativeCachingPolicyOrBuilder
    * @return Whether the code field is set.
    */
   boolean hasCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BackendBucketCdnPolicyNegativeCachingPolicyOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *

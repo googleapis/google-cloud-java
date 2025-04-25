@@ -37,7 +37,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return Whether the segmentStartTime field is set.
    */
   boolean hasSegmentStartTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The segmentStartTime.
    */
   com.google.protobuf.Timestamp getSegmentStartTime();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return Whether the segmentEndTime field is set.
    */
   boolean hasSegmentEndTime();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * @return The segmentEndTime.
    */
   com.google.protobuf.Timestamp getSegmentEndTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
   java.util.List<
           com.google.cloud.visionai.v1.VideoActionRecognitionPredictionResult.IdentifiedAction>
       getActionsList();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    */
   com.google.cloud.visionai.v1.VideoActionRecognitionPredictionResult.IdentifiedAction getActions(
       int index);
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
    * </code>
    */
   int getActionsCount();
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public interface VideoActionRecognitionPredictionResultOrBuilder
               com.google.cloud.visionai.v1.VideoActionRecognitionPredictionResult
                   .IdentifiedActionOrBuilder>
       getActionsOrBuilderList();
-
   /**
    *
    *

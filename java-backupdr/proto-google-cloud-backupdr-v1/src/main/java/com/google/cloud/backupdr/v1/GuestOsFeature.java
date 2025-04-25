@@ -33,7 +33,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.GuestOsFeature)
     GuestOsFeatureOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GuestOsFeature.newBuilder() to construct.
   private GuestOsFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -237,7 +236,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>FEATURE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FEATURE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -248,7 +246,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>VIRTIO_SCSI_MULTIQUEUE = 1;</code>
      */
     public static final int VIRTIO_SCSI_MULTIQUEUE_VALUE = 1;
-
     /**
      *
      *
@@ -259,7 +256,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>WINDOWS = 2;</code>
      */
     public static final int WINDOWS_VALUE = 2;
-
     /**
      *
      *
@@ -270,7 +266,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>MULTI_IP_SUBNET = 3;</code>
      */
     public static final int MULTI_IP_SUBNET_VALUE = 3;
-
     /**
      *
      *
@@ -281,7 +276,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>UEFI_COMPATIBLE = 4;</code>
      */
     public static final int UEFI_COMPATIBLE_VALUE = 4;
-
     /**
      *
      *
@@ -292,7 +286,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURE_BOOT = 5;</code>
      */
     public static final int SECURE_BOOT_VALUE = 5;
-
     /**
      *
      *
@@ -303,7 +296,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>GVNIC = 6;</code>
      */
     public static final int GVNIC_VALUE = 6;
-
     /**
      *
      *
@@ -314,7 +306,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>SEV_CAPABLE = 7;</code>
      */
     public static final int SEV_CAPABLE_VALUE = 7;
-
     /**
      *
      *
@@ -325,7 +316,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>BARE_METAL_LINUX_COMPATIBLE = 8;</code>
      */
     public static final int BARE_METAL_LINUX_COMPATIBLE_VALUE = 8;
-
     /**
      *
      *
@@ -336,7 +326,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSPEND_RESUME_COMPATIBLE = 9;</code>
      */
     public static final int SUSPEND_RESUME_COMPATIBLE_VALUE = 9;
-
     /**
      *
      *
@@ -347,7 +336,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>SEV_LIVE_MIGRATABLE = 10;</code>
      */
     public static final int SEV_LIVE_MIGRATABLE_VALUE = 10;
-
     /**
      *
      *
@@ -358,7 +346,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>SEV_SNP_CAPABLE = 11;</code>
      */
     public static final int SEV_SNP_CAPABLE_VALUE = 11;
-
     /**
      *
      *
@@ -369,7 +356,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>TDX_CAPABLE = 12;</code>
      */
     public static final int TDX_CAPABLE_VALUE = 12;
-
     /**
      *
      *
@@ -380,7 +366,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>IDPF = 13;</code>
      */
     public static final int IDPF_VALUE = 13;
-
     /**
      *
      *
@@ -502,7 +487,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -518,7 +502,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -534,7 +517,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -719,7 +701,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -904,7 +885,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.backupdr.v1.GuestOsFeature.FeatureType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -997,7 +973,6 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

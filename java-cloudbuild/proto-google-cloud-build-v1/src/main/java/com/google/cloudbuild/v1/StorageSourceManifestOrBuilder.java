@@ -38,7 +38,6 @@ public interface StorageSourceManifestOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface StorageSourceManifestOrBuilder
    * @return The object.
    */
   java.lang.String getObject();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface DeleteShareRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ConditionalOverride)
     ConditionalOverrideOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConditionalOverride.newBuilder() to construct.
   private ConditionalOverride(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int ADJUSTMENT_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.RepricingAdjustment adjustment_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
   public boolean hasAdjustment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.channel.v1.RepricingAdjustment.getDefaultInstance()
         : adjustment_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
 
   public static final int REBILLING_BASIS_FIELD_NUMBER = 2;
   private int rebillingBasis_ = 0;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
   public int getRebillingBasisValue() {
     return rebillingBasis_;
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
 
   public static final int REPRICING_CONDITION_FIELD_NUMBER = 3;
   private com.google.cloud.channel.v1.RepricingCondition repricingCondition_;
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
   public boolean hasRepricingCondition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.channel.v1.RepricingCondition.getDefaultInstance()
         : repricingCondition_;
   }
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +647,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
             com.google.cloud.channel.v1.RepricingAdjustment.Builder,
             com.google.cloud.channel.v1.RepricingAdjustmentOrBuilder>
         adjustmentBuilder_;
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     public boolean hasAdjustment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
         return adjustmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAdjustmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
             : adjustment_;
       }
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     }
 
     private int rebillingBasis_ = 0;
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     public int getRebillingBasisValue() {
       return rebillingBasis_;
     }
-
     /**
      *
      *
@@ -909,7 +888,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +909,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
           com.google.cloud.channel.v1.RebillingBasis.forNumber(rebillingBasis_);
       return result == null ? com.google.cloud.channel.v1.RebillingBasis.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +962,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
             com.google.cloud.channel.v1.RepricingCondition.Builder,
             com.google.cloud.channel.v1.RepricingConditionOrBuilder>
         repricingConditionBuilder_;
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     public boolean hasRepricingCondition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1026,7 +1000,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
         return repricingConditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1024,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1046,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1113,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRepricingConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1166,7 +1134,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
             : repricingCondition_;
       }
     }
-
     /**
      *
      *

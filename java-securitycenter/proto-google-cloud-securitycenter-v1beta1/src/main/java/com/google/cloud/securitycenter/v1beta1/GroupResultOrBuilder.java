@@ -34,7 +34,6 @@ public interface GroupResultOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface GroupResultOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getProperties();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface GroupResultOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getPropertiesMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface GroupResultOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *

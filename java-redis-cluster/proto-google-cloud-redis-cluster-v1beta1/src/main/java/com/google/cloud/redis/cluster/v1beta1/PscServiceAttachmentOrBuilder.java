@@ -37,7 +37,6 @@ public interface PscServiceAttachmentOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PscServiceAttachmentOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
-
   /**
    *
    *

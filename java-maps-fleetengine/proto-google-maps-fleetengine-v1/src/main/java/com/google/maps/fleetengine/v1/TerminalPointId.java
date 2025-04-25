@@ -35,7 +35,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.TerminalPointId)
     TerminalPointIdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TerminalPointId.newBuilder() to construct.
   private TerminalPointId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
     private IdCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PLACE_ID_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
   public boolean hasPlaceId() {
     return idCase_ == 2;
   }
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GENERATED_ID_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
   public boolean hasGeneratedId() {
     return idCase_ == 3;
   }
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +278,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
-
   /**
    *
    *
@@ -313,7 +304,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -535,7 +525,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -793,7 +782,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
     public boolean hasPlaceId() {
       return idCase_ == 2;
     }
-
     /**
      *
      *
@@ -825,7 +813,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +844,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +868,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +890,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +934,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
     public boolean hasGeneratedId() {
       return idCase_ == 3;
     }
-
     /**
      *
      *
@@ -982,7 +965,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +996,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1020,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1042,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1069,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -1116,7 +1094,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1119,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1163,6 @@ public final class TerminalPointId extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

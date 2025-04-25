@@ -33,7 +33,6 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.TCPSocketAction)
     TCPSocketActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TCPSocketAction.newBuilder() to construct.
   private TCPSocketAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
 
   public static final int PORT_FIELD_NUMBER = 1;
   private int port_ = 0;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int port_;
-
     /**
      *
      *
@@ -441,7 +437,6 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

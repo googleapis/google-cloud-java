@@ -34,7 +34,6 @@ public final class PlacementStatusEnum extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.PlacementStatusEnum)
     PlacementStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PlacementStatusEnum.newBuilder() to construct.
   private PlacementStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,7 +125,6 @@ public final class PlacementStatusEnum extends com.google.protobuf.GeneratedMess
      * <code>PLACEMENT_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int PLACEMENT_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -137,7 +135,6 @@ public final class PlacementStatusEnum extends com.google.protobuf.GeneratedMess
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -148,7 +145,6 @@ public final class PlacementStatusEnum extends com.google.protobuf.GeneratedMess
      * <code>INACTIVE = 2;</code>
      */
     public static final int INACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -397,7 +393,6 @@ public final class PlacementStatusEnum extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

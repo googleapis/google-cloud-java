@@ -40,7 +40,6 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * @return Whether the assistQueryParams field is set.
    */
   boolean hasAssistQueryParams();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * @return The assistQueryParams.
    */
   com.google.cloud.dialogflow.v2beta1.AssistQueryParameters getAssistQueryParams();
-
   /**
    *
    *

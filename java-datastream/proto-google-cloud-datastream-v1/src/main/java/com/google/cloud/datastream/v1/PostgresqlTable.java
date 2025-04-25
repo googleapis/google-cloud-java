@@ -33,7 +33,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlTable)
     PostgresqlTableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostgresqlTable.newBuilder() to construct.
   private PostgresqlTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object table_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn> postgresqlColumns_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       getPostgresqlColumnsList() {
     return postgresqlColumns_;
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       getPostgresqlColumnsOrBuilderList() {
     return postgresqlColumns_;
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
   public int getPostgresqlColumnsCount() {
     return postgresqlColumns_.size();
   }
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.datastream.v1.PostgresqlColumn getPostgresqlColumns(int index) {
     return postgresqlColumns_.get(index);
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -622,7 +613,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object table_ = "";
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return postgresqlColumnsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return postgresqlColumnsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return postgresqlColumnsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +995,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getPostgresqlColumnsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1056,7 +1029,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return postgresqlColumnsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1048,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(postgresqlColumns_);
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1063,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       return getPostgresqlColumnsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.PostgresqlColumn.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1109,7 +1079,6 @@ public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV
       return getPostgresqlColumnsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.PostgresqlColumn.getDefaultInstance());
     }
-
     /**
      *
      *

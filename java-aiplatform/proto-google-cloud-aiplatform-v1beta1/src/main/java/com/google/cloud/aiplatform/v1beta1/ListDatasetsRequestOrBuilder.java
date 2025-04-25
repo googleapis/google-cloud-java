@@ -39,7 +39,6 @@ public interface ListDatasetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface ListDatasetsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface ListDatasetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -159,7 +156,6 @@ public interface ListDatasetsRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public interface ListDatasetsRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public interface ListDatasetsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

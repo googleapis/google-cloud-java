@@ -32,7 +32,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest)
     NodeGroupsSetNodeTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeGroupsSetNodeTemplateRequest.newBuilder() to construct.
   private NodeGroupsSetNodeTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeTemplate_ = "";
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
   public boolean hasNodeTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +295,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +484,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object nodeTemplate_ = "";
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     public boolean hasNodeTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -527,7 +520,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -550,7 +542,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -572,7 +563,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -590,7 +580,6 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

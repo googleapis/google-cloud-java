@@ -72,7 +72,6 @@ public enum EncryptionStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ENCRYPTION_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int ENCRYPTION_STATUS_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum EncryptionStatus implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ENCRYPTION_GOOGLE_MANAGED = 1;</code>
    */
   public static final int ENCRYPTION_GOOGLE_MANAGED_VALUE = 1;
-
   /**
    *
    *

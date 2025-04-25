@@ -34,7 +34,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BgpRouteNetworkLayerReachabilityInformation)
     BgpRouteNetworkLayerReachabilityInformationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BgpRouteNetworkLayerReachabilityInformation.newBuilder() to construct.
   private BgpRouteNetworkLayerReachabilityInformation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
   private int bitField0_;
   public static final int PATH_ID_FIELD_NUMBER = 282287989;
   private int pathId_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
   public boolean hasPathId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prefix_ = "";
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
   public boolean hasPrefix() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +345,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     private int bitField0_;
 
     private int pathId_;
-
     /**
      *
      *
@@ -579,7 +571,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     public boolean hasPathId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     public int getPathId() {
       return pathId_;
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     }
 
     private java.lang.Object prefix_ = "";
-
     /**
      *
      *
@@ -650,7 +638,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
     public boolean hasPrefix() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -673,7 +660,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -696,7 +682,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +720,6 @@ public final class BgpRouteNetworkLayerReachabilityInformation
       onChanged();
       return this;
     }
-
     /**
      *
      *

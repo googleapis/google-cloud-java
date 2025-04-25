@@ -33,7 +33,6 @@ public final class InlineOutputConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.InlineOutputConfig)
     InlineOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InlineOutputConfig.newBuilder() to construct.
   private InlineOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class InlineOutputConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

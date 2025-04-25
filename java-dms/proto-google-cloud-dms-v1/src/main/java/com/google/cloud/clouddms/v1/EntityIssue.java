@@ -33,7 +33,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.EntityIssue)
     EntityIssueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EntityIssue.newBuilder() to construct.
   private EntityIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ISSUE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ISSUE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ISSUE_TYPE_DDL = 1;</code>
      */
     public static final int ISSUE_TYPE_DDL_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ISSUE_TYPE_APPLY = 2;</code>
      */
     public static final int ISSUE_TYPE_APPLY_VALUE = 2;
-
     /**
      *
      *
@@ -315,7 +311,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ISSUE_SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int ISSUE_SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -326,7 +321,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ISSUE_SEVERITY_INFO = 1;</code>
      */
     public static final int ISSUE_SEVERITY_INFO_VALUE = 1;
-
     /**
      *
      *
@@ -337,7 +331,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      * <code>ISSUE_SEVERITY_WARNING = 2;</code>
      */
     public static final int ISSUE_SEVERITY_WARNING_VALUE = 2;
-
     /**
      *
      *
@@ -491,7 +484,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
      */
     int getLength();
   }
-
   /**
    *
    *
@@ -506,7 +498,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.EntityIssue.Position)
       PositionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Position.newBuilder() to construct.
     private Position(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -537,7 +528,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LINE_FIELD_NUMBER = 1;
     private int line_ = 0;
-
     /**
      *
      *
@@ -556,7 +546,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COLUMN_FIELD_NUMBER = 2;
     private int column_ = 0;
-
     /**
      *
      *
@@ -575,7 +564,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OFFSET_FIELD_NUMBER = 3;
     private int offset_ = 0;
-
     /**
      *
      *
@@ -594,7 +582,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LENGTH_FIELD_NUMBER = 4;
     private int length_ = 0;
-
     /**
      *
      *
@@ -798,7 +785,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1023,7 +1009,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int line_;
-
       /**
        *
        *
@@ -1039,7 +1024,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       public int getLine() {
         return line_;
       }
-
       /**
        *
        *
@@ -1059,7 +1043,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1079,7 +1062,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int column_;
-
       /**
        *
        *
@@ -1095,7 +1077,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       public int getColumn() {
         return column_;
       }
-
       /**
        *
        *
@@ -1115,7 +1096,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1135,7 +1115,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int offset_;
-
       /**
        *
        *
@@ -1151,7 +1130,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       public int getOffset() {
         return offset_;
       }
-
       /**
        *
        *
@@ -1171,7 +1149,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1191,7 +1168,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int length_;
-
       /**
        *
        *
@@ -1207,7 +1183,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       public int getLength() {
         return length_;
       }
-
       /**
        *
        *
@@ -1227,7 +1202,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1315,7 +1289,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -1339,7 +1312,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1366,7 +1338,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1382,7 +1353,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1405,7 +1375,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -1421,7 +1390,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -1446,7 +1414,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -1470,7 +1437,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1499,7 +1465,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -1523,7 +1488,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1552,7 +1516,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ddl_ = "";
-
   /**
    *
    *
@@ -1568,7 +1531,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDdl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1592,7 +1554,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1619,7 +1580,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSITION_FIELD_NUMBER = 7;
   private com.google.cloud.clouddms.v1.EntityIssue.Position position_;
-
   /**
    *
    *
@@ -1635,7 +1595,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPosition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1653,7 +1612,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.clouddms.v1.EntityIssue.Position.getDefaultInstance()
         : position_;
   }
-
   /**
    *
    *
@@ -1672,7 +1630,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 8;
   private int entityType_ = 0;
-
   /**
    *
    *
@@ -1688,7 +1645,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
   public int getEntityTypeValue() {
     return entityType_;
   }
-
   /**
    *
    *
@@ -1948,7 +1904,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2246,7 +2201,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -2269,7 +2223,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2292,7 +2245,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2314,7 +2266,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2332,7 +2283,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2357,7 +2307,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -2373,7 +2322,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2392,7 +2340,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2412,7 +2359,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.clouddms.v1.EntityIssue.IssueType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2434,7 +2380,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2454,7 +2399,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -2470,7 +2414,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -2489,7 +2432,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2509,7 +2451,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.clouddms.v1.EntityIssue.IssueSeverity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2531,7 +2472,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2551,7 +2491,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -2574,7 +2513,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2597,7 +2535,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2619,7 +2556,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2637,7 +2573,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2662,7 +2597,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -2685,7 +2619,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2708,7 +2641,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2730,7 +2662,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2748,7 +2679,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2773,7 +2703,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ddl_ = "";
-
     /**
      *
      *
@@ -2788,7 +2717,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDdl() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2811,7 +2739,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2834,7 +2761,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2856,7 +2782,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2874,7 +2799,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2904,7 +2828,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.clouddms.v1.EntityIssue.Position.Builder,
             com.google.cloud.clouddms.v1.EntityIssue.PositionOrBuilder>
         positionBuilder_;
-
     /**
      *
      *
@@ -2919,7 +2842,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPosition() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2940,7 +2862,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
         return positionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2963,7 +2884,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2984,7 +2904,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3013,7 +2932,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3033,7 +2951,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3048,7 +2965,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPositionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3067,7 +2983,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
             : position_;
       }
     }
-
     /**
      *
      *
@@ -3095,7 +3010,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int entityType_ = 0;
-
     /**
      *
      *
@@ -3111,7 +3025,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
     public int getEntityTypeValue() {
       return entityType_;
     }
-
     /**
      *
      *
@@ -3130,7 +3043,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3148,7 +3060,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.clouddms.v1.DatabaseEntityType.forNumber(entityType_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseEntityType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -3170,7 +3081,6 @@ public final class EntityIssue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

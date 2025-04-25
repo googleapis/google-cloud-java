@@ -42,7 +42,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the eventParameterName field is set.
    */
   boolean hasEventParameterName();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The eventParameterName.
    */
   java.lang.String getEventParameterName();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the itemParameterName field is set.
    */
   boolean hasItemParameterName();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The itemParameterName.
    */
   java.lang.String getItemParameterName();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.data.v1alpha.StringFilter getStringFilter();
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.data.v1alpha.InListFilter getInListFilter();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the numericFilter field is set.
    */
   boolean hasNumericFilter();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The numericFilter.
    */
   com.google.analytics.data.v1alpha.NumericFilter getNumericFilter();
-
   /**
    *
    *
@@ -276,7 +266,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the betweenFilter field is set.
    */
   boolean hasBetweenFilter();
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The betweenFilter.
    */
   com.google.analytics.data.v1alpha.BetweenFilter getBetweenFilter();
-
   /**
    *
    *
@@ -313,7 +301,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return Whether the filterScoping field is set.
    */
   boolean hasFilterScoping();
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public interface SegmentParameterFilterOrBuilder
    * @return The filterScoping.
    */
   com.google.analytics.data.v1alpha.SegmentParameterFilterScoping getFilterScoping();
-
   /**
    *
    *

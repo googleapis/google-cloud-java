@@ -41,7 +41,6 @@ public interface ListVmwareEngineNetworksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface ListVmwareEngineNetworksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -147,7 +145,6 @@ public interface ListVmwareEngineNetworksRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -201,7 +198,6 @@ public interface ListVmwareEngineNetworksRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

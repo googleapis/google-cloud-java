@@ -35,7 +35,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p2beta1.TextAnnotation)
     TextAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextAnnotation.newBuilder() to construct.
   private TextAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextSegment> segments_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       getSegmentsList() {
     return segments_;
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       getSegmentsOrBuilderList() {
     return segments_;
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getSegmentsCount() {
     return segments_.size();
   }
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1p2beta1.TextSegment getSegments(int index) {
     return segments_.get(index);
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -618,7 +609,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +911,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +951,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +970,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +983,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1018,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(segments_);
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1032,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.videointelligence.v1p2beta1.TextSegment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.videointelligence.v1p2beta1.TextSegment.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class InstancesSetMachineResourcesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesSetMachineResourcesRequest)
     InstancesSetMachineResourcesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstancesSetMachineResourcesRequest.newBuilder() to construct.
   private InstancesSetMachineResourcesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class InstancesSetMachineResourcesRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InstancesSetMachineResourcesRequest
   public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class InstancesSetMachineResourcesRequest
       getGuestAcceleratorsOrBuilderList() {
     return guestAccelerators_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class InstancesSetMachineResourcesRequest
   public int getGuestAcceleratorsCount() {
     return guestAccelerators_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class InstancesSetMachineResourcesRequest
   public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
     return guestAccelerators_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class InstancesSetMachineResourcesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class InstancesSetMachineResourcesRequest
         return guestAcceleratorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class InstancesSetMachineResourcesRequest
         return guestAcceleratorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class InstancesSetMachineResourcesRequest
         return guestAcceleratorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +802,6 @@ public final class InstancesSetMachineResourcesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class InstancesSetMachineResourcesRequest
         int index) {
       return getGuestAcceleratorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -854,7 +834,6 @@ public final class InstancesSetMachineResourcesRequest
         return guestAcceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -873,7 +852,6 @@ public final class InstancesSetMachineResourcesRequest
         return java.util.Collections.unmodifiableList(guestAccelerators_);
       }
     }
-
     /**
      *
      *
@@ -888,7 +866,6 @@ public final class InstancesSetMachineResourcesRequest
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -904,7 +881,6 @@ public final class InstancesSetMachineResourcesRequest
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *

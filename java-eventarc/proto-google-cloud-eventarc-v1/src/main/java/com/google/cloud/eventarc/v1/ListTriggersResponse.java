@@ -33,7 +33,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.ListTriggersResponse)
     ListTriggersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTriggersResponse.newBuilder() to construct.
   private ListTriggersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.eventarc.v1.Trigger> triggers_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.eventarc.v1.Trigger> getTriggersList() {
     return triggers_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       getTriggersOrBuilderList() {
     return triggers_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   public int getTriggersCount() {
     return triggers_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.eventarc.v1.Trigger getTriggers(int index) {
     return triggers_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -451,7 +439,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -750,7 +737,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return triggersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return triggersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return triggersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +933,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +964,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.eventarc.v1.Trigger.Builder getTriggersBuilder(int index) {
       return getTriggersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return triggersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(triggers_);
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1010,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       return getTriggersFieldBuilder()
           .addBuilder(com.google.cloud.eventarc.v1.Trigger.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       return getTriggersFieldBuilder()
           .addBuilder(index, com.google.cloud.eventarc.v1.Trigger.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1084,7 +1054,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1108,7 +1077,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1100,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1122,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1140,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1173,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1224,7 +1188,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1239,7 +1202,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1255,7 +1217,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1271,7 +1232,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1295,7 +1255,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1277,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1296,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1314,6 @@ public final class ListTriggersResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

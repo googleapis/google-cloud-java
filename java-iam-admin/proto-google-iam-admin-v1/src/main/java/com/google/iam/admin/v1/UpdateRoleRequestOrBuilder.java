@@ -58,7 +58,6 @@ public interface UpdateRoleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -106,7 +105,6 @@ public interface UpdateRoleRequestOrBuilder
    * @return Whether the role field is set.
    */
   boolean hasRole();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface UpdateRoleRequestOrBuilder
    * @return The role.
    */
   com.google.iam.admin.v1.Role getRole();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface UpdateRoleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface UpdateRoleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

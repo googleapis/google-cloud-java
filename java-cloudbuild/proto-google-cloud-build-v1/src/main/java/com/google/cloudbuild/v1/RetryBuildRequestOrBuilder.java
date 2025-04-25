@@ -37,7 +37,6 @@ public interface RetryBuildRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RetryBuildRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface RetryBuildRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return Whether the timeSegmentStart field is set.
    */
   boolean hasTimeSegmentStart();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The timeSegmentStart.
    */
   com.google.protobuf.Duration getTimeSegmentStart();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return Whether the timeSegmentEnd field is set.
    */
   boolean hasTimeSegmentEnd();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The timeSegmentEnd.
    */
   com.google.protobuf.Duration getTimeSegmentEnd();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The confidence.
    */
   com.google.protobuf.FloatValue getConfidence();
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
           com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
               .VideoObjectTrackingPredictionResult.Frame>
       getFramesList();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
   com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoObjectTrackingPredictionResult
           .Frame
       getFrames(int index);
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * </code>
    */
   int getFramesCount();
-
   /**
    *
    *
@@ -272,7 +261,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
               com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .VideoObjectTrackingPredictionResult.FrameOrBuilder>
       getFramesOrBuilderList();
-
   /**
    *
    *

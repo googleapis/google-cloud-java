@@ -37,7 +37,6 @@ public interface LogicalInterfaceOrBuilder
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface>
       getLogicalNetworkInterfacesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface LogicalInterfaceOrBuilder
    */
   com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface
       getLogicalNetworkInterfaces(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface LogicalInterfaceOrBuilder
    * </code>
    */
   int getLogicalNetworkInterfacesCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface LogicalInterfaceOrBuilder
               com.google.cloud.baremetalsolution.v2.LogicalInterface
                   .LogicalNetworkInterfaceOrBuilder>
       getLogicalNetworkInterfacesOrBuilderList();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface LogicalInterfaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

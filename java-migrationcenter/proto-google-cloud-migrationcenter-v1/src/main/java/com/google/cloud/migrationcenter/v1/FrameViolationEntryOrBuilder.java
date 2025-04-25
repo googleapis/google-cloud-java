@@ -36,7 +36,6 @@ public interface FrameViolationEntryOrBuilder
    * @return The field.
    */
   java.lang.String getField();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface FrameViolationEntryOrBuilder
    * @return The violation.
    */
   java.lang.String getViolation();
-
   /**
    *
    *

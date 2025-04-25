@@ -33,7 +33,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp)
     StatefulPolicyPreservedStateNetworkIpOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StatefulPolicyPreservedStateNetworkIp.newBuilder() to construct.
   private StatefulPolicyPreservedStateNetworkIp(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -102,10 +101,8 @@ public final class StatefulPolicyPreservedStateNetworkIp
      * <code>UNDEFINED_AUTO_DELETE = 0;</code>
      */
     public static final int UNDEFINED_AUTO_DELETE_VALUE = 0;
-
     /** <code>NEVER = 74175084;</code> */
     public static final int NEVER_VALUE = 74175084;
-
     /** <code>ON_PERMANENT_INSTANCE_DELETION = 95727719;</code> */
     public static final int ON_PERMANENT_INSTANCE_DELETION_VALUE = 95727719;
 
@@ -199,7 +196,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autoDelete_ = "";
-
   /**
    *
    *
@@ -216,7 +212,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
   public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +236,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
       return s;
     }
   }
-
   /**
    *
    *
@@ -433,7 +427,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -625,7 +618,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
     private int bitField0_;
 
     private java.lang.Object autoDelete_ = "";
-
     /**
      *
      *
@@ -641,7 +633,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
     public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -665,7 +656,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -689,7 +679,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class StatefulPolicyPreservedStateNetworkIp
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse)
     ResolveAppConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResolveAppConnectionsResponse.newBuilder() to construct.
   private ResolveAppConnectionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return Whether the appConnection field is set.
      */
     boolean hasAppConnection();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return The appConnection.
      */
     com.google.cloud.beyondcorp.appconnections.v1.AppConnection getAppConnection();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return A list containing the recentMigVms.
      */
     java.util.List<java.lang.String> getRecentMigVmsList();
-
     /**
      *
      *
@@ -137,7 +133,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return The count of recentMigVms.
      */
     int getRecentMigVmsCount();
-
     /**
      *
      *
@@ -152,7 +147,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return The recentMigVms at the given index.
      */
     java.lang.String getRecentMigVms(int index);
-
     /**
      *
      *
@@ -168,7 +162,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getRecentMigVmsBytes(int index);
   }
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse.AppConnectionDetails)
       AppConnectionDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AppConnectionDetails.newBuilder() to construct.
     private AppConnectionDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -220,7 +212,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     private int bitField0_;
     public static final int APP_CONNECTION_FIELD_NUMBER = 1;
     private com.google.cloud.beyondcorp.appconnections.v1.AppConnection appConnection_;
-
     /**
      *
      *
@@ -236,7 +227,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public boolean hasAppConnection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -254,7 +244,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
           ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.getDefaultInstance()
           : appConnection_;
     }
-
     /**
      *
      *
@@ -277,7 +266,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList recentMigVms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -293,7 +281,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ProtocolStringList getRecentMigVmsList() {
       return recentMigVms_;
     }
-
     /**
      *
      *
@@ -309,7 +296,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public int getRecentMigVmsCount() {
       return recentMigVms_.size();
     }
-
     /**
      *
      *
@@ -326,7 +312,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public java.lang.String getRecentMigVms(int index) {
       return recentMigVms_.get(index);
     }
-
     /**
      *
      *
@@ -553,7 +538,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
               com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Builder,
               com.google.cloud.beyondcorp.appconnections.v1.AppConnectionOrBuilder>
           appConnectionBuilder_;
-
       /**
        *
        *
@@ -828,7 +811,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       public boolean hasAppConnection() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -849,7 +831,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
           return appConnectionBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -873,7 +854,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -894,7 +874,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -925,7 +904,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -945,7 +923,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -961,7 +938,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return getAppConnectionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -981,7 +957,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
               : appConnection_;
         }
       }
-
       /**
        *
        *
@@ -1017,7 +992,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1034,7 +1008,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         recentMigVms_.makeImmutable();
         return recentMigVms_;
       }
-
       /**
        *
        *
@@ -1050,7 +1023,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       public int getRecentMigVmsCount() {
         return recentMigVms_.size();
       }
-
       /**
        *
        *
@@ -1067,7 +1039,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       public java.lang.String getRecentMigVms(int index) {
         return recentMigVms_.get(index);
       }
-
       /**
        *
        *
@@ -1084,7 +1055,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       public com.google.protobuf.ByteString getRecentMigVmsBytes(int index) {
         return recentMigVms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1109,7 +1079,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1133,7 +1102,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1154,7 +1122,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1174,7 +1141,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1279,7 +1245,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
           com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
               .AppConnectionDetails>
       appConnectionDetails_;
-
   /**
    *
    *
@@ -1298,7 +1263,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       getAppConnectionDetailsList() {
     return appConnectionDetails_;
   }
-
   /**
    *
    *
@@ -1318,7 +1282,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       getAppConnectionDetailsOrBuilderList() {
     return appConnectionDetails_;
   }
-
   /**
    *
    *
@@ -1334,7 +1297,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   public int getAppConnectionDetailsCount() {
     return appConnectionDetails_.size();
   }
-
   /**
    *
    *
@@ -1352,7 +1314,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       getAppConnectionDetails(int index) {
     return appConnectionDetails_.get(index);
   }
-
   /**
    *
    *
@@ -1375,7 +1336,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -1400,7 +1360,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -1431,7 +1390,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1446,7 +1404,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -1461,7 +1418,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -1477,7 +1433,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -1689,7 +1644,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2016,7 +1970,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return appConnectionDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2035,7 +1988,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return appConnectionDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2056,7 +2008,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return appConnectionDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2085,7 +2036,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2111,7 +2061,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2088,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2168,7 +2116,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2193,7 +2140,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2219,7 +2165,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2246,7 +2191,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2268,7 +2212,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2233,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2307,7 +2249,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         getAppConnectionDetailsBuilder(int index) {
       return getAppConnectionDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2328,7 +2269,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return appConnectionDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2351,7 +2291,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(appConnectionDetails_);
       }
     }
-
     /**
      *
      *
@@ -2371,7 +2310,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
               com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
                   .AppConnectionDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2392,7 +2330,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
               com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
                   .AppConnectionDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2438,7 +2375,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -2462,7 +2398,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2486,7 +2421,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2509,7 +2443,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2528,7 +2461,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2562,7 +2494,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2578,7 +2509,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -2593,7 +2523,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -2609,7 +2538,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -2625,7 +2553,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2649,7 +2576,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2672,7 +2598,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2692,7 +2617,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2711,7 +2635,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

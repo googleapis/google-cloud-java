@@ -39,7 +39,6 @@ public interface ListSSHKeysRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface ListSSHKeysRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

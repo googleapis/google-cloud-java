@@ -42,7 +42,6 @@ public interface ExportFilterSplitOrBuilder
    * @return The trainingFilter.
    */
   java.lang.String getTrainingFilter();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ExportFilterSplitOrBuilder
    * @return The validationFilter.
    */
   java.lang.String getValidationFilter();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface ExportFilterSplitOrBuilder
    * @return The testFilter.
    */
   java.lang.String getTestFilter();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TranslateTextResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Translation translations = 1;</code>
    */
   java.util.List<com.google.cloud.translate.v3.Translation> getTranslationsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TranslateTextResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Translation translations = 1;</code>
    */
   com.google.cloud.translate.v3.Translation getTranslations(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface TranslateTextResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Translation translations = 1;</code>
    */
   int getTranslationsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface TranslateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.TranslationOrBuilder>
       getTranslationsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface TranslateTextResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Translation glossary_translations = 3;</code>
    */
   java.util.List<com.google.cloud.translate.v3.Translation> getGlossaryTranslationsList();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface TranslateTextResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Translation glossary_translations = 3;</code>
    */
   com.google.cloud.translate.v3.Translation getGlossaryTranslations(int index);
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface TranslateTextResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Translation glossary_translations = 3;</code>
    */
   int getGlossaryTranslationsCount();
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface TranslateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.TranslationOrBuilder>
       getGlossaryTranslationsOrBuilderList();
-
   /**
    *
    *

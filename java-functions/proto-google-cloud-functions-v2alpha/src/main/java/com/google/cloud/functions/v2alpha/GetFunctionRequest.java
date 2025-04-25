@@ -33,7 +33,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2alpha.GetFunctionRequest)
     GetFunctionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetFunctionRequest.newBuilder() to construct.
   private GetFunctionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -354,7 +349,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -579,7 +572,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -604,7 +596,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object revision_ = "";
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

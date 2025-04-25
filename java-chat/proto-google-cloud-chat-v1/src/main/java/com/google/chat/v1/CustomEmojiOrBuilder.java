@@ -38,7 +38,6 @@ public interface CustomEmojiOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *

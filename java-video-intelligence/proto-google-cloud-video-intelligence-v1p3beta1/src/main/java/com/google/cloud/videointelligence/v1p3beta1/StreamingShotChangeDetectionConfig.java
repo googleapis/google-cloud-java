@@ -33,7 +33,6 @@ public final class StreamingShotChangeDetectionConfig extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig)
     StreamingShotChangeDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingShotChangeDetectionConfig.newBuilder() to construct.
   private StreamingShotChangeDetectionConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,7 +222,6 @@ public final class StreamingShotChangeDetectionConfig extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

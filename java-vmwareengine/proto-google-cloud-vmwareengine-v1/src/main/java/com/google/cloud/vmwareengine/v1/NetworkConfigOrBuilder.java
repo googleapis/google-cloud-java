@@ -36,7 +36,6 @@ public interface NetworkConfigOrBuilder
    * @return The managementCidr.
    */
   java.lang.String getManagementCidr();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface NetworkConfigOrBuilder
    * @return The vmwareEngineNetwork.
    */
   java.lang.String getVmwareEngineNetwork();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface NetworkConfigOrBuilder
    * @return The vmwareEngineNetworkCanonical.
    */
   java.lang.String getVmwareEngineNetworkCanonical();
-
   /**
    *
    *
@@ -155,7 +152,6 @@ public interface NetworkConfigOrBuilder
    * @return The dnsServerIp.
    */
   java.lang.String getDnsServerIp();
-
   /**
    *
    *

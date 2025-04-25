@@ -38,7 +38,6 @@ public interface DeleteFeedbackLabelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

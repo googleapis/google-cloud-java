@@ -39,7 +39,6 @@ public interface PersistenceConfigOrBuilder
    * @return The enum numeric value on the wire for persistenceMode.
    */
   int getPersistenceModeValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface PersistenceConfigOrBuilder
    * @return The enum numeric value on the wire for rdbSnapshotPeriod.
    */
   int getRdbSnapshotPeriodValue();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface PersistenceConfigOrBuilder
    * @return Whether the rdbNextSnapshotTime field is set.
    */
   boolean hasRdbNextSnapshotTime();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface PersistenceConfigOrBuilder
    * @return The rdbNextSnapshotTime.
    */
   com.google.protobuf.Timestamp getRdbNextSnapshotTime();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface PersistenceConfigOrBuilder
    * @return Whether the rdbSnapshotStartTime field is set.
    */
   boolean hasRdbSnapshotStartTime();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface PersistenceConfigOrBuilder
    * @return The rdbSnapshotStartTime.
    */
   com.google.protobuf.Timestamp getRdbSnapshotStartTime();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.container.v1.DesiredEnterpriseConfig)
     DesiredEnterpriseConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DesiredEnterpriseConfig.newBuilder() to construct.
   private DesiredEnterpriseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
 
   public static final int DESIRED_TIER_FIELD_NUMBER = 1;
   private int desiredTier_ = 0;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
   public int getDesiredTierValue() {
     return desiredTier_;
   }
-
   /**
    *
    *
@@ -266,7 +263,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -449,7 +445,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int desiredTier_ = 0;
-
     /**
      *
      *
@@ -465,7 +460,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
     public int getDesiredTierValue() {
       return desiredTier_;
     }
-
     /**
      *
      *
@@ -484,7 +478,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -504,7 +497,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
           ? com.google.container.v1.EnterpriseConfig.ClusterTier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -526,7 +518,6 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

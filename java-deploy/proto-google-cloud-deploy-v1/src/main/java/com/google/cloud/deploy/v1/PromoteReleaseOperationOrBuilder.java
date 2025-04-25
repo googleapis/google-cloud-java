@@ -38,7 +38,6 @@ public interface PromoteReleaseOperationOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PromoteReleaseOperationOrBuilder
    * @return Whether the wait field is set.
    */
   boolean hasWait();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PromoteReleaseOperationOrBuilder
    * @return The wait.
    */
   com.google.protobuf.Duration getWait();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface PromoteReleaseOperationOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface PromoteReleaseOperationOrBuilder
    * @return The phase.
    */
   java.lang.String getPhase();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface AuthorizationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AuthorizationOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface AuthorizationOrBuilder
    * @return The oauthClientId.
    */
   java.lang.String getOauthClientId();
-
   /**
    *
    *

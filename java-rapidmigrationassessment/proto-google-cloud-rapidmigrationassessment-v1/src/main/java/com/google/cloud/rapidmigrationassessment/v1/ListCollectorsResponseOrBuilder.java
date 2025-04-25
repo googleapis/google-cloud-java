@@ -34,7 +34,6 @@ public interface ListCollectorsResponseOrBuilder
    * <code>repeated .google.cloud.rapidmigrationassessment.v1.Collector collectors = 1;</code>
    */
   java.util.List<com.google.cloud.rapidmigrationassessment.v1.Collector> getCollectorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCollectorsResponseOrBuilder
    * <code>repeated .google.cloud.rapidmigrationassessment.v1.Collector collectors = 1;</code>
    */
   com.google.cloud.rapidmigrationassessment.v1.Collector getCollectors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCollectorsResponseOrBuilder
    * <code>repeated .google.cloud.rapidmigrationassessment.v1.Collector collectors = 1;</code>
    */
   int getCollectorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCollectorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.rapidmigrationassessment.v1.CollectorOrBuilder>
       getCollectorsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListCollectorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListCollectorsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListCollectorsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListCollectorsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

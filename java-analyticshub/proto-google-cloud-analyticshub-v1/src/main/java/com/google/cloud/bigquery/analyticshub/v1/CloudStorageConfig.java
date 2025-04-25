@@ -33,7 +33,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.CloudStorageConfig)
     CloudStorageConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudStorageConfig.newBuilder() to construct.
   private CloudStorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.TextConfig)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.TextConfig)
       TextConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TextConfig.newBuilder() to construct.
     private TextConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -273,7 +270,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -552,7 +548,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      */
     boolean getUseTopicSchema();
   }
-
   /**
    *
    *
@@ -568,7 +563,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.AvroConfig)
       AvroConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AvroConfig.newBuilder() to construct.
     private AvroConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -600,7 +594,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
     public static final int WRITE_METADATA_FIELD_NUMBER = 1;
     private boolean writeMetadata_ = false;
-
     /**
      *
      *
@@ -624,7 +617,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
     public static final int USE_TOPIC_SCHEMA_FIELD_NUMBER = 2;
     private boolean useTopicSchema_ = false;
-
     /**
      *
      *
@@ -814,7 +806,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1025,7 +1016,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private boolean writeMetadata_;
-
       /**
        *
        *
@@ -1046,7 +1036,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       public boolean getWriteMetadata() {
         return writeMetadata_;
       }
-
       /**
        *
        *
@@ -1071,7 +1060,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1096,7 +1084,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean useTopicSchema_;
-
       /**
        *
        *
@@ -1113,7 +1100,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       public boolean getUseTopicSchema() {
         return useTopicSchema_;
       }
-
       /**
        *
        *
@@ -1134,7 +1120,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1240,7 +1225,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     private OutputFormatCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1274,7 +1258,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TEXT_CONFIG_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1293,7 +1276,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasTextConfig() {
     return outputFormatCase_ == 4;
   }
-
   /**
    *
    *
@@ -1317,7 +1299,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.TextConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1342,7 +1323,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AVRO_CONFIG_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1361,7 +1341,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasAvroConfig() {
     return outputFormatCase_ == 5;
   }
-
   /**
    *
    *
@@ -1385,7 +1364,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.AvroConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1413,7 +1391,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucket_ = "";
-
   /**
    *
    *
@@ -1440,7 +1417,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1472,7 +1448,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filenamePrefix_ = "";
-
   /**
    *
    *
@@ -1497,7 +1472,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1527,7 +1501,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filenameSuffix_ = "";
-
   /**
    *
    *
@@ -1553,7 +1526,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1584,7 +1556,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filenameDatetimeFormat_ = "";
-
   /**
    *
    *
@@ -1610,7 +1581,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1639,7 +1609,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_DURATION_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration maxDuration_;
-
   /**
    *
    *
@@ -1663,7 +1632,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasMaxDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1687,7 +1655,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Duration getMaxDuration() {
     return maxDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxDuration_;
   }
-
   /**
    *
    *
@@ -1712,7 +1679,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_BYTES_FIELD_NUMBER = 7;
   private long maxBytes_ = 0L;
-
   /**
    *
    *
@@ -1733,7 +1699,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_MESSAGES_FIELD_NUMBER = 8;
   private long maxMessages_ = 0L;
-
   /**
    *
    *
@@ -1755,7 +1720,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
-
   /**
    *
    *
@@ -1784,7 +1748,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2089,7 +2052,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2460,7 +2422,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.TextConfig.Builder,
             com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.TextConfigOrBuilder>
         textConfigBuilder_;
-
     /**
      *
      *
@@ -2479,7 +2440,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasTextConfig() {
       return outputFormatCase_ == 4;
     }
-
     /**
      *
      *
@@ -2511,7 +2471,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2538,7 +2497,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       outputFormatCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2563,7 +2521,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       outputFormatCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2603,7 +2560,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       outputFormatCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2632,7 +2588,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2649,7 +2604,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         getTextConfigBuilder() {
       return getTextConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2676,7 +2630,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2721,7 +2674,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.AvroConfig.Builder,
             com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.AvroConfigOrBuilder>
         avroConfigBuilder_;
-
     /**
      *
      *
@@ -2740,7 +2692,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasAvroConfig() {
       return outputFormatCase_ == 5;
     }
-
     /**
      *
      *
@@ -2772,7 +2723,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2799,7 +2749,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       outputFormatCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2824,7 +2773,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       outputFormatCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2864,7 +2812,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       outputFormatCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2893,7 +2840,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2910,7 +2856,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         getAvroConfigBuilder() {
       return getAvroConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2937,7 +2882,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2978,7 +2922,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object bucket_ = "";
-
     /**
      *
      *
@@ -3004,7 +2947,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3030,7 +2972,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3055,7 +2996,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3076,7 +3016,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3104,7 +3043,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object filenamePrefix_ = "";
-
     /**
      *
      *
@@ -3128,7 +3066,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3152,7 +3089,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3175,7 +3111,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3194,7 +3129,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3220,7 +3154,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object filenameSuffix_ = "";
-
     /**
      *
      *
@@ -3245,7 +3178,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3270,7 +3202,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3294,7 +3225,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3314,7 +3244,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3341,7 +3270,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object filenameDatetimeFormat_ = "";
-
     /**
      *
      *
@@ -3366,7 +3294,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3391,7 +3318,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3415,7 +3341,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3435,7 +3360,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3467,7 +3391,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxDurationBuilder_;
-
     /**
      *
      *
@@ -3490,7 +3413,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasMaxDuration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3519,7 +3441,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return maxDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3550,7 +3471,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3578,7 +3498,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3614,7 +3533,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3642,7 +3560,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3665,7 +3582,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMaxDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3692,7 +3608,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             : maxDuration_;
       }
     }
-
     /**
      *
      *
@@ -3728,7 +3643,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private long maxBytes_;
-
     /**
      *
      *
@@ -3746,7 +3660,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     public long getMaxBytes() {
       return maxBytes_;
     }
-
     /**
      *
      *
@@ -3768,7 +3681,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3790,7 +3702,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private long maxMessages_;
-
     /**
      *
      *
@@ -3807,7 +3718,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     public long getMaxMessages() {
       return maxMessages_;
     }
-
     /**
      *
      *
@@ -3828,7 +3738,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3849,7 +3758,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
-
     /**
      *
      *
@@ -3877,7 +3785,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3905,7 +3812,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3932,7 +3838,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3955,7 +3860,6 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

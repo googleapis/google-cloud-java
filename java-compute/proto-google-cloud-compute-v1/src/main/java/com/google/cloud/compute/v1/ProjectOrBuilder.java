@@ -37,7 +37,6 @@ public interface ProjectOrBuilder
    * @return Whether the cloudArmorTier field is set.
    */
   boolean hasCloudArmorTier();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ProjectOrBuilder
    * @return The cloudArmorTier.
    */
   java.lang.String getCloudArmorTier();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ProjectOrBuilder
    * @return Whether the commonInstanceMetadata field is set.
    */
   boolean hasCommonInstanceMetadata();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ProjectOrBuilder
    * @return The commonInstanceMetadata.
    */
   com.google.cloud.compute.v1.Metadata getCommonInstanceMetadata();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface ProjectOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface ProjectOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ProjectOrBuilder
    * @return Whether the defaultNetworkTier field is set.
    */
   boolean hasDefaultNetworkTier();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface ProjectOrBuilder
    * @return The defaultNetworkTier.
    */
   java.lang.String getDefaultNetworkTier();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface ProjectOrBuilder
    * @return Whether the defaultServiceAccount field is set.
    */
   boolean hasDefaultServiceAccount();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface ProjectOrBuilder
    * @return The defaultServiceAccount.
    */
   java.lang.String getDefaultServiceAccount();
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public interface ProjectOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface ProjectOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface ProjectOrBuilder
    * @return A list containing the enabledFeatures.
    */
   java.util.List<java.lang.String> getEnabledFeaturesList();
-
   /**
    *
    *
@@ -287,7 +274,6 @@ public interface ProjectOrBuilder
    * @return The count of enabledFeatures.
    */
   int getEnabledFeaturesCount();
-
   /**
    *
    *
@@ -301,7 +287,6 @@ public interface ProjectOrBuilder
    * @return The enabledFeatures at the given index.
    */
   java.lang.String getEnabledFeatures(int index);
-
   /**
    *
    *
@@ -328,7 +313,6 @@ public interface ProjectOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -354,7 +338,6 @@ public interface ProjectOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -367,7 +350,6 @@ public interface ProjectOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -393,7 +375,6 @@ public interface ProjectOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -406,7 +387,6 @@ public interface ProjectOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -430,7 +410,6 @@ public interface ProjectOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Quota> getQuotasList();
-
   /**
    *
    *
@@ -441,7 +420,6 @@ public interface ProjectOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   com.google.cloud.compute.v1.Quota getQuotas(int index);
-
   /**
    *
    *
@@ -452,7 +430,6 @@ public interface ProjectOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   int getQuotasCount();
-
   /**
    *
    *
@@ -463,7 +440,6 @@ public interface ProjectOrBuilder
    * <code>repeated .google.cloud.compute.v1.Quota quotas = 125341947;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.QuotaOrBuilder> getQuotasOrBuilderList();
-
   /**
    *
    *
@@ -487,7 +463,6 @@ public interface ProjectOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -500,7 +475,6 @@ public interface ProjectOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -527,7 +501,6 @@ public interface ProjectOrBuilder
    * @return Whether the usageExportLocation field is set.
    */
   boolean hasUsageExportLocation();
-
   /**
    *
    *
@@ -541,7 +514,6 @@ public interface ProjectOrBuilder
    * @return The usageExportLocation.
    */
   com.google.cloud.compute.v1.UsageExportLocation getUsageExportLocation();
-
   /**
    *
    *
@@ -567,7 +539,6 @@ public interface ProjectOrBuilder
    * @return Whether the vmDnsSetting field is set.
    */
   boolean hasVmDnsSetting();
-
   /**
    *
    *
@@ -581,7 +552,6 @@ public interface ProjectOrBuilder
    * @return The vmDnsSetting.
    */
   java.lang.String getVmDnsSetting();
-
   /**
    *
    *
@@ -609,7 +579,6 @@ public interface ProjectOrBuilder
    * @return Whether the xpnProjectStatus field is set.
    */
   boolean hasXpnProjectStatus();
-
   /**
    *
    *
@@ -623,7 +592,6 @@ public interface ProjectOrBuilder
    * @return The xpnProjectStatus.
    */
   java.lang.String getXpnProjectStatus();
-
   /**
    *
    *

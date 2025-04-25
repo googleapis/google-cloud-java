@@ -222,8 +222,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExecuteAirflowCommand, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ExecuteAirflowCommand, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExecuteAirflowCommandResponse.class.getName(),
                   Exception.class.getName())));
@@ -310,8 +309,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateUserWorkloadsSecret, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateUserWorkloadsSecret, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UserWorkloadsSecret.class.getName(),
                   Exception.class.getName())));
@@ -332,8 +330,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetUserWorkloadsSecret, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetUserWorkloadsSecret, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UserWorkloadsSecret.class.getName(),
                   Exception.class.getName())));
@@ -355,8 +352,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUserWorkloadsSecrets, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListUserWorkloadsSecrets, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUserWorkloadsSecretsResponse.class.getName(),
                   Exception.class.getName())));
@@ -378,8 +374,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateUserWorkloadsSecret, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateUserWorkloadsSecret, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UserWorkloadsSecret.class.getName(),
                   Exception.class.getName())));
@@ -400,8 +395,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteUserWorkloadsSecret, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteUserWorkloadsSecret, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -423,8 +417,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateUserWorkloadsConfigMap, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CreateUserWorkloadsConfigMap, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UserWorkloadsConfigMap.class.getName(),
                   Exception.class.getName())));
@@ -446,8 +439,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetUserWorkloadsConfigMap, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetUserWorkloadsConfigMap, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UserWorkloadsConfigMap.class.getName(),
                   Exception.class.getName())));
@@ -469,8 +461,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUserWorkloadsConfigMaps, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListUserWorkloadsConfigMaps, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUserWorkloadsConfigMapsResponse.class.getName(),
                   Exception.class.getName())));
@@ -492,8 +483,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateUserWorkloadsConfigMap, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method UpdateUserWorkloadsConfigMap, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UserWorkloadsConfigMap.class.getName(),
                   Exception.class.getName())));
@@ -514,8 +504,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteUserWorkloadsConfigMap, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method DeleteUserWorkloadsConfigMap, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -600,8 +589,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchDatabaseProperties, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method FetchDatabaseProperties, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchDatabasePropertiesResponse.class.getName(),
                   Exception.class.getName())));

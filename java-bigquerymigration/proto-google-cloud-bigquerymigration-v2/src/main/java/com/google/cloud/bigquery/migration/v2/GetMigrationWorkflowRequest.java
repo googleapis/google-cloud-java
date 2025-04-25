@@ -33,7 +33,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.GetMigrationWorkflowRequest)
     GetMigrationWorkflowRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetMigrationWorkflowRequest.newBuilder() to construct.
   private GetMigrationWorkflowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
 
   public static final int READ_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask readMask_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
-
   /**
    *
    *
@@ -348,7 +342,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
         return readMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class GetMigrationWorkflowRequest extends com.google.protobuf.Gener
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
-
     /**
      *
      *

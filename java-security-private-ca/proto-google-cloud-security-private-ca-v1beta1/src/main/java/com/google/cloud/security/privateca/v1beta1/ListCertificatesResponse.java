@@ -33,7 +33,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.ListCertificatesResponse)
     ListCertificatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCertificatesResponse.newBuilder() to construct.
   private ListCertificatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1beta1.Certificate> certificates_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       getCertificatesList() {
     return certificates_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       getCertificatesOrBuilderList() {
     return certificates_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
   public int getCertificatesCount() {
     return certificates_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
   public com.google.cloud.security.privateca.v1beta1.Certificate getCertificates(int index) {
     return certificates_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -457,7 +445,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -767,7 +754,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return certificatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return certificatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return certificatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +852,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +916,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +988,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         int index) {
       return getCertificatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1031,7 +1005,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return certificatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1023,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(certificates_);
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1037,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       return getCertificatesFieldBuilder()
           .addBuilder(com.google.cloud.security.privateca.v1beta1.Certificate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1081,7 +1052,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.security.privateca.v1beta1.Certificate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1114,7 +1084,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1139,7 +1108,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1132,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1155,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1174,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1208,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1259,7 +1223,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1274,7 +1237,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1290,7 +1252,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1306,7 +1267,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1330,7 +1290,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1312,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1331,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1349,6 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -41,7 +41,6 @@ public interface BoostSpecsOrBuilder
    * @return A list containing the dataStores.
    */
   java.util.List<java.lang.String> getDataStoresList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface BoostSpecsOrBuilder
    * @return The count of dataStores.
    */
   int getDataStoresCount();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface BoostSpecsOrBuilder
    * @return The dataStores at the given index.
    */
   java.lang.String getDataStores(int index);
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface BoostSpecsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.BoostSpec> getSpecList();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface BoostSpecsOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.BoostSpec getSpec(int index);
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface BoostSpecsOrBuilder
    * </code>
    */
   int getSpecCount();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface BoostSpecsOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.BoostSpecOrBuilder>
       getSpecOrBuilderList();
-
   /**
    *
    *

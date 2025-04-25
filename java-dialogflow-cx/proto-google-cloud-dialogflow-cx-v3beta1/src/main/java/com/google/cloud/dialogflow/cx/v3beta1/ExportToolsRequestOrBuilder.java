@@ -39,7 +39,6 @@ public interface ExportToolsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ExportToolsRequestOrBuilder
    * @return A list containing the tools.
    */
   java.util.List<java.lang.String> getToolsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ExportToolsRequestOrBuilder
    * @return The count of tools.
    */
   int getToolsCount();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ExportToolsRequestOrBuilder
    * @return The tools at the given index.
    */
   java.lang.String getTools(int index);
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ExportToolsRequestOrBuilder
    * @return Whether the toolsUri field is set.
    */
   boolean hasToolsUri();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface ExportToolsRequestOrBuilder
    * @return The toolsUri.
    */
   java.lang.String getToolsUri();
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public interface ExportToolsRequestOrBuilder
    * @return Whether the toolsContentInline field is set.
    */
   boolean hasToolsContentInline();
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public interface ExportToolsRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
-
   /**
    *
    *

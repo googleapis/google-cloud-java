@@ -35,7 +35,6 @@ public final class ImageObjectDetectionEvaluationMetrics
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics)
     ImageObjectDetectionEvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageObjectDetectionEvaluationMetrics.newBuilder() to construct.
   private ImageObjectDetectionEvaluationMetrics(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class ImageObjectDetectionEvaluationMetrics
 
   public static final int EVALUATED_BOUNDING_BOX_COUNT_FIELD_NUMBER = 1;
   private int evaluatedBoundingBoxCount_ = 0;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ImageObjectDetectionEvaluationMetrics
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>
       boundingBoxMetricsEntries_;
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       getBoundingBoxMetricsEntriesList() {
     return boundingBoxMetricsEntries_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       getBoundingBoxMetricsEntriesOrBuilderList() {
     return boundingBoxMetricsEntries_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class ImageObjectDetectionEvaluationMetrics
   public int getBoundingBoxMetricsEntriesCount() {
     return boundingBoxMetricsEntries_.size();
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       int index) {
     return boundingBoxMetricsEntries_.get(index);
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ImageObjectDetectionEvaluationMetrics
 
   public static final int BOUNDING_BOX_MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 3;
   private float boundingBoxMeanAveragePrecision_ = 0F;
-
   /**
    *
    *
@@ -399,7 +391,6 @@ public final class ImageObjectDetectionEvaluationMetrics
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -666,7 +657,6 @@ public final class ImageObjectDetectionEvaluationMetrics
     private int bitField0_;
 
     private int evaluatedBoundingBoxCount_;
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class ImageObjectDetectionEvaluationMetrics
     public int getEvaluatedBoundingBoxCount() {
       return evaluatedBoundingBoxCount_;
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +752,6 @@ public final class ImageObjectDetectionEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class ImageObjectDetectionEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class ImageObjectDetectionEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +877,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +905,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +930,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +956,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +982,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1048,6 @@ public final class ImageObjectDetectionEvaluationMetrics
         getBoundingBoxMetricsEntriesBuilder(int index) {
       return getBoundingBoxMetricsEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1095,7 +1070,6 @@ public final class ImageObjectDetectionEvaluationMetrics
         return boundingBoxMetricsEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class ImageObjectDetectionEvaluationMetrics
         return java.util.Collections.unmodifiableList(boundingBoxMetricsEntries_);
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1112,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       return getBoundingBoxMetricsEntriesFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1160,7 +1132,6 @@ public final class ImageObjectDetectionEvaluationMetrics
           .addBuilder(
               index, com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1201,7 +1172,6 @@ public final class ImageObjectDetectionEvaluationMetrics
     }
 
     private float boundingBoxMeanAveragePrecision_;
-
     /**
      *
      *
@@ -1218,7 +1188,6 @@ public final class ImageObjectDetectionEvaluationMetrics
     public float getBoundingBoxMeanAveragePrecision() {
       return boundingBoxMeanAveragePrecision_;
     }
-
     /**
      *
      *
@@ -1239,7 +1208,6 @@ public final class ImageObjectDetectionEvaluationMetrics
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -49,7 +49,6 @@ public interface SegmentFilterScopingOrBuilder
    * @return Whether the atAnyPointInTime field is set.
    */
   boolean hasAtAnyPointInTime();
-
   /**
    *
    *

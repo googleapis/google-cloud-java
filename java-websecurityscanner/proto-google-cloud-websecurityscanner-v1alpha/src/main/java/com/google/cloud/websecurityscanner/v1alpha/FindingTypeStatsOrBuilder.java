@@ -36,7 +36,6 @@ public interface FindingTypeStatsOrBuilder
    * @return The enum numeric value on the wire for findingType.
    */
   int getFindingTypeValue();
-
   /**
    *
    *

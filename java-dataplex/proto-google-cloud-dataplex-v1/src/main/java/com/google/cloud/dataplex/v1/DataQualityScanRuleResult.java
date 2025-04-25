@@ -34,7 +34,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityScanRuleResult)
     DataQualityScanRuleResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataQualityScanRuleResult.newBuilder() to construct.
   private DataQualityScanRuleResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -204,7 +203,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>RULE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RULE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -216,7 +214,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>NON_NULL_EXPECTATION = 1;</code>
      */
     public static final int NON_NULL_EXPECTATION_VALUE = 1;
-
     /**
      *
      *
@@ -228,7 +225,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>RANGE_EXPECTATION = 2;</code>
      */
     public static final int RANGE_EXPECTATION_VALUE = 2;
-
     /**
      *
      *
@@ -240,7 +236,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>REGEX_EXPECTATION = 3;</code>
      */
     public static final int REGEX_EXPECTATION_VALUE = 3;
-
     /**
      *
      *
@@ -252,7 +247,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>ROW_CONDITION_EXPECTATION = 4;</code>
      */
     public static final int ROW_CONDITION_EXPECTATION_VALUE = 4;
-
     /**
      *
      *
@@ -264,7 +258,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>SET_EXPECTATION = 5;</code>
      */
     public static final int SET_EXPECTATION_VALUE = 5;
-
     /**
      *
      *
@@ -276,7 +269,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>STATISTIC_RANGE_EXPECTATION = 6;</code>
      */
     public static final int STATISTIC_RANGE_EXPECTATION_VALUE = 6;
-
     /**
      *
      *
@@ -288,7 +280,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>TABLE_CONDITION_EXPECTATION = 7;</code>
      */
     public static final int TABLE_CONDITION_EXPECTATION_VALUE = 7;
-
     /**
      *
      *
@@ -300,7 +291,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>UNIQUENESS_EXPECTATION = 8;</code>
      */
     public static final int UNIQUENESS_EXPECTATION_VALUE = 8;
-
     /**
      *
      *
@@ -465,7 +455,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>EVALUATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVALUATION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -476,7 +465,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>PER_ROW = 1;</code>
      */
     public static final int PER_ROW_VALUE = 1;
-
     /**
      *
      *
@@ -626,7 +614,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>RESULT_UNSPECIFIED = 0;</code>
      */
     public static final int RESULT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -637,7 +624,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>PASSED = 1;</code>
      */
     public static final int PASSED_VALUE = 1;
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -762,7 +747,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -791,7 +775,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSource_ = "";
-
   /**
    *
    *
@@ -815,7 +798,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -844,7 +826,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object column_ = "";
-
   /**
    *
    *
@@ -868,7 +849,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -897,7 +877,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleName_ = "";
-
   /**
    *
    *
@@ -921,7 +900,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -948,7 +926,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int RULE_TYPE_FIELD_NUMBER = 5;
   private int ruleType_ = 0;
-
   /**
    *
    *
@@ -964,7 +941,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
   public int getRuleTypeValue() {
     return ruleType_;
   }
-
   /**
    *
    *
@@ -987,7 +963,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int EVALUTION_TYPE_FIELD_NUMBER = 6;
   private int evalutionType_ = 0;
-
   /**
    *
    *
@@ -1004,7 +979,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
   public int getEvalutionTypeValue() {
     return evalutionType_;
   }
-
   /**
    *
    *
@@ -1031,7 +1005,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleDimension_ = "";
-
   /**
    *
    *
@@ -1055,7 +1028,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -1082,7 +1054,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int THRESHOLD_PERCENT_FIELD_NUMBER = 8;
   private double thresholdPercent_ = 0D;
-
   /**
    *
    *
@@ -1101,7 +1072,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int RESULT_FIELD_NUMBER = 9;
   private int result_ = 0;
-
   /**
    *
    *
@@ -1117,7 +1087,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
   public int getResultValue() {
     return result_;
   }
-
   /**
    *
    *
@@ -1140,7 +1109,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int EVALUATED_ROW_COUNT_FIELD_NUMBER = 10;
   private long evaluatedRowCount_ = 0L;
-
   /**
    *
    *
@@ -1160,7 +1128,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int PASSED_ROW_COUNT_FIELD_NUMBER = 11;
   private long passedRowCount_ = 0L;
-
   /**
    *
    *
@@ -1180,7 +1147,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int NULL_ROW_COUNT_FIELD_NUMBER = 12;
   private long nullRowCount_ = 0L;
-
   /**
    *
    *
@@ -1199,7 +1165,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
 
   public static final int ASSERTION_ROW_COUNT_FIELD_NUMBER = 13;
   private long assertionRowCount_ = 0L;
-
   /**
    *
    *
@@ -1503,7 +1468,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1853,7 +1817,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -1876,7 +1839,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1899,7 +1861,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1921,7 +1882,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1939,7 +1899,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1964,7 +1923,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private java.lang.Object dataSource_ = "";
-
     /**
      *
      *
@@ -1987,7 +1945,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2010,7 +1967,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2032,7 +1988,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2050,7 +2005,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2029,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private java.lang.Object column_ = "";
-
     /**
      *
      *
@@ -2098,7 +2051,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2121,7 +2073,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2143,7 +2094,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2111,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2186,7 +2135,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private java.lang.Object ruleName_ = "";
-
     /**
      *
      *
@@ -2209,7 +2157,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2232,7 +2179,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2254,7 +2200,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2272,7 +2217,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2297,7 +2241,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private int ruleType_ = 0;
-
     /**
      *
      *
@@ -2313,7 +2256,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public int getRuleTypeValue() {
       return ruleType_;
     }
-
     /**
      *
      *
@@ -2332,7 +2274,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2352,7 +2293,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
           ? com.google.cloud.dataplex.v1.DataQualityScanRuleResult.RuleType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2375,7 +2315,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2395,7 +2334,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private int evalutionType_ = 0;
-
     /**
      *
      *
@@ -2412,7 +2350,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public int getEvalutionTypeValue() {
       return evalutionType_;
     }
-
     /**
      *
      *
@@ -2432,7 +2369,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2455,7 +2391,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
           ? com.google.cloud.dataplex.v1.DataQualityScanRuleResult.EvaluationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2479,7 +2414,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2500,7 +2434,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private java.lang.Object ruleDimension_ = "";
-
     /**
      *
      *
@@ -2523,7 +2456,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2546,7 +2478,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2568,7 +2499,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2586,7 +2516,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2611,7 +2540,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private double thresholdPercent_;
-
     /**
      *
      *
@@ -2627,7 +2555,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public double getThresholdPercent() {
       return thresholdPercent_;
     }
-
     /**
      *
      *
@@ -2647,7 +2574,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2667,7 +2593,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private int result_ = 0;
-
     /**
      *
      *
@@ -2683,7 +2608,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public int getResultValue() {
       return result_;
     }
-
     /**
      *
      *
@@ -2702,7 +2626,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2722,7 +2645,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
           ? com.google.cloud.dataplex.v1.DataQualityScanRuleResult.Result.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2744,7 +2666,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2764,7 +2685,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private long evaluatedRowCount_;
-
     /**
      *
      *
@@ -2781,7 +2701,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public long getEvaluatedRowCount() {
       return evaluatedRowCount_;
     }
-
     /**
      *
      *
@@ -2802,7 +2721,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2823,7 +2741,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private long passedRowCount_;
-
     /**
      *
      *
@@ -2840,7 +2757,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public long getPassedRowCount() {
       return passedRowCount_;
     }
-
     /**
      *
      *
@@ -2861,7 +2777,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2882,7 +2797,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private long nullRowCount_;
-
     /**
      *
      *
@@ -2898,7 +2812,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public long getNullRowCount() {
       return nullRowCount_;
     }
-
     /**
      *
      *
@@ -2918,7 +2831,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2938,7 +2850,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     }
 
     private long assertionRowCount_;
-
     /**
      *
      *
@@ -2955,7 +2866,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public long getAssertionRowCount() {
       return assertionRowCount_;
     }
-
     /**
      *
      *
@@ -2976,7 +2886,6 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

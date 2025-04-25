@@ -36,7 +36,6 @@ public interface ConversationTurnOrBuilder
    * @return Whether the userInput field is set.
    */
   boolean hasUserInput();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConversationTurnOrBuilder
    * @return The userInput.
    */
   com.google.cloud.dialogflow.cx.v3.ConversationTurn.UserInput getUserInput();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ConversationTurnOrBuilder
    * @return Whether the virtualAgentOutput field is set.
    */
   boolean hasVirtualAgentOutput();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ConversationTurnOrBuilder
    * @return The virtualAgentOutput.
    */
   com.google.cloud.dialogflow.cx.v3.ConversationTurn.VirtualAgentOutput getVirtualAgentOutput();
-
   /**
    *
    *

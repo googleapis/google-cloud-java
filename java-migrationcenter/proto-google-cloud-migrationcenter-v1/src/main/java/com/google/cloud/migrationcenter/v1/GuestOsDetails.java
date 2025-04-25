@@ -33,7 +33,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GuestOsDetails)
     GuestOsDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GuestOsDetails.newBuilder() to construct.
   private GuestOsDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object osName_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAMILY_FIELD_NUMBER = 2;
   private int family_ = 0;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
   public int getFamilyValue() {
     return family_;
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.migrationcenter.v1.GuestConfigDetails config_;
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.GuestConfigDetails.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RUNTIME_FIELD_NUMBER = 5;
   private com.google.cloud.migrationcenter.v1.GuestRuntimeDetails runtime_;
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRuntime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.GuestRuntimeDetails.getDefaultInstance()
         : runtime_;
   }
-
   /**
    *
    *
@@ -527,7 +514,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -788,7 +774,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object osName_ = "";
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int family_ = 0;
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     public int getFamilyValue() {
       return family_;
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.OperatingSystemFamily.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +972,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1016,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1054,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1083,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.GuestConfigDetails.Builder,
             com.google.cloud.migrationcenter.v1.GuestConfigDetailsOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1148,7 +1117,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1139,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1159,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1187,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1206,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1220,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1275,7 +1238,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
-
     /**
      *
      *
@@ -1308,7 +1270,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.GuestRuntimeDetails.Builder,
             com.google.cloud.migrationcenter.v1.GuestRuntimeDetailsOrBuilder>
         runtimeBuilder_;
-
     /**
      *
      *
@@ -1323,7 +1284,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRuntime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1344,7 +1304,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
         return runtimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1367,7 +1326,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1346,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1374,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1393,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1407,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRuntimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1471,7 +1425,6 @@ public final class GuestOsDetails extends com.google.protobuf.GeneratedMessageV3
             : runtime_;
       }
     }
-
     /**
      *
      *

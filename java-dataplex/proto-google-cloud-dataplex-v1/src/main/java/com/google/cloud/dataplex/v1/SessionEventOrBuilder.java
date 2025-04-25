@@ -36,7 +36,6 @@ public interface SessionEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SessionEventOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface SessionEventOrBuilder
    * @return The sessionId.
    */
   java.lang.String getSessionId();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface SessionEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface SessionEventOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface SessionEventOrBuilder
    * @return The query.
    */
   com.google.cloud.dataplex.v1.SessionEvent.QueryDetail getQuery();
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public interface SessionEventOrBuilder
    * @return Whether the unassignedDuration field is set.
    */
   boolean hasUnassignedDuration();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface SessionEventOrBuilder
    * @return The unassignedDuration.
    */
   com.google.protobuf.Duration getUnassignedDuration();
-
   /**
    *
    *

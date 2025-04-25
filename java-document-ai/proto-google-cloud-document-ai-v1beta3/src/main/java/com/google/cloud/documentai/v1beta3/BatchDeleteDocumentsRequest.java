@@ -25,7 +25,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest)
     BatchDeleteDocumentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDeleteDocumentsRequest.newBuilder() to construct.
   private BatchDeleteDocumentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -61,7 +60,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
 
   public static final int DATASET_DOCUMENTS_FIELD_NUMBER = 3;
   private com.google.cloud.documentai.v1beta3.BatchDatasetDocuments datasetDocuments_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
   public boolean hasDatasetDocuments() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
         ? com.google.cloud.documentai.v1beta3.BatchDatasetDocuments.getDefaultInstance()
         : datasetDocuments_;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -569,7 +562,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
             com.google.cloud.documentai.v1beta3.BatchDatasetDocuments.Builder,
             com.google.cloud.documentai.v1beta3.BatchDatasetDocumentsOrBuilder>
         datasetDocumentsBuilder_;
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
     public boolean hasDatasetDocuments() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
         return datasetDocumentsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
       onChanged();
       return getDatasetDocumentsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class BatchDeleteDocumentsRequest extends com.google.protobuf.Gener
             : datasetDocuments_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface DeleteConnectedSiteTagRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface DeleteConnectedSiteTagRequestOrBuilder
    * @return The tagId.
    */
   java.lang.String getTagId();
-
   /**
    *
    *

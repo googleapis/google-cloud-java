@@ -38,7 +38,6 @@ public interface GetServiceRolloutRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetServiceRolloutRequestOrBuilder
    * @return The rolloutId.
    */
   java.lang.String getRolloutId();
-
   /**
    *
    *

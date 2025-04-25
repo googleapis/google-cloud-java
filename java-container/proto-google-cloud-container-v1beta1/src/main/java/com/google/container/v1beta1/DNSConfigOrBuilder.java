@@ -36,7 +36,6 @@ public interface DNSConfigOrBuilder
    * @return The enum numeric value on the wire for clusterDns.
    */
   int getClusterDnsValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DNSConfigOrBuilder
    * @return The enum numeric value on the wire for clusterDnsScope.
    */
   int getClusterDnsScopeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DNSConfigOrBuilder
    * @return The clusterDnsDomain.
    */
   java.lang.String getClusterDnsDomain();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface DNSConfigOrBuilder
    * @return The additiveVpcScopeDnsDomain.
    */
   java.lang.String getAdditiveVpcScopeDnsDomain();
-
   /**
    *
    *

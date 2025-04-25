@@ -51,7 +51,6 @@ public interface AndroidKeySettingsOrBuilder
    * @return A list containing the allowedPackageNames.
    */
   java.util.List<java.lang.String> getAllowedPackageNamesList();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AndroidKeySettingsOrBuilder
    * @return The count of allowedPackageNames.
    */
   int getAllowedPackageNamesCount();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface AndroidKeySettingsOrBuilder
    * @return The allowedPackageNames at the given index.
    */
   java.lang.String getAllowedPackageNames(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CorpusStatus)
     CorpusStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CorpusStatus.newBuilder() to construct.
   private CorpusStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>INITIALIZED = 1;</code>
      */
     public static final int INITIALIZED_VALUE = 1;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -251,7 +247,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -294,7 +288,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorStatus_ = "";
-
   /**
    *
    *
@@ -318,7 +311,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -511,7 +503,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -708,7 +699,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -726,7 +716,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -747,7 +736,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +757,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.CorpusStatus.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorStatus_ = "";
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -861,7 +845,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class CorpusStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

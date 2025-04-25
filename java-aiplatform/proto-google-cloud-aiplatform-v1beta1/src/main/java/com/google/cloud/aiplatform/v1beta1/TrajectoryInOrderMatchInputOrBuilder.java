@@ -38,7 +38,6 @@ public interface TrajectoryInOrderMatchInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TrajectoryInOrderMatchInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchSpec getMetricSpec();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface TrajectoryInOrderMatchInputOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInstance>
       getInstancesList();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface TrajectoryInOrderMatchInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInstance getInstances(int index);
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface TrajectoryInOrderMatchInputOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface TrajectoryInOrderMatchInputOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInstanceOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *

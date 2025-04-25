@@ -36,7 +36,6 @@ public interface TokenOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TokenOrBuilder
    * @return The text.
    */
   com.google.cloud.language.v1.TextSpan getText();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface TokenOrBuilder
    * @return Whether the partOfSpeech field is set.
    */
   boolean hasPartOfSpeech();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface TokenOrBuilder
    * @return The partOfSpeech.
    */
   com.google.cloud.language.v1.PartOfSpeech getPartOfSpeech();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface TokenOrBuilder
    * @return Whether the dependencyEdge field is set.
    */
   boolean hasDependencyEdge();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface TokenOrBuilder
    * @return The dependencyEdge.
    */
   com.google.cloud.language.v1.DependencyEdge getDependencyEdge();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface TokenOrBuilder
    * @return The lemma.
    */
   java.lang.String getLemma();
-
   /**
    *
    *

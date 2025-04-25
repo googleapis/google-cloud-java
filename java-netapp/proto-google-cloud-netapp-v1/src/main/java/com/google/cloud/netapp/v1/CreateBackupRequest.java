@@ -33,7 +33,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.CreateBackupRequest)
     CreateBackupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBackupRequest.newBuilder() to construct.
   private CreateBackupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
 
   public static final int BACKUP_FIELD_NUMBER = 3;
   private com.google.cloud.netapp.v1.Backup backup_;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
   public boolean hasBackup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.netapp.v1.Backup getBackup() {
     return backup_ == null ? com.google.cloud.netapp.v1.Backup.getDefaultInstance() : backup_;
   }
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object backupId_ = "";
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.netapp.v1.Backup.Builder,
             com.google.cloud.netapp.v1.BackupOrBuilder>
         backupBuilder_;
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     public boolean hasBackup() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return backupBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +996,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1016,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBackupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1075,7 +1048,6 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return backup_ == null ? com.google.cloud.netapp.v1.Backup.getDefaultInstance() : backup_;
       }
     }
-
     /**
      *
      *

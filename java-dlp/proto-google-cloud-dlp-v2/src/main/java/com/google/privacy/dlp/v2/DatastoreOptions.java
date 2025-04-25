@@ -33,7 +33,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DatastoreOptions)
     DatastoreOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatastoreOptions.newBuilder() to construct.
   private DatastoreOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int PARTITION_ID_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.PartitionId partitionId_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
   public boolean hasPartitionId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
         ? com.google.privacy.dlp.v2.PartitionId.getDefaultInstance()
         : partitionId_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
 
   public static final int KIND_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.KindExpression kind_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
   public com.google.privacy.dlp.v2.KindExpression getKind() {
     return kind_ == null ? com.google.privacy.dlp.v2.KindExpression.getDefaultInstance() : kind_;
   }
-
   /**
    *
    *
@@ -346,7 +339,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +561,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.PartitionId.Builder,
             com.google.privacy.dlp.v2.PartitionIdOrBuilder>
         partitionIdBuilder_;
-
     /**
      *
      *
@@ -585,7 +576,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     public boolean hasPartitionId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -607,7 +597,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
         return partitionIdBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -631,7 +620,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -652,7 +640,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +668,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +688,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -738,7 +722,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
             : partitionId_;
       }
     }
-
     /**
      *
      *
@@ -772,7 +755,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.KindExpression.Builder,
             com.google.privacy.dlp.v2.KindExpressionOrBuilder>
         kindBuilder_;
-
     /**
      *
      *
@@ -787,7 +769,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     public boolean hasKind() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -808,7 +789,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
         return kindBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -831,7 +811,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +830,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +857,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +876,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +890,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getKindFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -933,7 +908,6 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
             : kind_;
       }
     }
-
     /**
      *
      *

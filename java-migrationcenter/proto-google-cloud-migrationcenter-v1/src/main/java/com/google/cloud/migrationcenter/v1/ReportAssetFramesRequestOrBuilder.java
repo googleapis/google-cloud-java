@@ -36,7 +36,6 @@ public interface ReportAssetFramesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ReportAssetFramesRequestOrBuilder
    * @return Whether the frames field is set.
    */
   boolean hasFrames();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ReportAssetFramesRequestOrBuilder
    * @return The frames.
    */
   com.google.cloud.migrationcenter.v1.Frames getFrames();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ReportAssetFramesRequestOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

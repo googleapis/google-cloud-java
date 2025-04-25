@@ -34,7 +34,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.servicedirectory.v1beta1.DeleteNamespaceRequest)
     DeleteNamespaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteNamespaceRequest.newBuilder() to construct.
   private DeleteNamespaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +279,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -472,7 +468,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -497,7 +492,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class DeleteNamespaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

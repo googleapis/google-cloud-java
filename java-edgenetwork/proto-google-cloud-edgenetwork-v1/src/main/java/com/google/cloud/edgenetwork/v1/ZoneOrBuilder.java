@@ -36,7 +36,6 @@ public interface ZoneOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ZoneOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ZoneOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ZoneOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ZoneOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ZoneOrBuilder
    */
   @java.lang.Deprecated
   int getLabelsCount();
-
   /**
    *
    *
@@ -155,11 +149,9 @@ public interface ZoneOrBuilder
    */
   @java.lang.Deprecated
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface ZoneOrBuilder
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -188,7 +179,6 @@ public interface ZoneOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -218,7 +208,6 @@ public interface ZoneOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getLayoutName();
-
   /**
    *
    *

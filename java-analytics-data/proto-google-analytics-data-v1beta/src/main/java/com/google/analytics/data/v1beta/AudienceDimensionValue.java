@@ -33,7 +33,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.AudienceDimensionValue)
     AudienceDimensionValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AudienceDimensionValue.newBuilder() to construct.
   private AudienceDimensionValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
     private OneValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
   public boolean hasValue() {
     return oneValueCase_ == 1;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -355,7 +350,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +576,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
     public boolean hasValue() {
       return oneValueCase_ == 1;
     }
-
     /**
      *
      *
@@ -611,7 +604,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -640,7 +632,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +653,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class AudienceDimensionValue extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *

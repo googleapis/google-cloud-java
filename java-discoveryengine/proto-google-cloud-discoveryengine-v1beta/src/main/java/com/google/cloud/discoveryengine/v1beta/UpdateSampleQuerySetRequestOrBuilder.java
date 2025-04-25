@@ -46,7 +46,6 @@ public interface UpdateSampleQuerySetRequestOrBuilder
    * @return Whether the sampleQuerySet field is set.
    */
   boolean hasSampleQuerySet();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateSampleQuerySetRequestOrBuilder
    * @return The sampleQuerySet.
    */
   com.google.cloud.discoveryengine.v1beta.SampleQuerySet getSampleQuerySet();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface UpdateSampleQuerySetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface UpdateSampleQuerySetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

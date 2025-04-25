@@ -36,7 +36,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return Whether the releaseChannel field is set.
    */
   boolean hasReleaseChannel();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return The releaseChannel.
    */
   com.google.container.v1beta1.ReleaseChannel getReleaseChannel();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return Whether the windowsVersions field is set.
    */
   boolean hasWindowsVersions();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface UpgradeAvailableEventOrBuilder
    * @return The windowsVersions.
    */
   com.google.container.v1beta1.WindowsVersions getWindowsVersions();
-
   /**
    *
    *

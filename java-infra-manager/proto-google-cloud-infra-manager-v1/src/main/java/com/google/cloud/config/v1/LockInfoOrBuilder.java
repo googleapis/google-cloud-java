@@ -49,7 +49,6 @@ public interface LockInfoOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface LockInfoOrBuilder
    * @return The info.
    */
   java.lang.String getInfo();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface LockInfoOrBuilder
    * @return The who.
    */
   java.lang.String getWho();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface LockInfoOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface LockInfoOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface LockInfoOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

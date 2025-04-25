@@ -33,7 +33,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ProvisioningQuota)
     ProvisioningQuotaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProvisioningQuota.newBuilder() to construct.
   private ProvisioningQuota(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
      * <code>ASSET_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ASSET_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
      * <code>ASSET_TYPE_SERVER = 1;</code>
      */
     public static final int ASSET_TYPE_SERVER_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
      * <code>ASSET_TYPE_STORAGE = 2;</code>
      */
     public static final int ASSET_TYPE_STORAGE_VALUE = 2;
-
     /**
      *
      *
@@ -267,7 +263,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     private QuotaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -316,7 +311,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     private AvailabilityCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -355,7 +349,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -379,7 +372,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -406,7 +398,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 2;
   private int assetType_ = 0;
-
   /**
    *
    *
@@ -422,7 +413,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   public int getAssetTypeValue() {
     return assetType_;
   }
-
   /**
    *
    *
@@ -447,7 +437,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcpService_ = "";
-
   /**
    *
    *
@@ -471,7 +460,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -500,7 +488,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -524,7 +511,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -551,7 +537,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
 
   public static final int AVAILABLE_COUNT_FIELD_NUMBER = 5;
   private int availableCount_ = 0;
-
   /**
    *
    *
@@ -569,7 +554,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INSTANCE_QUOTA_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -585,7 +569,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   public boolean hasInstanceQuota() {
     return quotaCase_ == 6;
   }
-
   /**
    *
    *
@@ -604,7 +587,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.baremetalsolution.v2.InstanceQuota.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -623,7 +605,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SERVER_COUNT_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -639,7 +620,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   public boolean hasServerCount() {
     return availabilityCase_ == 7;
   }
-
   /**
    *
    *
@@ -660,7 +640,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NETWORK_BANDWIDTH_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -676,7 +655,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   public boolean hasNetworkBandwidth() {
     return availabilityCase_ == 8;
   }
-
   /**
    *
    *
@@ -697,7 +675,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STORAGE_GIB_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -713,7 +690,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
   public boolean hasStorageGib() {
     return availabilityCase_ == 9;
   }
-
   /**
    *
    *
@@ -1011,7 +987,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1355,7 +1330,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1378,7 +1352,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1401,7 +1374,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1423,7 +1395,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1412,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1436,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     }
 
     private int assetType_ = 0;
-
     /**
      *
      *
@@ -1482,7 +1451,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public int getAssetTypeValue() {
       return assetType_;
     }
-
     /**
      *
      *
@@ -1501,7 +1469,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1488,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.baremetalsolution.v2.ProvisioningQuota.AssetType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1544,7 +1510,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1529,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object gcpService_ = "";
-
     /**
      *
      *
@@ -1587,7 +1551,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1610,7 +1573,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1594,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1650,7 +1611,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1635,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1698,7 +1657,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1721,7 +1679,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1700,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1717,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1786,7 +1741,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     }
 
     private int availableCount_;
-
     /**
      *
      *
@@ -1802,7 +1756,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public int getAvailableCount() {
       return availableCount_;
     }
-
     /**
      *
      *
@@ -1822,7 +1775,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1798,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
             com.google.cloud.baremetalsolution.v2.InstanceQuota.Builder,
             com.google.cloud.baremetalsolution.v2.InstanceQuotaOrBuilder>
         instanceQuotaBuilder_;
-
     /**
      *
      *
@@ -1862,7 +1813,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public boolean hasInstanceQuota() {
       return quotaCase_ == 6;
     }
-
     /**
      *
      *
@@ -1888,7 +1838,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.baremetalsolution.v2.InstanceQuota.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1911,7 +1860,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       quotaCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1932,7 +1880,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       quotaCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1965,7 +1912,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       quotaCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1937,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2004,7 +1949,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.baremetalsolution.v2.InstanceQuota.Builder getInstanceQuotaBuilder() {
       return getInstanceQuotaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2026,7 +1970,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.baremetalsolution.v2.InstanceQuota.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2074,7 +2017,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public boolean hasServerCount() {
       return availabilityCase_ == 7;
     }
-
     /**
      *
      *
@@ -2092,7 +2034,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -2112,7 +2053,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2147,7 +2087,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public boolean hasNetworkBandwidth() {
       return availabilityCase_ == 8;
     }
-
     /**
      *
      *
@@ -2165,7 +2104,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -2185,7 +2123,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2157,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
     public boolean hasStorageGib() {
       return availabilityCase_ == 9;
     }
-
     /**
      *
      *
@@ -2238,7 +2174,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -2258,7 +2193,6 @@ public final class ProvisioningQuota extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

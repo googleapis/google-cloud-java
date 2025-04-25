@@ -40,7 +40,6 @@ public interface DiskConfigOrBuilder
    * @return The bootDiskType.
    */
   java.lang.String getBootDiskType();
-
   /**
    *
    *
@@ -108,7 +107,6 @@ public interface DiskConfigOrBuilder
    * @return The localSsdInterface.
    */
   java.lang.String getLocalSsdInterface();
-
   /**
    *
    *
@@ -141,7 +139,6 @@ public interface DiskConfigOrBuilder
    * @return Whether the bootDiskProvisionedIops field is set.
    */
   boolean hasBootDiskProvisionedIops();
-
   /**
    *
    *
@@ -175,7 +172,6 @@ public interface DiskConfigOrBuilder
    * @return Whether the bootDiskProvisionedThroughput field is set.
    */
   boolean hasBootDiskProvisionedThroughput();
-
   /**
    *
    *

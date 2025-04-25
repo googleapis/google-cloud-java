@@ -34,7 +34,6 @@ public interface ListCustomMetricsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.CustomMetric custom_metrics = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.CustomMetric> getCustomMetricsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCustomMetricsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.CustomMetric custom_metrics = 1;</code>
    */
   com.google.analytics.admin.v1beta.CustomMetric getCustomMetrics(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCustomMetricsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.CustomMetric custom_metrics = 1;</code>
    */
   int getCustomMetricsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCustomMetricsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.CustomMetricOrBuilder>
       getCustomMetricsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListCustomMetricsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

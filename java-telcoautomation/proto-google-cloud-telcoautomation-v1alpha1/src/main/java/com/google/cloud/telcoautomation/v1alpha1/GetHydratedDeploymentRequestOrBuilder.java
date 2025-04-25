@@ -38,7 +38,6 @@ public interface GetHydratedDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

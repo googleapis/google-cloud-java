@@ -38,7 +38,6 @@ public interface MaintenanceScheduleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MaintenanceScheduleOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface MaintenanceScheduleOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface MaintenanceScheduleOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface MaintenanceScheduleOrBuilder
    * @return Whether the scheduleDeadlineTime field is set.
    */
   boolean hasScheduleDeadlineTime();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface MaintenanceScheduleOrBuilder
    * @return The scheduleDeadlineTime.
    */
   com.google.protobuf.Timestamp getScheduleDeadlineTime();
-
   /**
    *
    *

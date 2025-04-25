@@ -34,7 +34,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.UpdateIntentRequest)
     UpdateIntentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateIntentRequest.newBuilder() to construct.
   private UpdateIntentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int INTENT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.Intent intent_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasIntent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.v2beta1.Intent.getDefaultInstance()
         : intent_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int INTENT_VIEW_FIELD_NUMBER = 4;
   private int intentView_ = 0;
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
   public int getIntentViewValue() {
     return intentView_;
   }
-
   /**
    *
    *
@@ -472,7 +461,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -724,7 +712,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2beta1.Intent.Builder,
             com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
         intentBuilder_;
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasIntent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
         return intentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getIntentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -901,7 +881,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
             : intent_;
       }
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -985,7 +962,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1041,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1082,7 +1055,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1103,7 +1075,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1097,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1116,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1143,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1162,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1176,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1228,7 +1194,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1221,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int intentView_ = 0;
-
     /**
      *
      *
@@ -1272,7 +1236,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     public int getIntentViewValue() {
       return intentView_;
     }
-
     /**
      *
      *
@@ -1291,7 +1254,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1271,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
           com.google.cloud.dialogflow.v2beta1.IntentView.forNumber(intentView_);
       return result == null ? com.google.cloud.dialogflow.v2beta1.IntentView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1331,7 +1292,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

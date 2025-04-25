@@ -37,7 +37,6 @@ public interface GetNoteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

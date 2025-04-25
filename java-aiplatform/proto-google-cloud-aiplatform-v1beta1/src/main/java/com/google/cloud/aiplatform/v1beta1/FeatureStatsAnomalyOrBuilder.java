@@ -58,7 +58,6 @@ public interface FeatureStatsAnomalyOrBuilder
    * @return The statsUri.
    */
   java.lang.String getStatsUri();
-
   /**
    *
    *
@@ -95,7 +94,6 @@ public interface FeatureStatsAnomalyOrBuilder
    * @return The anomalyUri.
    */
   java.lang.String getAnomalyUri();
-
   /**
    *
    *
@@ -163,7 +161,6 @@ public interface FeatureStatsAnomalyOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -179,7 +176,6 @@ public interface FeatureStatsAnomalyOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -209,7 +205,6 @@ public interface FeatureStatsAnomalyOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -225,7 +220,6 @@ public interface FeatureStatsAnomalyOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

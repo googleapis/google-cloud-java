@@ -33,7 +33,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.FeedOutputConfig)
     FeedOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeedOutputConfig.newBuilder() to construct.
   private FeedOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PUBSUB_DESTINATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasPubsubDestination() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.asset.v1.PubsubDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +550,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.asset.v1.PubsubDestination.Builder,
             com.google.cloud.asset.v1.PubsubDestinationOrBuilder>
         pubsubDestinationBuilder_;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasPubsubDestination() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.asset.v1.PubsubDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.asset.v1.PubsubDestination.Builder getPubsubDestinationBuilder() {
       return getPubsubDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.asset.v1.PubsubDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *

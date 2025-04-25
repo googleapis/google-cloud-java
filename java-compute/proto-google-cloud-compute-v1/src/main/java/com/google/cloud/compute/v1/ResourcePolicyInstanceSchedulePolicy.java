@@ -34,7 +34,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy)
     ResourcePolicyInstanceSchedulePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicyInstanceSchedulePolicy.newBuilder() to construct.
   private ResourcePolicyInstanceSchedulePolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expirationTime_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
   public boolean hasExpirationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
   public boolean hasTimeZone() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       return s;
     }
   }
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
 
   public static final int VM_START_SCHEDULE_FIELD_NUMBER = 17762396;
   private com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vmStartSchedule_;
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
   public boolean hasVmStartSchedule() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
             .getDefaultInstance()
         : vmStartSchedule_;
   }
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
 
   public static final int VM_STOP_SCHEDULE_FIELD_NUMBER = 426242732;
   private com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vmStopSchedule_;
-
   /**
    *
    *
@@ -359,7 +345,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
   public boolean hasVmStopSchedule() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -381,7 +366,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
             .getDefaultInstance()
         : vmStopSchedule_;
   }
-
   /**
    *
    *
@@ -625,7 +609,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -897,7 +880,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     private int bitField0_;
 
     private java.lang.Object expirationTime_ = "";
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     public boolean hasExpirationTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     }
 
     private java.lang.Object startTime_ = "";
-
     /**
      *
      *
@@ -1038,7 +1014,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1058,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1079,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1096,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1120,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     }
 
     private java.lang.Object timeZone_ = "";
-
     /**
      *
      *
@@ -1164,7 +1134,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     public boolean hasTimeZone() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1187,7 +1156,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1178,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1216,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1246,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
             com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule.Builder,
             com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicyScheduleOrBuilder>
         vmStartScheduleBuilder_;
-
     /**
      *
      *
@@ -1298,7 +1262,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     public boolean hasVmStartSchedule() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1323,7 +1286,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return vmStartScheduleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1311,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1334,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1366,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       }
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1387,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1404,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return getVmStartScheduleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1469,7 +1426,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
             : vmStartSchedule_;
       }
     }
-
     /**
      *
      *
@@ -1505,7 +1461,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
             com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule.Builder,
             com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicyScheduleOrBuilder>
         vmStopScheduleBuilder_;
-
     /**
      *
      *
@@ -1522,7 +1477,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
     public boolean hasVmStopSchedule() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1547,7 +1501,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
         return vmStopScheduleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1573,7 +1526,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1549,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1581,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       }
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1602,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1619,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
       onChanged();
       return getVmStopScheduleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1693,7 +1641,6 @@ public final class ResourcePolicyInstanceSchedulePolicy
             : vmStopSchedule_;
       }
     }
-
     /**
      *
      *

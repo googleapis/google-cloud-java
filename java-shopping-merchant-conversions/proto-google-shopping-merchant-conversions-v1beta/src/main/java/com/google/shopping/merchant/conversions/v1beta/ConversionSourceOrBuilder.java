@@ -38,7 +38,6 @@ public interface ConversionSourceOrBuilder
    * @return Whether the googleAnalyticsLink field is set.
    */
   boolean hasGoogleAnalyticsLink();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ConversionSourceOrBuilder
    * @return The googleAnalyticsLink.
    */
   com.google.shopping.merchant.conversions.v1beta.GoogleAnalyticsLink getGoogleAnalyticsLink();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ConversionSourceOrBuilder
    * @return Whether the merchantCenterDestination field is set.
    */
   boolean hasMerchantCenterDestination();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ConversionSourceOrBuilder
    */
   com.google.shopping.merchant.conversions.v1beta.MerchantCenterDestination
       getMerchantCenterDestination();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface ConversionSourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface ConversionSourceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface ConversionSourceOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface ConversionSourceOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public interface ConversionSourceOrBuilder
    * @return The enum numeric value on the wire for controller.
    */
   int getControllerValue();
-
   /**
    *
    *

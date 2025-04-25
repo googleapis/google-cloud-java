@@ -72,7 +72,6 @@ public enum FeatureViewDataFormat implements com.google.protobuf.ProtocolMessage
    * <code>FEATURE_VIEW_DATA_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int FEATURE_VIEW_DATA_FORMAT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum FeatureViewDataFormat implements com.google.protobuf.ProtocolMessage
    * <code>KEY_VALUE = 1;</code>
    */
   public static final int KEY_VALUE_VALUE = 1;
-
   /**
    *
    *

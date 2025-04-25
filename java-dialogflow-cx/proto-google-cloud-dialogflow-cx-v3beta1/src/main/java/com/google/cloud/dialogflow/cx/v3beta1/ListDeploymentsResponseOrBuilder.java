@@ -37,7 +37,6 @@ public interface ListDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Deployment deployments = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Deployment> getDeploymentsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Deployment deployments = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Deployment getDeployments(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface ListDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Deployment deployments = 1;</code>
    */
   int getDeploymentsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListDeploymentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.DeploymentOrBuilder>
       getDeploymentsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListDeploymentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

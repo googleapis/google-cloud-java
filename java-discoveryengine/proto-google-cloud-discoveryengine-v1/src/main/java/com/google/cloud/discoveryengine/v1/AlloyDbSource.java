@@ -33,7 +33,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AlloyDbSource)
     AlloyDbSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AlloyDbSource.newBuilder() to construct.
   private AlloyDbSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -295,7 +286,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableId_ = "";
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -350,7 +339,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsStagingDir_ = "";
-
   /**
    *
    *
@@ -379,7 +367,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -613,7 +600,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -873,7 +859,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -898,7 +883,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +907,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +930,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +949,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +975,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -1018,7 +998,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1021,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1043,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1061,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1086,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1134,7 +1109,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1158,7 +1132,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1181,7 +1154,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1172,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1197,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object databaseId_ = "";
-
     /**
      *
      *
@@ -1250,7 +1220,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1243,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1265,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1283,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1308,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tableId_ = "";
-
     /**
      *
      *
@@ -1366,7 +1331,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1390,7 +1354,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1413,7 +1376,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1394,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1419,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gcsStagingDir_ = "";
-
     /**
      *
      *
@@ -1486,7 +1446,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1473,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1541,7 +1499,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1521,6 @@ public final class AlloyDbSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

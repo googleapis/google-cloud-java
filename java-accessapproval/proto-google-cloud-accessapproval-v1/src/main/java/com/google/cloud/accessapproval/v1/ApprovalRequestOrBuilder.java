@@ -37,7 +37,6 @@ public interface ApprovalRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ApprovalRequestOrBuilder
    * @return The requestedResourceName.
    */
   java.lang.String getRequestedResourceName();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the requestedResourceProperties field is set.
    */
   boolean hasRequestedResourceProperties();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface ApprovalRequestOrBuilder
    * @return The requestedResourceProperties.
    */
   com.google.cloud.accessapproval.v1.ResourceProperties getRequestedResourceProperties();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the requestedReason field is set.
    */
   boolean hasRequestedReason();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface ApprovalRequestOrBuilder
    * @return The requestedReason.
    */
   com.google.cloud.accessapproval.v1.AccessReason getRequestedReason();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the requestedLocations field is set.
    */
   boolean hasRequestedLocations();
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public interface ApprovalRequestOrBuilder
    * @return The requestedLocations.
    */
   com.google.cloud.accessapproval.v1.AccessLocations getRequestedLocations();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface ApprovalRequestOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the requestedExpiration field is set.
    */
   boolean hasRequestedExpiration();
-
   /**
    *
    *
@@ -269,7 +258,6 @@ public interface ApprovalRequestOrBuilder
    * @return The requestedExpiration.
    */
   com.google.protobuf.Timestamp getRequestedExpiration();
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the approve field is set.
    */
   boolean hasApprove();
-
   /**
    *
    *
@@ -307,7 +294,6 @@ public interface ApprovalRequestOrBuilder
    * @return The approve.
    */
   com.google.cloud.accessapproval.v1.ApproveDecision getApprove();
-
   /**
    *
    *
@@ -331,7 +317,6 @@ public interface ApprovalRequestOrBuilder
    * @return Whether the dismiss field is set.
    */
   boolean hasDismiss();
-
   /**
    *
    *
@@ -344,7 +329,6 @@ public interface ApprovalRequestOrBuilder
    * @return The dismiss.
    */
   com.google.cloud.accessapproval.v1.DismissDecision getDismiss();
-
   /**
    *
    *

@@ -97,7 +97,6 @@ public interface EnrolledServiceOrBuilder
    * @return The cloudProduct.
    */
   java.lang.String getCloudProduct();
-
   /**
    *
    *
@@ -184,7 +183,6 @@ public interface EnrolledServiceOrBuilder
    * @return The enum numeric value on the wire for enrollmentLevel.
    */
   int getEnrollmentLevelValue();
-
   /**
    *
    *

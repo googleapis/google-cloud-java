@@ -41,7 +41,6 @@ public interface UpdateManagementDnsZoneBindingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateManagementDnsZoneBindingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateManagementDnsZoneBindingRequestOrBuilder
    * @return Whether the managementDnsZoneBinding field is set.
    */
   boolean hasManagementDnsZoneBinding();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateManagementDnsZoneBindingRequestOrBuilder
    * @return The managementDnsZoneBinding.
    */
   com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding getManagementDnsZoneBinding();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface UpdateManagementDnsZoneBindingRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

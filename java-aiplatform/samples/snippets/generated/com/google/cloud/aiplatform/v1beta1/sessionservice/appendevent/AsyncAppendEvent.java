@@ -40,7 +40,8 @@ public class AsyncAppendEvent {
       AppendEventRequest request =
           AppendEventRequest.newBuilder()
               .setName(
-                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+                  SessionName.ofProjectLocationReasoningEngineSessionName(
+                          "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                       .toString())
               .setEvent(SessionEvent.newBuilder().build())
               .build();

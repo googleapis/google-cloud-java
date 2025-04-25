@@ -34,7 +34,6 @@ public final class QueryEligibleBillingAccountsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.QueryEligibleBillingAccountsRequest)
     QueryEligibleBillingAccountsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryEligibleBillingAccountsRequest.newBuilder() to construct.
   private QueryEligibleBillingAccountsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class QueryEligibleBillingAccountsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customer_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class QueryEligibleBillingAccountsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class QueryEligibleBillingAccountsRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList skus_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class QueryEligibleBillingAccountsRequest
   public com.google.protobuf.ProtocolStringList getSkusList() {
     return skus_;
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class QueryEligibleBillingAccountsRequest
   public int getSkusCount() {
     return skus_.size();
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class QueryEligibleBillingAccountsRequest
   public java.lang.String getSkus(int index) {
     return skus_.get(index);
   }
-
   /**
    *
    *
@@ -374,7 +367,6 @@ public final class QueryEligibleBillingAccountsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +577,6 @@ public final class QueryEligibleBillingAccountsRequest
     private int bitField0_;
 
     private java.lang.Object customer_ = "";
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class QueryEligibleBillingAccountsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class QueryEligibleBillingAccountsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class QueryEligibleBillingAccountsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class QueryEligibleBillingAccountsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class QueryEligibleBillingAccountsRequest
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class QueryEligibleBillingAccountsRequest
       skus_.makeImmutable();
       return skus_;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class QueryEligibleBillingAccountsRequest
     public int getSkusCount() {
       return skus_.size();
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class QueryEligibleBillingAccountsRequest
     public java.lang.String getSkus(int index) {
       return skus_.get(index);
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class QueryEligibleBillingAccountsRequest
     public com.google.protobuf.ByteString getSkusBytes(int index) {
       return skus_.getByteString(index);
     }
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class QueryEligibleBillingAccountsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class QueryEligibleBillingAccountsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +836,6 @@ public final class QueryEligibleBillingAccountsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +855,6 @@ public final class QueryEligibleBillingAccountsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

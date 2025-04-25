@@ -33,7 +33,6 @@ public final class BigQueryProfile extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryProfile)
     BigQueryProfileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryProfile.newBuilder() to construct.
   private BigQueryProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class BigQueryProfile extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

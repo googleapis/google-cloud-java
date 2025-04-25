@@ -39,7 +39,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule)
     RuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Rule.newBuilder() to construct.
   private Rule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The productsFilter.
      */
     java.lang.String getProductsFilter();
-
     /**
      *
      *
@@ -154,7 +152,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getProductsFilterBytes();
   }
-
   /**
    *
    *
@@ -169,7 +166,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.BoostAction)
       BoostActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BoostAction.newBuilder() to construct.
     private BoostAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -202,7 +198,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BOOST_FIELD_NUMBER = 1;
     private float boost_ = 0F;
-
     /**
      *
      *
@@ -239,7 +234,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object productsFilter_ = "";
-
     /**
      *
      *
@@ -276,7 +270,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -484,7 +477,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -685,7 +677,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private float boost_;
-
       /**
        *
        *
@@ -717,7 +708,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public float getBoost() {
         return boost_;
       }
-
       /**
        *
        *
@@ -753,7 +743,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -789,7 +778,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object productsFilter_ = "";
-
       /**
        *
        *
@@ -825,7 +813,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -861,7 +848,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -896,7 +882,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -927,7 +912,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1058,7 +1042,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The filter.
      */
     java.lang.String getFilter();
-
     /**
      *
      *
@@ -1085,7 +1068,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
-
   /**
    *
    *
@@ -1115,7 +1097,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.FilterAction)
       FilterActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FilterAction.newBuilder() to construct.
     private FilterAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1150,7 +1131,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1187,7 +1167,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1385,7 +1364,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1588,7 +1566,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -1624,7 +1601,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1660,7 +1636,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1695,7 +1670,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1726,7 +1700,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1844,7 +1817,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The redirectUri.
      */
     java.lang.String getRedirectUri();
-
     /**
      *
      *
@@ -1858,7 +1830,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRedirectUriBytes();
   }
-
   /**
    *
    *
@@ -1879,7 +1850,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.RedirectAction)
       RedirectActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RedirectAction.newBuilder() to construct.
     private RedirectAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1914,7 +1884,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object redirectUri_ = "";
-
     /**
      *
      *
@@ -1938,7 +1907,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2124,7 +2092,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2318,7 +2285,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object redirectUri_ = "";
-
       /**
        *
        *
@@ -2341,7 +2307,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2364,7 +2329,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2386,7 +2350,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2404,7 +2367,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2511,7 +2473,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the synonyms.
      */
     java.util.List<java.lang.String> getSynonymsList();
-
     /**
      *
      *
@@ -2526,7 +2487,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of synonyms.
      */
     int getSynonymsCount();
-
     /**
      *
      *
@@ -2542,7 +2502,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The synonyms at the given index.
      */
     java.lang.String getSynonyms(int index);
-
     /**
      *
      *
@@ -2559,7 +2518,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSynonymsBytes(int index);
   }
-
   /**
    *
    *
@@ -2578,7 +2536,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction)
       TwowaySynonymsActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TwowaySynonymsAction.newBuilder() to construct.
     private TwowaySynonymsAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2614,7 +2571,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList synonyms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -2631,7 +2587,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSynonymsList() {
       return synonyms_;
     }
-
     /**
      *
      *
@@ -2648,7 +2603,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getSynonymsCount() {
       return synonyms_.size();
     }
-
     /**
      *
      *
@@ -2666,7 +2620,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSynonyms(int index) {
       return synonyms_.get(index);
     }
-
     /**
      *
      *
@@ -2853,7 +2806,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3060,7 +3012,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -3078,7 +3029,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         synonyms_.makeImmutable();
         return synonyms_;
       }
-
       /**
        *
        *
@@ -3095,7 +3045,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getSynonymsCount() {
         return synonyms_.size();
       }
-
       /**
        *
        *
@@ -3113,7 +3062,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
       }
-
       /**
        *
        *
@@ -3131,7 +3079,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -3157,7 +3104,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3182,7 +3128,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3204,7 +3149,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3225,7 +3169,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3336,7 +3279,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryTerms.
      */
     java.util.List<java.lang.String> getQueryTermsList();
-
     /**
      *
      *
@@ -3352,7 +3294,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of queryTerms.
      */
     int getQueryTermsCount();
-
     /**
      *
      *
@@ -3369,7 +3310,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The queryTerms at the given index.
      */
     java.lang.String getQueryTerms(int index);
-
     /**
      *
      *
@@ -3401,7 +3341,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the synonyms.
      */
     java.util.List<java.lang.String> getSynonymsList();
-
     /**
      *
      *
@@ -3416,7 +3355,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of synonyms.
      */
     int getSynonymsCount();
-
     /**
      *
      *
@@ -3432,7 +3370,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The synonyms at the given index.
      */
     java.lang.String getSynonyms(int index);
-
     /**
      *
      *
@@ -3461,7 +3398,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the onewayTerms.
      */
     java.util.List<java.lang.String> getOnewayTermsList();
-
     /**
      *
      *
@@ -3474,7 +3410,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of onewayTerms.
      */
     int getOnewayTermsCount();
-
     /**
      *
      *
@@ -3488,7 +3423,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The onewayTerms at the given index.
      */
     java.lang.String getOnewayTerms(int index);
-
     /**
      *
      *
@@ -3503,7 +3437,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getOnewayTermsBytes(int index);
   }
-
   /**
    *
    *
@@ -3522,7 +3455,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction)
       OnewaySynonymsActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OnewaySynonymsAction.newBuilder() to construct.
     private OnewaySynonymsAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3560,7 +3492,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queryTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -3578,7 +3509,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getQueryTermsList() {
       return queryTerms_;
     }
-
     /**
      *
      *
@@ -3596,7 +3526,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getQueryTermsCount() {
       return queryTerms_.size();
     }
-
     /**
      *
      *
@@ -3615,7 +3544,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryTerms(int index) {
       return queryTerms_.get(index);
     }
-
     /**
      *
      *
@@ -3640,7 +3568,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList synonyms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -3657,7 +3584,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSynonymsList() {
       return synonyms_;
     }
-
     /**
      *
      *
@@ -3674,7 +3600,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getSynonymsCount() {
       return synonyms_.size();
     }
-
     /**
      *
      *
@@ -3692,7 +3617,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSynonyms(int index) {
       return synonyms_.get(index);
     }
-
     /**
      *
      *
@@ -3716,7 +3640,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList onewayTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -3731,7 +3654,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getOnewayTermsList() {
       return onewayTerms_;
     }
-
     /**
      *
      *
@@ -3746,7 +3668,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getOnewayTermsCount() {
       return onewayTerms_.size();
     }
-
     /**
      *
      *
@@ -3762,7 +3683,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getOnewayTerms(int index) {
       return onewayTerms_.get(index);
     }
-
     /**
      *
      *
@@ -3979,7 +3899,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4230,7 +4149,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -4249,7 +4167,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         queryTerms_.makeImmutable();
         return queryTerms_;
       }
-
       /**
        *
        *
@@ -4267,7 +4184,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getQueryTermsCount() {
         return queryTerms_.size();
       }
-
       /**
        *
        *
@@ -4286,7 +4202,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getQueryTerms(int index) {
         return queryTerms_.get(index);
       }
-
       /**
        *
        *
@@ -4305,7 +4220,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQueryTermsBytes(int index) {
         return queryTerms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4332,7 +4246,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4358,7 +4271,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4381,7 +4293,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4403,7 +4314,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4440,7 +4350,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -4458,7 +4367,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         synonyms_.makeImmutable();
         return synonyms_;
       }
-
       /**
        *
        *
@@ -4475,7 +4383,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getSynonymsCount() {
         return synonyms_.size();
       }
-
       /**
        *
        *
@@ -4493,7 +4400,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
       }
-
       /**
        *
        *
@@ -4511,7 +4417,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4537,7 +4442,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4562,7 +4466,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4584,7 +4487,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4605,7 +4507,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4641,7 +4542,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -4657,7 +4557,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onewayTerms_.makeImmutable();
         return onewayTerms_;
       }
-
       /**
        *
        *
@@ -4672,7 +4571,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getOnewayTermsCount() {
         return onewayTerms_.size();
       }
-
       /**
        *
        *
@@ -4688,7 +4586,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getOnewayTerms(int index) {
         return onewayTerms_.get(index);
       }
-
       /**
        *
        *
@@ -4704,7 +4601,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getOnewayTermsBytes(int index) {
         return onewayTerms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4728,7 +4624,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4751,7 +4646,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4771,7 +4665,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4790,7 +4683,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4898,7 +4790,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryTerms.
      */
     java.util.List<java.lang.String> getQueryTermsList();
-
     /**
      *
      *
@@ -4913,7 +4804,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of queryTerms.
      */
     int getQueryTermsCount();
-
     /**
      *
      *
@@ -4929,7 +4819,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The queryTerms at the given index.
      */
     java.lang.String getQueryTerms(int index);
-
     /**
      *
      *
@@ -4959,7 +4848,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the doNotAssociateTerms.
      */
     java.util.List<java.lang.String> getDoNotAssociateTermsList();
-
     /**
      *
      *
@@ -4973,7 +4861,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of doNotAssociateTerms.
      */
     int getDoNotAssociateTermsCount();
-
     /**
      *
      *
@@ -4988,7 +4875,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The doNotAssociateTerms at the given index.
      */
     java.lang.String getDoNotAssociateTerms(int index);
-
     /**
      *
      *
@@ -5016,7 +4902,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the terms.
      */
     java.util.List<java.lang.String> getTermsList();
-
     /**
      *
      *
@@ -5029,7 +4914,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of terms.
      */
     int getTermsCount();
-
     /**
      *
      *
@@ -5043,7 +4927,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The terms at the given index.
      */
     java.lang.String getTerms(int index);
-
     /**
      *
      *
@@ -5058,7 +4941,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTermsBytes(int index);
   }
-
   /**
    *
    *
@@ -5075,7 +4957,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.DoNotAssociateAction)
       DoNotAssociateActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DoNotAssociateAction.newBuilder() to construct.
     private DoNotAssociateAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5113,7 +4994,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queryTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -5130,7 +5010,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getQueryTermsList() {
       return queryTerms_;
     }
-
     /**
      *
      *
@@ -5147,7 +5026,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getQueryTermsCount() {
       return queryTerms_.size();
     }
-
     /**
      *
      *
@@ -5165,7 +5043,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryTerms(int index) {
       return queryTerms_.get(index);
     }
-
     /**
      *
      *
@@ -5189,7 +5066,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList doNotAssociateTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -5205,7 +5081,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getDoNotAssociateTermsList() {
       return doNotAssociateTerms_;
     }
-
     /**
      *
      *
@@ -5221,7 +5096,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getDoNotAssociateTermsCount() {
       return doNotAssociateTerms_.size();
     }
-
     /**
      *
      *
@@ -5238,7 +5112,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDoNotAssociateTerms(int index) {
       return doNotAssociateTerms_.get(index);
     }
-
     /**
      *
      *
@@ -5261,7 +5134,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList terms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -5276,7 +5148,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getTermsList() {
       return terms_;
     }
-
     /**
      *
      *
@@ -5291,7 +5162,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getTermsCount() {
       return terms_.size();
     }
-
     /**
      *
      *
@@ -5307,7 +5177,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTerms(int index) {
       return terms_.get(index);
     }
-
     /**
      *
      *
@@ -5525,7 +5394,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5774,7 +5642,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -5792,7 +5659,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         queryTerms_.makeImmutable();
         return queryTerms_;
       }
-
       /**
        *
        *
@@ -5809,7 +5675,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getQueryTermsCount() {
         return queryTerms_.size();
       }
-
       /**
        *
        *
@@ -5827,7 +5692,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getQueryTerms(int index) {
         return queryTerms_.get(index);
       }
-
       /**
        *
        *
@@ -5845,7 +5709,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQueryTermsBytes(int index) {
         return queryTerms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -5871,7 +5734,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5896,7 +5758,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5918,7 +5779,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5939,7 +5799,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5975,7 +5834,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -5992,7 +5850,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         doNotAssociateTerms_.makeImmutable();
         return doNotAssociateTerms_;
       }
-
       /**
        *
        *
@@ -6008,7 +5865,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getDoNotAssociateTermsCount() {
         return doNotAssociateTerms_.size();
       }
-
       /**
        *
        *
@@ -6025,7 +5881,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getDoNotAssociateTerms(int index) {
         return doNotAssociateTerms_.get(index);
       }
-
       /**
        *
        *
@@ -6042,7 +5897,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getDoNotAssociateTermsBytes(int index) {
         return doNotAssociateTerms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -6067,7 +5921,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6091,7 +5944,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6112,7 +5964,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6132,7 +5983,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6167,7 +6017,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -6183,7 +6032,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         terms_.makeImmutable();
         return terms_;
       }
-
       /**
        *
        *
@@ -6198,7 +6046,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getTermsCount() {
         return terms_.size();
       }
-
       /**
        *
        *
@@ -6214,7 +6061,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getTerms(int index) {
         return terms_.get(index);
       }
-
       /**
        *
        *
@@ -6230,7 +6076,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getTermsBytes(int index) {
         return terms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -6254,7 +6099,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6277,7 +6121,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6297,7 +6140,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6316,7 +6158,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6424,7 +6265,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryTerms.
      */
     java.util.List<java.lang.String> getQueryTermsList();
-
     /**
      *
      *
@@ -6439,7 +6279,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of queryTerms.
      */
     int getQueryTermsCount();
-
     /**
      *
      *
@@ -6455,7 +6294,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The queryTerms at the given index.
      */
     java.lang.String getQueryTerms(int index);
-
     /**
      *
      *
@@ -6484,7 +6322,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The replacementTerm.
      */
     java.lang.String getReplacementTerm();
-
     /**
      *
      *
@@ -6510,7 +6347,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The term.
      */
     java.lang.String getTerm();
-
     /**
      *
      *
@@ -6524,7 +6360,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTermBytes();
   }
-
   /**
    *
    *
@@ -6541,7 +6376,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.ReplacementAction)
       ReplacementActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ReplacementAction.newBuilder() to construct.
     private ReplacementAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6579,7 +6413,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList queryTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -6596,7 +6429,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getQueryTermsList() {
       return queryTerms_;
     }
-
     /**
      *
      *
@@ -6613,7 +6445,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getQueryTermsCount() {
       return queryTerms_.size();
     }
-
     /**
      *
      *
@@ -6631,7 +6462,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getQueryTerms(int index) {
       return queryTerms_.get(index);
     }
-
     /**
      *
      *
@@ -6654,7 +6484,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object replacementTerm_ = "";
-
     /**
      *
      *
@@ -6678,7 +6507,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -6707,7 +6535,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object term_ = "";
-
     /**
      *
      *
@@ -6731,7 +6558,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -6942,7 +6768,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7177,7 +7002,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -7195,7 +7019,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         queryTerms_.makeImmutable();
         return queryTerms_;
       }
-
       /**
        *
        *
@@ -7212,7 +7035,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getQueryTermsCount() {
         return queryTerms_.size();
       }
-
       /**
        *
        *
@@ -7230,7 +7052,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getQueryTerms(int index) {
         return queryTerms_.get(index);
       }
-
       /**
        *
        *
@@ -7248,7 +7069,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQueryTermsBytes(int index) {
         return queryTerms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -7274,7 +7094,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7299,7 +7118,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7321,7 +7139,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7342,7 +7159,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7370,7 +7186,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object replacementTerm_ = "";
-
       /**
        *
        *
@@ -7393,7 +7208,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7416,7 +7230,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7438,7 +7251,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7456,7 +7268,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7481,7 +7292,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object term_ = "";
-
       /**
        *
        *
@@ -7504,7 +7314,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7527,7 +7336,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7549,7 +7357,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7567,7 +7374,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7672,7 +7478,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ignoreTerms.
      */
     java.util.List<java.lang.String> getIgnoreTermsList();
-
     /**
      *
      *
@@ -7685,7 +7490,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of ignoreTerms.
      */
     int getIgnoreTermsCount();
-
     /**
      *
      *
@@ -7699,7 +7503,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The ignoreTerms at the given index.
      */
     java.lang.String getIgnoreTerms(int index);
-
     /**
      *
      *
@@ -7714,7 +7517,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIgnoreTermsBytes(int index);
   }
-
   /**
    *
    *
@@ -7730,7 +7532,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.IgnoreAction)
       IgnoreActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IgnoreAction.newBuilder() to construct.
     private IgnoreAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7766,7 +7567,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList ignoreTerms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -7781,7 +7581,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getIgnoreTermsList() {
       return ignoreTerms_;
     }
-
     /**
      *
      *
@@ -7796,7 +7595,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getIgnoreTermsCount() {
       return ignoreTerms_.size();
     }
-
     /**
      *
      *
@@ -7812,7 +7610,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIgnoreTerms(int index) {
       return ignoreTerms_.get(index);
     }
-
     /**
      *
      *
@@ -7996,7 +7793,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -8200,7 +7996,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -8216,7 +8011,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         ignoreTerms_.makeImmutable();
         return ignoreTerms_;
       }
-
       /**
        *
        *
@@ -8231,7 +8025,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getIgnoreTermsCount() {
         return ignoreTerms_.size();
       }
-
       /**
        *
        *
@@ -8247,7 +8040,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getIgnoreTerms(int index) {
         return ignoreTerms_.get(index);
       }
-
       /**
        *
        *
@@ -8263,7 +8055,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getIgnoreTermsBytes(int index) {
         return ignoreTerms_.getByteString(index);
       }
-
       /**
        *
        *
@@ -8287,7 +8078,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8310,7 +8100,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8330,7 +8119,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8349,7 +8137,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8458,7 +8245,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
         getFacetPositionAdjustmentsList();
-
     /**
      *
      *
@@ -8473,7 +8259,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment
         getFacetPositionAdjustments(int index);
-
     /**
      *
      *
@@ -8487,7 +8272,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getFacetPositionAdjustmentsCount();
-
     /**
      *
      *
@@ -8505,7 +8289,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction
                     .FacetPositionAdjustmentOrBuilder>
         getFacetPositionAdjustmentsOrBuilderList();
-
     /**
      *
      *
@@ -8521,7 +8304,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustmentOrBuilder
         getFacetPositionAdjustmentsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -8562,7 +8344,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction)
       ForceReturnFacetActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ForceReturnFacetAction.newBuilder() to construct.
     private ForceReturnFacetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8612,7 +8393,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return The attributeName.
        */
       java.lang.String getAttributeName();
-
       /**
        *
        *
@@ -8642,7 +8422,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        */
       int getPosition();
     }
-
     /**
      *
      *
@@ -8659,7 +8438,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
         FacetPositionAdjustmentOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use FacetPositionAdjustment.newBuilder() to construct.
       private FacetPositionAdjustment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8696,7 +8474,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object attributeName_ = "";
-
       /**
        *
        *
@@ -8722,7 +8499,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -8751,7 +8527,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       public static final int POSITION_FIELD_NUMBER = 2;
       private int position_ = 0;
-
       /**
        *
        *
@@ -8963,7 +8738,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -9187,7 +8961,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object attributeName_ = "";
-
         /**
          *
          *
@@ -9212,7 +8985,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -9237,7 +9009,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -9261,7 +9032,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9281,7 +9051,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9308,7 +9077,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int position_;
-
         /**
          *
          *
@@ -9325,7 +9093,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         public int getPosition() {
           return position_;
         }
-
         /**
          *
          *
@@ -9346,7 +9113,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9443,7 +9209,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
         facetPositionAdjustments_;
-
     /**
      *
      *
@@ -9462,7 +9227,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getFacetPositionAdjustmentsList() {
       return facetPositionAdjustments_;
     }
-
     /**
      *
      *
@@ -9483,7 +9247,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getFacetPositionAdjustmentsOrBuilderList() {
       return facetPositionAdjustments_;
     }
-
     /**
      *
      *
@@ -9500,7 +9263,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getFacetPositionAdjustmentsCount() {
       return facetPositionAdjustments_.size();
     }
-
     /**
      *
      *
@@ -9518,7 +9280,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getFacetPositionAdjustments(int index) {
       return facetPositionAdjustments_.get(index);
     }
-
     /**
      *
      *
@@ -9704,7 +9465,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -10014,7 +9774,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -10034,7 +9793,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -10055,7 +9813,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -10084,7 +9841,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10111,7 +9867,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10139,7 +9894,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10168,7 +9922,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10194,7 +9947,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10221,7 +9973,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10249,7 +10000,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10272,7 +10022,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10295,7 +10044,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10313,7 +10061,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           getFacetPositionAdjustmentsBuilder(int index) {
         return getFacetPositionAdjustmentsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -10335,7 +10082,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return facetPositionAdjustmentsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -10359,7 +10105,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(facetPositionAdjustments_);
         }
       }
-
       /**
        *
        *
@@ -10380,7 +10125,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -10402,7 +10146,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -10532,7 +10275,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the attributeNames.
      */
     java.util.List<java.lang.String> getAttributeNamesList();
-
     /**
      *
      *
@@ -10548,7 +10290,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of attributeNames.
      */
     int getAttributeNamesCount();
-
     /**
      *
      *
@@ -10565,7 +10306,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return The attributeNames at the given index.
      */
     java.lang.String getAttributeNames(int index);
-
     /**
      *
      *
@@ -10583,7 +10323,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAttributeNamesBytes(int index);
   }
-
   /**
    *
    *
@@ -10615,7 +10354,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.RemoveFacetAction)
       RemoveFacetActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RemoveFacetAction.newBuilder() to construct.
     private RemoveFacetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10651,7 +10389,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList attributeNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -10669,7 +10406,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAttributeNamesList() {
       return attributeNames_;
     }
-
     /**
      *
      *
@@ -10687,7 +10423,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public int getAttributeNamesCount() {
       return attributeNames_.size();
     }
-
     /**
      *
      *
@@ -10706,7 +10441,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAttributeNames(int index) {
       return attributeNames_.get(index);
     }
-
     /**
      *
      *
@@ -10894,7 +10628,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -11114,7 +10847,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -11133,7 +10865,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         attributeNames_.makeImmutable();
         return attributeNames_;
       }
-
       /**
        *
        *
@@ -11151,7 +10882,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public int getAttributeNamesCount() {
         return attributeNames_.size();
       }
-
       /**
        *
        *
@@ -11170,7 +10900,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAttributeNames(int index) {
         return attributeNames_.get(index);
       }
-
       /**
        *
        *
@@ -11189,7 +10918,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAttributeNamesBytes(int index) {
         return attributeNames_.getByteString(index);
       }
-
       /**
        *
        *
@@ -11216,7 +10944,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11242,7 +10969,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11265,7 +10991,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11287,7 +11012,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11379,1071 +11103,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public interface PinActionOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.Rule.PinAction)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    int getPinMapCount();
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    boolean containsPinMap(long key);
-
-    /** Use {@link #getPinMapMap()} instead. */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Long, java.lang.String> getPinMap();
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    java.util.Map<java.lang.Long, java.lang.String> getPinMapMap();
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    /* nullable */
-    java.lang.String getPinMapOrDefault(
-        long key,
-        /* nullable */
-        java.lang.String defaultValue);
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    java.lang.String getPinMapOrThrow(long key);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Pins one or more specified products to a specific position in the
-   * results.
-   *
-   * * Rule Condition:
-   *   Must specify non-empty
-   *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
-   *   (for search only) or
-   *   [Condition.page_categories][google.cloud.retail.v2alpha.Condition.page_categories]
-   *   (for browse only), but can't specify both.
-   *
-   * * Action Input: mapping of `[pin_position, product_id]` pairs (pin position
-   * uses 1-based indexing).
-   *
-   * * Action Result: Will pin products with matching ids to the position
-   * specified in the final result order.
-   *
-   * Example: Suppose the query is `shoes`, the
-   * [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
-   * is `shoes` and the pin_map has `{1, "pid1"}`, then product with `pid1` will
-   * be pinned to the top position in the final results.
-   *
-   * If multiple PinActions are matched to a single request the actions will
-   * be processed from most to least recently updated.
-   *
-   * Pins to positions larger than the max allowed page size of 120 are not
-   * allowed.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.retail.v2alpha.Rule.PinAction}
-   */
-  public static final class PinAction extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Rule.PinAction)
-      PinActionOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    // Use PinAction.newBuilder() to construct.
-    private PinAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private PinAction() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new PinAction();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.retail.v2alpha.CommonProto
-          .internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetPinMap();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.retail.v2alpha.CommonProto
-          .internal_static_google_cloud_retail_v2alpha_Rule_PinAction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.retail.v2alpha.Rule.PinAction.class,
-              com.google.cloud.retail.v2alpha.Rule.PinAction.Builder.class);
-    }
-
-    public static final int PIN_MAP_FIELD_NUMBER = 1;
-
-    private static final class PinMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<java.lang.Long, java.lang.String> defaultEntry =
-          com.google.protobuf.MapEntry.<java.lang.Long, java.lang.String>newDefaultInstance(
-              com.google.cloud.retail.v2alpha.CommonProto
-                  .internal_static_google_cloud_retail_v2alpha_Rule_PinAction_PinMapEntry_descriptor,
-              com.google.protobuf.WireFormat.FieldType.INT64,
-              0L,
-              com.google.protobuf.WireFormat.FieldType.STRING,
-              "");
-    }
-
-    @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<java.lang.Long, java.lang.String> pinMap_;
-
-    private com.google.protobuf.MapField<java.lang.Long, java.lang.String> internalGetPinMap() {
-      if (pinMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(PinMapDefaultEntryHolder.defaultEntry);
-      }
-      return pinMap_;
-    }
-
-    public int getPinMapCount() {
-      return internalGetPinMap().getMap().size();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    @java.lang.Override
-    public boolean containsPinMap(long key) {
-
-      return internalGetPinMap().getMap().containsKey(key);
-    }
-
-    /** Use {@link #getPinMapMap()} instead. */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Long, java.lang.String> getPinMap() {
-      return getPinMapMap();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.Long, java.lang.String> getPinMapMap() {
-      return internalGetPinMap().getMap();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    @java.lang.Override
-    public /* nullable */ java.lang.String getPinMapOrDefault(
-        long key,
-        /* nullable */
-        java.lang.String defaultValue) {
-
-      java.util.Map<java.lang.Long, java.lang.String> map = internalGetPinMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. A map of positions to product_ids.
-     *
-     * Partial matches per action are allowed, if a certain position in the map
-     * is already filled that `[position, product_id]` pair will be ignored
-     * but the rest may still be applied. This case will only occur if multiple
-     * pin actions are matched to a single request, as the map guarantees that
-     * pin positions are unique within the same action.
-     *
-     * Duplicate product_ids are not permitted within a single pin map.
-     *
-     * The max size of this map is 120, equivalent to the max [request page
-     * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-     * </pre>
-     *
-     * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    @java.lang.Override
-    public java.lang.String getPinMapOrThrow(long key) {
-
-      java.util.Map<java.lang.Long, java.lang.String> map = internalGetPinMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3.serializeLongMapTo(
-          output, internalGetPinMap(), PinMapDefaultEntryHolder.defaultEntry, 1);
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (java.util.Map.Entry<java.lang.Long, java.lang.String> entry :
-          internalGetPinMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Long, java.lang.String> pinMap__ =
-            PinMapDefaultEntryHolder.defaultEntry
-                .newBuilderForType()
-                .setKey(entry.getKey())
-                .setValue(entry.getValue())
-                .build();
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, pinMap__);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.retail.v2alpha.Rule.PinAction)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.retail.v2alpha.Rule.PinAction other =
-          (com.google.cloud.retail.v2alpha.Rule.PinAction) obj;
-
-      if (!internalGetPinMap().equals(other.internalGetPinMap())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetPinMap().getMap().isEmpty()) {
-        hash = (37 * hash) + PIN_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetPinMap().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(com.google.cloud.retail.v2alpha.Rule.PinAction prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     *
-     * * Rule Condition:
-     *   Must specify non-empty
-     *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
-     *   (for search only) or
-     *   [Condition.page_categories][google.cloud.retail.v2alpha.Condition.page_categories]
-     *   (for browse only), but can't specify both.
-     *
-     * * Action Input: mapping of `[pin_position, product_id]` pairs (pin position
-     * uses 1-based indexing).
-     *
-     * * Action Result: Will pin products with matching ids to the position
-     * specified in the final result order.
-     *
-     * Example: Suppose the query is `shoes`, the
-     * [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
-     * is `shoes` and the pin_map has `{1, "pid1"}`, then product with `pid1` will
-     * be pinned to the top position in the final results.
-     *
-     * If multiple PinActions are matched to a single request the actions will
-     * be processed from most to least recently updated.
-     *
-     * Pins to positions larger than the max allowed page size of 120 are not
-     * allowed.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.retail.v2alpha.Rule.PinAction}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.Rule.PinAction)
-        com.google.cloud.retail.v2alpha.Rule.PinActionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.retail.v2alpha.CommonProto
-            .internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetPinMap();
-          default:
-            throw new RuntimeException("Invalid map field number: " + number);
-        }
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutablePinMap();
-          default:
-            throw new RuntimeException("Invalid map field number: " + number);
-        }
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.retail.v2alpha.CommonProto
-            .internal_static_google_cloud_retail_v2alpha_Rule_PinAction_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.retail.v2alpha.Rule.PinAction.class,
-                com.google.cloud.retail.v2alpha.Rule.PinAction.Builder.class);
-      }
-
-      // Construct using com.google.cloud.retail.v2alpha.Rule.PinAction.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        internalGetMutablePinMap().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.retail.v2alpha.CommonProto
-            .internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.retail.v2alpha.Rule.PinAction getDefaultInstanceForType() {
-        return com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.retail.v2alpha.Rule.PinAction build() {
-        com.google.cloud.retail.v2alpha.Rule.PinAction result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.retail.v2alpha.Rule.PinAction buildPartial() {
-        com.google.cloud.retail.v2alpha.Rule.PinAction result =
-            new com.google.cloud.retail.v2alpha.Rule.PinAction(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.google.cloud.retail.v2alpha.Rule.PinAction result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pinMap_ = internalGetPinMap();
-          result.pinMap_.makeImmutable();
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.retail.v2alpha.Rule.PinAction) {
-          return mergeFrom((com.google.cloud.retail.v2alpha.Rule.PinAction) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.cloud.retail.v2alpha.Rule.PinAction other) {
-        if (other == com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance())
-          return this;
-        internalGetMutablePinMap().mergeFrom(other.internalGetPinMap());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.protobuf.MapEntry<java.lang.Long, java.lang.String> pinMap__ =
-                      input.readMessage(
-                          PinMapDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-                  internalGetMutablePinMap()
-                      .getMutableMap()
-                      .put(pinMap__.getKey(), pinMap__.getValue());
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.protobuf.MapField<java.lang.Long, java.lang.String> pinMap_;
-
-      private com.google.protobuf.MapField<java.lang.Long, java.lang.String> internalGetPinMap() {
-        if (pinMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(PinMapDefaultEntryHolder.defaultEntry);
-        }
-        return pinMap_;
-      }
-
-      private com.google.protobuf.MapField<java.lang.Long, java.lang.String>
-          internalGetMutablePinMap() {
-        if (pinMap_ == null) {
-          pinMap_ = com.google.protobuf.MapField.newMapField(PinMapDefaultEntryHolder.defaultEntry);
-        }
-        if (!pinMap_.isMutable()) {
-          pinMap_ = pinMap_.copy();
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return pinMap_;
-      }
-
-      public int getPinMapCount() {
-        return internalGetPinMap().getMap().size();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      @java.lang.Override
-      public boolean containsPinMap(long key) {
-
-        return internalGetPinMap().getMap().containsKey(key);
-      }
-
-      /** Use {@link #getPinMapMap()} instead. */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Long, java.lang.String> getPinMap() {
-        return getPinMapMap();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      @java.lang.Override
-      public java.util.Map<java.lang.Long, java.lang.String> getPinMapMap() {
-        return internalGetPinMap().getMap();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      @java.lang.Override
-      public /* nullable */ java.lang.String getPinMapOrDefault(
-          long key,
-          /* nullable */
-          java.lang.String defaultValue) {
-
-        java.util.Map<java.lang.Long, java.lang.String> map = internalGetPinMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      @java.lang.Override
-      public java.lang.String getPinMapOrThrow(long key) {
-
-        java.util.Map<java.lang.Long, java.lang.String> map = internalGetPinMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearPinMap() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutablePinMap().getMutableMap().clear();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      public Builder removePinMap(long key) {
-
-        internalGetMutablePinMap().getMutableMap().remove(key);
-        return this;
-      }
-
-      /** Use alternate mutation accessors instead. */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Long, java.lang.String> getMutablePinMap() {
-        bitField0_ |= 0x00000001;
-        return internalGetMutablePinMap().getMutableMap();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      public Builder putPinMap(long key, java.lang.String value) {
-
-        if (value == null) {
-          throw new NullPointerException("map value");
-        }
-        internalGetMutablePinMap().getMutableMap().put(key, value);
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. A map of positions to product_ids.
-       *
-       * Partial matches per action are allowed, if a certain position in the map
-       * is already filled that `[position, product_id]` pair will be ignored
-       * but the rest may still be applied. This case will only occur if multiple
-       * pin actions are matched to a single request, as the map guarantees that
-       * pin positions are unique within the same action.
-       *
-       * Duplicate product_ids are not permitted within a single pin map.
-       *
-       * The max size of this map is 120, equivalent to the max [request page
-       * size](https://cloud.google.com/retail/docs/reference/rest/v2/projects.locations.catalogs.placements/search#request-body).
-       * </pre>
-       *
-       * <code>map&lt;int64, string&gt; pin_map = 1 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
-       */
-      public Builder putAllPinMap(java.util.Map<java.lang.Long, java.lang.String> values) {
-        internalGetMutablePinMap().getMutableMap().putAll(values);
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.Rule.PinAction)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.Rule.PinAction)
-    private static final com.google.cloud.retail.v2alpha.Rule.PinAction DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.retail.v2alpha.Rule.PinAction();
-    }
-
-    public static com.google.cloud.retail.v2alpha.Rule.PinAction getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PinAction> PARSER =
-        new com.google.protobuf.AbstractParser<PinAction>() {
-          @java.lang.Override
-          public PinAction parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<PinAction> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PinAction> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.retail.v2alpha.Rule.PinAction getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   private int bitField0_;
   private int actionCase_ = 0;
 
@@ -12464,14 +11123,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     TWOWAY_SYNONYMS_ACTION(11),
     FORCE_RETURN_FACET_ACTION(12),
     REMOVE_FACET_ACTION(13),
-    PIN_ACTION(14),
     ACTION_NOT_SET(0);
     private final int value;
 
     private ActionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -12504,8 +11161,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return FORCE_RETURN_FACET_ACTION;
         case 13:
           return REMOVE_FACET_ACTION;
-        case 14:
-          return PIN_ACTION;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -12523,7 +11178,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOST_ACTION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -12539,7 +11193,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoostAction() {
     return actionCase_ == 2;
   }
-
   /**
    *
    *
@@ -12558,7 +11211,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.BoostAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12577,7 +11229,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIRECT_ACTION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -12593,7 +11244,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedirectAction() {
     return actionCase_ == 3;
   }
-
   /**
    *
    *
@@ -12612,7 +11262,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.RedirectAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12631,7 +11280,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ONEWAY_SYNONYMS_ACTION_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -12648,7 +11296,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOnewaySynonymsAction() {
     return actionCase_ == 6;
   }
-
   /**
    *
    *
@@ -12668,7 +11315,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12689,7 +11335,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DO_NOT_ASSOCIATE_ACTION_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -12706,7 +11351,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDoNotAssociateAction() {
     return actionCase_ == 7;
   }
-
   /**
    *
    *
@@ -12726,7 +11370,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12747,7 +11390,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPLACEMENT_ACTION_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -12763,7 +11405,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReplacementAction() {
     return actionCase_ == 8;
   }
-
   /**
    *
    *
@@ -12782,7 +11423,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.ReplacementAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12802,7 +11442,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IGNORE_ACTION_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -12818,7 +11457,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIgnoreAction() {
     return actionCase_ == 9;
   }
-
   /**
    *
    *
@@ -12837,7 +11475,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.IgnoreAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12856,7 +11493,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_ACTION_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -12872,7 +11508,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilterAction() {
     return actionCase_ == 10;
   }
-
   /**
    *
    *
@@ -12891,7 +11526,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.FilterAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12910,7 +11544,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TWOWAY_SYNONYMS_ACTION_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -12927,7 +11560,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTwowaySynonymsAction() {
     return actionCase_ == 11;
   }
-
   /**
    *
    *
@@ -12947,7 +11579,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -12968,7 +11599,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORCE_RETURN_FACET_ACTION_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -12985,7 +11615,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForceReturnFacetAction() {
     return actionCase_ == 12;
   }
-
   /**
    *
    *
@@ -13005,7 +11634,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -13026,7 +11654,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOVE_FACET_ACTION_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -13042,7 +11669,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemoveFacetAction() {
     return actionCase_ == 13;
   }
-
   /**
    *
    *
@@ -13061,7 +11687,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -13080,66 +11705,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
   }
 
-  public static final int PIN_ACTION_FIELD_NUMBER = 14;
-
-  /**
-   *
-   *
-   * <pre>
-   * Pins one or more specified products to a specific position in the
-   * results.
-   * </pre>
-   *
-   * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-   *
-   * @return Whether the pinAction field is set.
-   */
-  @java.lang.Override
-  public boolean hasPinAction() {
-    return actionCase_ == 14;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Pins one or more specified products to a specific position in the
-   * results.
-   * </pre>
-   *
-   * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-   *
-   * @return The pinAction.
-   */
-  @java.lang.Override
-  public com.google.cloud.retail.v2alpha.Rule.PinAction getPinAction() {
-    if (actionCase_ == 14) {
-      return (com.google.cloud.retail.v2alpha.Rule.PinAction) action_;
-    }
-    return com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Pins one or more specified products to a specific position in the
-   * results.
-   * </pre>
-   *
-   * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.retail.v2alpha.Rule.PinActionOrBuilder getPinActionOrBuilder() {
-    if (actionCase_ == 14) {
-      return (com.google.cloud.retail.v2alpha.Rule.PinAction) action_;
-    }
-    return com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-  }
-
   public static final int CONDITION_FIELD_NUMBER = 1;
   private com.google.cloud.retail.v2alpha.Condition condition_;
-
   /**
    *
    *
@@ -13158,7 +11725,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -13179,7 +11745,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.Condition.getDefaultInstance()
         : condition_;
   }
-
   /**
    *
    *
@@ -13247,9 +11812,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     if (actionCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction) action_);
     }
-    if (actionCase_ == 14) {
-      output.writeMessage(14, (com.google.cloud.retail.v2alpha.Rule.PinAction) action_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -13312,11 +11874,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction) action_);
     }
-    if (actionCase_ == 14) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              14, (com.google.cloud.retail.v2alpha.Rule.PinAction) action_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13367,9 +11924,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         break;
       case 13:
         if (!getRemoveFacetAction().equals(other.getRemoveFacetAction())) return false;
-        break;
-      case 14:
-        if (!getPinAction().equals(other.getPinAction())) return false;
         break;
       case 0:
       default:
@@ -13429,10 +11983,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       case 13:
         hash = (37 * hash) + REMOVE_FACET_ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getRemoveFacetAction().hashCode();
-        break;
-      case 14:
-        hash = (37 * hash) + PIN_ACTION_FIELD_NUMBER;
-        hash = (53 * hash) + getPinAction().hashCode();
         break;
       case 0:
       default:
@@ -13536,7 +12086,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -13621,9 +12170,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (removeFacetActionBuilder_ != null) {
         removeFacetActionBuilder_.clear();
       }
-      if (pinActionBuilder_ != null) {
-        pinActionBuilder_.clear();
-      }
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -13668,7 +12214,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.retail.v2alpha.Rule result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -13707,9 +12253,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       if (actionCase_ == 13 && removeFacetActionBuilder_ != null) {
         result.action_ = removeFacetActionBuilder_.build();
-      }
-      if (actionCase_ == 14 && pinActionBuilder_ != null) {
-        result.action_ = pinActionBuilder_.build();
       }
     }
 
@@ -13812,11 +12355,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             mergeRemoveFacetAction(other.getRemoveFacetAction());
             break;
           }
-        case PIN_ACTION:
-          {
-            mergePinAction(other.getPinAction());
-            break;
-          }
         case ACTION_NOT_SET:
           {
             break;
@@ -13851,7 +12389,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 10
             case 18:
@@ -13920,12 +12458,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 actionCase_ = 13;
                 break;
               } // case 106
-            case 114:
-              {
-                input.readMessage(getPinActionFieldBuilder().getBuilder(), extensionRegistry);
-                actionCase_ = 14;
-                break;
-              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13964,7 +12496,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.BoostAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.BoostActionOrBuilder>
         boostActionBuilder_;
-
     /**
      *
      *
@@ -13980,7 +12511,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoostAction() {
       return actionCase_ == 2;
     }
-
     /**
      *
      *
@@ -14006,7 +12536,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.BoostAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14029,7 +12558,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -14050,7 +12578,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -14083,7 +12610,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -14109,7 +12635,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14122,7 +12647,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.BoostAction.Builder getBoostActionBuilder() {
       return getBoostActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14143,7 +12667,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.BoostAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14182,7 +12705,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.RedirectAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.RedirectActionOrBuilder>
         redirectActionBuilder_;
-
     /**
      *
      *
@@ -14198,7 +12720,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedirectAction() {
       return actionCase_ == 3;
     }
-
     /**
      *
      *
@@ -14224,7 +12745,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RedirectAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14247,7 +12767,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -14268,7 +12787,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -14302,7 +12820,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -14328,7 +12845,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14341,7 +12857,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.RedirectAction.Builder getRedirectActionBuilder() {
       return getRedirectActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14363,7 +12878,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RedirectAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14402,7 +12916,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsActionOrBuilder>
         onewaySynonymsActionBuilder_;
-
     /**
      *
      *
@@ -14420,7 +12933,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnewaySynonymsAction() {
       return actionCase_ == 6;
     }
-
     /**
      *
      *
@@ -14448,7 +12960,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14474,7 +12985,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -14497,7 +13007,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -14534,7 +13043,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -14562,7 +13070,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14578,7 +13085,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getOnewaySynonymsActionBuilder() {
       return getOnewaySynonymsActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14602,7 +13108,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.OnewaySynonymsAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14643,7 +13148,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.DoNotAssociateActionOrBuilder>
         doNotAssociateActionBuilder_;
-
     /**
      *
      *
@@ -14660,7 +13164,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoNotAssociateAction() {
       return actionCase_ == 7;
     }
-
     /**
      *
      *
@@ -14687,7 +13190,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14712,7 +13214,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -14734,7 +13235,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -14770,7 +13270,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -14797,7 +13296,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14812,7 +13310,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getDoNotAssociateActionBuilder() {
       return getDoNotAssociateActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14835,7 +13332,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.DoNotAssociateAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14875,7 +13371,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.ReplacementAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.ReplacementActionOrBuilder>
         replacementActionBuilder_;
-
     /**
      *
      *
@@ -14891,7 +13386,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplacementAction() {
       return actionCase_ == 8;
     }
-
     /**
      *
      *
@@ -14917,7 +13411,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ReplacementAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -14941,7 +13434,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -14962,7 +13454,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -14997,7 +13488,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -15023,7 +13513,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15037,7 +13526,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getReplacementActionBuilder() {
       return getReplacementActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15059,7 +13547,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ReplacementAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15098,7 +13585,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.IgnoreAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.IgnoreActionOrBuilder>
         ignoreActionBuilder_;
-
     /**
      *
      *
@@ -15114,7 +13600,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIgnoreAction() {
       return actionCase_ == 9;
     }
-
     /**
      *
      *
@@ -15140,7 +13625,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.IgnoreAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15163,7 +13647,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -15184,7 +13667,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -15217,7 +13699,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -15243,7 +13724,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15256,7 +13736,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.IgnoreAction.Builder getIgnoreActionBuilder() {
       return getIgnoreActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15277,7 +13756,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.IgnoreAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15316,7 +13794,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.FilterAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.FilterActionOrBuilder>
         filterActionBuilder_;
-
     /**
      *
      *
@@ -15332,7 +13809,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilterAction() {
       return actionCase_ == 10;
     }
-
     /**
      *
      *
@@ -15358,7 +13834,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.FilterAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15381,7 +13856,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -15402,7 +13876,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -15435,7 +13908,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -15461,7 +13933,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15474,7 +13945,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.FilterAction.Builder getFilterActionBuilder() {
       return getFilterActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15495,7 +13965,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.FilterAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15534,7 +14003,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsActionOrBuilder>
         twowaySynonymsActionBuilder_;
-
     /**
      *
      *
@@ -15551,7 +14019,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTwowaySynonymsAction() {
       return actionCase_ == 11;
     }
-
     /**
      *
      *
@@ -15578,7 +14045,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15603,7 +14069,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -15625,7 +14090,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -15661,7 +14125,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -15688,7 +14151,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15703,7 +14165,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getTwowaySynonymsActionBuilder() {
       return getTwowaySynonymsActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15726,7 +14187,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.TwowaySynonymsAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15766,7 +14226,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetActionOrBuilder>
         forceReturnFacetActionBuilder_;
-
     /**
      *
      *
@@ -15784,7 +14243,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForceReturnFacetAction() {
       return actionCase_ == 12;
     }
-
     /**
      *
      *
@@ -15812,7 +14270,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -15838,7 +14295,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -15861,7 +14317,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -15899,7 +14354,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -15927,7 +14381,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15943,7 +14396,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getForceReturnFacetActionBuilder() {
       return getForceReturnFacetActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15967,7 +14419,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -16009,7 +14460,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.Builder,
             com.google.cloud.retail.v2alpha.Rule.RemoveFacetActionOrBuilder>
         removeFacetActionBuilder_;
-
     /**
      *
      *
@@ -16025,7 +14475,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemoveFacetAction() {
       return actionCase_ == 13;
     }
-
     /**
      *
      *
@@ -16051,7 +14500,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -16075,7 +14523,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -16096,7 +14543,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -16131,7 +14577,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -16157,7 +14602,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16171,7 +14615,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         getRemoveFacetActionBuilder() {
       return getRemoveFacetActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16193,7 +14636,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -16227,240 +14669,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return removeFacetActionBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.retail.v2alpha.Rule.PinAction,
-            com.google.cloud.retail.v2alpha.Rule.PinAction.Builder,
-            com.google.cloud.retail.v2alpha.Rule.PinActionOrBuilder>
-        pinActionBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     *
-     * @return Whether the pinAction field is set.
-     */
-    @java.lang.Override
-    public boolean hasPinAction() {
-      return actionCase_ == 14;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     *
-     * @return The pinAction.
-     */
-    @java.lang.Override
-    public com.google.cloud.retail.v2alpha.Rule.PinAction getPinAction() {
-      if (pinActionBuilder_ == null) {
-        if (actionCase_ == 14) {
-          return (com.google.cloud.retail.v2alpha.Rule.PinAction) action_;
-        }
-        return com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-      } else {
-        if (actionCase_ == 14) {
-          return pinActionBuilder_.getMessage();
-        }
-        return com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    public Builder setPinAction(com.google.cloud.retail.v2alpha.Rule.PinAction value) {
-      if (pinActionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        action_ = value;
-        onChanged();
-      } else {
-        pinActionBuilder_.setMessage(value);
-      }
-      actionCase_ = 14;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    public Builder setPinAction(
-        com.google.cloud.retail.v2alpha.Rule.PinAction.Builder builderForValue) {
-      if (pinActionBuilder_ == null) {
-        action_ = builderForValue.build();
-        onChanged();
-      } else {
-        pinActionBuilder_.setMessage(builderForValue.build());
-      }
-      actionCase_ = 14;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    public Builder mergePinAction(com.google.cloud.retail.v2alpha.Rule.PinAction value) {
-      if (pinActionBuilder_ == null) {
-        if (actionCase_ == 14
-            && action_ != com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance()) {
-          action_ =
-              com.google.cloud.retail.v2alpha.Rule.PinAction.newBuilder(
-                      (com.google.cloud.retail.v2alpha.Rule.PinAction) action_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          action_ = value;
-        }
-        onChanged();
-      } else {
-        if (actionCase_ == 14) {
-          pinActionBuilder_.mergeFrom(value);
-        } else {
-          pinActionBuilder_.setMessage(value);
-        }
-      }
-      actionCase_ = 14;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    public Builder clearPinAction() {
-      if (pinActionBuilder_ == null) {
-        if (actionCase_ == 14) {
-          actionCase_ = 0;
-          action_ = null;
-          onChanged();
-        }
-      } else {
-        if (actionCase_ == 14) {
-          actionCase_ = 0;
-          action_ = null;
-        }
-        pinActionBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    public com.google.cloud.retail.v2alpha.Rule.PinAction.Builder getPinActionBuilder() {
-      return getPinActionFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.retail.v2alpha.Rule.PinActionOrBuilder getPinActionOrBuilder() {
-      if ((actionCase_ == 14) && (pinActionBuilder_ != null)) {
-        return pinActionBuilder_.getMessageOrBuilder();
-      } else {
-        if (actionCase_ == 14) {
-          return (com.google.cloud.retail.v2alpha.Rule.PinAction) action_;
-        }
-        return com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Pins one or more specified products to a specific position in the
-     * results.
-     * </pre>
-     *
-     * <code>.google.cloud.retail.v2alpha.Rule.PinAction pin_action = 14;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.retail.v2alpha.Rule.PinAction,
-            com.google.cloud.retail.v2alpha.Rule.PinAction.Builder,
-            com.google.cloud.retail.v2alpha.Rule.PinActionOrBuilder>
-        getPinActionFieldBuilder() {
-      if (pinActionBuilder_ == null) {
-        if (!(actionCase_ == 14)) {
-          action_ = com.google.cloud.retail.v2alpha.Rule.PinAction.getDefaultInstance();
-        }
-        pinActionBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.retail.v2alpha.Rule.PinAction,
-                com.google.cloud.retail.v2alpha.Rule.PinAction.Builder,
-                com.google.cloud.retail.v2alpha.Rule.PinActionOrBuilder>(
-                (com.google.cloud.retail.v2alpha.Rule.PinAction) action_,
-                getParentForChildren(),
-                isClean());
-        action_ = null;
-      }
-      actionCase_ = 14;
-      onChanged();
-      return pinActionBuilder_;
-    }
-
     private com.google.cloud.retail.v2alpha.Condition condition_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2alpha.Condition,
             com.google.cloud.retail.v2alpha.Condition.Builder,
             com.google.cloud.retail.v2alpha.ConditionOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -16476,9 +14690,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -16502,7 +14715,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return conditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16524,11 +14736,10 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16547,11 +14758,10 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16566,7 +14776,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCondition(com.google.cloud.retail.v2alpha.Condition value) {
       if (conditionBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && condition_ != null
             && condition_ != com.google.cloud.retail.v2alpha.Condition.getDefaultInstance()) {
           getConditionBuilder().mergeFrom(value);
@@ -16577,12 +14787,11 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         conditionBuilder_.mergeFrom(value);
       }
       if (condition_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
     }
-
     /**
      *
      *
@@ -16596,7 +14805,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCondition() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -16605,7 +14814,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16619,11 +14827,10 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.retail.v2alpha.Condition.Builder getConditionBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16645,7 +14852,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             : condition_;
       }
     }
-
     /**
      *
      *

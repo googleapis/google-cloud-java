@@ -33,7 +33,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CircuitBreakers)
     CircuitBreakersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CircuitBreakers.newBuilder() to construct.
   private CircuitBreakers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int MAX_CONNECTIONS_FIELD_NUMBER = 110652154;
   private int maxConnections_ = 0;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxConnections() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_PENDING_REQUESTS_FIELD_NUMBER = 375558887;
   private int maxPendingRequests_ = 0;
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxPendingRequests() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_REQUESTS_FIELD_NUMBER = 28097599;
   private int maxRequests_ = 0;
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxRequests() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_REQUESTS_PER_CONNECTION_FIELD_NUMBER = 361630528;
   private int maxRequestsPerConnection_ = 0;
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxRequestsPerConnection() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_RETRIES_FIELD_NUMBER = 55546219;
   private int maxRetries_ = 0;
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxRetries() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -461,7 +450,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -702,7 +690,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int maxConnections_;
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxConnections() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public int getMaxConnections() {
       return maxConnections_;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     }
 
     private int maxPendingRequests_;
-
     /**
      *
      *
@@ -790,7 +773,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxPendingRequests() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public int getMaxPendingRequests() {
       return maxPendingRequests_;
     }
-
     /**
      *
      *
@@ -826,7 +807,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     }
 
     private int maxRequests_;
-
     /**
      *
      *
@@ -862,7 +841,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxRequests() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -878,7 +856,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public int getMaxRequests() {
       return maxRequests_;
     }
-
     /**
      *
      *
@@ -898,7 +875,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +894,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     }
 
     private int maxRequestsPerConnection_;
-
     /**
      *
      *
@@ -934,7 +909,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxRequestsPerConnection() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -950,7 +924,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public int getMaxRequestsPerConnection() {
       return maxRequestsPerConnection_;
     }
-
     /**
      *
      *
@@ -970,7 +943,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +962,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     }
 
     private int maxRetries_;
-
     /**
      *
      *
@@ -1006,7 +977,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxRetries() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1022,7 +992,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     public int getMaxRetries() {
       return maxRetries_;
     }
-
     /**
      *
      *
@@ -1042,7 +1011,6 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

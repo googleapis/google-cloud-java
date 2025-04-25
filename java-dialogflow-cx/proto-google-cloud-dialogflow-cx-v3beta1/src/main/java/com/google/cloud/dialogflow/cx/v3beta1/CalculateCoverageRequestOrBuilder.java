@@ -39,7 +39,6 @@ public interface CalculateCoverageRequestOrBuilder
    * @return The agent.
    */
   java.lang.String getAgent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CalculateCoverageRequestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

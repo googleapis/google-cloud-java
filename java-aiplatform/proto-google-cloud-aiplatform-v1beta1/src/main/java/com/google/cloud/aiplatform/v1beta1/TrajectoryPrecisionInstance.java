@@ -33,7 +33,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance)
     TrajectoryPrecisionInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrajectoryPrecisionInstance.newBuilder() to construct.
   private TrajectoryPrecisionInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int PREDICTED_TRAJECTORY_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Trajectory predictedTrajectory_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
   public boolean hasPredictedTrajectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : predictedTrajectory_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
 
   public static final int REFERENCE_TRAJECTORY_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Trajectory referenceTrajectory_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
   public boolean hasReferenceTrajectory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : referenceTrajectory_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +587,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         predictedTrajectoryBuilder_;
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
     public boolean hasPredictedTrajectory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
         return predictedTrajectoryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return getPredictedTrajectoryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -775,7 +759,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
             : predictedTrajectory_;
       }
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         referenceTrajectoryBuilder_;
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
     public boolean hasReferenceTrajectory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
         return referenceTrajectoryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +877,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +907,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +928,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +944,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
       onChanged();
       return getReferenceTrajectoryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class TrajectoryPrecisionInstance extends com.google.protobuf.Gener
             : referenceTrajectory_;
       }
     }
-
     /**
      *
      *

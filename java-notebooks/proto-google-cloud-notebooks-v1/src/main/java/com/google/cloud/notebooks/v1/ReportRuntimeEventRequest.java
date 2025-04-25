@@ -33,7 +33,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ReportRuntimeEventRequest)
     ReportRuntimeEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportRuntimeEventRequest.newBuilder() to construct.
   private ReportRuntimeEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
 
   public static final int EVENT_FIELD_NUMBER = 3;
   private com.google.cloud.notebooks.v1.Event event_;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
   public boolean hasEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
   public com.google.cloud.notebooks.v1.Event getEvent() {
     return event_ == null ? com.google.cloud.notebooks.v1.Event.getDefaultInstance() : event_;
   }
-
   /**
    *
    *
@@ -415,7 +407,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object vmId_ = "";
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
             com.google.cloud.notebooks.v1.Event.Builder,
             com.google.cloud.notebooks.v1.EventOrBuilder>
         eventBuilder_;
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
     public boolean hasEvent() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
         return eventBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +977,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +997,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1056,7 +1029,6 @@ public final class ReportRuntimeEventRequest extends com.google.protobuf.Generat
         return event_ == null ? com.google.cloud.notebooks.v1.Event.getDefaultInstance() : event_;
       }
     }
-
     /**
      *
      *

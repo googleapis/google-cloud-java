@@ -35,7 +35,6 @@ public interface ListAwsClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsCluster> getAwsClustersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAwsClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.AwsCluster getAwsClusters(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAwsClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
    */
   int getAwsClustersCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAwsClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsClusterOrBuilder>
       getAwsClustersOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListAwsClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

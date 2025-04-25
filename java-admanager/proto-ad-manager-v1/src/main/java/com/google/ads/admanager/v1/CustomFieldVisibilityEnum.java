@@ -34,7 +34,6 @@ public final class CustomFieldVisibilityEnum extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldVisibilityEnum)
     CustomFieldVisibilityEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomFieldVisibilityEnum.newBuilder() to construct.
   private CustomFieldVisibilityEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class CustomFieldVisibilityEnum extends com.google.protobuf.Generat
      * <code>CUSTOM_FIELD_VISIBILITY_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_FIELD_VISIBILITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class CustomFieldVisibilityEnum extends com.google.protobuf.Generat
      * <code>HIDDEN = 1;</code>
      */
     public static final int HIDDEN_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class CustomFieldVisibilityEnum extends com.google.protobuf.Generat
      * <code>READ_ONLY = 2;</code>
      */
     public static final int READ_ONLY_VALUE = 2;
-
     /**
      *
      *
@@ -403,7 +399,6 @@ public final class CustomFieldVisibilityEnum extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

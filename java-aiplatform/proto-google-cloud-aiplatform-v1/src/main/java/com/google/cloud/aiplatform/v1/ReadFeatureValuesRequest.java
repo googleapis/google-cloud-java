@@ -34,7 +34,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReadFeatureValuesRequest)
     ReadFeatureValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReadFeatureValuesRequest.newBuilder() to construct.
   private ReadFeatureValuesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityType_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityId_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
 
   public static final int FEATURE_SELECTOR_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.FeatureSelector featureSelector_;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
   public boolean hasFeatureSelector() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         ? com.google.cloud.aiplatform.v1.FeatureSelector.getDefaultInstance()
         : featureSelector_;
   }
-
   /**
    *
    *
@@ -431,7 +423,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object entityType_ = "";
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object entityId_ = "";
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
             com.google.cloud.aiplatform.v1.FeatureSelector.Builder,
             com.google.cloud.aiplatform.v1.FeatureSelectorOrBuilder>
         featureSelectorBuilder_;
-
     /**
      *
      *
@@ -946,7 +926,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     public boolean hasFeatureSelector() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         return featureSelectorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1045,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1061,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       onChanged();
       return getFeatureSelectorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
             : featureSelector_;
       }
     }
-
     /**
      *
      *

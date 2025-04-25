@@ -33,7 +33,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.VmwareVmDetails)
     VmwareVmDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VmwareVmDetails.newBuilder() to construct.
   private VmwareVmDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,7 +133,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      * <code>POWER_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int POWER_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -145,7 +143,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      * <code>ON = 1;</code>
      */
     public static final int ON_VALUE = 1;
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      * <code>OFF = 2;</code>
      */
     public static final int OFF_VALUE = 2;
-
     /**
      *
      *
@@ -306,7 +302,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      * <code>BOOT_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int BOOT_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -317,7 +312,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      * <code>EFI = 1;</code>
      */
     public static final int EFI_VALUE = 1;
-
     /**
      *
      *
@@ -416,7 +410,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmId_ = "";
-
   /**
    *
    *
@@ -441,7 +434,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -471,7 +463,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datacenterId_ = "";
-
   /**
    *
    *
@@ -495,7 +486,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -524,7 +514,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datacenterDescription_ = "";
-
   /**
    *
    *
@@ -548,7 +537,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -577,7 +565,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uuid_ = "";
-
   /**
    *
    *
@@ -601,7 +588,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -630,7 +616,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -654,7 +639,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -681,7 +665,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int POWER_STATE_FIELD_NUMBER = 6;
   private int powerState_ = 0;
-
   /**
    *
    *
@@ -697,7 +680,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
   public int getPowerStateValue() {
     return powerState_;
   }
-
   /**
    *
    *
@@ -720,7 +702,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int CPU_COUNT_FIELD_NUMBER = 7;
   private int cpuCount_ = 0;
-
   /**
    *
    *
@@ -739,7 +720,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int MEMORY_MB_FIELD_NUMBER = 8;
   private int memoryMb_ = 0;
-
   /**
    *
    *
@@ -758,7 +738,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int DISK_COUNT_FIELD_NUMBER = 9;
   private int diskCount_ = 0;
-
   /**
    *
    *
@@ -777,7 +756,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int COMMITTED_STORAGE_MB_FIELD_NUMBER = 12;
   private long committedStorageMb_ = 0L;
-
   /**
    *
    *
@@ -798,7 +776,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object guestDescription_ = "";
-
   /**
    *
    *
@@ -824,7 +801,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -853,7 +829,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int BOOT_OPTION_FIELD_NUMBER = 13;
   private int bootOption_ = 0;
-
   /**
    *
    *
@@ -871,7 +846,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
   public int getBootOptionValue() {
     return bootOption_;
   }
-
   /**
    *
    *
@@ -1160,7 +1134,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1498,7 +1471,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object vmId_ = "";
-
     /**
      *
      *
@@ -1522,7 +1494,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1546,7 +1517,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1539,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1557,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1582,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object datacenterId_ = "";
-
     /**
      *
      *
@@ -1637,7 +1604,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1660,7 +1626,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1682,7 +1647,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1664,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1688,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object datacenterDescription_ = "";
-
     /**
      *
      *
@@ -1748,7 +1710,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1771,7 +1732,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1753,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1811,7 +1770,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1836,7 +1794,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object uuid_ = "";
-
     /**
      *
      *
@@ -1859,7 +1816,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1882,7 +1838,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1904,7 +1859,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1922,7 +1876,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1947,7 +1900,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1970,7 +1922,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1993,7 +1944,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2015,7 +1965,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2033,7 +1982,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2058,7 +2006,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private int powerState_ = 0;
-
     /**
      *
      *
@@ -2074,7 +2021,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public int getPowerStateValue() {
       return powerState_;
     }
-
     /**
      *
      *
@@ -2093,7 +2039,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2113,7 +2058,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.vmmigration.v1.VmwareVmDetails.PowerState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2135,7 +2079,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2155,7 +2098,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private int cpuCount_;
-
     /**
      *
      *
@@ -2171,7 +2113,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public int getCpuCount() {
       return cpuCount_;
     }
-
     /**
      *
      *
@@ -2191,7 +2132,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2211,7 +2151,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private int memoryMb_;
-
     /**
      *
      *
@@ -2227,7 +2166,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public int getMemoryMb() {
       return memoryMb_;
     }
-
     /**
      *
      *
@@ -2247,7 +2185,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2267,7 +2204,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private int diskCount_;
-
     /**
      *
      *
@@ -2283,7 +2219,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public int getDiskCount() {
       return diskCount_;
     }
-
     /**
      *
      *
@@ -2303,7 +2238,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2323,7 +2257,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private long committedStorageMb_;
-
     /**
      *
      *
@@ -2339,7 +2272,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public long getCommittedStorageMb() {
       return committedStorageMb_;
     }
-
     /**
      *
      *
@@ -2359,7 +2291,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2379,7 +2310,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object guestDescription_ = "";
-
     /**
      *
      *
@@ -2404,7 +2334,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2429,7 +2358,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2453,7 +2381,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2400,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2500,7 +2426,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private int bootOption_ = 0;
-
     /**
      *
      *
@@ -2518,7 +2443,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public int getBootOptionValue() {
       return bootOption_;
     }
-
     /**
      *
      *
@@ -2539,7 +2463,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2561,7 +2484,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.vmmigration.v1.VmwareVmDetails.BootOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2585,7 +2507,6 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

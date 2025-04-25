@@ -33,7 +33,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAnswers)
     KnowledgeAnswersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KnowledgeAnswers.newBuilder() to construct.
   private KnowledgeAnswers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * @return The source.
      */
     java.lang.String getSource();
-
     /**
      *
      *
@@ -112,7 +110,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * @return The faqQuestion.
      */
     java.lang.String getFaqQuestion();
-
     /**
      *
      *
@@ -140,7 +137,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * @return The answer.
      */
     java.lang.String getAnswer();
-
     /**
      *
      *
@@ -175,7 +171,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for matchConfidenceLevel.
      */
     int getMatchConfidenceLevelValue();
-
     /**
      *
      *
@@ -217,7 +212,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      */
     float getMatchConfidence();
   }
-
   /**
    *
    *
@@ -232,7 +226,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
       AnswerOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Answer.newBuilder() to construct.
     private Answer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -331,7 +324,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>MATCH_CONFIDENCE_LEVEL_UNSPECIFIED = 0;</code>
        */
       public static final int MATCH_CONFIDENCE_LEVEL_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -342,7 +334,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>LOW = 1;</code>
        */
       public static final int LOW_VALUE = 1;
-
       /**
        *
        *
@@ -353,7 +344,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * <code>MEDIUM = 2;</code>
        */
       public static final int MEDIUM_VALUE = 2;
-
       /**
        *
        *
@@ -459,7 +449,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -485,7 +474,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -516,7 +504,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object faqQuestion_ = "";
-
     /**
      *
      *
@@ -541,7 +528,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -571,7 +557,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answer_ = "";
-
     /**
      *
      *
@@ -596,7 +581,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -624,7 +608,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
 
     public static final int MATCH_CONFIDENCE_LEVEL_FIELD_NUMBER = 4;
     private int matchConfidenceLevel_ = 0;
-
     /**
      *
      *
@@ -648,7 +631,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     public int getMatchConfidenceLevelValue() {
       return matchConfidenceLevel_;
     }
-
     /**
      *
      *
@@ -682,7 +664,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
 
     public static final int MATCH_CONFIDENCE_FIELD_NUMBER = 5;
     private float matchConfidence_ = 0F;
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1156,7 +1136,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object source_ = "";
-
       /**
        *
        *
@@ -1181,7 +1160,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1206,7 +1184,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1230,7 +1207,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1250,7 +1226,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1277,7 +1252,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object faqQuestion_ = "";
-
       /**
        *
        *
@@ -1301,7 +1275,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1325,7 +1298,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1348,7 +1320,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1367,7 +1338,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1393,7 +1363,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object answer_ = "";
-
       /**
        *
        *
@@ -1417,7 +1386,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1441,7 +1409,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1464,7 +1431,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1483,7 +1449,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1509,7 +1474,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
 
       private int matchConfidenceLevel_ = 0;
-
       /**
        *
        *
@@ -1533,7 +1497,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       public int getMatchConfidenceLevelValue() {
         return matchConfidenceLevel_;
       }
-
       /**
        *
        *
@@ -1560,7 +1523,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1591,7 +1553,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1622,7 +1583,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1650,7 +1610,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
 
       private float matchConfidence_;
-
       /**
        *
        *
@@ -1672,7 +1631,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       public float getMatchConfidence() {
         return matchConfidence_;
       }
-
       /**
        *
        *
@@ -1698,7 +1656,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1792,7 +1749,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> answers_;
-
   /**
    *
    *
@@ -1807,7 +1763,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       getAnswersList() {
     return answers_;
   }
-
   /**
    *
    *
@@ -1823,7 +1778,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       getAnswersOrBuilderList() {
     return answers_;
   }
-
   /**
    *
    *
@@ -1837,7 +1791,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
   public int getAnswersCount() {
     return answers_.size();
   }
-
   /**
    *
    *
@@ -1851,7 +1804,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer getAnswers(int index) {
     return answers_.get(index);
   }
-
   /**
    *
    *
@@ -2028,7 +1980,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2294,7 +2245,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return answersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2311,7 +2261,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return answersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2328,7 +2277,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return answersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2352,7 +2300,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2374,7 +2321,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2397,7 +2343,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2421,7 +2366,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2442,7 +2386,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2464,7 +2407,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2486,7 +2428,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2506,7 +2447,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2526,7 +2466,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2540,7 +2479,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         int index) {
       return getAnswersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2558,7 +2496,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return answersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2577,7 +2514,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(answers_);
       }
     }
-
     /**
      *
      *
@@ -2592,7 +2528,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2609,7 +2544,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance());
     }
-
     /**
      *
      *

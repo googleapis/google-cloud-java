@@ -39,7 +39,6 @@ public interface DeleteMerchantCenterAccountLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

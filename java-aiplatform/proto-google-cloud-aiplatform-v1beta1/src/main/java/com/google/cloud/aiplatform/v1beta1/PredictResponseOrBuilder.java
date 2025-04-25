@@ -39,7 +39,6 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 1;</code>
    */
   java.util.List<com.google.protobuf.Value> getPredictionsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 1;</code>
    */
   com.google.protobuf.Value getPredictions(int index);
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 1;</code>
    */
   int getPredictionsCount();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 1;</code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getPredictionsOrBuilderList();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface PredictResponseOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface PredictResponseOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface PredictResponseOrBuilder
    * @return The modelVersionId.
    */
   java.lang.String getModelVersionId();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface PredictResponseOrBuilder
    * @return The modelDisplayName.
    */
   java.lang.String getModelDisplayName();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface PredictResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface PredictResponseOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
-
   /**
    *
    *

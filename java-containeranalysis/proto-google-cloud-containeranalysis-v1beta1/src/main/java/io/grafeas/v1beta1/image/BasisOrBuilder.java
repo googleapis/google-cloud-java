@@ -37,7 +37,6 @@ public interface BasisOrBuilder
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BasisOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface BasisOrBuilder
    * @return The fingerprint.
    */
   io.grafeas.v1beta1.image.Fingerprint getFingerprint();
-
   /**
    *
    *

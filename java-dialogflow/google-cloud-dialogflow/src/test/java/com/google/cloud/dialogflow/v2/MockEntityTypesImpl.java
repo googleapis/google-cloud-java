@@ -179,8 +179,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchUpdateEntityTypes, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchUpdateEntityTypes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -201,8 +200,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchDeleteEntityTypes, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchDeleteEntityTypes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

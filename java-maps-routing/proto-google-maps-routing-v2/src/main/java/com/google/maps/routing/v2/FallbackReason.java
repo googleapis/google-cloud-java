@@ -76,7 +76,6 @@ public enum FallbackReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FALLBACK_REASON_UNSPECIFIED = 0;</code>
    */
   public static final int FALLBACK_REASON_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public enum FallbackReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVER_ERROR = 1;</code>
    */
   public static final int SERVER_ERROR_VALUE = 1;
-
   /**
    *
    *

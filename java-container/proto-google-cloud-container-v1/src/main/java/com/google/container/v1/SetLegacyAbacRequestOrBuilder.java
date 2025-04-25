@@ -41,7 +41,6 @@ public interface SetLegacyAbacRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface SetLegacyAbacRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface SetLegacyAbacRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -158,7 +155,6 @@ public interface SetLegacyAbacRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

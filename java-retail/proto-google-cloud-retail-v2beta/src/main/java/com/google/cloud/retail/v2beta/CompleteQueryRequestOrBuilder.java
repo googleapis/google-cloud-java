@@ -41,7 +41,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The catalog.
    */
   java.lang.String getCatalog();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The visitorId.
    */
   java.lang.String getVisitorId();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
-
   /**
    *
    *
@@ -241,7 +235,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The deviceType.
    */
   java.lang.String getDeviceType();
-
   /**
    *
    *
@@ -294,7 +287,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
-
   /**
    *
    *

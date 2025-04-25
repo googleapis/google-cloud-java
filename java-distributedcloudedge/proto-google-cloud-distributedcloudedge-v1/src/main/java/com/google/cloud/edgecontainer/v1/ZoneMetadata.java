@@ -33,7 +33,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.ZoneMetadata)
     ZoneMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ZoneMetadata.newBuilder() to construct.
   private ZoneMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>RACK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RACK_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>BASE = 1;</code>
      */
     public static final int BASE_VALUE = 1;
-
     /**
      *
      *
@@ -244,7 +241,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgecontainer.v1.Quota> quota_;
-
   /**
    *
    *
@@ -258,7 +254,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.edgecontainer.v1.Quota> getQuotaList() {
     return quota_;
   }
-
   /**
    *
    *
@@ -273,7 +268,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       getQuotaOrBuilderList() {
     return quota_;
   }
-
   /**
    *
    *
@@ -287,7 +281,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getQuotaCount() {
     return quota_.size();
   }
-
   /**
    *
    *
@@ -301,7 +294,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.edgecontainer.v1.Quota getQuota(int index) {
     return quota_.get(index);
   }
-
   /**
    *
    *
@@ -359,7 +351,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getRackTypesCount() {
     return internalGetRackTypes().getMap().size();
   }
-
   /**
    *
    *
@@ -377,7 +368,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetRackTypes().getMap().containsKey(key);
   }
-
   /** Use {@link #getRackTypesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -385,7 +375,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       getRackTypes() {
     return getRackTypesMap();
   }
-
   /**
    *
    *
@@ -401,7 +390,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       getRackTypesMap() {
     return internalGetAdaptedRackTypesMap(internalGetRackTypes().getMap());
   }
-
   /**
    *
    *
@@ -424,7 +412,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
     return map.containsKey(key) ? rackTypesValueConverter.doForward(map.get(key)) : defaultValue;
   }
-
   /**
    *
    *
@@ -447,14 +434,12 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     return rackTypesValueConverter.doForward(map.get(key));
   }
-
   /** Use {@link #getRackTypesValueMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValue() {
     return getRackTypesValueMap();
   }
-
   /**
    *
    *
@@ -469,7 +454,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValueMap() {
     return internalGetRackTypes().getMap();
   }
-
   /**
    *
    *
@@ -488,7 +472,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -513,7 +496,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_DATA_FIELD_NUMBER = 3;
   private com.google.cloud.edgecontainer.v1.ConfigData configData_;
-
   /**
    *
    *
@@ -529,7 +511,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfigData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -547,7 +528,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.edgecontainer.v1.ConfigData.getDefaultInstance()
         : configData_;
   }
-
   /**
    *
    *
@@ -756,7 +736,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1087,7 +1066,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         return quotaBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1082,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         return quotaBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1098,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         return quotaBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1162,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1184,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1203,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1252,7 +1223,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1243,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1262,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1281,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1293,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.Quota.Builder getQuotaBuilder(int index) {
       return getQuotaFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1343,7 +1309,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         return quotaBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1326,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(quota_);
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1339,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       return getQuotaFieldBuilder()
           .addBuilder(com.google.cloud.edgecontainer.v1.Quota.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1389,7 +1352,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       return getQuotaFieldBuilder()
           .addBuilder(index, com.google.cloud.edgecontainer.v1.Quota.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1447,7 +1409,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getRackTypesCount() {
       return internalGetRackTypes().getMap().size();
     }
-
     /**
      *
      *
@@ -1465,7 +1426,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetRackTypes().getMap().containsKey(key);
     }
-
     /** Use {@link #getRackTypesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1473,7 +1433,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         getRackTypes() {
       return getRackTypesMap();
     }
-
     /**
      *
      *
@@ -1489,7 +1448,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         getRackTypesMap() {
       return internalGetAdaptedRackTypesMap(internalGetRackTypes().getMap());
     }
-
     /**
      *
      *
@@ -1512,7 +1470,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
       return map.containsKey(key) ? rackTypesValueConverter.doForward(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1535,14 +1492,12 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return rackTypesValueConverter.doForward(map.get(key));
     }
-
     /** Use {@link #getRackTypesValueMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValue() {
       return getRackTypesValueMap();
     }
-
     /**
      *
      *
@@ -1557,7 +1512,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValueMap() {
       return internalGetRackTypes().getMap();
     }
-
     /**
      *
      *
@@ -1576,7 +1530,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1604,7 +1557,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableRackTypes().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1574,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableRackTypes().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
@@ -1630,7 +1581,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetAdaptedRackTypesMap(internalGetMutableRackTypes().getMutableMap());
     }
-
     /**
      *
      *
@@ -1653,7 +1603,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1671,14 +1620,12 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableRackTypesValue() {
       bitField0_ |= 0x00000002;
       return internalGetMutableRackTypes().getMutableMap();
     }
-
     /**
      *
      *
@@ -1698,7 +1645,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1667,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.edgecontainer.v1.ConfigData.Builder,
             com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder>
         configDataBuilder_;
-
     /**
      *
      *
@@ -1736,7 +1681,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfigData() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1757,7 +1701,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         return configDataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1780,7 +1723,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1743,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1770,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1849,7 +1789,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1803,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1883,7 +1821,6 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
             : configData_;
       }
     }
-
     /**
      *
      *

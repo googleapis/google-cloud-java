@@ -33,7 +33,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentInfo)
     DocumentInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentInfo.newBuilder() to construct.
   private DocumentInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     private DocumentDescriptorCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return documentDescriptorCase_ == 1;
   }
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return documentDescriptorCase_ == 2;
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUri() {
     return documentDescriptorCase_ == 6;
   }
-
   /**
    *
    *
@@ -316,7 +306,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -348,7 +337,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUANTITY_FIELD_NUMBER = 3;
   private int quantity_ = 0;
-
   /**
    *
    *
@@ -372,7 +360,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuantity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -402,7 +389,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList promotionIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPromotionIdsList() {
     return promotionIds_;
   }
-
   /**
    *
    *
@@ -434,7 +419,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public int getPromotionIdsCount() {
     return promotionIds_.size();
   }
-
   /**
    *
    *
@@ -451,7 +435,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPromotionIds(int index) {
     return promotionIds_.get(index);
   }
-
   /**
    *
    *
@@ -471,7 +454,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int JOINED_FIELD_NUMBER = 5;
   private boolean joined_ = false;
-
   /**
    *
    *
@@ -491,7 +473,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONVERSION_VALUE_FIELD_NUMBER = 7;
   private float conversionValue_ = 0F;
-
   /**
    *
    *
@@ -513,7 +494,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConversionValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -788,7 +768,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1107,7 +1086,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return documentDescriptorCase_ == 1;
     }
-
     /**
      *
      *
@@ -1136,7 +1114,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1142,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1163,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1182,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1222,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return documentDescriptorCase_ == 2;
     }
-
     /**
      *
      *
@@ -1279,7 +1252,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1310,7 +1282,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1305,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1326,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1367,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return documentDescriptorCase_ == 6;
     }
-
     /**
      *
      *
@@ -1428,7 +1396,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1458,7 +1425,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1447,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1467,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1492,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int quantity_;
-
     /**
      *
      *
@@ -1552,7 +1515,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuantity() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1576,7 +1538,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public int getQuantity() {
       return quantity_;
     }
-
     /**
      *
      *
@@ -1604,7 +1565,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1640,7 +1600,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1657,7 +1616,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       promotionIds_.makeImmutable();
       return promotionIds_;
     }
-
     /**
      *
      *
@@ -1673,7 +1631,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public int getPromotionIdsCount() {
       return promotionIds_.size();
     }
-
     /**
      *
      *
@@ -1690,7 +1647,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPromotionIds(int index) {
       return promotionIds_.get(index);
     }
-
     /**
      *
      *
@@ -1707,7 +1663,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPromotionIdsBytes(int index) {
       return promotionIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1732,7 +1687,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1710,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1777,7 +1730,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1749,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1824,7 +1775,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean joined_;
-
     /**
      *
      *
@@ -1841,7 +1791,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getJoined() {
       return joined_;
     }
-
     /**
      *
      *
@@ -1862,7 +1811,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1831,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float conversionValue_;
-
     /**
      *
      *
@@ -1905,7 +1852,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConversionValue() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1927,7 +1873,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public float getConversionValue() {
       return conversionValue_;
     }
-
     /**
      *
      *
@@ -1953,7 +1898,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

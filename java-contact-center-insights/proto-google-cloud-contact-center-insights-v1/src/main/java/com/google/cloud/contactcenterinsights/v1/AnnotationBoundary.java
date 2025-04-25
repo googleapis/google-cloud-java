@@ -33,7 +33,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnnotationBoundary)
     AnnotationBoundaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnnotationBoundary.newBuilder() to construct.
   private AnnotationBoundary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     private DetailedBoundaryCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int WORD_INDEX_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
   public boolean hasWordIndex() {
     return detailedBoundaryCase_ == 3;
   }
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
 
   public static final int TRANSCRIPT_INDEX_FIELD_NUMBER = 1;
   private int transcriptIndex_ = 0;
-
   /**
    *
    *
@@ -352,7 +347,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +586,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     public boolean hasWordIndex() {
       return detailedBoundaryCase_ == 3;
     }
-
     /**
      *
      *
@@ -611,7 +604,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
       }
       return 0;
     }
-
     /**
      *
      *
@@ -632,7 +624,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +646,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     }
 
     private int transcriptIndex_;
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     public int getTranscriptIndex() {
       return transcriptIndex_;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

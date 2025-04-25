@@ -33,7 +33,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.JobPlacement)
     JobPlacementOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobPlacement.newBuilder() to construct.
   private JobPlacement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterName_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterUuid_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +208,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   public int getClusterLabelsCount() {
     return internalGetClusterLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -232,14 +226,12 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetClusterLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getClusterLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getClusterLabels() {
     return getClusterLabelsMap();
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
     return internalGetClusterLabels().getMap();
   }
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -487,7 +477,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -727,7 +716,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object clusterName_ = "";
-
     /**
      *
      *
@@ -750,7 +738,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clusterUuid_ = "";
-
     /**
      *
      *
@@ -862,7 +845,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +868,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +960,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     public int getClusterLabelsCount() {
       return internalGetClusterLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1000,14 +978,12 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetClusterLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getClusterLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getClusterLabels() {
       return getClusterLabelsMap();
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
       return internalGetClusterLabels().getMap();
     }
-
     /**
      *
      *
@@ -1046,7 +1021,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1075,7 +1049,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableClusterLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1094,14 +1067,12 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableClusterLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableClusterLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableClusterLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1124,7 +1095,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

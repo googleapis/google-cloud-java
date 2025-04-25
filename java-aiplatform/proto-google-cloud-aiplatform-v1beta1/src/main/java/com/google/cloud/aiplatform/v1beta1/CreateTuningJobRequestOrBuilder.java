@@ -39,7 +39,6 @@ public interface CreateTuningJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateTuningJobRequestOrBuilder
    * @return Whether the tuningJob field is set.
    */
   boolean hasTuningJob();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateTuningJobRequestOrBuilder
    * @return The tuningJob.
    */
   com.google.cloud.aiplatform.v1beta1.TuningJob getTuningJob();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return Whether the jsonInstance field is set.
    */
   boolean hasJsonInstance();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return The jsonInstance.
    */
   java.lang.String getJsonInstance();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ListScanConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ListScanConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

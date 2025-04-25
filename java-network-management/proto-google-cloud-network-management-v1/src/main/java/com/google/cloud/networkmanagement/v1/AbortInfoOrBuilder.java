@@ -36,7 +36,6 @@ public interface AbortInfoOrBuilder
    * @return The enum numeric value on the wire for cause.
    */
   int getCauseValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AbortInfoOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface AbortInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface AbortInfoOrBuilder
    * @return A list containing the projectsMissingPermission.
    */
   java.util.List<java.lang.String> getProjectsMissingPermissionList();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface AbortInfoOrBuilder
    * @return The count of projectsMissingPermission.
    */
   int getProjectsMissingPermissionCount();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface AbortInfoOrBuilder
    * @return The projectsMissingPermission at the given index.
    */
   java.lang.String getProjectsMissingPermission(int index);
-
   /**
    *
    *

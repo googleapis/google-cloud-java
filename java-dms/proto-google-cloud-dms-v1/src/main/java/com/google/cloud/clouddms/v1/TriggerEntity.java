@@ -34,7 +34,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.TriggerEntity)
     TriggerEntityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TriggerEntity.newBuilder() to construct.
   private TriggerEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList triggeringEvents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTriggeringEventsList() {
     return triggeringEvents_;
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   public int getTriggeringEventsCount() {
     return triggeringEvents_.size();
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTriggeringEvents(int index) {
     return triggeringEvents_.get(index);
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object triggerType_ = "";
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sqlCode_ = "";
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -304,7 +293,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct customFeatures_;
-
   /**
    *
    *
@@ -320,7 +308,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
-
   /**
    *
    *
@@ -562,7 +548,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -829,7 +814,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       triggeringEvents_.makeImmutable();
       return triggeringEvents_;
     }
-
     /**
      *
      *
@@ -981,7 +959,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     public int getTriggeringEventsCount() {
       return triggeringEvents_.size();
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTriggeringEvents(int index) {
       return triggeringEvents_.get(index);
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTriggeringEventsBytes(int index) {
       return triggeringEvents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1040,7 +1015,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1038,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1077,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1103,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object triggerType_ = "";
-
     /**
      *
      *
@@ -1156,7 +1126,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1149,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1203,7 +1171,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1189,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1214,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sqlCode_ = "";
-
     /**
      *
      *
@@ -1271,7 +1236,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1258,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1316,7 +1279,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1296,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1325,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
-
     /**
      *
      *
@@ -1379,7 +1339,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1400,7 +1359,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
         return customFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1423,7 +1381,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1400,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1427,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1446,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1460,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1525,7 +1478,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
             : customFeatures_;
       }
     }
-
     /**
      *
      *

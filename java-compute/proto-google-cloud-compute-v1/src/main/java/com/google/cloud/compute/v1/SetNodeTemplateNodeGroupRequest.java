@@ -33,7 +33,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest)
     SetNodeTemplateNodeGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetNodeTemplateNodeGroupRequest.newBuilder() to construct.
   private SetNodeTemplateNodeGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeGroup_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   public static final int NODE_GROUPS_SET_NODE_TEMPLATE_REQUEST_RESOURCE_FIELD_NUMBER = 117382321;
   private com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest
       nodeGroupsSetNodeTemplateRequestResource_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   public boolean hasNodeGroupsSetNodeTemplateRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.getDefaultInstance()
         : nodeGroupsSetNodeTemplateRequestResource_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -577,7 +564,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -843,7 +829,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object nodeGroup_ = "";
-
     /**
      *
      *
@@ -866,7 +851,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +873,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -911,7 +894,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +941,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.Builder,
             com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequestOrBuilder>
         nodeGroupsSetNodeTemplateRequestResourceBuilder_;
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     public boolean hasNodeGroupsSetNodeTemplateRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1001,7 +980,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return nodeGroupsSetNodeTemplateRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1005,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1027,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1080,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1097,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return getNodeGroupsSetNodeTemplateRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
             : nodeGroupsSetNodeTemplateRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1147,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1200,7 +1171,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1225,7 +1195,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1218,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1237,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1263,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1311,7 +1277,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1334,7 +1299,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1321,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1379,7 +1342,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1359,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1383,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1447,7 +1407,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1431,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1496,7 +1454,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1473,6 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

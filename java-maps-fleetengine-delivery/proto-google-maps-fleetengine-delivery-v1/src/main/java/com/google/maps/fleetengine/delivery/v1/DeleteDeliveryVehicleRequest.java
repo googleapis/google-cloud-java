@@ -33,7 +33,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest)
     DeleteDeliveryVehicleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteDeliveryVehicleRequest.newBuilder() to construct.
   private DeleteDeliveryVehicleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader header_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
         ? com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.getDefaultInstance()
         : header_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -589,7 +582,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeaderOrBuilder>
         headerBuilder_;
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
         return headerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
             : header_;
       }
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class DeleteDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

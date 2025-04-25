@@ -38,7 +38,6 @@ public interface DeleteSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeleteSecurityPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DeleteSecurityPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DeleteSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
-
   /**
    *
    *

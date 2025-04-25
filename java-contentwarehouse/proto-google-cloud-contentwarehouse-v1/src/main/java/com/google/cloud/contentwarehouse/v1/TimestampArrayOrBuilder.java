@@ -34,7 +34,6 @@ public interface TimestampArrayOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.TimestampValue values = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.TimestampValue> getValuesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TimestampArrayOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.TimestampValue values = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.TimestampValue getValues(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TimestampArrayOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.TimestampValue values = 1;</code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TimestampArrayOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.TimestampValueOrBuilder>
       getValuesOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface CdnKeyOrBuilder
    * @return Whether the googleCdnKey field is set.
    */
   boolean hasGoogleCdnKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CdnKeyOrBuilder
    * @return The googleCdnKey.
    */
   com.google.cloud.video.stitcher.v1.GoogleCdnKey getGoogleCdnKey();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface CdnKeyOrBuilder
    * @return Whether the akamaiCdnKey field is set.
    */
   boolean hasAkamaiCdnKey();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface CdnKeyOrBuilder
    * @return The akamaiCdnKey.
    */
   com.google.cloud.video.stitcher.v1.AkamaiCdnKey getAkamaiCdnKey();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface CdnKeyOrBuilder
    * @return Whether the mediaCdnKey field is set.
    */
   boolean hasMediaCdnKey();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface CdnKeyOrBuilder
    * @return The mediaCdnKey.
    */
   com.google.cloud.video.stitcher.v1.MediaCdnKey getMediaCdnKey();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface CdnKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface CdnKeyOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *

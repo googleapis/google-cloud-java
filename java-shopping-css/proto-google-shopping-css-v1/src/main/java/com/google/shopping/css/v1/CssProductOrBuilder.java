@@ -38,7 +38,6 @@ public interface CssProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CssProductOrBuilder
    * @return The rawProvidedId.
    */
   java.lang.String getRawProvidedId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CssProductOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface CssProductOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface CssProductOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface CssProductOrBuilder
    * @return The attributes.
    */
   com.google.shopping.css.v1.Attributes getAttributes();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface CssProductOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public interface CssProductOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface CssProductOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public interface CssProductOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public interface CssProductOrBuilder
    * @return Whether the cssProductStatus field is set.
    */
   boolean hasCssProductStatus();
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface CssProductOrBuilder
    * @return The cssProductStatus.
    */
   com.google.shopping.css.v1.CssProductStatus getCssProductStatus();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
     ErrorGroupStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ErrorGroupStats.newBuilder() to construct.
   private ErrorGroupStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int GROUP_FIELD_NUMBER = 1;
   private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public boolean hasGroup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
         : group_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int COUNT_FIELD_NUMBER = 2;
   private long count_ = 0L;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int AFFECTED_USERS_COUNT_FIELD_NUMBER = 3;
   private long affectedUsersCount_ = 0L;
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> timedCounts_;
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       getTimedCountsList() {
     return timedCounts_;
   }
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       getTimedCountsOrBuilderList() {
     return timedCounts_;
   }
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public int getTimedCountsCount() {
     return timedCounts_.size();
   }
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public com.google.devtools.clouderrorreporting.v1beta1.TimedCount getTimedCounts(int index) {
     return timedCounts_.get(index);
   }
-
   /**
    *
    *
@@ -277,7 +266,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int FIRST_SEEN_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp firstSeenTime_;
-
   /**
    *
    *
@@ -295,7 +283,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public boolean hasFirstSeenTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -315,7 +302,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : firstSeenTime_;
   }
-
   /**
    *
    *
@@ -336,7 +322,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int LAST_SEEN_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp lastSeenTime_;
-
   /**
    *
    *
@@ -354,7 +339,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public boolean hasLastSeenTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -374,7 +358,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastSeenTime_;
   }
-
   /**
    *
    *
@@ -398,7 +381,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
       affectedServices_;
-
   /**
    *
    *
@@ -417,7 +399,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       getAffectedServicesList() {
     return affectedServices_;
   }
-
   /**
    *
    *
@@ -437,7 +418,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       getAffectedServicesOrBuilderList() {
     return affectedServices_;
   }
-
   /**
    *
    *
@@ -455,7 +435,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public int getAffectedServicesCount() {
     return affectedServices_.size();
   }
-
   /**
    *
    *
@@ -474,7 +453,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       int index) {
     return affectedServices_.get(index);
   }
-
   /**
    *
    *
@@ -496,7 +474,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int NUM_AFFECTED_SERVICES_FIELD_NUMBER = 8;
   private int numAffectedServices_ = 0;
-
   /**
    *
    *
@@ -516,7 +493,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int REPRESENTATIVE_FIELD_NUMBER = 9;
   private com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative_;
-
   /**
    *
    *
@@ -536,7 +512,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   public boolean hasRepresentative() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -558,7 +533,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance()
         : representative_;
   }
-
   /**
    *
    *
@@ -836,7 +810,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1265,7 +1238,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder>
         groupBuilder_;
-
     /**
      *
      *
@@ -1280,7 +1252,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public boolean hasGroup() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1301,7 +1272,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return groupBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1324,7 +1294,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1314,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1343,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1362,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1376,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1429,7 +1394,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             : group_;
       }
     }
-
     /**
      *
      *
@@ -1457,7 +1421,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     }
 
     private long count_;
-
     /**
      *
      *
@@ -1474,7 +1437,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public long getCount() {
       return count_;
     }
-
     /**
      *
      *
@@ -1495,7 +1457,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1477,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     }
 
     private long affectedUsersCount_;
-
     /**
      *
      *
@@ -1544,7 +1504,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public long getAffectedUsersCount() {
       return affectedUsersCount_;
     }
-
     /**
      *
      *
@@ -1576,7 +1535,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1606,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return timedCountsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1671,7 +1628,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return timedCountsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1694,7 +1650,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return timedCountsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1724,7 +1679,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1752,7 +1706,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1782,7 +1735,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1764,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1839,7 +1790,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1867,7 +1817,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1895,7 +1844,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1921,7 +1869,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1947,7 +1894,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1967,7 +1913,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getTimedCountsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1991,7 +1936,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return timedCountsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2016,7 +1960,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(timedCounts_);
       }
     }
-
     /**
      *
      *
@@ -2038,7 +1981,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.devtools.clouderrorreporting.v1beta1.TimedCount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2061,7 +2003,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.devtools.clouderrorreporting.v1beta1.TimedCount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2105,7 +2046,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         firstSeenTimeBuilder_;
-
     /**
      *
      *
@@ -2122,7 +2062,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public boolean hasFirstSeenTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2145,7 +2084,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return firstSeenTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2170,7 +2108,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2192,7 +2129,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2222,7 +2158,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2244,7 +2179,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2261,7 +2195,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getFirstSeenTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2282,7 +2215,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             : firstSeenTime_;
       }
     }
-
     /**
      *
      *
@@ -2317,7 +2249,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastSeenTimeBuilder_;
-
     /**
      *
      *
@@ -2334,7 +2265,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public boolean hasLastSeenTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2357,7 +2287,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return lastSeenTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2382,7 +2311,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2404,7 +2332,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2434,7 +2361,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2456,7 +2382,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2398,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLastSeenTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2494,7 +2418,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             : lastSeenTime_;
       }
     }
-
     /**
      *
      *
@@ -2562,7 +2485,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return affectedServicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2583,7 +2505,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return affectedServicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2605,7 +2526,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return affectedServicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2633,7 +2553,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2578,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2605,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2715,7 +2632,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2740,7 +2656,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2766,7 +2681,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2792,7 +2706,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2816,7 +2729,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2840,7 +2752,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2858,7 +2769,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         getAffectedServicesBuilder(int index) {
       return getAffectedServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2880,7 +2790,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return affectedServicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2903,7 +2812,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(affectedServices_);
       }
     }
-
     /**
      *
      *
@@ -2923,7 +2831,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2944,7 +2851,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2984,7 +2890,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     }
 
     private int numAffectedServices_;
-
     /**
      *
      *
@@ -3001,7 +2906,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public int getNumAffectedServices() {
       return numAffectedServices_;
     }
-
     /**
      *
      *
@@ -3022,7 +2926,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3048,7 +2951,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
         representativeBuilder_;
-
     /**
      *
      *
@@ -3067,7 +2969,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     public boolean hasRepresentative() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3092,7 +2993,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         return representativeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3120,7 +3020,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3145,7 +3044,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3180,7 +3078,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3101,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3224,7 +3120,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRepresentativeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3248,7 +3143,6 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             : representative_;
       }
     }
-
     /**
      *
      *

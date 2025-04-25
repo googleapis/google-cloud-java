@@ -72,7 +72,6 @@ public enum EnablementState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum EnablementState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENABLED = 1;</code>
    */
   public static final int ENABLED_VALUE = 1;
-
   /**
    *
    *

@@ -43,7 +43,6 @@ public interface GetMonitoredResourceDescriptorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

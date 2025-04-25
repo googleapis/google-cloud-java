@@ -28,23 +28,22 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Optional. The place ID for the current set of inventory information.
+   * The place ID for the current set of inventory information.
    * </pre>
    *
-   * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string place_id = 1;</code>
    *
    * @return The placeId.
    */
   java.lang.String getPlaceId();
-
   /**
    *
    *
    * <pre>
-   * Optional. The place ID for the current set of inventory information.
+   * The place ID for the current set of inventory information.
    * </pre>
    *
-   * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string place_id = 1;</code>
    *
    * @return The bytes for placeId.
    */
@@ -54,51 +53,43 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Optional. Product price and cost information.
+   * Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>
-   * .google.cloud.retail.v2alpha.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.retail.v2alpha.PriceInfo price_info = 2;</code>
    *
    * @return Whether the priceInfo field is set.
    */
   boolean hasPriceInfo();
-
   /**
    *
    *
    * <pre>
-   * Optional. Product price and cost information.
+   * Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>
-   * .google.cloud.retail.v2alpha.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.retail.v2alpha.PriceInfo price_info = 2;</code>
    *
    * @return The priceInfo.
    */
   com.google.cloud.retail.v2alpha.PriceInfo getPriceInfo();
-
   /**
    *
    *
    * <pre>
-   * Optional. Product price and cost information.
+   * Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>
-   * .google.cloud.retail.v2alpha.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.retail.v2alpha.PriceInfo price_info = 2;</code>
    */
   com.google.cloud.retail.v2alpha.PriceInfoOrBuilder getPriceInfoOrBuilder();
 
@@ -106,82 +97,8 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Optional. The availability of the
-   * [Product][google.cloud.retail.v2alpha.Product] at this place_id. Default to
-   * [Availability.IN_STOCK][google.cloud.retail.v2alpha.LocalInventory.Availability.IN_STOCK].
-   *
-   * For primary products with variants set the availability of the primary as
-   * [Availability.OUT_OF_STOCK][google.cloud.retail.v2alpha.LocalInventory.Availability.OUT_OF_STOCK]
-   * and set the true availability at the variant level. This way the primary
-   * product will be considered "in stock" as long as it has at least one
-   * variant in stock.
-   *
-   * For primary products with no variants set the true availability at the
-   * primary level.
-   *
-   * Corresponding properties: Google Merchant Center property
-   * [availability](https://support.google.com/merchants/answer/6324448).
-   * Schema.org property [Offer.availability](https://schema.org/availability).
-   *
-   * This field is currently only used by the Recommendations API. For Search,
-   * please make use of
-   * [fulfillment_types][google.cloud.retail.v2alpha.LocalInventory.fulfillment_types]
-   * or custom attributes for similar behaviour. See [here](
-   * https://cloud.google.com/retail/docs/local-inventory-updates#local-inventory-update-methods)
-   * for more details.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.retail.v2alpha.LocalInventory.Availability availability = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for availability.
-   */
-  int getAvailabilityValue();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The availability of the
-   * [Product][google.cloud.retail.v2alpha.Product] at this place_id. Default to
-   * [Availability.IN_STOCK][google.cloud.retail.v2alpha.LocalInventory.Availability.IN_STOCK].
-   *
-   * For primary products with variants set the availability of the primary as
-   * [Availability.OUT_OF_STOCK][google.cloud.retail.v2alpha.LocalInventory.Availability.OUT_OF_STOCK]
-   * and set the true availability at the variant level. This way the primary
-   * product will be considered "in stock" as long as it has at least one
-   * variant in stock.
-   *
-   * For primary products with no variants set the true availability at the
-   * primary level.
-   *
-   * Corresponding properties: Google Merchant Center property
-   * [availability](https://support.google.com/merchants/answer/6324448).
-   * Schema.org property [Offer.availability](https://schema.org/availability).
-   *
-   * This field is currently only used by the Recommendations API. For Search,
-   * please make use of
-   * [fulfillment_types][google.cloud.retail.v2alpha.LocalInventory.fulfillment_types]
-   * or custom attributes for similar behaviour. See [here](
-   * https://cloud.google.com/retail/docs/local-inventory-updates#local-inventory-update-methods)
-   * for more details.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.retail.v2alpha.LocalInventory.Availability availability = 5 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The availability.
-   */
-  com.google.cloud.retail.v2alpha.LocalInventory.Availability getAvailability();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Additional local inventory attributes, for example, store name,
-   * promotion tags, etc.
+   * Additional local inventory attributes, for example, store name, promotion
+   * tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -200,18 +117,15 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>
-   * map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3;</code>
    */
   int getAttributesCount();
-
   /**
    *
    *
    * <pre>
-   * Optional. Additional local inventory attributes, for example, store name,
-   * promotion tags, etc.
+   * Additional local inventory attributes, for example, store name, promotion
+   * tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -230,22 +144,18 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>
-   * map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3;</code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute> getAttributes();
-
   /**
    *
    *
    * <pre>
-   * Optional. Additional local inventory attributes, for example, store name,
-   * promotion tags, etc.
+   * Additional local inventory attributes, for example, store name, promotion
+   * tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -264,19 +174,16 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>
-   * map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute>
       getAttributesMap();
-
   /**
    *
    *
    * <pre>
-   * Optional. Additional local inventory attributes, for example, store name,
-   * promotion tags, etc.
+   * Additional local inventory attributes, for example, store name, promotion
+   * tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -295,22 +202,19 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>
-   * map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3;</code>
    */
   /* nullable */
   com.google.cloud.retail.v2alpha.CustomAttribute getAttributesOrDefault(
       java.lang.String key,
       /* nullable */
       com.google.cloud.retail.v2alpha.CustomAttribute defaultValue);
-
   /**
    *
    *
    * <pre>
-   * Optional. Additional local inventory attributes, for example, store name,
-   * promotion tags, etc.
+   * Additional local inventory attributes, for example, store name, promotion
+   * tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -329,9 +233,7 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>
-   * map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 3;</code>
    */
   com.google.cloud.retail.v2alpha.CustomAttribute getAttributesOrThrow(java.lang.String key);
 
@@ -339,7 +241,7 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Optional. Supported fulfillment types. Valid fulfillment type values
+   * Input only. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -363,17 +265,16 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return A list containing the fulfillmentTypes.
    */
   java.util.List<java.lang.String> getFulfillmentTypesList();
-
   /**
    *
    *
    * <pre>
-   * Optional. Supported fulfillment types. Valid fulfillment type values
+   * Input only. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -397,17 +298,16 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The count of fulfillmentTypes.
    */
   int getFulfillmentTypesCount();
-
   /**
    *
    *
    * <pre>
-   * Optional. Supported fulfillment types. Valid fulfillment type values
+   * Input only. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -431,18 +331,17 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @param index The index of the element to return.
    * @return The fulfillmentTypes at the given index.
    */
   java.lang.String getFulfillmentTypes(int index);
-
   /**
    *
    *
    * <pre>
-   * Optional. Supported fulfillment types. Valid fulfillment type values
+   * Input only. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -466,7 +365,7 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the fulfillmentTypes at the given index.

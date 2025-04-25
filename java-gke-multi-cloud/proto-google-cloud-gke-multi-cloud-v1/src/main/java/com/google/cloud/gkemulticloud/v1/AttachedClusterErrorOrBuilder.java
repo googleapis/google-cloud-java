@@ -36,7 +36,6 @@ public interface AttachedClusterErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DataSourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DataSourceOrBuilder
    * @return The dataSourceId.
    */
   java.lang.String getDataSourceId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DataSourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface DataSourceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface DataSourceOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface DataSourceOrBuilder
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String> getScopesList();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface DataSourceOrBuilder
    * @return The count of scopes.
    */
   int getScopesCount();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface DataSourceOrBuilder
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface DataSourceOrBuilder
    */
   @java.lang.Deprecated
   int getTransferTypeValue();
-
   /**
    *
    *
@@ -298,7 +289,6 @@ public interface DataSourceOrBuilder
    * @return The defaultSchedule.
    */
   java.lang.String getDefaultSchedule();
-
   /**
    *
    *
@@ -342,7 +332,6 @@ public interface DataSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> getParametersList();
-
   /**
    *
    *
@@ -354,7 +343,6 @@ public interface DataSourceOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getParameters(int index);
-
   /**
    *
    *
@@ -366,7 +354,6 @@ public interface DataSourceOrBuilder
    * </code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -379,7 +366,6 @@ public interface DataSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -405,7 +391,6 @@ public interface DataSourceOrBuilder
    * @return The helpUrl.
    */
   java.lang.String getHelpUrl();
-
   /**
    *
    *
@@ -433,7 +418,6 @@ public interface DataSourceOrBuilder
    * @return The enum numeric value on the wire for authorizationType.
    */
   int getAuthorizationTypeValue();
-
   /**
    *
    *
@@ -465,7 +449,6 @@ public interface DataSourceOrBuilder
    * @return The enum numeric value on the wire for dataRefreshType.
    */
   int getDataRefreshTypeValue();
-
   /**
    *
    *
@@ -523,7 +506,6 @@ public interface DataSourceOrBuilder
    * @return Whether the minimumScheduleInterval field is set.
    */
   boolean hasMinimumScheduleInterval();
-
   /**
    *
    *
@@ -536,7 +518,6 @@ public interface DataSourceOrBuilder
    * @return The minimumScheduleInterval.
    */
   com.google.protobuf.Duration getMinimumScheduleInterval();
-
   /**
    *
    *

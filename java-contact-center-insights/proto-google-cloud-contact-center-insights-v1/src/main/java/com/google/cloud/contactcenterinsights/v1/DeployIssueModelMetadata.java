@@ -33,7 +33,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata)
     DeployIssueModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployIssueModelMetadata.newBuilder() to construct.
   private DeployIssueModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
 
   public static final int REQUEST_FIELD_NUMBER = 3;
   private com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request_;
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
   public boolean hasRequest() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
         ? com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest.getDefaultInstance()
         : request_;
   }
-
   /**
    *
    *
@@ -415,7 +405,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +653,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +802,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -936,7 +913,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +996,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1041,7 +1013,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
             com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest.Builder,
             com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequestOrBuilder>
         requestBuilder_;
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1111,7 +1080,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
         return requestBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1103,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1123,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1153,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1172,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1187,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1243,7 +1206,6 @@ public final class DeployIssueModelMetadata extends com.google.protobuf.Generate
             : request_;
       }
     }
-
     /**
      *
      *

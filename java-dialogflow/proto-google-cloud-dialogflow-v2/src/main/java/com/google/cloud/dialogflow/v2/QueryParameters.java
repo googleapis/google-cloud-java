@@ -33,7 +33,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.QueryParameters)
     QueryParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryParameters.newBuilder() to construct.
   private QueryParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   public static final int GEO_LOCATION_FIELD_NUMBER = 2;
   private com.google.type.LatLng geoLocation_;
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public boolean hasGeoLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public com.google.type.LatLng getGeoLocation() {
     return geoLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : geoLocation_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.Context> contexts_;
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList() {
     return contexts_;
   }
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       getContextsOrBuilderList() {
     return contexts_;
   }
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public int getContextsCount() {
     return contexts_.size();
   }
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.dialogflow.v2.Context getContexts(int index) {
     return contexts_.get(index);
   }
-
   /**
    *
    *
@@ -271,7 +260,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   public static final int RESET_CONTEXTS_FIELD_NUMBER = 4;
   private boolean resetContexts_ = false;
-
   /**
    *
    *
@@ -293,7 +281,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> sessionEntityTypes_;
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       getSessionEntityTypesList() {
     return sessionEntityTypes_;
   }
-
   /**
    *
    *
@@ -327,7 +313,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       getSessionEntityTypesOrBuilderList() {
     return sessionEntityTypes_;
   }
-
   /**
    *
    *
@@ -343,7 +328,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public int getSessionEntityTypesCount() {
     return sessionEntityTypes_.size();
   }
-
   /**
    *
    *
@@ -359,7 +343,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index) {
     return sessionEntityTypes_.get(index);
   }
-
   /**
    *
    *
@@ -379,7 +362,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   public static final int PAYLOAD_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct payload_;
-
   /**
    *
    *
@@ -399,7 +381,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public boolean hasPayload() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -419,7 +400,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
-
   /**
    *
    *
@@ -441,7 +421,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public static final int SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
       sentimentAnalysisRequestConfig_;
-
   /**
    *
    *
@@ -460,7 +439,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public boolean hasSentimentAnalysisRequestConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -482,7 +460,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.getDefaultInstance()
         : sentimentAnalysisRequestConfig_;
   }
-
   /**
    *
    *
@@ -531,7 +508,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public int getWebhookHeadersCount() {
     return internalGetWebhookHeaders().getMap().size();
   }
-
   /**
    *
    *
@@ -556,14 +532,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetWebhookHeaders().getMap().containsKey(key);
   }
-
   /** Use {@link #getWebhookHeadersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders() {
     return getWebhookHeadersMap();
   }
-
   /**
    *
    *
@@ -585,7 +559,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap() {
     return internalGetWebhookHeaders().getMap();
   }
-
   /**
    *
    *
@@ -614,7 +587,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetWebhookHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -648,7 +620,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object platform_ = "";
-
   /**
    *
    *
@@ -676,7 +647,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -968,7 +938,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1413,7 +1382,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object timeZone_ = "";
-
     /**
      *
      *
@@ -1439,7 +1407,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1432,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1490,7 +1456,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1476,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1542,7 +1506,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         geoLocationBuilder_;
-
     /**
      *
      *
@@ -1557,7 +1520,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public boolean hasGeoLocation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1576,7 +1538,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return geoLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1599,7 +1560,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1579,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1647,7 +1606,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1625,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1639,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getGeoLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1699,7 +1655,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return geoLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : geoLocation_;
       }
     }
-
     /**
      *
      *
@@ -1757,7 +1712,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return contextsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1775,7 +1729,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return contextsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1746,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return contextsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1817,7 +1769,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1839,7 +1790,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1813,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1887,7 +1836,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1856,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1877,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1898,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1973,7 +1918,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1938,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2008,7 +1951,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.v2.Context.Builder getContextsBuilder(int index) {
       return getContextsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2026,7 +1968,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return contextsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2045,7 +1986,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(contexts_);
       }
     }
-
     /**
      *
      *
@@ -2060,7 +2000,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return getContextsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.Context.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2075,7 +2014,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return getContextsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.Context.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2108,7 +2046,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean resetContexts_;
-
     /**
      *
      *
@@ -2125,7 +2062,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public boolean getResetContexts() {
       return resetContexts_;
     }
-
     /**
      *
      *
@@ -2146,7 +2082,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2138,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return sessionEntityTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2222,7 +2156,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return sessionEntityTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2241,7 +2174,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return sessionEntityTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2267,7 +2199,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2221,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2315,7 +2245,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2341,7 +2270,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2364,7 +2292,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2387,7 +2314,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2410,7 +2336,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2432,7 +2357,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2454,7 +2378,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2470,7 +2393,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getSessionEntityTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2490,7 +2412,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return sessionEntityTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2510,7 +2431,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(sessionEntityTypes_);
       }
     }
-
     /**
      *
      *
@@ -2526,7 +2446,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return getSessionEntityTypesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.SessionEntityType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2543,7 +2462,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return getSessionEntityTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.SessionEntityType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2586,7 +2504,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         payloadBuilder_;
-
     /**
      *
      *
@@ -2605,7 +2522,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public boolean hasPayload() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2628,7 +2544,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return payloadBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2655,7 +2570,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2679,7 +2593,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2711,7 +2624,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2647,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2754,7 +2665,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2775,7 +2685,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
       }
     }
-
     /**
      *
      *
@@ -2813,7 +2722,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder,
             com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder>
         sentimentAnalysisRequestConfigBuilder_;
-
     /**
      *
      *
@@ -2831,7 +2739,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public boolean hasSentimentAnalysisRequestConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2856,7 +2763,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return sentimentAnalysisRequestConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2883,7 +2789,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2907,7 +2812,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2941,7 +2845,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2964,7 +2867,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2983,7 +2885,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSentimentAnalysisRequestConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3006,7 +2907,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             : sentimentAnalysisRequestConfig_;
       }
     }
-
     /**
      *
      *
@@ -3064,7 +2964,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public int getWebhookHeadersCount() {
       return internalGetWebhookHeaders().getMap().size();
     }
-
     /**
      *
      *
@@ -3089,14 +2988,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetWebhookHeaders().getMap().containsKey(key);
     }
-
     /** Use {@link #getWebhookHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders() {
       return getWebhookHeadersMap();
     }
-
     /**
      *
      *
@@ -3118,7 +3015,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap() {
       return internalGetWebhookHeaders().getMap();
     }
-
     /**
      *
      *
@@ -3147,7 +3043,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetWebhookHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3182,7 +3077,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       internalGetMutableWebhookHeaders().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3207,14 +3101,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       internalGetMutableWebhookHeaders().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableWebhookHeaders() {
       bitField0_ |= 0x00000080;
       return internalGetMutableWebhookHeaders().getMutableMap();
     }
-
     /**
      *
      *
@@ -3243,7 +3135,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000080;
       return this;
     }
-
     /**
      *
      *
@@ -3268,7 +3159,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object platform_ = "";
-
     /**
      *
      *
@@ -3295,7 +3185,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3322,7 +3211,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3348,7 +3236,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3370,7 +3257,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

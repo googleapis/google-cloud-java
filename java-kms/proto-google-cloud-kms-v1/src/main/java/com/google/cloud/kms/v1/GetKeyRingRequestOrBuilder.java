@@ -39,7 +39,6 @@ public interface GetKeyRingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

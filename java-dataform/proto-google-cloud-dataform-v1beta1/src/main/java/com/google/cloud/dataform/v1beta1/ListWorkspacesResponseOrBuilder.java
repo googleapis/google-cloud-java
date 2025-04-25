@@ -34,7 +34,6 @@ public interface ListWorkspacesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.Workspace workspaces = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.Workspace> getWorkspacesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListWorkspacesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.Workspace workspaces = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.Workspace getWorkspaces(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListWorkspacesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.Workspace workspaces = 1;</code>
    */
   int getWorkspacesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListWorkspacesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.WorkspaceOrBuilder>
       getWorkspacesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListWorkspacesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListWorkspacesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListWorkspacesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListWorkspacesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

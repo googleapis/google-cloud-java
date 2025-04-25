@@ -39,7 +39,6 @@ public interface ListRecognizersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface ListRecognizersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

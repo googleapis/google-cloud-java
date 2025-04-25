@@ -38,7 +38,6 @@ public interface CriticalityOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

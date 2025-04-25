@@ -36,7 +36,6 @@ public interface FileInputSourceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface FileInputSourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

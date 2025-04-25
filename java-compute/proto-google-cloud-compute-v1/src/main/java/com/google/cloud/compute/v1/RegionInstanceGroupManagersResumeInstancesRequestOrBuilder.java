@@ -36,7 +36,6 @@ public interface RegionInstanceGroupManagersResumeInstancesRequestOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RegionInstanceGroupManagersResumeInstancesRequestOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface RegionInstanceGroupManagersResumeInstancesRequestOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *

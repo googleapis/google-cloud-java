@@ -33,7 +33,6 @@ public final class AIEnabledDevicesInputConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AIEnabledDevicesInputConfig)
     AIEnabledDevicesInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AIEnabledDevicesInputConfig.newBuilder() to construct.
   private AIEnabledDevicesInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class AIEnabledDevicesInputConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

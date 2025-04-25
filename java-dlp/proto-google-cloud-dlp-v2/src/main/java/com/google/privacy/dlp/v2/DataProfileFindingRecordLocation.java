@@ -33,7 +33,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileFindingRecordLocation)
     DataProfileFindingRecordLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataProfileFindingRecordLocation.newBuilder() to construct.
   private DataProfileFindingRecordLocation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
   private int bitField0_;
   public static final int FIELD_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.FieldId field_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
   public boolean hasField() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
-
   /**
    *
    *
@@ -278,7 +274,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +477,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         fieldBuilder_;
-
     /**
      *
      *
@@ -497,7 +491,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
     public boolean hasField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -516,7 +509,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
         return fieldBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -539,7 +531,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -559,7 +550,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +577,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +596,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +610,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -639,7 +626,6 @@ public final class DataProfileFindingRecordLocation extends com.google.protobuf.
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
     }
-
     /**
      *
      *

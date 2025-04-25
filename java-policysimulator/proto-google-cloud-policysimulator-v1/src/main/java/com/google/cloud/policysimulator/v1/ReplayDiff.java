@@ -36,7 +36,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.ReplayDiff)
     ReplayDiffOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplayDiff.newBuilder() to construct.
   private ReplayDiff(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ACCESS_DIFF_FIELD_NUMBER = 2;
   private com.google.cloud.policysimulator.v1.AccessStateDiff accessDiff_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessDiff() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.policysimulator.v1.AccessStateDiff.getDefaultInstance()
         : accessDiff_;
   }
-
   /**
    *
    *
@@ -298,7 +294,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.policysimulator.v1.AccessStateDiff.Builder,
             com.google.cloud.policysimulator.v1.AccessStateDiffOrBuilder>
         accessDiffBuilder_;
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessDiff() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -550,7 +543,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
         return accessDiffBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +628,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccessDiffFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class ReplayDiff extends com.google.protobuf.GeneratedMessageV3
             : accessDiff_;
       }
     }
-
     /**
      *
      *

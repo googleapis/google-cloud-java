@@ -33,7 +33,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.MembershipState)
     MembershipStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MembershipState.newBuilder() to construct.
   private MembershipState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -147,7 +146,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -158,7 +156,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
-
     /**
      *
      *
@@ -180,7 +176,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>UPDATING = 4;</code>
      */
     public static final int UPDATING_VALUE = 4;
-
     /**
      *
      *
@@ -294,7 +288,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
-
   /**
    *
    *
@@ -312,7 +305,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   public int getCodeValue() {
     return code_;
   }
-
   /**
    *
    *
@@ -492,7 +484,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -674,7 +665,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int code_ = 0;
-
     /**
      *
      *
@@ -692,7 +682,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public int getCodeValue() {
       return code_;
     }
-
     /**
      *
      *
@@ -713,7 +702,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.gkehub.v1.MembershipState.Code.forNumber(code_);
       return result == null ? com.google.cloud.gkehub.v1.MembershipState.Code.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

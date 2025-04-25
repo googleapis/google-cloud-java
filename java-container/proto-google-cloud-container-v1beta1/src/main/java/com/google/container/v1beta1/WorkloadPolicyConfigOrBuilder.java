@@ -36,7 +36,6 @@ public interface WorkloadPolicyConfigOrBuilder
    * @return Whether the allowNetAdmin field is set.
    */
   boolean hasAllowNetAdmin();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.chat.v1.DeletionMetadata)
     DeletionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeletionMetadata.newBuilder() to construct.
   private DeletionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -170,7 +169,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>DELETION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DELETION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -181,7 +179,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>CREATOR = 1;</code>
      */
     public static final int CREATOR_VALUE = 1;
-
     /**
      *
      *
@@ -192,7 +189,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>SPACE_OWNER = 2;</code>
      */
     public static final int SPACE_OWNER_VALUE = 2;
-
     /**
      *
      *
@@ -203,7 +199,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>ADMIN = 3;</code>
      */
     public static final int ADMIN_VALUE = 3;
-
     /**
      *
      *
@@ -214,7 +209,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>APP_MESSAGE_EXPIRY = 4;</code>
      */
     public static final int APP_MESSAGE_EXPIRY_VALUE = 4;
-
     /**
      *
      *
@@ -225,7 +219,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>CREATOR_VIA_APP = 5;</code>
      */
     public static final int CREATOR_VIA_APP_VALUE = 5;
-
     /**
      *
      *
@@ -236,7 +229,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>SPACE_OWNER_VIA_APP = 6;</code>
      */
     public static final int SPACE_OWNER_VIA_APP_VALUE = 6;
-
     /**
      *
      *
@@ -344,7 +336,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int DELETION_TYPE_FIELD_NUMBER = 1;
   private int deletionType_ = 0;
-
   /**
    *
    *
@@ -360,7 +351,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
   public int getDeletionTypeValue() {
     return deletionType_;
   }
-
   /**
    *
    *
@@ -538,7 +528,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -720,7 +709,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int deletionType_ = 0;
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
     public int getDeletionTypeValue() {
       return deletionType_;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
           ? com.google.chat.v1.DeletionMetadata.DeletionType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

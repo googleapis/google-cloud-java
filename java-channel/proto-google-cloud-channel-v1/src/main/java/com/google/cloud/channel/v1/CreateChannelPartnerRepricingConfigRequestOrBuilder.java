@@ -40,7 +40,6 @@ public interface CreateChannelPartnerRepricingConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateChannelPartnerRepricingConfigRequestOrBuilder
    * @return Whether the channelPartnerRepricingConfig field is set.
    */
   boolean hasChannelPartnerRepricingConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateChannelPartnerRepricingConfigRequestOrBuilder
    * @return The channelPartnerRepricingConfig.
    */
   com.google.cloud.channel.v1.ChannelPartnerRepricingConfig getChannelPartnerRepricingConfig();
-
   /**
    *
    *

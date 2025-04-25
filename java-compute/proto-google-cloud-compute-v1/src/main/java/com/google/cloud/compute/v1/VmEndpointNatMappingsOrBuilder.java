@@ -36,7 +36,6 @@ public interface VmEndpointNatMappingsOrBuilder
    * @return Whether the instanceName field is set.
    */
   boolean hasInstanceName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VmEndpointNatMappingsOrBuilder
    * @return The instanceName.
    */
   java.lang.String getInstanceName();
-
   /**
    *
    *
@@ -70,7 +68,6 @@ public interface VmEndpointNatMappingsOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings>
       getInterfaceNatMappingsList();
-
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -78,14 +75,12 @@ public interface VmEndpointNatMappingsOrBuilder
    */
   com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings getInterfaceNatMappings(
       int index);
-
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
    * </code>
    */
   int getInterfaceNatMappingsCount();
-
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;
@@ -94,7 +89,6 @@ public interface VmEndpointNatMappingsOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsOrBuilder>
       getInterfaceNatMappingsOrBuilderList();
-
   /**
    * <code>
    * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings interface_nat_mappings = 256196617;

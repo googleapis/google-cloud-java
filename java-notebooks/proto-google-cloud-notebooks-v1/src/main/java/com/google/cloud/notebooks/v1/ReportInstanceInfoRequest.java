@@ -33,7 +33,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ReportInstanceInfoRequest)
     ReportInstanceInfoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportInstanceInfoRequest.newBuilder() to construct.
   private ReportInstanceInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmId_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +208,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -231,14 +225,12 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -275,7 +266,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -484,7 +474,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -725,7 +714,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object vmId_ = "";
-
     /**
      *
      *
@@ -865,7 +848,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +871,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +911,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +961,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -1000,14 +978,12 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -1022,7 +998,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1072,7 +1046,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1090,14 +1063,12 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1119,7 +1090,6 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

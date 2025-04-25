@@ -39,7 +39,6 @@ public interface GetAdaptiveMtFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

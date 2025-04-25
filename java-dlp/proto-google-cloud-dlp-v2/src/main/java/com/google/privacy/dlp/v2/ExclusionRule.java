@@ -34,7 +34,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ExclusionRule)
     ExclusionRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExclusionRule.newBuilder() to construct.
   private ExclusionRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,7 +120,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DICTIONARY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDictionary() {
     return typeCase_ == 1;
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGEX_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegex() {
     return typeCase_ == 2;
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUDE_INFO_TYPES_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExcludeInfoTypes() {
     return typeCase_ == 3;
   }
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.ExcludeInfoTypes.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUDE_BY_HOTWORD_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExcludeByHotword() {
     return typeCase_ == 5;
   }
-
   /**
    *
    *
@@ -321,7 +308,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MATCHING_TYPE_FIELD_NUMBER = 4;
   private int matchingType_ = 0;
-
   /**
    *
    *
@@ -358,7 +343,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   public int getMatchingTypeValue() {
     return matchingType_;
   }
-
   /**
    *
    *
@@ -606,7 +590,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -891,7 +874,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>
         dictionaryBuilder_;
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDictionary() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1025,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder getDictionaryBuilder() {
       return getDictionaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1070,7 +1045,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1083,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
         regexBuilder_;
-
     /**
      *
      *
@@ -1125,7 +1098,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegex() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -1151,7 +1123,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1145,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1165,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1197,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1222,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1234,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder getRegexBuilder() {
       return getRegexFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1288,7 +1254,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1327,7 +1292,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.ExcludeInfoTypes.Builder,
             com.google.privacy.dlp.v2.ExcludeInfoTypesOrBuilder>
         excludeInfoTypesBuilder_;
-
     /**
      *
      *
@@ -1343,7 +1307,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExcludeInfoTypes() {
       return typeCase_ == 3;
     }
-
     /**
      *
      *
@@ -1369,7 +1332,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ExcludeInfoTypes.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1354,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1374,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1406,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1431,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1485,7 +1443,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ExcludeInfoTypes.Builder getExcludeInfoTypesBuilder() {
       return getExcludeInfoTypesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1506,7 +1463,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ExcludeInfoTypes.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1545,7 +1501,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.ExcludeByHotword.Builder,
             com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder>
         excludeByHotwordBuilder_;
-
     /**
      *
      *
@@ -1562,7 +1517,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExcludeByHotword() {
       return typeCase_ == 5;
     }
-
     /**
      *
      *
@@ -1589,7 +1543,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1613,7 +1566,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1587,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1669,7 +1620,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1646,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1710,7 +1659,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ExcludeByHotword.Builder getExcludeByHotwordBuilder() {
       return getExcludeByHotwordFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1732,7 +1680,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1768,7 +1715,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int matchingType_ = 0;
-
     /**
      *
      *
@@ -1784,7 +1730,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public int getMatchingTypeValue() {
       return matchingType_;
     }
-
     /**
      *
      *
@@ -1803,7 +1748,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1821,7 +1765,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.MatchingType.forNumber(matchingType_);
       return result == null ? com.google.privacy.dlp.v2.MatchingType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1843,7 +1786,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

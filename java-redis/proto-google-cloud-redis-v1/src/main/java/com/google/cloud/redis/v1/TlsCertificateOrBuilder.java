@@ -36,7 +36,6 @@ public interface TlsCertificateOrBuilder
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TlsCertificateOrBuilder
    * @return The cert.
    */
   java.lang.String getCert();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface TlsCertificateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface TlsCertificateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface TlsCertificateOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface TlsCertificateOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface TlsCertificateOrBuilder
    * @return The sha1Fingerprint.
    */
   java.lang.String getSha1Fingerprint();
-
   /**
    *
    *

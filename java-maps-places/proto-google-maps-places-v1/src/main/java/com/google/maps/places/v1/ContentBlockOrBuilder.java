@@ -36,7 +36,6 @@ public interface ContentBlockOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ContentBlockOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ContentBlockOrBuilder
    * @return The content.
    */
   com.google.type.LocalizedText getContent();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ContentBlockOrBuilder
    * @return Whether the references field is set.
    */
   boolean hasReferences();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface ContentBlockOrBuilder
    * @return The references.
    */
   com.google.maps.places.v1.References getReferences();
-
   /**
    *
    *

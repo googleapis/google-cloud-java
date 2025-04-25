@@ -38,7 +38,6 @@ public interface PipelineTaskExecutorDetailOrBuilder
    * @return Whether the containerDetail field is set.
    */
   boolean hasContainerDetail();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PipelineTaskExecutorDetailOrBuilder
    * @return The containerDetail.
    */
   com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.ContainerDetail getContainerDetail();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface PipelineTaskExecutorDetailOrBuilder
    * @return Whether the customJobDetail field is set.
    */
   boolean hasCustomJobDetail();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface PipelineTaskExecutorDetailOrBuilder
    * @return The customJobDetail.
    */
   com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail getCustomJobDetail();
-
   /**
    *
    *

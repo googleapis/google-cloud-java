@@ -40,7 +40,6 @@ public interface DeleteExternalApiRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

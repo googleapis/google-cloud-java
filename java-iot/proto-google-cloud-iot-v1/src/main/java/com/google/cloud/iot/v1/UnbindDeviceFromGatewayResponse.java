@@ -33,7 +33,6 @@ public final class UnbindDeviceFromGatewayResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.UnbindDeviceFromGatewayResponse)
     UnbindDeviceFromGatewayResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UnbindDeviceFromGatewayResponse.newBuilder() to construct.
   private UnbindDeviceFromGatewayResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,7 +213,6 @@ public final class UnbindDeviceFromGatewayResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

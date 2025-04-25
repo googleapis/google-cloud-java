@@ -33,7 +33,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.FilterResult)
     FilterResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FilterResult.newBuilder() to construct.
   private FilterResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     private FilterResultCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,7 +123,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RAI_FILTER_RESULT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRaiFilterResult() {
     return filterResultCase_ == 1;
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.modelarmor.v1.RaiFilterResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SDP_FILTER_RESULT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdpFilterResult() {
     return filterResultCase_ == 2;
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.modelarmor.v1.SdpFilterResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PI_AND_JAILBREAK_FILTER_RESULT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPiAndJailbreakFilterResult() {
     return filterResultCase_ == 3;
   }
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.modelarmor.v1.PiAndJailbreakFilterResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MALICIOUS_URI_FILTER_RESULT_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaliciousUriFilterResult() {
     return filterResultCase_ == 4;
   }
-
   /**
    *
    *
@@ -331,7 +318,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -352,7 +338,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CSAM_FILTER_FILTER_RESULT_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCsamFilterFilterResult() {
     return filterResultCase_ == 5;
   }
-
   /**
    *
    *
@@ -387,7 +371,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.modelarmor.v1.CsamFilterResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -407,7 +390,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIRUS_SCAN_FILTER_RESULT_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -423,7 +405,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVirusScanFilterResult() {
     return filterResultCase_ == 6;
   }
-
   /**
    *
    *
@@ -442,7 +423,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.modelarmor.v1.VirusScanFilterResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -714,7 +694,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1021,7 +1000,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.RaiFilterResult.Builder,
             com.google.cloud.modelarmor.v1.RaiFilterResultOrBuilder>
         raiFilterResultBuilder_;
-
     /**
      *
      *
@@ -1037,7 +1015,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRaiFilterResult() {
       return filterResultCase_ == 1;
     }
-
     /**
      *
      *
@@ -1063,7 +1040,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.RaiFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1082,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1115,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1140,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1152,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.modelarmor.v1.RaiFilterResult.Builder getRaiFilterResultBuilder() {
       return getRaiFilterResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1201,7 +1172,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.RaiFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1210,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.SdpFilterResult.Builder,
             com.google.cloud.modelarmor.v1.SdpFilterResultOrBuilder>
         sdpFilterResultBuilder_;
-
     /**
      *
      *
@@ -1256,7 +1225,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdpFilterResult() {
       return filterResultCase_ == 2;
     }
-
     /**
      *
      *
@@ -1282,7 +1250,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.SdpFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1272,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1292,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1325,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1350,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1362,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.modelarmor.v1.SdpFilterResult.Builder getSdpFilterResultBuilder() {
       return getSdpFilterResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1420,7 +1382,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.SdpFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1459,7 +1420,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.PiAndJailbreakFilterResult.Builder,
             com.google.cloud.modelarmor.v1.PiAndJailbreakFilterResultOrBuilder>
         piAndJailbreakFilterResultBuilder_;
-
     /**
      *
      *
@@ -1477,7 +1437,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPiAndJailbreakFilterResult() {
       return filterResultCase_ == 3;
     }
-
     /**
      *
      *
@@ -1506,7 +1465,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.PiAndJailbreakFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1532,7 +1490,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1512,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1548,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1575,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1590,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         getPiAndJailbreakFilterResultBuilder() {
       return getPiAndJailbreakFilterResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1660,7 +1613,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.PiAndJailbreakFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1702,7 +1654,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.Builder,
             com.google.cloud.modelarmor.v1.MaliciousUriFilterResultOrBuilder>
         maliciousUriFilterResultBuilder_;
-
     /**
      *
      *
@@ -1719,7 +1670,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaliciousUriFilterResult() {
       return filterResultCase_ == 4;
     }
-
     /**
      *
      *
@@ -1746,7 +1696,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1771,7 +1720,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1793,7 +1741,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1776,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1856,7 +1802,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1816,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         getMaliciousUriFilterResultBuilder() {
       return getMaliciousUriFilterResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1894,7 +1838,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1935,7 +1878,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.CsamFilterResult.Builder,
             com.google.cloud.modelarmor.v1.CsamFilterResultOrBuilder>
         csamFilterFilterResultBuilder_;
-
     /**
      *
      *
@@ -1951,7 +1893,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCsamFilterFilterResult() {
       return filterResultCase_ == 5;
     }
-
     /**
      *
      *
@@ -1977,7 +1918,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.CsamFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2001,7 +1941,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2022,7 +1961,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2057,7 +1995,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2020,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2097,7 +2033,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         getCsamFilterFilterResultBuilder() {
       return getCsamFilterFilterResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2119,7 +2054,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.CsamFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2158,7 +2092,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.VirusScanFilterResult.Builder,
             com.google.cloud.modelarmor.v1.VirusScanFilterResultOrBuilder>
         virusScanFilterResultBuilder_;
-
     /**
      *
      *
@@ -2174,7 +2107,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVirusScanFilterResult() {
       return filterResultCase_ == 6;
     }
-
     /**
      *
      *
@@ -2200,7 +2132,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.VirusScanFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2224,7 +2155,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2245,7 +2175,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2280,7 +2209,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       filterResultCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2234,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2320,7 +2247,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         getVirusScanFilterResultBuilder() {
       return getVirusScanFilterResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2342,7 +2268,6 @@ public final class FilterResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.modelarmor.v1.VirusScanFilterResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *

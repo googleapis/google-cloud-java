@@ -36,7 +36,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return Whether the gcsPath field is set.
    */
   boolean hasGcsPath();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return Whether the dynamicTemplate field is set.
    */
   boolean hasDynamicTemplate();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The dynamicTemplate.
    */
   com.google.dataflow.v1beta3.DynamicTemplateLaunchParams getDynamicTemplate();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return Whether the launchParameters field is set.
    */
   boolean hasLaunchParameters();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The launchParameters.
    */
   com.google.dataflow.v1beta3.LaunchTemplateParameters getLaunchParameters();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SshScriptOrBuilder
    * @return The script.
    */
   java.lang.String getScript();
-
   /**
    *
    *

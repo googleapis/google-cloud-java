@@ -51,7 +51,6 @@ public interface GetContextRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

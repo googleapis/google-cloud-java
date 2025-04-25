@@ -58,7 +58,6 @@ public interface StreamingStorageConfigOrBuilder
    * @return The annotationResultStorageDirectory.
    */
   java.lang.String getAnnotationResultStorageDirectory();
-
   /**
    *
    *

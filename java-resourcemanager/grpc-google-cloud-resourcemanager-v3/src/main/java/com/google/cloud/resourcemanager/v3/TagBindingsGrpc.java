@@ -234,19 +234,6 @@ public final class TagBindingsGrpc {
     return TagBindingsStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TagBindingsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TagBindingsBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<TagBindingsBlockingV2Stub>() {
-          @java.lang.Override
-          public TagBindingsBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new TagBindingsBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return TagBindingsBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -457,83 +444,6 @@ public final class TagBindingsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TagBindings.
-   *
-   * <pre>
-   * Allow users to create and manage TagBindings between TagValues and
-   * different Google Cloud resources throughout the GCP resource hierarchy.
-   * </pre>
-   */
-  public static final class TagBindingsBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TagBindingsBlockingV2Stub> {
-    private TagBindingsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TagBindingsBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TagBindingsBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the TagBindings for the given Google Cloud resource, as specified
-     * with `parent`.
-     * NOTE: The `parent` field is expected to be a full resource name:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * </pre>
-     */
-    public com.google.cloud.resourcemanager.v3.ListTagBindingsResponse listTagBindings(
-        com.google.cloud.resourcemanager.v3.ListTagBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListTagBindingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a TagBinding between a TagValue and a Google Cloud resource.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createTagBinding(
-        com.google.cloud.resourcemanager.v3.CreateTagBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateTagBindingMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a TagBinding.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteTagBinding(
-        com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteTagBindingMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Return a list of effective tags for the given Google Cloud resource, as
-     * specified in `parent`.
-     * </pre>
-     */
-    public com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse listEffectiveTags(
-        com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEffectiveTagsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service TagBindings.
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and

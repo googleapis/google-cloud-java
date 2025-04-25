@@ -23,8 +23,7 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Response message for
- * [SecretManagerService.ListSecretVersions][google.cloud.secrets.v1beta1.SecretManagerService.ListSecretVersions].
+ * Response message for [SecretManagerService.ListSecretVersions][google.cloud.secrets.v1beta1.SecretManagerService.ListSecretVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.ListSecretVersionsResponse}
@@ -34,7 +33,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.ListSecretVersionsResponse)
     ListSecretVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSecretVersionsResponse.newBuilder() to construct.
   private ListSecretVersionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,13 +68,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.secretmanager.v1beta1.SecretVersion> versions_;
-
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-   * sorted in reverse by create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+   * create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -85,13 +82,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.secretmanager.v1beta1.SecretVersion> getVersionsList() {
     return versions_;
   }
-
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-   * sorted in reverse by create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+   * create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -101,13 +97,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       getVersionsOrBuilderList() {
     return versions_;
   }
-
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-   * sorted in reverse by create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+   * create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -116,13 +111,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
   public int getVersionsCount() {
     return versions_.size();
   }
-
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-   * sorted in reverse by create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+   * create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -131,13 +125,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
   public com.google.cloud.secretmanager.v1beta1.SecretVersion getVersions(int index) {
     return versions_.get(index);
   }
-
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-   * sorted in reverse by create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+   * create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -152,14 +145,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-   * to retrieve the next page.
+   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -178,14 +169,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-   * to retrieve the next page.
+   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -207,13 +196,11 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
    * <pre>
-   * The total number of
-   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+   * The total number of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
@@ -406,13 +393,11 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
-   * Response message for
-   * [SecretManagerService.ListSecretVersions][google.cloud.secrets.v1beta1.SecretManagerService.ListSecretVersions].
+   * Response message for [SecretManagerService.ListSecretVersions][google.cloud.secrets.v1beta1.SecretManagerService.ListSecretVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.ListSecretVersionsResponse}
@@ -693,8 +678,8 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -706,13 +691,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -724,13 +708,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -742,13 +725,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -767,13 +749,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -789,13 +770,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -813,13 +793,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -838,13 +817,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -860,13 +838,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -882,13 +859,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -904,13 +880,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -925,13 +900,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -946,13 +920,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -961,13 +934,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         int index) {
       return getVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -980,13 +952,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -999,13 +970,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(versions_);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -1014,13 +984,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       return getVersionsFieldBuilder()
           .addBuilder(com.google.cloud.secretmanager.v1beta1.SecretVersion.getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -1031,13 +1000,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.secretmanager.v1beta1.SecretVersion.getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
-     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
-     * sorted in reverse by create_time (newest first).
+     * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
+     * create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -1065,14 +1033,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-     * to retrieve the next page.
+     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1090,14 +1056,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-     * to retrieve the next page.
+     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1115,14 +1079,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-     * to retrieve the next page.
+     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1139,14 +1101,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-     * to retrieve the next page.
+     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1159,14 +1119,12 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
-     * to retrieve the next page.
+     * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1186,13 +1144,11 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     }
 
     private int totalSize_;
-
     /**
      *
      *
      * <pre>
-     * The total number of
-     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * The total number of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1203,13 +1159,11 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
      * <pre>
-     * The total number of
-     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * The total number of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1224,13 +1178,11 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * The total number of
-     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * The total number of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>int32 total_size = 3;</code>

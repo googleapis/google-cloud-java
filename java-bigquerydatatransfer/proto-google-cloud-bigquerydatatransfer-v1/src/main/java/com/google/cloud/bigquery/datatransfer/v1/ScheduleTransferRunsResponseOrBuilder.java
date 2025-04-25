@@ -34,7 +34,6 @@ public interface ScheduleTransferRunsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> getRunsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ScheduleTransferRunsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferRun getRuns(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ScheduleTransferRunsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
   int getRunsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ScheduleTransferRunsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getRunsOrBuilderList();
-
   /**
    *
    *

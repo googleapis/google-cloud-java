@@ -38,7 +38,6 @@ public interface GetDlpJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

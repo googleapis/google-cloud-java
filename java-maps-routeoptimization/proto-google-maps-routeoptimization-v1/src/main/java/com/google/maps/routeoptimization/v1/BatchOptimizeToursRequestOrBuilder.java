@@ -42,7 +42,6 @@ public interface BatchOptimizeToursRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface BatchOptimizeToursRequestOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest.AsyncModelConfig>
       getModelConfigsList();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface BatchOptimizeToursRequestOrBuilder
    */
   com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest.AsyncModelConfig getModelConfigs(
       int index);
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface BatchOptimizeToursRequestOrBuilder
    * </code>
    */
   int getModelConfigsCount();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface BatchOptimizeToursRequestOrBuilder
               com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest
                   .AsyncModelConfigOrBuilder>
       getModelConfigsOrBuilderList();
-
   /**
    *
    *

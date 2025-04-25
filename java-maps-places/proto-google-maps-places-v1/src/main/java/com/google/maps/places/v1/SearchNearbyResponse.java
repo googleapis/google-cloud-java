@@ -33,7 +33,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchNearbyResponse)
     SearchNearbyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchNearbyResponse.newBuilder() to construct.
   private SearchNearbyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.Place> places_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.maps.places.v1.Place> getPlacesList() {
     return places_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       getPlacesOrBuilderList() {
     return places_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
   public int getPlacesCount() {
     return places_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
   public com.google.maps.places.v1.Place getPlaces(int index) {
     return places_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.RoutingSummary> routingSummaries_;
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList() {
     return routingSummaries_;
   }
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       getRoutingSummariesOrBuilderList() {
     return routingSummaries_;
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
   public int getRoutingSummariesCount() {
     return routingSummaries_.size();
   }
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
   public com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index) {
     return routingSummaries_.get(index);
   }
-
   /**
    *
    *
@@ -414,7 +403,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -730,7 +718,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return placesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return placesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return placesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +881,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +955,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
     public com.google.maps.places.v1.Place.Builder getPlacesBuilder(int index) {
       return getPlacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return placesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1016,7 +990,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(places_);
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1004,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       return getPlacesFieldBuilder()
           .addBuilder(com.google.maps.places.v1.Place.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1046,7 +1018,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       return getPlacesFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.Place.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1115,7 +1086,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return routingSummariesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1136,7 +1106,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return routingSummariesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1126,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return routingSummariesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1152,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1176,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1202,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1228,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1252,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1276,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1300,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1323,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1346,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1403,7 +1362,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
     public com.google.maps.places.v1.RoutingSummary.Builder getRoutingSummariesBuilder(int index) {
       return getRoutingSummariesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1425,7 +1383,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return routingSummariesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1447,7 +1404,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(routingSummaries_);
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1421,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       return getRoutingSummariesFieldBuilder()
           .addBuilder(com.google.maps.places.v1.RoutingSummary.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1483,7 +1438,6 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
       return getRoutingSummariesFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.RoutingSummary.getDefaultInstance());
     }
-
     /**
      *
      *

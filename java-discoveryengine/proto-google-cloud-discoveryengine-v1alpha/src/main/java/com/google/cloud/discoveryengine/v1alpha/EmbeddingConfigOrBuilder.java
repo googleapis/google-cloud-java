@@ -36,7 +36,6 @@ public interface EmbeddingConfigOrBuilder
    * @return The fieldPath.
    */
   java.lang.String getFieldPath();
-
   /**
    *
    *

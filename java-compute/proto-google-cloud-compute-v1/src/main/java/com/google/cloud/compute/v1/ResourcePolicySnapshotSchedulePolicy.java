@@ -34,7 +34,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy)
     ResourcePolicySnapshotSchedulePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicySnapshotSchedulePolicy.newBuilder() to construct.
   private ResourcePolicySnapshotSchedulePolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
   public static final int RETENTION_POLICY_FIELD_NUMBER = 68625779;
   private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       retentionPolicy_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
   public boolean hasRetentionPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             .getDefaultInstance()
         : retentionPolicy_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
 
   public static final int SCHEDULE_FIELD_NUMBER = 375820951;
   private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule_;
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
   public boolean hasSchedule() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             .getDefaultInstance()
         : schedule_;
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
   public static final int SNAPSHOT_PROPERTIES_FIELD_NUMBER = 185371278;
   private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
       snapshotProperties_;
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
   public boolean hasSnapshotProperties() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             .getDefaultInstance()
         : snapshotProperties_;
   }
-
   /**
    *
    *
@@ -451,7 +441,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -704,7 +693,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             com.google.cloud.compute.v1
                 .ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder>
         retentionPolicyBuilder_;
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public boolean hasRetentionPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
         return retentionPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return getRetentionPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             : retentionPolicy_;
       }
     }
-
     /**
      *
      *
@@ -930,7 +910,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder,
             com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder>
         scheduleBuilder_;
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public boolean hasSchedule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -971,7 +949,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
         return scheduleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -997,7 +974,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       }
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1067,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             : schedule_;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1126,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             com.google.cloud.compute.v1
                 .ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder>
         snapshotPropertiesBuilder_;
-
     /**
      *
      *
@@ -1172,7 +1142,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public boolean hasSnapshotProperties() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1197,7 +1166,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
         return snapshotPropertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1191,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1214,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1246,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       }
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1267,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1285,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
       onChanged();
       return getSnapshotPropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1345,7 +1308,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
             : snapshotProperties_;
       }
     }
-
     /**
      *
      *

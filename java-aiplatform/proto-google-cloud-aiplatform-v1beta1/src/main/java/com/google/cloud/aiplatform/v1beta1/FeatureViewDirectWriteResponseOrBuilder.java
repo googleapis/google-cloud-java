@@ -46,7 +46,6 @@ public interface FeatureViewDirectWriteResponseOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface FeatureViewDirectWriteResponseOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface FeatureViewDirectWriteResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.WriteResponse>
       getWriteResponsesList();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface FeatureViewDirectWriteResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.WriteResponse
       getWriteResponses(int index);
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface FeatureViewDirectWriteResponseOrBuilder
    * </code>
    */
   int getWriteResponsesCount();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface FeatureViewDirectWriteResponseOrBuilder
               com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse
                   .WriteResponseOrBuilder>
       getWriteResponsesOrBuilderList();
-
   /**
    *
    *

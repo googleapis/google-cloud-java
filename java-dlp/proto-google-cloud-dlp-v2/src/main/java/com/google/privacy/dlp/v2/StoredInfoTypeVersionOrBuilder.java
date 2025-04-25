@@ -36,7 +36,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return Whether the stats field is set.
    */
   boolean hasStats();
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public interface StoredInfoTypeVersionOrBuilder
    * @return The stats.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeStats getStats();
-
   /**
    *
    *

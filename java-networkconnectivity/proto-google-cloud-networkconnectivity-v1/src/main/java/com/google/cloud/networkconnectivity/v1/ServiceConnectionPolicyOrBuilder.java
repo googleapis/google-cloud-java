@@ -39,7 +39,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -157,11 +151,9 @@ public interface ServiceConnectionPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -187,7 +178,6 @@ public interface ServiceConnectionPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -211,7 +201,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The serviceClass.
    */
   java.lang.String getServiceClass();
-
   /**
    *
    *
@@ -306,7 +293,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The enum numeric value on the wire for infrastructure.
    */
   int getInfrastructureValue();
-
   /**
    *
    *
@@ -337,7 +323,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return Whether the pscConfig field is set.
    */
   boolean hasPscConfig();
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The pscConfig.
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy.PscConfig getPscConfig();
-
   /**
    *
    *
@@ -381,7 +365,6 @@ public interface ServiceConnectionPolicyOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy.PscConnection>
       getPscConnectionsList();
-
   /**
    *
    *
@@ -396,7 +379,6 @@ public interface ServiceConnectionPolicyOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy.PscConnection getPscConnections(
       int index);
-
   /**
    *
    *
@@ -410,7 +392,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * </code>
    */
   int getPscConnectionsCount();
-
   /**
    *
    *
@@ -428,7 +409,6 @@ public interface ServiceConnectionPolicyOrBuilder
               com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy
                   .PscConnectionOrBuilder>
       getPscConnectionsOrBuilderList();
-
   /**
    *
    *
@@ -458,7 +438,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -473,7 +452,6 @@ public interface ServiceConnectionPolicyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

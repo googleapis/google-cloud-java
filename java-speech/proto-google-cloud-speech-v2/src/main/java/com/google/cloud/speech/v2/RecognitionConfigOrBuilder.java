@@ -37,7 +37,6 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the autoDecodingConfig field is set.
    */
   boolean hasAutoDecodingConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RecognitionConfigOrBuilder
    * @return The autoDecodingConfig.
    */
   com.google.cloud.speech.v2.AutoDetectDecodingConfig getAutoDecodingConfig();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the explicitDecodingConfig field is set.
    */
   boolean hasExplicitDecodingConfig();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface RecognitionConfigOrBuilder
    * @return The explicitDecodingConfig.
    */
   com.google.cloud.speech.v2.ExplicitDecodingConfig getExplicitDecodingConfig();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface RecognitionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface RecognitionConfigOrBuilder
    * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface RecognitionConfigOrBuilder
    * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public interface RecognitionConfigOrBuilder
    * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the features field is set.
    */
   boolean hasFeatures();
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public interface RecognitionConfigOrBuilder
    * @return The features.
    */
   com.google.cloud.speech.v2.RecognitionFeatures getFeatures();
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the adaptation field is set.
    */
   boolean hasAdaptation();
-
   /**
    *
    *
@@ -304,7 +293,6 @@ public interface RecognitionConfigOrBuilder
    * @return The adaptation.
    */
   com.google.cloud.speech.v2.SpeechAdaptation getAdaptation();
-
   /**
    *
    *
@@ -334,7 +322,6 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the transcriptNormalization field is set.
    */
   boolean hasTranscriptNormalization();
-
   /**
    *
    *
@@ -352,7 +339,6 @@ public interface RecognitionConfigOrBuilder
    * @return The transcriptNormalization.
    */
   com.google.cloud.speech.v2.TranscriptNormalization getTranscriptNormalization();
-
   /**
    *
    *
@@ -384,7 +370,6 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the translationConfig field is set.
    */
   boolean hasTranslationConfig();
-
   /**
    *
    *
@@ -400,7 +385,6 @@ public interface RecognitionConfigOrBuilder
    * @return The translationConfig.
    */
   com.google.cloud.speech.v2.TranslationConfig getTranslationConfig();
-
   /**
    *
    *

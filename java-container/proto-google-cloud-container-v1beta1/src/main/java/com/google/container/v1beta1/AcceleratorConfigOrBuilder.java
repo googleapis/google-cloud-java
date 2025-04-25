@@ -50,7 +50,6 @@ public interface AcceleratorConfigOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface AcceleratorConfigOrBuilder
    * @return The gpuPartitionSize.
    */
   java.lang.String getGpuPartitionSize();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface AcceleratorConfigOrBuilder
    * @return Whether the gpuSharingConfig field is set.
    */
   boolean hasGpuSharingConfig();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface AcceleratorConfigOrBuilder
    * @return The gpuSharingConfig.
    */
   com.google.container.v1beta1.GPUSharingConfig getGpuSharingConfig();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface AcceleratorConfigOrBuilder
    * @return Whether the gpuDriverInstallationConfig field is set.
    */
   boolean hasGpuDriverInstallationConfig();
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public interface AcceleratorConfigOrBuilder
    * @return The gpuDriverInstallationConfig.
    */
   com.google.container.v1beta1.GPUDriverInstallationConfig getGpuDriverInstallationConfig();
-
   /**
    *
    *

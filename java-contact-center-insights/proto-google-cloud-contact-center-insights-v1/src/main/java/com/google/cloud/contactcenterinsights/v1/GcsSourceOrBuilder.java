@@ -37,7 +37,6 @@ public interface GcsSourceOrBuilder
    * @return The audioUri.
    */
   java.lang.String getAudioUri();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface GcsSourceOrBuilder
    * @return The transcriptUri.
    */
   java.lang.String getTranscriptUri();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.CashPurchaseSavings)
     CashPurchaseSavingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CashPurchaseSavings.newBuilder() to construct.
   private CashPurchaseSavings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int OUT_OF_POCKET_COST_FIELD_NUMBER = 1;
   private com.google.type.Money outOfPocketCost_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public boolean hasOutOfPocketCost() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public com.google.type.Money getOutOfPocketCost() {
     return outOfPocketCost_ == null ? com.google.type.Money.getDefaultInstance() : outOfPocketCost_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
 
   public static final int UPFRONT_COST_FIELD_NUMBER = 2;
   private com.google.type.Money upfrontCost_;
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public boolean hasUpfrontCost() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public com.google.type.Money getUpfrontCost() {
     return upfrontCost_ == null ? com.google.type.Money.getDefaultInstance() : upfrontCost_;
   }
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
 
   public static final int REBATE_VALUE_FIELD_NUMBER = 3;
   private com.google.type.Money rebateValue_;
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public boolean hasRebateValue() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public com.google.type.Money getRebateValue() {
     return rebateValue_ == null ? com.google.type.Money.getDefaultInstance() : rebateValue_;
   }
-
   /**
    *
    *
@@ -222,7 +212,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
 
   public static final int PAYBACK_YEARS_FIELD_NUMBER = 4;
   private float paybackYears_ = 0F;
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public boolean hasPaybackYears() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -259,7 +247,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
 
   public static final int SAVINGS_FIELD_NUMBER = 5;
   private com.google.maps.solar.v1.SavingsOverTime savings_;
-
   /**
    *
    *
@@ -275,7 +262,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
   public boolean hasSavings() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +279,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         ? com.google.maps.solar.v1.SavingsOverTime.getDefaultInstance()
         : savings_;
   }
-
   /**
    *
    *
@@ -531,7 +516,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -807,7 +791,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         outOfPocketCostBuilder_;
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     public boolean hasOutOfPocketCost() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         return outOfPocketCostBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +933,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOutOfPocketCostFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
             : outOfPocketCost_;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +981,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         upfrontCostBuilder_;
-
     /**
      *
      *
@@ -1023,7 +997,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     public boolean hasUpfrontCost() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1044,7 +1017,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         return upfrontCostBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1041,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1062,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1112,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1128,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpfrontCostFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1179,7 +1146,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         return upfrontCost_ == null ? com.google.type.Money.getDefaultInstance() : upfrontCost_;
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1176,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         rebateValueBuilder_;
-
     /**
      *
      *
@@ -1225,7 +1190,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     public boolean hasRebateValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1244,7 +1208,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         return rebateValueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1267,7 +1230,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1249,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1276,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1295,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1309,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRebateValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1367,7 +1325,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         return rebateValue_ == null ? com.google.type.Money.getDefaultInstance() : rebateValue_;
       }
     }
-
     /**
      *
      *
@@ -1393,7 +1350,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     }
 
     private float paybackYears_;
-
     /**
      *
      *
@@ -1410,7 +1366,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     public boolean hasPaybackYears() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1427,7 +1382,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     public float getPaybackYears() {
       return paybackYears_;
     }
-
     /**
      *
      *
@@ -1448,7 +1402,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1474,7 +1427,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
             com.google.maps.solar.v1.SavingsOverTime.Builder,
             com.google.maps.solar.v1.SavingsOverTimeOrBuilder>
         savingsBuilder_;
-
     /**
      *
      *
@@ -1489,7 +1441,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
     public boolean hasSavings() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1510,7 +1461,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
         return savingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1533,7 +1483,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1553,7 +1502,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1529,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1548,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1616,7 +1562,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSavingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1635,7 +1580,6 @@ public final class CashPurchaseSavings extends com.google.protobuf.GeneratedMess
             : savings_;
       }
     }
-
     /**
      *
      *

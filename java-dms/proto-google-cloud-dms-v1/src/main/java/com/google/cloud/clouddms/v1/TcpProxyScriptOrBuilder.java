@@ -36,7 +36,6 @@ public interface TcpProxyScriptOrBuilder
    * @return The script.
    */
   java.lang.String getScript();
-
   /**
    *
    *

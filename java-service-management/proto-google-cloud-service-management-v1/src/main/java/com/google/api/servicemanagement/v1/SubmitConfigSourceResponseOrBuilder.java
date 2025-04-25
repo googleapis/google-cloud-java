@@ -36,7 +36,6 @@ public interface SubmitConfigSourceResponseOrBuilder
    * @return Whether the serviceConfig field is set.
    */
   boolean hasServiceConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SubmitConfigSourceResponseOrBuilder
    * @return The serviceConfig.
    */
   com.google.api.Service getServiceConfig();
-
   /**
    *
    *

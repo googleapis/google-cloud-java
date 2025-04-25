@@ -36,7 +36,6 @@ public interface DtmfInputOrBuilder
    * @return The digits.
    */
   java.lang.String getDigits();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DtmfInputOrBuilder
    * @return The finishDigit.
    */
   java.lang.String getFinishDigit();
-
   /**
    *
    *

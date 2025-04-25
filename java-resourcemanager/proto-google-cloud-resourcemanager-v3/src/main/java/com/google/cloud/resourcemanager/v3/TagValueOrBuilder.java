@@ -36,7 +36,6 @@ public interface TagValueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface TagValueOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface TagValueOrBuilder
    * @return The shortName.
    */
   java.lang.String getShortName();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface TagValueOrBuilder
    * @return The namespacedName.
    */
   java.lang.String getNamespacedName();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface TagValueOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public interface TagValueOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public interface TagValueOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public interface TagValueOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public interface TagValueOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public interface TagValueOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

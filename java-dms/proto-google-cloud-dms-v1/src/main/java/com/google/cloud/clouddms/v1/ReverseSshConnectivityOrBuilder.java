@@ -37,7 +37,6 @@ public interface ReverseSshConnectivityOrBuilder
    * @return The vmIp.
    */
   java.lang.String getVmIp();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ReverseSshConnectivityOrBuilder
    * @return The vm.
    */
   java.lang.String getVm();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface ReverseSshConnectivityOrBuilder
    * @return The vpc.
    */
   java.lang.String getVpc();
-
   /**
    *
    *

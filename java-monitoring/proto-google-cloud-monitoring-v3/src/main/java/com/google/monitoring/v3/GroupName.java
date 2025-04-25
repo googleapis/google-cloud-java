@@ -284,8 +284,7 @@ public class GroupName implements ResourceName {
     private Builder(GroupName groupName) {
       Preconditions.checkArgument(
           Objects.equals(groupName.pathTemplate, PROJECT_GROUP),
-          "toBuilder is only supported when GroupName has the pattern of"
-              + " projects/{project}/groups/{group}");
+          "toBuilder is only supported when GroupName has the pattern of projects/{project}/groups/{group}");
       this.project = groupName.project;
       this.group = groupName.group;
     }

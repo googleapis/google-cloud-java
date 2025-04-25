@@ -37,7 +37,6 @@ public interface ProjectsSetCloudArmorTierRequestOrBuilder
    * @return Whether the cloudArmorTier field is set.
    */
   boolean hasCloudArmorTier();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ProjectsSetCloudArmorTierRequestOrBuilder
    * @return The cloudArmorTier.
    */
   java.lang.String getCloudArmorTier();
-
   /**
    *
    *

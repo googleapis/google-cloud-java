@@ -33,7 +33,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.ListBlueprintsResponse)
     ListBlueprintsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBlueprintsResponse.newBuilder() to construct.
   private ListBlueprintsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.telcoautomation.v1alpha1.Blueprint> blueprints_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.telcoautomation.v1alpha1.Blueprint> getBlueprintsList() {
     return blueprints_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       getBlueprintsOrBuilderList() {
     return blueprints_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
   public int getBlueprintsCount() {
     return blueprints_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.telcoautomation.v1alpha1.Blueprint getBlueprints(int index) {
     return blueprints_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return blueprintsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return blueprintsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return blueprintsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getBlueprintsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return blueprintsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(blueprints_);
       }
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       return getBlueprintsFieldBuilder()
           .addBuilder(com.google.cloud.telcoautomation.v1alpha1.Blueprint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.telcoautomation.v1alpha1.Blueprint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -994,7 +968,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1018,7 +991,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1054,6 @@ public final class ListBlueprintsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

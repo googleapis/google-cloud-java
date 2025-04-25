@@ -63,7 +63,6 @@ public interface IssueModelLabelStatsOrBuilder
    * </code>
    */
   int getIssueStatsCount();
-
   /**
    *
    *
@@ -76,14 +75,12 @@ public interface IssueModelLabelStatsOrBuilder
    * </code>
    */
   boolean containsIssueStats(java.lang.String key);
-
   /** Use {@link #getIssueStatsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
       getIssueStats();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface IssueModelLabelStatsOrBuilder
           java.lang.String,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
       getIssueStatsMap();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface IssueModelLabelStatsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue);
-
   /**
    *
    *

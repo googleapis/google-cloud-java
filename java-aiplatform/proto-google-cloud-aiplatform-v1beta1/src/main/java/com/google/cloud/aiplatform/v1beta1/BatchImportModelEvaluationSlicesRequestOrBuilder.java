@@ -40,7 +40,6 @@ public interface BatchImportModelEvaluationSlicesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BatchImportModelEvaluationSlicesRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>
       getModelEvaluationSlicesList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface BatchImportModelEvaluationSlicesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice getModelEvaluationSlices(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface BatchImportModelEvaluationSlicesRequestOrBuilder
    * </code>
    */
   int getModelEvaluationSlicesCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface BatchImportModelEvaluationSlicesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelEvaluationSliceOrBuilder>
       getModelEvaluationSlicesOrBuilderList();
-
   /**
    *
    *

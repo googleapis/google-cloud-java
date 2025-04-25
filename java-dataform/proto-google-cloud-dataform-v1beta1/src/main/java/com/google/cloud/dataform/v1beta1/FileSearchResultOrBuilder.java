@@ -36,7 +36,6 @@ public interface FileSearchResultOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

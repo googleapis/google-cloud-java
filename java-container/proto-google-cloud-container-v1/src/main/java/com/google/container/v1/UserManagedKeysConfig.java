@@ -34,7 +34,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1.UserManagedKeysConfig)
     UserManagedKeysConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserManagedKeysConfig.newBuilder() to construct.
   private UserManagedKeysConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterCa_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etcdApiCa_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etcdPeerCa_ = "";
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceAccountSigningKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getServiceAccountSigningKeysList() {
     return serviceAccountSigningKeys_;
   }
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   public int getServiceAccountSigningKeysCount() {
     return serviceAccountSigningKeys_.size();
   }
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   public java.lang.String getServiceAccountSigningKeys(int index) {
     return serviceAccountSigningKeys_.get(index);
   }
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceAccountVerificationKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -355,7 +343,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getServiceAccountVerificationKeysList() {
     return serviceAccountVerificationKeys_;
   }
-
   /**
    *
    *
@@ -376,7 +363,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   public int getServiceAccountVerificationKeysCount() {
     return serviceAccountVerificationKeys_.size();
   }
-
   /**
    *
    *
@@ -398,7 +384,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
   public java.lang.String getServiceAccountVerificationKeys(int index) {
     return serviceAccountVerificationKeys_.get(index);
   }
-
   /**
    *
    *
@@ -425,7 +410,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object aggregationCa_ = "";
-
   /**
    *
    *
@@ -450,7 +434,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -480,7 +463,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object controlPlaneDiskEncryptionKey_ = "";
-
   /**
    *
    *
@@ -506,7 +488,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -537,7 +518,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gkeopsEtcdBackupEncryptionKey_ = "";
-
   /**
    *
    *
@@ -563,7 +543,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -838,7 +817,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1142,7 +1120,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object clusterCa_ = "";
-
     /**
      *
      *
@@ -1166,7 +1143,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1166,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1188,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1206,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1231,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object etcdApiCa_ = "";
-
     /**
      *
      *
@@ -1282,7 +1254,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1306,7 +1277,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1299,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1317,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1342,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object etcdPeerCa_ = "";
-
     /**
      *
      *
@@ -1398,7 +1365,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1422,7 +1388,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1445,7 +1410,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1428,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1499,7 +1462,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1521,7 +1483,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       serviceAccountSigningKeys_.makeImmutable();
       return serviceAccountSigningKeys_;
     }
-
     /**
      *
      *
@@ -1542,7 +1503,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     public int getServiceAccountSigningKeysCount() {
       return serviceAccountSigningKeys_.size();
     }
-
     /**
      *
      *
@@ -1564,7 +1524,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     public java.lang.String getServiceAccountSigningKeys(int index) {
       return serviceAccountSigningKeys_.get(index);
     }
-
     /**
      *
      *
@@ -1586,7 +1545,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getServiceAccountSigningKeysBytes(int index) {
       return serviceAccountSigningKeys_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1616,7 +1574,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1602,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1671,7 +1627,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1651,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1691,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1759,7 +1712,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       serviceAccountVerificationKeys_.makeImmutable();
       return serviceAccountVerificationKeys_;
     }
-
     /**
      *
      *
@@ -1780,7 +1732,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     public int getServiceAccountVerificationKeysCount() {
       return serviceAccountVerificationKeys_.size();
     }
-
     /**
      *
      *
@@ -1802,7 +1753,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     public java.lang.String getServiceAccountVerificationKeys(int index) {
       return serviceAccountVerificationKeys_.get(index);
     }
-
     /**
      *
      *
@@ -1824,7 +1774,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getServiceAccountVerificationKeysBytes(int index) {
       return serviceAccountVerificationKeys_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1854,7 +1803,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1831,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1911,7 +1858,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1936,7 +1882,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1913,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object aggregationCa_ = "";
-
     /**
      *
      *
@@ -1992,7 +1936,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2016,7 +1959,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2039,7 +1981,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2058,7 +1999,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2084,7 +2024,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object controlPlaneDiskEncryptionKey_ = "";
-
     /**
      *
      *
@@ -2110,7 +2049,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2136,7 +2074,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2161,7 +2098,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2118,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2210,7 +2145,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object gkeopsEtcdBackupEncryptionKey_ = "";
-
     /**
      *
      *
@@ -2236,7 +2170,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2195,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2287,7 +2219,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2308,7 +2239,6 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

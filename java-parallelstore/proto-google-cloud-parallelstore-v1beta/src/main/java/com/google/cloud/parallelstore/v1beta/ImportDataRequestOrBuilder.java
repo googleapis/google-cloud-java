@@ -36,7 +36,6 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the sourceGcsBucket field is set.
    */
   boolean hasSourceGcsBucket();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportDataRequestOrBuilder
    * @return The sourceGcsBucket.
    */
   com.google.cloud.parallelstore.v1beta.SourceGcsBucket getSourceGcsBucket();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the destinationParallelstore field is set.
    */
   boolean hasDestinationParallelstore();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ImportDataRequestOrBuilder
    * @return The destinationParallelstore.
    */
   com.google.cloud.parallelstore.v1beta.DestinationParallelstore getDestinationParallelstore();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ImportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ImportDataRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public interface ImportDataRequestOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the metadataOptions field is set.
    */
   boolean hasMetadataOptions();
-
   /**
    *
    *
@@ -268,7 +260,6 @@ public interface ImportDataRequestOrBuilder
    * @return The metadataOptions.
    */
   com.google.cloud.parallelstore.v1beta.TransferMetadataOptions getMetadataOptions();
-
   /**
    *
    *

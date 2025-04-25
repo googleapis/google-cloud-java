@@ -38,7 +38,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * @return Whether the productInfo field is set.
    */
   boolean hasProductInfo();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * @return The productInfo.
    */
   com.google.shopping.merchant.productstudio.v1alpha.ProductInfo getProductInfo();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * @return Whether the outputSpec field is set.
    */
   boolean hasOutputSpec();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * @return The outputSpec.
    */
   com.google.shopping.merchant.productstudio.v1alpha.OutputSpec getOutputSpec();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    */
   java.util.List<com.google.shopping.merchant.productstudio.v1alpha.TitleExample>
       getTitleExamplesList();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * </code>
    */
   com.google.shopping.merchant.productstudio.v1alpha.TitleExample getTitleExamples(int index);
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    * </code>
    */
   int getTitleExamplesCount();
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public interface GenerateProductTextSuggestionsRequestOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.productstudio.v1alpha.TitleExampleOrBuilder>
       getTitleExamplesOrBuilderList();
-
   /**
    *
    *

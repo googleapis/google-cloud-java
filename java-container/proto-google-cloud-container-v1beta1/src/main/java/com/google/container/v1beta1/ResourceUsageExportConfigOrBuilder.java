@@ -38,7 +38,6 @@ public interface ResourceUsageExportConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ResourceUsageExportConfigOrBuilder
    */
   com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination
       getBigqueryDestination();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ResourceUsageExportConfigOrBuilder
    * @return Whether the consumptionMeteringConfig field is set.
    */
   boolean hasConsumptionMeteringConfig();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ResourceUsageExportConfigOrBuilder
    */
   com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig
       getConsumptionMeteringConfig();
-
   /**
    *
    *

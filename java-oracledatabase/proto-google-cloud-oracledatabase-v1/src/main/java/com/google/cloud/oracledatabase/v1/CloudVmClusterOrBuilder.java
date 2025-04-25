@@ -37,7 +37,6 @@ public interface CloudVmClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CloudVmClusterOrBuilder
    * @return The exadataInfrastructure.
    */
   java.lang.String getExadataInfrastructure();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CloudVmClusterOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CloudVmClusterOrBuilder
    * @return The gcpOracleZone.
    */
   java.lang.String getGcpOracleZone();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface CloudVmClusterOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface CloudVmClusterOrBuilder
    * @return The properties.
    */
   com.google.cloud.oracledatabase.v1.CloudVmClusterProperties getProperties();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface CloudVmClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -204,11 +197,9 @@ public interface CloudVmClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface CloudVmClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface CloudVmClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface CloudVmClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface CloudVmClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -298,7 +285,6 @@ public interface CloudVmClusterOrBuilder
    * @return The cidr.
    */
   java.lang.String getCidr();
-
   /**
    *
    *
@@ -324,7 +310,6 @@ public interface CloudVmClusterOrBuilder
    * @return The backupSubnetCidr.
    */
   java.lang.String getBackupSubnetCidr();
-
   /**
    *
    *
@@ -353,7 +338,6 @@ public interface CloudVmClusterOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *

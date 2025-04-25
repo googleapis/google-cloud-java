@@ -36,7 +36,6 @@ public interface ActiveLearningConfigOrBuilder
    * @return Whether the maxDataItemCount field is set.
    */
   boolean hasMaxDataItemCount();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ActiveLearningConfigOrBuilder
    * @return Whether the maxDataItemPercentage field is set.
    */
   boolean hasMaxDataItemPercentage();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ActiveLearningConfigOrBuilder
    * @return Whether the sampleConfig field is set.
    */
   boolean hasSampleConfig();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ActiveLearningConfigOrBuilder
    * @return The sampleConfig.
    */
   com.google.cloud.aiplatform.v1beta1.SampleConfig getSampleConfig();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface ActiveLearningConfigOrBuilder
    * @return Whether the trainingConfig field is set.
    */
   boolean hasTrainingConfig();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface ActiveLearningConfigOrBuilder
    * @return The trainingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.TrainingConfig getTrainingConfig();
-
   /**
    *
    *

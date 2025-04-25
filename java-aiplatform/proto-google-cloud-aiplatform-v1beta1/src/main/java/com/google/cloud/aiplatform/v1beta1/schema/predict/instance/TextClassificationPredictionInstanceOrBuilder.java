@@ -36,7 +36,6 @@ public interface TextClassificationPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface TextClassificationPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

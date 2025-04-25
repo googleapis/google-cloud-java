@@ -37,7 +37,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
    */
   java.util.List<com.google.cloud.speech.v1.StreamingRecognitionResult> getResultsList();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
    */
   com.google.cloud.speech.v1.StreamingRecognitionResult getResults(int index);
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface StreamingRecognizeResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1.StreamingRecognitionResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The enum numeric value on the wire for speechEventType.
    */
   int getSpeechEventTypeValue();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return Whether the speechEventTime field is set.
    */
   boolean hasSpeechEventTime();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The speechEventTime.
    */
   com.google.protobuf.Duration getSpeechEventTime();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return Whether the totalBilledTime field is set.
    */
   boolean hasTotalBilledTime();
-
   /**
    *
    *
@@ -227,7 +217,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The totalBilledTime.
    */
   com.google.protobuf.Duration getTotalBilledTime();
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return Whether the speechAdaptationInfo field is set.
    */
   boolean hasSpeechAdaptationInfo();
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The speechAdaptationInfo.
    */
   com.google.cloud.speech.v1.SpeechAdaptationInfo getSpeechAdaptationInfo();
-
   /**
    *
    *

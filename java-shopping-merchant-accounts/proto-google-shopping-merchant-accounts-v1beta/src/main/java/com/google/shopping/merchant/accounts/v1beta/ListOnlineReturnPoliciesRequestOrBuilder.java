@@ -39,7 +39,6 @@ public interface ListOnlineReturnPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface ListOnlineReturnPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

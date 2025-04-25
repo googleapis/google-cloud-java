@@ -33,7 +33,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ListFilesResponse)
     ListFilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFilesResponse.newBuilder() to construct.
   private ListFilesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1.File> files_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.devtools.artifactregistry.v1.File> getFilesList() {
     return files_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       getFilesOrBuilderList() {
     return files_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
   public int getFilesCount() {
     return files_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.devtools.artifactregistry.v1.File getFiles(int index) {
     return files_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return filesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return filesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return filesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.devtools.artifactregistry.v1.File.Builder getFilesBuilder(int index) {
       return getFilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return filesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(files_);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       return getFilesFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1.File.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       return getFilesFieldBuilder()
           .addBuilder(index, com.google.devtools.artifactregistry.v1.File.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ListFilesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

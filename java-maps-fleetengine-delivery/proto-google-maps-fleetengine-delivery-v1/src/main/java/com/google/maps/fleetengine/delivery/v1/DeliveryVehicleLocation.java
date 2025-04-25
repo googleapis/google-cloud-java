@@ -33,7 +33,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.DeliveryVehicleLocation)
     DeliveryVehicleLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeliveryVehicleLocation.newBuilder() to construct.
   private DeliveryVehicleLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private com.google.type.LatLng location_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.type.LatLng getLocation() {
     return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int HORIZONTAL_ACCURACY_FIELD_NUMBER = 8;
   private com.google.protobuf.DoubleValue horizontalAccuracy_;
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasHorizontalAccuracy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : horizontalAccuracy_;
   }
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int LATLNG_ACCURACY_FIELD_NUMBER = 22;
   private com.google.protobuf.DoubleValue latlngAccuracy_;
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasLatlngAccuracy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : latlngAccuracy_;
   }
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int HEADING_FIELD_NUMBER = 2;
   private com.google.protobuf.Int32Value heading_;
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasHeading() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -277,7 +265,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.protobuf.Int32Value getHeading() {
     return heading_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : heading_;
   }
-
   /**
    *
    *
@@ -295,7 +282,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int BEARING_ACCURACY_FIELD_NUMBER = 10;
   private com.google.protobuf.DoubleValue bearingAccuracy_;
-
   /**
    *
    *
@@ -314,7 +300,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasBearingAccuracy() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : bearingAccuracy_;
   }
-
   /**
    *
    *
@@ -355,7 +339,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int HEADING_ACCURACY_FIELD_NUMBER = 23;
   private com.google.protobuf.DoubleValue headingAccuracy_;
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasHeadingAccuracy() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -389,7 +371,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : headingAccuracy_;
   }
-
   /**
    *
    *
@@ -408,7 +389,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int ALTITUDE_FIELD_NUMBER = 5;
   private com.google.protobuf.DoubleValue altitude_;
-
   /**
    *
    *
@@ -424,7 +404,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasAltitude() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -440,7 +419,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.protobuf.DoubleValue getAltitude() {
     return altitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : altitude_;
   }
-
   /**
    *
    *
@@ -457,7 +435,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int VERTICAL_ACCURACY_FIELD_NUMBER = 9;
   private com.google.protobuf.DoubleValue verticalAccuracy_;
-
   /**
    *
    *
@@ -476,7 +453,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasVerticalAccuracy() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -497,7 +473,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : verticalAccuracy_;
   }
-
   /**
    *
    *
@@ -517,7 +492,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int ALTITUDE_ACCURACY_FIELD_NUMBER = 24;
   private com.google.protobuf.DoubleValue altitudeAccuracy_;
-
   /**
    *
    *
@@ -533,7 +507,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasAltitudeAccuracy() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -551,7 +524,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : altitudeAccuracy_;
   }
-
   /**
    *
    *
@@ -570,7 +542,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SPEED_KMPH_FIELD_NUMBER = 3;
   private com.google.protobuf.Int32Value speedKmph_;
-
   /**
    *
    *
@@ -590,7 +561,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasSpeedKmph() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -610,7 +580,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.protobuf.Int32Value getSpeedKmph() {
     return speedKmph_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : speedKmph_;
   }
-
   /**
    *
    *
@@ -629,7 +598,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SPEED_FIELD_NUMBER = 6;
   private com.google.protobuf.DoubleValue speed_;
-
   /**
    *
    *
@@ -645,7 +613,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasSpeed() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -661,7 +628,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.protobuf.DoubleValue getSpeed() {
     return speed_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : speed_;
   }
-
   /**
    *
    *
@@ -678,7 +644,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SPEED_ACCURACY_FIELD_NUMBER = 7;
   private com.google.protobuf.DoubleValue speedAccuracy_;
-
   /**
    *
    *
@@ -694,7 +659,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasSpeedAccuracy() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -712,7 +676,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : speedAccuracy_;
   }
-
   /**
    *
    *
@@ -731,7 +694,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -748,7 +710,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -765,7 +726,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -783,7 +743,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SERVER_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp serverTime_;
-
   /**
    *
    *
@@ -800,7 +759,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasServerTime() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -817,7 +775,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getServerTime() {
     return serverTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : serverTime_;
   }
-
   /**
    *
    *
@@ -835,7 +792,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int LOCATION_SENSOR_FIELD_NUMBER = 11;
   private int locationSensor_ = 0;
-
   /**
    *
    *
@@ -851,7 +807,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public int getLocationSensorValue() {
     return locationSensor_;
   }
-
   /**
    *
    *
@@ -875,7 +830,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int IS_ROAD_SNAPPED_FIELD_NUMBER = 27;
   private com.google.protobuf.BoolValue isRoadSnapped_;
-
   /**
    *
    *
@@ -891,7 +845,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasIsRoadSnapped() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -909,7 +862,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : isRoadSnapped_;
   }
-
   /**
    *
    *
@@ -928,7 +880,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int IS_GPS_SENSOR_ENABLED_FIELD_NUMBER = 12;
   private com.google.protobuf.BoolValue isGpsSensorEnabled_;
-
   /**
    *
    *
@@ -947,7 +898,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasIsGpsSensorEnabled() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -968,7 +918,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : isGpsSensorEnabled_;
   }
-
   /**
    *
    *
@@ -990,7 +939,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int TIME_SINCE_UPDATE_FIELD_NUMBER = 14;
   private com.google.protobuf.Int32Value timeSinceUpdate_;
-
   /**
    *
    *
@@ -1010,7 +958,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasTimeSinceUpdate() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1032,7 +979,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : timeSinceUpdate_;
   }
-
   /**
    *
    *
@@ -1055,7 +1001,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int NUM_STALE_UPDATES_FIELD_NUMBER = 15;
   private com.google.protobuf.Int32Value numStaleUpdates_;
-
   /**
    *
    *
@@ -1077,7 +1022,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasNumStaleUpdates() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1101,7 +1045,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : numStaleUpdates_;
   }
-
   /**
    *
    *
@@ -1124,7 +1067,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int RAW_LOCATION_FIELD_NUMBER = 16;
   private com.google.type.LatLng rawLocation_;
-
   /**
    *
    *
@@ -1140,7 +1082,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasRawLocation() {
     return ((bitField0_ & 0x00040000) != 0);
   }
-
   /**
    *
    *
@@ -1156,7 +1097,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public com.google.type.LatLng getRawLocation() {
     return rawLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : rawLocation_;
   }
-
   /**
    *
    *
@@ -1173,7 +1113,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int RAW_LOCATION_TIME_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp rawLocationTime_;
-
   /**
    *
    *
@@ -1189,7 +1128,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasRawLocationTime() {
     return ((bitField0_ & 0x00080000) != 0);
   }
-
   /**
    *
    *
@@ -1207,7 +1145,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : rawLocationTime_;
   }
-
   /**
    *
    *
@@ -1226,7 +1163,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int RAW_LOCATION_SENSOR_FIELD_NUMBER = 28;
   private int rawLocationSensor_ = 0;
-
   /**
    *
    *
@@ -1243,7 +1179,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public int getRawLocationSensorValue() {
     return rawLocationSensor_;
   }
-
   /**
    *
    *
@@ -1269,7 +1204,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int RAW_LOCATION_ACCURACY_FIELD_NUMBER = 25;
   private com.google.protobuf.DoubleValue rawLocationAccuracy_;
-
   /**
    *
    *
@@ -1285,7 +1219,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasRawLocationAccuracy() {
     return ((bitField0_ & 0x00100000) != 0);
   }
-
   /**
    *
    *
@@ -1303,7 +1236,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : rawLocationAccuracy_;
   }
-
   /**
    *
    *
@@ -1322,7 +1254,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SUPPLEMENTAL_LOCATION_FIELD_NUMBER = 18;
   private com.google.type.LatLng supplementalLocation_;
-
   /**
    *
    *
@@ -1338,7 +1269,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasSupplementalLocation() {
     return ((bitField0_ & 0x00200000) != 0);
   }
-
   /**
    *
    *
@@ -1356,7 +1286,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.type.LatLng.getDefaultInstance()
         : supplementalLocation_;
   }
-
   /**
    *
    *
@@ -1375,7 +1304,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SUPPLEMENTAL_LOCATION_TIME_FIELD_NUMBER = 19;
   private com.google.protobuf.Timestamp supplementalLocationTime_;
-
   /**
    *
    *
@@ -1391,7 +1319,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasSupplementalLocationTime() {
     return ((bitField0_ & 0x00400000) != 0);
   }
-
   /**
    *
    *
@@ -1409,7 +1336,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : supplementalLocationTime_;
   }
-
   /**
    *
    *
@@ -1428,7 +1354,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SUPPLEMENTAL_LOCATION_SENSOR_FIELD_NUMBER = 20;
   private int supplementalLocationSensor_ = 0;
-
   /**
    *
    *
@@ -1447,7 +1372,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public int getSupplementalLocationSensorValue() {
     return supplementalLocationSensor_;
   }
-
   /**
    *
    *
@@ -1475,7 +1399,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int SUPPLEMENTAL_LOCATION_ACCURACY_FIELD_NUMBER = 21;
   private com.google.protobuf.DoubleValue supplementalLocationAccuracy_;
-
   /**
    *
    *
@@ -1491,7 +1414,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
   public boolean hasSupplementalLocationAccuracy() {
     return ((bitField0_ & 0x00800000) != 0);
   }
-
   /**
    *
    *
@@ -1509,7 +1431,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         ? com.google.protobuf.DoubleValue.getDefaultInstance()
         : supplementalLocationAccuracy_;
   }
-
   /**
    *
    *
@@ -1528,7 +1449,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
 
   public static final int ROAD_SNAPPED_FIELD_NUMBER = 26;
   private boolean roadSnapped_ = false;
-
   /**
    *
    *
@@ -2091,7 +2011,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2823,7 +2742,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         locationBuilder_;
-
     /**
      *
      *
@@ -2842,7 +2760,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2865,7 +2782,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return locationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2892,7 +2808,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2916,7 +2831,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2948,7 +2862,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2972,7 +2885,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2991,7 +2903,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3012,7 +2923,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
       }
     }
-
     /**
      *
      *
@@ -3046,7 +2956,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         horizontalAccuracyBuilder_;
-
     /**
      *
      *
@@ -3064,7 +2973,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasHorizontalAccuracy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3088,7 +2996,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return horizontalAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3112,7 +3019,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3133,7 +3039,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3162,7 +3067,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3183,7 +3087,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3199,7 +3102,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getHorizontalAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3219,7 +3121,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : horizontalAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -3252,7 +3153,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         latlngAccuracyBuilder_;
-
     /**
      *
      *
@@ -3267,7 +3167,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasLatlngAccuracy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3288,7 +3187,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return latlngAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3311,7 +3209,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3331,7 +3228,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3359,7 +3255,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3379,7 +3274,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3394,7 +3288,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getLatlngAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3413,7 +3306,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : latlngAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -3446,7 +3338,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         headingBuilder_;
-
     /**
      *
      *
@@ -3462,7 +3353,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasHeading() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3482,7 +3372,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return headingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3506,7 +3395,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3527,7 +3415,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3556,7 +3443,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3577,7 +3463,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3593,7 +3478,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getHeadingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3611,7 +3495,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return heading_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : heading_;
       }
     }
-
     /**
      *
      *
@@ -3645,7 +3528,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         bearingAccuracyBuilder_;
-
     /**
      *
      *
@@ -3663,7 +3545,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasBearingAccuracy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3687,7 +3568,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return bearingAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3711,7 +3591,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3732,7 +3611,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3761,7 +3639,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3782,7 +3659,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3798,7 +3674,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getBearingAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3818,7 +3693,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : bearingAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -3851,7 +3725,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         headingAccuracyBuilder_;
-
     /**
      *
      *
@@ -3866,7 +3739,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasHeadingAccuracy() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3887,7 +3759,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return headingAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3910,7 +3781,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3930,7 +3800,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3827,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3978,7 +3846,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3993,7 +3860,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getHeadingAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4012,7 +3878,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : headingAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -4045,7 +3910,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         altitudeBuilder_;
-
     /**
      *
      *
@@ -4060,7 +3924,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasAltitude() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4079,7 +3942,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return altitudeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4102,7 +3964,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4122,7 +3983,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4150,7 +4010,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -4170,7 +4029,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4185,7 +4043,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getAltitudeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4202,7 +4059,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return altitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : altitude_;
       }
     }
-
     /**
      *
      *
@@ -4235,7 +4091,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         verticalAccuracyBuilder_;
-
     /**
      *
      *
@@ -4253,7 +4108,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasVerticalAccuracy() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4277,7 +4131,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return verticalAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4301,7 +4154,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4322,7 +4174,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4351,7 +4202,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -4372,7 +4222,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4388,7 +4237,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getVerticalAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4408,7 +4256,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : verticalAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -4441,7 +4288,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         altitudeAccuracyBuilder_;
-
     /**
      *
      *
@@ -4456,7 +4302,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasAltitudeAccuracy() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4477,7 +4322,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return altitudeAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4500,7 +4344,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4520,7 +4363,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4548,7 +4390,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -4568,7 +4409,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4583,7 +4423,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getAltitudeAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4602,7 +4441,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : altitudeAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -4635,7 +4473,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         speedKmphBuilder_;
-
     /**
      *
      *
@@ -4654,7 +4491,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasSpeedKmph() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4679,7 +4515,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return speedKmphBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4704,7 +4539,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4726,7 +4560,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4756,7 +4589,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -4778,7 +4610,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4795,7 +4626,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getSpeedKmphFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4816,7 +4646,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : speedKmph_;
       }
     }
-
     /**
      *
      *
@@ -4850,7 +4679,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         speedBuilder_;
-
     /**
      *
      *
@@ -4865,7 +4693,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasSpeed() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4884,7 +4711,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return speedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4907,7 +4733,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4927,7 +4752,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4955,7 +4779,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -4975,7 +4798,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4990,7 +4812,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getSpeedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5007,7 +4828,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return speed_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : speed_;
       }
     }
-
     /**
      *
      *
@@ -5040,7 +4860,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         speedAccuracyBuilder_;
-
     /**
      *
      *
@@ -5055,7 +4874,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasSpeedAccuracy() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -5076,7 +4894,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return speedAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5099,7 +4916,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5119,7 +4935,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5147,7 +4962,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -5167,7 +4981,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5182,7 +4995,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getSpeedAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5201,7 +5013,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : speedAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -5234,7 +5045,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -5250,7 +5060,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -5272,7 +5081,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5296,7 +5104,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5317,7 +5124,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5346,7 +5152,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -5367,7 +5172,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5383,7 +5187,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5403,7 +5206,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -5437,7 +5239,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         serverTimeBuilder_;
-
     /**
      *
      *
@@ -5454,7 +5255,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasServerTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5477,7 +5277,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return serverTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5502,7 +5301,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5524,7 +5322,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5554,7 +5351,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -5576,7 +5372,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5593,7 +5388,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getServerTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5614,7 +5408,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : serverTime_;
       }
     }
-
     /**
      *
      *
@@ -5644,7 +5437,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     }
 
     private int locationSensor_ = 0;
-
     /**
      *
      *
@@ -5661,7 +5453,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public int getLocationSensorValue() {
       return locationSensor_;
     }
-
     /**
      *
      *
@@ -5681,7 +5472,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5704,7 +5494,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
           ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationSensor.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5728,7 +5517,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5754,7 +5542,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         isRoadSnappedBuilder_;
-
     /**
      *
      *
@@ -5769,7 +5556,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasIsRoadSnapped() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -5790,7 +5576,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return isRoadSnappedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5813,7 +5598,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5833,7 +5617,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5861,7 +5644,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -5881,7 +5663,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5896,7 +5677,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getIsRoadSnappedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5915,7 +5695,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : isRoadSnapped_;
       }
     }
-
     /**
      *
      *
@@ -5948,7 +5727,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         isGpsSensorEnabledBuilder_;
-
     /**
      *
      *
@@ -5966,7 +5744,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasIsGpsSensorEnabled() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -5990,7 +5767,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return isGpsSensorEnabledBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6016,7 +5792,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6039,7 +5814,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6070,7 +5844,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -6093,7 +5866,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6111,7 +5883,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getIsGpsSensorEnabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6133,7 +5904,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : isGpsSensorEnabled_;
       }
     }
-
     /**
      *
      *
@@ -6169,7 +5939,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         timeSinceUpdateBuilder_;
-
     /**
      *
      *
@@ -6188,7 +5957,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasTimeSinceUpdate() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -6213,7 +5981,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return timeSinceUpdateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6240,7 +6007,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6264,7 +6030,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6296,7 +6061,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -6320,7 +6084,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6339,7 +6102,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getTimeSinceUpdateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6362,7 +6124,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : timeSinceUpdate_;
       }
     }
-
     /**
      *
      *
@@ -6399,7 +6160,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         numStaleUpdatesBuilder_;
-
     /**
      *
      *
@@ -6420,7 +6180,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasNumStaleUpdates() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -6447,7 +6206,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return numStaleUpdatesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6474,7 +6232,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6498,7 +6255,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6530,7 +6286,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -6554,7 +6309,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6573,7 +6327,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getNumStaleUpdatesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6596,7 +6349,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : numStaleUpdates_;
       }
     }
-
     /**
      *
      *
@@ -6630,7 +6382,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         rawLocationBuilder_;
-
     /**
      *
      *
@@ -6645,7 +6396,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasRawLocation() {
       return ((bitField0_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -6664,7 +6414,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return rawLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6687,7 +6436,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6707,7 +6455,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6735,7 +6482,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -6755,7 +6501,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6770,7 +6515,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getRawLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6787,7 +6531,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return rawLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : rawLocation_;
       }
     }
-
     /**
      *
      *
@@ -6818,7 +6561,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         rawLocationTimeBuilder_;
-
     /**
      *
      *
@@ -6833,7 +6575,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasRawLocationTime() {
       return ((bitField0_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -6854,7 +6595,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return rawLocationTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6877,7 +6617,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6897,7 +6636,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6925,7 +6663,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -6945,7 +6682,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6960,7 +6696,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getRawLocationTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6979,7 +6714,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : rawLocationTime_;
       }
     }
-
     /**
      *
      *
@@ -7007,7 +6741,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     }
 
     private int rawLocationSensor_ = 0;
-
     /**
      *
      *
@@ -7024,7 +6757,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public int getRawLocationSensorValue() {
       return rawLocationSensor_;
     }
-
     /**
      *
      *
@@ -7044,7 +6776,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7067,7 +6798,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
           ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationSensor.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7091,7 +6821,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7117,7 +6846,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         rawLocationAccuracyBuilder_;
-
     /**
      *
      *
@@ -7132,7 +6860,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasRawLocationAccuracy() {
       return ((bitField0_ & 0x00400000) != 0);
     }
-
     /**
      *
      *
@@ -7153,7 +6880,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return rawLocationAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7176,7 +6902,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7196,7 +6921,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7224,7 +6948,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7244,7 +6967,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7259,7 +6981,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getRawLocationAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7278,7 +6999,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : rawLocationAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -7309,7 +7029,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         supplementalLocationBuilder_;
-
     /**
      *
      *
@@ -7324,7 +7043,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasSupplementalLocation() {
       return ((bitField0_ & 0x00800000) != 0);
     }
-
     /**
      *
      *
@@ -7345,7 +7063,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return supplementalLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7368,7 +7085,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7388,7 +7104,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7416,7 +7131,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7436,7 +7150,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7451,7 +7164,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getSupplementalLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7470,7 +7182,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : supplementalLocation_;
       }
     }
-
     /**
      *
      *
@@ -7501,7 +7212,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         supplementalLocationTimeBuilder_;
-
     /**
      *
      *
@@ -7516,7 +7226,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasSupplementalLocationTime() {
       return ((bitField0_ & 0x01000000) != 0);
     }
-
     /**
      *
      *
@@ -7537,7 +7246,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return supplementalLocationTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7560,7 +7268,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7581,7 +7288,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7609,7 +7315,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7629,7 +7334,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7644,7 +7348,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getSupplementalLocationTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7663,7 +7366,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : supplementalLocationTime_;
       }
     }
-
     /**
      *
      *
@@ -7691,7 +7393,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     }
 
     private int supplementalLocationSensor_ = 0;
-
     /**
      *
      *
@@ -7710,7 +7411,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public int getSupplementalLocationSensorValue() {
       return supplementalLocationSensor_;
     }
-
     /**
      *
      *
@@ -7732,7 +7432,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7757,7 +7456,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
           ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationSensor.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7783,7 +7481,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7811,7 +7508,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         supplementalLocationAccuracyBuilder_;
-
     /**
      *
      *
@@ -7826,7 +7522,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean hasSupplementalLocationAccuracy() {
       return ((bitField0_ & 0x04000000) != 0);
     }
-
     /**
      *
      *
@@ -7847,7 +7542,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
         return supplementalLocationAccuracyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7870,7 +7564,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7891,7 +7584,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7920,7 +7612,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7940,7 +7631,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7955,7 +7645,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return getSupplementalLocationAccuracyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7974,7 +7663,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
             : supplementalLocationAccuracy_;
       }
     }
-
     /**
      *
      *
@@ -8002,7 +7690,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     }
 
     private boolean roadSnapped_;
-
     /**
      *
      *
@@ -8021,7 +7708,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
     public boolean getRoadSnapped() {
       return roadSnapped_;
     }
-
     /**
      *
      *
@@ -8044,7 +7730,6 @@ public final class DeliveryVehicleLocation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

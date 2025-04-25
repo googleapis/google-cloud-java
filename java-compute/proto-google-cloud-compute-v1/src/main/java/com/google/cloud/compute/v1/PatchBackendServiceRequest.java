@@ -33,7 +33,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchBackendServiceRequest)
     PatchBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchBackendServiceRequest.newBuilder() to construct.
   private PatchBackendServiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backendService_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
 
   public static final int BACKEND_SERVICE_RESOURCE_FIELD_NUMBER = 347586723;
   private com.google.cloud.compute.v1.BackendService backendServiceResource_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
   public boolean hasBackendServiceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.BackendService.getDefaultInstance()
         : backendServiceResource_;
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -504,7 +493,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -753,7 +741,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object backendService_ = "";
-
     /**
      *
      *
@@ -776,7 +763,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -821,7 +806,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.BackendService.Builder,
             com.google.cloud.compute.v1.BackendServiceOrBuilder>
         backendServiceResourceBuilder_;
-
     /**
      *
      *
@@ -886,7 +868,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     public boolean hasBackendServiceResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return backendServiceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -934,7 +914,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +936,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +966,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return getBackendServiceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1049,7 +1024,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
             : backendServiceResource_;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1104,7 +1077,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1124,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1143,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1169,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1215,7 +1183,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1238,7 +1205,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1227,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1283,7 +1248,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1265,6 @@ public final class PatchBackendServiceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

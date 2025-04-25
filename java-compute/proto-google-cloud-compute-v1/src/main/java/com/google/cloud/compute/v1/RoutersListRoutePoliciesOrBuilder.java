@@ -30,14 +30,12 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -57,7 +55,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -70,7 +67,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -109,7 +104,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * <code>repeated .google.cloud.compute.v1.RoutePolicy result = 139315229;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RoutePolicy> getResultList();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * <code>repeated .google.cloud.compute.v1.RoutePolicy result = 139315229;</code>
    */
   com.google.cloud.compute.v1.RoutePolicy getResult(int index);
-
   /**
    *
    *
@@ -194,7 +184,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * <code>repeated .google.cloud.compute.v1.RoutePolicy result = 139315229;</code>
    */
   int getResultCount();
-
   /**
    *
    *
@@ -206,7 +195,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RoutePolicyOrBuilder>
       getResultOrBuilderList();
-
   /**
    *
    *
@@ -230,7 +218,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -243,7 +230,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -269,7 +255,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -282,7 +267,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -296,7 +280,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -323,7 +306,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -336,7 +318,6 @@ public interface RoutersListRoutePoliciesOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class GetModelDeploymentMonitoringJobRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest)
     GetModelDeploymentMonitoringJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetModelDeploymentMonitoringJobRequest.newBuilder() to construct.
   private GetModelDeploymentMonitoringJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class GetModelDeploymentMonitoringJobRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GetModelDeploymentMonitoringJobRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +293,6 @@ public final class GetModelDeploymentMonitoringJobRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -493,7 +489,6 @@ public final class GetModelDeploymentMonitoringJobRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -520,7 +515,6 @@ public final class GetModelDeploymentMonitoringJobRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -547,7 +541,6 @@ public final class GetModelDeploymentMonitoringJobRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class GetModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class GetModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

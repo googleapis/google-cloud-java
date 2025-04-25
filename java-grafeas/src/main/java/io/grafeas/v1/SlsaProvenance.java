@@ -26,7 +26,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance)
     SlsaProvenanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SlsaProvenance.newBuilder() to construct.
   private SlsaProvenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -123,7 +121,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The entryPoint.
      */
     java.lang.String getEntryPoint();
-
     /**
      *
      *
@@ -157,7 +154,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the arguments field is set.
      */
     boolean hasArguments();
-
     /**
      *
      *
@@ -174,7 +170,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The arguments.
      */
     com.google.protobuf.Any getArguments();
-
     /**
      *
      *
@@ -205,7 +200,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the environment field is set.
      */
     boolean hasEnvironment();
-
     /**
      *
      *
@@ -221,7 +215,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The environment.
      */
     com.google.protobuf.Any getEnvironment();
-
     /**
      *
      *
@@ -236,7 +229,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder();
   }
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaRecipe)
       SlsaRecipeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SlsaRecipe.newBuilder() to construct.
     private SlsaRecipe(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -290,7 +281,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -316,7 +306,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -345,7 +334,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DEFINED_IN_MATERIAL_FIELD_NUMBER = 2;
     private long definedInMaterial_ = 0L;
-
     /**
      *
      *
@@ -370,7 +358,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entryPoint_ = "";
-
     /**
      *
      *
@@ -398,7 +385,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -429,7 +415,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ARGUMENTS_FIELD_NUMBER = 4;
     private com.google.protobuf.Any arguments_;
-
     /**
      *
      *
@@ -449,7 +434,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArguments() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -469,7 +453,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any getArguments() {
       return arguments_ == null ? com.google.protobuf.Any.getDefaultInstance() : arguments_;
     }
-
     /**
      *
      *
@@ -490,7 +473,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENVIRONMENT_FIELD_NUMBER = 5;
     private com.google.protobuf.Any environment_;
-
     /**
      *
      *
@@ -509,7 +491,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -528,7 +509,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any getEnvironment() {
       return environment_ == null ? com.google.protobuf.Any.getDefaultInstance() : environment_;
     }
-
     /**
      *
      *
@@ -751,7 +731,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1017,7 +996,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -1042,7 +1020,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1067,7 +1044,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1091,7 +1067,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1111,7 +1086,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1138,7 +1112,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long definedInMaterial_;
-
       /**
        *
        *
@@ -1158,7 +1131,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public long getDefinedInMaterial() {
         return definedInMaterial_;
       }
-
       /**
        *
        *
@@ -1182,7 +1154,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1206,7 +1177,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object entryPoint_ = "";
-
       /**
        *
        *
@@ -1233,7 +1203,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1260,7 +1229,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1286,7 +1254,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1308,7 +1275,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1342,7 +1308,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Any.Builder,
               com.google.protobuf.AnyOrBuilder>
           argumentsBuilder_;
-
       /**
        *
        *
@@ -1361,7 +1326,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasArguments() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1384,7 +1348,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return argumentsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1411,7 +1374,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1435,7 +1397,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1467,7 +1428,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1491,7 +1451,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1510,7 +1469,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getArgumentsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1531,7 +1489,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return arguments_ == null ? com.google.protobuf.Any.getDefaultInstance() : arguments_;
         }
       }
-
       /**
        *
        *
@@ -1568,7 +1525,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Any.Builder,
               com.google.protobuf.AnyOrBuilder>
           environmentBuilder_;
-
       /**
        *
        *
@@ -1586,7 +1542,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEnvironment() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1608,7 +1563,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return environmentBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1634,7 +1588,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1657,7 +1610,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1688,7 +1640,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1711,7 +1662,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1729,7 +1679,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEnvironmentFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1749,7 +1698,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return environment_ == null ? com.google.protobuf.Any.getDefaultInstance() : environment_;
         }
       }
-
       /**
        *
        *
@@ -1890,7 +1838,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getMaterials();
   }
-
   /**
    *
    *
@@ -1906,7 +1853,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaCompleteness)
       SlsaCompletenessOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SlsaCompleteness.newBuilder() to construct.
     private SlsaCompleteness(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1937,7 +1883,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ARGUMENTS_FIELD_NUMBER = 1;
     private boolean arguments_ = false;
-
     /**
      *
      *
@@ -1957,7 +1902,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENVIRONMENT_FIELD_NUMBER = 2;
     private boolean environment_ = false;
-
     /**
      *
      *
@@ -1977,7 +1921,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MATERIALS_FIELD_NUMBER = 3;
     private boolean materials_ = false;
-
     /**
      *
      *
@@ -2173,7 +2116,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2386,7 +2328,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean arguments_;
-
       /**
        *
        *
@@ -2403,7 +2344,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean getArguments() {
         return arguments_;
       }
-
       /**
        *
        *
@@ -2424,7 +2364,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2445,7 +2384,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean environment_;
-
       /**
        *
        *
@@ -2462,7 +2400,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnvironment() {
         return environment_;
       }
-
       /**
        *
        *
@@ -2483,7 +2420,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2504,7 +2440,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean materials_;
-
       /**
        *
        *
@@ -2521,7 +2456,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean getMaterials() {
         return materials_;
       }
-
       /**
        *
        *
@@ -2542,7 +2476,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2645,7 +2578,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The buildInvocationId.
      */
     java.lang.String getBuildInvocationId();
-
     /**
      *
      *
@@ -2673,7 +2605,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildStartedOn field is set.
      */
     boolean hasBuildStartedOn();
-
     /**
      *
      *
@@ -2686,7 +2617,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The buildStartedOn.
      */
     com.google.protobuf.Timestamp getBuildStartedOn();
-
     /**
      *
      *
@@ -2710,7 +2640,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildFinishedOn field is set.
      */
     boolean hasBuildFinishedOn();
-
     /**
      *
      *
@@ -2723,7 +2652,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The buildFinishedOn.
      */
     com.google.protobuf.Timestamp getBuildFinishedOn();
-
     /**
      *
      *
@@ -2748,7 +2676,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the completeness field is set.
      */
     boolean hasCompleteness();
-
     /**
      *
      *
@@ -2762,7 +2689,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The completeness.
      */
     io.grafeas.v1.SlsaProvenance.SlsaCompleteness getCompleteness();
-
     /**
      *
      *
@@ -2789,7 +2715,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getReproducible();
   }
-
   /**
    *
    *
@@ -2804,7 +2729,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaMetadata)
       SlsaMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SlsaMetadata.newBuilder() to construct.
     private SlsaMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2840,7 +2764,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object buildInvocationId_ = "";
-
     /**
      *
      *
@@ -2866,7 +2789,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2895,7 +2817,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BUILD_STARTED_ON_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp buildStartedOn_;
-
     /**
      *
      *
@@ -2911,7 +2832,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildStartedOn() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2929,7 +2849,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : buildStartedOn_;
     }
-
     /**
      *
      *
@@ -2948,7 +2867,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BUILD_FINISHED_ON_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp buildFinishedOn_;
-
     /**
      *
      *
@@ -2964,7 +2882,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuildFinishedOn() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2982,7 +2899,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : buildFinishedOn_;
     }
-
     /**
      *
      *
@@ -3001,7 +2917,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COMPLETENESS_FIELD_NUMBER = 4;
     private io.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness_;
-
     /**
      *
      *
@@ -3018,7 +2933,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompleteness() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3037,7 +2951,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           ? io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance()
           : completeness_;
     }
-
     /**
      *
      *
@@ -3057,7 +2970,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REPRODUCIBLE_FIELD_NUMBER = 5;
     private boolean reproducible_ = false;
-
     /**
      *
      *
@@ -3286,7 +3198,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3558,7 +3469,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object buildInvocationId_ = "";
-
       /**
        *
        *
@@ -3583,7 +3493,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3608,7 +3517,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3632,7 +3540,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3652,7 +3559,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3684,7 +3590,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           buildStartedOnBuilder_;
-
       /**
        *
        *
@@ -3699,7 +3604,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBuildStartedOn() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -3720,7 +3624,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return buildStartedOnBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3743,7 +3646,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3763,7 +3665,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3791,7 +3692,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3811,7 +3711,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3826,7 +3725,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBuildStartedOnFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3845,7 +3743,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               : buildStartedOn_;
         }
       }
-
       /**
        *
        *
@@ -3878,7 +3775,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           buildFinishedOnBuilder_;
-
       /**
        *
        *
@@ -3893,7 +3789,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBuildFinishedOn() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -3914,7 +3809,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return buildFinishedOnBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3937,7 +3831,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3957,7 +3850,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3985,7 +3877,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4005,7 +3896,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4020,7 +3910,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBuildFinishedOnFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4039,7 +3928,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               : buildFinishedOn_;
         }
       }
-
       /**
        *
        *
@@ -4072,7 +3960,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder,
               io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder>
           completenessBuilder_;
-
       /**
        *
        *
@@ -4088,7 +3975,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCompleteness() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -4110,7 +3996,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return completenessBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4134,7 +4019,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4156,7 +4040,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4186,7 +4069,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4207,7 +4089,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4223,7 +4104,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCompletenessFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4243,7 +4123,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               : completeness_;
         }
       }
-
       /**
        *
        *
@@ -4272,7 +4151,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean reproducible_;
-
       /**
        *
        *
@@ -4289,7 +4167,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public boolean getReproducible() {
         return reproducible_;
       }
-
       /**
        *
        *
@@ -4310,7 +4187,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4405,7 +4281,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      * <code>string id = 1;</code>
      *
@@ -4413,14 +4288,12 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIdBytes();
   }
-
   /** Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaBuilder} */
   public static final class SlsaBuilder extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaBuilder)
       SlsaBuilderOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SlsaBuilder.newBuilder() to construct.
     private SlsaBuilder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4455,7 +4328,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      * <code>string id = 1;</code>
      *
@@ -4473,7 +4345,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      * <code>string id = 1;</code>
      *
@@ -4652,7 +4523,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /** Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaBuilder} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -4831,7 +4701,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        * <code>string id = 1;</code>
        *
@@ -4848,7 +4717,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        * <code>string id = 1;</code>
        *
@@ -4865,7 +4733,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        * <code>string id = 1;</code>
        *
@@ -4881,7 +4748,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>string id = 1;</code>
        *
@@ -4893,7 +4759,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>string id = 1;</code>
        *
@@ -4986,7 +4851,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      * <code>string uri = 1;</code>
      *
@@ -4996,35 +4860,28 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     int getDigestCount();
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     boolean containsDigest(java.lang.String key);
-
     /** Use {@link #getDigestMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getDigest();
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     java.util.Map<java.lang.String, java.lang.String> getDigestMap();
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     /* nullable */
     java.lang.String getDigestOrDefault(
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     java.lang.String getDigestOrThrow(java.lang.String key);
   }
-
   /** Protobuf type {@code grafeas.v1.SlsaProvenance.Material} */
   public static final class Material extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.Material)
       MaterialOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Material.newBuilder() to construct.
     private Material(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5071,7 +4928,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      * <code>string uri = 1;</code>
      *
@@ -5089,7 +4945,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      * <code>string uri = 1;</code>
      *
@@ -5134,7 +4989,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public int getDigestCount() {
       return internalGetDigest().getMap().size();
     }
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
     public boolean containsDigest(java.lang.String key) {
@@ -5143,20 +4997,17 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDigest().getMap().containsKey(key);
     }
-
     /** Use {@link #getDigestMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDigest() {
       return getDigestMap();
     }
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
       return internalGetDigest().getMap();
     }
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
     public /* nullable */ java.lang.String getDigestOrDefault(
@@ -5169,7 +5020,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
     public java.lang.String getDigestOrThrow(java.lang.String key) {
@@ -5359,7 +5209,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /** Protobuf type {@code grafeas.v1.SlsaProvenance.Material} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -5579,7 +5428,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
-
       /**
        * <code>string uri = 1;</code>
        *
@@ -5596,7 +5444,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        * <code>string uri = 1;</code>
        *
@@ -5613,7 +5460,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        * <code>string uri = 1;</code>
        *
@@ -5629,7 +5475,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>string uri = 1;</code>
        *
@@ -5641,7 +5486,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>string uri = 1;</code>
        *
@@ -5684,7 +5528,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       public int getDigestCount() {
         return internalGetDigest().getMap().size();
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
       public boolean containsDigest(java.lang.String key) {
@@ -5693,20 +5536,17 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetDigest().getMap().containsKey(key);
       }
-
       /** Use {@link #getDigestMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getDigest() {
         return getDigestMap();
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
         return internalGetDigest().getMap();
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
       public /* nullable */ java.lang.String getDigestOrDefault(
@@ -5719,7 +5559,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
       public java.lang.String getDigestOrThrow(java.lang.String key) {
@@ -5738,7 +5577,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableDigest().getMutableMap().clear();
         return this;
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       public Builder removeDigest(java.lang.String key) {
         if (key == null) {
@@ -5747,14 +5585,12 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableDigest().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
         bitField0_ |= 0x00000002;
         return internalGetMutableDigest().getMutableMap();
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       public Builder putDigest(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -5767,7 +5603,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableDigest().getMutableMap().putAll(values);
@@ -5842,7 +5677,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int BUILDER_FIELD_NUMBER = 1;
   private io.grafeas.v1.SlsaProvenance.SlsaBuilder builder_;
-
   /**
    *
    *
@@ -5858,7 +5692,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuilder() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5876,7 +5709,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance()
         : builder_;
   }
-
   /**
    *
    *
@@ -5895,7 +5727,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECIPE_FIELD_NUMBER = 2;
   private io.grafeas.v1.SlsaProvenance.SlsaRecipe recipe_;
-
   /**
    *
    *
@@ -5914,7 +5745,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRecipe() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -5933,7 +5763,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.SlsaProvenance.SlsaRecipe getRecipe() {
     return recipe_ == null ? io.grafeas.v1.SlsaProvenance.SlsaRecipe.getDefaultInstance() : recipe_;
   }
-
   /**
    *
    *
@@ -5953,7 +5782,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private io.grafeas.v1.SlsaProvenance.SlsaMetadata metadata_;
-
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
    *
@@ -5963,7 +5791,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
    *
@@ -5975,7 +5802,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder getMetadataOrBuilder() {
@@ -5988,7 +5814,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.SlsaProvenance.Material> materials_;
-
   /**
    *
    *
@@ -6005,7 +5830,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1.SlsaProvenance.Material> getMaterialsList() {
     return materials_;
   }
-
   /**
    *
    *
@@ -6023,7 +5847,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       getMaterialsOrBuilderList() {
     return materials_;
   }
-
   /**
    *
    *
@@ -6040,7 +5863,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public int getMaterialsCount() {
     return materials_.size();
   }
-
   /**
    *
    *
@@ -6057,7 +5879,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.SlsaProvenance.Material getMaterials(int index) {
     return materials_.get(index);
   }
-
   /**
    *
    *
@@ -6276,7 +6097,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code grafeas.v1.SlsaProvenance} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -6566,7 +6386,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder,
             io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder>
         builderBuilder_;
-
     /**
      *
      *
@@ -6581,7 +6400,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuilder() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6602,7 +6420,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return builderBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6625,7 +6442,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6645,7 +6461,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6673,7 +6488,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6693,7 +6507,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6708,7 +6521,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBuilderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6727,7 +6539,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             : builder_;
       }
     }
-
     /**
      *
      *
@@ -6760,7 +6571,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder,
             io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder>
         recipeBuilder_;
-
     /**
      *
      *
@@ -6778,7 +6588,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRecipe() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -6802,7 +6611,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return recipeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6828,7 +6636,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6851,7 +6658,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6882,7 +6688,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6905,7 +6710,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6923,7 +6727,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRecipeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6945,7 +6748,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             : recipe_;
       }
     }
-
     /**
      *
      *
@@ -6981,7 +6783,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder,
             io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
      *
@@ -6990,7 +6791,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
      *
@@ -7005,7 +6805,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.SlsaProvenance.SlsaMetadata value) {
       if (metadataBuilder_ == null) {
@@ -7020,7 +6819,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
@@ -7032,7 +6830,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder mergeMetadata(io.grafeas.v1.SlsaProvenance.SlsaMetadata value) {
       if (metadataBuilder_ == null) {
@@ -7052,7 +6849,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder clearMetadata() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -7064,14 +6860,12 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder getMetadataBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -7082,7 +6876,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
-
     /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.SlsaProvenance.SlsaMetadata,
@@ -7136,7 +6929,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return materialsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7156,7 +6948,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return materialsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7176,7 +6967,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return materialsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7202,7 +6992,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7226,7 +7015,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7252,7 +7040,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7278,7 +7065,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7301,7 +7087,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7325,7 +7110,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7349,7 +7133,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7372,7 +7155,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7395,7 +7177,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7411,7 +7192,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.SlsaProvenance.Material.Builder getMaterialsBuilder(int index) {
       return getMaterialsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7431,7 +7211,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return materialsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7452,7 +7231,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(materials_);
       }
     }
-
     /**
      *
      *
@@ -7469,7 +7247,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       return getMaterialsFieldBuilder()
           .addBuilder(io.grafeas.v1.SlsaProvenance.Material.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7486,7 +7263,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       return getMaterialsFieldBuilder()
           .addBuilder(index, io.grafeas.v1.SlsaProvenance.Material.getDefaultInstance());
     }
-
     /**
      *
      *

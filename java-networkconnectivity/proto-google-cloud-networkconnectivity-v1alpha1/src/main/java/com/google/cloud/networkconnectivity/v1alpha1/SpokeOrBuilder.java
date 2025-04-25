@@ -36,7 +36,6 @@ public interface SpokeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SpokeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SpokeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface SpokeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SpokeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface SpokeOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -145,11 +139,9 @@ public interface SpokeOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -160,7 +152,6 @@ public interface SpokeOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -175,7 +166,6 @@ public interface SpokeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -199,7 +189,6 @@ public interface SpokeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -225,7 +214,6 @@ public interface SpokeOrBuilder
    * @return The hub.
    */
   java.lang.String getHub();
-
   /**
    *
    *
@@ -252,7 +240,6 @@ public interface SpokeOrBuilder
    * @return A list containing the linkedVpnTunnels.
    */
   java.util.List<java.lang.String> getLinkedVpnTunnelsList();
-
   /**
    *
    *
@@ -266,7 +253,6 @@ public interface SpokeOrBuilder
    * @return The count of linkedVpnTunnels.
    */
   int getLinkedVpnTunnelsCount();
-
   /**
    *
    *
@@ -281,7 +267,6 @@ public interface SpokeOrBuilder
    * @return The linkedVpnTunnels at the given index.
    */
   java.lang.String getLinkedVpnTunnels(int index);
-
   /**
    *
    *
@@ -311,7 +296,6 @@ public interface SpokeOrBuilder
    * @return A list containing the linkedInterconnectAttachments.
    */
   java.util.List<java.lang.String> getLinkedInterconnectAttachmentsList();
-
   /**
    *
    *
@@ -326,7 +310,6 @@ public interface SpokeOrBuilder
    * @return The count of linkedInterconnectAttachments.
    */
   int getLinkedInterconnectAttachmentsCount();
-
   /**
    *
    *
@@ -342,7 +325,6 @@ public interface SpokeOrBuilder
    * @return The linkedInterconnectAttachments at the given index.
    */
   java.lang.String getLinkedInterconnectAttachments(int index);
-
   /**
    *
    *
@@ -372,7 +354,6 @@ public interface SpokeOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance>
       getLinkedRouterApplianceInstancesList();
-
   /**
    *
    *
@@ -386,7 +367,6 @@ public interface SpokeOrBuilder
    */
   com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance
       getLinkedRouterApplianceInstances(int index);
-
   /**
    *
    *
@@ -399,7 +379,6 @@ public interface SpokeOrBuilder
    * </code>
    */
   int getLinkedRouterApplianceInstancesCount();
-
   /**
    *
    *
@@ -414,7 +393,6 @@ public interface SpokeOrBuilder
   java.util.List<
           ? extends com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstanceOrBuilder>
       getLinkedRouterApplianceInstancesOrBuilderList();
-
   /**
    *
    *
@@ -443,7 +421,6 @@ public interface SpokeOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
-
   /**
    *
    *
@@ -473,7 +450,6 @@ public interface SpokeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

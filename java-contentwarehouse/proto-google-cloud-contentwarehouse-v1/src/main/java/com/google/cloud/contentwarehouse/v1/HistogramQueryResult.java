@@ -35,7 +35,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.HistogramQueryResult)
     HistogramQueryResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HistogramQueryResult.newBuilder() to construct.
   private HistogramQueryResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object histogramQuery_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -157,7 +154,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   public int getHistogramCount() {
     return internalGetHistogram().getMap().size();
   }
-
   /**
    *
    *
@@ -179,14 +175,12 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetHistogram().getMap().containsKey(key);
   }
-
   /** Use {@link #getHistogramMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getHistogram() {
     return getHistogramMap();
   }
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.Long> getHistogramMap() {
     return internalGetHistogram().getMap();
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetHistogram().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -432,7 +424,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object histogramQuery_ = "";
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     public int getHistogramCount() {
       return internalGetHistogram().getMap().size();
     }
-
     /**
      *
      *
@@ -818,14 +803,12 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetHistogram().getMap().containsKey(key);
     }
-
     /** Use {@link #getHistogramMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getHistogram() {
       return getHistogramMap();
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.Long> getHistogramMap() {
       return internalGetHistogram().getMap();
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetHistogram().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       internalGetMutableHistogram().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -921,14 +901,12 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       internalGetMutableHistogram().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableHistogram() {
       bitField0_ |= 0x00000002;
       return internalGetMutableHistogram().getMutableMap();
     }
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ReactionCreatedEventDataOrBuilder
    * @return Whether the reaction field is set.
    */
   boolean hasReaction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ReactionCreatedEventDataOrBuilder
    * @return The reaction.
    */
   com.google.chat.v1.Reaction getReaction();
-
   /**
    *
    *

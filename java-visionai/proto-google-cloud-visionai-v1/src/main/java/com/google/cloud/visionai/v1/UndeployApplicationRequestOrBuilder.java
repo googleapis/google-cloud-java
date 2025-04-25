@@ -40,7 +40,6 @@ public interface UndeployApplicationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface UndeployApplicationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

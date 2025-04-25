@@ -34,7 +34,6 @@ public interface ListServiceAccountKeysResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.ServiceAccountKey keys = 1;</code>
    */
   java.util.List<com.google.iam.admin.v1.ServiceAccountKey> getKeysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServiceAccountKeysResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.ServiceAccountKey keys = 1;</code>
    */
   com.google.iam.admin.v1.ServiceAccountKey getKeys(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServiceAccountKeysResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.ServiceAccountKey keys = 1;</code>
    */
   int getKeysCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListServiceAccountKeysResponseOrBuilder
    */
   java.util.List<? extends com.google.iam.admin.v1.ServiceAccountKeyOrBuilder>
       getKeysOrBuilderList();
-
   /**
    *
    *

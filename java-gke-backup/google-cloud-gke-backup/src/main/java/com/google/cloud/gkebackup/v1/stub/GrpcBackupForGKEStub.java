@@ -16,13 +16,9 @@
 
 package com.google.cloud.gkebackup.v1.stub;
 
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -37,45 +33,27 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.Backup;
-import com.google.cloud.gkebackup.v1.BackupChannel;
 import com.google.cloud.gkebackup.v1.BackupPlan;
-import com.google.cloud.gkebackup.v1.BackupPlanBinding;
-import com.google.cloud.gkebackup.v1.CreateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupRequest;
-import com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.CreateRestoreRequest;
-import com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
-import com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
-import com.google.cloud.gkebackup.v1.GetBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
-import com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
-import com.google.cloud.gkebackup.v1.GetRestoreChannelRequest;
-import com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.GetRestoreRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeBackupRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest;
-import com.google.cloud.gkebackup.v1.ListBackupChannelsRequest;
-import com.google.cloud.gkebackup.v1.ListBackupChannelsResponse;
-import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest;
-import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListBackupPlansRequest;
 import com.google.cloud.gkebackup.v1.ListBackupPlansResponse;
 import com.google.cloud.gkebackup.v1.ListBackupsRequest;
 import com.google.cloud.gkebackup.v1.ListBackupsResponse;
-import com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest;
-import com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse;
-import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest;
-import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListRestorePlansRequest;
 import com.google.cloud.gkebackup.v1.ListRestorePlansResponse;
 import com.google.cloud.gkebackup.v1.ListRestoresRequest;
@@ -86,13 +64,9 @@ import com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest;
 import com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse;
 import com.google.cloud.gkebackup.v1.OperationMetadata;
 import com.google.cloud.gkebackup.v1.Restore;
-import com.google.cloud.gkebackup.v1.RestoreChannel;
 import com.google.cloud.gkebackup.v1.RestorePlan;
-import com.google.cloud.gkebackup.v1.RestorePlanBinding;
-import com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupRequest;
-import com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestoreRequest;
 import com.google.cloud.gkebackup.v1.VolumeBackup;
@@ -172,80 +146,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateBackupChannelRequest, Operation>
-      createBackupChannelMethodDescriptor =
-          MethodDescriptor.<CreateBackupChannelRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/CreateBackupChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateBackupChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListBackupChannelsRequest, ListBackupChannelsResponse>
-      listBackupChannelsMethodDescriptor =
-          MethodDescriptor.<ListBackupChannelsRequest, ListBackupChannelsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListBackupChannels")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListBackupChannelsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListBackupChannelsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetBackupChannelRequest, BackupChannel>
-      getBackupChannelMethodDescriptor =
-          MethodDescriptor.<GetBackupChannelRequest, BackupChannel>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackupChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetBackupChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(BackupChannel.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateBackupChannelRequest, Operation>
-      updateBackupChannelMethodDescriptor =
-          MethodDescriptor.<UpdateBackupChannelRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/UpdateBackupChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateBackupChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteBackupChannelRequest, Operation>
-      deleteBackupChannelMethodDescriptor =
-          MethodDescriptor.<DeleteBackupChannelRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/DeleteBackupChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteBackupChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-      listBackupPlanBindingsMethodDescriptor =
-          MethodDescriptor
-              .<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListBackupPlanBindings")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListBackupPlanBindingsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListBackupPlanBindingsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingMethodDescriptor =
-          MethodDescriptor.<GetBackupPlanBindingRequest, BackupPlanBinding>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackupPlanBinding")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetBackupPlanBindingRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(BackupPlanBinding.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -363,80 +263,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRestorePlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateRestoreChannelRequest, Operation>
-      createRestoreChannelMethodDescriptor =
-          MethodDescriptor.<CreateRestoreChannelRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/CreateRestoreChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateRestoreChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-      listRestoreChannelsMethodDescriptor =
-          MethodDescriptor.<ListRestoreChannelsRequest, ListRestoreChannelsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListRestoreChannels")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListRestoreChannelsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListRestoreChannelsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetRestoreChannelRequest, RestoreChannel>
-      getRestoreChannelMethodDescriptor =
-          MethodDescriptor.<GetRestoreChannelRequest, RestoreChannel>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetRestoreChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetRestoreChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(RestoreChannel.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateRestoreChannelRequest, Operation>
-      updateRestoreChannelMethodDescriptor =
-          MethodDescriptor.<UpdateRestoreChannelRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/UpdateRestoreChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateRestoreChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteRestoreChannelRequest, Operation>
-      deleteRestoreChannelMethodDescriptor =
-          MethodDescriptor.<DeleteRestoreChannelRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/DeleteRestoreChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteRestoreChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-      listRestorePlanBindingsMethodDescriptor =
-          MethodDescriptor
-              .<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/ListRestorePlanBindings")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListRestorePlanBindingsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListRestorePlanBindingsResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingMethodDescriptor =
-          MethodDescriptor.<GetRestorePlanBindingRequest, RestorePlanBinding>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetRestorePlanBinding")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetRestorePlanBindingRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(RestorePlanBinding.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateRestoreRequest, Operation>
@@ -581,26 +407,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
   private final UnaryCallable<DeleteBackupPlanRequest, Operation> deleteBackupPlanCallable;
   private final OperationCallable<DeleteBackupPlanRequest, Empty, OperationMetadata>
       deleteBackupPlanOperationCallable;
-  private final UnaryCallable<CreateBackupChannelRequest, Operation> createBackupChannelCallable;
-  private final OperationCallable<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
-      createBackupChannelOperationCallable;
-  private final UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsResponse>
-      listBackupChannelsCallable;
-  private final UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsPagedResponse>
-      listBackupChannelsPagedCallable;
-  private final UnaryCallable<GetBackupChannelRequest, BackupChannel> getBackupChannelCallable;
-  private final UnaryCallable<UpdateBackupChannelRequest, Operation> updateBackupChannelCallable;
-  private final OperationCallable<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
-      updateBackupChannelOperationCallable;
-  private final UnaryCallable<DeleteBackupChannelRequest, Operation> deleteBackupChannelCallable;
-  private final OperationCallable<DeleteBackupChannelRequest, Empty, OperationMetadata>
-      deleteBackupChannelOperationCallable;
-  private final UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-      listBackupPlanBindingsCallable;
-  private final UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsPagedResponse>
-      listBackupPlanBindingsPagedCallable;
-  private final UnaryCallable<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingCallable;
   private final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable;
   private final OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
       createBackupOperationCallable;
@@ -633,26 +439,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
   private final UnaryCallable<DeleteRestorePlanRequest, Operation> deleteRestorePlanCallable;
   private final OperationCallable<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationCallable;
-  private final UnaryCallable<CreateRestoreChannelRequest, Operation> createRestoreChannelCallable;
-  private final OperationCallable<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      createRestoreChannelOperationCallable;
-  private final UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-      listRestoreChannelsCallable;
-  private final UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsPagedResponse>
-      listRestoreChannelsPagedCallable;
-  private final UnaryCallable<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelCallable;
-  private final UnaryCallable<UpdateRestoreChannelRequest, Operation> updateRestoreChannelCallable;
-  private final OperationCallable<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      updateRestoreChannelOperationCallable;
-  private final UnaryCallable<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelCallable;
-  private final OperationCallable<DeleteRestoreChannelRequest, Empty, OperationMetadata>
-      deleteRestoreChannelOperationCallable;
-  private final UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-      listRestorePlanBindingsCallable;
-  private final UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsPagedResponse>
-      listRestorePlanBindingsPagedCallable;
-  private final UnaryCallable<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingCallable;
   private final UnaryCallable<CreateRestoreRequest, Operation> createRestoreCallable;
   private final OperationCallable<CreateRestoreRequest, Restore, OperationMetadata>
       createRestoreOperationCallable;
@@ -776,81 +562,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<CreateBackupChannelRequest, Operation> createBackupChannelTransportSettings =
-        GrpcCallSettings.<CreateBackupChannelRequest, Operation>newBuilder()
-            .setMethodDescriptor(createBackupChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListBackupChannelsRequest, ListBackupChannelsResponse>
-        listBackupChannelsTransportSettings =
-            GrpcCallSettings.<ListBackupChannelsRequest, ListBackupChannelsResponse>newBuilder()
-                .setMethodDescriptor(listBackupChannelsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelTransportSettings =
-        GrpcCallSettings.<GetBackupChannelRequest, BackupChannel>newBuilder()
-            .setMethodDescriptor(getBackupChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateBackupChannelRequest, Operation> updateBackupChannelTransportSettings =
-        GrpcCallSettings.<UpdateBackupChannelRequest, Operation>newBuilder()
-            .setMethodDescriptor(updateBackupChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add(
-                      "backup_channel.name", String.valueOf(request.getBackupChannel().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<DeleteBackupChannelRequest, Operation> deleteBackupChannelTransportSettings =
-        GrpcCallSettings.<DeleteBackupChannelRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteBackupChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-        listBackupPlanBindingsTransportSettings =
-            GrpcCallSettings
-                .<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>newBuilder()
-                .setMethodDescriptor(listBackupPlanBindingsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
-        getBackupPlanBindingTransportSettings =
-            GrpcCallSettings.<GetBackupPlanBindingRequest, BackupPlanBinding>newBuilder()
-                .setMethodDescriptor(getBackupPlanBindingMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupMethodDescriptor)
@@ -974,82 +685,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<CreateRestoreChannelRequest, Operation> createRestoreChannelTransportSettings =
-        GrpcCallSettings.<CreateRestoreChannelRequest, Operation>newBuilder()
-            .setMethodDescriptor(createRestoreChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-        listRestoreChannelsTransportSettings =
-            GrpcCallSettings.<ListRestoreChannelsRequest, ListRestoreChannelsResponse>newBuilder()
-                .setMethodDescriptor(listRestoreChannelsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelTransportSettings =
-        GrpcCallSettings.<GetRestoreChannelRequest, RestoreChannel>newBuilder()
-            .setMethodDescriptor(getRestoreChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateRestoreChannelRequest, Operation> updateRestoreChannelTransportSettings =
-        GrpcCallSettings.<UpdateRestoreChannelRequest, Operation>newBuilder()
-            .setMethodDescriptor(updateRestoreChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add(
-                      "restore_channel.name",
-                      String.valueOf(request.getRestoreChannel().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelTransportSettings =
-        GrpcCallSettings.<DeleteRestoreChannelRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteRestoreChannelMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-        listRestorePlanBindingsTransportSettings =
-            GrpcCallSettings
-                .<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>newBuilder()
-                .setMethodDescriptor(listRestorePlanBindingsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
-        getRestorePlanBindingTransportSettings =
-            GrpcCallSettings.<GetRestorePlanBindingRequest, RestorePlanBinding>newBuilder()
-                .setMethodDescriptor(getRestorePlanBindingMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<CreateRestoreRequest, Operation> createRestoreTransportSettings =
         GrpcCallSettings.<CreateRestoreRequest, Operation>newBuilder()
             .setMethodDescriptor(createRestoreMethodDescriptor)
@@ -1221,67 +856,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             settings.deleteBackupPlanOperationSettings(),
             clientContext,
             operationsStub);
-    this.createBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            createBackupChannelTransportSettings,
-            settings.createBackupChannelSettings(),
-            clientContext);
-    this.createBackupChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            createBackupChannelTransportSettings,
-            settings.createBackupChannelOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.listBackupChannelsCallable =
-        callableFactory.createUnaryCallable(
-            listBackupChannelsTransportSettings,
-            settings.listBackupChannelsSettings(),
-            clientContext);
-    this.listBackupChannelsPagedCallable =
-        callableFactory.createPagedCallable(
-            listBackupChannelsTransportSettings,
-            settings.listBackupChannelsSettings(),
-            clientContext);
-    this.getBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            getBackupChannelTransportSettings, settings.getBackupChannelSettings(), clientContext);
-    this.updateBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            updateBackupChannelTransportSettings,
-            settings.updateBackupChannelSettings(),
-            clientContext);
-    this.updateBackupChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            updateBackupChannelTransportSettings,
-            settings.updateBackupChannelOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.deleteBackupChannelCallable =
-        callableFactory.createUnaryCallable(
-            deleteBackupChannelTransportSettings,
-            settings.deleteBackupChannelSettings(),
-            clientContext);
-    this.deleteBackupChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteBackupChannelTransportSettings,
-            settings.deleteBackupChannelOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.listBackupPlanBindingsCallable =
-        callableFactory.createUnaryCallable(
-            listBackupPlanBindingsTransportSettings,
-            settings.listBackupPlanBindingsSettings(),
-            clientContext);
-    this.listBackupPlanBindingsPagedCallable =
-        callableFactory.createPagedCallable(
-            listBackupPlanBindingsTransportSettings,
-            settings.listBackupPlanBindingsSettings(),
-            clientContext);
-    this.getBackupPlanBindingCallable =
-        callableFactory.createUnaryCallable(
-            getBackupPlanBindingTransportSettings,
-            settings.getBackupPlanBindingSettings(),
-            clientContext);
     this.createBackupCallable =
         callableFactory.createUnaryCallable(
             createBackupTransportSettings, settings.createBackupSettings(), clientContext);
@@ -1373,69 +947,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
             settings.deleteRestorePlanOperationSettings(),
             clientContext,
             operationsStub);
-    this.createRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            createRestoreChannelTransportSettings,
-            settings.createRestoreChannelSettings(),
-            clientContext);
-    this.createRestoreChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            createRestoreChannelTransportSettings,
-            settings.createRestoreChannelOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.listRestoreChannelsCallable =
-        callableFactory.createUnaryCallable(
-            listRestoreChannelsTransportSettings,
-            settings.listRestoreChannelsSettings(),
-            clientContext);
-    this.listRestoreChannelsPagedCallable =
-        callableFactory.createPagedCallable(
-            listRestoreChannelsTransportSettings,
-            settings.listRestoreChannelsSettings(),
-            clientContext);
-    this.getRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            getRestoreChannelTransportSettings,
-            settings.getRestoreChannelSettings(),
-            clientContext);
-    this.updateRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            updateRestoreChannelTransportSettings,
-            settings.updateRestoreChannelSettings(),
-            clientContext);
-    this.updateRestoreChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            updateRestoreChannelTransportSettings,
-            settings.updateRestoreChannelOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.deleteRestoreChannelCallable =
-        callableFactory.createUnaryCallable(
-            deleteRestoreChannelTransportSettings,
-            settings.deleteRestoreChannelSettings(),
-            clientContext);
-    this.deleteRestoreChannelOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteRestoreChannelTransportSettings,
-            settings.deleteRestoreChannelOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.listRestorePlanBindingsCallable =
-        callableFactory.createUnaryCallable(
-            listRestorePlanBindingsTransportSettings,
-            settings.listRestorePlanBindingsSettings(),
-            clientContext);
-    this.listRestorePlanBindingsPagedCallable =
-        callableFactory.createPagedCallable(
-            listRestorePlanBindingsTransportSettings,
-            settings.listRestorePlanBindingsSettings(),
-            clientContext);
-    this.getRestorePlanBindingCallable =
-        callableFactory.createUnaryCallable(
-            getRestorePlanBindingTransportSettings,
-            settings.getRestorePlanBindingSettings(),
-            clientContext);
     this.createRestoreCallable =
         callableFactory.createUnaryCallable(
             createRestoreTransportSettings, settings.createRestoreSettings(), clientContext);
@@ -1569,74 +1080,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
   }
 
   @Override
-  public UnaryCallable<CreateBackupChannelRequest, Operation> createBackupChannelCallable() {
-    return createBackupChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
-      createBackupChannelOperationCallable() {
-    return createBackupChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsResponse>
-      listBackupChannelsCallable() {
-    return listBackupChannelsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsPagedResponse>
-      listBackupChannelsPagedCallable() {
-    return listBackupChannelsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetBackupChannelRequest, BackupChannel> getBackupChannelCallable() {
-    return getBackupChannelCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateBackupChannelRequest, Operation> updateBackupChannelCallable() {
-    return updateBackupChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
-      updateBackupChannelOperationCallable() {
-    return updateBackupChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteBackupChannelRequest, Operation> deleteBackupChannelCallable() {
-    return deleteBackupChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteBackupChannelRequest, Empty, OperationMetadata>
-      deleteBackupChannelOperationCallable() {
-    return deleteBackupChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
-      listBackupPlanBindingsCallable() {
-    return listBackupPlanBindingsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsPagedResponse>
-      listBackupPlanBindingsPagedCallable() {
-    return listBackupPlanBindingsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingCallable() {
-    return getBackupPlanBindingCallable;
-  }
-
-  @Override
   public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
     return createBackupCallable;
   }
@@ -1749,74 +1192,6 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
   public OperationCallable<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationCallable() {
     return deleteRestorePlanOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateRestoreChannelRequest, Operation> createRestoreChannelCallable() {
-    return createRestoreChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      createRestoreChannelOperationCallable() {
-    return createRestoreChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
-      listRestoreChannelsCallable() {
-    return listRestoreChannelsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsPagedResponse>
-      listRestoreChannelsPagedCallable() {
-    return listRestoreChannelsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelCallable() {
-    return getRestoreChannelCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateRestoreChannelRequest, Operation> updateRestoreChannelCallable() {
-    return updateRestoreChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      updateRestoreChannelOperationCallable() {
-    return updateRestoreChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelCallable() {
-    return deleteRestoreChannelCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteRestoreChannelRequest, Empty, OperationMetadata>
-      deleteRestoreChannelOperationCallable() {
-    return deleteRestoreChannelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
-      listRestorePlanBindingsCallable() {
-    return listRestorePlanBindingsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsPagedResponse>
-      listRestorePlanBindingsPagedCallable() {
-    return listRestorePlanBindingsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingCallable() {
-    return getRestorePlanBindingCallable;
   }
 
   @Override

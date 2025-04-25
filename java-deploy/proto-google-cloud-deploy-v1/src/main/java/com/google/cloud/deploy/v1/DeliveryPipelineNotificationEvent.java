@@ -35,7 +35,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeliveryPipelineNotificationEvent)
     DeliveryPipelineNotificationEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeliveryPipelineNotificationEvent.newBuilder() to construct.
   private DeliveryPipelineNotificationEvent(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deliveryPipeline_ = "";
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -452,7 +443,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -685,7 +675,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     }
 
     private java.lang.Object pipelineUid_ = "";
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     }
 
     private java.lang.Object deliveryPipeline_ = "";
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1053,7 +1026,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1042,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1092,7 +1063,6 @@ public final class DeliveryPipelineNotificationEvent extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

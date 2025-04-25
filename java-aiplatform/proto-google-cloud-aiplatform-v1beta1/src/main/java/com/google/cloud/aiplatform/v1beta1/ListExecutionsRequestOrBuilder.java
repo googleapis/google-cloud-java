@@ -40,7 +40,6 @@ public interface ListExecutionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ListExecutionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -152,7 +150,6 @@ public interface ListExecutionsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -213,7 +210,6 @@ public interface ListExecutionsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

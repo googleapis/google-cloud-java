@@ -40,7 +40,6 @@ public interface DeleteMetadataStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

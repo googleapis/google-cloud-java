@@ -38,7 +38,6 @@ public interface AnnotationSpecSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface AnnotationSpecSetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AnnotationSpecSetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface AnnotationSpecSetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpec> getAnnotationSpecsList();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface AnnotationSpecSetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpecs(int index);
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface AnnotationSpecSetOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
   int getAnnotationSpecsCount();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface AnnotationSpecSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
       getAnnotationSpecsOrBuilderList();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface AnnotationSpecSetOrBuilder
    * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface AnnotationSpecSetOrBuilder
    * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public interface AnnotationSpecSetOrBuilder
    * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
-
   /**
    *
    *

@@ -90,7 +90,6 @@ public interface RawEncryptResponseOrBuilder
    * @return Whether the ciphertextCrc32c field is set.
    */
   boolean hasCiphertextCrc32C();
-
   /**
    *
    *
@@ -112,7 +111,6 @@ public interface RawEncryptResponseOrBuilder
    * @return The ciphertextCrc32c.
    */
   com.google.protobuf.Int64Value getCiphertextCrc32C();
-
   /**
    *
    *
@@ -154,7 +152,6 @@ public interface RawEncryptResponseOrBuilder
    * @return Whether the initializationVectorCrc32c field is set.
    */
   boolean hasInitializationVectorCrc32C();
-
   /**
    *
    *
@@ -176,7 +173,6 @@ public interface RawEncryptResponseOrBuilder
    * @return The initializationVectorCrc32c.
    */
   com.google.protobuf.Int64Value getInitializationVectorCrc32C();
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public interface RawEncryptResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public interface RawEncryptResponseOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AttributePropagationSettings)
     AttributePropagationSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttributePropagationSettings.newBuilder() to construct.
   private AttributePropagationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * <code>OUTPUT_CREDENTIALS_UNSPECIFIED = 0;</code>
      */
     public static final int OUTPUT_CREDENTIALS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * <code>HEADER = 1;</code>
      */
     public static final int HEADER_VALUE = 1;
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * <code>JWT = 2;</code>
      */
     public static final int JWT_VALUE = 2;
-
     /**
      *
      *
@@ -264,7 +260,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expression_ = "";
-
   /**
    *
    *
@@ -307,7 +302,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public boolean hasExpression() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -358,7 +352,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -432,7 +425,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
                   : result;
             }
           };
-
   /**
    *
    *
@@ -455,7 +447,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         java.lang.Integer, com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials>(
         outputCredentials_, outputCredentials_converter_);
   }
-
   /**
    *
    *
@@ -475,7 +466,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public int getOutputCredentialsCount() {
     return outputCredentials_.size();
   }
-
   /**
    *
    *
@@ -497,7 +487,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       getOutputCredentials(int index) {
     return outputCredentials_converter_.convert(outputCredentials_.get(index));
   }
-
   /**
    *
    *
@@ -517,7 +506,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public java.util.List<java.lang.Integer> getOutputCredentialsValueList() {
     return outputCredentials_;
   }
-
   /**
    *
    *
@@ -543,7 +531,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
 
   public static final int ENABLE_FIELD_NUMBER = 3;
   private boolean enable_ = false;
-
   /**
    *
    *
@@ -561,7 +548,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -784,7 +770,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1028,7 +1013,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object expression_ = "";
-
     /**
      *
      *
@@ -1070,7 +1054,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public boolean hasExpression() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1120,7 +1103,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1152,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1219,7 +1200,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1244,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1303,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1325,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
           com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials>(
           outputCredentials_, outputCredentials_converter_);
     }
-
     /**
      *
      *
@@ -1366,7 +1343,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public int getOutputCredentialsCount() {
       return outputCredentials_.size();
     }
-
     /**
      *
      *
@@ -1387,7 +1363,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         getOutputCredentials(int index) {
       return outputCredentials_converter_.convert(outputCredentials_.get(index));
     }
-
     /**
      *
      *
@@ -1415,7 +1390,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1416,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1470,7 +1443,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1464,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1482,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public java.util.List<java.lang.Integer> getOutputCredentialsValueList() {
       return java.util.Collections.unmodifiableList(outputCredentials_);
     }
-
     /**
      *
      *
@@ -1531,7 +1501,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public int getOutputCredentialsValue(int index) {
       return outputCredentials_.get(index);
     }
-
     /**
      *
      *
@@ -1555,7 +1524,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1578,7 +1546,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1572,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     }
 
     private boolean enable_;
-
     /**
      *
      *
@@ -1623,7 +1589,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1641,7 +1606,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public boolean getEnable() {
       return enable_;
     }
-
     /**
      *
      *
@@ -1663,7 +1627,6 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

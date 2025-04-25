@@ -34,7 +34,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.UpdateConfigRequest)
     UpdateConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateConfigRequest.newBuilder() to construct.
   private UpdateConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v2.Config config_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.speech.v2.Config getConfig() {
     return config_ == null ? com.google.cloud.speech.v2.Config.getDefaultInstance() : config_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +567,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.speech.v2.Config.Builder,
             com.google.cloud.speech.v2.ConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
         return config_ == null ? com.google.cloud.speech.v2.Config.getDefaultInstance() : config_;
       }
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -816,7 +798,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +919,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -962,7 +937,6 @@ public final class UpdateConfigRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
-
     /**
      *
      *

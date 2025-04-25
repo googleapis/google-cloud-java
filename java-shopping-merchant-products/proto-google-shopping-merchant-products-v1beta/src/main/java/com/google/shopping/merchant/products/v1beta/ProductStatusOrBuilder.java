@@ -37,7 +37,6 @@ public interface ProductStatusOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.ProductStatus.DestinationStatus>
       getDestinationStatusesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ProductStatusOrBuilder
    */
   com.google.shopping.merchant.products.v1beta.ProductStatus.DestinationStatus
       getDestinationStatuses(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ProductStatusOrBuilder
    * </code>
    */
   int getDestinationStatusesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ProductStatusOrBuilder
           ? extends
               com.google.shopping.merchant.products.v1beta.ProductStatus.DestinationStatusOrBuilder>
       getDestinationStatusesOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ProductStatusOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.ProductStatus.ItemLevelIssue>
       getItemLevelIssuesList();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface ProductStatusOrBuilder
    */
   com.google.shopping.merchant.products.v1beta.ProductStatus.ItemLevelIssue getItemLevelIssues(
       int index);
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface ProductStatusOrBuilder
    * </code>
    */
   int getItemLevelIssuesCount();
-
   /**
    *
    *
@@ -151,7 +144,6 @@ public interface ProductStatusOrBuilder
           ? extends
               com.google.shopping.merchant.products.v1beta.ProductStatus.ItemLevelIssueOrBuilder>
       getItemLevelIssuesOrBuilderList();
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public interface ProductStatusOrBuilder
    * @return Whether the creationDate field is set.
    */
   boolean hasCreationDate();
-
   /**
    *
    *
@@ -193,7 +184,6 @@ public interface ProductStatusOrBuilder
    * @return The creationDate.
    */
   com.google.protobuf.Timestamp getCreationDate();
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public interface ProductStatusOrBuilder
    * @return Whether the lastUpdateDate field is set.
    */
   boolean hasLastUpdateDate();
-
   /**
    *
    *
@@ -233,7 +222,6 @@ public interface ProductStatusOrBuilder
    * @return The lastUpdateDate.
    */
   com.google.protobuf.Timestamp getLastUpdateDate();
-
   /**
    *
    *
@@ -259,7 +247,6 @@ public interface ProductStatusOrBuilder
    * @return Whether the googleExpirationDate field is set.
    */
   boolean hasGoogleExpirationDate();
-
   /**
    *
    *
@@ -273,7 +260,6 @@ public interface ProductStatusOrBuilder
    * @return The googleExpirationDate.
    */
   com.google.protobuf.Timestamp getGoogleExpirationDate();
-
   /**
    *
    *

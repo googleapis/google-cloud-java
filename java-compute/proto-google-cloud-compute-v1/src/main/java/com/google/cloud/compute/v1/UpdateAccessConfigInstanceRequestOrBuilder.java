@@ -38,7 +38,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return Whether the accessConfigResource field is set.
    */
   boolean hasAccessConfigResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return The accessConfigResource.
    */
   com.google.cloud.compute.v1.AccessConfig getAccessConfigResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return The networkInterface.
    */
   java.lang.String getNetworkInterface();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface UpdateAccessConfigInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

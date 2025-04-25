@@ -36,7 +36,6 @@ public interface FetchStaticIpsResponseOrBuilder
    * @return A list containing the staticIps.
    */
   java.util.List<java.lang.String> getStaticIpsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FetchStaticIpsResponseOrBuilder
    * @return The count of staticIps.
    */
   int getStaticIpsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface FetchStaticIpsResponseOrBuilder
    * @return The staticIps at the given index.
    */
   java.lang.String getStaticIps(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface FetchStaticIpsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

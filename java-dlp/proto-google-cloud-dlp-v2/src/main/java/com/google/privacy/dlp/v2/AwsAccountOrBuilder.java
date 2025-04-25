@@ -36,7 +36,6 @@ public interface AwsAccountOrBuilder
    * @return The accountId.
    */
   java.lang.String getAccountId();
-
   /**
    *
    *

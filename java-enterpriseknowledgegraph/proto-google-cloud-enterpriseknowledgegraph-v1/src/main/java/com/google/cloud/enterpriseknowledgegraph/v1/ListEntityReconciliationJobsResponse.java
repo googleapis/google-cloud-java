@@ -36,7 +36,6 @@ public final class ListEntityReconciliationJobsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse)
     ListEntityReconciliationJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEntityReconciliationJobsResponse.newBuilder() to construct.
   private ListEntityReconciliationJobsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class ListEntityReconciliationJobsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>
       entityReconciliationJobs_;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class ListEntityReconciliationJobsResponse
       getEntityReconciliationJobsList() {
     return entityReconciliationJobs_;
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class ListEntityReconciliationJobsResponse
       getEntityReconciliationJobsOrBuilderList() {
     return entityReconciliationJobs_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class ListEntityReconciliationJobsResponse
   public int getEntityReconciliationJobsCount() {
     return entityReconciliationJobs_.size();
   }
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class ListEntityReconciliationJobsResponse
       getEntityReconciliationJobs(int index) {
     return entityReconciliationJobs_.get(index);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class ListEntityReconciliationJobsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ListEntityReconciliationJobsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -401,7 +393,6 @@ public final class ListEntityReconciliationJobsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -706,7 +697,6 @@ public final class ListEntityReconciliationJobsResponse
         return entityReconciliationJobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -726,7 +716,6 @@ public final class ListEntityReconciliationJobsResponse
         return entityReconciliationJobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -747,7 +736,6 @@ public final class ListEntityReconciliationJobsResponse
         return entityReconciliationJobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -774,7 +762,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +787,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +813,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +888,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +913,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class ListEntityReconciliationJobsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +973,6 @@ public final class ListEntityReconciliationJobsResponse
         getEntityReconciliationJobsBuilder(int index) {
       return getEntityReconciliationJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class ListEntityReconciliationJobsResponse
         return entityReconciliationJobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class ListEntityReconciliationJobsResponse
         return java.util.Collections.unmodifiableList(entityReconciliationJobs_);
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class ListEntityReconciliationJobsResponse
               com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class ListEntityReconciliationJobsResponse
               com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class ListEntityReconciliationJobsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1141,7 +1114,6 @@ public final class ListEntityReconciliationJobsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class ListEntityReconciliationJobsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class ListEntityReconciliationJobsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class ListEntityReconciliationJobsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

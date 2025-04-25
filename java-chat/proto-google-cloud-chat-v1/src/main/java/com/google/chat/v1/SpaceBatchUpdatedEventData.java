@@ -35,7 +35,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.chat.v1.SpaceBatchUpdatedEventData)
     SpaceBatchUpdatedEventDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpaceBatchUpdatedEventData.newBuilder() to construct.
   private SpaceBatchUpdatedEventData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.SpaceUpdatedEventData> spaces_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
   public java.util.List<com.google.chat.v1.SpaceUpdatedEventData> getSpacesList() {
     return spaces_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       getSpacesOrBuilderList() {
     return spaces_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
   public int getSpacesCount() {
     return spaces_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
   public com.google.chat.v1.SpaceUpdatedEventData getSpaces(int index) {
     return spaces_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
         return spacesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
         return spacesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
         return spacesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +773,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
     public com.google.chat.v1.SpaceUpdatedEventData.Builder getSpacesBuilder(int index) {
       return getSpacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
         return spacesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -839,7 +818,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(spaces_);
       }
     }
-
     /**
      *
      *
@@ -853,7 +831,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       return getSpacesFieldBuilder()
           .addBuilder(com.google.chat.v1.SpaceUpdatedEventData.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -867,7 +844,6 @@ public final class SpaceBatchUpdatedEventData extends com.google.protobuf.Genera
       return getSpacesFieldBuilder()
           .addBuilder(index, com.google.chat.v1.SpaceUpdatedEventData.getDefaultInstance());
     }
-
     /**
      *
      *

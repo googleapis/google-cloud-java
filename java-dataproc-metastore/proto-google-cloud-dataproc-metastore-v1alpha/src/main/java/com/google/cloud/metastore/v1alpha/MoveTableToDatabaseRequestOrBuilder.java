@@ -41,7 +41,6 @@ public interface MoveTableToDatabaseRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface MoveTableToDatabaseRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface MoveTableToDatabaseRequestOrBuilder
    * @return The dbName.
    */
   java.lang.String getDbName();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface MoveTableToDatabaseRequestOrBuilder
    * @return The destinationDbName.
    */
   java.lang.String getDestinationDbName();
-
   /**
    *
    *

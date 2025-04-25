@@ -36,7 +36,6 @@ public interface ContainerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ContainerOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ContainerOrBuilder
    * @return A list containing the command.
    */
   java.util.List<java.lang.String> getCommandList();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ContainerOrBuilder
    * @return The count of command.
    */
   int getCommandCount();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface ContainerOrBuilder
    * @return The command at the given index.
    */
   java.lang.String getCommand(int index);
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface ContainerOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface ContainerOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface ContainerOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.EnvVar env = 5;</code>
    */
   java.util.List<com.google.cloud.run.v2.EnvVar> getEnvList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.EnvVar env = 5;</code>
    */
   com.google.cloud.run.v2.EnvVar getEnv(int index);
-
   /**
    *
    *
@@ -228,7 +218,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.EnvVar env = 5;</code>
    */
   int getEnvCount();
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.EnvVar env = 5;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.EnvVarOrBuilder> getEnvOrBuilderList();
-
   /**
    *
    *
@@ -263,7 +251,6 @@ public interface ContainerOrBuilder
    * @return Whether the resources field is set.
    */
   boolean hasResources();
-
   /**
    *
    *
@@ -276,7 +263,6 @@ public interface ContainerOrBuilder
    * @return The resources.
    */
   com.google.cloud.run.v2.ResourceRequirements getResources();
-
   /**
    *
    *
@@ -303,7 +289,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.ContainerPort ports = 7;</code>
    */
   java.util.List<com.google.cloud.run.v2.ContainerPort> getPortsList();
-
   /**
    *
    *
@@ -319,7 +304,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.ContainerPort ports = 7;</code>
    */
   com.google.cloud.run.v2.ContainerPort getPorts(int index);
-
   /**
    *
    *
@@ -335,7 +319,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.ContainerPort ports = 7;</code>
    */
   int getPortsCount();
-
   /**
    *
    *
@@ -351,7 +334,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.ContainerPort ports = 7;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ContainerPortOrBuilder> getPortsOrBuilderList();
-
   /**
    *
    *
@@ -378,7 +360,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.VolumeMount volume_mounts = 8;</code>
    */
   java.util.List<com.google.cloud.run.v2.VolumeMount> getVolumeMountsList();
-
   /**
    *
    *
@@ -389,7 +370,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.VolumeMount volume_mounts = 8;</code>
    */
   com.google.cloud.run.v2.VolumeMount getVolumeMounts(int index);
-
   /**
    *
    *
@@ -400,7 +380,6 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.VolumeMount volume_mounts = 8;</code>
    */
   int getVolumeMountsCount();
-
   /**
    *
    *
@@ -412,7 +391,6 @@ public interface ContainerOrBuilder
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeMountOrBuilder>
       getVolumeMountsOrBuilderList();
-
   /**
    *
    *
@@ -438,7 +416,6 @@ public interface ContainerOrBuilder
    * @return The workingDir.
    */
   java.lang.String getWorkingDir();
-
   /**
    *
    *
@@ -467,7 +444,6 @@ public interface ContainerOrBuilder
    * @return Whether the livenessProbe field is set.
    */
   boolean hasLivenessProbe();
-
   /**
    *
    *
@@ -481,7 +457,6 @@ public interface ContainerOrBuilder
    * @return The livenessProbe.
    */
   com.google.cloud.run.v2.Probe getLivenessProbe();
-
   /**
    *
    *
@@ -509,7 +484,6 @@ public interface ContainerOrBuilder
    * @return Whether the startupProbe field is set.
    */
   boolean hasStartupProbe();
-
   /**
    *
    *
@@ -525,7 +499,6 @@ public interface ContainerOrBuilder
    * @return The startupProbe.
    */
   com.google.cloud.run.v2.Probe getStartupProbe();
-
   /**
    *
    *
@@ -552,7 +525,6 @@ public interface ContainerOrBuilder
    * @return A list containing the dependsOn.
    */
   java.util.List<java.lang.String> getDependsOnList();
-
   /**
    *
    *
@@ -565,7 +537,6 @@ public interface ContainerOrBuilder
    * @return The count of dependsOn.
    */
   int getDependsOnCount();
-
   /**
    *
    *
@@ -579,7 +550,6 @@ public interface ContainerOrBuilder
    * @return The dependsOn at the given index.
    */
   java.lang.String getDependsOn(int index);
-
   /**
    *
    *
@@ -607,7 +577,6 @@ public interface ContainerOrBuilder
    * @return The baseImageUri.
    */
   java.lang.String getBaseImageUri();
-
   /**
    *
    *
@@ -636,7 +605,6 @@ public interface ContainerOrBuilder
    * @return Whether the buildInfo field is set.
    */
   boolean hasBuildInfo();
-
   /**
    *
    *
@@ -651,7 +619,6 @@ public interface ContainerOrBuilder
    * @return The buildInfo.
    */
   com.google.cloud.run.v2.BuildInfo getBuildInfo();
-
   /**
    *
    *

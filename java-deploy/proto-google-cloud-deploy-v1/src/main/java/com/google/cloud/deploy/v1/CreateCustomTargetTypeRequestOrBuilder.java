@@ -39,7 +39,6 @@ public interface CreateCustomTargetTypeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateCustomTargetTypeRequestOrBuilder
    * @return The customTargetTypeId.
    */
   java.lang.String getCustomTargetTypeId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateCustomTargetTypeRequestOrBuilder
    * @return Whether the customTargetType field is set.
    */
   boolean hasCustomTargetType();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateCustomTargetTypeRequestOrBuilder
    * @return The customTargetType.
    */
   com.google.cloud.deploy.v1.CustomTargetType getCustomTargetType();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface CreateCustomTargetTypeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

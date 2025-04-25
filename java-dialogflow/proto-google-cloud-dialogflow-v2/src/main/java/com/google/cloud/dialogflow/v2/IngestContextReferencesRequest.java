@@ -33,7 +33,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.IngestContextReferencesRequest)
     IngestContextReferencesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IngestContextReferencesRequest.newBuilder() to construct.
   private IngestContextReferencesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -81,7 +80,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +171,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
   public int getContextReferencesCount() {
     return internalGetContextReferences().getMap().size();
   }
-
   /**
    *
    *
@@ -196,7 +192,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
     }
     return internalGetContextReferences().getMap().containsKey(key);
   }
-
   /** Use {@link #getContextReferencesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -205,7 +200,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       getContextReferences() {
     return getContextReferencesMap();
   }
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       getContextReferencesMap() {
     return internalGetContextReferences().getMap();
   }
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
         map = internalGetContextReferences().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -466,7 +458,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +689,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object conversation_ = "";
-
     /**
      *
      *
@@ -725,7 +715,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +741,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +766,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +787,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,8 +834,7 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
           defaultEntry() {
         return ContextReferencesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ContextReferencesConverter contextReferencesConverter =
         new ContextReferencesConverter();
@@ -890,7 +875,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
     public int getContextReferencesCount() {
       return internalGetContextReferences().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       }
       return internalGetContextReferences().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getContextReferencesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -921,7 +904,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
         getContextReferences() {
       return getContextReferencesMap();
     }
-
     /**
      *
      *
@@ -942,7 +924,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
         getContextReferencesMap() {
       return internalGetContextReferences().getImmutableMap();
     }
-
     /**
      *
      *
@@ -972,7 +953,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
           map = internalGetMutableContextReferences().ensureBuilderMap();
       return map.containsKey(key) ? contextReferencesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1008,7 +988,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       internalGetMutableContextReferences().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1009,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       internalGetMutableContextReferences().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1039,7 +1017,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000002;
       return internalGetMutableContextReferences().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1072,6 @@ public final class IngestContextReferencesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

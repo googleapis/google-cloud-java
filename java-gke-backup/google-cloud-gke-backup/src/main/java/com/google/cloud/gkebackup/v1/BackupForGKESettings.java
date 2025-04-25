@@ -16,13 +16,9 @@
 
 package com.google.cloud.gkebackup.v1;
 
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
-import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -179,66 +175,6 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
     return ((BackupForGKEStubSettings) getStubSettings()).deleteBackupPlanOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to createBackupChannel. */
-  public UnaryCallSettings<CreateBackupChannelRequest, Operation> createBackupChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).createBackupChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createBackupChannel. */
-  public OperationCallSettings<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
-      createBackupChannelOperationSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).createBackupChannelOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listBackupChannels. */
-  public PagedCallSettings<
-          ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
-      listBackupChannelsSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).listBackupChannelsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getBackupChannel. */
-  public UnaryCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).getBackupChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateBackupChannel. */
-  public UnaryCallSettings<UpdateBackupChannelRequest, Operation> updateBackupChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).updateBackupChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateBackupChannel. */
-  public OperationCallSettings<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
-      updateBackupChannelOperationSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).updateBackupChannelOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteBackupChannel. */
-  public UnaryCallSettings<DeleteBackupChannelRequest, Operation> deleteBackupChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).deleteBackupChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteBackupChannel. */
-  public OperationCallSettings<DeleteBackupChannelRequest, Empty, OperationMetadata>
-      deleteBackupChannelOperationSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).deleteBackupChannelOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listBackupPlanBindings. */
-  public PagedCallSettings<
-          ListBackupPlanBindingsRequest,
-          ListBackupPlanBindingsResponse,
-          ListBackupPlanBindingsPagedResponse>
-      listBackupPlanBindingsSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).listBackupPlanBindingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getBackupPlanBinding. */
-  public UnaryCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
-      getBackupPlanBindingSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).getBackupPlanBindingSettings();
-  }
-
   /** Returns the object with the settings used for calls to createBackup. */
   public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
     return ((BackupForGKEStubSettings) getStubSettings()).createBackupSettings();
@@ -338,66 +274,6 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
   public OperationCallSettings<DeleteRestorePlanRequest, Empty, OperationMetadata>
       deleteRestorePlanOperationSettings() {
     return ((BackupForGKEStubSettings) getStubSettings()).deleteRestorePlanOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createRestoreChannel. */
-  public UnaryCallSettings<CreateRestoreChannelRequest, Operation> createRestoreChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).createRestoreChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createRestoreChannel. */
-  public OperationCallSettings<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      createRestoreChannelOperationSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).createRestoreChannelOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listRestoreChannels. */
-  public PagedCallSettings<
-          ListRestoreChannelsRequest, ListRestoreChannelsResponse, ListRestoreChannelsPagedResponse>
-      listRestoreChannelsSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).listRestoreChannelsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getRestoreChannel. */
-  public UnaryCallSettings<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).getRestoreChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateRestoreChannel. */
-  public UnaryCallSettings<UpdateRestoreChannelRequest, Operation> updateRestoreChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).updateRestoreChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateRestoreChannel. */
-  public OperationCallSettings<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-      updateRestoreChannelOperationSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).updateRestoreChannelOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteRestoreChannel. */
-  public UnaryCallSettings<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).deleteRestoreChannelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteRestoreChannel. */
-  public OperationCallSettings<DeleteRestoreChannelRequest, Empty, OperationMetadata>
-      deleteRestoreChannelOperationSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).deleteRestoreChannelOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listRestorePlanBindings. */
-  public PagedCallSettings<
-          ListRestorePlanBindingsRequest,
-          ListRestorePlanBindingsResponse,
-          ListRestorePlanBindingsPagedResponse>
-      listRestorePlanBindingsSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).listRestorePlanBindingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getRestorePlanBinding. */
-  public UnaryCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
-      getRestorePlanBindingSettings() {
-    return ((BackupForGKEStubSettings) getStubSettings()).getRestorePlanBindingSettings();
   }
 
   /** Returns the object with the settings used for calls to createRestore. */
@@ -649,72 +525,6 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
       return getStubSettingsBuilder().deleteBackupPlanOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createBackupChannel. */
-    public UnaryCallSettings.Builder<CreateBackupChannelRequest, Operation>
-        createBackupChannelSettings() {
-      return getStubSettingsBuilder().createBackupChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createBackupChannel. */
-    public OperationCallSettings.Builder<
-            CreateBackupChannelRequest, BackupChannel, OperationMetadata>
-        createBackupChannelOperationSettings() {
-      return getStubSettingsBuilder().createBackupChannelOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listBackupChannels. */
-    public PagedCallSettings.Builder<
-            ListBackupChannelsRequest, ListBackupChannelsResponse, ListBackupChannelsPagedResponse>
-        listBackupChannelsSettings() {
-      return getStubSettingsBuilder().listBackupChannelsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getBackupChannel. */
-    public UnaryCallSettings.Builder<GetBackupChannelRequest, BackupChannel>
-        getBackupChannelSettings() {
-      return getStubSettingsBuilder().getBackupChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateBackupChannel. */
-    public UnaryCallSettings.Builder<UpdateBackupChannelRequest, Operation>
-        updateBackupChannelSettings() {
-      return getStubSettingsBuilder().updateBackupChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateBackupChannel. */
-    public OperationCallSettings.Builder<
-            UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
-        updateBackupChannelOperationSettings() {
-      return getStubSettingsBuilder().updateBackupChannelOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteBackupChannel. */
-    public UnaryCallSettings.Builder<DeleteBackupChannelRequest, Operation>
-        deleteBackupChannelSettings() {
-      return getStubSettingsBuilder().deleteBackupChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteBackupChannel. */
-    public OperationCallSettings.Builder<DeleteBackupChannelRequest, Empty, OperationMetadata>
-        deleteBackupChannelOperationSettings() {
-      return getStubSettingsBuilder().deleteBackupChannelOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listBackupPlanBindings. */
-    public PagedCallSettings.Builder<
-            ListBackupPlanBindingsRequest,
-            ListBackupPlanBindingsResponse,
-            ListBackupPlanBindingsPagedResponse>
-        listBackupPlanBindingsSettings() {
-      return getStubSettingsBuilder().listBackupPlanBindingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getBackupPlanBinding. */
-    public UnaryCallSettings.Builder<GetBackupPlanBindingRequest, BackupPlanBinding>
-        getBackupPlanBindingSettings() {
-      return getStubSettingsBuilder().getBackupPlanBindingSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createBackup. */
     public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
       return getStubSettingsBuilder().createBackupSettings();
@@ -819,74 +629,6 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
     public OperationCallSettings.Builder<DeleteRestorePlanRequest, Empty, OperationMetadata>
         deleteRestorePlanOperationSettings() {
       return getStubSettingsBuilder().deleteRestorePlanOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createRestoreChannel. */
-    public UnaryCallSettings.Builder<CreateRestoreChannelRequest, Operation>
-        createRestoreChannelSettings() {
-      return getStubSettingsBuilder().createRestoreChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createRestoreChannel. */
-    public OperationCallSettings.Builder<
-            CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-        createRestoreChannelOperationSettings() {
-      return getStubSettingsBuilder().createRestoreChannelOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listRestoreChannels. */
-    public PagedCallSettings.Builder<
-            ListRestoreChannelsRequest,
-            ListRestoreChannelsResponse,
-            ListRestoreChannelsPagedResponse>
-        listRestoreChannelsSettings() {
-      return getStubSettingsBuilder().listRestoreChannelsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getRestoreChannel. */
-    public UnaryCallSettings.Builder<GetRestoreChannelRequest, RestoreChannel>
-        getRestoreChannelSettings() {
-      return getStubSettingsBuilder().getRestoreChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateRestoreChannel. */
-    public UnaryCallSettings.Builder<UpdateRestoreChannelRequest, Operation>
-        updateRestoreChannelSettings() {
-      return getStubSettingsBuilder().updateRestoreChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateRestoreChannel. */
-    public OperationCallSettings.Builder<
-            UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
-        updateRestoreChannelOperationSettings() {
-      return getStubSettingsBuilder().updateRestoreChannelOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteRestoreChannel. */
-    public UnaryCallSettings.Builder<DeleteRestoreChannelRequest, Operation>
-        deleteRestoreChannelSettings() {
-      return getStubSettingsBuilder().deleteRestoreChannelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteRestoreChannel. */
-    public OperationCallSettings.Builder<DeleteRestoreChannelRequest, Empty, OperationMetadata>
-        deleteRestoreChannelOperationSettings() {
-      return getStubSettingsBuilder().deleteRestoreChannelOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listRestorePlanBindings. */
-    public PagedCallSettings.Builder<
-            ListRestorePlanBindingsRequest,
-            ListRestorePlanBindingsResponse,
-            ListRestorePlanBindingsPagedResponse>
-        listRestorePlanBindingsSettings() {
-      return getStubSettingsBuilder().listRestorePlanBindingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getRestorePlanBinding. */
-    public UnaryCallSettings.Builder<GetRestorePlanBindingRequest, RestorePlanBinding>
-        getRestorePlanBindingSettings() {
-      return getStubSettingsBuilder().getRestorePlanBindingSettings();
     }
 
     /** Returns the builder for the settings used for calls to createRestore. */

@@ -40,7 +40,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the offerId field is set.
    */
   boolean hasOfferId();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the categoryL1 field is set.
    */
   boolean hasCategoryL1();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The categoryL1.
    */
   java.lang.String getCategoryL1();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the categoryL2 field is set.
    */
   boolean hasCategoryL2();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The categoryL2.
    */
   java.lang.String getCategoryL2();
-
   /**
    *
    *
@@ -289,7 +277,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the categoryL3 field is set.
    */
   boolean hasCategoryL3();
-
   /**
    *
    *
@@ -303,7 +290,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The categoryL3.
    */
   java.lang.String getCategoryL3();
-
   /**
    *
    *
@@ -331,7 +317,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the categoryL4 field is set.
    */
   boolean hasCategoryL4();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The categoryL4.
    */
   java.lang.String getCategoryL4();
-
   /**
    *
    *
@@ -373,7 +357,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the categoryL5 field is set.
    */
   boolean hasCategoryL5();
-
   /**
    *
    *
@@ -387,7 +370,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The categoryL5.
    */
   java.lang.String getCategoryL5();
-
   /**
    *
    *
@@ -415,7 +397,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the productTypeL1 field is set.
    */
   boolean hasProductTypeL1();
-
   /**
    *
    *
@@ -429,7 +410,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The productTypeL1.
    */
   java.lang.String getProductTypeL1();
-
   /**
    *
    *
@@ -457,7 +437,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the productTypeL2 field is set.
    */
   boolean hasProductTypeL2();
-
   /**
    *
    *
@@ -471,7 +450,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The productTypeL2.
    */
   java.lang.String getProductTypeL2();
-
   /**
    *
    *
@@ -499,7 +477,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the productTypeL3 field is set.
    */
   boolean hasProductTypeL3();
-
   /**
    *
    *
@@ -513,7 +490,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The productTypeL3.
    */
   java.lang.String getProductTypeL3();
-
   /**
    *
    *
@@ -541,7 +517,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the productTypeL4 field is set.
    */
   boolean hasProductTypeL4();
-
   /**
    *
    *
@@ -555,7 +530,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The productTypeL4.
    */
   java.lang.String getProductTypeL4();
-
   /**
    *
    *
@@ -583,7 +557,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the productTypeL5 field is set.
    */
   boolean hasProductTypeL5();
-
   /**
    *
    *
@@ -597,7 +570,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The productTypeL5.
    */
   java.lang.String getProductTypeL5();
-
   /**
    *
    *
@@ -624,7 +596,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
-
   /**
    *
    *
@@ -637,7 +608,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
-
   /**
    *
    *
@@ -661,7 +631,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the suggestedPrice field is set.
    */
   boolean hasSuggestedPrice();
-
   /**
    *
    *
@@ -674,7 +643,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The suggestedPrice.
    */
   com.google.shopping.type.Price getSuggestedPrice();
-
   /**
    *
    *
@@ -700,7 +668,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the predictedImpressionsChangeFraction field is set.
    */
   boolean hasPredictedImpressionsChangeFraction();
-
   /**
    *
    *
@@ -730,7 +697,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the predictedClicksChangeFraction field is set.
    */
   boolean hasPredictedClicksChangeFraction();
-
   /**
    *
    *
@@ -760,7 +726,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return Whether the predictedConversionsChangeFraction field is set.
    */
   boolean hasPredictedConversionsChangeFraction();
-
   /**
    *
    *
@@ -790,7 +755,6 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The enum numeric value on the wire for effectiveness.
    */
   int getEffectivenessValue();
-
   /**
    *
    *

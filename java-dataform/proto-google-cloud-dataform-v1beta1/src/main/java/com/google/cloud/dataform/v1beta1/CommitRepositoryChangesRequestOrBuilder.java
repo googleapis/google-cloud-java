@@ -38,7 +38,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
    * @return Whether the commitMetadata field is set.
    */
   boolean hasCommitMetadata();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
    * @return The commitMetadata.
    */
   com.google.cloud.dataform.v1beta1.CommitMetadata getCommitMetadata();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
    * @return The requiredHeadCommitSha.
    */
   java.lang.String getRequiredHeadCommitSha();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
    * </code>
    */
   int getFileOperationsCount();
-
   /**
    *
    *
@@ -154,14 +149,12 @@ public interface CommitRepositoryChangesRequestOrBuilder
    * </code>
    */
   boolean containsFileOperations(java.lang.String key);
-
   /** Use {@link #getFileOperationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation>
       getFileOperations();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
           java.lang.String,
           com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation>
       getFileOperationsMap();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface CommitRepositoryChangesRequestOrBuilder
           /* nullable */
           com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation
               defaultValue);
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * @return Whether the hostname field is set.
    */
   boolean hasHostname();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

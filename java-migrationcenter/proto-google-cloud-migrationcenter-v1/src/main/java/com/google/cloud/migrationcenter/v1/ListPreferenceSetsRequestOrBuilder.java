@@ -38,7 +38,6 @@ public interface ListPreferenceSetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface ListPreferenceSetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface ListPreferenceSetsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

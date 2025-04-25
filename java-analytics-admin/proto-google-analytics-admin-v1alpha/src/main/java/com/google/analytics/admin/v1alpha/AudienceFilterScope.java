@@ -85,7 +85,6 @@ public enum AudienceFilterScope implements com.google.protobuf.ProtocolMessageEn
    * <code>AUDIENCE_FILTER_SCOPE_UNSPECIFIED = 0;</code>
    */
   public static final int AUDIENCE_FILTER_SCOPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -97,7 +96,6 @@ public enum AudienceFilterScope implements com.google.protobuf.ProtocolMessageEn
    * <code>AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT = 1;</code>
    */
   public static final int AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT_VALUE = 1;
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public enum AudienceFilterScope implements com.google.protobuf.ProtocolMessageEn
    * <code>AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION = 2;</code>
    */
   public static final int AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION_VALUE = 2;
-
   /**
    *
    *

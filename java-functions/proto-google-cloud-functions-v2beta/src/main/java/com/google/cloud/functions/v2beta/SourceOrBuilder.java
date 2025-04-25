@@ -36,7 +36,6 @@ public interface SourceOrBuilder
    * @return Whether the storageSource field is set.
    */
   boolean hasStorageSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SourceOrBuilder
    * @return The storageSource.
    */
   com.google.cloud.functions.v2beta.StorageSource getStorageSource();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface SourceOrBuilder
    * @return Whether the repoSource field is set.
    */
   boolean hasRepoSource();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SourceOrBuilder
    * @return The repoSource.
    */
   com.google.cloud.functions.v2beta.RepoSource getRepoSource();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface SourceOrBuilder
    * @return Whether the gitUri field is set.
    */
   boolean hasGitUri();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface SourceOrBuilder
    * @return The gitUri.
    */
   java.lang.String getGitUri();
-
   /**
    *
    *

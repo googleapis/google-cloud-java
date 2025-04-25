@@ -33,7 +33,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.GPUDriverConfig)
     GPUDriverConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GPUDriverConfig.newBuilder() to construct.
   private GPUDriverConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENABLE_GPU_DRIVER_FIELD_NUMBER = 1;
   private boolean enableGpuDriver_ = false;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customGpuDriverPath_ = "";
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +306,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -507,7 +502,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private boolean enableGpuDriver_;
-
     /**
      *
      *
@@ -525,7 +519,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
     public boolean getEnableGpuDriver() {
       return enableGpuDriver_;
     }
-
     /**
      *
      *
@@ -547,7 +540,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object customGpuDriverPath_ = "";
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -619,7 +609,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +651,6 @@ public final class GPUDriverConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

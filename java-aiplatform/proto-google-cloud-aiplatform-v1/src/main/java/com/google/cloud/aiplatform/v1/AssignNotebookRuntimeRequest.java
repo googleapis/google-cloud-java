@@ -34,7 +34,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AssignNotebookRuntimeRequest)
     AssignNotebookRuntimeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AssignNotebookRuntimeRequest.newBuilder() to construct.
   private AssignNotebookRuntimeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookRuntimeTemplate_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
 
   public static final int NOTEBOOK_RUNTIME_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.NotebookRuntime notebookRuntime_;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
   public boolean hasNotebookRuntime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1.NotebookRuntime.getDefaultInstance()
         : notebookRuntime_;
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookRuntimeId_ = "";
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -493,7 +483,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -739,7 +728,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -791,7 +778,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object notebookRuntimeTemplate_ = "";
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -917,7 +899,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +975,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1.NotebookRuntime.Builder,
             com.google.cloud.aiplatform.v1.NotebookRuntimeOrBuilder>
         notebookRuntimeBuilder_;
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
     public boolean hasNotebookRuntime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1038,7 +1015,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return notebookRuntimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1040,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1063,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1094,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1133,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return getNotebookRuntimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
             : notebookRuntime_;
       }
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object notebookRuntimeId_ = "";
-
     /**
      *
      *
@@ -1237,7 +1206,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1228,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1282,7 +1249,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1266,6 @@ public final class AssignNotebookRuntimeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

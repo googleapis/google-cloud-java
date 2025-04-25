@@ -33,7 +33,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.TagTemplateField)
     TagTemplateFieldOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TagTemplateField.newBuilder() to construct.
   private TagTemplateField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.FieldType type_;
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datacatalog.v1.FieldType getType() {
     return type_ == null ? com.google.cloud.datacatalog.v1.FieldType.getDefaultInstance() : type_;
   }
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
   public static final int IS_REQUIRED_FIELD_NUMBER = 3;
   private boolean isRequired_ = false;
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -330,7 +319,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
 
   public static final int ORDER_FIELD_NUMBER = 5;
   private int order_ = 0;
-
   /**
    *
    *
@@ -561,7 +549,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -831,7 +818,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -864,7 +850,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +882,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +913,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +940,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +974,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1019,7 +1000,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1026,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1051,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1072,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1105,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datacatalog.v1.FieldType.Builder,
             com.google.cloud.datacatalog.v1.FieldTypeOrBuilder>
         typeBuilder_;
-
     /**
      *
      *
@@ -1145,7 +1121,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public boolean hasType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return typeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1167,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1188,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1217,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1238,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1254,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1305,7 +1274,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
             : type_;
       }
     }
-
     /**
      *
      *
@@ -1335,7 +1303,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean isRequired_;
-
     /**
      *
      *
@@ -1351,7 +1318,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public boolean getIsRequired() {
       return isRequired_;
     }
-
     /**
      *
      *
@@ -1371,7 +1337,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1356,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1414,7 +1378,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1437,7 +1400,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1459,7 +1421,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1438,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1462,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
 
     private int order_;
-
     /**
      *
      *
@@ -1523,7 +1482,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public int getOrder() {
       return order_;
     }
-
     /**
      *
      *
@@ -1548,7 +1506,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

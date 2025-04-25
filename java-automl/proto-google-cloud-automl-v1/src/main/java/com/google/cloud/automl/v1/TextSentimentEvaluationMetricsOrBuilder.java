@@ -135,7 +135,6 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * @return Whether the confusionMatrix field is set.
    */
   boolean hasConfusionMatrix();
-
   /**
    *
    *
@@ -152,7 +151,6 @@ public interface TextSentimentEvaluationMetricsOrBuilder
    * @return The confusionMatrix.
    */
   com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix();
-
   /**
    *
    *

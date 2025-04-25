@@ -36,7 +36,6 @@ public interface ListNotebookExecutionJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.NotebookExecutionJob>
       getNotebookExecutionJobsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListNotebookExecutionJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob getNotebookExecutionJobs(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListNotebookExecutionJobsResponseOrBuilder
    * </code>
    */
   int getNotebookExecutionJobsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListNotebookExecutionJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.NotebookExecutionJobOrBuilder>
       getNotebookExecutionJobsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ListNotebookExecutionJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

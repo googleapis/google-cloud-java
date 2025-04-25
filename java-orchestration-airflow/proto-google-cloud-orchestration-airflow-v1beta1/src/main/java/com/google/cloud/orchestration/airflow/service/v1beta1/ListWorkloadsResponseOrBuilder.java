@@ -39,7 +39,6 @@ public interface ListWorkloadsResponseOrBuilder
           com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
               .ComposerWorkload>
       getWorkloadsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ListWorkloadsResponseOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse.ComposerWorkload
       getWorkloads(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ListWorkloadsResponseOrBuilder
    * </code>
    */
   int getWorkloadsCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface ListWorkloadsResponseOrBuilder
               com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
                   .ComposerWorkloadOrBuilder>
       getWorkloadsOrBuilderList();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ListWorkloadsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

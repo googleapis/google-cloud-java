@@ -39,7 +39,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return The filter.
    */
   com.google.privacy.dlp.v2.DiscoveryVertexDatasetFilter getFilter();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return Whether the conditions field is set.
    */
   boolean hasConditions();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return The conditions.
    */
   com.google.privacy.dlp.v2.DiscoveryVertexDatasetConditions getConditions();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return Whether the generationCadence field is set.
    */
   boolean hasGenerationCadence();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return The generationCadence.
    */
   com.google.privacy.dlp.v2.DiscoveryVertexDatasetGenerationCadence getGenerationCadence();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface VertexDatasetDiscoveryTargetOrBuilder
    * @return The disabled.
    */
   com.google.privacy.dlp.v2.Disabled getDisabled();
-
   /**
    *
    *

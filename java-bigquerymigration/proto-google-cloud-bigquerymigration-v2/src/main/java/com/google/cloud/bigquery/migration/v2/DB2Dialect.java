@@ -33,7 +33,6 @@ public final class DB2Dialect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.DB2Dialect)
     DB2DialectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DB2Dialect.newBuilder() to construct.
   private DB2Dialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class DB2Dialect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

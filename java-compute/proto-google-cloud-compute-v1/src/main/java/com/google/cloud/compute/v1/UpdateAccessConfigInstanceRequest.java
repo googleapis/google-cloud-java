@@ -33,7 +33,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpdateAccessConfigInstanceRequest)
     UpdateAccessConfigInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAccessConfigInstanceRequest.newBuilder() to construct.
   private UpdateAccessConfigInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
   private int bitField0_;
   public static final int ACCESS_CONFIG_RESOURCE_FIELD_NUMBER = 387825552;
   private com.google.cloud.compute.v1.AccessConfig accessConfigResource_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
   public boolean hasAccessConfigResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.AccessConfig.getDefaultInstance()
         : accessConfigResource_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkInterface_ = "";
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -312,7 +301,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -336,7 +324,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +352,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -391,7 +377,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -636,7 +621,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -923,7 +907,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
             com.google.cloud.compute.v1.AccessConfig.Builder,
             com.google.cloud.compute.v1.AccessConfigOrBuilder>
         accessConfigResourceBuilder_;
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     public boolean hasAccessConfigResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -963,7 +945,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return accessConfigResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -988,7 +969,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +991,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1021,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1042,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1058,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return getAccessConfigResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1102,7 +1078,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
             : accessConfigResource_;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1107,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -1155,7 +1129,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1151,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1172,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1189,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1213,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object networkInterface_ = "";
-
     /**
      *
      *
@@ -1266,7 +1235,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1257,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1311,7 +1278,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1295,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1319,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1379,7 +1343,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1404,7 +1367,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1390,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1409,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1475,7 +1435,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1490,7 +1449,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1513,7 +1471,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1536,7 +1493,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1558,7 +1514,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1531,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1555,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1626,7 +1579,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1603,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1675,7 +1626,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1645,6 @@ public final class UpdateAccessConfigInstanceRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

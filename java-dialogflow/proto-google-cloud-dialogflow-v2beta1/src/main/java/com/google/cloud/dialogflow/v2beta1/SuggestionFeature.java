@@ -35,7 +35,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestionFeature)
     SuggestionFeatureOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestionFeature.newBuilder() to construct.
   private SuggestionFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -170,7 +169,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -181,7 +179,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>ARTICLE_SUGGESTION = 1;</code>
      */
     public static final int ARTICLE_SUGGESTION_VALUE = 1;
-
     /**
      *
      *
@@ -192,7 +189,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>FAQ = 2;</code>
      */
     public static final int FAQ_VALUE = 2;
-
     /**
      *
      *
@@ -203,7 +199,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>SMART_REPLY = 3;</code>
      */
     public static final int SMART_REPLY_VALUE = 3;
-
     /**
      *
      *
@@ -215,7 +210,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>DIALOGFLOW_ASSIST = 4;</code>
      */
     public static final int DIALOGFLOW_ASSIST_VALUE = 4;
-
     /**
      *
      *
@@ -226,7 +220,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>CONVERSATION_SUMMARIZATION = 8;</code>
      */
     public static final int CONVERSATION_SUMMARIZATION_VALUE = 8;
-
     /**
      *
      *
@@ -237,7 +230,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>KNOWLEDGE_SEARCH = 14;</code>
      */
     public static final int KNOWLEDGE_SEARCH_VALUE = 14;
-
     /**
      *
      *
@@ -346,7 +338,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -547,7 +537,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -732,7 +721,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

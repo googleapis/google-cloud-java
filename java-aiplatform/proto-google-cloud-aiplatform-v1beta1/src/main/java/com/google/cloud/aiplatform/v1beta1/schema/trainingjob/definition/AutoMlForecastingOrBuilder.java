@@ -39,7 +39,6 @@ public interface AutoMlForecastingOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutoMlForecastingOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
       getInputs();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface AutoMlForecastingOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface AutoMlForecastingOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingMetadata
       getMetadata();
-
   /**
    *
    *

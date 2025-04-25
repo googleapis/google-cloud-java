@@ -33,7 +33,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ValueFrequency)
     ValueFrequencyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ValueFrequency.newBuilder() to construct.
   private ValueFrequency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int VALUE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.Value value_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.Value getValue() {
     return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COUNT_FIELD_NUMBER = 2;
   private long count_ = 0L;
-
   /**
    *
    *
@@ -303,7 +298,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -519,7 +513,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Value.Builder,
             com.google.privacy.dlp.v2.ValueOrBuilder>
         valueBuilder_;
-
     /**
      *
      *
@@ -534,7 +527,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -553,7 +545,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
         return valueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -576,7 +567,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +632,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +646,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -676,7 +662,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
         return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
       }
     }
-
     /**
      *
      *
@@ -704,7 +689,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long count_;
-
     /**
      *
      *
@@ -720,7 +704,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     public long getCount() {
       return count_;
     }
-
     /**
      *
      *
@@ -740,7 +723,6 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

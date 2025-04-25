@@ -40,7 +40,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return Whether the digest field is set.
    */
   boolean hasDigest();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return The digest.
    */
   com.google.cloud.kms.v1.Digest getDigest();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return Whether the digestCrc32c field is set.
    */
   boolean hasDigestCrc32C();
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return The digestCrc32c.
    */
   com.google.protobuf.Int64Value getDigestCrc32C();
-
   /**
    *
    *
@@ -254,7 +249,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return Whether the dataCrc32c field is set.
    */
   boolean hasDataCrc32C();
-
   /**
    *
    *
@@ -286,7 +280,6 @@ public interface AsymmetricSignRequestOrBuilder
    * @return The dataCrc32c.
    */
   com.google.protobuf.Int64Value getDataCrc32C();
-
   /**
    *
    *

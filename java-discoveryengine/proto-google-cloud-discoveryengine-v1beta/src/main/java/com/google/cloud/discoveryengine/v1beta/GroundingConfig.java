@@ -33,7 +33,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.GroundingConfig)
     GroundingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundingConfig.newBuilder() to construct.
   private GroundingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -279,7 +276,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -464,7 +460,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -488,7 +483,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -512,7 +506,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class GroundingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

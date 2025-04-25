@@ -33,7 +33,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason)
     InstancesReportHostAsFaultyRequestFaultReasonOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstancesReportHostAsFaultyRequestFaultReason.newBuilder() to construct.
   private InstancesReportHostAsFaultyRequestFaultReason(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -116,7 +115,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
      * <code>UNDEFINED_BEHAVIOR = 0;</code>
      */
     public static final int UNDEFINED_BEHAVIOR_VALUE = 0;
-
     /**
      *
      *
@@ -127,13 +125,10 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
      * <code>BEHAVIOR_UNSPECIFIED = 85734570;</code>
      */
     public static final int BEHAVIOR_UNSPECIFIED_VALUE = 85734570;
-
     /** <code>PERFORMANCE = 135701520;</code> */
     public static final int PERFORMANCE_VALUE = 135701520;
-
     /** <code>SILENT_DATA_CORRUPTION = 111360678;</code> */
     public static final int SILENT_DATA_CORRUPTION_VALUE = 111360678;
-
     /** <code>UNRECOVERABLE_GPU_ERROR = 363710747;</code> */
     public static final int UNRECOVERABLE_GPU_ERROR_VALUE = 363710747;
 
@@ -232,7 +227,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object behavior_ = "";
-
   /**
    *
    *
@@ -249,7 +243,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
   public boolean hasBehavior() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
       return s;
     }
   }
-
   /**
    *
    *
@@ -304,7 +296,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    * <code>optional string description = 422937596;</code>
    *
@@ -314,7 +305,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional string description = 422937596;</code>
    *
@@ -332,7 +322,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
       return s;
     }
   }
-
   /**
    * <code>optional string description = 422937596;</code>
    *
@@ -532,7 +521,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -746,7 +734,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     private int bitField0_;
 
     private java.lang.Object behavior_ = "";
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     public boolean hasBehavior() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     }
 
     private java.lang.Object description_ = "";
-
     /**
      * <code>optional string description = 422937596;</code>
      *
@@ -887,7 +868,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>optional string description = 422937596;</code>
      *
@@ -904,7 +884,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string description = 422937596;</code>
      *
@@ -921,7 +900,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string description = 422937596;</code>
      *
@@ -937,7 +915,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string description = 422937596;</code>
      *
@@ -949,7 +926,6 @@ public final class InstancesReportHostAsFaultyRequestFaultReason
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string description = 422937596;</code>
      *

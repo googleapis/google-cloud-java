@@ -37,7 +37,6 @@ public interface RecordSuppressionOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RecordSuppressionOrBuilder
    * @return The condition.
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
-
   /**
    *
    *

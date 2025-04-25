@@ -33,7 +33,6 @@ public final class WriteFileResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WriteFileResponse)
     WriteFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WriteFileResponse.newBuilder() to construct.
   private WriteFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class WriteFileResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateTimeSeriesRequest)
     CreateTimeSeriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTimeSeriesRequest.newBuilder() to construct.
   private CreateTimeSeriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.TimeSeries> timeSeries_;
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
   public java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList() {
     return timeSeries_;
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       getTimeSeriesOrBuilderList() {
     return timeSeries_;
   }
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
   public int getTimeSeriesCount() {
     return timeSeries_.size();
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
   public com.google.monitoring.v3.TimeSeries getTimeSeries(int index) {
     return timeSeries_.get(index);
   }
-
   /**
    *
    *
@@ -416,7 +408,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +828,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return timeSeriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -867,7 +852,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return timeSeriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -892,7 +876,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return timeSeriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +934,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +964,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +994,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1021,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1049,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1077,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1104,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1131,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1151,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     public com.google.monitoring.v3.TimeSeries.Builder getTimeSeriesBuilder(int index) {
       return getTimeSeriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1202,7 +1175,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return timeSeriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1200,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(timeSeries_);
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1221,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       return getTimeSeriesFieldBuilder()
           .addBuilder(com.google.monitoring.v3.TimeSeries.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1272,7 +1242,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       return getTimeSeriesFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.TimeSeries.getDefaultInstance());
     }
-
     /**
      *
      *

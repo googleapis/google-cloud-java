@@ -33,7 +33,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpFaultDelay)
     HttpFaultDelayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpFaultDelay.newBuilder() to construct.
   private HttpFaultDelay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int FIXED_DELAY_FIELD_NUMBER = 317037816;
   private com.google.cloud.compute.v1.Duration fixedDelay_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFixedDelay() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : fixedDelay_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERCENTAGE_FIELD_NUMBER = 151909018;
   private double percentage_ = 0D;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPercentage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -333,7 +327,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -550,7 +543,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         fixedDelayBuilder_;
-
     /**
      *
      *
@@ -565,7 +557,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFixedDelay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -586,7 +577,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
         return fixedDelayBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -609,7 +599,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +618,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +645,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +664,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +678,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFixedDelayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -711,7 +696,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
             : fixedDelay_;
       }
     }
-
     /**
      *
      *
@@ -739,7 +723,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double percentage_;
-
     /**
      *
      *
@@ -755,7 +738,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPercentage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -771,7 +753,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     public double getPercentage() {
       return percentage_;
     }
-
     /**
      *
      *
@@ -791,7 +772,6 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

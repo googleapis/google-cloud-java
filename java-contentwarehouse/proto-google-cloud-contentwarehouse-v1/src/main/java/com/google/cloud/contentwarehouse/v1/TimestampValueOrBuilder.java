@@ -36,7 +36,6 @@ public interface TimestampValueOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TimestampValueOrBuilder
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TimestampValueOrBuilder
    * @return Whether the textValue field is set.
    */
   boolean hasTextValue();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface TimestampValueOrBuilder
    * @return The textValue.
    */
   java.lang.String getTextValue();
-
   /**
    *
    *

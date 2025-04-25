@@ -36,7 +36,6 @@ public interface ReceiveEventsRequestOrBuilder
    * @return Whether the setupRequest field is set.
    */
   boolean hasSetupRequest();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ReceiveEventsRequestOrBuilder
    * @return The setupRequest.
    */
   com.google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequest getSetupRequest();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ReceiveEventsRequestOrBuilder
    * @return Whether the commitRequest field is set.
    */
   boolean hasCommitRequest();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface ReceiveEventsRequestOrBuilder
    * @return The commitRequest.
    */
   com.google.cloud.visionai.v1.CommitRequest getCommitRequest();
-
   /**
    *
    *

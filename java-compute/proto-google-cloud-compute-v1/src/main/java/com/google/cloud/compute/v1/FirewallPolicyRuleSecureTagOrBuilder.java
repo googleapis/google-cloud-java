@@ -36,7 +36,6 @@ public interface FirewallPolicyRuleSecureTagOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FirewallPolicyRuleSecureTagOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface FirewallPolicyRuleSecureTagOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface FirewallPolicyRuleSecureTagOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *

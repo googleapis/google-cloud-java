@@ -39,7 +39,6 @@ public interface BuildConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface BuildConfigOrBuilder
    * @return The sourceLocation.
    */
   java.lang.String getSourceLocation();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface BuildConfigOrBuilder
    * @return The functionTarget.
    */
   java.lang.String getFunctionTarget();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface BuildConfigOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface BuildConfigOrBuilder
    * @return The baseImage.
    */
   java.lang.String getBaseImage();
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public interface BuildConfigOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
-
   /**
    *
    *
@@ -232,7 +226,6 @@ public interface BuildConfigOrBuilder
    * </code>
    */
   int getEnvironmentVariablesCount();
-
   /**
    *
    *
@@ -245,11 +238,9 @@ public interface BuildConfigOrBuilder
    * </code>
    */
   boolean containsEnvironmentVariables(java.lang.String key);
-
   /** Use {@link #getEnvironmentVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables();
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public interface BuildConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap();
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public interface BuildConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -307,7 +296,6 @@ public interface BuildConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ListRecordingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ListRecordingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

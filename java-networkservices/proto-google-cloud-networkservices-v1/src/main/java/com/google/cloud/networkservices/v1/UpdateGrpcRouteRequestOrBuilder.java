@@ -41,7 +41,6 @@ public interface UpdateGrpcRouteRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateGrpcRouteRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateGrpcRouteRequestOrBuilder
    * @return Whether the grpcRoute field is set.
    */
   boolean hasGrpcRoute();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateGrpcRouteRequestOrBuilder
    * @return The grpcRoute.
    */
   com.google.cloud.networkservices.v1.GrpcRoute getGrpcRoute();
-
   /**
    *
    *

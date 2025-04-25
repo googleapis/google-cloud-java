@@ -78,7 +78,6 @@ public enum TransferStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRANSFER_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int TRANSFER_STATUS_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public enum TransferStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRANSFER_STATUS_MIGRATED = 1;</code>
    */
   public static final int TRANSFER_STATUS_MIGRATED_VALUE = 1;
-
   /**
    *
    *

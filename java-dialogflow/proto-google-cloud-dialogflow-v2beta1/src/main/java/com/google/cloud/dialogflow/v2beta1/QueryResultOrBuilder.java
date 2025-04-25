@@ -44,7 +44,6 @@ public interface QueryResultOrBuilder
    * @return The queryText.
    */
   java.lang.String getQueryText();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface QueryResultOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -131,7 +129,6 @@ public interface QueryResultOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -170,7 +167,6 @@ public interface QueryResultOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -196,7 +192,6 @@ public interface QueryResultOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *
@@ -267,7 +262,6 @@ public interface QueryResultOrBuilder
    * @return The fulfillmentText.
    */
   java.lang.String getFulfillmentText();
-
   /**
    *
    *
@@ -292,7 +286,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> getFulfillmentMessagesList();
-
   /**
    *
    *
@@ -303,7 +296,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Intent.Message getFulfillmentMessages(int index);
-
   /**
    *
    *
@@ -314,7 +306,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
   int getFulfillmentMessagesCount();
-
   /**
    *
    *
@@ -326,7 +317,6 @@ public interface QueryResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList();
-
   /**
    *
    *
@@ -352,7 +342,6 @@ public interface QueryResultOrBuilder
    * @return The webhookSource.
    */
   java.lang.String getWebhookSource();
-
   /**
    *
    *
@@ -380,7 +369,6 @@ public interface QueryResultOrBuilder
    * @return Whether the webhookPayload field is set.
    */
   boolean hasWebhookPayload();
-
   /**
    *
    *
@@ -394,7 +382,6 @@ public interface QueryResultOrBuilder
    * @return The webhookPayload.
    */
   com.google.protobuf.Struct getWebhookPayload();
-
   /**
    *
    *
@@ -420,7 +407,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getOutputContextsList();
-
   /**
    *
    *
@@ -434,7 +420,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Context getOutputContexts(int index);
-
   /**
    *
    *
@@ -448,7 +433,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
   int getOutputContextsCount();
-
   /**
    *
    *
@@ -463,7 +447,6 @@ public interface QueryResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getOutputContextsOrBuilderList();
-
   /**
    *
    *
@@ -492,7 +475,6 @@ public interface QueryResultOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
-
   /**
    *
    *
@@ -507,7 +489,6 @@ public interface QueryResultOrBuilder
    * @return The intent.
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
-
   /**
    *
    *
@@ -559,7 +540,6 @@ public interface QueryResultOrBuilder
    * @return Whether the diagnosticInfo field is set.
    */
   boolean hasDiagnosticInfo();
-
   /**
    *
    *
@@ -578,7 +558,6 @@ public interface QueryResultOrBuilder
    * @return The diagnosticInfo.
    */
   com.google.protobuf.Struct getDiagnosticInfo();
-
   /**
    *
    *
@@ -610,7 +589,6 @@ public interface QueryResultOrBuilder
    * @return Whether the sentimentAnalysisResult field is set.
    */
   boolean hasSentimentAnalysisResult();
-
   /**
    *
    *
@@ -625,7 +603,6 @@ public interface QueryResultOrBuilder
    * @return The sentimentAnalysisResult.
    */
   com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult();
-
   /**
    *
    *
@@ -653,7 +630,6 @@ public interface QueryResultOrBuilder
    * @return Whether the knowledgeAnswers field is set.
    */
   boolean hasKnowledgeAnswers();
-
   /**
    *
    *
@@ -667,7 +643,6 @@ public interface QueryResultOrBuilder
    * @return The knowledgeAnswers.
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers();
-
   /**
    *
    *

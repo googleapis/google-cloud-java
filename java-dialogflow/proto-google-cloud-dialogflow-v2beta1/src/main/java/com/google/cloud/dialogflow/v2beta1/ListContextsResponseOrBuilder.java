@@ -35,7 +35,6 @@ public interface ListContextsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getContextsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListContextsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Context getContexts(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListContextsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
   int getContextsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListContextsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getContextsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListContextsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

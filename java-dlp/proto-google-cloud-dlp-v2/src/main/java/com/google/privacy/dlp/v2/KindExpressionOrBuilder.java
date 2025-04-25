@@ -36,7 +36,6 @@ public interface KindExpressionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

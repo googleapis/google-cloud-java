@@ -33,7 +33,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.ListJobTemplatesResponse)
     ListJobTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListJobTemplatesResponse.newBuilder() to construct.
   private ListJobTemplatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.transcoder.v1.JobTemplate> jobTemplates_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.video.transcoder.v1.JobTemplate> getJobTemplatesList() {
     return jobTemplates_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       getJobTemplatesOrBuilderList() {
     return jobTemplates_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   public int getJobTemplatesCount() {
     return jobTemplates_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   public com.google.cloud.video.transcoder.v1.JobTemplate getJobTemplates(int index) {
     return jobTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -451,7 +439,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +743,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return jobTemplatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return jobTemplatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return jobTemplatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         int index) {
       return getJobTemplatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return jobTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(jobTemplates_);
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       return getJobTemplatesFieldBuilder()
           .addBuilder(com.google.cloud.video.transcoder.v1.JobTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       return getJobTemplatesFieldBuilder()
           .addBuilder(index, com.google.cloud.video.transcoder.v1.JobTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1097,7 +1067,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1120,7 +1089,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1111,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1132,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1149,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1181,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1232,7 +1196,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1247,7 +1210,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1263,7 +1225,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1279,7 +1240,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1303,7 +1263,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1285,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1304,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1322,6 @@ public final class ListJobTemplatesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

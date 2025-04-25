@@ -34,7 +34,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StreamingComputationRanges)
     StreamingComputationRangesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingComputationRanges.newBuilder() to construct.
   private StreamingComputationRanges(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object computationId_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment> rangeAssignments_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       getRangeAssignmentsList() {
     return rangeAssignments_;
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       getRangeAssignmentsOrBuilderList() {
     return rangeAssignments_;
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
   public int getRangeAssignmentsCount() {
     return rangeAssignments_.size();
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
   public com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment getRangeAssignments(int index) {
     return rangeAssignments_.get(index);
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +612,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object computationId_ = "";
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return rangeAssignmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return rangeAssignmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return rangeAssignmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +964,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +984,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +998,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         getRangeAssignmentsBuilder(int index) {
       return getRangeAssignmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return rangeAssignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1034,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(rangeAssignments_);
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       return getRangeAssignmentsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1095,7 +1065,6 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment.getDefaultInstance());
     }
-
     /**
      *
      *

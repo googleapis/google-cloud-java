@@ -31,8 +31,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments =
-        "Source:"
-            + " google/cloud/recommendationengine/v1beta1/prediction_apikey_registry_service.proto")
+        "Source: google/cloud/recommendationengine/v1beta1/prediction_apikey_registry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PredictionApiKeyRegistryGrpc {
 
@@ -229,19 +228,6 @@ public final class PredictionApiKeyRegistryGrpc {
     return PredictionApiKeyRegistryStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static PredictionApiKeyRegistryBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PredictionApiKeyRegistryBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PredictionApiKeyRegistryBlockingV2Stub>() {
-          @java.lang.Override
-          public PredictionApiKeyRegistryBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PredictionApiKeyRegistryBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return PredictionApiKeyRegistryBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -436,76 +422,6 @@ public final class PredictionApiKeyRegistryGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PredictionApiKeyRegistry.
-   *
-   * <pre>
-   * Service for registering API keys for use with the `predict` method. If you
-   * use an API key to request predictions, you must first register the API key.
-   * Otherwise, your prediction request is rejected. If you use OAuth to
-   * authenticate your `predict` method call, you do not need to register an API
-   * key. You can register up to 20 API keys per project.
-   * </pre>
-   */
-  public static final class PredictionApiKeyRegistryBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<PredictionApiKeyRegistryBlockingV2Stub> {
-    private PredictionApiKeyRegistryBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected PredictionApiKeyRegistryBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PredictionApiKeyRegistryBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Register an API key for use with predict method.
-     * </pre>
-     */
-    public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
-        createPredictionApiKeyRegistration(
-            com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreatePredictionApiKeyRegistrationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List the registered apiKeys for use with predict method.
-     * </pre>
-     */
-    public com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse
-        listPredictionApiKeyRegistrations(
-            com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListPredictionApiKeyRegistrationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Unregister an apiKey from using for predict method.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deletePredictionApiKeyRegistration(
-        com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeletePredictionApiKeyRegistrationMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * PredictionApiKeyRegistry.
    *
    * <pre>
    * Service for registering API keys for use with the `predict` method. If you

@@ -33,7 +33,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DataSource)
     DataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSource.newBuilder() to construct.
   private DataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_UNSPECIFIED = 0;</code>
      */
     public static final int SERVICE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_STORAGE = 1;</code>
      */
     public static final int CLOUD_STORAGE_VALUE = 1;
-
     /**
      *
      *
@@ -241,7 +238,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     private PropertiesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -274,7 +270,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_FIELD_NUMBER = 1;
   private int service_ = 0;
-
   /**
    *
    *
@@ -290,7 +285,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public int getServiceValue() {
     return service_;
   }
-
   /**
    *
    *
@@ -315,7 +309,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -341,7 +334,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceEntry_ = "";
-
   /**
    *
    *
@@ -396,7 +387,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STORAGE_PROPERTIES_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -438,7 +427,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStorageProperties() {
     return propertiesCase_ == 4;
   }
-
   /**
    *
    *
@@ -457,7 +445,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -679,7 +666,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -937,7 +923,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int service_ = 0;
-
     /**
      *
      *
@@ -953,7 +938,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public int getServiceValue() {
       return service_;
     }
-
     /**
      *
      *
@@ -972,7 +956,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +975,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datacatalog.v1.DataSource.Service.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1014,7 +996,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1015,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1059,7 +1039,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1063,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1086,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1105,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1131,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceEntry_ = "";
-
     /**
      *
      *
@@ -1178,7 +1153,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1201,7 +1175,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1196,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1213,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1241,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.StorageProperties.Builder,
             com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder>
         storagePropertiesBuilder_;
-
     /**
      *
      *
@@ -1286,7 +1256,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStorageProperties() {
       return propertiesCase_ == 4;
     }
-
     /**
      *
      *
@@ -1312,7 +1281,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1335,7 +1303,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1323,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1356,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1381,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1393,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.StorageProperties.Builder getStoragePropertiesBuilder() {
       return getStoragePropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1451,7 +1414,6 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *

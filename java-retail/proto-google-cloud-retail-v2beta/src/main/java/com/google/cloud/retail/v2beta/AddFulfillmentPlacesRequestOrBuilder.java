@@ -44,7 +44,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
-
   /**
    *
    *
@@ -97,7 +96,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -156,7 +154,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return A list containing the placeIds.
    */
   java.util.List<java.lang.String> getPlaceIdsList();
-
   /**
    *
    *
@@ -183,7 +180,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return The count of placeIds.
    */
   int getPlaceIdsCount();
-
   /**
    *
    *
@@ -211,7 +207,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return The placeIds at the given index.
    */
   java.lang.String getPlaceIds(int index);
-
   /**
    *
    *
@@ -254,7 +249,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return Whether the addTime field is set.
    */
   boolean hasAddTime();
-
   /**
    *
    *
@@ -269,7 +263,6 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * @return The addTime.
    */
   com.google.protobuf.Timestamp getAddTime();
-
   /**
    *
    *

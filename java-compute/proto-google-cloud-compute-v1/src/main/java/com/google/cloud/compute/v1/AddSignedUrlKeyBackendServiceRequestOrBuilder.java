@@ -36,7 +36,6 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * @return Whether the signedUrlKeyResource field is set.
    */
   boolean hasSignedUrlKeyResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * @return The signedUrlKeyResource.
    */
   com.google.cloud.compute.v1.SignedUrlKey getSignedUrlKeyResource();
-
   /**
    *
    *

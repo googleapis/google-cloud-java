@@ -36,7 +36,6 @@ public interface AnnotateFileRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnnotateFileRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.vision.v1p4beta1.InputConfig getInputConfig();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface AnnotateFileRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Feature features = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.Feature> getFeaturesList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface AnnotateFileRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Feature features = 2;</code>
    */
   com.google.cloud.vision.v1p4beta1.Feature getFeatures(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface AnnotateFileRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.Feature features = 2;</code>
    */
   int getFeaturesCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface AnnotateFileRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.FeatureOrBuilder>
       getFeaturesOrBuilderList();
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface AnnotateFileRequestOrBuilder
    * @return Whether the imageContext field is set.
    */
   boolean hasImageContext();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface AnnotateFileRequestOrBuilder
    * @return The imageContext.
    */
   com.google.cloud.vision.v1p4beta1.ImageContext getImageContext();
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public interface AnnotateFileRequestOrBuilder
    * @return A list containing the pages.
    */
   java.util.List<java.lang.Integer> getPagesList();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface AnnotateFileRequestOrBuilder
    * @return The count of pages.
    */
   int getPagesCount();
-
   /**
    *
    *

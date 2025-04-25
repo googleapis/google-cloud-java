@@ -36,7 +36,6 @@ public interface WorkspaceConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface WorkspaceConfigOrBuilder
    * @return The dasherCustomerId.
    */
   java.lang.String getDasherCustomerId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface WorkspaceConfigOrBuilder
    * @return The superAdminServiceAccount.
    */
   java.lang.String getSuperAdminServiceAccount();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface WorkspaceConfigOrBuilder
    * @return The superAdminEmailAddress.
    */
   java.lang.String getSuperAdminEmailAddress();
-
   /**
    *
    *

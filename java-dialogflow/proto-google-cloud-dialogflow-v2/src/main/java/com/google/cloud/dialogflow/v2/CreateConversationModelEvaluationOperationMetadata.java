@@ -37,7 +37,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateConversationModelEvaluationOperationMetadata)
     CreateConversationModelEvaluationOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateConversationModelEvaluationOperationMetadata.newBuilder() to construct.
   private CreateConversationModelEvaluationOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -156,7 +155,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -167,7 +165,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
      * <code>INITIALIZING = 1;</code>
      */
     public static final int INITIALIZING_VALUE = 1;
-
     /**
      *
      *
@@ -178,7 +175,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -189,7 +185,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
      * <code>CANCELLED = 3;</code>
      */
     public static final int CANCELLED_VALUE = 3;
-
     /**
      *
      *
@@ -200,7 +195,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
      * <code>SUCCEEDED = 4;</code>
      */
     public static final int SUCCEEDED_VALUE = 4;
-
     /**
      *
      *
@@ -309,7 +303,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationModelEvaluation_ = "";
-
   /**
    *
    *
@@ -335,7 +328,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationModel_ = "";
-
   /**
    *
    *
@@ -392,7 +383,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +411,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -439,7 +428,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -467,7 +455,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -484,7 +471,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -501,7 +487,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -725,7 +710,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -986,7 +970,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationModelEvaluation_ = "";
-
     /**
      *
      *
@@ -1011,7 +994,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1018,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1041,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1060,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1086,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     }
 
     private java.lang.Object conversationModel_ = "";
-
     /**
      *
      *
@@ -1132,7 +1110,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1134,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1181,7 +1157,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1176,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1202,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1246,7 +1219,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1267,7 +1239,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1264,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1319,7 +1289,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1315,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1362,7 +1330,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1384,7 +1351,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1374,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1394,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1422,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1442,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1495,7 +1457,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1515,7 +1476,6 @@ public final class CreateConversationModelEvaluationOperationMetadata
             : createTime_;
       }
     }
-
     /**
      *
      *

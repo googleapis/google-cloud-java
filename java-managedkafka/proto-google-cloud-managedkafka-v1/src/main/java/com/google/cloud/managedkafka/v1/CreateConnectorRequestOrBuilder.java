@@ -40,7 +40,6 @@ public interface CreateConnectorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateConnectorRequestOrBuilder
    * @return The connectorId.
    */
   java.lang.String getConnectorId();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface CreateConnectorRequestOrBuilder
    * @return Whether the connector field is set.
    */
   boolean hasConnector();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface CreateConnectorRequestOrBuilder
    * @return The connector.
    */
   com.google.cloud.managedkafka.v1.Connector getConnector();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return The filter.
    */
   com.google.privacy.dlp.v2.DiscoveryBigQueryFilter getFilter();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return Whether the conditions field is set.
    */
   boolean hasConditions();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return The conditions.
    */
   com.google.privacy.dlp.v2.DiscoveryBigQueryConditions getConditions();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return Whether the cadence field is set.
    */
   boolean hasCadence();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return The cadence.
    */
   com.google.privacy.dlp.v2.DiscoveryGenerationCadence getCadence();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface BigQueryDiscoveryTargetOrBuilder
    * @return The disabled.
    */
   com.google.privacy.dlp.v2.Disabled getDisabled();
-
   /**
    *
    *

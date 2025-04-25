@@ -33,7 +33,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpdateStoragePoolRequest)
     UpdateStoragePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateStoragePoolRequest.newBuilder() to construct.
   private UpdateStoragePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storagePool_ = "";
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
 
   public static final int STORAGE_POOL_RESOURCE_FIELD_NUMBER = 157179405;
   private com.google.cloud.compute.v1.StoragePool storagePoolResource_;
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
   public boolean hasStoragePoolResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.StoragePool.getDefaultInstance()
         : storagePoolResource_;
   }
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object updateMask_ = "";
-
   /**
    *
    *
@@ -327,7 +315,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +366,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -406,7 +391,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -654,7 +638,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -934,7 +917,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +965,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1008,7 +988,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1007,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1033,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1070,7 +1047,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1116,7 +1091,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1112,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1153,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object storagePool_ = "";
-
     /**
      *
      *
@@ -1204,7 +1175,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1227,7 +1197,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1218,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1235,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1264,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.StoragePool.Builder,
             com.google.cloud.compute.v1.StoragePoolOrBuilder>
         storagePoolResourceBuilder_;
-
     /**
      *
      *
@@ -1314,7 +1280,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     public boolean hasStoragePoolResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return storagePoolResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1362,7 +1326,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1348,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1378,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1438,7 +1399,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1415,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return getStoragePoolResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
             : storagePoolResource_;
       }
     }
-
     /**
      *
      *
@@ -1506,7 +1464,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object updateMask_ = "";
-
     /**
      *
      *
@@ -1521,7 +1478,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1544,7 +1500,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1567,7 +1522,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1589,7 +1543,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1607,7 +1560,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1584,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1657,7 +1608,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1682,7 +1632,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1706,7 +1655,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1726,7 +1674,6 @@ public final class UpdateStoragePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

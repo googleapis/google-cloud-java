@@ -38,7 +38,6 @@ public interface CustomerRepricingConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CustomerRepricingConfigOrBuilder
    * @return Whether the repricingConfig field is set.
    */
   boolean hasRepricingConfig();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CustomerRepricingConfigOrBuilder
    * @return The repricingConfig.
    */
   com.google.cloud.channel.v1.RepricingConfig getRepricingConfig();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface CustomerRepricingConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface CustomerRepricingConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ExportEvaluatedExamplesOperationMetadataOrBuilder
    * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface ExportEvaluatedExamplesOperationMetadataOrBuilder
   com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
           .ExportEvaluatedExamplesOutputInfo
       getOutputInfo();
-
   /**
    *
    *

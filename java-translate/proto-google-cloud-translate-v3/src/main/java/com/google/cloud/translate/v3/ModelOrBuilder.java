@@ -37,7 +37,6 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ModelOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ModelOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface ModelOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
-
   /**
    *
    *
@@ -216,7 +211,6 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -258,7 +251,6 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -272,7 +264,6 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

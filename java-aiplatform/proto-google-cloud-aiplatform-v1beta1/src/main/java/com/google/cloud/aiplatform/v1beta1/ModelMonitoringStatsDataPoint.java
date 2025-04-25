@@ -33,7 +33,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint)
     ModelMonitoringStatsDataPointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringStatsDataPoint.newBuilder() to construct.
   private ModelMonitoringStatsDataPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
      * @return Whether the doubleValue field is set.
      */
     boolean hasDoubleValue();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
      * @return Whether the distributionValue field is set.
      */
     boolean hasDistributionValue();
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue
             .DistributionDataValue
         getDistributionValue();
-
     /**
      *
      *
@@ -147,7 +143,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue.ValueCase
         getValueCase();
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue)
       TypedValueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TypedValue.newBuilder() to construct.
     private TypedValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -210,7 +204,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
        * @return Whether the distribution field is set.
        */
       boolean hasDistribution();
-
       /**
        *
        *
@@ -224,7 +217,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
        * @return The distribution.
        */
       com.google.protobuf.Value getDistribution();
-
       /**
        *
        *
@@ -255,7 +247,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
        */
       double getDistributionDeviation();
     }
-
     /**
      *
      *
@@ -271,7 +262,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue.DistributionDataValue)
         DistributionDataValueOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use DistributionDataValue.newBuilder() to construct.
       private DistributionDataValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -305,7 +295,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       private int bitField0_;
       public static final int DISTRIBUTION_FIELD_NUMBER = 1;
       private com.google.protobuf.Value distribution_;
-
       /**
        *
        *
@@ -322,7 +311,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       public boolean hasDistribution() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -341,7 +329,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             ? com.google.protobuf.Value.getDefaultInstance()
             : distribution_;
       }
-
       /**
        *
        *
@@ -361,7 +348,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
       public static final int DISTRIBUTION_DEVIATION_FIELD_NUMBER = 2;
       private double distributionDeviation_ = 0D;
-
       /**
        *
        *
@@ -592,7 +578,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -844,7 +829,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
                 com.google.protobuf.Value.Builder,
                 com.google.protobuf.ValueOrBuilder>
             distributionBuilder_;
-
         /**
          *
          *
@@ -860,7 +844,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         public boolean hasDistribution() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -882,7 +865,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             return distributionBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -906,7 +888,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -927,7 +908,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -956,7 +936,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           }
           return this;
         }
-
         /**
          *
          *
@@ -977,7 +956,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -993,7 +971,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           onChanged();
           return getDistributionFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1013,7 +990,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
                 : distribution_;
           }
         }
-
         /**
          *
          *
@@ -1042,7 +1018,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         }
 
         private double distributionDeviation_;
-
         /**
          *
          *
@@ -1063,7 +1038,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         public double getDistributionDeviation() {
           return distributionDeviation_;
         }
-
         /**
          *
          *
@@ -1088,7 +1062,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1201,7 +1174,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       private ValueCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1235,7 +1207,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     public static final int DOUBLE_VALUE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1251,7 +1222,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public boolean hasDoubleValue() {
       return valueCase_ == 1;
     }
-
     /**
      *
      *
@@ -1272,7 +1242,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     public static final int DISTRIBUTION_VALUE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -1290,7 +1259,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public boolean hasDistributionValue() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -1316,7 +1284,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       return com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue
           .DistributionDataValue.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1551,7 +1518,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1808,7 +1774,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       public boolean hasDoubleValue() {
         return valueCase_ == 1;
       }
-
       /**
        *
        *
@@ -1826,7 +1791,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         }
         return 0D;
       }
-
       /**
        *
        *
@@ -1846,7 +1810,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1875,7 +1838,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue
                   .DistributionDataValueOrBuilder>
           distributionValueBuilder_;
-
       /**
        *
        *
@@ -1893,7 +1855,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       public boolean hasDistributionValue() {
         return valueCase_ == 2;
       }
-
       /**
        *
        *
@@ -1927,7 +1888,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
               .DistributionDataValue.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1955,7 +1915,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         valueCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1980,7 +1939,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         valueCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2023,7 +1981,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         valueCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2051,7 +2008,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2068,7 +2024,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
           getDistributionValueBuilder() {
         return getDistributionValueFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2096,7 +2051,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
               .DistributionDataValue.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2215,7 +2169,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
   public static final int CURRENT_STATS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue
       currentStats_;
-
   /**
    *
    *
@@ -2233,7 +2186,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
   public boolean hasCurrentStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2255,7 +2207,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             .getDefaultInstance()
         : currentStats_;
   }
-
   /**
    *
    *
@@ -2279,7 +2230,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
   public static final int BASELINE_STATS_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue
       baselineStats_;
-
   /**
    *
    *
@@ -2297,7 +2247,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
   public boolean hasBaselineStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2319,7 +2268,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             .getDefaultInstance()
         : baselineStats_;
   }
-
   /**
    *
    *
@@ -2342,7 +2290,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
   public static final int THRESHOLD_VALUE_FIELD_NUMBER = 3;
   private double thresholdValue_ = 0D;
-
   /**
    *
    *
@@ -2361,7 +2308,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
   public static final int HAS_ANOMALY_FIELD_NUMBER = 4;
   private boolean hasAnomaly_ = false;
-
   /**
    *
    *
@@ -2382,7 +2328,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelMonitoringJob_ = "";
-
   /**
    *
    *
@@ -2406,7 +2351,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -2435,7 +2379,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schedule_ = "";
-
   /**
    *
    *
@@ -2459,7 +2402,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -2486,7 +2428,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -2502,7 +2443,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2518,7 +2458,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -2537,7 +2476,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object algorithm_ = "";
-
   /**
    *
    *
@@ -2562,7 +2500,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -2831,7 +2768,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3152,7 +3088,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValueOrBuilder>
         currentStatsBuilder_;
-
     /**
      *
      *
@@ -3169,7 +3104,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public boolean hasCurrentStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3194,7 +3128,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return currentStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3220,7 +3153,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3244,7 +3176,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3277,7 +3208,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3299,7 +3229,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3317,7 +3246,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return getCurrentStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3340,7 +3268,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             : currentStats_;
       }
     }
-
     /**
      *
      *
@@ -3377,7 +3304,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValue.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint.TypedValueOrBuilder>
         baselineStatsBuilder_;
-
     /**
      *
      *
@@ -3394,7 +3320,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public boolean hasBaselineStats() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3419,7 +3344,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return baselineStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3445,7 +3369,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3469,7 +3392,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3502,7 +3424,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3524,7 +3445,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3542,7 +3462,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return getBaselineStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3565,7 +3484,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             : baselineStats_;
       }
     }
-
     /**
      *
      *
@@ -3596,7 +3514,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     private double thresholdValue_;
-
     /**
      *
      *
@@ -3612,7 +3529,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public double getThresholdValue() {
       return thresholdValue_;
     }
-
     /**
      *
      *
@@ -3632,7 +3548,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3652,7 +3567,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     private boolean hasAnomaly_;
-
     /**
      *
      *
@@ -3668,7 +3582,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public boolean getHasAnomaly() {
       return hasAnomaly_;
     }
-
     /**
      *
      *
@@ -3688,7 +3601,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3708,7 +3620,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     private java.lang.Object modelMonitoringJob_ = "";
-
     /**
      *
      *
@@ -3731,7 +3642,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3754,7 +3664,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3776,7 +3685,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3794,7 +3702,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3819,7 +3726,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     private java.lang.Object schedule_ = "";
-
     /**
      *
      *
@@ -3842,7 +3748,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3865,7 +3770,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3887,7 +3791,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3905,7 +3808,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3935,7 +3837,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3950,7 +3851,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3971,7 +3871,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3994,7 +3893,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4014,7 +3912,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4042,7 +3939,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4062,7 +3958,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4077,7 +3972,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4096,7 +3990,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4124,7 +4017,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
     }
 
     private java.lang.Object algorithm_ = "";
-
     /**
      *
      *
@@ -4148,7 +4040,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4172,7 +4063,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4195,7 +4085,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4214,7 +4103,6 @@ public final class ModelMonitoringStatsDataPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

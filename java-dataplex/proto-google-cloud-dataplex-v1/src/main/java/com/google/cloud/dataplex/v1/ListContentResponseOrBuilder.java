@@ -34,7 +34,6 @@ public interface ListContentResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Content content = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Content> getContentList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListContentResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Content content = 1;</code>
    */
   com.google.cloud.dataplex.v1.Content getContent(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListContentResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Content content = 1;</code>
    */
   int getContentCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListContentResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Content content = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.ContentOrBuilder> getContentOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListContentResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

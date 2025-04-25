@@ -74,7 +74,6 @@ public enum KeyRevocationActionType implements com.google.protobuf.ProtocolMessa
    * <code>KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public enum KeyRevocationActionType implements com.google.protobuf.ProtocolMessa
    * <code>NONE = 1;</code>
    */
   public static final int NONE_VALUE = 1;
-
   /**
    *
    *

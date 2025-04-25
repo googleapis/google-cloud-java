@@ -33,7 +33,6 @@ public final class TransliterationConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.TransliterationConfig)
     TransliterationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransliterationConfig.newBuilder() to construct.
   private TransliterationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class TransliterationConfig extends com.google.protobuf.GeneratedMe
 
   public static final int ENABLE_TRANSLITERATION_FIELD_NUMBER = 1;
   private boolean enableTransliteration_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class TransliterationConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -424,7 +421,6 @@ public final class TransliterationConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private boolean enableTransliteration_;
-
     /**
      *
      *
@@ -441,7 +437,6 @@ public final class TransliterationConfig extends com.google.protobuf.GeneratedMe
     public boolean getEnableTransliteration() {
       return enableTransliteration_;
     }
-
     /**
      *
      *
@@ -462,7 +457,6 @@ public final class TransliterationConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.Network)
     NetworkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Network.newBuilder() to construct.
   private Network(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USE_PRIVATE_ADDRESS_FIELD_NUMBER = 2;
   private boolean usePrivateAddress_ = false;
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -396,7 +390,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -608,7 +601,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -635,7 +627,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +653,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -688,7 +678,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +727,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean usePrivateAddress_;
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public boolean getUsePrivateAddress() {
       return usePrivateAddress_;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subnetwork_ = "";
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

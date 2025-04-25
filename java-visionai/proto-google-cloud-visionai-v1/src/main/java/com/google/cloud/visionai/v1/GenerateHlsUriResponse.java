@@ -33,7 +33,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GenerateHlsUriResponse)
     GenerateHlsUriResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateHlsUriResponse.newBuilder() to construct.
   private GenerateHlsUriResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Partition.TemporalPartition>
       temporalPartitions_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       getTemporalPartitionsList() {
     return temporalPartitions_;
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       getTemporalPartitionsOrBuilderList() {
     return temporalPartitions_;
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
   public int getTemporalPartitionsCount() {
     return temporalPartitions_.size();
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartitions(int index) {
     return temporalPartitions_.get(index);
   }
-
   /**
    *
    *
@@ -380,7 +372,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -627,7 +618,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return temporalPartitionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return temporalPartitionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return temporalPartitionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1010,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1025,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         getTemporalPartitionsBuilder(int index) {
       return getTemporalPartitionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1071,7 +1044,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return temporalPartitionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1064,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(temporalPartitions_);
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1081,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1128,7 +1098,6 @@ public final class GenerateHlsUriResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DataplexExternalTable)
     DataplexExternalTableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataplexExternalTable.newBuilder() to construct.
   private DataplexExternalTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
 
   public static final int SYSTEM_FIELD_NUMBER = 1;
   private int system_ = 0;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
   public int getSystemValue() {
     return system_;
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullyQualifiedName_ = "";
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object googleCloudResource_ = "";
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataCatalogEntry_ = "";
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -460,7 +451,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -694,7 +684,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int system_ = 0;
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     public int getSystemValue() {
       return system_;
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.datacatalog.v1.IntegratedSystem.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object fullyQualifiedName_ = "";
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object googleCloudResource_ = "";
-
     /**
      *
      *
@@ -925,7 +904,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -970,7 +947,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +964,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +988,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object dataCatalogEntry_ = "";
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1032,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1070,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

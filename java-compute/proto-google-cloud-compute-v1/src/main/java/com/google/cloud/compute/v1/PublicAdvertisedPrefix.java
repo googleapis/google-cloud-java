@@ -33,7 +33,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PublicAdvertisedPrefix)
     PublicAdvertisedPrefixOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublicAdvertisedPrefix.newBuilder() to construct.
   private PublicAdvertisedPrefix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_BYOIP_API_VERSION = 0;</code>
      */
     public static final int UNDEFINED_BYOIP_API_VERSION_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>V1 = 2715;</code>
      */
     public static final int V1_VALUE = 2715;
-
     /**
      *
      *
@@ -302,7 +299,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_PDP_SCOPE = 0;</code>
      */
     public static final int UNDEFINED_PDP_SCOPE_VALUE = 0;
-
     /**
      *
      *
@@ -313,7 +309,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>GLOBAL = 494663587;</code>
      */
     public static final int GLOBAL_VALUE = 494663587;
-
     /**
      *
      *
@@ -324,7 +319,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>GLOBAL_AND_REGIONAL = 318053059;</code>
      */
     public static final int GLOBAL_AND_REGIONAL_VALUE = 318053059;
-
     /**
      *
      *
@@ -546,7 +540,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -557,7 +550,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>ANNOUNCED_TO_INTERNET = 177880897;</code>
      */
     public static final int ANNOUNCED_TO_INTERNET_VALUE = 177880897;
-
     /**
      *
      *
@@ -568,7 +560,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>INITIAL = 518841124;</code>
      */
     public static final int INITIAL_VALUE = 518841124;
-
     /**
      *
      *
@@ -579,7 +570,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>PREFIX_CONFIGURATION_COMPLETE = 480889551;</code>
      */
     public static final int PREFIX_CONFIGURATION_COMPLETE_VALUE = 480889551;
-
     /**
      *
      *
@@ -590,7 +580,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>PREFIX_CONFIGURATION_IN_PROGRESS = 378550961;</code>
      */
     public static final int PREFIX_CONFIGURATION_IN_PROGRESS_VALUE = 378550961;
-
     /**
      *
      *
@@ -601,7 +590,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>PREFIX_REMOVAL_IN_PROGRESS = 284375783;</code>
      */
     public static final int PREFIX_REMOVAL_IN_PROGRESS_VALUE = 284375783;
-
     /**
      *
      *
@@ -612,7 +600,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>PTR_CONFIGURED = 513497167;</code>
      */
     public static final int PTR_CONFIGURED_VALUE = 513497167;
-
     /**
      *
      *
@@ -623,7 +610,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>READY_TO_ANNOUNCE = 64641265;</code>
      */
     public static final int READY_TO_ANNOUNCE_VALUE = 64641265;
-
     /**
      *
      *
@@ -634,7 +620,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * <code>REVERSE_DNS_LOOKUP_FAILED = 295755183;</code>
      */
     public static final int REVERSE_DNS_LOOKUP_FAILED_VALUE = 295755183;
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object byoipApiVersion_ = "";
-
   /**
    *
    *
@@ -767,7 +751,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasByoipApiVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -792,7 +775,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -822,7 +804,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -838,7 +819,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -862,7 +842,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -891,7 +870,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -907,7 +885,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -931,7 +908,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -960,7 +936,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dnsVerificationIp_ = "";
-
   /**
    *
    *
@@ -976,7 +951,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasDnsVerificationIp() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1000,7 +974,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1029,7 +1002,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -1045,7 +1017,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1069,7 +1040,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1096,7 +1066,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -1112,7 +1081,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasId() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1133,7 +1101,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
-
   /**
    *
    *
@@ -1149,7 +1116,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasIpCidrRange() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1173,7 +1139,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1202,7 +1167,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -1218,7 +1182,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasKind() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1242,7 +1205,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1271,7 +1233,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1287,7 +1248,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasName() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1311,7 +1271,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1340,7 +1299,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pdpScope_ = "";
-
   /**
    *
    *
@@ -1357,7 +1315,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasPdpScope() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1382,7 +1339,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1413,7 +1369,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix>
       publicDelegatedPrefixs_;
-
   /**
    *
    *
@@ -1430,7 +1385,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       getPublicDelegatedPrefixsList() {
     return publicDelegatedPrefixs_;
   }
-
   /**
    *
    *
@@ -1449,7 +1403,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       getPublicDelegatedPrefixsOrBuilderList() {
     return publicDelegatedPrefixs_;
   }
-
   /**
    *
    *
@@ -1465,7 +1418,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public int getPublicDelegatedPrefixsCount() {
     return publicDelegatedPrefixs_.size();
   }
-
   /**
    *
    *
@@ -1482,7 +1434,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       getPublicDelegatedPrefixs(int index) {
     return publicDelegatedPrefixs_.get(index);
   }
-
   /**
    *
    *
@@ -1504,7 +1455,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1520,7 +1470,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1544,7 +1493,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1573,7 +1521,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sharedSecret_ = "";
-
   /**
    *
    *
@@ -1589,7 +1536,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasSharedSecret() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1613,7 +1559,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1642,7 +1587,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -1659,7 +1603,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   public boolean hasStatus() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1684,7 +1627,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -2058,7 +2000,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2499,7 +2440,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object byoipApiVersion_ = "";
-
     /**
      *
      *
@@ -2515,7 +2455,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasByoipApiVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2539,7 +2478,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2563,7 +2501,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2586,7 +2523,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2605,7 +2541,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2566,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2646,7 +2580,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2669,7 +2602,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2692,7 +2624,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2714,7 +2645,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2732,7 +2662,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2757,7 +2686,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2772,7 +2700,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2795,7 +2722,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2818,7 +2744,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2840,7 +2765,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2858,7 +2782,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2883,7 +2806,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object dnsVerificationIp_ = "";
-
     /**
      *
      *
@@ -2898,7 +2820,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasDnsVerificationIp() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2921,7 +2842,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2944,7 +2864,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2966,7 +2885,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2984,7 +2902,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3009,7 +2926,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -3024,7 +2940,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3047,7 +2962,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3070,7 +2984,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3092,7 +3005,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3110,7 +3022,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3135,7 +3046,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private long id_;
-
     /**
      *
      *
@@ -3151,7 +3061,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3167,7 +3076,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -3187,7 +3095,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3207,7 +3114,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object ipCidrRange_ = "";
-
     /**
      *
      *
@@ -3222,7 +3128,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasIpCidrRange() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3245,7 +3150,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3268,7 +3172,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3290,7 +3193,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3308,7 +3210,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3333,7 +3234,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -3348,7 +3248,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasKind() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3371,7 +3270,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3394,7 +3292,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3416,7 +3313,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3434,7 +3330,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3459,7 +3354,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3474,7 +3368,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasName() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3497,7 +3390,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3520,7 +3412,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3542,7 +3433,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3560,7 +3450,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3585,7 +3474,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object pdpScope_ = "";
-
     /**
      *
      *
@@ -3601,7 +3489,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasPdpScope() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3625,7 +3512,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3649,7 +3535,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3672,7 +3557,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3691,7 +3575,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3754,7 +3637,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return publicDelegatedPrefixsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3773,7 +3655,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return publicDelegatedPrefixsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3793,7 +3674,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return publicDelegatedPrefixsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3819,7 +3699,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3844,7 +3723,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3870,7 +3748,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3896,7 +3773,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3920,7 +3796,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3945,7 +3820,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3970,7 +3844,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3992,7 +3865,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4014,7 +3886,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4030,7 +3901,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         getPublicDelegatedPrefixsBuilder(int index) {
       return getPublicDelegatedPrefixsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4050,7 +3920,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return publicDelegatedPrefixsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4072,7 +3941,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(publicDelegatedPrefixs_);
       }
     }
-
     /**
      *
      *
@@ -4091,7 +3959,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
               com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4111,7 +3978,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
               com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4150,7 +4016,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -4165,7 +4030,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4188,7 +4052,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4211,7 +4074,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4233,7 +4095,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4251,7 +4112,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4276,7 +4136,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object sharedSecret_ = "";
-
     /**
      *
      *
@@ -4291,7 +4150,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasSharedSecret() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4314,7 +4172,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4337,7 +4194,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4359,7 +4215,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4377,7 +4232,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4402,7 +4256,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -4418,7 +4271,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public boolean hasStatus() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4442,7 +4294,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4466,7 +4317,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4489,7 +4339,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4508,7 +4357,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

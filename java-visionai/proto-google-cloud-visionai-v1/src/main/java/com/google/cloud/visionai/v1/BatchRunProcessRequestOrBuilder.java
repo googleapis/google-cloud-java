@@ -38,7 +38,6 @@ public interface BatchRunProcessRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BatchRunProcessRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.visionai.v1.CreateProcessRequest> getRequestsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface BatchRunProcessRequestOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.CreateProcessRequest getRequests(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface BatchRunProcessRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface BatchRunProcessRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CreateProcessRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface BatchRunProcessRequestOrBuilder
    * @return Whether the options field is set.
    */
   boolean hasOptions();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface BatchRunProcessRequestOrBuilder
    * @return The options.
    */
   com.google.cloud.visionai.v1.BatchRunProcessRequest.BatchRunProcessOptions getOptions();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface BatchRunProcessRequestOrBuilder
    * @return The batchId.
    */
   java.lang.String getBatchId();
-
   /**
    *
    *

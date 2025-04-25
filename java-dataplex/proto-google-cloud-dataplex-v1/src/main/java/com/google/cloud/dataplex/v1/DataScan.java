@@ -48,7 +48,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScan)
     DataScanOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataScan.newBuilder() to construct.
   private DataScan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the trigger field is set.
      */
     boolean hasTrigger();
-
     /**
      *
      *
@@ -136,7 +134,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return The trigger.
      */
     com.google.cloud.dataplex.v1.Trigger getTrigger();
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the field field is set.
      */
     boolean hasField();
-
     /**
      *
      *
@@ -184,7 +180,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return The field.
      */
     java.lang.String getField();
-
     /**
      *
      *
@@ -203,7 +198,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.dataplex.v1.DataScan.ExecutionSpec.IncrementalCase getIncrementalCase();
   }
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScan.ExecutionSpec)
       ExecutionSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExecutionSpec.newBuilder() to construct.
     private ExecutionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -264,7 +257,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       private IncrementalCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -297,7 +289,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TRIGGER_FIELD_NUMBER = 1;
     private com.google.cloud.dataplex.v1.Trigger trigger_;
-
     /**
      *
      *
@@ -318,7 +309,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTrigger() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -341,7 +331,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.Trigger.getDefaultInstance()
           : trigger_;
     }
-
     /**
      *
      *
@@ -364,7 +353,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FIELD_FIELD_NUMBER = 100;
-
     /**
      *
      *
@@ -382,7 +370,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasField() {
       return incrementalCase_ == 100;
     }
-
     /**
      *
      *
@@ -413,7 +400,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -633,7 +619,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -882,7 +867,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataplex.v1.Trigger.Builder,
               com.google.cloud.dataplex.v1.TriggerOrBuilder>
           triggerBuilder_;
-
       /**
        *
        *
@@ -902,7 +886,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTrigger() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -928,7 +911,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return triggerBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -956,7 +938,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -981,7 +962,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1014,7 +994,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1039,7 +1018,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1059,7 +1037,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTriggerFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1083,7 +1060,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               : trigger_;
         }
       }
-
       /**
        *
        *
@@ -1133,7 +1109,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       public boolean hasField() {
         return incrementalCase_ == 100;
       }
-
       /**
        *
        *
@@ -1165,7 +1140,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1197,7 +1171,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1222,7 +1195,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1245,7 +1217,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1355,7 +1326,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestJobStartTime field is set.
      */
     boolean hasLatestJobStartTime();
-
     /**
      *
      *
@@ -1370,7 +1340,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return The latestJobStartTime.
      */
     com.google.protobuf.Timestamp getLatestJobStartTime();
-
     /**
      *
      *
@@ -1398,7 +1367,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestJobEndTime field is set.
      */
     boolean hasLatestJobEndTime();
-
     /**
      *
      *
@@ -1413,7 +1381,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return The latestJobEndTime.
      */
     com.google.protobuf.Timestamp getLatestJobEndTime();
-
     /**
      *
      *
@@ -1441,7 +1408,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestJobCreateTime field is set.
      */
     boolean hasLatestJobCreateTime();
-
     /**
      *
      *
@@ -1456,7 +1422,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * @return The latestJobCreateTime.
      */
     com.google.protobuf.Timestamp getLatestJobCreateTime();
-
     /**
      *
      *
@@ -1470,7 +1435,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getLatestJobCreateTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -1485,7 +1449,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScan.ExecutionStatus)
       ExecutionStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExecutionStatus.newBuilder() to construct.
     private ExecutionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1517,7 +1480,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int LATEST_JOB_START_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp latestJobStartTime_;
-
     /**
      *
      *
@@ -1535,7 +1497,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestJobStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1555,7 +1516,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : latestJobStartTime_;
     }
-
     /**
      *
      *
@@ -1576,7 +1536,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LATEST_JOB_END_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp latestJobEndTime_;
-
     /**
      *
      *
@@ -1594,7 +1553,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestJobEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1614,7 +1572,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : latestJobEndTime_;
     }
-
     /**
      *
      *
@@ -1635,7 +1592,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LATEST_JOB_CREATE_TIME_FIELD_NUMBER = 6;
     private com.google.protobuf.Timestamp latestJobCreateTime_;
-
     /**
      *
      *
@@ -1653,7 +1609,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestJobCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1673,7 +1628,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : latestJobCreateTime_;
     }
-
     /**
      *
      *
@@ -1888,7 +1842,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2145,7 +2098,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           latestJobStartTimeBuilder_;
-
       /**
        *
        *
@@ -2162,7 +2114,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLatestJobStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2185,7 +2136,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return latestJobStartTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2210,7 +2160,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2232,7 +2181,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2262,7 +2210,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2284,7 +2231,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2301,7 +2247,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLatestJobStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2322,7 +2267,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               : latestJobStartTime_;
         }
       }
-
       /**
        *
        *
@@ -2357,7 +2301,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           latestJobEndTimeBuilder_;
-
       /**
        *
        *
@@ -2374,7 +2317,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLatestJobEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2397,7 +2339,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return latestJobEndTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2422,7 +2363,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2444,7 +2384,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2474,7 +2413,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2496,7 +2434,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2513,7 +2450,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLatestJobEndTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2534,7 +2470,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               : latestJobEndTime_;
         }
       }
-
       /**
        *
        *
@@ -2569,7 +2504,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           latestJobCreateTimeBuilder_;
-
       /**
        *
        *
@@ -2586,7 +2520,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLatestJobCreateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -2609,7 +2542,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return latestJobCreateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2634,7 +2566,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2656,7 +2587,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2686,7 +2616,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2708,7 +2637,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2725,7 +2653,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLatestJobCreateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2746,7 +2673,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
               : latestJobCreateTime_;
         }
       }
-
       /**
        *
        *
@@ -2858,7 +2784,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     private SpecCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2911,7 +2836,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     private ResultCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2950,7 +2874,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2979,7 +2902,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3013,7 +2935,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -3040,7 +2961,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3072,7 +2992,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -3098,7 +3017,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3129,7 +3047,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -3155,7 +3072,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3208,7 +3124,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -3225,14 +3140,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -3246,7 +3159,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -3267,7 +3179,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3291,7 +3202,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
-
   /**
    *
    *
@@ -3308,7 +3218,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -3330,7 +3239,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -3347,7 +3255,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3364,7 +3271,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -3382,7 +3288,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -3399,7 +3304,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3416,7 +3320,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -3434,7 +3337,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_FIELD_NUMBER = 9;
   private com.google.cloud.dataplex.v1.DataSource data_;
-
   /**
    *
    *
@@ -3451,7 +3353,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasData() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3468,7 +3369,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataplex.v1.DataSource getData() {
     return data_ == null ? com.google.cloud.dataplex.v1.DataSource.getDefaultInstance() : data_;
   }
-
   /**
    *
    *
@@ -3486,7 +3386,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_SPEC_FIELD_NUMBER = 10;
   private com.google.cloud.dataplex.v1.DataScan.ExecutionSpec executionSpec_;
-
   /**
    *
    *
@@ -3506,7 +3405,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExecutionSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3528,7 +3426,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.DataScan.ExecutionSpec.getDefaultInstance()
         : executionSpec_;
   }
-
   /**
    *
    *
@@ -3551,7 +3448,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_STATUS_FIELD_NUMBER = 11;
   private com.google.cloud.dataplex.v1.DataScan.ExecutionStatus executionStatus_;
-
   /**
    *
    *
@@ -3569,7 +3465,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExecutionStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -3589,7 +3484,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.DataScan.ExecutionStatus.getDefaultInstance()
         : executionStatus_;
   }
-
   /**
    *
    *
@@ -3611,7 +3505,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 12;
   private int type_ = 0;
-
   /**
    *
    *
@@ -3629,7 +3522,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -3651,7 +3543,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_QUALITY_SPEC_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -3667,7 +3558,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataQualitySpec() {
     return specCase_ == 100;
   }
-
   /**
    *
    *
@@ -3686,7 +3576,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DataQualitySpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3705,7 +3594,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_PROFILE_SPEC_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -3721,7 +3609,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataProfileSpec() {
     return specCase_ == 101;
   }
-
   /**
    *
    *
@@ -3740,7 +3627,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DataProfileSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3759,7 +3645,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_DISCOVERY_SPEC_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -3775,7 +3660,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataDiscoverySpec() {
     return specCase_ == 102;
   }
-
   /**
    *
    *
@@ -3794,7 +3678,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3813,7 +3696,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_QUALITY_RESULT_FIELD_NUMBER = 200;
-
   /**
    *
    *
@@ -3831,7 +3713,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataQualityResult() {
     return resultCase_ == 200;
   }
-
   /**
    *
    *
@@ -3852,7 +3733,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DataQualityResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3873,7 +3753,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_PROFILE_RESULT_FIELD_NUMBER = 201;
-
   /**
    *
    *
@@ -3891,7 +3770,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataProfileResult() {
     return resultCase_ == 201;
   }
-
   /**
    *
    *
@@ -3912,7 +3790,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DataProfileResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3933,7 +3810,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_DISCOVERY_RESULT_FIELD_NUMBER = 202;
-
   /**
    *
    *
@@ -3951,7 +3827,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataDiscoveryResult() {
     return resultCase_ == 202;
   }
-
   /**
    *
    *
@@ -3972,7 +3847,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4390,7 +4264,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4966,7 +4839,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4994,7 +4866,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5022,7 +4893,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5049,7 +4919,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5072,7 +4941,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5102,7 +4970,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -5128,7 +4995,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5154,7 +5020,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5179,7 +5044,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5200,7 +5064,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5228,7 +5091,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -5253,7 +5115,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5278,7 +5139,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5302,7 +5162,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5322,7 +5181,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5349,7 +5207,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -5374,7 +5231,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5399,7 +5255,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5423,7 +5278,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5443,7 +5297,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5494,7 +5347,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -5511,14 +5363,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -5532,7 +5382,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -5553,7 +5402,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -5580,7 +5428,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5597,14 +5444,12 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -5625,7 +5470,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -5642,7 +5486,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -5659,7 +5502,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -5679,7 +5521,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5698,7 +5539,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.dataplex.v1.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -5721,7 +5561,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5747,7 +5586,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5764,7 +5602,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -5787,7 +5624,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5812,7 +5648,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5834,7 +5669,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5864,7 +5698,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5886,7 +5719,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5903,7 +5735,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5924,7 +5755,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5959,7 +5789,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -5976,7 +5805,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5999,7 +5827,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6024,7 +5851,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6046,7 +5872,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6076,7 +5901,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6098,7 +5922,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6115,7 +5938,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6136,7 +5958,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -6171,7 +5992,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataSource.Builder,
             com.google.cloud.dataplex.v1.DataSourceOrBuilder>
         dataBuilder_;
-
     /**
      *
      *
@@ -6188,7 +6008,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasData() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -6209,7 +6028,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return dataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6234,7 +6052,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6256,7 +6073,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6286,7 +6102,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6308,7 +6123,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6325,7 +6139,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6344,7 +6157,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return data_ == null ? com.google.cloud.dataplex.v1.DataSource.getDefaultInstance() : data_;
       }
     }
-
     /**
      *
      *
@@ -6379,7 +6191,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataScan.ExecutionSpec.Builder,
             com.google.cloud.dataplex.v1.DataScan.ExecutionSpecOrBuilder>
         executionSpecBuilder_;
-
     /**
      *
      *
@@ -6398,7 +6209,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExecutionSpec() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -6423,7 +6233,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return executionSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6450,7 +6259,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6475,7 +6283,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6508,7 +6315,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6532,7 +6338,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6551,7 +6356,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExecutionSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6575,7 +6379,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             : executionSpec_;
       }
     }
-
     /**
      *
      *
@@ -6612,7 +6415,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataScan.ExecutionStatus.Builder,
             com.google.cloud.dataplex.v1.DataScan.ExecutionStatusOrBuilder>
         executionStatusBuilder_;
-
     /**
      *
      *
@@ -6629,7 +6431,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExecutionStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -6652,7 +6453,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return executionStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6677,7 +6477,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6700,7 +6499,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6732,7 +6530,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6754,7 +6551,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6772,7 +6568,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExecutionStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6794,7 +6589,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             : executionStatus_;
       }
     }
-
     /**
      *
      *
@@ -6824,7 +6618,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -6842,7 +6635,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -6863,7 +6655,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6883,7 +6674,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.DataScanType.forNumber(type_);
       return result == null ? com.google.cloud.dataplex.v1.DataScanType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -6907,7 +6697,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6933,7 +6722,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataQualitySpec.Builder,
             com.google.cloud.dataplex.v1.DataQualitySpecOrBuilder>
         dataQualitySpecBuilder_;
-
     /**
      *
      *
@@ -6949,7 +6737,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataQualitySpec() {
       return specCase_ == 100;
     }
-
     /**
      *
      *
@@ -6975,7 +6762,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataQualitySpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6998,7 +6784,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -7019,7 +6804,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -7052,7 +6836,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -7078,7 +6861,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7091,7 +6873,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DataQualitySpec.Builder getDataQualitySpecBuilder() {
       return getDataQualitySpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7112,7 +6893,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataQualitySpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7151,7 +6931,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataProfileSpec.Builder,
             com.google.cloud.dataplex.v1.DataProfileSpecOrBuilder>
         dataProfileSpecBuilder_;
-
     /**
      *
      *
@@ -7167,7 +6946,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataProfileSpec() {
       return specCase_ == 101;
     }
-
     /**
      *
      *
@@ -7193,7 +6971,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataProfileSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7216,7 +6993,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -7237,7 +7013,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -7270,7 +7045,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -7296,7 +7070,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7309,7 +7082,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DataProfileSpec.Builder getDataProfileSpecBuilder() {
       return getDataProfileSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7330,7 +7102,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataProfileSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7369,7 +7140,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
             com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>
         dataDiscoverySpecBuilder_;
-
     /**
      *
      *
@@ -7385,7 +7155,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataDiscoverySpec() {
       return specCase_ == 102;
     }
-
     /**
      *
      *
@@ -7411,7 +7180,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7434,7 +7202,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -7455,7 +7222,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -7488,7 +7254,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -7514,7 +7279,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7527,7 +7291,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder getDataDiscoverySpecBuilder() {
       return getDataDiscoverySpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7548,7 +7311,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7587,7 +7349,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataQualityResult.Builder,
             com.google.cloud.dataplex.v1.DataQualityResultOrBuilder>
         dataQualityResultBuilder_;
-
     /**
      *
      *
@@ -7605,7 +7366,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataQualityResult() {
       return resultCase_ == 200;
     }
-
     /**
      *
      *
@@ -7633,7 +7393,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataQualityResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7658,7 +7417,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -7681,7 +7439,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -7716,7 +7473,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -7744,7 +7500,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7759,7 +7514,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DataQualityResult.Builder getDataQualityResultBuilder() {
       return getDataQualityResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7782,7 +7536,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataQualityResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7823,7 +7576,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataProfileResult.Builder,
             com.google.cloud.dataplex.v1.DataProfileResultOrBuilder>
         dataProfileResultBuilder_;
-
     /**
      *
      *
@@ -7841,7 +7593,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataProfileResult() {
       return resultCase_ == 201;
     }
-
     /**
      *
      *
@@ -7869,7 +7620,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataProfileResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7894,7 +7644,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -7917,7 +7666,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -7952,7 +7700,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -7980,7 +7727,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7995,7 +7741,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DataProfileResult.Builder getDataProfileResultBuilder() {
       return getDataProfileResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8018,7 +7763,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataProfileResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8059,7 +7803,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
             com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>
         dataDiscoveryResultBuilder_;
-
     /**
      *
      *
@@ -8077,7 +7820,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataDiscoveryResult() {
       return resultCase_ == 202;
     }
-
     /**
      *
      *
@@ -8105,7 +7847,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8130,7 +7871,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -8153,7 +7893,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -8189,7 +7928,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -8217,7 +7955,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8233,7 +7970,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         getDataDiscoveryResultBuilder() {
       return getDataDiscoveryResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8257,7 +7993,6 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *

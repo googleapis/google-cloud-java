@@ -36,7 +36,6 @@ public interface LoggingConfigOrBuilder
    * @return Whether the componentConfig field is set.
    */
   boolean hasComponentConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LoggingConfigOrBuilder
    * @return The componentConfig.
    */
   com.google.cloud.gkemulticloud.v1.LoggingComponentConfig getComponentConfig();
-
   /**
    *
    *

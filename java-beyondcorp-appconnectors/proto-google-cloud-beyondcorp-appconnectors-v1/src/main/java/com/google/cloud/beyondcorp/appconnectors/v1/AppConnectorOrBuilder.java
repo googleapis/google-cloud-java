@@ -37,7 +37,6 @@ public interface AppConnectorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AppConnectorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AppConnectorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AppConnectorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface AppConnectorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AppConnectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -153,11 +147,9 @@ public interface AppConnectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface AppConnectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface AppConnectorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -208,7 +198,6 @@ public interface AppConnectorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -236,7 +225,6 @@ public interface AppConnectorOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public interface AppConnectorOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -295,7 +282,6 @@ public interface AppConnectorOrBuilder
    * @return Whether the principalInfo field is set.
    */
   boolean hasPrincipalInfo();
-
   /**
    *
    *
@@ -310,7 +296,6 @@ public interface AppConnectorOrBuilder
    * @return The principalInfo.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.PrincipalInfo getPrincipalInfo();
-
   /**
    *
    *
@@ -339,7 +324,6 @@ public interface AppConnectorOrBuilder
    * @return Whether the resourceInfo field is set.
    */
   boolean hasResourceInfo();
-
   /**
    *
    *
@@ -354,7 +338,6 @@ public interface AppConnectorOrBuilder
    * @return The resourceInfo.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo getResourceInfo();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface PipelineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface PipelineOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface PipelineOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface PipelineOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface PipelineOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface PipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -177,11 +171,9 @@ public interface PipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface PipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface PipelineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public interface PipelineOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -271,7 +260,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -284,11 +272,9 @@ public interface PipelineOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -301,7 +287,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -318,7 +303,6 @@ public interface PipelineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -344,7 +328,6 @@ public interface PipelineOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.eventarc.v1.Pipeline.Destination> getDestinationsList();
-
   /**
    *
    *
@@ -385,7 +367,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   com.google.cloud.eventarc.v1.Pipeline.Destination getDestinations(int index);
-
   /**
    *
    *
@@ -399,7 +380,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   int getDestinationsCount();
-
   /**
    *
    *
@@ -414,7 +394,6 @@ public interface PipelineOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.Pipeline.DestinationOrBuilder>
       getDestinationsOrBuilderList();
-
   /**
    *
    *
@@ -442,7 +421,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.eventarc.v1.Pipeline.Mediation> getMediationsList();
-
   /**
    *
    *
@@ -456,7 +434,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   com.google.cloud.eventarc.v1.Pipeline.Mediation getMediations(int index);
-
   /**
    *
    *
@@ -470,7 +447,6 @@ public interface PipelineOrBuilder
    * </code>
    */
   int getMediationsCount();
-
   /**
    *
    *
@@ -485,7 +461,6 @@ public interface PipelineOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.Pipeline.MediationOrBuilder>
       getMediationsOrBuilderList();
-
   /**
    *
    *
@@ -517,7 +492,6 @@ public interface PipelineOrBuilder
    * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
-
   /**
    *
    *
@@ -557,7 +531,6 @@ public interface PipelineOrBuilder
    * @return Whether the inputPayloadFormat field is set.
    */
   boolean hasInputPayloadFormat();
-
   /**
    *
    *
@@ -579,7 +552,6 @@ public interface PipelineOrBuilder
    * @return The inputPayloadFormat.
    */
   com.google.cloud.eventarc.v1.Pipeline.MessagePayloadFormat getInputPayloadFormat();
-
   /**
    *
    *
@@ -615,7 +587,6 @@ public interface PipelineOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -630,7 +601,6 @@ public interface PipelineOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.eventarc.v1.LoggingConfig getLoggingConfig();
-
   /**
    *
    *
@@ -658,7 +628,6 @@ public interface PipelineOrBuilder
    * @return Whether the retryPolicy field is set.
    */
   boolean hasRetryPolicy();
-
   /**
    *
    *
@@ -673,7 +642,6 @@ public interface PipelineOrBuilder
    * @return The retryPolicy.
    */
   com.google.cloud.eventarc.v1.Pipeline.RetryPolicy getRetryPolicy();
-
   /**
    *
    *
@@ -701,7 +669,6 @@ public interface PipelineOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface UpdatePhraseSetRequestOrBuilder
    * @return Whether the phraseSet field is set.
    */
   boolean hasPhraseSet();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdatePhraseSetRequestOrBuilder
    * @return The phraseSet.
    */
   com.google.cloud.speech.v2.PhraseSet getPhraseSet();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdatePhraseSetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdatePhraseSetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

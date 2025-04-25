@@ -46,7 +46,6 @@ public interface OrderedJobOrBuilder
    * @return The stepId.
    */
   java.lang.String getStepId();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface OrderedJobOrBuilder
    * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1.HadoopJob getHadoopJob();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface OrderedJobOrBuilder
    * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1.SparkJob getSparkJob();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface OrderedJobOrBuilder
    * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1.PySparkJob getPysparkJob();
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface OrderedJobOrBuilder
    * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1.HiveJob getHiveJob();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public interface OrderedJobOrBuilder
    * @return The pigJob.
    */
   com.google.cloud.dataproc.v1.PigJob getPigJob();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the sparkRJob field is set.
    */
   boolean hasSparkRJob();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface OrderedJobOrBuilder
    * @return The sparkRJob.
    */
   com.google.cloud.dataproc.v1.SparkRJob getSparkRJob();
-
   /**
    *
    *
@@ -336,7 +323,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
-
   /**
    *
    *
@@ -351,7 +337,6 @@ public interface OrderedJobOrBuilder
    * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob();
-
   /**
    *
    *
@@ -379,7 +364,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the prestoJob field is set.
    */
   boolean hasPrestoJob();
-
   /**
    *
    *
@@ -394,7 +378,6 @@ public interface OrderedJobOrBuilder
    * @return The prestoJob.
    */
   com.google.cloud.dataproc.v1.PrestoJob getPrestoJob();
-
   /**
    *
    *
@@ -422,7 +405,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the trinoJob field is set.
    */
   boolean hasTrinoJob();
-
   /**
    *
    *
@@ -437,7 +419,6 @@ public interface OrderedJobOrBuilder
    * @return The trinoJob.
    */
   com.google.cloud.dataproc.v1.TrinoJob getTrinoJob();
-
   /**
    *
    *
@@ -465,7 +446,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the flinkJob field is set.
    */
   boolean hasFlinkJob();
-
   /**
    *
    *
@@ -480,7 +460,6 @@ public interface OrderedJobOrBuilder
    * @return The flinkJob.
    */
   com.google.cloud.dataproc.v1.FlinkJob getFlinkJob();
-
   /**
    *
    *
@@ -513,7 +492,6 @@ public interface OrderedJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -533,11 +511,9 @@ public interface OrderedJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -557,7 +533,6 @@ public interface OrderedJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -581,7 +556,6 @@ public interface OrderedJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -616,7 +590,6 @@ public interface OrderedJobOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
-
   /**
    *
    *
@@ -631,7 +604,6 @@ public interface OrderedJobOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.dataproc.v1.JobScheduling getScheduling();
-
   /**
    *
    *
@@ -659,7 +631,6 @@ public interface OrderedJobOrBuilder
    * @return A list containing the prerequisiteStepIds.
    */
   java.util.List<java.lang.String> getPrerequisiteStepIdsList();
-
   /**
    *
    *
@@ -674,7 +645,6 @@ public interface OrderedJobOrBuilder
    * @return The count of prerequisiteStepIds.
    */
   int getPrerequisiteStepIdsCount();
-
   /**
    *
    *
@@ -690,7 +660,6 @@ public interface OrderedJobOrBuilder
    * @return The prerequisiteStepIds at the given index.
    */
   java.lang.String getPrerequisiteStepIds(int index);
-
   /**
    *
    *

@@ -294,8 +294,7 @@ public class SavedQueryName implements ResourceName {
     private Builder(SavedQueryName savedQueryName) {
       Preconditions.checkArgument(
           Objects.equals(savedQueryName.pathTemplate, PROJECT_SAVED_QUERY),
-          "toBuilder is only supported when SavedQueryName has the pattern of"
-              + " projects/{project}/savedQueries/{saved_query}");
+          "toBuilder is only supported when SavedQueryName has the pattern of projects/{project}/savedQueries/{saved_query}");
       this.project = savedQueryName.project;
       this.savedQuery = savedQueryName.savedQuery;
     }

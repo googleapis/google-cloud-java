@@ -33,7 +33,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextResponse)
     SearchTextResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchTextResponse.newBuilder() to construct.
   private SearchTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.Place> places_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.maps.places.v1.Place> getPlacesList() {
     return places_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       getPlacesOrBuilderList() {
     return places_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public int getPlacesCount() {
     return places_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public com.google.maps.places.v1.Place getPlaces(int index) {
     return places_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.RoutingSummary> routingSummaries_;
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.maps.places.v1.RoutingSummary> getRoutingSummariesList() {
     return routingSummaries_;
   }
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       getRoutingSummariesOrBuilderList() {
     return routingSummaries_;
   }
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public int getRoutingSummariesCount() {
     return routingSummaries_.size();
   }
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public com.google.maps.places.v1.RoutingSummary getRoutingSummaries(int index) {
     return routingSummaries_.get(index);
   }
-
   /**
    *
    *
@@ -242,7 +231,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.ContextualContent> contextualContents_;
-
   /**
    *
    *
@@ -266,7 +254,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.maps.places.v1.ContextualContent> getContextualContentsList() {
     return contextualContents_;
   }
-
   /**
    *
    *
@@ -291,7 +278,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       getContextualContentsOrBuilderList() {
     return contextualContents_;
   }
-
   /**
    *
    *
@@ -315,7 +301,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public int getContextualContentsCount() {
     return contextualContents_.size();
   }
-
   /**
    *
    *
@@ -339,7 +324,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
   public com.google.maps.places.v1.ContextualContent getContextualContents(int index) {
     return contextualContents_.get(index);
   }
-
   /**
    *
    *
@@ -549,7 +533,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -920,7 +903,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return placesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return placesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return placesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +998,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1020,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1039,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1058,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1078,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1097,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1116,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     public com.google.maps.places.v1.Place.Builder getPlacesBuilder(int index) {
       return getPlacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1174,7 +1144,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return placesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1192,7 +1161,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(places_);
       }
     }
-
     /**
      *
      *
@@ -1206,7 +1174,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return getPlacesFieldBuilder()
           .addBuilder(com.google.maps.places.v1.Place.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1220,7 +1187,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return getPlacesFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.Place.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1288,7 +1254,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return routingSummariesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1274,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return routingSummariesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1330,7 +1294,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return routingSummariesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1320,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1344,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1370,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1436,7 +1396,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1420,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1444,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1468,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1491,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1514,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1530,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     public com.google.maps.places.v1.RoutingSummary.Builder getRoutingSummariesBuilder(int index) {
       return getRoutingSummariesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1598,7 +1551,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return routingSummariesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1620,7 +1572,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(routingSummaries_);
       }
     }
-
     /**
      *
      *
@@ -1638,7 +1589,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return getRoutingSummariesFieldBuilder()
           .addBuilder(com.google.maps.places.v1.RoutingSummary.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1656,7 +1606,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return getRoutingSummariesFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.RoutingSummary.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1739,7 +1688,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return contextualContentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1766,7 +1714,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return contextualContentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1740,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return contextualContentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1827,7 +1773,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1858,7 +1803,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1891,7 +1835,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1925,7 +1868,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1898,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1987,7 +1928,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1958,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +1987,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2078,7 +2016,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2039,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         int index) {
       return getContextualContentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2130,7 +2066,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return contextualContentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2158,7 +2093,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(contextualContents_);
       }
     }
-
     /**
      *
      *
@@ -2182,7 +2116,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return getContextualContentsFieldBuilder()
           .addBuilder(com.google.maps.places.v1.ContextualContent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2207,7 +2140,6 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
       return getContextualContentsFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.ContextualContent.getDefaultInstance());
     }
-
     /**
      *
      *

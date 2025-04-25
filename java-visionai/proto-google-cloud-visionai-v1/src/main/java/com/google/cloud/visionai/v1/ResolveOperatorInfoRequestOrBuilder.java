@@ -38,7 +38,6 @@ public interface ResolveOperatorInfoRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ResolveOperatorInfoRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.visionai.v1.OperatorQuery> getQueriesList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ResolveOperatorInfoRequestOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.OperatorQuery getQueries(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ResolveOperatorInfoRequestOrBuilder
    * </code>
    */
   int getQueriesCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ResolveOperatorInfoRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.OperatorQueryOrBuilder>
       getQueriesOrBuilderList();
-
   /**
    *
    *

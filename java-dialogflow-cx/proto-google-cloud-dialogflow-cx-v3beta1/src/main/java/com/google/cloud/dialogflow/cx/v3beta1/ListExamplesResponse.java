@@ -34,7 +34,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ListExamplesResponse)
     ListExamplesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListExamplesResponse.newBuilder() to construct.
   private ListExamplesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Example> examples_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Example> getExamplesList() {
     return examples_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       getExamplesOrBuilderList() {
     return examples_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
   public int getExamplesCount() {
     return examples_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.dialogflow.cx.v3beta1.Example getExamples(int index) {
     return examples_.get(index);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +375,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return examplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return examplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return examplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +883,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +920,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3beta1.Example.Builder getExamplesBuilder(int index) {
       return getExamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return examplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(examples_);
       }
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       return getExamplesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Example.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       return getExamplesFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3beta1.Example.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1052,7 +1026,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1076,7 +1049,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1094,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1112,6 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

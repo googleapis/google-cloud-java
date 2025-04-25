@@ -33,7 +33,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslPolicy)
     SslPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SslPolicy.newBuilder() to construct.
   private SslPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MIN_TLS_VERSION = 0;</code>
      */
     public static final int UNDEFINED_MIN_TLS_VERSION_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>TLS_1_0 = 33116734;</code>
      */
     public static final int TLS_1_0_VALUE = 33116734;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>TLS_1_1 = 33116735;</code>
      */
     public static final int TLS_1_1_VALUE = 33116735;
-
     /**
      *
      *
@@ -330,7 +326,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROFILE = 0;</code>
      */
     public static final int UNDEFINED_PROFILE_VALUE = 0;
-
     /**
      *
      *
@@ -341,7 +336,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPATIBLE = 179357396;</code>
      */
     public static final int COMPATIBLE_VALUE = 179357396;
-
     /**
      *
      *
@@ -352,7 +346,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOM = 388595569;</code>
      */
     public static final int CUSTOM_VALUE = 388595569;
-
     /**
      *
      *
@@ -363,7 +356,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>MODERN = 132013855;</code>
      */
     public static final int MODERN_VALUE = 132013855;
-
     /**
      *
      *
@@ -467,7 +459,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -483,7 +474,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -537,7 +526,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList customFeatures_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -552,7 +540,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCustomFeaturesList() {
     return customFeatures_;
   }
-
   /**
    *
    *
@@ -567,7 +554,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getCustomFeaturesCount() {
     return customFeatures_.size();
   }
-
   /**
    *
    *
@@ -583,7 +569,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCustomFeatures(int index) {
     return customFeatures_.get(index);
   }
-
   /**
    *
    *
@@ -604,7 +589,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -620,7 +604,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -644,7 +627,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -674,7 +656,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -689,7 +670,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getEnabledFeaturesList() {
     return enabledFeatures_;
   }
-
   /**
    *
    *
@@ -704,7 +684,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getEnabledFeaturesCount() {
     return enabledFeatures_.size();
   }
-
   /**
    *
    *
@@ -720,7 +699,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEnabledFeatures(int index) {
     return enabledFeatures_.get(index);
   }
-
   /**
    *
    *
@@ -741,7 +719,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -757,7 +734,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -781,7 +757,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -808,7 +783,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -824,7 +798,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -845,7 +818,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -861,7 +833,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -885,7 +856,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -914,7 +884,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minTlsVersion_ = "";
-
   /**
    *
    *
@@ -931,7 +900,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinTlsVersion() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -956,7 +924,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -986,7 +953,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1002,7 +968,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1026,7 +991,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1055,7 +1019,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object profile_ = "";
-
   /**
    *
    *
@@ -1072,7 +1035,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProfile() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1097,7 +1059,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1127,7 +1088,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -1143,7 +1103,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1167,7 +1126,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1196,7 +1154,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1212,7 +1169,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1236,7 +1192,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1265,7 +1220,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Warnings> warnings_;
-
   /**
    *
    *
@@ -1279,7 +1233,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -1294,7 +1247,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       getWarningsOrBuilderList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -1308,7 +1260,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getWarningsCount() {
     return warnings_.size();
   }
-
   /**
    *
    *
@@ -1322,7 +1273,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
     return warnings_.get(index);
   }
-
   /**
    *
    *
@@ -1671,7 +1621,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2104,7 +2053,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2119,7 +2067,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2142,7 +2089,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2165,7 +2111,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2187,7 +2132,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2205,7 +2149,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2238,7 +2181,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -2254,7 +2196,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       customFeatures_.makeImmutable();
       return customFeatures_;
     }
-
     /**
      *
      *
@@ -2269,7 +2210,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getCustomFeaturesCount() {
       return customFeatures_.size();
     }
-
     /**
      *
      *
@@ -2285,7 +2225,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCustomFeatures(int index) {
       return customFeatures_.get(index);
     }
-
     /**
      *
      *
@@ -2301,7 +2240,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCustomFeaturesBytes(int index) {
       return customFeatures_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2325,7 +2263,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2348,7 +2285,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2368,7 +2304,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2387,7 +2322,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2413,7 +2347,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2428,7 +2361,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2451,7 +2383,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2474,7 +2405,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2426,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2514,7 +2443,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2547,7 +2475,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2563,7 +2490,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       enabledFeatures_.makeImmutable();
       return enabledFeatures_;
     }
-
     /**
      *
      *
@@ -2578,7 +2504,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getEnabledFeaturesCount() {
       return enabledFeatures_.size();
     }
-
     /**
      *
      *
@@ -2594,7 +2519,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEnabledFeatures(int index) {
       return enabledFeatures_.get(index);
     }
-
     /**
      *
      *
@@ -2610,7 +2534,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getEnabledFeaturesBytes(int index) {
       return enabledFeatures_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2634,7 +2557,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2657,7 +2579,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2677,7 +2598,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2696,7 +2616,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2722,7 +2641,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -2737,7 +2655,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2760,7 +2677,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2783,7 +2699,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2805,7 +2720,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2823,7 +2737,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2848,7 +2761,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2864,7 +2776,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2880,7 +2791,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2900,7 +2810,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2920,7 +2829,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -2935,7 +2843,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2958,7 +2865,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2981,7 +2887,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3003,7 +2908,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3021,7 +2925,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3046,7 +2949,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object minTlsVersion_ = "";
-
     /**
      *
      *
@@ -3062,7 +2964,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinTlsVersion() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3086,7 +2987,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3110,7 +3010,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3133,7 +3032,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3152,7 +3050,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3178,7 +3075,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3193,7 +3089,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3216,7 +3111,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3239,7 +3133,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3261,7 +3154,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3279,7 +3171,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3304,7 +3195,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object profile_ = "";
-
     /**
      *
      *
@@ -3320,7 +3210,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProfile() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3344,7 +3233,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3368,7 +3256,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3391,7 +3278,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3410,7 +3296,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3436,7 +3321,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -3451,7 +3335,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3474,7 +3357,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3497,7 +3379,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3519,7 +3400,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3537,7 +3417,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3562,7 +3441,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -3577,7 +3455,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3600,7 +3477,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3623,7 +3499,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3645,7 +3520,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3663,7 +3537,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3719,7 +3592,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return warningsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3736,7 +3608,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return warningsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3753,7 +3624,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return warningsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3776,7 +3646,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3797,7 +3666,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3820,7 +3688,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3843,7 +3710,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3863,7 +3729,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3884,7 +3749,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3905,7 +3769,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3925,7 +3788,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3945,7 +3807,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3819,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Warnings.Builder getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3975,7 +3835,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return warningsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3993,7 +3852,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(warnings_);
       }
     }
-
     /**
      *
      *
@@ -4007,7 +3865,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return getWarningsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Warnings.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4021,7 +3878,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return getWarningsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Warnings.getDefaultInstance());
     }
-
     /**
      *
      *

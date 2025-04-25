@@ -33,7 +33,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.CreateBigQueryExportRequest)
     CreateBigQueryExportRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBigQueryExportRequest.newBuilder() to construct.
   private CreateBigQueryExportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
 
   public static final int BIG_QUERY_EXPORT_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.v2.BigQueryExport bigQueryExport_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
   public boolean hasBigQueryExport() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
         ? com.google.cloud.securitycenter.v2.BigQueryExport.getDefaultInstance()
         : bigQueryExport_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bigQueryExportId_ = "";
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -430,7 +422,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +654,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -746,7 +734,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
             com.google.cloud.securitycenter.v2.BigQueryExport.Builder,
             com.google.cloud.securitycenter.v2.BigQueryExportOrBuilder>
         bigQueryExportBuilder_;
-
     /**
      *
      *
@@ -821,7 +806,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
     public boolean hasBigQueryExport() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -844,7 +828,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
         return bigQueryExportBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +925,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +941,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return getBigQueryExportFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
             : bigQueryExport_;
       }
     }
-
     /**
      *
      *
@@ -1013,7 +990,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object bigQueryExportId_ = "";
-
     /**
      *
      *
@@ -1039,7 +1015,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1040,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1084,6 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

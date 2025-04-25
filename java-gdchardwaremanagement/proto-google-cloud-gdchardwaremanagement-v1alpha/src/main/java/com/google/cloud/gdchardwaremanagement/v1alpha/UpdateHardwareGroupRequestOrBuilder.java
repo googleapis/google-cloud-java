@@ -41,7 +41,6 @@ public interface UpdateHardwareGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateHardwareGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateHardwareGroupRequestOrBuilder
    * @return Whether the hardwareGroup field is set.
    */
   boolean hasHardwareGroup();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateHardwareGroupRequestOrBuilder
    * @return The hardwareGroup.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup getHardwareGroup();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface UpdateHardwareGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

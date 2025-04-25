@@ -35,7 +35,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * </code>
    */
   int getGuestAcceleratorsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
           com.google.cloud.compute.v1
               .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk>
       getLocalSsdsList();
-
   /**
    *
    *
@@ -114,7 +109,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
       getLocalSsds(int index);
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * </code>
    */
   int getLocalSsdsCount();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
               com.google.cloud.compute.v1
                   .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDiskOrBuilder>
       getLocalSsdsOrBuilderList();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * @return Whether the locationHint field is set.
    */
   boolean hasLocationHint();
-
   /**
    *
    *
@@ -185,7 +176,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * @return The locationHint.
    */
   java.lang.String getLocationHint();
-
   /**
    *
    *
@@ -211,7 +201,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
-
   /**
    *
    *
@@ -224,7 +213,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -250,7 +238,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
-
   /**
    *
    *
@@ -263,7 +250,6 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
-
   /**
    *
    *

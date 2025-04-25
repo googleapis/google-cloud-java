@@ -34,7 +34,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest)
     BatchDeleteEntityTypesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDeleteEntityTypesRequest.newBuilder() to construct.
   private BatchDeleteEntityTypesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList entityTypeNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getEntityTypeNamesList() {
     return entityTypeNames_;
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
   public int getEntityTypeNamesCount() {
     return entityTypeNames_.size();
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
   public java.lang.String getEntityTypeNames(int index) {
     return entityTypeNames_.get(index);
   }
-
   /**
    *
    *
@@ -373,7 +366,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -584,7 +576,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       entityTypeNames_.makeImmutable();
       return entityTypeNames_;
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     public int getEntityTypeNamesCount() {
       return entityTypeNames_.size();
     }
-
     /**
      *
      *
@@ -768,7 +752,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     public java.lang.String getEntityTypeNames(int index) {
       return entityTypeNames_.get(index);
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getEntityTypeNamesBytes(int index) {
       return entityTypeNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -810,7 +792,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +815,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +835,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

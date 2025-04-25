@@ -37,7 +37,6 @@ public interface StudyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface StudyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface StudyOrBuilder
    * @return Whether the studySpec field is set.
    */
   boolean hasStudySpec();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface StudyOrBuilder
    * @return The studySpec.
    */
   com.google.cloud.aiplatform.v1.StudySpec getStudySpec();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface StudyOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface StudyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface StudyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface StudyOrBuilder
    * @return The inactiveReason.
    */
   java.lang.String getInactiveReason();
-
   /**
    *
    *

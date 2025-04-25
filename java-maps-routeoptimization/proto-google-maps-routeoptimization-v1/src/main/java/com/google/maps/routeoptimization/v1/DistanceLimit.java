@@ -37,7 +37,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.DistanceLimit)
     DistanceLimitOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DistanceLimit.newBuilder() to construct.
   private DistanceLimit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MAX_METERS_FIELD_NUMBER = 1;
   private long maxMeters_ = 0L;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxMeters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOFT_MAX_METERS_FIELD_NUMBER = 2;
   private long softMaxMeters_ = 0L;
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSoftMaxMeters() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_KILOMETER_BELOW_SOFT_MAX_FIELD_NUMBER = 4;
   private double costPerKilometerBelowSoftMax_ = 0D;
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCostPerKilometerBelowSoftMax() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_KILOMETER_ABOVE_SOFT_MAX_FIELD_NUMBER = 3;
   private double costPerKilometerAboveSoftMax_ = 0D;
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCostPerKilometerAboveSoftMax() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -463,7 +454,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -695,7 +685,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long maxMeters_;
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxMeters() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public long getMaxMeters() {
       return maxMeters_;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long softMaxMeters_;
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSoftMaxMeters() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public long getSoftMaxMeters() {
       return softMaxMeters_;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerKilometerBelowSoftMax_;
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostPerKilometerBelowSoftMax() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerKilometerBelowSoftMax() {
       return costPerKilometerBelowSoftMax_;
     }
-
     /**
      *
      *
@@ -933,7 +912,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerKilometerAboveSoftMax_;
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostPerKilometerAboveSoftMax() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1005,7 +981,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerKilometerAboveSoftMax() {
       return costPerKilometerAboveSoftMax_;
     }
-
     /**
      *
      *
@@ -1032,7 +1007,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

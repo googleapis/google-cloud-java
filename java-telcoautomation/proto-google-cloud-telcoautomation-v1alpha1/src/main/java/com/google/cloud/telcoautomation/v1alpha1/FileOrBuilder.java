@@ -37,7 +37,6 @@ public interface FileOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface FileOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *

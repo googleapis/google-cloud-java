@@ -36,7 +36,6 @@ public interface BuildingInsightsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BuildingInsightsOrBuilder
    * @return Whether the center field is set.
    */
   boolean hasCenter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BuildingInsightsOrBuilder
    * @return The center.
    */
   com.google.type.LatLng getCenter();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface BuildingInsightsOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface BuildingInsightsOrBuilder
    * @return The boundingBox.
    */
   com.google.maps.solar.v1.LatLngBox getBoundingBox();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface BuildingInsightsOrBuilder
    * @return Whether the imageryDate field is set.
    */
   boolean hasImageryDate();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface BuildingInsightsOrBuilder
    * @return The imageryDate.
    */
   com.google.type.Date getImageryDate();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface BuildingInsightsOrBuilder
    * @return Whether the imageryProcessedDate field is set.
    */
   boolean hasImageryProcessedDate();
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface BuildingInsightsOrBuilder
    * @return The imageryProcessedDate.
    */
   com.google.type.Date getImageryProcessedDate();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface BuildingInsightsOrBuilder
    * @return The postalCode.
    */
   java.lang.String getPostalCode();
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public interface BuildingInsightsOrBuilder
    * @return The administrativeArea.
    */
   java.lang.String getAdministrativeArea();
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public interface BuildingInsightsOrBuilder
    * @return The statisticalArea.
    */
   java.lang.String getStatisticalArea();
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public interface BuildingInsightsOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -316,7 +303,6 @@ public interface BuildingInsightsOrBuilder
    * @return Whether the solarPotential field is set.
    */
   boolean hasSolarPotential();
-
   /**
    *
    *
@@ -329,7 +315,6 @@ public interface BuildingInsightsOrBuilder
    * @return The solarPotential.
    */
   com.google.maps.solar.v1.SolarPotential getSolarPotential();
-
   /**
    *
    *
@@ -353,7 +338,6 @@ public interface BuildingInsightsOrBuilder
    * @return The enum numeric value on the wire for imageryQuality.
    */
   int getImageryQualityValue();
-
   /**
    *
    *

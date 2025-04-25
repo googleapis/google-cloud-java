@@ -38,7 +38,6 @@ public interface PlaybookInputOrBuilder
    * @return The precedingConversationSummary.
    */
   java.lang.String getPrecedingConversationSummary();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface PlaybookInputOrBuilder
    * @return Whether the actionParameters field is set.
    */
   boolean hasActionParameters();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PlaybookInputOrBuilder
    * @return The actionParameters.
    */
   com.google.protobuf.Struct getActionParameters();
-
   /**
    *
    *

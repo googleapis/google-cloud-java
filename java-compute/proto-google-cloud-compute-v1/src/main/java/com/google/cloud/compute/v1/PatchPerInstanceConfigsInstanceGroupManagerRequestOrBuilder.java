@@ -37,7 +37,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagersPatchPerInstanceConfigsReqResource field is set.
    */
   boolean hasInstanceGroupManagersPatchPerInstanceConfigsReqResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq
       getInstanceGroupManagersPatchPerInstanceConfigsReqResource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

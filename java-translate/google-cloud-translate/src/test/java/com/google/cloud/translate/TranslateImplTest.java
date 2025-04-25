@@ -388,7 +388,8 @@ public class TranslateImplTest {
         .andReturn(ImmutableList.of(LANGUAGE1_PB, LANGUAGE2_PB));
     EasyMock.replay(translateRpcMock);
     translate =
-        options.toBuilder()
+        options
+            .toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -403,7 +404,8 @@ public class TranslateImplTest {
         .andThrow(new TranslateException(501, exceptionMessage));
     EasyMock.replay(translateRpcMock);
     translate =
-        options.toBuilder()
+        options
+            .toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -423,7 +425,8 @@ public class TranslateImplTest {
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(translateRpcMock);
     translate =
-        options.toBuilder()
+        options
+            .toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();

@@ -38,7 +38,6 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * @return Whether the evaluationJob field is set.
    */
   boolean hasEvaluationJob();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * @return The evaluationJob.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJob getEvaluationJob();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

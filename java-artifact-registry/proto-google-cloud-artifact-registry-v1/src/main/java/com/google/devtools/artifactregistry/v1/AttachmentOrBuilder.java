@@ -37,7 +37,6 @@ public interface AttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AttachmentOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AttachmentOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface AttachmentOrBuilder
    * @return The attachmentNamespace.
    */
   java.lang.String getAttachmentNamespace();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface AttachmentOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -169,11 +164,9 @@ public interface AttachmentOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface AttachmentOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface AttachmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public interface AttachmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface AttachmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public interface AttachmentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public interface AttachmentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -319,7 +306,6 @@ public interface AttachmentOrBuilder
    * @return A list containing the files.
    */
   java.util.List<java.lang.String> getFilesList();
-
   /**
    *
    *
@@ -336,7 +322,6 @@ public interface AttachmentOrBuilder
    * @return The count of files.
    */
   int getFilesCount();
-
   /**
    *
    *
@@ -354,7 +339,6 @@ public interface AttachmentOrBuilder
    * @return The files at the given index.
    */
   java.lang.String getFiles(int index);
-
   /**
    *
    *
@@ -387,7 +371,6 @@ public interface AttachmentOrBuilder
    * @return The ociVersionName.
    */
   java.lang.String getOciVersionName();
-
   /**
    *
    *

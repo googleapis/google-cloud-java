@@ -41,7 +41,6 @@ public interface UpdateTagValueRequestOrBuilder
    * @return Whether the tagValue field is set.
    */
   boolean hasTagValue();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateTagValueRequestOrBuilder
    * @return The tagValue.
    */
   com.google.cloud.resourcemanager.v3.TagValue getTagValue();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateTagValueRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateTagValueRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface DeploymentNoteOrBuilder
    * @return A list containing the resourceUri.
    */
   java.util.List<java.lang.String> getResourceUriList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface DeploymentNoteOrBuilder
    * @return The count of resourceUri.
    */
   int getResourceUriCount();
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface DeploymentNoteOrBuilder
    * @return The resourceUri at the given index.
    */
   java.lang.String getResourceUri(int index);
-
   /**
    *
    *

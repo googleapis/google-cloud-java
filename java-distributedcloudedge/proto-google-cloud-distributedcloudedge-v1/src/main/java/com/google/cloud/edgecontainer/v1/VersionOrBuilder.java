@@ -36,7 +36,6 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

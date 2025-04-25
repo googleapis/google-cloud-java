@@ -35,7 +35,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.SafeSearchAnnotation)
     SafeSearchAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SafeSearchAnnotation.newBuilder() to construct.
   private SafeSearchAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
   public static final int ADULT_FIELD_NUMBER = 1;
   private int adult_ = 0;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   public int getAdultValue() {
     return adult_;
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
   public static final int SPOOF_FIELD_NUMBER = 2;
   private int spoof_ = 0;
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   public int getSpoofValue() {
     return spoof_;
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
   public static final int MEDICAL_FIELD_NUMBER = 3;
   private int medical_ = 0;
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   public int getMedicalValue() {
     return medical_;
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
   public static final int VIOLENCE_FIELD_NUMBER = 4;
   private int violence_ = 0;
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   public int getViolenceValue() {
     return violence_;
   }
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
   public static final int RACY_FIELD_NUMBER = 9;
   private int racy_ = 0;
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   public int getRacyValue() {
     return racy_;
   }
-
   /**
    *
    *
@@ -465,7 +454,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -702,7 +690,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int adult_ = 0;
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public int getAdultValue() {
       return adult_;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
           com.google.cloud.vision.v1p2beta1.Likelihood.forNumber(adult_);
       return result == null ? com.google.cloud.vision.v1p2beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     }
 
     private int spoof_ = 0;
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public int getSpoofValue() {
       return spoof_;
     }
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
           com.google.cloud.vision.v1p2beta1.Likelihood.forNumber(spoof_);
       return result == null ? com.google.cloud.vision.v1p2beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     }
 
     private int medical_ = 0;
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public int getMedicalValue() {
       return medical_;
     }
-
     /**
      *
      *
@@ -947,7 +923,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +940,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
           com.google.cloud.vision.v1p2beta1.Likelihood.forNumber(medical_);
       return result == null ? com.google.cloud.vision.v1p2beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -987,7 +961,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     }
 
     private int violence_ = 0;
-
     /**
      *
      *
@@ -1023,7 +995,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public int getViolenceValue() {
       return violence_;
     }
-
     /**
      *
      *
@@ -1042,7 +1013,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1030,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
           com.google.cloud.vision.v1p2beta1.Likelihood.forNumber(violence_);
       return result == null ? com.google.cloud.vision.v1p2beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1082,7 +1051,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1070,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     }
 
     private int racy_ = 0;
-
     /**
      *
      *
@@ -1121,7 +1088,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public int getRacyValue() {
       return racy_;
     }
-
     /**
      *
      *
@@ -1143,7 +1109,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1129,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
           com.google.cloud.vision.v1p2beta1.Likelihood.forNumber(racy_);
       return result == null ? com.google.cloud.vision.v1p2beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1189,7 +1153,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

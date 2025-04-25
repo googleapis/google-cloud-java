@@ -33,7 +33,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyWeeklyCycle)
     ResourcePolicyWeeklyCycleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicyWeeklyCycle.newBuilder() to construct.
   private ResourcePolicyWeeklyCycle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek>
       dayOfWeeks_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       getDayOfWeeksList() {
     return dayOfWeeks_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       getDayOfWeeksOrBuilderList() {
     return dayOfWeeks_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
   public int getDayOfWeeksCount() {
     return dayOfWeeks_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek getDayOfWeeks(int index) {
     return dayOfWeeks_.get(index);
   }
-
   /**
    *
    *
@@ -317,7 +311,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
         return dayOfWeeksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -604,7 +596,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
         return dayOfWeeksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
         return dayOfWeeksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
         getDayOfWeeksBuilder(int index) {
       return getDayOfWeeksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
         return dayOfWeeksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(dayOfWeeks_);
       }
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
           .addBuilder(
               com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -934,7 +911,6 @@ public final class ResourcePolicyWeeklyCycle extends com.google.protobuf.Generat
               index,
               com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.getDefaultInstance());
     }
-
     /**
      *
      *

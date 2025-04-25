@@ -33,7 +33,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration)
     PolicyControllerMigrationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PolicyControllerMigration.newBuilder() to construct.
   private PolicyControllerMigration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
      * <code>STAGE_UNSPECIFIED = 0;</code>
      */
     public static final int STAGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
      * <code>ACM_MANAGED = 1;</code>
      */
     public static final int ACM_MANAGED_VALUE = 1;
-
     /**
      *
      *
@@ -231,7 +228,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int STAGE_FIELD_NUMBER = 1;
   private int stage_ = 0;
-
   /**
    *
    *
@@ -248,7 +244,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
   public int getStageValue() {
     return stage_;
   }
-
   /**
    *
    *
@@ -275,7 +270,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
 
   public static final int COPY_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp copyTime_;
-
   /**
    *
    *
@@ -291,7 +285,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
   public boolean hasCopyTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -307,7 +300,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
   public com.google.protobuf.Timestamp getCopyTime() {
     return copyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : copyTime_;
   }
-
   /**
    *
    *
@@ -504,7 +496,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -727,7 +718,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int stage_ = 0;
-
     /**
      *
      *
@@ -744,7 +734,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
     public int getStageValue() {
       return stage_;
     }
-
     /**
      *
      *
@@ -764,7 +753,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +776,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -812,7 +799,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +824,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         copyTimeBuilder_;
-
     /**
      *
      *
@@ -853,7 +838,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
     public boolean hasCopyTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -872,7 +856,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
         return copyTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +924,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +957,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
       onChanged();
       return getCopyTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -995,7 +973,6 @@ public final class PolicyControllerMigration extends com.google.protobuf.Generat
         return copyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : copyTime_;
       }
     }
-
     /**
      *
      *

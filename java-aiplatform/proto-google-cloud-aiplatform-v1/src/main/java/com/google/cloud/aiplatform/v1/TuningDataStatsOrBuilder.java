@@ -37,7 +37,6 @@ public interface TuningDataStatsOrBuilder
    * @return Whether the supervisedTuningDataStats field is set.
    */
   boolean hasSupervisedTuningDataStats();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TuningDataStatsOrBuilder
    * @return The supervisedTuningDataStats.
    */
   com.google.cloud.aiplatform.v1.SupervisedTuningDataStats getSupervisedTuningDataStats();
-
   /**
    *
    *

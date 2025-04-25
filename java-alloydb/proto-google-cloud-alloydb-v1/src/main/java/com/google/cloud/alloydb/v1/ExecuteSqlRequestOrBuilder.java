@@ -36,7 +36,6 @@ public interface ExecuteSqlRequestOrBuilder
    * @return Whether the password field is set.
    */
   boolean hasPassword();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExecuteSqlRequestOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ExecuteSqlRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ExecuteSqlRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface ExecuteSqlRequestOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ExecuteSqlRequestOrBuilder
    * @return The sqlStatement.
    */
   java.lang.String getSqlStatement();
-
   /**
    *
    *

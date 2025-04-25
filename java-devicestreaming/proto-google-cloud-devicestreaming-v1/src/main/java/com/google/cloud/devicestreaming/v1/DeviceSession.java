@@ -33,7 +33,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.DeviceSession)
     DeviceSessionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeviceSession.newBuilder() to construct.
   private DeviceSession(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,7 +178,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>SESSION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int SESSION_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -191,7 +189,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>REQUESTED = 1;</code>
      */
     public static final int REQUESTED_VALUE = 1;
-
     /**
      *
      *
@@ -202,7 +199,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 2;</code>
      */
     public static final int PENDING_VALUE = 2;
-
     /**
      *
      *
@@ -214,7 +210,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 3;</code>
      */
     public static final int ACTIVE_VALUE = 3;
-
     /**
      *
      *
@@ -226,7 +221,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPIRED = 4;</code>
      */
     public static final int EXPIRED_VALUE = 4;
-
     /**
      *
      *
@@ -239,7 +233,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>FINISHED = 5;</code>
      */
     public static final int FINISHED_VALUE = 5;
-
     /**
      *
      *
@@ -253,7 +246,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * <code>UNAVAILABLE = 6;</code>
      */
     public static final int UNAVAILABLE_VALUE = 6;
-
     /**
      *
      *
@@ -380,7 +372,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for sessionState.
      */
     int getSessionStateValue();
-
     /**
      *
      *
@@ -410,7 +401,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the eventTime field is set.
      */
     boolean hasEventTime();
-
     /**
      *
      *
@@ -425,7 +415,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * @return The eventTime.
      */
     com.google.protobuf.Timestamp getEventTime();
-
     /**
      *
      *
@@ -451,7 +440,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      * @return The stateMessage.
      */
     java.lang.String getStateMessage();
-
     /**
      *
      *
@@ -465,7 +453,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getStateMessageBytes();
   }
-
   /**
    *
    *
@@ -481,7 +468,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.DeviceSession.SessionStateEvent)
       SessionStateEventOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SessionStateEvent.newBuilder() to construct.
     private SessionStateEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -516,7 +502,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SESSION_STATE_FIELD_NUMBER = 1;
     private int sessionState_ = 0;
-
     /**
      *
      *
@@ -534,7 +519,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public int getSessionStateValue() {
       return sessionState_;
     }
-
     /**
      *
      *
@@ -559,7 +543,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
     public static final int EVENT_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp eventTime_;
-
     /**
      *
      *
@@ -577,7 +560,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -595,7 +577,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getEventTime() {
       return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
     }
-
     /**
      *
      *
@@ -616,7 +597,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object stateMessage_ = "";
-
     /**
      *
      *
@@ -640,7 +620,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1094,7 +1072,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int sessionState_ = 0;
-
       /**
        *
        *
@@ -1112,7 +1089,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       public int getSessionStateValue() {
         return sessionState_;
       }
-
       /**
        *
        *
@@ -1133,7 +1109,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1155,7 +1130,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.devicestreaming.v1.DeviceSession.SessionState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1180,7 +1154,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1207,7 +1180,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           eventTimeBuilder_;
-
       /**
        *
        *
@@ -1225,7 +1197,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEventTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1249,7 +1220,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
           return eventTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1275,7 +1245,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1298,7 +1267,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1329,7 +1297,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1352,7 +1319,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1370,7 +1336,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEventTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1392,7 +1357,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
               : eventTime_;
         }
       }
-
       /**
        *
        *
@@ -1423,7 +1387,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object stateMessage_ = "";
-
       /**
        *
        *
@@ -1446,7 +1409,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1469,7 +1431,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1491,7 +1452,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1509,7 +1469,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1618,7 +1577,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     private ExpirationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1655,7 +1613,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1680,7 +1637,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1710,7 +1666,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1734,7 +1689,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1761,7 +1715,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1779,7 +1732,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1807,7 +1759,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEvent>
       stateHistories_;
-
   /**
    *
    *
@@ -1825,7 +1776,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       getStateHistoriesList() {
     return stateHistories_;
   }
-
   /**
    *
    *
@@ -1844,7 +1794,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       getStateHistoriesOrBuilderList() {
     return stateHistories_;
   }
-
   /**
    *
    *
@@ -1861,7 +1810,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public int getStateHistoriesCount() {
     return stateHistories_.size();
   }
-
   /**
    *
    *
@@ -1879,7 +1827,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return stateHistories_.get(index);
   }
-
   /**
    *
    *
@@ -1899,7 +1846,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TTL_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -1917,7 +1863,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTtl() {
     return expirationCase_ == 13;
   }
-
   /**
    *
    *
@@ -1938,7 +1883,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1959,7 +1903,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1978,7 +1921,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return expirationCase_ == 5;
   }
-
   /**
    *
    *
@@ -2000,7 +1942,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2023,7 +1964,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INACTIVITY_TIMEOUT_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration inactivityTimeout_;
-
   /**
    *
    *
@@ -2042,7 +1982,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInactivityTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2063,7 +2002,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : inactivityTimeout_;
   }
-
   /**
    *
    *
@@ -2085,7 +2023,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -2102,7 +2039,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2119,7 +2055,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -2137,7 +2072,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTIVE_START_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp activeStartTime_;
-
   /**
    *
    *
@@ -2155,7 +2089,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActiveStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2175,7 +2108,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : activeStartTime_;
   }
-
   /**
    *
    *
@@ -2196,7 +2128,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANDROID_DEVICE_FIELD_NUMBER = 15;
   private com.google.cloud.devicestreaming.v1.AndroidDevice androidDevice_;
-
   /**
    *
    *
@@ -2214,7 +2145,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAndroidDevice() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -2234,7 +2164,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.devicestreaming.v1.AndroidDevice.getDefaultInstance()
         : androidDevice_;
   }
-
   /**
    *
    *
@@ -2540,7 +2469,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2971,7 +2899,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2995,7 +2922,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3019,7 +2945,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3042,7 +2967,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3061,7 +2985,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3087,7 +3010,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3110,7 +3032,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3133,7 +3054,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3155,7 +3075,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3173,7 +3092,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3198,7 +3116,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3216,7 +3133,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3237,7 +3153,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3259,7 +3174,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.devicestreaming.v1.DeviceSession.SessionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3283,7 +3197,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3343,7 +3256,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return stateHistoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3363,7 +3275,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return stateHistoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3384,7 +3295,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return stateHistoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3411,7 +3321,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3437,7 +3346,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3464,7 +3372,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3491,7 +3398,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3516,7 +3422,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3542,7 +3447,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3568,7 +3472,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3591,7 +3494,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3614,7 +3516,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3631,7 +3532,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         getStateHistoriesBuilder(int index) {
       return getStateHistoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3652,7 +3552,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return stateHistoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3674,7 +3573,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(stateHistories_);
       }
     }
-
     /**
      *
      *
@@ -3694,7 +3592,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEvent
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3715,7 +3612,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEvent
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3759,7 +3655,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
-
     /**
      *
      *
@@ -3777,7 +3672,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTtl() {
       return expirationCase_ == 13;
     }
-
     /**
      *
      *
@@ -3805,7 +3699,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3830,7 +3723,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -3852,7 +3744,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -3886,7 +3777,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -3914,7 +3804,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3929,7 +3818,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration.Builder getTtlBuilder() {
       return getTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3952,7 +3840,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3991,7 +3878,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -4010,7 +3896,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return expirationCase_ == 5;
     }
-
     /**
      *
      *
@@ -4039,7 +3924,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4065,7 +3949,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4088,7 +3971,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4123,7 +4005,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4152,7 +4033,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4168,7 +4048,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4192,7 +4071,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4233,7 +4111,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         inactivityTimeoutBuilder_;
-
     /**
      *
      *
@@ -4251,7 +4128,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInactivityTimeout() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4275,7 +4151,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return inactivityTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4301,7 +4176,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4324,7 +4198,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4355,7 +4228,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4378,7 +4250,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4396,7 +4267,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInactivityTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4418,7 +4288,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             : inactivityTimeout_;
       }
     }
-
     /**
      *
      *
@@ -4454,7 +4323,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4471,7 +4339,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4494,7 +4361,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4519,7 +4385,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4541,7 +4406,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4571,7 +4435,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4593,7 +4456,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4610,7 +4472,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4631,7 +4492,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4666,7 +4526,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         activeStartTimeBuilder_;
-
     /**
      *
      *
@@ -4683,7 +4542,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActiveStartTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4706,7 +4564,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return activeStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4731,7 +4588,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4753,7 +4609,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4783,7 +4638,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4805,7 +4659,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4822,7 +4675,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActiveStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4843,7 +4695,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             : activeStartTime_;
       }
     }
-
     /**
      *
      *
@@ -4878,7 +4729,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.AndroidDevice.Builder,
             com.google.cloud.devicestreaming.v1.AndroidDeviceOrBuilder>
         androidDeviceBuilder_;
-
     /**
      *
      *
@@ -4895,7 +4745,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAndroidDevice() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4918,7 +4767,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
         return androidDeviceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4943,7 +4791,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4966,7 +4813,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4997,7 +4843,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5019,7 +4864,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5036,7 +4880,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAndroidDeviceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5057,7 +4900,6 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessageV3
             : androidDevice_;
       }
     }
-
     /**
      *
      *

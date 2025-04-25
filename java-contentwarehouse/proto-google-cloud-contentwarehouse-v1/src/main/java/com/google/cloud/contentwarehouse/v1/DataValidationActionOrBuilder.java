@@ -36,7 +36,6 @@ public interface DataValidationActionOrBuilder
    * <code>map&lt;string, string&gt; conditions = 1;</code>
    */
   int getConditionsCount();
-
   /**
    *
    *
@@ -49,11 +48,9 @@ public interface DataValidationActionOrBuilder
    * <code>map&lt;string, string&gt; conditions = 1;</code>
    */
   boolean containsConditions(java.lang.String key);
-
   /** Use {@link #getConditionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConditions();
-
   /**
    *
    *
@@ -66,7 +63,6 @@ public interface DataValidationActionOrBuilder
    * <code>map&lt;string, string&gt; conditions = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConditionsMap();
-
   /**
    *
    *
@@ -83,7 +79,6 @@ public interface DataValidationActionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.TextSegment)
     TextSegmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextSegment.newBuilder() to construct.
   private TextSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.VideoSegment segment_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSegment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance()
         : segment_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.TextFrame> frames_;
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.videointelligence.v1.TextFrame> getFramesList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       getFramesOrBuilderList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   public int getFramesCount() {
     return frames_.size();
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1.TextFrame getFrames(int index) {
     return frames_.get(index);
   }
-
   /**
    *
    *
@@ -399,7 +389,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -679,7 +668,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.VideoSegment.Builder,
             com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
         segmentBuilder_;
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSegment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return segmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
             : segment_;
       }
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1055,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1075,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1095,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1115,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1134,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1153,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1165,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1.TextFrame.Builder getFramesBuilder(int index) {
       return getFramesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1217,7 +1181,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1198,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(frames_);
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1211,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       return getFramesFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.TextFrame.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1263,7 +1224,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       return getFramesFieldBuilder()
           .addBuilder(index, com.google.cloud.videointelligence.v1.TextFrame.getDefaultInstance());
     }
-
     /**
      *
      *

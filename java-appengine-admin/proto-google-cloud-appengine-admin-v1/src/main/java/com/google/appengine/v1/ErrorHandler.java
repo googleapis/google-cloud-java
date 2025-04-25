@@ -33,7 +33,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ErrorHandler)
     ErrorHandlerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ErrorHandler.newBuilder() to construct.
   private ErrorHandler(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_CODE_DEFAULT = 0;</code>
      */
     public static final ErrorCode ERROR_CODE_DEFAULT = ERROR_CODE_UNSPECIFIED;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int ERROR_CODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_CODE_DEFAULT = 0;</code>
      */
     public static final int ERROR_CODE_DEFAULT_VALUE = 0;
-
     /**
      *
      *
@@ -163,7 +159,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_CODE_OVER_QUOTA = 1;</code>
      */
     public static final int ERROR_CODE_OVER_QUOTA_VALUE = 1;
-
     /**
      *
      *
@@ -175,7 +170,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_CODE_DOS_API_DENIAL = 2;</code>
      */
     public static final int ERROR_CODE_DOS_API_DENIAL_VALUE = 2;
-
     /**
      *
      *
@@ -286,7 +280,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_CODE_FIELD_NUMBER = 1;
   private int errorCode_ = 0;
-
   /**
    *
    *
@@ -302,7 +295,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
   public int getErrorCodeValue() {
     return errorCode_;
   }
-
   /**
    *
    *
@@ -325,7 +317,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object staticFile_ = "";
-
   /**
    *
    *
@@ -349,7 +340,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +368,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -402,7 +391,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -604,7 +592,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -815,7 +802,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int errorCode_ = 0;
-
     /**
      *
      *
@@ -831,7 +817,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     public int getErrorCodeValue() {
       return errorCode_;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +852,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
           com.google.appengine.v1.ErrorHandler.ErrorCode.forNumber(errorCode_);
       return result == null ? com.google.appengine.v1.ErrorHandler.ErrorCode.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -890,7 +873,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object staticFile_ = "";
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -978,7 +957,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1042,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1080,6 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface DataplexSpecOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DataplexSpecOrBuilder
    * @return Whether the dataFormat field is set.
    */
   boolean hasDataFormat();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DataplexSpecOrBuilder
    * @return The dataFormat.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema getDataFormat();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface DataplexSpecOrBuilder
    * @return The compressionFormat.
    */
   java.lang.String getCompressionFormat();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface DataplexSpecOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *

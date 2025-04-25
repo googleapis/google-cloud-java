@@ -33,7 +33,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.CreateRuleRequest)
     CreateRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateRuleRequest.newBuilder() to construct.
   private CreateRuleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int RULE_FIELD_NUMBER = 3;
   private com.google.devtools.artifactregistry.v1.Rule rule_;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.devtools.artifactregistry.v1.Rule.getDefaultInstance()
         : rule_;
   }
-
   /**
    *
    *
@@ -412,7 +404,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -641,7 +632,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object ruleId_ = "";
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
             com.google.devtools.artifactregistry.v1.Rule.Builder,
             com.google.devtools.artifactregistry.v1.RuleOrBuilder>
         ruleBuilder_;
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRule() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
         return ruleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +980,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1039,7 +1012,6 @@ public final class CreateRuleRequest extends com.google.protobuf.GeneratedMessag
             : rule_;
       }
     }
-
     /**
      *
      *

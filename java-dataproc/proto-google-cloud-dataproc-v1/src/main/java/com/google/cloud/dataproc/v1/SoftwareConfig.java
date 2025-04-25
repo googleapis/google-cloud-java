@@ -33,7 +33,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SoftwareConfig)
     SoftwareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SoftwareConfig.newBuilder() to construct.
   private SoftwareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageVersion_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -168,7 +165,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -203,14 +199,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
-
   /**
    *
    *
@@ -242,7 +236,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
-
   /**
    *
    *
@@ -281,7 +274,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -337,7 +329,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.cloud.dataproc.v1.Component.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -357,7 +348,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.dataproc.v1.Component>(
         optionalComponents_, optionalComponents_converter_);
   }
-
   /**
    *
    *
@@ -375,7 +365,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getOptionalComponentsCount() {
     return optionalComponents_.size();
   }
-
   /**
    *
    *
@@ -394,7 +383,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataproc.v1.Component getOptionalComponents(int index) {
     return optionalComponents_converter_.convert(optionalComponents_.get(index));
   }
-
   /**
    *
    *
@@ -412,7 +400,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
     return optionalComponents_;
   }
-
   /**
    *
    *
@@ -636,7 +623,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -901,7 +887,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object imageVersion_ = "";
-
     /**
      *
      *
@@ -930,7 +915,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -959,7 +943,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +970,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +993,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1050,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
-
     /**
      *
      *
@@ -1104,14 +1084,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().getMap().containsKey(key);
     }
-
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
-
     /**
      *
      *
@@ -1143,7 +1121,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
-
     /**
      *
      *
@@ -1182,7 +1159,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1227,7 +1203,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1262,14 +1237,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000002;
       return internalGetMutableProperties().getMutableMap();
     }
-
     /**
      *
      *
@@ -1308,7 +1281,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1323,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1370,7 +1341,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.dataproc.v1.Component>(
           optionalComponents_, optionalComponents_converter_);
     }
-
     /**
      *
      *
@@ -1387,7 +1357,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getOptionalComponentsCount() {
       return optionalComponents_.size();
     }
-
     /**
      *
      *
@@ -1405,7 +1374,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.Component getOptionalComponents(int index) {
       return optionalComponents_converter_.convert(optionalComponents_.get(index));
     }
-
     /**
      *
      *
@@ -1430,7 +1398,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1421,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1444,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1463,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1515,7 +1479,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
       return java.util.Collections.unmodifiableList(optionalComponents_);
     }
-
     /**
      *
      *
@@ -1533,7 +1496,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getOptionalComponentsValue(int index) {
       return optionalComponents_.get(index);
     }
-
     /**
      *
      *
@@ -1555,7 +1517,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1537,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface CreateBigQueryLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateBigQueryLinkRequestOrBuilder
    * @return Whether the bigqueryLink field is set.
    */
   boolean hasBigqueryLink();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateBigQueryLinkRequestOrBuilder
    * @return The bigqueryLink.
    */
   com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLink();
-
   /**
    *
    *

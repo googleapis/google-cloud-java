@@ -37,7 +37,6 @@ public interface AttestorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AttestorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface AttestorOrBuilder
    * @return Whether the userOwnedDrydockNote field is set.
    */
   boolean hasUserOwnedDrydockNote();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface AttestorOrBuilder
    * @return The userOwnedDrydockNote.
    */
   com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote getUserOwnedDrydockNote();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface AttestorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface AttestorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

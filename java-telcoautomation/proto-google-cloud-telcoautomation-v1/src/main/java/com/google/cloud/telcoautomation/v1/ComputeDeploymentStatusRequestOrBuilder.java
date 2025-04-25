@@ -38,7 +38,6 @@ public interface ComputeDeploymentStatusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

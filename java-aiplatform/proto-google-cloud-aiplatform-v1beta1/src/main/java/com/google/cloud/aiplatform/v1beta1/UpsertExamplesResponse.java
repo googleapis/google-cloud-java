@@ -34,7 +34,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpsertExamplesResponse)
     UpsertExamplesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpsertExamplesResponse.newBuilder() to construct.
   private UpsertExamplesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
      * @return Whether the example field is set.
      */
     boolean hasExample();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
      * @return The example.
      */
     com.google.cloud.aiplatform.v1beta1.Example getExample();
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
      * @return Whether the status field is set.
      */
     boolean hasStatus();
-
     /**
      *
      *
@@ -134,7 +130,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
      * @return The status.
      */
     com.google.rpc.Status getStatus();
-
     /**
      *
      *
@@ -150,7 +145,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult.ResultCase
         getResultCase();
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult)
       UpsertResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UpsertResult.newBuilder() to construct.
     private UpsertResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -212,7 +205,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       private ResultCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -246,7 +238,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     }
 
     public static final int EXAMPLE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -262,7 +253,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     public boolean hasExample() {
       return resultCase_ == 1;
     }
-
     /**
      *
      *
@@ -281,7 +271,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return com.google.cloud.aiplatform.v1beta1.Example.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -300,7 +289,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -317,7 +305,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     public boolean hasStatus() {
       return resultCase_ == 2;
     }
-
     /**
      *
      *
@@ -337,7 +324,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return com.google.rpc.Status.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -549,7 +535,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.Example.Builder,
               com.google.cloud.aiplatform.v1beta1.ExampleOrBuilder>
           exampleBuilder_;
-
       /**
        *
        *
@@ -816,7 +800,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       public boolean hasExample() {
         return resultCase_ == 1;
       }
-
       /**
        *
        *
@@ -842,7 +825,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
           return com.google.cloud.aiplatform.v1beta1.Example.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -865,7 +847,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         resultCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -886,7 +867,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         resultCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -919,7 +899,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         resultCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -945,7 +924,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -958,7 +936,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       public com.google.cloud.aiplatform.v1beta1.Example.Builder getExampleBuilder() {
         return getExampleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -979,7 +956,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
           return com.google.cloud.aiplatform.v1beta1.Example.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1016,7 +992,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
-
       /**
        *
        *
@@ -1033,7 +1008,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       public boolean hasStatus() {
         return resultCase_ == 2;
       }
-
       /**
        *
        *
@@ -1060,7 +1034,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
           return com.google.rpc.Status.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1084,7 +1057,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         resultCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1105,7 +1077,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         resultCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1137,7 +1108,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         resultCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1164,7 +1134,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -1178,7 +1147,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       public com.google.rpc.Status.Builder getStatusBuilder() {
         return getStatusFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1200,7 +1168,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
           return com.google.rpc.Status.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1304,7 +1271,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult>
       results_;
-
   /**
    *
    *
@@ -1322,7 +1288,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       getResultsList() {
     return results_;
   }
-
   /**
    *
    *
@@ -1342,7 +1307,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       getResultsOrBuilderList() {
     return results_;
   }
-
   /**
    *
    *
@@ -1359,7 +1323,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
   public int getResultsCount() {
     return results_.size();
   }
-
   /**
    *
    *
@@ -1377,7 +1340,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       int index) {
     return results_.get(index);
   }
-
   /**
    *
    *
@@ -1558,7 +1520,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1829,7 +1790,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1849,7 +1809,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1870,7 +1829,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1897,7 +1855,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1923,7 +1880,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1950,7 +1906,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1977,7 +1932,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2002,7 +1956,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2028,7 +1981,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2054,7 +2006,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2077,7 +2028,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2100,7 +2050,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2117,7 +2066,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         getResultsBuilder(int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2138,7 +2086,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2161,7 +2108,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(results_);
       }
     }
-
     /**
      *
      *
@@ -2181,7 +2127,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2202,7 +2147,6 @@ public final class UpsertExamplesResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *

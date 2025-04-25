@@ -33,7 +33,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse)
     ListVodAdTagDetailsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVodAdTagDetailsResponse.newBuilder() to construct.
   private ListVodAdTagDetailsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.VodAdTagDetail> vodAdTagDetails_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       getVodAdTagDetailsList() {
     return vodAdTagDetails_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       getVodAdTagDetailsOrBuilderList() {
     return vodAdTagDetails_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
   public int getVodAdTagDetailsCount() {
     return vodAdTagDetails_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
   public com.google.cloud.video.stitcher.v1.VodAdTagDetail getVodAdTagDetails(int index) {
     return vodAdTagDetails_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return vodAdTagDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return vodAdTagDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return vodAdTagDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +873,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         int index) {
       return getVodAdTagDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return vodAdTagDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -930,7 +907,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(vodAdTagDetails_);
       }
     }
-
     /**
      *
      *
@@ -944,7 +920,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       return getVodAdTagDetailsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.VodAdTagDetail.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +935,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.video.stitcher.v1.VodAdTagDetail.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +970,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1019,7 +992,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1052,6 @@ public final class ListVodAdTagDetailsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

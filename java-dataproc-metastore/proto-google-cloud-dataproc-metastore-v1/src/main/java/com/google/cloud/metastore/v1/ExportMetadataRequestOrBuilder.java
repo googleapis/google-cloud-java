@@ -38,7 +38,6 @@ public interface ExportMetadataRequestOrBuilder
    * @return Whether the destinationGcsFolder field is set.
    */
   boolean hasDestinationGcsFolder();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ExportMetadataRequestOrBuilder
    * @return The destinationGcsFolder.
    */
   java.lang.String getDestinationGcsFolder();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface ExportMetadataRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface ExportMetadataRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface ExportMetadataRequestOrBuilder
    * @return The enum numeric value on the wire for databaseDumpType.
    */
   int getDatabaseDumpTypeValue();
-
   /**
    *
    *

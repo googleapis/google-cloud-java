@@ -33,7 +33,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ContentMap)
     ContentMapOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContentMap.newBuilder() to construct.
   private ContentMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -91,7 +90,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
-
     /**
      *
      *
@@ -104,7 +102,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
-
     /**
      *
      *
@@ -117,7 +114,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getContentsCount();
-
     /**
      *
      *
@@ -131,7 +127,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
         getContentsOrBuilderList();
-
     /**
      *
      *
@@ -145,7 +140,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getContentsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ContentMap.Contents)
       ContentsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Contents.newBuilder() to construct.
     private Contents(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -195,7 +188,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> contents_;
-
     /**
      *
      *
@@ -211,7 +203,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList() {
       return contents_;
     }
-
     /**
      *
      *
@@ -228,7 +219,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         getContentsOrBuilderList() {
       return contents_;
     }
-
     /**
      *
      *
@@ -244,7 +234,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     public int getContentsCount() {
       return contents_.size();
     }
-
     /**
      *
      *
@@ -260,7 +249,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Content getContents(int index) {
       return contents_.get(index);
     }
-
     /**
      *
      *
@@ -440,7 +428,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           return contentsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -727,7 +713,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           return contentsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -746,7 +731,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           return contentsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -771,7 +755,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -794,7 +777,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -819,7 +801,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -844,7 +825,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -867,7 +847,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -890,7 +869,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -913,7 +891,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -935,7 +912,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -957,7 +933,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -972,7 +947,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.Content.Builder getContentsBuilder(int index) {
         return getContentsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -991,7 +965,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           return contentsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1011,7 +984,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(contents_);
         }
       }
-
       /**
        *
        *
@@ -1027,7 +999,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         return getContentsFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1043,7 +1014,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         return getContentsFieldBuilder()
             .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1176,7 +1146,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return internalGetValues().getMap().size();
   }
-
   /**
    *
    *
@@ -1195,7 +1164,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetValues().getMap().containsKey(key);
   }
-
   /** Use {@link #getValuesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1203,7 +1171,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       getValues() {
     return getValuesMap();
   }
-
   /**
    *
    *
@@ -1220,7 +1187,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       getValuesMap() {
     return internalGetValues().getMap();
   }
-
   /**
    *
    *
@@ -1244,7 +1210,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         internalGetValues().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1440,7 +1405,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1670,8 +1634,7 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ValuesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ValuesConverter valuesConverter = new ValuesConverter();
 
@@ -1711,7 +1674,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return internalGetValues().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1730,7 +1692,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetValues().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getValuesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1738,7 +1699,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         getValues() {
       return getValuesMap();
     }
-
     /**
      *
      *
@@ -1755,7 +1715,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
         getValuesMap() {
       return internalGetValues().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1781,7 +1740,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableValues().ensureBuilderMap();
       return map.containsKey(key) ? valuesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1813,7 +1771,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableValues().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1832,7 +1789,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableValues().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ContentMap.Contents>
@@ -1840,7 +1796,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableValues().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1864,7 +1819,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1890,7 +1844,6 @@ public final class ContentMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface FetchStaticIpsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface FetchStaticIpsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

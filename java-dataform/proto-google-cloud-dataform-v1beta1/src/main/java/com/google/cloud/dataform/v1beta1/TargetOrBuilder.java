@@ -36,7 +36,6 @@ public interface TargetOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TargetOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface TargetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

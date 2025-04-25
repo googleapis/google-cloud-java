@@ -34,7 +34,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.GetImportJobRequest)
     GetImportJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetImportJobRequest.newBuilder() to construct.
   private GetImportJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +280,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -468,7 +464,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -494,7 +489,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -520,7 +514,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.EntityMapping)
     EntityMappingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EntityMapping.newBuilder() to construct.
   private EntityMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceEntity_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object draftEntity_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 4;
   private int sourceType_ = 0;
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
   public int getSourceTypeValue() {
     return sourceType_;
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DRAFT_TYPE_FIELD_NUMBER = 5;
   private int draftType_ = 0;
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
   public int getDraftTypeValue() {
     return draftType_;
   }
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.EntityMappingLogEntry> mappingLog_;
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.EntityMappingLogEntry> getMappingLogList() {
     return mappingLog_;
   }
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       getMappingLogOrBuilderList() {
     return mappingLog_;
   }
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
   public int getMappingLogCount() {
     return mappingLog_.size();
   }
-
   /**
    *
    *
@@ -333,7 +320,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.EntityMappingLogEntry getMappingLog(int index) {
     return mappingLog_.get(index);
   }
-
   /**
    *
    *
@@ -558,7 +544,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -844,7 +829,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sourceEntity_ = "";
-
     /**
      *
      *
@@ -869,7 +853,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -894,7 +877,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -918,7 +900,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +945,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object draftEntity_ = "";
-
     /**
      *
      *
@@ -990,7 +969,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourceType_ = 0;
-
     /**
      *
      *
@@ -1102,7 +1076,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     public int getSourceTypeValue() {
       return sourceType_;
     }
-
     /**
      *
      *
@@ -1121,7 +1094,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1111,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.clouddms.v1.DatabaseEntityType.forNumber(sourceType_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseEntityType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int draftType_ = 0;
-
     /**
      *
      *
@@ -1197,7 +1166,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
     public int getDraftTypeValue() {
       return draftType_;
     }
-
     /**
      *
      *
@@ -1216,7 +1184,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1201,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.clouddms.v1.DatabaseEntityType.forNumber(draftType_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseEntityType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1256,7 +1222,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1278,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return mappingLogBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1298,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return mappingLogBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1355,7 +1318,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return mappingLogBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1383,7 +1345,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1408,7 +1369,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1395,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1422,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1446,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1470,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1494,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1562,7 +1517,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1586,7 +1540,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1557,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getMappingLogFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1626,7 +1578,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return mappingLogBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1648,7 +1599,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mappingLog_);
       }
     }
-
     /**
      *
      *
@@ -1666,7 +1616,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
       return getMappingLogFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.EntityMappingLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1686,7 +1635,6 @@ public final class EntityMapping extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.clouddms.v1.EntityMappingLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *

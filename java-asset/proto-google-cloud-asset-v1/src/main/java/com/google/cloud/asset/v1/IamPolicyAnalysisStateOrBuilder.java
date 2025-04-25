@@ -41,7 +41,6 @@ public interface IamPolicyAnalysisStateOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface IamPolicyAnalysisStateOrBuilder
    * @return The cause.
    */
   java.lang.String getCause();
-
   /**
    *
    *

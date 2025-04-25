@@ -33,7 +33,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ActionOutput)
     ActionOutputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ActionOutput.newBuilder() to construct.
   private ActionOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_SUCCEEDED = 1;</code>
      */
     public static final int ACTION_SUCCEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_FAILED = 2;</code>
      */
     public static final int ACTION_FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -172,7 +168,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_TIMED_OUT = 3;</code>
      */
     public static final int ACTION_TIMED_OUT_VALUE = 3;
-
     /**
      *
      *
@@ -277,7 +272,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object actionId_ = "";
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -328,7 +321,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTION_STATE_FIELD_NUMBER = 2;
   private int actionState_ = 0;
-
   /**
    *
    *
@@ -344,7 +336,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
   public int getActionStateValue() {
     return actionState_;
   }
-
   /**
    *
    *
@@ -369,7 +360,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputMessage_ = "";
-
   /**
    *
    *
@@ -393,7 +383,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -597,7 +586,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -810,7 +798,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object actionId_ = "";
-
     /**
      *
      *
@@ -833,7 +820,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +842,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +880,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +904,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int actionState_ = 0;
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     public int getActionStateValue() {
       return actionState_;
     }
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +956,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contentwarehouse.v1.ActionOutput.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -998,7 +977,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +996,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object outputMessage_ = "";
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1040,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1078,6 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

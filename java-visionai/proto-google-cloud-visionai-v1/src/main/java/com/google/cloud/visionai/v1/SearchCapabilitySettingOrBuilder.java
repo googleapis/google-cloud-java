@@ -34,7 +34,6 @@ public interface SearchCapabilitySettingOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchCapability search_capabilities = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.SearchCapability> getSearchCapabilitiesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchCapabilitySettingOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchCapability search_capabilities = 1;</code>
    */
   com.google.cloud.visionai.v1.SearchCapability getSearchCapabilities(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchCapabilitySettingOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchCapability search_capabilities = 1;</code>
    */
   int getSearchCapabilitiesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchCapabilitySettingOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.SearchCapabilityOrBuilder>
       getSearchCapabilitiesOrBuilderList();
-
   /**
    *
    *

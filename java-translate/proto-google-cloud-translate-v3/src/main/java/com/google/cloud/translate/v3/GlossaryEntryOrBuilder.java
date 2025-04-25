@@ -38,7 +38,6 @@ public interface GlossaryEntryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GlossaryEntryOrBuilder
    * @return Whether the termsPair field is set.
    */
   boolean hasTermsPair();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GlossaryEntryOrBuilder
    * @return The termsPair.
    */
   com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsPair getTermsPair();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface GlossaryEntryOrBuilder
    * @return Whether the termsSet field is set.
    */
   boolean hasTermsSet();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface GlossaryEntryOrBuilder
    * @return The termsSet.
    */
   com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsSet getTermsSet();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface GlossaryEntryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

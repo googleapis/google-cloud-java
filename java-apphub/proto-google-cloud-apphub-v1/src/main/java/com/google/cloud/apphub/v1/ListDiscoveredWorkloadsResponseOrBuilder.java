@@ -34,7 +34,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
    */
   java.util.List<com.google.cloud.apphub.v1.DiscoveredWorkload> getDiscoveredWorkloadsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
    */
   com.google.cloud.apphub.v1.DiscoveredWorkload getDiscoveredWorkloads(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
    */
   int getDiscoveredWorkloadsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apphub.v1.DiscoveredWorkloadOrBuilder>
       getDiscoveredWorkloadsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

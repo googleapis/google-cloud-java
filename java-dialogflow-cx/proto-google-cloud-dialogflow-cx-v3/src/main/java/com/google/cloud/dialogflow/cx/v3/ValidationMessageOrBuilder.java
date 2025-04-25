@@ -36,7 +36,6 @@ public interface ValidationMessageOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ValidationMessageOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getResourcesList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ValidationMessageOrBuilder
    */
   @java.lang.Deprecated
   int getResourcesCount();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ValidationMessageOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getResources(int index);
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface ValidationMessageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.ResourceName resource_names = 6;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.ResourceName> getResourceNamesList();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface ValidationMessageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.ResourceName resource_names = 6;</code>
    */
   com.google.cloud.dialogflow.cx.v3.ResourceName getResourceNames(int index);
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface ValidationMessageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.ResourceName resource_names = 6;</code>
    */
   int getResourceNamesCount();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface ValidationMessageOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ResourceNameOrBuilder>
       getResourceNamesOrBuilderList();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface ValidationMessageOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface ValidationMessageOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
-
   /**
    *
    *

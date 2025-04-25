@@ -37,7 +37,6 @@ public interface MonitoringConfigOrBuilder
    * @return Whether the managedPrometheusConfig field is set.
    */
   boolean hasManagedPrometheusConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface MonitoringConfigOrBuilder
    * @return The managedPrometheusConfig.
    */
   com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig getManagedPrometheusConfig();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface MonitoringConfigOrBuilder
    * @return Whether the cloudMonitoringConfig field is set.
    */
   boolean hasCloudMonitoringConfig();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface MonitoringConfigOrBuilder
    * @return The cloudMonitoringConfig.
    */
   com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig getCloudMonitoringConfig();
-
   /**
    *
    *

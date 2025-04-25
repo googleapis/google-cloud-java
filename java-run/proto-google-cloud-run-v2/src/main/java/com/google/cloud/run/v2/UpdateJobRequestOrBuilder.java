@@ -36,7 +36,6 @@ public interface UpdateJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateJobRequestOrBuilder
    * @return The job.
    */
   com.google.cloud.run.v2.Job getJob();
-
   /**
    *
    *

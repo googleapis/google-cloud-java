@@ -34,7 +34,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.oslogin.v1.LoginProfile)
     LoginProfileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoginProfile.newBuilder() to construct.
   private LoginProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> posixAccounts_;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       getPosixAccountsList() {
     return posixAccounts_;
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       getPosixAccountsOrBuilderList() {
     return posixAccounts_;
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   public int getPosixAccountsCount() {
     return posixAccounts_.size();
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount getPosixAccounts(int index) {
     return posixAccounts_.get(index);
   }
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   public int getSshPublicKeysCount() {
     return internalGetSshPublicKeys().getMap().size();
   }
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetSshPublicKeys().getMap().containsKey(key);
   }
-
   /** Use {@link #getSshPublicKeysMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -271,7 +261,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       getSshPublicKeys() {
     return getSshPublicKeysMap();
   }
-
   /**
    *
    *
@@ -286,7 +275,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       getSshPublicKeysMap() {
     return internalGetSshPublicKeys().getMap();
   }
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         internalGetSshPublicKeys().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -522,7 +509,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -811,7 +797,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +841,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +862,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return posixAccountsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -973,7 +953,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return posixAccountsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -990,7 +969,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return posixAccountsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1100,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1121,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1140,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1159,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1172,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         getPosixAccountsBuilder(int index) {
       return getPosixAccountsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1221,7 +1189,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return posixAccountsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1207,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(posixAccounts_);
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1222,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1273,7 +1238,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1328,8 +1292,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return SshPublicKeysDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SshPublicKeysConverter sshPublicKeysConverter =
         new SshPublicKeysConverter();
@@ -1370,7 +1333,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public int getSshPublicKeysCount() {
       return internalGetSshPublicKeys().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1388,7 +1350,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetSshPublicKeys().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getSshPublicKeysMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1397,7 +1358,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         getSshPublicKeys() {
       return getSshPublicKeysMap();
     }
-
     /**
      *
      *
@@ -1414,7 +1374,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         getSshPublicKeysMap() {
       return internalGetSshPublicKeys().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1439,7 +1398,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableSshPublicKeys().ensureBuilderMap();
       return map.containsKey(key) ? sshPublicKeysConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1470,7 +1428,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSshPublicKeys().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1445,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSshPublicKeys().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1497,7 +1453,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableSshPublicKeys().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1520,7 +1475,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1499,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

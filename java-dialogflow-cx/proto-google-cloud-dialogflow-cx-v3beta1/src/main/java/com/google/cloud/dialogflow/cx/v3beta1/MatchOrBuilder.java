@@ -39,7 +39,6 @@ public interface MatchOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface MatchOrBuilder
    * @return The intent.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Intent getIntent();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface MatchOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface MatchOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface MatchOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public interface MatchOrBuilder
    * @return The resolvedInput.
    */
   java.lang.String getResolvedInput();
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public interface MatchOrBuilder
    * @return The enum numeric value on the wire for matchType.
    */
   int getMatchTypeValue();
-
   /**
    *
    *

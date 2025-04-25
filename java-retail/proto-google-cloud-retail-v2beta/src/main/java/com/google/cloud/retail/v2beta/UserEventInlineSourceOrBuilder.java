@@ -36,7 +36,6 @@ public interface UserEventInlineSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.retail.v2beta.UserEvent> getUserEventsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UserEventInlineSourceOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2beta.UserEvent getUserEvents(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface UserEventInlineSourceOrBuilder
    * </code>
    */
   int getUserEventsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface UserEventInlineSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2beta.UserEventOrBuilder>
       getUserEventsOrBuilderList();
-
   /**
    *
    *

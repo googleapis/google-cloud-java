@@ -37,7 +37,6 @@ public interface UniversalActionExtensionPointOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UniversalActionExtensionPointOrBuilder
    * @return Whether the openLink field is set.
    */
   boolean hasOpenLink();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UniversalActionExtensionPointOrBuilder
    * @return The openLink.
    */
   java.lang.String getOpenLink();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UniversalActionExtensionPointOrBuilder
    * @return Whether the runFunction field is set.
    */
   boolean hasRunFunction();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface UniversalActionExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface SearchEntriesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SearchEntriesRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface SearchEntriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public interface SearchEntriesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public interface SearchEntriesRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *

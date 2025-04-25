@@ -34,7 +34,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.kms.inventory.v1.ProtectedResourcesSummary)
     ProtectedResourcesSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProtectedResourcesSummary.newBuilder() to construct.
   private ProtectedResourcesSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
 
   public static final int RESOURCE_COUNT_FIELD_NUMBER = 1;
   private long resourceCount_ = 0L;
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
 
   public static final int PROJECT_COUNT_FIELD_NUMBER = 2;
   private int projectCount_ = 0;
-
   /**
    *
    *
@@ -206,7 +201,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
   public int getResourceTypesCount() {
     return internalGetResourceTypes().getMap().size();
   }
-
   /**
    *
    *
@@ -223,14 +217,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     }
     return internalGetResourceTypes().getMap().containsKey(key);
   }
-
   /** Use {@link #getResourceTypesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getResourceTypes() {
     return getResourceTypesMap();
   }
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.Long> getResourceTypesMap() {
     return internalGetResourceTypes().getMap();
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetResourceTypes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
   public int getCloudProductsCount() {
     return internalGetCloudProducts().getMap().size();
   }
-
   /**
    *
    *
@@ -329,14 +318,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     }
     return internalGetCloudProducts().getMap().containsKey(key);
   }
-
   /** Use {@link #getCloudProductsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getCloudProducts() {
     return getCloudProductsMap();
   }
-
   /**
    *
    *
@@ -350,7 +337,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.Long> getCloudProductsMap() {
     return internalGetCloudProducts().getMap();
   }
-
   /**
    *
    *
@@ -368,7 +354,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetCloudProducts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -416,7 +401,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
   public int getLocationsCount() {
     return internalGetLocations().getMap().size();
   }
-
   /**
    *
    *
@@ -433,14 +417,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     }
     return internalGetLocations().getMap().containsKey(key);
   }
-
   /** Use {@link #getLocationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getLocations() {
     return getLocationsMap();
   }
-
   /**
    *
    *
@@ -454,7 +436,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.Long> getLocationsMap() {
     return internalGetLocations().getMap();
   }
-
   /**
    *
    *
@@ -472,7 +453,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetLocations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -723,7 +703,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1022,7 +1001,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1047,7 +1025,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1049,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1072,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1091,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1117,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     }
 
     private long resourceCount_;
-
     /**
      *
      *
@@ -1160,7 +1133,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public long getResourceCount() {
       return resourceCount_;
     }
-
     /**
      *
      *
@@ -1181,7 +1153,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1173,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     }
 
     private int projectCount_;
-
     /**
      *
      *
@@ -1219,7 +1189,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public int getProjectCount() {
       return projectCount_;
     }
-
     /**
      *
      *
@@ -1240,7 +1209,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1256,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public int getResourceTypesCount() {
       return internalGetResourceTypes().getMap().size();
     }
-
     /**
      *
      *
@@ -1305,14 +1272,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       }
       return internalGetResourceTypes().getMap().containsKey(key);
     }
-
     /** Use {@link #getResourceTypesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getResourceTypes() {
       return getResourceTypesMap();
     }
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.Long> getResourceTypesMap() {
       return internalGetResourceTypes().getMap();
     }
-
     /**
      *
      *
@@ -1344,7 +1308,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetResourceTypes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1371,7 +1334,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableResourceTypes().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1388,14 +1350,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableResourceTypes().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableResourceTypes() {
       bitField0_ |= 0x00000008;
       return internalGetMutableResourceTypes().getMutableMap();
     }
-
     /**
      *
      *
@@ -1414,7 +1374,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1417,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public int getCloudProductsCount() {
       return internalGetCloudProducts().getMap().size();
     }
-
     /**
      *
      *
@@ -1475,14 +1433,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       }
       return internalGetCloudProducts().getMap().containsKey(key);
     }
-
     /** Use {@link #getCloudProductsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getCloudProducts() {
       return getCloudProductsMap();
     }
-
     /**
      *
      *
@@ -1496,7 +1452,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.Long> getCloudProductsMap() {
       return internalGetCloudProducts().getMap();
     }
-
     /**
      *
      *
@@ -1514,7 +1469,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetCloudProducts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1541,7 +1495,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableCloudProducts().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1558,14 +1511,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableCloudProducts().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableCloudProducts() {
       bitField0_ |= 0x00000010;
       return internalGetMutableCloudProducts().getMutableMap();
     }
-
     /**
      *
      *
@@ -1584,7 +1535,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -1626,7 +1576,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public int getLocationsCount() {
       return internalGetLocations().getMap().size();
     }
-
     /**
      *
      *
@@ -1643,14 +1592,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       }
       return internalGetLocations().getMap().containsKey(key);
     }
-
     /** Use {@link #getLocationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getLocations() {
       return getLocationsMap();
     }
-
     /**
      *
      *
@@ -1664,7 +1611,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.Long> getLocationsMap() {
       return internalGetLocations().getMap();
     }
-
     /**
      *
      *
@@ -1682,7 +1628,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetLocations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1709,7 +1654,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableLocations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1726,14 +1670,12 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       internalGetMutableLocations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableLocations() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLocations().getMutableMap();
     }
-
     /**
      *
      *
@@ -1752,7 +1694,6 @@ public final class ProtectedResourcesSummary extends com.google.protobuf.Generat
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *

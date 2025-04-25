@@ -35,7 +35,6 @@ public interface AnalyzeMoveResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1.MoveAnalysis> getMoveAnalysisList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface AnalyzeMoveResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
    */
   com.google.cloud.asset.v1.MoveAnalysis getMoveAnalysis(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface AnalyzeMoveResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
    */
   int getMoveAnalysisCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface AnalyzeMoveResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.MoveAnalysisOrBuilder>
       getMoveAnalysisOrBuilderList();
-
   /**
    *
    *

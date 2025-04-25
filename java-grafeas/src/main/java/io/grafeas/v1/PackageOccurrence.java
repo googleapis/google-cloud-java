@@ -34,7 +34,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:grafeas.v1.PackageOccurrence)
     PackageOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PackageOccurrence.newBuilder() to construct.
   private PackageOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Location> location_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public java.util.List<io.grafeas.v1.Location> getLocationList() {
     return location_;
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends io.grafeas.v1.LocationOrBuilder> getLocationOrBuilderList() {
     return location_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public int getLocationCount() {
     return location_.size();
   }
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public io.grafeas.v1.Location getLocation(int index) {
     return location_.get(index);
   }
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object packageType_ = "";
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpeUri_ = "";
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   public static final int ARCHITECTURE_FIELD_NUMBER = 5;
   private int architecture_ = 0;
-
   /**
    *
    *
@@ -336,7 +323,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public int getArchitectureValue() {
     return architecture_;
   }
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   public static final int LICENSE_FIELD_NUMBER = 6;
   private io.grafeas.v1.License license_;
-
   /**
    *
    *
@@ -374,7 +359,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public boolean hasLicense() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -390,7 +374,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public io.grafeas.v1.License getLicense() {
     return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
   }
-
   /**
    *
    *
@@ -407,7 +390,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
 
   public static final int VERSION_FIELD_NUMBER = 7;
   private io.grafeas.v1.Version version_;
-
   /**
    *
    *
@@ -423,7 +405,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -439,7 +420,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
   public io.grafeas.v1.Version getVersion() {
     return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
-
   /**
    *
    *
@@ -677,7 +657,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1007,7 +986,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1032,7 +1010,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1057,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1076,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1131,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return locationBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1148,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return locationBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1165,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return locationBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1188,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1208,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1231,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1254,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1274,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1294,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1314,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1334,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1354,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1367,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public io.grafeas.v1.Location.Builder getLocationBuilder(int index) {
       return getLocationFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1423,7 +1384,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return locationBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1441,7 +1401,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(location_);
       }
     }
-
     /**
      *
      *
@@ -1455,7 +1414,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public io.grafeas.v1.Location.Builder addLocationBuilder() {
       return getLocationFieldBuilder().addBuilder(io.grafeas.v1.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1470,7 +1428,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       return getLocationFieldBuilder()
           .addBuilder(index, io.grafeas.v1.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1501,7 +1458,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object packageType_ = "";
-
     /**
      *
      *
@@ -1525,7 +1481,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1549,7 +1504,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1572,7 +1526,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1544,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1569,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object cpeUri_ = "";
-
     /**
      *
      *
@@ -1642,7 +1593,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1667,7 +1617,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1691,7 +1640,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1659,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1738,7 +1685,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     }
 
     private int architecture_ = 0;
-
     /**
      *
      *
@@ -1756,7 +1702,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public int getArchitectureValue() {
       return architecture_;
     }
-
     /**
      *
      *
@@ -1777,7 +1722,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1740,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.forNumber(architecture_);
       return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1820,7 +1763,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1845,7 +1787,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.License, io.grafeas.v1.License.Builder, io.grafeas.v1.LicenseOrBuilder>
         licenseBuilder_;
-
     /**
      *
      *
@@ -1860,7 +1801,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public boolean hasLicense() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1879,7 +1819,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return licenseBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1902,7 +1841,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1922,7 +1860,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1950,7 +1887,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1970,7 +1906,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1985,7 +1920,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLicenseFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2002,7 +1936,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
       }
     }
-
     /**
      *
      *
@@ -2030,7 +1963,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
         versionBuilder_;
-
     /**
      *
      *
@@ -2045,7 +1977,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2064,7 +1995,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return versionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2087,7 +2017,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2107,7 +2036,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2135,7 +2063,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2155,7 +2082,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2170,7 +2096,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2187,7 +2112,6 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
         return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
       }
     }
-
     /**
      *
      *

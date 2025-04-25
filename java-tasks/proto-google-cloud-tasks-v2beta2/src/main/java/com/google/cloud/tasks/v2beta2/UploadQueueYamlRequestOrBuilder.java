@@ -38,7 +38,6 @@ public interface UploadQueueYamlRequestOrBuilder
    * @return The appId.
    */
   java.lang.String getAppId();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface UploadQueueYamlRequestOrBuilder
    * @return Whether the httpBody field is set.
    */
   boolean hasHttpBody();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UploadQueueYamlRequestOrBuilder
    * @return The httpBody.
    */
   com.google.api.HttpBody getHttpBody();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ForwardingRulesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ForwardingRule> getForwardingRulesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ForwardingRulesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
    */
   com.google.cloud.compute.v1.ForwardingRule getForwardingRules(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ForwardingRulesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
    */
   int getForwardingRulesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ForwardingRulesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ForwardingRuleOrBuilder>
       getForwardingRulesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ForwardingRulesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface ForwardingRulesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

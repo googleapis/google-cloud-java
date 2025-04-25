@@ -36,7 +36,6 @@ public interface SubmitProvisioningConfigResponseOrBuilder
    * @return Whether the provisioningConfig field is set.
    */
   boolean hasProvisioningConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SubmitProvisioningConfigResponseOrBuilder
    * @return The provisioningConfig.
    */
   com.google.cloud.baremetalsolution.v2.ProvisioningConfig getProvisioningConfig();
-
   /**
    *
    *

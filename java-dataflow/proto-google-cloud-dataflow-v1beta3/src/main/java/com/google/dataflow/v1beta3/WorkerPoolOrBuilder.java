@@ -37,7 +37,6 @@ public interface WorkerPoolOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Package packages = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.Package> getPackagesList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Package packages = 3;</code>
    */
   com.google.dataflow.v1beta3.Package getPackages(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Package packages = 3;</code>
    */
   int getPackagesCount();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Package packages = 3;</code>
    */
   java.util.List<? extends com.google.dataflow.v1beta3.PackageOrBuilder> getPackagesOrBuilderList();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface WorkerPoolOrBuilder
    * @return The enum numeric value on the wire for defaultPackageSet.
    */
   int getDefaultPackageSetValue();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface WorkerPoolOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface WorkerPoolOrBuilder
    * @return The enum numeric value on the wire for teardownPolicy.
    */
   int getTeardownPolicyValue();
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public interface WorkerPoolOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public interface WorkerPoolOrBuilder
    * @return The diskSourceImage.
    */
   java.lang.String getDiskSourceImage();
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public interface WorkerPoolOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -346,7 +335,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the taskrunnerSettings field is set.
    */
   boolean hasTaskrunnerSettings();
-
   /**
    *
    *
@@ -361,7 +349,6 @@ public interface WorkerPoolOrBuilder
    * @return The taskrunnerSettings.
    */
   com.google.dataflow.v1beta3.TaskRunnerSettings getTaskrunnerSettings();
-
   /**
    *
    *
@@ -388,7 +375,6 @@ public interface WorkerPoolOrBuilder
    * @return The onHostMaintenance.
    */
   java.lang.String getOnHostMaintenance();
-
   /**
    *
    *
@@ -413,7 +399,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Disk data_disks = 12;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.Disk> getDataDisksList();
-
   /**
    *
    *
@@ -424,7 +409,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Disk data_disks = 12;</code>
    */
   com.google.dataflow.v1beta3.Disk getDataDisks(int index);
-
   /**
    *
    *
@@ -435,7 +419,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Disk data_disks = 12;</code>
    */
   int getDataDisksCount();
-
   /**
    *
    *
@@ -446,7 +429,6 @@ public interface WorkerPoolOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Disk data_disks = 12;</code>
    */
   java.util.List<? extends com.google.dataflow.v1beta3.DiskOrBuilder> getDataDisksOrBuilderList();
-
   /**
    *
    *
@@ -468,7 +450,6 @@ public interface WorkerPoolOrBuilder
    * <code>map&lt;string, string&gt; metadata = 13;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -479,11 +460,9 @@ public interface WorkerPoolOrBuilder
    * <code>map&lt;string, string&gt; metadata = 13;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -494,7 +473,6 @@ public interface WorkerPoolOrBuilder
    * <code>map&lt;string, string&gt; metadata = 13;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -509,7 +487,6 @@ public interface WorkerPoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -533,7 +510,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the autoscalingSettings field is set.
    */
   boolean hasAutoscalingSettings();
-
   /**
    *
    *
@@ -546,7 +522,6 @@ public interface WorkerPoolOrBuilder
    * @return The autoscalingSettings.
    */
   com.google.dataflow.v1beta3.AutoscalingSettings getAutoscalingSettings();
-
   /**
    *
    *
@@ -570,7 +545,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the poolArgs field is set.
    */
   boolean hasPoolArgs();
-
   /**
    *
    *
@@ -583,7 +557,6 @@ public interface WorkerPoolOrBuilder
    * @return The poolArgs.
    */
   com.google.protobuf.Any getPoolArgs();
-
   /**
    *
    *
@@ -608,7 +581,6 @@ public interface WorkerPoolOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -636,7 +608,6 @@ public interface WorkerPoolOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -666,7 +637,6 @@ public interface WorkerPoolOrBuilder
    * @return The workerHarnessContainerImage.
    */
   java.lang.String getWorkerHarnessContainerImage();
-
   /**
    *
    *
@@ -710,7 +680,6 @@ public interface WorkerPoolOrBuilder
    * @return The enum numeric value on the wire for ipConfiguration.
    */
   int getIpConfigurationValue();
-
   /**
    *
    *
@@ -740,7 +709,6 @@ public interface WorkerPoolOrBuilder
    */
   java.util.List<com.google.dataflow.v1beta3.SdkHarnessContainerImage>
       getSdkHarnessContainerImagesList();
-
   /**
    *
    *
@@ -756,7 +724,6 @@ public interface WorkerPoolOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.SdkHarnessContainerImage getSdkHarnessContainerImages(int index);
-
   /**
    *
    *
@@ -772,7 +739,6 @@ public interface WorkerPoolOrBuilder
    * </code>
    */
   int getSdkHarnessContainerImagesCount();
-
   /**
    *
    *
@@ -789,7 +755,6 @@ public interface WorkerPoolOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.SdkHarnessContainerImageOrBuilder>
       getSdkHarnessContainerImagesOrBuilderList();
-
   /**
    *
    *

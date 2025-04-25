@@ -34,7 +34,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation)
     DenyRuleExplanationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DenyRuleExplanation.newBuilder() to construct.
   private DenyRuleExplanation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,7 +103,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for permissionMatchingState.
      */
     int getPermissionMatchingStateValue();
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for relevance.
      */
     int getRelevanceValue();
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
      */
     com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance getRelevance();
   }
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation.AnnotatedPermissionMatching)
       AnnotatedPermissionMatchingOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnnotatedPermissionMatching.newBuilder() to construct.
     private AnnotatedPermissionMatching(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -204,7 +199,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
     public static final int PERMISSION_MATCHING_STATE_FIELD_NUMBER = 1;
     private int permissionMatchingState_ = 0;
-
     /**
      *
      *
@@ -223,7 +217,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getPermissionMatchingStateValue() {
       return permissionMatchingState_;
     }
-
     /**
      *
      *
@@ -251,7 +244,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
     public static final int RELEVANCE_FIELD_NUMBER = 2;
     private int relevance_ = 0;
-
     /**
      *
      *
@@ -268,7 +260,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getRelevanceValue() {
       return relevance_;
     }
-
     /**
      *
      *
@@ -497,7 +488,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -725,7 +715,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int permissionMatchingState_ = 0;
-
       /**
        *
        *
@@ -744,7 +733,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       public int getPermissionMatchingStateValue() {
         return permissionMatchingState_;
       }
-
       /**
        *
        *
@@ -766,7 +754,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -792,7 +779,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -818,7 +804,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -841,7 +826,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
 
       private int relevance_ = 0;
-
       /**
        *
        *
@@ -858,7 +842,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       public int getRelevanceValue() {
         return relevance_;
       }
-
       /**
        *
        *
@@ -878,7 +861,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -899,7 +881,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             ? com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -923,7 +904,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1034,7 +1014,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for membership.
      */
     int getMembershipValue();
-
     /**
      *
      *
@@ -1063,7 +1042,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for relevance.
      */
     int getRelevanceValue();
-
     /**
      *
      *
@@ -1078,7 +1056,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
      */
     com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance getRelevance();
   }
-
   /**
    *
    *
@@ -1097,7 +1074,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation.AnnotatedDenyPrincipalMatching)
       AnnotatedDenyPrincipalMatchingOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnnotatedDenyPrincipalMatching.newBuilder() to construct.
     private AnnotatedDenyPrincipalMatching(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1134,7 +1110,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
     public static final int MEMBERSHIP_FIELD_NUMBER = 1;
     private int membership_ = 0;
-
     /**
      *
      *
@@ -1152,7 +1127,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getMembershipValue() {
       return membership_;
     }
-
     /**
      *
      *
@@ -1178,7 +1152,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
     public static final int RELEVANCE_FIELD_NUMBER = 2;
     private int relevance_ = 0;
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getRelevanceValue() {
       return relevance_;
     }
-
     /**
      *
      *
@@ -1426,7 +1398,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1657,7 +1628,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int membership_ = 0;
-
       /**
        *
        *
@@ -1675,7 +1645,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       public int getMembershipValue() {
         return membership_;
       }
-
       /**
        *
        *
@@ -1696,7 +1665,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1719,7 +1687,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             ? com.google.cloud.policytroubleshooter.iam.v3.MembershipMatchingState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1744,7 +1711,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1766,7 +1732,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
 
       private int relevance_ = 0;
-
       /**
        *
        *
@@ -1783,7 +1748,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       public int getRelevanceValue() {
         return relevance_;
       }
-
       /**
        *
        *
@@ -1803,7 +1767,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1824,7 +1787,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             ? com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1848,7 +1810,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1943,7 +1904,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DENY_ACCESS_STATE_FIELD_NUMBER = 1;
   private int denyAccessState_ = 0;
-
   /**
    *
    *
@@ -1968,7 +1928,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public int getDenyAccessStateValue() {
     return denyAccessState_;
   }
-
   /**
    *
    *
@@ -2002,7 +1961,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   private com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
           .AnnotatedPermissionMatching
       combinedDeniedPermission_;
-
   /**
    *
    *
@@ -2021,7 +1979,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public boolean hasCombinedDeniedPermission() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2045,7 +2002,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             .AnnotatedPermissionMatching.getDefaultInstance()
         : combinedDeniedPermission_;
   }
-
   /**
    *
    *
@@ -2112,7 +2068,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public int getDeniedPermissionsCount() {
     return internalGetDeniedPermissions().getMap().size();
   }
-
   /**
    *
    *
@@ -2136,7 +2091,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     }
     return internalGetDeniedPermissions().getMap().containsKey(key);
   }
-
   /** Use {@link #getDeniedPermissionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2147,7 +2101,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getDeniedPermissions() {
     return getDeniedPermissionsMap();
   }
-
   /**
    *
    *
@@ -2172,7 +2125,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getDeniedPermissionsMap() {
     return internalGetDeniedPermissions().getMap();
   }
-
   /**
    *
    *
@@ -2208,7 +2160,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         map = internalGetDeniedPermissions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2247,7 +2198,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   private com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
           .AnnotatedPermissionMatching
       combinedExceptionPermission_;
-
   /**
    *
    *
@@ -2266,7 +2216,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public boolean hasCombinedExceptionPermission() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2290,7 +2239,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             .AnnotatedPermissionMatching.getDefaultInstance()
         : combinedExceptionPermission_;
   }
-
   /**
    *
    *
@@ -2357,7 +2305,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public int getExceptionPermissionsCount() {
     return internalGetExceptionPermissions().getMap().size();
   }
-
   /**
    *
    *
@@ -2381,7 +2328,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     }
     return internalGetExceptionPermissions().getMap().containsKey(key);
   }
-
   /** Use {@link #getExceptionPermissionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2392,7 +2338,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getExceptionPermissions() {
     return getExceptionPermissionsMap();
   }
-
   /**
    *
    *
@@ -2417,7 +2362,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getExceptionPermissionsMap() {
     return internalGetExceptionPermissions().getMap();
   }
-
   /**
    *
    *
@@ -2453,7 +2397,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         map = internalGetExceptionPermissions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2492,7 +2435,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   private com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
           .AnnotatedDenyPrincipalMatching
       combinedDeniedPrincipal_;
-
   /**
    *
    *
@@ -2511,7 +2453,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public boolean hasCombinedDeniedPrincipal() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2535,7 +2476,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             .AnnotatedDenyPrincipalMatching.getDefaultInstance()
         : combinedDeniedPrincipal_;
   }
-
   /**
    *
    *
@@ -2602,7 +2542,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public int getDeniedPrincipalsCount() {
     return internalGetDeniedPrincipals().getMap().size();
   }
-
   /**
    *
    *
@@ -2627,7 +2566,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     }
     return internalGetDeniedPrincipals().getMap().containsKey(key);
   }
-
   /** Use {@link #getDeniedPrincipalsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2638,7 +2576,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getDeniedPrincipals() {
     return getDeniedPrincipalsMap();
   }
-
   /**
    *
    *
@@ -2664,7 +2601,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getDeniedPrincipalsMap() {
     return internalGetDeniedPrincipals().getMap();
   }
-
   /**
    *
    *
@@ -2701,7 +2637,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         map = internalGetDeniedPrincipals().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2741,7 +2676,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   private com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
           .AnnotatedDenyPrincipalMatching
       combinedExceptionPrincipal_;
-
   /**
    *
    *
@@ -2760,7 +2694,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public boolean hasCombinedExceptionPrincipal() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -2784,7 +2717,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             .AnnotatedDenyPrincipalMatching.getDefaultInstance()
         : combinedExceptionPrincipal_;
   }
-
   /**
    *
    *
@@ -2851,7 +2783,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public int getExceptionPrincipalsCount() {
     return internalGetExceptionPrincipals().getMap().size();
   }
-
   /**
    *
    *
@@ -2876,7 +2807,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     }
     return internalGetExceptionPrincipals().getMap().containsKey(key);
   }
-
   /** Use {@link #getExceptionPrincipalsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2887,7 +2817,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getExceptionPrincipals() {
     return getExceptionPrincipalsMap();
   }
-
   /**
    *
    *
@@ -2913,7 +2842,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       getExceptionPrincipalsMap() {
     return internalGetExceptionPrincipals().getMap();
   }
-
   /**
    *
    *
@@ -2950,7 +2878,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         map = internalGetExceptionPrincipals().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2988,7 +2915,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
   public static final int RELEVANCE_FIELD_NUMBER = 10;
   private int relevance_ = 0;
-
   /**
    *
    *
@@ -3005,7 +2931,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public int getRelevanceValue() {
     return relevance_;
   }
-
   /**
    *
    *
@@ -3029,7 +2954,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
   public static final int CONDITION_FIELD_NUMBER = 11;
   private com.google.type.Expr condition_;
-
   /**
    *
    *
@@ -3049,7 +2973,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -3069,7 +2992,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public com.google.type.Expr getCondition() {
     return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
   }
-
   /**
    *
    *
@@ -3090,7 +3012,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
 
   public static final int CONDITION_EXPLANATION_FIELD_NUMBER = 12;
   private com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation conditionExplanation_;
-
   /**
    *
    *
@@ -3108,7 +3029,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
   public boolean hasConditionExplanation() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -3129,7 +3049,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation.getDefaultInstance()
         : conditionExplanation_;
   }
-
   /**
    *
    *
@@ -3531,7 +3450,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4004,7 +3922,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int denyAccessState_ = 0;
-
     /**
      *
      *
@@ -4029,7 +3946,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getDenyAccessStateValue() {
       return denyAccessState_;
     }
-
     /**
      *
      *
@@ -4057,7 +3973,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4086,7 +4001,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.policytroubleshooter.iam.v3.DenyAccessState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4118,7 +4032,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4157,7 +4070,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                 .AnnotatedPermissionMatchingOrBuilder>
         combinedDeniedPermissionBuilder_;
-
     /**
      *
      *
@@ -4175,7 +4087,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public boolean hasCombinedDeniedPermission() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4202,7 +4113,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return combinedDeniedPermissionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4230,7 +4140,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4256,7 +4165,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4291,7 +4199,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -4314,7 +4221,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4334,7 +4240,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCombinedDeniedPermissionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4359,7 +4264,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             : combinedDeniedPermission_;
       }
     }
-
     /**
      *
      *
@@ -4431,8 +4335,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return DeniedPermissionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DeniedPermissionsConverter deniedPermissionsConverter =
         new DeniedPermissionsConverter();
@@ -4482,7 +4385,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getDeniedPermissionsCount() {
       return internalGetDeniedPermissions().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -4506,7 +4408,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return internalGetDeniedPermissions().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getDeniedPermissionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -4517,7 +4418,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getDeniedPermissions() {
       return getDeniedPermissionsMap();
     }
-
     /**
      *
      *
@@ -4542,7 +4442,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getDeniedPermissionsMap() {
       return internalGetDeniedPermissions().getImmutableMap();
     }
-
     /**
      *
      *
@@ -4578,7 +4477,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           map = internalGetMutableDeniedPermissions().ensureBuilderMap();
       return map.containsKey(key) ? deniedPermissionsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -4618,7 +4516,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableDeniedPermissions().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4642,7 +4539,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableDeniedPermissions().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -4653,7 +4549,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000004;
       return internalGetMutableDeniedPermissions().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -4684,7 +4579,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -4720,7 +4614,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -4781,7 +4674,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                 .AnnotatedPermissionMatchingOrBuilder>
         combinedExceptionPermissionBuilder_;
-
     /**
      *
      *
@@ -4799,7 +4691,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public boolean hasCombinedExceptionPermission() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4826,7 +4717,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return combinedExceptionPermissionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4854,7 +4744,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4880,7 +4769,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4915,7 +4803,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -4938,7 +4825,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4958,7 +4844,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCombinedExceptionPermissionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4983,7 +4868,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             : combinedExceptionPermission_;
       }
     }
-
     /**
      *
      *
@@ -5055,8 +4939,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return ExceptionPermissionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExceptionPermissionsConverter exceptionPermissionsConverter =
         new ExceptionPermissionsConverter();
@@ -5107,7 +4990,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getExceptionPermissionsCount() {
       return internalGetExceptionPermissions().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -5131,7 +5013,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return internalGetExceptionPermissions().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getExceptionPermissionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -5142,7 +5023,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getExceptionPermissions() {
       return getExceptionPermissionsMap();
     }
-
     /**
      *
      *
@@ -5167,7 +5047,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getExceptionPermissionsMap() {
       return internalGetExceptionPermissions().getImmutableMap();
     }
-
     /**
      *
      *
@@ -5205,7 +5084,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           ? exceptionPermissionsConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -5245,7 +5123,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableExceptionPermissions().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5269,7 +5146,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableExceptionPermissions().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -5280,7 +5156,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000010;
       return internalGetMutableExceptionPermissions().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -5311,7 +5186,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -5347,7 +5221,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -5408,7 +5281,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                 .AnnotatedDenyPrincipalMatchingOrBuilder>
         combinedDeniedPrincipalBuilder_;
-
     /**
      *
      *
@@ -5426,7 +5298,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public boolean hasCombinedDeniedPrincipal() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -5453,7 +5324,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return combinedDeniedPrincipalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5482,7 +5352,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5508,7 +5377,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5544,7 +5412,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5567,7 +5434,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5587,7 +5453,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCombinedDeniedPrincipalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5612,7 +5477,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             : combinedDeniedPrincipal_;
       }
     }
-
     /**
      *
      *
@@ -5684,8 +5548,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return DeniedPrincipalsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DeniedPrincipalsConverter deniedPrincipalsConverter =
         new DeniedPrincipalsConverter();
@@ -5735,7 +5598,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getDeniedPrincipalsCount() {
       return internalGetDeniedPrincipals().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -5760,7 +5622,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return internalGetDeniedPrincipals().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getDeniedPrincipalsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -5771,7 +5632,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getDeniedPrincipals() {
       return getDeniedPrincipalsMap();
     }
-
     /**
      *
      *
@@ -5797,7 +5657,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getDeniedPrincipalsMap() {
       return internalGetDeniedPrincipals().getImmutableMap();
     }
-
     /**
      *
      *
@@ -5834,7 +5693,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           map = internalGetMutableDeniedPrincipals().ensureBuilderMap();
       return map.containsKey(key) ? deniedPrincipalsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -5875,7 +5733,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableDeniedPrincipals().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5900,7 +5757,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableDeniedPrincipals().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -5911,7 +5767,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000040;
       return internalGetMutableDeniedPrincipals().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -5944,7 +5799,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -5981,7 +5835,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -6043,7 +5896,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                 .AnnotatedDenyPrincipalMatchingOrBuilder>
         combinedExceptionPrincipalBuilder_;
-
     /**
      *
      *
@@ -6061,7 +5913,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public boolean hasCombinedExceptionPrincipal() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -6088,7 +5939,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return combinedExceptionPrincipalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6117,7 +5967,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6143,7 +5992,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6179,7 +6027,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -6202,7 +6049,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6222,7 +6068,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCombinedExceptionPrincipalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6247,7 +6092,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             : combinedExceptionPrincipal_;
       }
     }
-
     /**
      *
      *
@@ -6319,8 +6163,7 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return ExceptionPrincipalsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExceptionPrincipalsConverter exceptionPrincipalsConverter =
         new ExceptionPrincipalsConverter();
@@ -6371,7 +6214,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getExceptionPrincipalsCount() {
       return internalGetExceptionPrincipals().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -6396,7 +6238,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return internalGetExceptionPrincipals().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getExceptionPrincipalsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -6407,7 +6248,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getExceptionPrincipals() {
       return getExceptionPrincipalsMap();
     }
-
     /**
      *
      *
@@ -6433,7 +6273,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         getExceptionPrincipalsMap() {
       return internalGetExceptionPrincipals().getImmutableMap();
     }
-
     /**
      *
      *
@@ -6470,7 +6309,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           map = internalGetMutableExceptionPrincipals().ensureBuilderMap();
       return map.containsKey(key) ? exceptionPrincipalsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -6511,7 +6349,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableExceptionPrincipals().clear();
       return this;
     }
-
     /**
      *
      *
@@ -6536,7 +6373,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       internalGetMutableExceptionPrincipals().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -6547,7 +6383,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000100;
       return internalGetMutableExceptionPrincipals().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -6580,7 +6415,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -6617,7 +6451,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -6669,7 +6502,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     }
 
     private int relevance_ = 0;
-
     /**
      *
      *
@@ -6686,7 +6518,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public int getRelevanceValue() {
       return relevance_;
     }
-
     /**
      *
      *
@@ -6706,7 +6537,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6727,7 +6557,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6751,7 +6580,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6775,7 +6603,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -6794,7 +6621,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -6817,7 +6643,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return conditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6844,7 +6669,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6868,7 +6692,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6900,7 +6723,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -6924,7 +6746,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6943,7 +6764,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6964,7 +6784,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
       }
     }
-
     /**
      *
      *
@@ -6997,7 +6816,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation.Builder,
             com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanationOrBuilder>
         conditionExplanationBuilder_;
-
     /**
      *
      *
@@ -7014,7 +6832,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
     public boolean hasConditionExplanation() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -7038,7 +6855,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
         return conditionExplanationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7064,7 +6880,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7087,7 +6902,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7120,7 +6934,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -7142,7 +6955,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7160,7 +6972,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
       onChanged();
       return getConditionExplanationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7182,7 +6993,6 @@ public final class DenyRuleExplanation extends com.google.protobuf.GeneratedMess
             : conditionExplanation_;
       }
     }
-
     /**
      *
      *

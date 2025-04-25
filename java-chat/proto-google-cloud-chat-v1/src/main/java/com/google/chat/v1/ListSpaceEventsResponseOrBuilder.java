@@ -36,7 +36,6 @@ public interface ListSpaceEventsResponseOrBuilder
    * <code>repeated .google.chat.v1.SpaceEvent space_events = 1;</code>
    */
   java.util.List<com.google.chat.v1.SpaceEvent> getSpaceEventsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListSpaceEventsResponseOrBuilder
    * <code>repeated .google.chat.v1.SpaceEvent space_events = 1;</code>
    */
   com.google.chat.v1.SpaceEvent getSpaceEvents(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListSpaceEventsResponseOrBuilder
    * <code>repeated .google.chat.v1.SpaceEvent space_events = 1;</code>
    */
   int getSpaceEventsCount();
-
   /**
    *
    *
@@ -75,7 +72,6 @@ public interface ListSpaceEventsResponseOrBuilder
    * <code>repeated .google.chat.v1.SpaceEvent space_events = 1;</code>
    */
   java.util.List<? extends com.google.chat.v1.SpaceEventOrBuilder> getSpaceEventsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ListSpaceEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ToolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ToolOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ToolOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface ToolOrBuilder
    * @return Whether the openApiSpec field is set.
    */
   boolean hasOpenApiSpec();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface ToolOrBuilder
    * @return The openApiSpec.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool.OpenApiTool getOpenApiSpec();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface ToolOrBuilder
    * @return Whether the dataStoreSpec field is set.
    */
   boolean hasDataStoreSpec();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ToolOrBuilder
    * @return The dataStoreSpec.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool.DataStoreTool getDataStoreSpec();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface ToolOrBuilder
    * @return Whether the extensionSpec field is set.
    */
   boolean hasExtensionSpec();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface ToolOrBuilder
    * @return The extensionSpec.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool.ExtensionTool getExtensionSpec();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface ToolOrBuilder
    * @return Whether the functionSpec field is set.
    */
   boolean hasFunctionSpec();
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface ToolOrBuilder
    * @return The functionSpec.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool.FunctionTool getFunctionSpec();
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface ToolOrBuilder
    * @return Whether the connectorSpec field is set.
    */
   boolean hasConnectorSpec();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface ToolOrBuilder
    * @return The connectorSpec.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getConnectorSpec();
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public interface ToolOrBuilder
    * @return The enum numeric value on the wire for toolType.
    */
   int getToolTypeValue();
-
   /**
    *
    *

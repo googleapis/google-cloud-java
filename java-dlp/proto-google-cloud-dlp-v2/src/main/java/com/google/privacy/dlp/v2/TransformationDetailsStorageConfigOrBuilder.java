@@ -41,7 +41,6 @@ public interface TransformationDetailsStorageConfigOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface TransformationDetailsStorageConfigOrBuilder
    * @return The table.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
-
   /**
    *
    *

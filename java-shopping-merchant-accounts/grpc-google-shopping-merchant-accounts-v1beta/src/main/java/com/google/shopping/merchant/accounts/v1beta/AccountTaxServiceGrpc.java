@@ -192,19 +192,6 @@ public final class AccountTaxServiceGrpc {
     return AccountTaxServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static AccountTaxServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AccountTaxServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<AccountTaxServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public AccountTaxServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new AccountTaxServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return AccountTaxServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -391,71 +378,6 @@ public final class AccountTaxServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AccountTaxService.
-   *
-   * <pre>
-   * Manages account level tax setting data.
-   * This API defines the following resource model:
-   * - [AccountTax][google.shopping.merchant.accounts.v1main.AccountTax]
-   * </pre>
-   */
-  public static final class AccountTaxServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<AccountTaxServiceBlockingV2Stub> {
-    private AccountTaxServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected AccountTaxServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new AccountTaxServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the tax rules that match the conditions of GetAccountTaxRequest
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.AccountTax getAccountTax(
-        com.google.shopping.merchant.accounts.v1beta.GetAccountTaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAccountTaxMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the tax settings of the sub-accounts only in your
-     * Merchant Center account.
-     * This method can only be called on a multi-client account, otherwise it'll
-     * return an error.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.ListAccountTaxResponse listAccountTax(
-        com.google.shopping.merchant.accounts.v1beta.ListAccountTaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAccountTaxMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the tax settings of the account.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.AccountTax updateAccountTax(
-        com.google.shopping.merchant.accounts.v1beta.UpdateAccountTaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateAccountTaxMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service AccountTaxService.
    *
    * <pre>
    * Manages account level tax setting data.

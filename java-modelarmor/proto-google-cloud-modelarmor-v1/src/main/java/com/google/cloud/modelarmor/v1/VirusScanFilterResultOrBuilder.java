@@ -38,7 +38,6 @@ public interface VirusScanFilterResultOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface VirusScanFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface VirusScanFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index);
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface VirusScanFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   int getMessageItemsCount();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface VirusScanFilterResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.MessageItemOrBuilder>
       getMessageItemsOrBuilderList();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface VirusScanFilterResultOrBuilder
    * @return The enum numeric value on the wire for matchState.
    */
   int getMatchStateValue();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface VirusScanFilterResultOrBuilder
    * @return The enum numeric value on the wire for scannedContentType.
    */
   int getScannedContentTypeValue();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface VirusScanFilterResultOrBuilder
    * @return Whether the scannedSize field is set.
    */
   boolean hasScannedSize();
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public interface VirusScanFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.VirusDetail virus_details = 6;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.VirusDetail> getVirusDetailsList();
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public interface VirusScanFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.VirusDetail virus_details = 6;</code>
    */
   com.google.cloud.modelarmor.v1.VirusDetail getVirusDetails(int index);
-
   /**
    *
    *
@@ -248,7 +238,6 @@ public interface VirusScanFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.VirusDetail virus_details = 6;</code>
    */
   int getVirusDetailsCount();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface VirusScanFilterResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.VirusDetailOrBuilder>
       getVirusDetailsOrBuilderList();
-
   /**
    *
    *

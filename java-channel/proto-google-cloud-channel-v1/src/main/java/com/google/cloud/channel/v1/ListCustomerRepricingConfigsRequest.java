@@ -35,7 +35,6 @@ public final class ListCustomerRepricingConfigsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListCustomerRepricingConfigsRequest)
     ListCustomerRepricingConfigsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCustomerRepricingConfigsRequest.newBuilder() to construct.
   private ListCustomerRepricingConfigsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListCustomerRepricingConfigsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class ListCustomerRepricingConfigsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class ListCustomerRepricingConfigsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class ListCustomerRepricingConfigsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class ListCustomerRepricingConfigsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public final class ListCustomerRepricingConfigsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public final class ListCustomerRepricingConfigsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -468,7 +460,6 @@ public final class ListCustomerRepricingConfigsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +692,6 @@ public final class ListCustomerRepricingConfigsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -729,7 +719,6 @@ public final class ListCustomerRepricingConfigsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -757,7 +746,6 @@ public final class ListCustomerRepricingConfigsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -784,7 +772,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +823,6 @@ public final class ListCustomerRepricingConfigsRequest
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class ListCustomerRepricingConfigsRequest
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +882,6 @@ public final class ListCustomerRepricingConfigsRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -927,7 +909,6 @@ public final class ListCustomerRepricingConfigsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -955,7 +936,6 @@ public final class ListCustomerRepricingConfigsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -982,7 +962,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1013,6 @@ public final class ListCustomerRepricingConfigsRequest
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1064,7 +1041,6 @@ public final class ListCustomerRepricingConfigsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class ListCustomerRepricingConfigsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1096,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1119,6 @@ public final class ListCustomerRepricingConfigsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface DeleteAgentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SiteVersionOrBuilder
    * @return The nfVendor.
    */
   java.lang.String getNfVendor();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SiteVersionOrBuilder
    * @return The nfType.
    */
   java.lang.String getNfType();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SiteVersionOrBuilder
    * @return The nfVersion.
    */
   java.lang.String getNfVersion();
-
   /**
    *
    *

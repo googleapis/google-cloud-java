@@ -34,7 +34,6 @@ public interface ImageLocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.BoundingBox> getBoundingBoxesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImageLocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
   com.google.privacy.dlp.v2.BoundingBox getBoundingBoxes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImageLocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
   int getBoundingBoxesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ImageLocationOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.BoundingBoxOrBuilder>
       getBoundingBoxesOrBuilderList();
-
   /**
    *
    *

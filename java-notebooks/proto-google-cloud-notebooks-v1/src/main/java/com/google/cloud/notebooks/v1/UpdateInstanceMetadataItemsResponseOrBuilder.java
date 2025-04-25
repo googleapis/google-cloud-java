@@ -34,7 +34,6 @@ public interface UpdateInstanceMetadataItemsResponseOrBuilder
    * <code>map&lt;string, string&gt; items = 1;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface UpdateInstanceMetadataItemsResponseOrBuilder
    * <code>map&lt;string, string&gt; items = 1;</code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getItems();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface UpdateInstanceMetadataItemsResponseOrBuilder
    * <code>map&lt;string, string&gt; items = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getItemsMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface UpdateInstanceMetadataItemsResponseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

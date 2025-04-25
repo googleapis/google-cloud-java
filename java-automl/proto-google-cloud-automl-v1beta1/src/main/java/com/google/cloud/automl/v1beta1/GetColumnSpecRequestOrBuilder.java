@@ -38,7 +38,6 @@ public interface GetColumnSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetColumnSpecRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GetColumnSpecRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
-
   /**
    *
    *

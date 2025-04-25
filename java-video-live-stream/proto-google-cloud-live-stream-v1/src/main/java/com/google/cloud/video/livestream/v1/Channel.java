@@ -37,7 +37,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Channel)
     ChannelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Channel.newBuilder() to construct.
   private Channel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -197,7 +196,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAMING_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STREAMING_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -209,7 +207,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAMING = 1;</code>
      */
     public static final int STREAMING_VALUE = 1;
-
     /**
      *
      *
@@ -220,7 +217,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>AWAITING_INPUT = 2;</code>
      */
     public static final int AWAITING_INPUT_VALUE = 2;
-
     /**
      *
      *
@@ -233,7 +229,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAMING_ERROR = 4;</code>
      */
     public static final int STREAMING_ERROR_VALUE = 4;
-
     /**
      *
      *
@@ -246,7 +241,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAMING_NO_INPUT = 5;</code>
      */
     public static final int STREAMING_NO_INPUT_VALUE = 5;
-
     /**
      *
      *
@@ -257,7 +251,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPPED = 6;</code>
      */
     public static final int STOPPED_VALUE = 6;
-
     /**
      *
      *
@@ -268,7 +261,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 7;</code>
      */
     public static final int STARTING_VALUE = 7;
-
     /**
      *
      *
@@ -390,7 +382,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -404,7 +395,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
-
   /**
    *
    *
@@ -419,7 +409,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Channel.Output)
       OutputOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Output.newBuilder() to construct.
     private Output(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -454,7 +443,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -478,7 +466,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -664,7 +651,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -852,7 +838,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -875,7 +860,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -898,7 +882,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -920,7 +903,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -938,7 +920,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1031,7 +1012,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1056,7 +1036,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1084,7 +1063,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1101,7 +1079,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1118,7 +1095,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1136,7 +1112,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1153,7 +1128,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1170,7 +1144,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1212,7 +1185,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1229,14 +1201,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1250,7 +1220,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1271,7 +1240,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1297,7 +1265,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.InputAttachment> inputAttachments_;
-
   /**
    *
    *
@@ -1314,7 +1281,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getInputAttachmentsList() {
     return inputAttachments_;
   }
-
   /**
    *
    *
@@ -1331,7 +1297,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getInputAttachmentsOrBuilderList() {
     return inputAttachments_;
   }
-
   /**
    *
    *
@@ -1347,7 +1312,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getInputAttachmentsCount() {
     return inputAttachments_.size();
   }
-
   /**
    *
    *
@@ -1363,7 +1327,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.InputAttachment getInputAttachments(int index) {
     return inputAttachments_.get(index);
   }
-
   /**
    *
    *
@@ -1385,7 +1348,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activeInput_ = "";
-
   /**
    *
    *
@@ -1413,7 +1375,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1444,7 +1405,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OUTPUT_FIELD_NUMBER = 9;
   private com.google.cloud.video.livestream.v1.Channel.Output output_;
-
   /**
    *
    *
@@ -1463,7 +1423,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOutput() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1484,7 +1443,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.Channel.Output.getDefaultInstance()
         : output_;
   }
-
   /**
    *
    *
@@ -1508,7 +1466,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.ElementaryStream> elementaryStreams_;
-
   /**
    *
    *
@@ -1524,7 +1481,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getElementaryStreamsList() {
     return elementaryStreams_;
   }
-
   /**
    *
    *
@@ -1540,7 +1496,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getElementaryStreamsOrBuilderList() {
     return elementaryStreams_;
   }
-
   /**
    *
    *
@@ -1555,7 +1510,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getElementaryStreamsCount() {
     return elementaryStreams_.size();
   }
-
   /**
    *
    *
@@ -1570,7 +1524,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.ElementaryStream getElementaryStreams(int index) {
     return elementaryStreams_.get(index);
   }
-
   /**
    *
    *
@@ -1591,7 +1544,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.MuxStream> muxStreams_;
-
   /**
    *
    *
@@ -1605,7 +1557,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.livestream.v1.MuxStream> getMuxStreamsList() {
     return muxStreams_;
   }
-
   /**
    *
    *
@@ -1620,7 +1571,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getMuxStreamsOrBuilderList() {
     return muxStreams_;
   }
-
   /**
    *
    *
@@ -1634,7 +1584,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getMuxStreamsCount() {
     return muxStreams_.size();
   }
-
   /**
    *
    *
@@ -1648,7 +1597,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.MuxStream getMuxStreams(int index) {
     return muxStreams_.get(index);
   }
-
   /**
    *
    *
@@ -1667,7 +1615,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Manifest> manifests_;
-
   /**
    *
    *
@@ -1681,7 +1628,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.livestream.v1.Manifest> getManifestsList() {
     return manifests_;
   }
-
   /**
    *
    *
@@ -1696,7 +1642,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getManifestsOrBuilderList() {
     return manifests_;
   }
-
   /**
    *
    *
@@ -1710,7 +1655,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getManifestsCount() {
     return manifests_.size();
   }
-
   /**
    *
    *
@@ -1724,7 +1668,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.Manifest getManifests(int index) {
     return manifests_.get(index);
   }
-
   /**
    *
    *
@@ -1743,7 +1686,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.SpriteSheet> spriteSheets_;
-
   /**
    *
    *
@@ -1757,7 +1699,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.livestream.v1.SpriteSheet> getSpriteSheetsList() {
     return spriteSheets_;
   }
-
   /**
    *
    *
@@ -1772,7 +1713,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getSpriteSheetsOrBuilderList() {
     return spriteSheets_;
   }
-
   /**
    *
    *
@@ -1786,7 +1726,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getSpriteSheetsCount() {
     return spriteSheets_.size();
   }
-
   /**
    *
    *
@@ -1800,7 +1739,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.SpriteSheet getSpriteSheets(int index) {
     return spriteSheets_.get(index);
   }
-
   /**
    *
    *
@@ -1818,7 +1756,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAMING_STATE_FIELD_NUMBER = 14;
   private int streamingState_ = 0;
-
   /**
    *
    *
@@ -1836,7 +1773,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getStreamingStateValue() {
     return streamingState_;
   }
-
   /**
    *
    *
@@ -1861,7 +1797,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAMING_ERROR_FIELD_NUMBER = 18;
   private com.google.rpc.Status streamingError_;
-
   /**
    *
    *
@@ -1882,7 +1817,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreamingError() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1903,7 +1837,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStreamingError() {
     return streamingError_ == null ? com.google.rpc.Status.getDefaultInstance() : streamingError_;
   }
-
   /**
    *
    *
@@ -1925,7 +1858,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_CONFIG_FIELD_NUMBER = 19;
   private com.google.cloud.video.livestream.v1.LogConfig logConfig_;
-
   /**
    *
    *
@@ -1941,7 +1873,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLogConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1959,7 +1890,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.LogConfig.getDefaultInstance()
         : logConfig_;
   }
-
   /**
    *
    *
@@ -1978,7 +1908,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMECODE_CONFIG_FIELD_NUMBER = 21;
   private com.google.cloud.video.livestream.v1.TimecodeConfig timecodeConfig_;
-
   /**
    *
    *
@@ -1994,7 +1923,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimecodeConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -2012,7 +1940,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()
         : timecodeConfig_;
   }
-
   /**
    *
    *
@@ -2033,7 +1960,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Encryption> encryptions_;
-
   /**
    *
    *
@@ -2049,7 +1975,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList() {
     return encryptions_;
   }
-
   /**
    *
    *
@@ -2066,7 +1991,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getEncryptionsOrBuilderList() {
     return encryptions_;
   }
-
   /**
    *
    *
@@ -2082,7 +2006,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getEncryptionsCount() {
     return encryptions_.size();
   }
-
   /**
    *
    *
@@ -2098,7 +2021,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index) {
     return encryptions_.get(index);
   }
-
   /**
    *
    *
@@ -2118,7 +2040,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 25;
   private com.google.cloud.video.livestream.v1.InputConfig inputConfig_;
-
   /**
    *
    *
@@ -2135,7 +2056,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -2154,7 +2074,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -2174,7 +2093,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETENTION_CONFIG_FIELD_NUMBER = 26;
   private com.google.cloud.video.livestream.v1.RetentionConfig retentionConfig_;
-
   /**
    *
    *
@@ -2192,7 +2110,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetentionConfig() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -2212,7 +2129,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()
         : retentionConfig_;
   }
-
   /**
    *
    *
@@ -2236,7 +2152,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay> staticOverlays_;
-
   /**
    *
    *
@@ -2254,7 +2169,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getStaticOverlaysList() {
     return staticOverlays_;
   }
-
   /**
    *
    *
@@ -2272,7 +2186,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       getStaticOverlaysOrBuilderList() {
     return staticOverlays_;
   }
-
   /**
    *
    *
@@ -2289,7 +2202,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public int getStaticOverlaysCount() {
     return staticOverlays_.size();
   }
-
   /**
    *
    *
@@ -2306,7 +2218,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.StaticOverlay getStaticOverlays(int index) {
     return staticOverlays_.get(index);
   }
-
   /**
    *
    *
@@ -2714,7 +2625,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3545,7 +3455,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3569,7 +3478,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3593,7 +3501,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3616,7 +3523,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3635,7 +3541,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3571,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3683,7 +3587,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3706,7 +3609,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3731,7 +3633,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3753,7 +3654,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3783,7 +3683,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3805,7 +3704,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3822,7 +3720,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3843,7 +3740,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3878,7 +3774,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3895,7 +3790,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3918,7 +3812,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3943,7 +3836,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3965,7 +3857,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3995,7 +3886,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4017,7 +3907,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4034,7 +3923,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4055,7 +3943,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4109,7 +3996,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -4126,14 +4012,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -4147,7 +4031,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -4168,7 +4051,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4195,7 +4077,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4212,14 +4093,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -4240,7 +4119,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -4294,7 +4172,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return inputAttachmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4314,7 +4191,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return inputAttachmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4334,7 +4210,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return inputAttachmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4361,7 +4236,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4385,7 +4259,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4411,7 +4284,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4438,7 +4310,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4462,7 +4333,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4486,7 +4356,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4510,7 +4379,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4533,7 +4401,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4556,7 +4423,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4573,7 +4439,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getInputAttachmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4594,7 +4459,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return inputAttachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4615,7 +4479,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(inputAttachments_);
       }
     }
-
     /**
      *
      *
@@ -4633,7 +4496,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getInputAttachmentsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.InputAttachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4652,7 +4514,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.livestream.v1.InputAttachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4691,7 +4552,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object activeInput_ = "";
-
     /**
      *
      *
@@ -4718,7 +4578,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4745,7 +4604,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4771,7 +4629,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4793,7 +4650,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4827,7 +4683,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.Channel.Output.Builder,
             com.google.cloud.video.livestream.v1.Channel.OutputOrBuilder>
         outputBuilder_;
-
     /**
      *
      *
@@ -4845,7 +4700,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutput() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4869,7 +4723,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return outputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4895,7 +4748,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4919,7 +4771,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4951,7 +4802,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4974,7 +4824,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4992,7 +4841,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOutputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5014,7 +4862,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : output_;
       }
     }
-
     /**
      *
      *
@@ -5080,7 +4927,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5098,7 +4944,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5116,7 +4961,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5141,7 +4985,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5163,7 +5006,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5188,7 +5030,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5213,7 +5054,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5235,7 +5075,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5257,7 +5096,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5280,7 +5118,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5301,7 +5138,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5322,7 +5158,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5337,7 +5172,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         getElementaryStreamsBuilder(int index) {
       return getElementaryStreamsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5356,7 +5190,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return elementaryStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5375,7 +5208,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(elementaryStreams_);
       }
     }
-
     /**
      *
      *
@@ -5391,7 +5223,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getElementaryStreamsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.ElementaryStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5408,7 +5239,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.livestream.v1.ElementaryStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5477,7 +5307,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5494,7 +5323,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5511,7 +5339,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5534,7 +5361,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5555,7 +5381,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5578,7 +5403,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5601,7 +5425,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5622,7 +5445,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5643,7 +5465,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5664,7 +5485,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5684,7 +5504,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5704,7 +5523,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5717,7 +5535,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.MuxStream.Builder getMuxStreamsBuilder(int index) {
       return getMuxStreamsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5735,7 +5552,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return muxStreamsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5753,7 +5569,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(muxStreams_);
       }
     }
-
     /**
      *
      *
@@ -5767,7 +5582,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getMuxStreamsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.MuxStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5781,7 +5595,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getMuxStreamsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.MuxStream.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5846,7 +5659,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5863,7 +5675,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5880,7 +5691,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5903,7 +5713,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5924,7 +5733,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5947,7 +5755,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5970,7 +5777,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5991,7 +5797,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6012,7 +5817,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6033,7 +5837,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6053,7 +5856,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6073,7 +5875,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6086,7 +5887,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.Manifest.Builder getManifestsBuilder(int index) {
       return getManifestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6103,7 +5903,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return manifestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6121,7 +5920,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(manifests_);
       }
     }
-
     /**
      *
      *
@@ -6135,7 +5933,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getManifestsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.Manifest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6149,7 +5946,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getManifestsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.Manifest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6215,7 +6011,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6232,7 +6027,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6249,7 +6043,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6273,7 +6066,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6294,7 +6086,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6317,7 +6108,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6341,7 +6131,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6362,7 +6151,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6383,7 +6171,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6404,7 +6191,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6424,7 +6210,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6444,7 +6229,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6458,7 +6242,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSpriteSheetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6476,7 +6259,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return spriteSheetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6494,7 +6276,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spriteSheets_);
       }
     }
-
     /**
      *
      *
@@ -6508,7 +6289,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getSpriteSheetsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.SpriteSheet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6523,7 +6303,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getSpriteSheetsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.SpriteSheet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6556,7 +6335,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int streamingState_ = 0;
-
     /**
      *
      *
@@ -6574,7 +6352,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public int getStreamingStateValue() {
       return streamingState_;
     }
-
     /**
      *
      *
@@ -6595,7 +6372,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6617,7 +6393,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.livestream.v1.Channel.StreamingState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6642,7 +6417,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6667,7 +6441,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         streamingErrorBuilder_;
-
     /**
      *
      *
@@ -6687,7 +6460,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreamingError() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -6713,7 +6485,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return streamingErrorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6741,7 +6512,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6766,7 +6536,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6799,7 +6568,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6824,7 +6592,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6844,7 +6611,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStreamingErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6868,7 +6634,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : streamingError_;
       }
     }
-
     /**
      *
      *
@@ -6904,7 +6669,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.LogConfig.Builder,
             com.google.cloud.video.livestream.v1.LogConfigOrBuilder>
         logConfigBuilder_;
-
     /**
      *
      *
@@ -6919,7 +6683,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLogConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -6940,7 +6703,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return logConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6963,7 +6725,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6984,7 +6745,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7012,7 +6772,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7032,7 +6791,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7047,7 +6805,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7066,7 +6823,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : logConfig_;
       }
     }
-
     /**
      *
      *
@@ -7099,7 +6855,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.TimecodeConfig.Builder,
             com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder>
         timecodeConfigBuilder_;
-
     /**
      *
      *
@@ -7114,7 +6869,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimecodeConfig() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -7135,7 +6889,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return timecodeConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7158,7 +6911,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7179,7 +6931,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7208,7 +6959,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7228,7 +6978,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7243,7 +6992,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimecodeConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7263,7 +7011,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : timecodeConfig_;
       }
     }
-
     /**
      *
      *
@@ -7325,7 +7072,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7344,7 +7090,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7363,7 +7108,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7389,7 +7133,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7412,7 +7155,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7437,7 +7179,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7463,7 +7204,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7486,7 +7226,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7509,7 +7248,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7532,7 +7270,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7554,7 +7291,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7576,7 +7312,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7592,7 +7327,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEncryptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7612,7 +7346,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return encryptionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7632,7 +7365,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(encryptions_);
       }
     }
-
     /**
      *
      *
@@ -7648,7 +7380,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getEncryptionsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.Encryption.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7665,7 +7396,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getEncryptionsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.Encryption.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7705,7 +7435,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.InputConfig.Builder,
             com.google.cloud.video.livestream.v1.InputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -7721,7 +7450,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -7743,7 +7471,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7767,7 +7494,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7789,7 +7515,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7819,7 +7544,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7840,7 +7564,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7856,7 +7579,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7876,7 +7598,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : inputConfig_;
       }
     }
-
     /**
      *
      *
@@ -7910,7 +7631,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.RetentionConfig.Builder,
             com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder>
         retentionConfigBuilder_;
-
     /**
      *
      *
@@ -7927,7 +7647,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetentionConfig() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -7950,7 +7669,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return retentionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7975,7 +7693,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7998,7 +7715,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8030,7 +7746,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8052,7 +7767,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8070,7 +7784,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRetentionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8092,7 +7805,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             : retentionConfig_;
       }
     }
-
     /**
      *
      *
@@ -8159,7 +7871,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return staticOverlaysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8179,7 +7890,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return staticOverlaysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8199,7 +7909,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return staticOverlaysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8226,7 +7935,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8250,7 +7958,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8276,7 +7983,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8303,7 +8009,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8327,7 +8032,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8351,7 +8055,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8375,7 +8078,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8398,7 +8100,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8421,7 +8122,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8438,7 +8138,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getStaticOverlaysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8459,7 +8158,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return staticOverlaysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8480,7 +8178,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(staticOverlays_);
       }
     }
-
     /**
      *
      *
@@ -8497,7 +8194,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return getStaticOverlaysFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.StaticOverlay.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8516,7 +8212,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.livestream.v1.StaticOverlay.getDefaultInstance());
     }
-
     /**
      *
      *

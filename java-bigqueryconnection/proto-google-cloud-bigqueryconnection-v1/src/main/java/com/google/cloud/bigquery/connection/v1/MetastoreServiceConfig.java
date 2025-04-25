@@ -33,7 +33,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.MetastoreServiceConfig)
     MetastoreServiceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MetastoreServiceConfig.newBuilder() to construct.
   private MetastoreServiceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metastoreService_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +286,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -477,7 +473,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object metastoreService_ = "";
-
     /**
      *
      *
@@ -506,7 +501,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -535,7 +529,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

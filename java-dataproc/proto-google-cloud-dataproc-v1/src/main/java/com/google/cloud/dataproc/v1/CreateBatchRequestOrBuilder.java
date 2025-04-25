@@ -38,7 +38,6 @@ public interface CreateBatchRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CreateBatchRequestOrBuilder
    * @return Whether the batch field is set.
    */
   boolean hasBatch();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CreateBatchRequestOrBuilder
    * @return The batch.
    */
   com.google.cloud.dataproc.v1.Batch getBatch();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateBatchRequestOrBuilder
    * @return The batchId.
    */
   java.lang.String getBatchId();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface CreateBatchRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

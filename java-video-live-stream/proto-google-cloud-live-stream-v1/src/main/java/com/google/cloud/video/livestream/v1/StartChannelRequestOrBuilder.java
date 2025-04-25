@@ -39,7 +39,6 @@ public interface StartChannelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface StartChannelRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

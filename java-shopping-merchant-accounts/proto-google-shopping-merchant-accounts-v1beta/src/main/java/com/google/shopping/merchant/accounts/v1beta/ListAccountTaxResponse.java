@@ -35,7 +35,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListAccountTaxResponse)
     ListAccountTaxResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAccountTaxResponse.newBuilder() to construct.
   private ListAccountTaxResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.AccountTax> accountTaxes_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       getAccountTaxesList() {
     return accountTaxes_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       getAccountTaxesOrBuilderList() {
     return accountTaxes_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
   public int getAccountTaxesCount() {
     return accountTaxes_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
   public com.google.shopping.merchant.accounts.v1beta.AccountTax getAccountTaxes(int index) {
     return accountTaxes_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return accountTaxesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return accountTaxesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return accountTaxesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +834,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getAccountTaxesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return accountTaxesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(accountTaxes_);
       }
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       return getAccountTaxesFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.AccountTax.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.AccountTax.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1030,7 +1003,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1063,6 @@ public final class ListAccountTaxResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

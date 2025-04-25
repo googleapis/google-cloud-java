@@ -33,7 +33,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.MaxPodsConstraint)
     MaxPodsConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaxPodsConstraint.newBuilder() to construct.
   private MaxPodsConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
 
   public static final int MAX_PODS_PER_NODE_FIELD_NUMBER = 1;
   private long maxPodsPerNode_ = 0L;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -422,7 +419,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private long maxPodsPerNode_;
-
     /**
      *
      *
@@ -438,7 +434,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
     public long getMaxPodsPerNode() {
       return maxPodsPerNode_;
     }
-
     /**
      *
      *
@@ -458,7 +453,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

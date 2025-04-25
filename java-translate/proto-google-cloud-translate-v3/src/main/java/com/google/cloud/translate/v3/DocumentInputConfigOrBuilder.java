@@ -36,7 +36,6 @@ public interface DocumentInputConfigOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DocumentInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DocumentInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.translate.v3.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface DocumentInputConfigOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

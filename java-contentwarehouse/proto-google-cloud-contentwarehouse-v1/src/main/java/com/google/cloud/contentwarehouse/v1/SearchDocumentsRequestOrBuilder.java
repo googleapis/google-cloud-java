@@ -39,7 +39,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return Whether the documentQuery field is set.
    */
   boolean hasDocumentQuery();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The documentQuery.
    */
   com.google.cloud.contentwarehouse.v1.DocumentQuery getDocumentQuery();
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -230,7 +224,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -297,7 +290,6 @@ public interface SearchDocumentsRequestOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.HistogramQuery histogram_queries = 9;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.HistogramQuery> getHistogramQueriesList();
-
   /**
    *
    *
@@ -337,7 +329,6 @@ public interface SearchDocumentsRequestOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.HistogramQuery histogram_queries = 9;</code>
    */
   com.google.cloud.contentwarehouse.v1.HistogramQuery getHistogramQueries(int index);
-
   /**
    *
    *
@@ -377,7 +368,6 @@ public interface SearchDocumentsRequestOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.HistogramQuery histogram_queries = 9;</code>
    */
   int getHistogramQueriesCount();
-
   /**
    *
    *
@@ -418,7 +408,6 @@ public interface SearchDocumentsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.HistogramQueryOrBuilder>
       getHistogramQueriesOrBuilderList();
-
   /**
    *
    *
@@ -497,7 +486,6 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The enum numeric value on the wire for totalResultSize.
    */
   int getTotalResultSizeValue();
-
   /**
    *
    *

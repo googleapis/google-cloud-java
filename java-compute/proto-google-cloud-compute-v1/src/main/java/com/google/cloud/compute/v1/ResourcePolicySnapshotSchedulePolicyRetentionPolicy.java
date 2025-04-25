@@ -34,7 +34,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy)
     ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicySnapshotSchedulePolicyRetentionPolicy.newBuilder() to construct.
   private ResourcePolicySnapshotSchedulePolicyRetentionPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -107,13 +106,10 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * <code>UNDEFINED_ON_SOURCE_DISK_DELETE = 0;</code>
      */
     public static final int UNDEFINED_ON_SOURCE_DISK_DELETE_VALUE = 0;
-
     /** <code>APPLY_RETENTION_POLICY = 535071332;</code> */
     public static final int APPLY_RETENTION_POLICY_VALUE = 535071332;
-
     /** <code>KEEP_AUTO_SNAPSHOTS = 258925689;</code> */
     public static final int KEEP_AUTO_SNAPSHOTS_VALUE = 258925689;
-
     /** <code>UNSPECIFIED_ON_SOURCE_DISK_DELETE = 239140769;</code> */
     public static final int UNSPECIFIED_ON_SOURCE_DISK_DELETE_VALUE = 239140769;
 
@@ -211,7 +207,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
   private int bitField0_;
   public static final int MAX_RETENTION_DAYS_FIELD_NUMBER = 324296979;
   private int maxRetentionDays_ = 0;
-
   /**
    *
    *
@@ -227,7 +222,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
   public boolean hasMaxRetentionDays() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -248,7 +242,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object onSourceDiskDelete_ = "";
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
   public boolean hasOnSourceDiskDelete() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -290,7 +282,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       return s;
     }
   }
-
   /**
    *
    *
@@ -504,7 +495,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -720,7 +710,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     private int bitField0_;
 
     private int maxRetentionDays_;
-
     /**
      *
      *
@@ -736,7 +725,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     public boolean hasMaxRetentionDays() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     public int getMaxRetentionDays() {
       return maxRetentionDays_;
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     }
 
     private java.lang.Object onSourceDiskDelete_ = "";
-
     /**
      *
      *
@@ -808,7 +793,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     public boolean hasOnSourceDiskDelete() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface OidcTokenOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface OidcTokenOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
-
   /**
    *
    *

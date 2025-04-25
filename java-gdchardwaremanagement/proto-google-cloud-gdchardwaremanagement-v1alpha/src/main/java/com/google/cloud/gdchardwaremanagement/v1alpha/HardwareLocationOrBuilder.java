@@ -39,7 +39,6 @@ public interface HardwareLocationOrBuilder
    * @return The site.
    */
   java.lang.String getSite();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface HardwareLocationOrBuilder
    * @return The rackLocation.
    */
   java.lang.String getRackLocation();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface HardwareLocationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.RackSpace> getRackSpaceList();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface HardwareLocationOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.RackSpace getRackSpace(int index);
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface HardwareLocationOrBuilder
    * </code>
    */
   int getRackSpaceCount();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface HardwareLocationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.RackSpaceOrBuilder>
       getRackSpaceOrBuilderList();
-
   /**
    *
    *

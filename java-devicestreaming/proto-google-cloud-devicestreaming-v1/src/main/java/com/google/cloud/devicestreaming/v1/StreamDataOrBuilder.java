@@ -49,7 +49,6 @@ public interface StreamDataOrBuilder
    * @return Whether the data field is set.
    */
   boolean hasData();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface StreamDataOrBuilder
    * @return Whether the close field is set.
    */
   boolean hasClose();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface StreamDataOrBuilder
    * @return The close.
    */
   com.google.cloud.devicestreaming.v1.Close getClose();
-
   /**
    *
    *

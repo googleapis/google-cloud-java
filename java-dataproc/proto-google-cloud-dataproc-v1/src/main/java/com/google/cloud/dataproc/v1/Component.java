@@ -196,7 +196,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPONENT_UNSPECIFIED = 0;</code>
    */
   public static final int COMPONENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -211,7 +210,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ANACONDA = 5;</code>
    */
   public static final int ANACONDA_VALUE = 5;
-
   /**
    *
    *
@@ -222,7 +220,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DOCKER = 13;</code>
    */
   public static final int DOCKER_VALUE = 13;
-
   /**
    *
    *
@@ -233,7 +230,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DRUID = 9;</code>
    */
   public static final int DRUID_VALUE = 9;
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLINK = 14;</code>
    */
   public static final int FLINK_VALUE = 14;
-
   /**
    *
    *
@@ -255,7 +250,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HBASE = 11;</code>
    */
   public static final int HBASE_VALUE = 11;
-
   /**
    *
    *
@@ -266,7 +260,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HIVE_WEBHCAT = 3;</code>
    */
   public static final int HIVE_WEBHCAT_VALUE = 3;
-
   /**
    *
    *
@@ -277,7 +270,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HUDI = 18;</code>
    */
   public static final int HUDI_VALUE = 18;
-
   /**
    *
    *
@@ -288,7 +280,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JUPYTER = 1;</code>
    */
   public static final int JUPYTER_VALUE = 1;
-
   /**
    *
    *
@@ -299,7 +290,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   public static final int PRESTO_VALUE = 6;
-
   /**
    *
    *
@@ -310,7 +300,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRINO = 17;</code>
    */
   public static final int TRINO_VALUE = 17;
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RANGER = 12;</code>
    */
   public static final int RANGER_VALUE = 12;
-
   /**
    *
    *
@@ -332,7 +320,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLR = 10;</code>
    */
   public static final int SOLR_VALUE = 10;
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ZEPPELIN = 4;</code>
    */
   public static final int ZEPPELIN_VALUE = 4;
-
   /**
    *
    *

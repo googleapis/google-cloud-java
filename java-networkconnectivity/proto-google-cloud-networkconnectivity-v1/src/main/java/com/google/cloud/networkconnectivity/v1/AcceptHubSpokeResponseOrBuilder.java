@@ -36,7 +36,6 @@ public interface AcceptHubSpokeResponseOrBuilder
    * @return Whether the spoke field is set.
    */
   boolean hasSpoke();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AcceptHubSpokeResponseOrBuilder
    * @return The spoke.
    */
   com.google.cloud.networkconnectivity.v1.Spoke getSpoke();
-
   /**
    *
    *

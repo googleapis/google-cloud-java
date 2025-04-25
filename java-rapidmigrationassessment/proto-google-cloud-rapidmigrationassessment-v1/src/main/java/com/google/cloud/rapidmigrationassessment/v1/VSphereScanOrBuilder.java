@@ -36,7 +36,6 @@ public interface VSphereScanOrBuilder
    * @return The coreSource.
    */
   java.lang.String getCoreSource();
-
   /**
    *
    *

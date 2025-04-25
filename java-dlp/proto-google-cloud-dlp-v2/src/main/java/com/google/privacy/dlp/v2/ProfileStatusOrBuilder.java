@@ -37,7 +37,6 @@ public interface ProfileStatusOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ProfileStatusOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ProfileStatusOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ProfileStatusOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
-
   /**
    *
    *

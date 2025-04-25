@@ -33,7 +33,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy)
     ShieldedInstanceIntegrityPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShieldedInstanceIntegrityPolicy.newBuilder() to construct.
   private ShieldedInstanceIntegrityPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
   private int bitField0_;
   public static final int UPDATE_AUTO_LEARN_POLICY_FIELD_NUMBER = 245490215;
   private boolean updateAutoLearnPolicy_ = false;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
   public boolean hasUpdateAutoLearnPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -265,7 +262,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -451,7 +447,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     private int bitField0_;
 
     private boolean updateAutoLearnPolicy_;
-
     /**
      *
      *
@@ -467,7 +462,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     public boolean hasUpdateAutoLearnPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -483,7 +477,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     public boolean getUpdateAutoLearnPolicy() {
       return updateAutoLearnPolicy_;
     }
-
     /**
      *
      *
@@ -503,7 +496,6 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

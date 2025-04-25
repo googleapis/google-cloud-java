@@ -38,7 +38,6 @@ public interface ComplianceVersionOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ComplianceVersionOrBuilder
    * @return The benchmarkDocument.
    */
   java.lang.String getBenchmarkDocument();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ComplianceVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *

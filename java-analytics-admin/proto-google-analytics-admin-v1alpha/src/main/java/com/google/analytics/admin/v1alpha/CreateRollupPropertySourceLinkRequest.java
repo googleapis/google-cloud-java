@@ -34,7 +34,6 @@ public final class CreateRollupPropertySourceLinkRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest)
     CreateRollupPropertySourceLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateRollupPropertySourceLinkRequest.newBuilder() to construct.
   private CreateRollupPropertySourceLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateRollupPropertySourceLinkRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateRollupPropertySourceLinkRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreateRollupPropertySourceLinkRequest
 
   public static final int ROLLUP_PROPERTY_SOURCE_LINK_FIELD_NUMBER = 2;
   private com.google.analytics.admin.v1alpha.RollupPropertySourceLink rollupPropertySourceLink_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateRollupPropertySourceLinkRequest
   public boolean hasRollupPropertySourceLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class CreateRollupPropertySourceLinkRequest
         ? com.google.analytics.admin.v1alpha.RollupPropertySourceLink.getDefaultInstance()
         : rollupPropertySourceLink_;
   }
-
   /**
    *
    *
@@ -364,7 +358,6 @@ public final class CreateRollupPropertySourceLinkRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +585,6 @@ public final class CreateRollupPropertySourceLinkRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -618,7 +610,6 @@ public final class CreateRollupPropertySourceLinkRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -644,7 +635,6 @@ public final class CreateRollupPropertySourceLinkRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class CreateRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class CreateRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class CreateRollupPropertySourceLinkRequest
             com.google.analytics.admin.v1alpha.RollupPropertySourceLink.Builder,
             com.google.analytics.admin.v1alpha.RollupPropertySourceLinkOrBuilder>
         rollupPropertySourceLinkBuilder_;
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class CreateRollupPropertySourceLinkRequest
     public boolean hasRollupPropertySourceLink() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class CreateRollupPropertySourceLinkRequest
         return rollupPropertySourceLinkBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class CreateRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class CreateRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class CreateRollupPropertySourceLinkRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class CreateRollupPropertySourceLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class CreateRollupPropertySourceLinkRequest
       onChanged();
       return getRollupPropertySourceLinkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class CreateRollupPropertySourceLinkRequest
             : rollupPropertySourceLink_;
       }
     }
-
     /**
      *
      *

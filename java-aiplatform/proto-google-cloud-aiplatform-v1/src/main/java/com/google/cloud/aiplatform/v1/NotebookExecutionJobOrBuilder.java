@@ -38,7 +38,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the dataformRepositorySource field is set.
    */
   boolean hasDataformRepositorySource();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface NotebookExecutionJobOrBuilder
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob.DataformRepositorySource
       getDataformRepositorySource();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the gcsNotebookSource field is set.
    */
   boolean hasGcsNotebookSource();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The gcsNotebookSource.
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob.GcsNotebookSource getGcsNotebookSource();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the directNotebookSource field is set.
    */
   boolean hasDirectNotebookSource();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface NotebookExecutionJobOrBuilder
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob.DirectNotebookSource
       getDirectNotebookSource();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the notebookRuntimeTemplateResourceName field is set.
    */
   boolean hasNotebookRuntimeTemplateResourceName();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The notebookRuntimeTemplateResourceName.
    */
   java.lang.String getNotebookRuntimeTemplateResourceName();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the customEnvironmentSpec field is set.
    */
   boolean hasCustomEnvironmentSpec();
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public interface NotebookExecutionJobOrBuilder
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob.CustomEnvironmentSpec
       getCustomEnvironmentSpec();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the gcsOutputUri field is set.
    */
   boolean hasGcsOutputUri();
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The gcsOutputUri.
    */
   java.lang.String getGcsOutputUri();
-
   /**
    *
    *
@@ -305,7 +293,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the executionUser field is set.
    */
   boolean hasExecutionUser();
-
   /**
    *
    *
@@ -318,7 +305,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The executionUser.
    */
   java.lang.String getExecutionUser();
-
   /**
    *
    *
@@ -344,7 +330,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
-
   /**
    *
    *
@@ -357,7 +342,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -384,7 +368,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the workbenchRuntime field is set.
    */
   boolean hasWorkbenchRuntime();
-
   /**
    *
    *
@@ -398,7 +381,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The workbenchRuntime.
    */
   com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime getWorkbenchRuntime();
-
   /**
    *
    *
@@ -425,7 +407,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -453,7 +434,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -480,7 +460,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the executionTimeout field is set.
    */
   boolean hasExecutionTimeout();
-
   /**
    *
    *
@@ -493,7 +472,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The executionTimeout.
    */
   com.google.protobuf.Duration getExecutionTimeout();
-
   /**
    *
    *
@@ -521,7 +499,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The scheduleResourceName.
    */
   java.lang.String getScheduleResourceName();
-
   /**
    *
    *
@@ -553,7 +530,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The enum numeric value on the wire for jobState.
    */
   int getJobStateValue();
-
   /**
    *
    *
@@ -583,7 +559,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -598,7 +573,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *
@@ -625,7 +599,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -639,7 +612,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -666,7 +638,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -681,7 +652,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -713,7 +683,6 @@ public interface NotebookExecutionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -732,11 +701,9 @@ public interface NotebookExecutionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -755,7 +722,6 @@ public interface NotebookExecutionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -778,7 +744,6 @@ public interface NotebookExecutionJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -811,7 +776,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The kernelName.
    */
   java.lang.String getKernelName();
-
   /**
    *
    *
@@ -841,7 +805,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -857,7 +820,6 @@ public interface NotebookExecutionJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *

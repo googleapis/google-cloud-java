@@ -33,7 +33,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SiteVerificationInfo)
     SiteVerificationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SiteVerificationInfo.newBuilder() to construct.
   private SiteVerificationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
      * <code>SITE_VERIFICATION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int SITE_VERIFICATION_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
      * <code>VERIFIED = 1;</code>
      */
     public static final int VERIFIED_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
      * <code>UNVERIFIED = 2;</code>
      */
     public static final int UNVERIFIED_VALUE = 2;
-
     /**
      *
      *
@@ -255,7 +251,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int SITE_VERIFICATION_STATE_FIELD_NUMBER = 1;
   private int siteVerificationState_ = 0;
-
   /**
    *
    *
@@ -273,7 +268,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
   public int getSiteVerificationStateValue() {
     return siteVerificationState_;
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
 
   public static final int VERIFY_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp verifyTime_;
-
   /**
    *
    *
@@ -317,7 +310,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
   public boolean hasVerifyTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -333,7 +325,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getVerifyTime() {
     return verifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : verifyTime_;
   }
-
   /**
    *
    *
@@ -528,7 +519,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -740,7 +730,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int siteVerificationState_ = 0;
-
     /**
      *
      *
@@ -758,7 +747,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
     public int getSiteVerificationStateValue() {
       return siteVerificationState_;
     }
-
     /**
      *
      *
@@ -779,7 +767,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +791,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -829,7 +815,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +841,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         verifyTimeBuilder_;
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
     public boolean hasVerifyTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
         return verifyTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +962,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return getVerifyTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
             : verifyTime_;
       }
     }
-
     /**
      *
      *

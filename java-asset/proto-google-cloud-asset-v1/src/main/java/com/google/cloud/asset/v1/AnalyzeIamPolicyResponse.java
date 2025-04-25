@@ -34,7 +34,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeIamPolicyResponse)
     AnalyzeIamPolicyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeIamPolicyResponse.newBuilder() to construct.
   private AnalyzeIamPolicyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * @return Whether the analysisQuery field is set.
      */
     boolean hasAnalysisQuery();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * @return The analysisQuery.
      */
     com.google.cloud.asset.v1.IamPolicyAnalysisQuery getAnalysisQuery();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
      */
     java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisResult> getAnalysisResultsList();
-
     /**
      *
      *
@@ -132,7 +128,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
      */
     com.google.cloud.asset.v1.IamPolicyAnalysisResult getAnalysisResults(int index);
-
     /**
      *
      *
@@ -145,7 +140,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
      */
     int getAnalysisResultsCount();
-
     /**
      *
      *
@@ -159,7 +153,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.cloud.asset.v1.IamPolicyAnalysisResultOrBuilder>
         getAnalysisResultsOrBuilderList();
-
     /**
      *
      *
@@ -199,7 +192,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisState non_critical_errors = 5;</code>
      */
     java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisState> getNonCriticalErrorsList();
-
     /**
      *
      *
@@ -210,7 +202,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisState non_critical_errors = 5;</code>
      */
     com.google.cloud.asset.v1.IamPolicyAnalysisState getNonCriticalErrors(int index);
-
     /**
      *
      *
@@ -221,7 +212,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisState non_critical_errors = 5;</code>
      */
     int getNonCriticalErrorsCount();
-
     /**
      *
      *
@@ -233,7 +223,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.cloud.asset.v1.IamPolicyAnalysisStateOrBuilder>
         getNonCriticalErrorsOrBuilderList();
-
     /**
      *
      *
@@ -246,7 +235,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     com.google.cloud.asset.v1.IamPolicyAnalysisStateOrBuilder getNonCriticalErrorsOrBuilder(
         int index);
   }
-
   /**
    *
    *
@@ -261,7 +249,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis)
       IamPolicyAnalysisOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IamPolicyAnalysis.newBuilder() to construct.
     private IamPolicyAnalysis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -296,7 +283,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int ANALYSIS_QUERY_FIELD_NUMBER = 1;
     private com.google.cloud.asset.v1.IamPolicyAnalysisQuery analysisQuery_;
-
     /**
      *
      *
@@ -312,7 +298,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public boolean hasAnalysisQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -330,7 +315,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()
           : analysisQuery_;
     }
-
     /**
      *
      *
@@ -351,7 +335,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisResult> analysisResults_;
-
     /**
      *
      *
@@ -368,7 +351,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         getAnalysisResultsList() {
       return analysisResults_;
     }
-
     /**
      *
      *
@@ -385,7 +367,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         getAnalysisResultsOrBuilderList() {
       return analysisResults_;
     }
-
     /**
      *
      *
@@ -401,7 +382,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public int getAnalysisResultsCount() {
       return analysisResults_.size();
     }
-
     /**
      *
      *
@@ -417,7 +397,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public com.google.cloud.asset.v1.IamPolicyAnalysisResult getAnalysisResults(int index) {
       return analysisResults_.get(index);
     }
-
     /**
      *
      *
@@ -437,7 +416,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
 
     public static final int FULLY_EXPLORED_FIELD_NUMBER = 3;
     private boolean fullyExplored_ = false;
-
     /**
      *
      *
@@ -460,7 +438,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisState> nonCriticalErrors_;
-
     /**
      *
      *
@@ -475,7 +452,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         getNonCriticalErrorsList() {
       return nonCriticalErrors_;
     }
-
     /**
      *
      *
@@ -490,7 +466,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         getNonCriticalErrorsOrBuilderList() {
       return nonCriticalErrors_;
     }
-
     /**
      *
      *
@@ -504,7 +479,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public int getNonCriticalErrorsCount() {
       return nonCriticalErrors_.size();
     }
-
     /**
      *
      *
@@ -518,7 +492,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public com.google.cloud.asset.v1.IamPolicyAnalysisState getNonCriticalErrors(int index) {
       return nonCriticalErrors_.get(index);
     }
-
     /**
      *
      *
@@ -734,7 +707,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder,
               com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder>
           analysisQueryBuilder_;
-
       /**
        *
        *
@@ -1099,7 +1070,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       public boolean hasAnalysisQuery() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1120,7 +1090,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return analysisQueryBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1143,7 +1112,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1164,7 +1132,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1193,7 +1160,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1213,7 +1179,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1228,7 +1193,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         onChanged();
         return getAnalysisQueryFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1247,7 +1211,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               : analysisQuery_;
         }
       }
-
       /**
        *
        *
@@ -1311,7 +1274,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return analysisResultsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1330,7 +1292,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return analysisResultsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1349,7 +1310,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return analysisResultsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1375,7 +1335,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1398,7 +1357,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1423,7 +1381,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1449,7 +1406,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1472,7 +1428,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1495,7 +1450,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1518,7 +1472,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1540,7 +1493,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1562,7 +1514,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1578,7 +1529,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           int index) {
         return getAnalysisResultsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1598,7 +1548,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return analysisResultsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1618,7 +1567,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(analysisResults_);
         }
       }
-
       /**
        *
        *
@@ -1634,7 +1582,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return getAnalysisResultsFieldBuilder()
             .addBuilder(com.google.cloud.asset.v1.IamPolicyAnalysisResult.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1652,7 +1599,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             .addBuilder(
                 index, com.google.cloud.asset.v1.IamPolicyAnalysisResult.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1690,7 +1636,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
 
       private boolean fullyExplored_;
-
       /**
        *
        *
@@ -1708,7 +1653,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       public boolean getFullyExplored() {
         return fullyExplored_;
       }
-
       /**
        *
        *
@@ -1730,7 +1674,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1787,7 +1730,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return nonCriticalErrorsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1805,7 +1747,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return nonCriticalErrorsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1823,7 +1764,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return nonCriticalErrorsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1848,7 +1788,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1870,7 +1809,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1894,7 +1832,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1919,7 +1856,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1941,7 +1877,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1963,7 +1898,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1985,7 +1919,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2006,7 +1939,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2027,7 +1959,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2042,7 +1973,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           int index) {
         return getNonCriticalErrorsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2061,7 +1991,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return nonCriticalErrorsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2080,7 +2009,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(nonCriticalErrors_);
         }
       }
-
       /**
        *
        *
@@ -2096,7 +2024,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return getNonCriticalErrorsFieldBuilder()
             .addBuilder(com.google.cloud.asset.v1.IamPolicyAnalysisState.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2113,7 +2040,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             .addBuilder(
                 index, com.google.cloud.asset.v1.IamPolicyAnalysisState.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2219,7 +2145,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int MAIN_ANALYSIS_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis mainAnalysis_;
-
   /**
    *
    *
@@ -2236,7 +2161,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
   public boolean hasMainAnalysis() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2255,7 +2179,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         ? com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.getDefaultInstance()
         : mainAnalysis_;
   }
-
   /**
    *
    *
@@ -2279,14 +2202,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis>
       serviceAccountImpersonationAnalysis_;
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -2298,14 +2220,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       getServiceAccountImpersonationAnalysisList() {
     return serviceAccountImpersonationAnalysis_;
   }
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -2318,14 +2239,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       getServiceAccountImpersonationAnalysisOrBuilderList() {
     return serviceAccountImpersonationAnalysis_;
   }
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -2336,14 +2256,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
   public int getServiceAccountImpersonationAnalysisCount() {
     return serviceAccountImpersonationAnalysis_.size();
   }
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -2355,14 +2274,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       getServiceAccountImpersonationAnalysis(int index) {
     return serviceAccountImpersonationAnalysis_.get(index);
   }
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -2377,7 +2295,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
 
   public static final int FULLY_EXPLORED_FIELD_NUMBER = 3;
   private boolean fullyExplored_ = false;
-
   /**
    *
    *
@@ -2585,7 +2502,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2871,7 +2787,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.Builder,
             com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder>
         mainAnalysisBuilder_;
-
     /**
      *
      *
@@ -2887,7 +2802,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public boolean hasMainAnalysis() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2910,7 +2824,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return mainAnalysisBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2935,7 +2848,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2958,7 +2870,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2990,7 +2901,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3011,7 +2921,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3028,7 +2937,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       onChanged();
       return getMainAnalysisFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3050,7 +2958,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             : mainAnalysis_;
       }
     }
-
     /**
      *
      *
@@ -3102,8 +3009,8 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3118,14 +3025,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return serviceAccountImpersonationAnalysisBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3139,14 +3045,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return serviceAccountImpersonationAnalysisBuilder_.getCount();
       }
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3161,14 +3066,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return serviceAccountImpersonationAnalysisBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3189,14 +3093,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3216,14 +3119,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3244,14 +3146,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3272,14 +3173,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3298,14 +3198,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3325,14 +3224,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3353,14 +3251,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3377,14 +3274,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3401,14 +3297,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3419,14 +3314,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         getServiceAccountImpersonationAnalysisBuilder(int index) {
       return getServiceAccountImpersonationAnalysisFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3441,14 +3335,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return serviceAccountImpersonationAnalysisBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3464,14 +3357,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(serviceAccountImpersonationAnalysis_);
       }
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3485,14 +3377,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
                   .getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3507,14 +3398,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
                   .getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
      * The service account impersonation analysis if
-     * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-     * is enabled.
+     * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -3548,7 +3438,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     }
 
     private boolean fullyExplored_;
-
     /**
      *
      *
@@ -3568,7 +3457,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public boolean getFullyExplored() {
       return fullyExplored_;
     }
-
     /**
      *
      *
@@ -3592,7 +3480,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

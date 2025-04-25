@@ -37,7 +37,6 @@ public interface IsInstanceUpgradeableRequestOrBuilder
    * @return The notebookInstance.
    */
   java.lang.String getNotebookInstance();
-
   /**
    *
    *

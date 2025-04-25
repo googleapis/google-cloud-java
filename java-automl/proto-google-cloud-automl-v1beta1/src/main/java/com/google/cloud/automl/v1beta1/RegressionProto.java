@@ -99,7 +99,6 @@ public final class RegressionProto {
      */
     float getRootMeanSquaredLogError();
   }
-
   /**
    *
    *
@@ -115,7 +114,6 @@ public final class RegressionProto {
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.RegressionEvaluationMetrics)
       RegressionEvaluationMetricsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RegressionEvaluationMetrics.newBuilder() to construct.
     private RegressionEvaluationMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -147,7 +145,6 @@ public final class RegressionProto {
 
     public static final int ROOT_MEAN_SQUARED_ERROR_FIELD_NUMBER = 1;
     private float rootMeanSquaredError_ = 0F;
-
     /**
      *
      *
@@ -166,7 +163,6 @@ public final class RegressionProto {
 
     public static final int MEAN_ABSOLUTE_ERROR_FIELD_NUMBER = 2;
     private float meanAbsoluteError_ = 0F;
-
     /**
      *
      *
@@ -185,7 +181,6 @@ public final class RegressionProto {
 
     public static final int MEAN_ABSOLUTE_PERCENTAGE_ERROR_FIELD_NUMBER = 3;
     private float meanAbsolutePercentageError_ = 0F;
-
     /**
      *
      *
@@ -205,7 +200,6 @@ public final class RegressionProto {
 
     public static final int R_SQUARED_FIELD_NUMBER = 4;
     private float rSquared_ = 0F;
-
     /**
      *
      *
@@ -224,7 +218,6 @@ public final class RegressionProto {
 
     public static final int ROOT_MEAN_SQUARED_LOG_ERROR_FIELD_NUMBER = 5;
     private float rootMeanSquaredLogError_ = 0F;
-
     /**
      *
      *
@@ -451,7 +444,6 @@ public final class RegressionProto {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -701,7 +693,6 @@ public final class RegressionProto {
       private int bitField0_;
 
       private float rootMeanSquaredError_;
-
       /**
        *
        *
@@ -717,7 +708,6 @@ public final class RegressionProto {
       public float getRootMeanSquaredError() {
         return rootMeanSquaredError_;
       }
-
       /**
        *
        *
@@ -737,7 +727,6 @@ public final class RegressionProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -757,7 +746,6 @@ public final class RegressionProto {
       }
 
       private float meanAbsoluteError_;
-
       /**
        *
        *
@@ -773,7 +761,6 @@ public final class RegressionProto {
       public float getMeanAbsoluteError() {
         return meanAbsoluteError_;
       }
-
       /**
        *
        *
@@ -793,7 +780,6 @@ public final class RegressionProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -813,7 +799,6 @@ public final class RegressionProto {
       }
 
       private float meanAbsolutePercentageError_;
-
       /**
        *
        *
@@ -830,7 +815,6 @@ public final class RegressionProto {
       public float getMeanAbsolutePercentageError() {
         return meanAbsolutePercentageError_;
       }
-
       /**
        *
        *
@@ -851,7 +835,6 @@ public final class RegressionProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -872,7 +855,6 @@ public final class RegressionProto {
       }
 
       private float rSquared_;
-
       /**
        *
        *
@@ -888,7 +870,6 @@ public final class RegressionProto {
       public float getRSquared() {
         return rSquared_;
       }
-
       /**
        *
        *
@@ -908,7 +889,6 @@ public final class RegressionProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +908,6 @@ public final class RegressionProto {
       }
 
       private float rootMeanSquaredLogError_;
-
       /**
        *
        *
@@ -944,7 +923,6 @@ public final class RegressionProto {
       public float getRootMeanSquaredLogError() {
         return rootMeanSquaredLogError_;
       }
-
       /**
        *
        *
@@ -964,7 +942,6 @@ public final class RegressionProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *

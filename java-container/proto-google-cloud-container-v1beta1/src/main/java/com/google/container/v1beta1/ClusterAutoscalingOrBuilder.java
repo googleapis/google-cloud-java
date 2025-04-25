@@ -48,7 +48,6 @@ public interface ClusterAutoscalingOrBuilder
    * <code>repeated .google.container.v1beta1.ResourceLimit resource_limits = 2;</code>
    */
   java.util.List<com.google.container.v1beta1.ResourceLimit> getResourceLimitsList();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface ClusterAutoscalingOrBuilder
    * <code>repeated .google.container.v1beta1.ResourceLimit resource_limits = 2;</code>
    */
   com.google.container.v1beta1.ResourceLimit getResourceLimits(int index);
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface ClusterAutoscalingOrBuilder
    * <code>repeated .google.container.v1beta1.ResourceLimit resource_limits = 2;</code>
    */
   int getResourceLimitsCount();
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface ClusterAutoscalingOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.ResourceLimitOrBuilder>
       getResourceLimitsOrBuilderList();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ClusterAutoscalingOrBuilder
    * @return The enum numeric value on the wire for autoscalingProfile.
    */
   int getAutoscalingProfileValue();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ClusterAutoscalingOrBuilder
    * @return Whether the autoprovisioningNodePoolDefaults field is set.
    */
   boolean hasAutoprovisioningNodePoolDefaults();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface ClusterAutoscalingOrBuilder
    */
   com.google.container.v1beta1.AutoprovisioningNodePoolDefaults
       getAutoprovisioningNodePoolDefaults();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface ClusterAutoscalingOrBuilder
    * @return A list containing the autoprovisioningLocations.
    */
   java.util.List<java.lang.String> getAutoprovisioningLocationsList();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface ClusterAutoscalingOrBuilder
    * @return The count of autoprovisioningLocations.
    */
   int getAutoprovisioningLocationsCount();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface ClusterAutoscalingOrBuilder
    * @return The autoprovisioningLocations at the given index.
    */
   java.lang.String getAutoprovisioningLocations(int index);
-
   /**
    *
    *

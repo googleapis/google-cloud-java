@@ -38,7 +38,6 @@ public interface AutoMlTextSentimentOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface AutoMlTextSentimentOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTextSentimentInputs
       getInputs();
-
   /**
    *
    *

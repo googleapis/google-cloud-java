@@ -36,7 +36,6 @@ public interface NotificationMessageOrBuilder
    * @return The notificationConfigName.
    */
   java.lang.String getNotificationConfigName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface NotificationMessageOrBuilder
    * @return Whether the finding field is set.
    */
   boolean hasFinding();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface NotificationMessageOrBuilder
    * @return The finding.
    */
   com.google.cloud.securitycenter.v1.Finding getFinding();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface NotificationMessageOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface NotificationMessageOrBuilder
    * @return The resource.
    */
   com.google.cloud.securitycenter.v1.Resource getResource();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface EmojiReactionSummaryOrBuilder
    * @return Whether the emoji field is set.
    */
   boolean hasEmoji();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EmojiReactionSummaryOrBuilder
    * @return The emoji.
    */
   com.google.chat.v1.Emoji getEmoji();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface EmojiReactionSummaryOrBuilder
    * @return Whether the reactionCount field is set.
    */
   boolean hasReactionCount();
-
   /**
    *
    *

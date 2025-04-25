@@ -34,7 +34,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.Vertex)
     VertexOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Vertex.newBuilder() to construct.
   private Vertex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
 
   public static final int X_FIELD_NUMBER = 1;
   private int x_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
 
   public static final int Y_FIELD_NUMBER = 2;
   private int y_ = 0;
-
   /**
    *
    *
@@ -269,7 +266,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -465,7 +461,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int x_;
-
     /**
      *
      *
@@ -481,7 +476,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     public int getX() {
       return x_;
     }
-
     /**
      *
      *
@@ -501,7 +495,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -521,7 +514,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int y_;
-
     /**
      *
      *
@@ -537,7 +529,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     public int getY() {
       return y_;
     }
-
     /**
      *
      *
@@ -557,7 +548,6 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

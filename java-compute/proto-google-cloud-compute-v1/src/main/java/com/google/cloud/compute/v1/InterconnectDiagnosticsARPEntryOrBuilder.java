@@ -36,7 +36,6 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * @return Whether the macAddress field is set.
    */
   boolean hasMacAddress();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * @return The macAddress.
    */
   java.lang.String getMacAddress();
-
   /**
    *
    *

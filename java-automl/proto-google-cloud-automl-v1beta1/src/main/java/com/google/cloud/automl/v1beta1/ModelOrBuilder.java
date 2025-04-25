@@ -37,7 +37,6 @@ public interface ModelOrBuilder
    * @return Whether the translationModelMetadata field is set.
    */
   boolean hasTranslationModelMetadata();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ModelOrBuilder
    * @return The translationModelMetadata.
    */
   com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ModelOrBuilder
    * @return Whether the imageClassificationModelMetadata field is set.
    */
   boolean hasImageClassificationModelMetadata();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
       getImageClassificationModelMetadata();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ModelOrBuilder
    * @return Whether the textClassificationModelMetadata field is set.
    */
   boolean hasTextClassificationModelMetadata();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
       getTextClassificationModelMetadata();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface ModelOrBuilder
    * @return Whether the imageObjectDetectionModelMetadata field is set.
    */
   boolean hasImageObjectDetectionModelMetadata();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
       getImageObjectDetectionModelMetadata();
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public interface ModelOrBuilder
    * @return Whether the videoClassificationModelMetadata field is set.
    */
   boolean hasVideoClassificationModelMetadata();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
       getVideoClassificationModelMetadata();
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public interface ModelOrBuilder
    * @return Whether the videoObjectTrackingModelMetadata field is set.
    */
   boolean hasVideoObjectTrackingModelMetadata();
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.VideoObjectTrackingModelMetadata
       getVideoObjectTrackingModelMetadata();
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public interface ModelOrBuilder
    * @return Whether the textExtractionModelMetadata field is set.
    */
   boolean hasTextExtractionModelMetadata();
-
   /**
    *
    *
@@ -319,7 +306,6 @@ public interface ModelOrBuilder
    * @return The textExtractionModelMetadata.
    */
   com.google.cloud.automl.v1beta1.TextExtractionModelMetadata getTextExtractionModelMetadata();
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public interface ModelOrBuilder
    * @return Whether the tablesModelMetadata field is set.
    */
   boolean hasTablesModelMetadata();
-
   /**
    *
    *
@@ -359,7 +344,6 @@ public interface ModelOrBuilder
    * @return The tablesModelMetadata.
    */
   com.google.cloud.automl.v1beta1.TablesModelMetadata getTablesModelMetadata();
-
   /**
    *
    *
@@ -385,7 +369,6 @@ public interface ModelOrBuilder
    * @return Whether the textSentimentModelMetadata field is set.
    */
   boolean hasTextSentimentModelMetadata();
-
   /**
    *
    *
@@ -400,7 +383,6 @@ public interface ModelOrBuilder
    * @return The textSentimentModelMetadata.
    */
   com.google.cloud.automl.v1beta1.TextSentimentModelMetadata getTextSentimentModelMetadata();
-
   /**
    *
    *
@@ -428,7 +410,6 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -458,7 +439,6 @@ public interface ModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -488,7 +468,6 @@ public interface ModelOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
-
   /**
    *
    *
@@ -515,7 +494,6 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -528,7 +506,6 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -552,7 +529,6 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -565,7 +541,6 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -590,7 +565,6 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for deploymentState.
    */
   int getDeploymentStateValue();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The participant.
    */
   java.lang.String getParticipant();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the textInput field is set.
    */
   boolean hasTextInput();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The textInput.
    */
   com.google.cloud.dialogflow.v2beta1.TextInput getTextInput();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the audioInput field is set.
    */
   boolean hasAudioInput();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The audioInput.
    */
   com.google.cloud.dialogflow.v2beta1.AudioInput getAudioInput();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the eventInput field is set.
    */
   boolean hasEventInput();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The eventInput.
    */
   com.google.cloud.dialogflow.v2beta1.EventInput getEventInput();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the suggestionInput field is set.
    */
   boolean hasSuggestionInput();
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The suggestionInput.
    */
   com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the intentInput field is set.
    */
   boolean hasIntentInput();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The intentInput.
    */
   com.google.cloud.dialogflow.v2beta1.IntentInput getIntentInput();
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the replyAudioConfig field is set.
    */
   boolean hasReplyAudioConfig();
-
   /**
    *
    *
@@ -276,7 +264,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The replyAudioConfig.
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getReplyAudioConfig();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
-
   /**
    *
    *
@@ -317,7 +303,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2beta1.QueryParameters getQueryParams();
-
   /**
    *
    *
@@ -341,7 +326,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the assistQueryParams field is set.
    */
   boolean hasAssistQueryParams();
-
   /**
    *
    *
@@ -354,7 +338,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The assistQueryParams.
    */
   com.google.cloud.dialogflow.v2beta1.AssistQueryParameters getAssistQueryParams();
-
   /**
    *
    *
@@ -384,7 +367,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the cxParameters field is set.
    */
   boolean hasCxParameters();
-
   /**
    *
    *
@@ -402,7 +384,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The cxParameters.
    */
   com.google.protobuf.Struct getCxParameters();
-
   /**
    *
    *
@@ -444,7 +425,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The cxCurrentPage.
    */
   java.lang.String getCxCurrentPage();
-
   /**
    *
    *
@@ -499,7 +479,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return Whether the messageSendTime field is set.
    */
   boolean hasMessageSendTime();
-
   /**
    *
    *
@@ -528,7 +507,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The messageSendTime.
    */
   com.google.protobuf.Timestamp getMessageSendTime();
-
   /**
    *
    *
@@ -570,7 +548,6 @@ public interface AnalyzeContentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

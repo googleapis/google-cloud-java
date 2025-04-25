@@ -85,7 +85,6 @@ public enum DeviceManagementLevel implements com.google.protobuf.ProtocolMessage
    * <code>MANAGEMENT_UNSPECIFIED = 0;</code>
    */
   public static final int MANAGEMENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public enum DeviceManagementLevel implements com.google.protobuf.ProtocolMessage
    * <code>NONE = 1;</code>
    */
   public static final int NONE_VALUE = 1;
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public enum DeviceManagementLevel implements com.google.protobuf.ProtocolMessage
    * <code>BASIC = 2;</code>
    */
   public static final int BASIC_VALUE = 2;
-
   /**
    *
    *

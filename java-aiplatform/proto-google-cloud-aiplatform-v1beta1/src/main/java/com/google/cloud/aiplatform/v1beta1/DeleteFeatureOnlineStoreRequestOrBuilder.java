@@ -40,7 +40,6 @@ public interface DeleteFeatureOnlineStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

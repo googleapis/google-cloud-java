@@ -34,7 +34,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.appengine.v1.DiskUtilization)
     DiskUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskUtilization.newBuilder() to construct.
   private DiskUtilization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
 
   public static final int TARGET_WRITE_BYTES_PER_SECOND_FIELD_NUMBER = 14;
   private int targetWriteBytesPerSecond_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
 
   public static final int TARGET_WRITE_OPS_PER_SECOND_FIELD_NUMBER = 15;
   private int targetWriteOpsPerSecond_ = 0;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
 
   public static final int TARGET_READ_BYTES_PER_SECOND_FIELD_NUMBER = 16;
   private int targetReadBytesPerSecond_ = 0;
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
 
   public static final int TARGET_READ_OPS_PER_SECOND_FIELD_NUMBER = 17;
   private int targetReadOpsPerSecond_ = 0;
-
   /**
    *
    *
@@ -325,7 +320,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -547,7 +541,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int targetWriteBytesPerSecond_;
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public int getTargetWriteBytesPerSecond() {
       return targetWriteBytesPerSecond_;
     }
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     }
 
     private int targetWriteOpsPerSecond_;
-
     /**
      *
      *
@@ -619,7 +609,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public int getTargetWriteOpsPerSecond() {
       return targetWriteOpsPerSecond_;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +647,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     }
 
     private int targetReadBytesPerSecond_;
-
     /**
      *
      *
@@ -675,7 +662,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public int getTargetReadBytesPerSecond() {
       return targetReadBytesPerSecond_;
     }
-
     /**
      *
      *
@@ -695,7 +681,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +700,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     }
 
     private int targetReadOpsPerSecond_;
-
     /**
      *
      *
@@ -731,7 +715,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public int getTargetReadOpsPerSecond() {
       return targetReadOpsPerSecond_;
     }
-
     /**
      *
      *
@@ -751,7 +734,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

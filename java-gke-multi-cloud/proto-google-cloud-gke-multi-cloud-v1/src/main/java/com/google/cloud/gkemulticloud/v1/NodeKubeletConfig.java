@@ -33,7 +33,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.NodeKubeletConfig)
     NodeKubeletConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeKubeletConfig.newBuilder() to construct.
   private NodeKubeletConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int INSECURE_KUBELET_READONLY_PORT_ENABLED_FIELD_NUMBER = 1;
   private boolean insecureKubeletReadonlyPortEnabled_ = false;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpuManagerPolicy_ = "";
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasCpuManagerPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int CPU_CFS_QUOTA_FIELD_NUMBER = 3;
   private boolean cpuCfsQuota_ = false;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasCpuCfsQuota() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpuCfsQuotaPeriod_ = "";
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasCpuCfsQuotaPeriod() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -297,7 +288,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -332,7 +322,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int POD_PIDS_LIMIT_FIELD_NUMBER = 5;
   private long podPidsLimit_ = 0L;
-
   /**
    *
    *
@@ -352,7 +341,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPodPidsLimit() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -593,7 +581,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -838,7 +825,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean insecureKubeletReadonlyPortEnabled_;
-
     /**
      *
      *
@@ -856,7 +842,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public boolean getInsecureKubeletReadonlyPortEnabled() {
       return insecureKubeletReadonlyPortEnabled_;
     }
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +884,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object cpuManagerPolicy_ = "";
-
     /**
      *
      *
@@ -924,7 +907,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasCpuManagerPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -956,7 +938,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -988,7 +969,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1019,7 +999,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1025,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1058,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean cpuCfsQuota_;
-
     /**
      *
      *
@@ -1107,7 +1084,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasCpuCfsQuota() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1134,7 +1110,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public boolean getCpuCfsQuota() {
       return cpuCfsQuota_;
     }
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1170,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object cpuCfsQuotaPeriod_ = "";
-
     /**
      *
      *
@@ -1219,7 +1192,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasCpuCfsQuotaPeriod() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1250,7 +1222,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1281,7 +1252,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1311,7 +1281,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1306,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1338,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private long podPidsLimit_;
-
     /**
      *
      *
@@ -1390,7 +1357,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPodPidsLimit() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1410,7 +1376,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public long getPodPidsLimit() {
       return podPidsLimit_;
     }
-
     /**
      *
      *
@@ -1434,7 +1399,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

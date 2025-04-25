@@ -33,7 +33,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.BiosDetails)
     BiosDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BiosDetails.newBuilder() to construct.
   private BiosDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object biosName_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object manufacturer_ = "";
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RELEASE_DATE_FIELD_NUMBER = 5;
   private com.google.type.Date releaseDate_;
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReleaseDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -323,7 +312,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getReleaseDate() {
     return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
   }
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object smbiosUuid_ = "";
-
   /**
    *
    *
@@ -366,7 +353,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -600,7 +586,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -875,7 +860,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object biosName_ = "";
-
     /**
      *
      *
@@ -902,7 +886,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +912,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -955,7 +937,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +986,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1030,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1051,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1068,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1092,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object manufacturer_ = "";
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1136,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1157,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1174,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1251,7 +1220,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1242,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1263,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1280,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1307,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         releaseDateBuilder_;
-
     /**
      *
      *
@@ -1357,7 +1321,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReleaseDate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1376,7 +1339,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return releaseDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1399,7 +1361,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1419,7 +1380,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1407,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1426,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1482,7 +1440,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReleaseDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1499,7 +1456,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
       }
     }
-
     /**
      *
      *
@@ -1523,7 +1479,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object smbiosUuid_ = "";
-
     /**
      *
      *
@@ -1546,7 +1501,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1523,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1591,7 +1544,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1561,6 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

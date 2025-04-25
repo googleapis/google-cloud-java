@@ -34,7 +34,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.QueryExtensionRequest)
     QueryExtensionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryExtensionRequest.newBuilder() to construct.
   private QueryExtensionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> contents_;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList() {
     return contents_;
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       getContentsOrBuilderList() {
     return contents_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
   public int getContentsCount() {
     return contents_.size();
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
   public com.google.cloud.aiplatform.v1beta1.Content getContents(int index) {
     return contents_.get(index);
   }
-
   /**
    *
    *
@@ -404,7 +396,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +805,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return contentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -842,7 +827,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return contentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return contentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -894,7 +877,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +903,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +959,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1011,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1087,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.Content.Builder getContentsBuilder(int index) {
       return getContentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1154,7 +1127,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return contentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1150,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(contents_);
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       return getContentsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1218,7 +1188,6 @@ public final class QueryExtensionRequest extends com.google.protobuf.GeneratedMe
       return getContentsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
-
     /**
      *
      *

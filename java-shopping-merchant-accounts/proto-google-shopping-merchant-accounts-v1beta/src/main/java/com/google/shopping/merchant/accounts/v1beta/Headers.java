@@ -36,7 +36,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Headers)
     HeadersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Headers.newBuilder() to construct.
   private Headers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.type.Price> prices_;
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.type.Price> getPricesList() {
     return prices_;
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       getPricesOrBuilderList() {
     return prices_;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public int getPricesCount() {
     return prices_.size();
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Price getPrices(int index) {
     return prices_.get(index);
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.type.Weight> weights_;
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.type.Weight> getWeightsList() {
     return weights_;
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       getWeightsOrBuilderList() {
     return weights_;
   }
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public int getWeightsCount() {
     return weights_.size();
   }
-
   /**
    *
    *
@@ -289,7 +279,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Weight getWeights(int index) {
     return weights_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +307,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList numberOfItems_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNumberOfItemsList() {
     return numberOfItems_;
   }
-
   /**
    *
    *
@@ -358,7 +345,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public int getNumberOfItemsCount() {
     return numberOfItems_.size();
   }
-
   /**
    *
    *
@@ -379,7 +365,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNumberOfItems(int index) {
     return numberOfItems_.get(index);
   }
-
   /**
    *
    *
@@ -406,7 +391,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList postalCodeGroupNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -426,7 +410,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPostalCodeGroupNamesList() {
     return postalCodeGroupNames_;
   }
-
   /**
    *
    *
@@ -446,7 +429,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public int getPostalCodeGroupNamesCount() {
     return postalCodeGroupNames_.size();
   }
-
   /**
    *
    *
@@ -467,7 +449,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPostalCodeGroupNames(int index) {
     return postalCodeGroupNames_.get(index);
   }
-
   /**
    *
    *
@@ -493,7 +474,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.LocationIdSet> locations_;
-
   /**
    *
    *
@@ -511,7 +491,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       getLocationsList() {
     return locations_;
   }
-
   /**
    *
    *
@@ -530,7 +509,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       getLocationsOrBuilderList() {
     return locations_;
   }
-
   /**
    *
    *
@@ -547,7 +525,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public int getLocationsCount() {
     return locations_.size();
   }
-
   /**
    *
    *
@@ -564,7 +541,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.accounts.v1beta.LocationIdSet getLocations(int index) {
     return locations_.get(index);
   }
-
   /**
    *
    *
@@ -799,7 +775,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1228,7 +1203,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return pricesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1254,7 +1228,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return pricesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1253,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return pricesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1284,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1312,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1343,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1374,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1402,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1430,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1493,7 +1459,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1487,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1515,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1536,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public com.google.shopping.type.Price.Builder getPricesBuilder(int index) {
       return getPricesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1599,7 +1561,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return pricesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1626,7 +1587,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(prices_);
       }
     }
-
     /**
      *
      *
@@ -1649,7 +1609,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       return getPricesFieldBuilder()
           .addBuilder(com.google.shopping.type.Price.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1672,7 +1631,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       return getPricesFieldBuilder()
           .addBuilder(index, com.google.shopping.type.Price.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1753,7 +1711,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return weightsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1779,7 +1736,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return weightsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1805,7 +1761,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return weightsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1837,7 +1792,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1866,7 +1820,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1898,7 +1851,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1882,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1959,7 +1910,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1988,7 +1938,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1967,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1995,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2076,7 +2023,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2098,7 +2044,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public com.google.shopping.type.Weight.Builder getWeightsBuilder(int index) {
       return getWeightsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2124,7 +2069,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return weightsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2151,7 +2095,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(weights_);
       }
     }
-
     /**
      *
      *
@@ -2174,7 +2117,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       return getWeightsFieldBuilder()
           .addBuilder(com.google.shopping.type.Weight.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2197,7 +2139,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       return getWeightsFieldBuilder()
           .addBuilder(index, com.google.shopping.type.Weight.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2246,7 +2187,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2267,7 +2207,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       numberOfItems_.makeImmutable();
       return numberOfItems_;
     }
-
     /**
      *
      *
@@ -2287,7 +2226,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public int getNumberOfItemsCount() {
       return numberOfItems_.size();
     }
-
     /**
      *
      *
@@ -2308,7 +2246,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNumberOfItems(int index) {
       return numberOfItems_.get(index);
     }
-
     /**
      *
      *
@@ -2329,7 +2266,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNumberOfItemsBytes(int index) {
       return numberOfItems_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2358,7 +2294,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2386,7 +2321,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2411,7 +2345,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2435,7 +2368,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2474,7 +2406,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2495,7 +2426,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       postalCodeGroupNames_.makeImmutable();
       return postalCodeGroupNames_;
     }
-
     /**
      *
      *
@@ -2515,7 +2445,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public int getPostalCodeGroupNamesCount() {
       return postalCodeGroupNames_.size();
     }
-
     /**
      *
      *
@@ -2536,7 +2465,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPostalCodeGroupNames(int index) {
       return postalCodeGroupNames_.get(index);
     }
-
     /**
      *
      *
@@ -2557,7 +2485,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPostalCodeGroupNamesBytes(int index) {
       return postalCodeGroupNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2586,7 +2513,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2614,7 +2540,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2639,7 +2564,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2663,7 +2587,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2731,7 +2654,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return locationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2751,7 +2673,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return locationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2771,7 +2692,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return locationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2798,7 +2718,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2823,7 +2742,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2849,7 +2767,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2876,7 +2793,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2900,7 +2816,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2925,7 +2840,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2950,7 +2864,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2973,7 +2886,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2996,7 +2908,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3013,7 +2924,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getLocationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3034,7 +2944,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return locationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3056,7 +2965,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(locations_);
       }
     }
-
     /**
      *
      *
@@ -3075,7 +2983,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.shopping.merchant.accounts.v1beta.LocationIdSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3095,7 +3002,6 @@ public final class Headers extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.shopping.merchant.accounts.v1beta.LocationIdSet.getDefaultInstance());
     }
-
     /**
      *
      *

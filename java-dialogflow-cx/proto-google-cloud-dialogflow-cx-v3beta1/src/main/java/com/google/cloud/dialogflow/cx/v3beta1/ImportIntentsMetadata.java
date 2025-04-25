@@ -35,7 +35,6 @@ public final class ImportIntentsMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ImportIntentsMetadata)
     ImportIntentsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportIntentsMetadata.newBuilder() to construct.
   private ImportIntentsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class ImportIntentsMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

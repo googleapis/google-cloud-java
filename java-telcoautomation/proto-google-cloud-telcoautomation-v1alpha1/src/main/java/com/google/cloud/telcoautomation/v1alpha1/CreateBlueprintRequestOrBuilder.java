@@ -40,7 +40,6 @@ public interface CreateBlueprintRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateBlueprintRequestOrBuilder
    * @return The blueprintId.
    */
   java.lang.String getBlueprintId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateBlueprintRequestOrBuilder
    * @return Whether the blueprint field is set.
    */
   boolean hasBlueprint();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateBlueprintRequestOrBuilder
    * @return The blueprint.
    */
   com.google.cloud.telcoautomation.v1alpha1.Blueprint getBlueprint();
-
   /**
    *
    *

@@ -53,7 +53,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return Whether the reidentifyConfig field is set.
    */
   boolean hasReidentifyConfig();
-
   /**
    *
    *
@@ -127,7 +125,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The reidentifyConfig.
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getReidentifyConfig();
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return Whether the item field is set.
    */
   boolean hasItem();
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The reidentifyTemplateName.
    */
   java.lang.String getReidentifyTemplateName();
-
   /**
    *
    *
@@ -306,7 +297,6 @@ public interface ReidentifyContentRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

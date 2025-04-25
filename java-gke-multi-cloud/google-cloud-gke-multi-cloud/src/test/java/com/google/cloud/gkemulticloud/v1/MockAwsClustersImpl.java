@@ -179,8 +179,7 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateAwsClusterAgentToken, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method GenerateAwsClusterAgentToken, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAwsClusterAgentTokenResponse.class.getName(),
                   Exception.class.getName())));
@@ -202,8 +201,7 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateAwsAccessToken, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GenerateAwsAccessToken, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAwsAccessTokenResponse.class.getName(),
                   Exception.class.getName())));
@@ -266,8 +264,7 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RollbackAwsNodePoolUpdate, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method RollbackAwsNodePoolUpdate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

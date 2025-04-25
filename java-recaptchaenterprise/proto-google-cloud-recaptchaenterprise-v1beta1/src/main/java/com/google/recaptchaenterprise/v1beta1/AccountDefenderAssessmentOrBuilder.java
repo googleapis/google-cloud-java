@@ -40,7 +40,6 @@ public interface AccountDefenderAssessmentOrBuilder
   java.util.List<
           com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.AccountDefenderLabel>
       getLabelsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AccountDefenderAssessmentOrBuilder
    * @return The count of labels.
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface AccountDefenderAssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.AccountDefenderLabel getLabels(
       int index);
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface AccountDefenderAssessmentOrBuilder
    * @return A list containing the enum numeric values on the wire for labels.
    */
   java.util.List<java.lang.Integer> getLabelsValueList();
-
   /**
    *
    *

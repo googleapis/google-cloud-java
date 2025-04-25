@@ -36,7 +36,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesRequest)
     PurgeSuggestionDenyListEntriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeSuggestionDenyListEntriesRequest.newBuilder() to construct.
   private PurgeSuggestionDenyListEntriesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -290,7 +287,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -488,7 +484,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -514,7 +509,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -540,7 +534,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -565,7 +558,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class PurgeSuggestionDenyListEntriesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

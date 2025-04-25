@@ -38,7 +38,6 @@ public interface RubricBasedInstructionFollowingInstanceOrBuilder
    * @return Whether the jsonInstance field is set.
    */
   boolean hasJsonInstance();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface RubricBasedInstructionFollowingInstanceOrBuilder
    * @return The jsonInstance.
    */
   java.lang.String getJsonInstance();
-
   /**
    *
    *

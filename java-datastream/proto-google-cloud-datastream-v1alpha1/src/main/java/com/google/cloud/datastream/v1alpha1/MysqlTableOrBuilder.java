@@ -36,7 +36,6 @@ public interface MysqlTableOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MysqlTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.MysqlColumn mysql_columns = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.MysqlColumn> getMysqlColumnsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface MysqlTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.MysqlColumn mysql_columns = 2;</code>
    */
   com.google.cloud.datastream.v1alpha1.MysqlColumn getMysqlColumns(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface MysqlTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.MysqlColumn mysql_columns = 2;</code>
    */
   int getMysqlColumnsCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface MysqlTableOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.MysqlColumnOrBuilder>
       getMysqlColumnsOrBuilderList();
-
   /**
    *
    *

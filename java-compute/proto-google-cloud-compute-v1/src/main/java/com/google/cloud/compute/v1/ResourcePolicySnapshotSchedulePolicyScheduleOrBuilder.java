@@ -31,7 +31,6 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
    * @return Whether the dailySchedule field is set.
    */
   boolean hasDailySchedule();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
    * </code>
@@ -39,7 +38,6 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
    * @return The dailySchedule.
    */
   com.google.cloud.compute.v1.ResourcePolicyDailyCycle getDailySchedule();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
    * </code>
@@ -53,7 +51,6 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
    * @return Whether the hourlySchedule field is set.
    */
   boolean hasHourlySchedule();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
    * </code>
@@ -61,7 +58,6 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
    * @return The hourlySchedule.
    */
   com.google.cloud.compute.v1.ResourcePolicyHourlyCycle getHourlySchedule();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
    * </code>
@@ -75,7 +71,6 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
    * @return Whether the weeklySchedule field is set.
    */
   boolean hasWeeklySchedule();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
    * </code>
@@ -83,7 +78,6 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
    * @return The weeklySchedule.
    */
   com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle getWeeklySchedule();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
    * </code>

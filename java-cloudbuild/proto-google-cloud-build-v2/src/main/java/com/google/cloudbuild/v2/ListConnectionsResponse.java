@@ -33,7 +33,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.ListConnectionsResponse)
     ListConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConnectionsResponse.newBuilder() to construct.
   private ListConnectionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v2.Connection> connections_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloudbuild.v2.Connection> getConnectionsList() {
     return connections_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       getConnectionsOrBuilderList() {
     return connections_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   public int getConnectionsCount() {
     return connections_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   public com.google.cloudbuild.v2.Connection getConnections(int index) {
     return connections_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -641,7 +632,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     public com.google.cloudbuild.v2.Connection.Builder getConnectionsBuilder(int index) {
       return getConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(connections_);
       }
     }
-
     /**
      *
      *
@@ -929,7 +905,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       return getConnectionsFieldBuilder()
           .addBuilder(com.google.cloudbuild.v2.Connection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -943,7 +918,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       return getConnectionsFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v2.Connection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -975,7 +949,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -998,7 +971,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +993,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1014,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1031,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

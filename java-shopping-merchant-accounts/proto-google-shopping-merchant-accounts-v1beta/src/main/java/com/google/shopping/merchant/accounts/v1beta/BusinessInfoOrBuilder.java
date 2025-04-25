@@ -37,7 +37,6 @@ public interface BusinessInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BusinessInfoOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface BusinessInfoOrBuilder
    * @return The address.
    */
   com.google.type.PostalAddress getAddress();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface BusinessInfoOrBuilder
    * @return Whether the phone field is set.
    */
   boolean hasPhone();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface BusinessInfoOrBuilder
    * @return The phone.
    */
   com.google.type.PhoneNumber getPhone();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface BusinessInfoOrBuilder
    * @return Whether the phoneVerificationState field is set.
    */
   boolean hasPhoneVerificationState();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface BusinessInfoOrBuilder
    * @return The enum numeric value on the wire for phoneVerificationState.
    */
   int getPhoneVerificationStateValue();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface BusinessInfoOrBuilder
    * @return Whether the customerService field is set.
    */
   boolean hasCustomerService();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface BusinessInfoOrBuilder
    * @return The customerService.
    */
   com.google.shopping.merchant.accounts.v1beta.CustomerService getCustomerService();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface BusinessInfoOrBuilder
    * @return Whether the koreanBusinessRegistrationNumber field is set.
    */
   boolean hasKoreanBusinessRegistrationNumber();
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public interface BusinessInfoOrBuilder
    * @return The koreanBusinessRegistrationNumber.
    */
   java.lang.String getKoreanBusinessRegistrationNumber();
-
   /**
    *
    *

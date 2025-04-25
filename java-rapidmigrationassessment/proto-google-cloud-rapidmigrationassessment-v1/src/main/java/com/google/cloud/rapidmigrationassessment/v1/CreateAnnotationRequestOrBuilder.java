@@ -38,7 +38,6 @@ public interface CreateAnnotationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateAnnotationRequestOrBuilder
    * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateAnnotationRequestOrBuilder
    * @return The annotation.
    */
   com.google.cloud.rapidmigrationassessment.v1.Annotation getAnnotation();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateAnnotationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

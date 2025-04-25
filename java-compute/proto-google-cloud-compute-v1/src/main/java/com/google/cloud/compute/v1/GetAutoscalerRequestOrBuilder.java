@@ -36,7 +36,6 @@ public interface GetAutoscalerRequestOrBuilder
    * @return The autoscaler.
    */
   java.lang.String getAutoscaler();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetAutoscalerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetAutoscalerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface StartManualTransferRunsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface StartManualTransferRunsRequestOrBuilder
    * @return Whether the requestedTimeRange field is set.
    */
   boolean hasRequestedTimeRange();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface StartManualTransferRunsRequestOrBuilder
    */
   com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange
       getRequestedTimeRange();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface StartManualTransferRunsRequestOrBuilder
    * @return Whether the requestedRunTime field is set.
    */
   boolean hasRequestedRunTime();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface StartManualTransferRunsRequestOrBuilder
    * @return The requestedRunTime.
    */
   com.google.protobuf.Timestamp getRequestedRunTime();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ListSearchAds360LinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface ListSearchAds360LinksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

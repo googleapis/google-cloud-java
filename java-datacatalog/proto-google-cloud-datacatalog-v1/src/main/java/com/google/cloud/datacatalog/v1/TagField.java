@@ -34,7 +34,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.TagField)
     TagFieldOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TagField.newBuilder() to construct.
   private TagField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -96,7 +94,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.TagField.EnumValue)
       EnumValueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EnumValue.newBuilder() to construct.
     private EnumValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -146,7 +142,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -170,7 +165,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -355,7 +349,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -543,7 +536,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -566,7 +558,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -589,7 +580,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -611,7 +601,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -629,7 +618,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -738,7 +726,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -783,7 +770,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -807,7 +793,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -833,7 +818,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -849,7 +833,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDoubleValue() {
     return kindCase_ == 2;
   }
-
   /**
    *
    *
@@ -870,7 +853,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -887,7 +869,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return kindCase_ == 3;
   }
-
   /**
    *
    *
@@ -917,7 +898,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -949,7 +929,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -965,7 +944,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolValue() {
     return kindCase_ == 4;
   }
-
   /**
    *
    *
@@ -986,7 +964,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1002,7 +979,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestampValue() {
     return kindCase_ == 5;
   }
-
   /**
    *
    *
@@ -1021,7 +997,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1040,7 +1015,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENUM_VALUE_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -1058,7 +1032,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnumValue() {
     return kindCase_ == 6;
   }
-
   /**
    *
    *
@@ -1079,7 +1052,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.TagField.EnumValue.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1100,7 +1072,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RICHTEXT_VALUE_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -1119,7 +1090,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRichtextValue() {
     return kindCase_ == 8;
   }
-
   /**
    *
    *
@@ -1151,7 +1121,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1186,7 +1155,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORDER_FIELD_NUMBER = 7;
   private int order_ = 0;
-
   /**
    *
    *
@@ -1475,7 +1443,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1785,7 +1752,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1808,7 +1774,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1831,7 +1796,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1853,7 +1817,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1834,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1871,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoubleValue() {
       return kindCase_ == 2;
     }
-
     /**
      *
      *
@@ -1927,7 +1888,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -1947,7 +1907,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1985,7 +1944,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return kindCase_ == 3;
     }
-
     /**
      *
      *
@@ -2016,7 +1974,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2047,7 +2004,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2071,7 +2027,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2048,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2087,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return kindCase_ == 4;
     }
-
     /**
      *
      *
@@ -2151,7 +2104,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -2171,7 +2123,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2197,7 +2148,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampValueBuilder_;
-
     /**
      *
      *
@@ -2213,7 +2163,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampValue() {
       return kindCase_ == 5;
     }
-
     /**
      *
      *
@@ -2239,7 +2188,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2210,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2282,7 +2229,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2313,7 +2259,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2339,7 +2284,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2352,7 +2296,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getTimestampValueBuilder() {
       return getTimestampValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2373,7 +2316,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2410,7 +2352,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.TagField.EnumValue.Builder,
             com.google.cloud.datacatalog.v1.TagField.EnumValueOrBuilder>
         enumValueBuilder_;
-
     /**
      *
      *
@@ -2428,7 +2369,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnumValue() {
       return kindCase_ == 6;
     }
-
     /**
      *
      *
@@ -2456,7 +2396,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.TagField.EnumValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2481,7 +2420,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2504,7 +2442,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2539,7 +2476,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2567,7 +2503,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2517,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.TagField.EnumValue.Builder getEnumValueBuilder() {
       return getEnumValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2605,7 +2539,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.TagField.EnumValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2660,7 +2593,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRichtextValue() {
       return kindCase_ == 8;
     }
-
     /**
      *
      *
@@ -2693,7 +2625,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2726,7 +2657,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2752,7 +2682,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2776,7 +2705,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2733,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int order_;
-
     /**
      *
      *
@@ -2827,7 +2754,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public int getOrder() {
       return order_;
     }
-
     /**
      *
      *
@@ -2853,7 +2779,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

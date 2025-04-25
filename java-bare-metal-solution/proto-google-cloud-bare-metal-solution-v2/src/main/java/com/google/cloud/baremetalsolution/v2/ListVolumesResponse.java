@@ -33,7 +33,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ListVolumesResponse)
     ListVolumesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVolumesResponse.newBuilder() to construct.
   private ListVolumesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.Volume> volumes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.baremetalsolution.v2.Volume> getVolumesList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       getVolumesOrBuilderList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   public int getVolumesCount() {
     return volumes_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.baremetalsolution.v2.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -450,7 +438,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +736,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return volumesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return volumesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return volumesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +933,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +964,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.baremetalsolution.v2.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1010,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.cloud.baremetalsolution.v2.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1085,7 +1055,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1108,7 +1077,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1099,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1120,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1137,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1169,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1220,7 +1184,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1235,7 +1198,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1251,7 +1213,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1267,7 +1228,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1291,7 +1251,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1273,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1292,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1310,6 @@ public final class ListVolumesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

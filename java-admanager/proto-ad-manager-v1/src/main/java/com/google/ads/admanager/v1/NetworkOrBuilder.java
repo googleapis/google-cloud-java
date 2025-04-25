@@ -37,7 +37,6 @@ public interface NetworkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface NetworkOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface NetworkOrBuilder
    * @return The networkCode.
    */
   java.lang.String getNetworkCode();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface NetworkOrBuilder
    * @return The propertyCode.
    */
   java.lang.String getPropertyCode();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface NetworkOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface NetworkOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface NetworkOrBuilder
    * @return A list containing the secondaryCurrencyCodes.
    */
   java.util.List<java.lang.String> getSecondaryCurrencyCodesList();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface NetworkOrBuilder
    * @return The count of secondaryCurrencyCodes.
    */
   int getSecondaryCurrencyCodesCount();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface NetworkOrBuilder
    * @return The secondaryCurrencyCodes at the given index.
    */
   java.lang.String getSecondaryCurrencyCodes(int index);
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public interface NetworkOrBuilder
    * @return The effectiveRootAdUnit.
    */
   java.lang.String getEffectiveRootAdUnit();
-
   /**
    *
    *

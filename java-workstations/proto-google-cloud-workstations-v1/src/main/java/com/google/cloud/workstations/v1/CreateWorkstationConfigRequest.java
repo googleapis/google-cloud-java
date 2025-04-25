@@ -33,7 +33,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.CreateWorkstationConfigRequest)
     CreateWorkstationConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateWorkstationConfigRequest.newBuilder() to construct.
   private CreateWorkstationConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workstationConfigId_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
 
   public static final int WORKSTATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.workstations.v1.WorkstationConfig workstationConfig_;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
   public boolean hasWorkstationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
         ? com.google.cloud.workstations.v1.WorkstationConfig.getDefaultInstance()
         : workstationConfig_;
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -449,7 +440,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -699,7 +689,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +805,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object workstationConfigId_ = "";
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -866,7 +849,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
             com.google.cloud.workstations.v1.WorkstationConfig.Builder,
             com.google.cloud.workstations.v1.WorkstationConfigOrBuilder>
         workstationConfigBuilder_;
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     public boolean hasWorkstationConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
         return workstationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1001,7 +978,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1031,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return getWorkstationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1118,7 +1090,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
             : workstationConfig_;
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1165,7 +1135,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

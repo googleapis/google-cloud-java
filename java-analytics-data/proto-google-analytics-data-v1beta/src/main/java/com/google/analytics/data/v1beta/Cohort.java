@@ -35,7 +35,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.Cohort)
     CohortOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Cohort.newBuilder() to construct.
   private Cohort(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dimension_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATE_RANGE_FIELD_NUMBER = 3;
   private com.google.analytics.data.v1beta.DateRange dateRange_;
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDateRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -248,7 +241,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.data.v1beta.DateRange.getDefaultInstance()
         : dateRange_;
   }
-
   /**
    *
    *
@@ -461,7 +453,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +682,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -717,7 +707,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +732,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -768,7 +756,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +776,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dimension_ = "";
-
     /**
      *
      *
@@ -841,7 +826,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1beta.DateRange.Builder,
             com.google.analytics.data.v1beta.DateRangeOrBuilder>
         dateRangeBuilder_;
-
     /**
      *
      *
@@ -968,7 +948,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDateRange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         return dateRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1020,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1055,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1097,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1131,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1160,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDateRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1220,7 +1193,6 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
             : dateRange_;
       }
     }
-
     /**
      *
      *

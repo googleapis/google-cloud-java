@@ -34,7 +34,6 @@ public interface ListTagKeysResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagKey tag_keys = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.TagKey> getTagKeysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTagKeysResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagKey tag_keys = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.TagKey getTagKeys(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTagKeysResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagKey tag_keys = 1;</code>
    */
   int getTagKeysCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTagKeysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.TagKeyOrBuilder>
       getTagKeysOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTagKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface SubmitConfigSourceRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SubmitConfigSourceRequestOrBuilder
    * @return Whether the configSource field is set.
    */
   boolean hasConfigSource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface SubmitConfigSourceRequestOrBuilder
    * @return The configSource.
    */
   com.google.api.servicemanagement.v1.ConfigSource getConfigSource();
-
   /**
    *
    *

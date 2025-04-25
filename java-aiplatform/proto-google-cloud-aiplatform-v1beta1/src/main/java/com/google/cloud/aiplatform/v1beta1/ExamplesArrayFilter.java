@@ -34,7 +34,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExamplesArrayFilter)
     ExamplesArrayFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExamplesArrayFilter.newBuilder() to construct.
   private ExamplesArrayFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
      * <code>ARRAY_OPERATOR_UNSPECIFIED = 0;</code>
      */
     public static final int ARRAY_OPERATOR_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -132,7 +130,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
      * <code>CONTAINS_ANY = 1;</code>
      */
     public static final int CONTAINS_ANY_VALUE = 1;
-
     /**
      *
      *
@@ -234,7 +231,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -249,7 +245,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
-
   /**
    *
    *
@@ -264,7 +259,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    *
    *
@@ -280,7 +274,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
 
   public static final int ARRAY_OPERATOR_FIELD_NUMBER = 2;
   private int arrayOperator_ = 0;
-
   /**
    *
    *
@@ -317,7 +309,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
   public int getArrayOperatorValue() {
     return arrayOperator_;
   }
-
   /**
    *
    *
@@ -523,7 +514,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -737,7 +727,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -753,7 +742,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       values_.makeImmutable();
       return values_;
     }
-
     /**
      *
      *
@@ -768,7 +756,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -784,7 +771,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -800,7 +786,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +868,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     }
 
     private int arrayOperator_ = 0;
-
     /**
      *
      *
@@ -930,7 +910,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
     public int getArrayOperatorValue() {
       return arrayOperator_;
     }
-
     /**
      *
      *
@@ -951,7 +930,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter.ArrayOperator.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class ExamplesArrayFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.K8sBetaAPIConfig)
     K8sBetaAPIConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use K8sBetaAPIConfig.newBuilder() to construct.
   private K8sBetaAPIConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList enabledApis_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getEnabledApisList() {
     return enabledApis_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
   public int getEnabledApisCount() {
     return enabledApis_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getEnabledApis(int index) {
     return enabledApis_.get(index);
   }
-
   /**
    *
    *
@@ -298,7 +293,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +491,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
       enabledApis_.makeImmutable();
       return enabledApis_;
     }
-
     /**
      *
      *
@@ -528,7 +520,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
     public int getEnabledApisCount() {
       return enabledApis_.size();
     }
-
     /**
      *
      *
@@ -544,7 +535,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getEnabledApis(int index) {
       return enabledApis_.get(index);
     }
-
     /**
      *
      *
@@ -560,7 +550,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getEnabledApisBytes(int index) {
       return enabledApis_.getByteString(index);
     }
-
     /**
      *
      *
@@ -584,7 +573,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +595,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +614,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +632,6 @@ public final class K8sBetaAPIConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

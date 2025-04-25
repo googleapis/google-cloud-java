@@ -40,7 +40,6 @@ public interface SnoozeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface SnoozeOrBuilder
    * @return Whether the criteria field is set.
    */
   boolean hasCriteria();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface SnoozeOrBuilder
    * @return The criteria.
    */
   com.google.monitoring.v3.Snooze.Criteria getCriteria();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface SnoozeOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface SnoozeOrBuilder
    * @return The interval.
    */
   com.google.monitoring.v3.TimeInterval getInterval();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface SnoozeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

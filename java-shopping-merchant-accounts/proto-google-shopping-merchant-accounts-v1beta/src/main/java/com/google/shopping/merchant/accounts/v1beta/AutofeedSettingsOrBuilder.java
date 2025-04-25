@@ -37,7 +37,6 @@ public interface AutofeedSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.QueryGrantableRolesResponse)
     QueryGrantableRolesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryGrantableRolesResponse.newBuilder() to construct.
   private QueryGrantableRolesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.iam.admin.v1.Role> roles_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.iam.admin.v1.Role> getRolesList() {
     return roles_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
   public java.util.List<? extends com.google.iam.admin.v1.RoleOrBuilder> getRolesOrBuilderList() {
     return roles_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
   public int getRolesCount() {
     return roles_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
   public com.google.iam.admin.v1.Role getRoles(int index) {
     return roles_.get(index);
   }
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -640,7 +631,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return rolesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return rolesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return rolesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +855,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
     public com.google.iam.admin.v1.Role.Builder getRolesBuilder(int index) {
       return getRolesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -893,7 +871,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return rolesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -910,7 +887,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(roles_);
       }
     }
-
     /**
      *
      *
@@ -923,7 +899,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
     public com.google.iam.admin.v1.Role.Builder addRolesBuilder() {
       return getRolesFieldBuilder().addBuilder(com.google.iam.admin.v1.Role.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -937,7 +912,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       return getRolesFieldBuilder()
           .addBuilder(index, com.google.iam.admin.v1.Role.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -969,7 +943,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -993,7 +966,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1017,7 +989,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1011,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1029,6 @@ public final class QueryGrantableRolesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

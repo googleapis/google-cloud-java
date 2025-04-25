@@ -36,7 +36,6 @@ public interface FetchGitRefsResponseOrBuilder
    * @return A list containing the refNames.
    */
   java.util.List<java.lang.String> getRefNamesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FetchGitRefsResponseOrBuilder
    * @return The count of refNames.
    */
   int getRefNamesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface FetchGitRefsResponseOrBuilder
    * @return The refNames at the given index.
    */
   java.lang.String getRefNames(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface FetchGitRefsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

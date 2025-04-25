@@ -38,7 +38,6 @@ public interface ConfigSourceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ConfigSourceOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ConfigFile files = 2;</code>
    */
   java.util.List<com.google.api.servicemanagement.v1.ConfigFile> getFilesList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ConfigSourceOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ConfigFile files = 2;</code>
    */
   com.google.api.servicemanagement.v1.ConfigFile getFiles(int index);
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ConfigSourceOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ConfigFile files = 2;</code>
    */
   int getFilesCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ConfigSourceOrBuilder
    */
   java.util.List<? extends com.google.api.servicemanagement.v1.ConfigFileOrBuilder>
       getFilesOrBuilderList();
-
   /**
    *
    *

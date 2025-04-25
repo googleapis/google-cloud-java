@@ -38,7 +38,6 @@ public interface ListTaxonomiesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ListTaxonomiesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface ListTaxonomiesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * @return Whether the canonicalUrl field is set.
    */
   boolean hasCanonicalUrl();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * @return The canonicalUrl.
    */
   java.lang.String getCanonicalUrl();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * @return Whether the url field is set.
    */
   boolean hasUrl();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

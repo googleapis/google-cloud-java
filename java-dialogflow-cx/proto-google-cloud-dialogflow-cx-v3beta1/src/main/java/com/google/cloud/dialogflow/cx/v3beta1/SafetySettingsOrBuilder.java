@@ -38,7 +38,6 @@ public interface SafetySettingsOrBuilder
    * @return The enum numeric value on the wire for defaultBannedPhraseMatchStrategy.
    */
   int getDefaultBannedPhraseMatchStrategyValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface SafetySettingsOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase>
       getBannedPhrasesList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SafetySettingsOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase getBannedPhrases(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface SafetySettingsOrBuilder
    * </code>
    */
   int getBannedPhrasesCount();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface SafetySettingsOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseOrBuilder>
       getBannedPhrasesOrBuilderList();
-
   /**
    *
    *

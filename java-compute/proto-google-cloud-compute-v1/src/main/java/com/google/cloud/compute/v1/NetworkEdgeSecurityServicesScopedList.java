@@ -33,7 +33,6 @@ public final class NetworkEdgeSecurityServicesScopedList
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEdgeSecurityServicesScopedList)
     NetworkEdgeSecurityServicesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkEdgeSecurityServicesScopedList.newBuilder() to construct.
   private NetworkEdgeSecurityServicesScopedList(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class NetworkEdgeSecurityServicesScopedList
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkEdgeSecurityService>
       networkEdgeSecurityServices_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       getNetworkEdgeSecurityServicesList() {
     return networkEdgeSecurityServices_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       getNetworkEdgeSecurityServicesOrBuilderList() {
     return networkEdgeSecurityServices_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class NetworkEdgeSecurityServicesScopedList
   public int getNetworkEdgeSecurityServicesCount() {
     return networkEdgeSecurityServices_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       int index) {
     return networkEdgeSecurityServices_.get(index);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class NetworkEdgeSecurityServicesScopedList
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class NetworkEdgeSecurityServicesScopedList
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public final class NetworkEdgeSecurityServicesScopedList
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -385,7 +376,6 @@ public final class NetworkEdgeSecurityServicesScopedList
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         return networkEdgeSecurityServicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         return networkEdgeSecurityServicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         return networkEdgeSecurityServicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         getNetworkEdgeSecurityServicesBuilder(int index) {
       return getNetworkEdgeSecurityServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         return networkEdgeSecurityServicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         return java.util.Collections.unmodifiableList(networkEdgeSecurityServices_);
       }
     }
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       return getNetworkEdgeSecurityServicesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkEdgeSecurityService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class NetworkEdgeSecurityServicesScopedList
           .addBuilder(
               index, com.google.cloud.compute.v1.NetworkEdgeSecurityService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1077,7 +1050,6 @@ public final class NetworkEdgeSecurityServicesScopedList
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1092,7 +1064,6 @@ public final class NetworkEdgeSecurityServicesScopedList
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1113,7 +1084,6 @@ public final class NetworkEdgeSecurityServicesScopedList
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1136,7 +1106,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1125,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1152,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       }
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1171,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1185,6 @@ public final class NetworkEdgeSecurityServicesScopedList
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1238,7 +1203,6 @@ public final class NetworkEdgeSecurityServicesScopedList
             : warning_;
       }
     }
-
     /**
      *
      *

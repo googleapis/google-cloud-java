@@ -40,7 +40,6 @@ public interface GetCommentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

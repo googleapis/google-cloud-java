@@ -33,7 +33,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.Attempt)
     AttemptOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Attempt.newBuilder() to construct.
   private Attempt(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ATTEMPT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp attemptTime_;
-
   /**
    * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
    *
@@ -77,7 +75,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttemptTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
    *
@@ -87,7 +84,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getAttemptTime() {
     return attemptTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : attemptTime_;
   }
-
   /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAttemptTimeOrBuilder() {
@@ -98,7 +94,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
-
   /**
    *
    *
@@ -112,7 +107,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
-
   /**
    *
    *
@@ -155,7 +147,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
-
   /**
    *
    *
@@ -345,7 +336,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +599,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         attemptTimeBuilder_;
-
     /**
      * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
      *
@@ -618,7 +607,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttemptTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
      *
@@ -633,7 +621,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return attemptTimeBuilder_.getMessage();
       }
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     public Builder setAttemptTime(com.google.protobuf.Timestamp value) {
       if (attemptTimeBuilder_ == null) {
@@ -648,7 +635,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     public Builder setAttemptTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (attemptTimeBuilder_ == null) {
@@ -660,7 +646,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     public Builder mergeAttemptTime(com.google.protobuf.Timestamp value) {
       if (attemptTimeBuilder_ == null) {
@@ -680,7 +665,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     public Builder clearAttemptTime() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -692,14 +676,12 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     public com.google.protobuf.Timestamp.Builder getAttemptTimeBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getAttemptTimeFieldBuilder().getBuilder();
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     public com.google.protobuf.TimestampOrBuilder getAttemptTimeOrBuilder() {
       if (attemptTimeBuilder_ != null) {
@@ -710,7 +692,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             : attemptTime_;
       }
     }
-
     /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -759,7 +740,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -776,7 +756,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -793,7 +772,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -816,7 +794,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +813,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +835,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +857,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +876,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +895,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +915,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +934,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +953,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +965,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1013,7 +981,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1031,7 +998,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(partialFailures_);
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1011,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       return getPartialFailuresFieldBuilder()
           .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1059,7 +1024,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       return getPartialFailuresFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *

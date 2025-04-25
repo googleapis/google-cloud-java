@@ -38,7 +38,6 @@ public interface SearchGrantsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SearchGrantsRequestOrBuilder
    * @return The enum numeric value on the wire for callerRelationship.
    */
   int getCallerRelationshipValue();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface SearchGrantsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface SearchGrantsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

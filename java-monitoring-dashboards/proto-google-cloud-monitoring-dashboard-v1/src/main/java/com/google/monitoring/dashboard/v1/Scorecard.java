@@ -34,7 +34,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Scorecard)
     ScorecardOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Scorecard.newBuilder() to construct.
   private Scorecard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      */
     double getUpperBound();
   }
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Scorecard.GaugeView)
       GaugeViewOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GaugeView.newBuilder() to construct.
     private GaugeView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -146,7 +143,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOWER_BOUND_FIELD_NUMBER = 1;
     private double lowerBound_ = 0D;
-
     /**
      *
      *
@@ -166,7 +162,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPPER_BOUND_FIELD_NUMBER = 2;
     private double upperBound_ = 0D;
-
     /**
      *
      *
@@ -362,7 +357,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -563,7 +557,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double lowerBound_;
-
       /**
        *
        *
@@ -580,7 +573,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       public double getLowerBound() {
         return lowerBound_;
       }
-
       /**
        *
        *
@@ -601,7 +593,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -622,7 +613,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double upperBound_;
-
       /**
        *
        *
@@ -639,7 +629,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       public double getUpperBound() {
         return upperBound_;
       }
-
       /**
        *
        *
@@ -660,7 +649,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -763,7 +751,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for sparkChartType.
      */
     int getSparkChartTypeValue();
-
     /**
      *
      *
@@ -795,7 +782,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minAlignmentPeriod field is set.
      */
     boolean hasMinAlignmentPeriod();
-
     /**
      *
      *
@@ -812,7 +798,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * @return The minAlignmentPeriod.
      */
     com.google.protobuf.Duration getMinAlignmentPeriod();
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getMinAlignmentPeriodOrBuilder();
   }
-
   /**
    *
    *
@@ -846,7 +830,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Scorecard.SparkChartView)
       SparkChartViewOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SparkChartView.newBuilder() to construct.
     private SparkChartView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -880,7 +863,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SPARK_CHART_TYPE_FIELD_NUMBER = 1;
     private int sparkChartType_ = 0;
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public int getSparkChartTypeValue() {
       return sparkChartType_;
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MIN_ALIGNMENT_PERIOD_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration minAlignmentPeriod_;
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinAlignmentPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minAlignmentPeriod_;
     }
-
     /**
      *
      *
@@ -1166,7 +1144,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1391,7 +1368,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int sparkChartType_ = 0;
-
       /**
        *
        *
@@ -1409,7 +1385,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       public int getSparkChartTypeValue() {
         return sparkChartType_;
       }
-
       /**
        *
        *
@@ -1430,7 +1405,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1452,7 +1426,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.SparkChartType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1476,7 +1449,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1503,7 +1475,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minAlignmentPeriodBuilder_;
-
       /**
        *
        *
@@ -1522,7 +1493,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinAlignmentPeriod() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1547,7 +1517,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           return minAlignmentPeriodBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1574,7 +1543,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1598,7 +1566,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1630,7 +1597,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1654,7 +1620,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1673,7 +1638,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinAlignmentPeriodFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1696,7 +1660,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
               : minAlignmentPeriod_;
         }
       }
-
       /**
        *
        *
@@ -1811,7 +1774,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     private DataViewCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1848,7 +1810,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_SERIES_QUERY_FIELD_NUMBER = 1;
   private com.google.monitoring.dashboard.v1.TimeSeriesQuery timeSeriesQuery_;
-
   /**
    *
    *
@@ -1867,7 +1828,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeSeriesQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1888,7 +1848,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()
         : timeSeriesQuery_;
   }
-
   /**
    *
    *
@@ -1909,7 +1868,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GAUGE_VIEW_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1925,7 +1883,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGaugeView() {
     return dataViewCase_ == 4;
   }
-
   /**
    *
    *
@@ -1944,7 +1901,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.Scorecard.GaugeView.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1963,7 +1919,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPARK_CHART_VIEW_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1979,7 +1934,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSparkChartView() {
     return dataViewCase_ == 5;
   }
-
   /**
    *
    *
@@ -1998,7 +1952,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2018,7 +1971,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLANK_VIEW_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -2035,7 +1987,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBlankView() {
     return dataViewCase_ == 7;
   }
-
   /**
    *
    *
@@ -2055,7 +2006,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2078,7 +2028,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.Threshold> thresholds_;
-
   /**
    *
    *
@@ -2129,7 +2078,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.dashboard.v1.Threshold> getThresholdsList() {
     return thresholds_;
   }
-
   /**
    *
    *
@@ -2181,7 +2129,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       getThresholdsOrBuilderList() {
     return thresholds_;
   }
-
   /**
    *
    *
@@ -2232,7 +2179,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public int getThresholdsCount() {
     return thresholds_.size();
   }
-
   /**
    *
    *
@@ -2283,7 +2229,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.dashboard.v1.Threshold getThresholds(int index) {
     return thresholds_.get(index);
   }
-
   /**
    *
    *
@@ -2565,7 +2510,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2910,7 +2854,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder,
             com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder>
         timeSeriesQueryBuilder_;
-
     /**
      *
      *
@@ -2928,7 +2871,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeSeriesQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2952,7 +2894,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return timeSeriesQueryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2978,7 +2919,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3002,7 +2942,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3034,7 +2973,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3057,7 +2995,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3075,7 +3012,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeSeriesQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3098,7 +3034,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             : timeSeriesQuery_;
       }
     }
-
     /**
      *
      *
@@ -3133,7 +3068,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.Scorecard.GaugeView.Builder,
             com.google.monitoring.dashboard.v1.Scorecard.GaugeViewOrBuilder>
         gaugeViewBuilder_;
-
     /**
      *
      *
@@ -3149,7 +3083,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGaugeView() {
       return dataViewCase_ == 4;
     }
-
     /**
      *
      *
@@ -3175,7 +3108,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Scorecard.GaugeView.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3198,7 +3130,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3219,7 +3150,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3253,7 +3183,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3279,7 +3208,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3292,7 +3220,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Scorecard.GaugeView.Builder getGaugeViewBuilder() {
       return getGaugeViewFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3313,7 +3240,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Scorecard.GaugeView.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3352,7 +3278,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.Builder,
             com.google.monitoring.dashboard.v1.Scorecard.SparkChartViewOrBuilder>
         sparkChartViewBuilder_;
-
     /**
      *
      *
@@ -3368,7 +3293,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSparkChartView() {
       return dataViewCase_ == 5;
     }
-
     /**
      *
      *
@@ -3394,7 +3318,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3418,7 +3341,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3439,7 +3361,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3475,7 +3396,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3501,7 +3421,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3515,7 +3434,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         getSparkChartViewBuilder() {
       return getSparkChartViewFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3537,7 +3455,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3577,7 +3494,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         blankViewBuilder_;
-
     /**
      *
      *
@@ -3594,7 +3510,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBlankView() {
       return dataViewCase_ == 7;
     }
-
     /**
      *
      *
@@ -3621,7 +3536,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3645,7 +3559,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3579,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3698,7 +3610,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       dataViewCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3725,7 +3636,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3739,7 +3649,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Empty.Builder getBlankViewBuilder() {
       return getBlankViewFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3761,7 +3670,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3864,7 +3772,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3918,7 +3825,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3972,7 +3878,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4032,7 +3937,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4090,7 +3994,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4150,7 +4053,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4210,7 +4112,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4268,7 +4169,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4326,7 +4226,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4384,7 +4283,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4441,7 +4339,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4498,7 +4395,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4548,7 +4444,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Threshold.Builder getThresholdsBuilder(int index) {
       return getThresholdsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4602,7 +4497,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return thresholdsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4657,7 +4551,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(thresholds_);
       }
     }
-
     /**
      *
      *
@@ -4708,7 +4601,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       return getThresholdsFieldBuilder()
           .addBuilder(com.google.monitoring.dashboard.v1.Threshold.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4759,7 +4651,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       return getThresholdsFieldBuilder()
           .addBuilder(index, com.google.monitoring.dashboard.v1.Threshold.getDefaultInstance());
     }
-
     /**
      *
      *

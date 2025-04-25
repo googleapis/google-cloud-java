@@ -39,7 +39,6 @@ public interface DependencyEntityReferenceOrBuilder
    * @return Whether the operationResourceName field is set.
    */
   boolean hasOperationResourceName();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface DependencyEntityReferenceOrBuilder
    * @return The operationResourceName.
    */
   java.lang.String getOperationResourceName();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface DependencyEntityReferenceOrBuilder
    * @return Whether the externalApiResourceName field is set.
    */
   boolean hasExternalApiResourceName();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface DependencyEntityReferenceOrBuilder
    * @return The externalApiResourceName.
    */
   java.lang.String getExternalApiResourceName();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface DependencyEntityReferenceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

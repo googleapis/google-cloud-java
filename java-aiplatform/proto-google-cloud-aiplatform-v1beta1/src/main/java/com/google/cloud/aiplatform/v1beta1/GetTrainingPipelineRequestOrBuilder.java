@@ -40,7 +40,6 @@ public interface GetTrainingPipelineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

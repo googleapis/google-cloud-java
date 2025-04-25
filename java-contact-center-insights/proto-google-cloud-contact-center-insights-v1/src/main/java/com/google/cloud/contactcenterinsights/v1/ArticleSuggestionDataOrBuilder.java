@@ -36,7 +36,6 @@ public interface ArticleSuggestionDataOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ArticleSuggestionDataOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface ArticleSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -114,11 +111,9 @@ public interface ArticleSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ArticleSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public interface ArticleSuggestionDataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface ArticleSuggestionDataOrBuilder
    * @return The queryRecord.
    */
   java.lang.String getQueryRecord();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface ArticleSuggestionDataOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

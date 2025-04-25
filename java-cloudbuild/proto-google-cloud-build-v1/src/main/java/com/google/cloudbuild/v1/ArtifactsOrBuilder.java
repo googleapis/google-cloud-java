@@ -44,7 +44,6 @@ public interface ArtifactsOrBuilder
    * @return A list containing the images.
    */
   java.util.List<java.lang.String> getImagesList();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ArtifactsOrBuilder
    * @return The count of images.
    */
   int getImagesCount();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ArtifactsOrBuilder
    * @return The images at the given index.
    */
   java.lang.String getImages(int index);
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface ArtifactsOrBuilder
    * @return Whether the objects field is set.
    */
   boolean hasObjects();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ArtifactsOrBuilder
    * @return The objects.
    */
   com.google.cloudbuild.v1.Artifacts.ArtifactObjects getObjects();
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v1.Artifacts.MavenArtifact> getMavenArtifactsList();
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Artifacts.MavenArtifact getMavenArtifacts(int index);
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   int getMavenArtifactsCount();
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public interface ArtifactsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.Artifacts.MavenArtifactOrBuilder>
       getMavenArtifactsOrBuilderList();
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v1.Artifacts.GoModule> getGoModulesList();
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Artifacts.GoModule getGoModules(int index);
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   int getGoModulesCount();
-
   /**
    *
    *
@@ -337,7 +325,6 @@ public interface ArtifactsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.Artifacts.GoModuleOrBuilder>
       getGoModulesOrBuilderList();
-
   /**
    *
    *
@@ -370,7 +357,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v1.Artifacts.PythonPackage> getPythonPackagesList();
-
   /**
    *
    *
@@ -387,7 +373,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Artifacts.PythonPackage getPythonPackages(int index);
-
   /**
    *
    *
@@ -404,7 +389,6 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   int getPythonPackagesCount();
-
   /**
    *
    *
@@ -422,7 +406,6 @@ public interface ArtifactsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.Artifacts.PythonPackageOrBuilder>
       getPythonPackagesOrBuilderList();
-
   /**
    *
    *
@@ -457,7 +440,6 @@ public interface ArtifactsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
    */
   java.util.List<com.google.cloudbuild.v1.Artifacts.NpmPackage> getNpmPackagesList();
-
   /**
    *
    *
@@ -475,7 +457,6 @@ public interface ArtifactsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
    */
   com.google.cloudbuild.v1.Artifacts.NpmPackage getNpmPackages(int index);
-
   /**
    *
    *
@@ -493,7 +474,6 @@ public interface ArtifactsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
    */
   int getNpmPackagesCount();
-
   /**
    *
    *
@@ -512,7 +492,6 @@ public interface ArtifactsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.Artifacts.NpmPackageOrBuilder>
       getNpmPackagesOrBuilderList();
-
   /**
    *
    *

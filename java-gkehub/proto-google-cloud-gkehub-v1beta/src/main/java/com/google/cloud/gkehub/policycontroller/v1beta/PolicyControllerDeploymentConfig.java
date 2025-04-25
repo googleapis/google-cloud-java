@@ -34,7 +34,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig)
     PolicyControllerDeploymentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PolicyControllerDeploymentConfig.newBuilder() to construct.
   private PolicyControllerDeploymentConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -123,7 +122,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * <code>AFFINITY_UNSPECIFIED = 0;</code>
      */
     public static final int AFFINITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * <code>NO_AFFINITY = 1;</code>
      */
     public static final int NO_AFFINITY_VALUE = 1;
-
     /**
      *
      *
@@ -250,7 +247,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return Whether the key field is set.
      */
     boolean hasKey();
-
     /**
      *
      *
@@ -263,7 +259,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return The key.
      */
     java.lang.String getKey();
-
     /**
      *
      *
@@ -289,7 +284,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return Whether the operator field is set.
      */
     boolean hasOperator();
-
     /**
      *
      *
@@ -302,7 +296,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return The operator.
      */
     java.lang.String getOperator();
-
     /**
      *
      *
@@ -328,7 +321,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return Whether the value field is set.
      */
     boolean hasValue();
-
     /**
      *
      *
@@ -341,7 +333,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return The value.
      */
     java.lang.String getValue();
-
     /**
      *
      *
@@ -367,7 +358,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return Whether the effect field is set.
      */
     boolean hasEffect();
-
     /**
      *
      *
@@ -380,7 +370,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      * @return The effect.
      */
     java.lang.String getEffect();
-
     /**
      *
      *
@@ -394,7 +383,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
      */
     com.google.protobuf.ByteString getEffectBytes();
   }
-
   /**
    *
    *
@@ -410,7 +398,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig.Toleration)
       TolerationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Toleration.newBuilder() to construct.
     private Toleration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -451,7 +438,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -467,7 +453,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -491,7 +476,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return s;
       }
     }
-
     /**
      *
      *
@@ -520,7 +504,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object operator_ = "";
-
     /**
      *
      *
@@ -536,7 +519,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasOperator() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -560,7 +542,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return s;
       }
     }
-
     /**
      *
      *
@@ -589,7 +570,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -605,7 +585,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -629,7 +608,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return s;
       }
     }
-
     /**
      *
      *
@@ -658,7 +636,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object effect_ = "";
-
     /**
      *
      *
@@ -674,7 +651,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasEffect() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -698,7 +674,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return s;
       }
     }
-
     /**
      *
      *
@@ -956,7 +931,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1223,7 +1197,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       private int bitField0_;
 
       private java.lang.Object key_ = "";
-
       /**
        *
        *
@@ -1238,7 +1211,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1261,7 +1233,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1284,7 +1255,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1306,7 +1276,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1324,7 +1293,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1349,7 +1317,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
 
       private java.lang.Object operator_ = "";
-
       /**
        *
        *
@@ -1364,7 +1331,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       public boolean hasOperator() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1387,7 +1353,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1410,7 +1375,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1432,7 +1396,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1450,7 +1413,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1475,7 +1437,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
 
       private java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -1490,7 +1451,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       public boolean hasValue() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1513,7 +1473,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1536,7 +1495,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1558,7 +1516,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1576,7 +1533,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1601,7 +1557,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
 
       private java.lang.Object effect_ = "";
-
       /**
        *
        *
@@ -1616,7 +1571,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       public boolean hasEffect() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1639,7 +1593,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1662,7 +1615,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1684,7 +1636,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1702,7 +1653,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1801,7 +1751,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
   private int bitField0_;
   public static final int REPLICA_COUNT_FIELD_NUMBER = 1;
   private long replicaCount_ = 0L;
-
   /**
    *
    *
@@ -1817,7 +1766,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
   public boolean hasReplicaCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1836,7 +1784,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
   public static final int CONTAINER_RESOURCES_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.policycontroller.v1beta.ResourceRequirements containerResources_;
-
   /**
    *
    *
@@ -1854,7 +1801,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
   public boolean hasContainerResources() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1875,7 +1821,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         ? com.google.cloud.gkehub.policycontroller.v1beta.ResourceRequirements.getDefaultInstance()
         : containerResources_;
   }
-
   /**
    *
    *
@@ -1897,7 +1842,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
   public static final int POD_ANTI_AFFINITY_FIELD_NUMBER = 3;
   private boolean podAntiAffinity_ = false;
-
   /**
    *
    *
@@ -1917,7 +1861,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
   public boolean hasPodAntiAffinity() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1945,7 +1888,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
           com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig
               .Toleration>
       podTolerations_;
-
   /**
    *
    *
@@ -1964,7 +1906,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       getPodTolerationsList() {
     return podTolerations_;
   }
-
   /**
    *
    *
@@ -1984,7 +1925,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       getPodTolerationsOrBuilderList() {
     return podTolerations_;
   }
-
   /**
    *
    *
@@ -2000,7 +1940,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
   public int getPodTolerationsCount() {
     return podTolerations_.size();
   }
-
   /**
    *
    *
@@ -2017,7 +1956,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       getPodTolerations(int index) {
     return podTolerations_.get(index);
   }
-
   /**
    *
    *
@@ -2038,7 +1976,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
 
   public static final int POD_AFFINITY_FIELD_NUMBER = 5;
   private int podAffinity_ = 0;
-
   /**
    *
    *
@@ -2056,7 +1993,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
   public int getPodAffinityValue() {
     return podAffinity_;
   }
-
   /**
    *
    *
@@ -2310,7 +2246,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2637,7 +2572,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     private int bitField0_;
 
     private long replicaCount_;
-
     /**
      *
      *
@@ -2653,7 +2587,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasReplicaCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2669,7 +2602,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public long getReplicaCount() {
       return replicaCount_;
     }
-
     /**
      *
      *
@@ -2689,7 +2621,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2715,7 +2646,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
             com.google.cloud.gkehub.policycontroller.v1beta.ResourceRequirements.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.ResourceRequirementsOrBuilder>
         containerResourcesBuilder_;
-
     /**
      *
      *
@@ -2732,7 +2662,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasContainerResources() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2757,7 +2686,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return containerResourcesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2783,7 +2711,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2807,7 +2734,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2840,7 +2766,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -2862,7 +2787,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2880,7 +2804,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return getContainerResourcesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2903,7 +2826,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
             : containerResources_;
       }
     }
-
     /**
      *
      *
@@ -2933,7 +2855,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     }
 
     private boolean podAntiAffinity_;
-
     /**
      *
      *
@@ -2954,7 +2875,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean hasPodAntiAffinity() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2975,7 +2895,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public boolean getPodAntiAffinity() {
       return podAntiAffinity_;
     }
-
     /**
      *
      *
@@ -3000,7 +2919,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3069,7 +2987,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return podTolerationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3088,7 +3005,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return podTolerationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3109,7 +3025,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return podTolerationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3137,7 +3052,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3163,7 +3077,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3190,7 +3103,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3218,7 +3130,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3243,7 +3154,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3269,7 +3179,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3296,7 +3205,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3318,7 +3226,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3340,7 +3247,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3357,7 +3263,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         getPodTolerationsBuilder(int index) {
       return getPodTolerationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3378,7 +3283,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return podTolerationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3401,7 +3305,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(podTolerations_);
       }
     }
-
     /**
      *
      *
@@ -3421,7 +3324,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
               com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig
                   .Toleration.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3442,7 +3344,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
               com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig
                   .Toleration.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3488,7 +3389,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     }
 
     private int podAffinity_ = 0;
-
     /**
      *
      *
@@ -3506,7 +3406,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
     public int getPodAffinityValue() {
       return podAffinity_;
     }
-
     /**
      *
      *
@@ -3527,7 +3426,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3553,7 +3451,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
               .Affinity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3579,7 +3476,6 @@ public final class PolicyControllerDeploymentConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

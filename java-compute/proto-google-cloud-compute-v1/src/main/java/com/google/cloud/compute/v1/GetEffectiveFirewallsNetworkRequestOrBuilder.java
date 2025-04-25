@@ -36,7 +36,6 @@ public interface GetEffectiveFirewallsNetworkRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetEffectiveFirewallsNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

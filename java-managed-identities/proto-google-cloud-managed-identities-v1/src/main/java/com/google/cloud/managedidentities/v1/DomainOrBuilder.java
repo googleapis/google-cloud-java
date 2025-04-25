@@ -37,7 +37,6 @@ public interface DomainOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DomainOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -73,11 +71,9 @@ public interface DomainOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -88,7 +84,6 @@ public interface DomainOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -103,7 +98,6 @@ public interface DomainOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface DomainOrBuilder
    * @return A list containing the authorizedNetworks.
    */
   java.util.List<java.lang.String> getAuthorizedNetworksList();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface DomainOrBuilder
    * @return The count of authorizedNetworks.
    */
   int getAuthorizedNetworksCount();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface DomainOrBuilder
    * @return The authorizedNetworks at the given index.
    */
   java.lang.String getAuthorizedNetworks(int index);
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public interface DomainOrBuilder
    * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public interface DomainOrBuilder
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String> getLocationsList();
-
   /**
    *
    *
@@ -250,7 +239,6 @@ public interface DomainOrBuilder
    * @return The count of locations.
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -268,7 +256,6 @@ public interface DomainOrBuilder
    * @return The locations at the given index.
    */
   java.lang.String getLocations(int index);
-
   /**
    *
    *
@@ -300,7 +287,6 @@ public interface DomainOrBuilder
    * @return The admin.
    */
   java.lang.String getAdmin();
-
   /**
    *
    *
@@ -329,7 +315,6 @@ public interface DomainOrBuilder
    * @return The fqdn.
    */
   java.lang.String getFqdn();
-
   /**
    *
    *
@@ -358,7 +343,6 @@ public interface DomainOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -372,7 +356,6 @@ public interface DomainOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -398,7 +381,6 @@ public interface DomainOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -412,7 +394,6 @@ public interface DomainOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -439,7 +420,6 @@ public interface DomainOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -468,7 +448,6 @@ public interface DomainOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *
@@ -495,7 +474,6 @@ public interface DomainOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.managedidentities.v1.Trust> getTrustsList();
-
   /**
    *
    *
@@ -508,7 +486,6 @@ public interface DomainOrBuilder
    * </code>
    */
   com.google.cloud.managedidentities.v1.Trust getTrusts(int index);
-
   /**
    *
    *
@@ -521,7 +498,6 @@ public interface DomainOrBuilder
    * </code>
    */
   int getTrustsCount();
-
   /**
    *
    *
@@ -535,7 +511,6 @@ public interface DomainOrBuilder
    */
   java.util.List<? extends com.google.cloud.managedidentities.v1.TrustOrBuilder>
       getTrustsOrBuilderList();
-
   /**
    *
    *

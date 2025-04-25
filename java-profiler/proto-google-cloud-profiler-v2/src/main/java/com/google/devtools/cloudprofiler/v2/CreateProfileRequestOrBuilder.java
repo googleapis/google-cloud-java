@@ -36,7 +36,6 @@ public interface CreateProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CreateProfileRequestOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CreateProfileRequestOrBuilder
    * @return The deployment.
    */
   com.google.devtools.cloudprofiler.v2.Deployment getDeployment();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface CreateProfileRequestOrBuilder
    * @return A list containing the profileType.
    */
   java.util.List<com.google.devtools.cloudprofiler.v2.ProfileType> getProfileTypeList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface CreateProfileRequestOrBuilder
    * @return The count of profileType.
    */
   int getProfileTypeCount();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface CreateProfileRequestOrBuilder
    * @return The profileType at the given index.
    */
   com.google.devtools.cloudprofiler.v2.ProfileType getProfileType(int index);
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface CreateProfileRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for profileType.
    */
   java.util.List<java.lang.Integer> getProfileTypeValueList();
-
   /**
    *
    *

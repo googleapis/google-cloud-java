@@ -36,7 +36,6 @@ public interface PatchNetworkRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PatchNetworkRequestOrBuilder
    * @return Whether the networkResource field is set.
    */
   boolean hasNetworkResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchNetworkRequestOrBuilder
    * @return The networkResource.
    */
   com.google.cloud.compute.v1.Network getNetworkResource();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface PatchNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface PatchNetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

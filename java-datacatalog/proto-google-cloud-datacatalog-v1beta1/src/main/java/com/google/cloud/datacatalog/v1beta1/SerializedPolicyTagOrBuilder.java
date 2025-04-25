@@ -38,7 +38,6 @@ public interface SerializedPolicyTagOrBuilder
    * @return The policyTag.
    */
   java.lang.String getPolicyTag();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface SerializedPolicyTagOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface SerializedPolicyTagOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface SerializedPolicyTagOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag> getChildPolicyTagsList();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface SerializedPolicyTagOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag getChildPolicyTags(int index);
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface SerializedPolicyTagOrBuilder
    * </code>
    */
   int getChildPolicyTagsCount();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface SerializedPolicyTagOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>
       getChildPolicyTagsOrBuilderList();
-
   /**
    *
    *

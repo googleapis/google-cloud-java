@@ -33,7 +33,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.VideoAnnotationProgress)
     VideoAnnotationProgressOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoAnnotationProgress.newBuilder() to construct.
   private VideoAnnotationProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputUri_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 2;
   private int progressPercent_ = 0;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   public static final int FEATURE_FIELD_NUMBER = 5;
   private int feature_ = 0;
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
   public int getFeatureValue() {
     return feature_;
   }
-
   /**
    *
    *
@@ -280,7 +268,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   public static final int SEGMENT_FIELD_NUMBER = 6;
   private com.google.cloud.videointelligence.v1.VideoSegment segment_;
-
   /**
    *
    *
@@ -297,7 +284,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
   public boolean hasSegment() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +302,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         ? com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance()
         : segment_;
   }
-
   /**
    *
    *
@@ -554,7 +539,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -835,7 +819,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object inputUri_ = "";
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +930,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     }
 
     private int progressPercent_;
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     public int getProgressPercent() {
       return progressPercent_;
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1049,7 +1023,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1064,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1091,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1110,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1124,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1172,7 +1140,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1172,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1220,7 +1186,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1241,7 +1206,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1228,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1247,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1274,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1293,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1307,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1366,7 +1325,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1394,7 +1352,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     }
 
     private int feature_ = 0;
-
     /**
      *
      *
@@ -1411,7 +1368,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     public int getFeatureValue() {
       return feature_;
     }
-
     /**
      *
      *
@@ -1431,7 +1387,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1405,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
           com.google.cloud.videointelligence.v1.Feature.forNumber(feature_);
       return result == null ? com.google.cloud.videointelligence.v1.Feature.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1473,7 +1427,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1499,7 +1452,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
             com.google.cloud.videointelligence.v1.VideoSegment.Builder,
             com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
         segmentBuilder_;
-
     /**
      *
      *
@@ -1515,7 +1467,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     public boolean hasSegment() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1537,7 +1488,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         return segmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1561,7 +1511,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1532,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1561,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1581,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1650,7 +1596,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1670,7 +1615,6 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
             : segment_;
       }
     }
-
     /**
      *
      *

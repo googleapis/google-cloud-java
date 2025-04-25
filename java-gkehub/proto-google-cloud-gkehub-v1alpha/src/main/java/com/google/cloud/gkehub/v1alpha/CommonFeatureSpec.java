@@ -33,7 +33,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1alpha.CommonFeatureSpec)
     CommonFeatureSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommonFeatureSpec.newBuilder() to construct.
   private CommonFeatureSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     private FeatureSpecCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MULTICLUSTERINGRESS_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasMulticlusteringress() {
     return featureSpecCase_ == 102;
   }
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CLOUDAUDITLOGGING_FIELD_NUMBER = 108;
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasCloudauditlogging() {
     return featureSpecCase_ == 108;
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -419,7 +411,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec.Builder,
             com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpecOrBuilder>
         multiclusteringressBuilder_;
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasMulticlusteringress() {
       return featureSpecCase_ == 102;
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       featureSpecCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       featureSpecCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       featureSpecCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         getMulticlusteringressBuilder() {
       return getMulticlusteringressFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec.Builder,
             com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpecOrBuilder>
         cloudauditloggingBuilder_;
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasCloudauditlogging() {
       return featureSpecCase_ == 108;
     }
-
     /**
      *
      *
@@ -937,7 +917,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -962,7 +941,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       featureSpecCase_ = 108;
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +962,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       featureSpecCase_ = 108;
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       featureSpecCase_ = 108;
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1038,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         getCloudauditloggingBuilder() {
       return getCloudauditloggingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *

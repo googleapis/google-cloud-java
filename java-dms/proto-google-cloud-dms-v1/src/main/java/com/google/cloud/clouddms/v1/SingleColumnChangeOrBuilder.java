@@ -36,7 +36,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The charset.
    */
   java.lang.String getCharset();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The collation.
    */
   java.lang.String getCollation();
-
   /**
    *
    *
@@ -234,7 +231,6 @@ public interface SingleColumnChangeOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -248,7 +244,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *
@@ -273,7 +268,6 @@ public interface SingleColumnChangeOrBuilder
    * @return A list containing the setValues.
    */
   java.util.List<java.lang.String> getSetValuesList();
-
   /**
    *
    *
@@ -286,7 +280,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The count of setValues.
    */
   int getSetValuesCount();
-
   /**
    *
    *
@@ -300,7 +293,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The setValues at the given index.
    */
   java.lang.String getSetValues(int index);
-
   /**
    *
    *
@@ -327,7 +319,6 @@ public interface SingleColumnChangeOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1.DestinationParallelstore)
     DestinationParallelstoreOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DestinationParallelstore.newBuilder() to construct.
   private DestinationParallelstore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -279,7 +276,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -464,7 +460,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -488,7 +483,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -512,7 +506,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class DestinationParallelstore extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

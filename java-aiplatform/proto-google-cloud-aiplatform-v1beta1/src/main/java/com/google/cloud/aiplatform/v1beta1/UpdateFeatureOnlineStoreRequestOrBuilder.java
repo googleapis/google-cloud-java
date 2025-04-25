@@ -40,7 +40,6 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * @return Whether the featureOnlineStore field is set.
    */
   boolean hasFeatureOnlineStore();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * @return The featureOnlineStore.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore getFeatureOnlineStore();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface UpdateFeatureOnlineStoreRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

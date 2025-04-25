@@ -38,7 +38,6 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface UpdateSecurityMarksRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *

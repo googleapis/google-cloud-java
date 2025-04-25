@@ -34,7 +34,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ListTestCasesRequest)
     ListTestCasesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTestCasesRequest.newBuilder() to construct.
   private ListTestCasesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,7 +122,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
      * <code>TEST_CASE_VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int TEST_CASE_VIEW_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
-
     /**
      *
      *
@@ -236,7 +233,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -263,7 +259,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -293,7 +288,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -316,7 +310,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VIEW_FIELD_NUMBER = 4;
   private int view_ = 0;
-
   /**
    *
    *
@@ -383,7 +374,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -597,7 +587,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -824,7 +813,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -850,7 +838,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +863,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -901,7 +887,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +907,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +934,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -968,7 +951,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -990,7 +972,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +993,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1035,7 +1015,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1037,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1058,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1075,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1099,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1158,7 +1132,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1151,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.cx.v3beta1.ListTestCasesRequest.TestCaseView.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1201,7 +1173,6 @@ public final class ListTestCasesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

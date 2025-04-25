@@ -36,7 +36,6 @@ public interface GcpResourceOrBuilder
    * @return The gcpResourcename.
    */
   java.lang.String getGcpResourcename();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GcpResourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface GcpResourceOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

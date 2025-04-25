@@ -32,7 +32,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceGroupHealth)
     BackendServiceGroupHealthOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackendServiceGroupHealth.newBuilder() to construct.
   private BackendServiceGroupHealth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,7 +103,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -121,14 +119,12 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthStatus> healthStatus_;
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList() {
     return healthStatus_;
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       getHealthStatusOrBuilderList() {
     return healthStatus_;
   }
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   public int getHealthStatusCount() {
     return healthStatus_.size();
   }
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index) {
     return healthStatus_.get(index);
   }
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
   public boolean hasKind() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -524,7 +510,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -840,7 +825,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -857,14 +841,12 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -943,14 +922,12 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +996,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return healthStatusBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return healthStatusBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1028,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return healthStatusBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1050,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1070,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1092,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1114,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1134,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1154,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1174,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1193,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1212,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1224,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.HealthStatus.Builder getHealthStatusBuilder(int index) {
       return getHealthStatusFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1277,7 +1240,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return healthStatusBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1257,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(healthStatus_);
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1270,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       return getHealthStatusFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HealthStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1323,7 +1283,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       return getHealthStatusFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HealthStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1356,7 +1315,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1371,7 +1329,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1394,7 +1351,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1417,7 +1373,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1439,7 +1394,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1457,7 +1411,6 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

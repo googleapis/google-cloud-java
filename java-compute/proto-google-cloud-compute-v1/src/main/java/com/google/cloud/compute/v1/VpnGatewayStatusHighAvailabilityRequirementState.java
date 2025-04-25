@@ -34,7 +34,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState)
     VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VpnGatewayStatusHighAvailabilityRequirementState.newBuilder() to construct.
   private VpnGatewayStatusHighAvailabilityRequirementState(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -122,7 +121,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>CONNECTION_REDUNDANCY_MET = 505242907;</code>
      */
     public static final int CONNECTION_REDUNDANCY_MET_VALUE = 505242907;
-
     /**
      *
      *
@@ -267,7 +264,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_UNSATISFIED_REASON = 0;</code>
      */
     public static final int UNDEFINED_UNSATISFIED_REASON_VALUE = 0;
-
     /** <code>INCOMPLETE_TUNNELS_COVERAGE = 55917437;</code> */
     public static final int INCOMPLETE_TUNNELS_COVERAGE_VALUE = 55917437;
 
@@ -363,7 +359,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
-
   /**
    *
    *
@@ -380,7 +375,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
   public boolean hasState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -405,7 +399,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       return s;
     }
   }
-
   /**
    *
    *
@@ -435,7 +428,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unsatisfiedReason_ = "";
-
   /**
    *
    *
@@ -452,7 +444,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
   public boolean hasUnsatisfiedReason() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -477,7 +468,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       return s;
     }
   }
-
   /**
    *
    *
@@ -690,7 +680,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -905,7 +894,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     private int bitField0_;
 
     private java.lang.Object state_ = "";
-
     /**
      *
      *
@@ -921,7 +909,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     public boolean hasState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -945,7 +932,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +955,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -992,7 +977,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +995,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1020,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     }
 
     private java.lang.Object unsatisfiedReason_ = "";
-
     /**
      *
      *
@@ -1053,7 +1035,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     public boolean hasUnsatisfiedReason() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1077,7 +1058,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1081,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1103,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1121,6 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       onChanged();
       return this;
     }
-
     /**
      *
      *

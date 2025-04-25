@@ -39,7 +39,6 @@ public interface CreateCollectionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateCollectionRequestOrBuilder
    * @return Whether the collection field is set.
    */
   boolean hasCollection();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateCollectionRequestOrBuilder
    * @return The collection.
    */
   com.google.cloud.visionai.v1.Collection getCollection();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateCollectionRequestOrBuilder
    * @return Whether the collectionId field is set.
    */
   boolean hasCollectionId();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface CreateCollectionRequestOrBuilder
    * @return The collectionId.
    */
   java.lang.String getCollectionId();
-
   /**
    *
    *

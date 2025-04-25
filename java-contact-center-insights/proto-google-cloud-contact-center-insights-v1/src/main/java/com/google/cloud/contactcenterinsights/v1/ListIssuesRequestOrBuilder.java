@@ -38,7 +38,6 @@ public interface ListIssuesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

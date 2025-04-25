@@ -33,7 +33,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.GovernanceEvent)
     GovernanceEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GovernanceEvent.newBuilder() to construct.
   private GovernanceEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -258,7 +257,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -269,7 +267,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>RESOURCE_IAM_POLICY_UPDATE = 1;</code>
      */
     public static final int RESOURCE_IAM_POLICY_UPDATE_VALUE = 1;
-
     /**
      *
      *
@@ -280,7 +277,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_TABLE_CREATE = 2;</code>
      */
     public static final int BIGQUERY_TABLE_CREATE_VALUE = 2;
-
     /**
      *
      *
@@ -291,7 +287,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_TABLE_UPDATE = 3;</code>
      */
     public static final int BIGQUERY_TABLE_UPDATE_VALUE = 3;
-
     /**
      *
      *
@@ -302,7 +297,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_TABLE_DELETE = 4;</code>
      */
     public static final int BIGQUERY_TABLE_DELETE_VALUE = 4;
-
     /**
      *
      *
@@ -313,7 +307,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_CONNECTION_CREATE = 5;</code>
      */
     public static final int BIGQUERY_CONNECTION_CREATE_VALUE = 5;
-
     /**
      *
      *
@@ -324,7 +317,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_CONNECTION_UPDATE = 6;</code>
      */
     public static final int BIGQUERY_CONNECTION_UPDATE_VALUE = 6;
-
     /**
      *
      *
@@ -335,7 +327,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_CONNECTION_DELETE = 7;</code>
      */
     public static final int BIGQUERY_CONNECTION_DELETE_VALUE = 7;
-
     /**
      *
      *
@@ -346,7 +337,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_TAXONOMY_CREATE = 10;</code>
      */
     public static final int BIGQUERY_TAXONOMY_CREATE_VALUE = 10;
-
     /**
      *
      *
@@ -357,7 +347,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_POLICY_TAG_CREATE = 11;</code>
      */
     public static final int BIGQUERY_POLICY_TAG_CREATE_VALUE = 11;
-
     /**
      *
      *
@@ -368,7 +357,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_POLICY_TAG_DELETE = 12;</code>
      */
     public static final int BIGQUERY_POLICY_TAG_DELETE_VALUE = 12;
-
     /**
      *
      *
@@ -379,7 +367,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>BIGQUERY_POLICY_TAG_SET_IAM_POLICY = 13;</code>
      */
     public static final int BIGQUERY_POLICY_TAG_SET_IAM_POLICY_VALUE = 13;
-
     /**
      *
      *
@@ -390,7 +377,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_POLICY_UPDATE = 14;</code>
      */
     public static final int ACCESS_POLICY_UPDATE_VALUE = 14;
-
     /**
      *
      *
@@ -401,7 +387,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>GOVERNANCE_RULE_MATCHED_RESOURCES = 15;</code>
      */
     public static final int GOVERNANCE_RULE_MATCHED_RESOURCES_VALUE = 15;
-
     /**
      *
      *
@@ -412,7 +397,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS = 16;</code>
      */
     public static final int GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS_VALUE = 16;
-
     /**
      *
      *
@@ -423,7 +407,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>GOVERNANCE_RULE_ERRORS = 17;</code>
      */
     public static final int GOVERNANCE_RULE_ERRORS_VALUE = 17;
-
     /**
      *
      *
@@ -565,7 +548,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * @return The entity.
      */
     java.lang.String getEntity();
-
     /**
      *
      *
@@ -593,7 +575,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for entityType.
      */
     int getEntityTypeValue();
-
     /**
      *
      *
@@ -607,7 +588,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.dataplex.v1.GovernanceEvent.Entity.EntityType getEntityType();
   }
-
   /**
    *
    *
@@ -622,7 +602,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.GovernanceEvent.Entity)
       EntityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Entity.newBuilder() to construct.
     private Entity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -707,7 +686,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
        * <code>ENTITY_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int ENTITY_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -718,7 +696,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
        * <code>TABLE = 1;</code>
        */
       public static final int TABLE_VALUE = 1;
-
       /**
        *
        *
@@ -819,7 +796,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entity_ = "";
-
     /**
      *
      *
@@ -845,7 +821,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -874,7 +849,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
 
     public static final int ENTITY_TYPE_FIELD_NUMBER = 2;
     private int entityType_ = 0;
-
     /**
      *
      *
@@ -890,7 +864,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     public int getEntityTypeValue() {
       return entityType_;
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1286,7 +1258,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object entity_ = "";
-
       /**
        *
        *
@@ -1311,7 +1282,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1336,7 +1306,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1360,7 +1329,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1380,7 +1348,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1407,7 +1374,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       }
 
       private int entityType_ = 0;
-
       /**
        *
        *
@@ -1423,7 +1389,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       public int getEntityTypeValue() {
         return entityType_;
       }
-
       /**
        *
        *
@@ -1442,7 +1407,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1462,7 +1426,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
             ? com.google.cloud.dataplex.v1.GovernanceEvent.Entity.EntityType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1485,7 +1448,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1573,7 +1535,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -1597,7 +1558,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -1624,7 +1584,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
   private int eventType_ = 0;
-
   /**
    *
    *
@@ -1640,7 +1599,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
   public int getEventTypeValue() {
     return eventType_;
   }
-
   /**
    *
    *
@@ -1663,7 +1621,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENTITY_FIELD_NUMBER = 3;
   private com.google.cloud.dataplex.v1.GovernanceEvent.Entity entity_;
-
   /**
    *
    *
@@ -1680,7 +1637,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
   public boolean hasEntity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1699,7 +1655,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dataplex.v1.GovernanceEvent.Entity.getDefaultInstance()
         : entity_;
   }
-
   /**
    *
    *
@@ -1903,7 +1858,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2129,7 +2083,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -2152,7 +2105,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2175,7 +2127,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2197,7 +2148,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2165,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2240,7 +2189,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private int eventType_ = 0;
-
     /**
      *
      *
@@ -2256,7 +2204,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     public int getEventTypeValue() {
       return eventType_;
     }
-
     /**
      *
      *
@@ -2275,7 +2222,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2295,7 +2241,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.dataplex.v1.GovernanceEvent.EventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2317,7 +2262,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2286,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.GovernanceEvent.Entity.Builder,
             com.google.cloud.dataplex.v1.GovernanceEvent.EntityOrBuilder>
         entityBuilder_;
-
     /**
      *
      *
@@ -2358,7 +2301,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasEntity() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2380,7 +2322,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
         return entityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2404,7 +2345,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2366,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2456,7 +2395,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2477,7 +2415,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2493,7 +2430,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2513,7 +2449,6 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
             : entity_;
       }
     }
-
     /**
      *
      *

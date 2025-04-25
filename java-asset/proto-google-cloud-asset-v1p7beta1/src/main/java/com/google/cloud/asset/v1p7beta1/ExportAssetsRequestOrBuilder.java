@@ -41,7 +41,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return A list containing the assetTypes.
    */
   java.util.List<java.lang.String> getAssetTypesList();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The count of assetTypes.
    */
   int getAssetTypesCount();
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The assetTypes at the given index.
    */
   java.lang.String getAssetTypes(int index);
-
   /**
    *
    *
@@ -244,7 +238,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -290,7 +282,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.asset.v1p7beta1.OutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -326,7 +317,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return A list containing the relationshipTypes.
    */
   java.util.List<java.lang.String> getRelationshipTypesList();
-
   /**
    *
    *
@@ -348,7 +338,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The count of relationshipTypes.
    */
   int getRelationshipTypesCount();
-
   /**
    *
    *
@@ -371,7 +360,6 @@ public interface ExportAssetsRequestOrBuilder
    * @return The relationshipTypes at the given index.
    */
   java.lang.String getRelationshipTypes(int index);
-
   /**
    *
    *

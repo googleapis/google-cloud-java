@@ -26,17 +26,13 @@ public interface GuestAttributesValueOrBuilder
 
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   java.util.List<com.google.cloud.compute.v1.GuestAttributesEntry> getItemsList();
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   com.google.cloud.compute.v1.GuestAttributesEntry getItems(int index);
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   int getItemsCount();
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.GuestAttributesEntryOrBuilder>
       getItemsOrBuilderList();
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   com.google.cloud.compute.v1.GuestAttributesEntryOrBuilder getItemsOrBuilder(int index);
 }

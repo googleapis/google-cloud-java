@@ -33,7 +33,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionHealthCheckRequest)
     InsertRegionHealthCheckRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertRegionHealthCheckRequest.newBuilder() to construct.
   private InsertRegionHealthCheckRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int HEALTH_CHECK_RESOURCE_FIELD_NUMBER = 201925032;
   private com.google.cloud.compute.v1.HealthCheck healthCheckResource_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
   public boolean hasHealthCheckResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.HealthCheck.getDefaultInstance()
         : healthCheckResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -509,7 +498,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +751,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.HealthCheck.Builder,
             com.google.cloud.compute.v1.HealthCheckOrBuilder>
         healthCheckResourceBuilder_;
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     public boolean hasHealthCheckResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return healthCheckResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return getHealthCheckResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
             : healthCheckResource_;
       }
     }
-
     /**
      *
      *
@@ -972,7 +951,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -997,7 +975,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +999,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1022,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1067,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1118,7 +1091,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1115,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1138,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1157,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1183,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1229,7 +1197,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1252,7 +1219,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1241,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1262,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1279,6 @@ public final class InsertRegionHealthCheckRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ListApiOperationsResponse)
     ListApiOperationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListApiOperationsResponse.newBuilder() to construct.
   private ListApiOperationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.ApiOperation> apiOperations_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.apihub.v1.ApiOperation> getApiOperationsList() {
     return apiOperations_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       getApiOperationsOrBuilderList() {
     return apiOperations_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
   public int getApiOperationsCount() {
     return apiOperations_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
   public com.google.cloud.apihub.v1.ApiOperation getApiOperations(int index) {
     return apiOperations_.get(index);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -382,7 +374,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return apiOperationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return apiOperationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return apiOperationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +741,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
     public com.google.cloud.apihub.v1.ApiOperation.Builder getApiOperationsBuilder(int index) {
       return getApiOperationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return apiOperationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(apiOperations_);
       }
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       return getApiOperationsFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.ApiOperation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1015,7 +990,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       return getApiOperationsFieldBuilder()
           .addBuilder(index, com.google.cloud.apihub.v1.ApiOperation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1054,7 +1028,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1078,7 +1051,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1074,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1096,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1114,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

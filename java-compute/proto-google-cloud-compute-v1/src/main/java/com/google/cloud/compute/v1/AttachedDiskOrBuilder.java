@@ -37,7 +37,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AttachedDiskOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the boot field is set.
    */
   boolean hasBoot();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the deviceName field is set.
    */
   boolean hasDeviceName();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface AttachedDiskOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the diskEncryptionKey field is set.
    */
   boolean hasDiskEncryptionKey();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface AttachedDiskOrBuilder
    * @return The diskEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getDiskEncryptionKey();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the forceAttach field is set.
    */
   boolean hasForceAttach();
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public interface AttachedDiskOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   java.util.List<com.google.cloud.compute.v1.GuestOsFeature> getGuestOsFeaturesList();
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public interface AttachedDiskOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   com.google.cloud.compute.v1.GuestOsFeature getGuestOsFeatures(int index);
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public interface AttachedDiskOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   int getGuestOsFeaturesCount();
-
   /**
    *
    *
@@ -293,7 +280,6 @@ public interface AttachedDiskOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>
       getGuestOsFeaturesOrBuilderList();
-
   /**
    *
    *
@@ -317,7 +303,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the index field is set.
    */
   boolean hasIndex();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the initializeParams field is set.
    */
   boolean hasInitializeParams();
-
   /**
    *
    *
@@ -360,7 +344,6 @@ public interface AttachedDiskOrBuilder
    * @return The initializeParams.
    */
   com.google.cloud.compute.v1.AttachedDiskInitializeParams getInitializeParams();
-
   /**
    *
    *
@@ -387,7 +370,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the interface field is set.
    */
   boolean hasInterface();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface AttachedDiskOrBuilder
    * @return The interface.
    */
   java.lang.String getInterface();
-
   /**
    *
    *
@@ -428,7 +409,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -441,7 +421,6 @@ public interface AttachedDiskOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -467,7 +446,6 @@ public interface AttachedDiskOrBuilder
    * @return A list containing the licenses.
    */
   java.util.List<java.lang.String> getLicensesList();
-
   /**
    *
    *
@@ -480,7 +458,6 @@ public interface AttachedDiskOrBuilder
    * @return The count of licenses.
    */
   int getLicensesCount();
-
   /**
    *
    *
@@ -494,7 +471,6 @@ public interface AttachedDiskOrBuilder
    * @return The licenses at the given index.
    */
   java.lang.String getLicenses(int index);
-
   /**
    *
    *
@@ -522,7 +498,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
-
   /**
    *
    *
@@ -536,7 +511,6 @@ public interface AttachedDiskOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *
@@ -564,7 +538,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the savedState field is set.
    */
   boolean hasSavedState();
-
   /**
    *
    *
@@ -578,7 +551,6 @@ public interface AttachedDiskOrBuilder
    * @return The savedState.
    */
   java.lang.String getSavedState();
-
   /**
    *
    *
@@ -607,7 +579,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the shieldedInstanceInitialState field is set.
    */
   boolean hasShieldedInstanceInitialState();
-
   /**
    *
    *
@@ -622,7 +593,6 @@ public interface AttachedDiskOrBuilder
    * @return The shieldedInstanceInitialState.
    */
   com.google.cloud.compute.v1.InitialStateConfig getShieldedInstanceInitialState();
-
   /**
    *
    *
@@ -649,7 +619,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -662,7 +631,6 @@ public interface AttachedDiskOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *
@@ -689,7 +657,6 @@ public interface AttachedDiskOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -703,7 +670,6 @@ public interface AttachedDiskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

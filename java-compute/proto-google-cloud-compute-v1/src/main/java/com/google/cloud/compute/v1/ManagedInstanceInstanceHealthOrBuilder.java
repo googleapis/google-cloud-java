@@ -37,7 +37,6 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * @return Whether the detailedHealthState field is set.
    */
   boolean hasDetailedHealthState();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * @return The detailedHealthState.
    */
   java.lang.String getDetailedHealthState();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * @return Whether the healthCheck field is set.
    */
   boolean hasHealthCheck();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
-
   /**
    *
    *

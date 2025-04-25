@@ -38,7 +38,6 @@ public interface CreateResourceValueConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateResourceValueConfigRequestOrBuilder
    * @return Whether the resourceValueConfig field is set.
    */
   boolean hasResourceValueConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateResourceValueConfigRequestOrBuilder
    * @return The resourceValueConfig.
    */
   com.google.cloud.securitycenter.v2.ResourceValueConfig getResourceValueConfig();
-
   /**
    *
    *

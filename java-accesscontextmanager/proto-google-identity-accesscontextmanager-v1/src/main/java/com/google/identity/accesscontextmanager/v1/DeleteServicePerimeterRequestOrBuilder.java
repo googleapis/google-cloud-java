@@ -42,7 +42,6 @@ public interface DeleteServicePerimeterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

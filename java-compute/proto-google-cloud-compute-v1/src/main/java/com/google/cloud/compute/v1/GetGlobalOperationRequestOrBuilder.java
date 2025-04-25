@@ -38,7 +38,6 @@ public interface GetGlobalOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetGlobalOperationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

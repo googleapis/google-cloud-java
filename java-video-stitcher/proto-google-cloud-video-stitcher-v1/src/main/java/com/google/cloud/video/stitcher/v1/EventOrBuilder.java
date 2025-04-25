@@ -36,7 +36,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EventOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface EventOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface EventOrBuilder
    * @return Whether the offset field is set.
    */
   boolean hasOffset();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface EventOrBuilder
    * @return The offset.
    */
   com.google.protobuf.Duration getOffset();
-
   /**
    *
    *

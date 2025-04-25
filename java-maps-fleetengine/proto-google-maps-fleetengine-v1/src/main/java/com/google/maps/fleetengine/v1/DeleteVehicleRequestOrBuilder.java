@@ -37,7 +37,6 @@ public interface DeleteVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeleteVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface DeleteVehicleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

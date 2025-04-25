@@ -33,7 +33,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.Workspace)
     WorkspaceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Workspace.newBuilder() to construct.
   private Workspace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_ENCRYPTION_STATE_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1beta1.DataEncryptionState dataEncryptionState_;
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataEncryptionState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
         : dataEncryptionState_;
   }
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object internalMetadata_ = "";
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInternalMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -513,7 +501,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -765,7 +752,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -788,7 +774,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +996,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1058,7 +1032,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1066,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
             com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>
         dataEncryptionStateBuilder_;
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataEncryptionState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1135,7 +1106,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         return dataEncryptionStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1132,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1187,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1209,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1227,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataEncryptionStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1284,7 +1249,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
             : dataEncryptionState_;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1279,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object internalMetadata_ = "";
-
     /**
      *
      *
@@ -1333,7 +1296,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInternalMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1359,7 +1321,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1385,7 +1346,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1410,7 +1370,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1390,6 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

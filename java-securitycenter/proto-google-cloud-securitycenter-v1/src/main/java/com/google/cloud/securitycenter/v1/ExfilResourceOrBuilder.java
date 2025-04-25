@@ -37,7 +37,6 @@ public interface ExfilResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ExfilResourceOrBuilder
    * @return A list containing the components.
    */
   java.util.List<java.lang.String> getComponentsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ExfilResourceOrBuilder
    * @return The count of components.
    */
   int getComponentsCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ExfilResourceOrBuilder
    * @return The components at the given index.
    */
   java.lang.String getComponents(int index);
-
   /**
    *
    *

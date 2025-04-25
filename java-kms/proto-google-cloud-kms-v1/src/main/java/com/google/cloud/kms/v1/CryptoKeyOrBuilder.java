@@ -38,7 +38,6 @@ public interface CryptoKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the primary field is set.
    */
   boolean hasPrimary();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface CryptoKeyOrBuilder
    * @return The primary.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getPrimary();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface CryptoKeyOrBuilder
    * @return The enum numeric value on the wire for purpose.
    */
   int getPurposeValue();
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public interface CryptoKeyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -235,7 +229,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the nextRotationTime field is set.
    */
   boolean hasNextRotationTime();
-
   /**
    *
    *
@@ -263,7 +256,6 @@ public interface CryptoKeyOrBuilder
    * @return The nextRotationTime.
    */
   com.google.protobuf.Timestamp getNextRotationTime();
-
   /**
    *
    *
@@ -313,7 +305,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the rotationPeriod field is set.
    */
   boolean hasRotationPeriod();
-
   /**
    *
    *
@@ -337,7 +328,6 @@ public interface CryptoKeyOrBuilder
    * @return The rotationPeriod.
    */
   com.google.protobuf.Duration getRotationPeriod();
-
   /**
    *
    *
@@ -377,7 +367,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the versionTemplate field is set.
    */
   boolean hasVersionTemplate();
-
   /**
    *
    *
@@ -395,7 +384,6 @@ public interface CryptoKeyOrBuilder
    * @return The versionTemplate.
    */
   com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate();
-
   /**
    *
    *
@@ -423,7 +411,6 @@ public interface CryptoKeyOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -435,11 +422,9 @@ public interface CryptoKeyOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -451,7 +436,6 @@ public interface CryptoKeyOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -467,7 +451,6 @@ public interface CryptoKeyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -511,7 +494,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the destroyScheduledDuration field is set.
    */
   boolean hasDestroyScheduledDuration();
-
   /**
    *
    *
@@ -530,7 +512,6 @@ public interface CryptoKeyOrBuilder
    * @return The destroyScheduledDuration.
    */
   com.google.protobuf.Duration getDestroyScheduledDuration();
-
   /**
    *
    *
@@ -571,7 +552,6 @@ public interface CryptoKeyOrBuilder
    * @return The cryptoKeyBackend.
    */
   java.lang.String getCryptoKeyBackend();
-
   /**
    *
    *
@@ -617,7 +597,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the keyAccessJustificationsPolicy field is set.
    */
   boolean hasKeyAccessJustificationsPolicy();
-
   /**
    *
    *
@@ -639,7 +618,6 @@ public interface CryptoKeyOrBuilder
    * @return The keyAccessJustificationsPolicy.
    */
   com.google.cloud.kms.v1.KeyAccessJustificationsPolicy getKeyAccessJustificationsPolicy();
-
   /**
    *
    *

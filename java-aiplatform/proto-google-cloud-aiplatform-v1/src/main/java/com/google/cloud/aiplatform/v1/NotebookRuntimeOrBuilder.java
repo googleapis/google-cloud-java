@@ -36,7 +36,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The runtimeUser.
    */
   java.lang.String getRuntimeUser();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the notebookRuntimeTemplateRef field is set.
    */
   boolean hasNotebookRuntimeTemplateRef();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The notebookRuntimeTemplateRef.
    */
   com.google.cloud.aiplatform.v1.NotebookRuntimeTemplateRef getNotebookRuntimeTemplateRef();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The proxyUri.
    */
   java.lang.String getProxyUri();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The enum numeric value on the wire for healthState.
    */
   int getHealthStateValue();
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The enum numeric value on the wire for runtimeState.
    */
   int getRuntimeStateValue();
-
   /**
    *
    *
@@ -427,7 +413,6 @@ public interface NotebookRuntimeOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -455,11 +440,9 @@ public interface NotebookRuntimeOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -487,7 +470,6 @@ public interface NotebookRuntimeOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -519,7 +501,6 @@ public interface NotebookRuntimeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -566,7 +547,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
-
   /**
    *
    *
@@ -585,7 +565,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
-
   /**
    *
    *
@@ -615,7 +594,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -643,7 +621,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The enum numeric value on the wire for notebookRuntimeType.
    */
   int getNotebookRuntimeTypeValue();
-
   /**
    *
    *
@@ -674,7 +651,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
-
   /**
    *
    *
@@ -690,7 +666,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1.MachineSpec getMachineSpec();
-
   /**
    *
    *
@@ -721,7 +696,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the dataPersistentDiskSpec field is set.
    */
   boolean hasDataPersistentDiskSpec();
-
   /**
    *
    *
@@ -738,7 +712,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The dataPersistentDiskSpec.
    */
   com.google.cloud.aiplatform.v1.PersistentDiskSpec getDataPersistentDiskSpec();
-
   /**
    *
    *
@@ -768,7 +741,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the networkSpec field is set.
    */
   boolean hasNetworkSpec();
-
   /**
    *
    *
@@ -783,7 +755,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The networkSpec.
    */
   com.google.cloud.aiplatform.v1.NetworkSpec getNetworkSpec();
-
   /**
    *
    *
@@ -811,7 +782,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the idleShutdownConfig field is set.
    */
   boolean hasIdleShutdownConfig();
-
   /**
    *
    *
@@ -826,7 +796,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The idleShutdownConfig.
    */
   com.google.cloud.aiplatform.v1.NotebookIdleShutdownConfig getIdleShutdownConfig();
-
   /**
    *
    *
@@ -855,7 +824,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the eucConfig field is set.
    */
   boolean hasEucConfig();
-
   /**
    *
    *
@@ -870,7 +838,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The eucConfig.
    */
   com.google.cloud.aiplatform.v1.NotebookEucConfig getEucConfig();
-
   /**
    *
    *
@@ -898,7 +865,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the shieldedVmConfig field is set.
    */
   boolean hasShieldedVmConfig();
-
   /**
    *
    *
@@ -913,7 +879,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The shieldedVmConfig.
    */
   com.google.cloud.aiplatform.v1.ShieldedVmConfig getShieldedVmConfig();
-
   /**
    *
    *
@@ -940,7 +905,6 @@ public interface NotebookRuntimeOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
-
   /**
    *
    *
@@ -954,7 +918,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
-
   /**
    *
    *
@@ -969,7 +932,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
-
   /**
    *
    *
@@ -999,7 +961,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the softwareConfig field is set.
    */
   boolean hasSoftwareConfig();
-
   /**
    *
    *
@@ -1014,7 +975,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The softwareConfig.
    */
   com.google.cloud.aiplatform.v1.NotebookSoftwareConfig getSoftwareConfig();
-
   /**
    *
    *
@@ -1042,7 +1002,6 @@ public interface NotebookRuntimeOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -1057,7 +1016,6 @@ public interface NotebookRuntimeOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *

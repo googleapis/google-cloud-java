@@ -33,7 +33,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.UpdateBackupVaultRequest)
     UpdateBackupVaultRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateBackupVaultRequest.newBuilder() to construct.
   private UpdateBackupVaultRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
 
   public static final int BACKUP_VAULT_FIELD_NUMBER = 2;
   private com.google.cloud.backupdr.v1.BackupVault backupVault_;
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
   public boolean hasBackupVault() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
         ? com.google.cloud.backupdr.v1.BackupVault.getDefaultInstance()
         : backupVault_;
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
 
   public static final int FORCE_FIELD_NUMBER = 5;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -515,7 +504,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -780,7 +768,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -800,7 +787,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -826,7 +812,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +895,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +938,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -981,7 +961,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
             com.google.cloud.backupdr.v1.BackupVault.Builder,
             com.google.cloud.backupdr.v1.BackupVaultOrBuilder>
         backupVaultBuilder_;
-
     /**
      *
      *
@@ -1036,7 +1014,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     public boolean hasBackupVault() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
         return backupVaultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1082,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1111,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1148,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return getBackupVaultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
             : backupVault_;
       }
     }
-
     /**
      *
      *
@@ -1227,7 +1197,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1264,7 +1233,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1269,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1337,7 +1304,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1335,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1408,7 +1373,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1425,7 +1389,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1446,7 +1409,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1429,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -1484,7 +1445,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -1505,7 +1465,6 @@ public final class UpdateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

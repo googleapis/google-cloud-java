@@ -33,7 +33,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertGlobalAddressRequest)
     InsertGlobalAddressRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertGlobalAddressRequest.newBuilder() to construct.
   private InsertGlobalAddressRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int ADDRESS_RESOURCE_FIELD_NUMBER = 483888121;
   private com.google.cloud.compute.v1.Address addressResource_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
   public boolean hasAddressResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.Address.getDefaultInstance()
         : addressResource_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -440,7 +431,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +666,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.Address.Builder,
             com.google.cloud.compute.v1.AddressOrBuilder>
         addressResourceBuilder_;
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     public boolean hasAddressResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         return addressResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return getAddressResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
             : addressResource_;
       }
     }
-
     /**
      *
      *
@@ -883,7 +864,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -933,7 +912,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +954,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +980,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1042,7 +1016,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1038,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1059,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

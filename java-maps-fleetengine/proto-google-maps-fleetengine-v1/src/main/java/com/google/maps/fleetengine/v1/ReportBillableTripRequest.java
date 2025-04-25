@@ -33,7 +33,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.ReportBillableTripRequest)
     ReportBillableTripRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportBillableTripRequest.newBuilder() to construct.
   private ReportBillableTripRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,7 +114,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
      * <code>SOLUTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SOLUTION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -214,7 +212,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -242,7 +239,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -275,7 +271,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object countryCode_ = "";
-
   /**
    *
    *
@@ -300,7 +295,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -328,7 +322,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
 
   public static final int PLATFORM_FIELD_NUMBER = 5;
   private int platform_ = 0;
-
   /**
    *
    *
@@ -344,7 +337,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
   public int getPlatformValue() {
     return platform_;
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList relatedIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -388,7 +379,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getRelatedIdsList() {
     return relatedIds_;
   }
-
   /**
    *
    *
@@ -406,7 +396,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
   public int getRelatedIdsCount() {
     return relatedIds_.size();
   }
-
   /**
    *
    *
@@ -425,7 +414,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
   public java.lang.String getRelatedIds(int index) {
     return relatedIds_.get(index);
   }
-
   /**
    *
    *
@@ -447,7 +435,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
 
   public static final int SOLUTION_TYPE_FIELD_NUMBER = 7;
   private int solutionType_ = 0;
-
   /**
    *
    *
@@ -464,7 +451,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
   public int getSolutionTypeValue() {
     return solutionType_;
   }
-
   /**
    *
    *
@@ -702,7 +688,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -950,7 +935,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -977,7 +961,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1004,7 +987,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1012,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1033,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1061,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object countryCode_ = "";
-
     /**
      *
      *
@@ -1105,7 +1084,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1107,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1129,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1147,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1172,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     }
 
     private int platform_ = 0;
-
     /**
      *
      *
@@ -1213,7 +1187,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     public int getPlatformValue() {
       return platform_;
     }
-
     /**
      *
      *
@@ -1232,7 +1205,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1252,7 +1224,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
           ? com.google.maps.fleetengine.v1.BillingPlatformIdentifier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1274,7 +1245,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1272,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1321,7 +1290,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       relatedIds_.makeImmutable();
       return relatedIds_;
     }
-
     /**
      *
      *
@@ -1339,7 +1307,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     public int getRelatedIdsCount() {
       return relatedIds_.size();
     }
-
     /**
      *
      *
@@ -1358,7 +1325,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     public java.lang.String getRelatedIds(int index) {
       return relatedIds_.get(index);
     }
-
     /**
      *
      *
@@ -1377,7 +1343,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getRelatedIdsBytes(int index) {
       return relatedIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1404,7 +1369,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1394,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1453,7 +1416,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1475,7 +1437,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1465,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     }
 
     private int solutionType_ = 0;
-
     /**
      *
      *
@@ -1521,7 +1481,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
     public int getSolutionTypeValue() {
       return solutionType_;
     }
-
     /**
      *
      *
@@ -1541,7 +1500,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1563,7 +1521,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
           ? com.google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1587,7 +1544,6 @@ public final class ReportBillableTripRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

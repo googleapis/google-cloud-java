@@ -30,7 +30,6 @@ public interface HeaderOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    * <code>string key = 1;</code>
    *
@@ -44,14 +43,12 @@ public interface HeaderOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
-
   /**
    * <code>repeated string values = 2;</code>
    *
    * @return The count of values.
    */
   int getValuesCount();
-
   /**
    * <code>repeated string values = 2;</code>
    *
@@ -59,7 +56,6 @@ public interface HeaderOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
-
   /**
    * <code>repeated string values = 2;</code>
    *

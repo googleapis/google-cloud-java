@@ -39,7 +39,6 @@ public interface CategoryStatsOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats>
       getTopCategoryStatsList();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface CategoryStatsOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats getTopCategoryStats(int index);
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface CategoryStatsOrBuilder
    * </code>
    */
   int getTopCategoryStatsCount();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface CategoryStatsOrBuilder
   java.util.List<
           ? extends com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStatsOrBuilder>
       getTopCategoryStatsOrBuilderList();
-
   /**
    *
    *

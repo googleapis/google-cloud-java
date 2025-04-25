@@ -34,7 +34,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyDataSourceDetails)
     DeidentifyDataSourceDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeidentifyDataSourceDetails.newBuilder() to construct.
   private DeidentifyDataSourceDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      * @return Whether the snapshotDeidentifyTemplate field is set.
      */
     boolean hasSnapshotDeidentifyTemplate();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      * @return The snapshotDeidentifyTemplate.
      */
     com.google.privacy.dlp.v2.DeidentifyTemplate getSnapshotDeidentifyTemplate();
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      * @return Whether the snapshotStructuredDeidentifyTemplate field is set.
      */
     boolean hasSnapshotStructuredDeidentifyTemplate();
-
     /**
      *
      *
@@ -140,7 +136,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      * @return The snapshotStructuredDeidentifyTemplate.
      */
     com.google.privacy.dlp.v2.DeidentifyTemplate getSnapshotStructuredDeidentifyTemplate();
-
     /**
      *
      *
@@ -168,7 +163,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      * @return Whether the snapshotImageRedactTemplate field is set.
      */
     boolean hasSnapshotImageRedactTemplate();
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      * @return The snapshotImageRedactTemplate.
      */
     com.google.privacy.dlp.v2.DeidentifyTemplate getSnapshotImageRedactTemplate();
-
     /**
      *
      *
@@ -195,7 +188,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
      */
     com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getSnapshotImageRedactTemplateOrBuilder();
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyDataSourceDetails.RequestedDeidentifyOptions)
       RequestedDeidentifyOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RequestedDeidentifyOptions.newBuilder() to construct.
     private RequestedDeidentifyOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -246,7 +237,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     private int bitField0_;
     public static final int SNAPSHOT_DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.DeidentifyTemplate snapshotDeidentifyTemplate_;
-
     /**
      *
      *
@@ -264,7 +254,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     public boolean hasSnapshotDeidentifyTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -284,7 +273,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
           ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
           : snapshotDeidentifyTemplate_;
     }
-
     /**
      *
      *
@@ -306,7 +294,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
 
     public static final int SNAPSHOT_STRUCTURED_DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.DeidentifyTemplate snapshotStructuredDeidentifyTemplate_;
-
     /**
      *
      *
@@ -324,7 +311,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     public boolean hasSnapshotStructuredDeidentifyTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -344,7 +330,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
           ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
           : snapshotStructuredDeidentifyTemplate_;
     }
-
     /**
      *
      *
@@ -366,7 +351,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
 
     public static final int SNAPSHOT_IMAGE_REDACT_TEMPLATE_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.DeidentifyTemplate snapshotImageRedactTemplate_;
-
     /**
      *
      *
@@ -383,7 +367,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     public boolean hasSnapshotImageRedactTemplate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -402,7 +385,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
           ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
           : snapshotImageRedactTemplate_;
     }
-
     /**
      *
      *
@@ -634,7 +616,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
               com.google.privacy.dlp.v2.DeidentifyTemplate.Builder,
               com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
           snapshotDeidentifyTemplateBuilder_;
-
       /**
        *
        *
@@ -927,7 +907,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       public boolean hasSnapshotDeidentifyTemplate() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -950,7 +929,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
           return snapshotDeidentifyTemplateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -976,7 +954,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -999,7 +976,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1031,7 +1007,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         }
         return this;
       }
-
       /**
        *
        *
@@ -1053,7 +1028,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1071,7 +1045,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return getSnapshotDeidentifyTemplateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1093,7 +1066,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
               : snapshotDeidentifyTemplate_;
         }
       }
-
       /**
        *
        *
@@ -1128,7 +1100,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
               com.google.privacy.dlp.v2.DeidentifyTemplate.Builder,
               com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
           snapshotStructuredDeidentifyTemplateBuilder_;
-
       /**
        *
        *
@@ -1146,7 +1117,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       public boolean hasSnapshotStructuredDeidentifyTemplate() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1171,7 +1141,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
           return snapshotStructuredDeidentifyTemplateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1198,7 +1167,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1222,7 +1190,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1255,7 +1222,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         }
         return this;
       }
-
       /**
        *
        *
@@ -1278,7 +1244,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1297,7 +1262,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return getSnapshotStructuredDeidentifyTemplateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1320,7 +1284,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
               : snapshotStructuredDeidentifyTemplate_;
         }
       }
-
       /**
        *
        *
@@ -1356,7 +1319,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
               com.google.privacy.dlp.v2.DeidentifyTemplate.Builder,
               com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
           snapshotImageRedactTemplateBuilder_;
-
       /**
        *
        *
@@ -1372,7 +1334,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       public boolean hasSnapshotImageRedactTemplate() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1394,7 +1355,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
           return snapshotImageRedactTemplateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1419,7 +1379,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1441,7 +1400,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1472,7 +1430,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         }
         return this;
       }
-
       /**
        *
        *
@@ -1493,7 +1450,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1510,7 +1466,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         onChanged();
         return getSnapshotImageRedactTemplateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1531,7 +1486,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
               : snapshotImageRedactTemplate_;
         }
       }
-
       /**
        *
        *
@@ -1632,7 +1586,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
   public static final int REQUESTED_OPTIONS_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DeidentifyDataSourceDetails.RequestedDeidentifyOptions
       requestedOptions_;
-
   /**
    *
    *
@@ -1650,7 +1603,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
   public boolean hasRequestedOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1672,7 +1624,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
             .getDefaultInstance()
         : requestedOptions_;
   }
-
   /**
    *
    *
@@ -1695,7 +1646,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
 
   public static final int DEIDENTIFY_STATS_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DeidentifyDataSourceStats deidentifyStats_;
-
   /**
    *
    *
@@ -1711,7 +1661,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
   public boolean hasDeidentifyStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1729,7 +1678,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         ? com.google.privacy.dlp.v2.DeidentifyDataSourceStats.getDefaultInstance()
         : deidentifyStats_;
   }
-
   /**
    *
    *
@@ -1926,7 +1874,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2156,7 +2103,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.DeidentifyDataSourceDetails
                 .RequestedDeidentifyOptionsOrBuilder>
         requestedOptionsBuilder_;
-
     /**
      *
      *
@@ -2173,7 +2119,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     public boolean hasRequestedOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2198,7 +2143,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         return requestedOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2224,7 +2168,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2191,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2281,7 +2223,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2303,7 +2244,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2321,7 +2261,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return getRequestedOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2344,7 +2283,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
             : requestedOptions_;
       }
     }
-
     /**
      *
      *
@@ -2383,7 +2321,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.DeidentifyDataSourceStats.Builder,
             com.google.privacy.dlp.v2.DeidentifyDataSourceStatsOrBuilder>
         deidentifyStatsBuilder_;
-
     /**
      *
      *
@@ -2398,7 +2335,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
     public boolean hasDeidentifyStats() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2419,7 +2355,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
         return deidentifyStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2442,7 +2377,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2463,7 +2397,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2492,7 +2425,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2512,7 +2444,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2527,7 +2458,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
       onChanged();
       return getDeidentifyStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2547,7 +2477,6 @@ public final class DeidentifyDataSourceDetails extends com.google.protobuf.Gener
             : deidentifyStats_;
       }
     }
-
     /**
      *
      *

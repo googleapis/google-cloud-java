@@ -38,7 +38,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.Long> getIdsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return A list containing the displayNames.
    */
   java.util.List<java.lang.String> getDisplayNamesList();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return The count of displayNames.
    */
   int getDisplayNamesCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return The displayNames at the given index.
    */
   java.lang.String getDisplayNames(int index);
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return A list containing the confidences.
    */
   java.util.List<java.lang.Float> getConfidencesList();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * @return The count of confidences.
    */
   int getConfidencesCount();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * <code>repeated .google.protobuf.ListValue bboxes = 4;</code>
    */
   java.util.List<com.google.protobuf.ListValue> getBboxesList();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * <code>repeated .google.protobuf.ListValue bboxes = 4;</code>
    */
   com.google.protobuf.ListValue getBboxes(int index);
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * <code>repeated .google.protobuf.ListValue bboxes = 4;</code>
    */
   int getBboxesCount();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface ImageObjectDetectionPredictionResultOrBuilder
    * <code>repeated .google.protobuf.ListValue bboxes = 4;</code>
    */
   java.util.List<? extends com.google.protobuf.ListValueOrBuilder> getBboxesOrBuilderList();
-
   /**
    *
    *

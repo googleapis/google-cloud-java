@@ -39,7 +39,6 @@ public interface ImportExtensionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ImportExtensionRequestOrBuilder
    * @return Whether the extension field is set.
    */
   boolean hasExtension();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ImportExtensionRequestOrBuilder
    * @return The extension.
    */
   com.google.cloud.aiplatform.v1beta1.Extension getExtension();
-
   /**
    *
    *

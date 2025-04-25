@@ -37,7 +37,6 @@ public interface TimeSegmentOrBuilder
    * @return Whether the startTimeOffset field is set.
    */
   boolean hasStartTimeOffset();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TimeSegmentOrBuilder
    * @return The startTimeOffset.
    */
   com.google.protobuf.Duration getStartTimeOffset();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface TimeSegmentOrBuilder
    * @return Whether the endTimeOffset field is set.
    */
   boolean hasEndTimeOffset();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface TimeSegmentOrBuilder
    * @return The endTimeOffset.
    */
   com.google.protobuf.Duration getEndTimeOffset();
-
   /**
    *
    *

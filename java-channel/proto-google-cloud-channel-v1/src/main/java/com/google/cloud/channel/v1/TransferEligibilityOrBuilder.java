@@ -49,7 +49,6 @@ public interface TransferEligibilityOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface TransferEligibilityOrBuilder
    * @return The enum numeric value on the wire for ineligibilityReason.
    */
   int getIneligibilityReasonValue();
-
   /**
    *
    *

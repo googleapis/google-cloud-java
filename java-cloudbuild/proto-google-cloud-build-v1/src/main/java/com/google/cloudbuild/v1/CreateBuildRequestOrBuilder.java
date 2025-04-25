@@ -37,7 +37,6 @@ public interface CreateBuildRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CreateBuildRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateBuildRequestOrBuilder
    * @return Whether the build field is set.
    */
   boolean hasBuild();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface CreateBuildRequestOrBuilder
    * @return The build.
    */
   com.google.cloudbuild.v1.Build getBuild();
-
   /**
    *
    *

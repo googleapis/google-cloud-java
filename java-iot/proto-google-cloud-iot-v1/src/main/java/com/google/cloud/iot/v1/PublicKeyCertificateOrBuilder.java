@@ -36,7 +36,6 @@ public interface PublicKeyCertificateOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PublicKeyCertificateOrBuilder
    * @return The certificate.
    */
   java.lang.String getCertificate();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface PublicKeyCertificateOrBuilder
    * @return Whether the x509Details field is set.
    */
   boolean hasX509Details();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface PublicKeyCertificateOrBuilder
    * @return The x509Details.
    */
   com.google.cloud.iot.v1.X509CertificateDetails getX509Details();
-
   /**
    *
    *

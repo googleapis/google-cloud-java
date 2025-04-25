@@ -36,7 +36,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.CloudSqlInstance)
     CloudSqlInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudSqlInstance.newBuilder() to construct.
   private CloudSqlInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -316,7 +311,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -518,7 +512,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -538,7 +531,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       instances_.makeImmutable();
       return instances_;
     }
-
     /**
      *
      *
@@ -557,7 +549,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -597,7 +587,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
-
     /**
      *
      *
@@ -625,7 +614,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -652,7 +640,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +663,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +685,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

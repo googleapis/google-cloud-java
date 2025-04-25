@@ -253,8 +253,7 @@ public class SecretName implements ResourceName {
     private Builder(SecretName secretName) {
       Preconditions.checkArgument(
           Objects.equals(secretName.pathTemplate, PROJECT_SECRET),
-          "toBuilder is only supported when SecretName has the pattern of"
-              + " projects/{project}/secrets/{secret}");
+          "toBuilder is only supported when SecretName has the pattern of projects/{project}/secrets/{secret}");
       this.project = secretName.project;
       this.secret = secretName.secret;
     }

@@ -34,7 +34,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse)
     FeatureViewDirectWriteResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureViewDirectWriteResponse.newBuilder() to construct.
   private FeatureViewDirectWriteResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -83,7 +82,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
      * @return Whether the dataKey field is set.
      */
     boolean hasDataKey();
-
     /**
      *
      *
@@ -96,7 +94,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
      * @return The dataKey.
      */
     com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
      * @return Whether the onlineStoreWriteTime field is set.
      */
     boolean hasOnlineStoreWriteTime();
-
     /**
      *
      *
@@ -139,7 +135,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
      * @return The onlineStoreWriteTime.
      */
     com.google.protobuf.Timestamp getOnlineStoreWriteTime();
-
     /**
      *
      *
@@ -154,7 +149,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
      */
     com.google.protobuf.TimestampOrBuilder getOnlineStoreWriteTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.WriteResponse)
       WriteResponseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WriteResponse.newBuilder() to construct.
     private WriteResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -204,7 +197,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     private int bitField0_;
     public static final int DATA_KEY_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
-
     /**
      *
      *
@@ -220,7 +212,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     public boolean hasDataKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -238,7 +229,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
           ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
           : dataKey_;
     }
-
     /**
      *
      *
@@ -257,7 +247,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
 
     public static final int ONLINE_STORE_WRITE_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp onlineStoreWriteTime_;
-
     /**
      *
      *
@@ -276,7 +265,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     public boolean hasOnlineStoreWriteTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -297,7 +285,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : onlineStoreWriteTime_;
     }
-
     /**
      *
      *
@@ -507,7 +494,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
               com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
               com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
           dataKeyBuilder_;
-
       /**
        *
        *
@@ -769,7 +754,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       public boolean hasDataKey() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -790,7 +774,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
           return dataKeyBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -813,7 +796,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -834,7 +816,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -863,7 +844,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         }
         return this;
       }
-
       /**
        *
        *
@@ -883,7 +863,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -898,7 +877,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return getDataKeyFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -917,7 +895,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
               : dataKey_;
         }
       }
-
       /**
        *
        *
@@ -950,7 +927,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           onlineStoreWriteTimeBuilder_;
-
       /**
        *
        *
@@ -968,7 +944,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       public boolean hasOnlineStoreWriteTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -992,7 +967,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
           return onlineStoreWriteTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1018,7 +992,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1042,7 +1015,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1073,7 +1045,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         }
         return this;
       }
-
       /**
        *
        *
@@ -1096,7 +1067,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1114,7 +1084,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         onChanged();
         return getOnlineStoreWriteTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1136,7 +1105,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
               : onlineStoreWriteTime_;
         }
       }
-
       /**
        *
        *
@@ -1238,7 +1206,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -1264,7 +1231,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1290,7 +1256,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -1321,7 +1286,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.WriteResponse>
       writeResponses_;
-
   /**
    *
    *
@@ -1343,7 +1307,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       getWriteResponsesList() {
     return writeResponses_;
   }
-
   /**
    *
    *
@@ -1367,7 +1330,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       getWriteResponsesOrBuilderList() {
     return writeResponses_;
   }
-
   /**
    *
    *
@@ -1387,7 +1349,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
   public int getWriteResponsesCount() {
     return writeResponses_.size();
   }
-
   /**
    *
    *
@@ -1408,7 +1369,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       getWriteResponses(int index) {
     return writeResponses_.get(index);
   }
-
   /**
    *
    *
@@ -1607,7 +1567,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1881,7 +1840,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -1906,7 +1864,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1935,7 +1892,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1968,7 +1924,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1998,7 +1953,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2036,7 +1990,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2066,7 +2019,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2091,7 +2043,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2118,7 +2069,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *
@@ -2198,7 +2148,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return writeResponsesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2221,7 +2170,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return writeResponsesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2245,7 +2193,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return writeResponsesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2276,7 +2223,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2251,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2335,7 +2280,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2366,7 +2310,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2394,7 +2337,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2423,7 +2365,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2454,7 +2395,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2480,7 +2420,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2506,7 +2445,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2526,7 +2464,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         getWriteResponsesBuilder(int index) {
       return getWriteResponsesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2550,7 +2487,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return writeResponsesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2577,7 +2513,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(writeResponses_);
       }
     }
-
     /**
      *
      *
@@ -2600,7 +2535,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
               com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.WriteResponse
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2624,7 +2558,6 @@ public final class FeatureViewDirectWriteResponse extends com.google.protobuf.Ge
               com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.WriteResponse
                   .getDefaultInstance());
     }
-
     /**
      *
      *

@@ -25,7 +25,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.NetworkConnection)
     NetworkConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkConnection.newBuilder() to construct.
   private NetworkConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,7 +142,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -154,7 +152,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
      * <code>OPENING = 1;</code>
      */
     public static final int OPENING_VALUE = 1;
-
     /**
      *
      *
@@ -165,7 +162,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
      * <code>OPEN = 2;</code>
      */
     public static final int OPEN_VALUE = 2;
-
     /**
      *
      *
@@ -176,7 +172,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
      * <code>LISTEN = 3;</code>
      */
     public static final int LISTEN_VALUE = 3;
-
     /**
      *
      *
@@ -187,7 +182,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
      * <code>CLOSING = 4;</code>
      */
     public static final int CLOSING_VALUE = 4;
-
     /**
      *
      *
@@ -294,7 +288,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object protocol_ = "";
-
   /**
    *
    *
@@ -318,7 +311,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -347,7 +339,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object localIpAddress_ = "";
-
   /**
    *
    *
@@ -371,7 +362,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -398,7 +388,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int LOCAL_PORT_FIELD_NUMBER = 3;
   private int localPort_ = 0;
-
   /**
    *
    *
@@ -419,7 +408,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remoteIpAddress_ = "";
-
   /**
    *
    *
@@ -443,7 +431,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -470,7 +457,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int REMOTE_PORT_FIELD_NUMBER = 5;
   private int remotePort_ = 0;
-
   /**
    *
    *
@@ -489,7 +475,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
-
   /**
    *
    *
@@ -505,7 +490,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -528,7 +512,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int PID_FIELD_NUMBER = 7;
   private long pid_ = 0L;
-
   /**
    *
    *
@@ -549,7 +532,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processName_ = "";
-
   /**
    *
    *
@@ -573,7 +555,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -825,7 +806,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.migrationcenter.v1.NetworkConnection} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1099,7 +1079,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object protocol_ = "";
-
     /**
      *
      *
@@ -1122,7 +1101,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1123,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1144,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1161,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1185,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object localIpAddress_ = "";
-
     /**
      *
      *
@@ -1233,7 +1207,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1229,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1250,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1267,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1291,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int localPort_;
-
     /**
      *
      *
@@ -1337,7 +1306,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     public int getLocalPort() {
       return localPort_;
     }
-
     /**
      *
      *
@@ -1357,7 +1325,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1344,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object remoteIpAddress_ = "";
-
     /**
      *
      *
@@ -1400,7 +1366,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1423,7 +1388,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1445,7 +1409,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1426,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1450,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int remotePort_;
-
     /**
      *
      *
@@ -1504,7 +1465,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     public int getRemotePort() {
       return remotePort_;
     }
-
     /**
      *
      *
@@ -1524,7 +1484,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1503,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1560,7 +1518,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1579,7 +1536,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1555,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.migrationcenter.v1.NetworkConnection.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1621,7 +1576,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1595,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private long pid_;
-
     /**
      *
      *
@@ -1657,7 +1610,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     public long getPid() {
       return pid_;
     }
-
     /**
      *
      *
@@ -1677,7 +1629,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1697,7 +1648,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object processName_ = "";
-
     /**
      *
      *
@@ -1720,7 +1670,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1692,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1765,7 +1713,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1730,6 @@ public final class NetworkConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

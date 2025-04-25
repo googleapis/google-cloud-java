@@ -47,7 +47,6 @@ public interface GetDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

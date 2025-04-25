@@ -36,7 +36,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return A list containing the metadataFields.
    */
   java.util.List<java.lang.String> getMetadataFieldsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return The count of metadataFields.
    */
   int getMetadataFieldsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return The metadataFields at the given index.
    */
   java.lang.String getMetadataFields(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return Whether the storageFilters field is set.
    */
   boolean hasStorageFilters();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return The storageFilters.
    */
   com.google.cloud.storageinsights.v1.CloudStorageFilters getStorageFilters();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return Whether the storageDestinationOptions field is set.
    */
   boolean hasStorageDestinationOptions();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface ObjectMetadataReportOptionsOrBuilder
    * @return The storageDestinationOptions.
    */
   com.google.cloud.storageinsights.v1.CloudStorageDestinationOptions getStorageDestinationOptions();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.UpdateExternalApiRequest)
     UpdateExternalApiRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateExternalApiRequest.newBuilder() to construct.
   private UpdateExternalApiRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int EXTERNAL_API_FIELD_NUMBER = 1;
   private com.google.cloud.apihub.v1.ExternalApi externalApi_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
   public boolean hasExternalApi() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
         ? com.google.cloud.apihub.v1.ExternalApi.getDefaultInstance()
         : externalApi_;
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -365,7 +358,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -590,7 +582,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
             com.google.cloud.apihub.v1.ExternalApi.Builder,
             com.google.cloud.apihub.v1.ExternalApiOrBuilder>
         externalApiBuilder_;
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
     public boolean hasExternalApi() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -638,7 +628,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
         return externalApiBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return getExternalApiFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
             : externalApi_;
       }
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +963,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1007,7 +982,6 @@ public final class UpdateExternalApiRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface SearchDocumentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument>
       getMatchingDocumentsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SearchDocumentsResponseOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument
       getMatchingDocuments(int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface SearchDocumentsResponseOrBuilder
    * </code>
    */
   int getMatchingDocumentsCount();
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface SearchDocumentsResponseOrBuilder
               com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse
                   .MatchingDocumentOrBuilder>
       getMatchingDocumentsOrBuilderList();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SearchDocumentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface SearchDocumentsResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface SearchDocumentsResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.contentwarehouse.v1.ResponseMetadata getMetadata();
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface SearchDocumentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.HistogramQueryResult>
       getHistogramQueryResultsList();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface SearchDocumentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.contentwarehouse.v1.HistogramQueryResult getHistogramQueryResults(int index);
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public interface SearchDocumentsResponseOrBuilder
    * </code>
    */
   int getHistogramQueryResultsCount();
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public interface SearchDocumentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.HistogramQueryResultOrBuilder>
       getHistogramQueryResultsOrBuilderList();
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public interface SearchDocumentsResponseOrBuilder
    * @return The questionAnswer.
    */
   java.lang.String getQuestionAnswer();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ProductCatalogItemOrBuilder
    * @return Whether the exactPrice field is set.
    */
   boolean hasExactPrice();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProductCatalogItemOrBuilder
    * @return The exactPrice.
    */
   com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice getExactPrice();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ProductCatalogItemOrBuilder
    * @return Whether the priceRange field is set.
    */
   boolean hasPriceRange();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ProductCatalogItemOrBuilder
    * @return The priceRange.
    */
   com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange getPriceRange();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface ProductCatalogItemOrBuilder
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getCostsCount();
-
   /**
    *
    *
@@ -147,11 +142,9 @@ public interface ProductCatalogItemOrBuilder
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsCosts(java.lang.String key);
-
   /** Use {@link #getCostsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Float> getCosts();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface ProductCatalogItemOrBuilder
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.Float> getCostsMap();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface ProductCatalogItemOrBuilder
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   float getCostsOrDefault(java.lang.String key, float defaultValue);
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface ProductCatalogItemOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -248,7 +238,6 @@ public interface ProductCatalogItemOrBuilder
    * @return The enum numeric value on the wire for stockState.
    */
   int getStockStateValue();
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface ProductCatalogItemOrBuilder
    * @return The canonicalProductUri.
    */
   java.lang.String getCanonicalProductUri();
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public interface ProductCatalogItemOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.Image> getImagesList();
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public interface ProductCatalogItemOrBuilder
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.Image getImages(int index);
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public interface ProductCatalogItemOrBuilder
    * </code>
    */
   int getImagesCount();
-
   /**
    *
    *
@@ -357,7 +342,6 @@ public interface ProductCatalogItemOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.ImageOrBuilder>
       getImagesOrBuilderList();
-
   /**
    *
    *

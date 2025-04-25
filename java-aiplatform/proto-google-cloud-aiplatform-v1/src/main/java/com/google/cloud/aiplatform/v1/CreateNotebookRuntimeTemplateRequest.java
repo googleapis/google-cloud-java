@@ -35,7 +35,6 @@ public final class CreateNotebookRuntimeTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateNotebookRuntimeTemplateRequest)
     CreateNotebookRuntimeTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNotebookRuntimeTemplateRequest.newBuilder() to construct.
   private CreateNotebookRuntimeTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class CreateNotebookRuntimeTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateNotebookRuntimeTemplateRequest
 
   public static final int NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate notebookRuntimeTemplate_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CreateNotebookRuntimeTemplateRequest
   public boolean hasNotebookRuntimeTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class CreateNotebookRuntimeTemplateRequest
         ? com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate.getDefaultInstance()
         : notebookRuntimeTemplate_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class CreateNotebookRuntimeTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookRuntimeTemplateId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -427,7 +419,6 @@ public final class CreateNotebookRuntimeTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -668,7 +659,6 @@ public final class CreateNotebookRuntimeTemplateRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -694,7 +684,6 @@ public final class CreateNotebookRuntimeTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class CreateNotebookRuntimeTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class CreateNotebookRuntimeTemplateRequest
             com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate.Builder,
             com.google.cloud.aiplatform.v1.NotebookRuntimeTemplateOrBuilder>
         notebookRuntimeTemplateBuilder_;
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class CreateNotebookRuntimeTemplateRequest
     public boolean hasNotebookRuntimeTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class CreateNotebookRuntimeTemplateRequest
         return notebookRuntimeTemplateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -865,7 +848,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +939,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return getNotebookRuntimeTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -982,7 +960,6 @@ public final class CreateNotebookRuntimeTemplateRequest
             : notebookRuntimeTemplate_;
       }
     }
-
     /**
      *
      *
@@ -1012,7 +989,6 @@ public final class CreateNotebookRuntimeTemplateRequest
     }
 
     private java.lang.Object notebookRuntimeTemplateId_ = "";
-
     /**
      *
      *
@@ -1036,7 +1012,6 @@ public final class CreateNotebookRuntimeTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class CreateNotebookRuntimeTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1057,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1075,6 @@ public final class CreateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

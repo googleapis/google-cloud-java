@@ -36,7 +36,6 @@ public interface LogsPolicyOrBuilder
    * @return The enum numeric value on the wire for destination.
    */
   int getDestinationValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface LogsPolicyOrBuilder
    * @return The logsPath.
    */
   java.lang.String getLogsPath();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface LogsPolicyOrBuilder
    * @return Whether the cloudLoggingOption field is set.
    */
   boolean hasCloudLoggingOption();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface LogsPolicyOrBuilder
    * @return The cloudLoggingOption.
    */
   com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption getCloudLoggingOption();
-
   /**
    *
    *

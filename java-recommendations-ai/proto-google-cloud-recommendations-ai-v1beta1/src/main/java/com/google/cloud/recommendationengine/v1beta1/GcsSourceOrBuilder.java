@@ -42,7 +42,6 @@ public interface GcsSourceOrBuilder
    * @return A list containing the inputUris.
    */
   java.util.List<java.lang.String> getInputUrisList();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface GcsSourceOrBuilder
    * @return The count of inputUris.
    */
   int getInputUrisCount();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface GcsSourceOrBuilder
    * @return The inputUris at the given index.
    */
   java.lang.String getInputUris(int index);
-
   /**
    *
    *

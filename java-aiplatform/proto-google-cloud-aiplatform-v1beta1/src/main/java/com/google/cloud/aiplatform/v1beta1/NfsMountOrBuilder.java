@@ -36,7 +36,6 @@ public interface NfsMountOrBuilder
    * @return The server.
    */
   java.lang.String getServer();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface NfsMountOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface NfsMountOrBuilder
    * @return The mountPoint.
    */
   java.lang.String getMountPoint();
-
   /**
    *
    *

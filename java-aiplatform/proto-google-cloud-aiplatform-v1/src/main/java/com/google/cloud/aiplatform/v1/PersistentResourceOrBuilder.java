@@ -36,7 +36,6 @@ public interface PersistentResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PersistentResourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface PersistentResourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.ResourcePool> getResourcePoolsList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface PersistentResourceOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ResourcePool getResourcePools(int index);
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface PersistentResourceOrBuilder
    * </code>
    */
   int getResourcePoolsCount();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface PersistentResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ResourcePoolOrBuilder>
       getResourcePoolsOrBuilderList();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface PersistentResourceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface PersistentResourceOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface PersistentResourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public interface PersistentResourceOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -326,7 +312,6 @@ public interface PersistentResourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -356,7 +341,6 @@ public interface PersistentResourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -374,11 +358,9 @@ public interface PersistentResourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -396,7 +378,6 @@ public interface PersistentResourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -418,7 +399,6 @@ public interface PersistentResourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -465,7 +445,6 @@ public interface PersistentResourceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -511,7 +490,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -528,7 +506,6 @@ public interface PersistentResourceOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *
@@ -559,7 +536,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the resourceRuntimeSpec field is set.
    */
   boolean hasResourceRuntimeSpec();
-
   /**
    *
    *
@@ -575,7 +551,6 @@ public interface PersistentResourceOrBuilder
    * @return The resourceRuntimeSpec.
    */
   com.google.cloud.aiplatform.v1.ResourceRuntimeSpec getResourceRuntimeSpec();
-
   /**
    *
    *
@@ -604,7 +579,6 @@ public interface PersistentResourceOrBuilder
    * @return Whether the resourceRuntime field is set.
    */
   boolean hasResourceRuntime();
-
   /**
    *
    *
@@ -619,7 +593,6 @@ public interface PersistentResourceOrBuilder
    * @return The resourceRuntime.
    */
   com.google.cloud.aiplatform.v1.ResourceRuntime getResourceRuntime();
-
   /**
    *
    *
@@ -652,7 +625,6 @@ public interface PersistentResourceOrBuilder
    * @return A list containing the reservedIpRanges.
    */
   java.util.List<java.lang.String> getReservedIpRangesList();
-
   /**
    *
    *
@@ -672,7 +644,6 @@ public interface PersistentResourceOrBuilder
    * @return The count of reservedIpRanges.
    */
   int getReservedIpRangesCount();
-
   /**
    *
    *
@@ -693,7 +664,6 @@ public interface PersistentResourceOrBuilder
    * @return The reservedIpRanges at the given index.
    */
   java.lang.String getReservedIpRanges(int index);
-
   /**
    *
    *

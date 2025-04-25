@@ -166,13 +166,11 @@ public final class EngineConfigProto {
           + "d_metadata_destination\030\002 \001(\01326.google.cl"
           + "oud.financialservices.v1.BigQueryDestina"
           + "tionB\003\340A\002\"$\n\"ExportEngineConfigMetadataR"
-          + "esponseB\200\002\n%com.google.cloud.financialse"
+          + "esponseB\221\001\n%com.google.cloud.financialse"
           + "rvices.v1B\021EngineConfigProtoP\001ZScloud.go"
           + "ogle.com/go/financialservices/apiv1/fina"
-          + "ncialservicespb;financialservicespb\252\002!Go"
-          + "ogle.Cloud.FinancialServices.V1\312\002!Google"
-          + "\\Cloud\\FinancialServices\\V1\352\002$Google::Cl"
-          + "oud::FinancialServices::V1b\006proto3"
+          + "ncialservicespb;financialservicespbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

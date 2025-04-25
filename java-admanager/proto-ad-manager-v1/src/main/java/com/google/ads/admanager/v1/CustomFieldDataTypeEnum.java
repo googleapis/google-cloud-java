@@ -34,7 +34,6 @@ public final class CustomFieldDataTypeEnum extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldDataTypeEnum)
     CustomFieldDataTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomFieldDataTypeEnum.newBuilder() to construct.
   private CustomFieldDataTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class CustomFieldDataTypeEnum extends com.google.protobuf.Generated
      * <code>CUSTOM_FIELD_DATA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_FIELD_DATA_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -151,7 +149,6 @@ public final class CustomFieldDataTypeEnum extends com.google.protobuf.Generated
      * <code>STRING = 1;</code>
      */
     public static final int STRING_VALUE = 1;
-
     /**
      *
      *
@@ -162,7 +159,6 @@ public final class CustomFieldDataTypeEnum extends com.google.protobuf.Generated
      * <code>NUMBER = 2;</code>
      */
     public static final int NUMBER_VALUE = 2;
-
     /**
      *
      *
@@ -173,7 +169,6 @@ public final class CustomFieldDataTypeEnum extends com.google.protobuf.Generated
      * <code>TOGGLE = 3;</code>
      */
     public static final int TOGGLE_VALUE = 3;
-
     /**
      *
      *
@@ -427,7 +422,6 @@ public final class CustomFieldDataTypeEnum extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

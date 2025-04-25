@@ -36,7 +36,6 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface OperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface OperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface OperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface OperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface OperationMetadataOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface OperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface OperationMetadataOrBuilder
    * @return A list containing the warnings.
    */
   java.util.List<java.lang.String> getWarningsList();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface OperationMetadataOrBuilder
    * @return The count of warnings.
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public interface OperationMetadataOrBuilder
    * @return The warnings at the given index.
    */
   java.lang.String getWarnings(int index);
-
   /**
    *
    *
@@ -288,7 +277,6 @@ public interface OperationMetadataOrBuilder
    * @return The enum numeric value on the wire for statusReason.
    */
   int getStatusReasonValue();
-
   /**
    *
    *

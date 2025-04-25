@@ -39,7 +39,6 @@ public interface CreateReplicationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateReplicationRequestOrBuilder
    * @return Whether the replication field is set.
    */
   boolean hasReplication();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateReplicationRequestOrBuilder
    * @return The replication.
    */
   com.google.cloud.netapp.v1.Replication getReplication();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface CreateReplicationRequestOrBuilder
    * @return The replicationId.
    */
   java.lang.String getReplicationId();
-
   /**
    *
    *

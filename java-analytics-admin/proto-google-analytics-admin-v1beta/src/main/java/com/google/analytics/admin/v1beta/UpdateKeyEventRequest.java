@@ -33,7 +33,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.UpdateKeyEventRequest)
     UpdateKeyEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateKeyEventRequest.newBuilder() to construct.
   private UpdateKeyEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int KEY_EVENT_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1beta.KeyEvent keyEvent_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
   public boolean hasKeyEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
         ? com.google.analytics.admin.v1beta.KeyEvent.getDefaultInstance()
         : keyEvent_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -365,7 +358,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +580,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
             com.google.analytics.admin.v1beta.KeyEvent.Builder,
             com.google.analytics.admin.v1beta.KeyEventOrBuilder>
         keyEventBuilder_;
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
     public boolean hasKeyEvent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
         return keyEventBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getKeyEventFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
             : keyEvent_;
       }
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +955,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class UpdateKeyEventRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.UpdateRouterRequest)
     UpdateRouterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateRouterRequest.newBuilder() to construct.
   private UpdateRouterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ROUTER_FIELD_NUMBER = 2;
   private com.google.cloud.edgenetwork.v1.Router router_;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRouter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.edgenetwork.v1.Router getRouter() {
     return router_ == null ? com.google.cloud.edgenetwork.v1.Router.getDefaultInstance() : router_;
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -445,7 +436,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -683,7 +673,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +824,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -884,7 +866,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.edgenetwork.v1.Router.Builder,
             com.google.cloud.edgenetwork.v1.RouterOrBuilder>
         routerBuilder_;
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRouter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -962,7 +941,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
         return routerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -987,7 +965,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +986,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1015,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRouterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
             : router_;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1164,7 +1135,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1169,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1231,6 @@ public final class UpdateRouterRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

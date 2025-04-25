@@ -39,7 +39,6 @@ public interface ListProfilesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface ListProfilesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

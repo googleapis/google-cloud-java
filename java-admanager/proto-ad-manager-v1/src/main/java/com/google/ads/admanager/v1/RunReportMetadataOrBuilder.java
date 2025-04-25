@@ -50,7 +50,6 @@ public interface RunReportMetadataOrBuilder
    * @return The report.
    */
   java.lang.String getReport();
-
   /**
    *
    *

@@ -51,7 +51,6 @@ public interface ConsumerPartitionMetadataOrBuilder
    * @return The metadata.
    */
   java.lang.String getMetadata();
-
   /**
    *
    *

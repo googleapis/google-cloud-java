@@ -33,7 +33,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.apigateway.v1.GetApiConfigRequest)
     GetApiConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetApiConfigRequest.newBuilder() to construct.
   private GetApiConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,7 +101,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
 
     /** <code>CONFIG_VIEW_UNSPECIFIED = 0;</code> */
     public static final int CONFIG_VIEW_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -113,7 +111,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
-
     /**
      *
      *
@@ -214,7 +211,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -241,7 +237,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private int view_ = 0;
-
   /**
    *
    *
@@ -288,7 +282,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -482,7 +475,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +672,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -706,7 +697,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -732,7 +722,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -757,7 +746,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +766,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +793,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -823,7 +809,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -843,7 +828,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.apigateway.v1.GetApiConfigRequest.ConfigView.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class GetApiConfigRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

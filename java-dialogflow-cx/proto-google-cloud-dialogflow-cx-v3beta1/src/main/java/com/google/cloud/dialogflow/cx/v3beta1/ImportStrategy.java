@@ -107,7 +107,6 @@ public enum ImportStrategy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_STRATEGY_UNSPECIFIED = 0;</code>
    */
   public static final int IMPORT_STRATEGY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -119,7 +118,6 @@ public enum ImportStrategy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_STRATEGY_CREATE_NEW = 1;</code>
    */
   public static final int IMPORT_STRATEGY_CREATE_NEW_VALUE = 1;
-
   /**
    *
    *
@@ -131,7 +129,6 @@ public enum ImportStrategy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_STRATEGY_REPLACE = 2;</code>
    */
   public static final int IMPORT_STRATEGY_REPLACE_VALUE = 2;
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public enum ImportStrategy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_STRATEGY_KEEP = 3;</code>
    */
   public static final int IMPORT_STRATEGY_KEEP_VALUE = 3;
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public enum ImportStrategy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_STRATEGY_MERGE = 4;</code>
    */
   public static final int IMPORT_STRATEGY_MERGE_VALUE = 4;
-
   /**
    *
    *

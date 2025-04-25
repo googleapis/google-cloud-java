@@ -36,7 +36,6 @@ public interface InstanceParamsOrBuilder
    * </code>
    */
   int getResourceManagerTagsCount();
-
   /**
    *
    *
@@ -49,11 +48,9 @@ public interface InstanceParamsOrBuilder
    * </code>
    */
   boolean containsResourceManagerTags(java.lang.String key);
-
   /** Use {@link #getResourceManagerTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags();
-
   /**
    *
    *
@@ -66,7 +63,6 @@ public interface InstanceParamsOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap();
-
   /**
    *
    *
@@ -83,7 +79,6 @@ public interface InstanceParamsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

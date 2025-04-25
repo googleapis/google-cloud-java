@@ -36,7 +36,6 @@ public interface ReadinessCheckOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ReadinessCheckOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface ReadinessCheckOrBuilder
    * @return Whether the checkInterval field is set.
    */
   boolean hasCheckInterval();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface ReadinessCheckOrBuilder
    * @return The checkInterval.
    */
   com.google.protobuf.Duration getCheckInterval();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ReadinessCheckOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ReadinessCheckOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface ReadinessCheckOrBuilder
    * @return Whether the appStartTimeout field is set.
    */
   boolean hasAppStartTimeout();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface ReadinessCheckOrBuilder
    * @return The appStartTimeout.
    */
   com.google.protobuf.Duration getAppStartTimeout();
-
   /**
    *
    *

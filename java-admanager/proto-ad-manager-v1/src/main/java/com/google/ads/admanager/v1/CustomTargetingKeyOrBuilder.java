@@ -38,7 +38,6 @@ public interface CustomTargetingKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface CustomTargetingKeyOrBuilder
    * @return The adTagName.
    */
   java.lang.String getAdTagName();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface CustomTargetingKeyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface CustomTargetingKeyOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public interface CustomTargetingKeyOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public interface CustomTargetingKeyOrBuilder
    * @return The enum numeric value on the wire for reportableType.
    */
   int getReportableTypeValue();
-
   /**
    *
    *

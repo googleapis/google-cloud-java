@@ -38,7 +38,6 @@ public interface CreateAttestorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateAttestorRequestOrBuilder
    * @return The attestorId.
    */
   java.lang.String getAttestorId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateAttestorRequestOrBuilder
    * @return Whether the attestor field is set.
    */
   boolean hasAttestor();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateAttestorRequestOrBuilder
    * @return The attestor.
    */
   com.google.cloud.binaryauthorization.v1beta1.Attestor getAttestor();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface HybridFindingDetailsOrBuilder
    * @return Whether the containerDetails field is set.
    */
   boolean hasContainerDetails();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HybridFindingDetailsOrBuilder
    * @return The containerDetails.
    */
   com.google.privacy.dlp.v2.Container getContainerDetails();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface HybridFindingDetailsOrBuilder
    * @return Whether the tableOptions field is set.
    */
   boolean hasTableOptions();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface HybridFindingDetailsOrBuilder
    * @return The tableOptions.
    */
   com.google.privacy.dlp.v2.TableOptions getTableOptions();
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface HybridFindingDetailsOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -194,11 +189,9 @@ public interface HybridFindingDetailsOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public interface HybridFindingDetailsOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public interface HybridFindingDetailsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

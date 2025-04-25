@@ -41,7 +41,6 @@ public interface UpdateSearchHypernymRequestOrBuilder
    * @return Whether the searchHypernym field is set.
    */
   boolean hasSearchHypernym();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateSearchHypernymRequestOrBuilder
    * @return The searchHypernym.
    */
   com.google.cloud.visionai.v1.SearchHypernym getSearchHypernym();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateSearchHypernymRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateSearchHypernymRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

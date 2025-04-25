@@ -34,7 +34,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.LanguageMetadata)
     LanguageMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LanguageMetadata.newBuilder() to construct.
   private LanguageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,7 +105,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
   public int getModelsCount() {
     return internalGetModels().getMap().size();
   }
-
   /**
    *
    *
@@ -123,14 +121,12 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
     }
     return internalGetModels().getMap().containsKey(key);
   }
-
   /** Use {@link #getModelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelMetadata> getModels() {
     return getModelsMap();
   }
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelMetadata> getModelsMap() {
     return internalGetModels().getMap();
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
         internalGetModels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,8 +581,7 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return ModelsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ModelsConverter modelsConverter = new ModelsConverter();
 
@@ -629,7 +621,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
     public int getModelsCount() {
       return internalGetModels().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -646,14 +637,12 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
       }
       return internalGetModels().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getModelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelMetadata> getModels() {
       return getModelsMap();
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
         getModelsMap() {
       return internalGetModels().getImmutableMap();
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
           internalGetMutableModels().ensureBuilderMap();
       return map.containsKey(key) ? modelsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
       internalGetMutableModels().clear();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
       internalGetMutableModels().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelMetadata>
@@ -743,7 +728,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return internalGetMutableModels().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class LanguageMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

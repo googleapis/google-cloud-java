@@ -37,7 +37,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the articleSuggestion field is set.
    */
   boolean hasArticleSuggestion();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The articleSuggestion.
    */
   com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData getArticleSuggestion();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the faqAnswer field is set.
    */
   boolean hasFaqAnswer();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The faqAnswer.
    */
   com.google.cloud.contactcenterinsights.v1.FaqAnswerData getFaqAnswer();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the smartReply field is set.
    */
   boolean hasSmartReply();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The smartReply.
    */
   com.google.cloud.contactcenterinsights.v1.SmartReplyData getSmartReply();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the smartComposeSuggestion field is set.
    */
   boolean hasSmartComposeSuggestion();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The smartComposeSuggestion.
    */
   com.google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData getSmartComposeSuggestion();
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the dialogflowInteraction field is set.
    */
   boolean hasDialogflowInteraction();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The dialogflowInteraction.
    */
   com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData getDialogflowInteraction();
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the conversationSummarizationSuggestion field is set.
    */
   boolean hasConversationSummarizationSuggestion();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface RuntimeAnnotationOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
       getConversationSummarizationSuggestion();
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The annotationId.
    */
   java.lang.String getAnnotationId();
-
   /**
    *
    *
@@ -314,7 +301,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -327,7 +313,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -351,7 +336,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the startBoundary field is set.
    */
   boolean hasStartBoundary();
-
   /**
    *
    *
@@ -364,7 +348,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The startBoundary.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotationBoundary getStartBoundary();
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the endBoundary field is set.
    */
   boolean hasEndBoundary();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The endBoundary.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotationBoundary getEndBoundary();
-
   /**
    *
    *
@@ -425,7 +406,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the answerFeedback field is set.
    */
   boolean hasAnswerFeedback();
-
   /**
    *
    *
@@ -438,7 +418,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The answerFeedback.
    */
   com.google.cloud.contactcenterinsights.v1.AnswerFeedback getAnswerFeedback();
-
   /**
    *
    *
@@ -463,7 +442,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return Whether the userInput field is set.
    */
   boolean hasUserInput();
-
   /**
    *
    *
@@ -477,7 +455,6 @@ public interface RuntimeAnnotationOrBuilder
    * @return The userInput.
    */
   com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.UserInput getUserInput();
-
   /**
    *
    *

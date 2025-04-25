@@ -37,7 +37,6 @@ public interface UpdateJobRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateJobRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface UpdateJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface UpdateJobRequestOrBuilder
    * @return The job.
    */
   com.google.cloud.dataproc.v1.Job getJob();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface UpdateJobRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface UpdateJobRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

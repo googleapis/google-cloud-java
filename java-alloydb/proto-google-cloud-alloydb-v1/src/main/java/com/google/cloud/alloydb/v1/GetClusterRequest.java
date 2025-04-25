@@ -33,7 +33,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.GetClusterRequest)
     GetClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetClusterRequest.newBuilder() to construct.
   private GetClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -333,7 +328,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -530,7 +524,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -556,7 +549,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
           com.google.cloud.alloydb.v1.ClusterView.forNumber(view_);
       return result == null ? com.google.cloud.alloydb.v1.ClusterView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

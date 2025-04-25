@@ -36,7 +36,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest)
     ListDescendantSecurityHealthAnalyticsCustomModulesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder() to construct.
   private ListDescendantSecurityHealthAnalyticsCustomModulesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -424,7 +418,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +662,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -699,7 +691,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +720,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -758,7 +748,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +772,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +803,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -832,7 +819,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -853,7 +839,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +859,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -901,7 +885,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -928,7 +911,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -954,7 +936,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +957,6 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

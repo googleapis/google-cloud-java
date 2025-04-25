@@ -39,7 +39,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.PatchServiceAccountRequest)
     PatchServiceAccountRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchServiceAccountRequest.newBuilder() to construct.
   private PatchServiceAccountRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
   private com.google.iam.admin.v1.ServiceAccount serviceAccount_;
-
   /**
    * <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code>
    *
@@ -81,7 +79,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
   public boolean hasServiceAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code>
    *
@@ -93,7 +90,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
         ? com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()
         : serviceAccount_;
   }
-
   /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
@@ -104,7 +100,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
@@ -114,7 +109,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
@@ -124,7 +118,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -309,7 +302,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -539,7 +531,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
             com.google.iam.admin.v1.ServiceAccount.Builder,
             com.google.iam.admin.v1.ServiceAccountOrBuilder>
         serviceAccountBuilder_;
-
     /**
      * <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code>
      *
@@ -548,7 +539,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
     public boolean hasServiceAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code>
      *
@@ -563,7 +553,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
         return serviceAccountBuilder_.getMessage();
       }
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     public Builder setServiceAccount(com.google.iam.admin.v1.ServiceAccount value) {
       if (serviceAccountBuilder_ == null) {
@@ -578,7 +567,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     public Builder setServiceAccount(
         com.google.iam.admin.v1.ServiceAccount.Builder builderForValue) {
@@ -591,7 +579,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     public Builder mergeServiceAccount(com.google.iam.admin.v1.ServiceAccount value) {
       if (serviceAccountBuilder_ == null) {
@@ -611,7 +598,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     public Builder clearServiceAccount() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -623,14 +609,12 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     public com.google.iam.admin.v1.ServiceAccount.Builder getServiceAccountBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getServiceAccountFieldBuilder().getBuilder();
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     public com.google.iam.admin.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
       if (serviceAccountBuilder_ != null) {
@@ -641,7 +625,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
             : serviceAccount_;
       }
     }
-
     /** <code>.google.iam.admin.v1.ServiceAccount service_account = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.iam.admin.v1.ServiceAccount,
@@ -666,7 +649,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
@@ -675,7 +657,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
@@ -690,7 +671,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -705,7 +685,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -717,7 +696,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -737,7 +715,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -749,14 +726,12 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -767,7 +742,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
-
     /** <code>.google.protobuf.FieldMask update_mask = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

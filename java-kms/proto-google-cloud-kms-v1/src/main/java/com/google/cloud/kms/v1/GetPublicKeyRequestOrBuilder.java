@@ -39,7 +39,6 @@ public interface GetPublicKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface GetPublicKeyRequestOrBuilder
    * @return The enum numeric value on the wire for publicKeyFormat.
    */
   int getPublicKeyFormatValue();
-
   /**
    *
    *

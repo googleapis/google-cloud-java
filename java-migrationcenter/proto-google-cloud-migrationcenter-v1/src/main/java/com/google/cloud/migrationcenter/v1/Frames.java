@@ -33,7 +33,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.Frames)
     FramesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Frames.newBuilder() to construct.
   private Frames(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.AssetFrame> framesData_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.migrationcenter.v1.AssetFrame> getFramesDataList() {
     return framesData_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       getFramesDataOrBuilderList() {
     return framesData_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
   public int getFramesDataCount() {
     return framesData_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.migrationcenter.v1.AssetFrame getFramesData(int index) {
     return framesData_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -562,7 +555,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
         return framesDataBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -579,7 +571,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
         return framesDataBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -596,7 +587,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
         return framesDataBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -619,7 +609,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +651,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +673,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +713,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +733,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +771,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +783,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.AssetFrame.Builder getFramesDataBuilder(int index) {
       return getFramesDataFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -820,7 +800,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
         return framesDataBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -838,7 +817,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(framesData_);
       }
     }
-
     /**
      *
      *
@@ -852,7 +830,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       return getFramesDataFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.AssetFrame.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -866,7 +843,6 @@ public final class Frames extends com.google.protobuf.GeneratedMessageV3
       return getFramesDataFieldBuilder()
           .addBuilder(index, com.google.cloud.migrationcenter.v1.AssetFrame.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.CreateSpecRequest)
     CreateSpecRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSpecRequest.newBuilder() to construct.
   private CreateSpecRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object specId_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.Spec spec_;
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.apihub.v1.Spec getSpec() {
     return spec_ == null ? com.google.cloud.apihub.v1.Spec.getDefaultInstance() : spec_;
   }
-
   /**
    *
    *
@@ -429,7 +421,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -737,7 +725,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +774,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object specId_ = "";
-
     /**
      *
      *
@@ -820,7 +805,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +930,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.apihub.v1.Spec.Builder,
             com.google.cloud.apihub.v1.SpecOrBuilder>
         specBuilder_;
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -983,7 +962,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
         return specBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1006,7 +984,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1030,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1049,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1106,7 +1079,6 @@ public final class CreateSpecRequest extends com.google.protobuf.GeneratedMessag
         return spec_ == null ? com.google.cloud.apihub.v1.Spec.getDefaultInstance() : spec_;
       }
     }
-
     /**
      *
      *

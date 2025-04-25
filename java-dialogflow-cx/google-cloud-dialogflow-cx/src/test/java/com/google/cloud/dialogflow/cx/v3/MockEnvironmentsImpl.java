@@ -180,8 +180,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method LookupEnvironmentHistory, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method LookupEnvironmentHistory, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   LookupEnvironmentHistoryResponse.class.getName(),
                   Exception.class.getName())));
@@ -224,8 +223,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListContinuousTestResults, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListContinuousTestResults, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListContinuousTestResultsResponse.class.getName(),
                   Exception.class.getName())));

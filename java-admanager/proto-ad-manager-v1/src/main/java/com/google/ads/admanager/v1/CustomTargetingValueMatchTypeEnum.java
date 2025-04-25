@@ -34,7 +34,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum)
     CustomTargetingValueMatchTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomTargetingValueMatchTypeEnum.newBuilder() to construct.
   private CustomTargetingValueMatchTypeEnum(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -179,7 +178,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
      * <code>CUSTOM_TARGETING_VALUE_MATCH_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_TARGETING_VALUE_MATCH_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -191,7 +189,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
      * <code>EXACT = 1;</code>
      */
     public static final int EXACT_VALUE = 1;
-
     /**
      *
      *
@@ -207,7 +204,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
      * <code>BROAD = 2;</code>
      */
     public static final int BROAD_VALUE = 2;
-
     /**
      *
      *
@@ -221,7 +217,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
      * <code>PREFIX = 3;</code>
      */
     public static final int PREFIX_VALUE = 3;
-
     /**
      *
      *
@@ -236,7 +231,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
      * <code>BROAD_PREFIX = 4;</code>
      */
     public static final int BROAD_PREFIX_VALUE = 4;
-
     /**
      *
      *
@@ -251,7 +245,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
      * <code>SUFFIX = 5;</code>
      */
     public static final int SUFFIX_VALUE = 5;
-
     /**
      *
      *
@@ -514,7 +507,6 @@ public final class CustomTargetingValueMatchTypeEnum extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface AnalysisMessageOrBuilder
    * @return Whether the messageBase field is set.
    */
   boolean hasMessageBase();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnalysisMessageOrBuilder
    * @return The messageBase.
    */
   com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase getMessageBase();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AnalysisMessageOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface AnalysisMessageOrBuilder
    * @return A list containing the resourcePaths.
    */
   java.util.List<java.lang.String> getResourcePathsList();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface AnalysisMessageOrBuilder
    * @return The count of resourcePaths.
    */
   int getResourcePathsCount();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface AnalysisMessageOrBuilder
    * @return The resourcePaths at the given index.
    */
   java.lang.String getResourcePaths(int index);
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface AnalysisMessageOrBuilder
    * @return Whether the args field is set.
    */
   boolean hasArgs();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface AnalysisMessageOrBuilder
    * @return The args.
    */
   com.google.protobuf.Struct getArgs();
-
   /**
    *
    *

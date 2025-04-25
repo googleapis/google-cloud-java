@@ -33,7 +33,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.JobQuery)
     JobQueryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobQuery.newBuilder() to construct.
   private JobQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryLanguageCode_ = "";
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +202,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList companies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -234,7 +228,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCompaniesList() {
     return companies_;
   }
-
   /**
    *
    *
@@ -261,7 +254,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getCompaniesCount() {
     return companies_.size();
   }
-
   /**
    *
    *
@@ -289,7 +281,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCompanies(int index) {
     return companies_.get(index);
   }
-
   /**
    *
    *
@@ -322,7 +313,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.LocationFilter> locationFilters_;
-
   /**
    *
    *
@@ -348,7 +338,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.talent.v4.LocationFilter> getLocationFiltersList() {
     return locationFilters_;
   }
-
   /**
    *
    *
@@ -375,7 +364,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       getLocationFiltersOrBuilderList() {
     return locationFilters_;
   }
-
   /**
    *
    *
@@ -401,7 +389,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getLocationFiltersCount() {
     return locationFilters_.size();
   }
-
   /**
    *
    *
@@ -427,7 +414,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.talent.v4.LocationFilter getLocationFilters(int index) {
     return locationFilters_.get(index);
   }
-
   /**
    *
    *
@@ -470,7 +456,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.cloud.talent.v4.JobCategory.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -494,7 +479,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.talent.v4.JobCategory>(
         jobCategories_, jobCategories_converter_);
   }
-
   /**
    *
    *
@@ -516,7 +500,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getJobCategoriesCount() {
     return jobCategories_.size();
   }
-
   /**
    *
    *
@@ -539,7 +522,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.talent.v4.JobCategory getJobCategories(int index) {
     return jobCategories_converter_.convert(jobCategories_.get(index));
   }
-
   /**
    *
    *
@@ -561,7 +543,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getJobCategoriesValueList() {
     return jobCategories_;
   }
-
   /**
    *
    *
@@ -589,7 +570,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMMUTE_FILTER_FIELD_NUMBER = 5;
   private com.google.cloud.talent.v4.CommuteFilter commuteFilter_;
-
   /**
    *
    *
@@ -613,7 +593,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCommuteFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -639,7 +618,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.talent.v4.CommuteFilter.getDefaultInstance()
         : commuteFilter_;
   }
-
   /**
    *
    *
@@ -669,7 +647,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList companyDisplayNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -709,7 +686,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCompanyDisplayNamesList() {
     return companyDisplayNames_;
   }
-
   /**
    *
    *
@@ -749,7 +725,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getCompanyDisplayNamesCount() {
     return companyDisplayNames_.size();
   }
-
   /**
    *
    *
@@ -790,7 +765,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCompanyDisplayNames(int index) {
     return companyDisplayNames_.get(index);
   }
-
   /**
    *
    *
@@ -834,7 +808,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPENSATION_FILTER_FIELD_NUMBER = 7;
   private com.google.cloud.talent.v4.CompensationFilter compensationFilter_;
-
   /**
    *
    *
@@ -854,7 +827,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompensationFilter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -876,7 +848,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.talent.v4.CompensationFilter.getDefaultInstance()
         : compensationFilter_;
   }
-
   /**
    *
    *
@@ -901,7 +872,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customAttributeFilter_ = "";
-
   /**
    *
    *
@@ -947,7 +917,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -996,7 +965,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLE_SPELL_CHECK_FIELD_NUMBER = 9;
   private boolean disableSpellCheck_ = false;
-
   /**
    *
    *
@@ -1035,7 +1003,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -1061,7 +1028,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.talent.v4.EmploymentType>(
         employmentTypes_, employmentTypes_converter_);
   }
-
   /**
    *
    *
@@ -1085,7 +1051,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getEmploymentTypesCount() {
     return employmentTypes_.size();
   }
-
   /**
    *
    *
@@ -1110,7 +1075,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.talent.v4.EmploymentType getEmploymentTypes(int index) {
     return employmentTypes_converter_.convert(employmentTypes_.get(index));
   }
-
   /**
    *
    *
@@ -1134,7 +1098,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getEmploymentTypesValueList() {
     return employmentTypes_;
   }
-
   /**
    *
    *
@@ -1167,7 +1130,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languageCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1193,7 +1155,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
     return languageCodes_;
   }
-
   /**
    *
    *
@@ -1219,7 +1180,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getLanguageCodesCount() {
     return languageCodes_.size();
   }
-
   /**
    *
    *
@@ -1246,7 +1206,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLanguageCodes(int index) {
     return languageCodes_.get(index);
   }
-
   /**
    *
    *
@@ -1276,7 +1235,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PUBLISH_TIME_RANGE_FIELD_NUMBER = 12;
   private com.google.cloud.talent.v4.TimestampRange publishTimeRange_;
-
   /**
    *
    *
@@ -1293,7 +1251,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishTimeRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1312,7 +1269,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.talent.v4.TimestampRange.getDefaultInstance()
         : publishTimeRange_;
   }
-
   /**
    *
    *
@@ -1335,7 +1291,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludedJobs_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1352,7 +1307,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExcludedJobsList() {
     return excludedJobs_;
   }
-
   /**
    *
    *
@@ -1369,7 +1323,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public int getExcludedJobsCount() {
     return excludedJobs_.size();
   }
-
   /**
    *
    *
@@ -1387,7 +1340,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExcludedJobs(int index) {
     return excludedJobs_.get(index);
   }
-
   /**
    *
    *
@@ -1758,7 +1710,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2279,7 +2230,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -2305,7 +2255,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2331,7 +2280,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2356,7 +2304,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2377,7 +2324,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2405,7 +2351,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object queryLanguageCode_ = "";
-
     /**
      *
      *
@@ -2436,7 +2381,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2467,7 +2411,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2497,7 +2440,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2523,7 +2465,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2564,7 +2505,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2592,7 +2532,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       companies_.makeImmutable();
       return companies_;
     }
-
     /**
      *
      *
@@ -2619,7 +2558,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getCompaniesCount() {
       return companies_.size();
     }
-
     /**
      *
      *
@@ -2647,7 +2585,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCompanies(int index) {
       return companies_.get(index);
     }
-
     /**
      *
      *
@@ -2675,7 +2612,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCompaniesBytes(int index) {
       return companies_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2711,7 +2647,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2746,7 +2681,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2778,7 +2712,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2809,7 +2742,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2891,7 +2823,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return locationFiltersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2920,7 +2851,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return locationFiltersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2949,7 +2879,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return locationFiltersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2984,7 +2913,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2945,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3052,7 +2979,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3087,7 +3013,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3120,7 +3045,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3153,7 +3077,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3186,7 +3109,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3218,7 +3140,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3250,7 +3171,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3275,7 +3195,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.LocationFilter.Builder getLocationFiltersBuilder(int index) {
       return getLocationFiltersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3305,7 +3224,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return locationFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3335,7 +3253,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(locationFilters_);
       }
     }
-
     /**
      *
      *
@@ -3361,7 +3278,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return getLocationFiltersFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4.LocationFilter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3387,7 +3303,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return getLocationFiltersFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4.LocationFilter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3442,7 +3357,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
       }
     }
-
     /**
      *
      *
@@ -3465,7 +3379,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.talent.v4.JobCategory>(
           jobCategories_, jobCategories_converter_);
     }
-
     /**
      *
      *
@@ -3486,7 +3399,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getJobCategoriesCount() {
       return jobCategories_.size();
     }
-
     /**
      *
      *
@@ -3508,7 +3420,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.JobCategory getJobCategories(int index) {
       return jobCategories_converter_.convert(jobCategories_.get(index));
     }
-
     /**
      *
      *
@@ -3537,7 +3448,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3565,7 +3475,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3593,7 +3502,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3617,7 +3525,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3638,7 +3545,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getJobCategoriesValueList() {
       return java.util.Collections.unmodifiableList(jobCategories_);
     }
-
     /**
      *
      *
@@ -3660,7 +3566,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getJobCategoriesValue(int index) {
       return jobCategories_.get(index);
     }
-
     /**
      *
      *
@@ -3686,7 +3591,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3711,7 +3615,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3745,7 +3648,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4.CommuteFilter.Builder,
             com.google.cloud.talent.v4.CommuteFilterOrBuilder>
         commuteFilterBuilder_;
-
     /**
      *
      *
@@ -3768,7 +3670,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCommuteFilter() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3797,7 +3698,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return commuteFilterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3828,7 +3728,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3857,7 +3756,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3893,7 +3791,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3921,7 +3818,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3944,7 +3840,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCommuteFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3971,7 +3866,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             : commuteFilter_;
       }
     }
-
     /**
      *
      *
@@ -4015,7 +3909,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -4056,7 +3949,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       companyDisplayNames_.makeImmutable();
       return companyDisplayNames_;
     }
-
     /**
      *
      *
@@ -4096,7 +3988,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getCompanyDisplayNamesCount() {
       return companyDisplayNames_.size();
     }
-
     /**
      *
      *
@@ -4137,7 +4028,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCompanyDisplayNames(int index) {
       return companyDisplayNames_.get(index);
     }
-
     /**
      *
      *
@@ -4178,7 +4068,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCompanyDisplayNamesBytes(int index) {
       return companyDisplayNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4227,7 +4116,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4275,7 +4163,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4320,7 +4207,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4364,7 +4250,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4420,7 +4305,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4.CompensationFilter.Builder,
             com.google.cloud.talent.v4.CompensationFilterOrBuilder>
         compensationFilterBuilder_;
-
     /**
      *
      *
@@ -4439,7 +4323,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompensationFilter() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4464,7 +4347,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return compensationFilterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4491,7 +4373,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4516,7 +4397,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4549,7 +4429,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4573,7 +4452,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4592,7 +4470,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCompensationFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4615,7 +4492,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             : compensationFilter_;
       }
     }
-
     /**
      *
      *
@@ -4647,7 +4523,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customAttributeFilter_ = "";
-
     /**
      *
      *
@@ -4692,7 +4567,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4737,7 +4611,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4781,7 +4654,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4821,7 +4693,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4868,7 +4739,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disableSpellCheck_;
-
     /**
      *
      *
@@ -4888,7 +4758,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisableSpellCheck() {
       return disableSpellCheck_;
     }
-
     /**
      *
      *
@@ -4912,7 +4781,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4943,7 +4811,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000400;
       }
     }
-
     /**
      *
      *
@@ -4968,7 +4835,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.talent.v4.EmploymentType>(
           employmentTypes_, employmentTypes_converter_);
     }
-
     /**
      *
      *
@@ -4991,7 +4857,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getEmploymentTypesCount() {
       return employmentTypes_.size();
     }
-
     /**
      *
      *
@@ -5015,7 +4880,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.EmploymentType getEmploymentTypes(int index) {
       return employmentTypes_converter_.convert(employmentTypes_.get(index));
     }
-
     /**
      *
      *
@@ -5046,7 +4910,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5076,7 +4939,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5106,7 +4968,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5132,7 +4993,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5155,7 +5015,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getEmploymentTypesValueList() {
       return java.util.Collections.unmodifiableList(employmentTypes_);
     }
-
     /**
      *
      *
@@ -5179,7 +5038,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getEmploymentTypesValue(int index) {
       return employmentTypes_.get(index);
     }
-
     /**
      *
      *
@@ -5207,7 +5065,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5234,7 +5091,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5273,7 +5129,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000800;
     }
-
     /**
      *
      *
@@ -5300,7 +5155,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       languageCodes_.makeImmutable();
       return languageCodes_;
     }
-
     /**
      *
      *
@@ -5326,7 +5180,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageCodesCount() {
       return languageCodes_.size();
     }
-
     /**
      *
      *
@@ -5353,7 +5206,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
     }
-
     /**
      *
      *
@@ -5380,7 +5232,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
       return languageCodes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5415,7 +5266,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5449,7 +5299,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5480,7 +5329,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5510,7 +5358,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5552,7 +5399,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4.TimestampRange.Builder,
             com.google.cloud.talent.v4.TimestampRangeOrBuilder>
         publishTimeRangeBuilder_;
-
     /**
      *
      *
@@ -5568,7 +5414,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishTimeRange() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -5590,7 +5435,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         return publishTimeRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5614,7 +5458,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5636,7 +5479,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5666,7 +5508,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5687,7 +5528,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5703,7 +5543,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPublishTimeRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5723,7 +5562,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             : publishTimeRange_;
       }
     }
-
     /**
      *
      *
@@ -5760,7 +5598,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00002000;
     }
-
     /**
      *
      *
@@ -5778,7 +5615,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       excludedJobs_.makeImmutable();
       return excludedJobs_;
     }
-
     /**
      *
      *
@@ -5795,7 +5631,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public int getExcludedJobsCount() {
       return excludedJobs_.size();
     }
-
     /**
      *
      *
@@ -5813,7 +5648,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExcludedJobs(int index) {
       return excludedJobs_.get(index);
     }
-
     /**
      *
      *
@@ -5831,7 +5665,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExcludedJobsBytes(int index) {
       return excludedJobs_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5857,7 +5690,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5882,7 +5714,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5904,7 +5735,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5925,7 +5755,6 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

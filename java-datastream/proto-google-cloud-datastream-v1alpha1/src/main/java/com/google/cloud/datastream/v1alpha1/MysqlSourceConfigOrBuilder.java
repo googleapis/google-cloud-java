@@ -36,7 +36,6 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the allowlist field is set.
    */
   boolean hasAllowlist();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MysqlSourceConfigOrBuilder
    * @return The allowlist.
    */
   com.google.cloud.datastream.v1alpha1.MysqlRdbms getAllowlist();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the rejectlist field is set.
    */
   boolean hasRejectlist();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface MysqlSourceConfigOrBuilder
    * @return The rejectlist.
    */
   com.google.cloud.datastream.v1alpha1.MysqlRdbms getRejectlist();
-
   /**
    *
    *

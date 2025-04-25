@@ -33,7 +33,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FixedOrPercent)
     FixedOrPercentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FixedOrPercent.newBuilder() to construct.
   private FixedOrPercent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CALCULATED_FIELD_NUMBER = 472082878;
   private int calculated_ = 0;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCalculated() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIXED_FIELD_NUMBER = 97445748;
   private int fixed_ = 0;
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFixed() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERCENT_FIELD_NUMBER = 394814533;
   private int percent_ = 0;
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPercent() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +565,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int calculated_;
-
     /**
      *
      *
@@ -589,7 +580,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCalculated() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -605,7 +595,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public int getCalculated() {
       return calculated_;
     }
-
     /**
      *
      *
@@ -625,7 +614,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +633,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int fixed_;
-
     /**
      *
      *
@@ -661,7 +648,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFixed() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -677,7 +663,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public int getFixed() {
       return fixed_;
     }
-
     /**
      *
      *
@@ -697,7 +682,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +701,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int percent_;
-
     /**
      *
      *
@@ -733,7 +716,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPercent() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -749,7 +731,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public int getPercent() {
       return percent_;
     }
-
     /**
      *
      *
@@ -769,7 +750,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

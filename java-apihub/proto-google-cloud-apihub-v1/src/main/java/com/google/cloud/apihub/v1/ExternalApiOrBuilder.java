@@ -37,7 +37,6 @@ public interface ExternalApiOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ExternalApiOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ExternalApiOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ExternalApiOrBuilder
    * @return A list containing the endpoints.
    */
   java.util.List<java.lang.String> getEndpointsList();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ExternalApiOrBuilder
    * @return The count of endpoints.
    */
   int getEndpointsCount();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ExternalApiOrBuilder
    * @return The endpoints at the given index.
    */
   java.lang.String getEndpoints(int index);
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface ExternalApiOrBuilder
    * @return A list containing the paths.
    */
   java.util.List<java.lang.String> getPathsList();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface ExternalApiOrBuilder
    * @return The count of paths.
    */
   int getPathsCount();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface ExternalApiOrBuilder
    * @return The paths at the given index.
    */
   java.lang.String getPaths(int index);
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface ExternalApiOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface ExternalApiOrBuilder
    * @return The documentation.
    */
   com.google.cloud.apihub.v1.Documentation getDocumentation();
-
   /**
    *
    *
@@ -274,7 +263,6 @@ public interface ExternalApiOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -290,11 +278,9 @@ public interface ExternalApiOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
-
   /**
    *
    *
@@ -310,7 +296,6 @@ public interface ExternalApiOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
-
   /**
    *
    *
@@ -330,7 +315,6 @@ public interface ExternalApiOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
-
   /**
    *
    *
@@ -360,7 +344,6 @@ public interface ExternalApiOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -374,7 +357,6 @@ public interface ExternalApiOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -400,7 +382,6 @@ public interface ExternalApiOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -414,7 +395,6 @@ public interface ExternalApiOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

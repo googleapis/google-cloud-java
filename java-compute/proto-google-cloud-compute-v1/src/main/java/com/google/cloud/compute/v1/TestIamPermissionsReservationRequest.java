@@ -34,7 +34,6 @@ public final class TestIamPermissionsReservationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsReservationRequest)
     TestIamPermissionsReservationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TestIamPermissionsReservationRequest.newBuilder() to construct.
   private TestIamPermissionsReservationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class TestIamPermissionsReservationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class TestIamPermissionsReservationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class TestIamPermissionsReservationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class TestIamPermissionsReservationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class TestIamPermissionsReservationRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class TestIamPermissionsReservationRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class TestIamPermissionsReservationRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class TestIamPermissionsReservationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class TestIamPermissionsReservationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -484,7 +474,6 @@ public final class TestIamPermissionsReservationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -737,7 +726,6 @@ public final class TestIamPermissionsReservationRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -760,7 +748,6 @@ public final class TestIamPermissionsReservationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class TestIamPermissionsReservationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class TestIamPermissionsReservationRequest
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -871,7 +854,6 @@ public final class TestIamPermissionsReservationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -894,7 +876,6 @@ public final class TestIamPermissionsReservationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +914,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class TestIamPermissionsReservationRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -981,7 +959,6 @@ public final class TestIamPermissionsReservationRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class TestIamPermissionsReservationRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1006,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1028,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1059,6 @@ public final class TestIamPermissionsReservationRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1080,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1097,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1147,7 +1118,6 @@ public final class TestIamPermissionsReservationRequest
             : testPermissionsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1147,6 @@ public final class TestIamPermissionsReservationRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1200,7 +1169,6 @@ public final class TestIamPermissionsReservationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1191,6 @@ public final class TestIamPermissionsReservationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1212,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1229,6 @@ public final class TestIamPermissionsReservationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchAssetsRequest)
     SearchAssetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchAssetsRequest.newBuilder() to construct.
   private SearchAssetsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     private SortSpecCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SCHEMA_KEY_SORTING_STRATEGY_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSchemaKeySortingStrategy() {
     return sortSpecCase_ == 9;
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.visionai.v1.SchemaKeySortingStrategy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object corpus_ = "";
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int CONTENT_TIME_RANGES_FIELD_NUMBER = 5;
   private com.google.cloud.visionai.v1.DateTimeRangeArray contentTimeRanges_;
-
   /**
    *
    *
@@ -331,7 +320,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public boolean hasContentTimeRanges() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -353,7 +341,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.visionai.v1.DateTimeRangeArray.getDefaultInstance()
         : contentTimeRanges_;
   }
-
   /**
    *
    *
@@ -378,7 +365,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Criteria> criteria_;
-
   /**
    *
    *
@@ -392,7 +378,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.visionai.v1.Criteria> getCriteriaList() {
     return criteria_;
   }
-
   /**
    *
    *
@@ -407,7 +392,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       getCriteriaOrBuilderList() {
     return criteria_;
   }
-
   /**
    *
    *
@@ -421,7 +405,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public int getCriteriaCount() {
     return criteria_.size();
   }
-
   /**
    *
    *
@@ -435,7 +418,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.visionai.v1.Criteria getCriteria(int index) {
     return criteria_.get(index);
   }
-
   /**
    *
    *
@@ -454,7 +436,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.FacetGroup> facetSelections_;
-
   /**
    *
    *
@@ -470,7 +451,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.visionai.v1.FacetGroup> getFacetSelectionsList() {
     return facetSelections_;
   }
-
   /**
    *
    *
@@ -487,7 +467,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       getFacetSelectionsOrBuilderList() {
     return facetSelections_;
   }
-
   /**
    *
    *
@@ -503,7 +482,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public int getFacetSelectionsCount() {
     return facetSelections_.size();
   }
-
   /**
    *
    *
@@ -519,7 +497,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.visionai.v1.FacetGroup getFacetSelections(int index) {
     return facetSelections_.get(index);
   }
-
   /**
    *
    *
@@ -541,7 +518,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resultAnnotationKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -559,7 +535,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getResultAnnotationKeysList() {
     return resultAnnotationKeys_;
   }
-
   /**
    *
    *
@@ -577,7 +552,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public int getResultAnnotationKeysCount() {
     return resultAnnotationKeys_.size();
   }
-
   /**
    *
    *
@@ -596,7 +570,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getResultAnnotationKeys(int index) {
     return resultAnnotationKeys_.get(index);
   }
-
   /**
    *
    *
@@ -620,7 +593,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object searchQuery_ = "";
-
   /**
    *
    *
@@ -645,7 +617,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -935,7 +906,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1387,7 +1357,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Builder,
             com.google.cloud.visionai.v1.SchemaKeySortingStrategyOrBuilder>
         schemaKeySortingStrategyBuilder_;
-
     /**
      *
      *
@@ -1404,7 +1373,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSchemaKeySortingStrategy() {
       return sortSpecCase_ == 9;
     }
-
     /**
      *
      *
@@ -1431,7 +1399,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return com.google.cloud.visionai.v1.SchemaKeySortingStrategy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1456,7 +1423,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       sortSpecCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1444,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       sortSpecCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1479,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       sortSpecCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -1541,7 +1505,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1556,7 +1519,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         getSchemaKeySortingStrategyBuilder() {
       return getSchemaKeySortingStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1579,7 +1541,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return com.google.cloud.visionai.v1.SchemaKeySortingStrategy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1615,7 +1576,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object corpus_ = "";
-
     /**
      *
      *
@@ -1641,7 +1601,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1667,7 +1626,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1650,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1713,7 +1670,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1697,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1758,7 +1713,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1779,7 +1733,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1753,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1824,7 +1776,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1799,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1871,7 +1821,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1890,7 +1839,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1921,7 +1869,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.visionai.v1.DateTimeRangeArray.Builder,
             com.google.cloud.visionai.v1.DateTimeRangeArrayOrBuilder>
         contentTimeRangesBuilder_;
-
     /**
      *
      *
@@ -1940,7 +1887,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public boolean hasContentTimeRanges() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1965,7 +1911,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return contentTimeRangesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1992,7 +1937,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2017,7 +1961,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2050,7 +1993,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2074,7 +2016,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2034,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getContentTimeRangesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2117,7 +2057,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
             : contentTimeRanges_;
       }
     }
-
     /**
      *
      *
@@ -2180,7 +2119,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return criteriaBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2197,7 +2135,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return criteriaBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2214,7 +2151,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return criteriaBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2237,7 +2173,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2258,7 +2193,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2281,7 +2215,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2304,7 +2237,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2324,7 +2256,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2345,7 +2276,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2366,7 +2296,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2386,7 +2315,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2334,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2419,7 +2346,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.visionai.v1.Criteria.Builder getCriteriaBuilder(int index) {
       return getCriteriaFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2436,7 +2362,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return criteriaBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2454,7 +2379,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(criteria_);
       }
     }
-
     /**
      *
      *
@@ -2468,7 +2392,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return getCriteriaFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Criteria.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2482,7 +2405,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return getCriteriaFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Criteria.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2548,7 +2470,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return facetSelectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2567,7 +2488,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return facetSelectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2586,7 +2506,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return facetSelectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2611,7 +2530,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2552,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2576,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2684,7 +2600,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2707,7 +2622,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2644,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2753,7 +2666,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2775,7 +2687,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2797,7 +2708,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2812,7 +2722,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.visionai.v1.FacetGroup.Builder getFacetSelectionsBuilder(int index) {
       return getFacetSelectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2831,7 +2740,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return facetSelectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2851,7 +2759,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(facetSelections_);
       }
     }
-
     /**
      *
      *
@@ -2867,7 +2774,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return getFacetSelectionsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.FacetGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2883,7 +2789,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       return getFacetSelectionsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.FacetGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2929,7 +2834,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2948,7 +2852,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       resultAnnotationKeys_.makeImmutable();
       return resultAnnotationKeys_;
     }
-
     /**
      *
      *
@@ -2966,7 +2869,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public int getResultAnnotationKeysCount() {
       return resultAnnotationKeys_.size();
     }
-
     /**
      *
      *
@@ -2985,7 +2887,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getResultAnnotationKeys(int index) {
       return resultAnnotationKeys_.get(index);
     }
-
     /**
      *
      *
@@ -3004,7 +2905,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getResultAnnotationKeysBytes(int index) {
       return resultAnnotationKeys_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3031,7 +2931,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3057,7 +2956,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3080,7 +2978,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3102,7 +2999,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3131,7 +3027,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object searchQuery_ = "";
-
     /**
      *
      *
@@ -3155,7 +3050,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3179,7 +3073,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3202,7 +3095,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3221,7 +3113,6 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ToolParameterKeyMatchResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.ToolParameterKeyMatchMetricValue>
       getToolParameterKeyMatchMetricValuesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ToolParameterKeyMatchResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1.ToolParameterKeyMatchMetricValue
       getToolParameterKeyMatchMetricValues(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ToolParameterKeyMatchResultsOrBuilder
    * </code>
    */
   int getToolParameterKeyMatchMetricValuesCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ToolParameterKeyMatchResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolParameterKeyMatchMetricValueOrBuilder>
       getToolParameterKeyMatchMetricValuesOrBuilderList();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface ListSearchConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ListSearchConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

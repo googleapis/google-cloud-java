@@ -38,7 +38,6 @@ public interface WorkflowOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface WorkflowOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface WorkflowOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface WorkflowOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public interface WorkflowOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface WorkflowOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface WorkflowOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public interface WorkflowOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public interface WorkflowOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface WorkflowOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public interface WorkflowOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -323,11 +312,9 @@ public interface WorkflowOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public interface WorkflowOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -363,7 +349,6 @@ public interface WorkflowOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -403,7 +388,6 @@ public interface WorkflowOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public interface WorkflowOrBuilder
    * @return Whether the sourceContents field is set.
    */
   boolean hasSourceContents();
-
   /**
    *
    *
@@ -453,7 +436,6 @@ public interface WorkflowOrBuilder
    * @return The sourceContents.
    */
   java.lang.String getSourceContents();
-
   /**
    *
    *
@@ -491,7 +473,6 @@ public interface WorkflowOrBuilder
    * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
-
   /**
    *
    *
@@ -533,7 +514,6 @@ public interface WorkflowOrBuilder
    * @return Whether the stateError field is set.
    */
   boolean hasStateError();
-
   /**
    *
    *
@@ -550,7 +530,6 @@ public interface WorkflowOrBuilder
    * @return The stateError.
    */
   com.google.cloud.workflows.v1.Workflow.StateError getStateError();
-
   /**
    *
    *
@@ -583,7 +562,6 @@ public interface WorkflowOrBuilder
    * @return The enum numeric value on the wire for callLogLevel.
    */
   int getCallLogLevelValue();
-
   /**
    *
    *
@@ -616,7 +594,6 @@ public interface WorkflowOrBuilder
    * </code>
    */
   int getUserEnvVarsCount();
-
   /**
    *
    *
@@ -631,11 +608,9 @@ public interface WorkflowOrBuilder
    * </code>
    */
   boolean containsUserEnvVars(java.lang.String key);
-
   /** Use {@link #getUserEnvVarsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserEnvVars();
-
   /**
    *
    *
@@ -650,7 +625,6 @@ public interface WorkflowOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserEnvVarsMap();
-
   /**
    *
    *
@@ -669,7 +643,6 @@ public interface WorkflowOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -699,7 +672,6 @@ public interface WorkflowOrBuilder
    * @return The enum numeric value on the wire for executionHistoryLevel.
    */
   int getExecutionHistoryLevelValue();
-
   /**
    *
    *
@@ -730,7 +702,6 @@ public interface WorkflowOrBuilder
    * @return A list containing the allKmsKeys.
    */
   java.util.List<java.lang.String> getAllKmsKeysList();
-
   /**
    *
    *
@@ -746,7 +717,6 @@ public interface WorkflowOrBuilder
    * @return The count of allKmsKeys.
    */
   int getAllKmsKeysCount();
-
   /**
    *
    *
@@ -763,7 +733,6 @@ public interface WorkflowOrBuilder
    * @return The allKmsKeys at the given index.
    */
   java.lang.String getAllKmsKeys(int index);
-
   /**
    *
    *
@@ -796,7 +765,6 @@ public interface WorkflowOrBuilder
    * @return A list containing the allKmsKeysVersions.
    */
   java.util.List<java.lang.String> getAllKmsKeysVersionsList();
-
   /**
    *
    *
@@ -812,7 +780,6 @@ public interface WorkflowOrBuilder
    * @return The count of allKmsKeysVersions.
    */
   int getAllKmsKeysVersionsCount();
-
   /**
    *
    *
@@ -829,7 +796,6 @@ public interface WorkflowOrBuilder
    * @return The allKmsKeysVersions at the given index.
    */
   java.lang.String getAllKmsKeysVersions(int index);
-
   /**
    *
    *
@@ -865,7 +831,6 @@ public interface WorkflowOrBuilder
    * @return The cryptoKeyVersion.
    */
   java.lang.String getCryptoKeyVersion();
-
   /**
    *
    *
@@ -897,7 +862,6 @@ public interface WorkflowOrBuilder
    * </code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -910,11 +874,9 @@ public interface WorkflowOrBuilder
    * </code>
    */
   boolean containsTags(java.lang.String key);
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
-
   /**
    *
    *
@@ -927,7 +889,6 @@ public interface WorkflowOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
-
   /**
    *
    *
@@ -944,7 +905,6 @@ public interface WorkflowOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

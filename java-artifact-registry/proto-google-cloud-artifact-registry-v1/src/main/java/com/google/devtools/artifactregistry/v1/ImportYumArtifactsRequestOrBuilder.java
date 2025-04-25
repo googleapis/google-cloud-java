@@ -36,7 +36,6 @@ public interface ImportYumArtifactsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportYumArtifactsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource getGcsSource();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ImportYumArtifactsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

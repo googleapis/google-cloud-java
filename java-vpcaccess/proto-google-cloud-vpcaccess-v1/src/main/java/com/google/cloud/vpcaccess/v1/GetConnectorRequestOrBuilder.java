@@ -38,7 +38,6 @@ public interface GetConnectorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

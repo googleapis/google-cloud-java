@@ -72,7 +72,6 @@ public enum SharedResourceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>SHARED_RESOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int SHARED_RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum SharedResourceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>BIGQUERY_DATASET = 1;</code>
    */
   public static final int BIGQUERY_DATASET_VALUE = 1;
-
   /**
    *
    *

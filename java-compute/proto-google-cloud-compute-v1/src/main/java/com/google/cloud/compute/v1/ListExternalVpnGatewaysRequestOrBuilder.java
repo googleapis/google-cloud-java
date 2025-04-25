@@ -36,7 +36,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface ListExternalVpnGatewaysRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *

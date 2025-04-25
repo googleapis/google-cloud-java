@@ -34,7 +34,6 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BleuSpec)
     BleuSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BleuSpec.newBuilder() to construct.
   private BleuSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USE_EFFECTIVE_ORDER_FIELD_NUMBER = 1;
   private boolean useEffectiveOrder_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -424,7 +421,6 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean useEffectiveOrder_;
-
     /**
      *
      *
@@ -440,7 +436,6 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean getUseEffectiveOrder() {
       return useEffectiveOrder_;
     }
-
     /**
      *
      *
@@ -460,7 +455,6 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

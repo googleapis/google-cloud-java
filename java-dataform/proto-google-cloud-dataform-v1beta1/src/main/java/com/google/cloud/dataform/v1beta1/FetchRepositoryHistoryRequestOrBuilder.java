@@ -38,7 +38,6 @@ public interface FetchRepositoryHistoryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface FetchRepositoryHistoryRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

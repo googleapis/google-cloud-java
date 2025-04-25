@@ -34,7 +34,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AzureMetadata)
     AzureMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureMetadata.newBuilder() to construct.
   private AzureMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -124,7 +121,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroup)
       AzureManagementGroupOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AzureManagementGroup.newBuilder() to construct.
     private AzureManagementGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -175,7 +170,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -200,7 +194,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -230,7 +223,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -254,7 +246,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -450,7 +441,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -687,7 +676,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -711,7 +699,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -734,7 +721,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -753,7 +739,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -779,7 +764,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -802,7 +786,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -825,7 +808,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -847,7 +829,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -865,7 +846,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -975,7 +955,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -1002,7 +981,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -1016,7 +994,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -1031,7 +1008,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AzureMetadata.AzureSubscription)
       AzureSubscriptionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AzureSubscription.newBuilder() to construct.
     private AzureSubscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1067,7 +1043,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1092,7 +1067,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1096,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1146,7 +1119,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1314,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1552,7 +1523,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -1576,7 +1546,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1600,7 +1569,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1623,7 +1591,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1642,7 +1609,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1668,7 +1634,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -1691,7 +1656,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1714,7 +1678,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1736,7 +1699,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1754,7 +1716,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1862,7 +1823,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -1888,7 +1848,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -1902,7 +1861,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -1917,7 +1875,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup)
       AzureResourceGroupOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AzureResourceGroup.newBuilder() to construct.
     private AzureResourceGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1953,7 +1910,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1977,7 +1933,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2006,7 +1961,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2030,7 +1984,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2226,7 +2179,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2436,7 +2388,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -2459,7 +2410,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2482,7 +2432,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2504,7 +2453,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2522,7 +2470,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2547,7 +2494,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -2570,7 +2516,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2593,7 +2538,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2615,7 +2559,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2633,7 +2576,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2742,7 +2684,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -2769,7 +2710,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -2783,7 +2723,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -2798,7 +2737,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)
       AzureTenantOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AzureTenant.newBuilder() to construct.
     private AzureTenant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2834,7 +2772,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -2859,7 +2796,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2889,7 +2825,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2913,7 +2848,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3108,7 +3042,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3314,7 +3247,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -3338,7 +3270,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3362,7 +3293,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3385,7 +3315,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3404,7 +3333,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3430,7 +3358,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -3453,7 +3380,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3476,7 +3402,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3498,7 +3423,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3516,7 +3440,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3613,7 +3536,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroup>
       managementGroups_;
-
   /**
    *
    *
@@ -3631,7 +3553,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       getManagementGroupsList() {
     return managementGroups_;
   }
-
   /**
    *
    *
@@ -3650,7 +3571,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       getManagementGroupsOrBuilderList() {
     return managementGroups_;
   }
-
   /**
    *
    *
@@ -3667,7 +3587,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getManagementGroupsCount() {
     return managementGroups_.size();
   }
-
   /**
    *
    *
@@ -3685,7 +3604,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return managementGroups_.get(index);
   }
-
   /**
    *
    *
@@ -3706,7 +3624,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.v2.AzureMetadata.AzureSubscription subscription_;
-
   /**
    *
    *
@@ -3722,7 +3639,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3740,7 +3656,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureSubscription.getDefaultInstance()
         : subscription_;
   }
-
   /**
    *
    *
@@ -3760,7 +3675,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_GROUP_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup resourceGroup_;
-
   /**
    *
    *
@@ -3777,7 +3691,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceGroup() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3796,7 +3709,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup.getDefaultInstance()
         : resourceGroup_;
   }
-
   /**
    *
    *
@@ -3817,7 +3729,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TENANT_FIELD_NUMBER = 7;
   private com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant_;
-
   /**
    *
    *
@@ -3833,7 +3744,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTenant() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3851,7 +3761,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance()
         : tenant_;
   }
-
   /**
    *
    *
@@ -4072,7 +3981,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4414,7 +4322,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return managementGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4434,7 +4341,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return managementGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4455,7 +4361,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return managementGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4482,7 +4387,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4508,7 +4412,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4535,7 +4438,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4562,7 +4464,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4587,7 +4488,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4613,7 +4513,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4639,7 +4538,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4662,7 +4560,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4685,7 +4582,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4702,7 +4598,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         getManagementGroupsBuilder(int index) {
       return getManagementGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4723,7 +4618,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return managementGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4746,7 +4640,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(managementGroups_);
       }
     }
-
     /**
      *
      *
@@ -4766,7 +4659,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroup
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4787,7 +4679,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.AzureMetadata.AzureManagementGroup
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4832,7 +4723,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.AzureMetadata.AzureSubscription.Builder,
             com.google.cloud.securitycenter.v2.AzureMetadata.AzureSubscriptionOrBuilder>
         subscriptionBuilder_;
-
     /**
      *
      *
@@ -4848,7 +4738,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubscription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4871,7 +4760,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return subscriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4896,7 +4784,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4919,7 +4806,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4951,7 +4837,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4972,7 +4857,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4989,7 +4873,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSubscriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5011,7 +4894,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
             : subscription_;
       }
     }
-
     /**
      *
      *
@@ -5045,7 +4927,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup.Builder,
             com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroupOrBuilder>
         resourceGroupBuilder_;
-
     /**
      *
      *
@@ -5061,7 +4942,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceGroup() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5084,7 +4964,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return resourceGroupBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5109,7 +4988,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5132,7 +5010,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5164,7 +5041,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5185,7 +5061,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5202,7 +5077,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceGroupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5224,7 +5098,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
             : resourceGroup_;
       }
     }
-
     /**
      *
      *
@@ -5258,7 +5131,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder,
             com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder>
         tenantBuilder_;
-
     /**
      *
      *
@@ -5273,7 +5145,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTenant() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -5294,7 +5165,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         return tenantBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5317,7 +5187,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5338,7 +5207,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5368,7 +5236,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5388,7 +5255,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5403,7 +5269,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTenantFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5423,7 +5288,6 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
             : tenant_;
       }
     }
-
     /**
      *
      *

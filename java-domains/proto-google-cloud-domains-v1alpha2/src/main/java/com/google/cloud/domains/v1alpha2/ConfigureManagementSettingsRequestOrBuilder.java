@@ -39,7 +39,6 @@ public interface ConfigureManagementSettingsRequestOrBuilder
    * @return The registration.
    */
   java.lang.String getRegistration();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ConfigureManagementSettingsRequestOrBuilder
    * @return Whether the managementSettings field is set.
    */
   boolean hasManagementSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ConfigureManagementSettingsRequestOrBuilder
    * @return The managementSettings.
    */
   com.google.cloud.domains.v1alpha2.ManagementSettings getManagementSettings();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface ConfigureManagementSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ConfigureManagementSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

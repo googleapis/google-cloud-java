@@ -39,7 +39,6 @@ public interface ProcessorInfoOrBuilder
    * @return The processorName.
    */
   java.lang.String getProcessorName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ProcessorInfoOrBuilder
    * @return The documentType.
    */
   java.lang.String getDocumentType();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ProcessorInfoOrBuilder
    * @return The schemaName.
    */
   java.lang.String getSchemaName();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface NetworkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface NetworkOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface NetworkOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface NetworkOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface NetworkOrBuilder
    * @return A list containing the macAddress.
    */
   java.util.List<java.lang.String> getMacAddressList();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface NetworkOrBuilder
    * @return The count of macAddress.
    */
   int getMacAddressCount();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface NetworkOrBuilder
    * @return The macAddress at the given index.
    */
   java.lang.String getMacAddress(int index);
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface NetworkOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface NetworkOrBuilder
    * @return The vlanId.
    */
   java.lang.String getVlanId();
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public interface NetworkOrBuilder
    * @return The cidr.
    */
   java.lang.String getCidr();
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public interface NetworkOrBuilder
    * @return Whether the vrf field is set.
    */
   boolean hasVrf();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface NetworkOrBuilder
    * @return The vrf.
    */
   com.google.cloud.baremetalsolution.v2.VRF getVrf();
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public interface NetworkOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -326,11 +313,9 @@ public interface NetworkOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -341,7 +326,6 @@ public interface NetworkOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -356,7 +340,6 @@ public interface NetworkOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -380,7 +363,6 @@ public interface NetworkOrBuilder
    * @return The servicesCidr.
    */
   java.lang.String getServicesCidr();
-
   /**
    *
    *
@@ -408,7 +390,6 @@ public interface NetworkOrBuilder
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.NetworkAddressReservation>
       getReservationsList();
-
   /**
    *
    *
@@ -422,7 +403,6 @@ public interface NetworkOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.NetworkAddressReservation getReservations(int index);
-
   /**
    *
    *
@@ -436,7 +416,6 @@ public interface NetworkOrBuilder
    * </code>
    */
   int getReservationsCount();
-
   /**
    *
    *
@@ -451,7 +430,6 @@ public interface NetworkOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkAddressReservationOrBuilder>
       getReservationsOrBuilderList();
-
   /**
    *
    *
@@ -479,7 +457,6 @@ public interface NetworkOrBuilder
    * @return The pod.
    */
   java.lang.String getPod();
-
   /**
    *
    *
@@ -505,7 +482,6 @@ public interface NetworkOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint> getMountPointsList();
-
   /**
    *
    *
@@ -518,7 +494,6 @@ public interface NetworkOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.NetworkMountPoint getMountPoints(int index);
-
   /**
    *
    *
@@ -531,7 +506,6 @@ public interface NetworkOrBuilder
    * </code>
    */
   int getMountPointsCount();
-
   /**
    *
    *
@@ -545,7 +519,6 @@ public interface NetworkOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>
       getMountPointsOrBuilderList();
-
   /**
    *
    *
@@ -585,7 +558,6 @@ public interface NetworkOrBuilder
    * @return The gatewayIp.
    */
   java.lang.String getGatewayIp();
-
   /**
    *
    *

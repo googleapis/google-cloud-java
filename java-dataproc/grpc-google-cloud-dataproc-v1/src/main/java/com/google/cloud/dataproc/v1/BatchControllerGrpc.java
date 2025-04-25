@@ -218,19 +218,6 @@ public final class BatchControllerGrpc {
     return BatchControllerStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static BatchControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<BatchControllerBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<BatchControllerBlockingV2Stub>() {
-          @java.lang.Override
-          public BatchControllerBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new BatchControllerBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return BatchControllerBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -427,80 +414,6 @@ public final class BatchControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BatchController.
-   *
-   * <pre>
-   * The BatchController provides methods to manage batch workloads.
-   * </pre>
-   */
-  public static final class BatchControllerBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<BatchControllerBlockingV2Stub> {
-    private BatchControllerBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected BatchControllerBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new BatchControllerBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a batch workload that executes asynchronously.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createBatch(
-        com.google.cloud.dataproc.v1.CreateBatchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateBatchMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets the batch workload resource representation.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.Batch getBatch(
-        com.google.cloud.dataproc.v1.GetBatchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetBatchMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists batch workloads.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.ListBatchesResponse listBatches(
-        com.google.cloud.dataproc.v1.ListBatchesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListBatchesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteBatch(
-        com.google.cloud.dataproc.v1.DeleteBatchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteBatchMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service BatchController.
    *
    * <pre>
    * The BatchController provides methods to manage batch workloads.

@@ -35,7 +35,6 @@ public interface ListCustomTargetingValuesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.CustomTargetingValue> getCustomTargetingValuesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListCustomTargetingValuesResponseOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.CustomTargetingValue getCustomTargetingValues(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListCustomTargetingValuesResponseOrBuilder
    * </code>
    */
   int getCustomTargetingValuesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListCustomTargetingValuesResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.CustomTargetingValueOrBuilder>
       getCustomTargetingValuesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListCustomTargetingValuesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

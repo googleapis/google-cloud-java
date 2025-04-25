@@ -33,7 +33,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.CreateServiceAccountRequest)
     CreateServiceAccountRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateServiceAccountRequest.newBuilder() to construct.
   private CreateServiceAccountRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accountId_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 3;
   private com.google.iam.admin.v1.ServiceAccount serviceAccount_;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
   public boolean hasServiceAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
         ? com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()
         : serviceAccount_;
   }
-
   /**
    *
    *
@@ -425,7 +417,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +646,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -732,7 +720,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object accountId_ = "";
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
             com.google.iam.admin.v1.ServiceAccount.Builder,
             com.google.iam.admin.v1.ServiceAccountOrBuilder>
         serviceAccountBuilder_;
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
     public boolean hasServiceAccount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -952,7 +931,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
         return serviceAccountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1006,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1027,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1043,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return getServiceAccountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1090,7 +1063,6 @@ public final class CreateServiceAccountRequest extends com.google.protobuf.Gener
             : serviceAccount_;
       }
     }
-
     /**
      *
      *

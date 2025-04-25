@@ -33,7 +33,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlSourceConfig)
     PostgresqlSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostgresqlSourceConfig.newBuilder() to construct.
   private PostgresqlSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.PostgresqlRdbms includeObjects_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
   public boolean hasIncludeObjects() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()
         : includeObjects_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.PostgresqlRdbms excludeObjects_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
   public boolean hasExcludeObjects() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()
         : excludeObjects_;
   }
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object replicationSlot_ = "";
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publication_ = "";
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +277,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
 
   public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 5;
   private int maxConcurrentBackfillTasks_ = 0;
-
   /**
    *
    *
@@ -514,7 +502,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -782,7 +769,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
             com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>
         includeObjectsBuilder_;
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     public boolean hasIncludeObjects() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         return includeObjectsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +845,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
             : includeObjects_;
       }
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
             com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>
         excludeObjectsBuilder_;
-
     /**
      *
      *
@@ -993,7 +970,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     public boolean hasExcludeObjects() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         return excludeObjectsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1032,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1093,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1141,7 +1111,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
             : excludeObjects_;
       }
     }
-
     /**
      *
      *
@@ -1169,7 +1138,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object replicationSlot_ = "";
-
     /**
      *
      *
@@ -1195,7 +1163,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1188,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1246,7 +1212,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1232,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1259,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object publication_ = "";
-
     /**
      *
      *
@@ -1319,7 +1282,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1305,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1327,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1345,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1370,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     }
 
     private int maxConcurrentBackfillTasks_;
-
     /**
      *
      *
@@ -1429,7 +1387,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     public int getMaxConcurrentBackfillTasks() {
       return maxConcurrentBackfillTasks_;
     }
-
     /**
      *
      *
@@ -1451,7 +1408,6 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

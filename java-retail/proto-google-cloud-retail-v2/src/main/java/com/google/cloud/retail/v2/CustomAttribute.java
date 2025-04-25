@@ -34,7 +34,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CustomAttribute)
     CustomAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomAttribute.newBuilder() to construct.
   private CustomAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList text_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getTextList() {
     return text_;
   }
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public int getTextCount() {
     return text_.size();
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getText(int index) {
     return text_.get(index);
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList numbers_ = emptyDoubleList();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public java.util.List<java.lang.Double> getNumbersList() {
     return numbers_;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public int getNumbersCount() {
     return numbers_.size();
   }
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
   public static final int SEARCHABLE_FIELD_NUMBER = 3;
   private boolean searchable_ = false;
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public boolean hasSearchable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
   public static final int INDEXABLE_FIELD_NUMBER = 4;
   private boolean indexable_ = false;
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public boolean hasIndexable() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -591,7 +579,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +843,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -880,7 +866,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       text_.makeImmutable();
       return text_;
     }
-
     /**
      *
      *
@@ -903,7 +888,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public int getTextCount() {
       return text_.size();
     }
-
     /**
      *
      *
@@ -927,7 +911,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getText(int index) {
       return text_.get(index);
     }
-
     /**
      *
      *
@@ -951,7 +934,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getTextBytes(int index) {
       return text_.getByteString(index);
     }
-
     /**
      *
      *
@@ -983,7 +965,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +995,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1022,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1048,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1095,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1138,7 +1115,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       numbers_.makeImmutable();
       return numbers_;
     }
-
     /**
      *
      *
@@ -1158,7 +1134,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public int getNumbersCount() {
       return numbers_.size();
     }
-
     /**
      *
      *
@@ -1179,7 +1154,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public double getNumbers(int index) {
       return numbers_.getDouble(index);
     }
-
     /**
      *
      *
@@ -1206,7 +1180,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1205,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1229,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1253,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean searchable_;
-
     /**
      *
      *
@@ -1313,7 +1283,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public boolean hasSearchable() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1344,7 +1313,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public boolean getSearchable() {
       return searchable_;
     }
-
     /**
      *
      *
@@ -1379,7 +1347,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1381,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean indexable_;
-
     /**
      *
      *
@@ -1449,7 +1415,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public boolean hasIndexable() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1484,7 +1449,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public boolean getIndexable() {
       return indexable_;
     }
-
     /**
      *
      *
@@ -1523,7 +1487,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

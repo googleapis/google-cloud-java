@@ -33,7 +33,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.inventories.v1beta.ListLocalInventoriesResponse)
     ListLocalInventoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLocalInventoriesResponse.newBuilder() to construct.
   private ListLocalInventoriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.inventories.v1beta.LocalInventory>
       localInventories_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       getLocalInventoriesList() {
     return localInventories_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       getLocalInventoriesOrBuilderList() {
     return localInventories_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
   public int getLocalInventoriesCount() {
     return localInventories_.size();
   }
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       int index) {
     return localInventories_.get(index);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -395,7 +387,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -690,7 +681,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return localInventoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -710,7 +700,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return localInventoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -731,7 +720,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return localInventoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +796,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +845,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +893,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +915,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +937,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +953,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         getLocalInventoriesBuilder(int index) {
       return getLocalInventoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -995,7 +973,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return localInventoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(localInventories_);
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1012,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
           .addBuilder(
               com.google.shopping.merchant.inventories.v1beta.LocalInventory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1056,7 +1031,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
               index,
               com.google.shopping.merchant.inventories.v1beta.LocalInventory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1119,7 +1092,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1115,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1137,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1155,6 @@ public final class ListLocalInventoriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface UpdateParticipantRequestOrBuilder
    * @return Whether the participant field is set.
    */
   boolean hasParticipant();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateParticipantRequestOrBuilder
    * @return The participant.
    */
   com.google.cloud.dialogflow.v2.Participant getParticipant();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateParticipantRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateParticipantRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

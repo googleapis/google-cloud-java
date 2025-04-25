@@ -39,7 +39,6 @@ public interface CreateReleaseConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateReleaseConfigRequestOrBuilder
    * @return Whether the releaseConfig field is set.
    */
   boolean hasReleaseConfig();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateReleaseConfigRequestOrBuilder
    * @return The releaseConfig.
    */
   com.google.cloud.dataform.v1beta1.ReleaseConfig getReleaseConfig();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface CreateReleaseConfigRequestOrBuilder
    * @return The releaseConfigId.
    */
   java.lang.String getReleaseConfigId();
-
   /**
    *
    *

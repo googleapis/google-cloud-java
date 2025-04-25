@@ -33,7 +33,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IngestAssetRequest)
     IngestAssetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IngestAssetRequest.newBuilder() to construct.
   private IngestAssetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the videoType field is set.
      */
     boolean hasVideoType();
-
     /**
      *
      *
@@ -92,7 +90,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return The videoType.
      */
     com.google.cloud.visionai.v1.IngestAssetRequest.Config.VideoType getVideoType();
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return The asset.
      */
     java.lang.String getAsset();
-
     /**
      *
      *
@@ -139,7 +135,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
 
     com.google.cloud.visionai.v1.IngestAssetRequest.Config.DataTypeCase getDataTypeCase();
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IngestAssetRequest.Config)
       ConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Config.newBuilder() to construct.
     private Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -204,7 +198,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
        * @return The enum numeric value on the wire for containerFormat.
        */
       int getContainerFormatValue();
-
       /**
        *
        *
@@ -221,7 +214,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       com.google.cloud.visionai.v1.IngestAssetRequest.Config.VideoType.ContainerFormat
           getContainerFormat();
     }
-
     /**
      *
      *
@@ -236,7 +228,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IngestAssetRequest.Config.VideoType)
         VideoTypeOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use VideoType.newBuilder() to construct.
       private VideoType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -311,7 +302,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
          * <code>CONTAINER_FORMAT_UNSPECIFIED = 0;</code>
          */
         public static final int CONTAINER_FORMAT_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -412,7 +402,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
 
       public static final int CONTAINER_FORMAT_FIELD_NUMBER = 1;
       private int containerFormat_ = 0;
-
       /**
        *
        *
@@ -430,7 +419,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       public int getContainerFormatValue() {
         return containerFormat_;
       }
-
       /**
        *
        *
@@ -625,7 +613,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -818,7 +805,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private int containerFormat_ = 0;
-
         /**
          *
          *
@@ -836,7 +822,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         public int getContainerFormatValue() {
           return containerFormat_;
         }
-
         /**
          *
          *
@@ -857,7 +842,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -882,7 +866,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
                   .UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -908,7 +891,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1012,7 +994,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       private DataTypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1044,7 +1025,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int VIDEO_TYPE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -1060,7 +1040,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasVideoType() {
       return dataTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -1079,7 +1058,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.visionai.v1.IngestAssetRequest.Config.VideoType.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1102,7 +1080,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object asset_ = "";
-
     /**
      *
      *
@@ -1129,7 +1106,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1319,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1581,7 +1556,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.IngestAssetRequest.Config.VideoType.Builder,
               com.google.cloud.visionai.v1.IngestAssetRequest.Config.VideoTypeOrBuilder>
           videoTypeBuilder_;
-
       /**
        *
        *
@@ -1597,7 +1571,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasVideoType() {
         return dataTypeCase_ == 2;
       }
-
       /**
        *
        *
@@ -1625,7 +1598,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1649,7 +1621,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         dataTypeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1671,7 +1642,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         dataTypeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1708,7 +1678,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         dataTypeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1734,7 +1703,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1748,7 +1716,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           getVideoTypeBuilder() {
         return getVideoTypeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1771,7 +1738,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1808,7 +1774,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object asset_ = "";
-
       /**
        *
        *
@@ -1834,7 +1799,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1860,7 +1824,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1885,7 +1848,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1906,7 +1868,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2027,7 +1988,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the temporalPartition field is set.
      */
     boolean hasTemporalPartition();
-
     /**
      *
      *
@@ -2040,7 +2000,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
      * @return The temporalPartition.
      */
     com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartition();
-
     /**
      *
      *
@@ -2053,7 +2012,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder
         getTemporalPartitionOrBuilder();
   }
-
   /**
    *
    *
@@ -2068,7 +2026,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedData)
       TimeIndexedDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeIndexedData.newBuilder() to construct.
     private TimeIndexedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2102,7 +2059,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int DATA_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2121,7 +2077,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int TEMPORAL_PARTITION_FIELD_NUMBER = 2;
     private com.google.cloud.visionai.v1.Partition.TemporalPartition temporalPartition_;
-
     /**
      *
      *
@@ -2137,7 +2092,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTemporalPartition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2155,7 +2109,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance()
           : temporalPartition_;
     }
-
     /**
      *
      *
@@ -2349,7 +2302,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2573,7 +2525,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-
       /**
        *
        *
@@ -2589,7 +2540,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
-
       /**
        *
        *
@@ -2611,7 +2561,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2636,7 +2585,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.visionai.v1.Partition.TemporalPartition.Builder,
               com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
           temporalPartitionBuilder_;
-
       /**
        *
        *
@@ -2651,7 +2599,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasTemporalPartition() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2672,7 +2619,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
           return temporalPartitionBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2696,7 +2642,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2717,7 +2662,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2748,7 +2692,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -2768,7 +2711,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2784,7 +2726,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getTemporalPartitionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2804,7 +2745,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
               : temporalPartition_;
         }
       }
-
       /**
        *
        *
@@ -2915,7 +2855,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     private StreamingRequestCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2949,7 +2888,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -2967,7 +2905,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasConfig() {
     return streamingRequestCase_ == 1;
   }
-
   /**
    *
    *
@@ -2988,7 +2925,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.visionai.v1.IngestAssetRequest.Config.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3009,7 +2945,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TIME_INDEXED_DATA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -3026,7 +2961,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTimeIndexedData() {
     return streamingRequestCase_ == 2;
   }
-
   /**
    *
    *
@@ -3046,7 +2980,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3258,7 +3191,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3494,7 +3426,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.IngestAssetRequest.Config.Builder,
             com.google.cloud.visionai.v1.IngestAssetRequest.ConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -3512,7 +3443,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasConfig() {
       return streamingRequestCase_ == 1;
     }
-
     /**
      *
      *
@@ -3540,7 +3470,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.IngestAssetRequest.Config.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3565,7 +3494,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       streamingRequestCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -3588,7 +3516,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       streamingRequestCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3551,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       streamingRequestCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -3652,7 +3578,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3667,7 +3592,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.visionai.v1.IngestAssetRequest.Config.Builder getConfigBuilder() {
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3690,7 +3614,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.IngestAssetRequest.Config.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3732,7 +3655,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedData.Builder,
             com.google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedDataOrBuilder>
         timeIndexedDataBuilder_;
-
     /**
      *
      *
@@ -3749,7 +3671,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTimeIndexedData() {
       return streamingRequestCase_ == 2;
     }
-
     /**
      *
      *
@@ -3777,7 +3698,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3802,7 +3722,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       streamingRequestCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3824,7 +3743,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       streamingRequestCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3862,7 +3780,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       streamingRequestCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3889,7 +3806,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3904,7 +3820,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         getTimeIndexedDataBuilder() {
       return getTimeIndexedDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3928,7 +3843,6 @@ public final class IngestAssetRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.visionai.v1.IngestAssetRequest.TimeIndexedData.getDefaultInstance();
       }
     }
-
     /**
      *
      *

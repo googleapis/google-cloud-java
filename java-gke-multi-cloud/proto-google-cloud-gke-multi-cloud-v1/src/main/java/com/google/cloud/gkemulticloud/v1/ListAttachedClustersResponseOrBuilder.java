@@ -35,7 +35,6 @@ public interface ListAttachedClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AttachedCluster> getAttachedClustersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAttachedClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.AttachedCluster getAttachedClusters(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAttachedClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
    */
   int getAttachedClustersCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAttachedClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterOrBuilder>
       getAttachedClustersOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListAttachedClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

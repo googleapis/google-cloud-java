@@ -34,7 +34,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse)
     ListKnowledgeBasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListKnowledgeBasesResponse.newBuilder() to construct.
   private ListKnowledgeBasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> knowledgeBases_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> getKnowledgeBasesList() {
     return knowledgeBases_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       getKnowledgeBasesOrBuilderList() {
     return knowledgeBases_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
   public int getKnowledgeBasesCount() {
     return knowledgeBases_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBases(int index) {
     return knowledgeBases_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -654,7 +645,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return knowledgeBasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return knowledgeBasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return knowledgeBasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         int index) {
       return getKnowledgeBasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return knowledgeBasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -933,7 +910,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(knowledgeBases_);
       }
     }
-
     /**
      *
      *
@@ -947,7 +923,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       return getKnowledgeBasesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.KnowledgeBase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -963,7 +938,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.KnowledgeBase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -999,7 +973,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1023,7 +996,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1019,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1041,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1059,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

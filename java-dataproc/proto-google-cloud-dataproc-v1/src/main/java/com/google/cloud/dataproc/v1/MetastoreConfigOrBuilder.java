@@ -42,7 +42,6 @@ public interface MetastoreConfigOrBuilder
    * @return The dataprocMetastoreService.
    */
   java.lang.String getDataprocMetastoreService();
-
   /**
    *
    *

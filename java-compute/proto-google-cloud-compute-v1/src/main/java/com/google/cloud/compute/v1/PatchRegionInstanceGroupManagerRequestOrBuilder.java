@@ -37,7 +37,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagerResource field is set.
    */
   boolean hasInstanceGroupManagerResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManagerResource.
    */
   com.google.cloud.compute.v1.InstanceGroupManager getInstanceGroupManagerResource();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

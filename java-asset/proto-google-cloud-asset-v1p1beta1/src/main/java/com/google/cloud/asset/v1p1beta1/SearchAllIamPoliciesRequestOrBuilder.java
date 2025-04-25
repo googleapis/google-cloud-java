@@ -42,7 +42,6 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

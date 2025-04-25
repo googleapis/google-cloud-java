@@ -35,7 +35,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelDeploymentMonitoringBigQueryTable)
     ModelDeploymentMonitoringBigQueryTableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelDeploymentMonitoringBigQueryTable.newBuilder() to construct.
   private ModelDeploymentMonitoringBigQueryTable(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -124,7 +123,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * <code>LOG_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_SOURCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * <code>TRAINING = 1;</code>
      */
     public static final int TRAINING_VALUE = 1;
-
     /**
      *
      *
@@ -285,7 +282,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * <code>LOG_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -296,7 +292,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * <code>PREDICT = 1;</code>
      */
     public static final int PREDICT_VALUE = 1;
-
     /**
      *
      *
@@ -395,7 +390,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
 
   public static final int LOG_SOURCE_FIELD_NUMBER = 1;
   private int logSource_ = 0;
-
   /**
    *
    *
@@ -413,7 +407,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
   public int getLogSourceValue() {
     return logSource_;
   }
-
   /**
    *
    *
@@ -441,7 +434,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
 
   public static final int LOG_TYPE_FIELD_NUMBER = 2;
   private int logType_ = 0;
-
   /**
    *
    *
@@ -458,7 +450,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
   public int getLogTypeValue() {
     return logType_;
   }
-
   /**
    *
    *
@@ -486,7 +477,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bigqueryTablePath_ = "";
-
   /**
    *
    *
@@ -512,7 +502,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       return s;
     }
   }
-
   /**
    *
    *
@@ -543,7 +532,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestResponseLoggingSchemaVersion_ = "";
-
   /**
    *
    *
@@ -570,7 +558,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       return s;
     }
   }
-
   /**
    *
    *
@@ -804,7 +791,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1038,7 +1024,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     private int bitField0_;
 
     private int logSource_ = 0;
-
     /**
      *
      *
@@ -1056,7 +1041,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     public int getLogSourceValue() {
       return logSource_;
     }
-
     /**
      *
      *
@@ -1077,7 +1061,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1085,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1127,7 +1109,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1130,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     }
 
     private int logType_ = 0;
-
     /**
      *
      *
@@ -1167,7 +1147,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     public int getLogTypeValue() {
       return logType_;
     }
-
     /**
      *
      *
@@ -1188,7 +1167,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1191,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1238,7 +1215,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1236,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     }
 
     private java.lang.Object bigqueryTablePath_ = "";
-
     /**
      *
      *
@@ -1285,7 +1260,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1310,7 +1284,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1307,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1326,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1381,7 +1352,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
     }
 
     private java.lang.Object requestResponseLoggingSchemaVersion_ = "";
-
     /**
      *
      *
@@ -1407,7 +1377,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1402,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1458,7 +1426,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1447,6 @@ public final class ModelDeploymentMonitoringBigQueryTable
       onChanged();
       return this;
     }
-
     /**
      *
      *

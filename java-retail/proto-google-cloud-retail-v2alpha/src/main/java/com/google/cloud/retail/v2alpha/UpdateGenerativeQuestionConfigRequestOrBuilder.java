@@ -38,7 +38,6 @@ public interface UpdateGenerativeQuestionConfigRequestOrBuilder
    * @return Whether the generativeQuestionConfig field is set.
    */
   boolean hasGenerativeQuestionConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateGenerativeQuestionConfigRequestOrBuilder
    * @return The generativeQuestionConfig.
    */
   com.google.cloud.retail.v2alpha.GenerativeQuestionConfig getGenerativeQuestionConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateGenerativeQuestionConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateGenerativeQuestionConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

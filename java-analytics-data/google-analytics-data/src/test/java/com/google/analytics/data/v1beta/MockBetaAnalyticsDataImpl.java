@@ -137,8 +137,7 @@ public class MockBetaAnalyticsDataImpl extends BetaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchRunPivotReports, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchRunPivotReports, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchRunPivotReportsResponse.class.getName(),
                   Exception.class.getName())));
@@ -223,8 +222,7 @@ public class MockBetaAnalyticsDataImpl extends BetaAnalyticsDataImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAudienceExport, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateAudienceExport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

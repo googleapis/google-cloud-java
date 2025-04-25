@@ -33,7 +33,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ImportDataOperationResponse)
     ImportDataOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDataOperationResponse.newBuilder() to construct.
   private ImportDataOperationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
 
   public static final int TOTAL_COUNT_FIELD_NUMBER = 2;
   private int totalCount_ = 0;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
 
   public static final int IMPORT_COUNT_FIELD_NUMBER = 3;
   private int importCount_ = 0;
-
   /**
    *
    *
@@ -334,7 +329,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -550,7 +544,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -596,7 +588,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -618,7 +609,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     }
 
     private int totalCount_;
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     public int getTotalCount() {
       return totalCount_;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +703,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     }
 
     private int importCount_;
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
     public int getImportCount() {
       return importCount_;
     }
-
     /**
      *
      *
@@ -753,7 +737,6 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

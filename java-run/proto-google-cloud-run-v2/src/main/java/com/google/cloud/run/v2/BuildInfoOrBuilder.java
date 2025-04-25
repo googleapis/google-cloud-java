@@ -37,7 +37,6 @@ public interface BuildInfoOrBuilder
    * @return The functionTarget.
    */
   java.lang.String getFunctionTarget();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BuildInfoOrBuilder
    * @return The sourceLocation.
    */
   java.lang.String getSourceLocation();
-
   /**
    *
    *

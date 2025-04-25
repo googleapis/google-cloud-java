@@ -36,7 +36,6 @@ public interface ApiAuthOrBuilder
    * @return Whether the apiKeyConfig field is set.
    */
   boolean hasApiKeyConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ApiAuthOrBuilder
    * @return The apiKeyConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig getApiKeyConfig();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.BatchCreateRepositoriesRequest)
     BatchCreateRepositoriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCreateRepositoriesRequest.newBuilder() to construct.
   private BatchCreateRepositoriesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v2.CreateRepositoryRequest> requests_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
   public java.util.List<com.google.cloudbuild.v2.CreateRepositoryRequest> getRequestsList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       getRequestsOrBuilderList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
   public int getRequestsCount() {
     return requests_.size();
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
   public com.google.cloudbuild.v2.CreateRepositoryRequest getRequests(int index) {
     return requests_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -633,7 +624,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -822,7 +807,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -866,7 +849,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +871,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +941,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +963,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1006,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1027,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1041,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
     public com.google.cloudbuild.v2.CreateRepositoryRequest.Builder getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1094,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       return getRequestsFieldBuilder()
           .addBuilder(com.google.cloudbuild.v2.CreateRepositoryRequest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1139,7 +1109,6 @@ public final class BatchCreateRepositoriesRequest extends com.google.protobuf.Ge
       return getRequestsFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v2.CreateRepositoryRequest.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface CreateAdSenseLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateAdSenseLinkRequestOrBuilder
    * @return Whether the adsenseLink field is set.
    */
   boolean hasAdsenseLink();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateAdSenseLinkRequestOrBuilder
    * @return The adsenseLink.
    */
   com.google.analytics.admin.v1alpha.AdSenseLink getAdsenseLink();
-
   /**
    *
    *

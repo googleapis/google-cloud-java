@@ -38,7 +38,6 @@ public interface PatchTargetHttpsProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PatchTargetHttpsProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchTargetHttpsProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface PatchTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxy.
    */
   java.lang.String getTargetHttpsProxy();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface PatchTargetHttpsProxyRequestOrBuilder
    * @return Whether the targetHttpsProxyResource field is set.
    */
   boolean hasTargetHttpsProxyResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxyResource.
    */
   com.google.cloud.compute.v1.TargetHttpsProxy getTargetHttpsProxyResource();
-
   /**
    *
    *

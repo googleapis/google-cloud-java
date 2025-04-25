@@ -33,7 +33,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ListEventCreateRulesResponse)
     ListEventCreateRulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEventCreateRulesResponse.newBuilder() to construct.
   private ListEventCreateRulesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.EventCreateRule> eventCreateRules_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       getEventCreateRulesList() {
     return eventCreateRules_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       getEventCreateRulesOrBuilderList() {
     return eventCreateRules_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
   public int getEventCreateRulesCount() {
     return eventCreateRules_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
   public com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRules(int index) {
     return eventCreateRules_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -374,7 +366,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return eventCreateRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return eventCreateRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return eventCreateRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         int index) {
       return getEventCreateRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return eventCreateRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(eventCreateRules_);
       }
     }
-
     /**
      *
      *
@@ -968,7 +944,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       return getEventCreateRulesFieldBuilder()
           .addBuilder(com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -985,7 +960,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1022,7 +996,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1046,7 +1019,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1042,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1064,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1082,6 @@ public final class ListEventCreateRulesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

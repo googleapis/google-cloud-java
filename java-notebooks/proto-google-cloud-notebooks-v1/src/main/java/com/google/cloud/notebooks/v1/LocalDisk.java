@@ -33,7 +33,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.LocalDisk)
     LocalDiskOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocalDisk.newBuilder() to construct.
   private LocalDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,7 +98,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -124,7 +122,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTypeBytes();
   }
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeature)
       RuntimeGuestOsFeatureOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RuntimeGuestOsFeature.newBuilder() to construct.
     private RuntimeGuestOsFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -179,7 +175,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -214,7 +209,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -411,7 +405,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -608,7 +601,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -642,7 +634,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -676,7 +667,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -709,7 +699,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -738,7 +727,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -843,7 +831,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 1;
   private boolean autoDelete_ = false;
-
   /**
    *
    *
@@ -863,7 +850,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOT_FIELD_NUMBER = 2;
   private boolean boot_ = false;
-
   /**
    *
    *
@@ -885,7 +871,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceName_ = "";
-
   /**
    *
    *
@@ -917,7 +902,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -955,7 +939,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeature>
       guestOsFeatures_;
-
   /**
    *
    *
@@ -974,7 +957,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       getGuestOsFeaturesList() {
     return guestOsFeatures_;
   }
-
   /**
    *
    *
@@ -994,7 +976,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       getGuestOsFeaturesOrBuilderList() {
     return guestOsFeatures_;
   }
-
   /**
    *
    *
@@ -1012,7 +993,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public int getGuestOsFeaturesCount() {
     return guestOsFeatures_.size();
   }
-
   /**
    *
    *
@@ -1031,7 +1011,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return guestOsFeatures_.get(index);
   }
-
   /**
    *
    *
@@ -1053,7 +1032,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEX_FIELD_NUMBER = 5;
   private int index_ = 0;
-
   /**
    *
    *
@@ -1074,7 +1052,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INITIALIZE_PARAMS_FIELD_NUMBER = 6;
   private com.google.cloud.notebooks.v1.LocalDiskInitializeParams initializeParams_;
-
   /**
    *
    *
@@ -1097,7 +1074,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInitializeParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1122,7 +1098,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v1.LocalDiskInitializeParams.getDefaultInstance()
         : initializeParams_;
   }
-
   /**
    *
    *
@@ -1151,7 +1126,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interface_ = "";
-
   /**
    *
    *
@@ -1183,7 +1157,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1220,7 +1193,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -1244,7 +1216,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1274,7 +1245,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList licenses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1289,7 +1259,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLicensesList() {
     return licenses_;
   }
-
   /**
    *
    *
@@ -1304,7 +1273,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public int getLicensesCount() {
     return licenses_.size();
   }
-
   /**
    *
    *
@@ -1320,7 +1288,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLicenses(int index) {
     return licenses_.get(index);
   }
-
   /**
    *
    *
@@ -1341,7 +1308,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
-
   /**
    *
    *
@@ -1370,7 +1336,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1404,7 +1369,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
-
   /**
    *
    *
@@ -1429,7 +1393,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1459,7 +1422,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -1488,7 +1450,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1789,7 +1750,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2202,7 +2162,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean autoDelete_;
-
     /**
      *
      *
@@ -2219,7 +2178,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutoDelete() {
       return autoDelete_;
     }
-
     /**
      *
      *
@@ -2240,7 +2198,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2261,7 +2218,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean boot_;
-
     /**
      *
      *
@@ -2278,7 +2234,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean getBoot() {
       return boot_;
     }
-
     /**
      *
      *
@@ -2299,7 +2254,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2320,7 +2274,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object deviceName_ = "";
-
     /**
      *
      *
@@ -2351,7 +2304,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2382,7 +2334,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2412,7 +2363,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2438,7 +2388,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2509,7 +2458,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return guestOsFeaturesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2530,7 +2478,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return guestOsFeaturesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2552,7 +2499,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return guestOsFeaturesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2580,7 +2526,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2606,7 +2551,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2578,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2662,7 +2605,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2629,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2713,7 +2654,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2739,7 +2679,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2702,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2787,7 +2725,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2742,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         getGuestOsFeaturesBuilder(int index) {
       return getGuestOsFeaturesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2827,7 +2763,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return guestOsFeaturesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2850,7 +2785,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(guestOsFeatures_);
       }
     }
-
     /**
      *
      *
@@ -2870,7 +2804,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2891,7 +2824,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.notebooks.v1.LocalDisk.RuntimeGuestOsFeature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2931,7 +2863,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int index_;
-
     /**
      *
      *
@@ -2949,7 +2880,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public int getIndex() {
       return index_;
     }
-
     /**
      *
      *
@@ -2971,7 +2901,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2998,7 +2927,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.LocalDiskInitializeParams.Builder,
             com.google.cloud.notebooks.v1.LocalDiskInitializeParamsOrBuilder>
         initializeParamsBuilder_;
-
     /**
      *
      *
@@ -3020,7 +2948,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInitializeParams() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3048,7 +2975,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return initializeParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3079,7 +3005,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3107,7 +3032,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3144,7 +3068,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3171,7 +3094,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3194,7 +3116,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInitializeParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3221,7 +3142,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
             : initializeParams_;
       }
     }
-
     /**
      *
      *
@@ -3256,7 +3176,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object interface_ = "";
-
     /**
      *
      *
@@ -3287,7 +3206,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3318,7 +3236,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3348,7 +3265,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3374,7 +3290,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3407,7 +3322,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -3430,7 +3344,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3453,7 +3366,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3475,7 +3387,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3493,7 +3404,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3526,7 +3436,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -3542,7 +3451,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       licenses_.makeImmutable();
       return licenses_;
     }
-
     /**
      *
      *
@@ -3557,7 +3465,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public int getLicensesCount() {
       return licenses_.size();
     }
-
     /**
      *
      *
@@ -3573,7 +3480,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLicenses(int index) {
       return licenses_.get(index);
     }
-
     /**
      *
      *
@@ -3589,7 +3495,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLicensesBytes(int index) {
       return licenses_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3613,7 +3518,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3636,7 +3540,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3656,7 +3559,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3675,7 +3577,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3701,7 +3602,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mode_ = "";
-
     /**
      *
      *
@@ -3729,7 +3629,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3757,7 +3656,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3784,7 +3682,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3807,7 +3704,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3837,7 +3733,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -3861,7 +3756,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3885,7 +3779,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3908,7 +3801,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3927,7 +3819,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3953,7 +3844,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -3981,7 +3871,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4009,7 +3898,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4036,7 +3924,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4059,7 +3946,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface CreateSpecialistPoolOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CreateSpecialistPoolOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *

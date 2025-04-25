@@ -36,7 +36,6 @@ public interface VideoFormatOrBuilder
    * @return The codec.
    */
   java.lang.String getCodec();
-
   /**
    *
    *

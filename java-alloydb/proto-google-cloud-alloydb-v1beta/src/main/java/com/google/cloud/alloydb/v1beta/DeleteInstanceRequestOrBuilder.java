@@ -39,7 +39,6 @@ public interface DeleteInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface DeleteInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface DeleteInstanceRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

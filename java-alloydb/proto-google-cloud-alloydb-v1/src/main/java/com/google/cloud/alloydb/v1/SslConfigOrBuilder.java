@@ -38,7 +38,6 @@ public interface SslConfigOrBuilder
    * @return The enum numeric value on the wire for sslMode.
    */
   int getSslModeValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SslConfigOrBuilder
    * @return The enum numeric value on the wire for caSource.
    */
   int getCaSourceValue();
-
   /**
    *
    *

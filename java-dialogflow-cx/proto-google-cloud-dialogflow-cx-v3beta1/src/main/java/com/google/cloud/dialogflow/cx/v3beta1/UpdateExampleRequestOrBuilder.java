@@ -38,7 +38,6 @@ public interface UpdateExampleRequestOrBuilder
    * @return Whether the example field is set.
    */
   boolean hasExample();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateExampleRequestOrBuilder
    * @return The example.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Example getExample();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateExampleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateExampleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SpecialistPoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface SpecialistPoolOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface SpecialistPoolOrBuilder
    * @return A list containing the specialistManagerEmails.
    */
   java.util.List<java.lang.String> getSpecialistManagerEmailsList();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface SpecialistPoolOrBuilder
    * @return The count of specialistManagerEmails.
    */
   int getSpecialistManagerEmailsCount();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface SpecialistPoolOrBuilder
    * @return The specialistManagerEmails at the given index.
    */
   java.lang.String getSpecialistManagerEmails(int index);
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface SpecialistPoolOrBuilder
    * @return A list containing the pendingDataLabelingJobs.
    */
   java.util.List<java.lang.String> getPendingDataLabelingJobsList();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface SpecialistPoolOrBuilder
    * @return The count of pendingDataLabelingJobs.
    */
   int getPendingDataLabelingJobsCount();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface SpecialistPoolOrBuilder
    * @return The pendingDataLabelingJobs at the given index.
    */
   java.lang.String getPendingDataLabelingJobs(int index);
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface SpecialistPoolOrBuilder
    * @return A list containing the specialistWorkerEmails.
    */
   java.util.List<java.lang.String> getSpecialistWorkerEmailsList();
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public interface SpecialistPoolOrBuilder
    * @return The count of specialistWorkerEmails.
    */
   int getSpecialistWorkerEmailsCount();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface SpecialistPoolOrBuilder
    * @return The specialistWorkerEmails at the given index.
    */
   java.lang.String getSpecialistWorkerEmails(int index);
-
   /**
    *
    *

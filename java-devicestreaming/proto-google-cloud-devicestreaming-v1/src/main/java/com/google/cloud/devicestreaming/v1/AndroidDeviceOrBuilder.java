@@ -37,7 +37,6 @@ public interface AndroidDeviceOrBuilder
    * @return The androidModelId.
    */
   java.lang.String getAndroidModelId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AndroidDeviceOrBuilder
    * @return The androidVersionId.
    */
   java.lang.String getAndroidVersionId();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface AndroidDeviceOrBuilder
    * @return The locale.
    */
   java.lang.String getLocale();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface AndroidDeviceOrBuilder
    * @return The orientation.
    */
   java.lang.String getOrientation();
-
   /**
    *
    *

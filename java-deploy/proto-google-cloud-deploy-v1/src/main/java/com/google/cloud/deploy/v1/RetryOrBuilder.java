@@ -51,7 +51,6 @@ public interface RetryOrBuilder
    * @return Whether the wait field is set.
    */
   boolean hasWait();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface RetryOrBuilder
    * @return The wait.
    */
   com.google.protobuf.Duration getWait();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface RetryOrBuilder
    * @return The enum numeric value on the wire for backoffMode.
    */
   int getBackoffModeValue();
-
   /**
    *
    *

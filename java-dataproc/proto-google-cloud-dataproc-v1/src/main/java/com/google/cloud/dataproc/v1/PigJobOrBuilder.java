@@ -36,7 +36,6 @@ public interface PigJobOrBuilder
    * @return Whether the queryFileUri field is set.
    */
   boolean hasQueryFileUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PigJobOrBuilder
    * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PigJobOrBuilder
    * @return Whether the queryList field is set.
    */
   boolean hasQueryList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PigJobOrBuilder
    * @return The queryList.
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface PigJobOrBuilder
    * </code>
    */
   int getScriptVariablesCount();
-
   /**
    *
    *
@@ -140,11 +135,9 @@ public interface PigJobOrBuilder
    * </code>
    */
   boolean containsScriptVariables(java.lang.String key);
-
   /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getScriptVariables();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface PigJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public interface PigJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface PigJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -217,11 +207,9 @@ public interface PigJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
-
   /**
    *
    *
@@ -236,7 +224,6 @@ public interface PigJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
-
   /**
    *
    *
@@ -255,7 +242,6 @@ public interface PigJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -284,7 +270,6 @@ public interface PigJobOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
-
   /**
    *
    *
@@ -298,7 +283,6 @@ public interface PigJobOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
-
   /**
    *
    *
@@ -313,7 +297,6 @@ public interface PigJobOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
-
   /**
    *
    *
@@ -343,7 +326,6 @@ public interface PigJobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -358,7 +340,6 @@ public interface PigJobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
-
   /**
    *
    *

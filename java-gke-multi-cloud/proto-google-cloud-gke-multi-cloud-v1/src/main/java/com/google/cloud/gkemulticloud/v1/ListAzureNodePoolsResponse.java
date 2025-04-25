@@ -33,7 +33,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse)
     ListAzureNodePoolsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAzureNodePoolsResponse.newBuilder() to construct.
   private ListAzureNodePoolsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AzureNodePool> azureNodePools_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.gkemulticloud.v1.AzureNodePool> getAzureNodePoolsList() {
     return azureNodePools_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       getAzureNodePoolsOrBuilderList() {
     return azureNodePools_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
   public int getAzureNodePoolsCount() {
     return azureNodePools_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
   public com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePools(int index) {
     return azureNodePools_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return azureNodePoolsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return azureNodePoolsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return azureNodePoolsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         int index) {
       return getAzureNodePoolsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -931,7 +909,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return azureNodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(azureNodePools_);
       }
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       return getAzureNodePoolsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +956,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       return getAzureNodePoolsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1018,7 +992,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1042,7 +1015,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1038,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1060,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1078,6 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

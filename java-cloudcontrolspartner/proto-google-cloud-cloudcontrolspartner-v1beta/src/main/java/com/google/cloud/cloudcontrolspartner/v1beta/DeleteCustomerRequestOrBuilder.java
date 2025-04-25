@@ -39,7 +39,6 @@ public interface DeleteCustomerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

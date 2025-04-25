@@ -39,7 +39,6 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return Whether the entityType field is set.
    */
   boolean hasEntityType();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return The entityType.
    */
   com.google.cloud.dialogflow.v2.EntityType getEntityType();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateEntityTypeRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

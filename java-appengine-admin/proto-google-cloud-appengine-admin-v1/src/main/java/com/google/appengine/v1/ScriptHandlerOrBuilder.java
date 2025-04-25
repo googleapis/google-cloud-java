@@ -36,7 +36,6 @@ public interface ScriptHandlerOrBuilder
    * @return The scriptPath.
    */
   java.lang.String getScriptPath();
-
   /**
    *
    *

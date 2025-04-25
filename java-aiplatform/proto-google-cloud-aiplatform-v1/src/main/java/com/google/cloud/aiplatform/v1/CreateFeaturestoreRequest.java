@@ -34,7 +34,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateFeaturestoreRequest)
     CreateFeaturestoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateFeaturestoreRequest.newBuilder() to construct.
   private CreateFeaturestoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
 
   public static final int FEATURESTORE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.Featurestore featurestore_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
   public boolean hasFeaturestore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1.Featurestore.getDefaultInstance()
         : featurestore_;
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featurestoreId_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -435,7 +427,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -666,7 +657,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -693,7 +683,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -746,7 +734,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +755,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +788,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1.Featurestore.Builder,
             com.google.cloud.aiplatform.v1.FeaturestoreOrBuilder>
         featurestoreBuilder_;
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     public boolean hasFeaturestore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -842,7 +826,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         return featurestoreBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +938,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return getFeaturestoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -980,7 +958,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
             : featurestore_;
       }
     }
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object featurestoreId_ = "";
-
     /**
      *
      *
@@ -1039,7 +1015,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1070,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1093,6 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

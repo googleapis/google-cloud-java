@@ -33,7 +33,6 @@ public final class RevisionScalingStatus extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.RevisionScalingStatus)
     RevisionScalingStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RevisionScalingStatus.newBuilder() to construct.
   private RevisionScalingStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class RevisionScalingStatus extends com.google.protobuf.GeneratedMe
 
   public static final int DESIRED_MIN_INSTANCE_COUNT_FIELD_NUMBER = 1;
   private int desiredMinInstanceCount_ = 0;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class RevisionScalingStatus extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -422,7 +419,6 @@ public final class RevisionScalingStatus extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int desiredMinInstanceCount_;
-
     /**
      *
      *
@@ -438,7 +434,6 @@ public final class RevisionScalingStatus extends com.google.protobuf.GeneratedMe
     public int getDesiredMinInstanceCount() {
       return desiredMinInstanceCount_;
     }
-
     /**
      *
      *
@@ -458,7 +453,6 @@ public final class RevisionScalingStatus extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -41,7 +41,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The enum numeric value on the wire for searchMode.
    */
   int getSearchModeValue();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface SearchJobsRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.talent.v4.RequestMetadata getRequestMetadata();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface SearchJobsRequestOrBuilder
    * @return Whether the jobQuery field is set.
    */
   boolean hasJobQuery();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The jobQuery.
    */
   com.google.cloud.talent.v4.JobQuery getJobQuery();
-
   /**
    *
    *
@@ -315,7 +309,6 @@ public interface SearchJobsRequestOrBuilder
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
    */
   java.util.List<com.google.cloud.talent.v4.HistogramQuery> getHistogramQueriesList();
-
   /**
    *
    *
@@ -436,7 +429,6 @@ public interface SearchJobsRequestOrBuilder
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
    */
   com.google.cloud.talent.v4.HistogramQuery getHistogramQueries(int index);
-
   /**
    *
    *
@@ -557,7 +549,6 @@ public interface SearchJobsRequestOrBuilder
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
    */
   int getHistogramQueriesCount();
-
   /**
    *
    *
@@ -679,7 +670,6 @@ public interface SearchJobsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4.HistogramQueryOrBuilder>
       getHistogramQueriesOrBuilderList();
-
   /**
    *
    *
@@ -816,7 +806,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The enum numeric value on the wire for jobView.
    */
   int getJobViewValue();
-
   /**
    *
    *
@@ -886,7 +875,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -967,7 +955,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -1056,7 +1043,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The enum numeric value on the wire for diversificationLevel.
    */
   int getDiversificationLevelValue();
-
   /**
    *
    *
@@ -1095,7 +1081,6 @@ public interface SearchJobsRequestOrBuilder
    * @return Whether the customRankingInfo field is set.
    */
   boolean hasCustomRankingInfo();
-
   /**
    *
    *
@@ -1110,7 +1095,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The customRankingInfo.
    */
   com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo getCustomRankingInfo();
-
   /**
    *
    *
@@ -1194,7 +1178,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The enum numeric value on the wire for keywordMatchMode.
    */
   int getKeywordMatchModeValue();
-
   /**
    *
    *
@@ -1232,7 +1215,6 @@ public interface SearchJobsRequestOrBuilder
    * @return The enum numeric value on the wire for relevanceThreshold.
    */
   int getRelevanceThresholdValue();
-
   /**
    *
    *

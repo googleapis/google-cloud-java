@@ -36,7 +36,6 @@ public interface ToolCallOrBuilder
    * @return Whether the toolName field is set.
    */
   boolean hasToolName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ToolCallOrBuilder
    * @return The toolName.
    */
   java.lang.String getToolName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ToolCallOrBuilder
    * @return Whether the toolInput field is set.
    */
   boolean hasToolInput();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ToolCallOrBuilder
    * @return The toolInput.
    */
   java.lang.String getToolInput();
-
   /**
    *
    *

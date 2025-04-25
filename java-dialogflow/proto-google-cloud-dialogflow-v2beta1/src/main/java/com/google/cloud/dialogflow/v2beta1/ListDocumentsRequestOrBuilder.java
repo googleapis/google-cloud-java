@@ -40,7 +40,6 @@ public interface ListDocumentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface ListDocumentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -130,7 +128,6 @@ public interface ListDocumentsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

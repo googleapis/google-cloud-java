@@ -39,7 +39,6 @@ public interface CreateListingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateListingRequestOrBuilder
    * @return The listingId.
    */
   java.lang.String getListingId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CreateListingRequestOrBuilder
    * @return Whether the listing field is set.
    */
   boolean hasListing();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateListingRequestOrBuilder
    * @return The listing.
    */
   com.google.cloud.bigquery.dataexchange.v1beta1.Listing getListing();
-
   /**
    *
    *

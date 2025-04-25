@@ -33,7 +33,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse)
     ListAttestorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAttestorsResponse.newBuilder() to construct.
   private ListAttestorsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.binaryauthorization.v1beta1.Attestor> attestors_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.binaryauthorization.v1beta1.Attestor> getAttestorsList() {
     return attestors_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       getAttestorsOrBuilderList() {
     return attestors_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
   public int getAttestorsCount() {
     return attestors_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.binaryauthorization.v1beta1.Attestor getAttestors(int index) {
     return attestors_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return attestorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return attestorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return attestorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getAttestorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return attestorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(attestors_);
       }
     }
-
     /**
      *
      *
@@ -953,7 +929,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       return getAttestorsFieldBuilder()
           .addBuilder(com.google.cloud.binaryauthorization.v1beta1.Attestor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -969,7 +944,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.binaryauthorization.v1beta1.Attestor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1002,7 +976,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1024,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class ListAttestorsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -42,7 +42,6 @@ public interface SampleQuerySetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface SampleQuerySetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface SampleQuerySetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface SampleQuerySetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface SampleQuerySetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

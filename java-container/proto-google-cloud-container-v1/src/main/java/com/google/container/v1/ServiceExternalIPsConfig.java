@@ -33,7 +33,6 @@ public final class ServiceExternalIPsConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.container.v1.ServiceExternalIPsConfig)
     ServiceExternalIPsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ServiceExternalIPsConfig.newBuilder() to construct.
   private ServiceExternalIPsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ServiceExternalIPsConfig extends com.google.protobuf.Generate
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class ServiceExternalIPsConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class ServiceExternalIPsConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -439,7 +435,6 @@ public final class ServiceExternalIPsConfig extends com.google.protobuf.Generate
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -459,7 +454,6 @@ public final class ServiceExternalIPsConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

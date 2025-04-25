@@ -36,7 +36,6 @@ public interface CreateFolderMetadataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface CreateFolderMetadataOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

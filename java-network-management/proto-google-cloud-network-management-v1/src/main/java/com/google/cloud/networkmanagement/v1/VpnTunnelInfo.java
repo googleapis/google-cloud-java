@@ -33,7 +33,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.VpnTunnelInfo)
     VpnTunnelInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VpnTunnelInfo.newBuilder() to construct.
   private VpnTunnelInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTING_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ROUTING_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -147,7 +145,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTE_BASED = 1;</code>
      */
     public static final int ROUTE_BASED_VALUE = 1;
-
     /**
      *
      *
@@ -158,7 +155,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>POLICY_BASED = 2;</code>
      */
     public static final int POLICY_BASED_VALUE = 2;
-
     /**
      *
      *
@@ -261,7 +257,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -285,7 +280,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +308,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -338,7 +331,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceGateway_ = "";
-
   /**
    *
    *
@@ -391,7 +382,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +410,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remoteGateway_ = "";
-
   /**
    *
    *
@@ -444,7 +433,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -473,7 +461,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remoteGatewayIp_ = "";
-
   /**
    *
    *
@@ -497,7 +484,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -526,7 +512,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceGatewayIp_ = "";
-
   /**
    *
    *
@@ -550,7 +535,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -579,7 +563,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUri_ = "";
-
   /**
    *
    *
@@ -603,7 +586,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -632,7 +614,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -656,7 +637,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -683,7 +663,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTING_TYPE_FIELD_NUMBER = 9;
   private int routingType_ = 0;
-
   /**
    *
    *
@@ -699,7 +678,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
   public int getRoutingTypeValue() {
     return routingType_;
   }
-
   /**
    *
    *
@@ -955,7 +933,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1258,7 +1235,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1281,7 +1257,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1304,7 +1279,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1326,7 +1300,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1317,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1341,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -1392,7 +1363,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1415,7 +1385,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1437,7 +1406,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1423,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1447,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceGateway_ = "";
-
     /**
      *
      *
@@ -1503,7 +1469,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1526,7 +1491,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1512,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1529,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1553,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object remoteGateway_ = "";
-
     /**
      *
      *
@@ -1614,7 +1575,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1637,7 +1597,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1659,7 +1618,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1635,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1659,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object remoteGatewayIp_ = "";
-
     /**
      *
      *
@@ -1725,7 +1681,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1748,7 +1703,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1724,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1741,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1813,7 +1765,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceGatewayIp_ = "";
-
     /**
      *
      *
@@ -1836,7 +1787,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1859,7 +1809,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1881,7 +1830,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1847,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1924,7 +1871,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object networkUri_ = "";
-
     /**
      *
      *
@@ -1947,7 +1893,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1970,7 +1915,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1992,7 +1936,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2010,7 +1953,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2035,7 +1977,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -2058,7 +1999,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2081,7 +2021,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2103,7 +2042,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2121,7 +2059,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2146,7 +2083,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int routingType_ = 0;
-
     /**
      *
      *
@@ -2162,7 +2098,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
     public int getRoutingTypeValue() {
       return routingType_;
     }
-
     /**
      *
      *
@@ -2181,7 +2116,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2201,7 +2135,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.VpnTunnelInfo.RoutingType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2224,7 +2157,6 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

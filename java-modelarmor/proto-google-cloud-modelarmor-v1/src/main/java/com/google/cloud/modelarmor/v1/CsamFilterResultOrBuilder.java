@@ -39,7 +39,6 @@ public interface CsamFilterResultOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CsamFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CsamFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface CsamFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   int getMessageItemsCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface CsamFilterResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.MessageItemOrBuilder>
       getMessageItemsOrBuilderList();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface CsamFilterResultOrBuilder
    * @return The enum numeric value on the wire for matchState.
    */
   int getMatchStateValue();
-
   /**
    *
    *

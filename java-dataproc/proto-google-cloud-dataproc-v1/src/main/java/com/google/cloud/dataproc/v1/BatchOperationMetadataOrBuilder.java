@@ -36,7 +36,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The batch.
    */
   java.lang.String getBatch();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The batchUuid.
    */
   java.lang.String getBatchUuid();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the doneTime field is set.
    */
   boolean hasDoneTime();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The doneTime.
    */
   com.google.protobuf.Timestamp getDoneTime();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public interface BatchOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -225,11 +216,9 @@ public interface BatchOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface BatchOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -255,7 +243,6 @@ public interface BatchOperationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -279,7 +266,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return A list containing the warnings.
    */
   java.util.List<java.lang.String> getWarningsList();
-
   /**
    *
    *
@@ -292,7 +278,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The count of warnings.
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -306,7 +291,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The warnings at the given index.
    */
   java.lang.String getWarnings(int index);
-
   /**
    *
    *

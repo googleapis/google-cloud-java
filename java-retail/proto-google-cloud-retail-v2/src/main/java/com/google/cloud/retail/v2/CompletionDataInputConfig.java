@@ -33,7 +33,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CompletionDataInputConfig)
     CompletionDataInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompletionDataInputConfig.newBuilder() to construct.
   private CompletionDataInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
   }
 
   public static final int BIG_QUERY_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
   public boolean hasBigQuerySource() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.retail.v2.BigQuerySource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -355,7 +350,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +568,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
             com.google.cloud.retail.v2.BigQuerySource.Builder,
             com.google.cloud.retail.v2.BigQuerySourceOrBuilder>
         bigQuerySourceBuilder_;
-
     /**
      *
      *
@@ -596,7 +589,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     public boolean hasBigQuerySource() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -628,7 +620,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
         return com.google.cloud.retail.v2.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -657,7 +648,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +712,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +743,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     public com.google.cloud.retail.v2.BigQuerySource.Builder getBigQuerySourceBuilder() {
       return getBigQuerySourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -801,7 +787,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
         return com.google.cloud.retail.v2.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *

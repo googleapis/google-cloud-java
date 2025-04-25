@@ -80,7 +80,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.StreamingRecognizeResponse)
     StreamingRecognizeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingRecognizeResponse.newBuilder() to construct.
   private StreamingRecognizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -186,7 +185,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>SPEECH_EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SPEECH_EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -202,7 +200,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>END_OF_SINGLE_UTTERANCE = 1;</code>
      */
     public static final int END_OF_SINGLE_UTTERANCE_VALUE = 1;
-
     /**
      *
      *
@@ -216,7 +213,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>SPEECH_ACTIVITY_BEGIN = 2;</code>
      */
     public static final int SPEECH_ACTIVITY_BEGIN_VALUE = 2;
-
     /**
      *
      *
@@ -325,7 +321,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.StreamingRecognitionResult> results_;
-
   /**
    *
    *
@@ -345,7 +340,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.speech.v2.StreamingRecognitionResult> getResultsList() {
     return results_;
   }
-
   /**
    *
    *
@@ -366,7 +360,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       getResultsOrBuilderList() {
     return results_;
   }
-
   /**
    *
    *
@@ -386,7 +379,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public int getResultsCount() {
     return results_.size();
   }
-
   /**
    *
    *
@@ -406,7 +398,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public com.google.cloud.speech.v2.StreamingRecognitionResult getResults(int index) {
     return results_.get(index);
   }
-
   /**
    *
    *
@@ -430,7 +421,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
 
   public static final int SPEECH_EVENT_TYPE_FIELD_NUMBER = 3;
   private int speechEventType_ = 0;
-
   /**
    *
    *
@@ -447,7 +437,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public int getSpeechEventTypeValue() {
     return speechEventType_;
   }
-
   /**
    *
    *
@@ -473,7 +462,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
 
   public static final int SPEECH_EVENT_OFFSET_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration speechEventOffset_;
-
   /**
    *
    *
@@ -489,7 +477,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public boolean hasSpeechEventOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -507,7 +494,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         ? com.google.protobuf.Duration.getDefaultInstance()
         : speechEventOffset_;
   }
-
   /**
    *
    *
@@ -526,7 +512,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
 
   public static final int METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.speech.v2.RecognitionResponseMetadata metadata_;
-
   /**
    *
    *
@@ -542,7 +527,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -560,7 +544,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         ? com.google.cloud.speech.v2.RecognitionResponseMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -782,7 +765,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1166,7 +1148,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1189,7 +1170,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1192,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1221,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1247,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1275,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1304,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1330,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1356,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1383,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1436,7 +1408,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1433,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1482,7 +1452,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1506,7 +1475,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1530,7 +1498,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(results_);
       }
     }
-
     /**
      *
      *
@@ -1550,7 +1517,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.speech.v2.StreamingRecognitionResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1572,7 +1538,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.speech.v2.StreamingRecognitionResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1611,7 +1576,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     }
 
     private int speechEventType_ = 0;
-
     /**
      *
      *
@@ -1629,7 +1593,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     public int getSpeechEventTypeValue() {
       return speechEventType_;
     }
-
     /**
      *
      *
@@ -1650,7 +1613,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1674,7 +1636,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
           ? com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1699,7 +1660,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1726,7 +1686,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         speechEventOffsetBuilder_;
-
     /**
      *
      *
@@ -1741,7 +1700,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     public boolean hasSpeechEventOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1762,7 +1720,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return speechEventOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1785,7 +1742,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1761,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1788,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1853,7 +1807,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1868,7 +1821,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return getSpeechEventOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1887,7 +1839,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             : speechEventOffset_;
       }
     }
-
     /**
      *
      *
@@ -1920,7 +1871,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder,
             com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1935,7 +1885,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1956,7 +1905,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1979,7 +1927,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2000,7 +1947,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2029,7 +1975,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +1994,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2064,7 +2008,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2083,7 +2026,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             : metadata_;
       }
     }
-
     /**
      *
      *

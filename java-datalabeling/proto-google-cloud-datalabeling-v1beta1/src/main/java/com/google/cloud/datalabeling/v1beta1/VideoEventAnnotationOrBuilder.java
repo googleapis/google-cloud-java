@@ -36,7 +36,6 @@ public interface VideoEventAnnotationOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VideoEventAnnotationOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface VideoEventAnnotationOrBuilder
    * @return Whether the timeSegment field is set.
    */
   boolean hasTimeSegment();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface VideoEventAnnotationOrBuilder
    * @return The timeSegment.
    */
   com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment();
-
   /**
    *
    *

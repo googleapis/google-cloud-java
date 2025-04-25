@@ -41,10 +41,8 @@ public enum CVSSVersion implements com.google.protobuf.ProtocolMessageEnum {
 
   /** <code>CVSS_VERSION_UNSPECIFIED = 0;</code> */
   public static final int CVSS_VERSION_UNSPECIFIED_VALUE = 0;
-
   /** <code>CVSS_VERSION_2 = 1;</code> */
   public static final int CVSS_VERSION_2_VALUE = 1;
-
   /** <code>CVSS_VERSION_3 = 2;</code> */
   public static final int CVSS_VERSION_3_VALUE = 2;
 

@@ -34,7 +34,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v1.AcceleratorType accelerator_types = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v1.AcceleratorType> getAcceleratorTypesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v1.AcceleratorType accelerator_types = 1;</code>
    */
   com.google.cloud.tpu.v1.AcceleratorType getAcceleratorTypes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v1.AcceleratorType accelerator_types = 1;</code>
    */
   int getAcceleratorTypesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v1.AcceleratorTypeOrBuilder>
       getAcceleratorTypesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListAcceleratorTypesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

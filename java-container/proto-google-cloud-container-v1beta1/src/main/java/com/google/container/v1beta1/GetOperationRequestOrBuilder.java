@@ -42,7 +42,6 @@ public interface GetOperationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface GetOperationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface GetOperationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getOperationId();
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public interface GetOperationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.appengine.v1.NetworkUtilization)
     NetworkUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkUtilization.newBuilder() to construct.
   private NetworkUtilization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
 
   public static final int TARGET_SENT_BYTES_PER_SECOND_FIELD_NUMBER = 1;
   private int targetSentBytesPerSecond_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
 
   public static final int TARGET_SENT_PACKETS_PER_SECOND_FIELD_NUMBER = 11;
   private int targetSentPacketsPerSecond_ = 0;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
 
   public static final int TARGET_RECEIVED_BYTES_PER_SECOND_FIELD_NUMBER = 12;
   private int targetReceivedBytesPerSecond_ = 0;
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
 
   public static final int TARGET_RECEIVED_PACKETS_PER_SECOND_FIELD_NUMBER = 13;
   private int targetReceivedPacketsPerSecond_ = 0;
-
   /**
    *
    *
@@ -330,7 +325,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -552,7 +546,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int targetSentBytesPerSecond_;
-
     /**
      *
      *
@@ -568,7 +561,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public int getTargetSentBytesPerSecond() {
       return targetSentBytesPerSecond_;
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     }
 
     private int targetSentPacketsPerSecond_;
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public int getTargetSentPacketsPerSecond() {
       return targetSentPacketsPerSecond_;
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     }
 
     private int targetReceivedBytesPerSecond_;
-
     /**
      *
      *
@@ -680,7 +667,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public int getTargetReceivedBytesPerSecond() {
       return targetReceivedBytesPerSecond_;
     }
-
     /**
      *
      *
@@ -700,7 +686,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +705,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     }
 
     private int targetReceivedPacketsPerSecond_;
-
     /**
      *
      *
@@ -736,7 +720,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public int getTargetReceivedPacketsPerSecond() {
       return targetReceivedPacketsPerSecond_;
     }
-
     /**
      *
      *
@@ -756,7 +739,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

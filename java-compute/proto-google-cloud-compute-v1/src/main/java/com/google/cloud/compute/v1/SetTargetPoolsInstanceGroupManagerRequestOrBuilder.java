@@ -37,7 +37,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagersSetTargetPoolsRequestResource field is set.
    */
   boolean hasInstanceGroupManagersSetTargetPoolsRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest
       getInstanceGroupManagersSetTargetPoolsRequestResource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

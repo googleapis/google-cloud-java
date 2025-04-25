@@ -41,7 +41,6 @@ public interface CreateBillingAccountRequestOrBuilder
    * @return Whether the billingAccount field is set.
    */
   boolean hasBillingAccount();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface CreateBillingAccountRequestOrBuilder
    * @return The billingAccount.
    */
   com.google.cloud.billing.v1.BillingAccount getBillingAccount();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateBillingAccountRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

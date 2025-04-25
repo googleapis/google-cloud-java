@@ -33,7 +33,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.SearchResult)
     SearchResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchResult.newBuilder() to construct.
   private SearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.apihub.v1.ApiHubResource resource_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apihub.v1.ApiHubResource.getDefaultInstance()
         : resource_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.ApiHubResource.Builder,
             com.google.cloud.apihub.v1.ApiHubResourceOrBuilder>
         resourceBuilder_;
-
     /**
      *
      *
@@ -501,7 +495,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
         return resourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +559,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -597,7 +587,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +607,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -634,7 +622,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -654,7 +641,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
             : resource_;
       }
     }
-
     /**
      *
      *

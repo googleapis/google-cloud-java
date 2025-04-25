@@ -75,7 +75,6 @@ public enum TagTemplateMigration implements com.google.protobuf.ProtocolMessageE
    * <code>TAG_TEMPLATE_MIGRATION_UNSPECIFIED = 0;</code>
    */
   public static final int TAG_TEMPLATE_MIGRATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum TagTemplateMigration implements com.google.protobuf.ProtocolMessageE
    * <code>TAG_TEMPLATE_MIGRATION_ENABLED = 1;</code>
    */
   public static final int TAG_TEMPLATE_MIGRATION_ENABLED_VALUE = 1;
-
   /**
    *
    *

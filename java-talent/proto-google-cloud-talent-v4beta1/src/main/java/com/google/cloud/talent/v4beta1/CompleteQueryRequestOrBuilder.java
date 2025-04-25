@@ -44,7 +44,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return A list containing the languageCodes.
    */
   java.util.List<java.lang.String> getLanguageCodesList();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The count of languageCodes.
    */
   int getLanguageCodesCount();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The languageCodes at the given index.
    */
   java.lang.String getLanguageCodes(int index);
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The company.
    */
   java.lang.String getCompany();
-
   /**
    *
    *
@@ -238,7 +232,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
-
   /**
    *
    *
@@ -266,7 +259,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

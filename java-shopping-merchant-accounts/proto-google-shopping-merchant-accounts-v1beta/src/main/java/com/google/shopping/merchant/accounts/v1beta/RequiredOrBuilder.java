@@ -38,7 +38,6 @@ public interface RequiredOrBuilder
    * @return The termsOfService.
    */
   java.lang.String getTermsOfService();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface RequiredOrBuilder
    * @return The tosFileUri.
    */
   java.lang.String getTosFileUri();
-
   /**
    *
    *

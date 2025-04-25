@@ -33,7 +33,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Row)
     RowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Row.newBuilder() to construct.
   private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Value> cells_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.Value> getCellsList() {
     return cells_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       getCellsOrBuilderList() {
     return cells_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public int getCellsCount() {
     return cells_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.accounts.v1beta.Value getCells(int index) {
     return cells_.get(index);
   }
-
   /**
    *
    *
@@ -321,7 +315,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -589,7 +582,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -610,7 +602,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.shopping.merchant.accounts.v1beta.Value.Builder getCellsBuilder(int index) {
       return getCellsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(cells_);
       }
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       return getCellsFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Value.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Value.getDefaultInstance());
     }
-
     /**
      *
      *

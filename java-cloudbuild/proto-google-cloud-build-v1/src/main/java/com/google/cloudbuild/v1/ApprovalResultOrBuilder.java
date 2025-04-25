@@ -37,7 +37,6 @@ public interface ApprovalResultOrBuilder
    * @return The approverAccount.
    */
   java.lang.String getApproverAccount();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ApprovalResultOrBuilder
    * @return Whether the approvalTime field is set.
    */
   boolean hasApprovalTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ApprovalResultOrBuilder
    * @return The approvalTime.
    */
   com.google.protobuf.Timestamp getApprovalTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ApprovalResultOrBuilder
    * @return The enum numeric value on the wire for decision.
    */
   int getDecisionValue();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ApprovalResultOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ApprovalResultOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

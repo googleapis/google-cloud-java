@@ -34,7 +34,6 @@ public final class CustomTargetingValueStatusEnum extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingValueStatusEnum)
     CustomTargetingValueStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomTargetingValueStatusEnum.newBuilder() to construct.
   private CustomTargetingValueStatusEnum(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -118,7 +117,6 @@ public final class CustomTargetingValueStatusEnum extends com.google.protobuf.Ge
      * <code>CUSTOM_TARGETING_VALUE_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_TARGETING_VALUE_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class CustomTargetingValueStatusEnum extends com.google.protobuf.Ge
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -380,7 +377,6 @@ public final class CustomTargetingValueStatusEnum extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

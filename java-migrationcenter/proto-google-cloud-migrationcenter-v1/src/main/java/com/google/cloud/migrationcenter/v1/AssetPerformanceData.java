@@ -33,7 +33,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AssetPerformanceData)
     AssetPerformanceDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AssetPerformanceData.newBuilder() to construct.
   private AssetPerformanceData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation>
       dailyResourceUsageAggregations_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       getDailyResourceUsageAggregationsList() {
     return dailyResourceUsageAggregations_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       getDailyResourceUsageAggregationsOrBuilderList() {
     return dailyResourceUsageAggregations_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
   public int getDailyResourceUsageAggregationsCount() {
     return dailyResourceUsageAggregations_.size();
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       getDailyResourceUsageAggregations(int index) {
     return dailyResourceUsageAggregations_.get(index);
   }
-
   /**
    *
    *
@@ -330,7 +324,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -603,7 +596,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
         return dailyResourceUsageAggregationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -624,7 +616,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
         return dailyResourceUsageAggregationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -646,7 +637,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
         return dailyResourceUsageAggregationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
         getDailyResourceUsageAggregationsBuilder(int index) {
       return getDailyResourceUsageAggregationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
         return dailyResourceUsageAggregationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(dailyResourceUsageAggregations_);
       }
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class AssetPerformanceData extends com.google.protobuf.GeneratedMes
               com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation
                   .getDefaultInstance());
     }
-
     /**
      *
      *

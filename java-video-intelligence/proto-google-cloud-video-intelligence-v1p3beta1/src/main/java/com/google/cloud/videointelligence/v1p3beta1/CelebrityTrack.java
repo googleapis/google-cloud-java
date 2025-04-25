@@ -34,7 +34,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.CelebrityTrack)
     CelebrityTrackOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CelebrityTrack.newBuilder() to construct.
   private CelebrityTrack(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the celebrity field is set.
      */
     boolean hasCelebrity();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      * @return The celebrity.
      */
     com.google.cloud.videointelligence.v1p3beta1.Celebrity getCelebrity();
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      */
     float getConfidence();
   }
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity)
       RecognizedCelebrityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RecognizedCelebrity.newBuilder() to construct.
     private RecognizedCelebrity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -169,7 +164,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int CELEBRITY_FIELD_NUMBER = 1;
     private com.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity_;
-
     /**
      *
      *
@@ -185,7 +179,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCelebrity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -203,7 +196,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.videointelligence.v1p3beta1.Celebrity.getDefaultInstance()
           : celebrity_;
     }
-
     /**
      *
      *
@@ -222,7 +214,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CONFIDENCE_FIELD_NUMBER = 2;
     private float confidence_ = 0F;
-
     /**
      *
      *
@@ -423,7 +414,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.videointelligence.v1p3beta1.Celebrity.Builder,
               com.google.cloud.videointelligence.v1p3beta1.CelebrityOrBuilder>
           celebrityBuilder_;
-
       /**
        *
        *
@@ -675,7 +664,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCelebrity() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -696,7 +684,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
           return celebrityBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -719,7 +706,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -740,7 +726,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -769,7 +754,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -789,7 +773,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -804,7 +787,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCelebrityFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -824,7 +806,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
               : celebrity_;
         }
       }
-
       /**
        *
        *
@@ -852,7 +833,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float confidence_;
-
       /**
        *
        *
@@ -868,7 +848,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       public float getConfidence() {
         return confidence_;
       }
-
       /**
        *
        *
@@ -888,7 +867,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -983,7 +961,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
   private java.util.List<
           com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity>
       celebrities_;
-
   /**
    *
    *
@@ -1001,7 +978,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       getCelebritiesList() {
     return celebrities_;
   }
-
   /**
    *
    *
@@ -1021,7 +997,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       getCelebritiesOrBuilderList() {
     return celebrities_;
   }
-
   /**
    *
    *
@@ -1037,7 +1012,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
   public int getCelebritiesCount() {
     return celebrities_.size();
   }
-
   /**
    *
    *
@@ -1054,7 +1028,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       getCelebrities(int index) {
     return celebrities_.get(index);
   }
-
   /**
    *
    *
@@ -1074,7 +1047,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FACE_TRACK_FIELD_NUMBER = 3;
   private com.google.cloud.videointelligence.v1p3beta1.Track faceTrack_;
-
   /**
    *
    *
@@ -1090,7 +1062,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFaceTrack() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1108,7 +1079,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1p3beta1.Track.getDefaultInstance()
         : faceTrack_;
   }
-
   /**
    *
    *
@@ -1301,7 +1271,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1605,7 +1574,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         return celebritiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1624,7 +1592,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         return celebritiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1644,7 +1611,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         return celebritiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1671,7 +1637,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1661,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1686,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1712,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1735,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1759,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1824,7 +1784,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1805,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1868,7 +1826,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1841,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         getCelebritiesBuilder(int index) {
       return getCelebritiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1904,7 +1860,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         return celebritiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1927,7 +1882,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(celebrities_);
       }
     }
-
     /**
      *
      *
@@ -1946,7 +1900,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1966,7 +1919,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2010,7 +1962,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1p3beta1.Track.Builder,
             com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder>
         faceTrackBuilder_;
-
     /**
      *
      *
@@ -2025,7 +1976,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFaceTrack() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2046,7 +1996,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         return faceTrackBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2069,7 +2018,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2090,7 +2038,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2119,7 +2066,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2085,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2154,7 +2099,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFaceTrackFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2173,7 +2117,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
             : faceTrack_;
       }
     }
-
     /**
      *
      *

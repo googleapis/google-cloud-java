@@ -34,7 +34,6 @@ public interface AnalysisDefinitionOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnalyzerDefinition analyzers = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.AnalyzerDefinition> getAnalyzersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface AnalysisDefinitionOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnalyzerDefinition analyzers = 1;</code>
    */
   com.google.cloud.visionai.v1.AnalyzerDefinition getAnalyzers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface AnalysisDefinitionOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnalyzerDefinition analyzers = 1;</code>
    */
   int getAnalyzersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface AnalysisDefinitionOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnalyzerDefinitionOrBuilder>
       getAnalyzersOrBuilderList();
-
   /**
    *
    *

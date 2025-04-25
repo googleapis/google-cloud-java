@@ -34,7 +34,6 @@ public interface ListVolumesResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.Volume volumes = 1;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.Volume> getVolumesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListVolumesResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.Volume volumes = 1;</code>
    */
   com.google.cloud.baremetalsolution.v2.Volume getVolumes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListVolumesResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.Volume volumes = 1;</code>
    */
   int getVolumesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListVolumesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VolumeOrBuilder>
       getVolumesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListVolumesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListVolumesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListVolumesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListVolumesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

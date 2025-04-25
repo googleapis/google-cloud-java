@@ -35,7 +35,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ActiveLearningConfig)
     ActiveLearningConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ActiveLearningConfig.newBuilder() to construct.
   private ActiveLearningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     private HumanLabelingBudgetCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MAX_DATA_ITEM_COUNT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   public boolean hasMaxDataItemCount() {
     return humanLabelingBudgetCase_ == 1;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MAX_DATA_ITEM_PERCENTAGE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   public boolean hasMaxDataItemPercentage() {
     return humanLabelingBudgetCase_ == 2;
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
 
   public static final int SAMPLE_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.SampleConfig sampleConfig_;
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   public boolean hasSampleConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.SampleConfig.getDefaultInstance()
         : sampleConfig_;
   }
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
 
   public static final int TRAINING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.TrainingConfig trainingConfig_;
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   public boolean hasTrainingConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.TrainingConfig.getDefaultInstance()
         : trainingConfig_;
   }
-
   /**
    *
    *
@@ -522,7 +510,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -808,7 +795,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     public boolean hasMaxDataItemCount() {
       return humanLabelingBudgetCase_ == 1;
     }
-
     /**
      *
      *
@@ -826,7 +812,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +865,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     public boolean hasMaxDataItemPercentage() {
       return humanLabelingBudgetCase_ == 2;
     }
-
     /**
      *
      *
@@ -899,7 +882,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       }
       return 0;
     }
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +927,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.SampleConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.SampleConfigOrBuilder>
         sampleConfigBuilder_;
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     public boolean hasSampleConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -984,7 +963,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
         return sampleConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1008,7 +986,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1007,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1056,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1071,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSampleConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1117,7 +1090,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
             : sampleConfig_;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1123,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.TrainingConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.TrainingConfigOrBuilder>
         trainingConfigBuilder_;
-
     /**
      *
      *
@@ -1168,7 +1139,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     public boolean hasTrainingConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1191,7 +1161,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
         return trainingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1185,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1207,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1237,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1292,7 +1258,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1274,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getTrainingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1331,7 +1295,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
             : trainingConfig_;
       }
     }
-
     /**
      *
      *

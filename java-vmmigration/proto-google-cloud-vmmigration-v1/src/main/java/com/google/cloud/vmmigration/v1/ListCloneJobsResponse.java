@@ -33,7 +33,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ListCloneJobsResponse)
     ListCloneJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCloneJobsResponse.newBuilder() to construct.
   private ListCloneJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CloneJob> cloneJobs_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vmmigration.v1.CloneJob> getCloneJobsList() {
     return cloneJobs_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       getCloneJobsOrBuilderList() {
     return cloneJobs_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   public int getCloneJobsCount() {
     return cloneJobs_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vmmigration.v1.CloneJob getCloneJobs(int index) {
     return cloneJobs_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +750,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return cloneJobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return cloneJobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return cloneJobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +923,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1001,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vmmigration.v1.CloneJob.Builder getCloneJobsBuilder(int index) {
       return getCloneJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1045,7 +1019,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return cloneJobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1038,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(cloneJobs_);
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       return getCloneJobsFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.CloneJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       return getCloneJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.CloneJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1132,7 +1102,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1156,7 +1125,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1148,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1203,7 +1170,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1188,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1221,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1272,7 +1236,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1287,7 +1250,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1303,7 +1265,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1319,7 +1280,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1343,7 +1303,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1325,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1344,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1362,6 @@ public final class ListCloneJobsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

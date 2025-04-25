@@ -34,7 +34,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.Dataset)
     DatasetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Dataset.newBuilder() to construct.
   private Dataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     private DatasetMetadataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -141,7 +139,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSLATION_DATASET_METADATA_FIELD_NUMBER = 23;
-
   /**
    *
    *
@@ -159,7 +156,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTranslationDatasetMetadata() {
     return datasetMetadataCase_ == 23;
   }
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER = 24;
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageClassificationDatasetMetadata() {
     return datasetMetadataCase_ == 24;
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER = 25;
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextClassificationDatasetMetadata() {
     return datasetMetadataCase_ == 25;
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_OBJECT_DETECTION_DATASET_METADATA_FIELD_NUMBER = 26;
-
   /**
    *
    *
@@ -345,7 +333,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageObjectDetectionDatasetMetadata() {
     return datasetMetadataCase_ == 26;
   }
-
   /**
    *
    *
@@ -367,7 +354,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -389,7 +375,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIDEO_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER = 31;
-
   /**
    *
    *
@@ -407,7 +392,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVideoClassificationDatasetMetadata() {
     return datasetMetadataCase_ == 31;
   }
-
   /**
    *
    *
@@ -429,7 +413,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -451,7 +434,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIDEO_OBJECT_TRACKING_DATASET_METADATA_FIELD_NUMBER = 29;
-
   /**
    *
    *
@@ -469,7 +451,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVideoObjectTrackingDatasetMetadata() {
     return datasetMetadataCase_ == 29;
   }
-
   /**
    *
    *
@@ -491,7 +472,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -513,7 +493,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_EXTRACTION_DATASET_METADATA_FIELD_NUMBER = 28;
-
   /**
    *
    *
@@ -531,7 +510,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextExtractionDatasetMetadata() {
     return datasetMetadataCase_ == 28;
   }
-
   /**
    *
    *
@@ -553,7 +531,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -575,7 +552,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_SENTIMENT_DATASET_METADATA_FIELD_NUMBER = 30;
-
   /**
    *
    *
@@ -593,7 +569,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextSentimentDatasetMetadata() {
     return datasetMetadataCase_ == 30;
   }
-
   /**
    *
    *
@@ -615,7 +590,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -637,7 +611,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TABLES_DATASET_METADATA_FIELD_NUMBER = 33;
-
   /**
    *
    *
@@ -653,7 +626,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTablesDatasetMetadata() {
     return datasetMetadataCase_ == 33;
   }
-
   /**
    *
    *
@@ -672,7 +644,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -695,7 +666,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -720,7 +690,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -750,7 +719,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -777,7 +745,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -809,7 +776,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -834,7 +800,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -862,7 +827,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXAMPLE_COUNT_FIELD_NUMBER = 21;
   private int exampleCount_ = 0;
-
   /**
    *
    *
@@ -881,7 +845,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -897,7 +860,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -913,7 +875,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -932,7 +893,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -957,7 +917,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1365,7 +1324,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1837,7 +1795,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.TranslationDatasetMetadataOrBuilder>
         translationDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -1855,7 +1812,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTranslationDatasetMetadata() {
       return datasetMetadataCase_ == 23;
     }
-
     /**
      *
      *
@@ -1884,7 +1840,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1910,7 +1865,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -1933,7 +1887,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -1971,7 +1924,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -1999,7 +1951,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2015,7 +1966,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getTranslationDatasetMetadataBuilder() {
       return getTranslationDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2039,7 +1989,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2081,7 +2030,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.ImageClassificationDatasetMetadataOrBuilder>
         imageClassificationDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -2099,7 +2047,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageClassificationDatasetMetadata() {
       return datasetMetadataCase_ == 24;
     }
-
     /**
      *
      *
@@ -2131,7 +2078,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2157,7 +2103,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -2181,7 +2126,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2164,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2191,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2206,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getImageClassificationDatasetMetadataBuilder() {
       return getImageClassificationDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2290,7 +2231,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2334,7 +2274,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadataOrBuilder>
         textClassificationDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -2352,7 +2291,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextClassificationDatasetMetadata() {
       return datasetMetadataCase_ == 25;
     }
-
     /**
      *
      *
@@ -2384,7 +2322,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2410,7 +2347,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 25;
       return this;
     }
-
     /**
      *
      *
@@ -2433,7 +2369,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 25;
       return this;
     }
-
     /**
      *
      *
@@ -2472,7 +2407,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 25;
       return this;
     }
-
     /**
      *
      *
@@ -2500,7 +2434,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2516,7 +2449,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getTextClassificationDatasetMetadataBuilder() {
       return getTextClassificationDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2542,7 +2474,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2586,7 +2517,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder>
         imageObjectDetectionDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -2604,7 +2534,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageObjectDetectionDatasetMetadata() {
       return datasetMetadataCase_ == 26;
     }
-
     /**
      *
      *
@@ -2636,7 +2565,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2662,7 +2590,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -2686,7 +2613,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -2725,7 +2651,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -2753,7 +2678,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2769,7 +2693,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getImageObjectDetectionDatasetMetadataBuilder() {
       return getImageObjectDetectionDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2795,7 +2718,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2839,7 +2761,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder>
         videoClassificationDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -2857,7 +2778,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVideoClassificationDatasetMetadata() {
       return datasetMetadataCase_ == 31;
     }
-
     /**
      *
      *
@@ -2889,7 +2809,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2915,7 +2834,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 31;
       return this;
     }
-
     /**
      *
      *
@@ -2939,7 +2857,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 31;
       return this;
     }
-
     /**
      *
      *
@@ -2978,7 +2895,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 31;
       return this;
     }
-
     /**
      *
      *
@@ -3006,7 +2922,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3022,7 +2937,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getVideoClassificationDatasetMetadataBuilder() {
       return getVideoClassificationDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3048,7 +2962,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3092,7 +3005,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadataOrBuilder>
         videoObjectTrackingDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -3110,7 +3022,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVideoObjectTrackingDatasetMetadata() {
       return datasetMetadataCase_ == 29;
     }
-
     /**
      *
      *
@@ -3142,7 +3053,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3168,7 +3078,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 29;
       return this;
     }
-
     /**
      *
      *
@@ -3192,7 +3101,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 29;
       return this;
     }
-
     /**
      *
      *
@@ -3231,7 +3139,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 29;
       return this;
     }
-
     /**
      *
      *
@@ -3259,7 +3166,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3275,7 +3181,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getVideoObjectTrackingDatasetMetadataBuilder() {
       return getVideoObjectTrackingDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3301,7 +3206,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3345,7 +3249,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder>
         textExtractionDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -3363,7 +3266,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextExtractionDatasetMetadata() {
       return datasetMetadataCase_ == 28;
     }
-
     /**
      *
      *
@@ -3392,7 +3294,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3418,7 +3319,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 28;
       return this;
     }
-
     /**
      *
      *
@@ -3441,7 +3341,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 28;
       return this;
     }
-
     /**
      *
      *
@@ -3480,7 +3379,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 28;
       return this;
     }
-
     /**
      *
      *
@@ -3508,7 +3406,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3524,7 +3421,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getTextExtractionDatasetMetadataBuilder() {
       return getTextExtractionDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3548,7 +3444,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3590,7 +3485,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder>
         textSentimentDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -3608,7 +3502,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextSentimentDatasetMetadata() {
       return datasetMetadataCase_ == 30;
     }
-
     /**
      *
      *
@@ -3637,7 +3530,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3663,7 +3555,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 30;
       return this;
     }
-
     /**
      *
      *
@@ -3686,7 +3577,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 30;
       return this;
     }
-
     /**
      *
      *
@@ -3725,7 +3615,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 30;
       return this;
     }
-
     /**
      *
      *
@@ -3753,7 +3642,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3769,7 +3657,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getTextSentimentDatasetMetadataBuilder() {
       return getTextSentimentDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3793,7 +3680,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3835,7 +3721,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder,
             com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder>
         tablesDatasetMetadataBuilder_;
-
     /**
      *
      *
@@ -3851,7 +3736,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTablesDatasetMetadata() {
       return datasetMetadataCase_ == 33;
     }
-
     /**
      *
      *
@@ -3877,7 +3761,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3901,7 +3784,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 33;
       return this;
     }
-
     /**
      *
      *
@@ -3922,7 +3804,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 33;
       return this;
     }
-
     /**
      *
      *
@@ -3957,7 +3838,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       datasetMetadataCase_ = 33;
       return this;
     }
-
     /**
      *
      *
@@ -3983,7 +3863,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3997,7 +3876,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getTablesDatasetMetadataBuilder() {
       return getTablesDatasetMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4019,7 +3897,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4055,7 +3932,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4079,7 +3955,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4103,7 +3978,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4126,7 +4000,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4145,7 +4018,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4171,7 +4043,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -4197,7 +4068,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4223,7 +4093,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4248,7 +4117,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4269,7 +4137,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4297,7 +4164,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -4321,7 +4187,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4345,7 +4210,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4368,7 +4232,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4387,7 +4250,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4413,7 +4275,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exampleCount_;
-
     /**
      *
      *
@@ -4429,7 +4290,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public int getExampleCount() {
       return exampleCount_;
     }
-
     /**
      *
      *
@@ -4449,7 +4309,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4474,7 +4333,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4489,7 +4347,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4510,7 +4367,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4533,7 +4389,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4553,7 +4408,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4581,7 +4435,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4601,7 +4454,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4616,7 +4468,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4635,7 +4486,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4663,7 +4513,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -4687,7 +4536,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4711,7 +4559,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4734,7 +4581,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4753,7 +4599,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

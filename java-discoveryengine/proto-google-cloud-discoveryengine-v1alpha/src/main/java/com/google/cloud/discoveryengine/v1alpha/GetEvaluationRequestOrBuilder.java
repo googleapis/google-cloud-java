@@ -48,7 +48,6 @@ public interface GetEvaluationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

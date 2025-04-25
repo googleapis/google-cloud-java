@@ -39,7 +39,6 @@ public interface CreateSiteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateSiteRequestOrBuilder
    * @return The siteId.
    */
   java.lang.String getSiteId();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CreateSiteRequestOrBuilder
    * @return Whether the site field is set.
    */
   boolean hasSite();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CreateSiteRequestOrBuilder
    * @return The site.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Site getSite();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface CreateSiteRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

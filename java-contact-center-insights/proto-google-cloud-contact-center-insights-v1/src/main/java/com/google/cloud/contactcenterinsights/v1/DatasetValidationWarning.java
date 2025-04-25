@@ -96,7 +96,6 @@ public enum DatasetValidationWarning implements com.google.protobuf.ProtocolMess
    * <code>DATASET_VALIDATION_WARNING_UNSPECIFIED = 0;</code>
    */
   public static final int DATASET_VALIDATION_WARNING_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -107,7 +106,6 @@ public enum DatasetValidationWarning implements com.google.protobuf.ProtocolMess
    * <code>TOO_MANY_INVALID_FEEDBACK_LABELS = 1;</code>
    */
   public static final int TOO_MANY_INVALID_FEEDBACK_LABELS_VALUE = 1;
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public enum DatasetValidationWarning implements com.google.protobuf.ProtocolMess
    * <code>INSUFFICIENT_FEEDBACK_LABELS = 2;</code>
    */
   public static final int INSUFFICIENT_FEEDBACK_LABELS_VALUE = 2;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public enum DatasetValidationWarning implements com.google.protobuf.ProtocolMess
    * <code>INSUFFICIENT_FEEDBACK_LABELS_PER_ANSWER = 3;</code>
    */
   public static final int INSUFFICIENT_FEEDBACK_LABELS_PER_ANSWER_VALUE = 3;
-
   /**
    *
    *

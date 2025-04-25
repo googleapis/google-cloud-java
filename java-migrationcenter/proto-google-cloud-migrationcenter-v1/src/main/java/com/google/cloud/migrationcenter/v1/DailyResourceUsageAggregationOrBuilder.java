@@ -36,7 +36,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return Whether the date field is set.
    */
   boolean hasDate();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return The date.
    */
   com.google.type.Date getDate();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return Whether the cpu field is set.
    */
   boolean hasCpu();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return The cpu.
    */
   com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.CPU getCpu();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return Whether the memory field is set.
    */
   boolean hasMemory();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return The memory.
    */
   com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Memory getMemory();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return The network.
    */
   com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Network getNetwork();
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return Whether the disk field is set.
    */
   boolean hasDisk();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface DailyResourceUsageAggregationOrBuilder
    * @return The disk.
    */
   com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation.Disk getDisk();
-
   /**
    *
    *

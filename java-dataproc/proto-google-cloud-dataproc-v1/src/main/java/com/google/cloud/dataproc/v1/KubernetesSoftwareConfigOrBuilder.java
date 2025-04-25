@@ -37,7 +37,6 @@ public interface KubernetesSoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; component_version = 1;</code>
    */
   int getComponentVersionCount();
-
   /**
    *
    *
@@ -51,11 +50,9 @@ public interface KubernetesSoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; component_version = 1;</code>
    */
   boolean containsComponentVersion(java.lang.String key);
-
   /** Use {@link #getComponentVersionMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getComponentVersion();
-
   /**
    *
    *
@@ -69,7 +66,6 @@ public interface KubernetesSoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; component_version = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getComponentVersionMap();
-
   /**
    *
    *
@@ -87,7 +83,6 @@ public interface KubernetesSoftwareConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface KubernetesSoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -141,11 +135,9 @@ public interface KubernetesSoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
-
   /**
    *
    *
@@ -165,7 +157,6 @@ public interface KubernetesSoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface KubernetesSoftwareConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

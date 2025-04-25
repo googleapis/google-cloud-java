@@ -33,7 +33,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.ListBackupsRequest)
     ListBackupsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBackupsRequest.newBuilder() to construct.
   private ListBackupsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +306,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int VIEW_FIELD_NUMBER = 6;
   private int view_ = 0;
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -559,7 +547,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -815,7 +802,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -845,7 +831,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +888,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +912,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +943,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -978,7 +959,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +999,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1043,7 +1021,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1064,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1154,7 +1127,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1149,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1170,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1187,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1211,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1265,7 +1233,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1288,7 +1255,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1310,7 +1276,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1293,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1317,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1372,7 +1335,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1394,7 +1356,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1376,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.backupdr.v1.BackupView.forNumber(view_);
       return result == null ? com.google.cloud.backupdr.v1.BackupView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1440,7 +1400,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

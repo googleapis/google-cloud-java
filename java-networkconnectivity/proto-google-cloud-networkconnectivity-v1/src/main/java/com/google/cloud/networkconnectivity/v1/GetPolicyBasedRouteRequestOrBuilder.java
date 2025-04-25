@@ -38,7 +38,6 @@ public interface GetPolicyBasedRouteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

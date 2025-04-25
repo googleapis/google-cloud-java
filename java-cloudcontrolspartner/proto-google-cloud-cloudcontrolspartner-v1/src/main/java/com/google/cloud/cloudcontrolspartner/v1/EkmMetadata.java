@@ -33,7 +33,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.EkmMetadata)
     EkmMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EkmMetadata.newBuilder() to construct.
   private EkmMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,7 +139,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>EKM_SOLUTION_UNSPECIFIED = 0;</code>
      */
     public static final int EKM_SOLUTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -151,7 +149,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>FORTANIX = 1;</code>
      */
     public static final int FORTANIX_VALUE = 1;
-
     /**
      *
      *
@@ -162,7 +159,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>FUTUREX = 2;</code>
      */
     public static final int FUTUREX_VALUE = 2;
-
     /**
      *
      *
@@ -173,7 +169,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>THALES = 3;</code>
      */
     public static final int THALES_VALUE = 3;
-
     /**
      *
      *
@@ -276,7 +271,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EKM_SOLUTION_FIELD_NUMBER = 1;
   private int ekmSolution_ = 0;
-
   /**
    *
    *
@@ -292,7 +286,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getEkmSolutionValue() {
     return ekmSolution_;
   }
-
   /**
    *
    *
@@ -317,7 +310,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ekmEndpointUri_ = "";
-
   /**
    *
    *
@@ -342,7 +334,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -540,7 +531,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -738,7 +728,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int ekmSolution_ = 0;
-
     /**
      *
      *
@@ -754,7 +743,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getEkmSolutionValue() {
       return ekmSolution_;
     }
-
     /**
      *
      *
@@ -773,7 +761,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.cloudcontrolspartner.v1.EkmMetadata.EkmSolution.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ekmEndpointUri_ = "";
-
     /**
      *
      *
@@ -860,7 +844,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -884,7 +867,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +907,6 @@ public final class EkmMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

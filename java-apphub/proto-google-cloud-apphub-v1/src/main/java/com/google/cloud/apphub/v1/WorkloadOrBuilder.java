@@ -37,7 +37,6 @@ public interface WorkloadOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface WorkloadOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface WorkloadOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface WorkloadOrBuilder
    * @return Whether the workloadReference field is set.
    */
   boolean hasWorkloadReference();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface WorkloadOrBuilder
    * @return The workloadReference.
    */
   com.google.cloud.apphub.v1.WorkloadReference getWorkloadReference();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface WorkloadOrBuilder
    * @return Whether the workloadProperties field is set.
    */
   boolean hasWorkloadProperties();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface WorkloadOrBuilder
    * @return The workloadProperties.
    */
   com.google.cloud.apphub.v1.WorkloadProperties getWorkloadProperties();
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public interface WorkloadOrBuilder
    * @return The discoveredWorkload.
    */
   java.lang.String getDiscoveredWorkload();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface WorkloadOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public interface WorkloadOrBuilder
    * @return The attributes.
    */
   com.google.cloud.apphub.v1.Attributes getAttributes();
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public interface WorkloadOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public interface WorkloadOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public interface WorkloadOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public interface WorkloadOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -368,7 +354,6 @@ public interface WorkloadOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -399,7 +384,6 @@ public interface WorkloadOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

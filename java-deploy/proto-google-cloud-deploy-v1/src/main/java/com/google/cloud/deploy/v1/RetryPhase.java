@@ -34,7 +34,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RetryPhase)
     RetryPhaseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetryPhase.newBuilder() to construct.
   private RetryPhase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_ATTEMPTS_FIELD_NUMBER = 1;
   private long totalAttempts_ = 0L;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BACKOFF_MODE_FIELD_NUMBER = 2;
   private int backoffMode_ = 0;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
   public int getBackoffModeValue() {
     return backoffMode_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.RetryAttempt> attempts_;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.deploy.v1.RetryAttempt> getAttemptsList() {
     return attempts_;
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       getAttemptsOrBuilderList() {
     return attempts_;
   }
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
   public int getAttemptsCount() {
     return attempts_.size();
   }
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.RetryAttempt getAttempts(int index) {
     return attempts_.get(index);
   }
-
   /**
    *
    *
@@ -393,7 +384,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +639,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long totalAttempts_;
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     public long getTotalAttempts() {
       return totalAttempts_;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int backoffMode_ = 0;
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     public int getBackoffModeValue() {
       return backoffMode_;
     }
-
     /**
      *
      *
@@ -746,7 +731,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +751,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.deploy.v1.BackoffMode.forNumber(backoffMode_);
       return result == null ? com.google.cloud.deploy.v1.BackoffMode.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -792,7 +775,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +936,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +981,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1003,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1025,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1046,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1067,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1081,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.RetryAttempt.Builder getAttemptsBuilder(int index) {
       return getAttemptsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1130,7 +1099,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1118,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(attempts_);
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1133,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       return getAttemptsFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.RetryAttempt.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1182,7 +1148,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       return getAttemptsFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.RetryAttempt.getDefaultInstance());
     }
-
     /**
      *
      *

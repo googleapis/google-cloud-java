@@ -37,7 +37,6 @@ public interface ReusableConfigWrapperOrBuilder
    * @return Whether the reusableConfig field is set.
    */
   boolean hasReusableConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ReusableConfigWrapperOrBuilder
    * @return The reusableConfig.
    */
   java.lang.String getReusableConfig();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface ReusableConfigWrapperOrBuilder
    * @return Whether the reusableConfigValues field is set.
    */
   boolean hasReusableConfigValues();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ReusableConfigWrapperOrBuilder
    * @return The reusableConfigValues.
    */
   com.google.cloud.security.privateca.v1beta1.ReusableConfigValues getReusableConfigValues();
-
   /**
    *
    *

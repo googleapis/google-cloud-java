@@ -38,7 +38,6 @@ public interface ModelMonitoringAlertConfigOrBuilder
    * @return Whether the emailAlertConfig field is set.
    */
   boolean hasEmailAlertConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ModelMonitoringAlertConfigOrBuilder
    * @return The emailAlertConfig.
    */
   com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig getEmailAlertConfig();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ModelMonitoringAlertConfigOrBuilder
    * @return A list containing the notificationChannels.
    */
   java.util.List<java.lang.String> getNotificationChannelsList();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface ModelMonitoringAlertConfigOrBuilder
    * @return The count of notificationChannels.
    */
   int getNotificationChannelsCount();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ModelMonitoringAlertConfigOrBuilder
    * @return The notificationChannels at the given index.
    */
   java.lang.String getNotificationChannels(int index);
-
   /**
    *
    *

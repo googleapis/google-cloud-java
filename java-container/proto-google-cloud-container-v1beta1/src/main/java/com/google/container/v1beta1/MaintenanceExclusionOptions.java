@@ -33,7 +33,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.MaintenanceExclusionOptions)
     MaintenanceExclusionOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaintenanceExclusionOptions.newBuilder() to construct.
   private MaintenanceExclusionOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,7 +123,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
      * <code>NO_UPGRADES = 0;</code>
      */
     public static final int NO_UPGRADES_VALUE = 0;
-
     /**
      *
      *
@@ -136,7 +134,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
      * <code>NO_MINOR_UPGRADES = 1;</code>
      */
     public static final int NO_MINOR_UPGRADES_VALUE = 1;
-
     /**
      *
      *
@@ -237,7 +234,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
 
   public static final int SCOPE_FIELD_NUMBER = 1;
   private int scope_ = 0;
-
   /**
    *
    *
@@ -254,7 +250,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
   public int getScopeValue() {
     return scope_;
   }
-
   /**
    *
    *
@@ -438,7 +433,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +615,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int scope_ = 0;
-
     /**
      *
      *
@@ -638,7 +631,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     public int getScopeValue() {
       return scope_;
     }
-
     /**
      *
      *
@@ -658,7 +650,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +670,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
           ? com.google.container.v1beta1.MaintenanceExclusionOptions.Scope.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

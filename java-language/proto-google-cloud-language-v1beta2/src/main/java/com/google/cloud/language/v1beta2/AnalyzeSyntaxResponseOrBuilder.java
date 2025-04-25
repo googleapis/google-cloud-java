@@ -34,7 +34,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.Sentence> getSentencesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
   com.google.cloud.language.v1beta2.Sentence getSentences(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
   int getSentencesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
       getSentencesOrBuilderList();
-
   /**
    *
    *
@@ -90,7 +86,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
   java.util.List<com.google.cloud.language.v1beta2.Token> getTokensList();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
   com.google.cloud.language.v1beta2.Token getTokens(int index);
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
   int getTokensCount();
-
   /**
    *
    *
@@ -124,7 +117,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder>
       getTokensOrBuilderList();
-
   /**
    *
    *
@@ -151,7 +143,6 @@ public interface AnalyzeSyntaxResponseOrBuilder
    * @return The language.
    */
   java.lang.String getLanguage();
-
   /**
    *
    *

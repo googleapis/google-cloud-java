@@ -39,7 +39,6 @@ public interface GenerateClientCertificateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface GenerateClientCertificateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface GenerateClientCertificateRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPemCsr();
-
   /**
    *
    *
@@ -157,7 +154,6 @@ public interface GenerateClientCertificateRequestOrBuilder
    * @return Whether the certDuration field is set.
    */
   boolean hasCertDuration();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface GenerateClientCertificateRequestOrBuilder
    * @return The certDuration.
    */
   com.google.protobuf.Duration getCertDuration();
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public interface GenerateClientCertificateRequestOrBuilder
    * @return The publicKey.
    */
   java.lang.String getPublicKey();
-
   /**
    *
    *

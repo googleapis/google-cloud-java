@@ -41,7 +41,6 @@ public interface GetFederationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

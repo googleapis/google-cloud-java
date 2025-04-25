@@ -39,7 +39,6 @@ public interface UpdateBudgetRequestOrBuilder
    * @return Whether the budget field is set.
    */
   boolean hasBudget();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateBudgetRequestOrBuilder
    * @return The budget.
    */
   com.google.cloud.billing.budgets.v1beta1.Budget getBudget();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateBudgetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateBudgetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

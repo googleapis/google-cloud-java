@@ -37,7 +37,6 @@ public interface DeleteGlobalNetworkEndpointGroupRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeleteGlobalNetworkEndpointGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DeleteGlobalNetworkEndpointGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface DeleteGlobalNetworkEndpointGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

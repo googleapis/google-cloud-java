@@ -33,7 +33,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ViewCollectionItemsResponse)
     ViewCollectionItemsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ViewCollectionItemsResponse.newBuilder() to construct.
   private ViewCollectionItemsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.CollectionItem> items_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.visionai.v1.CollectionItem> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
   public com.google.cloud.visionai.v1.CollectionItem getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
     public com.google.cloud.visionai.v1.CollectionItem.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.CollectionItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.CollectionItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ViewCollectionItemsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

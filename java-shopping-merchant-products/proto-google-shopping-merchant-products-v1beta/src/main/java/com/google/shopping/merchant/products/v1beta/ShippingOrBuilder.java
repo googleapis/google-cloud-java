@@ -36,7 +36,6 @@ public interface ShippingOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ShippingOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ShippingOrBuilder
    * @return The country.
    */
   java.lang.String getCountry();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ShippingOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ShippingOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface ShippingOrBuilder
    * @return The locationGroupName.
    */
   java.lang.String getLocationGroupName();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface ShippingOrBuilder
    * @return The postalCode.
    */
   java.lang.String getPostalCode();
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public interface ShippingOrBuilder
    * @return Whether the minHandlingTime field is set.
    */
   boolean hasMinHandlingTime();
-
   /**
    *
    *
@@ -284,7 +276,6 @@ public interface ShippingOrBuilder
    * @return Whether the maxHandlingTime field is set.
    */
   boolean hasMaxHandlingTime();
-
   /**
    *
    *
@@ -328,7 +319,6 @@ public interface ShippingOrBuilder
    * @return Whether the minTransitTime field is set.
    */
   boolean hasMinTransitTime();
-
   /**
    *
    *
@@ -372,7 +362,6 @@ public interface ShippingOrBuilder
    * @return Whether the maxTransitTime field is set.
    */
   boolean hasMaxTransitTime();
-
   /**
    *
    *

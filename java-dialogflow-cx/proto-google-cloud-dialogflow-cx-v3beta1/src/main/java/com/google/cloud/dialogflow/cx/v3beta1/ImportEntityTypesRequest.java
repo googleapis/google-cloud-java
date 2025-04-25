@@ -34,7 +34,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest)
     ImportEntityTypesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportEntityTypesRequest.newBuilder() to construct.
   private ImportEntityTypesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,7 +154,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      * <code>MERGE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int MERGE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -167,7 +165,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      * <code>REPLACE = 1;</code>
      */
     public static final int REPLACE_VALUE = 1;
-
     /**
      *
      *
@@ -179,7 +176,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      * <code>MERGE = 2;</code>
      */
     public static final int MERGE_VALUE = 2;
-
     /**
      *
      *
@@ -191,7 +187,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      * <code>RENAME = 3;</code>
      */
     public static final int RENAME_VALUE = 3;
-
     /**
      *
      *
@@ -203,7 +198,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      * <code>REPORT_CONFLICT = 4;</code>
      */
     public static final int REPORT_CONFLICT_VALUE = 4;
-
     /**
      *
      *
@@ -324,7 +318,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     private EntityTypesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -361,7 +354,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -388,7 +380,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
   }
 
   public static final int ENTITY_TYPES_URI_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -440,7 +430,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
   public boolean hasEntityTypesUri() {
     return entityTypesCase_ == 2;
   }
-
   /**
    *
    *
@@ -476,7 +465,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -514,7 +502,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
   }
 
   public static final int ENTITY_TYPES_CONTENT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -530,7 +517,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
   public boolean hasEntityTypesContent() {
     return entityTypesCase_ == 3;
   }
-
   /**
    *
    *
@@ -549,7 +535,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     }
     return com.google.cloud.dialogflow.cx.v3beta1.InlineSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -570,7 +555,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
 
   public static final int MERGE_OPTION_FIELD_NUMBER = 4;
   private int mergeOption_ = 0;
-
   /**
    *
    *
@@ -588,7 +572,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
   public int getMergeOptionValue() {
     return mergeOption_;
   }
-
   /**
    *
    *
@@ -617,7 +600,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetEntityType_ = "";
-
   /**
    *
    *
@@ -650,7 +632,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -905,7 +886,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1184,7 +1164,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1210,7 +1189,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1214,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1238,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1258,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1307,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     public boolean hasEntityTypesUri() {
       return entityTypesCase_ == 2;
     }
-
     /**
      *
      *
@@ -1369,7 +1343,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1379,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1436,7 +1408,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1435,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1501,7 +1471,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.cx.v3beta1.InlineSource.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.InlineSourceOrBuilder>
         entityTypesContentBuilder_;
-
     /**
      *
      *
@@ -1517,7 +1486,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     public boolean hasEntityTypesContent() {
       return entityTypesCase_ == 3;
     }
-
     /**
      *
      *
@@ -1543,7 +1511,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return com.google.cloud.dialogflow.cx.v3beta1.InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1567,7 +1534,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       entityTypesCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1554,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       entityTypesCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1588,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       entityTypesCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1613,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1626,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         getEntityTypesContentBuilder() {
       return getEntityTypesContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1685,7 +1647,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return com.google.cloud.dialogflow.cx.v3beta1.InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1720,7 +1681,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     }
 
     private int mergeOption_ = 0;
-
     /**
      *
      *
@@ -1738,7 +1698,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     public int getMergeOptionValue() {
       return mergeOption_;
     }
-
     /**
      *
      *
@@ -1759,7 +1718,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1741,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
           ? com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.MergeOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1808,7 +1765,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1830,7 +1786,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object targetEntityType_ = "";
-
     /**
      *
      *
@@ -1862,7 +1817,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1894,7 +1848,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1925,7 +1878,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1904,6 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

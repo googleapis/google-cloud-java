@@ -36,7 +36,6 @@ public interface TrainProcessorVersionMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TrainProcessorVersionMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1.CommonOperationMetadata getCommonMetadata();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TrainProcessorVersionMetadataOrBuilder
    * @return Whether the trainingDatasetValidation field is set.
    */
   boolean hasTrainingDatasetValidation();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface TrainProcessorVersionMetadataOrBuilder
    */
   com.google.cloud.documentai.v1.TrainProcessorVersionMetadata.DatasetValidation
       getTrainingDatasetValidation();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface TrainProcessorVersionMetadataOrBuilder
    * @return Whether the testDatasetValidation field is set.
    */
   boolean hasTestDatasetValidation();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface TrainProcessorVersionMetadataOrBuilder
    */
   com.google.cloud.documentai.v1.TrainProcessorVersionMetadata.DatasetValidation
       getTestDatasetValidation();
-
   /**
    *
    *

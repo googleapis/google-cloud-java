@@ -34,7 +34,6 @@ public interface ListEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entity entities = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Entity> getEntitiesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entity entities = 1;</code>
    */
   com.google.cloud.dataplex.v1.Entity getEntities(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entity entities = 1;</code>
    */
   int getEntitiesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListEntitiesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entity entities = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EntityOrBuilder> getEntitiesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListEntitiesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SubnetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SubnetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface SubnetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface SubnetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface SubnetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface SubnetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -151,11 +145,9 @@ public interface SubnetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface SubnetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface SubnetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -206,7 +196,6 @@ public interface SubnetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public interface SubnetOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -263,7 +251,6 @@ public interface SubnetOrBuilder
    * @return A list containing the ipv4Cidr.
    */
   java.util.List<java.lang.String> getIpv4CidrList();
-
   /**
    *
    *
@@ -276,7 +263,6 @@ public interface SubnetOrBuilder
    * @return The count of ipv4Cidr.
    */
   int getIpv4CidrCount();
-
   /**
    *
    *
@@ -290,7 +276,6 @@ public interface SubnetOrBuilder
    * @return The ipv4Cidr at the given index.
    */
   java.lang.String getIpv4Cidr(int index);
-
   /**
    *
    *
@@ -317,7 +302,6 @@ public interface SubnetOrBuilder
    * @return A list containing the ipv6Cidr.
    */
   java.util.List<java.lang.String> getIpv6CidrList();
-
   /**
    *
    *
@@ -330,7 +314,6 @@ public interface SubnetOrBuilder
    * @return The count of ipv6Cidr.
    */
   int getIpv6CidrCount();
-
   /**
    *
    *
@@ -344,7 +327,6 @@ public interface SubnetOrBuilder
    * @return The ipv6Cidr at the given index.
    */
   java.lang.String getIpv6Cidr(int index);
-
   /**
    *
    *
@@ -391,7 +373,6 @@ public interface SubnetOrBuilder
    * @return The enum numeric value on the wire for bondingType.
    */
   int getBondingTypeValue();
-
   /**
    *
    *
@@ -425,7 +406,6 @@ public interface SubnetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

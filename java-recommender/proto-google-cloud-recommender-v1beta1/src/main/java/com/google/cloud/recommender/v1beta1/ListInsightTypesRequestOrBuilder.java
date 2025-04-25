@@ -51,7 +51,6 @@ public interface ListInsightTypesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

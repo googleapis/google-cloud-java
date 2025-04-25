@@ -38,7 +38,6 @@ public interface CreateCustomDimensionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateCustomDimensionRequestOrBuilder
    * @return Whether the customDimension field is set.
    */
   boolean hasCustomDimension();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateCustomDimensionRequestOrBuilder
    * @return The customDimension.
    */
   com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension();
-
   /**
    *
    *

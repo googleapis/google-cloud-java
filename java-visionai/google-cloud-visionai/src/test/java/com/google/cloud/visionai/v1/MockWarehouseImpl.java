@@ -196,8 +196,7 @@ public class MockWarehouseImpl extends WarehouseImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateRetrievalUrl, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GenerateRetrievalUrl, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateRetrievalUrlResponse.class.getName(),
                   Exception.class.getName())));
@@ -942,8 +941,7 @@ public class MockWarehouseImpl extends WarehouseImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSearchHypernym, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateSearchHypernym, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchHypernym.class.getName(),
                   Exception.class.getName())));
@@ -964,8 +962,7 @@ public class MockWarehouseImpl extends WarehouseImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateSearchHypernym, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateSearchHypernym, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchHypernym.class.getName(),
                   Exception.class.getName())));
@@ -1007,8 +1004,7 @@ public class MockWarehouseImpl extends WarehouseImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteSearchHypernym, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteSearchHypernym, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1369,8 +1365,7 @@ public class MockWarehouseImpl extends WarehouseImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveCollectionItem, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method RemoveCollectionItem, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RemoveCollectionItemResponse.class.getName(),
                   Exception.class.getName())));

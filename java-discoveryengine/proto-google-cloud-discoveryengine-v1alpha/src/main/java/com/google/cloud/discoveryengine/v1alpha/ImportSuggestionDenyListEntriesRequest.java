@@ -36,7 +36,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesRequest)
     ImportSuggestionDenyListEntriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportSuggestionDenyListEntriesRequest.newBuilder() to construct.
   private ImportSuggestionDenyListEntriesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -87,7 +86,6 @@ public final class ImportSuggestionDenyListEntriesRequest
      */
     java.util.List<com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry>
         getEntriesList();
-
     /**
      *
      *
@@ -100,7 +98,6 @@ public final class ImportSuggestionDenyListEntriesRequest
      * </code>
      */
     com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry getEntries(int index);
-
     /**
      *
      *
@@ -113,7 +110,6 @@ public final class ImportSuggestionDenyListEntriesRequest
      * </code>
      */
     int getEntriesCount();
-
     /**
      *
      *
@@ -128,7 +124,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     java.util.List<
             ? extends com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntryOrBuilder>
         getEntriesOrBuilderList();
-
     /**
      *
      *
@@ -143,7 +138,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntryOrBuilder getEntriesOrBuilder(
         int index);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesRequest.InlineSource)
       InlineSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InlineSource.newBuilder() to construct.
     private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -197,7 +190,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry>
         entries_;
-
     /**
      *
      *
@@ -214,7 +206,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         getEntriesList() {
       return entries_;
     }
-
     /**
      *
      *
@@ -232,7 +223,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         getEntriesOrBuilderList() {
       return entries_;
     }
-
     /**
      *
      *
@@ -248,7 +238,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     public int getEntriesCount() {
       return entries_.size();
     }
-
     /**
      *
      *
@@ -264,7 +253,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     public com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry getEntries(int index) {
       return entries_.get(index);
     }
-
     /**
      *
      *
@@ -470,7 +458,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class ImportSuggestionDenyListEntriesRequest
           return entriesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -790,7 +776,6 @@ public final class ImportSuggestionDenyListEntriesRequest
           return entriesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -810,7 +795,6 @@ public final class ImportSuggestionDenyListEntriesRequest
           return entriesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -836,7 +820,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -861,7 +844,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -887,7 +869,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -913,7 +894,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -937,7 +917,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -962,7 +941,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -987,7 +965,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -1009,7 +986,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -1031,7 +1007,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -1047,7 +1022,6 @@ public final class ImportSuggestionDenyListEntriesRequest
           getEntriesBuilder(int index) {
         return getEntriesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1067,7 +1041,6 @@ public final class ImportSuggestionDenyListEntriesRequest
           return entriesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1088,7 +1061,6 @@ public final class ImportSuggestionDenyListEntriesRequest
           return java.util.Collections.unmodifiableList(entries_);
         }
       }
-
       /**
        *
        *
@@ -1107,7 +1079,6 @@ public final class ImportSuggestionDenyListEntriesRequest
                 com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1127,7 +1098,6 @@ public final class ImportSuggestionDenyListEntriesRequest
                 com.google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1251,7 +1221,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1285,7 +1254,6 @@ public final class ImportSuggestionDenyListEntriesRequest
   }
 
   public static final int INLINE_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1303,7 +1271,6 @@ public final class ImportSuggestionDenyListEntriesRequest
   public boolean hasInlineSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -1329,7 +1296,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     return com.google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesRequest
         .InlineSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1355,7 +1321,6 @@ public final class ImportSuggestionDenyListEntriesRequest
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1378,7 +1343,6 @@ public final class ImportSuggestionDenyListEntriesRequest
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -1404,7 +1368,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     }
     return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1433,7 +1396,6 @@ public final class ImportSuggestionDenyListEntriesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1460,7 +1422,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -1702,7 +1663,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1973,7 +1933,6 @@ public final class ImportSuggestionDenyListEntriesRequest
             com.google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesRequest
                 .InlineSourceOrBuilder>
         inlineSourceBuilder_;
-
     /**
      *
      *
@@ -1991,7 +1950,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     public boolean hasInlineSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -2025,7 +1983,6 @@ public final class ImportSuggestionDenyListEntriesRequest
             .InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2052,7 +2009,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2077,7 +2033,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2119,7 +2074,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2147,7 +2101,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -2164,7 +2117,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         getInlineSourceBuilder() {
       return getInlineSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2192,7 +2144,6 @@ public final class ImportSuggestionDenyListEntriesRequest
             .InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2243,7 +2194,6 @@ public final class ImportSuggestionDenyListEntriesRequest
             com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder,
             com.google.cloud.discoveryengine.v1alpha.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -2266,7 +2216,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -2299,7 +2248,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2329,7 +2277,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2357,7 +2304,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2397,7 +2343,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2430,7 +2375,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -2450,7 +2394,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     public com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2478,7 +2421,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2520,7 +2462,6 @@ public final class ImportSuggestionDenyListEntriesRequest
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2546,7 +2487,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2572,7 +2512,6 @@ public final class ImportSuggestionDenyListEntriesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2597,7 +2536,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2618,7 +2556,6 @@ public final class ImportSuggestionDenyListEntriesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

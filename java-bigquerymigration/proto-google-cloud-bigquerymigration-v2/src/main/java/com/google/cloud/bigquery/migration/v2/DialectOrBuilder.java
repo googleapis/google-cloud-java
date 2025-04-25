@@ -36,7 +36,6 @@ public interface DialectOrBuilder
    * @return Whether the bigqueryDialect field is set.
    */
   boolean hasBigqueryDialect();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DialectOrBuilder
    * @return The bigqueryDialect.
    */
   com.google.cloud.bigquery.migration.v2.BigQueryDialect getBigqueryDialect();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DialectOrBuilder
    * @return Whether the hiveqlDialect field is set.
    */
   boolean hasHiveqlDialect();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DialectOrBuilder
    * @return The hiveqlDialect.
    */
   com.google.cloud.bigquery.migration.v2.HiveQLDialect getHiveqlDialect();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface DialectOrBuilder
    * @return Whether the redshiftDialect field is set.
    */
   boolean hasRedshiftDialect();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface DialectOrBuilder
    * @return The redshiftDialect.
    */
   com.google.cloud.bigquery.migration.v2.RedshiftDialect getRedshiftDialect();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface DialectOrBuilder
    * @return Whether the teradataDialect field is set.
    */
   boolean hasTeradataDialect();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface DialectOrBuilder
    * @return The teradataDialect.
    */
   com.google.cloud.bigquery.migration.v2.TeradataDialect getTeradataDialect();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface DialectOrBuilder
    * @return Whether the oracleDialect field is set.
    */
   boolean hasOracleDialect();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface DialectOrBuilder
    * @return The oracleDialect.
    */
   com.google.cloud.bigquery.migration.v2.OracleDialect getOracleDialect();
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public interface DialectOrBuilder
    * @return Whether the sparksqlDialect field is set.
    */
   boolean hasSparksqlDialect();
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public interface DialectOrBuilder
    * @return The sparksqlDialect.
    */
   com.google.cloud.bigquery.migration.v2.SparkSQLDialect getSparksqlDialect();
-
   /**
    *
    *
@@ -258,7 +246,6 @@ public interface DialectOrBuilder
    * @return Whether the snowflakeDialect field is set.
    */
   boolean hasSnowflakeDialect();
-
   /**
    *
    *
@@ -271,7 +258,6 @@ public interface DialectOrBuilder
    * @return The snowflakeDialect.
    */
   com.google.cloud.bigquery.migration.v2.SnowflakeDialect getSnowflakeDialect();
-
   /**
    *
    *
@@ -295,7 +281,6 @@ public interface DialectOrBuilder
    * @return Whether the netezzaDialect field is set.
    */
   boolean hasNetezzaDialect();
-
   /**
    *
    *
@@ -308,7 +293,6 @@ public interface DialectOrBuilder
    * @return The netezzaDialect.
    */
   com.google.cloud.bigquery.migration.v2.NetezzaDialect getNetezzaDialect();
-
   /**
    *
    *
@@ -332,7 +316,6 @@ public interface DialectOrBuilder
    * @return Whether the azureSynapseDialect field is set.
    */
   boolean hasAzureSynapseDialect();
-
   /**
    *
    *
@@ -345,7 +328,6 @@ public interface DialectOrBuilder
    * @return The azureSynapseDialect.
    */
   com.google.cloud.bigquery.migration.v2.AzureSynapseDialect getAzureSynapseDialect();
-
   /**
    *
    *
@@ -370,7 +352,6 @@ public interface DialectOrBuilder
    * @return Whether the verticaDialect field is set.
    */
   boolean hasVerticaDialect();
-
   /**
    *
    *
@@ -383,7 +364,6 @@ public interface DialectOrBuilder
    * @return The verticaDialect.
    */
   com.google.cloud.bigquery.migration.v2.VerticaDialect getVerticaDialect();
-
   /**
    *
    *
@@ -407,7 +387,6 @@ public interface DialectOrBuilder
    * @return Whether the sqlServerDialect field is set.
    */
   boolean hasSqlServerDialect();
-
   /**
    *
    *
@@ -420,7 +399,6 @@ public interface DialectOrBuilder
    * @return The sqlServerDialect.
    */
   com.google.cloud.bigquery.migration.v2.SQLServerDialect getSqlServerDialect();
-
   /**
    *
    *
@@ -444,7 +422,6 @@ public interface DialectOrBuilder
    * @return Whether the postgresqlDialect field is set.
    */
   boolean hasPostgresqlDialect();
-
   /**
    *
    *
@@ -457,7 +434,6 @@ public interface DialectOrBuilder
    * @return The postgresqlDialect.
    */
   com.google.cloud.bigquery.migration.v2.PostgresqlDialect getPostgresqlDialect();
-
   /**
    *
    *
@@ -481,7 +457,6 @@ public interface DialectOrBuilder
    * @return Whether the prestoDialect field is set.
    */
   boolean hasPrestoDialect();
-
   /**
    *
    *
@@ -494,7 +469,6 @@ public interface DialectOrBuilder
    * @return The prestoDialect.
    */
   com.google.cloud.bigquery.migration.v2.PrestoDialect getPrestoDialect();
-
   /**
    *
    *
@@ -518,7 +492,6 @@ public interface DialectOrBuilder
    * @return Whether the mysqlDialect field is set.
    */
   boolean hasMysqlDialect();
-
   /**
    *
    *
@@ -531,7 +504,6 @@ public interface DialectOrBuilder
    * @return The mysqlDialect.
    */
   com.google.cloud.bigquery.migration.v2.MySQLDialect getMysqlDialect();
-
   /**
    *
    *
@@ -555,7 +527,6 @@ public interface DialectOrBuilder
    * @return Whether the db2Dialect field is set.
    */
   boolean hasDb2Dialect();
-
   /**
    *
    *
@@ -568,7 +539,6 @@ public interface DialectOrBuilder
    * @return The db2Dialect.
    */
   com.google.cloud.bigquery.migration.v2.DB2Dialect getDb2Dialect();
-
   /**
    *
    *
@@ -592,7 +562,6 @@ public interface DialectOrBuilder
    * @return Whether the sqliteDialect field is set.
    */
   boolean hasSqliteDialect();
-
   /**
    *
    *
@@ -605,7 +574,6 @@ public interface DialectOrBuilder
    * @return The sqliteDialect.
    */
   com.google.cloud.bigquery.migration.v2.SQLiteDialect getSqliteDialect();
-
   /**
    *
    *
@@ -629,7 +597,6 @@ public interface DialectOrBuilder
    * @return Whether the greenplumDialect field is set.
    */
   boolean hasGreenplumDialect();
-
   /**
    *
    *
@@ -642,7 +609,6 @@ public interface DialectOrBuilder
    * @return The greenplumDialect.
    */
   com.google.cloud.bigquery.migration.v2.GreenplumDialect getGreenplumDialect();
-
   /**
    *
    *

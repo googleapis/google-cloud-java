@@ -35,7 +35,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Table)
     TableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Table.newBuilder() to construct.
   private Table(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     java.util.List<com.google.privacy.dlp.v2.Value> getValuesList();
-
     /**
      *
      *
@@ -92,7 +90,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     com.google.privacy.dlp.v2.Value getValues(int index);
-
     /**
      *
      *
@@ -103,7 +100,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     int getValuesCount();
-
     /**
      *
      *
@@ -114,7 +110,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
     java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder> getValuesOrBuilderList();
-
     /**
      *
      *
@@ -126,7 +121,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Table.Row)
       RowOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Row.newBuilder() to construct.
     private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -176,7 +169,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.Value> values_;
-
     /**
      *
      *
@@ -190,7 +182,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.privacy.dlp.v2.Value> getValuesList() {
       return values_;
     }
-
     /**
      *
      *
@@ -205,7 +196,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getValuesOrBuilderList() {
       return values_;
     }
-
     /**
      *
      *
@@ -219,7 +209,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -233,7 +222,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Value getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -408,7 +396,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -670,7 +657,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -687,7 +673,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -704,7 +689,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -727,7 +711,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -747,7 +730,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -770,7 +752,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -793,7 +774,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -813,7 +793,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -833,7 +812,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -854,7 +832,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -874,7 +851,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -894,7 +870,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -907,7 +882,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.Value.Builder getValuesBuilder(int index) {
         return getValuesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -924,7 +898,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -942,7 +915,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(values_);
         }
       }
-
       /**
        *
        *
@@ -956,7 +928,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return getValuesFieldBuilder()
             .addBuilder(com.google.privacy.dlp.v2.Value.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -970,7 +941,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return getValuesFieldBuilder()
             .addBuilder(index, com.google.privacy.dlp.v2.Value.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1069,7 +1039,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> headers_;
-
   /**
    *
    *
@@ -1083,7 +1052,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -1098,7 +1066,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       getHeadersOrBuilderList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -1112,7 +1079,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public int getHeadersCount() {
     return headers_.size();
   }
-
   /**
    *
    *
@@ -1126,7 +1092,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.FieldId getHeaders(int index) {
     return headers_.get(index);
   }
-
   /**
    *
    *
@@ -1145,7 +1110,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Table.Row> rows_;
-
   /**
    *
    *
@@ -1159,7 +1123,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -1174,7 +1137,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       getRowsOrBuilderList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -1188,7 +1150,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public int getRowsCount() {
     return rows_.size();
   }
-
   /**
    *
    *
@@ -1202,7 +1163,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.Table.Row getRows(int index) {
     return rows_.get(index);
   }
-
   /**
    *
    *
@@ -1387,7 +1347,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1703,7 +1662,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1720,7 +1678,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1737,7 +1694,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1760,7 +1716,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1736,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1804,7 +1758,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1780,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1847,7 +1799,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1868,7 +1819,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1889,7 +1839,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1858,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1877,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1942,7 +1889,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.FieldId.Builder getHeadersBuilder(int index) {
       return getHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1959,7 +1905,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1977,7 +1922,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(headers_);
       }
     }
-
     /**
      *
      *
@@ -1991,7 +1935,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return getHeadersFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2005,7 +1948,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return getHeadersFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2068,7 +2010,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2085,7 +2026,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2102,7 +2042,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2125,7 +2064,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2145,7 +2083,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2168,7 +2105,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2191,7 +2127,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2211,7 +2146,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2231,7 +2165,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2252,7 +2185,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2272,7 +2204,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2292,7 +2223,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2235,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Table.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2322,7 +2251,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2340,7 +2268,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-
     /**
      *
      *
@@ -2354,7 +2281,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return getRowsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Table.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2368,7 +2294,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Table.Row.getDefaultInstance());
     }
-
     /**
      *
      *

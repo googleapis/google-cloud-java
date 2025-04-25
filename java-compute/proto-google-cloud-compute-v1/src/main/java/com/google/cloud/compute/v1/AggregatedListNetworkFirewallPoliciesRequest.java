@@ -34,7 +34,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest)
     AggregatedListNetworkFirewallPoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AggregatedListNetworkFirewallPoliciesRequest.newBuilder() to construct.
   private AggregatedListNetworkFirewallPoliciesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   public static final int INCLUDE_ALL_SCOPES_FIELD_NUMBER = 391327988;
   private boolean includeAllScopes_ = false;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasIncludeAllScopes() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +271,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +337,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -375,7 +360,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -402,7 +386,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -418,7 +401,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -437,7 +419,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
 
   public static final int SERVICE_PROJECT_NUMBER_FIELD_NUMBER = 316757497;
   private long serviceProjectNumber_ = 0L;
-
   /**
    *
    *
@@ -453,7 +434,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
   public boolean hasServiceProjectNumber() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -732,7 +712,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1033,7 +1012,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1048,7 +1026,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1071,7 +1048,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1094,7 +1070,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1116,7 +1091,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1108,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private boolean includeAllScopes_;
-
     /**
      *
      *
@@ -1175,7 +1147,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasIncludeAllScopes() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1191,7 +1162,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean getIncludeAllScopes() {
       return includeAllScopes_;
     }
-
     /**
      *
      *
@@ -1211,7 +1181,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1200,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -1247,7 +1215,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1263,7 +1230,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -1283,7 +1249,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1268,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1318,7 +1282,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1341,7 +1304,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1326,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1386,7 +1347,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1364,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1388,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1444,7 +1402,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1467,7 +1424,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1490,7 +1446,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1467,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1530,7 +1484,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1508,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1578,7 +1530,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1552,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1623,7 +1573,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1590,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1614,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -1682,7 +1629,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1698,7 +1644,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -1718,7 +1663,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1738,7 +1682,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     }
 
     private long serviceProjectNumber_;
-
     /**
      *
      *
@@ -1754,7 +1697,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public boolean hasServiceProjectNumber() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1770,7 +1712,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
     public long getServiceProjectNumber() {
       return serviceProjectNumber_;
     }
-
     /**
      *
      *
@@ -1790,7 +1731,6 @@ public final class AggregatedListNetworkFirewallPoliciesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

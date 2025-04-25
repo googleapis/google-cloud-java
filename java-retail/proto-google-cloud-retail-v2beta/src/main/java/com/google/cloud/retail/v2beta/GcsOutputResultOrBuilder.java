@@ -36,7 +36,6 @@ public interface GcsOutputResultOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
-
   /**
    *
    *

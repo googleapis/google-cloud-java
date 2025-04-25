@@ -33,7 +33,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ConsumerGroup)
     ConsumerGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConsumerGroup.newBuilder() to construct.
   private ConsumerGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -168,7 +165,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
   public int getTopicsCount() {
     return internalGetTopics().getMap().size();
   }
-
   /**
    *
    *
@@ -189,7 +185,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetTopics().getMap().containsKey(key);
   }
-
   /** Use {@link #getTopicsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -197,7 +192,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       getTopics() {
     return getTopicsMap();
   }
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       getTopicsMap() {
     return internalGetTopics().getMap();
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
         internalGetTopics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -449,7 +441,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -675,7 +666,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -700,7 +690,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +714,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,8 +801,7 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TopicsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TopicsConverter topicsConverter = new TopicsConverter();
 
@@ -856,7 +841,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
     public int getTopicsCount() {
       return internalGetTopics().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetTopics().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getTopicsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -885,7 +868,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
         getTopics() {
       return getTopicsMap();
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
         getTopicsMap() {
       return internalGetTopics().getImmutableMap();
     }
-
     /**
      *
      *
@@ -931,7 +912,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableTopics().ensureBuilderMap();
       return map.containsKey(key) ? topicsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -965,7 +945,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableTopics().clear();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableTopics().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.managedkafka.v1.ConsumerTopicMetadata>
@@ -994,7 +972,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetMutableTopics().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1020,7 +997,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class ConsumerGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

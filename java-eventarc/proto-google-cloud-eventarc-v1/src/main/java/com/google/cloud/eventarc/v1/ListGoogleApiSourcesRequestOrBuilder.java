@@ -38,7 +38,6 @@ public interface ListGoogleApiSourcesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface ListGoogleApiSourcesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface ListGoogleApiSourcesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface ListGoogleApiSourcesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

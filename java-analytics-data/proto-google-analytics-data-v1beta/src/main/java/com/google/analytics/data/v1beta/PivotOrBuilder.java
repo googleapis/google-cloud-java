@@ -39,7 +39,6 @@ public interface PivotOrBuilder
    * @return A list containing the fieldNames.
    */
   java.util.List<java.lang.String> getFieldNamesList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface PivotOrBuilder
    * @return The count of fieldNames.
    */
   int getFieldNamesCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface PivotOrBuilder
    * @return The fieldNames at the given index.
    */
   java.lang.String getFieldNames(int index);
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface PivotOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.OrderBy> getOrderBysList();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface PivotOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 2;</code>
    */
   com.google.analytics.data.v1beta.OrderBy getOrderBys(int index);
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface PivotOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 2;</code>
    */
   int getOrderBysCount();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface PivotOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.OrderByOrBuilder>
       getOrderBysOrBuilderList();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface PivotOrBuilder
    * @return A list containing the metricAggregations.
    */
   java.util.List<com.google.analytics.data.v1beta.MetricAggregation> getMetricAggregationsList();
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public interface PivotOrBuilder
    * @return The count of metricAggregations.
    */
   int getMetricAggregationsCount();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface PivotOrBuilder
    * @return The metricAggregations at the given index.
    */
   com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index);
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public interface PivotOrBuilder
    * @return A list containing the enum numeric values on the wire for metricAggregations.
    */
   java.util.List<java.lang.Integer> getMetricAggregationsValueList();
-
   /**
    *
    *

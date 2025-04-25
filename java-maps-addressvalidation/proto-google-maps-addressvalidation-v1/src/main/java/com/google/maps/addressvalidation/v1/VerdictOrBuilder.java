@@ -43,7 +43,6 @@ public interface VerdictOrBuilder
    * @return The enum numeric value on the wire for inputGranularity.
    */
   int getInputGranularityValue();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface VerdictOrBuilder
    * @return The enum numeric value on the wire for validationGranularity.
    */
   int getValidationGranularityValue();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface VerdictOrBuilder
    * @return The enum numeric value on the wire for geocodeGranularity.
    */
   int getGeocodeGranularityValue();
-
   /**
    *
    *

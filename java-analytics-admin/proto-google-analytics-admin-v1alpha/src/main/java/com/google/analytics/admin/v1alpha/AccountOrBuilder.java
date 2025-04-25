@@ -38,7 +38,6 @@ public interface AccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface AccountOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AccountOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface AccountOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface AccountOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface AccountOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface AccountOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface AccountOrBuilder
    * @return The gmpOrganization.
    */
   java.lang.String getGmpOrganization();
-
   /**
    *
    *

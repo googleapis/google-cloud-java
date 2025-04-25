@@ -33,7 +33,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.NotificationMessage)
     NotificationMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationMessage.newBuilder() to construct.
   private NotificationMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     private EventCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notificationConfigName_ = "";
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FINDING_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
   public boolean hasFinding() {
     return eventCase_ == 2;
   }
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.securitycenter.v2.Finding.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
 
   public static final int RESOURCE_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v2.Resource resource_;
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.securitycenter.v2.Resource.getDefaultInstance()
         : resource_;
   }
-
   /**
    *
    *
@@ -473,7 +463,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -732,7 +721,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object notificationConfigName_ = "";
-
     /**
      *
      *
@@ -755,7 +743,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -800,7 +786,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
             com.google.cloud.securitycenter.v2.Finding.Builder,
             com.google.cloud.securitycenter.v2.FindingOrBuilder>
         findingBuilder_;
-
     /**
      *
      *
@@ -864,7 +847,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     public boolean hasFinding() {
       return eventCase_ == 2;
     }
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         return com.google.cloud.securitycenter.v2.Finding.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       eventCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       eventCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +949,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       eventCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +975,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +988,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     public com.google.cloud.securitycenter.v2.Finding.Builder getFindingBuilder() {
       return getFindingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1033,7 +1009,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         return com.google.cloud.securitycenter.v2.Finding.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1049,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
             com.google.cloud.securitycenter.v2.Resource.Builder,
             com.google.cloud.securitycenter.v2.ResourceOrBuilder>
         resourceBuilder_;
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     public boolean hasResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1110,7 +1083,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         return resourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1105,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1125,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1152,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1171,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1185,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1236,7 +1203,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
             : resource_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.chat.v1.ListReactionsResponse)
     ListReactionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListReactionsResponse.newBuilder() to construct.
   private ListReactionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.Reaction> reactions_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.chat.v1.Reaction> getReactionsList() {
     return reactions_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       getReactionsOrBuilderList() {
     return reactions_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
   public int getReactionsCount() {
     return reactions_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
   public com.google.chat.v1.Reaction getReactions(int index) {
     return reactions_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -639,7 +630,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return reactionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return reactionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return reactionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -696,7 +684,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +747,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +766,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +855,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
     public com.google.chat.v1.Reaction.Builder getReactionsBuilder(int index) {
       return getReactionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -893,7 +871,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return reactionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(reactions_);
       }
     }
-
     /**
      *
      *
@@ -925,7 +901,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       return getReactionsFieldBuilder()
           .addBuilder(com.google.chat.v1.Reaction.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -939,7 +914,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       return getReactionsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.Reaction.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +945,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -995,7 +968,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1019,7 +991,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1013,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1031,6 @@ public final class ListReactionsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

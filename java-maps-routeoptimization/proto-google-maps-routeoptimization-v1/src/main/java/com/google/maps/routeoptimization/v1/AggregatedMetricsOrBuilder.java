@@ -50,7 +50,6 @@ public interface AggregatedMetricsOrBuilder
    * @return Whether the travelDuration field is set.
    */
   boolean hasTravelDuration();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AggregatedMetricsOrBuilder
    * @return The travelDuration.
    */
   com.google.protobuf.Duration getTravelDuration();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface AggregatedMetricsOrBuilder
    * @return Whether the waitDuration field is set.
    */
   boolean hasWaitDuration();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface AggregatedMetricsOrBuilder
    * @return The waitDuration.
    */
   com.google.protobuf.Duration getWaitDuration();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface AggregatedMetricsOrBuilder
    * @return Whether the delayDuration field is set.
    */
   boolean hasDelayDuration();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface AggregatedMetricsOrBuilder
    * @return The delayDuration.
    */
   com.google.protobuf.Duration getDelayDuration();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface AggregatedMetricsOrBuilder
    * @return Whether the breakDuration field is set.
    */
   boolean hasBreakDuration();
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public interface AggregatedMetricsOrBuilder
    * @return The breakDuration.
    */
   com.google.protobuf.Duration getBreakDuration();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface AggregatedMetricsOrBuilder
    * @return Whether the visitDuration field is set.
    */
   boolean hasVisitDuration();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface AggregatedMetricsOrBuilder
    * @return The visitDuration.
    */
   com.google.protobuf.Duration getVisitDuration();
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public interface AggregatedMetricsOrBuilder
    * @return Whether the totalDuration field is set.
    */
   boolean hasTotalDuration();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface AggregatedMetricsOrBuilder
    * @return The totalDuration.
    */
   com.google.protobuf.Duration getTotalDuration();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface AggregatedMetricsOrBuilder
    * </code>
    */
   int getMaxLoadsCount();
-
   /**
    *
    *
@@ -326,12 +313,10 @@ public interface AggregatedMetricsOrBuilder
    * </code>
    */
   boolean containsMaxLoads(java.lang.String key);
-
   /** Use {@link #getMaxLoadsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.maps.routeoptimization.v1.ShipmentRoute.VehicleLoad>
       getMaxLoads();
-
   /**
    *
    *
@@ -350,7 +335,6 @@ public interface AggregatedMetricsOrBuilder
    */
   java.util.Map<java.lang.String, com.google.maps.routeoptimization.v1.ShipmentRoute.VehicleLoad>
       getMaxLoadsMap();
-
   /**
    *
    *
@@ -372,7 +356,6 @@ public interface AggregatedMetricsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.maps.routeoptimization.v1.ShipmentRoute.VehicleLoad defaultValue);
-
   /**
    *
    *

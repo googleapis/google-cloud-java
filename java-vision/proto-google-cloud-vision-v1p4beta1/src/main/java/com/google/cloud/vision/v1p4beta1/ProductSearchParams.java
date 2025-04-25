@@ -33,7 +33,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.ProductSearchParams)
     ProductSearchParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductSearchParams.newBuilder() to construct.
   private ProductSearchParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 9;
   private com.google.cloud.vision.v1p4beta1.BoundingPoly boundingPoly_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   public boolean hasBoundingPoly() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
         : boundingPoly_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productSet_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList productCategories_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getProductCategoriesList() {
     return productCategories_;
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   public int getProductCategoriesCount() {
     return productCategories_.size();
   }
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   public java.lang.String getProductCategories(int index) {
     return productCategories_.get(index);
   }
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -544,7 +532,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -801,7 +788,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder,
             com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder>
         boundingPolyBuilder_;
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public boolean hasBoundingPoly() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -839,7 +824,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         return boundingPolyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -863,7 +847,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +932,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -972,7 +951,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             : boundingPoly_;
       }
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object productSet_ = "";
-
     /**
      *
      *
@@ -1029,7 +1006,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1081,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       productCategories_.makeImmutable();
       return productCategories_;
     }
-
     /**
      *
      *
@@ -1188,7 +1159,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public int getProductCategoriesCount() {
       return productCategories_.size();
     }
-
     /**
      *
      *
@@ -1210,7 +1180,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public java.lang.String getProductCategories(int index) {
       return productCategories_.get(index);
     }
-
     /**
      *
      *
@@ -1232,7 +1201,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getProductCategoriesBytes(int index) {
       return productCategories_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1262,7 +1230,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1258,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1283,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1307,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1338,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1404,7 +1367,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1396,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1463,7 +1424,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1448,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

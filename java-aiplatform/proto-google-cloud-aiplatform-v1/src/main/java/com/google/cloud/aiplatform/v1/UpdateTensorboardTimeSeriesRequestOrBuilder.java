@@ -42,7 +42,6 @@ public interface UpdateTensorboardTimeSeriesRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateTensorboardTimeSeriesRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface UpdateTensorboardTimeSeriesRequestOrBuilder
    * @return Whether the tensorboardTimeSeries field is set.
    */
   boolean hasTensorboardTimeSeries();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface UpdateTensorboardTimeSeriesRequestOrBuilder
    * @return The tensorboardTimeSeries.
    */
   com.google.cloud.aiplatform.v1.TensorboardTimeSeries getTensorboardTimeSeries();
-
   /**
    *
    *

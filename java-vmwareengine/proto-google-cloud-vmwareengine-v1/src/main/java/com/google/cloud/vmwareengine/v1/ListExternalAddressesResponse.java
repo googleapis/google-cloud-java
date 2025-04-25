@@ -34,7 +34,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.ListExternalAddressesResponse)
     ListExternalAddressesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListExternalAddressesResponse.newBuilder() to construct.
   private ListExternalAddressesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.ExternalAddress> externalAddresses_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       getExternalAddressesList() {
     return externalAddresses_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       getExternalAddressesOrBuilderList() {
     return externalAddresses_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
   public int getExternalAddressesCount() {
     return externalAddresses_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
   public com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddresses(int index) {
     return externalAddresses_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -254,7 +243,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -460,7 +448,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -767,7 +754,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return externalAddressesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return externalAddressesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return externalAddressesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +972,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +985,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         int index) {
       return getExternalAddressesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return externalAddressesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1019,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(externalAddresses_);
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1032,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       return getExternalAddressesFieldBuilder()
           .addBuilder(com.google.cloud.vmwareengine.v1.ExternalAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       return getExternalAddressesFieldBuilder()
           .addBuilder(index, com.google.cloud.vmwareengine.v1.ExternalAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1111,7 +1081,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1135,7 +1104,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1127,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1149,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1167,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1200,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1252,7 +1216,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1268,7 +1231,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1285,7 +1247,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1302,7 +1263,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1327,7 +1287,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1310,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1330,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1349,6 @@ public final class ListExternalAddressesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

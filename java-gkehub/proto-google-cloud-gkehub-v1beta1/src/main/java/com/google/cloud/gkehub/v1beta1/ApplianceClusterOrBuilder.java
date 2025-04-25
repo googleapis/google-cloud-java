@@ -39,7 +39,6 @@ public interface ApplianceClusterOrBuilder
    * @return The resourceLink.
    */
   java.lang.String getResourceLink();
-
   /**
    *
    *

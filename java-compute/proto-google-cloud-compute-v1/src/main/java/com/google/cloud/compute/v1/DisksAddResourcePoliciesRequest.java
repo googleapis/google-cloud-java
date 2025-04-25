@@ -32,7 +32,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DisksAddResourcePoliciesRequest)
     DisksAddResourcePoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisksAddResourcePoliciesRequest.newBuilder() to construct.
   private DisksAddResourcePoliciesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
     return resourcePolicies_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
   public int getResourcePoliciesCount() {
     return resourcePolicies_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
   public java.lang.String getResourcePolicies(int index) {
     return resourcePolicies_.get(index);
   }
-
   /**
    *
    *
@@ -300,7 +295,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -499,7 +493,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -515,7 +508,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       resourcePolicies_.makeImmutable();
       return resourcePolicies_;
     }
-
     /**
      *
      *
@@ -530,7 +522,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     public int getResourcePoliciesCount() {
       return resourcePolicies_.size();
     }
-
     /**
      *
      *
@@ -546,7 +537,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     public java.lang.String getResourcePolicies(int index) {
       return resourcePolicies_.get(index);
     }
-
     /**
      *
      *
@@ -562,7 +552,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     public com.google.protobuf.ByteString getResourcePoliciesBytes(int index) {
       return resourcePolicies_.getByteString(index);
     }
-
     /**
      *
      *
@@ -586,7 +575,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -609,7 +597,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +616,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +634,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

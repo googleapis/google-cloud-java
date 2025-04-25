@@ -33,7 +33,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.BatchCreateRowsResponse)
     BatchCreateRowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCreateRowsResponse.newBuilder() to construct.
   private BatchCreateRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.Row> rows_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.area120.tables.v1alpha1.Row> getRowsList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       getRowsOrBuilderList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
   public int getRowsCount() {
     return rows_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
   public com.google.area120.tables.v1alpha1.Row getRows(int index) {
     return rows_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -581,7 +573,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -598,7 +589,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +734,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +753,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +784,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
     public com.google.area120.tables.v1alpha1.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -820,7 +800,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -838,7 +817,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-
     /**
      *
      *
@@ -852,7 +830,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       return getRowsFieldBuilder()
           .addBuilder(com.google.area120.tables.v1alpha1.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -866,7 +843,6 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.area120.tables.v1alpha1.Row.getDefaultInstance());
     }
-
     /**
      *
      *

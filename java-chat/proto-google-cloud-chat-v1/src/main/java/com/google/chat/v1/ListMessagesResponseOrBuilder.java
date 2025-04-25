@@ -34,7 +34,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.chat.v1.Message messages = 1;</code>
    */
   java.util.List<com.google.chat.v1.Message> getMessagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.chat.v1.Message messages = 1;</code>
    */
   com.google.chat.v1.Message getMessages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.chat.v1.Message messages = 1;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.chat.v1.Message messages = 1;</code>
    */
   java.util.List<? extends com.google.chat.v1.MessageOrBuilder> getMessagesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListMessagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

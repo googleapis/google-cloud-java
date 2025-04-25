@@ -34,7 +34,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.Node nodes = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.Node> getNodesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.Node nodes = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.Node getNodes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.Node nodes = 1;</code>
    */
   int getNodesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.Node nodes = 1;</code>
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.NodeOrBuilder> getNodesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListNodesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

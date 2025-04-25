@@ -33,7 +33,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1.ManagementSettings)
     ManagementSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManagementSettings.newBuilder() to construct.
   private ManagementSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,7 +125,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * <code>RENEWAL_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int RENEWAL_METHOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * <code>AUTOMATIC_RENEWAL = 1;</code>
      */
     public static final int AUTOMATIC_RENEWAL_VALUE = 1;
-
     /**
      *
      *
@@ -242,7 +239,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int RENEWAL_METHOD_FIELD_NUMBER = 3;
   private int renewalMethod_ = 0;
-
   /**
    *
    *
@@ -260,7 +256,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
   public int getRenewalMethodValue() {
     return renewalMethod_;
   }
-
   /**
    *
    *
@@ -285,7 +280,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int TRANSFER_LOCK_STATE_FIELD_NUMBER = 4;
   private int transferLockState_ = 0;
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
   public int getTransferLockStateValue() {
     return transferLockState_;
   }
-
   /**
    *
    *
@@ -496,7 +489,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +683,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int renewalMethod_ = 0;
-
     /**
      *
      *
@@ -709,7 +700,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     public int getRenewalMethodValue() {
       return renewalMethod_;
     }
-
     /**
      *
      *
@@ -730,7 +720,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +741,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.domains.v1.ManagementSettings.RenewalMethod.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -777,7 +765,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +786,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private int transferLockState_ = 0;
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     public int getTransferLockStateValue() {
       return transferLockState_;
     }
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
           com.google.cloud.domains.v1.TransferLockState.forNumber(transferLockState_);
       return result == null ? com.google.cloud.domains.v1.TransferLockState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

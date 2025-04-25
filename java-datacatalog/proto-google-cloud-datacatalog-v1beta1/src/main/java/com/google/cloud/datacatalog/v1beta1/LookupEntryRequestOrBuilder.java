@@ -44,7 +44,6 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the linkedResource field is set.
    */
   boolean hasLinkedResource();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the sqlResource field is set.
    */
   boolean hasSqlResource();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The sqlResource.
    */
   java.lang.String getSqlResource();
-
   /**
    *
    *

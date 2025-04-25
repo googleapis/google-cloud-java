@@ -36,7 +36,6 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -151,11 +145,9 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -203,7 +193,6 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -214,11 +203,9 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -229,7 +216,6 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -244,7 +230,6 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -269,7 +254,6 @@ public interface ClusterOrBuilder
    * @return The dataplaneServiceEndpoint.
    */
   java.lang.String getDataplaneServiceEndpoint();
-
   /**
    *
    *
@@ -298,7 +282,6 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -326,7 +309,6 @@ public interface ClusterOrBuilder
    * @return The pscTarget.
    */
   java.lang.String getPscTarget();
-
   /**
    *
    *

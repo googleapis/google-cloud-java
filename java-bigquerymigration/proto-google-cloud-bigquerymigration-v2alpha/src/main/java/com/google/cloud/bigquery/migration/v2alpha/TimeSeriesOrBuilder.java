@@ -38,7 +38,6 @@ public interface TimeSeriesOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface TimeSeriesOrBuilder
    * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface TimeSeriesOrBuilder
    * @return The enum numeric value on the wire for metricKind.
    */
   int getMetricKindValue();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface TimeSeriesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2alpha.Point> getPointsList();
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface TimeSeriesOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2alpha.Point getPoints(int index);
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface TimeSeriesOrBuilder
    * </code>
    */
   int getPointsCount();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface TimeSeriesOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2alpha.PointOrBuilder>
       getPointsOrBuilderList();
-
   /**
    *
    *

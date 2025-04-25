@@ -33,7 +33,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.FrequencyCap)
     FrequencyCapOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FrequencyCap.newBuilder() to construct.
   private FrequencyCap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MAX_IMPRESSIONS_FIELD_NUMBER = 1;
   private long maxImpressions_ = 0L;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxImpressions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_AMOUNT_FIELD_NUMBER = 2;
   private long timeAmount_ = 0L;
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeAmount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_UNIT_FIELD_NUMBER = 3;
   private int timeUnit_ = 0;
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeUnit() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
   public int getTimeUnitValue() {
     return timeUnit_;
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +583,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long maxImpressions_;
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxImpressions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     public long getMaxImpressions() {
       return maxImpressions_;
     }
-
     /**
      *
      *
@@ -644,7 +632,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +651,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long timeAmount_;
-
     /**
      *
      *
@@ -680,7 +666,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeAmount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -696,7 +681,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     public long getTimeAmount() {
       return timeAmount_;
     }
-
     /**
      *
      *
@@ -716,7 +700,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +719,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int timeUnit_ = 0;
-
     /**
      *
      *
@@ -752,7 +734,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeUnit() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -768,7 +749,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
     public int getTimeUnitValue() {
       return timeUnit_;
     }
-
     /**
      *
      *
@@ -787,7 +767,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +786,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
           ? com.google.ads.admanager.v1.TimeUnitEnum.TimeUnit.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -829,7 +807,6 @@ public final class FrequencyCap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

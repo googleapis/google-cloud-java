@@ -34,7 +34,6 @@ public interface HiveTableOptionsOrBuilder
    * <code>map&lt;string, string&gt; parameters = 1;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface HiveTableOptionsOrBuilder
    * <code>map&lt;string, string&gt; parameters = 1;</code>
    */
   boolean containsParameters(java.lang.String key);
-
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface HiveTableOptionsOrBuilder
    * <code>map&lt;string, string&gt; parameters = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface HiveTableOptionsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -99,7 +94,6 @@ public interface HiveTableOptionsOrBuilder
    * @return The tableType.
    */
   java.lang.String getTableType();
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public interface HiveTableOptionsOrBuilder
    * @return Whether the storageDescriptor field is set.
    */
   boolean hasStorageDescriptor();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface HiveTableOptionsOrBuilder
    * @return The storageDescriptor.
    */
   com.google.cloud.bigquery.biglake.v1.HiveTableOptions.StorageDescriptor getStorageDescriptor();
-
   /**
    *
    *

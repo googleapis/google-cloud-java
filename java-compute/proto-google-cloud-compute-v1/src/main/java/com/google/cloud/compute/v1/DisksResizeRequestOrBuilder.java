@@ -36,7 +36,6 @@ public interface DisksResizeRequestOrBuilder
    * @return Whether the sizeGb field is set.
    */
   boolean hasSizeGb();
-
   /**
    *
    *

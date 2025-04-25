@@ -40,7 +40,6 @@ public interface ListLocalInventoriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface ListLocalInventoriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

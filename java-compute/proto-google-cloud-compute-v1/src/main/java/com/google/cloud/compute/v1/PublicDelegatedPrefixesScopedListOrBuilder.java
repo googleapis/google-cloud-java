@@ -37,7 +37,6 @@ public interface PublicDelegatedPrefixesScopedListOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.PublicDelegatedPrefix>
       getPublicDelegatedPrefixesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface PublicDelegatedPrefixesScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.PublicDelegatedPrefix getPublicDelegatedPrefixes(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface PublicDelegatedPrefixesScopedListOrBuilder
    * </code>
    */
   int getPublicDelegatedPrefixesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface PublicDelegatedPrefixesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PublicDelegatedPrefixOrBuilder>
       getPublicDelegatedPrefixesOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface PublicDelegatedPrefixesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface PublicDelegatedPrefixesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

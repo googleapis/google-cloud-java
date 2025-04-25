@@ -39,7 +39,6 @@ public interface DeleteCertificateMapEntryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

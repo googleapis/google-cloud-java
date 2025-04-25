@@ -40,7 +40,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span)
     SpanOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Span.newBuilder() to construct.
   private Span(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -168,7 +167,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>SPAN_KIND_UNSPECIFIED = 0;</code>
      */
     public static final int SPAN_KIND_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -179,7 +177,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNAL = 1;</code>
      */
     public static final int INTERNAL_VALUE = 1;
-
     /**
      *
      *
@@ -191,7 +188,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVER = 2;</code>
      */
     public static final int SERVER_VALUE = 2;
-
     /**
      *
      *
@@ -203,7 +199,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>CLIENT = 3;</code>
      */
     public static final int CLIENT_VALUE = 3;
-
     /**
      *
      *
@@ -217,7 +212,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>PRODUCER = 4;</code>
      */
     public static final int PRODUCER_VALUE = 4;
-
     /**
      *
      *
@@ -343,7 +337,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getAttributeMapCount();
-
     /**
      *
      *
@@ -361,12 +354,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     boolean containsAttributeMap(java.lang.String key);
-
     /** Use {@link #getAttributeMapMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
         getAttributeMap();
-
     /**
      *
      *
@@ -385,7 +376,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
         getAttributeMapMap();
-
     /**
      *
      *
@@ -407,7 +397,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         com.google.devtools.cloudtrace.v2.AttributeValue defaultValue);
-
     /**
      *
      *
@@ -441,7 +430,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     int getDroppedAttributesCount();
   }
-
   /**
    *
    *
@@ -456,7 +444,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.Attributes)
       AttributesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Attributes.newBuilder() to construct.
     private Attributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -532,7 +519,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public int getAttributeMapCount() {
       return internalGetAttributeMap().getMap().size();
     }
-
     /**
      *
      *
@@ -556,7 +542,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAttributeMap().getMap().containsKey(key);
     }
-
     /** Use {@link #getAttributeMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -564,7 +549,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         getAttributeMap() {
       return getAttributeMapMap();
     }
-
     /**
      *
      *
@@ -586,7 +570,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         getAttributeMapMap() {
       return internalGetAttributeMap().getMap();
     }
-
     /**
      *
      *
@@ -615,7 +598,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           internalGetAttributeMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -648,7 +630,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DROPPED_ATTRIBUTES_COUNT_FIELD_NUMBER = 2;
     private int droppedAttributesCount_ = 0;
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1094,8 +1074,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return AttributeMapDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AttributeMapConverter attributeMapConverter =
           new AttributeMapConverter();
@@ -1136,7 +1115,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getAttributeMapCount() {
         return internalGetAttributeMap().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -1160,7 +1138,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetAttributeMap().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getAttributeMapMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -1168,7 +1145,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           getAttributeMap() {
         return getAttributeMapMap();
       }
-
       /**
        *
        *
@@ -1190,7 +1166,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           getAttributeMapMap() {
         return internalGetAttributeMap().getImmutableMap();
       }
-
       /**
        *
        *
@@ -1220,7 +1195,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             map = internalGetMutableAttributeMap().ensureBuilderMap();
         return map.containsKey(key) ? attributeMapConverter.build(map.get(key)) : defaultValue;
       }
-
       /**
        *
        *
@@ -1256,7 +1230,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableAttributeMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -1280,7 +1253,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableAttributeMap().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue>
@@ -1288,7 +1260,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return internalGetMutableAttributeMap().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -1317,7 +1288,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -1347,7 +1317,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -1381,7 +1350,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int droppedAttributesCount_;
-
       /**
        *
        *
@@ -1399,7 +1367,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getDroppedAttributesCount() {
         return droppedAttributesCount_;
       }
-
       /**
        *
        *
@@ -1421,7 +1388,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1523,7 +1489,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the time field is set.
      */
     boolean hasTime();
-
     /**
      *
      *
@@ -1536,7 +1501,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The time.
      */
     com.google.protobuf.Timestamp getTime();
-
     /**
      *
      *
@@ -1560,7 +1524,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotation field is set.
      */
     boolean hasAnnotation();
-
     /**
      *
      *
@@ -1573,7 +1536,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The annotation.
      */
     com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation getAnnotation();
-
     /**
      *
      *
@@ -1597,7 +1559,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the messageEvent field is set.
      */
     boolean hasMessageEvent();
-
     /**
      *
      *
@@ -1610,7 +1571,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The messageEvent.
      */
     com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent getMessageEvent();
-
     /**
      *
      *
@@ -1625,7 +1585,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     com.google.devtools.cloudtrace.v2.Span.TimeEvent.ValueCase getValueCase();
   }
-
   /**
    *
    *
@@ -1640,7 +1599,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.TimeEvent)
       TimeEventOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeEvent.newBuilder() to construct.
     private TimeEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1687,7 +1645,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the description field is set.
        */
       boolean hasDescription();
-
       /**
        *
        *
@@ -1701,7 +1658,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return The description.
        */
       com.google.devtools.cloudtrace.v2.TruncatableString getDescription();
-
       /**
        *
        *
@@ -1727,7 +1683,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the attributes field is set.
        */
       boolean hasAttributes();
-
       /**
        *
        *
@@ -1741,7 +1696,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return The attributes.
        */
       com.google.devtools.cloudtrace.v2.Span.Attributes getAttributes();
-
       /**
        *
        *
@@ -1754,7 +1708,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder getAttributesOrBuilder();
     }
-
     /**
      *
      *
@@ -1769,7 +1722,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation)
         AnnotationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Annotation.newBuilder() to construct.
       private Annotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1801,7 +1753,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int DESCRIPTION_FIELD_NUMBER = 1;
       private com.google.devtools.cloudtrace.v2.TruncatableString description_;
-
       /**
        *
        *
@@ -1818,7 +1769,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDescription() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1837,7 +1787,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
             : description_;
       }
-
       /**
        *
        *
@@ -1858,7 +1807,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
       public static final int ATTRIBUTES_FIELD_NUMBER = 2;
       private com.google.devtools.cloudtrace.v2.Span.Attributes attributes_;
-
       /**
        *
        *
@@ -1875,7 +1823,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAttributes() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1894,7 +1841,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             ? com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()
             : attributes_;
       }
-
       /**
        *
        *
@@ -2092,7 +2038,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2324,7 +2269,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
                 com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
             descriptionBuilder_;
-
         /**
          *
          *
@@ -2340,7 +2284,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public boolean hasDescription() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -2362,7 +2305,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             return descriptionBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -2386,7 +2328,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2408,7 +2349,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2438,7 +2378,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2459,7 +2398,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2475,7 +2413,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getDescriptionFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -2496,7 +2433,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                 : description_;
           }
         }
-
         /**
          *
          *
@@ -2530,7 +2466,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.cloudtrace.v2.Span.Attributes.Builder,
                 com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder>
             attributesBuilder_;
-
         /**
          *
          *
@@ -2546,7 +2481,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public boolean hasAttributes() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -2568,7 +2502,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             return attributesBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -2592,7 +2525,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2614,7 +2546,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2644,7 +2575,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2665,7 +2595,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2681,7 +2610,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getAttributesFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -2701,7 +2629,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
                 : attributes_;
           }
         }
-
         /**
          *
          *
@@ -2814,7 +2741,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for type.
        */
       int getTypeValue();
-
       /**
        *
        *
@@ -2871,7 +2797,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       long getCompressedSizeBytes();
     }
-
     /**
      *
      *
@@ -2886,7 +2811,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent)
         MessageEventOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use MessageEvent.newBuilder() to construct.
       private MessageEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2970,7 +2894,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * <code>TYPE_UNSPECIFIED = 0;</code>
          */
         public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -2981,7 +2904,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          * <code>SENT = 1;</code>
          */
         public static final int SENT_VALUE = 1;
-
         /**
          *
          *
@@ -3081,7 +3003,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
       public static final int TYPE_FIELD_NUMBER = 1;
       private int type_ = 0;
-
       /**
        *
        *
@@ -3098,7 +3019,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -3122,7 +3042,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
       public static final int ID_FIELD_NUMBER = 2;
       private long id_ = 0L;
-
       /**
        *
        *
@@ -3142,7 +3061,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
       public static final int UNCOMPRESSED_SIZE_BYTES_FIELD_NUMBER = 3;
       private long uncompressedSizeBytes_ = 0L;
-
       /**
        *
        *
@@ -3161,7 +3079,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
       public static final int COMPRESSED_SIZE_BYTES_FIELD_NUMBER = 4;
       private long compressedSizeBytes_ = 0L;
-
       /**
        *
        *
@@ -3374,7 +3291,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3604,7 +3520,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int type_ = 0;
-
         /**
          *
          *
@@ -3621,7 +3536,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public int getTypeValue() {
           return type_;
         }
-
         /**
          *
          *
@@ -3641,7 +3555,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3662,7 +3575,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               ? com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Type.UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -3686,7 +3598,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3707,7 +3618,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long id_;
-
         /**
          *
          *
@@ -3724,7 +3634,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public long getId() {
           return id_;
         }
-
         /**
          *
          *
@@ -3745,7 +3654,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3766,7 +3674,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long uncompressedSizeBytes_;
-
         /**
          *
          *
@@ -3782,7 +3689,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public long getUncompressedSizeBytes() {
           return uncompressedSizeBytes_;
         }
-
         /**
          *
          *
@@ -3802,7 +3708,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3822,7 +3727,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long compressedSizeBytes_;
-
         /**
          *
          *
@@ -3840,7 +3744,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         public long getCompressedSizeBytes() {
           return compressedSizeBytes_;
         }
-
         /**
          *
          *
@@ -3862,7 +3765,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3968,7 +3870,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       private ValueCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4003,7 +3904,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp time_;
-
     /**
      *
      *
@@ -4019,7 +3919,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4035,7 +3934,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getTime() {
       return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
-
     /**
      *
      *
@@ -4051,7 +3949,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ANNOTATION_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -4067,7 +3964,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotation() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -4086,7 +3982,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -4106,7 +4001,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MESSAGE_EVENT_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -4122,7 +4016,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageEvent() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -4141,7 +4034,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -4366,7 +4258,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4635,7 +4526,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           timeBuilder_;
-
       /**
        *
        *
@@ -4650,7 +4540,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -4669,7 +4558,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return timeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4692,7 +4580,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4712,7 +4599,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4740,7 +4626,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4760,7 +4645,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4775,7 +4659,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4792,7 +4675,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
         }
       }
-
       /**
        *
        *
@@ -4824,7 +4706,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation.Builder,
               com.google.devtools.cloudtrace.v2.Span.TimeEvent.AnnotationOrBuilder>
           annotationBuilder_;
-
       /**
        *
        *
@@ -4840,7 +4721,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnnotation() {
         return valueCase_ == 2;
       }
-
       /**
        *
        *
@@ -4866,7 +4746,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4890,7 +4769,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         valueCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -4911,7 +4789,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         valueCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -4947,7 +4824,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         valueCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -4973,7 +4849,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4987,7 +4862,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           getAnnotationBuilder() {
         return getAnnotationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5009,7 +4883,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return com.google.devtools.cloudtrace.v2.Span.TimeEvent.Annotation.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5049,7 +4922,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.Builder,
               com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEventOrBuilder>
           messageEventBuilder_;
-
       /**
        *
        *
@@ -5065,7 +4937,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMessageEvent() {
         return valueCase_ == 3;
       }
-
       /**
        *
        *
@@ -5091,7 +4962,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5115,7 +4985,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         valueCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -5136,7 +5005,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         valueCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -5172,7 +5040,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         valueCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -5198,7 +5065,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5212,7 +5078,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           getMessageEventBuilder() {
         return getMessageEventFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5234,7 +5099,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEvent.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5348,7 +5212,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.Span.TimeEvent time_event = 1;</code>
      */
     java.util.List<com.google.devtools.cloudtrace.v2.Span.TimeEvent> getTimeEventList();
-
     /**
      *
      *
@@ -5359,7 +5222,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.Span.TimeEvent time_event = 1;</code>
      */
     com.google.devtools.cloudtrace.v2.Span.TimeEvent getTimeEvent(int index);
-
     /**
      *
      *
@@ -5370,7 +5232,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.Span.TimeEvent time_event = 1;</code>
      */
     int getTimeEventCount();
-
     /**
      *
      *
@@ -5382,7 +5243,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.devtools.cloudtrace.v2.Span.TimeEventOrBuilder>
         getTimeEventOrBuilderList();
-
     /**
      *
      *
@@ -5422,7 +5282,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     int getDroppedMessageEventsCount();
   }
-
   /**
    *
    *
@@ -5439,7 +5298,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.TimeEvents)
       TimeEventsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeEvents.newBuilder() to construct.
     private TimeEvents(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5474,7 +5332,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.devtools.cloudtrace.v2.Span.TimeEvent> timeEvent_;
-
     /**
      *
      *
@@ -5488,7 +5345,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.devtools.cloudtrace.v2.Span.TimeEvent> getTimeEventList() {
       return timeEvent_;
     }
-
     /**
      *
      *
@@ -5503,7 +5359,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         getTimeEventOrBuilderList() {
       return timeEvent_;
     }
-
     /**
      *
      *
@@ -5517,7 +5372,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public int getTimeEventCount() {
       return timeEvent_.size();
     }
-
     /**
      *
      *
@@ -5531,7 +5385,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.Span.TimeEvent getTimeEvent(int index) {
       return timeEvent_.get(index);
     }
-
     /**
      *
      *
@@ -5549,7 +5402,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DROPPED_ANNOTATIONS_COUNT_FIELD_NUMBER = 2;
     private int droppedAnnotationsCount_ = 0;
-
     /**
      *
      *
@@ -5569,7 +5421,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DROPPED_MESSAGE_EVENTS_COUNT_FIELD_NUMBER = 3;
     private int droppedMessageEventsCount_ = 0;
-
     /**
      *
      *
@@ -5768,7 +5619,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6063,7 +5913,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return timeEventBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -6080,7 +5929,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return timeEventBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -6097,7 +5945,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return timeEventBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -6121,7 +5968,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6142,7 +5988,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6165,7 +6010,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6189,7 +6033,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6210,7 +6053,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6231,7 +6073,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6252,7 +6093,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6272,7 +6112,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6292,7 +6131,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6306,7 +6144,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getTimeEventFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -6324,7 +6161,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return timeEventBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -6342,7 +6178,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(timeEvent_);
         }
       }
-
       /**
        *
        *
@@ -6356,7 +6191,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return getTimeEventFieldBuilder()
             .addBuilder(com.google.devtools.cloudtrace.v2.Span.TimeEvent.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6372,7 +6206,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.devtools.cloudtrace.v2.Span.TimeEvent.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6405,7 +6238,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int droppedAnnotationsCount_;
-
       /**
        *
        *
@@ -6422,7 +6254,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getDroppedAnnotationsCount() {
         return droppedAnnotationsCount_;
       }
-
       /**
        *
        *
@@ -6443,7 +6274,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6464,7 +6294,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int droppedMessageEventsCount_;
-
       /**
        *
        *
@@ -6481,7 +6310,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getDroppedMessageEventsCount() {
         return droppedMessageEventsCount_;
       }
-
       /**
        *
        *
@@ -6502,7 +6330,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6603,7 +6430,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The traceId.
      */
     java.lang.String getTraceId();
-
     /**
      *
      *
@@ -6629,7 +6455,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The spanId.
      */
     java.lang.String getSpanId();
-
     /**
      *
      *
@@ -6655,7 +6480,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -6682,7 +6506,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the attributes field is set.
      */
     boolean hasAttributes();
-
     /**
      *
      *
@@ -6696,7 +6519,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * @return The attributes.
      */
     com.google.devtools.cloudtrace.v2.Span.Attributes getAttributes();
-
     /**
      *
      *
@@ -6709,7 +6531,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder getAttributesOrBuilder();
   }
-
   /**
    *
    *
@@ -6727,7 +6548,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.Link)
       LinkOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Link.newBuilder() to construct.
     private Link(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6814,7 +6634,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -6825,7 +6644,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * <code>CHILD_LINKED_SPAN = 1;</code>
        */
       public static final int CHILD_LINKED_SPAN_VALUE = 1;
-
       /**
        *
        *
@@ -6925,7 +6743,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object traceId_ = "";
-
     /**
      *
      *
@@ -6949,7 +6766,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -6978,7 +6794,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object spanId_ = "";
-
     /**
      *
      *
@@ -7002,7 +6817,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -7029,7 +6843,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 3;
     private int type_ = 0;
-
     /**
      *
      *
@@ -7045,7 +6858,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -7068,7 +6880,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ATTRIBUTES_FIELD_NUMBER = 4;
     private com.google.devtools.cloudtrace.v2.Span.Attributes attributes_;
-
     /**
      *
      *
@@ -7085,7 +6896,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttributes() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -7104,7 +6914,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()
           : attributes_;
     }
-
     /**
      *
      *
@@ -7314,7 +7123,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7562,7 +7370,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object traceId_ = "";
-
       /**
        *
        *
@@ -7585,7 +7392,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7608,7 +7414,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7630,7 +7435,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7648,7 +7452,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7673,7 +7476,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object spanId_ = "";
-
       /**
        *
        *
@@ -7696,7 +7498,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7719,7 +7520,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7741,7 +7541,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7759,7 +7558,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7784,7 +7582,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -7800,7 +7597,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -7819,7 +7615,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7839,7 +7634,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             ? com.google.devtools.cloudtrace.v2.Span.Link.Type.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7861,7 +7655,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7886,7 +7679,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Span.Attributes.Builder,
               com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder>
           attributesBuilder_;
-
       /**
        *
        *
@@ -7902,7 +7694,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAttributes() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -7924,7 +7715,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return attributesBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -7948,7 +7738,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7970,7 +7759,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8000,7 +7788,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8021,7 +7808,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8037,7 +7823,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAttributesFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8057,7 +7842,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               : attributes_;
         }
       }
-
       /**
        *
        *
@@ -8164,7 +7948,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.Span.Link link = 1;</code>
      */
     java.util.List<com.google.devtools.cloudtrace.v2.Span.Link> getLinkList();
-
     /**
      *
      *
@@ -8175,7 +7958,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.Span.Link link = 1;</code>
      */
     com.google.devtools.cloudtrace.v2.Span.Link getLink(int index);
-
     /**
      *
      *
@@ -8186,7 +7968,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.devtools.cloudtrace.v2.Span.Link link = 1;</code>
      */
     int getLinkCount();
-
     /**
      *
      *
@@ -8198,7 +7979,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.devtools.cloudtrace.v2.Span.LinkOrBuilder>
         getLinkOrBuilderList();
-
     /**
      *
      *
@@ -8224,7 +8004,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      */
     int getDroppedLinksCount();
   }
-
   /**
    *
    *
@@ -8240,7 +8019,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.Span.Links)
       LinksOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Links.newBuilder() to construct.
     private Links(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8275,7 +8053,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.devtools.cloudtrace.v2.Span.Link> link_;
-
     /**
      *
      *
@@ -8289,7 +8066,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.devtools.cloudtrace.v2.Span.Link> getLinkList() {
       return link_;
     }
-
     /**
      *
      *
@@ -8304,7 +8080,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         getLinkOrBuilderList() {
       return link_;
     }
-
     /**
      *
      *
@@ -8318,7 +8093,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public int getLinkCount() {
       return link_.size();
     }
-
     /**
      *
      *
@@ -8332,7 +8106,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.Span.Link getLink(int index) {
       return link_.get(index);
     }
-
     /**
      *
      *
@@ -8349,7 +8122,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DROPPED_LINKS_COUNT_FIELD_NUMBER = 2;
     private int droppedLinksCount_ = 0;
-
     /**
      *
      *
@@ -8538,7 +8310,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -8815,7 +8586,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return linkBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -8832,7 +8602,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return linkBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -8849,7 +8618,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return linkBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -8872,7 +8640,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8893,7 +8660,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8916,7 +8682,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8939,7 +8704,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8959,7 +8723,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8980,7 +8743,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9001,7 +8763,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9021,7 +8782,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9041,7 +8801,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9054,7 +8813,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.Span.Link.Builder getLinkBuilder(int index) {
         return getLinkFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -9071,7 +8829,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return linkBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -9089,7 +8846,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(link_);
         }
       }
-
       /**
        *
        *
@@ -9103,7 +8859,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return getLinkFieldBuilder()
             .addBuilder(com.google.devtools.cloudtrace.v2.Span.Link.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -9117,7 +8872,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return getLinkFieldBuilder()
             .addBuilder(index, com.google.devtools.cloudtrace.v2.Span.Link.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -9150,7 +8904,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int droppedLinksCount_;
-
       /**
        *
        *
@@ -9167,7 +8920,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public int getDroppedLinksCount() {
         return droppedLinksCount_;
       }
-
       /**
        *
        *
@@ -9188,7 +8940,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9277,7 +9028,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -9312,7 +9062,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -9352,7 +9101,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object spanId_ = "";
-
   /**
    *
    *
@@ -9376,7 +9124,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -9405,7 +9152,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentSpanId_ = "";
-
   /**
    *
    *
@@ -9430,7 +9176,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -9458,7 +9203,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
   private com.google.devtools.cloudtrace.v2.TruncatableString displayName_;
-
   /**
    *
    *
@@ -9482,7 +9226,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisplayName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -9508,7 +9251,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
         : displayName_;
   }
-
   /**
    *
    *
@@ -9535,7 +9277,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -9555,7 +9296,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -9575,7 +9315,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -9596,7 +9335,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -9614,7 +9352,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -9632,7 +9369,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -9651,7 +9387,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTRIBUTES_FIELD_NUMBER = 7;
   private com.google.devtools.cloudtrace.v2.Span.Attributes attributes_;
-
   /**
    *
    *
@@ -9668,7 +9403,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttributes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -9687,7 +9421,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.Span.Attributes.getDefaultInstance()
         : attributes_;
   }
-
   /**
    *
    *
@@ -9707,7 +9440,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STACK_TRACE_FIELD_NUMBER = 8;
   private com.google.devtools.cloudtrace.v2.StackTrace stackTrace_;
-
   /**
    *
    *
@@ -9723,7 +9455,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStackTrace() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -9741,7 +9472,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.StackTrace.getDefaultInstance()
         : stackTrace_;
   }
-
   /**
    *
    *
@@ -9760,7 +9490,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_EVENTS_FIELD_NUMBER = 9;
   private com.google.devtools.cloudtrace.v2.Span.TimeEvents timeEvents_;
-
   /**
    *
    *
@@ -9777,7 +9506,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeEvents() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -9796,7 +9524,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.Span.TimeEvents.getDefaultInstance()
         : timeEvents_;
   }
-
   /**
    *
    *
@@ -9816,7 +9543,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINKS_FIELD_NUMBER = 10;
   private com.google.devtools.cloudtrace.v2.Span.Links links_;
-
   /**
    *
    *
@@ -9832,7 +9558,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinks() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -9850,7 +9575,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.cloudtrace.v2.Span.Links.getDefaultInstance()
         : links_;
   }
-
   /**
    *
    *
@@ -9869,7 +9593,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 11;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -9885,7 +9608,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -9901,7 +9623,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -9918,7 +9639,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SAME_PROCESS_AS_PARENT_SPAN_FIELD_NUMBER = 12;
   private com.google.protobuf.BoolValue sameProcessAsParentSpan_;
-
   /**
    *
    *
@@ -9938,7 +9658,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSameProcessAsParentSpan() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -9960,7 +9679,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : sameProcessAsParentSpan_;
   }
-
   /**
    *
    *
@@ -9983,7 +9701,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHILD_SPAN_COUNT_FIELD_NUMBER = 13;
   private com.google.protobuf.Int32Value childSpanCount_;
-
   /**
    *
    *
@@ -10002,7 +9719,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChildSpanCount() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -10023,7 +9739,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : childSpanCount_;
   }
-
   /**
    *
    *
@@ -10045,7 +9760,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPAN_KIND_FIELD_NUMBER = 14;
   private int spanKind_ = 0;
-
   /**
    *
    *
@@ -10065,7 +9779,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   public int getSpanKindValue() {
     return spanKind_;
   }
-
   /**
    *
    *
@@ -10417,7 +10130,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -10857,7 +10569,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -10891,7 +10602,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -10925,7 +10635,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -10958,7 +10667,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10987,7 +10695,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11023,7 +10730,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object spanId_ = "";
-
     /**
      *
      *
@@ -11046,7 +10752,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11069,7 +10774,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11091,7 +10795,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11109,7 +10812,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11134,7 +10836,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parentSpanId_ = "";
-
     /**
      *
      *
@@ -11158,7 +10859,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11182,7 +10882,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11205,7 +10904,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11224,7 +10922,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11255,7 +10952,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
             com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
         displayNameBuilder_;
-
     /**
      *
      *
@@ -11278,7 +10974,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -11307,7 +11002,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return displayNameBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11338,7 +11032,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11367,7 +11060,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11404,7 +11096,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11432,7 +11123,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11455,7 +11145,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDisplayNameFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11482,7 +11171,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : displayName_;
       }
     }
-
     /**
      *
      *
@@ -11523,7 +11211,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -11542,7 +11229,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -11565,7 +11251,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11592,7 +11277,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11616,7 +11300,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11648,7 +11331,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11672,7 +11354,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11691,7 +11372,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11712,7 +11392,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -11749,7 +11428,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -11767,7 +11445,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -11789,7 +11466,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11815,7 +11491,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11838,7 +11513,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11869,7 +11543,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11892,7 +11565,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11910,7 +11582,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11930,7 +11601,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -11966,7 +11636,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.Span.Attributes.Builder,
             com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder>
         attributesBuilder_;
-
     /**
      *
      *
@@ -11982,7 +11651,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttributes() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -12004,7 +11672,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12028,7 +11695,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12050,7 +11716,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12080,7 +11745,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12101,7 +11765,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12117,7 +11780,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAttributesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12137,7 +11799,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : attributes_;
       }
     }
-
     /**
      *
      *
@@ -12171,7 +11832,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.StackTrace.Builder,
             com.google.devtools.cloudtrace.v2.StackTraceOrBuilder>
         stackTraceBuilder_;
-
     /**
      *
      *
@@ -12186,7 +11846,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStackTrace() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -12207,7 +11866,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return stackTraceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12230,7 +11888,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12251,7 +11908,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12279,7 +11935,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12299,7 +11954,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12314,7 +11968,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStackTraceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12333,7 +11986,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : stackTrace_;
       }
     }
-
     /**
      *
      *
@@ -12366,7 +12018,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.Span.TimeEvents.Builder,
             com.google.devtools.cloudtrace.v2.Span.TimeEventsOrBuilder>
         timeEventsBuilder_;
-
     /**
      *
      *
@@ -12382,7 +12033,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeEvents() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -12404,7 +12054,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return timeEventsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12428,7 +12077,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12450,7 +12098,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12480,7 +12127,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12501,7 +12147,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12517,7 +12162,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeEventsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12537,7 +12181,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : timeEvents_;
       }
     }
-
     /**
      *
      *
@@ -12571,7 +12214,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.Span.Links.Builder,
             com.google.devtools.cloudtrace.v2.Span.LinksOrBuilder>
         linksBuilder_;
-
     /**
      *
      *
@@ -12586,7 +12228,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinks() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -12607,7 +12248,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12630,7 +12270,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12650,7 +12289,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12678,7 +12316,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12698,7 +12335,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12713,7 +12349,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLinksFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12732,7 +12367,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : links_;
       }
     }
-
     /**
      *
      *
@@ -12763,7 +12397,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -12778,7 +12411,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -12797,7 +12429,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12820,7 +12451,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12840,7 +12470,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12868,7 +12497,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12888,7 +12516,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12903,7 +12530,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12920,7 +12546,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *
@@ -12950,7 +12575,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         sameProcessAsParentSpanBuilder_;
-
     /**
      *
      *
@@ -12969,7 +12593,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSameProcessAsParentSpan() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -12994,7 +12617,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return sameProcessAsParentSpanBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13021,7 +12643,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13046,7 +12667,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13078,7 +12698,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13102,7 +12721,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13121,7 +12739,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSameProcessAsParentSpanFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13144,7 +12761,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : sameProcessAsParentSpan_;
       }
     }
-
     /**
      *
      *
@@ -13181,7 +12797,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         childSpanCountBuilder_;
-
     /**
      *
      *
@@ -13199,7 +12814,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChildSpanCount() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -13223,7 +12837,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return childSpanCountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13249,7 +12862,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13272,7 +12884,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13303,7 +12914,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13326,7 +12936,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13344,7 +12953,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getChildSpanCountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13366,7 +12974,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
             : childSpanCount_;
       }
     }
-
     /**
      *
      *
@@ -13397,7 +13004,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spanKind_ = 0;
-
     /**
      *
      *
@@ -13417,7 +13023,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public int getSpanKindValue() {
       return spanKind_;
     }
-
     /**
      *
      *
@@ -13440,7 +13045,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13462,7 +13066,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           com.google.devtools.cloudtrace.v2.Span.SpanKind.forNumber(spanKind_);
       return result == null ? com.google.devtools.cloudtrace.v2.Span.SpanKind.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -13488,7 +13091,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

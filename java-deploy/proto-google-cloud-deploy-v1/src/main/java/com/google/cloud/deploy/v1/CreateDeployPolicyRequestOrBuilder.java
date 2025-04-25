@@ -39,7 +39,6 @@ public interface CreateDeployPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateDeployPolicyRequestOrBuilder
    * @return The deployPolicyId.
    */
   java.lang.String getDeployPolicyId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateDeployPolicyRequestOrBuilder
    * @return Whether the deployPolicy field is set.
    */
   boolean hasDeployPolicy();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateDeployPolicyRequestOrBuilder
    * @return The deployPolicy.
    */
   com.google.cloud.deploy.v1.DeployPolicy getDeployPolicy();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface CreateDeployPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

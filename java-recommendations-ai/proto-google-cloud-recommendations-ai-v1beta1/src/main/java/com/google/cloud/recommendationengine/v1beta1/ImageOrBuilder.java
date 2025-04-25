@@ -36,7 +36,6 @@ public interface ImageOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

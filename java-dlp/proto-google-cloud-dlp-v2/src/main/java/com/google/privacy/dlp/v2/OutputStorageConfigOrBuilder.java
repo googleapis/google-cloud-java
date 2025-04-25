@@ -49,7 +49,6 @@ public interface OutputStorageConfigOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface OutputStorageConfigOrBuilder
    * @return The table.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface OutputStorageConfigOrBuilder
    * @return The enum numeric value on the wire for outputSchema.
    */
   int getOutputSchemaValue();
-
   /**
    *
    *

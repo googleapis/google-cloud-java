@@ -37,7 +37,6 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination getGcsDestination();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination
       getBigqueryDestination();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DiscoveryOtherCloudFilterOrBuilder
    * @return Whether the collection field is set.
    */
   boolean hasCollection();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DiscoveryOtherCloudFilterOrBuilder
    * @return The collection.
    */
   com.google.privacy.dlp.v2.OtherCloudResourceCollection getCollection();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface DiscoveryOtherCloudFilterOrBuilder
    * @return Whether the singleResource field is set.
    */
   boolean hasSingleResource();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface DiscoveryOtherCloudFilterOrBuilder
    * @return The singleResource.
    */
   com.google.privacy.dlp.v2.OtherCloudSingleResourceReference getSingleResource();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface DiscoveryOtherCloudFilterOrBuilder
    * @return Whether the others field is set.
    */
   boolean hasOthers();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface DiscoveryOtherCloudFilterOrBuilder
    * @return The others.
    */
   com.google.privacy.dlp.v2.AllOtherResources getOthers();
-
   /**
    *
    *

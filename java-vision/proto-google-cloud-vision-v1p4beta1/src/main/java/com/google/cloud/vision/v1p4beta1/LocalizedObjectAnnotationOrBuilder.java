@@ -36,7 +36,6 @@ public interface LocalizedObjectAnnotationOrBuilder
    * @return The mid.
    */
   java.lang.String getMid();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface LocalizedObjectAnnotationOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface LocalizedObjectAnnotationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface LocalizedObjectAnnotationOrBuilder
    * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface LocalizedObjectAnnotationOrBuilder
    * @return The boundingPoly.
    */
   com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly();
-
   /**
    *
    *

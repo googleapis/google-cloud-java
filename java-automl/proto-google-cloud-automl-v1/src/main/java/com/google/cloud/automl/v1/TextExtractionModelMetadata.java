@@ -33,7 +33,6 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextExtractionModelMetadata)
     TextExtractionModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextExtractionModelMetadata.newBuilder() to construct.
   private TextExtractionModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

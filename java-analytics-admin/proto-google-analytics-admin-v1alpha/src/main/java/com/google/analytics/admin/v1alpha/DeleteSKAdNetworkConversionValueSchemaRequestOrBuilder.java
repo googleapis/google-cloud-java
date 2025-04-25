@@ -40,7 +40,6 @@ public interface DeleteSKAdNetworkConversionValueSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

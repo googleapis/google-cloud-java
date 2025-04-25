@@ -33,7 +33,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeStats)
     InfoTypeStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InfoTypeStats.newBuilder() to construct.
   private InfoTypeStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int INFO_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InfoType infoType_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInfoType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COUNT_FIELD_NUMBER = 2;
   private long count_ = 0L;
-
   /**
    *
    *
@@ -303,7 +298,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -519,7 +513,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
-
     /**
      *
      *
@@ -534,7 +527,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInfoType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -555,7 +547,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
         return infoTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +615,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +634,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +648,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -680,7 +666,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
             : infoType_;
       }
     }
-
     /**
      *
      *
@@ -708,7 +693,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long count_;
-
     /**
      *
      *
@@ -724,7 +708,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     public long getCount() {
       return count_;
     }
-
     /**
      *
      *
@@ -744,7 +727,6 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

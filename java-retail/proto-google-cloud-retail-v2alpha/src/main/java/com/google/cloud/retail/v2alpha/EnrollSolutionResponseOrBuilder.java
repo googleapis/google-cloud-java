@@ -36,7 +36,6 @@ public interface EnrollSolutionResponseOrBuilder
    * @return The enum numeric value on the wire for enrolledSolution.
    */
   int getEnrolledSolutionValue();
-
   /**
    *
    *

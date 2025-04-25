@@ -37,7 +37,6 @@ public interface DeleteIngressRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

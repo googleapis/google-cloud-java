@@ -179,8 +179,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDataLabelingJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateDataLabelingJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataLabelingJob.class.getName(),
                   Exception.class.getName())));
@@ -223,8 +222,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDataLabelingJobs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListDataLabelingJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDataLabelingJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -245,8 +243,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDataLabelingJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteDataLabelingJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -267,8 +264,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelDataLabelingJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CancelDataLabelingJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -290,8 +286,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateHyperparameterTuningJob, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CreateHyperparameterTuningJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   HyperparameterTuningJob.class.getName(),
                   Exception.class.getName())));
@@ -313,8 +308,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetHyperparameterTuningJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetHyperparameterTuningJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   HyperparameterTuningJob.class.getName(),
                   Exception.class.getName())));
@@ -336,8 +330,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListHyperparameterTuningJobs, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListHyperparameterTuningJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListHyperparameterTuningJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -358,8 +351,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteHyperparameterTuningJob, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method DeleteHyperparameterTuningJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -380,8 +372,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelHyperparameterTuningJob, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CancelHyperparameterTuningJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -548,8 +539,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateBatchPredictionJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateBatchPredictionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchPredictionJob.class.getName(),
                   Exception.class.getName())));
@@ -570,8 +560,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetBatchPredictionJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetBatchPredictionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchPredictionJob.class.getName(),
                   Exception.class.getName())));
@@ -593,8 +582,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListBatchPredictionJobs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListBatchPredictionJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListBatchPredictionJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -615,8 +603,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteBatchPredictionJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteBatchPredictionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -637,8 +624,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelBatchPredictionJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CancelBatchPredictionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -660,8 +646,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateModelDeploymentMonitoringJob,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method CreateModelDeploymentMonitoringJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ModelDeploymentMonitoringJob.class.getName(),
                   Exception.class.getName())));
@@ -683,8 +668,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " SearchModelDeploymentMonitoringStatsAnomalies, expected %s or %s",
+                  "Unrecognized response type %s for method SearchModelDeploymentMonitoringStatsAnomalies, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchModelDeploymentMonitoringStatsAnomaliesResponse.class.getName(),
                   Exception.class.getName())));
@@ -706,8 +690,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetModelDeploymentMonitoringJob,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetModelDeploymentMonitoringJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ModelDeploymentMonitoringJob.class.getName(),
                   Exception.class.getName())));
@@ -729,8 +712,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListModelDeploymentMonitoringJobs,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ListModelDeploymentMonitoringJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListModelDeploymentMonitoringJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -752,8 +734,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateModelDeploymentMonitoringJob,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method UpdateModelDeploymentMonitoringJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -775,8 +756,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteModelDeploymentMonitoringJob,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method DeleteModelDeploymentMonitoringJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -797,8 +777,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PauseModelDeploymentMonitoringJob,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method PauseModelDeploymentMonitoringJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -819,8 +798,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResumeModelDeploymentMonitoringJob,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ResumeModelDeploymentMonitoringJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

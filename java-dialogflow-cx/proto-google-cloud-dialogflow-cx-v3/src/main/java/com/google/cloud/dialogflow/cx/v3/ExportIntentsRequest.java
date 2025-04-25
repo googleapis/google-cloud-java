@@ -34,7 +34,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ExportIntentsRequest)
     ExportIntentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportIntentsRequest.newBuilder() to construct.
   private ExportIntentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>BLOB = 1;</code>
      */
     public static final int BLOB_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>JSON = 2;</code>
      */
     public static final int JSON_VALUE = 2;
-
     /**
      *
      *
@@ -268,7 +264,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -305,7 +300,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -332,7 +326,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +358,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList intents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -382,7 +374,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getIntentsList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -399,7 +390,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   public int getIntentsCount() {
     return intents_.size();
   }
-
   /**
    *
    *
@@ -417,7 +407,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getIntents(int index) {
     return intents_.get(index);
   }
-
   /**
    *
    *
@@ -437,7 +426,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INTENTS_URI_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -461,7 +449,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasIntentsUri() {
     return destinationCase_ == 3;
   }
-
   /**
    *
    *
@@ -498,7 +485,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -537,7 +523,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INTENTS_CONTENT_INLINE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -553,7 +538,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasIntentsContentInline() {
     return destinationCase_ == 4;
   }
-
   /**
    *
    *
@@ -575,7 +559,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 5;
   private int dataFormat_ = 0;
-
   /**
    *
    *
@@ -594,7 +577,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
   public int getDataFormatValue() {
     return dataFormat_;
   }
-
   /**
    *
    *
@@ -844,7 +826,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1118,7 +1099,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1144,7 +1124,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1149,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1173,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1193,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1252,7 +1228,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1270,7 +1245,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       intents_.makeImmutable();
       return intents_;
     }
-
     /**
      *
      *
@@ -1287,7 +1261,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     public int getIntentsCount() {
       return intents_.size();
     }
-
     /**
      *
      *
@@ -1305,7 +1278,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getIntents(int index) {
       return intents_.get(index);
     }
-
     /**
      *
      *
@@ -1323,7 +1295,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getIntentsBytes(int index) {
       return intents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1349,7 +1320,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1344,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1365,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1385,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1435,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasIntentsUri() {
       return destinationCase_ == 3;
     }
-
     /**
      *
      *
@@ -1506,7 +1472,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1544,7 +1509,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1575,7 +1539,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1567,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1613,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasIntentsContentInline() {
       return destinationCase_ == 4;
     }
-
     /**
      *
      *
@@ -1669,7 +1630,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       }
       return false;
     }
-
     /**
      *
      *
@@ -1689,7 +1649,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1670,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int dataFormat_ = 0;
-
     /**
      *
      *
@@ -1730,7 +1688,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
     public int getDataFormatValue() {
       return dataFormat_;
     }
-
     /**
      *
      *
@@ -1752,7 +1709,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1775,7 +1731,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest.DataFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1801,7 +1756,6 @@ public final class ExportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

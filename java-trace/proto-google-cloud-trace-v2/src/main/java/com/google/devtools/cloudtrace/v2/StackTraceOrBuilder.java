@@ -36,7 +36,6 @@ public interface StackTraceOrBuilder
    * @return Whether the stackFrames field is set.
    */
   boolean hasStackFrames();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StackTraceOrBuilder
    * @return The stackFrames.
    */
   com.google.devtools.cloudtrace.v2.StackTrace.StackFrames getStackFrames();
-
   /**
    *
    *

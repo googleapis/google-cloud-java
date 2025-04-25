@@ -40,7 +40,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface CreateMessageRequestOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The message.
    */
   com.google.cloud.dialogflow.v2beta1.Message getMessage();
-
   /**
    *
    *

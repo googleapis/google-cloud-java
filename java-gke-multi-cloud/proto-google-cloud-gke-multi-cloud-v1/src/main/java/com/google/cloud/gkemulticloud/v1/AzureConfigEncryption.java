@@ -36,7 +36,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureConfigEncryption)
     AzureConfigEncryptionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureConfigEncryption.newBuilder() to construct.
   private AzureConfigEncryption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicKey_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -361,7 +356,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +558,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object keyId_ = "";
-
     /**
      *
      *
@@ -591,7 +584,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -618,7 +610,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -644,7 +635,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object publicKey_ = "";
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ListPromotionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface ListPromotionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

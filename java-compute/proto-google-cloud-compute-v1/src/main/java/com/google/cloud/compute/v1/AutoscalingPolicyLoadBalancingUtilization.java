@@ -34,7 +34,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization)
     AutoscalingPolicyLoadBalancingUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoscalingPolicyLoadBalancingUtilization.newBuilder() to construct.
   private AutoscalingPolicyLoadBalancingUtilization(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
   private int bitField0_;
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
   private double utilizationTarget_ = 0D;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
   public boolean hasUtilizationTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -271,7 +268,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -464,7 +460,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     private int bitField0_;
 
     private double utilizationTarget_;
-
     /**
      *
      *
@@ -480,7 +475,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     public boolean hasUtilizationTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -496,7 +490,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     public double getUtilizationTarget() {
       return utilizationTarget_;
     }
-
     /**
      *
      *
@@ -516,7 +509,6 @@ public final class AutoscalingPolicyLoadBalancingUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the exactMatchResults field is set.
    */
   boolean hasExactMatchResults();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The exactMatchResults.
    */
   com.google.cloud.aiplatform.v1.ExactMatchResults getExactMatchResults();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the bleuResults field is set.
    */
   boolean hasBleuResults();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The bleuResults.
    */
   com.google.cloud.aiplatform.v1.BleuResults getBleuResults();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the rougeResults field is set.
    */
   boolean hasRougeResults();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The rougeResults.
    */
   com.google.cloud.aiplatform.v1.RougeResults getRougeResults();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the fluencyResult field is set.
    */
   boolean hasFluencyResult();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The fluencyResult.
    */
   com.google.cloud.aiplatform.v1.FluencyResult getFluencyResult();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the coherenceResult field is set.
    */
   boolean hasCoherenceResult();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The coherenceResult.
    */
   com.google.cloud.aiplatform.v1.CoherenceResult getCoherenceResult();
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the safetyResult field is set.
    */
   boolean hasSafetyResult();
-
   /**
    *
    *
@@ -243,7 +232,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The safetyResult.
    */
   com.google.cloud.aiplatform.v1.SafetyResult getSafetyResult();
-
   /**
    *
    *
@@ -267,7 +255,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the groundednessResult field is set.
    */
   boolean hasGroundednessResult();
-
   /**
    *
    *
@@ -280,7 +267,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The groundednessResult.
    */
   com.google.cloud.aiplatform.v1.GroundednessResult getGroundednessResult();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the fulfillmentResult field is set.
    */
   boolean hasFulfillmentResult();
-
   /**
    *
    *
@@ -317,7 +302,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The fulfillmentResult.
    */
   com.google.cloud.aiplatform.v1.FulfillmentResult getFulfillmentResult();
-
   /**
    *
    *
@@ -343,7 +327,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the summarizationQualityResult field is set.
    */
   boolean hasSummarizationQualityResult();
-
   /**
    *
    *
@@ -358,7 +341,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The summarizationQualityResult.
    */
   com.google.cloud.aiplatform.v1.SummarizationQualityResult getSummarizationQualityResult();
-
   /**
    *
    *
@@ -387,7 +369,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the pairwiseSummarizationQualityResult field is set.
    */
   boolean hasPairwiseSummarizationQualityResult();
-
   /**
    *
    *
@@ -403,7 +384,6 @@ public interface EvaluateInstancesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1.PairwiseSummarizationQualityResult
       getPairwiseSummarizationQualityResult();
-
   /**
    *
    *
@@ -432,7 +412,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the summarizationHelpfulnessResult field is set.
    */
   boolean hasSummarizationHelpfulnessResult();
-
   /**
    *
    *
@@ -447,7 +426,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The summarizationHelpfulnessResult.
    */
   com.google.cloud.aiplatform.v1.SummarizationHelpfulnessResult getSummarizationHelpfulnessResult();
-
   /**
    *
    *
@@ -476,7 +454,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the summarizationVerbosityResult field is set.
    */
   boolean hasSummarizationVerbosityResult();
-
   /**
    *
    *
@@ -491,7 +468,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The summarizationVerbosityResult.
    */
   com.google.cloud.aiplatform.v1.SummarizationVerbosityResult getSummarizationVerbosityResult();
-
   /**
    *
    *
@@ -521,7 +497,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the questionAnsweringQualityResult field is set.
    */
   boolean hasQuestionAnsweringQualityResult();
-
   /**
    *
    *
@@ -537,7 +512,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The questionAnsweringQualityResult.
    */
   com.google.cloud.aiplatform.v1.QuestionAnsweringQualityResult getQuestionAnsweringQualityResult();
-
   /**
    *
    *
@@ -567,7 +541,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the pairwiseQuestionAnsweringQualityResult field is set.
    */
   boolean hasPairwiseQuestionAnsweringQualityResult();
-
   /**
    *
    *
@@ -583,7 +556,6 @@ public interface EvaluateInstancesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1.PairwiseQuestionAnsweringQualityResult
       getPairwiseQuestionAnsweringQualityResult();
-
   /**
    *
    *
@@ -612,7 +584,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the questionAnsweringRelevanceResult field is set.
    */
   boolean hasQuestionAnsweringRelevanceResult();
-
   /**
    *
    *
@@ -628,7 +599,6 @@ public interface EvaluateInstancesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceResult
       getQuestionAnsweringRelevanceResult();
-
   /**
    *
    *
@@ -657,7 +627,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the questionAnsweringHelpfulnessResult field is set.
    */
   boolean hasQuestionAnsweringHelpfulnessResult();
-
   /**
    *
    *
@@ -673,7 +642,6 @@ public interface EvaluateInstancesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1.QuestionAnsweringHelpfulnessResult
       getQuestionAnsweringHelpfulnessResult();
-
   /**
    *
    *
@@ -702,7 +670,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the questionAnsweringCorrectnessResult field is set.
    */
   boolean hasQuestionAnsweringCorrectnessResult();
-
   /**
    *
    *
@@ -718,7 +685,6 @@ public interface EvaluateInstancesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1.QuestionAnsweringCorrectnessResult
       getQuestionAnsweringCorrectnessResult();
-
   /**
    *
    *
@@ -746,7 +712,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the pointwiseMetricResult field is set.
    */
   boolean hasPointwiseMetricResult();
-
   /**
    *
    *
@@ -760,7 +725,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The pointwiseMetricResult.
    */
   com.google.cloud.aiplatform.v1.PointwiseMetricResult getPointwiseMetricResult();
-
   /**
    *
    *
@@ -785,7 +749,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the pairwiseMetricResult field is set.
    */
   boolean hasPairwiseMetricResult();
-
   /**
    *
    *
@@ -798,7 +761,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The pairwiseMetricResult.
    */
   com.google.cloud.aiplatform.v1.PairwiseMetricResult getPairwiseMetricResult();
-
   /**
    *
    *
@@ -823,7 +785,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the toolCallValidResults field is set.
    */
   boolean hasToolCallValidResults();
-
   /**
    *
    *
@@ -837,7 +798,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The toolCallValidResults.
    */
   com.google.cloud.aiplatform.v1.ToolCallValidResults getToolCallValidResults();
-
   /**
    *
    *
@@ -862,7 +822,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the toolNameMatchResults field is set.
    */
   boolean hasToolNameMatchResults();
-
   /**
    *
    *
@@ -875,7 +834,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The toolNameMatchResults.
    */
   com.google.cloud.aiplatform.v1.ToolNameMatchResults getToolNameMatchResults();
-
   /**
    *
    *
@@ -901,7 +859,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the toolParameterKeyMatchResults field is set.
    */
   boolean hasToolParameterKeyMatchResults();
-
   /**
    *
    *
@@ -916,7 +873,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The toolParameterKeyMatchResults.
    */
   com.google.cloud.aiplatform.v1.ToolParameterKeyMatchResults getToolParameterKeyMatchResults();
-
   /**
    *
    *
@@ -945,7 +901,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the toolParameterKvMatchResults field is set.
    */
   boolean hasToolParameterKvMatchResults();
-
   /**
    *
    *
@@ -960,7 +915,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The toolParameterKvMatchResults.
    */
   com.google.cloud.aiplatform.v1.ToolParameterKVMatchResults getToolParameterKvMatchResults();
-
   /**
    *
    *
@@ -988,7 +942,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the cometResult field is set.
    */
   boolean hasCometResult();
-
   /**
    *
    *
@@ -1002,7 +955,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The cometResult.
    */
   com.google.cloud.aiplatform.v1.CometResult getCometResult();
-
   /**
    *
    *
@@ -1027,7 +979,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return Whether the metricxResult field is set.
    */
   boolean hasMetricxResult();
-
   /**
    *
    *
@@ -1040,7 +991,6 @@ public interface EvaluateInstancesResponseOrBuilder
    * @return The metricxResult.
    */
   com.google.cloud.aiplatform.v1.MetricxResult getMetricxResult();
-
   /**
    *
    *

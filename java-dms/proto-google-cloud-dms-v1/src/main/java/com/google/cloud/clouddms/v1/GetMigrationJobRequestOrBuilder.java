@@ -38,7 +38,6 @@ public interface GetMigrationJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

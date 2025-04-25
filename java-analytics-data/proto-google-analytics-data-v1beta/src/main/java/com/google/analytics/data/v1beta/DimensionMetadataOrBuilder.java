@@ -37,7 +37,6 @@ public interface DimensionMetadataOrBuilder
    * @return The apiName.
    */
   java.lang.String getApiName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DimensionMetadataOrBuilder
    * @return The uiName.
    */
   java.lang.String getUiName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DimensionMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface DimensionMetadataOrBuilder
    * @return A list containing the deprecatedApiNames.
    */
   java.util.List<java.lang.String> getDeprecatedApiNamesList();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface DimensionMetadataOrBuilder
    * @return The count of deprecatedApiNames.
    */
   int getDeprecatedApiNamesCount();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface DimensionMetadataOrBuilder
    * @return The deprecatedApiNames at the given index.
    */
   java.lang.String getDeprecatedApiNames(int index);
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public interface DimensionMetadataOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *

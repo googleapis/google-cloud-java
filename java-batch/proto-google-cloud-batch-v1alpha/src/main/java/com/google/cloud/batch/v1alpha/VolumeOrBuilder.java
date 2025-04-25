@@ -37,7 +37,6 @@ public interface VolumeOrBuilder
    * @return Whether the nfs field is set.
    */
   boolean hasNfs();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface VolumeOrBuilder
    * @return The nfs.
    */
   com.google.cloud.batch.v1alpha.NFS getNfs();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface VolumeOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPd();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface VolumeOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.batch.v1alpha.PD getPd();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface VolumeOrBuilder
    * @return Whether the gcs field is set.
    */
   boolean hasGcs();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface VolumeOrBuilder
    * @return The gcs.
    */
   com.google.cloud.batch.v1alpha.GCS getGcs();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface VolumeOrBuilder
    * @return Whether the deviceName field is set.
    */
   boolean hasDeviceName();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface VolumeOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface VolumeOrBuilder
    * @return The mountPath.
    */
   java.lang.String getMountPath();
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public interface VolumeOrBuilder
    * @return A list containing the mountOptions.
    */
   java.util.List<java.lang.String> getMountOptionsList();
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public interface VolumeOrBuilder
    * @return The count of mountOptions.
    */
   int getMountOptionsCount();
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public interface VolumeOrBuilder
    * @return The mountOptions at the given index.
    */
   java.lang.String getMountOptions(int index);
-
   /**
    *
    *

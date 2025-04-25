@@ -33,7 +33,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp)
     InstanceGroupManagersListPerInstanceConfigsRespOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersListPerInstanceConfigsResp.newBuilder() to construct.
   private InstanceGroupManagersListPerInstanceConfigsResp(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> items_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
   public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
   public com.google.cloud.compute.v1.PerInstanceConfig getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       return s;
     }
   }
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -459,7 +447,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -777,7 +764,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -794,7 +780,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +979,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     public com.google.cloud.compute.v1.PerInstanceConfig.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1033,7 +1007,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1024,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1037,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1079,7 +1050,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1112,7 +1082,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1127,7 +1096,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1150,7 +1118,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1173,7 +1140,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1161,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1178,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1207,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1258,7 +1221,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1279,7 +1241,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1302,7 +1263,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1282,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1309,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1328,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1342,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1404,7 +1360,6 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
             : warning_;
       }
     }
-
     /**
      *
      *

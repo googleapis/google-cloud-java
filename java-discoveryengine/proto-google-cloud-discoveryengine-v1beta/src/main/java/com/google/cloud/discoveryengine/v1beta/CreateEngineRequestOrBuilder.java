@@ -39,7 +39,6 @@ public interface CreateEngineRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateEngineRequestOrBuilder
    * @return Whether the engine field is set.
    */
   boolean hasEngine();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateEngineRequestOrBuilder
    * @return The engine.
    */
   com.google.cloud.discoveryengine.v1beta.Engine getEngine();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateEngineRequestOrBuilder
    * @return The engineId.
    */
   java.lang.String getEngineId();
-
   /**
    *
    *

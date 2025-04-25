@@ -34,7 +34,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileStoreRegexes)
     FileStoreRegexesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileStoreRegexes.newBuilder() to construct.
   private FileStoreRegexes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FileStoreRegex> patterns_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.privacy.dlp.v2.FileStoreRegex> getPatternsList() {
     return patterns_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       getPatternsOrBuilderList() {
     return patterns_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
   public int getPatternsCount() {
     return patterns_.size();
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
   public com.google.privacy.dlp.v2.FileStoreRegex getPatterns(int index) {
     return patterns_.get(index);
   }
-
   /**
    *
    *
@@ -322,7 +316,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +580,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
         return patternsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -608,7 +600,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
         return patternsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
         return patternsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.FileStoreRegex.Builder getPatternsBuilder(int index) {
       return getPatternsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
         return patternsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(patterns_);
       }
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       return getPatternsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FileStoreRegex.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class FileStoreRegexes extends com.google.protobuf.GeneratedMessage
       return getPatternsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FileStoreRegex.getDefaultInstance());
     }
-
     /**
      *
      *

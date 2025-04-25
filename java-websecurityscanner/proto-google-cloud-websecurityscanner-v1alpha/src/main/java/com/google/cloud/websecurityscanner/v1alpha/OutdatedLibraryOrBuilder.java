@@ -36,7 +36,6 @@ public interface OutdatedLibraryOrBuilder
    * @return The libraryName.
    */
   java.lang.String getLibraryName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface OutdatedLibraryOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface OutdatedLibraryOrBuilder
    * @return A list containing the learnMoreUrls.
    */
   java.util.List<java.lang.String> getLearnMoreUrlsList();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface OutdatedLibraryOrBuilder
    * @return The count of learnMoreUrls.
    */
   int getLearnMoreUrlsCount();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface OutdatedLibraryOrBuilder
    * @return The learnMoreUrls at the given index.
    */
   java.lang.String getLearnMoreUrls(int index);
-
   /**
    *
    *

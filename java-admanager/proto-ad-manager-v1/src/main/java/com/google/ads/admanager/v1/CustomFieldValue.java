@@ -33,7 +33,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldValue)
     CustomFieldValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomFieldValue.newBuilder() to construct.
   private CustomFieldValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      * @return Whether the dropdownValue field is set.
      */
     boolean hasDropdownValue();
-
     /**
      *
      *
@@ -107,7 +105,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      * @return Whether the stringValue field is set.
      */
     boolean hasStringValue();
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      * @return The stringValue.
      */
     java.lang.String getStringValue();
-
     /**
      *
      *
@@ -146,7 +142,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      * @return Whether the numberValue field is set.
      */
     boolean hasNumberValue();
-
     /**
      *
      *
@@ -172,7 +167,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      * @return Whether the toggleValue field is set.
      */
     boolean hasToggleValue();
-
     /**
      *
      *
@@ -188,7 +182,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
 
     com.google.ads.admanager.v1.CustomFieldValue.Value.ValueCase getValueCase();
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldValue.Value)
       ValueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Value.newBuilder() to construct.
     private Value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -252,7 +244,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       private ValueCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -290,7 +281,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DROPDOWN_VALUE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -306,7 +296,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     public boolean hasDropdownValue() {
       return valueCase_ == 1;
     }
-
     /**
      *
      *
@@ -327,7 +316,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int STRING_VALUE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -342,7 +330,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     public boolean hasStringValue() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -370,7 +357,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -400,7 +386,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NUMBER_VALUE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -416,7 +401,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     public boolean hasNumberValue() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -437,7 +421,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int TOGGLE_VALUE_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -453,7 +436,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     public boolean hasToggleValue() {
       return valueCase_ == 4;
     }
-
     /**
      *
      *
@@ -695,7 +677,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -957,7 +938,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       public boolean hasDropdownValue() {
         return valueCase_ == 1;
       }
-
       /**
        *
        *
@@ -975,7 +955,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         }
         return 0L;
       }
-
       /**
        *
        *
@@ -995,7 +974,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1031,7 +1009,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       public boolean hasStringValue() {
         return valueCase_ == 2;
       }
-
       /**
        *
        *
@@ -1060,7 +1037,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1089,7 +1065,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1111,7 +1086,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1131,7 +1105,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -1169,7 +1142,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       public boolean hasNumberValue() {
         return valueCase_ == 3;
       }
-
       /**
        *
        *
@@ -1187,7 +1159,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         }
         return 0D;
       }
-
       /**
        *
        *
@@ -1207,7 +1178,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1242,7 +1212,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       public boolean hasToggleValue() {
         return valueCase_ == 4;
       }
-
       /**
        *
        *
@@ -1260,7 +1229,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         }
         return false;
       }
-
       /**
        *
        *
@@ -1280,7 +1248,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1370,7 +1337,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customField_ = "";
-
   /**
    *
    *
@@ -1397,7 +1363,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1427,7 +1392,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.ads.admanager.v1.CustomFieldValue.Value value_;
-
   /**
    *
    *
@@ -1445,7 +1409,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1465,7 +1428,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         ? com.google.ads.admanager.v1.CustomFieldValue.Value.getDefaultInstance()
         : value_;
   }
-
   /**
    *
    *
@@ -1657,7 +1619,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1870,7 +1831,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object customField_ = "";
-
     /**
      *
      *
@@ -1896,7 +1856,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1922,7 +1881,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1947,7 +1905,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1925,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1957,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
             com.google.ads.admanager.v1.CustomFieldValue.Value.Builder,
             com.google.ads.admanager.v1.CustomFieldValue.ValueOrBuilder>
         valueBuilder_;
-
     /**
      *
      *
@@ -2018,7 +1973,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2041,7 +1995,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
         return valueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2066,7 +2019,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2089,7 +2041,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2119,7 +2070,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2141,7 +2091,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2158,7 +2107,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2179,7 +2127,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
             : value_;
       }
     }
-
     /**
      *
      *

@@ -276,8 +276,7 @@ public class ResourceValueConfigName implements ResourceName {
     private Builder(ResourceValueConfigName resourceValueConfigName) {
       Preconditions.checkArgument(
           Objects.equals(resourceValueConfigName.pathTemplate, ORGANIZATION_RESOURCE_VALUE_CONFIG),
-          "toBuilder is only supported when ResourceValueConfigName has the pattern of"
-              + " organizations/{organization}/resourceValueConfigs/{resource_value_config}");
+          "toBuilder is only supported when ResourceValueConfigName has the pattern of organizations/{organization}/resourceValueConfigs/{resource_value_config}");
       this.organization = resourceValueConfigName.organization;
       this.resourceValueConfig = resourceValueConfigName.resourceValueConfig;
     }

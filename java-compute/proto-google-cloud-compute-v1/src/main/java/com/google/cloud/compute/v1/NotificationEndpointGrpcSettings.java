@@ -33,7 +33,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NotificationEndpointGrpcSettings)
     NotificationEndpointGrpcSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationEndpointGrpcSettings.newBuilder() to construct.
   private NotificationEndpointGrpcSettings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object authority_ = "";
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   public boolean hasAuthority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   public boolean hasEndpoint() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object payloadName_ = "";
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   public boolean hasPayloadName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   public static final int RESEND_INTERVAL_FIELD_NUMBER = 478288969;
   private com.google.cloud.compute.v1.Duration resendInterval_;
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   public boolean hasResendInterval() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : resendInterval_;
   }
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   public static final int RETRY_DURATION_SEC_FIELD_NUMBER = 115681117;
   private int retryDurationSec_ = 0;
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   public boolean hasRetryDurationSec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -585,7 +570,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -850,7 +834,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object authority_ = "";
-
     /**
      *
      *
@@ -865,7 +848,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public boolean hasAuthority() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +930,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
 
     private java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public boolean hasEndpoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1033,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1050,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1074,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
 
     private java.lang.Object payloadName_ = "";
-
     /**
      *
      *
@@ -1117,7 +1088,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public boolean hasPayloadName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1140,7 +1110,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1132,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1153,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1170,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1199,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         resendIntervalBuilder_;
-
     /**
      *
      *
@@ -1248,7 +1213,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public boolean hasResendInterval() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1269,7 +1233,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         return resendIntervalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1292,7 +1255,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1274,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1301,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1320,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1334,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return getResendIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1394,7 +1352,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
             : resendInterval_;
       }
     }
-
     /**
      *
      *
@@ -1422,7 +1379,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
 
     private int retryDurationSec_;
-
     /**
      *
      *
@@ -1438,7 +1394,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public boolean hasRetryDurationSec() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1454,7 +1409,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public int getRetryDurationSec() {
       return retryDurationSec_;
     }
-
     /**
      *
      *
@@ -1474,7 +1428,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

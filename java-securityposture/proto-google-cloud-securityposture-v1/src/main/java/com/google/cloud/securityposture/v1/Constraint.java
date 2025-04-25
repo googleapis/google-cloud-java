@@ -33,7 +33,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.Constraint)
     ConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Constraint.newBuilder() to construct.
   private Constraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     private ImplementationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_HEALTH_ANALYTICS_MODULE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityHealthAnalyticsModule() {
     return implementationCase_ == 3;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.securityposture.v1.SecurityHealthAnalyticsModule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityHealthAnalyticsCustomModule() {
     return implementationCase_ == 4;
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.securityposture.v1.SecurityHealthAnalyticsCustomModule
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORG_POLICY_CONSTRAINT_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOrgPolicyConstraint() {
     return implementationCase_ == 5;
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.securityposture.v1.OrgPolicyConstraint.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORG_POLICY_CONSTRAINT_CUSTOM_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOrgPolicyConstraintCustom() {
     return implementationCase_ == 6;
   }
-
   /**
    *
    *
@@ -348,7 +335,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.securityposture.v1.OrgPolicyConstraintCustom.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -600,7 +586,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -875,7 +860,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securityposture.v1.SecurityHealthAnalyticsModule.Builder,
             com.google.cloud.securityposture.v1.SecurityHealthAnalyticsModuleOrBuilder>
         securityHealthAnalyticsModuleBuilder_;
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityHealthAnalyticsModule() {
       return implementationCase_ == 3;
     }
-
     /**
      *
      *
@@ -925,7 +908,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -951,7 +933,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +955,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +993,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1020,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1035,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getSecurityHealthAnalyticsModuleBuilder() {
       return getSecurityHealthAnalyticsModuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1083,7 +1060,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1102,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securityposture.v1.SecurityHealthAnalyticsCustomModule.Builder,
             com.google.cloud.securityposture.v1.SecurityHealthAnalyticsCustomModuleOrBuilder>
         securityHealthAnalyticsCustomModuleBuilder_;
-
     /**
      *
      *
@@ -1144,7 +1119,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityHealthAnalyticsCustomModule() {
       return implementationCase_ == 4;
     }
-
     /**
      *
      *
@@ -1176,7 +1150,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1202,7 +1175,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1198,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1236,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1263,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1278,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getSecurityHealthAnalyticsCustomModuleBuilder() {
       return getSecurityHealthAnalyticsCustomModuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1335,7 +1303,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1379,7 +1346,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securityposture.v1.OrgPolicyConstraint.Builder,
             com.google.cloud.securityposture.v1.OrgPolicyConstraintOrBuilder>
         orgPolicyConstraintBuilder_;
-
     /**
      *
      *
@@ -1397,7 +1363,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrgPolicyConstraint() {
       return implementationCase_ == 5;
     }
-
     /**
      *
      *
@@ -1425,7 +1390,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securityposture.v1.OrgPolicyConstraint.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1451,7 +1415,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1474,7 +1437,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1473,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1500,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1515,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getOrgPolicyConstraintBuilder() {
       return getOrgPolicyConstraintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1579,7 +1538,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securityposture.v1.OrgPolicyConstraint.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1621,7 +1579,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securityposture.v1.OrgPolicyConstraintCustom.Builder,
             com.google.cloud.securityposture.v1.OrgPolicyConstraintCustomOrBuilder>
         orgPolicyConstraintCustomBuilder_;
-
     /**
      *
      *
@@ -1639,7 +1596,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrgPolicyConstraintCustom() {
       return implementationCase_ == 6;
     }
-
     /**
      *
      *
@@ -1668,7 +1624,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securityposture.v1.OrgPolicyConstraintCustom.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1694,7 +1649,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1717,7 +1671,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1709,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       implementationCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1736,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1751,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getOrgPolicyConstraintCustomBuilder() {
       return getOrgPolicyConstraintCustomFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1824,7 +1774,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securityposture.v1.OrgPolicyConstraintCustom.getDefaultInstance();
       }
     }
-
     /**
      *
      *

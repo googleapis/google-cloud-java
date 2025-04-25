@@ -33,7 +33,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitLogEntry)
     CommitLogEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommitLogEntry.newBuilder() to construct.
   private CommitLogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int COMMIT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp commitTime_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCommitTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCommitTime() {
     return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commitSha_ = "";
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHOR_FIELD_NUMBER = 3;
   private com.google.cloud.dataform.v1beta1.CommitAuthor author_;
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuthor() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataform.v1beta1.CommitAuthor.getDefaultInstance()
         : author_;
   }
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commitMessage_ = "";
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -470,7 +459,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -723,7 +711,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         commitTimeBuilder_;
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCommitTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         return commitTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +846,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCommitTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
             : commitTime_;
       }
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object commitSha_ = "";
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +973,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.CommitAuthor.Builder,
             com.google.cloud.dataform.v1beta1.CommitAuthorOrBuilder>
         authorBuilder_;
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthor() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1064,7 +1036,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         return authorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1058,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1078,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1105,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1124,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1138,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuthorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1190,7 +1156,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
             : author_;
       }
     }
-
     /**
      *
      *
@@ -1218,7 +1183,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object commitMessage_ = "";
-
     /**
      *
      *
@@ -1241,7 +1205,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1227,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1248,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1265,6 @@ public final class CommitLogEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

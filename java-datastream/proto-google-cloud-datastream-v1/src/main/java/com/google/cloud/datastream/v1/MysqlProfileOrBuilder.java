@@ -36,7 +36,6 @@ public interface MysqlProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface MysqlProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface MysqlProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface MysqlProfileOrBuilder
    * @return Whether the sslConfig field is set.
    */
   boolean hasSslConfig();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface MysqlProfileOrBuilder
    * @return The sslConfig.
    */
   com.google.cloud.datastream.v1.MysqlSslConfig getSslConfig();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface MysqlProfileOrBuilder
    * @return The secretManagerStoredPassword.
    */
   java.lang.String getSecretManagerStoredPassword();
-
   /**
    *
    *

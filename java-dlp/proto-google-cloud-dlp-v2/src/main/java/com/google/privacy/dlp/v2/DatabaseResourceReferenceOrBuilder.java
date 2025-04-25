@@ -37,7 +37,6 @@ public interface DatabaseResourceReferenceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DatabaseResourceReferenceOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DatabaseResourceReferenceOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface DatabaseResourceReferenceOrBuilder
    * @return The databaseResource.
    */
   java.lang.String getDatabaseResource();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ModelSourceInfoOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
-
   /**
    *
    *

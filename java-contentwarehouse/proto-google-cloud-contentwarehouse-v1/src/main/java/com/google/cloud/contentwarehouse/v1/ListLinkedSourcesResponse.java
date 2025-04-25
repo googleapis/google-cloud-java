@@ -33,7 +33,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ListLinkedSourcesResponse)
     ListLinkedSourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLinkedSourcesResponse.newBuilder() to construct.
   private ListLinkedSourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.DocumentLink> documentLinks_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.contentwarehouse.v1.DocumentLink> getDocumentLinksList() {
     return documentLinks_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       getDocumentLinksOrBuilderList() {
     return documentLinks_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
   public int getDocumentLinksCount() {
     return documentLinks_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
   public com.google.cloud.contentwarehouse.v1.DocumentLink getDocumentLinks(int index) {
     return documentLinks_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return documentLinksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return documentLinksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return documentLinksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         int index) {
       return getDocumentLinksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return documentLinksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(documentLinks_);
       }
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       return getDocumentLinksFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.DocumentLink.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.DocumentLink.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1021,7 +994,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1017,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1039,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1057,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

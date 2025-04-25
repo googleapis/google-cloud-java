@@ -36,7 +36,6 @@ public interface RubricCritiqueResultOrBuilder
    * @return The rubric.
    */
   java.lang.String getRubric();
-
   /**
    *
    *

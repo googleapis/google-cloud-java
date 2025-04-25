@@ -34,7 +34,6 @@ public interface ListAssetsResponseOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Asset assets = 1;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Asset> getAssetsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAssetsResponseOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Asset assets = 1;</code>
    */
   com.google.cloud.video.livestream.v1.Asset getAssets(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAssetsResponseOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Asset assets = 1;</code>
    */
   int getAssetsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.AssetOrBuilder>
       getAssetsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListAssetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListAssetsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListAssetsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListAssetsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

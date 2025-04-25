@@ -41,7 +41,6 @@ public interface UpdateRecognizerRequestOrBuilder
    * @return Whether the recognizer field is set.
    */
   boolean hasRecognizer();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateRecognizerRequestOrBuilder
    * @return The recognizer.
    */
   com.google.cloud.speech.v2.Recognizer getRecognizer();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateRecognizerRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateRecognizerRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

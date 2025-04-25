@@ -38,7 +38,6 @@ public interface UpdateCdnKeyRequestOrBuilder
    * @return Whether the cdnKey field is set.
    */
   boolean hasCdnKey();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateCdnKeyRequestOrBuilder
    * @return The cdnKey.
    */
   com.google.cloud.video.stitcher.v1.CdnKey getCdnKey();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateCdnKeyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface UpdateCdnKeyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

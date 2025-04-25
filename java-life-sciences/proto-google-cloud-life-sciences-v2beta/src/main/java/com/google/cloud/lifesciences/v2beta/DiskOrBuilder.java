@@ -38,7 +38,6 @@ public interface DiskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface DiskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface DiskOrBuilder
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface WarehouseBasedDeliveryTimeOrBuilder
    * @return Whether the carrier field is set.
    */
   boolean hasCarrier();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WarehouseBasedDeliveryTimeOrBuilder
    * @return The carrier.
    */
   java.lang.String getCarrier();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface WarehouseBasedDeliveryTimeOrBuilder
    * @return Whether the carrierService field is set.
    */
   boolean hasCarrierService();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface WarehouseBasedDeliveryTimeOrBuilder
    * @return The carrierService.
    */
   java.lang.String getCarrierService();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface WarehouseBasedDeliveryTimeOrBuilder
    * @return Whether the warehouse field is set.
    */
   boolean hasWarehouse();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface WarehouseBasedDeliveryTimeOrBuilder
    * @return The warehouse.
    */
   java.lang.String getWarehouse();
-
   /**
    *
    *

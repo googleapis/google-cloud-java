@@ -63,7 +63,6 @@ public interface NFDeployStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatus> getSitesList();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface NFDeployStatusOrBuilder
    * </code>
    */
   com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatus getSites(int index);
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface NFDeployStatusOrBuilder
    * </code>
    */
   int getSitesCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface NFDeployStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatusOrBuilder>
       getSitesOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CitationMetadata)
     CitationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CitationMetadata.newBuilder() to construct.
   private CitationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Citation> citations_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.aiplatform.v1.Citation> getCitationsList() {
     return citations_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       getCitationsOrBuilderList() {
     return citations_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
   public int getCitationsCount() {
     return citations_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.aiplatform.v1.Citation getCitations(int index) {
     return citations_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
         return citationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
         return citationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
         return citationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -638,7 +628,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +698,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +819,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1.Citation.Builder getCitationsBuilder(int index) {
       return getCitationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
         return citationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -877,7 +856,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(citations_);
       }
     }
-
     /**
      *
      *
@@ -893,7 +871,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       return getCitationsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Citation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class CitationMetadata extends com.google.protobuf.GeneratedMessage
       return getCitationsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Citation.getDefaultInstance());
     }
-
     /**
      *
      *

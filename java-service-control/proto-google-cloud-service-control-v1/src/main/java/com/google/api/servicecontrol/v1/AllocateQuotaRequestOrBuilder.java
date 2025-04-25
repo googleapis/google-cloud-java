@@ -39,7 +39,6 @@ public interface AllocateQuotaRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AllocateQuotaRequestOrBuilder
    * @return Whether the allocateOperation field is set.
    */
   boolean hasAllocateOperation();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AllocateQuotaRequestOrBuilder
    * @return The allocateOperation.
    */
   com.google.api.servicecontrol.v1.QuotaOperation getAllocateOperation();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface AllocateQuotaRequestOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
-
   /**
    *
    *

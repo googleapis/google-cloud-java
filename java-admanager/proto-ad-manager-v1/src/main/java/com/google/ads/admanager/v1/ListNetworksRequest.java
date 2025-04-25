@@ -33,7 +33,6 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListNetworksRequest)
     ListNetworksRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNetworksRequest.newBuilder() to construct.
   private ListNetworksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

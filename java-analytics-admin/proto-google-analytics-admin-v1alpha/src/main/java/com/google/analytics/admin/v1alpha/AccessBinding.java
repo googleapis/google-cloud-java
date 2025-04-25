@@ -33,7 +33,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AccessBinding)
     AccessBindingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessBinding.newBuilder() to construct.
   private AccessBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     private AccessTargetCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUser() {
     return accessTargetCase_ == 2;
   }
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -258,7 +251,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList roles_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -284,7 +276,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRolesList() {
     return roles_;
   }
-
   /**
    *
    *
@@ -310,7 +301,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   public int getRolesCount() {
     return roles_.size();
   }
-
   /**
    *
    *
@@ -337,7 +327,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRoles(int index) {
     return roles_.get(index);
   }
-
   /**
    *
    *
@@ -562,7 +551,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -826,7 +814,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUser() {
       return accessTargetCase_ == 2;
     }
-
     /**
      *
      *
@@ -856,7 +843,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +872,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +894,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +914,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +939,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -985,7 +967,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +995,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1022,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1045,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1083,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1132,7 +1109,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       roles_.makeImmutable();
       return roles_;
     }
-
     /**
      *
      *
@@ -1158,7 +1134,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     public int getRolesCount() {
       return roles_.size();
     }
-
     /**
      *
      *
@@ -1185,7 +1160,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRoles(int index) {
       return roles_.get(index);
     }
-
     /**
      *
      *
@@ -1212,7 +1186,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRolesBytes(int index) {
       return roles_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1247,7 +1220,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1253,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1283,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1312,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

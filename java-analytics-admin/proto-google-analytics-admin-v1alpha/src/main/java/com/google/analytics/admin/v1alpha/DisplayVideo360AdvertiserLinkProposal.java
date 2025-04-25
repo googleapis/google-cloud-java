@@ -39,7 +39,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
     DisplayVideo360AdvertiserLinkProposalOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisplayVideo360AdvertiserLinkProposal.newBuilder() to construct.
   private DisplayVideo360AdvertiserLinkProposal(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -79,7 +78,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertiserId_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   public static final int LINK_PROPOSAL_STATUS_DETAILS_FIELD_NUMBER = 3;
   private com.google.analytics.admin.v1alpha.LinkProposalStatusDetails linkProposalStatusDetails_;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
   public boolean hasLinkProposalStatusDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         ? com.google.analytics.admin.v1alpha.LinkProposalStatusDetails.getDefaultInstance()
         : linkProposalStatusDetails_;
   }
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertiserDisplayName_ = "";
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       return s;
     }
   }
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationEmail_ = "";
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +358,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   public static final int ADS_PERSONALIZATION_ENABLED_FIELD_NUMBER = 6;
   private com.google.protobuf.BoolValue adsPersonalizationEnabled_;
-
   /**
    *
    *
@@ -389,7 +376,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
   public boolean hasAdsPersonalizationEnabled() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -410,7 +396,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : adsPersonalizationEnabled_;
   }
-
   /**
    *
    *
@@ -432,7 +417,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   public static final int CAMPAIGN_DATA_SHARING_ENABLED_FIELD_NUMBER = 7;
   private com.google.protobuf.BoolValue campaignDataSharingEnabled_;
-
   /**
    *
    *
@@ -451,7 +435,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
   public boolean hasCampaignDataSharingEnabled() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -472,7 +455,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : campaignDataSharingEnabled_;
   }
-
   /**
    *
    *
@@ -494,7 +476,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
 
   public static final int COST_DATA_SHARING_ENABLED_FIELD_NUMBER = 8;
   private com.google.protobuf.BoolValue costDataSharingEnabled_;
-
   /**
    *
    *
@@ -514,7 +495,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
   public boolean hasCostDataSharingEnabled() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -536,7 +516,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : costDataSharingEnabled_;
   }
-
   /**
    *
    *
@@ -812,7 +791,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1159,7 +1137,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1186,7 +1163,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1189,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1214,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1235,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1263,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     }
 
     private java.lang.Object advertiserId_ = "";
-
     /**
      *
      *
@@ -1313,7 +1285,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1336,7 +1307,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1358,7 +1328,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1345,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1374,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             com.google.analytics.admin.v1alpha.LinkProposalStatusDetails.Builder,
             com.google.analytics.admin.v1alpha.LinkProposalStatusDetailsOrBuilder>
         linkProposalStatusDetailsBuilder_;
-
     /**
      *
      *
@@ -1423,7 +1390,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     public boolean hasLinkProposalStatusDetails() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1447,7 +1413,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return linkProposalStatusDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1473,7 +1438,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1496,7 +1460,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1492,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       }
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1513,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1530,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return getLinkProposalStatusDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1591,7 +1551,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             : linkProposalStatusDetails_;
       }
     }
-
     /**
      *
      *
@@ -1621,7 +1580,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     }
 
     private java.lang.Object advertiserDisplayName_ = "";
-
     /**
      *
      *
@@ -1645,7 +1603,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1669,7 +1626,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1648,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1666,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1691,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     }
 
     private java.lang.Object validationEmail_ = "";
-
     /**
      *
      *
@@ -1765,7 +1718,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1745,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1820,7 +1771,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1843,7 +1793,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1827,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         adsPersonalizationEnabledBuilder_;
-
     /**
      *
      *
@@ -1896,7 +1844,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     public boolean hasAdsPersonalizationEnabled() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1920,7 +1867,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return adsPersonalizationEnabledBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1946,7 +1892,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1970,7 +1915,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1945,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       }
       return this;
     }
-
     /**
      *
      *
@@ -2024,7 +1967,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2042,7 +1984,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return getAdsPersonalizationEnabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2064,7 +2005,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             : adsPersonalizationEnabled_;
       }
     }
-
     /**
      *
      *
@@ -2100,7 +2040,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         campaignDataSharingEnabledBuilder_;
-
     /**
      *
      *
@@ -2118,7 +2057,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     public boolean hasCampaignDataSharingEnabled() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2142,7 +2080,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return campaignDataSharingEnabledBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2168,7 +2105,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2192,7 +2128,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2223,7 +2158,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       }
       return this;
     }
-
     /**
      *
      *
@@ -2246,7 +2180,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2197,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return getCampaignDataSharingEnabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2286,7 +2218,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             : campaignDataSharingEnabled_;
       }
     }
-
     /**
      *
      *
@@ -2322,7 +2253,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         costDataSharingEnabledBuilder_;
-
     /**
      *
      *
@@ -2341,7 +2271,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     public boolean hasCostDataSharingEnabled() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2366,7 +2295,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
         return costDataSharingEnabledBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2393,7 +2321,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2418,7 +2345,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2450,7 +2376,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       }
       return this;
     }
-
     /**
      *
      *
@@ -2474,7 +2399,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2493,7 +2417,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
       onChanged();
       return getCostDataSharingEnabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2516,7 +2439,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
             : costDataSharingEnabled_;
       }
     }
-
     /**
      *
      *

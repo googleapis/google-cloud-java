@@ -33,7 +33,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.VmwarePlatformDetails)
     VmwarePlatformDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VmwarePlatformDetails.newBuilder() to construct.
   private VmwarePlatformDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vcenterVersion_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object esxVersion_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object osid_ = "";
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vcenterFolder_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vcenterUri_ = "";
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vcenterVmId_ = "";
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -594,7 +581,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -854,7 +840,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object vcenterVersion_ = "";
-
     /**
      *
      *
@@ -877,7 +862,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -900,7 +884,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +905,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +922,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +946,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object esxVersion_ = "";
-
     /**
      *
      *
@@ -988,7 +968,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +990,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1011,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1028,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1052,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object osid_ = "";
-
     /**
      *
      *
@@ -1100,7 +1075,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1098,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1120,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1138,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1163,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object vcenterFolder_ = "";
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1207,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1228,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1245,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1269,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object vcenterUri_ = "";
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1313,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1371,7 +1334,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1351,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1375,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object vcenterVmId_ = "";
-
     /**
      *
      *
@@ -1437,7 +1397,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1419,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1440,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1457,6 @@ public final class VmwarePlatformDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

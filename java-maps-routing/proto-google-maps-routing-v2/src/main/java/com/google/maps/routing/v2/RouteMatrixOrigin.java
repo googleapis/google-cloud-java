@@ -33,7 +33,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteMatrixOrigin)
     RouteMatrixOriginOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouteMatrixOrigin.newBuilder() to construct.
   private RouteMatrixOrigin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int WAYPOINT_FIELD_NUMBER = 1;
   private com.google.maps.routing.v2.Waypoint waypoint_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
   public boolean hasWaypoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
   public com.google.maps.routing.v2.Waypoint getWaypoint() {
     return waypoint_ == null ? com.google.maps.routing.v2.Waypoint.getDefaultInstance() : waypoint_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
 
   public static final int ROUTE_MODIFIERS_FIELD_NUMBER = 2;
   private com.google.maps.routing.v2.RouteModifiers routeModifiers_;
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
   public boolean hasRouteModifiers() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.routing.v2.RouteModifiers.getDefaultInstance()
         : routeModifiers_;
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +567,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
             com.google.maps.routing.v2.Waypoint.Builder,
             com.google.maps.routing.v2.WaypointOrBuilder>
         waypointBuilder_;
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
     public boolean hasWaypoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
         return waypointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWaypointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -752,7 +736,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
             : waypoint_;
       }
     }
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
             com.google.maps.routing.v2.RouteModifiers.Builder,
             com.google.maps.routing.v2.RouteModifiersOrBuilder>
         routeModifiersBuilder_;
-
     /**
      *
      *
@@ -804,7 +786,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
     public boolean hasRouteModifiers() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +808,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
         return routeModifiersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -852,7 +832,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +920,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRouteModifiersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -965,7 +940,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
             : routeModifiers_;
       }
     }
-
     /**
      *
      *

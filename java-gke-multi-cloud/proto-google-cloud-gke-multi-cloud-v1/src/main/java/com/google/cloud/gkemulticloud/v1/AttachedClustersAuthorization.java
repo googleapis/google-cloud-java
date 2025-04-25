@@ -33,7 +33,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AttachedClustersAuthorization)
     AttachedClustersAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttachedClustersAuthorization.newBuilder() to construct.
   private AttachedClustersAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterUser> adminUsers_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterUser> getAdminUsersList() {
     return adminUsers_;
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       getAdminUsersOrBuilderList() {
     return adminUsers_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
   public int getAdminUsersCount() {
     return adminUsers_.size();
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
   public com.google.cloud.gkemulticloud.v1.AttachedClusterUser getAdminUsers(int index) {
     return adminUsers_.get(index);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup> adminGroups_;
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       getAdminGroupsList() {
     return adminGroups_;
   }
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       getAdminGroupsOrBuilderList() {
     return adminGroups_;
   }
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
   public int getAdminGroupsCount() {
     return adminGroups_.size();
   }
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
   public com.google.cloud.gkemulticloud.v1.AttachedClusterGroup getAdminGroups(int index) {
     return adminGroups_.get(index);
   }
-
   /**
    *
    *
@@ -463,7 +452,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -797,7 +785,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminUsersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -821,7 +808,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminUsersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -845,7 +831,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminUsersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -876,7 +861,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +888,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +917,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +947,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +974,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +1001,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1029,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1055,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1081,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1101,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         int index) {
       return getAdminUsersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1150,7 +1125,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminUsersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1149,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(adminUsers_);
       }
     }
-
     /**
      *
      *
@@ -1196,7 +1169,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       return getAdminUsersFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AttachedClusterUser.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1219,7 +1191,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AttachedClusterUser.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1300,7 +1271,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1324,7 +1294,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1348,7 +1317,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1379,7 +1347,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1374,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1403,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1433,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1496,7 +1460,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1524,7 +1487,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1553,7 +1515,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1541,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1607,7 +1567,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1587,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         int index) {
       return getAdminGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1653,7 +1611,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return adminGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1678,7 +1635,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(adminGroups_);
       }
     }
-
     /**
      *
      *
@@ -1699,7 +1655,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       return getAdminGroupsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1722,7 +1677,6 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.getDefaultInstance());
     }
-
     /**
      *
      *

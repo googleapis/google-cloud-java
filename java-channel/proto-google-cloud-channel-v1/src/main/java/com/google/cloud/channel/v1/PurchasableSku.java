@@ -34,7 +34,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.PurchasableSku)
     PurchasableSkuOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurchasableSku.newBuilder() to construct.
   private PurchasableSku(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SKU_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.Sku sku_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSku() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.channel.v1.Sku getSku() {
     return sku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : sku_;
   }
-
   /**
    *
    *
@@ -277,7 +273,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +476,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.channel.v1.Sku.Builder,
             com.google.cloud.channel.v1.SkuOrBuilder>
         skuBuilder_;
-
     /**
      *
      *
@@ -496,7 +490,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSku() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -515,7 +508,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
         return skuBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -538,7 +530,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -558,7 +549,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +576,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -606,7 +595,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +609,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSkuFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -638,7 +625,6 @@ public final class PurchasableSku extends com.google.protobuf.GeneratedMessageV3
         return sku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : sku_;
       }
     }
-
     /**
      *
      *

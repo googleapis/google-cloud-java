@@ -38,7 +38,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return Whether the securityPolicyReferenceResource field is set.
    */
   boolean hasSecurityPolicyReferenceResource();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return The securityPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyReference getSecurityPolicyReferenceResource();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface SetSecurityPolicyTargetPoolRequestOrBuilder
    * @return The targetPool.
    */
   java.lang.String getTargetPool();
-
   /**
    *
    *

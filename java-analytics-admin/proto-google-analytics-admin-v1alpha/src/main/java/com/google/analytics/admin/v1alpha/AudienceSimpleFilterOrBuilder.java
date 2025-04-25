@@ -38,7 +38,6 @@ public interface AudienceSimpleFilterOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface AudienceSimpleFilterOrBuilder
    * @return Whether the filterExpression field is set.
    */
   boolean hasFilterExpression();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface AudienceSimpleFilterOrBuilder
    * @return The filterExpression.
    */
   com.google.analytics.admin.v1alpha.AudienceFilterExpression getFilterExpression();
-
   /**
    *
    *

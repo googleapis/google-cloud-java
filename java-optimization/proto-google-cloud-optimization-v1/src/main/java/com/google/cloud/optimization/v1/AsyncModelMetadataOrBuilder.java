@@ -36,7 +36,6 @@ public interface AsyncModelMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AsyncModelMetadataOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AsyncModelMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AsyncModelMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface AsyncModelMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface AsyncModelMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

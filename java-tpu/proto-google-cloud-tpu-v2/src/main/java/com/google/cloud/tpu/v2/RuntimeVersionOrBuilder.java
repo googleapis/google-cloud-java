@@ -36,7 +36,6 @@ public interface RuntimeVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RuntimeVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * @return Whether the customConfig field is set.
    */
   boolean hasCustomConfig();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The customConfig.
    */
   com.google.cloud.securitycentermanagement.v1.CustomConfig getCustomConfig();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The enum numeric value on the wire for enablementState.
    */
   int getEnablementStateValue();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

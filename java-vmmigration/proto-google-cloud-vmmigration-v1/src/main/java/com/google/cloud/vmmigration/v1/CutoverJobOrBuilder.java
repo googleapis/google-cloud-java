@@ -38,7 +38,6 @@ public interface CutoverJobOrBuilder
    * @return Whether the computeEngineTargetDetails field is set.
    */
   boolean hasComputeEngineTargetDetails();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CutoverJobOrBuilder
    * @return The computeEngineTargetDetails.
    */
   com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails getComputeEngineTargetDetails();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface CutoverJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface CutoverJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface CutoverJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface CutoverJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface CutoverJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface CutoverJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface CutoverJobOrBuilder
    * @return Whether the stateTime field is set.
    */
   boolean hasStateTime();
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface CutoverJobOrBuilder
    * @return The stateTime.
    */
   com.google.protobuf.Timestamp getStateTime();
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface CutoverJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public interface CutoverJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -313,7 +301,6 @@ public interface CutoverJobOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public interface CutoverJobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.CutoverStep> getStepsList();
-
   /**
    *
    *
@@ -353,7 +339,6 @@ public interface CutoverJobOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.CutoverStep getSteps(int index);
-
   /**
    *
    *
@@ -366,7 +351,6 @@ public interface CutoverJobOrBuilder
    * </code>
    */
   int getStepsCount();
-
   /**
    *
    *
@@ -380,7 +364,6 @@ public interface CutoverJobOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.CutoverStepOrBuilder>
       getStepsOrBuilderList();
-
   /**
    *
    *

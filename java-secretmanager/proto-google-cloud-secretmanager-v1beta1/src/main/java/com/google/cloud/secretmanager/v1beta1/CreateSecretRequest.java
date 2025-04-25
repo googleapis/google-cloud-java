@@ -23,8 +23,7 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [SecretManagerService.CreateSecret][google.cloud.secrets.v1beta1.SecretManagerService.CreateSecret].
+ * Request message for [SecretManagerService.CreateSecret][google.cloud.secrets.v1beta1.SecretManagerService.CreateSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.CreateSecretRequest}
@@ -34,7 +33,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.CreateSecretRequest)
     CreateSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSecretRequest.newBuilder() to construct.
   private CreateSecretRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +69,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secretId_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,13 +183,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SECRET_FIELD_NUMBER = 3;
   private com.google.cloud.secretmanager.v1beta1.Secret secret_;
-
   /**
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-   * field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
    * <code>
@@ -208,13 +200,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSecret() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-   * field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
    * <code>
@@ -229,13 +219,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.secretmanager.v1beta1.Secret.getDefaultInstance()
         : secret_;
   }
-
   /**
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-   * field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
    * <code>
@@ -432,13 +420,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
-   * Request message for
-   * [SecretManagerService.CreateSecret][google.cloud.secrets.v1beta1.SecretManagerService.CreateSecret].
+   * Request message for [SecretManagerService.CreateSecret][google.cloud.secrets.v1beta1.SecretManagerService.CreateSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.CreateSecretRequest}
@@ -662,7 +648,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -688,7 +673,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +698,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -739,7 +722,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +742,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +769,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object secretId_ = "";
-
     /**
      *
      *
@@ -815,7 +795,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -842,7 +821,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -868,7 +846,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +867,6 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,13 +900,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.secretmanager.v1beta1.Secret.Builder,
             com.google.cloud.secretmanager.v1beta1.SecretOrBuilder>
         secretBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -942,13 +916,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSecret() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -966,13 +938,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
         return secretBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -992,13 +962,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -1016,13 +984,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -1047,13 +1013,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -1070,13 +1034,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -1088,13 +1050,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSecretFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>
@@ -1110,13 +1070,11 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
             : secret_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-     * field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
      * <code>

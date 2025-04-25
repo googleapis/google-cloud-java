@@ -39,7 +39,6 @@ public interface StopReplicationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

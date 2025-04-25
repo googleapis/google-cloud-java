@@ -36,7 +36,6 @@ public interface ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *

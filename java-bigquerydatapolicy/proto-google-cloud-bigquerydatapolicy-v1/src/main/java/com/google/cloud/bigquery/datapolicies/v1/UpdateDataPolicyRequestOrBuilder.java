@@ -41,7 +41,6 @@ public interface UpdateDataPolicyRequestOrBuilder
    * @return Whether the dataPolicy field is set.
    */
   boolean hasDataPolicy();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateDataPolicyRequestOrBuilder
    * @return The dataPolicy.
    */
   com.google.cloud.bigquery.datapolicies.v1.DataPolicy getDataPolicy();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface UpdateDataPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface UpdateDataPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

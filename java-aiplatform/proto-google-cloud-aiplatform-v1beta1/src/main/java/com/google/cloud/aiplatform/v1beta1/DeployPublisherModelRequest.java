@@ -35,7 +35,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest)
     DeployPublisherModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployPublisherModelRequest.newBuilder() to construct.
   private DeployPublisherModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destination_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpointDisplayName_ = "";
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +245,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   public static final int DEDICATED_RESOURCES_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.DedicatedResources dedicatedResources_;
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
   public boolean hasDedicatedResources() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.getDefaultInstance()
         : dedicatedResources_;
   }
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelDisplayName_ = "";
-
   /**
    *
    *
@@ -342,7 +331,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +360,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object huggingFaceAccessToken_ = "";
-
   /**
    *
    *
@@ -397,7 +384,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -425,7 +411,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
 
   public static final int ACCEPT_EULA_FIELD_NUMBER = 7;
   private boolean acceptEula_ = false;
-
   /**
    *
    *
@@ -662,7 +647,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -958,7 +942,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -987,7 +970,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1016,7 +998,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1025,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1048,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1078,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object destination_ = "";
-
     /**
      *
      *
@@ -1125,7 +1103,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1128,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1152,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1172,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1199,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object endpointDisplayName_ = "";
-
     /**
      *
      *
@@ -1249,7 +1222,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1245,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1267,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1285,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1315,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder,
             com.google.cloud.aiplatform.v1beta1.DedicatedResourcesOrBuilder>
         dedicatedResourcesBuilder_;
-
     /**
      *
      *
@@ -1364,7 +1332,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     public boolean hasDedicatedResources() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1388,7 +1355,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return dedicatedResourcesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1415,7 +1381,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1404,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1436,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1495,7 +1458,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1476,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return getDedicatedResourcesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1537,7 +1498,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
             : dedicatedResources_;
       }
     }
-
     /**
      *
      *
@@ -1568,7 +1528,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object modelDisplayName_ = "";
-
     /**
      *
      *
@@ -1592,7 +1551,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1616,7 +1574,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1639,7 +1596,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1658,7 +1614,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1684,7 +1639,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object huggingFaceAccessToken_ = "";
-
     /**
      *
      *
@@ -1708,7 +1662,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1732,7 +1685,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1755,7 +1707,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1774,7 +1725,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1750,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     }
 
     private boolean acceptEula_;
-
     /**
      *
      *
@@ -1817,7 +1766,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
     public boolean getAcceptEula() {
       return acceptEula_;
     }
-
     /**
      *
      *
@@ -1838,7 +1786,6 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

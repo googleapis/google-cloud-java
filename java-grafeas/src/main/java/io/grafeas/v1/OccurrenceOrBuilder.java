@@ -38,7 +38,6 @@ public interface OccurrenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface OccurrenceOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface OccurrenceOrBuilder
    * @return The noteName.
    */
   java.lang.String getNoteName();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface OccurrenceOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface OccurrenceOrBuilder
    * @return The remediation.
    */
   java.lang.String getRemediation();
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface OccurrenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface OccurrenceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public interface OccurrenceOrBuilder
    * @return The vulnerability.
    */
   io.grafeas.v1.VulnerabilityOccurrence getVulnerability();
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the build field is set.
    */
   boolean hasBuild();
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public interface OccurrenceOrBuilder
    * @return The build.
    */
   io.grafeas.v1.BuildOccurrence getBuild();
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public interface OccurrenceOrBuilder
    * @return The image.
    */
   io.grafeas.v1.ImageOccurrence getImage();
-
   /**
    *
    *
@@ -367,7 +352,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the package field is set.
    */
   boolean hasPackage();
-
   /**
    *
    *
@@ -380,7 +364,6 @@ public interface OccurrenceOrBuilder
    * @return The package.
    */
   io.grafeas.v1.PackageOccurrence getPackage();
-
   /**
    *
    *
@@ -404,7 +387,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -417,7 +399,6 @@ public interface OccurrenceOrBuilder
    * @return The deployment.
    */
   io.grafeas.v1.DeploymentOccurrence getDeployment();
-
   /**
    *
    *
@@ -441,7 +422,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the discovery field is set.
    */
   boolean hasDiscovery();
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public interface OccurrenceOrBuilder
    * @return The discovery.
    */
   io.grafeas.v1.DiscoveryOccurrence getDiscovery();
-
   /**
    *
    *
@@ -478,7 +457,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
-
   /**
    *
    *
@@ -491,7 +469,6 @@ public interface OccurrenceOrBuilder
    * @return The attestation.
    */
   io.grafeas.v1.AttestationOccurrence getAttestation();
-
   /**
    *
    *
@@ -515,7 +492,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the upgrade field is set.
    */
   boolean hasUpgrade();
-
   /**
    *
    *
@@ -528,7 +504,6 @@ public interface OccurrenceOrBuilder
    * @return The upgrade.
    */
   io.grafeas.v1.UpgradeOccurrence getUpgrade();
-
   /**
    *
    *
@@ -552,7 +527,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the compliance field is set.
    */
   boolean hasCompliance();
-
   /**
    *
    *
@@ -565,7 +539,6 @@ public interface OccurrenceOrBuilder
    * @return The compliance.
    */
   io.grafeas.v1.ComplianceOccurrence getCompliance();
-
   /**
    *
    *
@@ -589,7 +562,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the dsseAttestation field is set.
    */
   boolean hasDsseAttestation();
-
   /**
    *
    *
@@ -602,7 +574,6 @@ public interface OccurrenceOrBuilder
    * @return The dsseAttestation.
    */
   io.grafeas.v1.DSSEAttestationOccurrence getDsseAttestation();
-
   /**
    *
    *
@@ -626,7 +597,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the sbomReference field is set.
    */
   boolean hasSbomReference();
-
   /**
    *
    *
@@ -639,7 +609,6 @@ public interface OccurrenceOrBuilder
    * @return The sbomReference.
    */
   io.grafeas.v1.SBOMReferenceOccurrence getSbomReference();
-
   /**
    *
    *
@@ -663,7 +632,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the envelope field is set.
    */
   boolean hasEnvelope();
-
   /**
    *
    *
@@ -676,7 +644,6 @@ public interface OccurrenceOrBuilder
    * @return The envelope.
    */
   io.grafeas.v1.Envelope getEnvelope();
-
   /**
    *
    *

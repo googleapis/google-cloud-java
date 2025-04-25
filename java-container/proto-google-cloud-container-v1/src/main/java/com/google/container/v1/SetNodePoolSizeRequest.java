@@ -33,7 +33,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1.SetNodePoolSizeRequest)
     SetNodePoolSizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetNodePoolSizeRequest.newBuilder() to construct.
   private SetNodePoolSizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -261,7 +254,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodePoolId_ = "";
-
   /**
    *
    *
@@ -289,7 +281,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -320,7 +311,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
 
   public static final int NODE_COUNT_FIELD_NUMBER = 5;
   private int nodeCount_ = 0;
-
   /**
    *
    *
@@ -341,7 +331,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -367,7 +356,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -598,7 +586,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -855,7 +842,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -883,7 +869,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -911,7 +896,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +944,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +973,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1020,7 +1001,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1029,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1056,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1079,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1109,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1159,7 +1135,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1161,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1186,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1207,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1235,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nodePoolId_ = "";
-
     /**
      *
      *
@@ -1290,7 +1261,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1317,7 +1287,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1312,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1333,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1361,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     }
 
     private int nodeCount_;
-
     /**
      *
      *
@@ -1410,7 +1376,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     public int getNodeCount() {
       return nodeCount_;
     }
-
     /**
      *
      *
@@ -1430,7 +1395,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1414,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1475,7 +1438,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1462,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1524,7 +1485,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1504,6 @@ public final class SetNodePoolSizeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

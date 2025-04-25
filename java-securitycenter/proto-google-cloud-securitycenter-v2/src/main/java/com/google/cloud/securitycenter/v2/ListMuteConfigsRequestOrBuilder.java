@@ -43,7 +43,6 @@ public interface ListMuteConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface ListMuteConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

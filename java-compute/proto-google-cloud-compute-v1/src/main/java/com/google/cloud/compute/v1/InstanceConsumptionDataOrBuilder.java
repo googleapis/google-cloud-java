@@ -37,7 +37,6 @@ public interface InstanceConsumptionDataOrBuilder
    * @return Whether the consumptionInfo field is set.
    */
   boolean hasConsumptionInfo();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InstanceConsumptionDataOrBuilder
    * @return The consumptionInfo.
    */
   com.google.cloud.compute.v1.InstanceConsumptionInfo getConsumptionInfo();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface InstanceConsumptionDataOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface InstanceConsumptionDataOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *

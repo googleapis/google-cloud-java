@@ -36,7 +36,6 @@ public interface IamBindingOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface IamBindingOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface IamBindingOrBuilder
    * @return The member.
    */
   java.lang.String getMember();
-
   /**
    *
    *

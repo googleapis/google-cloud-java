@@ -43,7 +43,6 @@ public interface CertificateExtensionConstraintsOrBuilder
           com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
               .KnownCertificateExtension>
       getKnownExtensionsList();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    * @return The count of knownExtensions.
    */
   int getKnownExtensionsCount();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    */
   com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.KnownCertificateExtension
       getKnownExtensions(int index);
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    * @return A list containing the enum numeric values on the wire for knownExtensions.
    */
   java.util.List<java.lang.Integer> getKnownExtensionsValueList();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.security.privateca.v1.ObjectId> getAdditionalExtensionsList();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1.ObjectId getAdditionalExtensions(int index);
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    * </code>
    */
   int getAdditionalExtensionsCount();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface CertificateExtensionConstraintsOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1.ObjectIdOrBuilder>
       getAdditionalExtensionsOrBuilderList();
-
   /**
    *
    *

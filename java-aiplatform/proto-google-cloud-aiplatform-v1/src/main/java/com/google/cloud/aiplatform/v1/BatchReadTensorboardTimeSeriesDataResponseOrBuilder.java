@@ -34,7 +34,6 @@ public interface BatchReadTensorboardTimeSeriesDataResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TimeSeriesData time_series_data = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesData> getTimeSeriesDataList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchReadTensorboardTimeSeriesDataResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TimeSeriesData time_series_data = 1;</code>
    */
   com.google.cloud.aiplatform.v1.TimeSeriesData getTimeSeriesData(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchReadTensorboardTimeSeriesDataResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TimeSeriesData time_series_data = 1;</code>
    */
   int getTimeSeriesDataCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchReadTensorboardTimeSeriesDataResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TimeSeriesDataOrBuilder>
       getTimeSeriesDataOrBuilderList();
-
   /**
    *
    *

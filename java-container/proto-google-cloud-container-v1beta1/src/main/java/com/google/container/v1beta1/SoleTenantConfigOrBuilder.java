@@ -36,7 +36,6 @@ public interface SoleTenantConfigOrBuilder
    */
   java.util.List<com.google.container.v1beta1.SoleTenantConfig.NodeAffinity>
       getNodeAffinitiesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface SoleTenantConfigOrBuilder
    * </code>
    */
   com.google.container.v1beta1.SoleTenantConfig.NodeAffinity getNodeAffinities(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface SoleTenantConfigOrBuilder
    * </code>
    */
   int getNodeAffinitiesCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface SoleTenantConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.SoleTenantConfig.NodeAffinityOrBuilder>
       getNodeAffinitiesOrBuilderList();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.PricingExpression)
     PricingExpressionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PricingExpression.newBuilder() to construct.
   private PricingExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,7 +109,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPrice field is set.
      */
     boolean hasUnitPrice();
-
     /**
      *
      *
@@ -124,7 +122,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      * @return The unitPrice.
      */
     com.google.type.Money getUnitPrice();
-
     /**
      *
      *
@@ -137,7 +134,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      */
     com.google.type.MoneyOrBuilder getUnitPriceOrBuilder();
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.PricingExpression.TierRate)
       TierRateOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TierRate.newBuilder() to construct.
     private TierRate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -184,7 +179,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int START_USAGE_AMOUNT_FIELD_NUMBER = 1;
     private double startUsageAmount_ = 0D;
-
     /**
      *
      *
@@ -205,7 +199,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
     public static final int UNIT_PRICE_FIELD_NUMBER = 2;
     private com.google.type.Money unitPrice_;
-
     /**
      *
      *
@@ -222,7 +215,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     public boolean hasUnitPrice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -239,7 +231,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     public com.google.type.Money getUnitPrice() {
       return unitPrice_ == null ? com.google.type.Money.getDefaultInstance() : unitPrice_;
     }
-
     /**
      *
      *
@@ -434,7 +425,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private double startUsageAmount_;
-
       /**
        *
        *
@@ -667,7 +656,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       public double getStartUsageAmount() {
         return startUsageAmount_;
       }
-
       /**
        *
        *
@@ -689,7 +677,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -714,7 +701,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           unitPriceBuilder_;
-
       /**
        *
        *
@@ -730,7 +716,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       public boolean hasUnitPrice() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -750,7 +735,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
           return unitPriceBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -774,7 +758,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -795,7 +778,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -824,7 +806,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -845,7 +826,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -861,7 +841,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getUnitPriceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -879,7 +858,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
           return unitPrice_ == null ? com.google.type.Money.getDefaultInstance() : unitPrice_;
         }
       }
-
       /**
        *
        *
@@ -973,7 +951,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object usageUnit_ = "";
-
   /**
    *
    *
@@ -998,7 +975,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1026,7 +1002,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   public static final int DISPLAY_QUANTITY_FIELD_NUMBER = 2;
   private double displayQuantity_ = 0D;
-
   /**
    *
    *
@@ -1054,7 +1029,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate> tieredRates_;
-
   /**
    *
    *
@@ -1071,7 +1045,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       getTieredRatesList() {
     return tieredRates_;
   }
-
   /**
    *
    *
@@ -1088,7 +1061,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       getTieredRatesOrBuilderList() {
     return tieredRates_;
   }
-
   /**
    *
    *
@@ -1104,7 +1076,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
   public int getTieredRatesCount() {
     return tieredRates_.size();
   }
-
   /**
    *
    *
@@ -1120,7 +1091,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index) {
     return tieredRates_.get(index);
   }
-
   /**
    *
    *
@@ -1142,7 +1112,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object usageUnitDescription_ = "";
-
   /**
    *
    *
@@ -1167,7 +1136,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1197,7 +1165,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseUnit_ = "";
-
   /**
    *
    *
@@ -1222,7 +1189,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1252,7 +1218,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseUnitDescription_ = "";
-
   /**
    *
    *
@@ -1277,7 +1242,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1305,7 +1269,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   public static final int BASE_UNIT_CONVERSION_FACTOR_FIELD_NUMBER = 7;
   private double baseUnitConversionFactor_ = 0D;
-
   /**
    *
    *
@@ -1549,7 +1512,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1874,7 +1836,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object usageUnit_ = "";
-
     /**
      *
      *
@@ -1898,7 +1859,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1922,7 +1882,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1945,7 +1904,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1964,7 +1922,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1990,7 +1947,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
 
     private double displayQuantity_;
-
     /**
      *
      *
@@ -2013,7 +1969,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     public double getDisplayQuantity() {
       return displayQuantity_;
     }
-
     /**
      *
      *
@@ -2040,7 +1995,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2057,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return tieredRatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2122,7 +2075,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return tieredRatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2141,7 +2093,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return tieredRatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2167,7 +2118,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2190,7 +2140,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2164,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2241,7 +2189,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2211,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2287,7 +2233,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2311,7 +2256,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2333,7 +2277,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2355,7 +2298,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2371,7 +2313,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         int index) {
       return getTieredRatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2391,7 +2332,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return tieredRatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2411,7 +2351,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(tieredRates_);
       }
     }
-
     /**
      *
      *
@@ -2427,7 +2366,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       return getTieredRatesFieldBuilder()
           .addBuilder(com.google.cloud.billing.v1.PricingExpression.TierRate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2445,7 +2383,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.billing.v1.PricingExpression.TierRate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2480,7 +2417,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object usageUnitDescription_ = "";
-
     /**
      *
      *
@@ -2504,7 +2440,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2528,7 +2463,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2551,7 +2485,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2570,7 +2503,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2596,7 +2528,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object baseUnit_ = "";
-
     /**
      *
      *
@@ -2620,7 +2551,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2644,7 +2574,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2667,7 +2596,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2686,7 +2614,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2712,7 +2639,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object baseUnitDescription_ = "";
-
     /**
      *
      *
@@ -2736,7 +2662,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2760,7 +2685,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2783,7 +2707,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2802,7 +2725,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2828,7 +2750,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
 
     private double baseUnitConversionFactor_;
-
     /**
      *
      *
@@ -2848,7 +2769,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     public double getBaseUnitConversionFactor() {
       return baseUnitConversionFactor_;
     }
-
     /**
      *
      *
@@ -2872,7 +2792,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

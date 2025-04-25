@@ -33,7 +33,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.MigrationTaskResult)
     MigrationTaskResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MigrationTaskResult.newBuilder() to construct.
   private MigrationTaskResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     private DetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TRANSLATION_TASK_RESULT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
   public boolean hasTranslationTaskResult() {
     return detailsCase_ == 2;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.bigquery.migration.v2.TranslationTaskResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -343,7 +338,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +558,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.bigquery.migration.v2.TranslationTaskResult.Builder,
             com.google.cloud.bigquery.migration.v2.TranslationTaskResultOrBuilder>
         translationTaskResultBuilder_;
-
     /**
      *
      *
@@ -581,7 +574,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     public boolean hasTranslationTaskResult() {
       return detailsCase_ == 2;
     }
-
     /**
      *
      *
@@ -608,7 +600,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
         return com.google.cloud.bigquery.migration.v2.TranslationTaskResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -633,7 +624,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       detailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       detailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       detailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
         getTranslationTaskResultBuilder() {
       return getTranslationTaskResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
         return com.google.cloud.bigquery.migration.v2.TranslationTaskResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *

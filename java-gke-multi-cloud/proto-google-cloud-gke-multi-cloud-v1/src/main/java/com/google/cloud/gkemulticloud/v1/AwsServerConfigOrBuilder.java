@@ -36,7 +36,6 @@ public interface AwsServerConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AwsServerConfigOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo> getValidVersionsList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AwsServerConfigOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
    */
   com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo getValidVersions(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface AwsServerConfigOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
    */
   int getValidVersionsCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface AwsServerConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfoOrBuilder>
       getValidVersionsOrBuilderList();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface AwsServerConfigOrBuilder
    * @return A list containing the supportedAwsRegions.
    */
   java.util.List<java.lang.String> getSupportedAwsRegionsList();
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public interface AwsServerConfigOrBuilder
    * @return The count of supportedAwsRegions.
    */
   int getSupportedAwsRegionsCount();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface AwsServerConfigOrBuilder
    * @return The supportedAwsRegions at the given index.
    */
   java.lang.String getSupportedAwsRegions(int index);
-
   /**
    *
    *

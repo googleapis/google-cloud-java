@@ -33,7 +33,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsResponse)
     ListApiDeploymentRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListApiDeploymentRevisionsResponse.newBuilder() to construct.
   private ListApiDeploymentRevisionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apigeeregistry.v1.ApiDeployment> apiDeployments_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
   public java.util.List<com.google.cloud.apigeeregistry.v1.ApiDeployment> getApiDeploymentsList() {
     return apiDeployments_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       getApiDeploymentsOrBuilderList() {
     return apiDeployments_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
   public int getApiDeploymentsCount() {
     return apiDeployments_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
   public com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployments(int index) {
     return apiDeployments_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return apiDeploymentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return apiDeploymentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return apiDeploymentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         int index) {
       return getApiDeploymentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return apiDeploymentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return java.util.Collections.unmodifiableList(apiDeployments_);
       }
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       return getApiDeploymentsFieldBuilder()
           .addBuilder(com.google.cloud.apigeeregistry.v1.ApiDeployment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -966,7 +941,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       return getApiDeploymentsFieldBuilder()
           .addBuilder(index, com.google.cloud.apigeeregistry.v1.ApiDeployment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1002,7 +976,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1026,7 +999,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1022,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class ListApiDeploymentRevisionsResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

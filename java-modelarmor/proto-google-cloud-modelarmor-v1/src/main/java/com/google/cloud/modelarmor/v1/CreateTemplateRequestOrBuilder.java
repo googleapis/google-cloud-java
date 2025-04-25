@@ -38,7 +38,6 @@ public interface CreateTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateTemplateRequestOrBuilder
    * @return The templateId.
    */
   java.lang.String getTemplateId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateTemplateRequestOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateTemplateRequestOrBuilder
    * @return The template.
    */
   com.google.cloud.modelarmor.v1.Template getTemplate();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

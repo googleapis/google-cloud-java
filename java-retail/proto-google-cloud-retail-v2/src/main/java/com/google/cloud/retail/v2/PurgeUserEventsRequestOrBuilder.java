@@ -40,7 +40,6 @@ public interface PurgeUserEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface PurgeUserEventsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

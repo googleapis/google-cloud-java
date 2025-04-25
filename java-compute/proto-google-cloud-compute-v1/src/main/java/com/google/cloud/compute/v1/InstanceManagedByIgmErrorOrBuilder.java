@@ -38,7 +38,6 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * @return The error.
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError getError();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * @return Whether the instanceActionDetails field is set.
    */
   boolean hasInstanceActionDetails();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface InstanceManagedByIgmErrorOrBuilder
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
       getInstanceActionDetails();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * @return The timestamp.
    */
   java.lang.String getTimestamp();
-
   /**
    *
    *

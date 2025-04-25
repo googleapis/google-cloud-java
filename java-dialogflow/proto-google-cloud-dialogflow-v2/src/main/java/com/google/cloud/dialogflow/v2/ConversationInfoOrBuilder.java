@@ -38,7 +38,6 @@ public interface ConversationInfoOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

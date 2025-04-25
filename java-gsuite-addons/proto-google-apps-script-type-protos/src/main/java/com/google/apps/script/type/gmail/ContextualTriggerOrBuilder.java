@@ -36,7 +36,6 @@ public interface ContextualTriggerOrBuilder
    * @return Whether the unconditional field is set.
    */
   boolean hasUnconditional();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ContextualTriggerOrBuilder
    * @return The unconditional.
    */
   com.google.apps.script.type.gmail.UnconditionalTrigger getUnconditional();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ContextualTriggerOrBuilder
    * @return The onTriggerFunction.
    */
   java.lang.String getOnTriggerFunction();
-
   /**
    *
    *

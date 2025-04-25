@@ -34,7 +34,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.servicemesh.v1alpha.MembershipState)
     MembershipStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MembershipState.newBuilder() to construct.
   private MembershipState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage>
       analysisMessages_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       getAnalysisMessagesList() {
     return analysisMessages_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       getAnalysisMessagesOrBuilderList() {
     return analysisMessages_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   public int getAnalysisMessagesCount() {
     return analysisMessages_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       int index) {
     return analysisMessages_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +580,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return analysisMessagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return analysisMessagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return analysisMessagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -652,7 +642,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         getAnalysisMessagesBuilder(int index) {
       return getAnalysisMessagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return analysisMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -900,7 +879,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(analysisMessages_);
       }
     }
-
     /**
      *
      *
@@ -918,7 +896,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage.getDefaultInstance());
     }
-
     /**
      *
      *

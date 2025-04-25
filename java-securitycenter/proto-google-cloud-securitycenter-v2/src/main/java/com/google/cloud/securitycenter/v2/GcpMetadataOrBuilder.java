@@ -36,7 +36,6 @@ public interface GcpMetadataOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GcpMetadataOrBuilder
    * @return The projectDisplayName.
    */
   java.lang.String getProjectDisplayName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GcpMetadataOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GcpMetadataOrBuilder
    * @return The parentDisplayName.
    */
   java.lang.String getParentDisplayName();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface GcpMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Folder> getFoldersList();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface GcpMetadataOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v2.Folder getFolders(int index);
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface GcpMetadataOrBuilder
    * </code>
    */
   int getFoldersCount();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface GcpMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.FolderOrBuilder>
       getFoldersOrBuilderList();
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface GcpMetadataOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
-
   /**
    *
    *

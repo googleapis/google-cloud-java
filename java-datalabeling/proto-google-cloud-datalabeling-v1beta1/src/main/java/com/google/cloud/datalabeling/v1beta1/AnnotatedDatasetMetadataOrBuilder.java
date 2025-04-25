@@ -38,7 +38,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the imageClassificationConfig field is set.
    */
   boolean hasImageClassificationConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The imageClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig getImageClassificationConfig();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the boundingPolyConfig field is set.
    */
   boolean hasBoundingPolyConfig();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The boundingPolyConfig.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the polylineConfig field is set.
    */
   boolean hasPolylineConfig();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The polylineConfig.
    */
   com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the segmentationConfig field is set.
    */
   boolean hasSegmentationConfig();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The segmentationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the videoClassificationConfig field is set.
    */
   boolean hasVideoClassificationConfig();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The videoClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig getVideoClassificationConfig();
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the objectDetectionConfig field is set.
    */
   boolean hasObjectDetectionConfig();
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The objectDetectionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig getObjectDetectionConfig();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
-
   /**
    *
    *
@@ -293,7 +280,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The objectTrackingConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig getObjectTrackingConfig();
-
   /**
    *
    *
@@ -319,7 +305,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the eventConfig field is set.
    */
   boolean hasEventConfig();
-
   /**
    *
    *
@@ -332,7 +317,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The eventConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EventConfig getEventConfig();
-
   /**
    *
    *
@@ -358,7 +342,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the textClassificationConfig field is set.
    */
   boolean hasTextClassificationConfig();
-
   /**
    *
    *
@@ -373,7 +356,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The textClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationConfig getTextClassificationConfig();
-
   /**
    *
    *
@@ -402,7 +384,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the textEntityExtractionConfig field is set.
    */
   boolean hasTextEntityExtractionConfig();
-
   /**
    *
    *
@@ -417,7 +398,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The textEntityExtractionConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig getTextEntityExtractionConfig();
-
   /**
    *
    *
@@ -446,7 +426,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return Whether the humanAnnotationConfig field is set.
    */
   boolean hasHumanAnnotationConfig();
-
   /**
    *
    *
@@ -461,7 +440,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
    * @return The humanAnnotationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig();
-
   /**
    *
    *

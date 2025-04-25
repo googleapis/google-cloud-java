@@ -39,7 +39,6 @@ public interface CreateDataSourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateDataSourceRequestOrBuilder
    * @return Whether the dataSource field is set.
    */
   boolean hasDataSource();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateDataSourceRequestOrBuilder
    * @return The dataSource.
    */
   com.google.shopping.merchant.datasources.v1beta.DataSource getDataSource();
-
   /**
    *
    *

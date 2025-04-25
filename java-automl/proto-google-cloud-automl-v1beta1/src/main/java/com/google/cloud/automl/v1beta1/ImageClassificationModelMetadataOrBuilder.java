@@ -40,7 +40,6 @@ public interface ImageClassificationModelMetadataOrBuilder
    * @return The baseModelId.
    */
   java.lang.String getBaseModelId();
-
   /**
    *
    *
@@ -100,7 +99,6 @@ public interface ImageClassificationModelMetadataOrBuilder
    * @return The stopReason.
    */
   java.lang.String getStopReason();
-
   /**
    *
    *
@@ -159,7 +157,6 @@ public interface ImageClassificationModelMetadataOrBuilder
    * @return The modelType.
    */
   java.lang.String getModelType();
-
   /**
    *
    *

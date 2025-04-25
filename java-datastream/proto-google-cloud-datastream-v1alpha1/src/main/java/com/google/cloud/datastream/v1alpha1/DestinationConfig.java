@@ -33,7 +33,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.DestinationConfig)
     DestinationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DestinationConfig.newBuilder() to construct.
   private DestinationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     private DestinationStreamConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationConnectionProfileName_ = "";
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GCS_DESTINATION_CONFIG_FIELD_NUMBER = 100;
-
   /**
    * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
    * </code>
@@ -178,7 +173,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasGcsDestinationConfig() {
     return destinationStreamConfigCase_ == 100;
   }
-
   /**
    * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
    * </code>
@@ -192,7 +186,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1alpha1.GcsDestinationConfig.getDefaultInstance();
   }
-
   /**
    * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
    * </code>
@@ -398,7 +391,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +621,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object destinationConnectionProfileName_ = "";
-
     /**
      *
      *
@@ -654,7 +645,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1alpha1.GcsDestinationConfig.Builder,
             com.google.cloud.datastream.v1alpha1.GcsDestinationConfigOrBuilder>
         gcsDestinationConfigBuilder_;
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -766,7 +752,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasGcsDestinationConfig() {
       return destinationStreamConfigCase_ == 100;
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -788,7 +773,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1alpha1.GcsDestinationConfig.getDefaultInstance();
       }
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -807,7 +791,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 100;
       return this;
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -823,7 +806,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 100;
       return this;
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -854,7 +836,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       destinationStreamConfigCase_ = 100;
       return this;
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -875,7 +856,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -884,7 +864,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         getGcsDestinationConfigBuilder() {
       return getGcsDestinationConfigFieldBuilder().getBuilder();
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>
@@ -902,7 +881,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1alpha1.GcsDestinationConfig.getDefaultInstance();
       }
     }
-
     /**
      * <code>.google.cloud.datastream.v1alpha1.GcsDestinationConfig gcs_destination_config = 100;
      * </code>

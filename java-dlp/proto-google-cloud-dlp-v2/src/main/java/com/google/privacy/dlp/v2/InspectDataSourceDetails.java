@@ -33,7 +33,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectDataSourceDetails)
     InspectDataSourceDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InspectDataSourceDetails.newBuilder() to construct.
   private InspectDataSourceDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * @return Whether the snapshotInspectTemplate field is set.
      */
     boolean hasSnapshotInspectTemplate();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * @return The snapshotInspectTemplate.
      */
     com.google.privacy.dlp.v2.InspectTemplate getSnapshotInspectTemplate();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * @return Whether the jobConfig field is set.
      */
     boolean hasJobConfig();
-
     /**
      *
      *
@@ -132,7 +128,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * @return The jobConfig.
      */
     com.google.privacy.dlp.v2.InspectJobConfig getJobConfig();
-
     /**
      *
      *
@@ -144,7 +139,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      */
     com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions)
       RequestedOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RequestedOptions.newBuilder() to construct.
     private RequestedOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -191,7 +184,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int SNAPSHOT_INSPECT_TEMPLATE_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.InspectTemplate snapshotInspectTemplate_;
-
     /**
      *
      *
@@ -208,7 +200,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public boolean hasSnapshotInspectTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -227,7 +218,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
           : snapshotInspectTemplate_;
     }
-
     /**
      *
      *
@@ -248,7 +238,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     public static final int JOB_CONFIG_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.InspectJobConfig jobConfig_;
-
     /**
      *
      *
@@ -264,7 +253,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public boolean hasJobConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -282,7 +270,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           ? com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance()
           : jobConfig_;
     }
-
     /**
      *
      *
@@ -482,7 +469,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               com.google.privacy.dlp.v2.InspectTemplate.Builder,
               com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
           snapshotInspectTemplateBuilder_;
-
       /**
        *
        *
@@ -735,7 +720,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public boolean hasSnapshotInspectTemplate() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -757,7 +741,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return snapshotInspectTemplateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -781,7 +764,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -803,7 +785,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -833,7 +814,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -854,7 +834,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -870,7 +849,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return getSnapshotInspectTemplateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -891,7 +869,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               : snapshotInspectTemplate_;
         }
       }
-
       /**
        *
        *
@@ -925,7 +902,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               com.google.privacy.dlp.v2.InspectJobConfig.Builder,
               com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
           jobConfigBuilder_;
-
       /**
        *
        *
@@ -940,7 +916,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public boolean hasJobConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -961,7 +936,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return jobConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -984,7 +958,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1005,7 +978,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1033,7 +1005,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1053,7 +1024,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1068,7 +1038,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return getJobConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1087,7 +1056,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               : jobConfig_;
         }
       }
-
       /**
        *
        *
@@ -1223,7 +1191,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
     java.util.List<com.google.privacy.dlp.v2.InfoTypeStats> getInfoTypeStatsList();
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
     com.google.privacy.dlp.v2.InfoTypeStats getInfoTypeStats(int index);
-
     /**
      *
      *
@@ -1247,7 +1213,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
     int getInfoTypeStatsCount();
-
     /**
      *
      *
@@ -1260,7 +1225,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder>
         getInfoTypeStatsOrBuilderList();
-
     /**
      *
      *
@@ -1299,7 +1263,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * @return Whether the hybridStats field is set.
      */
     boolean hasHybridStats();
-
     /**
      *
      *
@@ -1312,7 +1275,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      * @return The hybridStats.
      */
     com.google.privacy.dlp.v2.HybridInspectStatistics getHybridStats();
-
     /**
      *
      *
@@ -1324,7 +1286,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      */
     com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder getHybridStatsOrBuilder();
   }
-
   /**
    *
    *
@@ -1339,7 +1300,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectDataSourceDetails.Result)
       ResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Result.newBuilder() to construct.
     private Result(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1373,7 +1333,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int PROCESSED_BYTES_FIELD_NUMBER = 1;
     private long processedBytes_ = 0L;
-
     /**
      *
      *
@@ -1392,7 +1351,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     public static final int TOTAL_ESTIMATED_BYTES_FIELD_NUMBER = 2;
     private long totalEstimatedBytes_ = 0L;
-
     /**
      *
      *
@@ -1413,7 +1371,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.InfoTypeStats> infoTypeStats_;
-
     /**
      *
      *
@@ -1428,7 +1385,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public java.util.List<com.google.privacy.dlp.v2.InfoTypeStats> getInfoTypeStatsList() {
       return infoTypeStats_;
     }
-
     /**
      *
      *
@@ -1444,7 +1400,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         getInfoTypeStatsOrBuilderList() {
       return infoTypeStats_;
     }
-
     /**
      *
      *
@@ -1459,7 +1414,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public int getInfoTypeStatsCount() {
       return infoTypeStats_.size();
     }
-
     /**
      *
      *
@@ -1474,7 +1428,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public com.google.privacy.dlp.v2.InfoTypeStats getInfoTypeStats(int index) {
       return infoTypeStats_.get(index);
     }
-
     /**
      *
      *
@@ -1492,7 +1445,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     public static final int NUM_ROWS_PROCESSED_FIELD_NUMBER = 5;
     private long numRowsProcessed_ = 0L;
-
     /**
      *
      *
@@ -1512,7 +1464,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     public static final int HYBRID_STATS_FIELD_NUMBER = 7;
     private com.google.privacy.dlp.v2.HybridInspectStatistics hybridStats_;
-
     /**
      *
      *
@@ -1528,7 +1479,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public boolean hasHybridStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1546,7 +1496,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           ? com.google.privacy.dlp.v2.HybridInspectStatistics.getDefaultInstance()
           : hybridStats_;
     }
-
     /**
      *
      *
@@ -1767,7 +1716,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2071,7 +2019,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       private int bitField0_;
 
       private long processedBytes_;
-
       /**
        *
        *
@@ -2087,7 +2034,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public long getProcessedBytes() {
         return processedBytes_;
       }
-
       /**
        *
        *
@@ -2107,7 +2053,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2127,7 +2072,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       }
 
       private long totalEstimatedBytes_;
-
       /**
        *
        *
@@ -2143,7 +2087,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public long getTotalEstimatedBytes() {
         return totalEstimatedBytes_;
       }
-
       /**
        *
        *
@@ -2163,7 +2106,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2216,7 +2158,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return infoTypeStatsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2234,7 +2175,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return infoTypeStatsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2252,7 +2192,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return infoTypeStatsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2276,7 +2215,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2298,7 +2236,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2322,7 +2259,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2346,7 +2282,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2368,7 +2303,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2390,7 +2324,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2412,7 +2345,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2433,7 +2365,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2454,7 +2385,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2468,7 +2398,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public com.google.privacy.dlp.v2.InfoTypeStats.Builder getInfoTypeStatsBuilder(int index) {
         return getInfoTypeStatsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2486,7 +2415,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return infoTypeStatsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2505,7 +2433,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(infoTypeStats_);
         }
       }
-
       /**
        *
        *
@@ -2520,7 +2447,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return getInfoTypeStatsFieldBuilder()
             .addBuilder(com.google.privacy.dlp.v2.InfoTypeStats.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2535,7 +2461,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return getInfoTypeStatsFieldBuilder()
             .addBuilder(index, com.google.privacy.dlp.v2.InfoTypeStats.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2572,7 +2497,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       }
 
       private long numRowsProcessed_;
-
       /**
        *
        *
@@ -2589,7 +2513,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public long getNumRowsProcessed() {
         return numRowsProcessed_;
       }
-
       /**
        *
        *
@@ -2610,7 +2533,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2636,7 +2558,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               com.google.privacy.dlp.v2.HybridInspectStatistics.Builder,
               com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder>
           hybridStatsBuilder_;
-
       /**
        *
        *
@@ -2651,7 +2572,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public boolean hasHybridStats() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -2672,7 +2592,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           return hybridStatsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2695,7 +2614,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2716,7 +2634,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2745,7 +2662,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -2765,7 +2681,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2780,7 +2695,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         onChanged();
         return getHybridStatsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2799,7 +2713,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               : hybridStats_;
         }
       }
-
       /**
        *
        *
@@ -2893,7 +2806,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int REQUESTED_OPTIONS_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requestedOptions_;
-
   /**
    *
    *
@@ -2910,7 +2822,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
   public boolean hasRequestedOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2929,7 +2840,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         ? com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions.getDefaultInstance()
         : requestedOptions_;
   }
-
   /**
    *
    *
@@ -2950,7 +2860,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
   public static final int RESULT_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectDataSourceDetails.Result result_;
-
   /**
    *
    *
@@ -2966,7 +2875,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2984,7 +2892,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         ? com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.getDefaultInstance()
         : result_;
   }
-
   /**
    *
    *
@@ -3179,7 +3086,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3404,7 +3310,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions.Builder,
             com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptionsOrBuilder>
         requestedOptionsBuilder_;
-
     /**
      *
      *
@@ -3420,7 +3325,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public boolean hasRequestedOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3444,7 +3348,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return requestedOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3469,7 +3372,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3492,7 +3394,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3524,7 +3425,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3545,7 +3445,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3562,7 +3461,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return getRequestedOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3584,7 +3482,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
             : requestedOptions_;
       }
     }
-
     /**
      *
      *
@@ -3618,7 +3515,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder,
             com.google.privacy.dlp.v2.InspectDataSourceDetails.ResultOrBuilder>
         resultBuilder_;
-
     /**
      *
      *
@@ -3633,7 +3529,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     public boolean hasResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3654,7 +3549,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return resultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3677,7 +3571,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3698,7 +3591,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3727,7 +3619,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3747,7 +3638,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3762,7 +3652,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3781,7 +3670,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
             : result_;
       }
     }
-
     /**
      *
      *

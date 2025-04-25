@@ -33,7 +33,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.AutokeyConfig)
     AutokeyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutokeyConfig.newBuilder() to construct.
   private AutokeyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>KEY_PROJECT_DELETED = 2;</code>
      */
     public static final int KEY_PROJECT_DELETED_VALUE = 2;
-
     /**
      *
      *
@@ -256,7 +252,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -281,7 +276,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyProject_ = "";
-
   /**
    *
    *
@@ -345,7 +338,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -382,7 +374,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
-
   /**
    *
    *
@@ -400,7 +391,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -596,7 +586,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -808,7 +797,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -832,7 +820,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +843,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +865,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +883,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +908,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyProject_ = "";
-
     /**
      *
      *
@@ -957,7 +940,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -990,7 +972,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +1003,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1030,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1064,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1103,7 +1081,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1124,7 +1101,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.kms.v1.AutokeyConfig.State.forNumber(state_);
       return result == null ? com.google.cloud.kms.v1.AutokeyConfig.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class AutokeyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.package.Version)
     VersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Version.newBuilder() to construct.
   private Version(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <code>VERSION_KIND_UNSPECIFIED = 0;</code>
      */
     public static final int VERSION_KIND_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <code>NORMAL = 1;</code>
      */
     public static final int NORMAL_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <code>MINIMUM = 2;</code>
      */
     public static final int MINIMUM_VALUE = 2;
-
     /**
      *
      *
@@ -249,7 +245,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EPOCH_FIELD_NUMBER = 1;
   private int epoch_ = 0;
-
   /**
    *
    *
@@ -270,7 +265,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -295,7 +289,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -325,7 +318,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
-
   /**
    *
    *
@@ -349,7 +341,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +367,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_ = 0;
-
   /**
    *
    *
@@ -393,7 +383,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public int getKindValue() {
     return kind_;
   }
-
   /**
    *
    *
@@ -597,7 +586,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -820,7 +808,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int epoch_;
-
     /**
      *
      *
@@ -836,7 +823,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public int getEpoch() {
       return epoch_;
     }
-
     /**
      *
      *
@@ -856,7 +842,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +861,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -900,7 +884,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -924,7 +907,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +929,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +972,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revision_ = "";
-
     /**
      *
      *
@@ -1015,7 +994,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1016,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1054,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1078,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kind_ = 0;
-
     /**
      *
      *
@@ -1120,7 +1094,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
-
     /**
      *
      *
@@ -1140,7 +1113,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1131,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1beta1.pkg.Version.VersionKind.forNumber(kind_);
       return result == null ? io.grafeas.v1beta1.pkg.Version.VersionKind.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1182,7 +1153,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

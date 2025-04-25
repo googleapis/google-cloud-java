@@ -270,19 +270,6 @@ public final class ExamplesGrpc {
     return ExamplesStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ExamplesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ExamplesBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ExamplesBlockingV2Stub>() {
-          @java.lang.Override
-          public ExamplesBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ExamplesBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ExamplesBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -511,91 +498,6 @@ public final class ExamplesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Examples.
-   *
-   * <pre>
-   * Service for managing [Examples][google.cloud.dialogflow.cx.v3beta1.Example].
-   * </pre>
-   */
-  public static final class ExamplesBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ExamplesBlockingV2Stub> {
-    private ExamplesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ExamplesBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ExamplesBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates an example in the specified playbook.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Example createExample(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateExampleMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified example.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteExample(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteExampleMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns a list of examples in the specified playbook.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ListExamplesResponse listExamples(
-        com.google.cloud.dialogflow.cx.v3beta1.ListExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListExamplesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified example.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Example getExample(
-        com.google.cloud.dialogflow.cx.v3beta1.GetExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetExampleMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the specified example.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Example updateExample(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateExampleMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Examples.
    *
    * <pre>
    * Service for managing [Examples][google.cloud.dialogflow.cx.v3beta1.Example].

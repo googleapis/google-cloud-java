@@ -73,8 +73,7 @@ public class MockTextSuggestionsServiceImpl extends TextSuggestionsServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateProductTextSuggestions,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GenerateProductTextSuggestions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateProductTextSuggestionsResponse.class.getName(),
                   Exception.class.getName())));

@@ -34,7 +34,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.InvalidTemplateParameters)
     InvalidTemplateParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InvalidTemplateParameters.newBuilder() to construct.
   private InvalidTemplateParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
      * @return The parameter.
      */
     java.lang.String getParameter();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getDescriptionBytes();
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation)
       ParameterViolationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ParameterViolation.newBuilder() to construct.
     private ParameterViolation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -174,7 +169,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parameter_ = "";
-
     /**
      *
      *
@@ -198,7 +192,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -227,7 +220,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -251,7 +243,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -453,7 +444,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object parameter_ = "";
-
       /**
        *
        *
@@ -690,7 +679,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -713,7 +701,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -735,7 +722,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -753,7 +739,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -778,7 +763,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -801,7 +785,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -824,7 +807,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -846,7 +828,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -864,7 +845,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -961,7 +941,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation>
       parameterViolations_;
-
   /**
    *
    *
@@ -978,7 +957,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       getParameterViolationsList() {
     return parameterViolations_;
   }
-
   /**
    *
    *
@@ -997,7 +975,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       getParameterViolationsOrBuilderList() {
     return parameterViolations_;
   }
-
   /**
    *
    *
@@ -1013,7 +990,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
   public int getParameterViolationsCount() {
     return parameterViolations_.size();
   }
-
   /**
    *
    *
@@ -1030,7 +1006,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       getParameterViolations(int index) {
     return parameterViolations_.get(index);
   }
-
   /**
    *
    *
@@ -1211,7 +1186,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1482,7 +1456,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return parameterViolationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1501,7 +1474,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return parameterViolationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1521,7 +1493,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return parameterViolationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1547,7 +1518,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1572,7 +1542,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1567,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1592,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1615,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1639,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1698,7 +1663,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1720,7 +1684,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1705,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1720,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         getParameterViolationsBuilder(int index) {
       return getParameterViolationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1778,7 +1739,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return parameterViolationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1800,7 +1760,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(parameterViolations_);
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1778,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
               com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1839,7 +1797,6 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
               com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation
                   .getDefaultInstance());
     }
-
     /**
      *
      *

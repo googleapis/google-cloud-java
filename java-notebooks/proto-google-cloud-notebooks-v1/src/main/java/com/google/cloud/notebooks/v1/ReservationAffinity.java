@@ -33,7 +33,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ReservationAffinity)
     ReservationAffinityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReservationAffinity.newBuilder() to construct.
   private ReservationAffinity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>NO_RESERVATION = 1;</code>
      */
     public static final int NO_RESERVATION_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>ANY_RESERVATION = 2;</code>
      */
     public static final int ANY_RESERVATION_VALUE = 2;
-
     /**
      *
      *
@@ -254,7 +250,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
 
   public static final int CONSUME_RESERVATION_TYPE_FIELD_NUMBER = 1;
   private int consumeReservationType_ = 0;
-
   /**
    *
    *
@@ -272,7 +267,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   public int getConsumeReservationTypeValue() {
     return consumeReservationType_;
   }
-
   /**
    *
    *
@@ -299,7 +293,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -323,7 +316,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -353,7 +345,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
-
   /**
    *
    *
@@ -383,7 +373,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    *
    *
@@ -399,7 +388,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
-
   /**
    *
    *
@@ -602,7 +590,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -822,7 +809,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int consumeReservationType_ = 0;
-
     /**
      *
      *
@@ -840,7 +826,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     public int getConsumeReservationTypeValue() {
       return consumeReservationType_;
     }
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +867,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.notebooks.v1.ReservationAffinity.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -908,7 +891,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +912,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -953,7 +934,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +956,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -998,7 +977,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +994,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1026,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1065,7 +1041,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       values_.makeImmutable();
       return values_;
     }
-
     /**
      *
      *
@@ -1080,7 +1055,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -1096,7 +1070,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -1112,7 +1085,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1136,7 +1108,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1130,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1167,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

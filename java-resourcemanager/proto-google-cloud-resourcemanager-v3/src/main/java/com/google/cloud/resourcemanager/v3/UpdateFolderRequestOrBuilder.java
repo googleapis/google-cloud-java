@@ -39,7 +39,6 @@ public interface UpdateFolderRequestOrBuilder
    * @return Whether the folder field is set.
    */
   boolean hasFolder();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateFolderRequestOrBuilder
    * @return The folder.
    */
   com.google.cloud.resourcemanager.v3.Folder getFolder();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateFolderRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface UpdateFolderRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface IamPolicySearchResultOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface IamPolicySearchResultOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface IamPolicySearchResultOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface IamPolicySearchResultOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface IamPolicySearchResultOrBuilder
    * @return Whether the explanation field is set.
    */
   boolean hasExplanation();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface IamPolicySearchResultOrBuilder
    * @return The explanation.
    */
   com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation getExplanation();
-
   /**
    *
    *

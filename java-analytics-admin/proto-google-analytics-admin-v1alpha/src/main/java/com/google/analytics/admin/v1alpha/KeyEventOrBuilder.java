@@ -37,7 +37,6 @@ public interface KeyEventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface KeyEventOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface KeyEventOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface KeyEventOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public interface KeyEventOrBuilder
    * @return The enum numeric value on the wire for countingMethod.
    */
   int getCountingMethodValue();
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public interface KeyEventOrBuilder
    * @return Whether the defaultValue field is set.
    */
   boolean hasDefaultValue();
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public interface KeyEventOrBuilder
    * @return The defaultValue.
    */
   com.google.analytics.admin.v1alpha.KeyEvent.DefaultValue getDefaultValue();
-
   /**
    *
    *

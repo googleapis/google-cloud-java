@@ -43,7 +43,6 @@ public interface ThresholdConfigOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *

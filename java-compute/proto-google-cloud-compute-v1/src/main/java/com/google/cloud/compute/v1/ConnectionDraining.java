@@ -33,7 +33,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ConnectionDraining)
     ConnectionDrainingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConnectionDraining.newBuilder() to construct.
   private ConnectionDraining(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int DRAINING_TIMEOUT_SEC_FIELD_NUMBER = 225127070;
   private int drainingTimeoutSec_ = 0;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
   public boolean hasDrainingTimeoutSec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -263,7 +260,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -448,7 +444,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int drainingTimeoutSec_;
-
     /**
      *
      *
@@ -464,7 +459,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     public boolean hasDrainingTimeoutSec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -480,7 +474,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     public int getDrainingTimeoutSec() {
       return drainingTimeoutSec_;
     }
-
     /**
      *
      *
@@ -500,7 +493,6 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

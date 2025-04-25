@@ -95,8 +95,7 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AsyncBatchAnnotateFiles, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method AsyncBatchAnnotateFiles, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

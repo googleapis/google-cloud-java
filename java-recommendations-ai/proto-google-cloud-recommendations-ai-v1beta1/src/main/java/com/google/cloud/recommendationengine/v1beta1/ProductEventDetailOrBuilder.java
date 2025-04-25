@@ -37,7 +37,6 @@ public interface ProductEventDetailOrBuilder
    * @return The searchQuery.
    */
   java.lang.String getSearchQuery();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ProductEventDetailOrBuilder
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>
       getPageCategoriesList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ProductEventDetailOrBuilder
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy getPageCategories(
       int index);
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ProductEventDetailOrBuilder
    * </code>
    */
   int getPageCategoriesCount();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ProductEventDetailOrBuilder
           ? extends
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchyOrBuilder>
       getPageCategoriesOrBuilderList();
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface ProductEventDetailOrBuilder
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.ProductDetail>
       getProductDetailsList();
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public interface ProductEventDetailOrBuilder
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.ProductDetail getProductDetails(int index);
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public interface ProductEventDetailOrBuilder
    * </code>
    */
   int getProductDetailsCount();
-
   /**
    *
    *
@@ -289,7 +281,6 @@ public interface ProductEventDetailOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.ProductDetailOrBuilder>
       getProductDetailsOrBuilderList();
-
   /**
    *
    *
@@ -340,7 +331,6 @@ public interface ProductEventDetailOrBuilder
    * @return The listId.
    */
   java.lang.String getListId();
-
   /**
    *
    *
@@ -372,7 +362,6 @@ public interface ProductEventDetailOrBuilder
    * @return The cartId.
    */
   java.lang.String getCartId();
-
   /**
    *
    *
@@ -406,7 +395,6 @@ public interface ProductEventDetailOrBuilder
    * @return Whether the purchaseTransaction field is set.
    */
   boolean hasPurchaseTransaction();
-
   /**
    *
    *
@@ -423,7 +411,6 @@ public interface ProductEventDetailOrBuilder
    * @return The purchaseTransaction.
    */
   com.google.cloud.recommendationengine.v1beta1.PurchaseTransaction getPurchaseTransaction();
-
   /**
    *
    *

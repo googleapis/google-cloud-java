@@ -34,7 +34,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertGlobalNetworkEndpointGroupRequest)
     InsertGlobalNetworkEndpointGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertGlobalNetworkEndpointGroupRequest.newBuilder() to construct.
   private InsertGlobalNetworkEndpointGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
   private int bitField0_;
   public static final int NETWORK_ENDPOINT_GROUP_RESOURCE_FIELD_NUMBER = 525788839;
   private com.google.cloud.compute.v1.NetworkEndpointGroup networkEndpointGroupResource_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
   public boolean hasNetworkEndpointGroupResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         ? com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance()
         : networkEndpointGroupResource_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -446,7 +437,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
             com.google.cloud.compute.v1.NetworkEndpointGroup.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder>
         networkEndpointGroupResourceBuilder_;
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     public boolean hasNetworkEndpointGroupResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -732,7 +720,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         return networkEndpointGroupResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return getNetworkEndpointGroupResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -875,7 +857,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
             : networkEndpointGroupResource_;
       }
     }
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -930,7 +910,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +976,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1041,7 +1016,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1064,7 +1038,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1081,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1098,6 @@ public final class InsertGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

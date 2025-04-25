@@ -39,7 +39,6 @@ public interface GetEndpointPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureControlPlane)
     AzureControlPlaneOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureControlPlane.newBuilder() to construct.
   private AzureControlPlane(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetId_ = "";
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -219,7 +214,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmSize_ = "";
-
   /**
    *
    *
@@ -248,7 +242,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -280,7 +273,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   public static final int SSH_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.gkemulticloud.v1.AzureSshConfig sshConfig_;
-
   /**
    *
    *
@@ -299,7 +291,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public boolean hasSshConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -320,7 +311,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkemulticloud.v1.AzureSshConfig.getDefaultInstance()
         : sshConfig_;
   }
-
   /**
    *
    *
@@ -342,7 +332,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   public static final int ROOT_VOLUME_FIELD_NUMBER = 4;
   private com.google.cloud.gkemulticloud.v1.AzureDiskTemplate rootVolume_;
-
   /**
    *
    *
@@ -363,7 +352,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public boolean hasRootVolume() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -386,7 +374,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.getDefaultInstance()
         : rootVolume_;
   }
-
   /**
    *
    *
@@ -410,7 +397,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   public static final int MAIN_VOLUME_FIELD_NUMBER = 5;
   private com.google.cloud.gkemulticloud.v1.AzureDiskTemplate mainVolume_;
-
   /**
    *
    *
@@ -432,7 +418,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public boolean hasMainVolume() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -456,7 +441,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.getDefaultInstance()
         : mainVolume_;
   }
-
   /**
    *
    *
@@ -481,7 +465,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   public static final int DATABASE_ENCRYPTION_FIELD_NUMBER = 10;
   private com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption databaseEncryption_;
-
   /**
    *
    *
@@ -499,7 +482,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public boolean hasDatabaseEncryption() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -519,7 +501,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption.getDefaultInstance()
         : databaseEncryption_;
   }
-
   /**
    *
    *
@@ -541,7 +522,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   public static final int PROXY_CONFIG_FIELD_NUMBER = 12;
   private com.google.cloud.gkemulticloud.v1.AzureProxyConfig proxyConfig_;
-
   /**
    *
    *
@@ -559,7 +539,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public boolean hasProxyConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -579,7 +558,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkemulticloud.v1.AzureProxyConfig.getDefaultInstance()
         : proxyConfig_;
   }
-
   /**
    *
    *
@@ -600,7 +578,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   public static final int CONFIG_ENCRYPTION_FIELD_NUMBER = 14;
   private com.google.cloud.gkemulticloud.v1.AzureConfigEncryption configEncryption_;
-
   /**
    *
    *
@@ -618,7 +595,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public boolean hasConfigEncryption() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -638,7 +614,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gkemulticloud.v1.AzureConfigEncryption.getDefaultInstance()
         : configEncryption_;
   }
-
   /**
    *
    *
@@ -684,7 +659,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public int getTagsCount() {
     return internalGetTags().getMap().size();
   }
-
   /**
    *
    *
@@ -702,14 +676,12 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     }
     return internalGetTags().getMap().containsKey(key);
   }
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTags() {
     return getTagsMap();
   }
-
   /**
    *
    *
@@ -724,7 +696,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
   }
-
   /**
    *
    *
@@ -746,7 +717,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -773,7 +743,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.ReplicaPlacement> replicaPlacements_;
-
   /**
    *
    *
@@ -794,7 +763,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       getReplicaPlacementsList() {
     return replicaPlacements_;
   }
-
   /**
    *
    *
@@ -815,7 +783,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       getReplicaPlacementsOrBuilderList() {
     return replicaPlacements_;
   }
-
   /**
    *
    *
@@ -835,7 +802,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public int getReplicaPlacementsCount() {
     return replicaPlacements_.size();
   }
-
   /**
    *
    *
@@ -855,7 +821,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.gkemulticloud.v1.ReplicaPlacement getReplicaPlacements(int index) {
     return replicaPlacements_.get(index);
   }
-
   /**
    *
    *
@@ -881,7 +846,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpointSubnetId_ = "";
-
   /**
    *
    *
@@ -909,7 +873,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1237,7 +1200,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1699,7 +1661,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1727,7 +1688,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1755,7 +1715,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1782,7 +1741,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1763,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1835,7 +1792,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object subnetId_ = "";
-
     /**
      *
      *
@@ -1867,7 +1823,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1899,7 +1854,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1930,7 +1884,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1957,7 +1910,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1943,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object vmSize_ = "";
-
     /**
      *
      *
@@ -2019,7 +1970,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2047,7 +1997,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2074,7 +2023,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2097,7 +2045,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2132,7 +2079,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkemulticloud.v1.AzureSshConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AzureSshConfigOrBuilder>
         sshConfigBuilder_;
-
     /**
      *
      *
@@ -2150,7 +2096,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public boolean hasSshConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2174,7 +2119,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return sshConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2200,7 +2144,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2224,7 +2167,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2198,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2279,7 +2220,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2297,7 +2237,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSshConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2319,7 +2258,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             : sshConfig_;
       }
     }
-
     /**
      *
      *
@@ -2355,7 +2293,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.Builder,
             com.google.cloud.gkemulticloud.v1.AzureDiskTemplateOrBuilder>
         rootVolumeBuilder_;
-
     /**
      *
      *
@@ -2375,7 +2312,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public boolean hasRootVolume() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2401,7 +2337,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return rootVolumeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2429,7 +2364,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2455,7 +2389,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2489,7 +2422,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2514,7 +2446,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2534,7 +2465,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRootVolumeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2558,7 +2488,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             : rootVolume_;
       }
     }
-
     /**
      *
      *
@@ -2596,7 +2525,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.Builder,
             com.google.cloud.gkemulticloud.v1.AzureDiskTemplateOrBuilder>
         mainVolumeBuilder_;
-
     /**
      *
      *
@@ -2617,7 +2545,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public boolean hasMainVolume() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2644,7 +2571,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return mainVolumeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2673,7 +2599,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2700,7 +2625,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2659,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2761,7 +2684,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2782,7 +2704,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMainVolumeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2807,7 +2728,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             : mainVolume_;
       }
     }
-
     /**
      *
      *
@@ -2846,7 +2766,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption.Builder,
             com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryptionOrBuilder>
         databaseEncryptionBuilder_;
-
     /**
      *
      *
@@ -2863,7 +2782,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public boolean hasDatabaseEncryption() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2886,7 +2804,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return databaseEncryptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2912,7 +2829,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2935,7 +2851,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2967,7 +2882,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2989,7 +2903,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3007,7 +2920,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDatabaseEncryptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3029,7 +2941,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             : databaseEncryption_;
       }
     }
-
     /**
      *
      *
@@ -3064,7 +2975,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkemulticloud.v1.AzureProxyConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AzureProxyConfigOrBuilder>
         proxyConfigBuilder_;
-
     /**
      *
      *
@@ -3081,7 +2991,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public boolean hasProxyConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3104,7 +3013,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return proxyConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3129,7 +3037,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3152,7 +3059,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3183,7 +3089,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3205,7 +3110,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3222,7 +3126,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getProxyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3243,7 +3146,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             : proxyConfig_;
       }
     }
-
     /**
      *
      *
@@ -3278,7 +3180,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gkemulticloud.v1.AzureConfigEncryption.Builder,
             com.google.cloud.gkemulticloud.v1.AzureConfigEncryptionOrBuilder>
         configEncryptionBuilder_;
-
     /**
      *
      *
@@ -3295,7 +3196,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public boolean hasConfigEncryption() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3318,7 +3218,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return configEncryptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3344,7 +3243,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3367,7 +3265,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3399,7 +3296,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3421,7 +3317,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3439,7 +3334,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getConfigEncryptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3461,7 +3355,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
             : configEncryption_;
       }
     }
-
     /**
      *
      *
@@ -3515,7 +3408,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public int getTagsCount() {
       return internalGetTags().getMap().size();
     }
-
     /**
      *
      *
@@ -3533,14 +3425,12 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return internalGetTags().getMap().containsKey(key);
     }
-
     /** Use {@link #getTagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTags() {
       return getTagsMap();
     }
-
     /**
      *
      *
@@ -3555,7 +3445,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
     }
-
     /**
      *
      *
@@ -3577,7 +3466,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3605,7 +3493,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3623,14 +3510,12 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       internalGetMutableTags().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
       bitField0_ |= 0x00000200;
       return internalGetMutableTags().getMutableMap();
     }
-
     /**
      *
      *
@@ -3652,7 +3537,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000200;
       return this;
     }
-
     /**
      *
      *
@@ -3710,7 +3594,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return replicaPlacementsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3733,7 +3616,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return replicaPlacementsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3756,7 +3638,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return replicaPlacementsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3786,7 +3667,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3813,7 +3693,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3842,7 +3721,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3872,7 +3750,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3899,7 +3776,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3926,7 +3802,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3953,7 +3828,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3979,7 +3853,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4005,7 +3878,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4025,7 +3897,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         int index) {
       return getReplicaPlacementsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4049,7 +3920,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return replicaPlacementsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4073,7 +3943,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(replicaPlacements_);
       }
     }
-
     /**
      *
      *
@@ -4094,7 +3963,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       return getReplicaPlacementsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.ReplicaPlacement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4116,7 +3984,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.ReplicaPlacement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4158,7 +4025,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object endpointSubnetId_ = "";
-
     /**
      *
      *
@@ -4185,7 +4051,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4212,7 +4077,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4238,7 +4102,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4260,7 +4123,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

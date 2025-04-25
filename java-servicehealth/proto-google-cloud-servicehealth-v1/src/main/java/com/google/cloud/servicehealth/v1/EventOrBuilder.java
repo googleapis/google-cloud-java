@@ -40,7 +40,6 @@ public interface EventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface EventOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface EventOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for detailedCategory.
    */
   int getDetailedCategoryValue();
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for detailedState.
    */
   int getDetailedStateValue();
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public interface EventOrBuilder
    * <code>repeated .google.cloud.servicehealth.v1.EventImpact event_impacts = 20;</code>
    */
   java.util.List<com.google.cloud.servicehealth.v1.EventImpact> getEventImpactsList();
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public interface EventOrBuilder
    * <code>repeated .google.cloud.servicehealth.v1.EventImpact event_impacts = 20;</code>
    */
   com.google.cloud.servicehealth.v1.EventImpact getEventImpacts(int index);
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public interface EventOrBuilder
    * <code>repeated .google.cloud.servicehealth.v1.EventImpact event_impacts = 20;</code>
    */
   int getEventImpactsCount();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface EventOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicehealth.v1.EventImpactOrBuilder>
       getEventImpactsOrBuilderList();
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
-
   /**
    *
    *
@@ -330,7 +318,6 @@ public interface EventOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.servicehealth.v1.EventUpdate> getUpdatesList();
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public interface EventOrBuilder
    * </code>
    */
   com.google.cloud.servicehealth.v1.EventUpdate getUpdates(int index);
-
   /**
    *
    *
@@ -356,7 +342,6 @@ public interface EventOrBuilder
    * </code>
    */
   int getUpdatesCount();
-
   /**
    *
    *
@@ -370,7 +355,6 @@ public interface EventOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicehealth.v1.EventUpdateOrBuilder>
       getUpdatesOrBuilderList();
-
   /**
    *
    *
@@ -398,7 +382,6 @@ public interface EventOrBuilder
    * @return The parentEvent.
    */
   java.lang.String getParentEvent();
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public interface EventOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -441,7 +423,6 @@ public interface EventOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -467,7 +448,6 @@ public interface EventOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -481,7 +461,6 @@ public interface EventOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -507,7 +486,6 @@ public interface EventOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -521,7 +499,6 @@ public interface EventOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -548,7 +525,6 @@ public interface EventOrBuilder
    * @return Whether the nextUpdateTime field is set.
    */
   boolean hasNextUpdateTime();
-
   /**
    *
    *
@@ -563,7 +539,6 @@ public interface EventOrBuilder
    * @return The nextUpdateTime.
    */
   com.google.protobuf.Timestamp getNextUpdateTime();
-
   /**
    *
    *

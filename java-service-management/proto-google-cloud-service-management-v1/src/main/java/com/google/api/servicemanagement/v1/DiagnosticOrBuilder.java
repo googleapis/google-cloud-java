@@ -36,7 +36,6 @@ public interface DiagnosticOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DiagnosticOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DiagnosticOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

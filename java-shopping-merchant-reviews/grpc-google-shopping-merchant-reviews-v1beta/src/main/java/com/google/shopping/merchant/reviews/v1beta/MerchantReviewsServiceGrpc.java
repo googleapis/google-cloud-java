@@ -251,19 +251,6 @@ public final class MerchantReviewsServiceGrpc {
     return MerchantReviewsServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static MerchantReviewsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MerchantReviewsServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MerchantReviewsServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public MerchantReviewsServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MerchantReviewsServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return MerchantReviewsServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -470,81 +457,6 @@ public final class MerchantReviewsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MerchantReviewsService.
-   *
-   * <pre>
-   * Service to manage merchant reviews.
-   * </pre>
-   */
-  public static final class MerchantReviewsServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<MerchantReviewsServiceBlockingV2Stub> {
-    private MerchantReviewsServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected MerchantReviewsServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MerchantReviewsServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a merchant review.
-     * </pre>
-     */
-    public com.google.shopping.merchant.reviews.v1beta.MerchantReview getMerchantReview(
-        com.google.shopping.merchant.reviews.v1beta.GetMerchantReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetMerchantReviewMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists merchant reviews.
-     * </pre>
-     */
-    public com.google.shopping.merchant.reviews.v1beta.ListMerchantReviewsResponse
-        listMerchantReviews(
-            com.google.shopping.merchant.reviews.v1beta.ListMerchantReviewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListMerchantReviewsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Inserts a review for your Merchant Center account. If the review
-     * already exists, then the review is replaced with the new instance.
-     * </pre>
-     */
-    public com.google.shopping.merchant.reviews.v1beta.MerchantReview insertMerchantReview(
-        com.google.shopping.merchant.reviews.v1beta.InsertMerchantReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInsertMerchantReviewMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes merchant review.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteMerchantReview(
-        com.google.shopping.merchant.reviews.v1beta.DeleteMerchantReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteMerchantReviewMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service MerchantReviewsService.
    *
    * <pre>
    * Service to manage merchant reviews.

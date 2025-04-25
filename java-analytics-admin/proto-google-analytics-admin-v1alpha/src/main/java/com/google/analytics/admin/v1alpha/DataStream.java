@@ -33,7 +33,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataStream)
     DataStreamOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataStream.newBuilder() to construct.
   private DataStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_STREAM_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_STREAM_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * <code>WEB_DATA_STREAM = 1;</code>
      */
     public static final int WEB_DATA_STREAM_VALUE = 1;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * <code>ANDROID_APP_DATA_STREAM = 2;</code>
      */
     public static final int ANDROID_APP_DATA_STREAM_VALUE = 2;
-
     /**
      *
      *
@@ -267,7 +263,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The measurementId.
      */
     java.lang.String getMeasurementId();
-
     /**
      *
      *
@@ -296,7 +291,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The firebaseAppId.
      */
     java.lang.String getFirebaseAppId();
-
     /**
      *
      *
@@ -324,7 +318,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The defaultUri.
      */
     java.lang.String getDefaultUri();
-
     /**
      *
      *
@@ -339,7 +332,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDefaultUriBytes();
   }
-
   /**
    *
    *
@@ -354,7 +346,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataStream.WebStreamData)
       WebStreamDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WebStreamData.newBuilder() to construct.
     private WebStreamData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -391,7 +382,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object measurementId_ = "";
-
     /**
      *
      *
@@ -417,7 +407,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -448,7 +437,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object firebaseAppId_ = "";
-
     /**
      *
      *
@@ -473,7 +461,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -503,7 +490,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object defaultUri_ = "";
-
     /**
      *
      *
@@ -528,7 +514,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -954,7 +938,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object measurementId_ = "";
-
       /**
        *
        *
@@ -979,7 +962,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1004,7 +986,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1028,7 +1009,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1048,7 +1028,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1075,7 +1054,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object firebaseAppId_ = "";
-
       /**
        *
        *
@@ -1099,7 +1077,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1123,7 +1100,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1146,7 +1122,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1165,7 +1140,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1191,7 +1165,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object defaultUri_ = "";
-
       /**
        *
        *
@@ -1215,7 +1188,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1239,7 +1211,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1262,7 +1233,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1281,7 +1251,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1389,7 +1358,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The firebaseAppId.
      */
     java.lang.String getFirebaseAppId();
-
     /**
      *
      *
@@ -1417,7 +1385,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The packageName.
      */
     java.lang.String getPackageName();
-
     /**
      *
      *
@@ -1432,7 +1399,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPackageNameBytes();
   }
-
   /**
    *
    *
@@ -1447,7 +1413,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataStream.AndroidAppStreamData)
       AndroidAppStreamDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AndroidAppStreamData.newBuilder() to construct.
     private AndroidAppStreamData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1483,7 +1448,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object firebaseAppId_ = "";
-
     /**
      *
      *
@@ -1508,7 +1472,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1501,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object packageName_ = "";
-
     /**
      *
      *
@@ -1563,7 +1525,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1760,7 +1721,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1970,7 +1930,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object firebaseAppId_ = "";
-
       /**
        *
        *
@@ -1994,7 +1953,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2018,7 +1976,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2041,7 +1998,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2060,7 +2016,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2086,7 +2041,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object packageName_ = "";
-
       /**
        *
        *
@@ -2110,7 +2064,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2134,7 +2087,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2157,7 +2109,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2176,7 +2127,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2286,7 +2236,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The firebaseAppId.
      */
     java.lang.String getFirebaseAppId();
-
     /**
      *
      *
@@ -2316,7 +2265,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return The bundleId.
      */
     java.lang.String getBundleId();
-
     /**
      *
      *
@@ -2333,7 +2281,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getBundleIdBytes();
   }
-
   /**
    *
    *
@@ -2348,7 +2295,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataStream.IosAppStreamData)
       IosAppStreamDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IosAppStreamData.newBuilder() to construct.
     private IosAppStreamData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2384,7 +2330,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object firebaseAppId_ = "";
-
     /**
      *
      *
@@ -2409,7 +2354,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2439,7 +2383,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bundleId_ = "";
-
     /**
      *
      *
@@ -2466,7 +2409,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2664,7 +2606,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2871,7 +2812,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object firebaseAppId_ = "";
-
       /**
        *
        *
@@ -2895,7 +2835,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2919,7 +2858,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2942,7 +2880,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2961,7 +2898,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2987,7 +2923,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object bundleId_ = "";
-
       /**
        *
        *
@@ -3013,7 +2948,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3039,7 +2973,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3064,7 +2997,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3085,7 +3017,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3198,7 +3129,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     private StreamDataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3234,7 +3164,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEB_STREAM_DATA_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -3251,7 +3180,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWebStreamData() {
     return streamDataCase_ == 6;
   }
-
   /**
    *
    *
@@ -3271,7 +3199,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.analytics.admin.v1alpha.DataStream.WebStreamData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3292,7 +3219,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANDROID_APP_STREAM_DATA_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -3311,7 +3237,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAndroidAppStreamData() {
     return streamDataCase_ == 7;
   }
-
   /**
    *
    *
@@ -3334,7 +3259,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.analytics.admin.v1alpha.DataStream.AndroidAppStreamData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3357,7 +3281,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IOS_APP_STREAM_DATA_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -3375,7 +3298,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIosAppStreamData() {
     return streamDataCase_ == 8;
   }
-
   /**
    *
    *
@@ -3396,7 +3318,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.analytics.admin.v1alpha.DataStream.IosAppStreamData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3421,7 +3342,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3447,7 +3367,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3476,7 +3395,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -3494,7 +3412,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -3521,7 +3438,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -3549,7 +3465,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3580,7 +3495,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -3597,7 +3511,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3614,7 +3527,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -3632,7 +3544,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -3649,7 +3560,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3666,7 +3576,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -3948,7 +3857,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4293,7 +4201,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.admin.v1alpha.DataStream.WebStreamData.Builder,
             com.google.analytics.admin.v1alpha.DataStream.WebStreamDataOrBuilder>
         webStreamDataBuilder_;
-
     /**
      *
      *
@@ -4310,7 +4217,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWebStreamData() {
       return streamDataCase_ == 6;
     }
-
     /**
      *
      *
@@ -4337,7 +4243,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.admin.v1alpha.DataStream.WebStreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4362,7 +4267,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4384,7 +4288,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4421,7 +4324,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4448,7 +4350,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4463,7 +4364,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         getWebStreamDataBuilder() {
       return getWebStreamDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4486,7 +4386,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.admin.v1alpha.DataStream.WebStreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4527,7 +4426,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.admin.v1alpha.DataStream.AndroidAppStreamData.Builder,
             com.google.analytics.admin.v1alpha.DataStream.AndroidAppStreamDataOrBuilder>
         androidAppStreamDataBuilder_;
-
     /**
      *
      *
@@ -4546,7 +4444,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAndroidAppStreamData() {
       return streamDataCase_ == 7;
     }
-
     /**
      *
      *
@@ -4578,7 +4475,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4605,7 +4501,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -4630,7 +4525,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -4670,7 +4564,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -4699,7 +4592,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4716,7 +4608,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         getAndroidAppStreamDataBuilder() {
       return getAndroidAppStreamDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4742,7 +4633,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4786,7 +4676,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.admin.v1alpha.DataStream.IosAppStreamData.Builder,
             com.google.analytics.admin.v1alpha.DataStream.IosAppStreamDataOrBuilder>
         iosAppStreamDataBuilder_;
-
     /**
      *
      *
@@ -4804,7 +4693,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIosAppStreamData() {
       return streamDataCase_ == 8;
     }
-
     /**
      *
      *
@@ -4832,7 +4720,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.admin.v1alpha.DataStream.IosAppStreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4858,7 +4745,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4881,7 +4767,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4919,7 +4804,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       streamDataCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4947,7 +4831,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4963,7 +4846,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         getIosAppStreamDataBuilder() {
       return getIosAppStreamDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4987,7 +4869,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.admin.v1alpha.DataStream.IosAppStreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5025,7 +4906,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -5050,7 +4930,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5075,7 +4954,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5099,7 +4977,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5119,7 +4996,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5146,7 +5022,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -5164,7 +5039,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -5185,7 +5059,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5207,7 +5080,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.admin.v1alpha.DataStream.DataStreamType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5231,7 +5103,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5253,7 +5124,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -5280,7 +5150,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5307,7 +5176,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5333,7 +5201,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5355,7 +5222,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5389,7 +5255,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5406,7 +5271,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -5429,7 +5293,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5454,7 +5317,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5476,7 +5338,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5506,7 +5367,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5528,7 +5388,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5545,7 +5404,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5566,7 +5424,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5601,7 +5458,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -5618,7 +5474,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5641,7 +5496,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5666,7 +5520,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5688,7 +5541,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5718,7 +5570,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5740,7 +5591,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5757,7 +5607,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5778,7 +5627,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *

@@ -41,7 +41,6 @@ public interface GetNotebookRuntimeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

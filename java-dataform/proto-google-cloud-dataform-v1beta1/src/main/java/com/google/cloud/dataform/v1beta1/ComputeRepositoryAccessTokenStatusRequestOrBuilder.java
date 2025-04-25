@@ -38,7 +38,6 @@ public interface ComputeRepositoryAccessTokenStatusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

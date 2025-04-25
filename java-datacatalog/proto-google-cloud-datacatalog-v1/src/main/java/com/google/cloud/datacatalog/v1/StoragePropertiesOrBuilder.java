@@ -55,7 +55,6 @@ public interface StoragePropertiesOrBuilder
    * @return A list containing the filePattern.
    */
   java.util.List<java.lang.String> getFilePatternList();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface StoragePropertiesOrBuilder
    * @return The count of filePattern.
    */
   int getFilePatternCount();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface StoragePropertiesOrBuilder
    * @return The filePattern at the given index.
    */
   java.lang.String getFilePattern(int index);
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public interface StoragePropertiesOrBuilder
    * @return The fileType.
    */
   java.lang.String getFileType();
-
   /**
    *
    *

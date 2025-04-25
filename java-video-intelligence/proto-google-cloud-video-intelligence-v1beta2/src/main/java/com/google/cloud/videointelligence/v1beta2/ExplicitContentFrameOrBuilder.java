@@ -37,7 +37,6 @@ public interface ExplicitContentFrameOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ExplicitContentFrameOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ExplicitContentFrameOrBuilder
    * @return The enum numeric value on the wire for pornographyLikelihood.
    */
   int getPornographyLikelihoodValue();
-
   /**
    *
    *

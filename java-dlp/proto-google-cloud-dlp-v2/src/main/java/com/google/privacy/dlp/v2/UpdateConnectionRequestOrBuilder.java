@@ -39,7 +39,6 @@ public interface UpdateConnectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface UpdateConnectionRequestOrBuilder
    * @return Whether the connection field is set.
    */
   boolean hasConnection();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateConnectionRequestOrBuilder
    * @return The connection.
    */
   com.google.privacy.dlp.v2.Connection getConnection();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface UpdateConnectionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface UpdateConnectionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

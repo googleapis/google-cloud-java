@@ -44,7 +44,6 @@ public interface OutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface OutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.automl.v1.GcsDestination getGcsDestination();
-
   /**
    *
    *

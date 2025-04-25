@@ -40,7 +40,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SessionEntityType)
     SessionEntityTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SessionEntityType.newBuilder() to construct.
   private SessionEntityType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>ENTITY_OVERRIDE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int ENTITY_OVERRIDE_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <code>ENTITY_OVERRIDE_MODE_OVERRIDE = 1;</code>
      */
     public static final int ENTITY_OVERRIDE_MODE_OVERRIDE_VALUE = 1;
-
     /**
      *
      *
@@ -261,7 +258,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -301,7 +297,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -344,7 +339,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
 
   public static final int ENTITY_OVERRIDE_MODE_FIELD_NUMBER = 2;
   private int entityOverrideMode_ = 0;
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   public int getEntityOverrideModeValue() {
     return entityOverrideMode_;
   }
-
   /**
    *
    *
@@ -393,7 +386,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> entities_;
-
   /**
    *
    *
@@ -408,7 +400,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
     return entities_;
   }
-
   /**
    *
    *
@@ -424,7 +415,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       getEntitiesOrBuilderList() {
     return entities_;
   }
-
   /**
    *
    *
@@ -439,7 +429,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   public int getEntitiesCount() {
     return entities_.size();
   }
-
   /**
    *
    *
@@ -454,7 +443,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
     return entities_.get(index);
   }
-
   /**
    *
    *
@@ -657,7 +645,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -924,7 +911,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -963,7 +949,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +987,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1024,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1057,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1097,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     }
 
     private int entityOverrideMode_ = 0;
-
     /**
      *
      *
@@ -1134,7 +1115,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     public int getEntityOverrideModeValue() {
       return entityOverrideMode_;
     }
-
     /**
      *
      *
@@ -1156,7 +1136,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1160,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1207,7 +1185,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1241,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return entitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1282,7 +1258,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return entitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1300,7 +1275,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return entitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1325,7 +1299,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1320,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1343,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1367,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1388,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1440,7 +1409,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1431,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1484,7 +1451,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1471,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1485,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         int index) {
       return getEntitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1539,7 +1503,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return entitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1558,7 +1521,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(entities_);
       }
     }
-
     /**
      *
      *
@@ -1573,7 +1535,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       return getEntitiesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.EntityType.Entity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1590,7 +1551,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.getDefaultInstance());
     }
-
     /**
      *
      *

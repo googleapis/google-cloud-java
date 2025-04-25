@@ -38,7 +38,6 @@ public interface InitializeServiceResponseOrBuilder
    * @return The backupVaultName.
    */
   java.lang.String getBackupVaultName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface InitializeServiceResponseOrBuilder
    * @return The backupPlanName.
    */
   java.lang.String getBackupPlanName();
-
   /**
    *
    *

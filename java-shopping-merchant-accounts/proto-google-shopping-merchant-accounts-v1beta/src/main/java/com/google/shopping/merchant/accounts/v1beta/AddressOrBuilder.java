@@ -36,7 +36,6 @@ public interface AddressOrBuilder
    * @return Whether the streetAddress field is set.
    */
   boolean hasStreetAddress();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AddressOrBuilder
    * @return The streetAddress.
    */
   java.lang.String getStreetAddress();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface AddressOrBuilder
    * @return Whether the city field is set.
    */
   boolean hasCity();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface AddressOrBuilder
    * @return The city.
    */
   java.lang.String getCity();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface AddressOrBuilder
    * @return Whether the administrativeArea field is set.
    */
   boolean hasAdministrativeArea();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface AddressOrBuilder
    * @return The administrativeArea.
    */
   java.lang.String getAdministrativeArea();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface AddressOrBuilder
    * @return Whether the postalCode field is set.
    */
   boolean hasPostalCode();
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public interface AddressOrBuilder
    * @return The postalCode.
    */
   java.lang.String getPostalCode();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface AddressOrBuilder
    * @return Whether the regionCode field is set.
    */
   boolean hasRegionCode();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public interface AddressOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *

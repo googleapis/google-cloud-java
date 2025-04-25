@@ -38,7 +38,6 @@ public interface RetrieveContextsRequestOrBuilder
    * @return Whether the vertexRagStore field is set.
    */
   boolean hasVertexRagStore();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface RetrieveContextsRequestOrBuilder
    * @return The vertexRagStore.
    */
   com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest.VertexRagStore getVertexRagStore();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface RetrieveContextsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface RetrieveContextsRequestOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface RetrieveContextsRequestOrBuilder
    * @return The query.
    */
   com.google.cloud.aiplatform.v1beta1.RagQuery getQuery();
-
   /**
    *
    *

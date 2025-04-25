@@ -39,7 +39,6 @@ public interface ListVolumeBackupsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ListVolumeBackupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface ListVolumeBackupsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface ListVolumeBackupsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

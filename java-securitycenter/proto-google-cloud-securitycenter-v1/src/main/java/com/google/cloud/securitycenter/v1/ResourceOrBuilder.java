@@ -37,7 +37,6 @@ public interface ResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ResourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ResourceOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface ResourceOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface ResourceOrBuilder
    * @return The projectDisplayName.
    */
   java.lang.String getProjectDisplayName();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ResourceOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface ResourceOrBuilder
    * @return The parentDisplayName.
    */
   java.lang.String getParentDisplayName();
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList();
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.Folder getFolders(int index);
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   int getFoldersCount();
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public interface ResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.FolderOrBuilder>
       getFoldersOrBuilderList();
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public interface ResourceOrBuilder
    * @return The enum numeric value on the wire for cloudProvider.
    */
   int getCloudProviderValue();
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public interface ResourceOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public interface ResourceOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -378,7 +364,6 @@ public interface ResourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -404,7 +389,6 @@ public interface ResourceOrBuilder
    * @return Whether the awsMetadata field is set.
    */
   boolean hasAwsMetadata();
-
   /**
    *
    *
@@ -417,7 +401,6 @@ public interface ResourceOrBuilder
    * @return The awsMetadata.
    */
   com.google.cloud.securitycenter.v1.AwsMetadata getAwsMetadata();
-
   /**
    *
    *
@@ -441,7 +424,6 @@ public interface ResourceOrBuilder
    * @return Whether the azureMetadata field is set.
    */
   boolean hasAzureMetadata();
-
   /**
    *
    *
@@ -454,7 +436,6 @@ public interface ResourceOrBuilder
    * @return The azureMetadata.
    */
   com.google.cloud.securitycenter.v1.AzureMetadata getAzureMetadata();
-
   /**
    *
    *
@@ -478,7 +459,6 @@ public interface ResourceOrBuilder
    * @return Whether the resourcePath field is set.
    */
   boolean hasResourcePath();
-
   /**
    *
    *
@@ -491,7 +471,6 @@ public interface ResourceOrBuilder
    * @return The resourcePath.
    */
   com.google.cloud.securitycenter.v1.ResourcePath getResourcePath();
-
   /**
    *
    *
@@ -524,7 +503,6 @@ public interface ResourceOrBuilder
    * @return The resourcePathString.
    */
   java.lang.String getResourcePathString();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ProductRecognizerConfigOrBuilder
    * @return The retailEndpoint.
    */
   java.lang.String getRetailEndpoint();
-
   /**
    *
    *

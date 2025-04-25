@@ -33,7 +33,6 @@ public final class InterconnectRemoteLocationPermittedConnections
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections)
     InterconnectRemoteLocationPermittedConnectionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectRemoteLocationPermittedConnections.newBuilder() to construct.
   private InterconnectRemoteLocationPermittedConnections(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InterconnectRemoteLocationPermittedConnections
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectLocation_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InterconnectRemoteLocationPermittedConnections
   public boolean hasInterconnectLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class InterconnectRemoteLocationPermittedConnections
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +306,6 @@ public final class InterconnectRemoteLocationPermittedConnections
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -508,7 +503,6 @@ public final class InterconnectRemoteLocationPermittedConnections
     private int bitField0_;
 
     private java.lang.Object interconnectLocation_ = "";
-
     /**
      *
      *
@@ -523,7 +517,6 @@ public final class InterconnectRemoteLocationPermittedConnections
     public boolean hasInterconnectLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class InterconnectRemoteLocationPermittedConnections
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class InterconnectRemoteLocationPermittedConnections
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -591,7 +582,6 @@ public final class InterconnectRemoteLocationPermittedConnections
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -609,7 +599,6 @@ public final class InterconnectRemoteLocationPermittedConnections
       onChanged();
       return this;
     }
-
     /**
      *
      *

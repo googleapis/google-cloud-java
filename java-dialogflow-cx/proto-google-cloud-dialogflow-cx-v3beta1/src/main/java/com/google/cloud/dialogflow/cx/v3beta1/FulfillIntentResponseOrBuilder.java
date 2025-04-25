@@ -37,7 +37,6 @@ public interface FulfillIntentResponseOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface FulfillIntentResponseOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface FulfillIntentResponseOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.cx.v3beta1.QueryResult getQueryResult();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface FulfillIntentResponseOrBuilder
    * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface FulfillIntentResponseOrBuilder
    * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig getOutputAudioConfig();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface NasJobOutputOrBuilder
    * @return Whether the multiTrialJobOutput field is set.
    */
   boolean hasMultiTrialJobOutput();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface NasJobOutputOrBuilder
    * @return The multiTrialJobOutput.
    */
   com.google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutput getMultiTrialJobOutput();
-
   /**
    *
    *

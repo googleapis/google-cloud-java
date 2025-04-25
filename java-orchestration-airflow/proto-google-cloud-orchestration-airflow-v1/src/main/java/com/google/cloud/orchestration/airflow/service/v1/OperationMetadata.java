@@ -33,7 +33,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.OperationMetadata)
     OperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,7 +131,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     /** <code>SUCCESSFUL = 3;</code> */
     public static final State SUCCESSFUL = SUCCEEDED;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -165,7 +161,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -176,10 +171,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /** <code>SUCCESSFUL = 3;</code> */
     public static final int SUCCESSFUL_VALUE = 3;
-
     /**
      *
      *
@@ -392,7 +385,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -403,7 +395,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CREATE = 1;</code>
      */
     public static final int CREATE_VALUE = 1;
-
     /**
      *
      *
@@ -414,7 +405,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>DELETE = 2;</code>
      */
     public static final int DELETE_VALUE = 2;
-
     /**
      *
      *
@@ -425,7 +415,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>UPDATE = 3;</code>
      */
     public static final int UPDATE_VALUE = 3;
-
     /**
      *
      *
@@ -436,7 +425,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CHECK = 4;</code>
      */
     public static final int CHECK_VALUE = 4;
-
     /**
      *
      *
@@ -447,7 +435,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>SAVE_SNAPSHOT = 5;</code>
      */
     public static final int SAVE_SNAPSHOT_VALUE = 5;
-
     /**
      *
      *
@@ -458,7 +445,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>LOAD_SNAPSHOT = 6;</code>
      */
     public static final int LOAD_SNAPSHOT_VALUE = 6;
-
     /**
      *
      *
@@ -569,7 +555,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -585,7 +570,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -608,7 +592,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 2;
   private int operationType_ = 0;
-
   /**
    *
    *
@@ -625,7 +608,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public int getOperationTypeValue() {
     return operationType_;
   }
-
   /**
    *
    *
@@ -653,7 +635,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -678,7 +659,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -708,7 +688,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUuid_ = "";
-
   /**
    *
    *
@@ -732,7 +711,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -759,7 +737,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -775,7 +752,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -791,7 +767,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -808,7 +783,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -825,7 +799,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -842,7 +815,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -1084,7 +1056,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1365,7 +1336,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1382,7 +1352,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1402,7 +1371,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1392,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.orchestration.airflow.service.v1.OperationMetadata.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1448,7 +1415,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1435,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private int operationType_ = 0;
-
     /**
      *
      *
@@ -1487,7 +1452,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getOperationTypeValue() {
       return operationType_;
     }
-
     /**
      *
      *
@@ -1508,7 +1472,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1495,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.orchestration.airflow.service.v1.OperationMetadata.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1557,7 +1519,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1579,7 +1540,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1603,7 +1563,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1627,7 +1586,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1650,7 +1608,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1669,7 +1626,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1651,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resourceUuid_ = "";
-
     /**
      *
      *
@@ -1718,7 +1673,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1741,7 +1695,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1763,7 +1716,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1733,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1811,7 +1762,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1826,7 +1776,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1847,7 +1796,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1870,7 +1818,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1890,7 +1837,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1918,7 +1864,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1938,7 +1883,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1953,7 +1897,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1972,7 +1915,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2005,7 +1947,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -2021,7 +1962,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2041,7 +1981,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2065,7 +2004,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2086,7 +2024,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2115,7 +2052,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2136,7 +2072,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2152,7 +2087,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2170,7 +2104,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

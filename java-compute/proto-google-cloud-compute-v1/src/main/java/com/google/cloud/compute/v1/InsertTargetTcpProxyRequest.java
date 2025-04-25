@@ -33,7 +33,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertTargetTcpProxyRequest)
     InsertTargetTcpProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertTargetTcpProxyRequest.newBuilder() to construct.
   private InsertTargetTcpProxyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
 
   public static final int TARGET_TCP_PROXY_RESOURCE_FIELD_NUMBER = 145913931;
   private com.google.cloud.compute.v1.TargetTcpProxy targetTcpProxyResource_;
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
   public boolean hasTargetTcpProxyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.TargetTcpProxy.getDefaultInstance()
         : targetTcpProxyResource_;
   }
-
   /**
    *
    *
@@ -441,7 +432,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -675,7 +665,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetTcpProxy.Builder,
             com.google.cloud.compute.v1.TargetTcpProxyOrBuilder>
         targetTcpProxyResourceBuilder_;
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     public boolean hasTargetTcpProxyResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         return targetTcpProxyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -992,7 +968,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +990,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1020,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1041,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return getTargetTcpProxyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1107,7 +1078,6 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
             : targetTcpProxyResource_;
       }
     }
-
     /**
      *
      *

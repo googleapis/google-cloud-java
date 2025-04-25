@@ -34,7 +34,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SegmentFilterScoping)
     SegmentFilterScopingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SegmentFilterScoping.newBuilder() to construct.
   private SegmentFilterScoping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int AT_ANY_POINT_IN_TIME_FIELD_NUMBER = 1;
   private boolean atAnyPointInTime_ = false;
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
   public boolean hasAtAnyPointInTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -290,7 +287,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -477,7 +473,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean atAnyPointInTime_;
-
     /**
      *
      *
@@ -506,7 +501,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     public boolean hasAtAnyPointInTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -535,7 +529,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     public boolean getAtAnyPointInTime() {
       return atAnyPointInTime_;
     }
-
     /**
      *
      *
@@ -568,7 +561,6 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

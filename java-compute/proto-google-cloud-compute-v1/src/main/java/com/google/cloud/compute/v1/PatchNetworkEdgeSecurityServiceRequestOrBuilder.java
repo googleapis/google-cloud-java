@@ -38,7 +38,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The networkEdgeSecurityService.
    */
   java.lang.String getNetworkEdgeSecurityService();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the networkEdgeSecurityServiceResource field is set.
    */
   boolean hasNetworkEdgeSecurityServiceResource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The networkEdgeSecurityServiceResource.
    */
   com.google.cloud.compute.v1.NetworkEdgeSecurityService getNetworkEdgeSecurityServiceResource();
-
   /**
    *
    *
@@ -104,14 +101,12 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the paths field is set.
    */
   boolean hasPaths();
-
   /**
    * <code>optional string paths = 106438894;</code>
    *
    * @return The paths.
    */
   java.lang.String getPaths();
-
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -133,7 +128,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface PatchNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
-
   /**
    *
    *

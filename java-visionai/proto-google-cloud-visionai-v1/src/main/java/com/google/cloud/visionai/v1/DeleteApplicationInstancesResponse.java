@@ -33,7 +33,6 @@ public final class DeleteApplicationInstancesResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeleteApplicationInstancesResponse)
     DeleteApplicationInstancesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteApplicationInstancesResponse.newBuilder() to construct.
   private DeleteApplicationInstancesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,7 +213,6 @@ public final class DeleteApplicationInstancesResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

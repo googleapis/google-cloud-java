@@ -33,7 +33,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.OcrConfig)
     OcrConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OcrConfig.newBuilder() to construct.
   private OcrConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the languageHints.
      */
     java.util.List<java.lang.String> getLanguageHintsList();
-
     /**
      *
      *
@@ -104,7 +102,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The count of languageHints.
      */
     int getLanguageHintsCount();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The languageHints at the given index.
      */
     java.lang.String getLanguageHints(int index);
-
     /**
      *
      *
@@ -143,7 +139,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getLanguageHintsBytes(int index);
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.OcrConfig.Hints)
       HintsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Hints.newBuilder() to construct.
     private Hints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -194,7 +188,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList languageHints_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -214,7 +207,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
       return languageHints_;
     }
-
     /**
      *
      *
@@ -234,7 +226,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageHintsCount() {
       return languageHints_.size();
     }
-
     /**
      *
      *
@@ -255,7 +246,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLanguageHints(int index) {
       return languageHints_.get(index);
     }
-
     /**
      *
      *
@@ -445,7 +435,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -669,7 +657,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         languageHints_.makeImmutable();
         return languageHints_;
       }
-
       /**
        *
        *
@@ -689,7 +676,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public int getLanguageHintsCount() {
         return languageHints_.size();
       }
-
       /**
        *
        *
@@ -710,7 +696,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getLanguageHints(int index) {
         return languageHints_.get(index);
       }
-
       /**
        *
        *
@@ -731,7 +716,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
         return languageHints_.getByteString(index);
       }
-
       /**
        *
        *
@@ -760,7 +744,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -788,7 +771,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -813,7 +795,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -837,7 +818,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -976,7 +956,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getEnableMathOcr();
   }
-
   /**
    *
    *
@@ -991,7 +970,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)
       PremiumFeaturesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PremiumFeatures.newBuilder() to construct.
     private PremiumFeatures(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1022,7 +1000,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_SELECTION_MARK_DETECTION_FIELD_NUMBER = 3;
     private boolean enableSelectionMarkDetection_ = false;
-
     /**
      *
      *
@@ -1042,7 +1019,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COMPUTE_STYLE_INFO_FIELD_NUMBER = 4;
     private boolean computeStyleInfo_ = false;
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_MATH_OCR_FIELD_NUMBER = 5;
     private boolean enableMathOcr_ = false;
-
     /**
      *
      *
@@ -1260,7 +1235,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1476,7 +1450,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean enableSelectionMarkDetection_;
-
       /**
        *
        *
@@ -1493,7 +1466,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableSelectionMarkDetection() {
         return enableSelectionMarkDetection_;
       }
-
       /**
        *
        *
@@ -1514,7 +1486,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1535,7 +1506,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean computeStyleInfo_;
-
       /**
        *
        *
@@ -1551,7 +1521,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getComputeStyleInfo() {
         return computeStyleInfo_;
       }
-
       /**
        *
        *
@@ -1571,7 +1540,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1591,7 +1559,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean enableMathOcr_;
-
       /**
        *
        *
@@ -1607,7 +1574,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableMathOcr() {
         return enableMathOcr_;
       }
-
       /**
        *
        *
@@ -1627,7 +1593,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1716,7 +1681,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HINTS_FIELD_NUMBER = 2;
   private com.google.cloud.documentai.v1beta3.OcrConfig.Hints hints_;
-
   /**
    *
    *
@@ -1732,7 +1696,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHints() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1750,7 +1713,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1beta3.OcrConfig.Hints.getDefaultInstance()
         : hints_;
   }
-
   /**
    *
    *
@@ -1769,7 +1731,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_NATIVE_PDF_PARSING_FIELD_NUMBER = 3;
   private boolean enableNativePdfParsing_ = false;
-
   /**
    *
    *
@@ -1789,7 +1750,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_IMAGE_QUALITY_SCORES_FIELD_NUMBER = 4;
   private boolean enableImageQualityScores_ = false;
-
   /**
    *
    *
@@ -1813,7 +1773,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList advancedOcrOptions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1834,7 +1793,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAdvancedOcrOptionsList() {
     return advancedOcrOptions_;
   }
-
   /**
    *
    *
@@ -1855,7 +1813,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAdvancedOcrOptionsCount() {
     return advancedOcrOptions_.size();
   }
-
   /**
    *
    *
@@ -1877,7 +1834,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAdvancedOcrOptions(int index) {
     return advancedOcrOptions_.get(index);
   }
-
   /**
    *
    *
@@ -1902,7 +1858,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_SYMBOL_FIELD_NUMBER = 6;
   private boolean enableSymbol_ = false;
-
   /**
    *
    *
@@ -1921,7 +1876,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPUTE_STYLE_INFO_FIELD_NUMBER = 8;
   private boolean computeStyleInfo_ = false;
-
   /**
    *
    *
@@ -1946,7 +1900,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLE_CHARACTER_BOXES_DETECTION_FIELD_NUMBER = 10;
   private boolean disableCharacterBoxesDetection_ = false;
-
   /**
    *
    *
@@ -1966,7 +1919,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREMIUM_FEATURES_FIELD_NUMBER = 11;
   private com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premiumFeatures_;
-
   /**
    *
    *
@@ -1982,7 +1934,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPremiumFeatures() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2000,7 +1951,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance()
         : premiumFeatures_;
   }
-
   /**
    *
    *
@@ -2261,7 +2211,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2571,7 +2520,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.OcrConfig.Hints.Builder,
             com.google.cloud.documentai.v1beta3.OcrConfig.HintsOrBuilder>
         hintsBuilder_;
-
     /**
      *
      *
@@ -2586,7 +2534,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHints() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2607,7 +2554,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         return hintsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2630,7 +2576,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2651,7 +2596,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2679,7 +2623,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2642,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2714,7 +2656,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHintsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2733,7 +2674,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
             : hints_;
       }
     }
-
     /**
      *
      *
@@ -2761,7 +2701,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableNativePdfParsing_;
-
     /**
      *
      *
@@ -2778,7 +2717,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableNativePdfParsing() {
       return enableNativePdfParsing_;
     }
-
     /**
      *
      *
@@ -2799,7 +2737,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2820,7 +2757,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableImageQualityScores_;
-
     /**
      *
      *
@@ -2838,7 +2774,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableImageQualityScores() {
       return enableImageQualityScores_;
     }
-
     /**
      *
      *
@@ -2860,7 +2795,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2890,7 +2824,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2912,7 +2845,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       advancedOcrOptions_.makeImmutable();
       return advancedOcrOptions_;
     }
-
     /**
      *
      *
@@ -2933,7 +2865,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAdvancedOcrOptionsCount() {
       return advancedOcrOptions_.size();
     }
-
     /**
      *
      *
@@ -2955,7 +2886,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAdvancedOcrOptions(int index) {
       return advancedOcrOptions_.get(index);
     }
-
     /**
      *
      *
@@ -2977,7 +2907,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAdvancedOcrOptionsBytes(int index) {
       return advancedOcrOptions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3007,7 +2936,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3036,7 +2964,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3062,7 +2989,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3087,7 +3013,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3119,7 +3044,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableSymbol_;
-
     /**
      *
      *
@@ -3135,7 +3059,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableSymbol() {
       return enableSymbol_;
     }
-
     /**
      *
      *
@@ -3155,7 +3078,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3175,7 +3097,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean computeStyleInfo_;
-
     /**
      *
      *
@@ -3197,7 +3118,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getComputeStyleInfo() {
       return computeStyleInfo_;
     }
-
     /**
      *
      *
@@ -3223,7 +3143,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3249,7 +3168,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disableCharacterBoxesDetection_;
-
     /**
      *
      *
@@ -3266,7 +3184,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisableCharacterBoxesDetection() {
       return disableCharacterBoxesDetection_;
     }
-
     /**
      *
      *
@@ -3287,7 +3204,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3229,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder,
             com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder>
         premiumFeaturesBuilder_;
-
     /**
      *
      *
@@ -3329,7 +3244,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPremiumFeatures() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3351,7 +3265,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         return premiumFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3376,7 +3289,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3398,7 +3310,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3430,7 +3341,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3451,7 +3361,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3468,7 +3377,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPremiumFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3489,7 +3397,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
             : premiumFeatures_;
       }
     }
-
     /**
      *
      *

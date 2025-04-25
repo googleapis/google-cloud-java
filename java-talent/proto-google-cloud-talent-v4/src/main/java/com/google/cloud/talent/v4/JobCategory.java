@@ -355,7 +355,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_CATEGORY_UNSPECIFIED = 0;</code>
    */
   public static final int JOB_CATEGORY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -366,7 +365,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCOUNTING_AND_FINANCE = 1;</code>
    */
   public static final int ACCOUNTING_AND_FINANCE_VALUE = 1;
-
   /**
    *
    *
@@ -377,7 +375,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ADMINISTRATIVE_AND_OFFICE = 2;</code>
    */
   public static final int ADMINISTRATIVE_AND_OFFICE_VALUE = 2;
-
   /**
    *
    *
@@ -388,7 +385,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ADVERTISING_AND_MARKETING = 3;</code>
    */
   public static final int ADVERTISING_AND_MARKETING_VALUE = 3;
-
   /**
    *
    *
@@ -399,7 +395,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ANIMAL_CARE = 4;</code>
    */
   public static final int ANIMAL_CARE_VALUE = 4;
-
   /**
    *
    *
@@ -410,7 +405,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ART_FASHION_AND_DESIGN = 5;</code>
    */
   public static final int ART_FASHION_AND_DESIGN_VALUE = 5;
-
   /**
    *
    *
@@ -421,7 +415,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUSINESS_OPERATIONS = 6;</code>
    */
   public static final int BUSINESS_OPERATIONS_VALUE = 6;
-
   /**
    *
    *
@@ -432,7 +425,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLEANING_AND_FACILITIES = 7;</code>
    */
   public static final int CLEANING_AND_FACILITIES_VALUE = 7;
-
   /**
    *
    *
@@ -443,7 +435,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPUTER_AND_IT = 8;</code>
    */
   public static final int COMPUTER_AND_IT_VALUE = 8;
-
   /**
    *
    *
@@ -454,7 +445,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONSTRUCTION = 9;</code>
    */
   public static final int CONSTRUCTION_VALUE = 9;
-
   /**
    *
    *
@@ -465,7 +455,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CUSTOMER_SERVICE = 10;</code>
    */
   public static final int CUSTOMER_SERVICE_VALUE = 10;
-
   /**
    *
    *
@@ -476,7 +465,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EDUCATION = 11;</code>
    */
   public static final int EDUCATION_VALUE = 11;
-
   /**
    *
    *
@@ -487,7 +475,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTERTAINMENT_AND_TRAVEL = 12;</code>
    */
   public static final int ENTERTAINMENT_AND_TRAVEL_VALUE = 12;
-
   /**
    *
    *
@@ -498,7 +485,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FARMING_AND_OUTDOORS = 13;</code>
    */
   public static final int FARMING_AND_OUTDOORS_VALUE = 13;
-
   /**
    *
    *
@@ -509,7 +495,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HEALTHCARE = 14;</code>
    */
   public static final int HEALTHCARE_VALUE = 14;
-
   /**
    *
    *
@@ -520,7 +505,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HUMAN_RESOURCES = 15;</code>
    */
   public static final int HUMAN_RESOURCES_VALUE = 15;
-
   /**
    *
    *
@@ -531,7 +515,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSTALLATION_MAINTENANCE_AND_REPAIR = 16;</code>
    */
   public static final int INSTALLATION_MAINTENANCE_AND_REPAIR_VALUE = 16;
-
   /**
    *
    *
@@ -542,7 +525,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LEGAL = 17;</code>
    */
   public static final int LEGAL_VALUE = 17;
-
   /**
    *
    *
@@ -554,7 +536,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANAGEMENT = 18;</code>
    */
   public static final int MANAGEMENT_VALUE = 18;
-
   /**
    *
    *
@@ -565,7 +546,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANUFACTURING_AND_WAREHOUSE = 19;</code>
    */
   public static final int MANUFACTURING_AND_WAREHOUSE_VALUE = 19;
-
   /**
    *
    *
@@ -576,7 +556,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDIA_COMMUNICATIONS_AND_WRITING = 20;</code>
    */
   public static final int MEDIA_COMMUNICATIONS_AND_WRITING_VALUE = 20;
-
   /**
    *
    *
@@ -587,7 +566,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OIL_GAS_AND_MINING = 21;</code>
    */
   public static final int OIL_GAS_AND_MINING_VALUE = 21;
-
   /**
    *
    *
@@ -598,7 +576,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PERSONAL_CARE_AND_SERVICES = 22;</code>
    */
   public static final int PERSONAL_CARE_AND_SERVICES_VALUE = 22;
-
   /**
    *
    *
@@ -609,7 +586,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROTECTIVE_SERVICES = 23;</code>
    */
   public static final int PROTECTIVE_SERVICES_VALUE = 23;
-
   /**
    *
    *
@@ -620,7 +596,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REAL_ESTATE = 24;</code>
    */
   public static final int REAL_ESTATE_VALUE = 24;
-
   /**
    *
    *
@@ -631,7 +606,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESTAURANT_AND_HOSPITALITY = 25;</code>
    */
   public static final int RESTAURANT_AND_HOSPITALITY_VALUE = 25;
-
   /**
    *
    *
@@ -642,7 +616,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SALES_AND_RETAIL = 26;</code>
    */
   public static final int SALES_AND_RETAIL_VALUE = 26;
-
   /**
    *
    *
@@ -653,7 +626,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SCIENCE_AND_ENGINEERING = 27;</code>
    */
   public static final int SCIENCE_AND_ENGINEERING_VALUE = 27;
-
   /**
    *
    *
@@ -664,7 +636,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOCIAL_SERVICES_AND_NON_PROFIT = 28;</code>
    */
   public static final int SOCIAL_SERVICES_AND_NON_PROFIT_VALUE = 28;
-
   /**
    *
    *
@@ -675,7 +646,6 @@ public enum JobCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPORTS_FITNESS_AND_RECREATION = 29;</code>
    */
   public static final int SPORTS_FITNESS_AND_RECREATION_VALUE = 29;
-
   /**
    *
    *

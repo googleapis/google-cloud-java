@@ -36,7 +36,6 @@ public interface RuntimeNetworkInfoOrBuilder
    * @return Whether the scanTime field is set.
    */
   boolean hasScanTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RuntimeNetworkInfoOrBuilder
    * @return The scanTime.
    */
   com.google.protobuf.Timestamp getScanTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RuntimeNetworkInfoOrBuilder
    * @return Whether the connections field is set.
    */
   boolean hasConnections();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RuntimeNetworkInfoOrBuilder
    * @return The connections.
    */
   com.google.cloud.migrationcenter.v1.NetworkConnectionList getConnections();
-
   /**
    *
    *

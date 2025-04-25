@@ -94,7 +94,6 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>THREAT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int THREAT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MALWARE = 1;</code>
    */
   public static final int MALWARE_VALUE = 1;
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOCIAL_ENGINEERING = 2;</code>
    */
   public static final int SOCIAL_ENGINEERING_VALUE = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNWANTED_SOFTWARE = 3;</code>
    */
   public static final int UNWANTED_SOFTWARE_VALUE = 3;
-
   /**
    *
    *

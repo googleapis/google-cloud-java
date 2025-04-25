@@ -35,7 +35,6 @@ public interface ListDataStoresResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.DataStore data_stores = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.DataStore> getDataStoresList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListDataStoresResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.DataStore data_stores = 1;</code>
    */
   com.google.cloud.discoveryengine.v1beta.DataStore getDataStores(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListDataStoresResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.DataStore data_stores = 1;</code>
    */
   int getDataStoresCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListDataStoresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.DataStoreOrBuilder>
       getDataStoresOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListDataStoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

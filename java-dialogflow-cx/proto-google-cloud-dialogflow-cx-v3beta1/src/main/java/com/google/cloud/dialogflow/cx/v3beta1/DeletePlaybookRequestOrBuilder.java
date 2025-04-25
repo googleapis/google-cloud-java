@@ -40,7 +40,6 @@ public interface DeletePlaybookRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

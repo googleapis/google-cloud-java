@@ -36,7 +36,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return Whether the containerSpec field is set.
    */
   boolean hasContainerSpec();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return The containerSpec.
    */
   com.google.cloud.aiplatform.v1.ContainerSpec getContainerSpec();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return Whether the pythonPackageSpec field is set.
    */
   boolean hasPythonPackageSpec();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return The pythonPackageSpec.
    */
   com.google.cloud.aiplatform.v1.PythonPackageSpec getPythonPackageSpec();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1.MachineSpec getMachineSpec();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface WorkerPoolSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.NfsMount> getNfsMountsList();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface WorkerPoolSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.NfsMount getNfsMounts(int index);
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface WorkerPoolSpecOrBuilder
    * </code>
    */
   int getNfsMountsCount();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface WorkerPoolSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.NfsMountOrBuilder>
       getNfsMountsOrBuilderList();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return Whether the diskSpec field is set.
    */
   boolean hasDiskSpec();
-
   /**
    *
    *
@@ -245,7 +234,6 @@ public interface WorkerPoolSpecOrBuilder
    * @return The diskSpec.
    */
   com.google.cloud.aiplatform.v1.DiskSpec getDiskSpec();
-
   /**
    *
    *

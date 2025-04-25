@@ -37,7 +37,6 @@ public interface CreateNoteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CreateNoteRequestOrBuilder
    * @return The noteId.
    */
   java.lang.String getNoteId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface CreateNoteRequestOrBuilder
    * @return Whether the note field is set.
    */
   boolean hasNote();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface CreateNoteRequestOrBuilder
    * @return The note.
    */
   io.grafeas.v1beta1.Note getNote();
-
   /**
    *
    *

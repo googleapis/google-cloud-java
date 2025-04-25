@@ -25,7 +25,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.Stream)
     StreamOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Stream.newBuilder() to construct.
   private Stream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -188,7 +187,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -199,7 +197,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATED = 1;</code>
      */
     public static final int CREATED_VALUE = 1;
-
     /**
      *
      *
@@ -210,7 +207,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -221,7 +217,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 3;</code>
      */
     public static final int PAUSED_VALUE = 3;
-
     /**
      *
      *
@@ -234,7 +229,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>MAINTENANCE = 4;</code>
      */
     public static final int MAINTENANCE_VALUE = 4;
-
     /**
      *
      *
@@ -246,7 +240,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 5;</code>
      */
     public static final int FAILED_VALUE = 5;
-
     /**
      *
      *
@@ -257,7 +250,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED_PERMANENTLY = 6;</code>
      */
     public static final int FAILED_PERMANENTLY_VALUE = 6;
-
     /**
      *
      *
@@ -268,7 +260,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 7;</code>
      */
     public static final int STARTING_VALUE = 7;
-
     /**
      *
      *
@@ -393,7 +384,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the oracleExcludedObjects field is set.
      */
     boolean hasOracleExcludedObjects();
-
     /**
      *
      *
@@ -406,7 +396,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return The oracleExcludedObjects.
      */
     com.google.cloud.datastream.v1alpha1.OracleRdbms getOracleExcludedObjects();
-
     /**
      *
      *
@@ -430,7 +419,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mysqlExcludedObjects field is set.
      */
     boolean hasMysqlExcludedObjects();
-
     /**
      *
      *
@@ -443,7 +431,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      * @return The mysqlExcludedObjects.
      */
     com.google.cloud.datastream.v1alpha1.MysqlRdbms getMysqlExcludedObjects();
-
     /**
      *
      *
@@ -458,7 +445,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
-
   /**
    *
    *
@@ -474,7 +460,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy)
       BackfillAllStrategyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BackfillAllStrategy.newBuilder() to construct.
     private BackfillAllStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -520,7 +505,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       private ExcludedObjectsCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -554,7 +538,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ORACLE_EXCLUDED_OBJECTS_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -570,7 +553,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOracleExcludedObjects() {
       return excludedObjectsCase_ == 1;
     }
-
     /**
      *
      *
@@ -589,7 +571,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -609,7 +590,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MYSQL_EXCLUDED_OBJECTS_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -625,7 +605,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMysqlExcludedObjects() {
       return excludedObjectsCase_ == 2;
     }
-
     /**
      *
      *
@@ -644,7 +623,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -855,7 +833,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1103,7 +1080,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder,
               com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder>
           oracleExcludedObjectsBuilder_;
-
       /**
        *
        *
@@ -1119,7 +1095,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOracleExcludedObjects() {
         return excludedObjectsCase_ == 1;
       }
-
       /**
        *
        *
@@ -1145,7 +1120,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1169,7 +1143,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1190,7 +1163,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1225,7 +1197,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1251,7 +1222,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1265,7 +1235,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           getOracleExcludedObjectsBuilder() {
         return getOracleExcludedObjectsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1287,7 +1256,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1327,7 +1295,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder,
               com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder>
           mysqlExcludedObjectsBuilder_;
-
       /**
        *
        *
@@ -1343,7 +1310,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMysqlExcludedObjects() {
         return excludedObjectsCase_ == 2;
       }
-
       /**
        *
        *
@@ -1369,7 +1335,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1393,7 +1358,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1414,7 +1378,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1449,7 +1412,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1475,7 +1437,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1489,7 +1450,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           getMysqlExcludedObjectsBuilder() {
         return getMysqlExcludedObjectsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1511,7 +1471,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1616,7 +1575,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -1631,7 +1589,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy)
       BackfillNoneStrategyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BackfillNoneStrategy.newBuilder() to construct.
     private BackfillNoneStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1813,7 +1770,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2066,7 +2022,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     private BackfillStrategyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2103,7 +2058,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2127,7 +2081,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2154,7 +2107,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -2171,7 +2123,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2188,7 +2139,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -2206,7 +2156,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -2223,7 +2172,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2240,7 +2188,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -2282,7 +2229,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -2299,14 +2245,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -2320,7 +2264,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -2341,7 +2284,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2367,7 +2309,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -2391,7 +2332,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2418,7 +2358,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.datastream.v1alpha1.SourceConfig sourceConfig_;
-
   /**
    *
    *
@@ -2436,7 +2375,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2456,7 +2394,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datastream.v1alpha1.SourceConfig.getDefaultInstance()
         : sourceConfig_;
   }
-
   /**
    *
    *
@@ -2477,7 +2414,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESTINATION_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.datastream.v1alpha1.DestinationConfig destinationConfig_;
-
   /**
    *
    *
@@ -2495,7 +2431,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDestinationConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -2515,7 +2450,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datastream.v1alpha1.DestinationConfig.getDefaultInstance()
         : destinationConfig_;
   }
-
   /**
    *
    *
@@ -2537,7 +2471,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
-
   /**
    *
    *
@@ -2553,7 +2486,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -2573,7 +2505,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKFILL_ALL_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -2590,7 +2521,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackfillAll() {
     return backfillStrategyCase_ == 101;
   }
-
   /**
    *
    *
@@ -2610,7 +2540,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2631,7 +2560,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKFILL_NONE_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -2647,7 +2575,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackfillNone() {
     return backfillStrategyCase_ == 102;
   }
-
   /**
    *
    *
@@ -2666,7 +2593,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2689,7 +2615,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.Error> errors_;
-
   /**
    *
    *
@@ -2705,7 +2630,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1alpha1.Error> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -2722,7 +2646,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -2738,7 +2661,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -2754,7 +2676,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1alpha1.Error getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -3076,7 +2997,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.datastream.v1alpha1.Stream} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -3535,7 +3455,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3558,7 +3477,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3581,7 +3499,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3603,7 +3520,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3621,7 +3537,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3651,7 +3566,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3668,7 +3582,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3691,7 +3604,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3716,7 +3628,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3738,7 +3649,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3768,7 +3678,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3790,7 +3699,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3807,7 +3715,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3828,7 +3735,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3863,7 +3769,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3880,7 +3785,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3903,7 +3807,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3928,7 +3831,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3950,7 +3852,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3980,7 +3881,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4002,7 +3902,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3918,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4040,7 +3938,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4094,7 +3991,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -4111,14 +4007,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -4132,7 +4026,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -4153,7 +4046,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4180,7 +4072,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4197,14 +4088,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -4225,7 +4114,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -4242,7 +4130,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -4265,7 +4152,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4288,7 +4174,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4310,7 +4195,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4328,7 +4212,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4358,7 +4241,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1alpha1.SourceConfig.Builder,
             com.google.cloud.datastream.v1alpha1.SourceConfigOrBuilder>
         sourceConfigBuilder_;
-
     /**
      *
      *
@@ -4375,7 +4257,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -4398,7 +4279,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return sourceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4423,7 +4303,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4446,7 +4325,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4477,7 +4355,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4499,7 +4376,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4516,7 +4392,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4537,7 +4412,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             : sourceConfig_;
       }
     }
-
     /**
      *
      *
@@ -4572,7 +4446,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1alpha1.DestinationConfig.Builder,
             com.google.cloud.datastream.v1alpha1.DestinationConfigOrBuilder>
         destinationConfigBuilder_;
-
     /**
      *
      *
@@ -4589,7 +4462,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDestinationConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4612,7 +4484,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return destinationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4638,7 +4509,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4661,7 +4531,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4693,7 +4562,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4715,7 +4583,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4733,7 +4600,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDestinationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4755,7 +4621,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             : destinationConfig_;
       }
     }
-
     /**
      *
      *
@@ -4785,7 +4650,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -4801,7 +4665,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -4820,7 +4683,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4840,7 +4702,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datastream.v1alpha1.Stream.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4862,7 +4723,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4886,7 +4746,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.Builder,
             com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategyOrBuilder>
         backfillAllBuilder_;
-
     /**
      *
      *
@@ -4903,7 +4762,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackfillAll() {
       return backfillStrategyCase_ == 101;
     }
-
     /**
      *
      *
@@ -4931,7 +4789,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4956,7 +4813,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       backfillStrategyCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -4978,7 +4834,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       backfillStrategyCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -5016,7 +4871,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       backfillStrategyCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -5043,7 +4897,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5058,7 +4911,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         getBackfillAllBuilder() {
       return getBackfillAllFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5082,7 +4934,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5123,7 +4974,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy.Builder,
             com.google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategyOrBuilder>
         backfillNoneBuilder_;
-
     /**
      *
      *
@@ -5140,7 +4990,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackfillNone() {
       return backfillStrategyCase_ == 102;
     }
-
     /**
      *
      *
@@ -5170,7 +5019,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5195,7 +5043,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       backfillStrategyCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -5217,7 +5064,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       backfillStrategyCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -5255,7 +5101,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       backfillStrategyCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -5282,7 +5127,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5297,7 +5141,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         getBackfillNoneBuilder() {
       return getBackfillNoneFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5322,7 +5165,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5393,7 +5235,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5412,7 +5253,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5431,7 +5271,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5456,7 +5295,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5479,7 +5317,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5504,7 +5341,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5529,7 +5365,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5551,7 +5386,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5574,7 +5408,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5597,7 +5430,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5619,7 +5451,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5641,7 +5472,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5656,7 +5486,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5675,7 +5504,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5695,7 +5523,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -5711,7 +5538,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1alpha1.Error.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5727,7 +5553,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1alpha1.Error.getDefaultInstance());
     }
-
     /**
      *
      *

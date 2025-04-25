@@ -36,7 +36,6 @@ public interface TileOrBuilder
    * @return Whether the productAttributeValue field is set.
    */
   boolean hasProductAttributeValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TileOrBuilder
    * @return The productAttributeValue.
    */
   com.google.cloud.retail.v2alpha.ProductAttributeValue getProductAttributeValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TileOrBuilder
    * @return Whether the productAttributeInterval field is set.
    */
   boolean hasProductAttributeInterval();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface TileOrBuilder
    * @return The productAttributeInterval.
    */
   com.google.cloud.retail.v2alpha.ProductAttributeInterval getProductAttributeInterval();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface TileOrBuilder
    * @return The representativeProductId.
    */
   java.lang.String getRepresentativeProductId();
-
   /**
    *
    *

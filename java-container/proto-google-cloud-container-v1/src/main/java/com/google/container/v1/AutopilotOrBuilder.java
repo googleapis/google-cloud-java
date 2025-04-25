@@ -49,7 +49,6 @@ public interface AutopilotOrBuilder
    * @return Whether the workloadPolicyConfig field is set.
    */
   boolean hasWorkloadPolicyConfig();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AutopilotOrBuilder
    * @return The workloadPolicyConfig.
    */
   com.google.container.v1.WorkloadPolicyConfig getWorkloadPolicyConfig();
-
   /**
    *
    *

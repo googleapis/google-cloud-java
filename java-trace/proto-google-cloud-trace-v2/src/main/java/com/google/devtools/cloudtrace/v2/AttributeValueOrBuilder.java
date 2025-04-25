@@ -36,7 +36,6 @@ public interface AttributeValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AttributeValueOrBuilder
    * @return The stringValue.
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getStringValue();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AttributeValueOrBuilder
    * @return Whether the intValue field is set.
    */
   boolean hasIntValue();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface AttributeValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *

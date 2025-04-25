@@ -33,7 +33,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TimestampStats)
     TimestampStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimestampStats.newBuilder() to construct.
   private TimestampStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
     int getBucketsCount();
-
     /**
      *
      *
@@ -102,11 +100,9 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
     boolean containsBuckets(int key);
-
     /** Use {@link #getBucketsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, java.lang.Long> getBuckets();
-
     /**
      *
      *
@@ -118,7 +114,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Long> getBucketsMap();
-
     /**
      *
      *
@@ -130,7 +125,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
     long getBucketsOrDefault(int key, long defaultValue);
-
     /**
      *
      *
@@ -143,7 +137,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      */
     long getBucketsOrThrow(int key);
   }
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TimestampStats.GranularStats)
       GranularStatsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GranularStats.newBuilder() to construct.
     private GranularStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -225,7 +217,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public int getBucketsCount() {
       return internalGetBuckets().getMap().size();
     }
-
     /**
      *
      *
@@ -241,14 +232,12 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
 
       return internalGetBuckets().getMap().containsKey(key);
     }
-
     /** Use {@link #getBucketsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Long> getBuckets() {
       return getBucketsMap();
     }
-
     /**
      *
      *
@@ -263,7 +252,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.Integer, java.lang.Long> getBucketsMap() {
       return internalGetBuckets().getMap();
     }
-
     /**
      *
      *
@@ -280,7 +268,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetBuckets().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -470,7 +457,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       public int getBucketsCount() {
         return internalGetBuckets().getMap().size();
       }
-
       /**
        *
        *
@@ -728,14 +713,12 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
 
         return internalGetBuckets().getMap().containsKey(key);
       }
-
       /** Use {@link #getBucketsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Long> getBuckets() {
         return getBucketsMap();
       }
-
       /**
        *
        *
@@ -750,7 +733,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.Integer, java.lang.Long> getBucketsMap() {
         return internalGetBuckets().getMap();
       }
-
       /**
        *
        *
@@ -767,7 +749,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetBuckets().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -793,7 +774,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableBuckets().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -809,14 +789,12 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableBuckets().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Long> getMutableBuckets() {
         bitField0_ |= 0x00000001;
         return internalGetMutableBuckets().getMutableMap();
       }
-
       /**
        *
        *
@@ -833,7 +811,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -953,7 +930,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
   public int getGranularStatsCount() {
     return internalGetGranularStats().getMap().size();
   }
-
   /**
    *
    *
@@ -976,7 +952,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetGranularStats().getMap().containsKey(key);
   }
-
   /** Use {@link #getGranularStatsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -985,7 +960,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       getGranularStats() {
     return getGranularStatsMap();
   }
-
   /**
    *
    *
@@ -1007,7 +981,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       getGranularStatsMap() {
     return internalGetGranularStats().getMap();
   }
-
   /**
    *
    *
@@ -1036,7 +1009,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         map = internalGetGranularStats().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1236,7 +1208,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1468,8 +1439,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return GranularStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final GranularStatsConverter granularStatsConverter =
         new GranularStatsConverter();
@@ -1510,7 +1480,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public int getGranularStatsCount() {
       return internalGetGranularStats().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1533,7 +1502,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetGranularStats().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getGranularStatsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1542,7 +1510,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         getGranularStats() {
       return getGranularStatsMap();
     }
-
     /**
      *
      *
@@ -1564,7 +1531,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         getGranularStatsMap() {
       return internalGetGranularStats().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1595,7 +1561,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableGranularStats().ensureBuilderMap();
       return map.containsKey(key) ? granularStatsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1632,7 +1597,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableGranularStats().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1619,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableGranularStats().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1664,7 +1627,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableGranularStats().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1692,7 +1654,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1723,7 +1684,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

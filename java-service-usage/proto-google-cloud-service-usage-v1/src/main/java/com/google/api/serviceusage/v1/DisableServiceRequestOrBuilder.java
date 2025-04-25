@@ -42,7 +42,6 @@ public interface DisableServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface DisableServiceRequestOrBuilder
    * @return The enum numeric value on the wire for checkIfServiceHasUsage.
    */
   int getCheckIfServiceHasUsageValue();
-
   /**
    *
    *

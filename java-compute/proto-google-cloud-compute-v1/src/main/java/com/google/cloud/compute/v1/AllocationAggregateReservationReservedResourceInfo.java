@@ -33,7 +33,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo)
     AllocationAggregateReservationReservedResourceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllocationAggregateReservationReservedResourceInfo.newBuilder() to construct.
   private AllocationAggregateReservationReservedResourceInfo(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
   public static final int ACCELERATOR_FIELD_NUMBER = 424338027;
   private com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfoAccelerator
       accelerator_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
   public boolean hasAccelerator() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
             .getDefaultInstance()
         : accelerator_;
   }
-
   /**
    *
    *
@@ -303,7 +299,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -525,7 +520,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
             com.google.cloud.compute.v1
                 .AllocationAggregateReservationReservedResourceInfoAcceleratorOrBuilder>
         acceleratorBuilder_;
-
     /**
      *
      *
@@ -542,7 +536,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
     public boolean hasAccelerator() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -567,7 +560,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
         return acceleratorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
       }
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
       onChanged();
       return getAcceleratorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class AllocationAggregateReservationReservedResourceInfo
             : accelerator_;
       }
     }
-
     /**
      *
      *

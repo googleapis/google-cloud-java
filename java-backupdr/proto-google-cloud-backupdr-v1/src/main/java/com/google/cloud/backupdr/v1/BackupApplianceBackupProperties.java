@@ -34,7 +34,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.BackupApplianceBackupProperties)
     BackupApplianceBackupPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackupApplianceBackupProperties.newBuilder() to construct.
   private BackupApplianceBackupProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
   private int bitField0_;
   public static final int GENERATION_ID_FIELD_NUMBER = 1;
   private int generationId_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
   public boolean hasGenerationId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
 
   public static final int FINALIZE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp finalizeTime_;
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
   public boolean hasFinalizeTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : finalizeTime_;
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
 
   public static final int RECOVERY_RANGE_START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp recoveryRangeStartTime_;
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
   public boolean hasRecoveryRangeStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : recoveryRangeStartTime_;
   }
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
 
   public static final int RECOVERY_RANGE_END_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp recoveryRangeEndTime_;
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
   public boolean hasRecoveryRangeEndTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : recoveryRangeEndTime_;
   }
-
   /**
    *
    *
@@ -491,7 +479,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +742,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     private int bitField0_;
 
     private int generationId_;
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     public boolean hasGenerationId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     public int getGenerationId() {
       return generationId_;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         finalizeTimeBuilder_;
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     public boolean hasFinalizeTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
         return finalizeTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return getFinalizeTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
             : finalizeTime_;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         recoveryRangeStartTimeBuilder_;
-
     /**
      *
      *
@@ -1074,7 +1047,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     public boolean hasRecoveryRangeStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1097,7 +1069,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
         return recoveryRangeStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1093,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1115,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1144,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1165,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1181,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return getRecoveryRangeStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1235,7 +1201,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
             : recoveryRangeStartTime_;
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1235,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         recoveryRangeEndTimeBuilder_;
-
     /**
      *
      *
@@ -1287,7 +1251,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
     public boolean hasRecoveryRangeEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1310,7 +1273,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
         return recoveryRangeEndTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1335,7 +1297,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1318,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1347,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1368,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1384,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
       onChanged();
       return getRecoveryRangeEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1447,7 +1404,6 @@ public final class BackupApplianceBackupProperties extends com.google.protobuf.G
             : recoveryRangeEndTime_;
       }
     }
-
     /**
      *
      *

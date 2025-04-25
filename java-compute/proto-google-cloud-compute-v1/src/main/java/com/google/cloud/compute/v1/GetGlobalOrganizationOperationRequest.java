@@ -34,7 +34,6 @@ public final class GetGlobalOrganizationOperationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetGlobalOrganizationOperationRequest)
     GetGlobalOrganizationOperationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetGlobalOrganizationOperationRequest.newBuilder() to construct.
   private GetGlobalOrganizationOperationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class GetGlobalOrganizationOperationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operation_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class GetGlobalOrganizationOperationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class GetGlobalOrganizationOperationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentId_ = "";
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class GetGlobalOrganizationOperationRequest
   public boolean hasParentId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class GetGlobalOrganizationOperationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +363,6 @@ public final class GetGlobalOrganizationOperationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +570,6 @@ public final class GetGlobalOrganizationOperationRequest
     private int bitField0_;
 
     private java.lang.Object operation_ = "";
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class GetGlobalOrganizationOperationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class GetGlobalOrganizationOperationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class GetGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class GetGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class GetGlobalOrganizationOperationRequest
     }
 
     private java.lang.Object parentId_ = "";
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class GetGlobalOrganizationOperationRequest
     public boolean hasParentId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class GetGlobalOrganizationOperationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class GetGlobalOrganizationOperationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class GetGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class GetGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

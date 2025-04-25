@@ -33,7 +33,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.QuasiId)
     QuasiIdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuasiId.newBuilder() to construct.
   private QuasiId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     private TagCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIELD_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.FieldId field_;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasField() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INFO_TYPE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInfoType() {
     return tagCase_ == 2;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_TAG_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomTag() {
     return tagCase_ == 3;
   }
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INFERRED_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -331,7 +319,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInferred() {
     return tagCase_ == 4;
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -584,7 +570,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -862,7 +847,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         fieldBuilder_;
-
     /**
      *
      *
@@ -878,7 +862,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return fieldBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -922,7 +904,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +924,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +952,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1027,7 +1004,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
-
     /**
      *
      *
@@ -1080,7 +1055,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInfoType() {
       return tagCase_ == 2;
     }
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1110,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       tagCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1133,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       tagCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       tagCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1197,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1213,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
       return getInfoTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1269,7 +1237,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1322,7 +1289,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomTag() {
       return tagCase_ == 3;
     }
-
     /**
      *
      *
@@ -1353,7 +1319,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1384,7 +1349,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1372,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1393,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1423,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         inferredBuilder_;
-
     /**
      *
      *
@@ -1478,7 +1439,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInferred() {
       return tagCase_ == 4;
     }
-
     /**
      *
      *
@@ -1505,7 +1465,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1529,7 +1488,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       tagCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1508,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       tagCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1539,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       tagCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1565,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1578,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Empty.Builder getInferredBuilder() {
       return getInferredFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1645,7 +1599,6 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *

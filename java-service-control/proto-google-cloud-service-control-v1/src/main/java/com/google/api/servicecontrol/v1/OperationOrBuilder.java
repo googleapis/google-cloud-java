@@ -44,7 +44,6 @@ public interface OperationOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface OperationOrBuilder
    * @return The operationName.
    */
   java.lang.String getOperationName();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface OperationOrBuilder
    * @return The consumerId.
    */
   java.lang.String getConsumerId();
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public interface OperationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface OperationOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public interface OperationOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public interface OperationOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public interface OperationOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -277,11 +269,9 @@ public interface OperationOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public interface OperationOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -337,7 +326,6 @@ public interface OperationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -383,7 +371,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet metric_value_sets = 7;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> getMetricValueSetsList();
-
   /**
    *
    *
@@ -403,7 +390,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet metric_value_sets = 7;</code>
    */
   com.google.api.servicecontrol.v1.MetricValueSet getMetricValueSets(int index);
-
   /**
    *
    *
@@ -423,7 +409,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet metric_value_sets = 7;</code>
    */
   int getMetricValueSetsCount();
-
   /**
    *
    *
@@ -444,7 +429,6 @@ public interface OperationOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.MetricValueSetOrBuilder>
       getMetricValueSetsOrBuilderList();
-
   /**
    *
    *
@@ -475,7 +459,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.LogEntry log_entries = 8;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.LogEntry> getLogEntriesList();
-
   /**
    *
    *
@@ -486,7 +469,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.LogEntry log_entries = 8;</code>
    */
   com.google.api.servicecontrol.v1.LogEntry getLogEntries(int index);
-
   /**
    *
    *
@@ -497,7 +479,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.LogEntry log_entries = 8;</code>
    */
   int getLogEntriesCount();
-
   /**
    *
    *
@@ -509,7 +490,6 @@ public interface OperationOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.LogEntryOrBuilder>
       getLogEntriesOrBuilderList();
-
   /**
    *
    *
@@ -533,7 +513,6 @@ public interface OperationOrBuilder
    * @return The enum numeric value on the wire for importance.
    */
   int getImportanceValue();
-
   /**
    *
    *
@@ -557,7 +536,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.protobuf.Any extensions = 16;</code>
    */
   java.util.List<com.google.protobuf.Any> getExtensionsList();
-
   /**
    *
    *
@@ -568,7 +546,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.protobuf.Any extensions = 16;</code>
    */
   com.google.protobuf.Any getExtensions(int index);
-
   /**
    *
    *
@@ -579,7 +556,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.protobuf.Any extensions = 16;</code>
    */
   int getExtensionsCount();
-
   /**
    *
    *
@@ -590,7 +566,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.protobuf.Any extensions = 16;</code>
    */
   java.util.List<? extends com.google.protobuf.AnyOrBuilder> getExtensionsOrBuilderList();
-
   /**
    *
    *

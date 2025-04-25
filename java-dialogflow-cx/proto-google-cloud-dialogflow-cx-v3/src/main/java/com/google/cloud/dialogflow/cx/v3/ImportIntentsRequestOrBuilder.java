@@ -39,7 +39,6 @@ public interface ImportIntentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface ImportIntentsRequestOrBuilder
    * @return Whether the intentsUri field is set.
    */
   boolean hasIntentsUri();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ImportIntentsRequestOrBuilder
    * @return The intentsUri.
    */
   java.lang.String getIntentsUri();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface ImportIntentsRequestOrBuilder
    * @return Whether the intentsContent field is set.
    */
   boolean hasIntentsContent();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ImportIntentsRequestOrBuilder
    * @return The intentsContent.
    */
   com.google.cloud.dialogflow.cx.v3.InlineSource getIntentsContent();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ImportIntentsRequestOrBuilder
    * @return The enum numeric value on the wire for mergeOption.
    */
   int getMergeOptionValue();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface CreateInstructionMetadataOrBuilder
    * @return The instruction.
    */
   java.lang.String getInstruction();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CreateInstructionMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CreateInstructionMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.Status getPartialFailures(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface CreateInstructionMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   int getPartialFailuresCount();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface CreateInstructionMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface CreateInstructionMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public interface CreateInstructionMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

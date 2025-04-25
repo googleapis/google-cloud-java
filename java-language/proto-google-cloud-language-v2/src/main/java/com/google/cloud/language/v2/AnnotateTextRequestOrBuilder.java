@@ -38,7 +38,6 @@ public interface AnnotateTextRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AnnotateTextRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v2.Document getDocument();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AnnotateTextRequestOrBuilder
    * @return Whether the features field is set.
    */
   boolean hasFeatures();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface AnnotateTextRequestOrBuilder
    * @return The features.
    */
   com.google.cloud.language.v2.AnnotateTextRequest.Features getFeatures();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface AnnotateTextRequestOrBuilder
    * @return The enum numeric value on the wire for encodingType.
    */
   int getEncodingTypeValue();
-
   /**
    *
    *

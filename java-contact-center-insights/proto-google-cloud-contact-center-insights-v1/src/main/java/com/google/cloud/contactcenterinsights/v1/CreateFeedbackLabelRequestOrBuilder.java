@@ -38,7 +38,6 @@ public interface CreateFeedbackLabelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CreateFeedbackLabelRequestOrBuilder
    * @return The feedbackLabelId.
    */
   java.lang.String getFeedbackLabelId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateFeedbackLabelRequestOrBuilder
    * @return Whether the feedbackLabel field is set.
    */
   boolean hasFeedbackLabel();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateFeedbackLabelRequestOrBuilder
    * @return The feedbackLabel.
    */
   com.google.cloud.contactcenterinsights.v1.FeedbackLabel getFeedbackLabel();
-
   /**
    *
    *

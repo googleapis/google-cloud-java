@@ -33,7 +33,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest)
     UpdateCatalogItemRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateCatalogItemRequest.newBuilder() to construct.
   private UpdateCatalogItemRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
 
   public static final int CATALOG_ITEM_FIELD_NUMBER = 2;
   private com.google.cloud.recommendationengine.v1beta1.CatalogItem catalogItem_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
   public boolean hasCatalogItem() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
         ? com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance()
         : catalogItem_;
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -428,7 +419,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -670,7 +660,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
             com.google.cloud.recommendationengine.v1beta1.CatalogItem.Builder,
             com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder>
         catalogItemBuilder_;
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
     public boolean hasCatalogItem() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
         return catalogItemBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return getCatalogItemFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
             : catalogItem_;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1043,7 +1018,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1062,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1082,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1130,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1145,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1196,7 +1164,6 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *

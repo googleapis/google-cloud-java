@@ -37,7 +37,6 @@ public interface FeatureViewSyncOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface FeatureViewSyncOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface FeatureViewSyncOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface FeatureViewSyncOrBuilder
    * @return Whether the runTime field is set.
    */
   boolean hasRunTime();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface FeatureViewSyncOrBuilder
    * @return The runTime.
    */
   com.google.type.Interval getRunTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface FeatureViewSyncOrBuilder
    * @return Whether the finalStatus field is set.
    */
   boolean hasFinalStatus();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface FeatureViewSyncOrBuilder
    * @return The finalStatus.
    */
   com.google.rpc.Status getFinalStatus();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface FeatureViewSyncOrBuilder
    * @return Whether the syncSummary field is set.
    */
   boolean hasSyncSummary();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface FeatureViewSyncOrBuilder
    * @return The syncSummary.
    */
   com.google.cloud.aiplatform.v1.FeatureViewSync.SyncSummary getSyncSummary();
-
   /**
    *
    *

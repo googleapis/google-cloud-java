@@ -41,7 +41,6 @@ public interface CreateTensorboardTimeSeriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateTensorboardTimeSeriesRequestOrBuilder
    * @return The tensorboardTimeSeriesId.
    */
   java.lang.String getTensorboardTimeSeriesId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface CreateTensorboardTimeSeriesRequestOrBuilder
    * @return Whether the tensorboardTimeSeries field is set.
    */
   boolean hasTensorboardTimeSeries();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateTensorboardTimeSeriesRequestOrBuilder
    * @return The tensorboardTimeSeries.
    */
   com.google.cloud.aiplatform.v1.TensorboardTimeSeries getTensorboardTimeSeries();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface MaintenancePolicyOrBuilder
    * @return Whether the window field is set.
    */
   boolean hasWindow();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MaintenancePolicyOrBuilder
    * @return The window.
    */
   com.google.container.v1beta1.MaintenanceWindow getWindow();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface MaintenancePolicyOrBuilder
    * @return The resourceVersion.
    */
   java.lang.String getResourceVersion();
-
   /**
    *
    *

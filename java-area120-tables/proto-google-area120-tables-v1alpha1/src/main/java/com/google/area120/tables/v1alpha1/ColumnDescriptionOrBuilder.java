@@ -36,7 +36,6 @@ public interface ColumnDescriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ColumnDescriptionOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ColumnDescriptionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface ColumnDescriptionOrBuilder
    * </code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> getLabelsList();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface ColumnDescriptionOrBuilder
    * </code>
    */
   com.google.area120.tables.v1alpha1.LabeledItem getLabels(int index);
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ColumnDescriptionOrBuilder
    * </code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface ColumnDescriptionOrBuilder
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>
       getLabelsOrBuilderList();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface ColumnDescriptionOrBuilder
    * @return Whether the relationshipDetails field is set.
    */
   boolean hasRelationshipDetails();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface ColumnDescriptionOrBuilder
    * @return The relationshipDetails.
    */
   com.google.area120.tables.v1alpha1.RelationshipDetails getRelationshipDetails();
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public interface ColumnDescriptionOrBuilder
    * @return Whether the lookupDetails field is set.
    */
   boolean hasLookupDetails();
-
   /**
    *
    *
@@ -276,7 +266,6 @@ public interface ColumnDescriptionOrBuilder
    * @return The lookupDetails.
    */
   com.google.area120.tables.v1alpha1.LookupDetails getLookupDetails();
-
   /**
    *
    *

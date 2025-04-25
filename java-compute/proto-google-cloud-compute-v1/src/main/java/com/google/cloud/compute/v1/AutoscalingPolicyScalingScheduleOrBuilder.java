@@ -36,7 +36,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return Whether the durationSec field is set.
    */
   boolean hasDurationSec();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return Whether the minRequiredReplicas field is set.
    */
   boolean hasMinRequiredReplicas();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *

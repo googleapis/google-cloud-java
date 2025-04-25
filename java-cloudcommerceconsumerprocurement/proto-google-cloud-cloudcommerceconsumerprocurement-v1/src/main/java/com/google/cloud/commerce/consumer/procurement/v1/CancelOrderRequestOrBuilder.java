@@ -36,7 +36,6 @@ public interface CancelOrderRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CancelOrderRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CancelOrderRequestOrBuilder
    * @return The enum numeric value on the wire for cancellationPolicy.
    */
   int getCancellationPolicyValue();
-
   /**
    *
    *

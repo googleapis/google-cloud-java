@@ -38,7 +38,6 @@ public interface DataMaskingPolicyOrBuilder
    * @return Whether the predefinedExpression field is set.
    */
   boolean hasPredefinedExpression();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DataMaskingPolicyOrBuilder
    * @return The enum numeric value on the wire for predefinedExpression.
    */
   int getPredefinedExpressionValue();
-
   /**
    *
    *

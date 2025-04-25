@@ -43,7 +43,6 @@ public interface EntityTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface EntityTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface EntityTypeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface EntityTypeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface EntityTypeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface EntityTypeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface EntityTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -213,11 +206,9 @@ public interface EntityTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public interface EntityTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface EntityTypeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface EntityTypeOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public interface EntityTypeOrBuilder
    * @return Whether the monitoringConfig field is set.
    */
   boolean hasMonitoringConfig();
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public interface EntityTypeOrBuilder
    * @return The monitoringConfig.
    */
   com.google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig getMonitoringConfig();
-
   /**
    *
    *

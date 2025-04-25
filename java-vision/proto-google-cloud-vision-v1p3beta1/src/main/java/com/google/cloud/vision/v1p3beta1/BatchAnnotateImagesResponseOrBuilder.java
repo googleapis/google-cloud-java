@@ -34,7 +34,6 @@ public interface BatchAnnotateImagesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> getResponsesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchAnnotateImagesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 1;</code>
    */
   com.google.cloud.vision.v1p3beta1.AnnotateImageResponse getResponses(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchAnnotateImagesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 1;</code>
    */
   int getResponsesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchAnnotateImagesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList();
-
   /**
    *
    *

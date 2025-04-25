@@ -36,7 +36,6 @@ public interface ReportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ReportOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ReportOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ReportOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ReportOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ReportOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ReportOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface ReportOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface ReportOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface ReportOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public interface ReportOrBuilder
    * @return The summary.
    */
   com.google.cloud.migrationcenter.v1.ReportSummary getSummary();
-
   /**
    *
    *

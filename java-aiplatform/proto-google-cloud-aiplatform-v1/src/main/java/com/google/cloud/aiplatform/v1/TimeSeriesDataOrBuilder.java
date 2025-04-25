@@ -37,7 +37,6 @@ public interface TimeSeriesDataOrBuilder
    * @return The tensorboardTimeSeriesId.
    */
   java.lang.String getTensorboardTimeSeriesId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface TimeSeriesDataOrBuilder
    * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface TimeSeriesDataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesDataPoint> getValuesList();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface TimeSeriesDataOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.TimeSeriesDataPoint getValues(int index);
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface TimeSeriesDataOrBuilder
    * </code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface TimeSeriesDataOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TimeSeriesDataPointOrBuilder>
       getValuesOrBuilderList();
-
   /**
    *
    *

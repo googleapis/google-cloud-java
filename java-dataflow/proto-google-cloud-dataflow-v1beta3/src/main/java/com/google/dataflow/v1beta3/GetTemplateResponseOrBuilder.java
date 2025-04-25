@@ -37,7 +37,6 @@ public interface GetTemplateResponseOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface GetTemplateResponseOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface GetTemplateResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface GetTemplateResponseOrBuilder
    * @return The metadata.
    */
   com.google.dataflow.v1beta3.TemplateMetadata getMetadata();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface GetTemplateResponseOrBuilder
    * @return The enum numeric value on the wire for templateType.
    */
   int getTemplateTypeValue();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface GetTemplateResponseOrBuilder
    * @return Whether the runtimeMetadata field is set.
    */
   boolean hasRuntimeMetadata();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface GetTemplateResponseOrBuilder
    * @return The runtimeMetadata.
    */
   com.google.dataflow.v1beta3.RuntimeMetadata getRuntimeMetadata();
-
   /**
    *
    *

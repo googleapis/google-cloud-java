@@ -40,7 +40,6 @@ public interface SinkSettingsOrBuilder
    * @return The loggingSinkProject.
    */
   java.lang.String getLoggingSinkProject();
-
   /**
    *
    *

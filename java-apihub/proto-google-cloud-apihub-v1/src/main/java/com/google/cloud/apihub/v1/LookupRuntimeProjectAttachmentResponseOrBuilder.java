@@ -36,7 +36,6 @@ public interface LookupRuntimeProjectAttachmentResponseOrBuilder
    * @return Whether the runtimeProjectAttachment field is set.
    */
   boolean hasRuntimeProjectAttachment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LookupRuntimeProjectAttachmentResponseOrBuilder
    * @return The runtimeProjectAttachment.
    */
   com.google.cloud.apihub.v1.RuntimeProjectAttachment getRuntimeProjectAttachment();
-
   /**
    *
    *

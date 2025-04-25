@@ -33,7 +33,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse)
     ListDiscoveredWorkloadsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDiscoveredWorkloadsResponse.newBuilder() to construct.
   private ListDiscoveredWorkloadsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apphub.v1.DiscoveredWorkload> discoveredWorkloads_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       getDiscoveredWorkloadsList() {
     return discoveredWorkloads_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       getDiscoveredWorkloadsOrBuilderList() {
     return discoveredWorkloads_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
   public int getDiscoveredWorkloadsCount() {
     return discoveredWorkloads_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
   public com.google.cloud.apphub.v1.DiscoveredWorkload getDiscoveredWorkloads(int index) {
     return discoveredWorkloads_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -454,7 +442,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +743,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return discoveredWorkloadsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return discoveredWorkloadsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return discoveredWorkloadsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         int index) {
       return getDiscoveredWorkloadsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return discoveredWorkloadsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(discoveredWorkloads_);
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       return getDiscoveredWorkloadsFieldBuilder()
           .addBuilder(com.google.cloud.apphub.v1.DiscoveredWorkload.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       return getDiscoveredWorkloadsFieldBuilder()
           .addBuilder(index, com.google.cloud.apphub.v1.DiscoveredWorkload.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1100,7 +1070,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1114,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1135,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1152,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1184,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1235,7 +1199,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1266,7 +1228,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1282,7 +1243,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1306,7 +1266,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1288,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1307,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1325,6 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

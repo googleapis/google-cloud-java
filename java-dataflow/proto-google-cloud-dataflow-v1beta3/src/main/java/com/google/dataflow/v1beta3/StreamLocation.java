@@ -34,7 +34,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StreamLocation)
     StreamLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamLocation.newBuilder() to construct.
   private StreamLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     private LocationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREAMING_STAGE_LOCATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreamingStageLocation() {
     return locationCase_ == 1;
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.dataflow.v1beta3.StreamingStageLocation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBSUB_LOCATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPubsubLocation() {
     return locationCase_ == 2;
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.dataflow.v1beta3.PubsubLocation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIDE_INPUT_LOCATION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSideInputLocation() {
     return locationCase_ == 3;
   }
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.dataflow.v1beta3.StreamingSideInputLocation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_SOURCE_LOCATION_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomSourceLocation() {
     return locationCase_ == 4;
   }
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.dataflow.v1beta3.CustomSourceLocation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -560,7 +546,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -833,7 +818,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.StreamingStageLocation.Builder,
             com.google.dataflow.v1beta3.StreamingStageLocationOrBuilder>
         streamingStageLocationBuilder_;
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreamingStageLocation() {
       return locationCase_ == 1;
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.StreamingStageLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +905,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +940,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +966,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +980,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         getStreamingStageLocationBuilder() {
       return getStreamingStageLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.StreamingStageLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1041,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.PubsubLocation.Builder,
             com.google.dataflow.v1beta3.PubsubLocationOrBuilder>
         pubsubLocationBuilder_;
-
     /**
      *
      *
@@ -1081,7 +1056,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPubsubLocation() {
       return locationCase_ == 2;
     }
-
     /**
      *
      *
@@ -1107,7 +1081,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.PubsubLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1123,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1155,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1180,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1192,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.PubsubLocation.Builder getPubsubLocationBuilder() {
       return getPubsubLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1244,7 +1212,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.PubsubLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1283,7 +1250,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.StreamingSideInputLocation.Builder,
             com.google.dataflow.v1beta3.StreamingSideInputLocationOrBuilder>
         sideInputLocationBuilder_;
-
     /**
      *
      *
@@ -1299,7 +1265,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSideInputLocation() {
       return locationCase_ == 3;
     }
-
     /**
      *
      *
@@ -1325,7 +1290,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.StreamingSideInputLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1313,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1333,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1367,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1392,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1405,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         getSideInputLocationBuilder() {
       return getSideInputLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1467,7 +1426,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.StreamingSideInputLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1506,7 +1464,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.CustomSourceLocation.Builder,
             com.google.dataflow.v1beta3.CustomSourceLocationOrBuilder>
         customSourceLocationBuilder_;
-
     /**
      *
      *
@@ -1522,7 +1479,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomSourceLocation() {
       return locationCase_ == 4;
     }
-
     /**
      *
      *
@@ -1548,7 +1504,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.CustomSourceLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1571,7 +1526,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1546,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1626,7 +1579,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1604,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1617,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         getCustomSourceLocationBuilder() {
       return getCustomSourceLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1688,7 +1638,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
         return com.google.dataflow.v1beta3.CustomSourceLocation.getDefaultInstance();
       }
     }
-
     /**
      *
      *

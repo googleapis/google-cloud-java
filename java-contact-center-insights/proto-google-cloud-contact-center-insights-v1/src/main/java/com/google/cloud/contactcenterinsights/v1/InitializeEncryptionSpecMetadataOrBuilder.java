@@ -37,7 +37,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest getRequest();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   com.google.rpc.Status getPartialErrors(int index);
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   int getPartialErrorsCount();
-
   /**
    *
    *
@@ -195,7 +186,6 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
-
   /**
    *
    *

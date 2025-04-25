@@ -33,7 +33,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeleteTargetRequest)
     DeleteTargetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteTargetRequest.newBuilder() to construct.
   private DeleteTargetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -272,7 +264,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -494,7 +485,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -734,7 +724,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -760,7 +749,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -786,7 +774,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +798,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +845,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -895,7 +879,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -930,7 +913,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -964,7 +946,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +975,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1011,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -1048,7 +1027,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -1069,7 +1047,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1107,7 +1083,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1128,7 +1103,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1123,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1174,7 +1147,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1171,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1194,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1213,6 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

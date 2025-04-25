@@ -216,8 +216,7 @@ public class MockOrgPolicyImpl extends OrgPolicyImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCustomConstraint, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateCustomConstraint, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CustomConstraint.class.getName(),
                   Exception.class.getName())));
@@ -238,8 +237,7 @@ public class MockOrgPolicyImpl extends OrgPolicyImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCustomConstraint, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateCustomConstraint, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CustomConstraint.class.getName(),
                   Exception.class.getName())));
@@ -282,8 +280,7 @@ public class MockOrgPolicyImpl extends OrgPolicyImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCustomConstraints, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListCustomConstraints, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCustomConstraintsResponse.class.getName(),
                   Exception.class.getName())));
@@ -304,8 +301,7 @@ public class MockOrgPolicyImpl extends OrgPolicyImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCustomConstraint, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteCustomConstraint, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

@@ -38,7 +38,6 @@ public interface InsertTargetInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertTargetInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InsertTargetInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface InsertTargetInstanceRequestOrBuilder
    * @return Whether the targetInstanceResource field is set.
    */
   boolean hasTargetInstanceResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertTargetInstanceRequestOrBuilder
    * @return The targetInstanceResource.
    */
   com.google.cloud.compute.v1.TargetInstance getTargetInstanceResource();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface InsertTargetInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

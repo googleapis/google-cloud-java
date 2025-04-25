@@ -32,7 +32,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest)
     TargetPoolsAddHealthCheckRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetPoolsAddHealthCheckRequest.newBuilder() to construct.
   private TargetPoolsAddHealthCheckRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthCheckReference> healthChecks_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
   public java.util.List<com.google.cloud.compute.v1.HealthCheckReference> getHealthChecksList() {
     return healthChecks_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       getHealthChecksOrBuilderList() {
     return healthChecks_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
   public int getHealthChecksCount() {
     return healthChecks_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
   public com.google.cloud.compute.v1.HealthCheckReference getHealthChecks(int index) {
     return healthChecks_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -572,7 +565,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
         return healthChecksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
         return healthChecksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
         return healthChecksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +733,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +754,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +808,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
         int index) {
       return getHealthChecksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
         return healthChecksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -865,7 +844,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(healthChecks_);
       }
     }
-
     /**
      *
      *
@@ -880,7 +858,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       return getHealthChecksFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -896,7 +873,6 @@ public final class TargetPoolsAddHealthCheckRequest extends com.google.protobuf.
       return getHealthChecksFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ImportErrorOrBuilder
    * @return The errorDetails.
    */
   java.lang.String getErrorDetails();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ImportErrorOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *

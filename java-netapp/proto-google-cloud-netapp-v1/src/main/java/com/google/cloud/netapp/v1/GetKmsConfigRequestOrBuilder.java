@@ -38,7 +38,6 @@ public interface GetKmsConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

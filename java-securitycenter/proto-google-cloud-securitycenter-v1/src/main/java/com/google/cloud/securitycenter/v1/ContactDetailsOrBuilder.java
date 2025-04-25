@@ -34,7 +34,6 @@ public interface ContactDetailsOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Contact contacts = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Contact> getContactsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ContactDetailsOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Contact contacts = 1;</code>
    */
   com.google.cloud.securitycenter.v1.Contact getContacts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ContactDetailsOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Contact contacts = 1;</code>
    */
   int getContactsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ContactDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.ContactOrBuilder>
       getContactsOrBuilderList();
-
   /**
    *
    *

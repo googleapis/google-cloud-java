@@ -37,7 +37,6 @@ public interface CommitmentSettingsOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CommitmentSettingsOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CommitmentSettingsOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface CommitmentSettingsOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface CommitmentSettingsOrBuilder
    * @return Whether the renewalSettings field is set.
    */
   boolean hasRenewalSettings();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface CommitmentSettingsOrBuilder
    * @return The renewalSettings.
    */
   com.google.cloud.channel.v1.RenewalSettings getRenewalSettings();
-
   /**
    *
    *

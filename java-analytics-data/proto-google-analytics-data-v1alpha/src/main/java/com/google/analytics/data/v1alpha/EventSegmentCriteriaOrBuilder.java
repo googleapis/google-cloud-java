@@ -38,7 +38,6 @@ public interface EventSegmentCriteriaOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.EventSegmentConditionGroup>
       getAndConditionGroupsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface EventSegmentCriteriaOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.EventSegmentConditionGroup getAndConditionGroups(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface EventSegmentCriteriaOrBuilder
    * </code>
    */
   int getAndConditionGroupsCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface EventSegmentCriteriaOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.EventSegmentConditionGroupOrBuilder>
       getAndConditionGroupsOrBuilderList();
-
   /**
    *
    *

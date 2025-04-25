@@ -43,7 +43,6 @@ public interface RemoveIamPolicyRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *

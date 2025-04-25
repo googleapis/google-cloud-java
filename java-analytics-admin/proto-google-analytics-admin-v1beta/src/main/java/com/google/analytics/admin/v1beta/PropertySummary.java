@@ -33,7 +33,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.PropertySummary)
     PropertySummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PropertySummary.newBuilder() to construct.
   private PropertySummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROPERTY_TYPE_FIELD_NUMBER = 3;
   private int propertyType_ = 0;
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
   public int getPropertyTypeValue() {
     return propertyType_;
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -463,7 +454,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +681,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object property_ = "";
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +729,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -765,7 +752,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -880,7 +862,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     }
 
     private int propertyType_ = 0;
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     public int getPropertyTypeValue() {
       return propertyType_;
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
           com.google.analytics.admin.v1beta.PropertyType.forNumber(propertyType_);
       return result == null ? com.google.analytics.admin.v1beta.PropertyType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1045,7 +1019,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1070,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1091,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

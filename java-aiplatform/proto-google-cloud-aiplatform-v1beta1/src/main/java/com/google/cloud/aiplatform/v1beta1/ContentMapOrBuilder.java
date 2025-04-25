@@ -36,7 +36,6 @@ public interface ContentMapOrBuilder
    * </code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -49,12 +48,10 @@ public interface ContentMapOrBuilder
    * </code>
    */
   boolean containsValues(java.lang.String key);
-
   /** Use {@link #getValuesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ContentMap.Contents>
       getValues();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ContentMapOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ContentMap.Contents>
       getValuesMap();
-
   /**
    *
    *
@@ -85,7 +81,6 @@ public interface ContentMapOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.ContentMap.Contents defaultValue);
-
   /**
    *
    *

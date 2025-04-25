@@ -38,7 +38,6 @@ public interface UndeployIssueModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

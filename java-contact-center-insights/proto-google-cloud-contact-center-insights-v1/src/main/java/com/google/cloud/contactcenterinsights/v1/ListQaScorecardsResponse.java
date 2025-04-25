@@ -33,7 +33,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ListQaScorecardsResponse)
     ListQaScorecardsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListQaScorecardsResponse.newBuilder() to construct.
   private ListQaScorecardsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecard> qaScorecards_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       getQaScorecardsList() {
     return qaScorecards_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       getQaScorecardsOrBuilderList() {
     return qaScorecards_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
   public int getQaScorecardsCount() {
     return qaScorecards_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
   public com.google.cloud.contactcenterinsights.v1.QaScorecard getQaScorecards(int index) {
     return qaScorecards_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return qaScorecardsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return qaScorecardsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return qaScorecardsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +868,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         int index) {
       return getQaScorecardsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return qaScorecardsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(qaScorecards_);
       }
     }
-
     /**
      *
      *
@@ -952,7 +928,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       return getQaScorecardsFieldBuilder()
           .addBuilder(com.google.cloud.contactcenterinsights.v1.QaScorecard.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -968,7 +943,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.contactcenterinsights.v1.QaScorecard.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1001,7 +975,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1025,7 +998,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1061,6 @@ public final class ListQaScorecardsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

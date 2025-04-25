@@ -33,7 +33,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ListAttachmentsResponse)
     ListAttachmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAttachmentsResponse.newBuilder() to construct.
   private ListAttachmentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1.Attachment> attachments_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.devtools.artifactregistry.v1.Attachment> getAttachmentsList() {
     return attachments_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       getAttachmentsOrBuilderList() {
     return attachments_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
   public int getAttachmentsCount() {
     return attachments_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
   public com.google.devtools.artifactregistry.v1.Attachment getAttachments(int index) {
     return attachments_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return attachmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return attachmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return attachmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         int index) {
       return getAttachmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return attachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(attachments_);
       }
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       return getAttachmentsFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1.Attachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1.Attachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -994,7 +968,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1018,7 +991,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1054,6 @@ public final class ListAttachmentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

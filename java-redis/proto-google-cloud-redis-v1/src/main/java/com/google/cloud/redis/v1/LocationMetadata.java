@@ -36,7 +36,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,7 +108,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public int getAvailableZonesCount() {
     return internalGetAvailableZones().getMap().size();
   }
-
   /**
    *
    *
@@ -131,7 +129,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     return internalGetAvailableZones().getMap().containsKey(key);
   }
-
   /** Use {@link #getAvailableZonesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -139,7 +136,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       getAvailableZones() {
     return getAvailableZonesMap();
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       getAvailableZonesMap() {
     return internalGetAvailableZones().getMap();
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         internalGetAvailableZones().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -382,7 +376,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -615,8 +608,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return AvailableZonesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AvailableZonesConverter availableZonesConverter =
         new AvailableZonesConverter();
@@ -657,7 +649,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public int getAvailableZonesCount() {
       return internalGetAvailableZones().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -679,7 +670,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       return internalGetAvailableZones().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getAvailableZonesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -687,7 +677,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         getAvailableZones() {
       return getAvailableZonesMap();
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         getAvailableZonesMap() {
       return internalGetAvailableZones().getImmutableMap();
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           internalGetMutableAvailableZones().ensureBuilderMap();
       return map.containsKey(key) ? availableZonesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       internalGetMutableAvailableZones().clear();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       internalGetMutableAvailableZones().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.redis.v1.ZoneMetadata>
@@ -797,7 +782,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return internalGetMutableAvailableZones().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

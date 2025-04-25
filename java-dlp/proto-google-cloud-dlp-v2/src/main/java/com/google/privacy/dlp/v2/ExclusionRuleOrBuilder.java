@@ -36,7 +36,6 @@ public interface ExclusionRuleOrBuilder
    * @return Whether the dictionary field is set.
    */
   boolean hasDictionary();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExclusionRuleOrBuilder
    * @return The dictionary.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ExclusionRuleOrBuilder
    * @return Whether the regex field is set.
    */
   boolean hasRegex();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ExclusionRuleOrBuilder
    * @return The regex.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ExclusionRuleOrBuilder
    * @return Whether the excludeInfoTypes field is set.
    */
   boolean hasExcludeInfoTypes();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ExclusionRuleOrBuilder
    * @return The excludeInfoTypes.
    */
   com.google.privacy.dlp.v2.ExcludeInfoTypes getExcludeInfoTypes();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface ExclusionRuleOrBuilder
    * @return Whether the excludeByHotword field is set.
    */
   boolean hasExcludeByHotword();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface ExclusionRuleOrBuilder
    * @return The excludeByHotword.
    */
   com.google.privacy.dlp.v2.ExcludeByHotword getExcludeByHotword();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface ExclusionRuleOrBuilder
    * @return The enum numeric value on the wire for matchingType.
    */
   int getMatchingTypeValue();
-
   /**
    *
    *

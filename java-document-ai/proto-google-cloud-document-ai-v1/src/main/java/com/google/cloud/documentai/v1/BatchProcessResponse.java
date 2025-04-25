@@ -34,7 +34,6 @@ public final class BatchProcessResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.BatchProcessResponse)
     BatchProcessResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchProcessResponse.newBuilder() to construct.
   private BatchProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class BatchProcessResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.Tax)
     TaxOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Tax.newBuilder() to construct.
   private Tax(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATE_FIELD_NUMBER = 1;
   private double rate_ = 0D;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object country_ = "";
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TAX_SHIP_FIELD_NUMBER = 4;
   private boolean taxShip_ = false;
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_ID_FIELD_NUMBER = 5;
   private long locationId_ = 0L;
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postalCode_ = "";
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -501,7 +491,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +744,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double rate_;
-
     /**
      *
      *
@@ -771,7 +759,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     public double getRate() {
       return rate_;
     }
-
     /**
      *
      *
@@ -791,7 +778,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object country_ = "";
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -861,7 +845,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +887,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -978,7 +957,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +978,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +995,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean taxShip_;
-
     /**
      *
      *
@@ -1059,7 +1034,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     public boolean getTaxShip() {
       return taxShip_;
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long locationId_;
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     public long getLocationId() {
       return locationId_;
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1131,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object postalCode_ = "";
-
     /**
      *
      *
@@ -1187,7 +1156,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1181,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1205,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1225,6 @@ public final class Tax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

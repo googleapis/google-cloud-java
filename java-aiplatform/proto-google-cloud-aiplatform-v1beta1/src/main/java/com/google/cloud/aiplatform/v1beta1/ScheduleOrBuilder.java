@@ -41,7 +41,6 @@ public interface ScheduleOrBuilder
    * @return Whether the cron field is set.
    */
   boolean hasCron();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ScheduleOrBuilder
    * @return The cron.
    */
   java.lang.String getCron();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ScheduleOrBuilder
    * @return Whether the createPipelineJobRequest field is set.
    */
   boolean hasCreatePipelineJobRequest();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ScheduleOrBuilder
    * @return The createPipelineJobRequest.
    */
   com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest getCreatePipelineJobRequest();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ScheduleOrBuilder
    * @return Whether the createModelMonitoringJobRequest field is set.
    */
   boolean hasCreateModelMonitoringJobRequest();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface ScheduleOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest
       getCreateModelMonitoringJobRequest();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface ScheduleOrBuilder
    * @return Whether the createNotebookExecutionJobRequest field is set.
    */
   boolean hasCreateNotebookExecutionJobRequest();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface ScheduleOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
       getCreateNotebookExecutionJobRequest();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface ScheduleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public interface ScheduleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -297,7 +287,6 @@ public interface ScheduleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -312,7 +301,6 @@ public interface ScheduleOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -343,7 +331,6 @@ public interface ScheduleOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public interface ScheduleOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -423,7 +409,6 @@ public interface ScheduleOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -452,7 +437,6 @@ public interface ScheduleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -466,7 +450,6 @@ public interface ScheduleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -492,7 +475,6 @@ public interface ScheduleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -506,7 +488,6 @@ public interface ScheduleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -535,7 +516,6 @@ public interface ScheduleOrBuilder
    * @return Whether the nextRunTime field is set.
    */
   boolean hasNextRunTime();
-
   /**
    *
    *
@@ -552,7 +532,6 @@ public interface ScheduleOrBuilder
    * @return The nextRunTime.
    */
   com.google.protobuf.Timestamp getNextRunTime();
-
   /**
    *
    *
@@ -583,7 +562,6 @@ public interface ScheduleOrBuilder
    * @return Whether the lastPauseTime field is set.
    */
   boolean hasLastPauseTime();
-
   /**
    *
    *
@@ -599,7 +577,6 @@ public interface ScheduleOrBuilder
    * @return The lastPauseTime.
    */
   com.google.protobuf.Timestamp getLastPauseTime();
-
   /**
    *
    *
@@ -629,7 +606,6 @@ public interface ScheduleOrBuilder
    * @return Whether the lastResumeTime field is set.
    */
   boolean hasLastResumeTime();
-
   /**
    *
    *
@@ -645,7 +621,6 @@ public interface ScheduleOrBuilder
    * @return The lastResumeTime.
    */
   com.google.protobuf.Timestamp getLastResumeTime();
-
   /**
    *
    *
@@ -722,7 +697,6 @@ public interface ScheduleOrBuilder
    * @return Whether the lastScheduledRunResponse field is set.
    */
   boolean hasLastScheduledRunResponse();
-
   /**
    *
    *
@@ -740,7 +714,6 @@ public interface ScheduleOrBuilder
    * @return The lastScheduledRunResponse.
    */
   com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getLastScheduledRunResponse();
-
   /**
    *
    *

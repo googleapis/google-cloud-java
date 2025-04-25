@@ -79,7 +79,6 @@ public enum BigQueryTableTypeCollection implements com.google.protobuf.ProtocolM
    * <code>BIG_QUERY_COLLECTION_UNSPECIFIED = 0;</code>
    */
   public static final int BIG_QUERY_COLLECTION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public enum BigQueryTableTypeCollection implements com.google.protobuf.ProtocolM
    * <code>BIG_QUERY_COLLECTION_ALL_TYPES = 1;</code>
    */
   public static final int BIG_QUERY_COLLECTION_ALL_TYPES_VALUE = 1;
-
   /**
    *
    *

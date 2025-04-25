@@ -33,7 +33,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.EnvironmentConfig)
     EnvironmentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnvironmentConfig.newBuilder() to construct.
   private EnvironmentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int EXECUTION_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1.ExecutionConfig executionConfig_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasExecutionConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataproc.v1.ExecutionConfig.getDefaultInstance()
         : executionConfig_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int PERIPHERALS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.PeripheralsConfig peripheralsConfig_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPeripheralsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dataproc.v1.PeripheralsConfig.getDefaultInstance()
         : peripheralsConfig_;
   }
-
   /**
    *
    *
@@ -359,7 +352,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +578,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.ExecutionConfig.Builder,
             com.google.cloud.dataproc.v1.ExecutionConfigOrBuilder>
         executionConfigBuilder_;
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasExecutionConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return executionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +662,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +713,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getExecutionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : executionConfig_;
       }
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataproc.v1.PeripheralsConfig.Builder,
             com.google.cloud.dataproc.v1.PeripheralsConfigOrBuilder>
         peripheralsConfigBuilder_;
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPeripheralsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return peripheralsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -865,7 +845,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPeripheralsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -979,7 +954,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : peripheralsConfig_;
       }
     }
-
     /**
      *
      *

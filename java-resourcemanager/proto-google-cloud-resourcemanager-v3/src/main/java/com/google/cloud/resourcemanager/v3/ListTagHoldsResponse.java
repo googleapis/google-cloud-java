@@ -33,7 +33,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.ListTagHoldsResponse)
     ListTagHoldsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTagHoldsResponse.newBuilder() to construct.
   private ListTagHoldsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.TagHold> tagHolds_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.resourcemanager.v3.TagHold> getTagHoldsList() {
     return tagHolds_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       getTagHoldsOrBuilderList() {
     return tagHolds_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
   public int getTagHoldsCount() {
     return tagHolds_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.resourcemanager.v3.TagHold getTagHolds(int index) {
     return tagHolds_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -385,7 +377,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return tagHoldsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return tagHoldsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return tagHoldsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.resourcemanager.v3.TagHold.Builder getTagHoldsBuilder(int index) {
       return getTagHoldsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return tagHoldsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(tagHolds_);
       }
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       return getTagHoldsFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.TagHold.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -965,7 +940,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       return getTagHoldsFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.TagHold.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -998,7 +972,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1031,7 +1004,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1036,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1067,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

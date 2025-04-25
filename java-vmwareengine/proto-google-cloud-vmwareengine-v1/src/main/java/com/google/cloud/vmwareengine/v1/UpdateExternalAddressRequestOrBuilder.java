@@ -41,7 +41,6 @@ public interface UpdateExternalAddressRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateExternalAddressRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateExternalAddressRequestOrBuilder
    * @return Whether the externalAddress field is set.
    */
   boolean hasExternalAddress();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateExternalAddressRequestOrBuilder
    * @return The externalAddress.
    */
   com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddress();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface UpdateExternalAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

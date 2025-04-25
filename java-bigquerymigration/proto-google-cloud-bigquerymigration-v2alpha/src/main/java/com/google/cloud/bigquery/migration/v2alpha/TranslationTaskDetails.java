@@ -34,7 +34,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails)
     TranslationTaskDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslationTaskDetails.newBuilder() to construct.
   private TranslationTaskDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -176,7 +175,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>FILE_ENCODING_UNSPECIFIED = 0;</code>
      */
     public static final int FILE_ENCODING_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -187,7 +185,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>UTF_8 = 1;</code>
      */
     public static final int UTF_8_VALUE = 1;
-
     /**
      *
      *
@@ -198,7 +195,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>ISO_8859_1 = 2;</code>
      */
     public static final int ISO_8859_1_VALUE = 2;
-
     /**
      *
      *
@@ -209,7 +205,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>US_ASCII = 3;</code>
      */
     public static final int US_ASCII_VALUE = 3;
-
     /**
      *
      *
@@ -220,7 +215,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>UTF_16 = 4;</code>
      */
     public static final int UTF_16_VALUE = 4;
-
     /**
      *
      *
@@ -231,7 +225,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>UTF_16LE = 5;</code>
      */
     public static final int UTF_16LE_VALUE = 5;
-
     /**
      *
      *
@@ -439,7 +432,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>TOKEN_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TOKEN_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -450,7 +442,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>STRING = 1;</code>
      */
     public static final int STRING_VALUE = 1;
-
     /**
      *
      *
@@ -461,7 +452,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>INT64 = 2;</code>
      */
     public static final int INT64_VALUE = 2;
-
     /**
      *
      *
@@ -472,7 +462,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>NUMERIC = 3;</code>
      */
     public static final int NUMERIC_VALUE = 3;
-
     /**
      *
      *
@@ -483,7 +472,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>BOOL = 4;</code>
      */
     public static final int BOOL_VALUE = 4;
-
     /**
      *
      *
@@ -494,7 +482,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>FLOAT64 = 5;</code>
      */
     public static final int FLOAT64_VALUE = 5;
-
     /**
      *
      *
@@ -505,7 +492,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * <code>DATE = 6;</code>
      */
     public static final int DATE_VALUE = 6;
-
     /**
      *
      *
@@ -630,7 +616,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     private LanguageOptionsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -664,7 +649,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   }
 
   public static final int TERADATA_OPTIONS_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -680,7 +664,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public boolean hasTeradataOptions() {
     return languageOptionsCase_ == 10;
   }
-
   /**
    *
    *
@@ -699,7 +682,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.bigquery.migration.v2alpha.TeradataOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -719,7 +701,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   }
 
   public static final int BTEQ_OPTIONS_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -735,7 +716,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public boolean hasBteqOptions() {
     return languageOptionsCase_ == 11;
   }
-
   /**
    *
    *
@@ -754,7 +734,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.bigquery.migration.v2alpha.BteqOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -777,7 +756,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputPath_ = "";
-
   /**
    *
    *
@@ -801,7 +779,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -830,7 +807,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputPath_ = "";
-
   /**
    *
    *
@@ -854,7 +830,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -884,7 +859,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping>
       filePaths_;
-
   /**
    *
    *
@@ -900,7 +874,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       getFilePathsList() {
     return filePaths_;
   }
-
   /**
    *
    *
@@ -917,7 +890,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       getFilePathsOrBuilderList() {
     return filePaths_;
   }
-
   /**
    *
    *
@@ -932,7 +904,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public int getFilePathsCount() {
     return filePaths_.size();
   }
-
   /**
    *
    *
@@ -948,7 +919,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       int index) {
     return filePaths_.get(index);
   }
-
   /**
    *
    *
@@ -969,7 +939,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaPath_ = "";
-
   /**
    *
    *
@@ -994,7 +963,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1022,7 +990,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   public static final int FILE_ENCODING_FIELD_NUMBER = 4;
   private int fileEncoding_ = 0;
-
   /**
    *
    *
@@ -1040,7 +1007,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public int getFileEncodingValue() {
     return fileEncoding_;
   }
-
   /**
    *
    *
@@ -1068,7 +1034,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   public static final int IDENTIFIER_SETTINGS_FIELD_NUMBER = 5;
   private com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings identifierSettings_;
-
   /**
    *
    *
@@ -1085,7 +1050,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public boolean hasIdentifierSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1104,7 +1068,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         ? com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.getDefaultInstance()
         : identifierSettings_;
   }
-
   /**
    *
    *
@@ -1173,7 +1136,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public int getSpecialTokenMapCount() {
     return internalGetSpecialTokenMap().getMap().size();
   }
-
   /**
    *
    *
@@ -1197,7 +1159,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
     return internalGetSpecialTokenMap().getMap().containsKey(key);
   }
-
   /** Use {@link #getSpecialTokenMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1207,7 +1168,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       getSpecialTokenMap() {
     return getSpecialTokenMapMap();
   }
-
   /**
    *
    *
@@ -1231,7 +1191,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       getSpecialTokenMapMap() {
     return internalGetAdaptedSpecialTokenMapMap(internalGetSpecialTokenMap().getMap());
   }
-
   /**
    *
    *
@@ -1263,7 +1222,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         ? specialTokenMapValueConverter.doForward(map.get(key))
         : defaultValue;
   }
-
   /**
    *
    *
@@ -1292,14 +1250,12 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
     return specialTokenMapValueConverter.doForward(map.get(key));
   }
-
   /** Use {@link #getSpecialTokenMapValueMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getSpecialTokenMapValue() {
     return getSpecialTokenMapValueMap();
   }
-
   /**
    *
    *
@@ -1320,7 +1276,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.Integer> getSpecialTokenMapValueMap() {
     return internalGetSpecialTokenMap().getMap();
   }
-
   /**
    *
    *
@@ -1345,7 +1300,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSpecialTokenMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1376,7 +1330,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   public static final int FILTER_FIELD_NUMBER = 7;
   private com.google.cloud.bigquery.migration.v2alpha.Filter filter_;
-
   /**
    *
    *
@@ -1392,7 +1345,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1410,7 +1362,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         ? com.google.cloud.bigquery.migration.v2alpha.Filter.getDefaultInstance()
         : filter_;
   }
-
   /**
    *
    *
@@ -1431,7 +1382,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object translationExceptionTable_ = "";
-
   /**
    *
    *
@@ -1458,7 +1408,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1787,7 +1736,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2262,7 +2210,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             com.google.cloud.bigquery.migration.v2alpha.TeradataOptions.Builder,
             com.google.cloud.bigquery.migration.v2alpha.TeradataOptionsOrBuilder>
         teradataOptionsBuilder_;
-
     /**
      *
      *
@@ -2278,7 +2225,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public boolean hasTeradataOptions() {
       return languageOptionsCase_ == 10;
     }
-
     /**
      *
      *
@@ -2304,7 +2250,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return com.google.cloud.bigquery.migration.v2alpha.TeradataOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2328,7 +2273,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       languageOptionsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2293,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       languageOptionsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -2386,7 +2329,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       languageOptionsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -2412,7 +2354,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2367,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         getTeradataOptionsBuilder() {
       return getTeradataOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2448,7 +2388,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return com.google.cloud.bigquery.migration.v2alpha.TeradataOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2488,7 +2427,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             com.google.cloud.bigquery.migration.v2alpha.BteqOptions.Builder,
             com.google.cloud.bigquery.migration.v2alpha.BteqOptionsOrBuilder>
         bteqOptionsBuilder_;
-
     /**
      *
      *
@@ -2504,7 +2442,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public boolean hasBteqOptions() {
       return languageOptionsCase_ == 11;
     }
-
     /**
      *
      *
@@ -2530,7 +2467,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return com.google.cloud.bigquery.migration.v2alpha.BteqOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2553,7 +2489,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       languageOptionsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2574,7 +2509,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       languageOptionsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2608,7 +2542,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       languageOptionsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2567,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2647,7 +2579,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public com.google.cloud.bigquery.migration.v2alpha.BteqOptions.Builder getBteqOptionsBuilder() {
       return getBteqOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2669,7 +2600,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return com.google.cloud.bigquery.migration.v2alpha.BteqOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2705,7 +2635,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object inputPath_ = "";
-
     /**
      *
      *
@@ -2728,7 +2657,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2751,7 +2679,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2773,7 +2700,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2717,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2816,7 +2741,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object outputPath_ = "";
-
     /**
      *
      *
@@ -2839,7 +2763,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2862,7 +2785,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2884,7 +2806,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2902,7 +2823,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2963,7 +2883,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return filePathsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2982,7 +2901,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return filePathsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3002,7 +2920,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return filePathsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3028,7 +2945,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3053,7 +2969,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3079,7 +2994,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3105,7 +3019,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3129,7 +3042,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3154,7 +3066,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3179,7 +3090,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3201,7 +3111,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3223,7 +3132,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3239,7 +3147,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         getFilePathsBuilder(int index) {
       return getFilePathsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3259,7 +3166,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return filePathsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3280,7 +3186,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(filePaths_);
       }
     }
-
     /**
      *
      *
@@ -3299,7 +3204,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
               com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3319,7 +3223,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
               com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3355,7 +3258,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object schemaPath_ = "";
-
     /**
      *
      *
@@ -3379,7 +3281,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3403,7 +3304,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3426,7 +3326,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3445,7 +3344,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3471,7 +3369,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
 
     private int fileEncoding_ = 0;
-
     /**
      *
      *
@@ -3489,7 +3386,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public int getFileEncodingValue() {
       return fileEncoding_;
     }
-
     /**
      *
      *
@@ -3510,7 +3406,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3535,7 +3430,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3560,7 +3454,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3587,7 +3480,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.Builder,
             com.google.cloud.bigquery.migration.v2alpha.IdentifierSettingsOrBuilder>
         identifierSettingsBuilder_;
-
     /**
      *
      *
@@ -3603,7 +3495,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public boolean hasIdentifierSettings() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3625,7 +3516,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return identifierSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3650,7 +3540,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3672,7 +3561,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3704,7 +3592,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3725,7 +3612,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3742,7 +3628,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return getIdentifierSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3763,7 +3648,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             : identifierSettings_;
       }
     }
-
     /**
      *
      *
@@ -3820,7 +3704,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public int getSpecialTokenMapCount() {
       return internalGetSpecialTokenMap().getMap().size();
     }
-
     /**
      *
      *
@@ -3844,7 +3727,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return internalGetSpecialTokenMap().getMap().containsKey(key);
     }
-
     /** Use {@link #getSpecialTokenMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3854,7 +3736,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         getSpecialTokenMap() {
       return getSpecialTokenMapMap();
     }
-
     /**
      *
      *
@@ -3878,7 +3759,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         getSpecialTokenMapMap() {
       return internalGetAdaptedSpecialTokenMapMap(internalGetSpecialTokenMap().getMap());
     }
-
     /**
      *
      *
@@ -3912,7 +3792,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
           ? specialTokenMapValueConverter.doForward(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -3942,14 +3821,12 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return specialTokenMapValueConverter.doForward(map.get(key));
     }
-
     /** Use {@link #getSpecialTokenMapValueMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getSpecialTokenMapValue() {
       return getSpecialTokenMapValueMap();
     }
-
     /**
      *
      *
@@ -3970,7 +3847,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.Integer> getSpecialTokenMapValueMap() {
       return internalGetSpecialTokenMap().getMap();
     }
-
     /**
      *
      *
@@ -3996,7 +3872,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
           internalGetSpecialTokenMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4031,7 +3906,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       internalGetMutableSpecialTokenMap().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4055,7 +3929,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       internalGetMutableSpecialTokenMap().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -4066,7 +3939,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       return internalGetAdaptedSpecialTokenMapMap(
           internalGetMutableSpecialTokenMap().getMutableMap());
     }
-
     /**
      *
      *
@@ -4096,7 +3968,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -4123,14 +3994,12 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableSpecialTokenMapValue() {
       bitField0_ |= 0x00000100;
       return internalGetMutableSpecialTokenMap().getMutableMap();
     }
-
     /**
      *
      *
@@ -4156,7 +4025,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -4186,7 +4054,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             com.google.cloud.bigquery.migration.v2alpha.Filter.Builder,
             com.google.cloud.bigquery.migration.v2alpha.FilterOrBuilder>
         filterBuilder_;
-
     /**
      *
      *
@@ -4201,7 +4068,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4222,7 +4088,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return filterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4245,7 +4110,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4266,7 +4130,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4294,7 +4157,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4314,7 +4176,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4329,7 +4190,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4348,7 +4208,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             : filter_;
       }
     }
-
     /**
      *
      *
@@ -4376,7 +4235,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object translationExceptionTable_ = "";
-
     /**
      *
      *
@@ -4402,7 +4260,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4428,7 +4285,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4453,7 +4309,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4474,7 +4329,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

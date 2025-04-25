@@ -38,7 +38,6 @@ public interface ProductSearchResultsOrBuilder
    * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProductSearchResultsOrBuilder
    * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ProductSearchResultsOrBuilder
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
   java.util.List<com.google.cloud.vision.v1.ProductSearchResults.Result> getResultsList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ProductSearchResultsOrBuilder
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
   com.google.cloud.vision.v1.ProductSearchResults.Result getResults(int index);
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ProductSearchResultsOrBuilder
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -111,7 +106,6 @@ public interface ProductSearchResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface ProductSearchResultsOrBuilder
    */
   java.util.List<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>
       getProductGroupedResultsList();
-
   /**
    *
    *
@@ -155,7 +148,6 @@ public interface ProductSearchResultsOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.ProductSearchResults.GroupedResult getProductGroupedResults(int index);
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface ProductSearchResultsOrBuilder
    * </code>
    */
   int getProductGroupedResultsCount();
-
   /**
    *
    *
@@ -188,7 +179,6 @@ public interface ProductSearchResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder>
       getProductGroupedResultsOrBuilderList();
-
   /**
    *
    *

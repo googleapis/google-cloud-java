@@ -41,7 +41,6 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface VersionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface VersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface VersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface VersionOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

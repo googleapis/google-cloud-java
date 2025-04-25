@@ -33,7 +33,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.Token)
     TokenOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Token.newBuilder() to construct.
   private Token(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TEXT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1beta2.TextSpan text_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.language.v1beta2.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1beta2.TextSpan.getDefaultInstance() : text_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PART_OF_SPEECH_FIELD_NUMBER = 2;
   private com.google.cloud.language.v1beta2.PartOfSpeech partOfSpeech_;
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPartOfSpeech() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.language.v1beta2.PartOfSpeech.getDefaultInstance()
         : partOfSpeech_;
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPENDENCY_EDGE_FIELD_NUMBER = 3;
   private com.google.cloud.language.v1beta2.DependencyEdge dependencyEdge_;
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDependencyEdge() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.language.v1beta2.DependencyEdge.getDefaultInstance()
         : dependencyEdge_;
   }
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lemma_ = "";
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -473,7 +461,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +718,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.language.v1beta2.TextSpan.Builder,
             com.google.cloud.language.v1beta2.TextSpanOrBuilder>
         textBuilder_;
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         return textBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
             : text_;
       }
     }
-
     /**
      *
      *
@@ -925,7 +903,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.language.v1beta2.PartOfSpeech.Builder,
             com.google.cloud.language.v1beta2.PartOfSpeechOrBuilder>
         partOfSpeechBuilder_;
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPartOfSpeech() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         return partOfSpeechBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1040,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPartOfSpeechFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1088,7 +1058,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
             : partOfSpeech_;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1090,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.language.v1beta2.DependencyEdge.Builder,
             com.google.cloud.language.v1beta2.DependencyEdgeOrBuilder>
         dependencyEdgeBuilder_;
-
     /**
      *
      *
@@ -1136,7 +1104,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDependencyEdge() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1157,7 +1124,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         return dependencyEdgeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1146,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1166,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1194,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1227,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDependencyEdgeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1284,7 +1245,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
             : dependencyEdge_;
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1272,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object lemma_ = "";
-
     /**
      *
      *
@@ -1335,7 +1294,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1358,7 +1316,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1337,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1354,6 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

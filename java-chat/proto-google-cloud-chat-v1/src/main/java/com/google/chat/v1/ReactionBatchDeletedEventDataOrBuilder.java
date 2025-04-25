@@ -34,7 +34,6 @@ public interface ReactionBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.ReactionDeletedEventData reactions = 1;</code>
    */
   java.util.List<com.google.chat.v1.ReactionDeletedEventData> getReactionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ReactionBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.ReactionDeletedEventData reactions = 1;</code>
    */
   com.google.chat.v1.ReactionDeletedEventData getReactions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ReactionBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.ReactionDeletedEventData reactions = 1;</code>
    */
   int getReactionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ReactionBatchDeletedEventDataOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.ReactionDeletedEventDataOrBuilder>
       getReactionsOrBuilderList();
-
   /**
    *
    *

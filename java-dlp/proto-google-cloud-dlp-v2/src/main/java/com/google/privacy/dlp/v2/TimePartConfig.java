@@ -34,7 +34,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TimePartConfig)
     TimePartConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimePartConfig.newBuilder() to construct.
   private TimePartConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -158,7 +157,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TIME_PART_UNSPECIFIED = 0;</code>
      */
     public static final int TIME_PART_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -169,7 +167,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>YEAR = 1;</code>
      */
     public static final int YEAR_VALUE = 1;
-
     /**
      *
      *
@@ -180,7 +177,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MONTH = 2;</code>
      */
     public static final int MONTH_VALUE = 2;
-
     /**
      *
      *
@@ -191,7 +187,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DAY_OF_MONTH = 3;</code>
      */
     public static final int DAY_OF_MONTH_VALUE = 3;
-
     /**
      *
      *
@@ -202,7 +197,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DAY_OF_WEEK = 4;</code>
      */
     public static final int DAY_OF_WEEK_VALUE = 4;
-
     /**
      *
      *
@@ -213,7 +207,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>WEEK_OF_YEAR = 5;</code>
      */
     public static final int WEEK_OF_YEAR_VALUE = 5;
-
     /**
      *
      *
@@ -318,7 +311,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PART_TO_EXTRACT_FIELD_NUMBER = 1;
   private int partToExtract_ = 0;
-
   /**
    *
    *
@@ -334,7 +326,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPartToExtractValue() {
     return partToExtract_;
   }
-
   /**
    *
    *
@@ -513,7 +504,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -696,7 +686,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int partToExtract_ = 0;
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPartToExtractValue() {
       return partToExtract_;
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

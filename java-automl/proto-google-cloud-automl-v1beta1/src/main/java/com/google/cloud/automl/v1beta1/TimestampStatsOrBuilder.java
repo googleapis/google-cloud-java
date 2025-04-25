@@ -40,7 +40,6 @@ public interface TimestampStatsOrBuilder
    * </code>
    */
   int getGranularStatsCount();
-
   /**
    *
    *
@@ -57,12 +56,10 @@ public interface TimestampStatsOrBuilder
    * </code>
    */
   boolean containsGranularStats(java.lang.String key);
-
   /** Use {@link #getGranularStatsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
       getGranularStats();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface TimestampStatsOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
       getGranularStatsMap();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface TimestampStatsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue);
-
   /**
    *
    *

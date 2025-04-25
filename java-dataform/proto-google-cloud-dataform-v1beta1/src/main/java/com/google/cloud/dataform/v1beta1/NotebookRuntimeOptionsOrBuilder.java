@@ -37,7 +37,6 @@ public interface NotebookRuntimeOptionsOrBuilder
    * @return Whether the gcsOutputBucket field is set.
    */
   boolean hasGcsOutputBucket();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface NotebookRuntimeOptionsOrBuilder
    * @return The gcsOutputBucket.
    */
   java.lang.String getGcsOutputBucket();
-
   /**
    *
    *

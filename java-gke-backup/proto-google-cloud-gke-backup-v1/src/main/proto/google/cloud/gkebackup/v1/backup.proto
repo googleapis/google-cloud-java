@@ -203,8 +203,7 @@ message Backup {
   State state = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Human-readable description of why the backup is in the current
-  // `state`. This field is only meant for human readability and should not be
-  // used programmatically as this field is not guaranteed to be consistent.
+  // `state`.
   string state_reason = 19 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Completion time of the Backup
@@ -250,10 +249,4 @@ message Backup {
   // [permissive_mode][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.permissive_mode]
   // value.
   bool permissive_mode = 28 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Output only. [Output Only] Reserved for future use.
-  bool satisfies_pzs = 29 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Output only. [Output Only] Reserved for future use.
-  bool satisfies_pzi = 30 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

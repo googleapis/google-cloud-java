@@ -36,7 +36,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.LogConfig)
     LogConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LogConfig.newBuilder() to construct.
   private LogConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,7 +156,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOG_SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -168,7 +166,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>OFF = 1;</code>
      */
     public static final int OFF_VALUE = 1;
-
     /**
      *
      *
@@ -179,7 +176,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DEBUG = 100;</code>
      */
     public static final int DEBUG_VALUE = 100;
-
     /**
      *
      *
@@ -190,7 +186,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO = 200;</code>
      */
     public static final int INFO_VALUE = 200;
-
     /**
      *
      *
@@ -201,7 +196,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 400;</code>
      */
     public static final int WARNING_VALUE = 400;
-
     /**
      *
      *
@@ -304,7 +298,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_SEVERITY_FIELD_NUMBER = 1;
   private int logSeverity_ = 0;
-
   /**
    *
    *
@@ -320,7 +313,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLogSeverityValue() {
     return logSeverity_;
   }
-
   /**
    *
    *
@@ -504,7 +496,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -689,7 +680,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int logSeverity_ = 0;
-
     /**
      *
      *
@@ -705,7 +695,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogSeverityValue() {
       return logSeverity_;
     }
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.livestream.v1.LogConfig.LogSeverity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

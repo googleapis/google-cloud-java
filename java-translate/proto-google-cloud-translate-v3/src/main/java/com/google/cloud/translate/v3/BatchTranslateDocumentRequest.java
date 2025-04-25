@@ -33,7 +33,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.BatchTranslateDocumentRequest)
     BatchTranslateDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchTranslateDocumentRequest.newBuilder() to construct.
   private BatchTranslateDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -162,7 +159,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLanguageCode_ = "";
-
   /**
    *
    *
@@ -188,7 +184,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -220,7 +215,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetLanguageCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -237,7 +231,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
     return targetLanguageCodes_;
   }
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public int getTargetLanguageCodesCount() {
     return targetLanguageCodes_.size();
   }
-
   /**
    *
    *
@@ -272,7 +264,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public java.lang.String getTargetLanguageCodes(int index) {
     return targetLanguageCodes_.get(index);
   }
-
   /**
    *
    *
@@ -295,7 +286,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.BatchDocumentInputConfig> inputConfigs_;
-
   /**
    *
    *
@@ -315,7 +305,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       getInputConfigsList() {
     return inputConfigs_;
   }
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       getInputConfigsOrBuilderList() {
     return inputConfigs_;
   }
-
   /**
    *
    *
@@ -354,7 +342,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public int getInputConfigsCount() {
     return inputConfigs_.size();
   }
-
   /**
    *
    *
@@ -373,7 +360,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public com.google.cloud.translate.v3.BatchDocumentInputConfig getInputConfigs(int index) {
     return inputConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -396,7 +382,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.translate.v3.BatchDocumentOutputConfig outputConfig_;
-
   /**
    *
    *
@@ -416,7 +401,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -438,7 +422,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         ? com.google.cloud.translate.v3.BatchDocumentOutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -486,7 +469,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public int getModelsCount() {
     return internalGetModels().getMap().size();
   }
-
   /**
    *
    *
@@ -517,14 +499,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
     return internalGetModels().getMap().containsKey(key);
   }
-
   /** Use {@link #getModelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getModels() {
     return getModelsMap();
   }
-
   /**
    *
    *
@@ -552,7 +532,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
     return internalGetModels().getMap();
   }
-
   /**
    *
    *
@@ -587,7 +566,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     java.util.Map<java.lang.String, java.lang.String> map = internalGetModels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -658,7 +636,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public int getGlossariesCount() {
     return internalGetGlossaries().getMap().size();
   }
-
   /**
    *
    *
@@ -677,7 +654,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
     return internalGetGlossaries().getMap().containsKey(key);
   }
-
   /** Use {@link #getGlossariesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -685,7 +661,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       getGlossaries() {
     return getGlossariesMap();
   }
-
   /**
    *
    *
@@ -702,7 +677,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       getGlossariesMap() {
     return internalGetGlossaries().getMap();
   }
-
   /**
    *
    *
@@ -727,7 +701,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         internalGetGlossaries().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -781,7 +754,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public int getFormatConversionsCount() {
     return internalGetFormatConversions().getMap().size();
   }
-
   /**
    *
    *
@@ -809,14 +781,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
     return internalGetFormatConversions().getMap().containsKey(key);
   }
-
   /** Use {@link #getFormatConversionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getFormatConversions() {
     return getFormatConversionsMap();
   }
-
   /**
    *
    *
@@ -841,7 +811,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public java.util.Map<java.lang.String, java.lang.String> getFormatConversionsMap() {
     return internalGetFormatConversions().getMap();
   }
-
   /**
    *
    *
@@ -873,7 +842,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     java.util.Map<java.lang.String, java.lang.String> map = internalGetFormatConversions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -910,7 +878,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customizedAttribution_ = "";
-
   /**
    *
    *
@@ -937,7 +904,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -967,7 +933,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   public static final int ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER = 11;
   private boolean enableShadowRemovalNativePdf_ = false;
-
   /**
    *
    *
@@ -990,7 +955,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
   public static final int ENABLE_ROTATION_CORRECTION_FIELD_NUMBER = 12;
   private boolean enableRotationCorrection_ = false;
-
   /**
    *
    *
@@ -1303,7 +1267,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1749,7 +1712,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1782,7 +1744,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1815,7 +1776,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1847,7 +1807,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1875,7 +1834,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1910,7 +1868,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object sourceLanguageCode_ = "";
-
     /**
      *
      *
@@ -1935,7 +1892,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1960,7 +1916,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1984,7 +1939,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2004,7 +1958,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2039,7 +1992,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2057,7 +2009,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       targetLanguageCodes_.makeImmutable();
       return targetLanguageCodes_;
     }
-
     /**
      *
      *
@@ -2074,7 +2025,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public int getTargetLanguageCodesCount() {
       return targetLanguageCodes_.size();
     }
-
     /**
      *
      *
@@ -2092,7 +2042,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public java.lang.String getTargetLanguageCodes(int index) {
       return targetLanguageCodes_.get(index);
     }
-
     /**
      *
      *
@@ -2110,7 +2059,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getTargetLanguageCodesBytes(int index) {
       return targetLanguageCodes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2136,7 +2084,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2108,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2183,7 +2129,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2204,7 +2149,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2271,7 +2215,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return inputConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2293,7 +2236,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return inputConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2315,7 +2257,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return inputConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2344,7 +2285,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2370,7 +2310,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2398,7 +2337,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2427,7 +2365,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2453,7 +2390,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2479,7 +2415,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2506,7 +2441,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2531,7 +2465,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2556,7 +2489,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2575,7 +2507,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         int index) {
       return getInputConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2598,7 +2529,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return inputConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2621,7 +2551,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(inputConfigs_);
       }
     }
-
     /**
      *
      *
@@ -2640,7 +2569,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       return getInputConfigsFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.BatchDocumentInputConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2661,7 +2589,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.translate.v3.BatchDocumentInputConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2704,7 +2631,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
             com.google.cloud.translate.v3.BatchDocumentOutputConfig.Builder,
             com.google.cloud.translate.v3.BatchDocumentOutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -2723,7 +2649,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2748,7 +2673,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2775,7 +2699,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2800,7 +2723,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2834,7 +2756,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2858,7 +2779,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2878,7 +2798,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2902,7 +2821,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
             : outputConfig_;
       }
     }
-
     /**
      *
      *
@@ -2958,7 +2876,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public int getModelsCount() {
       return internalGetModels().getMap().size();
     }
-
     /**
      *
      *
@@ -2989,14 +2906,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return internalGetModels().getMap().containsKey(key);
     }
-
     /** Use {@link #getModelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getModels() {
       return getModelsMap();
     }
-
     /**
      *
      *
@@ -3024,7 +2939,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
       return internalGetModels().getMap();
     }
-
     /**
      *
      *
@@ -3059,7 +2973,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       java.util.Map<java.lang.String, java.lang.String> map = internalGetModels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3100,7 +3013,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableModels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3131,14 +3043,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableModels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableModels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableModels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3173,7 +3083,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -3223,8 +3132,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
           defaultEntry() {
         return GlossariesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final GlossariesConverter glossariesConverter = new GlossariesConverter();
 
@@ -3264,7 +3172,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public int getGlossariesCount() {
       return internalGetGlossaries().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -3283,7 +3190,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return internalGetGlossaries().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getGlossariesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3292,7 +3198,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         getGlossaries() {
       return getGlossariesMap();
     }
-
     /**
      *
      *
@@ -3310,7 +3215,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         getGlossariesMap() {
       return internalGetGlossaries().getImmutableMap();
     }
-
     /**
      *
      *
@@ -3336,7 +3240,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
           map = internalGetMutableGlossaries().ensureBuilderMap();
       return map.containsKey(key) ? glossariesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -3368,7 +3271,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableGlossaries().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3387,7 +3289,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableGlossaries().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3396,7 +3297,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ |= 0x00000040;
       return internalGetMutableGlossaries().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -3420,7 +3320,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -3446,7 +3345,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -3505,7 +3403,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public int getFormatConversionsCount() {
       return internalGetFormatConversions().getMap().size();
     }
-
     /**
      *
      *
@@ -3533,14 +3430,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       return internalGetFormatConversions().getMap().containsKey(key);
     }
-
     /** Use {@link #getFormatConversionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getFormatConversions() {
       return getFormatConversionsMap();
     }
-
     /**
      *
      *
@@ -3565,7 +3460,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public java.util.Map<java.lang.String, java.lang.String> getFormatConversionsMap() {
       return internalGetFormatConversions().getMap();
     }
-
     /**
      *
      *
@@ -3598,7 +3492,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
           internalGetFormatConversions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3637,7 +3530,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableFormatConversions().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3665,14 +3557,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableFormatConversions().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableFormatConversions() {
       bitField0_ |= 0x00000080;
       return internalGetMutableFormatConversions().getMutableMap();
     }
-
     /**
      *
      *
@@ -3704,7 +3594,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ |= 0x00000080;
       return this;
     }
-
     /**
      *
      *
@@ -3733,7 +3622,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object customizedAttribution_ = "";
-
     /**
      *
      *
@@ -3759,7 +3647,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3785,7 +3672,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3810,7 +3696,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3831,7 +3716,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3859,7 +3743,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
 
     private boolean enableShadowRemovalNativePdf_;
-
     /**
      *
      *
@@ -3879,7 +3762,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public boolean getEnableShadowRemovalNativePdf() {
       return enableShadowRemovalNativePdf_;
     }
-
     /**
      *
      *
@@ -3903,7 +3785,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3927,7 +3808,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
 
     private boolean enableRotationCorrection_;
-
     /**
      *
      *
@@ -3943,7 +3823,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public boolean getEnableRotationCorrection() {
       return enableRotationCorrection_;
     }
-
     /**
      *
      *
@@ -3963,7 +3842,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

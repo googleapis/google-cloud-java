@@ -38,7 +38,6 @@ public interface CreateHubRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateHubRequestOrBuilder
    * @return The hubId.
    */
   java.lang.String getHubId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateHubRequestOrBuilder
    * @return Whether the hub field is set.
    */
   boolean hasHub();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateHubRequestOrBuilder
    * @return The hub.
    */
   com.google.cloud.networkconnectivity.v1alpha1.Hub getHub();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateHubRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

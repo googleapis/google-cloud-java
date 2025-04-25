@@ -39,7 +39,6 @@ public interface BatchGetDocumentsMetadataRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BatchGetDocumentsMetadataRequestOrBuilder
    * @return Whether the matcher field is set.
    */
   boolean hasMatcher();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface BatchGetDocumentsMetadataRequestOrBuilder
    * @return The matcher.
    */
   com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest.Matcher getMatcher();
-
   /**
    *
    *

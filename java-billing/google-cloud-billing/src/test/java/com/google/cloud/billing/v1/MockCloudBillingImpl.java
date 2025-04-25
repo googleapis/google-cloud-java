@@ -120,8 +120,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateBillingAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateBillingAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BillingAccount.class.getName(),
                   Exception.class.getName())));
@@ -142,8 +141,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateBillingAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateBillingAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BillingAccount.class.getName(),
                   Exception.class.getName())));
@@ -165,8 +163,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListProjectBillingInfo, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListProjectBillingInfo, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListProjectBillingInfoResponse.class.getName(),
                   Exception.class.getName())));
@@ -187,8 +184,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetProjectBillingInfo, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetProjectBillingInfo, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProjectBillingInfo.class.getName(),
                   Exception.class.getName())));
@@ -210,8 +206,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateProjectBillingInfo, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateProjectBillingInfo, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProjectBillingInfo.class.getName(),
                   Exception.class.getName())));

@@ -34,7 +34,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ListAttackPathsResponse)
     ListAttackPathsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAttackPathsResponse.newBuilder() to construct.
   private ListAttackPathsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.AttackPath> attackPaths_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.securitycenter.v2.AttackPath> getAttackPathsList() {
     return attackPaths_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       getAttackPathsOrBuilderList() {
     return attackPaths_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
   public int getAttackPathsCount() {
     return attackPaths_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
   public com.google.cloud.securitycenter.v2.AttackPath getAttackPaths(int index) {
     return attackPaths_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return attackPathsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return attackPathsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return attackPathsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
     public com.google.cloud.securitycenter.v2.AttackPath.Builder getAttackPathsBuilder(int index) {
       return getAttackPathsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return attackPathsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(attackPaths_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       return getAttackPathsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.AttackPath.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       return getAttackPathsFieldBuilder()
           .addBuilder(index, com.google.cloud.securitycenter.v2.AttackPath.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1026,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1044,6 @@ public final class ListAttackPathsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

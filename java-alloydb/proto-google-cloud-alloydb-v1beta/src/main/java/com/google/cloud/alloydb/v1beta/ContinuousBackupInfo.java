@@ -34,7 +34,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.ContinuousBackupInfo)
     ContinuousBackupInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContinuousBackupInfo.newBuilder() to construct.
   private ContinuousBackupInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ENCRYPTION_INFO_FIELD_NUMBER = 1;
   private com.google.cloud.alloydb.v1beta.EncryptionInfo encryptionInfo_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public boolean hasEncryptionInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.alloydb.v1beta.EncryptionInfo.getDefaultInstance()
         : encryptionInfo_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLED_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp enabledTime_;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public boolean hasEnabledTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getEnabledTime() {
     return enabledTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : enabledTime_;
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
               return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.type.DayOfWeek>(schedule_, schedule_converter_);
   }
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public int getScheduleCount() {
     return schedule_.size();
   }
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public com.google.type.DayOfWeek getSchedule(int index) {
     return schedule_converter_.convert(schedule_.get(index));
   }
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public java.util.List<java.lang.Integer> getScheduleValueList() {
     return schedule_;
   }
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
 
   public static final int EARLIEST_RESTORABLE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp earliestRestorableTime_;
-
   /**
    *
    *
@@ -320,7 +307,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   public boolean hasEarliestRestorableTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -341,7 +327,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : earliestRestorableTime_;
   }
-
   /**
    *
    *
@@ -579,7 +564,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -869,7 +853,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
             com.google.cloud.alloydb.v1beta.EncryptionInfo.Builder,
             com.google.cloud.alloydb.v1beta.EncryptionInfoOrBuilder>
         encryptionInfoBuilder_;
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public boolean hasEncryptionInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -911,7 +893,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         return encryptionInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -937,7 +918,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +994,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1011,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return getEncryptionInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1056,7 +1032,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
             : encryptionInfo_;
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1067,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         enabledTimeBuilder_;
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public boolean hasEnabledTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1134,7 +1107,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         return enabledTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1132,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1206,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1223,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return getEnabledTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1277,7 +1244,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
             : enabledTime_;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1281,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1299,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.type.DayOfWeek>(schedule_, schedule_converter_);
     }
-
     /**
      *
      *
@@ -1352,7 +1316,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public int getScheduleCount() {
       return schedule_.size();
     }
-
     /**
      *
      *
@@ -1371,7 +1334,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public com.google.type.DayOfWeek getSchedule(int index) {
       return schedule_converter_.convert(schedule_.get(index));
     }
-
     /**
      *
      *
@@ -1397,7 +1359,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1383,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1406,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1426,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1485,7 +1443,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public java.util.List<java.lang.Integer> getScheduleValueList() {
       return java.util.Collections.unmodifiableList(schedule_);
     }
-
     /**
      *
      *
@@ -1504,7 +1461,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public int getScheduleValue(int index) {
       return schedule_.get(index);
     }
-
     /**
      *
      *
@@ -1527,7 +1483,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1504,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1534,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         earliestRestorableTimeBuilder_;
-
     /**
      *
      *
@@ -1598,7 +1551,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     public boolean hasEarliestRestorableTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1622,7 +1574,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         return earliestRestorableTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1648,7 +1599,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1622,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1703,7 +1652,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1726,7 +1674,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1744,7 +1691,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return getEarliestRestorableTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1766,7 +1712,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
             : earliestRestorableTime_;
       }
     }
-
     /**
      *
      *

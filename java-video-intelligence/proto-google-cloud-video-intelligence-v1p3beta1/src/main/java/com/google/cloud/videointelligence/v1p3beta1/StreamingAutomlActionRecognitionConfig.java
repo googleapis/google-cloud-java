@@ -35,7 +35,6 @@ public final class StreamingAutomlActionRecognitionConfig
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
     StreamingAutomlActionRecognitionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingAutomlActionRecognitionConfig.newBuilder() to construct.
   private StreamingAutomlActionRecognitionConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class StreamingAutomlActionRecognitionConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelName_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class StreamingAutomlActionRecognitionConfig
       return s;
     }
   }
-
   /**
    *
    *
@@ -293,7 +290,6 @@ public final class StreamingAutomlActionRecognitionConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -496,7 +492,6 @@ public final class StreamingAutomlActionRecognitionConfig
     private int bitField0_;
 
     private java.lang.Object modelName_ = "";
-
     /**
      *
      *
@@ -520,7 +515,6 @@ public final class StreamingAutomlActionRecognitionConfig
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -544,7 +538,6 @@ public final class StreamingAutomlActionRecognitionConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -567,7 +560,6 @@ public final class StreamingAutomlActionRecognitionConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class StreamingAutomlActionRecognitionConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *

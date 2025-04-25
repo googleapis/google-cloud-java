@@ -37,7 +37,6 @@ public interface RouteMatrixOriginOrBuilder
    * @return Whether the waypoint field is set.
    */
   boolean hasWaypoint();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RouteMatrixOriginOrBuilder
    * @return The waypoint.
    */
   com.google.maps.routing.v2.Waypoint getWaypoint();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface RouteMatrixOriginOrBuilder
    * @return Whether the routeModifiers field is set.
    */
   boolean hasRouteModifiers();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface RouteMatrixOriginOrBuilder
    * @return The routeModifiers.
    */
   com.google.maps.routing.v2.RouteModifiers getRouteModifiers();
-
   /**
    *
    *

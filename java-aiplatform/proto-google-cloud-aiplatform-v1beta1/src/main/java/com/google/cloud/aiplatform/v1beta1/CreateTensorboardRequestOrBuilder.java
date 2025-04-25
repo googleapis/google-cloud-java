@@ -39,7 +39,6 @@ public interface CreateTensorboardRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateTensorboardRequestOrBuilder
    * @return Whether the tensorboard field is set.
    */
   boolean hasTensorboard();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateTensorboardRequestOrBuilder
    * @return The tensorboard.
    */
   com.google.cloud.aiplatform.v1beta1.Tensorboard getTensorboard();
-
   /**
    *
    *

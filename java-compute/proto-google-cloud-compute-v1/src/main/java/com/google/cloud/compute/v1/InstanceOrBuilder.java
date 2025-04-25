@@ -38,7 +38,6 @@ public interface InstanceOrBuilder
    * @return Whether the advancedMachineFeatures field is set.
    */
   boolean hasAdvancedMachineFeatures();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InstanceOrBuilder
    * @return The advancedMachineFeatures.
    */
   com.google.cloud.compute.v1.AdvancedMachineFeatures getAdvancedMachineFeatures();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface InstanceOrBuilder
    * @return Whether the canIpForward field is set.
    */
   boolean hasCanIpForward();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface InstanceOrBuilder
    * @return Whether the confidentialInstanceConfig field is set.
    */
   boolean hasConfidentialInstanceConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
@@ -111,7 +107,6 @@ public interface InstanceOrBuilder
    * @return The confidentialInstanceConfig.
    */
   com.google.cloud.compute.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
@@ -132,7 +127,6 @@ public interface InstanceOrBuilder
    * @return Whether the cpuPlatform field is set.
    */
   boolean hasCpuPlatform();
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public interface InstanceOrBuilder
    * @return The cpuPlatform.
    */
   java.lang.String getCpuPlatform();
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public interface InstanceOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface InstanceOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface InstanceOrBuilder
    * @return Whether the deletionProtection field is set.
    */
   boolean hasDeletionProtection();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface InstanceOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface InstanceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AttachedDisk> getDisksList();
-
   /**
    *
    *
@@ -284,7 +271,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
    */
   com.google.cloud.compute.v1.AttachedDisk getDisks(int index);
-
   /**
    *
    *
@@ -295,7 +281,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
    */
   int getDisksCount();
-
   /**
    *
    *
@@ -307,7 +292,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AttachedDiskOrBuilder>
       getDisksOrBuilderList();
-
   /**
    *
    *
@@ -331,7 +315,6 @@ public interface InstanceOrBuilder
    * @return Whether the displayDevice field is set.
    */
   boolean hasDisplayDevice();
-
   /**
    *
    *
@@ -344,7 +327,6 @@ public interface InstanceOrBuilder
    * @return The displayDevice.
    */
   com.google.cloud.compute.v1.DisplayDevice getDisplayDevice();
-
   /**
    *
    *
@@ -368,7 +350,6 @@ public interface InstanceOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -381,7 +362,6 @@ public interface InstanceOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -406,7 +386,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
-
   /**
    *
    *
@@ -418,7 +397,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
-
   /**
    *
    *
@@ -430,7 +408,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getGuestAcceleratorsCount();
-
   /**
    *
    *
@@ -443,7 +420,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -468,7 +444,6 @@ public interface InstanceOrBuilder
    * @return Whether the hostname field is set.
    */
   boolean hasHostname();
-
   /**
    *
    *
@@ -481,7 +456,6 @@ public interface InstanceOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -507,7 +481,6 @@ public interface InstanceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -535,7 +508,6 @@ public interface InstanceOrBuilder
    * @return Whether the instanceEncryptionKey field is set.
    */
   boolean hasInstanceEncryptionKey();
-
   /**
    *
    *
@@ -550,7 +522,6 @@ public interface InstanceOrBuilder
    * @return The instanceEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getInstanceEncryptionKey();
-
   /**
    *
    *
@@ -577,7 +548,6 @@ public interface InstanceOrBuilder
    * @return Whether the keyRevocationActionType field is set.
    */
   boolean hasKeyRevocationActionType();
-
   /**
    *
    *
@@ -591,7 +561,6 @@ public interface InstanceOrBuilder
    * @return The keyRevocationActionType.
    */
   java.lang.String getKeyRevocationActionType();
-
   /**
    *
    *
@@ -618,7 +587,6 @@ public interface InstanceOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -631,7 +599,6 @@ public interface InstanceOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -657,7 +624,6 @@ public interface InstanceOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -670,7 +636,6 @@ public interface InstanceOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -694,7 +659,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -705,11 +669,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -720,7 +682,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -735,7 +696,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -759,7 +719,6 @@ public interface InstanceOrBuilder
    * @return Whether the lastStartTimestamp field is set.
    */
   boolean hasLastStartTimestamp();
-
   /**
    *
    *
@@ -772,7 +731,6 @@ public interface InstanceOrBuilder
    * @return The lastStartTimestamp.
    */
   java.lang.String getLastStartTimestamp();
-
   /**
    *
    *
@@ -798,7 +756,6 @@ public interface InstanceOrBuilder
    * @return Whether the lastStopTimestamp field is set.
    */
   boolean hasLastStopTimestamp();
-
   /**
    *
    *
@@ -811,7 +768,6 @@ public interface InstanceOrBuilder
    * @return The lastStopTimestamp.
    */
   java.lang.String getLastStopTimestamp();
-
   /**
    *
    *
@@ -837,7 +793,6 @@ public interface InstanceOrBuilder
    * @return Whether the lastSuspendedTimestamp field is set.
    */
   boolean hasLastSuspendedTimestamp();
-
   /**
    *
    *
@@ -850,7 +805,6 @@ public interface InstanceOrBuilder
    * @return The lastSuspendedTimestamp.
    */
   java.lang.String getLastSuspendedTimestamp();
-
   /**
    *
    *
@@ -876,7 +830,6 @@ public interface InstanceOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
-
   /**
    *
    *
@@ -889,7 +842,6 @@ public interface InstanceOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -915,7 +867,6 @@ public interface InstanceOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -928,7 +879,6 @@ public interface InstanceOrBuilder
    * @return The metadata.
    */
   com.google.cloud.compute.v1.Metadata getMetadata();
-
   /**
    *
    *
@@ -952,7 +902,6 @@ public interface InstanceOrBuilder
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
-
   /**
    *
    *
@@ -965,7 +914,6 @@ public interface InstanceOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
-
   /**
    *
    *
@@ -991,7 +939,6 @@ public interface InstanceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -1004,7 +951,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -1028,7 +974,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkInterface> getNetworkInterfacesList();
-
   /**
    *
    *
@@ -1039,7 +984,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   com.google.cloud.compute.v1.NetworkInterface getNetworkInterfaces(int index);
-
   /**
    *
    *
@@ -1050,7 +994,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
    */
   int getNetworkInterfacesCount();
-
   /**
    *
    *
@@ -1062,7 +1005,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
-
   /**
    *
    *
@@ -1082,7 +1024,6 @@ public interface InstanceOrBuilder
    * @return Whether the networkPerformanceConfig field is set.
    */
   boolean hasNetworkPerformanceConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
@@ -1091,7 +1032,6 @@ public interface InstanceOrBuilder
    * @return The networkPerformanceConfig.
    */
   com.google.cloud.compute.v1.NetworkPerformanceConfig getNetworkPerformanceConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.NetworkPerformanceConfig network_performance_config = 398330850;
@@ -1112,7 +1052,6 @@ public interface InstanceOrBuilder
    * @return Whether the params field is set.
    */
   boolean hasParams();
-
   /**
    *
    *
@@ -1125,7 +1064,6 @@ public interface InstanceOrBuilder
    * @return The params.
    */
   com.google.cloud.compute.v1.InstanceParams getParams();
-
   /**
    *
    *
@@ -1150,7 +1088,6 @@ public interface InstanceOrBuilder
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
-
   /**
    *
    *
@@ -1164,7 +1101,6 @@ public interface InstanceOrBuilder
    * @return The privateIpv6GoogleAccess.
    */
   java.lang.String getPrivateIpv6GoogleAccess();
-
   /**
    *
    *
@@ -1192,7 +1128,6 @@ public interface InstanceOrBuilder
    * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
-
   /**
    *
    *
@@ -1206,7 +1141,6 @@ public interface InstanceOrBuilder
    * @return The reservationAffinity.
    */
   com.google.cloud.compute.v1.ReservationAffinity getReservationAffinity();
-
   /**
    *
    *
@@ -1231,7 +1165,6 @@ public interface InstanceOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
-
   /**
    *
    *
@@ -1244,7 +1177,6 @@ public interface InstanceOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
-
   /**
    *
    *
@@ -1258,7 +1190,6 @@ public interface InstanceOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
-
   /**
    *
    *
@@ -1285,7 +1216,6 @@ public interface InstanceOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
-
   /**
    *
    *
@@ -1298,7 +1228,6 @@ public interface InstanceOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.ResourceStatus getResourceStatus();
-
   /**
    *
    *
@@ -1322,7 +1251,6 @@ public interface InstanceOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
-
   /**
    *
    *
@@ -1348,7 +1276,6 @@ public interface InstanceOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -1374,7 +1301,6 @@ public interface InstanceOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
-
   /**
    *
    *
@@ -1387,7 +1313,6 @@ public interface InstanceOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.compute.v1.Scheduling getScheduling();
-
   /**
    *
    *
@@ -1411,7 +1336,6 @@ public interface InstanceOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -1424,7 +1348,6 @@ public interface InstanceOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -1448,7 +1371,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList();
-
   /**
    *
    *
@@ -1459,7 +1381,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index);
-
   /**
    *
    *
@@ -1470,7 +1391,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   int getServiceAccountsCount();
-
   /**
    *
    *
@@ -1482,7 +1402,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
-
   /**
    *
    *
@@ -1502,7 +1421,6 @@ public interface InstanceOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
@@ -1511,7 +1429,6 @@ public interface InstanceOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
@@ -1527,7 +1444,6 @@ public interface InstanceOrBuilder
    * @return Whether the shieldedInstanceIntegrityPolicy field is set.
    */
   boolean hasShieldedInstanceIntegrityPolicy();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
@@ -1536,7 +1452,6 @@ public interface InstanceOrBuilder
    * @return The shieldedInstanceIntegrityPolicy.
    */
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy getShieldedInstanceIntegrityPolicy();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
@@ -1557,7 +1472,6 @@ public interface InstanceOrBuilder
    * @return Whether the sourceMachineImage field is set.
    */
   boolean hasSourceMachineImage();
-
   /**
    *
    *
@@ -1570,7 +1484,6 @@ public interface InstanceOrBuilder
    * @return The sourceMachineImage.
    */
   java.lang.String getSourceMachineImage();
-
   /**
    *
    *
@@ -1598,7 +1511,6 @@ public interface InstanceOrBuilder
    * @return Whether the sourceMachineImageEncryptionKey field is set.
    */
   boolean hasSourceMachineImageEncryptionKey();
-
   /**
    *
    *
@@ -1613,7 +1525,6 @@ public interface InstanceOrBuilder
    * @return The sourceMachineImageEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceMachineImageEncryptionKey();
-
   /**
    *
    *
@@ -1640,7 +1551,6 @@ public interface InstanceOrBuilder
    * @return Whether the startRestricted field is set.
    */
   boolean hasStartRestricted();
-
   /**
    *
    *
@@ -1667,7 +1577,6 @@ public interface InstanceOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -1681,7 +1590,6 @@ public interface InstanceOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -1708,7 +1616,6 @@ public interface InstanceOrBuilder
    * @return Whether the statusMessage field is set.
    */
   boolean hasStatusMessage();
-
   /**
    *
    *
@@ -1721,7 +1628,6 @@ public interface InstanceOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *
@@ -1747,7 +1653,6 @@ public interface InstanceOrBuilder
    * @return Whether the tags field is set.
    */
   boolean hasTags();
-
   /**
    *
    *
@@ -1760,7 +1665,6 @@ public interface InstanceOrBuilder
    * @return The tags.
    */
   com.google.cloud.compute.v1.Tags getTags();
-
   /**
    *
    *
@@ -1784,7 +1688,6 @@ public interface InstanceOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -1797,7 +1700,6 @@ public interface InstanceOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

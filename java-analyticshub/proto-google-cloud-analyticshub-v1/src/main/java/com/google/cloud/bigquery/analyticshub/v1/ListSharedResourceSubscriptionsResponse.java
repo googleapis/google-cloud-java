@@ -35,7 +35,6 @@ public final class ListSharedResourceSubscriptionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse)
     ListSharedResourceSubscriptionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSharedResourceSubscriptionsResponse.newBuilder() to construct.
   private ListSharedResourceSubscriptionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ListSharedResourceSubscriptionsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription>
       sharedResourceSubscriptions_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListSharedResourceSubscriptionsResponse
       getSharedResourceSubscriptionsList() {
     return sharedResourceSubscriptions_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListSharedResourceSubscriptionsResponse
       getSharedResourceSubscriptionsOrBuilderList() {
     return sharedResourceSubscriptions_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ListSharedResourceSubscriptionsResponse
   public int getSharedResourceSubscriptionsCount() {
     return sharedResourceSubscriptions_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ListSharedResourceSubscriptionsResponse
       int index) {
     return sharedResourceSubscriptions_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ListSharedResourceSubscriptionsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListSharedResourceSubscriptionsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +386,6 @@ public final class ListSharedResourceSubscriptionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -695,7 +686,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return sharedResourceSubscriptionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -714,7 +704,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return sharedResourceSubscriptionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return sharedResourceSubscriptionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -760,7 +748,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +820,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +842,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class ListSharedResourceSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class ListSharedResourceSubscriptionsResponse
         getSharedResourceSubscriptionsBuilder(int index) {
       return getSharedResourceSubscriptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -986,7 +964,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return sharedResourceSubscriptionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return java.util.Collections.unmodifiableList(sharedResourceSubscriptions_);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class ListSharedResourceSubscriptionsResponse
       return getSharedResourceSubscriptionsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1041,7 +1016,6 @@ public final class ListSharedResourceSubscriptionsResponse
           .addBuilder(
               index, com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class ListSharedResourceSubscriptionsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1102,7 +1075,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1097,6 @@ public final class ListSharedResourceSubscriptionsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1118,6 @@ public final class ListSharedResourceSubscriptionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1135,6 @@ public final class ListSharedResourceSubscriptionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

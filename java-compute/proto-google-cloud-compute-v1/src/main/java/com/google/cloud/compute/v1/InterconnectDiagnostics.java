@@ -33,7 +33,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectDiagnostics)
     InterconnectDiagnosticsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectDiagnostics.newBuilder() to construct.
   private InterconnectDiagnostics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,7 +120,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * <code>UNDEFINED_BUNDLE_AGGREGATION_TYPE = 0;</code>
      */
     public static final int UNDEFINED_BUNDLE_AGGREGATION_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -132,7 +130,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * <code>BUNDLE_AGGREGATION_TYPE_LACP = 27758925;</code>
      */
     public static final int BUNDLE_AGGREGATION_TYPE_LACP_VALUE = 27758925;
-
     /**
      *
      *
@@ -285,7 +282,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * <code>UNDEFINED_BUNDLE_OPERATIONAL_STATUS = 0;</code>
      */
     public static final int UNDEFINED_BUNDLE_OPERATIONAL_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -296,7 +292,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * <code>BUNDLE_OPERATIONAL_STATUS_DOWN = 453842693;</code>
      */
     public static final int BUNDLE_OPERATIONAL_STATUS_DOWN_VALUE = 453842693;
-
     /**
      *
      *
@@ -401,7 +396,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> arpCaches_;
-
   /**
    *
    *
@@ -417,7 +411,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getArpCachesList() {
     return arpCaches_;
   }
-
   /**
    *
    *
@@ -434,7 +427,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getArpCachesOrBuilderList() {
     return arpCaches_;
   }
-
   /**
    *
    *
@@ -449,7 +441,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public int getArpCachesCount() {
     return arpCaches_.size();
   }
-
   /**
    *
    *
@@ -464,7 +455,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index) {
     return arpCaches_.get(index);
   }
-
   /**
    *
    *
@@ -485,7 +475,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bundleAggregationType_ = "";
-
   /**
    *
    *
@@ -502,7 +491,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public boolean hasBundleAggregationType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -527,7 +515,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -557,7 +544,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bundleOperationalStatus_ = "";
-
   /**
    *
    *
@@ -574,7 +560,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public boolean hasBundleOperationalStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -599,7 +584,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -629,7 +613,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus> links_;
-
   /**
    *
    *
@@ -645,7 +628,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getLinksList() {
     return links_;
   }
-
   /**
    *
    *
@@ -662,7 +644,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getLinksOrBuilderList() {
     return links_;
   }
-
   /**
    *
    *
@@ -677,7 +658,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public int getLinksCount() {
     return links_.size();
   }
-
   /**
    *
    *
@@ -692,7 +672,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus getLinks(int index) {
     return links_.get(index);
   }
-
   /**
    *
    *
@@ -713,7 +692,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object macAddress_ = "";
-
   /**
    *
    *
@@ -729,7 +707,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public boolean hasMacAddress() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -753,7 +730,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -998,7 +974,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1373,7 +1348,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return arpCachesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1366,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return arpCachesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1411,7 +1384,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return arpCachesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1437,7 +1409,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1432,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1456,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1481,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1503,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1526,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1549,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1570,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1627,7 +1591,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1606,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         int index) {
       return getArpCachesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1663,7 +1625,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return arpCachesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1684,7 +1645,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(arpCaches_);
       }
     }
-
     /**
      *
      *
@@ -1702,7 +1662,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           .addBuilder(
               com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1721,7 +1680,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               index,
               com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1756,7 +1714,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     }
 
     private java.lang.Object bundleAggregationType_ = "";
-
     /**
      *
      *
@@ -1772,7 +1729,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public boolean hasBundleAggregationType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1796,7 +1752,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1820,7 +1775,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1843,7 +1797,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1862,7 +1815,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1888,7 +1840,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     }
 
     private java.lang.Object bundleOperationalStatus_ = "";
-
     /**
      *
      *
@@ -1904,7 +1855,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public boolean hasBundleOperationalStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1928,7 +1878,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1952,7 +1901,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1975,7 +1923,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1941,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2055,7 +2001,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2073,7 +2018,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2091,7 +2035,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2116,7 +2059,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2081,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2163,7 +2104,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2188,7 +2128,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2210,7 +2149,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2233,7 +2171,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2193,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2277,7 +2213,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2298,7 +2233,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2313,7 +2247,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         int index) {
       return getLinksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2332,7 +2265,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2352,7 +2284,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(links_);
       }
     }
-
     /**
      *
      *
@@ -2368,7 +2299,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           .addBuilder(
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2386,7 +2316,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               index,
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2420,7 +2349,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     }
 
     private java.lang.Object macAddress_ = "";
-
     /**
      *
      *
@@ -2435,7 +2363,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public boolean hasMacAddress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2458,7 +2385,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2481,7 +2407,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2503,7 +2428,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2521,7 +2445,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

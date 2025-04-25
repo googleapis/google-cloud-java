@@ -38,7 +38,6 @@ public interface SqlTranslationErrorOrBuilder
    * @return The enum numeric value on the wire for errorType.
    */
   int getErrorTypeValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SqlTranslationErrorOrBuilder
    * @return Whether the errorDetail field is set.
    */
   boolean hasErrorDetail();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface SqlTranslationErrorOrBuilder
    * @return The errorDetail.
    */
   com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetail getErrorDetail();
-
   /**
    *
    *

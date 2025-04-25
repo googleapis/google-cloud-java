@@ -39,7 +39,6 @@ public interface UpdateEkmConnectionRequestOrBuilder
    * @return Whether the ekmConnection field is set.
    */
   boolean hasEkmConnection();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateEkmConnectionRequestOrBuilder
    * @return The ekmConnection.
    */
   com.google.cloud.kms.v1.EkmConnection getEkmConnection();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateEkmConnectionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateEkmConnectionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

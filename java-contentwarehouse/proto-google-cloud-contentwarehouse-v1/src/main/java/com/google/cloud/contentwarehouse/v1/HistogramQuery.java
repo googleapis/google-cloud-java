@@ -33,7 +33,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.HistogramQuery)
     HistogramQueryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HistogramQuery.newBuilder() to construct.
   private HistogramQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object histogramQuery_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_PRECISE_RESULT_SIZE_FIELD_NUMBER = 2;
   private boolean requirePreciseResultSize_ = false;
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILTERS_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter filters_;
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.getDefaultInstance()
         : filters_;
   }
-
   /**
    *
    *
@@ -401,7 +394,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -628,7 +620,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object histogramQuery_ = "";
-
     /**
      *
      *
@@ -656,7 +647,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +751,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requirePreciseResultSize_;
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequirePreciseResultSize() {
       return requirePreciseResultSize_;
     }
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.Builder,
             com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilterOrBuilder>
         filtersBuilder_;
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
         return filtersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +917,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFiltersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
             : filters_;
       }
     }
-
     /**
      *
      *

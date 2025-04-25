@@ -57,7 +57,6 @@ public interface ListWorkspacesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface DiscoveredWorkloadOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface DiscoveredWorkloadOrBuilder
    * @return Whether the workloadReference field is set.
    */
   boolean hasWorkloadReference();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface DiscoveredWorkloadOrBuilder
    * @return The workloadReference.
    */
   com.google.cloud.apphub.v1.WorkloadReference getWorkloadReference();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface DiscoveredWorkloadOrBuilder
    * @return Whether the workloadProperties field is set.
    */
   boolean hasWorkloadProperties();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface DiscoveredWorkloadOrBuilder
    * @return The workloadProperties.
    */
   com.google.cloud.apphub.v1.WorkloadProperties getWorkloadProperties();
-
   /**
    *
    *

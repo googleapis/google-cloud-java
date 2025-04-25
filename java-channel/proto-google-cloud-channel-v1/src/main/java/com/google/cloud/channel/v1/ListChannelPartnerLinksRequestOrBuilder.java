@@ -37,7 +37,6 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

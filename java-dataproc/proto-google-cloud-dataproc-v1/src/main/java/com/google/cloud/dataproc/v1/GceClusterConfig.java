@@ -34,7 +34,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.GceClusterConfig)
     GceClusterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GceClusterConfig.newBuilder() to construct.
   private GceClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -158,7 +157,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <code>PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
      */
     public static final int PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -171,7 +169,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <code>INHERIT_FROM_SUBNETWORK = 1;</code>
      */
     public static final int INHERIT_FROM_SUBNETWORK_VALUE = 1;
-
     /**
      *
      *
@@ -183,7 +180,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <code>OUTBOUND = 2;</code>
      */
     public static final int OUTBOUND_VALUE = 2;
-
     /**
      *
      *
@@ -289,7 +285,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zoneUri_ = "";
-
   /**
    *
    *
@@ -321,7 +316,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -358,7 +352,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUri_ = "";
-
   /**
    *
    *
@@ -393,7 +386,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -433,7 +425,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetworkUri_ = "";
-
   /**
    *
    *
@@ -464,7 +455,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +488,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int INTERNAL_IP_ONLY_FIELD_NUMBER = 7;
   private boolean internalIpOnly_ = false;
-
   /**
    *
    *
@@ -529,7 +518,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasInternalIpOnly() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -563,7 +551,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 12;
   private int privateIpv6GoogleAccess_ = 0;
-
   /**
    *
    *
@@ -581,7 +568,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public int getPrivateIpv6GoogleAccessValue() {
     return privateIpv6GoogleAccess_;
   }
-
   /**
    *
    *
@@ -610,7 +596,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -644,7 +629,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -684,7 +668,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -713,7 +696,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
     return serviceAccountScopes_;
   }
-
   /**
    *
    *
@@ -742,7 +724,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public int getServiceAccountScopesCount() {
     return serviceAccountScopes_.size();
   }
-
   /**
    *
    *
@@ -772,7 +753,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getServiceAccountScopes(int index) {
     return serviceAccountScopes_.get(index);
   }
-
   /**
    *
    *
@@ -808,7 +788,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -824,7 +803,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
-
   /**
    *
    *
@@ -840,7 +818,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public int getTagsCount() {
     return tags_.size();
   }
-
   /**
    *
    *
@@ -857,7 +834,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
-
   /**
    *
    *
@@ -901,7 +877,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -920,14 +895,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -943,7 +916,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -966,7 +938,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -992,7 +963,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 11;
   private com.google.cloud.dataproc.v1.ReservationAffinity reservationAffinity_;
-
   /**
    *
    *
@@ -1010,7 +980,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasReservationAffinity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1030,7 +999,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.ReservationAffinity.getDefaultInstance()
         : reservationAffinity_;
   }
-
   /**
    *
    *
@@ -1052,7 +1020,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int NODE_GROUP_AFFINITY_FIELD_NUMBER = 13;
   private com.google.cloud.dataproc.v1.NodeGroupAffinity nodeGroupAffinity_;
-
   /**
    *
    *
@@ -1070,7 +1037,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasNodeGroupAffinity() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1090,7 +1056,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.NodeGroupAffinity.getDefaultInstance()
         : nodeGroupAffinity_;
   }
-
   /**
    *
    *
@@ -1111,7 +1076,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.dataproc.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
-
   /**
    *
    *
@@ -1131,7 +1095,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasShieldedInstanceConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1153,7 +1116,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.ShieldedInstanceConfig.getDefaultInstance()
         : shieldedInstanceConfig_;
   }
-
   /**
    *
    *
@@ -1177,7 +1139,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 15;
   private com.google.cloud.dataproc.v1.ConfidentialInstanceConfig confidentialInstanceConfig_;
-
   /**
    *
    *
@@ -1196,7 +1157,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasConfidentialInstanceConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1217,7 +1177,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.getDefaultInstance()
         : confidentialInstanceConfig_;
   }
-
   /**
    *
    *
@@ -1564,7 +1523,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2008,7 +1966,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object zoneUri_ = "";
-
     /**
      *
      *
@@ -2039,7 +1996,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2070,7 +2026,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2100,7 +2055,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2126,7 +2080,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2159,7 +2112,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object networkUri_ = "";
-
     /**
      *
      *
@@ -2193,7 +2145,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2227,7 +2178,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2260,7 +2210,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2289,7 +2238,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2325,7 +2273,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object subnetworkUri_ = "";
-
     /**
      *
      *
@@ -2355,7 +2302,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2385,7 +2331,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2414,7 +2359,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2439,7 +2383,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2471,7 +2414,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean internalIpOnly_;
-
     /**
      *
      *
@@ -2502,7 +2444,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasInternalIpOnly() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2533,7 +2474,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public boolean getInternalIpOnly() {
       return internalIpOnly_;
     }
-
     /**
      *
      *
@@ -2568,7 +2508,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2603,7 +2542,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int privateIpv6GoogleAccess_ = 0;
-
     /**
      *
      *
@@ -2621,7 +2559,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public int getPrivateIpv6GoogleAccessValue() {
       return privateIpv6GoogleAccess_;
     }
-
     /**
      *
      *
@@ -2642,7 +2579,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2666,7 +2602,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2691,7 +2626,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2713,7 +2647,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -2746,7 +2679,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2779,7 +2711,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2811,7 +2742,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2839,7 +2769,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2882,7 +2811,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -2912,7 +2840,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       serviceAccountScopes_.makeImmutable();
       return serviceAccountScopes_;
     }
-
     /**
      *
      *
@@ -2941,7 +2868,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public int getServiceAccountScopesCount() {
       return serviceAccountScopes_.size();
     }
-
     /**
      *
      *
@@ -2971,7 +2897,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getServiceAccountScopes(int index) {
       return serviceAccountScopes_.get(index);
     }
-
     /**
      *
      *
@@ -3001,7 +2926,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
       return serviceAccountScopes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3039,7 +2963,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3076,7 +2999,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3110,7 +3032,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3143,7 +3064,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3191,7 +3111,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -3208,7 +3127,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       tags_.makeImmutable();
       return tags_;
     }
-
     /**
      *
      *
@@ -3224,7 +3142,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public int getTagsCount() {
       return tags_.size();
     }
-
     /**
      *
      *
@@ -3241,7 +3158,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
-
     /**
      *
      *
@@ -3258,7 +3174,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3283,7 +3198,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3307,7 +3221,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3328,7 +3241,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3348,7 +3260,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3400,7 +3311,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -3420,14 +3330,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -3444,7 +3352,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -3468,7 +3375,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3498,7 +3404,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3518,14 +3423,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000100;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -3549,7 +3452,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -3574,7 +3476,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.ReservationAffinity.Builder,
             com.google.cloud.dataproc.v1.ReservationAffinityOrBuilder>
         reservationAffinityBuilder_;
-
     /**
      *
      *
@@ -3591,7 +3492,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasReservationAffinity() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3614,7 +3514,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return reservationAffinityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3639,7 +3538,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3662,7 +3560,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3694,7 +3591,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3716,7 +3612,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3734,7 +3629,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getReservationAffinityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3756,7 +3650,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             : reservationAffinity_;
       }
     }
-
     /**
      *
      *
@@ -3791,7 +3684,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder,
             com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder>
         nodeGroupAffinityBuilder_;
-
     /**
      *
      *
@@ -3808,7 +3700,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasNodeGroupAffinity() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3831,7 +3722,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return nodeGroupAffinityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3856,7 +3746,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3879,7 +3768,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3910,7 +3798,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3932,7 +3819,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3949,7 +3835,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getNodeGroupAffinityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3970,7 +3855,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             : nodeGroupAffinity_;
       }
     }
-
     /**
      *
      *
@@ -4005,7 +3889,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder,
             com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigBuilder_;
-
     /**
      *
      *
@@ -4024,7 +3907,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasShieldedInstanceConfig() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4049,7 +3931,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return shieldedInstanceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4077,7 +3958,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4102,7 +3982,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4136,7 +4015,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4160,7 +4038,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4180,7 +4057,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4204,7 +4080,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             : shieldedInstanceConfig_;
       }
     }
-
     /**
      *
      *
@@ -4241,7 +4116,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder,
             com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder>
         confidentialInstanceConfigBuilder_;
-
     /**
      *
      *
@@ -4259,7 +4133,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasConfidentialInstanceConfig() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4283,7 +4156,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         return confidentialInstanceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4310,7 +4182,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4334,7 +4205,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4367,7 +4237,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4390,7 +4259,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4409,7 +4277,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getConfidentialInstanceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4432,7 +4299,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             : confidentialInstanceConfig_;
       }
     }
-
     /**
      *
      *

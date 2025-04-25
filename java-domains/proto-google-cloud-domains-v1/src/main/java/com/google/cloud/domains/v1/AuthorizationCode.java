@@ -33,7 +33,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1.AuthorizationCode)
     AuthorizationCodeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuthorizationCode.newBuilder() to construct.
   private AuthorizationCode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -278,7 +275,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -462,7 +458,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -486,7 +481,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -533,7 +526,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -552,7 +544,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

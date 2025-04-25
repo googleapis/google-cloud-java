@@ -37,7 +37,6 @@ public interface FetchOptionsOrBuilder
    * <code>map&lt;string, string&gt; headers = 1;</code>
    */
   int getHeadersCount();
-
   /**
    *
    *
@@ -51,11 +50,9 @@ public interface FetchOptionsOrBuilder
    * <code>map&lt;string, string&gt; headers = 1;</code>
    */
   boolean containsHeaders(java.lang.String key);
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
-
   /**
    *
    *
@@ -69,7 +66,6 @@ public interface FetchOptionsOrBuilder
    * <code>map&lt;string, string&gt; headers = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
-
   /**
    *
    *
@@ -87,7 +83,6 @@ public interface FetchOptionsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -115,8 +115,7 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateTargetSites, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchCreateTargetSites, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -284,8 +283,7 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EnableAdvancedSiteSearch, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method EnableAdvancedSiteSearch, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -306,8 +304,7 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DisableAdvancedSiteSearch, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DisableAdvancedSiteSearch, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -348,8 +345,7 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchVerifyTargetSites, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchVerifyTargetSites, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -371,8 +367,7 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchDomainVerificationStatus, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method FetchDomainVerificationStatus, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchDomainVerificationStatusResponse.class.getName(),
                   Exception.class.getName())));

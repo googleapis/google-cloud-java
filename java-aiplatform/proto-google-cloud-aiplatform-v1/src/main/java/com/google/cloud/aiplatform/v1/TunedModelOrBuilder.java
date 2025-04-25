@@ -39,7 +39,6 @@ public interface TunedModelOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface TunedModelOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *

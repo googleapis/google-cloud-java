@@ -38,7 +38,6 @@ public interface UndeleteServiceRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *

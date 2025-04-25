@@ -33,7 +33,6 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.RejoinUserEventsResponse)
     RejoinUserEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RejoinUserEventsResponse.newBuilder() to construct.
   private RejoinUserEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
 
   public static final int REJOINED_USER_EVENTS_COUNT_FIELD_NUMBER = 1;
   private long rejoinedUserEventsCount_ = 0L;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -424,7 +421,6 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     private int bitField0_;
 
     private long rejoinedUserEventsCount_;
-
     /**
      *
      *
@@ -440,7 +436,6 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
     public long getRejoinedUserEventsCount() {
       return rejoinedUserEventsCount_;
     }
-
     /**
      *
      *
@@ -460,7 +455,6 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

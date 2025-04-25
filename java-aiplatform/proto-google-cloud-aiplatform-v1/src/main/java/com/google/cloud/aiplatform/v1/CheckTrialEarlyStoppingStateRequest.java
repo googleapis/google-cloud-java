@@ -35,7 +35,6 @@ public final class CheckTrialEarlyStoppingStateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest)
     CheckTrialEarlyStoppingStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CheckTrialEarlyStoppingStateRequest.newBuilder() to construct.
   private CheckTrialEarlyStoppingStateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CheckTrialEarlyStoppingStateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trialName_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CheckTrialEarlyStoppingStateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +286,6 @@ public final class CheckTrialEarlyStoppingStateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +478,6 @@ public final class CheckTrialEarlyStoppingStateRequest
     private int bitField0_;
 
     private java.lang.Object trialName_ = "";
-
     /**
      *
      *
@@ -509,7 +504,6 @@ public final class CheckTrialEarlyStoppingStateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -536,7 +530,6 @@ public final class CheckTrialEarlyStoppingStateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -562,7 +555,6 @@ public final class CheckTrialEarlyStoppingStateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class CheckTrialEarlyStoppingStateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

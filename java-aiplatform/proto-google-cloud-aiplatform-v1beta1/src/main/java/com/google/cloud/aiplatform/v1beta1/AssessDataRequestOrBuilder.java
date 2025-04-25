@@ -38,7 +38,6 @@ public interface AssessDataRequestOrBuilder
    * @return Whether the tuningValidationAssessmentConfig field is set.
    */
   boolean hasTuningValidationAssessmentConfig();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface AssessDataRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataRequest.TuningValidationAssessmentConfig
       getTuningValidationAssessmentConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface AssessDataRequestOrBuilder
    * @return Whether the tuningResourceUsageAssessmentConfig field is set.
    */
   boolean hasTuningResourceUsageAssessmentConfig();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface AssessDataRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataRequest.TuningResourceUsageAssessmentConfig
       getTuningResourceUsageAssessmentConfig();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface AssessDataRequestOrBuilder
    * @return Whether the batchPredictionValidationAssessmentConfig field is set.
    */
   boolean hasBatchPredictionValidationAssessmentConfig();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface AssessDataRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig
       getBatchPredictionValidationAssessmentConfig();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface AssessDataRequestOrBuilder
    * @return Whether the batchPredictionResourceUsageAssessmentConfig field is set.
    */
   boolean hasBatchPredictionResourceUsageAssessmentConfig();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface AssessDataRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig
       getBatchPredictionResourceUsageAssessmentConfig();
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public interface AssessDataRequestOrBuilder
    * @return Whether the geminiTemplateConfig field is set.
    */
   boolean hasGeminiTemplateConfig();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface AssessDataRequestOrBuilder
    * @return The geminiTemplateConfig.
    */
   com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig getGeminiTemplateConfig();
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public interface AssessDataRequestOrBuilder
    * @return Whether the requestColumnName field is set.
    */
   boolean hasRequestColumnName();
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public interface AssessDataRequestOrBuilder
    * @return The requestColumnName.
    */
   java.lang.String getRequestColumnName();
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public interface AssessDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

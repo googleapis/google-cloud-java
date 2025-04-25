@@ -41,7 +41,6 @@ public interface UpdateCollectorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateCollectorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateCollectorRequestOrBuilder
    * @return Whether the collector field is set.
    */
   boolean hasCollector();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateCollectorRequestOrBuilder
    * @return The collector.
    */
   com.google.cloud.rapidmigrationassessment.v1.Collector getCollector();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateCollectorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

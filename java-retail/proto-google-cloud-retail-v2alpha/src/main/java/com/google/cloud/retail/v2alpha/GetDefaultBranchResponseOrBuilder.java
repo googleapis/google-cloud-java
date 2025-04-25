@@ -36,7 +36,6 @@ public interface GetDefaultBranchResponseOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetDefaultBranchResponseOrBuilder
    * @return Whether the setTime field is set.
    */
   boolean hasSetTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GetDefaultBranchResponseOrBuilder
    * @return The setTime.
    */
   com.google.protobuf.Timestamp getSetTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface GetDefaultBranchResponseOrBuilder
    * @return The note.
    */
   java.lang.String getNote();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface ReportRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface ReportRequestOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface ReportRequestOrBuilder
    * <code>repeated .google.rpc.context.AttributeContext operations = 3;</code>
    */
   java.util.List<com.google.rpc.context.AttributeContext> getOperationsList();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface ReportRequestOrBuilder
    * <code>repeated .google.rpc.context.AttributeContext operations = 3;</code>
    */
   com.google.rpc.context.AttributeContext getOperations(int index);
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ReportRequestOrBuilder
    * <code>repeated .google.rpc.context.AttributeContext operations = 3;</code>
    */
   int getOperationsCount();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ReportRequestOrBuilder
    */
   java.util.List<? extends com.google.rpc.context.AttributeContextOrBuilder>
       getOperationsOrBuilderList();
-
   /**
    *
    *

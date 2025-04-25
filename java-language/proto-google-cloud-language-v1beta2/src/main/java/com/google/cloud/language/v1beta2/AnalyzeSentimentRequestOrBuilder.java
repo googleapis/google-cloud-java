@@ -38,7 +38,6 @@ public interface AnalyzeSentimentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AnalyzeSentimentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v1beta2.Document getDocument();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface AnalyzeSentimentRequestOrBuilder
    * @return The enum numeric value on the wire for encodingType.
    */
   int getEncodingTypeValue();
-
   /**
    *
    *

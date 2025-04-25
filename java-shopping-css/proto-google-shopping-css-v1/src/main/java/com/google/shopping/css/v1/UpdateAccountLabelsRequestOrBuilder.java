@@ -39,7 +39,6 @@ public interface UpdateAccountLabelsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateAccountLabelsRequestOrBuilder
    * @return A list containing the labelIds.
    */
   java.util.List<java.lang.Long> getLabelIdsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateAccountLabelsRequestOrBuilder
    * @return The count of labelIds.
    */
   int getLabelIdsCount();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface UpdateAccountLabelsRequestOrBuilder
    * @return Whether the parent field is set.
    */
   boolean hasParent();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface UpdateAccountLabelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

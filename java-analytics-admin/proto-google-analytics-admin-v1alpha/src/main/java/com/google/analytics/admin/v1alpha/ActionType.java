@@ -82,7 +82,6 @@ public enum ActionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ACTION_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum ActionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATED = 1;</code>
    */
   public static final int CREATED_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum ActionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATED = 2;</code>
    */
   public static final int UPDATED_VALUE = 2;
-
   /**
    *
    *

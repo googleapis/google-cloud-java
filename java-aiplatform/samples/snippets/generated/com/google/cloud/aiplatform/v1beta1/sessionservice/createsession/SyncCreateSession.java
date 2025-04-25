@@ -18,7 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_SessionService_CreateSession_sync]
 import com.google.cloud.aiplatform.v1beta1.CreateSessionRequest;
-import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.aiplatform.v1beta1.Session;
 import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
@@ -37,9 +37,7 @@ public class SyncCreateSession {
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       CreateSessionRequest request =
           CreateSessionRequest.newBuilder()
-              .setParent(
-                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSession(Session.newBuilder().build())
               .build();
       Session response = sessionServiceClient.createSessionAsync(request).get();

@@ -36,7 +36,6 @@ public interface CloudRunRevisionInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CloudRunRevisionInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface CloudRunRevisionInfoOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface CloudRunRevisionInfoOrBuilder
    * @return The serviceUri.
    */
   java.lang.String getServiceUri();
-
   /**
    *
    *

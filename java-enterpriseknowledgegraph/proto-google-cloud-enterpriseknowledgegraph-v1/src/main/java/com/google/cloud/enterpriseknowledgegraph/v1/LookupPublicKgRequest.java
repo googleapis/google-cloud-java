@@ -34,7 +34,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest)
     LookupPublicKgRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LookupPublicKgRequest.newBuilder() to construct.
   private LookupPublicKgRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ids_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getIdsList() {
     return ids_;
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public int getIdsCount() {
     return ids_.size();
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public java.lang.String getIds(int index) {
     return ids_.get(index);
   }
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languages_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getLanguagesList() {
     return languages_;
   }
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public int getLanguagesCount() {
     return languages_.size();
   }
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public java.lang.String getLanguages(int index) {
     return languages_.get(index);
   }
-
   /**
    *
    *
@@ -461,7 +450,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +686,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       ids_.makeImmutable();
       return ids_;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public int getIdsCount() {
       return ids_.size();
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getIds(int index) {
       return ids_.get(index);
     }
-
     /**
      *
      *
@@ -900,7 +879,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getIdsBytes(int index) {
       return ids_.getByteString(index);
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +943,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1037,7 +1010,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       languages_.makeImmutable();
       return languages_;
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public int getLanguagesCount() {
       return languages_.size();
     }
-
     /**
      *
      *
@@ -1070,7 +1041,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getLanguages(int index) {
       return languages_.get(index);
     }
-
     /**
      *
      *
@@ -1087,7 +1057,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getLanguagesBytes(int index) {
       return languages_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1112,7 +1081,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1104,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1124,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1143,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

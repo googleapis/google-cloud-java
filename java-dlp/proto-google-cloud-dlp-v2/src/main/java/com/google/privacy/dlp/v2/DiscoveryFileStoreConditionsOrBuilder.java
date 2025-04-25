@@ -38,7 +38,6 @@ public interface DiscoveryFileStoreConditionsOrBuilder
    * @return Whether the createdAfter field is set.
    */
   boolean hasCreatedAfter();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DiscoveryFileStoreConditionsOrBuilder
    * @return The createdAfter.
    */
   com.google.protobuf.Timestamp getCreatedAfter();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface DiscoveryFileStoreConditionsOrBuilder
    * @return Whether the minAge field is set.
    */
   boolean hasMinAge();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface DiscoveryFileStoreConditionsOrBuilder
    * @return The minAge.
    */
   com.google.protobuf.Duration getMinAge();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface DiscoveryFileStoreConditionsOrBuilder
    * @return Whether the cloudStorageConditions field is set.
    */
   boolean hasCloudStorageConditions();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface DiscoveryFileStoreConditionsOrBuilder
    * @return The cloudStorageConditions.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions getCloudStorageConditions();
-
   /**
    *
    *

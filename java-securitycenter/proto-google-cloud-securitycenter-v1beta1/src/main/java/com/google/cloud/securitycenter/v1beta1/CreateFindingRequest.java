@@ -33,7 +33,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.CreateFindingRequest)
     CreateFindingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateFindingRequest.newBuilder() to construct.
   private CreateFindingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object findingId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
 
   public static final int FINDING_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v1beta1.Finding finding_;
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
   public boolean hasFinding() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.securitycenter.v1beta1.Finding.getDefaultInstance()
         : finding_;
   }
-
   /**
    *
    *
@@ -427,7 +419,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object findingId_ = "";
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.securitycenter.v1beta1.Finding.Builder,
             com.google.cloud.securitycenter.v1beta1.FindingOrBuilder>
         findingBuilder_;
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
     public boolean hasFinding() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
         return findingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +980,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1010,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1032,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1049,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getFindingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
             : finding_;
       }
     }
-
     /**
      *
      *

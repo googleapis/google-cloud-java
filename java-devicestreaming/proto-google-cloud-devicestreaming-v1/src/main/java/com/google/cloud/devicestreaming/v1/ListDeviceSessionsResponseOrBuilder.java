@@ -34,7 +34,6 @@ public interface ListDeviceSessionsResponseOrBuilder
    * <code>repeated .google.cloud.devicestreaming.v1.DeviceSession device_sessions = 1;</code>
    */
   java.util.List<com.google.cloud.devicestreaming.v1.DeviceSession> getDeviceSessionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDeviceSessionsResponseOrBuilder
    * <code>repeated .google.cloud.devicestreaming.v1.DeviceSession device_sessions = 1;</code>
    */
   com.google.cloud.devicestreaming.v1.DeviceSession getDeviceSessions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDeviceSessionsResponseOrBuilder
    * <code>repeated .google.cloud.devicestreaming.v1.DeviceSession device_sessions = 1;</code>
    */
   int getDeviceSessionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDeviceSessionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.devicestreaming.v1.DeviceSessionOrBuilder>
       getDeviceSessionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDeviceSessionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

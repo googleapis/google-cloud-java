@@ -38,7 +38,6 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * @return Whether the cacheInvalidationRuleResource field is set.
    */
   boolean hasCacheInvalidationRuleResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * @return The cacheInvalidationRuleResource.
    */
   com.google.cloud.compute.v1.CacheInvalidationRule getCacheInvalidationRuleResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *

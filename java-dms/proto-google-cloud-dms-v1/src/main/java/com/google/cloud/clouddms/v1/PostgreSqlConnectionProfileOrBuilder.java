@@ -36,7 +36,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return Whether the ssl field is set.
    */
   boolean hasSsl();
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The ssl.
    */
   com.google.cloud.clouddms.v1.SslConfig getSsl();
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The cloudSqlId.
    */
   java.lang.String getCloudSqlId();
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The enum numeric value on the wire for networkArchitecture.
    */
   int getNetworkArchitectureValue();
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return Whether the staticIpConnectivity field is set.
    */
   boolean hasStaticIpConnectivity();
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The staticIpConnectivity.
    */
   com.google.cloud.clouddms.v1.StaticIpConnectivity getStaticIpConnectivity();
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return Whether the privateServiceConnectConnectivity field is set.
    */
   boolean hasPrivateServiceConnectConnectivity();
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public interface PostgreSqlConnectionProfileOrBuilder
    */
   com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity
       getPrivateServiceConnectConnectivity();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface GetGrpcRouteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

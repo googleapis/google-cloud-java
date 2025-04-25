@@ -33,7 +33,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.CreateBuildRequest)
     CreateBuildRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBuildRequest.newBuilder() to construct.
   private CreateBuildRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int BUILD_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.Build build_;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasBuild() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloudbuild.v1.Build getBuild() {
     return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
   }
-
   /**
    *
    *
@@ -408,7 +400,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -636,7 +627,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloudbuild.v1.Build.Builder,
             com.google.cloudbuild.v1.BuildOrBuilder>
         buildBuilder_;
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasBuild() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         return buildBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -931,7 +909,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +959,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +980,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +996,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getBuildFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1041,7 +1014,6 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
       }
     }
-
     /**
      *
      *

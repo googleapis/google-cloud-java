@@ -36,7 +36,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.TargetProject> getTargetProjectsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.TargetProject getTargetProjects(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * </code>
    */
   int getTargetProjectsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListTargetProjectsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.TargetProjectOrBuilder>
       getTargetProjectsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface ListTargetProjectsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

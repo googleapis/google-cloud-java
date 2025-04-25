@@ -142,7 +142,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FEATURE_UNSPECIFIED = 0;</code>
    */
   public static final int FEATURE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -153,7 +152,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LABEL_DETECTION = 1;</code>
    */
   public static final int LABEL_DETECTION_VALUE = 1;
-
   /**
    *
    *
@@ -164,7 +162,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHOT_CHANGE_DETECTION = 2;</code>
    */
   public static final int SHOT_CHANGE_DETECTION_VALUE = 2;
-
   /**
    *
    *
@@ -175,7 +172,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXPLICIT_CONTENT_DETECTION = 3;</code>
    */
   public static final int EXPLICIT_CONTENT_DETECTION_VALUE = 3;
-
   /**
    *
    *
@@ -186,7 +182,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FACE_DETECTION = 4;</code>
    */
   public static final int FACE_DETECTION_VALUE = 4;
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPEECH_TRANSCRIPTION = 6;</code>
    */
   public static final int SPEECH_TRANSCRIPTION_VALUE = 6;
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_DETECTION = 7;</code>
    */
   public static final int TEXT_DETECTION_VALUE = 7;
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OBJECT_TRACKING = 9;</code>
    */
   public static final int OBJECT_TRACKING_VALUE = 9;
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOGO_RECOGNITION = 12;</code>
    */
   public static final int LOGO_RECOGNITION_VALUE = 12;
-
   /**
    *
    *

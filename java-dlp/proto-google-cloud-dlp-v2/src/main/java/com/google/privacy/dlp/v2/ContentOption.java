@@ -72,7 +72,6 @@ public enum ContentOption implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_UNSPECIFIED = 0;</code>
    */
   public static final int CONTENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum ContentOption implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_TEXT = 1;</code>
    */
   public static final int CONTENT_TEXT_VALUE = 1;
-
   /**
    *
    *

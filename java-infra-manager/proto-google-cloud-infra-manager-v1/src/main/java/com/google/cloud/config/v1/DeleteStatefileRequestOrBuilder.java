@@ -39,7 +39,6 @@ public interface DeleteStatefileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

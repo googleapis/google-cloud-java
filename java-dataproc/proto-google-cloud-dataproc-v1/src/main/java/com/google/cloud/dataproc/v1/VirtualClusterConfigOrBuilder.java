@@ -46,7 +46,6 @@ public interface VirtualClusterConfigOrBuilder
    * @return The stagingBucket.
    */
   java.lang.String getStagingBucket();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface VirtualClusterConfigOrBuilder
    * @return Whether the kubernetesClusterConfig field is set.
    */
   boolean hasKubernetesClusterConfig();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface VirtualClusterConfigOrBuilder
    * @return The kubernetesClusterConfig.
    */
   com.google.cloud.dataproc.v1.KubernetesClusterConfig getKubernetesClusterConfig();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface VirtualClusterConfigOrBuilder
    * @return Whether the auxiliaryServicesConfig field is set.
    */
   boolean hasAuxiliaryServicesConfig();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface VirtualClusterConfigOrBuilder
    * @return The auxiliaryServicesConfig.
    */
   com.google.cloud.dataproc.v1.AuxiliaryServicesConfig getAuxiliaryServicesConfig();
-
   /**
    *
    *

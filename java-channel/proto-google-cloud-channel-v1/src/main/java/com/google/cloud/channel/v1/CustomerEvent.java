@@ -33,7 +33,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CustomerEvent)
     CustomerEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomerEvent.newBuilder() to construct.
   private CustomerEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIMARY_DOMAIN_CHANGED = 1;</code>
      */
     public static final int PRIMARY_DOMAIN_CHANGED_VALUE = 1;
-
     /**
      *
      *
@@ -228,7 +225,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customer_ = "";
-
   /**
    *
    *
@@ -253,7 +249,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -281,7 +276,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
   private int eventType_ = 0;
-
   /**
    *
    *
@@ -297,7 +291,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
   public int getEventTypeValue() {
     return eventType_;
   }
-
   /**
    *
    *
@@ -484,7 +477,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +673,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object customer_ = "";
-
     /**
      *
      *
@@ -705,7 +696,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +719,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +741,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +759,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +784,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int eventType_ = 0;
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     public int getEventTypeValue() {
       return eventType_;
     }
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.channel.v1.CustomerEvent.Type.forNumber(eventType_);
       return result == null ? com.google.cloud.channel.v1.CustomerEvent.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

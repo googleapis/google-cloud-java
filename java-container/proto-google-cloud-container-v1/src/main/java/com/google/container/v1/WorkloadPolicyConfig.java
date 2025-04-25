@@ -34,7 +34,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1.WorkloadPolicyConfig)
     WorkloadPolicyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkloadPolicyConfig.newBuilder() to construct.
   private WorkloadPolicyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ALLOW_NET_ADMIN_FIELD_NUMBER = 1;
   private boolean allowNetAdmin_ = false;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
   public boolean hasAllowNetAdmin() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -263,7 +260,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -449,7 +445,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean allowNetAdmin_;
-
     /**
      *
      *
@@ -465,7 +460,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
     public boolean hasAllowNetAdmin() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -481,7 +475,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
     public boolean getAllowNetAdmin() {
       return allowNetAdmin_;
     }
-
     /**
      *
      *
@@ -501,7 +494,6 @@ public final class WorkloadPolicyConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

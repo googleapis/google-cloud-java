@@ -33,7 +33,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.PipelineCondition)
     PipelineConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PipelineCondition.newBuilder() to construct.
   private PipelineCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int PIPELINE_READY_CONDITION_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.PipelineReadyCondition pipelineReadyCondition_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
   public boolean hasPipelineReadyCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.deploy.v1.PipelineReadyCondition.getDefaultInstance()
         : pipelineReadyCondition_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
 
   public static final int TARGETS_PRESENT_CONDITION_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.TargetsPresentCondition targetsPresentCondition_;
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
   public boolean hasTargetsPresentCondition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.deploy.v1.TargetsPresentCondition.getDefaultInstance()
         : targetsPresentCondition_;
   }
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
 
   public static final int TARGETS_TYPE_CONDITION_FIELD_NUMBER = 4;
   private com.google.cloud.deploy.v1.TargetsTypeCondition targetsTypeCondition_;
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
   public boolean hasTargetsTypeCondition() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.deploy.v1.TargetsTypeCondition.getDefaultInstance()
         : targetsTypeCondition_;
   }
-
   /**
    *
    *
@@ -423,7 +413,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +665,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             com.google.cloud.deploy.v1.PipelineReadyCondition.Builder,
             com.google.cloud.deploy.v1.PipelineReadyConditionOrBuilder>
         pipelineReadyConditionBuilder_;
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     public boolean hasPipelineReadyCondition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         return pipelineReadyConditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPipelineReadyConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             : pipelineReadyCondition_;
       }
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             com.google.cloud.deploy.v1.TargetsPresentCondition.Builder,
             com.google.cloud.deploy.v1.TargetsPresentConditionOrBuilder>
         targetsPresentConditionBuilder_;
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     public boolean hasTargetsPresentCondition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         return targetsPresentConditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -936,7 +913,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +962,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +996,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTargetsPresentConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             : targetsPresentCondition_;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             com.google.cloud.deploy.v1.TargetsTypeCondition.Builder,
             com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder>
         targetsTypeConditionBuilder_;
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     public boolean hasTargetsTypeCondition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1114,7 +1083,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         return targetsTypeConditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1106,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1127,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1157,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1177,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1193,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTargetsTypeConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             : targetsTypeCondition_;
       }
     }
-
     /**
      *
      *

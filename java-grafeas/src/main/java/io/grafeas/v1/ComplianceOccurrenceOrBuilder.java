@@ -27,17 +27,13 @@ public interface ComplianceOccurrenceOrBuilder
 
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   java.util.List<io.grafeas.v1.NonCompliantFile> getNonCompliantFilesList();
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   io.grafeas.v1.NonCompliantFile getNonCompliantFiles(int index);
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   int getNonCompliantFilesCount();
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   java.util.List<? extends io.grafeas.v1.NonCompliantFileOrBuilder>
       getNonCompliantFilesOrBuilderList();
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   io.grafeas.v1.NonCompliantFileOrBuilder getNonCompliantFilesOrBuilder(int index);
 
@@ -47,7 +43,6 @@ public interface ComplianceOccurrenceOrBuilder
    * @return The nonComplianceReason.
    */
   java.lang.String getNonComplianceReason();
-
   /**
    * <code>string non_compliance_reason = 3;</code>
    *
@@ -67,7 +62,6 @@ public interface ComplianceOccurrenceOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -80,7 +74,6 @@ public interface ComplianceOccurrenceOrBuilder
    * @return The version.
    */
   io.grafeas.v1.ComplianceVersion getVersion();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.HttpOperation)
     HttpOperationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpOperation.newBuilder() to construct.
   private HttpOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -177,7 +176,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int METHOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -188,7 +186,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>GET = 1;</code>
      */
     public static final int GET_VALUE = 1;
-
     /**
      *
      *
@@ -199,7 +196,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>PUT = 2;</code>
      */
     public static final int PUT_VALUE = 2;
-
     /**
      *
      *
@@ -210,7 +206,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>POST = 3;</code>
      */
     public static final int POST_VALUE = 3;
-
     /**
      *
      *
@@ -221,7 +216,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETE = 4;</code>
      */
     public static final int DELETE_VALUE = 4;
-
     /**
      *
      *
@@ -232,7 +226,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>OPTIONS = 5;</code>
      */
     public static final int OPTIONS_VALUE = 5;
-
     /**
      *
      *
@@ -243,7 +236,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>HEAD = 6;</code>
      */
     public static final int HEAD_VALUE = 6;
-
     /**
      *
      *
@@ -254,7 +246,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>PATCH = 7;</code>
      */
     public static final int PATCH_VALUE = 7;
-
     /**
      *
      *
@@ -364,7 +355,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PATH_FIELD_NUMBER = 1;
   private com.google.cloud.apihub.v1.Path path_;
-
   /**
    *
    *
@@ -381,7 +371,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPath() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -398,7 +387,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apihub.v1.Path getPath() {
     return path_ == null ? com.google.cloud.apihub.v1.Path.getDefaultInstance() : path_;
   }
-
   /**
    *
    *
@@ -416,7 +404,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METHOD_FIELD_NUMBER = 2;
   private int method_ = 0;
-
   /**
    *
    *
@@ -434,7 +421,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
   public int getMethodValue() {
     return method_;
   }
-
   /**
    *
    *
@@ -627,7 +613,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -843,7 +828,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Path.Builder,
             com.google.cloud.apihub.v1.PathOrBuilder>
         pathBuilder_;
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPath() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -879,7 +862,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
         return pathBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -903,7 +885,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +905,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +933,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +953,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPathFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
         return path_ == null ? com.google.cloud.apihub.v1.Path.getDefaultInstance() : path_;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int method_ = 0;
-
     /**
      *
      *
@@ -1055,7 +1030,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
     public int getMethodValue() {
       return method_;
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apihub.v1.HttpOperation.Method.forNumber(method_);
       return result == null ? com.google.cloud.apihub.v1.HttpOperation.Method.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1120,7 +1092,6 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

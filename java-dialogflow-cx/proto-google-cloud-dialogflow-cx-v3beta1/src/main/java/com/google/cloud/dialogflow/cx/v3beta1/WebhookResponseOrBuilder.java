@@ -39,7 +39,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the fulfillmentResponse field is set.
    */
   boolean hasFulfillmentResponse();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface WebhookResponseOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.WebhookResponse.FulfillmentResponse
       getFulfillmentResponse();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the pageInfo field is set.
    */
   boolean hasPageInfo();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WebhookResponseOrBuilder
    * @return The pageInfo.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PageInfo getPageInfo();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the sessionInfo field is set.
    */
   boolean hasSessionInfo();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface WebhookResponseOrBuilder
    * @return The sessionInfo.
    */
   com.google.cloud.dialogflow.cx.v3beta1.SessionInfo getSessionInfo();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface WebhookResponseOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the targetPage field is set.
    */
   boolean hasTargetPage();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface WebhookResponseOrBuilder
    * @return The targetPage.
    */
   java.lang.String getTargetPage();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the targetFlow field is set.
    */
   boolean hasTargetFlow();
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface WebhookResponseOrBuilder
    * @return The targetFlow.
    */
   java.lang.String getTargetFlow();
-
   /**
    *
    *

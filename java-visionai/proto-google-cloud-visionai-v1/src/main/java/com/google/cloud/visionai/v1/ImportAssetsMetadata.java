@@ -33,7 +33,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ImportAssetsMetadata)
     ImportAssetsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportAssetsMetadata.newBuilder() to construct.
   private ImportAssetsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.OperationMetadata metadata_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.visionai.v1.OperationMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.BatchOperationStatus status_;
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.visionai.v1.BatchOperationStatus.getDefaultInstance()
         : status_;
   }
-
   /**
    *
    *
@@ -350,7 +343,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +565,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
             com.google.cloud.visionai.v1.OperationMetadata.Builder,
             com.google.cloud.visionai.v1.OperationMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -588,7 +579,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -609,7 +599,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +641,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +668,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +687,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +701,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -735,7 +719,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -768,7 +751,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
             com.google.cloud.visionai.v1.BatchOperationStatus.Builder,
             com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -784,7 +766,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -806,7 +787,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -830,7 +810,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +831,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +859,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +879,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +894,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -938,7 +913,6 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
             : status_;
       }
     }
-
     /**
      *
      *

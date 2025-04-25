@@ -33,7 +33,6 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.Master)
     MasterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Master.newBuilder() to construct.
   private Master(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -210,7 +209,6 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

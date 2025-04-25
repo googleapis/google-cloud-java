@@ -36,7 +36,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return The jobName.
    */
   java.lang.String getJobName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return Whether the gcsPath field is set.
    */
   boolean hasGcsPath();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * <code>map&lt;string, string&gt; parameters = 3;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -142,11 +137,9 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * <code>map&lt;string, string&gt; parameters = 3;</code>
    */
   boolean containsParameters(java.lang.String key);
-
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * <code>map&lt;string, string&gt; parameters = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -196,7 +187,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return The environment.
    */
   com.google.dataflow.v1beta3.RuntimeEnvironment getEnvironment();
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public interface CreateJobFromTemplateRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

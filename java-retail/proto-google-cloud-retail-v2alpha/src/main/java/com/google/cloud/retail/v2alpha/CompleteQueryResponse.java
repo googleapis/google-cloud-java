@@ -33,7 +33,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CompleteQueryResponse)
     CompleteQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompleteQueryResponse.newBuilder() to construct.
   private CompleteQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return The suggestion.
      */
     java.lang.String getSuggestion();
-
     /**
      *
      *
@@ -115,10 +113,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -127,17 +125,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 2;</code>
      */
     int getAttributesCount();
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -146,22 +143,20 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 2;</code>
      */
     boolean containsAttributes(java.lang.String key);
-
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute>
         getAttributes();
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -171,17 +166,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute>
         getAttributesMap();
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -194,17 +188,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         java.lang.String key,
         /* nullable */
         com.google.cloud.retail.v2alpha.CustomAttribute defaultValue);
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -228,7 +221,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
      */
     java.util.List<com.google.cloud.retail.v2alpha.SearchResponse.Facet> getFacetsList();
-
     /**
      *
      *
@@ -243,7 +235,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
      */
     com.google.cloud.retail.v2alpha.SearchResponse.Facet getFacets(int index);
-
     /**
      *
      *
@@ -258,7 +249,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
      */
     int getFacetsCount();
-
     /**
      *
      *
@@ -274,7 +264,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     java.util.List<? extends com.google.cloud.retail.v2alpha.SearchResponse.FacetOrBuilder>
         getFacetsOrBuilderList();
-
     /**
      *
      *
@@ -307,7 +296,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     int getTotalProductCount();
   }
-
   /**
    *
    *
@@ -322,7 +310,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CompleteQueryResponse.CompletionResult)
       CompletionResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CompletionResult.newBuilder() to construct.
     private CompletionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -370,7 +357,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object suggestion_ = "";
-
     /**
      *
      *
@@ -394,7 +380,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -454,17 +439,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public int getAttributesCount() {
       return internalGetAttributes().getMap().size();
     }
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -479,7 +463,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return internalGetAttributes().getMap().containsKey(key);
     }
-
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -487,17 +470,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getAttributes() {
       return getAttributesMap();
     }
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -510,17 +492,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getAttributesMap() {
       return internalGetAttributes().getMap();
     }
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -540,17 +521,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For `user-data`, the attributes are additional custom attributes
+     * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For `cloud-retail`, the attributes are product attributes generated
+     * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -576,7 +556,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2alpha.SearchResponse.Facet> facets_;
-
     /**
      *
      *
@@ -594,7 +573,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public java.util.List<com.google.cloud.retail.v2alpha.SearchResponse.Facet> getFacetsList() {
       return facets_;
     }
-
     /**
      *
      *
@@ -613,7 +591,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getFacetsOrBuilderList() {
       return facets_;
     }
-
     /**
      *
      *
@@ -631,7 +608,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public int getFacetsCount() {
       return facets_.size();
     }
-
     /**
      *
      *
@@ -649,7 +625,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2alpha.SearchResponse.Facet getFacets(int index) {
       return facets_.get(index);
     }
-
     /**
      *
      *
@@ -671,7 +646,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     public static final int TOTAL_PRODUCT_COUNT_FIELD_NUMBER = 4;
     private int totalProductCount_ = 0;
-
     /**
      *
      *
@@ -894,7 +868,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1210,7 +1183,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object suggestion_ = "";
-
       /**
        *
        *
@@ -1233,7 +1205,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1256,7 +1227,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1278,7 +1248,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1296,7 +1265,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1340,8 +1308,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             defaultEntry() {
           return AttributesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final AttributesConverter attributesConverter = new AttributesConverter();
 
@@ -1381,17 +1348,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public int getAttributesCount() {
         return internalGetAttributes().ensureBuilderMap().size();
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1407,7 +1373,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return internalGetAttributes().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getAttributesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -1415,17 +1380,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           getAttributes() {
         return getAttributesMap();
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1439,17 +1403,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           getAttributesMap() {
         return internalGetAttributes().getImmutableMap();
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1470,17 +1433,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             map = internalGetMutableAttributes().ensureBuilderMap();
         return map.containsKey(key) ? attributesConverter.build(map.get(key)) : defaultValue;
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1508,17 +1470,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         internalGetMutableAttributes().clear();
         return this;
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1534,7 +1495,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         internalGetMutableAttributes().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute>
@@ -1542,17 +1502,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000002;
         return internalGetMutableAttributes().ensureMessageMap();
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1573,17 +1532,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1604,17 +1562,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /**
        *
        *
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For `user-data`, the attributes are additional custom attributes
+       * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For `cloud-retail`, the attributes are product attributes generated
+       * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1677,7 +1634,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return facetsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1698,7 +1654,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return facetsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1719,7 +1674,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return facetsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1747,7 +1701,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1772,7 +1725,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1799,7 +1751,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1827,7 +1778,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1852,7 +1802,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1877,7 +1826,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1903,7 +1851,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1927,7 +1874,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1951,7 +1897,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1969,7 +1914,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           int index) {
         return getFacetsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1991,7 +1935,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return facetsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2013,7 +1956,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return java.util.Collections.unmodifiableList(facets_);
         }
       }
-
       /**
        *
        *
@@ -2031,7 +1973,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return getFacetsFieldBuilder()
             .addBuilder(com.google.cloud.retail.v2alpha.SearchResponse.Facet.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2051,7 +1992,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             .addBuilder(
                 index, com.google.cloud.retail.v2alpha.SearchResponse.Facet.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2088,7 +2028,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       private int totalProductCount_;
-
       /**
        *
        *
@@ -2108,7 +2047,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public int getTotalProductCount() {
         return totalProductCount_;
       }
-
       /**
        *
        *
@@ -2132,7 +2070,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2241,7 +2178,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return The recentSearch.
      */
     java.lang.String getRecentSearch();
-
     /**
      *
      *
@@ -2255,7 +2191,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getRecentSearchBytes();
   }
-
   /**
    *
    *
@@ -2271,7 +2206,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult)
       RecentSearchResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RecentSearchResult.newBuilder() to construct.
     private RecentSearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2307,7 +2241,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object recentSearch_ = "";
-
     /**
      *
      *
@@ -2331,7 +2264,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -2524,7 +2456,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2723,7 +2654,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object recentSearch_ = "";
-
       /**
        *
        *
@@ -2746,7 +2676,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2769,7 +2698,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2791,7 +2719,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2809,7 +2736,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2907,52 +2833,25 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return A list containing the suggestions.
      */
     java.util.List<java.lang.String> getSuggestionsList();
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return The count of suggestions.
      */
     int getSuggestionsCount();
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the element to return.
      * @return The suggestions at the given index.
      */
     java.lang.String getSuggestions(int index);
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the value to return.
@@ -2960,12 +2859,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getSuggestionsBytes(int index);
   }
-
   /**
    *
    *
    * <pre>
    * Resource that represents attribute results.
+   * The list of suggestions for the attribute.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult}
@@ -2975,7 +2874,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult)
       AttributeResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AttributeResult.newBuilder() to construct.
     private AttributeResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3011,14 +2909,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList suggestions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return A list containing the suggestions.
@@ -3026,14 +2917,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ProtocolStringList getSuggestionsList() {
       return suggestions_;
     }
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return The count of suggestions.
@@ -3041,14 +2925,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public int getSuggestionsCount() {
       return suggestions_.size();
     }
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the element to return.
@@ -3057,14 +2934,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getSuggestions(int index) {
       return suggestions_.get(index);
     }
-
     /**
-     *
-     *
-     * <pre>
-     * The list of suggestions for the attribute.
-     * </pre>
-     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the value to return.
@@ -3243,12 +3113,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
      * <pre>
      * Resource that represents attribute results.
+     * The list of suggestions for the attribute.
      * </pre>
      *
      * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult}
@@ -3456,14 +3326,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return A list containing the suggestions.
@@ -3472,14 +3335,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         suggestions_.makeImmutable();
         return suggestions_;
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return The count of suggestions.
@@ -3487,14 +3343,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public int getSuggestionsCount() {
         return suggestions_.size();
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index of the element to return.
@@ -3503,14 +3352,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public java.lang.String getSuggestions(int index) {
         return suggestions_.get(index);
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index of the value to return.
@@ -3519,14 +3361,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.ByteString getSuggestionsBytes(int index) {
         return suggestions_.getByteString(index);
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index to set the value at.
@@ -3543,14 +3378,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param value The suggestions to add.
@@ -3566,14 +3394,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param values The suggestions to add.
@@ -3586,14 +3407,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return This builder for chaining.
@@ -3605,14 +3419,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
-       *
-       *
-       * <pre>
-       * The list of suggestions for the attribute.
-       * </pre>
-       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param value The bytes of the suggestions to add.
@@ -3703,7 +3510,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.CompletionResult>
       completionResults_;
-
   /**
    *
    *
@@ -3721,7 +3527,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getCompletionResultsList() {
     return completionResults_;
   }
-
   /**
    *
    *
@@ -3740,7 +3545,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getCompletionResultsOrBuilderList() {
     return completionResults_;
   }
-
   /**
    *
    *
@@ -3757,7 +3561,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   public int getCompletionResultsCount() {
     return completionResults_.size();
   }
-
   /**
    *
    *
@@ -3775,7 +3578,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getCompletionResults(int index) {
     return completionResults_.get(index);
   }
-
   /**
    *
    *
@@ -3798,7 +3600,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributionToken_ = "";
-
   /**
    *
    *
@@ -3825,7 +3626,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -3858,7 +3658,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult>
       recentSearchResults_;
-
   /**
    *
    *
@@ -3896,7 +3695,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getRecentSearchResultsList() {
     return recentSearchResults_;
   }
-
   /**
    *
    *
@@ -3936,7 +3734,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getRecentSearchResultsOrBuilderList() {
     return recentSearchResults_;
   }
-
   /**
    *
    *
@@ -3973,7 +3770,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   public int getRecentSearchResultsCount() {
     return recentSearchResults_.size();
   }
-
   /**
    *
    *
@@ -4011,7 +3807,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getRecentSearchResults(int index) {
     return recentSearchResults_.get(index);
   }
-
   /**
    *
    *
@@ -4087,13 +3882,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   public int getAttributeResultsCount() {
     return internalGetAttributeResults().getMap().size();
   }
-
   /**
    *
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * `cloud-retail` dataset.
+   * "cloud-retail" dataset.
    *
    * Current supported keys:
    *
@@ -4113,7 +3907,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
     return internalGetAttributeResults().getMap().containsKey(key);
   }
-
   /** Use {@link #getAttributeResultsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -4122,13 +3915,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getAttributeResults() {
     return getAttributeResultsMap();
   }
-
   /**
    *
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * `cloud-retail` dataset.
+   * "cloud-retail" dataset.
    *
    * Current supported keys:
    *
@@ -4147,13 +3939,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getAttributeResultsMap() {
     return internalGetAttributeResults().getMap();
   }
-
   /**
    *
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * `cloud-retail` dataset.
+   * "cloud-retail" dataset.
    *
    * Current supported keys:
    *
@@ -4180,13 +3971,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         map = internalGetAttributeResults().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * `cloud-retail` dataset.
+   * "cloud-retail" dataset.
    *
    * Current supported keys:
    *
@@ -4419,7 +4209,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4807,7 +4596,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return completionResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4827,7 +4615,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return completionResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4848,7 +4635,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return completionResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4875,7 +4661,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4901,7 +4686,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4928,7 +4712,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4955,7 +4738,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4980,7 +4762,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5006,7 +4787,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5032,7 +4812,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5055,7 +4834,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5078,7 +4856,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5095,7 +4872,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getCompletionResultsBuilder(int index) {
       return getCompletionResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5116,7 +4892,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return completionResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5139,7 +4914,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(completionResults_);
       }
     }
-
     /**
      *
      *
@@ -5159,7 +4933,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.retail.v2alpha.CompleteQueryResponse.CompletionResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5180,7 +4953,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.retail.v2alpha.CompleteQueryResponse.CompletionResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5220,7 +4992,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object attributionToken_ = "";
-
     /**
      *
      *
@@ -5246,7 +5017,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5272,7 +5042,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5297,7 +5066,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5318,7 +5086,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5404,7 +5171,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return recentSearchResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5444,7 +5210,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return recentSearchResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5485,7 +5250,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return recentSearchResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5532,7 +5296,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5578,7 +5341,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5625,7 +5387,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5672,7 +5433,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5717,7 +5477,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5763,7 +5522,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5809,7 +5567,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5852,7 +5609,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5895,7 +5651,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5932,7 +5687,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getRecentSearchResultsBuilder(int index) {
       return getRecentSearchResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5973,7 +5727,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return recentSearchResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6016,7 +5769,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(recentSearchResults_);
       }
     }
-
     /**
      *
      *
@@ -6056,7 +5808,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6097,7 +5848,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6178,8 +5928,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return AttributeResultsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AttributeResultsConverter attributeResultsConverter =
         new AttributeResultsConverter();
@@ -6220,13 +5969,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public int getAttributeResultsCount() {
       return internalGetAttributeResults().ensureBuilderMap().size();
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6246,7 +5994,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return internalGetAttributeResults().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getAttributeResultsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -6255,13 +6002,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getAttributeResults() {
       return getAttributeResultsMap();
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6280,13 +6026,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getAttributeResultsMap() {
       return internalGetAttributeResults().getImmutableMap();
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6314,13 +6059,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           map = internalGetMutableAttributeResults().ensureBuilderMap();
       return map.containsKey(key) ? attributeResultsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6354,13 +6098,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       internalGetMutableAttributeResults().clear();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6380,7 +6123,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       internalGetMutableAttributeResults().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -6389,13 +6131,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return internalGetMutableAttributeResults().ensureMessageMap();
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6421,13 +6162,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *
@@ -6457,13 +6197,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * `cloud-retail` dataset.
+     * "cloud-retail" dataset.
      *
      * Current supported keys:
      *

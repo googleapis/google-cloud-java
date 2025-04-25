@@ -36,7 +36,6 @@ public interface RemoveRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RemoveRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface RemoveRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface RemoveRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface RemoveRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

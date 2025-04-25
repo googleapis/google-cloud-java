@@ -37,7 +37,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ApiHubInstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ApiHubInstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface ApiHubInstanceOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The config.
    */
   com.google.cloud.apihub.v1.ApiHubInstance.Config getConfig();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface ApiHubInstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -258,11 +248,9 @@ public interface ApiHubInstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public interface ApiHubInstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -292,7 +279,6 @@ public interface ApiHubInstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -318,7 +304,6 @@ public interface ApiHubInstanceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

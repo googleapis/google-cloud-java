@@ -34,7 +34,6 @@ public interface ListServiceClassesResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.ServiceClass service_classes = 1;</code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.ServiceClass> getServiceClassesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServiceClassesResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.ServiceClass service_classes = 1;</code>
    */
   com.google.cloud.networkconnectivity.v1.ServiceClass getServiceClasses(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServiceClassesResponseOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.ServiceClass service_classes = 1;</code>
    */
   int getServiceClassesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListServiceClassesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.ServiceClassOrBuilder>
       getServiceClassesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListServiceClassesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListServiceClassesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface ListServiceClassesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface ListServiceClassesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

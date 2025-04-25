@@ -40,7 +40,6 @@ public interface CreateBackupPlanAssociationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateBackupPlanAssociationRequestOrBuilder
    * @return The backupPlanAssociationId.
    */
   java.lang.String getBackupPlanAssociationId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CreateBackupPlanAssociationRequestOrBuilder
    * @return Whether the backupPlanAssociation field is set.
    */
   boolean hasBackupPlanAssociation();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateBackupPlanAssociationRequestOrBuilder
    * @return The backupPlanAssociation.
    */
   com.google.cloud.backupdr.v1.BackupPlanAssociation getBackupPlanAssociation();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface CreateBackupPlanAssociationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

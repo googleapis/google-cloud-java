@@ -38,7 +38,6 @@ public interface ConversationProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ConversationProfileOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ConversationProfileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ConversationProfileOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the automatedAgentConfig field is set.
    */
   boolean hasAutomatedAgentConfig();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface ConversationProfileOrBuilder
    * @return The automatedAgentConfig.
    */
   com.google.cloud.dialogflow.v2beta1.AutomatedAgentConfig getAutomatedAgentConfig();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the humanAgentAssistantConfig field is set.
    */
   boolean hasHumanAgentAssistantConfig();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public interface ConversationProfileOrBuilder
    * @return The humanAgentAssistantConfig.
    */
   com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig getHumanAgentAssistantConfig();
-
   /**
    *
    *
@@ -258,7 +248,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the humanAgentHandoffConfig field is set.
    */
   boolean hasHumanAgentHandoffConfig();
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public interface ConversationProfileOrBuilder
    * @return The humanAgentHandoffConfig.
    */
   com.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig getHumanAgentHandoffConfig();
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the notificationConfig field is set.
    */
   boolean hasNotificationConfig();
-
   /**
    *
    *
@@ -317,7 +304,6 @@ public interface ConversationProfileOrBuilder
    * @return The notificationConfig.
    */
   com.google.cloud.dialogflow.v2beta1.NotificationConfig getNotificationConfig();
-
   /**
    *
    *
@@ -341,7 +327,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -354,7 +339,6 @@ public interface ConversationProfileOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dialogflow.v2beta1.LoggingConfig getLoggingConfig();
-
   /**
    *
    *
@@ -382,7 +366,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the newMessageEventNotificationConfig field is set.
    */
   boolean hasNewMessageEventNotificationConfig();
-
   /**
    *
    *
@@ -399,7 +382,6 @@ public interface ConversationProfileOrBuilder
    * @return The newMessageEventNotificationConfig.
    */
   com.google.cloud.dialogflow.v2beta1.NotificationConfig getNewMessageEventNotificationConfig();
-
   /**
    *
    *
@@ -438,7 +420,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the newRecognitionResultNotificationConfig field is set.
    */
   boolean hasNewRecognitionResultNotificationConfig();
-
   /**
    *
    *
@@ -462,7 +443,6 @@ public interface ConversationProfileOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.NotificationConfig
       getNewRecognitionResultNotificationConfig();
-
   /**
    *
    *
@@ -497,7 +477,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the sttConfig field is set.
    */
   boolean hasSttConfig();
-
   /**
    *
    *
@@ -510,7 +489,6 @@ public interface ConversationProfileOrBuilder
    * @return The sttConfig.
    */
   com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig getSttConfig();
-
   /**
    *
    *
@@ -538,7 +516,6 @@ public interface ConversationProfileOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -570,7 +547,6 @@ public interface ConversationProfileOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -600,7 +576,6 @@ public interface ConversationProfileOrBuilder
    * @return The securitySettings.
    */
   java.lang.String getSecuritySettings();
-
   /**
    *
    *
@@ -631,7 +606,6 @@ public interface ConversationProfileOrBuilder
    * @return Whether the ttsConfig field is set.
    */
   boolean hasTtsConfig();
-
   /**
    *
    *
@@ -647,7 +621,6 @@ public interface ConversationProfileOrBuilder
    * @return The ttsConfig.
    */
   com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getTtsConfig();
-
   /**
    *
    *

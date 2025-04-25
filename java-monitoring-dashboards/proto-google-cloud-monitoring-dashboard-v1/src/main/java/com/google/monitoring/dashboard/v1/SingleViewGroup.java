@@ -35,7 +35,6 @@ public final class SingleViewGroup extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.SingleViewGroup)
     SingleViewGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SingleViewGroup.newBuilder() to construct.
   private SingleViewGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class SingleViewGroup extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.LoggingConfig)
     LoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -189,7 +188,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -200,7 +198,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
-
     /**
      *
      *
@@ -211,7 +208,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TRACE = 2;</code>
      */
     public static final int TRACE_VALUE = 2;
-
     /**
      *
      *
@@ -222,7 +218,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DEBUG = 3;</code>
      */
     public static final int DEBUG_VALUE = 3;
-
     /**
      *
      *
@@ -233,7 +228,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO = 4;</code>
      */
     public static final int INFO_VALUE = 4;
-
     /**
      *
      *
@@ -244,7 +238,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>WARN = 5;</code>
      */
     public static final int WARN_VALUE = 5;
-
     /**
      *
      *
@@ -255,7 +248,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
-
     /**
      *
      *
@@ -266,7 +258,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>FATAL = 7;</code>
      */
     public static final int FATAL_VALUE = 7;
-
     /**
      *
      *
@@ -416,7 +407,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getDriverLogLevelsCount() {
     return internalGetDriverLogLevels().getMap().size();
   }
-
   /**
    *
    *
@@ -439,7 +429,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDriverLogLevels().getMap().containsKey(key);
   }
-
   /** Use {@link #getDriverLogLevelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -447,7 +436,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       getDriverLogLevels() {
     return getDriverLogLevelsMap();
   }
-
   /**
    *
    *
@@ -468,7 +456,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       getDriverLogLevelsMap() {
     return internalGetAdaptedDriverLogLevelsMap(internalGetDriverLogLevels().getMap());
   }
-
   /**
    *
    *
@@ -498,7 +485,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         ? driverLogLevelsValueConverter.doForward(map.get(key))
         : defaultValue;
   }
-
   /**
    *
    *
@@ -526,14 +512,12 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return driverLogLevelsValueConverter.doForward(map.get(key));
   }
-
   /** Use {@link #getDriverLogLevelsValueMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue() {
     return getDriverLogLevelsValueMap();
   }
-
   /**
    *
    *
@@ -553,7 +537,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap() {
     return internalGetDriverLogLevels().getMap();
   }
-
   /**
    *
    *
@@ -577,7 +560,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -772,7 +754,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1011,7 +992,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getDriverLogLevelsCount() {
       return internalGetDriverLogLevels().getMap().size();
     }
-
     /**
      *
      *
@@ -1034,7 +1014,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDriverLogLevels().getMap().containsKey(key);
     }
-
     /** Use {@link #getDriverLogLevelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1042,7 +1021,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         getDriverLogLevels() {
       return getDriverLogLevelsMap();
     }
-
     /**
      *
      *
@@ -1063,7 +1041,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         getDriverLogLevelsMap() {
       return internalGetAdaptedDriverLogLevelsMap(internalGetDriverLogLevels().getMap());
     }
-
     /**
      *
      *
@@ -1094,7 +1071,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           ? driverLogLevelsValueConverter.doForward(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -1123,14 +1099,12 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return driverLogLevelsValueConverter.doForward(map.get(key));
     }
-
     /** Use {@link #getDriverLogLevelsValueMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue() {
       return getDriverLogLevelsValueMap();
     }
-
     /**
      *
      *
@@ -1150,7 +1124,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap() {
       return internalGetDriverLogLevels().getMap();
     }
-
     /**
      *
      *
@@ -1175,7 +1148,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           internalGetDriverLogLevels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1209,7 +1181,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDriverLogLevels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1203,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDriverLogLevels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
@@ -1241,7 +1211,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetAdaptedDriverLogLevelsMap(
           internalGetMutableDriverLogLevels().getMutableMap());
     }
-
     /**
      *
      *
@@ -1269,7 +1238,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1292,14 +1260,12 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableDriverLogLevelsValue() {
       bitField0_ |= 0x00000001;
       return internalGetMutableDriverLogLevels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1324,7 +1290,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

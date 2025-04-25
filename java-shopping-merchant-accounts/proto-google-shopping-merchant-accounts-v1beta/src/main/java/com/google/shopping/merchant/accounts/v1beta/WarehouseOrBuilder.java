@@ -36,7 +36,6 @@ public interface WarehouseOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WarehouseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface WarehouseOrBuilder
    * @return Whether the shippingAddress field is set.
    */
   boolean hasShippingAddress();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface WarehouseOrBuilder
    * @return The shippingAddress.
    */
   com.google.shopping.merchant.accounts.v1beta.Address getShippingAddress();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface WarehouseOrBuilder
    * @return Whether the cutoffTime field is set.
    */
   boolean hasCutoffTime();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface WarehouseOrBuilder
    * @return The cutoffTime.
    */
   com.google.shopping.merchant.accounts.v1beta.WarehouseCutoffTime getCutoffTime();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface WarehouseOrBuilder
    * @return Whether the handlingDays field is set.
    */
   boolean hasHandlingDays();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface WarehouseOrBuilder
    * @return Whether the businessDayConfig field is set.
    */
   boolean hasBusinessDayConfig();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface WarehouseOrBuilder
    * @return The businessDayConfig.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig getBusinessDayConfig();
-
   /**
    *
    *

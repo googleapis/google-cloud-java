@@ -32,7 +32,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesScopedList)
     InstancesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstancesScopedList.newBuilder() to construct.
   private InstancesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Instance> instances_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.compute.v1.Instance> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.Instance getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -364,7 +355,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +645,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +802,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +860,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +872,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.Instance.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -929,7 +905,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -943,7 +918,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Instance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -957,7 +931,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Instance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -994,7 +967,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1009,7 +981,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1030,7 +1001,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1023,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1042,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1069,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1088,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1102,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1155,7 +1120,6 @@ public final class InstancesScopedList extends com.google.protobuf.GeneratedMess
             : warning_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface EventMappingOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface EventMappingOrBuilder
    * @return Whether the minEventCount field is set.
    */
   boolean hasMinEventCount();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface EventMappingOrBuilder
    * @return Whether the maxEventCount field is set.
    */
   boolean hasMaxEventCount();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface EventMappingOrBuilder
    * @return Whether the minEventValue field is set.
    */
   boolean hasMinEventValue();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface EventMappingOrBuilder
    * @return Whether the maxEventValue field is set.
    */
   boolean hasMaxEventValue();
-
   /**
    *
    *

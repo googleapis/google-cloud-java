@@ -34,7 +34,6 @@ public interface BatchCreateRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Repository repositories = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v2.Repository> getRepositoriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchCreateRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Repository repositories = 1;</code>
    */
   com.google.cloudbuild.v2.Repository getRepositories(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchCreateRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Repository repositories = 1;</code>
    */
   int getRepositoriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchCreateRepositoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v2.RepositoryOrBuilder>
       getRepositoriesOrBuilderList();
-
   /**
    *
    *

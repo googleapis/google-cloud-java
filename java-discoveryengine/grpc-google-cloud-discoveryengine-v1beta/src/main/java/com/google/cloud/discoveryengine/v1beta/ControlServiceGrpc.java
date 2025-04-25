@@ -279,19 +279,6 @@ public final class ControlServiceGrpc {
     return ControlServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ControlServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ControlServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ControlServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public ControlServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ControlServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ControlServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -551,104 +538,6 @@ public final class ControlServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ControlService.
-   *
-   * <pre>
-   * Service for performing CRUD operations on Controls.
-   * Controls allow for custom logic to be implemented in the serving path.
-   * Controls need to be attached to a Serving Config to be considered during a
-   * request.
-   * </pre>
-   */
-  public static final class ControlServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ControlServiceBlockingV2Stub> {
-    private ControlServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ControlServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ControlServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a Control.
-     * By default 1000 controls are allowed for a data store.
-     * A request can be submitted to adjust this limit.
-     * If the [Control][google.cloud.discoveryengine.v1beta.Control] to create
-     * already exists, an ALREADY_EXISTS error is returned.
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.Control createControl(
-        com.google.cloud.discoveryengine.v1beta.CreateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateControlMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a Control.
-     * If the [Control][google.cloud.discoveryengine.v1beta.Control] to delete
-     * does not exist, a NOT_FOUND error is returned.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteControl(
-        com.google.cloud.discoveryengine.v1beta.DeleteControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteControlMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a Control.
-     * [Control][google.cloud.discoveryengine.v1beta.Control] action type cannot
-     * be changed. If the [Control][google.cloud.discoveryengine.v1beta.Control]
-     * to update does not exist, a NOT_FOUND error is returned.
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.Control updateControl(
-        com.google.cloud.discoveryengine.v1beta.UpdateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateControlMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a Control.
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.Control getControl(
-        com.google.cloud.discoveryengine.v1beta.GetControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetControlMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all Controls by their parent
-     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.ListControlsResponse listControls(
-        com.google.cloud.discoveryengine.v1beta.ListControlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListControlsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service ControlService.
    *
    * <pre>
    * Service for performing CRUD operations on Controls.

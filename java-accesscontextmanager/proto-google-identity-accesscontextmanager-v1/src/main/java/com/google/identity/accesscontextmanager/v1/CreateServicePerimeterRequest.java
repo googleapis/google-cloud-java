@@ -33,7 +33,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest)
     CreateServicePerimeterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateServicePerimeterRequest.newBuilder() to construct.
   private CreateServicePerimeterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
 
   public static final int SERVICE_PERIMETER_FIELD_NUMBER = 2;
   private com.google.identity.accesscontextmanager.v1.ServicePerimeter servicePerimeter_;
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
   public boolean hasServicePerimeter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         ? com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance()
         : servicePerimeter_;
   }
-
   /**
    *
    *
@@ -377,7 +371,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -604,7 +597,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -632,7 +624,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +651,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -687,7 +677,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
             com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder,
             com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>
         servicePerimeterBuilder_;
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
     public boolean hasServicePerimeter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         return servicePerimeterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +895,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       onChanged();
       return getServicePerimeterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
             : servicePerimeter_;
       }
     }
-
     /**
      *
      *

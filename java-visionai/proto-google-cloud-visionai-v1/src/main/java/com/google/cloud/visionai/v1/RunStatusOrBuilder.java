@@ -36,7 +36,6 @@ public interface RunStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RunStatusOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
-
   /**
    *
    *

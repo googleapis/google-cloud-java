@@ -38,7 +38,6 @@ public interface LayoutPropertiesOrBuilder
    * @return The primaryColor.
    */
   java.lang.String getPrimaryColor();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface LayoutPropertiesOrBuilder
    * @return The secondaryColor.
    */
   java.lang.String getSecondaryColor();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpHeaderOption)
     HttpHeaderOptionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpHeaderOption.newBuilder() to construct.
   private HttpHeaderOption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headerName_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
   public boolean hasHeaderName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headerValue_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
   public boolean hasHeaderValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
 
   public static final int REPLACE_FIELD_NUMBER = 20755124;
   private boolean replace_ = false;
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
   public boolean hasReplace() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -431,7 +422,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +638,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object headerName_ = "";
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     public boolean hasHeaderName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object headerValue_ = "";
-
     /**
      *
      *
@@ -789,7 +772,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     public boolean hasHeaderValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean replace_;
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     public boolean hasReplace() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
     public boolean getReplace() {
       return replace_;
     }
-
     /**
      *
      *
@@ -952,7 +927,6 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

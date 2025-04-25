@@ -39,7 +39,6 @@ public interface ListDeployPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface ListDeployPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface ListDeployPoliciesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public interface ListDeployPoliciesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

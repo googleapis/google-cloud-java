@@ -33,7 +33,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.Interstitials)
     InterstitialsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Interstitials.newBuilder() to construct.
   private Interstitials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAdBreak> adBreaks_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAdBreak> getAdBreaksList() {
     return adBreaks_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       getAdBreaksOrBuilderList() {
     return adBreaks_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
   public int getAdBreaksCount() {
     return adBreaks_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.stitcher.v1.VodSessionAdBreak getAdBreaks(int index) {
     return adBreaks_.get(index);
   }
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SESSION_CONTENT_FIELD_NUMBER = 2;
   private com.google.cloud.video.stitcher.v1.VodSessionContent sessionContent_;
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSessionContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +170,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.VodSessionContent.getDefaultInstance()
         : sessionContent_;
   }
-
   /**
    *
    *
@@ -371,7 +362,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +657,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +888,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAdBreaksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         return adBreaksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(adBreaks_);
       }
     }
-
     /**
      *
      *
@@ -960,7 +935,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       return getAdBreaksFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.VodSessionAdBreak.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -976,7 +950,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.stitcher.v1.VodSessionAdBreak.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.VodSessionContent.Builder,
             com.google.cloud.video.stitcher.v1.VodSessionContentOrBuilder>
         sessionContentBuilder_;
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSessionContent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         return sessionContentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1063,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1091,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1110,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1124,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSessionContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1178,7 +1143,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
             : sessionContent_;
       }
     }
-
     /**
      *
      *

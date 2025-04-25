@@ -51,7 +51,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    */
   java.util.List<com.google.container.v1beta1.MasterAuthorizedNetworksConfig.CidrBlock>
       getCidrBlocksList();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * </code>
    */
   com.google.container.v1beta1.MasterAuthorizedNetworksConfig.CidrBlock getCidrBlocks(int index);
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * </code>
    */
   int getCidrBlocksCount();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
   java.util.List<
           ? extends com.google.container.v1beta1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
       getCidrBlocksOrBuilderList();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * @return Whether the gcpPublicCidrsAccessEnabled field is set.
    */
   boolean hasGcpPublicCidrsAccessEnabled();
-
   /**
    *
    *

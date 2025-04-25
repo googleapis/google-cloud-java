@@ -43,7 +43,6 @@ public interface ListManagementDnsZoneBindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -97,7 +96,6 @@ public interface ListManagementDnsZoneBindingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -152,7 +150,6 @@ public interface ListManagementDnsZoneBindingsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -206,7 +203,6 @@ public interface ListManagementDnsZoneBindingsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

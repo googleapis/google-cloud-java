@@ -39,7 +39,6 @@ public interface ListServiceBindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ListServiceBindingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

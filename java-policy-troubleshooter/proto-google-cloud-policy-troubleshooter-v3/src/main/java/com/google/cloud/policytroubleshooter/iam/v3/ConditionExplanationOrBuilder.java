@@ -36,7 +36,6 @@ public interface ConditionExplanationOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConditionExplanationOrBuilder
    * @return The value.
    */
   com.google.protobuf.Value getValue();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface ConditionExplanationOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorsList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface ConditionExplanationOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   com.google.rpc.Status getErrors(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ConditionExplanationOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface ConditionExplanationOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ConditionExplanationOrBuilder
    */
   java.util.List<com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation.EvaluationState>
       getEvaluationStatesList();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ConditionExplanationOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation.EvaluationState
       getEvaluationStates(int index);
-
   /**
    *
    *
@@ -162,7 +154,6 @@ public interface ConditionExplanationOrBuilder
    * </code>
    */
   int getEvaluationStatesCount();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface ConditionExplanationOrBuilder
               com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation
                   .EvaluationStateOrBuilder>
       getEvaluationStatesOrBuilderList();
-
   /**
    *
    *

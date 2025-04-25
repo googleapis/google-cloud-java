@@ -37,7 +37,6 @@ public interface DialogflowInteractionDataOrBuilder
    * @return The dialogflowIntentId.
    */
   java.lang.String getDialogflowIntentId();
-
   /**
    *
    *

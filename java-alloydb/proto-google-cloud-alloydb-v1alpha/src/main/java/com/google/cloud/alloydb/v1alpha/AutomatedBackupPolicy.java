@@ -36,7 +36,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.AutomatedBackupPolicy)
     AutomatedBackupPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomatedBackupPolicy.newBuilder() to construct.
   private AutomatedBackupPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.type.TimeOfDay start_times = 1;</code>
      */
     java.util.List<com.google.type.TimeOfDay> getStartTimesList();
-
     /**
      *
      *
@@ -113,7 +111,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.type.TimeOfDay start_times = 1;</code>
      */
     com.google.type.TimeOfDay getStartTimes(int index);
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.type.TimeOfDay start_times = 1;</code>
      */
     int getStartTimesCount();
-
     /**
      *
      *
@@ -143,7 +139,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <code>repeated .google.type.TimeOfDay start_times = 1;</code>
      */
     java.util.List<? extends com.google.type.TimeOfDayOrBuilder> getStartTimesOrBuilderList();
-
     /**
      *
      *
@@ -174,7 +169,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * @return A list containing the daysOfWeek.
      */
     java.util.List<com.google.type.DayOfWeek> getDaysOfWeekList();
-
     /**
      *
      *
@@ -190,7 +184,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * @return The count of daysOfWeek.
      */
     int getDaysOfWeekCount();
-
     /**
      *
      *
@@ -207,7 +200,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * @return The daysOfWeek at the given index.
      */
     com.google.type.DayOfWeek getDaysOfWeek(int index);
-
     /**
      *
      *
@@ -223,7 +215,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * @return A list containing the enum numeric values on the wire for daysOfWeek.
      */
     java.util.List<java.lang.Integer> getDaysOfWeekValueList();
-
     /**
      *
      *
@@ -241,7 +232,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      */
     int getDaysOfWeekValue(int index);
   }
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.WeeklySchedule)
       WeeklyScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WeeklySchedule.newBuilder() to construct.
     private WeeklySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -298,7 +287,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.type.TimeOfDay> startTimes_;
-
     /**
      *
      *
@@ -316,7 +304,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public java.util.List<com.google.type.TimeOfDay> getStartTimesList() {
       return startTimes_;
     }
-
     /**
      *
      *
@@ -335,7 +322,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         getStartTimesOrBuilderList() {
       return startTimes_;
     }
-
     /**
      *
      *
@@ -353,7 +339,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public int getStartTimesCount() {
       return startTimes_.size();
     }
-
     /**
      *
      *
@@ -371,7 +356,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public com.google.type.TimeOfDay getStartTimes(int index) {
       return startTimes_.get(index);
     }
-
     /**
      *
      *
@@ -405,7 +389,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
                 return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
               }
             };
-
     /**
      *
      *
@@ -425,7 +408,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
     }
-
     /**
      *
      *
@@ -444,7 +426,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public int getDaysOfWeekCount() {
       return daysOfWeek_.size();
     }
-
     /**
      *
      *
@@ -464,7 +445,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public com.google.type.DayOfWeek getDaysOfWeek(int index) {
       return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
     }
-
     /**
      *
      *
@@ -483,7 +463,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
       return daysOfWeek_;
     }
-
     /**
      *
      *
@@ -696,7 +675,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1016,7 +994,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           return startTimesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1037,7 +1014,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           return startTimesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1058,7 +1034,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           return startTimesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1085,7 +1060,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1109,7 +1083,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1136,7 +1109,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1163,7 +1135,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1187,7 +1158,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1211,7 +1181,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1236,7 +1205,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1260,7 +1228,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1284,7 +1251,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1301,7 +1267,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public com.google.type.TimeOfDay.Builder getStartTimesBuilder(int index) {
         return getStartTimesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1322,7 +1287,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           return startTimesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1344,7 +1308,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           return java.util.Collections.unmodifiableList(startTimes_);
         }
       }
-
       /**
        *
        *
@@ -1362,7 +1325,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return getStartTimesFieldBuilder()
             .addBuilder(com.google.type.TimeOfDay.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1380,7 +1342,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return getStartTimesFieldBuilder()
             .addBuilder(index, com.google.type.TimeOfDay.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1423,7 +1384,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           bitField0_ |= 0x00000002;
         }
       }
-
       /**
        *
        *
@@ -1442,7 +1402,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return new com.google.protobuf.Internal.ListAdapter<
             java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
       }
-
       /**
        *
        *
@@ -1460,7 +1419,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public int getDaysOfWeekCount() {
         return daysOfWeek_.size();
       }
-
       /**
        *
        *
@@ -1479,7 +1437,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public com.google.type.DayOfWeek getDaysOfWeek(int index) {
         return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
       }
-
       /**
        *
        *
@@ -1505,7 +1462,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1530,7 +1486,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1555,7 +1510,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1576,7 +1530,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1594,7 +1547,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
         return java.util.Collections.unmodifiableList(daysOfWeek_);
       }
-
       /**
        *
        *
@@ -1613,7 +1565,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public int getDaysOfWeekValue(int index) {
         return daysOfWeek_.get(index);
       }
-
       /**
        *
        *
@@ -1636,7 +1587,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1658,7 +1608,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1768,7 +1717,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * @return Whether the retentionPeriod field is set.
      */
     boolean hasRetentionPeriod();
-
     /**
      *
      *
@@ -1781,7 +1729,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * @return The retentionPeriod.
      */
     com.google.protobuf.Duration getRetentionPeriod();
-
     /**
      *
      *
@@ -1793,7 +1740,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.DurationOrBuilder getRetentionPeriodOrBuilder();
   }
-
   /**
    *
    *
@@ -1809,7 +1755,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.TimeBasedRetention)
       TimeBasedRetentionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeBasedRetention.newBuilder() to construct.
     private TimeBasedRetention(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1842,7 +1787,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int RETENTION_PERIOD_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration retentionPeriod_;
-
     /**
      *
      *
@@ -1858,7 +1802,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasRetentionPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1876,7 +1819,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Duration.getDefaultInstance()
           : retentionPeriod_;
     }
-
     /**
      *
      *
@@ -2066,7 +2008,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2287,7 +2228,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           retentionPeriodBuilder_;
-
       /**
        *
        *
@@ -2302,7 +2242,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public boolean hasRetentionPeriod() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2323,7 +2262,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
           return retentionPeriodBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2346,7 +2284,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2366,7 +2303,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2394,7 +2330,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2414,7 +2349,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2429,7 +2363,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return getRetentionPeriodFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2448,7 +2381,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
               : retentionPeriod_;
         }
       }
-
       /**
        *
        *
@@ -2561,7 +2493,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      */
     int getCount();
   }
-
   /**
    *
    *
@@ -2577,7 +2508,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.QuantityBasedRetention)
       QuantityBasedRetentionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use QuantityBasedRetention.newBuilder() to construct.
     private QuantityBasedRetention(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2609,7 +2539,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
     public static final int COUNT_FIELD_NUMBER = 1;
     private int count_ = 0;
-
     /**
      *
      *
@@ -2795,7 +2724,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2996,7 +2924,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private int count_;
-
       /**
        *
        *
@@ -3012,7 +2939,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       public int getCount() {
         return count_;
       }
-
       /**
        *
        *
@@ -3032,7 +2958,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3137,7 +3062,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     private ScheduleCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3185,7 +3109,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     private RetentionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3219,7 +3142,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   }
 
   public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -3236,7 +3158,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public boolean hasWeeklySchedule() {
     return scheduleCase_ == 2;
   }
-
   /**
    *
    *
@@ -3257,7 +3178,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     return com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.WeeklySchedule
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3279,7 +3199,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TIME_BASED_RETENTION_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -3297,7 +3216,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public boolean hasTimeBasedRetention() {
     return retentionCase_ == 4;
   }
-
   /**
    *
    *
@@ -3320,7 +3238,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     return com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.TimeBasedRetention
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3343,7 +3260,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   }
 
   public static final int QUANTITY_BASED_RETENTION_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -3361,7 +3277,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public boolean hasQuantityBasedRetention() {
     return retentionCase_ == 5;
   }
-
   /**
    *
    *
@@ -3385,7 +3300,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     return com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.QuantityBasedRetention
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3410,7 +3324,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -3427,7 +3340,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3447,7 +3359,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
   public static final int BACKUP_WINDOW_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration backupWindow_;
-
   /**
    *
    *
@@ -3468,7 +3379,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public boolean hasBackupWindow() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3491,7 +3401,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Duration.getDefaultInstance()
         : backupWindow_;
   }
-
   /**
    *
    *
@@ -3515,7 +3424,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.alloydb.v1alpha.EncryptionConfig encryptionConfig_;
-
   /**
    *
    *
@@ -3536,7 +3444,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3559,7 +3466,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.alloydb.v1alpha.EncryptionConfig.getDefaultInstance()
         : encryptionConfig_;
   }
-
   /**
    *
    *
@@ -3585,7 +3491,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -3612,7 +3517,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -3666,7 +3570,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -3683,14 +3586,12 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -3704,7 +3605,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -3725,7 +3625,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -4039,7 +3938,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4442,7 +4340,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.WeeklySchedule.Builder,
             com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.WeeklyScheduleOrBuilder>
         weeklyScheduleBuilder_;
-
     /**
      *
      *
@@ -4459,7 +4356,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasWeeklySchedule() {
       return scheduleCase_ == 2;
     }
-
     /**
      *
      *
@@ -4489,7 +4385,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4514,7 +4409,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       scheduleCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4537,7 +4431,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       scheduleCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4575,7 +4468,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       scheduleCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4602,7 +4494,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4617,7 +4508,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         getWeeklyScheduleBuilder() {
       return getWeeklyScheduleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4641,7 +4531,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4683,7 +4572,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.TimeBasedRetention.Builder,
             com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.TimeBasedRetentionOrBuilder>
         timeBasedRetentionBuilder_;
-
     /**
      *
      *
@@ -4701,7 +4589,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasTimeBasedRetention() {
       return retentionCase_ == 4;
     }
-
     /**
      *
      *
@@ -4733,7 +4620,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4759,7 +4645,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       retentionCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4783,7 +4668,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       retentionCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4822,7 +4706,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       retentionCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4850,7 +4733,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4866,7 +4748,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         getTimeBasedRetentionBuilder() {
       return getTimeBasedRetentionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4892,7 +4773,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4936,7 +4816,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.QuantityBasedRetention.Builder,
             com.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy.QuantityBasedRetentionOrBuilder>
         quantityBasedRetentionBuilder_;
-
     /**
      *
      *
@@ -4954,7 +4833,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasQuantityBasedRetention() {
       return retentionCase_ == 5;
     }
-
     /**
      *
      *
@@ -4986,7 +4864,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5012,7 +4889,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       retentionCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -5036,7 +4912,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       retentionCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -5077,7 +4952,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       retentionCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -5105,7 +4979,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5121,7 +4994,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         getQuantityBasedRetentionBuilder() {
       return getQuantityBasedRetentionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5147,7 +5019,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5189,7 +5060,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     }
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -5206,7 +5076,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -5223,7 +5092,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -5244,7 +5112,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5270,7 +5137,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         backupWindowBuilder_;
-
     /**
      *
      *
@@ -5290,7 +5156,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasBackupWindow() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -5316,7 +5181,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return backupWindowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5344,7 +5208,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5369,7 +5232,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5402,7 +5264,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5427,7 +5288,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5447,7 +5307,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return getBackupWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5471,7 +5330,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             : backupWindow_;
       }
     }
-
     /**
      *
      *
@@ -5509,7 +5367,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.EncryptionConfig.Builder,
             com.google.cloud.alloydb.v1alpha.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
-
     /**
      *
      *
@@ -5529,7 +5386,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -5555,7 +5411,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return encryptionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5583,7 +5438,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5609,7 +5463,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5643,7 +5496,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5668,7 +5520,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5688,7 +5539,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5713,7 +5563,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
             : encryptionConfig_;
       }
     }
-
     /**
      *
      *
@@ -5746,7 +5595,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -5772,7 +5620,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5798,7 +5645,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5823,7 +5669,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5844,7 +5689,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5896,7 +5740,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -5913,14 +5756,12 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -5934,7 +5775,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -5955,7 +5795,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -5982,7 +5821,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5999,14 +5837,12 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -6027,7 +5863,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000080;
       return this;
     }
-
     /**
      *
      *

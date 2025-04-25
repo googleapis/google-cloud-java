@@ -34,7 +34,6 @@ public interface HostsEntryListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.HostsEntry entries = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.HostsEntry> getEntriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface HostsEntryListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.HostsEntry entries = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.HostsEntry getEntries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface HostsEntryListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.HostsEntry entries = 1;</code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface HostsEntryListOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.HostsEntryOrBuilder>
       getEntriesOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateGeneratorRequest)
     CreateGeneratorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateGeneratorRequest.newBuilder() to construct.
   private CreateGeneratorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
 
   public static final int GENERATOR_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.Generator generator_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
   public boolean hasGenerator() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dialogflow.v2.Generator.getDefaultInstance()
         : generator_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object generatorId_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -438,7 +430,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +658,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -693,7 +683,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +752,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.Generator.Builder,
             com.google.cloud.dialogflow.v2.GeneratorOrBuilder>
         generatorBuilder_;
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
     public boolean hasGenerator() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
         return generatorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +917,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getGeneratorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
             : generator_;
       }
     }
-
     /**
      *
      *
@@ -1005,7 +982,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object generatorId_ = "";
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1044,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1074,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1100,6 @@ public final class CreateGeneratorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

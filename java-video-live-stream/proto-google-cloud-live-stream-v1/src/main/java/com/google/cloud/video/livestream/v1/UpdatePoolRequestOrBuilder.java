@@ -42,7 +42,6 @@ public interface UpdatePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdatePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface UpdatePoolRequestOrBuilder
    * @return Whether the pool field is set.
    */
   boolean hasPool();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdatePoolRequestOrBuilder
    * @return The pool.
    */
   com.google.cloud.video.livestream.v1.Pool getPool();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface UpdatePoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

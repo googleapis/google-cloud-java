@@ -36,7 +36,6 @@ public interface ExecuteAirflowCommandResponseOrBuilder
    * @return The executionId.
    */
   java.lang.String getExecutionId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ExecuteAirflowCommandResponseOrBuilder
    * @return The pod.
    */
   java.lang.String getPod();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ExecuteAirflowCommandResponseOrBuilder
    * @return The podNamespace.
    */
   java.lang.String getPodNamespace();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ExecuteAirflowCommandResponseOrBuilder
    * @return The error.
    */
   java.lang.String getError();
-
   /**
    *
    *

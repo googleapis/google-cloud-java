@@ -168,7 +168,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_BENEFIT_UNSPECIFIED = 0;</code>
    */
   public static final int JOB_BENEFIT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -180,7 +179,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CHILD_CARE = 1;</code>
    */
   public static final int CHILD_CARE_VALUE = 1;
-
   /**
    *
    *
@@ -192,7 +190,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DENTAL = 2;</code>
    */
   public static final int DENTAL_VALUE = 2;
-
   /**
    *
    *
@@ -203,7 +200,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DOMESTIC_PARTNER = 3;</code>
    */
   public static final int DOMESTIC_PARTNER_VALUE = 3;
-
   /**
    *
    *
@@ -214,7 +210,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLEXIBLE_HOURS = 4;</code>
    */
   public static final int FLEXIBLE_HOURS_VALUE = 4;
-
   /**
    *
    *
@@ -225,7 +220,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDICAL = 5;</code>
    */
   public static final int MEDICAL_VALUE = 5;
-
   /**
    *
    *
@@ -237,7 +231,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LIFE_INSURANCE = 6;</code>
    */
   public static final int LIFE_INSURANCE_VALUE = 6;
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PARENTAL_LEAVE = 7;</code>
    */
   public static final int PARENTAL_LEAVE_VALUE = 7;
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RETIREMENT_PLAN = 8;</code>
    */
   public static final int RETIREMENT_PLAN_VALUE = 8;
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SICK_DAYS = 9;</code>
    */
   public static final int SICK_DAYS_VALUE = 9;
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public enum JobBenefit implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VACATION = 10;</code>
    */
   public static final int VACATION_VALUE = 10;
-
   /**
    *
    *

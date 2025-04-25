@@ -40,7 +40,6 @@ public interface ListDeviceConfigVersionsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

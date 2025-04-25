@@ -34,7 +34,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.PhraseSet)
     PhraseSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PhraseSet.newBuilder() to construct.
   private PhraseSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -262,7 +259,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
-
     /**
      *
      *
@@ -297,7 +293,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      */
     float getBoost();
   }
-
   /**
    *
    *
@@ -336,7 +331,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.PhraseSet.Phrase)
       PhraseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Phrase.newBuilder() to construct.
     private Phrase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -371,7 +365,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -395,7 +388,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -422,7 +414,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BOOST_FIELD_NUMBER = 2;
     private float boost_ = 0F;
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -842,7 +832,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -865,7 +854,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -888,7 +876,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -910,7 +897,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +914,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -953,7 +938,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float boost_;
-
       /**
        *
        *
@@ -977,7 +961,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       public float getBoost() {
         return boost_;
       }
-
       /**
        *
        *
@@ -1005,7 +988,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1101,7 +1083,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1125,7 +1106,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1154,7 +1134,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase> phrases_;
-
   /**
    *
    *
@@ -1168,7 +1147,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase> getPhrasesList() {
     return phrases_;
   }
-
   /**
    *
    *
@@ -1183,7 +1161,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       getPhrasesOrBuilderList() {
     return phrases_;
   }
-
   /**
    *
    *
@@ -1197,7 +1174,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public int getPhrasesCount() {
     return phrases_.size();
   }
-
   /**
    *
    *
@@ -1211,7 +1187,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase getPhrases(int index) {
     return phrases_.get(index);
   }
-
   /**
    *
    *
@@ -1229,7 +1204,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOST_FIELD_NUMBER = 4;
   private float boost_ = 0F;
-
   /**
    *
    *
@@ -1258,7 +1232,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
-
   /**
    *
    *
@@ -1287,7 +1260,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1321,7 +1293,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyVersionName_ = "";
-
   /**
    *
    *
@@ -1350,7 +1321,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1384,7 +1354,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -1409,7 +1378,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1439,7 +1407,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1464,7 +1431,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1492,7 +1458,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 11;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1511,7 +1476,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1535,7 +1499,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp deleteTime_;
-
   /**
    *
    *
@@ -1553,7 +1516,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1571,7 +1533,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
-
   /**
    *
    *
@@ -1590,7 +1551,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp expireTime_;
-
   /**
    *
    *
@@ -1608,7 +1568,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1626,7 +1585,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
-
   /**
    *
    *
@@ -1670,7 +1628,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -1691,14 +1648,12 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -1716,7 +1671,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -1741,7 +1695,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1771,7 +1724,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1798,7 +1750,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1828,7 +1779,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECONCILING_FIELD_NUMBER = 16;
   private boolean reconciling_ = false;
-
   /**
    *
    *
@@ -2134,7 +2084,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2584,7 +2533,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2607,7 +2555,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2630,7 +2577,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2652,7 +2598,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2670,7 +2615,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2727,7 +2671,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return phrasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2744,7 +2687,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return phrasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2761,7 +2703,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return phrasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2784,7 +2725,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2745,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2828,7 +2767,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2851,7 +2789,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2872,7 +2809,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2893,7 +2829,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2914,7 +2849,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2934,7 +2868,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2954,7 +2887,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2967,7 +2899,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.Builder getPhrasesBuilder(int index) {
       return getPhrasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2985,7 +2916,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return phrasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3003,7 +2933,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(phrases_);
       }
     }
-
     /**
      *
      *
@@ -3017,7 +2946,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       return getPhrasesFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3032,7 +2960,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3065,7 +2992,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float boost_;
-
     /**
      *
      *
@@ -3089,7 +3015,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public float getBoost() {
       return boost_;
     }
-
     /**
      *
      *
@@ -3117,7 +3042,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3145,7 +3069,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyName_ = "";
-
     /**
      *
      *
@@ -3173,7 +3096,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3201,7 +3123,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3228,7 +3149,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3171,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3281,7 +3200,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyVersionName_ = "";
-
     /**
      *
      *
@@ -3309,7 +3227,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3337,7 +3254,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3364,7 +3280,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3387,7 +3302,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3417,7 +3331,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -3441,7 +3354,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3465,7 +3377,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3488,7 +3399,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3507,7 +3417,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3533,7 +3442,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3557,7 +3465,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3581,7 +3488,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3604,7 +3510,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3623,7 +3528,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3649,7 +3553,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3668,7 +3571,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3690,7 +3592,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3713,7 +3614,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.speech.v1p1beta1.PhraseSet.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3738,7 +3638,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3766,7 +3665,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
-
     /**
      *
      *
@@ -3784,7 +3682,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3808,7 +3705,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3834,7 +3730,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3857,7 +3752,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3888,7 +3782,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3911,7 +3804,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3929,7 +3821,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3951,7 +3842,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
-
     /**
      *
      *
@@ -3987,7 +3877,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -4005,7 +3894,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4029,7 +3917,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4055,7 +3942,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4078,7 +3964,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4109,7 +3994,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4132,7 +4016,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4150,7 +4033,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4172,7 +4054,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
-
     /**
      *
      *
@@ -4230,7 +4111,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -4252,14 +4132,12 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -4278,7 +4156,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -4304,7 +4181,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4336,7 +4212,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4358,14 +4233,12 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000400;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -4391,7 +4264,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return this;
     }
-
     /**
      *
      *
@@ -4413,7 +4285,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -4439,7 +4310,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4465,7 +4335,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4490,7 +4359,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4511,7 +4379,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4539,7 +4406,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean reconciling_;
-
     /**
      *
      *
@@ -4556,7 +4422,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public boolean getReconciling() {
       return reconciling_;
     }
-
     /**
      *
      *
@@ -4577,7 +4442,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

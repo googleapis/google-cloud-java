@@ -36,7 +36,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    * @return Whether the instancesStartWithEncryptionKeyRequestResource field is set.
    */
   boolean hasInstancesStartWithEncryptionKeyRequestResource();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest
       getInstancesStartWithEncryptionKeyRequestResource();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ProcessorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ProcessorOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface ProcessorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface ProcessorOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface ProcessorOrBuilder
    * @return The defaultProcessorVersion.
    */
   java.lang.String getDefaultProcessorVersion();
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public interface ProcessorOrBuilder
    */
   java.util.List<com.google.cloud.documentai.v1.ProcessorVersionAlias>
       getProcessorVersionAliasesList();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface ProcessorOrBuilder
    * </code>
    */
   com.google.cloud.documentai.v1.ProcessorVersionAlias getProcessorVersionAliases(int index);
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface ProcessorOrBuilder
    * </code>
    */
   int getProcessorVersionAliasesCount();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface ProcessorOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1.ProcessorVersionAliasOrBuilder>
       getProcessorVersionAliasesOrBuilderList();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public interface ProcessorOrBuilder
    * @return The processEndpoint.
    */
   java.lang.String getProcessEndpoint();
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public interface ProcessorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface ProcessorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public interface ProcessorOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *

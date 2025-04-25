@@ -82,7 +82,6 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPLOYMENT_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int DEPLOYMENT_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NOT_INSTALLED = 1;</code>
    */
   public static final int NOT_INSTALLED_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSTALLED = 2;</code>
    */
   public static final int INSTALLED_VALUE = 2;
-
   /**
    *
    *

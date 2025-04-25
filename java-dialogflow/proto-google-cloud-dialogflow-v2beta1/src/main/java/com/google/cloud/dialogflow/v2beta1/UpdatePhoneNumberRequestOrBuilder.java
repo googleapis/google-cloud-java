@@ -38,7 +38,6 @@ public interface UpdatePhoneNumberRequestOrBuilder
    * @return Whether the phoneNumber field is set.
    */
   boolean hasPhoneNumber();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdatePhoneNumberRequestOrBuilder
    * @return The phoneNumber.
    */
   com.google.cloud.dialogflow.v2beta1.PhoneNumber getPhoneNumber();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdatePhoneNumberRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdatePhoneNumberRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

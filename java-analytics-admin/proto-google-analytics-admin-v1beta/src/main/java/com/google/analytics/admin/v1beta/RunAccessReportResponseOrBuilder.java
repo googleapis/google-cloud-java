@@ -37,7 +37,6 @@ public interface RunAccessReportResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessDimensionHeader> getDimensionHeadersList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RunAccessReportResponseOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1beta.AccessDimensionHeader getDimensionHeaders(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface RunAccessReportResponseOrBuilder
    * </code>
    */
   int getDimensionHeadersCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface RunAccessReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessDimensionHeaderOrBuilder>
       getDimensionHeadersOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface RunAccessReportResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetricHeader metric_headers = 2;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessMetricHeader> getMetricHeadersList();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface RunAccessReportResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetricHeader metric_headers = 2;</code>
    */
   com.google.analytics.admin.v1beta.AccessMetricHeader getMetricHeaders(int index);
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface RunAccessReportResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessMetricHeader metric_headers = 2;</code>
    */
   int getMetricHeadersCount();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface RunAccessReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessMetricHeaderOrBuilder>
       getMetricHeadersOrBuilderList();
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface RunAccessReportResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessRow rows = 3;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.AccessRow> getRowsList();
-
   /**
    *
    *
@@ -184,7 +175,6 @@ public interface RunAccessReportResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessRow rows = 3;</code>
    */
   com.google.analytics.admin.v1beta.AccessRow getRows(int index);
-
   /**
    *
    *
@@ -195,7 +185,6 @@ public interface RunAccessReportResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.AccessRow rows = 3;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -207,7 +196,6 @@ public interface RunAccessReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccessRowOrBuilder>
       getRowsOrBuilderList();
-
   /**
    *
    *
@@ -252,7 +240,6 @@ public interface RunAccessReportResponseOrBuilder
    * @return Whether the quota field is set.
    */
   boolean hasQuota();
-
   /**
    *
    *
@@ -266,7 +253,6 @@ public interface RunAccessReportResponseOrBuilder
    * @return The quota.
    */
   com.google.analytics.admin.v1beta.AccessQuota getQuota();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureDiskTemplate)
     AzureDiskTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureDiskTemplate.newBuilder() to construct.
   private AzureDiskTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int SIZE_GIB_FIELD_NUMBER = 1;
   private int sizeGib_ = 0;
-
   /**
    *
    *
@@ -243,7 +241,6 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -426,7 +423,6 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int sizeGib_;
-
     /**
      *
      *
@@ -445,7 +441,6 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     public int getSizeGib() {
       return sizeGib_;
     }
-
     /**
      *
      *
@@ -468,7 +463,6 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

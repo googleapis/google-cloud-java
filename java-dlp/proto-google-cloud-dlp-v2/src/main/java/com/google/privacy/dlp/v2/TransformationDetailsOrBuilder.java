@@ -36,7 +36,6 @@ public interface TransformationDetailsOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface TransformationDetailsOrBuilder
    * @return The containerName.
    */
   java.lang.String getContainerName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TransformationDetailsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TransformationDescription transformation = 3;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.TransformationDescription> getTransformationList();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface TransformationDetailsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TransformationDescription transformation = 3;</code>
    */
   com.google.privacy.dlp.v2.TransformationDescription getTransformation(int index);
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface TransformationDetailsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TransformationDescription transformation = 3;</code>
    */
   int getTransformationCount();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface TransformationDetailsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.TransformationDescriptionOrBuilder>
       getTransformationOrBuilderList();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface TransformationDetailsOrBuilder
    * @return Whether the statusDetails field is set.
    */
   boolean hasStatusDetails();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface TransformationDetailsOrBuilder
    * @return The statusDetails.
    */
   com.google.privacy.dlp.v2.TransformationResultStatus getStatusDetails();
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public interface TransformationDetailsOrBuilder
    * @return Whether the transformationLocation field is set.
    */
   boolean hasTransformationLocation();
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public interface TransformationDetailsOrBuilder
    * @return The transformationLocation.
    */
   com.google.privacy.dlp.v2.TransformationLocation getTransformationLocation();
-
   /**
    *
    *

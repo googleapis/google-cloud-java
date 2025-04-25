@@ -36,7 +36,6 @@ public interface ManagementURIOrBuilder
    * @return The webUi.
    */
   java.lang.String getWebUi();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ManagementURIOrBuilder
    * @return The api.
    */
   java.lang.String getApi();
-
   /**
    *
    *

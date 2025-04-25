@@ -38,7 +38,6 @@ public interface MaintenanceExclusionWindowOrBuilder
    * @return Whether the window field is set.
    */
   boolean hasWindow();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MaintenanceExclusionWindowOrBuilder
    * @return The window.
    */
   com.google.cloud.edgecontainer.v1.TimeWindow getWindow();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface MaintenanceExclusionWindowOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

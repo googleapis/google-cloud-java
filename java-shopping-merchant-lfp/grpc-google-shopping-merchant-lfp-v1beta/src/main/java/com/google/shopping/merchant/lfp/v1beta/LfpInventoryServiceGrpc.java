@@ -100,19 +100,6 @@ public final class LfpInventoryServiceGrpc {
     return LfpInventoryServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static LfpInventoryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LfpInventoryServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<LfpInventoryServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public LfpInventoryServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new LfpInventoryServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return LfpInventoryServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -231,44 +218,6 @@ public final class LfpInventoryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LfpInventoryService.
-   *
-   * <pre>
-   * Service for a [LFP
-   * partner](https://support.google.com/merchants/answer/7676652) to submit local
-   * inventories for a merchant.
-   * </pre>
-   */
-  public static final class LfpInventoryServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<LfpInventoryServiceBlockingV2Stub> {
-    private LfpInventoryServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected LfpInventoryServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LfpInventoryServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Inserts a `LfpInventory` resource for the given target merchant account. If
-     * the resource already exists, it will be replaced. The inventory
-     * automatically expires after 30 days.
-     * </pre>
-     */
-    public com.google.shopping.merchant.lfp.v1beta.LfpInventory insertLfpInventory(
-        com.google.shopping.merchant.lfp.v1beta.InsertLfpInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInsertLfpInventoryMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service LfpInventoryService.
    *
    * <pre>
    * Service for a [LFP

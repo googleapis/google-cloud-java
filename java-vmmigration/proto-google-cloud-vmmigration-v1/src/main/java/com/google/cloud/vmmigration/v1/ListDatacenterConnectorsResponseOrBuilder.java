@@ -36,7 +36,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.DatacenterConnector> getDatacenterConnectorsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.DatacenterConnector getDatacenterConnectors(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * </code>
    */
   int getDatacenterConnectorsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.DatacenterConnectorOrBuilder>
       getDatacenterConnectorsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface ListDatacenterConnectorsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

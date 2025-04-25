@@ -237,19 +237,6 @@ public final class HomepageServiceGrpc {
     return HomepageServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static HomepageServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<HomepageServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<HomepageServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public HomepageServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new HomepageServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return HomepageServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -477,91 +464,6 @@ public final class HomepageServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service HomepageService.
-   *
-   * <pre>
-   * Service to support an API for a store's homepage.
-   * </pre>
-   */
-  public static final class HomepageServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<HomepageServiceBlockingV2Stub> {
-    private HomepageServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected HomepageServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new HomepageServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves a store's homepage.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Homepage getHomepage(
-        com.google.shopping.merchant.accounts.v1beta.GetHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetHomepageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a store's homepage. Executing this method requires admin access.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Homepage updateHomepage(
-        com.google.shopping.merchant.accounts.v1beta.UpdateHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateHomepageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Claims a store's homepage. Executing this method requires admin access.
-     * If the homepage is already claimed, this will recheck the
-     * verification (unless the merchant is exempted from claiming, which also
-     * exempts from verification) and return a successful response. If ownership
-     * can no longer be verified, it will return an error, but it won't clear the
-     * claim. In case of failure, a canonical error message will be returned:
-     *    * PERMISSION_DENIED: user doesn't have the necessary permissions on this
-     *    MC account;
-     *    * FAILED_PRECONDITION:
-     *      - The account is not a Merchant Center account;
-     *      - MC account doesn't have a homepage;
-     *      - claiming failed (in this case the error message will contain more
-     *      details).
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Homepage claimHomepage(
-        com.google.shopping.merchant.accounts.v1beta.ClaimHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getClaimHomepageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Unclaims a store's homepage. Executing this method requires admin access.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Homepage unclaimHomepage(
-        com.google.shopping.merchant.accounts.v1beta.UnclaimHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUnclaimHomepageMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service HomepageService.
    *
    * <pre>
    * Service to support an API for a store's homepage.

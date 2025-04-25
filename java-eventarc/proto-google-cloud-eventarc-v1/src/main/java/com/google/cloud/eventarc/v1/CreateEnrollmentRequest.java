@@ -33,7 +33,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.CreateEnrollmentRequest)
     CreateEnrollmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEnrollmentRequest.newBuilder() to construct.
   private CreateEnrollmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
 
   public static final int ENROLLMENT_FIELD_NUMBER = 2;
   private com.google.cloud.eventarc.v1.Enrollment enrollment_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
   public boolean hasEnrollment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
         ? com.google.cloud.eventarc.v1.Enrollment.getDefaultInstance()
         : enrollment_;
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object enrollmentId_ = "";
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -448,7 +439,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -690,7 +680,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -715,7 +704,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -764,7 +751,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
             com.google.cloud.eventarc.v1.Enrollment.Builder,
             com.google.cloud.eventarc.v1.EnrollmentOrBuilder>
         enrollmentBuilder_;
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     public boolean hasEnrollment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
         return enrollmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +884,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +950,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return getEnrollmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -993,7 +970,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
             : enrollment_;
       }
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object enrollmentId_ = "";
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1094,7 +1067,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1085,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1156,7 +1126,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1177,7 +1146,6 @@ public final class CreateEnrollmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

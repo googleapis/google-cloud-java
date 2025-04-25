@@ -36,7 +36,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    * @return Whether the oracleRdbms field is set.
    */
   boolean hasOracleRdbms();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    * @return The oracleRdbms.
    */
   com.google.cloud.datastream.v1alpha1.OracleRdbms getOracleRdbms();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    * @return Whether the mysqlRdbms field is set.
    */
   boolean hasMysqlRdbms();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    * @return The mysqlRdbms.
    */
   com.google.cloud.datastream.v1alpha1.MysqlRdbms getMysqlRdbms();
-
   /**
    *
    *

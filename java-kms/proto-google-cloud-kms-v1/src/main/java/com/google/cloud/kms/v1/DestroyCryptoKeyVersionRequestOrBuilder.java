@@ -39,7 +39,6 @@ public interface DestroyCryptoKeyVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

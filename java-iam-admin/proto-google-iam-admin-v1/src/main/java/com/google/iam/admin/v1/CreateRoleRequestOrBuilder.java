@@ -58,7 +58,6 @@ public interface CreateRoleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -110,7 +109,6 @@ public interface CreateRoleRequestOrBuilder
    * @return The roleId.
    */
   java.lang.String getRoleId();
-
   /**
    *
    *
@@ -140,7 +138,6 @@ public interface CreateRoleRequestOrBuilder
    * @return Whether the role field is set.
    */
   boolean hasRole();
-
   /**
    *
    *
@@ -153,7 +150,6 @@ public interface CreateRoleRequestOrBuilder
    * @return The role.
    */
   com.google.iam.admin.v1.Role getRole();
-
   /**
    *
    *

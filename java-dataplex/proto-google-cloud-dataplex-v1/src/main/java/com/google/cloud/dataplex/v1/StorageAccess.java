@@ -33,7 +33,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.StorageAccess)
     StorageAccessOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StorageAccess.newBuilder() to construct.
   private StorageAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCESS_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCESS_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECT = 1;</code>
      */
     public static final int DIRECT_VALUE = 1;
-
     /**
      *
      *
@@ -225,7 +222,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_FIELD_NUMBER = 21;
   private int read_ = 0;
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
   public int getReadValue() {
     return read_;
   }
-
   /**
    *
    *
@@ -431,7 +426,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -613,7 +607,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int read_ = 0;
-
     /**
      *
      *
@@ -632,7 +625,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
     public int getReadValue() {
       return read_;
     }
-
     /**
      *
      *
@@ -654,7 +646,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +668,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.StorageAccess.AccessMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

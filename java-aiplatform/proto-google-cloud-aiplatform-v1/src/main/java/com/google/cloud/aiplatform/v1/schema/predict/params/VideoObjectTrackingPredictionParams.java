@@ -35,7 +35,6 @@ public final class VideoObjectTrackingPredictionParams
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.params.VideoObjectTrackingPredictionParams)
     VideoObjectTrackingPredictionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoObjectTrackingPredictionParams.newBuilder() to construct.
   private VideoObjectTrackingPredictionParams(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class VideoObjectTrackingPredictionParams
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float confidenceThreshold_ = 0F;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class VideoObjectTrackingPredictionParams
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 2;
   private int maxPredictions_ = 0;
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class VideoObjectTrackingPredictionParams
 
   public static final int MIN_BOUNDING_BOX_SIZE_FIELD_NUMBER = 3;
   private float minBoundingBoxSize_ = 0F;
-
   /**
    *
    *
@@ -332,7 +328,6 @@ public final class VideoObjectTrackingPredictionParams
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +562,6 @@ public final class VideoObjectTrackingPredictionParams
     private int bitField0_;
 
     private float confidenceThreshold_;
-
     /**
      *
      *
@@ -584,7 +578,6 @@ public final class VideoObjectTrackingPredictionParams
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
-
     /**
      *
      *
@@ -605,7 +598,6 @@ public final class VideoObjectTrackingPredictionParams
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +618,6 @@ public final class VideoObjectTrackingPredictionParams
     }
 
     private int maxPredictions_;
-
     /**
      *
      *
@@ -644,7 +635,6 @@ public final class VideoObjectTrackingPredictionParams
     public int getMaxPredictions() {
       return maxPredictions_;
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class VideoObjectTrackingPredictionParams
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class VideoObjectTrackingPredictionParams
     }
 
     private float minBoundingBoxSize_;
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class VideoObjectTrackingPredictionParams
     public float getMinBoundingBoxSize() {
       return minBoundingBoxSize_;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class VideoObjectTrackingPredictionParams
       onChanged();
       return this;
     }
-
     /**
      *
      *

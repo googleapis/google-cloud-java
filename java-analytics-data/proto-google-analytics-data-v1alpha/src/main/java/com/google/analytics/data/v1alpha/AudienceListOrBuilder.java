@@ -41,7 +41,6 @@ public interface AudienceListOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface AudienceListOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface AudienceListOrBuilder
    * @return The audienceDisplayName.
    */
   java.lang.String getAudienceDisplayName();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface AudienceListOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1alpha.AudienceDimension> getDimensionsList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface AudienceListOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.AudienceDimension getDimensions(int index);
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface AudienceListOrBuilder
    * </code>
    */
   int getDimensionsCount();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface AudienceListOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.AudienceDimensionOrBuilder>
       getDimensionsOrBuilderList();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface AudienceListOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface AudienceListOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface AudienceListOrBuilder
    * @return Whether the beginCreatingTime field is set.
    */
   boolean hasBeginCreatingTime();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface AudienceListOrBuilder
    * @return The beginCreatingTime.
    */
   com.google.protobuf.Timestamp getBeginCreatingTime();
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public interface AudienceListOrBuilder
    * @return Whether the rowCount field is set.
    */
   boolean hasRowCount();
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public interface AudienceListOrBuilder
    * @return Whether the errorMessage field is set.
    */
   boolean hasErrorMessage();
-
   /**
    *
    *
@@ -349,7 +336,6 @@ public interface AudienceListOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
-
   /**
    *
    *
@@ -378,7 +364,6 @@ public interface AudienceListOrBuilder
    * @return Whether the percentageCompleted field is set.
    */
   boolean hasPercentageCompleted();
-
   /**
    *
    *
@@ -412,7 +397,6 @@ public interface AudienceListOrBuilder
    * @return Whether the recurringAudienceList field is set.
    */
   boolean hasRecurringAudienceList();
-
   /**
    *
    *
@@ -431,7 +415,6 @@ public interface AudienceListOrBuilder
    * @return The recurringAudienceList.
    */
   java.lang.String getRecurringAudienceList();
-
   /**
    *
    *
@@ -479,7 +462,6 @@ public interface AudienceListOrBuilder
    * @return Whether the webhookNotification field is set.
    */
   boolean hasWebhookNotification();
-
   /**
    *
    *
@@ -508,7 +490,6 @@ public interface AudienceListOrBuilder
    * @return The webhookNotification.
    */
   com.google.analytics.data.v1alpha.WebhookNotification getWebhookNotification();
-
   /**
    *
    *

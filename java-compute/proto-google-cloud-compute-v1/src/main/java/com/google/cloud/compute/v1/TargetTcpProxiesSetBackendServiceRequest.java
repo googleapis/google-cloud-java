@@ -33,7 +33,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest)
     TargetTcpProxiesSetBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetTcpProxiesSetBackendServiceRequest.newBuilder() to construct.
   private TargetTcpProxiesSetBackendServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
   public boolean hasService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -301,7 +297,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -495,7 +490,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
     private int bitField0_;
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
     public boolean hasService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -533,7 +526,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -556,7 +548,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class TargetTcpProxiesSetBackendServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -41,7 +41,6 @@ public interface PageInfoOrBuilder
    * @return The currentPage.
    */
   java.lang.String getCurrentPage();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface PageInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface PageInfoOrBuilder
    * @return Whether the formInfo field is set.
    */
   boolean hasFormInfo();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface PageInfoOrBuilder
    * @return The formInfo.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PageInfo.FormInfo getFormInfo();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.DiagnoseInstanceRequest)
     DiagnoseInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiagnoseInstanceRequest.newBuilder() to construct.
   private DiagnoseInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
 
   public static final int DIAGNOSTIC_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.notebooks.v2.DiagnosticConfig diagnosticConfig_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
   public boolean hasDiagnosticConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         ? com.google.cloud.notebooks.v2.DiagnosticConfig.getDefaultInstance()
         : diagnosticConfig_;
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
 
   public static final int TIMEOUT_MINUTES_FIELD_NUMBER = 3;
   private int timeoutMinutes_ = 0;
-
   /**
    *
    *
@@ -385,7 +378,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -614,7 +606,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -640,7 +631,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +732,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
             com.google.cloud.notebooks.v2.DiagnosticConfig.Builder,
             com.google.cloud.notebooks.v2.DiagnosticConfigOrBuilder>
         diagnosticConfigBuilder_;
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     public boolean hasDiagnosticConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
         return diagnosticConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return getDiagnosticConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
             : diagnosticConfig_;
       }
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     }
 
     private int timeoutMinutes_;
-
     /**
      *
      *
@@ -970,7 +947,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
     public int getTimeoutMinutes() {
       return timeoutMinutes_;
     }
-
     /**
      *
      *
@@ -990,7 +966,6 @@ public final class DiagnoseInstanceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

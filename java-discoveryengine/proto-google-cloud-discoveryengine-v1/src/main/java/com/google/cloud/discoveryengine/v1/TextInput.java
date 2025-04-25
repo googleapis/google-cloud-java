@@ -33,7 +33,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.TextInput)
     TextInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextInput.newBuilder() to construct.
   private TextInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object input_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTEXT_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.ConversationContext context_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.ConversationContext.getDefaultInstance()
         : context_;
   }
-
   /**
    *
    *
@@ -344,7 +338,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +550,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object input_ = "";
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.ConversationContext.Builder,
             com.google.cloud.discoveryengine.v1.ConversationContextOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContext() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +737,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +784,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +798,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
             : context_;
       }
     }
-
     /**
      *
      *

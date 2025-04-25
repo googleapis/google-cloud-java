@@ -36,7 +36,6 @@ public interface ExportBackupRequestOrBuilder
    * @return Whether the gcsBucket field is set.
    */
   boolean hasGcsBucket();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExportBackupRequestOrBuilder
    * @return The gcsBucket.
    */
   java.lang.String getGcsBucket();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ExportBackupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ConnectionDrainingOrBuilder
    * @return Whether the drainingTimeoutSec field is set.
    */
   boolean hasDrainingTimeoutSec();
-
   /**
    *
    *

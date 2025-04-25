@@ -40,14 +40,11 @@ public final class LineOfBusinessProto {
           + "_of_business.proto\022!google.cloud.financi"
           + "alservices.v1*N\n\016LineOfBusiness\022 \n\034LINE_"
           + "OF_BUSINESS_UNSPECIFIED\020\000\022\016\n\nCOMMERCIAL\020"
-          + "\001\022\n\n\006RETAIL\020\002B\202\002\n%com.google.cloud.finan"
+          + "\001\022\n\n\006RETAIL\020\002B\223\001\n%com.google.cloud.finan"
           + "cialservices.v1B\023LineOfBusinessProtoP\001ZS"
           + "cloud.google.com/go/financialservices/ap"
           + "iv1/financialservicespb;financialservice"
-          + "spb\252\002!Google.Cloud.FinancialServices.V1\312"
-          + "\002!Google\\Cloud\\FinancialServices\\V1\352\002$Go"
-          + "ogle::Cloud::FinancialServices::V1b\006prot"
-          + "o3"
+          + "spbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

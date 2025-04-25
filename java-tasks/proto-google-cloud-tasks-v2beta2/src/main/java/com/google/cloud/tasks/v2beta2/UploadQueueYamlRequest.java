@@ -34,7 +34,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.UploadQueueYamlRequest)
     UploadQueueYamlRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadQueueYamlRequest.newBuilder() to construct.
   private UploadQueueYamlRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appId_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
 
   public static final int HTTP_BODY_FIELD_NUMBER = 2;
   private com.google.api.HttpBody httpBody_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
   public boolean hasHttpBody() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
   public com.google.api.HttpBody getHttpBody() {
     return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
   }
-
   /**
    *
    *
@@ -346,7 +340,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object appId_ = "";
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
             com.google.api.HttpBody.Builder,
             com.google.api.HttpBodyOrBuilder>
         httpBodyBuilder_;
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
     public boolean hasHttpBody() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
         return httpBodyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +775,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +808,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getHttpBodyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -844,7 +824,6 @@ public final class UploadQueueYamlRequest extends com.google.protobuf.GeneratedM
         return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
       }
     }
-
     /**
      *
      *

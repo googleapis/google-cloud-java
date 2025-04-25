@@ -25,7 +25,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.UndeleteServiceAccountResponse)
     UndeleteServiceAccountResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UndeleteServiceAccountResponse.newBuilder() to construct.
   private UndeleteServiceAccountResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -58,7 +57,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int RESTORED_ACCOUNT_FIELD_NUMBER = 1;
   private com.google.iam.admin.v1.ServiceAccount restoredAccount_;
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
   public boolean hasRestoredAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
         ? com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()
         : restoredAccount_;
   }
-
   /**
    *
    *
@@ -274,7 +270,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.iam.admin.v1.UndeleteServiceAccountResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -471,7 +466,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
             com.google.iam.admin.v1.ServiceAccount.Builder,
             com.google.iam.admin.v1.ServiceAccountOrBuilder>
         restoredAccountBuilder_;
-
     /**
      *
      *
@@ -486,7 +480,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
     public boolean hasRestoredAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -507,7 +500,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
         return restoredAccountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -530,7 +522,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -551,7 +542,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -579,7 +569,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -599,7 +588,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +602,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       onChanged();
       return getRestoredAccountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -633,7 +620,6 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
             : restoredAccount_;
       }
     }
-
     /**
      *
      *

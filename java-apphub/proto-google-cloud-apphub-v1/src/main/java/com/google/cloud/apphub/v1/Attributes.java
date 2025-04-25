@@ -33,7 +33,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.Attributes)
     AttributesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Attributes.newBuilder() to construct.
   private Attributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CRITICALITY_FIELD_NUMBER = 1;
   private com.google.cloud.apphub.v1.Criticality criticality_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCriticality() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apphub.v1.Criticality.getDefaultInstance()
         : criticality_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
   private com.google.cloud.apphub.v1.Environment environment_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apphub.v1.Environment.getDefaultInstance()
         : environment_;
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apphub.v1.ContactInfo> developerOwners_;
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.apphub.v1.ContactInfo> getDeveloperOwnersList() {
     return developerOwners_;
   }
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       getDeveloperOwnersOrBuilderList() {
     return developerOwners_;
   }
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public int getDeveloperOwnersCount() {
     return developerOwners_.size();
   }
-
   /**
    *
    *
@@ -254,7 +243,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apphub.v1.ContactInfo getDeveloperOwners(int index) {
     return developerOwners_.get(index);
   }
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apphub.v1.ContactInfo> operatorOwners_;
-
   /**
    *
    *
@@ -291,7 +278,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.apphub.v1.ContactInfo> getOperatorOwnersList() {
     return operatorOwners_;
   }
-
   /**
    *
    *
@@ -308,7 +294,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       getOperatorOwnersOrBuilderList() {
     return operatorOwners_;
   }
-
   /**
    *
    *
@@ -324,7 +309,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public int getOperatorOwnersCount() {
     return operatorOwners_.size();
   }
-
   /**
    *
    *
@@ -340,7 +324,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apphub.v1.ContactInfo getOperatorOwners(int index) {
     return operatorOwners_.get(index);
   }
-
   /**
    *
    *
@@ -361,7 +344,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apphub.v1.ContactInfo> businessOwners_;
-
   /**
    *
    *
@@ -378,7 +360,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.apphub.v1.ContactInfo> getBusinessOwnersList() {
     return businessOwners_;
   }
-
   /**
    *
    *
@@ -396,7 +377,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       getBusinessOwnersOrBuilderList() {
     return businessOwners_;
   }
-
   /**
    *
    *
@@ -413,7 +393,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public int getBusinessOwnersCount() {
     return businessOwners_.size();
   }
-
   /**
    *
    *
@@ -430,7 +409,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apphub.v1.ContactInfo getBusinessOwners(int index) {
     return businessOwners_.get(index);
   }
-
   /**
    *
    *
@@ -657,7 +635,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1056,7 +1033,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apphub.v1.Criticality.Builder,
             com.google.cloud.apphub.v1.CriticalityOrBuilder>
         criticalityBuilder_;
-
     /**
      *
      *
@@ -1073,7 +1049,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCriticality() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return criticalityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1145,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1166,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCriticalityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
             : criticality_;
       }
     }
-
     /**
      *
      *
@@ -1268,7 +1236,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apphub.v1.Environment.Builder,
             com.google.cloud.apphub.v1.EnvironmentOrBuilder>
         environmentBuilder_;
-
     /**
      *
      *
@@ -1285,7 +1252,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1298,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1319,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1348,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1369,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1385,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1445,7 +1405,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
             : environment_;
       }
     }
-
     /**
      *
      *
@@ -1509,7 +1468,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return developerOwnersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1528,7 +1486,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return developerOwnersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1547,7 +1504,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return developerOwnersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1572,7 +1528,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1550,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1574,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1598,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1668,7 +1620,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1642,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1714,7 +1664,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1736,7 +1685,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1706,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1720,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apphub.v1.ContactInfo.Builder getDeveloperOwnersBuilder(int index) {
       return getDeveloperOwnersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1792,7 +1738,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return developerOwnersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1812,7 +1757,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(developerOwners_);
       }
     }
-
     /**
      *
      *
@@ -1828,7 +1772,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       return getDeveloperOwnersFieldBuilder()
           .addBuilder(com.google.cloud.apphub.v1.ContactInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1844,7 +1787,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       return getDeveloperOwnersFieldBuilder()
           .addBuilder(index, com.google.cloud.apphub.v1.ContactInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1916,7 +1858,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return operatorOwnersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1935,7 +1876,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return operatorOwnersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1954,7 +1894,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return operatorOwnersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1979,7 +1918,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2002,7 +1940,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1964,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2052,7 +1988,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2010,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2098,7 +2032,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2121,7 +2054,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2143,7 +2075,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2165,7 +2096,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2180,7 +2110,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apphub.v1.ContactInfo.Builder getOperatorOwnersBuilder(int index) {
       return getOperatorOwnersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2199,7 +2128,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return operatorOwnersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2219,7 +2147,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(operatorOwners_);
       }
     }
-
     /**
      *
      *
@@ -2235,7 +2162,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       return getOperatorOwnersFieldBuilder()
           .addBuilder(com.google.cloud.apphub.v1.ContactInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2251,7 +2177,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       return getOperatorOwnersFieldBuilder()
           .addBuilder(index, com.google.cloud.apphub.v1.ContactInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2324,7 +2249,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return businessOwnersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2344,7 +2268,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return businessOwnersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2364,7 +2287,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return businessOwnersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2390,7 +2312,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2414,7 +2335,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2360,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2466,7 +2385,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2490,7 +2408,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2514,7 +2431,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2454,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2561,7 +2476,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2584,7 +2498,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2513,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apphub.v1.ContactInfo.Builder getBusinessOwnersBuilder(int index) {
       return getBusinessOwnersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2620,7 +2532,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return businessOwnersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2641,7 +2552,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(businessOwners_);
       }
     }
-
     /**
      *
      *
@@ -2658,7 +2568,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       return getBusinessOwnersFieldBuilder()
           .addBuilder(com.google.cloud.apphub.v1.ContactInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2675,7 +2584,6 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       return getBusinessOwnersFieldBuilder()
           .addBuilder(index, com.google.cloud.apphub.v1.ContactInfo.getDefaultInstance());
     }
-
     /**
      *
      *

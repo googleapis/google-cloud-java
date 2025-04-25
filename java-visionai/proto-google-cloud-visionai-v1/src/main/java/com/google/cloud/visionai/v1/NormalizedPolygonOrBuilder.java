@@ -35,7 +35,6 @@ public interface NormalizedPolygonOrBuilder
    * <code>repeated .google.cloud.visionai.v1.NormalizedVertex normalized_vertices = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.NormalizedVertex> getNormalizedVerticesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface NormalizedPolygonOrBuilder
    * <code>repeated .google.cloud.visionai.v1.NormalizedVertex normalized_vertices = 1;</code>
    */
   com.google.cloud.visionai.v1.NormalizedVertex getNormalizedVertices(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface NormalizedPolygonOrBuilder
    * <code>repeated .google.cloud.visionai.v1.NormalizedVertex normalized_vertices = 1;</code>
    */
   int getNormalizedVerticesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface NormalizedPolygonOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList();
-
   /**
    *
    *

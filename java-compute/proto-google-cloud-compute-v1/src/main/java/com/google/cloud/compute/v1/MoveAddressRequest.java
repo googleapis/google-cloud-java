@@ -33,7 +33,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.MoveAddressRequest)
     MoveAddressRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MoveAddressRequest.newBuilder() to construct.
   private MoveAddressRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
   public static final int REGION_ADDRESSES_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 409081924;
   private com.google.cloud.compute.v1.RegionAddressesMoveRequest
       regionAddressesMoveRequestResource_;
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRegionAddressesMoveRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.RegionAddressesMoveRequest.getDefaultInstance()
         : regionAddressesMoveRequestResource_;
   }
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -317,7 +306,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -575,7 +562,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -839,7 +825,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object address_ = "";
-
     /**
      *
      *
@@ -862,7 +847,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +907,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +979,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1002,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1137,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.RegionAddressesMoveRequest.Builder,
             com.google.cloud.compute.v1.RegionAddressesMoveRequestOrBuilder>
         regionAddressesMoveRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRegionAddressesMoveRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1239,7 +1208,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return regionAddressesMoveRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1265,7 +1233,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1255,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1286,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1307,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1324,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRegionAddressesMoveRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1382,7 +1345,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
             : regionAddressesMoveRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1412,7 +1374,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1427,7 +1388,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1450,7 +1410,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1473,7 +1432,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1495,7 +1453,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1470,6 @@ public final class MoveAddressRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

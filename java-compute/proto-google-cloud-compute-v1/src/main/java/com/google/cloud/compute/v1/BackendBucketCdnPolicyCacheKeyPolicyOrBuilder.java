@@ -36,7 +36,6 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    * @return A list containing the includeHttpHeaders.
    */
   java.util.List<java.lang.String> getIncludeHttpHeadersList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    * @return The count of includeHttpHeaders.
    */
   int getIncludeHttpHeadersCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    * @return The includeHttpHeaders at the given index.
    */
   java.lang.String getIncludeHttpHeaders(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    * @return A list containing the queryStringWhitelist.
    */
   java.util.List<java.lang.String> getQueryStringWhitelistList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    * @return The count of queryStringWhitelist.
    */
   int getQueryStringWhitelistCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    * @return The queryStringWhitelist at the given index.
    */
   java.lang.String getQueryStringWhitelist(int index);
-
   /**
    *
    *

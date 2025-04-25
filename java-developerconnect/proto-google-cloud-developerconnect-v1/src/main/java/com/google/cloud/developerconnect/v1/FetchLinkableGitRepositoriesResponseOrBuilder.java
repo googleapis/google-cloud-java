@@ -37,7 +37,6 @@ public interface FetchLinkableGitRepositoriesResponseOrBuilder
    */
   java.util.List<com.google.cloud.developerconnect.v1.LinkableGitRepository>
       getLinkableGitRepositoriesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface FetchLinkableGitRepositoriesResponseOrBuilder
    * </code>
    */
   com.google.cloud.developerconnect.v1.LinkableGitRepository getLinkableGitRepositories(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface FetchLinkableGitRepositoriesResponseOrBuilder
    * </code>
    */
   int getLinkableGitRepositoriesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface FetchLinkableGitRepositoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.developerconnect.v1.LinkableGitRepositoryOrBuilder>
       getLinkableGitRepositoriesOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface FetchLinkableGitRepositoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

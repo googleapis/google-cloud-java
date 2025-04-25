@@ -36,7 +36,6 @@ public interface HtmlAdResourceOrBuilder
    * @return The htmlSource.
    */
   java.lang.String getHtmlSource();
-
   /**
    *
    *

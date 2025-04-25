@@ -40,7 +40,6 @@ public interface ListNotificationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface ListNotificationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface ListNotificationsRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface ListNotificationsRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

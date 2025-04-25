@@ -39,7 +39,6 @@ public interface DocumentInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface DocumentInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.automl.v1beta1.GcsSource getGcsSource();
-
   /**
    *
    *

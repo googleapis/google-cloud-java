@@ -39,7 +39,6 @@ public interface GitSourceOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface GitSourceOrBuilder
    * @return The dir.
    */
   java.lang.String getDir();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface GitSourceOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *

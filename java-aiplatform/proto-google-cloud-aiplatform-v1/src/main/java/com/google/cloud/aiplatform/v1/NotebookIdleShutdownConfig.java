@@ -34,7 +34,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookIdleShutdownConfig)
     NotebookIdleShutdownConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotebookIdleShutdownConfig.newBuilder() to construct.
   private NotebookIdleShutdownConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int IDLE_TIMEOUT_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration idleTimeout_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
   public boolean hasIdleTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
   public com.google.protobuf.Duration getIdleTimeout() {
     return idleTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleTimeout_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
 
   public static final int IDLE_SHUTDOWN_DISABLED_FIELD_NUMBER = 2;
   private boolean idleShutdownDisabled_ = false;
-
   /**
    *
    *
@@ -315,7 +310,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -534,7 +528,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         idleTimeoutBuilder_;
-
     /**
      *
      *
@@ -552,7 +545,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
     public boolean hasIdleTimeout() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
         return idleTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
       onChanged();
       return getIdleTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
             : idleTimeout_;
       }
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
     }
 
     private boolean idleShutdownDisabled_;
-
     /**
      *
      *
@@ -766,7 +750,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
     public boolean getIdleShutdownDisabled() {
       return idleShutdownDisabled_;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class NotebookIdleShutdownConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

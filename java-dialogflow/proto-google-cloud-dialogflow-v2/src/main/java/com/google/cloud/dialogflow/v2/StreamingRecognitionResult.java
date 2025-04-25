@@ -69,7 +69,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.StreamingRecognitionResult)
     StreamingRecognitionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingRecognitionResult.newBuilder() to construct.
   private StreamingRecognitionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -163,7 +162,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>MESSAGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MESSAGE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -174,7 +172,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>TRANSCRIPT = 1;</code>
      */
     public static final int TRANSCRIPT_VALUE = 1;
-
     /**
      *
      *
@@ -281,7 +278,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int MESSAGE_TYPE_FIELD_NUMBER = 1;
   private int messageType_ = 0;
-
   /**
    *
    *
@@ -298,7 +294,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   public int getMessageTypeValue() {
     return messageType_;
   }
-
   /**
    *
    *
@@ -325,7 +320,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object transcript_ = "";
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +371,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
   public static final int IS_FINAL_FIELD_NUMBER = 3;
   private boolean isFinal_ = false;
-
   /**
    *
    *
@@ -400,7 +392,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -427,7 +418,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> speechWordInfo_;
-
   /**
    *
    *
@@ -444,7 +434,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.dialogflow.v2.SpeechWordInfo> getSpeechWordInfoList() {
     return speechWordInfo_;
   }
-
   /**
    *
    *
@@ -462,7 +451,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       getSpeechWordInfoOrBuilderList() {
     return speechWordInfo_;
   }
-
   /**
    *
    *
@@ -479,7 +467,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   public int getSpeechWordInfoCount() {
     return speechWordInfo_.size();
   }
-
   /**
    *
    *
@@ -496,7 +483,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   public com.google.cloud.dialogflow.v2.SpeechWordInfo getSpeechWordInfo(int index) {
     return speechWordInfo_.get(index);
   }
-
   /**
    *
    *
@@ -517,7 +503,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
   public static final int SPEECH_END_OFFSET_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration speechEndOffset_;
-
   /**
    *
    *
@@ -534,7 +519,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   public boolean hasSpeechEndOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -553,7 +537,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         ? com.google.protobuf.Duration.getDefaultInstance()
         : speechEndOffset_;
   }
-
   /**
    *
    *
@@ -575,7 +558,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -599,7 +581,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -852,7 +833,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1219,7 +1199,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int messageType_ = 0;
-
     /**
      *
      *
@@ -1236,7 +1215,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public int getMessageTypeValue() {
       return messageType_;
     }
-
     /**
      *
      *
@@ -1256,7 +1234,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1255,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           ? com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1302,7 +1278,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1298,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
 
     private java.lang.Object transcript_ = "";
-
     /**
      *
      *
@@ -1347,7 +1321,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1371,7 +1344,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1394,7 +1366,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1384,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1409,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
 
     private boolean isFinal_;
-
     /**
      *
      *
@@ -1458,7 +1427,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public boolean getIsFinal() {
       return isFinal_;
     }
-
     /**
      *
      *
@@ -1481,7 +1449,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1471,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -1526,7 +1492,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -1552,7 +1517,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1577,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return speechWordInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1633,7 +1596,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return speechWordInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1653,7 +1615,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return speechWordInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1680,7 +1641,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1664,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1689,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1715,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1738,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1761,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1784,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1852,7 +1806,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1875,7 +1828,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1844,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         int index) {
       return getSpeechWordInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1913,7 +1864,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return speechWordInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1934,7 +1884,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(speechWordInfo_);
       }
     }
-
     /**
      *
      *
@@ -1951,7 +1900,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       return getSpeechWordInfoFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.SpeechWordInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1969,7 +1917,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       return getSpeechWordInfoFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.SpeechWordInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2013,7 +1960,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         speechEndOffsetBuilder_;
-
     /**
      *
      *
@@ -2029,7 +1975,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public boolean hasSpeechEndOffset() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2051,7 +1996,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return speechEndOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2075,7 +2019,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2039,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2125,7 +2067,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -2146,7 +2087,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2162,7 +2102,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return getSpeechEndOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2182,7 +2121,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             : speechEndOffset_;
       }
     }
-
     /**
      *
      *
@@ -2211,7 +2149,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -2234,7 +2171,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2257,7 +2193,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2279,7 +2214,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2297,7 +2231,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public interface SupportedLanguagesOrBuilder
    * <code>repeated .google.cloud.translation.v3beta1.SupportedLanguage languages = 1;</code>
    */
   java.util.List<com.google.cloud.translate.v3beta1.SupportedLanguage> getLanguagesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SupportedLanguagesOrBuilder
    * <code>repeated .google.cloud.translation.v3beta1.SupportedLanguage languages = 1;</code>
    */
   com.google.cloud.translate.v3beta1.SupportedLanguage getLanguages(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SupportedLanguagesOrBuilder
    * <code>repeated .google.cloud.translation.v3beta1.SupportedLanguage languages = 1;</code>
    */
   int getLanguagesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SupportedLanguagesOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3beta1.SupportedLanguageOrBuilder>
       getLanguagesOrBuilderList();
-
   /**
    *
    *

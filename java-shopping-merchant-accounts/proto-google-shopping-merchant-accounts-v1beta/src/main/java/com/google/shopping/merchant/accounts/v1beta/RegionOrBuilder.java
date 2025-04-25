@@ -37,7 +37,6 @@ public interface RegionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RegionOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RegionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface RegionOrBuilder
    * @return Whether the postalCodeArea field is set.
    */
   boolean hasPostalCodeArea();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface RegionOrBuilder
    * @return The postalCodeArea.
    */
   com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea getPostalCodeArea();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface RegionOrBuilder
    * @return Whether the geotargetArea field is set.
    */
   boolean hasGeotargetArea();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface RegionOrBuilder
    * @return The geotargetArea.
    */
   com.google.shopping.merchant.accounts.v1beta.Region.GeoTargetArea getGeotargetArea();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface RegionOrBuilder
    * @return Whether the regionalInventoryEligible field is set.
    */
   boolean hasRegionalInventoryEligible();
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface RegionOrBuilder
    * @return The regionalInventoryEligible.
    */
   com.google.protobuf.BoolValue getRegionalInventoryEligible();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface RegionOrBuilder
    * @return Whether the shippingEligible field is set.
    */
   boolean hasShippingEligible();
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public interface RegionOrBuilder
    * @return The shippingEligible.
    */
   com.google.protobuf.BoolValue getShippingEligible();
-
   /**
    *
    *

@@ -26,7 +26,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.ComplianceNote)
     ComplianceNoteOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComplianceNote.newBuilder() to construct.
   private ComplianceNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
-
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
      *
@@ -85,7 +83,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
      */
     io.grafeas.v1.Severity getSeverity();
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1.ComplianceNote.CisBenchmark)
       CisBenchmarkOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CisBenchmark.newBuilder() to construct.
     private CisBenchmark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -133,7 +129,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PROFILE_LEVEL_FIELD_NUMBER = 1;
     private int profileLevel_ = 0;
-
     /**
      * <code>int32 profile_level = 1;</code>
      *
@@ -146,7 +141,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SEVERITY_FIELD_NUMBER = 2;
     private int severity_ = 0;
-
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
      *
@@ -156,7 +150,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
      *
@@ -337,7 +330,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -535,7 +527,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int profileLevel_;
-
       /**
        * <code>int32 profile_level = 1;</code>
        *
@@ -545,7 +536,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       public int getProfileLevel() {
         return profileLevel_;
       }
-
       /**
        * <code>int32 profile_level = 1;</code>
        *
@@ -559,7 +549,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 profile_level = 1;</code>
        *
@@ -573,7 +562,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int severity_ = 0;
-
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
        *
@@ -583,7 +571,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       public int getSeverityValue() {
         return severity_;
       }
-
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
        *
@@ -596,7 +583,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
        *
@@ -607,7 +593,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         io.grafeas.v1.Severity result = io.grafeas.v1.Severity.forNumber(severity_);
         return result == null ? io.grafeas.v1.Severity.UNRECOGNIZED : result;
       }
-
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
        *
@@ -623,7 +608,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
        *
@@ -716,7 +700,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     private ComplianceTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -763,7 +746,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     private PotentialImpactCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -798,7 +780,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -822,7 +803,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -851,7 +831,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -875,7 +854,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -904,7 +882,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.ComplianceVersion> version_;
-
   /**
    *
    *
@@ -918,7 +895,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1.ComplianceVersion> getVersionList() {
     return version_;
   }
-
   /**
    *
    *
@@ -933,7 +909,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       getVersionOrBuilderList() {
     return version_;
   }
-
   /**
    *
    *
@@ -947,7 +922,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   public int getVersionCount() {
     return version_.size();
   }
-
   /**
    *
    *
@@ -961,7 +935,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.ComplianceVersion getVersion(int index) {
     return version_.get(index);
   }
-
   /**
    *
    *
@@ -980,7 +953,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rationale_ = "";
-
   /**
    *
    *
@@ -1004,7 +976,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1033,7 +1004,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remediation_ = "";
-
   /**
    *
    *
@@ -1057,7 +1027,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1083,7 +1052,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CIS_BENCHMARK_FIELD_NUMBER = 6;
-
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
    *
@@ -1093,7 +1061,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCisBenchmark() {
     return complianceTypeCase_ == 6;
   }
-
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
    *
@@ -1106,7 +1073,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
   }
-
   /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
   @java.lang.Override
   public io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder getCisBenchmarkOrBuilder() {
@@ -1118,7 +1084,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCAN_INSTRUCTIONS_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString scanInstructions_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1136,7 +1101,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPACT_FIELD_NUMBER = 8;
-
   /**
    * <code>string impact = 8;</code>
    *
@@ -1145,7 +1109,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImpact() {
     return potentialImpactCase_ == 8;
   }
-
   /**
    * <code>string impact = 8;</code>
    *
@@ -1167,7 +1130,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    * <code>string impact = 8;</code>
    *
@@ -1440,7 +1402,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code grafeas.v1.ComplianceNote} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1811,7 +1772,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -1834,7 +1794,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1857,7 +1816,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1879,7 +1837,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1897,7 +1854,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1922,7 +1878,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1945,7 +1900,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1968,7 +1922,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1990,7 +1943,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2008,7 +1960,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2064,7 +2015,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return versionBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2081,7 +2031,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return versionBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2098,7 +2047,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return versionBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2121,7 +2069,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2141,7 +2088,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2164,7 +2110,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2187,7 +2132,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2207,7 +2151,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2227,7 +2170,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2190,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2268,7 +2209,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2288,7 +2228,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2301,7 +2240,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.ComplianceVersion.Builder getVersionBuilder(int index) {
       return getVersionFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2318,7 +2256,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return versionBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2336,7 +2273,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(version_);
       }
     }
-
     /**
      *
      *
@@ -2350,7 +2286,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return getVersionFieldBuilder()
           .addBuilder(io.grafeas.v1.ComplianceVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2364,7 +2299,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       return getVersionFieldBuilder()
           .addBuilder(index, io.grafeas.v1.ComplianceVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2396,7 +2330,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object rationale_ = "";
-
     /**
      *
      *
@@ -2419,7 +2352,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2442,7 +2374,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2464,7 +2395,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2482,7 +2412,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2507,7 +2436,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object remediation_ = "";
-
     /**
      *
      *
@@ -2530,7 +2458,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2553,7 +2480,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2575,7 +2501,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2593,7 +2518,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2622,7 +2546,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.ComplianceNote.CisBenchmark.Builder,
             io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder>
         cisBenchmarkBuilder_;
-
     /**
      * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
      *
@@ -2632,7 +2555,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCisBenchmark() {
       return complianceTypeCase_ == 6;
     }
-
     /**
      * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
      *
@@ -2652,7 +2574,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder setCisBenchmark(io.grafeas.v1.ComplianceNote.CisBenchmark value) {
       if (cisBenchmarkBuilder_ == null) {
@@ -2667,7 +2588,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       complianceTypeCase_ = 6;
       return this;
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder setCisBenchmark(
         io.grafeas.v1.ComplianceNote.CisBenchmark.Builder builderForValue) {
@@ -2680,7 +2600,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       complianceTypeCase_ = 6;
       return this;
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder mergeCisBenchmark(io.grafeas.v1.ComplianceNote.CisBenchmark value) {
       if (cisBenchmarkBuilder_ == null) {
@@ -2705,7 +2624,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       complianceTypeCase_ = 6;
       return this;
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder clearCisBenchmark() {
       if (cisBenchmarkBuilder_ == null) {
@@ -2723,12 +2641,10 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public io.grafeas.v1.ComplianceNote.CisBenchmark.Builder getCisBenchmarkBuilder() {
       return getCisBenchmarkFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     @java.lang.Override
     public io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder getCisBenchmarkOrBuilder() {
@@ -2741,7 +2657,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.ComplianceNote.CisBenchmark,
@@ -2768,7 +2683,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString scanInstructions_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2784,7 +2698,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getScanInstructions() {
       return scanInstructions_;
     }
-
     /**
      *
      *
@@ -2806,7 +2719,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2834,7 +2746,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImpact() {
       return potentialImpactCase_ == 8;
     }
-
     /**
      * <code>string impact = 8;</code>
      *
@@ -2857,7 +2768,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string impact = 8;</code>
      *
@@ -2880,7 +2790,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string impact = 8;</code>
      *
@@ -2896,7 +2805,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>string impact = 8;</code>
      *
@@ -2910,7 +2818,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      * <code>string impact = 8;</code>
      *

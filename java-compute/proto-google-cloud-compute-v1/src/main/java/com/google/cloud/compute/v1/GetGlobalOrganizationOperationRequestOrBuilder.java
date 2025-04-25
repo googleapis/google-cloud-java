@@ -38,7 +38,6 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    * @return Whether the parentId field is set.
    */
   boolean hasParentId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    * @return The parentId.
    */
   java.lang.String getParentId();
-
   /**
    *
    *

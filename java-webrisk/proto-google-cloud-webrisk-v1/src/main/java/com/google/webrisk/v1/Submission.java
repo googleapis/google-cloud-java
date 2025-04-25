@@ -33,7 +33,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.Submission)
     SubmissionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Submission.newBuilder() to construct.
   private Submission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.webrisk.v1.ThreatType.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.webrisk.v1.ThreatType>(threatTypes_, threatTypes_converter_);
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
   public int getThreatTypesCount() {
     return threatTypes_.size();
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
   public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
   }
-
   /**
    *
    *
@@ -423,7 +415,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.webrisk.v1.ThreatType>(
           threatTypes_, threatTypes_converter_);
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     public int getThreatTypesCount() {
       return threatTypes_.size();
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return java.util.Collections.unmodifiableList(threatTypes_);
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

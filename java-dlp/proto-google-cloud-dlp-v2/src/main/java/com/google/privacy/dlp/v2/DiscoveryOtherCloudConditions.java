@@ -34,7 +34,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryOtherCloudConditions)
     DiscoveryOtherCloudConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryOtherCloudConditions.newBuilder() to construct.
   private DiscoveryOtherCloudConditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
     private ConditionsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
 
   public static final int MIN_AGE_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration minAge_;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
   public boolean hasMinAge() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
   public com.google.protobuf.Duration getMinAge() {
     return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
   }
 
   public static final int AMAZON_S3_BUCKET_CONDITIONS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
   public boolean hasAmazonS3BucketConditions() {
     return conditionsCase_ == 2;
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
     }
     return com.google.privacy.dlp.v2.AmazonS3BucketConditions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -408,7 +400,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minAgeBuilder_;
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
     public boolean hasMinAge() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
         return minAgeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       onChanged();
       return getMinAgeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
         return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
       }
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
             com.google.privacy.dlp.v2.AmazonS3BucketConditions.Builder,
             com.google.privacy.dlp.v2.AmazonS3BucketConditionsOrBuilder>
         amazonS3BucketConditionsBuilder_;
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
     public boolean hasAmazonS3BucketConditions() {
       return conditionsCase_ == 2;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
         return com.google.privacy.dlp.v2.AmazonS3BucketConditions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       conditionsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       conditionsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       conditionsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +995,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
         getAmazonS3BucketConditionsBuilder() {
       return getAmazonS3BucketConditionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1042,7 +1016,6 @@ public final class DiscoveryOtherCloudConditions extends com.google.protobuf.Gen
         return com.google.privacy.dlp.v2.AmazonS3BucketConditions.getDefaultInstance();
       }
     }
-
     /**
      *
      *

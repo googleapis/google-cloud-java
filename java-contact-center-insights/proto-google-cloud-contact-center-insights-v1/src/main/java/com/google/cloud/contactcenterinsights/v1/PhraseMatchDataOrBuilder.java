@@ -36,7 +36,6 @@ public interface PhraseMatchDataOrBuilder
    * @return The phraseMatcher.
    */
   java.lang.String getPhraseMatcher();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PhraseMatchDataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

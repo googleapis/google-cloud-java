@@ -33,7 +33,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ContinuousTestResult)
     ContinuousTestResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContinuousTestResult.newBuilder() to construct.
   private ContinuousTestResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * <code>AGGREGATED_TEST_RESULT_UNSPECIFIED = 0;</code>
      */
     public static final int AGGREGATED_TEST_RESULT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * <code>PASSED = 1;</code>
      */
     public static final int PASSED_VALUE = 1;
-
     /**
      *
      *
@@ -235,7 +232,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -260,7 +256,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +283,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
 
   public static final int RESULT_FIELD_NUMBER = 2;
   private int result_ = 0;
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public int getResultValue() {
     return result_;
   }
-
   /**
    *
    *
@@ -335,7 +328,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList testCaseResults_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -350,7 +342,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getTestCaseResultsList() {
     return testCaseResults_;
   }
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public int getTestCaseResultsCount() {
     return testCaseResults_.size();
   }
-
   /**
    *
    *
@@ -381,7 +371,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTestCaseResults(int index) {
     return testCaseResults_.get(index);
   }
-
   /**
    *
    *
@@ -400,7 +389,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
 
   public static final int RUN_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp runTime_;
-
   /**
    *
    *
@@ -416,7 +404,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public boolean hasRunTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -432,7 +419,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getRunTime() {
     return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
   }
-
   /**
    *
    *
@@ -652,7 +638,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -901,7 +886,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -925,7 +909,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +932,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -972,7 +954,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +972,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +997,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     }
 
     private int result_ = 0;
-
     /**
      *
      *
@@ -1035,7 +1014,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public int getResultValue() {
       return result_;
     }
-
     /**
      *
      *
@@ -1056,7 +1034,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.cx.v3.ContinuousTestResult.AggregatedTestResult.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1109,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1151,7 +1125,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       testCaseResults_.makeImmutable();
       return testCaseResults_;
     }
-
     /**
      *
      *
@@ -1167,7 +1140,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public int getTestCaseResultsCount() {
       return testCaseResults_.size();
     }
-
     /**
      *
      *
@@ -1184,7 +1156,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTestCaseResults(int index) {
       return testCaseResults_.get(index);
     }
-
     /**
      *
      *
@@ -1201,7 +1172,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTestCaseResultsBytes(int index) {
       return testCaseResults_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1226,7 +1196,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1219,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1239,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1258,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1289,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         runTimeBuilder_;
-
     /**
      *
      *
@@ -1338,7 +1303,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public boolean hasRunTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1357,7 +1321,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         return runTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1343,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1362,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1389,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1408,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1422,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1480,7 +1438,6 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
         return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
       }
     }
-
     /**
      *
      *

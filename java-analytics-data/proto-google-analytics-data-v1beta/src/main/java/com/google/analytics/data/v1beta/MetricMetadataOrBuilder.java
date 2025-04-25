@@ -37,7 +37,6 @@ public interface MetricMetadataOrBuilder
    * @return The apiName.
    */
   java.lang.String getApiName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface MetricMetadataOrBuilder
    * @return The uiName.
    */
   java.lang.String getUiName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface MetricMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface MetricMetadataOrBuilder
    * @return A list containing the deprecatedApiNames.
    */
   java.util.List<java.lang.String> getDeprecatedApiNamesList();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface MetricMetadataOrBuilder
    * @return The count of deprecatedApiNames.
    */
   int getDeprecatedApiNamesCount();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface MetricMetadataOrBuilder
    * @return The deprecatedApiNames at the given index.
    */
   java.lang.String getDeprecatedApiNames(int index);
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface MetricMetadataOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public interface MetricMetadataOrBuilder
    * @return The expression.
    */
   java.lang.String getExpression();
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public interface MetricMetadataOrBuilder
    */
   java.util.List<com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
       getBlockedReasonsList();
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public interface MetricMetadataOrBuilder
    * @return The count of blockedReasons.
    */
   int getBlockedReasonsCount();
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public interface MetricMetadataOrBuilder
    * @return The blockedReasons at the given index.
    */
   com.google.analytics.data.v1beta.MetricMetadata.BlockedReason getBlockedReasons(int index);
-
   /**
    *
    *
@@ -326,7 +315,6 @@ public interface MetricMetadataOrBuilder
    * @return A list containing the enum numeric values on the wire for blockedReasons.
    */
   java.util.List<java.lang.Integer> getBlockedReasonsValueList();
-
   /**
    *
    *
@@ -362,7 +350,6 @@ public interface MetricMetadataOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *

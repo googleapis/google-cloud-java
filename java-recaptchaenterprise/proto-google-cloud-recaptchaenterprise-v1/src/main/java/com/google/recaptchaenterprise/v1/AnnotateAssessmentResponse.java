@@ -33,7 +33,6 @@ public final class AnnotateAssessmentResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AnnotateAssessmentResponse)
     AnnotateAssessmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnnotateAssessmentResponse.newBuilder() to construct.
   private AnnotateAssessmentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class AnnotateAssessmentResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

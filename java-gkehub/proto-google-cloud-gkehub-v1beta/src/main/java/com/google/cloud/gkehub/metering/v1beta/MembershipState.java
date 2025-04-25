@@ -33,7 +33,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.metering.v1beta.MembershipState)
     MembershipStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MembershipState.newBuilder() to construct.
   private MembershipState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int LAST_MEASUREMENT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp lastMeasurementTime_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   public boolean hasLastMeasurementTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastMeasurementTime_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRECISE_LAST_MEASURED_CLUSTER_VCPU_CAPACITY_FIELD_NUMBER = 3;
   private float preciseLastMeasuredClusterVcpuCapacity_ = 0F;
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -540,7 +534,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastMeasurementTimeBuilder_;
-
     /**
      *
      *
@@ -556,7 +549,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public boolean hasLastMeasurementTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return lastMeasurementTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -652,7 +641,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLastMeasurementTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
             : lastMeasurementTime_;
       }
     }
-
     /**
      *
      *
@@ -738,7 +723,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     }
 
     private float preciseLastMeasuredClusterVcpuCapacity_;
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public float getPreciseLastMeasuredClusterVcpuCapacity() {
       return preciseLastMeasuredClusterVcpuCapacity_;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

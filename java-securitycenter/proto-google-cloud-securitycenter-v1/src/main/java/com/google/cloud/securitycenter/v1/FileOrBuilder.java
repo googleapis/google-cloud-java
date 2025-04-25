@@ -36,7 +36,6 @@ public interface FileOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface FileOrBuilder
    * @return The sha256.
    */
   java.lang.String getSha256();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface FileOrBuilder
    * @return The contents.
    */
   java.lang.String getContents();
-
   /**
    *
    *
@@ -159,7 +156,6 @@ public interface FileOrBuilder
    * @return Whether the diskPath field is set.
    */
   boolean hasDiskPath();
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public interface FileOrBuilder
    * @return The diskPath.
    */
   com.google.cloud.securitycenter.v1.File.DiskPath getDiskPath();
-
   /**
    *
    *

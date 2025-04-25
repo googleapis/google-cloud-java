@@ -33,7 +33,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.ListLfpStoresResponse)
     ListLfpStoresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLfpStoresResponse.newBuilder() to construct.
   private ListLfpStoresResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpStore> lfpStores_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpStore> getLfpStoresList() {
     return lfpStores_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       getLfpStoresOrBuilderList() {
     return lfpStores_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
   public int getLfpStoresCount() {
     return lfpStores_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
   public com.google.shopping.merchant.lfp.v1beta.LfpStore getLfpStores(int index) {
     return lfpStores_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return lfpStoresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return lfpStoresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return lfpStoresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +838,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
     public com.google.shopping.merchant.lfp.v1beta.LfpStore.Builder getLfpStoresBuilder(int index) {
       return getLfpStoresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return lfpStoresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(lfpStores_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       return getLfpStoresFieldBuilder()
           .addBuilder(com.google.shopping.merchant.lfp.v1beta.LfpStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -954,7 +929,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       return getLfpStoresFieldBuilder()
           .addBuilder(index, com.google.shopping.merchant.lfp.v1beta.LfpStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -987,7 +961,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1011,7 +984,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1007,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1029,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class ListLfpStoresResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

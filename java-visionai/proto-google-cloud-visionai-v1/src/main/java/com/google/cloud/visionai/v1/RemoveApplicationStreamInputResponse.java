@@ -34,7 +34,6 @@ public final class RemoveApplicationStreamInputResponse
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RemoveApplicationStreamInputResponse)
     RemoveApplicationStreamInputResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveApplicationStreamInputResponse.newBuilder() to construct.
   private RemoveApplicationStreamInputResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,7 +215,6 @@ public final class RemoveApplicationStreamInputResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return Whether the dataSourceType field is set.
    */
   boolean hasDataSourceType();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return The dataSourceType.
    */
   com.google.privacy.dlp.v2.DataSourceType getDataSourceType();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return The filter.
    */
   com.google.privacy.dlp.v2.DiscoveryOtherCloudFilter getFilter();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return Whether the conditions field is set.
    */
   boolean hasConditions();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return The conditions.
    */
   com.google.privacy.dlp.v2.DiscoveryOtherCloudConditions getConditions();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return Whether the generationCadence field is set.
    */
   boolean hasGenerationCadence();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return The generationCadence.
    */
   com.google.privacy.dlp.v2.DiscoveryOtherCloudGenerationCadence getGenerationCadence();
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public interface OtherCloudDiscoveryTargetOrBuilder
    * @return The disabled.
    */
   com.google.privacy.dlp.v2.Disabled getDisabled();
-
   /**
    *
    *

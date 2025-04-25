@@ -40,7 +40,6 @@ public interface DeleteExecutionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface DeleteExecutionRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

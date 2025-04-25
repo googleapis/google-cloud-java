@@ -36,7 +36,6 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * @return A list containing the srcIpRanges.
    */
   java.util.List<java.lang.String> getSrcIpRangesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * @return The count of srcIpRanges.
    */
   int getSrcIpRangesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * @return The srcIpRanges at the given index.
    */
   java.lang.String getSrcIpRanges(int index);
-
   /**
    *
    *

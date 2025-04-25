@@ -72,7 +72,6 @@ public enum LeaseType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LEASE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int LEASE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum LeaseType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LEASE_TYPE_READER = 1;</code>
    */
   public static final int LEASE_TYPE_READER_VALUE = 1;
-
   /**
    *
    *

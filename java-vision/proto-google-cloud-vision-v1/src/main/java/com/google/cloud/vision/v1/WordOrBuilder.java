@@ -36,7 +36,6 @@ public interface WordOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WordOrBuilder
    * @return The property.
    */
   com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface WordOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface WordOrBuilder
    * @return The boundingBox.
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingBox();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface WordOrBuilder
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
   java.util.List<com.google.cloud.vision.v1.Symbol> getSymbolsList();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface WordOrBuilder
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
   com.google.cloud.vision.v1.Symbol getSymbols(int index);
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface WordOrBuilder
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
   int getSymbolsCount();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface WordOrBuilder
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
   java.util.List<? extends com.google.cloud.vision.v1.SymbolOrBuilder> getSymbolsOrBuilderList();
-
   /**
    *
    *

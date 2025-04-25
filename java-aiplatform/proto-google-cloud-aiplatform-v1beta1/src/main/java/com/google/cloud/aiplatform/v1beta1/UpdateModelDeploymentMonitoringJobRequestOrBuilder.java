@@ -39,7 +39,6 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    * @return Whether the modelDeploymentMonitoringJob field is set.
    */
   boolean hasModelDeploymentMonitoringJob();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
       getModelDeploymentMonitoringJob();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

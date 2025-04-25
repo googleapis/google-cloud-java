@@ -34,7 +34,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest)
     RemoveResourcePoliciesInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveResourcePoliciesInstanceRequest.newBuilder() to construct.
   private RemoveResourcePoliciesInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class RemoveResourcePoliciesInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       49229558;
   private com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest
       instancesRemoveResourcePoliciesRequestResource_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class RemoveResourcePoliciesInstanceRequest
   public boolean hasInstancesRemoveResourcePoliciesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         ? com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest.getDefaultInstance()
         : instancesRemoveResourcePoliciesRequestResource_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class RemoveResourcePoliciesInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class RemoveResourcePoliciesInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class RemoveResourcePoliciesInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class RemoveResourcePoliciesInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -580,7 +567,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -851,7 +837,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -874,7 +859,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +881,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -919,7 +902,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class RemoveResourcePoliciesInstanceRequest
             com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest.Builder,
             com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequestOrBuilder>
         instancesRemoveResourcePoliciesRequestResourceBuilder_;
-
     /**
      *
      *
@@ -985,7 +965,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     public boolean hasInstancesRemoveResourcePoliciesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return instancesRemoveResourcePoliciesRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1014,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1107,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return getInstancesRemoveResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class RemoveResourcePoliciesInstanceRequest
             : instancesRemoveResourcePoliciesRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1160,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1213,7 +1184,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1208,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1262,7 +1231,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1250,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1276,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1324,7 +1290,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1347,7 +1312,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1370,7 +1334,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1355,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1372,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1396,6 @@ public final class RemoveResourcePoliciesInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1460,7 +1420,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1485,7 +1444,6 @@ public final class RemoveResourcePoliciesInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1509,7 +1467,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1486,6 @@ public final class RemoveResourcePoliciesInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

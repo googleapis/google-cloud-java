@@ -144,19 +144,6 @@ public final class SessionsGrpc {
     return SessionsStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static SessionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SessionsBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<SessionsBlockingV2Stub>() {
-          @java.lang.Override
-          public SessionsBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new SessionsBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return SessionsBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -347,80 +334,6 @@ public final class SessionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Sessions.
-   *
-   * <pre>
-   * A service used for session interactions.
-   * For more information, see the [API interactions
-   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
-   * </pre>
-   */
-  public static final class SessionsBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<SessionsBlockingV2Stub> {
-    private SessionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected SessionsBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SessionsBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query and returns structured, actionable data
-     * as a result. This method is not idempotent, because it may cause contexts
-     * and session entity types to be updated, which in turn might affect
-     * results of future queries.
-     * If you might use
-     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
-     * or other CCAI products now or in the future, consider using
-     * [AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
-     * instead of `DetectIntent`. `AnalyzeContent` has additional
-     * functionality for Agent Assist and other CCAI products.
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2.DetectIntentResponse detectIntent(
-        com.google.cloud.dialogflow.v2.DetectIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDetectIntentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query in audio format in a streaming fashion
-     * and returns structured, actionable data as a result. This method is only
-     * available via the gRPC API (not REST).
-     * If you might use
-     * [Agent Assist](https://cloud.google.com/dialogflow/docs/#aa)
-     * or other CCAI products now or in the future, consider using
-     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
-     * instead of `StreamingDetectIntent`. `StreamingAnalyzeContent` has
-     * additional functionality for Agent Assist and other CCAI products.
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
-     * </pre>
-     */
-    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
-    public io.grpc.stub.BlockingClientCall<
-            com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest,
-            com.google.cloud.dialogflow.v2.StreamingDetectIntentResponse>
-        streamingDetectIntent() {
-      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
-          getChannel(), getStreamingDetectIntentMethod(), getCallOptions());
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Sessions.
    *
    * <pre>
    * A service used for session interactions.

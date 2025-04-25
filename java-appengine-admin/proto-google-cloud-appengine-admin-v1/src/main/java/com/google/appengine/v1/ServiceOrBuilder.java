@@ -39,7 +39,6 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ServiceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ServiceOrBuilder
    * @return Whether the split field is set.
    */
   boolean hasSplit();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface ServiceOrBuilder
    * @return The split.
    */
   com.google.appengine.v1.TrafficSplit getSplit();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -169,11 +164,9 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public interface ServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface ServiceOrBuilder
    * @return Whether the networkSettings field is set.
    */
   boolean hasNetworkSettings();
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public interface ServiceOrBuilder
    * @return The networkSettings.
    */
   com.google.appengine.v1.NetworkSettings getNetworkSettings();
-
   /**
    *
    *

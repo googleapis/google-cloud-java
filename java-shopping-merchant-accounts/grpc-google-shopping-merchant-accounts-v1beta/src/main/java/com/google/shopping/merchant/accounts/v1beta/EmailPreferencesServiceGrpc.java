@@ -157,19 +157,6 @@ public final class EmailPreferencesServiceGrpc {
     return EmailPreferencesServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static EmailPreferencesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<EmailPreferencesServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<EmailPreferencesServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public EmailPreferencesServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new EmailPreferencesServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return EmailPreferencesServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -334,64 +321,6 @@ public final class EmailPreferencesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EmailPreferencesService.
-   *
-   * <pre>
-   * Service to support the `EmailPreferences` API.
-   * This service only permits retrieving and updating email preferences for the
-   * authenticated user.
-   * </pre>
-   */
-  public static final class EmailPreferencesServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<EmailPreferencesServiceBlockingV2Stub> {
-    private EmailPreferencesServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected EmailPreferencesServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new EmailPreferencesServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the email preferences for a Merchant Center account user.
-     * Use the name=accounts/&#42;&#47;users/me/emailPreferences alias to get preferences
-     * for the authenticated user.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.EmailPreferences getEmailPreferences(
-        com.google.shopping.merchant.accounts.v1beta.GetEmailPreferencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetEmailPreferencesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the email preferences for a Merchant Center account user. MCA users
-     * should specify the MCA account rather than a sub-account of the MCA.
-     * Preferences which are not explicitly selected in the update mask will not
-     * be updated.
-     * It is invalid for updates to specify an UNCONFIRMED opt-in status value.
-     * Use the name=accounts/&#42;&#47;users/me/emailPreferences alias to update
-     * preferences
-     * for the authenticated user.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.EmailPreferences updateEmailPreferences(
-        com.google.shopping.merchant.accounts.v1beta.UpdateEmailPreferencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateEmailPreferencesMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service EmailPreferencesService.
    *
    * <pre>
    * Service to support the `EmailPreferences` API.

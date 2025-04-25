@@ -33,7 +33,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1.SetMasterAuthRequest)
     SetMasterAuthRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetMasterAuthRequest.newBuilder() to construct.
   private SetMasterAuthRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,7 +133,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -145,7 +143,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>SET_PASSWORD = 1;</code>
      */
     public static final int SET_PASSWORD_VALUE = 1;
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>GENERATE_PASSWORD = 2;</code>
      */
     public static final int GENERATE_PASSWORD_VALUE = 2;
-
     /**
      *
      *
@@ -261,7 +257,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -290,7 +285,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -354,7 +347,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -389,7 +381,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -448,7 +438,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ACTION_FIELD_NUMBER = 4;
   private int action_ = 0;
-
   /**
    *
    *
@@ -466,7 +455,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   public int getActionValue() {
     return action_;
   }
-
   /**
    *
    *
@@ -491,7 +479,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_FIELD_NUMBER = 5;
   private com.google.container.v1.MasterAuth update_;
-
   /**
    *
    *
@@ -508,7 +495,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -525,7 +511,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   public com.google.container.v1.MasterAuth getUpdate() {
     return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
   }
-
   /**
    *
    *
@@ -545,7 +530,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -570,7 +554,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -805,7 +788,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1076,7 +1058,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1104,7 +1085,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1112,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1138,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1160,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1189,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1241,7 +1217,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1245,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1272,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1295,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1325,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1380,7 +1351,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1377,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1402,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1423,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1484,7 +1451,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int action_ = 0;
-
     /**
      *
      *
@@ -1502,7 +1468,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     public int getActionValue() {
       return action_;
     }
-
     /**
      *
      *
@@ -1523,7 +1488,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1509,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
           ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1569,7 +1532,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1558,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
             com.google.container.v1.MasterAuth.Builder,
             com.google.container.v1.MasterAuthOrBuilder>
         updateBuilder_;
-
     /**
      *
      *
@@ -1612,7 +1573,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1632,7 +1592,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return updateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1656,7 +1615,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1635,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1706,7 +1663,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1683,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1743,7 +1698,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1761,7 +1715,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
       }
     }
-
     /**
      *
      *
@@ -1790,7 +1743,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1814,7 +1766,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1838,7 +1789,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1811,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1880,7 +1829,6 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

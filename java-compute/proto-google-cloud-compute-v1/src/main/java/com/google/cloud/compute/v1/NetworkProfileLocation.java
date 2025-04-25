@@ -32,7 +32,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkProfileLocation)
     NetworkProfileLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkProfileLocation.newBuilder() to construct.
   private NetworkProfileLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,10 +99,8 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_SCOPE = 0;</code>
      */
     public static final int UNDEFINED_SCOPE_VALUE = 0;
-
     /** <code>REGION = 266017524;</code> */
     public static final int REGION_VALUE = 266017524;
-
     /** <code>ZONE = 2759596;</code> */
     public static final int ZONE_VALUE = 2759596;
 
@@ -197,7 +194,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    * <code>optional string name = 3373707;</code>
    *
@@ -207,7 +203,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional string name = 3373707;</code>
    *
@@ -225,7 +220,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    * <code>optional string name = 3373707;</code>
    *
@@ -248,7 +242,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
   public boolean hasScope() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -290,7 +282,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -494,7 +485,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -697,7 +687,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      * <code>optional string name = 3373707;</code>
      *
@@ -706,7 +695,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional string name = 3373707;</code>
      *
@@ -723,7 +711,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string name = 3373707;</code>
      *
@@ -740,7 +727,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string name = 3373707;</code>
      *
@@ -756,7 +742,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string name = 3373707;</code>
      *
@@ -768,7 +753,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string name = 3373707;</code>
      *
@@ -787,7 +771,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object scope_ = "";
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
     public boolean hasScope() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class NetworkProfileLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

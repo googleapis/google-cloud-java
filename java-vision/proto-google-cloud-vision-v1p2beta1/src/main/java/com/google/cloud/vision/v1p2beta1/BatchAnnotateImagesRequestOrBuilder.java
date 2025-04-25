@@ -36,7 +36,6 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.AnnotateImageRequest> getRequestsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1p2beta1.AnnotateImageRequest getRequests(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface BatchAnnotateImagesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

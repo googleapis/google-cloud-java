@@ -33,7 +33,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly)
     NormalizedBoundingPolyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NormalizedBoundingPoly.newBuilder() to construct.
   private NormalizedBoundingPoly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.NormalizedVertex>
       normalizedVertices_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       getNormalizedVerticesList() {
     return normalizedVertices_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       getNormalizedVerticesOrBuilderList() {
     return normalizedVertices_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
   public int getNormalizedVerticesCount() {
     return normalizedVertices_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
   public com.google.cloud.datalabeling.v1beta1.NormalizedVertex getNormalizedVertices(int index) {
     return normalizedVertices_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +574,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
         return normalizedVerticesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
         return normalizedVerticesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
         return normalizedVerticesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +819,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
         getNormalizedVerticesBuilder(int index) {
       return getNormalizedVerticesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
         return normalizedVerticesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -876,7 +855,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(normalizedVertices_);
       }
     }
-
     /**
      *
      *
@@ -892,7 +870,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
       return getNormalizedVerticesFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.NormalizedVertex.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.datalabeling.v1beta1.NormalizedVertex.getDefaultInstance());
     }
-
     /**
      *
      *

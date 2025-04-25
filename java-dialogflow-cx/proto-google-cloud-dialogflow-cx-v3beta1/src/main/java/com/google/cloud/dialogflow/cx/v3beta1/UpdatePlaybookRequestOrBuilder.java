@@ -38,7 +38,6 @@ public interface UpdatePlaybookRequestOrBuilder
    * @return Whether the playbook field is set.
    */
   boolean hasPlaybook();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdatePlaybookRequestOrBuilder
    * @return The playbook.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybook();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdatePlaybookRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdatePlaybookRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

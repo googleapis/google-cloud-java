@@ -33,7 +33,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.AccessConfig)
     AccessConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessConfig.newBuilder() to construct.
   private AccessConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.managedkafka.v1.NetworkConfig> networkConfigs_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.managedkafka.v1.NetworkConfig> getNetworkConfigsList() {
     return networkConfigs_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       getNetworkConfigsOrBuilderList() {
     return networkConfigs_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public int getNetworkConfigsCount() {
     return networkConfigs_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.managedkafka.v1.NetworkConfig getNetworkConfigs(int index) {
     return networkConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -322,7 +316,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return networkConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return networkConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return networkConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNetworkConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +881,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return networkConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(networkConfigs_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return getNetworkConfigsFieldBuilder()
           .addBuilder(com.google.cloud.managedkafka.v1.NetworkConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return getNetworkConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.managedkafka.v1.NetworkConfig.getDefaultInstance());
     }
-
     /**
      *
      *

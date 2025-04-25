@@ -39,7 +39,6 @@ public interface ZoneDistributionConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ZoneDistributionConfigOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ListNotificationChannelDescriptorsResponseOrBuilder
    */
   java.util.List<com.google.monitoring.v3.NotificationChannelDescriptor>
       getChannelDescriptorsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListNotificationChannelDescriptorsResponseOrBuilder
    * </code>
    */
   com.google.monitoring.v3.NotificationChannelDescriptor getChannelDescriptors(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListNotificationChannelDescriptorsResponseOrBuilder
    * </code>
    */
   int getChannelDescriptorsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListNotificationChannelDescriptorsResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.NotificationChannelDescriptorOrBuilder>
       getChannelDescriptorsOrBuilderList();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface ListNotificationChannelDescriptorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

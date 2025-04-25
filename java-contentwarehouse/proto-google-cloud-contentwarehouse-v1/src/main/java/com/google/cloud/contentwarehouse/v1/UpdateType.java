@@ -115,7 +115,6 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int UPDATE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -127,7 +126,6 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_REPLACE = 1;</code>
    */
   public static final int UPDATE_TYPE_REPLACE_VALUE = 1;
-
   /**
    *
    *
@@ -138,7 +136,6 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_MERGE = 2;</code>
    */
   public static final int UPDATE_TYPE_MERGE_VALUE = 2;
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_INSERT_PROPERTIES_BY_NAMES = 3;</code>
    */
   public static final int UPDATE_TYPE_INSERT_PROPERTIES_BY_NAMES_VALUE = 3;
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_REPLACE_PROPERTIES_BY_NAMES = 4;</code>
    */
   public static final int UPDATE_TYPE_REPLACE_PROPERTIES_BY_NAMES_VALUE = 4;
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES = 5;</code>
    */
   public static final int UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES_VALUE = 5;
-
   /**
    *
    *

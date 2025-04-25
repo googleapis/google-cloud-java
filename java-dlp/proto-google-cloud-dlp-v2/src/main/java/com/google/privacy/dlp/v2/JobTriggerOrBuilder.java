@@ -38,7 +38,6 @@ public interface JobTriggerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface JobTriggerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface JobTriggerOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface JobTriggerOrBuilder
    * @return Whether the inspectJob field is set.
    */
   boolean hasInspectJob();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface JobTriggerOrBuilder
    * @return The inspectJob.
    */
   com.google.privacy.dlp.v2.InspectJobConfig getInspectJob();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface JobTriggerOrBuilder
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> getTriggersList();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface JobTriggerOrBuilder
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
   com.google.privacy.dlp.v2.JobTrigger.Trigger getTriggers(int index);
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface JobTriggerOrBuilder
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
   int getTriggersCount();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface JobTriggerOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
       getTriggersOrBuilderList();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface JobTriggerOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public interface JobTriggerOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public interface JobTriggerOrBuilder
    * </code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface JobTriggerOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public interface JobTriggerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -316,7 +302,6 @@ public interface JobTriggerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -342,7 +327,6 @@ public interface JobTriggerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -356,7 +340,6 @@ public interface JobTriggerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -383,7 +366,6 @@ public interface JobTriggerOrBuilder
    * @return Whether the lastRunTime field is set.
    */
   boolean hasLastRunTime();
-
   /**
    *
    *
@@ -398,7 +380,6 @@ public interface JobTriggerOrBuilder
    * @return The lastRunTime.
    */
   com.google.protobuf.Timestamp getLastRunTime();
-
   /**
    *
    *
@@ -426,7 +407,6 @@ public interface JobTriggerOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface ScheduleConfigOrBuilder
    * @return The cron.
    */
   java.lang.String getCron();
-
   /**
    *
    *

@@ -32,7 +32,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslPoliciesScopedList)
     SslPoliciesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SslPoliciesScopedList.newBuilder() to construct.
   private SslPoliciesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.SslPolicy> sslPolicies_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.compute.v1.SslPolicy> getSslPoliciesList() {
     return sslPolicies_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       getSslPoliciesOrBuilderList() {
     return sslPolicies_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
   public int getSslPoliciesCount() {
     return sslPolicies_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.SslPolicy getSslPolicies(int index) {
     return sslPolicies_.get(index);
   }
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +646,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
         return sslPoliciesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
         return sslPoliciesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
         return sslPoliciesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +873,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.SslPolicy.Builder getSslPoliciesBuilder(int index) {
       return getSslPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -912,7 +889,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
         return sslPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -930,7 +906,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(sslPolicies_);
       }
     }
-
     /**
      *
      *
@@ -944,7 +919,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       return getSslPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.SslPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -958,7 +932,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       return getSslPoliciesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.SslPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +969,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1011,7 +983,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1032,7 +1003,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1025,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1044,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1071,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1090,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1104,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1157,7 +1122,6 @@ public final class SslPoliciesScopedList extends com.google.protobuf.GeneratedMe
             : warning_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.ListAdaptiveMtFilesResponse)
     ListAdaptiveMtFilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAdaptiveMtFilesResponse.newBuilder() to construct.
   private ListAdaptiveMtFilesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.AdaptiveMtFile> adaptiveMtFiles_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.translate.v3.AdaptiveMtFile> getAdaptiveMtFilesList() {
     return adaptiveMtFiles_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       getAdaptiveMtFilesOrBuilderList() {
     return adaptiveMtFiles_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
   public int getAdaptiveMtFilesCount() {
     return adaptiveMtFiles_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
   public com.google.cloud.translate.v3.AdaptiveMtFile getAdaptiveMtFiles(int index) {
     return adaptiveMtFiles_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +372,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return adaptiveMtFilesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return adaptiveMtFilesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return adaptiveMtFilesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         int index) {
       return getAdaptiveMtFilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -947,7 +925,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return adaptiveMtFilesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(adaptiveMtFiles_);
       }
     }
-
     /**
      *
      *
@@ -983,7 +959,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       return getAdaptiveMtFilesFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.AdaptiveMtFile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1000,7 +975,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       return getAdaptiveMtFilesFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.AdaptiveMtFile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1063,7 +1036,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1060,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1083,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1102,6 @@ public final class ListAdaptiveMtFilesResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

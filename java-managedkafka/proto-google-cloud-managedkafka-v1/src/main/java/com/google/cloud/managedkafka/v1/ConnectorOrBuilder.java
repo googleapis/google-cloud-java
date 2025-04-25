@@ -38,7 +38,6 @@ public interface ConnectorOrBuilder
    * @return Whether the taskRestartPolicy field is set.
    */
   boolean hasTaskRestartPolicy();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ConnectorOrBuilder
    * @return The taskRestartPolicy.
    */
   com.google.cloud.managedkafka.v1.TaskRetryPolicy getTaskRestartPolicy();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ConnectorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ConnectorOrBuilder
    * <code>map&lt;string, string&gt; configs = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getConfigsCount();
-
   /**
    *
    *
@@ -122,11 +118,9 @@ public interface ConnectorOrBuilder
    * <code>map&lt;string, string&gt; configs = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsConfigs(java.lang.String key);
-
   /** Use {@link #getConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConfigs();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface ConnectorOrBuilder
    * <code>map&lt;string, string&gt; configs = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConfigsMap();
-
   /**
    *
    *
@@ -156,7 +149,6 @@ public interface ConnectorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface ConnectorOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

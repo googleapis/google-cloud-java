@@ -37,7 +37,6 @@ public interface TablesModelColumnInfoOrBuilder
    * @return The columnSpecName.
    */
   java.lang.String getColumnSpecName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface TablesModelColumnInfoOrBuilder
    * @return The columnDisplayName.
    */
   java.lang.String getColumnDisplayName();
-
   /**
    *
    *

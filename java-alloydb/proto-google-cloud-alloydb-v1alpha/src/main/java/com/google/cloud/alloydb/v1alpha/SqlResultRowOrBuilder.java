@@ -34,7 +34,6 @@ public interface SqlResultRowOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.SqlResultValue values = 1;</code>
    */
   java.util.List<com.google.cloud.alloydb.v1alpha.SqlResultValue> getValuesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SqlResultRowOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.SqlResultValue values = 1;</code>
    */
   com.google.cloud.alloydb.v1alpha.SqlResultValue getValues(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SqlResultRowOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.SqlResultValue values = 1;</code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SqlResultRowOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1alpha.SqlResultValueOrBuilder>
       getValuesOrBuilderList();
-
   /**
    *
    *

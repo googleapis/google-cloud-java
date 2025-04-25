@@ -35,7 +35,6 @@ public interface QueryHubStatusResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.HubStatusEntry> getHubStatusEntriesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface QueryHubStatusResponseOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.HubStatusEntry getHubStatusEntries(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface QueryHubStatusResponseOrBuilder
    * </code>
    */
   int getHubStatusEntriesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface QueryHubStatusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.HubStatusEntryOrBuilder>
       getHubStatusEntriesOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface QueryHubStatusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

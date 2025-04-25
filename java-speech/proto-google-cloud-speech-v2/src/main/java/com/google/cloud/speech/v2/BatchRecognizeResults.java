@@ -35,7 +35,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.BatchRecognizeResults)
     BatchRecognizeResultsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRecognizeResults.newBuilder() to construct.
   private BatchRecognizeResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.SpeechRecognitionResult> results_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.speech.v2.SpeechRecognitionResult> getResultsList() {
     return results_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       getResultsOrBuilderList() {
     return results_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
   public int getResultsCount() {
     return results_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
   public com.google.cloud.speech.v2.SpeechRecognitionResult getResults(int index) {
     return results_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
 
   public static final int METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v2.RecognitionResponseMetadata metadata_;
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.speech.v2.RecognitionResponseMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -377,7 +368,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -674,7 +664,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +904,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
     public com.google.cloud.speech.v2.SpeechRecognitionResult.Builder getResultsBuilder(int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -945,7 +922,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(results_);
       }
     }
-
     /**
      *
      *
@@ -979,7 +954,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.speech.v2.SpeechRecognitionResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -995,7 +969,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.speech.v2.SpeechRecognitionResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
             com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder,
             com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1070,7 +1041,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1063,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1083,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1111,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1130,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1144,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1197,7 +1162,6 @@ public final class BatchRecognizeResults extends com.google.protobuf.GeneratedMe
             : metadata_;
       }
     }
-
     /**
      *
      *

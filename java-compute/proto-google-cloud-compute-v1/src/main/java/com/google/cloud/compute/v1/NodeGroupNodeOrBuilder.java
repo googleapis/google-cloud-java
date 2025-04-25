@@ -34,7 +34,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   int getAcceleratorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface NodeGroupNodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the consumedResources field is set.
    */
   boolean hasConsumedResources();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The consumedResources.
    */
   com.google.cloud.compute.v1.InstanceConsumptionInfo getConsumedResources();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the cpuOvercommitType field is set.
    */
   boolean hasCpuOvercommitType();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The cpuOvercommitType.
    */
   java.lang.String getCpuOvercommitType();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
    */
   java.util.List<com.google.cloud.compute.v1.LocalDisk> getDisksList();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
    */
   com.google.cloud.compute.v1.LocalDisk getDisks(int index);
-
   /**
    *
    *
@@ -194,7 +184,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
    */
   int getDisksCount();
-
   /**
    *
    *
@@ -205,7 +194,6 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.LocalDiskOrBuilder> getDisksOrBuilderList();
-
   /**
    *
    *
@@ -230,7 +218,6 @@ public interface NodeGroupNodeOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InstanceConsumptionData>
       getInstanceConsumptionDataList();
-
   /**
    *
    *
@@ -243,7 +230,6 @@ public interface NodeGroupNodeOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InstanceConsumptionData getInstanceConsumptionData(int index);
-
   /**
    *
    *
@@ -256,7 +242,6 @@ public interface NodeGroupNodeOrBuilder
    * </code>
    */
   int getInstanceConsumptionDataCount();
-
   /**
    *
    *
@@ -270,7 +255,6 @@ public interface NodeGroupNodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceConsumptionDataOrBuilder>
       getInstanceConsumptionDataOrBuilderList();
-
   /**
    *
    *
@@ -297,7 +281,6 @@ public interface NodeGroupNodeOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -310,7 +293,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -324,7 +306,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *
@@ -351,7 +332,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -364,7 +344,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -390,7 +369,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the nodeType field is set.
    */
   boolean hasNodeType();
-
   /**
    *
    *
@@ -403,7 +381,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The nodeType.
    */
   java.lang.String getNodeType();
-
   /**
    *
    *
@@ -429,7 +406,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -455,7 +431,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the serverBinding field is set.
    */
   boolean hasServerBinding();
-
   /**
    *
    *
@@ -468,7 +443,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The serverBinding.
    */
   com.google.cloud.compute.v1.ServerBinding getServerBinding();
-
   /**
    *
    *
@@ -492,7 +466,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the serverId field is set.
    */
   boolean hasServerId();
-
   /**
    *
    *
@@ -505,7 +478,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The serverId.
    */
   java.lang.String getServerId();
-
   /**
    *
    *
@@ -532,7 +504,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -546,7 +517,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -574,7 +544,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the totalResources field is set.
    */
   boolean hasTotalResources();
-
   /**
    *
    *
@@ -588,7 +557,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The totalResources.
    */
   com.google.cloud.compute.v1.InstanceConsumptionInfo getTotalResources();
-
   /**
    *
    *
@@ -614,7 +582,6 @@ public interface NodeGroupNodeOrBuilder
    * @return Whether the upcomingMaintenance field is set.
    */
   boolean hasUpcomingMaintenance();
-
   /**
    *
    *
@@ -628,7 +595,6 @@ public interface NodeGroupNodeOrBuilder
    * @return The upcomingMaintenance.
    */
   com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingMaintenance();
-
   /**
    *
    *

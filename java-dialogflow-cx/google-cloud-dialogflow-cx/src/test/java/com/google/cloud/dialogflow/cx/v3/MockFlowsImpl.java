@@ -217,8 +217,7 @@ public class MockFlowsImpl extends FlowsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetFlowValidationResult, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetFlowValidationResult, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FlowValidationResult.class.getName(),
                   Exception.class.getName())));

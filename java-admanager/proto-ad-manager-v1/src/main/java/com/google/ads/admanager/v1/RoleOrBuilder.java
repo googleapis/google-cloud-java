@@ -37,7 +37,6 @@ public interface RoleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface RoleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface RoleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface RoleOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

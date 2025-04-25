@@ -34,7 +34,6 @@ public interface ListParticipantSessionsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.ParticipantSession participant_sessions = 1;</code>
    */
   java.util.List<com.google.apps.meet.v2beta.ParticipantSession> getParticipantSessionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListParticipantSessionsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.ParticipantSession participant_sessions = 1;</code>
    */
   com.google.apps.meet.v2beta.ParticipantSession getParticipantSessions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListParticipantSessionsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.ParticipantSession participant_sessions = 1;</code>
    */
   int getParticipantSessionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListParticipantSessionsResponseOrBuilder
    */
   java.util.List<? extends com.google.apps.meet.v2beta.ParticipantSessionOrBuilder>
       getParticipantSessionsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListParticipantSessionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

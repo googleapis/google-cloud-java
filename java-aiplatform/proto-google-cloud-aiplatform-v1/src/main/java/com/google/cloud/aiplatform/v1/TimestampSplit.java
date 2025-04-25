@@ -37,7 +37,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.TimestampSplit)
     TimestampSplitOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimestampSplit.newBuilder() to construct.
   private TimestampSplit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAINING_FRACTION_FIELD_NUMBER = 1;
   private double trainingFraction_ = 0D;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALIDATION_FRACTION_FIELD_NUMBER = 2;
   private double validationFraction_ = 0D;
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEST_FRACTION_FIELD_NUMBER = 3;
   private double testFraction_ = 0D;
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -384,7 +378,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -611,7 +604,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double trainingFraction_;
-
     /**
      *
      *
@@ -627,7 +619,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public double getTrainingFraction() {
       return trainingFraction_;
     }
-
     /**
      *
      *
@@ -647,7 +638,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double validationFraction_;
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public double getValidationFraction() {
       return validationFraction_;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double testFraction_;
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public double getTestFraction() {
       return testFraction_;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

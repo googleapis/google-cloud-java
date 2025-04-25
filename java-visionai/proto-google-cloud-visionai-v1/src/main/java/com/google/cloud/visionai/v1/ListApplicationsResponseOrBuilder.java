@@ -34,7 +34,6 @@ public interface ListApplicationsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Application applications = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Application> getApplicationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListApplicationsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Application applications = 1;</code>
    */
   com.google.cloud.visionai.v1.Application getApplications(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListApplicationsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Application applications = 1;</code>
    */
   int getApplicationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListApplicationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ApplicationOrBuilder>
       getApplicationsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListApplicationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListApplicationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListApplicationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListApplicationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

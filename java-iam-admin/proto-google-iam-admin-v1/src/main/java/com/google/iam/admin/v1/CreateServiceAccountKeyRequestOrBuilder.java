@@ -42,7 +42,6 @@ public interface CreateServiceAccountKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface CreateServiceAccountKeyRequestOrBuilder
    * @return The enum numeric value on the wire for privateKeyType.
    */
   int getPrivateKeyTypeValue();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface CreateServiceAccountKeyRequestOrBuilder
    * @return The enum numeric value on the wire for keyAlgorithm.
    */
   int getKeyAlgorithmValue();
-
   /**
    *
    *

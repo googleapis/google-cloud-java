@@ -33,7 +33,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.UserInfo)
     UserInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserInfo.newBuilder() to construct.
   private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
-
   /**
    *
    *
@@ -182,7 +178,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -226,12 +221,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userAgent_ = "";
-
   /**
    *
    *
    * <pre>
-   * User agent as included in the HTTP header.
+   * User agent as included in the HTTP header. Required for getting
+   * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+   *
    * The field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    *
@@ -259,12 +255,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
-   * User agent as included in the HTTP header.
+   * User agent as included in the HTTP header. Required for getting
+   * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+   *
    * The field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    *
@@ -295,7 +292,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECT_USER_REQUEST_FIELD_NUMBER = 4;
   private boolean directUserRequest_ = false;
-
   /**
    *
    *
@@ -505,7 +501,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -732,7 +727,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object userId_ = "";
-
     /**
      *
      *
@@ -765,7 +759,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -798,7 +791,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +822,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +849,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +883,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -931,7 +920,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +957,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +993,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1025,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,12 +1064,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userAgent_ = "";
-
     /**
      *
      *
      * <pre>
-     * User agent as included in the HTTP header.
+     * User agent as included in the HTTP header. Required for getting
+     * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      *
@@ -1111,12 +1097,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * User agent as included in the HTTP header.
+     * User agent as included in the HTTP header. Required for getting
+     * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      *
@@ -1143,12 +1130,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * User agent as included in the HTTP header.
+     * User agent as included in the HTTP header. Required for getting
+     * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      *
@@ -1174,12 +1162,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * User agent as included in the HTTP header.
+     * User agent as included in the HTTP header. Required for getting
+     * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      *
@@ -1201,12 +1190,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * User agent as included in the HTTP header.
+     * User agent as included in the HTTP header. Required for getting
+     * [SearchResponse.sponsored_results][google.cloud.retail.v2alpha.SearchResponse.sponsored_results].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      *
@@ -1235,7 +1225,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean directUserRequest_;
-
     /**
      *
      *
@@ -1259,7 +1248,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getDirectUserRequest() {
       return directUserRequest_;
     }
-
     /**
      *
      *
@@ -1287,7 +1275,6 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

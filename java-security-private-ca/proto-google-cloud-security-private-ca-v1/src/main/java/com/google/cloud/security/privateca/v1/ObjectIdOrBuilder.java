@@ -37,7 +37,6 @@ public interface ObjectIdOrBuilder
    * @return A list containing the objectIdPath.
    */
   java.util.List<java.lang.Integer> getObjectIdPathList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ObjectIdOrBuilder
    * @return The count of objectIdPath.
    */
   int getObjectIdPathCount();
-
   /**
    *
    *

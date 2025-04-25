@@ -37,7 +37,6 @@ public interface CustomDimensionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CustomDimensionOrBuilder
    * @return The parameterName.
    */
   java.lang.String getParameterName();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface CustomDimensionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -151,7 +148,6 @@ public interface CustomDimensionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public interface CustomDimensionOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
-
   /**
    *
    *

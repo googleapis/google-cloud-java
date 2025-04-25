@@ -43,7 +43,6 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * @return Whether the gracefulDecommissionTimeout field is set.
    */
   boolean hasGracefulDecommissionTimeout();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * @return The gracefulDecommissionTimeout.
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
-
   /**
    *
    *

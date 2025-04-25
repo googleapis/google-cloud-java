@@ -36,7 +36,6 @@ public interface SkaffoldVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SkaffoldVersionOrBuilder
    * @return Whether the maintenanceModeTime field is set.
    */
   boolean hasMaintenanceModeTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SkaffoldVersionOrBuilder
    * @return The maintenanceModeTime.
    */
   com.google.protobuf.Timestamp getMaintenanceModeTime();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface SkaffoldVersionOrBuilder
    * @return Whether the supportExpirationTime field is set.
    */
   boolean hasSupportExpirationTime();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SkaffoldVersionOrBuilder
    * @return The supportExpirationTime.
    */
   com.google.protobuf.Timestamp getSupportExpirationTime();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface SkaffoldVersionOrBuilder
    * @return Whether the supportEndDate field is set.
    */
   boolean hasSupportEndDate();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface SkaffoldVersionOrBuilder
    * @return The supportEndDate.
    */
   com.google.type.Date getSupportEndDate();
-
   /**
    *
    *

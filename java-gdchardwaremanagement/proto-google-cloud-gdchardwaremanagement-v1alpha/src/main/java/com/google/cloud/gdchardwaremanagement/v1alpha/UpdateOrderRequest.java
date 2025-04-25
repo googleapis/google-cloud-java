@@ -33,7 +33,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.UpdateOrderRequest)
     UpdateOrderRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateOrderRequest.newBuilder() to construct.
   private UpdateOrderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ORDER_FIELD_NUMBER = 2;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Order order_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasOrder() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.getDefaultInstance()
         : order_;
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -429,7 +420,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -672,7 +662,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -902,7 +883,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gdchardwaremanagement.v1alpha.Order.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.OrderOrBuilder>
         orderBuilder_;
-
     /**
      *
      *
@@ -919,7 +899,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasOrder() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
         return orderBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1018,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1034,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOrderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1081,7 +1054,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
             : order_;
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1135,7 +1106,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1129,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1151,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1169,6 @@ public final class UpdateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

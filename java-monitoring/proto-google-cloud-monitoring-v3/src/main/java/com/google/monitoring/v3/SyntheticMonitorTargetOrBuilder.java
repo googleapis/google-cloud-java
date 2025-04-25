@@ -37,7 +37,6 @@ public interface SyntheticMonitorTargetOrBuilder
    * @return Whether the cloudFunctionV2 field is set.
    */
   boolean hasCloudFunctionV2();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SyntheticMonitorTargetOrBuilder
    * @return The cloudFunctionV2.
    */
   com.google.monitoring.v3.SyntheticMonitorTarget.CloudFunctionV2Target getCloudFunctionV2();
-
   /**
    *
    *

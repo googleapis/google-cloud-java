@@ -33,7 +33,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1.EnterpriseConfig)
     EnterpriseConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnterpriseConfig.newBuilder() to construct.
   private EnterpriseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      * <code>CLUSTER_TIER_UNSPECIFIED = 0;</code>
      */
     public static final int CLUSTER_TIER_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      * <code>STANDARD = 1;</code>
      */
     public static final int STANDARD_VALUE = 1;
-
     /**
      *
      *
@@ -226,7 +223,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CLUSTER_TIER_FIELD_NUMBER = 1;
   private int clusterTier_ = 0;
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
   public int getClusterTierValue() {
     return clusterTier_;
   }
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int DESIRED_TIER_FIELD_NUMBER = 2;
   private int desiredTier_ = 0;
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
   public int getDesiredTierValue() {
     return desiredTier_;
   }
-
   /**
    *
    *
@@ -481,7 +474,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +668,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int clusterTier_ = 0;
-
     /**
      *
      *
@@ -694,7 +685,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     public int getClusterTierValue() {
       return clusterTier_;
     }
-
     /**
      *
      *
@@ -715,7 +705,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +726,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.container.v1.EnterpriseConfig.ClusterTier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -761,7 +749,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int desiredTier_ = 0;
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     public int getDesiredTierValue() {
       return desiredTier_;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.container.v1.EnterpriseConfig.ClusterTier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

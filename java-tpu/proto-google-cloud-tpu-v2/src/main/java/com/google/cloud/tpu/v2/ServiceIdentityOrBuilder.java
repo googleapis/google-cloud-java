@@ -36,7 +36,6 @@ public interface ServiceIdentityOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *

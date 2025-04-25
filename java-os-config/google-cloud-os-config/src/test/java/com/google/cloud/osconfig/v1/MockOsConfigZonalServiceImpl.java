@@ -73,8 +73,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateOSPolicyAssignment, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateOSPolicyAssignment, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -95,8 +94,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateOSPolicyAssignment, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateOSPolicyAssignment, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +115,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOSPolicyAssignment, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetOSPolicyAssignment, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OSPolicyAssignment.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOSPolicyAssignments, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListOSPolicyAssignments, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOSPolicyAssignmentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -163,8 +159,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOSPolicyAssignmentRevisions,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ListOSPolicyAssignmentRevisions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOSPolicyAssignmentRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -185,8 +180,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteOSPolicyAssignment, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteOSPolicyAssignment, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -208,8 +202,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOSPolicyAssignmentReport, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method GetOSPolicyAssignmentReport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OSPolicyAssignmentReport.class.getName(),
                   Exception.class.getName())));
@@ -231,8 +224,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListOSPolicyAssignmentReports, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListOSPolicyAssignmentReports, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOSPolicyAssignmentReportsResponse.class.getName(),
                   Exception.class.getName())));
@@ -295,8 +287,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetVulnerabilityReport, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetVulnerabilityReport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VulnerabilityReport.class.getName(),
                   Exception.class.getName())));
@@ -318,8 +309,7 @@ public class MockOsConfigZonalServiceImpl extends OsConfigZonalServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListVulnerabilityReports, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListVulnerabilityReports, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListVulnerabilityReportsResponse.class.getName(),
                   Exception.class.getName())));

@@ -35,7 +35,6 @@ public final class AutonomousDatabaseConnectionStrings
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionStrings)
     AutonomousDatabaseConnectionStringsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutonomousDatabaseConnectionStrings.newBuilder() to construct.
   private AutonomousDatabaseConnectionStrings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class AutonomousDatabaseConnectionStrings
   private int bitField0_;
   public static final int ALL_CONNECTION_STRINGS_FIELD_NUMBER = 1;
   private com.google.cloud.oracledatabase.v1.AllConnectionStrings allConnectionStrings_;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AutonomousDatabaseConnectionStrings
   public boolean hasAllConnectionStrings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class AutonomousDatabaseConnectionStrings
         ? com.google.cloud.oracledatabase.v1.AllConnectionStrings.getDefaultInstance()
         : allConnectionStrings_;
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class AutonomousDatabaseConnectionStrings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dedicated_ = "";
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class AutonomousDatabaseConnectionStrings
       return s;
     }
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class AutonomousDatabaseConnectionStrings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object high_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class AutonomousDatabaseConnectionStrings
       return s;
     }
   }
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class AutonomousDatabaseConnectionStrings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object low_ = "";
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class AutonomousDatabaseConnectionStrings
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class AutonomousDatabaseConnectionStrings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object medium_ = "";
-
   /**
    *
    *
@@ -331,7 +320,6 @@ public final class AutonomousDatabaseConnectionStrings
       return s;
     }
   }
-
   /**
    *
    *
@@ -362,7 +350,6 @@ public final class AutonomousDatabaseConnectionStrings
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile>
       profiles_;
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public final class AutonomousDatabaseConnectionStrings
       getProfilesList() {
     return profiles_;
   }
-
   /**
    *
    *
@@ -399,7 +385,6 @@ public final class AutonomousDatabaseConnectionStrings
       getProfilesOrBuilderList() {
     return profiles_;
   }
-
   /**
    *
    *
@@ -416,7 +401,6 @@ public final class AutonomousDatabaseConnectionStrings
   public int getProfilesCount() {
     return profiles_.size();
   }
-
   /**
    *
    *
@@ -433,7 +417,6 @@ public final class AutonomousDatabaseConnectionStrings
   public com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile getProfiles(int index) {
     return profiles_.get(index);
   }
-
   /**
    *
    *
@@ -666,7 +649,6 @@ public final class AutonomousDatabaseConnectionStrings
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1006,7 +988,6 @@ public final class AutonomousDatabaseConnectionStrings
             com.google.cloud.oracledatabase.v1.AllConnectionStrings.Builder,
             com.google.cloud.oracledatabase.v1.AllConnectionStringsOrBuilder>
         allConnectionStringsBuilder_;
-
     /**
      *
      *
@@ -1024,7 +1005,6 @@ public final class AutonomousDatabaseConnectionStrings
     public boolean hasAllConnectionStrings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1048,7 +1028,6 @@ public final class AutonomousDatabaseConnectionStrings
         return allConnectionStringsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1054,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1077,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1109,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1131,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1149,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return getAllConnectionStringsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1197,7 +1171,6 @@ public final class AutonomousDatabaseConnectionStrings
             : allConnectionStrings_;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1201,6 @@ public final class AutonomousDatabaseConnectionStrings
     }
 
     private java.lang.Object dedicated_ = "";
-
     /**
      *
      *
@@ -1253,7 +1225,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1249,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1302,7 +1272,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1291,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1317,6 @@ public final class AutonomousDatabaseConnectionStrings
     }
 
     private java.lang.Object high_ = "";
-
     /**
      *
      *
@@ -1373,7 +1340,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1397,7 +1363,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1385,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1403,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1428,6 @@ public final class AutonomousDatabaseConnectionStrings
     }
 
     private java.lang.Object low_ = "";
-
     /**
      *
      *
@@ -1489,7 +1451,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1513,7 +1474,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1536,7 +1496,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1514,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1539,6 @@ public final class AutonomousDatabaseConnectionStrings
     }
 
     private java.lang.Object medium_ = "";
-
     /**
      *
      *
@@ -1605,7 +1562,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1629,7 +1585,6 @@ public final class AutonomousDatabaseConnectionStrings
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1652,7 +1607,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1671,7 +1625,6 @@ public final class AutonomousDatabaseConnectionStrings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1734,7 +1687,6 @@ public final class AutonomousDatabaseConnectionStrings
         return profilesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1754,7 +1706,6 @@ public final class AutonomousDatabaseConnectionStrings
         return profilesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1775,7 +1726,6 @@ public final class AutonomousDatabaseConnectionStrings
         return profilesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1802,7 +1752,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1828,7 +1777,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1855,7 +1803,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1882,7 +1829,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1907,7 +1853,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1933,7 +1878,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1959,7 +1903,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1925,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1947,6 @@ public final class AutonomousDatabaseConnectionStrings
       }
       return this;
     }
-
     /**
      *
      *
@@ -2022,7 +1963,6 @@ public final class AutonomousDatabaseConnectionStrings
         getProfilesBuilder(int index) {
       return getProfilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2043,7 +1983,6 @@ public final class AutonomousDatabaseConnectionStrings
         return profilesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2065,7 +2004,6 @@ public final class AutonomousDatabaseConnectionStrings
         return java.util.Collections.unmodifiableList(profiles_);
       }
     }
-
     /**
      *
      *
@@ -2085,7 +2023,6 @@ public final class AutonomousDatabaseConnectionStrings
               com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2106,7 +2043,6 @@ public final class AutonomousDatabaseConnectionStrings
               com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile
                   .getDefaultInstance());
     }
-
     /**
      *
      *

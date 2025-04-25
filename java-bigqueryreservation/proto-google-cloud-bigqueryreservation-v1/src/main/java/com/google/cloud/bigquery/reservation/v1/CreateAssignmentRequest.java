@@ -36,7 +36,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)
     CreateAssignmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAssignmentRequest.newBuilder() to construct.
   private CreateAssignmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
   public static final int ASSIGNMENT_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.reservation.v1.Assignment assignment_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
   public boolean hasAssignment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         ? com.google.cloud.bigquery.reservation.v1.Assignment.getDefaultInstance()
         : assignment_;
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assignmentId_ = "";
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -423,7 +415,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +776,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
             com.google.cloud.bigquery.reservation.v1.Assignment.Builder,
             com.google.cloud.bigquery.reservation.v1.AssignmentOrBuilder>
         assignmentBuilder_;
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     public boolean hasAssignment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         return assignmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +852,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +899,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return getAssignmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
             : assignment_;
       }
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object assignmentId_ = "";
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1032,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1052,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

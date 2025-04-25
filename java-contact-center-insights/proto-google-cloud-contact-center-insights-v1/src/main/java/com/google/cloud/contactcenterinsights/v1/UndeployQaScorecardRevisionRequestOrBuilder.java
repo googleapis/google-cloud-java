@@ -38,7 +38,6 @@ public interface UndeployQaScorecardRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

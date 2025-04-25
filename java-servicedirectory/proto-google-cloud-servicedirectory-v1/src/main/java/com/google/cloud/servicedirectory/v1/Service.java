@@ -36,7 +36,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.servicedirectory.v1.Service)
     ServiceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Service.newBuilder() to construct.
   private Service(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -163,7 +160,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -200,14 +196,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -241,7 +235,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -282,7 +275,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -328,7 +320,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.servicedirectory.v1.Endpoint> endpoints_;
-
   /**
    *
    *
@@ -347,7 +338,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.servicedirectory.v1.Endpoint> getEndpointsList() {
     return endpoints_;
   }
-
   /**
    *
    *
@@ -367,7 +357,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       getEndpointsOrBuilderList() {
     return endpoints_;
   }
-
   /**
    *
    *
@@ -386,7 +375,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getEndpointsCount() {
     return endpoints_.size();
   }
-
   /**
    *
    *
@@ -405,7 +393,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.servicedirectory.v1.Endpoint getEndpoints(int index) {
     return endpoints_.get(index);
   }
-
   /**
    *
    *
@@ -429,7 +416,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -454,7 +440,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -676,7 +661,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -979,7 +963,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1003,7 +986,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1009,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1031,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1049,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1101,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -1159,14 +1137,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -1200,7 +1176,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -1241,7 +1216,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1288,7 +1262,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1325,14 +1298,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000002;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -1373,7 +1344,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1417,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return endpointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1469,7 +1438,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return endpointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1491,7 +1459,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return endpointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1519,7 +1486,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1511,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1538,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1565,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1627,7 +1590,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1615,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1679,7 +1640,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1664,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1688,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1747,7 +1705,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.servicedirectory.v1.Endpoint.Builder getEndpointsBuilder(int index) {
       return getEndpointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1769,7 +1726,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return endpointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1792,7 +1748,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(endpoints_);
       }
     }
-
     /**
      *
      *
@@ -1811,7 +1766,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return getEndpointsFieldBuilder()
           .addBuilder(com.google.cloud.servicedirectory.v1.Endpoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1830,7 +1784,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return getEndpointsFieldBuilder()
           .addBuilder(index, com.google.cloud.servicedirectory.v1.Endpoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1868,7 +1821,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -1892,7 +1844,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1916,7 +1867,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1939,7 +1889,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1907,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

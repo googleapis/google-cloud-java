@@ -39,7 +39,6 @@ public interface CreateApiVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateApiVersionRequestOrBuilder
    * @return Whether the apiVersion field is set.
    */
   boolean hasApiVersion();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateApiVersionRequestOrBuilder
    * @return The apiVersion.
    */
   com.google.cloud.apigeeregistry.v1.ApiVersion getApiVersion();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateApiVersionRequestOrBuilder
    * @return The apiVersionId.
    */
   java.lang.String getApiVersionId();
-
   /**
    *
    *

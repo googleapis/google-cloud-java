@@ -38,7 +38,6 @@ public interface CreateSubnetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateSubnetRequestOrBuilder
    * @return The subnetId.
    */
   java.lang.String getSubnetId();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CreateSubnetRequestOrBuilder
    * @return Whether the subnet field is set.
    */
   boolean hasSubnet();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateSubnetRequestOrBuilder
    * @return The subnet.
    */
   com.google.cloud.edgenetwork.v1.Subnet getSubnet();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface CreateSubnetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

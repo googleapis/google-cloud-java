@@ -34,7 +34,6 @@ public interface ListFileStoreDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileStoreDataProfile file_store_data_profiles = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FileStoreDataProfile> getFileStoreDataProfilesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListFileStoreDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileStoreDataProfile file_store_data_profiles = 1;</code>
    */
   com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreDataProfiles(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListFileStoreDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileStoreDataProfile file_store_data_profiles = 1;</code>
    */
   int getFileStoreDataProfilesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListFileStoreDataProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
       getFileStoreDataProfilesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListFileStoreDataProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

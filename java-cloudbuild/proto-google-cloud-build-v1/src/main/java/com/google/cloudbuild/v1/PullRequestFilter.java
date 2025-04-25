@@ -34,7 +34,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PullRequestFilter)
     PullRequestFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PullRequestFilter.newBuilder() to construct.
   private PullRequestFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * <code>COMMENTS_DISABLED = 0;</code>
      */
     public static final int COMMENTS_DISABLED_VALUE = 0;
-
     /**
      *
      *
@@ -154,7 +152,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * <code>COMMENTS_ENABLED = 1;</code>
      */
     public static final int COMMENTS_ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -268,7 +265,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     private GitRefCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -300,7 +296,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BRANCH_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   public boolean hasBranch() {
     return gitRefCase_ == 2;
   }
-
   /**
    *
    *
@@ -349,7 +343,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +376,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
 
   public static final int COMMENT_CONTROL_FIELD_NUMBER = 5;
   private int commentControl_ = 0;
-
   /**
    *
    *
@@ -407,7 +399,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   public int getCommentControlValue() {
     return commentControl_;
   }
-
   /**
    *
    *
@@ -438,7 +429,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
 
   public static final int INVERT_REGEX_FIELD_NUMBER = 6;
   private boolean invertRegex_ = false;
-
   /**
    *
    *
@@ -649,7 +639,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -904,7 +893,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     public boolean hasBranch() {
       return gitRefCase_ == 2;
     }
-
     /**
      *
      *
@@ -936,7 +924,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -968,7 +955,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -993,7 +979,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +1001,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1028,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     }
 
     private int commentControl_ = 0;
-
     /**
      *
      *
@@ -1068,7 +1051,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     public int getCommentControlValue() {
       return commentControl_;
     }
-
     /**
      *
      *
@@ -1095,7 +1077,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1104,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
           ? com.google.cloudbuild.v1.PullRequestFilter.CommentControl.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1154,7 +1134,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1161,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean invertRegex_;
-
     /**
      *
      *
@@ -1198,7 +1176,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     public boolean getInvertRegex() {
       return invertRegex_;
     }
-
     /**
      *
      *
@@ -1218,7 +1195,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

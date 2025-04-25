@@ -36,7 +36,6 @@ public interface InterconnectOrBuilder
    * @return Whether the adminEnabled field is set.
    */
   boolean hasAdminEnabled();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface InterconnectOrBuilder
    * @return A list containing the availableFeatures.
    */
   java.util.List<java.lang.String> getAvailableFeaturesList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface InterconnectOrBuilder
    * @return The count of availableFeatures.
    */
   int getAvailableFeaturesCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface InterconnectOrBuilder
    * @return The availableFeatures at the given index.
    */
   java.lang.String getAvailableFeatures(int index);
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface InterconnectOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectCircuitInfo> getCircuitInfosList();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface InterconnectOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectCircuitInfo getCircuitInfos(int index);
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface InterconnectOrBuilder
    * </code>
    */
   int getCircuitInfosCount();
-
   /**
    *
    *
@@ -156,7 +149,6 @@ public interface InterconnectOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectCircuitInfoOrBuilder>
       getCircuitInfosOrBuilderList();
-
   /**
    *
    *
@@ -181,7 +173,6 @@ public interface InterconnectOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -194,7 +185,6 @@ public interface InterconnectOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public interface InterconnectOrBuilder
    * @return Whether the customerName field is set.
    */
   boolean hasCustomerName();
-
   /**
    *
    *
@@ -233,7 +222,6 @@ public interface InterconnectOrBuilder
    * @return The customerName.
    */
   java.lang.String getCustomerName();
-
   /**
    *
    *
@@ -259,7 +247,6 @@ public interface InterconnectOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -272,7 +259,6 @@ public interface InterconnectOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -299,7 +285,6 @@ public interface InterconnectOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectOutageNotification>
       getExpectedOutagesList();
-
   /**
    *
    *
@@ -312,7 +297,6 @@ public interface InterconnectOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectOutageNotification getExpectedOutages(int index);
-
   /**
    *
    *
@@ -325,7 +309,6 @@ public interface InterconnectOrBuilder
    * </code>
    */
   int getExpectedOutagesCount();
-
   /**
    *
    *
@@ -339,7 +322,6 @@ public interface InterconnectOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectOutageNotificationOrBuilder>
       getExpectedOutagesOrBuilderList();
-
   /**
    *
    *
@@ -366,7 +348,6 @@ public interface InterconnectOrBuilder
    * @return Whether the googleIpAddress field is set.
    */
   boolean hasGoogleIpAddress();
-
   /**
    *
    *
@@ -379,7 +360,6 @@ public interface InterconnectOrBuilder
    * @return The googleIpAddress.
    */
   java.lang.String getGoogleIpAddress();
-
   /**
    *
    *
@@ -405,7 +385,6 @@ public interface InterconnectOrBuilder
    * @return Whether the googleReferenceId field is set.
    */
   boolean hasGoogleReferenceId();
-
   /**
    *
    *
@@ -418,7 +397,6 @@ public interface InterconnectOrBuilder
    * @return The googleReferenceId.
    */
   java.lang.String getGoogleReferenceId();
-
   /**
    *
    *
@@ -444,7 +422,6 @@ public interface InterconnectOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -470,7 +447,6 @@ public interface InterconnectOrBuilder
    * @return A list containing the interconnectAttachments.
    */
   java.util.List<java.lang.String> getInterconnectAttachmentsList();
-
   /**
    *
    *
@@ -483,7 +459,6 @@ public interface InterconnectOrBuilder
    * @return The count of interconnectAttachments.
    */
   int getInterconnectAttachmentsCount();
-
   /**
    *
    *
@@ -497,7 +472,6 @@ public interface InterconnectOrBuilder
    * @return The interconnectAttachments at the given index.
    */
   java.lang.String getInterconnectAttachments(int index);
-
   /**
    *
    *
@@ -525,7 +499,6 @@ public interface InterconnectOrBuilder
    * @return Whether the interconnectType field is set.
    */
   boolean hasInterconnectType();
-
   /**
    *
    *
@@ -539,7 +512,6 @@ public interface InterconnectOrBuilder
    * @return The interconnectType.
    */
   java.lang.String getInterconnectType();
-
   /**
    *
    *
@@ -566,7 +538,6 @@ public interface InterconnectOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -579,7 +550,6 @@ public interface InterconnectOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -605,7 +575,6 @@ public interface InterconnectOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -618,7 +587,6 @@ public interface InterconnectOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -642,7 +610,6 @@ public interface InterconnectOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -653,11 +620,9 @@ public interface InterconnectOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -668,7 +633,6 @@ public interface InterconnectOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -683,7 +647,6 @@ public interface InterconnectOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -708,7 +671,6 @@ public interface InterconnectOrBuilder
    * @return Whether the linkType field is set.
    */
   boolean hasLinkType();
-
   /**
    *
    *
@@ -722,7 +684,6 @@ public interface InterconnectOrBuilder
    * @return The linkType.
    */
   java.lang.String getLinkType();
-
   /**
    *
    *
@@ -749,7 +710,6 @@ public interface InterconnectOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
-
   /**
    *
    *
@@ -762,7 +722,6 @@ public interface InterconnectOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -788,7 +747,6 @@ public interface InterconnectOrBuilder
    * @return Whether the macsec field is set.
    */
   boolean hasMacsec();
-
   /**
    *
    *
@@ -801,7 +759,6 @@ public interface InterconnectOrBuilder
    * @return The macsec.
    */
   com.google.cloud.compute.v1.InterconnectMacsec getMacsec();
-
   /**
    *
    *
@@ -825,7 +782,6 @@ public interface InterconnectOrBuilder
    * @return Whether the macsecEnabled field is set.
    */
   boolean hasMacsecEnabled();
-
   /**
    *
    *
@@ -851,7 +807,6 @@ public interface InterconnectOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -864,7 +819,6 @@ public interface InterconnectOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -890,7 +844,6 @@ public interface InterconnectOrBuilder
    * @return Whether the nocContactEmail field is set.
    */
   boolean hasNocContactEmail();
-
   /**
    *
    *
@@ -903,7 +856,6 @@ public interface InterconnectOrBuilder
    * @return The nocContactEmail.
    */
   java.lang.String getNocContactEmail();
-
   /**
    *
    *
@@ -930,7 +882,6 @@ public interface InterconnectOrBuilder
    * @return Whether the operationalStatus field is set.
    */
   boolean hasOperationalStatus();
-
   /**
    *
    *
@@ -944,7 +895,6 @@ public interface InterconnectOrBuilder
    * @return The operationalStatus.
    */
   java.lang.String getOperationalStatus();
-
   /**
    *
    *
@@ -971,7 +921,6 @@ public interface InterconnectOrBuilder
    * @return Whether the peerIpAddress field is set.
    */
   boolean hasPeerIpAddress();
-
   /**
    *
    *
@@ -984,7 +933,6 @@ public interface InterconnectOrBuilder
    * @return The peerIpAddress.
    */
   java.lang.String getPeerIpAddress();
-
   /**
    *
    *
@@ -1010,7 +958,6 @@ public interface InterconnectOrBuilder
    * @return Whether the provisionedLinkCount field is set.
    */
   boolean hasProvisionedLinkCount();
-
   /**
    *
    *
@@ -1036,7 +983,6 @@ public interface InterconnectOrBuilder
    * @return Whether the remoteLocation field is set.
    */
   boolean hasRemoteLocation();
-
   /**
    *
    *
@@ -1049,7 +995,6 @@ public interface InterconnectOrBuilder
    * @return The remoteLocation.
    */
   java.lang.String getRemoteLocation();
-
   /**
    *
    *
@@ -1076,7 +1021,6 @@ public interface InterconnectOrBuilder
    * @return A list containing the requestedFeatures.
    */
   java.util.List<java.lang.String> getRequestedFeaturesList();
-
   /**
    *
    *
@@ -1090,7 +1034,6 @@ public interface InterconnectOrBuilder
    * @return The count of requestedFeatures.
    */
   int getRequestedFeaturesCount();
-
   /**
    *
    *
@@ -1105,7 +1048,6 @@ public interface InterconnectOrBuilder
    * @return The requestedFeatures at the given index.
    */
   java.lang.String getRequestedFeatures(int index);
-
   /**
    *
    *
@@ -1133,7 +1075,6 @@ public interface InterconnectOrBuilder
    * @return Whether the requestedLinkCount field is set.
    */
   boolean hasRequestedLinkCount();
-
   /**
    *
    *
@@ -1159,7 +1100,6 @@ public interface InterconnectOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -1185,7 +1125,6 @@ public interface InterconnectOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -1198,7 +1137,6 @@ public interface InterconnectOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -1225,7 +1163,6 @@ public interface InterconnectOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -1239,7 +1176,6 @@ public interface InterconnectOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *

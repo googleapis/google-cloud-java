@@ -38,7 +38,6 @@ public interface CreateWorkstationConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateWorkstationConfigRequestOrBuilder
    * @return The workstationConfigId.
    */
   java.lang.String getWorkstationConfigId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateWorkstationConfigRequestOrBuilder
    * @return Whether the workstationConfig field is set.
    */
   boolean hasWorkstationConfig();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateWorkstationConfigRequestOrBuilder
    * @return The workstationConfig.
    */
   com.google.cloud.workstations.v1.WorkstationConfig getWorkstationConfig();
-
   /**
    *
    *

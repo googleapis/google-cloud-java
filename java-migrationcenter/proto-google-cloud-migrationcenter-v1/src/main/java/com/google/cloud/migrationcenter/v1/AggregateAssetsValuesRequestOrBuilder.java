@@ -36,7 +36,6 @@ public interface AggregateAssetsValuesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface AggregateAssetsValuesRequestOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Aggregation aggregations = 2;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.Aggregation> getAggregationsList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AggregateAssetsValuesRequestOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Aggregation aggregations = 2;</code>
    */
   com.google.cloud.migrationcenter.v1.Aggregation getAggregations(int index);
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface AggregateAssetsValuesRequestOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Aggregation aggregations = 2;</code>
    */
   int getAggregationsCount();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface AggregateAssetsValuesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.AggregationOrBuilder>
       getAggregationsOrBuilderList();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface AggregateAssetsValuesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

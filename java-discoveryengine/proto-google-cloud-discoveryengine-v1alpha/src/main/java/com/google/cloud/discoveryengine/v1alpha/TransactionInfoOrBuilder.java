@@ -38,7 +38,6 @@ public interface TransactionInfoOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TransactionInfoOrBuilder
    * @return The currency.
    */
   java.lang.String getCurrency();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TransactionInfoOrBuilder
    * @return The transactionId.
    */
   java.lang.String getTransactionId();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface TransactionInfoOrBuilder
    * @return Whether the tax field is set.
    */
   boolean hasTax();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface TransactionInfoOrBuilder
    * @return Whether the cost field is set.
    */
   boolean hasCost();
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public interface TransactionInfoOrBuilder
    * @return Whether the discountValue field is set.
    */
   boolean hasDiscountValue();
-
   /**
    *
    *

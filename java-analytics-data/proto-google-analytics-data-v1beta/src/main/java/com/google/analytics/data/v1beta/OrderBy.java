@@ -35,7 +35,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.OrderBy)
     OrderByOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OrderBy.newBuilder() to construct.
   private OrderBy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * @return The metricName.
      */
     java.lang.String getMetricName();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getMetricNameBytes();
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.OrderBy.MetricOrderBy)
       MetricOrderByOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MetricOrderBy.newBuilder() to construct.
     private MetricOrderBy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -145,7 +141,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object metricName_ = "";
-
     /**
      *
      *
@@ -169,7 +164,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -355,7 +349,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -543,7 +536,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object metricName_ = "";
-
       /**
        *
        *
@@ -566,7 +558,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -589,7 +580,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -611,7 +601,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -629,7 +618,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -734,7 +722,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * @return The dimensionName.
      */
     java.lang.String getDimensionName();
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for orderType.
      */
     int getOrderTypeValue();
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType getOrderType();
   }
-
   /**
    *
    *
@@ -789,7 +774,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.OrderBy.DimensionOrderBy)
       DimensionOrderByOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DimensionOrderBy.newBuilder() to construct.
     private DimensionOrderBy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -889,7 +873,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * <code>ORDER_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int ORDER_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -901,7 +884,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * <code>ALPHANUMERIC = 1;</code>
        */
       public static final int ALPHANUMERIC_VALUE = 1;
-
       /**
        *
        *
@@ -913,7 +895,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * <code>CASE_INSENSITIVE_ALPHANUMERIC = 2;</code>
        */
       public static final int CASE_INSENSITIVE_ALPHANUMERIC_VALUE = 2;
-
       /**
        *
        *
@@ -1019,7 +1000,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dimensionName_ = "";
-
     /**
      *
      *
@@ -1043,7 +1023,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1049,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ORDER_TYPE_FIELD_NUMBER = 2;
     private int orderType_ = 0;
-
     /**
      *
      *
@@ -1086,7 +1064,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public int getOrderTypeValue() {
       return orderType_;
     }
-
     /**
      *
      *
@@ -1283,7 +1260,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1484,7 +1460,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object dimensionName_ = "";
-
       /**
        *
        *
@@ -1507,7 +1482,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1530,7 +1504,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1552,7 +1525,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1570,7 +1542,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1595,7 +1566,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int orderType_ = 0;
-
       /**
        *
        *
@@ -1612,7 +1582,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       public int getOrderTypeValue() {
         return orderType_;
       }
-
       /**
        *
        *
@@ -1632,7 +1601,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1654,7 +1622,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             ? com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1678,7 +1645,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1780,7 +1746,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * @return The metricName.
      */
     java.lang.String getMetricName();
-
     /**
      *
      *
@@ -1811,7 +1776,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection>
         getPivotSelectionsList();
-
     /**
      *
      *
@@ -1828,7 +1792,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection getPivotSelections(
         int index);
-
     /**
      *
      *
@@ -1844,7 +1807,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPivotSelectionsCount();
-
     /**
      *
      *
@@ -1862,7 +1824,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelectionOrBuilder>
         getPivotSelectionsOrBuilderList();
-
     /**
      *
      *
@@ -1880,7 +1841,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelectionOrBuilder
         getPivotSelectionsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1895,7 +1855,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.OrderBy.PivotOrderBy)
       PivotOrderByOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PivotOrderBy.newBuilder() to construct.
     private PivotOrderBy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1944,7 +1903,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return The dimensionName.
        */
       java.lang.String getDimensionName();
-
       /**
        *
        *
@@ -1970,7 +1928,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return The dimensionValue.
        */
       java.lang.String getDimensionValue();
-
       /**
        *
        *
@@ -1984,7 +1941,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getDimensionValueBytes();
     }
-
     /**
      *
      *
@@ -2014,7 +1970,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection)
         PivotSelectionOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use PivotSelection.newBuilder() to construct.
       private PivotSelection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2050,7 +2005,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object dimensionName_ = "";
-
       /**
        *
        *
@@ -2074,7 +2028,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -2103,7 +2056,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object dimensionValue_ = "";
-
       /**
        *
        *
@@ -2127,7 +2079,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -2325,7 +2276,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2553,7 +2503,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object dimensionName_ = "";
-
         /**
          *
          *
@@ -2576,7 +2525,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2599,7 +2547,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2621,7 +2568,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2639,7 +2585,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2664,7 +2609,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object dimensionValue_ = "";
-
         /**
          *
          *
@@ -2687,7 +2631,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2710,7 +2653,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2732,7 +2674,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2750,7 +2691,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2846,7 +2786,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object metricName_ = "";
-
     /**
      *
      *
@@ -2871,7 +2810,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2902,7 +2840,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection>
         pivotSelections_;
-
     /**
      *
      *
@@ -2922,7 +2859,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         getPivotSelectionsList() {
       return pivotSelections_;
     }
-
     /**
      *
      *
@@ -2943,7 +2879,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         getPivotSelectionsOrBuilderList() {
       return pivotSelections_;
     }
-
     /**
      *
      *
@@ -2962,7 +2897,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public int getPivotSelectionsCount() {
       return pivotSelections_.size();
     }
-
     /**
      *
      *
@@ -2982,7 +2916,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return pivotSelections_.get(index);
     }
-
     /**
      *
      *
@@ -3176,7 +3109,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3427,7 +3359,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object metricName_ = "";
-
       /**
        *
        *
@@ -3451,7 +3382,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3475,7 +3405,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3498,7 +3427,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3517,7 +3445,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3583,7 +3510,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return pivotSelectionsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3605,7 +3531,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return pivotSelectionsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3628,7 +3553,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return pivotSelectionsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3657,7 +3581,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3685,7 +3608,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3714,7 +3636,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3743,7 +3664,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3770,7 +3690,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3798,7 +3717,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3826,7 +3744,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3851,7 +3768,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3876,7 +3792,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3895,7 +3810,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           getPivotSelectionsBuilder(int index) {
         return getPivotSelectionsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3918,7 +3832,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return pivotSelectionsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3943,7 +3856,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(pivotSelections_);
         }
       }
-
       /**
        *
        *
@@ -3965,7 +3877,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
                 com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3988,7 +3899,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
                 com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4111,7 +4021,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     private OneOrderByCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4147,7 +4056,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -4163,7 +4071,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetric() {
     return oneOrderByCase_ == 1;
   }
-
   /**
    *
    *
@@ -4182,7 +4089,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.analytics.data.v1beta.OrderBy.MetricOrderBy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4201,7 +4107,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIMENSION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -4217,7 +4122,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDimension() {
     return oneOrderByCase_ == 2;
   }
-
   /**
    *
    *
@@ -4236,7 +4140,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4256,7 +4159,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PIVOT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -4272,7 +4174,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPivot() {
     return oneOrderByCase_ == 3;
   }
-
   /**
    *
    *
@@ -4291,7 +4192,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4311,7 +4211,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESC_FIELD_NUMBER = 4;
   private boolean desc_ = false;
-
   /**
    *
    *
@@ -4541,7 +4440,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4808,7 +4706,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1beta.OrderBy.MetricOrderBy.Builder,
             com.google.analytics.data.v1beta.OrderBy.MetricOrderByOrBuilder>
         metricBuilder_;
-
     /**
      *
      *
@@ -4824,7 +4721,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetric() {
       return oneOrderByCase_ == 1;
     }
-
     /**
      *
      *
@@ -4850,7 +4746,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.data.v1beta.OrderBy.MetricOrderBy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4873,7 +4768,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4894,7 +4788,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4928,7 +4821,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4954,7 +4846,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4967,7 +4858,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.OrderBy.MetricOrderBy.Builder getMetricBuilder() {
       return getMetricFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4988,7 +4878,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.data.v1beta.OrderBy.MetricOrderBy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5027,7 +4916,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.Builder,
             com.google.analytics.data.v1beta.OrderBy.DimensionOrderByOrBuilder>
         dimensionBuilder_;
-
     /**
      *
      *
@@ -5043,7 +4931,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDimension() {
       return oneOrderByCase_ == 2;
     }
-
     /**
      *
      *
@@ -5069,7 +4956,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5092,7 +4978,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5113,7 +4998,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5147,7 +5031,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5173,7 +5056,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5186,7 +5068,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.Builder getDimensionBuilder() {
       return getDimensionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5208,7 +5089,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5248,7 +5128,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.Builder,
             com.google.analytics.data.v1beta.OrderBy.PivotOrderByOrBuilder>
         pivotBuilder_;
-
     /**
      *
      *
@@ -5264,7 +5143,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPivot() {
       return oneOrderByCase_ == 3;
     }
-
     /**
      *
      *
@@ -5290,7 +5168,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5313,7 +5190,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5334,7 +5210,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5368,7 +5243,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       oneOrderByCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5394,7 +5268,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5407,7 +5280,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.Builder getPivotBuilder() {
       return getPivotFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5428,7 +5300,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         return com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5463,7 +5334,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean desc_;
-
     /**
      *
      *
@@ -5479,7 +5349,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public boolean getDesc() {
       return desc_;
     }
-
     /**
      *
      *
@@ -5499,7 +5368,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.JobStatus)
     JobStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobStatus.newBuilder() to construct.
   private JobStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -196,7 +195,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -207,7 +205,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>QUEUED = 1;</code>
      */
     public static final int QUEUED_VALUE = 1;
-
     /**
      *
      *
@@ -220,7 +217,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEDULED = 2;</code>
      */
     public static final int SCHEDULED_VALUE = 2;
-
     /**
      *
      *
@@ -232,7 +228,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 3;</code>
      */
     public static final int RUNNING_VALUE = 3;
-
     /**
      *
      *
@@ -243,7 +238,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 4;</code>
      */
     public static final int SUCCEEDED_VALUE = 4;
-
     /**
      *
      *
@@ -254,7 +248,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 5;</code>
      */
     public static final int FAILED_VALUE = 5;
-
     /**
      *
      *
@@ -266,7 +259,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETION_IN_PROGRESS = 6;</code>
      */
     public static final int DELETION_IN_PROGRESS_VALUE = 6;
-
     /**
      *
      *
@@ -278,7 +270,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLATION_IN_PROGRESS = 7;</code>
      */
     public static final int CANCELLATION_IN_PROGRESS_VALUE = 7;
-
     /**
      *
      *
@@ -403,7 +394,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The machineType.
      */
     java.lang.String getMachineType();
-
     /**
      *
      *
@@ -430,7 +420,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for provisioningModel.
      */
     int getProvisioningModelValue();
-
     /**
      *
      *
@@ -470,7 +459,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bootDisk field is set.
      */
     boolean hasBootDisk();
-
     /**
      *
      *
@@ -483,7 +471,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The bootDisk.
      */
     com.google.cloud.batch.v1alpha.AllocationPolicy.Disk getBootDisk();
-
     /**
      *
      *
@@ -495,7 +482,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder();
   }
-
   /**
    *
    *
@@ -510,7 +496,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.JobStatus.InstanceStatus)
       InstanceStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InstanceStatus.newBuilder() to construct.
     private InstanceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -547,7 +532,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -571,7 +555,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -598,7 +581,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PROVISIONING_MODEL_FIELD_NUMBER = 2;
     private int provisioningModel_ = 0;
-
     /**
      *
      *
@@ -615,7 +597,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getProvisioningModelValue() {
       return provisioningModel_;
     }
-
     /**
      *
      *
@@ -641,7 +622,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TASK_PACK_FIELD_NUMBER = 3;
     private long taskPack_ = 0L;
-
     /**
      *
      *
@@ -660,7 +640,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BOOT_DISK_FIELD_NUMBER = 4;
     private com.google.cloud.batch.v1alpha.AllocationPolicy.Disk bootDisk_;
-
     /**
      *
      *
@@ -676,7 +655,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBootDisk() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -694,7 +672,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.getDefaultInstance()
           : bootDisk_;
     }
-
     /**
      *
      *
@@ -910,7 +887,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1153,7 +1129,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object machineType_ = "";
-
       /**
        *
        *
@@ -1176,7 +1151,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1199,7 +1173,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1221,7 +1194,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1239,7 +1211,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1264,7 +1235,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int provisioningModel_ = 0;
-
       /**
        *
        *
@@ -1282,7 +1252,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public int getProvisioningModelValue() {
         return provisioningModel_;
       }
-
       /**
        *
        *
@@ -1303,7 +1272,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1327,7 +1295,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.batch.v1alpha.AllocationPolicy.ProvisioningModel.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1352,7 +1319,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1374,7 +1340,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long taskPack_;
-
       /**
        *
        *
@@ -1390,7 +1355,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public long getTaskPack() {
         return taskPack_;
       }
-
       /**
        *
        *
@@ -1410,7 +1374,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1435,7 +1398,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.Builder,
               com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder>
           bootDiskBuilder_;
-
       /**
        *
        *
@@ -1450,7 +1412,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBootDisk() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1471,7 +1432,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return bootDiskBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1494,7 +1454,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1515,7 +1474,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1544,7 +1502,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1564,7 +1521,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1579,7 +1535,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBootDiskFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1598,7 +1553,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
               : bootDisk_;
         }
       }
-
       /**
        *
        *
@@ -1705,7 +1659,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, int64&gt; counts = 1;</code>
      */
     int getCountsCount();
-
     /**
      *
      *
@@ -1717,11 +1670,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, int64&gt; counts = 1;</code>
      */
     boolean containsCounts(java.lang.String key);
-
     /** Use {@link #getCountsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.Long> getCounts();
-
     /**
      *
      *
@@ -1733,7 +1684,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, int64&gt; counts = 1;</code>
      */
     java.util.Map<java.lang.String, java.lang.Long> getCountsMap();
-
     /**
      *
      *
@@ -1745,7 +1695,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, int64&gt; counts = 1;</code>
      */
     long getCountsOrDefault(java.lang.String key, long defaultValue);
-
     /**
      *
      *
@@ -1768,7 +1717,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.batch.v1alpha.JobStatus.InstanceStatus instances = 2;</code>
      */
     java.util.List<com.google.cloud.batch.v1alpha.JobStatus.InstanceStatus> getInstancesList();
-
     /**
      *
      *
@@ -1779,7 +1727,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.batch.v1alpha.JobStatus.InstanceStatus instances = 2;</code>
      */
     com.google.cloud.batch.v1alpha.JobStatus.InstanceStatus getInstances(int index);
-
     /**
      *
      *
@@ -1790,7 +1737,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.batch.v1alpha.JobStatus.InstanceStatus instances = 2;</code>
      */
     int getInstancesCount();
-
     /**
      *
      *
@@ -1802,7 +1748,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.batch.v1alpha.JobStatus.InstanceStatusOrBuilder>
         getInstancesOrBuilderList();
-
     /**
      *
      *
@@ -1815,7 +1760,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.batch.v1alpha.JobStatus.InstanceStatusOrBuilder getInstancesOrBuilder(
         int index);
   }
-
   /**
    *
    *
@@ -1830,7 +1774,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.JobStatus.TaskGroupStatus)
       TaskGroupStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TaskGroupStatus.newBuilder() to construct.
     private TaskGroupStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1899,7 +1842,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getCountsCount() {
       return internalGetCounts().getMap().size();
     }
-
     /**
      *
      *
@@ -1917,14 +1859,12 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetCounts().getMap().containsKey(key);
     }
-
     /** Use {@link #getCountsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getCounts() {
       return getCountsMap();
     }
-
     /**
      *
      *
@@ -1939,7 +1879,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Long> getCountsMap() {
       return internalGetCounts().getMap();
     }
-
     /**
      *
      *
@@ -1958,7 +1897,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetCounts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1985,7 +1923,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.batch.v1alpha.JobStatus.InstanceStatus> instances_;
-
     /**
      *
      *
@@ -2000,7 +1937,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         getInstancesList() {
       return instances_;
     }
-
     /**
      *
      *
@@ -2016,7 +1952,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         getInstancesOrBuilderList() {
       return instances_;
     }
-
     /**
      *
      *
@@ -2030,7 +1965,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -2044,7 +1978,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.JobStatus.InstanceStatus getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -2240,7 +2173,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2540,7 +2472,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public int getCountsCount() {
         return internalGetCounts().getMap().size();
       }
-
       /**
        *
        *
@@ -2558,14 +2489,12 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetCounts().getMap().containsKey(key);
       }
-
       /** Use {@link #getCountsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Long> getCounts() {
         return getCountsMap();
       }
-
       /**
        *
        *
@@ -2580,7 +2509,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.Long> getCountsMap() {
         return internalGetCounts().getMap();
       }
-
       /**
        *
        *
@@ -2599,7 +2527,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.Long> map = internalGetCounts().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -2627,7 +2554,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableCounts().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -2645,14 +2571,12 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableCounts().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Long> getMutableCounts() {
         bitField0_ |= 0x00000001;
         return internalGetMutableCounts().getMutableMap();
       }
-
       /**
        *
        *
@@ -2672,7 +2596,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -2724,7 +2647,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return instancesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2741,7 +2663,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return instancesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2758,7 +2679,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return instancesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2782,7 +2702,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2804,7 +2723,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2827,7 +2745,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2851,7 +2768,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2872,7 +2788,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2894,7 +2809,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2916,7 +2830,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2936,7 +2849,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2956,7 +2868,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2970,7 +2881,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getInstancesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2988,7 +2898,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return instancesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3007,7 +2916,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(instances_);
         }
       }
-
       /**
        *
        *
@@ -3022,7 +2930,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.batch.v1alpha.JobStatus.InstanceStatus.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3039,7 +2946,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.batch.v1alpha.JobStatus.InstanceStatus.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3138,7 +3044,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -3154,7 +3059,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -3177,7 +3081,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1alpha.StatusEvent> statusEvents_;
-
   /**
    *
    *
@@ -3191,7 +3094,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.batch.v1alpha.StatusEvent> getStatusEventsList() {
     return statusEvents_;
   }
-
   /**
    *
    *
@@ -3206,7 +3108,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       getStatusEventsOrBuilderList() {
     return statusEvents_;
   }
-
   /**
    *
    *
@@ -3220,7 +3121,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStatusEventsCount() {
     return statusEvents_.size();
   }
-
   /**
    *
    *
@@ -3234,7 +3134,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1alpha.StatusEvent getStatusEvents(int index) {
     return statusEvents_.get(index);
   }
-
   /**
    *
    *
@@ -3284,7 +3183,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public int getTaskGroupsCount() {
     return internalGetTaskGroups().getMap().size();
   }
-
   /**
    *
    *
@@ -3303,7 +3201,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetTaskGroups().getMap().containsKey(key);
   }
-
   /** Use {@link #getTaskGroupsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -3311,7 +3208,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       getTaskGroups() {
     return getTaskGroupsMap();
   }
-
   /**
    *
    *
@@ -3328,7 +3224,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       getTaskGroupsMap() {
     return internalGetTaskGroups().getMap();
   }
-
   /**
    *
    *
@@ -3353,7 +3248,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         internalGetTaskGroups().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3381,7 +3275,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RUN_DURATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration runDuration_;
-
   /**
    *
    *
@@ -3397,7 +3290,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRunDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3413,7 +3305,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getRunDuration() {
     return runDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : runDuration_;
   }
-
   /**
    *
    *
@@ -3430,7 +3321,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_USAGE_FIELD_NUMBER = 6;
   private com.google.cloud.batch.v1alpha.ResourceUsage resourceUsage_;
-
   /**
    *
    *
@@ -3446,7 +3336,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceUsage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3464,7 +3353,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1alpha.ResourceUsage.getDefaultInstance()
         : resourceUsage_;
   }
-
   /**
    *
    *
@@ -3698,7 +3586,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4034,7 +3921,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -4050,7 +3936,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -4069,7 +3954,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4087,7 +3971,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.batch.v1alpha.JobStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.batch.v1alpha.JobStatus.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4109,7 +3992,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4161,7 +4043,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4178,7 +4059,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4195,7 +4075,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4218,7 +4097,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4239,7 +4117,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4262,7 +4139,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4285,7 +4161,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4306,7 +4181,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4327,7 +4201,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4348,7 +4221,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4368,7 +4240,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4388,7 +4259,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4401,7 +4271,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.StatusEvent.Builder getStatusEventsBuilder(int index) {
       return getStatusEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4418,7 +4287,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4436,7 +4304,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(statusEvents_);
       }
     }
-
     /**
      *
      *
@@ -4450,7 +4317,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       return getStatusEventsFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1alpha.StatusEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4464,7 +4330,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       return getStatusEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1alpha.StatusEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4516,8 +4381,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return TaskGroupsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final TaskGroupsConverter taskGroupsConverter = new TaskGroupsConverter();
 
@@ -4557,7 +4421,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public int getTaskGroupsCount() {
       return internalGetTaskGroups().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -4577,7 +4440,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetTaskGroups().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getTaskGroupsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -4585,7 +4447,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         getTaskGroups() {
       return getTaskGroupsMap();
     }
-
     /**
      *
      *
@@ -4603,7 +4464,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         getTaskGroupsMap() {
       return internalGetTaskGroups().getImmutableMap();
     }
-
     /**
      *
      *
@@ -4630,7 +4490,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableTaskGroups().ensureBuilderMap();
       return map.containsKey(key) ? taskGroupsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -4663,7 +4522,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableTaskGroups().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4683,7 +4541,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableTaskGroups().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.batch.v1alpha.JobStatus.TaskGroupStatus>
@@ -4691,7 +4548,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableTaskGroups().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -4716,7 +4572,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -4743,7 +4598,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -4779,7 +4633,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         runDurationBuilder_;
-
     /**
      *
      *
@@ -4794,7 +4647,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRunDuration() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4815,7 +4667,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return runDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4838,7 +4689,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4858,7 +4708,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4886,7 +4735,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4906,7 +4754,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4921,7 +4768,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRunDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4940,7 +4786,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             : runDuration_;
       }
     }
-
     /**
      *
      *
@@ -4973,7 +4818,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.ResourceUsage.Builder,
             com.google.cloud.batch.v1alpha.ResourceUsageOrBuilder>
         resourceUsageBuilder_;
-
     /**
      *
      *
@@ -4988,7 +4832,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceUsage() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -5009,7 +4852,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         return resourceUsageBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5032,7 +4874,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5053,7 +4894,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5082,7 +4922,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5102,7 +4941,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5117,7 +4955,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceUsageFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5136,7 +4973,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
             : resourceUsage_;
       }
     }
-
     /**
      *
      *

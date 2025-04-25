@@ -33,7 +33,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.Resources)
     ResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Resources.newBuilder() to construct.
   private Resources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CPU_FIELD_NUMBER = 1;
   private double cpu_ = 0D;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_GB_FIELD_NUMBER = 2;
   private double diskGb_ = 0D;
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEMORY_GB_FIELD_NUMBER = 3;
   private double memoryGb_ = 0D;
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.Volume> volumes_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.appengine.v1.Volume> getVolumesList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       getVolumesOrBuilderList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public int getVolumesCount() {
     return volumes_.size();
   }
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public com.google.appengine.v1.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyReference_ = "";
-
   /**
    *
    *
@@ -227,7 +217,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -458,7 +447,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -739,7 +727,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double cpu_;
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public double getCpu() {
       return cpu_;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double diskGb_;
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public double getDiskGb() {
       return diskGb_;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double memoryGb_;
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public double getMemoryGb() {
       return memoryGb_;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +917,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -995,7 +971,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +990,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1072,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1092,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1111,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1130,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1142,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1192,7 +1158,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1175,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1188,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(com.google.appengine.v1.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1238,7 +1201,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.appengine.v1.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1270,7 +1232,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyReference_ = "";
-
     /**
      *
      *
@@ -1294,7 +1255,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1318,7 +1278,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1341,7 +1300,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1318,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

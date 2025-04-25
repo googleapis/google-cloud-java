@@ -36,7 +36,6 @@ public interface ActionOrBuilder
    * @return The actionId.
    */
   java.lang.String getActionId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ActionOrBuilder
    * @return Whether the accessControl field is set.
    */
   boolean hasAccessControl();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ActionOrBuilder
    * @return The accessControl.
    */
   com.google.cloud.contentwarehouse.v1.AccessControlAction getAccessControl();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ActionOrBuilder
    * @return Whether the dataValidation field is set.
    */
   boolean hasDataValidation();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ActionOrBuilder
    * @return The dataValidation.
    */
   com.google.cloud.contentwarehouse.v1.DataValidationAction getDataValidation();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface ActionOrBuilder
    * @return Whether the dataUpdate field is set.
    */
   boolean hasDataUpdate();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface ActionOrBuilder
    * @return The dataUpdate.
    */
   com.google.cloud.contentwarehouse.v1.DataUpdateAction getDataUpdate();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface ActionOrBuilder
    * @return Whether the addToFolder field is set.
    */
   boolean hasAddToFolder();
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface ActionOrBuilder
    * @return The addToFolder.
    */
   com.google.cloud.contentwarehouse.v1.AddToFolderAction getAddToFolder();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface ActionOrBuilder
    * @return Whether the publishToPubSub field is set.
    */
   boolean hasPublishToPubSub();
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface ActionOrBuilder
    * @return The publishToPubSub.
    */
   com.google.cloud.contentwarehouse.v1.PublishAction getPublishToPubSub();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface ActionOrBuilder
    * @return Whether the removeFromFolderAction field is set.
    */
   boolean hasRemoveFromFolderAction();
-
   /**
    *
    *
@@ -262,7 +250,6 @@ public interface ActionOrBuilder
    * @return The removeFromFolderAction.
    */
   com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction getRemoveFromFolderAction();
-
   /**
    *
    *
@@ -289,7 +276,6 @@ public interface ActionOrBuilder
    * @return Whether the deleteDocumentAction field is set.
    */
   boolean hasDeleteDocumentAction();
-
   /**
    *
    *
@@ -303,7 +289,6 @@ public interface ActionOrBuilder
    * @return The deleteDocumentAction.
    */
   com.google.cloud.contentwarehouse.v1.DeleteDocumentAction getDeleteDocumentAction();
-
   /**
    *
    *

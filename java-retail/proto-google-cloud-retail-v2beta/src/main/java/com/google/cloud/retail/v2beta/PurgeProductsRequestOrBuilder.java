@@ -40,7 +40,6 @@ public interface PurgeProductsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -109,7 +108,6 @@ public interface PurgeProductsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.VodSessionAd)
     VodSessionAdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VodSessionAd.newBuilder() to construct.
   private VodSessionAd(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration duration_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPANION_ADS_FIELD_NUMBER = 2;
   private com.google.cloud.video.stitcher.v1.CompanionAds companionAds_;
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompanionAds() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.CompanionAds.getDefaultInstance()
         : companionAds_;
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.Event> activityEvents_;
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.stitcher.v1.Event> getActivityEventsList() {
     return activityEvents_;
   }
-
   /**
    *
    *
@@ -208,7 +199,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       getActivityEventsOrBuilderList() {
     return activityEvents_;
   }
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   public int getActivityEventsCount() {
     return activityEvents_.size();
   }
-
   /**
    *
    *
@@ -244,7 +233,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.stitcher.v1.Event getActivityEvents(int index) {
     return activityEvents_.get(index);
   }
-
   /**
    *
    *
@@ -452,7 +440,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -738,7 +725,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return durationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
-
     /**
      *
      *
@@ -928,7 +906,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.CompanionAds.Builder,
             com.google.cloud.video.stitcher.v1.CompanionAdsOrBuilder>
         companionAdsBuilder_;
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompanionAds() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return companionAdsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -987,7 +962,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +982,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1010,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1029,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCompanionAdsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1091,7 +1061,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
             : companionAds_;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1124,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return activityEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1144,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return activityEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1164,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return activityEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1190,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1214,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1240,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1266,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1290,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1314,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1338,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1361,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1384,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1400,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.Event.Builder getActivityEventsBuilder(int index) {
       return getActivityEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1464,7 +1420,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return activityEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1441,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(activityEvents_);
       }
     }
-
     /**
      *
      *
@@ -1504,7 +1458,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       return getActivityEventsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.Event.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1522,7 +1475,6 @@ public final class VodSessionAd extends com.google.protobuf.GeneratedMessageV3
       return getActivityEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.Event.getDefaultInstance());
     }
-
     /**
      *
      *

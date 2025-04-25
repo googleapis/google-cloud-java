@@ -35,7 +35,6 @@ public final class BatchMigrateResourcesOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata)
     BatchMigrateResourcesOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchMigrateResourcesOperationMetadata.newBuilder() to construct.
   private BatchMigrateResourcesOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -85,7 +84,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return Whether the error field is set.
      */
     boolean hasError();
-
     /**
      *
      *
@@ -98,7 +96,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return The error.
      */
     com.google.rpc.Status getError();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return Whether the model field is set.
      */
     boolean hasModel();
-
     /**
      *
      *
@@ -135,7 +131,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return The model.
      */
     java.lang.String getModel();
-
     /**
      *
      *
@@ -161,7 +156,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return Whether the dataset field is set.
      */
     boolean hasDataset();
-
     /**
      *
      *
@@ -174,7 +168,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return The dataset.
      */
     java.lang.String getDataset();
-
     /**
      *
      *
@@ -201,7 +194,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return Whether the request field is set.
      */
     boolean hasRequest();
-
     /**
      *
      *
@@ -215,7 +207,6 @@ public final class BatchMigrateResourcesOperationMetadata
      * @return The request.
      */
     com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest getRequest();
-
     /**
      *
      *
@@ -232,7 +223,6 @@ public final class BatchMigrateResourcesOperationMetadata
             .ResultCase
         getResultCase();
   }
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public final class BatchMigrateResourcesOperationMetadata
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult)
       PartialResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PartialResult.newBuilder() to construct.
     private PartialResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -299,7 +288,6 @@ public final class BatchMigrateResourcesOperationMetadata
       private ResultCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -335,7 +323,6 @@ public final class BatchMigrateResourcesOperationMetadata
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -351,7 +338,6 @@ public final class BatchMigrateResourcesOperationMetadata
     public boolean hasError() {
       return resultCase_ == 2;
     }
-
     /**
      *
      *
@@ -370,7 +356,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return com.google.rpc.Status.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -389,7 +374,6 @@ public final class BatchMigrateResourcesOperationMetadata
     }
 
     public static final int MODEL_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -404,7 +388,6 @@ public final class BatchMigrateResourcesOperationMetadata
     public boolean hasModel() {
       return resultCase_ == 3;
     }
-
     /**
      *
      *
@@ -432,7 +415,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -462,7 +444,6 @@ public final class BatchMigrateResourcesOperationMetadata
     }
 
     public static final int DATASET_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -477,7 +458,6 @@ public final class BatchMigrateResourcesOperationMetadata
     public boolean hasDataset() {
       return resultCase_ == 4;
     }
-
     /**
      *
      *
@@ -505,7 +485,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -536,7 +515,6 @@ public final class BatchMigrateResourcesOperationMetadata
 
     public static final int REQUEST_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest request_;
-
     /**
      *
      *
@@ -553,7 +531,6 @@ public final class BatchMigrateResourcesOperationMetadata
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -572,7 +549,6 @@ public final class BatchMigrateResourcesOperationMetadata
           ? com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.getDefaultInstance()
           : request_;
     }
-
     /**
      *
      *
@@ -832,7 +808,6 @@ public final class BatchMigrateResourcesOperationMetadata
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1138,7 +1113,6 @@ public final class BatchMigrateResourcesOperationMetadata
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           errorBuilder_;
-
       /**
        *
        *
@@ -1154,7 +1128,6 @@ public final class BatchMigrateResourcesOperationMetadata
       public boolean hasError() {
         return resultCase_ == 2;
       }
-
       /**
        *
        *
@@ -1180,7 +1153,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return com.google.rpc.Status.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1203,7 +1175,6 @@ public final class BatchMigrateResourcesOperationMetadata
         resultCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1223,7 +1194,6 @@ public final class BatchMigrateResourcesOperationMetadata
         resultCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1254,7 +1224,6 @@ public final class BatchMigrateResourcesOperationMetadata
         resultCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1280,7 +1249,6 @@ public final class BatchMigrateResourcesOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -1293,7 +1261,6 @@ public final class BatchMigrateResourcesOperationMetadata
       public com.google.rpc.Status.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1314,7 +1281,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return com.google.rpc.Status.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1359,7 +1325,6 @@ public final class BatchMigrateResourcesOperationMetadata
       public boolean hasModel() {
         return resultCase_ == 3;
       }
-
       /**
        *
        *
@@ -1388,7 +1353,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1417,7 +1381,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1439,7 +1402,6 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1459,7 +1421,6 @@ public final class BatchMigrateResourcesOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -1498,7 +1459,6 @@ public final class BatchMigrateResourcesOperationMetadata
       public boolean hasDataset() {
         return resultCase_ == 4;
       }
-
       /**
        *
        *
@@ -1527,7 +1487,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1556,7 +1515,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1578,7 +1536,6 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1598,7 +1555,6 @@ public final class BatchMigrateResourcesOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -1628,7 +1584,6 @@ public final class BatchMigrateResourcesOperationMetadata
               com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.Builder,
               com.google.cloud.aiplatform.v1beta1.MigrateResourceRequestOrBuilder>
           requestBuilder_;
-
       /**
        *
        *
@@ -1644,7 +1599,6 @@ public final class BatchMigrateResourcesOperationMetadata
       public boolean hasRequest() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1666,7 +1620,6 @@ public final class BatchMigrateResourcesOperationMetadata
           return requestBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1690,7 +1643,6 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1712,7 +1664,6 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1744,7 +1695,6 @@ public final class BatchMigrateResourcesOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -1765,7 +1715,6 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1782,7 +1731,6 @@ public final class BatchMigrateResourcesOperationMetadata
         onChanged();
         return getRequestFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1803,7 +1751,6 @@ public final class BatchMigrateResourcesOperationMetadata
               : request_;
         }
       }
-
       /**
        *
        *
@@ -1905,7 +1852,6 @@ public final class BatchMigrateResourcesOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -1921,7 +1867,6 @@ public final class BatchMigrateResourcesOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1939,7 +1884,6 @@ public final class BatchMigrateResourcesOperationMetadata
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -1963,7 +1907,6 @@ public final class BatchMigrateResourcesOperationMetadata
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult>
       partialResults_;
-
   /**
    *
    *
@@ -1981,7 +1924,6 @@ public final class BatchMigrateResourcesOperationMetadata
       getPartialResultsList() {
     return partialResults_;
   }
-
   /**
    *
    *
@@ -2001,7 +1943,6 @@ public final class BatchMigrateResourcesOperationMetadata
       getPartialResultsOrBuilderList() {
     return partialResults_;
   }
-
   /**
    *
    *
@@ -2017,7 +1958,6 @@ public final class BatchMigrateResourcesOperationMetadata
   public int getPartialResultsCount() {
     return partialResults_.size();
   }
-
   /**
    *
    *
@@ -2034,7 +1974,6 @@ public final class BatchMigrateResourcesOperationMetadata
       getPartialResults(int index) {
     return partialResults_.get(index);
   }
-
   /**
    *
    *
@@ -2236,7 +2175,6 @@ public final class BatchMigrateResourcesOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2519,7 +2457,6 @@ public final class BatchMigrateResourcesOperationMetadata
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -2534,7 +2471,6 @@ public final class BatchMigrateResourcesOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2555,7 +2491,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2579,7 +2514,6 @@ public final class BatchMigrateResourcesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2534,6 @@ public final class BatchMigrateResourcesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2564,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2651,7 +2583,6 @@ public final class BatchMigrateResourcesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2667,7 +2598,6 @@ public final class BatchMigrateResourcesOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2687,7 +2617,6 @@ public final class BatchMigrateResourcesOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *
@@ -2759,7 +2688,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return partialResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2778,7 +2706,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return partialResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2798,7 +2725,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return partialResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2826,7 +2752,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2852,7 +2777,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2879,7 +2803,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2907,7 +2830,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2932,7 +2854,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2958,7 +2879,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -2985,7 +2905,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -3007,7 +2926,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -3029,7 +2947,6 @@ public final class BatchMigrateResourcesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -3046,7 +2963,6 @@ public final class BatchMigrateResourcesOperationMetadata
         getPartialResultsBuilder(int index) {
       return getPartialResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3067,7 +2983,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return partialResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3090,7 +3005,6 @@ public final class BatchMigrateResourcesOperationMetadata
         return java.util.Collections.unmodifiableList(partialResults_);
       }
     }
-
     /**
      *
      *
@@ -3110,7 +3024,6 @@ public final class BatchMigrateResourcesOperationMetadata
               com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata
                   .PartialResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3131,7 +3044,6 @@ public final class BatchMigrateResourcesOperationMetadata
               com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata
                   .PartialResult.getDefaultInstance());
     }
-
     /**
      *
      *

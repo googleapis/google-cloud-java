@@ -34,7 +34,6 @@ public interface ContactsOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Contacts.Person people = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.Contacts.Person> getPeopleList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ContactsOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Contacts.Person people = 1;</code>
    */
   com.google.cloud.datacatalog.v1.Contacts.Person getPeople(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ContactsOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Contacts.Person people = 1;</code>
    */
   int getPeopleCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ContactsOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.Contacts.PersonOrBuilder>
       getPeopleOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.FixedOrPercent)
     FixedOrPercentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FixedOrPercent.newBuilder() to construct.
   private FixedOrPercent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     private ModeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIXED_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFixed() {
     return modeCase_ == 1;
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERCENT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPercent() {
     return modeCase_ == 2;
   }
-
   /**
    *
    *
@@ -378,7 +372,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -612,7 +605,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFixed() {
       return modeCase_ == 1;
     }
-
     /**
      *
      *
@@ -630,7 +622,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -650,7 +641,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +676,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPercent() {
       return modeCase_ == 2;
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface TaxRuleOrBuilder
    * @return Whether the locationId field is set.
    */
   boolean hasLocationId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface TaxRuleOrBuilder
    * @return Whether the postCodeRange field is set.
    */
   boolean hasPostCodeRange();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface TaxRuleOrBuilder
    * @return The postCodeRange.
    */
   com.google.shopping.merchant.accounts.v1beta.TaxRule.TaxPostalCodeRange getPostCodeRange();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface TaxRuleOrBuilder
    * @return Whether the useGoogleRate field is set.
    */
   boolean hasUseGoogleRate();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface TaxRuleOrBuilder
    * @return Whether the selfSpecifiedRateMicros field is set.
    */
   boolean hasSelfSpecifiedRateMicros();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface TaxRuleOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public interface TaxRuleOrBuilder
    * @return Whether the effectiveTimePeriod field is set.
    */
   boolean hasEffectiveTimePeriod();
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public interface TaxRuleOrBuilder
    * @return The effectiveTimePeriod.
    */
   com.google.type.Interval getEffectiveTimePeriod();
-
   /**
    *
    *

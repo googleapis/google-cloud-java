@@ -34,7 +34,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest)
     SimulateMaintenanceEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SimulateMaintenanceEventRequest.newBuilder() to construct.
   private SimulateMaintenanceEventRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList workerIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getWorkerIdsList() {
     return workerIds_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
   public int getWorkerIdsCount() {
     return workerIds_.size();
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
   public java.lang.String getWorkerIds(int index) {
     return workerIds_.get(index);
   }
-
   /**
    *
    *
@@ -380,7 +373,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +583,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       workerIds_.makeImmutable();
       return workerIds_;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     public int getWorkerIdsCount() {
       return workerIds_.size();
     }
-
     /**
      *
      *
@@ -776,7 +760,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     public java.lang.String getWorkerIds(int index) {
       return workerIds_.get(index);
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
     public com.google.protobuf.ByteString getWorkerIdsBytes(int index) {
       return workerIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +829,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

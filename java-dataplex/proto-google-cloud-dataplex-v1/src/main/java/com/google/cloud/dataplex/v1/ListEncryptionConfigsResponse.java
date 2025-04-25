@@ -33,7 +33,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListEncryptionConfigsResponse)
     ListEncryptionConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEncryptionConfigsResponse.newBuilder() to construct.
   private ListEncryptionConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.EncryptionConfig> encryptionConfigs_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.dataplex.v1.EncryptionConfig> getEncryptionConfigsList() {
     return encryptionConfigs_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       getEncryptionConfigsOrBuilderList() {
     return encryptionConfigs_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   public int getEncryptionConfigsCount() {
     return encryptionConfigs_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   public com.google.cloud.dataplex.v1.EncryptionConfig getEncryptionConfigs(int index) {
     return encryptionConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachableLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUnreachableLocationsList() {
     return unreachableLocations_;
   }
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   public int getUnreachableLocationsCount() {
     return unreachableLocations_.size();
   }
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
   public java.lang.String getUnreachableLocations(int index) {
     return unreachableLocations_.get(index);
   }
-
   /**
    *
    *
@@ -459,7 +447,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +748,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return encryptionConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return encryptionConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return encryptionConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +947,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +966,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +979,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         int index) {
       return getEncryptionConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1022,7 +996,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return encryptionConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1013,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(encryptionConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       return getEncryptionConfigsFieldBuilder()
           .addBuilder(com.google.cloud.dataplex.v1.EncryptionConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1069,7 +1040,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       return getEncryptionConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataplex.v1.EncryptionConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1105,7 +1075,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1129,7 +1098,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1121,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1143,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1161,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1194,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1246,7 +1210,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       unreachableLocations_.makeImmutable();
       return unreachableLocations_;
     }
-
     /**
      *
      *
@@ -1262,7 +1225,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
     public int getUnreachableLocationsCount() {
       return unreachableLocations_.size();
     }
-
     /**
      *
      *
@@ -1279,7 +1241,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
     public java.lang.String getUnreachableLocations(int index) {
       return unreachableLocations_.get(index);
     }
-
     /**
      *
      *
@@ -1296,7 +1257,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUnreachableLocationsBytes(int index) {
       return unreachableLocations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1321,7 +1281,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1304,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1324,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1343,6 @@ public final class ListEncryptionConfigsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

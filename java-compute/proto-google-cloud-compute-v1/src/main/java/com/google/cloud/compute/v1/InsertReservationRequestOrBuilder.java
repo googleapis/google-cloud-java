@@ -38,7 +38,6 @@ public interface InsertReservationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertReservationRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InsertReservationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface InsertReservationRequestOrBuilder
    * @return Whether the reservationResource field is set.
    */
   boolean hasReservationResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertReservationRequestOrBuilder
    * @return The reservationResource.
    */
   com.google.cloud.compute.v1.Reservation getReservationResource();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface InsertReservationRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

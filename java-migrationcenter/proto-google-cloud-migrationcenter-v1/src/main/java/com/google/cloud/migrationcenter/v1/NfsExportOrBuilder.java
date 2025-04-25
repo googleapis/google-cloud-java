@@ -36,7 +36,6 @@ public interface NfsExportOrBuilder
    * @return The exportDirectory.
    */
   java.lang.String getExportDirectory();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NfsExportOrBuilder
    * @return A list containing the hosts.
    */
   java.util.List<java.lang.String> getHostsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NfsExportOrBuilder
    * @return The count of hosts.
    */
   int getHostsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface NfsExportOrBuilder
    * @return The hosts at the given index.
    */
   java.lang.String getHosts(int index);
-
   /**
    *
    *

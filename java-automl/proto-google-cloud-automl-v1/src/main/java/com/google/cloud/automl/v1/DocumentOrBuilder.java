@@ -36,7 +36,6 @@ public interface DocumentOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DocumentOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.automl.v1.DocumentInputConfig getInputConfig();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DocumentOrBuilder
    * @return Whether the documentText field is set.
    */
   boolean hasDocumentText();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DocumentOrBuilder
    * @return The documentText.
    */
   com.google.cloud.automl.v1.TextSnippet getDocumentText();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
   java.util.List<com.google.cloud.automl.v1.Document.Layout> getLayoutList();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
   com.google.cloud.automl.v1.Document.Layout getLayout(int index);
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
   int getLayoutCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1.Document.LayoutOrBuilder>
       getLayoutOrBuilderList();
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface DocumentOrBuilder
    * @return Whether the documentDimensions field is set.
    */
   boolean hasDocumentDimensions();
-
   /**
    *
    *
@@ -184,7 +175,6 @@ public interface DocumentOrBuilder
    * @return The documentDimensions.
    */
   com.google.cloud.automl.v1.DocumentDimensions getDocumentDimensions();
-
   /**
    *
    *

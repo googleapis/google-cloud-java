@@ -38,7 +38,6 @@ public interface VehicleInfoOrBuilder
    * @return The enum numeric value on the wire for emissionType.
    */
   int getEmissionTypeValue();
-
   /**
    *
    *

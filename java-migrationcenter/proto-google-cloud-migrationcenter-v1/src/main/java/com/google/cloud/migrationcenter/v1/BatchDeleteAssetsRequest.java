@@ -33,7 +33,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.BatchDeleteAssetsRequest)
     BatchDeleteAssetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDeleteAssetsRequest.newBuilder() to construct.
   private BatchDeleteAssetsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
   public int getNamesCount() {
     return names_.size();
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -412,7 +404,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -635,7 +626,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       names_.makeImmutable();
       return names_;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     public int getNamesCount() {
       return names_.size();
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -1015,7 +990,6 @@ public final class BatchDeleteAssetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

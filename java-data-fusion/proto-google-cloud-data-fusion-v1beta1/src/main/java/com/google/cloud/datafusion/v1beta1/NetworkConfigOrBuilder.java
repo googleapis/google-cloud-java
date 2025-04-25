@@ -39,7 +39,6 @@ public interface NetworkConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface NetworkConfigOrBuilder
    * @return The ipAllocation.
    */
   java.lang.String getIpAllocation();
-
   /**
    *
    *

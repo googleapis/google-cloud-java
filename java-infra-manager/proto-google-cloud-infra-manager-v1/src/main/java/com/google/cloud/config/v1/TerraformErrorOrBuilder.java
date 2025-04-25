@@ -37,7 +37,6 @@ public interface TerraformErrorOrBuilder
    * @return The resourceAddress.
    */
   java.lang.String getResourceAddress();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface TerraformErrorOrBuilder
    * @return The errorDescription.
    */
   java.lang.String getErrorDescription();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface TerraformErrorOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface TerraformErrorOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *

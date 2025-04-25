@@ -40,7 +40,6 @@ public interface ListMetadataStoresRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ListMetadataStoresRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateGatewayRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateGatewayRequestOrBuilder
    * @return The gatewayId.
    */
   java.lang.String getGatewayId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateGatewayRequestOrBuilder
    * @return Whether the gateway field is set.
    */
   boolean hasGateway();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateGatewayRequestOrBuilder
    * @return The gateway.
    */
   com.google.cloud.apigateway.v1.Gateway getGateway();
-
   /**
    *
    *

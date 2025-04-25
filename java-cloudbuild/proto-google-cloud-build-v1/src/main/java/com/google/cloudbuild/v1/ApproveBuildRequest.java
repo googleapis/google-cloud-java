@@ -33,7 +33,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ApproveBuildRequest)
     ApproveBuildRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApproveBuildRequest.newBuilder() to construct.
   private ApproveBuildRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
 
   public static final int APPROVAL_RESULT_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.ApprovalResult approvalResult_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
   public boolean hasApprovalResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance()
         : approvalResult_;
   }
-
   /**
    *
    *
@@ -346,7 +340,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -560,7 +553,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
             com.google.cloudbuild.v1.ApprovalResult.Builder,
             com.google.cloudbuild.v1.ApprovalResultOrBuilder>
         approvalResultBuilder_;
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     public boolean hasApprovalResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -717,7 +703,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
         return approvalResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +772,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +791,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +805,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getApprovalResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -843,7 +823,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
             : approvalResult_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface InsertGlobalAddressRequestOrBuilder
    * @return Whether the addressResource field is set.
    */
   boolean hasAddressResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertGlobalAddressRequestOrBuilder
    * @return The addressResource.
    */
   com.google.cloud.compute.v1.Address getAddressResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertGlobalAddressRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface InsertGlobalAddressRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertGlobalAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

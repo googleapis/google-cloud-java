@@ -38,7 +38,6 @@ public interface DependencyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DependencyOrBuilder
    * @return Whether the consumer field is set.
    */
   boolean hasConsumer();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface DependencyOrBuilder
    * @return The consumer.
    */
   com.google.cloud.apihub.v1.DependencyEntityReference getConsumer();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface DependencyOrBuilder
    * @return Whether the supplier field is set.
    */
   boolean hasSupplier();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface DependencyOrBuilder
    * @return The supplier.
    */
   com.google.cloud.apihub.v1.DependencyEntityReference getSupplier();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface DependencyOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface DependencyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface DependencyOrBuilder
    * @return The enum numeric value on the wire for discoveryMode.
    */
   int getDiscoveryModeValue();
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public interface DependencyOrBuilder
    * @return Whether the errorDetail field is set.
    */
   boolean hasErrorDetail();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface DependencyOrBuilder
    * @return The errorDetail.
    */
   com.google.cloud.apihub.v1.DependencyErrorDetail getErrorDetail();
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public interface DependencyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public interface DependencyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -325,7 +313,6 @@ public interface DependencyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -339,7 +326,6 @@ public interface DependencyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public interface DependencyOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -383,11 +368,9 @@ public interface DependencyOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
-
   /**
    *
    *
@@ -403,7 +386,6 @@ public interface DependencyOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
-
   /**
    *
    *
@@ -423,7 +405,6 @@ public interface DependencyOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
-
   /**
    *
    *

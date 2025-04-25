@@ -41,7 +41,6 @@ public interface ListManagementServersResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.ManagementServer management_servers = 1;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.ManagementServer> getManagementServersList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ListManagementServersResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.ManagementServer management_servers = 1;</code>
    */
   com.google.cloud.backupdr.v1.ManagementServer getManagementServers(int index);
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ListManagementServersResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.ManagementServer management_servers = 1;</code>
    */
   int getManagementServersCount();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ListManagementServersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.ManagementServerOrBuilder>
       getManagementServersOrBuilderList();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ListManagementServersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface ListManagementServersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface ListManagementServersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface ListManagementServersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

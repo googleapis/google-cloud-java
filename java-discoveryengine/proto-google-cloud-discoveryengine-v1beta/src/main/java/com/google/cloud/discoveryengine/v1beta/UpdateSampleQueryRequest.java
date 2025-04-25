@@ -35,7 +35,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.UpdateSampleQueryRequest)
     UpdateSampleQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSampleQueryRequest.newBuilder() to construct.
   private UpdateSampleQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int SAMPLE_QUERY_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1beta.SampleQuery sampleQuery_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
   public boolean hasSampleQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
         ? com.google.cloud.discoveryengine.v1beta.SampleQuery.getDefaultInstance()
         : sampleQuery_;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -376,7 +369,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -606,7 +598,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
             com.google.cloud.discoveryengine.v1beta.SampleQuery.Builder,
             com.google.cloud.discoveryengine.v1beta.SampleQueryOrBuilder>
         sampleQueryBuilder_;
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
     public boolean hasSampleQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
         return sampleQueryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return getSampleQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
             : sampleQuery_;
       }
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -945,7 +925,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +973,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +993,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1008,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1052,7 +1027,6 @@ public final class UpdateSampleQueryRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *

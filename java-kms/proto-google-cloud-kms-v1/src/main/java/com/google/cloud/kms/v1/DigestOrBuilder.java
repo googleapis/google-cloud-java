@@ -36,7 +36,6 @@ public interface DigestOrBuilder
    * @return Whether the sha256 field is set.
    */
   boolean hasSha256();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DigestOrBuilder
    * @return Whether the sha384 field is set.
    */
   boolean hasSha384();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DigestOrBuilder
    * @return Whether the sha512 field is set.
    */
   boolean hasSha512();
-
   /**
    *
    *

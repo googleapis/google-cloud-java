@@ -180,8 +180,7 @@ public class MockAppConnectionsServiceImpl extends AppConnectionsServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResolveAppConnections, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ResolveAppConnections, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResolveAppConnectionsResponse.class.getName(),
                   Exception.class.getName())));

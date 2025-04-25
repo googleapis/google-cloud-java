@@ -41,7 +41,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.RateLimits)
     RateLimitsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RateLimits.newBuilder() to construct.
   private RateLimits(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_DISPATCHES_PER_SECOND_FIELD_NUMBER = 1;
   private double maxDispatchesPerSecond_ = 0D;
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_BURST_SIZE_FIELD_NUMBER = 2;
   private int maxBurstSize_ = 0;
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_CONCURRENT_DISPATCHES_FIELD_NUMBER = 3;
   private int maxConcurrentDispatches_ = 0;
-
   /**
    *
    *
@@ -366,7 +362,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +577,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double maxDispatchesPerSecond_;
-
     /**
      *
      *
@@ -610,7 +604,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public double getMaxDispatchesPerSecond() {
       return maxDispatchesPerSecond_;
     }
-
     /**
      *
      *
@@ -642,7 +635,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +666,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxBurstSize_;
-
     /**
      *
      *
@@ -722,7 +713,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public int getMaxBurstSize() {
       return maxBurstSize_;
     }
-
     /**
      *
      *
@@ -774,7 +764,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +815,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxConcurrentDispatches_;
-
     /**
      *
      *
@@ -856,7 +844,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     public int getMaxConcurrentDispatches() {
       return maxConcurrentDispatches_;
     }
-
     /**
      *
      *
@@ -890,7 +877,6 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

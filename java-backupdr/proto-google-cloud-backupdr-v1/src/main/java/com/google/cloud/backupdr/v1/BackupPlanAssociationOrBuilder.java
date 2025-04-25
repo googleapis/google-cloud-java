@@ -40,7 +40,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The backupPlan.
    */
   java.lang.String getBackupPlan();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public interface BackupPlanAssociationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.RuleConfigInfo> getRulesConfigInfoList();
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public interface BackupPlanAssociationOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.RuleConfigInfo getRulesConfigInfo(int index);
-
   /**
    *
    *
@@ -304,7 +293,6 @@ public interface BackupPlanAssociationOrBuilder
    * </code>
    */
   int getRulesConfigInfoCount();
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public interface BackupPlanAssociationOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.RuleConfigInfoOrBuilder>
       getRulesConfigInfoOrBuilderList();
-
   /**
    *
    *
@@ -346,7 +333,6 @@ public interface BackupPlanAssociationOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
-
   /**
    *
    *

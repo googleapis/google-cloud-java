@@ -38,7 +38,6 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListRegionsResponse)
     ListRegionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRegionsResponse.newBuilder() to construct.
   private ListRegionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Region> regions_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.Region> getRegionsList() {
     return regions_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       getRegionsOrBuilderList() {
     return regions_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
   public int getRegionsCount() {
     return regions_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
   public com.google.shopping.merchant.accounts.v1beta.Region getRegions(int index) {
     return regions_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return regionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return regionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return regionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +873,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         int index) {
       return getRegionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return regionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -930,7 +907,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(regions_);
       }
     }
-
     /**
      *
      *
@@ -944,7 +920,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       return getRegionsFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Region.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +935,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Region.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -993,7 +967,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1013,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1053,6 @@ public final class ListRegionsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

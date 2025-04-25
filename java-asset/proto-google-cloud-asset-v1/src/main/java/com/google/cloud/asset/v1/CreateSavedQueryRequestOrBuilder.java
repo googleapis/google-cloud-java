@@ -42,7 +42,6 @@ public interface CreateSavedQueryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateSavedQueryRequestOrBuilder
    * @return Whether the savedQuery field is set.
    */
   boolean hasSavedQuery();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateSavedQueryRequestOrBuilder
    * @return The savedQuery.
    */
   com.google.cloud.asset.v1.SavedQuery getSavedQuery();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface CreateSavedQueryRequestOrBuilder
    * @return The savedQueryId.
    */
   java.lang.String getSavedQueryId();
-
   /**
    *
    *

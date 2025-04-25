@@ -40,7 +40,6 @@ public interface CreatePageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreatePageRequestOrBuilder
    * @return Whether the page field is set.
    */
   boolean hasPage();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreatePageRequestOrBuilder
    * @return The page.
    */
   com.google.cloud.dialogflow.cx.v3.Page getPage();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface CreatePageRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

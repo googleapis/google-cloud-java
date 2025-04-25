@@ -36,7 +36,6 @@ public interface StepOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface StepOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface StepOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface StepOrBuilder
    * @return The properties.
    */
   com.google.protobuf.Struct getProperties();
-
   /**
    *
    *

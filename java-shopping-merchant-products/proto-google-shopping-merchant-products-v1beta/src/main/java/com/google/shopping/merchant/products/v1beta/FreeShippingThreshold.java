@@ -33,7 +33,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.FreeShippingThreshold)
     FreeShippingThresholdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FreeShippingThreshold.newBuilder() to construct.
   private FreeShippingThreshold(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object country_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
   public boolean hasCountry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
 
   public static final int PRICE_THRESHOLD_FIELD_NUMBER = 2;
   private com.google.shopping.type.Price priceThreshold_;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
   public boolean hasPriceThreshold() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
         ? com.google.shopping.type.Price.getDefaultInstance()
         : priceThreshold_;
   }
-
   /**
    *
    *
@@ -376,7 +369,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -599,7 +591,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object country_ = "";
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
     public boolean hasCountry() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priceThresholdBuilder_;
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
     public boolean hasPriceThreshold() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
         return priceThresholdBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPriceThresholdFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -911,7 +889,6 @@ public final class FreeShippingThreshold extends com.google.protobuf.GeneratedMe
             : priceThreshold_;
       }
     }
-
     /**
      *
      *

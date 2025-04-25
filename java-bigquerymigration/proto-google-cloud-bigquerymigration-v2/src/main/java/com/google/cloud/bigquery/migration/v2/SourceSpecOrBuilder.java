@@ -36,7 +36,6 @@ public interface SourceSpecOrBuilder
    * @return Whether the baseUri field is set.
    */
   boolean hasBaseUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SourceSpecOrBuilder
    * @return The baseUri.
    */
   java.lang.String getBaseUri();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SourceSpecOrBuilder
    * @return Whether the literal field is set.
    */
   boolean hasLiteral();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SourceSpecOrBuilder
    * @return The literal.
    */
   com.google.cloud.bigquery.migration.v2.Literal getLiteral();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SourceSpecOrBuilder
    * @return The encoding.
    */
   java.lang.String getEncoding();
-
   /**
    *
    *

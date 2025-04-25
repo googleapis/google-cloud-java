@@ -35,7 +35,6 @@ public interface ListFlowsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Flow flows = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.Flow> getFlowsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListFlowsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Flow flows = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.Flow getFlows(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListFlowsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Flow flows = 1;</code>
    */
   int getFlowsCount();
-
   /**
    *
    *
@@ -71,7 +68,6 @@ public interface ListFlowsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Flow flows = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.FlowOrBuilder> getFlowsOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface ListFlowsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

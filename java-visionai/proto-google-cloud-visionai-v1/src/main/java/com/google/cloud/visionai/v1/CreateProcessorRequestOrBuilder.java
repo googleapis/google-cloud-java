@@ -38,7 +38,6 @@ public interface CreateProcessorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateProcessorRequestOrBuilder
    * @return The processorId.
    */
   java.lang.String getProcessorId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateProcessorRequestOrBuilder
    * @return Whether the processor field is set.
    */
   boolean hasProcessor();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateProcessorRequestOrBuilder
    * @return The processor.
    */
   com.google.cloud.visionai.v1.Processor getProcessor();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateProcessorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

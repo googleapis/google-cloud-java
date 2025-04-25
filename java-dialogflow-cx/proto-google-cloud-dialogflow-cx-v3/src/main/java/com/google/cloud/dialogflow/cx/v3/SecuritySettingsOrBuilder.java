@@ -42,7 +42,6 @@ public interface SecuritySettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface SecuritySettingsOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface SecuritySettingsOrBuilder
    * @return The enum numeric value on the wire for redactionStrategy.
    */
   int getRedactionStrategyValue();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface SecuritySettingsOrBuilder
    * @return The enum numeric value on the wire for redactionScope.
    */
   int getRedactionScopeValue();
-
   /**
    *
    *
@@ -178,7 +174,6 @@ public interface SecuritySettingsOrBuilder
    * @return The inspectTemplate.
    */
   java.lang.String getInspectTemplate();
-
   /**
    *
    *
@@ -236,7 +231,6 @@ public interface SecuritySettingsOrBuilder
    * @return The deidentifyTemplate.
    */
   java.lang.String getDeidentifyTemplate();
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public interface SecuritySettingsOrBuilder
    * @return Whether the retentionWindowDays field is set.
    */
   boolean hasRetentionWindowDays();
-
   /**
    *
    *
@@ -320,7 +313,6 @@ public interface SecuritySettingsOrBuilder
    * @return Whether the retentionStrategy field is set.
    */
   boolean hasRetentionStrategy();
-
   /**
    *
    *
@@ -335,7 +327,6 @@ public interface SecuritySettingsOrBuilder
    * @return The enum numeric value on the wire for retentionStrategy.
    */
   int getRetentionStrategyValue();
-
   /**
    *
    *
@@ -366,7 +357,6 @@ public interface SecuritySettingsOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType>
       getPurgeDataTypesList();
-
   /**
    *
    *
@@ -381,7 +371,6 @@ public interface SecuritySettingsOrBuilder
    * @return The count of purgeDataTypes.
    */
   int getPurgeDataTypesCount();
-
   /**
    *
    *
@@ -397,7 +386,6 @@ public interface SecuritySettingsOrBuilder
    * @return The purgeDataTypes at the given index.
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType getPurgeDataTypes(int index);
-
   /**
    *
    *
@@ -412,7 +400,6 @@ public interface SecuritySettingsOrBuilder
    * @return A list containing the enum numeric values on the wire for purgeDataTypes.
    */
   java.util.List<java.lang.Integer> getPurgeDataTypesValueList();
-
   /**
    *
    *
@@ -459,7 +446,6 @@ public interface SecuritySettingsOrBuilder
    * @return Whether the audioExportSettings field is set.
    */
   boolean hasAudioExportSettings();
-
   /**
    *
    *
@@ -490,7 +476,6 @@ public interface SecuritySettingsOrBuilder
    * @return The audioExportSettings.
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings getAudioExportSettings();
-
   /**
    *
    *
@@ -541,7 +526,6 @@ public interface SecuritySettingsOrBuilder
    * @return Whether the insightsExportSettings field is set.
    */
   boolean hasInsightsExportSettings();
-
   /**
    *
    *
@@ -563,7 +547,6 @@ public interface SecuritySettingsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings
       getInsightsExportSettings();
-
   /**
    *
    *

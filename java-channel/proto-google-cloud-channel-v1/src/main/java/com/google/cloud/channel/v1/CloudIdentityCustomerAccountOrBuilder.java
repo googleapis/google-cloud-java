@@ -66,7 +66,6 @@ public interface CloudIdentityCustomerAccountOrBuilder
    * @return The customerName.
    */
   java.lang.String getCustomerName();
-
   /**
    *
    *
@@ -95,7 +94,6 @@ public interface CloudIdentityCustomerAccountOrBuilder
    * @return The customerCloudIdentityId.
    */
   java.lang.String getCustomerCloudIdentityId();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface CloudIdentityCustomerAccountOrBuilder
    * @return The enum numeric value on the wire for customerType.
    */
   int getCustomerTypeValue();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface CloudIdentityCustomerAccountOrBuilder
    * @return The channelPartnerCloudIdentityId.
    */
   java.lang.String getChannelPartnerCloudIdentityId();
-
   /**
    *
    *

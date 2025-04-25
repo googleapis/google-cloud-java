@@ -37,7 +37,6 @@ public interface CatalogInlineSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem> getCatalogItemsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CatalogInlineSourceOrBuilder
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItems(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface CatalogInlineSourceOrBuilder
    * </code>
    */
   int getCatalogItemsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface CatalogInlineSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder>
       getCatalogItemsOrBuilderList();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface DeleteDeidentifyTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

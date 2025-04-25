@@ -33,7 +33,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.script.type.HttpOptions)
     HttpOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpOptions.newBuilder() to construct.
   private HttpOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHORIZATION_HEADER_FIELD_NUMBER = 1;
   private int authorizationHeader_ = 0;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
   public int getAuthorizationHeaderValue() {
     return authorizationHeader_;
   }
-
   /**
    *
    *
@@ -265,7 +262,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -447,7 +443,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int authorizationHeader_ = 0;
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     public int getAuthorizationHeaderValue() {
       return authorizationHeader_;
     }
-
     /**
      *
      *
@@ -482,7 +476,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -502,7 +495,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.script.type.HttpAuthorizationHeader.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -525,7 +517,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

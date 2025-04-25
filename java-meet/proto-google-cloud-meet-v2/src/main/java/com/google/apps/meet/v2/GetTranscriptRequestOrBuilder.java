@@ -38,7 +38,6 @@ public interface GetTranscriptRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

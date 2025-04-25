@@ -33,7 +33,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.DataItem)
     DataItemOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataItem.newBuilder() to construct.
   private DataItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_PAYLOAD_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImagePayload() {
     return payloadCase_ == 2;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.ImagePayload.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_PAYLOAD_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextPayload() {
     return payloadCase_ == 3;
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.TextPayload.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIDEO_PAYLOAD_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVideoPayload() {
     return payloadCase_ == 4;
   }
-
   /**
    *
    *
@@ -261,7 +251,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.VideoPayload.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -547,7 +534,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -814,7 +800,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.ImagePayload.Builder,
             com.google.cloud.datalabeling.v1beta1.ImagePayloadOrBuilder>
         imagePayloadBuilder_;
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImagePayload() {
       return payloadCase_ == 2;
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.ImagePayload.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -879,7 +862,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +882,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +915,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +940,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.ImagePayload.Builder getImagePayloadBuilder() {
       return getImagePayloadFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.ImagePayload.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1010,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.TextPayload.Builder,
             com.google.cloud.datalabeling.v1beta1.TextPayloadOrBuilder>
         textPayloadBuilder_;
-
     /**
      *
      *
@@ -1049,7 +1025,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextPayload() {
       return payloadCase_ == 3;
     }
-
     /**
      *
      *
@@ -1075,7 +1050,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.TextPayload.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1072,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1092,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1124,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1149,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1161,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.TextPayload.Builder getTextPayloadBuilder() {
       return getTextPayloadFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1212,7 +1181,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.TextPayload.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1219,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.VideoPayload.Builder,
             com.google.cloud.datalabeling.v1beta1.VideoPayloadOrBuilder>
         videoPayloadBuilder_;
-
     /**
      *
      *
@@ -1267,7 +1234,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVideoPayload() {
       return payloadCase_ == 4;
     }
-
     /**
      *
      *
@@ -1293,7 +1259,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.VideoPayload.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1316,7 +1281,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1301,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1334,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1359,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1371,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.VideoPayload.Builder getVideoPayloadBuilder() {
       return getVideoPayloadFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1431,7 +1391,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.VideoPayload.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1466,7 +1425,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1490,7 +1448,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1471,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1537,7 +1493,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1556,7 +1511,6 @@ public final class DataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

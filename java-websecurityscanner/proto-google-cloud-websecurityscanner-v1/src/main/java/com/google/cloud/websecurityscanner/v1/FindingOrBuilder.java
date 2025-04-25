@@ -38,7 +38,6 @@ public interface FindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface FindingOrBuilder
    * @return The findingType.
    */
   java.lang.String getFindingType();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface FindingOrBuilder
    * @return The httpMethod.
    */
   java.lang.String getHttpMethod();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface FindingOrBuilder
    * @return The fuzzedUrl.
    */
   java.lang.String getFuzzedUrl();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface FindingOrBuilder
    * @return The body.
    */
   java.lang.String getBody();
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public interface FindingOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public interface FindingOrBuilder
    * @return The reproductionUrl.
    */
   java.lang.String getReproductionUrl();
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public interface FindingOrBuilder
    * @return The frameUrl.
    */
   java.lang.String getFrameUrl();
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public interface FindingOrBuilder
    * @return The finalUrl.
    */
   java.lang.String getFinalUrl();
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public interface FindingOrBuilder
    * @return The trackingId.
    */
   java.lang.String getTrackingId();
-
   /**
    *
    *
@@ -345,7 +334,6 @@ public interface FindingOrBuilder
    * @return Whether the form field is set.
    */
   boolean hasForm();
-
   /**
    *
    *
@@ -359,7 +347,6 @@ public interface FindingOrBuilder
    * @return The form.
    */
   com.google.cloud.websecurityscanner.v1.Form getForm();
-
   /**
    *
    *
@@ -384,7 +371,6 @@ public interface FindingOrBuilder
    * @return Whether the outdatedLibrary field is set.
    */
   boolean hasOutdatedLibrary();
-
   /**
    *
    *
@@ -397,7 +383,6 @@ public interface FindingOrBuilder
    * @return The outdatedLibrary.
    */
   com.google.cloud.websecurityscanner.v1.OutdatedLibrary getOutdatedLibrary();
-
   /**
    *
    *
@@ -422,7 +407,6 @@ public interface FindingOrBuilder
    * @return Whether the violatingResource field is set.
    */
   boolean hasViolatingResource();
-
   /**
    *
    *
@@ -436,7 +420,6 @@ public interface FindingOrBuilder
    * @return The violatingResource.
    */
   com.google.cloud.websecurityscanner.v1.ViolatingResource getViolatingResource();
-
   /**
    *
    *
@@ -461,7 +444,6 @@ public interface FindingOrBuilder
    * @return Whether the vulnerableHeaders field is set.
    */
   boolean hasVulnerableHeaders();
-
   /**
    *
    *
@@ -474,7 +456,6 @@ public interface FindingOrBuilder
    * @return The vulnerableHeaders.
    */
   com.google.cloud.websecurityscanner.v1.VulnerableHeaders getVulnerableHeaders();
-
   /**
    *
    *
@@ -500,7 +481,6 @@ public interface FindingOrBuilder
    * @return Whether the vulnerableParameters field is set.
    */
   boolean hasVulnerableParameters();
-
   /**
    *
    *
@@ -515,7 +495,6 @@ public interface FindingOrBuilder
    * @return The vulnerableParameters.
    */
   com.google.cloud.websecurityscanner.v1.VulnerableParameters getVulnerableParameters();
-
   /**
    *
    *
@@ -542,7 +521,6 @@ public interface FindingOrBuilder
    * @return Whether the xss field is set.
    */
   boolean hasXss();
-
   /**
    *
    *
@@ -555,7 +533,6 @@ public interface FindingOrBuilder
    * @return The xss.
    */
   com.google.cloud.websecurityscanner.v1.Xss getXss();
-
   /**
    *
    *
@@ -581,7 +558,6 @@ public interface FindingOrBuilder
    * @return Whether the xxe field is set.
    */
   boolean hasXxe();
-
   /**
    *
    *
@@ -596,7 +572,6 @@ public interface FindingOrBuilder
    * @return The xxe.
    */
   com.google.cloud.websecurityscanner.v1.Xxe getXxe();
-
   /**
    *
    *

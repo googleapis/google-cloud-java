@@ -35,7 +35,6 @@ public final class UnstarEntryResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.UnstarEntryResponse)
     UnstarEntryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UnstarEntryResponse.newBuilder() to construct.
   private UnstarEntryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class UnstarEntryResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

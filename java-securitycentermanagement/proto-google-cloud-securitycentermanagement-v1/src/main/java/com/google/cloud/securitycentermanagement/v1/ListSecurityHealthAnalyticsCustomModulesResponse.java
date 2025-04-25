@@ -36,7 +36,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesResponse)
     ListSecurityHealthAnalyticsCustomModulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSecurityHealthAnalyticsCustomModulesResponse.newBuilder() to construct.
   private ListSecurityHealthAnalyticsCustomModulesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -77,7 +76,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
   private java.util.List<
           com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule>
       securityHealthAnalyticsCustomModules_;
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       getSecurityHealthAnalyticsCustomModulesList() {
     return securityHealthAnalyticsCustomModules_;
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       getSecurityHealthAnalyticsCustomModulesOrBuilderList() {
     return securityHealthAnalyticsCustomModules_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
   public int getSecurityHealthAnalyticsCustomModulesCount() {
     return securityHealthAnalyticsCustomModules_.size();
   }
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       getSecurityHealthAnalyticsCustomModules(int index) {
     return securityHealthAnalyticsCustomModules_.get(index);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -744,7 +735,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return securityHealthAnalyticsCustomModulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -763,7 +753,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return securityHealthAnalyticsCustomModulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -783,7 +772,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return securityHealthAnalyticsCustomModulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -810,7 +798,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +822,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +847,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +873,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +920,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +947,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +968,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +989,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1004,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         getSecurityHealthAnalyticsCustomModulesBuilder(int index) {
       return getSecurityHealthAnalyticsCustomModulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return securityHealthAnalyticsCustomModulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return java.util.Collections.unmodifiableList(securityHealthAnalyticsCustomModules_);
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1063,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
               com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1107,7 +1082,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
               com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1151,7 +1125,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1175,7 +1148,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1171,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1193,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1211,6 @@ public final class ListSecurityHealthAnalyticsCustomModulesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

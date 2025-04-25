@@ -33,7 +33,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1.TransferCounters)
     TransferCountersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferCounters.newBuilder() to construct.
   private TransferCounters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int OBJECTS_FOUND_FIELD_NUMBER = 1;
   private long objectsFound_ = 0L;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int BYTES_FOUND_FIELD_NUMBER = 2;
   private long bytesFound_ = 0L;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int OBJECTS_SKIPPED_FIELD_NUMBER = 3;
   private long objectsSkipped_ = 0L;
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int BYTES_SKIPPED_FIELD_NUMBER = 4;
   private long bytesSkipped_ = 0L;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int OBJECTS_COPIED_FIELD_NUMBER = 5;
   private long objectsCopied_ = 0L;
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int BYTES_COPIED_FIELD_NUMBER = 6;
   private long bytesCopied_ = 0L;
-
   /**
    *
    *
@@ -184,12 +177,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int OBJECTS_FAILED_FIELD_NUMBER = 7;
   private long objectsFailed_ = 0L;
-
   /**
    *
    *
    * <pre>
-   * Objects that are failed to write to the data destination.
+   * Objects that failed to write to the data destination.
    * </pre>
    *
    * <code>int64 objects_failed = 7;</code>
@@ -203,12 +195,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
 
   public static final int BYTES_FAILED_FIELD_NUMBER = 8;
   private long bytesFailed_ = 0L;
-
   /**
    *
    *
    * <pre>
-   * Bytes that are failed to write to the data destination.
+   * Number of Bytes that failed to be written to the data destination.
    * </pre>
    *
    * <code>int64 bytes_failed = 8;</code>
@@ -442,7 +433,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -716,7 +706,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long objectsFound_;
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getObjectsFound() {
       return objectsFound_;
     }
-
     /**
      *
      *
@@ -756,7 +744,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long bytesFound_;
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getBytesFound() {
       return bytesFound_;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +824,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long objectsSkipped_;
-
     /**
      *
      *
@@ -857,7 +840,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getObjectsSkipped() {
       return objectsSkipped_;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long bytesSkipped_;
-
     /**
      *
      *
@@ -916,7 +896,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getBytesSkipped() {
       return bytesSkipped_;
     }
-
     /**
      *
      *
@@ -937,7 +916,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long objectsCopied_;
-
     /**
      *
      *
@@ -974,7 +951,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getObjectsCopied() {
       return objectsCopied_;
     }
-
     /**
      *
      *
@@ -994,7 +970,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +989,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long bytesCopied_;
-
     /**
      *
      *
@@ -1030,7 +1004,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getBytesCopied() {
       return bytesCopied_;
     }
-
     /**
      *
      *
@@ -1050,7 +1023,6 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,12 +1042,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long objectsFailed_;
-
     /**
      *
      *
      * <pre>
-     * Objects that are failed to write to the data destination.
+     * Objects that failed to write to the data destination.
      * </pre>
      *
      * <code>int64 objects_failed = 7;</code>
@@ -1086,12 +1057,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getObjectsFailed() {
       return objectsFailed_;
     }
-
     /**
      *
      *
      * <pre>
-     * Objects that are failed to write to the data destination.
+     * Objects that failed to write to the data destination.
      * </pre>
      *
      * <code>int64 objects_failed = 7;</code>
@@ -1106,12 +1076,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Objects that are failed to write to the data destination.
+     * Objects that failed to write to the data destination.
      * </pre>
      *
      * <code>int64 objects_failed = 7;</code>
@@ -1126,12 +1095,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     }
 
     private long bytesFailed_;
-
     /**
      *
      *
      * <pre>
-     * Bytes that are failed to write to the data destination.
+     * Number of Bytes that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 bytes_failed = 8;</code>
@@ -1142,12 +1110,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public long getBytesFailed() {
       return bytesFailed_;
     }
-
     /**
      *
      *
      * <pre>
-     * Bytes that are failed to write to the data destination.
+     * Number of Bytes that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 bytes_failed = 8;</code>
@@ -1162,12 +1129,11 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Bytes that are failed to write to the data destination.
+     * Number of Bytes that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 bytes_failed = 8;</code>

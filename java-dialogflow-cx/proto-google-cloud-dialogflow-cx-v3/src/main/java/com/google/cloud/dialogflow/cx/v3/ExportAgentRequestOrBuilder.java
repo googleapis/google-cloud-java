@@ -39,7 +39,6 @@ public interface ExportAgentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ExportAgentRequestOrBuilder
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface ExportAgentRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface ExportAgentRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public interface ExportAgentRequestOrBuilder
    * @return Whether the gitDestination field is set.
    */
   boolean hasGitDestination();
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public interface ExportAgentRequestOrBuilder
    * @return The gitDestination.
    */
   com.google.cloud.dialogflow.cx.v3.ExportAgentRequest.GitDestination getGitDestination();
-
   /**
    *
    *

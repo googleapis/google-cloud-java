@@ -273,19 +273,6 @@ public final class GeneratorsGrpc {
     return GeneratorsStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static GeneratorsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GeneratorsBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<GeneratorsBlockingV2Stub>() {
-          @java.lang.Override
-          public GeneratorsBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new GeneratorsBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return GeneratorsBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -511,91 +498,6 @@ public final class GeneratorsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Generators.
-   *
-   * <pre>
-   * Service for managing [Generators][google.cloud.dialogflow.cx.v3.Generator]
-   * </pre>
-   */
-  public static final class GeneratorsBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<GeneratorsBlockingV2Stub> {
-    private GeneratorsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected GeneratorsBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new GeneratorsBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all generators in the specified agent.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3.ListGeneratorsResponse listGenerators(
-        com.google.cloud.dialogflow.cx.v3.ListGeneratorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListGeneratorsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified generator.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3.Generator getGenerator(
-        com.google.cloud.dialogflow.cx.v3.GetGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetGeneratorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a generator in the specified agent.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3.Generator createGenerator(
-        com.google.cloud.dialogflow.cx.v3.CreateGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateGeneratorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the specified generator.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3.Generator updateGenerator(
-        com.google.cloud.dialogflow.cx.v3.UpdateGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateGeneratorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified generators.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteGenerator(
-        com.google.cloud.dialogflow.cx.v3.DeleteGeneratorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteGeneratorMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Generators.
    *
    * <pre>
    * Service for managing [Generators][google.cloud.dialogflow.cx.v3.Generator]

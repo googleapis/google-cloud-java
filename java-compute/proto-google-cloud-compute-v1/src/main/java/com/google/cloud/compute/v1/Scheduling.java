@@ -33,7 +33,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Scheduling)
     SchedulingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Scheduling.newBuilder() to construct.
   private Scheduling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,7 +131,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_INSTANCE_TERMINATION_ACTION = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_TERMINATION_ACTION_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETE = 402225579;</code>
      */
     public static final int DELETE_VALUE = 402225579;
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE_TERMINATION_ACTION_UNSPECIFIED = 92954803;</code>
      */
     public static final int INSTANCE_TERMINATION_ACTION_UNSPECIFIED_VALUE = 92954803;
-
     /**
      *
      *
@@ -307,7 +303,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ON_HOST_MAINTENANCE = 0;</code>
      */
     public static final int UNDEFINED_ON_HOST_MAINTENANCE_VALUE = 0;
-
     /**
      *
      *
@@ -318,7 +313,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>MIGRATE = 165699979;</code>
      */
     public static final int MIGRATE_VALUE = 165699979;
-
     /**
      *
      *
@@ -479,7 +473,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROVISIONING_MODEL = 0;</code>
      */
     public static final int UNDEFINED_PROVISIONING_MODEL_VALUE = 0;
-
     /**
      *
      *
@@ -490,7 +483,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>RESERVATION_BOUND = 293538571;</code>
      */
     public static final int RESERVATION_BOUND_VALUE = 293538571;
-
     /**
      *
      *
@@ -501,7 +493,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>SPOT = 2552066;</code>
      */
     public static final int SPOT_VALUE = 2552066;
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUTOMATIC_RESTART_FIELD_NUMBER = 350821371;
   private boolean automaticRestart_ = false;
-
   /**
    *
    *
@@ -620,7 +610,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomaticRestart() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -639,7 +628,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABILITY_DOMAIN_FIELD_NUMBER = 252514344;
   private int availabilityDomain_ = 0;
-
   /**
    *
    *
@@ -655,7 +643,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAvailabilityDomain() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -674,7 +661,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HOST_ERROR_TIMEOUT_SECONDS_FIELD_NUMBER = 408317459;
   private int hostErrorTimeoutSeconds_ = 0;
-
   /**
    *
    *
@@ -690,7 +676,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHostErrorTimeoutSeconds() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -711,7 +696,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceTerminationAction_ = "";
-
   /**
    *
    *
@@ -728,7 +712,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstanceTerminationAction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -753,7 +736,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -781,7 +763,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCAL_SSD_RECOVERY_TIMEOUT_FIELD_NUMBER = 268015590;
   private com.google.cloud.compute.v1.Duration localSsdRecoveryTimeout_;
-
   /**
    *
    *
@@ -797,7 +778,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocalSsdRecoveryTimeout() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -815,7 +795,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : localSsdRecoveryTimeout_;
   }
-
   /**
    *
    *
@@ -836,7 +815,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationHint_ = "";
-
   /**
    *
    *
@@ -852,7 +830,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocationHint() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -876,7 +853,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -903,7 +879,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_RUN_DURATION_FIELD_NUMBER = 430839747;
   private com.google.cloud.compute.v1.Duration maxRunDuration_;
-
   /**
    *
    *
@@ -919,7 +894,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxRunDuration() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -937,7 +911,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : maxRunDuration_;
   }
-
   /**
    *
    *
@@ -956,7 +929,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_NODE_CPUS_FIELD_NUMBER = 317231675;
   private int minNodeCpus_ = 0;
-
   /**
    *
    *
@@ -972,7 +944,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinNodeCpus() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -993,7 +964,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity> nodeAffinities_;
-
   /**
    *
    *
@@ -1009,7 +979,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       getNodeAffinitiesList() {
     return nodeAffinities_;
   }
-
   /**
    *
    *
@@ -1025,7 +994,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       getNodeAffinitiesOrBuilderList() {
     return nodeAffinities_;
   }
-
   /**
    *
    *
@@ -1040,7 +1008,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public int getNodeAffinitiesCount() {
     return nodeAffinities_.size();
   }
-
   /**
    *
    *
@@ -1055,7 +1022,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.SchedulingNodeAffinity getNodeAffinities(int index) {
     return nodeAffinities_.get(index);
   }
-
   /**
    *
    *
@@ -1076,7 +1042,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object onHostMaintenance_ = "";
-
   /**
    *
    *
@@ -1093,7 +1058,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOnHostMaintenance() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1118,7 +1082,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1146,7 +1109,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ON_INSTANCE_STOP_ACTION_FIELD_NUMBER = 529876681;
   private com.google.cloud.compute.v1.SchedulingOnInstanceStopAction onInstanceStopAction_;
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -1158,7 +1120,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOnInstanceStopAction() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -1172,7 +1133,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.getDefaultInstance()
         : onInstanceStopAction_;
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -1188,7 +1148,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREEMPTIBLE_FIELD_NUMBER = 324203169;
   private boolean preemptible_ = false;
-
   /**
    *
    *
@@ -1204,7 +1163,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPreemptible() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1225,7 +1183,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object provisioningModel_ = "";
-
   /**
    *
    *
@@ -1242,7 +1199,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProvisioningModel() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1267,7 +1223,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1297,7 +1252,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object terminationTime_ = "";
-
   /**
    *
    *
@@ -1313,7 +1267,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTerminationTime() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1337,7 +1290,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1719,7 +1671,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2176,7 +2127,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean automaticRestart_;
-
     /**
      *
      *
@@ -2192,7 +2142,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomaticRestart() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2208,7 +2157,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutomaticRestart() {
       return automaticRestart_;
     }
-
     /**
      *
      *
@@ -2228,7 +2176,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2195,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availabilityDomain_;
-
     /**
      *
      *
@@ -2264,7 +2210,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvailabilityDomain() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2280,7 +2225,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public int getAvailabilityDomain() {
       return availabilityDomain_;
     }
-
     /**
      *
      *
@@ -2300,7 +2244,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2320,7 +2263,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int hostErrorTimeoutSeconds_;
-
     /**
      *
      *
@@ -2336,7 +2278,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHostErrorTimeoutSeconds() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2352,7 +2293,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public int getHostErrorTimeoutSeconds() {
       return hostErrorTimeoutSeconds_;
     }
-
     /**
      *
      *
@@ -2372,7 +2312,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2392,7 +2331,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceTerminationAction_ = "";
-
     /**
      *
      *
@@ -2408,7 +2346,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstanceTerminationAction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2432,7 +2369,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2456,7 +2392,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2479,7 +2414,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2498,7 +2432,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2529,7 +2462,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         localSsdRecoveryTimeoutBuilder_;
-
     /**
      *
      *
@@ -2545,7 +2477,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocalSsdRecoveryTimeout() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2567,7 +2498,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return localSsdRecoveryTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2591,7 +2521,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2613,7 +2542,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2571,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2664,7 +2591,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2680,7 +2606,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocalSsdRecoveryTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2700,7 +2625,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             : localSsdRecoveryTimeout_;
       }
     }
-
     /**
      *
      *
@@ -2729,7 +2653,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object locationHint_ = "";
-
     /**
      *
      *
@@ -2744,7 +2667,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocationHint() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2767,7 +2689,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2790,7 +2711,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2812,7 +2732,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2830,7 +2749,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2860,7 +2778,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         maxRunDurationBuilder_;
-
     /**
      *
      *
@@ -2875,7 +2792,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxRunDuration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2896,7 +2812,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return maxRunDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2919,7 +2834,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2939,7 +2853,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2967,7 +2880,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2987,7 +2899,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3002,7 +2913,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaxRunDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3021,7 +2931,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             : maxRunDuration_;
       }
     }
-
     /**
      *
      *
@@ -3049,7 +2958,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minNodeCpus_;
-
     /**
      *
      *
@@ -3065,7 +2973,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinNodeCpus() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3081,7 +2988,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public int getMinNodeCpus() {
       return minNodeCpus_;
     }
-
     /**
      *
      *
@@ -3101,7 +3007,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3156,7 +3061,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return nodeAffinitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3174,7 +3078,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return nodeAffinitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3192,7 +3095,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return nodeAffinitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3217,7 +3119,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3239,7 +3140,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3263,7 +3163,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3288,7 +3187,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3310,7 +3208,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3332,7 +3229,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3354,7 +3250,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3375,7 +3270,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3396,7 +3290,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3411,7 +3304,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNodeAffinitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3430,7 +3322,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return nodeAffinitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3449,7 +3340,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nodeAffinities_);
       }
     }
-
     /**
      *
      *
@@ -3464,7 +3354,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return getNodeAffinitiesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.SchedulingNodeAffinity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3481,7 +3370,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.SchedulingNodeAffinity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3518,7 +3406,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object onHostMaintenance_ = "";
-
     /**
      *
      *
@@ -3534,7 +3421,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnHostMaintenance() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3558,7 +3444,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3582,7 +3467,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3605,7 +3489,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3507,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3655,7 +3537,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.Builder,
             com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder>
         onInstanceStopActionBuilder_;
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3666,7 +3547,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnInstanceStopAction() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3683,7 +3563,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return onInstanceStopActionBuilder_.getMessage();
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3703,7 +3582,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3720,7 +3598,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3747,7 +3624,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3763,7 +3639,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3775,7 +3650,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOnInstanceStopActionFieldBuilder().getBuilder();
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3791,7 +3665,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             : onInstanceStopAction_;
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -3815,7 +3688,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean preemptible_;
-
     /**
      *
      *
@@ -3831,7 +3703,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPreemptible() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3847,7 +3718,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean getPreemptible() {
       return preemptible_;
     }
-
     /**
      *
      *
@@ -3867,7 +3737,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3887,7 +3756,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object provisioningModel_ = "";
-
     /**
      *
      *
@@ -3903,7 +3771,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProvisioningModel() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -3927,7 +3794,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3951,7 +3817,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3974,7 +3839,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3993,7 +3857,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3882,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object terminationTime_ = "";
-
     /**
      *
      *
@@ -4034,7 +3896,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTerminationTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4057,7 +3918,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4080,7 +3940,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4102,7 +3961,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4120,7 +3978,6 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

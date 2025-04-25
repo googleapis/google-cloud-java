@@ -33,7 +33,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListBgpRoutesRoutersRequest)
     ListBgpRoutesRoutersRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBgpRoutesRoutersRequest.newBuilder() to construct.
   private ListBgpRoutesRoutersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,13 +111,10 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
      * <code>UNDEFINED_ADDRESS_FAMILY = 0;</code>
      */
     public static final int UNDEFINED_ADDRESS_FAMILY_VALUE = 0;
-
     /** <code>IPV4 = 2254341;</code> */
     public static final int IPV4_VALUE = 2254341;
-
     /** <code>IPV6 = 2254343;</code> */
     public static final int IPV6_VALUE = 2254343;
-
     /** <code>UNSPECIFIED_IP_VERSION = 72938440;</code> */
     public static final int UNSPECIFIED_IP_VERSION_VALUE = 72938440;
 
@@ -248,13 +244,10 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
      * <code>UNDEFINED_ROUTE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_ROUTE_TYPE_VALUE = 0;
-
     /** <code>ADVERTISED = 20302109;</code> */
     public static final int ADVERTISED_VALUE = 20302109;
-
     /** <code>LEARNED = 231892419;</code> */
     public static final int LEARNED_VALUE = 231892419;
-
     /** <code>UNSPECIFIED_ROUTE_TYPE = 248064440;</code> */
     public static final int UNSPECIFIED_ROUTE_TYPE_VALUE = 248064440;
 
@@ -350,7 +343,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object addressFamily_ = "";
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasAddressFamily() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -392,7 +383,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationPrefix_ = "";
-
   /**
    *
    *
@@ -438,7 +427,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasDestinationPrefix() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -491,7 +478,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -507,7 +493,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -531,7 +516,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -558,7 +542,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -574,7 +557,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -595,7 +577,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -611,7 +592,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -635,7 +615,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -664,7 +643,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -680,7 +658,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -704,7 +681,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -733,7 +709,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peer_ = "";
-
   /**
    *
    *
@@ -749,7 +724,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasPeer() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -773,7 +747,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -800,7 +773,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   public static final int POLICY_APPLIED_FIELD_NUMBER = 379464304;
   private boolean policyApplied_ = false;
-
   /**
    *
    *
@@ -816,7 +788,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasPolicyApplied() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -837,7 +808,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -861,7 +831,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -890,7 +859,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -914,7 +882,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -941,7 +908,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -957,7 +923,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -978,7 +943,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object routeType_ = "";
-
   /**
    *
    *
@@ -995,7 +959,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
   public boolean hasRouteType() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1020,7 +983,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -1050,7 +1012,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object router_ = "";
-
   /**
    *
    *
@@ -1074,7 +1035,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -1419,7 +1379,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1790,7 +1749,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object addressFamily_ = "";
-
     /**
      *
      *
@@ -1806,7 +1764,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasAddressFamily() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1830,7 +1787,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1854,7 +1810,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1877,7 +1832,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1896,7 +1850,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1922,7 +1875,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object destinationPrefix_ = "";
-
     /**
      *
      *
@@ -1937,7 +1889,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasDestinationPrefix() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1960,7 +1911,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1983,7 +1933,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2005,7 +1954,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2023,7 +1971,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +1995,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -2063,7 +2009,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2086,7 +2031,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2109,7 +2053,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2131,7 +2074,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2149,7 +2091,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2174,7 +2115,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -2190,7 +2130,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2206,7 +2145,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -2226,7 +2164,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2246,7 +2183,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -2261,7 +2197,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2284,7 +2219,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2307,7 +2241,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2329,7 +2262,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2347,7 +2279,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2372,7 +2303,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -2387,7 +2317,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2410,7 +2339,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2433,7 +2361,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2455,7 +2382,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2399,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2498,7 +2423,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object peer_ = "";
-
     /**
      *
      *
@@ -2513,7 +2437,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasPeer() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2536,7 +2459,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2559,7 +2481,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2581,7 +2502,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2599,7 +2519,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2624,7 +2543,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private boolean policyApplied_;
-
     /**
      *
      *
@@ -2640,7 +2558,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasPolicyApplied() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2656,7 +2573,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean getPolicyApplied() {
       return policyApplied_;
     }
-
     /**
      *
      *
@@ -2676,7 +2592,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2696,7 +2611,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -2719,7 +2633,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2742,7 +2655,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2764,7 +2676,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2782,7 +2693,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2807,7 +2717,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -2830,7 +2739,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2853,7 +2761,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2875,7 +2782,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2893,7 +2799,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2918,7 +2823,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -2934,7 +2838,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -2950,7 +2853,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -2970,7 +2872,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2990,7 +2891,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object routeType_ = "";
-
     /**
      *
      *
@@ -3006,7 +2906,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     public boolean hasRouteType() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3030,7 +2929,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3054,7 +2952,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3077,7 +2974,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3096,7 +2992,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3122,7 +3017,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object router_ = "";
-
     /**
      *
      *
@@ -3145,7 +3039,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3168,7 +3061,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3190,7 +3082,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3208,7 +3099,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

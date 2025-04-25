@@ -36,7 +36,6 @@ public interface ImportDataFileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ImportDataFileOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ImportDataFileOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ImportDataFileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ImportDataFileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface ImportDataFileOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface ImportDataFileOrBuilder
    * @return Whether the uploadFileInfo field is set.
    */
   boolean hasUploadFileInfo();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface ImportDataFileOrBuilder
    * @return The uploadFileInfo.
    */
   com.google.cloud.migrationcenter.v1.UploadFileInfo getUploadFileInfo();
-
   /**
    *
    *

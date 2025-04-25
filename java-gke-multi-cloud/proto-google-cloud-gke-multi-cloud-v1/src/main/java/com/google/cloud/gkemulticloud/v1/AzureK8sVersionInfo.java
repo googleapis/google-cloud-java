@@ -33,7 +33,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureK8sVersionInfo)
     AzureK8sVersionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureK8sVersionInfo.newBuilder() to construct.
   private AzureK8sVersionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLED_FIELD_NUMBER = 3;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
 
   public static final int END_OF_LIFE_FIELD_NUMBER = 4;
   private boolean endOfLife_ = false;
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
 
   public static final int END_OF_LIFE_DATE_FIELD_NUMBER = 5;
   private com.google.type.Date endOfLifeDate_;
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
   public boolean hasEndOfLifeDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
   public com.google.type.Date getEndOfLifeDate() {
     return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
   }
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
 
   public static final int RELEASE_DATE_FIELD_NUMBER = 6;
   private com.google.type.Date releaseDate_;
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
   public boolean hasReleaseDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
   public com.google.type.Date getReleaseDate() {
     return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
   }
-
   /**
    *
    *
@@ -474,7 +463,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -735,7 +723,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     }
 
     private boolean endOfLife_;
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     public boolean getEndOfLife() {
       return endOfLife_;
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endOfLifeDateBuilder_;
-
     /**
      *
      *
@@ -995,7 +971,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     public boolean hasEndOfLifeDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
         return endOfLifeDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1019,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1042,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1073,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1096,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1114,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return getEndOfLifeDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1165,7 +1134,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
         return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
       }
     }
-
     /**
      *
      *
@@ -1196,7 +1164,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         releaseDateBuilder_;
-
     /**
      *
      *
@@ -1211,7 +1178,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     public boolean hasReleaseDate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1230,7 +1196,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
         return releaseDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1253,7 +1218,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1237,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1264,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1283,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1297,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
       onChanged();
       return getReleaseDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1353,7 +1313,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
         return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
       }
     }
-
     /**
      *
      *

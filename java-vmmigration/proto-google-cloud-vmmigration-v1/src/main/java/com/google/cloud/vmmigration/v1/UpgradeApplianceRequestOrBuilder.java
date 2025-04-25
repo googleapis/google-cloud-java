@@ -38,7 +38,6 @@ public interface UpgradeApplianceRequestOrBuilder
    * @return The datacenterConnector.
    */
   java.lang.String getDatacenterConnector();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface UpgradeApplianceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

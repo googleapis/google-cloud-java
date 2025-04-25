@@ -37,7 +37,6 @@ public interface CreateInstanceRequestsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.alloydb.v1.CreateInstanceRequest> getCreateInstanceRequestsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CreateInstanceRequestsOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1.CreateInstanceRequest getCreateInstanceRequests(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface CreateInstanceRequestsOrBuilder
    * </code>
    */
   int getCreateInstanceRequestsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface CreateInstanceRequestsOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1.CreateInstanceRequestOrBuilder>
       getCreateInstanceRequestsOrBuilderList();
-
   /**
    *
    *

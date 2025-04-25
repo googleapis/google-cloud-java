@@ -33,7 +33,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MachineNetworkDetails)
     MachineNetworkDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MachineNetworkDetails.newBuilder() to construct.
   private MachineNetworkDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryIpAddress_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicIpAddress_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryMacAddress_ = "";
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
 
   public static final int ADAPTERS_FIELD_NUMBER = 4;
   private com.google.cloud.migrationcenter.v1.NetworkAdapterList adapters_;
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
   public boolean hasAdapters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +255,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.migrationcenter.v1.NetworkAdapterList.getDefaultInstance()
         : adapters_;
   }
-
   /**
    *
    *
@@ -473,7 +463,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -717,7 +706,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object primaryIpAddress_ = "";
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object publicIpAddress_ = "";
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object primaryMacAddress_ = "";
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1010,7 +986,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1004,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1034,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
             com.google.cloud.migrationcenter.v1.NetworkAdapterList.Builder,
             com.google.cloud.migrationcenter.v1.NetworkAdapterListOrBuilder>
         adaptersBuilder_;
-
     /**
      *
      *
@@ -1075,7 +1048,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
     public boolean hasAdapters() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1096,7 +1068,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
         return adaptersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1090,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1110,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1138,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1157,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1171,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return getAdaptersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1223,7 +1189,6 @@ public final class MachineNetworkDetails extends com.google.protobuf.GeneratedMe
             : adapters_;
       }
     }
-
     /**
      *
      *

@@ -41,7 +41,6 @@ public interface RestoreServiceRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface RestoreServiceRequestOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface RestoreServiceRequestOrBuilder
    * @return The enum numeric value on the wire for restoreType.
    */
   int getRestoreTypeValue();
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public interface RestoreServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DumpItem)
     DumpItemOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DumpItem.newBuilder() to construct.
   private DumpItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
     private ItemCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAGGED_ENTRY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaggedEntry() {
     return itemCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.TaggedEntry.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -336,7 +331,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.TaggedEntry.Builder,
             com.google.cloud.datacatalog.v1.TaggedEntryOrBuilder>
         taggedEntryBuilder_;
-
     /**
      *
      *
@@ -570,7 +563,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaggedEntry() {
       return itemCase_ == 1;
     }
-
     /**
      *
      *
@@ -596,7 +588,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.TaggedEntry.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
       itemCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
       itemCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
       itemCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.TaggedEntry.Builder getTaggedEntryBuilder() {
       return getTaggedEntryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class DumpItem extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.TaggedEntry.getDefaultInstance();
       }
     }
-
     /**
      *
      *

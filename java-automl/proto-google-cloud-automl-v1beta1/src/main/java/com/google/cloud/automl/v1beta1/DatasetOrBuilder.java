@@ -38,7 +38,6 @@ public interface DatasetOrBuilder
    * @return Whether the translationDatasetMetadata field is set.
    */
   boolean hasTranslationDatasetMetadata();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DatasetOrBuilder
    * @return The translationDatasetMetadata.
    */
   com.google.cloud.automl.v1beta1.TranslationDatasetMetadata getTranslationDatasetMetadata();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface DatasetOrBuilder
    * @return Whether the imageClassificationDatasetMetadata field is set.
    */
   boolean hasImageClassificationDatasetMetadata();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata
       getImageClassificationDatasetMetadata();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface DatasetOrBuilder
    * @return Whether the textClassificationDatasetMetadata field is set.
    */
   boolean hasTextClassificationDatasetMetadata();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata
       getTextClassificationDatasetMetadata();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface DatasetOrBuilder
    * @return Whether the imageObjectDetectionDatasetMetadata field is set.
    */
   boolean hasImageObjectDetectionDatasetMetadata();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
       getImageObjectDetectionDatasetMetadata();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface DatasetOrBuilder
    * @return Whether the videoClassificationDatasetMetadata field is set.
    */
   boolean hasVideoClassificationDatasetMetadata();
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
       getVideoClassificationDatasetMetadata();
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public interface DatasetOrBuilder
    * @return Whether the videoObjectTrackingDatasetMetadata field is set.
    */
   boolean hasVideoObjectTrackingDatasetMetadata();
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata
       getVideoObjectTrackingDatasetMetadata();
-
   /**
    *
    *
@@ -307,7 +295,6 @@ public interface DatasetOrBuilder
    * @return Whether the textExtractionDatasetMetadata field is set.
    */
   boolean hasTextExtractionDatasetMetadata();
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public interface DatasetOrBuilder
    * @return The textExtractionDatasetMetadata.
    */
   com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata getTextExtractionDatasetMetadata();
-
   /**
    *
    *
@@ -351,7 +337,6 @@ public interface DatasetOrBuilder
    * @return Whether the textSentimentDatasetMetadata field is set.
    */
   boolean hasTextSentimentDatasetMetadata();
-
   /**
    *
    *
@@ -366,7 +351,6 @@ public interface DatasetOrBuilder
    * @return The textSentimentDatasetMetadata.
    */
   com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata getTextSentimentDatasetMetadata();
-
   /**
    *
    *
@@ -393,7 +377,6 @@ public interface DatasetOrBuilder
    * @return Whether the tablesDatasetMetadata field is set.
    */
   boolean hasTablesDatasetMetadata();
-
   /**
    *
    *
@@ -406,7 +389,6 @@ public interface DatasetOrBuilder
    * @return The tablesDatasetMetadata.
    */
   com.google.cloud.automl.v1beta1.TablesDatasetMetadata getTablesDatasetMetadata();
-
   /**
    *
    *
@@ -432,7 +414,6 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -462,7 +443,6 @@ public interface DatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -492,7 +472,6 @@ public interface DatasetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -532,7 +511,6 @@ public interface DatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -545,7 +523,6 @@ public interface DatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -570,7 +547,6 @@ public interface DatasetOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

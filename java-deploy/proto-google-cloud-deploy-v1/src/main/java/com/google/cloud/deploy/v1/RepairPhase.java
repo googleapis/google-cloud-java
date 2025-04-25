@@ -34,7 +34,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RepairPhase)
     RepairPhaseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RepairPhase.newBuilder() to construct.
   private RepairPhase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     private RepairPhaseCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETRY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetry() {
     return repairPhaseCase_ == 1;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.RetryPhase.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLLBACK_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRollback() {
     return repairPhaseCase_ == 2;
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.RollbackAttempt.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -421,7 +413,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.RetryPhase.Builder,
             com.google.cloud.deploy.v1.RetryPhaseOrBuilder>
         retryBuilder_;
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetry() {
       return repairPhaseCase_ == 1;
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RetryPhase.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       repairPhaseCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       repairPhaseCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       repairPhaseCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.RetryPhase.Builder getRetryBuilder() {
       return getRetryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RetryPhase.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.RollbackAttempt.Builder,
             com.google.cloud.deploy.v1.RollbackAttemptOrBuilder>
         rollbackBuilder_;
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRollback() {
       return repairPhaseCase_ == 2;
     }
-
     /**
      *
      *
@@ -938,7 +918,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RollbackAttempt.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -963,7 +942,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       repairPhaseCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +963,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       repairPhaseCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +997,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       repairPhaseCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1038,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.RollbackAttempt.Builder getRollbackBuilder() {
       return getRollbackFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RollbackAttempt.getDefaultInstance();
       }
     }
-
     /**
      *
      *

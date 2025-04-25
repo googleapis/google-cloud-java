@@ -33,7 +33,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceiveEventsRequest)
     ReceiveEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReceiveEventsRequest.newBuilder() to construct.
   private ReceiveEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return The cluster.
      */
     java.lang.String getCluster();
-
     /**
      *
      *
@@ -105,7 +103,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return The stream.
      */
     java.lang.String getStream();
-
     /**
      *
      *
@@ -133,7 +130,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return The receiver.
      */
     java.lang.String getReceiver();
-
     /**
      *
      *
@@ -161,7 +157,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the controlledMode field is set.
      */
     boolean hasControlledMode();
-
     /**
      *
      *
@@ -174,7 +169,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return The controlledMode.
      */
     com.google.cloud.visionai.v1.ControlledMode getControlledMode();
-
     /**
      *
      *
@@ -203,7 +197,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the heartbeatInterval field is set.
      */
     boolean hasHeartbeatInterval();
-
     /**
      *
      *
@@ -221,7 +214,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return The heartbeatInterval.
      */
     com.google.protobuf.Duration getHeartbeatInterval();
-
     /**
      *
      *
@@ -255,7 +247,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the writesDoneGracePeriod field is set.
      */
     boolean hasWritesDoneGracePeriod();
-
     /**
      *
      *
@@ -273,7 +264,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      * @return The writesDoneGracePeriod.
      */
     com.google.protobuf.Duration getWritesDoneGracePeriod();
-
     /**
      *
      *
@@ -290,7 +280,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.DurationOrBuilder getWritesDoneGracePeriodOrBuilder();
   }
-
   /**
    *
    *
@@ -306,7 +295,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequest)
       SetupRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SetupRequest.newBuilder() to construct.
     private SetupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -344,7 +332,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cluster_ = "";
-
     /**
      *
      *
@@ -368,7 +355,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -397,7 +383,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object stream_ = "";
-
     /**
      *
      *
@@ -421,7 +406,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -450,7 +434,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object receiver_ = "";
-
     /**
      *
      *
@@ -476,7 +459,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -505,7 +487,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int CONTROLLED_MODE_FIELD_NUMBER = 4;
     private com.google.cloud.visionai.v1.ControlledMode controlledMode_;
-
     /**
      *
      *
@@ -521,7 +502,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasControlledMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -539,7 +519,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.visionai.v1.ControlledMode.getDefaultInstance()
           : controlledMode_;
     }
-
     /**
      *
      *
@@ -558,7 +537,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int HEARTBEAT_INTERVAL_FIELD_NUMBER = 5;
     private com.google.protobuf.Duration heartbeatInterval_;
-
     /**
      *
      *
@@ -579,7 +557,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasHeartbeatInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -602,7 +579,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           ? com.google.protobuf.Duration.getDefaultInstance()
           : heartbeatInterval_;
     }
-
     /**
      *
      *
@@ -626,7 +602,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int WRITES_DONE_GRACE_PERIOD_FIELD_NUMBER = 6;
     private com.google.protobuf.Duration writesDoneGracePeriod_;
-
     /**
      *
      *
@@ -647,7 +622,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasWritesDoneGracePeriod() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -670,7 +644,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           ? com.google.protobuf.Duration.getDefaultInstance()
           : writesDoneGracePeriod_;
     }
-
     /**
      *
      *
@@ -914,7 +887,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1214,7 +1186,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object cluster_ = "";
-
       /**
        *
        *
@@ -1237,7 +1208,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1260,7 +1230,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1282,7 +1251,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1300,7 +1268,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1325,7 +1292,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object stream_ = "";
-
       /**
        *
        *
@@ -1348,7 +1314,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1371,7 +1336,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1393,7 +1357,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1411,7 +1374,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1436,7 +1398,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object receiver_ = "";
-
       /**
        *
        *
@@ -1461,7 +1422,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1486,7 +1446,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1510,7 +1469,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1530,7 +1488,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1562,7 +1519,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
               com.google.cloud.visionai.v1.ControlledMode.Builder,
               com.google.cloud.visionai.v1.ControlledModeOrBuilder>
           controlledModeBuilder_;
-
       /**
        *
        *
@@ -1577,7 +1533,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       public boolean hasControlledMode() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1598,7 +1553,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return controlledModeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1621,7 +1575,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1642,7 +1595,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1671,7 +1623,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -1691,7 +1642,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1706,7 +1656,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return getControlledModeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1725,7 +1674,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
               : controlledMode_;
         }
       }
-
       /**
        *
        *
@@ -1758,7 +1706,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           heartbeatIntervalBuilder_;
-
       /**
        *
        *
@@ -1778,7 +1725,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       public boolean hasHeartbeatInterval() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1804,7 +1750,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return heartbeatIntervalBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1832,7 +1777,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1857,7 +1801,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1890,7 +1833,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -1915,7 +1857,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1935,7 +1876,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return getHeartbeatIntervalFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1959,7 +1899,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
               : heartbeatInterval_;
         }
       }
-
       /**
        *
        *
@@ -1997,7 +1936,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           writesDoneGracePeriodBuilder_;
-
       /**
        *
        *
@@ -2017,7 +1955,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       public boolean hasWritesDoneGracePeriod() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -2043,7 +1980,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
           return writesDoneGracePeriodBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2071,7 +2007,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2097,7 +2032,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2130,7 +2064,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -2155,7 +2088,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2175,7 +2107,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return getWritesDoneGracePeriodFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2199,7 +2130,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
               : writesDoneGracePeriod_;
         }
       }
-
       /**
        *
        *
@@ -2315,7 +2245,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     private RequestCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2349,7 +2278,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SETUP_REQUEST_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -2365,7 +2293,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasSetupRequest() {
     return requestCase_ == 1;
   }
-
   /**
    *
    *
@@ -2384,7 +2311,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequest.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2404,7 +2330,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int COMMIT_REQUEST_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2420,7 +2345,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasCommitRequest() {
     return requestCase_ == 2;
   }
-
   /**
    *
    *
@@ -2439,7 +2363,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.visionai.v1.CommitRequest.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2647,7 +2570,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2883,7 +2805,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequest.Builder,
             com.google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequestOrBuilder>
         setupRequestBuilder_;
-
     /**
      *
      *
@@ -2899,7 +2820,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasSetupRequest() {
       return requestCase_ == 1;
     }
-
     /**
      *
      *
@@ -2925,7 +2845,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2949,7 +2868,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       requestCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2970,7 +2888,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       requestCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -3006,7 +2923,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       requestCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -3032,7 +2948,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3046,7 +2961,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         getSetupRequestBuilder() {
       return getSetupRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3068,7 +2982,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.visionai.v1.ReceiveEventsRequest.SetupRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3108,7 +3021,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.visionai.v1.CommitRequest.Builder,
             com.google.cloud.visionai.v1.CommitRequestOrBuilder>
         commitRequestBuilder_;
-
     /**
      *
      *
@@ -3124,7 +3036,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasCommitRequest() {
       return requestCase_ == 2;
     }
-
     /**
      *
      *
@@ -3150,7 +3061,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.visionai.v1.CommitRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3173,7 +3083,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       requestCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3194,7 +3103,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       requestCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3227,7 +3135,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       requestCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3253,7 +3160,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3266,7 +3172,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.visionai.v1.CommitRequest.Builder getCommitRequestBuilder() {
       return getCommitRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3287,7 +3192,6 @@ public final class ReceiveEventsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.visionai.v1.CommitRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *

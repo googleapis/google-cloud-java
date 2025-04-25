@@ -34,7 +34,6 @@ public interface ListLinkedSourcesResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.DocumentLink document_links = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.DocumentLink> getDocumentLinksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListLinkedSourcesResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.DocumentLink document_links = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.DocumentLink getDocumentLinks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListLinkedSourcesResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.DocumentLink document_links = 1;</code>
    */
   int getDocumentLinksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListLinkedSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.DocumentLinkOrBuilder>
       getDocumentLinksOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListLinkedSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanRunLog)
     ScanRunLogOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ScanRunLog.newBuilder() to construct.
   private ScanRunLog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object summary_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 3;
   private int executionState_ = 0;
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   public int getExecutionStateValue() {
     return executionState_;
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESULT_STATE_FIELD_NUMBER = 4;
   private int resultState_ = 0;
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   public int getResultStateValue() {
     return resultState_;
   }
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URLS_CRAWLED_COUNT_FIELD_NUMBER = 5;
   private long urlsCrawledCount_ = 0L;
-
   /**
    * <code>int64 urls_crawled_count = 5;</code>
    *
@@ -271,7 +261,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URLS_TESTED_COUNT_FIELD_NUMBER = 6;
   private long urlsTestedCount_ = 0L;
-
   /**
    * <code>int64 urls_tested_count = 6;</code>
    *
@@ -284,7 +273,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_FINDINGS_FIELD_NUMBER = 7;
   private boolean hasFindings_ = false;
-
   /**
    * <code>bool has_findings = 7;</code>
    *
@@ -297,7 +285,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_TRACE_FIELD_NUMBER = 8;
   private com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace errorTrace_;
-
   /**
    * <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code>
    *
@@ -307,7 +294,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorTrace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code>
    *
@@ -319,7 +305,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.getDefaultInstance()
         : errorTrace_;
   }
-
   /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1.ScanRunErrorTraceOrBuilder
@@ -564,7 +549,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -862,7 +846,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object summary_ = "";
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -908,7 +890,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1017,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1034,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1058,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int executionState_ = 0;
-
     /**
      *
      *
@@ -1100,7 +1073,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public int getExecutionStateValue() {
       return executionState_;
     }
-
     /**
      *
      *
@@ -1119,7 +1091,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1162,7 +1132,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1151,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int resultState_ = 0;
-
     /**
      *
      *
@@ -1198,7 +1166,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public int getResultStateValue() {
       return resultState_;
     }
-
     /**
      *
      *
@@ -1217,7 +1184,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1203,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1260,7 +1225,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1244,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long urlsCrawledCount_;
-
     /**
      * <code>int64 urls_crawled_count = 5;</code>
      *
@@ -1290,7 +1253,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public long getUrlsCrawledCount() {
       return urlsCrawledCount_;
     }
-
     /**
      * <code>int64 urls_crawled_count = 5;</code>
      *
@@ -1304,7 +1266,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>int64 urls_crawled_count = 5;</code>
      *
@@ -1318,7 +1279,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long urlsTestedCount_;
-
     /**
      * <code>int64 urls_tested_count = 6;</code>
      *
@@ -1328,7 +1288,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public long getUrlsTestedCount() {
       return urlsTestedCount_;
     }
-
     /**
      * <code>int64 urls_tested_count = 6;</code>
      *
@@ -1342,7 +1301,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>int64 urls_tested_count = 6;</code>
      *
@@ -1356,7 +1314,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasFindings_;
-
     /**
      * <code>bool has_findings = 7;</code>
      *
@@ -1366,7 +1323,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasFindings() {
       return hasFindings_;
     }
-
     /**
      * <code>bool has_findings = 7;</code>
      *
@@ -1380,7 +1336,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>bool has_findings = 7;</code>
      *
@@ -1399,7 +1354,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Builder,
             com.google.cloud.websecurityscanner.v1.ScanRunErrorTraceOrBuilder>
         errorTraceBuilder_;
-
     /**
      * <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code>
      *
@@ -1408,7 +1362,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorTrace() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      * <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code>
      *
@@ -1423,7 +1376,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         return errorTraceBuilder_.getMessage();
       }
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public Builder setErrorTrace(com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace value) {
       if (errorTraceBuilder_ == null) {
@@ -1438,7 +1390,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public Builder setErrorTrace(
         com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Builder builderForValue) {
@@ -1451,7 +1402,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public Builder mergeErrorTrace(com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace value) {
       if (errorTraceBuilder_ == null) {
@@ -1472,7 +1422,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public Builder clearErrorTrace() {
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1484,14 +1433,12 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Builder getErrorTraceBuilder() {
       bitField0_ |= 0x00000080;
       onChanged();
       return getErrorTraceFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public com.google.cloud.websecurityscanner.v1.ScanRunErrorTraceOrBuilder
         getErrorTraceOrBuilder() {
@@ -1503,7 +1450,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
             : errorTrace_;
       }
     }
-
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace,

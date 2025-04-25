@@ -35,7 +35,6 @@ public interface ListEventEditRulesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventEditRule event_edit_rules = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.EventEditRule> getEventEditRulesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListEventEditRulesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventEditRule event_edit_rules = 1;</code>
    */
   com.google.analytics.admin.v1alpha.EventEditRule getEventEditRules(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListEventEditRulesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventEditRule event_edit_rules = 1;</code>
    */
   int getEventEditRulesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListEventEditRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.EventEditRuleOrBuilder>
       getEventEditRulesOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListEventEditRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

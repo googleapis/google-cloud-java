@@ -34,7 +34,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.CompletionConfig)
     CompletionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompletionConfig.newBuilder() to construct.
   private CompletionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object matchingOrder_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_SUGGESTIONS_FIELD_NUMBER = 3;
   private int maxSuggestions_ = 0;
-
   /**
    *
    *
@@ -223,7 +217,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int MIN_PREFIX_LENGTH_FIELD_NUMBER = 4;
   private int minPrefixLength_ = 0;
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int AUTO_LEARNING_FIELD_NUMBER = 11;
   private boolean autoLearning_ = false;
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int SUGGESTIONS_INPUT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.retail.v2beta.CompletionDataInputConfig suggestionsInputConfig_;
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasSuggestionsInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.retail.v2beta.CompletionDataInputConfig.getDefaultInstance()
         : suggestionsInputConfig_;
   }
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastSuggestionsImportOperation_ = "";
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -397,7 +384,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int DENYLIST_INPUT_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.retail.v2beta.CompletionDataInputConfig denylistInputConfig_;
-
   /**
    *
    *
@@ -416,7 +402,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasDenylistInputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -437,7 +422,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.retail.v2beta.CompletionDataInputConfig.getDefaultInstance()
         : denylistInputConfig_;
   }
-
   /**
    *
    *
@@ -462,7 +446,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastDenylistImportOperation_ = "";
-
   /**
    *
    *
@@ -490,7 +473,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -521,7 +503,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int ALLOWLIST_INPUT_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.retail.v2beta.CompletionDataInputConfig allowlistInputConfig_;
-
   /**
    *
    *
@@ -540,7 +521,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasAllowlistInputConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -561,7 +541,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.retail.v2beta.CompletionDataInputConfig.getDefaultInstance()
         : allowlistInputConfig_;
   }
-
   /**
    *
    *
@@ -586,7 +565,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastAllowlistImportOperation_ = "";
-
   /**
    *
    *
@@ -614,7 +592,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -918,7 +895,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1282,7 +1258,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1308,7 +1283,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1308,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1359,7 +1332,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1352,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1408,7 +1379,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object matchingOrder_ = "";
-
     /**
      *
      *
@@ -1439,7 +1409,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1470,7 +1439,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1468,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1493,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1525,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxSuggestions_;
-
     /**
      *
      *
@@ -1579,7 +1544,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     public int getMaxSuggestions() {
       return maxSuggestions_;
     }
-
     /**
      *
      *
@@ -1603,7 +1567,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1627,7 +1590,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int minPrefixLength_;
-
     /**
      *
      *
@@ -1647,7 +1609,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     public int getMinPrefixLength() {
       return minPrefixLength_;
     }
-
     /**
      *
      *
@@ -1671,7 +1632,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1655,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean autoLearning_;
-
     /**
      *
      *
@@ -1715,7 +1674,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     public boolean getAutoLearning() {
       return autoLearning_;
     }
-
     /**
      *
      *
@@ -1739,7 +1697,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1768,7 +1725,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.retail.v2beta.CompletionDataInputConfig.Builder,
             com.google.cloud.retail.v2beta.CompletionDataInputConfigOrBuilder>
         suggestionsInputConfigBuilder_;
-
     /**
      *
      *
@@ -1786,7 +1742,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasSuggestionsInputConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1810,7 +1765,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return suggestionsInputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1837,7 +1791,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1861,7 +1814,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1846,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1917,7 +1868,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1936,7 +1886,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSuggestionsInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1959,7 +1908,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
             : suggestionsInputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1990,7 +1938,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object lastSuggestionsImportOperation_ = "";
-
     /**
      *
      *
@@ -2019,7 +1966,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2048,7 +1994,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2076,7 +2021,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2100,7 +2044,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2136,7 +2079,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.retail.v2beta.CompletionDataInputConfig.Builder,
             com.google.cloud.retail.v2beta.CompletionDataInputConfigOrBuilder>
         denylistInputConfigBuilder_;
-
     /**
      *
      *
@@ -2154,7 +2096,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasDenylistInputConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2178,7 +2119,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return denylistInputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2205,7 +2145,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2229,7 +2168,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2262,7 +2200,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2285,7 +2222,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2304,7 +2240,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDenylistInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2327,7 +2262,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
             : denylistInputConfig_;
       }
     }
-
     /**
      *
      *
@@ -2358,7 +2292,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object lastDenylistImportOperation_ = "";
-
     /**
      *
      *
@@ -2385,7 +2318,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2412,7 +2344,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2438,7 +2369,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2460,7 +2390,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2494,7 +2423,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.retail.v2beta.CompletionDataInputConfig.Builder,
             com.google.cloud.retail.v2beta.CompletionDataInputConfigOrBuilder>
         allowlistInputConfigBuilder_;
-
     /**
      *
      *
@@ -2512,7 +2440,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasAllowlistInputConfig() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2536,7 +2463,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return allowlistInputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2563,7 +2489,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2587,7 +2512,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2620,7 +2544,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2566,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2662,7 +2584,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAllowlistInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2685,7 +2606,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
             : allowlistInputConfig_;
       }
     }
-
     /**
      *
      *
@@ -2716,7 +2636,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object lastAllowlistImportOperation_ = "";
-
     /**
      *
      *
@@ -2744,7 +2663,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2772,7 +2690,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2799,7 +2716,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2822,7 +2738,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

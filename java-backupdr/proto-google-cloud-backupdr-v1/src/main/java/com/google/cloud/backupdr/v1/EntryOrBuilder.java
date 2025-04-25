@@ -36,7 +36,6 @@ public interface EntryOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EntryOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface EntryOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface EntryOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface TopicOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

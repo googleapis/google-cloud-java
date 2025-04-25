@@ -33,7 +33,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExtensionManifest)
     ExtensionManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExtensionManifest.newBuilder() to construct.
   private ExtensionManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
      * @return Whether the openApiYaml field is set.
      */
     boolean hasOpenApiYaml();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
      * @return The openApiYaml.
      */
     java.lang.String getOpenApiYaml();
-
     /**
      *
      *
@@ -121,7 +118,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
      * @return Whether the openApiGcsUri field is set.
      */
     boolean hasOpenApiGcsUri();
-
     /**
      *
      *
@@ -134,7 +130,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
      * @return The openApiGcsUri.
      */
     java.lang.String getOpenApiGcsUri();
-
     /**
      *
      *
@@ -150,7 +145,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
 
     com.google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpec.ApiSpecCase getApiSpecCase();
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpec)
       ApiSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ApiSpec.newBuilder() to construct.
     private ApiSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -211,7 +204,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       private ApiSpecCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -245,7 +237,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int OPEN_API_YAML_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -260,7 +251,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     public boolean hasOpenApiYaml() {
       return apiSpecCase_ == 1;
     }
-
     /**
      *
      *
@@ -288,7 +278,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -318,7 +307,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int OPEN_API_GCS_URI_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -333,7 +321,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     public boolean hasOpenApiGcsUri() {
       return apiSpecCase_ == 2;
     }
-
     /**
      *
      *
@@ -361,7 +348,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -577,7 +563,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -825,7 +810,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       public boolean hasOpenApiYaml() {
         return apiSpecCase_ == 1;
       }
-
       /**
        *
        *
@@ -854,7 +838,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -883,7 +866,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -905,7 +887,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -925,7 +906,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -964,7 +944,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       public boolean hasOpenApiGcsUri() {
         return apiSpecCase_ == 2;
       }
-
       /**
        *
        *
@@ -993,7 +972,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1022,7 +1000,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1044,7 +1021,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1064,7 +1040,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1160,7 +1135,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1185,7 +1159,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1215,7 +1188,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1242,7 +1214,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1272,7 +1243,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
 
   public static final int API_SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpec apiSpec_;
-
   /**
    *
    *
@@ -1290,7 +1260,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
   public boolean hasApiSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1310,7 +1279,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpec.getDefaultInstance()
         : apiSpec_;
   }
-
   /**
    *
    *
@@ -1332,7 +1300,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
 
   public static final int AUTH_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.AuthConfig authConfig_;
-
   /**
    *
    *
@@ -1350,7 +1317,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
   public boolean hasAuthConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1370,7 +1336,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.AuthConfig.getDefaultInstance()
         : authConfig_;
   }
-
   /**
    *
    *
@@ -1586,7 +1551,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1834,7 +1798,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1858,7 +1821,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1882,7 +1844,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1905,7 +1866,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1924,7 +1884,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1950,7 +1909,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1976,7 +1934,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2002,7 +1959,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2027,7 +1983,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +2003,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2035,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.ExtensionManifest.ApiSpecOrBuilder>
         apiSpecBuilder_;
-
     /**
      *
      *
@@ -2098,7 +2051,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     public boolean hasApiSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2121,7 +2073,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return apiSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2146,7 +2097,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2169,7 +2119,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2202,7 +2151,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2224,7 +2172,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2242,7 +2189,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getApiSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2264,7 +2210,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
             : apiSpec_;
       }
     }
-
     /**
      *
      *
@@ -2299,7 +2244,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.AuthConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.AuthConfigOrBuilder>
         authConfigBuilder_;
-
     /**
      *
      *
@@ -2316,7 +2260,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
     public boolean hasAuthConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2339,7 +2282,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
         return authConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2364,7 +2306,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2387,7 +2328,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2417,7 +2357,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2439,7 +2378,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2456,7 +2394,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getAuthConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2477,7 +2414,6 @@ public final class ExtensionManifest extends com.google.protobuf.GeneratedMessag
             : authConfig_;
       }
     }
-
     /**
      *
      *

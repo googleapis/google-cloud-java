@@ -37,7 +37,6 @@ public interface FunctionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface FunctionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface FunctionOrBuilder
    * @return Whether the buildConfig field is set.
    */
   boolean hasBuildConfig();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface FunctionOrBuilder
    * @return The buildConfig.
    */
   com.google.cloud.functions.v2beta.BuildConfig getBuildConfig();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface FunctionOrBuilder
    * @return Whether the serviceConfig field is set.
    */
   boolean hasServiceConfig();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface FunctionOrBuilder
    * @return The serviceConfig.
    */
   com.google.cloud.functions.v2beta.ServiceConfig getServiceConfig();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface FunctionOrBuilder
    * @return Whether the eventTrigger field is set.
    */
   boolean hasEventTrigger();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface FunctionOrBuilder
    * @return The eventTrigger.
    */
   com.google.cloud.functions.v2beta.EventTrigger getEventTrigger();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface FunctionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public interface FunctionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface FunctionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public interface FunctionOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -289,11 +277,9 @@ public interface FunctionOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface FunctionOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -319,7 +304,6 @@ public interface FunctionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -343,7 +327,6 @@ public interface FunctionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.functions.v2beta.StateMessage> getStateMessagesList();
-
   /**
    *
    *
@@ -356,7 +339,6 @@ public interface FunctionOrBuilder
    * </code>
    */
   com.google.cloud.functions.v2beta.StateMessage getStateMessages(int index);
-
   /**
    *
    *
@@ -369,7 +351,6 @@ public interface FunctionOrBuilder
    * </code>
    */
   int getStateMessagesCount();
-
   /**
    *
    *
@@ -383,7 +364,6 @@ public interface FunctionOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v2beta.StateMessageOrBuilder>
       getStateMessagesOrBuilderList();
-
   /**
    *
    *
@@ -409,7 +389,6 @@ public interface FunctionOrBuilder
    * @return The enum numeric value on the wire for environment.
    */
   int getEnvironmentValue();
-
   /**
    *
    *
@@ -435,7 +414,6 @@ public interface FunctionOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -465,7 +443,6 @@ public interface FunctionOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -510,7 +487,6 @@ public interface FunctionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -525,7 +501,6 @@ public interface FunctionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

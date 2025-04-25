@@ -55,7 +55,6 @@ public interface QueueStatsOrBuilder
    * @return Whether the oldestEstimatedArrivalTime field is set.
    */
   boolean hasOldestEstimatedArrivalTime();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface QueueStatsOrBuilder
    * @return The oldestEstimatedArrivalTime.
    */
   com.google.protobuf.Timestamp getOldestEstimatedArrivalTime();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DataItemOrBuilder
    * @return Whether the imagePayload field is set.
    */
   boolean hasImagePayload();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataItemOrBuilder
    * @return The imagePayload.
    */
   com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DataItemOrBuilder
    * @return Whether the textPayload field is set.
    */
   boolean hasTextPayload();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DataItemOrBuilder
    * @return The textPayload.
    */
   com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface DataItemOrBuilder
    * @return Whether the videoPayload field is set.
    */
   boolean hasVideoPayload();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface DataItemOrBuilder
    * @return The videoPayload.
    */
   com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface DataItemOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

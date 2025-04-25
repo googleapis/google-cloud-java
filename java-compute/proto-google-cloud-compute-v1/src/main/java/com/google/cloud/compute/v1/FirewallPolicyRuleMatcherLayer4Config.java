@@ -33,7 +33,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config)
     FirewallPolicyRuleMatcherLayer4ConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FirewallPolicyRuleMatcherLayer4Config.newBuilder() to construct.
   private FirewallPolicyRuleMatcherLayer4Config(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipProtocol_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
   public boolean hasIpProtocol() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ports_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
   public com.google.protobuf.ProtocolStringList getPortsList() {
     return ports_;
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
   public int getPortsCount() {
     return ports_.size();
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
   public java.lang.String getPorts(int index) {
     return ports_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -600,7 +591,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     private int bitField0_;
 
     private java.lang.Object ipProtocol_ = "";
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     public boolean hasIpProtocol() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -661,7 +649,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -683,7 +670,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +687,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -750,7 +734,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       ports_.makeImmutable();
       return ports_;
     }
-
     /**
      *
      *
@@ -765,7 +748,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     public int getPortsCount() {
       return ports_.size();
     }
-
     /**
      *
      *
@@ -781,7 +763,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     public java.lang.String getPorts(int index) {
       return ports_.get(index);
     }
-
     /**
      *
      *
@@ -797,7 +778,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
     public com.google.protobuf.ByteString getPortsBytes(int index) {
       return ports_.getByteString(index);
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +823,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +842,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +860,6 @@ public final class FirewallPolicyRuleMatcherLayer4Config
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerRequest)
     ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApplyUpdatesToInstancesInstanceGroupManagerRequest.newBuilder() to construct.
   private ApplyUpdatesToInstancesInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       259242835;
   private com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
       instanceGroupManagersApplyUpdatesRequestResource_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersApplyUpdatesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         ? com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.getDefaultInstance()
         : instanceGroupManagersApplyUpdatesRequestResource_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -275,7 +266,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -508,7 +498,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -771,7 +760,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -795,7 +783,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +806,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -842,7 +828,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequestOrBuilder>
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_;
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersApplyUpdatesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return instanceGroupManagersApplyUpdatesRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -961,7 +942,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +966,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1019,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1082,7 +1058,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
             : instanceGroupManagersApplyUpdatesRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1114,7 +1089,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1139,7 +1113,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1137,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1160,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1179,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1205,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1260,7 +1229,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1285,7 +1253,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1276,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1295,6 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

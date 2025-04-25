@@ -30,14 +30,12 @@ public interface NodeTemplateNodeTypeFlexibilityOrBuilder
    * @return Whether the cpus field is set.
    */
   boolean hasCpus();
-
   /**
    * <code>optional string cpus = 3060683;</code>
    *
    * @return The cpus.
    */
   java.lang.String getCpus();
-
   /**
    * <code>optional string cpus = 3060683;</code>
    *
@@ -51,14 +49,12 @@ public interface NodeTemplateNodeTypeFlexibilityOrBuilder
    * @return Whether the localSsd field is set.
    */
   boolean hasLocalSsd();
-
   /**
    * <code>optional string local_ssd = 405741360;</code>
    *
    * @return The localSsd.
    */
   java.lang.String getLocalSsd();
-
   /**
    * <code>optional string local_ssd = 405741360;</code>
    *
@@ -72,14 +68,12 @@ public interface NodeTemplateNodeTypeFlexibilityOrBuilder
    * @return Whether the memory field is set.
    */
   boolean hasMemory();
-
   /**
    * <code>optional string memory = 532856065;</code>
    *
    * @return The memory.
    */
   java.lang.String getMemory();
-
   /**
    * <code>optional string memory = 532856065;</code>
    *

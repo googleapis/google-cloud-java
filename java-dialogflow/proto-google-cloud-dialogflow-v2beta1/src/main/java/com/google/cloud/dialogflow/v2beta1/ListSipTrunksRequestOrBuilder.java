@@ -39,7 +39,6 @@ public interface ListSipTrunksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface ListSipTrunksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

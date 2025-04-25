@@ -34,7 +34,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ShippingSettings)
     ShippingSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShippingSettings.newBuilder() to construct.
   private ShippingSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Service> services_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.Service> getServicesList() {
     return services_;
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       getServicesOrBuilderList() {
     return services_;
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
   public int getServicesCount() {
     return services_.size();
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
   public com.google.shopping.merchant.accounts.v1beta.Service getServices(int index) {
     return services_.get(index);
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Warehouse> warehouses_;
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       getWarehousesList() {
     return warehouses_;
   }
-
   /**
    *
    *
@@ -248,7 +238,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       getWarehousesOrBuilderList() {
     return warehouses_;
   }
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
   public int getWarehousesCount() {
     return warehouses_.size();
   }
-
   /**
    *
    *
@@ -280,7 +268,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
   public com.google.shopping.merchant.accounts.v1beta.Warehouse getWarehouses(int index) {
     return warehouses_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -576,7 +561,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -899,7 +883,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +929,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +969,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1029,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return servicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1047,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return servicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1065,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return servicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1114,7 +1090,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1136,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1161,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1183,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1205,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1227,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1248,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1269,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1284,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         int index) {
       return getServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1337,7 +1303,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return servicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1322,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(services_);
       }
     }
-
     /**
      *
      *
@@ -1373,7 +1337,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       return getServicesFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Service.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1391,7 +1354,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Service.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1462,7 +1424,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return warehousesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1442,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return warehousesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1460,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return warehousesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1526,7 +1485,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1507,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1574,7 +1531,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1556,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1578,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1600,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1623,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1644,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1714,7 +1665,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1680,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         int index) {
       return getWarehousesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1750,7 +1699,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return warehousesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1718,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(warehouses_);
       }
     }
-
     /**
      *
      *
@@ -1786,7 +1733,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       return getWarehousesFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Warehouse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1804,7 +1750,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Warehouse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1839,7 +1784,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1879,7 +1823,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1919,7 +1862,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1958,7 +1900,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1993,7 +1934,6 @@ public final class ShippingSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

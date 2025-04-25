@@ -38,7 +38,6 @@ public interface SearchModelMonitoringAlertsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlert>
       getModelMonitoringAlertsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface SearchModelMonitoringAlertsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlert getModelMonitoringAlerts(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface SearchModelMonitoringAlertsResponseOrBuilder
    * </code>
    */
   int getModelMonitoringAlertsCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface SearchModelMonitoringAlertsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertOrBuilder>
       getModelMonitoringAlertsOrBuilderList();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface SearchModelMonitoringAlertsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

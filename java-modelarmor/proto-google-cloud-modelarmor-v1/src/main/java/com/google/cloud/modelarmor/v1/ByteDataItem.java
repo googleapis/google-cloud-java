@@ -33,7 +33,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.ByteDataItem)
     ByteDataItemOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ByteDataItem.newBuilder() to construct.
   private ByteDataItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>BYTE_ITEM_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BYTE_ITEM_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>PLAINTEXT_UTF8 = 1;</code>
      */
     public static final int PLAINTEXT_UTF8_VALUE = 1;
-
     /**
      *
      *
@@ -226,7 +223,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BYTE_DATA_TYPE_FIELD_NUMBER = 1;
   private int byteDataType_ = 0;
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
   public int getByteDataTypeValue() {
     return byteDataType_;
   }
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BYTE_DATA_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString byteData_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -458,7 +452,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +646,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int byteDataType_ = 0;
-
     /**
      *
      *
@@ -671,7 +663,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     public int getByteDataTypeValue() {
       return byteDataType_;
     }
-
     /**
      *
      *
@@ -692,7 +683,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +704,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.ByteDataItem.ByteItemType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -738,7 +727,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +748,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString byteData_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -776,7 +763,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getByteData() {
       return byteData_;
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

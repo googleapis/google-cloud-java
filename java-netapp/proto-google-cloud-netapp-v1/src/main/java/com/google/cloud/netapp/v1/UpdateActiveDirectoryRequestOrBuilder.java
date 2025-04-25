@@ -41,7 +41,6 @@ public interface UpdateActiveDirectoryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateActiveDirectoryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateActiveDirectoryRequestOrBuilder
    * @return Whether the activeDirectory field is set.
    */
   boolean hasActiveDirectory();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateActiveDirectoryRequestOrBuilder
    * @return The activeDirectory.
    */
   com.google.cloud.netapp.v1.ActiveDirectory getActiveDirectory();
-
   /**
    *
    *

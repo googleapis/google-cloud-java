@@ -35,7 +35,6 @@ public final class RunTestCaseMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.RunTestCaseMetadata)
     RunTestCaseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunTestCaseMetadata.newBuilder() to construct.
   private RunTestCaseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class RunTestCaseMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

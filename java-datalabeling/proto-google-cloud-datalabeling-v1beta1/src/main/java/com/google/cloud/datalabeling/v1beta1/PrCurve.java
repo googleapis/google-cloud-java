@@ -25,7 +25,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.PrCurve)
     PrCurveOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrCurve.newBuilder() to construct.
   private PrCurve(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -202,14 +201,12 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      */
     float getF1ScoreAt5();
   }
-
   /** Protobuf type {@code google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry} */
   public static final class ConfidenceMetricsEntry extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry)
       ConfidenceMetricsEntryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConfidenceMetricsEntry.newBuilder() to construct.
     private ConfidenceMetricsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -240,7 +237,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
     private float confidenceThreshold_ = 0F;
-
     /**
      *
      *
@@ -270,7 +266,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RECALL_FIELD_NUMBER = 2;
     private float recall_ = 0F;
-
     /**
      *
      *
@@ -289,7 +284,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PRECISION_FIELD_NUMBER = 3;
     private float precision_ = 0F;
-
     /**
      *
      *
@@ -308,7 +302,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int F1_SCORE_FIELD_NUMBER = 4;
     private float f1Score_ = 0F;
-
     /**
      *
      *
@@ -327,7 +320,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RECALL_AT1_FIELD_NUMBER = 5;
     private float recallAt1_ = 0F;
-
     /**
      *
      *
@@ -346,7 +338,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PRECISION_AT1_FIELD_NUMBER = 6;
     private float precisionAt1_ = 0F;
-
     /**
      *
      *
@@ -365,7 +356,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int F1_SCORE_AT1_FIELD_NUMBER = 7;
     private float f1ScoreAt1_ = 0F;
-
     /**
      *
      *
@@ -384,7 +374,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RECALL_AT5_FIELD_NUMBER = 8;
     private float recallAt5_ = 0F;
-
     /**
      *
      *
@@ -403,7 +392,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PRECISION_AT5_FIELD_NUMBER = 9;
     private float precisionAt5_ = 0F;
-
     /**
      *
      *
@@ -422,7 +410,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     public static final int F1_SCORE_AT5_FIELD_NUMBER = 10;
     private float f1ScoreAt5_ = 0F;
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /** Protobuf type {@code google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -995,7 +981,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private float confidenceThreshold_;
-
       /**
        *
        *
@@ -1022,7 +1007,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
-
       /**
        *
        *
@@ -1053,7 +1037,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1084,7 +1067,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float recall_;
-
       /**
        *
        *
@@ -1100,7 +1082,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getRecall() {
         return recall_;
       }
-
       /**
        *
        *
@@ -1120,7 +1101,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1140,7 +1120,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float precision_;
-
       /**
        *
        *
@@ -1156,7 +1135,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getPrecision() {
         return precision_;
       }
-
       /**
        *
        *
@@ -1176,7 +1154,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1196,7 +1173,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float f1Score_;
-
       /**
        *
        *
@@ -1212,7 +1188,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getF1Score() {
         return f1Score_;
       }
-
       /**
        *
        *
@@ -1232,7 +1207,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1252,7 +1226,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float recallAt1_;
-
       /**
        *
        *
@@ -1268,7 +1241,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getRecallAt1() {
         return recallAt1_;
       }
-
       /**
        *
        *
@@ -1288,7 +1260,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1308,7 +1279,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float precisionAt1_;
-
       /**
        *
        *
@@ -1324,7 +1294,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getPrecisionAt1() {
         return precisionAt1_;
       }
-
       /**
        *
        *
@@ -1344,7 +1313,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1364,7 +1332,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float f1ScoreAt1_;
-
       /**
        *
        *
@@ -1380,7 +1347,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
       }
-
       /**
        *
        *
@@ -1400,7 +1366,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1420,7 +1385,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float recallAt5_;
-
       /**
        *
        *
@@ -1436,7 +1400,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getRecallAt5() {
         return recallAt5_;
       }
-
       /**
        *
        *
@@ -1456,7 +1419,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1476,7 +1438,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float precisionAt5_;
-
       /**
        *
        *
@@ -1492,7 +1453,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getPrecisionAt5() {
         return precisionAt5_;
       }
-
       /**
        *
        *
@@ -1512,7 +1472,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1532,7 +1491,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float f1ScoreAt5_;
-
       /**
        *
        *
@@ -1548,7 +1506,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       public float getF1ScoreAt5() {
         return f1ScoreAt5_;
       }
-
       /**
        *
        *
@@ -1568,7 +1525,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1657,7 +1613,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
-
   /**
    *
    *
@@ -1675,7 +1630,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1695,7 +1649,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
-
   /**
    *
    *
@@ -1717,7 +1670,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AREA_UNDER_CURVE_FIELD_NUMBER = 2;
   private float areaUnderCurve_ = 0F;
-
   /**
    *
    *
@@ -1740,7 +1692,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>
       confidenceMetricsEntries_;
-
   /**
    *
    *
@@ -1758,7 +1709,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       getConfidenceMetricsEntriesList() {
     return confidenceMetricsEntries_;
   }
-
   /**
    *
    *
@@ -1777,7 +1727,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       getConfidenceMetricsEntriesOrBuilderList() {
     return confidenceMetricsEntries_;
   }
-
   /**
    *
    *
@@ -1794,7 +1743,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
   public int getConfidenceMetricsEntriesCount() {
     return confidenceMetricsEntries_.size();
   }
-
   /**
    *
    *
@@ -1812,7 +1760,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       getConfidenceMetricsEntries(int index) {
     return confidenceMetricsEntries_.get(index);
   }
-
   /**
    *
    *
@@ -1833,7 +1780,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 4;
   private float meanAveragePrecision_ = 0F;
-
   /**
    *
    *
@@ -2048,7 +1994,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.datalabeling.v1beta1.PrCurve} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -2334,7 +2279,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
-
     /**
      *
      *
@@ -2351,7 +2295,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2374,7 +2317,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         return annotationSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2399,7 +2341,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2422,7 +2363,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2453,7 +2393,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2475,7 +2414,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2492,7 +2430,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2514,7 +2451,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             : annotationSpec_;
       }
     }
-
     /**
      *
      *
@@ -2544,7 +2480,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float areaUnderCurve_;
-
     /**
      *
      *
@@ -2561,7 +2496,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public float getAreaUnderCurve() {
       return areaUnderCurve_;
     }
-
     /**
      *
      *
@@ -2582,7 +2516,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2641,7 +2574,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         return confidenceMetricsEntriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2661,7 +2593,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         return confidenceMetricsEntriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2682,7 +2613,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         return confidenceMetricsEntriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2709,7 +2639,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2664,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2762,7 +2690,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2789,7 +2716,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2814,7 +2740,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2840,7 +2765,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2866,7 +2790,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2889,7 +2812,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2912,7 +2834,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2929,7 +2850,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         getConfidenceMetricsEntriesBuilder(int index) {
       return getConfidenceMetricsEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2950,7 +2870,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         return confidenceMetricsEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2972,7 +2891,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
       }
     }
-
     /**
      *
      *
@@ -2992,7 +2910,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3013,7 +2930,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3053,7 +2969,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float meanAveragePrecision_;
-
     /**
      *
      *
@@ -3069,7 +2984,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     public float getMeanAveragePrecision() {
       return meanAveragePrecision_;
     }
-
     /**
      *
      *
@@ -3089,7 +3003,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

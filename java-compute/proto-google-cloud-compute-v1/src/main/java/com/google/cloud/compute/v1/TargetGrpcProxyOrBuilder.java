@@ -36,7 +36,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -270,7 +258,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -296,7 +283,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
-
   /**
    *
    *
@@ -309,7 +295,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the urlMap field is set.
    */
   boolean hasUrlMap();
-
   /**
    *
    *
@@ -348,7 +332,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *
@@ -374,7 +357,6 @@ public interface TargetGrpcProxyOrBuilder
    * @return Whether the validateForProxyless field is set.
    */
   boolean hasValidateForProxyless();
-
   /**
    *
    *

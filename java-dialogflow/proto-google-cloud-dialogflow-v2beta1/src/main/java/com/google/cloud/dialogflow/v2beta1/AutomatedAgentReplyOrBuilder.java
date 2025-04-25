@@ -38,7 +38,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return Whether the detectIntentResponse field is set.
    */
   boolean hasDetectIntentResponse();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The detectIntentResponse.
    */
   com.google.cloud.dialogflow.v2beta1.DetectIntentResponse getDetectIntentResponse();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.ResponseMessage response_messages = 3;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.ResponseMessage> getResponseMessagesList();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.ResponseMessage response_messages = 3;</code>
    */
   com.google.cloud.dialogflow.v2beta1.ResponseMessage getResponseMessages(int index);
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.ResponseMessage response_messages = 3;</code>
    */
   int getResponseMessagesCount();
-
   /**
    *
    *
@@ -112,7 +107,6 @@ public interface AutomatedAgentReplyOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ResponseMessageOrBuilder>
       getResponseMessagesOrBuilderList();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The intent.
    */
   java.lang.String getIntent();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *
@@ -287,7 +275,6 @@ public interface AutomatedAgentReplyOrBuilder
    */
   @java.lang.Deprecated
   boolean hasCxSessionParameters();
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public interface AutomatedAgentReplyOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Struct getCxSessionParameters();
-
   /**
    *
    *
@@ -334,7 +320,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The enum numeric value on the wire for automatedAgentReplyType.
    */
   int getAutomatedAgentReplyTypeValue();
-
   /**
    *
    *
@@ -380,7 +365,6 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The cxCurrentPage.
    */
   java.lang.String getCxCurrentPage();
-
   /**
    *
    *

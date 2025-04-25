@@ -33,7 +33,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsDiskRequest)
     TestIamPermissionsDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TestIamPermissionsDiskRequest.newBuilder() to construct.
   private TestIamPermissionsDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -482,7 +472,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +720,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -754,7 +742,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +826,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -865,7 +848,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1074,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1091,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1141,7 +1112,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
             : testPermissionsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1194,7 +1163,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1185,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1206,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1223,6 @@ public final class TestIamPermissionsDiskRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

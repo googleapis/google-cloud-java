@@ -37,7 +37,6 @@ public interface CommandOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CommandOrBuilder
    * @return A list containing the env.
    */
   java.util.List<java.lang.String> getEnvList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CommandOrBuilder
    * @return The count of env.
    */
   int getEnvCount();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface CommandOrBuilder
    * @return The env at the given index.
    */
   java.lang.String getEnv(int index);
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface CommandOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface CommandOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public interface CommandOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface CommandOrBuilder
    * @return The dir.
    */
   java.lang.String getDir();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface CommandOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface CommandOrBuilder
    * @return A list containing the waitFor.
    */
   java.util.List<java.lang.String> getWaitForList();
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public interface CommandOrBuilder
    * @return The count of waitFor.
    */
   int getWaitForCount();
-
   /**
    *
    *
@@ -255,7 +244,6 @@ public interface CommandOrBuilder
    * @return The waitFor at the given index.
    */
   java.lang.String getWaitFor(int index);
-
   /**
    *
    *

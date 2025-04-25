@@ -33,7 +33,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ListNotificationConfigsResponse)
     ListNotificationConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotificationConfigsResponse.newBuilder() to construct.
   private ListNotificationConfigsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.NotificationConfig>
       notificationConfigs_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       getNotificationConfigsList() {
     return notificationConfigs_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       getNotificationConfigsOrBuilderList() {
     return notificationConfigs_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
   public int getNotificationConfigsCount() {
     return notificationConfigs_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
   public com.google.cloud.securitycenter.v2.NotificationConfig getNotificationConfigs(int index) {
     return notificationConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +370,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +658,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return notificationConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return notificationConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return notificationConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         getNotificationConfigsBuilder(int index) {
       return getNotificationConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return notificationConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -962,7 +939,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(notificationConfigs_);
       }
     }
-
     /**
      *
      *
@@ -978,7 +954,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       return getNotificationConfigsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.NotificationConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -995,7 +970,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.NotificationConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1032,7 +1006,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1056,7 +1029,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1074,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1092,6 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

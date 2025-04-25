@@ -34,7 +34,6 @@ public final class RemoveContextChildrenResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RemoveContextChildrenResponse)
     RemoveContextChildrenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveContextChildrenResponse.newBuilder() to construct.
   private RemoveContextChildrenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class RemoveContextChildrenResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

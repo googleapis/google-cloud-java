@@ -38,7 +38,6 @@ public interface FileStoreRegexOrBuilder
    * @return Whether the cloudStorageRegex field is set.
    */
   boolean hasCloudStorageRegex();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface FileStoreRegexOrBuilder
    * @return The cloudStorageRegex.
    */
   com.google.privacy.dlp.v2.CloudStorageRegex getCloudStorageRegex();
-
   /**
    *
    *

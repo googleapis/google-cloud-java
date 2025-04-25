@@ -33,7 +33,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.SavingsOverTime)
     SavingsOverTimeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SavingsOverTime.newBuilder() to construct.
   private SavingsOverTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SAVINGS_YEAR1_FIELD_NUMBER = 1;
   private com.google.type.Money savingsYear1_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public boolean hasSavingsYear1() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public com.google.type.Money getSavingsYear1() {
     return savingsYear1_ == null ? com.google.type.Money.getDefaultInstance() : savingsYear1_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
 
   public static final int SAVINGS_YEAR20_FIELD_NUMBER = 2;
   private com.google.type.Money savingsYear20_;
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public boolean hasSavingsYear20() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public com.google.type.Money getSavingsYear20() {
     return savingsYear20_ == null ? com.google.type.Money.getDefaultInstance() : savingsYear20_;
   }
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRESENT_VALUE_OF_SAVINGS_YEAR20_FIELD_NUMBER = 3;
   private com.google.type.Money presentValueOfSavingsYear20_;
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public boolean hasPresentValueOfSavingsYear20() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         ? com.google.type.Money.getDefaultInstance()
         : presentValueOfSavingsYear20_;
   }
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
 
   public static final int SAVINGS_LIFETIME_FIELD_NUMBER = 5;
   private com.google.type.Money savingsLifetime_;
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public boolean hasSavingsLifetime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +239,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public com.google.type.Money getSavingsLifetime() {
     return savingsLifetime_ == null ? com.google.type.Money.getDefaultInstance() : savingsLifetime_;
   }
-
   /**
    *
    *
@@ -268,7 +255,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRESENT_VALUE_OF_SAVINGS_LIFETIME_FIELD_NUMBER = 6;
   private com.google.type.Money presentValueOfSavingsLifetime_;
-
   /**
    *
    *
@@ -285,7 +271,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
   public boolean hasPresentValueOfSavingsLifetime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -304,7 +289,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         ? com.google.type.Money.getDefaultInstance()
         : presentValueOfSavingsLifetime_;
   }
-
   /**
    *
    *
@@ -324,7 +308,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
 
   public static final int FINANCIALLY_VIABLE_FIELD_NUMBER = 4;
   private boolean financiallyViable_ = false;
-
   /**
    *
    *
@@ -577,7 +560,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -878,7 +860,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         savingsYear1Builder_;
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     public boolean hasSavingsYear1() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return savingsYear1Builder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +979,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSavingsYear1FieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1035,7 +1009,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return savingsYear1_ == null ? com.google.type.Money.getDefaultInstance() : savingsYear1_;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         savingsYear20Builder_;
-
     /**
      *
      *
@@ -1079,7 +1051,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     public boolean hasSavingsYear20() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return savingsYear20Builder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1110,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1137,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1156,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1170,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSavingsYear20FieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1221,7 +1186,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return savingsYear20_ == null ? com.google.type.Money.getDefaultInstance() : savingsYear20_;
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1214,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         presentValueOfSavingsYear20Builder_;
-
     /**
      *
      *
@@ -1266,7 +1229,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     public boolean hasPresentValueOfSavingsYear20() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1288,7 +1250,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return presentValueOfSavingsYear20Builder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1273,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1293,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1321,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1341,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1356,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPresentValueOfSavingsYear20FieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1419,7 +1375,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
             : presentValueOfSavingsYear20_;
       }
     }
-
     /**
      *
      *
@@ -1449,7 +1404,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         savingsLifetimeBuilder_;
-
     /**
      *
      *
@@ -1464,7 +1418,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     public boolean hasSavingsLifetime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1485,7 +1438,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return savingsLifetimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1508,7 +1460,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1479,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1556,7 +1506,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1525,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1539,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSavingsLifetimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1610,7 +1557,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
             : savingsLifetime_;
       }
     }
-
     /**
      *
      *
@@ -1639,7 +1585,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         presentValueOfSavingsLifetimeBuilder_;
-
     /**
      *
      *
@@ -1655,7 +1600,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     public boolean hasPresentValueOfSavingsLifetime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1677,7 +1621,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
         return presentValueOfSavingsLifetimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1701,7 +1644,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1664,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1751,7 +1692,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1712,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1727,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPresentValueOfSavingsLifetimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1808,7 +1746,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
             : presentValueOfSavingsLifetime_;
       }
     }
-
     /**
      *
      *
@@ -1835,7 +1772,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean financiallyViable_;
-
     /**
      *
      *
@@ -1852,7 +1788,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
     public boolean getFinanciallyViable() {
       return financiallyViable_;
     }
-
     /**
      *
      *
@@ -1873,7 +1808,6 @@ public final class SavingsOverTime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

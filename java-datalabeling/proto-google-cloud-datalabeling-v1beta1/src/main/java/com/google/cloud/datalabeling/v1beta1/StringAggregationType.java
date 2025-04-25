@@ -58,7 +58,6 @@ public enum StringAggregationType implements com.google.protobuf.ProtocolMessage
 
   /** <code>STRING_AGGREGATION_TYPE_UNSPECIFIED = 0;</code> */
   public static final int STRING_AGGREGATION_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public enum StringAggregationType implements com.google.protobuf.ProtocolMessage
    * <code>MAJORITY_VOTE = 1;</code>
    */
   public static final int MAJORITY_VOTE_VALUE = 1;
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public enum StringAggregationType implements com.google.protobuf.ProtocolMessage
    * <code>UNANIMOUS_VOTE = 2;</code>
    */
   public static final int UNANIMOUS_VOTE_VALUE = 2;
-
   /**
    *
    *

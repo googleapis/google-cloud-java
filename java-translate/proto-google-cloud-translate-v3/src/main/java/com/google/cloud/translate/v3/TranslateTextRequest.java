@@ -33,7 +33,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.TranslateTextRequest)
     TranslateTextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslateTextRequest.newBuilder() to construct.
   private TranslateTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList contents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getContentsList() {
     return contents_;
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public int getContentsCount() {
     return contents_.size();
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getContents(int index) {
     return contents_.get(index);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLanguageCode_ = "";
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetLanguageCode_ = "";
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -372,7 +360,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -416,7 +403,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -457,7 +443,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -501,7 +486,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   public static final int GLOSSARY_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.translate.v3.TranslateTextGlossaryConfig glossaryConfig_;
-
   /**
    *
    *
@@ -521,7 +505,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public boolean hasGlossaryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -543,7 +526,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.translate.v3.TranslateTextGlossaryConfig.getDefaultInstance()
         : glossaryConfig_;
   }
-
   /**
    *
    *
@@ -567,7 +549,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
   public static final int TRANSLITERATION_CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.translate.v3.TransliterationConfig transliterationConfig_;
-
   /**
    *
    *
@@ -585,7 +566,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public boolean hasTransliterationConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -605,7 +585,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.translate.v3.TransliterationConfig.getDefaultInstance()
         : transliterationConfig_;
   }
-
   /**
    *
    *
@@ -651,7 +630,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -676,14 +654,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -705,7 +681,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -734,7 +709,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1021,7 +995,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1390,7 +1363,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -1408,7 +1380,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       contents_.makeImmutable();
       return contents_;
     }
-
     /**
      *
      *
@@ -1425,7 +1396,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public int getContentsCount() {
       return contents_.size();
     }
-
     /**
      *
      *
@@ -1443,7 +1413,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getContents(int index) {
       return contents_.get(index);
     }
-
     /**
      *
      *
@@ -1461,7 +1430,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getContentsBytes(int index) {
       return contents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1487,7 +1455,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1479,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1500,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1520,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1547,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -1607,7 +1570,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1631,7 +1593,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1654,7 +1615,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1633,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1658,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object sourceLanguageCode_ = "";
-
     /**
      *
      *
@@ -1726,7 +1684,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1753,7 +1710,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1779,7 +1735,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1756,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1830,7 +1784,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object targetLanguageCode_ = "";
-
     /**
      *
      *
@@ -1854,7 +1807,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1878,7 +1830,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1901,7 +1852,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1920,7 +1870,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1946,7 +1895,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1984,7 +1932,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2022,7 +1969,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2059,7 +2005,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2092,7 +2037,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2132,7 +2076,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -2172,7 +2115,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2212,7 +2154,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2251,7 +2192,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2286,7 +2226,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2333,7 +2272,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.translate.v3.TranslateTextGlossaryConfig.Builder,
             com.google.cloud.translate.v3.TranslateTextGlossaryConfigOrBuilder>
         glossaryConfigBuilder_;
-
     /**
      *
      *
@@ -2352,7 +2290,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public boolean hasGlossaryConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2377,7 +2314,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return glossaryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2405,7 +2341,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2430,7 +2365,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2464,7 +2398,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2488,7 +2421,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2508,7 +2440,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getGlossaryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2532,7 +2463,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             : glossaryConfig_;
       }
     }
-
     /**
      *
      *
@@ -2569,7 +2499,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.translate.v3.TransliterationConfig.Builder,
             com.google.cloud.translate.v3.TransliterationConfigOrBuilder>
         transliterationConfigBuilder_;
-
     /**
      *
      *
@@ -2586,7 +2515,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public boolean hasTransliterationConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2609,7 +2537,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         return transliterationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2635,7 +2562,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2658,7 +2584,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2690,7 +2615,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2712,7 +2636,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2653,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getTransliterationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2752,7 +2674,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             : transliterationConfig_;
       }
     }
-
     /**
      *
      *
@@ -2806,7 +2727,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2831,14 +2751,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2860,7 +2778,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2889,7 +2806,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2924,7 +2840,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2949,14 +2864,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2985,7 +2898,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *

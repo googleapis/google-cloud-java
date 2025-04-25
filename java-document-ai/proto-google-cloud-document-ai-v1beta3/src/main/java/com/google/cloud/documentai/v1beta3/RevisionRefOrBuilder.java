@@ -36,7 +36,6 @@ public interface RevisionRefOrBuilder
    * @return Whether the revisionCase field is set.
    */
   boolean hasRevisionCase();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RevisionRefOrBuilder
    * @return The enum numeric value on the wire for revisionCase.
    */
   int getRevisionCaseValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RevisionRefOrBuilder
    * @return Whether the revisionId field is set.
    */
   boolean hasRevisionId();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface RevisionRefOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface RevisionRefOrBuilder
    * @return Whether the latestProcessorVersion field is set.
    */
   boolean hasLatestProcessorVersion();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface RevisionRefOrBuilder
    * @return The latestProcessorVersion.
    */
   java.lang.String getLatestProcessorVersion();
-
   /**
    *
    *

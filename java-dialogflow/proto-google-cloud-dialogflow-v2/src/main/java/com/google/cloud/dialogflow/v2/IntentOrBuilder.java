@@ -41,7 +41,6 @@ public interface IntentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface IntentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface IntentOrBuilder
    * @return The enum numeric value on the wire for webhookState.
    */
   int getWebhookStateValue();
-
   /**
    *
    *
@@ -210,7 +207,6 @@ public interface IntentOrBuilder
    * @return A list containing the inputContextNames.
    */
   java.util.List<java.lang.String> getInputContextNamesList();
-
   /**
    *
    *
@@ -225,7 +221,6 @@ public interface IntentOrBuilder
    * @return The count of inputContextNames.
    */
   int getInputContextNamesCount();
-
   /**
    *
    *
@@ -241,7 +236,6 @@ public interface IntentOrBuilder
    * @return The inputContextNames at the given index.
    */
   java.lang.String getInputContextNames(int index);
-
   /**
    *
    *
@@ -273,7 +267,6 @@ public interface IntentOrBuilder
    * @return A list containing the events.
    */
   java.util.List<java.lang.String> getEventsList();
-
   /**
    *
    *
@@ -289,7 +282,6 @@ public interface IntentOrBuilder
    * @return The count of events.
    */
   int getEventsCount();
-
   /**
    *
    *
@@ -306,7 +298,6 @@ public interface IntentOrBuilder
    * @return The events at the given index.
    */
   java.lang.String getEvents(int index);
-
   /**
    *
    *
@@ -337,7 +328,6 @@ public interface IntentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase> getTrainingPhrasesList();
-
   /**
    *
    *
@@ -351,7 +341,6 @@ public interface IntentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getTrainingPhrases(int index);
-
   /**
    *
    *
@@ -365,7 +354,6 @@ public interface IntentOrBuilder
    * </code>
    */
   int getTrainingPhrasesCount();
-
   /**
    *
    *
@@ -380,7 +368,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>
       getTrainingPhrasesOrBuilderList();
-
   /**
    *
    *
@@ -409,7 +396,6 @@ public interface IntentOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -440,7 +426,6 @@ public interface IntentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList();
-
   /**
    *
    *
@@ -457,7 +442,6 @@ public interface IntentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.Context getOutputContexts(int index);
-
   /**
    *
    *
@@ -474,7 +458,6 @@ public interface IntentOrBuilder
    * </code>
    */
   int getOutputContextsCount();
-
   /**
    *
    *
@@ -492,7 +475,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList();
-
   /**
    *
    *
@@ -536,7 +518,6 @@ public interface IntentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> getParametersList();
-
   /**
    *
    *
@@ -549,7 +530,6 @@ public interface IntentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.Parameter getParameters(int index);
-
   /**
    *
    *
@@ -562,7 +542,6 @@ public interface IntentOrBuilder
    * </code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -576,7 +555,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -603,7 +581,6 @@ public interface IntentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getMessagesList();
-
   /**
    *
    *
@@ -617,7 +594,6 @@ public interface IntentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.Message getMessages(int index);
-
   /**
    *
    *
@@ -631,7 +607,6 @@ public interface IntentOrBuilder
    * </code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -646,7 +621,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *
@@ -677,7 +651,6 @@ public interface IntentOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
       getDefaultResponsePlatformsList();
-
   /**
    *
    *
@@ -693,7 +666,6 @@ public interface IntentOrBuilder
    * @return The count of defaultResponsePlatforms.
    */
   int getDefaultResponsePlatformsCount();
-
   /**
    *
    *
@@ -710,7 +682,6 @@ public interface IntentOrBuilder
    * @return The defaultResponsePlatforms at the given index.
    */
   com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(int index);
-
   /**
    *
    *
@@ -726,7 +697,6 @@ public interface IntentOrBuilder
    * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
    */
   java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList();
-
   /**
    *
    *
@@ -762,7 +732,6 @@ public interface IntentOrBuilder
    * @return The rootFollowupIntentName.
    */
   java.lang.String getRootFollowupIntentName();
-
   /**
    *
    *
@@ -802,7 +771,6 @@ public interface IntentOrBuilder
    * @return The parentFollowupIntentName.
    */
   java.lang.String getParentFollowupIntentName();
-
   /**
    *
    *
@@ -839,7 +807,6 @@ public interface IntentOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>
       getFollowupIntentInfoList();
-
   /**
    *
    *
@@ -854,7 +821,6 @@ public interface IntentOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(int index);
-
   /**
    *
    *
@@ -869,7 +835,6 @@ public interface IntentOrBuilder
    * </code>
    */
   int getFollowupIntentInfoCount();
-
   /**
    *
    *
@@ -885,7 +850,6 @@ public interface IntentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder>
       getFollowupIntentInfoOrBuilderList();
-
   /**
    *
    *

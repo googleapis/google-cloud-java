@@ -33,7 +33,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.GetTemplateResponse)
     GetTemplateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetTemplateResponse.newBuilder() to construct.
   private GetTemplateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
      * <code>LEGACY = 1;</code>
      */
     public static final int LEGACY_VALUE = 1;
-
     /**
      *
      *
@@ -226,7 +223,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -243,7 +239,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -260,7 +255,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -278,7 +272,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
 
   public static final int METADATA_FIELD_NUMBER = 2;
   private com.google.dataflow.v1beta3.TemplateMetadata metadata_;
-
   /**
    *
    *
@@ -295,7 +288,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -314,7 +306,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
         ? com.google.dataflow.v1beta3.TemplateMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -334,7 +325,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TEMPLATE_TYPE_FIELD_NUMBER = 3;
   private int templateType_ = 0;
-
   /**
    *
    *
@@ -350,7 +340,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
   public int getTemplateTypeValue() {
     return templateType_;
   }
-
   /**
    *
    *
@@ -373,7 +362,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
 
   public static final int RUNTIME_METADATA_FIELD_NUMBER = 4;
   private com.google.dataflow.v1beta3.RuntimeMetadata runtimeMetadata_;
-
   /**
    *
    *
@@ -389,7 +377,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
   public boolean hasRuntimeMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -407,7 +394,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
         ? com.google.dataflow.v1beta3.RuntimeMetadata.getDefaultInstance()
         : runtimeMetadata_;
   }
-
   /**
    *
    *
@@ -627,7 +613,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -881,7 +866,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -897,7 +881,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +943,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +971,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +991,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1046,7 +1023,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1053,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
             com.google.dataflow.v1beta3.TemplateMetadata.Builder,
             com.google.dataflow.v1beta3.TemplateMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1115,7 +1089,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1112,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1133,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1161,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1181,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1196,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1247,7 +1215,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1243,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     }
 
     private int templateType_ = 0;
-
     /**
      *
      *
@@ -1292,7 +1258,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     public int getTemplateTypeValue() {
       return templateType_;
     }
-
     /**
      *
      *
@@ -1311,7 +1276,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1295,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
           ? com.google.dataflow.v1beta3.GetTemplateResponse.TemplateType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1354,7 +1317,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1341,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
             com.google.dataflow.v1beta3.RuntimeMetadata.Builder,
             com.google.dataflow.v1beta3.RuntimeMetadataOrBuilder>
         runtimeMetadataBuilder_;
-
     /**
      *
      *
@@ -1394,7 +1355,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
     public boolean hasRuntimeMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1415,7 +1375,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
         return runtimeMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1397,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1417,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1445,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1464,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1478,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRuntimeMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1542,7 +1496,6 @@ public final class GetTemplateResponse extends com.google.protobuf.GeneratedMess
             : runtimeMetadata_;
       }
     }
-
     /**
      *
      *

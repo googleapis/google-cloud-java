@@ -35,7 +35,6 @@ public interface HttpHeaderActionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> getRequestHeadersToAddList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface HttpHeaderActionOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.HttpHeaderOption getRequestHeadersToAdd(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface HttpHeaderActionOrBuilder
    * </code>
    */
   int getRequestHeadersToAddCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface HttpHeaderActionOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpHeaderOptionOrBuilder>
       getRequestHeadersToAddOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface HttpHeaderActionOrBuilder
    * @return A list containing the requestHeadersToRemove.
    */
   java.util.List<java.lang.String> getRequestHeadersToRemoveList();
-
   /**
    *
    *
@@ -110,7 +105,6 @@ public interface HttpHeaderActionOrBuilder
    * @return The count of requestHeadersToRemove.
    */
   int getRequestHeadersToRemoveCount();
-
   /**
    *
    *
@@ -124,7 +118,6 @@ public interface HttpHeaderActionOrBuilder
    * @return The requestHeadersToRemove at the given index.
    */
   java.lang.String getRequestHeadersToRemove(int index);
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface HttpHeaderActionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpHeaderOption> getResponseHeadersToAddList();
-
   /**
    *
    *
@@ -162,7 +154,6 @@ public interface HttpHeaderActionOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.HttpHeaderOption getResponseHeadersToAdd(int index);
-
   /**
    *
    *
@@ -174,7 +165,6 @@ public interface HttpHeaderActionOrBuilder
    * </code>
    */
   int getResponseHeadersToAddCount();
-
   /**
    *
    *
@@ -187,7 +177,6 @@ public interface HttpHeaderActionOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpHeaderOptionOrBuilder>
       getResponseHeadersToAddOrBuilderList();
-
   /**
    *
    *
@@ -212,7 +201,6 @@ public interface HttpHeaderActionOrBuilder
    * @return A list containing the responseHeadersToRemove.
    */
   java.util.List<java.lang.String> getResponseHeadersToRemoveList();
-
   /**
    *
    *
@@ -225,7 +213,6 @@ public interface HttpHeaderActionOrBuilder
    * @return The count of responseHeadersToRemove.
    */
   int getResponseHeadersToRemoveCount();
-
   /**
    *
    *
@@ -239,7 +226,6 @@ public interface HttpHeaderActionOrBuilder
    * @return The responseHeadersToRemove at the given index.
    */
   java.lang.String getResponseHeadersToRemove(int index);
-
   /**
    *
    *

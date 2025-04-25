@@ -36,7 +36,6 @@ public interface LocationFilterOrBuilder
    * @return Whether the circle field is set.
    */
   boolean hasCircle();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LocationFilterOrBuilder
    * @return The circle.
    */
   com.google.maps.areainsights.v1.LocationFilter.Circle getCircle();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface LocationFilterOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface LocationFilterOrBuilder
    * @return The region.
    */
   com.google.maps.areainsights.v1.LocationFilter.Region getRegion();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface LocationFilterOrBuilder
    * @return Whether the customArea field is set.
    */
   boolean hasCustomArea();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface LocationFilterOrBuilder
    * @return The customArea.
    */
   com.google.maps.areainsights.v1.LocationFilter.CustomArea getCustomArea();
-
   /**
    *
    *

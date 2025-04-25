@@ -33,7 +33,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment)
     AccountDefenderAssessmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccountDefenderAssessment.newBuilder() to construct.
   private AccountDefenderAssessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,7 +141,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      * <code>ACCOUNT_DEFENDER_LABEL_UNSPECIFIED = 0;</code>
      */
     public static final int ACCOUNT_DEFENDER_LABEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +151,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      * <code>PROFILE_MATCH = 1;</code>
      */
     public static final int PROFILE_MATCH_VALUE = 1;
-
     /**
      *
      *
@@ -165,7 +162,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      * <code>SUSPICIOUS_LOGIN_ACTIVITY = 2;</code>
      */
     public static final int SUSPICIOUS_LOGIN_ACTIVITY_VALUE = 2;
-
     /**
      *
      *
@@ -177,7 +173,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      * <code>SUSPICIOUS_ACCOUNT_CREATION = 3;</code>
      */
     public static final int SUSPICIOUS_ACCOUNT_CREATION_VALUE = 3;
-
     /**
      *
      *
@@ -307,7 +302,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
                   : result;
             }
           };
-
   /**
    *
    *
@@ -330,7 +324,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel>(
         labels_, labels_converter_);
   }
-
   /**
    *
    *
@@ -348,7 +341,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
   public int getLabelsCount() {
     return labels_.size();
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       int index) {
     return labels_converter_.convert(labels_.get(index));
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
   public java.util.List<java.lang.Integer> getLabelsValueList() {
     return labels_;
   }
-
   /**
    *
    *
@@ -584,7 +574,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -802,7 +791,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -824,7 +812,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
           com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel>(
           labels_, labels_converter_);
     }
-
     /**
      *
      *
@@ -841,7 +828,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     public int getLabelsCount() {
       return labels_.size();
     }
-
     /**
      *
      *
@@ -860,7 +846,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         getLabels(int index) {
       return labels_converter_.convert(labels_.get(index));
     }
-
     /**
      *
      *
@@ -887,7 +872,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +924,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +943,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +959,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     public java.util.List<java.lang.Integer> getLabelsValueList() {
       return java.util.Collections.unmodifiableList(labels_);
     }
-
     /**
      *
      *
@@ -996,7 +976,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     public int getLabelsValue(int index) {
       return labels_.get(index);
     }
-
     /**
      *
      *
@@ -1018,7 +997,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1017,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

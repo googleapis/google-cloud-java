@@ -38,7 +38,6 @@ public interface BatchUpdateAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface BatchUpdateAssetsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.UpdateAssetRequest> getRequestsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface BatchUpdateAssetsRequestOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.UpdateAssetRequest getRequests(int index);
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface BatchUpdateAssetsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface BatchUpdateAssetsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.UpdateAssetRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

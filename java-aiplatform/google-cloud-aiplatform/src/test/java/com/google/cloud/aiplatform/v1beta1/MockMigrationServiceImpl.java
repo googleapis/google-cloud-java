@@ -74,8 +74,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchMigratableResources, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method SearchMigratableResources, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchMigratableResourcesResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchMigrateResources, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchMigrateResources, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -33,7 +33,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest)
     UpdateAppConnectorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAppConnectorRequest.newBuilder() to construct.
   private UpdateAppConnectorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
 
   public static final int APP_CONNECTOR_FIELD_NUMBER = 2;
   private com.google.cloud.beyondcorp.appconnectors.v1.AppConnector appConnector_;
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
   public boolean hasAppConnector() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
         ? com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.getDefaultInstance()
         : appConnector_;
   }
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -487,7 +477,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -747,7 +736,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -767,7 +755,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -821,7 +807,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +887,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +906,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -986,7 +966,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
             com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.Builder,
             com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorOrBuilder>
         appConnectorBuilder_;
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     public boolean hasAppConnector() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
         return appConnectorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1087,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1109,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1127,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return getAppConnectorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1177,7 +1149,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
             : appConnector_;
       }
     }
-
     /**
      *
      *
@@ -1208,7 +1179,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1243,7 +1213,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1247,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1280,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1309,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1345,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1396,7 +1361,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1417,7 +1381,6 @@ public final class UpdateAppConnectorRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

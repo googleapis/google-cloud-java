@@ -37,7 +37,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return Whether the metricPromptTemplate field is set.
    */
   boolean hasMetricPromptTemplate();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The metricPromptTemplate.
    */
   java.lang.String getMetricPromptTemplate();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The candidateResponseFieldName.
    */
   java.lang.String getCandidateResponseFieldName();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The baselineResponseFieldName.
    */
   java.lang.String getBaselineResponseFieldName();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The systemInstruction.
    */
   java.lang.String getSystemInstruction();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return Whether the customOutputFormatConfig field is set.
    */
   boolean hasCustomOutputFormatConfig();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The customOutputFormatConfig.
    */
   com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig getCustomOutputFormatConfig();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface AzureConfigEncryptionOrBuilder
    * @return The keyId.
    */
   java.lang.String getKeyId();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface AzureConfigEncryptionOrBuilder
    * @return The publicKey.
    */
   java.lang.String getPublicKey();
-
   /**
    *
    *

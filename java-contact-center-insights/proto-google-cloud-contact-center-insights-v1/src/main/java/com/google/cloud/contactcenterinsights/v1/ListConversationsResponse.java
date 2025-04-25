@@ -33,7 +33,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ListConversationsResponse)
     ListConversationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConversationsResponse.newBuilder() to construct.
   private ListConversationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.Conversation> conversations_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       getConversationsList() {
     return conversations_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       getConversationsOrBuilderList() {
     return conversations_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
   public int getConversationsCount() {
     return conversations_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
   public com.google.cloud.contactcenterinsights.v1.Conversation getConversations(int index) {
     return conversations_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return conversationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return conversationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return conversationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         int index) {
       return getConversationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return conversationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(conversations_);
       }
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       return getConversationsFieldBuilder()
           .addBuilder(com.google.cloud.contactcenterinsights.v1.Conversation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.contactcenterinsights.v1.Conversation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1032,7 +1005,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1029,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1052,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class ListConversationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

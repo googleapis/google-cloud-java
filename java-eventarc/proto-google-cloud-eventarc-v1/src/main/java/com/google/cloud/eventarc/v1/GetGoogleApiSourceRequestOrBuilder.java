@@ -38,7 +38,6 @@ public interface GetGoogleApiSourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

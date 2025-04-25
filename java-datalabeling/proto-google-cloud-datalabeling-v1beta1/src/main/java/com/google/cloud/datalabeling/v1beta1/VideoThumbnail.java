@@ -33,7 +33,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.VideoThumbnail)
     VideoThumbnailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoThumbnail.newBuilder() to construct.
   private VideoThumbnail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int THUMBNAIL_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration timeOffset_;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
-
   /**
    *
    *
@@ -309,7 +304,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -521,7 +515,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -537,7 +530,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getThumbnail() {
       return thumbnail_;
     }
-
     /**
      *
      *
@@ -559,7 +551,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
-
     /**
      *
      *
@@ -600,7 +590,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -622,7 +611,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
         return timeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -646,7 +634,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +654,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +682,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +702,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +717,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -753,7 +736,6 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
             : timeOffset_;
       }
     }
-
     /**
      *
      *

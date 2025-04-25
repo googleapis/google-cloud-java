@@ -91,7 +91,6 @@ public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SSML_VOICE_GENDER_UNSPECIFIED = 0;</code>
    */
   public static final int SSML_VOICE_GENDER_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -102,7 +101,6 @@ public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MALE = 1;</code>
    */
   public static final int MALE_VALUE = 1;
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FEMALE = 2;</code>
    */
   public static final int FEMALE_VALUE = 2;
-
   /**
    *
    *

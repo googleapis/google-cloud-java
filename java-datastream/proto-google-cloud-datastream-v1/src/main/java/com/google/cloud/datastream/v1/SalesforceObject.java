@@ -33,7 +33,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceObject)
     SalesforceObjectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SalesforceObject.newBuilder() to construct.
   private SalesforceObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object objectName_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.SalesforceField> fields_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.datastream.v1.SalesforceField> getFieldsList() {
     return fields_;
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       getFieldsOrBuilderList() {
     return fields_;
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
   public int getFieldsCount() {
     return fields_.size();
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datastream.v1.SalesforceField getFields(int index) {
     return fields_.get(index);
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -625,7 +616,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object objectName_ = "";
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +698,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return fieldsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return fieldsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return fieldsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1020,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datastream.v1.SalesforceField.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1066,7 +1039,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1059,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(fields_);
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1075,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       return getFieldsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.SalesforceField.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
       return getFieldsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.SalesforceField.getDefaultInstance());
     }
-
     /**
      *
      *

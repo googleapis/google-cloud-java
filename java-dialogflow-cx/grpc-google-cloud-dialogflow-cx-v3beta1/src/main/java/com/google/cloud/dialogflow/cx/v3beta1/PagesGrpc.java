@@ -270,19 +270,6 @@ public final class PagesGrpc {
     return PagesStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static PagesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PagesBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PagesBlockingV2Stub>() {
-          @java.lang.Override
-          public PagesBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PagesBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return PagesBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -492,90 +479,6 @@ public final class PagesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Pages.
-   *
-   * <pre>
-   * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
-   * </pre>
-   */
-  public static final class PagesBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<PagesBlockingV2Stub> {
-    private PagesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected PagesBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PagesBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all pages in the specified flow.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse listPages(
-        com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListPagesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified page.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Page getPage(
-        com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetPageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a page in the specified flow.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Page createPage(
-        com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreatePageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified page.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Page updatePage(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdatePageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified page.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deletePage(
-        com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeletePageMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Pages.
    *
    * <pre>
    * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].

@@ -38,7 +38,6 @@ public interface ScanRunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ScanRunOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ScanRunOrBuilder
    * @return The enum numeric value on the wire for resultState.
    */
   int getResultStateValue();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ScanRunOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ScanRunOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface ScanRunOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface ScanRunOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public interface ScanRunOrBuilder
    * @return Whether the errorTrace field is set.
    */
   boolean hasErrorTrace();
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public interface ScanRunOrBuilder
    * @return The errorTrace.
    */
   com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace getErrorTrace();
-
   /**
    *
    *
@@ -295,7 +286,6 @@ public interface ScanRunOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace> getWarningTracesList();
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public interface ScanRunOrBuilder
    * </code>
    */
   com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace getWarningTraces(int index);
-
   /**
    *
    *
@@ -319,7 +308,6 @@ public interface ScanRunOrBuilder
    * </code>
    */
   int getWarningTracesCount();
-
   /**
    *
    *
@@ -332,7 +320,6 @@ public interface ScanRunOrBuilder
    */
   java.util.List<? extends com.google.cloud.websecurityscanner.v1.ScanRunWarningTraceOrBuilder>
       getWarningTracesOrBuilderList();
-
   /**
    *
    *

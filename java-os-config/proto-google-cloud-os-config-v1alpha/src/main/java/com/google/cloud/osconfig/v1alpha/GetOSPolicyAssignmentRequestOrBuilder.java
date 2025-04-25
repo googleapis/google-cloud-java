@@ -41,7 +41,6 @@ public interface GetOSPolicyAssignmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

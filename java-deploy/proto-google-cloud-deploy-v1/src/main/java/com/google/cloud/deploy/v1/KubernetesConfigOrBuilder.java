@@ -38,7 +38,6 @@ public interface KubernetesConfigOrBuilder
    * @return Whether the gatewayServiceMesh field is set.
    */
   boolean hasGatewayServiceMesh();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface KubernetesConfigOrBuilder
    * @return The gatewayServiceMesh.
    */
   com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh getGatewayServiceMesh();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface KubernetesConfigOrBuilder
    * @return Whether the serviceNetworking field is set.
    */
   boolean hasServiceNetworking();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface KubernetesConfigOrBuilder
    * @return The serviceNetworking.
    */
   com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking getServiceNetworking();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface CustomInfoTypeOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The enum numeric value on the wire for likelihood.
    */
   int getLikelihoodValue();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface CustomInfoTypeOrBuilder
    * @return Whether the dictionary field is set.
    */
   boolean hasDictionary();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The dictionary.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface CustomInfoTypeOrBuilder
    * @return Whether the regex field is set.
    */
   boolean hasRegex();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The regex.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public interface CustomInfoTypeOrBuilder
    * @return Whether the surrogateType field is set.
    */
   boolean hasSurrogateType();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The surrogateType.
    */
   com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType();
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public interface CustomInfoTypeOrBuilder
    * @return Whether the storedType field is set.
    */
   boolean hasStoredType();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The storedType.
    */
   com.google.privacy.dlp.v2.StoredType getStoredType();
-
   /**
    *
    *
@@ -272,7 +261,6 @@ public interface CustomInfoTypeOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> getDetectionRulesList();
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public interface CustomInfoTypeOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
   com.google.privacy.dlp.v2.CustomInfoType.DetectionRule getDetectionRules(int index);
-
   /**
    *
    *
@@ -298,7 +285,6 @@ public interface CustomInfoTypeOrBuilder
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
   int getDetectionRulesCount();
-
   /**
    *
    *
@@ -312,7 +298,6 @@ public interface CustomInfoTypeOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>
       getDetectionRulesOrBuilderList();
-
   /**
    *
    *
@@ -340,7 +325,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The enum numeric value on the wire for exclusionType.
    */
   int getExclusionTypeValue();
-
   /**
    *
    *
@@ -371,7 +355,6 @@ public interface CustomInfoTypeOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface CustomInfoTypeOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
-
   /**
    *
    *

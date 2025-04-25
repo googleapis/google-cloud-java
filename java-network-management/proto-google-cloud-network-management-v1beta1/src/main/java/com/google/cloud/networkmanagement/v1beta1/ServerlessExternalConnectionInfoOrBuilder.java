@@ -36,7 +36,6 @@ public interface ServerlessExternalConnectionInfoOrBuilder
    * @return The selectedIpAddress.
    */
   java.lang.String getSelectedIpAddress();
-
   /**
    *
    *

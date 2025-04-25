@@ -83,7 +83,6 @@ public enum PrivateIPv6GoogleAccess implements com.google.protobuf.ProtocolMessa
    * <code>PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
    */
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public enum PrivateIPv6GoogleAccess implements com.google.protobuf.ProtocolMessa
    * <code>PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED = 1;</code>
    */
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_DISABLED_VALUE = 1;
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public enum PrivateIPv6GoogleAccess implements com.google.protobuf.ProtocolMessa
    * <code>PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE = 2;</code>
    */
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_TO_GOOGLE_VALUE = 2;
-
   /**
    *
    *

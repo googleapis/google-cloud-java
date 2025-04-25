@@ -36,7 +36,6 @@ public interface StateMessageOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StateMessageOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface StateMessageOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

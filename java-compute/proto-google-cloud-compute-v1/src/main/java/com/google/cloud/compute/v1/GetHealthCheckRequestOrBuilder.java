@@ -36,7 +36,6 @@ public interface GetHealthCheckRequestOrBuilder
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetHealthCheckRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

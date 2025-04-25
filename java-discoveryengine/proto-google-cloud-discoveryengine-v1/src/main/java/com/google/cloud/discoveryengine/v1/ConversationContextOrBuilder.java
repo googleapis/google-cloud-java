@@ -37,7 +37,6 @@ public interface ConversationContextOrBuilder
    * @return A list containing the contextDocuments.
    */
   java.util.List<java.lang.String> getContextDocumentsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ConversationContextOrBuilder
    * @return The count of contextDocuments.
    */
   int getContextDocumentsCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ConversationContextOrBuilder
    * @return The contextDocuments at the given index.
    */
   java.lang.String getContextDocuments(int index);
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ConversationContextOrBuilder
    * @return The activeDocument.
    */
   java.lang.String getActiveDocument();
-
   /**
    *
    *

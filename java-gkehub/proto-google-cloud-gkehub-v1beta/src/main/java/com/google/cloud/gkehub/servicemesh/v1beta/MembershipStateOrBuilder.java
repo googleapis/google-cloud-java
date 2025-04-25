@@ -38,7 +38,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the controlPlaneManagement field is set.
    */
   boolean hasControlPlaneManagement();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface MembershipStateOrBuilder
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.ControlPlaneManagement
       getControlPlaneManagement();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the dataPlaneManagement field is set.
    */
   boolean hasDataPlaneManagement();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface MembershipStateOrBuilder
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.DataPlaneManagement
       getDataPlaneManagement();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface MembershipStateOrBuilder
    */
   java.util.List<com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Condition>
       getConditionsList();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface MembershipStateOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Condition getConditions(int index);
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface MembershipStateOrBuilder
    * </code>
    */
   int getConditionsCount();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface MembershipStateOrBuilder
   java.util.List<
           ? extends com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.ConditionOrBuilder>
       getConditionsOrBuilderList();
-
   /**
    *
    *

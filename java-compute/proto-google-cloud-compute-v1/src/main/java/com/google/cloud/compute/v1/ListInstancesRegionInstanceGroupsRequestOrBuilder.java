@@ -36,7 +36,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return The instanceGroup.
    */
   java.lang.String getInstanceGroup();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return Whether the regionInstanceGroupsListInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupsListInstancesRequestResource();
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest
       getRegionInstanceGroupsListInstancesRequestResource();
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public interface ListInstancesRegionInstanceGroupsRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *

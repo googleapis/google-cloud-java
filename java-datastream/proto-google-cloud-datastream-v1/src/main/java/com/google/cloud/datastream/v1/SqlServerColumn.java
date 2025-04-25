@@ -33,7 +33,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerColumn)
     SqlServerColumnOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SqlServerColumn.newBuilder() to construct.
   private SqlServerColumn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object column_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataType_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   public static final int LENGTH_FIELD_NUMBER = 3;
   private int length_ = 0;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRECISION_FIELD_NUMBER = 4;
   private int precision_ = 0;
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   public static final int SCALE_FIELD_NUMBER = 5;
   private int scale_ = 0;
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRIMARY_KEY_FIELD_NUMBER = 6;
   private boolean primaryKey_ = false;
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   public static final int NULLABLE_FIELD_NUMBER = 7;
   private boolean nullable_ = false;
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
 
   public static final int ORDINAL_POSITION_FIELD_NUMBER = 8;
   private int ordinalPosition_ = 0;
-
   /**
    *
    *
@@ -507,7 +496,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -784,7 +772,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object column_ = "";
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +816,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +837,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +854,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object dataType_ = "";
-
     /**
      *
      *
@@ -918,7 +900,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -941,7 +922,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +960,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +984,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private int length_;
-
     /**
      *
      *
@@ -1022,7 +999,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     public int getLength() {
       return length_;
     }
-
     /**
      *
      *
@@ -1042,7 +1018,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1037,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private int precision_;
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     public int getPrecision() {
       return precision_;
     }
-
     /**
      *
      *
@@ -1098,7 +1071,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1090,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private int scale_;
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     public int getScale() {
       return scale_;
     }
-
     /**
      *
      *
@@ -1154,7 +1124,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1143,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean primaryKey_;
-
     /**
      *
      *
@@ -1190,7 +1158,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     public boolean getPrimaryKey() {
       return primaryKey_;
     }
-
     /**
      *
      *
@@ -1210,7 +1177,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1196,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean nullable_;
-
     /**
      *
      *
@@ -1246,7 +1211,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     public boolean getNullable() {
       return nullable_;
     }
-
     /**
      *
      *
@@ -1266,7 +1230,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1249,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     }
 
     private int ordinalPosition_;
-
     /**
      *
      *
@@ -1302,7 +1264,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
     public int getOrdinalPosition() {
       return ordinalPosition_;
     }
-
     /**
      *
      *
@@ -1322,7 +1283,6 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

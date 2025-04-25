@@ -48,7 +48,6 @@ public interface UpdateDocumentProcessingConfigRequestOrBuilder
    * @return Whether the documentProcessingConfig field is set.
    */
   boolean hasDocumentProcessingConfig();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface UpdateDocumentProcessingConfigRequestOrBuilder
    * @return The documentProcessingConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig getDocumentProcessingConfig();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface UpdateDocumentProcessingConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface UpdateDocumentProcessingConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

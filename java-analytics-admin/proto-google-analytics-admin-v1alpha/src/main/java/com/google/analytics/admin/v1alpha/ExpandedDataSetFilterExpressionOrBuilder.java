@@ -39,7 +39,6 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpressionList getAndGroup();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpression getNotExpression();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    * @return The filter.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilter getFilter();
-
   /**
    *
    *

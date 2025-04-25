@@ -34,7 +34,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsRequest)
     FindNeighborsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FindNeighborsRequest.newBuilder() to construct.
   private FindNeighborsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the rrf field is set.
      */
     boolean hasRrf();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
      * @return The rrf.
      */
     com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF getRrf();
-
     /**
      *
      *
@@ -130,7 +127,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the datapoint field is set.
      */
     boolean hasDatapoint();
-
     /**
      *
      *
@@ -146,7 +142,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
      * @return The datapoint.
      */
     com.google.cloud.aiplatform.v1beta1.IndexDatapoint getDatapoint();
-
     /**
      *
      *
@@ -228,7 +223,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
     com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RankingCase getRankingCase();
   }
-
   /**
    *
    *
@@ -244,7 +238,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query)
       QueryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Query.newBuilder() to construct.
     private Query(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -293,7 +286,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        */
       float getAlpha();
     }
-
     /**
      *
      *
@@ -308,7 +300,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
         RRFOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use RRF.newBuilder() to construct.
       private RRF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -339,7 +330,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
       public static final int ALPHA_FIELD_NUMBER = 1;
       private float alpha_ = 0F;
-
       /**
        *
        *
@@ -522,7 +512,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -716,7 +705,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         private int bitField0_;
 
         private float alpha_;
-
         /**
          *
          *
@@ -734,7 +722,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         public float getAlpha() {
           return alpha_;
         }
-
         /**
          *
          *
@@ -756,7 +743,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -861,7 +847,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       private RankingCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -893,7 +878,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     }
 
     public static final int RRF_FIELD_NUMBER = 6;
-
     /**
      *
      *
@@ -911,7 +895,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasRrf() {
       return rankingCase_ == 6;
     }
-
     /**
      *
      *
@@ -933,7 +916,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -957,7 +939,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int DATAPOINT_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.IndexDatapoint datapoint_;
-
     /**
      *
      *
@@ -976,7 +957,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasDatapoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -997,7 +977,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.aiplatform.v1beta1.IndexDatapoint.getDefaultInstance()
           : datapoint_;
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 2;
     private int neighborCount_ = 0;
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int PER_CROWDING_ATTRIBUTE_NEIGHBOR_COUNT_FIELD_NUMBER = 3;
     private int perCrowdingAttributeNeighborCount_ = 0;
-
     /**
      *
      *
@@ -1063,7 +1040,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int APPROXIMATE_NEIGHBOR_COUNT_FIELD_NUMBER = 4;
     private int approximateNeighborCount_ = 0;
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
     public static final int FRACTION_LEAF_NODES_TO_SEARCH_OVERRIDE_FIELD_NUMBER = 5;
     private double fractionLeafNodesToSearchOverride_ = 0D;
-
     /**
      *
      *
@@ -1344,7 +1319,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1653,7 +1627,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder,
               com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder>
           rrfBuilder_;
-
       /**
        *
        *
@@ -1671,7 +1644,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public boolean hasRrf() {
         return rankingCase_ == 6;
       }
-
       /**
        *
        *
@@ -1701,7 +1673,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1727,7 +1698,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         rankingCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -1751,7 +1721,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         rankingCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -1791,7 +1760,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         rankingCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -1819,7 +1787,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -1835,7 +1802,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           getRrfBuilder() {
         return getRrfFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1860,7 +1826,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1904,7 +1869,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Builder,
               com.google.cloud.aiplatform.v1beta1.IndexDatapointOrBuilder>
           datapointBuilder_;
-
       /**
        *
        *
@@ -1922,7 +1886,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public boolean hasDatapoint() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1946,7 +1909,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           return datapointBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1972,7 +1934,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1996,7 +1957,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2028,7 +1988,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -2051,7 +2010,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2069,7 +2027,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return getDatapointFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2091,7 +2048,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               : datapoint_;
         }
       }
-
       /**
        *
        *
@@ -2122,7 +2078,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
 
       private int neighborCount_;
-
       /**
        *
        *
@@ -2140,7 +2095,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public int getNeighborCount() {
         return neighborCount_;
       }
-
       /**
        *
        *
@@ -2162,7 +2116,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2184,7 +2137,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
 
       private int perCrowdingAttributeNeighborCount_;
-
       /**
        *
        *
@@ -2204,7 +2156,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public int getPerCrowdingAttributeNeighborCount() {
         return perCrowdingAttributeNeighborCount_;
       }
-
       /**
        *
        *
@@ -2228,7 +2179,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2252,7 +2202,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
 
       private int approximateNeighborCount_;
-
       /**
        *
        *
@@ -2270,7 +2219,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public int getApproximateNeighborCount() {
         return approximateNeighborCount_;
       }
-
       /**
        *
        *
@@ -2292,7 +2240,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2314,7 +2261,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
 
       private double fractionLeafNodesToSearchOverride_;
-
       /**
        *
        *
@@ -2335,7 +2281,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public double getFractionLeafNodesToSearchOverride() {
         return fractionLeafNodesToSearchOverride_;
       }
-
       /**
        *
        *
@@ -2360,7 +2305,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2455,7 +2399,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object indexEndpoint_ = "";
-
   /**
    *
    *
@@ -2483,7 +2426,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -2516,7 +2458,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployedIndexId_ = "";
-
   /**
    *
    *
@@ -2545,7 +2486,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -2579,7 +2519,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query> queries_;
-
   /**
    *
    *
@@ -2594,7 +2533,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       getQueriesList() {
     return queries_;
   }
-
   /**
    *
    *
@@ -2610,7 +2548,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       getQueriesOrBuilderList() {
     return queries_;
   }
-
   /**
    *
    *
@@ -2624,7 +2561,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
   public int getQueriesCount() {
     return queries_.size();
   }
-
   /**
    *
    *
@@ -2638,7 +2574,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query getQueries(int index) {
     return queries_.get(index);
   }
-
   /**
    *
    *
@@ -2656,7 +2591,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int RETURN_FULL_DATAPOINT_FIELD_NUMBER = 4;
   private boolean returnFullDatapoint_ = false;
-
   /**
    *
    *
@@ -2865,7 +2799,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3141,7 +3074,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object indexEndpoint_ = "";
-
     /**
      *
      *
@@ -3168,7 +3100,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3195,7 +3126,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3221,7 +3151,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3243,7 +3172,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3272,7 +3200,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object deployedIndexId_ = "";
-
     /**
      *
      *
@@ -3300,7 +3227,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3328,7 +3254,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3355,7 +3280,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3378,7 +3302,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3443,7 +3366,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return queriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3461,7 +3383,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return queriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3479,7 +3400,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return queriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3504,7 +3424,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3527,7 +3446,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3552,7 +3470,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3577,7 +3494,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3599,7 +3515,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3622,7 +3537,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3645,7 +3559,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3579,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3687,7 +3599,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3702,7 +3613,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         int index) {
       return getQueriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3721,7 +3631,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return queriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3741,7 +3650,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(queries_);
       }
     }
-
     /**
      *
      *
@@ -3758,7 +3666,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3776,7 +3683,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3810,7 +3716,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean returnFullDatapoint_;
-
     /**
      *
      *
@@ -3829,7 +3734,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
     public boolean getReturnFullDatapoint() {
       return returnFullDatapoint_;
     }
-
     /**
      *
      *
@@ -3852,7 +3756,6 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

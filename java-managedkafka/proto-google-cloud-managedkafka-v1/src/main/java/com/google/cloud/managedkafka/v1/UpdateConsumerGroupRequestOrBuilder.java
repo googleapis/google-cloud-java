@@ -41,7 +41,6 @@ public interface UpdateConsumerGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateConsumerGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateConsumerGroupRequestOrBuilder
    * @return Whether the consumerGroup field is set.
    */
   boolean hasConsumerGroup();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateConsumerGroupRequestOrBuilder
    * @return The consumerGroup.
    */
   com.google.cloud.managedkafka.v1.ConsumerGroup getConsumerGroup();
-
   /**
    *
    *

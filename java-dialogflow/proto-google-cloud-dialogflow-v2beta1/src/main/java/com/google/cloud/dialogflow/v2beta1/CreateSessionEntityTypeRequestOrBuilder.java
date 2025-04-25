@@ -51,7 +51,6 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * @return Whether the sessionEntityType field is set.
    */
   boolean hasSessionEntityType();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * @return The sessionEntityType.
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType();
-
   /**
    *
    *

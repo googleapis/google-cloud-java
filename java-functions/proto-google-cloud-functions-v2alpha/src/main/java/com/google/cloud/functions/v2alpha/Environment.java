@@ -72,7 +72,6 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENVIRONMENT_UNSPECIFIED = 0;</code>
    */
   public static final int ENVIRONMENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GEN_1 = 1;</code>
    */
   public static final int GEN_1_VALUE = 1;
-
   /**
    *
    *

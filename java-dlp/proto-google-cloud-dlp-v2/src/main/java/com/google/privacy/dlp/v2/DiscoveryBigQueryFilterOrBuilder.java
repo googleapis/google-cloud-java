@@ -39,7 +39,6 @@ public interface DiscoveryBigQueryFilterOrBuilder
    * @return Whether the tables field is set.
    */
   boolean hasTables();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface DiscoveryBigQueryFilterOrBuilder
    * @return The tables.
    */
   com.google.privacy.dlp.v2.BigQueryTableCollection getTables();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface DiscoveryBigQueryFilterOrBuilder
    * @return Whether the otherTables field is set.
    */
   boolean hasOtherTables();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface DiscoveryBigQueryFilterOrBuilder
    * @return The otherTables.
    */
   com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables getOtherTables();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface DiscoveryBigQueryFilterOrBuilder
    * @return Whether the tableReference field is set.
    */
   boolean hasTableReference();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface DiscoveryBigQueryFilterOrBuilder
    * @return The tableReference.
    */
   com.google.privacy.dlp.v2.TableReference getTableReference();
-
   /**
    *
    *

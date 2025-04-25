@@ -40,7 +40,6 @@ public interface UserCredentialOrBuilder
    * @return The userTokenSecretVersion.
    */
   java.lang.String getUserTokenSecretVersion();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface UserCredentialOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *

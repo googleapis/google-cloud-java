@@ -72,7 +72,6 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOCATION_FEATURE_UNSPECIFIED = 0;</code>
    */
   public static final int LOCATION_FEATURE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SITE_TO_CLOUD_SPOKES = 1;</code>
    */
   public static final int SITE_TO_CLOUD_SPOKES_VALUE = 1;
-
   /**
    *
    *

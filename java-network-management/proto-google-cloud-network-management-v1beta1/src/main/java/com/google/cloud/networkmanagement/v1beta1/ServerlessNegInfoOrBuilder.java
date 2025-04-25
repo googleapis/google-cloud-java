@@ -36,7 +36,6 @@ public interface ServerlessNegInfoOrBuilder
    * @return The negUri.
    */
   java.lang.String getNegUri();
-
   /**
    *
    *

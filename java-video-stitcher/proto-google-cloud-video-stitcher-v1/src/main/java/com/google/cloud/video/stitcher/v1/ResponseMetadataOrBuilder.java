@@ -36,7 +36,6 @@ public interface ResponseMetadataOrBuilder
    * @return The error.
    */
   java.lang.String getError();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ResponseMetadataOrBuilder
    * @return Whether the headers field is set.
    */
   boolean hasHeaders();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ResponseMetadataOrBuilder
    * @return The headers.
    */
   com.google.protobuf.Struct getHeaders();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ResponseMetadataOrBuilder
    * @return The statusCode.
    */
   java.lang.String getStatusCode();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface ResponseMetadataOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface ResponseMetadataOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface ResponseMetadataOrBuilder
    * @return The body.
    */
   java.lang.String getBody();
-
   /**
    *
    *

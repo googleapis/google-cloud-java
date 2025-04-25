@@ -32,7 +32,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceConsumptionData)
     InstanceConsumptionDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceConsumptionData.newBuilder() to construct.
   private InstanceConsumptionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int CONSUMPTION_INFO_FIELD_NUMBER = 146354898;
   private com.google.cloud.compute.v1.InstanceConsumptionInfo consumptionInfo_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
   public boolean hasConsumptionInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.InstanceConsumptionInfo.getDefaultInstance()
         : consumptionInfo_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +362,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -589,7 +581,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.InstanceConsumptionInfo.Builder,
             com.google.cloud.compute.v1.InstanceConsumptionInfoOrBuilder>
         consumptionInfoBuilder_;
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     public boolean hasConsumptionInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         return consumptionInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       onChanged();
       return getConsumptionInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
             : consumptionInfo_;
       }
     }
-
     /**
      *
      *
@@ -790,7 +773,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     }
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -851,7 +831,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +852,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +869,6 @@ public final class InstanceConsumptionData extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

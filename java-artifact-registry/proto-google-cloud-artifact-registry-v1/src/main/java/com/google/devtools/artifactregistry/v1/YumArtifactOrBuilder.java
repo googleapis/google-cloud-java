@@ -36,7 +36,6 @@ public interface YumArtifactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface YumArtifactOrBuilder
    * @return The packageName.
    */
   java.lang.String getPackageName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface YumArtifactOrBuilder
    * @return The enum numeric value on the wire for packageType.
    */
   int getPackageTypeValue();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface YumArtifactOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
-
   /**
    *
    *

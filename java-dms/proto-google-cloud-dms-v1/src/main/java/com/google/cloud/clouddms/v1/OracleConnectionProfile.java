@@ -34,7 +34,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.OracleConnectionProfile)
     OracleConnectionProfileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OracleConnectionProfile.newBuilder() to construct.
   private OracleConnectionProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     private ConnectivityCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -126,7 +124,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -255,7 +248,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
-
   /**
    *
    *
@@ -284,7 +276,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +307,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   public static final int PASSWORD_SET_FIELD_NUMBER = 5;
   private boolean passwordSet_ = false;
-
   /**
    *
    *
@@ -337,7 +327,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseService_ = "";
-
   /**
    *
    *
@@ -361,7 +350,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -388,7 +376,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
 
   public static final int SSL_FIELD_NUMBER = 7;
   private com.google.cloud.clouddms.v1.SslConfig ssl_;
-
   /**
    *
    *
@@ -407,7 +394,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   public boolean hasSsl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -426,7 +412,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   public com.google.cloud.clouddms.v1.SslConfig getSsl() {
     return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
   }
-
   /**
    *
    *
@@ -445,7 +430,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   }
 
   public static final int STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -463,7 +447,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   public boolean hasStaticServiceIpConnectivity() {
     return connectivityCase_ == 100;
   }
-
   /**
    *
    *
@@ -484,7 +467,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
     return com.google.cloud.clouddms.v1.StaticServiceIpConnectivity.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -506,7 +488,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   }
 
   public static final int FORWARD_SSH_CONNECTIVITY_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -523,7 +504,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   public boolean hasForwardSshConnectivity() {
     return connectivityCase_ == 101;
   }
-
   /**
    *
    *
@@ -543,7 +523,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
     return com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -564,7 +543,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   }
 
   public static final int PRIVATE_CONNECTIVITY_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -580,7 +558,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   public boolean hasPrivateConnectivity() {
     return connectivityCase_ == 102;
   }
-
   /**
    *
    *
@@ -599,7 +576,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
     return com.google.cloud.clouddms.v1.PrivateConnectivity.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -893,7 +869,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1261,7 +1236,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object host_ = "";
-
     /**
      *
      *
@@ -1284,7 +1258,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1307,7 +1280,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1301,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1318,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1342,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
 
     private int port_;
-
     /**
      *
      *
@@ -1388,7 +1357,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -1408,7 +1376,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1395,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
 
     private java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -1453,7 +1419,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1478,7 +1443,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1502,7 +1466,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1485,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1511,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
 
     private java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -1577,7 +1538,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1565,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1591,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1613,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1685,7 +1642,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
 
     private boolean passwordSet_;
-
     /**
      *
      *
@@ -1701,7 +1657,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     public boolean getPasswordSet() {
       return passwordSet_;
     }
-
     /**
      *
      *
@@ -1721,7 +1676,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1695,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     }
 
     private java.lang.Object databaseService_ = "";
-
     /**
      *
      *
@@ -1764,7 +1717,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1787,7 +1739,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1809,7 +1760,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1777,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1806,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
             com.google.cloud.clouddms.v1.SslConfig.Builder,
             com.google.cloud.clouddms.v1.SslConfigOrBuilder>
         sslBuilder_;
-
     /**
      *
      *
@@ -1875,7 +1823,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     public boolean hasSsl() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1897,7 +1844,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return sslBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1923,7 +1869,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1946,7 +1891,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1977,7 +1921,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2000,7 +1943,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1960,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       onChanged();
       return getSslFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2038,7 +1979,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return ssl_ == null ? com.google.cloud.clouddms.v1.SslConfig.getDefaultInstance() : ssl_;
       }
     }
-
     /**
      *
      *
@@ -2073,7 +2013,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
             com.google.cloud.clouddms.v1.StaticServiceIpConnectivity.Builder,
             com.google.cloud.clouddms.v1.StaticServiceIpConnectivityOrBuilder>
         staticServiceIpConnectivityBuilder_;
-
     /**
      *
      *
@@ -2091,7 +2030,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     public boolean hasStaticServiceIpConnectivity() {
       return connectivityCase_ == 100;
     }
-
     /**
      *
      *
@@ -2120,7 +2058,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return com.google.cloud.clouddms.v1.StaticServiceIpConnectivity.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2146,7 +2083,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -2169,7 +2105,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -2206,7 +2141,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2168,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2250,7 +2183,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         getStaticServiceIpConnectivityBuilder() {
       return getStaticServiceIpConnectivityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2274,7 +2206,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return com.google.cloud.clouddms.v1.StaticServiceIpConnectivity.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2316,7 +2247,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
             com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity.Builder,
             com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivityOrBuilder>
         forwardSshConnectivityBuilder_;
-
     /**
      *
      *
@@ -2333,7 +2263,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     public boolean hasForwardSshConnectivity() {
       return connectivityCase_ == 101;
     }
-
     /**
      *
      *
@@ -2360,7 +2289,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2385,7 +2313,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2407,7 +2334,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2443,7 +2369,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2470,7 +2395,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2485,7 +2409,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         getForwardSshConnectivityBuilder() {
       return getForwardSshConnectivityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2508,7 +2431,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2549,7 +2471,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
             com.google.cloud.clouddms.v1.PrivateConnectivity.Builder,
             com.google.cloud.clouddms.v1.PrivateConnectivityOrBuilder>
         privateConnectivityBuilder_;
-
     /**
      *
      *
@@ -2565,7 +2486,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     public boolean hasPrivateConnectivity() {
       return connectivityCase_ == 102;
     }
-
     /**
      *
      *
@@ -2591,7 +2511,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return com.google.cloud.clouddms.v1.PrivateConnectivity.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2614,7 +2533,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -2635,7 +2553,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -2670,7 +2587,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       connectivityCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -2696,7 +2612,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2710,7 +2625,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         getPrivateConnectivityBuilder() {
       return getPrivateConnectivityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2732,7 +2646,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
         return com.google.cloud.clouddms.v1.PrivateConnectivity.getDefaultInstance();
       }
     }
-
     /**
      *
      *

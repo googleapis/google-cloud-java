@@ -33,7 +33,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TranslationEvaluationMetrics)
     TranslationEvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslationEvaluationMetrics.newBuilder() to construct.
   private TranslationEvaluationMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
 
   public static final int BLEU_SCORE_FIELD_NUMBER = 1;
   private double bleuScore_ = 0D;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
 
   public static final int BASE_BLEU_SCORE_FIELD_NUMBER = 2;
   private double baseBleuScore_ = 0D;
-
   /**
    *
    *
@@ -277,7 +274,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -473,7 +469,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     private int bitField0_;
 
     private double bleuScore_;
-
     /**
      *
      *
@@ -489,7 +484,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     public double getBleuScore() {
       return bleuScore_;
     }
-
     /**
      *
      *
@@ -509,7 +503,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     }
 
     private double baseBleuScore_;
-
     /**
      *
      *
@@ -545,7 +537,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     public double getBaseBleuScore() {
       return baseBleuScore_;
     }
-
     /**
      *
      *
@@ -565,7 +556,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

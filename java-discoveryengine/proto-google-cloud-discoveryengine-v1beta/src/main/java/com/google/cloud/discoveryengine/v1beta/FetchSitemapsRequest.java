@@ -35,7 +35,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.FetchSitemapsRequest)
     FetchSitemapsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchSitemapsRequest.newBuilder() to construct.
   private FetchSitemapsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the uris.
      */
     java.util.List<java.lang.String> getUrisList();
-
     /**
      *
      *
@@ -96,7 +94,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
      * @return The count of uris.
      */
     int getUrisCount();
-
     /**
      *
      *
@@ -110,7 +107,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
      * @return The uris at the given index.
      */
     java.lang.String getUris(int index);
-
     /**
      *
      *
@@ -125,7 +121,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getUrisBytes(int index);
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.UrisMatcher)
       UrisMatcherOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UrisMatcher.newBuilder() to construct.
     private UrisMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -178,7 +172,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList uris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -193,7 +186,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getUrisList() {
       return uris_;
     }
-
     /**
      *
      *
@@ -208,7 +200,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     public int getUrisCount() {
       return uris_.size();
     }
-
     /**
      *
      *
@@ -224,7 +215,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
-
     /**
      *
      *
@@ -416,7 +406,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -631,7 +620,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -647,7 +635,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         uris_.makeImmutable();
         return uris_;
       }
-
       /**
        *
        *
@@ -662,7 +649,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       public int getUrisCount() {
         return uris_.size();
       }
-
       /**
        *
        *
@@ -678,7 +664,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       public java.lang.String getUris(int index) {
         return uris_.get(index);
       }
-
       /**
        *
        *
@@ -694,7 +679,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getUrisBytes(int index) {
         return uris_.getByteString(index);
       }
-
       /**
        *
        *
@@ -718,7 +702,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -741,7 +724,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -761,7 +743,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -780,7 +761,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -891,7 +871,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the urisMatcher field is set.
      */
     boolean hasUrisMatcher();
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
      * @return The urisMatcher.
      */
     com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.UrisMatcher getUrisMatcher();
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.Matcher.MatcherCase
         getMatcherCase();
   }
-
   /**
    *
    *
@@ -938,7 +915,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.Matcher)
       MatcherOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Matcher.newBuilder() to construct.
     private Matcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -983,7 +959,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       private MatcherCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1015,7 +990,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     }
 
     public static final int URIS_MATCHER_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1032,7 +1006,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUrisMatcher() {
       return matcherCase_ == 1;
     }
-
     /**
      *
      *
@@ -1054,7 +1027,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       return com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.UrisMatcher
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1255,7 +1227,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1487,7 +1458,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
               com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.UrisMatcher.Builder,
               com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.UrisMatcherOrBuilder>
           urisMatcherBuilder_;
-
       /**
        *
        *
@@ -1505,7 +1475,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       public boolean hasUrisMatcher() {
         return matcherCase_ == 1;
       }
-
       /**
        *
        *
@@ -1537,7 +1506,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1563,7 +1531,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         matcherCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1587,7 +1554,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         matcherCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1626,7 +1592,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         matcherCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1654,7 +1619,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -1670,7 +1634,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
           getUrisMatcherBuilder() {
         return getUrisMatcherFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1696,7 +1659,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1808,7 +1770,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1837,7 +1798,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1869,7 +1829,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MATCHER_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.Matcher matcher_;
-
   /**
    *
    *
@@ -1890,7 +1849,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasMatcher() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1913,7 +1871,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.Matcher.getDefaultInstance()
         : matcher_;
   }
-
   /**
    *
    *
@@ -2110,7 +2067,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2329,7 +2285,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2357,7 +2312,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2385,7 +2339,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2412,7 +2365,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2435,7 +2387,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2470,7 +2421,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.Matcher.Builder,
             com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest.MatcherOrBuilder>
         matcherBuilder_;
-
     /**
      *
      *
@@ -2490,7 +2440,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasMatcher() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2517,7 +2466,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
         return matcherBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2546,7 +2494,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2573,7 +2520,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2609,7 +2555,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2579,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2655,7 +2599,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMatcherFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2681,7 +2624,6 @@ public final class FetchSitemapsRequest extends com.google.protobuf.GeneratedMes
             : matcher_;
       }
     }
-
     /**
      *
      *

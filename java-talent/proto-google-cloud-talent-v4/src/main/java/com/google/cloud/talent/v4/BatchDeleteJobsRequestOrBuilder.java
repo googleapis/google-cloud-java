@@ -43,7 +43,6 @@ public interface BatchDeleteJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface BatchDeleteJobsRequestOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface BatchDeleteJobsRequestOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface BatchDeleteJobsRequestOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
-
   /**
    *
    *

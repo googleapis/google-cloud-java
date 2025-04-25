@@ -33,7 +33,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListPurchasableSkusResponse)
     ListPurchasableSkusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListPurchasableSkusResponse.newBuilder() to construct.
   private ListPurchasableSkusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.PurchasableSku> purchasableSkus_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.channel.v1.PurchasableSku> getPurchasableSkusList() {
     return purchasableSkus_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       getPurchasableSkusOrBuilderList() {
     return purchasableSkus_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
   public int getPurchasableSkusCount() {
     return purchasableSkus_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
   public com.google.cloud.channel.v1.PurchasableSku getPurchasableSkus(int index) {
     return purchasableSkus_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return purchasableSkusBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return purchasableSkusBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return purchasableSkusBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
     public com.google.cloud.channel.v1.PurchasableSku.Builder getPurchasableSkusBuilder(int index) {
       return getPurchasableSkusFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return purchasableSkusBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(purchasableSkus_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       return getPurchasableSkusFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.PurchasableSku.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       return getPurchasableSkusFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.PurchasableSku.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1002,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1040,6 @@ public final class ListPurchasableSkusResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

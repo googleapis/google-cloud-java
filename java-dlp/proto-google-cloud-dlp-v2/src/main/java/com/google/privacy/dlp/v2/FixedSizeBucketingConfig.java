@@ -50,7 +50,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FixedSizeBucketingConfig)
     FixedSizeBucketingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FixedSizeBucketingConfig.newBuilder() to construct.
   private FixedSizeBucketingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int LOWER_BOUND_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.Value lowerBound_;
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
   public boolean hasLowerBound() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
   public com.google.privacy.dlp.v2.Value getLowerBound() {
     return lowerBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : lowerBound_;
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
 
   public static final int UPPER_BOUND_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.Value upperBound_;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
   public boolean hasUpperBound() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
   public com.google.privacy.dlp.v2.Value getUpperBound() {
     return upperBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : upperBound_;
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
 
   public static final int BUCKET_SIZE_FIELD_NUMBER = 3;
   private double bucketSize_ = 0D;
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.Value.Builder,
             com.google.privacy.dlp.v2.ValueOrBuilder>
         lowerBoundBuilder_;
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public boolean hasLowerBound() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
         return lowerBoundBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return getLowerBoundFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
             : lowerBound_;
       }
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.Value.Builder,
             com.google.privacy.dlp.v2.ValueOrBuilder>
         upperBoundBuilder_;
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public boolean hasUpperBound() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
         return upperBoundBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -951,7 +930,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +982,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1021,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return getUpperBoundFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1068,7 +1042,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
             : upperBound_;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     }
 
     private double bucketSize_;
-
     /**
      *
      *
@@ -1118,7 +1090,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public double getBucketSize() {
       return bucketSize_;
     }
-
     /**
      *
      *
@@ -1141,7 +1112,6 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

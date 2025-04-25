@@ -35,7 +35,6 @@ public interface ListWebhooksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Webhook webhooks = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.Webhook> getWebhooksList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListWebhooksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Webhook webhooks = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.Webhook getWebhooks(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListWebhooksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Webhook webhooks = 1;</code>
    */
   int getWebhooksCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListWebhooksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.WebhookOrBuilder>
       getWebhooksOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListWebhooksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

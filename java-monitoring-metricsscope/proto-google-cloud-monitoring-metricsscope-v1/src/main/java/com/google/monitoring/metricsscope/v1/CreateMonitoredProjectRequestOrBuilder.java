@@ -41,7 +41,6 @@ public interface CreateMonitoredProjectRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateMonitoredProjectRequestOrBuilder
    * @return Whether the monitoredProject field is set.
    */
   boolean hasMonitoredProject();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface CreateMonitoredProjectRequestOrBuilder
    * @return The monitoredProject.
    */
   com.google.monitoring.metricsscope.v1.MonitoredProject getMonitoredProject();
-
   /**
    *
    *

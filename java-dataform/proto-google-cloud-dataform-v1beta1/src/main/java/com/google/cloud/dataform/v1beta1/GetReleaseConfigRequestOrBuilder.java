@@ -38,7 +38,6 @@ public interface GetReleaseConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

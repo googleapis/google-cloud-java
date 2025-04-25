@@ -25,7 +25,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.SearchUrisResponse)
     SearchUrisResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchUrisResponse.newBuilder() to construct.
   private SearchUrisResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return A list containing the threatTypes.
      */
     java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList();
-
     /**
      *
      *
@@ -84,7 +82,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return The count of threatTypes.
      */
     int getThreatTypesCount();
-
     /**
      *
      *
@@ -98,7 +95,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return The threatTypes at the given index.
      */
     com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index);
-
     /**
      *
      *
@@ -111,7 +107,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return A list containing the enum numeric values on the wire for threatTypes.
      */
     java.util.List<java.lang.Integer> getThreatTypesValueList();
-
     /**
      *
      *
@@ -139,7 +134,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the expireTime field is set.
      */
     boolean hasExpireTime();
-
     /**
      *
      *
@@ -153,7 +147,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return The expireTime.
      */
     com.google.protobuf.Timestamp getExpireTime();
-
     /**
      *
      *
@@ -166,7 +159,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -181,7 +173,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.SearchUrisResponse.ThreatUri)
       ThreatUriOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ThreatUri.newBuilder() to construct.
     private ThreatUri(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -229,7 +220,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
                 return result == null ? com.google.webrisk.v1beta1.ThreatType.UNRECOGNIZED : result;
               }
             };
-
     /**
      *
      *
@@ -247,7 +237,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>(
           threatTypes_, threatTypes_converter_);
     }
-
     /**
      *
      *
@@ -263,7 +252,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public int getThreatTypesCount() {
       return threatTypes_.size();
     }
-
     /**
      *
      *
@@ -280,7 +268,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
     }
-
     /**
      *
      *
@@ -296,7 +283,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return threatTypes_;
     }
-
     /**
      *
      *
@@ -318,7 +304,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp expireTime_;
-
     /**
      *
      *
@@ -335,7 +320,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -352,7 +336,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Timestamp getExpireTime() {
       return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
-
     /**
      *
      *
@@ -560,7 +543,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000001;
         }
       }
-
       /**
        *
        *
@@ -828,7 +809,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
             java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>(
             threatTypes_, threatTypes_converter_);
       }
-
       /**
        *
        *
@@ -843,7 +823,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public int getThreatTypesCount() {
         return threatTypes_.size();
       }
-
       /**
        *
        *
@@ -859,7 +838,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
         return threatTypes_converter_.convert(threatTypes_.get(index));
       }
-
       /**
        *
        *
@@ -882,7 +860,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -904,7 +881,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -926,7 +902,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -944,7 +919,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -959,7 +933,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public java.util.List<java.lang.Integer> getThreatTypesValueList() {
         return java.util.Collections.unmodifiableList(threatTypes_);
       }
-
       /**
        *
        *
@@ -975,7 +948,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public int getThreatTypesValue(int index) {
         return threatTypes_.get(index);
       }
-
       /**
        *
        *
@@ -995,7 +967,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1014,7 +985,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1042,7 +1012,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           expireTimeBuilder_;
-
       /**
        *
        *
@@ -1058,7 +1027,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasExpireTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1080,7 +1048,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
           return expireTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1104,7 +1071,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1125,7 +1091,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1154,7 +1119,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1175,7 +1139,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1191,7 +1154,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getExpireTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1211,7 +1173,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
               : expireTime_;
         }
       }
-
       /**
        *
        *
@@ -1306,7 +1267,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int THREAT_FIELD_NUMBER = 1;
   private com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri threat_;
-
   /**
    *
    *
@@ -1322,7 +1282,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasThreat() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1340,7 +1299,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.getDefaultInstance()
         : threat_;
   }
-
   /**
    *
    *
@@ -1521,7 +1479,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.webrisk.v1beta1.SearchUrisResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1716,7 +1673,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
             com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.Builder,
             com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUriOrBuilder>
         threatBuilder_;
-
     /**
      *
      *
@@ -1731,7 +1687,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasThreat() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1752,7 +1707,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         return threatBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1775,7 +1729,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1749,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1825,7 +1777,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1845,7 +1796,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1810,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getThreatFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1879,7 +1828,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
             : threat_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface InterconnectsGetMacsecConfigResponseOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InterconnectsGetMacsecConfigResponseOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -69,14 +67,12 @@ public interface InterconnectsGetMacsecConfigResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
-
   /**
    * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
    *
    * @return The result.
    */
   com.google.cloud.compute.v1.InterconnectMacsecConfig getResult();
-
   /** <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code> */
   com.google.cloud.compute.v1.InterconnectMacsecConfigOrBuilder getResultOrBuilder();
 }

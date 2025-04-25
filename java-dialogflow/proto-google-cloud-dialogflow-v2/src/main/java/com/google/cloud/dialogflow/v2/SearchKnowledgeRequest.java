@@ -34,7 +34,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest)
     SearchKnowledgeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchKnowledgeRequest.newBuilder() to construct.
   private SearchKnowledgeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * <code>QUERY_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int QUERY_SOURCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * <code>AGENT_QUERY = 1;</code>
      */
     public static final int AGENT_QUERY_VALUE = 1;
-
     /**
      *
      *
@@ -259,7 +256,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
         getBoostSpecsList();
-
     /**
      *
      *
@@ -277,7 +273,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs getBoostSpecs(
         int index);
-
     /**
      *
      *
@@ -294,7 +289,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getBoostSpecsCount();
-
     /**
      *
      *
@@ -315,7 +309,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
                     .BoostSpecsOrBuilder>
         getBoostSpecsOrBuilderList();
-
     /**
      *
      *
@@ -352,7 +345,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      */
     java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
         getFilterSpecsList();
-
     /**
      *
      *
@@ -371,7 +363,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs getFilterSpecs(
         int index);
-
     /**
      *
      *
@@ -389,7 +380,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getFilterSpecsCount();
-
     /**
      *
      *
@@ -411,7 +401,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
                     .FilterSpecsOrBuilder>
         getFilterSpecsOrBuilderList();
-
     /**
      *
      *
@@ -431,7 +420,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecsOrBuilder
         getFilterSpecsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -446,7 +434,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)
       SearchConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SearchConfig.newBuilder() to construct.
     private SearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -500,7 +487,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return A list containing the dataStores.
        */
       java.util.List<java.lang.String> getDataStoresList();
-
       /**
        *
        *
@@ -518,7 +504,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return The count of dataStores.
        */
       int getDataStoresCount();
-
       /**
        *
        *
@@ -537,7 +522,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return The dataStores at the given index.
        */
       java.lang.String getDataStores(int index);
-
       /**
        *
        *
@@ -572,7 +556,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                   .BoostSpec>
           getSpecList();
-
       /**
        *
        *
@@ -586,7 +569,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        */
       com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
           getSpec(int index);
-
       /**
        *
        *
@@ -599,7 +581,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * </code>
        */
       int getSpecCount();
-
       /**
        *
        *
@@ -616,7 +597,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                       .BoostSpecOrBuilder>
           getSpecOrBuilderList();
-
       /**
        *
        *
@@ -632,7 +612,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               .BoostSpecOrBuilder
           getSpecOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -648,7 +627,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
         BoostSpecsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use BoostSpecs.newBuilder() to construct.
       private BoostSpecs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -704,7 +682,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                     .BoostSpec.ConditionBoostSpec>
             getConditionBoostSpecsList();
-
         /**
          *
          *
@@ -722,7 +699,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
                 .ConditionBoostSpec
             getConditionBoostSpecs(int index);
-
         /**
          *
          *
@@ -738,7 +714,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          * </code>
          */
         int getConditionBoostSpecsCount();
-
         /**
          *
          *
@@ -758,7 +733,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                         .BoostSpec.ConditionBoostSpecOrBuilder>
             getConditionBoostSpecsOrBuilderList();
-
         /**
          *
          *
@@ -777,7 +751,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 .ConditionBoostSpecOrBuilder
             getConditionBoostSpecsOrBuilder(int index);
       }
-
       /**
        *
        *
@@ -796,7 +769,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec)
           BoostSpecOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use BoostSpec.newBuilder() to construct.
         private BoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -853,7 +825,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            * @return The condition.
            */
           java.lang.String getCondition();
-
           /**
            *
            *
@@ -919,7 +890,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            * @return Whether the boostControlSpec field is set.
            */
           boolean hasBoostControlSpec();
-
           /**
            *
            *
@@ -937,7 +907,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
                   .ConditionBoostSpec.BoostControlSpec
               getBoostControlSpec();
-
           /**
            *
            *
@@ -954,7 +923,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   .ConditionBoostSpec.BoostControlSpecOrBuilder
               getBoostControlSpecOrBuilder();
         }
-
         /**
          *
          *
@@ -970,7 +938,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec)
             ConditionBoostSpecOrBuilder {
           private static final long serialVersionUID = 0L;
-
           // Use ConditionBoostSpec.newBuilder() to construct.
           private ConditionBoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
@@ -1021,7 +988,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
              * @return The fieldName.
              */
             java.lang.String getFieldName();
-
             /**
              *
              *
@@ -1055,7 +1021,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
              * @return The enum numeric value on the wire for attributeType.
              */
             int getAttributeTypeValue();
-
             /**
              *
              *
@@ -1093,7 +1058,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
              * @return The enum numeric value on the wire for interpolationType.
              */
             int getInterpolationTypeValue();
-
             /**
              *
              *
@@ -1129,7 +1093,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                         .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
                 getControlPointsList();
-
             /**
              *
              *
@@ -1146,7 +1109,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
                     .ConditionBoostSpec.BoostControlSpec.ControlPoint
                 getControlPoints(int index);
-
             /**
              *
              *
@@ -1161,7 +1123,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
              * </code>
              */
             int getControlPointsCount();
-
             /**
              *
              *
@@ -1181,7 +1142,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                             .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
                             .ControlPointOrBuilder>
                 getControlPointsOrBuilderList();
-
             /**
              *
              *
@@ -1199,7 +1159,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     .ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder
                 getControlPointsOrBuilder(int index);
           }
-
           /**
            *
            *
@@ -1218,7 +1177,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec)
               BoostControlSpecOrBuilder {
             private static final long serialVersionUID = 0L;
-
             // Use BoostControlSpec.newBuilder() to construct.
             private BoostControlSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
               super(builder);
@@ -1317,7 +1275,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                * <code>ATTRIBUTE_TYPE_UNSPECIFIED = 0;</code>
                */
               public static final int ATTRIBUTE_TYPE_UNSPECIFIED_VALUE = 0;
-
               /**
                *
                *
@@ -1331,7 +1288,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                * <code>NUMERICAL = 1;</code>
                */
               public static final int NUMERICAL_VALUE = 1;
-
               /**
                *
                *
@@ -1486,7 +1442,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                * <code>INTERPOLATION_TYPE_UNSPECIFIED = 0;</code>
                */
               public static final int INTERPOLATION_TYPE_UNSPECIFIED_VALUE = 0;
-
               /**
                *
                *
@@ -1609,7 +1564,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                * @return The attributeValue.
                */
               java.lang.String getAttributeValue();
-
               /**
                *
                *
@@ -1642,7 +1596,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                */
               float getBoostAmount();
             }
-
             /**
              *
              *
@@ -1660,7 +1613,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
                 ControlPointOrBuilder {
               private static final long serialVersionUID = 0L;
-
               // Use ControlPoint.newBuilder() to construct.
               private ControlPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
                 super(builder);
@@ -1699,7 +1651,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
               @SuppressWarnings("serial")
               private volatile java.lang.Object attributeValue_ = "";
-
               /**
                *
                *
@@ -1728,7 +1679,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return s;
                 }
               }
-
               /**
                *
                *
@@ -1760,7 +1710,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
               public static final int BOOST_AMOUNT_FIELD_NUMBER = 2;
               private float boostAmount_ = 0F;
-
               /**
                *
                *
@@ -1984,7 +1933,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 Builder builder = new Builder(parent);
                 return builder;
               }
-
               /**
                *
                *
@@ -2223,7 +2171,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 private int bitField0_;
 
                 private java.lang.Object attributeValue_ = "";
-
                 /**
                  *
                  *
@@ -2252,7 +2199,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     return (java.lang.String) ref;
                   }
                 }
-
                 /**
                  *
                  *
@@ -2281,7 +2227,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     return (com.google.protobuf.ByteString) ref;
                   }
                 }
-
                 /**
                  *
                  *
@@ -2309,7 +2254,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   onChanged();
                   return this;
                 }
-
                 /**
                  *
                  *
@@ -2333,7 +2277,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   onChanged();
                   return this;
                 }
-
                 /**
                  *
                  *
@@ -2364,7 +2307,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
 
                 private float boostAmount_;
-
                 /**
                  *
                  *
@@ -2381,7 +2323,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 public float getBoostAmount() {
                   return boostAmount_;
                 }
-
                 /**
                  *
                  *
@@ -2402,7 +2343,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   onChanged();
                   return this;
                 }
-
                 /**
                  *
                  *
@@ -2499,7 +2439,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object fieldName_ = "";
-
             /**
              *
              *
@@ -2524,7 +2463,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 return s;
               }
             }
-
             /**
              *
              *
@@ -2552,7 +2490,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
             public static final int ATTRIBUTE_TYPE_FIELD_NUMBER = 2;
             private int attributeType_ = 0;
-
             /**
              *
              *
@@ -2575,7 +2512,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             public int getAttributeTypeValue() {
               return attributeType_;
             }
-
             /**
              *
              *
@@ -2612,7 +2548,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
             public static final int INTERPOLATION_TYPE_FIELD_NUMBER = 3;
             private int interpolationType_ = 0;
-
             /**
              *
              *
@@ -2631,7 +2566,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             public int getInterpolationTypeValue() {
               return interpolationType_;
             }
-
             /**
              *
              *
@@ -2669,7 +2603,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                         .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
                 controlPoints_;
-
             /**
              *
              *
@@ -2690,7 +2623,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 getControlPointsList() {
               return controlPoints_;
             }
-
             /**
              *
              *
@@ -2713,7 +2645,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 getControlPointsOrBuilderList() {
               return controlPoints_;
             }
-
             /**
              *
              *
@@ -2731,7 +2662,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             public int getControlPointsCount() {
               return controlPoints_.size();
             }
-
             /**
              *
              *
@@ -2751,7 +2681,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 getControlPoints(int index) {
               return controlPoints_.get(index);
             }
-
             /**
              *
              *
@@ -3013,7 +2942,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               Builder builder = new Builder(parent);
               return builder;
             }
-
             /**
              *
              *
@@ -3331,7 +3259,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               private int bitField0_;
 
               private java.lang.Object fieldName_ = "";
-
               /**
                *
                *
@@ -3355,7 +3282,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -3379,7 +3305,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -3402,7 +3327,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -3421,7 +3345,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -3447,7 +3370,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               }
 
               private int attributeType_ = 0;
-
               /**
                *
                *
@@ -3470,7 +3392,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               public int getAttributeTypeValue() {
                 return attributeType_;
               }
-
               /**
                *
                *
@@ -3496,7 +3417,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -3530,7 +3450,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                         .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType.UNRECOGNIZED
                     : result;
               }
-
               /**
                *
                *
@@ -3562,7 +3481,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -3589,7 +3507,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               }
 
               private int interpolationType_ = 0;
-
               /**
                *
                *
@@ -3608,7 +3525,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               public int getInterpolationTypeValue() {
                 return interpolationType_;
               }
-
               /**
                *
                *
@@ -3630,7 +3546,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -3661,7 +3576,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                         .UNRECOGNIZED
                     : result;
               }
-
               /**
                *
                *
@@ -3689,7 +3603,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -3759,7 +3672,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return controlPointsBuilder_.getMessageList();
                 }
               }
-
               /**
                *
                *
@@ -3780,7 +3692,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return controlPointsBuilder_.getCount();
                 }
               }
-
               /**
                *
                *
@@ -3803,7 +3714,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return controlPointsBuilder_.getMessage(index);
                 }
               }
-
               /**
                *
                *
@@ -3834,7 +3744,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -3862,7 +3771,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -3892,7 +3800,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -3923,7 +3830,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -3950,7 +3856,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -3978,7 +3883,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -4008,7 +3912,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -4032,7 +3935,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -4056,7 +3958,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 return this;
               }
-
               /**
                *
                *
@@ -4075,7 +3976,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   getControlPointsBuilder(int index) {
                 return getControlPointsFieldBuilder().getBuilder(index);
               }
-
               /**
                *
                *
@@ -4098,7 +3998,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return controlPointsBuilder_.getMessageOrBuilder(index);
                 }
               }
-
               /**
                *
                *
@@ -4124,7 +4023,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   return java.util.Collections.unmodifiableList(controlPoints_);
                 }
               }
-
               /**
                *
                *
@@ -4147,7 +4045,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                             .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
                             .getDefaultInstance());
               }
-
               /**
                *
                *
@@ -4171,7 +4068,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                             .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
                             .getDefaultInstance());
               }
-
               /**
                *
                *
@@ -4298,7 +4194,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object condition_ = "";
-
           /**
            *
            *
@@ -4329,7 +4224,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               return s;
             }
           }
-
           /**
            *
            *
@@ -4363,7 +4257,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
           public static final int BOOST_FIELD_NUMBER = 2;
           private float boost_ = 0F;
-
           /**
            *
            *
@@ -4401,7 +4294,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           private com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                   .BoostSpec.ConditionBoostSpec.BoostControlSpec
               boostControlSpec_;
-
           /**
            *
            *
@@ -4420,7 +4312,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           public boolean hasBoostControlSpec() {
             return ((bitField0_ & 0x00000001) != 0);
           }
-
           /**
            *
            *
@@ -4444,7 +4335,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance()
                 : boostControlSpec_;
           }
-
           /**
            *
            *
@@ -4686,7 +4576,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             Builder builder = new Builder(parent);
             return builder;
           }
-
           /**
            *
            *
@@ -4950,7 +4839,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             private int bitField0_;
 
             private java.lang.Object condition_ = "";
-
             /**
              *
              *
@@ -4980,7 +4868,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -5010,7 +4897,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -5039,7 +4925,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -5064,7 +4949,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -5096,7 +4980,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
 
             private float boost_;
-
             /**
              *
              *
@@ -5129,7 +5012,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             public float getBoost() {
               return boost_;
             }
-
             /**
              *
              *
@@ -5166,7 +5048,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -5213,7 +5094,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                         .BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder>
                 boostControlSpecBuilder_;
-
             /**
              *
              *
@@ -5231,7 +5111,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             public boolean hasBoostControlSpec() {
               return ((bitField0_ & 0x00000004) != 0);
             }
-
             /**
              *
              *
@@ -5258,7 +5137,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 return boostControlSpecBuilder_.getMessage();
               }
             }
-
             /**
              *
              *
@@ -5287,7 +5165,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -5313,7 +5190,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -5350,7 +5226,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               }
               return this;
             }
-
             /**
              *
              *
@@ -5373,7 +5248,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -5393,7 +5267,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               onChanged();
               return getBoostControlSpecFieldBuilder().getBuilder();
             }
-
             /**
              *
              *
@@ -5418,7 +5291,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     : boostControlSpec_;
               }
             }
-
             /**
              *
              *
@@ -5533,7 +5405,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                     .BoostSpec.ConditionBoostSpec>
             conditionBoostSpecs_;
-
         /**
          *
          *
@@ -5555,7 +5426,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             getConditionBoostSpecsList() {
           return conditionBoostSpecs_;
         }
-
         /**
          *
          *
@@ -5578,7 +5448,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             getConditionBoostSpecsOrBuilderList() {
           return conditionBoostSpecs_;
         }
-
         /**
          *
          *
@@ -5597,7 +5466,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public int getConditionBoostSpecsCount() {
           return conditionBoostSpecs_.size();
         }
-
         /**
          *
          *
@@ -5618,7 +5486,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             getConditionBoostSpecs(int index) {
           return conditionBoostSpecs_.get(index);
         }
-
         /**
          *
          *
@@ -5836,7 +5703,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -6154,7 +6020,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               return conditionBoostSpecsBuilder_.getMessageList();
             }
           }
-
           /**
            *
            *
@@ -6176,7 +6041,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               return conditionBoostSpecsBuilder_.getCount();
             }
           }
-
           /**
            *
            *
@@ -6200,7 +6064,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               return conditionBoostSpecsBuilder_.getMessage(index);
             }
           }
-
           /**
            *
            *
@@ -6232,7 +6095,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6261,7 +6123,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6292,7 +6153,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6324,7 +6184,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6352,7 +6211,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6381,7 +6239,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6411,7 +6268,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6436,7 +6292,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6461,7 +6316,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             }
             return this;
           }
-
           /**
            *
            *
@@ -6481,7 +6335,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               getConditionBoostSpecsBuilder(int index) {
             return getConditionBoostSpecsFieldBuilder().getBuilder(index);
           }
-
           /**
            *
            *
@@ -6505,7 +6358,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               return conditionBoostSpecsBuilder_.getMessageOrBuilder(index);
             }
           }
-
           /**
            *
            *
@@ -6531,7 +6383,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
             }
           }
-
           /**
            *
            *
@@ -6554,7 +6405,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                         .BoostSpec.ConditionBoostSpec.getDefaultInstance());
           }
-
           /**
            *
            *
@@ -6578,7 +6428,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                     com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                         .BoostSpec.ConditionBoostSpec.getDefaultInstance());
           }
-
           /**
            *
            *
@@ -6703,7 +6552,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList dataStores_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -6723,7 +6571,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ProtocolStringList getDataStoresList() {
         return dataStores_;
       }
-
       /**
        *
        *
@@ -6743,7 +6590,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public int getDataStoresCount() {
         return dataStores_.size();
       }
-
       /**
        *
        *
@@ -6764,7 +6610,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public java.lang.String getDataStores(int index) {
         return dataStores_.get(index);
       }
-
       /**
        *
        *
@@ -6793,7 +6638,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                   .BoostSpec>
           spec_;
-
       /**
        *
        *
@@ -6812,7 +6656,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           getSpecList() {
         return spec_;
       }
-
       /**
        *
        *
@@ -6832,7 +6675,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           getSpecOrBuilderList() {
         return spec_;
       }
-
       /**
        *
        *
@@ -6848,7 +6690,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public int getSpecCount() {
         return spec_.size();
       }
-
       /**
        *
        *
@@ -6865,7 +6706,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           getSpec(int index) {
         return spec_.get(index);
       }
-
       /**
        *
        *
@@ -7073,7 +6913,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -7358,7 +7197,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -7379,7 +7217,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           dataStores_.makeImmutable();
           return dataStores_;
         }
-
         /**
          *
          *
@@ -7399,7 +7236,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public int getDataStoresCount() {
           return dataStores_.size();
         }
-
         /**
          *
          *
@@ -7420,7 +7256,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public java.lang.String getDataStores(int index) {
           return dataStores_.get(index);
         }
-
         /**
          *
          *
@@ -7441,7 +7276,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public com.google.protobuf.ByteString getDataStoresBytes(int index) {
           return dataStores_.getByteString(index);
         }
-
         /**
          *
          *
@@ -7470,7 +7304,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7498,7 +7331,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7523,7 +7355,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7547,7 +7378,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7622,7 +7452,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return specBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -7641,7 +7470,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return specBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -7662,7 +7490,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return specBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -7690,7 +7517,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7716,7 +7542,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7743,7 +7568,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7771,7 +7595,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7796,7 +7619,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7822,7 +7644,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7849,7 +7670,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7871,7 +7691,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7893,7 +7712,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -7910,7 +7728,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             getSpecBuilder(int index) {
           return getSpecFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -7931,7 +7748,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return specBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -7954,7 +7770,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return java.util.Collections.unmodifiableList(spec_);
           }
         }
-
         /**
          *
          *
@@ -7974,7 +7789,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                       .BoostSpec.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -7995,7 +7809,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                       .BoostSpec.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8126,7 +7939,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return A list containing the dataStores.
        */
       java.util.List<java.lang.String> getDataStoresList();
-
       /**
        *
        *
@@ -8142,7 +7954,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return The count of dataStores.
        */
       int getDataStoresCount();
-
       /**
        *
        *
@@ -8159,7 +7970,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return The dataStores at the given index.
        */
       java.lang.String getDataStores(int index);
-
       /**
        *
        *
@@ -8191,7 +8001,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        * @return The filter.
        */
       java.lang.String getFilter();
-
       /**
        *
        *
@@ -8207,7 +8016,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getFilterBytes();
     }
-
     /**
      *
      *
@@ -8223,7 +8031,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
         FilterSpecsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use FilterSpecs.newBuilder() to construct.
       private FilterSpecs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8262,7 +8069,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList dataStores_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -8280,7 +8086,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public com.google.protobuf.ProtocolStringList getDataStoresList() {
         return dataStores_;
       }
-
       /**
        *
        *
@@ -8298,7 +8103,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public int getDataStoresCount() {
         return dataStores_.size();
       }
-
       /**
        *
        *
@@ -8317,7 +8121,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       public java.lang.String getDataStores(int index) {
         return dataStores_.get(index);
       }
-
       /**
        *
        *
@@ -8341,7 +8144,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -8367,7 +8169,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return s;
         }
       }
-
       /**
        *
        *
@@ -8582,7 +8383,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -8817,7 +8617,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -8836,7 +8635,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           dataStores_.makeImmutable();
           return dataStores_;
         }
-
         /**
          *
          *
@@ -8854,7 +8652,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public int getDataStoresCount() {
           return dataStores_.size();
         }
-
         /**
          *
          *
@@ -8873,7 +8670,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public java.lang.String getDataStores(int index) {
           return dataStores_.get(index);
         }
-
         /**
          *
          *
@@ -8892,7 +8688,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         public com.google.protobuf.ByteString getDataStoresBytes(int index) {
           return dataStores_.getByteString(index);
         }
-
         /**
          *
          *
@@ -8919,7 +8714,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8945,7 +8739,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8968,7 +8761,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8990,7 +8782,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9019,7 +8810,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
 
         private java.lang.Object filter_ = "";
-
         /**
          *
          *
@@ -9044,7 +8834,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -9069,7 +8858,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -9093,7 +8881,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9113,7 +8900,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9214,7 +9000,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
         boostSpecs_;
-
     /**
      *
      *
@@ -9236,7 +9021,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         getBoostSpecsList() {
       return boostSpecs_;
     }
-
     /**
      *
      *
@@ -9260,7 +9044,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         getBoostSpecsOrBuilderList() {
       return boostSpecs_;
     }
-
     /**
      *
      *
@@ -9280,7 +9063,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public int getBoostSpecsCount() {
       return boostSpecs_.size();
     }
-
     /**
      *
      *
@@ -9301,7 +9083,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         getBoostSpecs(int index) {
       return boostSpecs_.get(index);
     }
-
     /**
      *
      *
@@ -9329,7 +9110,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
         filterSpecs_;
-
     /**
      *
      *
@@ -9352,7 +9132,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         getFilterSpecsList() {
       return filterSpecs_;
     }
-
     /**
      *
      *
@@ -9377,7 +9156,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         getFilterSpecsOrBuilderList() {
       return filterSpecs_;
     }
-
     /**
      *
      *
@@ -9398,7 +9176,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public int getFilterSpecsCount() {
       return filterSpecs_.size();
     }
-
     /**
      *
      *
@@ -9420,7 +9197,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         getFilterSpecs(int index) {
       return filterSpecs_.get(index);
     }
-
     /**
      *
      *
@@ -9618,7 +9394,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -9963,7 +9738,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return boostSpecsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -9986,7 +9760,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return boostSpecsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -10010,7 +9783,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return boostSpecsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -10041,7 +9813,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10070,7 +9841,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10100,7 +9870,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10131,7 +9900,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10159,7 +9927,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10188,7 +9955,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10218,7 +9984,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10244,7 +10009,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10270,7 +10034,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10290,7 +10053,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           getBoostSpecsBuilder(int index) {
         return getBoostSpecsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -10314,7 +10076,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return boostSpecsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -10341,7 +10102,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(boostSpecs_);
         }
       }
-
       /**
        *
        *
@@ -10364,7 +10124,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -10388,7 +10147,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -10477,7 +10235,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return filterSpecsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -10501,7 +10258,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return filterSpecsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -10526,7 +10282,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return filterSpecsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -10558,7 +10313,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10588,7 +10342,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10619,7 +10372,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10651,7 +10403,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10680,7 +10431,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10710,7 +10460,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10742,7 +10491,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10769,7 +10517,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10796,7 +10543,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -10817,7 +10563,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           getFilterSpecsBuilder(int index) {
         return getFilterSpecsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -10842,7 +10587,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return filterSpecsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -10870,7 +10614,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(filterSpecs_);
         }
       }
-
       /**
        *
        *
@@ -10894,7 +10637,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -10919,7 +10661,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -11039,7 +10780,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -11065,7 +10805,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -11094,7 +10833,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   public static final int QUERY_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.TextInput query_;
-
   /**
    *
    *
@@ -11112,7 +10850,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -11130,7 +10867,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.dialogflow.v2.TextInput getQuery() {
     return query_ == null ? com.google.cloud.dialogflow.v2.TextInput.getDefaultInstance() : query_;
   }
-
   /**
    *
    *
@@ -11151,7 +10887,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationProfile_ = "";
-
   /**
    *
    *
@@ -11179,7 +10914,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -11212,7 +10946,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionId_ = "";
-
   /**
    *
    *
@@ -11242,7 +10975,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -11277,7 +11009,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
-
   /**
    *
    *
@@ -11305,7 +11036,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -11338,7 +11068,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -11367,7 +11096,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -11399,7 +11127,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   public static final int QUERY_SOURCE_FIELD_NUMBER = 7;
   private int querySource_ = 0;
-
   /**
    *
    *
@@ -11417,7 +11144,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
   public int getQuerySourceValue() {
     return querySource_;
   }
-
   /**
    *
    *
@@ -11442,7 +11168,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   public static final int END_USER_METADATA_FIELD_NUMBER = 9;
   private com.google.protobuf.Struct endUserMetadata_;
-
   /**
    *
    *
@@ -11475,7 +11200,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
   public boolean hasEndUserMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -11510,7 +11234,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Struct.getDefaultInstance()
         : endUserMetadata_;
   }
-
   /**
    *
    *
@@ -11546,7 +11269,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   public static final int SEARCH_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig searchConfig_;
-
   /**
    *
    *
@@ -11564,7 +11286,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
   public boolean hasSearchConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -11584,7 +11305,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.getDefaultInstance()
         : searchConfig_;
   }
-
   /**
    *
    *
@@ -11606,7 +11326,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
 
   public static final int EXACT_SEARCH_FIELD_NUMBER = 14;
   private boolean exactSearch_ = false;
-
   /**
    *
    *
@@ -11885,7 +11604,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -12226,7 +11944,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -12251,7 +11968,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -12276,7 +11992,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -12300,7 +12015,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12320,7 +12034,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12352,7 +12065,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.TextInput.Builder,
             com.google.cloud.dialogflow.v2.TextInputOrBuilder>
         queryBuilder_;
-
     /**
      *
      *
@@ -12369,7 +12081,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -12392,7 +12103,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return queryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12417,7 +12127,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12439,7 +12148,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12469,7 +12177,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -12491,7 +12198,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12508,7 +12214,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12529,7 +12234,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             : query_;
       }
     }
-
     /**
      *
      *
@@ -12559,7 +12263,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object conversationProfile_ = "";
-
     /**
      *
      *
@@ -12586,7 +12289,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -12613,7 +12315,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -12639,7 +12340,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12661,7 +12361,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12690,7 +12389,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object sessionId_ = "";
-
     /**
      *
      *
@@ -12719,7 +12417,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -12748,7 +12445,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -12776,7 +12472,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12800,7 +12495,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12831,7 +12525,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object conversation_ = "";
-
     /**
      *
      *
@@ -12858,7 +12551,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -12885,7 +12577,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -12911,7 +12602,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12933,7 +12623,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12962,7 +12651,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -12990,7 +12678,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -13018,7 +12705,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -13045,7 +12731,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13068,7 +12753,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13098,7 +12782,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
 
     private int querySource_ = 0;
-
     /**
      *
      *
@@ -13116,7 +12799,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public int getQuerySourceValue() {
       return querySource_;
     }
-
     /**
      *
      *
@@ -13137,7 +12819,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13159,7 +12840,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
           ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -13184,7 +12864,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13211,7 +12890,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         endUserMetadataBuilder_;
-
     /**
      *
      *
@@ -13244,7 +12922,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public boolean hasEndUserMetadata() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -13283,7 +12960,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return endUserMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13324,7 +13000,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13362,7 +13037,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13408,7 +13082,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -13446,7 +13119,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13479,7 +13151,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndUserMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13516,7 +13187,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             : endUserMetadata_;
       }
     }
-
     /**
      *
      *
@@ -13567,7 +13237,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder,
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder>
         searchConfigBuilder_;
-
     /**
      *
      *
@@ -13584,7 +13253,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public boolean hasSearchConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -13608,7 +13276,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         return searchConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13634,7 +13301,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13658,7 +13324,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13691,7 +13356,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -13713,7 +13377,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13731,7 +13394,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getSearchConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13754,7 +13416,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             : searchConfig_;
       }
     }
-
     /**
      *
      *
@@ -13784,7 +13445,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean exactSearch_;
-
     /**
      *
      *
@@ -13800,7 +13460,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     public boolean getExactSearch() {
       return exactSearch_;
     }
-
     /**
      *
      *
@@ -13820,7 +13479,6 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

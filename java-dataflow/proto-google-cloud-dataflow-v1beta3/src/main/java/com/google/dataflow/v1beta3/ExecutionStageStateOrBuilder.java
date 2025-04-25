@@ -36,7 +36,6 @@ public interface ExecutionStageStateOrBuilder
    * @return The executionStageName.
    */
   java.lang.String getExecutionStageName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ExecutionStageStateOrBuilder
    * @return The enum numeric value on the wire for executionStageState.
    */
   int getExecutionStageStateValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ExecutionStageStateOrBuilder
    * @return Whether the currentStateTime field is set.
    */
   boolean hasCurrentStateTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ExecutionStageStateOrBuilder
    * @return The currentStateTime.
    */
   com.google.protobuf.Timestamp getCurrentStateTime();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ProductSetPurgeConfigOrBuilder
    * @return The productSetId.
    */
   java.lang.String getProductSetId();
-
   /**
    *
    *

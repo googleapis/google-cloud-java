@@ -38,7 +38,6 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return Whether the voice field is set.
    */
   boolean hasVoice();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return The voice.
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return Whether the streamingAudioConfig field is set.
    */
   boolean hasStreamingAudioConfig();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return The streamingAudioConfig.
    */
   com.google.cloud.texttospeech.v1.StreamingAudioConfig getStreamingAudioConfig();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return Whether the customPronunciations field is set.
    */
   boolean hasCustomPronunciations();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return The customPronunciations.
    */
   com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations();
-
   /**
    *
    *

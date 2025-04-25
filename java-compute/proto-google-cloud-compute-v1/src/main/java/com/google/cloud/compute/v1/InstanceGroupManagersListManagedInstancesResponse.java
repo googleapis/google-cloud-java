@@ -33,7 +33,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse)
     InstanceGroupManagersListManagedInstancesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersListManagedInstancesResponse.newBuilder() to construct.
   private InstanceGroupManagersListManagedInstancesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ManagedInstance> managedInstances_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
   public java.util.List<com.google.cloud.compute.v1.ManagedInstance> getManagedInstancesList() {
     return managedInstances_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       getManagedInstancesOrBuilderList() {
     return managedInstances_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
   public int getManagedInstancesCount() {
     return managedInstances_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
   public com.google.cloud.compute.v1.ManagedInstance getManagedInstances(int index) {
     return managedInstances_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -399,7 +390,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +681,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return managedInstancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return managedInstancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return managedInstancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +899,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         int index) {
       return getManagedInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -952,7 +929,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return managedInstancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return java.util.Collections.unmodifiableList(managedInstances_);
       }
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       return getManagedInstancesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.ManagedInstance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -999,7 +973,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       return getManagedInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.ManagedInstance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1050,7 +1022,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1087,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1104,6 @@ public final class InstanceGroupManagersListManagedInstancesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

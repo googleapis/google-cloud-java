@@ -36,7 +36,6 @@ public interface DeleteInstantSnapshotRequestOrBuilder
    * @return The instantSnapshot.
    */
   java.lang.String getInstantSnapshot();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DeleteInstantSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DeleteInstantSnapshotRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DeleteInstantSnapshotRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface DeleteInstantSnapshotRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

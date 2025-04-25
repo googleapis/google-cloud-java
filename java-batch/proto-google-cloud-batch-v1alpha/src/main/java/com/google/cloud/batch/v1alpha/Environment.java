@@ -34,7 +34,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.Environment)
     EnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Environment.newBuilder() to construct.
   private Environment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,7 +93,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return The keyName.
      */
     java.lang.String getKeyName();
-
     /**
      *
      *
@@ -120,7 +118,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return The cipherText.
      */
     java.lang.String getCipherText();
-
     /**
      *
      *
@@ -134,14 +131,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCipherTextBytes();
   }
-
   /** Protobuf type {@code google.cloud.batch.v1alpha.Environment.KMSEnvMap} */
   public static final class KMSEnvMap extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.Environment.KMSEnvMap)
       KMSEnvMapOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use KMSEnvMap.newBuilder() to construct.
     private KMSEnvMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -177,7 +172,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object keyName_ = "";
-
     /**
      *
      *
@@ -201,7 +195,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -230,7 +223,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cipherText_ = "";
-
     /**
      *
      *
@@ -254,7 +246,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -449,7 +440,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /** Protobuf type {@code google.cloud.batch.v1alpha.Environment.KMSEnvMap} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -644,7 +634,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object keyName_ = "";
-
       /**
        *
        *
@@ -667,7 +656,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -690,7 +678,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -712,7 +699,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -730,7 +716,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -755,7 +740,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object cipherText_ = "";
-
       /**
        *
        *
@@ -778,7 +762,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -801,7 +784,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -823,7 +805,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -841,7 +822,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -956,7 +936,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getVariablesCount() {
     return internalGetVariables().getMap().size();
   }
-
   /**
    *
    *
@@ -973,14 +952,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetVariables().getMap().containsKey(key);
   }
-
   /** Use {@link #getVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getVariables() {
     return getVariablesMap();
   }
-
   /**
    *
    *
@@ -994,7 +971,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getVariablesMap() {
     return internalGetVariables().getMap();
   }
-
   /**
    *
    *
@@ -1015,7 +991,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1065,7 +1040,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getSecretVariablesCount() {
     return internalGetSecretVariables().getMap().size();
   }
-
   /**
    *
    *
@@ -1084,14 +1058,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetSecretVariables().getMap().containsKey(key);
   }
-
   /** Use {@link #getSecretVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSecretVariables() {
     return getSecretVariablesMap();
   }
-
   /**
    *
    *
@@ -1107,7 +1079,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getSecretVariablesMap() {
     return internalGetSecretVariables().getMap();
   }
-
   /**
    *
    *
@@ -1130,7 +1101,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSecretVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1156,7 +1126,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENCRYPTED_VARIABLES_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1alpha.Environment.KMSEnvMap encryptedVariables_;
-
   /**
    *
    *
@@ -1173,7 +1142,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEncryptedVariables() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1192,7 +1160,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1alpha.Environment.KMSEnvMap.getDefaultInstance()
         : encryptedVariables_;
   }
-
   /**
    *
    *
@@ -1409,7 +1376,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1702,7 +1668,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getVariablesCount() {
       return internalGetVariables().getMap().size();
     }
-
     /**
      *
      *
@@ -1719,14 +1684,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetVariables().getMap().containsKey(key);
     }
-
     /** Use {@link #getVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getVariables() {
       return getVariablesMap();
     }
-
     /**
      *
      *
@@ -1740,7 +1703,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getVariablesMap() {
       return internalGetVariables().getMap();
     }
-
     /**
      *
      *
@@ -1761,7 +1723,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1788,7 +1749,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableVariables().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1805,14 +1765,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableVariables().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableVariables() {
       bitField0_ |= 0x00000001;
       return internalGetMutableVariables().getMutableMap();
     }
-
     /**
      *
      *
@@ -1833,7 +1791,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1835,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getSecretVariablesCount() {
       return internalGetSecretVariables().getMap().size();
     }
-
     /**
      *
      *
@@ -1897,14 +1853,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetSecretVariables().getMap().containsKey(key);
     }
-
     /** Use {@link #getSecretVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSecretVariables() {
       return getSecretVariablesMap();
     }
-
     /**
      *
      *
@@ -1920,7 +1874,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getSecretVariablesMap() {
       return internalGetSecretVariables().getMap();
     }
-
     /**
      *
      *
@@ -1943,7 +1896,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetSecretVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1972,7 +1924,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSecretVariables().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1991,14 +1942,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSecretVariables().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSecretVariables() {
       bitField0_ |= 0x00000002;
       return internalGetMutableSecretVariables().getMutableMap();
     }
-
     /**
      *
      *
@@ -2021,7 +1970,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -2045,7 +1993,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.Environment.KMSEnvMap.Builder,
             com.google.cloud.batch.v1alpha.Environment.KMSEnvMapOrBuilder>
         encryptedVariablesBuilder_;
-
     /**
      *
      *
@@ -2061,7 +2008,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncryptedVariables() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2083,7 +2029,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return encryptedVariablesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2108,7 +2053,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2130,7 +2074,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2104,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2124,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2199,7 +2140,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEncryptedVariablesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2220,7 +2160,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             : encryptedVariables_;
       }
     }
-
     /**
      *
      *

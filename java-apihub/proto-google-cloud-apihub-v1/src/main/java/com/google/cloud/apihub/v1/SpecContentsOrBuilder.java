@@ -50,7 +50,6 @@ public interface SpecContentsOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

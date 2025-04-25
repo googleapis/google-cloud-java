@@ -33,7 +33,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RawImageDescriptor)
     RawImageDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RawImageDescriptor.newBuilder() to construct.
   private RawImageDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object format_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
 
   public static final int HEIGHT_FIELD_NUMBER = 2;
   private int height_ = 0;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
 
   public static final int WIDTH_FIELD_NUMBER = 3;
   private int width_ = 0;
-
   /**
    *
    *
@@ -332,7 +327,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -543,7 +537,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object format_ = "";
-
     /**
      *
      *
@@ -566,7 +559,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     private int height_;
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     public int getHeight() {
       return height_;
     }
-
     /**
      *
      *
@@ -690,7 +677,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     private int width_;
-
     /**
      *
      *
@@ -726,7 +711,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
     public int getWidth() {
       return width_;
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class RawImageDescriptor extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

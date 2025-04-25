@@ -33,7 +33,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.ComputeInsightsResponse)
     ComputeInsightsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComputeInsightsResponse.newBuilder() to construct.
   private ComputeInsightsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 1;
   private long count_ = 0L;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
   public boolean hasCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.areainsights.v1.PlaceInsight> placeInsights_;
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.maps.areainsights.v1.PlaceInsight> getPlaceInsightsList() {
     return placeInsights_;
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       getPlaceInsightsOrBuilderList() {
     return placeInsights_;
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
   public int getPlaceInsightsCount() {
     return placeInsights_.size();
   }
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
   public com.google.maps.areainsights.v1.PlaceInsight getPlaceInsights(int index) {
     return placeInsights_.get(index);
   }
-
   /**
    *
    *
@@ -353,7 +345,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -600,7 +591,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long count_;
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
     public boolean hasCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
     public long getCount() {
       return count_;
     }
-
     /**
      *
      *
@@ -652,7 +640,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
         return placeInsightsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
         return placeInsightsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -738,7 +723,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
         return placeInsightsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +829,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +849,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +869,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +919,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
     public com.google.maps.areainsights.v1.PlaceInsight.Builder getPlaceInsightsBuilder(int index) {
       return getPlaceInsightsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -962,7 +936,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
         return placeInsightsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -980,7 +953,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(placeInsights_);
       }
     }
-
     /**
      *
      *
@@ -994,7 +966,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       return getPlaceInsightsFieldBuilder()
           .addBuilder(com.google.maps.areainsights.v1.PlaceInsight.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1008,7 +979,6 @@ public final class ComputeInsightsResponse extends com.google.protobuf.Generated
       return getPlaceInsightsFieldBuilder()
           .addBuilder(index, com.google.maps.areainsights.v1.PlaceInsight.getDefaultInstance());
     }
-
     /**
      *
      *

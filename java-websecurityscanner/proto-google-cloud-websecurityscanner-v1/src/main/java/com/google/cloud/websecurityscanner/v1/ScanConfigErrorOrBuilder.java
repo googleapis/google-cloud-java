@@ -36,7 +36,6 @@ public interface ScanConfigErrorOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ScanConfigErrorOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
-
   /**
    *
    *

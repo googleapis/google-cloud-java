@@ -33,7 +33,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpQueryParameterMatch)
     HttpQueryParameterMatchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpQueryParameterMatch.newBuilder() to construct.
   private HttpQueryParameterMatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exactMatch_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   public boolean hasExactMatch() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   public static final int PRESENT_MATCH_FIELD_NUMBER = 67435841;
   private boolean presentMatch_ = false;
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   public boolean hasPresentMatch() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -244,7 +235,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regexMatch_ = "";
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   public boolean hasRegexMatch() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -515,7 +503,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +736,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object exactMatch_ = "";
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public boolean hasExactMatch() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -913,7 +892,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +976,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     }
 
     private boolean presentMatch_;
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public boolean hasPresentMatch() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1033,7 +1006,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public boolean getPresentMatch() {
       return presentMatch_;
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     }
 
     private java.lang.Object regexMatch_ = "";
-
     /**
      *
      *
@@ -1088,7 +1058,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public boolean hasRegexMatch() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1111,7 +1080,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1102,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1156,7 +1123,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1140,6 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface CreateSearchConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateSearchConfigRequestOrBuilder
    * @return Whether the searchConfig field is set.
    */
   boolean hasSearchConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateSearchConfigRequestOrBuilder
    * @return The searchConfig.
    */
   com.google.cloud.visionai.v1.SearchConfig getSearchConfig();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface CreateSearchConfigRequestOrBuilder
    * @return The searchConfigId.
    */
   java.lang.String getSearchConfigId();
-
   /**
    *
    *

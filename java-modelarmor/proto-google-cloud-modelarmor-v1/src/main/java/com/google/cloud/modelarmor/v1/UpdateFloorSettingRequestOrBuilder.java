@@ -38,7 +38,6 @@ public interface UpdateFloorSettingRequestOrBuilder
    * @return Whether the floorSetting field is set.
    */
   boolean hasFloorSetting();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateFloorSettingRequestOrBuilder
    * @return The floorSetting.
    */
   com.google.cloud.modelarmor.v1.FloorSetting getFloorSetting();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateFloorSettingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface UpdateFloorSettingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

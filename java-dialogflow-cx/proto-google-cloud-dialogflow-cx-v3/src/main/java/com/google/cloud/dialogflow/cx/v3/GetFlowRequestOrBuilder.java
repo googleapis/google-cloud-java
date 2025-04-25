@@ -40,7 +40,6 @@ public interface GetFlowRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface GetFlowRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

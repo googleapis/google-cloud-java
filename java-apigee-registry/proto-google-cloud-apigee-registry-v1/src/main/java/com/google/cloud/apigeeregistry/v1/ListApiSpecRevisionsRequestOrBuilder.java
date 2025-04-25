@@ -38,7 +38,6 @@ public interface ListApiSpecRevisionsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ListApiSpecRevisionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

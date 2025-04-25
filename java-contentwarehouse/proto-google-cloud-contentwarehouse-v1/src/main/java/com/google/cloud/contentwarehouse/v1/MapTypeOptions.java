@@ -33,7 +33,6 @@ public final class MapTypeOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.MapTypeOptions)
     MapTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MapTypeOptions.newBuilder() to construct.
   private MapTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class MapTypeOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

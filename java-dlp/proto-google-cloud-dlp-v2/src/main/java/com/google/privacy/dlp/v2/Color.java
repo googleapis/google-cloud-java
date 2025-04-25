@@ -33,7 +33,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Color)
     ColorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Color.newBuilder() to construct.
   private Color(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,7 +62,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RED_FIELD_NUMBER = 1;
   private float red_ = 0F;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GREEN_FIELD_NUMBER = 2;
   private float green_ = 0F;
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BLUE_FIELD_NUMBER = 3;
   private float blue_ = 0F;
-
   /**
    *
    *
@@ -296,7 +292,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -502,7 +497,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float red_;
-
     /**
      *
      *
@@ -518,7 +512,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     public float getRed() {
       return red_;
     }
-
     /**
      *
      *
@@ -538,7 +531,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -558,7 +550,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float green_;
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     public float getGreen() {
       return green_;
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +603,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float blue_;
-
     /**
      *
      *
@@ -630,7 +618,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
     public float getBlue() {
       return blue_;
     }
-
     /**
      *
      *
@@ -650,7 +637,6 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.InlineSecret)
     InlineSecretOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InlineSecret.newBuilder() to construct.
   private InlineSecret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -161,7 +158,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
   public int getEnvMapCount() {
     return internalGetEnvMap().getMap().size();
   }
-
   /**
    *
    *
@@ -183,14 +179,12 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetEnvMap().getMap().containsKey(key);
   }
-
   /** Use {@link #getEnvMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMap() {
     return getEnvMapMap();
   }
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMapMap() {
     return internalGetEnvMap().getMap();
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
         internalGetEnvMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -438,7 +430,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object kmsKeyName_ = "";
-
     /**
      *
      *
@@ -689,7 +679,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -713,7 +702,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +792,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     public int getEnvMapCount() {
       return internalGetEnvMap().getMap().size();
     }
-
     /**
      *
      *
@@ -828,14 +813,12 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetEnvMap().getMap().containsKey(key);
     }
-
     /** Use {@link #getEnvMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMap() {
       return getEnvMapMap();
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMapMap() {
       return internalGetEnvMap().getMap();
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
           internalGetEnvMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvMap().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -936,14 +916,12 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvMap().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getMutableEnvMap() {
       bitField0_ |= 0x00000002;
       return internalGetMutableEnvMap().getMutableMap();
     }
-
     /**
      *
      *
@@ -969,7 +947,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

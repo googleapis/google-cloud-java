@@ -34,7 +34,6 @@ public interface ListSearchHypernymsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchHypernym search_hypernyms = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.SearchHypernym> getSearchHypernymsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSearchHypernymsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchHypernym search_hypernyms = 1;</code>
    */
   com.google.cloud.visionai.v1.SearchHypernym getSearchHypernyms(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSearchHypernymsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchHypernym search_hypernyms = 1;</code>
    */
   int getSearchHypernymsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSearchHypernymsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.SearchHypernymOrBuilder>
       getSearchHypernymsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSearchHypernymsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

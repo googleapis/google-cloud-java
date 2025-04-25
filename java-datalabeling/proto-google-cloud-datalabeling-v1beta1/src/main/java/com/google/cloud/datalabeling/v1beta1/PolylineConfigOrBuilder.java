@@ -36,7 +36,6 @@ public interface PolylineConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PolylineConfigOrBuilder
    * @return The instructionMessage.
    */
   java.lang.String getInstructionMessage();
-
   /**
    *
    *

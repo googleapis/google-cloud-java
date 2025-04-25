@@ -38,7 +38,6 @@ public interface TagApiSpecRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface TagApiSpecRevisionRequestOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *

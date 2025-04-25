@@ -34,7 +34,6 @@ public interface ListProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Processor processors = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Processor> getProcessorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Processor processors = 1;</code>
    */
   com.google.cloud.visionai.v1.Processor getProcessors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Processor processors = 1;</code>
    */
   int getProcessorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListProcessorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ProcessorOrBuilder>
       getProcessorsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListProcessorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListProcessorsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListProcessorsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListProcessorsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

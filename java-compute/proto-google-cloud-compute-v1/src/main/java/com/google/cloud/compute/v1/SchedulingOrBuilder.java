@@ -36,7 +36,6 @@ public interface SchedulingOrBuilder
    * @return Whether the automaticRestart field is set.
    */
   boolean hasAutomaticRestart();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SchedulingOrBuilder
    * @return Whether the availabilityDomain field is set.
    */
   boolean hasAvailabilityDomain();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SchedulingOrBuilder
    * @return Whether the hostErrorTimeoutSeconds field is set.
    */
   boolean hasHostErrorTimeoutSeconds();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface SchedulingOrBuilder
    * @return Whether the instanceTerminationAction field is set.
    */
   boolean hasInstanceTerminationAction();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface SchedulingOrBuilder
    * @return The instanceTerminationAction.
    */
   java.lang.String getInstanceTerminationAction();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface SchedulingOrBuilder
    * @return Whether the localSsdRecoveryTimeout field is set.
    */
   boolean hasLocalSsdRecoveryTimeout();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface SchedulingOrBuilder
    * @return The localSsdRecoveryTimeout.
    */
   com.google.cloud.compute.v1.Duration getLocalSsdRecoveryTimeout();
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public interface SchedulingOrBuilder
    * @return Whether the locationHint field is set.
    */
   boolean hasLocationHint();
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface SchedulingOrBuilder
    * @return The locationHint.
    */
   java.lang.String getLocationHint();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public interface SchedulingOrBuilder
    * @return Whether the maxRunDuration field is set.
    */
   boolean hasMaxRunDuration();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface SchedulingOrBuilder
    * @return The maxRunDuration.
    */
   com.google.cloud.compute.v1.Duration getMaxRunDuration();
-
   /**
    *
    *
@@ -269,7 +258,6 @@ public interface SchedulingOrBuilder
    * @return Whether the minNodeCpus field is set.
    */
   boolean hasMinNodeCpus();
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public interface SchedulingOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity> getNodeAffinitiesList();
-
   /**
    *
    *
@@ -306,7 +293,6 @@ public interface SchedulingOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.SchedulingNodeAffinity getNodeAffinities(int index);
-
   /**
    *
    *
@@ -318,7 +304,6 @@ public interface SchedulingOrBuilder
    * </code>
    */
   int getNodeAffinitiesCount();
-
   /**
    *
    *
@@ -331,7 +316,6 @@ public interface SchedulingOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>
       getNodeAffinitiesOrBuilderList();
-
   /**
    *
    *
@@ -357,7 +341,6 @@ public interface SchedulingOrBuilder
    * @return Whether the onHostMaintenance field is set.
    */
   boolean hasOnHostMaintenance();
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public interface SchedulingOrBuilder
    * @return The onHostMaintenance.
    */
   java.lang.String getOnHostMaintenance();
-
   /**
    *
    *
@@ -394,7 +376,6 @@ public interface SchedulingOrBuilder
    * @return Whether the onInstanceStopAction field is set.
    */
   boolean hasOnInstanceStopAction();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -403,7 +384,6 @@ public interface SchedulingOrBuilder
    * @return The onInstanceStopAction.
    */
   com.google.cloud.compute.v1.SchedulingOnInstanceStopAction getOnInstanceStopAction();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
@@ -424,7 +404,6 @@ public interface SchedulingOrBuilder
    * @return Whether the preemptible field is set.
    */
   boolean hasPreemptible();
-
   /**
    *
    *
@@ -451,7 +430,6 @@ public interface SchedulingOrBuilder
    * @return Whether the provisioningModel field is set.
    */
   boolean hasProvisioningModel();
-
   /**
    *
    *
@@ -465,7 +443,6 @@ public interface SchedulingOrBuilder
    * @return The provisioningModel.
    */
   java.lang.String getProvisioningModel();
-
   /**
    *
    *
@@ -492,7 +469,6 @@ public interface SchedulingOrBuilder
    * @return Whether the terminationTime field is set.
    */
   boolean hasTerminationTime();
-
   /**
    *
    *
@@ -505,7 +481,6 @@ public interface SchedulingOrBuilder
    * @return The terminationTime.
    */
   java.lang.String getTerminationTime();
-
   /**
    *
    *

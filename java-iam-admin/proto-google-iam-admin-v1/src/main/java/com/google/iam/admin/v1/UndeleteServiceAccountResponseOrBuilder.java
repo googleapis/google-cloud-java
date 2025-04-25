@@ -36,7 +36,6 @@ public interface UndeleteServiceAccountResponseOrBuilder
    * @return Whether the restoredAccount field is set.
    */
   boolean hasRestoredAccount();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UndeleteServiceAccountResponseOrBuilder
    * @return The restoredAccount.
    */
   com.google.iam.admin.v1.ServiceAccount getRestoredAccount();
-
   /**
    *
    *

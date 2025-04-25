@@ -36,7 +36,6 @@ public interface BackendCustomMetricOrBuilder
    * @return Whether the dryRun field is set.
    */
   boolean hasDryRun();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BackendCustomMetricOrBuilder
    * @return Whether the maxUtilization field is set.
    */
   boolean hasMaxUtilization();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BackendCustomMetricOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BackendCustomMetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

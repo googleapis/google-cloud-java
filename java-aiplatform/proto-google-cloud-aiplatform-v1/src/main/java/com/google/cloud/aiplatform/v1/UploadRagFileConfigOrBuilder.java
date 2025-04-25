@@ -38,7 +38,6 @@ public interface UploadRagFileConfigOrBuilder
    * @return Whether the ragFileTransformationConfig field is set.
    */
   boolean hasRagFileTransformationConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UploadRagFileConfigOrBuilder
    * @return The ragFileTransformationConfig.
    */
   com.google.cloud.aiplatform.v1.RagFileTransformationConfig getRagFileTransformationConfig();
-
   /**
    *
    *

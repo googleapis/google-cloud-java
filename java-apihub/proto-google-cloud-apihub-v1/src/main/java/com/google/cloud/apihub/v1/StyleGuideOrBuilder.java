@@ -39,7 +39,6 @@ public interface StyleGuideOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface StyleGuideOrBuilder
    * @return The enum numeric value on the wire for linter.
    */
   int getLinterValue();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface StyleGuideOrBuilder
    * @return Whether the contents field is set.
    */
   boolean hasContents();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface StyleGuideOrBuilder
    * @return The contents.
    */
   com.google.cloud.apihub.v1.StyleGuideContents getContents();
-
   /**
    *
    *

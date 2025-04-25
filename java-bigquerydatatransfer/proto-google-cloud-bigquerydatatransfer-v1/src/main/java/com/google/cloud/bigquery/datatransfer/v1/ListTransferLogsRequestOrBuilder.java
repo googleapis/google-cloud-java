@@ -40,7 +40,6 @@ public interface ListTransferLogsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface ListTransferLogsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface ListTransferLogsRequestOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity>
       getMessageTypesList();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface ListTransferLogsRequestOrBuilder
    * @return The count of messageTypes.
    */
   int getMessageTypesCount();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ListTransferLogsRequestOrBuilder
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getMessageTypes(
       int index);
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface ListTransferLogsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for messageTypes.
    */
   java.util.List<java.lang.Integer> getMessageTypesValueList();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface SpaceConfigOrBuilder
    * @return The enum numeric value on the wire for accessType.
    */
   int getAccessTypeValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SpaceConfigOrBuilder
    * @return The enum numeric value on the wire for entryPointAccess.
    */
   int getEntryPointAccessValue();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface SpaceConfigOrBuilder
    * @return The enum numeric value on the wire for moderation.
    */
   int getModerationValue();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface SpaceConfigOrBuilder
    * @return Whether the moderationRestrictions field is set.
    */
   boolean hasModerationRestrictions();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface SpaceConfigOrBuilder
    * @return The moderationRestrictions.
    */
   com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions getModerationRestrictions();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface SpaceConfigOrBuilder
    * @return The enum numeric value on the wire for attendanceReportGenerationType.
    */
   int getAttendanceReportGenerationTypeValue();
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public interface SpaceConfigOrBuilder
    * @return Whether the artifactConfig field is set.
    */
   boolean hasArtifactConfig();
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public interface SpaceConfigOrBuilder
    * @return The artifactConfig.
    */
   com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig getArtifactConfig();
-
   /**
    *
    *

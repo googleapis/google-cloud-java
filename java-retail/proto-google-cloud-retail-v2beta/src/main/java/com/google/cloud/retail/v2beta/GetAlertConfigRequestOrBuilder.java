@@ -39,7 +39,6 @@ public interface GetAlertConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

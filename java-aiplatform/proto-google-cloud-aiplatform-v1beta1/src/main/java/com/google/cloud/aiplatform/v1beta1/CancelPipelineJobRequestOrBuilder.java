@@ -40,7 +40,6 @@ public interface CancelPipelineJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

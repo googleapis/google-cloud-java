@@ -47,7 +47,6 @@ public interface DeleteTargetSiteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

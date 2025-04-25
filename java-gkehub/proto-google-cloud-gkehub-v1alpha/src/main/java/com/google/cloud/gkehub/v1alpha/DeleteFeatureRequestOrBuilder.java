@@ -37,7 +37,6 @@ public interface DeleteFeatureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface DeleteFeatureRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

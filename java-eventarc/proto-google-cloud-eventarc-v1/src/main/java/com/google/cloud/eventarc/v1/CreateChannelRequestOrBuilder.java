@@ -38,7 +38,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CreateChannelRequestOrBuilder
    * @return Whether the channel field is set.
    */
   boolean hasChannel();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The channel.
    */
   com.google.cloud.eventarc.v1.Channel getChannel();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The channelId.
    */
   java.lang.String getChannelId();
-
   /**
    *
    *

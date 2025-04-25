@@ -36,7 +36,6 @@ public interface AwsSecurityGroupOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AwsSecurityGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

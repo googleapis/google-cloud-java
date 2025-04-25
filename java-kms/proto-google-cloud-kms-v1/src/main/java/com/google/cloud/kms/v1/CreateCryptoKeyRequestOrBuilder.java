@@ -39,7 +39,6 @@ public interface CreateCryptoKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateCryptoKeyRequestOrBuilder
    * @return The cryptoKeyId.
    */
   java.lang.String getCryptoKeyId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateCryptoKeyRequestOrBuilder
    * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateCryptoKeyRequestOrBuilder
    * @return The cryptoKey.
    */
   com.google.cloud.kms.v1.CryptoKey getCryptoKey();
-
   /**
    *
    *

@@ -46,7 +46,6 @@ public interface ExplainedDenyResourceOrBuilder
    * @return The enum numeric value on the wire for denyAccessState.
    */
   int getDenyAccessStateValue();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface ExplainedDenyResourceOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface ExplainedDenyResourceOrBuilder
    */
   java.util.List<com.google.cloud.policytroubleshooter.iam.v3.ExplainedDenyPolicy>
       getExplainedPoliciesList();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface ExplainedDenyResourceOrBuilder
    * </code>
    */
   com.google.cloud.policytroubleshooter.iam.v3.ExplainedDenyPolicy getExplainedPolicies(int index);
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ExplainedDenyResourceOrBuilder
    * </code>
    */
   int getExplainedPoliciesCount();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface ExplainedDenyResourceOrBuilder
   java.util.List<
           ? extends com.google.cloud.policytroubleshooter.iam.v3.ExplainedDenyPolicyOrBuilder>
       getExplainedPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public interface ExplainedDenyResourceOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
-
   /**
    *
    *

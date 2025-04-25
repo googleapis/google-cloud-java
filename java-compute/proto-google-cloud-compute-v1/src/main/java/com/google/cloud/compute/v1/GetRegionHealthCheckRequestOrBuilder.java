@@ -36,7 +36,6 @@ public interface GetRegionHealthCheckRequestOrBuilder
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetRegionHealthCheckRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetRegionHealthCheckRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

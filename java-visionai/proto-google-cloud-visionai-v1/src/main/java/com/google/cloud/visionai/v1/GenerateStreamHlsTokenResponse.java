@@ -33,7 +33,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GenerateStreamHlsTokenResponse)
     GenerateStreamHlsTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateStreamHlsTokenResponse.newBuilder() to construct.
   private GenerateStreamHlsTokenResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object token_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
 
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expirationTime_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
   public boolean hasExpirationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expirationTime_;
   }
-
   /**
    *
    *
@@ -356,7 +350,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -571,7 +564,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object token_ = "";
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expirationTimeBuilder_;
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
     public boolean hasExpirationTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
         return expirationTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class GenerateStreamHlsTokenResponse extends com.google.protobuf.Ge
             : expirationTime_;
       }
     }
-
     /**
      *
      *

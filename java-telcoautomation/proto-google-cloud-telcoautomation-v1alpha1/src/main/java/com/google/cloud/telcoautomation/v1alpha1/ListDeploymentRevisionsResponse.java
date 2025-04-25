@@ -33,7 +33,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.ListDeploymentRevisionsResponse)
     ListDeploymentRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDeploymentRevisionsResponse.newBuilder() to construct.
   private ListDeploymentRevisionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.telcoautomation.v1alpha1.Deployment> deployments_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloud.telcoautomation.v1alpha1.Deployment> getDeploymentsList() {
     return deployments_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       getDeploymentsOrBuilderList() {
     return deployments_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
   public int getDeploymentsCount() {
     return deployments_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
   public com.google.cloud.telcoautomation.v1alpha1.Deployment getDeployments(int index) {
     return deployments_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return deploymentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return deploymentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return deploymentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         int index) {
       return getDeploymentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -925,7 +903,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return deploymentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(deployments_);
       }
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       return getDeploymentsFieldBuilder()
           .addBuilder(com.google.cloud.telcoautomation.v1alpha1.Deployment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -973,7 +948,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.telcoautomation.v1alpha1.Deployment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1030,7 +1003,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1048,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class ListDeploymentRevisionsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

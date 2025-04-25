@@ -236,19 +236,6 @@ public final class LfpStoreServiceGrpc {
     return LfpStoreServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static LfpStoreServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LfpStoreServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<LfpStoreServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public LfpStoreServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new LfpStoreServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return LfpStoreServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -460,83 +447,6 @@ public final class LfpStoreServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LfpStoreService.
-   *
-   * <pre>
-   * Service for a [LFP
-   * partner](https://support.google.com/merchants/answer/7676652) to submit local
-   * stores for a merchant.
-   * </pre>
-   */
-  public static final class LfpStoreServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<LfpStoreServiceBlockingV2Stub> {
-    private LfpStoreServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected LfpStoreServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LfpStoreServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information about a store.
-     * </pre>
-     */
-    public com.google.shopping.merchant.lfp.v1beta.LfpStore getLfpStore(
-        com.google.shopping.merchant.lfp.v1beta.GetLfpStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetLfpStoreMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Inserts a store for the target merchant. If the store with the same store
-     * code already exists, it will be replaced.
-     * </pre>
-     */
-    public com.google.shopping.merchant.lfp.v1beta.LfpStore insertLfpStore(
-        com.google.shopping.merchant.lfp.v1beta.InsertLfpStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInsertLfpStoreMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a store for a target merchant.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteLfpStore(
-        com.google.shopping.merchant.lfp.v1beta.DeleteLfpStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteLfpStoreMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the stores of the target merchant, specified by the filter in
-     * `ListLfpStoresRequest`.
-     * </pre>
-     */
-    public com.google.shopping.merchant.lfp.v1beta.ListLfpStoresResponse listLfpStores(
-        com.google.shopping.merchant.lfp.v1beta.ListLfpStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListLfpStoresMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service LfpStoreService.
    *
    * <pre>
    * Service for a [LFP

@@ -36,7 +36,6 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the sourceGcsBucket field is set.
    */
   boolean hasSourceGcsBucket();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportDataRequestOrBuilder
    * @return The sourceGcsBucket.
    */
   com.google.cloud.parallelstore.v1.SourceGcsBucket getSourceGcsBucket();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the destinationParallelstore field is set.
    */
   boolean hasDestinationParallelstore();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ImportDataRequestOrBuilder
    * @return The destinationParallelstore.
    */
   com.google.cloud.parallelstore.v1.DestinationParallelstore getDestinationParallelstore();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ImportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface ImportDataRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public interface ImportDataRequestOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

@@ -73,7 +73,6 @@ public enum StoreApplicability implements com.google.protobuf.ProtocolMessageEnu
    * <code>STORE_APPLICABILITY_UNSPECIFIED = 0;</code>
    */
   public static final int STORE_APPLICABILITY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum StoreApplicability implements com.google.protobuf.ProtocolMessageEnu
    * <code>ALL_STORES = 1;</code>
    */
   public static final int ALL_STORES_VALUE = 1;
-
   /**
    *
    *

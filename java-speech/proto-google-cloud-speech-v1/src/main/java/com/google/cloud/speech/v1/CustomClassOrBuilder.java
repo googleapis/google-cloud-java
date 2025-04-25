@@ -36,7 +36,6 @@ public interface CustomClassOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface CustomClassOrBuilder
    * @return The customClassId.
    */
   java.lang.String getCustomClassId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface CustomClassOrBuilder
    * <code>repeated .google.cloud.speech.v1.CustomClass.ClassItem items = 3;</code>
    */
   java.util.List<com.google.cloud.speech.v1.CustomClass.ClassItem> getItemsList();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface CustomClassOrBuilder
    * <code>repeated .google.cloud.speech.v1.CustomClass.ClassItem items = 3;</code>
    */
   com.google.cloud.speech.v1.CustomClass.ClassItem getItems(int index);
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface CustomClassOrBuilder
    * <code>repeated .google.cloud.speech.v1.CustomClass.ClassItem items = 3;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface CustomClassOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1.CustomClass.ClassItemOrBuilder>
       getItemsOrBuilderList();
-
   /**
    *
    *

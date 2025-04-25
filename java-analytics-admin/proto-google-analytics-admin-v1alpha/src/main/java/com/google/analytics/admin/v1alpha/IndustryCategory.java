@@ -312,7 +312,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INDUSTRY_CATEGORY_UNSPECIFIED = 0;</code>
    */
   public static final int INDUSTRY_CATEGORY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -323,7 +322,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>AUTOMOTIVE = 1;</code>
    */
   public static final int AUTOMOTIVE_VALUE = 1;
-
   /**
    *
    *
@@ -334,7 +332,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>BUSINESS_AND_INDUSTRIAL_MARKETS = 2;</code>
    */
   public static final int BUSINESS_AND_INDUSTRIAL_MARKETS_VALUE = 2;
-
   /**
    *
    *
@@ -345,7 +342,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FINANCE = 3;</code>
    */
   public static final int FINANCE_VALUE = 3;
-
   /**
    *
    *
@@ -356,7 +352,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HEALTHCARE = 4;</code>
    */
   public static final int HEALTHCARE_VALUE = 4;
-
   /**
    *
    *
@@ -367,7 +362,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>TECHNOLOGY = 5;</code>
    */
   public static final int TECHNOLOGY_VALUE = 5;
-
   /**
    *
    *
@@ -378,7 +372,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>TRAVEL = 6;</code>
    */
   public static final int TRAVEL_VALUE = 6;
-
   /**
    *
    *
@@ -389,7 +382,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>OTHER = 7;</code>
    */
   public static final int OTHER_VALUE = 7;
-
   /**
    *
    *
@@ -400,7 +392,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ARTS_AND_ENTERTAINMENT = 8;</code>
    */
   public static final int ARTS_AND_ENTERTAINMENT_VALUE = 8;
-
   /**
    *
    *
@@ -411,7 +402,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>BEAUTY_AND_FITNESS = 9;</code>
    */
   public static final int BEAUTY_AND_FITNESS_VALUE = 9;
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>BOOKS_AND_LITERATURE = 10;</code>
    */
   public static final int BOOKS_AND_LITERATURE_VALUE = 10;
-
   /**
    *
    *
@@ -433,7 +422,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FOOD_AND_DRINK = 11;</code>
    */
   public static final int FOOD_AND_DRINK_VALUE = 11;
-
   /**
    *
    *
@@ -444,7 +432,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>GAMES = 12;</code>
    */
   public static final int GAMES_VALUE = 12;
-
   /**
    *
    *
@@ -455,7 +442,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HOBBIES_AND_LEISURE = 13;</code>
    */
   public static final int HOBBIES_AND_LEISURE_VALUE = 13;
-
   /**
    *
    *
@@ -466,7 +452,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HOME_AND_GARDEN = 14;</code>
    */
   public static final int HOME_AND_GARDEN_VALUE = 14;
-
   /**
    *
    *
@@ -477,7 +462,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INTERNET_AND_TELECOM = 15;</code>
    */
   public static final int INTERNET_AND_TELECOM_VALUE = 15;
-
   /**
    *
    *
@@ -488,7 +472,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LAW_AND_GOVERNMENT = 16;</code>
    */
   public static final int LAW_AND_GOVERNMENT_VALUE = 16;
-
   /**
    *
    *
@@ -499,7 +482,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NEWS = 17;</code>
    */
   public static final int NEWS_VALUE = 17;
-
   /**
    *
    *
@@ -510,7 +492,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ONLINE_COMMUNITIES = 18;</code>
    */
   public static final int ONLINE_COMMUNITIES_VALUE = 18;
-
   /**
    *
    *
@@ -521,7 +502,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>PEOPLE_AND_SOCIETY = 19;</code>
    */
   public static final int PEOPLE_AND_SOCIETY_VALUE = 19;
-
   /**
    *
    *
@@ -532,7 +512,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>PETS_AND_ANIMALS = 20;</code>
    */
   public static final int PETS_AND_ANIMALS_VALUE = 20;
-
   /**
    *
    *
@@ -543,7 +522,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>REAL_ESTATE = 21;</code>
    */
   public static final int REAL_ESTATE_VALUE = 21;
-
   /**
    *
    *
@@ -554,7 +532,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>REFERENCE = 22;</code>
    */
   public static final int REFERENCE_VALUE = 22;
-
   /**
    *
    *
@@ -565,7 +542,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SCIENCE = 23;</code>
    */
   public static final int SCIENCE_VALUE = 23;
-
   /**
    *
    *
@@ -576,7 +552,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SPORTS = 24;</code>
    */
   public static final int SPORTS_VALUE = 24;
-
   /**
    *
    *
@@ -587,7 +562,6 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>JOBS_AND_EDUCATION = 25;</code>
    */
   public static final int JOBS_AND_EDUCATION_VALUE = 25;
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface ConfigOrBuilder
    * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> getSupportedVersionsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface ConfigOrBuilder
    * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   com.google.cloud.deploy.v1.SkaffoldVersion getSupportedVersions(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface ConfigOrBuilder
    * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   int getSupportedVersionsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder>
       getSupportedVersionsOrBuilderList();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ConfigOrBuilder
    * @return The defaultSkaffoldVersion.
    */
   java.lang.String getDefaultSkaffoldVersion();
-
   /**
    *
    *

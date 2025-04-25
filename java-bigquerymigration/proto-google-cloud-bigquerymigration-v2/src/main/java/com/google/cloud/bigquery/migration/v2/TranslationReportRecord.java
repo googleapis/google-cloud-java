@@ -33,7 +33,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.TranslationReportRecord)
     TranslationReportRecordOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslationReportRecord.newBuilder() to construct.
   private TranslationReportRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
      * <code>INFO = 1;</code>
      */
     public static final int INFO_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
      * <code>WARNING = 2;</code>
      */
     public static final int WARNING_VALUE = 2;
-
     /**
      *
      *
@@ -254,7 +250,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
 
   public static final int SEVERITY_FIELD_NUMBER = 1;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -270,7 +265,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -294,7 +288,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
 
   public static final int SCRIPT_LINE_FIELD_NUMBER = 2;
   private int scriptLine_ = 0;
-
   /**
    *
    *
@@ -314,7 +307,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
 
   public static final int SCRIPT_COLUMN_FIELD_NUMBER = 3;
   private int scriptColumn_ = 0;
-
   /**
    *
    *
@@ -336,7 +328,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object category_ = "";
-
   /**
    *
    *
@@ -360,7 +351,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -389,7 +379,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -413,7 +402,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -640,7 +628,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -882,7 +869,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -899,7 +885,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -919,7 +904,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +925,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
           ? com.google.cloud.bigquery.migration.v2.TranslationReportRecord.Severity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -965,7 +948,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +968,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     }
 
     private int scriptLine_;
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     public int getScriptLine() {
       return scriptLine_;
     }
-
     /**
      *
      *
@@ -1024,7 +1004,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1024,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     }
 
     private int scriptColumn_;
-
     /**
      *
      *
@@ -1062,7 +1040,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     public int getScriptColumn() {
       return scriptColumn_;
     }
-
     /**
      *
      *
@@ -1083,7 +1060,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     }
 
     private java.lang.Object category_ = "";
-
     /**
      *
      *
@@ -1127,7 +1102,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1124,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1145,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1186,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1238,7 +1208,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1230,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1283,7 +1251,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1268,6 @@ public final class TranslationReportRecord extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

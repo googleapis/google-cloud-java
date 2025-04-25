@@ -33,7 +33,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.FunnelBreakdown)
     FunnelBreakdownOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FunnelBreakdown.newBuilder() to construct.
   private FunnelBreakdown(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int BREAKDOWN_DIMENSION_FIELD_NUMBER = 1;
   private com.google.analytics.data.v1alpha.Dimension breakdownDimension_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
   public boolean hasBreakdownDimension() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
         ? com.google.analytics.data.v1alpha.Dimension.getDefaultInstance()
         : breakdownDimension_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
 
   public static final int LIMIT_FIELD_NUMBER = 2;
   private long limit_ = 0L;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
   public boolean hasLimit() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -339,7 +333,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
             com.google.analytics.data.v1alpha.Dimension.Builder,
             com.google.analytics.data.v1alpha.DimensionOrBuilder>
         breakdownDimensionBuilder_;
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
     public boolean hasBreakdownDimension() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
         return breakdownDimensionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +638,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getBreakdownDimensionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
             : breakdownDimension_;
       }
     }
-
     /**
      *
      *
@@ -770,7 +754,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
     }
 
     private long limit_;
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
     public long getLimit() {
       return limit_;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class FunnelBreakdown extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

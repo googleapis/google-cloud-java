@@ -38,7 +38,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * @return The autonomousDatabase.
    */
   java.lang.String getAutonomousDatabase();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * @return The properties.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties getProperties();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -181,11 +175,9 @@ public interface AutonomousDatabaseBackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface AutonomousDatabaseBackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface AutonomousDatabaseBackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

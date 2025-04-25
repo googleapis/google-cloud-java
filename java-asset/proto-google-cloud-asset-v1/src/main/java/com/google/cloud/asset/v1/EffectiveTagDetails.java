@@ -33,7 +33,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.EffectiveTagDetails)
     EffectiveTagDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EffectiveTagDetails.newBuilder() to construct.
   private EffectiveTagDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,16 +69,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attachedResource_ = "";
-
   /**
    *
    *
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the ancestor from which
-   * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-   * are inherited, according to [tag
+   * of the ancestor from which an [effective_tag][] is inherited, according to
+   * [tag
    * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
    * </pre>
    *
@@ -91,16 +88,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
   public boolean hasAttachedResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the ancestor from which
-   * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-   * are inherited, according to [tag
+   * of the ancestor from which an [effective_tag][] is inherited, according to
+   * [tag
    * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
    * </pre>
    *
@@ -120,16 +115,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the ancestor from which
-   * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-   * are inherited, according to [tag
+   * of the ancestor from which an [effective_tag][] is inherited, according to
+   * [tag
    * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
    * </pre>
    *
@@ -154,7 +147,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.Tag> effectiveTags_;
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.asset.v1.Tag> getEffectiveTagsList() {
     return effectiveTags_;
   }
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       getEffectiveTagsOrBuilderList() {
     return effectiveTags_;
   }
-
   /**
    *
    *
@@ -218,7 +208,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
   public int getEffectiveTagsCount() {
     return effectiveTags_.size();
   }
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
   public com.google.cloud.asset.v1.Tag getEffectiveTags(int index) {
     return effectiveTags_.get(index);
   }
-
   /**
    *
    *
@@ -436,7 +424,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,16 +669,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object attachedResource_ = "";
-
     /**
      *
      *
      * <pre>
      * The [full resource
      * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of the ancestor from which
-     * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-     * are inherited, according to [tag
+     * of the ancestor from which an [effective_tag][] is inherited, according to
+     * [tag
      * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
      * </pre>
      *
@@ -702,16 +687,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
     public boolean hasAttachedResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
      * <pre>
      * The [full resource
      * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of the ancestor from which
-     * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-     * are inherited, according to [tag
+     * of the ancestor from which an [effective_tag][] is inherited, according to
+     * [tag
      * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
      * </pre>
      *
@@ -730,16 +713,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * The [full resource
      * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of the ancestor from which
-     * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-     * are inherited, according to [tag
+     * of the ancestor from which an [effective_tag][] is inherited, according to
+     * [tag
      * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
      * </pre>
      *
@@ -758,16 +739,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * The [full resource
      * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of the ancestor from which
-     * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-     * are inherited, according to [tag
+     * of the ancestor from which an [effective_tag][] is inherited, according to
+     * [tag
      * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
      * </pre>
      *
@@ -785,16 +764,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The [full resource
      * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of the ancestor from which
-     * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-     * are inherited, according to [tag
+     * of the ancestor from which an [effective_tag][] is inherited, according to
+     * [tag
      * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
      * </pre>
      *
@@ -808,16 +785,14 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The [full resource
      * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * of the ancestor from which
-     * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
-     * are inherited, according to [tag
+     * of the ancestor from which an [effective_tag][] is inherited, according to
+     * [tag
      * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
      * </pre>
      *
@@ -876,7 +851,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return effectiveTagsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -900,7 +874,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return effectiveTagsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -924,7 +897,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return effectiveTagsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -954,7 +926,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +953,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +982,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1011,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1037,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1064,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1091,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1117,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1143,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1199,7 +1162,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
     public com.google.cloud.asset.v1.Tag.Builder getEffectiveTagsBuilder(int index) {
       return getEffectiveTagsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1223,7 +1185,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return effectiveTagsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1248,7 +1209,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(effectiveTags_);
       }
     }
-
     /**
      *
      *
@@ -1269,7 +1229,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       return getEffectiveTagsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.Tag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1290,7 +1249,6 @@ public final class EffectiveTagDetails extends com.google.protobuf.GeneratedMess
       return getEffectiveTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.Tag.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface CreateImportJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateImportJobRequestOrBuilder
    * @return The importJobId.
    */
   java.lang.String getImportJobId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CreateImportJobRequestOrBuilder
    * @return Whether the importJob field is set.
    */
   boolean hasImportJob();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateImportJobRequestOrBuilder
    * @return The importJob.
    */
   com.google.cloud.kms.v1.ImportJob getImportJob();
-
   /**
    *
    *

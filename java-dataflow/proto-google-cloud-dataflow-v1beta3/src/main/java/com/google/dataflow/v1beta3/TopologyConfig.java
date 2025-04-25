@@ -34,7 +34,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.TopologyConfig)
     TopologyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TopologyConfig.newBuilder() to construct.
   private TopologyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ComputationTopology> computations_;
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.ComputationTopology> getComputationsList() {
     return computations_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       getComputationsOrBuilderList() {
     return computations_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public int getComputationsCount() {
     return computations_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.ComputationTopology getComputations(int index) {
     return computations_.get(index);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DataDiskAssignment> dataDiskAssignments_;
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       getDataDiskAssignmentsList() {
     return dataDiskAssignments_;
   }
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       getDataDiskAssignmentsOrBuilderList() {
     return dataDiskAssignments_;
   }
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public int getDataDiskAssignmentsCount() {
     return dataDiskAssignments_.size();
   }
-
   /**
    *
    *
@@ -217,7 +207,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.DataDiskAssignment getDataDiskAssignments(int index) {
     return dataDiskAssignments_.get(index);
   }
-
   /**
    *
    *
@@ -262,7 +251,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public int getUserStageToComputationNameMapCount() {
     return internalGetUserStageToComputationNameMap().getMap().size();
   }
-
   /**
    *
    *
@@ -279,14 +267,12 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetUserStageToComputationNameMap().getMap().containsKey(key);
   }
-
   /** Use {@link #getUserStageToComputationNameMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserStageToComputationNameMap() {
     return getUserStageToComputationNameMapMap();
   }
-
   /**
    *
    *
@@ -300,7 +286,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getUserStageToComputationNameMapMap() {
     return internalGetUserStageToComputationNameMap().getMap();
   }
-
   /**
    *
    *
@@ -322,7 +307,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         internalGetUserStageToComputationNameMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -347,7 +331,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORWARDING_KEY_BITS_FIELD_NUMBER = 4;
   private int forwardingKeyBits_ = 0;
-
   /**
    *
    *
@@ -366,7 +349,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERSISTENT_STATE_VERSION_FIELD_NUMBER = 5;
   private int persistentStateVersion_ = 0;
-
   /**
    *
    *
@@ -598,7 +580,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -989,7 +970,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return computationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1006,7 +986,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return computationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1023,7 +1002,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return computationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1025,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1067,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1110,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1130,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1150,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1188,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1201,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getComputationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1250,7 +1218,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return computationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1268,7 +1235,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(computations_);
       }
     }
-
     /**
      *
      *
@@ -1282,7 +1248,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       return getComputationsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.ComputationTopology.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1297,7 +1262,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       return getComputationsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.ComputationTopology.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1364,7 +1328,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return dataDiskAssignmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1381,7 +1344,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return dataDiskAssignmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1398,7 +1360,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return dataDiskAssignmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1422,7 +1383,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1403,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1425,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1448,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1468,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1488,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1553,7 +1508,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1527,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1593,7 +1546,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1607,7 +1559,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDataDiskAssignmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1625,7 +1576,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return dataDiskAssignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1643,7 +1593,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(dataDiskAssignments_);
       }
     }
-
     /**
      *
      *
@@ -1657,7 +1606,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       return getDataDiskAssignmentsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.DataDiskAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1672,7 +1620,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       return getDataDiskAssignmentsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.DataDiskAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1737,7 +1684,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public int getUserStageToComputationNameMapCount() {
       return internalGetUserStageToComputationNameMap().getMap().size();
     }
-
     /**
      *
      *
@@ -1754,14 +1700,12 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetUserStageToComputationNameMap().getMap().containsKey(key);
     }
-
     /** Use {@link #getUserStageToComputationNameMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserStageToComputationNameMap() {
       return getUserStageToComputationNameMapMap();
     }
-
     /**
      *
      *
@@ -1775,7 +1719,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getUserStageToComputationNameMapMap() {
       return internalGetUserStageToComputationNameMap().getMap();
     }
-
     /**
      *
      *
@@ -1797,7 +1740,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
           internalGetUserStageToComputationNameMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1825,7 +1767,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserStageToComputationNameMap().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1842,7 +1783,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserStageToComputationNameMap().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
@@ -1850,7 +1790,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableUserStageToComputationNameMap().getMutableMap();
     }
-
     /**
      *
      *
@@ -1871,7 +1810,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1889,7 +1827,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int forwardingKeyBits_;
-
     /**
      *
      *
@@ -1905,7 +1842,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public int getForwardingKeyBits() {
       return forwardingKeyBits_;
     }
-
     /**
      *
      *
@@ -1925,7 +1861,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1945,7 +1880,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int persistentStateVersion_;
-
     /**
      *
      *
@@ -1961,7 +1895,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPersistentStateVersion() {
       return persistentStateVersion_;
     }
-
     /**
      *
      *
@@ -1981,7 +1914,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

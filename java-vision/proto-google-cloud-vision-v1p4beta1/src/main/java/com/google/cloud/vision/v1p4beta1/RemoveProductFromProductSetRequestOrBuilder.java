@@ -41,7 +41,6 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
-
   /**
    *
    *

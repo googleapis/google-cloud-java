@@ -36,7 +36,6 @@ public interface ParameterDefinitionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ParameterDefinitionOrBuilder
    * @return The enum numeric value on the wire for parameterType.
    */
   int getParameterTypeValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ParameterDefinitionOrBuilder
    * @return Whether the minValue field is set.
    */
   boolean hasMinValue();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ParameterDefinitionOrBuilder
    * @return The minValue.
    */
   com.google.cloud.channel.v1.Value getMinValue();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface ParameterDefinitionOrBuilder
    * @return Whether the maxValue field is set.
    */
   boolean hasMaxValue();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface ParameterDefinitionOrBuilder
    * @return The maxValue.
    */
   com.google.cloud.channel.v1.Value getMaxValue();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface ParameterDefinitionOrBuilder
    * <code>repeated .google.cloud.channel.v1.Value allowed_values = 5;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Value> getAllowedValuesList();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface ParameterDefinitionOrBuilder
    * <code>repeated .google.cloud.channel.v1.Value allowed_values = 5;</code>
    */
   com.google.cloud.channel.v1.Value getAllowedValues(int index);
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface ParameterDefinitionOrBuilder
    * <code>repeated .google.cloud.channel.v1.Value allowed_values = 5;</code>
    */
   int getAllowedValuesCount();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public interface ParameterDefinitionOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ValueOrBuilder>
       getAllowedValuesOrBuilderList();
-
   /**
    *
    *

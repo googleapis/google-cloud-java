@@ -40,7 +40,6 @@ public interface DeployModelRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface DeployModelRequestOrBuilder
    * @return Whether the deployedModel field is set.
    */
   boolean hasDeployedModel();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface DeployModelRequestOrBuilder
    * @return The deployedModel.
    */
   com.google.cloud.aiplatform.v1beta1.DeployedModel getDeployedModel();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface DeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   int getTrafficSplitCount();
-
   /**
    *
    *
@@ -158,11 +154,9 @@ public interface DeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   boolean containsTrafficSplit(java.lang.String key);
-
   /** Use {@link #getTrafficSplitMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplit();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface DeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplitMap();
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public interface DeployModelRequestOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
    */
   int getTrafficSplitOrDefault(java.lang.String key, int defaultValue);
-
   /**
    *
    *

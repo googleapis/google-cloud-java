@@ -35,7 +35,6 @@ public interface PolicyViolationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.PolicyViolationDetails> getPolicyViolationDetailsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface PolicyViolationOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.PolicyViolationDetails getPolicyViolationDetails(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface PolicyViolationOrBuilder
    * </code>
    */
   int getPolicyViolationDetailsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface PolicyViolationOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.PolicyViolationDetailsOrBuilder>
       getPolicyViolationDetailsOrBuilderList();
-
   /**
    *
    *

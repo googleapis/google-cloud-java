@@ -33,7 +33,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IndexAssetMetadata)
     IndexAssetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IndexAssetMetadata.newBuilder() to construct.
   private IndexAssetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 4;
   private com.google.cloud.visionai.v1.IndexingStatus status_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.visionai.v1.IndexingStatus.getDefaultInstance()
         : status_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -406,7 +396,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +637,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.IndexingStatus.Builder,
             com.google.cloud.visionai.v1.IndexingStatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -663,7 +651,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +712,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +758,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -809,7 +790,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
             : status_;
       }
     }
-
     /**
      *
      *
@@ -842,7 +822,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -857,7 +836,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -876,7 +854,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -899,7 +876,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +895,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +941,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +955,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -999,7 +971,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1003,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1047,7 +1017,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1068,7 +1037,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1059,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1078,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1105,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1124,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1138,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1193,7 +1156,6 @@ public final class IndexAssetMetadata extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.SearchGrantsResponse)
     SearchGrantsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchGrantsResponse.newBuilder() to construct.
   private SearchGrantsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.privilegedaccessmanager.v1.Grant> grants_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.privilegedaccessmanager.v1.Grant> getGrantsList() {
     return grants_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       getGrantsOrBuilderList() {
     return grants_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
   public int getGrantsCount() {
     return grants_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.privilegedaccessmanager.v1.Grant getGrants(int index) {
     return grants_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return grantsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return grantsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return grantsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.privilegedaccessmanager.v1.Grant.Builder getGrantsBuilder(int index) {
       return getGrantsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -906,7 +884,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return grantsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -924,7 +901,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(grants_);
       }
     }
-
     /**
      *
      *
@@ -938,7 +914,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       return getGrantsFieldBuilder()
           .addBuilder(com.google.cloud.privilegedaccessmanager.v1.Grant.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -953,7 +928,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.privilegedaccessmanager.v1.Grant.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +960,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1009,7 +982,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1025,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1042,6 @@ public final class SearchGrantsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

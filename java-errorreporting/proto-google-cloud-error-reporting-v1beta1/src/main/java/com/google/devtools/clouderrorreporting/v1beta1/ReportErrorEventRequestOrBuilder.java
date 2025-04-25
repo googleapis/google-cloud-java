@@ -43,7 +43,6 @@ public interface ReportErrorEventRequestOrBuilder
    * @return The projectName.
    */
   java.lang.String getProjectName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ReportErrorEventRequestOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ReportErrorEventRequestOrBuilder
    * @return The event.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent();
-
   /**
    *
    *

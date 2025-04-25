@@ -1508,28 +1508,6 @@
  * }
  * }</pre>
  *
- * <p>======================= ReservationBlocksClient =======================
- *
- * <p>Service Description: The ReservationBlocks API.
- *
- * <p>Sample for ReservationBlocksClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (ReservationBlocksClient reservationBlocksClient = ReservationBlocksClient.create()) {
- *   String project = "project-309310695";
- *   String zone = "zone3744684";
- *   String reservation = "reservation-1563081780";
- *   String reservationBlock = "reservationBlock-1897000927";
- *   ReservationBlocksGetResponse response =
- *       reservationBlocksClient.get(project, zone, reservation, reservationBlock);
- * }
- * }</pre>
- *
  * <p>======================= ReservationsClient =======================
  *
  * <p>Service Description: The Reservations API.

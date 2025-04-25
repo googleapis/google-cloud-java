@@ -42,7 +42,6 @@ public interface ListGroupsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ListGroupsRequestOrBuilder
    * @return Whether the childrenOfGroup field is set.
    */
   boolean hasChildrenOfGroup();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ListGroupsRequestOrBuilder
    * @return The childrenOfGroup.
    */
   java.lang.String getChildrenOfGroup();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface ListGroupsRequestOrBuilder
    * @return Whether the ancestorsOfGroup field is set.
    */
   boolean hasAncestorsOfGroup();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ListGroupsRequestOrBuilder
    * @return The ancestorsOfGroup.
    */
   java.lang.String getAncestorsOfGroup();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public interface ListGroupsRequestOrBuilder
    * @return Whether the descendantsOfGroup field is set.
    */
   boolean hasDescendantsOfGroup();
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public interface ListGroupsRequestOrBuilder
    * @return The descendantsOfGroup.
    */
   java.lang.String getDescendantsOfGroup();
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public interface ListGroupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

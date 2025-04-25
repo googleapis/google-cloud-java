@@ -34,7 +34,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse)
     ReadTensorboardUsageResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReadTensorboardUsageResponse.newBuilder() to construct.
   private ReadTensorboardUsageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,7 +91,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
      * @return The username.
      */
     java.lang.String getUsername();
-
     /**
      *
      *
@@ -119,7 +117,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
      */
     long getViewCount();
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData)
       PerUserUsageDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PerUserUsageData.newBuilder() to construct.
     private PerUserUsageData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -172,7 +168,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -196,7 +191,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         return s;
       }
     }
-
     /**
      *
      *
@@ -223,7 +217,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
 
     public static final int VIEW_COUNT_FIELD_NUMBER = 2;
     private long viewCount_ = 0L;
-
     /**
      *
      *
@@ -419,7 +412,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -638,7 +630,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       private int bitField0_;
 
       private java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -661,7 +652,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -684,7 +674,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -706,7 +695,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -724,7 +712,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -749,7 +736,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       }
 
       private long viewCount_;
-
       /**
        *
        *
@@ -765,7 +751,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       public long getViewCount() {
         return viewCount_;
       }
-
       /**
        *
        *
@@ -785,7 +770,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -892,7 +876,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     java.util.List<
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData>
         getUserUsageDataList();
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
      */
     com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData
         getUserUsageData(int index);
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
      * </code>
      */
     int getUserUsageDataCount();
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                 com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse
                     .PerUserUsageDataOrBuilder>
         getUserUsageDataOrBuilderList();
-
     /**
      *
      *
@@ -951,7 +931,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageDataOrBuilder
         getUserUsageDataOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -967,7 +946,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData)
       PerMonthUsageDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PerMonthUsageData.newBuilder() to construct.
     private PerMonthUsageData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1006,7 +984,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     private java.util.List<
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData>
         userUsageData_;
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         getUserUsageDataList() {
       return userUsageData_;
     }
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         getUserUsageDataOrBuilderList() {
       return userUsageData_;
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     public int getUserUsageDataCount() {
       return userUsageData_.size();
     }
-
     /**
      *
      *
@@ -1077,7 +1051,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         getUserUsageData(int index) {
       return userUsageData_.get(index);
     }
-
     /**
      *
      *
@@ -1268,7 +1241,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1567,7 +1539,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return userUsageDataBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1586,7 +1557,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return userUsageDataBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1606,7 +1576,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return userUsageDataBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1633,7 +1602,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1658,7 +1626,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1684,7 +1651,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1711,7 +1677,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1735,7 +1700,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1760,7 +1724,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1787,7 +1750,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1809,7 +1771,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1831,7 +1792,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         }
         return this;
       }
-
       /**
        *
        *
@@ -1848,7 +1808,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           getUserUsageDataBuilder(int index) {
         return getUserUsageDataFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1869,7 +1828,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return userUsageDataBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1892,7 +1850,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           return java.util.Collections.unmodifiableList(userUsageData_);
         }
       }
-
       /**
        *
        *
@@ -1912,7 +1869,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                 com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1933,7 +1889,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                 com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2086,7 +2041,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
   public int getMonthlyUsageDataCount() {
     return internalGetMonthlyUsageData().getMap().size();
   }
-
   /**
    *
    *
@@ -2105,7 +2059,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     }
     return internalGetMonthlyUsageData().getMap().containsKey(key);
   }
-
   /** Use {@link #getMonthlyUsageDataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2115,7 +2068,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       getMonthlyUsageData() {
     return getMonthlyUsageDataMap();
   }
-
   /**
    *
    *
@@ -2134,7 +2086,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       getMonthlyUsageDataMap() {
     return internalGetMonthlyUsageData().getMap();
   }
-
   /**
    *
    *
@@ -2163,7 +2114,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         map = internalGetMonthlyUsageData().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2364,7 +2314,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2615,8 +2564,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           defaultEntry() {
         return MonthlyUsageDataDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MonthlyUsageDataConverter monthlyUsageDataConverter =
         new MonthlyUsageDataConverter();
@@ -2663,7 +2611,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     public int getMonthlyUsageDataCount() {
       return internalGetMonthlyUsageData().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -2682,7 +2629,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       }
       return internalGetMonthlyUsageData().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getMonthlyUsageDataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2692,7 +2638,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         getMonthlyUsageData() {
       return getMonthlyUsageDataMap();
     }
-
     /**
      *
      *
@@ -2711,7 +2656,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         getMonthlyUsageDataMap() {
       return internalGetMonthlyUsageData().getImmutableMap();
     }
-
     /**
      *
      *
@@ -2741,7 +2685,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           map = internalGetMutableMonthlyUsageData().ensureBuilderMap();
       return map.containsKey(key) ? monthlyUsageDataConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -2775,7 +2718,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       internalGetMutableMonthlyUsageData().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2794,7 +2736,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       internalGetMutableMonthlyUsageData().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2804,7 +2745,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       bitField0_ |= 0x00000001;
       return internalGetMutableMonthlyUsageData().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2829,7 +2769,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -2858,7 +2797,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface SubscriptionCostOrBuilder
    * @return The enum numeric value on the wire for period.
    */
   int getPeriodValue();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface SubscriptionCostOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface SubscriptionCostOrBuilder
    * @return The amount.
    */
   com.google.shopping.type.Price getAmount();
-
   /**
    *
    *

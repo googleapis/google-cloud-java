@@ -33,7 +33,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.LaunchTemplateRequest)
     LaunchTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LaunchTemplateRequest.newBuilder() to construct.
   private LaunchTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     private TemplateCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GCS_PATH_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasGcsPath() {
     return templateCase_ == 3;
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DYNAMIC_TEMPLATE_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDynamicTemplate() {
     return templateCase_ == 6;
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   public static final int LAUNCH_PARAMETERS_FIELD_NUMBER = 4;
   private com.google.dataflow.v1beta3.LaunchTemplateParameters launchParameters_;
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasLaunchParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         ? com.google.dataflow.v1beta3.LaunchTemplateParameters.getDefaultInstance()
         : launchParameters_;
   }
-
   /**
    *
    *
@@ -384,7 +370,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -410,7 +395,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -665,7 +649,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -968,7 +951,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -991,7 +973,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +995,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1016,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1033,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1057,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1096,7 +1073,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1129,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasGcsPath() {
       return templateCase_ == 3;
     }
-
     /**
      *
      *
@@ -1185,7 +1159,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1189,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1212,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1233,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1263,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
             com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.Builder,
             com.google.dataflow.v1beta3.DynamicTemplateLaunchParamsOrBuilder>
         dynamicTemplateBuilder_;
-
     /**
      *
      *
@@ -1309,7 +1278,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDynamicTemplate() {
       return templateCase_ == 6;
     }
-
     /**
      *
      *
@@ -1335,7 +1303,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1359,7 +1326,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       templateCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1346,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       templateCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1380,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       templateCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1405,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1418,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         getDynamicTemplateBuilder() {
       return getDynamicTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1477,7 +1439,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1478,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
             com.google.dataflow.v1beta3.LaunchTemplateParameters.Builder,
             com.google.dataflow.v1beta3.LaunchTemplateParametersOrBuilder>
         launchParametersBuilder_;
-
     /**
      *
      *
@@ -1533,7 +1493,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasLaunchParameters() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1555,7 +1514,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return launchParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1579,7 +1537,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1558,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1588,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1608,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1624,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getLaunchParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1691,7 +1644,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
             : launchParameters_;
       }
     }
-
     /**
      *
      *
@@ -1720,7 +1672,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1745,7 +1696,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1720,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1794,7 +1743,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1814,7 +1762,6 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

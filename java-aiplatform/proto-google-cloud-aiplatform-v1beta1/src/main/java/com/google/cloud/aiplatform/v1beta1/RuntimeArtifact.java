@@ -33,7 +33,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RuntimeArtifact)
     RuntimeArtifactOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RuntimeArtifact.newBuilder() to construct.
   private RuntimeArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ArtifactTypeSchema type_;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.ArtifactTypeSchema.getDefaultInstance()
         : type_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -302,7 +292,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       getProperties() {
     return getPropertiesMap();
   }
-
   /**
    *
    *
@@ -323,7 +312,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       getPropertiesMap() {
     return internalGetProperties().getMap();
   }
-
   /**
    *
    *
@@ -351,7 +339,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -413,7 +400,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
   public int getCustomPropertiesCount() {
     return internalGetCustomProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -436,7 +422,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetCustomProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getCustomPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -444,7 +429,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       getCustomProperties() {
     return getCustomPropertiesMap();
   }
-
   /**
    *
    *
@@ -465,7 +449,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       getCustomPropertiesMap() {
     return internalGetCustomProperties().getMap();
   }
-
   /**
    *
    *
@@ -493,7 +476,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         internalGetCustomProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -525,7 +507,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
 
   public static final int METADATA_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct metadata_;
-
   /**
    *
    *
@@ -541,7 +522,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -557,7 +537,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
-
   /**
    *
    *
@@ -804,7 +783,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1120,7 +1098,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1143,7 +1120,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1142,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1163,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1180,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1209,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.ArtifactTypeSchema.Builder,
             com.google.cloud.aiplatform.v1beta1.ArtifactTypeSchemaOrBuilder>
         typeBuilder_;
-
     /**
      *
      *
@@ -1251,7 +1223,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1272,7 +1243,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return typeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1265,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1285,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1313,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1332,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1346,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1399,7 +1364,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
             : type_;
       }
     }
-
     /**
      *
      *
@@ -1427,7 +1391,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -1450,7 +1413,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1473,7 +1435,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1495,7 +1456,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1473,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1557,8 +1516,7 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return PropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final PropertiesConverter propertiesConverter = new PropertiesConverter();
 
@@ -1601,7 +1559,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     public int getPropertiesCount() {
       return internalGetProperties().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1624,7 +1581,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetProperties().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1632,7 +1588,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         getProperties() {
       return getPropertiesMap();
     }
-
     /**
      *
      *
@@ -1653,7 +1608,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         getPropertiesMap() {
       return internalGetProperties().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1681,7 +1635,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
           internalGetMutableProperties().ensureBuilderMap();
       return map.containsKey(key) ? propertiesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1716,7 +1669,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       internalGetMutableProperties().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1739,7 +1691,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       internalGetMutableProperties().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Value>
@@ -1747,7 +1698,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return internalGetMutableProperties().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1775,7 +1725,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1803,7 +1752,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1855,8 +1803,7 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return CustomPropertiesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CustomPropertiesConverter customPropertiesConverter =
         new CustomPropertiesConverter();
@@ -1900,7 +1847,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     public int getCustomPropertiesCount() {
       return internalGetCustomProperties().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1923,7 +1869,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetCustomProperties().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getCustomPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1931,7 +1876,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         getCustomProperties() {
       return getCustomPropertiesMap();
     }
-
     /**
      *
      *
@@ -1952,7 +1896,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         getCustomPropertiesMap() {
       return internalGetCustomProperties().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1980,7 +1923,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
           internalGetMutableCustomProperties().ensureBuilderMap();
       return map.containsKey(key) ? customPropertiesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -2016,7 +1958,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       internalGetMutableCustomProperties().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2039,7 +1980,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       internalGetMutableCustomProperties().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Value>
@@ -2047,7 +1987,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000010;
       return internalGetMutableCustomProperties().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2075,7 +2014,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2041,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -2141,7 +2078,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -2156,7 +2092,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2175,7 +2110,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2198,7 +2132,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2218,7 +2151,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2246,7 +2178,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2266,7 +2197,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2281,7 +2211,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2298,7 +2227,6 @@ public final class RuntimeArtifact extends com.google.protobuf.GeneratedMessageV
         return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
       }
     }
-
     /**
      *
      *

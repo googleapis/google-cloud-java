@@ -34,7 +34,6 @@ public final class ImportFeatureValuesOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata)
     ImportFeatureValuesOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportFeatureValuesOperationMetadata.newBuilder() to construct.
   private ImportFeatureValuesOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ImportFeatureValuesOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ImportFeatureValuesOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ImportFeatureValuesOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ImportFeatureValuesOperationMetadata
 
   public static final int IMPORTED_ENTITY_COUNT_FIELD_NUMBER = 2;
   private long importedEntityCount_ = 0L;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class ImportFeatureValuesOperationMetadata
 
   public static final int IMPORTED_FEATURE_VALUE_COUNT_FIELD_NUMBER = 3;
   private long importedFeatureValueCount_ = 0L;
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class ImportFeatureValuesOperationMetadata
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ImportFeatureValuesOperationMetadata
   public com.google.protobuf.ProtocolStringList getSourceUrisList() {
     return sourceUris_;
   }
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public final class ImportFeatureValuesOperationMetadata
   public int getSourceUrisCount() {
     return sourceUris_.size();
   }
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public final class ImportFeatureValuesOperationMetadata
   public java.lang.String getSourceUris(int index) {
     return sourceUris_.get(index);
   }
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class ImportFeatureValuesOperationMetadata
 
   public static final int INVALID_ROW_COUNT_FIELD_NUMBER = 6;
   private long invalidRowCount_ = 0L;
-
   /**
    *
    *
@@ -253,7 +242,6 @@ public final class ImportFeatureValuesOperationMetadata
 
   public static final int TIMESTAMP_OUTSIDE_RETENTION_ROWS_COUNT_FIELD_NUMBER = 7;
   private long timestampOutsideRetentionRowsCount_ = 0L;
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public final class ImportFeatureValuesOperationMetadata
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList blockingOperationIds_ = emptyLongList();
-
   /**
    *
    *
@@ -292,7 +279,6 @@ public final class ImportFeatureValuesOperationMetadata
   public java.util.List<java.lang.Long> getBlockingOperationIdsList() {
     return blockingOperationIds_;
   }
-
   /**
    *
    *
@@ -308,7 +294,6 @@ public final class ImportFeatureValuesOperationMetadata
   public int getBlockingOperationIdsCount() {
     return blockingOperationIds_.size();
   }
-
   /**
    *
    *
@@ -578,7 +563,6 @@ public final class ImportFeatureValuesOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -898,7 +882,6 @@ public final class ImportFeatureValuesOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -913,7 +896,6 @@ public final class ImportFeatureValuesOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -934,7 +916,6 @@ public final class ImportFeatureValuesOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -958,7 +939,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +959,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +988,6 @@ public final class ImportFeatureValuesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1007,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1022,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1065,7 +1041,6 @@ public final class ImportFeatureValuesOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class ImportFeatureValuesOperationMetadata
     }
 
     private long importedEntityCount_;
-
     /**
      *
      *
@@ -1109,7 +1083,6 @@ public final class ImportFeatureValuesOperationMetadata
     public long getImportedEntityCount() {
       return importedEntityCount_;
     }
-
     /**
      *
      *
@@ -1129,7 +1102,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1121,6 @@ public final class ImportFeatureValuesOperationMetadata
     }
 
     private long importedFeatureValueCount_;
-
     /**
      *
      *
@@ -1165,7 +1136,6 @@ public final class ImportFeatureValuesOperationMetadata
     public long getImportedFeatureValueCount() {
       return importedFeatureValueCount_;
     }
-
     /**
      *
      *
@@ -1185,7 +1155,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1182,6 @@ public final class ImportFeatureValuesOperationMetadata
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1229,7 +1197,6 @@ public final class ImportFeatureValuesOperationMetadata
       sourceUris_.makeImmutable();
       return sourceUris_;
     }
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class ImportFeatureValuesOperationMetadata
     public int getSourceUrisCount() {
       return sourceUris_.size();
     }
-
     /**
      *
      *
@@ -1260,7 +1226,6 @@ public final class ImportFeatureValuesOperationMetadata
     public java.lang.String getSourceUris(int index) {
       return sourceUris_.get(index);
     }
-
     /**
      *
      *
@@ -1276,7 +1241,6 @@ public final class ImportFeatureValuesOperationMetadata
     public com.google.protobuf.ByteString getSourceUrisBytes(int index) {
       return sourceUris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1300,7 +1264,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1286,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1305,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1323,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1348,6 @@ public final class ImportFeatureValuesOperationMetadata
     }
 
     private long invalidRowCount_;
-
     /**
      *
      *
@@ -1408,7 +1367,6 @@ public final class ImportFeatureValuesOperationMetadata
     public long getInvalidRowCount() {
       return invalidRowCount_;
     }
-
     /**
      *
      *
@@ -1432,7 +1390,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1413,6 @@ public final class ImportFeatureValuesOperationMetadata
     }
 
     private long timestampOutsideRetentionRowsCount_;
-
     /**
      *
      *
@@ -1473,7 +1429,6 @@ public final class ImportFeatureValuesOperationMetadata
     public long getTimestampOutsideRetentionRowsCount() {
       return timestampOutsideRetentionRowsCount_;
     }
-
     /**
      *
      *
@@ -1494,7 +1449,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1476,6 @@ public final class ImportFeatureValuesOperationMetadata
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -1539,7 +1492,6 @@ public final class ImportFeatureValuesOperationMetadata
       blockingOperationIds_.makeImmutable();
       return blockingOperationIds_;
     }
-
     /**
      *
      *
@@ -1555,7 +1507,6 @@ public final class ImportFeatureValuesOperationMetadata
     public int getBlockingOperationIdsCount() {
       return blockingOperationIds_.size();
     }
-
     /**
      *
      *
@@ -1572,7 +1523,6 @@ public final class ImportFeatureValuesOperationMetadata
     public long getBlockingOperationIds(int index) {
       return blockingOperationIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -1595,7 +1545,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1566,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1638,7 +1586,6 @@ public final class ImportFeatureValuesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *

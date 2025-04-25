@@ -34,7 +34,6 @@ public final class InterconnectsGetMacsecConfigResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectsGetMacsecConfigResponse)
     InterconnectsGetMacsecConfigResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectsGetMacsecConfigResponse.newBuilder() to construct.
   private InterconnectsGetMacsecConfigResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InterconnectsGetMacsecConfigResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InterconnectsGetMacsecConfigResponse
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class InterconnectsGetMacsecConfigResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class InterconnectsGetMacsecConfigResponse
 
   public static final int RESULT_FIELD_NUMBER = 139315229;
   private com.google.cloud.compute.v1.InterconnectMacsecConfig result_;
-
   /**
    * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
    *
@@ -148,7 +143,6 @@ public final class InterconnectsGetMacsecConfigResponse
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
    *
@@ -160,7 +154,6 @@ public final class InterconnectsGetMacsecConfigResponse
         ? com.google.cloud.compute.v1.InterconnectMacsecConfig.getDefaultInstance()
         : result_;
   }
-
   /** <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectMacsecConfigOrBuilder getResultOrBuilder() {
@@ -348,7 +341,6 @@ public final class InterconnectsGetMacsecConfigResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +559,6 @@ public final class InterconnectsGetMacsecConfigResponse
     private int bitField0_;
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class InterconnectsGetMacsecConfigResponse
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -605,7 +595,6 @@ public final class InterconnectsGetMacsecConfigResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -628,7 +617,6 @@ public final class InterconnectsGetMacsecConfigResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -650,7 +638,6 @@ public final class InterconnectsGetMacsecConfigResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +655,6 @@ public final class InterconnectsGetMacsecConfigResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +684,6 @@ public final class InterconnectsGetMacsecConfigResponse
             com.google.cloud.compute.v1.InterconnectMacsecConfig.Builder,
             com.google.cloud.compute.v1.InterconnectMacsecConfigOrBuilder>
         resultBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      *
@@ -707,7 +692,6 @@ public final class InterconnectsGetMacsecConfigResponse
     public boolean hasResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      *
@@ -722,7 +706,6 @@ public final class InterconnectsGetMacsecConfigResponse
         return resultBuilder_.getMessage();
       }
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */
@@ -739,7 +722,6 @@ public final class InterconnectsGetMacsecConfigResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */
@@ -754,7 +736,6 @@ public final class InterconnectsGetMacsecConfigResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */
@@ -777,7 +758,6 @@ public final class InterconnectsGetMacsecConfigResponse
       }
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */
@@ -791,7 +771,6 @@ public final class InterconnectsGetMacsecConfigResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */
@@ -800,7 +779,6 @@ public final class InterconnectsGetMacsecConfigResponse
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */
@@ -813,7 +791,6 @@ public final class InterconnectsGetMacsecConfigResponse
             : result_;
       }
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.InterconnectMacsecConfig result = 139315229;</code>
      */

@@ -40,7 +40,6 @@ public interface GetOccurrenceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

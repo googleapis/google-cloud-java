@@ -37,7 +37,6 @@ public interface ImportProductSetsInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ImportProductSetsInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource getGcsSource();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface DeleteSecuritySettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

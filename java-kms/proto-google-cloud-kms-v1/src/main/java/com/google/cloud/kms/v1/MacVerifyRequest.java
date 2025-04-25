@@ -34,7 +34,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.MacVerifyRequest)
     MacVerifyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MacVerifyRequest.newBuilder() to construct.
   private MacVerifyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int DATA_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int DATA_CRC32C_FIELD_NUMBER = 3;
   private com.google.protobuf.Int64Value dataCrc32C_;
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasDataCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Int64Value getDataCrc32C() {
     return dataCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : dataCrc32C_;
   }
-
   /**
    *
    *
@@ -255,7 +248,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int MAC_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString mac_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int MAC_CRC32C_FIELD_NUMBER = 5;
   private com.google.protobuf.Int64Value macCrc32C_;
-
   /**
    *
    *
@@ -307,7 +298,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasMacCrc32C() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -340,7 +330,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Int64Value getMacCrc32C() {
     return macCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : macCrc32C_;
   }
-
   /**
    *
    *
@@ -576,7 +565,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -835,7 +823,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -862,7 +849,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +875,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -915,7 +900,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +921,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +949,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -984,7 +966,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
-
     /**
      *
      *
@@ -1008,7 +989,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1015,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         dataCrc32CBuilder_;
-
     /**
      *
      *
@@ -1068,7 +1047,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasDataCrc32C() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1107,7 +1085,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
         return dataCrc32CBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1125,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1162,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1207,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1244,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1276,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDataCrc32CFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1340,7 +1312,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
             : dataCrc32C_;
       }
     }
-
     /**
      *
      *
@@ -1386,7 +1357,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.ByteString mac_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1402,7 +1372,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getMac() {
       return mac_;
     }
-
     /**
      *
      *
@@ -1424,7 +1393,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1417,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         macCrc32CBuilder_;
-
     /**
      *
      *
@@ -1481,7 +1448,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasMacCrc32C() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1519,7 +1485,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
         return macCrc32CBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1559,7 +1524,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1560,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1604,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1678,7 +1640,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1710,7 +1671,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getMacCrc32CFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1746,7 +1706,6 @@ public final class MacVerifyRequest extends com.google.protobuf.GeneratedMessage
             : macCrc32C_;
       }
     }
-
     /**
      *
      *

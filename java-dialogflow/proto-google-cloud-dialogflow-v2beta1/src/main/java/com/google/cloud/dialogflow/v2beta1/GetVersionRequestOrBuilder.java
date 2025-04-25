@@ -42,7 +42,6 @@ public interface GetVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

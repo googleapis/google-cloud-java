@@ -35,7 +35,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1.SetLabelsRequest)
     SetLabelsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetLabelsRequest.newBuilder() to construct.
   private SetLabelsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -242,7 +236,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   public int getResourceLabelsCount() {
     return internalGetResourceLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -317,14 +309,12 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     }
     return internalGetResourceLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
     return getResourceLabelsMap();
   }
-
   /**
    *
    *
@@ -339,7 +329,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
     return internalGetResourceLabels().getMap();
   }
-
   /**
    *
    *
@@ -361,7 +350,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -388,7 +376,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelFingerprint_ = "";
-
   /**
    *
    *
@@ -417,7 +404,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -451,7 +437,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -476,7 +461,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -713,7 +697,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1000,7 +983,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1028,7 +1010,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1037,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1063,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1085,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1114,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1165,7 +1142,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1170,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1197,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1246,7 +1220,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1277,7 +1250,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1304,7 +1276,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1331,7 +1302,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1327,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1348,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1403,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     public int getResourceLabelsCount() {
       return internalGetResourceLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1454,14 +1421,12 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       }
       return internalGetResourceLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getResourceLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
       return getResourceLabelsMap();
     }
-
     /**
      *
      *
@@ -1477,7 +1442,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
       return internalGetResourceLabels().getMap();
     }
-
     /**
      *
      *
@@ -1500,7 +1464,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1529,7 +1492,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       internalGetMutableResourceLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1548,14 +1510,12 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       internalGetMutableResourceLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableResourceLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1578,7 +1538,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1556,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object labelFingerprint_ = "";
-
     /**
      *
      *
@@ -1625,7 +1583,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1653,7 +1610,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1680,7 +1636,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1703,7 +1658,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1733,7 +1687,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1757,7 +1710,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1781,7 +1733,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1804,7 +1755,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1823,7 +1773,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

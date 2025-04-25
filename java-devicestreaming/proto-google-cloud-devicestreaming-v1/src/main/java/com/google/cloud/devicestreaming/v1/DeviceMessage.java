@@ -33,7 +33,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.DeviceMessage)
     DeviceMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeviceMessage.newBuilder() to construct.
   private DeviceMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     private ContentsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_UPDATE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatusUpdate() {
     return contentsCase_ == 1;
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.StatusUpdate.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREAM_STATUS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreamStatus() {
     return contentsCase_ == 2;
   }
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.StreamStatus.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREAM_DATA_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreamData() {
     return contentsCase_ == 3;
   }
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.StreamData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -481,7 +470,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -734,7 +722,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.StatusUpdate.Builder,
             com.google.cloud.devicestreaming.v1.StatusUpdateOrBuilder>
         statusUpdateBuilder_;
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatusUpdate() {
       return contentsCase_ == 1;
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StatusUpdate.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.StatusUpdate.Builder getStatusUpdateBuilder() {
       return getStatusUpdateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -913,7 +893,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StatusUpdate.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -952,7 +931,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.StreamStatus.Builder,
             com.google.cloud.devicestreaming.v1.StreamStatusOrBuilder>
         streamStatusBuilder_;
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreamStatus() {
       return contentsCase_ == 2;
     }
-
     /**
      *
      *
@@ -994,7 +971,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StreamStatus.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1082,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.StreamStatus.Builder getStreamStatusBuilder() {
       return getStreamStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1131,7 +1102,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StreamStatus.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1140,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.StreamData.Builder,
             com.google.cloud.devicestreaming.v1.StreamDataOrBuilder>
         streamDataBuilder_;
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreamData() {
       return contentsCase_ == 3;
     }
-
     /**
      *
      *
@@ -1212,7 +1180,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1222,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1254,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1279,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1291,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.StreamData.Builder getStreamDataBuilder() {
       return getStreamDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1349,7 +1311,6 @@ public final class DeviceMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *

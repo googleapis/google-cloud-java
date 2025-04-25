@@ -36,7 +36,6 @@ public interface CommentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface CommentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CommentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface CommentOrBuilder
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface CommentOrBuilder
    * @return The creator.
    */
   com.google.cloud.support.v2.Actor getCreator();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface CommentOrBuilder
    * @return The body.
    */
   java.lang.String getBody();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface CommentOrBuilder
    * @return The plainTextBody.
    */
   java.lang.String getPlainTextBody();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface StreamingSynthesisInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface StreamingSynthesisInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *

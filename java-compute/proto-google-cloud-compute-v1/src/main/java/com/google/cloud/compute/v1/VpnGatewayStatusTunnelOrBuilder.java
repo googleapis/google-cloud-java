@@ -36,7 +36,6 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * @return Whether the localGatewayInterface field is set.
    */
   boolean hasLocalGatewayInterface();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * @return Whether the peerGatewayInterface field is set.
    */
   boolean hasPeerGatewayInterface();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * @return Whether the tunnelUrl field is set.
    */
   boolean hasTunnelUrl();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * @return The tunnelUrl.
    */
   java.lang.String getTunnelUrl();
-
   /**
    *
    *

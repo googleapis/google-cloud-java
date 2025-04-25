@@ -34,7 +34,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2.CreateTaskRequest)
     CreateTaskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTaskRequest.newBuilder() to construct.
   private CreateTaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int TASK_FIELD_NUMBER = 2;
   private com.google.cloud.tasks.v2.Task task_;
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +223,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.tasks.v2.Task getTask() {
     return task_ == null ? com.google.cloud.tasks.v2.Task.getDefaultInstance() : task_;
   }
-
   /**
    *
    *
@@ -277,7 +271,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 3;
   private int responseView_ = 0;
-
   /**
    *
    *
@@ -304,7 +297,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
   public int getResponseViewValue() {
     return responseView_;
   }
-
   /**
    *
    *
@@ -516,7 +508,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -743,7 +734,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -771,7 +761,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +788,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +814,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +836,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +870,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.tasks.v2.Task.Builder,
             com.google.cloud.tasks.v2.TaskOrBuilder>
         taskBuilder_;
-
     /**
      *
      *
@@ -931,7 +916,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -982,7 +966,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
         return taskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1020,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1071,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1130,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1181,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1227,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1297,7 +1275,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
         return task_ == null ? com.google.cloud.tasks.v2.Task.getDefaultInstance() : task_;
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1334,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int responseView_ = 0;
-
     /**
      *
      *
@@ -1384,7 +1360,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     public int getResponseViewValue() {
       return responseView_;
     }
-
     /**
      *
      *
@@ -1414,7 +1389,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1417,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
           com.google.cloud.tasks.v2.Task.View.forNumber(responseView_);
       return result == null ? com.google.cloud.tasks.v2.Task.View.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1476,7 +1449,6 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface PairwiseSummarizationQualityResultOrBuilder
    * @return The enum numeric value on the wire for pairwiseChoice.
    */
   int getPairwiseChoiceValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PairwiseSummarizationQualityResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface PairwiseSummarizationQualityResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
-
   /**
    *
    *

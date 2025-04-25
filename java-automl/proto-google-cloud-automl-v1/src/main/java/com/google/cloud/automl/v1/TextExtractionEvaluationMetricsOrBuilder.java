@@ -51,7 +51,6 @@ public interface TextExtractionEvaluationMetricsOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry>
       getConfidenceMetricsEntriesList();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TextExtractionEvaluationMetricsOrBuilder
    */
   com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry
       getConfidenceMetricsEntries(int index);
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface TextExtractionEvaluationMetricsOrBuilder
    * </code>
    */
   int getConfidenceMetricsEntriesCount();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface TextExtractionEvaluationMetricsOrBuilder
               com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
                   .ConfidenceMetricsEntryOrBuilder>
       getConfidenceMetricsEntriesOrBuilderList();
-
   /**
    *
    *

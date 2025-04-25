@@ -35,7 +35,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.GcsIngestWithDocAiProcessorsPipeline)
     GcsIngestWithDocAiProcessorsPipelineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsIngestWithDocAiProcessorsPipeline.newBuilder() to construct.
   private GcsIngestWithDocAiProcessorsPipeline(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputPath_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
 
   public static final int SPLIT_CLASSIFY_PROCESSOR_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.ProcessorInfo splitClassifyProcessorInfo_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
   public boolean hasSplitClassifyProcessorInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         ? com.google.cloud.contentwarehouse.v1.ProcessorInfo.getDefaultInstance()
         : splitClassifyProcessorInfo_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.ProcessorInfo> extractProcessorInfos_;
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       getExtractProcessorInfosList() {
     return extractProcessorInfos_;
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       getExtractProcessorInfosOrBuilderList() {
     return extractProcessorInfos_;
   }
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
   public int getExtractProcessorInfosCount() {
     return extractProcessorInfos_.size();
   }
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
   public com.google.cloud.contentwarehouse.v1.ProcessorInfo getExtractProcessorInfos(int index) {
     return extractProcessorInfos_.get(index);
   }
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processorResultsFolderPath_ = "";
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       return s;
     }
   }
-
   /**
    *
    *
@@ -345,7 +332,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
 
   public static final int SKIP_INGESTED_DOCUMENTS_FIELD_NUMBER = 5;
   private boolean skipIngestedDocuments_ = false;
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
 
   public static final int PIPELINE_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.contentwarehouse.v1.IngestPipelineConfig pipelineConfig_;
-
   /**
    *
    *
@@ -386,7 +371,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
   public boolean hasPipelineConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -408,7 +392,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         ? com.google.cloud.contentwarehouse.v1.IngestPipelineConfig.getDefaultInstance()
         : pipelineConfig_;
   }
-
   /**
    *
    *
@@ -656,7 +639,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -997,7 +979,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     private int bitField0_;
 
     private java.lang.Object inputPath_ = "";
-
     /**
      *
      *
@@ -1022,7 +1003,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1027,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1050,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1069,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1100,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
             com.google.cloud.contentwarehouse.v1.ProcessorInfo.Builder,
             com.google.cloud.contentwarehouse.v1.ProcessorInfoOrBuilder>
         splitClassifyProcessorInfoBuilder_;
-
     /**
      *
      *
@@ -1141,7 +1117,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     public boolean hasSplitClassifyProcessorInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return splitClassifyProcessorInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1192,7 +1166,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1189,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1221,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1243,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1261,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return getSplitClassifyProcessorInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1314,7 +1283,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
             : splitClassifyProcessorInfo_;
       }
     }
-
     /**
      *
      *
@@ -1383,7 +1351,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return extractProcessorInfosBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1404,7 +1371,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return extractProcessorInfosBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1425,7 +1391,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return extractProcessorInfosBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1453,7 +1418,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1442,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1469,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1496,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1520,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1544,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1568,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1633,7 +1591,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1657,7 +1614,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1631,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         getExtractProcessorInfosBuilder(int index) {
       return getExtractProcessorInfosFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1697,7 +1652,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return extractProcessorInfosBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1719,7 +1673,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return java.util.Collections.unmodifiableList(extractProcessorInfos_);
       }
     }
-
     /**
      *
      *
@@ -1738,7 +1691,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       return getExtractProcessorInfosFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.ProcessorInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1758,7 +1710,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.ProcessorInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1798,7 +1749,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     }
 
     private java.lang.Object processorResultsFolderPath_ = "";
-
     /**
      *
      *
@@ -1823,7 +1773,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1797,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1872,7 +1820,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1839,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1919,7 +1865,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     }
 
     private boolean skipIngestedDocuments_;
-
     /**
      *
      *
@@ -1937,7 +1882,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     public boolean getSkipIngestedDocuments() {
       return skipIngestedDocuments_;
     }
-
     /**
      *
      *
@@ -1959,7 +1903,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1986,7 +1929,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
             com.google.cloud.contentwarehouse.v1.IngestPipelineConfig.Builder,
             com.google.cloud.contentwarehouse.v1.IngestPipelineConfigOrBuilder>
         pipelineConfigBuilder_;
-
     /**
      *
      *
@@ -2005,7 +1947,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
     public boolean hasPipelineConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2030,7 +1971,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
         return pipelineConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2058,7 +1998,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2022,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2117,7 +2055,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       }
       return this;
     }
-
     /**
      *
      *
@@ -2141,7 +2078,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2097,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
       onChanged();
       return getPipelineConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2185,7 +2120,6 @@ public final class GcsIngestWithDocAiProcessorsPipeline
             : pipelineConfig_;
       }
     }
-
     /**
      *
      *

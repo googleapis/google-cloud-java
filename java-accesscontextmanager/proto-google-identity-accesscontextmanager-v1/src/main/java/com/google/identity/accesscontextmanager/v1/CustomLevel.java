@@ -35,7 +35,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.CustomLevel)
     CustomLevelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomLevel.newBuilder() to construct.
   private CustomLevel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int EXPR_FIELD_NUMBER = 1;
   private com.google.type.Expr expr_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpr() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Expr getExpr() {
     return expr_ == null ? com.google.type.Expr.getDefaultInstance() : expr_;
   }
-
   /**
    *
    *
@@ -279,7 +275,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +478,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
         exprBuilder_;
-
     /**
      *
      *
@@ -498,7 +492,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpr() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -517,7 +510,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
         return exprBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -540,7 +532,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -560,7 +551,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -588,7 +578,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +597,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +611,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExprFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -640,7 +627,6 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
         return expr_ == null ? com.google.type.Expr.getDefaultInstance() : expr_;
       }
     }
-
     /**
      *
      *

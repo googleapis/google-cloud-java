@@ -42,7 +42,6 @@ public interface GetSimulationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

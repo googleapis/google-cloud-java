@@ -36,7 +36,6 @@ public interface MonitoringConfigOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MonitoringConfigOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface MonitoringConfigOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface MonitoringConfigOrBuilder
    * @return The kubernetesMetricsPrefix.
    */
   java.lang.String getKubernetesMetricsPrefix();
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public interface MonitoringConfigOrBuilder
    * @return The clusterHash.
    */
   java.lang.String getClusterHash();
-
   /**
    *
    *

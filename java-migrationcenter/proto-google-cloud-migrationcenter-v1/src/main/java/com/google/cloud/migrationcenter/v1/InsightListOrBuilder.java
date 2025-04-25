@@ -36,7 +36,6 @@ public interface InsightListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.Insight> getInsightsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InsightListOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.Insight getInsights(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface InsightListOrBuilder
    * </code>
    */
   int getInsightsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface InsightListOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.InsightOrBuilder>
       getInsightsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface InsightListOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface InsightListOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.PushConfig)
     PushConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PushConfig.newBuilder() to construct.
   private PushConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceAccountEmail.
      */
     java.lang.String getServiceAccountEmail();
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The audience.
      */
     java.lang.String getAudience();
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAudienceBytes();
   }
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.PushConfig.OidcToken)
       OidcTokenOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OidcToken.newBuilder() to construct.
     private OidcToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -206,7 +201,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceAccountEmail_ = "";
-
     /**
      *
      *
@@ -234,7 +228,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -267,7 +260,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object audience_ = "";
-
     /**
      *
      *
@@ -297,7 +289,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -498,7 +489,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -707,7 +697,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object serviceAccountEmail_ = "";
-
       /**
        *
        *
@@ -734,7 +723,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -761,7 +749,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -787,7 +774,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -809,7 +795,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -838,7 +823,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object audience_ = "";
-
       /**
        *
        *
@@ -867,7 +851,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -896,7 +879,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -924,7 +906,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -948,7 +929,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1049,7 +1029,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.PushConfig.PubsubWrapper)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -1066,7 +1045,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.PushConfig.PubsubWrapper)
       PubsubWrapperOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PubsubWrapper.newBuilder() to construct.
     private PubsubWrapper(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1248,7 +1226,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1505,7 +1482,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getWriteMetadata();
   }
-
   /**
    *
    *
@@ -1520,7 +1496,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapper)
       NoWrapperOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NoWrapper.newBuilder() to construct.
     private NoWrapper(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1551,7 +1526,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WRITE_METADATA_FIELD_NUMBER = 1;
     private boolean writeMetadata_ = false;
-
     /**
      *
      *
@@ -1731,7 +1705,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1921,7 +1894,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean writeMetadata_;
-
       /**
        *
        *
@@ -1939,7 +1911,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getWriteMetadata() {
         return writeMetadata_;
       }
-
       /**
        *
        *
@@ -1961,7 +1932,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2065,7 +2035,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     private AuthenticationMethodCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2113,7 +2082,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     private WrapperCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2147,7 +2115,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OIDC_TOKEN_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -2167,7 +2134,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOidcToken() {
     return authenticationMethodCase_ == 3;
   }
-
   /**
    *
    *
@@ -2190,7 +2156,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.analyticshub.v1.PushConfig.OidcToken.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2214,7 +2179,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBSUB_WRAPPER_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -2234,7 +2198,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPubsubWrapper() {
     return wrapperCase_ == 4;
   }
-
   /**
    *
    *
@@ -2257,7 +2220,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.analyticshub.v1.PushConfig.PubsubWrapper.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2281,7 +2243,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NO_WRAPPER_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -2299,7 +2260,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNoWrapper() {
     return wrapperCase_ == 5;
   }
-
   /**
    *
    *
@@ -2320,7 +2280,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapper.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2345,7 +2304,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pushEndpoint_ = "";
-
   /**
    *
    *
@@ -2370,7 +2328,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2422,7 +2379,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return internalGetAttributes().getMap().size();
   }
-
   /**
    *
    *
@@ -2460,14 +2416,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAttributes().getMap().containsKey(key);
   }
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
   }
-
   /**
    *
    *
@@ -2502,7 +2456,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
-
   /**
    *
    *
@@ -2544,7 +2497,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2832,7 +2784,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3165,7 +3116,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.PushConfig.OidcToken.Builder,
             com.google.cloud.bigquery.analyticshub.v1.PushConfig.OidcTokenOrBuilder>
         oidcTokenBuilder_;
-
     /**
      *
      *
@@ -3185,7 +3135,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOidcToken() {
       return authenticationMethodCase_ == 3;
     }
-
     /**
      *
      *
@@ -3216,7 +3165,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.analyticshub.v1.PushConfig.OidcToken.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3244,7 +3192,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3269,7 +3216,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3310,7 +3256,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       authenticationMethodCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3340,7 +3285,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3358,7 +3302,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         getOidcTokenBuilder() {
       return getOidcTokenFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3385,7 +3328,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.analyticshub.v1.PushConfig.OidcToken.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3430,7 +3372,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.PushConfig.PubsubWrapper.Builder,
             com.google.cloud.bigquery.analyticshub.v1.PushConfig.PubsubWrapperOrBuilder>
         pubsubWrapperBuilder_;
-
     /**
      *
      *
@@ -3450,7 +3391,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPubsubWrapper() {
       return wrapperCase_ == 4;
     }
-
     /**
      *
      *
@@ -3482,7 +3422,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3510,7 +3449,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       wrapperCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3536,7 +3474,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       wrapperCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3576,7 +3513,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       wrapperCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3606,7 +3542,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3559,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         getPubsubWrapperBuilder() {
       return getPubsubWrapperFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3651,7 +3585,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3696,7 +3629,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapper.Builder,
             com.google.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapperOrBuilder>
         noWrapperBuilder_;
-
     /**
      *
      *
@@ -3714,7 +3646,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNoWrapper() {
       return wrapperCase_ == 5;
     }
-
     /**
      *
      *
@@ -3742,7 +3673,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapper.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3768,7 +3698,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       wrapperCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3791,7 +3720,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       wrapperCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3829,7 +3757,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       wrapperCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3857,7 +3784,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3873,7 +3799,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         getNoWrapperBuilder() {
       return getNoWrapperFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3897,7 +3822,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapper.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3935,7 +3859,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pushEndpoint_ = "";
-
     /**
      *
      *
@@ -3959,7 +3882,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3983,7 +3905,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4006,7 +3927,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4025,7 +3945,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4078,7 +3997,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAttributesCount() {
       return internalGetAttributes().getMap().size();
     }
-
     /**
      *
      *
@@ -4116,14 +4034,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAttributes().getMap().containsKey(key);
     }
-
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
     }
-
     /**
      *
      *
@@ -4158,7 +4074,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
-
     /**
      *
      *
@@ -4200,7 +4115,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4248,7 +4162,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4286,14 +4199,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
       bitField0_ |= 0x00000010;
       return internalGetMutableAttributes().getMutableMap();
     }
-
     /**
      *
      *
@@ -4335,7 +4246,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *

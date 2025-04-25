@@ -38,7 +38,6 @@ public interface CreateServiceRolloutRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateServiceRolloutRequestOrBuilder
    * @return Whether the rollout field is set.
    */
   boolean hasRollout();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateServiceRolloutRequestOrBuilder
    * @return The rollout.
    */
   com.google.api.servicemanagement.v1.Rollout getRollout();
-
   /**
    *
    *

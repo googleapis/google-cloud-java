@@ -34,7 +34,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListPublicAdvertisedPrefixesRequest)
     ListPublicAdvertisedPrefixesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListPublicAdvertisedPrefixesRequest.newBuilder() to construct.
   private ListPublicAdvertisedPrefixesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ListPublicAdvertisedPrefixesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListPublicAdvertisedPrefixesRequest
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class ListPublicAdvertisedPrefixesRequest
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class ListPublicAdvertisedPrefixesRequest
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class ListPublicAdvertisedPrefixesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ListPublicAdvertisedPrefixesRequest
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class ListPublicAdvertisedPrefixesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public final class ListPublicAdvertisedPrefixesRequest
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public final class ListPublicAdvertisedPrefixesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public final class ListPublicAdvertisedPrefixesRequest
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -383,7 +368,6 @@ public final class ListPublicAdvertisedPrefixesRequest
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -631,7 +615,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -898,7 +881,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -913,7 +895,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -959,7 +939,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -981,7 +960,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +977,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -1040,7 +1016,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1056,7 +1031,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1148,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1165,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1189,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1237,7 +1203,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1260,7 +1225,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1283,7 +1247,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1268,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1285,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1309,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1371,7 +1331,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1394,7 +1353,6 @@ public final class ListPublicAdvertisedPrefixesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1416,7 +1374,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1391,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1415,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -1475,7 +1430,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1491,7 +1445,6 @@ public final class ListPublicAdvertisedPrefixesRequest
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -1511,7 +1464,6 @@ public final class ListPublicAdvertisedPrefixesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

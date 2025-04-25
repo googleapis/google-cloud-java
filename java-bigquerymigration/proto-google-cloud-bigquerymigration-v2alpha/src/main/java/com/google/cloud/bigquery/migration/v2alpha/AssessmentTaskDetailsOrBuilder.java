@@ -36,7 +36,6 @@ public interface AssessmentTaskDetailsOrBuilder
    * @return The inputPath.
    */
   java.lang.String getInputPath();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AssessmentTaskDetailsOrBuilder
    * @return The outputDataset.
    */
   java.lang.String getOutputDataset();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface AssessmentTaskDetailsOrBuilder
    * @return The querylogsPath.
    */
   java.lang.String getQuerylogsPath();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface AssessmentTaskDetailsOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
-
   /**
    *
    *

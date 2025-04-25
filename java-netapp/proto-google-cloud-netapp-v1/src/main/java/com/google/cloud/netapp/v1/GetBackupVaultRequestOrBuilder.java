@@ -39,7 +39,6 @@ public interface GetBackupVaultRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

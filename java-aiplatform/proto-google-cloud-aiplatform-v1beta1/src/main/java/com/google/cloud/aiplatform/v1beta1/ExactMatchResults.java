@@ -33,7 +33,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExactMatchResults)
     ExactMatchResultsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExactMatchResults.newBuilder() to construct.
   private ExactMatchResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ExactMatchMetricValue>
       exactMatchMetricValues_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       getExactMatchMetricValuesList() {
     return exactMatchMetricValues_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       getExactMatchMetricValuesOrBuilderList() {
     return exactMatchMetricValues_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
   public int getExactMatchMetricValuesCount() {
     return exactMatchMetricValues_.size();
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       int index) {
     return exactMatchMetricValues_.get(index);
   }
-
   /**
    *
    *
@@ -320,7 +314,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
         return exactMatchMetricValuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
         return exactMatchMetricValuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
         return exactMatchMetricValuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -653,7 +643,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
         getExactMatchMetricValuesBuilder(int index) {
       return getExactMatchMetricValuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
         return exactMatchMetricValuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(exactMatchMetricValues_);
       }
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.ExactMatchMetricValue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class ExactMatchResults extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.aiplatform.v1beta1.ExactMatchMetricValue.getDefaultInstance());
     }
-
     /**
      *
      *

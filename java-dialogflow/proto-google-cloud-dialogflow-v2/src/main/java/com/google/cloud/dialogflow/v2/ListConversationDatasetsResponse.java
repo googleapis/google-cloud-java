@@ -34,7 +34,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ListConversationDatasetsResponse)
     ListConversationDatasetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConversationDatasetsResponse.newBuilder() to construct.
   private ListConversationDatasetsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.ConversationDataset> conversationDatasets_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       getConversationDatasetsList() {
     return conversationDatasets_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       getConversationDatasetsOrBuilderList() {
     return conversationDatasets_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
   public int getConversationDatasetsCount() {
     return conversationDatasets_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
   public com.google.cloud.dialogflow.v2.ConversationDataset getConversationDatasets(int index) {
     return conversationDatasets_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return conversationDatasetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return conversationDatasetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return conversationDatasetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +865,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +885,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +899,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         getConversationDatasetsBuilder(int index) {
       return getConversationDatasetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return conversationDatasetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(conversationDatasets_);
       }
     }
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       return getConversationDatasetsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.ConversationDataset.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +966,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.cloud.dialogflow.v2.ConversationDataset.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1052,7 +1025,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1048,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1070,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1088,6 @@ public final class ListConversationDatasetsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

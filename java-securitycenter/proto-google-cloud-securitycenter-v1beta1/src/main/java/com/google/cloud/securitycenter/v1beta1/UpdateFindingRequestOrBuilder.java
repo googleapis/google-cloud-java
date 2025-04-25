@@ -43,7 +43,6 @@ public interface UpdateFindingRequestOrBuilder
    * @return Whether the finding field is set.
    */
   boolean hasFinding();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UpdateFindingRequestOrBuilder
    * @return The finding.
    */
   com.google.cloud.securitycenter.v1beta1.Finding getFinding();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface UpdateFindingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface UpdateFindingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

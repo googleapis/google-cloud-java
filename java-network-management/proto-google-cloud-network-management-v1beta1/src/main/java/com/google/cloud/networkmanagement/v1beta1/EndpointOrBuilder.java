@@ -36,7 +36,6 @@ public interface EndpointOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface EndpointOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface EndpointOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public interface EndpointOrBuilder
    * @return Whether the forwardingRuleTarget field is set.
    */
   boolean hasForwardingRuleTarget();
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public interface EndpointOrBuilder
    * @return The enum numeric value on the wire for forwardingRuleTarget.
    */
   int getForwardingRuleTargetValue();
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public interface EndpointOrBuilder
    * @return Whether the loadBalancerId field is set.
    */
   boolean hasLoadBalancerId();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface EndpointOrBuilder
    * @return The loadBalancerId.
    */
   java.lang.String getLoadBalancerId();
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public interface EndpointOrBuilder
    * @return Whether the loadBalancerType field is set.
    */
   boolean hasLoadBalancerType();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public interface EndpointOrBuilder
    * @return The enum numeric value on the wire for loadBalancerType.
    */
   int getLoadBalancerTypeValue();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface EndpointOrBuilder
    * @return The gkeMasterCluster.
    */
   java.lang.String getGkeMasterCluster();
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public interface EndpointOrBuilder
    * @return The fqdn.
    */
   java.lang.String getFqdn();
-
   /**
    *
    *
@@ -336,7 +325,6 @@ public interface EndpointOrBuilder
    * @return The cloudSqlInstance.
    */
   java.lang.String getCloudSqlInstance();
-
   /**
    *
    *
@@ -363,7 +351,6 @@ public interface EndpointOrBuilder
    * @return The redisInstance.
    */
   java.lang.String getRedisInstance();
-
   /**
    *
    *
@@ -391,7 +378,6 @@ public interface EndpointOrBuilder
    * @return The redisCluster.
    */
   java.lang.String getRedisCluster();
-
   /**
    *
    *
@@ -421,7 +407,6 @@ public interface EndpointOrBuilder
    * @return Whether the cloudFunction field is set.
    */
   boolean hasCloudFunction();
-
   /**
    *
    *
@@ -437,7 +422,6 @@ public interface EndpointOrBuilder
    * @return The cloudFunction.
    */
   com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint getCloudFunction();
-
   /**
    *
    *
@@ -469,7 +453,6 @@ public interface EndpointOrBuilder
    * @return Whether the appEngineVersion field is set.
    */
   boolean hasAppEngineVersion();
-
   /**
    *
    *
@@ -487,7 +470,6 @@ public interface EndpointOrBuilder
    */
   com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint
       getAppEngineVersion();
-
   /**
    *
    *
@@ -520,7 +502,6 @@ public interface EndpointOrBuilder
    * @return Whether the cloudRunRevision field is set.
    */
   boolean hasCloudRunRevision();
-
   /**
    *
    *
@@ -538,7 +519,6 @@ public interface EndpointOrBuilder
    */
   com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint
       getCloudRunRevision();
-
   /**
    *
    *
@@ -567,7 +547,6 @@ public interface EndpointOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -595,7 +574,6 @@ public interface EndpointOrBuilder
    * @return The enum numeric value on the wire for networkType.
    */
   int getNetworkTypeValue();
-
   /**
    *
    *
@@ -631,7 +609,6 @@ public interface EndpointOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *

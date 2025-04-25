@@ -36,7 +36,6 @@ public interface GetJobMetricsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetJobMetricsRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface GetJobMetricsRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface GetJobMetricsRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface GetJobMetricsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

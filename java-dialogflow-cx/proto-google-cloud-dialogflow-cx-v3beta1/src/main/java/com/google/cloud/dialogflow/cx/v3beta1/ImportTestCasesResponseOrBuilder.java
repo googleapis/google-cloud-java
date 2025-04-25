@@ -38,7 +38,6 @@ public interface ImportTestCasesResponseOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ImportTestCasesResponseOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface ImportTestCasesResponseOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ListContinuousTestResultsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult>
       getContinuousTestResultsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListContinuousTestResultsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult getContinuousTestResults(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListContinuousTestResultsResponseOrBuilder
    * </code>
    */
   int getContinuousTestResultsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListContinuousTestResultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResultOrBuilder>
       getContinuousTestResultsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListContinuousTestResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

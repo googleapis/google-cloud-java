@@ -38,7 +38,6 @@ public interface GetConversationModelEvaluationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

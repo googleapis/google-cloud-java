@@ -33,7 +33,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecuritySettings)
     SecuritySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecuritySettings.newBuilder() to construct.
   private SecuritySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int AWS_V4_AUTHENTICATION_FIELD_NUMBER = 433993111;
   private com.google.cloud.compute.v1.AWSV4Signature awsV4Authentication_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public boolean hasAwsV4Authentication() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.compute.v1.AWSV4Signature.getDefaultInstance()
         : awsV4Authentication_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientTlsPolicy_ = "";
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public boolean hasClientTlsPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subjectAltNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getSubjectAltNamesList() {
     return subjectAltNames_;
   }
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public int getSubjectAltNamesCount() {
     return subjectAltNames_.size();
   }
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public java.lang.String getSubjectAltNames(int index) {
     return subjectAltNames_.get(index);
   }
-
   /**
    *
    *
@@ -456,7 +445,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +689,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.AWSV4Signature.Builder,
             com.google.cloud.compute.v1.AWSV4SignatureOrBuilder>
         awsV4AuthenticationBuilder_;
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public boolean hasAwsV4Authentication() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         return awsV4AuthenticationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAwsV4AuthenticationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             : awsV4Authentication_;
       }
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object clientTlsPolicy_ = "";
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public boolean hasClientTlsPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +976,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1051,7 +1023,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       subjectAltNames_.makeImmutable();
       return subjectAltNames_;
     }
-
     /**
      *
      *
@@ -1066,7 +1037,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public int getSubjectAltNamesCount() {
       return subjectAltNames_.size();
     }
-
     /**
      *
      *
@@ -1082,7 +1052,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public java.lang.String getSubjectAltNames(int index) {
       return subjectAltNames_.get(index);
     }
-
     /**
      *
      *
@@ -1098,7 +1067,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getSubjectAltNamesBytes(int index) {
       return subjectAltNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1122,7 +1090,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1112,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1131,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1149,6 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

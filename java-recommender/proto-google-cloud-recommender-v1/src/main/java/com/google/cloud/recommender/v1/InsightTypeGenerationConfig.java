@@ -35,7 +35,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.InsightTypeGenerationConfig)
     InsightTypeGenerationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsightTypeGenerationConfig.newBuilder() to construct.
   private InsightTypeGenerationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int PARAMS_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct params_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
   public boolean hasParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -488,7 +483,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         paramsBuilder_;
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
     public boolean hasParams() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
         return paramsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -548,7 +540,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -569,7 +560,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +608,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +623,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -653,7 +640,6 @@ public final class InsightTypeGenerationConfig extends com.google.protobuf.Gener
         return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
       }
     }
-
     /**
      *
      *

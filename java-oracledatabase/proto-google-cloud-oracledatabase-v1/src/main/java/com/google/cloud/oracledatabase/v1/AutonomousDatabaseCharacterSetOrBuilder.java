@@ -38,7 +38,6 @@ public interface AutonomousDatabaseCharacterSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AutonomousDatabaseCharacterSetOrBuilder
    * @return The enum numeric value on the wire for characterSetType.
    */
   int getCharacterSetTypeValue();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface AutonomousDatabaseCharacterSetOrBuilder
    * @return The characterSet.
    */
   java.lang.String getCharacterSet();
-
   /**
    *
    *

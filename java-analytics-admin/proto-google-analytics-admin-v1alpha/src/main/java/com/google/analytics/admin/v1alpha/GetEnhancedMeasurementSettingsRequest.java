@@ -34,7 +34,6 @@ public final class GetEnhancedMeasurementSettingsRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest)
     GetEnhancedMeasurementSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetEnhancedMeasurementSettingsRequest.newBuilder() to construct.
   private GetEnhancedMeasurementSettingsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GetEnhancedMeasurementSettingsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GetEnhancedMeasurementSettingsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -291,7 +288,6 @@ public final class GetEnhancedMeasurementSettingsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -486,7 +482,6 @@ public final class GetEnhancedMeasurementSettingsRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -514,7 +509,6 @@ public final class GetEnhancedMeasurementSettingsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -542,7 +536,6 @@ public final class GetEnhancedMeasurementSettingsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -569,7 +562,6 @@ public final class GetEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class GetEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

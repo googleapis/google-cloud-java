@@ -33,7 +33,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.RestoreBackupResponse)
     RestoreBackupResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestoreBackupResponse.newBuilder() to construct.
   private RestoreBackupResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int TARGET_RESOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.backupdr.v1.TargetResource targetResource_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
   public boolean hasTargetResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.backupdr.v1.TargetResource.getDefaultInstance()
         : targetResource_;
   }
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.backupdr.v1.TargetResource.Builder,
             com.google.cloud.backupdr.v1.TargetResourceOrBuilder>
         targetResourceBuilder_;
-
     /**
      *
      *
@@ -500,7 +494,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
     public boolean hasTargetResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -521,7 +514,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
         return targetResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -565,7 +556,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +603,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +617,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTargetResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -648,7 +635,6 @@ public final class RestoreBackupResponse extends com.google.protobuf.GeneratedMe
             : targetResource_;
       }
     }
-
     /**
      *
      *

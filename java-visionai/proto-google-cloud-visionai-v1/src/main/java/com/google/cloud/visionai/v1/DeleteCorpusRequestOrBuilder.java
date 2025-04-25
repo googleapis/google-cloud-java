@@ -38,7 +38,6 @@ public interface DeleteCorpusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

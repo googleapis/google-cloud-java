@@ -146,7 +146,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -157,7 +156,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATING = 1;</code>
    */
   public static final int CREATING_VALUE = 1;
-
   /**
    *
    *
@@ -168,7 +166,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTIVE = 2;</code>
    */
   public static final int ACTIVE_VALUE = 2;
-
   /**
    *
    *
@@ -179,7 +176,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETING = 3;</code>
    */
   public static final int DELETING_VALUE = 3;
-
   /**
    *
    *
@@ -190,7 +186,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCEPTING = 8;</code>
    */
   public static final int ACCEPTING_VALUE = 8;
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REJECTING = 9;</code>
    */
   public static final int REJECTING_VALUE = 9;
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATING = 6;</code>
    */
   public static final int UPDATING_VALUE = 6;
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INACTIVE = 7;</code>
    */
   public static final int INACTIVE_VALUE = 7;
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OBSOLETE = 10;</code>
    */
   public static final int OBSOLETE_VALUE = 10;
-
   /**
    *
    *

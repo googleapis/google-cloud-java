@@ -42,7 +42,6 @@ public interface ListClustersRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ListClustersRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface ListClustersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

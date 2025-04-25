@@ -36,7 +36,6 @@ public interface RuntimeMetadataOrBuilder
    * @return Whether the sdkInfo field is set.
    */
   boolean hasSdkInfo();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RuntimeMetadataOrBuilder
    * @return The sdkInfo.
    */
   com.google.dataflow.v1beta3.SDKInfo getSdkInfo();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface RuntimeMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 2;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> getParametersList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface RuntimeMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 2;</code>
    */
   com.google.dataflow.v1beta3.ParameterMetadata getParameters(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface RuntimeMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 2;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface RuntimeMetadataOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ParameterMetadataOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *

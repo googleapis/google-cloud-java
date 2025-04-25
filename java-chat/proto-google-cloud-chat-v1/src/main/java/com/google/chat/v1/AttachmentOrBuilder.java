@@ -37,7 +37,6 @@ public interface AttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AttachmentOrBuilder
    * @return The contentName.
    */
   java.lang.String getContentName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AttachmentOrBuilder
    * @return The contentType.
    */
   java.lang.String getContentType();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface AttachmentOrBuilder
    * @return Whether the attachmentDataRef field is set.
    */
   boolean hasAttachmentDataRef();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface AttachmentOrBuilder
    * @return The attachmentDataRef.
    */
   com.google.chat.v1.AttachmentDataRef getAttachmentDataRef();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface AttachmentOrBuilder
    * @return Whether the driveDataRef field is set.
    */
   boolean hasDriveDataRef();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface AttachmentOrBuilder
    * @return The driveDataRef.
    */
   com.google.chat.v1.DriveDataRef getDriveDataRef();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface AttachmentOrBuilder
    * @return The thumbnailUri.
    */
   java.lang.String getThumbnailUri();
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public interface AttachmentOrBuilder
    * @return The downloadUri.
    */
   java.lang.String getDownloadUri();
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public interface AttachmentOrBuilder
    * @return The enum numeric value on the wire for source.
    */
   int getSourceValue();
-
   /**
    *
    *

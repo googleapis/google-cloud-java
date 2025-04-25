@@ -43,7 +43,6 @@ public interface ListDataSourcesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ListDataSourcesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface ListDataSourcesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public interface ListDataSourcesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

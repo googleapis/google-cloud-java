@@ -33,7 +33,6 @@ public final class VerticaDialect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.VerticaDialect)
     VerticaDialectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VerticaDialect.newBuilder() to construct.
   private VerticaDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class VerticaDialect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

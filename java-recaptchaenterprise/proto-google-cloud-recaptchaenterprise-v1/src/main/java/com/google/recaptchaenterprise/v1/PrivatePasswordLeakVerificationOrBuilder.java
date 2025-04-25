@@ -71,7 +71,6 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    * @return A list containing the encryptedLeakMatchPrefixes.
    */
   java.util.List<com.google.protobuf.ByteString> getEncryptedLeakMatchPrefixesList();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    * @return The count of encryptedLeakMatchPrefixes.
    */
   int getEncryptedLeakMatchPrefixesCount();
-
   /**
    *
    *

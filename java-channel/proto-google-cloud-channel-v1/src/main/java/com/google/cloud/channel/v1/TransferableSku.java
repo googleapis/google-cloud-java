@@ -35,7 +35,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.TransferableSku)
     TransferableSkuOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferableSku.newBuilder() to construct.
   private TransferableSku(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int TRANSFER_ELIGIBILITY_FIELD_NUMBER = 9;
   private com.google.cloud.channel.v1.TransferEligibility transferEligibility_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
   public boolean hasTransferEligibility() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.channel.v1.TransferEligibility.getDefaultInstance()
         : transferEligibility_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
 
   public static final int SKU_FIELD_NUMBER = 11;
   private com.google.cloud.channel.v1.Sku sku_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
   public boolean hasSku() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.channel.v1.Sku getSku() {
     return sku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : sku_;
   }
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
 
   public static final int LEGACY_SKU_FIELD_NUMBER = 12;
   private com.google.cloud.channel.v1.Sku legacySku_;
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
   public boolean hasLegacySku() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.channel.v1.Sku getLegacySku() {
     return legacySku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : legacySku_;
   }
-
   /**
    *
    *
@@ -415,7 +405,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +651,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.TransferEligibility.Builder,
             com.google.cloud.channel.v1.TransferEligibilityOrBuilder>
         transferEligibilityBuilder_;
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     public boolean hasTransferEligibility() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         return transferEligibilityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +755,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getTransferEligibilityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -826,7 +807,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
             : transferEligibility_;
       }
     }
-
     /**
      *
      *
@@ -859,7 +839,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.Sku.Builder,
             com.google.cloud.channel.v1.SkuOrBuilder>
         skuBuilder_;
-
     /**
      *
      *
@@ -874,7 +853,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     public boolean hasSku() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -893,7 +871,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         return skuBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +939,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +972,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSkuFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1016,7 +988,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         return sku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : sku_;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.Sku.Builder,
             com.google.cloud.channel.v1.SkuOrBuilder>
         legacySkuBuilder_;
-
     /**
      *
      *
@@ -1066,7 +1036,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     public boolean hasLegacySku() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1089,7 +1058,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         return legacySkuBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1114,7 +1082,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1103,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1132,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1153,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1169,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLegacySkuFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1226,7 +1189,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
             : legacySku_;
       }
     }
-
     /**
      *
      *

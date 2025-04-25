@@ -36,7 +36,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the corsPolicy field is set.
    */
   boolean hasCorsPolicy();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HttpRouteActionOrBuilder
    * @return The corsPolicy.
    */
   com.google.cloud.compute.v1.CorsPolicy getCorsPolicy();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the faultInjectionPolicy field is set.
    */
   boolean hasFaultInjectionPolicy();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface HttpRouteActionOrBuilder
    * @return The faultInjectionPolicy.
    */
   com.google.cloud.compute.v1.HttpFaultInjection getFaultInjectionPolicy();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the maxStreamDuration field is set.
    */
   boolean hasMaxStreamDuration();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface HttpRouteActionOrBuilder
    * @return The maxStreamDuration.
    */
   com.google.cloud.compute.v1.Duration getMaxStreamDuration();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the requestMirrorPolicy field is set.
    */
   boolean hasRequestMirrorPolicy();
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public interface HttpRouteActionOrBuilder
    * @return The requestMirrorPolicy.
    */
   com.google.cloud.compute.v1.RequestMirrorPolicy getRequestMirrorPolicy();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the retryPolicy field is set.
    */
   boolean hasRetryPolicy();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface HttpRouteActionOrBuilder
    * @return The retryPolicy.
    */
   com.google.cloud.compute.v1.HttpRetryPolicy getRetryPolicy();
-
   /**
    *
    *
@@ -227,7 +217,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface HttpRouteActionOrBuilder
    * @return The timeout.
    */
   com.google.cloud.compute.v1.Duration getTimeout();
-
   /**
    *
    *
@@ -264,7 +252,6 @@ public interface HttpRouteActionOrBuilder
    * @return Whether the urlRewrite field is set.
    */
   boolean hasUrlRewrite();
-
   /**
    *
    *
@@ -277,7 +264,6 @@ public interface HttpRouteActionOrBuilder
    * @return The urlRewrite.
    */
   com.google.cloud.compute.v1.UrlRewrite getUrlRewrite();
-
   /**
    *
    *
@@ -302,7 +288,6 @@ public interface HttpRouteActionOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.WeightedBackendService>
       getWeightedBackendServicesList();
-
   /**
    *
    *
@@ -315,7 +300,6 @@ public interface HttpRouteActionOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.WeightedBackendService getWeightedBackendServices(int index);
-
   /**
    *
    *
@@ -328,7 +312,6 @@ public interface HttpRouteActionOrBuilder
    * </code>
    */
   int getWeightedBackendServicesCount();
-
   /**
    *
    *
@@ -342,7 +325,6 @@ public interface HttpRouteActionOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder>
       getWeightedBackendServicesOrBuilderList();
-
   /**
    *
    *

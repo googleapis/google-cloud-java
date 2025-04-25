@@ -36,7 +36,6 @@ public interface GenerateAccessTokenResponseOrBuilder
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface GenerateAccessTokenResponseOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface GenerateAccessTokenResponseOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ServiceIdentityOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ServiceIdentityOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
-
   /**
    *
    *

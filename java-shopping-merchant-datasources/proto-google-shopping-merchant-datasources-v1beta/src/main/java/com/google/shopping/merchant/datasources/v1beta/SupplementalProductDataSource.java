@@ -35,7 +35,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource)
     SupplementalProductDataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SupplementalProductDataSource.newBuilder() to construct.
   private SupplementalProductDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object feedLabel_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
   public boolean hasFeedLabel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +202,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentLanguage_ = "";
-
   /**
    *
    *
@@ -232,7 +227,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
   public boolean hasContentLanguage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -266,7 +260,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +299,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.datasources.v1beta.DataSourceReference>
       referencingPrimaryDataSources_;
-
   /**
    *
    *
@@ -325,7 +317,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       getReferencingPrimaryDataSourcesList() {
     return referencingPrimaryDataSources_;
   }
-
   /**
    *
    *
@@ -345,7 +336,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       getReferencingPrimaryDataSourcesOrBuilderList() {
     return referencingPrimaryDataSources_;
   }
-
   /**
    *
    *
@@ -363,7 +353,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
   public int getReferencingPrimaryDataSourcesCount() {
     return referencingPrimaryDataSources_.size();
   }
-
   /**
    *
    *
@@ -382,7 +371,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       getReferencingPrimaryDataSources(int index) {
     return referencingPrimaryDataSources_.get(index);
   }
-
   /**
    *
    *
@@ -602,7 +590,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -885,7 +872,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object feedLabel_ = "";
-
     /**
      *
      *
@@ -921,7 +907,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
     public boolean hasFeedLabel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -965,7 +950,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1009,7 +993,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1035,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1073,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1118,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
     }
 
     private java.lang.Object contentLanguage_ = "";
-
     /**
      *
      *
@@ -1162,7 +1142,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
     public boolean hasContentLanguage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1195,7 +1174,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1206,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1237,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1264,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1337,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return referencingPrimaryDataSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1383,7 +1357,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return referencingPrimaryDataSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1405,7 +1378,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return referencingPrimaryDataSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1405,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1431,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1458,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1485,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1542,7 +1510,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1536,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1563,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1586,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1609,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1626,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         getReferencingPrimaryDataSourcesBuilder(int index) {
       return getReferencingPrimaryDataSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1685,7 +1647,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return referencingPrimaryDataSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1708,7 +1669,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(referencingPrimaryDataSources_);
       }
     }
-
     /**
      *
      *
@@ -1729,7 +1689,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
               com.google.shopping.merchant.datasources.v1beta.DataSourceReference
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1751,7 +1710,6 @@ public final class SupplementalProductDataSource extends com.google.protobuf.Gen
               com.google.shopping.merchant.datasources.v1beta.DataSourceReference
                   .getDefaultInstance());
     }
-
     /**
      *
      *

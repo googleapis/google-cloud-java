@@ -36,7 +36,6 @@ public interface PhraseMatchRuleOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface PhraseMatchRuleOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface PhraseMatchRuleOrBuilder
    * @return The config.
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig getConfig();
-
   /**
    *
    *

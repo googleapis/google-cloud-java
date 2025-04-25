@@ -36,7 +36,6 @@ public interface StorageBucketInfoOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *

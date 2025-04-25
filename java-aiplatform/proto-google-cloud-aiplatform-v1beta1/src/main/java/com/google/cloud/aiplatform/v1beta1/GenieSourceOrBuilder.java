@@ -36,7 +36,6 @@ public interface GenieSourceOrBuilder
    * @return The baseModelUri.
    */
   java.lang.String getBaseModelUri();
-
   /**
    *
    *

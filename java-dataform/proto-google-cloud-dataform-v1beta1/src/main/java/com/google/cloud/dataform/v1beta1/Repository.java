@@ -33,7 +33,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.Repository)
     RepositoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Repository.newBuilder() to construct.
   private Repository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The url.
      */
     java.lang.String getUrl();
-
     /**
      *
      *
@@ -124,7 +122,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The defaultBranch.
      */
     java.lang.String getDefaultBranch();
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The authenticationTokenSecretVersion.
      */
     java.lang.String getAuthenticationTokenSecretVersion();
-
     /**
      *
      *
@@ -186,7 +182,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sshAuthenticationConfig field is set.
      */
     boolean hasSshAuthenticationConfig();
-
     /**
      *
      *
@@ -202,7 +197,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.SshAuthenticationConfig
         getSshAuthenticationConfig();
-
     /**
      *
      *
@@ -236,7 +230,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     int getTokenStatusValue();
-
     /**
      *
      *
@@ -257,7 +250,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.TokenStatus getTokenStatus();
   }
-
   /**
    *
    *
@@ -272,7 +264,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.Repository.GitRemoteSettings)
       GitRemoteSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GitRemoteSettings.newBuilder() to construct.
     private GitRemoteSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -370,7 +361,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>TOKEN_STATUS_UNSPECIFIED = 0;</code>
        */
       public static final int TOKEN_STATUS_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -382,7 +372,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>NOT_FOUND = 1;</code>
        */
       public static final int NOT_FOUND_VALUE = 1;
-
       /**
        *
        *
@@ -393,7 +382,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>INVALID = 2;</code>
        */
       public static final int INVALID_VALUE = 2;
-
       /**
        *
        *
@@ -513,7 +501,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return The userPrivateKeySecretVersion.
        */
       java.lang.String getUserPrivateKeySecretVersion();
-
       /**
        *
        *
@@ -544,7 +531,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return The hostPublicKey.
        */
       java.lang.String getHostPublicKey();
-
       /**
        *
        *
@@ -559,7 +545,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getHostPublicKeyBytes();
     }
-
     /**
      *
      *
@@ -575,7 +560,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.SshAuthenticationConfig)
         SshAuthenticationConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use SshAuthenticationConfig.newBuilder() to construct.
       private SshAuthenticationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -613,7 +597,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object userPrivateKeySecretVersion_ = "";
-
       /**
        *
        *
@@ -641,7 +624,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -674,7 +656,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object hostPublicKey_ = "";
-
       /**
        *
        *
@@ -699,7 +680,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -926,7 +906,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1155,7 +1134,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object userPrivateKeySecretVersion_ = "";
-
         /**
          *
          *
@@ -1182,7 +1160,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1209,7 +1186,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1235,7 +1211,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1257,7 +1232,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1286,7 +1260,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object hostPublicKey_ = "";
-
         /**
          *
          *
@@ -1310,7 +1283,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1334,7 +1306,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1357,7 +1328,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1376,7 +1346,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1477,7 +1446,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object url_ = "";
-
     /**
      *
      *
@@ -1501,7 +1469,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1530,7 +1497,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object defaultBranch_ = "";
-
     /**
      *
      *
@@ -1554,7 +1520,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1583,7 +1548,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object authenticationTokenSecretVersion_ = "";
-
     /**
      *
      *
@@ -1611,7 +1575,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1643,7 +1606,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public static final int SSH_AUTHENTICATION_CONFIG_FIELD_NUMBER = 5;
     private com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.SshAuthenticationConfig
         sshAuthenticationConfig_;
-
     /**
      *
      *
@@ -1661,7 +1623,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSshAuthenticationConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1683,7 +1644,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : sshAuthenticationConfig_;
     }
-
     /**
      *
      *
@@ -1707,7 +1667,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOKEN_STATUS_FIELD_NUMBER = 4;
     private int tokenStatus_ = 0;
-
     /**
      *
      *
@@ -1730,7 +1689,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getTokenStatusValue() {
       return tokenStatus_;
     }
-
     /**
      *
      *
@@ -1976,7 +1934,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2244,7 +2201,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object url_ = "";
-
       /**
        *
        *
@@ -2267,7 +2223,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2290,7 +2245,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2312,7 +2266,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2330,7 +2283,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2355,7 +2307,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object defaultBranch_ = "";
-
       /**
        *
        *
@@ -2378,7 +2329,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2401,7 +2351,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2423,7 +2372,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2441,7 +2389,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2466,7 +2413,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object authenticationTokenSecretVersion_ = "";
-
       /**
        *
        *
@@ -2493,7 +2439,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2520,7 +2465,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2546,7 +2490,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2569,7 +2512,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2608,7 +2550,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings
                   .SshAuthenticationConfigOrBuilder>
           sshAuthenticationConfigBuilder_;
-
       /**
        *
        *
@@ -2625,7 +2566,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSshAuthenticationConfig() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -2650,7 +2590,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return sshAuthenticationConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2677,7 +2616,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2702,7 +2640,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2736,7 +2673,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2758,7 +2694,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2777,7 +2712,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSshAuthenticationConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2801,7 +2735,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               : sshAuthenticationConfig_;
         }
       }
-
       /**
        *
        *
@@ -2837,7 +2770,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int tokenStatus_ = 0;
-
       /**
        *
        *
@@ -2860,7 +2792,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public int getTokenStatusValue() {
         return tokenStatus_;
       }
-
       /**
        *
        *
@@ -2886,7 +2817,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2916,7 +2846,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2946,7 +2875,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3056,7 +2984,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The defaultDatabase.
      */
     java.lang.String getDefaultDatabase();
-
     /**
      *
      *
@@ -3083,7 +3010,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The schemaSuffix.
      */
     java.lang.String getSchemaSuffix();
-
     /**
      *
      *
@@ -3110,7 +3036,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The tablePrefix.
      */
     java.lang.String getTablePrefix();
-
     /**
      *
      *
@@ -3124,7 +3049,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTablePrefixBytes();
   }
-
   /**
    *
    *
@@ -3147,7 +3071,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides)
       WorkspaceCompilationOverridesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WorkspaceCompilationOverrides.newBuilder() to construct.
     private WorkspaceCompilationOverrides(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3186,7 +3109,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object defaultDatabase_ = "";
-
     /**
      *
      *
@@ -3210,7 +3132,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3239,7 +3160,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schemaSuffix_ = "";
-
     /**
      *
      *
@@ -3264,7 +3184,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3294,7 +3213,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tablePrefix_ = "";
-
     /**
      *
      *
@@ -3318,7 +3236,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3529,7 +3446,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3765,7 +3681,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object defaultDatabase_ = "";
-
       /**
        *
        *
@@ -3788,7 +3703,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3811,7 +3725,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3833,7 +3746,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3851,7 +3763,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3876,7 +3787,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object schemaSuffix_ = "";
-
       /**
        *
        *
@@ -3900,7 +3810,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3924,7 +3833,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3947,7 +3855,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3966,7 +3873,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3992,7 +3898,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object tablePrefix_ = "";
-
       /**
        *
        *
@@ -4015,7 +3920,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4038,7 +3942,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4060,7 +3963,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4078,7 +3980,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4175,7 +4076,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -4199,7 +4099,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4226,7 +4125,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -4243,7 +4141,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4260,7 +4157,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -4280,7 +4176,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -4304,7 +4199,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4331,7 +4225,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GIT_REMOTE_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings gitRemoteSettings_;
-
   /**
    *
    *
@@ -4349,7 +4242,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGitRemoteSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4369,7 +4261,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.getDefaultInstance()
         : gitRemoteSettings_;
   }
-
   /**
    *
    *
@@ -4393,7 +4284,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object npmrcEnvironmentVariablesSecretVersion_ = "";
-
   /**
    *
    *
@@ -4422,7 +4312,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4455,7 +4344,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public static final int WORKSPACE_COMPILATION_OVERRIDES_FIELD_NUMBER = 4;
   private com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides
       workspaceCompilationOverrides_;
-
   /**
    *
    *
@@ -4476,7 +4364,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkspaceCompilationOverrides() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -4501,7 +4388,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : workspaceCompilationOverrides_;
   }
-
   /**
    *
    *
@@ -4551,7 +4437,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -4568,14 +4453,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -4589,7 +4472,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -4610,7 +4492,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -4634,7 +4515,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SET_AUTHENTICATED_USER_ADMIN_FIELD_NUMBER = 9;
   private boolean setAuthenticatedUserAdmin_ = false;
-
   /**
    *
    *
@@ -4660,7 +4540,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -4684,7 +4563,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4713,7 +4591,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
-
   /**
    *
    *
@@ -4743,7 +4620,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4776,7 +4652,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_ENCRYPTION_STATE_FIELD_NUMBER = 12;
   private com.google.cloud.dataform.v1beta1.DataEncryptionState dataEncryptionState_;
-
   /**
    *
    *
@@ -4795,7 +4670,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataEncryptionState() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -4816,7 +4690,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
         : dataEncryptionState_;
   }
-
   /**
    *
    *
@@ -4841,7 +4714,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object internalMetadata_ = "";
-
   /**
    *
    *
@@ -4860,7 +4732,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInternalMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -4887,7 +4758,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5217,7 +5087,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5629,7 +5498,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -5652,7 +5520,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5675,7 +5542,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5697,7 +5563,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5715,7 +5580,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5745,7 +5609,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5762,7 +5625,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -5785,7 +5647,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5810,7 +5671,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5832,7 +5692,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5862,7 +5721,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5884,7 +5742,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5901,7 +5758,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5922,7 +5778,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5952,7 +5807,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -5975,7 +5829,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5998,7 +5851,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6020,7 +5872,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6038,7 +5889,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6068,7 +5918,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.Builder,
             com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettingsOrBuilder>
         gitRemoteSettingsBuilder_;
-
     /**
      *
      *
@@ -6085,7 +5934,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGitRemoteSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -6108,7 +5956,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return gitRemoteSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6134,7 +5981,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6157,7 +6003,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6190,7 +6035,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6212,7 +6056,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6230,7 +6073,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGitRemoteSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6252,7 +6094,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : gitRemoteSettings_;
       }
     }
-
     /**
      *
      *
@@ -6282,7 +6123,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object npmrcEnvironmentVariablesSecretVersion_ = "";
-
     /**
      *
      *
@@ -6310,7 +6150,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6338,7 +6177,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6365,7 +6203,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6389,7 +6226,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6426,7 +6262,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides.Builder,
             com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverridesOrBuilder>
         workspaceCompilationOverridesBuilder_;
-
     /**
      *
      *
@@ -6446,7 +6281,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkspaceCompilationOverrides() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -6474,7 +6308,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return workspaceCompilationOverridesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6503,7 +6336,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6530,7 +6362,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6566,7 +6397,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6591,7 +6421,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6612,7 +6441,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWorkspaceCompilationOverridesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6638,7 +6466,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : workspaceCompilationOverrides_;
       }
     }
-
     /**
      *
      *
@@ -6696,7 +6523,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -6713,14 +6539,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -6734,7 +6558,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -6755,7 +6578,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -6782,7 +6604,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -6799,14 +6620,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -6827,7 +6646,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -6844,7 +6662,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean setAuthenticatedUserAdmin_;
-
     /**
      *
      *
@@ -6865,7 +6682,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean getSetAuthenticatedUserAdmin() {
       return setAuthenticatedUserAdmin_;
     }
-
     /**
      *
      *
@@ -6890,7 +6706,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6915,7 +6730,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -6938,7 +6752,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6961,7 +6774,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6983,7 +6795,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7001,7 +6812,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7026,7 +6836,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyName_ = "";
-
     /**
      *
      *
@@ -7055,7 +6864,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7084,7 +6892,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7112,7 +6919,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7136,7 +6942,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7172,7 +6977,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
             com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>
         dataEncryptionStateBuilder_;
-
     /**
      *
      *
@@ -7190,7 +6994,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataEncryptionState() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -7214,7 +7017,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return dataEncryptionStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7241,7 +7043,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7265,7 +7066,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7298,7 +7098,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7321,7 +7120,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7340,7 +7138,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataEncryptionStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7363,7 +7160,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : dataEncryptionState_;
       }
     }
-
     /**
      *
      *
@@ -7394,7 +7190,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object internalMetadata_ = "";
-
     /**
      *
      *
@@ -7412,7 +7207,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInternalMetadata() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -7438,7 +7232,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7464,7 +7257,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7489,7 +7281,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7510,7 +7301,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

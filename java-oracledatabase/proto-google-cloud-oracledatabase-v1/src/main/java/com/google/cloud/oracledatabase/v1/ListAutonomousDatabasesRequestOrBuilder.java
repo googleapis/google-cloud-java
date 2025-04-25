@@ -39,7 +39,6 @@ public interface ListAutonomousDatabasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ListAutonomousDatabasesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface ListAutonomousDatabasesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface ListAutonomousDatabasesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

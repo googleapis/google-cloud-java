@@ -33,7 +33,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p2beta1.UpdateFeedRequest)
     UpdateFeedRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateFeedRequest.newBuilder() to construct.
   private UpdateFeedRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int FEED_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1p2beta1.Feed feed_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasFeed() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.asset.v1p2beta1.Feed getFeed() {
     return feed_ == null ? com.google.cloud.asset.v1p2beta1.Feed.getDefaultInstance() : feed_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -363,7 +356,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +578,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.asset.v1p2beta1.Feed.Builder,
             com.google.cloud.asset.v1p2beta1.FeedOrBuilder>
         feedBuilder_;
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasFeed() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
         return feedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -658,7 +647,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFeedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
         return feed_ == null ? com.google.cloud.asset.v1p2beta1.Feed.getDefaultInstance() : feed_;
       }
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +943,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1006,7 +981,6 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *

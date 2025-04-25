@@ -34,7 +34,6 @@ public interface ListAuthorizedCertificatesResponseOrBuilder
    * <code>repeated .google.appengine.v1.AuthorizedCertificate certificates = 1;</code>
    */
   java.util.List<com.google.appengine.v1.AuthorizedCertificate> getCertificatesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAuthorizedCertificatesResponseOrBuilder
    * <code>repeated .google.appengine.v1.AuthorizedCertificate certificates = 1;</code>
    */
   com.google.appengine.v1.AuthorizedCertificate getCertificates(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAuthorizedCertificatesResponseOrBuilder
    * <code>repeated .google.appengine.v1.AuthorizedCertificate certificates = 1;</code>
    */
   int getCertificatesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAuthorizedCertificatesResponseOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.AuthorizedCertificateOrBuilder>
       getCertificatesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListAuthorizedCertificatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -56,7 +56,6 @@ public interface GetSpaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

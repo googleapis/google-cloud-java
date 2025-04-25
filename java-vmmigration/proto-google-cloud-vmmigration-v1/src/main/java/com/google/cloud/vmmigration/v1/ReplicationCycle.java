@@ -34,7 +34,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ReplicationCycle)
     ReplicationCycleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplicationCycle.newBuilder() to construct.
   private ReplicationCycle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,7 +141,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +151,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
-
     /**
      *
      *
@@ -164,7 +161,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>PAUSED = 2;</code>
      */
     public static final int PAUSED_VALUE = 2;
-
     /**
      *
      *
@@ -175,7 +171,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>FAILED = 3;</code>
      */
     public static final int FAILED_VALUE = 3;
-
     /**
      *
      *
@@ -279,7 +274,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -330,7 +323,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int CYCLE_NUMBER_FIELD_NUMBER = 10;
   private int cycleNumber_ = 0;
-
   /**
    *
    *
@@ -349,7 +341,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -381,7 +371,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -398,7 +387,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -414,7 +402,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -430,7 +417,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -447,7 +433,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int TOTAL_PAUSE_DURATION_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration totalPauseDuration_;
-
   /**
    *
    *
@@ -463,7 +448,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public boolean hasTotalPauseDuration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -481,7 +465,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Duration.getDefaultInstance()
         : totalPauseDuration_;
   }
-
   /**
    *
    *
@@ -500,7 +483,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 5;
   private int progressPercent_ = 0;
-
   /**
    *
    *
@@ -526,7 +508,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CycleStep> steps_;
-
   /**
    *
    *
@@ -540,7 +521,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.vmmigration.v1.CycleStep> getStepsList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -555,7 +535,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       getStepsOrBuilderList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -569,7 +548,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public int getStepsCount() {
     return steps_.size();
   }
-
   /**
    *
    *
@@ -583,7 +561,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.vmmigration.v1.CycleStep getSteps(int index) {
     return steps_.get(index);
   }
-
   /**
    *
    *
@@ -600,7 +577,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 11;
   private int state_ = 0;
-
   /**
    *
    *
@@ -616,7 +592,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -639,7 +614,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
 
   public static final int ERROR_FIELD_NUMBER = 12;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -655,7 +629,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public boolean hasError() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -671,7 +644,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -941,7 +913,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1318,7 +1289,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1341,7 +1311,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1333,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1386,7 +1354,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1371,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1395,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     }
 
     private int cycleNumber_;
-
     /**
      *
      *
@@ -1445,7 +1410,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public int getCycleNumber() {
       return cycleNumber_;
     }
-
     /**
      *
      *
@@ -1465,7 +1429,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1453,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1505,7 +1467,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1524,7 +1485,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1547,7 +1507,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1567,7 +1526,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1553,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1615,7 +1572,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1586,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1647,7 +1602,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1680,7 +1634,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1695,7 +1648,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1714,7 +1666,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1737,7 +1688,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1707,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1785,7 +1734,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1753,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1820,7 +1767,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1837,7 +1783,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -1870,7 +1815,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         totalPauseDurationBuilder_;
-
     /**
      *
      *
@@ -1885,7 +1829,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public boolean hasTotalPauseDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1906,7 +1849,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return totalPauseDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1929,7 +1871,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1949,7 +1890,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1977,7 +1917,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1997,7 +1936,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2012,7 +1950,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTotalPauseDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2031,7 +1968,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             : totalPauseDuration_;
       }
     }
-
     /**
      *
      *
@@ -2059,7 +1995,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     }
 
     private int progressPercent_;
-
     /**
      *
      *
@@ -2080,7 +2015,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public int getProgressPercent() {
       return progressPercent_;
     }
-
     /**
      *
      *
@@ -2105,7 +2039,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2094,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return stepsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2178,7 +2110,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return stepsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2195,7 +2126,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return stepsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2218,7 +2148,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2168,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2262,7 +2190,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2285,7 +2212,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2231,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2326,7 +2251,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2347,7 +2271,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2367,7 +2290,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2387,7 +2309,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2400,7 +2321,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.CycleStep.Builder getStepsBuilder(int index) {
       return getStepsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2417,7 +2337,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return stepsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2435,7 +2354,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(steps_);
       }
     }
-
     /**
      *
      *
@@ -2449,7 +2367,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       return getStepsFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.CycleStep.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2463,7 +2380,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       return getStepsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.CycleStep.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2495,7 +2411,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2511,7 +2426,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2530,7 +2444,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2463,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.vmmigration.v1.ReplicationCycle.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2572,7 +2484,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2595,7 +2506,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -2610,7 +2520,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public boolean hasError() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2629,7 +2538,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2652,7 +2560,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2672,7 +2579,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2700,7 +2606,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2720,7 +2625,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2639,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2752,7 +2655,6 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *

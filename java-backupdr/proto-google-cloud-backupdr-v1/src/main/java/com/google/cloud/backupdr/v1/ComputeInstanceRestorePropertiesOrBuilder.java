@@ -36,7 +36,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the advancedMachineFeatures field is set.
    */
   boolean hasAdvancedMachineFeatures();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The advancedMachineFeatures.
    */
   com.google.cloud.backupdr.v1.AdvancedMachineFeatures getAdvancedMachineFeatures();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the canIpForward field is set.
    */
   boolean hasCanIpForward();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the confidentialInstanceConfig field is set.
    */
   boolean hasConfidentialInstanceConfig();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The confidentialInstanceConfig.
    */
   com.google.cloud.backupdr.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the deletionProtection field is set.
    */
   boolean hasDeletionProtection();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AttachedDisk> getDisksList();
-
   /**
    *
    *
@@ -274,7 +263,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.AttachedDisk getDisks(int index);
-
   /**
    *
    *
@@ -288,7 +276,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   int getDisksCount();
-
   /**
    *
    *
@@ -303,7 +290,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AttachedDiskOrBuilder>
       getDisksOrBuilderList();
-
   /**
    *
    *
@@ -332,7 +318,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the displayDevice field is set.
    */
   boolean hasDisplayDevice();
-
   /**
    *
    *
@@ -347,7 +332,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The displayDevice.
    */
   com.google.cloud.backupdr.v1.DisplayDevice getDisplayDevice();
-
   /**
    *
    *
@@ -374,7 +358,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AcceleratorConfig> getGuestAcceleratorsList();
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.AcceleratorConfig getGuestAccelerators(int index);
-
   /**
    *
    *
@@ -402,7 +384,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   int getGuestAcceleratorsCount();
-
   /**
    *
    *
@@ -417,7 +398,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AcceleratorConfigOrBuilder>
       getGuestAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -448,7 +428,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the hostname field is set.
    */
   boolean hasHostname();
-
   /**
    *
    *
@@ -465,7 +444,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -498,7 +476,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the instanceEncryptionKey field is set.
    */
   boolean hasInstanceEncryptionKey();
-
   /**
    *
    *
@@ -514,7 +491,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The instanceEncryptionKey.
    */
   com.google.cloud.backupdr.v1.CustomerEncryptionKey getInstanceEncryptionKey();
-
   /**
    *
    *
@@ -543,7 +519,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the keyRevocationActionType field is set.
    */
   boolean hasKeyRevocationActionType();
-
   /**
    *
    *
@@ -558,7 +533,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The enum numeric value on the wire for keyRevocationActionType.
    */
   int getKeyRevocationActionTypeValue();
-
   /**
    *
    *
@@ -584,7 +558,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -595,11 +568,9 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -610,7 +581,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -625,7 +595,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -650,7 +619,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the machineType field is set.
    */
   boolean hasMachineType();
-
   /**
    *
    *
@@ -664,7 +632,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -693,7 +660,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -708,7 +674,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The metadata.
    */
   com.google.cloud.backupdr.v1.Metadata getMetadata();
-
   /**
    *
    *
@@ -734,7 +699,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
-
   /**
    *
    *
@@ -747,7 +711,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
-
   /**
    *
    *
@@ -776,7 +739,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.NetworkInterface> getNetworkInterfacesList();
-
   /**
    *
    *
@@ -792,7 +754,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.NetworkInterface getNetworkInterfaces(int index);
-
   /**
    *
    *
@@ -808,7 +769,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   int getNetworkInterfacesCount();
-
   /**
    *
    *
@@ -825,7 +785,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
-
   /**
    *
    *
@@ -856,7 +815,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the networkPerformanceConfig field is set.
    */
   boolean hasNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -871,7 +829,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The networkPerformanceConfig.
    */
   com.google.cloud.backupdr.v1.NetworkPerformanceConfig getNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -901,7 +858,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the params field is set.
    */
   boolean hasParams();
-
   /**
    *
    *
@@ -917,7 +873,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The params.
    */
   com.google.cloud.backupdr.v1.InstanceParams getParams();
-
   /**
    *
    *
@@ -947,7 +902,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
-
   /**
    *
    *
@@ -963,7 +917,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
    */
   int getPrivateIpv6GoogleAccessValue();
-
   /**
    *
    *
@@ -995,7 +948,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the allocationAffinity field is set.
    */
   boolean hasAllocationAffinity();
-
   /**
    *
    *
@@ -1010,7 +962,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The allocationAffinity.
    */
   com.google.cloud.backupdr.v1.AllocationAffinity getAllocationAffinity();
-
   /**
    *
    *
@@ -1036,7 +987,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
-
   /**
    *
    *
@@ -1049,7 +999,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
-
   /**
    *
    *
@@ -1063,7 +1012,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
-
   /**
    *
    *
@@ -1092,7 +1040,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
-
   /**
    *
    *
@@ -1107,7 +1054,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The scheduling.
    */
   com.google.cloud.backupdr.v1.Scheduling getScheduling();
-
   /**
    *
    *
@@ -1135,7 +1081,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.ServiceAccount> getServiceAccountsList();
-
   /**
    *
    *
@@ -1150,7 +1095,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.ServiceAccount getServiceAccounts(int index);
-
   /**
    *
    *
@@ -1165,7 +1109,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </code>
    */
   int getServiceAccountsCount();
-
   /**
    *
    *
@@ -1181,7 +1124,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
-
   /**
    *
    *
@@ -1213,7 +1155,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return Whether the tags field is set.
    */
   boolean hasTags();
-
   /**
    *
    *
@@ -1230,7 +1171,6 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * @return The tags.
    */
   com.google.cloud.backupdr.v1.Tags getTags();
-
   /**
    *
    *

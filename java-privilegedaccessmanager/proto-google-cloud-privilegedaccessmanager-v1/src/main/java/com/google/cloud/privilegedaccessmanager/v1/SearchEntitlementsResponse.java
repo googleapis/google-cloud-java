@@ -33,7 +33,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.SearchEntitlementsResponse)
     SearchEntitlementsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchEntitlementsResponse.newBuilder() to construct.
   private SearchEntitlementsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.privilegedaccessmanager.v1.Entitlement> entitlements_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       getEntitlementsList() {
     return entitlements_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       getEntitlementsOrBuilderList() {
     return entitlements_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
   public int getEntitlementsCount() {
     return entitlements_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
   public com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlements(int index) {
     return entitlements_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return entitlementsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return entitlementsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return entitlementsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         int index) {
       return getEntitlementsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return entitlementsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(entitlements_);
       }
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       return getEntitlementsFieldBuilder()
           .addBuilder(com.google.cloud.privilegedaccessmanager.v1.Entitlement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.privilegedaccessmanager.v1.Entitlement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1004,7 +978,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1022,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class SearchEntitlementsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

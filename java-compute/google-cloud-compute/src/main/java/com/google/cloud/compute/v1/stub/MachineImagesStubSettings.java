@@ -54,7 +54,6 @@ import com.google.cloud.compute.v1.MachineImageList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyMachineImageRequest;
-import com.google.cloud.compute.v1.SetLabelsMachineImageRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsMachineImageRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
@@ -162,9 +161,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
   private final PagedCallSettings<ListMachineImagesRequest, MachineImageList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<SetIamPolicyMachineImageRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<SetLabelsMachineImageRequest, Operation> setLabelsSettings;
-  private final OperationCallSettings<SetLabelsMachineImageRequest, Operation, Operation>
-      setLabelsOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
 
@@ -264,17 +260,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
     return setIamPolicySettings;
   }
 
-  /** Returns the object with the settings used for calls to setLabels. */
-  public UnaryCallSettings<SetLabelsMachineImageRequest, Operation> setLabelsSettings() {
-    return setLabelsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to setLabels. */
-  public OperationCallSettings<SetLabelsMachineImageRequest, Operation, Operation>
-      setLabelsOperationSettings() {
-    return setLabelsOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
       testIamPermissionsSettings() {
@@ -371,8 +356,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
-    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
@@ -393,10 +376,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
         listSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyMachineImageRequest, Policy>
         setIamPolicySettings;
-    private final UnaryCallSettings.Builder<SetLabelsMachineImageRequest, Operation>
-        setLabelsSettings;
-    private final OperationCallSettings.Builder<SetLabelsMachineImageRequest, Operation, Operation>
-        setLabelsOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -458,8 +437,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      setLabelsOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -470,7 +447,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
               insertSettings,
               listSettings,
               setIamPolicySettings,
-              setLabelsSettings,
               testIamPermissionsSettings);
       initDefaults(this);
     }
@@ -486,8 +462,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      setLabelsSettings = settings.setLabelsSettings.toBuilder();
-      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -498,7 +472,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
               insertSettings,
               listSettings,
               setIamPolicySettings,
-              setLabelsSettings,
               testIamPermissionsSettings);
     }
 
@@ -546,11 +519,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .setLabelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -584,30 +552,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertMachineImageRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeoutDuration(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeoutDuration(Duration.ZERO)
-                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
-                      .build()));
-
-      builder
-          .setLabelsOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<SetLabelsMachineImageRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -688,17 +632,6 @@ public class MachineImagesStubSettings extends StubSettings<MachineImagesStubSet
     public UnaryCallSettings.Builder<SetIamPolicyMachineImageRequest, Policy>
         setIamPolicySettings() {
       return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setLabels. */
-    public UnaryCallSettings.Builder<SetLabelsMachineImageRequest, Operation> setLabelsSettings() {
-      return setLabelsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setLabels. */
-    public OperationCallSettings.Builder<SetLabelsMachineImageRequest, Operation, Operation>
-        setLabelsOperationSettings() {
-      return setLabelsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

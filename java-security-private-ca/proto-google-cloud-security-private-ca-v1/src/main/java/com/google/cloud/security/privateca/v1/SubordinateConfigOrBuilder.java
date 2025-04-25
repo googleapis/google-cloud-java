@@ -44,7 +44,6 @@ public interface SubordinateConfigOrBuilder
    * @return Whether the certificateAuthority field is set.
    */
   boolean hasCertificateAuthority();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface SubordinateConfigOrBuilder
    * @return The certificateAuthority.
    */
   java.lang.String getCertificateAuthority();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface SubordinateConfigOrBuilder
    * @return Whether the pemIssuerChain field is set.
    */
   boolean hasPemIssuerChain();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface SubordinateConfigOrBuilder
    */
   com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain
       getPemIssuerChain();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return The location.
    */
   com.google.privacy.dlp.v2.DataProfileLocation getLocation();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return Whether the otherCloudStartingLocation field is set.
    */
   boolean hasOtherCloudStartingLocation();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return The otherCloudStartingLocation.
    */
   com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation getOtherCloudStartingLocation();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return A list containing the inspectTemplates.
    */
   java.util.List<java.lang.String> getInspectTemplatesList();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return The count of inspectTemplates.
    */
   int getInspectTemplatesCount();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface DataProfileJobConfigOrBuilder
    * @return The inspectTemplates at the given index.
    */
   java.lang.String getInspectTemplates(int index);
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public interface DataProfileJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DataProfileAction data_profile_actions = 6;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DataProfileAction> getDataProfileActionsList();
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public interface DataProfileJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DataProfileAction data_profile_actions = 6;</code>
    */
   com.google.privacy.dlp.v2.DataProfileAction getDataProfileActions(int index);
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public interface DataProfileJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DataProfileAction data_profile_actions = 6;</code>
    */
   int getDataProfileActionsCount();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface DataProfileJobConfigOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DataProfileActionOrBuilder>
       getDataProfileActionsOrBuilderList();
-
   /**
    *
    *

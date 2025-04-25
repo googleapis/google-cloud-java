@@ -37,7 +37,6 @@ public interface OrchestrationClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface OrchestrationClusterOrBuilder
    * @return Whether the managementConfig field is set.
    */
   boolean hasManagementConfig();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface OrchestrationClusterOrBuilder
    * @return The managementConfig.
    */
   com.google.cloud.telcoautomation.v1alpha1.ManagementConfig getManagementConfig();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface OrchestrationClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface OrchestrationClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface OrchestrationClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface OrchestrationClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface OrchestrationClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -191,11 +183,9 @@ public interface OrchestrationClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -206,7 +196,6 @@ public interface OrchestrationClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -221,7 +210,6 @@ public interface OrchestrationClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -245,7 +233,6 @@ public interface OrchestrationClusterOrBuilder
    * @return The tnaVersion.
    */
   java.lang.String getTnaVersion();
-
   /**
    *
    *
@@ -273,7 +260,6 @@ public interface OrchestrationClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

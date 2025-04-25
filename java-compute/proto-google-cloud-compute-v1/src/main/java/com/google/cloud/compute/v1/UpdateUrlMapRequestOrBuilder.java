@@ -38,7 +38,6 @@ public interface UpdateUrlMapRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface UpdateUrlMapRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateUrlMapRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateUrlMapRequestOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface UpdateUrlMapRequestOrBuilder
    * @return Whether the urlMapResource field is set.
    */
   boolean hasUrlMapResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface UpdateUrlMapRequestOrBuilder
    * @return The urlMapResource.
    */
   com.google.cloud.compute.v1.UrlMap getUrlMapResource();
-
   /**
    *
    *

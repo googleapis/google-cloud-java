@@ -37,7 +37,6 @@ public interface UpgradeNoteOrBuilder
    * @return The package.
    */
   java.lang.String getPackage();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpgradeNoteOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface UpgradeNoteOrBuilder
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpgradeNoteOrBuilder
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
   java.util.List<io.grafeas.v1.UpgradeDistribution> getDistributionsList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface UpgradeNoteOrBuilder
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
   io.grafeas.v1.UpgradeDistribution getDistributions(int index);
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface UpgradeNoteOrBuilder
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
   int getDistributionsCount();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface UpgradeNoteOrBuilder
    */
   java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder>
       getDistributionsOrBuilderList();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface UpgradeNoteOrBuilder
    * @return Whether the windowsUpdate field is set.
    */
   boolean hasWindowsUpdate();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface UpgradeNoteOrBuilder
    * @return The windowsUpdate.
    */
   io.grafeas.v1.WindowsUpdate getWindowsUpdate();
-
   /**
    *
    *

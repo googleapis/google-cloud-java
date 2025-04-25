@@ -42,7 +42,6 @@ public interface CompletionDataInputConfigOrBuilder
    * @return Whether the bigQuerySource field is set.
    */
   boolean hasBigQuerySource();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface CompletionDataInputConfigOrBuilder
    * @return The bigQuerySource.
    */
   com.google.cloud.retail.v2beta.BigQuerySource getBigQuerySource();
-
   /**
    *
    *

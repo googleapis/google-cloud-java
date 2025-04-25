@@ -35,7 +35,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ReconcileTagsResponse)
     ReconcileTagsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReconcileTagsResponse.newBuilder() to construct.
   private ReconcileTagsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
 
   public static final int CREATED_TAGS_COUNT_FIELD_NUMBER = 1;
   private long createdTagsCount_ = 0L;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATED_TAGS_COUNT_FIELD_NUMBER = 2;
   private long updatedTagsCount_ = 0L;
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
 
   public static final int DELETED_TAGS_COUNT_FIELD_NUMBER = 3;
   private long deletedTagsCount_ = 0L;
-
   /**
    *
    *
@@ -299,7 +295,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +505,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private long createdTagsCount_;
-
     /**
      *
      *
@@ -526,7 +520,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     public long getCreatedTagsCount() {
       return createdTagsCount_;
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private long updatedTagsCount_;
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     public long getUpdatedTagsCount() {
       return updatedTagsCount_;
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +611,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private long deletedTagsCount_;
-
     /**
      *
      *
@@ -638,7 +626,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
     public long getDeletedTagsCount() {
       return deletedTagsCount_;
     }
-
     /**
      *
      *
@@ -658,7 +645,6 @@ public final class ReconcileTagsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

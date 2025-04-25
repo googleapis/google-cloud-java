@@ -33,7 +33,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest)
     GetConsumerQuotaMetricRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetConsumerQuotaMetricRequest.newBuilder() to construct.
   private GetConsumerQuotaMetricRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -331,7 +326,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -534,7 +528,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -560,7 +553,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
           com.google.api.serviceusage.v1beta1.QuotaView.forNumber(view_);
       return result == null ? com.google.api.serviceusage.v1beta1.QuotaView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class GetConsumerQuotaMetricRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

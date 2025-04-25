@@ -40,7 +40,6 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface EncryptionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface EncryptionOrBuilder
    * @return Whether the secretManagerKeySource field is set.
    */
   boolean hasSecretManagerKeySource();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface EncryptionOrBuilder
    * @return The secretManagerKeySource.
    */
   com.google.cloud.video.livestream.v1.Encryption.SecretManagerSource getSecretManagerKeySource();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface EncryptionOrBuilder
    * @return Whether the drmSystems field is set.
    */
   boolean hasDrmSystems();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface EncryptionOrBuilder
    * @return The drmSystems.
    */
   com.google.cloud.video.livestream.v1.Encryption.DrmSystems getDrmSystems();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface EncryptionOrBuilder
    * @return Whether the aes128 field is set.
    */
   boolean hasAes128();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface EncryptionOrBuilder
    * @return The aes128.
    */
   com.google.cloud.video.livestream.v1.Encryption.Aes128Encryption getAes128();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface EncryptionOrBuilder
    * @return Whether the sampleAes field is set.
    */
   boolean hasSampleAes();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface EncryptionOrBuilder
    * @return The sampleAes.
    */
   com.google.cloud.video.livestream.v1.Encryption.SampleAesEncryption getSampleAes();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface EncryptionOrBuilder
    * @return Whether the mpegCenc field is set.
    */
   boolean hasMpegCenc();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface EncryptionOrBuilder
    * @return The mpegCenc.
    */
   com.google.cloud.video.livestream.v1.Encryption.MpegCommonEncryption getMpegCenc();
-
   /**
    *
    *

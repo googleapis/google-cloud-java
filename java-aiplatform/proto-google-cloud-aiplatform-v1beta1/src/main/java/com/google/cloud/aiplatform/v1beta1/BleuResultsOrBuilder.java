@@ -36,7 +36,6 @@ public interface BleuResultsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.BleuMetricValue> getBleuMetricValuesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BleuResultsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.BleuMetricValue getBleuMetricValues(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface BleuResultsOrBuilder
    * </code>
    */
   int getBleuMetricValuesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface BleuResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.BleuMetricValueOrBuilder>
       getBleuMetricValuesOrBuilderList();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The service.
    */
   com.google.cloud.run.v2.Service getService();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The serviceId.
    */
   java.lang.String getServiceId();
-
   /**
    *
    *

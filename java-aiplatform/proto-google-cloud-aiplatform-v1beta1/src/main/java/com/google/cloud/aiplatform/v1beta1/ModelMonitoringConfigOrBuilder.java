@@ -37,7 +37,6 @@ public interface ModelMonitoringConfigOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig>
       getObjectiveConfigsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ModelMonitoringConfigOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig getObjectiveConfigs(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ModelMonitoringConfigOrBuilder
    * </code>
    */
   int getObjectiveConfigsCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ModelMonitoringConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfigOrBuilder>
       getObjectiveConfigsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ModelMonitoringConfigOrBuilder
    * @return Whether the alertConfig field is set.
    */
   boolean hasAlertConfig();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ModelMonitoringConfigOrBuilder
    * @return The alertConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig getAlertConfig();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface ModelMonitoringConfigOrBuilder
    * @return The analysisInstanceSchemaUri.
    */
   java.lang.String getAnalysisInstanceSchemaUri();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface ModelMonitoringConfigOrBuilder
    * @return Whether the statsAnomaliesBaseDirectory field is set.
    */
   boolean hasStatsAnomaliesBaseDirectory();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface ModelMonitoringConfigOrBuilder
    * @return The statsAnomaliesBaseDirectory.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getStatsAnomaliesBaseDirectory();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.GenericSignedAttestation)
     GenericSignedAttestationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenericSignedAttestation.newBuilder() to construct.
   private GenericSignedAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,7 +114,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
      * <code>CONTENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CONTENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -215,7 +213,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 1;
   private int contentType_ = 0;
-
   /**
    *
    *
@@ -235,7 +232,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
   public int getContentTypeValue() {
     return contentType_;
   }
-
   /**
    *
    *
@@ -262,7 +258,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
 
   public static final int SERIALIZED_PAYLOAD_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -285,7 +280,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.common.Signature> signatures_;
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
   public java.util.List<io.grafeas.v1beta1.common.Signature> getSignaturesList() {
     return signatures_;
   }
-
   /**
    *
    *
@@ -320,7 +313,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       getSignaturesOrBuilderList() {
     return signatures_;
   }
-
   /**
    *
    *
@@ -337,7 +329,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
   public int getSignaturesCount() {
     return signatures_.size();
   }
-
   /**
    *
    *
@@ -354,7 +345,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
   public io.grafeas.v1beta1.common.Signature getSignatures(int index) {
     return signatures_.get(index);
   }
-
   /**
    *
    *
@@ -558,7 +548,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -818,7 +807,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int contentType_ = 0;
-
     /**
      *
      *
@@ -838,7 +826,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
     public int getContentTypeValue() {
       return contentType_;
     }
-
     /**
      *
      *
@@ -861,7 +848,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +872,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
           ? io.grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -913,7 +898,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
 
     private com.google.protobuf.ByteString serializedPayload_ =
         com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -956,7 +939,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getSerializedPayload() {
       return serializedPayload_;
     }
-
     /**
      *
      *
@@ -980,7 +962,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1017,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
         return signaturesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1036,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
         return signaturesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1055,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
         return signaturesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1080,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1103,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1128,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1153,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1175,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1198,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1221,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1243,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1265,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1280,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
     public io.grafeas.v1beta1.common.Signature.Builder getSignaturesBuilder(int index) {
       return getSignaturesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1331,7 +1299,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
         return signaturesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1352,7 +1319,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(signatures_);
       }
     }
-
     /**
      *
      *
@@ -1369,7 +1335,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       return getSignaturesFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.common.Signature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1386,7 +1351,6 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
       return getSignaturesFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.common.Signature.getDefaultInstance());
     }
-
     /**
      *
      *

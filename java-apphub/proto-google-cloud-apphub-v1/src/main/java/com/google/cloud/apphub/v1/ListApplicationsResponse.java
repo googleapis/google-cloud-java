@@ -33,7 +33,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.ListApplicationsResponse)
     ListApplicationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListApplicationsResponse.newBuilder() to construct.
   private ListApplicationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apphub.v1.Application> applications_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.apphub.v1.Application> getApplicationsList() {
     return applications_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       getApplicationsOrBuilderList() {
     return applications_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   public int getApplicationsCount() {
     return applications_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   public com.google.cloud.apphub.v1.Application getApplications(int index) {
     return applications_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -449,7 +437,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +736,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return applicationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return applicationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return applicationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +951,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     public com.google.cloud.apphub.v1.Application.Builder getApplicationsBuilder(int index) {
       return getApplicationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return applicationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +996,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(applications_);
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       return getApplicationsFieldBuilder()
           .addBuilder(com.google.cloud.apphub.v1.Application.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1051,7 +1022,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       return getApplicationsFieldBuilder()
           .addBuilder(index, com.google.cloud.apphub.v1.Application.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1084,7 +1054,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1107,7 +1076,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1130,7 +1098,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1119,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1136,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1168,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1219,7 +1183,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1234,7 +1197,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1250,7 +1212,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1266,7 +1227,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1290,7 +1250,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1272,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1291,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1309,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

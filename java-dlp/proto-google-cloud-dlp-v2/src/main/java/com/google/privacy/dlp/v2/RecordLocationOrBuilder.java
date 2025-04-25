@@ -36,7 +36,6 @@ public interface RecordLocationOrBuilder
    * @return Whether the recordKey field is set.
    */
   boolean hasRecordKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RecordLocationOrBuilder
    * @return The recordKey.
    */
   com.google.privacy.dlp.v2.RecordKey getRecordKey();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RecordLocationOrBuilder
    * @return Whether the fieldId field is set.
    */
   boolean hasFieldId();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RecordLocationOrBuilder
    * @return The fieldId.
    */
   com.google.privacy.dlp.v2.FieldId getFieldId();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface RecordLocationOrBuilder
    * @return Whether the tableLocation field is set.
    */
   boolean hasTableLocation();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface RecordLocationOrBuilder
    * @return The tableLocation.
    */
   com.google.privacy.dlp.v2.TableLocation getTableLocation();
-
   /**
    *
    *

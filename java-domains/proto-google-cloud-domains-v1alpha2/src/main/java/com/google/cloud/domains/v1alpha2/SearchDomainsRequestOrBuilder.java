@@ -36,7 +36,6 @@ public interface SearchDomainsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SearchDomainsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

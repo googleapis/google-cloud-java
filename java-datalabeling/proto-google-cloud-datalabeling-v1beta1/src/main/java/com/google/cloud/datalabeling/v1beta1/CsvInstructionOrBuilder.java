@@ -36,7 +36,6 @@ public interface CsvInstructionOrBuilder
    * @return The gcsFileUri.
    */
   java.lang.String getGcsFileUri();
-
   /**
    *
    *

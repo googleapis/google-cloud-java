@@ -330,19 +330,6 @@ public final class MapsPlatformDatasetsGrpc {
     return MapsPlatformDatasetsStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static MapsPlatformDatasetsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MapsPlatformDatasetsBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MapsPlatformDatasetsBlockingV2Stub>() {
-          @java.lang.Override
-          public MapsPlatformDatasetsBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MapsPlatformDatasetsBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return MapsPlatformDatasetsBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -608,105 +595,6 @@ public final class MapsPlatformDatasetsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MapsPlatformDatasets.
-   *
-   * <pre>
-   * Service definition for the Maps Platform Datasets API.
-   * </pre>
-   */
-  public static final class MapsPlatformDatasetsBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<MapsPlatformDatasetsBlockingV2Stub> {
-    private MapsPlatformDatasetsBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected MapsPlatformDatasetsBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MapsPlatformDatasetsBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new dataset for the specified project.
-     * </pre>
-     */
-    public com.google.maps.mapsplatformdatasets.v1.Dataset createDataset(
-        com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the metadata for the dataset.
-     * </pre>
-     */
-    public com.google.maps.mapsplatformdatasets.v1.Dataset updateDatasetMetadata(
-        com.google.maps.mapsplatformdatasets.v1.UpdateDatasetMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateDatasetMetadataMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets the dataset.
-     * </pre>
-     */
-    public com.google.maps.mapsplatformdatasets.v1.Dataset getDataset(
-        com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetDatasetMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets all the errors of a dataset.
-     * </pre>
-     */
-    public com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse fetchDatasetErrors(
-        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchDatasetErrorsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all the datasets for the specified project.
-     * </pre>
-     */
-    public com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse listDatasets(
-        com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListDatasetsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified dataset.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteDataset(
-        com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service MapsPlatformDatasets.
    *
    * <pre>
    * Service definition for the Maps Platform Datasets API.

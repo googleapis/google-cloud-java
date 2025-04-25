@@ -36,7 +36,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicyRuleResource field is set.
    */
   boolean hasFirewallPolicyRuleResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicyRuleResource.
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getFirewallPolicyRuleResource();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the maxPriority field is set.
    */
   boolean hasMaxPriority();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the minPriority field is set.
    */
   boolean hasMinPriority();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public interface AddRuleRegionNetworkFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

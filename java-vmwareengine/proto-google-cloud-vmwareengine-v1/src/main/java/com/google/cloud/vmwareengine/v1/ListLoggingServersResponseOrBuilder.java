@@ -34,7 +34,6 @@ public interface ListLoggingServersResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.LoggingServer logging_servers = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.LoggingServer> getLoggingServersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListLoggingServersResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.LoggingServer logging_servers = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.LoggingServer getLoggingServers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListLoggingServersResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.LoggingServer logging_servers = 1;</code>
    */
   int getLoggingServersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListLoggingServersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.LoggingServerOrBuilder>
       getLoggingServersOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListLoggingServersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListLoggingServersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface ListLoggingServersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface ListLoggingServersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

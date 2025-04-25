@@ -40,7 +40,6 @@ public interface SpeechTranscriptionOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative>
       getAlternativesList();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface SpeechTranscriptionOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative getAlternatives(int index);
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface SpeechTranscriptionOrBuilder
    * </code>
    */
   int getAlternativesCount();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface SpeechTranscriptionOrBuilder
   java.util.List<
           ? extends com.google.cloud.videointelligence.v1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SpeechTranscriptionOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

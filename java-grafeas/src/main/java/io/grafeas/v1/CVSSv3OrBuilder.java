@@ -66,7 +66,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for attackVector.
    */
   int getAttackVectorValue();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for attackComplexity.
    */
   int getAttackComplexityValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
    *
@@ -102,7 +100,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for privilegesRequired.
    */
   int getPrivilegesRequiredValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
    *
@@ -116,7 +113,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for userInteraction.
    */
   int getUserInteractionValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
    *
@@ -130,7 +126,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
    *
@@ -144,7 +139,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for confidentialityImpact.
    */
   int getConfidentialityImpactValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
    *
@@ -158,7 +152,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for integrityImpact.
    */
   int getIntegrityImpactValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
    *
@@ -172,7 +165,6 @@ public interface CVSSv3OrBuilder
    * @return The enum numeric value on the wire for availabilityImpact.
    */
   int getAvailabilityImpactValue();
-
   /**
    * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
    *

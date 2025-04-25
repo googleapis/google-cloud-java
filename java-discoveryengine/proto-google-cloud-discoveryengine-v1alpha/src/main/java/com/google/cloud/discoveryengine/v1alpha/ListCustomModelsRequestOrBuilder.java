@@ -41,7 +41,6 @@ public interface ListCustomModelsRequestOrBuilder
    * @return The dataStore.
    */
   java.lang.String getDataStore();
-
   /**
    *
    *

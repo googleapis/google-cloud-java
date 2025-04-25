@@ -40,7 +40,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return Whether the vpcNetwork field is set.
    */
   boolean hasVpcNetwork();
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return Whether the vmwareEngineNetwork field is set.
    */
   boolean hasVmwareEngineNetwork();
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The vmwareEngineNetwork.
    */
   java.lang.String getVmwareEngineNetwork();
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public interface ManagementDnsZoneBindingOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *

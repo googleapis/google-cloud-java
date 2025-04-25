@@ -34,7 +34,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ValueTransformation)
     ValueTransformationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ValueTransformation.newBuilder() to construct.
   private ValueTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     private FilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -140,7 +138,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     private ActionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -182,7 +179,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IS_NULL_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasIsNull() {
     return filterCase_ == 100;
   }
-
   /**
    *
    *
@@ -217,7 +212,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -236,7 +230,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VALUE_LIST_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasValueList() {
     return filterCase_ == 101;
   }
-
   /**
    *
    *
@@ -275,7 +267,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.clouddms.v1.ValueListFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -296,7 +287,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INT_COMPARISON_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -315,7 +305,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasIntComparison() {
     return filterCase_ == 102;
   }
-
   /**
    *
    *
@@ -337,7 +326,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.clouddms.v1.IntComparisonFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -359,7 +347,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DOUBLE_COMPARISON_FIELD_NUMBER = 103;
-
   /**
    *
    *
@@ -378,7 +365,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasDoubleComparison() {
     return filterCase_ == 103;
   }
-
   /**
    *
    *
@@ -400,7 +386,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.clouddms.v1.DoubleComparisonFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -423,7 +408,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ASSIGN_NULL_FIELD_NUMBER = 200;
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasAssignNull() {
     return actionCase_ == 200;
   }
-
   /**
    *
    *
@@ -460,7 +443,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -480,7 +462,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ASSIGN_SPECIFIC_VALUE_FIELD_NUMBER = 201;
-
   /**
    *
    *
@@ -499,7 +480,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasAssignSpecificValue() {
     return actionCase_ == 201;
   }
-
   /**
    *
    *
@@ -521,7 +501,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.clouddms.v1.AssignSpecificValue.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -544,7 +523,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ASSIGN_MIN_VALUE_FIELD_NUMBER = 202;
-
   /**
    *
    *
@@ -562,7 +540,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasAssignMinValue() {
     return actionCase_ == 202;
   }
-
   /**
    *
    *
@@ -583,7 +560,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -604,7 +580,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ASSIGN_MAX_VALUE_FIELD_NUMBER = 203;
-
   /**
    *
    *
@@ -622,7 +597,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasAssignMaxValue() {
     return actionCase_ == 203;
   }
-
   /**
    *
    *
@@ -643,7 +617,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -664,7 +637,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ROUND_SCALE_FIELD_NUMBER = 204;
-
   /**
    *
    *
@@ -682,7 +654,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasRoundScale() {
     return actionCase_ == 204;
   }
-
   /**
    *
    *
@@ -703,7 +674,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.clouddms.v1.RoundToScale.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -724,7 +694,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int APPLY_HASH_FIELD_NUMBER = 205;
-
   /**
    *
    *
@@ -742,7 +711,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
   public boolean hasApplyHash() {
     return actionCase_ == 205;
   }
-
   /**
    *
    *
@@ -763,7 +731,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.clouddms.v1.ApplyHash.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1101,7 +1068,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1500,7 +1466,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         isNullBuilder_;
-
     /**
      *
      *
@@ -1516,7 +1481,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasIsNull() {
       return filterCase_ == 100;
     }
-
     /**
      *
      *
@@ -1542,7 +1506,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1565,7 +1528,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1585,7 +1547,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1616,7 +1577,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1642,7 +1602,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1614,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Empty.Builder getIsNullBuilder() {
       return getIsNullFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1676,7 +1634,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1670,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.ValueListFilter.Builder,
             com.google.cloud.clouddms.v1.ValueListFilterOrBuilder>
         valueListBuilder_;
-
     /**
      *
      *
@@ -1731,7 +1687,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasValueList() {
       return filterCase_ == 101;
     }
-
     /**
      *
      *
@@ -1759,7 +1714,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.ValueListFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1784,7 +1738,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1807,7 +1760,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1842,7 +1794,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1870,7 +1821,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1885,7 +1835,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.clouddms.v1.ValueListFilter.Builder getValueListBuilder() {
       return getValueListFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1908,7 +1857,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.ValueListFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1949,7 +1897,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.IntComparisonFilter.Builder,
             com.google.cloud.clouddms.v1.IntComparisonFilterOrBuilder>
         intComparisonBuilder_;
-
     /**
      *
      *
@@ -1968,7 +1915,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasIntComparison() {
       return filterCase_ == 102;
     }
-
     /**
      *
      *
@@ -1997,7 +1943,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.IntComparisonFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2023,7 +1968,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1991,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2026,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -2112,7 +2054,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2128,7 +2069,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.clouddms.v1.IntComparisonFilter.Builder getIntComparisonBuilder() {
       return getIntComparisonFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2152,7 +2092,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.IntComparisonFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2194,7 +2133,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.DoubleComparisonFilter.Builder,
             com.google.cloud.clouddms.v1.DoubleComparisonFilterOrBuilder>
         doubleComparisonBuilder_;
-
     /**
      *
      *
@@ -2213,7 +2151,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasDoubleComparison() {
       return filterCase_ == 103;
     }
-
     /**
      *
      *
@@ -2242,7 +2179,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.DoubleComparisonFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2268,7 +2204,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -2292,7 +2227,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -2330,7 +2264,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       filterCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -2359,7 +2292,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2376,7 +2308,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         getDoubleComparisonBuilder() {
       return getDoubleComparisonFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2401,7 +2332,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.DoubleComparisonFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2443,7 +2373,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         assignNullBuilder_;
-
     /**
      *
      *
@@ -2460,7 +2389,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasAssignNull() {
       return actionCase_ == 200;
     }
-
     /**
      *
      *
@@ -2487,7 +2415,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2511,7 +2438,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -2532,7 +2458,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -2564,7 +2489,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -2591,7 +2515,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2605,7 +2528,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Empty.Builder getAssignNullBuilder() {
       return getAssignNullFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2627,7 +2549,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2665,7 +2586,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.AssignSpecificValue.Builder,
             com.google.cloud.clouddms.v1.AssignSpecificValueOrBuilder>
         assignSpecificValueBuilder_;
-
     /**
      *
      *
@@ -2684,7 +2604,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasAssignSpecificValue() {
       return actionCase_ == 201;
     }
-
     /**
      *
      *
@@ -2713,7 +2632,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.AssignSpecificValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2739,7 +2657,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2680,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -2800,7 +2716,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -2829,7 +2744,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2846,7 +2760,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         getAssignSpecificValueBuilder() {
       return getAssignSpecificValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2871,7 +2784,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.AssignSpecificValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2913,7 +2825,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         assignMinValueBuilder_;
-
     /**
      *
      *
@@ -2932,7 +2843,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasAssignMinValue() {
       return actionCase_ == 202;
     }
-
     /**
      *
      *
@@ -2961,7 +2871,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2987,7 +2896,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -3010,7 +2918,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -3044,7 +2951,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -3073,7 +2979,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3089,7 +2994,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Empty.Builder getAssignMinValueBuilder() {
       return getAssignMinValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3113,7 +3017,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3153,7 +3056,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         assignMaxValueBuilder_;
-
     /**
      *
      *
@@ -3172,7 +3074,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasAssignMaxValue() {
       return actionCase_ == 203;
     }
-
     /**
      *
      *
@@ -3201,7 +3102,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3227,7 +3127,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 203;
       return this;
     }
-
     /**
      *
      *
@@ -3250,7 +3149,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 203;
       return this;
     }
-
     /**
      *
      *
@@ -3284,7 +3182,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 203;
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3210,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3329,7 +3225,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Empty.Builder getAssignMaxValueBuilder() {
       return getAssignMaxValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3353,7 +3248,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3393,7 +3287,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.RoundToScale.Builder,
             com.google.cloud.clouddms.v1.RoundToScaleOrBuilder>
         roundScaleBuilder_;
-
     /**
      *
      *
@@ -3411,7 +3304,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasRoundScale() {
       return actionCase_ == 204;
     }
-
     /**
      *
      *
@@ -3439,7 +3331,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.RoundToScale.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3464,7 +3355,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 204;
       return this;
     }
-
     /**
      *
      *
@@ -3487,7 +3377,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 204;
       return this;
     }
-
     /**
      *
      *
@@ -3522,7 +3411,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 204;
       return this;
     }
-
     /**
      *
      *
@@ -3550,7 +3438,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3565,7 +3452,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.clouddms.v1.RoundToScale.Builder getRoundScaleBuilder() {
       return getRoundScaleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3588,7 +3474,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.RoundToScale.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3629,7 +3514,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.ApplyHash.Builder,
             com.google.cloud.clouddms.v1.ApplyHashOrBuilder>
         applyHashBuilder_;
-
     /**
      *
      *
@@ -3647,7 +3531,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public boolean hasApplyHash() {
       return actionCase_ == 205;
     }
-
     /**
      *
      *
@@ -3675,7 +3558,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.ApplyHash.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3700,7 +3582,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 205;
       return this;
     }
-
     /**
      *
      *
@@ -3722,7 +3603,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 205;
       return this;
     }
-
     /**
      *
      *
@@ -3757,7 +3637,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       actionCase_ = 205;
       return this;
     }
-
     /**
      *
      *
@@ -3785,7 +3664,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3800,7 +3678,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.clouddms.v1.ApplyHash.Builder getApplyHashBuilder() {
       return getApplyHashFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3823,7 +3700,6 @@ public final class ValueTransformation extends com.google.protobuf.GeneratedMess
         return com.google.cloud.clouddms.v1.ApplyHash.getDefaultInstance();
       }
     }
-
     /**
      *
      *

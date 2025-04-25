@@ -33,7 +33,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse)
     SubscribeListingResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubscribeListingResponse.newBuilder() to construct.
   private SubscribeListingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

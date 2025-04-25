@@ -50,7 +50,6 @@ public interface VertexDatasetSpecOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
-
   /**
    *
    *

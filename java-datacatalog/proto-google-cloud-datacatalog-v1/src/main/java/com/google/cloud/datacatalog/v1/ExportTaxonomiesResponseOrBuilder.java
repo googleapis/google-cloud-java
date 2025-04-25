@@ -34,7 +34,6 @@ public interface ExportTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.SerializedTaxonomy> getTaxonomiesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ExportTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
    */
   com.google.cloud.datacatalog.v1.SerializedTaxonomy getTaxonomies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ExportTaxonomiesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
    */
   int getTaxonomiesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ExportTaxonomiesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.SerializedTaxonomyOrBuilder>
       getTaxonomiesOrBuilderList();
-
   /**
    *
    *

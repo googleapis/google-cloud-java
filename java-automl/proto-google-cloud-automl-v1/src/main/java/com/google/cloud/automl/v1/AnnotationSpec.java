@@ -33,7 +33,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.AnnotationSpec)
     AnnotationSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnnotationSpec.newBuilder() to construct.
   private AnnotationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXAMPLE_COUNT_FIELD_NUMBER = 9;
   private int exampleCount_ = 0;
-
   /**
    *
    *
@@ -374,7 +368,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +579,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -611,7 +603,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exampleCount_;
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     public int getExampleCount() {
       return exampleCount_;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

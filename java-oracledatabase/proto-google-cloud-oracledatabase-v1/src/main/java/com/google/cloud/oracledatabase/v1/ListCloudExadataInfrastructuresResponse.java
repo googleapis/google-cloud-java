@@ -34,7 +34,6 @@ public final class ListCloudExadataInfrastructuresResponse
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresResponse)
     ListCloudExadataInfrastructuresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCloudExadataInfrastructuresResponse.newBuilder() to construct.
   private ListCloudExadataInfrastructuresResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListCloudExadataInfrastructuresResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure>
       cloudExadataInfrastructures_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListCloudExadataInfrastructuresResponse
       getCloudExadataInfrastructuresList() {
     return cloudExadataInfrastructures_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListCloudExadataInfrastructuresResponse
       getCloudExadataInfrastructuresOrBuilderList() {
     return cloudExadataInfrastructures_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ListCloudExadataInfrastructuresResponse
   public int getCloudExadataInfrastructuresCount() {
     return cloudExadataInfrastructures_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ListCloudExadataInfrastructuresResponse
       getCloudExadataInfrastructures(int index) {
     return cloudExadataInfrastructures_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ListCloudExadataInfrastructuresResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListCloudExadataInfrastructuresResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +385,6 @@ public final class ListCloudExadataInfrastructuresResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +679,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return cloudExadataInfrastructuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -707,7 +697,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return cloudExadataInfrastructuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -727,7 +716,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return cloudExadataInfrastructuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +925,6 @@ public final class ListCloudExadataInfrastructuresResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +940,6 @@ public final class ListCloudExadataInfrastructuresResponse
         getCloudExadataInfrastructuresBuilder(int index) {
       return getCloudExadataInfrastructuresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -981,7 +959,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return cloudExadataInfrastructuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return java.util.Collections.unmodifiableList(cloudExadataInfrastructures_);
       }
     }
-
     /**
      *
      *
@@ -1020,7 +996,6 @@ public final class ListCloudExadataInfrastructuresResponse
           .addBuilder(
               com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1039,7 +1014,6 @@ public final class ListCloudExadataInfrastructuresResponse
               index,
               com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1077,7 +1051,6 @@ public final class ListCloudExadataInfrastructuresResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1100,7 +1073,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1095,6 @@ public final class ListCloudExadataInfrastructuresResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class ListCloudExadataInfrastructuresResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1133,6 @@ public final class ListCloudExadataInfrastructuresResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

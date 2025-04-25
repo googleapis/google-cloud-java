@@ -33,7 +33,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.ClassifyTextResponse)
     ClassifyTextResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClassifyTextResponse.newBuilder() to construct.
   private ClassifyTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.ClassificationCategory> categories_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.language.v1.ClassificationCategory> getCategoriesList() {
     return categories_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       getCategoriesOrBuilderList() {
     return categories_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
   public int getCategoriesCount() {
     return categories_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.language.v1.ClassificationCategory getCategories(int index) {
     return categories_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +791,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getCategoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -828,7 +808,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -846,7 +825,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(categories_);
       }
     }
-
     /**
      *
      *
@@ -860,7 +838,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
       return getCategoriesFieldBuilder()
           .addBuilder(com.google.cloud.language.v1.ClassificationCategory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -876,7 +853,6 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.language.v1.ClassificationCategory.getDefaultInstance());
     }
-
     /**
      *
      *

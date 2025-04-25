@@ -36,7 +36,6 @@ public interface TagFieldOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TagFieldOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface TagFieldOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface TagFieldOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface TagFieldOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface TagFieldOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface TagFieldOrBuilder
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface TagFieldOrBuilder
    * @return Whether the enumValue field is set.
    */
   boolean hasEnumValue();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface TagFieldOrBuilder
    * @return The enumValue.
    */
   com.google.cloud.datacatalog.v1beta1.TagField.EnumValue getEnumValue();
-
   /**
    *
    *

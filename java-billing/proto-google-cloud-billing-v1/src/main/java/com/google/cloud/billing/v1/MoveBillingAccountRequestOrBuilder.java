@@ -41,7 +41,6 @@ public interface MoveBillingAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface MoveBillingAccountRequestOrBuilder
    * @return The destinationParent.
    */
   java.lang.String getDestinationParent();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface AlloyDbSourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface AlloyDbSourceOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AlloyDbSourceOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface AlloyDbSourceOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface AlloyDbSourceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface AlloyDbSourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
-
   /**
    *
    *

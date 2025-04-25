@@ -33,7 +33,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.SoleTenancyPreferences)
     SoleTenancyPreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SoleTenancyPreferences.newBuilder() to construct.
   private SoleTenancyPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
      * <code>HOST_MAINTENANCE_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int HOST_MAINTENANCE_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
      * <code>HOST_MAINTENANCE_POLICY_DEFAULT = 1;</code>
      */
     public static final int HOST_MAINTENANCE_POLICY_DEFAULT_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
      * <code>HOST_MAINTENANCE_POLICY_RESTART_IN_PLACE = 2;</code>
      */
     public static final int HOST_MAINTENANCE_POLICY_RESTART_IN_PLACE_VALUE = 2;
-
     /**
      *
      *
@@ -317,7 +313,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
      * <code>COMMITMENT_PLAN_UNSPECIFIED = 0;</code>
      */
     public static final int COMMITMENT_PLAN_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -328,7 +323,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
      * <code>ON_DEMAND = 1;</code>
      */
     public static final int ON_DEMAND_VALUE = 1;
-
     /**
      *
      *
@@ -339,7 +333,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
      * <code>COMMITMENT_1_YEAR = 2;</code>
      */
     public static final int COMMITMENT_1_YEAR_VALUE = 2;
-
     /**
      *
      *
@@ -440,7 +433,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
 
   public static final int CPU_OVERCOMMIT_RATIO_FIELD_NUMBER = 1;
   private double cpuOvercommitRatio_ = 0D;
-
   /**
    *
    *
@@ -460,7 +452,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
 
   public static final int HOST_MAINTENANCE_POLICY_FIELD_NUMBER = 2;
   private int hostMaintenancePolicy_ = 0;
-
   /**
    *
    *
@@ -478,7 +469,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
   public int getHostMaintenancePolicyValue() {
     return hostMaintenancePolicy_;
   }
-
   /**
    *
    *
@@ -506,7 +496,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
 
   public static final int COMMITMENT_PLAN_FIELD_NUMBER = 3;
   private int commitmentPlan_ = 0;
-
   /**
    *
    *
@@ -527,7 +516,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
   public int getCommitmentPlanValue() {
     return commitmentPlan_;
   }
-
   /**
    *
    *
@@ -559,7 +547,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.SoleTenantNodeType> nodeTypes_;
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.migrationcenter.v1.SoleTenantNodeType> getNodeTypesList() {
     return nodeTypes_;
   }
-
   /**
    *
    *
@@ -590,7 +576,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       getNodeTypesOrBuilderList() {
     return nodeTypes_;
   }
-
   /**
    *
    *
@@ -605,7 +590,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
   public int getNodeTypesCount() {
     return nodeTypes_.size();
   }
-
   /**
    *
    *
@@ -620,7 +604,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
   public com.google.cloud.migrationcenter.v1.SoleTenantNodeType getNodeTypes(int index) {
     return nodeTypes_.get(index);
   }
-
   /**
    *
    *
@@ -842,7 +825,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1113,7 +1095,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private double cpuOvercommitRatio_;
-
     /**
      *
      *
@@ -1130,7 +1111,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     public double getCpuOvercommitRatio() {
       return cpuOvercommitRatio_;
     }
-
     /**
      *
      *
@@ -1151,7 +1131,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1151,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     }
 
     private int hostMaintenancePolicy_ = 0;
-
     /**
      *
      *
@@ -1190,7 +1168,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     public int getHostMaintenancePolicyValue() {
       return hostMaintenancePolicy_;
     }
-
     /**
      *
      *
@@ -1211,7 +1188,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1212,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1261,7 +1236,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1257,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     }
 
     private int commitmentPlan_ = 0;
-
     /**
      *
      *
@@ -1304,7 +1277,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
     public int getCommitmentPlanValue() {
       return commitmentPlan_;
     }
-
     /**
      *
      *
@@ -1328,7 +1300,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1326,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
           ? com.google.cloud.migrationcenter.v1.SoleTenancyPreferences.CommitmentPlan.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1383,7 +1353,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1412,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
         return nodeTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1461,7 +1429,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
         return nodeTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1479,7 +1446,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
         return nodeTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1504,7 +1470,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1491,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1514,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1575,7 +1538,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1559,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1580,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1642,7 +1602,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1622,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1684,7 +1642,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1656,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
         int index) {
       return getNodeTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1718,7 +1674,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
         return nodeTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1737,7 +1692,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(nodeTypes_);
       }
     }
-
     /**
      *
      *
@@ -1752,7 +1706,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
       return getNodeTypesFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1769,7 +1722,6 @@ public final class SoleTenancyPreferences extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance());
     }
-
     /**
      *
      *

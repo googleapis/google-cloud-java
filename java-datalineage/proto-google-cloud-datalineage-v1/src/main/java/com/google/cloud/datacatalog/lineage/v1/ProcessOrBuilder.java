@@ -40,7 +40,6 @@ public interface ProcessOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ProcessOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface ProcessOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -121,11 +118,9 @@ public interface ProcessOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getAttributes();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ProcessOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getAttributesMap();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface ProcessOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public interface ProcessOrBuilder
    * @return Whether the origin field is set.
    */
   boolean hasOrigin();
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface ProcessOrBuilder
    * @return The origin.
    */
   com.google.cloud.datacatalog.lineage.v1.Origin getOrigin();
-
   /**
    *
    *

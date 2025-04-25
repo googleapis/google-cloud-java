@@ -39,7 +39,6 @@ public interface CreateAttributeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateAttributeRequestOrBuilder
    * @return The attributeId.
    */
   java.lang.String getAttributeId();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface CreateAttributeRequestOrBuilder
    * @return Whether the attribute field is set.
    */
   boolean hasAttribute();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface CreateAttributeRequestOrBuilder
    * @return The attribute.
    */
   com.google.cloud.apihub.v1.Attribute getAttribute();
-
   /**
    *
    *

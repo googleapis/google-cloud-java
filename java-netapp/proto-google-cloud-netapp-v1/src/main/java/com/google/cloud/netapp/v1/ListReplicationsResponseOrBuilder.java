@@ -34,7 +34,6 @@ public interface ListReplicationsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.Replication replications = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.Replication> getReplicationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReplicationsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.Replication replications = 1;</code>
    */
   com.google.cloud.netapp.v1.Replication getReplications(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReplicationsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.Replication replications = 1;</code>
    */
   int getReplicationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListReplicationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.ReplicationOrBuilder>
       getReplicationsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListReplicationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListReplicationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListReplicationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListReplicationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

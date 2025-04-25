@@ -33,7 +33,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy)
     ResourcePolicyGroupPlacementPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicyGroupPlacementPolicy.newBuilder() to construct.
   private ResourcePolicyGroupPlacementPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -102,10 +101,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * <code>UNDEFINED_COLLOCATION = 0;</code>
      */
     public static final int UNDEFINED_COLLOCATION_VALUE = 0;
-
     /** <code>COLLOCATED = 103257554;</code> */
     public static final int COLLOCATED_VALUE = 103257554;
-
     /** <code>UNSPECIFIED_COLLOCATION = 464308205;</code> */
     public static final int UNSPECIFIED_COLLOCATION_VALUE = 464308205;
 
@@ -197,7 +194,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   private int bitField0_;
   public static final int AVAILABILITY_DOMAIN_COUNT_FIELD_NUMBER = 12453432;
   private int availabilityDomainCount_ = 0;
-
   /**
    *
    *
@@ -213,7 +209,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   public boolean hasAvailabilityDomainCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -234,7 +229,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object collocation_ = "";
-
   /**
    *
    *
@@ -251,7 +245,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   public boolean hasCollocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -276,7 +269,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -304,7 +296,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
 
   public static final int VM_COUNT_FIELD_NUMBER = 261463431;
   private int vmCount_ = 0;
-
   /**
    *
    *
@@ -320,7 +311,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   public boolean hasVmCount() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -532,7 +522,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +740,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     private int bitField0_;
 
     private int availabilityDomainCount_;
-
     /**
      *
      *
@@ -767,7 +755,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public boolean hasAvailabilityDomainCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public int getAvailabilityDomainCount() {
       return availabilityDomainCount_;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     }
 
     private java.lang.Object collocation_ = "";
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public boolean hasCollocation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +869,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     }
 
     private int vmCount_;
-
     /**
      *
      *
@@ -971,7 +949,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public boolean hasVmCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public int getVmCount() {
       return vmCount_;
     }
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

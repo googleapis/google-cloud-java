@@ -38,7 +38,6 @@ public interface ReplicationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ReplicationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ReplicationOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface ReplicationOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface ReplicationOrBuilder
    * @return The enum numeric value on the wire for replicationSchedule.
    */
   int getReplicationScheduleValue();
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public interface ReplicationOrBuilder
    * @return The enum numeric value on the wire for mirrorState.
    */
   int getMirrorStateValue();
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public interface ReplicationOrBuilder
    * @return Whether the healthy field is set.
    */
   boolean hasHealthy();
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public interface ReplicationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public interface ReplicationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public interface ReplicationOrBuilder
    * @return The destinationVolume.
    */
   java.lang.String getDestinationVolume();
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public interface ReplicationOrBuilder
    * @return Whether the transferStats field is set.
    */
   boolean hasTransferStats();
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public interface ReplicationOrBuilder
    * @return The transferStats.
    */
   com.google.cloud.netapp.v1.TransferStats getTransferStats();
-
   /**
    *
    *
@@ -359,7 +347,6 @@ public interface ReplicationOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -370,11 +357,9 @@ public interface ReplicationOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public interface ReplicationOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -400,7 +384,6 @@ public interface ReplicationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -424,7 +407,6 @@ public interface ReplicationOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -437,7 +419,6 @@ public interface ReplicationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -465,7 +446,6 @@ public interface ReplicationOrBuilder
    * @return Whether the destinationVolumeParameters field is set.
    */
   boolean hasDestinationVolumeParameters();
-
   /**
    *
    *
@@ -480,7 +460,6 @@ public interface ReplicationOrBuilder
    * @return The destinationVolumeParameters.
    */
   com.google.cloud.netapp.v1.DestinationVolumeParameters getDestinationVolumeParameters();
-
   /**
    *
    *
@@ -510,7 +489,6 @@ public interface ReplicationOrBuilder
    * @return The sourceVolume.
    */
   java.lang.String getSourceVolume();
-
   /**
    *
    *
@@ -541,7 +519,6 @@ public interface ReplicationOrBuilder
    * @return Whether the hybridPeeringDetails field is set.
    */
   boolean hasHybridPeeringDetails();
-
   /**
    *
    *
@@ -556,7 +533,6 @@ public interface ReplicationOrBuilder
    * @return The hybridPeeringDetails.
    */
   com.google.cloud.netapp.v1.HybridPeeringDetails getHybridPeeringDetails();
-
   /**
    *
    *
@@ -582,7 +558,6 @@ public interface ReplicationOrBuilder
    * @return The clusterLocation.
    */
   java.lang.String getClusterLocation();
-
   /**
    *
    *
@@ -610,7 +585,6 @@ public interface ReplicationOrBuilder
    * @return The enum numeric value on the wire for hybridReplicationType.
    */
   int getHybridReplicationTypeValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListCustomClassesResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v2.CustomClass> getCustomClassesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCustomClassesResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 1;</code>
    */
   com.google.cloud.speech.v2.CustomClass getCustomClasses(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCustomClassesResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 1;</code>
    */
   int getCustomClassesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCustomClassesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.CustomClassOrBuilder>
       getCustomClassesOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListCustomClassesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

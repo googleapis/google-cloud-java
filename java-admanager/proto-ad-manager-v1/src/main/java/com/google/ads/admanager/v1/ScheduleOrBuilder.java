@@ -36,7 +36,6 @@ public interface ScheduleOrBuilder
    * @return Whether the weeklySchedule field is set.
    */
   boolean hasWeeklySchedule();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ScheduleOrBuilder
    * @return The weeklySchedule.
    */
   com.google.ads.admanager.v1.Schedule.WeeklySchedule getWeeklySchedule();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ScheduleOrBuilder
    * @return Whether the monthlySchedule field is set.
    */
   boolean hasMonthlySchedule();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ScheduleOrBuilder
    * @return The monthlySchedule.
    */
   com.google.ads.admanager.v1.Schedule.MonthlySchedule getMonthlySchedule();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ScheduleOrBuilder
    * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ScheduleOrBuilder
    * @return The startDate.
    */
   com.google.type.Date getStartDate();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface ScheduleOrBuilder
    * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface ScheduleOrBuilder
    * @return The endDate.
    */
   com.google.type.Date getEndDate();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface ScheduleOrBuilder
    * @return The enum numeric value on the wire for frequency.
    */
   int getFrequencyValue();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface ScheduleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public interface ScheduleOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
-
   /**
    *
    *

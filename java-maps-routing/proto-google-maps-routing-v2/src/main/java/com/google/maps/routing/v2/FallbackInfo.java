@@ -35,7 +35,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.FallbackInfo)
     FallbackInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FallbackInfo.newBuilder() to construct.
   private FallbackInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTING_MODE_FIELD_NUMBER = 1;
   private int routingMode_ = 0;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
   public int getRoutingModeValue() {
     return routingMode_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REASON_FIELD_NUMBER = 2;
   private int reason_ = 0;
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
   public int getReasonValue() {
     return reason_;
   }
-
   /**
    *
    *
@@ -322,7 +317,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -519,7 +513,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int routingMode_ = 0;
-
     /**
      *
      *
@@ -537,7 +530,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     public int getRoutingModeValue() {
       return routingMode_;
     }
-
     /**
      *
      *
@@ -558,7 +550,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.routing.v2.FallbackRoutingMode.forNumber(routingMode_);
       return result == null ? com.google.maps.routing.v2.FallbackRoutingMode.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int reason_ = 0;
-
     /**
      *
      *
@@ -642,7 +630,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     public int getReasonValue() {
       return reason_;
     }
-
     /**
      *
      *
@@ -663,7 +650,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +669,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.routing.v2.FallbackReason.forNumber(reason_);
       return result == null ? com.google.maps.routing.v2.FallbackReason.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -707,7 +692,6 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

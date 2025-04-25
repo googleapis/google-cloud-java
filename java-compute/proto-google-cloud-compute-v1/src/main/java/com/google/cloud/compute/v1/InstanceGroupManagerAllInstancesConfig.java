@@ -33,7 +33,6 @@ public final class InstanceGroupManagerAllInstancesConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig)
     InstanceGroupManagerAllInstancesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerAllInstancesConfig.newBuilder() to construct.
   private InstanceGroupManagerAllInstancesConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class InstanceGroupManagerAllInstancesConfig
   private int bitField0_;
   public static final int PROPERTIES_FIELD_NUMBER = 147688755;
   private com.google.cloud.compute.v1.InstancePropertiesPatch properties_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class InstanceGroupManagerAllInstancesConfig
   public boolean hasProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class InstanceGroupManagerAllInstancesConfig
         ? com.google.cloud.compute.v1.InstancePropertiesPatch.getDefaultInstance()
         : properties_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class InstanceGroupManagerAllInstancesConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -493,7 +488,6 @@ public final class InstanceGroupManagerAllInstancesConfig
             com.google.cloud.compute.v1.InstancePropertiesPatch.Builder,
             com.google.cloud.compute.v1.InstancePropertiesPatchOrBuilder>
         propertiesBuilder_;
-
     /**
      *
      *
@@ -509,7 +503,6 @@ public final class InstanceGroupManagerAllInstancesConfig
     public boolean hasProperties() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -531,7 +524,6 @@ public final class InstanceGroupManagerAllInstancesConfig
         return propertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -555,7 +547,6 @@ public final class InstanceGroupManagerAllInstancesConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class InstanceGroupManagerAllInstancesConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +597,6 @@ public final class InstanceGroupManagerAllInstancesConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -628,7 +617,6 @@ public final class InstanceGroupManagerAllInstancesConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +632,6 @@ public final class InstanceGroupManagerAllInstancesConfig
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -664,7 +651,6 @@ public final class InstanceGroupManagerAllInstancesConfig
             : properties_;
       }
     }
-
     /**
      *
      *

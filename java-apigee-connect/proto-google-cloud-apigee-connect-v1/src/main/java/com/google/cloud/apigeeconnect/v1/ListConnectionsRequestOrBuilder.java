@@ -39,7 +39,6 @@ public interface ListConnectionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface ListConnectionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

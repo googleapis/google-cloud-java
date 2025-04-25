@@ -95,8 +95,7 @@ public class MockTermsOfServiceServiceImpl extends TermsOfServiceServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RetrieveLatestTermsOfService, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method RetrieveLatestTermsOfService, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TermsOfService.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +116,7 @@ public class MockTermsOfServiceServiceImpl extends TermsOfServiceServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AcceptTermsOfService, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method AcceptTermsOfService, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

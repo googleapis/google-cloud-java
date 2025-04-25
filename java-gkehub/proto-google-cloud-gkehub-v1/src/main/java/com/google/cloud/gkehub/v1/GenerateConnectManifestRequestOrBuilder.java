@@ -39,7 +39,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The registry.
    */
   java.lang.String getRegistry();
-
   /**
    *
    *

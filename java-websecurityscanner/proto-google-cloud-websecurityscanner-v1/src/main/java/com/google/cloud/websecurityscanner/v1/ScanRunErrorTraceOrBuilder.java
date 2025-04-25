@@ -36,7 +36,6 @@ public interface ScanRunErrorTraceOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ScanRunErrorTraceOrBuilder
    * @return Whether the scanConfigError field is set.
    */
   boolean hasScanConfigError();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ScanRunErrorTraceOrBuilder
    * @return The scanConfigError.
    */
   com.google.cloud.websecurityscanner.v1.ScanConfigError getScanConfigError();
-
   /**
    *
    *

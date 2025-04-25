@@ -38,7 +38,6 @@ public interface CreateSpokeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateSpokeRequestOrBuilder
    * @return The spokeId.
    */
   java.lang.String getSpokeId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateSpokeRequestOrBuilder
    * @return Whether the spoke field is set.
    */
   boolean hasSpoke();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateSpokeRequestOrBuilder
    * @return The spoke.
    */
   com.google.cloud.networkconnectivity.v1.Spoke getSpoke();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface CreateSpokeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -247,8 +247,7 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
   public BidiStreamingCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
       streamGenerateGroundedContentCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamGenerateGroundedContentCallable(). REST transport is not"
-            + " implemented for this method yet.");
+        "Not implemented: streamGenerateGroundedContentCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

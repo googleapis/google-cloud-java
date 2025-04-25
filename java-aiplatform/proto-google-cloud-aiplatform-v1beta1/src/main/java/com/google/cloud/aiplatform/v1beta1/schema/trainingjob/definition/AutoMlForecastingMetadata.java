@@ -35,7 +35,6 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingMetadata)
     AutoMlForecastingMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlForecastingMetadata.newBuilder() to construct.
   private AutoMlForecastingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
 
   public static final int TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
   private long trainCostMilliNodeHours_ = 0L;
-
   /**
    *
    *
@@ -272,7 +270,6 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -484,7 +481,6 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long trainCostMilliNodeHours_;
-
     /**
      *
      *
@@ -502,7 +498,6 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
     public long getTrainCostMilliNodeHours() {
       return trainCostMilliNodeHours_;
     }
-
     /**
      *
      *
@@ -524,7 +519,6 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

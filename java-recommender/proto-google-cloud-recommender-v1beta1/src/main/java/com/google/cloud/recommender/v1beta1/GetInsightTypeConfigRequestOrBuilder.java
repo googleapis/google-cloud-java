@@ -46,7 +46,6 @@ public interface GetInsightTypeConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

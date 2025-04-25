@@ -35,7 +35,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StructuredMessage)
     StructuredMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StructuredMessage.newBuilder() to construct.
   private StructuredMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      * @return The key.
      */
     java.lang.String getKey();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      * @return Whether the value field is set.
      */
     boolean hasValue();
-
     /**
      *
      *
@@ -124,7 +121,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      * @return The value.
      */
     com.google.protobuf.Value getValue();
-
     /**
      *
      *
@@ -136,7 +132,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ValueOrBuilder getValueOrBuilder();
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StructuredMessage.Parameter)
       ParameterOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Parameter.newBuilder() to construct.
     private Parameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -187,7 +181,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -211,7 +204,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -238,7 +230,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
 
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.Value value_;
-
     /**
      *
      *
@@ -254,7 +245,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     public boolean hasValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -270,7 +260,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.Value getValue() {
       return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
     }
-
     /**
      *
      *
@@ -460,7 +449,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object key_ = "";
-
       /**
        *
        *
@@ -700,7 +687,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -723,7 +709,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -745,7 +730,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -763,7 +747,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -793,7 +776,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.Value.Builder,
               com.google.protobuf.ValueOrBuilder>
           valueBuilder_;
-
       /**
        *
        *
@@ -808,7 +790,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -827,7 +808,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           return valueBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -850,7 +830,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -870,7 +849,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -898,7 +876,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -918,7 +895,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -933,7 +909,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -950,7 +925,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
         }
       }
-
       /**
        *
        *
@@ -1045,7 +1019,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object messageText_ = "";
-
   /**
    *
    *
@@ -1069,7 +1042,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1098,7 +1070,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object messageKey_ = "";
-
   /**
    *
    *
@@ -1123,7 +1094,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1153,7 +1123,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.StructuredMessage.Parameter> parameters_;
-
   /**
    *
    *
@@ -1168,7 +1137,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       getParametersList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -1183,7 +1151,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       getParametersOrBuilderList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -1197,7 +1164,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
   public int getParametersCount() {
     return parameters_.size();
   }
-
   /**
    *
    *
@@ -1211,7 +1177,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
   public com.google.dataflow.v1beta3.StructuredMessage.Parameter getParameters(int index) {
     return parameters_.get(index);
   }
-
   /**
    *
    *
@@ -1406,7 +1371,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1668,7 +1632,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object messageText_ = "";
-
     /**
      *
      *
@@ -1691,7 +1654,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1676,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1736,7 +1697,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1714,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1779,7 +1738,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object messageKey_ = "";
-
     /**
      *
      *
@@ -1803,7 +1761,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1827,7 +1784,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1850,7 +1806,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1869,7 +1824,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1883,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1946,7 +1899,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1963,7 +1915,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1987,7 +1938,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2009,7 +1959,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2032,7 +1981,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2056,7 +2004,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2077,7 +2024,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2099,7 +2045,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2121,7 +2066,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2141,7 +2085,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2104,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2175,7 +2117,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2193,7 +2134,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2212,7 +2152,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
-
     /**
      *
      *
@@ -2226,7 +2165,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
       return getParametersFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.StructuredMessage.Parameter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2242,7 +2180,6 @@ public final class StructuredMessage extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.dataflow.v1beta3.StructuredMessage.Parameter.getDefaultInstance());
     }
-
     /**
      *
      *

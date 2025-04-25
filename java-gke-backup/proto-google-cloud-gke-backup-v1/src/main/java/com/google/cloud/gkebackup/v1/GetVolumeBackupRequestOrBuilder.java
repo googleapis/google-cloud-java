@@ -39,7 +39,6 @@ public interface GetVolumeBackupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

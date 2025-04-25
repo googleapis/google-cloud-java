@@ -40,7 +40,6 @@ public interface AnthosClusterOrBuilder
    * @return The membership.
    */
   java.lang.String getMembership();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface ListTestCaseResultsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface ListTestCaseResultsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -137,7 +135,6 @@ public interface ListTestCaseResultsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

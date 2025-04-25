@@ -33,7 +33,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.EventMetadata)
     EventMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EventMetadata.newBuilder() to construct.
   private EventMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GROUNDING_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GroundingMetadata groundingMetadata_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGroundingMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.GroundingMetadata.getDefaultInstance()
         : groundingMetadata_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTIAL_FIELD_NUMBER = 2;
   private boolean partial_ = false;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TURN_COMPLETE_FIELD_NUMBER = 3;
   private boolean turnComplete_ = false;
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERRUPTED_FIELD_NUMBER = 4;
   private boolean interrupted_ = false;
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList longRunningToolIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLongRunningToolIdsList() {
     return longRunningToolIds_;
   }
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getLongRunningToolIdsCount() {
     return longRunningToolIds_.size();
   }
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLongRunningToolIds(int index) {
     return longRunningToolIds_.get(index);
   }
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branch_ = "";
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -543,7 +530,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -827,7 +813,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.GroundingMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GroundingMetadataOrBuilder>
         groundingMetadataBuilder_;
-
     /**
      *
      *
@@ -844,7 +829,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGroundingMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -867,7 +851,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
         return groundingMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -893,7 +876,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +898,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +950,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +967,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGroundingMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
             : groundingMetadata_;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1017,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean partial_;
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean getPartial() {
       return partial_;
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean turnComplete_;
-
     /**
      *
      *
@@ -1116,7 +1089,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean getTurnComplete() {
       return turnComplete_;
     }
-
     /**
      *
      *
@@ -1137,7 +1109,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1129,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean interrupted_;
-
     /**
      *
      *
@@ -1175,7 +1145,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean getInterrupted() {
       return interrupted_;
     }
-
     /**
      *
      *
@@ -1196,7 +1165,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1193,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       longRunningToolIds_.makeImmutable();
       return longRunningToolIds_;
     }
-
     /**
      *
      *
@@ -1262,7 +1228,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getLongRunningToolIdsCount() {
       return longRunningToolIds_.size();
     }
-
     /**
      *
      *
@@ -1281,7 +1246,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLongRunningToolIds(int index) {
       return longRunningToolIds_.get(index);
     }
-
     /**
      *
      *
@@ -1300,7 +1264,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLongRunningToolIdsBytes(int index) {
       return longRunningToolIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1327,7 +1290,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1315,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1337,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1358,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1386,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object branch_ = "";
-
     /**
      *
      *
@@ -1454,7 +1412,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1438,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1507,7 +1463,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1484,6 @@ public final class EventMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

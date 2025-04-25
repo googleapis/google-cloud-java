@@ -36,7 +36,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ImportCompletionDataResponse)
     ImportCompletionDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportCompletionDataResponse.newBuilder() to construct.
   private ImportCompletionDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +773,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -838,7 +817,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -851,7 +829,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -865,7 +842,6 @@ public final class ImportCompletionDataResponse extends com.google.protobuf.Gene
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *

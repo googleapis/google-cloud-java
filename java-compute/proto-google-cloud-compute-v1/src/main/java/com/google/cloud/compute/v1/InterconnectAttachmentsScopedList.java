@@ -32,7 +32,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectAttachmentsScopedList)
     InterconnectAttachmentsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectAttachmentsScopedList.newBuilder() to construct.
   private InterconnectAttachmentsScopedList(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectAttachment>
       interconnectAttachments_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       getInterconnectAttachmentsList() {
     return interconnectAttachments_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       getInterconnectAttachmentsOrBuilderList() {
     return interconnectAttachments_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
   public int getInterconnectAttachmentsCount() {
     return interconnectAttachments_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
   public com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachments(int index) {
     return interconnectAttachments_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -382,7 +373,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -683,7 +673,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         return interconnectAttachmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         return interconnectAttachmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         return interconnectAttachmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         getInterconnectAttachmentsBuilder(int index) {
       return getInterconnectAttachmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         return interconnectAttachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -992,7 +968,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         return java.util.Collections.unmodifiableList(interconnectAttachments_);
       }
     }
-
     /**
      *
      *
@@ -1009,7 +984,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       return getInterconnectAttachmentsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InterconnectAttachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1027,7 +1001,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
           .addBuilder(
               index, com.google.cloud.compute.v1.InterconnectAttachment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1070,7 +1043,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1106,7 +1077,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1099,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1118,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1145,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1164,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1178,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1231,7 +1196,6 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
             : warning_;
       }
     }
-
     /**
      *
      *

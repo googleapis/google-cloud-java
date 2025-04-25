@@ -32,7 +32,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction)
     SecurityPolicyRuleHttpHeaderActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyRuleHttpHeaderAction.newBuilder() to construct.
   private SecurityPolicyRuleHttpHeaderAction(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
   private java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption>
       requestHeadersToAdds_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       getRequestHeadersToAddsList() {
     return requestHeadersToAdds_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       getRequestHeadersToAddsOrBuilderList() {
     return requestHeadersToAdds_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
   public int getRequestHeadersToAddsCount() {
     return requestHeadersToAdds_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       getRequestHeadersToAdds(int index) {
     return requestHeadersToAdds_.get(index);
   }
-
   /**
    *
    *
@@ -323,7 +317,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -597,7 +590,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
         return requestHeadersToAddsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -616,7 +608,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
         return requestHeadersToAddsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
         return requestHeadersToAddsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
         getRequestHeadersToAddsBuilder(int index) {
       return getRequestHeadersToAddsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -896,7 +876,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
         return requestHeadersToAddsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
         return java.util.Collections.unmodifiableList(requestHeadersToAdds_);
       }
     }
-
     /**
      *
      *
@@ -938,7 +916,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
               com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class SecurityPolicyRuleHttpHeaderAction extends com.google.protobu
               com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
                   .getDefaultInstance());
     }
-
     /**
      *
      *

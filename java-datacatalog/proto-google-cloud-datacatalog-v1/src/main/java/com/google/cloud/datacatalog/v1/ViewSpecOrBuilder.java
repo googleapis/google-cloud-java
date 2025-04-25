@@ -36,7 +36,6 @@ public interface ViewSpecOrBuilder
    * @return The viewQuery.
    */
   java.lang.String getViewQuery();
-
   /**
    *
    *

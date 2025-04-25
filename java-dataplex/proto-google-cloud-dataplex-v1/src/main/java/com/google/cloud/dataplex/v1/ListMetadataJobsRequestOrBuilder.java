@@ -39,7 +39,6 @@ public interface ListMetadataJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface ListMetadataJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public interface ListMetadataJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -158,7 +155,6 @@ public interface ListMetadataJobsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

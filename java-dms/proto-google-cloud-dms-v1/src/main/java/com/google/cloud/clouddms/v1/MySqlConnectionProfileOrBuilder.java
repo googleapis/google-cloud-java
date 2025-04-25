@@ -36,7 +36,6 @@ public interface MySqlConnectionProfileOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface MySqlConnectionProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface MySqlConnectionProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public interface MySqlConnectionProfileOrBuilder
    * @return Whether the ssl field is set.
    */
   boolean hasSsl();
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface MySqlConnectionProfileOrBuilder
    * @return The ssl.
    */
   com.google.cloud.clouddms.v1.SslConfig getSsl();
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public interface MySqlConnectionProfileOrBuilder
    * @return The cloudSqlId.
    */
   java.lang.String getCloudSqlId();
-
   /**
    *
    *

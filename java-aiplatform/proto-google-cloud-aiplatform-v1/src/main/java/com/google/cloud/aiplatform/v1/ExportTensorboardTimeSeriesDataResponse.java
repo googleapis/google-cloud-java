@@ -35,7 +35,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataResponse)
     ExportTensorboardTimeSeriesDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportTensorboardTimeSeriesDataResponse.newBuilder() to construct.
   private ExportTensorboardTimeSeriesDataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesDataPoint> timeSeriesDataPoints_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       getTimeSeriesDataPointsList() {
     return timeSeriesDataPoints_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       getTimeSeriesDataPointsOrBuilderList() {
     return timeSeriesDataPoints_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
   public int getTimeSeriesDataPointsCount() {
     return timeSeriesDataPoints_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
   public com.google.cloud.aiplatform.v1.TimeSeriesDataPoint getTimeSeriesDataPoints(int index) {
     return timeSeriesDataPoints_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +375,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -674,7 +665,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return timeSeriesDataPointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -692,7 +682,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return timeSeriesDataPointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return timeSeriesDataPointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -735,7 +723,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         getTimeSeriesDataPointsBuilder(int index) {
       return getTimeSeriesDataPointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return timeSeriesDataPointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -968,7 +945,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return java.util.Collections.unmodifiableList(timeSeriesDataPoints_);
       }
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       return getTimeSeriesDataPointsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.TimeSeriesDataPoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1001,7 +976,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.TimeSeriesDataPoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1090,7 +1062,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1086,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1106,6 @@ public final class ExportTensorboardTimeSeriesDataResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface VmwareVmsDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.VmwareVmDetails details = 1;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.VmwareVmDetails> getDetailsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface VmwareVmsDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.VmwareVmDetails details = 1;</code>
    */
   com.google.cloud.vmmigration.v1.VmwareVmDetails getDetails(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface VmwareVmsDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.VmwareVmDetails details = 1;</code>
    */
   int getDetailsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface VmwareVmsDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.VmwareVmDetailsOrBuilder>
       getDetailsOrBuilderList();
-
   /**
    *
    *

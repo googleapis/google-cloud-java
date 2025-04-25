@@ -34,7 +34,6 @@ public interface ImportDocumentsResponseOrBuilder
    * <code>repeated .google.rpc.Status warnings = 1;</code>
    */
   java.util.List<com.google.rpc.Status> getWarningsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportDocumentsResponseOrBuilder
    * <code>repeated .google.rpc.Status warnings = 1;</code>
    */
   com.google.rpc.Status getWarnings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportDocumentsResponseOrBuilder
    * <code>repeated .google.rpc.Status warnings = 1;</code>
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ImportDocumentsResponseOrBuilder
    * <code>repeated .google.rpc.Status warnings = 1;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getWarningsOrBuilderList();
-
   /**
    *
    *

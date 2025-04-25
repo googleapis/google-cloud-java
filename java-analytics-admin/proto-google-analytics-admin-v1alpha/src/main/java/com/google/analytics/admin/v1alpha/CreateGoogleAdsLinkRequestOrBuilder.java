@@ -38,7 +38,6 @@ public interface CreateGoogleAdsLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateGoogleAdsLinkRequestOrBuilder
    * @return Whether the googleAdsLink field is set.
    */
   boolean hasGoogleAdsLink();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateGoogleAdsLinkRequestOrBuilder
    * @return The googleAdsLink.
    */
   com.google.analytics.admin.v1alpha.GoogleAdsLink getGoogleAdsLink();
-
   /**
    *
    *

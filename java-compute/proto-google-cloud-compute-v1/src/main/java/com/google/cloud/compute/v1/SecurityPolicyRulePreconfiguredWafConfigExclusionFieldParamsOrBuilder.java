@@ -37,7 +37,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrB
    * @return Whether the op field is set.
    */
   boolean hasOp();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrB
    * @return The op.
    */
   java.lang.String getOp();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrB
    * @return Whether the val field is set.
    */
   boolean hasVal();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrB
    * @return The val.
    */
   java.lang.String getVal();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface CreateLakeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateLakeRequestOrBuilder
    * @return The lakeId.
    */
   java.lang.String getLakeId();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CreateLakeRequestOrBuilder
    * @return Whether the lake field is set.
    */
   boolean hasLake();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface CreateLakeRequestOrBuilder
    * @return The lake.
    */
   com.google.cloud.dataplex.v1.Lake getLake();
-
   /**
    *
    *

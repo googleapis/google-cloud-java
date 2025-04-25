@@ -34,7 +34,6 @@ public interface ListDbServersResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbServer db_servers = 1;</code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.DbServer> getDbServersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDbServersResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbServer db_servers = 1;</code>
    */
   com.google.cloud.oracledatabase.v1.DbServer getDbServers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDbServersResponseOrBuilder
    * <code>repeated .google.cloud.oracledatabase.v1.DbServer db_servers = 1;</code>
    */
   int getDbServersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDbServersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.DbServerOrBuilder>
       getDbServersOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListDbServersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ListEnrolledSolutionsResponse)
     ListEnrolledSolutionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEnrolledSolutionsResponse.newBuilder() to construct.
   private ListEnrolledSolutionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
                   : result;
             }
           };
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
         java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
         enrolledSolutions_, enrolledSolutions_converter_);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
   public int getEnrolledSolutionsCount() {
     return enrolledSolutions_.size();
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
   public com.google.cloud.retail.v2alpha.SolutionType getEnrolledSolutions(int index) {
     return enrolledSolutions_converter_.convert(enrolledSolutions_.get(index));
   }
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
   public java.util.List<java.lang.Integer> getEnrolledSolutionsValueList() {
     return enrolledSolutions_;
   }
-
   /**
    *
    *
@@ -346,7 +340,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
           java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
           enrolledSolutions_, enrolledSolutions_converter_);
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
     public int getEnrolledSolutionsCount() {
       return enrolledSolutions_.size();
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
     public com.google.cloud.retail.v2alpha.SolutionType getEnrolledSolutions(int index) {
       return enrolledSolutions_converter_.convert(enrolledSolutions_.get(index));
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +688,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +702,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
     public java.util.List<java.lang.Integer> getEnrolledSolutionsValueList() {
       return java.util.Collections.unmodifiableList(enrolledSolutions_);
     }
-
     /**
      *
      *
@@ -733,7 +717,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
     public int getEnrolledSolutionsValue(int index) {
       return enrolledSolutions_.get(index);
     }
-
     /**
      *
      *
@@ -753,7 +736,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +754,6 @@ public final class ListEnrolledSolutionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

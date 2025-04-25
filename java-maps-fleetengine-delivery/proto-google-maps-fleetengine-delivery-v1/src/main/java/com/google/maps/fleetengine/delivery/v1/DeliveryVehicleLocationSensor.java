@@ -139,7 +139,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>UNKNOWN_SENSOR = 0;</code>
    */
   public static final int UNKNOWN_SENSOR_VALUE = 0;
-
   /**
    *
    *
@@ -150,7 +149,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>GPS = 1;</code>
    */
   public static final int GPS_VALUE = 1;
-
   /**
    *
    *
@@ -161,7 +159,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>NETWORK = 2;</code>
    */
   public static final int NETWORK_VALUE = 2;
-
   /**
    *
    *
@@ -172,7 +169,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>PASSIVE = 3;</code>
    */
   public static final int PASSIVE_VALUE = 3;
-
   /**
    *
    *
@@ -184,7 +180,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>ROAD_SNAPPED_LOCATION_PROVIDER = 4;</code>
    */
   public static final int ROAD_SNAPPED_LOCATION_PROVIDER_VALUE = 4;
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>CUSTOMER_SUPPLIED_LOCATION = 5;</code>
    */
   public static final int CUSTOMER_SUPPLIED_LOCATION_VALUE = 5;
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>FLEET_ENGINE_LOCATION = 6;</code>
    */
   public static final int FLEET_ENGINE_LOCATION_VALUE = 6;
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public enum DeliveryVehicleLocationSensor implements com.google.protobuf.Protoco
    * <code>FUSED_LOCATION_PROVIDER = 100;</code>
    */
   public static final int FUSED_LOCATION_PROVIDER_VALUE = 100;
-
   /**
    *
    *

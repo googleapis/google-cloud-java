@@ -35,7 +35,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.appengine.v1.AuthorizedCertificate)
     AuthorizedCertificateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuthorizedCertificate.newBuilder() to construct.
   private AuthorizedCertificate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList domainNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -267,7 +259,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getDomainNamesList() {
     return domainNames_;
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public int getDomainNamesCount() {
     return domainNames_.size();
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public java.lang.String getDomainNames(int index) {
     return domainNames_.get(index);
   }
-
   /**
    *
    *
@@ -326,7 +315,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp expireTime_;
-
   /**
    *
    *
@@ -346,7 +334,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -366,7 +353,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
-
   /**
    *
    *
@@ -387,7 +373,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   public static final int CERTIFICATE_RAW_DATA_FIELD_NUMBER = 6;
   private com.google.appengine.v1.CertificateRawData certificateRawData_;
-
   /**
    *
    *
@@ -404,7 +389,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public boolean hasCertificateRawData() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -423,7 +407,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         ? com.google.appengine.v1.CertificateRawData.getDefaultInstance()
         : certificateRawData_;
   }
-
   /**
    *
    *
@@ -443,7 +426,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   public static final int MANAGED_CERTIFICATE_FIELD_NUMBER = 7;
   private com.google.appengine.v1.ManagedCertificate managedCertificate_;
-
   /**
    *
    *
@@ -464,7 +446,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public boolean hasManagedCertificate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -487,7 +468,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         ? com.google.appengine.v1.ManagedCertificate.getDefaultInstance()
         : managedCertificate_;
   }
-
   /**
    *
    *
@@ -514,7 +494,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList visibleDomainMappings_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -539,7 +518,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getVisibleDomainMappingsList() {
     return visibleDomainMappings_;
   }
-
   /**
    *
    *
@@ -564,7 +542,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public int getVisibleDomainMappingsCount() {
     return visibleDomainMappings_.size();
   }
-
   /**
    *
    *
@@ -590,7 +567,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   public java.lang.String getVisibleDomainMappings(int index) {
     return visibleDomainMappings_.get(index);
   }
-
   /**
    *
    *
@@ -619,7 +595,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
 
   public static final int DOMAIN_MAPPINGS_COUNT_FIELD_NUMBER = 9;
   private int domainMappingsCount_ = 0;
-
   /**
    *
    *
@@ -904,7 +879,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1252,7 +1226,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1278,7 +1251,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1304,7 +1276,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1300,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1320,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1347,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1404,7 +1372,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1430,7 +1397,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1455,7 +1421,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1441,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1468,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1528,7 +1491,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1552,7 +1514,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1575,7 +1536,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1594,7 +1554,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1587,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1647,7 +1605,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       domainNames_.makeImmutable();
       return domainNames_;
     }
-
     /**
      *
      *
@@ -1665,7 +1622,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public int getDomainNamesCount() {
       return domainNames_.size();
     }
-
     /**
      *
      *
@@ -1684,7 +1640,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public java.lang.String getDomainNames(int index) {
       return domainNames_.get(index);
     }
-
     /**
      *
      *
@@ -1703,7 +1658,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getDomainNamesBytes(int index) {
       return domainNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1730,7 +1684,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1709,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1779,7 +1731,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1752,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1835,7 +1785,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -1854,7 +1803,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1879,7 +1827,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return expireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1906,7 +1853,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1876,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1962,7 +1907,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1986,7 +1930,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1948,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2028,7 +1970,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             : expireTime_;
       }
     }
-
     /**
      *
      *
@@ -2065,7 +2006,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             com.google.appengine.v1.CertificateRawData.Builder,
             com.google.appengine.v1.CertificateRawDataOrBuilder>
         certificateRawDataBuilder_;
-
     /**
      *
      *
@@ -2081,7 +2021,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public boolean hasCertificateRawData() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2103,7 +2042,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return certificateRawDataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2127,7 +2065,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2149,7 +2086,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2179,7 +2115,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2200,7 +2135,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2216,7 +2150,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCertificateRawDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2236,7 +2169,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             : certificateRawData_;
       }
     }
-
     /**
      *
      *
@@ -2270,7 +2202,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             com.google.appengine.v1.ManagedCertificate.Builder,
             com.google.appengine.v1.ManagedCertificateOrBuilder>
         managedCertificateBuilder_;
-
     /**
      *
      *
@@ -2290,7 +2221,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public boolean hasManagedCertificate() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2316,7 +2246,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         return managedCertificateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2344,7 +2273,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2370,7 +2298,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2404,7 +2331,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2429,7 +2355,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2449,7 +2374,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return getManagedCertificateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2473,7 +2397,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             : managedCertificate_;
       }
     }
-
     /**
      *
      *
@@ -2515,7 +2438,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2541,7 +2463,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       visibleDomainMappings_.makeImmutable();
       return visibleDomainMappings_;
     }
-
     /**
      *
      *
@@ -2566,7 +2487,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public int getVisibleDomainMappingsCount() {
       return visibleDomainMappings_.size();
     }
-
     /**
      *
      *
@@ -2592,7 +2512,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public java.lang.String getVisibleDomainMappings(int index) {
       return visibleDomainMappings_.get(index);
     }
-
     /**
      *
      *
@@ -2618,7 +2537,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getVisibleDomainMappingsBytes(int index) {
       return visibleDomainMappings_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2652,7 +2570,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2685,7 +2602,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2715,7 +2631,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2744,7 +2659,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2780,7 +2694,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     }
 
     private int domainMappingsCount_;
-
     /**
      *
      *
@@ -2803,7 +2716,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public int getDomainMappingsCount() {
       return domainMappingsCount_;
     }
-
     /**
      *
      *
@@ -2830,7 +2742,6 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

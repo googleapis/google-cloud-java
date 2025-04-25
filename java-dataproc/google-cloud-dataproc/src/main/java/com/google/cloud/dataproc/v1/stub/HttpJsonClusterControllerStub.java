@@ -207,7 +207,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
@@ -257,7 +258,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
@@ -423,7 +425,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()

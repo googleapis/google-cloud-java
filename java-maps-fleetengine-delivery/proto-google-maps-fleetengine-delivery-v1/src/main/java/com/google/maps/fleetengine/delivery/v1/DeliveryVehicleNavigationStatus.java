@@ -93,7 +93,6 @@ public enum DeliveryVehicleNavigationStatus implements com.google.protobuf.Proto
    * <code>UNKNOWN_NAVIGATION_STATUS = 0;</code>
    */
   public static final int UNKNOWN_NAVIGATION_STATUS_VALUE = 0;
-
   /**
    *
    *
@@ -104,7 +103,6 @@ public enum DeliveryVehicleNavigationStatus implements com.google.protobuf.Proto
    * <code>NO_GUIDANCE = 1;</code>
    */
   public static final int NO_GUIDANCE_VALUE = 1;
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public enum DeliveryVehicleNavigationStatus implements com.google.protobuf.Proto
    * <code>ENROUTE_TO_DESTINATION = 2;</code>
    */
   public static final int ENROUTE_TO_DESTINATION_VALUE = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public enum DeliveryVehicleNavigationStatus implements com.google.protobuf.Proto
    * <code>OFF_ROUTE = 3;</code>
    */
   public static final int OFF_ROUTE_VALUE = 3;
-
   /**
    *
    *

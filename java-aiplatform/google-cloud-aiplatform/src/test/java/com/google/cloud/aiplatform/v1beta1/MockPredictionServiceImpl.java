@@ -179,8 +179,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamDirectPredict, expected"
-                              + " %s or %s",
+                          "Unrecognized response type %s for method StreamDirectPredict, expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamDirectPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -217,8 +216,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamDirectRawPredict,"
-                              + " expected %s or %s",
+                          "Unrecognized response type %s for method StreamDirectRawPredict, expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamDirectRawPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -255,8 +253,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingPredict, expected %s"
-                              + " or %s",
+                          "Unrecognized response type %s for method StreamingPredict, expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -290,8 +287,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ServerStreamingPredict, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ServerStreamingPredict, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   StreamingPredictResponse.class.getName(),
                   Exception.class.getName())));
@@ -315,8 +311,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingRawPredict, expected"
-                              + " %s or %s",
+                          "Unrecognized response type %s for method StreamingRawPredict, expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingRawPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -412,8 +407,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method StreamGenerateContent, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method StreamGenerateContent, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateContentResponse.class.getName(),
                   Exception.class.getName())));

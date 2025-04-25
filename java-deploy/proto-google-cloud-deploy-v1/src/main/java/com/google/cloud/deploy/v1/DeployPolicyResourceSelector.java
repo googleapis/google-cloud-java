@@ -37,7 +37,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployPolicyResourceSelector)
     DeployPolicyResourceSelectorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployPolicyResourceSelector.newBuilder() to construct.
   private DeployPolicyResourceSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int DELIVERY_PIPELINE_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.DeliveryPipelineAttribute deliveryPipeline_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
   public boolean hasDeliveryPipeline() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
         ? com.google.cloud.deploy.v1.DeliveryPipelineAttribute.getDefaultInstance()
         : deliveryPipeline_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
 
   public static final int TARGET_FIELD_NUMBER = 2;
   private com.google.cloud.deploy.v1.TargetAttribute target_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
         ? com.google.cloud.deploy.v1.TargetAttribute.getDefaultInstance()
         : target_;
   }
-
   /**
    *
    *
@@ -365,7 +358,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +586,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
             com.google.cloud.deploy.v1.DeliveryPipelineAttribute.Builder,
             com.google.cloud.deploy.v1.DeliveryPipelineAttributeOrBuilder>
         deliveryPipelineBuilder_;
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
     public boolean hasDeliveryPipeline() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
         return deliveryPipelineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return getDeliveryPipelineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -776,7 +760,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
             : deliveryPipeline_;
       }
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
             com.google.cloud.deploy.v1.TargetAttribute.Builder,
             com.google.cloud.deploy.v1.TargetAttributeOrBuilder>
         targetBuilder_;
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
         return targetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +877,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +906,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +943,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class DeployPolicyResourceSelector extends com.google.protobuf.Gene
             : target_;
       }
     }
-
     /**
      *
      *

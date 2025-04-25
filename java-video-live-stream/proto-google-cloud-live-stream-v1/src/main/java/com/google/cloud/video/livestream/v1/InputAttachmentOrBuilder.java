@@ -38,7 +38,6 @@ public interface InputAttachmentOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface InputAttachmentOrBuilder
    * @return The input.
    */
   java.lang.String getInput();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface InputAttachmentOrBuilder
    * @return Whether the automaticFailover field is set.
    */
   boolean hasAutomaticFailover();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InputAttachmentOrBuilder
    * @return The automaticFailover.
    */
   com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover getAutomaticFailover();
-
   /**
    *
    *

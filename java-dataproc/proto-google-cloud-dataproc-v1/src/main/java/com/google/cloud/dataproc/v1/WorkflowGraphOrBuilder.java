@@ -36,7 +36,6 @@ public interface WorkflowGraphOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.WorkflowNode> getNodesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WorkflowGraphOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowNode getNodes(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface WorkflowGraphOrBuilder
    * </code>
    */
   int getNodesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface WorkflowGraphOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder>
       getNodesOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.EventSegmentCriteria)
     EventSegmentCriteriaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EventSegmentCriteria.newBuilder() to construct.
   private EventSegmentCriteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.EventSegmentConditionGroup>
       andConditionGroups_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       getAndConditionGroupsList() {
     return andConditionGroups_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       getAndConditionGroupsOrBuilderList() {
     return andConditionGroups_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
   public int getAndConditionGroupsCount() {
     return andConditionGroups_.size();
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       int index) {
     return andConditionGroups_.get(index);
   }
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +587,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
         return andConditionGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -614,7 +606,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
         return andConditionGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
         return andConditionGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
         getAndConditionGroupsBuilder(int index) {
       return getAndConditionGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
         return andConditionGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(andConditionGroups_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.analytics.data.v1alpha.EventSegmentConditionGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class EventSegmentCriteria extends com.google.protobuf.GeneratedMes
               index,
               com.google.analytics.data.v1alpha.EventSegmentConditionGroup.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -128,7 +126,6 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    * @return Whether the connectionProfile field is set.
    */
   boolean hasConnectionProfile();
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    * @return The connectionProfile.
    */
   java.lang.String getConnectionProfile();
-
   /**
    *
    *

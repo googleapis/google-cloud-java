@@ -36,7 +36,6 @@ public interface CleanupPolicyOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CleanupPolicyOrBuilder
    * @return The condition.
    */
   com.google.devtools.artifactregistry.v1.CleanupPolicyCondition getCondition();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface CleanupPolicyOrBuilder
    * @return Whether the mostRecentVersions field is set.
    */
   boolean hasMostRecentVersions();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface CleanupPolicyOrBuilder
    * @return The mostRecentVersions.
    */
   com.google.devtools.artifactregistry.v1.CleanupPolicyMostRecentVersions getMostRecentVersions();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface CleanupPolicyOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface CleanupPolicyOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
-
   /**
    *
    *

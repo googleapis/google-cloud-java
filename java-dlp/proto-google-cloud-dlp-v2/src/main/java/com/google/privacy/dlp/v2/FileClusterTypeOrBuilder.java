@@ -36,7 +36,6 @@ public interface FileClusterTypeOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FileClusterTypeOrBuilder
    * @return The enum numeric value on the wire for cluster.
    */
   int getClusterValue();
-
   /**
    *
    *

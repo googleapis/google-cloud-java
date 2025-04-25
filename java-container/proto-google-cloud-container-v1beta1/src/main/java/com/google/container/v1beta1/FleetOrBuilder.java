@@ -38,7 +38,6 @@ public interface FleetOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface FleetOrBuilder
    * @return The membership.
    */
   java.lang.String getMembership();
-
   /**
    *
    *

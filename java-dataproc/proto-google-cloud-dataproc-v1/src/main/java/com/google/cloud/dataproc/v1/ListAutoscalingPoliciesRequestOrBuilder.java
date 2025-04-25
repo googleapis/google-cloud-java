@@ -47,7 +47,6 @@ public interface ListAutoscalingPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -99,7 +98,6 @@ public interface ListAutoscalingPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

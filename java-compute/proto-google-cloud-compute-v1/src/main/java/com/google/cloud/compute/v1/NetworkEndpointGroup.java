@@ -33,7 +33,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroup)
     NetworkEndpointGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkEndpointGroup.newBuilder() to construct.
   private NetworkEndpointGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -199,7 +198,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_ENDPOINT_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -210,7 +208,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>GCE_VM_IP = 401880793;</code>
      */
     public static final int GCE_VM_IP_VALUE = 401880793;
-
     /**
      *
      *
@@ -221,7 +218,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>GCE_VM_IP_PORT = 501838375;</code>
      */
     public static final int GCE_VM_IP_PORT_VALUE = 501838375;
-
     /**
      *
      *
@@ -232,7 +228,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>GCE_VM_IP_PORTMAP = 22819253;</code>
      */
     public static final int GCE_VM_IP_PORTMAP_VALUE = 22819253;
-
     /**
      *
      *
@@ -243,7 +238,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>INTERNET_FQDN_PORT = 404154477;</code>
      */
     public static final int INTERNET_FQDN_PORT_VALUE = 404154477;
-
     /**
      *
      *
@@ -254,7 +248,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>INTERNET_IP_PORT = 477719963;</code>
      */
     public static final int INTERNET_IP_PORT_VALUE = 477719963;
-
     /**
      *
      *
@@ -265,7 +258,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code>
      */
     public static final int NON_GCP_PRIVATE_IP_PORT_VALUE = 336447968;
-
     /**
      *
      *
@@ -276,7 +268,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
      */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
-
     /**
      *
      *
@@ -414,7 +405,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -431,14 +421,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -452,7 +440,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -473,7 +460,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -497,7 +483,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int APP_ENGINE_FIELD_NUMBER = 340788768;
   private com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine appEngine_;
-
   /**
    *
    *
@@ -514,7 +499,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasAppEngine() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -533,7 +517,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.getDefaultInstance()
         : appEngine_;
   }
-
   /**
    *
    *
@@ -554,7 +537,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 519893666;
   private com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloudFunction_;
-
   /**
    *
    *
@@ -572,7 +554,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasCloudFunction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -592,7 +573,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.getDefaultInstance()
         : cloudFunction_;
   }
-
   /**
    *
    *
@@ -614,7 +594,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int CLOUD_RUN_FIELD_NUMBER = 111060353;
   private com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloudRun_;
-
   /**
    *
    *
@@ -631,7 +610,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasCloudRun() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -650,7 +628,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.getDefaultInstance()
         : cloudRun_;
   }
-
   /**
    *
    *
@@ -672,7 +649,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -688,7 +664,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -712,7 +687,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -739,7 +713,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int DEFAULT_PORT_FIELD_NUMBER = 423377855;
   private int defaultPort_ = 0;
-
   /**
    *
    *
@@ -755,7 +728,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasDefaultPort() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -776,7 +748,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -792,7 +763,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -816,7 +786,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -843,7 +812,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -859,7 +827,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasId() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -880,7 +847,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -896,7 +862,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasKind() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -920,7 +885,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -949,7 +913,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -965,7 +928,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasName() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -989,7 +951,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1018,7 +979,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -1034,7 +994,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1058,7 +1017,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1087,7 +1045,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkEndpointType_ = "";
-
   /**
    *
    *
@@ -1104,7 +1061,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasNetworkEndpointType() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1129,7 +1085,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1157,7 +1112,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int PSC_DATA_FIELD_NUMBER = 71937481;
   private com.google.cloud.compute.v1.NetworkEndpointGroupPscData pscData_;
-
   /**
    *
    *
@@ -1173,7 +1127,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasPscData() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1191,7 +1144,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.NetworkEndpointGroupPscData.getDefaultInstance()
         : pscData_;
   }
-
   /**
    *
    *
@@ -1212,7 +1164,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscTargetService_ = "";
-
   /**
    *
    *
@@ -1228,7 +1179,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasPscTargetService() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1252,7 +1202,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1281,7 +1230,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -1297,7 +1245,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasRegion() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1321,7 +1268,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1350,7 +1296,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1366,7 +1311,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1390,7 +1334,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1417,7 +1360,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int SIZE_FIELD_NUMBER = 3530753;
   private int size_ = 0;
-
   /**
    *
    *
@@ -1433,7 +1375,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasSize() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1454,7 +1395,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
-
   /**
    *
    *
@@ -1470,7 +1410,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasSubnetwork() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1494,7 +1433,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -1523,7 +1461,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -1539,7 +1476,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public boolean hasZone() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1563,7 +1499,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -2011,7 +1946,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2554,7 +2488,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -2571,14 +2504,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -2592,7 +2523,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -2613,7 +2543,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2640,7 +2569,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2657,14 +2585,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -2685,7 +2611,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -2707,7 +2632,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder>
         appEngineBuilder_;
-
     /**
      *
      *
@@ -2723,7 +2647,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasAppEngine() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2745,7 +2668,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return appEngineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2769,7 +2691,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2712,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2741,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2842,7 +2761,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2858,7 +2776,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAppEngineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2879,7 +2796,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             : appEngine_;
       }
     }
-
     /**
      *
      *
@@ -2913,7 +2829,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder>
         cloudFunctionBuilder_;
-
     /**
      *
      *
@@ -2930,7 +2845,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasCloudFunction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2953,7 +2867,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return cloudFunctionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2979,7 +2892,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3002,7 +2914,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3035,7 +2946,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3057,7 +2967,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3075,7 +2984,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3097,7 +3005,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             : cloudFunction_;
       }
     }
-
     /**
      *
      *
@@ -3132,7 +3039,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudRunOrBuilder>
         cloudRunBuilder_;
-
     /**
      *
      *
@@ -3148,7 +3054,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasCloudRun() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3170,7 +3075,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return cloudRunBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3194,7 +3098,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3216,7 +3119,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3246,7 +3148,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3267,7 +3168,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3283,7 +3183,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCloudRunFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3304,7 +3203,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             : cloudRun_;
       }
     }
-
     /**
      *
      *
@@ -3333,7 +3231,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -3348,7 +3245,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3371,7 +3267,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3394,7 +3289,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3416,7 +3310,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3434,7 +3327,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3459,7 +3351,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private int defaultPort_;
-
     /**
      *
      *
@@ -3475,7 +3366,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasDefaultPort() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3491,7 +3381,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public int getDefaultPort() {
       return defaultPort_;
     }
-
     /**
      *
      *
@@ -3511,7 +3400,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3531,7 +3419,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3546,7 +3433,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3569,7 +3455,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3592,7 +3477,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3614,7 +3498,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3632,7 +3515,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3657,7 +3539,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private long id_;
-
     /**
      *
      *
@@ -3673,7 +3554,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasId() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3689,7 +3569,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -3709,7 +3588,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3729,7 +3607,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -3744,7 +3621,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasKind() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3767,7 +3643,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3790,7 +3665,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3812,7 +3686,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3830,7 +3703,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3855,7 +3727,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3870,7 +3741,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasName() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3893,7 +3763,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3916,7 +3785,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3938,7 +3806,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3956,7 +3823,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3981,7 +3847,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -3996,7 +3861,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4019,7 +3883,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4042,7 +3905,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4064,7 +3926,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4082,7 +3943,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4107,7 +3967,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object networkEndpointType_ = "";
-
     /**
      *
      *
@@ -4123,7 +3982,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasNetworkEndpointType() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4147,7 +4005,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4171,7 +4028,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4194,7 +4050,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4213,7 +4068,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4244,7 +4098,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NetworkEndpointGroupPscData.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupPscDataOrBuilder>
         pscDataBuilder_;
-
     /**
      *
      *
@@ -4260,7 +4113,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasPscData() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4282,7 +4134,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return pscDataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4306,7 +4157,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4328,7 +4178,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4358,7 +4207,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -4379,7 +4227,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4395,7 +4242,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return getPscDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4415,7 +4261,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             : pscData_;
       }
     }
-
     /**
      *
      *
@@ -4444,7 +4289,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pscTargetService_ = "";
-
     /**
      *
      *
@@ -4459,7 +4303,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasPscTargetService() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4482,7 +4325,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4505,7 +4347,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4527,7 +4368,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4545,7 +4385,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4570,7 +4409,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -4585,7 +4423,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasRegion() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -4608,7 +4445,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4631,7 +4467,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4653,7 +4488,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4671,7 +4505,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4696,7 +4529,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -4711,7 +4543,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -4734,7 +4565,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4757,7 +4587,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4779,7 +4608,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4797,7 +4625,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4822,7 +4649,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private int size_;
-
     /**
      *
      *
@@ -4838,7 +4664,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasSize() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -4854,7 +4679,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public int getSize() {
       return size_;
     }
-
     /**
      *
      *
@@ -4874,7 +4698,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4894,7 +4717,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object subnetwork_ = "";
-
     /**
      *
      *
@@ -4909,7 +4731,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasSubnetwork() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -4932,7 +4753,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4955,7 +4775,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4977,7 +4796,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4995,7 +4813,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5020,7 +4837,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -5035,7 +4851,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     public boolean hasZone() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -5058,7 +4873,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5081,7 +4895,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5103,7 +4916,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5121,7 +4933,6 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

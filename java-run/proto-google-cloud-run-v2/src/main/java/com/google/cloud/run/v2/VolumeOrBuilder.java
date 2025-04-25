@@ -36,7 +36,6 @@ public interface VolumeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VolumeOrBuilder
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface VolumeOrBuilder
    * @return The secret.
    */
   com.google.cloud.run.v2.SecretVolumeSource getSecret();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface VolumeOrBuilder
    * @return Whether the cloudSqlInstance field is set.
    */
   boolean hasCloudSqlInstance();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface VolumeOrBuilder
    * @return The cloudSqlInstance.
    */
   com.google.cloud.run.v2.CloudSqlInstance getCloudSqlInstance();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface VolumeOrBuilder
    * @return Whether the emptyDir field is set.
    */
   boolean hasEmptyDir();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface VolumeOrBuilder
    * @return The emptyDir.
    */
   com.google.cloud.run.v2.EmptyDirVolumeSource getEmptyDir();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface VolumeOrBuilder
    * @return Whether the nfs field is set.
    */
   boolean hasNfs();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface VolumeOrBuilder
    * @return The nfs.
    */
   com.google.cloud.run.v2.NFSVolumeSource getNfs();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public interface VolumeOrBuilder
    * @return Whether the gcs field is set.
    */
   boolean hasGcs();
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public interface VolumeOrBuilder
    * @return The gcs.
    */
   com.google.cloud.run.v2.GCSVolumeSource getGcs();
-
   /**
    *
    *

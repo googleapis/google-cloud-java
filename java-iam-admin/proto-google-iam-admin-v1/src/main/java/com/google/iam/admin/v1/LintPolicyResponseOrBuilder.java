@@ -34,7 +34,6 @@ public interface LintPolicyResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.LintResult lint_results = 1;</code>
    */
   java.util.List<com.google.iam.admin.v1.LintResult> getLintResultsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface LintPolicyResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.LintResult lint_results = 1;</code>
    */
   com.google.iam.admin.v1.LintResult getLintResults(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface LintPolicyResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.LintResult lint_results = 1;</code>
    */
   int getLintResultsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface LintPolicyResponseOrBuilder
    */
   java.util.List<? extends com.google.iam.admin.v1.LintResultOrBuilder>
       getLintResultsOrBuilderList();
-
   /**
    *
    *

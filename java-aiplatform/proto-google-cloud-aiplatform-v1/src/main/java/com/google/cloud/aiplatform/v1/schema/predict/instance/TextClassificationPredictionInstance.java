@@ -35,7 +35,6 @@ public final class TextClassificationPredictionInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.instance.TextClassificationPredictionInstance)
     TextClassificationPredictionInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextClassificationPredictionInstance.newBuilder() to construct.
   private TextClassificationPredictionInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,7 +75,6 @@ public final class TextClassificationPredictionInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class TextClassificationPredictionInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class TextClassificationPredictionInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class TextClassificationPredictionInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +371,6 @@ public final class TextClassificationPredictionInstance
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -605,7 +599,6 @@ public final class TextClassificationPredictionInstance
     private int bitField0_;
 
     private java.lang.Object content_ = "";
-
     /**
      *
      *
@@ -628,7 +621,6 @@ public final class TextClassificationPredictionInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +643,6 @@ public final class TextClassificationPredictionInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -673,7 +664,6 @@ public final class TextClassificationPredictionInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class TextClassificationPredictionInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class TextClassificationPredictionInstance
     }
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -741,7 +729,6 @@ public final class TextClassificationPredictionInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class TextClassificationPredictionInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -790,7 +776,6 @@ public final class TextClassificationPredictionInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class TextClassificationPredictionInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *

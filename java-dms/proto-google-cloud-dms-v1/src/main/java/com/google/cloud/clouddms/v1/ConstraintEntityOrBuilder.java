@@ -36,7 +36,6 @@ public interface ConstraintEntityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ConstraintEntityOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ConstraintEntityOrBuilder
    * @return A list containing the tableColumns.
    */
   java.util.List<java.lang.String> getTableColumnsList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ConstraintEntityOrBuilder
    * @return The count of tableColumns.
    */
   int getTableColumnsCount();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface ConstraintEntityOrBuilder
    * @return The tableColumns at the given index.
    */
   java.lang.String getTableColumns(int index);
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface ConstraintEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface ConstraintEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface ConstraintEntityOrBuilder
    * @return A list containing the referenceColumns.
    */
   java.util.List<java.lang.String> getReferenceColumnsList();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface ConstraintEntityOrBuilder
    * @return The count of referenceColumns.
    */
   int getReferenceColumnsCount();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface ConstraintEntityOrBuilder
    * @return The referenceColumns at the given index.
    */
   java.lang.String getReferenceColumns(int index);
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public interface ConstraintEntityOrBuilder
    * @return The referenceTable.
    */
   java.lang.String getReferenceTable();
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public interface ConstraintEntityOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
-
   /**
    *
    *

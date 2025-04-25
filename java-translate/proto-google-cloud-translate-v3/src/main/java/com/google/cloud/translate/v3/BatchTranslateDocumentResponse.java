@@ -36,7 +36,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.BatchTranslateDocumentResponse)
     BatchTranslateDocumentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchTranslateDocumentResponse.newBuilder() to construct.
   private BatchTranslateDocumentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int TOTAL_PAGES_FIELD_NUMBER = 1;
   private long totalPages_ = 0L;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int TRANSLATED_PAGES_FIELD_NUMBER = 2;
   private long translatedPages_ = 0L;
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int FAILED_PAGES_FIELD_NUMBER = 3;
   private long failedPages_ = 0L;
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int TOTAL_BILLABLE_PAGES_FIELD_NUMBER = 4;
   private long totalBillablePages_ = 0L;
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int TOTAL_CHARACTERS_FIELD_NUMBER = 5;
   private long totalCharacters_ = 0L;
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int TRANSLATED_CHARACTERS_FIELD_NUMBER = 6;
   private long translatedCharacters_ = 0L;
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int FAILED_CHARACTERS_FIELD_NUMBER = 7;
   private long failedCharacters_ = 0L;
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int TOTAL_BILLABLE_CHARACTERS_FIELD_NUMBER = 8;
   private long totalBillableCharacters_ = 0L;
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int SUBMIT_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp submitTime_;
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
   public boolean hasSubmitTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
-
   /**
    *
    *
@@ -277,7 +265,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
 
   public static final int END_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -295,7 +282,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -581,7 +566,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -909,7 +893,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     private int bitField0_;
 
     private long totalPages_;
-
     /**
      *
      *
@@ -926,7 +909,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getTotalPages() {
       return totalPages_;
     }
-
     /**
      *
      *
@@ -947,7 +929,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long translatedPages_;
-
     /**
      *
      *
@@ -985,7 +965,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getTranslatedPages() {
       return translatedPages_;
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1005,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long failedPages_;
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getFailedPages() {
       return failedPages_;
     }
-
     /**
      *
      *
@@ -1065,7 +1041,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long totalBillablePages_;
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getTotalBillablePages() {
       return totalBillablePages_;
     }
-
     /**
      *
      *
@@ -1124,7 +1097,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1117,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long totalCharacters_;
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getTotalCharacters() {
       return totalCharacters_;
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1170,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long translatedCharacters_;
-
     /**
      *
      *
@@ -1218,7 +1186,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getTranslatedCharacters() {
       return translatedCharacters_;
     }
-
     /**
      *
      *
@@ -1239,7 +1206,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1226,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long failedCharacters_;
-
     /**
      *
      *
@@ -1277,7 +1242,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getFailedCharacters() {
       return failedCharacters_;
     }
-
     /**
      *
      *
@@ -1298,7 +1262,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1282,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     }
 
     private long totalBillableCharacters_;
-
     /**
      *
      *
@@ -1336,7 +1298,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public long getTotalBillableCharacters() {
       return totalBillableCharacters_;
     }
-
     /**
      *
      *
@@ -1357,7 +1318,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1343,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         submitTimeBuilder_;
-
     /**
      *
      *
@@ -1398,7 +1357,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public boolean hasSubmitTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -1419,7 +1377,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
         return submitTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1442,7 +1399,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1418,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1445,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1510,7 +1464,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1525,7 +1478,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1544,7 +1496,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
             : submitTime_;
       }
     }
-
     /**
      *
      *
@@ -1577,7 +1528,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1594,7 +1544,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -1615,7 +1564,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1640,7 +1588,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1609,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1638,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1714,7 +1659,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1731,7 +1675,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1750,7 +1693,6 @@ public final class BatchTranslateDocumentResponse extends com.google.protobuf.Ge
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

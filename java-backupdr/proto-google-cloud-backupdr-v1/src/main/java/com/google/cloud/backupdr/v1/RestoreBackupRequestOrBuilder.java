@@ -39,7 +39,6 @@ public interface RestoreBackupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface RestoreBackupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public interface RestoreBackupRequestOrBuilder
    * @return Whether the computeInstanceTargetEnvironment field is set.
    */
   boolean hasComputeInstanceTargetEnvironment();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface RestoreBackupRequestOrBuilder
    */
   com.google.cloud.backupdr.v1.ComputeInstanceTargetEnvironment
       getComputeInstanceTargetEnvironment();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface RestoreBackupRequestOrBuilder
    * @return Whether the computeInstanceRestoreProperties field is set.
    */
   boolean hasComputeInstanceRestoreProperties();
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public interface RestoreBackupRequestOrBuilder
    */
   com.google.cloud.backupdr.v1.ComputeInstanceRestoreProperties
       getComputeInstanceRestoreProperties();
-
   /**
    *
    *

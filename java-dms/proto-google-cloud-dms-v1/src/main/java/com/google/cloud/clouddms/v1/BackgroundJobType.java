@@ -94,7 +94,6 @@ public enum BackgroundJobType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BACKGROUND_JOB_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int BACKGROUND_JOB_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public enum BackgroundJobType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BACKGROUND_JOB_TYPE_SOURCE_SEED = 1;</code>
    */
   public static final int BACKGROUND_JOB_TYPE_SOURCE_SEED_VALUE = 1;
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public enum BackgroundJobType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BACKGROUND_JOB_TYPE_CONVERT = 2;</code>
    */
   public static final int BACKGROUND_JOB_TYPE_CONVERT_VALUE = 2;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public enum BackgroundJobType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BACKGROUND_JOB_TYPE_APPLY_DESTINATION = 3;</code>
    */
   public static final int BACKGROUND_JOB_TYPE_APPLY_DESTINATION_VALUE = 3;
-
   /**
    *
    *

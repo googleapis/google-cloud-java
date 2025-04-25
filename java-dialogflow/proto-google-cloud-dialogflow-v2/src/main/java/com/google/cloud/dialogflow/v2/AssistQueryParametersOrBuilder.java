@@ -50,7 +50,6 @@ public interface AssistQueryParametersOrBuilder
    * <code>map&lt;string, string&gt; documents_metadata_filters = 1;</code>
    */
   int getDocumentsMetadataFiltersCount();
-
   /**
    *
    *
@@ -77,11 +76,9 @@ public interface AssistQueryParametersOrBuilder
    * <code>map&lt;string, string&gt; documents_metadata_filters = 1;</code>
    */
   boolean containsDocumentsMetadataFilters(java.lang.String key);
-
   /** Use {@link #getDocumentsMetadataFiltersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFilters();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface AssistQueryParametersOrBuilder
    * <code>map&lt;string, string&gt; documents_metadata_filters = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDocumentsMetadataFiltersMap();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface AssistQueryParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

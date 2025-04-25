@@ -33,7 +33,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AccountTax)
     AccountTaxOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccountTax.newBuilder() to construct.
   private AccountTax(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_FIELD_NUMBER = 2;
   private long account_ = 0L;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.TaxRule> taxRules_;
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.TaxRule> getTaxRulesList() {
     return taxRules_;
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       getTaxRulesOrBuilderList() {
     return taxRules_;
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
   public int getTaxRulesCount() {
     return taxRules_.size();
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.accounts.v1beta.TaxRule getTaxRules(int index) {
     return taxRules_.get(index);
   }
-
   /**
    *
    *
@@ -404,7 +395,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +654,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long account_;
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
     public long getAccount() {
       return account_;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return taxRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return taxRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return taxRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +962,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +986,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1007,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1028,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1049,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1069,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1089,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1103,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getTaxRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1152,7 +1121,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return taxRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1139,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(taxRules_);
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1153,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
       return getTaxRulesFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.TaxRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1203,7 +1169,6 @@ public final class AccountTax extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.TaxRule.getDefaultInstance());
     }
-
     /**
      *
      *

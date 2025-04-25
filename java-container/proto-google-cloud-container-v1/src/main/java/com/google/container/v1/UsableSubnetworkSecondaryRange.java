@@ -33,7 +33,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.container.v1.UsableSubnetworkSecondaryRange)
     UsableSubnetworkSecondaryRangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UsableSubnetworkSecondaryRange.newBuilder() to construct.
   private UsableSubnetworkSecondaryRange(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -145,7 +144,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -156,7 +154,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * <code>UNUSED = 1;</code>
      */
     public static final int UNUSED_VALUE = 1;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * <code>IN_USE_SERVICE = 2;</code>
      */
     public static final int IN_USE_SERVICE_VALUE = 2;
-
     /**
      *
      *
@@ -182,7 +178,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * <code>IN_USE_SHAREABLE_POD = 3;</code>
      */
     public static final int IN_USE_SHAREABLE_POD_VALUE = 3;
-
     /**
      *
      *
@@ -288,7 +283,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rangeName_ = "";
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -343,7 +336,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +385,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
 
   public static final int STATUS_FIELD_NUMBER = 3;
   private int status_ = 0;
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -611,7 +600,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -824,7 +812,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object rangeName_ = "";
-
     /**
      *
      *
@@ -848,7 +835,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -872,7 +858,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -895,7 +880,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +898,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     }
 
     private java.lang.Object ipCidrRange_ = "";
-
     /**
      *
      *
@@ -963,7 +945,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -986,7 +967,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1008,7 +988,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1005,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1029,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -1067,7 +1044,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
           ? com.google.container.v1.UsableSubnetworkSecondaryRange.Status.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1128,7 +1102,6 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

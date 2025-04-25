@@ -33,7 +33,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ManifestOptions)
     ManifestOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManifestOptions.newBuilder() to construct.
   private ManifestOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
      * <code>ORDER_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int ORDER_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
      * <code>ASCENDING = 1;</code>
      */
     public static final int ASCENDING_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.RenditionFilter> includeRenditions_;
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       getIncludeRenditionsList() {
     return includeRenditions_;
   }
-
   /**
    *
    *
@@ -262,7 +257,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       getIncludeRenditionsOrBuilderList() {
     return includeRenditions_;
   }
-
   /**
    *
    *
@@ -277,7 +271,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
   public int getIncludeRenditionsCount() {
     return includeRenditions_.size();
   }
-
   /**
    *
    *
@@ -292,7 +285,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.video.stitcher.v1.RenditionFilter getIncludeRenditions(int index) {
     return includeRenditions_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +303,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int BITRATE_ORDER_FIELD_NUMBER = 2;
   private int bitrateOrder_ = 0;
-
   /**
    *
    *
@@ -328,7 +319,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
   public int getBitrateOrderValue() {
     return bitrateOrder_;
   }
-
   /**
    *
    *
@@ -525,7 +515,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -805,7 +794,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
         return includeRenditionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -823,7 +811,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
         return includeRenditionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -841,7 +828,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
         return includeRenditionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -866,7 +852,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +873,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +920,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +962,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +983,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1003,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getIncludeRenditionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
         return includeRenditionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1073,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(includeRenditions_);
       }
     }
-
     /**
      *
      *
@@ -1114,7 +1088,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       return getIncludeRenditionsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.RenditionFilter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1131,7 +1104,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.video.stitcher.v1.RenditionFilter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1168,7 +1140,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private int bitrateOrder_ = 0;
-
     /**
      *
      *
@@ -1185,7 +1156,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
     public int getBitrateOrderValue() {
       return bitrateOrder_;
     }
-
     /**
      *
      *
@@ -1205,7 +1175,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1195,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1250,7 +1218,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

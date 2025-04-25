@@ -38,7 +38,6 @@ public interface PushGitCommitsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PushGitCommitsRequestOrBuilder
    * @return The remoteBranch.
    */
   java.lang.String getRemoteBranch();
-
   /**
    *
    *

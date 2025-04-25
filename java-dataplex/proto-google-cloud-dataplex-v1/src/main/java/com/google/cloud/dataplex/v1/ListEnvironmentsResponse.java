@@ -33,7 +33,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListEnvironmentsResponse)
     ListEnvironmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEnvironmentsResponse.newBuilder() to construct.
   private ListEnvironmentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.Environment> environments_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.dataplex.v1.Environment> getEnvironmentsList() {
     return environments_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       getEnvironmentsOrBuilderList() {
     return environments_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
   public int getEnvironmentsCount() {
     return environments_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
   public com.google.cloud.dataplex.v1.Environment getEnvironments(int index) {
     return environments_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return environmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return environmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return environmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
     public com.google.cloud.dataplex.v1.Environment.Builder getEnvironmentsBuilder(int index) {
       return getEnvironmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return environmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(environments_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       return getEnvironmentsFieldBuilder()
           .addBuilder(com.google.cloud.dataplex.v1.Environment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       return getEnvironmentsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataplex.v1.Environment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1041,6 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

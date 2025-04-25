@@ -37,7 +37,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The vmImage.
    */
   java.lang.String getVmImage();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The containerImage.
    */
   java.lang.String getContainerImage();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The framework.
    */
   java.lang.String getFramework();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public interface UpgradeHistoryEntryOrBuilder
    * @return The targetVersion.
    */
   java.lang.String getTargetVersion();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Report reports = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.Report> getReportsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Report reports = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.Report getReports(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReportsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Report reports = 1;</code>
    */
   int getReportsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListReportsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ReportOrBuilder>
       getReportsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListReportsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListReportsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListReportsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListReportsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

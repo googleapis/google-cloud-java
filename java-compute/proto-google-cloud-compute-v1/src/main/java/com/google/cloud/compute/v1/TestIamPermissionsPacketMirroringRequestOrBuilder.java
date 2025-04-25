@@ -36,7 +36,6 @@ public interface TestIamPermissionsPacketMirroringRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TestIamPermissionsPacketMirroringRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface TestIamPermissionsPacketMirroringRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface TestIamPermissionsPacketMirroringRequestOrBuilder
    * @return Whether the testPermissionsRequestResource field is set.
    */
   boolean hasTestPermissionsRequestResource();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface TestIamPermissionsPacketMirroringRequestOrBuilder
    * @return The testPermissionsRequestResource.
    */
   com.google.cloud.compute.v1.TestPermissionsRequest getTestPermissionsRequestResource();
-
   /**
    *
    *

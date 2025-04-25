@@ -33,7 +33,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.BatchCreateInstancesResponse)
     BatchCreateInstancesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCreateInstancesResponse.newBuilder() to construct.
   private BatchCreateInstancesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.alloydb.v1alpha.Instance> instances_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.alloydb.v1alpha.Instance> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
   public com.google.cloud.alloydb.v1alpha.Instance getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +737,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +756,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +775,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +787,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
     public com.google.cloud.alloydb.v1alpha.Instance.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -823,7 +803,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -841,7 +820,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -855,7 +833,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.alloydb.v1alpha.Instance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -869,7 +846,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.alloydb.v1alpha.Instance.getDefaultInstance());
     }
-
     /**
      *
      *

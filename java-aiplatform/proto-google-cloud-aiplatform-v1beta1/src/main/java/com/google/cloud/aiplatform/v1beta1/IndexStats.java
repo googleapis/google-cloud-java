@@ -33,7 +33,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.IndexStats)
     IndexStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IndexStats.newBuilder() to construct.
   private IndexStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VECTORS_COUNT_FIELD_NUMBER = 1;
   private long vectorsCount_ = 0L;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPARSE_VECTORS_COUNT_FIELD_NUMBER = 3;
   private long sparseVectorsCount_ = 0L;
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHARDS_COUNT_FIELD_NUMBER = 2;
   private int shardsCount_ = 0;
-
   /**
    *
    *
@@ -296,7 +292,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long vectorsCount_;
-
     /**
      *
      *
@@ -520,7 +514,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     public long getVectorsCount() {
       return vectorsCount_;
     }
-
     /**
      *
      *
@@ -540,7 +533,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -560,7 +552,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long sparseVectorsCount_;
-
     /**
      *
      *
@@ -576,7 +567,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     public long getSparseVectorsCount() {
       return sparseVectorsCount_;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +605,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int shardsCount_;
-
     /**
      *
      *
@@ -632,7 +620,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     public int getShardsCount() {
       return shardsCount_;
     }
-
     /**
      *
      *
@@ -652,7 +639,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

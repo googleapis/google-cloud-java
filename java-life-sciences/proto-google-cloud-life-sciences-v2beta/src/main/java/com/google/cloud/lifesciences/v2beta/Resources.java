@@ -35,7 +35,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.Resources)
     ResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Resources.newBuilder() to construct.
   private Resources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList regions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRegionsList() {
     return regions_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public int getRegionsCount() {
     return regions_.size();
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRegions(int index) {
     return regions_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList zones_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getZonesList() {
     return zones_;
   }
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public int getZonesCount() {
     return zones_.size();
   }
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getZones(int index) {
     return zones_.get(index);
   }
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VIRTUAL_MACHINE_FIELD_NUMBER = 4;
   private com.google.cloud.lifesciences.v2beta.VirtualMachine virtualMachine_;
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVirtualMachine() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.lifesciences.v2beta.VirtualMachine.getDefaultInstance()
         : virtualMachine_;
   }
-
   /**
    *
    *
@@ -461,7 +449,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -714,7 +701,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       regions_.makeImmutable();
       return regions_;
     }
-
     /**
      *
      *
@@ -747,7 +732,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public int getRegionsCount() {
       return regions_.size();
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRegions(int index) {
       return regions_.get(index);
     }
-
     /**
      *
      *
@@ -781,7 +764,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRegionsBytes(int index) {
       return regions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +811,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +831,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +850,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +884,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       zones_.makeImmutable();
       return zones_;
     }
-
     /**
      *
      *
@@ -939,7 +915,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public int getZonesCount() {
       return zones_.size();
     }
-
     /**
      *
      *
@@ -956,7 +931,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getZones(int index) {
       return zones_.get(index);
     }
-
     /**
      *
      *
@@ -973,7 +947,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getZonesBytes(int index) {
       return zones_.getByteString(index);
     }
-
     /**
      *
      *
@@ -998,7 +971,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +994,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1014,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1033,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1064,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.VirtualMachine.Builder,
             com.google.cloud.lifesciences.v2beta.VirtualMachineOrBuilder>
         virtualMachineBuilder_;
-
     /**
      *
      *
@@ -1110,7 +1078,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVirtualMachine() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1131,7 +1098,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         return virtualMachineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1120,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1140,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1168,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1187,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1201,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVirtualMachineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1259,7 +1220,6 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
             : virtualMachine_;
       }
     }
-
     /**
      *
      *

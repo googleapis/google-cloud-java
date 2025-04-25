@@ -33,7 +33,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.TemplateLibraryConfig)
     TemplateLibraryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TemplateLibraryConfig.newBuilder() to construct.
   private TemplateLibraryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
      * <code>INSTALLATION_UNSPECIFIED = 0;</code>
      */
     public static final int INSTALLATION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
      * <code>NOT_INSTALLED = 1;</code>
      */
     public static final int NOT_INSTALLED_VALUE = 1;
-
     /**
      *
      *
@@ -228,7 +225,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
 
   public static final int INSTALLATION_FIELD_NUMBER = 2;
   private int installation_ = 0;
-
   /**
    *
    *
@@ -247,7 +243,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
   public int getInstallationValue() {
     return installation_;
   }
-
   /**
    *
    *
@@ -441,7 +436,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -631,7 +625,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int installation_ = 0;
-
     /**
      *
      *
@@ -650,7 +643,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
     public int getInstallationValue() {
       return installation_;
     }
-
     /**
      *
      *
@@ -672,7 +664,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +689,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -724,7 +714,6 @@ public final class TemplateLibraryConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

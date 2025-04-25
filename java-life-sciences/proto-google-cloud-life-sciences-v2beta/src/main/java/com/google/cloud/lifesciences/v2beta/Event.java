@@ -33,7 +33,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.Event)
     EventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Event.newBuilder() to construct.
   private Event(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -141,7 +139,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESTAMP_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp timestamp_;
-
   /**
    *
    *
@@ -157,7 +154,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELAYED_FIELD_NUMBER = 17;
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDelayed() {
     return detailsCase_ == 17;
   }
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.DelayedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_ASSIGNED_FIELD_NUMBER = 18;
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkerAssigned() {
     return detailsCase_ == 18;
   }
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.WorkerAssignedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_RELEASED_FIELD_NUMBER = 19;
-
   /**
    *
    *
@@ -378,7 +364,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkerReleased() {
     return detailsCase_ == 19;
   }
-
   /**
    *
    *
@@ -398,7 +383,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -419,7 +403,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PULL_STARTED_FIELD_NUMBER = 20;
-
   /**
    *
    *
@@ -436,7 +419,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPullStarted() {
     return detailsCase_ == 20;
   }
-
   /**
    *
    *
@@ -456,7 +438,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.PullStartedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -476,7 +457,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PULL_STOPPED_FIELD_NUMBER = 21;
-
   /**
    *
    *
@@ -493,7 +473,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPullStopped() {
     return detailsCase_ == 21;
   }
-
   /**
    *
    *
@@ -513,7 +492,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.PullStoppedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -533,7 +511,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_STARTED_FIELD_NUMBER = 22;
-
   /**
    *
    *
@@ -550,7 +527,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainerStarted() {
     return detailsCase_ == 22;
   }
-
   /**
    *
    *
@@ -570,7 +546,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.ContainerStartedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -591,7 +566,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_STOPPED_FIELD_NUMBER = 23;
-
   /**
    *
    *
@@ -608,7 +582,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainerStopped() {
     return detailsCase_ == 23;
   }
-
   /**
    *
    *
@@ -628,7 +601,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -649,7 +621,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_KILLED_FIELD_NUMBER = 24;
-
   /**
    *
    *
@@ -666,7 +637,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainerKilled() {
     return detailsCase_ == 24;
   }
-
   /**
    *
    *
@@ -686,7 +656,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.ContainerKilledEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -707,7 +676,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNEXPECTED_EXIT_STATUS_FIELD_NUMBER = 25;
-
   /**
    *
    *
@@ -725,7 +693,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnexpectedExitStatus() {
     return detailsCase_ == 25;
   }
-
   /**
    *
    *
@@ -746,7 +713,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -768,7 +734,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILED_FIELD_NUMBER = 26;
-
   /**
    *
    *
@@ -785,7 +750,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFailed() {
     return detailsCase_ == 26;
   }
-
   /**
    *
    *
@@ -805,7 +769,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.lifesciences.v2beta.FailedEvent.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1159,7 +1122,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1578,7 +1540,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampBuilder_;
-
     /**
      *
      *
@@ -1593,7 +1554,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1612,7 +1572,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return timestampBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1635,7 +1594,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1613,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1683,7 +1640,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1703,7 +1659,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1673,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1735,7 +1689,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
-
     /**
      *
      *
@@ -1763,7 +1716,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1788,7 +1740,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1813,7 +1764,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1837,7 +1787,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1806,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1888,7 +1836,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.DelayedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.DelayedEventOrBuilder>
         delayedBuilder_;
-
     /**
      *
      *
@@ -1905,7 +1852,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDelayed() {
       return detailsCase_ == 17;
     }
-
     /**
      *
      *
@@ -1932,7 +1878,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.DelayedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1956,7 +1901,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -1978,7 +1922,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -2012,7 +1955,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -2039,7 +1981,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2053,7 +1994,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.DelayedEvent.Builder getDelayedBuilder() {
       return getDelayedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2075,7 +2015,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.DelayedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2115,7 +2054,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.WorkerAssignedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.WorkerAssignedEventOrBuilder>
         workerAssignedBuilder_;
-
     /**
      *
      *
@@ -2132,7 +2070,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkerAssigned() {
       return detailsCase_ == 18;
     }
-
     /**
      *
      *
@@ -2159,7 +2096,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.WorkerAssignedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2184,7 +2120,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -2206,7 +2141,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -2242,7 +2176,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -2269,7 +2202,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2284,7 +2216,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         getWorkerAssignedBuilder() {
       return getWorkerAssignedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2307,7 +2238,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.WorkerAssignedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2347,7 +2277,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.WorkerReleasedEventOrBuilder>
         workerReleasedBuilder_;
-
     /**
      *
      *
@@ -2364,7 +2293,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkerReleased() {
       return detailsCase_ == 19;
     }
-
     /**
      *
      *
@@ -2391,7 +2319,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2416,7 +2343,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 19;
       return this;
     }
-
     /**
      *
      *
@@ -2438,7 +2364,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 19;
       return this;
     }
-
     /**
      *
      *
@@ -2474,7 +2399,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 19;
       return this;
     }
-
     /**
      *
      *
@@ -2501,7 +2425,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2516,7 +2439,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         getWorkerReleasedBuilder() {
       return getWorkerReleasedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2539,7 +2461,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2579,7 +2500,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.PullStartedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.PullStartedEventOrBuilder>
         pullStartedBuilder_;
-
     /**
      *
      *
@@ -2596,7 +2516,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPullStarted() {
       return detailsCase_ == 20;
     }
-
     /**
      *
      *
@@ -2623,7 +2542,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.PullStartedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2647,7 +2565,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -2669,7 +2586,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -2704,7 +2620,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -2731,7 +2646,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2745,7 +2659,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.PullStartedEvent.Builder getPullStartedBuilder() {
       return getPullStartedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2768,7 +2681,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.PullStartedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2808,7 +2720,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.PullStoppedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.PullStoppedEventOrBuilder>
         pullStoppedBuilder_;
-
     /**
      *
      *
@@ -2825,7 +2736,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPullStopped() {
       return detailsCase_ == 21;
     }
-
     /**
      *
      *
@@ -2852,7 +2762,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.PullStoppedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2876,7 +2785,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -2898,7 +2806,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -2933,7 +2840,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -2960,7 +2866,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2974,7 +2879,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.PullStoppedEvent.Builder getPullStoppedBuilder() {
       return getPullStoppedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2997,7 +2901,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.PullStoppedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3037,7 +2940,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.ContainerStartedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.ContainerStartedEventOrBuilder>
         containerStartedBuilder_;
-
     /**
      *
      *
@@ -3054,7 +2956,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainerStarted() {
       return detailsCase_ == 22;
     }
-
     /**
      *
      *
@@ -3081,7 +2982,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ContainerStartedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3106,7 +3006,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -3128,7 +3027,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -3165,7 +3063,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -3192,7 +3089,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3207,7 +3103,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         getContainerStartedBuilder() {
       return getContainerStartedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3230,7 +3125,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ContainerStartedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3271,7 +3165,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.ContainerStoppedEventOrBuilder>
         containerStoppedBuilder_;
-
     /**
      *
      *
@@ -3288,7 +3181,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainerStopped() {
       return detailsCase_ == 23;
     }
-
     /**
      *
      *
@@ -3315,7 +3207,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3340,7 +3231,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -3362,7 +3252,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -3399,7 +3288,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -3426,7 +3314,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3441,7 +3328,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         getContainerStoppedBuilder() {
       return getContainerStoppedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3464,7 +3350,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3505,7 +3390,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.ContainerKilledEvent.Builder,
             com.google.cloud.lifesciences.v2beta.ContainerKilledEventOrBuilder>
         containerKilledBuilder_;
-
     /**
      *
      *
@@ -3522,7 +3406,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainerKilled() {
       return detailsCase_ == 24;
     }
-
     /**
      *
      *
@@ -3549,7 +3432,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ContainerKilledEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3574,7 +3456,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -3596,7 +3477,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -3632,7 +3512,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -3659,7 +3538,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3674,7 +3552,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         getContainerKilledBuilder() {
       return getContainerKilledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3697,7 +3574,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.ContainerKilledEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3737,7 +3613,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent.Builder,
             com.google.cloud.lifesciences.v2beta.UnexpectedExitStatusEventOrBuilder>
         unexpectedExitStatusBuilder_;
-
     /**
      *
      *
@@ -3756,7 +3631,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnexpectedExitStatus() {
       return detailsCase_ == 25;
     }
-
     /**
      *
      *
@@ -3786,7 +3660,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3813,7 +3686,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 25;
       return this;
     }
-
     /**
      *
      *
@@ -3837,7 +3709,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 25;
       return this;
     }
-
     /**
      *
      *
@@ -3876,7 +3747,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 25;
       return this;
     }
-
     /**
      *
      *
@@ -3905,7 +3775,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3922,7 +3791,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         getUnexpectedExitStatusBuilder() {
       return getUnexpectedExitStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3947,7 +3815,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3990,7 +3857,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.FailedEvent.Builder,
             com.google.cloud.lifesciences.v2beta.FailedEventOrBuilder>
         failedBuilder_;
-
     /**
      *
      *
@@ -4007,7 +3873,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFailed() {
       return detailsCase_ == 26;
     }
-
     /**
      *
      *
@@ -4034,7 +3899,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.FailedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4058,7 +3922,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -4080,7 +3943,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -4114,7 +3976,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -4141,7 +4002,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4155,7 +4015,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.FailedEvent.Builder getFailedBuilder() {
       return getFailedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4177,7 +4036,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.lifesciences.v2beta.FailedEvent.getDefaultInstance();
       }
     }
-
     /**
      *
      *

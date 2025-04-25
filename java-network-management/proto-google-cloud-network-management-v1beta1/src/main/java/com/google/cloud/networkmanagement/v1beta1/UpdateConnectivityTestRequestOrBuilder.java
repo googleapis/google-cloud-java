@@ -38,7 +38,6 @@ public interface UpdateConnectivityTestRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateConnectivityTestRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateConnectivityTestRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateConnectivityTestRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.networkmanagement.v1beta1.ConnectivityTest getResource();
-
   /**
    *
    *

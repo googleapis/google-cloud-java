@@ -34,7 +34,6 @@ public interface ListProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Processor processors = 1;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Processor> getProcessorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Processor processors = 1;</code>
    */
   com.google.cloud.documentai.v1beta3.Processor getProcessors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListProcessorsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Processor processors = 1;</code>
    */
   int getProcessorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListProcessorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.ProcessorOrBuilder>
       getProcessorsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListProcessorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

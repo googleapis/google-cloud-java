@@ -33,7 +33,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.BigQueryDestination)
     BigQueryDestinationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryDestination.newBuilder() to construct.
   private BigQueryDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <code>WRITE_DISPOSITION_UNSPECIFIED = 0;</code>
      */
     public static final int WRITE_DISPOSITION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <code>WRITE_EMPTY = 1;</code>
      */
     public static final int WRITE_EMPTY_VALUE = 1;
-
     /**
      *
      *
@@ -233,7 +230,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableUri_ = "";
-
   /**
    *
    *
@@ -260,7 +256,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -290,12 +285,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   public static final int WRITE_DISPOSITION_FIELD_NUMBER = 2;
   private int writeDisposition_ = 0;
-
   /**
    *
    *
    * <pre>
-   * Required. Whether or not to overwrite the destination table. By default the
+   * Required. Whether or not to overwrite destination table. By default the
    * table won't be overwritten and an error will be returned if the table
    * exists and contains data.
    * </pre>
@@ -310,12 +304,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   public int getWriteDispositionValue() {
     return writeDisposition_;
   }
-
   /**
    *
    *
    * <pre>
-   * Required. Whether or not to overwrite the destination table. By default the
+   * Required. Whether or not to overwrite destination table. By default the
    * table won't be overwritten and an error will be returned if the table
    * exists and contains data.
    * </pre>
@@ -512,7 +505,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -710,7 +702,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object tableUri_ = "";
-
     /**
      *
      *
@@ -736,7 +727,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -762,7 +752,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +776,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +796,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,12 +823,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
 
     private int writeDisposition_ = 0;
-
     /**
      *
      *
      * <pre>
-     * Required. Whether or not to overwrite the destination table. By default the
+     * Required. Whether or not to overwrite destination table. By default the
      * table won't be overwritten and an error will be returned if the table
      * exists and contains data.
      * </pre>
@@ -856,12 +842,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public int getWriteDispositionValue() {
       return writeDisposition_;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Whether or not to overwrite the destination table. By default the
+     * Required. Whether or not to overwrite destination table. By default the
      * table won't be overwritten and an error will be returned if the table
      * exists and contains data.
      * </pre>
@@ -879,12 +864,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Whether or not to overwrite the destination table. By default the
+     * Required. Whether or not to overwrite destination table. By default the
      * table won't be overwritten and an error will be returned if the table
      * exists and contains data.
      * </pre>
@@ -905,12 +889,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.financialservices.v1.BigQueryDestination.WriteDisposition.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Whether or not to overwrite the destination table. By default the
+     * Required. Whether or not to overwrite destination table. By default the
      * table won't be overwritten and an error will be returned if the table
      * exists and contains data.
      * </pre>
@@ -932,12 +915,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Whether or not to overwrite the destination table. By default the
+     * Required. Whether or not to overwrite destination table. By default the
      * table won't be overwritten and an error will be returned if the table
      * exists and contains data.
      * </pre>

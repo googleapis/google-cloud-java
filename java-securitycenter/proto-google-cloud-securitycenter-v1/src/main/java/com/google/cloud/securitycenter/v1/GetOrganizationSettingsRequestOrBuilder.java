@@ -39,7 +39,6 @@ public interface GetOrganizationSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

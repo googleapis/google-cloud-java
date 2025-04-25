@@ -36,7 +36,6 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
-
   /**
    *
    *

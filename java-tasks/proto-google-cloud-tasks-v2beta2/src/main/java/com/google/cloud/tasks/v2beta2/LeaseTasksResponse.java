@@ -34,7 +34,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.LeaseTasksResponse)
     LeaseTasksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LeaseTasksResponse.newBuilder() to construct.
   private LeaseTasksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tasks.v2beta2.Task> tasks_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.tasks.v2beta2.Task> getTasksList() {
     return tasks_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       getTasksOrBuilderList() {
     return tasks_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
   public int getTasksCount() {
     return tasks_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.tasks.v2beta2.Task getTasks(int index) {
     return tasks_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
         return tasksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
         return tasksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
         return tasksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +773,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.tasks.v2beta2.Task.Builder getTasksBuilder(int index) {
       return getTasksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
         return tasksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -839,7 +818,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(tasks_);
       }
     }
-
     /**
      *
      *
@@ -853,7 +831,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       return getTasksFieldBuilder()
           .addBuilder(com.google.cloud.tasks.v2beta2.Task.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -867,7 +844,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       return getTasksFieldBuilder()
           .addBuilder(index, com.google.cloud.tasks.v2beta2.Task.getDefaultInstance());
     }
-
     /**
      *
      *

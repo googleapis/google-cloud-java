@@ -38,7 +38,6 @@ public interface UpdateAnalysisRuleRequestOrBuilder
    * @return Whether the analysisRule field is set.
    */
   boolean hasAnalysisRule();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateAnalysisRuleRequestOrBuilder
    * @return The analysisRule.
    */
   com.google.cloud.contactcenterinsights.v1.AnalysisRule getAnalysisRule();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateAnalysisRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface UpdateAnalysisRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

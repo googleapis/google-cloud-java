@@ -35,7 +35,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.UpdateEngineRequest)
     UpdateEngineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateEngineRequest.newBuilder() to construct.
   private UpdateEngineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int ENGINE_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1.Engine engine_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
   public boolean hasEngine() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.discoveryengine.v1.Engine.getDefaultInstance()
         : engine_;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -385,7 +378,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -610,7 +602,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1.Engine.Builder,
             com.google.cloud.discoveryengine.v1.EngineOrBuilder>
         engineBuilder_;
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
     public boolean hasEngine() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
         return engineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +777,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getEngineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
             : engine_;
       }
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +990,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class UpdateEngineRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
-
     /**
      *
      *

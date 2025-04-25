@@ -36,7 +36,6 @@ public interface ContinuousBackupConfigOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ContinuousBackupConfigOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ContinuousBackupConfigOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.alloydb.v1alpha.EncryptionConfig getEncryptionConfig();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TransformationSummaryOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TransformationSummaryOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface TransformationSummaryOrBuilder
    * @return Whether the field field is set.
    */
   boolean hasField();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface TransformationSummaryOrBuilder
    * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface TransformationSummaryOrBuilder
    * @return Whether the transformation field is set.
    */
   boolean hasTransformation();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface TransformationSummaryOrBuilder
    * @return The transformation.
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getTransformation();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface TransformationSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldTransformation> getFieldTransformationsList();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface TransformationSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
   com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index);
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface TransformationSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
   int getFieldTransformationsCount();
-
   /**
    *
    *
@@ -187,7 +178,6 @@ public interface TransformationSummaryOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldTransformationOrBuilder>
       getFieldTransformationsOrBuilderList();
-
   /**
    *
    *
@@ -214,7 +204,6 @@ public interface TransformationSummaryOrBuilder
    * @return Whether the recordSuppress field is set.
    */
   boolean hasRecordSuppress();
-
   /**
    *
    *
@@ -227,7 +216,6 @@ public interface TransformationSummaryOrBuilder
    * @return The recordSuppress.
    */
   com.google.privacy.dlp.v2.RecordSuppression getRecordSuppress();
-
   /**
    *
    *
@@ -249,7 +237,6 @@ public interface TransformationSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult> getResultsList();
-
   /**
    *
    *
@@ -260,7 +247,6 @@ public interface TransformationSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index);
-
   /**
    *
    *
@@ -271,7 +257,6 @@ public interface TransformationSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -283,7 +268,6 @@ public interface TransformationSummaryOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *

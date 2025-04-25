@@ -40,7 +40,6 @@ public interface TaskTrackingViewConfigOrBuilder
    * @return Whether the routePolylinePointsVisibility field is set.
    */
   boolean hasRoutePolylinePointsVisibility();
-
   /**
    *
    *
@@ -58,7 +57,6 @@ public interface TaskTrackingViewConfigOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       getRoutePolylinePointsVisibility();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface TaskTrackingViewConfigOrBuilder
    * @return Whether the estimatedArrivalTimeVisibility field is set.
    */
   boolean hasEstimatedArrivalTimeVisibility();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface TaskTrackingViewConfigOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       getEstimatedArrivalTimeVisibility();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface TaskTrackingViewConfigOrBuilder
    * @return Whether the estimatedTaskCompletionTimeVisibility field is set.
    */
   boolean hasEstimatedTaskCompletionTimeVisibility();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface TaskTrackingViewConfigOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       getEstimatedTaskCompletionTimeVisibility();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface TaskTrackingViewConfigOrBuilder
    * @return Whether the remainingDrivingDistanceVisibility field is set.
    */
   boolean hasRemainingDrivingDistanceVisibility();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface TaskTrackingViewConfigOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       getRemainingDrivingDistanceVisibility();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface TaskTrackingViewConfigOrBuilder
    * @return Whether the remainingStopCountVisibility field is set.
    */
   boolean hasRemainingStopCountVisibility();
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public interface TaskTrackingViewConfigOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       getRemainingStopCountVisibility();
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public interface TaskTrackingViewConfigOrBuilder
    * @return Whether the vehicleLocationVisibility field is set.
    */
   boolean hasVehicleLocationVisibility();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface TaskTrackingViewConfigOrBuilder
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.VisibilityOption
       getVehicleLocationVisibility();
-
   /**
    *
    *

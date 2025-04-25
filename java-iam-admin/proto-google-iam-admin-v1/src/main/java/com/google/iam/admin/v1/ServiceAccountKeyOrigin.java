@@ -72,7 +72,6 @@ public enum ServiceAccountKeyOrigin implements com.google.protobuf.ProtocolMessa
    * <code>ORIGIN_UNSPECIFIED = 0;</code>
    */
   public static final int ORIGIN_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum ServiceAccountKeyOrigin implements com.google.protobuf.ProtocolMessa
    * <code>USER_PROVIDED = 1;</code>
    */
   public static final int USER_PROVIDED_VALUE = 1;
-
   /**
    *
    *

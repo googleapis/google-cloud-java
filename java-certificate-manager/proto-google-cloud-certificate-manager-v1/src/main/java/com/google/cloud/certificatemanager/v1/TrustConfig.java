@@ -33,7 +33,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.TrustConfig)
     TrustConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrustConfig.newBuilder() to construct.
   private TrustConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pemCertificate field is set.
      */
     boolean hasPemCertificate();
-
     /**
      *
      *
@@ -113,7 +111,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The pemCertificate.
      */
     java.lang.String getPemCertificate();
-
     /**
      *
      *
@@ -131,7 +128,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor.KindCase getKindCase();
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor)
       TrustAnchorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TrustAnchor.newBuilder() to construct.
     private TrustAnchor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -191,7 +186,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       private KindCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -223,7 +217,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PEM_CERTIFICATE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -240,7 +233,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPemCertificate() {
       return kindCase_ == 1;
     }
-
     /**
      *
      *
@@ -270,7 +262,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -475,7 +466,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -711,7 +701,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPemCertificate() {
         return kindCase_ == 1;
       }
-
       /**
        *
        *
@@ -742,7 +731,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -773,7 +761,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -797,7 +784,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -819,7 +805,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -932,7 +917,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pemCertificate field is set.
      */
     boolean hasPemCertificate();
-
     /**
      *
      *
@@ -948,7 +932,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The pemCertificate.
      */
     java.lang.String getPemCertificate();
-
     /**
      *
      *
@@ -967,7 +950,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA.KindCase getKindCase();
   }
-
   /**
    *
    *
@@ -982,7 +964,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA)
       IntermediateCAOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IntermediateCA.newBuilder() to construct.
     private IntermediateCA(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1027,7 +1008,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       private KindCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1059,7 +1039,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PEM_CERTIFICATE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1077,7 +1056,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPemCertificate() {
       return kindCase_ == 1;
     }
-
     /**
      *
      *
@@ -1108,7 +1086,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1292,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1555,7 +1531,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPemCertificate() {
         return kindCase_ == 1;
       }
-
       /**
        *
        *
@@ -1587,7 +1562,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1619,7 +1593,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1644,7 +1617,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1667,7 +1639,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1779,7 +1750,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor>
         getTrustAnchorsList();
-
     /**
      *
      *
@@ -1792,7 +1762,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor getTrustAnchors(int index);
-
     /**
      *
      *
@@ -1805,7 +1774,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getTrustAnchorsCount();
-
     /**
      *
      *
@@ -1820,7 +1788,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchorOrBuilder>
         getTrustAnchorsOrBuilderList();
-
     /**
      *
      *
@@ -1852,7 +1819,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA>
         getIntermediateCasList();
-
     /**
      *
      *
@@ -1869,7 +1835,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA getIntermediateCas(int index);
-
     /**
      *
      *
@@ -1886,7 +1851,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getIntermediateCasCount();
-
     /**
      *
      *
@@ -1905,7 +1869,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCAOrBuilder>
         getIntermediateCasOrBuilderList();
-
     /**
      *
      *
@@ -1924,7 +1887,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCAOrBuilder
         getIntermediateCasOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1939,7 +1901,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.TrustConfig.TrustStore)
       TrustStoreOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TrustStore.newBuilder() to construct.
     private TrustStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1976,7 +1937,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor>
         trustAnchors_;
-
     /**
      *
      *
@@ -1993,7 +1953,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         getTrustAnchorsList() {
       return trustAnchors_;
     }
-
     /**
      *
      *
@@ -2011,7 +1970,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         getTrustAnchorsOrBuilderList() {
       return trustAnchors_;
     }
-
     /**
      *
      *
@@ -2027,7 +1985,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTrustAnchorsCount() {
       return trustAnchors_.size();
     }
-
     /**
      *
      *
@@ -2044,7 +2001,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return trustAnchors_.get(index);
     }
-
     /**
      *
      *
@@ -2067,7 +2023,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA>
         intermediateCas_;
-
     /**
      *
      *
@@ -2088,7 +2043,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         getIntermediateCasList() {
       return intermediateCas_;
     }
-
     /**
      *
      *
@@ -2110,7 +2064,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         getIntermediateCasOrBuilderList() {
       return intermediateCas_;
     }
-
     /**
      *
      *
@@ -2130,7 +2083,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public int getIntermediateCasCount() {
       return intermediateCas_.size();
     }
-
     /**
      *
      *
@@ -2151,7 +2103,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return intermediateCas_.get(index);
     }
-
     /**
      *
      *
@@ -2348,7 +2299,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2682,7 +2632,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return trustAnchorsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2702,7 +2651,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return trustAnchorsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2723,7 +2671,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return trustAnchorsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2750,7 +2697,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2775,7 +2721,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2802,7 +2747,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2829,7 +2773,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2853,7 +2796,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2878,7 +2820,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2904,7 +2845,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2927,7 +2867,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2950,7 +2889,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2967,7 +2905,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           getTrustAnchorsBuilder(int index) {
         return getTrustAnchorsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2988,7 +2925,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return trustAnchorsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3010,7 +2946,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(trustAnchors_);
         }
       }
-
       /**
        *
        *
@@ -3030,7 +2965,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3051,7 +2985,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3131,7 +3064,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return intermediateCasBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3154,7 +3086,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return intermediateCasBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3178,7 +3109,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return intermediateCasBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3208,7 +3138,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3237,7 +3166,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3267,7 +3195,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3297,7 +3224,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3325,7 +3251,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3354,7 +3279,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3383,7 +3307,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3409,7 +3332,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3435,7 +3357,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3455,7 +3376,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           getIntermediateCasBuilder(int index) {
         return getIntermediateCasFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3479,7 +3399,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return intermediateCasBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3504,7 +3423,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(intermediateCas_);
         }
       }
-
       /**
        *
        *
@@ -3527,7 +3445,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3551,7 +3468,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3665,7 +3581,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3691,7 +3606,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3720,7 +3634,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -3737,7 +3650,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3754,7 +3666,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -3772,7 +3683,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -3789,7 +3699,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3806,7 +3715,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -3848,7 +3756,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -3865,14 +3772,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -3886,7 +3791,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -3907,7 +3811,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3933,7 +3836,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -3957,7 +3859,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3986,7 +3887,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -4012,7 +3912,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4044,7 +3943,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
       trustStores_;
-
   /**
    *
    *
@@ -4065,7 +3963,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       getTrustStoresList() {
     return trustStores_;
   }
-
   /**
    *
    *
@@ -4087,7 +3984,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       getTrustStoresOrBuilderList() {
     return trustStores_;
   }
-
   /**
    *
    *
@@ -4107,7 +4003,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public int getTrustStoresCount() {
     return trustStores_.size();
   }
-
   /**
    *
    *
@@ -4127,7 +4022,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getTrustStores(int index) {
     return trustStores_.get(index);
   }
-
   /**
    *
    *
@@ -4382,7 +4276,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4749,7 +4642,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4774,7 +4666,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4799,7 +4690,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4823,7 +4713,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4843,7 +4732,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4875,7 +4763,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4892,7 +4779,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4915,7 +4801,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4940,7 +4825,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4962,7 +4846,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4992,7 +4875,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5014,7 +4896,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5031,7 +4912,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5052,7 +4932,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5087,7 +4966,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -5104,7 +4982,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5127,7 +5004,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5152,7 +5028,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5174,7 +5049,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5204,7 +5078,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5226,7 +5099,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5243,7 +5115,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5264,7 +5135,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -5318,7 +5188,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -5335,14 +5204,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -5356,7 +5223,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -5377,7 +5243,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -5404,7 +5269,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5421,14 +5285,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -5449,7 +5311,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -5466,7 +5327,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -5489,7 +5349,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5512,7 +5371,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5534,7 +5392,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5552,7 +5409,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5577,7 +5433,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -5602,7 +5457,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5627,7 +5481,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5651,7 +5504,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5671,7 +5523,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5738,7 +5589,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return trustStoresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5761,7 +5611,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return trustStoresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5784,7 +5633,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return trustStoresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5814,7 +5662,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5842,7 +5689,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5872,7 +5718,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5902,7 +5747,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5929,7 +5773,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5957,7 +5800,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5985,7 +5827,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6011,7 +5852,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6037,7 +5877,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6057,7 +5896,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         getTrustStoresBuilder(int index) {
       return getTrustStoresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6081,7 +5919,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return trustStoresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6106,7 +5943,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(trustStores_);
       }
     }
-
     /**
      *
      *
@@ -6128,7 +5964,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6151,7 +5986,6 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.getDefaultInstance());
     }
-
     /**
      *
      *

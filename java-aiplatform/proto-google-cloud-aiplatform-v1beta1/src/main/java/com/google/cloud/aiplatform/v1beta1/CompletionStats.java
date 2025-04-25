@@ -34,7 +34,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CompletionStats)
     CompletionStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompletionStats.newBuilder() to construct.
   private CompletionStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int SUCCESSFUL_COUNT_FIELD_NUMBER = 1;
   private long successfulCount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int FAILED_COUNT_FIELD_NUMBER = 2;
   private long failedCount_ = 0L;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int INCOMPLETE_COUNT_FIELD_NUMBER = 3;
   private long incompleteCount_ = 0L;
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
 
   public static final int SUCCESSFUL_FORECAST_POINT_COUNT_FIELD_NUMBER = 5;
   private long successfulForecastPointCount_ = 0L;
-
   /**
    *
    *
@@ -333,7 +328,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +550,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private long successfulCount_;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public long getSuccessfulCount() {
       return successfulCount_;
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     }
 
     private long failedCount_;
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public long getFailedCount() {
       return failedCount_;
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     }
 
     private long incompleteCount_;
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public long getIncompleteCount() {
       return incompleteCount_;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     }
 
     private long successfulForecastPointCount_;
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
     public long getSuccessfulForecastPointCount() {
       return successfulForecastPointCount_;
     }
-
     /**
      *
      *
@@ -778,7 +761,6 @@ public final class CompletionStats extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

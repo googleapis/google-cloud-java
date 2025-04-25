@@ -38,7 +38,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return Whether the storagePoolResource field is set.
    */
   boolean hasStoragePoolResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The storagePoolResource.
    */
   com.google.cloud.compute.v1.StoragePool getStoragePoolResource();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

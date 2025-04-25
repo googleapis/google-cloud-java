@@ -36,7 +36,6 @@ public interface ProductAttributeIntervalOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ProductAttributeIntervalOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ProductAttributeIntervalOrBuilder
    * @return The interval.
    */
   com.google.cloud.retail.v2beta.Interval getInterval();
-
   /**
    *
    *

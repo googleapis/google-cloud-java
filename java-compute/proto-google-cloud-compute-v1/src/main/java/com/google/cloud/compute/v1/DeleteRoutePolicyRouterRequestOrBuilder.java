@@ -36,7 +36,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface DeleteRoutePolicyRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
-
   /**
    *
    *

@@ -62,7 +62,6 @@ public interface SqlTranslationErrorDetailOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

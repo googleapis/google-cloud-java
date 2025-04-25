@@ -40,7 +40,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.QueryTimeRange)
     QueryTimeRangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryTimeRange.newBuilder() to construct.
   private QueryTimeRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,7 +158,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * <code>PERIOD_UNSPECIFIED = 0;</code>
      */
     public static final int PERIOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -171,7 +169,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * <code>PERIOD_1_HOUR = 1;</code>
      */
     public static final int PERIOD_1_HOUR_VALUE = 1;
-
     /**
      *
      *
@@ -183,7 +180,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * <code>PERIOD_6_HOURS = 2;</code>
      */
     public static final int PERIOD_6_HOURS_VALUE = 2;
-
     /**
      *
      *
@@ -195,7 +191,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * <code>PERIOD_1_DAY = 3;</code>
      */
     public static final int PERIOD_1_DAY_VALUE = 3;
-
     /**
      *
      *
@@ -207,7 +202,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * <code>PERIOD_1_WEEK = 4;</code>
      */
     public static final int PERIOD_1_WEEK_VALUE = 4;
-
     /**
      *
      *
@@ -313,7 +307,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERIOD_FIELD_NUMBER = 1;
   private int period_ = 0;
-
   /**
    *
    *
@@ -329,7 +322,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
   public int getPeriodValue() {
     return period_;
   }
-
   /**
    *
    *
@@ -514,7 +506,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -707,7 +698,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int period_ = 0;
-
     /**
      *
      *
@@ -723,7 +713,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
     public int getPeriodValue() {
       return period_;
     }
-
     /**
      *
      *
@@ -742,7 +731,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +750,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -785,7 +772,6 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

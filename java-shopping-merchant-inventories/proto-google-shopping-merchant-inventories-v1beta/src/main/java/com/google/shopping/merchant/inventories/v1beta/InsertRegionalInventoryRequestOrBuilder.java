@@ -39,7 +39,6 @@ public interface InsertRegionalInventoryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface InsertRegionalInventoryRequestOrBuilder
    * @return Whether the regionalInventory field is set.
    */
   boolean hasRegionalInventory();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface InsertRegionalInventoryRequestOrBuilder
    * @return The regionalInventory.
    */
   com.google.shopping.merchant.inventories.v1beta.RegionalInventory getRegionalInventory();
-
   /**
    *
    *

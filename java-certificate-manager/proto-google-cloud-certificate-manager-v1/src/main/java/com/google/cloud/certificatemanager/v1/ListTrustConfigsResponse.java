@@ -33,7 +33,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.ListTrustConfigsResponse)
     ListTrustConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTrustConfigsResponse.newBuilder() to construct.
   private ListTrustConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig> trustConfigs_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig> getTrustConfigsList() {
     return trustConfigs_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       getTrustConfigsOrBuilderList() {
     return trustConfigs_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   public int getTrustConfigsCount() {
     return trustConfigs_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   public com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfigs(int index) {
     return trustConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -220,7 +211,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -762,7 +749,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return trustConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return trustConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return trustConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +980,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         int index) {
       return getTrustConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1023,7 +997,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return trustConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1014,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(trustConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1027,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       return getTrustConfigsFieldBuilder()
           .addBuilder(com.google.cloud.certificatemanager.v1.TrustConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.certificatemanager.v1.TrustConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1104,7 +1074,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1129,7 +1098,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1122,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1145,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1198,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1249,7 +1213,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1264,7 +1227,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1280,7 +1242,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1296,7 +1257,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1320,7 +1280,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1302,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1363,7 +1321,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1339,6 @@ public final class ListTrustConfigsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

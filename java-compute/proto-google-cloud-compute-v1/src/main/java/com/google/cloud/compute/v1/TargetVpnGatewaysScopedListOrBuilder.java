@@ -35,7 +35,6 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetVpnGateway> getTargetVpnGatewaysList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.TargetVpnGateway getTargetVpnGateways(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * </code>
    */
   int getTargetVpnGatewaysCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetVpnGatewayOrBuilder>
       getTargetVpnGatewaysOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -110,7 +105,6 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

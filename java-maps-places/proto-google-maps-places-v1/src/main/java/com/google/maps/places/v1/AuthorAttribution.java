@@ -35,7 +35,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.AuthorAttribution)
     AuthorAttributionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuthorAttribution.newBuilder() to construct.
   private AuthorAttribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object photoUri_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -412,7 +405,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -628,7 +620,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object photoUri_ = "";
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

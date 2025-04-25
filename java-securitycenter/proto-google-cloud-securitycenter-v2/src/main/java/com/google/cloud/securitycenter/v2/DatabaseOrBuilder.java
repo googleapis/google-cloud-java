@@ -43,7 +43,6 @@ public interface DatabaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface DatabaseOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface DatabaseOrBuilder
    * @return The userName.
    */
   java.lang.String getUserName();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface DatabaseOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public interface DatabaseOrBuilder
    * @return A list containing the grantees.
    */
   java.util.List<java.lang.String> getGranteesList();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface DatabaseOrBuilder
    * @return The count of grantees.
    */
   int getGranteesCount();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface DatabaseOrBuilder
    * @return The grantees at the given index.
    */
   java.lang.String getGrantees(int index);
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface DatabaseOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *

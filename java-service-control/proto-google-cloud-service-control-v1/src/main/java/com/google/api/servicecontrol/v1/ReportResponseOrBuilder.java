@@ -48,7 +48,6 @@ public interface ReportResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.api.servicecontrol.v1.ReportResponse.ReportError> getReportErrorsList();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface ReportResponseOrBuilder
    * </code>
    */
   com.google.api.servicecontrol.v1.ReportResponse.ReportError getReportErrors(int index);
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface ReportResponseOrBuilder
    * </code>
    */
   int getReportErrorsCount();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface ReportResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.ReportResponse.ReportErrorOrBuilder>
       getReportErrorsOrBuilderList();
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface ReportResponseOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface ReportResponseOrBuilder
    * @return The serviceRolloutId.
    */
   java.lang.String getServiceRolloutId();
-
   /**
    *
    *

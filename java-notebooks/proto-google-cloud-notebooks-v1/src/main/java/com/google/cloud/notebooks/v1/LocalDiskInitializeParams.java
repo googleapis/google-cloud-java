@@ -37,7 +37,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.LocalDiskInitializeParams)
     LocalDiskInitializeParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocalDiskInitializeParams.newBuilder() to construct.
   private LocalDiskInitializeParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,7 +154,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
      * <code>DISK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DISK_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -166,7 +164,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
      * <code>PD_STANDARD = 1;</code>
      */
     public static final int PD_STANDARD_VALUE = 1;
-
     /**
      *
      *
@@ -177,7 +174,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
      * <code>PD_SSD = 2;</code>
      */
     public static final int PD_SSD_VALUE = 2;
-
     /**
      *
      *
@@ -188,7 +184,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
      * <code>PD_BALANCED = 3;</code>
      */
     public static final int PD_BALANCED_VALUE = 3;
-
     /**
      *
      *
@@ -293,7 +288,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -317,7 +311,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +339,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskName_ = "";
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -401,7 +392,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 3;
   private long diskSizeGb_ = 0L;
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
 
   public static final int DISK_TYPE_FIELD_NUMBER = 4;
   private int diskType_ = 0;
-
   /**
    *
    *
@@ -441,7 +430,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
   public int getDiskTypeValue() {
     return diskType_;
   }
-
   /**
    *
    *
@@ -491,7 +479,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -509,14 +496,12 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -531,7 +516,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -553,7 +537,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -784,7 +767,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1055,7 +1037,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1078,7 +1059,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1081,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1102,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1119,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1143,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     }
 
     private java.lang.Object diskName_ = "";
-
     /**
      *
      *
@@ -1191,7 +1167,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1191,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1214,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1233,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1259,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     }
 
     private long diskSizeGb_;
-
     /**
      *
      *
@@ -1305,7 +1276,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     public long getDiskSizeGb() {
       return diskSizeGb_;
     }
-
     /**
      *
      *
@@ -1327,7 +1297,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1318,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     }
 
     private int diskType_ = 0;
-
     /**
      *
      *
@@ -1368,7 +1336,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     public int getDiskTypeValue() {
       return diskType_;
     }
-
     /**
      *
      *
@@ -1390,7 +1357,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1379,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
           ? com.google.cloud.notebooks.v1.LocalDiskInitializeParams.DiskType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1439,7 +1404,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1450,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1504,14 +1467,12 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1526,7 +1487,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1548,7 +1508,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1576,7 +1535,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1594,14 +1552,12 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1623,7 +1579,6 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *

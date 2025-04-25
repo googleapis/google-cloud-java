@@ -39,7 +39,6 @@ public interface ListConnectClustersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface ListConnectClustersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface ListConnectClustersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface ListConnectClustersRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

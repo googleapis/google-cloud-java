@@ -36,7 +36,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public interface ListManagedInstancesRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *

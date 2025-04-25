@@ -36,7 +36,6 @@ public interface FileExtensionInfoOrBuilder
    * @return The fileExtension.
    */
   java.lang.String getFileExtension();
-
   /**
    *
    *

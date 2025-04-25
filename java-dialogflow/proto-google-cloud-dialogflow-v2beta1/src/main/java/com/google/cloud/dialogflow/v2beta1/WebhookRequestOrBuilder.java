@@ -46,7 +46,6 @@ public interface WebhookRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface WebhookRequestOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface WebhookRequestOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface WebhookRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface WebhookRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index);
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface WebhookRequestOrBuilder
    * </code>
    */
   int getAlternativeQueryResultsCount();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface WebhookRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
       getAlternativeQueryResultsOrBuilderList();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the originalDetectIntentRequest field is set.
    */
   boolean hasOriginalDetectIntentRequest();
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public interface WebhookRequestOrBuilder
    * @return The originalDetectIntentRequest.
    */
   com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest getOriginalDetectIntentRequest();
-
   /**
    *
    *

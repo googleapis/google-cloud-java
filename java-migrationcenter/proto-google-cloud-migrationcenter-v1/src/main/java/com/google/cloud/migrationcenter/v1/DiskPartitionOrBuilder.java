@@ -36,7 +36,6 @@ public interface DiskPartitionOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DiskPartitionOrBuilder
    * @return The fileSystem.
    */
   java.lang.String getFileSystem();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DiskPartitionOrBuilder
    * @return The mountPoint.
    */
   java.lang.String getMountPoint();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface DiskPartitionOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public interface DiskPartitionOrBuilder
    * @return Whether the subPartitions field is set.
    */
   boolean hasSubPartitions();
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface DiskPartitionOrBuilder
    * @return The subPartitions.
    */
   com.google.cloud.migrationcenter.v1.DiskPartitionList getSubPartitions();
-
   /**
    *
    *

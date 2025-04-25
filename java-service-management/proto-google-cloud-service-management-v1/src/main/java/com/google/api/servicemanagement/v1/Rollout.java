@@ -35,7 +35,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.Rollout)
     RolloutOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Rollout.newBuilder() to construct.
   private Rollout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -164,7 +163,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>ROLLOUT_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int ROLLOUT_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -175,7 +173,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 1;</code>
      */
     public static final int IN_PROGRESS_VALUE = 1;
-
     /**
      *
      *
@@ -186,7 +183,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCESS = 2;</code>
      */
     public static final int SUCCESS_VALUE = 2;
-
     /**
      *
      *
@@ -198,7 +194,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 3;</code>
      */
     public static final int CANCELLED_VALUE = 3;
-
     /**
      *
      *
@@ -209,7 +204,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -220,7 +214,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 5;</code>
      */
     public static final int PENDING_VALUE = 5;
-
     /**
      *
      *
@@ -341,7 +334,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, double&gt; percentages = 1;</code>
      */
     int getPercentagesCount();
-
     /**
      *
      *
@@ -354,11 +346,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, double&gt; percentages = 1;</code>
      */
     boolean containsPercentages(java.lang.String key);
-
     /** Use {@link #getPercentagesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.Double> getPercentages();
-
     /**
      *
      *
@@ -371,7 +361,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, double&gt; percentages = 1;</code>
      */
     java.util.Map<java.lang.String, java.lang.Double> getPercentagesMap();
-
     /**
      *
      *
@@ -384,7 +373,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, double&gt; percentages = 1;</code>
      */
     double getPercentagesOrDefault(java.lang.String key, double defaultValue);
-
     /**
      *
      *
@@ -398,7 +386,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     double getPercentagesOrThrow(java.lang.String key);
   }
-
   /**
    *
    *
@@ -442,7 +429,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy)
       TrafficPercentStrategyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TrafficPercentStrategy.newBuilder() to construct.
     private TrafficPercentStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -511,7 +497,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getPercentagesCount() {
       return internalGetPercentages().getMap().size();
     }
-
     /**
      *
      *
@@ -530,14 +515,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPercentages().getMap().containsKey(key);
     }
-
     /** Use {@link #getPercentagesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getPercentages() {
       return getPercentagesMap();
     }
-
     /**
      *
      *
@@ -553,7 +536,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Double> getPercentagesMap() {
       return internalGetPercentages().getMap();
     }
-
     /**
      *
      *
@@ -573,7 +555,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetPercentages().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -767,7 +748,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1044,7 +1024,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       public int getPercentagesCount() {
         return internalGetPercentages().getMap().size();
       }
-
       /**
        *
        *
@@ -1063,14 +1042,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetPercentages().getMap().containsKey(key);
       }
-
       /** Use {@link #getPercentagesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Double> getPercentages() {
         return getPercentagesMap();
       }
-
       /**
        *
        *
@@ -1086,7 +1063,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.Double> getPercentagesMap() {
         return internalGetPercentages().getMap();
       }
-
       /**
        *
        *
@@ -1106,7 +1082,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.Double> map = internalGetPercentages().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -1135,7 +1110,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         internalGetMutablePercentages().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -1154,14 +1128,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         internalGetMutablePercentages().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Double> getMutablePercentages() {
         bitField0_ |= 0x00000001;
         return internalGetMutablePercentages().getMutableMap();
       }
-
       /**
        *
        *
@@ -1182,7 +1154,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -1271,7 +1242,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -1287,7 +1257,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy)
       DeleteServiceStrategyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DeleteServiceStrategy.newBuilder() to construct.
     private DeleteServiceStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1469,7 +1438,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1723,7 +1691,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     private StrategyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1760,7 +1727,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutId_ = "";
-
   /**
    *
    *
@@ -1792,7 +1758,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1827,7 +1792,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1843,7 +1807,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1859,7 +1822,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1878,7 +1840,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdBy_ = "";
-
   /**
    *
    *
@@ -1902,7 +1863,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1929,7 +1889,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 4;
   private int status_ = 0;
-
   /**
    *
    *
@@ -1947,7 +1906,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -1971,7 +1929,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRAFFIC_PERCENT_STRATEGY_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1990,7 +1947,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTrafficPercentStrategy() {
     return strategyCase_ == 5;
   }
-
   /**
    *
    *
@@ -2013,7 +1969,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2036,7 +1991,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELETE_SERVICE_STRATEGY_FIELD_NUMBER = 200;
-
   /**
    *
    *
@@ -2055,7 +2009,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteServiceStrategy() {
     return strategyCase_ == 200;
   }
-
   /**
    *
    *
@@ -2078,7 +2031,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2104,7 +2056,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
-
   /**
    *
    *
@@ -2128,7 +2079,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2398,7 +2348,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2720,7 +2669,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object rolloutId_ = "";
-
     /**
      *
      *
@@ -2751,7 +2699,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2782,7 +2729,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2812,7 +2758,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2838,7 +2783,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2876,7 +2820,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2891,7 +2834,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2912,7 +2854,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2935,7 +2876,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2955,7 +2895,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2983,7 +2922,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3003,7 +2941,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3018,7 +2955,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3037,7 +2973,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3065,7 +3000,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object createdBy_ = "";
-
     /**
      *
      *
@@ -3088,7 +3022,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3111,7 +3044,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3133,7 +3065,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3151,7 +3082,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3176,7 +3106,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -3194,7 +3123,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -3215,7 +3143,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3237,7 +3164,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           ? com.google.api.servicemanagement.v1.Rollout.RolloutStatus.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3261,7 +3187,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3287,7 +3212,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy.Builder,
             com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategyOrBuilder>
         trafficPercentStrategyBuilder_;
-
     /**
      *
      *
@@ -3306,7 +3230,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTrafficPercentStrategy() {
       return strategyCase_ == 5;
     }
-
     /**
      *
      *
@@ -3338,7 +3261,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3365,7 +3287,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       strategyCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3390,7 +3311,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       strategyCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3430,7 +3350,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       strategyCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3459,7 +3378,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3476,7 +3394,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         getTrafficPercentStrategyBuilder() {
       return getTrafficPercentStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3502,7 +3419,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3546,7 +3462,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy.Builder,
             com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategyOrBuilder>
         deleteServiceStrategyBuilder_;
-
     /**
      *
      *
@@ -3565,7 +3480,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteServiceStrategy() {
       return strategyCase_ == 200;
     }
-
     /**
      *
      *
@@ -3597,7 +3511,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3624,7 +3537,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       strategyCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -3648,7 +3560,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       strategyCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -3687,7 +3598,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       strategyCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -3716,7 +3626,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3733,7 +3642,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         getDeleteServiceStrategyBuilder() {
       return getDeleteServiceStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3759,7 +3667,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3799,7 +3706,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceName_ = "";
-
     /**
      *
      *
@@ -3822,7 +3728,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3845,7 +3750,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3867,7 +3771,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3885,7 +3788,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

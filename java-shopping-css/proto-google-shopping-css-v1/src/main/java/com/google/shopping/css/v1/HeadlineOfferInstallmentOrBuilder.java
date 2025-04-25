@@ -49,7 +49,6 @@ public interface HeadlineOfferInstallmentOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HeadlineOfferInstallmentOrBuilder
    * @return The amount.
    */
   com.google.shopping.type.Price getAmount();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface HeadlineOfferInstallmentOrBuilder
    * @return Whether the downpayment field is set.
    */
   boolean hasDownpayment();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface HeadlineOfferInstallmentOrBuilder
    * @return The downpayment.
    */
   com.google.shopping.type.Price getDownpayment();
-
   /**
    *
    *

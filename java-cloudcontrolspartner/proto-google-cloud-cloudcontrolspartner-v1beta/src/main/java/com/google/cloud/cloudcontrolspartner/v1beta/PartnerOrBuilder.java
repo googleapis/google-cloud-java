@@ -38,7 +38,6 @@ public interface PartnerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PartnerOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1beta.Sku skus = 3;</code>
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1beta.Sku> getSkusList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PartnerOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1beta.Sku skus = 3;</code>
    */
   com.google.cloud.cloudcontrolspartner.v1beta.Sku getSkus(int index);
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface PartnerOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1beta.Sku skus = 3;</code>
    */
   int getSkusCount();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface PartnerOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1beta.SkuOrBuilder>
       getSkusOrBuilderList();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface PartnerOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1beta.EkmMetadata ekm_solutions = 4;</code>
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1beta.EkmMetadata> getEkmSolutionsList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface PartnerOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1beta.EkmMetadata ekm_solutions = 4;</code>
    */
   com.google.cloud.cloudcontrolspartner.v1beta.EkmMetadata getEkmSolutions(int index);
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface PartnerOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1beta.EkmMetadata ekm_solutions = 4;</code>
    */
   int getEkmSolutionsCount();
-
   /**
    *
    *
@@ -154,7 +146,6 @@ public interface PartnerOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1beta.EkmMetadataOrBuilder>
       getEkmSolutionsOrBuilderList();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface PartnerOrBuilder
    * @return A list containing the operatedCloudRegions.
    */
   java.util.List<java.lang.String> getOperatedCloudRegionsList();
-
   /**
    *
    *
@@ -196,7 +186,6 @@ public interface PartnerOrBuilder
    * @return The count of operatedCloudRegions.
    */
   int getOperatedCloudRegionsCount();
-
   /**
    *
    *
@@ -212,7 +201,6 @@ public interface PartnerOrBuilder
    * @return The operatedCloudRegions at the given index.
    */
   java.lang.String getOperatedCloudRegions(int index);
-
   /**
    *
    *
@@ -242,7 +230,6 @@ public interface PartnerOrBuilder
    * @return The partnerProjectId.
    */
   java.lang.String getPartnerProjectId();
-
   /**
    *
    *
@@ -270,7 +257,6 @@ public interface PartnerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -284,7 +270,6 @@ public interface PartnerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -310,7 +295,6 @@ public interface PartnerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -324,7 +308,6 @@ public interface PartnerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

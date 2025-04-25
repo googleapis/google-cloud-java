@@ -32,7 +32,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupsAddInstancesRequest)
     InstanceGroupsAddInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupsAddInstancesRequest.newBuilder() to construct.
   private InstanceGroupsAddInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceReference> instances_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
   public java.util.List<com.google.cloud.compute.v1.InstanceReference> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
   public com.google.cloud.compute.v1.InstanceReference getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +757,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +776,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +788,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InstanceReference.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -824,7 +804,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -842,7 +821,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -856,7 +834,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceReference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -870,7 +847,6 @@ public final class InstanceGroupsAddInstancesRequest extends com.google.protobuf
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.InstanceReference.getDefaultInstance());
     }
-
     /**
      *
      *

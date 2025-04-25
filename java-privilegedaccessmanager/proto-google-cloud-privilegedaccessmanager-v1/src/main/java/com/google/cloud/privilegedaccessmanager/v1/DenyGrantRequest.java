@@ -33,7 +33,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.DenyGrantRequest)
     DenyGrantRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DenyGrantRequest.newBuilder() to construct.
   private DenyGrantRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -348,7 +343,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -551,7 +545,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -576,7 +569,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object reason_ = "";
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class DenyGrantRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata)
     ImportTestCasesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportTestCasesMetadata.newBuilder() to construct.
   private ImportTestCasesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.TestCaseError> errors_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.dialogflow.cx.v3.TestCaseError> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
   public com.google.cloud.dialogflow.cx.v3.TestCaseError getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +790,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.cx.v3.TestCaseError.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -826,7 +806,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -844,7 +823,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -858,7 +836,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3.TestCaseError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -872,7 +849,6 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3.TestCaseError.getDefaultInstance());
     }
-
     /**
      *
      *

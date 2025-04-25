@@ -38,7 +38,6 @@ public interface CreateModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateModelRequestOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateModelRequestOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateModelRequestOrBuilder
    * @return The model.
    */
   com.google.cloud.financialservices.v1.Model getModel();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateModelRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

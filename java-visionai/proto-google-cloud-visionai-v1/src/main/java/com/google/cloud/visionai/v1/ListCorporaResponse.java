@@ -33,7 +33,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ListCorporaResponse)
     ListCorporaResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCorporaResponse.newBuilder() to construct.
   private ListCorporaResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Corpus> corpora_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.visionai.v1.Corpus> getCorporaList() {
     return corpora_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       getCorporaOrBuilderList() {
     return corpora_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
   public int getCorporaCount() {
     return corpora_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.visionai.v1.Corpus getCorpora(int index) {
     return corpora_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return corporaBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return corporaBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return corporaBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.visionai.v1.Corpus.Builder getCorporaBuilder(int index) {
       return getCorporaFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return corporaBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +898,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(corpora_);
       }
     }
-
     /**
      *
      *
@@ -935,7 +911,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       return getCorporaFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Corpus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -949,7 +924,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       return getCorporaFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Corpus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1005,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1029,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1049,6 @@ public final class ListCorporaResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

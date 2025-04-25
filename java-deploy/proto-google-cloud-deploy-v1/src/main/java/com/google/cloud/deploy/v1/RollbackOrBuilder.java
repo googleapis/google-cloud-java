@@ -37,7 +37,6 @@ public interface RollbackOrBuilder
    * @return The destinationPhase.
    */
   java.lang.String getDestinationPhase();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface QueryParametersOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface QueryParametersOrBuilder
    * @return Whether the geoLocation field is set.
    */
   boolean hasGeoLocation();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface QueryParametersOrBuilder
    * @return The geoLocation.
    */
   com.google.type.LatLng getGeoLocation();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 3;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getContextsList();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 3;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Context getContexts(int index);
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 3;</code>
    */
   int getContextsCount();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface QueryParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getContextsOrBuilderList();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SessionEntityType> getSessionEntityTypesList();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityTypes(int index);
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   int getSessionEntityTypesCount();
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public interface QueryParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public interface QueryParametersOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface QueryParametersOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
-
   /**
    *
    *
@@ -303,7 +290,6 @@ public interface QueryParametersOrBuilder
    * @return A list containing the knowledgeBaseNames.
    */
   java.util.List<java.lang.String> getKnowledgeBaseNamesList();
-
   /**
    *
    *
@@ -318,7 +304,6 @@ public interface QueryParametersOrBuilder
    * @return The count of knowledgeBaseNames.
    */
   int getKnowledgeBaseNamesCount();
-
   /**
    *
    *
@@ -334,7 +319,6 @@ public interface QueryParametersOrBuilder
    * @return The knowledgeBaseNames at the given index.
    */
   java.lang.String getKnowledgeBaseNames(int index);
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public interface QueryParametersOrBuilder
    * @return Whether the sentimentAnalysisRequestConfig field is set.
    */
   boolean hasSentimentAnalysisRequestConfig();
-
   /**
    *
    *
@@ -387,7 +370,6 @@ public interface QueryParametersOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig
       getSentimentAnalysisRequestConfig();
-
   /**
    *
    *
@@ -418,7 +400,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SubAgent> getSubAgentsList();
-
   /**
    *
    *
@@ -432,7 +413,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
    */
   com.google.cloud.dialogflow.v2beta1.SubAgent getSubAgents(int index);
-
   /**
    *
    *
@@ -446,7 +426,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SubAgent sub_agents = 13;</code>
    */
   int getSubAgentsCount();
-
   /**
    *
    *
@@ -461,7 +440,6 @@ public interface QueryParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SubAgentOrBuilder>
       getSubAgentsOrBuilderList();
-
   /**
    *
    *
@@ -493,7 +471,6 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   int getWebhookHeadersCount();
-
   /**
    *
    *
@@ -511,11 +488,9 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   boolean containsWebhookHeaders(java.lang.String key);
-
   /** Use {@link #getWebhookHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders();
-
   /**
    *
    *
@@ -533,7 +508,6 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap();
-
   /**
    *
    *
@@ -555,7 +529,6 @@ public interface QueryParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -590,7 +563,6 @@ public interface QueryParametersOrBuilder
    * @return The platform.
    */
   java.lang.String getPlatform();
-
   /**
    *
    *

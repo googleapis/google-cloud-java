@@ -36,7 +36,6 @@ public interface GitHubEnterpriseSecretsOrBuilder
    * @return The privateKeyVersionName.
    */
   java.lang.String getPrivateKeyVersionName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GitHubEnterpriseSecretsOrBuilder
    * @return The webhookSecretVersionName.
    */
   java.lang.String getWebhookSecretVersionName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GitHubEnterpriseSecretsOrBuilder
    * @return The oauthSecretVersionName.
    */
   java.lang.String getOauthSecretVersionName();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface GitHubEnterpriseSecretsOrBuilder
    * @return The oauthClientIdVersionName.
    */
   java.lang.String getOauthClientIdVersionName();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SnapshotOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SnapshotOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SnapshotOrBuilder
    * @return The sourceJobId.
    */
   java.lang.String getSourceJobId();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface SnapshotOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface SnapshotOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface SnapshotOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface SnapshotOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface SnapshotOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface SnapshotOrBuilder
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.PubsubSnapshotMetadata> getPubsubMetadataList();
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public interface SnapshotOrBuilder
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
    */
   com.google.dataflow.v1beta3.PubsubSnapshotMetadata getPubsubMetadata(int index);
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface SnapshotOrBuilder
    * <code>repeated .google.dataflow.v1beta3.PubsubSnapshotMetadata pubsub_metadata = 7;</code>
    */
   int getPubsubMetadataCount();
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public interface SnapshotOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.PubsubSnapshotMetadataOrBuilder>
       getPubsubMetadataOrBuilderList();
-
   /**
    *
    *
@@ -270,7 +258,6 @@ public interface SnapshotOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface SnapshotOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

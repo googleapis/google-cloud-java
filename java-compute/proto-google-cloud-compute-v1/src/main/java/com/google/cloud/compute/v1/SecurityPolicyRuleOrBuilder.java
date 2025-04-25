@@ -36,7 +36,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the headerAction field is set.
    */
   boolean hasHeaderAction();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The headerAction.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction getHeaderAction();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the match field is set.
    */
   boolean hasMatch();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The match.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleMatcher getMatch();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the networkMatch field is set.
    */
   boolean hasNetworkMatch();
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The networkMatch.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcher getNetworkMatch();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the preconfiguredWafConfig field is set.
    */
   boolean hasPreconfiguredWafConfig();
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The preconfiguredWafConfig.
    */
   com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig getPreconfiguredWafConfig();
-
   /**
    *
    *
@@ -321,7 +307,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the preview field is set.
    */
   boolean hasPreview();
-
   /**
    *
    *
@@ -347,7 +332,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *
@@ -375,7 +359,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the rateLimitOptions field is set.
    */
   boolean hasRateLimitOptions();
-
   /**
    *
    *
@@ -390,7 +373,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The rateLimitOptions.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions getRateLimitOptions();
-
   /**
    *
    *
@@ -419,7 +401,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return Whether the redirectOptions field is set.
    */
   boolean hasRedirectOptions();
-
   /**
    *
    *
@@ -434,7 +415,6 @@ public interface SecurityPolicyRuleOrBuilder
    * @return The redirectOptions.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions getRedirectOptions();
-
   /**
    *
    *

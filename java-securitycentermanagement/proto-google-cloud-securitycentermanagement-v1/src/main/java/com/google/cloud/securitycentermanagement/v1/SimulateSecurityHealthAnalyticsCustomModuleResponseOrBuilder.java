@@ -38,7 +38,6 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleResponseOrBuilder
   com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse
           .SimulatedResult
       getResult();
-
   /**
    *
    *

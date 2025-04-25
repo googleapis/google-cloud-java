@@ -40,7 +40,6 @@ public interface NetworkingConfigOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
-
   /**
    *
    *

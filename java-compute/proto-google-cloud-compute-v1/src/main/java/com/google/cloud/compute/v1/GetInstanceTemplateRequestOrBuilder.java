@@ -36,7 +36,6 @@ public interface GetInstanceTemplateRequestOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetInstanceTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

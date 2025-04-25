@@ -37,7 +37,6 @@ public interface InvalidTemplateParametersOrBuilder
    */
   java.util.List<com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation>
       getParameterViolationsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InvalidTemplateParametersOrBuilder
    */
   com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation getParameterViolations(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface InvalidTemplateParametersOrBuilder
    * </code>
    */
   int getParameterViolationsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface InvalidTemplateParametersOrBuilder
           ? extends
               com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolationOrBuilder>
       getParameterViolationsOrBuilderList();
-
   /**
    *
    *

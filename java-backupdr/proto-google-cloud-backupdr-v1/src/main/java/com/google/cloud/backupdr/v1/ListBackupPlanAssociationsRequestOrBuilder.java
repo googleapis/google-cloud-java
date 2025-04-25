@@ -43,7 +43,6 @@ public interface ListBackupPlanAssociationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ListBackupPlanAssociationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface ListBackupPlanAssociationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

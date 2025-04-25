@@ -44,7 +44,6 @@ public class AsyncListBackupsPaged {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
-              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         ListBackupsResponse response = backupForGKEClient.listBackupsCallable().call(request);

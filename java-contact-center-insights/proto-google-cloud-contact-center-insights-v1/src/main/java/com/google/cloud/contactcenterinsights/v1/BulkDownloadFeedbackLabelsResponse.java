@@ -33,7 +33,6 @@ public final class BulkDownloadFeedbackLabelsResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsResponse)
     BulkDownloadFeedbackLabelsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BulkDownloadFeedbackLabelsResponse.newBuilder() to construct.
   private BulkDownloadFeedbackLabelsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -222,7 +221,6 @@ public final class BulkDownloadFeedbackLabelsResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

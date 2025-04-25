@@ -75,7 +75,6 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
    * <code>NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED = 0;</code>
    */
   public static final int NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
    * <code>BLUE_GREEN = 2;</code>
    */
   public static final int BLUE_GREEN_VALUE = 2;
-
   /**
    *
    *

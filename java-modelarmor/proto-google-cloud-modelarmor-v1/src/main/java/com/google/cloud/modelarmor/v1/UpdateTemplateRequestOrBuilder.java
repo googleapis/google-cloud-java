@@ -41,7 +41,6 @@ public interface UpdateTemplateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateTemplateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateTemplateRequestOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateTemplateRequestOrBuilder
    * @return The template.
    */
   com.google.cloud.modelarmor.v1.Template getTemplate();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface UpdateTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

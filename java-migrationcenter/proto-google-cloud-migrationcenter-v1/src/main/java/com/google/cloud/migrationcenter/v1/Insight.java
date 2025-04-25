@@ -33,7 +33,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.Insight)
     InsightOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Insight.newBuilder() to construct.
   private Insight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     private InsightCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIGRATION_INSIGHT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMigrationInsight() {
     return insightCase_ == 1;
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.migrationcenter.v1.MigrationInsight.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENERIC_INSIGHT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGenericInsight() {
     return insightCase_ == 2;
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -422,7 +414,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.MigrationInsight.Builder,
             com.google.cloud.migrationcenter.v1.MigrationInsightOrBuilder>
         migrationInsightBuilder_;
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMigrationInsight() {
       return insightCase_ == 1;
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.MigrationInsight.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         getMigrationInsightBuilder() {
       return getMigrationInsightFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -857,7 +840,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.MigrationInsight.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.GenericInsight.Builder,
             com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder>
         genericInsightBuilder_;
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGenericInsight() {
       return insightCase_ == 2;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1005,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1032,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1046,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.GenericInsight.Builder getGenericInsightBuilder() {
       return getGenericInsightFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
       }
     }
-
     /**
      *
      *

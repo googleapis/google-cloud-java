@@ -34,7 +34,6 @@ public interface ListAvailableVersionsResponseOrBuilder
    * <code>repeated .google.cloud.datafusion.v1.Version available_versions = 1;</code>
    */
   java.util.List<com.google.cloud.datafusion.v1.Version> getAvailableVersionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAvailableVersionsResponseOrBuilder
    * <code>repeated .google.cloud.datafusion.v1.Version available_versions = 1;</code>
    */
   com.google.cloud.datafusion.v1.Version getAvailableVersions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAvailableVersionsResponseOrBuilder
    * <code>repeated .google.cloud.datafusion.v1.Version available_versions = 1;</code>
    */
   int getAvailableVersionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAvailableVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datafusion.v1.VersionOrBuilder>
       getAvailableVersionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAvailableVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsResponse)
     FindNeighborsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FindNeighborsResponse.newBuilder() to construct.
   private FindNeighborsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the datapoint field is set.
      */
     boolean hasDatapoint();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      * @return The datapoint.
      */
     com.google.cloud.aiplatform.v1beta1.IndexDatapoint getDatapoint();
-
     /**
      *
      *
@@ -142,7 +139,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      */
     double getSparseDistance();
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsResponse.Neighbor)
       NeighborOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Neighbor.newBuilder() to construct.
     private Neighbor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -189,7 +184,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int DATAPOINT_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.IndexDatapoint datapoint_;
-
     /**
      *
      *
@@ -208,7 +202,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasDatapoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -229,7 +222,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.aiplatform.v1beta1.IndexDatapoint.getDefaultInstance()
           : datapoint_;
     }
-
     /**
      *
      *
@@ -251,7 +243,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
 
     public static final int DISTANCE_FIELD_NUMBER = 2;
     private double distance_ = 0D;
-
     /**
      *
      *
@@ -270,7 +261,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
 
     public static final int SPARSE_DISTANCE_FIELD_NUMBER = 3;
     private double sparseDistance_ = 0D;
-
     /**
      *
      *
@@ -480,7 +470,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Builder,
               com.google.cloud.aiplatform.v1beta1.IndexDatapointOrBuilder>
           datapointBuilder_;
-
       /**
        *
        *
@@ -738,7 +726,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       public boolean hasDatapoint() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -762,7 +749,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return datapointBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -788,7 +774,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -812,7 +797,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -844,7 +828,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -867,7 +850,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -885,7 +867,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return getDatapointFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -907,7 +888,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
               : datapoint_;
         }
       }
-
       /**
        *
        *
@@ -938,7 +918,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
 
       private double distance_;
-
       /**
        *
        *
@@ -954,7 +933,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       public double getDistance() {
         return distance_;
       }
-
       /**
        *
        *
@@ -974,7 +952,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -994,7 +971,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
 
       private double sparseDistance_;
-
       /**
        *
        *
@@ -1010,7 +986,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       public double getSparseDistance() {
         return sparseDistance_;
       }
-
       /**
        *
        *
@@ -1030,7 +1005,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1133,7 +1107,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.Neighbor>
         getNeighborsList();
-
     /**
      *
      *
@@ -1171,7 +1143,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.Neighbor getNeighbors(int index);
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      * </code>
      */
     int getNeighborsCount();
-
     /**
      *
      *
@@ -1197,7 +1167,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     java.util.List<
             ? extends com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NeighborOrBuilder>
         getNeighborsOrBuilderList();
-
     /**
      *
      *
@@ -1211,7 +1180,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NeighborOrBuilder
         getNeighborsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1226,7 +1194,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighbors)
       NearestNeighborsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NearestNeighbors.newBuilder() to construct.
     private NearestNeighbors(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1263,7 +1230,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1287,7 +1253,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -1317,7 +1282,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.Neighbor>
         neighbors_;
-
     /**
      *
      *
@@ -1333,7 +1297,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         getNeighborsList() {
       return neighbors_;
     }
-
     /**
      *
      *
@@ -1350,7 +1313,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         getNeighborsOrBuilderList() {
       return neighbors_;
     }
-
     /**
      *
      *
@@ -1365,7 +1327,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     public int getNeighborsCount() {
       return neighbors_.size();
     }
-
     /**
      *
      *
@@ -1381,7 +1342,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return neighbors_.get(index);
     }
-
     /**
      *
      *
@@ -1577,7 +1537,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1839,7 +1798,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -1862,7 +1820,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1885,7 +1842,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1907,7 +1863,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1925,7 +1880,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1986,7 +1940,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return neighborsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2005,7 +1958,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return neighborsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2025,7 +1977,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return neighborsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2051,7 +2002,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2076,7 +2026,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2102,7 +2051,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2128,7 +2076,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2152,7 +2099,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2177,7 +2123,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2202,7 +2147,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2224,7 +2168,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2246,7 +2189,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2262,7 +2204,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           getNeighborsBuilder(int index) {
         return getNeighborsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2282,7 +2223,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return neighborsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2303,7 +2243,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           return java.util.Collections.unmodifiableList(neighbors_);
         }
       }
-
       /**
        *
        *
@@ -2322,7 +2261,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
                 com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.Neighbor
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2342,7 +2280,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
                 com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.Neighbor
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2450,7 +2387,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighbors>
       nearestNeighbors_;
-
   /**
    *
    *
@@ -2467,7 +2403,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       getNearestNeighborsList() {
     return nearestNeighbors_;
   }
-
   /**
    *
    *
@@ -2486,7 +2421,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       getNearestNeighborsOrBuilderList() {
     return nearestNeighbors_;
   }
-
   /**
    *
    *
@@ -2502,7 +2436,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
   public int getNearestNeighborsCount() {
     return nearestNeighbors_.size();
   }
-
   /**
    *
    *
@@ -2519,7 +2452,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       getNearestNeighbors(int index) {
     return nearestNeighbors_.get(index);
   }
-
   /**
    *
    *
@@ -2699,7 +2631,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2972,7 +2903,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         return nearestNeighborsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2991,7 +2921,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         return nearestNeighborsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3011,7 +2940,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         return nearestNeighborsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3038,7 +2966,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3063,7 +2990,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3089,7 +3015,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3116,7 +3041,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3140,7 +3064,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3165,7 +3088,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3191,7 +3113,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3213,7 +3134,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3235,7 +3155,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3170,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         getNearestNeighborsBuilder(int index) {
       return getNearestNeighborsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3271,7 +3189,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         return nearestNeighborsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3293,7 +3210,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(nearestNeighbors_);
       }
     }
-
     /**
      *
      *
@@ -3312,7 +3228,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighbors
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3332,7 +3247,6 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse.NearestNeighbors
                   .getDefaultInstance());
     }
-
     /**
      *
      *

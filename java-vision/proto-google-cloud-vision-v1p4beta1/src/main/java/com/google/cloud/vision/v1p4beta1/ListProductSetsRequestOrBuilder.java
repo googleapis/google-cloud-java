@@ -40,7 +40,6 @@ public interface ListProductSetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ListProductSetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

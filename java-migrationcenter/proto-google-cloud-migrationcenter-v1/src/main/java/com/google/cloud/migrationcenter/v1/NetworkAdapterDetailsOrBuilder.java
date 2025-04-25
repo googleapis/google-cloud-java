@@ -36,7 +36,6 @@ public interface NetworkAdapterDetailsOrBuilder
    * @return The adapterType.
    */
   java.lang.String getAdapterType();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NetworkAdapterDetailsOrBuilder
    * @return The macAddress.
    */
   java.lang.String getMacAddress();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface NetworkAdapterDetailsOrBuilder
    * @return Whether the addresses field is set.
    */
   boolean hasAddresses();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface NetworkAdapterDetailsOrBuilder
    * @return The addresses.
    */
   com.google.cloud.migrationcenter.v1.NetworkAddressList getAddresses();
-
   /**
    *
    *

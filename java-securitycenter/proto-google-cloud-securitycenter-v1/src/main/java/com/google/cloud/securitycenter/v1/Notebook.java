@@ -35,7 +35,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Notebook)
     NotebookOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Notebook.newBuilder() to construct.
   private Notebook(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastAuthor_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NOTEBOOK_UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp notebookUpdateTime_;
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNotebookUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +255,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : notebookUpdateTime_;
   }
-
   /**
    *
    *
@@ -472,7 +462,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -721,7 +710,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +898,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object lastAuthor_ = "";
-
     /**
      *
      *
@@ -966,7 +944,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1004,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1033,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         notebookUpdateTimeBuilder_;
-
     /**
      *
      *
@@ -1074,7 +1047,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNotebookUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1095,7 +1067,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
         return notebookUpdateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1089,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1108,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1135,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1154,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1168,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNotebookUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1220,7 +1186,6 @@ public final class Notebook extends com.google.protobuf.GeneratedMessageV3
             : notebookUpdateTime_;
       }
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface SearchBackgroundJobsRequestOrBuilder
    * @return The conversionWorkspace.
    */
   java.lang.String getConversionWorkspace();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface SearchBackgroundJobsRequestOrBuilder
    * @return Whether the completedUntilTime field is set.
    */
   boolean hasCompletedUntilTime();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface SearchBackgroundJobsRequestOrBuilder
    * @return The completedUntilTime.
    */
   com.google.protobuf.Timestamp getCompletedUntilTime();
-
   /**
    *
    *

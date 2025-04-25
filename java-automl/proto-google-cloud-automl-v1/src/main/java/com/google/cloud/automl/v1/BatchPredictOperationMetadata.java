@@ -33,7 +33,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.BatchPredictOperationMetadata)
     BatchPredictOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchPredictOperationMetadata.newBuilder() to construct.
   private BatchPredictOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * @return Whether the gcsOutputDirectory field is set.
      */
     boolean hasGcsOutputDirectory();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
-
     /**
      *
      *
@@ -113,7 +110,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             .OutputLocationCase
         getOutputLocationCase();
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo)
       BatchPredictOutputInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BatchPredictOutputInfo.newBuilder() to construct.
     private BatchPredictOutputInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -177,7 +172,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       private OutputLocationCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -209,7 +203,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     }
 
     public static final int GCS_OUTPUT_DIRECTORY_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -225,7 +218,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     public boolean hasGcsOutputDirectory() {
       return outputLocationCase_ == 1;
     }
-
     /**
      *
      *
@@ -254,7 +246,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         return s;
       }
     }
-
     /**
      *
      *
@@ -466,7 +457,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -716,7 +706,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       public boolean hasGcsOutputDirectory() {
         return outputLocationCase_ == 1;
       }
-
       /**
        *
        *
@@ -746,7 +735,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -776,7 +764,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -799,7 +786,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -820,7 +806,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -917,7 +902,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.automl.v1.BatchPredictInputConfig inputConfig_;
-
   /**
    *
    *
@@ -934,7 +918,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -953,7 +936,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         ? com.google.cloud.automl.v1.BatchPredictInputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -974,7 +956,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
   public static final int OUTPUT_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
       outputInfo_;
-
   /**
    *
    *
@@ -992,7 +973,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
   public boolean hasOutputInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1014,7 +994,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             .getDefaultInstance()
         : outputInfo_;
   }
-
   /**
    *
    *
@@ -1214,7 +1193,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1438,7 +1416,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             com.google.cloud.automl.v1.BatchPredictInputConfig.Builder,
             com.google.cloud.automl.v1.BatchPredictInputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -1454,7 +1431,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1476,7 +1452,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1475,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1496,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1525,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1545,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1560,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1609,7 +1579,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             : inputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1645,7 +1614,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             com.google.cloud.automl.v1.BatchPredictOperationMetadata
                 .BatchPredictOutputInfoOrBuilder>
         outputInfoBuilder_;
-
     /**
      *
      *
@@ -1662,7 +1630,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     public boolean hasOutputInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1687,7 +1654,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         return outputInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1679,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1702,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1734,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1792,7 +1755,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1810,7 +1772,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1833,7 +1794,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             : outputInfo_;
       }
     }
-
     /**
      *
      *

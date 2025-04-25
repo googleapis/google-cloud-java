@@ -33,7 +33,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.MaintenanceWindow)
     MaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaintenanceWindow.newBuilder() to construct.
   private MaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -91,7 +90,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     private PolicyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,7 +123,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DAILY_MAINTENANCE_WINDOW_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public boolean hasDailyMaintenanceWindow() {
     return policyCase_ == 2;
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
     return com.google.container.v1beta1.DailyMaintenanceWindow.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RECURRING_WINDOW_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public boolean hasRecurringWindow() {
     return policyCase_ == 3;
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
     return com.google.container.v1beta1.RecurringTimeWindow.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getMaintenanceExclusionsCount() {
     return internalGetMaintenanceExclusions().getMap().size();
   }
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
     return internalGetMaintenanceExclusions().getMap().containsKey(key);
   }
-
   /** Use {@link #getMaintenanceExclusionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -298,7 +288,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       getMaintenanceExclusions() {
     return getMaintenanceExclusionsMap();
   }
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       getMaintenanceExclusionsMap() {
     return internalGetMaintenanceExclusions().getMap();
   }
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         internalGetMaintenanceExclusions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -576,7 +563,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +842,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             com.google.container.v1beta1.DailyMaintenanceWindow.Builder,
             com.google.container.v1beta1.DailyMaintenanceWindowOrBuilder>
         dailyMaintenanceWindowBuilder_;
-
     /**
      *
      *
@@ -872,7 +857,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public boolean hasDailyMaintenanceWindow() {
       return policyCase_ == 2;
     }
-
     /**
      *
      *
@@ -898,7 +882,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         return com.google.container.v1beta1.DailyMaintenanceWindow.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -922,7 +905,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       policyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +925,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       policyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +959,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       policyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +984,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +997,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         getDailyMaintenanceWindowBuilder() {
       return getDailyMaintenanceWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         return com.google.container.v1beta1.DailyMaintenanceWindow.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             com.google.container.v1beta1.RecurringTimeWindow.Builder,
             com.google.container.v1beta1.RecurringTimeWindowOrBuilder>
         recurringWindowBuilder_;
-
     /**
      *
      *
@@ -1097,7 +1073,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public boolean hasRecurringWindow() {
       return policyCase_ == 3;
     }
-
     /**
      *
      *
@@ -1125,7 +1100,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         return com.google.container.v1beta1.RecurringTimeWindow.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1124,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       policyCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1146,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       policyCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1180,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       policyCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1207,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1221,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1beta1.RecurringTimeWindow.Builder getRecurringWindowBuilder() {
       return getRecurringWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1274,7 +1243,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         return com.google.container.v1beta1.RecurringTimeWindow.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1329,8 +1297,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return MaintenanceExclusionsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MaintenanceExclusionsConverter maintenanceExclusionsConverter =
         new MaintenanceExclusionsConverter();
@@ -1372,7 +1339,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getMaintenanceExclusionsCount() {
       return internalGetMaintenanceExclusions().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1391,7 +1357,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       return internalGetMaintenanceExclusions().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getMaintenanceExclusionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1399,7 +1364,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         getMaintenanceExclusions() {
       return getMaintenanceExclusionsMap();
     }
-
     /**
      *
      *
@@ -1416,7 +1380,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         getMaintenanceExclusionsMap() {
       return internalGetMaintenanceExclusions().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1442,7 +1405,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           ? maintenanceExclusionsConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -1473,7 +1435,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       internalGetMutableMaintenanceExclusions().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1453,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       internalGetMutableMaintenanceExclusions().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.container.v1beta1.TimeWindow>
@@ -1500,7 +1460,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return internalGetMutableMaintenanceExclusions().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1524,7 +1483,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1548,7 +1506,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

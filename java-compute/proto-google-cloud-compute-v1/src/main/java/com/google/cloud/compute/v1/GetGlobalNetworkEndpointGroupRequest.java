@@ -34,7 +34,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetGlobalNetworkEndpointGroupRequest)
     GetGlobalNetworkEndpointGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetGlobalNetworkEndpointGroupRequest.newBuilder() to construct.
   private GetGlobalNetworkEndpointGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkEndpointGroup_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +341,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -550,7 +544,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
     private int bitField0_;
 
     private java.lang.Object networkEndpointGroup_ = "";
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class GetGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

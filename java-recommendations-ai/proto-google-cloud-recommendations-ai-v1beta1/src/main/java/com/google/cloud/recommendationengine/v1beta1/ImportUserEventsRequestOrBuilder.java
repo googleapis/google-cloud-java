@@ -39,7 +39,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.recommendationengine.v1beta1.InputConfig getInputConfig();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the errorsConfig field is set.
    */
   boolean hasErrorsConfig();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The errorsConfig.
    */
   com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig getErrorsConfig();
-
   /**
    *
    *

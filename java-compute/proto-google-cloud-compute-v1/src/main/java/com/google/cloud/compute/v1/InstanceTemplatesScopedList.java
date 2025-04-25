@@ -32,7 +32,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceTemplatesScopedList)
     InstanceTemplatesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceTemplatesScopedList.newBuilder() to construct.
   private InstanceTemplatesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceTemplate> instanceTemplates_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.compute.v1.InstanceTemplate> getInstanceTemplatesList() {
     return instanceTemplates_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       getInstanceTemplatesOrBuilderList() {
     return instanceTemplates_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
   public int getInstanceTemplatesCount() {
     return instanceTemplates_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.InstanceTemplate getInstanceTemplates(int index) {
     return instanceTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +652,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         return instanceTemplatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         return instanceTemplatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         return instanceTemplatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         int index) {
       return getInstanceTemplatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -936,7 +913,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         return instanceTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(instanceTemplates_);
       }
     }
-
     /**
      *
      *
@@ -970,7 +945,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       return getInstanceTemplatesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +960,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       return getInstanceTemplatesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1028,7 +1001,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1057,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1076,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1103,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1122,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1136,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1189,7 +1154,6 @@ public final class InstanceTemplatesScopedList extends com.google.protobuf.Gener
             : warning_;
       }
     }
-
     /**
      *
      *

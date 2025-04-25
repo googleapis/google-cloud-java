@@ -34,7 +34,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest)
     CreateAgentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAgentRequest.newBuilder() to construct.
   private CreateAgentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int AGENT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3beta1.Agent agent_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasAgent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.dialogflow.cx.v3beta1.Agent.getDefaultInstance()
         : agent_;
   }
-
   /**
    *
    *
@@ -358,7 +352,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +566,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.cx.v3beta1.Agent.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.AgentOrBuilder>
         agentBuilder_;
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasAgent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
         return agentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAgentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
             : agent_;
       }
     }
-
     /**
      *
      *

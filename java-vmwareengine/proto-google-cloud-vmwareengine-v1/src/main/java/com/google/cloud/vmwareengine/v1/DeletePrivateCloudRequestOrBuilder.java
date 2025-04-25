@@ -42,7 +42,6 @@ public interface DeletePrivateCloudRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface DeletePrivateCloudRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public interface DeletePrivateCloudRequestOrBuilder
    * @return Whether the delayHours field is set.
    */
   boolean hasDelayHours();
-
   /**
    *
    *

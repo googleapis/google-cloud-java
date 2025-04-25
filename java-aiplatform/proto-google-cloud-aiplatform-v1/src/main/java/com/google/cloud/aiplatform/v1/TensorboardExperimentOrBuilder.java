@@ -38,7 +38,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface TensorboardExperimentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface TensorboardExperimentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public interface TensorboardExperimentOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -239,11 +231,9 @@ public interface TensorboardExperimentOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public interface TensorboardExperimentOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface TensorboardExperimentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -370,7 +357,6 @@ public interface TensorboardExperimentOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

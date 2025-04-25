@@ -34,7 +34,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest)
     DescribeConversionWorkspaceRevisionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DescribeConversionWorkspaceRevisionsRequest.newBuilder() to construct.
   private DescribeConversionWorkspaceRevisionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversionWorkspace_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commitId_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +347,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -562,7 +556,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
     private int bitField0_;
 
     private java.lang.Object conversionWorkspace_ = "";
-
     /**
      *
      *
@@ -589,7 +582,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -616,7 +608,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -642,7 +633,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
     }
 
     private java.lang.Object commitId_ = "";
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

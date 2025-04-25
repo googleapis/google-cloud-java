@@ -36,7 +36,6 @@ public interface GetTraceRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetTraceRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
-
   /**
    *
    *

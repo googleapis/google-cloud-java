@@ -33,7 +33,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.promotions.v1beta.PromotionStatus)
     PromotionStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PromotionStatus.newBuilder() to construct.
   private PromotionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
-
     /**
      *
      *
@@ -114,7 +112,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
-
     /**
      *
      *
@@ -131,7 +128,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     com.google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus.State
         getStatus();
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus)
       DestinationStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DestinationStatus.newBuilder() to construct.
     private DestinationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -276,7 +271,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -287,7 +281,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>IN_REVIEW = 1;</code>
        */
       public static final int IN_REVIEW_VALUE = 1;
-
       /**
        *
        *
@@ -298,7 +291,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>REJECTED = 2;</code>
        */
       public static final int REJECTED_VALUE = 2;
-
       /**
        *
        *
@@ -309,7 +301,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>LIVE = 3;</code>
        */
       public static final int LIVE_VALUE = 3;
-
       /**
        *
        *
@@ -320,7 +311,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>STOPPED = 4;</code>
        */
       public static final int STOPPED_VALUE = 4;
-
       /**
        *
        *
@@ -331,7 +321,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>EXPIRED = 5;</code>
        */
       public static final int EXPIRED_VALUE = 5;
-
       /**
        *
        *
@@ -440,7 +429,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 1;
     private int reportingContext_ = 0;
-
     /**
      *
      *
@@ -458,7 +446,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public int getReportingContextValue() {
       return reportingContext_;
     }
-
     /**
      *
      *
@@ -484,7 +471,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private int status_ = 0;
-
     /**
      *
      *
@@ -502,7 +488,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -720,7 +705,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -936,7 +920,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int reportingContext_ = 0;
-
       /**
        *
        *
@@ -954,7 +937,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public int getReportingContextValue() {
         return reportingContext_;
       }
-
       /**
        *
        *
@@ -975,7 +957,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -998,7 +979,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1023,7 +1003,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1045,7 +1024,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private int status_ = 0;
-
       /**
        *
        *
@@ -1063,7 +1041,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public int getStatusValue() {
         return status_;
       }
-
       /**
        *
        *
@@ -1084,7 +1061,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1110,7 +1086,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1136,7 +1111,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1243,7 +1217,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The code.
      */
     java.lang.String getCode();
-
     /**
      *
      *
@@ -1271,7 +1244,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
-
     /**
      *
      *
@@ -1300,7 +1272,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The resolution.
      */
     java.lang.String getResolution();
-
     /**
      *
      *
@@ -1327,7 +1298,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The attribute.
      */
     java.lang.String getAttribute();
-
     /**
      *
      *
@@ -1356,7 +1326,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
-
     /**
      *
      *
@@ -1384,7 +1353,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -1410,7 +1378,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The detail.
      */
     java.lang.String getDetail();
-
     /**
      *
      *
@@ -1436,7 +1403,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The documentation.
      */
     java.lang.String getDocumentation();
-
     /**
      *
      *
@@ -1464,7 +1430,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the applicableCountries.
      */
     java.util.List<java.lang.String> getApplicableCountriesList();
-
     /**
      *
      *
@@ -1479,7 +1444,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The count of applicableCountries.
      */
     int getApplicableCountriesCount();
-
     /**
      *
      *
@@ -1495,7 +1459,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      * @return The applicableCountries at the given index.
      */
     java.lang.String getApplicableCountries(int index);
-
     /**
      *
      *
@@ -1512,7 +1475,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getApplicableCountriesBytes(int index);
   }
-
   /**
    *
    *
@@ -1527,7 +1489,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.promotions.v1beta.PromotionStatus.ItemLevelIssue)
       ItemLevelIssueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ItemLevelIssue.newBuilder() to construct.
     private ItemLevelIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1633,7 +1594,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>SEVERITY_UNSPECIFIED = 0;</code>
        */
       public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1645,7 +1605,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>NOT_IMPACTED = 1;</code>
        */
       public static final int NOT_IMPACTED_VALUE = 1;
-
       /**
        *
        *
@@ -1657,7 +1616,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
        * <code>DEMOTED = 2;</code>
        */
       public static final int DEMOTED_VALUE = 2;
-
       /**
        *
        *
@@ -1761,7 +1719,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -1785,7 +1742,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -1812,7 +1768,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     public static final int SEVERITY_FIELD_NUMBER = 2;
     private int severity_ = 0;
-
     /**
      *
      *
@@ -1830,7 +1785,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -1861,7 +1815,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resolution_ = "";
-
     /**
      *
      *
@@ -1885,7 +1838,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -1914,7 +1866,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attribute_ = "";
-
     /**
      *
      *
@@ -1939,7 +1890,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -1967,7 +1917,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 5;
     private int reportingContext_ = 0;
-
     /**
      *
      *
@@ -1985,7 +1934,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public int getReportingContextValue() {
       return reportingContext_;
     }
-
     /**
      *
      *
@@ -2013,7 +1961,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2037,7 +1984,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2066,7 +2012,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object detail_ = "";
-
     /**
      *
      *
@@ -2090,7 +2035,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2119,7 +2063,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentation_ = "";
-
     /**
      *
      *
@@ -2143,7 +2086,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2173,7 +2115,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList applicableCountries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -2190,7 +2131,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ProtocolStringList getApplicableCountriesList() {
       return applicableCountries_;
     }
-
     /**
      *
      *
@@ -2207,7 +2147,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public int getApplicableCountriesCount() {
       return applicableCountries_.size();
     }
-
     /**
      *
      *
@@ -2225,7 +2164,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getApplicableCountries(int index) {
       return applicableCountries_.get(index);
     }
-
     /**
      *
      *
@@ -2505,7 +2443,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2830,7 +2767,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object code_ = "";
-
       /**
        *
        *
@@ -2853,7 +2789,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2876,7 +2811,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2898,7 +2832,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2916,7 +2849,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2941,7 +2873,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private int severity_ = 0;
-
       /**
        *
        *
@@ -2959,7 +2890,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public int getSeverityValue() {
         return severity_;
       }
-
       /**
        *
        *
@@ -2980,7 +2910,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3006,7 +2935,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3032,7 +2960,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3054,7 +2981,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object resolution_ = "";
-
       /**
        *
        *
@@ -3077,7 +3003,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3100,7 +3025,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3122,7 +3046,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3140,7 +3063,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3165,7 +3087,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object attribute_ = "";
-
       /**
        *
        *
@@ -3189,7 +3110,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3213,7 +3133,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3236,7 +3155,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3255,7 +3173,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3281,7 +3198,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private int reportingContext_ = 0;
-
       /**
        *
        *
@@ -3299,7 +3215,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public int getReportingContextValue() {
         return reportingContext_;
       }
-
       /**
        *
        *
@@ -3320,7 +3235,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3343,7 +3257,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3368,7 +3281,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3390,7 +3302,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -3413,7 +3324,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3436,7 +3346,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3458,7 +3367,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3476,7 +3384,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3501,7 +3408,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object detail_ = "";
-
       /**
        *
        *
@@ -3524,7 +3430,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3547,7 +3452,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3569,7 +3473,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3587,7 +3490,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3612,7 +3514,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object documentation_ = "";
-
       /**
        *
        *
@@ -3635,7 +3536,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3658,7 +3558,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3680,7 +3579,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3698,7 +3596,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3731,7 +3628,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         }
         bitField0_ |= 0x00000100;
       }
-
       /**
        *
        *
@@ -3750,7 +3646,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         applicableCountries_.makeImmutable();
         return applicableCountries_;
       }
-
       /**
        *
        *
@@ -3768,7 +3663,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public int getApplicableCountriesCount() {
         return applicableCountries_.size();
       }
-
       /**
        *
        *
@@ -3787,7 +3681,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public java.lang.String getApplicableCountries(int index) {
         return applicableCountries_.get(index);
       }
-
       /**
        *
        *
@@ -3806,7 +3699,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.ByteString getApplicableCountriesBytes(int index) {
         return applicableCountries_.getByteString(index);
       }
-
       /**
        *
        *
@@ -3833,7 +3725,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3859,7 +3750,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3882,7 +3772,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3904,7 +3793,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4008,7 +3896,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
   private java.util.List<
           com.google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus>
       destinationStatuses_;
-
   /**
    *
    *
@@ -4026,7 +3913,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       getDestinationStatusesList() {
     return destinationStatuses_;
   }
-
   /**
    *
    *
@@ -4046,7 +3932,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       getDestinationStatusesOrBuilderList() {
     return destinationStatuses_;
   }
-
   /**
    *
    *
@@ -4062,7 +3947,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
   public int getDestinationStatusesCount() {
     return destinationStatuses_.size();
   }
-
   /**
    *
    *
@@ -4079,7 +3963,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       getDestinationStatuses(int index) {
     return destinationStatuses_.get(index);
   }
-
   /**
    *
    *
@@ -4103,7 +3986,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
   private java.util.List<
           com.google.shopping.merchant.promotions.v1beta.PromotionStatus.ItemLevelIssue>
       itemLevelIssues_;
-
   /**
    *
    *
@@ -4121,7 +4003,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       getItemLevelIssuesList() {
     return itemLevelIssues_;
   }
-
   /**
    *
    *
@@ -4141,7 +4022,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       getItemLevelIssuesOrBuilderList() {
     return itemLevelIssues_;
   }
-
   /**
    *
    *
@@ -4157,7 +4037,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
   public int getItemLevelIssuesCount() {
     return itemLevelIssues_.size();
   }
-
   /**
    *
    *
@@ -4174,7 +4053,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       getItemLevelIssues(int index) {
     return itemLevelIssues_.get(index);
   }
-
   /**
    *
    *
@@ -4194,7 +4072,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATION_DATE_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp creationDate_;
-
   /**
    *
    *
@@ -4215,7 +4092,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreationDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4238,7 +4114,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : creationDate_;
   }
-
   /**
    *
    *
@@ -4262,7 +4137,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
 
   public static final int LAST_UPDATE_DATE_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp lastUpdateDate_;
-
   /**
    *
    *
@@ -4283,7 +4157,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
   public boolean hasLastUpdateDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4306,7 +4179,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateDate_;
   }
-
   /**
    *
    *
@@ -4530,7 +4402,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4917,7 +4788,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return destinationStatusesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4936,7 +4806,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return destinationStatusesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4956,7 +4825,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return destinationStatusesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4983,7 +4851,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5008,7 +4875,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5034,7 +4900,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5061,7 +4926,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5085,7 +4949,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5110,7 +4973,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5137,7 +4999,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5159,7 +5020,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5181,7 +5041,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5197,7 +5056,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         getDestinationStatusesBuilder(int index) {
       return getDestinationStatusesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5217,7 +5075,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return destinationStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5240,7 +5097,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(destinationStatuses_);
       }
     }
-
     /**
      *
      *
@@ -5259,7 +5115,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
               com.google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5279,7 +5134,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
               com.google.shopping.merchant.promotions.v1beta.PromotionStatus.DestinationStatus
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5362,7 +5216,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return itemLevelIssuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5381,7 +5234,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return itemLevelIssuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5401,7 +5253,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return itemLevelIssuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5428,7 +5279,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5453,7 +5303,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5479,7 +5328,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5506,7 +5354,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5530,7 +5377,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5555,7 +5401,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5581,7 +5426,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5603,7 +5447,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5625,7 +5468,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5641,7 +5483,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         getItemLevelIssuesBuilder(int index) {
       return getItemLevelIssuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5661,7 +5502,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return itemLevelIssuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5684,7 +5524,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(itemLevelIssues_);
       }
     }
-
     /**
      *
      *
@@ -5703,7 +5542,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
               com.google.shopping.merchant.promotions.v1beta.PromotionStatus.ItemLevelIssue
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5723,7 +5561,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
               com.google.shopping.merchant.promotions.v1beta.PromotionStatus.ItemLevelIssue
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5769,7 +5606,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         creationDateBuilder_;
-
     /**
      *
      *
@@ -5789,7 +5625,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreationDate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5815,7 +5650,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return creationDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5843,7 +5677,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5868,7 +5701,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5901,7 +5733,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5926,7 +5757,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5946,7 +5776,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreationDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5970,7 +5799,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
             : creationDate_;
       }
     }
-
     /**
      *
      *
@@ -6008,7 +5836,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateDateBuilder_;
-
     /**
      *
      *
@@ -6028,7 +5855,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
     public boolean hasLastUpdateDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -6054,7 +5880,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
         return lastUpdateDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6082,7 +5907,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6107,7 +5931,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6140,7 +5963,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -6165,7 +5987,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6185,7 +6006,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLastUpdateDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6209,7 +6029,6 @@ public final class PromotionStatus extends com.google.protobuf.GeneratedMessageV
             : lastUpdateDate_;
       }
     }
-
     /**
      *
      *

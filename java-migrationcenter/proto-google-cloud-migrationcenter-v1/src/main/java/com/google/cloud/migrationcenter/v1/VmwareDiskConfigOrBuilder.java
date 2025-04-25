@@ -36,7 +36,6 @@ public interface VmwareDiskConfigOrBuilder
    * @return The enum numeric value on the wire for backingType.
    */
   int getBackingTypeValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface VmwareDiskConfigOrBuilder
    * @return The enum numeric value on the wire for vmdkMode.
    */
   int getVmdkModeValue();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface VmwareDiskConfigOrBuilder
    * @return The enum numeric value on the wire for rdmCompatibility.
    */
   int getRdmCompatibilityValue();
-
   /**
    *
    *

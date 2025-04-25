@@ -38,7 +38,6 @@ public interface ChatSpaceLinkDataOrBuilder
    * @return The space.
    */
   java.lang.String getSpace();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ChatSpaceLinkDataOrBuilder
    * @return The thread.
    */
   java.lang.String getThread();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface ChatSpaceLinkDataOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

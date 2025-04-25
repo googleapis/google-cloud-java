@@ -36,7 +36,6 @@ public interface RouterOrBuilder
    * @return Whether the bgp field is set.
    */
   boolean hasBgp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RouterOrBuilder
    * @return The bgp.
    */
   com.google.cloud.compute.v1.RouterBgp getBgp();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterBgpPeer> getBgpPeersList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
    */
   com.google.cloud.compute.v1.RouterBgpPeer getBgpPeers(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
    */
   int getBgpPeersCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface RouterOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterBgpPeerOrBuilder>
       getBgpPeersOrBuilderList();
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface RouterOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface RouterOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface RouterOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface RouterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface RouterOrBuilder
    * @return Whether the encryptedInterconnectRouter field is set.
    */
   boolean hasEncryptedInterconnectRouter();
-
   /**
    *
    *
@@ -233,7 +222,6 @@ public interface RouterOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -257,7 +245,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterInterface> getInterfacesList();
-
   /**
    *
    *
@@ -268,7 +255,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
    */
   com.google.cloud.compute.v1.RouterInterface getInterfaces(int index);
-
   /**
    *
    *
@@ -279,7 +265,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
    */
   int getInterfacesCount();
-
   /**
    *
    *
@@ -291,7 +276,6 @@ public interface RouterOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterInterfaceOrBuilder>
       getInterfacesOrBuilderList();
-
   /**
    *
    *
@@ -315,7 +299,6 @@ public interface RouterOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -328,7 +311,6 @@ public interface RouterOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -355,7 +337,6 @@ public interface RouterOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
       getMd5AuthenticationKeysList();
-
   /**
    *
    *
@@ -368,7 +349,6 @@ public interface RouterOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.RouterMd5AuthenticationKey getMd5AuthenticationKeys(int index);
-
   /**
    *
    *
@@ -381,7 +361,6 @@ public interface RouterOrBuilder
    * </code>
    */
   int getMd5AuthenticationKeysCount();
-
   /**
    *
    *
@@ -395,7 +374,6 @@ public interface RouterOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>
       getMd5AuthenticationKeysOrBuilderList();
-
   /**
    *
    *
@@ -422,7 +400,6 @@ public interface RouterOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -435,7 +412,6 @@ public interface RouterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -459,7 +435,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNat nats = 3373938;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterNat> getNatsList();
-
   /**
    *
    *
@@ -470,7 +445,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNat nats = 3373938;</code>
    */
   com.google.cloud.compute.v1.RouterNat getNats(int index);
-
   /**
    *
    *
@@ -481,7 +455,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNat nats = 3373938;</code>
    */
   int getNatsCount();
-
   /**
    *
    *
@@ -492,7 +465,6 @@ public interface RouterOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNat nats = 3373938;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterNatOrBuilder> getNatsOrBuilderList();
-
   /**
    *
    *
@@ -516,7 +488,6 @@ public interface RouterOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -529,7 +500,6 @@ public interface RouterOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -555,7 +525,6 @@ public interface RouterOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -568,7 +537,6 @@ public interface RouterOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -594,7 +562,6 @@ public interface RouterOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -607,7 +574,6 @@ public interface RouterOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *

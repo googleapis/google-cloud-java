@@ -38,7 +38,6 @@ public interface ContactSettingsOrBuilder
    * @return The enum numeric value on the wire for privacy.
    */
   int getPrivacyValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface ContactSettingsOrBuilder
    * @return Whether the registrantContact field is set.
    */
   boolean hasRegistrantContact();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ContactSettingsOrBuilder
    * @return The registrantContact.
    */
   com.google.cloud.domains.v1alpha2.ContactSettings.Contact getRegistrantContact();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface ContactSettingsOrBuilder
    * @return Whether the adminContact field is set.
    */
   boolean hasAdminContact();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface ContactSettingsOrBuilder
    * @return The adminContact.
    */
   com.google.cloud.domains.v1alpha2.ContactSettings.Contact getAdminContact();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface ContactSettingsOrBuilder
    * @return Whether the technicalContact field is set.
    */
   boolean hasTechnicalContact();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface ContactSettingsOrBuilder
    * @return The technicalContact.
    */
   com.google.cloud.domains.v1alpha2.ContactSettings.Contact getTechnicalContact();
-
   /**
    *
    *

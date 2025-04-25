@@ -34,7 +34,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ReportValue)
     ReportValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportValue.newBuilder() to construct.
   private ReportValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -126,7 +124,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return valueCase_ == 1;
   }
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT_VALUE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntValue() {
     return valueCase_ == 2;
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DECIMAL_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDecimalValue() {
     return valueCase_ == 3;
   }
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.Decimal.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MONEY_VALUE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMoneyValue() {
     return valueCase_ == 4;
   }
-
   /**
    *
    *
@@ -330,7 +318,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.Money.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -350,7 +337,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATE_VALUE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDateValue() {
     return valueCase_ == 5;
   }
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.Date.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -404,7 +388,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATE_TIME_VALUE_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -421,7 +404,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDateTimeValue() {
     return valueCase_ == 6;
   }
-
   /**
    *
    *
@@ -441,7 +423,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.DateTime.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -706,7 +687,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1010,7 +990,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return valueCase_ == 1;
     }
-
     /**
      *
      *
@@ -1039,7 +1018,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1046,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1086,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1123,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntValue() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -1166,7 +1140,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -1186,7 +1159,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1184,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
             com.google.type.Decimal.Builder,
             com.google.type.DecimalOrBuilder>
         decimalValueBuilder_;
-
     /**
      *
      *
@@ -1229,7 +1200,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDecimalValue() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -1256,7 +1226,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Decimal.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1249,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1269,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1300,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1326,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1339,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Decimal.Builder getDecimalValueBuilder() {
       return getDecimalValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1396,7 +1360,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Decimal.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1432,7 +1395,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         moneyValueBuilder_;
-
     /**
      *
      *
@@ -1449,7 +1411,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMoneyValue() {
       return valueCase_ == 4;
     }
-
     /**
      *
      *
@@ -1476,7 +1437,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Money.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1460,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1480,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1553,7 +1511,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1537,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1594,7 +1550,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Money.Builder getMoneyValueBuilder() {
       return getMoneyValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1616,7 +1571,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Money.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1650,7 +1604,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateValueBuilder_;
-
     /**
      *
      *
@@ -1666,7 +1619,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDateValue() {
       return valueCase_ == 5;
     }
-
     /**
      *
      *
@@ -1692,7 +1644,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Date.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1715,7 +1666,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1685,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1715,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1792,7 +1740,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1752,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Date.Builder getDateValueBuilder() {
       return getDateValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1826,7 +1772,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Date.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1859,7 +1804,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
             com.google.type.DateTime.Builder,
             com.google.type.DateTimeOrBuilder>
         dateTimeValueBuilder_;
-
     /**
      *
      *
@@ -1876,7 +1820,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDateTimeValue() {
       return valueCase_ == 6;
     }
-
     /**
      *
      *
@@ -1903,7 +1846,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.DateTime.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1927,7 +1869,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1948,7 +1889,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1980,7 +1920,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2007,7 +1946,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2021,7 +1959,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.DateTime.Builder getDateTimeValueBuilder() {
       return getDateTimeValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2043,7 +1980,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.DateTime.getDefaultInstance();
       }
     }
-
     /**
      *
      *

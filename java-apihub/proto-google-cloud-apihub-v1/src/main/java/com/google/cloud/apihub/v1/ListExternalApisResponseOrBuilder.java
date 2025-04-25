@@ -36,7 +36,6 @@ public interface ListExternalApisResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.ExternalApi> getExternalApisList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListExternalApisResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
    */
   com.google.cloud.apihub.v1.ExternalApi getExternalApis(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListExternalApisResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
    */
   int getExternalApisCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListExternalApisResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.ExternalApiOrBuilder>
       getExternalApisOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListExternalApisResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

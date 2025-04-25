@@ -40,7 +40,6 @@ public interface GetWebhookRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

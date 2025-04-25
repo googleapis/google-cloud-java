@@ -35,7 +35,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.UpdateDocumentRequest)
     UpdateDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateDocumentRequest.newBuilder() to construct.
   private UpdateDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1beta.Document document_;
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()
         : document_;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -412,7 +404,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1beta.Document.Builder,
             com.google.cloud.discoveryengine.v1beta.DocumentOrBuilder>
         documentBuilder_;
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return documentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +832,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +857,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             : document_;
       }
     }
-
     /**
      *
      *
@@ -942,7 +924,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -960,7 +941,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -982,7 +962,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +988,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1025,7 +1003,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1047,7 +1024,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1067,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1115,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1130,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1178,7 +1149,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
-
     /**
      *
      *

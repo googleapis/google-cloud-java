@@ -40,7 +40,6 @@ public interface FindNeighborsRequestOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface FindNeighborsRequestOrBuilder
    * @return The deployedIndexId.
    */
   java.lang.String getDeployedIndexId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface FindNeighborsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FindNeighborsRequest.Query queries = 3;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.FindNeighborsRequest.Query> getQueriesList();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface FindNeighborsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FindNeighborsRequest.Query queries = 3;</code>
    */
   com.google.cloud.aiplatform.v1.FindNeighborsRequest.Query getQueries(int index);
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface FindNeighborsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FindNeighborsRequest.Query queries = 3;</code>
    */
   int getQueriesCount();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface FindNeighborsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.FindNeighborsRequest.QueryOrBuilder>
       getQueriesOrBuilderList();
-
   /**
    *
    *

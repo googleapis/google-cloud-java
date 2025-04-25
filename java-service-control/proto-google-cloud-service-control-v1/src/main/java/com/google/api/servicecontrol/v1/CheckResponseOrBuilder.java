@@ -38,7 +38,6 @@ public interface CheckResponseOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CheckResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.CheckError check_errors = 2;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.CheckError> getCheckErrorsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CheckResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.CheckError check_errors = 2;</code>
    */
   com.google.api.servicecontrol.v1.CheckError getCheckErrors(int index);
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface CheckResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.CheckError check_errors = 2;</code>
    */
   int getCheckErrorsCount();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface CheckResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.CheckErrorOrBuilder>
       getCheckErrorsOrBuilderList();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface CheckResponseOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface CheckResponseOrBuilder
    * @return The serviceRolloutId.
    */
   java.lang.String getServiceRolloutId();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface CheckResponseOrBuilder
    * @return Whether the checkInfo field is set.
    */
   boolean hasCheckInfo();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface CheckResponseOrBuilder
    * @return The checkInfo.
    */
   com.google.api.servicecontrol.v1.CheckResponse.CheckInfo getCheckInfo();
-
   /**
    *
    *

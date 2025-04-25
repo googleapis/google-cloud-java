@@ -33,7 +33,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleMatcher)
     SecurityPolicyRuleMatcherOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyRuleMatcher.newBuilder() to construct.
   private SecurityPolicyRuleMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,7 +106,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>UNDEFINED_VERSIONED_EXPR = 0;</code>
      */
     public static final int UNDEFINED_VERSIONED_EXPR_VALUE = 0;
-
     /**
      *
      *
@@ -205,7 +203,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 255820610;
   private com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config_;
-
   /**
    *
    *
@@ -222,7 +219,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +237,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -261,7 +256,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
 
   public static final int EXPR_FIELD_NUMBER = 3127797;
   private com.google.cloud.compute.v1.Expr expr_;
-
   /**
    *
    *
@@ -277,7 +271,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   public boolean hasExpr() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +286,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.Expr getExpr() {
     return expr_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : expr_;
   }
-
   /**
    *
    *
@@ -310,7 +302,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
 
   public static final int EXPR_OPTIONS_FIELD_NUMBER = 486220372;
   private com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions exprOptions_;
-
   /**
    *
    *
@@ -328,7 +319,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   public boolean hasExprOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -348,7 +338,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions.getDefaultInstance()
         : exprOptions_;
   }
-
   /**
    *
    *
@@ -372,7 +361,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object versionedExpr_ = "";
-
   /**
    *
    *
@@ -389,7 +377,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   public boolean hasVersionedExpr() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -414,7 +401,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -647,7 +633,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -906,7 +891,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -922,7 +906,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -944,7 +927,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -968,7 +950,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +971,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +1001,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1021,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1036,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
             : config_;
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1089,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.Expr.Builder,
             com.google.cloud.compute.v1.ExprOrBuilder>
         exprBuilder_;
-
     /**
      *
      *
@@ -1128,7 +1103,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public boolean hasExpr() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1147,7 +1121,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         return exprBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1143,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1189,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1208,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1222,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return getExprFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1270,7 +1238,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         return expr_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : expr_;
       }
     }
-
     /**
      *
      *
@@ -1303,7 +1270,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptionsOrBuilder>
         exprOptionsBuilder_;
-
     /**
      *
      *
@@ -1320,7 +1286,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public boolean hasExprOptions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1343,7 +1308,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         return exprOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1369,7 +1333,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1355,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1387,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1408,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1425,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return getExprOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1487,7 +1446,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
             : exprOptions_;
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1475,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     }
 
     private java.lang.Object versionedExpr_ = "";
-
     /**
      *
      *
@@ -1533,7 +1490,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public boolean hasVersionedExpr() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1557,7 +1513,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1581,7 +1536,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1604,7 +1558,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1576,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

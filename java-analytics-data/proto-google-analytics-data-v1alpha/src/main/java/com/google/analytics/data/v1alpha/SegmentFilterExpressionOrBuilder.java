@@ -36,7 +36,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.data.v1alpha.SegmentFilterExpressionList getAndGroup();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.data.v1alpha.SegmentFilterExpressionList getOrGroup();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.data.v1alpha.SegmentFilterExpression getNotExpression();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return Whether the segmentFilter field is set.
    */
   boolean hasSegmentFilter();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return The segmentFilter.
    */
   com.google.analytics.data.v1alpha.SegmentFilter getSegmentFilter();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return Whether the segmentEventFilter field is set.
    */
   boolean hasSegmentEventFilter();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface SegmentFilterExpressionOrBuilder
    * @return The segmentEventFilter.
    */
   com.google.analytics.data.v1alpha.SegmentEventFilter getSegmentEventFilter();
-
   /**
    *
    *

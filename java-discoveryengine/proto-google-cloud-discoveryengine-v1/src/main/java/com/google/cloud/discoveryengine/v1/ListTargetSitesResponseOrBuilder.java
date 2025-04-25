@@ -34,7 +34,6 @@ public interface ListTargetSitesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.TargetSite target_sites = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.TargetSite> getTargetSitesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTargetSitesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.TargetSite target_sites = 1;</code>
    */
   com.google.cloud.discoveryengine.v1.TargetSite getTargetSites(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTargetSitesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.TargetSite target_sites = 1;</code>
    */
   int getTargetSitesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTargetSitesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.TargetSiteOrBuilder>
       getTargetSitesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTargetSitesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

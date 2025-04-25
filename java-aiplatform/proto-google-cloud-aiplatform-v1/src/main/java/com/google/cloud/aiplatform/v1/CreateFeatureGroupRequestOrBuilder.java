@@ -40,7 +40,6 @@ public interface CreateFeatureGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateFeatureGroupRequestOrBuilder
    * @return Whether the featureGroup field is set.
    */
   boolean hasFeatureGroup();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateFeatureGroupRequestOrBuilder
    * @return The featureGroup.
    */
   com.google.cloud.aiplatform.v1.FeatureGroup getFeatureGroup();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateFeatureGroupRequestOrBuilder
    * @return The featureGroupId.
    */
   java.lang.String getFeatureGroupId();
-
   /**
    *
    *

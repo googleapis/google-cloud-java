@@ -34,7 +34,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.beyondcorp.appgateways.v1.AppGateway app_gateways = 1;</code>
    */
   java.util.List<com.google.cloud.beyondcorp.appgateways.v1.AppGateway> getAppGatewaysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.beyondcorp.appgateways.v1.AppGateway app_gateways = 1;</code>
    */
   com.google.cloud.beyondcorp.appgateways.v1.AppGateway getAppGateways(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.beyondcorp.appgateways.v1.AppGateway app_gateways = 1;</code>
    */
   int getAppGatewaysCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAppGatewaysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.beyondcorp.appgateways.v1.AppGatewayOrBuilder>
       getAppGatewaysOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListAppGatewaysResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

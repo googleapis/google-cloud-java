@@ -34,7 +34,6 @@ public interface BgpRouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
    */
   java.util.List<com.google.cloud.compute.v1.BgpRouteAsPath> getAsPathsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BgpRouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
    */
   com.google.cloud.compute.v1.BgpRouteAsPath getAsPaths(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BgpRouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
    */
   int getAsPathsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BgpRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.BgpRouteAsPathOrBuilder>
       getAsPathsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface BgpRouteOrBuilder
    * @return A list containing the communities.
    */
   java.util.List<java.lang.String> getCommunitiesList();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface BgpRouteOrBuilder
    * @return The count of communities.
    */
   int getCommunitiesCount();
-
   /**
    *
    *
@@ -119,7 +113,6 @@ public interface BgpRouteOrBuilder
    * @return The communities at the given index.
    */
   java.lang.String getCommunities(int index);
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface BgpRouteOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
-
   /**
    *
    *
@@ -163,7 +155,6 @@ public interface BgpRouteOrBuilder
    * @return The destination.
    */
   com.google.cloud.compute.v1.BgpRouteNetworkLayerReachabilityInformation getDestination();
-
   /**
    *
    *
@@ -190,7 +181,6 @@ public interface BgpRouteOrBuilder
    * @return Whether the med field is set.
    */
   boolean hasMed();
-
   /**
    *
    *
@@ -217,7 +207,6 @@ public interface BgpRouteOrBuilder
    * @return Whether the origin field is set.
    */
   boolean hasOrigin();
-
   /**
    *
    *
@@ -231,7 +220,6 @@ public interface BgpRouteOrBuilder
    * @return The origin.
    */
   java.lang.String getOrigin();
-
   /**
    *
    *

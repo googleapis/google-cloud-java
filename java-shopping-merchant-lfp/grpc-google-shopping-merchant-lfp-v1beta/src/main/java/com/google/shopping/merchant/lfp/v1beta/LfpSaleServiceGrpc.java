@@ -97,19 +97,6 @@ public final class LfpSaleServiceGrpc {
     return LfpSaleServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static LfpSaleServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LfpSaleServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<LfpSaleServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public LfpSaleServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new LfpSaleServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return LfpSaleServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -223,41 +210,6 @@ public final class LfpSaleServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LfpSaleService.
-   *
-   * <pre>
-   * Service for a [LFP
-   * partner](https://support.google.com/merchants/answer/7676652) to submit sales
-   * data for a merchant.
-   * </pre>
-   */
-  public static final class LfpSaleServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<LfpSaleServiceBlockingV2Stub> {
-    private LfpSaleServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected LfpSaleServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LfpSaleServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Inserts a `LfpSale` for the given merchant.
-     * </pre>
-     */
-    public com.google.shopping.merchant.lfp.v1beta.LfpSale insertLfpSale(
-        com.google.shopping.merchant.lfp.v1beta.InsertLfpSaleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInsertLfpSaleMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service LfpSaleService.
    *
    * <pre>
    * Service for a [LFP

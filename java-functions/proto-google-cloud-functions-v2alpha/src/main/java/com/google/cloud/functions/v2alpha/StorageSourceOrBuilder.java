@@ -38,7 +38,6 @@ public interface StorageSourceOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface StorageSourceOrBuilder
    * @return The object.
    */
   java.lang.String getObject();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface StorageSourceOrBuilder
    * @return The sourceUploadUrl.
    */
   java.lang.String getSourceUploadUrl();
-
   /**
    *
    *

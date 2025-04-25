@@ -35,7 +35,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.SpaceEvent)
     SpaceEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpaceEvent.newBuilder() to construct.
   private SpaceEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,7 +98,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -168,7 +166,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -194,7 +191,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -223,7 +219,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp eventTime_;
-
   /**
    *
    *
@@ -239,7 +234,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -255,7 +249,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventType_ = "";
-
   /**
    *
    *
@@ -343,7 +335,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -414,7 +405,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_CREATED_EVENT_DATA_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -432,7 +422,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMessageCreatedEventData() {
     return payloadCase_ == 12;
   }
-
   /**
    *
    *
@@ -453,7 +442,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MessageCreatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -474,7 +462,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_UPDATED_EVENT_DATA_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -492,7 +479,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMessageUpdatedEventData() {
     return payloadCase_ == 13;
   }
-
   /**
    *
    *
@@ -513,7 +499,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MessageUpdatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -534,7 +519,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_DELETED_EVENT_DATA_FIELD_NUMBER = 14;
-
   /**
    *
    *
@@ -552,7 +536,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMessageDeletedEventData() {
     return payloadCase_ == 14;
   }
-
   /**
    *
    *
@@ -573,7 +556,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MessageDeletedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -594,7 +576,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_BATCH_CREATED_EVENT_DATA_FIELD_NUMBER = 26;
-
   /**
    *
    *
@@ -613,7 +594,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMessageBatchCreatedEventData() {
     return payloadCase_ == 26;
   }
-
   /**
    *
    *
@@ -635,7 +615,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MessageBatchCreatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -658,7 +637,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_BATCH_UPDATED_EVENT_DATA_FIELD_NUMBER = 27;
-
   /**
    *
    *
@@ -677,7 +655,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMessageBatchUpdatedEventData() {
     return payloadCase_ == 27;
   }
-
   /**
    *
    *
@@ -699,7 +676,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MessageBatchUpdatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -722,7 +698,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_BATCH_DELETED_EVENT_DATA_FIELD_NUMBER = 28;
-
   /**
    *
    *
@@ -741,7 +716,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMessageBatchDeletedEventData() {
     return payloadCase_ == 28;
   }
-
   /**
    *
    *
@@ -763,7 +737,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MessageBatchDeletedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -786,7 +759,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPACE_UPDATED_EVENT_DATA_FIELD_NUMBER = 15;
-
   /**
    *
    *
@@ -804,7 +776,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpaceUpdatedEventData() {
     return payloadCase_ == 15;
   }
-
   /**
    *
    *
@@ -825,7 +796,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.SpaceUpdatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -846,7 +816,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPACE_BATCH_UPDATED_EVENT_DATA_FIELD_NUMBER = 29;
-
   /**
    *
    *
@@ -864,7 +833,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpaceBatchUpdatedEventData() {
     return payloadCase_ == 29;
   }
-
   /**
    *
    *
@@ -885,7 +853,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.SpaceBatchUpdatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -907,7 +874,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_CREATED_EVENT_DATA_FIELD_NUMBER = 17;
-
   /**
    *
    *
@@ -925,7 +891,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipCreatedEventData() {
     return payloadCase_ == 17;
   }
-
   /**
    *
    *
@@ -946,7 +911,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MembershipCreatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -968,7 +932,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_UPDATED_EVENT_DATA_FIELD_NUMBER = 18;
-
   /**
    *
    *
@@ -986,7 +949,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipUpdatedEventData() {
     return payloadCase_ == 18;
   }
-
   /**
    *
    *
@@ -1007,7 +969,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MembershipUpdatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1029,7 +990,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_DELETED_EVENT_DATA_FIELD_NUMBER = 219;
-
   /**
    *
    *
@@ -1047,7 +1007,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipDeletedEventData() {
     return payloadCase_ == 219;
   }
-
   /**
    *
    *
@@ -1068,7 +1027,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MembershipDeletedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1090,7 +1048,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_BATCH_CREATED_EVENT_DATA_FIELD_NUMBER = 31;
-
   /**
    *
    *
@@ -1109,7 +1066,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipBatchCreatedEventData() {
     return payloadCase_ == 31;
   }
-
   /**
    *
    *
@@ -1131,7 +1087,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MembershipBatchCreatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1154,7 +1109,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_BATCH_UPDATED_EVENT_DATA_FIELD_NUMBER = 32;
-
   /**
    *
    *
@@ -1173,7 +1127,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipBatchUpdatedEventData() {
     return payloadCase_ == 32;
   }
-
   /**
    *
    *
@@ -1195,7 +1148,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MembershipBatchUpdatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1218,7 +1170,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_BATCH_DELETED_EVENT_DATA_FIELD_NUMBER = 33;
-
   /**
    *
    *
@@ -1237,7 +1188,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipBatchDeletedEventData() {
     return payloadCase_ == 33;
   }
-
   /**
    *
    *
@@ -1259,7 +1209,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.MembershipBatchDeletedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1282,7 +1231,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REACTION_CREATED_EVENT_DATA_FIELD_NUMBER = 21;
-
   /**
    *
    *
@@ -1300,7 +1248,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReactionCreatedEventData() {
     return payloadCase_ == 21;
   }
-
   /**
    *
    *
@@ -1321,7 +1268,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.ReactionCreatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1343,7 +1289,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REACTION_DELETED_EVENT_DATA_FIELD_NUMBER = 22;
-
   /**
    *
    *
@@ -1361,7 +1306,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReactionDeletedEventData() {
     return payloadCase_ == 22;
   }
-
   /**
    *
    *
@@ -1382,7 +1326,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.ReactionDeletedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1404,7 +1347,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REACTION_BATCH_CREATED_EVENT_DATA_FIELD_NUMBER = 34;
-
   /**
    *
    *
@@ -1423,7 +1365,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReactionBatchCreatedEventData() {
     return payloadCase_ == 34;
   }
-
   /**
    *
    *
@@ -1445,7 +1386,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.ReactionBatchCreatedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1468,7 +1408,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REACTION_BATCH_DELETED_EVENT_DATA_FIELD_NUMBER = 35;
-
   /**
    *
    *
@@ -1487,7 +1426,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReactionBatchDeletedEventData() {
     return payloadCase_ == 35;
   }
-
   /**
    *
    *
@@ -1509,7 +1447,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.ReactionBatchDeletedEventData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2004,7 +1941,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2587,7 +2523,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2612,7 +2547,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2637,7 +2571,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2661,7 +2594,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2681,7 +2613,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2713,7 +2644,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
-
     /**
      *
      *
@@ -2728,7 +2658,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2747,7 +2676,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2770,7 +2698,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2790,7 +2717,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2818,7 +2744,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2838,7 +2763,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2853,7 +2777,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2870,7 +2793,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
-
     /**
      *
      *
@@ -2898,7 +2820,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object eventType_ = "";
-
     /**
      *
      *
@@ -2966,7 +2887,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3034,7 +2954,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3101,7 +3020,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3164,7 +3082,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3238,7 +3155,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MessageCreatedEventData.Builder,
             com.google.chat.v1.MessageCreatedEventDataOrBuilder>
         messageCreatedEventDataBuilder_;
-
     /**
      *
      *
@@ -3256,7 +3172,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageCreatedEventData() {
       return payloadCase_ == 12;
     }
-
     /**
      *
      *
@@ -3284,7 +3199,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3309,7 +3223,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3332,7 +3245,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3367,7 +3279,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3395,7 +3306,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3410,7 +3320,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.MessageCreatedEventData.Builder getMessageCreatedEventDataBuilder() {
       return getMessageCreatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3434,7 +3343,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3475,7 +3383,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MessageUpdatedEventData.Builder,
             com.google.chat.v1.MessageUpdatedEventDataOrBuilder>
         messageUpdatedEventDataBuilder_;
-
     /**
      *
      *
@@ -3493,7 +3400,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageUpdatedEventData() {
       return payloadCase_ == 13;
     }
-
     /**
      *
      *
@@ -3521,7 +3427,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3546,7 +3451,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -3569,7 +3473,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -3604,7 +3507,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -3632,7 +3534,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3647,7 +3548,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.MessageUpdatedEventData.Builder getMessageUpdatedEventDataBuilder() {
       return getMessageUpdatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3671,7 +3571,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3712,7 +3611,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MessageDeletedEventData.Builder,
             com.google.chat.v1.MessageDeletedEventDataOrBuilder>
         messageDeletedEventDataBuilder_;
-
     /**
      *
      *
@@ -3730,7 +3628,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageDeletedEventData() {
       return payloadCase_ == 14;
     }
-
     /**
      *
      *
@@ -3758,7 +3655,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3783,7 +3679,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -3806,7 +3701,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -3841,7 +3735,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -3869,7 +3762,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3884,7 +3776,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.MessageDeletedEventData.Builder getMessageDeletedEventDataBuilder() {
       return getMessageDeletedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3908,7 +3799,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3949,7 +3839,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MessageBatchCreatedEventData.Builder,
             com.google.chat.v1.MessageBatchCreatedEventDataOrBuilder>
         messageBatchCreatedEventDataBuilder_;
-
     /**
      *
      *
@@ -3968,7 +3857,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageBatchCreatedEventData() {
       return payloadCase_ == 26;
     }
-
     /**
      *
      *
@@ -3997,7 +3885,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageBatchCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4024,7 +3911,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -4048,7 +3934,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -4085,7 +3970,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 26;
       return this;
     }
-
     /**
      *
      *
@@ -4114,7 +3998,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4131,7 +4014,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMessageBatchCreatedEventDataBuilder() {
       return getMessageBatchCreatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4156,7 +4038,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageBatchCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4198,7 +4079,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MessageBatchUpdatedEventData.Builder,
             com.google.chat.v1.MessageBatchUpdatedEventDataOrBuilder>
         messageBatchUpdatedEventDataBuilder_;
-
     /**
      *
      *
@@ -4217,7 +4097,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageBatchUpdatedEventData() {
       return payloadCase_ == 27;
     }
-
     /**
      *
      *
@@ -4246,7 +4125,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageBatchUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4273,7 +4151,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 27;
       return this;
     }
-
     /**
      *
      *
@@ -4297,7 +4174,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 27;
       return this;
     }
-
     /**
      *
      *
@@ -4334,7 +4210,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 27;
       return this;
     }
-
     /**
      *
      *
@@ -4363,7 +4238,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4380,7 +4254,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMessageBatchUpdatedEventDataBuilder() {
       return getMessageBatchUpdatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4405,7 +4278,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageBatchUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4447,7 +4319,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MessageBatchDeletedEventData.Builder,
             com.google.chat.v1.MessageBatchDeletedEventDataOrBuilder>
         messageBatchDeletedEventDataBuilder_;
-
     /**
      *
      *
@@ -4466,7 +4337,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMessageBatchDeletedEventData() {
       return payloadCase_ == 28;
     }
-
     /**
      *
      *
@@ -4495,7 +4365,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageBatchDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4522,7 +4391,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 28;
       return this;
     }
-
     /**
      *
      *
@@ -4546,7 +4414,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 28;
       return this;
     }
-
     /**
      *
      *
@@ -4583,7 +4450,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 28;
       return this;
     }
-
     /**
      *
      *
@@ -4612,7 +4478,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4629,7 +4494,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMessageBatchDeletedEventDataBuilder() {
       return getMessageBatchDeletedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4654,7 +4518,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MessageBatchDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4696,7 +4559,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.SpaceUpdatedEventData.Builder,
             com.google.chat.v1.SpaceUpdatedEventDataOrBuilder>
         spaceUpdatedEventDataBuilder_;
-
     /**
      *
      *
@@ -4714,7 +4576,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpaceUpdatedEventData() {
       return payloadCase_ == 15;
     }
-
     /**
      *
      *
@@ -4742,7 +4603,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.SpaceUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4767,7 +4627,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -4790,7 +4649,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -4825,7 +4683,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -4853,7 +4710,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4868,7 +4724,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.SpaceUpdatedEventData.Builder getSpaceUpdatedEventDataBuilder() {
       return getSpaceUpdatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4891,7 +4746,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.SpaceUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4932,7 +4786,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.SpaceBatchUpdatedEventData.Builder,
             com.google.chat.v1.SpaceBatchUpdatedEventDataOrBuilder>
         spaceBatchUpdatedEventDataBuilder_;
-
     /**
      *
      *
@@ -4950,7 +4803,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpaceBatchUpdatedEventData() {
       return payloadCase_ == 29;
     }
-
     /**
      *
      *
@@ -4978,7 +4830,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.SpaceBatchUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5004,7 +4855,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 29;
       return this;
     }
-
     /**
      *
      *
@@ -5027,7 +4877,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 29;
       return this;
     }
-
     /**
      *
      *
@@ -5063,7 +4912,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 29;
       return this;
     }
-
     /**
      *
      *
@@ -5091,7 +4939,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5107,7 +4954,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getSpaceBatchUpdatedEventDataBuilder() {
       return getSpaceBatchUpdatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5131,7 +4977,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.SpaceBatchUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5172,7 +5017,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MembershipCreatedEventData.Builder,
             com.google.chat.v1.MembershipCreatedEventDataOrBuilder>
         membershipCreatedEventDataBuilder_;
-
     /**
      *
      *
@@ -5190,7 +5034,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipCreatedEventData() {
       return payloadCase_ == 17;
     }
-
     /**
      *
      *
@@ -5218,7 +5061,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5244,7 +5086,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -5267,7 +5108,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -5303,7 +5143,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -5331,7 +5170,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5347,7 +5185,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMembershipCreatedEventDataBuilder() {
       return getMembershipCreatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5371,7 +5208,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5412,7 +5248,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MembershipUpdatedEventData.Builder,
             com.google.chat.v1.MembershipUpdatedEventDataOrBuilder>
         membershipUpdatedEventDataBuilder_;
-
     /**
      *
      *
@@ -5430,7 +5265,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipUpdatedEventData() {
       return payloadCase_ == 18;
     }
-
     /**
      *
      *
@@ -5458,7 +5292,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5484,7 +5317,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -5507,7 +5339,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -5543,7 +5374,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -5571,7 +5401,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5587,7 +5416,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMembershipUpdatedEventDataBuilder() {
       return getMembershipUpdatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5611,7 +5439,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5652,7 +5479,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MembershipDeletedEventData.Builder,
             com.google.chat.v1.MembershipDeletedEventDataOrBuilder>
         membershipDeletedEventDataBuilder_;
-
     /**
      *
      *
@@ -5670,7 +5496,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipDeletedEventData() {
       return payloadCase_ == 219;
     }
-
     /**
      *
      *
@@ -5698,7 +5523,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5724,7 +5548,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 219;
       return this;
     }
-
     /**
      *
      *
@@ -5747,7 +5570,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 219;
       return this;
     }
-
     /**
      *
      *
@@ -5783,7 +5605,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 219;
       return this;
     }
-
     /**
      *
      *
@@ -5811,7 +5632,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5827,7 +5647,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMembershipDeletedEventDataBuilder() {
       return getMembershipDeletedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5851,7 +5670,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5892,7 +5710,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MembershipBatchCreatedEventData.Builder,
             com.google.chat.v1.MembershipBatchCreatedEventDataOrBuilder>
         membershipBatchCreatedEventDataBuilder_;
-
     /**
      *
      *
@@ -5912,7 +5729,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipBatchCreatedEventData() {
       return payloadCase_ == 31;
     }
-
     /**
      *
      *
@@ -5942,7 +5758,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipBatchCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5970,7 +5785,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 31;
       return this;
     }
-
     /**
      *
      *
@@ -5995,7 +5809,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 31;
       return this;
     }
-
     /**
      *
      *
@@ -6034,7 +5847,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 31;
       return this;
     }
-
     /**
      *
      *
@@ -6064,7 +5876,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6082,7 +5893,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMembershipBatchCreatedEventDataBuilder() {
       return getMembershipBatchCreatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6108,7 +5918,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipBatchCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6151,7 +5960,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MembershipBatchUpdatedEventData.Builder,
             com.google.chat.v1.MembershipBatchUpdatedEventDataOrBuilder>
         membershipBatchUpdatedEventDataBuilder_;
-
     /**
      *
      *
@@ -6171,7 +5979,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipBatchUpdatedEventData() {
       return payloadCase_ == 32;
     }
-
     /**
      *
      *
@@ -6201,7 +6008,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipBatchUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6229,7 +6035,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 32;
       return this;
     }
-
     /**
      *
      *
@@ -6254,7 +6059,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 32;
       return this;
     }
-
     /**
      *
      *
@@ -6293,7 +6097,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 32;
       return this;
     }
-
     /**
      *
      *
@@ -6323,7 +6126,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6341,7 +6143,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMembershipBatchUpdatedEventDataBuilder() {
       return getMembershipBatchUpdatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6367,7 +6168,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipBatchUpdatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6410,7 +6210,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.MembershipBatchDeletedEventData.Builder,
             com.google.chat.v1.MembershipBatchDeletedEventDataOrBuilder>
         membershipBatchDeletedEventDataBuilder_;
-
     /**
      *
      *
@@ -6430,7 +6229,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipBatchDeletedEventData() {
       return payloadCase_ == 33;
     }
-
     /**
      *
      *
@@ -6460,7 +6258,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipBatchDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6488,7 +6285,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 33;
       return this;
     }
-
     /**
      *
      *
@@ -6513,7 +6309,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 33;
       return this;
     }
-
     /**
      *
      *
@@ -6552,7 +6347,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 33;
       return this;
     }
-
     /**
      *
      *
@@ -6582,7 +6376,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6600,7 +6393,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getMembershipBatchDeletedEventDataBuilder() {
       return getMembershipBatchDeletedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6626,7 +6418,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.MembershipBatchDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6669,7 +6460,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.ReactionCreatedEventData.Builder,
             com.google.chat.v1.ReactionCreatedEventDataOrBuilder>
         reactionCreatedEventDataBuilder_;
-
     /**
      *
      *
@@ -6687,7 +6477,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReactionCreatedEventData() {
       return payloadCase_ == 21;
     }
-
     /**
      *
      *
@@ -6715,7 +6504,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6740,7 +6528,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -6763,7 +6550,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -6799,7 +6585,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -6827,7 +6612,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6843,7 +6627,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getReactionCreatedEventDataBuilder() {
       return getReactionCreatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6867,7 +6650,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6908,7 +6690,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.ReactionDeletedEventData.Builder,
             com.google.chat.v1.ReactionDeletedEventDataOrBuilder>
         reactionDeletedEventDataBuilder_;
-
     /**
      *
      *
@@ -6926,7 +6707,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReactionDeletedEventData() {
       return payloadCase_ == 22;
     }
-
     /**
      *
      *
@@ -6954,7 +6734,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6979,7 +6758,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -7002,7 +6780,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -7038,7 +6815,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -7066,7 +6842,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7082,7 +6857,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getReactionDeletedEventDataBuilder() {
       return getReactionDeletedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7106,7 +6880,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7147,7 +6920,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.ReactionBatchCreatedEventData.Builder,
             com.google.chat.v1.ReactionBatchCreatedEventDataOrBuilder>
         reactionBatchCreatedEventDataBuilder_;
-
     /**
      *
      *
@@ -7166,7 +6938,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReactionBatchCreatedEventData() {
       return payloadCase_ == 34;
     }
-
     /**
      *
      *
@@ -7195,7 +6966,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionBatchCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7222,7 +6992,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 34;
       return this;
     }
-
     /**
      *
      *
@@ -7246,7 +7015,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 34;
       return this;
     }
-
     /**
      *
      *
@@ -7283,7 +7051,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 34;
       return this;
     }
-
     /**
      *
      *
@@ -7312,7 +7079,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7329,7 +7095,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getReactionBatchCreatedEventDataBuilder() {
       return getReactionBatchCreatedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7354,7 +7119,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionBatchCreatedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7396,7 +7160,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.ReactionBatchDeletedEventData.Builder,
             com.google.chat.v1.ReactionBatchDeletedEventDataOrBuilder>
         reactionBatchDeletedEventDataBuilder_;
-
     /**
      *
      *
@@ -7415,7 +7178,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReactionBatchDeletedEventData() {
       return payloadCase_ == 35;
     }
-
     /**
      *
      *
@@ -7444,7 +7206,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionBatchDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7471,7 +7232,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 35;
       return this;
     }
-
     /**
      *
      *
@@ -7495,7 +7255,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 35;
       return this;
     }
-
     /**
      *
      *
@@ -7532,7 +7291,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 35;
       return this;
     }
-
     /**
      *
      *
@@ -7561,7 +7319,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7578,7 +7335,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         getReactionBatchDeletedEventDataBuilder() {
       return getReactionBatchDeletedEventDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7603,7 +7359,6 @@ public final class SpaceEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.ReactionBatchDeletedEventData.getDefaultInstance();
       }
     }
-
     /**
      *
      *

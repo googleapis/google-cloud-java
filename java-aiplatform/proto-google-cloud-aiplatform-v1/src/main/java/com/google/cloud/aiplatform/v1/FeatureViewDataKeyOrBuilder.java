@@ -36,7 +36,6 @@ public interface FeatureViewDataKeyOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FeatureViewDataKeyOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface FeatureViewDataKeyOrBuilder
    * @return Whether the compositeKey field is set.
    */
   boolean hasCompositeKey();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface FeatureViewDataKeyOrBuilder
    * @return The compositeKey.
    */
   com.google.cloud.aiplatform.v1.FeatureViewDataKey.CompositeKey getCompositeKey();
-
   /**
    *
    *

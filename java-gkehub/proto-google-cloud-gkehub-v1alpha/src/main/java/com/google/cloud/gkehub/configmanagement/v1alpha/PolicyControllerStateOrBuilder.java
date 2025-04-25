@@ -36,7 +36,6 @@ public interface PolicyControllerStateOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PolicyControllerStateOrBuilder
    * @return The version.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerVersion getVersion();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface PolicyControllerStateOrBuilder
    * @return Whether the deploymentState field is set.
    */
   boolean hasDeploymentState();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface PolicyControllerStateOrBuilder
    * @return The deploymentState.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.GatekeeperDeploymentState getDeploymentState();
-
   /**
    *
    *

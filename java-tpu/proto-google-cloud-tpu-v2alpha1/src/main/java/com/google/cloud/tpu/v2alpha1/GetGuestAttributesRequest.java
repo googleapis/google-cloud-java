@@ -34,7 +34,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.GetGuestAttributesRequest)
     GetGuestAttributesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetGuestAttributesRequest.newBuilder() to construct.
   private GetGuestAttributesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryPath_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList workerIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getWorkerIdsList() {
     return workerIds_;
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
   public int getWorkerIdsCount() {
     return workerIds_.size();
   }
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
   public java.lang.String getWorkerIds(int index) {
     return workerIds_.get(index);
   }
-
   /**
    *
    *
@@ -434,7 +425,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +647,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object queryPath_ = "";
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       workerIds_.makeImmutable();
       return workerIds_;
     }
-
     /**
      *
      *
@@ -930,7 +908,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     public int getWorkerIdsCount() {
       return workerIds_.size();
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     public java.lang.String getWorkerIds(int index) {
       return workerIds_.get(index);
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getWorkerIdsBytes(int index) {
       return workerIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -989,7 +964,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +987,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

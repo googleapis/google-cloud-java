@@ -34,7 +34,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.SearchLinksRequest)
     SearchLinksRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchLinksRequest.newBuilder() to construct.
   private SearchLinksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     private CriteriaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SOURCE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSource() {
     return criteriaCase_ == 4;
   }
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTarget() {
     return criteriaCase_ == 5;
   }
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -326,7 +315,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -355,7 +343,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -602,7 +589,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -879,7 +865,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -904,7 +889,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +913,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -953,7 +936,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +955,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +985,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder,
             com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder>
         sourceBuilder_;
-
     /**
      *
      *
@@ -1023,7 +1003,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSource() {
       return criteriaCase_ == 4;
     }
-
     /**
      *
      *
@@ -1052,7 +1031,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1056,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       criteriaCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1079,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       criteriaCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1115,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       criteriaCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1158,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder getSourceBuilder() {
       return getSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1208,7 +1181,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1222,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder,
             com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder>
         targetBuilder_;
-
     /**
      *
      *
@@ -1269,7 +1240,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTarget() {
       return criteriaCase_ == 5;
     }
-
     /**
      *
      *
@@ -1298,7 +1268,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1324,7 +1293,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       criteriaCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1316,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       criteriaCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1352,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       criteriaCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1380,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1395,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder getTargetBuilder() {
       return getTargetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1454,7 +1418,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1455,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1512,7 +1474,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1536,7 +1497,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1520,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1588,7 +1547,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1616,7 +1574,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1643,7 +1600,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1622,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

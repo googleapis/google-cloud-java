@@ -42,7 +42,6 @@ public interface AnalyzerOrgPolicyOrBuilder
    * @return The attachedResource.
    */
   java.lang.String getAttachedResource();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface AnalyzerOrgPolicyOrBuilder
    * @return The appliedResource.
    */
   java.lang.String getAppliedResource();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface AnalyzerOrgPolicyOrBuilder
    * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy.Rule rules = 2;</code>
    */
   java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule> getRulesList();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface AnalyzerOrgPolicyOrBuilder
    * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy.Rule rules = 2;</code>
    */
   com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule getRules(int index);
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface AnalyzerOrgPolicyOrBuilder
    * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy.Rule rules = 2;</code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface AnalyzerOrgPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.AnalyzerOrgPolicy.RuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *

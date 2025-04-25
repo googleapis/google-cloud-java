@@ -38,7 +38,6 @@ public interface DisplayDataOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface DisplayDataOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the strValue field is set.
    */
   boolean hasStrValue();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface DisplayDataOrBuilder
    * @return The strValue.
    */
   java.lang.String getStrValue();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the floatValue field is set.
    */
   boolean hasFloatValue();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the javaClassValue field is set.
    */
   boolean hasJavaClassValue();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface DisplayDataOrBuilder
    * @return The javaClassValue.
    */
   java.lang.String getJavaClassValue();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public interface DisplayDataOrBuilder
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the durationValue field is set.
    */
   boolean hasDurationValue();
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public interface DisplayDataOrBuilder
    * @return The durationValue.
    */
   com.google.protobuf.Duration getDurationValue();
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public interface DisplayDataOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *
@@ -333,7 +320,6 @@ public interface DisplayDataOrBuilder
    * @return The shortStrValue.
    */
   java.lang.String getShortStrValue();
-
   /**
    *
    *
@@ -364,7 +350,6 @@ public interface DisplayDataOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -390,7 +375,6 @@ public interface DisplayDataOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *

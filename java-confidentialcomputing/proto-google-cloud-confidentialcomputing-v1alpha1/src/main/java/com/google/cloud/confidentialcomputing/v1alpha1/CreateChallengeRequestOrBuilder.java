@@ -39,7 +39,6 @@ public interface CreateChallengeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateChallengeRequestOrBuilder
    * @return Whether the challenge field is set.
    */
   boolean hasChallenge();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateChallengeRequestOrBuilder
    * @return The challenge.
    */
   com.google.cloud.confidentialcomputing.v1alpha1.Challenge getChallenge();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface UpdateStoredInfoTypeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

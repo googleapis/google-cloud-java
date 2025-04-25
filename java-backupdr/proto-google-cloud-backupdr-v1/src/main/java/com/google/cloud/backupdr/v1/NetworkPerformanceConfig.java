@@ -33,7 +33,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.NetworkPerformanceConfig)
     NetworkPerformanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkPerformanceConfig.newBuilder() to construct.
   private NetworkPerformanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
      * <code>TIER_UNSPECIFIED = 0;</code>
      */
     public static final int TIER_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
      * <code>DEFAULT = 1;</code>
      */
     public static final int DEFAULT_VALUE = 1;
-
     /**
      *
      *
@@ -228,7 +225,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int TOTAL_EGRESS_BANDWIDTH_TIER_FIELD_NUMBER = 1;
   private int totalEgressBandwidthTier_ = 0;
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
   public boolean hasTotalEgressBandwidthTier() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +259,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
   public int getTotalEgressBandwidthTierValue() {
     return totalEgressBandwidthTier_;
   }
-
   /**
    *
    *
@@ -453,7 +447,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -639,7 +632,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int totalEgressBandwidthTier_ = 0;
-
     /**
      *
      *
@@ -657,7 +649,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     public boolean hasTotalEgressBandwidthTier() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -675,7 +666,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     public int getTotalEgressBandwidthTierValue() {
       return totalEgressBandwidthTier_;
     }
-
     /**
      *
      *
@@ -696,7 +686,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
           ? com.google.cloud.backupdr.v1.NetworkPerformanceConfig.Tier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

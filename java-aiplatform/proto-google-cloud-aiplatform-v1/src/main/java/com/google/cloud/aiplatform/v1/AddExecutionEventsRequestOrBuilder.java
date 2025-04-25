@@ -41,7 +41,6 @@ public interface AddExecutionEventsRequestOrBuilder
    * @return The execution.
    */
   java.lang.String getExecution();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface AddExecutionEventsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Event> getEventsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AddExecutionEventsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 2;</code>
    */
   com.google.cloud.aiplatform.v1.Event getEvents(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface AddExecutionEventsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 2;</code>
    */
   int getEventsCount();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface AddExecutionEventsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 2;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.EventOrBuilder> getEventsOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   com.google.cloud.compute.v1.Binding getBindings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   int getBindingsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder> getBindingsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -143,7 +136,6 @@ public interface GlobalSetPolicyRequestOrBuilder
    * @return The policy.
    */
   com.google.cloud.compute.v1.Policy getPolicy();
-
   /**
    *
    *

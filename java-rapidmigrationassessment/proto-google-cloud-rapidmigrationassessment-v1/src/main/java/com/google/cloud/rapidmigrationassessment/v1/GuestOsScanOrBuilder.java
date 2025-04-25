@@ -36,7 +36,6 @@ public interface GuestOsScanOrBuilder
    * @return The coreSource.
    */
   java.lang.String getCoreSource();
-
   /**
    *
    *

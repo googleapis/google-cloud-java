@@ -33,7 +33,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest)
     GroupFindingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroupFindingsRequest.newBuilder() to construct.
   private GroupFindingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -214,7 +210,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -292,7 +287,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupBy_ = "";
-
   /**
    *
    *
@@ -330,7 +324,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +364,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp readTime_;
-
   /**
    *
    *
@@ -390,7 +382,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -409,7 +400,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
-
   /**
    *
    *
@@ -429,7 +419,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int COMPARE_DURATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration compareDuration_;
-
   /**
    *
    *
@@ -476,7 +465,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasCompareDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -525,7 +513,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Duration.getDefaultInstance()
         : compareDuration_;
   }
-
   /**
    *
    *
@@ -577,7 +564,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -603,7 +589,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -632,7 +617,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 8;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -874,7 +858,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1169,7 +1152,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1200,7 +1182,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1212,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1241,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1266,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1298,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1392,7 +1369,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1440,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1535,7 +1510,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1576,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1676,7 +1649,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object groupBy_ = "";
-
     /**
      *
      *
@@ -1713,7 +1685,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1750,7 +1721,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1786,7 +1756,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1787,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1862,7 +1830,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
-
     /**
      *
      *
@@ -1880,7 +1847,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1902,7 +1868,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return readTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1928,7 +1893,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1951,7 +1915,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1945,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1967,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2023,7 +1984,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2043,7 +2003,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
-
     /**
      *
      *
@@ -2079,7 +2038,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         compareDurationBuilder_;
-
     /**
      *
      *
@@ -2125,7 +2083,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasCompareDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2177,7 +2134,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return compareDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2231,7 +2187,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2282,7 +2237,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2341,7 +2295,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2392,7 +2345,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2438,7 +2390,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCompareDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2488,7 +2439,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
             : compareDuration_;
       }
     }
-
     /**
      *
      *
@@ -2547,7 +2497,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -2572,7 +2521,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2597,7 +2545,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2621,7 +2568,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2641,7 +2587,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2668,7 +2613,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -2685,7 +2629,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -2706,7 +2649,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

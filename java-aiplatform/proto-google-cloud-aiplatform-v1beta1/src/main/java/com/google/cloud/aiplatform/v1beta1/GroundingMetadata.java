@@ -33,7 +33,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingMetadata)
     GroundingMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundingMetadata.newBuilder() to construct.
   private GroundingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList webSearchQueries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getWebSearchQueriesList() {
     return webSearchQueries_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public int getWebSearchQueriesCount() {
     return webSearchQueries_.size();
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public java.lang.String getWebSearchQueries(int index) {
     return webSearchQueries_.get(index);
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int SEARCH_ENTRY_POINT_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.SearchEntryPoint searchEntryPoint_;
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasSearchEntryPoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.SearchEntryPoint.getDefaultInstance()
         : searchEntryPoint_;
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList retrievalQueries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getRetrievalQueriesList() {
     return retrievalQueries_;
   }
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public int getRetrievalQueriesCount() {
     return retrievalQueries_.size();
   }
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public java.lang.String getRetrievalQueries(int index) {
     return retrievalQueries_.get(index);
   }
-
   /**
    *
    *
@@ -268,7 +256,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk> groundingChunks_;
-
   /**
    *
    *
@@ -283,7 +270,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       getGroundingChunksList() {
     return groundingChunks_;
   }
-
   /**
    *
    *
@@ -298,7 +284,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       getGroundingChunksOrBuilderList() {
     return groundingChunks_;
   }
-
   /**
    *
    *
@@ -312,7 +297,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public int getGroundingChunksCount() {
     return groundingChunks_.size();
   }
-
   /**
    *
    *
@@ -326,7 +310,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.aiplatform.v1beta1.GroundingChunk getGroundingChunks(int index) {
     return groundingChunks_.get(index);
   }
-
   /**
    *
    *
@@ -346,7 +329,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport> groundingSupports_;
-
   /**
    *
    *
@@ -363,7 +345,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       getGroundingSupportsList() {
     return groundingSupports_;
   }
-
   /**
    *
    *
@@ -380,7 +361,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       getGroundingSupportsOrBuilderList() {
     return groundingSupports_;
   }
-
   /**
    *
    *
@@ -396,7 +376,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public int getGroundingSupportsCount() {
     return groundingSupports_.size();
   }
-
   /**
    *
    *
@@ -412,7 +391,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.aiplatform.v1beta1.GroundingSupport getGroundingSupports(int index) {
     return groundingSupports_.get(index);
   }
-
   /**
    *
    *
@@ -432,7 +410,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int RETRIEVAL_METADATA_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.RetrievalMetadata retrievalMetadata_;
-
   /**
    *
    *
@@ -450,7 +427,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasRetrievalMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -470,7 +446,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.RetrievalMetadata.getDefaultInstance()
         : retrievalMetadata_;
   }
-
   /**
    *
    *
@@ -724,7 +699,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1121,7 +1095,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -1138,7 +1111,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       webSearchQueries_.makeImmutable();
       return webSearchQueries_;
     }
-
     /**
      *
      *
@@ -1154,7 +1126,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public int getWebSearchQueriesCount() {
       return webSearchQueries_.size();
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public java.lang.String getWebSearchQueries(int index) {
       return webSearchQueries_.get(index);
     }
-
     /**
      *
      *
@@ -1188,7 +1158,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getWebSearchQueriesBytes(int index) {
       return webSearchQueries_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1213,7 +1182,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1205,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1225,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1244,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1275,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.SearchEntryPoint.Builder,
             com.google.cloud.aiplatform.v1beta1.SearchEntryPointOrBuilder>
         searchEntryPointBuilder_;
-
     /**
      *
      *
@@ -1327,7 +1291,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasSearchEntryPoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1350,7 +1313,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return searchEntryPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1337,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1359,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1390,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1411,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1470,7 +1428,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSearchEntryPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1492,7 +1449,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             : searchEntryPoint_;
       }
     }
-
     /**
      *
      *
@@ -1530,7 +1486,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1546,7 +1501,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       retrievalQueries_.makeImmutable();
       return retrievalQueries_;
     }
-
     /**
      *
      *
@@ -1561,7 +1515,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public int getRetrievalQueriesCount() {
       return retrievalQueries_.size();
     }
-
     /**
      *
      *
@@ -1577,7 +1530,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public java.lang.String getRetrievalQueries(int index) {
       return retrievalQueries_.get(index);
     }
-
     /**
      *
      *
@@ -1593,7 +1545,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getRetrievalQueriesBytes(int index) {
       return retrievalQueries_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1617,7 +1568,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1640,7 +1590,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1660,7 +1609,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1679,7 +1627,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1739,7 +1686,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingChunksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1756,7 +1702,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingChunksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1773,7 +1718,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingChunksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1797,7 +1741,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1761,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1783,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1865,7 +1806,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1826,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1907,7 +1846,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1928,7 +1866,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1948,7 +1885,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1904,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1917,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         int index) {
       return getGroundingChunksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2000,7 +1934,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingChunksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2018,7 +1951,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(groundingChunks_);
       }
     }
-
     /**
      *
      *
@@ -2032,7 +1964,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       return getGroundingChunksFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.GroundingChunk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2048,7 +1979,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.GroundingChunk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2120,7 +2050,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingSupportsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2139,7 +2068,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingSupportsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2158,7 +2086,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingSupportsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2184,7 +2111,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2207,7 +2133,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2233,7 +2158,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2259,7 +2183,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2282,7 +2205,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2227,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2328,7 +2249,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2350,7 +2270,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2372,7 +2291,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2388,7 +2306,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         int index) {
       return getGroundingSupportsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2408,7 +2325,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return groundingSupportsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2428,7 +2344,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(groundingSupports_);
       }
     }
-
     /**
      *
      *
@@ -2445,7 +2360,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       return getGroundingSupportsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.GroundingSupport.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2463,7 +2377,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.GroundingSupport.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2506,7 +2419,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RetrievalMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.RetrievalMetadataOrBuilder>
         retrievalMetadataBuilder_;
-
     /**
      *
      *
@@ -2523,7 +2435,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasRetrievalMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2546,7 +2457,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         return retrievalMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2572,7 +2482,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2595,7 +2504,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2627,7 +2535,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2649,7 +2556,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2667,7 +2573,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRetrievalMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2689,7 +2594,6 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             : retrievalMetadata_;
       }
     }
-
     /**
      *
      *

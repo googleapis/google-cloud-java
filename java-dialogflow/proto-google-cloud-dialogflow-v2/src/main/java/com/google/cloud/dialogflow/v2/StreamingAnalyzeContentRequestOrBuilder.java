@@ -40,7 +40,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The participant.
    */
   java.lang.String getParticipant();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The audioConfig.
    */
   com.google.cloud.dialogflow.v2.InputAudioConfig getAudioConfig();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the textConfig field is set.
    */
   boolean hasTextConfig();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The textConfig.
    */
   com.google.cloud.dialogflow.v2.InputTextConfig getTextConfig();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the replyAudioConfig field is set.
    */
   boolean hasReplyAudioConfig();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The replyAudioConfig.
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getReplyAudioConfig();
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the inputAudio field is set.
    */
   boolean hasInputAudio();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the inputText field is set.
    */
   boolean hasInputText();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The inputText.
    */
   java.lang.String getInputText();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the inputDtmf field is set.
    */
   boolean hasInputDtmf();
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The inputDtmf.
    */
   com.google.cloud.dialogflow.v2.TelephonyDtmfEvents getInputDtmf();
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the queryParams field is set.
    */
   boolean hasQueryParams();
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The queryParams.
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
-
   /**
    *
    *
@@ -354,7 +340,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the assistQueryParams field is set.
    */
   boolean hasAssistQueryParams();
-
   /**
    *
    *
@@ -367,7 +352,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The assistQueryParams.
    */
   com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams();
-
   /**
    *
    *
@@ -396,7 +380,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return Whether the cxParameters field is set.
    */
   boolean hasCxParameters();
-
   /**
    *
    *
@@ -414,7 +397,6 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The cxParameters.
    */
   com.google.protobuf.Struct getCxParameters();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectMacsec)
     InterconnectMacsecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectMacsec.newBuilder() to construct.
   private InterconnectMacsec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int FAIL_OPEN_FIELD_NUMBER = 532597451;
   private boolean failOpen_ = false;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
   public boolean hasFailOpen() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectMacsecPreSharedKey> preSharedKeys_;
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       getPreSharedKeysList() {
     return preSharedKeys_;
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       getPreSharedKeysOrBuilderList() {
     return preSharedKeys_;
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
   public int getPreSharedKeysCount() {
     return preSharedKeys_.size();
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.InterconnectMacsecPreSharedKey getPreSharedKeys(int index) {
     return preSharedKeys_.get(index);
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -612,7 +603,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean failOpen_;
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
     public boolean hasFailOpen() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
     public boolean getFailOpen() {
       return failOpen_;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
         return preSharedKeysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
         return preSharedKeysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
         return preSharedKeysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +909,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +951,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +966,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
         getPreSharedKeysBuilder(int index) {
       return getPreSharedKeysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1011,7 +985,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
         return preSharedKeysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1005,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(preSharedKeys_);
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1022,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.compute.v1.InterconnectMacsecPreSharedKey.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1069,7 +1040,6 @@ public final class InterconnectMacsec extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.compute.v1.InterconnectMacsecPreSharedKey.getDefaultInstance());
     }
-
     /**
      *
      *

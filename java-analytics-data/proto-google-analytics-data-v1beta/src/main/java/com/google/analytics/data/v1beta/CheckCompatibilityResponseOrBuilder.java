@@ -37,7 +37,6 @@ public interface CheckCompatibilityResponseOrBuilder
    */
   java.util.List<com.google.analytics.data.v1beta.DimensionCompatibility>
       getDimensionCompatibilitiesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface CheckCompatibilityResponseOrBuilder
    * </code>
    */
   com.google.analytics.data.v1beta.DimensionCompatibility getDimensionCompatibilities(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface CheckCompatibilityResponseOrBuilder
    * </code>
    */
   int getDimensionCompatibilitiesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface CheckCompatibilityResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionCompatibilityOrBuilder>
       getDimensionCompatibilitiesOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface CheckCompatibilityResponseOrBuilder
    */
   java.util.List<com.google.analytics.data.v1beta.MetricCompatibility>
       getMetricCompatibilitiesList();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface CheckCompatibilityResponseOrBuilder
    * </code>
    */
   com.google.analytics.data.v1beta.MetricCompatibility getMetricCompatibilities(int index);
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface CheckCompatibilityResponseOrBuilder
    * </code>
    */
   int getMetricCompatibilitiesCount();
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public interface CheckCompatibilityResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricCompatibilityOrBuilder>
       getMetricCompatibilitiesOrBuilderList();
-
   /**
    *
    *

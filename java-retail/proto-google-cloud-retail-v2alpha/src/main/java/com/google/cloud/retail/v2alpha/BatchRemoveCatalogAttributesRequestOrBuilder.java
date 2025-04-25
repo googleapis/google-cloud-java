@@ -40,7 +40,6 @@ public interface BatchRemoveCatalogAttributesRequestOrBuilder
    * @return The attributesConfig.
    */
   java.lang.String getAttributesConfig();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface BatchRemoveCatalogAttributesRequestOrBuilder
    * @return A list containing the attributeKeys.
    */
   java.util.List<java.lang.String> getAttributeKeysList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface BatchRemoveCatalogAttributesRequestOrBuilder
    * @return The count of attributeKeys.
    */
   int getAttributeKeysCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface BatchRemoveCatalogAttributesRequestOrBuilder
    * @return The attributeKeys at the given index.
    */
   java.lang.String getAttributeKeys(int index);
-
   /**
    *
    *

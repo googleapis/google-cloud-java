@@ -34,7 +34,6 @@ public interface ListAnalysesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Analysis analyses = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.Analysis> getAnalysesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAnalysesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Analysis analyses = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.Analysis getAnalyses(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAnalysesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Analysis analyses = 1;</code>
    */
   int getAnalysesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAnalysesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.AnalysisOrBuilder>
       getAnalysesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAnalysesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

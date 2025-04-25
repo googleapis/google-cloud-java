@@ -34,7 +34,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PairwiseQuestionAnsweringQualitySpec)
     PairwiseQuestionAnsweringQualitySpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PairwiseQuestionAnsweringQualitySpec.newBuilder() to construct.
   private PairwiseQuestionAnsweringQualitySpec(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
 
   public static final int USE_REFERENCE_FIELD_NUMBER = 1;
   private boolean useReference_ = false;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
 
   public static final int VERSION_FIELD_NUMBER = 2;
   private int version_ = 0;
-
   /**
    *
    *
@@ -273,7 +270,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -476,7 +472,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
     private int bitField0_;
 
     private boolean useReference_;
-
     /**
      *
      *
@@ -493,7 +488,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
     public boolean getUseReference() {
       return useReference_;
     }
-
     /**
      *
      *
@@ -514,7 +508,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
     }
 
     private int version_;
-
     /**
      *
      *
@@ -551,7 +543,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
     public int getVersion() {
       return version_;
     }
-
     /**
      *
      *
@@ -571,7 +562,6 @@ public final class PairwiseQuestionAnsweringQualitySpec
       onChanged();
       return this;
     }
-
     /**
      *
      *

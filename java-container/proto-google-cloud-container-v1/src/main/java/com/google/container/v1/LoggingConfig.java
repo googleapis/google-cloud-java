@@ -33,7 +33,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.LoggingConfig)
     LoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int COMPONENT_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1.LoggingComponentConfig componentConfig_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasComponentConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1.LoggingComponentConfig.getDefaultInstance()
         : componentConfig_;
   }
-
   /**
    *
    *
@@ -278,7 +274,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +477,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.LoggingComponentConfig.Builder,
             com.google.container.v1.LoggingComponentConfigOrBuilder>
         componentConfigBuilder_;
-
     /**
      *
      *
@@ -497,7 +491,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasComponentConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -518,7 +511,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return componentConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -541,7 +533,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -562,7 +553,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -591,7 +581,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -611,7 +600,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +614,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getComponentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -645,7 +632,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             : componentConfig_;
       }
     }
-
     /**
      *
      *

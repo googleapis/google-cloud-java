@@ -36,7 +36,6 @@ public interface OracleSchemaOrBuilder
    * @return The schemaName.
    */
   java.lang.String getSchemaName();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface OracleSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleTable oracle_tables = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.OracleTable> getOracleTablesList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface OracleSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleTable oracle_tables = 2;</code>
    */
   com.google.cloud.datastream.v1alpha1.OracleTable getOracleTables(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface OracleSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleTable oracle_tables = 2;</code>
    */
   int getOracleTablesCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface OracleSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.OracleTableOrBuilder>
       getOracleTablesOrBuilderList();
-
   /**
    *
    *

@@ -49,7 +49,6 @@ public interface QueryListOrBuilder
    * @return A list containing the queries.
    */
   java.util.List<java.lang.String> getQueriesList();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface QueryListOrBuilder
    * @return The count of queries.
    */
   int getQueriesCount();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface QueryListOrBuilder
    * @return The queries at the given index.
    */
   java.lang.String getQueries(int index);
-
   /**
    *
    *

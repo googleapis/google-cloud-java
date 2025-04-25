@@ -42,7 +42,6 @@ public interface UpdateSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface UpdateSettingsRequestOrBuilder
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The settings.
    */
   com.google.cloud.migrationcenter.v1.Settings getSettings();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateEntitlementRequestOrBuilder
    * @return Whether the entitlement field is set.
    */
   boolean hasEntitlement();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateEntitlementRequestOrBuilder
    * @return The entitlement.
    */
   com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlement();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateEntitlementRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface UpdateEntitlementRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

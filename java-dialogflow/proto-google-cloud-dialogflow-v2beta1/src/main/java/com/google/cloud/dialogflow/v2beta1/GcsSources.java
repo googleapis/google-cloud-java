@@ -33,7 +33,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GcsSources)
     GcsSourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsSources.newBuilder() to construct.
   private GcsSources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList uris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUrisList() {
     return uris_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
   public int getUrisCount() {
     return uris_.size();
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUris(int index) {
     return uris_.get(index);
   }
-
   /**
    *
    *
@@ -310,7 +305,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -509,7 +503,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
       uris_.makeImmutable();
       return uris_;
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     public int getUrisCount() {
       return uris_.size();
     }
-
     /**
      *
      *
@@ -565,7 +556,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
-
     /**
      *
      *
@@ -584,7 +574,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUrisBytes(int index) {
       return uris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -611,7 +600,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +625,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +647,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +668,6 @@ public final class GcsSources extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

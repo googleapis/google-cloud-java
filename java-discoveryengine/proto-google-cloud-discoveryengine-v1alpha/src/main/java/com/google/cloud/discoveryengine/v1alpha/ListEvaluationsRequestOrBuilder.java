@@ -44,7 +44,6 @@ public interface ListEvaluationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public interface ListEvaluationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

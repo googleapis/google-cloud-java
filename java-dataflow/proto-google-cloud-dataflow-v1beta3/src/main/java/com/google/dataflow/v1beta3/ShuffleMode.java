@@ -75,7 +75,6 @@ public enum ShuffleMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHUFFLE_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int SHUFFLE_MODE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum ShuffleMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VM_BASED = 1;</code>
    */
   public static final int VM_BASED_VALUE = 1;
-
   /**
    *
    *

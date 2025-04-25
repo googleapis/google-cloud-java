@@ -63,7 +63,6 @@ public enum ContactNotice implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTACT_NOTICE_UNSPECIFIED = 0;</code>
    */
   public static final int CONTACT_NOTICE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.CommonUsageStats)
     CommonUsageStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommonUsageStats.newBuilder() to construct.
   private CommonUsageStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int VIEW_COUNT_FIELD_NUMBER = 1;
   private long viewCount_ = 0L;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
   public boolean hasViewCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +261,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -452,7 +448,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long viewCount_;
-
     /**
      *
      *
@@ -468,7 +463,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
     public boolean hasViewCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -484,7 +478,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
     public long getViewCount() {
       return viewCount_;
     }
-
     /**
      *
      *
@@ -504,7 +497,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

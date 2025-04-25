@@ -38,7 +38,6 @@ public interface ListConversationsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Conversation conversations = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Conversation> getConversationsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ListConversationsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Conversation conversations = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Conversation getConversations(int index);
-
   /**
    *
    *
@@ -68,7 +66,6 @@ public interface ListConversationsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Conversation conversations = 1;</code>
    */
   int getConversationsCount();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface ListConversationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ConversationOrBuilder>
       getConversationsOrBuilderList();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface ListConversationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.Photo)
     PhotoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Photo.newBuilder() to construct.
   private Photo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WIDTH_PX_FIELD_NUMBER = 2;
   private int widthPx_ = 0;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEIGHT_PX_FIELD_NUMBER = 3;
   private int heightPx_ = 0;
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.AuthorAttribution> authorAttributions_;
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.places.v1.AuthorAttribution> getAuthorAttributionsList() {
     return authorAttributions_;
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       getAuthorAttributionsOrBuilderList() {
     return authorAttributions_;
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   public int getAuthorAttributionsCount() {
     return authorAttributions_.size();
   }
-
   /**
    *
    *
@@ -220,7 +211,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.places.v1.AuthorAttribution getAuthorAttributions(int index) {
     return authorAttributions_.get(index);
   }
-
   /**
    *
    *
@@ -423,7 +413,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +680,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int widthPx_;
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     public int getWidthPx() {
       return widthPx_;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int heightPx_;
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     public int getHeightPx() {
       return heightPx_;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return authorAttributionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -974,7 +951,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return authorAttributionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return authorAttributionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1015,7 +990,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1032,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1055,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1075,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1095,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1115,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1134,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1153,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1166,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAuthorAttributionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1218,7 +1183,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return authorAttributionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1200,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(authorAttributions_);
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       return getAuthorAttributionsFieldBuilder()
           .addBuilder(com.google.maps.places.v1.AuthorAttribution.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1265,7 +1227,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       return getAuthorAttributionsFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.AuthorAttribution.getDefaultInstance());
     }
-
     /**
      *
      *

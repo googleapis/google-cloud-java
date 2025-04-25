@@ -34,7 +34,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest)
     BatchRunTestCasesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRunTestCasesRequest.newBuilder() to construct.
   private BatchRunTestCasesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object environment_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList testCases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getTestCasesList() {
     return testCases_;
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   public int getTestCasesCount() {
     return testCases_.size();
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   public java.lang.String getTestCases(int index) {
     return testCases_.get(index);
   }
-
   /**
    *
    *
@@ -450,7 +441,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +663,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object environment_ = "";
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +878,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -952,7 +931,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       testCases_.makeImmutable();
       return testCases_;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     public int getTestCasesCount() {
       return testCases_.size();
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     public java.lang.String getTestCases(int index) {
       return testCases_.get(index);
     }
-
     /**
      *
      *
@@ -1008,7 +984,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getTestCasesBytes(int index) {
       return testCases_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1035,7 +1010,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1035,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1057,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1078,6 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

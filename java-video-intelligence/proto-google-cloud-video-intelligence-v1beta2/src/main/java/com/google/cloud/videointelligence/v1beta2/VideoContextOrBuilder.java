@@ -36,7 +36,6 @@ public interface VideoContextOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.VideoSegment> getSegmentsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VideoContextOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getSegments(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface VideoContextOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
    */
   int getSegmentsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface VideoContextOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface VideoContextOrBuilder
    * @return Whether the labelDetectionConfig field is set.
    */
   boolean hasLabelDetectionConfig();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface VideoContextOrBuilder
    * @return The labelDetectionConfig.
    */
   com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig getLabelDetectionConfig();
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public interface VideoContextOrBuilder
    * @return Whether the shotChangeDetectionConfig field is set.
    */
   boolean hasShotChangeDetectionConfig();
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface VideoContextOrBuilder
    */
   com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig
       getShotChangeDetectionConfig();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface VideoContextOrBuilder
    * @return Whether the explicitContentDetectionConfig field is set.
    */
   boolean hasExplicitContentDetectionConfig();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface VideoContextOrBuilder
    */
   com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig
       getExplicitContentDetectionConfig();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface VideoContextOrBuilder
    * @return Whether the faceDetectionConfig field is set.
    */
   boolean hasFaceDetectionConfig();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface VideoContextOrBuilder
    * @return The faceDetectionConfig.
    */
   com.google.cloud.videointelligence.v1beta2.FaceDetectionConfig getFaceDetectionConfig();
-
   /**
    *
    *

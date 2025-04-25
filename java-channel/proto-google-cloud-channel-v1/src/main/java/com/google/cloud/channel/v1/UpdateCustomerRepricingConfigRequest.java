@@ -35,7 +35,6 @@ public final class UpdateCustomerRepricingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest)
     UpdateCustomerRepricingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateCustomerRepricingConfigRequest.newBuilder() to construct.
   private UpdateCustomerRepricingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class UpdateCustomerRepricingConfigRequest
   private int bitField0_;
   public static final int CUSTOMER_REPRICING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.CustomerRepricingConfig customerRepricingConfig_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateCustomerRepricingConfigRequest
   public boolean hasCustomerRepricingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class UpdateCustomerRepricingConfigRequest
         ? com.google.cloud.channel.v1.CustomerRepricingConfig.getDefaultInstance()
         : customerRepricingConfig_;
   }
-
   /**
    *
    *
@@ -292,7 +288,6 @@ public final class UpdateCustomerRepricingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -505,7 +500,6 @@ public final class UpdateCustomerRepricingConfigRequest
             com.google.cloud.channel.v1.CustomerRepricingConfig.Builder,
             com.google.cloud.channel.v1.CustomerRepricingConfigOrBuilder>
         customerRepricingConfigBuilder_;
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class UpdateCustomerRepricingConfigRequest
     public boolean hasCustomerRepricingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class UpdateCustomerRepricingConfigRequest
         return customerRepricingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -571,7 +563,6 @@ public final class UpdateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class UpdateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class UpdateCustomerRepricingConfigRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class UpdateCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class UpdateCustomerRepricingConfigRequest
       onChanged();
       return getCustomerRepricingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class UpdateCustomerRepricingConfigRequest
             : customerRepricingConfig_;
       }
     }
-
     /**
      *
      *

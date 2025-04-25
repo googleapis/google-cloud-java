@@ -34,7 +34,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerRequest)
     SetTargetPoolsInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetTargetPoolsInstanceGroupManagerRequest.newBuilder() to construct.
   private SetTargetPoolsInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       281150216;
   private com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest
       instanceGroupManagersSetTargetPoolsRequestResource_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersSetTargetPoolsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
             .getDefaultInstance()
         : instanceGroupManagersSetTargetPoolsRequestResource_;
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -346,7 +334,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -586,7 +573,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -860,7 +846,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -884,7 +869,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -908,7 +892,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -931,7 +914,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +963,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequestOrBuilder>
         instanceGroupManagersSetTargetPoolsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersSetTargetPoolsRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1024,7 +1003,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return instanceGroupManagersSetTargetPoolsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1028,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1052,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1084,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1105,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1122,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersSetTargetPoolsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1171,7 +1144,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
             : instanceGroupManagersSetTargetPoolsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1203,7 +1175,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1228,7 +1199,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1253,7 +1223,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1277,7 +1246,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1265,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1291,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1339,7 +1305,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1362,7 +1327,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1385,7 +1349,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1370,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1387,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1411,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1475,7 +1435,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1459,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1524,7 +1482,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1501,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

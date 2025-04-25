@@ -37,7 +37,6 @@ public interface ListMeasurementProtocolSecretsResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
       getMeasurementProtocolSecretsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListMeasurementProtocolSecretsResponseOrBuilder
    */
   com.google.analytics.admin.v1alpha.MeasurementProtocolSecret getMeasurementProtocolSecrets(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListMeasurementProtocolSecretsResponseOrBuilder
    * </code>
    */
   int getMeasurementProtocolSecretsCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListMeasurementProtocolSecretsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder>
       getMeasurementProtocolSecretsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ListMeasurementProtocolSecretsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

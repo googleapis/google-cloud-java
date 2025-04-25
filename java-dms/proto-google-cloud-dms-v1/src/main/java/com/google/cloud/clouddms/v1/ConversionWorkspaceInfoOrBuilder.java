@@ -36,7 +36,6 @@ public interface ConversionWorkspaceInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ConversionWorkspaceInfoOrBuilder
    * @return The commitId.
    */
   java.lang.String getCommitId();
-
   /**
    *
    *

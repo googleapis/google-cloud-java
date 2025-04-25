@@ -38,7 +38,6 @@ public interface TrajectorySingleToolUseInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TrajectorySingleToolUseInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseSpec getMetricSpec();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface TrajectorySingleToolUseInputOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInstance>
       getInstancesList();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface TrajectorySingleToolUseInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInstance getInstances(int index);
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface TrajectorySingleToolUseInputOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface TrajectorySingleToolUseInputOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInstanceOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *

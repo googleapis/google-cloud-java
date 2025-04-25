@@ -36,7 +36,6 @@ public interface AccessMetricValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

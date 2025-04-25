@@ -34,7 +34,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigRequest)
     UpdateRagEngineConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateRagEngineConfigRequest.newBuilder() to construct.
   private UpdateRagEngineConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int RAG_ENGINE_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.RagEngineConfig ragEngineConfig_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
   public boolean hasRagEngineConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1beta1.RagEngineConfig.getDefaultInstance()
         : ragEngineConfig_;
   }
-
   /**
    *
    *
@@ -298,7 +294,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -508,7 +503,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1beta1.RagEngineConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagEngineConfigOrBuilder>
         ragEngineConfigBuilder_;
-
     /**
      *
      *
@@ -528,7 +522,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
     public boolean hasRagEngineConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -554,7 +547,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
         return ragEngineConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
       onChanged();
       return getRagEngineConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class UpdateRagEngineConfigRequest extends com.google.protobuf.Gene
             : ragEngineConfig_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface JobStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface JobStatusOrBuilder
    * @return The details.
    */
   java.lang.String getDetails();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface JobStatusOrBuilder
    * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface JobStatusOrBuilder
    * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface JobStatusOrBuilder
    * @return The enum numeric value on the wire for substate.
    */
   int getSubstateValue();
-
   /**
    *
    *

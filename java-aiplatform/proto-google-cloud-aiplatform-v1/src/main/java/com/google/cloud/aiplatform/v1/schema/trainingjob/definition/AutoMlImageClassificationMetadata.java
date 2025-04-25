@@ -29,7 +29,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationMetadata)
     AutoMlImageClassificationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlImageClassificationMetadata.newBuilder() to construct.
   private AutoMlImageClassificationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -114,7 +113,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
      * <code>SUCCESSFUL_STOP_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int SUCCESSFUL_STOP_REASON_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -125,7 +123,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
      * <code>BUDGET_REACHED = 1;</code>
      */
     public static final int BUDGET_REACHED_VALUE = 1;
-
     /**
      *
      *
@@ -229,7 +226,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
 
   public static final int COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
   private long costMilliNodeHours_ = 0L;
-
   /**
    *
    *
@@ -250,7 +246,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
 
   public static final int SUCCESSFUL_STOP_REASON_FIELD_NUMBER = 2;
   private int successfulStopReason_ = 0;
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
   public int getSuccessfulStopReasonValue() {
     return successfulStopReason_;
   }
-
   /**
    *
    *
@@ -502,7 +496,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationMetadata}
@@ -723,7 +716,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     private int bitField0_;
 
     private long costMilliNodeHours_;
-
     /**
      *
      *
@@ -741,7 +733,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     public long getCostMilliNodeHours() {
       return costMilliNodeHours_;
     }
-
     /**
      *
      *
@@ -763,7 +754,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +775,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     }
 
     private int successfulStopReason_ = 0;
-
     /**
      *
      *
@@ -804,7 +793,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     public int getSuccessfulStopReasonValue() {
       return successfulStopReason_;
     }
-
     /**
      *
      *
@@ -826,7 +814,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +843,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
               .AutoMlImageClassificationMetadata.SuccessfulStopReason.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -884,7 +870,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

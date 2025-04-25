@@ -43,7 +43,6 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    * @return A list containing the entityIds.
    */
   java.util.List<java.lang.String> getEntityIdsList();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    * @return The count of entityIds.
    */
   int getEntityIdsCount();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    * @return The entityIds at the given index.
    */
   java.lang.String getEntityIds(int index);
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    * @return Whether the featureSelector field is set.
    */
   boolean hasFeatureSelector();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface StreamingReadFeatureValuesRequestOrBuilder
    * @return The featureSelector.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureSelector getFeatureSelector();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.RestoreParameters)
     RestoreParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestoreParameters.newBuilder() to construct.
   private RestoreParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SOURCE_SNAPSHOT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
   public boolean hasSourceSnapshot() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SOURCE_BACKUP_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
   public boolean hasSourceBackup() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -455,7 +447,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -696,7 +687,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     public boolean hasSourceSnapshot() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -727,7 +717,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -758,7 +747,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -782,7 +770,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +791,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +833,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     public boolean hasSourceBackup() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +893,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -933,7 +916,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +937,6 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *

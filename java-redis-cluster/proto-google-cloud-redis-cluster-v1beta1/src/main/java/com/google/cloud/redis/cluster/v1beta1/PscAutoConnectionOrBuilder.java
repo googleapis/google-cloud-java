@@ -37,7 +37,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The pscConnectionId.
    */
   java.lang.String getPscConnectionId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The enum numeric value on the wire for pscConnectionStatus.
    */
   int getPscConnectionStatusValue();
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public interface PscAutoConnectionOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
-
   /**
    *
    *

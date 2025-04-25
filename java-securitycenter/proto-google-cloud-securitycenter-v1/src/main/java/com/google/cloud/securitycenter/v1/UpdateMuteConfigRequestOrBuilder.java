@@ -38,7 +38,6 @@ public interface UpdateMuteConfigRequestOrBuilder
    * @return Whether the muteConfig field is set.
    */
   boolean hasMuteConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateMuteConfigRequestOrBuilder
    * @return The muteConfig.
    */
   com.google.cloud.securitycenter.v1.MuteConfig getMuteConfig();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateMuteConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateMuteConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

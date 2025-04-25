@@ -45,7 +45,6 @@ public interface CreateAttachedClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CreateAttachedClusterRequestOrBuilder
    * @return Whether the attachedCluster field is set.
    */
   boolean hasAttachedCluster();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CreateAttachedClusterRequestOrBuilder
    * @return The attachedCluster.
    */
   com.google.cloud.gkemulticloud.v1.AttachedCluster getAttachedCluster();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface CreateAttachedClusterRequestOrBuilder
    * @return The attachedClusterId.
    */
   java.lang.String getAttachedClusterId();
-
   /**
    *
    *

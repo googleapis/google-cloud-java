@@ -34,7 +34,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.apps.script.type.gmail.UniversalAction)
     UniversalActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UniversalAction.newBuilder() to construct.
   private UniversalAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     private ActionTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int OPEN_LINK_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
   public boolean hasOpenLink() {
     return actionTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RUN_FUNCTION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
   public boolean hasRunFunction() {
     return actionTypeCase_ == 3;
   }
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -516,7 +506,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -758,7 +747,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -782,7 +770,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -806,7 +793,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -829,7 +815,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     public boolean hasOpenLink() {
       return actionTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -946,7 +928,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +968,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     public boolean hasRunFunction() {
       return actionTypeCase_ == 3;
     }
-
     /**
      *
      *
@@ -1060,7 +1038,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1068,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1091,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *

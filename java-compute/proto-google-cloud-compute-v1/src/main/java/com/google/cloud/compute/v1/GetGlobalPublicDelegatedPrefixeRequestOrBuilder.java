@@ -36,7 +36,6 @@ public interface GetGlobalPublicDelegatedPrefixeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface GetGlobalPublicDelegatedPrefixeRequestOrBuilder
    * @return The publicDelegatedPrefix.
    */
   java.lang.String getPublicDelegatedPrefix();
-
   /**
    *
    *

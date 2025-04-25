@@ -34,7 +34,6 @@ public interface VodSessionAdBreakOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.ProgressEvent progress_events = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.ProgressEvent> getProgressEventsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface VodSessionAdBreakOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.ProgressEvent progress_events = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.ProgressEvent getProgressEvents(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface VodSessionAdBreakOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.ProgressEvent progress_events = 1;</code>
    */
   int getProgressEventsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface VodSessionAdBreakOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.ProgressEventOrBuilder>
       getProgressEventsOrBuilderList();
-
   /**
    *
    *
@@ -90,7 +86,6 @@ public interface VodSessionAdBreakOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodSessionAd ads = 2;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAd> getAdsList();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface VodSessionAdBreakOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodSessionAd ads = 2;</code>
    */
   com.google.cloud.video.stitcher.v1.VodSessionAd getAds(int index);
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface VodSessionAdBreakOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.VodSessionAd ads = 2;</code>
    */
   int getAdsCount();
-
   /**
    *
    *
@@ -124,7 +117,6 @@ public interface VodSessionAdBreakOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.VodSessionAdOrBuilder>
       getAdsOrBuilderList();
-
   /**
    *
    *
@@ -148,7 +140,6 @@ public interface VodSessionAdBreakOrBuilder
    * @return Whether the endTimeOffset field is set.
    */
   boolean hasEndTimeOffset();
-
   /**
    *
    *
@@ -161,7 +152,6 @@ public interface VodSessionAdBreakOrBuilder
    * @return The endTimeOffset.
    */
   com.google.protobuf.Duration getEndTimeOffset();
-
   /**
    *
    *
@@ -185,7 +175,6 @@ public interface VodSessionAdBreakOrBuilder
    * @return Whether the startTimeOffset field is set.
    */
   boolean hasStartTimeOffset();
-
   /**
    *
    *
@@ -198,7 +187,6 @@ public interface VodSessionAdBreakOrBuilder
    * @return The startTimeOffset.
    */
   com.google.protobuf.Duration getStartTimeOffset();
-
   /**
    *
    *

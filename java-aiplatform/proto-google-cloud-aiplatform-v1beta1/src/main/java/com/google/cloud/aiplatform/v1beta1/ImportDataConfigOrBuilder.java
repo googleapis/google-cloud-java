@@ -36,7 +36,6 @@ public interface ImportDataConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportDataConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ImportDataConfigOrBuilder
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
    */
   int getDataItemLabelsCount();
-
   /**
    *
    *
@@ -106,11 +103,9 @@ public interface ImportDataConfigOrBuilder
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
    */
   boolean containsDataItemLabels(java.lang.String key);
-
   /** Use {@link #getDataItemLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDataItemLabels();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface ImportDataConfigOrBuilder
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDataItemLabelsMap();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface ImportDataConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface ImportDataConfigOrBuilder
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
    */
   int getAnnotationLabelsCount();
-
   /**
    *
    *
@@ -225,11 +217,9 @@ public interface ImportDataConfigOrBuilder
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
    */
   boolean containsAnnotationLabels(java.lang.String key);
-
   /** Use {@link #getAnnotationLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface ImportDataConfigOrBuilder
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap();
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public interface ImportDataConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -312,7 +300,6 @@ public interface ImportDataConfigOrBuilder
    * @return The importSchemaUri.
    */
   java.lang.String getImportSchemaUri();
-
   /**
    *
    *

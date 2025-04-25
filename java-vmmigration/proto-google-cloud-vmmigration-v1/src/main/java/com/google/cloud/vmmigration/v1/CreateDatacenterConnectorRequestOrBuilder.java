@@ -41,7 +41,6 @@ public interface CreateDatacenterConnectorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateDatacenterConnectorRequestOrBuilder
    * @return The datacenterConnectorId.
    */
   java.lang.String getDatacenterConnectorId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CreateDatacenterConnectorRequestOrBuilder
    * @return Whether the datacenterConnector field is set.
    */
   boolean hasDatacenterConnector();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateDatacenterConnectorRequestOrBuilder
    * @return The datacenterConnector.
    */
   com.google.cloud.vmmigration.v1.DatacenterConnector getDatacenterConnector();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateDatacenterConnectorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

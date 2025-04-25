@@ -37,7 +37,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Pod> getPodsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.Pod getPods(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
    */
   int getPodsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.PodOrBuilder>
       getPodsOrBuilderList();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Node> getNodesList();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.Node getNodes(int index);
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
    */
   int getNodesCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.NodeOrBuilder>
       getNodesOrBuilderList();
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.NodePool> getNodePoolsList();
-
   /**
    *
    *
@@ -188,7 +179,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.NodePool getNodePools(int index);
-
   /**
    *
    *
@@ -202,7 +192,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
    */
   int getNodePoolsCount();
-
   /**
    *
    *
@@ -217,7 +206,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.NodePoolOrBuilder>
       getNodePoolsOrBuilderList();
-
   /**
    *
    *
@@ -243,7 +231,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Role> getRolesList();
-
   /**
    *
    *
@@ -255,7 +242,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.Role getRoles(int index);
-
   /**
    *
    *
@@ -267,7 +253,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
    */
   int getRolesCount();
-
   /**
    *
    *
@@ -280,7 +265,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.RoleOrBuilder>
       getRolesOrBuilderList();
-
   /**
    *
    *
@@ -305,7 +289,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Binding> getBindingsList();
-
   /**
    *
    *
@@ -318,7 +301,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.Binding getBindings(int index);
-
   /**
    *
    *
@@ -331,7 +313,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
    */
   int getBindingsCount();
-
   /**
    *
    *
@@ -345,7 +326,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.BindingOrBuilder>
       getBindingsOrBuilderList();
-
   /**
    *
    *
@@ -371,7 +351,6 @@ public interface KubernetesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.AccessReview> getAccessReviewsList();
-
   /**
    *
    *
@@ -384,7 +363,6 @@ public interface KubernetesOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.AccessReview getAccessReviews(int index);
-
   /**
    *
    *
@@ -397,7 +375,6 @@ public interface KubernetesOrBuilder
    * </code>
    */
   int getAccessReviewsCount();
-
   /**
    *
    *
@@ -411,7 +388,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.AccessReviewOrBuilder>
       getAccessReviewsOrBuilderList();
-
   /**
    *
    *
@@ -436,7 +412,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object> getObjectsList();
-
   /**
    *
    *
@@ -447,7 +422,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
    */
   com.google.cloud.securitycenter.v1.Kubernetes.Object getObjects(int index);
-
   /**
    *
    *
@@ -458,7 +432,6 @@ public interface KubernetesOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
    */
   int getObjectsCount();
-
   /**
    *
    *
@@ -470,7 +443,6 @@ public interface KubernetesOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>
       getObjectsOrBuilderList();
-
   /**
    *
    *

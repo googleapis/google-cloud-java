@@ -41,7 +41,6 @@ public interface ListProductsInProductSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface ListProductsInProductSetRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.DetectIntentResponse)
     DetectIntentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DetectIntentResponse.newBuilder() to construct.
   private DetectIntentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,7 +120,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * <code>RESPONSE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESPONSE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * <code>PARTIAL = 1;</code>
      */
     public static final int PARTIAL_VALUE = 1;
-
     /**
      *
      *
@@ -236,7 +233,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseId_ = "";
-
   /**
    *
    *
@@ -261,7 +257,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +284,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   public static final int QUERY_RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3.QueryResult queryResult_;
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   public boolean hasQueryResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -323,7 +316,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.dialogflow.cx.v3.QueryResult.getDefaultInstance()
         : queryResult_;
   }
-
   /**
    *
    *
@@ -342,7 +334,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   public static final int OUTPUT_AUDIO_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -371,7 +362,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.cx.v3.OutputAudioConfig outputAudioConfig_;
-
   /**
    *
    *
@@ -387,7 +377,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   public boolean hasOutputAudioConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -405,7 +394,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.getDefaultInstance()
         : outputAudioConfig_;
   }
-
   /**
    *
    *
@@ -425,7 +413,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   public static final int RESPONSE_TYPE_FIELD_NUMBER = 6;
   private int responseType_ = 0;
-
   /**
    *
    *
@@ -442,7 +429,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   public int getResponseTypeValue() {
     return responseType_;
   }
-
   /**
    *
    *
@@ -467,7 +453,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 7;
   private boolean allowCancellation_ = false;
-
   /**
    *
    *
@@ -707,7 +692,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -984,7 +968,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object responseId_ = "";
-
     /**
      *
      *
@@ -1008,7 +991,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1014,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1036,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1054,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1084,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.cx.v3.QueryResult.Builder,
             com.google.cloud.dialogflow.cx.v3.QueryResultOrBuilder>
         queryResultBuilder_;
-
     /**
      *
      *
@@ -1120,7 +1098,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public boolean hasQueryResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1141,7 +1118,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         return queryResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1140,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1160,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1187,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1206,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1220,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getQueryResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1267,7 +1238,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             : queryResult_;
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1265,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1321,7 +1290,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getOutputAudio() {
       return outputAudio_;
     }
-
     /**
      *
      *
@@ -1353,7 +1321,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1355,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.Builder,
             com.google.cloud.dialogflow.cx.v3.OutputAudioConfigOrBuilder>
         outputAudioConfigBuilder_;
-
     /**
      *
      *
@@ -1403,7 +1369,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public boolean hasOutputAudioConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1424,7 +1389,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         return outputAudioConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1447,7 +1411,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1431,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1460,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1518,7 +1479,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1494,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getOutputAudioConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1554,7 +1513,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             : outputAudioConfig_;
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1540,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     }
 
     private int responseType_ = 0;
-
     /**
      *
      *
@@ -1599,7 +1556,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public int getResponseTypeValue() {
       return responseType_;
     }
-
     /**
      *
      *
@@ -1619,7 +1575,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1596,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1665,7 +1619,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1686,7 +1639,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     }
 
     private boolean allowCancellation_;
-
     /**
      *
      *
@@ -1704,7 +1656,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public boolean getAllowCancellation() {
       return allowCancellation_;
     }
-
     /**
      *
      *
@@ -1726,7 +1677,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ExecuteExtensionResponseOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.ClientTlsPolicy)
     ClientTlsPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClientTlsPolicy.newBuilder() to construct.
   private ClientTlsPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -337,14 +325,12 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -379,7 +364,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -405,7 +389,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sni_ = "";
-
   /**
    *
    *
@@ -430,7 +413,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -458,7 +440,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   public static final int CLIENT_CERTIFICATE_FIELD_NUMBER = 7;
   private com.google.cloud.networksecurity.v1.CertificateProvider clientCertificate_;
-
   /**
    *
    *
@@ -477,7 +458,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public boolean hasClientCertificate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -498,7 +478,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.networksecurity.v1.CertificateProvider.getDefaultInstance()
         : clientCertificate_;
   }
-
   /**
    *
    *
@@ -523,7 +502,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networksecurity.v1.ValidationCA> serverValidationCa_;
-
   /**
    *
    *
@@ -542,7 +520,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       getServerValidationCaList() {
     return serverValidationCa_;
   }
-
   /**
    *
    *
@@ -561,7 +538,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       getServerValidationCaOrBuilderList() {
     return serverValidationCa_;
   }
-
   /**
    *
    *
@@ -579,7 +555,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public int getServerValidationCaCount() {
     return serverValidationCa_.size();
   }
-
   /**
    *
    *
@@ -597,7 +572,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.networksecurity.v1.ValidationCA getServerValidationCa(int index) {
     return serverValidationCa_.get(index);
   }
-
   /**
    *
    *
@@ -865,7 +839,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1257,7 +1230,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1281,7 +1253,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1276,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1298,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1316,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1341,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1396,7 +1363,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1419,7 +1385,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1441,7 +1406,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1423,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1489,7 +1452,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1506,7 +1468,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1529,7 +1490,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1554,7 +1514,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1535,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1564,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1585,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1601,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1666,7 +1621,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1701,7 +1655,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1718,7 +1671,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1741,7 +1693,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1766,7 +1717,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1738,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1767,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1840,7 +1788,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1804,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1878,7 +1824,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1932,7 +1877,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1949,14 +1893,12 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1970,7 +1912,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1991,7 +1932,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2018,7 +1958,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2035,14 +1974,12 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2063,7 +2000,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -2080,7 +2016,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object sni_ = "";
-
     /**
      *
      *
@@ -2104,7 +2039,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2128,7 +2062,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2151,7 +2084,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2170,7 +2102,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2201,7 +2132,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.networksecurity.v1.CertificateProvider.Builder,
             com.google.cloud.networksecurity.v1.CertificateProviderOrBuilder>
         clientCertificateBuilder_;
-
     /**
      *
      *
@@ -2219,7 +2149,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
     public boolean hasClientCertificate() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2243,7 +2172,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return clientCertificateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2270,7 +2198,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2294,7 +2221,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2327,7 +2253,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2350,7 +2275,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2369,7 +2293,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getClientCertificateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2392,7 +2315,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
             : clientCertificate_;
       }
     }
-
     /**
      *
      *
@@ -2461,7 +2383,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return serverValidationCaBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2482,7 +2403,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return serverValidationCaBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2503,7 +2423,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return serverValidationCaBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2531,7 +2450,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2556,7 +2474,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2583,7 +2500,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2611,7 +2527,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2636,7 +2551,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2661,7 +2575,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2686,7 +2599,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2710,7 +2622,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2734,7 +2645,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2752,7 +2662,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getServerValidationCaFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2774,7 +2683,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return serverValidationCaBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2796,7 +2704,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(serverValidationCa_);
       }
     }
-
     /**
      *
      *
@@ -2814,7 +2721,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return getServerValidationCaFieldBuilder()
           .addBuilder(com.google.cloud.networksecurity.v1.ValidationCA.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2833,7 +2739,6 @@ public final class ClientTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return getServerValidationCaFieldBuilder()
           .addBuilder(index, com.google.cloud.networksecurity.v1.ValidationCA.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface BargeInConfigOrBuilder
    * @return Whether the noBargeInDuration field is set.
    */
   boolean hasNoBargeInDuration();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface BargeInConfigOrBuilder
    * @return The noBargeInDuration.
    */
   com.google.protobuf.Duration getNoBargeInDuration();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface BargeInConfigOrBuilder
    * @return Whether the totalDuration field is set.
    */
   boolean hasTotalDuration();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface BargeInConfigOrBuilder
    * @return The totalDuration.
    */
   com.google.protobuf.Duration getTotalDuration();
-
   /**
    *
    *

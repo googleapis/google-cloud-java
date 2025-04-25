@@ -40,7 +40,6 @@ public interface DriveDestinationOrBuilder
    * @return The file.
    */
   java.lang.String getFile();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface DriveDestinationOrBuilder
    * @return The exportUri.
    */
   java.lang.String getExportUri();
-
   /**
    *
    *

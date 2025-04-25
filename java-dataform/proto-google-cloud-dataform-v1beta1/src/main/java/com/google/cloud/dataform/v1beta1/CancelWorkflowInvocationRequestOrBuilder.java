@@ -38,7 +38,6 @@ public interface CancelWorkflowInvocationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -45,7 +45,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The template.
    */
   java.lang.String getTemplate();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the createCluster field is set.
    */
   boolean hasCreateCluster();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The createCluster.
    */
   com.google.cloud.dataproc.v1.ClusterOperation getCreateCluster();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the graph field is set.
    */
   boolean hasGraph();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The graph.
    */
   com.google.cloud.dataproc.v1.WorkflowGraph getGraph();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the deleteCluster field is set.
    */
   boolean hasDeleteCluster();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The deleteCluster.
    */
   com.google.cloud.dataproc.v1.ClusterOperation getDeleteCluster();
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface WorkflowMetadataOrBuilder
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -288,11 +278,9 @@ public interface WorkflowMetadataOrBuilder
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
   boolean containsParameters(java.lang.String key);
-
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public interface WorkflowMetadataOrBuilder
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
-
   /**
    *
    *
@@ -318,7 +305,6 @@ public interface WorkflowMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -357,7 +342,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -383,7 +367,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -397,7 +380,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -422,7 +404,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
-
   /**
    *
    *
@@ -451,7 +432,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the dagTimeout field is set.
    */
   boolean hasDagTimeout();
-
   /**
    *
    *
@@ -467,7 +447,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The dagTimeout.
    */
   com.google.protobuf.Duration getDagTimeout();
-
   /**
    *
    *
@@ -498,7 +477,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the dagStartTime field is set.
    */
   boolean hasDagStartTime();
-
   /**
    *
    *
@@ -515,7 +493,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The dagStartTime.
    */
   com.google.protobuf.Timestamp getDagStartTime();
-
   /**
    *
    *
@@ -547,7 +524,6 @@ public interface WorkflowMetadataOrBuilder
    * @return Whether the dagEndTime field is set.
    */
   boolean hasDagEndTime();
-
   /**
    *
    *
@@ -564,7 +540,6 @@ public interface WorkflowMetadataOrBuilder
    * @return The dagEndTime.
    */
   com.google.protobuf.Timestamp getDagEndTime();
-
   /**
    *
    *

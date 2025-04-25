@@ -38,7 +38,6 @@ public interface ListPostureTemplatesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ListPostureTemplatesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface ListPostureTemplatesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

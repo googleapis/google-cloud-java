@@ -68,7 +68,6 @@ public interface SearchProjectsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -128,7 +127,6 @@ public interface SearchProjectsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

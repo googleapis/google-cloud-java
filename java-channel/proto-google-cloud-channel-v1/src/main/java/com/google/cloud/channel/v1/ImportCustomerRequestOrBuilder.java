@@ -36,7 +36,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return Whether the cloudIdentityId field is set.
    */
   boolean hasCloudIdentityId();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The cloudIdentityId.
    */
   java.lang.String getCloudIdentityId();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return Whether the primaryAdminEmail field is set.
    */
   boolean hasPrimaryAdminEmail();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The primaryAdminEmail.
    */
   java.lang.String getPrimaryAdminEmail();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The authToken.
    */
   java.lang.String getAuthToken();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The channelPartnerId.
    */
   java.lang.String getChannelPartnerId();
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public interface ImportCustomerRequestOrBuilder
    * @return The customer.
    */
   java.lang.String getCustomer();
-
   /**
    *
    *

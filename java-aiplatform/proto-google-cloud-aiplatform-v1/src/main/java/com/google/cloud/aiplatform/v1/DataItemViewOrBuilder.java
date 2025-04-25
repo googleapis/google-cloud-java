@@ -36,7 +36,6 @@ public interface DataItemViewOrBuilder
    * @return Whether the dataItem field is set.
    */
   boolean hasDataItem();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataItemViewOrBuilder
    * @return The dataItem.
    */
   com.google.cloud.aiplatform.v1.DataItem getDataItem();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DataItemViewOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Annotation annotations = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Annotation> getAnnotationsList();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DataItemViewOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Annotation annotations = 2;</code>
    */
   com.google.cloud.aiplatform.v1.Annotation getAnnotations(int index);
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface DataItemViewOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Annotation annotations = 2;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface DataItemViewOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.AnnotationOrBuilder>
       getAnnotationsOrBuilderList();
-
   /**
    *
    *

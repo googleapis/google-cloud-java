@@ -33,7 +33,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RolloutRestriction)
     RolloutRestrictionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RolloutRestriction.newBuilder() to construct.
   private RolloutRestriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,7 +178,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>ROLLOUT_ACTIONS_UNSPECIFIED = 0;</code>
      */
     public static final int ROLLOUT_ACTIONS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -190,7 +188,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>ADVANCE = 1;</code>
      */
     public static final int ADVANCE_VALUE = 1;
-
     /**
      *
      *
@@ -201,7 +198,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>APPROVE = 2;</code>
      */
     public static final int APPROVE_VALUE = 2;
-
     /**
      *
      *
@@ -212,7 +208,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>CANCEL = 3;</code>
      */
     public static final int CANCEL_VALUE = 3;
-
     /**
      *
      *
@@ -223,7 +218,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>CREATE = 4;</code>
      */
     public static final int CREATE_VALUE = 4;
-
     /**
      *
      *
@@ -234,7 +228,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>IGNORE_JOB = 5;</code>
      */
     public static final int IGNORE_JOB_VALUE = 5;
-
     /**
      *
      *
@@ -245,7 +238,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>RETRY_JOB = 6;</code>
      */
     public static final int RETRY_JOB_VALUE = 6;
-
     /**
      *
      *
@@ -256,7 +248,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
      * <code>ROLLBACK = 7;</code>
      */
     public static final int ROLLBACK_VALUE = 7;
-
     /**
      *
      *
@@ -368,7 +359,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -393,7 +383,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -437,7 +426,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
-
   /**
    *
    *
@@ -458,7 +446,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.deploy.v1.DeployPolicy.Invoker>(
         invokers_, invokers_converter_);
   }
-
   /**
    *
    *
@@ -477,7 +464,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public int getInvokersCount() {
     return invokers_.size();
   }
-
   /**
    *
    *
@@ -497,7 +483,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.deploy.v1.DeployPolicy.Invoker getInvokers(int index) {
     return invokers_converter_.convert(invokers_.get(index));
   }
-
   /**
    *
    *
@@ -516,7 +501,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getInvokersValueList() {
     return invokers_;
   }
-
   /**
    *
    *
@@ -558,7 +542,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
-
   /**
    *
    *
@@ -580,7 +563,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.deploy.v1.RolloutRestriction.RolloutActions>(
         actions_, actions_converter_);
   }
-
   /**
    *
    *
@@ -599,7 +581,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public int getActionsCount() {
     return actions_.size();
   }
-
   /**
    *
    *
@@ -619,7 +600,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.deploy.v1.RolloutRestriction.RolloutActions getActions(int index) {
     return actions_converter_.convert(actions_.get(index));
   }
-
   /**
    *
    *
@@ -638,7 +618,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getActionsValueList() {
     return actions_;
   }
-
   /**
    *
    *
@@ -663,7 +642,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
 
   public static final int TIME_WINDOWS_FIELD_NUMBER = 4;
   private com.google.cloud.deploy.v1.TimeWindows timeWindows_;
-
   /**
    *
    *
@@ -681,7 +659,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
   public boolean hasTimeWindows() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -701,7 +678,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.deploy.v1.TimeWindows.getDefaultInstance()
         : timeWindows_;
   }
-
   /**
    *
    *
@@ -942,7 +918,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1232,7 +1207,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1256,7 +1230,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1253,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1303,7 +1275,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1293,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1325,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1344,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.cloud.deploy.v1.DeployPolicy.Invoker>(
           invokers_, invokers_converter_);
     }
-
     /**
      *
      *
@@ -1393,7 +1361,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public int getInvokersCount() {
       return invokers_.size();
     }
-
     /**
      *
      *
@@ -1412,7 +1379,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.deploy.v1.DeployPolicy.Invoker getInvokers(int index) {
       return invokers_converter_.convert(invokers_.get(index));
     }
-
     /**
      *
      *
@@ -1438,7 +1404,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1428,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1452,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1509,7 +1472,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1489,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getInvokersValueList() {
       return java.util.Collections.unmodifiableList(invokers_);
     }
-
     /**
      *
      *
@@ -1546,7 +1507,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public int getInvokersValue(int index) {
       return invokers_.get(index);
     }
-
     /**
      *
      *
@@ -1569,7 +1529,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1550,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1582,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1645,7 +1602,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.cloud.deploy.v1.RolloutRestriction.RolloutActions>(
           actions_, actions_converter_);
     }
-
     /**
      *
      *
@@ -1663,7 +1619,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public int getActionsCount() {
       return actions_.size();
     }
-
     /**
      *
      *
@@ -1682,7 +1637,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.deploy.v1.RolloutRestriction.RolloutActions getActions(int index) {
       return actions_converter_.convert(actions_.get(index));
     }
-
     /**
      *
      *
@@ -1709,7 +1663,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1734,7 +1687,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1712,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1732,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1749,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getActionsValueList() {
       return java.util.Collections.unmodifiableList(actions_);
     }
-
     /**
      *
      *
@@ -1818,7 +1767,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public int getActionsValue(int index) {
       return actions_.get(index);
     }
-
     /**
      *
      *
@@ -1841,7 +1789,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1810,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1840,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
             com.google.cloud.deploy.v1.TimeWindows.Builder,
             com.google.cloud.deploy.v1.TimeWindowsOrBuilder>
         timeWindowsBuilder_;
-
     /**
      *
      *
@@ -1911,7 +1856,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
     public boolean hasTimeWindows() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1934,7 +1878,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
         return timeWindowsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1959,7 +1902,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1981,7 +1923,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2011,7 +1952,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2033,7 +1973,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2050,7 +1989,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTimeWindowsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2071,7 +2009,6 @@ public final class RolloutRestriction extends com.google.protobuf.GeneratedMessa
             : timeWindows_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface EkmConnectionOrBuilder
    * @return The connectionName.
    */
   java.lang.String getConnectionName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface EkmConnectionOrBuilder
    * @return The enum numeric value on the wire for connectionState.
    */
   int getConnectionStateValue();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface EkmConnectionOrBuilder
    * @return Whether the connectionError field is set.
    */
   boolean hasConnectionError();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface EkmConnectionOrBuilder
    * @return The connectionError.
    */
   com.google.cloud.cloudcontrolspartner.v1.EkmConnection.ConnectionError getConnectionError();
-
   /**
    *
    *

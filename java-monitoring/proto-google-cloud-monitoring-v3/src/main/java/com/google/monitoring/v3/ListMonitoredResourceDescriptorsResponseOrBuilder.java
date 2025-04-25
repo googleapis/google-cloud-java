@@ -35,7 +35,6 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
   java.util.List<com.google.api.MonitoredResourceDescriptor> getResourceDescriptorsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
   com.google.api.MonitoredResourceDescriptor getResourceDescriptors(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
   int getResourceDescriptorsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder
    */
   java.util.List<? extends com.google.api.MonitoredResourceDescriptorOrBuilder>
       getResourceDescriptorsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DeleteGlobalOperationResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteGlobalOperationResponse)
     DeleteGlobalOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteGlobalOperationResponse.newBuilder() to construct.
   private DeleteGlobalOperationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DeleteGlobalOperationResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

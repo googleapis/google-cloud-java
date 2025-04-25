@@ -33,7 +33,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest)
     UpdatePolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdatePolicyRequest.newBuilder() to construct.
   private UpdatePolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int POLICY_FIELD_NUMBER = 1;
   private com.google.cloud.binaryauthorization.v1beta1.Policy policy_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.binaryauthorization.v1beta1.Policy.getDefaultInstance()
         : policy_;
   }
-
   /**
    *
    *
@@ -293,7 +289,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -501,7 +496,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.binaryauthorization.v1beta1.Policy.Builder,
             com.google.cloud.binaryauthorization.v1beta1.PolicyOrBuilder>
         policyBuilder_;
-
     /**
      *
      *
@@ -520,7 +514,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
         return policyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -572,7 +564,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
             : policy_;
       }
     }
-
     /**
      *
      *

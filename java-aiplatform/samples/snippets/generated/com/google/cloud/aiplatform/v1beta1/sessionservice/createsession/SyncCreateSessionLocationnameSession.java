@@ -14,35 +14,30 @@
  * limitations under the License.
  */
 
-package com.google.cloud.compute.v1.samples;
+package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START compute_v1_generated_MachineImages_SetLabels_sync]
-import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
-import com.google.cloud.compute.v1.MachineImagesClient;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.SetLabelsMachineImageRequest;
+// [START aiplatform_v1beta1_generated_SessionService_CreateSession_LocationnameSession_sync]
+import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.Session;
+import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
-public class SyncSetLabels {
+public class SyncCreateSessionLocationnameSession {
 
   public static void main(String[] args) throws Exception {
-    syncSetLabels();
+    syncCreateSessionLocationnameSession();
   }
 
-  public static void syncSetLabels() throws Exception {
+  public static void syncCreateSessionLocationnameSession() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
-      SetLabelsMachineImageRequest request =
-          SetLabelsMachineImageRequest.newBuilder()
-              .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
-              .setProject("project-309310695")
-              .setResource("resource-341064690")
-              .build();
-      Operation response = machineImagesClient.setLabelsAsync(request).get();
+    try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Session session = Session.newBuilder().build();
+      Session response = sessionServiceClient.createSessionAsync(parent, session).get();
     }
   }
 }
-// [END compute_v1_generated_MachineImages_SetLabels_sync]
+// [END aiplatform_v1beta1_generated_SessionService_CreateSession_LocationnameSession_sync]

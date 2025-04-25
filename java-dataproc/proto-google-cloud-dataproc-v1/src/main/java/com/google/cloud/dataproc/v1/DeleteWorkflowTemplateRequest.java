@@ -35,7 +35,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest)
     DeleteWorkflowTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteWorkflowTemplateRequest.newBuilder() to construct.
   private DeleteWorkflowTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
 
   public static final int VERSION_FIELD_NUMBER = 2;
   private int version_ = 0;
-
   /**
    *
    *
@@ -331,7 +327,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -531,7 +526,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -565,7 +559,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -599,7 +592,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +624,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +652,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
     }
 
     private int version_;
-
     /**
      *
      *
@@ -715,7 +704,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
     public int getVersion() {
       return version_;
     }
-
     /**
      *
      *
@@ -737,7 +725,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

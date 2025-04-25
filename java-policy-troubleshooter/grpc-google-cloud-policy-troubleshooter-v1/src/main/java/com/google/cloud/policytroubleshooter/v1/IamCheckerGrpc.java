@@ -98,19 +98,6 @@ public final class IamCheckerGrpc {
     return IamCheckerStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static IamCheckerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<IamCheckerBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<IamCheckerBlockingV2Stub>() {
-          @java.lang.Override
-          public IamCheckerBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new IamCheckerBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return IamCheckerBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -225,43 +212,6 @@ public final class IamCheckerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service IamChecker.
-   *
-   * <pre>
-   * IAM Policy Troubleshooter service.
-   * This service helps you troubleshoot access issues for Google Cloud resources.
-   * </pre>
-   */
-  public static final class IamCheckerBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<IamCheckerBlockingV2Stub> {
-    private IamCheckerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected IamCheckerBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new IamCheckerBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Checks whether a principal has a specific permission for a specific
-     * resource, and explains why the principal does or does not have that
-     * permission.
-     * </pre>
-     */
-    public com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse
-        troubleshootIamPolicy(
-            com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getTroubleshootIamPolicyMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service IamChecker.
    *
    * <pre>
    * IAM Policy Troubleshooter service.

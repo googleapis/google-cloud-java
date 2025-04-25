@@ -33,7 +33,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.ProductAttributeInterval)
     ProductAttributeIntervalOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductAttributeInterval.newBuilder() to construct.
   private ProductAttributeInterval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
 
   public static final int INTERVAL_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2.Interval interval_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
   public boolean hasInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
   public com.google.cloud.retail.v2.Interval getInterval() {
     return interval_ == null ? com.google.cloud.retail.v2.Interval.getDefaultInstance() : interval_;
   }
-
   /**
    *
    *
@@ -340,7 +334,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +547,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -577,7 +569,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
             com.google.cloud.retail.v2.Interval.Builder,
             com.google.cloud.retail.v2.IntervalOrBuilder>
         intervalBuilder_;
-
     /**
      *
      *
@@ -685,7 +672,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
     public boolean hasInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -706,7 +692,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
         return intervalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +733,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +779,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +793,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -831,7 +811,6 @@ public final class ProductAttributeInterval extends com.google.protobuf.Generate
             : interval_;
       }
     }
-
     /**
      *
      *

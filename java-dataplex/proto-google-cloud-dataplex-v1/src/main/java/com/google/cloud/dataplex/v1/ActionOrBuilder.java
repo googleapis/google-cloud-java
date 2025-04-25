@@ -36,7 +36,6 @@ public interface ActionOrBuilder
    * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ActionOrBuilder
    * @return The issue.
    */
   java.lang.String getIssue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ActionOrBuilder
    * @return Whether the detectTime field is set.
    */
   boolean hasDetectTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ActionOrBuilder
    * @return The detectTime.
    */
   com.google.protobuf.Timestamp getDetectTime();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface ActionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface ActionOrBuilder
    * @return The lake.
    */
   java.lang.String getLake();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface ActionOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public interface ActionOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public interface ActionOrBuilder
    * @return A list containing the dataLocations.
    */
   java.util.List<java.lang.String> getDataLocationsList();
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public interface ActionOrBuilder
    * @return The count of dataLocations.
    */
   int getDataLocationsCount();
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public interface ActionOrBuilder
    * @return The dataLocations at the given index.
    */
   java.lang.String getDataLocations(int index);
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public interface ActionOrBuilder
    * @return Whether the invalidDataFormat field is set.
    */
   boolean hasInvalidDataFormat();
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public interface ActionOrBuilder
    * @return The invalidDataFormat.
    */
   com.google.cloud.dataplex.v1.Action.InvalidDataFormat getInvalidDataFormat();
-
   /**
    *
    *
@@ -365,7 +352,6 @@ public interface ActionOrBuilder
    * @return Whether the incompatibleDataSchema field is set.
    */
   boolean hasIncompatibleDataSchema();
-
   /**
    *
    *
@@ -379,7 +365,6 @@ public interface ActionOrBuilder
    * @return The incompatibleDataSchema.
    */
   com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema getIncompatibleDataSchema();
-
   /**
    *
    *
@@ -406,7 +391,6 @@ public interface ActionOrBuilder
    * @return Whether the invalidDataPartition field is set.
    */
   boolean hasInvalidDataPartition();
-
   /**
    *
    *
@@ -420,7 +404,6 @@ public interface ActionOrBuilder
    * @return The invalidDataPartition.
    */
   com.google.cloud.dataplex.v1.Action.InvalidDataPartition getInvalidDataPartition();
-
   /**
    *
    *
@@ -446,7 +429,6 @@ public interface ActionOrBuilder
    * @return Whether the missingData field is set.
    */
   boolean hasMissingData();
-
   /**
    *
    *
@@ -459,7 +441,6 @@ public interface ActionOrBuilder
    * @return The missingData.
    */
   com.google.cloud.dataplex.v1.Action.MissingData getMissingData();
-
   /**
    *
    *
@@ -483,7 +464,6 @@ public interface ActionOrBuilder
    * @return Whether the missingResource field is set.
    */
   boolean hasMissingResource();
-
   /**
    *
    *
@@ -496,7 +476,6 @@ public interface ActionOrBuilder
    * @return The missingResource.
    */
   com.google.cloud.dataplex.v1.Action.MissingResource getMissingResource();
-
   /**
    *
    *
@@ -521,7 +500,6 @@ public interface ActionOrBuilder
    * @return Whether the unauthorizedResource field is set.
    */
   boolean hasUnauthorizedResource();
-
   /**
    *
    *
@@ -535,7 +513,6 @@ public interface ActionOrBuilder
    * @return The unauthorizedResource.
    */
   com.google.cloud.dataplex.v1.Action.UnauthorizedResource getUnauthorizedResource();
-
   /**
    *
    *
@@ -563,7 +540,6 @@ public interface ActionOrBuilder
    * @return Whether the failedSecurityPolicyApply field is set.
    */
   boolean hasFailedSecurityPolicyApply();
-
   /**
    *
    *
@@ -578,7 +554,6 @@ public interface ActionOrBuilder
    * @return The failedSecurityPolicyApply.
    */
   com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply getFailedSecurityPolicyApply();
-
   /**
    *
    *
@@ -606,7 +581,6 @@ public interface ActionOrBuilder
    * @return Whether the invalidDataOrganization field is set.
    */
   boolean hasInvalidDataOrganization();
-
   /**
    *
    *
@@ -620,7 +594,6 @@ public interface ActionOrBuilder
    * @return The invalidDataOrganization.
    */
   com.google.cloud.dataplex.v1.Action.InvalidDataOrganization getInvalidDataOrganization();
-
   /**
    *
    *

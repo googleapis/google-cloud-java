@@ -34,7 +34,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchGlobalPublicDelegatedPrefixeRequest)
     PatchGlobalPublicDelegatedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchGlobalPublicDelegatedPrefixeRequest.newBuilder() to construct.
   private PatchGlobalPublicDelegatedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicDelegatedPrefix_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
 
   public static final int PUBLIC_DELEGATED_PREFIX_RESOURCE_FIELD_NUMBER = 47594501;
   private com.google.cloud.compute.v1.PublicDelegatedPrefix publicDelegatedPrefixResource_;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
   public boolean hasPublicDelegatedPrefixResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         ? com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance()
         : publicDelegatedPrefixResource_;
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -514,7 +503,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -770,7 +758,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -795,7 +782,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +806,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -844,7 +829,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object publicDelegatedPrefix_ = "";
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -939,7 +920,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +960,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +990,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
             com.google.cloud.compute.v1.PublicDelegatedPrefix.Builder,
             com.google.cloud.compute.v1.PublicDelegatedPrefixOrBuilder>
         publicDelegatedPrefixResourceBuilder_;
-
     /**
      *
      *
@@ -1029,7 +1006,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     public boolean hasPublicDelegatedPrefixResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1052,7 +1028,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return publicDelegatedPrefixResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1075,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1106,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1127,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1144,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return getPublicDelegatedPrefixResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1195,7 +1165,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
             : publicDelegatedPrefixResource_;
       }
     }
-
     /**
      *
      *
@@ -1225,7 +1194,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1240,7 +1208,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1263,7 +1230,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1252,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1308,7 +1273,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1290,6 @@ public final class PatchGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

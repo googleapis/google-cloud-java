@@ -34,7 +34,6 @@ public interface ActionExecutorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.RuleActionsPair rule_actions_pairs = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.RuleActionsPair> getRuleActionsPairsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ActionExecutorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.RuleActionsPair rule_actions_pairs = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.RuleActionsPair getRuleActionsPairs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ActionExecutorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.RuleActionsPair rule_actions_pairs = 1;</code>
    */
   int getRuleActionsPairsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ActionExecutorOutputOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.RuleActionsPairOrBuilder>
       getRuleActionsPairsOrBuilderList();
-
   /**
    *
    *

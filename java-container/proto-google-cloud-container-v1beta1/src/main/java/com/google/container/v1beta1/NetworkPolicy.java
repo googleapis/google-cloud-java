@@ -34,7 +34,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.NetworkPolicy)
     NetworkPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkPolicy.newBuilder() to construct.
   private NetworkPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,7 +107,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVIDER_UNSPECIFIED = 0;</code>
      */
     public static final int PROVIDER_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -203,7 +201,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROVIDER_FIELD_NUMBER = 1;
   private int provider_ = 0;
-
   /**
    *
    *
@@ -219,7 +216,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getProviderValue() {
     return provider_;
   }
-
   /**
    *
    *
@@ -242,7 +238,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 2;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -429,7 +424,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -625,7 +619,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int provider_ = 0;
-
     /**
      *
      *
@@ -641,7 +634,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getProviderValue() {
       return provider_;
     }
-
     /**
      *
      *
@@ -660,7 +652,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +671,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.NetworkPolicy.Provider.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +711,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

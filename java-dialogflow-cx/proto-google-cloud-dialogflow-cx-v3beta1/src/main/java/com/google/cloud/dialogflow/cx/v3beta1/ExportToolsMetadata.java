@@ -35,7 +35,6 @@ public final class ExportToolsMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ExportToolsMetadata)
     ExportToolsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportToolsMetadata.newBuilder() to construct.
   private ExportToolsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class ExportToolsMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

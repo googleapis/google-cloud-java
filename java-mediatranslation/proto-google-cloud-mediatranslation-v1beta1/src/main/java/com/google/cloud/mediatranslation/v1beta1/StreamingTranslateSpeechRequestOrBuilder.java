@@ -40,7 +40,6 @@ public interface StreamingTranslateSpeechRequestOrBuilder
    * @return Whether the streamingConfig field is set.
    */
   boolean hasStreamingConfig();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface StreamingTranslateSpeechRequestOrBuilder
    * @return The streamingConfig.
    */
   com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig getStreamingConfig();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface StreamingTranslateSpeechRequestOrBuilder
    * @return Whether the audioContent field is set.
    */
   boolean hasAudioContent();
-
   /**
    *
    *

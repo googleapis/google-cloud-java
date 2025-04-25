@@ -36,7 +36,6 @@ public interface StorageConfigOrBuilder
    * @return Whether the datastoreOptions field is set.
    */
   boolean hasDatastoreOptions();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StorageConfigOrBuilder
    * @return The datastoreOptions.
    */
   com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface StorageConfigOrBuilder
    * @return Whether the cloudStorageOptions field is set.
    */
   boolean hasCloudStorageOptions();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface StorageConfigOrBuilder
    * @return The cloudStorageOptions.
    */
   com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface StorageConfigOrBuilder
    * @return Whether the bigQueryOptions field is set.
    */
   boolean hasBigQueryOptions();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface StorageConfigOrBuilder
    * @return The bigQueryOptions.
    */
   com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface StorageConfigOrBuilder
    * @return Whether the hybridOptions field is set.
    */
   boolean hasHybridOptions();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface StorageConfigOrBuilder
    * @return The hybridOptions.
    */
   com.google.privacy.dlp.v2.HybridOptions getHybridOptions();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface StorageConfigOrBuilder
    * @return Whether the timespanConfig field is set.
    */
   boolean hasTimespanConfig();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface StorageConfigOrBuilder
    * @return The timespanConfig.
    */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig();
-
   /**
    *
    *

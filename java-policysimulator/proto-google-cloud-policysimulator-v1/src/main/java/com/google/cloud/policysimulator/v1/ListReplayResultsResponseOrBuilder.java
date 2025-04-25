@@ -34,7 +34,6 @@ public interface ListReplayResultsResponseOrBuilder
    * <code>repeated .google.cloud.policysimulator.v1.ReplayResult replay_results = 1;</code>
    */
   java.util.List<com.google.cloud.policysimulator.v1.ReplayResult> getReplayResultsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReplayResultsResponseOrBuilder
    * <code>repeated .google.cloud.policysimulator.v1.ReplayResult replay_results = 1;</code>
    */
   com.google.cloud.policysimulator.v1.ReplayResult getReplayResults(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReplayResultsResponseOrBuilder
    * <code>repeated .google.cloud.policysimulator.v1.ReplayResult replay_results = 1;</code>
    */
   int getReplayResultsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListReplayResultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.policysimulator.v1.ReplayResultOrBuilder>
       getReplayResultsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListReplayResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

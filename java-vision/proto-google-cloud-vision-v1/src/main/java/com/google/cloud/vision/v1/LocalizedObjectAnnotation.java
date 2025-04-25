@@ -33,7 +33,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.LocalizedObjectAnnotation)
     LocalizedObjectAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocalizedObjectAnnotation.newBuilder() to construct.
   private LocalizedObjectAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mid_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
   public static final int SCORE_FIELD_NUMBER = 4;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
   public static final int BOUNDING_POLY_FIELD_NUMBER = 5;
   private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
   public boolean hasBoundingPoly() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
         : boundingPoly_;
   }
-
   /**
    *
    *
@@ -503,7 +492,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +749,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object mid_ = "";
-
     /**
      *
      *
@@ -784,7 +771,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +793,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -946,7 +926,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +971,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1016,7 +993,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1015,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1077,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     }
 
     private float score_;
-
     /**
      *
      *
@@ -1120,7 +1092,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -1140,7 +1111,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1135,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
             com.google.cloud.vision.v1.BoundingPoly.Builder,
             com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         boundingPolyBuilder_;
-
     /**
      *
      *
@@ -1180,7 +1149,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     public boolean hasBoundingPoly() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1201,7 +1169,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return boundingPolyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1191,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1211,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1238,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1257,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1271,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1327,7 +1289,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
             : boundingPoly_;
       }
     }
-
     /**
      *
      *

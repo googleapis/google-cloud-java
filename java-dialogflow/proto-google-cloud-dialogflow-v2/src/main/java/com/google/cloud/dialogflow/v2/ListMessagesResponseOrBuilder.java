@@ -36,7 +36,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Message messages = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Message> getMessagesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Message messages = 1;</code>
    */
   com.google.cloud.dialogflow.v2.Message getMessages(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListMessagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Message messages = 1;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListMessagesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.MessageOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListMessagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

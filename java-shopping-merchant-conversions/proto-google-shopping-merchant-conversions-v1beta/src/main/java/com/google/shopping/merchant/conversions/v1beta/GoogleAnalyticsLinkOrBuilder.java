@@ -54,7 +54,6 @@ public interface GoogleAnalyticsLinkOrBuilder
    * @return Whether the attributionSettings field is set.
    */
   boolean hasAttributionSettings();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface GoogleAnalyticsLinkOrBuilder
    * @return The attributionSettings.
    */
   com.google.shopping.merchant.conversions.v1beta.AttributionSettings getAttributionSettings();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface GoogleAnalyticsLinkOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ImageSegmentationPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ImageSegmentationPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

@@ -48,7 +48,6 @@ public final class Service {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -65,7 +64,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.GetPolicyRequest)
       GetPolicyRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GetPolicyRequest.newBuilder() to construct.
     private GetPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -116,7 +113,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -143,7 +139,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -340,7 +335,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -544,7 +538,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -570,7 +563,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -596,7 +588,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -621,7 +612,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -642,7 +632,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -759,7 +748,6 @@ public final class Service {
      * @return Whether the policy field is set.
      */
     boolean hasPolicy();
-
     /**
      *
      *
@@ -776,7 +764,6 @@ public final class Service {
      * @return The policy.
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy getPolicy();
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class Service {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.PolicyOrBuilder
         getPolicyOrBuilder();
   }
-
   /**
    *
    *
@@ -808,7 +794,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.UpdatePolicyRequest)
       UpdatePolicyRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UpdatePolicyRequest.newBuilder() to construct.
     private UpdatePolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -842,7 +827,6 @@ public final class Service {
     private int bitField0_;
     public static final int POLICY_FIELD_NUMBER = 1;
     private com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy policy_;
-
     /**
      *
      *
@@ -862,7 +846,6 @@ public final class Service {
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class Service {
               .getDefaultInstance()
           : policy_;
     }
-
     /**
      *
      *
@@ -1083,7 +1065,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1307,7 +1288,6 @@ public final class Service {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy.Builder,
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.PolicyOrBuilder>
           policyBuilder_;
-
       /**
        *
        *
@@ -1326,7 +1306,6 @@ public final class Service {
       public boolean hasPolicy() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1352,7 +1331,6 @@ public final class Service {
           return policyBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1380,7 +1358,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1406,7 +1383,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1441,7 +1417,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -1465,7 +1440,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1485,7 +1459,6 @@ public final class Service {
         onChanged();
         return getPolicyFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1510,7 +1483,6 @@ public final class Service {
               : policy_;
         }
       }
-
       /**
        *
        *
@@ -1629,7 +1601,6 @@ public final class Service {
      * @return The parent.
      */
     java.lang.String getParent();
-
     /**
      *
      *
@@ -1657,7 +1628,6 @@ public final class Service {
      * @return The attestorId.
      */
     java.lang.String getAttestorId();
-
     /**
      *
      *
@@ -1687,7 +1657,6 @@ public final class Service {
      * @return Whether the attestor field is set.
      */
     boolean hasAttestor();
-
     /**
      *
      *
@@ -1704,7 +1673,6 @@ public final class Service {
      * @return The attestor.
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor getAttestor();
-
     /**
      *
      *
@@ -1721,7 +1689,6 @@ public final class Service {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder
         getAttestorOrBuilder();
   }
-
   /**
    *
    *
@@ -1736,7 +1703,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.CreateAttestorRequest)
       CreateAttestorRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CreateAttestorRequest.newBuilder() to construct.
     private CreateAttestorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1775,7 +1741,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1801,7 +1766,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -1832,7 +1796,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attestorId_ = "";
-
     /**
      *
      *
@@ -1856,7 +1819,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -1883,7 +1845,6 @@ public final class Service {
 
     public static final int ATTESTOR_FIELD_NUMBER = 3;
     private com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor attestor_;
-
     /**
      *
      *
@@ -1903,7 +1864,6 @@ public final class Service {
     public boolean hasAttestor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1926,7 +1886,6 @@ public final class Service {
               .getDefaultInstance()
           : attestor_;
     }
-
     /**
      *
      *
@@ -2154,7 +2113,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2405,7 +2363,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
-
       /**
        *
        *
@@ -2430,7 +2387,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2455,7 +2411,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2479,7 +2434,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2499,7 +2453,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2526,7 +2479,6 @@ public final class Service {
       }
 
       private java.lang.Object attestorId_ = "";
-
       /**
        *
        *
@@ -2549,7 +2501,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2572,7 +2523,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2594,7 +2544,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2612,7 +2561,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2642,7 +2590,6 @@ public final class Service {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.Builder,
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder>
           attestorBuilder_;
-
       /**
        *
        *
@@ -2661,7 +2608,6 @@ public final class Service {
       public boolean hasAttestor() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -2688,7 +2634,6 @@ public final class Service {
           return attestorBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2716,7 +2661,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2742,7 +2686,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2777,7 +2720,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -2801,7 +2743,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2821,7 +2762,6 @@ public final class Service {
         onChanged();
         return getAttestorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2846,7 +2786,6 @@ public final class Service {
               : attestor_;
         }
       }
-
       /**
        *
        *
@@ -2967,7 +2906,6 @@ public final class Service {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -2984,7 +2922,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -2999,7 +2936,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.GetAttestorRequest)
       GetAttestorRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GetAttestorRequest.newBuilder() to construct.
     private GetAttestorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3036,7 +2972,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3063,7 +2998,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -3261,7 +3195,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3465,7 +3398,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -3491,7 +3423,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3517,7 +3448,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3542,7 +3472,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3563,7 +3492,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3680,7 +3608,6 @@ public final class Service {
      * @return Whether the attestor field is set.
      */
     boolean hasAttestor();
-
     /**
      *
      *
@@ -3697,7 +3624,6 @@ public final class Service {
      * @return The attestor.
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor getAttestor();
-
     /**
      *
      *
@@ -3714,7 +3640,6 @@ public final class Service {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder
         getAttestorOrBuilder();
   }
-
   /**
    *
    *
@@ -3729,7 +3654,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.UpdateAttestorRequest)
       UpdateAttestorRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UpdateAttestorRequest.newBuilder() to construct.
     private UpdateAttestorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3763,7 +3687,6 @@ public final class Service {
     private int bitField0_;
     public static final int ATTESTOR_FIELD_NUMBER = 1;
     private com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor attestor_;
-
     /**
      *
      *
@@ -3783,7 +3706,6 @@ public final class Service {
     public boolean hasAttestor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3806,7 +3728,6 @@ public final class Service {
               .getDefaultInstance()
           : attestor_;
     }
-
     /**
      *
      *
@@ -4016,7 +3937,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4242,7 +4162,6 @@ public final class Service {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.Builder,
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder>
           attestorBuilder_;
-
       /**
        *
        *
@@ -4261,7 +4180,6 @@ public final class Service {
       public boolean hasAttestor() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -4288,7 +4206,6 @@ public final class Service {
           return attestorBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4316,7 +4233,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4342,7 +4258,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4377,7 +4292,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -4401,7 +4315,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4421,7 +4334,6 @@ public final class Service {
         onChanged();
         return getAttestorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4446,7 +4358,6 @@ public final class Service {
               : attestor_;
         }
       }
-
       /**
        *
        *
@@ -4567,7 +4478,6 @@ public final class Service {
      * @return The parent.
      */
     java.lang.String getParent();
-
     /**
      *
      *
@@ -4612,7 +4522,6 @@ public final class Service {
      * @return The pageToken.
      */
     java.lang.String getPageToken();
-
     /**
      *
      *
@@ -4628,7 +4537,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getPageTokenBytes();
   }
-
   /**
    *
    *
@@ -4643,7 +4551,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.ListAttestorsRequest)
       ListAttestorsRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListAttestorsRequest.newBuilder() to construct.
     private ListAttestorsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4681,7 +4588,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -4708,7 +4614,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -4738,7 +4643,6 @@ public final class Service {
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 2;
     private int pageSize_ = 0;
-
     /**
      *
      *
@@ -4760,7 +4664,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -4786,7 +4689,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -5001,7 +4903,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5236,7 +5137,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
-
       /**
        *
        *
@@ -5262,7 +5162,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5288,7 +5187,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5313,7 +5211,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5334,7 +5231,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5362,7 +5258,6 @@ public final class Service {
       }
 
       private int pageSize_;
-
       /**
        *
        *
@@ -5379,7 +5274,6 @@ public final class Service {
       public int getPageSize() {
         return pageSize_;
       }
-
       /**
        *
        *
@@ -5400,7 +5294,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5421,7 +5314,6 @@ public final class Service {
       }
 
       private java.lang.Object pageToken_ = "";
-
       /**
        *
        *
@@ -5446,7 +5338,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5471,7 +5362,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5495,7 +5385,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5515,7 +5404,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5626,7 +5514,6 @@ public final class Service {
      */
     java.util.List<com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor>
         getAttestorsList();
-
     /**
      *
      *
@@ -5638,7 +5525,6 @@ public final class Service {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor getAttestors(
         int index);
-
     /**
      *
      *
@@ -5649,7 +5535,6 @@ public final class Service {
      * <code>repeated .google.cloud.binaryauthorization.v1.Attestor attestors = 1;</code>
      */
     int getAttestorsCount();
-
     /**
      *
      *
@@ -5663,7 +5548,6 @@ public final class Service {
             ? extends
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder>
         getAttestorsOrBuilderList();
-
     /**
      *
      *
@@ -5690,7 +5574,6 @@ public final class Service {
      * @return The nextPageToken.
      */
     java.lang.String getNextPageToken();
-
     /**
      *
      *
@@ -5706,7 +5589,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getNextPageTokenBytes();
   }
-
   /**
    *
    *
@@ -5721,7 +5603,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.ListAttestorsResponse)
       ListAttestorsResponseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListAttestorsResponse.newBuilder() to construct.
     private ListAttestorsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5760,7 +5641,6 @@ public final class Service {
     @SuppressWarnings("serial")
     private java.util.List<com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor>
         attestors_;
-
     /**
      *
      *
@@ -5775,7 +5655,6 @@ public final class Service {
         getAttestorsList() {
       return attestors_;
     }
-
     /**
      *
      *
@@ -5792,7 +5671,6 @@ public final class Service {
         getAttestorsOrBuilderList() {
       return attestors_;
     }
-
     /**
      *
      *
@@ -5806,7 +5684,6 @@ public final class Service {
     public int getAttestorsCount() {
       return attestors_.size();
     }
-
     /**
      *
      *
@@ -5821,7 +5698,6 @@ public final class Service {
         int index) {
       return attestors_.get(index);
     }
-
     /**
      *
      *
@@ -5841,7 +5717,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -5867,7 +5742,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -6087,7 +5961,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6395,7 +6268,6 @@ public final class Service {
           return attestorsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -6412,7 +6284,6 @@ public final class Service {
           return attestorsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -6430,7 +6301,6 @@ public final class Service {
           return attestorsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -6455,7 +6325,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6478,7 +6347,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6502,7 +6370,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6527,7 +6394,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6549,7 +6415,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6572,7 +6437,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6596,7 +6460,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6616,7 +6479,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6636,7 +6498,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -6650,7 +6511,6 @@ public final class Service {
           getAttestorsBuilder(int index) {
         return getAttestorsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -6668,7 +6528,6 @@ public final class Service {
           return attestorsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -6688,7 +6547,6 @@ public final class Service {
           return java.util.Collections.unmodifiableList(attestors_);
         }
       }
-
       /**
        *
        *
@@ -6705,7 +6563,6 @@ public final class Service {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6723,7 +6580,6 @@ public final class Service {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6758,7 +6614,6 @@ public final class Service {
       }
 
       private java.lang.Object nextPageToken_ = "";
-
       /**
        *
        *
@@ -6783,7 +6638,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6808,7 +6662,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6832,7 +6685,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6852,7 +6704,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6968,7 +6819,6 @@ public final class Service {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -6985,7 +6835,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -7000,7 +6849,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.DeleteAttestorRequest)
       DeleteAttestorRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DeleteAttestorRequest.newBuilder() to construct.
     private DeleteAttestorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7037,7 +6885,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -7064,7 +6911,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -7274,7 +7120,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7481,7 +7326,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -7507,7 +7351,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7533,7 +7376,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7558,7 +7400,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7579,7 +7420,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7696,7 +7536,6 @@ public final class Service {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -7713,7 +7552,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -7728,7 +7566,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.GetSystemPolicyRequest)
       GetSystemPolicyRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GetSystemPolicyRequest.newBuilder() to construct.
     private GetSystemPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7765,7 +7602,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -7792,7 +7628,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -8003,7 +7838,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -8211,7 +8045,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -8237,7 +8070,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8263,7 +8095,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8288,7 +8119,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8309,7 +8139,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8426,7 +8255,6 @@ public final class Service {
      * @return The attestor.
      */
     java.lang.String getAttestor();
-
     /**
      *
      *
@@ -8459,7 +8287,6 @@ public final class Service {
      * @return Whether the attestation field is set.
      */
     boolean hasAttestation();
-
     /**
      *
      *
@@ -8477,7 +8304,6 @@ public final class Service {
      * @return The attestation.
      */
     io.grafeas.v1.AttestationOccurrence getAttestation();
-
     /**
      *
      *
@@ -8507,7 +8333,6 @@ public final class Service {
      * @return The occurrenceNote.
      */
     java.lang.String getOccurrenceNote();
-
     /**
      *
      *
@@ -8535,7 +8360,6 @@ public final class Service {
      * @return The occurrenceResourceUri.
      */
     java.lang.String getOccurrenceResourceUri();
-
     /**
      *
      *
@@ -8550,7 +8374,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getOccurrenceResourceUriBytes();
   }
-
   /**
    *
    *
@@ -8567,7 +8390,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.ValidateAttestationOccurrenceRequest)
       ValidateAttestationOccurrenceRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ValidateAttestationOccurrenceRequest.newBuilder() to construct.
     private ValidateAttestationOccurrenceRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -8608,7 +8430,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attestor_ = "";
-
     /**
      *
      *
@@ -8634,7 +8455,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -8663,7 +8483,6 @@ public final class Service {
 
     public static final int ATTESTATION_FIELD_NUMBER = 2;
     private io.grafeas.v1.AttestationOccurrence attestation_;
-
     /**
      *
      *
@@ -8684,7 +8503,6 @@ public final class Service {
     public boolean hasAttestation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -8707,7 +8525,6 @@ public final class Service {
           ? io.grafeas.v1.AttestationOccurrence.getDefaultInstance()
           : attestation_;
     }
-
     /**
      *
      *
@@ -8733,7 +8550,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object occurrenceNote_ = "";
-
     /**
      *
      *
@@ -8758,7 +8574,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -8788,7 +8603,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object occurrenceResourceUri_ = "";
-
     /**
      *
      *
@@ -8813,7 +8627,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -9059,7 +8872,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -9338,7 +9150,6 @@ public final class Service {
       private int bitField0_;
 
       private java.lang.Object attestor_ = "";
-
       /**
        *
        *
@@ -9363,7 +9174,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9388,7 +9198,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9412,7 +9221,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9432,7 +9240,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9464,7 +9271,6 @@ public final class Service {
               io.grafeas.v1.AttestationOccurrence.Builder,
               io.grafeas.v1.AttestationOccurrenceOrBuilder>
           attestationBuilder_;
-
       /**
        *
        *
@@ -9484,7 +9290,6 @@ public final class Service {
       public boolean hasAttestation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -9510,7 +9315,6 @@ public final class Service {
           return attestationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -9538,7 +9342,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9563,7 +9366,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9596,7 +9398,6 @@ public final class Service {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9621,7 +9422,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9641,7 +9441,6 @@ public final class Service {
         onChanged();
         return getAttestationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -9665,7 +9464,6 @@ public final class Service {
               : attestation_;
         }
       }
-
       /**
        *
        *
@@ -9698,7 +9496,6 @@ public final class Service {
       }
 
       private java.lang.Object occurrenceNote_ = "";
-
       /**
        *
        *
@@ -9722,7 +9519,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9746,7 +9542,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9769,7 +9564,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9788,7 +9582,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9814,7 +9607,6 @@ public final class Service {
       }
 
       private java.lang.Object occurrenceResourceUri_ = "";
-
       /**
        *
        *
@@ -9838,7 +9630,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9862,7 +9653,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9885,7 +9675,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9904,7 +9693,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10020,7 +9808,6 @@ public final class Service {
      * @return The enum numeric value on the wire for result.
      */
     int getResultValue();
-
     /**
      *
      *
@@ -10050,7 +9837,6 @@ public final class Service {
      * @return The denialReason.
      */
     java.lang.String getDenialReason();
-
     /**
      *
      *
@@ -10064,7 +9850,6 @@ public final class Service {
      */
     com.google.protobuf.ByteString getDenialReasonBytes();
   }
-
   /**
    *
    *
@@ -10081,7 +9866,6 @@ public final class Service {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.ValidateAttestationOccurrenceResponse)
       ValidateAttestationOccurrenceResponseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ValidateAttestationOccurrenceResponse.newBuilder() to construct.
     private ValidateAttestationOccurrenceResponse(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -10170,7 +9954,6 @@ public final class Service {
        * <code>RESULT_UNSPECIFIED = 0;</code>
        */
       public static final int RESULT_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -10181,7 +9964,6 @@ public final class Service {
        * <code>VERIFIED = 1;</code>
        */
       public static final int VERIFIED_VALUE = 1;
-
       /**
        *
        *
@@ -10281,7 +10063,6 @@ public final class Service {
 
     public static final int RESULT_FIELD_NUMBER = 1;
     private int result_ = 0;
-
     /**
      *
      *
@@ -10299,7 +10080,6 @@ public final class Service {
     public int getResultValue() {
       return result_;
     }
-
     /**
      *
      *
@@ -10332,7 +10112,6 @@ public final class Service {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object denialReason_ = "";
-
     /**
      *
      *
@@ -10356,7 +10135,6 @@ public final class Service {
         return s;
       }
     }
-
     /**
      *
      *
@@ -10584,7 +10362,6 @@ public final class Service {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -10816,7 +10593,6 @@ public final class Service {
       private int bitField0_;
 
       private int result_ = 0;
-
       /**
        *
        *
@@ -10834,7 +10610,6 @@ public final class Service {
       public int getResultValue() {
         return result_;
       }
-
       /**
        *
        *
@@ -10855,7 +10630,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10883,7 +10657,6 @@ public final class Service {
                 .ValidateAttestationOccurrenceResponse.Result.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -10910,7 +10683,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10932,7 +10704,6 @@ public final class Service {
       }
 
       private java.lang.Object denialReason_ = "";
-
       /**
        *
        *
@@ -10955,7 +10726,6 @@ public final class Service {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10978,7 +10748,6 @@ public final class Service {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11000,7 +10769,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11018,7 +10786,6 @@ public final class Service {
         onChanged();
         return this;
       }
-
       /**
        *
        *

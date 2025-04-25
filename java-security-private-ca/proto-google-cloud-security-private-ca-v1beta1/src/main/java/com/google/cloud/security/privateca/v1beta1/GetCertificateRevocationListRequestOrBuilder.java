@@ -39,7 +39,6 @@ public interface GetCertificateRevocationListRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

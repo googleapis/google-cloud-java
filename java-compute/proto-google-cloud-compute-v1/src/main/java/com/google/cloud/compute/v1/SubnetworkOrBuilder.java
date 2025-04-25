@@ -36,7 +36,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SubnetworkOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SubnetworkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the enableFlowLogs field is set.
    */
   boolean hasEnableFlowLogs();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the externalIpv6Prefix field is set.
    */
   boolean hasExternalIpv6Prefix();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface SubnetworkOrBuilder
    * @return The externalIpv6Prefix.
    */
   java.lang.String getExternalIpv6Prefix();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface SubnetworkOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the gatewayAddress field is set.
    */
   boolean hasGatewayAddress();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface SubnetworkOrBuilder
    * @return The gatewayAddress.
    */
   java.lang.String getGatewayAddress();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -283,7 +271,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the internalIpv6Prefix field is set.
    */
   boolean hasInternalIpv6Prefix();
-
   /**
    *
    *
@@ -296,7 +283,6 @@ public interface SubnetworkOrBuilder
    * @return The internalIpv6Prefix.
    */
   java.lang.String getInternalIpv6Prefix();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public interface SubnetworkOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
-
   /**
    *
    *
@@ -361,7 +345,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the ipCollection field is set.
    */
   boolean hasIpCollection();
-
   /**
    *
    *
@@ -374,7 +357,6 @@ public interface SubnetworkOrBuilder
    * @return The ipCollection.
    */
   java.lang.String getIpCollection();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the ipv6AccessType field is set.
    */
   boolean hasIpv6AccessType();
-
   /**
    *
    *
@@ -415,7 +396,6 @@ public interface SubnetworkOrBuilder
    * @return The ipv6AccessType.
    */
   java.lang.String getIpv6AccessType();
-
   /**
    *
    *
@@ -442,7 +422,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the ipv6CidrRange field is set.
    */
   boolean hasIpv6CidrRange();
-
   /**
    *
    *
@@ -455,7 +434,6 @@ public interface SubnetworkOrBuilder
    * @return The ipv6CidrRange.
    */
   java.lang.String getIpv6CidrRange();
-
   /**
    *
    *
@@ -482,7 +460,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the ipv6GceEndpoint field is set.
    */
   boolean hasIpv6GceEndpoint();
-
   /**
    *
    *
@@ -496,7 +473,6 @@ public interface SubnetworkOrBuilder
    * @return The ipv6GceEndpoint.
    */
   java.lang.String getIpv6GceEndpoint();
-
   /**
    *
    *
@@ -523,7 +499,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -536,7 +511,6 @@ public interface SubnetworkOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -562,7 +536,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the logConfig field is set.
    */
   boolean hasLogConfig();
-
   /**
    *
    *
@@ -575,7 +548,6 @@ public interface SubnetworkOrBuilder
    * @return The logConfig.
    */
   com.google.cloud.compute.v1.SubnetworkLogConfig getLogConfig();
-
   /**
    *
    *
@@ -599,7 +571,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -612,7 +583,6 @@ public interface SubnetworkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -638,7 +608,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -651,7 +620,6 @@ public interface SubnetworkOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -677,7 +645,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the privateIpGoogleAccess field is set.
    */
   boolean hasPrivateIpGoogleAccess();
-
   /**
    *
    *
@@ -704,7 +671,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
-
   /**
    *
    *
@@ -718,7 +684,6 @@ public interface SubnetworkOrBuilder
    * @return The privateIpv6GoogleAccess.
    */
   java.lang.String getPrivateIpv6GoogleAccess();
-
   /**
    *
    *
@@ -737,7 +702,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   *
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PEER_MIGRATION, PRIVATE_SERVICE_CONNECT or PRIVATE_NAT. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to PEER_MIGRATION is used for subnet migration from one peered VPC to another. A subnet with purpose set to PRIVATE_NAT is used for Private NAT IP address by Private NAT Gateway. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -746,12 +711,11 @@ public interface SubnetworkOrBuilder
    * @return Whether the purpose field is set.
    */
   boolean hasPurpose();
-
   /**
    *
    *
    * <pre>
-   *
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PEER_MIGRATION, PRIVATE_SERVICE_CONNECT or PRIVATE_NAT. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to PEER_MIGRATION is used for subnet migration from one peered VPC to another. A subnet with purpose set to PRIVATE_NAT is used for Private NAT IP address by Private NAT Gateway. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -760,12 +724,11 @@ public interface SubnetworkOrBuilder
    * @return The purpose.
    */
   java.lang.String getPurpose();
-
   /**
    *
    *
    * <pre>
-   *
+   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PEER_MIGRATION, PRIVATE_SERVICE_CONNECT or PRIVATE_NAT. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to PEER_MIGRATION is used for subnet migration from one peered VPC to another. A subnet with purpose set to PRIVATE_NAT is used for Private NAT IP address by Private NAT Gateway. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -787,7 +750,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -800,7 +762,6 @@ public interface SubnetworkOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -826,7 +787,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the reservedInternalRange field is set.
    */
   boolean hasReservedInternalRange();
-
   /**
    *
    *
@@ -839,7 +799,6 @@ public interface SubnetworkOrBuilder
    * @return The reservedInternalRange.
    */
   java.lang.String getReservedInternalRange();
-
   /**
    *
    *
@@ -866,7 +825,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the role field is set.
    */
   boolean hasRole();
-
   /**
    *
    *
@@ -880,7 +838,6 @@ public interface SubnetworkOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
-
   /**
    *
    *
@@ -907,7 +864,6 @@ public interface SubnetworkOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.SubnetworkSecondaryRange> getSecondaryIpRangesList();
-
   /**
    *
    *
@@ -920,7 +876,6 @@ public interface SubnetworkOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.SubnetworkSecondaryRange getSecondaryIpRanges(int index);
-
   /**
    *
    *
@@ -933,7 +888,6 @@ public interface SubnetworkOrBuilder
    * </code>
    */
   int getSecondaryIpRangesCount();
-
   /**
    *
    *
@@ -947,7 +901,6 @@ public interface SubnetworkOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SubnetworkSecondaryRangeOrBuilder>
       getSecondaryIpRangesOrBuilderList();
-
   /**
    *
    *
@@ -974,7 +927,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -987,7 +939,6 @@ public interface SubnetworkOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -1014,7 +965,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
-
   /**
    *
    *
@@ -1028,7 +978,6 @@ public interface SubnetworkOrBuilder
    * @return The stackType.
    */
   java.lang.String getStackType();
-
   /**
    *
    *
@@ -1056,7 +1005,6 @@ public interface SubnetworkOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -1070,7 +1018,6 @@ public interface SubnetworkOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *

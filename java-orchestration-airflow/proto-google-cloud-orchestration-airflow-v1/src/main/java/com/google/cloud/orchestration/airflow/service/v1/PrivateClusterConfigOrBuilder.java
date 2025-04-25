@@ -51,7 +51,6 @@ public interface PrivateClusterConfigOrBuilder
    * @return The masterIpv4CidrBlock.
    */
   java.lang.String getMasterIpv4CidrBlock();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface PrivateClusterConfigOrBuilder
    * @return The masterIpv4ReservedRange.
    */
   java.lang.String getMasterIpv4ReservedRange();
-
   /**
    *
    *

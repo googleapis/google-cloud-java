@@ -38,7 +38,6 @@ public interface UpdateToolRequestOrBuilder
    * @return Whether the tool field is set.
    */
   boolean hasTool();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateToolRequestOrBuilder
    * @return The tool.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool getTool();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateToolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateToolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

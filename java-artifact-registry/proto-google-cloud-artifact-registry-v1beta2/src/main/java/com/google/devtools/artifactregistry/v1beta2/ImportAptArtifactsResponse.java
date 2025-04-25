@@ -33,7 +33,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse)
     ImportAptArtifactsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportAptArtifactsResponse.newBuilder() to construct.
   private ImportAptArtifactsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.AptArtifact> aptArtifacts_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       getAptArtifactsList() {
     return aptArtifacts_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       getAptArtifactsOrBuilderList() {
     return aptArtifacts_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
   public int getAptArtifactsCount() {
     return aptArtifacts_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
   public com.google.devtools.artifactregistry.v1beta2.AptArtifact getAptArtifacts(int index) {
     return aptArtifacts_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo>
       errors_;
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -217,7 +207,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -409,7 +398,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -744,7 +732,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return aptArtifactsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return aptArtifactsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return aptArtifactsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +859,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +944,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         int index) {
       return getAptArtifactsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return aptArtifactsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1015,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(aptArtifacts_);
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
           .addBuilder(
               com.google.devtools.artifactregistry.v1beta2.AptArtifact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1075,7 +1047,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1beta2.AptArtifact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1134,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1153,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1178,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1227,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1252,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1275,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1299,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1323,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1344,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1365,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1380,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1441,7 +1399,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1463,7 +1420,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1438,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
               com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1502,7 +1457,6 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
               com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo
                   .getDefaultInstance());
     }
-
     /**
      *
      *

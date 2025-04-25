@@ -33,7 +33,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRegionSslPolicyRequest)
     PatchRegionSslPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchRegionSslPolicyRequest.newBuilder() to construct.
   private PatchRegionSslPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sslPolicy_ = "";
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
 
   public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 274891848;
   private com.google.cloud.compute.v1.SslPolicy sslPolicyResource_;
-
   /**
    *
    *
@@ -324,7 +313,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
   public boolean hasSslPolicyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.SslPolicy.getDefaultInstance()
         : sslPolicyResource_;
   }
-
   /**
    *
    *
@@ -571,7 +558,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -835,7 +821,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -860,7 +845,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -981,7 +961,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1008,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1027,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1053,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1092,7 +1067,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1115,7 +1089,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1111,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1132,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1149,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1173,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object sslPolicy_ = "";
-
     /**
      *
      *
@@ -1226,7 +1195,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1217,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1271,7 +1238,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1255,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1284,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.SslPolicy.Builder,
             com.google.cloud.compute.v1.SslPolicyOrBuilder>
         sslPolicyResourceBuilder_;
-
     /**
      *
      *
@@ -1336,7 +1300,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
     public boolean hasSslPolicyResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1359,7 +1322,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
         return sslPolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1384,7 +1346,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1368,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1397,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1418,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1434,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return getSslPolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1497,7 +1454,6 @@ public final class PatchRegionSslPolicyRequest extends com.google.protobuf.Gener
             : sslPolicyResource_;
       }
     }
-
     /**
      *
      *

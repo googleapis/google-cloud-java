@@ -35,7 +35,6 @@ public interface SearchAllIamPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1.IamPolicySearchResult results = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1.IamPolicySearchResult> getResultsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SearchAllIamPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1.IamPolicySearchResult results = 1;</code>
    */
   com.google.cloud.asset.v1.IamPolicySearchResult getResults(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SearchAllIamPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1.IamPolicySearchResult results = 1;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SearchAllIamPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.IamPolicySearchResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface SearchAllIamPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

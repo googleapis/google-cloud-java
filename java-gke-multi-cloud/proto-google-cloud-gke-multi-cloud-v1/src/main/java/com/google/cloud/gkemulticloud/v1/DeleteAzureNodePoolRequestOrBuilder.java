@@ -45,7 +45,6 @@ public interface DeleteAzureNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -119,7 +118,6 @@ public interface DeleteAzureNodePoolRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

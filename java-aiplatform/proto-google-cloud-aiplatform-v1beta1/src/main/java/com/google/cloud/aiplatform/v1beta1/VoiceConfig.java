@@ -33,7 +33,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.VoiceConfig)
     VoiceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VoiceConfig.newBuilder() to construct.
   private VoiceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
     private VoiceConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREBUILT_VOICE_CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrebuiltVoiceConfig() {
     return voiceConfigCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -339,7 +334,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -559,7 +553,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfigOrBuilder>
         prebuiltVoiceConfigBuilder_;
-
     /**
      *
      *
@@ -575,7 +568,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrebuiltVoiceConfig() {
       return voiceConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       voiceConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       voiceConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       voiceConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
         getPrebuiltVoiceConfigBuilder() {
       return getPrebuiltVoiceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

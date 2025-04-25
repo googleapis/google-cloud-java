@@ -34,7 +34,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.policytroubleshooter.iam.v3.TroubleshootIamPolicyRequest)
     TroubleshootIamPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TroubleshootIamPolicyRequest.newBuilder() to construct.
   private TroubleshootIamPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int ACCESS_TUPLE_FIELD_NUMBER = 1;
   private com.google.cloud.policytroubleshooter.iam.v3.AccessTuple accessTuple_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
   public boolean hasAccessTuple() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.policytroubleshooter.iam.v3.AccessTuple.getDefaultInstance()
         : accessTuple_;
   }
-
   /**
    *
    *
@@ -289,7 +285,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -506,7 +501,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.policytroubleshooter.iam.v3.AccessTuple.Builder,
             com.google.cloud.policytroubleshooter.iam.v3.AccessTupleOrBuilder>
         accessTupleBuilder_;
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
     public boolean hasAccessTuple() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -544,7 +537,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
         return accessTupleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -568,7 +560,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -590,7 +581,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +647,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return getAccessTupleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -680,7 +667,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
             : accessTuple_;
       }
     }
-
     /**
      *
      *

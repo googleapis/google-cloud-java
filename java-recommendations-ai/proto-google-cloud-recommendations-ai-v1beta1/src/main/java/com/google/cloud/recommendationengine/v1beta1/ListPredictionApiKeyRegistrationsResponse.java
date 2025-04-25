@@ -35,7 +35,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse)
     ListPredictionApiKeyRegistrationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListPredictionApiKeyRegistrationsResponse.newBuilder() to construct.
   private ListPredictionApiKeyRegistrationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>
       predictionApiKeyRegistrations_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       getPredictionApiKeyRegistrationsList() {
     return predictionApiKeyRegistrations_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       getPredictionApiKeyRegistrationsOrBuilderList() {
     return predictionApiKeyRegistrations_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
   public int getPredictionApiKeyRegistrationsCount() {
     return predictionApiKeyRegistrations_.size();
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       getPredictionApiKeyRegistrations(int index) {
     return predictionApiKeyRegistrations_.get(index);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -413,7 +405,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -725,7 +716,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return predictionApiKeyRegistrationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -744,7 +734,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return predictionApiKeyRegistrationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -764,7 +753,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return predictionApiKeyRegistrationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -791,7 +779,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +803,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +828,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +854,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +901,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +927,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +948,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +969,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         getPredictionApiKeyRegistrationsBuilder(int index) {
       return getPredictionApiKeyRegistrationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1025,7 +1003,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return predictionApiKeyRegistrationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1024,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return java.util.Collections.unmodifiableList(predictionApiKeyRegistrations_);
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1042,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
               com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
               com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1150,7 +1123,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1146,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1186,6 @@ public final class ListPredictionApiKeyRegistrationsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

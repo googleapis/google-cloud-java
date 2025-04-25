@@ -34,7 +34,6 @@ public interface ListParticipantsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Participant participants = 1;</code>
    */
   java.util.List<com.google.apps.meet.v2.Participant> getParticipantsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListParticipantsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Participant participants = 1;</code>
    */
   com.google.apps.meet.v2.Participant getParticipants(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListParticipantsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Participant participants = 1;</code>
    */
   int getParticipantsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListParticipantsResponseOrBuilder
    */
   java.util.List<? extends com.google.apps.meet.v2.ParticipantOrBuilder>
       getParticipantsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListParticipantsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    * @return Whether the natName field is set.
    */
   boolean hasNatName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    * @return The natName.
    */
   java.lang.String getNatName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
-
   /**
    *
    *

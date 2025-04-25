@@ -36,7 +36,6 @@ public interface PhysicalSchemaOrBuilder
    * @return Whether the avro field is set.
    */
   boolean hasAvro();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PhysicalSchemaOrBuilder
    * @return The avro.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema getAvro();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface PhysicalSchemaOrBuilder
    * @return Whether the thrift field is set.
    */
   boolean hasThrift();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface PhysicalSchemaOrBuilder
    * @return The thrift.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema getThrift();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface PhysicalSchemaOrBuilder
    * @return Whether the protobuf field is set.
    */
   boolean hasProtobuf();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface PhysicalSchemaOrBuilder
    * @return The protobuf.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema getProtobuf();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface PhysicalSchemaOrBuilder
    * @return Whether the parquet field is set.
    */
   boolean hasParquet();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface PhysicalSchemaOrBuilder
    * @return The parquet.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema getParquet();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface PhysicalSchemaOrBuilder
    * @return Whether the orc field is set.
    */
   boolean hasOrc();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface PhysicalSchemaOrBuilder
    * @return The orc.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema getOrc();
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public interface PhysicalSchemaOrBuilder
    * @return Whether the csv field is set.
    */
   boolean hasCsv();
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public interface PhysicalSchemaOrBuilder
    * @return The csv.
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema getCsv();
-
   /**
    *
    *

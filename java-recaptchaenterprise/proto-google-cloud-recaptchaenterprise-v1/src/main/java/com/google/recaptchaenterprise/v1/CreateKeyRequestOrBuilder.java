@@ -39,7 +39,6 @@ public interface CreateKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateKeyRequestOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateKeyRequestOrBuilder
    * @return The key.
    */
   com.google.recaptchaenterprise.v1.Key getKey();
-
   /**
    *
    *

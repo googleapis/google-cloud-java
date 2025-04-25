@@ -33,7 +33,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchAssetsResponse)
     SearchAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchAssetsResponse.newBuilder() to construct.
   private SearchAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.SearchResultItem> searchResultItems_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.visionai.v1.SearchResultItem> getSearchResultItemsList() {
     return searchResultItems_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       getSearchResultItemsOrBuilderList() {
     return searchResultItems_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
   public int getSearchResultItemsCount() {
     return searchResultItems_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.visionai.v1.SearchResultItem getSearchResultItems(int index) {
     return searchResultItems_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.FacetGroup> facetResults_;
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.visionai.v1.FacetGroup> getFacetResultsList() {
     return facetResults_;
   }
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       getFacetResultsOrBuilderList() {
     return facetResults_;
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
   public int getFacetResultsCount() {
     return facetResults_.size();
   }
-
   /**
    *
    *
@@ -261,7 +249,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.visionai.v1.FacetGroup getFacetResults(int index) {
     return facetResults_.get(index);
   }
-
   /**
    *
    *
@@ -459,7 +446,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -795,7 +781,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return searchResultItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return searchResultItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return searchResultItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +878,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +980,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +999,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getSearchResultItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1056,7 +1029,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return searchResultItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1046,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(searchResultItems_);
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1059,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       return getSearchResultItemsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.SearchResultItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       return getSearchResultItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.SearchResultItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1139,7 +1108,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1162,7 +1130,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1152,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1173,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1190,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1247,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return facetResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1264,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return facetResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1281,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return facetResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1304,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1325,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1348,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1371,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1392,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1457,7 +1413,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1434,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1454,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1474,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1487,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.visionai.v1.FacetGroup.Builder getFacetResultsBuilder(int index) {
       return getFacetResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1553,7 +1504,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return facetResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1572,7 +1522,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(facetResults_);
       }
     }
-
     /**
      *
      *
@@ -1587,7 +1536,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       return getFacetResultsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.FacetGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1602,7 +1550,6 @@ public final class SearchAssetsResponse extends com.google.protobuf.GeneratedMes
       return getFacetResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.FacetGroup.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface BackupOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface BackupOrBuilder
    * @return The clusterUid.
    */
   java.lang.String getClusterUid();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface BackupOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface BackupOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface BackupOrBuilder
    * @return The engineVersion.
    */
   java.lang.String getEngineVersion();
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public interface BackupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1beta1.BackupFile> getBackupFilesList();
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1beta1.BackupFile getBackupFiles(int index);
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface BackupOrBuilder
    * </code>
    */
   int getBackupFilesCount();
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public interface BackupOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.BackupFileOrBuilder>
       getBackupFilesOrBuilderList();
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for nodeType.
    */
   int getNodeTypeValue();
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for backupType.
    */
   int getBackupTypeValue();
-
   /**
    *
    *
@@ -401,7 +387,6 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -431,7 +416,6 @@ public interface BackupOrBuilder
    * @return Whether the encryptionInfo field is set.
    */
   boolean hasEncryptionInfo();
-
   /**
    *
    *
@@ -446,7 +430,6 @@ public interface BackupOrBuilder
    * @return The encryptionInfo.
    */
   com.google.cloud.redis.cluster.v1beta1.EncryptionInfo getEncryptionInfo();
-
   /**
    *
    *
@@ -474,7 +457,6 @@ public interface BackupOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *

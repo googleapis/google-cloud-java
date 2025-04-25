@@ -34,7 +34,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.User users = 1;</code>
    */
   java.util.List<com.google.cloud.alloydb.v1alpha.User> getUsersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.User users = 1;</code>
    */
   com.google.cloud.alloydb.v1alpha.User getUsers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.User users = 1;</code>
    */
   int getUsersCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1alpha.User users = 1;</code>
    */
   java.util.List<? extends com.google.cloud.alloydb.v1alpha.UserOrBuilder> getUsersOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListUsersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface ListUsersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface ListUsersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface ListUsersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

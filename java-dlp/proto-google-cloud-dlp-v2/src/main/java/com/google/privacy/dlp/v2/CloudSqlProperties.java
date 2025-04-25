@@ -33,7 +33,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudSqlProperties)
     CloudSqlPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudSqlProperties.newBuilder() to construct.
   private CloudSqlProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <code>DATABASE_ENGINE_UNKNOWN = 0;</code>
      */
     public static final int DATABASE_ENGINE_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <code>DATABASE_ENGINE_MYSQL = 1;</code>
      */
     public static final int DATABASE_ENGINE_MYSQL_VALUE = 1;
-
     /**
      *
      *
@@ -242,7 +239,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     private CredentialCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -279,7 +275,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionName_ = "";
-
   /**
    *
    *
@@ -314,7 +309,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +345,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int USERNAME_PASSWORD_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -367,7 +360,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   public boolean hasUsernamePassword() {
     return credentialCase_ == 2;
   }
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
     return com.google.privacy.dlp.v2.SecretManagerCredential.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -405,7 +396,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CLOUD_SQL_IAM_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -421,7 +411,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   public boolean hasCloudSqlIam() {
     return credentialCase_ == 3;
   }
-
   /**
    *
    *
@@ -440,7 +429,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
     return com.google.privacy.dlp.v2.CloudSqlIamCredential.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -460,7 +448,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_CONNECTIONS_FIELD_NUMBER = 4;
   private int maxConnections_ = 0;
-
   /**
    *
    *
@@ -480,7 +467,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
 
   public static final int DATABASE_ENGINE_FIELD_NUMBER = 7;
   private int databaseEngine_ = 0;
-
   /**
    *
    *
@@ -499,7 +485,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   public int getDatabaseEngineValue() {
     return databaseEngine_;
   }
-
   /**
    *
    *
@@ -743,7 +728,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1016,7 +1000,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object connectionName_ = "";
-
     /**
      *
      *
@@ -1050,7 +1033,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1066,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1098,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1126,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1165,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.SecretManagerCredential.Builder,
             com.google.privacy.dlp.v2.SecretManagerCredentialOrBuilder>
         usernamePasswordBuilder_;
-
     /**
      *
      *
@@ -1202,7 +1180,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public boolean hasUsernamePassword() {
       return credentialCase_ == 2;
     }
-
     /**
      *
      *
@@ -1228,7 +1205,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return com.google.privacy.dlp.v2.SecretManagerCredential.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1227,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       credentialCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1247,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       credentialCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1280,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       credentialCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1305,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1317,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public com.google.privacy.dlp.v2.SecretManagerCredential.Builder getUsernamePasswordBuilder() {
       return getUsernamePasswordFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1367,7 +1338,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return com.google.privacy.dlp.v2.SecretManagerCredential.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1376,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.CloudSqlIamCredential.Builder,
             com.google.privacy.dlp.v2.CloudSqlIamCredentialOrBuilder>
         cloudSqlIamBuilder_;
-
     /**
      *
      *
@@ -1422,7 +1391,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public boolean hasCloudSqlIam() {
       return credentialCase_ == 3;
     }
-
     /**
      *
      *
@@ -1448,7 +1416,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return com.google.privacy.dlp.v2.CloudSqlIamCredential.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1438,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       credentialCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1458,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       credentialCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1491,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       credentialCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1516,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1528,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public com.google.privacy.dlp.v2.CloudSqlIamCredential.Builder getCloudSqlIamBuilder() {
       return getCloudSqlIamFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1586,7 +1548,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         return com.google.privacy.dlp.v2.CloudSqlIamCredential.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1621,7 +1582,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private int maxConnections_;
-
     /**
      *
      *
@@ -1638,7 +1598,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public int getMaxConnections() {
       return maxConnections_;
     }
-
     /**
      *
      *
@@ -1659,7 +1618,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1638,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private int databaseEngine_ = 0;
-
     /**
      *
      *
@@ -1699,7 +1656,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     public int getDatabaseEngineValue() {
       return databaseEngine_;
     }
-
     /**
      *
      *
@@ -1721,7 +1677,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1744,7 +1699,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
           ? com.google.privacy.dlp.v2.CloudSqlProperties.DatabaseEngine.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1770,7 +1724,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

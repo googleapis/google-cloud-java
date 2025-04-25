@@ -33,7 +33,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.CreateCertificateRequest)
     CreateCertificateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCertificateRequest.newBuilder() to construct.
   private CreateCertificateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificateId_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
 
   public static final int CERTIFICATE_FIELD_NUMBER = 3;
   private com.google.cloud.security.privateca.v1beta1.Certificate certificate_;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
   public boolean hasCertificate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         ? com.google.cloud.security.privateca.v1beta1.Certificate.getDefaultInstance()
         : certificate_;
   }
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -517,7 +507,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -769,7 +758,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -796,7 +784,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -823,7 +810,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -849,7 +835,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +856,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +884,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object certificateId_ = "";
-
     /**
      *
      *
@@ -926,7 +909,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -952,7 +934,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +978,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1010,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
             com.google.cloud.security.privateca.v1beta1.Certificate.Builder,
             com.google.cloud.security.privateca.v1beta1.CertificateOrBuilder>
         certificateBuilder_;
-
     /**
      *
      *
@@ -1048,7 +1026,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     public boolean hasCertificate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1071,7 +1048,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return certificateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1072,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1094,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1124,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1145,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1161,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return getCertificateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1211,7 +1182,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
             : certificate_;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1211,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1276,7 +1245,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1311,7 +1279,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1341,6 @@ public final class CreateCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

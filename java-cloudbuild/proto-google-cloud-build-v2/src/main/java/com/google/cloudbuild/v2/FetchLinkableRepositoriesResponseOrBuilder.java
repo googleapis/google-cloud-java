@@ -34,7 +34,6 @@ public interface FetchLinkableRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Repository repositories = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v2.Repository> getRepositoriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FetchLinkableRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Repository repositories = 1;</code>
    */
   com.google.cloudbuild.v2.Repository getRepositories(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FetchLinkableRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v2.Repository repositories = 1;</code>
    */
   int getRepositoriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FetchLinkableRepositoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v2.RepositoryOrBuilder>
       getRepositoriesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface FetchLinkableRepositoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.LoadBalancerBackend)
     LoadBalancerBackendOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoadBalancerBackend.newBuilder() to construct.
   private LoadBalancerBackend(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      * <code>HEALTH_CHECK_FIREWALL_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int HEALTH_CHECK_FIREWALL_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      * <code>CONFIGURED = 1;</code>
      */
     public static final int CONFIGURED_VALUE = 1;
-
     /**
      *
      *
@@ -247,7 +244,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -271,7 +267,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -300,7 +295,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +344,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
 
   public static final int HEALTH_CHECK_FIREWALL_STATE_FIELD_NUMBER = 3;
   private int healthCheckFirewallState_ = 0;
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public int getHealthCheckFirewallStateValue() {
     return healthCheckFirewallState_;
   }
-
   /**
    *
    *
@@ -400,7 +391,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList healthCheckAllowingFirewallRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -415,7 +405,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getHealthCheckAllowingFirewallRulesList() {
     return healthCheckAllowingFirewallRules_;
   }
-
   /**
    *
    *
@@ -430,7 +419,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public int getHealthCheckAllowingFirewallRulesCount() {
     return healthCheckAllowingFirewallRules_.size();
   }
-
   /**
    *
    *
@@ -446,7 +434,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public java.lang.String getHealthCheckAllowingFirewallRules(int index) {
     return healthCheckAllowingFirewallRules_.get(index);
   }
-
   /**
    *
    *
@@ -468,7 +455,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList healthCheckBlockingFirewallRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -483,7 +469,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getHealthCheckBlockingFirewallRulesList() {
     return healthCheckBlockingFirewallRules_;
   }
-
   /**
    *
    *
@@ -498,7 +483,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public int getHealthCheckBlockingFirewallRulesCount() {
     return healthCheckBlockingFirewallRules_.size();
   }
-
   /**
    *
    *
@@ -514,7 +498,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public java.lang.String getHealthCheckBlockingFirewallRules(int index) {
     return healthCheckBlockingFirewallRules_.get(index);
   }
-
   /**
    *
    *
@@ -751,7 +734,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1011,7 +993,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1034,7 +1015,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1037,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1058,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1075,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1099,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -1145,7 +1121,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1164,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1181,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1205,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     }
 
     private int healthCheckFirewallState_ = 0;
-
     /**
      *
      *
@@ -1251,7 +1222,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public int getHealthCheckFirewallStateValue() {
       return healthCheckFirewallState_;
     }
-
     /**
      *
      *
@@ -1272,7 +1242,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1267,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1324,7 +1292,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1322,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1371,7 +1337,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       healthCheckAllowingFirewallRules_.makeImmutable();
       return healthCheckAllowingFirewallRules_;
     }
-
     /**
      *
      *
@@ -1386,7 +1351,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public int getHealthCheckAllowingFirewallRulesCount() {
       return healthCheckAllowingFirewallRules_.size();
     }
-
     /**
      *
      *
@@ -1402,7 +1366,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public java.lang.String getHealthCheckAllowingFirewallRules(int index) {
       return healthCheckAllowingFirewallRules_.get(index);
     }
-
     /**
      *
      *
@@ -1418,7 +1381,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getHealthCheckAllowingFirewallRulesBytes(int index) {
       return healthCheckAllowingFirewallRules_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1442,7 +1404,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1426,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1447,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1465,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1541,7 +1499,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1557,7 +1514,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       healthCheckBlockingFirewallRules_.makeImmutable();
       return healthCheckBlockingFirewallRules_;
     }
-
     /**
      *
      *
@@ -1572,7 +1528,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public int getHealthCheckBlockingFirewallRulesCount() {
       return healthCheckBlockingFirewallRules_.size();
     }
-
     /**
      *
      *
@@ -1588,7 +1543,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public java.lang.String getHealthCheckBlockingFirewallRules(int index) {
       return healthCheckBlockingFirewallRules_.get(index);
     }
-
     /**
      *
      *
@@ -1604,7 +1558,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getHealthCheckBlockingFirewallRulesBytes(int index) {
       return healthCheckBlockingFirewallRules_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1628,7 +1581,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1603,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1624,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1642,6 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

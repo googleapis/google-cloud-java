@@ -32,7 +32,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DistributionPolicy)
     DistributionPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DistributionPolicy.newBuilder() to construct.
   private DistributionPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,7 +136,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
      */
     public static final int UNDEFINED_TARGET_SHAPE_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>ANY = 64972;</code>
      */
     public static final int ANY_VALUE = 64972;
-
     /**
      *
      *
@@ -159,7 +156,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>ANY_SINGLE_ZONE = 61100880;</code>
      */
     public static final int ANY_SINGLE_ZONE_VALUE = 61100880;
-
     /**
      *
      *
@@ -170,7 +166,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>BALANCED = 468409608;</code>
      */
     public static final int BALANCED_VALUE = 468409608;
-
     /**
      *
      *
@@ -274,7 +269,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetShape_ = "";
-
   /**
    *
    *
@@ -291,7 +285,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasTargetShape() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +309,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration> zones_;
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       getZonesList() {
     return zones_;
   }
-
   /**
    *
    *
@@ -379,7 +369,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       getZonesOrBuilderList() {
     return zones_;
   }
-
   /**
    *
    *
@@ -394,7 +383,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   public int getZonesCount() {
     return zones_.size();
   }
-
   /**
    *
    *
@@ -409,7 +397,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration getZones(int index) {
     return zones_.get(index);
   }
-
   /**
    *
    *
@@ -601,7 +588,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -848,7 +834,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object targetShape_ = "";
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasTargetShape() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +895,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +996,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return zonesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1014,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return zonesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1032,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return zonesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1057,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1104,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1129,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1151,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1174,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1198,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1219,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1240,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1255,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         int index) {
       return getZonesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1307,7 +1274,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return zonesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1294,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(zones_);
       }
     }
-
     /**
      *
      *
@@ -1346,7 +1311,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1365,7 +1329,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.getDefaultInstance());
     }
-
     /**
      *
      *

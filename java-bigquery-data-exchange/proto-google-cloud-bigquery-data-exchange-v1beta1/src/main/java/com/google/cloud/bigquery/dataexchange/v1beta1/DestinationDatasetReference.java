@@ -33,7 +33,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.dataexchange.v1beta1.DestinationDatasetReference)
     DestinationDatasetReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DestinationDatasetReference.newBuilder() to construct.
   private DestinationDatasetReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datasetId_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +347,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +557,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object datasetId_ = "";
-
     /**
      *
      *
@@ -588,7 +581,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -613,7 +605,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +628,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class RoleStatusEnum extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.RoleStatusEnum)
     RoleStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoleStatusEnum.newBuilder() to construct.
   private RoleStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,7 +115,6 @@ public final class RoleStatusEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>ROLE_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -127,7 +125,6 @@ public final class RoleStatusEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -372,7 +369,6 @@ public final class RoleStatusEnum extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

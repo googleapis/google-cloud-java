@@ -34,7 +34,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest)
     SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetSslCertificatesRegionTargetHttpsProxyRequest.newBuilder() to construct.
   private SetSslCertificatesRegionTargetHttpsProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       REGION_TARGET_HTTPS_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER = 390693383;
   private com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest
       regionTargetHttpsProxiesSetSslCertificatesRequestResource_;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
   public boolean hasRegionTargetHttpsProxiesSetSslCertificatesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
             .getDefaultInstance()
         : regionTargetHttpsProxiesSetSslCertificatesRequestResource_;
   }
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -294,7 +284,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -323,7 +312,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
-
   /**
    *
    *
@@ -347,7 +335,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -594,7 +581,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -872,7 +858,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -897,7 +882,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +906,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -946,7 +929,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +974,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1018,7 +998,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1022,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1045,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1064,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1096,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
             com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest.Builder,
             com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder>
         regionTargetHttpsProxiesSetSslCertificatesRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     public boolean hasRegionTargetHttpsProxiesSetSslCertificatesRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1162,7 +1136,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return regionTargetHttpsProxiesSetSslCertificatesRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1161,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1185,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1246,7 +1217,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1238,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1256,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return getRegionTargetHttpsProxiesSetSslCertificatesRequestResourceFieldBuilder()
           .getBuilder();
     }
-
     /**
      *
      *
@@ -1311,7 +1279,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
             : regionTargetHttpsProxiesSetSslCertificatesRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1360,7 +1326,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1383,7 +1348,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1370,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1391,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1408,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1432,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
-
     /**
      *
      *
@@ -1494,7 +1454,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1476,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1539,7 +1497,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1557,7 +1514,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

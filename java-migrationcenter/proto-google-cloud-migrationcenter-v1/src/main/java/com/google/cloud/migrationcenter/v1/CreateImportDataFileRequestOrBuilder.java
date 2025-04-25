@@ -38,7 +38,6 @@ public interface CreateImportDataFileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateImportDataFileRequestOrBuilder
    * @return The importDataFileId.
    */
   java.lang.String getImportDataFileId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateImportDataFileRequestOrBuilder
    * @return Whether the importDataFile field is set.
    */
   boolean hasImportDataFile();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateImportDataFileRequestOrBuilder
    * @return The importDataFile.
    */
   com.google.cloud.migrationcenter.v1.ImportDataFile getImportDataFile();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateImportDataFileRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

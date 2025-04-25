@@ -34,7 +34,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest)
     UpdateShieldedInstanceConfigInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateShieldedInstanceConfigInstanceRequest.newBuilder() to construct.
   private UpdateShieldedInstanceConfigInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   public static final int SHIELDED_INSTANCE_CONFIG_RESOURCE_FIELD_NUMBER = 272059224;
   private com.google.cloud.compute.v1.ShieldedInstanceConfig shieldedInstanceConfigResource_;
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
   public boolean hasShieldedInstanceConfigResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -289,7 +279,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         ? com.google.cloud.compute.v1.ShieldedInstanceConfig.getDefaultInstance()
         : shieldedInstanceConfigResource_;
   }
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -577,7 +564,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -852,7 +838,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -898,7 +882,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +903,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +920,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +944,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -988,7 +968,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1013,7 +992,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1015,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1099,7 +1074,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1122,7 +1096,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1156,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
             com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder,
             com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigResourceBuilder_;
-
     /**
      *
      *
@@ -1232,7 +1201,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     public boolean hasShieldedInstanceConfigResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1255,7 +1223,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return shieldedInstanceConfigResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1281,7 +1248,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1270,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1301,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1322,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1339,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return getShieldedInstanceConfigResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1398,7 +1360,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
             : shieldedInstanceConfigResource_;
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1389,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1453,7 +1413,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1478,7 +1437,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1502,7 +1460,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1479,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface InstanceSettingsOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceSettingsOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InstanceSettingsOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InstanceSettingsOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface InstanceSettingsOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface InstanceSettingsOrBuilder
    * @return The metadata.
    */
   com.google.cloud.compute.v1.InstanceSettingsMetadata getMetadata();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface InstanceSettingsOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface InstanceSettingsOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

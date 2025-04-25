@@ -34,7 +34,6 @@ public final class PatchRegionHealthCheckServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest)
     PatchRegionHealthCheckServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchRegionHealthCheckServiceRequest.newBuilder() to construct.
   private PatchRegionHealthCheckServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class PatchRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheckService_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class PatchRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class PatchRegionHealthCheckServiceRequest
 
   public static final int HEALTH_CHECK_SERVICE_RESOURCE_FIELD_NUMBER = 477367794;
   private com.google.cloud.compute.v1.HealthCheckService healthCheckServiceResource_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class PatchRegionHealthCheckServiceRequest
   public boolean hasHealthCheckServiceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class PatchRegionHealthCheckServiceRequest
         ? com.google.cloud.compute.v1.HealthCheckService.getDefaultInstance()
         : healthCheckServiceResource_;
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class PatchRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class PatchRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class PatchRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public final class PatchRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public final class PatchRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -317,7 +306,6 @@ public final class PatchRegionHealthCheckServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public final class PatchRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -576,7 +563,6 @@ public final class PatchRegionHealthCheckServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -844,7 +830,6 @@ public final class PatchRegionHealthCheckServiceRequest
     private int bitField0_;
 
     private java.lang.Object healthCheckService_ = "";
-
     /**
      *
      *
@@ -868,7 +853,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +876,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +916,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +946,6 @@ public final class PatchRegionHealthCheckServiceRequest
             com.google.cloud.compute.v1.HealthCheckService.Builder,
             com.google.cloud.compute.v1.HealthCheckServiceOrBuilder>
         healthCheckServiceResourceBuilder_;
-
     /**
      *
      *
@@ -982,7 +962,6 @@ public final class PatchRegionHealthCheckServiceRequest
     public boolean hasHealthCheckServiceResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return healthCheckServiceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1009,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1031,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class PatchRegionHealthCheckServiceRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return getHealthCheckServiceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1148,7 +1121,6 @@ public final class PatchRegionHealthCheckServiceRequest
             : healthCheckServiceResource_;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1150,6 @@ public final class PatchRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1203,7 +1174,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1221,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1240,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1266,6 @@ public final class PatchRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1324,7 +1290,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1314,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1373,7 +1337,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1356,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1420,7 +1382,6 @@ public final class PatchRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1435,7 +1396,6 @@ public final class PatchRegionHealthCheckServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1458,7 +1418,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1440,6 @@ public final class PatchRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1503,7 +1461,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1478,6 @@ public final class PatchRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

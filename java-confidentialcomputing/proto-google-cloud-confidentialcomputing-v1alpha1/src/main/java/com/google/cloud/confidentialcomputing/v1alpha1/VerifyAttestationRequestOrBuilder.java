@@ -40,7 +40,6 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The challenge.
    */
   java.lang.String getChallenge();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the gcpCredentials field is set.
    */
   boolean hasGcpCredentials();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The gcpCredentials.
    */
   com.google.cloud.confidentialcomputing.v1alpha1.GcpCredentials getGcpCredentials();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface VerifyAttestationRequestOrBuilder
    * @return Whether the tpmAttestation field is set.
    */
   boolean hasTpmAttestation();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface VerifyAttestationRequestOrBuilder
    * @return The tpmAttestation.
    */
   com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation getTpmAttestation();
-
   /**
    *
    *

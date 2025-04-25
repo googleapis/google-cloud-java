@@ -232,8 +232,7 @@ public class TransferConfigName implements ResourceName {
     private Builder(TransferConfigName transferConfigName) {
       Preconditions.checkArgument(
           Objects.equals(transferConfigName.pathTemplate, PROJECT_TRANSFER_CONFIG),
-          "toBuilder is only supported when TransferConfigName has the pattern of"
-              + " projects/{project}/transferConfigs/{transfer_config}");
+          "toBuilder is only supported when TransferConfigName has the pattern of projects/{project}/transferConfigs/{transfer_config}");
       this.project = transferConfigName.project;
       this.transferConfig = transferConfigName.transferConfig;
     }

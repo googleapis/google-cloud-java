@@ -35,7 +35,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ListDependenciesResponse)
     ListDependenciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDependenciesResponse.newBuilder() to construct.
   private ListDependenciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.Dependency> dependencies_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.apihub.v1.Dependency> getDependenciesList() {
     return dependencies_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       getDependenciesOrBuilderList() {
     return dependencies_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
   public int getDependenciesCount() {
     return dependencies_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
   public com.google.cloud.apihub.v1.Dependency getDependencies(int index) {
     return dependencies_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -654,7 +645,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return dependenciesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return dependenciesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return dependenciesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
     public com.google.cloud.apihub.v1.Dependency.Builder getDependenciesBuilder(int index) {
       return getDependenciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -923,7 +901,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return dependenciesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -942,7 +919,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(dependencies_);
       }
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       return getDependenciesFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.Dependency.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -972,7 +947,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       return getDependenciesFieldBuilder()
           .addBuilder(index, com.google.cloud.apihub.v1.Dependency.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1030,7 +1003,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1048,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class ListDependenciesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

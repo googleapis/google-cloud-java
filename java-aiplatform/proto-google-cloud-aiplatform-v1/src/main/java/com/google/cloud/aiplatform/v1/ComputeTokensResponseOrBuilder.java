@@ -36,7 +36,6 @@ public interface ComputeTokensResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TokensInfo tokens_info = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TokensInfo> getTokensInfoList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ComputeTokensResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TokensInfo tokens_info = 1;</code>
    */
   com.google.cloud.aiplatform.v1.TokensInfo getTokensInfo(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ComputeTokensResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TokensInfo tokens_info = 1;</code>
    */
   int getTokensInfoCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ComputeTokensResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TokensInfoOrBuilder>
       getTokensInfoOrBuilderList();
-
   /**
    *
    *

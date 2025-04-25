@@ -39,7 +39,6 @@ public interface CreateAgentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateAgentRequestOrBuilder
    * @return Whether the agent field is set.
    */
   boolean hasAgent();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateAgentRequestOrBuilder
    * @return The agent.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent getAgent();
-
   /**
    *
    *

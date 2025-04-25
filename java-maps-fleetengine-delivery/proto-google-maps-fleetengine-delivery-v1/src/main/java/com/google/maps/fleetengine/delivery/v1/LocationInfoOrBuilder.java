@@ -36,7 +36,6 @@ public interface LocationInfoOrBuilder
    * @return Whether the point field is set.
    */
   boolean hasPoint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LocationInfoOrBuilder
    * @return The point.
    */
   com.google.type.LatLng getPoint();
-
   /**
    *
    *

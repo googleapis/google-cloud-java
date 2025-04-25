@@ -37,7 +37,6 @@ public interface NetworkSettingsOrBuilder
    * @return The enum numeric value on the wire for ingressTrafficAllowed.
    */
   int getIngressTrafficAllowedValue();
-
   /**
    *
    *

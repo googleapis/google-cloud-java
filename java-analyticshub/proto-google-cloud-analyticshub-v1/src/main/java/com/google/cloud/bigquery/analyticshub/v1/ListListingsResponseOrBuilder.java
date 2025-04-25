@@ -34,7 +34,6 @@ public interface ListListingsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.analyticshub.v1.Listing listings = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.analyticshub.v1.Listing> getListingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListListingsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.analyticshub.v1.Listing listings = 1;</code>
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing getListings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListListingsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.analyticshub.v1.Listing listings = 1;</code>
    */
   int getListingsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListListingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.analyticshub.v1.ListingOrBuilder>
       getListingsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListListingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

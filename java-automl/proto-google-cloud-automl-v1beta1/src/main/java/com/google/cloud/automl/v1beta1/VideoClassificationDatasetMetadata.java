@@ -34,7 +34,6 @@ public final class VideoClassificationDatasetMetadata extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
     VideoClassificationDatasetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoClassificationDatasetMetadata.newBuilder() to construct.
   private VideoClassificationDatasetMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,7 +215,6 @@ public final class VideoClassificationDatasetMetadata extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

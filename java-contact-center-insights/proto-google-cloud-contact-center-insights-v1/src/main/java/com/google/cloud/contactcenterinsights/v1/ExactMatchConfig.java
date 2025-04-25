@@ -33,7 +33,6 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ExactMatchConfig)
     ExactMatchConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExactMatchConfig.newBuilder() to construct.
   private ExactMatchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CASE_SENSITIVE_FIELD_NUMBER = 1;
   private boolean caseSensitive_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -424,7 +421,6 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean caseSensitive_;
-
     /**
      *
      *
@@ -440,7 +436,6 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
     public boolean getCaseSensitive() {
       return caseSensitive_;
     }
-
     /**
      *
      *
@@ -460,7 +455,6 @@ public final class ExactMatchConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

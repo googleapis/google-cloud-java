@@ -37,7 +37,6 @@ public interface ListNotebookRuntimeTemplatesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
       getNotebookRuntimeTemplatesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListNotebookRuntimeTemplatesResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate getNotebookRuntimeTemplates(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListNotebookRuntimeTemplatesResponseOrBuilder
    * </code>
    */
   int getNotebookRuntimeTemplatesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListNotebookRuntimeTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.NotebookRuntimeTemplateOrBuilder>
       getNotebookRuntimeTemplatesOrBuilderList();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface ListNotebookRuntimeTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

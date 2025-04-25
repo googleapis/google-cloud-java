@@ -38,7 +38,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface DestinationConfigOrBuilder
    * @return The destinationConnectionProfile.
    */
   java.lang.String getDestinationConnectionProfile();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DestinationConfigOrBuilder
    * @return Whether the gcsDestinationConfig field is set.
    */
   boolean hasGcsDestinationConfig();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DestinationConfigOrBuilder
    * @return The gcsDestinationConfig.
    */
   com.google.cloud.datastream.v1.GcsDestinationConfig getGcsDestinationConfig();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface DestinationConfigOrBuilder
    * @return Whether the bigqueryDestinationConfig field is set.
    */
   boolean hasBigqueryDestinationConfig();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface DestinationConfigOrBuilder
    * @return The bigqueryDestinationConfig.
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig getBigqueryDestinationConfig();
-
   /**
    *
    *

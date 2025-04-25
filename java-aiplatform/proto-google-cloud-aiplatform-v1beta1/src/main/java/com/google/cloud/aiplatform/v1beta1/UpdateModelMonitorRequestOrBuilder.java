@@ -39,7 +39,6 @@ public interface UpdateModelMonitorRequestOrBuilder
    * @return Whether the modelMonitor field is set.
    */
   boolean hasModelMonitor();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateModelMonitorRequestOrBuilder
    * @return The modelMonitor.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitor getModelMonitor();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateModelMonitorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateModelMonitorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

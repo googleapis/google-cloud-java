@@ -36,7 +36,6 @@ public interface ListConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.connection.v1.Connection connections = 2;</code>
    */
   java.util.List<com.google.cloud.bigquery.connection.v1.Connection> getConnectionsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.connection.v1.Connection connections = 2;</code>
    */
   com.google.cloud.bigquery.connection.v1.Connection getConnections(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface ListConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.connection.v1.Connection connections = 2;</code>
    */
   int getConnectionsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.connection.v1.ConnectionOrBuilder>
       getConnectionsOrBuilderList();
-
   /**
    *
    *

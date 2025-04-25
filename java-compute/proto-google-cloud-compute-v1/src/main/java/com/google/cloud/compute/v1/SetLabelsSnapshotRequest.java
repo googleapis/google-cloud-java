@@ -33,7 +33,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetLabelsSnapshotRequest)
     SetLabelsSnapshotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetLabelsSnapshotRequest.newBuilder() to construct.
   private SetLabelsSnapshotRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int GLOBAL_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 319917189;
   private com.google.cloud.compute.v1.GlobalSetLabelsRequest globalSetLabelsRequestResource_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
   public boolean hasGlobalSetLabelsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.GlobalSetLabelsRequest.getDefaultInstance()
         : globalSetLabelsRequestResource_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +414,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder>
         globalSetLabelsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
     public boolean hasGlobalSetLabelsRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
         return globalSetLabelsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +789,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
             : globalSetLabelsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +972,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1018,7 +994,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1016,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1037,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1054,6 @@ public final class SetLabelsSnapshotRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

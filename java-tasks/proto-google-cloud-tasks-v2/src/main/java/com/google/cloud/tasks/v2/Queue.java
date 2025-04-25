@@ -35,7 +35,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2.Queue)
     QueueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Queue.newBuilder() to construct.
   private Queue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,7 +150,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -169,7 +167,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
-
     /**
      *
      *
@@ -182,7 +179,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 2;</code>
      */
     public static final int PAUSED_VALUE = 2;
-
     /**
      *
      *
@@ -297,7 +293,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -386,7 +380,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APP_ENGINE_ROUTING_OVERRIDE_FIELD_NUMBER = 2;
   private com.google.cloud.tasks.v2.AppEngineRouting appEngineRoutingOverride_;
-
   /**
    *
    *
@@ -412,7 +405,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppEngineRoutingOverride() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -440,7 +432,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2.AppEngineRouting.getDefaultInstance()
         : appEngineRoutingOverride_;
   }
-
   /**
    *
    *
@@ -470,7 +461,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATE_LIMITS_FIELD_NUMBER = 3;
   private com.google.cloud.tasks.v2.RateLimits rateLimits_;
-
   /**
    *
    *
@@ -513,7 +503,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRateLimits() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -558,7 +547,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2.RateLimits.getDefaultInstance()
         : rateLimits_;
   }
-
   /**
    *
    *
@@ -604,7 +592,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETRY_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.tasks.v2.RetryConfig retryConfig_;
-
   /**
    *
    *
@@ -629,7 +616,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetryConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -656,7 +642,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2.RetryConfig.getDefaultInstance()
         : retryConfig_;
   }
-
   /**
    *
    *
@@ -684,7 +669,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -707,7 +691,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -735,7 +718,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PURGE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp purgeTime_;
-
   /**
    *
    *
@@ -762,7 +744,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPurgeTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -789,7 +770,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getPurgeTime() {
     return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
   }
-
   /**
    *
    *
@@ -817,7 +797,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STACKDRIVER_LOGGING_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriverLoggingConfig_;
-
   /**
    *
    *
@@ -835,7 +814,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStackdriverLoggingConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -855,7 +833,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2.StackdriverLoggingConfig.getDefaultInstance()
         : stackdriverLoggingConfig_;
   }
-
   /**
    *
    *
@@ -1115,7 +1092,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1426,7 +1402,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1468,7 +1443,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1510,7 +1484,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1551,7 +1524,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1560,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1637,7 +1608,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2.AppEngineRouting.Builder,
             com.google.cloud.tasks.v2.AppEngineRoutingOrBuilder>
         appEngineRoutingOverrideBuilder_;
-
     /**
      *
      *
@@ -1662,7 +1632,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppEngineRoutingOverride() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1693,7 +1662,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return appEngineRoutingOverrideBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1726,7 +1694,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1724,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1762,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1826,7 +1791,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1851,7 +1815,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAppEngineRoutingOverrideFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1881,7 +1844,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             : appEngineRoutingOverride_;
       }
     }
-
     /**
      *
      *
@@ -1924,7 +1886,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2.RateLimits.Builder,
             com.google.cloud.tasks.v2.RateLimitsOrBuilder>
         rateLimitsBuilder_;
-
     /**
      *
      *
@@ -1966,7 +1927,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRateLimits() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2014,7 +1974,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return rateLimitsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2064,7 +2023,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2111,7 +2069,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2123,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2213,7 +2169,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2255,7 +2210,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRateLimitsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2301,7 +2255,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             : rateLimits_;
       }
     }
-
     /**
      *
      *
@@ -2361,7 +2314,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2.RetryConfig.Builder,
             com.google.cloud.tasks.v2.RetryConfigOrBuilder>
         retryConfigBuilder_;
-
     /**
      *
      *
@@ -2385,7 +2337,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetryConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2415,7 +2366,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return retryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2447,7 +2397,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2476,7 +2425,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2513,7 +2461,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2542,7 +2489,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2566,7 +2512,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRetryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2594,7 +2539,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             : retryConfig_;
       }
     }
-
     /**
      *
      *
@@ -2631,7 +2575,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2654,7 +2597,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2680,7 +2622,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2705,7 +2646,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.tasks.v2.Queue.State.forNumber(state_);
       return result == null ? com.google.cloud.tasks.v2.Queue.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2734,7 +2674,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2766,7 +2705,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         purgeTimeBuilder_;
-
     /**
      *
      *
@@ -2792,7 +2730,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPurgeTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2822,7 +2759,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return purgeTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2856,7 +2792,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2887,7 +2822,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2926,7 +2860,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2957,7 +2890,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2983,7 +2915,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPurgeTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3011,7 +2942,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
       }
     }
-
     /**
      *
      *
@@ -3055,7 +2985,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder,
             com.google.cloud.tasks.v2.StackdriverLoggingConfigOrBuilder>
         stackdriverLoggingConfigBuilder_;
-
     /**
      *
      *
@@ -3072,7 +3001,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStackdriverLoggingConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3095,7 +3023,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         return stackdriverLoggingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3121,7 +3048,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3144,7 +3070,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3176,7 +3101,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3198,7 +3122,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3216,7 +3139,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStackdriverLoggingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3238,7 +3160,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             : stackdriverLoggingConfig_;
       }
     }
-
     /**
      *
      *

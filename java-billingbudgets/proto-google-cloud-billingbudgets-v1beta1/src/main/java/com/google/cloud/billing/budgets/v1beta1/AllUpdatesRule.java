@@ -34,7 +34,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1beta1.AllUpdatesRule)
     AllUpdatesRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllUpdatesRule.newBuilder() to construct.
   private AllUpdatesRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pubsubTopic_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaVersion_ = "";
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -208,7 +203,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList monitoringNotificationChannels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -232,7 +226,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMonitoringNotificationChannelsList() {
     return monitoringNotificationChannels_;
   }
-
   /**
    *
    *
@@ -256,7 +249,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   public int getMonitoringNotificationChannelsCount() {
     return monitoringNotificationChannels_.size();
   }
-
   /**
    *
    *
@@ -281,7 +273,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMonitoringNotificationChannels(int index) {
     return monitoringNotificationChannels_.get(index);
   }
-
   /**
    *
    *
@@ -309,7 +300,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLE_DEFAULT_IAM_RECIPIENTS_FIELD_NUMBER = 4;
   private boolean disableDefaultIamRecipients_ = false;
-
   /**
    *
    *
@@ -331,7 +321,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_PROJECT_LEVEL_RECIPIENTS_FIELD_NUMBER = 5;
   private boolean enableProjectLevelRecipients_ = false;
-
   /**
    *
    *
@@ -563,7 +552,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -812,7 +800,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object pubsubTopic_ = "";
-
     /**
      *
      *
@@ -845,7 +832,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +864,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +895,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +956,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object schemaVersion_ = "";
-
     /**
      *
      *
@@ -1001,7 +983,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1010,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1036,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1058,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1096,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1143,7 +1120,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       monitoringNotificationChannels_.makeImmutable();
       return monitoringNotificationChannels_;
     }
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public int getMonitoringNotificationChannelsCount() {
       return monitoringNotificationChannels_.size();
     }
-
     /**
      *
      *
@@ -1192,7 +1167,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMonitoringNotificationChannels(int index) {
       return monitoringNotificationChannels_.get(index);
     }
-
     /**
      *
      *
@@ -1217,7 +1191,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMonitoringNotificationChannelsBytes(int index) {
       return monitoringNotificationChannels_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1250,7 +1223,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1254,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1284,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1311,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1345,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disableDefaultIamRecipients_;
-
     /**
      *
      *
@@ -1396,7 +1364,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisableDefaultIamRecipients() {
       return disableDefaultIamRecipients_;
     }
-
     /**
      *
      *
@@ -1420,7 +1387,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1410,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableProjectLevelRecipients_;
-
     /**
      *
      *
@@ -1467,7 +1432,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableProjectLevelRecipients() {
       return enableProjectLevelRecipients_;
     }
-
     /**
      *
      *
@@ -1494,7 +1458,6 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse)
     ListAccessPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAccessPoliciesResponse.newBuilder() to construct.
   private ListAccessPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.AccessPolicy> accessPolicies_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       getAccessPoliciesList() {
     return accessPolicies_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       getAccessPoliciesOrBuilderList() {
     return accessPolicies_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
   public int getAccessPoliciesCount() {
     return accessPolicies_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
   public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicies(int index) {
     return accessPolicies_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return accessPoliciesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return accessPoliciesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return accessPoliciesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         getAccessPoliciesBuilder(int index) {
       return getAccessPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return accessPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -963,7 +940,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(accessPolicies_);
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
           .addBuilder(
               com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1054,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class ListAccessPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

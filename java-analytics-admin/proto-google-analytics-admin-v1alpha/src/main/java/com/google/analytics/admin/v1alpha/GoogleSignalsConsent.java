@@ -76,7 +76,6 @@ public enum GoogleSignalsConsent implements com.google.protobuf.ProtocolMessageE
    * <code>GOOGLE_SIGNALS_CONSENT_UNSPECIFIED = 0;</code>
    */
   public static final int GOOGLE_SIGNALS_CONSENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum GoogleSignalsConsent implements com.google.protobuf.ProtocolMessageE
    * <code>GOOGLE_SIGNALS_CONSENT_CONSENTED = 2;</code>
    */
   public static final int GOOGLE_SIGNALS_CONSENT_CONSENTED_VALUE = 2;
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface AggregationOrBuilder
    * @return The field.
    */
   java.lang.String getField();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AggregationOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AggregationOrBuilder
    * @return The count.
    */
   com.google.cloud.migrationcenter.v1.Aggregation.Count getCount();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface AggregationOrBuilder
    * @return Whether the sum field is set.
    */
   boolean hasSum();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface AggregationOrBuilder
    * @return The sum.
    */
   com.google.cloud.migrationcenter.v1.Aggregation.Sum getSum();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface AggregationOrBuilder
    * @return Whether the histogram field is set.
    */
   boolean hasHistogram();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface AggregationOrBuilder
    * @return The histogram.
    */
   com.google.cloud.migrationcenter.v1.Aggregation.Histogram getHistogram();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface AggregationOrBuilder
    * @return Whether the frequency field is set.
    */
   boolean hasFrequency();
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface AggregationOrBuilder
    * @return The frequency.
    */
   com.google.cloud.migrationcenter.v1.Aggregation.Frequency getFrequency();
-
   /**
    *
    *

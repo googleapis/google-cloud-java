@@ -38,7 +38,6 @@ public interface TrajectoryPrecisionInstanceOrBuilder
    * @return Whether the predictedTrajectory field is set.
    */
   boolean hasPredictedTrajectory();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TrajectoryPrecisionInstanceOrBuilder
    * @return The predictedTrajectory.
    */
   com.google.cloud.aiplatform.v1beta1.Trajectory getPredictedTrajectory();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface TrajectoryPrecisionInstanceOrBuilder
    * @return Whether the referenceTrajectory field is set.
    */
   boolean hasReferenceTrajectory();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface TrajectoryPrecisionInstanceOrBuilder
    * @return The referenceTrajectory.
    */
   com.google.cloud.aiplatform.v1beta1.Trajectory getReferenceTrajectory();
-
   /**
    *
    *

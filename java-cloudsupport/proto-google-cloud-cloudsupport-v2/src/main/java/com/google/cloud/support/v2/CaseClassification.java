@@ -33,7 +33,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.support.v2.CaseClassification)
     CaseClassificationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CaseClassification.newBuilder() to construct.
   private CaseClassification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -345,7 +340,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -544,7 +538,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -570,7 +563,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -596,7 +588,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface InstallStatusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InstallStatusOrBuilder
    * @return Whether the installed field is set.
    */
   boolean hasInstalled();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InstallStatusOrBuilder
    * @return The installed.
    */
   com.google.protobuf.BoolValue getInstalled();
-
   /**
    *
    *

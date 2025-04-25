@@ -34,7 +34,6 @@ public final class SetIamPolicyInstanceTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyInstanceTemplateRequest)
     SetIamPolicyInstanceTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetIamPolicyInstanceTemplateRequest.newBuilder() to construct.
   private SetIamPolicyInstanceTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class SetIamPolicyInstanceTemplateRequest
   private int bitField0_;
   public static final int GLOBAL_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 337048498;
   private com.google.cloud.compute.v1.GlobalSetPolicyRequest globalSetPolicyRequestResource_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SetIamPolicyInstanceTemplateRequest
   public boolean hasGlobalSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class SetIamPolicyInstanceTemplateRequest
         ? com.google.cloud.compute.v1.GlobalSetPolicyRequest.getDefaultInstance()
         : globalSetPolicyRequestResource_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class SetIamPolicyInstanceTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class SetIamPolicyInstanceTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +413,6 @@ public final class SetIamPolicyInstanceTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class SetIamPolicyInstanceTemplateRequest
             com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder>
         globalSetPolicyRequestResourceBuilder_;
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class SetIamPolicyInstanceTemplateRequest
     public boolean hasGlobalSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class SetIamPolicyInstanceTemplateRequest
         return globalSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return getGlobalSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class SetIamPolicyInstanceTemplateRequest
             : globalSetPolicyRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -877,7 +859,6 @@ public final class SetIamPolicyInstanceTemplateRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class SetIamPolicyInstanceTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class SetIamPolicyInstanceTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +965,6 @@ public final class SetIamPolicyInstanceTemplateRequest
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class SetIamPolicyInstanceTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1009,6 @@ public final class SetIamPolicyInstanceTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1030,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1047,6 @@ public final class SetIamPolicyInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

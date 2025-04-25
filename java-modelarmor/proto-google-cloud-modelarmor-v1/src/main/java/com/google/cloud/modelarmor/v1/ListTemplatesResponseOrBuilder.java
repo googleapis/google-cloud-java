@@ -34,7 +34,6 @@ public interface ListTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.Template templates = 1;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.Template> getTemplatesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.Template templates = 1;</code>
    */
   com.google.cloud.modelarmor.v1.Template getTemplates(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.Template templates = 1;</code>
    */
   int getTemplatesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.TemplateOrBuilder>
       getTemplatesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListTemplatesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListTemplatesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListTemplatesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ProbingDetailsOrBuilder
    * @return The enum numeric value on the wire for result.
    */
   int getResultValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ProbingDetailsOrBuilder
    * @return Whether the verifyTime field is set.
    */
   boolean hasVerifyTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ProbingDetailsOrBuilder
    * @return The verifyTime.
    */
   com.google.protobuf.Timestamp getVerifyTime();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ProbingDetailsOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ProbingDetailsOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface ProbingDetailsOrBuilder
    * @return The enum numeric value on the wire for abortCause.
    */
   int getAbortCauseValue();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface ProbingDetailsOrBuilder
    * @return Whether the endpointInfo field is set.
    */
   boolean hasEndpointInfo();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface ProbingDetailsOrBuilder
    * @return The endpointInfo.
    */
   com.google.cloud.networkmanagement.v1.EndpointInfo getEndpointInfo();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface ProbingDetailsOrBuilder
    * @return Whether the probingLatency field is set.
    */
   boolean hasProbingLatency();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface ProbingDetailsOrBuilder
    * @return The probingLatency.
    */
   com.google.cloud.networkmanagement.v1.LatencyDistribution getProbingLatency();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface ProbingDetailsOrBuilder
    * @return Whether the destinationEgressLocation field is set.
    */
   boolean hasDestinationEgressLocation();
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public interface ProbingDetailsOrBuilder
    * @return The destinationEgressLocation.
    */
   com.google.cloud.networkmanagement.v1.ProbingDetails.EdgeLocation getDestinationEgressLocation();
-
   /**
    *
    *

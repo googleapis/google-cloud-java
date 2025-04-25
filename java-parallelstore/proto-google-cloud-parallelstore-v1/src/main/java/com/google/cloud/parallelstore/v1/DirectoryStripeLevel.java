@@ -82,7 +82,6 @@ public enum DirectoryStripeLevel implements com.google.protobuf.ProtocolMessageE
    * <code>DIRECTORY_STRIPE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int DIRECTORY_STRIPE_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum DirectoryStripeLevel implements com.google.protobuf.ProtocolMessageE
    * <code>DIRECTORY_STRIPE_LEVEL_MIN = 1;</code>
    */
   public static final int DIRECTORY_STRIPE_LEVEL_MIN_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum DirectoryStripeLevel implements com.google.protobuf.ProtocolMessageE
    * <code>DIRECTORY_STRIPE_LEVEL_BALANCED = 2;</code>
    */
   public static final int DIRECTORY_STRIPE_LEVEL_BALANCED_VALUE = 2;
-
   /**
    *
    *

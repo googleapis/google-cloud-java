@@ -36,7 +36,6 @@ public interface LunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LunOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface LunOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface LunOrBuilder
    * @return The enum numeric value on the wire for multiprotocolType.
    */
   int getMultiprotocolTypeValue();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface LunOrBuilder
    * @return The storageVolume.
    */
   java.lang.String getStorageVolume();
-
   /**
    *
    *
@@ -207,7 +202,6 @@ public interface LunOrBuilder
    * @return The enum numeric value on the wire for storageType.
    */
   int getStorageTypeValue();
-
   /**
    *
    *
@@ -233,7 +227,6 @@ public interface LunOrBuilder
    * @return The wwid.
    */
   java.lang.String getWwid();
-
   /**
    *
    *
@@ -261,7 +254,6 @@ public interface LunOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -276,7 +268,6 @@ public interface LunOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -304,7 +295,6 @@ public interface LunOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -319,7 +309,6 @@ public interface LunOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public interface LunOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *

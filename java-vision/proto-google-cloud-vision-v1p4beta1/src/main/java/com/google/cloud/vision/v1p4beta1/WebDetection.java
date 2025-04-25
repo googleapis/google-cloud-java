@@ -33,7 +33,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.WebDetection)
     WebDetectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WebDetection.newBuilder() to construct.
   private WebDetection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The entityId.
      */
     java.lang.String getEntityId();
-
     /**
      *
      *
@@ -126,7 +124,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -140,7 +137,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDescriptionBytes();
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.WebDetection.WebEntity)
       WebEntityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WebEntity.newBuilder() to construct.
     private WebEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -191,7 +186,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entityId_ = "";
-
     /**
      *
      *
@@ -215,7 +209,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -242,7 +235,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCORE_FIELD_NUMBER = 2;
     private float score_ = 0F;
-
     /**
      *
      *
@@ -264,7 +256,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -288,7 +279,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -493,7 +483,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object entityId_ = "";
-
       /**
        *
        *
@@ -732,7 +720,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -755,7 +742,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -777,7 +763,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -795,7 +780,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -820,7 +804,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float score_;
-
       /**
        *
        *
@@ -837,7 +820,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       public float getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -858,7 +840,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -879,7 +860,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -902,7 +882,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -925,7 +904,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -947,7 +925,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -965,7 +942,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1070,7 +1046,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The url.
      */
     java.lang.String getUrl();
-
     /**
      *
      *
@@ -1097,7 +1072,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     float getScore();
   }
-
   /**
    *
    *
@@ -1112,7 +1086,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.WebDetection.WebImage)
       WebImageOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WebImage.newBuilder() to construct.
     private WebImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1147,7 +1120,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object url_ = "";
-
     /**
      *
      *
@@ -1171,7 +1143,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCORE_FIELD_NUMBER = 2;
     private float score_ = 0F;
-
     /**
      *
      *
@@ -1386,7 +1356,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1587,7 +1556,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object url_ = "";
-
       /**
        *
        *
@@ -1610,7 +1578,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1633,7 +1600,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1655,7 +1621,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1673,7 +1638,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1698,7 +1662,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float score_;
-
       /**
        *
        *
@@ -1714,7 +1677,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       public float getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -1734,7 +1696,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1834,7 +1795,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The url.
      */
     java.lang.String getUrl();
-
     /**
      *
      *
@@ -1873,7 +1833,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The pageTitle.
      */
     java.lang.String getPageTitle();
-
     /**
      *
      *
@@ -1900,7 +1859,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
         getFullMatchingImagesList();
-
     /**
      *
      *
@@ -1913,7 +1871,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.vision.v1p4beta1.WebDetection.WebImage getFullMatchingImages(int index);
-
     /**
      *
      *
@@ -1926,7 +1883,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getFullMatchingImagesCount();
-
     /**
      *
      *
@@ -1940,7 +1896,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.vision.v1p4beta1.WebDetection.WebImageOrBuilder>
         getFullMatchingImagesOrBuilderList();
-
     /**
      *
      *
@@ -1971,7 +1926,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
         getPartialMatchingImagesList();
-
     /**
      *
      *
@@ -1987,7 +1941,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.vision.v1p4beta1.WebDetection.WebImage getPartialMatchingImages(int index);
-
     /**
      *
      *
@@ -2003,7 +1956,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPartialMatchingImagesCount();
-
     /**
      *
      *
@@ -2020,7 +1972,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.vision.v1p4beta1.WebDetection.WebImageOrBuilder>
         getPartialMatchingImagesOrBuilderList();
-
     /**
      *
      *
@@ -2038,7 +1989,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vision.v1p4beta1.WebDetection.WebImageOrBuilder
         getPartialMatchingImagesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -2053,7 +2003,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.WebDetection.WebPage)
       WebPageOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WebPage.newBuilder() to construct.
     private WebPage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2091,7 +2040,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object url_ = "";
-
     /**
      *
      *
@@ -2115,7 +2063,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2142,7 +2089,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCORE_FIELD_NUMBER = 2;
     private float score_ = 0F;
-
     /**
      *
      *
@@ -2163,7 +2109,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pageTitle_ = "";
-
     /**
      *
      *
@@ -2187,7 +2132,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2217,7 +2161,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
         fullMatchingImages_;
-
     /**
      *
      *
@@ -2234,7 +2177,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getFullMatchingImagesList() {
       return fullMatchingImages_;
     }
-
     /**
      *
      *
@@ -2252,7 +2194,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getFullMatchingImagesOrBuilderList() {
       return fullMatchingImages_;
     }
-
     /**
      *
      *
@@ -2268,7 +2209,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     public int getFullMatchingImagesCount() {
       return fullMatchingImages_.size();
     }
-
     /**
      *
      *
@@ -2285,7 +2225,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return fullMatchingImages_.get(index);
     }
-
     /**
      *
      *
@@ -2308,7 +2247,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
         partialMatchingImages_;
-
     /**
      *
      *
@@ -2328,7 +2266,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getPartialMatchingImagesList() {
       return partialMatchingImages_;
     }
-
     /**
      *
      *
@@ -2349,7 +2286,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getPartialMatchingImagesOrBuilderList() {
       return partialMatchingImages_;
     }
-
     /**
      *
      *
@@ -2368,7 +2304,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     public int getPartialMatchingImagesCount() {
       return partialMatchingImages_.size();
     }
-
     /**
      *
      *
@@ -2388,7 +2323,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return partialMatchingImages_.get(index);
     }
-
     /**
      *
      *
@@ -2615,7 +2549,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2950,7 +2883,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object url_ = "";
-
       /**
        *
        *
@@ -2973,7 +2905,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2996,7 +2927,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3018,7 +2948,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3036,7 +2965,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3061,7 +2989,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float score_;
-
       /**
        *
        *
@@ -3077,7 +3004,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       public float getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -3097,7 +3023,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3117,7 +3042,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object pageTitle_ = "";
-
       /**
        *
        *
@@ -3140,7 +3064,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3163,7 +3086,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3185,7 +3107,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3203,7 +3124,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3265,7 +3185,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return fullMatchingImagesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3285,7 +3204,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return fullMatchingImagesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3306,7 +3224,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return fullMatchingImagesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3333,7 +3250,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3358,7 +3274,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3385,7 +3300,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3412,7 +3326,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3436,7 +3349,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3461,7 +3373,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3486,7 +3397,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3509,7 +3419,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3532,7 +3441,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3549,7 +3457,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           getFullMatchingImagesBuilder(int index) {
         return getFullMatchingImagesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3570,7 +3477,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return fullMatchingImagesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3592,7 +3498,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(fullMatchingImages_);
         }
       }
-
       /**
        *
        *
@@ -3611,7 +3516,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3631,7 +3535,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3709,7 +3612,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return partialMatchingImagesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3731,7 +3633,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return partialMatchingImagesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3754,7 +3655,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return partialMatchingImagesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3783,7 +3683,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3810,7 +3709,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3839,7 +3737,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3868,7 +3765,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3894,7 +3790,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3921,7 +3816,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3948,7 +3842,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3973,7 +3866,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3998,7 +3890,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4017,7 +3908,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           getPartialMatchingImagesBuilder(int index) {
         return getPartialMatchingImagesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -4040,7 +3930,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return partialMatchingImagesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -4064,7 +3953,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(partialMatchingImages_);
         }
       }
-
       /**
        *
        *
@@ -4085,7 +3973,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4107,7 +3994,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4228,7 +4114,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The label.
      */
     java.lang.String getLabel();
-
     /**
      *
      *
@@ -4256,7 +4141,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
-
     /**
      *
      *
@@ -4272,7 +4156,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getLanguageCodeBytes();
   }
-
   /**
    *
    *
@@ -4287,7 +4170,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.WebDetection.WebLabel)
       WebLabelOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WebLabel.newBuilder() to construct.
     private WebLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4323,7 +4205,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object label_ = "";
-
     /**
      *
      *
@@ -4347,7 +4228,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4376,7 +4256,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -4402,7 +4281,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4599,7 +4477,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4802,7 +4679,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object label_ = "";
-
       /**
        *
        *
@@ -4825,7 +4701,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4848,7 +4723,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4870,7 +4744,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4888,7 +4761,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4913,7 +4785,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object languageCode_ = "";
-
       /**
        *
        *
@@ -4938,7 +4809,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4963,7 +4833,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4987,7 +4856,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5007,7 +4875,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5101,7 +4968,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebEntity> webEntities_;
-
   /**
    *
    *
@@ -5116,7 +4982,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getWebEntitiesList() {
     return webEntities_;
   }
-
   /**
    *
    *
@@ -5131,7 +4996,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getWebEntitiesOrBuilderList() {
     return webEntities_;
   }
-
   /**
    *
    *
@@ -5145,7 +5009,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public int getWebEntitiesCount() {
     return webEntities_.size();
   }
-
   /**
    *
    *
@@ -5159,7 +5022,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1p4beta1.WebDetection.WebEntity getWebEntities(int index) {
     return webEntities_.get(index);
   }
-
   /**
    *
    *
@@ -5180,7 +5042,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
       fullMatchingImages_;
-
   /**
    *
    *
@@ -5197,7 +5058,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getFullMatchingImagesList() {
     return fullMatchingImages_;
   }
-
   /**
    *
    *
@@ -5214,7 +5074,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getFullMatchingImagesOrBuilderList() {
     return fullMatchingImages_;
   }
-
   /**
    *
    *
@@ -5230,7 +5089,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public int getFullMatchingImagesCount() {
     return fullMatchingImages_.size();
   }
-
   /**
    *
    *
@@ -5246,7 +5104,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1p4beta1.WebDetection.WebImage getFullMatchingImages(int index) {
     return fullMatchingImages_.get(index);
   }
-
   /**
    *
    *
@@ -5269,7 +5126,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
       partialMatchingImages_;
-
   /**
    *
    *
@@ -5288,7 +5144,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getPartialMatchingImagesList() {
     return partialMatchingImages_;
   }
-
   /**
    *
    *
@@ -5307,7 +5162,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getPartialMatchingImagesOrBuilderList() {
     return partialMatchingImages_;
   }
-
   /**
    *
    *
@@ -5325,7 +5179,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public int getPartialMatchingImagesCount() {
     return partialMatchingImages_.size();
   }
-
   /**
    *
    *
@@ -5344,7 +5197,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return partialMatchingImages_.get(index);
   }
-
   /**
    *
    *
@@ -5369,7 +5221,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebPage>
       pagesWithMatchingImages_;
-
   /**
    *
    *
@@ -5386,7 +5237,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getPagesWithMatchingImagesList() {
     return pagesWithMatchingImages_;
   }
-
   /**
    *
    *
@@ -5403,7 +5253,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getPagesWithMatchingImagesOrBuilderList() {
     return pagesWithMatchingImages_;
   }
-
   /**
    *
    *
@@ -5419,7 +5268,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public int getPagesWithMatchingImagesCount() {
     return pagesWithMatchingImages_.size();
   }
-
   /**
    *
    *
@@ -5436,7 +5284,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return pagesWithMatchingImages_.get(index);
   }
-
   /**
    *
    *
@@ -5459,7 +5306,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>
       visuallySimilarImages_;
-
   /**
    *
    *
@@ -5476,7 +5322,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getVisuallySimilarImagesList() {
     return visuallySimilarImages_;
   }
-
   /**
    *
    *
@@ -5493,7 +5338,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getVisuallySimilarImagesOrBuilderList() {
     return visuallySimilarImages_;
   }
-
   /**
    *
    *
@@ -5509,7 +5353,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public int getVisuallySimilarImagesCount() {
     return visuallySimilarImages_.size();
   }
-
   /**
    *
    *
@@ -5526,7 +5369,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return visuallySimilarImages_.get(index);
   }
-
   /**
    *
    *
@@ -5548,7 +5390,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.WebDetection.WebLabel> bestGuessLabels_;
-
   /**
    *
    *
@@ -5565,7 +5406,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getBestGuessLabelsList() {
     return bestGuessLabels_;
   }
-
   /**
    *
    *
@@ -5582,7 +5422,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       getBestGuessLabelsOrBuilderList() {
     return bestGuessLabels_;
   }
-
   /**
    *
    *
@@ -5598,7 +5437,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public int getBestGuessLabelsCount() {
     return bestGuessLabels_.size();
   }
-
   /**
    *
    *
@@ -5614,7 +5452,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1p4beta1.WebDetection.WebLabel getBestGuessLabels(int index) {
     return bestGuessLabels_.get(index);
   }
-
   /**
    *
    *
@@ -5856,7 +5693,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6406,7 +6242,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return webEntitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6423,7 +6258,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return webEntitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6440,7 +6274,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return webEntitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6464,7 +6297,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6486,7 +6318,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6509,7 +6340,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6533,7 +6363,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6554,7 +6383,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6576,7 +6404,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6598,7 +6425,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6618,7 +6444,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6638,7 +6463,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6652,7 +6476,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getWebEntitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6670,7 +6493,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return webEntitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6689,7 +6511,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(webEntities_);
       }
     }
-
     /**
      *
      *
@@ -6705,7 +6526,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.vision.v1p4beta1.WebDetection.WebEntity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6721,7 +6541,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.WebDetection.WebEntity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6790,7 +6609,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return fullMatchingImagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6809,7 +6627,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return fullMatchingImagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6829,7 +6646,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return fullMatchingImagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6855,7 +6671,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6879,7 +6694,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6905,7 +6719,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6931,7 +6744,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6954,7 +6766,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6978,7 +6789,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7002,7 +6812,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7024,7 +6833,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7046,7 +6854,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7062,7 +6869,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getFullMatchingImagesBuilder(int index) {
       return getFullMatchingImagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7082,7 +6888,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return fullMatchingImagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7103,7 +6908,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fullMatchingImages_);
       }
     }
-
     /**
      *
      *
@@ -7120,7 +6924,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       return getFullMatchingImagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7138,7 +6941,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7214,7 +7016,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return partialMatchingImagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7235,7 +7036,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return partialMatchingImagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7257,7 +7057,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return partialMatchingImagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7285,7 +7084,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7311,7 +7109,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7339,7 +7136,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7367,7 +7163,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7392,7 +7187,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7418,7 +7212,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7444,7 +7237,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7468,7 +7260,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7492,7 +7283,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7510,7 +7300,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getPartialMatchingImagesBuilder(int index) {
       return getPartialMatchingImagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7532,7 +7321,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return partialMatchingImagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7555,7 +7343,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(partialMatchingImages_);
       }
     }
-
     /**
      *
      *
@@ -7574,7 +7361,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       return getPartialMatchingImagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7594,7 +7380,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7670,7 +7455,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return pagesWithMatchingImagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7689,7 +7473,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return pagesWithMatchingImagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7709,7 +7492,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return pagesWithMatchingImagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7735,7 +7517,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7758,7 +7539,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7784,7 +7564,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7810,7 +7589,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7833,7 +7611,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7856,7 +7633,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7880,7 +7656,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7902,7 +7677,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7924,7 +7698,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7940,7 +7713,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getPagesWithMatchingImagesBuilder(int index) {
       return getPagesWithMatchingImagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7960,7 +7732,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return pagesWithMatchingImagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7980,7 +7751,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pagesWithMatchingImages_);
       }
     }
-
     /**
      *
      *
@@ -7997,7 +7767,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       return getPagesWithMatchingImagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.WebDetection.WebPage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8015,7 +7784,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.WebDetection.WebPage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8089,7 +7857,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return visuallySimilarImagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8108,7 +7875,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return visuallySimilarImagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8128,7 +7894,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return visuallySimilarImagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8154,7 +7919,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8178,7 +7942,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8204,7 +7967,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8230,7 +7992,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8253,7 +8014,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8277,7 +8037,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8301,7 +8060,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8323,7 +8081,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8345,7 +8102,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8361,7 +8117,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getVisuallySimilarImagesBuilder(int index) {
       return getVisuallySimilarImagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8381,7 +8136,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return visuallySimilarImagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8402,7 +8156,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(visuallySimilarImages_);
       }
     }
-
     /**
      *
      *
@@ -8419,7 +8172,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       return getVisuallySimilarImagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8437,7 +8189,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8511,7 +8262,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return bestGuessLabelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8530,7 +8280,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return bestGuessLabelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8549,7 +8298,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return bestGuessLabelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8575,7 +8323,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8599,7 +8346,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8625,7 +8371,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8651,7 +8396,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8674,7 +8418,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8698,7 +8441,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8722,7 +8464,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8744,7 +8485,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8766,7 +8506,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8782,7 +8521,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         getBestGuessLabelsBuilder(int index) {
       return getBestGuessLabelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8802,7 +8540,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return bestGuessLabelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8823,7 +8560,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bestGuessLabels_);
       }
     }
-
     /**
      *
      *
@@ -8840,7 +8576,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       return getBestGuessLabelsFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.WebDetection.WebLabel.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8858,7 +8593,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.WebDetection.WebLabel.getDefaultInstance());
     }
-
     /**
      *
      *

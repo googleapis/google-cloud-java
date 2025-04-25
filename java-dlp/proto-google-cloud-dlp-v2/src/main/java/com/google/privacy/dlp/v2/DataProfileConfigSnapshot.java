@@ -33,7 +33,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileConfigSnapshot)
     DataProfileConfigSnapshotOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataProfileConfigSnapshot.newBuilder() to construct.
   private DataProfileConfigSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
   public boolean hasInspectConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
         : inspectConfig_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
 
   public static final int DATA_PROFILE_JOB_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.DataProfileJobConfig dataProfileJob_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
   public boolean hasDataProfileJob() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.DataProfileJobConfig.getDefaultInstance()
         : dataProfileJob_;
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
 
   public static final int DISCOVERY_CONFIG_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DiscoveryConfig discoveryConfig_;
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
   public boolean hasDiscoveryConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
         : discoveryConfig_;
   }
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inspectTemplateName_ = "";
-
   /**
    *
    *
@@ -277,7 +266,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
 
   public static final int INSPECT_TEMPLATE_MODIFIED_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp inspectTemplateModifiedTime_;
-
   /**
    *
    *
@@ -320,7 +307,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
   public boolean hasInspectTemplateModifiedTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -338,7 +324,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : inspectTemplateModifiedTime_;
   }
-
   /**
    *
    *
@@ -573,7 +558,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +840,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.InspectConfig.Builder,
             com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         inspectConfigBuilder_;
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     public boolean hasInspectConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -894,7 +876,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         return inspectConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -918,7 +899,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +920,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             : inspectConfig_;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.DataProfileJobConfig.Builder,
             com.google.privacy.dlp.v2.DataProfileJobConfigOrBuilder>
         dataProfileJobBuilder_;
-
     /**
      *
      *
@@ -1083,7 +1057,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     public boolean hasDataProfileJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1112,7 +1085,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         return dataProfileJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1113,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1139,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1173,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1198,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1218,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return getDataProfileJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1275,7 +1242,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             : dataProfileJob_;
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.DiscoveryConfig.Builder,
             com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>
         discoveryConfigBuilder_;
-
     /**
      *
      *
@@ -1328,7 +1293,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     public boolean hasDiscoveryConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1349,7 +1313,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         return discoveryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1372,7 +1335,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1355,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1382,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1401,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1415,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return getDiscoveryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1475,7 +1433,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             : discoveryConfig_;
       }
     }
-
     /**
      *
      *
@@ -1503,7 +1460,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     }
 
     private java.lang.Object inspectTemplateName_ = "";
-
     /**
      *
      *
@@ -1526,7 +1482,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1549,7 +1504,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1571,7 +1525,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1542,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1571,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         inspectTemplateModifiedTimeBuilder_;
-
     /**
      *
      *
@@ -1634,7 +1585,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     public boolean hasInspectTemplateModifiedTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1655,7 +1605,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         return inspectTemplateModifiedTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1678,7 +1627,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1647,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1674,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1747,7 +1693,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1707,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       onChanged();
       return getInspectTemplateModifiedTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1781,7 +1725,6 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
             : inspectTemplateModifiedTime_;
       }
     }
-
     /**
      *
      *

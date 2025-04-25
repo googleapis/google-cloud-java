@@ -34,7 +34,6 @@ public interface RagContextsOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagContexts.Context contexts = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.RagContexts.Context> getContextsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RagContextsOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagContexts.Context contexts = 1;</code>
    */
   com.google.cloud.aiplatform.v1.RagContexts.Context getContexts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RagContextsOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagContexts.Context contexts = 1;</code>
    */
   int getContextsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface RagContextsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.RagContexts.ContextOrBuilder>
       getContextsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public interface ListNetworkEndpointsGlobalNetworkEndpointGroupsRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *

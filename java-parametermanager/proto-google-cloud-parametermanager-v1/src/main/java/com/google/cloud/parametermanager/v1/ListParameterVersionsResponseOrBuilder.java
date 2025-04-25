@@ -35,7 +35,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.parametermanager.v1.ParameterVersion> getParameterVersionsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.parametermanager.v1.ParameterVersion getParameterVersions(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * </code>
    */
   int getParameterVersionsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListParameterVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.parametermanager.v1.ParameterVersionOrBuilder>
       getParameterVersionsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -151,7 +144,6 @@ public interface ListParameterVersionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

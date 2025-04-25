@@ -33,7 +33,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListServiceLevelObjectivesResponse)
     ListServiceLevelObjectivesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListServiceLevelObjectivesResponse.newBuilder() to construct.
   private ListServiceLevelObjectivesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.ServiceLevelObjective> serviceLevelObjectives_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       getServiceLevelObjectivesList() {
     return serviceLevelObjectives_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       getServiceLevelObjectivesOrBuilderList() {
     return serviceLevelObjectives_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
   public int getServiceLevelObjectivesCount() {
     return serviceLevelObjectives_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
   public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjectives(int index) {
     return serviceLevelObjectives_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return serviceLevelObjectivesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return serviceLevelObjectivesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return serviceLevelObjectivesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +876,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         int index) {
       return getServiceLevelObjectivesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -930,7 +908,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return serviceLevelObjectivesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -949,7 +926,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return java.util.Collections.unmodifiableList(serviceLevelObjectives_);
       }
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       return getServiceLevelObjectivesFieldBuilder()
           .addBuilder(com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +956,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       return getServiceLevelObjectivesFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1018,7 +992,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1040,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1063,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1082,6 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

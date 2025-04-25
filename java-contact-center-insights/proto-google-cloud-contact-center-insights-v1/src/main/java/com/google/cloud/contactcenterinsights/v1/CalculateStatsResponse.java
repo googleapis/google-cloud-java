@@ -33,7 +33,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse)
     CalculateStatsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CalculateStatsResponse.newBuilder() to construct.
   private CalculateStatsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * @return Whether the intervalDuration field is set.
      */
     boolean hasIntervalDuration();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * @return The intervalDuration.
      */
     com.google.protobuf.Duration getIntervalDuration();
-
     /**
      *
      *
@@ -138,7 +135,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     java.util.List<
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
         getPointsList();
-
     /**
      *
      *
@@ -154,7 +150,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval getPoints(
         int index);
-
     /**
      *
      *
@@ -169,7 +164,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getPointsCount();
-
     /**
      *
      *
@@ -188,7 +182,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
                     .IntervalOrBuilder>
         getPointsOrBuilderList();
-
     /**
      *
      *
@@ -205,7 +198,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.IntervalOrBuilder
         getPointsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries)
       TimeSeriesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeSeries.newBuilder() to construct.
     private TimeSeries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -269,7 +260,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        * @return Whether the startTime field is set.
        */
       boolean hasStartTime();
-
       /**
        *
        *
@@ -282,7 +272,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        * @return The startTime.
        */
       com.google.protobuf.Timestamp getStartTime();
-
       /**
        *
        *
@@ -307,7 +296,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        */
       int getConversationCount();
     }
-
     /**
      *
      *
@@ -323,7 +311,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval)
         IntervalOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Interval.newBuilder() to construct.
       private Interval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -357,7 +344,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       private int bitField0_;
       public static final int START_TIME_FIELD_NUMBER = 1;
       private com.google.protobuf.Timestamp startTime_;
-
       /**
        *
        *
@@ -373,7 +359,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -389,7 +374,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       public com.google.protobuf.Timestamp getStartTime() {
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
-
       /**
        *
        *
@@ -406,7 +390,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
 
       public static final int CONVERSATION_COUNT_FIELD_NUMBER = 2;
       private int conversationCount_ = 0;
-
       /**
        *
        *
@@ -622,7 +605,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -865,7 +847,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             startTimeBuilder_;
-
         /**
          *
          *
@@ -880,7 +861,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         public boolean hasStartTime() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -901,7 +881,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             return startTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -924,7 +903,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -944,7 +922,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -972,7 +949,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           }
           return this;
         }
-
         /**
          *
          *
@@ -992,7 +968,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1007,7 +982,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           onChanged();
           return getStartTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1026,7 +1000,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 : startTime_;
           }
         }
-
         /**
          *
          *
@@ -1054,7 +1027,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
 
         private int conversationCount_;
-
         /**
          *
          *
@@ -1070,7 +1042,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         public int getConversationCount() {
           return conversationCount_;
         }
-
         /**
          *
          *
@@ -1090,7 +1061,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1183,7 +1153,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
     public static final int INTERVAL_DURATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration intervalDuration_;
-
     /**
      *
      *
@@ -1199,7 +1168,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public boolean hasIntervalDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1217,7 +1185,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           ? com.google.protobuf.Duration.getDefaultInstance()
           : intervalDuration_;
     }
-
     /**
      *
      *
@@ -1240,7 +1207,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     private java.util.List<
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
         points_;
-
     /**
      *
      *
@@ -1260,7 +1226,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         getPointsList() {
       return points_;
     }
-
     /**
      *
      *
@@ -1282,7 +1247,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         getPointsOrBuilderList() {
       return points_;
     }
-
     /**
      *
      *
@@ -1300,7 +1264,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getPointsCount() {
       return points_.size();
     }
-
     /**
      *
      *
@@ -1319,7 +1282,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         getPoints(int index) {
       return points_.get(index);
     }
-
     /**
      *
      *
@@ -1524,7 +1486,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1813,7 +1774,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           intervalDurationBuilder_;
-
       /**
        *
        *
@@ -1828,7 +1788,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       public boolean hasIntervalDuration() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1849,7 +1808,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return intervalDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1872,7 +1830,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1892,7 +1849,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1920,7 +1876,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -1940,7 +1895,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1955,7 +1909,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return getIntervalDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1974,7 +1927,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               : intervalDuration_;
         }
       }
-
       /**
        *
        *
@@ -2045,7 +1997,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return pointsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2066,7 +2017,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return pointsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2088,7 +2038,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return pointsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2118,7 +2067,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2146,7 +2094,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2175,7 +2122,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2205,7 +2151,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2232,7 +2177,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2260,7 +2204,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2289,7 +2232,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2313,7 +2255,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2337,7 +2278,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -2356,7 +2296,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           getPointsBuilder(int index) {
         return getPointsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2379,7 +2318,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return pointsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2404,7 +2342,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(points_);
         }
       }
-
       /**
        *
        *
@@ -2426,7 +2363,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2449,7 +2385,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2563,7 +2498,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int AVERAGE_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration averageDuration_;
-
   /**
    *
    *
@@ -2580,7 +2514,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public boolean hasAverageDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2599,7 +2532,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Duration.getDefaultInstance()
         : averageDuration_;
   }
-
   /**
    *
    *
@@ -2619,7 +2551,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
 
   public static final int AVERAGE_TURN_COUNT_FIELD_NUMBER = 2;
   private int averageTurnCount_ = 0;
-
   /**
    *
    *
@@ -2638,7 +2569,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
 
   public static final int CONVERSATION_COUNT_FIELD_NUMBER = 3;
   private int conversationCount_ = 0;
-
   /**
    *
    *
@@ -2684,7 +2614,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public int getSmartHighlighterMatchesCount() {
     return internalGetSmartHighlighterMatches().getMap().size();
   }
-
   /**
    *
    *
@@ -2702,14 +2631,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
     return internalGetSmartHighlighterMatches().getMap().containsKey(key);
   }
-
   /** Use {@link #getSmartHighlighterMatchesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getSmartHighlighterMatches() {
     return getSmartHighlighterMatchesMap();
   }
-
   /**
    *
    *
@@ -2724,7 +2651,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.Integer> getSmartHighlighterMatchesMap() {
     return internalGetSmartHighlighterMatches().getMap();
   }
-
   /**
    *
    *
@@ -2744,7 +2670,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         internalGetSmartHighlighterMatches().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2797,7 +2722,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public int getCustomHighlighterMatchesCount() {
     return internalGetCustomHighlighterMatches().getMap().size();
   }
-
   /**
    *
    *
@@ -2815,14 +2739,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
     return internalGetCustomHighlighterMatches().getMap().containsKey(key);
   }
-
   /** Use {@link #getCustomHighlighterMatchesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getCustomHighlighterMatches() {
     return getCustomHighlighterMatchesMap();
   }
-
   /**
    *
    *
@@ -2837,7 +2759,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.Integer> getCustomHighlighterMatchesMap() {
     return internalGetCustomHighlighterMatches().getMap();
   }
-
   /**
    *
    *
@@ -2857,7 +2778,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         internalGetCustomHighlighterMatches().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2910,7 +2830,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public int getIssueMatchesCount() {
     return internalGetIssueMatches().getMap().size();
   }
-
   /**
    *
    *
@@ -2931,14 +2850,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
     return internalGetIssueMatches().getMap().containsKey(key);
   }
-
   /** Use {@link #getIssueMatchesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getIssueMatches() {
     return getIssueMatchesMap();
   }
-
   /**
    *
    *
@@ -2956,7 +2873,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.Integer> getIssueMatchesMap() {
     return internalGetIssueMatches().getMap();
   }
-
   /**
    *
    *
@@ -2978,7 +2894,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetIssueMatches().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3044,7 +2959,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public int getIssueMatchesStatsCount() {
     return internalGetIssueMatchesStats().getMap().size();
   }
-
   /**
    *
    *
@@ -3065,7 +2979,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
     return internalGetIssueMatchesStats().getMap().containsKey(key);
   }
-
   /** Use {@link #getIssueMatchesStatsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -3075,7 +2988,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       getIssueMatchesStats() {
     return getIssueMatchesStatsMap();
   }
-
   /**
    *
    *
@@ -3096,7 +3008,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       getIssueMatchesStatsMap() {
     return internalGetIssueMatchesStats().getMap();
   }
-
   /**
    *
    *
@@ -3125,7 +3036,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         map = internalGetIssueMatchesStats().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3158,7 +3068,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public static final int CONVERSATION_COUNT_TIME_SERIES_FIELD_NUMBER = 7;
   private com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
       conversationCountTimeSeries_;
-
   /**
    *
    *
@@ -3177,7 +3086,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public boolean hasConversationCountTimeSeries() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3200,7 +3108,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : conversationCountTimeSeries_;
   }
-
   /**
    *
    *
@@ -3508,7 +3415,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3886,7 +3792,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         averageDurationBuilder_;
-
     /**
      *
      *
@@ -3902,7 +3807,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public boolean hasAverageDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3924,7 +3828,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         return averageDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3948,7 +3851,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3969,7 +3871,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3998,7 +3899,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3919,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4035,7 +3934,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getAverageDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4055,7 +3953,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             : averageDuration_;
       }
     }
-
     /**
      *
      *
@@ -4084,7 +3981,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
 
     private int averageTurnCount_;
-
     /**
      *
      *
@@ -4100,7 +3996,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getAverageTurnCount() {
       return averageTurnCount_;
     }
-
     /**
      *
      *
@@ -4120,7 +4015,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4140,7 +4034,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
 
     private int conversationCount_;
-
     /**
      *
      *
@@ -4156,7 +4049,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getConversationCount() {
       return conversationCount_;
     }
-
     /**
      *
      *
@@ -4176,7 +4068,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4225,7 +4116,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getSmartHighlighterMatchesCount() {
       return internalGetSmartHighlighterMatches().getMap().size();
     }
-
     /**
      *
      *
@@ -4243,14 +4133,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       return internalGetSmartHighlighterMatches().getMap().containsKey(key);
     }
-
     /** Use {@link #getSmartHighlighterMatchesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getSmartHighlighterMatches() {
       return getSmartHighlighterMatchesMap();
     }
-
     /**
      *
      *
@@ -4265,7 +4153,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.Integer> getSmartHighlighterMatchesMap() {
       return internalGetSmartHighlighterMatches().getMap();
     }
-
     /**
      *
      *
@@ -4285,7 +4172,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           internalGetSmartHighlighterMatches().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4314,7 +4200,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableSmartHighlighterMatches().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4332,14 +4217,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableSmartHighlighterMatches().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableSmartHighlighterMatches() {
       bitField0_ |= 0x00000008;
       return internalGetMutableSmartHighlighterMatches().getMutableMap();
     }
-
     /**
      *
      *
@@ -4359,7 +4242,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -4407,7 +4289,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getCustomHighlighterMatchesCount() {
       return internalGetCustomHighlighterMatches().getMap().size();
     }
-
     /**
      *
      *
@@ -4425,14 +4306,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       return internalGetCustomHighlighterMatches().getMap().containsKey(key);
     }
-
     /** Use {@link #getCustomHighlighterMatchesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getCustomHighlighterMatches() {
       return getCustomHighlighterMatchesMap();
     }
-
     /**
      *
      *
@@ -4447,7 +4326,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.Integer> getCustomHighlighterMatchesMap() {
       return internalGetCustomHighlighterMatches().getMap();
     }
-
     /**
      *
      *
@@ -4467,7 +4345,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           internalGetCustomHighlighterMatches().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4496,7 +4373,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableCustomHighlighterMatches().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4514,14 +4390,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableCustomHighlighterMatches().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableCustomHighlighterMatches() {
       bitField0_ |= 0x00000010;
       return internalGetMutableCustomHighlighterMatches().getMutableMap();
     }
-
     /**
      *
      *
@@ -4541,7 +4415,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -4590,7 +4463,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getIssueMatchesCount() {
       return internalGetIssueMatches().getMap().size();
     }
-
     /**
      *
      *
@@ -4611,14 +4483,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       return internalGetIssueMatches().getMap().containsKey(key);
     }
-
     /** Use {@link #getIssueMatchesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getIssueMatches() {
       return getIssueMatchesMap();
     }
-
     /**
      *
      *
@@ -4636,7 +4506,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.Integer> getIssueMatchesMap() {
       return internalGetIssueMatches().getMap();
     }
-
     /**
      *
      *
@@ -4658,7 +4527,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetIssueMatches().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4690,7 +4558,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableIssueMatches().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4711,14 +4578,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableIssueMatches().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableIssueMatches() {
       bitField0_ |= 0x00000020;
       return internalGetMutableIssueMatches().getMutableMap();
     }
-
     /**
      *
      *
@@ -4741,7 +4606,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -4785,8 +4649,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return IssueMatchesStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final IssueMatchesStatsConverter issueMatchesStatsConverter =
         new IssueMatchesStatsConverter();
@@ -4827,7 +4690,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public int getIssueMatchesStatsCount() {
       return internalGetIssueMatchesStats().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -4848,7 +4710,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       return internalGetIssueMatchesStats().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getIssueMatchesStatsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -4858,7 +4719,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         getIssueMatchesStats() {
       return getIssueMatchesStatsMap();
     }
-
     /**
      *
      *
@@ -4879,7 +4739,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         getIssueMatchesStatsMap() {
       return internalGetIssueMatchesStats().getImmutableMap();
     }
-
     /**
      *
      *
@@ -4909,7 +4768,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           map = internalGetMutableIssueMatchesStats().ensureBuilderMap();
       return map.containsKey(key) ? issueMatchesStatsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -4944,7 +4802,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableIssueMatchesStats().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4965,7 +4822,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       internalGetMutableIssueMatchesStats().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -4975,7 +4831,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000040;
       return internalGetMutableIssueMatchesStats().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -5002,7 +4857,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -5033,7 +4887,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -5078,7 +4931,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder,
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder>
         conversationCountTimeSeriesBuilder_;
-
     /**
      *
      *
@@ -5096,7 +4948,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public boolean hasConversationCountTimeSeries() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5122,7 +4973,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         return conversationCountTimeSeriesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5149,7 +4999,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5174,7 +5023,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5208,7 +5056,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5231,7 +5078,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5250,7 +5096,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getConversationCountTimeSeriesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5274,7 +5119,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             : conversationCountTimeSeries_;
       }
     }
-
     /**
      *
      *

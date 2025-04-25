@@ -38,7 +38,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaScorecardRevision)
     QaScorecardRevisionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QaScorecardRevision.newBuilder() to construct.
   private QaScorecardRevision(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -164,7 +163,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -175,7 +173,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
      * <code>EDITABLE = 12;</code>
      */
     public static final int EDITABLE_VALUE = 12;
-
     /**
      *
      *
@@ -186,7 +183,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
      * <code>TRAINING = 2;</code>
      */
     public static final int TRAINING_VALUE = 2;
-
     /**
      *
      *
@@ -197,7 +193,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
      * <code>TRAINING_FAILED = 9;</code>
      */
     public static final int TRAINING_FAILED_VALUE = 9;
-
     /**
      *
      *
@@ -208,7 +203,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
      * <code>READY = 11;</code>
      */
     public static final int READY_VALUE = 11;
-
     /**
      *
      *
@@ -219,7 +213,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
      * <code>DELETING = 7;</code>
      */
     public static final int DELETING_VALUE = 7;
-
     /**
      *
      *
@@ -329,7 +322,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -355,7 +347,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -384,7 +375,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
 
   public static final int SNAPSHOT_FIELD_NUMBER = 2;
   private com.google.cloud.contactcenterinsights.v1.QaScorecard snapshot_;
-
   /**
    *
    *
@@ -400,7 +390,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public boolean hasSnapshot() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -418,7 +407,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.contactcenterinsights.v1.QaScorecard.getDefaultInstance()
         : snapshot_;
   }
-
   /**
    *
    *
@@ -437,7 +425,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -454,7 +441,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -471,7 +457,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -492,7 +477,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList alternateIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -508,7 +492,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getAlternateIdsList() {
     return alternateIds_;
   }
-
   /**
    *
    *
@@ -524,7 +507,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public int getAlternateIdsCount() {
     return alternateIds_.size();
   }
-
   /**
    *
    *
@@ -541,7 +523,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public java.lang.String getAlternateIds(int index) {
     return alternateIds_.get(index);
   }
-
   /**
    *
    *
@@ -561,7 +542,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -580,7 +560,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -821,7 +800,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1097,7 +1075,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1122,7 +1099,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1123,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1146,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1165,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1196,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
             com.google.cloud.contactcenterinsights.v1.QaScorecard.Builder,
             com.google.cloud.contactcenterinsights.v1.QaScorecardOrBuilder>
         snapshotBuilder_;
-
     /**
      *
      *
@@ -1238,7 +1210,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     public boolean hasSnapshot() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1259,7 +1230,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
         return snapshotBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1282,7 +1252,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1272,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1300,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1319,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1333,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSnapshotFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1386,7 +1351,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
             : snapshot_;
       }
     }
-
     /**
      *
      *
@@ -1419,7 +1383,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1436,7 +1399,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1459,7 +1421,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1484,7 +1445,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1466,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1536,7 +1495,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1516,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1575,7 +1532,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1596,7 +1552,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1634,7 +1589,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1651,7 +1605,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       alternateIds_.makeImmutable();
       return alternateIds_;
     }
-
     /**
      *
      *
@@ -1667,7 +1620,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     public int getAlternateIdsCount() {
       return alternateIds_.size();
     }
-
     /**
      *
      *
@@ -1684,7 +1636,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     public java.lang.String getAlternateIds(int index) {
       return alternateIds_.get(index);
     }
-
     /**
      *
      *
@@ -1701,7 +1652,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getAlternateIdsBytes(int index) {
       return alternateIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1726,7 +1676,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1699,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1719,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1738,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1764,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1837,7 +1782,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1859,7 +1803,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1882,7 +1825,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.contactcenterinsights.v1.QaScorecardRevision.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1908,7 +1850,6 @@ public final class QaScorecardRevision extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

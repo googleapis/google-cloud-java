@@ -36,7 +36,6 @@ public interface DiagnoseNetworkResponseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DiagnoseNetworkResponseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DiagnoseNetworkResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DiagnoseNetworkResponseOrBuilder
    * @return The result.
    */
   com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus getResult();
-
   /**
    *
    *

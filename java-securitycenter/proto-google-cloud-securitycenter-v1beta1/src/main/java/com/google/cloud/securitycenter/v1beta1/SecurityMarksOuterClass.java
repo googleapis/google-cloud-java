@@ -45,21 +45,22 @@ public final class SecurityMarksOuterClass {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "8google/cloud/securitycenter/v1beta1/security_marks.proto\022#google.cloud.securit"
-          + "ycenter.v1beta1\032\031google/api/resource.proto\"\330\002\n\r"
-          + "SecurityMarks\022\014\n"
-          + "\004name\030\001 \001(\t\022L\n"
-          + "\005marks\030\002"
-          + " \003(\0132=.google.cloud.securitycenter.v1beta1.SecurityMarks.MarksEntry\032,\n\n"
-          + "MarksEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:\274\001\352A\270\001\n"
-          + "+securitycenter.googleapis.com/SecurityMarks\0229organizations/{organization}"
+      "\n8google/cloud/securitycenter/v1beta1/se"
+          + "curity_marks.proto\022#google.cloud.securit"
+          + "ycenter.v1beta1\032\031google/api/resource.pro"
+          + "to\"\330\002\n\rSecurityMarks\022\014\n\004name\030\001 \001(\t\022L\n\005ma"
+          + "rks\030\002 \003(\0132=.google.cloud.securitycenter."
+          + "v1beta1.SecurityMarks.MarksEntry\032,\n\nMark"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\274"
+          + "\001\352A\270\001\n+securitycenter.googleapis.com/Sec"
+          + "urityMarks\0229organizations/{organization}"
           + "/assets/{asset}/securityMarks\022Norganizat"
-          + "ions/{organization}/sources/{source}/findings/{finding}/securityMarksB|\n"
-          + "\'com.google.cloud.securitycenter.v1beta1P\001ZOclou"
-          + "d.google.com/go/securitycenter/apiv1beta1/securitycenterpb;securitycenterpbb\006proto3"
+          + "ions/{organization}/sources/{source}/fin"
+          + "dings/{finding}/securityMarksB|\n\'com.goo"
+          + "gle.cloud.securitycenter.v1beta1P\001ZOclou"
+          + "d.google.com/go/securitycenter/apiv1beta"
+          + "1/securitycenterpb;securitycenterpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

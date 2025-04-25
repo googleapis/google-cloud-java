@@ -58,7 +58,6 @@ public interface GroupFindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -152,7 +151,6 @@ public interface GroupFindingsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -226,7 +224,6 @@ public interface GroupFindingsRequestOrBuilder
    * @return The groupBy.
    */
   java.lang.String getGroupBy();
-
   /**
    *
    *
@@ -256,7 +253,6 @@ public interface GroupFindingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface CheckInstanceUpgradabilityRequestOrBuilder
    * @return The notebookInstance.
    */
   java.lang.String getNotebookInstance();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
   java.util.List<
           com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult>
       getPartialResultsList();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata.PartialResult
       getPartialResults(int index);
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    * </code>
    */
   int getPartialResultsCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
               com.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata
                   .PartialResultOrBuilder>
       getPartialResultsOrBuilderList();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1.CertificateTemplate>
       getCertificateTemplatesList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1.CertificateTemplate getCertificateTemplates(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    * </code>
    */
   int getCertificateTemplatesCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1.CertificateTemplateOrBuilder>
       getCertificateTemplatesOrBuilderList();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface ListCertificateTemplatesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ComputeDeploymentStatusResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ComputeDeploymentStatusResponseOrBuilder
    * @return The enum numeric value on the wire for aggregatedStatus.
    */
   int getAggregatedStatusValue();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ComputeDeploymentStatusResponseOrBuilder
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.ResourceStatus>
       getResourceStatusesList();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface ComputeDeploymentStatusResponseOrBuilder
    * </code>
    */
   com.google.cloud.telcoautomation.v1alpha1.ResourceStatus getResourceStatuses(int index);
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ComputeDeploymentStatusResponseOrBuilder
    * </code>
    */
   int getResourceStatusesCount();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface ComputeDeploymentStatusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.ResourceStatusOrBuilder>
       getResourceStatusesOrBuilderList();
-
   /**
    *
    *

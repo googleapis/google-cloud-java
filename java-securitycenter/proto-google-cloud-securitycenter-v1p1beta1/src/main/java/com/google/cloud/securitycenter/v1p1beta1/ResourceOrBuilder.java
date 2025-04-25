@@ -37,7 +37,6 @@ public interface ResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ResourceOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ResourceOrBuilder
    * @return The projectDisplayName.
    */
   java.lang.String getProjectDisplayName();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface ResourceOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface ResourceOrBuilder
    * @return The parentDisplayName.
    */
   java.lang.String getParentDisplayName();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securitycenter.v1p1beta1.Folder> getFoldersList();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1p1beta1.Folder getFolders(int index);
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   int getFoldersCount();
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface ResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1p1beta1.FolderOrBuilder>
       getFoldersOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ImageContext)
     ImageContextOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageContext.newBuilder() to construct.
   private ImageContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LAT_LONG_RECT_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p3beta1.LatLongRect latLongRect_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatLongRect() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance()
         : latLongRect_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languageHints_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
     return languageHints_;
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public int getLanguageHintsCount() {
     return languageHints_.size();
   }
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLanguageHints(int index) {
     return languageHints_.get(index);
   }
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CROP_HINTS_PARAMS_FIELD_NUMBER = 4;
   private com.google.cloud.vision.v1p3beta1.CropHintsParams cropHintsParams_;
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCropHintsParams() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance()
         : cropHintsParams_;
   }
-
   /**
    *
    *
@@ -269,7 +258,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCT_SEARCH_PARAMS_FIELD_NUMBER = 5;
   private com.google.cloud.vision.v1p3beta1.ProductSearchParams productSearchParams_;
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductSearchParams() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -303,7 +290,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance()
         : productSearchParams_;
   }
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WEB_DETECTION_PARAMS_FIELD_NUMBER = 6;
   private com.google.cloud.vision.v1p3beta1.WebDetectionParams webDetectionParams_;
-
   /**
    *
    *
@@ -339,7 +324,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWebDetectionParams() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -357,7 +341,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance()
         : webDetectionParams_;
   }
-
   /**
    *
    *
@@ -377,7 +360,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEXT_DETECTION_PARAMS_FIELD_NUMBER = 12;
   private com.google.cloud.vision.v1p3beta1.TextDetectionParams textDetectionParams_;
-
   /**
    *
    *
@@ -393,7 +375,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextDetectionParams() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -411,7 +392,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p3beta1.TextDetectionParams.getDefaultInstance()
         : textDetectionParams_;
   }
-
   /**
    *
    *
@@ -666,7 +646,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -981,7 +960,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p3beta1.LatLongRect.Builder,
             com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder>
         latLongRectBuilder_;
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatLongRect() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         return latLongRectBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1016,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1082,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1096,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatLongRectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1143,7 +1114,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             : latLongRect_;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1202,7 +1171,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       languageHints_.makeImmutable();
       return languageHints_;
     }
-
     /**
      *
      *
@@ -1224,7 +1192,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageHintsCount() {
       return languageHints_.size();
     }
-
     /**
      *
      *
@@ -1247,7 +1214,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLanguageHints(int index) {
       return languageHints_.get(index);
     }
-
     /**
      *
      *
@@ -1270,7 +1236,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
       return languageHints_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1301,7 +1266,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1295,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1321,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1346,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1383,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder,
             com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder>
         cropHintsParamsBuilder_;
-
     /**
      *
      *
@@ -1437,7 +1397,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCropHintsParams() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1458,7 +1417,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         return cropHintsParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1439,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1459,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1531,7 +1487,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1506,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1520,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCropHintsParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1586,7 +1539,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             : cropHintsParams_;
       }
     }
-
     /**
      *
      *
@@ -1619,7 +1571,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder,
             com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder>
         productSearchParamsBuilder_;
-
     /**
      *
      *
@@ -1634,7 +1585,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductSearchParams() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1655,7 +1605,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         return productSearchParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1679,7 +1628,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1648,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1677,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1696,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1711,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductSearchParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1786,7 +1730,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             : productSearchParams_;
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1762,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder,
             com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder>
         webDetectionParamsBuilder_;
-
     /**
      *
      *
@@ -1834,7 +1776,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWebDetectionParams() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1855,7 +1796,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         return webDetectionParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1879,7 +1819,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1900,7 +1839,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1868,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1950,7 +1887,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1966,7 +1902,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWebDetectionParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1986,7 +1921,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             : webDetectionParams_;
       }
     }
-
     /**
      *
      *
@@ -2019,7 +1953,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p3beta1.TextDetectionParams.Builder,
             com.google.cloud.vision.v1p3beta1.TextDetectionParamsOrBuilder>
         textDetectionParamsBuilder_;
-
     /**
      *
      *
@@ -2034,7 +1967,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextDetectionParams() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2055,7 +1987,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         return textDetectionParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2079,7 +2010,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2100,7 +2030,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2130,7 +2059,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2078,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2093,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTextDetectionParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2186,7 +2112,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             : textDetectionParams_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.ListSupportedDatabaseFlagsResponse)
     ListSupportedDatabaseFlagsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSupportedDatabaseFlagsResponse.newBuilder() to construct.
   private ListSupportedDatabaseFlagsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag>
       supportedDatabaseFlags_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       getSupportedDatabaseFlagsList() {
     return supportedDatabaseFlags_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       getSupportedDatabaseFlagsOrBuilderList() {
     return supportedDatabaseFlags_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
   public int getSupportedDatabaseFlagsCount() {
     return supportedDatabaseFlags_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       int index) {
     return supportedDatabaseFlags_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +660,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return supportedDatabaseFlagsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -688,7 +678,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return supportedDatabaseFlagsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return supportedDatabaseFlagsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         getSupportedDatabaseFlagsBuilder(int index) {
       return getSupportedDatabaseFlagsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return supportedDatabaseFlagsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return java.util.Collections.unmodifiableList(supportedDatabaseFlags_);
       }
     }
-
     /**
      *
      *
@@ -996,7 +972,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       return getSupportedDatabaseFlagsFieldBuilder()
           .addBuilder(com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1014,7 +989,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
           .addBuilder(
               index, com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1052,7 +1026,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1075,7 +1048,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1070,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1120,7 +1091,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1108,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

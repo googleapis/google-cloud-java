@@ -34,7 +34,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.FilteringAttribute)
     FilteringAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FilteringAttribute.newBuilder() to construct.
   private FilteringAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attribute_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
 
   public static final int REQUIRED_FIELD_NUMBER = 3;
   private boolean required_ = false;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
 
   public static final int PATH_PATTERN_SUPPORTED_FIELD_NUMBER = 4;
   private boolean pathPatternSupported_ = false;
-
   /**
    *
    *
@@ -398,7 +391,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -625,7 +617,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object attribute_ = "";
-
     /**
      *
      *
@@ -648,7 +639,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean required_;
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     public boolean getRequired() {
       return required_;
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean pathPatternSupported_;
-
     /**
      *
      *
@@ -923,7 +901,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     public boolean getPathPatternSupported() {
       return pathPatternSupported_;
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

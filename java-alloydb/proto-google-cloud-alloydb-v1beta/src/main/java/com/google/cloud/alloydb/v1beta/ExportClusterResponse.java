@@ -33,7 +33,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.ExportClusterResponse)
     ExportClusterResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportClusterResponse.newBuilder() to construct.
   private ExportClusterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
   public boolean hasGcsDestination() {
     return destinationCase_ == 2;
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.alloydb.v1beta.GcsDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -344,7 +339,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +557,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1beta.GcsDestination.Builder,
             com.google.cloud.alloydb.v1beta.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
-
     /**
      *
      *
@@ -581,7 +574,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
     public boolean hasGcsDestination() {
       return destinationCase_ == 2;
     }
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.alloydb.v1beta.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.alloydb.v1beta.GcsDestination.Builder getGcsDestinationBuilder() {
       return getGcsDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class ExportClusterResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.alloydb.v1beta.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *

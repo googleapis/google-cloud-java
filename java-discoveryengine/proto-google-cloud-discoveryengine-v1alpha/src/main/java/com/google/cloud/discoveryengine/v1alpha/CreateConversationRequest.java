@@ -33,7 +33,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.CreateConversationRequest)
     CreateConversationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateConversationRequest.newBuilder() to construct.
   private CreateConversationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
 
   public static final int CONVERSATION_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1alpha.Conversation conversation_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
   public boolean hasConversation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         ? com.google.cloud.discoveryengine.v1alpha.Conversation.getDefaultInstance()
         : conversation_;
   }
-
   /**
    *
    *
@@ -358,7 +352,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
             com.google.cloud.discoveryengine.v1alpha.Conversation.Builder,
             com.google.cloud.discoveryengine.v1alpha.ConversationOrBuilder>
         conversationBuilder_;
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
     public boolean hasConversation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
         return conversationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +834,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return getConversationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
             : conversation_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterAggregatedList)
     RouterAggregatedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterAggregatedList.newBuilder() to construct.
   private RouterAggregatedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +180,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
-
   /**
    *
    *
@@ -201,14 +196,12 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     }
     return internalGetItems().getMap().containsKey(key);
   }
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.compute.v1.RoutersScopedList> getItems() {
     return getItemsMap();
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       getItemsMap() {
     return internalGetItems().getMap();
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -312,7 +301,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -357,7 +344,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -381,7 +367,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -410,7 +395,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -426,7 +410,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -450,7 +433,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -480,7 +462,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -495,7 +476,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getUnreachablesList() {
     return unreachables_;
   }
-
   /**
    *
    *
@@ -510,7 +490,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public int getUnreachablesCount() {
     return unreachables_.size();
   }
-
   /**
    *
    *
@@ -526,7 +505,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public java.lang.String getUnreachables(int index) {
     return unreachables_.get(index);
   }
-
   /**
    *
    *
@@ -545,7 +523,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -561,7 +538,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -577,7 +553,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -847,7 +822,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1174,7 +1148,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1189,7 +1162,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1212,7 +1184,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1206,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1227,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1244,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,8 +1287,7 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 
@@ -1360,7 +1327,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public int getItemsCount() {
       return internalGetItems().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1377,7 +1343,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       }
       return internalGetItems().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1385,7 +1350,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         getItems() {
       return getItemsMap();
     }
-
     /**
      *
      *
@@ -1400,7 +1364,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         getItemsMap() {
       return internalGetItems().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1422,7 +1385,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
           internalGetMutableItems().ensureBuilderMap();
       return map.containsKey(key) ? itemsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1450,7 +1412,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       internalGetMutableItems().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1428,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       internalGetMutableItems().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.RoutersScopedList>
@@ -1475,7 +1435,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return internalGetMutableItems().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1497,7 +1456,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1477,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1503,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1561,7 +1517,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1584,7 +1539,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1607,7 +1561,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1629,7 +1582,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1647,7 +1599,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1623,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1687,7 +1637,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1710,7 +1659,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1733,7 +1681,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1755,7 +1702,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1719,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1743,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -1813,7 +1757,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1836,7 +1779,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1859,7 +1801,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1881,7 +1822,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1839,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1932,7 +1871,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -1948,7 +1886,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       unreachables_.makeImmutable();
       return unreachables_;
     }
-
     /**
      *
      *
@@ -1963,7 +1900,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public int getUnreachablesCount() {
       return unreachables_.size();
     }
-
     /**
      *
      *
@@ -1979,7 +1915,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public java.lang.String getUnreachables(int index) {
       return unreachables_.get(index);
     }
-
     /**
      *
      *
@@ -1995,7 +1930,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getUnreachablesBytes(int index) {
       return unreachables_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2019,7 +1953,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2042,7 +1975,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2062,7 +1994,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2012,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2112,7 +2042,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -2127,7 +2056,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2148,7 +2076,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2171,7 +2098,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2191,7 +2117,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2219,7 +2144,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2163,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2254,7 +2177,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2273,7 +2195,6 @@ public final class RouterAggregatedList extends com.google.protobuf.GeneratedMes
             : warning_;
       }
     }
-
     /**
      *
      *

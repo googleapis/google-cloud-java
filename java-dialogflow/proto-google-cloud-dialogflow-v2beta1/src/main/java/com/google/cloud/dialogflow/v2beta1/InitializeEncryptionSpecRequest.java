@@ -33,7 +33,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.InitializeEncryptionSpecRequest)
     InitializeEncryptionSpecRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InitializeEncryptionSpecRequest.newBuilder() to construct.
   private InitializeEncryptionSpecRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.EncryptionSpec encryptionSpec_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
         ? com.google.cloud.dialogflow.v2beta1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
-
   /**
    *
    *
@@ -298,7 +294,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +505,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
             com.google.cloud.dialogflow.v2beta1.EncryptionSpec.Builder,
             com.google.cloud.dialogflow.v2beta1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
-
     /**
      *
      *
@@ -530,7 +524,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -556,7 +549,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
         return encryptionSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class InitializeEncryptionSpecRequest extends com.google.protobuf.G
             : encryptionSpec_;
       }
     }
-
     /**
      *
      *

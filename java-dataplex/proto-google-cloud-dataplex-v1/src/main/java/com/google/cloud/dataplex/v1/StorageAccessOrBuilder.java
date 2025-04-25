@@ -39,7 +39,6 @@ public interface StorageAccessOrBuilder
    * @return The enum numeric value on the wire for read.
    */
   int getReadValue();
-
   /**
    *
    *

@@ -72,7 +72,6 @@ public enum SubscriptionPeriod implements com.google.protobuf.ProtocolMessageEnu
    * <code>SUBSCRIPTION_PERIOD_UNSPECIFIED = 0;</code>
    */
   public static final int SUBSCRIPTION_PERIOD_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum SubscriptionPeriod implements com.google.protobuf.ProtocolMessageEnu
    * <code>MONTH = 1;</code>
    */
   public static final int MONTH_VALUE = 1;
-
   /**
    *
    *

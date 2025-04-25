@@ -39,7 +39,6 @@ public interface RecognizeRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface RecognizeRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v1.RecognitionConfig getConfig();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface RecognizeRequestOrBuilder
    * @return Whether the audio field is set.
    */
   boolean hasAudio();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface RecognizeRequestOrBuilder
    * @return The audio.
    */
   com.google.cloud.speech.v1.RecognitionAudio getAudio();
-
   /**
    *
    *

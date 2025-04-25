@@ -38,7 +38,6 @@ public interface PairwiseQuestionAnsweringQualityInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PairwiseQuestionAnsweringQualityInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.PairwiseQuestionAnsweringQualitySpec getMetricSpec();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface PairwiseQuestionAnsweringQualityInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface PairwiseQuestionAnsweringQualityInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1.PairwiseQuestionAnsweringQualityInstance getInstance();
-
   /**
    *
    *

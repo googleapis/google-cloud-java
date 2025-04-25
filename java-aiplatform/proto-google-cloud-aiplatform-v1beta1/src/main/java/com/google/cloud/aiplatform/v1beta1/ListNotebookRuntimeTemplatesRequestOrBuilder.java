@@ -40,7 +40,6 @@ public interface ListNotebookRuntimeTemplatesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface ListNotebookRuntimeTemplatesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -162,7 +160,6 @@ public interface ListNotebookRuntimeTemplatesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -194,7 +191,6 @@ public interface ListNotebookRuntimeTemplatesRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
-
   /**
    *
    *
@@ -208,7 +204,6 @@ public interface ListNotebookRuntimeTemplatesRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
-
   /**
    *
    *
@@ -240,7 +235,6 @@ public interface ListNotebookRuntimeTemplatesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

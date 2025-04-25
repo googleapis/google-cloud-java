@@ -17,7 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_SessionService_ListSessions_String_sync]
-import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
+import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.aiplatform.v1beta1.Session;
 import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
@@ -34,8 +34,7 @@ public class SyncListSessionsString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-      String parent =
-          ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       for (Session element : sessionServiceClient.listSessions(parent).iterateAll()) {
         // doThingsWith(element);
       }

@@ -272,19 +272,6 @@ public final class TenantServiceGrpc {
     return TenantServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TenantServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TenantServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<TenantServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public TenantServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new TenantServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return TenantServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -509,91 +496,6 @@ public final class TenantServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TenantService.
-   *
-   * <pre>
-   * A service that handles tenant management, including CRUD and enumeration.
-   * </pre>
-   */
-  public static final class TenantServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TenantServiceBlockingV2Stub> {
-    private TenantServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TenantServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TenantServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new tenant entity.
-     * </pre>
-     */
-    public com.google.cloud.talent.v4beta1.Tenant createTenant(
-        com.google.cloud.talent.v4beta1.CreateTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateTenantMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves specified tenant.
-     * </pre>
-     */
-    public com.google.cloud.talent.v4beta1.Tenant getTenant(
-        com.google.cloud.talent.v4beta1.GetTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetTenantMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates specified tenant.
-     * </pre>
-     */
-    public com.google.cloud.talent.v4beta1.Tenant updateTenant(
-        com.google.cloud.talent.v4beta1.UpdateTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateTenantMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes specified tenant.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteTenant(
-        com.google.cloud.talent.v4beta1.DeleteTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteTenantMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all tenants associated with the project.
-     * </pre>
-     */
-    public com.google.cloud.talent.v4beta1.ListTenantsResponse listTenants(
-        com.google.cloud.talent.v4beta1.ListTenantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListTenantsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service TenantService.
    *
    * <pre>
    * A service that handles tenant management, including CRUD and enumeration.

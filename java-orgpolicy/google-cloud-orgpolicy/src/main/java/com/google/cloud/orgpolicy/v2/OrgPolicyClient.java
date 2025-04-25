@@ -264,8 +264,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCustomConstraint</td>
- *      <td><p> Gets a custom or managed constraint.
- * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom or managed constraint does not exist.</td>
+ *      <td><p> Gets a custom constraint.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does not exist.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1894,10 +1894,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a custom or managed constraint.
+   * Gets a custom constraint.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom or managed
-   * constraint does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
    *
    * <p>Sample code:
    *
@@ -1913,8 +1913,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the custom or managed constraint. See the custom
-   *     constraint entry for naming requirements.
+   * @param name Required. Resource name of the custom constraint. See the custom constraint entry
+   *     for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomConstraint getCustomConstraint(CustomConstraintName name) {
@@ -1927,10 +1927,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a custom or managed constraint.
+   * Gets a custom constraint.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom or managed
-   * constraint does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
    *
    * <p>Sample code:
    *
@@ -1946,8 +1946,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the custom or managed constraint. See the custom
-   *     constraint entry for naming requirements.
+   * @param name Required. Resource name of the custom constraint. See the custom constraint entry
+   *     for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomConstraint getCustomConstraint(String name) {
@@ -1958,10 +1958,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a custom or managed constraint.
+   * Gets a custom constraint.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom or managed
-   * constraint does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
    *
    * <p>Sample code:
    *
@@ -1989,10 +1989,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a custom or managed constraint.
+   * Gets a custom constraint.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom or managed
-   * constraint does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
    *
    * <p>Sample code:
    *

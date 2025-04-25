@@ -33,7 +33,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetIamPolicyLicenseRequest)
     GetIamPolicyLicenseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetIamPolicyLicenseRequest.newBuilder() to construct.
   private GetIamPolicyLicenseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 499220029;
   private int optionsRequestedPolicyVersion_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
   public boolean hasOptionsRequestedPolicyVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +387,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -610,7 +602,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int optionsRequestedPolicyVersion_;
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     public boolean hasOptionsRequestedPolicyVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     public int getOptionsRequestedPolicyVersion() {
       return optionsRequestedPolicyVersion_;
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +714,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +752,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +776,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -816,7 +798,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +858,6 @@ public final class GetIamPolicyLicenseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

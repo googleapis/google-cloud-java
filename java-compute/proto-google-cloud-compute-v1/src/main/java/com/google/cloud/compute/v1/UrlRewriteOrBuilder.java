@@ -36,7 +36,6 @@ public interface UrlRewriteOrBuilder
    * @return Whether the hostRewrite field is set.
    */
   boolean hasHostRewrite();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UrlRewriteOrBuilder
    * @return The hostRewrite.
    */
   java.lang.String getHostRewrite();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface UrlRewriteOrBuilder
    * @return Whether the pathPrefixRewrite field is set.
    */
   boolean hasPathPrefixRewrite();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface UrlRewriteOrBuilder
    * @return The pathPrefixRewrite.
    */
   java.lang.String getPathPrefixRewrite();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface UrlRewriteOrBuilder
    * @return Whether the pathTemplateRewrite field is set.
    */
   boolean hasPathTemplateRewrite();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface UrlRewriteOrBuilder
    * @return The pathTemplateRewrite.
    */
   java.lang.String getPathTemplateRewrite();
-
   /**
    *
    *

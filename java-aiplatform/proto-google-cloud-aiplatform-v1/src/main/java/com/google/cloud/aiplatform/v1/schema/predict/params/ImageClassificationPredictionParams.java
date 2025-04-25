@@ -35,7 +35,6 @@ public final class ImageClassificationPredictionParams
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.params.ImageClassificationPredictionParams)
     ImageClassificationPredictionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageClassificationPredictionParams.newBuilder() to construct.
   private ImageClassificationPredictionParams(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ImageClassificationPredictionParams
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float confidenceThreshold_ = 0F;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ImageClassificationPredictionParams
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 2;
   private int maxPredictions_ = 0;
-
   /**
    *
    *
@@ -302,7 +299,6 @@ public final class ImageClassificationPredictionParams
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -524,7 +520,6 @@ public final class ImageClassificationPredictionParams
     private int bitField0_;
 
     private float confidenceThreshold_;
-
     /**
      *
      *
@@ -541,7 +536,6 @@ public final class ImageClassificationPredictionParams
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
-
     /**
      *
      *
@@ -562,7 +556,6 @@ public final class ImageClassificationPredictionParams
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -583,7 +576,6 @@ public final class ImageClassificationPredictionParams
     }
 
     private int maxPredictions_;
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class ImageClassificationPredictionParams
     public int getMaxPredictions() {
       return maxPredictions_;
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class ImageClassificationPredictionParams
       onChanged();
       return this;
     }
-
     /**
      *
      *

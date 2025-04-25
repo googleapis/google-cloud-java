@@ -34,7 +34,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.ListHubSpokesRequest)
     ListHubSpokesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListHubSpokesRequest.newBuilder() to construct.
   private ListHubSpokesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
      * <code>SPOKE_VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int SPOKE_VIEW_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
-
     /**
      *
      *
@@ -243,7 +240,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -269,7 +265,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -301,7 +296,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList spokeLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -323,7 +317,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getSpokeLocationsList() {
     return spokeLocations_;
   }
-
   /**
    *
    *
@@ -345,7 +338,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
   public int getSpokeLocationsCount() {
     return spokeLocations_.size();
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getSpokeLocations(int index) {
     return spokeLocations_.get(index);
   }
-
   /**
    *
    *
@@ -394,7 +385,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -415,7 +405,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -439,7 +428,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -468,7 +456,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -492,7 +479,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -521,7 +507,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -545,7 +530,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -572,7 +556,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VIEW_FIELD_NUMBER = 7;
   private int view_ = 0;
-
   /**
    *
    *
@@ -590,7 +573,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -840,7 +822,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1122,7 +1103,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1147,7 +1127,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1151,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1196,7 +1174,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1193,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1227,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1274,7 +1249,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       spokeLocations_.makeImmutable();
       return spokeLocations_;
     }
-
     /**
      *
      *
@@ -1296,7 +1270,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     public int getSpokeLocationsCount() {
       return spokeLocations_.size();
     }
-
     /**
      *
      *
@@ -1319,7 +1292,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getSpokeLocations(int index) {
       return spokeLocations_.get(index);
     }
-
     /**
      *
      *
@@ -1342,7 +1314,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getSpokeLocationsBytes(int index) {
       return spokeLocations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1373,7 +1344,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1403,7 +1373,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1399,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1424,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1489,7 +1456,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1505,7 +1471,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1525,7 +1490,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1509,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1568,7 +1531,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1591,7 +1553,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1613,7 +1574,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1591,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1656,7 +1615,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1679,7 +1637,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1702,7 +1659,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1724,7 +1680,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1697,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1767,7 +1721,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1790,7 +1743,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1813,7 +1765,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1835,7 +1786,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1853,7 +1803,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1827,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1896,7 +1844,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1917,7 +1864,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1939,7 +1885,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.networkconnectivity.v1.ListHubSpokesRequest.SpokeView.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1964,7 +1909,6 @@ public final class ListHubSpokesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

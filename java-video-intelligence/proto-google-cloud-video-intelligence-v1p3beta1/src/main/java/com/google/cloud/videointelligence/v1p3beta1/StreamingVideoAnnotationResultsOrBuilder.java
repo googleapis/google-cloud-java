@@ -36,7 +36,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.VideoSegment>
       getShotAnnotationsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getShotAnnotations(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * </code>
    */
   int getShotAnnotationsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
       getShotAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>
       getLabelAnnotationsList();
-
   /**
    *
    *
@@ -111,7 +106,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation getLabelAnnotations(int index);
-
   /**
    *
    *
@@ -123,7 +117,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * </code>
    */
   int getLabelAnnotationsCount();
-
   /**
    *
    *
@@ -136,7 +129,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -164,7 +156,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * @return Whether the explicitAnnotation field is set.
    */
   boolean hasExplicitAnnotation();
-
   /**
    *
    *
@@ -179,7 +170,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * @return The explicitAnnotation.
    */
   com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation getExplicitAnnotation();
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>
       getObjectAnnotationsList();
-
   /**
    *
    *
@@ -221,7 +210,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation getObjectAnnotations(
       int index);
-
   /**
    *
    *
@@ -234,7 +222,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
    * </code>
    */
   int getObjectAnnotationsCount();
-
   /**
    *
    *
@@ -249,7 +236,6 @@ public interface StreamingVideoAnnotationResultsOrBuilder
   java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotationOrBuilder>
       getObjectAnnotationsOrBuilderList();
-
   /**
    *
    *

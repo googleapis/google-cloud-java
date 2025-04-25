@@ -33,7 +33,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.AdRequest)
     AdRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdRequest.newBuilder() to construct.
   private AdRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.video.stitcher.v1.RequestMetadata requestMetadata_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESPONSE_METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.video.stitcher.v1.ResponseMetadata responseMetadata_;
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResponseMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.ResponseMetadata.getDefaultInstance()
         : responseMetadata_;
   }
-
   /**
    *
    *
@@ -412,7 +403,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +637,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.RequestMetadata.Builder,
             com.google.cloud.video.stitcher.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         return requestMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
             : requestMetadata_;
       }
     }
-
     /**
      *
      *
@@ -960,7 +936,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.ResponseMetadata.Builder,
             com.google.cloud.video.stitcher.v1.ResponseMetadataOrBuilder>
         responseMetadataBuilder_;
-
     /**
      *
      *
@@ -975,7 +950,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResponseMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -996,7 +970,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         return responseMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1019,7 +992,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1041,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1075,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResponseMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1126,7 +1094,6 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
             : responseMetadata_;
       }
     }
-
     /**
      *
      *

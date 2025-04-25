@@ -39,7 +39,6 @@ public interface CreateHostProjectRegistrationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateHostProjectRegistrationRequestOrBuilder
    * @return The hostProjectRegistrationId.
    */
   java.lang.String getHostProjectRegistrationId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface CreateHostProjectRegistrationRequestOrBuilder
    * @return Whether the hostProjectRegistration field is set.
    */
   boolean hasHostProjectRegistration();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateHostProjectRegistrationRequestOrBuilder
    * @return The hostProjectRegistration.
    */
   com.google.cloud.apihub.v1.HostProjectRegistration getHostProjectRegistration();
-
   /**
    *
    *

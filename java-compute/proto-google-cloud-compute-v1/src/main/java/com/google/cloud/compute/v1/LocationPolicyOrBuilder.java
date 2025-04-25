@@ -35,7 +35,6 @@ public interface LocationPolicyOrBuilder
    * </code>
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -47,12 +46,10 @@ public interface LocationPolicyOrBuilder
    * </code>
    */
   boolean containsLocations(java.lang.String key);
-
   /** Use {@link #getLocationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
       getLocations();
-
   /**
    *
    *
@@ -65,7 +62,6 @@ public interface LocationPolicyOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
       getLocationsMap();
-
   /**
    *
    *
@@ -81,7 +77,6 @@ public interface LocationPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.LocationPolicyLocation defaultValue);
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface LocationPolicyOrBuilder
    * @return Whether the targetShape field is set.
    */
   boolean hasTargetShape();
-
   /**
    *
    *
@@ -121,7 +115,6 @@ public interface LocationPolicyOrBuilder
    * @return The targetShape.
    */
   java.lang.String getTargetShape();
-
   /**
    *
    *

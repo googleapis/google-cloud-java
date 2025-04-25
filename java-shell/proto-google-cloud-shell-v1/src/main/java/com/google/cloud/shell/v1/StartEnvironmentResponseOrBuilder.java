@@ -36,7 +36,6 @@ public interface StartEnvironmentResponseOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StartEnvironmentResponseOrBuilder
    * @return The environment.
    */
   com.google.cloud.shell.v1.Environment getEnvironment();
-
   /**
    *
    *

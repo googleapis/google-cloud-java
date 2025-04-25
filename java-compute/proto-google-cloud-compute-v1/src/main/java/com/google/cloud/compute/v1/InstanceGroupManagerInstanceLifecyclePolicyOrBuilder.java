@@ -37,7 +37,6 @@ public interface InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
    * @return Whether the defaultActionOnFailure field is set.
    */
   boolean hasDefaultActionOnFailure();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
    * @return The defaultActionOnFailure.
    */
   java.lang.String getDefaultActionOnFailure();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
    * @return Whether the forceUpdateOnRepair field is set.
    */
   boolean hasForceUpdateOnRepair();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
    * @return The forceUpdateOnRepair.
    */
   java.lang.String getForceUpdateOnRepair();
-
   /**
    *
    *

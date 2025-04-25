@@ -37,7 +37,6 @@ public interface ConversationParticipantOrBuilder
    * @return Whether the dialogflowParticipantName field is set.
    */
   boolean hasDialogflowParticipantName();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ConversationParticipantOrBuilder
    * @return The dialogflowParticipantName.
    */
   java.lang.String getDialogflowParticipantName();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ConversationParticipantOrBuilder
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ConversationParticipantOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface ConversationParticipantOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getDialogflowParticipant();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface ConversationParticipantOrBuilder
    * @return The obfuscatedExternalUserId.
    */
   java.lang.String getObfuscatedExternalUserId();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface ConversationParticipantOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
-
   /**
    *
    *

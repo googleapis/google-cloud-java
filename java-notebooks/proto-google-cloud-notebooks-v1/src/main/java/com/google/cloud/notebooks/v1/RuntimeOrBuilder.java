@@ -38,7 +38,6 @@ public interface RuntimeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface RuntimeOrBuilder
    * @return Whether the virtualMachine field is set.
    */
   boolean hasVirtualMachine();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface RuntimeOrBuilder
    * @return The virtualMachine.
    */
   com.google.cloud.notebooks.v1.VirtualMachine getVirtualMachine();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface RuntimeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface RuntimeOrBuilder
    * @return The enum numeric value on the wire for healthState.
    */
   int getHealthStateValue();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface RuntimeOrBuilder
    * @return Whether the accessConfig field is set.
    */
   boolean hasAccessConfig();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface RuntimeOrBuilder
    * @return The accessConfig.
    */
   com.google.cloud.notebooks.v1.RuntimeAccessConfig getAccessConfig();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface RuntimeOrBuilder
    * @return Whether the softwareConfig field is set.
    */
   boolean hasSoftwareConfig();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface RuntimeOrBuilder
    * @return The softwareConfig.
    */
   com.google.cloud.notebooks.v1.RuntimeSoftwareConfig getSoftwareConfig();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface RuntimeOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public interface RuntimeOrBuilder
    * @return The metrics.
    */
   com.google.cloud.notebooks.v1.RuntimeMetrics getMetrics();
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public interface RuntimeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public interface RuntimeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -324,7 +311,6 @@ public interface RuntimeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -338,7 +324,6 @@ public interface RuntimeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

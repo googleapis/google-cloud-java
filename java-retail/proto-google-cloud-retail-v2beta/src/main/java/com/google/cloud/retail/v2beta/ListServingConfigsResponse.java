@@ -33,7 +33,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ListServingConfigsResponse)
     ListServingConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListServingConfigsResponse.newBuilder() to construct.
   private ListServingConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.ServingConfig> servingConfigs_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.retail.v2beta.ServingConfig> getServingConfigsList() {
     return servingConfigs_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       getServingConfigsOrBuilderList() {
     return servingConfigs_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
   public int getServingConfigsCount() {
     return servingConfigs_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
   public com.google.cloud.retail.v2beta.ServingConfig getServingConfigs(int index) {
     return servingConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return servingConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return servingConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return servingConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         int index) {
       return getServingConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return servingConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(servingConfigs_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       return getServingConfigsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.ServingConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -952,7 +927,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       return getServingConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2beta.ServingConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1011,7 +984,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1006,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1027,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1044,6 @@ public final class ListServingConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

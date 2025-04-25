@@ -30,14 +30,12 @@ public interface AttemptOrBuilder
    * @return Whether the attemptTime field is set.
    */
   boolean hasAttemptTime();
-
   /**
    * <code>.google.protobuf.Timestamp attempt_time = 1;</code>
    *
    * @return The attemptTime.
    */
   com.google.protobuf.Timestamp getAttemptTime();
-
   /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
   com.google.protobuf.TimestampOrBuilder getAttemptTimeOrBuilder();
 
@@ -51,7 +49,6 @@ public interface AttemptOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
-
   /**
    *
    *
@@ -62,7 +59,6 @@ public interface AttemptOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   com.google.rpc.Status getPartialFailures(int index);
-
   /**
    *
    *
@@ -73,7 +69,6 @@ public interface AttemptOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   int getPartialFailuresCount();
-
   /**
    *
    *
@@ -84,7 +79,6 @@ public interface AttemptOrBuilder
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
-
   /**
    *
    *

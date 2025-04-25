@@ -185,7 +185,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int FILE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -200,7 +199,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BINARY_FILE = 1;</code>
    */
   public static final int BINARY_FILE_VALUE = 1;
-
   /**
    *
    *
@@ -218,7 +216,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_FILE = 2;</code>
    */
   public static final int TEXT_FILE_VALUE = 2;
-
   /**
    *
    *
@@ -235,7 +232,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 3;</code>
    */
   public static final int IMAGE_VALUE = 3;
-
   /**
    *
    *
@@ -249,7 +245,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WORD = 5;</code>
    */
   public static final int WORD_VALUE = 5;
-
   /**
    *
    *
@@ -263,7 +258,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PDF = 6;</code>
    */
   public static final int PDF_VALUE = 6;
-
   /**
    *
    *
@@ -275,7 +269,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AVRO = 7;</code>
    */
   public static final int AVRO_VALUE = 7;
-
   /**
    *
    *
@@ -287,7 +280,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CSV = 8;</code>
    */
   public static final int CSV_VALUE = 8;
-
   /**
    *
    *
@@ -299,7 +291,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TSV = 9;</code>
    */
   public static final int TSV_VALUE = 9;
-
   /**
    *
    *
@@ -313,7 +304,6 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POWERPOINT = 11;</code>
    */
   public static final int POWERPOINT_VALUE = 11;
-
   /**
    *
    *

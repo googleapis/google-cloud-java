@@ -36,7 +36,6 @@ public interface RedisClusterInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface RedisClusterInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface RedisClusterInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface RedisClusterInfoOrBuilder
    * @return The discoveryEndpointIpAddress.
    */
   java.lang.String getDiscoveryEndpointIpAddress();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface RedisClusterInfoOrBuilder
    * @return The secondaryEndpointIpAddress.
    */
   java.lang.String getSecondaryEndpointIpAddress();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface RedisClusterInfoOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

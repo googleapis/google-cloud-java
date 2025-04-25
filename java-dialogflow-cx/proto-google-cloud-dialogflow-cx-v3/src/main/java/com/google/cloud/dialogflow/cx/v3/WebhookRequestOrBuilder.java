@@ -38,7 +38,6 @@ public interface WebhookRequestOrBuilder
    * @return The detectIntentResponseId.
    */
   java.lang.String getDetectIntentResponseId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface WebhookRequestOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the triggerIntent field is set.
    */
   boolean hasTriggerIntent();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface WebhookRequestOrBuilder
    * @return The triggerIntent.
    */
   java.lang.String getTriggerIntent();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the transcript field is set.
    */
   boolean hasTranscript();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface WebhookRequestOrBuilder
    * @return The transcript.
    */
   java.lang.String getTranscript();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the triggerEvent field is set.
    */
   boolean hasTriggerEvent();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface WebhookRequestOrBuilder
    * @return The triggerEvent.
    */
   java.lang.String getTriggerEvent();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the dtmfDigits field is set.
    */
   boolean hasDtmfDigits();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface WebhookRequestOrBuilder
    * @return The dtmfDigits.
    */
   java.lang.String getDtmfDigits();
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public interface WebhookRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -312,7 +300,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the fulfillmentInfo field is set.
    */
   boolean hasFulfillmentInfo();
-
   /**
    *
    *
@@ -327,7 +314,6 @@ public interface WebhookRequestOrBuilder
    * @return The fulfillmentInfo.
    */
   com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo getFulfillmentInfo();
-
   /**
    *
    *
@@ -354,7 +340,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the intentInfo field is set.
    */
   boolean hasIntentInfo();
-
   /**
    *
    *
@@ -367,7 +352,6 @@ public interface WebhookRequestOrBuilder
    * @return The intentInfo.
    */
   com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo getIntentInfo();
-
   /**
    *
    *
@@ -391,7 +375,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the pageInfo field is set.
    */
   boolean hasPageInfo();
-
   /**
    *
    *
@@ -404,7 +387,6 @@ public interface WebhookRequestOrBuilder
    * @return The pageInfo.
    */
   com.google.cloud.dialogflow.cx.v3.PageInfo getPageInfo();
-
   /**
    *
    *
@@ -428,7 +410,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the sessionInfo field is set.
    */
   boolean hasSessionInfo();
-
   /**
    *
    *
@@ -441,7 +422,6 @@ public interface WebhookRequestOrBuilder
    * @return The sessionInfo.
    */
   com.google.cloud.dialogflow.cx.v3.SessionInfo getSessionInfo();
-
   /**
    *
    *
@@ -465,7 +445,6 @@ public interface WebhookRequestOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.ResponseMessage messages = 7;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.ResponseMessage> getMessagesList();
-
   /**
    *
    *
@@ -478,7 +457,6 @@ public interface WebhookRequestOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.ResponseMessage messages = 7;</code>
    */
   com.google.cloud.dialogflow.cx.v3.ResponseMessage getMessages(int index);
-
   /**
    *
    *
@@ -491,7 +469,6 @@ public interface WebhookRequestOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.ResponseMessage messages = 7;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -505,7 +482,6 @@ public interface WebhookRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ResponseMessageOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *
@@ -532,7 +508,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -546,7 +521,6 @@ public interface WebhookRequestOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
-
   /**
    *
    *
@@ -574,7 +548,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the sentimentAnalysisResult field is set.
    */
   boolean hasSentimentAnalysisResult();
-
   /**
    *
    *
@@ -591,7 +564,6 @@ public interface WebhookRequestOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult
       getSentimentAnalysisResult();
-
   /**
    *
    *
@@ -619,7 +591,6 @@ public interface WebhookRequestOrBuilder
    * @return Whether the languageInfo field is set.
    */
   boolean hasLanguageInfo();
-
   /**
    *
    *
@@ -632,7 +603,6 @@ public interface WebhookRequestOrBuilder
    * @return The languageInfo.
    */
   com.google.cloud.dialogflow.cx.v3.LanguageInfo getLanguageInfo();
-
   /**
    *
    *

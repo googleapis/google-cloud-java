@@ -37,7 +37,6 @@ public interface DeleteAuthorizedCertificateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

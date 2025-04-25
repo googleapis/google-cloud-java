@@ -34,7 +34,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.WorkforceIdentityBasedOAuth2ClientID)
     WorkforceIdentityBasedOAuth2ClientIDOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkforceIdentityBasedOAuth2ClientID.newBuilder() to construct.
   private WorkforceIdentityBasedOAuth2ClientID(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firstPartyOauth2ClientId_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object thirdPartyOauth2ClientId_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
       return s;
     }
   }
-
   /**
    *
    *
@@ -349,7 +344,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
     private int bitField0_;
 
     private java.lang.Object firstPartyOauth2ClientId_ = "";
-
     /**
      *
      *
@@ -578,7 +571,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
     }
 
     private java.lang.Object thirdPartyOauth2ClientId_ = "";
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +745,6 @@ public final class WorkforceIdentityBasedOAuth2ClientID
       onChanged();
       return this;
     }
-
     /**
      *
      *

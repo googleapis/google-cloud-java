@@ -33,7 +33,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.TransferEligibility)
     TransferEligibilityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferEligibility.newBuilder() to construct.
   private TransferEligibility(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * <code>REASON_UNSPECIFIED = 0;</code>
      */
     public static final int REASON_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * <code>PENDING_TOS_ACCEPTANCE = 1;</code>
      */
     public static final int PENDING_TOS_ACCEPTANCE_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * <code>SKU_NOT_ELIGIBLE = 2;</code>
      */
     public static final int SKU_NOT_ELIGIBLE_VALUE = 2;
-
     /**
      *
      *
@@ -172,7 +168,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * <code>SKU_SUSPENDED = 3;</code>
      */
     public static final int SKU_SUSPENDED_VALUE = 3;
-
     /**
      *
      *
@@ -274,7 +269,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
 
   public static final int IS_ELIGIBLE_FIELD_NUMBER = 1;
   private boolean isEligible_ = false;
-
   /**
    *
    *
@@ -295,7 +289,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
 
   public static final int INELIGIBILITY_REASON_FIELD_NUMBER = 3;
   private int ineligibilityReason_ = 0;
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
   public int getIneligibilityReasonValue() {
     return ineligibilityReason_;
   }
-
   /**
    *
    *
@@ -562,7 +552,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -773,7 +762,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean isEligible_;
-
     /**
      *
      *
@@ -789,7 +777,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     public boolean getIsEligible() {
       return isEligible_;
     }
-
     /**
      *
      *
@@ -809,7 +796,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +815,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -852,7 +837,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +859,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +880,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +921,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     }
 
     private int ineligibilityReason_ = 0;
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
     public int getIneligibilityReasonValue() {
       return ineligibilityReason_;
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +973,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.channel.v1.TransferEligibility.Reason.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1018,7 +995,6 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

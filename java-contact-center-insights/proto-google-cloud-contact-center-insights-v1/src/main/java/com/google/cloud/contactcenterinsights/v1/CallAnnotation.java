@@ -33,7 +33,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CallAnnotation)
     CallAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CallAnnotation.newBuilder() to construct.
   private CallAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -132,7 +130,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERRUPTION_DATA_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInterruptionData() {
     return dataCase_ == 10;
   }
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.InterruptionData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SENTIMENT_DATA_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSentimentData() {
     return dataCase_ == 11;
   }
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SILENCE_DATA_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSilenceData() {
     return dataCase_ == 12;
   }
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.SilenceData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOLD_DATA_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -312,7 +300,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHoldData() {
     return dataCase_ == 13;
   }
-
   /**
    *
    *
@@ -331,7 +318,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.HoldData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -350,7 +336,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTITY_MENTION_DATA_FIELD_NUMBER = 15;
-
   /**
    *
    *
@@ -366,7 +351,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntityMentionData() {
     return dataCase_ == 15;
   }
-
   /**
    *
    *
@@ -385,7 +369,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.EntityMentionData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -405,7 +388,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTENT_MATCH_DATA_FIELD_NUMBER = 16;
-
   /**
    *
    *
@@ -421,7 +403,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntentMatchData() {
     return dataCase_ == 16;
   }
-
   /**
    *
    *
@@ -440,7 +421,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.IntentMatchData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -460,7 +440,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHRASE_MATCH_DATA_FIELD_NUMBER = 17;
-
   /**
    *
    *
@@ -476,7 +455,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhraseMatchData() {
     return dataCase_ == 17;
   }
-
   /**
    *
    *
@@ -495,7 +473,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.PhraseMatchData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -515,7 +492,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ISSUE_MATCH_DATA_FIELD_NUMBER = 18;
-
   /**
    *
    *
@@ -531,7 +507,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIssueMatchData() {
     return dataCase_ == 18;
   }
-
   /**
    *
    *
@@ -550,7 +525,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -571,7 +545,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANNEL_TAG_FIELD_NUMBER = 1;
   private int channelTag_ = 0;
-
   /**
    *
    *
@@ -591,7 +564,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANNOTATION_START_BOUNDARY_FIELD_NUMBER = 4;
   private com.google.cloud.contactcenterinsights.v1.AnnotationBoundary annotationStartBoundary_;
-
   /**
    *
    *
@@ -608,7 +580,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnnotationStartBoundary() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -627,7 +598,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.getDefaultInstance()
         : annotationStartBoundary_;
   }
-
   /**
    *
    *
@@ -648,7 +618,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANNOTATION_END_BOUNDARY_FIELD_NUMBER = 5;
   private com.google.cloud.contactcenterinsights.v1.AnnotationBoundary annotationEndBoundary_;
-
   /**
    *
    *
@@ -665,7 +634,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnnotationEndBoundary() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -684,7 +652,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.getDefaultInstance()
         : annotationEndBoundary_;
   }
-
   /**
    *
    *
@@ -1022,7 +989,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1432,7 +1398,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.InterruptionData.Builder,
             com.google.cloud.contactcenterinsights.v1.InterruptionDataOrBuilder>
         interruptionDataBuilder_;
-
     /**
      *
      *
@@ -1448,7 +1413,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInterruptionData() {
       return dataCase_ == 10;
     }
-
     /**
      *
      *
@@ -1474,7 +1438,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.InterruptionData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1498,7 +1461,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1481,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1516,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1541,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1554,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         getInterruptionDataBuilder() {
       return getInterruptionDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1617,7 +1575,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.InterruptionData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1656,7 +1613,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.SentimentData.Builder,
             com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder>
         sentimentDataBuilder_;
-
     /**
      *
      *
@@ -1672,7 +1628,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSentimentData() {
       return dataCase_ == 11;
     }
-
     /**
      *
      *
@@ -1698,7 +1653,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1721,7 +1675,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1695,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -1777,7 +1729,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -1803,7 +1754,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1817,7 +1767,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         getSentimentDataBuilder() {
       return getSentimentDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1839,7 +1788,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1878,7 +1826,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.SilenceData.Builder,
             com.google.cloud.contactcenterinsights.v1.SilenceDataOrBuilder>
         silenceDataBuilder_;
-
     /**
      *
      *
@@ -1894,7 +1841,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSilenceData() {
       return dataCase_ == 12;
     }
-
     /**
      *
      *
@@ -1920,7 +1866,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.SilenceData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1943,7 +1888,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -1964,7 +1908,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -1998,7 +1941,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -2024,7 +1966,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2037,7 +1978,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.SilenceData.Builder getSilenceDataBuilder() {
       return getSilenceDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2059,7 +1999,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.SilenceData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2098,7 +2037,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.HoldData.Builder,
             com.google.cloud.contactcenterinsights.v1.HoldDataOrBuilder>
         holdDataBuilder_;
-
     /**
      *
      *
@@ -2114,7 +2052,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHoldData() {
       return dataCase_ == 13;
     }
-
     /**
      *
      *
@@ -2140,7 +2077,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.HoldData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2163,7 +2099,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -2184,7 +2119,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -2217,7 +2151,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -2243,7 +2176,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2188,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.HoldData.Builder getHoldDataBuilder() {
       return getHoldDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2277,7 +2208,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.HoldData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2316,7 +2246,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.EntityMentionData.Builder,
             com.google.cloud.contactcenterinsights.v1.EntityMentionDataOrBuilder>
         entityMentionDataBuilder_;
-
     /**
      *
      *
@@ -2333,7 +2262,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntityMentionData() {
       return dataCase_ == 15;
     }
-
     /**
      *
      *
@@ -2360,7 +2288,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.EntityMentionData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2385,7 +2312,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -2407,7 +2333,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -2444,7 +2369,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -2471,7 +2395,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2486,7 +2409,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         getEntityMentionDataBuilder() {
       return getEntityMentionDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2509,7 +2431,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.EntityMentionData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2549,7 +2470,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.IntentMatchData.Builder,
             com.google.cloud.contactcenterinsights.v1.IntentMatchDataOrBuilder>
         intentMatchDataBuilder_;
-
     /**
      *
      *
@@ -2565,7 +2485,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntentMatchData() {
       return dataCase_ == 16;
     }
-
     /**
      *
      *
@@ -2591,7 +2510,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.IntentMatchData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2615,7 +2533,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 16;
       return this;
     }
-
     /**
      *
      *
@@ -2636,7 +2553,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 16;
       return this;
     }
-
     /**
      *
      *
@@ -2671,7 +2587,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 16;
       return this;
     }
-
     /**
      *
      *
@@ -2697,7 +2612,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2711,7 +2625,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         getIntentMatchDataBuilder() {
       return getIntentMatchDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2733,7 +2646,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.IntentMatchData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2772,7 +2684,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.PhraseMatchData.Builder,
             com.google.cloud.contactcenterinsights.v1.PhraseMatchDataOrBuilder>
         phraseMatchDataBuilder_;
-
     /**
      *
      *
@@ -2788,7 +2699,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhraseMatchData() {
       return dataCase_ == 17;
     }
-
     /**
      *
      *
@@ -2814,7 +2724,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.PhraseMatchData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2838,7 +2747,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -2859,7 +2767,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -2894,7 +2801,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -2920,7 +2826,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2934,7 +2839,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         getPhraseMatchDataBuilder() {
       return getPhraseMatchDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2956,7 +2860,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.PhraseMatchData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2995,7 +2898,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.IssueMatchData.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder>
         issueMatchDataBuilder_;
-
     /**
      *
      *
@@ -3011,7 +2913,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIssueMatchData() {
       return dataCase_ == 18;
     }
-
     /**
      *
      *
@@ -3037,7 +2938,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3061,7 +2961,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -3082,7 +2981,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -3117,7 +3015,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -3143,7 +3040,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3157,7 +3053,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         getIssueMatchDataBuilder() {
       return getIssueMatchDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3179,7 +3074,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3214,7 +3108,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int channelTag_;
-
     /**
      *
      *
@@ -3231,7 +3124,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getChannelTag() {
       return channelTag_;
     }
-
     /**
      *
      *
@@ -3252,7 +3144,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3278,7 +3169,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder,
             com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder>
         annotationStartBoundaryBuilder_;
-
     /**
      *
      *
@@ -3295,7 +3185,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotationStartBoundary() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3319,7 +3208,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return annotationStartBoundaryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3345,7 +3233,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3368,7 +3255,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3401,7 +3287,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3423,7 +3308,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3441,7 +3325,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnnotationStartBoundaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3463,7 +3346,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             : annotationStartBoundary_;
       }
     }
-
     /**
      *
      *
@@ -3498,7 +3380,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder,
             com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder>
         annotationEndBoundaryBuilder_;
-
     /**
      *
      *
@@ -3514,7 +3395,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotationEndBoundary() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3536,7 +3416,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         return annotationEndBoundaryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3561,7 +3440,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3583,7 +3461,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3615,7 +3492,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3636,7 +3512,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3653,7 +3528,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnnotationEndBoundaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3674,7 +3548,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             : annotationEndBoundary_;
       }
     }
-
     /**
      *
      *

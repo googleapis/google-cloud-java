@@ -38,7 +38,6 @@ public interface GetCompilationResultRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

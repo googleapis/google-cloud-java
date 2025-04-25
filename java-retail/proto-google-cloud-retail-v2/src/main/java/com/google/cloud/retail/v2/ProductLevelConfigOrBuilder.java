@@ -61,7 +61,6 @@ public interface ProductLevelConfigOrBuilder
    * @return The ingestionProductType.
    */
   java.lang.String getIngestionProductType();
-
   /**
    *
    *
@@ -131,7 +130,6 @@ public interface ProductLevelConfigOrBuilder
    * @return The merchantCenterProductIdField.
    */
   java.lang.String getMerchantCenterProductIdField();
-
   /**
    *
    *

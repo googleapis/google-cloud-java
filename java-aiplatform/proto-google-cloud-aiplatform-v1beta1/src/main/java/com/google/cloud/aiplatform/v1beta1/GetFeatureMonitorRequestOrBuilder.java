@@ -38,7 +38,6 @@ public interface GetFeatureMonitorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

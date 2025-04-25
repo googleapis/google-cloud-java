@@ -42,7 +42,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeter)
     ServicePerimeterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ServicePerimeter.newBuilder() to construct.
   private ServicePerimeter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>PERIMETER_TYPE_REGULAR = 0;</code>
      */
     public static final int PERIMETER_TYPE_REGULAR_VALUE = 0;
-
     /**
      *
      *
@@ -233,7 +231,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -260,7 +257,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -292,7 +288,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -316,7 +311,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -345,7 +339,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -370,7 +363,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -398,7 +390,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -414,7 +405,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -430,7 +420,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -447,7 +436,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -463,7 +451,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -479,7 +466,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -496,7 +482,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   public static final int PERIMETER_TYPE_FIELD_NUMBER = 6;
   private int perimeterType_ = 0;
-
   /**
    *
    *
@@ -519,7 +504,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public int getPerimeterTypeValue() {
     return perimeterType_;
   }
-
   /**
    *
    *
@@ -551,7 +535,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   public static final int STATUS_FIELD_NUMBER = 7;
   private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig status_;
-
   /**
    *
    *
@@ -569,7 +552,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -589,7 +571,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.getDefaultInstance()
         : status_;
   }
-
   /**
    *
    *
@@ -611,7 +592,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   public static final int SPEC_FIELD_NUMBER = 8;
   private com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig spec_;
-
   /**
    *
    *
@@ -630,7 +610,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -651,7 +630,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.getDefaultInstance()
         : spec_;
   }
-
   /**
    *
    *
@@ -674,7 +652,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
 
   public static final int USE_EXPLICIT_DRY_RUN_SPEC_FIELD_NUMBER = 9;
   private boolean useExplicitDryRunSpec_ = false;
-
   /**
    *
    *
@@ -958,7 +935,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1297,7 +1273,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1323,7 +1298,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1323,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1374,7 +1347,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1367,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1394,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -1446,7 +1416,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1469,7 +1438,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1491,7 +1459,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1509,7 +1476,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1500,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1558,7 +1523,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1546,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1568,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1586,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1616,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1670,7 +1630,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1691,7 +1650,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1672,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1734,7 +1691,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1718,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1782,7 +1737,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1751,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1816,7 +1769,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1849,7 +1801,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1864,7 +1815,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1885,7 +1835,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1908,7 +1857,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1928,7 +1876,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1903,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1976,7 +1922,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1936,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2010,7 +1954,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2038,7 +1981,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     }
 
     private int perimeterType_ = 0;
-
     /**
      *
      *
@@ -2061,7 +2003,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public int getPerimeterTypeValue() {
       return perimeterType_;
     }
-
     /**
      *
      *
@@ -2087,7 +2028,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2116,7 +2056,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
           ? com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2146,7 +2085,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2116,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.Builder,
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfigOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -2195,7 +2132,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2219,7 +2155,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2245,7 +2180,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2269,7 +2203,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2302,7 +2235,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2324,7 +2256,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2273,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2365,7 +2295,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             : status_;
       }
     }
-
     /**
      *
      *
@@ -2400,7 +2329,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.Builder,
             com.google.identity.accesscontextmanager.v1.ServicePerimeterConfigOrBuilder>
         specBuilder_;
-
     /**
      *
      *
@@ -2418,7 +2346,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2443,7 +2370,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return specBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2470,7 +2396,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2495,7 +2420,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2529,7 +2453,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2552,7 +2475,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2571,7 +2493,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2595,7 +2516,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             : spec_;
       }
     }
-
     /**
      *
      *
@@ -2626,7 +2546,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean useExplicitDryRunSpec_;
-
     /**
      *
      *
@@ -2651,7 +2570,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public boolean getUseExplicitDryRunSpec() {
       return useExplicitDryRunSpec_;
     }
-
     /**
      *
      *
@@ -2680,7 +2598,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

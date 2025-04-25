@@ -33,7 +33,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Metadata)
     MetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Metadata.newBuilder() to construct.
   private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CLOUD_RUN_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.CloudRunMetadata cloudRun_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRun() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.CloudRunMetadata.getDefaultInstance()
         : cloudRun_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOMATION_FIELD_NUMBER = 2;
   private com.google.cloud.deploy.v1.AutomationRolloutMetadata automation_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.AutomationRolloutMetadata.getDefaultInstance()
         : automation_;
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.CustomMetadata custom_;
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustom() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
         : custom_;
   }
-
   /**
    *
    *
@@ -436,7 +426,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +665,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.CloudRunMetadata.Builder,
             com.google.cloud.deploy.v1.CloudRunMetadataOrBuilder>
         cloudRunBuilder_;
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRun() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return cloudRunBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudRunFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             : cloudRun_;
       }
     }
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.AutomationRolloutMetadata.Builder,
             com.google.cloud.deploy.v1.AutomationRolloutMetadataOrBuilder>
         automationBuilder_;
-
     /**
      *
      *
@@ -916,7 +895,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return automationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -966,7 +943,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +966,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +997,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1019,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1036,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAutomationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             : automation_;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1092,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.CustomMetadata.Builder,
             com.google.cloud.deploy.v1.CustomMetadataOrBuilder>
         customBuilder_;
-
     /**
      *
      *
@@ -1138,7 +1108,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustom() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1161,7 +1130,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         return customBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1154,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1175,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1204,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1225,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1277,7 +1241,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1298,7 +1261,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             : custom_;
       }
     }
-
     /**
      *
      *

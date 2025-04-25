@@ -41,7 +41,6 @@ public interface MigrationWorkflowOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface MigrationWorkflowOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface MigrationWorkflowOrBuilder
    * </code>
    */
   int getTasksCount();
-
   /**
    *
    *
@@ -115,12 +112,10 @@ public interface MigrationWorkflowOrBuilder
    * </code>
    */
   boolean containsTasks(java.lang.String key);
-
   /** Use {@link #getTasksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2alpha.MigrationTask>
       getTasks();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface MigrationWorkflowOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2alpha.MigrationTask>
       getTasksMap();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface MigrationWorkflowOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.bigquery.migration.v2alpha.MigrationTask defaultValue);
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface MigrationWorkflowOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface MigrationWorkflowOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public interface MigrationWorkflowOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface MigrationWorkflowOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface MigrationWorkflowOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
-
   /**
    *
    *

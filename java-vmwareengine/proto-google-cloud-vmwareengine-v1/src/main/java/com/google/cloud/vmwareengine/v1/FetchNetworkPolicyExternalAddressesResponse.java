@@ -35,7 +35,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse)
     FetchNetworkPolicyExternalAddressesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchNetworkPolicyExternalAddressesResponse.newBuilder() to construct.
   private FetchNetworkPolicyExternalAddressesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.ExternalAddress> externalAddresses_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       getExternalAddressesList() {
     return externalAddresses_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       getExternalAddressesOrBuilderList() {
     return externalAddresses_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
   public int getExternalAddressesCount() {
     return externalAddresses_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
   public com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddresses(int index) {
     return externalAddresses_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +671,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return externalAddressesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -698,7 +688,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return externalAddressesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return externalAddressesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -741,7 +729,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         int index) {
       return getExternalAddressesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return externalAddressesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -973,7 +950,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return java.util.Collections.unmodifiableList(externalAddresses_);
       }
     }
-
     /**
      *
      *
@@ -988,7 +964,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       return getExternalAddressesFieldBuilder()
           .addBuilder(com.google.cloud.vmwareengine.v1.ExternalAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1004,7 +979,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       return getExternalAddressesFieldBuilder()
           .addBuilder(index, com.google.cloud.vmwareengine.v1.ExternalAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1041,7 +1015,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1065,7 +1038,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1061,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1083,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1101,6 @@ public final class FetchNetworkPolicyExternalAddressesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

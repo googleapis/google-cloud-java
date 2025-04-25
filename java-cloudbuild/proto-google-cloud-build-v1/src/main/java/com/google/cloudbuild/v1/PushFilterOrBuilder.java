@@ -39,7 +39,6 @@ public interface PushFilterOrBuilder
    * @return Whether the branch field is set.
    */
   boolean hasBranch();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface PushFilterOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface PushFilterOrBuilder
    * @return Whether the tag field is set.
    */
   boolean hasTag();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface PushFilterOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *

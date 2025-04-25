@@ -36,7 +36,6 @@ public interface CreateDomainMappingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CreateDomainMappingRequestOrBuilder
    * @return Whether the domainMapping field is set.
    */
   boolean hasDomainMapping();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CreateDomainMappingRequestOrBuilder
    * @return The domainMapping.
    */
   com.google.appengine.v1.DomainMapping getDomainMapping();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface CreateDomainMappingRequestOrBuilder
    * @return The enum numeric value on the wire for overrideStrategy.
    */
   int getOverrideStrategyValue();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface SetAclRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface SetAclRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface SetAclRequestOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public interface SetAclRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -178,7 +174,6 @@ public interface SetAclRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
-
   /**
    *
    *

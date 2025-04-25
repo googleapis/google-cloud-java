@@ -39,7 +39,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The customTargetTypeId.
    */
   java.lang.String getCustomTargetTypeId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface CustomTargetTypeOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -165,11 +160,9 @@ public interface CustomTargetTypeOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface CustomTargetTypeOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface CustomTargetTypeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public interface CustomTargetTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -260,11 +250,9 @@ public interface CustomTargetTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public interface CustomTargetTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface CustomTargetTypeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -345,7 +331,6 @@ public interface CustomTargetTypeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -359,7 +344,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -385,7 +369,6 @@ public interface CustomTargetTypeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -399,7 +382,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -426,7 +408,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -457,7 +438,6 @@ public interface CustomTargetTypeOrBuilder
    * @return Whether the customActions field is set.
    */
   boolean hasCustomActions();
-
   /**
    *
    *
@@ -473,7 +453,6 @@ public interface CustomTargetTypeOrBuilder
    * @return The customActions.
    */
   com.google.cloud.deploy.v1.CustomTargetSkaffoldActions getCustomActions();
-
   /**
    *
    *

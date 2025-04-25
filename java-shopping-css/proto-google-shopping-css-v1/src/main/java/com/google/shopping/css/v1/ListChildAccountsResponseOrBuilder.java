@@ -34,7 +34,6 @@ public interface ListChildAccountsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.Account accounts = 1;</code>
    */
   java.util.List<com.google.shopping.css.v1.Account> getAccountsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListChildAccountsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.Account accounts = 1;</code>
    */
   com.google.shopping.css.v1.Account getAccounts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListChildAccountsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.Account accounts = 1;</code>
    */
   int getAccountsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListChildAccountsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.Account accounts = 1;</code>
    */
   java.util.List<? extends com.google.shopping.css.v1.AccountOrBuilder> getAccountsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListChildAccountsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

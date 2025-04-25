@@ -34,7 +34,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.CohortsRange)
     CohortsRangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CohortsRange.newBuilder() to construct.
   private CohortsRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * <code>GRANULARITY_UNSPECIFIED = 0;</code>
      */
     public static final int GRANULARITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -145,7 +143,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * <code>DAILY = 1;</code>
      */
     public static final int DAILY_VALUE = 1;
-
     /**
      *
      *
@@ -158,7 +155,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * <code>WEEKLY = 2;</code>
      */
     public static final int WEEKLY_VALUE = 2;
-
     /**
      *
      *
@@ -258,7 +254,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GRANULARITY_FIELD_NUMBER = 1;
   private int granularity_ = 0;
-
   /**
    *
    *
@@ -275,7 +270,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
   public int getGranularityValue() {
     return granularity_;
   }
-
   /**
    *
    *
@@ -299,7 +293,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_OFFSET_FIELD_NUMBER = 2;
   private int startOffset_ = 0;
-
   /**
    *
    *
@@ -329,7 +322,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_OFFSET_FIELD_NUMBER = 3;
   private int endOffset_ = 0;
-
   /**
    *
    *
@@ -539,7 +531,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -748,7 +739,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int granularity_ = 0;
-
     /**
      *
      *
@@ -765,7 +755,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     public int getGranularityValue() {
       return granularity_;
     }
-
     /**
      *
      *
@@ -785,7 +774,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +794,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.data.v1alpha.CohortsRange.Granularity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -830,7 +817,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +837,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int startOffset_;
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     public int getStartOffset() {
       return startOffset_;
     }
-
     /**
      *
      *
@@ -909,7 +893,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int endOffset_;
-
     /**
      *
      *
@@ -968,7 +950,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     public int getEndOffset() {
       return endOffset_;
     }
-
     /**
      *
      *
@@ -1000,7 +981,6 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -180,7 +180,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COUPON_VALUE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int COUPON_VALUE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -191,7 +190,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MONEY_OFF = 1;</code>
    */
   public static final int MONEY_OFF_VALUE = 1;
-
   /**
    *
    *
@@ -202,7 +200,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PERCENT_OFF = 2;</code>
    */
   public static final int PERCENT_OFF_VALUE = 2;
-
   /**
    *
    *
@@ -215,7 +212,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUY_M_GET_N_MONEY_OFF = 3;</code>
    */
   public static final int BUY_M_GET_N_MONEY_OFF_VALUE = 3;
-
   /**
    *
    *
@@ -228,7 +224,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUY_M_GET_N_PERCENT_OFF = 4;</code>
    */
   public static final int BUY_M_GET_N_PERCENT_OFF_VALUE = 4;
-
   /**
    *
    *
@@ -240,7 +235,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUY_M_GET_MONEY_OFF = 5;</code>
    */
   public static final int BUY_M_GET_MONEY_OFF_VALUE = 5;
-
   /**
    *
    *
@@ -252,7 +246,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUY_M_GET_PERCENT_OFF = 6;</code>
    */
   public static final int BUY_M_GET_PERCENT_OFF_VALUE = 6;
-
   /**
    *
    *
@@ -263,7 +256,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FREE_GIFT = 7;</code>
    */
   public static final int FREE_GIFT_VALUE = 7;
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FREE_GIFT_WITH_VALUE = 8;</code>
    */
   public static final int FREE_GIFT_WITH_VALUE_VALUE = 8;
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FREE_GIFT_WITH_ITEM_ID = 9;</code>
    */
   public static final int FREE_GIFT_WITH_ITEM_ID_VALUE = 9;
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FREE_SHIPPING_STANDARD = 10;</code>
    */
   public static final int FREE_SHIPPING_STANDARD_VALUE = 10;
-
   /**
    *
    *
@@ -307,7 +296,6 @@ public enum CouponValueType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FREE_SHIPPING_OVERNIGHT = 11;</code>
    */
   public static final int FREE_SHIPPING_OVERNIGHT_VALUE = 11;
-
   /**
    *
    *

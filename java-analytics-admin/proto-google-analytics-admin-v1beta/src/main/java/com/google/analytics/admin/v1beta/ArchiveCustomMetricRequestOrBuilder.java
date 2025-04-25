@@ -39,7 +39,6 @@ public interface ArchiveCustomMetricRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

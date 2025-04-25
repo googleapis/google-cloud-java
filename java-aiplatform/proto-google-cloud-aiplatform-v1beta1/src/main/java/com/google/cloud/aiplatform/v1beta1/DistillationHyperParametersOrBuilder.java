@@ -37,7 +37,6 @@ public interface DistillationHyperParametersOrBuilder
    * @return Whether the epochCount field is set.
    */
   boolean hasEpochCount();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DistillationHyperParametersOrBuilder
    * @return Whether the learningRateMultiplier field is set.
    */
   boolean hasLearningRateMultiplier();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DistillationHyperParametersOrBuilder
    * @return The enum numeric value on the wire for adapterSize.
    */
   int getAdapterSizeValue();
-
   /**
    *
    *

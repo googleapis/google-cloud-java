@@ -37,7 +37,6 @@ public interface TranslationDetailsOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.SourceTargetMapping>
       getSourceTargetMappingList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface TranslationDetailsOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2.SourceTargetMapping getSourceTargetMapping(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface TranslationDetailsOrBuilder
    * </code>
    */
   int getSourceTargetMappingCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface TranslationDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.SourceTargetMappingOrBuilder>
       getSourceTargetMappingOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface TranslationDetailsOrBuilder
    * @return The targetBaseUri.
    */
   java.lang.String getTargetBaseUri();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface TranslationDetailsOrBuilder
    * @return Whether the sourceEnvironment field is set.
    */
   boolean hasSourceEnvironment();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface TranslationDetailsOrBuilder
    * @return The sourceEnvironment.
    */
   com.google.cloud.bigquery.migration.v2.SourceEnvironment getSourceEnvironment();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface TranslationDetailsOrBuilder
    * @return A list containing the targetReturnLiterals.
    */
   java.util.List<java.lang.String> getTargetReturnLiteralsList();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface TranslationDetailsOrBuilder
    * @return The count of targetReturnLiterals.
    */
   int getTargetReturnLiteralsCount();
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public interface TranslationDetailsOrBuilder
    * @return The targetReturnLiterals at the given index.
    */
   java.lang.String getTargetReturnLiterals(int index);
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface TranslationDetailsOrBuilder
    * @return A list containing the targetTypes.
    */
   java.util.List<java.lang.String> getTargetTypesList();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface TranslationDetailsOrBuilder
    * @return The count of targetTypes.
    */
   int getTargetTypesCount();
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public interface TranslationDetailsOrBuilder
    * @return The targetTypes at the given index.
    */
   java.lang.String getTargetTypes(int index);
-
   /**
    *
    *

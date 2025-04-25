@@ -43,7 +43,6 @@ public class AsyncListBackups {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<Backup> future = backupForGKEClient.listBackupsPagedCallable().futureCall(request);
       // Do something.

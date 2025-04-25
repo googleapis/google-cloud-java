@@ -38,7 +38,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExportFractionSplit)
     ExportFractionSplitOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportFractionSplit.newBuilder() to construct.
   private ExportFractionSplit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
 
   public static final int TRAINING_FRACTION_FIELD_NUMBER = 1;
   private double trainingFraction_ = 0D;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
 
   public static final int VALIDATION_FRACTION_FIELD_NUMBER = 2;
   private double validationFraction_ = 0D;
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
 
   public static final int TEST_FRACTION_FIELD_NUMBER = 3;
   private double testFraction_ = 0D;
-
   /**
    *
    *
@@ -314,7 +310,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -528,7 +523,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private double trainingFraction_;
-
     /**
      *
      *
@@ -544,7 +538,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     public double getTrainingFraction() {
       return trainingFraction_;
     }
-
     /**
      *
      *
@@ -564,7 +557,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     }
 
     private double validationFraction_;
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     public double getValidationFraction() {
       return validationFraction_;
     }
-
     /**
      *
      *
@@ -620,7 +610,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     }
 
     private double testFraction_;
-
     /**
      *
      *
@@ -656,7 +644,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     public double getTestFraction() {
       return testFraction_;
     }
-
     /**
      *
      *
@@ -676,7 +663,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -51,7 +51,6 @@ public interface CandidateOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CandidateOrBuilder
    * @return The content.
    */
   com.google.cloud.aiplatform.v1beta1.Content getContent();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface CandidateOrBuilder
    * @return Whether the logprobsResult field is set.
    */
   boolean hasLogprobsResult();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface CandidateOrBuilder
    * @return The logprobsResult.
    */
   com.google.cloud.aiplatform.v1beta1.LogprobsResult getLogprobsResult();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface CandidateOrBuilder
    * @return The enum numeric value on the wire for finishReason.
    */
   int getFinishReasonValue();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface CandidateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SafetyRating> getSafetyRatingsList();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface CandidateOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SafetyRating getSafetyRatings(int index);
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public interface CandidateOrBuilder
    * </code>
    */
   int getSafetyRatingsCount();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface CandidateOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SafetyRatingOrBuilder>
       getSafetyRatingsOrBuilderList();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface CandidateOrBuilder
    * @return Whether the finishMessage field is set.
    */
   boolean hasFinishMessage();
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public interface CandidateOrBuilder
    * @return The finishMessage.
    */
   java.lang.String getFinishMessage();
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public interface CandidateOrBuilder
    * @return Whether the citationMetadata field is set.
    */
   boolean hasCitationMetadata();
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public interface CandidateOrBuilder
    * @return The citationMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.CitationMetadata getCitationMetadata();
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public interface CandidateOrBuilder
    * @return Whether the groundingMetadata field is set.
    */
   boolean hasGroundingMetadata();
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public interface CandidateOrBuilder
    * @return The groundingMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GroundingMetadata getGroundingMetadata();
-
   /**
    *
    *

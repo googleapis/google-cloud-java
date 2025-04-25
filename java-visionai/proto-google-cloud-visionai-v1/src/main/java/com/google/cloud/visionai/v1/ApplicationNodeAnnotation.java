@@ -34,7 +34,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ApplicationNodeAnnotation)
     ApplicationNodeAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApplicationNodeAnnotation.newBuilder() to construct.
   private ApplicationNodeAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object node_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> annotations_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> getAnnotationsList() {
     return annotations_;
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       getAnnotationsOrBuilderList() {
     return annotations_;
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
   public int getAnnotationsCount() {
     return annotations_.size();
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
   public com.google.cloud.visionai.v1.StreamAnnotation getAnnotations(int index) {
     return annotations_.get(index);
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -613,7 +604,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object node_ = "";
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return annotationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return annotationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return annotationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +838,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +939,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +958,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +970,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
     public com.google.cloud.visionai.v1.StreamAnnotation.Builder getAnnotationsBuilder(int index) {
       return getAnnotationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return annotationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(annotations_);
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1017,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       return getAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1060,7 +1030,6 @@ public final class ApplicationNodeAnnotation extends com.google.protobuf.Generat
       return getAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance());
     }
-
     /**
      *
      *

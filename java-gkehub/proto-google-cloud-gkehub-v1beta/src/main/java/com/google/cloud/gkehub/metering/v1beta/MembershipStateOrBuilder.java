@@ -37,7 +37,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the lastMeasurementTime field is set.
    */
   boolean hasLastMeasurementTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface MembershipStateOrBuilder
    * @return The lastMeasurementTime.
    */
   com.google.protobuf.Timestamp getLastMeasurementTime();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DateTimeRangeOrBuilder
    * @return Whether the start field is set.
    */
   boolean hasStart();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DateTimeRangeOrBuilder
    * @return The start.
    */
   com.google.type.DateTime getStart();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DateTimeRangeOrBuilder
    * @return Whether the end field is set.
    */
   boolean hasEnd();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DateTimeRangeOrBuilder
    * @return The end.
    */
   com.google.type.DateTime getEnd();
-
   /**
    *
    *

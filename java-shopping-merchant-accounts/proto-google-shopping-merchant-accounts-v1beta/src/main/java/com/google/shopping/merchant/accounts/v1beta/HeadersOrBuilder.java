@@ -43,7 +43,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.Price> getPricesList();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   com.google.shopping.type.Price getPrices(int index);
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   int getPricesCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.shopping.type.PriceOrBuilder> getPricesOrBuilderList();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.Weight> getWeightsList();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   com.google.shopping.type.Weight getWeights(int index);
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   int getWeightsCount();
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.shopping.type.WeightOrBuilder> getWeightsOrBuilderList();
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public interface HeadersOrBuilder
    * @return A list containing the numberOfItems.
    */
   java.util.List<java.lang.String> getNumberOfItemsList();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public interface HeadersOrBuilder
    * @return The count of numberOfItems.
    */
   int getNumberOfItemsCount();
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public interface HeadersOrBuilder
    * @return The numberOfItems at the given index.
    */
   java.lang.String getNumberOfItems(int index);
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public interface HeadersOrBuilder
    * @return A list containing the postalCodeGroupNames.
    */
   java.util.List<java.lang.String> getPostalCodeGroupNamesList();
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public interface HeadersOrBuilder
    * @return The count of postalCodeGroupNames.
    */
   int getPostalCodeGroupNamesCount();
-
   /**
    *
    *
@@ -352,7 +339,6 @@ public interface HeadersOrBuilder
    * @return The postalCodeGroupNames at the given index.
    */
   java.lang.String getPostalCodeGroupNames(int index);
-
   /**
    *
    *
@@ -385,7 +371,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.LocationIdSet> getLocationsList();
-
   /**
    *
    *
@@ -399,7 +384,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.LocationIdSet getLocations(int index);
-
   /**
    *
    *
@@ -413,7 +397,6 @@ public interface HeadersOrBuilder
    * </code>
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -428,7 +411,6 @@ public interface HeadersOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.LocationIdSetOrBuilder>
       getLocationsOrBuilderList();
-
   /**
    *
    *

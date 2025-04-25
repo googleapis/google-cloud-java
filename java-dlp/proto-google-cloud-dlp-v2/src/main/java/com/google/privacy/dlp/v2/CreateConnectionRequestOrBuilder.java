@@ -46,7 +46,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return Whether the connection field is set.
    */
   boolean hasConnection();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return The connection.
    */
   com.google.privacy.dlp.v2.Connection getConnection();
-
   /**
    *
    *

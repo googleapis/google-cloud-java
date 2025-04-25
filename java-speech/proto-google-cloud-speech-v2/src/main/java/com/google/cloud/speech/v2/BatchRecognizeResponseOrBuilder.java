@@ -34,7 +34,6 @@ public interface BatchRecognizeResponseOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.BatchRecognizeFileResult&gt; results = 1;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface BatchRecognizeResponseOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.BatchRecognizeFileResult&gt; results = 1;</code>
    */
   boolean containsResults(java.lang.String key);
-
   /** Use {@link #getResultsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult> getResults();
-
   /**
    *
    *
@@ -61,7 +58,6 @@ public interface BatchRecognizeResponseOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult>
       getResultsMap();
-
   /**
    *
    *
@@ -76,7 +72,6 @@ public interface BatchRecognizeResponseOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.speech.v2.BatchRecognizeFileResult defaultValue);
-
   /**
    *
    *
@@ -100,7 +95,6 @@ public interface BatchRecognizeResponseOrBuilder
    * @return Whether the totalBilledDuration field is set.
    */
   boolean hasTotalBilledDuration();
-
   /**
    *
    *
@@ -113,7 +107,6 @@ public interface BatchRecognizeResponseOrBuilder
    * @return The totalBilledDuration.
    */
   com.google.protobuf.Duration getTotalBilledDuration();
-
   /**
    *
    *

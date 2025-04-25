@@ -33,7 +33,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.NatInfo)
     NatInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NatInfo.newBuilder() to construct.
   private NatInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,7 +144,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -156,7 +154,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNAL_TO_EXTERNAL = 1;</code>
      */
     public static final int INTERNAL_TO_EXTERNAL_VALUE = 1;
-
     /**
      *
      *
@@ -167,7 +164,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>EXTERNAL_TO_INTERNAL = 2;</code>
      */
     public static final int EXTERNAL_TO_INTERNAL_VALUE = 2;
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_NAT = 3;</code>
      */
     public static final int CLOUD_NAT_VALUE = 3;
-
     /**
      *
      *
@@ -281,7 +276,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -297,7 +291,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -322,7 +315,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object protocol_ = "";
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +366,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUri_ = "";
-
   /**
    *
    *
@@ -399,7 +389,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -428,7 +417,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oldSourceIp_ = "";
-
   /**
    *
    *
@@ -452,7 +440,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -481,7 +468,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object newSourceIp_ = "";
-
   /**
    *
    *
@@ -505,7 +491,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -534,7 +519,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oldDestinationIp_ = "";
-
   /**
    *
    *
@@ -558,7 +542,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -587,7 +570,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object newDestinationIp_ = "";
-
   /**
    *
    *
@@ -611,7 +593,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -638,7 +619,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OLD_SOURCE_PORT_FIELD_NUMBER = 8;
   private int oldSourcePort_ = 0;
-
   /**
    *
    *
@@ -657,7 +637,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEW_SOURCE_PORT_FIELD_NUMBER = 9;
   private int newSourcePort_ = 0;
-
   /**
    *
    *
@@ -676,7 +655,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OLD_DESTINATION_PORT_FIELD_NUMBER = 10;
   private int oldDestinationPort_ = 0;
-
   /**
    *
    *
@@ -696,7 +674,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEW_DESTINATION_PORT_FIELD_NUMBER = 11;
   private int newDestinationPort_ = 0;
-
   /**
    *
    *
@@ -718,7 +695,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object routerUri_ = "";
-
   /**
    *
    *
@@ -742,7 +718,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -771,7 +746,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object natGatewayName_ = "";
-
   /**
    *
    *
@@ -795,7 +769,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1089,7 +1062,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1444,7 +1416,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1460,7 +1431,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1479,7 +1449,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1499,7 +1468,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1beta1.NatInfo.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1521,7 +1489,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1541,7 +1508,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object protocol_ = "";
-
     /**
      *
      *
@@ -1564,7 +1530,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1587,7 +1552,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1609,7 +1573,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1627,7 +1590,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1614,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object networkUri_ = "";
-
     /**
      *
      *
@@ -1675,7 +1636,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1698,7 +1658,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1720,7 +1679,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1738,7 +1696,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1763,7 +1720,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object oldSourceIp_ = "";
-
     /**
      *
      *
@@ -1786,7 +1742,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1809,7 +1764,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1831,7 +1785,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1849,7 +1802,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1874,7 +1826,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object newSourceIp_ = "";
-
     /**
      *
      *
@@ -1897,7 +1848,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1920,7 +1870,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1942,7 +1891,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1960,7 +1908,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1985,7 +1932,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object oldDestinationIp_ = "";
-
     /**
      *
      *
@@ -2008,7 +1954,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2031,7 +1976,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2053,7 +1997,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2071,7 +2014,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2038,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object newDestinationIp_ = "";
-
     /**
      *
      *
@@ -2119,7 +2060,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2142,7 +2082,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2164,7 +2103,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2120,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2207,7 +2144,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int oldSourcePort_;
-
     /**
      *
      *
@@ -2223,7 +2159,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getOldSourcePort() {
       return oldSourcePort_;
     }
-
     /**
      *
      *
@@ -2243,7 +2178,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2263,7 +2197,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int newSourcePort_;
-
     /**
      *
      *
@@ -2279,7 +2212,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getNewSourcePort() {
       return newSourcePort_;
     }
-
     /**
      *
      *
@@ -2299,7 +2231,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2319,7 +2250,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int oldDestinationPort_;
-
     /**
      *
      *
@@ -2336,7 +2266,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getOldDestinationPort() {
       return oldDestinationPort_;
     }
-
     /**
      *
      *
@@ -2357,7 +2286,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2306,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int newDestinationPort_;
-
     /**
      *
      *
@@ -2395,7 +2322,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     public int getNewDestinationPort() {
       return newDestinationPort_;
     }
-
     /**
      *
      *
@@ -2416,7 +2342,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2437,7 +2362,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object routerUri_ = "";
-
     /**
      *
      *
@@ -2460,7 +2384,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2483,7 +2406,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2505,7 +2427,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2523,7 +2444,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2548,7 +2468,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object natGatewayName_ = "";
-
     /**
      *
      *
@@ -2571,7 +2490,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2594,7 +2512,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2616,7 +2533,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2550,6 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

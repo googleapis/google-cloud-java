@@ -34,7 +34,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest)
     GenerateSuggestionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateSuggestionsRequest.newBuilder() to construct.
   private GenerateSuggestionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
                   : result;
             }
           };
-
   /**
    *
    *
@@ -235,7 +229,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
         java.lang.Integer, com.google.cloud.dialogflow.v2beta1.TriggerEvent>(
         triggerEvents_, triggerEvents_converter_);
   }
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
   public int getTriggerEventsCount() {
     return triggerEvents_.size();
   }
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
   public com.google.cloud.dialogflow.v2beta1.TriggerEvent getTriggerEvents(int index) {
     return triggerEvents_converter_.convert(triggerEvents_.get(index));
   }
-
   /**
    *
    *
@@ -293,7 +284,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
   public java.util.List<java.lang.Integer> getTriggerEventsValueList() {
     return triggerEvents_;
   }
-
   /**
    *
    *
@@ -511,7 +501,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +745,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object conversation_ = "";
-
     /**
      *
      *
@@ -786,7 +774,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -816,7 +803,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -845,7 +831,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +855,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +886,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -929,7 +912,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +938,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -982,7 +963,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +984,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1019,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1038,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
           java.lang.Integer, com.google.cloud.dialogflow.v2beta1.TriggerEvent>(
           triggerEvents_, triggerEvents_converter_);
     }
-
     /**
      *
      *
@@ -1078,7 +1055,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     public int getTriggerEventsCount() {
       return triggerEvents_.size();
     }
-
     /**
      *
      *
@@ -1097,7 +1073,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2beta1.TriggerEvent getTriggerEvents(int index) {
       return triggerEvents_converter_.convert(triggerEvents_.get(index));
     }
-
     /**
      *
      *
@@ -1124,7 +1099,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1123,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1147,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1167,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1184,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     public java.util.List<java.lang.Integer> getTriggerEventsValueList() {
       return java.util.Collections.unmodifiableList(triggerEvents_);
     }
-
     /**
      *
      *
@@ -1232,7 +1202,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
     public int getTriggerEventsValue(int index) {
       return triggerEvents_.get(index);
     }
-
     /**
      *
      *
@@ -1255,7 +1224,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1277,7 +1245,6 @@ public final class GenerateSuggestionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

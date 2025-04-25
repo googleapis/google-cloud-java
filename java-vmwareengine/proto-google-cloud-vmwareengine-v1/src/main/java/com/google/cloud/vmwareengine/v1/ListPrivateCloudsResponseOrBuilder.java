@@ -34,7 +34,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PrivateCloud private_clouds = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.PrivateCloud> getPrivateCloudsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PrivateCloud private_clouds = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.PrivateCloud getPrivateClouds(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PrivateCloud private_clouds = 1;</code>
    */
   int getPrivateCloudsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.PrivateCloudOrBuilder>
       getPrivateCloudsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface ListPrivateCloudsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

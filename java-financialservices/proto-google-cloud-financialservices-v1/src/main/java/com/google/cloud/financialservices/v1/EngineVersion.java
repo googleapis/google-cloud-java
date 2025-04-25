@@ -34,7 +34,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.EngineVersion)
     EngineVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EngineVersion.newBuilder() to construct.
   private EngineVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,7 +131,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>LIMITED = 2;</code>
      */
     public static final int LIMITED_VALUE = 2;
-
     /**
      *
      *
@@ -259,14 +255,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
    * </pre>
    *
    * <code>
@@ -287,14 +282,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
    * </pre>
    *
    * <code>
@@ -318,7 +312,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -336,7 +329,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -361,7 +353,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPECTED_LIMITATION_START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp expectedLimitationStartTime_;
-
   /**
    *
    *
@@ -380,7 +371,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpectedLimitationStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -401,7 +391,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expectedLimitationStartTime_;
   }
-
   /**
    *
    *
@@ -423,7 +412,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPECTED_DECOMMISSION_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expectedDecommissionTime_;
-
   /**
    *
    *
@@ -443,7 +431,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpectedDecommissionTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -465,7 +452,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expectedDecommissionTime_;
   }
-
   /**
    *
    *
@@ -488,7 +474,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINE_OF_BUSINESS_FIELD_NUMBER = 5;
   private int lineOfBusiness_ = 0;
-
   /**
    *
    *
@@ -507,7 +492,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
   public int getLineOfBusinessValue() {
     return lineOfBusiness_;
   }
-
   /**
    *
    *
@@ -749,7 +733,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1017,14 +1000,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
      * </pre>
      *
      * <code>
@@ -1044,14 +1026,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
      * </pre>
      *
      * <code>
@@ -1071,14 +1052,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
      * </pre>
      *
      * <code>
@@ -1097,14 +1077,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
      * </pre>
      *
      * <code>
@@ -1119,14 +1098,13 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
+     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
      * </pre>
      *
      * <code>
@@ -1148,7 +1126,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1166,7 +1143,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1187,7 +1163,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1184,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.financialservices.v1.EngineVersion.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1233,7 +1207,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1233,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expectedLimitationStartTimeBuilder_;
-
     /**
      *
      *
@@ -1278,7 +1250,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpectedLimitationStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1302,7 +1273,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
         return expectedLimitationStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1298,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1321,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1351,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1373,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1390,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpectedLimitationStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1446,7 +1411,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
             : expectedLimitationStartTime_;
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1446,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expectedDecommissionTimeBuilder_;
-
     /**
      *
      *
@@ -1501,7 +1464,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpectedDecommissionTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1526,7 +1488,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
         return expectedDecommissionTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1553,7 +1514,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1578,7 +1538,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1610,7 +1569,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1592,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1610,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpectedDecommissionTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1676,7 +1632,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
             : expectedDecommissionTime_;
       }
     }
-
     /**
      *
      *
@@ -1708,7 +1663,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int lineOfBusiness_ = 0;
-
     /**
      *
      *
@@ -1727,7 +1681,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
     public int getLineOfBusinessValue() {
       return lineOfBusiness_;
     }
-
     /**
      *
      *
@@ -1749,7 +1702,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1724,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.financialservices.v1.LineOfBusiness.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1797,7 +1748,6 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

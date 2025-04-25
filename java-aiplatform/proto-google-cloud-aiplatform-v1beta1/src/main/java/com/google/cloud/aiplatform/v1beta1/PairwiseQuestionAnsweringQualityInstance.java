@@ -34,7 +34,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInstance)
     PairwiseQuestionAnsweringQualityInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PairwiseQuestionAnsweringQualityInstance.newBuilder() to construct.
   private PairwiseQuestionAnsweringQualityInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,7 +75,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baselinePrediction_ = "";
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
   public boolean hasBaselinePrediction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
   public boolean hasReference() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
   public boolean hasContext() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +339,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
-
   /**
    *
    *
@@ -368,7 +354,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -392,7 +377,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -645,7 +629,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -908,7 +891,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
-
     /**
      *
      *
@@ -923,7 +905,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -946,7 +927,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +949,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -991,7 +970,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1011,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     }
 
     private java.lang.Object baselinePrediction_ = "";
-
     /**
      *
      *
@@ -1050,7 +1026,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     public boolean hasBaselinePrediction() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1074,7 +1049,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1072,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1094,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1112,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1137,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     }
 
     private java.lang.Object reference_ = "";
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     public boolean hasReference() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1204,7 +1173,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1227,7 +1195,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1233,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1292,7 +1257,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     }
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -1307,7 +1271,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     public boolean hasContext() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1330,7 +1293,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1315,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1336,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1353,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1377,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     }
 
     private java.lang.Object instruction_ = "";
-
     /**
      *
      *
@@ -1433,7 +1391,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1456,7 +1413,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1479,7 +1435,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1501,7 +1456,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1473,6 @@ public final class PairwiseQuestionAnsweringQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *

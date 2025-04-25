@@ -34,7 +34,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.TollInfo)
     TollInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TollInfo.newBuilder() to construct.
   private TollInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.type.Money> estimatedPrice_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.type.Money> getEstimatedPriceList() {
     return estimatedPrice_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.type.MoneyOrBuilder> getEstimatedPriceOrBuilderList() {
     return estimatedPrice_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
   public int getEstimatedPriceCount() {
     return estimatedPrice_.size();
   }
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Money getEstimatedPrice(int index) {
     return estimatedPrice_.get(index);
   }
-
   /**
    *
    *
@@ -329,7 +323,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +585,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
         return estimatedPriceBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -615,7 +607,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
         return estimatedPriceBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
         return estimatedPriceBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Money.Builder getEstimatedPriceBuilder(int index) {
       return getEstimatedPriceFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
         return estimatedPriceBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(estimatedPrice_);
       }
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Money.Builder addEstimatedPriceBuilder() {
       return getEstimatedPriceFieldBuilder().addBuilder(com.google.type.Money.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       return getEstimatedPriceFieldBuilder()
           .addBuilder(index, com.google.type.Money.getDefaultInstance());
     }
-
     /**
      *
      *

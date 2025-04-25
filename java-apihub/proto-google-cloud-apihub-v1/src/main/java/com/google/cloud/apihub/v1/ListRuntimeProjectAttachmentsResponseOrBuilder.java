@@ -37,7 +37,6 @@ public interface ListRuntimeProjectAttachmentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.apihub.v1.RuntimeProjectAttachment>
       getRuntimeProjectAttachmentsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListRuntimeProjectAttachmentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.RuntimeProjectAttachment getRuntimeProjectAttachments(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListRuntimeProjectAttachmentsResponseOrBuilder
    * </code>
    */
   int getRuntimeProjectAttachmentsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListRuntimeProjectAttachmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.RuntimeProjectAttachmentOrBuilder>
       getRuntimeProjectAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListRuntimeProjectAttachmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

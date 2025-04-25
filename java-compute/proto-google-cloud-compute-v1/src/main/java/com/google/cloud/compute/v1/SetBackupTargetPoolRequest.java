@@ -33,7 +33,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetBackupTargetPoolRequest)
     SetBackupTargetPoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetBackupTargetPoolRequest.newBuilder() to construct.
   private SetBackupTargetPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int FAILOVER_RATIO_FIELD_NUMBER = 212667006;
   private float failoverRatio_ = 0F;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   public boolean hasFailoverRatio() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetPool_ = "";
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 523721712;
   private com.google.cloud.compute.v1.TargetReference targetReferenceResource_;
-
   /**
    *
    *
@@ -359,7 +346,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
   public boolean hasTargetReferenceResource() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -379,7 +365,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.TargetReference.getDefaultInstance()
         : targetReferenceResource_;
   }
-
   /**
    *
    *
@@ -622,7 +607,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -900,7 +884,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private float failoverRatio_;
-
     /**
      *
      *
@@ -916,7 +899,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public boolean hasFailoverRatio() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public float getFailoverRatio() {
       return failoverRatio_;
     }
-
     /**
      *
      *
@@ -952,7 +933,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +952,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +1000,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1023,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1042,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1229,7 +1198,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1252,7 +1220,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1242,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1263,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1280,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1304,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object targetPool_ = "";
-
     /**
      *
      *
@@ -1363,7 +1326,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1386,7 +1348,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1369,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1386,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1415,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.TargetReference.Builder,
             com.google.cloud.compute.v1.TargetReferenceOrBuilder>
         targetReferenceResourceBuilder_;
-
     /**
      *
      *
@@ -1473,7 +1431,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public boolean hasTargetReferenceResource() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1496,7 +1453,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         return targetReferenceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1521,7 +1477,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1499,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1575,7 +1529,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1550,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1566,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       onChanged();
       return getTargetReferenceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1636,7 +1587,6 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             : targetReferenceResource_;
       }
     }
-
     /**
      *
      *

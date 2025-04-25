@@ -39,7 +39,6 @@ public interface GetCloudVmClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

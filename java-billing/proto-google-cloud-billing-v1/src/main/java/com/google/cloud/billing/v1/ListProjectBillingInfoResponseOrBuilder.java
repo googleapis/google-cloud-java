@@ -35,7 +35,6 @@ public interface ListProjectBillingInfoResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
   java.util.List<com.google.cloud.billing.v1.ProjectBillingInfo> getProjectBillingInfoList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListProjectBillingInfoResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
   com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListProjectBillingInfoResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
   int getProjectBillingInfoCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListProjectBillingInfoResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.billing.v1.ProjectBillingInfoOrBuilder>
       getProjectBillingInfoOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListProjectBillingInfoResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

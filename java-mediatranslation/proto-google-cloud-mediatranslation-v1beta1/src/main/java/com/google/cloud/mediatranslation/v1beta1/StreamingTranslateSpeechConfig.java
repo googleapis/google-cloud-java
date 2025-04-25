@@ -33,7 +33,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig)
     StreamingTranslateSpeechConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingTranslateSpeechConfig.newBuilder() to construct.
   private StreamingTranslateSpeechConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig audioConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
   public boolean hasAudioConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
         ? com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.getDefaultInstance()
         : audioConfig_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
 
   public static final int SINGLE_UTTERANCE_FIELD_NUMBER = 2;
   private boolean singleUtterance_ = false;
-
   /**
    *
    *
@@ -332,7 +327,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -560,7 +554,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
             com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.Builder,
             com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfigOrBuilder>
         audioConfigBuilder_;
-
     /**
      *
      *
@@ -577,7 +570,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     public boolean hasAudioConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
         return audioConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       onChanged();
       return getAudioConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
             : audioConfig_;
       }
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     }
 
     private boolean singleUtterance_;
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface UpdateCachedContentRequestOrBuilder
    * @return Whether the cachedContent field is set.
    */
   boolean hasCachedContent();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateCachedContentRequestOrBuilder
    * @return The cachedContent.
    */
   com.google.cloud.aiplatform.v1beta1.CachedContent getCachedContent();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateCachedContentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateCachedContentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

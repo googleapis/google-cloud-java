@@ -34,7 +34,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateContextRequest)
     UpdateContextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateContextRequest.newBuilder() to construct.
   private UpdateContextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int CONTEXT_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Context context_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()
         : context_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -393,7 +385,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -630,7 +621,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.Context.Builder,
             com.google.cloud.aiplatform.v1beta1.ContextOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     public boolean hasContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
             : context_;
       }
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1040,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -1107,7 +1078,6 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

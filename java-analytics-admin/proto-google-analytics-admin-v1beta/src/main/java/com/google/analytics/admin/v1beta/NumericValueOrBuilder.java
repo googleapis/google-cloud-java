@@ -36,7 +36,6 @@ public interface NumericValueOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NumericValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
-
   /**
    *
    *

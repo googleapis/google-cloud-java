@@ -35,7 +35,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest)
     GenerateAttachedClusterInstallManifestRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateAttachedClusterInstallManifestRequest.newBuilder() to construct.
   private GenerateAttachedClusterInstallManifestRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attachedClusterId_ = "";
-
   /**
    *
    *
@@ -184,7 +180,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -227,7 +222,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object platformVersion_ = "";
-
   /**
    *
    *
@@ -255,7 +249,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +279,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
 
   public static final int PROXY_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.gkemulticloud.v1.AttachedProxyConfig proxyConfig_;
-
   /**
    *
    *
@@ -304,7 +296,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
   public boolean hasProxyConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -324,7 +315,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
         : proxyConfig_;
   }
-
   /**
    *
    *
@@ -543,7 +533,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -803,7 +792,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -835,7 +823,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -867,7 +854,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -898,7 +884,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +910,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +943,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
     }
 
     private java.lang.Object attachedClusterId_ = "";
-
     /**
      *
      *
@@ -996,7 +979,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1015,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1050,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1081,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1119,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
     }
 
     private java.lang.Object platformVersion_ = "";
-
     /**
      *
      *
@@ -1167,7 +1145,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1171,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1196,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1217,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1250,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
             com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>
         proxyConfigBuilder_;
-
     /**
      *
      *
@@ -1293,7 +1266,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
     public boolean hasProxyConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1316,7 +1288,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
         return proxyConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1341,7 +1312,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1334,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1364,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1385,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1401,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
       onChanged();
       return getProxyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1456,7 +1422,6 @@ public final class GenerateAttachedClusterInstallManifestRequest
             : proxyConfig_;
       }
     }
-
     /**
      *
      *

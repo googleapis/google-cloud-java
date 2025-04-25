@@ -39,7 +39,6 @@ public interface GetLoggingConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ReplaceCatalogAttributeRequest)
     ReplaceCatalogAttributeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplaceCatalogAttributeRequest.newBuilder() to construct.
   private ReplaceCatalogAttributeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributesConfig_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
 
   public static final int CATALOG_ATTRIBUTE_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2beta.CatalogAttribute catalogAttribute_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
   public boolean hasCatalogAttribute() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
         ? com.google.cloud.retail.v2beta.CatalogAttribute.getDefaultInstance()
         : catalogAttribute_;
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -444,7 +435,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -684,7 +674,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object attributesConfig_ = "";
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +748,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
             com.google.cloud.retail.v2beta.CatalogAttribute.Builder,
             com.google.cloud.retail.v2beta.CatalogAttributeOrBuilder>
         catalogAttributeBuilder_;
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
     public boolean hasCatalogAttribute() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -857,7 +840,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
         return catalogAttributeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +941,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +958,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return getCatalogAttributeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
             : catalogAttribute_;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1014,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1059,7 +1034,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1088,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1113,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1146,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1171,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1191,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1247,7 +1215,6 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface CreateInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateInstanceRequestOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateInstanceRequestOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateInstanceRequestOrBuilder
    * @return The instance.
    */
   com.google.cloud.securesourcemanager.v1.Instance getInstance();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

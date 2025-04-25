@@ -37,7 +37,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ClientTlsPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -179,11 +172,9 @@ public interface ClientTlsPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -194,7 +185,6 @@ public interface ClientTlsPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface ClientTlsPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return The sni.
    */
   java.lang.String getSni();
-
   /**
    *
    *
@@ -264,7 +252,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return Whether the clientCertificate field is set.
    */
   boolean hasClientCertificate();
-
   /**
    *
    *
@@ -280,7 +267,6 @@ public interface ClientTlsPolicyOrBuilder
    * @return The clientCertificate.
    */
   com.google.cloud.networksecurity.v1.CertificateProvider getClientCertificate();
-
   /**
    *
    *
@@ -309,7 +295,6 @@ public interface ClientTlsPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networksecurity.v1.ValidationCA> getServerValidationCaList();
-
   /**
    *
    *
@@ -324,7 +309,6 @@ public interface ClientTlsPolicyOrBuilder
    * </code>
    */
   com.google.cloud.networksecurity.v1.ValidationCA getServerValidationCa(int index);
-
   /**
    *
    *
@@ -339,7 +323,6 @@ public interface ClientTlsPolicyOrBuilder
    * </code>
    */
   int getServerValidationCaCount();
-
   /**
    *
    *
@@ -355,7 +338,6 @@ public interface ClientTlsPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.networksecurity.v1.ValidationCAOrBuilder>
       getServerValidationCaOrBuilderList();
-
   /**
    *
    *

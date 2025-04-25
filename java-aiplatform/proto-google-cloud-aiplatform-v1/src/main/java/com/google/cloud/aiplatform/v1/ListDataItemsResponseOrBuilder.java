@@ -34,7 +34,6 @@ public interface ListDataItemsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DataItem data_items = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.DataItem> getDataItemsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDataItemsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DataItem data_items = 1;</code>
    */
   com.google.cloud.aiplatform.v1.DataItem getDataItems(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDataItemsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DataItem data_items = 1;</code>
    */
   int getDataItemsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDataItemsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DataItemOrBuilder>
       getDataItemsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListDataItemsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface QueryAudienceListResponseOrBuilder
    * @return Whether the audienceList field is set.
    */
   boolean hasAudienceList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface QueryAudienceListResponseOrBuilder
    * @return The audienceList.
    */
   com.google.analytics.data.v1alpha.AudienceList getAudienceList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface QueryAudienceListResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.AudienceRow audience_rows = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.AudienceRow> getAudienceRowsList();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface QueryAudienceListResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.AudienceRow audience_rows = 2;</code>
    */
   com.google.analytics.data.v1alpha.AudienceRow getAudienceRows(int index);
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface QueryAudienceListResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.AudienceRow audience_rows = 2;</code>
    */
   int getAudienceRowsCount();
-
   /**
    *
    *
@@ -115,7 +110,6 @@ public interface QueryAudienceListResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.AudienceRowOrBuilder>
       getAudienceRowsOrBuilderList();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface QueryAudienceListResponseOrBuilder
    * @return Whether the rowCount field is set.
    */
   boolean hasRowCount();
-
   /**
    *
    *

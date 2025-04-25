@@ -33,7 +33,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.AdbMessage)
     AdbMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdbMessage.newBuilder() to construct.
   private AdbMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     private ContentsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPEN_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOpen() {
     return contentsCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.Open.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREAM_DATA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStreamData() {
     return contentsCase_ == 2;
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.StreamData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.Open.Builder,
             com.google.cloud.devicestreaming.v1.OpenOrBuilder>
         openBuilder_;
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOpen() {
       return contentsCase_ == 1;
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Open.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.Open.Builder getOpenBuilder() {
       return getOpenFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Open.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.StreamData.Builder,
             com.google.cloud.devicestreaming.v1.StreamDataOrBuilder>
         streamDataBuilder_;
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStreamData() {
       return contentsCase_ == 2;
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -926,7 +905,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +925,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.StreamData.Builder getStreamDataBuilder() {
       return getStreamDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1040,7 +1014,6 @@ public final class AdbMessage extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.StreamData.getDefaultInstance();
       }
     }
-
     /**
      *
      *

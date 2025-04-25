@@ -32,7 +32,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsScopedList)
     NodeGroupsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeGroupsScopedList.newBuilder() to construct.
   private NodeGroupsScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NodeGroup> nodeGroups_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.compute.v1.NodeGroup> getNodeGroupsList() {
     return nodeGroups_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       getNodeGroupsOrBuilderList() {
     return nodeGroups_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
   public int getNodeGroupsCount() {
     return nodeGroups_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.NodeGroup getNodeGroups(int index) {
     return nodeGroups_.get(index);
   }
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +646,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
         return nodeGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
         return nodeGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
         return nodeGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +873,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.NodeGroup.Builder getNodeGroupsBuilder(int index) {
       return getNodeGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -912,7 +889,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
         return nodeGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -930,7 +906,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(nodeGroups_);
       }
     }
-
     /**
      *
      *
@@ -944,7 +919,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       return getNodeGroupsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NodeGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -958,7 +932,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       return getNodeGroupsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NodeGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +969,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1011,7 +983,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1032,7 +1003,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1025,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1044,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1071,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1090,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1104,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1157,7 +1122,6 @@ public final class NodeGroupsScopedList extends com.google.protobuf.GeneratedMes
             : warning_;
       }
     }
-
     /**
      *
      *

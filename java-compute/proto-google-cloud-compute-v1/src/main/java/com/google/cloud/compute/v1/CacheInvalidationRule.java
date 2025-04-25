@@ -32,14 +32,12 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CacheInvalidationRule)
     CacheInvalidationRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CacheInvalidationRule.newBuilder() to construct.
   private CacheInvalidationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
   private CacheInvalidationRule() {
-    cacheTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     host_ = "";
     path_ = "";
   }
@@ -66,79 +64,10 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   }
 
   private int bitField0_;
-  public static final int CACHE_TAGS_FIELD_NUMBER = 29073078;
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList cacheTags_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-
-  /**
-   *
-   *
-   * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-   * </pre>
-   *
-   * <code>repeated string cache_tags = 29073078;</code>
-   *
-   * @return A list containing the cacheTags.
-   */
-  public com.google.protobuf.ProtocolStringList getCacheTagsList() {
-    return cacheTags_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-   * </pre>
-   *
-   * <code>repeated string cache_tags = 29073078;</code>
-   *
-   * @return The count of cacheTags.
-   */
-  public int getCacheTagsCount() {
-    return cacheTags_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-   * </pre>
-   *
-   * <code>repeated string cache_tags = 29073078;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The cacheTags at the given index.
-   */
-  public java.lang.String getCacheTags(int index) {
-    return cacheTags_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-   * </pre>
-   *
-   * <code>repeated string cache_tags = 29073078;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the cacheTags at the given index.
-   */
-  public com.google.protobuf.ByteString getCacheTagsBytes(int index) {
-    return cacheTags_.getByteString(index);
-  }
-
   public static final int HOST_FIELD_NUMBER = 3208616;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
-
   /**
    *
    *
@@ -154,7 +83,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   public boolean hasHost() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +106,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +134,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    * <code>optional string path = 3433509;</code>
    *
@@ -217,7 +143,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   public boolean hasPath() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional string path = 3433509;</code>
    *
@@ -235,7 +160,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    * <code>optional string path = 3433509;</code>
    *
@@ -274,9 +198,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3433509, path_);
     }
-    for (int i = 0; i < cacheTags_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 29073078, cacheTags_.getRaw(i));
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -291,14 +212,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3433509, path_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < cacheTags_.size(); i++) {
-        dataSize += computeStringSizeNoTag(cacheTags_.getRaw(i));
-      }
-      size += dataSize;
-      size += 4 * getCacheTagsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -316,7 +229,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     com.google.cloud.compute.v1.CacheInvalidationRule other =
         (com.google.cloud.compute.v1.CacheInvalidationRule) obj;
 
-    if (!getCacheTagsList().equals(other.getCacheTagsList())) return false;
     if (hasHost() != other.hasHost()) return false;
     if (hasHost()) {
       if (!getHost().equals(other.getHost())) return false;
@@ -336,10 +248,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getCacheTagsCount() > 0) {
-      hash = (37 * hash) + CACHE_TAGS_FIELD_NUMBER;
-      hash = (53 * hash) + getCacheTagsList().hashCode();
-    }
     if (hasHost()) {
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
@@ -448,7 +356,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +394,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      cacheTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       host_ = "";
       path_ = "";
       return this;
@@ -526,16 +432,12 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
     private void buildPartial0(com.google.cloud.compute.v1.CacheInvalidationRule result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        cacheTags_.makeImmutable();
-        result.cacheTags_ = cacheTags_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.host_ = host_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.path_ = path_;
         to_bitField0_ |= 0x00000002;
       }
@@ -588,24 +490,14 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.compute.v1.CacheInvalidationRule other) {
       if (other == com.google.cloud.compute.v1.CacheInvalidationRule.getDefaultInstance())
         return this;
-      if (!other.cacheTags_.isEmpty()) {
-        if (cacheTags_.isEmpty()) {
-          cacheTags_ = other.cacheTags_;
-          bitField0_ |= 0x00000001;
-        } else {
-          ensureCacheTagsIsMutable();
-          cacheTags_.addAll(other.cacheTags_);
-        }
-        onChanged();
-      }
       if (other.hasHost()) {
         host_ = other.host_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPath()) {
         path_ = other.path_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -637,22 +529,15 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
             case 25668930:
               {
                 host_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 25668930
             case 27468074:
               {
                 path_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 27468074
-            case 232584626:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureCacheTagsIsMutable();
-                cacheTags_.add(s);
-                break;
-              } // case 232584626
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -672,191 +557,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList cacheTags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-
-    private void ensureCacheTagsIsMutable() {
-      if (!cacheTags_.isModifiable()) {
-        cacheTags_ = new com.google.protobuf.LazyStringArrayList(cacheTags_);
-      }
-      bitField0_ |= 0x00000001;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @return A list containing the cacheTags.
-     */
-    public com.google.protobuf.ProtocolStringList getCacheTagsList() {
-      cacheTags_.makeImmutable();
-      return cacheTags_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @return The count of cacheTags.
-     */
-    public int getCacheTagsCount() {
-      return cacheTags_.size();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The cacheTags at the given index.
-     */
-    public java.lang.String getCacheTags(int index) {
-      return cacheTags_.get(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the cacheTags at the given index.
-     */
-    public com.google.protobuf.ByteString getCacheTagsBytes(int index) {
-      return cacheTags_.getByteString(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @param index The index to set the value at.
-     * @param value The cacheTags to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCacheTags(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureCacheTagsIsMutable();
-      cacheTags_.set(index, value);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @param value The cacheTags to add.
-     * @return This builder for chaining.
-     */
-    public Builder addCacheTags(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureCacheTagsIsMutable();
-      cacheTags_.add(value);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @param values The cacheTags to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllCacheTags(java.lang.Iterable<java.lang.String> values) {
-      ensureCacheTagsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cacheTags_);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearCacheTags() {
-      cacheTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      ;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
-     * </pre>
-     *
-     * <code>repeated string cache_tags = 29073078;</code>
-     *
-     * @param value The bytes of the cacheTags to add.
-     * @return This builder for chaining.
-     */
-    public Builder addCacheTagsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureCacheTagsIsMutable();
-      cacheTags_.add(value);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object host_ = "";
-
     /**
      *
      *
@@ -869,9 +570,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * @return Whether the host field is set.
      */
     public boolean hasHost() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -894,7 +594,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -917,7 +616,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -935,11 +633,10 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       host_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,11 +650,10 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      */
     public Builder clearHost() {
       host_ = getDefaultInstance().getHost();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,22 +672,20 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       host_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
     private java.lang.Object path_ = "";
-
     /**
      * <code>optional string path = 3433509;</code>
      *
      * @return Whether the path field is set.
      */
     public boolean hasPath() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -1008,7 +702,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -1025,7 +718,6 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -1037,11 +729,10 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       path_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -1049,11 +740,10 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      */
     public Builder clearPath() {
       path_ = getDefaultInstance().getPath();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string path = 3433509;</code>
      *
@@ -1066,7 +756,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       path_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

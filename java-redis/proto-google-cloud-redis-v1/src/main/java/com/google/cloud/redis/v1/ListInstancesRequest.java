@@ -33,7 +33,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1.ListInstancesRequest)
     ListInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListInstancesRequest.newBuilder() to construct.
   private ListInstancesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -385,7 +379,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -597,7 +590,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -624,7 +616,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +642,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

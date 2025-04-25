@@ -33,7 +33,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.ListMigrationSubtasksResponse)
     ListMigrationSubtasksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMigrationSubtasksResponse.newBuilder() to construct.
   private ListMigrationSubtasksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.MigrationSubtask>
       migrationSubtasks_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       getMigrationSubtasksList() {
     return migrationSubtasks_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       getMigrationSubtasksOrBuilderList() {
     return migrationSubtasks_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
   public int getMigrationSubtasksCount() {
     return migrationSubtasks_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
   public com.google.cloud.bigquery.migration.v2.MigrationSubtask getMigrationSubtasks(int index) {
     return migrationSubtasks_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -666,7 +657,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return migrationSubtasksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return migrationSubtasksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return migrationSubtasksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +904,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         getMigrationSubtasksBuilder(int index) {
       return getMigrationSubtasksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return migrationSubtasksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(migrationSubtasks_);
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       return getMigrationSubtasksFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.migration.v2.MigrationSubtask.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.bigquery.migration.v2.MigrationSubtask.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1054,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class ListMigrationSubtasksResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface JobMetadataOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface JobMetadataOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface JobMetadataOrBuilder
    * @return The status.
    */
   com.google.cloud.dataproc.v1.JobStatus getStatus();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface JobMetadataOrBuilder
    * @return The operationType.
    */
   java.lang.String getOperationType();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface JobMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface JobMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *

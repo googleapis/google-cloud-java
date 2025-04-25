@@ -33,7 +33,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.PublishEventsRequest)
     PublishEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublishEventsRequest.newBuilder() to construct.
   private PublishEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object channel_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> events_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.protobuf.Any> getEventsList() {
     return events_;
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEventsOrBuilderList() {
     return events_;
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public int getEventsCount() {
     return events_.size();
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Any getEvents(int index) {
     return events_.get(index);
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList textEvents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getTextEventsList() {
     return textEvents_;
   }
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public int getTextEventsCount() {
     return textEvents_.size();
   }
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getTextEvents(int index) {
     return textEvents_.get(index);
   }
-
   /**
    *
    *
@@ -472,7 +460,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -742,7 +729,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object channel_ = "";
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +871,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return eventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return eventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return eventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +971,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +994,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1014,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1034,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1054,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1074,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1094,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1107,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.Any.Builder getEventsBuilder(int index) {
       return getEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1155,7 +1124,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return eventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1173,7 +1141,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(events_);
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1154,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.Any.Builder addEventsBuilder() {
       return getEventsFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1202,7 +1168,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       return getEventsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1243,7 +1208,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1263,7 +1227,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       textEvents_.makeImmutable();
       return textEvents_;
     }
-
     /**
      *
      *
@@ -1282,7 +1245,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public int getTextEventsCount() {
       return textEvents_.size();
     }
-
     /**
      *
      *
@@ -1302,7 +1264,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getTextEvents(int index) {
       return textEvents_.get(index);
     }
-
     /**
      *
      *
@@ -1322,7 +1283,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTextEventsBytes(int index) {
       return textEvents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1350,7 +1310,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1336,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1359,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1381,6 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

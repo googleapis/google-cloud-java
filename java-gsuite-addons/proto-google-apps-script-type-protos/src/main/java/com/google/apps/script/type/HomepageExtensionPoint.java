@@ -33,7 +33,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.apps.script.type.HomepageExtensionPoint)
     HomepageExtensionPointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HomepageExtensionPoint.newBuilder() to construct.
   private HomepageExtensionPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object runFunction_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
 
   public static final int ENABLED_FIELD_NUMBER = 2;
   private com.google.protobuf.BoolValue enabled_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
   public com.google.protobuf.BoolValue getEnabled() {
     return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -571,7 +564,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object runFunction_ = "";
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         enabledBuilder_;
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
         return enabledBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       onChanged();
       return getEnabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
         return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
       }
     }
-
     /**
      *
      *

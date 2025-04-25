@@ -36,7 +36,6 @@ public interface BigQueryTableCollectionOrBuilder
    * @return Whether the includeRegexes field is set.
    */
   boolean hasIncludeRegexes();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BigQueryTableCollectionOrBuilder
    * @return The includeRegexes.
    */
   com.google.privacy.dlp.v2.BigQueryRegexes getIncludeRegexes();
-
   /**
    *
    *

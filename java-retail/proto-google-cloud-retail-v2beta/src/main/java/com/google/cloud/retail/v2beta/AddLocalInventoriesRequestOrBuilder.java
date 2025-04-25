@@ -44,7 +44,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.retail.v2beta.LocalInventory> getLocalInventoriesList();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2beta.LocalInventory getLocalInventories(int index);
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * </code>
    */
   int getLocalInventoriesCount();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2beta.LocalInventoryOrBuilder>
       getLocalInventoriesOrBuilderList();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * @return Whether the addMask field is set.
    */
   boolean hasAddMask();
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * @return The addMask.
    */
   com.google.protobuf.FieldMask getAddMask();
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * @return Whether the addTime field is set.
    */
   boolean hasAddTime();
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public interface AddLocalInventoriesRequestOrBuilder
    * @return The addTime.
    */
   com.google.protobuf.Timestamp getAddTime();
-
   /**
    *
    *

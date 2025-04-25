@@ -37,7 +37,6 @@ public interface ListUsableSubnetworksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ListUsableSubnetworksRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface ListUsableSubnetworksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

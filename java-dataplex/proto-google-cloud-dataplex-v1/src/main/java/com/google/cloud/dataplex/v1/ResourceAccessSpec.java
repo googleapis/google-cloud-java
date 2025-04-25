@@ -35,7 +35,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ResourceAccessSpec)
     ResourceAccessSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceAccessSpec.newBuilder() to construct.
   private ResourceAccessSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList readers_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getReadersList() {
     return readers_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public int getReadersCount() {
     return readers_.size();
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public java.lang.String getReaders(int index) {
     return readers_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList writers_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getWritersList() {
     return writers_;
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public int getWritersCount() {
     return writers_.size();
   }
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public java.lang.String getWriters(int index) {
     return writers_.get(index);
   }
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList owners_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getOwnersList() {
     return owners_;
   }
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public int getOwnersCount() {
     return owners_.size();
   }
-
   /**
    *
    *
@@ -263,7 +251,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
   public java.lang.String getOwners(int index) {
     return owners_.get(index);
   }
-
   /**
    *
    *
@@ -478,7 +465,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -724,7 +710,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       readers_.makeImmutable();
       return readers_;
     }
-
     /**
      *
      *
@@ -759,7 +743,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public int getReadersCount() {
       return readers_.size();
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public java.lang.String getReaders(int index) {
       return readers_.get(index);
     }
-
     /**
      *
      *
@@ -795,7 +777,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getReadersBytes(int index) {
       return readers_.getByteString(index);
     }
-
     /**
      *
      *
@@ -821,7 +802,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +847,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +867,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +902,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       writers_.makeImmutable();
       return writers_;
     }
-
     /**
      *
      *
@@ -956,7 +931,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public int getWritersCount() {
       return writers_.size();
     }
-
     /**
      *
      *
@@ -972,7 +946,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public java.lang.String getWriters(int index) {
       return writers_.get(index);
     }
-
     /**
      *
      *
@@ -988,7 +961,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getWritersBytes(int index) {
       return writers_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1012,7 +984,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1006,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1025,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1043,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1076,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1124,7 +1091,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       owners_.makeImmutable();
       return owners_;
     }
-
     /**
      *
      *
@@ -1139,7 +1105,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public int getOwnersCount() {
       return owners_.size();
     }
-
     /**
      *
      *
@@ -1155,7 +1120,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public java.lang.String getOwners(int index) {
       return owners_.get(index);
     }
-
     /**
      *
      *
@@ -1171,7 +1135,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getOwnersBytes(int index) {
       return owners_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1195,7 +1158,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1180,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1199,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1217,6 @@ public final class ResourceAccessSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionConfig getConfig();
-
   /**
    *
    *
@@ -150,7 +148,6 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the voiceActivityTimeout field is set.
    */
   boolean hasVoiceActivityTimeout();
-
   /**
    *
    *
@@ -168,7 +165,6 @@ public interface StreamingRecognitionConfigOrBuilder
    */
   com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
       getVoiceActivityTimeout();
-
   /**
    *
    *

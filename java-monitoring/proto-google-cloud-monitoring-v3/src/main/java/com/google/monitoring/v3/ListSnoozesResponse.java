@@ -34,7 +34,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListSnoozesResponse)
     ListSnoozesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSnoozesResponse.newBuilder() to construct.
   private ListSnoozesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.Snooze> snoozes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.monitoring.v3.Snooze> getSnoozesList() {
     return snoozes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       getSnoozesOrBuilderList() {
     return snoozes_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
   public int getSnoozesCount() {
     return snoozes_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
   public com.google.monitoring.v3.Snooze getSnoozes(int index) {
     return snoozes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -642,7 +633,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return snoozesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return snoozesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return snoozesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +858,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
     public com.google.monitoring.v3.Snooze.Builder getSnoozesBuilder(int index) {
       return getSnoozesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -896,7 +874,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return snoozesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -914,7 +891,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(snoozes_);
       }
     }
-
     /**
      *
      *
@@ -928,7 +904,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       return getSnoozesFieldBuilder()
           .addBuilder(com.google.monitoring.v3.Snooze.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -942,7 +917,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       return getSnoozesFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.Snooze.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -974,7 +948,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -998,7 +971,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +994,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1016,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1034,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

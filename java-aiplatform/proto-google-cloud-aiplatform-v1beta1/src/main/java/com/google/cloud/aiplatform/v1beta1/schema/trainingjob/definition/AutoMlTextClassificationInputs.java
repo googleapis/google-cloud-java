@@ -29,7 +29,6 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextClassificationInputs)
     AutoMlTextClassificationInputsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlTextClassificationInputs.newBuilder() to construct.
   private AutoMlTextClassificationInputs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,7 +64,6 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
 
   public static final int MULTI_LABEL_FIELD_NUMBER = 1;
   private boolean multiLabel_ = false;
-
   /**
    * <code>bool multi_label = 1;</code>
    *
@@ -262,7 +260,6 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextClassificationInputs}
@@ -472,7 +469,6 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     private int bitField0_;
 
     private boolean multiLabel_;
-
     /**
      * <code>bool multi_label = 1;</code>
      *
@@ -482,7 +478,6 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     public boolean getMultiLabel() {
       return multiLabel_;
     }
-
     /**
      * <code>bool multi_label = 1;</code>
      *
@@ -496,7 +491,6 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      * <code>bool multi_label = 1;</code>
      *

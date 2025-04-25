@@ -40,7 +40,6 @@ public interface GetRuntimeProjectAttachmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

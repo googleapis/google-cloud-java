@@ -36,7 +36,6 @@ public interface BigTableIODetailsOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BigTableIODetailsOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BigTableIODetailsOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *

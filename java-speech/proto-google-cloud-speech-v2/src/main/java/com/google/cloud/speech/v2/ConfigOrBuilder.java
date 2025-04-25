@@ -40,7 +40,6 @@ public interface ConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ConfigOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface ConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface ConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface BatchUpdateIngressRulesResponseOrBuilder
    * <code>repeated .google.appengine.v1.FirewallRule ingress_rules = 1;</code>
    */
   java.util.List<com.google.appengine.v1.firewall.FirewallRule> getIngressRulesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchUpdateIngressRulesResponseOrBuilder
    * <code>repeated .google.appengine.v1.FirewallRule ingress_rules = 1;</code>
    */
   com.google.appengine.v1.firewall.FirewallRule getIngressRules(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchUpdateIngressRulesResponseOrBuilder
    * <code>repeated .google.appengine.v1.FirewallRule ingress_rules = 1;</code>
    */
   int getIngressRulesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchUpdateIngressRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.firewall.FirewallRuleOrBuilder>
       getIngressRulesOrBuilderList();
-
   /**
    *
    *

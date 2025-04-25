@@ -94,7 +94,6 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRIGGER_EVENT_UNSPECIFIED = 0;</code>
    */
   public static final int TRIGGER_EVENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
    * <code>END_OF_UTTERANCE = 1;</code>
    */
   public static final int END_OF_UTTERANCE_VALUE = 1;
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANUAL_CALL = 2;</code>
    */
   public static final int MANUAL_CALL_VALUE = 2;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CUSTOMER_MESSAGE = 3;</code>
    */
   public static final int CUSTOMER_MESSAGE_VALUE = 3;
-
   /**
    *
    *

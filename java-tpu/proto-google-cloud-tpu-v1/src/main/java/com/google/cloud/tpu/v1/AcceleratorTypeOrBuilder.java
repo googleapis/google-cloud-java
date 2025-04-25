@@ -36,7 +36,6 @@ public interface AcceleratorTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AcceleratorTypeOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

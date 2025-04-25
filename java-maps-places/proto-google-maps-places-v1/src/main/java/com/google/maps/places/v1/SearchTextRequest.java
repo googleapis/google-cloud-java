@@ -33,7 +33,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest)
     SearchTextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchTextRequest.newBuilder() to construct.
   private SearchTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * <code>RANK_PREFERENCE_UNSPECIFIED = 0;</code>
      */
     public static final int RANK_PREFERENCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * <code>DISTANCE = 1;</code>
      */
     public static final int DISTANCE_VALUE = 1;
-
     /**
      *
      *
@@ -256,7 +253,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the rectangle field is set.
      */
     boolean hasRectangle();
-
     /**
      *
      *
@@ -274,7 +270,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return The rectangle.
      */
     com.google.geo.type.Viewport getRectangle();
-
     /**
      *
      *
@@ -303,7 +298,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the circle field is set.
      */
     boolean hasCircle();
-
     /**
      *
      *
@@ -316,7 +310,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return The circle.
      */
     com.google.maps.places.v1.Circle getCircle();
-
     /**
      *
      *
@@ -330,7 +323,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
     com.google.maps.places.v1.SearchTextRequest.LocationBias.TypeCase getTypeCase();
   }
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.LocationBias)
       LocationBiasOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LocationBias.newBuilder() to construct.
     private LocationBias(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -392,7 +383,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       private TypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -426,7 +416,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int RECTANGLE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -447,7 +436,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRectangle() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -471,7 +459,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return com.google.geo.type.Viewport.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -495,7 +482,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int CIRCLE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -511,7 +497,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasCircle() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -530,7 +515,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return com.google.maps.places.v1.Circle.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -739,7 +723,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -980,7 +963,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
               com.google.geo.type.Viewport.Builder,
               com.google.geo.type.ViewportOrBuilder>
           rectangleBuilder_;
-
       /**
        *
        *
@@ -1001,7 +983,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public boolean hasRectangle() {
         return typeCase_ == 1;
       }
-
       /**
        *
        *
@@ -1032,7 +1013,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1060,7 +1040,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1085,7 +1064,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1121,7 +1099,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1152,7 +1129,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1170,7 +1146,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public com.google.geo.type.Viewport.Builder getRectangleBuilder() {
         return getRectangleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1196,7 +1171,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1238,7 +1212,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
               com.google.maps.places.v1.Circle.Builder,
               com.google.maps.places.v1.CircleOrBuilder>
           circleBuilder_;
-
       /**
        *
        *
@@ -1254,7 +1227,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public boolean hasCircle() {
         return typeCase_ == 2;
       }
-
       /**
        *
        *
@@ -1280,7 +1252,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1303,7 +1274,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1323,7 +1293,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1355,7 +1324,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1381,7 +1349,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1394,7 +1361,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public com.google.maps.places.v1.Circle.Builder getCircleBuilder() {
         return getCircleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1415,7 +1381,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1533,7 +1498,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the rectangle field is set.
      */
     boolean hasRectangle();
-
     /**
      *
      *
@@ -1551,7 +1515,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return The rectangle.
      */
     com.google.geo.type.Viewport getRectangle();
-
     /**
      *
      *
@@ -1570,7 +1533,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
     com.google.maps.places.v1.SearchTextRequest.LocationRestriction.TypeCase getTypeCase();
   }
-
   /**
    *
    *
@@ -1586,7 +1548,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.LocationRestriction)
       LocationRestrictionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LocationRestriction.newBuilder() to construct.
     private LocationRestriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1631,7 +1592,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       private TypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1663,7 +1623,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int RECTANGLE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1684,7 +1643,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRectangle() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -1708,7 +1666,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return com.google.geo.type.Viewport.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1908,7 +1865,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2137,7 +2093,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
               com.google.geo.type.Viewport.Builder,
               com.google.geo.type.ViewportOrBuilder>
           rectangleBuilder_;
-
       /**
        *
        *
@@ -2158,7 +2113,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public boolean hasRectangle() {
         return typeCase_ == 1;
       }
-
       /**
        *
        *
@@ -2189,7 +2143,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2217,7 +2170,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2242,7 +2194,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2278,7 +2229,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2309,7 +2259,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2327,7 +2276,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public com.google.geo.type.Viewport.Builder getRectangleBuilder() {
         return getRectangleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2353,7 +2301,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2491,7 +2438,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return A list containing the connectorTypes.
      */
     java.util.List<com.google.maps.places.v1.EVConnectorType> getConnectorTypesList();
-
     /**
      *
      *
@@ -2507,7 +2453,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return The count of connectorTypes.
      */
     int getConnectorTypesCount();
-
     /**
      *
      *
@@ -2524,7 +2469,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return The connectorTypes at the given index.
      */
     com.google.maps.places.v1.EVConnectorType getConnectorTypes(int index);
-
     /**
      *
      *
@@ -2540,7 +2484,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return A list containing the enum numeric values on the wire for connectorTypes.
      */
     java.util.List<java.lang.Integer> getConnectorTypesValueList();
-
     /**
      *
      *
@@ -2558,7 +2501,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     int getConnectorTypesValue(int index);
   }
-
   /**
    *
    *
@@ -2573,7 +2515,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.EVOptions)
       EVOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EVOptions.newBuilder() to construct.
     private EVOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2606,7 +2547,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
     public static final int MINIMUM_CHARGING_RATE_KW_FIELD_NUMBER = 1;
     private double minimumChargingRateKw_ = 0D;
-
     /**
      *
      *
@@ -2642,7 +2582,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                     : result;
               }
             };
-
     /**
      *
      *
@@ -2663,7 +2602,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           java.lang.Integer, com.google.maps.places.v1.EVConnectorType>(
           connectorTypes_, connectorTypes_converter_);
     }
-
     /**
      *
      *
@@ -2682,7 +2620,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public int getConnectorTypesCount() {
       return connectorTypes_.size();
     }
-
     /**
      *
      *
@@ -2702,7 +2639,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public com.google.maps.places.v1.EVConnectorType getConnectorTypes(int index) {
       return connectorTypes_converter_.convert(connectorTypes_.get(index));
     }
-
     /**
      *
      *
@@ -2721,7 +2657,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getConnectorTypesValueList() {
       return connectorTypes_;
     }
-
     /**
      *
      *
@@ -2935,7 +2870,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3162,7 +3096,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private double minimumChargingRateKw_;
-
       /**
        *
        *
@@ -3179,7 +3112,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public double getMinimumChargingRateKw() {
         return minimumChargingRateKw_;
       }
-
       /**
        *
        *
@@ -3200,7 +3132,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3228,7 +3159,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           bitField0_ |= 0x00000002;
         }
       }
-
       /**
        *
        *
@@ -3248,7 +3178,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             java.lang.Integer, com.google.maps.places.v1.EVConnectorType>(
             connectorTypes_, connectorTypes_converter_);
       }
-
       /**
        *
        *
@@ -3266,7 +3195,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public int getConnectorTypesCount() {
         return connectorTypes_.size();
       }
-
       /**
        *
        *
@@ -3285,7 +3213,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public com.google.maps.places.v1.EVConnectorType getConnectorTypes(int index) {
         return connectorTypes_converter_.convert(connectorTypes_.get(index));
       }
-
       /**
        *
        *
@@ -3311,7 +3238,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3336,7 +3262,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3361,7 +3286,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3382,7 +3306,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3400,7 +3323,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public java.util.List<java.lang.Integer> getConnectorTypesValueList() {
         return java.util.Collections.unmodifiableList(connectorTypes_);
       }
-
       /**
        *
        *
@@ -3419,7 +3341,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public int getConnectorTypesValue(int index) {
         return connectorTypes_.get(index);
       }
-
       /**
        *
        *
@@ -3442,7 +3363,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3464,7 +3384,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3571,7 +3490,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the polyline field is set.
      */
     boolean hasPolyline();
-
     /**
      *
      *
@@ -3585,7 +3503,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return The polyline.
      */
     com.google.maps.places.v1.Polyline getPolyline();
-
     /**
      *
      *
@@ -3598,7 +3515,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.maps.places.v1.PolylineOrBuilder getPolylineOrBuilder();
   }
-
   /**
    *
    *
@@ -3627,7 +3543,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters)
       SearchAlongRouteParametersOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SearchAlongRouteParameters.newBuilder() to construct.
     private SearchAlongRouteParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3659,7 +3574,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int POLYLINE_FIELD_NUMBER = 1;
     private com.google.maps.places.v1.Polyline polyline_;
-
     /**
      *
      *
@@ -3676,7 +3590,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasPolyline() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3695,7 +3608,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.maps.places.v1.Polyline.getDefaultInstance()
           : polyline_;
     }
-
     /**
      *
      *
@@ -3881,7 +3793,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4111,7 +4022,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
               com.google.maps.places.v1.Polyline.Builder,
               com.google.maps.places.v1.PolylineOrBuilder>
           polylineBuilder_;
-
       /**
        *
        *
@@ -4128,7 +4038,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       public boolean hasPolyline() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -4151,7 +4060,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           return polylineBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4176,7 +4084,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4198,7 +4105,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4228,7 +4134,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -4250,7 +4155,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4267,7 +4171,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getPolylineFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4288,7 +4191,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
               : polyline_;
         }
       }
-
       /**
        *
        *
@@ -4390,7 +4292,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object textQuery_ = "";
-
   /**
    *
    *
@@ -4414,7 +4315,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4443,7 +4343,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -4473,7 +4372,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4508,7 +4406,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -4541,7 +4438,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4577,7 +4473,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int RANK_PREFERENCE_FIELD_NUMBER = 4;
   private int rankPreference_ = 0;
-
   /**
    *
    *
@@ -4593,7 +4488,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public int getRankPreferenceValue() {
     return rankPreference_;
   }
-
   /**
    *
    *
@@ -4618,7 +4512,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object includedType_ = "";
-
   /**
    *
    *
@@ -4644,7 +4537,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4673,7 +4565,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int OPEN_NOW_FIELD_NUMBER = 7;
   private boolean openNow_ = false;
-
   /**
    *
    *
@@ -4693,7 +4584,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int MIN_RATING_FIELD_NUMBER = 9;
   private double minRating_ = 0D;
-
   /**
    *
    *
@@ -4716,7 +4606,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int MAX_RESULT_COUNT_FIELD_NUMBER = 10;
   private int maxResultCount_ = 0;
-
   /**
    *
    *
@@ -4752,7 +4641,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
               return result == null ? com.google.maps.places.v1.PriceLevel.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -4772,7 +4660,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         java.lang.Integer, com.google.maps.places.v1.PriceLevel>(
         priceLevels_, priceLevels_converter_);
   }
-
   /**
    *
    *
@@ -4790,7 +4677,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public int getPriceLevelsCount() {
     return priceLevels_.size();
   }
-
   /**
    *
    *
@@ -4809,7 +4695,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public com.google.maps.places.v1.PriceLevel getPriceLevels(int index) {
     return priceLevels_converter_.convert(priceLevels_.get(index));
   }
-
   /**
    *
    *
@@ -4827,7 +4712,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getPriceLevelsValueList() {
     return priceLevels_;
   }
-
   /**
    *
    *
@@ -4851,7 +4735,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int STRICT_TYPE_FILTERING_FIELD_NUMBER = 12;
   private boolean strictTypeFiltering_ = false;
-
   /**
    *
    *
@@ -4871,7 +4754,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int LOCATION_BIAS_FIELD_NUMBER = 13;
   private com.google.maps.places.v1.SearchTextRequest.LocationBias locationBias_;
-
   /**
    *
    *
@@ -4889,7 +4771,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasLocationBias() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4909,7 +4790,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.places.v1.SearchTextRequest.LocationBias.getDefaultInstance()
         : locationBias_;
   }
-
   /**
    *
    *
@@ -4931,7 +4811,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int LOCATION_RESTRICTION_FIELD_NUMBER = 14;
   private com.google.maps.places.v1.SearchTextRequest.LocationRestriction locationRestriction_;
-
   /**
    *
    *
@@ -4950,7 +4829,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasLocationRestriction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4971,7 +4849,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.places.v1.SearchTextRequest.LocationRestriction.getDefaultInstance()
         : locationRestriction_;
   }
-
   /**
    *
    *
@@ -4994,7 +4871,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int EV_OPTIONS_FIELD_NUMBER = 15;
   private com.google.maps.places.v1.SearchTextRequest.EVOptions evOptions_;
-
   /**
    *
    *
@@ -5012,7 +4888,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasEvOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -5032,7 +4907,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.places.v1.SearchTextRequest.EVOptions.getDefaultInstance()
         : evOptions_;
   }
-
   /**
    *
    *
@@ -5053,7 +4927,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int ROUTING_PARAMETERS_FIELD_NUMBER = 16;
   private com.google.maps.places.v1.RoutingParameters routingParameters_;
-
   /**
    *
    *
@@ -5071,7 +4944,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRoutingParameters() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -5091,7 +4963,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
         : routingParameters_;
   }
-
   /**
    *
    *
@@ -5113,7 +4984,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public static final int SEARCH_ALONG_ROUTE_PARAMETERS_FIELD_NUMBER = 17;
   private com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
       searchAlongRouteParameters_;
-
   /**
    *
    *
@@ -5131,7 +5001,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasSearchAlongRouteParameters() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -5153,7 +5022,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : searchAlongRouteParameters_;
   }
-
   /**
    *
    *
@@ -5176,7 +5044,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int INCLUDE_PURE_SERVICE_AREA_BUSINESSES_FIELD_NUMBER = 20;
   private boolean includePureServiceAreaBusinesses_ = false;
-
   /**
    *
    *
@@ -5552,7 +5419,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6017,7 +5883,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object textQuery_ = "";
-
     /**
      *
      *
@@ -6040,7 +5905,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6063,7 +5927,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6085,7 +5948,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6103,7 +5965,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6128,7 +5989,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -6157,7 +6017,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6186,7 +6045,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6214,7 +6072,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6238,7 +6095,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6269,7 +6125,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -6301,7 +6156,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6333,7 +6187,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6364,7 +6217,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6391,7 +6243,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6425,7 +6276,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int rankPreference_ = 0;
-
     /**
      *
      *
@@ -6441,7 +6291,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public int getRankPreferenceValue() {
       return rankPreference_;
     }
-
     /**
      *
      *
@@ -6460,7 +6309,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6480,7 +6328,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.maps.places.v1.SearchTextRequest.RankPreference.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6503,7 +6350,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6523,7 +6369,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object includedType_ = "";
-
     /**
      *
      *
@@ -6548,7 +6393,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6573,7 +6417,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6597,7 +6440,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6617,7 +6459,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6644,7 +6485,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean openNow_;
-
     /**
      *
      *
@@ -6661,7 +6501,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean getOpenNow() {
       return openNow_;
     }
-
     /**
      *
      *
@@ -6682,7 +6521,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6703,7 +6541,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private double minRating_;
-
     /**
      *
      *
@@ -6723,7 +6560,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public double getMinRating() {
       return minRating_;
     }
-
     /**
      *
      *
@@ -6747,7 +6583,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6771,7 +6606,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int maxResultCount_;
-
     /**
      *
      *
@@ -6790,7 +6624,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public int getMaxResultCount() {
       return maxResultCount_;
     }
-
     /**
      *
      *
@@ -6813,7 +6646,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6843,7 +6675,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000100;
       }
     }
-
     /**
      *
      *
@@ -6862,7 +6693,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           java.lang.Integer, com.google.maps.places.v1.PriceLevel>(
           priceLevels_, priceLevels_converter_);
     }
-
     /**
      *
      *
@@ -6879,7 +6709,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public int getPriceLevelsCount() {
       return priceLevels_.size();
     }
-
     /**
      *
      *
@@ -6897,7 +6726,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public com.google.maps.places.v1.PriceLevel getPriceLevels(int index) {
       return priceLevels_converter_.convert(priceLevels_.get(index));
     }
-
     /**
      *
      *
@@ -6922,7 +6750,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6946,7 +6773,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6970,7 +6796,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6990,7 +6815,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7007,7 +6831,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getPriceLevelsValueList() {
       return java.util.Collections.unmodifiableList(priceLevels_);
     }
-
     /**
      *
      *
@@ -7025,7 +6848,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public int getPriceLevelsValue(int index) {
       return priceLevels_.get(index);
     }
-
     /**
      *
      *
@@ -7047,7 +6869,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7068,7 +6889,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7093,7 +6913,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean strictTypeFiltering_;
-
     /**
      *
      *
@@ -7110,7 +6929,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean getStrictTypeFiltering() {
       return strictTypeFiltering_;
     }
-
     /**
      *
      *
@@ -7131,7 +6949,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7157,7 +6974,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.places.v1.SearchTextRequest.LocationBias.Builder,
             com.google.maps.places.v1.SearchTextRequest.LocationBiasOrBuilder>
         locationBiasBuilder_;
-
     /**
      *
      *
@@ -7174,7 +6990,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasLocationBias() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -7197,7 +7012,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return locationBiasBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7222,7 +7036,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7245,7 +7058,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7277,7 +7089,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7299,7 +7110,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7317,7 +7127,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLocationBiasFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7339,7 +7148,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             : locationBias_;
       }
     }
-
     /**
      *
      *
@@ -7374,7 +7182,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.places.v1.SearchTextRequest.LocationRestriction.Builder,
             com.google.maps.places.v1.SearchTextRequest.LocationRestrictionOrBuilder>
         locationRestrictionBuilder_;
-
     /**
      *
      *
@@ -7392,7 +7199,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasLocationRestriction() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -7417,7 +7223,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return locationRestrictionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7444,7 +7249,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7468,7 +7272,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7502,7 +7305,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7525,7 +7327,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7544,7 +7345,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLocationRestrictionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7567,7 +7367,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             : locationRestriction_;
       }
     }
-
     /**
      *
      *
@@ -7603,7 +7402,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.places.v1.SearchTextRequest.EVOptions.Builder,
             com.google.maps.places.v1.SearchTextRequest.EVOptionsOrBuilder>
         evOptionsBuilder_;
-
     /**
      *
      *
@@ -7620,7 +7418,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasEvOptions() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -7643,7 +7440,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return evOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7668,7 +7464,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7691,7 +7486,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7722,7 +7516,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7744,7 +7537,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7761,7 +7553,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEvOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7782,7 +7573,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             : evOptions_;
       }
     }
-
     /**
      *
      *
@@ -7817,7 +7607,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.places.v1.RoutingParameters.Builder,
             com.google.maps.places.v1.RoutingParametersOrBuilder>
         routingParametersBuilder_;
-
     /**
      *
      *
@@ -7834,7 +7623,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRoutingParameters() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -7857,7 +7645,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return routingParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7882,7 +7669,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7905,7 +7691,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7936,7 +7721,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7958,7 +7742,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7975,7 +7758,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRoutingParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7996,7 +7778,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             : routingParameters_;
       }
     }
-
     /**
      *
      *
@@ -8032,7 +7813,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters.Builder,
             com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParametersOrBuilder>
         searchAlongRouteParametersBuilder_;
-
     /**
      *
      *
@@ -8049,7 +7829,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasSearchAlongRouteParameters() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -8074,7 +7853,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         return searchAlongRouteParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8100,7 +7878,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8124,7 +7901,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8157,7 +7933,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -8179,7 +7954,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8197,7 +7971,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSearchAlongRouteParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8220,7 +7993,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             : searchAlongRouteParameters_;
       }
     }
-
     /**
      *
      *
@@ -8250,7 +8022,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean includePureServiceAreaBusinesses_;
-
     /**
      *
      *
@@ -8274,7 +8045,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public boolean getIncludePureServiceAreaBusinesses() {
       return includePureServiceAreaBusinesses_;
     }
-
     /**
      *
      *
@@ -8302,7 +8072,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

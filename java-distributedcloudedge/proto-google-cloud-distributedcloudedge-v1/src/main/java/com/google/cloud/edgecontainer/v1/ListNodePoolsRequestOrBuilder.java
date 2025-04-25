@@ -38,7 +38,6 @@ public interface ListNodePoolsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ListNodePoolsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface ListNodePoolsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface ListNodePoolsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

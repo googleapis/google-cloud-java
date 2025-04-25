@@ -38,7 +38,6 @@ public interface SnapshotOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SnapshotOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface SnapshotOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface SnapshotOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public interface SnapshotOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface SnapshotOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public interface SnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -212,11 +205,9 @@ public interface SnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public interface SnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface SnapshotOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

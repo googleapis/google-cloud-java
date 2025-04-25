@@ -38,7 +38,6 @@ public interface DestinationPubSubSubscriptionOrBuilder
    * @return Whether the pubsubSubscription field is set.
    */
   boolean hasPubsubSubscription();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DestinationPubSubSubscriptionOrBuilder
    * @return The pubsubSubscription.
    */
   com.google.cloud.bigquery.analyticshub.v1.PubSubSubscription getPubsubSubscription();
-
   /**
    *
    *

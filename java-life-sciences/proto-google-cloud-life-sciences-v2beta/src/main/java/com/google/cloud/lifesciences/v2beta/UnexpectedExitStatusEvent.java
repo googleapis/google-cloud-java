@@ -36,7 +36,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent)
     UnexpectedExitStatusEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UnexpectedExitStatusEvent.newBuilder() to construct.
   private UnexpectedExitStatusEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
   private int actionId_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
 
   public static final int EXIT_STATUS_FIELD_NUMBER = 2;
   private int exitStatus_ = 0;
-
   /**
    *
    *
@@ -272,7 +269,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -474,7 +470,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int actionId_;
-
     /**
      *
      *
@@ -490,7 +485,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     public int getActionId() {
       return actionId_;
     }
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -530,7 +523,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     }
 
     private int exitStatus_;
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     public int getExitStatus() {
       return exitStatus_;
     }
-
     /**
      *
      *
@@ -566,7 +557,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ImageClassificationPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ImageClassificationPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

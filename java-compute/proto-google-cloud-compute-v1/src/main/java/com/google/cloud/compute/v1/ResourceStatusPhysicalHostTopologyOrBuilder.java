@@ -36,7 +36,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return Whether the block field is set.
    */
   boolean hasBlock();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return The block.
    */
   java.lang.String getBlock();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return Whether the subblock field is set.
    */
   boolean hasSubblock();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    * @return The subblock.
    */
   java.lang.String getSubblock();
-
   /**
    *
    *

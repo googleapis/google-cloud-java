@@ -39,7 +39,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The backupTemplate.
    */
   java.lang.String getBackupTemplate();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return A list containing the policies.
    */
   java.util.List<java.lang.String> getPoliciesList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The count of policies.
    */
   int getPoliciesCount();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The policies at the given index.
    */
   java.lang.String getPolicies(int index);
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return A list containing the applications.
    */
   java.util.List<java.lang.String> getApplicationsList();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The count of applications.
    */
   int getApplicationsCount();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The applications at the given index.
    */
   java.lang.String getApplications(int index);
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return A list containing the policyOptions.
    */
   java.util.List<java.lang.String> getPolicyOptionsList();
-
   /**
    *
    *
@@ -289,7 +279,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The count of policyOptions.
    */
   int getPolicyOptionsCount();
-
   /**
    *
    *
@@ -306,7 +295,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The policyOptions at the given index.
    */
   java.lang.String getPolicyOptions(int index);
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The profile.
    */
   java.lang.String getProfile();
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The appliance.
    */
   java.lang.String getAppliance();
-
   /**
    *
    *
@@ -399,7 +385,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The backupType.
    */
   java.lang.String getBackupType();
-
   /**
    *
    *
@@ -426,7 +411,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return Whether the backupCreateTime field is set.
    */
   boolean hasBackupCreateTime();
-
   /**
    *
    *
@@ -439,7 +423,6 @@ public interface BackupDisasterRecoveryOrBuilder
    * @return The backupCreateTime.
    */
   com.google.protobuf.Timestamp getBackupCreateTime();
-
   /**
    *
    *

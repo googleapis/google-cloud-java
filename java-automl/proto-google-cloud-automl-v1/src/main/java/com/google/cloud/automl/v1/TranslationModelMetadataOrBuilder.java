@@ -39,7 +39,6 @@ public interface TranslationModelMetadataOrBuilder
    * @return The baseModel.
    */
   java.lang.String getBaseModel();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface TranslationModelMetadataOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface TranslationModelMetadataOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
-
   /**
    *
    *

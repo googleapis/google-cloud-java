@@ -33,7 +33,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.RetentionConfig)
     RetentionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetentionConfig.newBuilder() to construct.
   private RetentionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int RETENTION_WINDOW_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration retentionWindowDuration_;
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasRetentionWindowDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Duration.getDefaultInstance()
         : retentionWindowDuration_;
   }
-
   /**
    *
    *
@@ -329,7 +325,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -537,7 +532,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         retentionWindowDurationBuilder_;
-
     /**
      *
      *
@@ -568,7 +562,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasRetentionWindowDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -605,7 +598,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
         return retentionWindowDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -644,7 +636,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +672,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +715,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +750,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +780,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRetentionWindowDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -827,7 +814,6 @@ public final class RetentionConfig extends com.google.protobuf.GeneratedMessageV
             : retentionWindowDuration_;
       }
     }
-
     /**
      *
      *

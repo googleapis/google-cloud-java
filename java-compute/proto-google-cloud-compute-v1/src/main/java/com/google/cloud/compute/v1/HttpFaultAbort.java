@@ -33,7 +33,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpFaultAbort)
     HttpFaultAbortOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpFaultAbort.newBuilder() to construct.
   private HttpFaultAbort(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HTTP_STATUS_FIELD_NUMBER = 468949897;
   private int httpStatus_ = 0;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERCENTAGE_FIELD_NUMBER = 151909018;
   private double percentage_ = 0D;
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPercentage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -315,7 +310,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -514,7 +508,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int httpStatus_;
-
     /**
      *
      *
@@ -530,7 +523,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public int getHttpStatus() {
       return httpStatus_;
     }
-
     /**
      *
      *
@@ -566,7 +557,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +576,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double percentage_;
-
     /**
      *
      *
@@ -602,7 +591,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPercentage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -618,7 +606,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public double getPercentage() {
       return percentage_;
     }
-
     /**
      *
      *
@@ -638,7 +625,6 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

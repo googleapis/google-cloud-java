@@ -36,7 +36,6 @@ public interface FormOrBuilder
    * @return The actionUri.
    */
   java.lang.String getActionUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface FormOrBuilder
    * @return A list containing the fields.
    */
   java.util.List<java.lang.String> getFieldsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FormOrBuilder
    * @return The count of fields.
    */
   int getFieldsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface FormOrBuilder
    * @return The fields at the given index.
    */
   java.lang.String getFields(int index);
-
   /**
    *
    *

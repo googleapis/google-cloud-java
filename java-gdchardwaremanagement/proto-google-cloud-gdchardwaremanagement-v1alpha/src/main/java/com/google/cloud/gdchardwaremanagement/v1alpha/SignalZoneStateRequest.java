@@ -33,7 +33,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest)
     SignalZoneStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SignalZoneStateRequest.newBuilder() to construct.
   private SignalZoneStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -44,8 +43,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     requestId_ = "";
     stateSignal_ = 0;
     provisioningStateSignal_ = 0;
-    step_ = "";
-    details_ = "";
   }
 
   @java.lang.Override
@@ -94,22 +91,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Factory turnup checks have started.
-     * </pre>
-     *
-     * <code>FACTORY_TURNUP_CHECKS_STARTED = 3;</code>
-     */
-    FACTORY_TURNUP_CHECKS_STARTED(1, 3),
-    /**
-     *
-     *
-     * <pre>
      * The Zone is ready for site turnup.
      * </pre>
      *
      * <code>FACTORY_TURNUP_CHECKS_PASSED = 1;</code>
      */
-    FACTORY_TURNUP_CHECKS_PASSED(2, 1),
+    FACTORY_TURNUP_CHECKS_PASSED(1, 1),
     /**
      *
      *
@@ -119,7 +106,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      * <code>FACTORY_TURNUP_CHECKS_FAILED = 2;</code>
      */
-    FACTORY_TURNUP_CHECKS_FAILED(4, 2),
+    FACTORY_TURNUP_CHECKS_FAILED(3, 2),
     UNRECOGNIZED(-1, -1),
     ;
 
@@ -133,7 +120,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>READY_FOR_SITE_TURNUP = 1 [deprecated = true];</code>
      */
     public static final StateSignal READY_FOR_SITE_TURNUP = FACTORY_TURNUP_CHECKS_PASSED;
-
     /**
      *
      *
@@ -144,18 +130,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>STATE_SIGNAL_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_SIGNAL_UNSPECIFIED_VALUE = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * Factory turnup checks have started.
-     * </pre>
-     *
-     * <code>FACTORY_TURNUP_CHECKS_STARTED = 3;</code>
-     */
-    public static final int FACTORY_TURNUP_CHECKS_STARTED_VALUE = 3;
-
     /**
      *
      *
@@ -166,7 +140,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>FACTORY_TURNUP_CHECKS_PASSED = 1;</code>
      */
     public static final int FACTORY_TURNUP_CHECKS_PASSED_VALUE = 1;
-
     /**
      *
      *
@@ -177,7 +150,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>READY_FOR_SITE_TURNUP = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int READY_FOR_SITE_TURNUP_VALUE = 1;
-
     /**
      *
      *
@@ -215,8 +187,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       switch (value) {
         case 0:
           return STATE_SIGNAL_UNSPECIFIED;
-        case 3:
-          return FACTORY_TURNUP_CHECKS_STARTED;
         case 1:
           return FACTORY_TURNUP_CHECKS_PASSED;
         case 2:
@@ -260,7 +230,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     private static StateSignal[] getStaticValuesArray() {
       return new StateSignal[] {
         STATE_SIGNAL_UNSPECIFIED,
-        FACTORY_TURNUP_CHECKS_STARTED,
         FACTORY_TURNUP_CHECKS_PASSED,
         READY_FOR_SITE_TURNUP,
         FACTORY_TURNUP_CHECKS_FAILED,
@@ -342,7 +311,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>PROVISIONING_STATE_SIGNAL_UNSPECIFIED = 0;</code>
      */
     public static final int PROVISIONING_STATE_SIGNAL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -353,7 +321,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>PROVISIONING_IN_PROGRESS = 1;</code>
      */
     public static final int PROVISIONING_IN_PROGRESS_VALUE = 1;
-
     /**
      *
      *
@@ -457,7 +424,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -484,7 +450,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -516,7 +481,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -543,7 +507,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -573,7 +536,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   public static final int STATE_SIGNAL_FIELD_NUMBER = 3;
   private int stateSignal_ = 0;
-
   /**
    *
    *
@@ -592,7 +554,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
   public int getStateSignalValue() {
     return stateSignal_;
   }
-
   /**
    *
    *
@@ -621,7 +582,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
 
   public static final int PROVISIONING_STATE_SIGNAL_FIELD_NUMBER = 4;
   private int provisioningStateSignal_ = 0;
-
   /**
    *
    *
@@ -640,7 +600,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
   public int getProvisioningStateSignalValue() {
     return provisioningStateSignal_;
   }
-
   /**
    *
    *
@@ -667,118 +626,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
             .ProvisioningStateSignal.UNRECOGNIZED
         : result;
-  }
-
-  public static final int STEP_FIELD_NUMBER = 5;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object step_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The step being executed. Provides a finer grained status when the
-   * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-   * FACTORY_TURNUP_CHECKS_FAILED.
-   * </pre>
-   *
-   * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The step.
-   */
-  @java.lang.Override
-  public java.lang.String getStep() {
-    java.lang.Object ref = step_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      step_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The step being executed. Provides a finer grained status when the
-   * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-   * FACTORY_TURNUP_CHECKS_FAILED.
-   * </pre>
-   *
-   * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for step.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getStepBytes() {
-    java.lang.Object ref = step_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      step_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DETAILS_FIELD_NUMBER = 6;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object details_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Additional details, such as an error message when state_signal is
-   * FACTORY_TURNUP_CHECKS_FAILED.
-   * </pre>
-   *
-   * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The details.
-   */
-  @java.lang.Override
-  public java.lang.String getDetails() {
-    java.lang.Object ref = details_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      details_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Additional details, such as an error message when state_signal is
-   * FACTORY_TURNUP_CHECKS_FAILED.
-   * </pre>
-   *
-   * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for details.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDetailsBytes() {
-    java.lang.Object ref = details_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      details_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -813,12 +660,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(4, provisioningStateSignal_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(step_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, step_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, details_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -846,12 +687,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, provisioningStateSignal_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(step_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, step_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, details_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -872,8 +707,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (stateSignal_ != other.stateSignal_) return false;
     if (provisioningStateSignal_ != other.provisioningStateSignal_) return false;
-    if (!getStep().equals(other.getStep())) return false;
-    if (!getDetails().equals(other.getDetails())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -893,10 +726,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + stateSignal_;
     hash = (37 * hash) + PROVISIONING_STATE_SIGNAL_FIELD_NUMBER;
     hash = (53 * hash) + provisioningStateSignal_;
-    hash = (37 * hash) + STEP_FIELD_NUMBER;
-    hash = (53 * hash) + getStep().hashCode();
-    hash = (37 * hash) + DETAILS_FIELD_NUMBER;
-    hash = (53 * hash) + getDetails().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -999,7 +828,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1044,8 +872,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       requestId_ = "";
       stateSignal_ = 0;
       provisioningStateSignal_ = 0;
-      step_ = "";
-      details_ = "";
       return this;
     }
 
@@ -1096,12 +922,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.provisioningStateSignal_ = provisioningStateSignal_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.step_ = step_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.details_ = details_;
       }
     }
 
@@ -1170,16 +990,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       if (other.provisioningStateSignal_ != 0) {
         setProvisioningStateSignalValue(other.getProvisioningStateSignalValue());
       }
-      if (!other.getStep().isEmpty()) {
-        step_ = other.step_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      if (!other.getDetails().isEmpty()) {
-        details_ = other.details_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1230,18 +1040,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-            case 42:
-              {
-                step_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-            case 50:
-              {
-                details_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1262,7 +1060,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1288,7 +1085,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1314,7 +1110,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1339,7 +1134,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1154,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1181,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1414,7 +1206,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1231,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1255,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1275,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1302,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private int stateSignal_ = 0;
-
     /**
      *
      *
@@ -1533,7 +1320,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public int getStateSignalValue() {
       return stateSignal_;
     }
-
     /**
      *
      *
@@ -1555,7 +1341,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1366,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1607,7 +1391,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1413,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private int provisioningStateSignal_ = 0;
-
     /**
      *
      *
@@ -1649,7 +1431,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public int getProvisioningStateSignalValue() {
       return provisioningStateSignal_;
     }
-
     /**
      *
      *
@@ -1671,7 +1452,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1479,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
               .ProvisioningStateSignal.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1727,7 +1506,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1745,243 +1523,6 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public Builder clearProvisioningStateSignal() {
       bitField0_ = (bitField0_ & ~0x00000008);
       provisioningStateSignal_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object step_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The step being executed. Provides a finer grained status when the
-     * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The step.
-     */
-    public java.lang.String getStep() {
-      java.lang.Object ref = step_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        step_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The step being executed. Provides a finer grained status when the
-     * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for step.
-     */
-    public com.google.protobuf.ByteString getStepBytes() {
-      java.lang.Object ref = step_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        step_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The step being executed. Provides a finer grained status when the
-     * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The step to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStep(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      step_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The step being executed. Provides a finer grained status when the
-     * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearStep() {
-      step_ = getDefaultInstance().getStep();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The step being executed. Provides a finer grained status when the
-     * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for step to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStepBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      step_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object details_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Additional details, such as an error message when state_signal is
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The details.
-     */
-    public java.lang.String getDetails() {
-      java.lang.Object ref = details_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        details_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Additional details, such as an error message when state_signal is
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for details.
-     */
-    public com.google.protobuf.ByteString getDetailsBytes() {
-      java.lang.Object ref = details_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        details_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Additional details, such as an error message when state_signal is
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The details to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDetails(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      details_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Additional details, such as an error message when state_signal is
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDetails() {
-      details_ = getDefaultInstance().getDetails();
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Additional details, such as an error message when state_signal is
-     * FACTORY_TURNUP_CHECKS_FAILED.
-     * </pre>
-     *
-     * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for details to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDetailsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      details_ = value;
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

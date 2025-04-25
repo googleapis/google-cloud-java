@@ -37,7 +37,6 @@ public interface AttackPathOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AttackPathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath.AttackPathNode path_nodes = 2;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode> getPathNodesList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AttackPathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath.AttackPathNode path_nodes = 2;</code>
    */
   com.google.cloud.securitycenter.v2.AttackPath.AttackPathNode getPathNodes(int index);
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface AttackPathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath.AttackPathNode path_nodes = 2;</code>
    */
   int getPathNodesCount();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface AttackPathOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.AttackPath.AttackPathNodeOrBuilder>
       getPathNodesOrBuilderList();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface AttackPathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath.AttackPathEdge edges = 3;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdge> getEdgesList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface AttackPathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath.AttackPathEdge edges = 3;</code>
    */
   com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdge getEdges(int index);
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public interface AttackPathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath.AttackPathEdge edges = 3;</code>
    */
   int getEdgesCount();
-
   /**
    *
    *
@@ -153,7 +145,6 @@ public interface AttackPathOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.AttackPath.AttackPathEdgeOrBuilder>
       getEdgesOrBuilderList();
-
   /**
    *
    *

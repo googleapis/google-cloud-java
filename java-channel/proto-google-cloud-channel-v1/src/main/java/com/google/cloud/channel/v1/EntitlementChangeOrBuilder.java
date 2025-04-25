@@ -36,7 +36,6 @@ public interface EntitlementChangeOrBuilder
    * @return Whether the suspensionReason field is set.
    */
   boolean hasSuspensionReason();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EntitlementChangeOrBuilder
    * @return The enum numeric value on the wire for suspensionReason.
    */
   int getSuspensionReasonValue();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface EntitlementChangeOrBuilder
    * @return Whether the cancellationReason field is set.
    */
   boolean hasCancellationReason();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface EntitlementChangeOrBuilder
    * @return The enum numeric value on the wire for cancellationReason.
    */
   int getCancellationReasonValue();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface EntitlementChangeOrBuilder
    * @return Whether the activationReason field is set.
    */
   boolean hasActivationReason();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface EntitlementChangeOrBuilder
    * @return The enum numeric value on the wire for activationReason.
    */
   int getActivationReasonValue();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface EntitlementChangeOrBuilder
    * @return Whether the otherChangeReason field is set.
    */
   boolean hasOtherChangeReason();
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public interface EntitlementChangeOrBuilder
    * @return The otherChangeReason.
    */
   java.lang.String getOtherChangeReason();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface EntitlementChangeOrBuilder
    * @return The entitlement.
    */
   java.lang.String getEntitlement();
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public interface EntitlementChangeOrBuilder
    * @return The offer.
    */
   java.lang.String getOffer();
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public interface EntitlementChangeOrBuilder
    * @return Whether the provisionedService field is set.
    */
   boolean hasProvisionedService();
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public interface EntitlementChangeOrBuilder
    * @return The provisionedService.
    */
   com.google.cloud.channel.v1.ProvisionedService getProvisionedService();
-
   /**
    *
    *
@@ -299,7 +287,6 @@ public interface EntitlementChangeOrBuilder
    * @return The enum numeric value on the wire for changeType.
    */
   int getChangeTypeValue();
-
   /**
    *
    *
@@ -325,7 +312,6 @@ public interface EntitlementChangeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -338,7 +324,6 @@ public interface EntitlementChangeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -362,7 +347,6 @@ public interface EntitlementChangeOrBuilder
    * @return The enum numeric value on the wire for operatorType.
    */
   int getOperatorTypeValue();
-
   /**
    *
    *
@@ -389,7 +373,6 @@ public interface EntitlementChangeOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 8;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Parameter> getParametersList();
-
   /**
    *
    *
@@ -403,7 +386,6 @@ public interface EntitlementChangeOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 8;</code>
    */
   com.google.cloud.channel.v1.Parameter getParameters(int index);
-
   /**
    *
    *
@@ -417,7 +399,6 @@ public interface EntitlementChangeOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 8;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -432,7 +413,6 @@ public interface EntitlementChangeOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -461,7 +441,6 @@ public interface EntitlementChangeOrBuilder
    * @return The operator.
    */
   java.lang.String getOperator();
-
   /**
    *
    *

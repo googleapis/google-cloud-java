@@ -37,7 +37,6 @@ public interface ShipmentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment.VisitRequest pickups = 1;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.Shipment.VisitRequest> getPickupsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment.VisitRequest pickups = 1;</code>
    */
   com.google.maps.routeoptimization.v1.Shipment.VisitRequest getPickups(int index);
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment.VisitRequest pickups = 1;</code>
    */
   int getPickupsCount();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ShipmentOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.Shipment.VisitRequestOrBuilder>
       getPickupsOrBuilderList();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment.VisitRequest deliveries = 2;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.Shipment.VisitRequest> getDeliveriesList();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment.VisitRequest deliveries = 2;</code>
    */
   com.google.maps.routeoptimization.v1.Shipment.VisitRequest getDeliveries(int index);
-
   /**
    *
    *
@@ -149,7 +142,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.Shipment.VisitRequest deliveries = 2;</code>
    */
   int getDeliveriesCount();
-
   /**
    *
    *
@@ -162,7 +154,6 @@ public interface ShipmentOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.Shipment.VisitRequestOrBuilder>
       getDeliveriesOrBuilderList();
-
   /**
    *
    *
@@ -192,7 +183,6 @@ public interface ShipmentOrBuilder
    * </code>
    */
   int getLoadDemandsCount();
-
   /**
    *
    *
@@ -209,12 +199,10 @@ public interface ShipmentOrBuilder
    * </code>
    */
   boolean containsLoadDemands(java.lang.String key);
-
   /** Use {@link #getLoadDemandsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.maps.routeoptimization.v1.Shipment.Load>
       getLoadDemands();
-
   /**
    *
    *
@@ -232,7 +220,6 @@ public interface ShipmentOrBuilder
    */
   java.util.Map<java.lang.String, com.google.maps.routeoptimization.v1.Shipment.Load>
       getLoadDemandsMap();
-
   /**
    *
    *
@@ -253,7 +240,6 @@ public interface ShipmentOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.maps.routeoptimization.v1.Shipment.Load defaultValue);
-
   /**
    *
    *
@@ -290,7 +276,6 @@ public interface ShipmentOrBuilder
    * @return Whether the penaltyCost field is set.
    */
   boolean hasPenaltyCost();
-
   /**
    *
    *
@@ -325,7 +310,6 @@ public interface ShipmentOrBuilder
    * @return A list containing the allowedVehicleIndices.
    */
   java.util.List<java.lang.Integer> getAllowedVehicleIndicesList();
-
   /**
    *
    *
@@ -340,7 +324,6 @@ public interface ShipmentOrBuilder
    * @return The count of allowedVehicleIndices.
    */
   int getAllowedVehicleIndicesCount();
-
   /**
    *
    *
@@ -379,7 +362,6 @@ public interface ShipmentOrBuilder
    * @return A list containing the costsPerVehicle.
    */
   java.util.List<java.lang.Double> getCostsPerVehicleList();
-
   /**
    *
    *
@@ -402,7 +384,6 @@ public interface ShipmentOrBuilder
    * @return The count of costsPerVehicle.
    */
   int getCostsPerVehicleCount();
-
   /**
    *
    *
@@ -442,7 +423,6 @@ public interface ShipmentOrBuilder
    * @return A list containing the costsPerVehicleIndices.
    */
   java.util.List<java.lang.Integer> getCostsPerVehicleIndicesList();
-
   /**
    *
    *
@@ -458,7 +438,6 @@ public interface ShipmentOrBuilder
    * @return The count of costsPerVehicleIndices.
    */
   int getCostsPerVehicleIndicesCount();
-
   /**
    *
    *
@@ -504,7 +483,6 @@ public interface ShipmentOrBuilder
    * @return Whether the pickupToDeliveryRelativeDetourLimit field is set.
    */
   boolean hasPickupToDeliveryRelativeDetourLimit();
-
   /**
    *
    *
@@ -562,7 +540,6 @@ public interface ShipmentOrBuilder
    * @return Whether the pickupToDeliveryAbsoluteDetourLimit field is set.
    */
   boolean hasPickupToDeliveryAbsoluteDetourLimit();
-
   /**
    *
    *
@@ -591,7 +568,6 @@ public interface ShipmentOrBuilder
    * @return The pickupToDeliveryAbsoluteDetourLimit.
    */
   com.google.protobuf.Duration getPickupToDeliveryAbsoluteDetourLimit();
-
   /**
    *
    *
@@ -636,7 +612,6 @@ public interface ShipmentOrBuilder
    * @return Whether the pickupToDeliveryTimeLimit field is set.
    */
   boolean hasPickupToDeliveryTimeLimit();
-
   /**
    *
    *
@@ -654,7 +629,6 @@ public interface ShipmentOrBuilder
    * @return The pickupToDeliveryTimeLimit.
    */
   com.google.protobuf.Duration getPickupToDeliveryTimeLimit();
-
   /**
    *
    *
@@ -690,7 +664,6 @@ public interface ShipmentOrBuilder
    * @return The shipmentType.
    */
   java.lang.String getShipmentType();
-
   /**
    *
    *
@@ -725,7 +698,6 @@ public interface ShipmentOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *

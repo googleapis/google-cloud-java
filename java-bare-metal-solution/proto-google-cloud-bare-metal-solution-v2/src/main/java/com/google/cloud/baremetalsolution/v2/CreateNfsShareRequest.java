@@ -33,7 +33,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.CreateNfsShareRequest)
     CreateNfsShareRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNfsShareRequest.newBuilder() to construct.
   private CreateNfsShareRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
 
   public static final int NFS_SHARE_FIELD_NUMBER = 2;
   private com.google.cloud.baremetalsolution.v2.NfsShare nfsShare_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
   public boolean hasNfsShare() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance()
         : nfsShare_;
   }
-
   /**
    *
    *
@@ -355,7 +349,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.baremetalsolution.v2.NfsShare.Builder,
             com.google.cloud.baremetalsolution.v2.NfsShareOrBuilder>
         nfsShareBuilder_;
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
     public boolean hasNfsShare() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
         return nfsShareBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -760,7 +745,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getNfsShareFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class CreateNfsShareRequest extends com.google.protobuf.GeneratedMe
             : nfsShare_;
       }
     }
-
     /**
      *
      *

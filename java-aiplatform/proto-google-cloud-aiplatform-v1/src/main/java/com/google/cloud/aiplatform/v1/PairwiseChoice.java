@@ -82,7 +82,6 @@ public enum PairwiseChoice implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PAIRWISE_CHOICE_UNSPECIFIED = 0;</code>
    */
   public static final int PAIRWISE_CHOICE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum PairwiseChoice implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASELINE = 1;</code>
    */
   public static final int BASELINE_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum PairwiseChoice implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CANDIDATE = 2;</code>
    */
   public static final int CANDIDATE_VALUE = 2;
-
   /**
    *
    *

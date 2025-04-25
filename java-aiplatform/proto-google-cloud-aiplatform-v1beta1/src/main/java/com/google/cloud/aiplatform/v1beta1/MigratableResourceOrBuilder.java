@@ -38,7 +38,6 @@ public interface MigratableResourceOrBuilder
    * @return Whether the mlEngineModelVersion field is set.
    */
   boolean hasMlEngineModelVersion();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface MigratableResourceOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion
       getMlEngineModelVersion();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface MigratableResourceOrBuilder
    * @return Whether the automlModel field is set.
    */
   boolean hasAutomlModel();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface MigratableResourceOrBuilder
    * @return The automlModel.
    */
   com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel getAutomlModel();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface MigratableResourceOrBuilder
    * @return Whether the automlDataset field is set.
    */
   boolean hasAutomlDataset();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface MigratableResourceOrBuilder
    * @return The automlDataset.
    */
   com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset getAutomlDataset();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface MigratableResourceOrBuilder
    * @return Whether the dataLabelingDataset field is set.
    */
   boolean hasDataLabelingDataset();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface MigratableResourceOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
       getDataLabelingDataset();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface MigratableResourceOrBuilder
    * @return Whether the lastMigrateTime field is set.
    */
   boolean hasLastMigrateTime();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface MigratableResourceOrBuilder
    * @return The lastMigrateTime.
    */
   com.google.protobuf.Timestamp getLastMigrateTime();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface MigratableResourceOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public interface MigratableResourceOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
-
   /**
    *
    *

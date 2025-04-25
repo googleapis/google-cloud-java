@@ -41,7 +41,6 @@ public interface UpdateDraftRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateDraftRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateDraftRequestOrBuilder
    * @return Whether the draft field is set.
    */
   boolean hasDraft();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateDraftRequestOrBuilder
    * @return The draft.
    */
   com.google.cloud.visionai.v1.Draft getDraft();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface UpdateDraftRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

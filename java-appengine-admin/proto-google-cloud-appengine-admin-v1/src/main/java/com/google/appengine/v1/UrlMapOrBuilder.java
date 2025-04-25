@@ -39,7 +39,6 @@ public interface UrlMapOrBuilder
    * @return The urlRegex.
    */
   java.lang.String getUrlRegex();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface UrlMapOrBuilder
    * @return Whether the staticFiles field is set.
    */
   boolean hasStaticFiles();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UrlMapOrBuilder
    * @return The staticFiles.
    */
   com.google.appengine.v1.StaticFilesHandler getStaticFiles();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UrlMapOrBuilder
    * @return Whether the script field is set.
    */
   boolean hasScript();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface UrlMapOrBuilder
    * @return The script.
    */
   com.google.appengine.v1.ScriptHandler getScript();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface UrlMapOrBuilder
    * @return Whether the apiEndpoint field is set.
    */
   boolean hasApiEndpoint();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface UrlMapOrBuilder
    * @return The apiEndpoint.
    */
   com.google.appengine.v1.ApiEndpointHandler getApiEndpoint();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface UrlMapOrBuilder
    * @return The enum numeric value on the wire for securityLevel.
    */
   int getSecurityLevelValue();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface UrlMapOrBuilder
    * @return The enum numeric value on the wire for login.
    */
   int getLoginValue();
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public interface UrlMapOrBuilder
    * @return The enum numeric value on the wire for authFailAction.
    */
   int getAuthFailActionValue();
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public interface UrlMapOrBuilder
    * @return The enum numeric value on the wire for redirectHttpResponseCode.
    */
   int getRedirectHttpResponseCodeValue();
-
   /**
    *
    *

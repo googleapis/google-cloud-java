@@ -42,7 +42,6 @@ public interface DateRangeOrBuilder
    * @return Whether the usageStartDateTime field is set.
    */
   boolean hasUsageStartDateTime();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface DateRangeOrBuilder
    * @return The usageStartDateTime.
    */
   com.google.type.DateTime getUsageStartDateTime();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DateRangeOrBuilder
    * @return Whether the usageEndDateTime field is set.
    */
   boolean hasUsageEndDateTime();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface DateRangeOrBuilder
    * @return The usageEndDateTime.
    */
   com.google.type.DateTime getUsageEndDateTime();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface DateRangeOrBuilder
    * @return Whether the invoiceStartDate field is set.
    */
   boolean hasInvoiceStartDate();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface DateRangeOrBuilder
    * @return The invoiceStartDate.
    */
   com.google.type.Date getInvoiceStartDate();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface DateRangeOrBuilder
    * @return Whether the invoiceEndDate field is set.
    */
   boolean hasInvoiceEndDate();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface DateRangeOrBuilder
    * @return The invoiceEndDate.
    */
   com.google.type.Date getInvoiceEndDate();
-
   /**
    *
    *

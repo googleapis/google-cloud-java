@@ -38,7 +38,6 @@ public interface SubpropertyEventFilterClauseOrBuilder
    * @return The enum numeric value on the wire for filterClauseType.
    */
   int getFilterClauseTypeValue();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SubpropertyEventFilterClauseOrBuilder
    * @return Whether the filterExpression field is set.
    */
   boolean hasFilterExpression();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface SubpropertyEventFilterClauseOrBuilder
    * @return The filterExpression.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterExpression getFilterExpression();
-
   /**
    *
    *

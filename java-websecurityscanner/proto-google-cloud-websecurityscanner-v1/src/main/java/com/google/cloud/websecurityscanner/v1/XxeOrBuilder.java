@@ -37,7 +37,6 @@ public interface XxeOrBuilder
    * @return The payloadValue.
    */
   java.lang.String getPayloadValue();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface XxeOrBuilder
    * @return The enum numeric value on the wire for payloadLocation.
    */
   int getPayloadLocationValue();
-
   /**
    *
    *

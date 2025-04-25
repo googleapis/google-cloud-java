@@ -36,7 +36,6 @@ public interface QuoteInfoOrBuilder
    * @return Whether the dateTime field is set.
    */
   boolean hasDateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface QuoteInfoOrBuilder
    * @return The dateTime.
    */
   com.google.privacy.dlp.v2.DateTime getDateTime();
-
   /**
    *
    *

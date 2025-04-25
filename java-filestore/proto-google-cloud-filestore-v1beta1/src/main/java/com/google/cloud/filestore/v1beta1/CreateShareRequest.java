@@ -33,7 +33,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.CreateShareRequest)
     CreateShareRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateShareRequest.newBuilder() to construct.
   private CreateShareRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shareId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SHARE_FIELD_NUMBER = 3;
   private com.google.cloud.filestore.v1beta1.Share share_;
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasShare() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.filestore.v1beta1.Share getShare() {
     return share_ == null ? com.google.cloud.filestore.v1beta1.Share.getDefaultInstance() : share_;
   }
-
   /**
    *
    *
@@ -424,7 +416,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object shareId_ = "";
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.filestore.v1beta1.Share.Builder,
             com.google.cloud.filestore.v1beta1.ShareOrBuilder>
         shareBuilder_;
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasShare() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
         return shareBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -980,7 +958,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1008,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getShareFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1092,7 +1065,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
             : share_;
       }
     }
-
     /**
      *
      *

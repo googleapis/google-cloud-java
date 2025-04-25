@@ -37,7 +37,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.References)
     ReferencesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use References.newBuilder() to construct.
   private References(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.Review> reviews_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.places.v1.Review> getReviewsList() {
     return reviews_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       getReviewsOrBuilderList() {
     return reviews_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   public int getReviewsCount() {
     return reviews_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.places.v1.Review getReviews(int index) {
     return reviews_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList places_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPlacesList() {
     return places_;
   }
-
   /**
    *
    *
@@ -182,7 +174,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   public int getPlacesCount() {
     return places_.size();
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPlaces(int index) {
     return places_.get(index);
   }
-
   /**
    *
    *
@@ -392,7 +382,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +665,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
         return reviewsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
         return reviewsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
         return reviewsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +760,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +801,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +890,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.places.v1.Review.Builder getReviewsBuilder(int index) {
       return getReviewsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -930,7 +906,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
         return reviewsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(reviews_);
       }
     }
-
     /**
      *
      *
@@ -962,7 +936,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       return getReviewsFieldBuilder()
           .addBuilder(com.google.maps.places.v1.Review.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -976,7 +949,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       return getReviewsFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.Review.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1016,7 +988,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1033,7 +1004,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       places_.makeImmutable();
       return places_;
     }
-
     /**
      *
      *
@@ -1049,7 +1019,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
     public int getPlacesCount() {
       return places_.size();
     }
-
     /**
      *
      *
@@ -1066,7 +1035,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPlaces(int index) {
       return places_.get(index);
     }
-
     /**
      *
      *
@@ -1083,7 +1051,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPlacesBytes(int index) {
       return places_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1108,7 +1075,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1098,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1118,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1137,6 @@ public final class References extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

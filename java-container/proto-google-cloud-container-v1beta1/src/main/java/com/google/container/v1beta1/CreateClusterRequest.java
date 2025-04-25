@@ -33,7 +33,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.CreateClusterRequest)
     CreateClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateClusterRequest.newBuilder() to construct.
   private CreateClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
 
   public static final int CLUSTER_FIELD_NUMBER = 3;
   private com.google.container.v1beta1.Cluster cluster_;
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
   public boolean hasCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
   public com.google.container.v1beta1.Cluster getCluster() {
     return cluster_ == null ? com.google.container.v1beta1.Cluster.getDefaultInstance() : cluster_;
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -281,7 +272,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +488,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -742,7 +731,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -771,7 +759,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -800,7 +787,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +814,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +837,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +867,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -912,7 +895,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +950,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
             com.google.container.v1beta1.Cluster.Builder,
             com.google.container.v1beta1.ClusterOrBuilder>
         clusterBuilder_;
-
     /**
      *
      *
@@ -1047,7 +1025,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     public boolean hasCluster() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1071,7 +1048,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return clusterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1073,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1095,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1125,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1147,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1164,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1214,7 +1185,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
             : cluster_;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1215,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1269,7 +1238,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1293,7 +1261,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1316,7 +1283,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1301,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

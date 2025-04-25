@@ -38,7 +38,6 @@ public interface GPUDriverInstallationConfigOrBuilder
    * @return Whether the gpuDriverVersion field is set.
    */
   boolean hasGpuDriverVersion();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GPUDriverInstallationConfigOrBuilder
    * @return The enum numeric value on the wire for gpuDriverVersion.
    */
   int getGpuDriverVersionValue();
-
   /**
    *
    *

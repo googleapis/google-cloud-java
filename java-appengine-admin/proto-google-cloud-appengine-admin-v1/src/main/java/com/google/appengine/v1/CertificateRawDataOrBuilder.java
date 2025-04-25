@@ -42,7 +42,6 @@ public interface CertificateRawDataOrBuilder
    * @return The publicCertificate.
    */
   java.lang.String getPublicCertificate();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface CertificateRawDataOrBuilder
    * @return The privateKey.
    */
   java.lang.String getPrivateKey();
-
   /**
    *
    *

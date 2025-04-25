@@ -38,7 +38,6 @@ public interface ProtectedResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ProtectedResourceOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ProtectedResourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ProtectedResourceOrBuilder
    * @return The cloudProduct.
    */
   java.lang.String getCloudProduct();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ProtectedResourceOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface ProtectedResourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface ProtectedResourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -209,11 +202,9 @@ public interface ProtectedResourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface ProtectedResourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -239,7 +229,6 @@ public interface ProtectedResourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -269,7 +258,6 @@ public interface ProtectedResourceOrBuilder
    * @return The cryptoKeyVersion.
    */
   java.lang.String getCryptoKeyVersion();
-
   /**
    *
    *
@@ -307,7 +295,6 @@ public interface ProtectedResourceOrBuilder
    * @return A list containing the cryptoKeyVersions.
    */
   java.util.List<java.lang.String> getCryptoKeyVersionsList();
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public interface ProtectedResourceOrBuilder
    * @return The count of cryptoKeyVersions.
    */
   int getCryptoKeyVersionsCount();
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public interface ProtectedResourceOrBuilder
    * @return The cryptoKeyVersions at the given index.
    */
   java.lang.String getCryptoKeyVersions(int index);
-
   /**
    *
    *
@@ -381,7 +366,6 @@ public interface ProtectedResourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -396,7 +380,6 @@ public interface ProtectedResourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

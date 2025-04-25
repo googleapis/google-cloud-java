@@ -37,7 +37,6 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DatasetOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface DatasetOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
-
   /**
    *
    *
@@ -199,7 +195,6 @@ public interface DatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -213,7 +208,6 @@ public interface DatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -239,7 +233,6 @@ public interface DatasetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public interface DatasetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

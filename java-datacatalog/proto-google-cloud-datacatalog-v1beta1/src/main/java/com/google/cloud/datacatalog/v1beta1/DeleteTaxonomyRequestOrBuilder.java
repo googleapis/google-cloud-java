@@ -39,7 +39,6 @@ public interface DeleteTaxonomyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

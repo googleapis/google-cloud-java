@@ -33,7 +33,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StoragePool)
     StoragePoolOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StoragePool.newBuilder() to construct.
   private StoragePool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -400,7 +399,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-
     /**
      *
      *
@@ -411,7 +409,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 455564985;</code>
      */
     public static final int CREATING_VALUE = 455564985;
-
     /**
      *
      *
@@ -422,7 +419,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 528602024;</code>
      */
     public static final int DELETING_VALUE = 528602024;
-
     /**
      *
      *
@@ -433,7 +429,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 455706685;</code>
      */
     public static final int FAILED_VALUE = 455706685;
-
     /**
      *
      *
@@ -537,7 +532,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object capacityProvisioningType_ = "";
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCapacityProvisioningType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -579,7 +572,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -609,7 +601,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -625,7 +616,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -649,7 +639,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -678,7 +667,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -694,7 +682,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -718,7 +705,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -745,7 +731,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -761,7 +746,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -782,7 +766,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -798,7 +781,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -822,7 +804,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -851,7 +832,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelFingerprint_ = "";
-
   /**
    *
    *
@@ -867,7 +847,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLabelFingerprint() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -891,7 +870,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -942,7 +920,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -959,14 +936,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -980,7 +955,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1001,7 +975,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1027,7 +1000,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1043,7 +1015,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1067,7 +1038,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1096,7 +1066,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object performanceProvisioningType_ = "";
-
   /**
    *
    *
@@ -1113,7 +1082,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPerformanceProvisioningType() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1138,7 +1106,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1166,7 +1133,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER = 478537682;
   private long poolProvisionedCapacityGb_ = 0L;
-
   /**
    *
    *
@@ -1182,7 +1148,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPoolProvisionedCapacityGb() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1201,7 +1166,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POOL_PROVISIONED_IOPS_FIELD_NUMBER = 112092311;
   private long poolProvisionedIops_ = 0L;
-
   /**
    *
    *
@@ -1217,7 +1181,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPoolProvisionedIops() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1236,7 +1199,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POOL_PROVISIONED_THROUGHPUT_FIELD_NUMBER = 169215640;
   private long poolProvisionedThroughput_ = 0L;
-
   /**
    *
    *
@@ -1252,7 +1214,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPoolProvisionedThroughput() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1271,7 +1232,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_STATUS_FIELD_NUMBER = 249429315;
   private com.google.cloud.compute.v1.StoragePoolResourceStatus resourceStatus_;
-
   /**
    *
    *
@@ -1288,7 +1248,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceStatus() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1307,7 +1266,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.StoragePoolResourceStatus.getDefaultInstance()
         : resourceStatus_;
   }
-
   /**
    *
    *
@@ -1330,7 +1288,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1346,7 +1303,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1370,7 +1326,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1399,7 +1354,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
-
   /**
    *
    *
@@ -1415,7 +1369,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1439,7 +1392,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1468,7 +1420,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
-
   /**
    *
    *
@@ -1485,7 +1436,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasState() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1510,7 +1460,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1538,7 +1487,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private com.google.cloud.compute.v1.StoragePoolResourceStatus status_;
-
   /**
    *
    *
@@ -1554,7 +1502,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1572,7 +1519,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.StoragePoolResourceStatus.getDefaultInstance()
         : status_;
   }
-
   /**
    *
    *
@@ -1593,7 +1539,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storagePoolType_ = "";
-
   /**
    *
    *
@@ -1609,7 +1554,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStoragePoolType() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1633,7 +1577,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1662,7 +1605,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -1678,7 +1620,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasZone() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1702,7 +1643,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2160,7 +2100,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2667,7 +2606,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object capacityProvisioningType_ = "";
-
     /**
      *
      *
@@ -2683,7 +2621,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCapacityProvisioningType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2707,7 +2644,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2731,7 +2667,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2754,7 +2689,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2773,7 +2707,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2799,7 +2732,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2814,7 +2746,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2837,7 +2768,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2860,7 +2790,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2882,7 +2811,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2900,7 +2828,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2925,7 +2852,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2940,7 +2866,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2963,7 +2888,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2986,7 +2910,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3008,7 +2931,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3026,7 +2948,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3051,7 +2972,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
-
     /**
      *
      *
@@ -3067,7 +2987,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3083,7 +3002,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -3103,7 +3021,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3123,7 +3040,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -3138,7 +3054,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3161,7 +3076,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3184,7 +3098,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3206,7 +3119,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3224,7 +3136,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3249,7 +3160,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object labelFingerprint_ = "";
-
     /**
      *
      *
@@ -3264,7 +3174,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLabelFingerprint() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3287,7 +3196,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3310,7 +3218,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3332,7 +3239,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3350,7 +3256,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3399,7 +3304,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3416,14 +3320,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3437,7 +3339,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3458,7 +3359,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3485,7 +3385,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3502,14 +3401,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3530,7 +3427,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -3547,7 +3443,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3562,7 +3457,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3585,7 +3479,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3608,7 +3501,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3630,7 +3522,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3648,7 +3539,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3673,7 +3563,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object performanceProvisioningType_ = "";
-
     /**
      *
      *
@@ -3689,7 +3578,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPerformanceProvisioningType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3713,7 +3601,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3737,7 +3624,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3760,7 +3646,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3779,7 +3664,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3805,7 +3689,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long poolProvisionedCapacityGb_;
-
     /**
      *
      *
@@ -3821,7 +3704,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPoolProvisionedCapacityGb() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3837,7 +3719,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public long getPoolProvisionedCapacityGb() {
       return poolProvisionedCapacityGb_;
     }
-
     /**
      *
      *
@@ -3857,7 +3738,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3877,7 +3757,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long poolProvisionedIops_;
-
     /**
      *
      *
@@ -3893,7 +3772,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPoolProvisionedIops() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3909,7 +3787,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public long getPoolProvisionedIops() {
       return poolProvisionedIops_;
     }
-
     /**
      *
      *
@@ -3929,7 +3806,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3949,7 +3825,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long poolProvisionedThroughput_;
-
     /**
      *
      *
@@ -3965,7 +3840,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPoolProvisionedThroughput() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3981,7 +3855,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public long getPoolProvisionedThroughput() {
       return poolProvisionedThroughput_;
     }
-
     /**
      *
      *
@@ -4001,7 +3874,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4026,7 +3898,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.StoragePoolResourceStatus.Builder,
             com.google.cloud.compute.v1.StoragePoolResourceStatusOrBuilder>
         resourceStatusBuilder_;
-
     /**
      *
      *
@@ -4043,7 +3914,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceStatus() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4066,7 +3936,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return resourceStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4091,7 +3960,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4114,7 +3982,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4146,7 +4013,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4168,7 +4034,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4186,7 +4051,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4208,7 +4072,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             : resourceStatus_;
       }
     }
-
     /**
      *
      *
@@ -4238,7 +4101,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -4253,7 +4115,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4276,7 +4137,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4299,7 +4159,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4321,7 +4180,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4339,7 +4197,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4364,7 +4221,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLinkWithId_ = "";
-
     /**
      *
      *
@@ -4379,7 +4235,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -4402,7 +4257,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4425,7 +4279,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4447,7 +4300,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4465,7 +4317,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4490,7 +4341,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object state_ = "";
-
     /**
      *
      *
@@ -4506,7 +4356,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasState() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -4530,7 +4379,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4554,7 +4402,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4577,7 +4424,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4596,7 +4442,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4627,7 +4472,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.StoragePoolResourceStatus.Builder,
             com.google.cloud.compute.v1.StoragePoolResourceStatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -4642,7 +4486,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -4663,7 +4506,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4686,7 +4528,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4707,7 +4548,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4736,7 +4576,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4756,7 +4595,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4771,7 +4609,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4790,7 +4627,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             : status_;
       }
     }
-
     /**
      *
      *
@@ -4818,7 +4654,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storagePoolType_ = "";
-
     /**
      *
      *
@@ -4833,7 +4668,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStoragePoolType() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -4856,7 +4690,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4879,7 +4712,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4901,7 +4733,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4919,7 +4750,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4944,7 +4774,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -4959,7 +4788,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasZone() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -4982,7 +4810,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5005,7 +4832,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5027,7 +4853,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5045,7 +4870,6 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

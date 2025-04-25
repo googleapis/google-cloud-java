@@ -33,7 +33,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.ListServerTlsPoliciesResponse)
     ListServerTlsPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListServerTlsPoliciesResponse.newBuilder() to construct.
   private ListServerTlsPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networksecurity.v1.ServerTlsPolicy> serverTlsPolicies_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       getServerTlsPoliciesList() {
     return serverTlsPolicies_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       getServerTlsPoliciesOrBuilderList() {
     return serverTlsPolicies_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
   public int getServerTlsPoliciesCount() {
     return serverTlsPolicies_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
   public com.google.cloud.networksecurity.v1.ServerTlsPolicy getServerTlsPolicies(int index) {
     return serverTlsPolicies_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return serverTlsPoliciesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return serverTlsPoliciesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return serverTlsPoliciesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         int index) {
       return getServerTlsPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return serverTlsPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(serverTlsPolicies_);
       }
     }
-
     /**
      *
      *
@@ -969,7 +945,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       return getServerTlsPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.networksecurity.v1.ServerTlsPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.networksecurity.v1.ServerTlsPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1023,7 +997,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1048,7 +1021,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1045,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1087,6 @@ public final class ListServerTlsPoliciesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

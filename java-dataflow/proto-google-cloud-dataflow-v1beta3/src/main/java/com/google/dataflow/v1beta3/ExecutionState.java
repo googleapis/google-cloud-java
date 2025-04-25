@@ -102,7 +102,6 @@ public enum ExecutionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXECUTION_STATE_UNKNOWN = 0;</code>
    */
   public static final int EXECUTION_STATE_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -113,7 +112,6 @@ public enum ExecutionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXECUTION_STATE_NOT_STARTED = 1;</code>
    */
   public static final int EXECUTION_STATE_NOT_STARTED_VALUE = 1;
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public enum ExecutionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXECUTION_STATE_RUNNING = 2;</code>
    */
   public static final int EXECUTION_STATE_RUNNING_VALUE = 2;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public enum ExecutionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXECUTION_STATE_SUCCEEDED = 3;</code>
    */
   public static final int EXECUTION_STATE_SUCCEEDED_VALUE = 3;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public enum ExecutionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXECUTION_STATE_FAILED = 4;</code>
    */
   public static final int EXECUTION_STATE_FAILED_VALUE = 4;
-
   /**
    *
    *

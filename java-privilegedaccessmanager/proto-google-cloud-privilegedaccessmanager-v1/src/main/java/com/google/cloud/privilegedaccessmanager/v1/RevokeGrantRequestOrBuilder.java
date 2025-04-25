@@ -38,7 +38,6 @@ public interface RevokeGrantRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface RevokeGrantRequestOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
-
   /**
    *
    *

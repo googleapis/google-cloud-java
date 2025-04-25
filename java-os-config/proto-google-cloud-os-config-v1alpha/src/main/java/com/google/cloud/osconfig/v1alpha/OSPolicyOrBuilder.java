@@ -42,7 +42,6 @@ public interface OSPolicyOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface OSPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface OSPolicyOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface OSPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup> getResourceGroupsList();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface OSPolicyOrBuilder
    * </code>
    */
   com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup getResourceGroups(int index);
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface OSPolicyOrBuilder
    * </code>
    */
   int getResourceGroupsCount();
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public interface OSPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroupOrBuilder>
       getResourceGroupsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class DeleteExampleStoreOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeleteExampleStoreOperationMetadata)
     DeleteExampleStoreOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteExampleStoreOperationMetadata.newBuilder() to construct.
   private DeleteExampleStoreOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class DeleteExampleStoreOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class DeleteExampleStoreOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class DeleteExampleStoreOperationMetadata
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class DeleteExampleStoreOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class DeleteExampleStoreOperationMetadata
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -519,7 +513,6 @@ public final class DeleteExampleStoreOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -540,7 +533,6 @@ public final class DeleteExampleStoreOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -564,7 +556,6 @@ public final class DeleteExampleStoreOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -585,7 +576,6 @@ public final class DeleteExampleStoreOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class DeleteExampleStoreOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class DeleteExampleStoreOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -652,7 +640,6 @@ public final class DeleteExampleStoreOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -672,7 +659,6 @@ public final class DeleteExampleStoreOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

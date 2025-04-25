@@ -38,7 +38,6 @@ public interface DeleteTagTemplateFieldRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

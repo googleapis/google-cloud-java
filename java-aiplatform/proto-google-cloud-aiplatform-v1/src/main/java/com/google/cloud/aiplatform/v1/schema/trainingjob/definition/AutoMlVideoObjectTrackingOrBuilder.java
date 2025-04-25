@@ -39,7 +39,6 @@ public interface AutoMlVideoObjectTrackingOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutoMlVideoObjectTrackingOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs
       getInputs();
-
   /**
    *
    *

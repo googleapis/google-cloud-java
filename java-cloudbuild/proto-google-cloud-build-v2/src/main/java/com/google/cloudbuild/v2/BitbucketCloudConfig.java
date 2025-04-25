@@ -33,7 +33,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.BitbucketCloudConfig)
     BitbucketCloudConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BitbucketCloudConfig.newBuilder() to construct.
   private BitbucketCloudConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workspace_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webhookSecretSecretVersion_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
 
   public static final int READ_AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 3;
   private com.google.cloudbuild.v2.UserCredential readAuthorizerCredential_;
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
   public boolean hasReadAuthorizerCredential() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloudbuild.v2.UserCredential.getDefaultInstance()
         : readAuthorizerCredential_;
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
 
   public static final int AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 4;
   private com.google.cloudbuild.v2.UserCredential authorizerCredential_;
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
   public boolean hasAuthorizerCredential() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloudbuild.v2.UserCredential.getDefaultInstance()
         : authorizerCredential_;
   }
-
   /**
    *
    *
@@ -514,7 +503,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -769,7 +757,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object workspace_ = "";
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -840,7 +825,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object webhookSecretSecretVersion_ = "";
-
     /**
      *
      *
@@ -911,7 +893,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -937,7 +918,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +962,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +994,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
             com.google.cloudbuild.v2.UserCredential.Builder,
             com.google.cloudbuild.v2.UserCredentialOrBuilder>
         readAuthorizerCredentialBuilder_;
-
     /**
      *
      *
@@ -1035,7 +1012,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
     public boolean hasReadAuthorizerCredential() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         return readAuthorizerCredentialBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1086,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1141,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1159,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getReadAuthorizerCredentialFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1211,7 +1181,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
             : readAuthorizerCredential_;
       }
     }
-
     /**
      *
      *
@@ -1248,7 +1217,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
             com.google.cloudbuild.v2.UserCredential.Builder,
             com.google.cloudbuild.v2.UserCredentialOrBuilder>
         authorizerCredentialBuilder_;
-
     /**
      *
      *
@@ -1268,7 +1236,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
     public boolean hasAuthorizerCredential() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1294,7 +1261,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
         return authorizerCredentialBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1322,7 +1288,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1313,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1346,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1370,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1389,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAuthorizerCredentialFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1451,7 +1412,6 @@ public final class BitbucketCloudConfig extends com.google.protobuf.GeneratedMes
             : authorizerCredential_;
       }
     }
-
     /**
      *
      *

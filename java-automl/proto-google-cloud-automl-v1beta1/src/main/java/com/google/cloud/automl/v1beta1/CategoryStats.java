@@ -33,7 +33,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.CategoryStats)
     CategoryStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CategoryStats.newBuilder() to construct.
   private CategoryStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      */
     long getCount();
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats)
       SingleCategoryStatsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SingleCategoryStats.newBuilder() to construct.
     private SingleCategoryStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -158,7 +154,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -182,7 +177,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -209,7 +203,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private long count_ = 0L;
-
     /**
      *
      *
@@ -397,7 +390,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -628,7 +619,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -651,7 +641,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -673,7 +662,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -691,7 +679,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -716,7 +703,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long count_;
-
       /**
        *
        *
@@ -732,7 +718,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       public long getCount() {
         return count_;
       }
-
       /**
        *
        *
@@ -752,7 +737,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -843,7 +827,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats>
       topCategoryStats_;
-
   /**
    *
    *
@@ -862,7 +845,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       getTopCategoryStatsList() {
     return topCategoryStats_;
   }
-
   /**
    *
    *
@@ -882,7 +864,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       getTopCategoryStatsOrBuilderList() {
     return topCategoryStats_;
   }
-
   /**
    *
    *
@@ -900,7 +881,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
   public int getTopCategoryStatsCount() {
     return topCategoryStats_.size();
   }
-
   /**
    *
    *
@@ -919,7 +899,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return topCategoryStats_.get(index);
   }
-
   /**
    *
    *
@@ -1100,7 +1079,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1369,7 +1347,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         return topCategoryStatsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1390,7 +1367,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         return topCategoryStatsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1412,7 +1388,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         return topCategoryStatsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1415,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1440,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1494,7 +1467,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1494,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1547,7 +1518,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1543,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1569,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1592,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1615,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1632,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         getTopCategoryStatsBuilder(int index) {
       return getTopCategoryStatsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1688,7 +1653,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         return topCategoryStatsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1711,7 +1675,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(topCategoryStats_);
       }
     }
-
     /**
      *
      *
@@ -1732,7 +1695,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1754,7 +1716,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats
                   .getDefaultInstance());
     }
-
     /**
      *
      *

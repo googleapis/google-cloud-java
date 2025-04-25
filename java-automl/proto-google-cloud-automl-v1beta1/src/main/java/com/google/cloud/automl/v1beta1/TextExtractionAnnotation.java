@@ -33,7 +33,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TextExtractionAnnotation)
     TextExtractionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextExtractionAnnotation.newBuilder() to construct.
   private TextExtractionAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     private AnnotationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
   }
 
   public static final int TEXT_SEGMENT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
   public boolean hasTextSegment() {
     return annotationCase_ == 3;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     }
     return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -371,7 +365,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -604,7 +597,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
             com.google.cloud.automl.v1beta1.TextSegment.Builder,
             com.google.cloud.automl.v1beta1.TextSegmentOrBuilder>
         textSegmentBuilder_;
-
     /**
      *
      *
@@ -621,7 +613,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     public boolean hasTextSegment() {
       return annotationCase_ == 3;
     }
-
     /**
      *
      *
@@ -648,7 +639,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
         return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       annotationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       annotationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       annotationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.automl.v1beta1.TextSegment.Builder getTextSegmentBuilder() {
       return getTextSegmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
         return com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     }
 
     private float score_;
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

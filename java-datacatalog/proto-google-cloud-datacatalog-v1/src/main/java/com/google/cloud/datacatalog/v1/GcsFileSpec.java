@@ -33,7 +33,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.GcsFileSpec)
     GcsFileSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsFileSpec.newBuilder() to construct.
   private GcsFileSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filePath_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GCS_TIMESTAMPS_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.SystemTimestamps gcsTimestamps_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsTimestamps() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()
         : gcsTimestamps_;
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 4;
   private long sizeBytes_ = 0L;
-
   /**
    *
    *
@@ -381,7 +374,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -608,7 +600,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object filePath_ = "";
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.SystemTimestamps.Builder,
             com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder>
         gcsTimestampsBuilder_;
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsTimestamps() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
         return gcsTimestampsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcsTimestampsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
             : gcsTimestamps_;
       }
     }
-
     /**
      *
      *
@@ -942,7 +920,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long sizeBytes_;
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
     public long getSizeBytes() {
       return sizeBytes_;
     }
-
     /**
      *
      *
@@ -978,7 +954,6 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

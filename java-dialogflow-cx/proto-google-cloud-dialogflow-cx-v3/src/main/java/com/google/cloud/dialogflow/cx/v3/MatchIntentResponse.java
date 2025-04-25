@@ -33,7 +33,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.MatchIntentResponse)
     MatchIntentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MatchIntentResponse.newBuilder() to construct.
   private MatchIntentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     private QueryCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,7 +120,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public boolean hasText() {
     return queryCase_ == 1;
   }
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TRIGGER_INTENT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public boolean hasTriggerIntent() {
     return queryCase_ == 2;
   }
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -277,7 +269,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TRANSCRIPT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public boolean hasTranscript() {
     return queryCase_ == 3;
   }
-
   /**
    *
    *
@@ -324,7 +314,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -356,7 +345,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TRIGGER_EVENT_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -372,7 +360,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public boolean hasTriggerEvent() {
     return queryCase_ == 6;
   }
-
   /**
    *
    *
@@ -401,7 +388,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -435,7 +421,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.Match> matches_;
-
   /**
    *
    *
@@ -450,7 +435,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.dialogflow.cx.v3.Match> getMatchesList() {
     return matches_;
   }
-
   /**
    *
    *
@@ -466,7 +450,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       getMatchesOrBuilderList() {
     return matches_;
   }
-
   /**
    *
    *
@@ -481,7 +464,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public int getMatchesCount() {
     return matches_.size();
   }
-
   /**
    *
    *
@@ -496,7 +478,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dialogflow.cx.v3.Match getMatches(int index) {
     return matches_.get(index);
   }
-
   /**
    *
    *
@@ -514,7 +495,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
 
   public static final int CURRENT_PAGE_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.cx.v3.Page currentPage_;
-
   /**
    *
    *
@@ -532,7 +512,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   public boolean hasCurrentPage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -552,7 +531,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.cx.v3.Page.getDefaultInstance()
         : currentPage_;
   }
-
   /**
    *
    *
@@ -808,7 +786,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1169,7 +1146,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public boolean hasText() {
       return queryCase_ == 1;
     }
-
     /**
      *
      *
@@ -1199,7 +1175,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1229,7 +1204,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1226,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1246,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1287,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public boolean hasTriggerIntent() {
       return queryCase_ == 2;
     }
-
     /**
      *
      *
@@ -1346,7 +1317,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1377,7 +1347,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1401,7 +1370,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1391,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1433,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public boolean hasTranscript() {
       return queryCase_ == 3;
     }
-
     /**
      *
      *
@@ -1497,7 +1463,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1528,7 +1493,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1552,7 +1516,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1574,7 +1537,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1616,7 +1578,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public boolean hasTriggerEvent() {
       return queryCase_ == 6;
     }
-
     /**
      *
      *
@@ -1646,7 +1607,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1676,7 +1636,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1699,7 +1658,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1720,7 +1678,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1735,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return matchesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1796,7 +1752,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return matchesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1814,7 +1769,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return matchesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1838,7 +1792,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1813,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1836,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1859,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1879,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1951,7 +1900,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1973,7 +1921,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1941,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2015,7 +1961,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2029,7 +1974,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.cx.v3.Match.Builder getMatchesBuilder(int index) {
       return getMatchesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2047,7 +1991,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return matchesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2066,7 +2009,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(matches_);
       }
     }
-
     /**
      *
      *
@@ -2081,7 +2023,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       return getMatchesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3.Match.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2096,7 +2037,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       return getMatchesFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3.Match.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2134,7 +2074,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.cx.v3.Page.Builder,
             com.google.cloud.dialogflow.cx.v3.PageOrBuilder>
         currentPageBuilder_;
-
     /**
      *
      *
@@ -2151,7 +2090,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     public boolean hasCurrentPage() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2174,7 +2112,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
         return currentPageBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2199,7 +2136,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2221,7 +2157,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2251,7 +2186,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2273,7 +2207,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2223,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCurrentPageFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2311,7 +2243,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
             : currentPage_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData)
     SmartComposeSuggestionDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SmartComposeSuggestionData.newBuilder() to construct.
   private SmartComposeSuggestionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object suggestion_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 2;
   private double confidenceScore_ = 0D;
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -195,14 +190,12 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryRecord_ = "";
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -519,7 +508,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -780,7 +768,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object suggestion_ = "";
-
     /**
      *
      *
@@ -803,7 +790,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +812,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +850,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     }
 
     private double confidenceScore_;
-
     /**
      *
      *
@@ -909,7 +891,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     public double getConfidenceScore() {
       return confidenceScore_;
     }
-
     /**
      *
      *
@@ -931,7 +912,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +958,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -996,14 +975,12 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -1018,7 +995,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1040,7 +1016,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1086,14 +1060,12 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1115,7 +1087,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1104,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
     }
 
     private java.lang.Object queryRecord_ = "";
-
     /**
      *
      *
@@ -1158,7 +1128,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1183,7 +1152,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1175,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1194,6 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

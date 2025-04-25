@@ -37,7 +37,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest getRequest();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   com.google.rpc.Status getPartialErrors(int index);
-
   /**
    *
    *
@@ -177,7 +169,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   int getPartialErrorsCount();
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface ExportInsightsDataMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RedactImageResponse)
     RedactImageResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RedactImageResponse.newBuilder() to construct.
   private RedactImageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int REDACTED_IMAGE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString redactedImage_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object extractedText_ = "";
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
 
   public static final int INSPECT_RESULT_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectResult inspectResult_;
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
   public boolean hasInspectResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
         ? com.google.privacy.dlp.v2.InspectResult.getDefaultInstance()
         : inspectResult_;
   }
-
   /**
    *
    *
@@ -377,7 +370,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -604,7 +596,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private com.google.protobuf.ByteString redactedImage_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getRedactedImage() {
       return redactedImage_;
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object extractedText_ = "";
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.InspectResult.Builder,
             com.google.privacy.dlp.v2.InspectResultOrBuilder>
         inspectResultBuilder_;
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
     public boolean hasInspectResult() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
         return inspectResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +848,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInspectResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -950,7 +926,6 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
             : inspectResult_;
       }
     }
-
     /**
      *
      *

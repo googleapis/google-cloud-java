@@ -35,7 +35,6 @@ public interface ListAzureClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureCluster> getAzureClustersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAzureClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.AzureCluster getAzureClusters(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAzureClustersResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
    */
   int getAzureClustersCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAzureClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterOrBuilder>
       getAzureClustersOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListAzureClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

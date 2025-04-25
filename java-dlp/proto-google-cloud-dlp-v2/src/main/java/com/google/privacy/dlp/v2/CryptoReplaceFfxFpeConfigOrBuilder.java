@@ -38,7 +38,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return Whether the commonAlphabet field is set.
    */
   boolean hasCommonAlphabet();
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return The enum numeric value on the wire for commonAlphabet.
    */
   int getCommonAlphabetValue();
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return Whether the customAlphabet field is set.
    */
   boolean hasCustomAlphabet();
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return The customAlphabet.
    */
   java.lang.String getCustomAlphabet();
-
   /**
    *
    *
@@ -281,7 +273,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return Whether the radix field is set.
    */
   boolean hasRadix();
-
   /**
    *
    *
@@ -331,7 +322,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return Whether the surrogateInfoType field is set.
    */
   boolean hasSurrogateInfoType();
-
   /**
    *
    *
@@ -368,7 +358,6 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * @return The surrogateInfoType.
    */
   com.google.privacy.dlp.v2.InfoType getSurrogateInfoType();
-
   /**
    *
    *

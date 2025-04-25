@@ -33,7 +33,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SearchBackgroundJobsResponse)
     SearchBackgroundJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchBackgroundJobsResponse.newBuilder() to construct.
   private SearchBackgroundJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.BackgroundJobLogEntry> jobs_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.clouddms.v1.BackgroundJobLogEntry> getJobsList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       getJobsOrBuilderList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
   public int getJobsCount() {
     return jobs_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
   public com.google.cloud.clouddms.v1.BackgroundJobLogEntry getJobs(int index) {
     return jobs_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
         return jobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
         return jobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
         return jobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +736,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +755,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +774,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +786,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
     public com.google.cloud.clouddms.v1.BackgroundJobLogEntry.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -822,7 +802,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
         return jobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -840,7 +819,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(jobs_);
       }
     }
-
     /**
      *
      *
@@ -854,7 +832,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
       return getJobsFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.BackgroundJobLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -869,7 +846,6 @@ public final class SearchBackgroundJobsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.clouddms.v1.BackgroundJobLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *

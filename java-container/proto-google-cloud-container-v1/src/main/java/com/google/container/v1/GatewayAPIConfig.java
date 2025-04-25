@@ -33,7 +33,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1.GatewayAPIConfig)
     GatewayAPIConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GatewayAPIConfig.newBuilder() to construct.
   private GatewayAPIConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      * <code>CHANNEL_UNSPECIFIED = 0;</code>
      */
     public static final int CHANNEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      * <code>CHANNEL_DISABLED = 1;</code>
      */
     public static final int CHANNEL_DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      * <code>CHANNEL_EXPERIMENTAL = 3 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int CHANNEL_EXPERIMENTAL_VALUE = 3;
-
     /**
      *
      *
@@ -252,7 +248,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CHANNEL_FIELD_NUMBER = 1;
   private int channel_ = 0;
-
   /**
    *
    *
@@ -268,7 +263,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
   public int getChannelValue() {
     return channel_;
   }
-
   /**
    *
    *
@@ -447,7 +441,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +622,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int channel_ = 0;
-
     /**
      *
      *
@@ -645,7 +637,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
     public int getChannelValue() {
       return channel_;
     }
-
     /**
      *
      *
@@ -664,7 +655,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.container.v1.GatewayAPIConfig.Channel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

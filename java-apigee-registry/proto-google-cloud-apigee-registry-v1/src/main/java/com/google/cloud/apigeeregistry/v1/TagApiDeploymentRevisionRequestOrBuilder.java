@@ -38,7 +38,6 @@ public interface TagApiDeploymentRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface TagApiDeploymentRevisionRequestOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *

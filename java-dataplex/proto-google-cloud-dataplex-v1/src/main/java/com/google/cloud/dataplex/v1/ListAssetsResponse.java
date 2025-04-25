@@ -33,7 +33,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListAssetsResponse)
     ListAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAssetsResponse.newBuilder() to construct.
   private ListAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.Asset> assets_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.dataplex.v1.Asset> getAssetsList() {
     return assets_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       getAssetsOrBuilderList() {
     return assets_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   public int getAssetsCount() {
     return assets_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.dataplex.v1.Asset getAssets(int index) {
     return assets_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return assetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return assetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return assetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataplex.v1.Asset.Builder getAssetsBuilder(int index) {
       return getAssetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return assetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(assets_);
       }
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       return getAssetsFieldBuilder()
           .addBuilder(com.google.cloud.dataplex.v1.Asset.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -945,7 +920,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       return getAssetsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataplex.v1.Asset.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +951,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1001,7 +974,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +997,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1019,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1037,6 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

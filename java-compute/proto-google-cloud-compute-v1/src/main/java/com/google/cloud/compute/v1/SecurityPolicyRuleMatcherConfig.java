@@ -32,7 +32,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig)
     SecurityPolicyRuleMatcherConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyRuleMatcherConfig.newBuilder() to construct.
   private SecurityPolicyRuleMatcherConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getSrcIpRangesList() {
     return srcIpRanges_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   public int getSrcIpRangesCount() {
     return srcIpRanges_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   public java.lang.String getSrcIpRanges(int index) {
     return srcIpRanges_.get(index);
   }
-
   /**
    *
    *
@@ -299,7 +294,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -498,7 +492,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -514,7 +507,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       srcIpRanges_.makeImmutable();
       return srcIpRanges_;
     }
-
     /**
      *
      *
@@ -529,7 +521,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public int getSrcIpRangesCount() {
       return srcIpRanges_.size();
     }
-
     /**
      *
      *
@@ -545,7 +536,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public java.lang.String getSrcIpRanges(int index) {
       return srcIpRanges_.get(index);
     }
-
     /**
      *
      *
@@ -561,7 +551,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public com.google.protobuf.ByteString getSrcIpRangesBytes(int index) {
       return srcIpRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -585,7 +574,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +596,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -628,7 +615,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +633,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

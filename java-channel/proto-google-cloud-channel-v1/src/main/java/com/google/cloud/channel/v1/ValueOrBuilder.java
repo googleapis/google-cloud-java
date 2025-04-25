@@ -36,7 +36,6 @@ public interface ValueOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ValueOrBuilder
    * @return Whether the protoValue field is set.
    */
   boolean hasProtoValue();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ValueOrBuilder
    * @return The protoValue.
    */
   com.google.protobuf.Any getProtoValue();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface ValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *

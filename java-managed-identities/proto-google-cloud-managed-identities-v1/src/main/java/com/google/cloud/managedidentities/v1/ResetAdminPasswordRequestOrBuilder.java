@@ -39,7 +39,6 @@ public interface ResetAdminPasswordRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

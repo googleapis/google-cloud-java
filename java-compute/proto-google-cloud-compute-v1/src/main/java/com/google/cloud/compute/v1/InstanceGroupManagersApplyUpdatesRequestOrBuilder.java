@@ -36,7 +36,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return Whether the allInstances field is set.
    */
   boolean hasAllInstances();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return Whether the minimalAction field is set.
    */
   boolean hasMinimalAction();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return The minimalAction.
    */
   java.lang.String getMinimalAction();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return Whether the mostDisruptiveAllowedAction field is set.
    */
   boolean hasMostDisruptiveAllowedAction();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * @return The mostDisruptiveAllowedAction.
    */
   java.lang.String getMostDisruptiveAllowedAction();
-
   /**
    *
    *

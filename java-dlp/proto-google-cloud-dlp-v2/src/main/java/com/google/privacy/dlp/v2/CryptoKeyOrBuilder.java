@@ -36,7 +36,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the transient field is set.
    */
   boolean hasTransient();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CryptoKeyOrBuilder
    * @return The transient.
    */
   com.google.privacy.dlp.v2.TransientCryptoKey getTransient();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the unwrapped field is set.
    */
   boolean hasUnwrapped();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface CryptoKeyOrBuilder
    * @return The unwrapped.
    */
   com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface CryptoKeyOrBuilder
    * @return Whether the kmsWrapped field is set.
    */
   boolean hasKmsWrapped();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface CryptoKeyOrBuilder
    * @return The kmsWrapped.
    */
   com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped();
-
   /**
    *
    *

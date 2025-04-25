@@ -36,7 +36,6 @@ public interface KernelRootkitOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

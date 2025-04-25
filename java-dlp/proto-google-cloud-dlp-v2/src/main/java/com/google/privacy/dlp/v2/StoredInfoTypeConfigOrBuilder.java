@@ -36,7 +36,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return Whether the largeCustomDictionary field is set.
    */
   boolean hasLargeCustomDictionary();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return The largeCustomDictionary.
    */
   com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return Whether the dictionary field is set.
    */
   boolean hasDictionary();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return The dictionary.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return Whether the regex field is set.
    */
   boolean hasRegex();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface StoredInfoTypeConfigOrBuilder
    * @return The regex.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
-
   /**
    *
    *

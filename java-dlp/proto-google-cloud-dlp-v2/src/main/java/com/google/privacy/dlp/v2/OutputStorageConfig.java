@@ -33,7 +33,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OutputStorageConfig)
     OutputStorageConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OutputStorageConfig.newBuilder() to construct.
   private OutputStorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,7 +148,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * <code>OUTPUT_SCHEMA_UNSPECIFIED = 0;</code>
      */
     public static final int OUTPUT_SCHEMA_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -161,7 +159,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * <code>BASIC_COLUMNS = 1;</code>
      */
     public static final int BASIC_COLUMNS_VALUE = 1;
-
     /**
      *
      *
@@ -172,7 +169,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * <code>GCS_COLUMNS = 2;</code>
      */
     public static final int GCS_COLUMNS_VALUE = 2;
-
     /**
      *
      *
@@ -183,7 +179,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * <code>DATASTORE_COLUMNS = 3;</code>
      */
     public static final int DATASTORE_COLUMNS_VALUE = 3;
-
     /**
      *
      *
@@ -194,7 +189,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * <code>BIG_QUERY_COLUMNS = 4;</code>
      */
     public static final int BIG_QUERY_COLUMNS_VALUE = 4;
-
     /**
      *
      *
@@ -311,7 +305,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     private TypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -343,7 +336,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TABLE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   public boolean hasTable() {
     return typeCase_ == 1;
   }
-
   /**
    *
    *
@@ -404,7 +395,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -437,7 +427,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
 
   public static final int OUTPUT_SCHEMA_FIELD_NUMBER = 3;
   private int outputSchema_ = 0;
-
   /**
    *
    *
@@ -462,7 +451,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   public int getOutputSchemaValue() {
     return outputSchema_;
   }
-
   /**
    *
    *
@@ -679,7 +667,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -910,7 +897,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
             com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
         tableBuilder_;
-
     /**
      *
      *
@@ -939,7 +925,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     public boolean hasTable() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -978,7 +963,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1014,7 +998,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1030,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1075,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1113,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1138,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
       return getTableFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1192,7 +1171,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1216,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int outputSchema_ = 0;
-
     /**
      *
      *
@@ -1263,7 +1240,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     public int getOutputSchemaValue() {
       return outputSchema_;
     }
-
     /**
      *
      *
@@ -1291,7 +1267,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1295,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
           ? com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1352,7 +1326,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface EntityMentionDataOrBuilder
    * @return The entityUniqueId.
    */
   java.lang.String getEntityUniqueId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface EntityMentionDataOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface EntityMentionDataOrBuilder
    * @return Whether the sentiment field is set.
    */
   boolean hasSentiment();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface EntityMentionDataOrBuilder
    * @return The sentiment.
    */
   com.google.cloud.contactcenterinsights.v1.SentimentData getSentiment();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface StageExecutionDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerDetails workers = 1;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.WorkerDetails> getWorkersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface StageExecutionDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerDetails workers = 1;</code>
    */
   com.google.dataflow.v1beta3.WorkerDetails getWorkers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface StageExecutionDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerDetails workers = 1;</code>
    */
   int getWorkersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface StageExecutionDetailsOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.WorkerDetailsOrBuilder>
       getWorkersOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface StageExecutionDetailsOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

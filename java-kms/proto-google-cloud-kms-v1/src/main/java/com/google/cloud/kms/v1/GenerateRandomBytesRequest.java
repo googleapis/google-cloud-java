@@ -34,7 +34,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.GenerateRandomBytesRequest)
     GenerateRandomBytesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateRandomBytesRequest.newBuilder() to construct.
   private GenerateRandomBytesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
 
   public static final int LENGTH_BYTES_FIELD_NUMBER = 2;
   private int lengthBytes_ = 0;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 3;
   private int protectionLevel_ = 0;
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     }
 
     private int lengthBytes_;
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     public int getLengthBytes() {
       return lengthBytes_;
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     }
 
     private int protectionLevel_ = 0;
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

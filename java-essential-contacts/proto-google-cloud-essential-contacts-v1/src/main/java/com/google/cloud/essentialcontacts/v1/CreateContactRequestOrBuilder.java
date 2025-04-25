@@ -40,7 +40,6 @@ public interface CreateContactRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateContactRequestOrBuilder
    * @return Whether the contact field is set.
    */
   boolean hasContact();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CreateContactRequestOrBuilder
    * @return The contact.
    */
   com.google.cloud.essentialcontacts.v1.Contact getContact();
-
   /**
    *
    *

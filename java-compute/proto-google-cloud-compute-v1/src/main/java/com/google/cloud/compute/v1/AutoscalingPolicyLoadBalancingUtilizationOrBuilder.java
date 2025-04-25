@@ -36,7 +36,6 @@ public interface AutoscalingPolicyLoadBalancingUtilizationOrBuilder
    * @return Whether the utilizationTarget field is set.
    */
   boolean hasUtilizationTarget();
-
   /**
    *
    *

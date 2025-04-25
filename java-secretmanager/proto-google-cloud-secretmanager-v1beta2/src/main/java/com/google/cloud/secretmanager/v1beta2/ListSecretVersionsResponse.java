@@ -34,7 +34,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1beta2.ListSecretVersionsResponse)
     ListSecretVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSecretVersionsResponse.newBuilder() to construct.
   private ListSecretVersionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.secretmanager.v1beta2.SecretVersion> versions_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.secretmanager.v1beta2.SecretVersion> getVersionsList() {
     return versions_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       getVersionsOrBuilderList() {
     return versions_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
   public int getVersionsCount() {
     return versions_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
   public com.google.cloud.secretmanager.v1beta2.SecretVersion getVersions(int index) {
     return versions_.get(index);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -414,7 +405,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -715,7 +705,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -779,7 +766,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +788,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +812,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +960,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         int index) {
       return getVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return versionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1022,7 +998,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(versions_);
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       return getVersionsFieldBuilder()
           .addBuilder(com.google.cloud.secretmanager.v1beta2.SecretVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1056,7 +1030,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.secretmanager.v1beta2.SecretVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1091,7 +1064,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1116,7 +1088,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1112,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1135,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1154,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1180,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1256,7 +1222,6 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

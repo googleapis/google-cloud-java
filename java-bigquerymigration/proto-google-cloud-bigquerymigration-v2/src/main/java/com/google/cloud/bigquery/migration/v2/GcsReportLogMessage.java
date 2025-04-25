@@ -33,7 +33,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.GcsReportLogMessage)
     GcsReportLogMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsReportLogMessage.newBuilder() to construct.
   private GcsReportLogMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object severity_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object category_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filePath_ = "";
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filename_ = "";
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_SCRIPT_LINE_FIELD_NUMBER = 5;
   private int sourceScriptLine_ = 0;
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_SCRIPT_COLUMN_FIELD_NUMBER = 6;
   private int sourceScriptColumn_ = 0;
-
   /**
    *
    *
@@ -328,7 +317,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -352,7 +340,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -381,7 +368,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scriptContext_ = "";
-
   /**
    *
    *
@@ -405,7 +391,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +419,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
-
   /**
    *
    *
@@ -458,7 +442,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -487,7 +470,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object effect_ = "";
-
   /**
    *
    *
@@ -511,7 +493,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -540,7 +521,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object objectName_ = "";
-
   /**
    *
    *
@@ -564,7 +544,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -839,7 +818,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1170,7 +1148,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object severity_ = "";
-
     /**
      *
      *
@@ -1193,7 +1170,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1192,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1213,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1230,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1254,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object category_ = "";
-
     /**
      *
      *
@@ -1304,7 +1276,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1327,7 +1298,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1319,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1336,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1360,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filePath_ = "";
-
     /**
      *
      *
@@ -1415,7 +1382,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1404,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1425,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1442,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1503,7 +1466,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filename_ = "";
-
     /**
      *
      *
@@ -1526,7 +1488,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1549,7 +1510,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1571,7 +1531,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1548,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1572,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private int sourceScriptLine_;
-
     /**
      *
      *
@@ -1631,7 +1588,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     public int getSourceScriptLine() {
       return sourceScriptLine_;
     }
-
     /**
      *
      *
@@ -1652,7 +1608,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1628,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private int sourceScriptColumn_;
-
     /**
      *
      *
@@ -1690,7 +1644,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     public int getSourceScriptColumn() {
       return sourceScriptColumn_;
     }
-
     /**
      *
      *
@@ -1711,7 +1664,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1732,7 +1684,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1755,7 +1706,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1778,7 +1728,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1800,7 +1749,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1766,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1843,7 +1790,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object scriptContext_ = "";
-
     /**
      *
      *
@@ -1866,7 +1812,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1889,7 +1834,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1911,7 +1855,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1872,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1954,7 +1896,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object action_ = "";
-
     /**
      *
      *
@@ -1977,7 +1918,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2000,7 +1940,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2022,7 +1961,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1978,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2065,7 +2002,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object effect_ = "";
-
     /**
      *
      *
@@ -2088,7 +2024,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2111,7 +2046,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2133,7 +2067,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2151,7 +2084,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2176,7 +2108,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object objectName_ = "";
-
     /**
      *
      *
@@ -2199,7 +2130,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2222,7 +2152,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2244,7 +2173,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2262,7 +2190,6 @@ public final class GcsReportLogMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

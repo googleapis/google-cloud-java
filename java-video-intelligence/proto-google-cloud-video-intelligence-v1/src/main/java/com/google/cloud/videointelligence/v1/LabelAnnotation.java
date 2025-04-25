@@ -33,7 +33,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.LabelAnnotation)
     LabelAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelAnnotation.newBuilder() to construct.
   private LabelAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int ENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.Entity entity_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public boolean hasEntity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.videointelligence.v1.Entity.getDefaultInstance()
         : entity_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.Entity> categoryEntities_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.videointelligence.v1.Entity> getCategoryEntitiesList() {
     return categoryEntities_;
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       getCategoryEntitiesOrBuilderList() {
     return categoryEntities_;
   }
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public int getCategoryEntitiesCount() {
     return categoryEntities_.size();
   }
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.videointelligence.v1.Entity getCategoryEntities(int index) {
     return categoryEntities_.get(index);
   }
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.LabelSegment> segments_;
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.videointelligence.v1.LabelSegment> getSegmentsList() {
     return segments_;
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       getSegmentsOrBuilderList() {
     return segments_;
   }
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public int getSegmentsCount() {
     return segments_.size();
   }
-
   /**
    *
    *
@@ -274,7 +261,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.videointelligence.v1.LabelSegment getSegments(int index) {
     return segments_.get(index);
   }
-
   /**
    *
    *
@@ -294,7 +280,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.LabelFrame> frames_;
-
   /**
    *
    *
@@ -308,7 +293,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.videointelligence.v1.LabelFrame> getFramesList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -323,7 +307,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       getFramesOrBuilderList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -337,7 +320,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public int getFramesCount() {
     return frames_.size();
   }
-
   /**
    *
    *
@@ -351,7 +333,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.videointelligence.v1.LabelFrame getFrames(int index) {
     return frames_.get(index);
   }
-
   /**
    *
    *
@@ -370,7 +351,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -394,7 +374,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -626,7 +605,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1023,7 +1001,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.videointelligence.v1.Entity.Builder,
             com.google.cloud.videointelligence.v1.EntityOrBuilder>
         entityBuilder_;
-
     /**
      *
      *
@@ -1038,7 +1015,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     public boolean hasEntity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return entityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1057,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1076,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1122,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1136,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1184,7 +1154,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             : entity_;
       }
     }
-
     /**
      *
      *
@@ -1248,7 +1217,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return categoryEntitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1268,7 +1236,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return categoryEntitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1288,7 +1255,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return categoryEntitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1281,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1304,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1329,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1355,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1378,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1440,7 +1401,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1424,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1446,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1510,7 +1468,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1484,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getCategoryEntitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1548,7 +1504,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return categoryEntitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1524,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(categoryEntities_);
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1540,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       return getCategoryEntitiesFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.Entity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1604,7 +1557,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       return getCategoryEntitiesFieldBuilder()
           .addBuilder(index, com.google.cloud.videointelligence.v1.Entity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1675,7 +1627,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return segmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1643,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return segmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1709,7 +1659,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return segmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1733,7 +1682,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1702,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1777,7 +1724,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1747,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1767,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1843,7 +1787,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1807,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1826,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1904,7 +1845,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1918,7 +1858,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1936,7 +1875,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1954,7 +1892,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(segments_);
       }
     }
-
     /**
      *
      *
@@ -1968,7 +1905,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       return getSegmentsFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.LabelSegment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1984,7 +1920,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.LabelSegment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2049,7 +1984,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return framesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2066,7 +2000,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return framesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2083,7 +2016,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return framesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2106,7 +2038,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2127,7 +2058,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2080,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2173,7 +2102,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2194,7 +2122,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2142,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2236,7 +2162,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2181,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2276,7 +2200,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2289,7 +2212,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.videointelligence.v1.LabelFrame.Builder getFramesBuilder(int index) {
       return getFramesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2306,7 +2228,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2324,7 +2245,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(frames_);
       }
     }
-
     /**
      *
      *
@@ -2338,7 +2258,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       return getFramesFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.LabelFrame.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2352,7 +2271,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       return getFramesFieldBuilder()
           .addBuilder(index, com.google.cloud.videointelligence.v1.LabelFrame.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2385,7 +2303,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -2408,7 +2325,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2431,7 +2347,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2453,7 +2368,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2471,7 +2385,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.ListTranscriptEntriesResponse)
     ListTranscriptEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTranscriptEntriesResponse.newBuilder() to construct.
   private ListTranscriptEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.meet.v2beta.TranscriptEntry> transcriptEntries_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.apps.meet.v2beta.TranscriptEntry> getTranscriptEntriesList() {
     return transcriptEntries_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       getTranscriptEntriesOrBuilderList() {
     return transcriptEntries_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
   public int getTranscriptEntriesCount() {
     return transcriptEntries_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
   public com.google.apps.meet.v2beta.TranscriptEntry getTranscriptEntries(int index) {
     return transcriptEntries_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return transcriptEntriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return transcriptEntriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return transcriptEntriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +838,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         int index) {
       return getTranscriptEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return transcriptEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(transcriptEntries_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       return getTranscriptEntriesFieldBuilder()
           .addBuilder(com.google.apps.meet.v2beta.TranscriptEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -956,7 +931,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       return getTranscriptEntriesFieldBuilder()
           .addBuilder(index, com.google.apps.meet.v2beta.TranscriptEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -992,7 +966,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1016,7 +989,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1034,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1052,6 @@ public final class ListTranscriptEntriesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

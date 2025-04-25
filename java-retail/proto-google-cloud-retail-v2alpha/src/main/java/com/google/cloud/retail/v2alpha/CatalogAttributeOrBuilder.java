@@ -46,7 +46,6 @@ public interface CatalogAttributeOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -82,7 +81,8 @@ public interface CatalogAttributeOrBuilder
    *
    * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] can be
    * pre-loaded by using
-   * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute]
+   * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute],
+   * [CatalogService.ImportCatalogAttributes][google.cloud.retail.v2alpha.CatalogService.ImportCatalogAttributes],
    * or
    * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig]
    * APIs. This field is `False` for pre-loaded
@@ -120,7 +120,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -158,7 +157,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for indexableOption.
    */
   int getIndexableOptionValue();
-
   /**
    *
    *
@@ -200,7 +198,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for dynamicFacetableOption.
    */
   int getDynamicFacetableOptionValue();
-
   /**
    *
    *
@@ -248,7 +245,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for searchableOption.
    */
   int getSearchableOptionValue();
-
   /**
    *
    *
@@ -295,7 +291,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for recommendationsFilteringOption.
    */
   int getRecommendationsFilteringOptionValue();
-
   /**
    *
    *
@@ -335,7 +330,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for exactSearchableOption.
    */
   int getExactSearchableOptionValue();
-
   /**
    *
    *
@@ -370,7 +364,6 @@ public interface CatalogAttributeOrBuilder
    * @return The enum numeric value on the wire for retrievableOption.
    */
   int getRetrievableOptionValue();
-
   /**
    *
    *
@@ -399,7 +392,6 @@ public interface CatalogAttributeOrBuilder
    * @return Whether the facetConfig field is set.
    */
   boolean hasFacetConfig();
-
   /**
    *
    *
@@ -412,7 +404,6 @@ public interface CatalogAttributeOrBuilder
    * @return The facetConfig.
    */
   com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig getFacetConfig();
-
   /**
    *
    *

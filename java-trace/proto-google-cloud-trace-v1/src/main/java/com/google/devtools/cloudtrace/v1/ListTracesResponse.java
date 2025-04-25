@@ -33,7 +33,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.ListTracesResponse)
     ListTracesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTracesResponse.newBuilder() to construct.
   private ListTracesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.cloudtrace.v1.Trace> traces_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.devtools.cloudtrace.v1.Trace> getTracesList() {
     return traces_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       getTracesOrBuilderList() {
     return traces_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
   public int getTracesCount() {
     return traces_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
   public com.google.devtools.cloudtrace.v1.Trace getTraces(int index) {
     return traces_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return tracesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return tracesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return tracesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
     public com.google.devtools.cloudtrace.v1.Trace.Builder getTracesBuilder(int index) {
       return getTracesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return tracesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(traces_);
       }
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       return getTracesFieldBuilder()
           .addBuilder(com.google.devtools.cloudtrace.v1.Trace.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       return getTracesFieldBuilder()
           .addBuilder(index, com.google.devtools.cloudtrace.v1.Trace.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1004,7 +977,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

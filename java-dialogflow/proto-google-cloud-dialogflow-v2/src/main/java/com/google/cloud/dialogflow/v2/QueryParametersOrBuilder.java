@@ -39,7 +39,6 @@ public interface QueryParametersOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface QueryParametersOrBuilder
    * @return Whether the geoLocation field is set.
    */
   boolean hasGeoLocation();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface QueryParametersOrBuilder
    * @return The geoLocation.
    */
   com.google.type.LatLng getGeoLocation();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   com.google.cloud.dialogflow.v2.Context getContexts(int index);
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
   int getContextsCount();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface QueryParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getContextsOrBuilderList();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> getSessionEntityTypesList();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index);
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface QueryParametersOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
   int getSessionEntityTypesCount();
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public interface QueryParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public interface QueryParametersOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -268,7 +256,6 @@ public interface QueryParametersOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface QueryParametersOrBuilder
    * @return Whether the sentimentAnalysisRequestConfig field is set.
    */
   boolean hasSentimentAnalysisRequestConfig();
-
   /**
    *
    *
@@ -315,7 +301,6 @@ public interface QueryParametersOrBuilder
    * @return The sentimentAnalysisRequestConfig.
    */
   com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig();
-
   /**
    *
    *
@@ -349,7 +334,6 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   int getWebhookHeadersCount();
-
   /**
    *
    *
@@ -368,11 +352,9 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   boolean containsWebhookHeaders(java.lang.String key);
-
   /** Use {@link #getWebhookHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders();
-
   /**
    *
    *
@@ -391,7 +373,6 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap();
-
   /**
    *
    *
@@ -414,7 +395,6 @@ public interface QueryParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -450,7 +430,6 @@ public interface QueryParametersOrBuilder
    * @return The platform.
    */
   java.lang.String getPlatform();
-
   /**
    *
    *

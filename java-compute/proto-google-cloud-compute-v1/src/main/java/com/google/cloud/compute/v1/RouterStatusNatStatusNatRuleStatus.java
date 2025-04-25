@@ -33,7 +33,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus)
     RouterStatusNatStatusNatRuleStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterStatusNatStatusNatRuleStatus.newBuilder() to construct.
   private RouterStatusNatStatusNatRuleStatus(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList activeNatIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public com.google.protobuf.ProtocolStringList getActiveNatIpsList() {
     return activeNatIps_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public int getActiveNatIpsCount() {
     return activeNatIps_.size();
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public java.lang.String getActiveNatIps(int index) {
     return activeNatIps_.get(index);
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList drainNatIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public com.google.protobuf.ProtocolStringList getDrainNatIpsList() {
     return drainNatIps_;
   }
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public int getDrainNatIpsCount() {
     return drainNatIps_.size();
   }
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public java.lang.String getDrainNatIps(int index) {
     return drainNatIps_.get(index);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
 
   public static final int MIN_EXTRA_IPS_NEEDED_FIELD_NUMBER = 353002756;
   private int minExtraIpsNeeded_ = 0;
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public boolean hasMinExtraIpsNeeded() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
 
   public static final int NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER = 512367468;
   private int numVmEndpointsWithNatMappings_ = 0;
-
   /**
    *
    *
@@ -256,7 +244,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public boolean hasNumVmEndpointsWithNatMappings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +262,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
 
   public static final int RULE_NUMBER_FIELD_NUMBER = 535211500;
   private int ruleNumber_ = 0;
-
   /**
    *
    *
@@ -291,7 +277,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public boolean hasRuleNumber() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -538,7 +523,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -807,7 +791,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       activeNatIps_.makeImmutable();
       return activeNatIps_;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public int getActiveNatIpsCount() {
       return activeNatIps_.size();
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public java.lang.String getActiveNatIps(int index) {
       return activeNatIps_.get(index);
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public com.google.protobuf.ByteString getActiveNatIpsBytes(int index) {
       return activeNatIps_.getByteString(index);
     }
-
     /**
      *
      *
@@ -894,7 +873,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +932,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       drainNatIps_.makeImmutable();
       return drainNatIps_;
     }
-
     /**
      *
      *
@@ -1021,7 +994,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public int getDrainNatIpsCount() {
       return drainNatIps_.size();
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public java.lang.String getDrainNatIps(int index) {
       return drainNatIps_.get(index);
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public com.google.protobuf.ByteString getDrainNatIpsBytes(int index) {
       return drainNatIps_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1069,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1088,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1106,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1131,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     }
 
     private int minExtraIpsNeeded_;
-
     /**
      *
      *
@@ -1181,7 +1146,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public boolean hasMinExtraIpsNeeded() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1197,7 +1161,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public int getMinExtraIpsNeeded() {
       return minExtraIpsNeeded_;
     }
-
     /**
      *
      *
@@ -1217,7 +1180,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1199,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     }
 
     private int numVmEndpointsWithNatMappings_;
-
     /**
      *
      *
@@ -1253,7 +1214,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public boolean hasNumVmEndpointsWithNatMappings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1269,7 +1229,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public int getNumVmEndpointsWithNatMappings() {
       return numVmEndpointsWithNatMappings_;
     }
-
     /**
      *
      *
@@ -1289,7 +1248,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1267,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     }
 
     private int ruleNumber_;
-
     /**
      *
      *
@@ -1325,7 +1282,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public boolean hasRuleNumber() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1341,7 +1297,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public int getRuleNumber() {
       return ruleNumber_;
     }
-
     /**
      *
      *
@@ -1361,7 +1316,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

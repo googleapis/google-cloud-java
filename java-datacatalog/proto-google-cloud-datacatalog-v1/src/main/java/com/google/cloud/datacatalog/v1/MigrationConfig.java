@@ -37,7 +37,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.MigrationConfig)
     MigrationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MigrationConfig.newBuilder() to construct.
   private MigrationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,10 +68,8 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datacatalog.v1.MigrationConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TAG_TEMPLATE_MIGRATION_FIELD_NUMBER = 1;
   private int tagTemplateMigration_ = 0;
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
   public int getTagTemplateMigrationValue() {
     return tagTemplateMigration_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CATALOG_UI_EXPERIENCE_FIELD_NUMBER = 2;
   private int catalogUiExperience_ = 0;
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
   public int getCatalogUiExperienceValue() {
     return catalogUiExperience_;
   }
-
   /**
    *
    *
@@ -146,62 +140,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     return result == null
         ? com.google.cloud.datacatalog.v1.CatalogUIExperience.UNRECOGNIZED
         : result;
-  }
-
-  public static final int TEMPLATE_MIGRATION_ENABLED_TIME_FIELD_NUMBER = 3;
-  private com.google.protobuf.Timestamp templateMigrationEnabledTime_;
-
-  /**
-   *
-   *
-   * <pre>
-   * The time when the Tag Template migration was enabled.
-   * If the Tag Template migration is not enabled, this field is not set.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-   *
-   * @return Whether the templateMigrationEnabledTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasTemplateMigrationEnabledTime() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The time when the Tag Template migration was enabled.
-   * If the Tag Template migration is not enabled, this field is not set.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-   *
-   * @return The templateMigrationEnabledTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getTemplateMigrationEnabledTime() {
-    return templateMigrationEnabledTime_ == null
-        ? com.google.protobuf.Timestamp.getDefaultInstance()
-        : templateMigrationEnabledTime_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The time when the Tag Template migration was enabled.
-   * If the Tag Template migration is not enabled, this field is not set.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getTemplateMigrationEnabledTimeOrBuilder() {
-    return templateMigrationEnabledTime_ == null
-        ? com.google.protobuf.Timestamp.getDefaultInstance()
-        : templateMigrationEnabledTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -228,9 +166,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(2, catalogUiExperience_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getTemplateMigrationEnabledTime());
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -250,11 +185,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, catalogUiExperience_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              3, getTemplateMigrationEnabledTime());
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -273,11 +203,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
 
     if (tagTemplateMigration_ != other.tagTemplateMigration_) return false;
     if (catalogUiExperience_ != other.catalogUiExperience_) return false;
-    if (hasTemplateMigrationEnabledTime() != other.hasTemplateMigrationEnabledTime()) return false;
-    if (hasTemplateMigrationEnabledTime()) {
-      if (!getTemplateMigrationEnabledTime().equals(other.getTemplateMigrationEnabledTime()))
-        return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -293,10 +218,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + tagTemplateMigration_;
     hash = (37 * hash) + CATALOG_UI_EXPERIENCE_FIELD_NUMBER;
     hash = (53 * hash) + catalogUiExperience_;
-    if (hasTemplateMigrationEnabledTime()) {
-      hash = (37 * hash) + TEMPLATE_MIGRATION_ENABLED_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getTemplateMigrationEnabledTime().hashCode();
-    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -397,7 +318,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -431,19 +351,10 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.datacatalog.v1.MigrationConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTemplateMigrationEnabledTimeFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -452,11 +363,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       tagTemplateMigration_ = 0;
       catalogUiExperience_ = 0;
-      templateMigrationEnabledTime_ = null;
-      if (templateMigrationEnabledTimeBuilder_ != null) {
-        templateMigrationEnabledTimeBuilder_.dispose();
-        templateMigrationEnabledTimeBuilder_ = null;
-      }
       return this;
     }
 
@@ -499,15 +405,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.catalogUiExperience_ = catalogUiExperience_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.templateMigrationEnabledTime_ =
-            templateMigrationEnabledTimeBuilder_ == null
-                ? templateMigrationEnabledTime_
-                : templateMigrationEnabledTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -562,9 +459,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       if (other.catalogUiExperience_ != 0) {
         setCatalogUiExperienceValue(other.getCatalogUiExperienceValue());
       }
-      if (other.hasTemplateMigrationEnabledTime()) {
-        mergeTemplateMigrationEnabledTime(other.getTemplateMigrationEnabledTime());
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -603,13 +497,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
-            case 26:
-              {
-                input.readMessage(
-                    getTemplateMigrationEnabledTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -630,7 +517,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int tagTemplateMigration_ = 0;
-
     /**
      *
      *
@@ -646,7 +532,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     public int getTagTemplateMigrationValue() {
       return tagTemplateMigration_;
     }
-
     /**
      *
      *
@@ -665,7 +550,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +569,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.datacatalog.v1.TagTemplateMigration.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -708,7 +591,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +610,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int catalogUiExperience_ = 0;
-
     /**
      *
      *
@@ -744,7 +625,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     public int getCatalogUiExperienceValue() {
       return catalogUiExperience_;
     }
-
     /**
      *
      *
@@ -763,7 +643,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +662,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.datacatalog.v1.CatalogUIExperience.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -806,7 +684,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,211 +700,6 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       catalogUiExperience_ = 0;
       onChanged();
       return this;
-    }
-
-    private com.google.protobuf.Timestamp templateMigrationEnabledTime_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        templateMigrationEnabledTimeBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     *
-     * @return Whether the templateMigrationEnabledTime field is set.
-     */
-    public boolean hasTemplateMigrationEnabledTime() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     *
-     * @return The templateMigrationEnabledTime.
-     */
-    public com.google.protobuf.Timestamp getTemplateMigrationEnabledTime() {
-      if (templateMigrationEnabledTimeBuilder_ == null) {
-        return templateMigrationEnabledTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : templateMigrationEnabledTime_;
-      } else {
-        return templateMigrationEnabledTimeBuilder_.getMessage();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    public Builder setTemplateMigrationEnabledTime(com.google.protobuf.Timestamp value) {
-      if (templateMigrationEnabledTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        templateMigrationEnabledTime_ = value;
-      } else {
-        templateMigrationEnabledTimeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    public Builder setTemplateMigrationEnabledTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (templateMigrationEnabledTimeBuilder_ == null) {
-        templateMigrationEnabledTime_ = builderForValue.build();
-      } else {
-        templateMigrationEnabledTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    public Builder mergeTemplateMigrationEnabledTime(com.google.protobuf.Timestamp value) {
-      if (templateMigrationEnabledTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
-            && templateMigrationEnabledTime_ != null
-            && templateMigrationEnabledTime_
-                != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getTemplateMigrationEnabledTimeBuilder().mergeFrom(value);
-        } else {
-          templateMigrationEnabledTime_ = value;
-        }
-      } else {
-        templateMigrationEnabledTimeBuilder_.mergeFrom(value);
-      }
-      if (templateMigrationEnabledTime_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    public Builder clearTemplateMigrationEnabledTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      templateMigrationEnabledTime_ = null;
-      if (templateMigrationEnabledTimeBuilder_ != null) {
-        templateMigrationEnabledTimeBuilder_.dispose();
-        templateMigrationEnabledTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getTemplateMigrationEnabledTimeBuilder() {
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return getTemplateMigrationEnabledTimeFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getTemplateMigrationEnabledTimeOrBuilder() {
-      if (templateMigrationEnabledTimeBuilder_ != null) {
-        return templateMigrationEnabledTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return templateMigrationEnabledTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : templateMigrationEnabledTime_;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The time when the Tag Template migration was enabled.
-     * If the Tag Template migration is not enabled, this field is not set.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        getTemplateMigrationEnabledTimeFieldBuilder() {
-      if (templateMigrationEnabledTimeBuilder_ == null) {
-        templateMigrationEnabledTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getTemplateMigrationEnabledTime(), getParentForChildren(), isClean());
-        templateMigrationEnabledTime_ = null;
-      }
-      return templateMigrationEnabledTimeBuilder_;
     }
 
     @java.lang.Override

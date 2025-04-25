@@ -35,7 +35,6 @@ public interface SearchHashesResponseOrBuilder
    * <code>repeated .google.cloud.webrisk.v1.SearchHashesResponse.ThreatHash threats = 1;</code>
    */
   java.util.List<com.google.webrisk.v1.SearchHashesResponse.ThreatHash> getThreatsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SearchHashesResponseOrBuilder
    * <code>repeated .google.cloud.webrisk.v1.SearchHashesResponse.ThreatHash threats = 1;</code>
    */
   com.google.webrisk.v1.SearchHashesResponse.ThreatHash getThreats(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SearchHashesResponseOrBuilder
    * <code>repeated .google.cloud.webrisk.v1.SearchHashesResponse.ThreatHash threats = 1;</code>
    */
   int getThreatsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SearchHashesResponseOrBuilder
    */
   java.util.List<? extends com.google.webrisk.v1.SearchHashesResponse.ThreatHashOrBuilder>
       getThreatsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface SearchHashesResponseOrBuilder
    * @return Whether the negativeExpireTime field is set.
    */
   boolean hasNegativeExpireTime();
-
   /**
    *
    *
@@ -112,7 +107,6 @@ public interface SearchHashesResponseOrBuilder
    * @return The negativeExpireTime.
    */
   com.google.protobuf.Timestamp getNegativeExpireTime();
-
   /**
    *
    *

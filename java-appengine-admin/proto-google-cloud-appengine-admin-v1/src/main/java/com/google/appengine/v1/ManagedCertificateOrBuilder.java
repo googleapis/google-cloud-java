@@ -40,7 +40,6 @@ public interface ManagedCertificateOrBuilder
    * @return Whether the lastRenewalTime field is set.
    */
   boolean hasLastRenewalTime();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface ManagedCertificateOrBuilder
    * @return The lastRenewalTime.
    */
   com.google.protobuf.Timestamp getLastRenewalTime();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ManagedCertificateOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class StaticServiceIpConnectivity extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.StaticServiceIpConnectivity)
     StaticServiceIpConnectivityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StaticServiceIpConnectivity.newBuilder() to construct.
   private StaticServiceIpConnectivity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class StaticServiceIpConnectivity extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

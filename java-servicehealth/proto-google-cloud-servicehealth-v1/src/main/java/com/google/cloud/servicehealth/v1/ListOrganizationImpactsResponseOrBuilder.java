@@ -38,7 +38,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.servicehealth.v1.OrganizationImpact> getOrganizationImpactsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * </code>
    */
   com.google.cloud.servicehealth.v1.OrganizationImpact getOrganizationImpacts(int index);
-
   /**
    *
    *
@@ -68,7 +66,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * </code>
    */
   int getOrganizationImpactsCount();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicehealth.v1.OrganizationImpactOrBuilder>
       getOrganizationImpactsOrBuilderList();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public interface ListOrganizationImpactsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

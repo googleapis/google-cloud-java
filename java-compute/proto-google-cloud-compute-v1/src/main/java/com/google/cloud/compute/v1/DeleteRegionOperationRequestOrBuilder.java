@@ -36,7 +36,6 @@ public interface DeleteRegionOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeleteRegionOperationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DeleteRegionOperationRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

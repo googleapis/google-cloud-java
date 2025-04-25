@@ -36,7 +36,6 @@ public interface SqlServerColumnOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SqlServerColumnOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public interface ListEntitySignalsMappingsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.EntitySignalsMapping> getEntitySignalsMappingsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListEntitySignalsMappingsResponseOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.EntitySignalsMapping getEntitySignalsMappings(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListEntitySignalsMappingsResponseOrBuilder
    * </code>
    */
   int getEntitySignalsMappingsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListEntitySignalsMappingsResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.EntitySignalsMappingOrBuilder>
       getEntitySignalsMappingsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListEntitySignalsMappingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

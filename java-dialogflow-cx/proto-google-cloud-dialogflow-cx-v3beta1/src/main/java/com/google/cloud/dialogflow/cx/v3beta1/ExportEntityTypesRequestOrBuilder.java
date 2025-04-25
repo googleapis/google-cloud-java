@@ -39,7 +39,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return A list containing the entityTypes.
    */
   java.util.List<java.lang.String> getEntityTypesList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return The count of entityTypes.
    */
   int getEntityTypesCount();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return The entityTypes at the given index.
    */
   java.lang.String getEntityTypes(int index);
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return Whether the entityTypesUri field is set.
    */
   boolean hasEntityTypesUri();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return The entityTypesUri.
    */
   java.lang.String getEntityTypesUri();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return Whether the entityTypesContentInline field is set.
    */
   boolean hasEntityTypesContentInline();
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public interface ExportEntityTypesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

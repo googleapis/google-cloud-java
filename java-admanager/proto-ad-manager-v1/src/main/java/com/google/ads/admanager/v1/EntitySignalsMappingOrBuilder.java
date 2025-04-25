@@ -36,7 +36,6 @@ public interface EntitySignalsMappingOrBuilder
    * @return Whether the audienceSegmentId field is set.
    */
   boolean hasAudienceSegmentId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EntitySignalsMappingOrBuilder
    * @return Whether the contentBundleId field is set.
    */
   boolean hasContentBundleId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface EntitySignalsMappingOrBuilder
    * @return Whether the customTargetingValueId field is set.
    */
   boolean hasCustomTargetingValueId();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface EntitySignalsMappingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface EntitySignalsMappingOrBuilder
    * @return A list containing the taxonomyCategoryIds.
    */
   java.util.List<java.lang.Long> getTaxonomyCategoryIdsList();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface EntitySignalsMappingOrBuilder
    * @return The count of taxonomyCategoryIds.
    */
   int getTaxonomyCategoryIdsCount();
-
   /**
    *
    *

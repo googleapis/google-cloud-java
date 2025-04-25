@@ -36,7 +36,6 @@ public interface RolloutOptionsOrBuilder
    * @return Whether the maxUnavailableReplicas field is set.
    */
   boolean hasMaxUnavailableReplicas();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface RolloutOptionsOrBuilder
    * @return Whether the maxUnavailablePercentage field is set.
    */
   boolean hasMaxUnavailablePercentage();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface RolloutOptionsOrBuilder
    * @return Whether the maxSurgeReplicas field is set.
    */
   boolean hasMaxSurgeReplicas();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface RolloutOptionsOrBuilder
    * @return Whether the maxSurgePercentage field is set.
    */
   boolean hasMaxSurgePercentage();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface RolloutOptionsOrBuilder
    * @return The previousDeployedModel.
    */
   java.lang.String getPreviousDeployedModel();
-
   /**
    *
    *

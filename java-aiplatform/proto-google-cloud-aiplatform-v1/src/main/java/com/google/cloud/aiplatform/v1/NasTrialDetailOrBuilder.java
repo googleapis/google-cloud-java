@@ -36,7 +36,6 @@ public interface NasTrialDetailOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NasTrialDetailOrBuilder
    * @return The parameters.
    */
   java.lang.String getParameters();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface NasTrialDetailOrBuilder
    * @return Whether the searchTrial field is set.
    */
   boolean hasSearchTrial();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface NasTrialDetailOrBuilder
    * @return The searchTrial.
    */
   com.google.cloud.aiplatform.v1.NasTrial getSearchTrial();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface NasTrialDetailOrBuilder
    * @return Whether the trainTrial field is set.
    */
   boolean hasTrainTrial();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface NasTrialDetailOrBuilder
    * @return The trainTrial.
    */
   com.google.cloud.aiplatform.v1.NasTrial getTrainTrial();
-
   /**
    *
    *

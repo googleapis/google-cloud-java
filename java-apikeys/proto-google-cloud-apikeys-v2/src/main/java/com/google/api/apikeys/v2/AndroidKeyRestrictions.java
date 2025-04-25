@@ -33,7 +33,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.api.apikeys.v2.AndroidKeyRestrictions)
     AndroidKeyRestrictionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AndroidKeyRestrictions.newBuilder() to construct.
   private AndroidKeyRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.apikeys.v2.AndroidApplication> allowedApplications_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.api.apikeys.v2.AndroidApplication> getAllowedApplicationsList() {
     return allowedApplications_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       getAllowedApplicationsOrBuilderList() {
     return allowedApplications_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
   public int getAllowedApplicationsCount() {
     return allowedApplications_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
   public com.google.api.apikeys.v2.AndroidApplication getAllowedApplications(int index) {
     return allowedApplications_.get(index);
   }
-
   /**
    *
    *
@@ -308,7 +302,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
         return allowedApplicationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
         return allowedApplicationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
         return allowedApplicationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +693,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +714,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +776,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
         int index) {
       return getAllowedApplicationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
         return allowedApplicationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -867,7 +846,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(allowedApplications_);
       }
     }
-
     /**
      *
      *
@@ -882,7 +860,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       return getAllowedApplicationsFieldBuilder()
           .addBuilder(com.google.api.apikeys.v2.AndroidApplication.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -898,7 +875,6 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       return getAllowedApplicationsFieldBuilder()
           .addBuilder(index, com.google.api.apikeys.v2.AndroidApplication.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Manifest)
     ManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Manifest.newBuilder() to construct.
   private Manifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <code>MANIFEST_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MANIFEST_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <code>HLS = 1;</code>
      */
     public static final int HLS_VALUE = 1;
-
     /**
      *
      *
@@ -245,7 +242,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for segmentReferenceScheme.
      */
     int getSegmentReferenceSchemeValue();
-
     /**
      *
      *
@@ -263,7 +259,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
         getSegmentReferenceScheme();
   }
-
   /**
    *
    *
@@ -278,7 +273,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Manifest.DashConfig)
       DashConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DashConfig.newBuilder() to construct.
     private DashConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -363,7 +357,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
        * <code>SEGMENT_REFERENCE_SCHEME_UNSPECIFIED = 0;</code>
        */
       public static final int SEGMENT_REFERENCE_SCHEME_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -374,7 +367,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
        * <code>SEGMENT_LIST = 1;</code>
        */
       public static final int SEGMENT_LIST_VALUE = 1;
-
       /**
        *
        *
@@ -476,7 +468,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SEGMENT_REFERENCE_SCHEME_FIELD_NUMBER = 1;
     private int segmentReferenceScheme_ = 0;
-
     /**
      *
      *
@@ -495,7 +486,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public int getSegmentReferenceSchemeValue() {
       return segmentReferenceScheme_;
     }
-
     /**
      *
      *
@@ -689,7 +679,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -875,7 +864,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int segmentReferenceScheme_ = 0;
-
       /**
        *
        *
@@ -894,7 +882,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       public int getSegmentReferenceSchemeValue() {
         return segmentReferenceScheme_;
       }
-
       /**
        *
        *
@@ -916,7 +903,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -942,7 +928,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -968,7 +953,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1070,7 +1054,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     private ManifestConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1105,7 +1088,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileName_ = "";
-
   /**
    *
    *
@@ -1130,7 +1112,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1158,7 +1139,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1176,7 +1156,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1204,7 +1183,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList muxStreams_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1224,7 +1202,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMuxStreamsList() {
     return muxStreams_;
   }
-
   /**
    *
    *
@@ -1244,7 +1221,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public int getMuxStreamsCount() {
     return muxStreams_.size();
   }
-
   /**
    *
    *
@@ -1265,7 +1241,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMuxStreams(int index) {
     return muxStreams_.get(index);
   }
-
   /**
    *
    *
@@ -1288,7 +1263,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DASH_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1304,7 +1278,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDash() {
     return manifestConfigCase_ == 4;
   }
-
   /**
    *
    *
@@ -1323,7 +1296,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1554,7 +1526,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1818,7 +1789,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object fileName_ = "";
-
     /**
      *
      *
@@ -1842,7 +1812,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1866,7 +1835,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1889,7 +1857,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1875,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1934,7 +1900,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1952,7 +1917,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1973,7 +1937,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1958,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Manifest.ManifestType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2019,7 +1981,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +2010,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2070,7 +2030,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       muxStreams_.makeImmutable();
       return muxStreams_;
     }
-
     /**
      *
      *
@@ -2090,7 +2049,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public int getMuxStreamsCount() {
       return muxStreams_.size();
     }
-
     /**
      *
      *
@@ -2111,7 +2069,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMuxStreams(int index) {
       return muxStreams_.get(index);
     }
-
     /**
      *
      *
@@ -2132,7 +2089,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMuxStreamsBytes(int index) {
       return muxStreams_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2161,7 +2117,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2189,7 +2144,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2214,7 +2168,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2238,7 +2191,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2273,7 +2225,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder,
             com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder>
         dashBuilder_;
-
     /**
      *
      *
@@ -2289,7 +2240,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDash() {
       return manifestConfigCase_ == 4;
     }
-
     /**
      *
      *
@@ -2315,7 +2265,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2338,7 +2287,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       manifestConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2359,7 +2307,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       manifestConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2393,7 +2340,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       manifestConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2419,7 +2365,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2432,7 +2377,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder getDashBuilder() {
       return getDashFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2453,7 +2397,6 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule)
     DataQualityRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataQualityRule.newBuilder() to construct.
   private DataQualityRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The minValue.
      */
     java.lang.String getMinValue();
-
     /**
      *
      *
@@ -116,7 +114,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The maxValue.
      */
     java.lang.String getMaxValue();
-
     /**
      *
      *
@@ -164,7 +161,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     boolean getStrictMaxEnabled();
   }
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RangeExpectation)
       RangeExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RangeExpectation.newBuilder() to construct.
     private RangeExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -215,7 +210,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object minValue_ = "";
-
     /**
      *
      *
@@ -241,7 +235,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -272,7 +265,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object maxValue_ = "";
-
     /**
      *
      *
@@ -298,7 +290,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -327,7 +318,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     public static final int STRICT_MIN_ENABLED_FIELD_NUMBER = 3;
     private boolean strictMinEnabled_ = false;
-
     /**
      *
      *
@@ -349,7 +339,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     public static final int STRICT_MAX_ENABLED_FIELD_NUMBER = 4;
     private boolean strictMaxEnabled_ = false;
-
     /**
      *
      *
@@ -557,7 +546,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -790,7 +778,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object minValue_ = "";
-
       /**
        *
        *
@@ -815,7 +802,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -840,7 +826,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -864,7 +849,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -884,7 +868,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -911,7 +894,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object maxValue_ = "";
-
       /**
        *
        *
@@ -936,7 +918,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -961,7 +942,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -985,7 +965,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1005,7 +984,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1032,7 +1010,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean strictMinEnabled_;
-
       /**
        *
        *
@@ -1051,7 +1028,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public boolean getStrictMinEnabled() {
         return strictMinEnabled_;
       }
-
       /**
        *
        *
@@ -1074,7 +1050,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1097,7 +1072,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean strictMaxEnabled_;
-
       /**
        *
        *
@@ -1116,7 +1090,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public boolean getStrictMaxEnabled() {
         return strictMaxEnabled_;
       }
-
       /**
        *
        *
@@ -1139,7 +1112,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1232,7 +1204,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -1247,7 +1218,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation)
       NonNullExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NonNullExpectation.newBuilder() to construct.
     private NonNullExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1429,7 +1399,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1679,7 +1648,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the values.
      */
     java.util.List<java.lang.String> getValuesList();
-
     /**
      *
      *
@@ -1692,7 +1660,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The count of values.
      */
     int getValuesCount();
-
     /**
      *
      *
@@ -1706,7 +1673,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The values at the given index.
      */
     java.lang.String getValues(int index);
-
     /**
      *
      *
@@ -1721,7 +1687,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getValuesBytes(int index);
   }
-
   /**
    *
    *
@@ -1736,7 +1701,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.SetExpectation)
       SetExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SetExpectation.newBuilder() to construct.
     private SetExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1772,7 +1736,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList values_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1787,7 +1750,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_;
     }
-
     /**
      *
      *
@@ -1802,7 +1764,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -1818,7 +1779,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -2003,7 +1963,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2209,7 +2168,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -2225,7 +2183,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         values_.makeImmutable();
         return values_;
       }
-
       /**
        *
        *
@@ -2240,7 +2197,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public int getValuesCount() {
         return values_.size();
       }
-
       /**
        *
        *
@@ -2256,7 +2212,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
-
       /**
        *
        *
@@ -2272,7 +2227,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.ByteString getValuesBytes(int index) {
         return values_.getByteString(index);
       }
-
       /**
        *
        *
@@ -2296,7 +2250,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2319,7 +2272,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2339,7 +2291,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2358,7 +2309,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2465,7 +2415,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The regex.
      */
     java.lang.String getRegex();
-
     /**
      *
      *
@@ -2479,7 +2428,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getRegexBytes();
   }
-
   /**
    *
    *
@@ -2494,7 +2442,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RegexExpectation)
       RegexExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RegexExpectation.newBuilder() to construct.
     private RegexExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2529,7 +2476,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object regex_ = "";
-
     /**
      *
      *
@@ -2553,7 +2499,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2739,7 +2684,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2931,7 +2875,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object regex_ = "";
-
       /**
        *
        *
@@ -2954,7 +2897,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2977,7 +2919,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2999,7 +2940,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3017,7 +2957,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3112,7 +3051,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -3127,7 +3065,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation)
       UniquenessExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UniquenessExpectation.newBuilder() to construct.
     private UniquenessExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3309,7 +3246,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3563,7 +3499,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for statistic.
      */
     int getStatisticValue();
-
     /**
      *
      *
@@ -3595,7 +3530,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The minValue.
      */
     java.lang.String getMinValue();
-
     /**
      *
      *
@@ -3627,7 +3561,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The maxValue.
      */
     java.lang.String getMaxValue();
-
     /**
      *
      *
@@ -3676,7 +3609,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     boolean getStrictMaxEnabled();
   }
-
   /**
    *
    *
@@ -3692,7 +3624,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation)
       StatisticRangeExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use StatisticRangeExpectation.newBuilder() to construct.
     private StatisticRangeExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3789,7 +3720,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <code>STATISTIC_UNDEFINED = 0;</code>
        */
       public static final int STATISTIC_UNDEFINED_VALUE = 0;
-
       /**
        *
        *
@@ -3800,7 +3730,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <code>MEAN = 1;</code>
        */
       public static final int MEAN_VALUE = 1;
-
       /**
        *
        *
@@ -3811,7 +3740,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <code>MIN = 2;</code>
        */
       public static final int MIN_VALUE = 2;
-
       /**
        *
        *
@@ -3916,7 +3844,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     public static final int STATISTIC_FIELD_NUMBER = 1;
     private int statistic_ = 0;
-
     /**
      *
      *
@@ -3934,7 +3861,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public int getStatisticValue() {
       return statistic_;
     }
-
     /**
      *
      *
@@ -3965,7 +3891,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object minValue_ = "";
-
     /**
      *
      *
@@ -3992,7 +3917,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -4024,7 +3948,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object maxValue_ = "";
-
     /**
      *
      *
@@ -4051,7 +3974,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -4081,7 +4003,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     public static final int STRICT_MIN_ENABLED_FIELD_NUMBER = 4;
     private boolean strictMinEnabled_ = false;
-
     /**
      *
      *
@@ -4103,7 +4024,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     public static final int STRICT_MAX_ENABLED_FIELD_NUMBER = 5;
     private boolean strictMaxEnabled_ = false;
-
     /**
      *
      *
@@ -4328,7 +4248,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4581,7 +4500,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int statistic_ = 0;
-
       /**
        *
        *
@@ -4599,7 +4517,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public int getStatisticValue() {
         return statistic_;
       }
-
       /**
        *
        *
@@ -4620,7 +4537,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4646,7 +4562,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4672,7 +4587,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4694,7 +4608,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object minValue_ = "";
-
       /**
        *
        *
@@ -4720,7 +4633,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4746,7 +4658,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4771,7 +4682,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4792,7 +4702,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4820,7 +4729,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object maxValue_ = "";
-
       /**
        *
        *
@@ -4846,7 +4754,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4872,7 +4779,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4897,7 +4803,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4918,7 +4823,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4946,7 +4850,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean strictMinEnabled_;
-
       /**
        *
        *
@@ -4965,7 +4868,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public boolean getStrictMinEnabled() {
         return strictMinEnabled_;
       }
-
       /**
        *
        *
@@ -4988,7 +4890,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5011,7 +4912,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean strictMaxEnabled_;
-
       /**
        *
        *
@@ -5030,7 +4930,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public boolean getStrictMaxEnabled() {
         return strictMaxEnabled_;
       }
-
       /**
        *
        *
@@ -5053,7 +4952,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5160,7 +5058,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The sqlExpression.
      */
     java.lang.String getSqlExpression();
-
     /**
      *
      *
@@ -5174,7 +5071,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getSqlExpressionBytes();
   }
-
   /**
    *
    *
@@ -5195,7 +5091,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation)
       RowConditionExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RowConditionExpectation.newBuilder() to construct.
     private RowConditionExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5230,7 +5125,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sqlExpression_ = "";
-
     /**
      *
      *
@@ -5254,7 +5148,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -5441,7 +5334,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5643,7 +5535,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object sqlExpression_ = "";
-
       /**
        *
        *
@@ -5666,7 +5557,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5689,7 +5579,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5711,7 +5600,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5729,7 +5617,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5837,7 +5724,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The sqlExpression.
      */
     java.lang.String getSqlExpression();
-
     /**
      *
      *
@@ -5851,7 +5737,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getSqlExpressionBytes();
   }
-
   /**
    *
    *
@@ -5872,7 +5757,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation)
       TableConditionExpectationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TableConditionExpectation.newBuilder() to construct.
     private TableConditionExpectation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5907,7 +5791,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sqlExpression_ = "";
-
     /**
      *
      *
@@ -5931,7 +5814,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -6119,7 +6001,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6323,7 +6204,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object sqlExpression_ = "";
-
       /**
        *
        *
@@ -6346,7 +6226,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6369,7 +6248,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6391,7 +6269,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6409,7 +6286,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6518,7 +6394,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return The sqlStatement.
      */
     java.lang.String getSqlStatement();
-
     /**
      *
      *
@@ -6532,7 +6407,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getSqlStatementBytes();
   }
-
   /**
    *
    *
@@ -6560,7 +6434,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)
       SqlAssertionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SqlAssertion.newBuilder() to construct.
     private SqlAssertion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6595,7 +6468,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sqlStatement_ = "";
-
     /**
      *
      *
@@ -6619,7 +6491,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -6805,7 +6676,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7006,7 +6876,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object sqlStatement_ = "";
-
       /**
        *
        *
@@ -7029,7 +6898,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7052,7 +6920,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7074,7 +6941,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7092,7 +6958,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7204,7 +7069,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     private RuleTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -7252,7 +7116,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RANGE_EXPECTATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -7269,7 +7132,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasRangeExpectation() {
     return ruleTypeCase_ == 1;
   }
-
   /**
    *
    *
@@ -7289,7 +7151,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7310,7 +7171,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NON_NULL_EXPECTATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -7327,7 +7187,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasNonNullExpectation() {
     return ruleTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -7347,7 +7206,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7368,7 +7226,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SET_EXPECTATION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -7385,7 +7242,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasSetExpectation() {
     return ruleTypeCase_ == 3;
   }
-
   /**
    *
    *
@@ -7405,7 +7261,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7426,7 +7281,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int REGEX_EXPECTATION_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -7443,7 +7297,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasRegexExpectation() {
     return ruleTypeCase_ == 4;
   }
-
   /**
    *
    *
@@ -7463,7 +7316,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7484,7 +7336,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int UNIQUENESS_EXPECTATION_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -7502,7 +7353,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasUniquenessExpectation() {
     return ruleTypeCase_ == 100;
   }
-
   /**
    *
    *
@@ -7524,7 +7374,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7546,7 +7395,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STATISTIC_RANGE_EXPECTATION_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -7565,7 +7413,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasStatisticRangeExpectation() {
     return ruleTypeCase_ == 101;
   }
-
   /**
    *
    *
@@ -7589,7 +7436,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7613,7 +7459,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ROW_CONDITION_EXPECTATION_FIELD_NUMBER = 200;
-
   /**
    *
    *
@@ -7632,7 +7477,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasRowConditionExpectation() {
     return ruleTypeCase_ == 200;
   }
-
   /**
    *
    *
@@ -7656,7 +7500,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7680,7 +7523,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TABLE_CONDITION_EXPECTATION_FIELD_NUMBER = 201;
-
   /**
    *
    *
@@ -7699,7 +7541,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasTableConditionExpectation() {
     return ruleTypeCase_ == 201;
   }
-
   /**
    *
    *
@@ -7723,7 +7564,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7747,7 +7587,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SQL_ASSERTION_FIELD_NUMBER = 202;
-
   /**
    *
    *
@@ -7764,7 +7603,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   public boolean hasSqlAssertion() {
     return ruleTypeCase_ == 202;
   }
-
   /**
    *
    *
@@ -7784,7 +7622,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7808,7 +7645,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object column_ = "";
-
   /**
    *
    *
@@ -7832,7 +7668,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -7859,7 +7694,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   public static final int IGNORE_NULL_FIELD_NUMBER = 501;
   private boolean ignoreNull_ = false;
-
   /**
    *
    *
@@ -7889,7 +7723,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dimension_ = "";
-
   /**
    *
    *
@@ -7916,7 +7749,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -7946,7 +7778,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   public static final int THRESHOLD_FIELD_NUMBER = 503;
   private double threshold_ = 0D;
-
   /**
    *
    *
@@ -7972,7 +7803,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -8002,7 +7832,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -8037,7 +7866,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -8063,7 +7891,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -8092,7 +7919,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
   public static final int SUSPENDED_FIELD_NUMBER = 506;
   private boolean suspended_ = false;
-
   /**
    *
    *
@@ -8485,7 +8311,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -8945,7 +8770,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectationOrBuilder>
         rangeExpectationBuilder_;
-
     /**
      *
      *
@@ -8963,7 +8787,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasRangeExpectation() {
       return ruleTypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -8991,7 +8814,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9017,7 +8839,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -9040,7 +8861,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -9078,7 +8898,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -9106,7 +8925,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9122,7 +8940,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getRangeExpectationBuilder() {
       return getRangeExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9146,7 +8963,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9188,7 +9004,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectationOrBuilder>
         nonNullExpectationBuilder_;
-
     /**
      *
      *
@@ -9205,7 +9020,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasNonNullExpectation() {
       return ruleTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -9232,7 +9046,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9257,7 +9070,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -9279,7 +9091,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -9316,7 +9127,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -9343,7 +9153,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9358,7 +9167,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getNonNullExpectationBuilder() {
       return getNonNullExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9381,7 +9189,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9422,7 +9229,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.SetExpectationOrBuilder>
         setExpectationBuilder_;
-
     /**
      *
      *
@@ -9439,7 +9245,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasSetExpectation() {
       return ruleTypeCase_ == 3;
     }
-
     /**
      *
      *
@@ -9466,7 +9271,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9491,7 +9295,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -9513,7 +9316,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -9550,7 +9352,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -9577,7 +9378,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9592,7 +9392,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getSetExpectationBuilder() {
       return getSetExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9615,7 +9414,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9656,7 +9454,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectationOrBuilder>
         regexExpectationBuilder_;
-
     /**
      *
      *
@@ -9674,7 +9471,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasRegexExpectation() {
       return ruleTypeCase_ == 4;
     }
-
     /**
      *
      *
@@ -9702,7 +9498,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9728,7 +9523,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -9751,7 +9545,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -9789,7 +9582,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -9817,7 +9609,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9833,7 +9624,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getRegexExpectationBuilder() {
       return getRegexExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9857,7 +9647,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9899,7 +9688,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectationOrBuilder>
         uniquenessExpectationBuilder_;
-
     /**
      *
      *
@@ -9917,7 +9705,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasUniquenessExpectation() {
       return ruleTypeCase_ == 100;
     }
-
     /**
      *
      *
@@ -9948,7 +9735,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9974,7 +9760,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -9998,7 +9783,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -10037,7 +9821,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -10065,7 +9848,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -10081,7 +9863,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getUniquenessExpectationBuilder() {
       return getUniquenessExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10106,7 +9887,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10149,7 +9929,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectationOrBuilder>
         statisticRangeExpectationBuilder_;
-
     /**
      *
      *
@@ -10168,7 +9947,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasStatisticRangeExpectation() {
       return ruleTypeCase_ == 101;
     }
-
     /**
      *
      *
@@ -10200,7 +9978,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10227,7 +10004,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -10252,7 +10028,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -10292,7 +10067,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -10321,7 +10095,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -10338,7 +10111,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getStatisticRangeExpectationBuilder() {
       return getStatisticRangeExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10364,7 +10136,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10408,7 +10179,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectationOrBuilder>
         rowConditionExpectationBuilder_;
-
     /**
      *
      *
@@ -10427,7 +10197,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasRowConditionExpectation() {
       return ruleTypeCase_ == 200;
     }
-
     /**
      *
      *
@@ -10459,7 +10228,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10486,7 +10254,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -10511,7 +10278,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -10551,7 +10317,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -10580,7 +10345,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -10597,7 +10361,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getRowConditionExpectationBuilder() {
       return getRowConditionExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10623,7 +10386,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10667,7 +10429,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectationOrBuilder>
         tableConditionExpectationBuilder_;
-
     /**
      *
      *
@@ -10686,7 +10447,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasTableConditionExpectation() {
       return ruleTypeCase_ == 201;
     }
-
     /**
      *
      *
@@ -10718,7 +10478,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10745,7 +10504,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -10770,7 +10528,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -10810,7 +10567,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 201;
       return this;
     }
-
     /**
      *
      *
@@ -10839,7 +10595,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -10856,7 +10611,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getTableConditionExpectationBuilder() {
       return getTableConditionExpectationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10882,7 +10636,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10926,7 +10679,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder,
             com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder>
         sqlAssertionBuilder_;
-
     /**
      *
      *
@@ -10943,7 +10695,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean hasSqlAssertion() {
       return ruleTypeCase_ == 202;
     }
-
     /**
      *
      *
@@ -10970,7 +10721,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10995,7 +10745,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -11017,7 +10766,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -11053,7 +10801,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ruleTypeCase_ = 202;
       return this;
     }
-
     /**
      *
      *
@@ -11080,7 +10827,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -11095,7 +10841,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         getSqlAssertionBuilder() {
       return getSqlAssertionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11118,7 +10863,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -11155,7 +10899,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object column_ = "";
-
     /**
      *
      *
@@ -11178,7 +10921,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11201,7 +10943,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11223,7 +10964,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11241,7 +10981,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11266,7 +11005,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean ignoreNull_;
-
     /**
      *
      *
@@ -11291,7 +11029,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean getIgnoreNull() {
       return ignoreNull_;
     }
-
     /**
      *
      *
@@ -11320,7 +11057,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11349,7 +11085,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object dimension_ = "";
-
     /**
      *
      *
@@ -11375,7 +11110,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11401,7 +11135,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11426,7 +11159,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11447,7 +11179,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11475,7 +11206,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private double threshold_;
-
     /**
      *
      *
@@ -11496,7 +11226,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public double getThreshold() {
       return threshold_;
     }
-
     /**
      *
      *
@@ -11521,7 +11250,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11546,7 +11274,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -11575,7 +11302,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11604,7 +11330,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11632,7 +11357,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11656,7 +11380,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11687,7 +11410,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -11712,7 +11434,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11737,7 +11458,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11761,7 +11481,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11781,7 +11500,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11808,7 +11526,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean suspended_;
-
     /**
      *
      *
@@ -11825,7 +11542,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public boolean getSuspended() {
       return suspended_;
     }
-
     /**
      *
      *
@@ -11846,7 +11562,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -96,7 +96,6 @@ public enum AuthType implements com.google.protobuf.ProtocolMessageEnum {
 
   /** <code>AUTH_TYPE_UNSPECIFIED = 0;</code> */
   public static final int AUTH_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -107,7 +106,6 @@ public enum AuthType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NO_AUTH = 1;</code>
    */
   public static final int NO_AUTH_VALUE = 1;
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public enum AuthType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>API_KEY_AUTH = 2;</code>
    */
   public static final int API_KEY_AUTH_VALUE = 2;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public enum AuthType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HTTP_BASIC_AUTH = 3;</code>
    */
   public static final int HTTP_BASIC_AUTH_VALUE = 3;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public enum AuthType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GOOGLE_SERVICE_ACCOUNT_AUTH = 4;</code>
    */
   public static final int GOOGLE_SERVICE_ACCOUNT_AUTH_VALUE = 4;
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public enum AuthType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OAUTH = 6;</code>
    */
   public static final int OAUTH_VALUE = 6;
-
   /**
    *
    *

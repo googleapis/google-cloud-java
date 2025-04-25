@@ -33,7 +33,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent)
     DiscoveryEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryEvent.newBuilder() to construct.
   private DiscoveryEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -224,7 +222,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>CONFIG = 1;</code>
      */
     public static final int CONFIG_VALUE = 1;
-
     /**
      *
      *
@@ -235,7 +232,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTITY_CREATED = 2;</code>
      */
     public static final int ENTITY_CREATED_VALUE = 2;
-
     /**
      *
      *
@@ -246,7 +242,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTITY_UPDATED = 3;</code>
      */
     public static final int ENTITY_UPDATED_VALUE = 3;
-
     /**
      *
      *
@@ -257,7 +252,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTITY_DELETED = 4;</code>
      */
     public static final int ENTITY_DELETED_VALUE = 4;
-
     /**
      *
      *
@@ -268,7 +262,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITION_CREATED = 5;</code>
      */
     public static final int PARTITION_CREATED_VALUE = 5;
-
     /**
      *
      *
@@ -279,7 +272,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITION_UPDATED = 6;</code>
      */
     public static final int PARTITION_UPDATED_VALUE = 6;
-
     /**
      *
      *
@@ -290,7 +282,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITION_DELETED = 7;</code>
      */
     public static final int PARTITION_DELETED_VALUE = 7;
-
     /**
      *
      *
@@ -301,7 +292,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE_PUBLISHED = 10;</code>
      */
     public static final int TABLE_PUBLISHED_VALUE = 10;
-
     /**
      *
      *
@@ -312,7 +302,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE_UPDATED = 11;</code>
      */
     public static final int TABLE_UPDATED_VALUE = 11;
-
     /**
      *
      *
@@ -323,7 +312,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE_IGNORED = 12;</code>
      */
     public static final int TABLE_IGNORED_VALUE = 12;
-
     /**
      *
      *
@@ -489,7 +477,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTITY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ENTITY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -500,7 +487,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE = 1;</code>
      */
     public static final int TABLE_VALUE = 1;
-
     /**
      *
      *
@@ -658,7 +644,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TABLE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -669,7 +654,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>EXTERNAL_TABLE = 1;</code>
      */
     public static final int EXTERNAL_TABLE_VALUE = 1;
-
     /**
      *
      *
@@ -680,7 +664,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>BIGLAKE_TABLE = 2;</code>
      */
     public static final int BIGLAKE_TABLE_VALUE = 2;
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; parameters = 1;</code>
      */
     int getParametersCount();
-
     /**
      *
      *
@@ -809,11 +791,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; parameters = 1;</code>
      */
     boolean containsParameters(java.lang.String key);
-
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getParameters();
-
     /**
      *
      *
@@ -827,7 +807,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; parameters = 1;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getParametersMap();
-
     /**
      *
      *
@@ -845,7 +824,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -860,7 +838,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     java.lang.String getParametersOrThrow(java.lang.String key);
   }
-
   /**
    *
    *
@@ -875,7 +852,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails)
       ConfigDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConfigDetails.newBuilder() to construct.
     private ConfigDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -944,7 +920,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
-
     /**
      *
      *
@@ -964,14 +939,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetParameters().getMap().containsKey(key);
     }
-
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
-
     /**
      *
      *
@@ -988,7 +961,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
-
     /**
      *
      *
@@ -1012,7 +984,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1206,7 +1177,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1447,7 +1417,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public int getParametersCount() {
         return internalGetParameters().getMap().size();
       }
-
       /**
        *
        *
@@ -1467,14 +1436,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetParameters().getMap().containsKey(key);
       }
-
       /** Use {@link #getParametersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getParameters() {
         return getParametersMap();
       }
-
       /**
        *
        *
@@ -1491,7 +1458,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
         return internalGetParameters().getMap();
       }
-
       /**
        *
        *
@@ -1515,7 +1481,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -1545,7 +1510,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableParameters().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -1565,14 +1529,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableParameters().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
         bitField0_ |= 0x00000001;
         return internalGetMutableParameters().getMutableMap();
       }
-
       /**
        *
        *
@@ -1596,7 +1558,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -1697,7 +1658,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The entity.
      */
     java.lang.String getEntity();
-
     /**
      *
      *
@@ -1724,7 +1684,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -1738,7 +1697,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType getType();
   }
-
   /**
    *
    *
@@ -1753,7 +1711,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails)
       EntityDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EntityDetails.newBuilder() to construct.
     private EntityDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1789,7 +1746,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entity_ = "";
-
     /**
      *
      *
@@ -1814,7 +1770,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1842,7 +1797,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_ = 0;
-
     /**
      *
      *
@@ -1858,7 +1812,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2053,7 +2006,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2254,7 +2206,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object entity_ = "";
-
       /**
        *
        *
@@ -2278,7 +2229,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2302,7 +2252,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2325,7 +2274,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2344,7 +2292,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2370,7 +2317,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -2386,7 +2332,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -2405,7 +2350,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2425,7 +2369,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2447,7 +2390,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2547,7 +2489,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The table.
      */
     java.lang.String getTable();
-
     /**
      *
      *
@@ -2573,7 +2514,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -2587,7 +2527,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataplex.v1.DiscoveryEvent.TableType getType();
   }
-
   /**
    *
    *
@@ -2602,7 +2541,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)
       TableDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TableDetails.newBuilder() to construct.
     private TableDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2638,7 +2576,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
-
     /**
      *
      *
@@ -2662,7 +2599,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2689,7 +2625,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_ = 0;
-
     /**
      *
      *
@@ -2705,7 +2640,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2900,7 +2834,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3101,7 +3034,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object table_ = "";
-
       /**
        *
        *
@@ -3124,7 +3056,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3147,7 +3078,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3169,7 +3099,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3187,7 +3116,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3212,7 +3140,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -3228,7 +3155,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -3247,7 +3173,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3267,7 +3192,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3289,7 +3213,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3390,7 +3313,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The partition.
      */
     java.lang.String getPartition();
-
     /**
      *
      *
@@ -3418,7 +3340,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The entity.
      */
     java.lang.String getEntity();
-
     /**
      *
      *
@@ -3445,7 +3366,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -3472,7 +3392,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sampledDataLocations.
      */
     java.util.List<java.lang.String> getSampledDataLocationsList();
-
     /**
      *
      *
@@ -3486,7 +3405,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The count of sampledDataLocations.
      */
     int getSampledDataLocationsCount();
-
     /**
      *
      *
@@ -3501,7 +3419,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The sampledDataLocations at the given index.
      */
     java.lang.String getSampledDataLocations(int index);
-
     /**
      *
      *
@@ -3517,7 +3434,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSampledDataLocationsBytes(int index);
   }
-
   /**
    *
    *
@@ -3532,7 +3448,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails)
       PartitionDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PartitionDetails.newBuilder() to construct.
     private PartitionDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3570,7 +3485,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object partition_ = "";
-
     /**
      *
      *
@@ -3595,7 +3509,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3625,7 +3538,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entity_ = "";
-
     /**
      *
      *
@@ -3650,7 +3562,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3678,7 +3589,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 3;
     private int type_ = 0;
-
     /**
      *
      *
@@ -3694,7 +3604,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -3720,7 +3629,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -3736,7 +3644,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
       return sampledDataLocations_;
     }
-
     /**
      *
      *
@@ -3752,7 +3659,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public int getSampledDataLocationsCount() {
       return sampledDataLocations_.size();
     }
-
     /**
      *
      *
@@ -3769,7 +3675,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSampledDataLocations(int index) {
       return sampledDataLocations_.get(index);
     }
-
     /**
      *
      *
@@ -3987,7 +3892,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4228,7 +4132,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object partition_ = "";
-
       /**
        *
        *
@@ -4252,7 +4155,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4276,7 +4178,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4299,7 +4200,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4318,7 +4218,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4344,7 +4243,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object entity_ = "";
-
       /**
        *
        *
@@ -4368,7 +4266,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4392,7 +4289,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4415,7 +4311,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4434,7 +4329,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4460,7 +4354,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -4476,7 +4369,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -4495,7 +4387,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4515,7 +4406,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4537,7 +4427,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4566,7 +4455,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -4583,7 +4471,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         sampledDataLocations_.makeImmutable();
         return sampledDataLocations_;
       }
-
       /**
        *
        *
@@ -4599,7 +4486,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public int getSampledDataLocationsCount() {
         return sampledDataLocations_.size();
       }
-
       /**
        *
        *
@@ -4616,7 +4502,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSampledDataLocations(int index) {
         return sampledDataLocations_.get(index);
       }
-
       /**
        *
        *
@@ -4633,7 +4518,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSampledDataLocationsBytes(int index) {
         return sampledDataLocations_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4658,7 +4542,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4682,7 +4565,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4703,7 +4585,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4723,7 +4604,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4834,7 +4714,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -4861,7 +4740,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The issue.
      */
     java.lang.String getIssue();
-
     /**
      *
      *
@@ -4875,7 +4753,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIssueBytes();
   }
-
   /**
    *
    *
@@ -4890,7 +4767,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails)
       ActionDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ActionDetails.newBuilder() to construct.
     private ActionDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4926,7 +4802,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -4951,7 +4826,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4981,7 +4855,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object issue_ = "";
-
     /**
      *
      *
@@ -5005,7 +4878,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -5200,7 +5072,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5403,7 +5274,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -5427,7 +5297,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5451,7 +5320,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5474,7 +5342,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5493,7 +5360,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5519,7 +5385,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object issue_ = "";
-
       /**
        *
        *
@@ -5542,7 +5407,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5565,7 +5429,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5587,7 +5450,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5605,7 +5467,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5713,7 +5574,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5756,7 +5616,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -5780,7 +5639,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5809,7 +5667,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lakeId_ = "";
-
   /**
    *
    *
@@ -5833,7 +5690,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5862,7 +5718,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zoneId_ = "";
-
   /**
    *
    *
@@ -5886,7 +5741,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5915,7 +5769,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetId_ = "";
-
   /**
    *
    *
@@ -5939,7 +5792,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5968,7 +5820,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataLocation_ = "";
-
   /**
    *
    *
@@ -5992,7 +5843,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6021,7 +5871,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datascanId_ = "";
-
   /**
    *
    *
@@ -6045,7 +5894,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6072,7 +5920,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 10;
   private int type_ = 0;
-
   /**
    *
    *
@@ -6088,7 +5935,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -6110,7 +5956,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIG_FIELD_NUMBER = 20;
-
   /**
    *
    *
@@ -6126,7 +5971,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return detailsCase_ == 20;
   }
-
   /**
    *
    *
@@ -6145,7 +5989,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -6164,7 +6007,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTITY_FIELD_NUMBER = 21;
-
   /**
    *
    *
@@ -6180,7 +6022,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntity() {
     return detailsCase_ == 21;
   }
-
   /**
    *
    *
@@ -6199,7 +6040,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -6218,7 +6058,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARTITION_FIELD_NUMBER = 22;
-
   /**
    *
    *
@@ -6234,7 +6073,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPartition() {
     return detailsCase_ == 22;
   }
-
   /**
    *
    *
@@ -6253,7 +6091,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -6273,7 +6110,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_FIELD_NUMBER = 23;
-
   /**
    *
    *
@@ -6289,7 +6125,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAction() {
     return detailsCase_ == 23;
   }
-
   /**
    *
    *
@@ -6308,7 +6143,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -6327,7 +6161,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TABLE_FIELD_NUMBER = 24;
-
   /**
    *
    *
@@ -6343,7 +6176,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTable() {
     return detailsCase_ == 24;
   }
-
   /**
    *
    *
@@ -6362,7 +6194,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -6682,7 +6513,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7067,7 +6897,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -7090,7 +6919,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7113,7 +6941,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7135,7 +6962,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7153,7 +6979,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7178,7 +7003,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object lakeId_ = "";
-
     /**
      *
      *
@@ -7201,7 +7025,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7224,7 +7047,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7246,7 +7068,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7264,7 +7085,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7289,7 +7109,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zoneId_ = "";
-
     /**
      *
      *
@@ -7312,7 +7131,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7335,7 +7153,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7357,7 +7174,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7375,7 +7191,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7400,7 +7215,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object assetId_ = "";
-
     /**
      *
      *
@@ -7423,7 +7237,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7446,7 +7259,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7468,7 +7280,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7486,7 +7297,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7511,7 +7321,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataLocation_ = "";
-
     /**
      *
      *
@@ -7534,7 +7343,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7557,7 +7365,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7579,7 +7386,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7597,7 +7403,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7622,7 +7427,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object datascanId_ = "";
-
     /**
      *
      *
@@ -7645,7 +7449,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7668,7 +7471,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7690,7 +7492,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7708,7 +7509,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7733,7 +7533,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -7749,7 +7548,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -7768,7 +7566,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7788,7 +7585,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7810,7 +7606,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7834,7 +7629,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails.Builder,
             com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetailsOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -7850,7 +7644,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return detailsCase_ == 20;
     }
-
     /**
      *
      *
@@ -7876,7 +7669,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7899,7 +7691,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -7920,7 +7711,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -7954,7 +7744,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -7980,7 +7769,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7993,7 +7781,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails.Builder getConfigBuilder() {
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8014,7 +7801,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8053,7 +7839,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails.Builder,
             com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetailsOrBuilder>
         entityBuilder_;
-
     /**
      *
      *
@@ -8069,7 +7854,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntity() {
       return detailsCase_ == 21;
     }
-
     /**
      *
      *
@@ -8095,7 +7879,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8118,7 +7901,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -8139,7 +7921,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -8173,7 +7954,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -8199,7 +7979,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8212,7 +7991,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails.Builder getEntityBuilder() {
       return getEntityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8233,7 +8011,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8272,7 +8049,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails.Builder,
             com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetailsOrBuilder>
         partitionBuilder_;
-
     /**
      *
      *
@@ -8288,7 +8064,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPartition() {
       return detailsCase_ == 22;
     }
-
     /**
      *
      *
@@ -8314,7 +8089,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8338,7 +8112,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -8359,7 +8132,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -8395,7 +8167,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -8421,7 +8192,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8435,7 +8205,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         getPartitionBuilder() {
       return getPartitionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8457,7 +8226,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8497,7 +8265,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails.Builder,
             com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetailsOrBuilder>
         actionBuilder_;
-
     /**
      *
      *
@@ -8513,7 +8280,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAction() {
       return detailsCase_ == 23;
     }
-
     /**
      *
      *
@@ -8539,7 +8305,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8562,7 +8327,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -8583,7 +8347,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -8617,7 +8380,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -8643,7 +8405,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8656,7 +8417,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails.Builder getActionBuilder() {
       return getActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8677,7 +8437,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8716,7 +8475,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder,
             com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder>
         tableBuilder_;
-
     /**
      *
      *
@@ -8732,7 +8490,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTable() {
       return detailsCase_ == 24;
     }
-
     /**
      *
      *
@@ -8758,7 +8515,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -8781,7 +8537,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -8802,7 +8557,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -8836,7 +8590,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -8862,7 +8615,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8875,7 +8627,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder getTableBuilder() {
       return getTableFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8896,7 +8647,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *

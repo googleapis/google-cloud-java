@@ -36,7 +36,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the internalIpv6PrefixLength field is set.
    */
   boolean hasInternalIpv6PrefixLength();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AccessConfig> getAccessConfigsList();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.AccessConfig getAccessConfigs(int index);
-
   /**
    *
    *
@@ -324,7 +311,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   int getAccessConfigsCount();
-
   /**
    *
    *
@@ -341,7 +327,6 @@ public interface NetworkInterfaceOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AccessConfigOrBuilder>
       getAccessConfigsOrBuilderList();
-
   /**
    *
    *
@@ -373,7 +358,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AccessConfig> getIpv6AccessConfigsList();
-
   /**
    *
    *
@@ -389,7 +373,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.AccessConfig getIpv6AccessConfigs(int index);
-
   /**
    *
    *
@@ -405,7 +388,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   int getIpv6AccessConfigsCount();
-
   /**
    *
    *
@@ -422,7 +404,6 @@ public interface NetworkInterfaceOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AccessConfigOrBuilder>
       getIpv6AccessConfigsOrBuilderList();
-
   /**
    *
    *
@@ -452,7 +433,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.AliasIpRange> getAliasIpRangesList();
-
   /**
    *
    *
@@ -466,7 +446,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.AliasIpRange getAliasIpRanges(int index);
-
   /**
    *
    *
@@ -480,7 +459,6 @@ public interface NetworkInterfaceOrBuilder
    * </code>
    */
   int getAliasIpRangesCount();
-
   /**
    *
    *
@@ -495,7 +473,6 @@ public interface NetworkInterfaceOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.AliasIpRangeOrBuilder>
       getAliasIpRangesOrBuilderList();
-
   /**
    *
    *
@@ -522,7 +499,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
-
   /**
    *
    *
@@ -535,7 +511,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The enum numeric value on the wire for stackType.
    */
   int getStackTypeValue();
-
   /**
    *
    *
@@ -565,7 +540,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the ipv6AccessType field is set.
    */
   boolean hasIpv6AccessType();
-
   /**
    *
    *
@@ -582,7 +556,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The enum numeric value on the wire for ipv6AccessType.
    */
   int getIpv6AccessTypeValue();
-
   /**
    *
    *
@@ -614,7 +587,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the queueCount field is set.
    */
   boolean hasQueueCount();
-
   /**
    *
    *
@@ -645,7 +617,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the nicType field is set.
    */
   boolean hasNicType();
-
   /**
    *
    *
@@ -661,7 +632,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The enum numeric value on the wire for nicType.
    */
   int getNicTypeValue();
-
   /**
    *
    *
@@ -692,7 +662,6 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the networkAttachment field is set.
    */
   boolean hasNetworkAttachment();
-
   /**
    *
    *
@@ -707,7 +676,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
-
   /**
    *
    *

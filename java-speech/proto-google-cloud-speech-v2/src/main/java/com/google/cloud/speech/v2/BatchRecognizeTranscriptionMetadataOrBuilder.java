@@ -49,7 +49,6 @@ public interface BatchRecognizeTranscriptionMetadataOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BatchRecognizeTranscriptionMetadataOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface BatchRecognizeTranscriptionMetadataOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

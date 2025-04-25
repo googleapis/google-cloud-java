@@ -36,7 +36,6 @@ public interface SecurityPolicyRecaptchaOptionsConfigOrBuilder
    * @return Whether the redirectSiteKey field is set.
    */
   boolean hasRedirectSiteKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SecurityPolicyRecaptchaOptionsConfigOrBuilder
    * @return The redirectSiteKey.
    */
   java.lang.String getRedirectSiteKey();
-
   /**
    *
    *

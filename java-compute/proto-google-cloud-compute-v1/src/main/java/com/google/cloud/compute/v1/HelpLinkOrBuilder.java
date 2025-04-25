@@ -36,7 +36,6 @@ public interface HelpLinkOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HelpLinkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface HelpLinkOrBuilder
    * @return Whether the url field is set.
    */
   boolean hasUrl();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface HelpLinkOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ChannelOperationResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.ChannelOperationResponse)
     ChannelOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ChannelOperationResponse.newBuilder() to construct.
   private ChannelOperationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ChannelOperationResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

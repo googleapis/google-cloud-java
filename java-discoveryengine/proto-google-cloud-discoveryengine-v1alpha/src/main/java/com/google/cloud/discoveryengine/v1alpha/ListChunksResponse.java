@@ -35,7 +35,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ListChunksResponse)
     ListChunksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListChunksResponse.newBuilder() to construct.
   private ListChunksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1alpha.Chunk> chunks_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.discoveryengine.v1alpha.Chunk> getChunksList() {
     return chunks_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       getChunksOrBuilderList() {
     return chunks_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
   public int getChunksCount() {
     return chunks_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.discoveryengine.v1alpha.Chunk getChunks(int index) {
     return chunks_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return chunksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return chunksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return chunksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.discoveryengine.v1alpha.Chunk.Builder getChunksBuilder(int index) {
       return getChunksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return chunksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(chunks_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       return getChunksFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       return getChunksFieldBuilder()
           .addBuilder(index, com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1056,6 @@ public final class ListChunksResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

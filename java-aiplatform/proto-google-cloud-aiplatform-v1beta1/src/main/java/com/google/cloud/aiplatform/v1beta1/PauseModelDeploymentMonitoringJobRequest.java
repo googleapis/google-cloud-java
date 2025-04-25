@@ -35,7 +35,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest)
     PauseModelDeploymentMonitoringJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PauseModelDeploymentMonitoringJobRequest.newBuilder() to construct.
   private PauseModelDeploymentMonitoringJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +293,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -493,7 +489,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -520,7 +515,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -547,7 +541,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class PauseModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

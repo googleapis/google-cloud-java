@@ -35,7 +35,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.FeatureMap)
     FeatureMapOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureMap.newBuilder() to construct.
   private FeatureMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the value.
      */
     java.util.List<java.lang.String> getValueList();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * @return The count of value.
      */
     int getValueCount();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * @return The value at the given index.
      */
     java.lang.String getValue(int index);
-
     /**
      *
      *
@@ -137,7 +133,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getValueBytes(int index);
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.FeatureMap.StringList)
       StringListOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use StringList.newBuilder() to construct.
     private StringList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,7 +182,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList value_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -203,7 +196,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getValueList() {
       return value_;
     }
-
     /**
      *
      *
@@ -218,7 +210,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public int getValueCount() {
       return value_.size();
     }
-
     /**
      *
      *
@@ -234,7 +225,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getValue(int index) {
       return value_.get(index);
     }
-
     /**
      *
      *
@@ -420,7 +410,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -630,7 +619,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -646,7 +634,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         value_.makeImmutable();
         return value_;
       }
-
       /**
        *
        *
@@ -661,7 +648,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public int getValueCount() {
         return value_.size();
       }
-
       /**
        *
        *
@@ -677,7 +663,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getValue(int index) {
         return value_.get(index);
       }
-
       /**
        *
        *
@@ -693,7 +678,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getValueBytes(int index) {
         return value_.getByteString(index);
       }
-
       /**
        *
        *
@@ -717,7 +701,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -740,7 +723,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -760,7 +742,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -779,7 +760,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -888,7 +868,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the value.
      */
     java.util.List<java.lang.Float> getValueList();
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * @return The count of value.
      */
     int getValueCount();
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      */
     float getValue(int index);
   }
-
   /**
    *
    *
@@ -931,7 +908,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList)
       FloatListOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FloatList.newBuilder() to construct.
     private FloatList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -966,7 +942,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.FloatList value_ = emptyFloatList();
-
     /**
      *
      *
@@ -982,7 +957,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Float> getValueList() {
       return value_;
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public int getValueCount() {
       return value_.size();
     }
-
     /**
      *
      *
@@ -1192,7 +1165,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1421,7 +1393,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -1437,7 +1408,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         value_.makeImmutable();
         return value_;
       }
-
       /**
        *
        *
@@ -1452,7 +1422,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public int getValueCount() {
         return value_.size();
       }
-
       /**
        *
        *
@@ -1468,7 +1437,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public float getValue(int index) {
         return value_.getFloat(index);
       }
-
       /**
        *
        *
@@ -1490,7 +1458,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1511,7 +1478,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1531,7 +1497,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1654,7 +1619,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   public int getCategoricalFeaturesCount() {
     return internalGetCategoricalFeatures().getMap().size();
   }
-
   /**
    *
    *
@@ -1680,7 +1644,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetCategoricalFeatures().getMap().containsKey(key);
   }
-
   /** Use {@link #getCategoricalFeaturesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1689,7 +1652,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       getCategoricalFeatures() {
     return getCategoricalFeaturesMap();
   }
-
   /**
    *
    *
@@ -1714,7 +1676,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       getCategoricalFeaturesMap() {
     return internalGetCategoricalFeatures().getMap();
   }
-
   /**
    *
    *
@@ -1747,7 +1708,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         map = internalGetCategoricalFeatures().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1818,7 +1778,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   public int getNumericalFeaturesCount() {
     return internalGetNumericalFeatures().getMap().size();
   }
-
   /**
    *
    *
@@ -1843,7 +1802,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetNumericalFeatures().getMap().containsKey(key);
   }
-
   /** Use {@link #getNumericalFeaturesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1852,7 +1810,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       getNumericalFeatures() {
     return getNumericalFeaturesMap();
   }
-
   /**
    *
    *
@@ -1876,7 +1833,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       getNumericalFeaturesMap() {
     return internalGetNumericalFeatures().getMap();
   }
-
   /**
    *
    *
@@ -1908,7 +1864,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         map = internalGetNumericalFeatures().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2139,7 +2094,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2402,8 +2356,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CategoricalFeaturesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CategoricalFeaturesConverter categoricalFeaturesConverter =
         new CategoricalFeaturesConverter();
@@ -2445,7 +2398,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public int getCategoricalFeaturesCount() {
       return internalGetCategoricalFeatures().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -2471,7 +2423,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetCategoricalFeatures().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getCategoricalFeaturesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2480,7 +2431,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         getCategoricalFeatures() {
       return getCategoricalFeaturesMap();
     }
-
     /**
      *
      *
@@ -2505,7 +2455,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         getCategoricalFeaturesMap() {
       return internalGetCategoricalFeatures().getImmutableMap();
     }
-
     /**
      *
      *
@@ -2539,7 +2488,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableCategoricalFeatures().ensureBuilderMap();
       return map.containsKey(key) ? categoricalFeaturesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -2579,7 +2527,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCategoricalFeatures().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2605,7 +2552,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCategoricalFeatures().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2614,7 +2560,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableCategoricalFeatures().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2646,7 +2591,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -2681,7 +2625,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -2742,8 +2685,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return NumericalFeaturesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final NumericalFeaturesConverter numericalFeaturesConverter =
         new NumericalFeaturesConverter();
@@ -2784,7 +2726,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public int getNumericalFeaturesCount() {
       return internalGetNumericalFeatures().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -2809,7 +2750,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetNumericalFeatures().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getNumericalFeaturesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2818,7 +2758,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         getNumericalFeatures() {
       return getNumericalFeaturesMap();
     }
-
     /**
      *
      *
@@ -2842,7 +2781,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         getNumericalFeaturesMap() {
       return internalGetNumericalFeatures().getImmutableMap();
     }
-
     /**
      *
      *
@@ -2875,7 +2813,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableNumericalFeatures().ensureBuilderMap();
       return map.containsKey(key) ? numericalFeaturesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -2914,7 +2851,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableNumericalFeatures().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2939,7 +2875,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableNumericalFeatures().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2948,7 +2883,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetMutableNumericalFeatures().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2979,7 +2913,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -3013,7 +2946,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DiskEntry)
     DiskEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskEntry.newBuilder() to construct.
   private DiskEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -170,7 +169,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERFACE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INTERFACE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -181,7 +179,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>IDE = 1;</code>
      */
     public static final int IDE_VALUE = 1;
-
     /**
      *
      *
@@ -192,7 +189,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>SATA = 2;</code>
      */
     public static final int SATA_VALUE = 2;
-
     /**
      *
      *
@@ -203,7 +199,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>SAS = 3;</code>
      */
     public static final int SAS_VALUE = 3;
-
     /**
      *
      *
@@ -214,7 +209,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>SCSI = 4;</code>
      */
     public static final int SCSI_VALUE = 4;
-
     /**
      *
      *
@@ -225,7 +219,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>NVME = 5;</code>
      */
     public static final int NVME_VALUE = 5;
-
     /**
      *
      *
@@ -236,7 +229,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>FC = 6;</code>
      */
     public static final int FC_VALUE = 6;
-
     /**
      *
      *
@@ -358,7 +350,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     private PlatformSpecificCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -391,7 +382,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAPACITY_BYTES_FIELD_NUMBER = 1;
   private long capacityBytes_ = 0L;
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FREE_BYTES_FIELD_NUMBER = 2;
   private long freeBytes_ = 0L;
-
   /**
    *
    *
@@ -431,7 +420,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskLabel_ = "";
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -484,7 +471,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diskLabelType_ = "";
-
   /**
    *
    *
@@ -508,7 +494,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -535,7 +520,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERFACE_TYPE_FIELD_NUMBER = 5;
   private int interfaceType_ = 0;
-
   /**
    *
    *
@@ -551,7 +535,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
   public int getInterfaceTypeValue() {
     return interfaceType_;
   }
-
   /**
    *
    *
@@ -574,7 +557,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTITIONS_FIELD_NUMBER = 6;
   private com.google.cloud.migrationcenter.v1.DiskPartitionList partitions_;
-
   /**
    *
    *
@@ -590,7 +572,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPartitions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -608,7 +589,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.DiskPartitionList.getDefaultInstance()
         : partitions_;
   }
-
   /**
    *
    *
@@ -629,7 +609,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hwAddress_ = "";
-
   /**
    *
    *
@@ -653,7 +632,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -679,7 +657,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VMWARE_FIELD_NUMBER = 20;
-
   /**
    *
    *
@@ -695,7 +672,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVmware() {
     return platformSpecificCase_ == 20;
   }
-
   /**
    *
    *
@@ -714,7 +690,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.migrationcenter.v1.VmwareDiskConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -979,7 +954,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1306,7 +1280,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long capacityBytes_;
-
     /**
      *
      *
@@ -1322,7 +1295,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     public long getCapacityBytes() {
       return capacityBytes_;
     }
-
     /**
      *
      *
@@ -1342,7 +1314,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1333,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long freeBytes_;
-
     /**
      *
      *
@@ -1378,7 +1348,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     public long getFreeBytes() {
       return freeBytes_;
     }
-
     /**
      *
      *
@@ -1398,7 +1367,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1386,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object diskLabel_ = "";
-
     /**
      *
      *
@@ -1441,7 +1408,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1430,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1451,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1468,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1492,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object diskLabelType_ = "";
-
     /**
      *
      *
@@ -1552,7 +1514,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1575,7 +1536,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1597,7 +1557,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1615,7 +1574,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1640,7 +1598,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int interfaceType_ = 0;
-
     /**
      *
      *
@@ -1656,7 +1613,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     public int getInterfaceTypeValue() {
       return interfaceType_;
     }
-
     /**
      *
      *
@@ -1675,7 +1631,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1650,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.DiskEntry.InterfaceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1718,7 +1672,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1743,7 +1696,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.DiskPartitionList.Builder,
             com.google.cloud.migrationcenter.v1.DiskPartitionListOrBuilder>
         partitionsBuilder_;
-
     /**
      *
      *
@@ -1758,7 +1710,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPartitions() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1779,7 +1730,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return partitionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1802,7 +1752,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1823,7 +1772,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1852,7 +1800,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1872,7 +1819,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1887,7 +1833,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPartitionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1906,7 +1851,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
             : partitions_;
       }
     }
-
     /**
      *
      *
@@ -1934,7 +1878,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object hwAddress_ = "";
-
     /**
      *
      *
@@ -1957,7 +1900,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1980,7 +1922,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2002,7 +1943,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2020,7 +1960,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +1988,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.VmwareDiskConfig.Builder,
             com.google.cloud.migrationcenter.v1.VmwareDiskConfigOrBuilder>
         vmwareBuilder_;
-
     /**
      *
      *
@@ -2065,7 +2003,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVmware() {
       return platformSpecificCase_ == 20;
     }
-
     /**
      *
      *
@@ -2091,7 +2028,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.VmwareDiskConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2114,7 +2050,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       platformSpecificCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -2135,7 +2070,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       platformSpecificCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -2169,7 +2103,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       platformSpecificCase_ = 20;
       return this;
     }
-
     /**
      *
      *
@@ -2195,7 +2128,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2208,7 +2140,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.VmwareDiskConfig.Builder getVmwareBuilder() {
       return getVmwareFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2229,7 +2160,6 @@ public final class DiskEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.migrationcenter.v1.VmwareDiskConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

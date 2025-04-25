@@ -34,7 +34,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TimedPromoteReleaseCondition)
     TimedPromoteReleaseConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimedPromoteReleaseCondition.newBuilder() to construct.
   private TimedPromoteReleaseCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
      * @return The sourceTargetId.
      */
     java.lang.String getSourceTargetId();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
      * @return The destinationTargetId.
      */
     java.lang.String getDestinationTargetId();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
      */
     com.google.protobuf.ByteString getDestinationTargetIdBytes();
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets)
       TargetsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Targets.newBuilder() to construct.
     private Targets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -173,7 +168,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceTargetId_ = "";
-
     /**
      *
      *
@@ -197,7 +191,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return s;
       }
     }
-
     /**
      *
      *
@@ -226,7 +219,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object destinationTargetId_ = "";
-
     /**
      *
      *
@@ -250,7 +242,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return s;
       }
     }
-
     /**
      *
      *
@@ -446,7 +437,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       private int bitField0_;
 
       private java.lang.Object sourceTargetId_ = "";
-
       /**
        *
        *
@@ -677,7 +666,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -700,7 +688,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -722,7 +709,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -740,7 +726,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -765,7 +750,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
 
       private java.lang.Object destinationTargetId_ = "";
-
       /**
        *
        *
@@ -788,7 +772,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -811,7 +794,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -833,7 +815,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -851,7 +832,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -945,7 +925,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int NEXT_PROMOTION_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp nextPromotionTime_;
-
   /**
    *
    *
@@ -963,7 +942,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
   public boolean hasNextPromotionTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -983,7 +961,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : nextPromotionTime_;
   }
-
   /**
    *
    *
@@ -1007,7 +984,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets>
       targetsList_;
-
   /**
    *
    *
@@ -1024,7 +1000,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       getTargetsListList() {
     return targetsList_;
   }
-
   /**
    *
    *
@@ -1042,7 +1017,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       getTargetsListOrBuilderList() {
     return targetsList_;
   }
-
   /**
    *
    *
@@ -1058,7 +1032,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
   public int getTargetsListCount() {
     return targetsList_.size();
   }
-
   /**
    *
    *
@@ -1074,7 +1047,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
   public com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets getTargetsList(int index) {
     return targetsList_.get(index);
   }
-
   /**
    *
    *
@@ -1268,7 +1240,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1540,7 +1511,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         nextPromotionTimeBuilder_;
-
     /**
      *
      *
@@ -1557,7 +1527,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
     public boolean hasNextPromotionTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1580,7 +1549,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return nextPromotionTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1573,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1627,7 +1594,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1657,7 +1623,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1679,7 +1644,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1660,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       onChanged();
       return getNextPromotionTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1717,7 +1680,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
             : nextPromotionTime_;
       }
     }
-
     /**
      *
      *
@@ -1783,7 +1745,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return targetsListBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1802,7 +1763,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return targetsListBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1822,7 +1782,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return targetsListBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1807,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1872,7 +1830,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1898,7 +1855,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1924,7 +1880,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1947,7 +1902,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1971,7 +1925,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1996,7 +1949,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1970,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1991,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -2056,7 +2006,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         getTargetsListBuilder(int index) {
       return getTargetsListFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2076,7 +2025,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return targetsListBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2097,7 +2045,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(targetsList_);
       }
     }
-
     /**
      *
      *
@@ -2115,7 +2062,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
           .addBuilder(
               com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2134,7 +2080,6 @@ public final class TimedPromoteReleaseCondition extends com.google.protobuf.Gene
               index,
               com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -66,7 +66,6 @@ public interface SolarPanelConfigOrBuilder
    * <code>repeated .google.maps.solar.v1.RoofSegmentSummary roof_segment_summaries = 4;</code>
    */
   java.util.List<com.google.maps.solar.v1.RoofSegmentSummary> getRoofSegmentSummariesList();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface SolarPanelConfigOrBuilder
    * <code>repeated .google.maps.solar.v1.RoofSegmentSummary roof_segment_summaries = 4;</code>
    */
   com.google.maps.solar.v1.RoofSegmentSummary getRoofSegmentSummaries(int index);
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface SolarPanelConfigOrBuilder
    * <code>repeated .google.maps.solar.v1.RoofSegmentSummary roof_segment_summaries = 4;</code>
    */
   int getRoofSegmentSummariesCount();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface SolarPanelConfigOrBuilder
    */
   java.util.List<? extends com.google.maps.solar.v1.RoofSegmentSummaryOrBuilder>
       getRoofSegmentSummariesOrBuilderList();
-
   /**
    *
    *

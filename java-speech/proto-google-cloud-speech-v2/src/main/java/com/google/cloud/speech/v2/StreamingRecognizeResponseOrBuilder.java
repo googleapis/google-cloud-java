@@ -40,7 +40,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.StreamingRecognitionResult results = 6;</code>
    */
   java.util.List<com.google.cloud.speech.v2.StreamingRecognitionResult> getResultsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.StreamingRecognitionResult results = 6;</code>
    */
   com.google.cloud.speech.v2.StreamingRecognitionResult getResults(int index);
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v2.StreamingRecognitionResult results = 6;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface StreamingRecognizeResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.StreamingRecognitionResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The enum numeric value on the wire for speechEventType.
    */
   int getSpeechEventTypeValue();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return Whether the speechEventOffset field is set.
    */
   boolean hasSpeechEventOffset();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The speechEventOffset.
    */
   com.google.protobuf.Duration getSpeechEventOffset();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface StreamingRecognizeResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.speech.v2.RecognitionResponseMetadata getMetadata();
-
   /**
    *
    *

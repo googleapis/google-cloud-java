@@ -44,7 +44,6 @@ public interface IpOverrideDataOrBuilder
    * @return The ip.
    */
   java.lang.String getIp();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface IpOverrideDataOrBuilder
    * @return The enum numeric value on the wire for overrideType.
    */
   int getOverrideTypeValue();
-
   /**
    *
    *

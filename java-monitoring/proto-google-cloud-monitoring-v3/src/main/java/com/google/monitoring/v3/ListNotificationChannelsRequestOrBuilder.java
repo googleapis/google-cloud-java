@@ -49,7 +49,6 @@ public interface ListNotificationChannelsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface ListNotificationChannelsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -127,7 +125,6 @@ public interface ListNotificationChannelsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -175,7 +172,6 @@ public interface ListNotificationChannelsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

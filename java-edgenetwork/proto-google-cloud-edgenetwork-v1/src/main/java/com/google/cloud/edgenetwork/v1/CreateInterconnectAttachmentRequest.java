@@ -34,7 +34,6 @@ public final class CreateInterconnectAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.CreateInterconnectAttachmentRequest)
     CreateInterconnectAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateInterconnectAttachmentRequest.newBuilder() to construct.
   private CreateInterconnectAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class CreateInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectAttachmentId_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class CreateInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class CreateInterconnectAttachmentRequest
 
   public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 3;
   private com.google.cloud.edgenetwork.v1.InterconnectAttachment interconnectAttachment_;
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class CreateInterconnectAttachmentRequest
   public boolean hasInterconnectAttachment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class CreateInterconnectAttachmentRequest
         ? com.google.cloud.edgenetwork.v1.InterconnectAttachment.getDefaultInstance()
         : interconnectAttachment_;
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class CreateInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class CreateInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -515,7 +505,6 @@ public final class CreateInterconnectAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -770,7 +759,6 @@ public final class CreateInterconnectAttachmentRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -795,7 +783,6 @@ public final class CreateInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +807,6 @@ public final class CreateInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -844,7 +830,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +875,6 @@ public final class CreateInterconnectAttachmentRequest
     }
 
     private java.lang.Object interconnectAttachmentId_ = "";
-
     /**
      *
      *
@@ -916,7 +899,6 @@ public final class CreateInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class CreateInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -965,7 +946,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +965,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +996,6 @@ public final class CreateInterconnectAttachmentRequest
             com.google.cloud.edgenetwork.v1.InterconnectAttachment.Builder,
             com.google.cloud.edgenetwork.v1.InterconnectAttachmentOrBuilder>
         interconnectAttachmentBuilder_;
-
     /**
      *
      *
@@ -1034,7 +1012,6 @@ public final class CreateInterconnectAttachmentRequest
     public boolean hasInterconnectAttachment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class CreateInterconnectAttachmentRequest
         return interconnectAttachmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1112,6 @@ public final class CreateInterconnectAttachmentRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1133,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1150,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return getInterconnectAttachmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1200,7 +1171,6 @@ public final class CreateInterconnectAttachmentRequest
             : interconnectAttachment_;
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1200,6 @@ public final class CreateInterconnectAttachmentRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1265,7 +1234,6 @@ public final class CreateInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1300,7 +1268,6 @@ public final class CreateInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1301,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1330,6 @@ public final class CreateInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

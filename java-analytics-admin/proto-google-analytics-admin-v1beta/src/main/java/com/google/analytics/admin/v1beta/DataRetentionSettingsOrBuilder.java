@@ -37,7 +37,6 @@ public interface DataRetentionSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DataRetentionSettingsOrBuilder
    * @return The enum numeric value on the wire for eventDataRetention.
    */
   int getEventDataRetentionValue();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface DataRetentionSettingsOrBuilder
    * @return The enum numeric value on the wire for userDataRetention.
    */
   int getUserDataRetentionValue();
-
   /**
    *
    *

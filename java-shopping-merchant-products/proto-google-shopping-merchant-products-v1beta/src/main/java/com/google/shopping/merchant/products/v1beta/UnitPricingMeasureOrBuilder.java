@@ -49,7 +49,6 @@ public interface UnitPricingMeasureOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
-
   /**
    *
    *

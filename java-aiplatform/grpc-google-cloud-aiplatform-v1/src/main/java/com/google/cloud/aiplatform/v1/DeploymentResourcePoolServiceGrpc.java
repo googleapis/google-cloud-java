@@ -364,20 +364,6 @@ public final class DeploymentResourcePoolServiceGrpc {
     return DeploymentResourcePoolServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static DeploymentResourcePoolServiceBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<DeploymentResourcePoolServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<DeploymentResourcePoolServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public DeploymentResourcePoolServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new DeploymentResourcePoolServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return DeploymentResourcePoolServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -643,107 +629,6 @@ public final class DeploymentResourcePoolServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DeploymentResourcePoolService.
-   *
-   * <pre>
-   * A service that manages the DeploymentResourcePool resource.
-   * </pre>
-   */
-  public static final class DeploymentResourcePoolServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<DeploymentResourcePoolServiceBlockingV2Stub> {
-    private DeploymentResourcePoolServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected DeploymentResourcePoolServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new DeploymentResourcePoolServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a DeploymentResourcePool.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1.CreateDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateDeploymentResourcePoolMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get a DeploymentResourcePool.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1.DeploymentResourcePool getDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1.GetDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetDeploymentResourcePoolMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List DeploymentResourcePools in a location.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsResponse
-        listDeploymentResourcePools(
-            com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListDeploymentResourcePoolsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a DeploymentResourcePool.
-     * </pre>
-     */
-    public com.google.longrunning.Operation updateDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateDeploymentResourcePoolMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete a DeploymentResourcePool.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1.DeleteDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDeploymentResourcePoolMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List DeployedModels that have been deployed on this DeploymentResourcePool.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1.QueryDeployedModelsResponse queryDeployedModels(
-        com.google.cloud.aiplatform.v1.QueryDeployedModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getQueryDeployedModelsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * DeploymentResourcePoolService.
    *
    * <pre>
    * A service that manages the DeploymentResourcePool resource.

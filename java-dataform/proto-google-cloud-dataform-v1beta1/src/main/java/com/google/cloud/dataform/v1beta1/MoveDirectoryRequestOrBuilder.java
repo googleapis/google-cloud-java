@@ -38,7 +38,6 @@ public interface MoveDirectoryRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface MoveDirectoryRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface MoveDirectoryRequestOrBuilder
    * @return The newPath.
    */
   java.lang.String getNewPath();
-
   /**
    *
    *

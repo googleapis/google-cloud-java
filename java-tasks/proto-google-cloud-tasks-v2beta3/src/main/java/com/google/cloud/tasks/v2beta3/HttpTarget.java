@@ -36,7 +36,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.HttpTarget)
     HttpTargetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpTarget.newBuilder() to construct.
   private HttpTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * @return The key.
      */
     java.lang.String getKey();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getValueBytes();
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.HttpTarget.Header)
       HeaderOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Header.newBuilder() to construct.
     private Header(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -176,7 +171,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -200,7 +194,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -229,7 +222,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -253,7 +245,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -447,7 +438,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object key_ = "";
-
       /**
        *
        *
@@ -673,7 +662,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -696,7 +684,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -718,7 +705,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -736,7 +722,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -761,7 +746,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -784,7 +768,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -807,7 +790,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -829,7 +811,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -847,7 +828,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -952,7 +932,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the header field is set.
      */
     boolean hasHeader();
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * @return The header.
      */
     com.google.cloud.tasks.v2beta3.HttpTarget.Header getHeader();
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.tasks.v2beta3.HttpTarget.HeaderOrBuilder getHeaderOrBuilder();
   }
-
   /**
    *
    *
@@ -992,7 +969,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride)
       HeaderOverrideOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use HeaderOverride.newBuilder() to construct.
     private HeaderOverride(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1024,7 +1000,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int HEADER_FIELD_NUMBER = 1;
     private com.google.cloud.tasks.v2beta3.HttpTarget.Header header_;
-
     /**
      *
      *
@@ -1040,7 +1015,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1058,7 +1032,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.tasks.v2beta3.HttpTarget.Header.getDefaultInstance()
           : header_;
     }
-
     /**
      *
      *
@@ -1241,7 +1214,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1448,7 +1420,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.tasks.v2beta3.HttpTarget.Header.Builder,
               com.google.cloud.tasks.v2beta3.HttpTarget.HeaderOrBuilder>
           headerBuilder_;
-
       /**
        *
        *
@@ -1463,7 +1434,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       public boolean hasHeader() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1484,7 +1454,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           return headerBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1507,7 +1476,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1528,7 +1496,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1556,7 +1523,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1576,7 +1542,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1591,7 +1556,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getHeaderFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1610,7 +1574,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
               : header_;
         }
       }
-
       /**
        *
        *
@@ -1719,7 +1682,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     private AuthorizationHeaderCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1754,7 +1716,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URI_OVERRIDE_FIELD_NUMBER = 1;
   private com.google.cloud.tasks.v2beta3.UriOverride uriOverride_;
-
   /**
    *
    *
@@ -1772,7 +1733,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUriOverride() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1792,7 +1752,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tasks.v2beta3.UriOverride.getDefaultInstance()
         : uriOverride_;
   }
-
   /**
    *
    *
@@ -1813,7 +1772,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 2;
   private int httpMethod_ = 0;
-
   /**
    *
    *
@@ -1834,7 +1792,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   public int getHttpMethodValue() {
     return httpMethod_;
   }
-
   /**
    *
    *
@@ -1862,7 +1819,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride> headerOverrides_;
-
   /**
    *
    *
@@ -1908,7 +1864,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       getHeaderOverridesList() {
     return headerOverrides_;
   }
-
   /**
    *
    *
@@ -1954,7 +1909,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       getHeaderOverridesOrBuilderList() {
     return headerOverrides_;
   }
-
   /**
    *
    *
@@ -1999,7 +1953,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   public int getHeaderOverridesCount() {
     return headerOverrides_.size();
   }
-
   /**
    *
    *
@@ -2044,7 +1997,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride getHeaderOverrides(int index) {
     return headerOverrides_.get(index);
   }
-
   /**
    *
    *
@@ -2092,7 +2044,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OAUTH_TOKEN_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -2114,7 +2065,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOauthToken() {
     return authorizationHeaderCase_ == 5;
   }
-
   /**
    *
    *
@@ -2139,7 +2089,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2164,7 +2113,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OIDC_TOKEN_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -2187,7 +2135,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOidcToken() {
     return authorizationHeaderCase_ == 6;
   }
-
   /**
    *
    *
@@ -2213,7 +2160,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2463,7 +2409,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2807,7 +2752,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta3.UriOverride.Builder,
             com.google.cloud.tasks.v2beta3.UriOverrideOrBuilder>
         uriOverrideBuilder_;
-
     /**
      *
      *
@@ -2824,7 +2768,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUriOverride() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2847,7 +2790,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return uriOverrideBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2872,7 +2814,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2895,7 +2836,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2925,7 +2865,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2947,7 +2886,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2964,7 +2902,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUriOverrideFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2985,7 +2922,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             : uriOverride_;
       }
     }
-
     /**
      *
      *
@@ -3015,7 +2951,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int httpMethod_ = 0;
-
     /**
      *
      *
@@ -3036,7 +2971,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public int getHttpMethodValue() {
       return httpMethod_;
     }
-
     /**
      *
      *
@@ -3060,7 +2994,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3083,7 +3016,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.tasks.v2beta3.HttpMethod.forNumber(httpMethod_);
       return result == null ? com.google.cloud.tasks.v2beta3.HttpMethod.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -3110,7 +3042,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3200,7 +3131,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return headerOverridesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3248,7 +3178,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return headerOverridesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3296,7 +3225,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return headerOverridesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3351,7 +3279,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3404,7 +3331,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3459,7 +3385,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3514,7 +3439,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3566,7 +3490,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3619,7 +3542,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3672,7 +3594,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3723,7 +3644,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3774,7 +3694,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3819,7 +3738,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         getHeaderOverridesBuilder(int index) {
       return getHeaderOverridesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3868,7 +3786,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return headerOverridesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3918,7 +3835,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(headerOverrides_);
       }
     }
-
     /**
      *
      *
@@ -3965,7 +3881,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4012,7 +3927,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.tasks.v2beta3.HttpTarget.HeaderOverride.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4083,7 +3997,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta3.OAuthToken.Builder,
             com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder>
         oauthTokenBuilder_;
-
     /**
      *
      *
@@ -4105,7 +4018,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOauthToken() {
       return authorizationHeaderCase_ == 5;
     }
-
     /**
      *
      *
@@ -4137,7 +4049,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4166,7 +4077,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       authorizationHeaderCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4193,7 +4103,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       authorizationHeaderCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4233,7 +4142,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       authorizationHeaderCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4265,7 +4173,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4284,7 +4191,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta3.OAuthToken.Builder getOauthTokenBuilder() {
       return getOauthTokenFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4311,7 +4217,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4356,7 +4261,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tasks.v2beta3.OidcToken.Builder,
             com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder>
         oidcTokenBuilder_;
-
     /**
      *
      *
@@ -4379,7 +4283,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOidcToken() {
       return authorizationHeaderCase_ == 6;
     }
-
     /**
      *
      *
@@ -4412,7 +4315,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4442,7 +4344,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       authorizationHeaderCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4469,7 +4370,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       authorizationHeaderCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4510,7 +4410,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       authorizationHeaderCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4543,7 +4442,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4563,7 +4461,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta3.OidcToken.Builder getOidcTokenBuilder() {
       return getOidcTokenFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4591,7 +4488,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DataSourceConnectionSpec)
     DataSourceConnectionSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSourceConnectionSpec.newBuilder() to construct.
   private DataSourceConnectionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int BIGQUERY_CONNECTION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigqueryConnectionSpec_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
   public boolean hasBigqueryConnectionSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
         ? com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.getDefaultInstance()
         : bigqueryConnectionSpec_;
   }
-
   /**
    *
    *
@@ -286,7 +282,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +492,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
             com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.Builder,
             com.google.cloud.datacatalog.v1.BigQueryConnectionSpecOrBuilder>
         bigqueryConnectionSpecBuilder_;
-
     /**
      *
      *
@@ -513,7 +507,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
     public boolean hasBigqueryConnectionSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
         return bigqueryConnectionSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -560,7 +552,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -634,7 +623,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
       onChanged();
       return getBigqueryConnectionSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -672,7 +659,6 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
             : bigqueryConnectionSpec_;
       }
     }
-
     /**
      *
      *

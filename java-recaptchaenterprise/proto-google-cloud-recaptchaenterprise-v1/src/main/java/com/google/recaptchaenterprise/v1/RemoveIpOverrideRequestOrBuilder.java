@@ -39,7 +39,6 @@ public interface RemoveIpOverrideRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface RemoveIpOverrideRequestOrBuilder
    * @return Whether the ipOverrideData field is set.
    */
   boolean hasIpOverrideData();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface RemoveIpOverrideRequestOrBuilder
    * @return The ipOverrideData.
    */
   com.google.recaptchaenterprise.v1.IpOverrideData getIpOverrideData();
-
   /**
    *
    *

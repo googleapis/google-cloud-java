@@ -34,7 +34,6 @@ public final class UpdateMeasurementProtocolSecretRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest)
     UpdateMeasurementProtocolSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateMeasurementProtocolSecretRequest.newBuilder() to construct.
   private UpdateMeasurementProtocolSecretRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class UpdateMeasurementProtocolSecretRequest
   private int bitField0_;
   public static final int MEASUREMENT_PROTOCOL_SECRET_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.MeasurementProtocolSecret measurementProtocolSecret_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateMeasurementProtocolSecretRequest
   public boolean hasMeasurementProtocolSecret() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateMeasurementProtocolSecretRequest
         ? com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance()
         : measurementProtocolSecret_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class UpdateMeasurementProtocolSecretRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class UpdateMeasurementProtocolSecretRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class UpdateMeasurementProtocolSecretRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -366,7 +359,6 @@ public final class UpdateMeasurementProtocolSecretRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -604,7 +596,6 @@ public final class UpdateMeasurementProtocolSecretRequest
             com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder,
             com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder>
         measurementProtocolSecretBuilder_;
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class UpdateMeasurementProtocolSecretRequest
     public boolean hasMeasurementProtocolSecret() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class UpdateMeasurementProtocolSecretRequest
         return measurementProtocolSecretBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return getMeasurementProtocolSecretFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class UpdateMeasurementProtocolSecretRequest
             : measurementProtocolSecret_;
       }
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class UpdateMeasurementProtocolSecretRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class UpdateMeasurementProtocolSecretRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class UpdateMeasurementProtocolSecretRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +940,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class UpdateMeasurementProtocolSecretRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1001,7 +976,6 @@ public final class UpdateMeasurementProtocolSecretRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

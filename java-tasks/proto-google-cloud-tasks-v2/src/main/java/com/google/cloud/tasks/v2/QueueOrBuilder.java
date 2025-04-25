@@ -55,7 +55,6 @@ public interface QueueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -110,7 +109,6 @@ public interface QueueOrBuilder
    * @return Whether the appEngineRoutingOverride field is set.
    */
   boolean hasAppEngineRoutingOverride();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface QueueOrBuilder
    * @return The appEngineRoutingOverride.
    */
   com.google.cloud.tasks.v2.AppEngineRouting getAppEngineRoutingOverride();
-
   /**
    *
    *
@@ -194,7 +191,6 @@ public interface QueueOrBuilder
    * @return Whether the rateLimits field is set.
    */
   boolean hasRateLimits();
-
   /**
    *
    *
@@ -234,7 +230,6 @@ public interface QueueOrBuilder
    * @return The rateLimits.
    */
   com.google.cloud.tasks.v2.RateLimits getRateLimits();
-
   /**
    *
    *
@@ -294,7 +289,6 @@ public interface QueueOrBuilder
    * @return Whether the retryConfig field is set.
    */
   boolean hasRetryConfig();
-
   /**
    *
    *
@@ -316,7 +310,6 @@ public interface QueueOrBuilder
    * @return The retryConfig.
    */
   com.google.cloud.tasks.v2.RetryConfig getRetryConfig();
-
   /**
    *
    *
@@ -356,7 +349,6 @@ public interface QueueOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -400,7 +392,6 @@ public interface QueueOrBuilder
    * @return Whether the purgeTime field is set.
    */
   boolean hasPurgeTime();
-
   /**
    *
    *
@@ -424,7 +415,6 @@ public interface QueueOrBuilder
    * @return The purgeTime.
    */
   com.google.protobuf.Timestamp getPurgeTime();
-
   /**
    *
    *
@@ -461,7 +451,6 @@ public interface QueueOrBuilder
    * @return Whether the stackdriverLoggingConfig field is set.
    */
   boolean hasStackdriverLoggingConfig();
-
   /**
    *
    *
@@ -476,7 +465,6 @@ public interface QueueOrBuilder
    * @return The stackdriverLoggingConfig.
    */
   com.google.cloud.tasks.v2.StackdriverLoggingConfig getStackdriverLoggingConfig();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface SignedinUserOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SignedinUserOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

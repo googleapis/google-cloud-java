@@ -39,7 +39,6 @@ public interface ListIntentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ListIntentsRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface ListIntentsRequestOrBuilder
    * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public interface ListIntentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

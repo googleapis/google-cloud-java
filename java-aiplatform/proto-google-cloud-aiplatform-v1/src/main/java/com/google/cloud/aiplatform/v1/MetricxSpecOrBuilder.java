@@ -38,7 +38,6 @@ public interface MetricxSpecOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MetricxSpecOrBuilder
    * @return The enum numeric value on the wire for version.
    */
   int getVersionValue();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface MetricxSpecOrBuilder
    * @return The sourceLanguage.
    */
   java.lang.String getSourceLanguage();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface MetricxSpecOrBuilder
    * @return The targetLanguage.
    */
   java.lang.String getTargetLanguage();
-
   /**
    *
    *

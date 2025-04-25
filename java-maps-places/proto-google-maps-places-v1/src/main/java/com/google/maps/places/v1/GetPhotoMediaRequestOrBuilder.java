@@ -44,7 +44,6 @@ public interface GetPhotoMediaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

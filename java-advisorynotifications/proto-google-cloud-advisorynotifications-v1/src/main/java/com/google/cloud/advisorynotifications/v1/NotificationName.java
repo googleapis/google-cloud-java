@@ -299,8 +299,7 @@ public class NotificationName implements ResourceName {
     private Builder(NotificationName notificationName) {
       Preconditions.checkArgument(
           Objects.equals(notificationName.pathTemplate, ORGANIZATION_LOCATION_NOTIFICATION),
-          "toBuilder is only supported when NotificationName has the pattern of"
-              + " organizations/{organization}/locations/{location}/notifications/{notification}");
+          "toBuilder is only supported when NotificationName has the pattern of organizations/{organization}/locations/{location}/notifications/{notification}");
       this.organization = notificationName.organization;
       this.location = notificationName.location;
       this.notification = notificationName.notification;

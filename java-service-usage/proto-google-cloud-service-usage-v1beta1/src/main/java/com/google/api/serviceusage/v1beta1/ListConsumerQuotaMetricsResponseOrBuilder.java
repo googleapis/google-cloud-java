@@ -34,7 +34,6 @@ public interface ListConsumerQuotaMetricsResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.ConsumerQuotaMetric metrics = 1;</code>
    */
   java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric> getMetricsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConsumerQuotaMetricsResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.ConsumerQuotaMetric metrics = 1;</code>
    */
   com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric getMetrics(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConsumerQuotaMetricsResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.ConsumerQuotaMetric metrics = 1;</code>
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConsumerQuotaMetricsResponseOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.ConsumerQuotaMetricOrBuilder>
       getMetricsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListConsumerQuotaMetricsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

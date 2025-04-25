@@ -38,7 +38,6 @@ public interface DataQualityDimensionResultOrBuilder
    * @return Whether the dimension field is set.
    */
   boolean hasDimension();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DataQualityDimensionResultOrBuilder
    * @return The dimension.
    */
   com.google.cloud.dataplex.v1.DataQualityDimension getDimension();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface DataQualityDimensionResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.VariantsHistory)
     VariantsHistoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VariantsHistory.newBuilder() to construct.
   private VariantsHistory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     private VariantsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VERSION_VARIANTS_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
   public boolean hasVersionVariants() {
     return variantsCase_ == 1;
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -403,7 +395,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.VersionVariantsOrBuilder>
         versionVariantsBuilder_;
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     public boolean hasVersionVariants() {
       return variantsCase_ == 1;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       variantsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       variantsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       variantsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
         getVersionVariantsBuilder() {
       return getVersionVariantsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.dialogflow.cx.v3beta1.VersionVariants.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -875,7 +857,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
-
     /**
      *
      *

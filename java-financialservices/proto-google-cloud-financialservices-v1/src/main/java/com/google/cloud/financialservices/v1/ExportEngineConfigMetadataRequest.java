@@ -33,7 +33,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportEngineConfigMetadataRequest)
     ExportEngineConfigMetadataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportEngineConfigMetadataRequest.newBuilder() to construct.
   private ExportEngineConfigMetadataRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object engineConfig_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
 
   public static final int STRUCTURED_METADATA_DESTINATION_FIELD_NUMBER = 2;
   private com.google.cloud.financialservices.v1.BigQueryDestination structuredMetadataDestination_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
   public boolean hasStructuredMetadataDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
         ? com.google.cloud.financialservices.v1.BigQueryDestination.getDefaultInstance()
         : structuredMetadataDestination_;
   }
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +584,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object engineConfig_ = "";
-
     /**
      *
      *
@@ -616,7 +608,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +632,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
             com.google.cloud.financialservices.v1.BigQueryDestination.Builder,
             com.google.cloud.financialservices.v1.BigQueryDestinationOrBuilder>
         structuredMetadataDestinationBuilder_;
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
     public boolean hasStructuredMetadataDestination() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
         return structuredMetadataDestinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
       onChanged();
       return getStructuredMetadataDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ExportEngineConfigMetadataRequest extends com.google.protobuf
             : structuredMetadataDestination_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,8 @@ public class AsyncListEvents {
       ListEventsRequest request =
           ListEventsRequest.newBuilder()
               .setParent(
-                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+                  SessionName.ofProjectLocationReasoningEngineSessionName(
+                          "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                       .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

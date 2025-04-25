@@ -40,7 +40,6 @@ public interface DeleteSavedQueryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

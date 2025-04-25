@@ -33,7 +33,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DataValidationAction)
     DataValidationActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataValidationAction.newBuilder() to construct.
   private DataValidationAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,7 +99,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
   public int getConditionsCount() {
     return internalGetConditions().getMap().size();
   }
-
   /**
    *
    *
@@ -119,14 +117,12 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     }
     return internalGetConditions().getMap().containsKey(key);
   }
-
   /** Use {@link #getConditionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConditions() {
     return getConditionsMap();
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getConditionsMap() {
     return internalGetConditions().getMap();
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConditions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +588,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     public int getConditionsCount() {
       return internalGetConditions().getMap().size();
     }
-
     /**
      *
      *
@@ -614,14 +606,12 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       }
       return internalGetConditions().getMap().containsKey(key);
     }
-
     /** Use {@link #getConditionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConditions() {
       return getConditionsMap();
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getConditionsMap() {
       return internalGetConditions().getMap();
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConditions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       internalGetMutableConditions().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -708,14 +695,12 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       internalGetMutableConditions().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConditions() {
       bitField0_ |= 0x00000001;
       return internalGetMutableConditions().getMutableMap();
     }
-
     /**
      *
      *
@@ -738,7 +723,6 @@ public final class DataValidationAction extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

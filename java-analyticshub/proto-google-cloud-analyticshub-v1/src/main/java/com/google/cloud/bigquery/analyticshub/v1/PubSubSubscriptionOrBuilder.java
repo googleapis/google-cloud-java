@@ -37,7 +37,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the pushConfig field is set.
    */
   boolean hasPushConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The pushConfig.
    */
   com.google.cloud.bigquery.analyticshub.v1.PushConfig getPushConfig();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the bigqueryConfig field is set.
    */
   boolean hasBigqueryConfig();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The bigqueryConfig.
    */
   com.google.cloud.bigquery.analyticshub.v1.BigQueryConfig getBigqueryConfig();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the cloudStorageConfig field is set.
    */
   boolean hasCloudStorageConfig();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The cloudStorageConfig.
    */
   com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig getCloudStorageConfig();
-
   /**
    *
    *
@@ -259,7 +252,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the messageRetentionDuration field is set.
    */
   boolean hasMessageRetentionDuration();
-
   /**
    *
    *
@@ -278,7 +270,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The messageRetentionDuration.
    */
   com.google.protobuf.Duration getMessageRetentionDuration();
-
   /**
    *
    *
@@ -307,7 +298,6 @@ public interface PubSubSubscriptionOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -319,11 +309,9 @@ public interface PubSubSubscriptionOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public interface PubSubSubscriptionOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public interface PubSubSubscriptionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -400,7 +386,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the expirationPolicy field is set.
    */
   boolean hasExpirationPolicy();
-
   /**
    *
    *
@@ -421,7 +406,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The expirationPolicy.
    */
   com.google.cloud.bigquery.analyticshub.v1.ExpirationPolicy getExpirationPolicy();
-
   /**
    *
    *
@@ -458,7 +442,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -497,7 +480,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the deadLetterPolicy field is set.
    */
   boolean hasDeadLetterPolicy();
-
   /**
    *
    *
@@ -519,7 +501,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The deadLetterPolicy.
    */
   com.google.cloud.bigquery.analyticshub.v1.DeadLetterPolicy getDeadLetterPolicy();
-
   /**
    *
    *
@@ -561,7 +542,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return Whether the retryPolicy field is set.
    */
   boolean hasRetryPolicy();
-
   /**
    *
    *
@@ -582,7 +562,6 @@ public interface PubSubSubscriptionOrBuilder
    * @return The retryPolicy.
    */
   com.google.cloud.bigquery.analyticshub.v1.RetryPolicy getRetryPolicy();
-
   /**
    *
    *
@@ -657,7 +636,6 @@ public interface PubSubSubscriptionOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.analyticshub.v1.MessageTransform>
       getMessageTransformsList();
-
   /**
    *
    *
@@ -671,7 +649,6 @@ public interface PubSubSubscriptionOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.analyticshub.v1.MessageTransform getMessageTransforms(int index);
-
   /**
    *
    *
@@ -685,7 +662,6 @@ public interface PubSubSubscriptionOrBuilder
    * </code>
    */
   int getMessageTransformsCount();
-
   /**
    *
    *
@@ -700,7 +676,6 @@ public interface PubSubSubscriptionOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.analyticshub.v1.MessageTransformOrBuilder>
       getMessageTransformsOrBuilderList();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CollectUserEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CollectUserEventRequestOrBuilder
    * @return The userEvent.
    */
   java.lang.String getUserEvent();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CollectUserEventRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

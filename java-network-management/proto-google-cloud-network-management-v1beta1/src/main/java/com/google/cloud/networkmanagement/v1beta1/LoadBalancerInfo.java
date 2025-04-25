@@ -33,7 +33,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.LoadBalancerInfo)
     LoadBalancerInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoadBalancerInfo.newBuilder() to construct.
   private LoadBalancerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,7 +150,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>LOAD_BALANCER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LOAD_BALANCER_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -162,7 +160,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL_TCP_UDP = 1;</code>
      */
     public static final int INTERNAL_TCP_UDP_VALUE = 1;
-
     /**
      *
      *
@@ -173,7 +170,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>NETWORK_TCP_UDP = 2;</code>
      */
     public static final int NETWORK_TCP_UDP_VALUE = 2;
-
     /**
      *
      *
@@ -184,7 +180,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>HTTP_PROXY = 3;</code>
      */
     public static final int HTTP_PROXY_VALUE = 3;
-
     /**
      *
      *
@@ -195,7 +190,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>TCP_PROXY = 4;</code>
      */
     public static final int TCP_PROXY_VALUE = 4;
-
     /**
      *
      *
@@ -363,7 +357,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>BACKEND_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BACKEND_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -374,7 +367,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>BACKEND_SERVICE = 1;</code>
      */
     public static final int BACKEND_SERVICE_VALUE = 1;
-
     /**
      *
      *
@@ -385,7 +377,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>TARGET_POOL = 2;</code>
      */
     public static final int TARGET_POOL_VALUE = 2;
-
     /**
      *
      *
@@ -486,7 +477,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
 
   public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 1;
   private int loadBalancerType_ = 0;
-
   /**
    *
    *
@@ -504,7 +494,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
   public int getLoadBalancerTypeValue() {
     return loadBalancerType_;
   }
-
   /**
    *
    *
@@ -533,7 +522,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheckUri_ = "";
-
   /**
    *
    *
@@ -562,7 +550,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +583,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackend> backends_;
-
   /**
    *
    *
@@ -611,7 +597,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       getBackendsList() {
     return backends_;
   }
-
   /**
    *
    *
@@ -627,7 +612,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       getBackendsOrBuilderList() {
     return backends_;
   }
-
   /**
    *
    *
@@ -641,7 +625,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
   public int getBackendsCount() {
     return backends_.size();
   }
-
   /**
    *
    *
@@ -655,7 +638,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackend getBackends(int index) {
     return backends_.get(index);
   }
-
   /**
    *
    *
@@ -673,7 +655,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
 
   public static final int BACKEND_TYPE_FIELD_NUMBER = 4;
   private int backendType_ = 0;
-
   /**
    *
    *
@@ -690,7 +671,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
   public int getBackendTypeValue() {
     return backendType_;
   }
-
   /**
    *
    *
@@ -717,7 +697,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backendUri_ = "";
-
   /**
    *
    *
@@ -741,7 +720,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -976,7 +954,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1264,7 +1241,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int loadBalancerType_ = 0;
-
     /**
      *
      *
@@ -1282,7 +1258,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     public int getLoadBalancerTypeValue() {
       return loadBalancerType_;
     }
-
     /**
      *
      *
@@ -1303,7 +1278,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1302,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1353,7 +1326,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1347,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object healthCheckUri_ = "";
-
     /**
      *
      *
@@ -1403,7 +1374,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1431,7 +1401,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1458,7 +1427,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1481,7 +1449,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1513,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return backendsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1564,7 +1530,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return backendsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1547,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return backendsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1607,7 +1571,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1593,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1617,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1641,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1662,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1684,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1748,7 +1706,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1769,7 +1726,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1746,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1760,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         getBackendsBuilder(int index) {
       return getBackendsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1824,7 +1778,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return backendsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1844,7 +1797,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(backends_);
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1813,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackend.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1879,7 +1830,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackend.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1913,7 +1863,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     }
 
     private int backendType_ = 0;
-
     /**
      *
      *
@@ -1930,7 +1879,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     public int getBackendTypeValue() {
       return backendType_;
     }
-
     /**
      *
      *
@@ -1950,7 +1898,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1973,7 +1920,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.BackendType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1997,7 +1943,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1963,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object backendUri_ = "";
-
     /**
      *
      *
@@ -2041,7 +1985,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2064,7 +2007,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2086,7 +2028,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2104,7 +2045,6 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

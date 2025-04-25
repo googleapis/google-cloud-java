@@ -34,7 +34,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListEntityTypesResponse)
     ListEntityTypesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEntityTypesResponse.newBuilder() to construct.
   private ListEntityTypesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.EntityType> entityTypes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.aiplatform.v1.EntityType> getEntityTypesList() {
     return entityTypes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       getEntityTypesOrBuilderList() {
     return entityTypes_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
   public int getEntityTypesCount() {
     return entityTypes_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
   public com.google.cloud.aiplatform.v1.EntityType getEntityTypes(int index) {
     return entityTypes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return entityTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return entityTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return entityTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.EntityType.Builder getEntityTypesBuilder(int index) {
       return getEntityTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return entityTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(entityTypes_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       return getEntityTypesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.EntityType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -954,7 +929,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       return getEntityTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.EntityType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -987,7 +961,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1013,7 +986,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1011,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1055,6 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

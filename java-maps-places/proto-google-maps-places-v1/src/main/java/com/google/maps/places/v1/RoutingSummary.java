@@ -38,7 +38,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.RoutingSummary)
     RoutingSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoutingSummary.newBuilder() to construct.
   private RoutingSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
-
     /**
      *
      *
@@ -100,7 +98,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
      */
     int getDistanceMeters();
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.RoutingSummary.Leg)
       LegOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Leg.newBuilder() to construct.
     private Leg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -172,7 +167,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int DURATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration duration_;
-
     /**
      *
      *
@@ -188,7 +182,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -204,7 +197,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
-
     /**
      *
      *
@@ -221,7 +213,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DISTANCE_METERS_FIELD_NUMBER = 2;
     private int distanceMeters_ = 0;
-
     /**
      *
      *
@@ -412,7 +403,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           durationBuilder_;
-
       /**
        *
        *
@@ -646,7 +635,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDuration() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -665,7 +653,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
           return durationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -688,7 +675,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -708,7 +694,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -736,7 +721,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -756,7 +740,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -771,7 +754,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -788,7 +770,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
           return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
         }
       }
-
       /**
        *
        *
@@ -816,7 +797,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int distanceMeters_;
-
       /**
        *
        *
@@ -832,7 +812,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       public int getDistanceMeters() {
         return distanceMeters_;
       }
-
       /**
        *
        *
@@ -852,7 +831,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -939,7 +917,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.RoutingSummary.Leg> legs_;
-
   /**
    *
    *
@@ -959,7 +936,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.places.v1.RoutingSummary.Leg> getLegsList() {
     return legs_;
   }
-
   /**
    *
    *
@@ -980,7 +956,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       getLegsOrBuilderList() {
     return legs_;
   }
-
   /**
    *
    *
@@ -1000,7 +975,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
   public int getLegsCount() {
     return legs_.size();
   }
-
   /**
    *
    *
@@ -1020,7 +994,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.places.v1.RoutingSummary.Leg getLegs(int index) {
     return legs_.get(index);
   }
-
   /**
    *
    *
@@ -1045,7 +1018,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object directionsUri_ = "";
-
   /**
    *
    *
@@ -1074,7 +1046,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1273,7 +1244,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1559,7 +1529,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return legsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1551,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return legsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1573,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return legsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1634,7 +1601,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1627,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1690,7 +1655,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1719,7 +1683,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1745,7 +1708,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1734,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1760,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1825,7 +1785,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1851,7 +1810,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1870,7 +1828,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.places.v1.RoutingSummary.Leg.Builder getLegsBuilder(int index) {
       return getLegsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1893,7 +1850,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return legsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1917,7 +1873,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(legs_);
       }
     }
-
     /**
      *
      *
@@ -1937,7 +1892,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       return getLegsFieldBuilder()
           .addBuilder(com.google.maps.places.v1.RoutingSummary.Leg.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1957,7 +1911,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       return getLegsFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.RoutingSummary.Leg.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1996,7 +1949,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object directionsUri_ = "";
-
     /**
      *
      *
@@ -2024,7 +1976,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2052,7 +2003,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2079,7 +2029,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2051,6 @@ public final class RoutingSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

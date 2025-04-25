@@ -32,7 +32,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ImageFamilyView)
     ImageFamilyViewOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageFamilyView.newBuilder() to construct.
   private ImageFamilyView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int IMAGE_FIELD_NUMBER = 100313435;
   private com.google.cloud.compute.v1.Image image_;
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
   public boolean hasImage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.compute.v1.Image getImage() {
     return image_ == null ? com.google.cloud.compute.v1.Image.getDefaultInstance() : image_;
   }
-
   /**
    *
    *
@@ -275,7 +271,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -477,7 +472,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.Image.Builder,
             com.google.cloud.compute.v1.ImageOrBuilder>
         imageBuilder_;
-
     /**
      *
      *
@@ -492,7 +486,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
     public boolean hasImage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -511,7 +504,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
         return imageBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -534,7 +526,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -554,7 +545,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -582,7 +572,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -602,7 +591,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -617,7 +605,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getImageFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -634,7 +621,6 @@ public final class ImageFamilyView extends com.google.protobuf.GeneratedMessageV
         return image_ == null ? com.google.cloud.compute.v1.Image.getDefaultInstance() : image_;
       }
     }
-
     /**
      *
      *

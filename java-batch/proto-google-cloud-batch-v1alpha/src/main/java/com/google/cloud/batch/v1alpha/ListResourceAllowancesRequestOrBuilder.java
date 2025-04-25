@@ -38,7 +38,6 @@ public interface ListResourceAllowancesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ListResourceAllowancesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

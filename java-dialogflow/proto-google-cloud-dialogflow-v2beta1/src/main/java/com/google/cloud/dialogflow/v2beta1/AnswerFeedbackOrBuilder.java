@@ -37,7 +37,6 @@ public interface AnswerFeedbackOrBuilder
    * @return The enum numeric value on the wire for correctnessLevel.
    */
   int getCorrectnessLevelValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AnswerFeedbackOrBuilder
    * @return Whether the agentAssistantDetailFeedback field is set.
    */
   boolean hasAgentAssistantDetailFeedback();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AnswerFeedbackOrBuilder
    * @return The agentAssistantDetailFeedback.
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback getAgentAssistantDetailFeedback();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface AnswerFeedbackOrBuilder
    * @return Whether the clickTime field is set.
    */
   boolean hasClickTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface AnswerFeedbackOrBuilder
    * @return The clickTime.
    */
   com.google.protobuf.Timestamp getClickTime();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface AnswerFeedbackOrBuilder
    * @return Whether the displayTime field is set.
    */
   boolean hasDisplayTime();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface AnswerFeedbackOrBuilder
    * @return The displayTime.
    */
   com.google.protobuf.Timestamp getDisplayTime();
-
   /**
    *
    *

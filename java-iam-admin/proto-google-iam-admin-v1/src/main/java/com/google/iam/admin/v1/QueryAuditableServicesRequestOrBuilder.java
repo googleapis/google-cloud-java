@@ -41,7 +41,6 @@ public interface QueryAuditableServicesRequestOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
-
   /**
    *
    *

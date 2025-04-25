@@ -39,7 +39,6 @@ public interface CreateCdnKeyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateCdnKeyRequestOrBuilder
    * @return Whether the cdnKey field is set.
    */
   boolean hasCdnKey();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateCdnKeyRequestOrBuilder
    * @return The cdnKey.
    */
   com.google.cloud.video.stitcher.v1.CdnKey getCdnKey();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface CreateCdnKeyRequestOrBuilder
    * @return The cdnKeyId.
    */
   java.lang.String getCdnKeyId();
-
   /**
    *
    *

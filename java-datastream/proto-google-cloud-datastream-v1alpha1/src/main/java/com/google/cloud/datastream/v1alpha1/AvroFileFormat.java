@@ -33,7 +33,6 @@ public final class AvroFileFormat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.AvroFileFormat)
     AvroFileFormatOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AvroFileFormat.newBuilder() to construct.
   private AvroFileFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class AvroFileFormat extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

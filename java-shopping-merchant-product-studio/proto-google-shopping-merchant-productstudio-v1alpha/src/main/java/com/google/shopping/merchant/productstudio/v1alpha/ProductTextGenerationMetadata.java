@@ -34,7 +34,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationMetadata)
     ProductTextGenerationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductTextGenerationMetadata.newBuilder() to construct.
   private ProductTextGenerationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct metadata_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
-
   /**
    *
    *
@@ -296,7 +292,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -517,7 +512,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -535,7 +529,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -557,7 +550,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class ProductTextGenerationMetadata extends com.google.protobuf.Gen
         return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
       }
     }
-
     /**
      *
      *

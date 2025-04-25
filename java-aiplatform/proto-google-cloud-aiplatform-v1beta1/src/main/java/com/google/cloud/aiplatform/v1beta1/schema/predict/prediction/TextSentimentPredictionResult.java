@@ -34,7 +34,6 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult)
     TextSentimentPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextSentimentPredictionResult.newBuilder() to construct.
   private TextSentimentPredictionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
 
   public static final int SENTIMENT_FIELD_NUMBER = 1;
   private int sentiment_ = 0;
-
   /**
    *
    *
@@ -275,7 +273,6 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +484,6 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int sentiment_;
-
     /**
      *
      *
@@ -507,7 +503,6 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     public int getSentiment() {
       return sentiment_;
     }
-
     /**
      *
      *
@@ -531,7 +526,6 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

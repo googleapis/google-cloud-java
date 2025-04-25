@@ -36,7 +36,6 @@ public interface RunnableOrBuilder
    * @return Whether the container field is set.
    */
   boolean hasContainer();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RunnableOrBuilder
    * @return The container.
    */
   com.google.cloud.batch.v1alpha.Runnable.Container getContainer();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RunnableOrBuilder
    * @return Whether the script field is set.
    */
   boolean hasScript();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RunnableOrBuilder
    * @return The script.
    */
   com.google.cloud.batch.v1alpha.Runnable.Script getScript();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface RunnableOrBuilder
    * @return Whether the barrier field is set.
    */
   boolean hasBarrier();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface RunnableOrBuilder
    * @return The barrier.
    */
   com.google.cloud.batch.v1alpha.Runnable.Barrier getBarrier();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface RunnableOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public interface RunnableOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public interface RunnableOrBuilder
    * @return The environment.
    */
   com.google.cloud.batch.v1alpha.Environment getEnvironment();
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public interface RunnableOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public interface RunnableOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public interface RunnableOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -325,11 +313,9 @@ public interface RunnableOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -340,7 +326,6 @@ public interface RunnableOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -355,7 +340,6 @@ public interface RunnableOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

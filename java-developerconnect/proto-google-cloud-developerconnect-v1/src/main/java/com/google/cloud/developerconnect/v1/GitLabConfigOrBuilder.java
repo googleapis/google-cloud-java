@@ -40,7 +40,6 @@ public interface GitLabConfigOrBuilder
    * @return The webhookSecretSecretVersion.
    */
   java.lang.String getWebhookSecretSecretVersion();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface GitLabConfigOrBuilder
    * @return Whether the readAuthorizerCredential field is set.
    */
   boolean hasReadAuthorizerCredential();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface GitLabConfigOrBuilder
    * @return The readAuthorizerCredential.
    */
   com.google.cloud.developerconnect.v1.UserCredential getReadAuthorizerCredential();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface GitLabConfigOrBuilder
    * @return Whether the authorizerCredential field is set.
    */
   boolean hasAuthorizerCredential();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface GitLabConfigOrBuilder
    * @return The authorizerCredential.
    */
   com.google.cloud.developerconnect.v1.UserCredential getAuthorizerCredential();
-
   /**
    *
    *

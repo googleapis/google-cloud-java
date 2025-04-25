@@ -36,7 +36,6 @@ public interface SuggestionResultOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SuggestionResultOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SuggestionResultOrBuilder
    * @return Whether the suggestArticlesResponse field is set.
    */
   boolean hasSuggestArticlesResponse();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SuggestionResultOrBuilder
    * @return The suggestArticlesResponse.
    */
   com.google.cloud.dialogflow.v2.SuggestArticlesResponse getSuggestArticlesResponse();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface SuggestionResultOrBuilder
    * @return Whether the suggestKnowledgeAssistResponse field is set.
    */
   boolean hasSuggestKnowledgeAssistResponse();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface SuggestionResultOrBuilder
    * @return The suggestKnowledgeAssistResponse.
    */
   com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse getSuggestKnowledgeAssistResponse();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface SuggestionResultOrBuilder
    * @return Whether the suggestFaqAnswersResponse field is set.
    */
   boolean hasSuggestFaqAnswersResponse();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface SuggestionResultOrBuilder
    * @return The suggestFaqAnswersResponse.
    */
   com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse getSuggestFaqAnswersResponse();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface SuggestionResultOrBuilder
    * @return Whether the suggestSmartRepliesResponse field is set.
    */
   boolean hasSuggestSmartRepliesResponse();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface SuggestionResultOrBuilder
    * @return The suggestSmartRepliesResponse.
    */
   com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse getSuggestSmartRepliesResponse();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface SuggestionResultOrBuilder
    * @return Whether the generateSuggestionsResponse field is set.
    */
   boolean hasGenerateSuggestionsResponse();
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface SuggestionResultOrBuilder
    * @return The generateSuggestionsResponse.
    */
   com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse getGenerateSuggestionsResponse();
-
   /**
    *
    *

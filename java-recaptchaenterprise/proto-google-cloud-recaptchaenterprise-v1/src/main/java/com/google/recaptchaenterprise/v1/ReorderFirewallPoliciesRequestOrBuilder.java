@@ -39,7 +39,6 @@ public interface ReorderFirewallPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ReorderFirewallPoliciesRequestOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ReorderFirewallPoliciesRequestOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface ReorderFirewallPoliciesRequestOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
-
   /**
    *
    *

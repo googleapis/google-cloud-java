@@ -35,7 +35,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateNotebookRuntimeTemplateRequest)
     UpdateNotebookRuntimeTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateNotebookRuntimeTemplateRequest.newBuilder() to construct.
   private UpdateNotebookRuntimeTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
   private int bitField0_;
   public static final int NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate notebookRuntimeTemplate_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
   public boolean hasNotebookRuntimeTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
         ? com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.getDefaultInstance()
         : notebookRuntimeTemplate_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -375,7 +368,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -613,7 +605,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
             com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.Builder,
             com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplateOrBuilder>
         notebookRuntimeTemplateBuilder_;
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
     public boolean hasNotebookRuntimeTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
         return notebookRuntimeTemplateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return getNotebookRuntimeTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
             : notebookRuntimeTemplate_;
       }
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +973,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1042,7 +1017,6 @@ public final class UpdateNotebookRuntimeTemplateRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

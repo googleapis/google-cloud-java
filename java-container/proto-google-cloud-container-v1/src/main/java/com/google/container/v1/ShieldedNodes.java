@@ -33,7 +33,6 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.ShieldedNodes)
     ShieldedNodesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShieldedNodes.newBuilder() to construct.
   private ShieldedNodes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -238,7 +236,6 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -420,7 +417,6 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -436,7 +432,6 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -456,7 +451,6 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

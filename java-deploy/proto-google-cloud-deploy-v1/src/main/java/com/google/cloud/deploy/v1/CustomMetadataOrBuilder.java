@@ -34,7 +34,6 @@ public interface CustomMetadataOrBuilder
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface CustomMetadataOrBuilder
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean containsValues(java.lang.String key);
-
   /** Use {@link #getValuesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getValues();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface CustomMetadataOrBuilder
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getValuesMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface CustomMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

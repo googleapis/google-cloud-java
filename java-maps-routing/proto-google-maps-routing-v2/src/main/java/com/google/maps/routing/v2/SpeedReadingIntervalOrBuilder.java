@@ -36,7 +36,6 @@ public interface SpeedReadingIntervalOrBuilder
    * @return Whether the startPolylinePointIndex field is set.
    */
   boolean hasStartPolylinePointIndex();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SpeedReadingIntervalOrBuilder
    * @return Whether the endPolylinePointIndex field is set.
    */
   boolean hasEndPolylinePointIndex();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SpeedReadingIntervalOrBuilder
    * @return Whether the speed field is set.
    */
   boolean hasSpeed();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface SpeedReadingIntervalOrBuilder
    * @return The enum numeric value on the wire for speed.
    */
   int getSpeedValue();
-
   /**
    *
    *

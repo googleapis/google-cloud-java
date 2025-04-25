@@ -118,7 +118,6 @@ public enum LineItemChangeState implements com.google.protobuf.ProtocolMessageEn
    * <code>LINE_ITEM_CHANGE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -130,7 +129,6 @@ public enum LineItemChangeState implements com.google.protobuf.ProtocolMessageEn
    * <code>LINE_ITEM_CHANGE_STATE_PENDING_APPROVAL = 1;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_PENDING_APPROVAL_VALUE = 1;
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public enum LineItemChangeState implements com.google.protobuf.ProtocolMessageEn
    * <code>LINE_ITEM_CHANGE_STATE_APPROVED = 2;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_APPROVED_VALUE = 2;
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public enum LineItemChangeState implements com.google.protobuf.ProtocolMessageEn
    * <code>LINE_ITEM_CHANGE_STATE_COMPLETED = 3;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_COMPLETED_VALUE = 3;
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public enum LineItemChangeState implements com.google.protobuf.ProtocolMessageEn
    * <code>LINE_ITEM_CHANGE_STATE_REJECTED = 4;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_REJECTED_VALUE = 4;
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public enum LineItemChangeState implements com.google.protobuf.ProtocolMessageEn
    * <code>LINE_ITEM_CHANGE_STATE_ABANDONED = 5;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_ABANDONED_VALUE = 5;
-
   /**
    *
    *

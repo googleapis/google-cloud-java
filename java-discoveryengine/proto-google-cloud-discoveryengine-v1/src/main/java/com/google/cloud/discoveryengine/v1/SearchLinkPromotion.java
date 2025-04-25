@@ -34,7 +34,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchLinkPromotion)
     SearchLinkPromotionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchLinkPromotion.newBuilder() to construct.
   private SearchLinkPromotion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageUri_ = "";
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -260,7 +252,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLED_FIELD_NUMBER = 5;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -504,7 +494,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -748,7 +737,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -772,7 +760,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +783,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +805,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object imageUri_ = "";
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1065,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1115,7 +1088,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1111,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1133,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1176,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -1226,7 +1194,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class SearchLinkPromotion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

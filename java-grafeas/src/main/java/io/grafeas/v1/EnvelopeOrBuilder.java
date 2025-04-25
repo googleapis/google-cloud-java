@@ -38,7 +38,6 @@ public interface EnvelopeOrBuilder
    * @return The payloadType.
    */
   java.lang.String getPayloadType();
-
   /**
    * <code>string payload_type = 2;</code>
    *
@@ -48,16 +47,12 @@ public interface EnvelopeOrBuilder
 
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   java.util.List<io.grafeas.v1.EnvelopeSignature> getSignaturesList();
-
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   io.grafeas.v1.EnvelopeSignature getSignatures(int index);
-
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   int getSignaturesCount();
-
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   java.util.List<? extends io.grafeas.v1.EnvelopeSignatureOrBuilder> getSignaturesOrBuilderList();
-
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   io.grafeas.v1.EnvelopeSignatureOrBuilder getSignaturesOrBuilder(int index);
 }

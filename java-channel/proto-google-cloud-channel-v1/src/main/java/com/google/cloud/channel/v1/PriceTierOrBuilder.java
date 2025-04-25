@@ -62,7 +62,6 @@ public interface PriceTierOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface PriceTierOrBuilder
    * @return The price.
    */
   com.google.cloud.channel.v1.Price getPrice();
-
   /**
    *
    *

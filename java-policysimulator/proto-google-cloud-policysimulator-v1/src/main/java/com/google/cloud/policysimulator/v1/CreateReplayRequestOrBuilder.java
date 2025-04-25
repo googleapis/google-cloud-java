@@ -40,7 +40,6 @@ public interface CreateReplayRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateReplayRequestOrBuilder
    * @return Whether the replay field is set.
    */
   boolean hasReplay();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CreateReplayRequestOrBuilder
    * @return The replay.
    */
   com.google.cloud.policysimulator.v1.Replay getReplay();
-
   /**
    *
    *

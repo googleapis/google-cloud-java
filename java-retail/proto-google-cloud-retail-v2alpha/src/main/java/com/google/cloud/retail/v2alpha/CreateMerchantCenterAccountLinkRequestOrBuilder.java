@@ -40,7 +40,6 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * @return Whether the merchantCenterAccountLink field is set.
    */
   boolean hasMerchantCenterAccountLink();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * @return The merchantCenterAccountLink.
    */
   com.google.cloud.retail.v2alpha.MerchantCenterAccountLink getMerchantCenterAccountLink();
-
   /**
    *
    *

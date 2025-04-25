@@ -34,7 +34,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListMetadataStoresResponse)
     ListMetadataStoresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMetadataStoresResponse.newBuilder() to construct.
   private ListMetadataStoresResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.MetadataStore> metadataStores_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.aiplatform.v1.MetadataStore> getMetadataStoresList() {
     return metadataStores_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       getMetadataStoresOrBuilderList() {
     return metadataStores_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
   public int getMetadataStoresCount() {
     return metadataStores_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
   public com.google.cloud.aiplatform.v1.MetadataStore getMetadataStores(int index) {
     return metadataStores_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return metadataStoresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return metadataStoresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return metadataStoresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         int index) {
       return getMetadataStoresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return metadataStoresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(metadataStores_);
       }
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       return getMetadataStoresFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.MetadataStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +935,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       return getMetadataStoresFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.MetadataStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +970,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1022,7 +995,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1064,6 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.OperatorState)
     OperatorStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OperatorState.newBuilder() to construct.
   private OperatorState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
   private int deploymentState_ = 0;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
   public int getDeploymentStateValue() {
     return deploymentState_;
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.configmanagement.v1.InstallError> errors_;
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.gkehub.configmanagement.v1.InstallError> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gkehub.configmanagement.v1.InstallError getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -419,7 +409,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -679,7 +668,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int deploymentState_ = 0;
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     public int getDeploymentStateValue() {
       return deploymentState_;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkehub.configmanagement.v1.DeploymentState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -868,7 +848,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -956,7 +933,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +999,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1022,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1042,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1063,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1084,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1103,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1122,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1135,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1186,7 +1152,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1170,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1184,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gkehub.configmanagement.v1.InstallError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1236,7 +1199,6 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.gkehub.configmanagement.v1.InstallError.getDefaultInstance());
     }
-
     /**
      *
      *

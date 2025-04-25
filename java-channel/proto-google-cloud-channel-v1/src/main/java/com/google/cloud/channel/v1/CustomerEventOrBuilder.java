@@ -37,7 +37,6 @@ public interface CustomerEventOrBuilder
    * @return The customer.
    */
   java.lang.String getCustomer();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CustomerEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
-
   /**
    *
    *

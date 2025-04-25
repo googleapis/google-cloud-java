@@ -42,7 +42,6 @@ public interface UpdatePreferenceSetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdatePreferenceSetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface UpdatePreferenceSetRequestOrBuilder
    * @return Whether the preferenceSet field is set.
    */
   boolean hasPreferenceSet();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdatePreferenceSetRequestOrBuilder
    * @return The preferenceSet.
    */
   com.google.cloud.migrationcenter.v1.PreferenceSet getPreferenceSet();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface UpdatePreferenceSetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

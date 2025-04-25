@@ -36,7 +36,6 @@ public interface SalesforceDataCloudPropertiesOrBuilder
    * @return The instanceUri.
    */
   java.lang.String getInstanceUri();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SalesforceDataCloudPropertiesOrBuilder
    * @return The identity.
    */
   java.lang.String getIdentity();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface SalesforceDataCloudPropertiesOrBuilder
    * @return The tenantId.
    */
   java.lang.String getTenantId();
-
   /**
    *
    *

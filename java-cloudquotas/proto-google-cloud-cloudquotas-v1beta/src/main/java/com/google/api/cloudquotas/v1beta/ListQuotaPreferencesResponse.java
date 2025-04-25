@@ -33,7 +33,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1beta.ListQuotaPreferencesResponse)
     ListQuotaPreferencesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListQuotaPreferencesResponse.newBuilder() to construct.
   private ListQuotaPreferencesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.cloudquotas.v1beta.QuotaPreference> quotaPreferences_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       getQuotaPreferencesList() {
     return quotaPreferences_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       getQuotaPreferencesOrBuilderList() {
     return quotaPreferences_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
   public int getQuotaPreferencesCount() {
     return quotaPreferences_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
   public com.google.api.cloudquotas.v1beta.QuotaPreference getQuotaPreferences(int index) {
     return quotaPreferences_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -250,7 +239,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -454,7 +442,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -760,7 +747,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return quotaPreferencesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return quotaPreferencesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return quotaPreferencesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +965,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         int index) {
       return getQuotaPreferencesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1021,7 +995,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return quotaPreferencesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1012,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(quotaPreferences_);
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       return getQuotaPreferencesFieldBuilder()
           .addBuilder(com.google.api.cloudquotas.v1beta.QuotaPreference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1069,7 +1040,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.api.cloudquotas.v1beta.QuotaPreference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1105,7 +1075,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1129,7 +1098,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1121,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1143,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1161,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1194,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1245,7 +1209,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1260,7 +1223,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1276,7 +1238,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1292,7 +1253,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1316,7 +1276,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1298,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1317,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1335,6 @@ public final class ListQuotaPreferencesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

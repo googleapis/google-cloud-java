@@ -38,7 +38,6 @@ public interface CreateOperatorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateOperatorRequestOrBuilder
    * @return The operatorId.
    */
   java.lang.String getOperatorId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateOperatorRequestOrBuilder
    * @return Whether the operator field is set.
    */
   boolean hasOperator();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateOperatorRequestOrBuilder
    * @return The operator.
    */
   com.google.cloud.visionai.v1.Operator getOperator();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateOperatorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

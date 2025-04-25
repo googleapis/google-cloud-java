@@ -38,7 +38,6 @@ public interface GetPostureTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface GetPostureTemplateRequestOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *

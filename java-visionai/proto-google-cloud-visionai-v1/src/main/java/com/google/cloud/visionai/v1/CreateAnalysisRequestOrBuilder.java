@@ -38,7 +38,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return The analysisId.
    */
   java.lang.String getAnalysisId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return Whether the analysis field is set.
    */
   boolean hasAnalysis();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return The analysis.
    */
   com.google.cloud.visionai.v1.Analysis getAnalysis();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

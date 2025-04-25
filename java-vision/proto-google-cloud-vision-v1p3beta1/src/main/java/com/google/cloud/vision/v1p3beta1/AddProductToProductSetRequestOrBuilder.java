@@ -41,7 +41,6 @@ public interface AddProductToProductSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface AddProductToProductSetRequestOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
-
   /**
    *
    *

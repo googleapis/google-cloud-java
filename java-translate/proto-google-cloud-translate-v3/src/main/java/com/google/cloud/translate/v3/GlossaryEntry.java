@@ -33,7 +33,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.GlossaryEntry)
     GlossaryEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GlossaryEntry.newBuilder() to construct.
   private GlossaryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceTerm field is set.
      */
     boolean hasSourceTerm();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceTerm.
      */
     com.google.cloud.translate.v3.GlossaryTerm getSourceTerm();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the targetTerm field is set.
      */
     boolean hasTargetTerm();
-
     /**
      *
      *
@@ -132,7 +128,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * @return The targetTerm.
      */
     com.google.cloud.translate.v3.GlossaryTerm getTargetTerm();
-
     /**
      *
      *
@@ -144,7 +139,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.translate.v3.GlossaryTermOrBuilder getTargetTermOrBuilder();
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.GlossaryEntry.GlossaryTermsPair)
       GlossaryTermsPairOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GlossaryTermsPair.newBuilder() to construct.
     private GlossaryTermsPair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -191,7 +184,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SOURCE_TERM_FIELD_NUMBER = 1;
     private com.google.cloud.translate.v3.GlossaryTerm sourceTerm_;
-
     /**
      *
      *
@@ -207,7 +199,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceTerm() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -225,7 +216,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.translate.v3.GlossaryTerm.getDefaultInstance()
           : sourceTerm_;
     }
-
     /**
      *
      *
@@ -244,7 +234,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TARGET_TERM_FIELD_NUMBER = 2;
     private com.google.cloud.translate.v3.GlossaryTerm targetTerm_;
-
     /**
      *
      *
@@ -260,7 +249,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTargetTerm() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -278,7 +266,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.translate.v3.GlossaryTerm.getDefaultInstance()
           : targetTerm_;
     }
-
     /**
      *
      *
@@ -475,7 +462,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.translate.v3.GlossaryTerm.Builder,
               com.google.cloud.translate.v3.GlossaryTermOrBuilder>
           sourceTermBuilder_;
-
       /**
        *
        *
@@ -722,7 +707,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSourceTerm() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -743,7 +727,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return sourceTermBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -766,7 +749,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -787,7 +769,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -815,7 +796,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -835,7 +815,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -850,7 +829,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSourceTermFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -869,7 +847,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
               : sourceTerm_;
         }
       }
-
       /**
        *
        *
@@ -902,7 +879,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.translate.v3.GlossaryTerm.Builder,
               com.google.cloud.translate.v3.GlossaryTermOrBuilder>
           targetTermBuilder_;
-
       /**
        *
        *
@@ -917,7 +893,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTargetTerm() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -938,7 +913,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return targetTermBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -961,7 +935,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -982,7 +955,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1010,7 +982,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1030,7 +1001,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1045,7 +1015,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTargetTermFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1064,7 +1033,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
               : targetTerm_;
         }
       }
-
       /**
        *
        *
@@ -1174,7 +1142,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.translation.v3.GlossaryTerm terms = 1;</code>
      */
     java.util.List<com.google.cloud.translate.v3.GlossaryTerm> getTermsList();
-
     /**
      *
      *
@@ -1186,7 +1153,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.translation.v3.GlossaryTerm terms = 1;</code>
      */
     com.google.cloud.translate.v3.GlossaryTerm getTerms(int index);
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.translation.v3.GlossaryTerm terms = 1;</code>
      */
     int getTermsCount();
-
     /**
      *
      *
@@ -1211,7 +1176,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.translate.v3.GlossaryTermOrBuilder>
         getTermsOrBuilderList();
-
     /**
      *
      *
@@ -1224,7 +1188,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.translate.v3.GlossaryTermOrBuilder getTermsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1241,7 +1204,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.GlossaryEntry.GlossaryTermsSet)
       GlossaryTermsSetOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GlossaryTermsSet.newBuilder() to construct.
     private GlossaryTermsSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1276,7 +1238,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.translate.v3.GlossaryTerm> terms_;
-
     /**
      *
      *
@@ -1291,7 +1252,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.translate.v3.GlossaryTerm> getTermsList() {
       return terms_;
     }
-
     /**
      *
      *
@@ -1307,7 +1267,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         getTermsOrBuilderList() {
       return terms_;
     }
-
     /**
      *
      *
@@ -1322,7 +1281,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public int getTermsCount() {
       return terms_.size();
     }
-
     /**
      *
      *
@@ -1337,7 +1295,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.translate.v3.GlossaryTerm getTerms(int index) {
       return terms_.get(index);
     }
-
     /**
      *
      *
@@ -1516,7 +1473,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1787,7 +1743,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return termsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1805,7 +1760,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return termsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1823,7 +1777,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return termsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1847,7 +1800,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1869,7 +1821,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1893,7 +1844,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1917,7 +1867,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1938,7 +1887,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1960,7 +1908,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1982,7 +1929,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2003,7 +1949,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2024,7 +1969,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2038,7 +1982,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.translate.v3.GlossaryTerm.Builder getTermsBuilder(int index) {
         return getTermsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2056,7 +1999,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return termsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2075,7 +2017,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(terms_);
         }
       }
-
       /**
        *
        *
@@ -2090,7 +2031,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return getTermsFieldBuilder()
             .addBuilder(com.google.cloud.translate.v3.GlossaryTerm.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2105,7 +2045,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return getTermsFieldBuilder()
             .addBuilder(index, com.google.cloud.translate.v3.GlossaryTerm.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2222,7 +2161,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2259,7 +2197,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2285,7 +2222,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2313,7 +2249,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TERMS_PAIR_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2329,7 +2264,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTermsPair() {
     return dataCase_ == 2;
   }
-
   /**
    *
    *
@@ -2348,7 +2282,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsPair.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2368,7 +2301,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TERMS_SET_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -2384,7 +2316,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTermsSet() {
     return dataCase_ == 3;
   }
-
   /**
    *
    *
@@ -2403,7 +2334,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsSet.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2426,7 +2356,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -2450,7 +2379,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2682,7 +2610,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2943,7 +2870,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2968,7 +2894,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2993,7 +2918,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3017,7 +2941,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3037,7 +2960,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3068,7 +2990,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsPair.Builder,
             com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsPairOrBuilder>
         termsPairBuilder_;
-
     /**
      *
      *
@@ -3084,7 +3005,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTermsPair() {
       return dataCase_ == 2;
     }
-
     /**
      *
      *
@@ -3110,7 +3030,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsPair.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3134,7 +3053,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3155,7 +3073,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3191,7 +3108,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3217,7 +3133,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3231,7 +3146,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         getTermsPairBuilder() {
       return getTermsPairFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3253,7 +3167,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsPair.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3293,7 +3206,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsSet.Builder,
             com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsSetOrBuilder>
         termsSetBuilder_;
-
     /**
      *
      *
@@ -3309,7 +3221,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTermsSet() {
       return dataCase_ == 3;
     }
-
     /**
      *
      *
@@ -3335,7 +3246,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsSet.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3358,7 +3268,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3379,7 +3288,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3415,7 +3323,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3441,7 +3348,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3455,7 +3361,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         getTermsSetBuilder() {
       return getTermsSetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3477,7 +3382,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.GlossaryEntry.GlossaryTermsSet.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3512,7 +3416,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3535,7 +3438,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3558,7 +3460,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3580,7 +3481,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3598,7 +3498,6 @@ public final class GlossaryEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

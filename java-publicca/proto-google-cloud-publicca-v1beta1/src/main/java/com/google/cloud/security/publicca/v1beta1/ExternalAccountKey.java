@@ -34,7 +34,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.security.publicca.v1beta1.ExternalAccountKey)
     ExternalAccountKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExternalAccountKey.newBuilder() to construct.
   private ExternalAccountKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
 
   public static final int B64_MAC_KEY_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString b64MacKey_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -378,7 +372,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +588,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -619,7 +611,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +634,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object keyId_ = "";
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     }
 
     private com.google.protobuf.ByteString b64MacKey_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getB64MacKey() {
       return b64MacKey_;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ExternalAccountKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabase)
     AutonomousDatabaseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutonomousDatabase.newBuilder() to construct.
   private AutonomousDatabase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entitlementId_ = "";
-
   /**
    *
    *
@@ -282,7 +274,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -312,7 +303,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adminPassword_ = "";
-
   /**
    *
    *
@@ -336,7 +326,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -363,7 +352,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   public static final int PROPERTIES_FIELD_NUMBER = 7;
   private com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties properties_;
-
   /**
    *
    *
@@ -381,7 +369,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
   public boolean hasProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -401,7 +388,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.getDefaultInstance()
         : properties_;
   }
-
   /**
    *
    *
@@ -447,7 +433,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -464,14 +449,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -485,7 +468,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -506,7 +488,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -532,7 +513,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -559,7 +539,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -591,7 +570,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cidr_ = "";
-
   /**
    *
    *
@@ -615,7 +593,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -642,7 +619,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -659,7 +635,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -676,7 +651,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -951,7 +925,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1316,7 +1289,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1341,7 +1313,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1337,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1390,7 +1360,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1379,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1405,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object database_ = "";
-
     /**
      *
      *
@@ -1462,7 +1429,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1487,7 +1453,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1511,7 +1476,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1531,7 +1495,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1521,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1582,7 +1544,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1606,7 +1567,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1629,7 +1589,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1607,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1674,7 +1632,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object entitlementId_ = "";
-
     /**
      *
      *
@@ -1698,7 +1655,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1722,7 +1678,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1745,7 +1700,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1764,7 +1718,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1743,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object adminPassword_ = "";
-
     /**
      *
      *
@@ -1813,7 +1765,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1836,7 +1787,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1858,7 +1808,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1876,7 +1825,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1906,7 +1854,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.Builder,
             com.google.cloud.oracledatabase.v1.AutonomousDatabasePropertiesOrBuilder>
         propertiesBuilder_;
-
     /**
      *
      *
@@ -1923,7 +1870,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     public boolean hasProperties() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1946,7 +1892,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return propertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1917,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1939,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2028,7 +1971,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2050,7 +1992,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2068,7 +2009,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2090,7 +2030,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
             : properties_;
       }
     }
-
     /**
      *
      *
@@ -2144,7 +2083,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2161,14 +2099,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2182,7 +2118,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2203,7 +2138,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2230,7 +2164,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2247,14 +2180,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2275,7 +2206,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -2292,7 +2222,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -2318,7 +2247,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2344,7 +2272,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2369,7 +2296,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2390,7 +2316,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2418,7 +2343,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object cidr_ = "";
-
     /**
      *
      *
@@ -2441,7 +2365,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2464,7 +2387,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2486,7 +2408,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2504,7 +2425,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2534,7 +2454,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2551,7 +2470,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2574,7 +2492,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2599,7 +2516,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2621,7 +2537,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2651,7 +2566,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2673,7 +2587,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2690,7 +2603,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2711,7 +2623,6 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
-
     /**
      *
      *

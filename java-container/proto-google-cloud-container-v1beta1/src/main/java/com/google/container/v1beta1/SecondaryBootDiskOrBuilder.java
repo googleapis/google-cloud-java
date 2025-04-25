@@ -36,7 +36,6 @@ public interface SecondaryBootDiskOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SecondaryBootDiskOrBuilder
    * @return The diskImage.
    */
   java.lang.String getDiskImage();
-
   /**
    *
    *

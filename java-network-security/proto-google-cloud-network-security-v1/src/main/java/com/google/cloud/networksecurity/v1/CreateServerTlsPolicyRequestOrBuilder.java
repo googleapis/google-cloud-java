@@ -39,7 +39,6 @@ public interface CreateServerTlsPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateServerTlsPolicyRequestOrBuilder
    * @return The serverTlsPolicyId.
    */
   java.lang.String getServerTlsPolicyId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CreateServerTlsPolicyRequestOrBuilder
    * @return Whether the serverTlsPolicy field is set.
    */
   boolean hasServerTlsPolicy();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateServerTlsPolicyRequestOrBuilder
    * @return The serverTlsPolicy.
    */
   com.google.cloud.networksecurity.v1.ServerTlsPolicy getServerTlsPolicy();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface DeleteFeatureValuesRequestOrBuilder
    * @return Whether the selectEntity field is set.
    */
   boolean hasSelectEntity();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeleteFeatureValuesRequestOrBuilder
    * @return The selectEntity.
    */
   com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest.SelectEntity getSelectEntity();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface DeleteFeatureValuesRequestOrBuilder
    * @return Whether the selectTimeRangeAndFeature field is set.
    */
   boolean hasSelectTimeRangeAndFeature();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface DeleteFeatureValuesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
       getSelectTimeRangeAndFeature();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface DeleteFeatureValuesRequestOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
-
   /**
    *
    *

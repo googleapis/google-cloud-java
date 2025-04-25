@@ -33,7 +33,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureGroup)
     FeatureGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureGroup.newBuilder() to construct.
   private FeatureGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bigQuerySource field is set.
      */
     boolean hasBigQuerySource();
-
     /**
      *
      *
@@ -114,7 +112,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return The bigQuerySource.
      */
     com.google.cloud.aiplatform.v1.BigQuerySource getBigQuerySource();
-
     /**
      *
      *
@@ -142,7 +139,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the entityIdColumns.
      */
     java.util.List<java.lang.String> getEntityIdColumnsList();
-
     /**
      *
      *
@@ -156,7 +152,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return The count of entityIdColumns.
      */
     int getEntityIdColumnsCount();
-
     /**
      *
      *
@@ -171,7 +166,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return The entityIdColumns at the given index.
      */
     java.lang.String getEntityIdColumns(int index);
-
     /**
      *
      *
@@ -218,7 +212,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeSeries field is set.
      */
     boolean hasTimeSeries();
-
     /**
      *
      *
@@ -237,7 +230,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return The timeSeries.
      */
     com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries getTimeSeries();
-
     /**
      *
      *
@@ -279,7 +271,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getDense();
   }
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureGroup.BigQuery)
       BigQueryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BigQuery.newBuilder() to construct.
     private BigQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -345,7 +335,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        * @return The timestampColumn.
        */
       java.lang.String getTimestampColumn();
-
       /**
        *
        *
@@ -362,14 +351,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTimestampColumnBytes();
     }
-
     /** Protobuf type {@code google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries} */
     public static final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)
         TimeSeriesOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use TimeSeries.newBuilder() to construct.
       private TimeSeries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -404,7 +391,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object timestampColumn_ = "";
-
       /**
        *
        *
@@ -431,7 +417,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -622,7 +607,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /** Protobuf type {@code google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries} */
       public static final class Builder
           extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -809,7 +793,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object timestampColumn_ = "";
-
         /**
          *
          *
@@ -835,7 +818,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -861,7 +843,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -886,7 +867,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -907,7 +887,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1004,7 +983,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int BIG_QUERY_SOURCE_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1.BigQuerySource bigQuerySource_;
-
     /**
      *
      *
@@ -1023,7 +1001,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigQuerySource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.BigQuerySource.getDefaultInstance()
           : bigQuerySource_;
     }
-
     /**
      *
      *
@@ -1069,7 +1045,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList entityIdColumns_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1085,7 +1060,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getEntityIdColumnsList() {
       return entityIdColumns_;
     }
-
     /**
      *
      *
@@ -1101,7 +1075,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public int getEntityIdColumnsCount() {
       return entityIdColumns_.size();
     }
-
     /**
      *
      *
@@ -1118,7 +1091,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEntityIdColumns(int index) {
       return entityIdColumns_.get(index);
     }
-
     /**
      *
      *
@@ -1138,7 +1110,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATIC_DATA_SOURCE_FIELD_NUMBER = 3;
     private boolean staticDataSource_ = false;
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TIME_SERIES_FIELD_NUMBER = 4;
     private com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries timeSeries_;
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeSeries() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1203,7 +1172,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.getDefaultInstance()
           : timeSeries_;
     }
-
     /**
      *
      *
@@ -1229,7 +1197,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DENSE_FIELD_NUMBER = 5;
     private boolean dense_ = false;
-
     /**
      *
      *
@@ -1470,7 +1437,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1747,7 +1713,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.BigQuerySource.Builder,
               com.google.cloud.aiplatform.v1.BigQuerySourceOrBuilder>
           bigQuerySourceBuilder_;
-
       /**
        *
        *
@@ -1765,7 +1730,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBigQuerySource() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1789,7 +1753,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           return bigQuerySourceBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1815,7 +1778,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1839,7 +1801,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1871,7 +1832,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1894,7 +1854,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1912,7 +1871,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getBigQuerySourceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1934,7 +1892,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
               : bigQuerySource_;
         }
       }
-
       /**
        *
        *
@@ -1973,7 +1930,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1991,7 +1947,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         entityIdColumns_.makeImmutable();
         return entityIdColumns_;
       }
-
       /**
        *
        *
@@ -2008,7 +1963,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public int getEntityIdColumnsCount() {
         return entityIdColumns_.size();
       }
-
       /**
        *
        *
@@ -2026,7 +1980,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getEntityIdColumns(int index) {
         return entityIdColumns_.get(index);
       }
-
       /**
        *
        *
@@ -2044,7 +1997,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getEntityIdColumnsBytes(int index) {
         return entityIdColumns_.getByteString(index);
       }
-
       /**
        *
        *
@@ -2070,7 +2022,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2095,7 +2046,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2117,7 +2067,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2138,7 +2087,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2166,7 +2114,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean staticDataSource_;
-
       /**
        *
        *
@@ -2182,7 +2129,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public boolean getStaticDataSource() {
         return staticDataSource_;
       }
-
       /**
        *
        *
@@ -2202,7 +2148,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2227,7 +2172,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder,
               com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder>
           timeSeriesBuilder_;
-
       /**
        *
        *
@@ -2248,7 +2192,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimeSeries() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -2275,7 +2218,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           return timeSeriesBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2305,7 +2247,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2332,7 +2273,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2369,7 +2309,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2395,7 +2334,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2417,7 +2355,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimeSeriesFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2443,7 +2380,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
               : timeSeries_;
         }
       }
-
       /**
        *
        *
@@ -2477,7 +2413,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean dense_;
-
       /**
        *
        *
@@ -2503,7 +2438,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       public boolean getDense() {
         return dense_;
       }
-
       /**
        *
        *
@@ -2533,7 +2467,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2643,7 +2576,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2675,7 +2607,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIG_QUERY_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -2694,7 +2625,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigQuery() {
     return sourceCase_ == 7;
   }
-
   /**
    *
    *
@@ -2716,7 +2646,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2741,7 +2670,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2766,7 +2694,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2794,7 +2721,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -2811,7 +2737,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2828,7 +2753,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -2846,7 +2770,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -2863,7 +2786,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2880,7 +2802,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -2900,7 +2821,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -2925,7 +2845,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2977,7 +2896,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -3004,14 +2922,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -3035,7 +2951,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -3066,7 +2981,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3102,7 +3016,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -3126,7 +3039,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3397,7 +3309,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3749,7 +3660,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.Builder,
             com.google.cloud.aiplatform.v1.FeatureGroup.BigQueryOrBuilder>
         bigQueryBuilder_;
-
     /**
      *
      *
@@ -3768,7 +3678,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigQuery() {
       return sourceCase_ == 7;
     }
-
     /**
      *
      *
@@ -3797,7 +3706,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3823,7 +3731,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3847,7 +3754,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3884,7 +3790,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3913,7 +3818,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3929,7 +3833,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.Builder getBigQueryBuilder() {
       return getBigQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3953,7 +3856,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3991,7 +3893,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4015,7 +3916,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4039,7 +3939,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4062,7 +3961,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4081,7 +3979,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4112,7 +4009,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4129,7 +4025,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4152,7 +4047,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4177,7 +4071,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4199,7 +4092,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4229,7 +4121,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4251,7 +4142,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4268,7 +4158,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4289,7 +4178,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4324,7 +4212,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4341,7 +4228,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4364,7 +4250,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4389,7 +4274,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4411,7 +4295,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4441,7 +4324,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4463,7 +4345,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4480,7 +4361,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4501,7 +4381,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4531,7 +4410,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -4555,7 +4433,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4579,7 +4456,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4602,7 +4478,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4621,7 +4496,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4671,7 +4545,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -4698,14 +4571,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -4729,7 +4600,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -4760,7 +4630,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4797,7 +4666,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4824,14 +4692,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -4862,7 +4728,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -4889,7 +4754,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -4912,7 +4776,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4935,7 +4798,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4957,7 +4819,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4975,7 +4836,6 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

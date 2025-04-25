@@ -33,7 +33,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AcquireLeaseRequest)
     AcquireLeaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AcquireLeaseRequest.newBuilder() to construct.
   private AcquireLeaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object series_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object owner_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
 
   public static final int TERM_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration term_;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
   public boolean hasTerm() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Duration getTerm() {
     return term_ == null ? com.google.protobuf.Duration.getDefaultInstance() : term_;
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
 
   public static final int LEASE_TYPE_FIELD_NUMBER = 4;
   private int leaseType_ = 0;
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
   public int getLeaseTypeValue() {
     return leaseType_;
   }
-
   /**
    *
    *
@@ -450,7 +440,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +681,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object series_ = "";
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object owner_ = "";
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         termBuilder_;
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     public boolean hasTerm() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
         return termBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +971,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +998,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1017,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1031,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTermFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
         return term_ == null ? com.google.protobuf.Duration.getDefaultInstance() : term_;
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1074,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int leaseType_ = 0;
-
     /**
      *
      *
@@ -1120,7 +1089,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
     public int getLeaseTypeValue() {
       return leaseType_;
     }
-
     /**
      *
      *
@@ -1139,7 +1107,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1124,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
           com.google.cloud.visionai.v1.LeaseType.forNumber(leaseType_);
       return result == null ? com.google.cloud.visionai.v1.LeaseType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1179,7 +1145,6 @@ public final class AcquireLeaseRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

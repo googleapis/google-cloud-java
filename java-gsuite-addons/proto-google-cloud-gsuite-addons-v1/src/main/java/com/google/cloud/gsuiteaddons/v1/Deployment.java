@@ -33,7 +33,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gsuiteaddons.v1.Deployment)
     DeploymentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Deployment.newBuilder() to construct.
   private Deployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList oauthScopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getOauthScopesList() {
     return oauthScopes_;
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   public int getOauthScopesCount() {
     return oauthScopes_.size();
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getOauthScopes(int index) {
     return oauthScopes_.get(index);
   }
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADD_ONS_FIELD_NUMBER = 3;
   private com.google.cloud.gsuiteaddons.v1.AddOns addOns_;
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAddOns() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gsuiteaddons.v1.AddOns getAddOns() {
     return addOns_ == null ? com.google.cloud.gsuiteaddons.v1.AddOns.getDefaultInstance() : addOns_;
   }
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +486,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -748,7 +735,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       oauthScopes_.makeImmutable();
       return oauthScopes_;
     }
-
     /**
      *
      *
@@ -905,7 +885,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public int getOauthScopesCount() {
       return oauthScopes_.size();
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getOauthScopes(int index) {
       return oauthScopes_.get(index);
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getOauthScopesBytes(int index) {
       return oauthScopes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +964,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +984,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1003,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gsuiteaddons.v1.AddOns.Builder,
             com.google.cloud.gsuiteaddons.v1.AddOnsOrBuilder>
         addOnsBuilder_;
-
     /**
      *
      *
@@ -1076,7 +1048,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAddOns() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return addOnsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1120,7 +1090,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1109,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1136,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1155,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1169,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAddOnsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1222,7 +1187,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
             : addOns_;
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1214,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1275,7 +1238,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1300,7 +1262,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1324,7 +1285,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1304,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

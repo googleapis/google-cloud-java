@@ -35,7 +35,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.GeocodingResults)
     GeocodingResultsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GeocodingResults.newBuilder() to construct.
   private GeocodingResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int ORIGIN_FIELD_NUMBER = 1;
   private com.google.maps.routing.v2.GeocodedWaypoint origin_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
   public boolean hasOrigin() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.routing.v2.GeocodedWaypoint.getDefaultInstance()
         : origin_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
 
   public static final int DESTINATION_FIELD_NUMBER = 2;
   private com.google.maps.routing.v2.GeocodedWaypoint destination_;
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
   public boolean hasDestination() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.routing.v2.GeocodedWaypoint.getDefaultInstance()
         : destination_;
   }
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.GeocodedWaypoint> intermediates_;
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.maps.routing.v2.GeocodedWaypoint> getIntermediatesList() {
     return intermediates_;
   }
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       getIntermediatesOrBuilderList() {
     return intermediates_;
   }
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
   public int getIntermediatesCount() {
     return intermediates_.size();
   }
-
   /**
    *
    *
@@ -242,7 +231,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
   public com.google.maps.routing.v2.GeocodedWaypoint getIntermediates(int index) {
     return intermediates_.get(index);
   }
-
   /**
    *
    *
@@ -448,7 +436,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -734,7 +721,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
             com.google.maps.routing.v2.GeocodedWaypoint.Builder,
             com.google.maps.routing.v2.GeocodedWaypointOrBuilder>
         originBuilder_;
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
     public boolean hasOrigin() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return originBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getOriginFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
             : origin_;
       }
     }
-
     /**
      *
      *
@@ -928,7 +906,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
             com.google.maps.routing.v2.GeocodedWaypoint.Builder,
             com.google.maps.routing.v2.GeocodedWaypointOrBuilder>
         destinationBuilder_;
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
     public boolean hasDestination() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return destinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -987,7 +962,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +982,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1009,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1028,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
             : destination_;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1121,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return intermediatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1139,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return intermediatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1157,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return intermediatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1181,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1203,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1227,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1251,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1273,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1295,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1317,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1338,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1359,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1373,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
     public com.google.maps.routing.v2.GeocodedWaypoint.Builder getIntermediatesBuilder(int index) {
       return getIntermediatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1436,7 +1392,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return intermediatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1456,7 +1411,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(intermediates_);
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1426,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       return getIntermediatesFieldBuilder()
           .addBuilder(com.google.maps.routing.v2.GeocodedWaypoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1488,7 +1441,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
       return getIntermediatesFieldBuilder()
           .addBuilder(index, com.google.maps.routing.v2.GeocodedWaypoint.getDefaultInstance());
     }
-
     /**
      *
      *

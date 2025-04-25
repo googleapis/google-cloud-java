@@ -36,7 +36,6 @@ public interface ResourceInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ResourceInfoOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ResourceInfoOrBuilder
    * @return The permission.
    */
   java.lang.String getPermission();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ResourceInfoOrBuilder
    * @return The container.
    */
   java.lang.String getContainer();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface ResourceInfoOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

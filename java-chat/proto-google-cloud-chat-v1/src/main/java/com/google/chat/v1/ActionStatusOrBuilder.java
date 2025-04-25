@@ -36,7 +36,6 @@ public interface ActionStatusOrBuilder
    * @return The enum numeric value on the wire for statusCode.
    */
   int getStatusCodeValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ActionStatusOrBuilder
    * @return The userFacingMessage.
    */
   java.lang.String getUserFacingMessage();
-
   /**
    *
    *

@@ -94,7 +94,6 @@ public enum OSPolicyComplianceState implements com.google.protobuf.ProtocolMessa
    * <code>OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public enum OSPolicyComplianceState implements com.google.protobuf.ProtocolMessa
    * <code>COMPLIANT = 1;</code>
    */
   public static final int COMPLIANT_VALUE = 1;
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public enum OSPolicyComplianceState implements com.google.protobuf.ProtocolMessa
    * <code>NON_COMPLIANT = 2;</code>
    */
   public static final int NON_COMPLIANT_VALUE = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public enum OSPolicyComplianceState implements com.google.protobuf.ProtocolMessa
    * <code>UNKNOWN = 3;</code>
    */
   public static final int UNKNOWN_VALUE = 3;
-
   /**
    *
    *

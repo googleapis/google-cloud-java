@@ -39,7 +39,6 @@ public interface CreateConversationProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateConversationProfileRequestOrBuilder
    * @return Whether the conversationProfile field is set.
    */
   boolean hasConversationProfile();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateConversationProfileRequestOrBuilder
    * @return The conversationProfile.
    */
   com.google.cloud.dialogflow.v2.ConversationProfile getConversationProfile();
-
   /**
    *
    *

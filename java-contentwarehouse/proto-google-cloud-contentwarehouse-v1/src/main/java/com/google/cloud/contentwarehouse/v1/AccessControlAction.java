@@ -34,7 +34,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.AccessControlAction)
     AccessControlActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessControlAction.newBuilder() to construct.
   private AccessControlAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
      * <code>ADD_POLICY_BINDING = 1;</code>
      */
     public static final int ADD_POLICY_BINDING_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
      * <code>REMOVE_POLICY_BINDING = 2;</code>
      */
     public static final int REMOVE_POLICY_BINDING_VALUE = 2;
-
     /**
      *
      *
@@ -252,7 +248,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int OPERATION_TYPE_FIELD_NUMBER = 1;
   private int operationType_ = 0;
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
   public int getOperationTypeValue() {
     return operationType_;
   }
-
   /**
    *
    *
@@ -294,7 +288,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
 
   public static final int POLICY_FIELD_NUMBER = 2;
   private com.google.iam.v1.Policy policy_;
-
   /**
    *
    *
@@ -312,7 +305,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -330,7 +322,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
-
   /**
    *
    *
@@ -525,7 +516,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -738,7 +728,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int operationType_ = 0;
-
     /**
      *
      *
@@ -755,7 +744,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
     public int getOperationTypeValue() {
       return operationType_;
     }
-
     /**
      *
      *
@@ -775,7 +763,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +785,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.contentwarehouse.v1.AccessControlAction.OperationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -822,7 +808,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
             com.google.iam.v1.Policy.Builder,
             com.google.iam.v1.PolicyOrBuilder>
         policyBuilder_;
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
         return policyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -911,7 +893,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +980,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
     }
-
     /**
      *
      *

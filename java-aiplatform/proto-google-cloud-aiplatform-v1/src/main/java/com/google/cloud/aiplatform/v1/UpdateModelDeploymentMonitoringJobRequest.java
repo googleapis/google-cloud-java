@@ -35,7 +35,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest)
     UpdateModelDeploymentMonitoringJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateModelDeploymentMonitoringJobRequest.newBuilder() to construct.
   private UpdateModelDeploymentMonitoringJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
   private int bitField0_;
   public static final int MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob modelDeploymentMonitoringJob_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
   public boolean hasModelDeploymentMonitoringJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
         ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.getDefaultInstance()
         : modelDeploymentMonitoringJob_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -441,7 +434,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +672,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
             com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.Builder,
             com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobOrBuilder>
         modelDeploymentMonitoringJobBuilder_;
-
     /**
      *
      *
@@ -698,7 +689,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
     public boolean hasModelDeploymentMonitoringJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -723,7 +713,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
         return modelDeploymentMonitoringJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -750,7 +739,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +762,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +795,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +817,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return getModelDeploymentMonitoringJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -873,7 +857,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
             : modelDeploymentMonitoringJob_;
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -997,7 +978,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1026,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1071,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1124,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1169,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1209,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1278,7 +1253,6 @@ public final class UpdateModelDeploymentMonitoringJobRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

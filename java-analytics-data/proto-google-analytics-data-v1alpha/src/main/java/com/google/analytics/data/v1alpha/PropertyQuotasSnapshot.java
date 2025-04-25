@@ -33,7 +33,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.PropertyQuotasSnapshot)
     PropertyQuotasSnapshotOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PropertyQuotasSnapshot.newBuilder() to construct.
   private PropertyQuotasSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
 
   public static final int CORE_PROPERTY_QUOTA_FIELD_NUMBER = 1;
   private com.google.analytics.data.v1alpha.PropertyQuota corePropertyQuota_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
   public boolean hasCorePropertyQuota() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         ? com.google.analytics.data.v1alpha.PropertyQuota.getDefaultInstance()
         : corePropertyQuota_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
 
   public static final int REALTIME_PROPERTY_QUOTA_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.PropertyQuota realtimePropertyQuota_;
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
   public boolean hasRealtimePropertyQuota() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         ? com.google.analytics.data.v1alpha.PropertyQuota.getDefaultInstance()
         : realtimePropertyQuota_;
   }
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
 
   public static final int FUNNEL_PROPERTY_QUOTA_FIELD_NUMBER = 3;
   private com.google.analytics.data.v1alpha.PropertyQuota funnelPropertyQuota_;
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
   public boolean hasFunnelPropertyQuota() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         ? com.google.analytics.data.v1alpha.PropertyQuota.getDefaultInstance()
         : funnelPropertyQuota_;
   }
-
   /**
    *
    *
@@ -482,7 +470,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -746,7 +733,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.PropertyQuota.Builder,
             com.google.analytics.data.v1alpha.PropertyQuotaOrBuilder>
         corePropertyQuotaBuilder_;
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
     public boolean hasCorePropertyQuota() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         return corePropertyQuotaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +920,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +981,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return getCorePropertyQuotaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1026,7 +1000,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
             : corePropertyQuota_;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1032,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.PropertyQuota.Builder,
             com.google.analytics.data.v1alpha.PropertyQuotaOrBuilder>
         realtimePropertyQuotaBuilder_;
-
     /**
      *
      *
@@ -1074,7 +1046,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
     public boolean hasRealtimePropertyQuota() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1095,7 +1066,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         return realtimePropertyQuotaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1088,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1108,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1137,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1156,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1171,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return getRealtimePropertyQuotaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1225,7 +1190,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
             : realtimePropertyQuota_;
       }
     }
-
     /**
      *
      *
@@ -1258,7 +1222,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.PropertyQuota.Builder,
             com.google.analytics.data.v1alpha.PropertyQuotaOrBuilder>
         funnelPropertyQuotaBuilder_;
-
     /**
      *
      *
@@ -1273,7 +1236,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
     public boolean hasFunnelPropertyQuota() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1294,7 +1256,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
         return funnelPropertyQuotaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1317,7 +1278,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1298,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1326,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1345,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1359,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
       onChanged();
       return getFunnelPropertyQuotaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1422,7 +1378,6 @@ public final class PropertyQuotasSnapshot extends com.google.protobuf.GeneratedM
             : funnelPropertyQuota_;
       }
     }
-
     /**
      *
      *

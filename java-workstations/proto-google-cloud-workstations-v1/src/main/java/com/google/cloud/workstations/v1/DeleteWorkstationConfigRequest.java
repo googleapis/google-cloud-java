@@ -33,7 +33,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.DeleteWorkstationConfigRequest)
     DeleteWorkstationConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteWorkstationConfigRequest.newBuilder() to construct.
   private DeleteWorkstationConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
 
   public static final int FORCE_FIELD_NUMBER = 4;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -406,7 +399,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -636,7 +628,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -661,7 +652,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -686,7 +676,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

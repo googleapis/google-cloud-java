@@ -40,7 +40,6 @@ public interface DeleteCloudExadataInfrastructureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface DeleteCloudExadataInfrastructureRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

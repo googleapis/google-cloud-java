@@ -36,7 +36,6 @@ public interface ExportEvaluatedExamplesOutputConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExportEvaluatedExamplesOutputConfigOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination();
-
   /**
    *
    *

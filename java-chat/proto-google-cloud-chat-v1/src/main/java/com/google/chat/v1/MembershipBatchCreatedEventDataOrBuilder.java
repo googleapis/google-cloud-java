@@ -34,7 +34,6 @@ public interface MembershipBatchCreatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MembershipCreatedEventData memberships = 1;</code>
    */
   java.util.List<com.google.chat.v1.MembershipCreatedEventData> getMembershipsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface MembershipBatchCreatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MembershipCreatedEventData memberships = 1;</code>
    */
   com.google.chat.v1.MembershipCreatedEventData getMemberships(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface MembershipBatchCreatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MembershipCreatedEventData memberships = 1;</code>
    */
   int getMembershipsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface MembershipBatchCreatedEventDataOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.MembershipCreatedEventDataOrBuilder>
       getMembershipsOrBuilderList();
-
   /**
    *
    *

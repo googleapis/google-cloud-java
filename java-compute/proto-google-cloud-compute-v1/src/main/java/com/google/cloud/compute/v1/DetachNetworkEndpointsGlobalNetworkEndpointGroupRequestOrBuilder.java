@@ -38,7 +38,6 @@ public interface DetachNetworkEndpointsGlobalNetworkEndpointGroupRequestOrBuilde
    * @return Whether the globalNetworkEndpointGroupsDetachEndpointsRequestResource field is set.
    */
   boolean hasGlobalNetworkEndpointGroupsDetachEndpointsRequestResource();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface DetachNetworkEndpointsGlobalNetworkEndpointGroupRequestOrBuilde
    */
   com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest
       getGlobalNetworkEndpointGroupsDetachEndpointsRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface DetachNetworkEndpointsGlobalNetworkEndpointGroupRequestOrBuilde
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface DetachNetworkEndpointsGlobalNetworkEndpointGroupRequestOrBuilde
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface DetachNetworkEndpointsGlobalNetworkEndpointGroupRequestOrBuilde
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface DetachNetworkEndpointsGlobalNetworkEndpointGroupRequestOrBuilde
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

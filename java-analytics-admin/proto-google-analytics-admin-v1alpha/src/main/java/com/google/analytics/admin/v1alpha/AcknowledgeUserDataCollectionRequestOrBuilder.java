@@ -38,7 +38,6 @@ public interface AcknowledgeUserDataCollectionRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface AcknowledgeUserDataCollectionRequestOrBuilder
    * @return The acknowledgement.
    */
   java.lang.String getAcknowledgement();
-
   /**
    *
    *

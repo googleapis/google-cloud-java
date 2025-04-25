@@ -37,7 +37,6 @@ public interface PublishActionOrBuilder
    * @return The topicId.
    */
   java.lang.String getTopicId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PublishActionOrBuilder
    * @return A list containing the messages.
    */
   java.util.List<java.lang.String> getMessagesList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PublishActionOrBuilder
    * @return The count of messages.
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface PublishActionOrBuilder
    * @return The messages at the given index.
    */
   java.lang.String getMessages(int index);
-
   /**
    *
    *

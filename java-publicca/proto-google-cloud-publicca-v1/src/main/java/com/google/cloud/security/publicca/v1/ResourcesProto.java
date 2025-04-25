@@ -41,20 +41,22 @@ public final class ResourcesProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "1google/cloud/security/publicca/v1/resources.proto\022!google.cloud.security.publi"
-          + "cca.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\335\001\n"
-          + "\022ExternalAccountKey\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\023\n"
-          + "\006key_id\030\002 \001(\tB\003\340A\003\022\030\n"
-          + "\013b64_mac_key\030\003 \001(\014B\003\340A\003:\204\001\352A\200\001\n"
-          + "*publicca.googleapis.com/ExternalAccountKey\022Rprojects/{project}/locations/{lo"
-          + "cation}/externalAccountKeys/{external_account_key}B\357\001\n"
-          + "%com.google.cloud.security.publicca.v1B\016ResourcesProtoP\001ZAcloud.go"
+      "\n1google/cloud/security/publicca/v1/reso"
+          + "urces.proto\022!google.cloud.security.publi"
+          + "cca.v1\032\037google/api/field_behavior.proto\032"
+          + "\031google/api/resource.proto\"\335\001\n\022ExternalA"
+          + "ccountKey\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023\n\006key_id\030\002"
+          + " \001(\tB\003\340A\003\022\030\n\013b64_mac_key\030\003 \001(\014B\003\340A\003:\204\001\352A"
+          + "\200\001\n*publicca.googleapis.com/ExternalAcco"
+          + "untKey\022Rprojects/{project}/locations/{lo"
+          + "cation}/externalAccountKeys/{external_ac"
+          + "count_key}B\357\001\n%com.google.cloud.security"
+          + ".publicca.v1B\016ResourcesProtoP\001ZAcloud.go"
           + "ogle.com/go/security/publicca/apiv1/publ"
           + "iccapb;publiccapb\370\001\001\252\002!Google.Cloud.Secu"
           + "rity.PublicCA.V1\312\002!Google\\Cloud\\Security"
-          + "\\PublicCA\\V1\352\002%Google::Cloud::Security::PublicCA::V1b\006proto3"
+          + "\\PublicCA\\V1\352\002%Google::Cloud::Security::"
+          + "PublicCA::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

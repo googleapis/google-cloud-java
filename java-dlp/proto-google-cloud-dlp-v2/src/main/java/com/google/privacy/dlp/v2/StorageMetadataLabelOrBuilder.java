@@ -36,7 +36,6 @@ public interface StorageMetadataLabelOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.StreamStatus)
     StreamStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamStatus.newBuilder() to construct.
   private StreamStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     private StatusCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAM_ID_FIELD_NUMBER = 1;
   private int streamId_ = 0;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OKAY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOkay() {
     return statusCase_ == 2;
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.Okay.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAIL_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFail() {
     return statusCase_ == 3;
   }
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.Fail.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -437,7 +428,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,7 +672,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int streamId_;
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStreamId() {
       return streamId_;
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.Okay.Builder,
             com.google.cloud.devicestreaming.v1.OkayOrBuilder>
         okayBuilder_;
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOkay() {
       return statusCase_ == 2;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Okay.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       statusCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       statusCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       statusCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.Okay.Builder getOkayBuilder() {
       return getOkayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -920,7 +899,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Okay.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.Fail.Builder,
             com.google.cloud.devicestreaming.v1.FailOrBuilder>
         failBuilder_;
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFail() {
       return statusCase_ == 3;
     }
-
     /**
      *
      *
@@ -1001,7 +977,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Fail.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1024,7 +999,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       statusCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       statusCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1050,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       statusCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1075,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1087,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.Fail.Builder getFailBuilder() {
       return getFailFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1137,7 +1107,6 @@ public final class StreamStatus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Fail.getDefaultInstance();
       }
     }
-
     /**
      *
      *

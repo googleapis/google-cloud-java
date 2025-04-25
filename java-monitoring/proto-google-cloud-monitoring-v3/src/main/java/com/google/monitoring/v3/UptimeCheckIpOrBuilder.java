@@ -36,7 +36,6 @@ public interface UptimeCheckIpOrBuilder
    * @return The enum numeric value on the wire for region.
    */
   int getRegionValue();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UptimeCheckIpOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface UptimeCheckIpOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *

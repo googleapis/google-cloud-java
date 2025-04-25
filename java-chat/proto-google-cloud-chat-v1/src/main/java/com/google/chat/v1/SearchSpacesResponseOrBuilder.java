@@ -34,7 +34,6 @@ public interface SearchSpacesResponseOrBuilder
    * <code>repeated .google.chat.v1.Space spaces = 1;</code>
    */
   java.util.List<com.google.chat.v1.Space> getSpacesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchSpacesResponseOrBuilder
    * <code>repeated .google.chat.v1.Space spaces = 1;</code>
    */
   com.google.chat.v1.Space getSpaces(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchSpacesResponseOrBuilder
    * <code>repeated .google.chat.v1.Space spaces = 1;</code>
    */
   int getSpacesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface SearchSpacesResponseOrBuilder
    * <code>repeated .google.chat.v1.Space spaces = 1;</code>
    */
   java.util.List<? extends com.google.chat.v1.SpaceOrBuilder> getSpacesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface SearchSpacesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

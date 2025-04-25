@@ -33,7 +33,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ListRuntimesResponse)
     ListRuntimesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRuntimesResponse.newBuilder() to construct.
   private ListRuntimesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.notebooks.v1.Runtime> runtimes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.notebooks.v1.Runtime> getRuntimesList() {
     return runtimes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       getRuntimesOrBuilderList() {
     return runtimes_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public int getRuntimesCount() {
     return runtimes_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.notebooks.v1.Runtime getRuntimes(int index) {
     return runtimes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -254,7 +243,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -459,7 +447,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -758,7 +745,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.notebooks.v1.Runtime.Builder getRuntimesBuilder(int index) {
       return getRuntimesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1014,7 +988,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1005,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(runtimes_);
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1018,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       return getRuntimesFieldBuilder()
           .addBuilder(com.google.cloud.notebooks.v1.Runtime.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1060,7 +1031,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       return getRuntimesFieldBuilder()
           .addBuilder(index, com.google.cloud.notebooks.v1.Runtime.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1116,7 +1085,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1108,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1130,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1148,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1181,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1234,7 +1198,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1251,7 +1214,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1269,7 +1231,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1287,7 +1248,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1313,7 +1273,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1297,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1318,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1381,7 +1338,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

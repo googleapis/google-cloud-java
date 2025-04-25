@@ -37,7 +37,6 @@ public interface ServiceReferenceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

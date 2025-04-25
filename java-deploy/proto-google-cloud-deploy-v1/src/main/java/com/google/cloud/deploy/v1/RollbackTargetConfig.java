@@ -33,7 +33,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RollbackTargetConfig)
     RollbackTargetConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RollbackTargetConfig.newBuilder() to construct.
   private RollbackTargetConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ROLLOUT_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.Rollout rollout_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRollout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
   public com.google.cloud.deploy.v1.Rollout getRollout() {
     return rollout_ == null ? com.google.cloud.deploy.v1.Rollout.getDefaultInstance() : rollout_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startingPhaseId_ = "";
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -345,7 +339,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.deploy.v1.Rollout.Builder,
             com.google.cloud.deploy.v1.RolloutOrBuilder>
         rolloutBuilder_;
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
     public boolean hasRollout() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
         return rolloutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRolloutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
             : rollout_;
       }
     }
-
     /**
      *
      *
@@ -762,7 +746,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object startingPhaseId_ = "";
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +792,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +814,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +832,6 @@ public final class RollbackTargetConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

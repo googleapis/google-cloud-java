@@ -38,7 +38,6 @@ public interface GetNpmPackageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

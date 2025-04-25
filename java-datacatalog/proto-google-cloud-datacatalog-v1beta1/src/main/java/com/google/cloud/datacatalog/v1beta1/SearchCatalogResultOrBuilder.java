@@ -37,7 +37,6 @@ public interface SearchCatalogResultOrBuilder
    * @return The enum numeric value on the wire for searchResultType.
    */
   int getSearchResultTypeValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface SearchCatalogResultOrBuilder
    * @return The searchResultSubtype.
    */
   java.lang.String getSearchResultSubtype();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface SearchCatalogResultOrBuilder
    * @return The relativeResourceName.
    */
   java.lang.String getRelativeResourceName();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface SearchCatalogResultOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public interface SearchCatalogResultOrBuilder
    * @return Whether the modifyTime field is set.
    */
   boolean hasModifyTime();
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public interface SearchCatalogResultOrBuilder
    * @return The modifyTime.
    */
   com.google.protobuf.Timestamp getModifyTime();
-
   /**
    *
    *

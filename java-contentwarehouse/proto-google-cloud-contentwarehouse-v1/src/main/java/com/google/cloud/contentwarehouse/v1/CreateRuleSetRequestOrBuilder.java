@@ -39,7 +39,6 @@ public interface CreateRuleSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateRuleSetRequestOrBuilder
    * @return Whether the ruleSet field is set.
    */
   boolean hasRuleSet();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateRuleSetRequestOrBuilder
    * @return The ruleSet.
    */
   com.google.cloud.contentwarehouse.v1.RuleSet getRuleSet();
-
   /**
    *
    *

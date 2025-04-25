@@ -33,7 +33,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaAnswer)
     QaAnswerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QaAnswer.newBuilder() to construct.
   private QaAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the strValue field is set.
      */
     boolean hasStrValue();
-
     /**
      *
      *
@@ -98,7 +96,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return The strValue.
      */
     java.lang.String getStrValue();
-
     /**
      *
      *
@@ -124,7 +121,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the numValue field is set.
      */
     boolean hasNumValue();
-
     /**
      *
      *
@@ -150,7 +146,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boolValue field is set.
      */
     boolean hasBoolValue();
-
     /**
      *
      *
@@ -176,7 +171,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the naValue field is set.
      */
     boolean hasNaValue();
-
     /**
      *
      *
@@ -203,7 +197,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return The key.
      */
     java.lang.String getKey();
-
     /**
      *
      *
@@ -230,7 +223,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the score field is set.
      */
     boolean hasScore();
-
     /**
      *
      *
@@ -257,7 +249,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the potentialScore field is set.
      */
     boolean hasPotentialScore();
-
     /**
      *
      *
@@ -286,7 +277,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the normalizedScore field is set.
      */
     boolean hasNormalizedScore();
-
     /**
      *
      *
@@ -304,7 +294,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue.ValueCase getValueCase();
   }
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue)
       AnswerValueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnswerValue.newBuilder() to construct.
     private AnswerValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -373,7 +361,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       private ValueCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -411,7 +398,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STR_VALUE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -426,7 +412,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStrValue() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -454,7 +439,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -484,7 +468,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NUM_VALUE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -500,7 +483,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNumValue() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -521,7 +503,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BOOL_VALUE_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -537,7 +518,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return valueCase_ == 4;
     }
-
     /**
      *
      *
@@ -558,7 +538,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NA_VALUE_FIELD_NUMBER = 5;
-
     /**
      *
      *
@@ -574,7 +553,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNaValue() {
       return valueCase_ == 5;
     }
-
     /**
      *
      *
@@ -598,7 +576,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -623,7 +600,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -651,7 +627,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCORE_FIELD_NUMBER = 6;
     private double score_ = 0D;
-
     /**
      *
      *
@@ -667,7 +642,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -686,7 +660,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
     public static final int POTENTIAL_SCORE_FIELD_NUMBER = 7;
     private double potentialScore_ = 0D;
-
     /**
      *
      *
@@ -703,7 +676,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPotentialScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -723,7 +695,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NORMALIZED_SCORE_FIELD_NUMBER = 8;
     private double normalizedScore_ = 0D;
-
     /**
      *
      *
@@ -741,7 +712,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNormalizedScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1046,7 +1016,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1375,7 +1344,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStrValue() {
         return valueCase_ == 2;
       }
-
       /**
        *
        *
@@ -1404,7 +1372,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1433,7 +1400,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1455,7 +1421,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1475,7 +1440,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1513,7 +1477,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNumValue() {
         return valueCase_ == 3;
       }
-
       /**
        *
        *
@@ -1531,7 +1494,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         }
         return 0D;
       }
-
       /**
        *
        *
@@ -1551,7 +1513,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1586,7 +1547,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBoolValue() {
         return valueCase_ == 4;
       }
-
       /**
        *
        *
@@ -1604,7 +1564,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         }
         return false;
       }
-
       /**
        *
        *
@@ -1624,7 +1583,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1659,7 +1617,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNaValue() {
         return valueCase_ == 5;
       }
-
       /**
        *
        *
@@ -1677,7 +1634,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         }
         return false;
       }
-
       /**
        *
        *
@@ -1697,7 +1653,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1719,7 +1674,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object key_ = "";
-
       /**
        *
        *
@@ -1743,7 +1697,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1767,7 +1720,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1790,7 +1742,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1809,7 +1760,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1835,7 +1785,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double score_;
-
       /**
        *
        *
@@ -1851,7 +1800,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScore() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -1867,7 +1815,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public double getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -1887,7 +1834,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1907,7 +1853,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double potentialScore_;
-
       /**
        *
        *
@@ -1924,7 +1869,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPotentialScore() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -1941,7 +1885,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public double getPotentialScore() {
         return potentialScore_;
       }
-
       /**
        *
        *
@@ -1962,7 +1905,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1983,7 +1925,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double normalizedScore_;
-
       /**
        *
        *
@@ -2001,7 +1942,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNormalizedScore() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -2019,7 +1959,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public double getNormalizedScore() {
         return normalizedScore_;
       }
-
       /**
        *
        *
@@ -2041,7 +1980,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2148,7 +2086,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for sourceType.
      */
     int getSourceTypeValue();
-
     /**
      *
      *
@@ -2176,7 +2113,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the answerValue field is set.
      */
     boolean hasAnswerValue();
-
     /**
      *
      *
@@ -2189,7 +2125,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
      * @return The answerValue.
      */
     com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue getAnswerValue();
-
     /**
      *
      *
@@ -2202,7 +2137,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValueOrBuilder
         getAnswerValueOrBuilder();
   }
-
   /**
    *
    *
@@ -2219,7 +2153,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSource)
       AnswerSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnswerSource.newBuilder() to construct.
     private AnswerSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2303,7 +2236,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
        * <code>SOURCE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2314,7 +2246,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
        * <code>SYSTEM_GENERATED = 1;</code>
        */
       public static final int SYSTEM_GENERATED_VALUE = 1;
-
       /**
        *
        *
@@ -2414,7 +2345,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
     private int sourceType_ = 0;
-
     /**
      *
      *
@@ -2432,7 +2362,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public int getSourceTypeValue() {
       return sourceType_;
     }
-
     /**
      *
      *
@@ -2459,7 +2388,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ANSWER_VALUE_FIELD_NUMBER = 2;
     private com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue answerValue_;
-
     /**
      *
      *
@@ -2475,7 +2403,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnswerValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2493,7 +2420,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue.getDefaultInstance()
           : answerValue_;
     }
-
     /**
      *
      *
@@ -2693,7 +2619,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2916,7 +2841,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int sourceType_ = 0;
-
       /**
        *
        *
@@ -2934,7 +2858,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public int getSourceTypeValue() {
         return sourceType_;
       }
-
       /**
        *
        *
@@ -2955,7 +2878,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2980,7 +2902,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3005,7 +2926,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3032,7 +2952,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue.Builder,
               com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValueOrBuilder>
           answerValueBuilder_;
-
       /**
        *
        *
@@ -3047,7 +2966,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnswerValue() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -3068,7 +2986,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           return answerValueBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3092,7 +3009,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3113,7 +3029,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3144,7 +3059,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3164,7 +3078,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3180,7 +3093,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAnswerValueFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3200,7 +3112,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
               : answerValue_;
         }
       }
-
       /**
        *
        *
@@ -3299,7 +3210,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object qaQuestion_ = "";
-
   /**
    *
    *
@@ -3323,7 +3233,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3352,7 +3261,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
-
   /**
    *
    *
@@ -3376,7 +3284,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3405,7 +3312,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object questionBody_ = "";
-
   /**
    *
    *
@@ -3429,7 +3335,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3456,7 +3361,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANSWER_VALUE_FIELD_NUMBER = 3;
   private com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue answerValue_;
-
   /**
    *
    *
@@ -3472,7 +3376,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnswerValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3490,7 +3393,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue.getDefaultInstance()
         : answerValue_;
   }
-
   /**
    *
    *
@@ -3513,7 +3415,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -3530,7 +3431,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
-
   /**
    *
    *
@@ -3547,7 +3447,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   public int getTagsCount() {
     return tags_.size();
   }
-
   /**
    *
    *
@@ -3565,7 +3464,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
-
   /**
    *
    *
@@ -3589,7 +3487,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSource>
       answerSources_;
-
   /**
    *
    *
@@ -3605,7 +3502,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       getAnswerSourcesList() {
     return answerSources_;
   }
-
   /**
    *
    *
@@ -3622,7 +3518,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       getAnswerSourcesOrBuilderList() {
     return answerSources_;
   }
-
   /**
    *
    *
@@ -3637,7 +3532,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
   public int getAnswerSourcesCount() {
     return answerSources_.size();
   }
-
   /**
    *
    *
@@ -3653,7 +3547,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return answerSources_.get(index);
   }
-
   /**
    *
    *
@@ -3888,7 +3781,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4218,7 +4110,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object qaQuestion_ = "";
-
     /**
      *
      *
@@ -4241,7 +4132,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4264,7 +4154,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4286,7 +4175,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4304,7 +4192,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4329,7 +4216,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object conversation_ = "";
-
     /**
      *
      *
@@ -4352,7 +4238,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4375,7 +4260,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4397,7 +4281,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4415,7 +4298,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4440,7 +4322,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object questionBody_ = "";
-
     /**
      *
      *
@@ -4463,7 +4344,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4486,7 +4366,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4508,7 +4387,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4526,7 +4404,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4556,7 +4433,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValue.Builder,
             com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerValueOrBuilder>
         answerValueBuilder_;
-
     /**
      *
      *
@@ -4571,7 +4447,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnswerValue() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4592,7 +4467,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return answerValueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4616,7 +4490,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4637,7 +4510,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4668,7 +4540,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4688,7 +4559,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4704,7 +4574,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnswerValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4724,7 +4593,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
             : answerValue_;
       }
     }
-
     /**
      *
      *
@@ -4760,7 +4628,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -4778,7 +4645,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       tags_.makeImmutable();
       return tags_;
     }
-
     /**
      *
      *
@@ -4795,7 +4661,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public int getTagsCount() {
       return tags_.size();
     }
-
     /**
      *
      *
@@ -4813,7 +4678,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
-
     /**
      *
      *
@@ -4831,7 +4695,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4857,7 +4720,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4882,7 +4744,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4904,7 +4765,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4925,7 +4785,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4989,7 +4848,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return answerSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5008,7 +4866,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return answerSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5028,7 +4885,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return answerSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5054,7 +4910,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5078,7 +4933,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5104,7 +4958,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5130,7 +4983,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5153,7 +5005,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5177,7 +5028,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5202,7 +5052,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5224,7 +5073,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5246,7 +5094,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5262,7 +5109,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         getAnswerSourcesBuilder(int index) {
       return getAnswerSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5282,7 +5128,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return answerSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5303,7 +5148,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(answerSources_);
       }
     }
-
     /**
      *
      *
@@ -5321,7 +5165,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5340,7 +5183,6 @@ public final class QaAnswer extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.contactcenterinsights.v1.QaAnswer.AnswerSource.getDefaultInstance());
     }
-
     /**
      *
      *

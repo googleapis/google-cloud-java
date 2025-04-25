@@ -36,7 +36,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.data.v1alpha.FunnelFilterExpressionList getAndGroup();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.data.v1alpha.FunnelFilterExpressionList getOrGroup();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.data.v1alpha.FunnelFilterExpression getNotExpression();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return Whether the funnelFieldFilter field is set.
    */
   boolean hasFunnelFieldFilter();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return The funnelFieldFilter.
    */
   com.google.analytics.data.v1alpha.FunnelFieldFilter getFunnelFieldFilter();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return Whether the funnelEventFilter field is set.
    */
   boolean hasFunnelEventFilter();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface FunnelFilterExpressionOrBuilder
    * @return The funnelEventFilter.
    */
   com.google.analytics.data.v1alpha.FunnelEventFilter getFunnelEventFilter();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface PromoteReplicaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface PromoteReplicaRequestOrBuilder
    * @return The peerInstance.
    */
   java.lang.String getPeerInstance();
-
   /**
    *
    *

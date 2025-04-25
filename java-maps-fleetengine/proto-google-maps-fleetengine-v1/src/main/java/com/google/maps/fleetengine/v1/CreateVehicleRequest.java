@@ -33,7 +33,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.CreateVehicleRequest)
     CreateVehicleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateVehicleRequest.newBuilder() to construct.
   private CreateVehicleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.RequestHeader header_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         ? com.google.maps.fleetengine.v1.RequestHeader.getDefaultInstance()
         : header_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vehicleId_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VEHICLE_FIELD_NUMBER = 5;
   private com.google.maps.fleetengine.v1.Vehicle vehicle_;
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
   public boolean hasVehicle() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -335,7 +325,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         ? com.google.maps.fleetengine.v1.Vehicle.getDefaultInstance()
         : vehicle_;
   }
-
   /**
    *
    *
@@ -574,7 +563,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -827,7 +815,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
             com.google.maps.fleetengine.v1.RequestHeader.Builder,
             com.google.maps.fleetengine.v1.RequestHeaderOrBuilder>
         headerBuilder_;
-
     /**
      *
      *
@@ -842,7 +829,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -863,7 +849,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         return headerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -886,7 +871,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +890,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +917,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +936,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +950,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -988,7 +968,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
             : header_;
       }
     }
-
     /**
      *
      *
@@ -1016,7 +995,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1042,7 +1020,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1089,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1116,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object vehicleId_ = "";
-
     /**
      *
      *
@@ -1173,7 +1146,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1176,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1234,7 +1205,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1230,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1267,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
             com.google.maps.fleetengine.v1.Vehicle.Builder,
             com.google.maps.fleetengine.v1.VehicleOrBuilder>
         vehicleBuilder_;
-
     /**
      *
      *
@@ -1339,7 +1307,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
     public boolean hasVehicle() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1386,7 +1353,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
         return vehicleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1435,7 +1401,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1481,7 +1446,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1499,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1544,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1584,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getVehicleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1667,7 +1628,6 @@ public final class CreateVehicleRequest extends com.google.protobuf.GeneratedMes
             : vehicle_;
       }
     }
-
     /**
      *
      *

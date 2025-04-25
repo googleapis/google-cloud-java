@@ -38,7 +38,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the merchantId field is set.
    */
   boolean hasMerchantId();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The merchantId.
    */
   java.lang.String getMerchantId();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the merchantDisplayName field is set.
    */
   boolean hasMerchantDisplayName();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The merchantDisplayName.
    */
   java.lang.String getMerchantDisplayName();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the merchantLink field is set.
    */
   boolean hasMerchantLink();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The merchantLink.
    */
   java.lang.String getMerchantLink();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the merchantRatingLink field is set.
    */
   boolean hasMerchantRatingLink();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The merchantRatingLink.
    */
   java.lang.String getMerchantRatingLink();
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the minRating field is set.
    */
   boolean hasMinRating();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the maxRating field is set.
    */
   boolean hasMaxRating();
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the rating field is set.
    */
   boolean hasRating();
-
   /**
    *
    *
@@ -295,7 +284,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -355,7 +341,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -386,7 +371,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the reviewerId field is set.
    */
   boolean hasReviewerId();
-
   /**
    *
    *
@@ -400,7 +384,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The reviewerId.
    */
   java.lang.String getReviewerId();
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the reviewerUsername field is set.
    */
   boolean hasReviewerUsername();
-
   /**
    *
    *
@@ -440,7 +422,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The reviewerUsername.
    */
   java.lang.String getReviewerUsername();
-
   /**
    *
    *
@@ -466,7 +447,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the isAnonymous field is set.
    */
   boolean hasIsAnonymous();
-
   /**
    *
    *
@@ -494,7 +474,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the collectionMethod field is set.
    */
   boolean hasCollectionMethod();
-
   /**
    *
    *
@@ -509,7 +488,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The enum numeric value on the wire for collectionMethod.
    */
   int getCollectionMethodValue();
-
   /**
    *
    *
@@ -540,7 +518,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the reviewTime field is set.
    */
   boolean hasReviewTime();
-
   /**
    *
    *
@@ -555,7 +532,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The reviewTime.
    */
   com.google.protobuf.Timestamp getReviewTime();
-
   /**
    *
    *
@@ -581,7 +557,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the reviewLanguage field is set.
    */
   boolean hasReviewLanguage();
-
   /**
    *
    *
@@ -594,7 +569,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The reviewLanguage.
    */
   java.lang.String getReviewLanguage();
-
   /**
    *
    *
@@ -621,7 +595,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return Whether the reviewCountry field is set.
    */
   boolean hasReviewCountry();
-
   /**
    *
    *
@@ -635,7 +608,6 @@ public interface MerchantReviewAttributesOrBuilder
    * @return The reviewCountry.
    */
   java.lang.String getReviewCountry();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ResourcePolicyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -69,14 +67,12 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    * <code>optional string description = 422937596;</code>
    *
@@ -98,7 +94,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the diskConsistencyGroupPolicy field is set.
    */
   boolean hasDiskConsistencyGroupPolicy();
-
   /**
    *
    *
@@ -114,7 +109,6 @@ public interface ResourcePolicyOrBuilder
    */
   com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
       getDiskConsistencyGroupPolicy();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the groupPlacementPolicy field is set.
    */
   boolean hasGroupPlacementPolicy();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface ResourcePolicyOrBuilder
    * @return The groupPlacementPolicy.
    */
   com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy getGroupPlacementPolicy();
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the instanceSchedulePolicy field is set.
    */
   boolean hasInstanceSchedulePolicy();
-
   /**
    *
    *
@@ -228,7 +218,6 @@ public interface ResourcePolicyOrBuilder
    * @return The instanceSchedulePolicy.
    */
   com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy getInstanceSchedulePolicy();
-
   /**
    *
    *
@@ -255,7 +244,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -268,7 +256,6 @@ public interface ResourcePolicyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -307,7 +293,6 @@ public interface ResourcePolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -327,14 +312,12 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    * <code>optional string region = 138946292;</code>
    *
@@ -356,7 +339,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
-
   /**
    *
    *
@@ -371,7 +353,6 @@ public interface ResourcePolicyOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.ResourcePolicyResourceStatus getResourceStatus();
-
   /**
    *
    *
@@ -397,7 +378,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -410,7 +390,6 @@ public interface ResourcePolicyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -438,7 +417,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the snapshotSchedulePolicy field is set.
    */
   boolean hasSnapshotSchedulePolicy();
-
   /**
    *
    *
@@ -453,7 +431,6 @@ public interface ResourcePolicyOrBuilder
    * @return The snapshotSchedulePolicy.
    */
   com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy getSnapshotSchedulePolicy();
-
   /**
    *
    *
@@ -481,7 +458,6 @@ public interface ResourcePolicyOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -495,7 +471,6 @@ public interface ResourcePolicyOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *

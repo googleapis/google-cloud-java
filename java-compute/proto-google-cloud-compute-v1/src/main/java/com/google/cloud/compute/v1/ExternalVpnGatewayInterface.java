@@ -33,7 +33,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ExternalVpnGatewayInterface)
     ExternalVpnGatewayInterfaceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExternalVpnGatewayInterface.newBuilder() to construct.
   private ExternalVpnGatewayInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
   private int id_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
   public boolean hasIpAddress() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6Address_ = "";
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
   public boolean hasIpv6Address() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -432,7 +423,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +640,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int id_;
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     public int getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     }
 
     private java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -737,7 +722,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +766,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +804,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     }
 
     private java.lang.Object ipv6Address_ = "";
-
     /**
      *
      *
@@ -863,7 +842,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     public boolean hasIpv6Address() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -886,7 +864,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +924,6 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

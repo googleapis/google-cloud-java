@@ -38,7 +38,6 @@ public interface ListPhraseMatchersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface ListPhraseMatchersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface ListPhraseMatchersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

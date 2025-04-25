@@ -34,7 +34,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.AsymmetricDecryptResponse)
     AsymmetricDecryptResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AsymmetricDecryptResponse.newBuilder() to construct.
   private AsymmetricDecryptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int PLAINTEXT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString plaintext_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
 
   public static final int PLAINTEXT_CRC32C_FIELD_NUMBER = 2;
   private com.google.protobuf.Int64Value plaintextCrc32C_;
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
   public boolean hasPlaintextCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : plaintextCrc32C_;
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
 
   public static final int VERIFIED_CIPHERTEXT_CRC32C_FIELD_NUMBER = 3;
   private boolean verifiedCiphertextCrc32C_ = false;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 4;
   private int protectionLevel_ = 0;
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
-
   /**
    *
    *
@@ -441,7 +433,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +672,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     private int bitField0_;
 
     private com.google.protobuf.ByteString plaintext_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getPlaintext() {
       return plaintext_;
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         plaintextCrc32CBuilder_;
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     public boolean hasPlaintextCrc32C() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
         return plaintextCrc32CBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -839,7 +824,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +894,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +925,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return getPlaintextCrc32CFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1001,7 +981,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
             : plaintextCrc32C_;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1020,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     }
 
     private boolean verifiedCiphertextCrc32C_;
-
     /**
      *
      *
@@ -1070,7 +1048,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     public boolean getVerifiedCiphertextCrc32C() {
       return verifiedCiphertextCrc32C_;
     }
-
     /**
      *
      *
@@ -1103,7 +1080,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1112,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     }
 
     private int protectionLevel_ = 0;
-
     /**
      *
      *
@@ -1154,7 +1129,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
-
     /**
      *
      *
@@ -1175,7 +1149,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1219,7 +1191,6 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

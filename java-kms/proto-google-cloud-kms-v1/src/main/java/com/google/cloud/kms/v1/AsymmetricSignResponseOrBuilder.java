@@ -61,7 +61,6 @@ public interface AsymmetricSignResponseOrBuilder
    * @return Whether the signatureCrc32c field is set.
    */
   boolean hasSignatureCrc32C();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface AsymmetricSignResponseOrBuilder
    * @return The signatureCrc32c.
    */
   com.google.protobuf.Int64Value getSignatureCrc32C();
-
   /**
    *
    *
@@ -150,7 +148,6 @@ public interface AsymmetricSignResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -205,7 +202,6 @@ public interface AsymmetricSignResponseOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
-
   /**
    *
    *

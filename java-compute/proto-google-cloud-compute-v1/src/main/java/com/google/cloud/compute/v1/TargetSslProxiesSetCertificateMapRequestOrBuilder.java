@@ -36,7 +36,6 @@ public interface TargetSslProxiesSetCertificateMapRequestOrBuilder
    * @return Whether the certificateMap field is set.
    */
   boolean hasCertificateMap();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetSslProxiesSetCertificateMapRequestOrBuilder
    * @return The certificateMap.
    */
   java.lang.String getCertificateMap();
-
   /**
    *
    *

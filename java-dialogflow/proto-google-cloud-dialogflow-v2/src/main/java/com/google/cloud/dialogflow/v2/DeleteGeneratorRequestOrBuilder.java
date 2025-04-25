@@ -39,7 +39,6 @@ public interface DeleteGeneratorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

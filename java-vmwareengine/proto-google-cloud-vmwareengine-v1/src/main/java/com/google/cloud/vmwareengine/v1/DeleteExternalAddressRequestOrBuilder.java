@@ -42,7 +42,6 @@ public interface DeleteExternalAddressRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface DeleteExternalAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

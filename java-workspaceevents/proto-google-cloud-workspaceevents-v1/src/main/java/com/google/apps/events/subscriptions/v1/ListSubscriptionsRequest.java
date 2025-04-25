@@ -34,7 +34,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.ListSubscriptionsRequest)
     ListSubscriptionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSubscriptionsRequest.newBuilder() to construct.
   private ListSubscriptionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 1;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -207,7 +202,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -437,7 +431,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +648,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int pageSize_;
-
     /**
      *
      *
@@ -677,7 +669,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -703,7 +694,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +719,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -756,7 +745,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +771,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +796,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +817,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +845,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -910,7 +894,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -960,7 +943,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1009,7 +991,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1035,6 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

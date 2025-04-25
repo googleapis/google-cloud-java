@@ -39,7 +39,6 @@ public interface PurgeErrorConfigOrBuilder
    * @return Whether the gcsPrefix field is set.
    */
   boolean hasGcsPrefix();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface PurgeErrorConfigOrBuilder
    * @return The gcsPrefix.
    */
   java.lang.String getGcsPrefix();
-
   /**
    *
    *

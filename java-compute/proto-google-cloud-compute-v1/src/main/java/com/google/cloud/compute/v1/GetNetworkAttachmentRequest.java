@@ -33,7 +33,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetNetworkAttachmentRequest)
     GetNetworkAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetNetworkAttachmentRequest.newBuilder() to construct.
   private GetNetworkAttachmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkAttachment_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -404,7 +397,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -619,7 +611,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object networkAttachment_ = "";
-
     /**
      *
      *
@@ -642,7 +633,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +888,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class GetNetworkAttachmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

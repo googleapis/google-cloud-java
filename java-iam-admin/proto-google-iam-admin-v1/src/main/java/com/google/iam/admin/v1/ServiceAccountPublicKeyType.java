@@ -72,7 +72,6 @@ public enum ServiceAccountPublicKeyType implements com.google.protobuf.ProtocolM
    * <code>TYPE_NONE = 0;</code>
    */
   public static final int TYPE_NONE_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum ServiceAccountPublicKeyType implements com.google.protobuf.ProtocolM
    * <code>TYPE_X509_PEM_FILE = 1;</code>
    */
   public static final int TYPE_X509_PEM_FILE_VALUE = 1;
-
   /**
    *
    *

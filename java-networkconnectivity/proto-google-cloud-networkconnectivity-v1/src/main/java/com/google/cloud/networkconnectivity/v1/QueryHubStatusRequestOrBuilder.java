@@ -38,7 +38,6 @@ public interface QueryHubStatusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface QueryHubStatusRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface QueryHubStatusRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public interface QueryHubStatusRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public interface QueryHubStatusRequestOrBuilder
    * @return The groupBy.
    */
   java.lang.String getGroupBy();
-
   /**
    *
    *

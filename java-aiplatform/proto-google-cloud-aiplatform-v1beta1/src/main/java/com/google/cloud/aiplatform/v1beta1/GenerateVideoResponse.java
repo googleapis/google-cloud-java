@@ -33,7 +33,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerateVideoResponse)
     GenerateVideoResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateVideoResponse.newBuilder() to construct.
   private GenerateVideoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList generatedSamples_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getGeneratedSamplesList() {
     return generatedSamples_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public int getGeneratedSamplesCount() {
     return generatedSamples_.size();
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getGeneratedSamples(int index) {
     return generatedSamples_.get(index);
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
 
   public static final int RAI_MEDIA_FILTERED_COUNT_FIELD_NUMBER = 2;
   private int raiMediaFilteredCount_ = 0;
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public boolean hasRaiMediaFilteredCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList raiMediaFilteredReasons_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getRaiMediaFilteredReasonsList() {
     return raiMediaFilteredReasons_;
   }
-
   /**
    *
    *
@@ -204,7 +195,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public int getRaiMediaFilteredReasonsCount() {
     return raiMediaFilteredReasons_.size();
   }
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getRaiMediaFilteredReasons(int index) {
     return raiMediaFilteredReasons_.get(index);
   }
-
   /**
    *
    *
@@ -436,7 +425,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -674,7 +662,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -690,7 +677,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       generatedSamples_.makeImmutable();
       return generatedSamples_;
     }
-
     /**
      *
      *
@@ -705,7 +691,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public int getGeneratedSamplesCount() {
       return generatedSamples_.size();
     }
-
     /**
      *
      *
@@ -721,7 +706,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getGeneratedSamples(int index) {
       return generatedSamples_.get(index);
     }
-
     /**
      *
      *
@@ -737,7 +721,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getGeneratedSamplesBytes(int index) {
       return generatedSamples_.getByteString(index);
     }
-
     /**
      *
      *
@@ -761,7 +744,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +766,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +803,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +828,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     }
 
     private int raiMediaFilteredCount_;
-
     /**
      *
      *
@@ -865,7 +843,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public boolean hasRaiMediaFilteredCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -881,7 +858,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public int getRaiMediaFilteredCount() {
       return raiMediaFilteredCount_;
     }
-
     /**
      *
      *
@@ -901,7 +877,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +905,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -946,7 +920,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       raiMediaFilteredReasons_.makeImmutable();
       return raiMediaFilteredReasons_;
     }
-
     /**
      *
      *
@@ -961,7 +934,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public int getRaiMediaFilteredReasonsCount() {
       return raiMediaFilteredReasons_.size();
     }
-
     /**
      *
      *
@@ -977,7 +949,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getRaiMediaFilteredReasons(int index) {
       return raiMediaFilteredReasons_.get(index);
     }
-
     /**
      *
      *
@@ -993,7 +964,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getRaiMediaFilteredReasonsBytes(int index) {
       return raiMediaFilteredReasons_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1017,7 +987,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1009,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1028,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1046,6 @@ public final class GenerateVideoResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

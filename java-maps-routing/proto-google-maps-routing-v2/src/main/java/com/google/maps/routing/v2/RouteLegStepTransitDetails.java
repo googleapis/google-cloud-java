@@ -33,7 +33,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegStepTransitDetails)
     RouteLegStepTransitDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouteLegStepTransitDetails.newBuilder() to construct.
   private RouteLegStepTransitDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return Whether the arrivalStop field is set.
      */
     boolean hasArrivalStop();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return The arrivalStop.
      */
     com.google.maps.routing.v2.TransitStop getArrivalStop();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return Whether the arrivalTime field is set.
      */
     boolean hasArrivalTime();
-
     /**
      *
      *
@@ -132,7 +128,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return The arrivalTime.
      */
     com.google.protobuf.Timestamp getArrivalTime();
-
     /**
      *
      *
@@ -156,7 +151,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return Whether the departureStop field is set.
      */
     boolean hasDepartureStop();
-
     /**
      *
      *
@@ -169,7 +163,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return The departureStop.
      */
     com.google.maps.routing.v2.TransitStop getDepartureStop();
-
     /**
      *
      *
@@ -193,7 +186,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return Whether the departureTime field is set.
      */
     boolean hasDepartureTime();
-
     /**
      *
      *
@@ -206,7 +198,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return The departureTime.
      */
     com.google.protobuf.Timestamp getDepartureTime();
-
     /**
      *
      *
@@ -218,7 +209,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      */
     com.google.protobuf.TimestampOrBuilder getDepartureTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetails)
       TransitStopDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TransitStopDetails.newBuilder() to construct.
     private TransitStopDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -266,7 +255,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     private int bitField0_;
     public static final int ARRIVAL_STOP_FIELD_NUMBER = 1;
     private com.google.maps.routing.v2.TransitStop arrivalStop_;
-
     /**
      *
      *
@@ -282,7 +270,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasArrivalStop() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -300,7 +287,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           ? com.google.maps.routing.v2.TransitStop.getDefaultInstance()
           : arrivalStop_;
     }
-
     /**
      *
      *
@@ -319,7 +305,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
     public static final int ARRIVAL_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp arrivalTime_;
-
     /**
      *
      *
@@ -335,7 +320,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasArrivalTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -353,7 +337,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : arrivalTime_;
     }
-
     /**
      *
      *
@@ -372,7 +355,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
     public static final int DEPARTURE_STOP_FIELD_NUMBER = 3;
     private com.google.maps.routing.v2.TransitStop departureStop_;
-
     /**
      *
      *
@@ -388,7 +370,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasDepartureStop() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -406,7 +387,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           ? com.google.maps.routing.v2.TransitStop.getDefaultInstance()
           : departureStop_;
     }
-
     /**
      *
      *
@@ -425,7 +405,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
     public static final int DEPARTURE_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp departureTime_;
-
     /**
      *
      *
@@ -441,7 +420,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasDepartureTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -459,7 +437,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : departureTime_;
     }
-
     /**
      *
      *
@@ -691,7 +668,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               com.google.maps.routing.v2.TransitStop.Builder,
               com.google.maps.routing.v2.TransitStopOrBuilder>
           arrivalStopBuilder_;
-
       /**
        *
        *
@@ -985,7 +960,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       public boolean hasArrivalStop() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1006,7 +980,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           return arrivalStopBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1029,7 +1002,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1050,7 +1022,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1078,7 +1049,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1098,7 +1068,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1113,7 +1082,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return getArrivalStopFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1132,7 +1100,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               : arrivalStop_;
         }
       }
-
       /**
        *
        *
@@ -1165,7 +1132,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           arrivalTimeBuilder_;
-
       /**
        *
        *
@@ -1180,7 +1146,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       public boolean hasArrivalTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1201,7 +1166,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           return arrivalTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1224,7 +1188,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1244,7 +1207,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1272,7 +1234,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1292,7 +1253,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1307,7 +1267,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return getArrivalTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1326,7 +1285,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               : arrivalTime_;
         }
       }
-
       /**
        *
        *
@@ -1359,7 +1317,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               com.google.maps.routing.v2.TransitStop.Builder,
               com.google.maps.routing.v2.TransitStopOrBuilder>
           departureStopBuilder_;
-
       /**
        *
        *
@@ -1374,7 +1331,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       public boolean hasDepartureStop() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1395,7 +1351,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           return departureStopBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1418,7 +1373,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1439,7 +1393,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1467,7 +1420,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1487,7 +1439,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1502,7 +1453,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return getDepartureStopFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1521,7 +1471,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               : departureStop_;
         }
       }
-
       /**
        *
        *
@@ -1554,7 +1503,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           departureTimeBuilder_;
-
       /**
        *
        *
@@ -1569,7 +1517,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       public boolean hasDepartureTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1590,7 +1537,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           return departureTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1613,7 +1559,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1633,7 +1578,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1661,7 +1605,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1681,7 +1624,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1696,7 +1638,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return getDepartureTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1715,7 +1656,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               : departureTime_;
         }
       }
-
       /**
        *
        *
@@ -1827,7 +1767,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return Whether the arrivalTime field is set.
      */
     boolean hasArrivalTime();
-
     /**
      *
      *
@@ -1840,7 +1779,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return The arrivalTime.
      */
     com.google.maps.routing.v2.LocalizedTime getArrivalTime();
-
     /**
      *
      *
@@ -1864,7 +1802,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return Whether the departureTime field is set.
      */
     boolean hasDepartureTime();
-
     /**
      *
      *
@@ -1877,7 +1814,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      * @return The departureTime.
      */
     com.google.maps.routing.v2.LocalizedTime getDepartureTime();
-
     /**
      *
      *
@@ -1889,7 +1825,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      */
     com.google.maps.routing.v2.LocalizedTimeOrBuilder getDepartureTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -1906,7 +1841,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegStepTransitDetails.TransitDetailsLocalizedValues)
       TransitDetailsLocalizedValuesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TransitDetailsLocalizedValues.newBuilder() to construct.
     private TransitDetailsLocalizedValues(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1941,7 +1875,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     private int bitField0_;
     public static final int ARRIVAL_TIME_FIELD_NUMBER = 1;
     private com.google.maps.routing.v2.LocalizedTime arrivalTime_;
-
     /**
      *
      *
@@ -1957,7 +1890,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasArrivalTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1975,7 +1907,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           ? com.google.maps.routing.v2.LocalizedTime.getDefaultInstance()
           : arrivalTime_;
     }
-
     /**
      *
      *
@@ -1994,7 +1925,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
     public static final int DEPARTURE_TIME_FIELD_NUMBER = 2;
     private com.google.maps.routing.v2.LocalizedTime departureTime_;
-
     /**
      *
      *
@@ -2010,7 +1940,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasDepartureTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2028,7 +1957,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           ? com.google.maps.routing.v2.LocalizedTime.getDefaultInstance()
           : departureTime_;
     }
-
     /**
      *
      *
@@ -2246,7 +2174,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2494,7 +2421,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               com.google.maps.routing.v2.LocalizedTime.Builder,
               com.google.maps.routing.v2.LocalizedTimeOrBuilder>
           arrivalTimeBuilder_;
-
       /**
        *
        *
@@ -2509,7 +2435,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       public boolean hasArrivalTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2530,7 +2455,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           return arrivalTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2553,7 +2477,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2574,7 +2497,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2602,7 +2524,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2622,7 +2543,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2637,7 +2557,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return getArrivalTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2656,7 +2575,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               : arrivalTime_;
         }
       }
-
       /**
        *
        *
@@ -2689,7 +2607,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               com.google.maps.routing.v2.LocalizedTime.Builder,
               com.google.maps.routing.v2.LocalizedTimeOrBuilder>
           departureTimeBuilder_;
-
       /**
        *
        *
@@ -2704,7 +2621,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       public boolean hasDepartureTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2725,7 +2641,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
           return departureTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2748,7 +2663,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2769,7 +2683,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2797,7 +2710,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2817,7 +2729,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2832,7 +2743,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         onChanged();
         return getDepartureTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2851,7 +2761,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
               : departureTime_;
         }
       }
-
       /**
        *
        *
@@ -2951,7 +2860,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int STOP_DETAILS_FIELD_NUMBER = 1;
   private com.google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetails stopDetails_;
-
   /**
    *
    *
@@ -2968,7 +2876,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   public boolean hasStopDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2988,7 +2895,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             .getDefaultInstance()
         : stopDetails_;
   }
-
   /**
    *
    *
@@ -3011,7 +2917,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   public static final int LOCALIZED_VALUES_FIELD_NUMBER = 2;
   private com.google.maps.routing.v2.RouteLegStepTransitDetails.TransitDetailsLocalizedValues
       localizedValues_;
-
   /**
    *
    *
@@ -3029,7 +2934,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   public boolean hasLocalizedValues() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3051,7 +2955,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             .getDefaultInstance()
         : localizedValues_;
   }
-
   /**
    *
    *
@@ -3077,7 +2980,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headsign_ = "";
-
   /**
    *
    *
@@ -3103,7 +3005,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -3132,7 +3033,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
   public static final int HEADWAY_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration headway_;
-
   /**
    *
    *
@@ -3150,7 +3050,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   public boolean hasHeadway() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3168,7 +3067,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   public com.google.protobuf.Duration getHeadway() {
     return headway_ == null ? com.google.protobuf.Duration.getDefaultInstance() : headway_;
   }
-
   /**
    *
    *
@@ -3187,7 +3085,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
   public static final int TRANSIT_LINE_FIELD_NUMBER = 5;
   private com.google.maps.routing.v2.TransitLine transitLine_;
-
   /**
    *
    *
@@ -3203,7 +3100,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
   public boolean hasTransitLine() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3221,7 +3117,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         ? com.google.maps.routing.v2.TransitLine.getDefaultInstance()
         : transitLine_;
   }
-
   /**
    *
    *
@@ -3240,7 +3135,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
   public static final int STOP_COUNT_FIELD_NUMBER = 6;
   private int stopCount_ = 0;
-
   /**
    *
    *
@@ -3264,7 +3158,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tripShortText_ = "";
-
   /**
    *
    *
@@ -3291,7 +3184,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -3553,7 +3445,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3860,7 +3751,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             com.google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetails.Builder,
             com.google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetailsOrBuilder>
         stopDetailsBuilder_;
-
     /**
      *
      *
@@ -3876,7 +3766,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasStopDetails() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3900,7 +3789,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return stopDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3925,7 +3813,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3948,7 +3835,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3980,7 +3866,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4001,7 +3886,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4018,7 +3902,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return getStopDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4040,7 +3923,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             : stopDetails_;
       }
     }
-
     /**
      *
      *
@@ -4077,7 +3959,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             com.google.maps.routing.v2.RouteLegStepTransitDetails
                 .TransitDetailsLocalizedValuesOrBuilder>
         localizedValuesBuilder_;
-
     /**
      *
      *
@@ -4094,7 +3975,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasLocalizedValues() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4119,7 +3999,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return localizedValuesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4145,7 +4024,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4169,7 +4047,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4202,7 +4079,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4224,7 +4100,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4243,7 +4118,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return getLocalizedValuesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4267,7 +4141,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             : localizedValues_;
       }
     }
-
     /**
      *
      *
@@ -4301,7 +4174,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object headsign_ = "";
-
     /**
      *
      *
@@ -4326,7 +4198,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4351,7 +4222,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4375,7 +4245,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4395,7 +4264,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4427,7 +4295,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         headwayBuilder_;
-
     /**
      *
      *
@@ -4444,7 +4311,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasHeadway() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4465,7 +4331,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return headwayBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4490,7 +4355,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4512,7 +4376,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4542,7 +4405,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4564,7 +4426,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4581,7 +4442,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return getHeadwayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4600,7 +4460,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return headway_ == null ? com.google.protobuf.Duration.getDefaultInstance() : headway_;
       }
     }
-
     /**
      *
      *
@@ -4635,7 +4494,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             com.google.maps.routing.v2.TransitLine.Builder,
             com.google.maps.routing.v2.TransitLineOrBuilder>
         transitLineBuilder_;
-
     /**
      *
      *
@@ -4650,7 +4508,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public boolean hasTransitLine() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4671,7 +4528,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return transitLineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4694,7 +4550,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4714,7 +4569,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4742,7 +4596,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4762,7 +4615,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4777,7 +4629,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return getTransitLineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4796,7 +4647,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
             : transitLine_;
       }
     }
-
     /**
      *
      *
@@ -4824,7 +4674,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     }
 
     private int stopCount_;
-
     /**
      *
      *
@@ -4843,7 +4692,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     public int getStopCount() {
       return stopCount_;
     }
-
     /**
      *
      *
@@ -4866,7 +4714,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4889,7 +4736,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
     }
 
     private java.lang.Object tripShortText_ = "";
-
     /**
      *
      *
@@ -4915,7 +4761,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4941,7 +4786,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4966,7 +4810,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4987,7 +4830,6 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

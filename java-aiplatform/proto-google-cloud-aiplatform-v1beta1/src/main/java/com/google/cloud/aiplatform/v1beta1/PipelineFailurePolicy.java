@@ -79,7 +79,6 @@ public enum PipelineFailurePolicy implements com.google.protobuf.ProtocolMessage
    * <code>PIPELINE_FAILURE_POLICY_UNSPECIFIED = 0;</code>
    */
   public static final int PIPELINE_FAILURE_POLICY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public enum PipelineFailurePolicy implements com.google.protobuf.ProtocolMessage
    * <code>PIPELINE_FAILURE_POLICY_FAIL_SLOW = 1;</code>
    */
   public static final int PIPELINE_FAILURE_POLICY_FAIL_SLOW_VALUE = 1;
-
   /**
    *
    *

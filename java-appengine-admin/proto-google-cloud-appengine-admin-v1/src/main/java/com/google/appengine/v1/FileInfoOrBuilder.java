@@ -38,7 +38,6 @@ public interface FileInfoOrBuilder
    * @return The sourceUrl.
    */
   java.lang.String getSourceUrl();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface FileInfoOrBuilder
    * @return The sha1Sum.
    */
   java.lang.String getSha1Sum();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface FileInfoOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

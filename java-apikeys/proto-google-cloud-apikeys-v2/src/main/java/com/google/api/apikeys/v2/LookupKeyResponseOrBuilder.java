@@ -36,7 +36,6 @@ public interface LookupKeyResponseOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface LookupKeyResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

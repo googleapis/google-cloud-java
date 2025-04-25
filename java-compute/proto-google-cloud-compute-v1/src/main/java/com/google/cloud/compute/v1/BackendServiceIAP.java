@@ -33,7 +33,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceIAP)
     BackendServiceIAPOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackendServiceIAP.newBuilder() to construct.
   private BackendServiceIAP(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1018689;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oauth2ClientId_ = "";
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   public boolean hasOauth2ClientId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oauth2ClientSecret_ = "";
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   public boolean hasOauth2ClientSecret() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +235,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oauth2ClientSecretSha256_ = "";
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   public boolean hasOauth2ClientSecretSha256() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -519,7 +507,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -752,7 +739,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object oauth2ClientId_ = "";
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     public boolean hasOauth2ClientId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +903,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object oauth2ClientSecret_ = "";
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     public boolean hasOauth2ClientSecret() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +985,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1006,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1023,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object oauth2ClientSecretSha256_ = "";
-
     /**
      *
      *
@@ -1091,7 +1061,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     public boolean hasOauth2ClientSecretSha256() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1114,7 +1083,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1105,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1126,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1143,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

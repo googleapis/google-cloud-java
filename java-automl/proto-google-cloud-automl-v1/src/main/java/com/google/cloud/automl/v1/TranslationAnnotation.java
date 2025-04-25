@@ -33,7 +33,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TranslationAnnotation)
     TranslationAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslationAnnotation.newBuilder() to construct.
   private TranslationAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int TRANSLATED_CONTENT_FIELD_NUMBER = 1;
   private com.google.cloud.automl.v1.TextSnippet translatedContent_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
   public boolean hasTranslatedContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()
         : translatedContent_;
   }
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -488,7 +483,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
             com.google.cloud.automl.v1.TextSnippet.Builder,
             com.google.cloud.automl.v1.TextSnippetOrBuilder>
         translatedContentBuilder_;
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
     public boolean hasTranslatedContent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
         return translatedContentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +559,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +605,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +619,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTranslatedContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -650,7 +637,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
             : translatedContent_;
       }
     }
-
     /**
      *
      *

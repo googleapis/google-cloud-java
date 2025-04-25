@@ -33,7 +33,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SynonymEntity)
     SynonymEntityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SynonymEntity.newBuilder() to construct.
   private SynonymEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceEntity_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 2;
   private int sourceType_ = 0;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
   public int getSourceTypeValue() {
     return sourceType_;
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct customFeatures_;
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
-
   /**
    *
    *
@@ -397,7 +389,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -624,7 +615,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sourceEntity_ = "";
-
     /**
      *
      *
@@ -647,7 +637,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourceType_ = 0;
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
     public int getSourceTypeValue() {
       return sourceType_;
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.clouddms.v1.DatabaseEntityType.forNumber(sourceType_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseEntityType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
-
     /**
      *
      *
@@ -855,7 +835,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -876,7 +855,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
         return customFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +923,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +942,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +956,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1001,7 +974,6 @@ public final class SynonymEntity extends com.google.protobuf.GeneratedMessageV3
             : customFeatures_;
       }
     }
-
     /**
      *
      *

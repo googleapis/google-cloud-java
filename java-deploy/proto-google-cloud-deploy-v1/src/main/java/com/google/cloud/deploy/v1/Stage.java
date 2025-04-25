@@ -33,7 +33,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Stage)
     StageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Stage.newBuilder() to construct.
   private Stage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetId_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList profiles_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getProfilesList() {
     return profiles_;
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public int getProfilesCount() {
     return profiles_.size();
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getProfiles(int index) {
     return profiles_.get(index);
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STRATEGY_FIELD_NUMBER = 5;
   private com.google.cloud.deploy.v1.Strategy strategy_;
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStrategy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.Strategy getStrategy() {
     return strategy_ == null ? com.google.cloud.deploy.v1.Strategy.getDefaultInstance() : strategy_;
   }
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.DeployParameters> deployParameters_;
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.deploy.v1.DeployParameters> getDeployParametersList() {
     return deployParameters_;
   }
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       getDeployParametersOrBuilderList() {
     return deployParameters_;
   }
-
   /**
    *
    *
@@ -306,7 +293,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public int getDeployParametersCount() {
     return deployParameters_.size();
   }
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.DeployParameters getDeployParameters(int index) {
     return deployParameters_.get(index);
   }
-
   /**
    *
    *
@@ -538,7 +523,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -833,7 +817,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object targetId_ = "";
-
     /**
      *
      *
@@ -861,7 +844,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +871,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       profiles_.makeImmutable();
       return profiles_;
     }
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public int getProfilesCount() {
       return profiles_.size();
     }
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProfiles(int index) {
       return profiles_.get(index);
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getProfilesBytes(int index) {
       return profiles_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1069,7 +1043,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1066,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1086,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1136,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Strategy.Builder,
             com.google.cloud.deploy.v1.StrategyOrBuilder>
         strategyBuilder_;
-
     /**
      *
      *
@@ -1183,7 +1152,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStrategy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1206,7 +1174,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return strategyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1198,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1219,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1248,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1269,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1285,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1343,7 +1305,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
             : strategy_;
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1368,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return deployParametersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1426,7 +1386,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return deployParametersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1445,7 +1404,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return deployParametersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1429,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1494,7 +1451,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1475,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1500,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1568,7 +1522,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1544,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1566,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1587,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1658,7 +1608,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1674,7 +1623,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDeployParametersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1694,7 +1642,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return deployParametersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1661,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(deployParameters_);
       }
     }
-
     /**
      *
      *
@@ -1730,7 +1676,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return getDeployParametersFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.DeployParameters.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1747,7 +1692,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return getDeployParametersFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.DeployParameters.getDefaultInstance());
     }
-
     /**
      *
      *

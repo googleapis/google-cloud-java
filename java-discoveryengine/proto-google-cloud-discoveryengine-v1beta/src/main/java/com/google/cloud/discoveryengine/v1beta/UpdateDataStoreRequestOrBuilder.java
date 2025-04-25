@@ -46,7 +46,6 @@ public interface UpdateDataStoreRequestOrBuilder
    * @return Whether the dataStore field is set.
    */
   boolean hasDataStore();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateDataStoreRequestOrBuilder
    * @return The dataStore.
    */
   com.google.cloud.discoveryengine.v1beta.DataStore getDataStore();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface UpdateDataStoreRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface UpdateDataStoreRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

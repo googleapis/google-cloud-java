@@ -38,7 +38,6 @@ public interface CertificateProviderInstanceOrBuilder
    * @return The pluginInstance.
    */
   java.lang.String getPluginInstance();
-
   /**
    *
    *

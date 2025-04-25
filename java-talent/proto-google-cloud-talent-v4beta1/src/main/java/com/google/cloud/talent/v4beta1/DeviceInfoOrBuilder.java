@@ -36,7 +36,6 @@ public interface DeviceInfoOrBuilder
    * @return The enum numeric value on the wire for deviceType.
    */
   int getDeviceTypeValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DeviceInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

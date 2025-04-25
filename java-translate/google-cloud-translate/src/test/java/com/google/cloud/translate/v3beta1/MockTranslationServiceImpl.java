@@ -115,8 +115,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SupportedLanguages.class.getName(),
                   Exception.class.getName())));
@@ -180,8 +179,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -33,7 +33,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.Sku)
     SkuOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Sku.newBuilder() to construct.
   private Sku(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object skuId_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORY_FIELD_NUMBER = 4;
   private com.google.cloud.billing.v1.Category category_;
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCategory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.billing.v1.Category.getDefaultInstance()
         : category_;
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceRegions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getServiceRegionsList() {
     return serviceRegions_;
   }
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public int getServiceRegionsCount() {
     return serviceRegions_.size();
   }
-
   /**
    *
    *
@@ -344,7 +331,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getServiceRegions(int index) {
     return serviceRegions_.get(index);
   }
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.v1.PricingInfo> pricingInfo_;
-
   /**
    *
    *
@@ -381,7 +366,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.billing.v1.PricingInfo> getPricingInfoList() {
     return pricingInfo_;
   }
-
   /**
    *
    *
@@ -396,7 +380,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       getPricingInfoOrBuilderList() {
     return pricingInfo_;
   }
-
   /**
    *
    *
@@ -410,7 +393,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public int getPricingInfoCount() {
     return pricingInfo_.size();
   }
-
   /**
    *
    *
@@ -424,7 +406,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.billing.v1.PricingInfo getPricingInfo(int index) {
     return pricingInfo_.get(index);
   }
-
   /**
    *
    *
@@ -443,7 +424,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceProviderName_ = "";
-
   /**
    *
    *
@@ -468,7 +448,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -496,7 +475,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GEO_TAXONOMY_FIELD_NUMBER = 8;
   private com.google.cloud.billing.v1.GeoTaxonomy geoTaxonomy_;
-
   /**
    *
    *
@@ -512,7 +490,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGeoTaxonomy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -530,7 +507,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.billing.v1.GeoTaxonomy.getDefaultInstance()
         : geoTaxonomy_;
   }
-
   /**
    *
    *
@@ -786,7 +762,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1145,7 +1120,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1169,7 +1143,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1166,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1188,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1206,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1231,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object skuId_ = "";
-
     /**
      *
      *
@@ -1285,7 +1254,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1277,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1332,7 +1299,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1317,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1342,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1401,7 +1365,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1425,7 +1388,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1448,7 +1410,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1428,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1458,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.billing.v1.Category.Builder,
             com.google.cloud.billing.v1.CategoryOrBuilder>
         categoryBuilder_;
-
     /**
      *
      *
@@ -1513,7 +1472,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCategory() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1534,7 +1492,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return categoryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1557,7 +1514,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1577,7 +1533,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1560,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1625,7 +1579,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1640,7 +1593,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCategoryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1659,7 +1611,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : category_;
       }
     }
-
     /**
      *
      *
@@ -1695,7 +1646,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1713,7 +1663,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       serviceRegions_.makeImmutable();
       return serviceRegions_;
     }
-
     /**
      *
      *
@@ -1730,7 +1679,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public int getServiceRegionsCount() {
       return serviceRegions_.size();
     }
-
     /**
      *
      *
@@ -1748,7 +1696,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getServiceRegions(int index) {
       return serviceRegions_.get(index);
     }
-
     /**
      *
      *
@@ -1766,7 +1713,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getServiceRegionsBytes(int index) {
       return serviceRegions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1792,7 +1738,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1817,7 +1762,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1839,7 +1783,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1803,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1920,7 +1862,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return pricingInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1937,7 +1878,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return pricingInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1954,7 +1894,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return pricingInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1977,7 +1916,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1998,7 +1936,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2021,7 +1958,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2044,7 +1980,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2064,7 +1999,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2085,7 +2019,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2106,7 +2039,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2126,7 +2058,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2146,7 +2077,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2159,7 +2089,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.v1.PricingInfo.Builder getPricingInfoBuilder(int index) {
       return getPricingInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2176,7 +2105,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return pricingInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2194,7 +2122,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pricingInfo_);
       }
     }
-
     /**
      *
      *
@@ -2208,7 +2135,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return getPricingInfoFieldBuilder()
           .addBuilder(com.google.cloud.billing.v1.PricingInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2222,7 +2148,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return getPricingInfoFieldBuilder()
           .addBuilder(index, com.google.cloud.billing.v1.PricingInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2255,7 +2180,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceProviderName_ = "";
-
     /**
      *
      *
@@ -2279,7 +2203,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2303,7 +2226,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2326,7 +2248,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2345,7 +2266,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2376,7 +2296,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.billing.v1.GeoTaxonomy.Builder,
             com.google.cloud.billing.v1.GeoTaxonomyOrBuilder>
         geoTaxonomyBuilder_;
-
     /**
      *
      *
@@ -2391,7 +2310,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGeoTaxonomy() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2412,7 +2330,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return geoTaxonomyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2435,7 +2352,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2455,7 +2371,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2483,7 +2398,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2503,7 +2417,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2518,7 +2431,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGeoTaxonomyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2537,7 +2449,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : geoTaxonomy_;
       }
     }
-
     /**
      *
      *

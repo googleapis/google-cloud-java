@@ -38,7 +38,6 @@ public interface UpdateAccountTaxRequestOrBuilder
    * @return Whether the accountTax field is set.
    */
   boolean hasAccountTax();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateAccountTaxRequestOrBuilder
    * @return The accountTax.
    */
   com.google.shopping.merchant.accounts.v1beta.AccountTax getAccountTax();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateAccountTaxRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdateAccountTaxRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

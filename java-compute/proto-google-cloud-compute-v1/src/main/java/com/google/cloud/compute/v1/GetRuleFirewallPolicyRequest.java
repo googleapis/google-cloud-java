@@ -33,7 +33,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetRuleFirewallPolicyRequest)
     GetRuleFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetRuleFirewallPolicyRequest.newBuilder() to construct.
   private GetRuleFirewallPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -327,7 +322,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -528,7 +522,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
-
     /**
      *
      *
@@ -551,7 +544,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -574,7 +566,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -596,7 +587,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     }
 
     private int priority_;
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -691,7 +677,6 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

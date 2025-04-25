@@ -34,7 +34,6 @@ public interface ListKeyEventsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.KeyEvent key_events = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.KeyEvent> getKeyEventsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListKeyEventsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.KeyEvent key_events = 1;</code>
    */
   com.google.analytics.admin.v1alpha.KeyEvent getKeyEvents(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListKeyEventsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.KeyEvent key_events = 1;</code>
    */
   int getKeyEventsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListKeyEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.KeyEventOrBuilder>
       getKeyEventsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListKeyEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListSharesResponseOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.Share shares = 1;</code>
    */
   java.util.List<com.google.cloud.filestore.v1beta1.Share> getSharesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSharesResponseOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.Share shares = 1;</code>
    */
   com.google.cloud.filestore.v1beta1.Share getShares(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSharesResponseOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.Share shares = 1;</code>
    */
   int getSharesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSharesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.filestore.v1beta1.ShareOrBuilder>
       getSharesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSharesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListSharesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListSharesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListSharesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

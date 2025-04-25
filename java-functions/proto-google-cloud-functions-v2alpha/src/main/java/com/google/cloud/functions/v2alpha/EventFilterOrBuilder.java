@@ -36,7 +36,6 @@ public interface EventFilterOrBuilder
    * @return The attribute.
    */
   java.lang.String getAttribute();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EventFilterOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface EventFilterOrBuilder
    * @return The operator.
    */
   java.lang.String getOperator();
-
   /**
    *
    *

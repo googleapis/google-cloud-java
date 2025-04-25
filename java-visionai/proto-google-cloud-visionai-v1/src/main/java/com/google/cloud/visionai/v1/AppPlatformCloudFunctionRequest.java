@@ -36,7 +36,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AppPlatformCloudFunctionRequest)
     AppPlatformCloudFunctionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AppPlatformCloudFunctionRequest.newBuilder() to construct.
   private AppPlatformCloudFunctionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -98,7 +97,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
      * @return Whether the annotation field is set.
      */
     boolean hasAnnotation();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
      * @return The annotation.
      */
     com.google.protobuf.Struct getAnnotation();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
      */
     com.google.protobuf.StructOrBuilder getAnnotationOrBuilder();
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AppPlatformCloudFunctionRequest.StructedInputAnnotation)
       StructedInputAnnotationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use StructedInputAnnotation.newBuilder() to construct.
     private StructedInputAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -174,7 +169,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
     private int bitField0_;
     public static final int INGESTION_TIME_MICROS_FIELD_NUMBER = 1;
     private long ingestionTimeMicros_ = 0L;
-
     /**
      *
      *
@@ -193,7 +187,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
 
     public static final int ANNOTATION_FIELD_NUMBER = 2;
     private com.google.protobuf.Struct annotation_;
-
     /**
      *
      *
@@ -209,7 +202,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
     public boolean hasAnnotation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -225,7 +217,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
     public com.google.protobuf.Struct getAnnotation() {
       return annotation_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotation_;
     }
-
     /**
      *
      *
@@ -437,7 +428,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       private int bitField0_;
 
       private long ingestionTimeMicros_;
-
       /**
        *
        *
@@ -691,7 +680,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       public long getIngestionTimeMicros() {
         return ingestionTimeMicros_;
       }
-
       /**
        *
        *
@@ -711,7 +699,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -736,7 +723,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           annotationBuilder_;
-
       /**
        *
        *
@@ -751,7 +737,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       public boolean hasAnnotation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -772,7 +757,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
           return annotationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -795,7 +779,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -815,7 +798,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -843,7 +825,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         }
         return this;
       }
-
       /**
        *
        *
@@ -863,7 +844,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -878,7 +858,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         onChanged();
         return getAnnotationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -897,7 +876,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
               : annotation_;
         }
       }
-
       /**
        *
        *
@@ -998,7 +976,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int APP_PLATFORM_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.AppPlatformMetadata appPlatformMetadata_;
-
   /**
    *
    *
@@ -1015,7 +992,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
   public boolean hasAppPlatformMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1034,7 +1010,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         ? com.google.cloud.visionai.v1.AppPlatformMetadata.getDefaultInstance()
         : appPlatformMetadata_;
   }
-
   /**
    *
    *
@@ -1059,7 +1034,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
   private java.util.List<
           com.google.cloud.visionai.v1.AppPlatformCloudFunctionRequest.StructedInputAnnotation>
       annotations_;
-
   /**
    *
    *
@@ -1077,7 +1051,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       getAnnotationsList() {
     return annotations_;
   }
-
   /**
    *
    *
@@ -1097,7 +1070,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       getAnnotationsOrBuilderList() {
     return annotations_;
   }
-
   /**
    *
    *
@@ -1113,7 +1085,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
   public int getAnnotationsCount() {
     return annotations_.size();
   }
-
   /**
    *
    *
@@ -1130,7 +1101,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       getAnnotations(int index) {
     return annotations_.get(index);
   }
-
   /**
    *
    *
@@ -1325,7 +1295,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1604,7 +1573,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
             com.google.cloud.visionai.v1.AppPlatformMetadata.Builder,
             com.google.cloud.visionai.v1.AppPlatformMetadataOrBuilder>
         appPlatformMetadataBuilder_;
-
     /**
      *
      *
@@ -1620,7 +1588,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
     public boolean hasAppPlatformMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1642,7 +1609,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         return appPlatformMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1666,7 +1632,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1688,7 +1653,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1719,7 +1683,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1740,7 +1703,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1719,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       onChanged();
       return getAppPlatformMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1778,7 +1739,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
             : appPlatformMetadata_;
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1808,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         return annotationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1867,7 +1826,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         return annotationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1887,7 +1845,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         return annotationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1915,7 +1872,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1940,7 +1896,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1967,7 +1922,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1949,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2019,7 +1972,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2044,7 +1996,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2071,7 +2022,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2043,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2115,7 +2064,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2132,7 +2080,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         getAnnotationsBuilder(int index) {
       return getAnnotationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2153,7 +2100,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         return annotationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2176,7 +2122,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(annotations_);
       }
     }
-
     /**
      *
      *
@@ -2196,7 +2141,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
               com.google.cloud.visionai.v1.AppPlatformCloudFunctionRequest.StructedInputAnnotation
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2217,7 +2161,6 @@ public final class AppPlatformCloudFunctionRequest extends com.google.protobuf.G
               com.google.cloud.visionai.v1.AppPlatformCloudFunctionRequest.StructedInputAnnotation
                   .getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface PkixPublicKeyOrBuilder
    * @return The publicKeyPem.
    */
   java.lang.String getPublicKeyPem();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface PkixPublicKeyOrBuilder
    * @return The enum numeric value on the wire for signatureAlgorithm.
    */
   int getSignatureAlgorithmValue();
-
   /**
    *
    *

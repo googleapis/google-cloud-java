@@ -38,7 +38,6 @@ public interface FetchGitAheadBehindRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface FetchGitAheadBehindRequestOrBuilder
    * @return The remoteBranch.
    */
   java.lang.String getRemoteBranch();
-
   /**
    *
    *

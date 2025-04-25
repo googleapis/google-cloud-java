@@ -33,7 +33,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Value)
     ValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Value.newBuilder() to construct.
   private Value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT_VALUE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntValue() {
     return valueCase_ == 1;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDoubleValue() {
     return valueCase_ == 2;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return valueCase_ == 3;
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -468,7 +459,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -714,7 +704,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntValue() {
       return valueCase_ == 1;
     }
-
     /**
      *
      *
@@ -732,7 +721,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +774,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoubleValue() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -825,7 +810,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +845,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -890,7 +873,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -941,7 +922,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *

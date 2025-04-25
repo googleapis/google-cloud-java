@@ -39,7 +39,6 @@ public interface UpdateDataExchangeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateDataExchangeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateDataExchangeRequestOrBuilder
    * @return Whether the dataExchange field is set.
    */
   boolean hasDataExchange();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface UpdateDataExchangeRequestOrBuilder
    * @return The dataExchange.
    */
   com.google.cloud.bigquery.analyticshub.v1.DataExchange getDataExchange();
-
   /**
    *
    *

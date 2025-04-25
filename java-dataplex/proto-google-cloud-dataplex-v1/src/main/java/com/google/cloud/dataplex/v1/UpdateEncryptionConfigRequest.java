@@ -33,7 +33,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.UpdateEncryptionConfigRequest)
     UpdateEncryptionConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateEncryptionConfigRequest.newBuilder() to construct.
   private UpdateEncryptionConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.EncryptionConfig encryptionConfig_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
         ? com.google.cloud.dataplex.v1.EncryptionConfig.getDefaultInstance()
         : encryptionConfig_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -359,7 +352,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -584,7 +576,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
             com.google.cloud.dataplex.v1.EncryptionConfig.Builder,
             com.google.cloud.dataplex.v1.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
         return encryptionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -649,7 +638,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -763,7 +747,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
             : encryptionConfig_;
       }
     }
-
     /**
      *
      *
@@ -798,7 +781,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -816,7 +798,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +868,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -983,7 +958,6 @@ public final class UpdateEncryptionConfigRequest extends com.google.protobuf.Gen
             : updateMask_;
       }
     }
-
     /**
      *
      *

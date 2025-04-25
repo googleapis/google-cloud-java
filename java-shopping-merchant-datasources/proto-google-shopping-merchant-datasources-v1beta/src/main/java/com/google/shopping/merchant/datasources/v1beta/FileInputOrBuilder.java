@@ -40,7 +40,6 @@ public interface FileInputOrBuilder
    * @return Whether the fetchSettings field is set.
    */
   boolean hasFetchSettings();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface FileInputOrBuilder
    * @return The fetchSettings.
    */
   com.google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings getFetchSettings();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface FileInputOrBuilder
    * @return The fileName.
    */
   java.lang.String getFileName();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface FileInputOrBuilder
    * @return The enum numeric value on the wire for fileInputType.
    */
   int getFileInputTypeValue();
-
   /**
    *
    *

@@ -32,7 +32,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerActionsSummary)
     InstanceGroupManagerActionsSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerActionsSummary.newBuilder() to construct.
   private InstanceGroupManagerActionsSummary(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,7 +64,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   private int bitField0_;
   public static final int ABANDONING_FIELD_NUMBER = 440023373;
   private int abandoning_ = 0;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasAbandoning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int CREATING_FIELD_NUMBER = 209809081;
   private int creating_ = 0;
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasCreating() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int CREATING_WITHOUT_RETRIES_FIELD_NUMBER = 369916745;
   private int creatingWithoutRetries_ = 0;
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasCreatingWithoutRetries() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int DELETING_FIELD_NUMBER = 282846120;
   private int deleting_ = 0;
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasDeleting() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int NONE_FIELD_NUMBER = 3387192;
   private int none_ = 0;
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasNone() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int RECREATING_FIELD_NUMBER = 339057132;
   private int recreating_ = 0;
-
   /**
    *
    *
@@ -256,7 +244,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasRecreating() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +262,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int REFRESHING_FIELD_NUMBER = 215044903;
   private int refreshing_ = 0;
-
   /**
    *
    *
@@ -291,7 +277,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasRefreshing() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -310,7 +295,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int RESTARTING_FIELD_NUMBER = 372312947;
   private int restarting_ = 0;
-
   /**
    *
    *
@@ -326,7 +310,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasRestarting() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -345,7 +328,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int RESUMING_FIELD_NUMBER = 201100714;
   private int resuming_ = 0;
-
   /**
    *
    *
@@ -361,7 +343,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasResuming() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -380,7 +361,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int STARTING_FIELD_NUMBER = 243064896;
   private int starting_ = 0;
-
   /**
    *
    *
@@ -396,7 +376,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasStarting() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -415,7 +394,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int STOPPING_FIELD_NUMBER = 105035892;
   private int stopping_ = 0;
-
   /**
    *
    *
@@ -431,7 +409,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasStopping() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -450,7 +427,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int SUSPENDING_FIELD_NUMBER = 29113894;
   private int suspending_ = 0;
-
   /**
    *
    *
@@ -466,7 +442,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasSuspending() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -485,7 +460,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   public static final int VERIFYING_FIELD_NUMBER = 451612873;
   private int verifying_ = 0;
-
   /**
    *
    *
@@ -501,7 +475,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   public boolean hasVerifying() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -853,7 +826,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1209,7 +1181,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     private int bitField0_;
 
     private int abandoning_;
-
     /**
      *
      *
@@ -1225,7 +1196,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasAbandoning() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1241,7 +1211,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getAbandoning() {
       return abandoning_;
     }
-
     /**
      *
      *
@@ -1261,7 +1230,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1249,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int creating_;
-
     /**
      *
      *
@@ -1297,7 +1264,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasCreating() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getCreating() {
       return creating_;
     }
-
     /**
      *
      *
@@ -1333,7 +1298,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1317,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int creatingWithoutRetries_;
-
     /**
      *
      *
@@ -1369,7 +1332,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasCreatingWithoutRetries() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1385,7 +1347,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getCreatingWithoutRetries() {
       return creatingWithoutRetries_;
     }
-
     /**
      *
      *
@@ -1405,7 +1366,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1385,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int deleting_;
-
     /**
      *
      *
@@ -1441,7 +1400,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasDeleting() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1457,7 +1415,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getDeleting() {
       return deleting_;
     }
-
     /**
      *
      *
@@ -1477,7 +1434,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1453,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int none_;
-
     /**
      *
      *
@@ -1513,7 +1468,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasNone() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1529,7 +1483,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getNone() {
       return none_;
     }
-
     /**
      *
      *
@@ -1549,7 +1502,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1521,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int recreating_;
-
     /**
      *
      *
@@ -1585,7 +1536,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasRecreating() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1601,7 +1551,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getRecreating() {
       return recreating_;
     }
-
     /**
      *
      *
@@ -1621,7 +1570,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1589,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int refreshing_;
-
     /**
      *
      *
@@ -1657,7 +1604,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasRefreshing() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1673,7 +1619,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getRefreshing() {
       return refreshing_;
     }
-
     /**
      *
      *
@@ -1693,7 +1638,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1713,7 +1657,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int restarting_;
-
     /**
      *
      *
@@ -1729,7 +1672,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasRestarting() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1745,7 +1687,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getRestarting() {
       return restarting_;
     }
-
     /**
      *
      *
@@ -1765,7 +1706,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1785,7 +1725,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int resuming_;
-
     /**
      *
      *
@@ -1801,7 +1740,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasResuming() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -1817,7 +1755,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getResuming() {
       return resuming_;
     }
-
     /**
      *
      *
@@ -1837,7 +1774,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1793,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int starting_;
-
     /**
      *
      *
@@ -1873,7 +1808,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasStarting() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -1889,7 +1823,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getStarting() {
       return starting_;
     }
-
     /**
      *
      *
@@ -1909,7 +1842,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1861,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int stopping_;
-
     /**
      *
      *
@@ -1945,7 +1876,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasStopping() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -1961,7 +1891,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getStopping() {
       return stopping_;
     }
-
     /**
      *
      *
@@ -1981,7 +1910,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1929,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int suspending_;
-
     /**
      *
      *
@@ -2017,7 +1944,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasSuspending() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -2033,7 +1959,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getSuspending() {
       return suspending_;
     }
-
     /**
      *
      *
@@ -2053,7 +1978,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2073,7 +1997,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     private int verifying_;
-
     /**
      *
      *
@@ -2089,7 +2012,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public boolean hasVerifying() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -2105,7 +2027,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public int getVerifying() {
       return verifying_;
     }
-
     /**
      *
      *
@@ -2125,7 +2046,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

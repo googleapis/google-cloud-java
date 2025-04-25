@@ -39,7 +39,6 @@ public interface SplitCapacityCommitmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

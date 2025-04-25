@@ -35,7 +35,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse)
     ReadTensorboardTimeSeriesDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReadTensorboardTimeSeriesDataResponse.newBuilder() to construct.
   private ReadTensorboardTimeSeriesDataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
   private int bitField0_;
   public static final int TIME_SERIES_DATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.TimeSeriesData timeSeriesData_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
   public boolean hasTimeSeriesData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
         ? com.google.cloud.aiplatform.v1beta1.TimeSeriesData.getDefaultInstance()
         : timeSeriesData_;
   }
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
             com.google.cloud.aiplatform.v1beta1.TimeSeriesData.Builder,
             com.google.cloud.aiplatform.v1beta1.TimeSeriesDataOrBuilder>
         timeSeriesDataBuilder_;
-
     /**
      *
      *
@@ -519,7 +513,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
     public boolean hasTimeSeriesData() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -540,7 +533,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
         return timeSeriesDataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -563,7 +555,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -633,7 +622,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +636,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
       onChanged();
       return getTimeSeriesDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -668,7 +655,6 @@ public final class ReadTensorboardTimeSeriesDataResponse
             : timeSeriesData_;
       }
     }
-
     /**
      *
      *

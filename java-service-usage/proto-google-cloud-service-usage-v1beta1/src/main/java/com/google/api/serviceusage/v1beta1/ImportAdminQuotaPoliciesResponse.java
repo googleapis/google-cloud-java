@@ -33,7 +33,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse)
     ImportAdminQuotaPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportAdminQuotaPoliciesResponse.newBuilder() to construct.
   private ImportAdminQuotaPoliciesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.AdminQuotaPolicy> policies_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
   public java.util.List<com.google.api.serviceusage.v1beta1.AdminQuotaPolicy> getPoliciesList() {
     return policies_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       getPoliciesOrBuilderList() {
     return policies_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
   public int getPoliciesCount() {
     return policies_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
   public com.google.api.serviceusage.v1beta1.AdminQuotaPolicy getPolicies(int index) {
     return policies_.get(index);
   }
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +570,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
         return policiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
         return policiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
         return policiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +730,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +750,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
         int index) {
       return getPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -838,7 +818,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
         return policiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(policies_);
       }
     }
-
     /**
      *
      *
@@ -870,7 +848,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
       return getPoliciesFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.AdminQuotaPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -886,7 +863,6 @@ public final class ImportAdminQuotaPoliciesResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.AdminQuotaPolicy.getDefaultInstance());
     }
-
     /**
      *
      *

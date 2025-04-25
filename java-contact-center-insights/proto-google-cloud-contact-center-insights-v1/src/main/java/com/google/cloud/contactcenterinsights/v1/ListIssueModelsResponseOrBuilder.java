@@ -34,7 +34,6 @@ public interface ListIssueModelsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.IssueModel issue_models = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.IssueModel> getIssueModelsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListIssueModelsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.IssueModel issue_models = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModels(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListIssueModelsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.IssueModel issue_models = 1;</code>
    */
   int getIssueModelsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListIssueModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.IssueModelOrBuilder>
       getIssueModelsOrBuilderList();
-
   /**
    *
    *

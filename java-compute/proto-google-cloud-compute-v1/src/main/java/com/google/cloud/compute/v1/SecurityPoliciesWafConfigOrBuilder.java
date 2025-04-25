@@ -30,14 +30,12 @@ public interface SecurityPoliciesWafConfigOrBuilder
    * @return Whether the wafRules field is set.
    */
   boolean hasWafRules();
-
   /**
    * <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code>
    *
    * @return The wafRules.
    */
   com.google.cloud.compute.v1.PreconfiguredWafSet getWafRules();
-
   /** <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */
   com.google.cloud.compute.v1.PreconfiguredWafSetOrBuilder getWafRulesOrBuilder();
 }

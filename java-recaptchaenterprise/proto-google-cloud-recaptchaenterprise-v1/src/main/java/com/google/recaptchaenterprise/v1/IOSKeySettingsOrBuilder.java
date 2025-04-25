@@ -50,7 +50,6 @@ public interface IOSKeySettingsOrBuilder
    * @return A list containing the allowedBundleIds.
    */
   java.util.List<java.lang.String> getAllowedBundleIdsList();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface IOSKeySettingsOrBuilder
    * @return The count of allowedBundleIds.
    */
   int getAllowedBundleIdsCount();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface IOSKeySettingsOrBuilder
    * @return The allowedBundleIds at the given index.
    */
   java.lang.String getAllowedBundleIds(int index);
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface IOSKeySettingsOrBuilder
    * @return Whether the appleDeveloperId field is set.
    */
   boolean hasAppleDeveloperId();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface IOSKeySettingsOrBuilder
    * @return The appleDeveloperId.
    */
   com.google.recaptchaenterprise.v1.AppleDeveloperId getAppleDeveloperId();
-
   /**
    *
    *

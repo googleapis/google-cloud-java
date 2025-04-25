@@ -34,7 +34,6 @@ public interface VersionVariantsOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.VersionVariants.Variant variants = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.VersionVariants.Variant> getVariantsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface VersionVariantsOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.VersionVariants.Variant variants = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.VersionVariants.Variant getVariants(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface VersionVariantsOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.VersionVariants.Variant variants = 1;</code>
    */
   int getVariantsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface VersionVariantsOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.VersionVariants.VariantOrBuilder>
       getVariantsOrBuilderList();
-
   /**
    *
    *

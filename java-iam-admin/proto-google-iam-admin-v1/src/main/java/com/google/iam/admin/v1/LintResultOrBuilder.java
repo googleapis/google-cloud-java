@@ -36,7 +36,6 @@ public interface LintResultOrBuilder
    * @return The enum numeric value on the wire for level.
    */
   int getLevelValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface LintResultOrBuilder
    * @return The validationUnitName.
    */
   java.lang.String getValidationUnitName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface LintResultOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface LintResultOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface LintResultOrBuilder
    * @return The debugMessage.
    */
   java.lang.String getDebugMessage();
-
   /**
    *
    *

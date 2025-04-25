@@ -36,7 +36,6 @@ public interface ContainerOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ContainerOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ContainerOrBuilder
    * @return The fullPath.
    */
   java.lang.String getFullPath();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface ContainerOrBuilder
    * @return The rootPath.
    */
   java.lang.String getRootPath();
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public interface ContainerOrBuilder
    * @return The relativePath.
    */
   java.lang.String getRelativePath();
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public interface ContainerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface ContainerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public interface ContainerOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The severity.
    */
   java.lang.String getSeverity();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The filename.
    */
   java.lang.String getFilename();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The scriptContext.
    */
   java.lang.String getScriptContext();
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The effect.
    */
   java.lang.String getEffect();
-
   /**
    *
    *
@@ -272,7 +264,6 @@ public interface GcsReportLogMessageOrBuilder
    * @return The objectName.
    */
   java.lang.String getObjectName();
-
   /**
    *
    *

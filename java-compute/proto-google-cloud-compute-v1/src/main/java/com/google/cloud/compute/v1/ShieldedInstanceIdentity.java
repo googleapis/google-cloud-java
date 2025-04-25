@@ -33,7 +33,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ShieldedInstanceIdentity)
     ShieldedInstanceIdentityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShieldedInstanceIdentity.newBuilder() to construct.
   private ShieldedInstanceIdentity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ENCRYPTION_KEY_FIELD_NUMBER = 488268707;
   private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryptionKey_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
   public boolean hasEncryptionKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
         : encryptionKey_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
 
   public static final int SIGNING_KEY_FIELD_NUMBER = 320948261;
   private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signingKey_;
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
   public boolean hasSigningKey() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
         : signingKey_;
   }
-
   /**
    *
    *
@@ -444,7 +434,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -684,7 +673,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>
         encryptionKeyBuilder_;
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public boolean hasEncryptionKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         return encryptionKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return getEncryptionKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             : encryptionKey_;
       }
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public boolean hasKind() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +973,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>
         signingKeyBuilder_;
-
     /**
      *
      *
@@ -1045,7 +1018,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public boolean hasSigningKey() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1068,7 +1040,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         return signingKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1064,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1086,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1117,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1138,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1155,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       onChanged();
       return getSigningKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1210,7 +1176,6 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             : signingKey_;
       }
     }
-
     /**
      *
      *

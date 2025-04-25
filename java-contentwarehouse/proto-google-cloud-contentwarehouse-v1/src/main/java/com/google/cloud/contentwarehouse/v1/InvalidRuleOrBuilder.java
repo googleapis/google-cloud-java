@@ -36,7 +36,6 @@ public interface InvalidRuleOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InvalidRuleOrBuilder
    * @return The rule.
    */
   com.google.cloud.contentwarehouse.v1.Rule getRule();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface InvalidRuleOrBuilder
    * @return The error.
    */
   java.lang.String getError();
-
   /**
    *
    *

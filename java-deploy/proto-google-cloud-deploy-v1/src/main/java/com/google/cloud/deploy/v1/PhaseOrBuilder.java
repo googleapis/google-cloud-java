@@ -36,7 +36,6 @@ public interface PhaseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PhaseOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface PhaseOrBuilder
    * @return The skipMessage.
    */
   java.lang.String getSkipMessage();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface PhaseOrBuilder
    * @return Whether the deploymentJobs field is set.
    */
   boolean hasDeploymentJobs();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface PhaseOrBuilder
    * @return The deploymentJobs.
    */
   com.google.cloud.deploy.v1.DeploymentJobs getDeploymentJobs();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface PhaseOrBuilder
    * @return Whether the childRolloutJobs field is set.
    */
   boolean hasChildRolloutJobs();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface PhaseOrBuilder
    * @return The childRolloutJobs.
    */
   com.google.cloud.deploy.v1.ChildRolloutJobs getChildRolloutJobs();
-
   /**
    *
    *

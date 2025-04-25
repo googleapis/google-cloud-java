@@ -34,7 +34,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse)
     ReplaceServicePerimetersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplaceServicePerimetersResponse.newBuilder() to construct.
   private ReplaceServicePerimetersResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeter>
       servicePerimeters_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       getServicePerimetersList() {
     return servicePerimeters_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       getServicePerimetersOrBuilderList() {
     return servicePerimeters_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
   public int getServicePerimetersCount() {
     return servicePerimeters_.size();
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       int index) {
     return servicePerimeters_.get(index);
   }
-
   /**
    *
    *
@@ -333,7 +327,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -614,7 +607,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         return servicePerimetersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -634,7 +626,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         return servicePerimetersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -655,7 +646,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         return servicePerimetersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +748,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         getServicePerimetersBuilder(int index) {
       return getServicePerimetersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +899,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         return servicePerimetersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -941,7 +920,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(servicePerimeters_);
       }
     }
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
           .addBuilder(
               com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
               index,
               com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance());
     }
-
     /**
      *
      *

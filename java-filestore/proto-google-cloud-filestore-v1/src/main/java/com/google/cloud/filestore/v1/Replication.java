@@ -33,7 +33,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1.Replication)
     ReplicationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Replication.newBuilder() to construct.
   private Replication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -132,7 +130,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLE_FIELD_NUMBER = 1;
   private int role_ = 0;
-
   /**
    *
    *
@@ -248,7 +244,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getRoleValue() {
     return role_;
   }
-
   /**
    *
    *
@@ -273,7 +268,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.filestore.v1.ReplicaConfig> replicas_;
-
   /**
    *
    *
@@ -290,7 +284,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.filestore.v1.ReplicaConfig> getReplicasList() {
     return replicas_;
   }
-
   /**
    *
    *
@@ -308,7 +301,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       getReplicasOrBuilderList() {
     return replicas_;
   }
-
   /**
    *
    *
@@ -325,7 +317,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getReplicasCount() {
     return replicas_.size();
   }
-
   /**
    *
    *
@@ -342,7 +333,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.filestore.v1.ReplicaConfig getReplicas(int index) {
     return replicas_.get(index);
   }
-
   /**
    *
    *
@@ -530,7 +520,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -772,7 +761,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int role_ = 0;
-
     /**
      *
      *
@@ -790,7 +778,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getRoleValue() {
       return role_;
     }
-
     /**
      *
      *
@@ -811,7 +798,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +817,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.filestore.v1.Replication.Role.forNumber(role_);
       return result == null ? com.google.cloud.filestore.v1.Replication.Role.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +895,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return replicasBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -931,7 +914,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return replicasBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -951,7 +933,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return replicasBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +981,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1006,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1031,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1054,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1077,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1100,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1122,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1144,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1159,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.filestore.v1.ReplicaConfig.Builder getReplicasBuilder(int index) {
       return getReplicasFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1207,7 +1178,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return replicasBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(replicas_);
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1214,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return getReplicasFieldBuilder()
           .addBuilder(com.google.cloud.filestore.v1.ReplicaConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1262,7 +1230,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return getReplicasFieldBuilder()
           .addBuilder(index, com.google.cloud.filestore.v1.ReplicaConfig.getDefaultInstance());
     }
-
     /**
      *
      *

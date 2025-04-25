@@ -38,7 +38,6 @@ public interface UpdateAutofeedSettingsRequestOrBuilder
    * @return Whether the autofeedSettings field is set.
    */
   boolean hasAutofeedSettings();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateAutofeedSettingsRequestOrBuilder
    * @return The autofeedSettings.
    */
   com.google.shopping.merchant.accounts.v1beta.AutofeedSettings getAutofeedSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateAutofeedSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface UpdateAutofeedSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

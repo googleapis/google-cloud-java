@@ -36,7 +36,6 @@ public interface ColorInfoOrBuilder
    * @return Whether the color field is set.
    */
   boolean hasColor();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ColorInfoOrBuilder
    * @return The color.
    */
   com.google.type.Color getColor();
-
   /**
    *
    *

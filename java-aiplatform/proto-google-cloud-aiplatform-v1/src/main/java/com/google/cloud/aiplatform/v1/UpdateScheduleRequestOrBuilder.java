@@ -43,7 +43,6 @@ public interface UpdateScheduleRequestOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UpdateScheduleRequestOrBuilder
    * @return The schedule.
    */
   com.google.cloud.aiplatform.v1.Schedule getSchedule();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface UpdateScheduleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface UpdateScheduleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

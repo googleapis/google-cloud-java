@@ -33,7 +33,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest)
     DeleteLbTrafficExtensionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteLbTrafficExtensionRequest.newBuilder() to construct.
   private DeleteLbTrafficExtensionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +373,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +579,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -612,7 +605,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -639,7 +631,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -665,7 +656,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +677,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +812,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +843,6 @@ public final class DeleteLbTrafficExtensionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

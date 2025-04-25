@@ -129,7 +129,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>REGION_UNSPECIFIED = 0;</code>
    */
   public static final int REGION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -140,7 +139,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>USA = 1;</code>
    */
   public static final int USA_VALUE = 1;
-
   /**
    *
    *
@@ -151,7 +149,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>EUROPE = 2;</code>
    */
   public static final int EUROPE_VALUE = 2;
-
   /**
    *
    *
@@ -163,7 +160,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>SOUTH_AMERICA = 3;</code>
    */
   public static final int SOUTH_AMERICA_VALUE = 3;
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>ASIA_PACIFIC = 4;</code>
    */
   public static final int ASIA_PACIFIC_VALUE = 4;
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>USA_OREGON = 5;</code>
    */
   public static final int USA_OREGON_VALUE = 5;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>USA_IOWA = 6;</code>
    */
   public static final int USA_IOWA_VALUE = 6;
-
   /**
    *
    *

@@ -32,7 +32,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility)
     NodeTemplateNodeTypeFlexibilityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeTemplateNodeTypeFlexibility.newBuilder() to construct.
   private NodeTemplateNodeTypeFlexibility(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpus_ = "";
-
   /**
    * <code>optional string cpus = 3060683;</code>
    *
@@ -81,7 +79,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
   public boolean hasCpus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional string cpus = 3060683;</code>
    *
@@ -99,7 +96,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    * <code>optional string cpus = 3060683;</code>
    *
@@ -122,7 +118,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object localSsd_ = "";
-
   /**
    * <code>optional string local_ssd = 405741360;</code>
    *
@@ -132,7 +127,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
   public boolean hasLocalSsd() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional string local_ssd = 405741360;</code>
    *
@@ -150,7 +144,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    * <code>optional string local_ssd = 405741360;</code>
    *
@@ -173,7 +166,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object memory_ = "";
-
   /**
    * <code>optional string memory = 532856065;</code>
    *
@@ -183,7 +175,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
   public boolean hasMemory() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    * <code>optional string memory = 532856065;</code>
    *
@@ -201,7 +192,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    * <code>optional string memory = 532856065;</code>
    *
@@ -413,7 +403,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -632,7 +621,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object cpus_ = "";
-
     /**
      * <code>optional string cpus = 3060683;</code>
      *
@@ -641,7 +629,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     public boolean hasCpus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional string cpus = 3060683;</code>
      *
@@ -658,7 +645,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string cpus = 3060683;</code>
      *
@@ -675,7 +661,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string cpus = 3060683;</code>
      *
@@ -691,7 +676,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string cpus = 3060683;</code>
      *
@@ -703,7 +687,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string cpus = 3060683;</code>
      *
@@ -722,7 +705,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
 
     private java.lang.Object localSsd_ = "";
-
     /**
      * <code>optional string local_ssd = 405741360;</code>
      *
@@ -731,7 +713,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     public boolean hasLocalSsd() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>optional string local_ssd = 405741360;</code>
      *
@@ -748,7 +729,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string local_ssd = 405741360;</code>
      *
@@ -765,7 +745,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string local_ssd = 405741360;</code>
      *
@@ -781,7 +760,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string local_ssd = 405741360;</code>
      *
@@ -793,7 +771,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string local_ssd = 405741360;</code>
      *
@@ -812,7 +789,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
 
     private java.lang.Object memory_ = "";
-
     /**
      * <code>optional string memory = 532856065;</code>
      *
@@ -821,7 +797,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     public boolean hasMemory() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      * <code>optional string memory = 532856065;</code>
      *
@@ -838,7 +813,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string memory = 532856065;</code>
      *
@@ -855,7 +829,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string memory = 532856065;</code>
      *
@@ -871,7 +844,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string memory = 532856065;</code>
      *
@@ -883,7 +855,6 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string memory = 532856065;</code>
      *

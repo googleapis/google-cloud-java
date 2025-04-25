@@ -36,7 +36,6 @@ public interface IndexOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface IndexOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface IndexOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface IndexOrBuilder
    * @return The metadataSchemaUri.
    */
   java.lang.String getMetadataSchemaUri();
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public interface IndexOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface IndexOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface IndexOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.DeployedIndexRef> getDeployedIndexesList();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface IndexOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.DeployedIndexRef getDeployedIndexes(int index);
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface IndexOrBuilder
    * </code>
    */
   int getDeployedIndexesCount();
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public interface IndexOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DeployedIndexRefOrBuilder>
       getDeployedIndexesOrBuilderList();
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public interface IndexOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public interface IndexOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -326,11 +314,9 @@ public interface IndexOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public interface IndexOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public interface IndexOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -399,7 +383,6 @@ public interface IndexOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -413,7 +396,6 @@ public interface IndexOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -446,7 +428,6 @@ public interface IndexOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -467,7 +448,6 @@ public interface IndexOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -501,7 +481,6 @@ public interface IndexOrBuilder
    * @return Whether the indexStats field is set.
    */
   boolean hasIndexStats();
-
   /**
    *
    *
@@ -516,7 +495,6 @@ public interface IndexOrBuilder
    * @return The indexStats.
    */
   com.google.cloud.aiplatform.v1.IndexStats getIndexStats();
-
   /**
    *
    *
@@ -545,7 +523,6 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for indexUpdateMethod.
    */
   int getIndexUpdateMethodValue();
-
   /**
    *
    *
@@ -577,7 +554,6 @@ public interface IndexOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -593,7 +569,6 @@ public interface IndexOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *

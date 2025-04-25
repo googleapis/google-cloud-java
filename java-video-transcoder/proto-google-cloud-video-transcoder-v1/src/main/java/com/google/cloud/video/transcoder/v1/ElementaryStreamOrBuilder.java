@@ -36,7 +36,6 @@ public interface ElementaryStreamOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ElementaryStreamOrBuilder
    * @return Whether the videoStream field is set.
    */
   boolean hasVideoStream();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ElementaryStreamOrBuilder
    * @return The videoStream.
    */
   com.google.cloud.video.transcoder.v1.VideoStream getVideoStream();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ElementaryStreamOrBuilder
    * @return Whether the audioStream field is set.
    */
   boolean hasAudioStream();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ElementaryStreamOrBuilder
    * @return The audioStream.
    */
   com.google.cloud.video.transcoder.v1.AudioStream getAudioStream();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface ElementaryStreamOrBuilder
    * @return Whether the textStream field is set.
    */
   boolean hasTextStream();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface ElementaryStreamOrBuilder
    * @return The textStream.
    */
   com.google.cloud.video.transcoder.v1.TextStream getTextStream();
-
   /**
    *
    *

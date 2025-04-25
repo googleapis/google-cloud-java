@@ -38,7 +38,6 @@ public interface GetProviderRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

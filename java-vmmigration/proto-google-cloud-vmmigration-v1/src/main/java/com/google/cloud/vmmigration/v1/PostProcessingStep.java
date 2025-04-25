@@ -33,7 +33,6 @@ public final class PostProcessingStep extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.PostProcessingStep)
     PostProcessingStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostProcessingStep.newBuilder() to construct.
   private PostProcessingStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class PostProcessingStep extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

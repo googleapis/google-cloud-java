@@ -38,7 +38,6 @@ public interface InsertAutoscalerRequestOrBuilder
    * @return Whether the autoscalerResource field is set.
    */
   boolean hasAutoscalerResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertAutoscalerRequestOrBuilder
    * @return The autoscalerResource.
    */
   com.google.cloud.compute.v1.Autoscaler getAutoscalerResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertAutoscalerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface InsertAutoscalerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertAutoscalerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface InsertAutoscalerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

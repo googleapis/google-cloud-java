@@ -38,7 +38,6 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    * @return Whether the projectBillingInfo field is set.
    */
   boolean hasProjectBillingInfo();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    * @return The projectBillingInfo.
    */
   com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo();
-
   /**
    *
    *

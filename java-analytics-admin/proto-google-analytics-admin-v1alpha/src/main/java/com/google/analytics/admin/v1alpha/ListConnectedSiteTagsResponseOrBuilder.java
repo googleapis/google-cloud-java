@@ -35,7 +35,6 @@ public interface ListConnectedSiteTagsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConnectedSiteTag connected_site_tags = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ConnectedSiteTag> getConnectedSiteTagsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListConnectedSiteTagsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConnectedSiteTag connected_site_tags = 1;</code>
    */
   com.google.analytics.admin.v1alpha.ConnectedSiteTag getConnectedSiteTags(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListConnectedSiteTagsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConnectedSiteTag connected_site_tags = 1;</code>
    */
   int getConnectedSiteTagsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListConnectedSiteTagsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ConnectedSiteTagOrBuilder>
       getConnectedSiteTagsOrBuilderList();
-
   /**
    *
    *

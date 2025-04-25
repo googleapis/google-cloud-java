@@ -34,7 +34,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Connection)
     ConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Connection.newBuilder() to construct.
   private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private PropertiesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_SQL_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudSql() {
     return propertiesCase_ == 4;
   }
-
   /**
    *
    *
@@ -337,7 +324,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.CloudSqlProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -558,7 +544,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -859,7 +844,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -883,7 +867,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -930,7 +912,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +930,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1011,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.ConnectionState.forNumber(state_);
       return result == null ? com.google.privacy.dlp.v2.ConnectionState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1058,7 +1034,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1089,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1108,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1127,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1152,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1174,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1199,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1224,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1246,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1268,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1291,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1313,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1335,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1350,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1407,7 +1369,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1389,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -1445,7 +1405,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1462,7 +1421,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1501,7 +1459,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CloudSqlProperties.Builder,
             com.google.privacy.dlp.v2.CloudSqlPropertiesOrBuilder>
         cloudSqlBuilder_;
-
     /**
      *
      *
@@ -1517,7 +1474,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudSql() {
       return propertiesCase_ == 4;
     }
-
     /**
      *
      *
@@ -1543,7 +1499,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CloudSqlProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1566,7 +1521,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1587,7 +1541,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1573,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1598,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1659,7 +1610,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CloudSqlProperties.Builder getCloudSqlBuilder() {
       return getCloudSqlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1680,7 +1630,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CloudSqlProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *

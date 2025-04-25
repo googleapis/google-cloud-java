@@ -75,7 +75,6 @@ public enum AutoscalingAlgorithm implements com.google.protobuf.ProtocolMessageE
    * <code>AUTOSCALING_ALGORITHM_UNKNOWN = 0;</code>
    */
   public static final int AUTOSCALING_ALGORITHM_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum AutoscalingAlgorithm implements com.google.protobuf.ProtocolMessageE
    * <code>AUTOSCALING_ALGORITHM_NONE = 1;</code>
    */
   public static final int AUTOSCALING_ALGORITHM_NONE_VALUE = 1;
-
   /**
    *
    *

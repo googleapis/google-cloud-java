@@ -33,7 +33,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodeConfigDefaults)
     NodeConfigDefaultsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeConfigDefaults.newBuilder() to construct.
   private NodeConfigDefaults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int GCFS_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.GcfsConfig gcfsConfig_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   public boolean hasGcfsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
         : gcfsConfig_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 3;
   private com.google.container.v1beta1.NodePoolLoggingConfig loggingConfig_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   public boolean hasLoggingConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
         : loggingConfig_;
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
 
   public static final int CONTAINERD_CONFIG_FIELD_NUMBER = 4;
   private com.google.container.v1beta1.ContainerdConfig containerdConfig_;
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   public boolean hasContainerdConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()
         : containerdConfig_;
   }
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
 
   public static final int HOST_MAINTENANCE_POLICY_FIELD_NUMBER = 5;
   private com.google.container.v1beta1.HostMaintenancePolicy hostMaintenancePolicy_;
-
   /**
    *
    *
@@ -241,7 +230,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   public boolean hasHostMaintenancePolicy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
         : hostMaintenancePolicy_;
   }
-
   /**
    *
    *
@@ -281,7 +268,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
 
   public static final int NODE_KUBELET_CONFIG_FIELD_NUMBER = 6;
   private com.google.container.v1beta1.NodeKubeletConfig nodeKubeletConfig_;
-
   /**
    *
    *
@@ -299,7 +285,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   public boolean hasNodeKubeletConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -319,7 +304,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
         : nodeKubeletConfig_;
   }
-
   /**
    *
    *
@@ -559,7 +543,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -850,7 +833,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.GcfsConfig.Builder,
             com.google.container.v1beta1.GcfsConfigOrBuilder>
         gcfsConfigBuilder_;
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public boolean hasGcfsConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         return gcfsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +954,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +968,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGcfsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1011,7 +986,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             : gcfsConfig_;
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
             com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
         loggingConfigBuilder_;
-
     /**
      *
      *
@@ -1059,7 +1032,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public boolean hasLoggingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         return loggingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1074,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1122,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1141,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1155,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1207,7 +1173,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             : loggingConfig_;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1205,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.ContainerdConfig.Builder,
             com.google.container.v1beta1.ContainerdConfigOrBuilder>
         containerdConfigBuilder_;
-
     /**
      *
      *
@@ -1255,7 +1219,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public boolean hasContainerdConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1276,7 +1239,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         return containerdConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1299,7 +1261,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1281,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1309,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1328,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1342,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getContainerdConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1403,7 +1360,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             : containerdConfig_;
       }
     }
-
     /**
      *
      *
@@ -1436,7 +1392,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.HostMaintenancePolicy.Builder,
             com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>
         hostMaintenancePolicyBuilder_;
-
     /**
      *
      *
@@ -1452,7 +1407,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public boolean hasHostMaintenancePolicy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1474,7 +1428,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         return hostMaintenancePolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1452,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1473,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1503,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1523,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1590,7 +1539,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHostMaintenancePolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1611,7 +1559,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             : hostMaintenancePolicy_;
       }
     }
-
     /**
      *
      *
@@ -1645,7 +1592,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.NodeKubeletConfig.Builder,
             com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
         nodeKubeletConfigBuilder_;
-
     /**
      *
      *
@@ -1662,7 +1608,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public boolean hasNodeKubeletConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1685,7 +1630,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         return nodeKubeletConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1710,7 +1654,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1733,7 +1676,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1764,7 +1706,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1786,7 +1727,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1803,7 +1743,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNodeKubeletConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1824,7 +1763,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
             : nodeKubeletConfig_;
       }
     }
-
     /**
      *
      *

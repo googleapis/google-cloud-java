@@ -74,8 +74,7 @@ public class MockVpcFlowLogsServiceImpl extends VpcFlowLogsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListVpcFlowLogsConfigs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListVpcFlowLogsConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListVpcFlowLogsConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockVpcFlowLogsServiceImpl extends VpcFlowLogsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetVpcFlowLogsConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetVpcFlowLogsConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VpcFlowLogsConfig.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockVpcFlowLogsServiceImpl extends VpcFlowLogsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateVpcFlowLogsConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateVpcFlowLogsConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockVpcFlowLogsServiceImpl extends VpcFlowLogsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateVpcFlowLogsConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateVpcFlowLogsConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +158,7 @@ public class MockVpcFlowLogsServiceImpl extends VpcFlowLogsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteVpcFlowLogsConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteVpcFlowLogsConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

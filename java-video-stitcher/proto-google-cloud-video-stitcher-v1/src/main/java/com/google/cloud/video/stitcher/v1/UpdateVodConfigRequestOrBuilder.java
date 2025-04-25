@@ -39,7 +39,6 @@ public interface UpdateVodConfigRequestOrBuilder
    * @return Whether the vodConfig field is set.
    */
   boolean hasVodConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateVodConfigRequestOrBuilder
    * @return The vodConfig.
    */
   com.google.cloud.video.stitcher.v1.VodConfig getVodConfig();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateVodConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateVodConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

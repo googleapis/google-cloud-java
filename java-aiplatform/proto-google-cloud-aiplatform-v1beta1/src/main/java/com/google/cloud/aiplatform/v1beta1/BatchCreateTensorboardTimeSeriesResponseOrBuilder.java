@@ -37,7 +37,6 @@ public interface BatchCreateTensorboardTimeSeriesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries>
       getTensorboardTimeSeriesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface BatchCreateTensorboardTimeSeriesResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries getTensorboardTimeSeries(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface BatchCreateTensorboardTimeSeriesResponseOrBuilder
    * </code>
    */
   int getTensorboardTimeSeriesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface BatchCreateTensorboardTimeSeriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesOrBuilder>
       getTensorboardTimeSeriesOrBuilderList();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface FieldTransformationOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface FieldTransformationOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.FieldId getFields(int index);
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface FieldTransformationOrBuilder
    * </code>
    */
   int getFieldsCount();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface FieldTransformationOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> getFieldsOrBuilderList();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface FieldTransformationOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface FieldTransformationOrBuilder
    * @return The condition.
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface FieldTransformationOrBuilder
    * @return Whether the primitiveTransformation field is set.
    */
   boolean hasPrimitiveTransformation();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface FieldTransformationOrBuilder
    * @return The primitiveTransformation.
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface FieldTransformationOrBuilder
    * @return Whether the infoTypeTransformations field is set.
    */
   boolean hasInfoTypeTransformations();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface FieldTransformationOrBuilder
    * @return The infoTypeTransformations.
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations();
-
   /**
    *
    *

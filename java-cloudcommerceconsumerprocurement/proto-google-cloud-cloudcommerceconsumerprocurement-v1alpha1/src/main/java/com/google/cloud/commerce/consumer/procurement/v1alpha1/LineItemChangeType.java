@@ -92,7 +92,6 @@ public enum LineItemChangeType implements com.google.protobuf.ProtocolMessageEnu
    * <code>LINE_ITEM_CHANGE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int LINE_ITEM_CHANGE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum LineItemChangeType implements com.google.protobuf.ProtocolMessageEnu
    * <code>LINE_ITEM_CHANGE_TYPE_CREATE = 1;</code>
    */
   public static final int LINE_ITEM_CHANGE_TYPE_CREATE_VALUE = 1;
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public enum LineItemChangeType implements com.google.protobuf.ProtocolMessageEnu
    * <code>LINE_ITEM_CHANGE_TYPE_UPDATE = 2;</code>
    */
   public static final int LINE_ITEM_CHANGE_TYPE_UPDATE_VALUE = 2;
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public enum LineItemChangeType implements com.google.protobuf.ProtocolMessageEnu
    * <code>LINE_ITEM_CHANGE_TYPE_CANCEL = 3;</code>
    */
   public static final int LINE_ITEM_CHANGE_TYPE_CANCEL_VALUE = 3;
-
   /**
    *
    *

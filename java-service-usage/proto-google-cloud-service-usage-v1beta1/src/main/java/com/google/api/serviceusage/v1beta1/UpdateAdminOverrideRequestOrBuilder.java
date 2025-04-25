@@ -39,7 +39,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return Whether the override field is set.
    */
   boolean hasOverride();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return The override.
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getOverride();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return A list containing the forceOnly.
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaSafetyCheck> getForceOnlyList();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return The count of forceOnly.
    */
   int getForceOnlyCount();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return The forceOnly at the given index.
    */
   com.google.api.serviceusage.v1beta1.QuotaSafetyCheck getForceOnly(int index);
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface UpdateAdminOverrideRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for forceOnly.
    */
   java.util.List<java.lang.Integer> getForceOnlyValueList();
-
   /**
    *
    *

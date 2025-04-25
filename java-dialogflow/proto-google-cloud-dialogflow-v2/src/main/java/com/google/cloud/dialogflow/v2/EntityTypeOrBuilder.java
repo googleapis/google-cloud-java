@@ -42,7 +42,6 @@ public interface EntityTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface EntityTypeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface EntityTypeOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface EntityTypeOrBuilder
    * @return The enum numeric value on the wire for autoExpansionMode.
    */
   int getAutoExpansionModeValue();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface EntityTypeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface EntityTypeOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index);
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface EntityTypeOrBuilder
    * </code>
    */
   int getEntitiesCount();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface EntityTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
-
   /**
    *
    *

@@ -61,7 +61,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AnswerRecord)
     AnswerRecordOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnswerRecord.newBuilder() to construct.
   private AnswerRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,7 +108,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     private RecordCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -144,7 +142,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -172,7 +169,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +199,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANSWER_FEEDBACK_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.AnswerFeedback answerFeedback_;
-
   /**
    *
    *
@@ -221,7 +216,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnswerFeedback() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +235,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2beta1.AnswerFeedback.getDefaultInstance()
         : answerFeedback_;
   }
-
   /**
    *
    *
@@ -261,7 +254,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AGENT_ASSISTANT_RECORD_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -277,7 +269,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAgentAssistantRecord() {
     return recordCase_ == 4;
   }
-
   /**
    *
    *
@@ -296,7 +287,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -512,7 +502,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -801,7 +790,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -828,7 +816,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -855,7 +842,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -881,7 +867,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +888,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +921,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.AnswerFeedback.Builder,
             com.google.cloud.dialogflow.v2beta1.AnswerFeedbackOrBuilder>
         answerFeedbackBuilder_;
-
     /**
      *
      *
@@ -954,7 +937,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnswerFeedback() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -977,7 +959,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         return answerFeedbackBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1002,7 +983,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1005,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1035,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1056,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1072,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnswerFeedbackFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
             : answerFeedback_;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1126,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord.Builder,
             com.google.cloud.dialogflow.v2beta1.AgentAssistantRecordOrBuilder>
         agentAssistantRecordBuilder_;
-
     /**
      *
      *
@@ -1168,7 +1142,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAgentAssistantRecord() {
       return recordCase_ == 4;
     }
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1192,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       recordCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1213,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       recordCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1248,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       recordCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1274,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1288,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         getAgentAssistantRecordBuilder() {
       return getAgentAssistantRecordFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1343,7 +1310,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -87,7 +87,6 @@ public enum UniquenessScoreLevel implements com.google.protobuf.ProtocolMessageE
    * <code>UNIQUENESS_SCORE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int UNIQUENESS_SCORE_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public enum UniquenessScoreLevel implements com.google.protobuf.ProtocolMessageE
    * <code>UNIQUENESS_SCORE_LOW = 1;</code>
    */
   public static final int UNIQUENESS_SCORE_LOW_VALUE = 1;
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public enum UniquenessScoreLevel implements com.google.protobuf.ProtocolMessageE
    * <code>UNIQUENESS_SCORE_MEDIUM = 2;</code>
    */
   public static final int UNIQUENESS_SCORE_MEDIUM_VALUE = 2;
-
   /**
    *
    *

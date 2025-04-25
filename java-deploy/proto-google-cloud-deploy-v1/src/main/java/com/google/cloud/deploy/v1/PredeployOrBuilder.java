@@ -37,7 +37,6 @@ public interface PredeployOrBuilder
    * @return A list containing the actions.
    */
   java.util.List<java.lang.String> getActionsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PredeployOrBuilder
    * @return The count of actions.
    */
   int getActionsCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface PredeployOrBuilder
    * @return The actions at the given index.
    */
   java.lang.String getActions(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest)
     CreateNotebookExecutionJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNotebookExecutionJobRequest.newBuilder() to construct.
   private CreateNotebookExecutionJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
 
   public static final int NOTEBOOK_EXECUTION_JOB_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob notebookExecutionJob_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
   public boolean hasNotebookExecutionJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
         ? com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.getDefaultInstance()
         : notebookExecutionJob_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookExecutionJobId_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -424,7 +416,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -690,7 +680,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +729,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
             com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.Builder,
             com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobOrBuilder>
         notebookExecutionJobBuilder_;
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
     public boolean hasNotebookExecutionJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
         return notebookExecutionJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -861,7 +844,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +866,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +918,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return getNotebookExecutionJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
             : notebookExecutionJob_;
       }
     }
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
     }
 
     private java.lang.Object notebookExecutionJobId_ = "";
-
     /**
      *
      *
@@ -1031,7 +1007,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1067,6 @@ public final class CreateNotebookExecutionJobRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

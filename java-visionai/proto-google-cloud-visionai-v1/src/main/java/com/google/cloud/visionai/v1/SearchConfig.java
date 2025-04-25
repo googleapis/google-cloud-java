@@ -34,7 +34,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchConfig)
     SearchConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchConfig.newBuilder() to construct.
   private SearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FACET_PROPERTY_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.FacetProperty facetProperty_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFacetProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.FacetProperty.getDefaultInstance()
         : facetProperty_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEARCH_CRITERIA_PROPERTY_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.SearchCriteriaProperty searchCriteriaProperty_;
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSearchCriteriaProperty() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.SearchCriteriaProperty.getDefaultInstance()
         : searchCriteriaProperty_;
   }
-
   /**
    *
    *
@@ -424,7 +415,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +652,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -745,7 +732,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.FacetProperty.Builder,
             com.google.cloud.visionai.v1.FacetPropertyOrBuilder>
         facetPropertyBuilder_;
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFacetProperty() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return facetPropertyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +864,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +924,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFacetPropertyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
             : facetProperty_;
       }
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.SearchCriteriaProperty.Builder,
             com.google.cloud.visionai.v1.SearchCriteriaPropertyOrBuilder>
         searchCriteriaPropertyBuilder_;
-
     /**
      *
      *
@@ -1013,7 +988,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSearchCriteriaProperty() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return searchCriteriaPropertyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1051,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1080,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1099,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1114,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSearchCriteriaPropertyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1165,7 +1133,6 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
             : searchCriteriaProperty_;
       }
     }
-
     /**
      *
      *

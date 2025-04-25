@@ -38,7 +38,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates)
     AutomaticItemUpdatesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomaticItemUpdates.newBuilder() to construct.
   private AutomaticItemUpdates(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
      * @return Whether the allowPriceUpdates field is set.
      */
     boolean hasAllowPriceUpdates();
-
     /**
      *
      *
@@ -117,7 +115,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
      * @return Whether the allowAvailabilityUpdates field is set.
      */
     boolean hasAllowAvailabilityUpdates();
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
      * @return Whether the allowStrictAvailabilityUpdates field is set.
      */
     boolean hasAllowStrictAvailabilityUpdates();
-
     /**
      *
      *
@@ -187,7 +183,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
      * @return Whether the allowConditionUpdates field is set.
      */
     boolean hasAllowConditionUpdates();
-
     /**
      *
      *
@@ -202,7 +197,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
      */
     boolean getAllowConditionUpdates();
   }
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates.ItemUpdatesAccountLevelSettings)
       ItemUpdatesAccountLevelSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ItemUpdatesAccountLevelSettings.newBuilder() to construct.
     private ItemUpdatesAccountLevelSettings(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -254,7 +247,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     private int bitField0_;
     public static final int ALLOW_PRICE_UPDATES_FIELD_NUMBER = 1;
     private boolean allowPriceUpdates_ = false;
-
     /**
      *
      *
@@ -271,7 +263,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean hasAllowPriceUpdates() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -291,7 +282,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
     public static final int ALLOW_AVAILABILITY_UPDATES_FIELD_NUMBER = 2;
     private boolean allowAvailabilityUpdates_ = false;
-
     /**
      *
      *
@@ -312,7 +302,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean hasAllowAvailabilityUpdates() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -336,7 +325,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
     public static final int ALLOW_STRICT_AVAILABILITY_UPDATES_FIELD_NUMBER = 3;
     private boolean allowStrictAvailabilityUpdates_ = false;
-
     /**
      *
      *
@@ -358,7 +346,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean hasAllowStrictAvailabilityUpdates() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -383,7 +370,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
     public static final int ALLOW_CONDITION_UPDATES_FIELD_NUMBER = 4;
     private boolean allowConditionUpdates_ = false;
-
     /**
      *
      *
@@ -400,7 +386,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean hasAllowConditionUpdates() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -660,7 +645,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -921,7 +905,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private boolean allowPriceUpdates_;
-
       /**
        *
        *
@@ -938,7 +921,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean hasAllowPriceUpdates() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -955,7 +937,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean getAllowPriceUpdates() {
         return allowPriceUpdates_;
       }
-
       /**
        *
        *
@@ -976,7 +957,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -997,7 +977,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       }
 
       private boolean allowAvailabilityUpdates_;
-
       /**
        *
        *
@@ -1018,7 +997,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean hasAllowAvailabilityUpdates() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1039,7 +1017,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean getAllowAvailabilityUpdates() {
         return allowAvailabilityUpdates_;
       }
-
       /**
        *
        *
@@ -1064,7 +1041,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1089,7 +1065,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       }
 
       private boolean allowStrictAvailabilityUpdates_;
-
       /**
        *
        *
@@ -1111,7 +1086,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean hasAllowStrictAvailabilityUpdates() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1133,7 +1107,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean getAllowStrictAvailabilityUpdates() {
         return allowStrictAvailabilityUpdates_;
       }
-
       /**
        *
        *
@@ -1159,7 +1132,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1185,7 +1157,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       }
 
       private boolean allowConditionUpdates_;
-
       /**
        *
        *
@@ -1202,7 +1173,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean hasAllowConditionUpdates() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1219,7 +1189,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       public boolean getAllowConditionUpdates() {
         return allowConditionUpdates_;
       }
-
       /**
        *
        *
@@ -1240,7 +1209,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1337,7 +1305,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
   private com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates
           .ItemUpdatesAccountLevelSettings
       accountItemUpdatesSettings_;
-
   /**
    *
    *
@@ -1358,7 +1325,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
   public boolean hasAccountItemUpdatesSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1384,7 +1350,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
             .ItemUpdatesAccountLevelSettings.getDefaultInstance()
         : accountItemUpdatesSettings_;
   }
-
   /**
    *
    *
@@ -1411,7 +1376,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
   public static final int EFFECTIVE_ALLOW_PRICE_UPDATES_FIELD_NUMBER = 2;
   private boolean effectiveAllowPriceUpdates_ = false;
-
   /**
    *
    *
@@ -1435,7 +1399,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
   public static final int EFFECTIVE_ALLOW_AVAILABILITY_UPDATES_FIELD_NUMBER = 3;
   private boolean effectiveAllowAvailabilityUpdates_ = false;
-
   /**
    *
    *
@@ -1460,7 +1423,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
   public static final int EFFECTIVE_ALLOW_STRICT_AVAILABILITY_UPDATES_FIELD_NUMBER = 4;
   private boolean effectiveAllowStrictAvailabilityUpdates_ = false;
-
   /**
    *
    *
@@ -1486,7 +1448,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
 
   public static final int EFFECTIVE_ALLOW_CONDITION_UPDATES_FIELD_NUMBER = 5;
   private boolean effectiveAllowConditionUpdates_ = false;
-
   /**
    *
    *
@@ -1727,7 +1688,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2003,7 +1963,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
             com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates
                 .ItemUpdatesAccountLevelSettingsOrBuilder>
         accountItemUpdatesSettingsBuilder_;
-
     /**
      *
      *
@@ -2023,7 +1982,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean hasAccountItemUpdatesSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2052,7 +2010,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
         return accountItemUpdatesSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2083,7 +2040,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2111,7 +2067,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2149,7 +2104,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2174,7 +2128,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2196,7 +2149,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAccountItemUpdatesSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2223,7 +2175,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
             : accountItemUpdatesSettings_;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2213,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     }
 
     private boolean effectiveAllowPriceUpdates_;
-
     /**
      *
      *
@@ -2283,7 +2233,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean getEffectiveAllowPriceUpdates() {
       return effectiveAllowPriceUpdates_;
     }
-
     /**
      *
      *
@@ -2308,7 +2257,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2333,7 +2281,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     }
 
     private boolean effectiveAllowAvailabilityUpdates_;
-
     /**
      *
      *
@@ -2355,7 +2302,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean getEffectiveAllowAvailabilityUpdates() {
       return effectiveAllowAvailabilityUpdates_;
     }
-
     /**
      *
      *
@@ -2381,7 +2327,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2407,7 +2352,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     }
 
     private boolean effectiveAllowStrictAvailabilityUpdates_;
-
     /**
      *
      *
@@ -2430,7 +2374,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean getEffectiveAllowStrictAvailabilityUpdates() {
       return effectiveAllowStrictAvailabilityUpdates_;
     }
-
     /**
      *
      *
@@ -2457,7 +2400,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2484,7 +2426,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     }
 
     private boolean effectiveAllowConditionUpdates_;
-
     /**
      *
      *
@@ -2506,7 +2447,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
     public boolean getEffectiveAllowConditionUpdates() {
       return effectiveAllowConditionUpdates_;
     }
-
     /**
      *
      *
@@ -2532,7 +2472,6 @@ public final class AutomaticItemUpdates extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

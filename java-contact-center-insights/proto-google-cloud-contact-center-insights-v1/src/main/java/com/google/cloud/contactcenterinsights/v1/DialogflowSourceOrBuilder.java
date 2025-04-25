@@ -38,7 +38,6 @@ public interface DialogflowSourceOrBuilder
    * @return The dialogflowConversation.
    */
   java.lang.String getDialogflowConversation();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface DialogflowSourceOrBuilder
    * @return The audioUri.
    */
   java.lang.String getAudioUri();
-
   /**
    *
    *

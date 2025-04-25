@@ -46,7 +46,6 @@ public interface CompanyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface CompanyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface CompanyOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface CompanyOrBuilder
    * @return The enum numeric value on the wire for size.
    */
   int getSizeValue();
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public interface CompanyOrBuilder
    * @return The headquartersAddress.
    */
   java.lang.String getHeadquartersAddress();
-
   /**
    *
    *
@@ -220,7 +215,6 @@ public interface CompanyOrBuilder
    * @return The eeoText.
    */
   java.lang.String getEeoText();
-
   /**
    *
    *
@@ -253,7 +247,6 @@ public interface CompanyOrBuilder
    * @return The websiteUri.
    */
   java.lang.String getWebsiteUri();
-
   /**
    *
    *
@@ -283,7 +276,6 @@ public interface CompanyOrBuilder
    * @return The careerSiteUri.
    */
   java.lang.String getCareerSiteUri();
-
   /**
    *
    *
@@ -310,7 +302,6 @@ public interface CompanyOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *
@@ -350,7 +341,6 @@ public interface CompanyOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getKeywordSearchableJobCustomAttributesList();
-
   /**
    *
    *
@@ -377,7 +367,6 @@ public interface CompanyOrBuilder
    */
   @java.lang.Deprecated
   int getKeywordSearchableJobCustomAttributesCount();
-
   /**
    *
    *
@@ -405,7 +394,6 @@ public interface CompanyOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getKeywordSearchableJobCustomAttributes(int index);
-
   /**
    *
    *
@@ -448,7 +436,6 @@ public interface CompanyOrBuilder
    * @return Whether the derivedInfo field is set.
    */
   boolean hasDerivedInfo();
-
   /**
    *
    *
@@ -463,7 +450,6 @@ public interface CompanyOrBuilder
    * @return The derivedInfo.
    */
   com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo();
-
   /**
    *
    *

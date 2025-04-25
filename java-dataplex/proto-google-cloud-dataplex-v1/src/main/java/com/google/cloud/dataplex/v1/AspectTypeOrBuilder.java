@@ -39,7 +39,6 @@ public interface AspectTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface AspectTypeOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface AspectTypeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface AspectTypeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface AspectTypeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface AspectTypeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface AspectTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface AspectTypeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface AspectTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -239,11 +230,9 @@ public interface AspectTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -254,7 +243,6 @@ public interface AspectTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -269,7 +257,6 @@ public interface AspectTypeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface AspectTypeOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public interface AspectTypeOrBuilder
    * @return Whether the authorization field is set.
    */
   boolean hasAuthorization();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface AspectTypeOrBuilder
    * @return The authorization.
    */
   com.google.cloud.dataplex.v1.AspectType.Authorization getAuthorization();
-
   /**
    *
    *
@@ -366,7 +350,6 @@ public interface AspectTypeOrBuilder
    * @return Whether the metadataTemplate field is set.
    */
   boolean hasMetadataTemplate();
-
   /**
    *
    *
@@ -381,7 +364,6 @@ public interface AspectTypeOrBuilder
    * @return The metadataTemplate.
    */
   com.google.cloud.dataplex.v1.AspectType.MetadataTemplate getMetadataTemplate();
-
   /**
    *
    *
@@ -410,7 +392,6 @@ public interface AspectTypeOrBuilder
    * @return The enum numeric value on the wire for transferStatus.
    */
   int getTransferStatusValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.CustomerEncryptionKey)
     CustomerEncryptionKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomerEncryptionKey.newBuilder() to construct.
   private CustomerEncryptionKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     private KeyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   public boolean hasKmsKeyName() {
     return keyCase_ == 7;
   }
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +388,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -632,7 +626,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public boolean hasKmsKeyName() {
       return keyCase_ == 7;
     }
-
     /**
      *
      *
@@ -674,7 +667,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -716,7 +708,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -751,7 +742,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +774,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *

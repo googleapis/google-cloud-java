@@ -36,7 +36,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the httpKeepAliveTimeoutSec field is set.
    */
   boolean hasHttpKeepAliveTimeoutSec();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -283,7 +271,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the proxyBind field is set.
    */
   boolean hasProxyBind();
-
   /**
    *
    *
@@ -309,7 +296,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -348,7 +333,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -361,7 +345,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -387,7 +370,6 @@ public interface TargetHttpProxyOrBuilder
    * @return Whether the urlMap field is set.
    */
   boolean hasUrlMap();
-
   /**
    *
    *
@@ -400,7 +382,6 @@ public interface TargetHttpProxyOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *

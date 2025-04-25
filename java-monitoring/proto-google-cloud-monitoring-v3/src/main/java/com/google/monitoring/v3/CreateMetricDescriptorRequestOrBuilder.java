@@ -42,7 +42,6 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * @return Whether the metricDescriptor field is set.
    */
   boolean hasMetricDescriptor();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateMetricDescriptorRequestOrBuilder
    * @return The metricDescriptor.
    */
   com.google.api.MetricDescriptor getMetricDescriptor();
-
   /**
    *
    *

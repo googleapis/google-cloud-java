@@ -39,7 +39,6 @@ public interface GetTermsOfServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

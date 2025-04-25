@@ -37,7 +37,6 @@ public interface CloudSqlConnectionProfileOrBuilder
    * @return The cloudSqlId.
    */
   java.lang.String getCloudSqlId();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CloudSqlConnectionProfileOrBuilder
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CloudSqlConnectionProfileOrBuilder
    * @return The settings.
    */
   com.google.cloud.clouddms.v1.CloudSqlSettings getSettings();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface CloudSqlConnectionProfileOrBuilder
    * @return The privateIp.
    */
   java.lang.String getPrivateIp();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface CloudSqlConnectionProfileOrBuilder
    * @return The publicIp.
    */
   java.lang.String getPublicIp();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface CloudSqlConnectionProfileOrBuilder
    * @return The additionalPublicIp.
    */
   java.lang.String getAdditionalPublicIp();
-
   /**
    *
    *

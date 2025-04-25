@@ -34,7 +34,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerRequest)
     UpdatePerInstanceConfigsInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdatePerInstanceConfigsInstanceGroupManagerRequest.newBuilder() to construct.
   private UpdatePerInstanceConfigsInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       INSTANCE_GROUP_MANAGERS_UPDATE_PER_INSTANCE_CONFIGS_REQ_RESOURCE_FIELD_NUMBER = 141402302;
   private com.google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq
       instanceGroupManagersUpdatePerInstanceConfigsReqResource_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersUpdatePerInstanceConfigsReqResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
             .getDefaultInstance()
         : instanceGroupManagersUpdatePerInstanceConfigsReqResource_;
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -347,7 +335,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -597,7 +584,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -878,7 +864,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -902,7 +887,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -926,7 +910,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +932,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +950,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +981,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder>
         instanceGroupManagersUpdatePerInstanceConfigsReqResourceBuilder_;
-
     /**
      *
      *
@@ -1017,7 +997,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersUpdatePerInstanceConfigsReqResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1042,7 +1021,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return instanceGroupManagersUpdatePerInstanceConfigsReqResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1046,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1070,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1102,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1123,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1140,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersUpdatePerInstanceConfigsReqResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1190,7 +1163,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
             : instanceGroupManagersUpdatePerInstanceConfigsReqResource_;
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1196,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1249,7 +1220,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1244,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1267,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1286,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1360,7 +1326,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1383,7 +1348,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1370,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1391,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1408,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1432,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1496,7 +1456,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1521,7 +1480,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1545,7 +1503,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1522,6 @@ public final class UpdatePerInstanceConfigsInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

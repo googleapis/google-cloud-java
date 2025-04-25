@@ -33,7 +33,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CreateDeployPolicyRequest)
     CreateDeployPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDeployPolicyRequest.newBuilder() to construct.
   private CreateDeployPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployPolicyId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
 
   public static final int DEPLOY_POLICY_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.DeployPolicy deployPolicy_;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
   public boolean hasDeployPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         ? com.google.cloud.deploy.v1.DeployPolicy.getDefaultInstance()
         : deployPolicy_;
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -535,7 +524,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -793,7 +781,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -819,7 +806,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -845,7 +831,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -870,7 +855,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +875,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +902,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object deployPolicyId_ = "";
-
     /**
      *
      *
@@ -942,7 +924,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -965,7 +946,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1013,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
             com.google.cloud.deploy.v1.DeployPolicy.Builder,
             com.google.cloud.deploy.v1.DeployPolicyOrBuilder>
         deployPolicyBuilder_;
-
     /**
      *
      *
@@ -1052,7 +1029,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     public boolean hasDeployPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1075,7 +1051,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return deployPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1075,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1097,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1126,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1147,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1163,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return getDeployPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1213,7 +1183,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
             : deployPolicy_;
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1212,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1278,7 +1246,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1280,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1313,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1342,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1378,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1431,7 +1394,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1452,7 +1414,6 @@ public final class CreateDeployPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

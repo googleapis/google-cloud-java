@@ -36,7 +36,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -88,12 +85,10 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PublicDelegatedPrefixesScopedList>
       getItems();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.PublicDelegatedPrefixesScopedList>
       getItemsMap();
-
   /**
    *
    *
@@ -124,7 +118,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.PublicDelegatedPrefixesScopedList defaultValue);
-
   /**
    *
    *
@@ -151,7 +144,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -164,7 +156,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -190,7 +181,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -203,7 +193,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -229,7 +218,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -242,7 +230,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -268,7 +255,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -281,7 +267,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -295,7 +280,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -322,7 +306,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -335,7 +318,6 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateBudgetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateBudgetRequestOrBuilder
    * @return Whether the budget field is set.
    */
   boolean hasBudget();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateBudgetRequestOrBuilder
    * @return The budget.
    */
   com.google.cloud.billing.budgets.v1.Budget getBudget();
-
   /**
    *
    *

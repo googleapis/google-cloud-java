@@ -33,7 +33,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.QueryAuditableServicesResponse)
     QueryAuditableServicesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryAuditableServicesResponse.newBuilder() to construct.
   private QueryAuditableServicesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -83,7 +82,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -98,7 +96,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService)
       AuditableServiceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AuditableService.newBuilder() to construct.
     private AuditableService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -149,7 +145,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -174,7 +169,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         return s;
       }
     }
-
     /**
      *
      *
@@ -363,7 +357,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -562,7 +555,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -586,7 +578,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -610,7 +601,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -633,7 +623,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -652,7 +641,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -750,7 +738,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService>
       services_;
-
   /**
    *
    *
@@ -767,7 +754,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       getServicesList() {
     return services_;
   }
-
   /**
    *
    *
@@ -786,7 +772,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       getServicesOrBuilderList() {
     return services_;
   }
-
   /**
    *
    *
@@ -802,7 +787,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
   public int getServicesCount() {
     return services_.size();
   }
-
   /**
    *
    *
@@ -819,7 +803,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       int index) {
     return services_.get(index);
   }
-
   /**
    *
    *
@@ -999,7 +982,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1268,7 +1250,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         return servicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1287,7 +1268,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         return servicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1307,7 +1287,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         return servicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1312,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1336,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1361,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1386,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1409,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1433,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1484,7 +1457,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1478,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1499,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1514,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         getServicesBuilder(int index) {
       return getServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1564,7 +1533,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         return servicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1554,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(services_);
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1572,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
               com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1625,7 +1591,6 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
               com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService
                   .getDefaultInstance());
     }
-
     /**
      *
      *

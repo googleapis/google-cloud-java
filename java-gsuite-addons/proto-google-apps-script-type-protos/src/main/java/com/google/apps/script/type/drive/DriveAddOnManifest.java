@@ -33,7 +33,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.apps.script.type.drive.DriveAddOnManifest)
     DriveAddOnManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DriveAddOnManifest.newBuilder() to construct.
   private DriveAddOnManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int HOMEPAGE_TRIGGER_FIELD_NUMBER = 1;
   private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
   public boolean hasHomepageTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
         ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
         : homepageTrigger_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
 
   public static final int ON_ITEMS_SELECTED_TRIGGER_FIELD_NUMBER = 2;
   private com.google.apps.script.type.drive.DriveExtensionPoint onItemsSelectedTrigger_;
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
   public boolean hasOnItemsSelectedTrigger() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
         ? com.google.apps.script.type.drive.DriveExtensionPoint.getDefaultInstance()
         : onItemsSelectedTrigger_;
   }
-
   /**
    *
    *
@@ -355,7 +348,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +575,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
             com.google.apps.script.type.HomepageExtensionPoint.Builder,
             com.google.apps.script.type.HomepageExtensionPointOrBuilder>
         homepageTriggerBuilder_;
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     public boolean hasHomepageTrigger() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
         return homepageTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
             : homepageTrigger_;
       }
     }
-
     /**
      *
      *
@@ -789,7 +772,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
             com.google.apps.script.type.drive.DriveExtensionPoint.Builder,
             com.google.apps.script.type.drive.DriveExtensionPointOrBuilder>
         onItemsSelectedTriggerBuilder_;
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     public boolean hasOnItemsSelectedTrigger() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
         return onItemsSelectedTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -855,7 +835,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +857,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +888,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +909,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +926,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOnItemsSelectedTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -972,7 +947,6 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
             : onItemsSelectedTrigger_;
       }
     }
-
     /**
      *
      *

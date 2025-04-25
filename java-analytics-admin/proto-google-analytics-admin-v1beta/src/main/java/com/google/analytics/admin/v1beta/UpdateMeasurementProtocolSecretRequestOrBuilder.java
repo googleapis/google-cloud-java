@@ -38,7 +38,6 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    * @return Whether the measurementProtocolSecret field is set.
    */
   boolean hasMeasurementProtocolSecret();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    * @return The measurementProtocolSecret.
    */
   com.google.analytics.admin.v1beta.MeasurementProtocolSecret getMeasurementProtocolSecret();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

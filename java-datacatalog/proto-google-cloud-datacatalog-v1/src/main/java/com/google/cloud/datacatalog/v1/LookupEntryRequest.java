@@ -34,7 +34,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.LookupEntryRequest)
     LookupEntryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LookupEntryRequest.newBuilder() to construct.
   private LookupEntryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     private TargetNameCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LINKED_RESOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasLinkedResource() {
     return targetNameCase_ == 1;
   }
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SQL_RESOURCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -241,7 +235,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSqlResource() {
     return targetNameCase_ == 3;
   }
-
   /**
    *
    *
@@ -281,7 +274,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -323,7 +315,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FULLY_QUALIFIED_NAME_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -354,7 +345,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasFullyQualifiedName() {
     return targetNameCase_ == 5;
   }
-
   /**
    *
    *
@@ -398,7 +388,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -447,7 +436,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -473,7 +461,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -504,7 +491,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -530,7 +516,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -773,7 +758,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1065,7 +1049,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasLinkedResource() {
       return targetNameCase_ == 1;
     }
-
     /**
      *
      *
@@ -1101,7 +1084,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1119,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1147,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1173,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1230,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSqlResource() {
       return targetNameCase_ == 3;
     }
-
     /**
      *
      *
@@ -1292,7 +1270,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1310,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1367,7 +1343,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1374,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1440,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasFullyQualifiedName() {
       return targetNameCase_ == 5;
     }
-
     /**
      *
      *
@@ -1511,7 +1484,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1556,7 +1528,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1594,7 +1565,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1600,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1671,7 +1640,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1696,7 +1664,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1721,7 +1688,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1745,7 +1711,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1765,7 +1730,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1792,7 +1756,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1817,7 +1780,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1842,7 +1804,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1866,7 +1827,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1846,6 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.BackgroundJobLogEntry)
     BackgroundJobLogEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackgroundJobLogEntry.newBuilder() to construct.
   private BackgroundJobLogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * <code>JOB_COMPLETION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int JOB_COMPLETION_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -250,7 +247,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The connectionProfile.
      */
     java.lang.String getConnectionProfile();
-
     /**
      *
      *
@@ -264,7 +260,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getConnectionProfileBytes();
   }
-
   /**
    *
    *
@@ -279,7 +274,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails)
       SeedJobDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SeedJobDetails.newBuilder() to construct.
     private SeedJobDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -314,7 +308,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object connectionProfile_ = "";
-
     /**
      *
      *
@@ -338,7 +331,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -525,7 +517,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -720,7 +711,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object connectionProfile_ = "";
-
       /**
        *
        *
@@ -743,7 +733,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -766,7 +755,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -788,7 +776,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -806,7 +793,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -914,7 +900,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return A list containing the files.
      */
     java.util.List<java.lang.String> getFilesList();
-
     /**
      *
      *
@@ -927,7 +912,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The count of files.
      */
     int getFilesCount();
-
     /**
      *
      *
@@ -941,7 +925,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The files at the given index.
      */
     java.lang.String getFiles(int index);
-
     /**
      *
      *
@@ -970,7 +953,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for fileFormat.
      */
     int getFileFormatValue();
-
     /**
      *
      *
@@ -986,7 +968,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.clouddms.v1.ImportRulesFileFormat getFileFormat();
   }
-
   /**
    *
    *
@@ -1001,7 +982,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails)
       ImportRulesJobDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ImportRulesJobDetails.newBuilder() to construct.
     private ImportRulesJobDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1039,7 +1019,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList files_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1054,7 +1033,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ProtocolStringList getFilesList() {
       return files_;
     }
-
     /**
      *
      *
@@ -1069,7 +1047,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public int getFilesCount() {
       return files_.size();
     }
-
     /**
      *
      *
@@ -1085,7 +1062,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public java.lang.String getFiles(int index) {
       return files_.get(index);
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
     public static final int FILE_FORMAT_FIELD_NUMBER = 2;
     private int fileFormat_ = 0;
-
     /**
      *
      *
@@ -1122,7 +1097,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public int getFileFormatValue() {
       return fileFormat_;
     }
-
     /**
      *
      *
@@ -1333,7 +1307,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1560,7 +1533,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -1576,7 +1548,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         files_.makeImmutable();
         return files_;
       }
-
       /**
        *
        *
@@ -1591,7 +1562,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       public int getFilesCount() {
         return files_.size();
       }
-
       /**
        *
        *
@@ -1607,7 +1577,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       public java.lang.String getFiles(int index) {
         return files_.get(index);
       }
-
       /**
        *
        *
@@ -1623,7 +1592,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.ByteString getFilesBytes(int index) {
         return files_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1647,7 +1615,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1670,7 +1637,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1690,7 +1656,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1709,7 +1674,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1735,7 +1699,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
 
       private int fileFormat_ = 0;
-
       /**
        *
        *
@@ -1753,7 +1716,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       public int getFileFormatValue() {
         return fileFormat_;
       }
-
       /**
        *
        *
@@ -1774,7 +1736,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1796,7 +1757,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             ? com.google.cloud.clouddms.v1.ImportRulesFileFormat.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1820,7 +1780,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1926,7 +1885,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The filter.
      */
     java.lang.String getFilter();
-
     /**
      *
      *
@@ -1940,7 +1898,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
-
   /**
    *
    *
@@ -1955,7 +1912,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails)
       ConvertJobDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConvertJobDetails.newBuilder() to construct.
     private ConvertJobDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1990,7 +1946,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -2014,7 +1969,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -2201,7 +2155,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2397,7 +2350,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -2420,7 +2372,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2443,7 +2394,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2465,7 +2415,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2483,7 +2432,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2591,7 +2539,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The connectionProfile.
      */
     java.lang.String getConnectionProfile();
-
     /**
      *
      *
@@ -2617,7 +2564,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      * @return The filter.
      */
     java.lang.String getFilter();
-
     /**
      *
      *
@@ -2631,7 +2577,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
-
   /**
    *
    *
@@ -2646,7 +2591,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails)
       ApplyJobDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ApplyJobDetails.newBuilder() to construct.
     private ApplyJobDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2682,7 +2626,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object connectionProfile_ = "";
-
     /**
      *
      *
@@ -2706,7 +2649,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -2735,7 +2677,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -2759,7 +2700,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -2955,7 +2895,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3165,7 +3104,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object connectionProfile_ = "";
-
       /**
        *
        *
@@ -3188,7 +3126,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3211,7 +3148,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3233,7 +3169,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3251,7 +3186,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3276,7 +3210,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -3299,7 +3232,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3322,7 +3254,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3344,7 +3275,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3362,7 +3292,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3473,7 +3402,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     private JobDetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3514,7 +3442,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -3538,7 +3465,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -3565,7 +3491,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   public static final int JOB_TYPE_FIELD_NUMBER = 2;
   private int jobType_ = 0;
-
   /**
    *
    *
@@ -3581,7 +3506,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public int getJobTypeValue() {
     return jobType_;
   }
-
   /**
    *
    *
@@ -3602,7 +3526,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -3618,7 +3541,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3634,7 +3556,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -3651,7 +3572,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   public static final int FINISH_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp finishTime_;
-
   /**
    *
    *
@@ -3667,7 +3587,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public boolean hasFinishTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3683,7 +3602,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
-
   /**
    *
    *
@@ -3700,7 +3618,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   public static final int COMPLETION_STATE_FIELD_NUMBER = 5;
   private int completionState_ = 0;
-
   /**
    *
    *
@@ -3719,7 +3636,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public int getCompletionStateValue() {
     return completionState_;
   }
-
   /**
    *
    *
@@ -3749,7 +3665,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object completionComment_ = "";
-
   /**
    *
    *
@@ -3774,7 +3689,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -3802,7 +3716,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
   public static final int REQUEST_AUTOCOMMIT_FIELD_NUMBER = 7;
   private boolean requestAutocommit_ = false;
-
   /**
    *
    *
@@ -3821,7 +3734,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SEED_JOB_DETAILS_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -3839,7 +3751,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public boolean hasSeedJobDetails() {
     return jobDetailsCase_ == 100;
   }
-
   /**
    *
    *
@@ -3860,7 +3771,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3882,7 +3792,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IMPORT_RULES_JOB_DETAILS_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -3900,7 +3809,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public boolean hasImportRulesJobDetails() {
     return jobDetailsCase_ == 101;
   }
-
   /**
    *
    *
@@ -3923,7 +3831,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     return com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3946,7 +3853,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONVERT_JOB_DETAILS_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -3964,7 +3870,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public boolean hasConvertJobDetails() {
     return jobDetailsCase_ == 102;
   }
-
   /**
    *
    *
@@ -3987,7 +3892,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     return com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4010,7 +3914,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   }
 
   public static final int APPLY_JOB_DETAILS_FIELD_NUMBER = 103;
-
   /**
    *
    *
@@ -4028,7 +3931,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   public boolean hasApplyJobDetails() {
     return jobDetailsCase_ == 103;
   }
-
   /**
    *
    *
@@ -4049,7 +3951,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4381,7 +4282,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4766,7 +4666,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -4789,7 +4688,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4812,7 +4710,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4834,7 +4731,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4852,7 +4748,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4877,7 +4772,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
 
     private int jobType_ = 0;
-
     /**
      *
      *
@@ -4893,7 +4787,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public int getJobTypeValue() {
       return jobType_;
     }
-
     /**
      *
      *
@@ -4912,7 +4805,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4930,7 +4822,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           com.google.cloud.clouddms.v1.BackgroundJobType.forNumber(jobType_);
       return result == null ? com.google.cloud.clouddms.v1.BackgroundJobType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4952,7 +4843,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4977,7 +4867,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -4992,7 +4881,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5011,7 +4899,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5034,7 +4921,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5054,7 +4940,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5082,7 +4967,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5102,7 +4986,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5117,7 +5000,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5134,7 +5016,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -5167,7 +5048,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         finishTimeBuilder_;
-
     /**
      *
      *
@@ -5182,7 +5062,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean hasFinishTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -5203,7 +5082,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return finishTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5226,7 +5104,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5246,7 +5123,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5274,7 +5150,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5294,7 +5169,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5309,7 +5183,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFinishTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5328,7 +5201,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             : finishTime_;
       }
     }
-
     /**
      *
      *
@@ -5356,7 +5228,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
 
     private int completionState_ = 0;
-
     /**
      *
      *
@@ -5375,7 +5246,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public int getCompletionStateValue() {
       return completionState_;
     }
-
     /**
      *
      *
@@ -5397,7 +5267,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5422,7 +5291,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.clouddms.v1.BackgroundJobLogEntry.JobCompletionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5448,7 +5316,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5471,7 +5338,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object completionComment_ = "";
-
     /**
      *
      *
@@ -5495,7 +5361,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5519,7 +5384,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5542,7 +5406,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5561,7 +5424,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5587,7 +5449,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
 
     private boolean requestAutocommit_;
-
     /**
      *
      *
@@ -5604,7 +5465,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean getRequestAutocommit() {
       return requestAutocommit_;
     }
-
     /**
      *
      *
@@ -5625,7 +5485,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5650,7 +5509,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails.Builder,
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetailsOrBuilder>
         seedJobDetailsBuilder_;
-
     /**
      *
      *
@@ -5668,7 +5526,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean hasSeedJobDetails() {
       return jobDetailsCase_ == 100;
     }
-
     /**
      *
      *
@@ -5698,7 +5555,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5724,7 +5580,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -5747,7 +5602,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -5786,7 +5640,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -5814,7 +5667,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -5830,7 +5682,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         getSeedJobDetailsBuilder() {
       return getSeedJobDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5855,7 +5706,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5898,7 +5748,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails.Builder,
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetailsOrBuilder>
         importRulesJobDetailsBuilder_;
-
     /**
      *
      *
@@ -5916,7 +5765,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean hasImportRulesJobDetails() {
       return jobDetailsCase_ == 101;
     }
-
     /**
      *
      *
@@ -5948,7 +5796,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5974,7 +5821,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -5998,7 +5844,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -6037,7 +5882,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -6065,7 +5909,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -6081,7 +5924,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         getImportRulesJobDetailsBuilder() {
       return getImportRulesJobDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6107,7 +5949,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6151,7 +5992,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails.Builder,
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetailsOrBuilder>
         convertJobDetailsBuilder_;
-
     /**
      *
      *
@@ -6169,7 +6009,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean hasConvertJobDetails() {
       return jobDetailsCase_ == 102;
     }
-
     /**
      *
      *
@@ -6200,7 +6039,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6226,7 +6064,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -6250,7 +6087,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -6289,7 +6125,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -6317,7 +6152,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -6333,7 +6167,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         getConvertJobDetailsBuilder() {
       return getConvertJobDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6358,7 +6191,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6401,7 +6233,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails.Builder,
             com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetailsOrBuilder>
         applyJobDetailsBuilder_;
-
     /**
      *
      *
@@ -6419,7 +6250,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public boolean hasApplyJobDetails() {
       return jobDetailsCase_ == 103;
     }
-
     /**
      *
      *
@@ -6449,7 +6279,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6475,7 +6304,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -6499,7 +6327,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -6538,7 +6365,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       jobDetailsCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -6566,7 +6392,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -6582,7 +6407,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         getApplyJobDetailsBuilder() {
       return getApplyJobDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6607,7 +6431,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface DeleteJobRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DeleteJobRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface DeleteJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *

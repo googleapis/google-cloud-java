@@ -33,7 +33,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SessionSegmentExclusion)
     SessionSegmentExclusionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SessionSegmentExclusion.newBuilder() to construct.
   private SessionSegmentExclusion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int SESSION_EXCLUSION_DURATION_FIELD_NUMBER = 1;
   private int sessionExclusionDuration_ = 0;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
   public int getSessionExclusionDurationValue() {
     return sessionExclusionDuration_;
   }
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
 
   public static final int SESSION_EXCLUSION_CRITERIA_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.SessionSegmentCriteria sessionExclusionCriteria_;
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
   public boolean hasSessionExclusionCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
         ? com.google.analytics.data.v1alpha.SessionSegmentCriteria.getDefaultInstance()
         : sessionExclusionCriteria_;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +566,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int sessionExclusionDuration_ = 0;
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
     public int getSessionExclusionDurationValue() {
       return sessionExclusionDuration_;
     }
-
     /**
      *
      *
@@ -618,7 +609,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
           ? com.google.analytics.data.v1alpha.SessionExclusionDuration.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.SessionSegmentCriteria.Builder,
             com.google.analytics.data.v1alpha.SessionSegmentCriteriaOrBuilder>
         sessionExclusionCriteriaBuilder_;
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
     public boolean hasSessionExclusionCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
         return sessionExclusionCriteriaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
       onChanged();
       return getSessionExclusionCriteriaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
             : sessionExclusionCriteria_;
       }
     }
-
     /**
      *
      *

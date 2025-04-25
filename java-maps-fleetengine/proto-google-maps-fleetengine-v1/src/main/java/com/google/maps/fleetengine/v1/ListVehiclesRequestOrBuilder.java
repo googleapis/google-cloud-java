@@ -36,7 +36,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return Whether the minimumCapacity field is set.
    */
   boolean hasMinimumCapacity();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The minimumCapacity.
    */
   com.google.protobuf.Int32Value getMinimumCapacity();
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return A list containing the tripTypes.
    */
   java.util.List<com.google.maps.fleetengine.v1.TripType> getTripTypesList();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The count of tripTypes.
    */
   int getTripTypesCount();
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The tripTypes at the given index.
    */
   com.google.maps.fleetengine.v1.TripType getTripTypes(int index);
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for tripTypes.
    */
   java.util.List<java.lang.Integer> getTripTypesValueList();
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return Whether the maximumStaleness field is set.
    */
   boolean hasMaximumStaleness();
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The maximumStaleness.
    */
   com.google.protobuf.Duration getMaximumStaleness();
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public interface ListVehiclesRequestOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.v1.Vehicle.VehicleType.Category>
       getVehicleTypeCategoriesList();
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The count of vehicleTypeCategories.
    */
   int getVehicleTypeCategoriesCount();
-
   /**
    *
    *
@@ -349,7 +335,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The vehicleTypeCategories at the given index.
    */
   com.google.maps.fleetengine.v1.Vehicle.VehicleType.Category getVehicleTypeCategories(int index);
-
   /**
    *
    *
@@ -365,7 +350,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for vehicleTypeCategories.
    */
   java.util.List<java.lang.Integer> getVehicleTypeCategoriesValueList();
-
   /**
    *
    *
@@ -416,7 +400,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return A list containing the requiredAttributes.
    */
   java.util.List<java.lang.String> getRequiredAttributesList();
-
   /**
    *
    *
@@ -450,7 +433,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The count of requiredAttributes.
    */
   int getRequiredAttributesCount();
-
   /**
    *
    *
@@ -485,7 +467,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The requiredAttributes at the given index.
    */
   java.lang.String getRequiredAttributes(int index);
-
   /**
    *
    *
@@ -539,7 +520,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return A list containing the requiredOneOfAttributes.
    */
   java.util.List<java.lang.String> getRequiredOneOfAttributesList();
-
   /**
    *
    *
@@ -558,7 +538,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The count of requiredOneOfAttributes.
    */
   int getRequiredOneOfAttributesCount();
-
   /**
    *
    *
@@ -578,7 +557,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The requiredOneOfAttributes at the given index.
    */
   java.lang.String getRequiredOneOfAttributes(int index);
-
   /**
    *
    *
@@ -636,7 +614,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return A list containing the requiredOneOfAttributeSets.
    */
   java.util.List<java.lang.String> getRequiredOneOfAttributeSetsList();
-
   /**
    *
    *
@@ -674,7 +651,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The count of requiredOneOfAttributeSets.
    */
   int getRequiredOneOfAttributeSetsCount();
-
   /**
    *
    *
@@ -713,7 +689,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The requiredOneOfAttributeSets at the given index.
    */
   java.lang.String getRequiredOneOfAttributeSets(int index);
-
   /**
    *
    *
@@ -765,7 +740,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The enum numeric value on the wire for vehicleState.
    */
   int getVehicleStateValue();
-
   /**
    *
    *
@@ -825,7 +799,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -873,7 +846,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return Whether the viewport field is set.
    */
   boolean hasViewport();
-
   /**
    *
    *
@@ -887,7 +859,6 @@ public interface ListVehiclesRequestOrBuilder
    * @return The viewport.
    */
   com.google.geo.type.Viewport getViewport();
-
   /**
    *
    *

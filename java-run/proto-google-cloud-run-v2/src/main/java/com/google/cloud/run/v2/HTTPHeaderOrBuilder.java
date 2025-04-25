@@ -36,7 +36,6 @@ public interface HTTPHeaderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HTTPHeaderOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

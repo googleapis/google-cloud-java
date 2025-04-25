@@ -38,7 +38,6 @@ public interface SpaceConfigOrBuilder
    * @return The enum numeric value on the wire for accessType.
    */
   int getAccessTypeValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SpaceConfigOrBuilder
    * @return The enum numeric value on the wire for entryPointAccess.
    */
   int getEntryPointAccessValue();
-
   /**
    *
    *

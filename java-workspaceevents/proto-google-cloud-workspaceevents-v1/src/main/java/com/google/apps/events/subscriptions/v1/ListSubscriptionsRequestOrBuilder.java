@@ -59,7 +59,6 @@ public interface ListSubscriptionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -116,7 +115,6 @@ public interface ListSubscriptionsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

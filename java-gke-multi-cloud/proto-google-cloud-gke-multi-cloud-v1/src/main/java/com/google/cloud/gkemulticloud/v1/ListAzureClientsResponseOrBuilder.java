@@ -35,7 +35,6 @@ public interface ListAzureClientsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureClient> getAzureClientsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAzureClientsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.AzureClient getAzureClients(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAzureClientsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
    */
   int getAzureClientsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAzureClientsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClientOrBuilder>
       getAzureClientsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListAzureClientsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.FileInputSource)
     FileInputSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileInputSource.newBuilder() to construct.
   private FileInputSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONTENT_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +362,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -603,7 +595,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class FileInputSource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

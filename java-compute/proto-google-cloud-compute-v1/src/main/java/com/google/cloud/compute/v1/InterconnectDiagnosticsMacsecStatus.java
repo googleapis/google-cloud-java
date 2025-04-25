@@ -34,7 +34,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatus)
     InterconnectDiagnosticsMacsecStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectDiagnosticsMacsecStatus.newBuilder() to construct.
   private InterconnectDiagnosticsMacsecStatus(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InterconnectDiagnosticsMacsecStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ckn_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InterconnectDiagnosticsMacsecStatus
   public boolean hasCkn() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class InterconnectDiagnosticsMacsecStatus
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class InterconnectDiagnosticsMacsecStatus
 
   public static final int OPERATIONAL_FIELD_NUMBER = 129704914;
   private boolean operational_ = false;
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class InterconnectDiagnosticsMacsecStatus
   public boolean hasOperational() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +549,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     private int bitField0_;
 
     private java.lang.Object ckn_ = "";
-
     /**
      *
      *
@@ -571,7 +563,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     public boolean hasCkn() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class InterconnectDiagnosticsMacsecStatus
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class InterconnectDiagnosticsMacsecStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class InterconnectDiagnosticsMacsecStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +645,6 @@ public final class InterconnectDiagnosticsMacsecStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +669,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     }
 
     private boolean operational_;
-
     /**
      *
      *
@@ -698,7 +684,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     public boolean hasOperational() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -714,7 +699,6 @@ public final class InterconnectDiagnosticsMacsecStatus
     public boolean getOperational() {
       return operational_;
     }
-
     /**
      *
      *
@@ -734,7 +718,6 @@ public final class InterconnectDiagnosticsMacsecStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface ReportTaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface ReportTaskOrBuilder
    * @return Whether the reportDefinition field is set.
    */
   boolean hasReportDefinition();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ReportTaskOrBuilder
    * @return The reportDefinition.
    */
   com.google.analytics.data.v1alpha.ReportTask.ReportDefinition getReportDefinition();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface ReportTaskOrBuilder
    * @return Whether the reportMetadata field is set.
    */
   boolean hasReportMetadata();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ReportTaskOrBuilder
    * @return The reportMetadata.
    */
   com.google.analytics.data.v1alpha.ReportTask.ReportMetadata getReportMetadata();
-
   /**
    *
    *

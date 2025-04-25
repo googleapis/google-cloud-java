@@ -25,7 +25,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter)
     HistogramQueryPropertyNameFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HistogramQueryPropertyNameFilter.newBuilder() to construct.
   private HistogramQueryPropertyNameFilter(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -108,7 +107,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * <code>HISTOGRAM_YAXIS_DOCUMENT = 0;</code>
      */
     public static final int HISTOGRAM_YAXIS_DOCUMENT_VALUE = 0;
-
     /**
      *
      *
@@ -208,7 +206,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList documentSchemas_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -230,7 +227,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getDocumentSchemasList() {
     return documentSchemas_;
   }
-
   /**
    *
    *
@@ -252,7 +248,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public int getDocumentSchemasCount() {
     return documentSchemas_.size();
   }
-
   /**
    *
    *
@@ -275,7 +270,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public java.lang.String getDocumentSchemas(int index) {
     return documentSchemas_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList propertyNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -325,7 +318,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getPropertyNamesList() {
     return propertyNames_;
   }
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public int getPropertyNamesCount() {
     return propertyNames_.size();
   }
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public java.lang.String getPropertyNames(int index) {
     return propertyNames_.get(index);
   }
-
   /**
    *
    *
@@ -393,7 +383,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
 
   public static final int Y_AXIS_FIELD_NUMBER = 3;
   private int yAxis_ = 0;
-
   /**
    *
    *
@@ -412,7 +401,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public int getYAxisValue() {
     return yAxis_;
   }
-
   /**
    *
    *
@@ -638,7 +626,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -872,7 +859,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -895,7 +881,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       documentSchemas_.makeImmutable();
       return documentSchemas_;
     }
-
     /**
      *
      *
@@ -917,7 +902,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public int getDocumentSchemasCount() {
       return documentSchemas_.size();
     }
-
     /**
      *
      *
@@ -940,7 +924,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public java.lang.String getDocumentSchemas(int index) {
       return documentSchemas_.get(index);
     }
-
     /**
      *
      *
@@ -963,7 +946,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public com.google.protobuf.ByteString getDocumentSchemasBytes(int index) {
       return documentSchemas_.getByteString(index);
     }
-
     /**
      *
      *
@@ -994,7 +976,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1005,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1031,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1056,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1096,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1140,7 +1117,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       propertyNames_.makeImmutable();
       return propertyNames_;
     }
-
     /**
      *
      *
@@ -1161,7 +1137,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public int getPropertyNamesCount() {
       return propertyNames_.size();
     }
-
     /**
      *
      *
@@ -1183,7 +1158,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public java.lang.String getPropertyNames(int index) {
       return propertyNames_.get(index);
     }
-
     /**
      *
      *
@@ -1205,7 +1179,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public com.google.protobuf.ByteString getPropertyNamesBytes(int index) {
       return propertyNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1235,7 +1208,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1236,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1261,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1285,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1316,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     }
 
     private int yAxis_ = 0;
-
     /**
      *
      *
@@ -1366,7 +1334,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public int getYAxisValue() {
       return yAxis_;
     }
-
     /**
      *
      *
@@ -1388,7 +1355,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1380,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1441,7 +1406,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

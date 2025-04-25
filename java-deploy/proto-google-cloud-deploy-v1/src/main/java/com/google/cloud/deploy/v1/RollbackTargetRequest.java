@@ -33,7 +33,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RollbackTargetRequest)
     RollbackTargetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RollbackTargetRequest.newBuilder() to construct.
   private RollbackTargetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetId_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutId_ = "";
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object releaseId_ = "";
-
   /**
    *
    *
@@ -267,7 +259,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -298,7 +289,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutToRollBack_ = "";
-
   /**
    *
    *
@@ -323,7 +313,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +340,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ROLLBACK_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.deploy.v1.RollbackTargetConfig rollbackConfig_;
-
   /**
    *
    *
@@ -369,7 +357,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRollbackConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -389,7 +376,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.deploy.v1.RollbackTargetConfig.getDefaultInstance()
         : rollbackConfig_;
   }
-
   /**
    *
    *
@@ -410,7 +396,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 7;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -433,7 +418,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -451,7 +435,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
     return overrideDeployPolicy_;
   }
-
   /**
    *
    *
@@ -469,7 +452,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
   public int getOverrideDeployPolicyCount() {
     return overrideDeployPolicy_.size();
   }
-
   /**
    *
    *
@@ -488,7 +470,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
   public java.lang.String getOverrideDeployPolicy(int index) {
     return overrideDeployPolicy_.get(index);
   }
-
   /**
    *
    *
@@ -743,7 +724,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1053,7 +1033,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1080,7 +1059,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1107,7 +1085,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1110,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1131,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1159,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object targetId_ = "";
-
     /**
      *
      *
@@ -1207,7 +1181,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1203,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1224,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1241,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1265,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object rolloutId_ = "";
-
     /**
      *
      *
@@ -1318,7 +1287,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1341,7 +1309,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1363,7 +1330,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1381,7 +1347,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1371,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object releaseId_ = "";
-
     /**
      *
      *
@@ -1431,7 +1395,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1456,7 +1419,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1480,7 +1442,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1461,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1487,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object rolloutToRollBack_ = "";
-
     /**
      *
      *
@@ -1551,7 +1510,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1575,7 +1533,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1598,7 +1555,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1573,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1603,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.deploy.v1.RollbackTargetConfig.Builder,
             com.google.cloud.deploy.v1.RollbackTargetConfigOrBuilder>
         rollbackConfigBuilder_;
-
     /**
      *
      *
@@ -1665,7 +1619,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRollbackConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1688,7 +1641,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
         return rollbackConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1665,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1736,7 +1687,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1767,7 +1717,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1789,7 +1738,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1754,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRollbackConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1827,7 +1774,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
             : rollbackConfig_;
       }
     }
-
     /**
      *
      *
@@ -1857,7 +1803,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1874,7 +1819,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1895,7 +1839,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1924,7 +1867,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -1943,7 +1885,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       overrideDeployPolicy_.makeImmutable();
       return overrideDeployPolicy_;
     }
-
     /**
      *
      *
@@ -1961,7 +1902,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     public int getOverrideDeployPolicyCount() {
       return overrideDeployPolicy_.size();
     }
-
     /**
      *
      *
@@ -1980,7 +1920,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getOverrideDeployPolicy(int index) {
       return overrideDeployPolicy_.get(index);
     }
-
     /**
      *
      *
@@ -1999,7 +1938,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
       return overrideDeployPolicy_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2026,7 +1964,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2052,7 +1989,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2011,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2097,7 +2032,6 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

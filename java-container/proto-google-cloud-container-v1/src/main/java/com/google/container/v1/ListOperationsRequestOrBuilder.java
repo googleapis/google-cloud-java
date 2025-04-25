@@ -41,7 +41,6 @@ public interface ListOperationsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ListOperationsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface ListOperationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

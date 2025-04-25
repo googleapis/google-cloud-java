@@ -82,7 +82,6 @@ public enum Entity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTITY_UNSPECIFIED = 0;</code>
    */
   public static final int ENTITY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum Entity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GOOGLE = 1;</code>
    */
   public static final int GOOGLE_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum Entity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CUSTOMER = 2;</code>
    */
   public static final int CUSTOMER_VALUE = 2;
-
   /**
    *
    *

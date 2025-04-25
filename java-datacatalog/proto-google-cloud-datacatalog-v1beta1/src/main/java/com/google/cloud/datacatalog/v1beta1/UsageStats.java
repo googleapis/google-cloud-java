@@ -39,7 +39,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.UsageStats)
     UsageStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UsageStats.newBuilder() to construct.
   private UsageStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_COMPLETIONS_FIELD_NUMBER = 1;
   private float totalCompletions_ = 0F;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_FAILURES_FIELD_NUMBER = 2;
   private float totalFailures_ = 0F;
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_CANCELLATIONS_FIELD_NUMBER = 3;
   private float totalCancellations_ = 0F;
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_EXECUTION_TIME_FOR_COMPLETIONS_MILLIS_FIELD_NUMBER = 4;
   private float totalExecutionTimeForCompletionsMillis_ = 0F;
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +563,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float totalCompletions_;
-
     /**
      *
      *
@@ -585,7 +578,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public float getTotalCompletions() {
       return totalCompletions_;
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float totalFailures_;
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public float getTotalFailures() {
       return totalFailures_;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float totalCancellations_;
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public float getTotalCancellations() {
       return totalCancellations_;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float totalExecutionTimeForCompletionsMillis_;
-
     /**
      *
      *
@@ -759,7 +743,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public float getTotalExecutionTimeForCompletionsMillis() {
       return totalExecutionTimeForCompletionsMillis_;
     }
-
     /**
      *
      *
@@ -779,7 +762,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

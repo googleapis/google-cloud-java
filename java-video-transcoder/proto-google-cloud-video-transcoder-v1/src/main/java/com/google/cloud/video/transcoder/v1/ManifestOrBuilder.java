@@ -37,7 +37,6 @@ public interface ManifestOrBuilder
    * @return The fileName.
    */
   java.lang.String getFileName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ManifestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface ManifestOrBuilder
    * @return A list containing the muxStreams.
    */
   java.util.List<java.lang.String> getMuxStreamsList();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface ManifestOrBuilder
    * @return The count of muxStreams.
    */
   int getMuxStreamsCount();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface ManifestOrBuilder
    * @return The muxStreams at the given index.
    */
   java.lang.String getMuxStreams(int index);
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ManifestOrBuilder
    * @return Whether the dash field is set.
    */
   boolean hasDash();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface ManifestOrBuilder
    * @return The dash.
    */
   com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDash();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface RestoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface RestoreOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface RestoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface RestoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface RestoreOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface RestoreOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -167,23 +161,22 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Optional. User specified descriptive string for this Restore.
+   * User specified descriptive string for this Restore.
    * </pre>
    *
-   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 5;</code>
    *
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
    * <pre>
-   * Optional. User specified descriptive string for this Restore.
+   * User specified descriptive string for this Restore.
    * </pre>
    *
-   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 5;</code>
    *
    * @return The bytes for description.
    */
@@ -208,7 +201,6 @@ public interface RestoreOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public interface RestoreOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public interface RestoreOrBuilder
    * @return Whether the restoreConfig field is set.
    */
   boolean hasRestoreConfig();
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public interface RestoreOrBuilder
    * @return The restoreConfig.
    */
   com.google.cloud.gkebackup.v1.RestoreConfig getRestoreConfig();
-
   /**
    *
    *
@@ -332,7 +321,6 @@ public interface RestoreOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -343,11 +331,9 @@ public interface RestoreOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public interface RestoreOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -373,7 +358,6 @@ public interface RestoreOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -399,7 +383,6 @@ public interface RestoreOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -420,9 +403,7 @@ public interface RestoreOrBuilder
    *
    * <pre>
    * Output only. Human-readable description of why the Restore is in its
-   * current state. This field is only meant for human readability and should
-   * not be used programmatically as this field is not guaranteed to be
-   * consistent.
+   * current state.
    * </pre>
    *
    * <code>string state_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -430,15 +411,12 @@ public interface RestoreOrBuilder
    * @return The stateReason.
    */
   java.lang.String getStateReason();
-
   /**
    *
    *
    * <pre>
    * Output only. Human-readable description of why the Restore is in its
-   * current state. This field is only meant for human readability and should
-   * not be used programmatically as this field is not guaranteed to be
-   * consistent.
+   * current state.
    * </pre>
    *
    * <code>string state_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -461,7 +439,6 @@ public interface RestoreOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
-
   /**
    *
    *
@@ -476,7 +453,6 @@ public interface RestoreOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
-
   /**
    *
    *
@@ -562,7 +538,6 @@ public interface RestoreOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -589,8 +564,8 @@ public interface RestoreOrBuilder
    * <pre>
    * Optional. Immutable. Filters resources for `Restore`. If not specified, the
    * scope of the restore will remain the same as defined in the `RestorePlan`.
-   * If this is specified and no resources are matched by the
-   * `inclusion_filters` or everything is excluded by the `exclusion_filters`,
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
    * nothing will be restored. This filter can only be specified if the value of
    * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
    * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
@@ -604,15 +579,14 @@ public interface RestoreOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
    * <pre>
    * Optional. Immutable. Filters resources for `Restore`. If not specified, the
    * scope of the restore will remain the same as defined in the `RestorePlan`.
-   * If this is specified and no resources are matched by the
-   * `inclusion_filters` or everything is excluded by the `exclusion_filters`,
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
    * nothing will be restored. This filter can only be specified if the value of
    * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
    * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
@@ -626,15 +600,14 @@ public interface RestoreOrBuilder
    * @return The filter.
    */
   com.google.cloud.gkebackup.v1.Restore.Filter getFilter();
-
   /**
    *
    *
    * <pre>
    * Optional. Immutable. Filters resources for `Restore`. If not specified, the
    * scope of the restore will remain the same as defined in the `RestorePlan`.
-   * If this is specified and no resources are matched by the
-   * `inclusion_filters` or everything is excluded by the `exclusion_filters`,
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
    * nothing will be restored. This filter can only be specified if the value of
    * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
    * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
@@ -661,7 +634,6 @@ public interface RestoreOrBuilder
    */
   java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
       getVolumeDataRestorePolicyOverridesList();
-
   /**
    *
    *
@@ -676,7 +648,6 @@ public interface RestoreOrBuilder
    */
   com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride getVolumeDataRestorePolicyOverrides(
       int index);
-
   /**
    *
    *
@@ -690,7 +661,6 @@ public interface RestoreOrBuilder
    * </code>
    */
   int getVolumeDataRestorePolicyOverridesCount();
-
   /**
    *
    *
@@ -705,7 +675,6 @@ public interface RestoreOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>
       getVolumeDataRestorePolicyOverridesOrBuilderList();
-
   /**
    *
    *

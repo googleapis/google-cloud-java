@@ -89,8 +89,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotificationChannelDescriptors,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ListNotificationChannelDescriptors, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotificationChannelDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
@@ -112,8 +111,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotificationChannelDescriptor,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetNotificationChannelDescriptor, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationChannelDescriptor.class.getName(),
                   Exception.class.getName())));
@@ -135,8 +133,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotificationChannels, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListNotificationChannels, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotificationChannelsResponse.class.getName(),
                   Exception.class.getName())));
@@ -157,8 +154,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotificationChannel, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetNotificationChannel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationChannel.class.getName(),
                   Exception.class.getName())));
@@ -180,8 +176,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNotificationChannel, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateNotificationChannel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationChannel.class.getName(),
                   Exception.class.getName())));
@@ -203,8 +198,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateNotificationChannel, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateNotificationChannel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationChannel.class.getName(),
                   Exception.class.getName())));
@@ -225,8 +219,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotificationChannel, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteNotificationChannel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -248,8 +241,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " SendNotificationChannelVerificationCode, expected %s or %s",
+                  "Unrecognized response type %s for method SendNotificationChannelVerificationCode, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -271,8 +263,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotificationChannelVerificationCode,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetNotificationChannelVerificationCode, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GetNotificationChannelVerificationCodeResponse.class.getName(),
                   Exception.class.getName())));
@@ -294,8 +285,7 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method VerifyNotificationChannel, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method VerifyNotificationChannel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationChannel.class.getName(),
                   Exception.class.getName())));

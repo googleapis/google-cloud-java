@@ -34,7 +34,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ImportRagFilesResponse)
     ImportRagFilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportRagFilesResponse.newBuilder() to construct.
   private ImportRagFilesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     private PartialFailureSinkCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARTIAL_FAILURES_GCS_PATH_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
   public boolean hasPartialFailuresGcsPath() {
     return partialFailureSinkCase_ == 4;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARTIAL_FAILURES_BIGQUERY_TABLE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
   public boolean hasPartialFailuresBigqueryTable() {
     return partialFailureSinkCase_ == 5;
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
 
   public static final int IMPORTED_RAG_FILES_COUNT_FIELD_NUMBER = 1;
   private long importedRagFilesCount_ = 0L;
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
 
   public static final int FAILED_RAG_FILES_COUNT_FIELD_NUMBER = 2;
   private long failedRagFilesCount_ = 0L;
-
   /**
    *
    *
@@ -302,7 +292,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
 
   public static final int SKIPPED_RAG_FILES_COUNT_FIELD_NUMBER = 3;
   private long skippedRagFilesCount_ = 0L;
-
   /**
    *
    *
@@ -533,7 +522,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -814,7 +802,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public boolean hasPartialFailuresGcsPath() {
       return partialFailureSinkCase_ == 4;
     }
-
     /**
      *
      *
@@ -844,7 +831,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +860,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +882,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +902,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +941,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public boolean hasPartialFailuresBigqueryTable() {
       return partialFailureSinkCase_ == 5;
     }
-
     /**
      *
      *
@@ -987,7 +969,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1016,7 +997,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1018,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1037,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1061,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     }
 
     private long importedRagFilesCount_;
-
     /**
      *
      *
@@ -1099,7 +1076,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public long getImportedRagFilesCount() {
       return importedRagFilesCount_;
     }
-
     /**
      *
      *
@@ -1119,7 +1095,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     }
 
     private long failedRagFilesCount_;
-
     /**
      *
      *
@@ -1155,7 +1129,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public long getFailedRagFilesCount() {
       return failedRagFilesCount_;
     }
-
     /**
      *
      *
@@ -1175,7 +1148,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1167,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     }
 
     private long skippedRagFilesCount_;
-
     /**
      *
      *
@@ -1211,7 +1182,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public long getSkippedRagFilesCount() {
       return skippedRagFilesCount_;
     }
-
     /**
      *
      *
@@ -1231,7 +1201,6 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsResponse)
     ListConsumerQuotaMetricsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConsumerQuotaMetricsResponse.newBuilder() to construct.
   private ListConsumerQuotaMetricsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric> metrics_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
   public java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric> getMetricsList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       getMetricsOrBuilderList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
   public int getMetricsCount() {
     return metrics_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
   public com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric getMetrics(int index) {
     return metrics_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return metricsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return metricsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return metricsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       return getMetricsFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1004,7 +978,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1028,7 +1001,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1024,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1064,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

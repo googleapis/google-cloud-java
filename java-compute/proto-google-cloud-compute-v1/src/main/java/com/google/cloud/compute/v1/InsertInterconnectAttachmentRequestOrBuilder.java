@@ -38,7 +38,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return Whether the interconnectAttachmentResource field is set.
    */
   boolean hasInterconnectAttachmentResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachmentResource.
    */
   com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachmentResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
    * @return Whether the validateOnly field is set.
    */
   boolean hasValidateOnly();
-
   /**
    *
    *

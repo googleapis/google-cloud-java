@@ -23,12 +23,11 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose
- * value and versions can be accessed.
+ * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose value and versions can
+ * be accessed.
  *
- * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more
- * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that represent
- * the secret data.
+ * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that
+ * represent the secret data.
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.Secret}
@@ -38,7 +37,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.Secret)
     SecretOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Secret.newBuilder() to construct.
   private Secret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,14 +84,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-   * `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -112,14 +107,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-   * `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -141,13 +133,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICATION_FIELD_NUMBER = 2;
   private com.google.cloud.secretmanager.v1beta1.Replication replication_;
-
   /**
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to
-   * the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -162,13 +152,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReplication() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to
-   * the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -185,13 +173,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.secretmanager.v1beta1.Replication.getDefaultInstance()
         : replication_;
   }
-
   /**
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to
-   * the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -209,13 +195,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -227,13 +211,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -245,13 +227,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -288,7 +268,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -315,14 +294,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -346,7 +323,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -377,7 +353,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -613,17 +588,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose
-   * value and versions can be accessed.
+   * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose value and versions can
+   * be accessed.
    *
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more
-   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that represent
-   * the secret data.
+   * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that
+   * represent the secret data.
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.Secret}
@@ -892,14 +865,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-     * `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -917,14 +887,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-     * `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -942,14 +909,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-     * `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -966,14 +930,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-     * `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -986,14 +947,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
-     * `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1018,13 +976,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1beta1.Replication.Builder,
             com.google.cloud.secretmanager.v1beta1.ReplicationOrBuilder>
         replicationBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1038,13 +994,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplication() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1064,13 +1018,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return replicationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1092,13 +1044,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1118,13 +1068,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1152,13 +1100,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1177,13 +1123,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1197,13 +1141,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReplicationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1221,13 +1163,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : replication_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to
-     * the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1259,13 +1199,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1277,13 +1215,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1301,13 +1237,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1327,13 +1261,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1350,13 +1282,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1381,13 +1311,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1404,13 +1332,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1422,13 +1348,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1444,13 +1368,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1499,7 +1421,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1526,14 +1447,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1557,7 +1476,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1588,7 +1506,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1625,7 +1542,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1652,14 +1568,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1690,7 +1604,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

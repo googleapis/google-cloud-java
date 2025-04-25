@@ -34,7 +34,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.NavigationInstruction)
     NavigationInstructionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NavigationInstruction.newBuilder() to construct.
   private NavigationInstruction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
 
   public static final int MANEUVER_FIELD_NUMBER = 1;
   private int maneuver_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
   public int getManeuverValue() {
     return maneuver_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instructions_ = "";
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -328,7 +323,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -527,7 +521,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int maneuver_ = 0;
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     public int getManeuverValue() {
       return maneuver_;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +577,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
           com.google.maps.routing.v2.Maneuver.forNumber(maneuver_);
       return result == null ? com.google.maps.routing.v2.Maneuver.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object instructions_ = "";
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -678,7 +665,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -700,7 +686,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

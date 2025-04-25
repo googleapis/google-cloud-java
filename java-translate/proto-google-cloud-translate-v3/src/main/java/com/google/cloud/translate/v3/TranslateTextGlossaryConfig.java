@@ -34,7 +34,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.TranslateTextGlossaryConfig)
     TranslateTextGlossaryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslateTextGlossaryConfig.newBuilder() to construct.
   private TranslateTextGlossaryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object glossary_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
 
   public static final int IGNORE_CASE_FIELD_NUMBER = 2;
   private boolean ignoreCase_ = false;
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
 
   public static final int CONTEXTUAL_TRANSLATION_ENABLED_FIELD_NUMBER = 4;
   private boolean contextualTranslationEnabled_ = false;
-
   /**
    *
    *
@@ -352,7 +347,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +558,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object glossary_ = "";
-
     /**
      *
      *
@@ -594,7 +587,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -624,7 +616,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -653,7 +644,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     }
 
     private boolean ignoreCase_;
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     public boolean getIgnoreCase() {
       return ignoreCase_;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     }
 
     private boolean contextualTranslationEnabled_;
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     public boolean getContextualTranslationEnabled() {
       return contextualTranslationEnabled_;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

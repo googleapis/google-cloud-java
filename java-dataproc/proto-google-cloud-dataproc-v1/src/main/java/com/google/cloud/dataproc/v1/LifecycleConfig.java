@@ -33,7 +33,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.LifecycleConfig)
     LifecycleConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LifecycleConfig.newBuilder() to construct.
   private LifecycleConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     private TtlCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int IDLE_DELETE_TTL_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration idleDeleteTtl_;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasIdleDeleteTtl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Duration.getDefaultInstance()
         : idleDeleteTtl_;
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AUTO_DELETE_TIME_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasAutoDeleteTime() {
     return ttlCase_ == 2;
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AUTO_DELETE_TTL_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasAutoDeleteTtl() {
     return ttlCase_ == 3;
   }
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int IDLE_START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp idleStartTime_;
-
   /**
    *
    *
@@ -336,7 +324,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasIdleStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -359,7 +346,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : idleStartTime_;
   }
-
   /**
    *
    *
@@ -598,7 +584,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -884,7 +869,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         idleDeleteTtlBuilder_;
-
     /**
      *
      *
@@ -905,7 +889,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasIdleDeleteTtl() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -932,7 +915,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return idleDeleteTtlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -961,7 +943,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +968,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +1001,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1026,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1046,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getIdleDeleteTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1093,7 +1070,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             : idleDeleteTtl_;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1107,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         autoDeleteTimeBuilder_;
-
     /**
      *
      *
@@ -1151,7 +1126,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasAutoDeleteTime() {
       return ttlCase_ == 2;
     }
-
     /**
      *
      *
@@ -1181,7 +1155,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1208,7 +1181,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       ttlCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1204,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       ttlCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1238,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       ttlCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1267,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1283,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Timestamp.Builder getAutoDeleteTimeBuilder() {
       return getAutoDeleteTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1339,7 +1307,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1347,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         autoDeleteTtlBuilder_;
-
     /**
      *
      *
@@ -1401,7 +1367,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasAutoDeleteTtl() {
       return ttlCase_ == 3;
     }
-
     /**
      *
      *
@@ -1432,7 +1397,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1424,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       ttlCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1485,7 +1448,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       ttlCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1483,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       ttlCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1513,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1570,7 +1530,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Duration.Builder getAutoDeleteTtlBuilder() {
       return getAutoDeleteTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1596,7 +1555,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1639,7 +1597,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         idleStartTimeBuilder_;
-
     /**
      *
      *
@@ -1659,7 +1616,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasIdleStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1685,7 +1641,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return idleStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1668,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1738,7 +1692,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1724,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1748,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1816,7 +1767,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getIdleStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1840,7 +1790,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
             : idleStartTime_;
       }
     }
-
     /**
      *
      *

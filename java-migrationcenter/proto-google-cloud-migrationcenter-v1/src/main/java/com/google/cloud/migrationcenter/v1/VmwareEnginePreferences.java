@@ -33,7 +33,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.VmwareEnginePreferences)
     VmwareEnginePreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VmwareEnginePreferences.newBuilder() to construct.
   private VmwareEnginePreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -147,7 +146,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
      * <code>COMMITMENT_PLAN_UNSPECIFIED = 0;</code>
      */
     public static final int COMMITMENT_PLAN_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -158,7 +156,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
      * <code>ON_DEMAND = 1;</code>
      */
     public static final int ON_DEMAND_VALUE = 1;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
      * <code>COMMITMENT_1_YEAR_MONTHLY_PAYMENTS = 2;</code>
      */
     public static final int COMMITMENT_1_YEAR_MONTHLY_PAYMENTS_VALUE = 2;
-
     /**
      *
      *
@@ -180,7 +176,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
      * <code>COMMITMENT_3_YEAR_MONTHLY_PAYMENTS = 3;</code>
      */
     public static final int COMMITMENT_3_YEAR_MONTHLY_PAYMENTS_VALUE = 3;
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
      * <code>COMMITMENT_1_YEAR_UPFRONT_PAYMENT = 4;</code>
      */
     public static final int COMMITMENT_1_YEAR_UPFRONT_PAYMENT_VALUE = 4;
-
     /**
      *
      *
@@ -296,7 +290,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
 
   public static final int CPU_OVERCOMMIT_RATIO_FIELD_NUMBER = 1;
   private double cpuOvercommitRatio_ = 0D;
-
   /**
    *
    *
@@ -316,7 +309,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
 
   public static final int MEMORY_OVERCOMMIT_RATIO_FIELD_NUMBER = 2;
   private double memoryOvercommitRatio_ = 0D;
-
   /**
    *
    *
@@ -336,7 +328,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
 
   public static final int STORAGE_DEDUPLICATION_COMPRESSION_RATIO_FIELD_NUMBER = 3;
   private double storageDeduplicationCompressionRatio_ = 0D;
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
 
   public static final int COMMITMENT_PLAN_FIELD_NUMBER = 4;
   private int commitmentPlan_ = 0;
-
   /**
    *
    *
@@ -383,7 +373,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
   public int getCommitmentPlanValue() {
     return commitmentPlan_;
   }
-
   /**
    *
    *
@@ -619,7 +608,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -841,7 +829,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     private int bitField0_;
 
     private double cpuOvercommitRatio_;
-
     /**
      *
      *
@@ -858,7 +845,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     public double getCpuOvercommitRatio() {
       return cpuOvercommitRatio_;
     }
-
     /**
      *
      *
@@ -879,7 +865,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +885,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     }
 
     private double memoryOvercommitRatio_;
-
     /**
      *
      *
@@ -917,7 +901,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     public double getMemoryOvercommitRatio() {
       return memoryOvercommitRatio_;
     }
-
     /**
      *
      *
@@ -938,7 +921,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     }
 
     private double storageDeduplicationCompressionRatio_;
-
     /**
      *
      *
@@ -982,7 +963,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     public double getStorageDeduplicationCompressionRatio() {
       return storageDeduplicationCompressionRatio_;
     }
-
     /**
      *
      *
@@ -1009,7 +989,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1015,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     }
 
     private int commitmentPlan_ = 0;
-
     /**
      *
      *
@@ -1057,7 +1035,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
     public int getCommitmentPlanValue() {
       return commitmentPlan_;
     }
-
     /**
      *
      *
@@ -1081,7 +1058,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1084,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
           ? com.google.cloud.migrationcenter.v1.VmwareEnginePreferences.CommitmentPlan.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1136,7 +1111,6 @@ public final class VmwareEnginePreferences extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

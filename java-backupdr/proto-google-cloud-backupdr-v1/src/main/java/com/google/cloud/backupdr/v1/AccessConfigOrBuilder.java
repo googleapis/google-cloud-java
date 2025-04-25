@@ -41,7 +41,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface AccessConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AccessConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the externalIp field is set.
    */
   boolean hasExternalIp();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AccessConfigOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the externalIpv6 field is set.
    */
   boolean hasExternalIpv6();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface AccessConfigOrBuilder
    * @return The externalIpv6.
    */
   java.lang.String getExternalIpv6();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the externalIpv6PrefixLength field is set.
    */
   boolean hasExternalIpv6PrefixLength();
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the setPublicPtr field is set.
    */
   boolean hasSetPublicPtr();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the publicPtrDomainName field is set.
    */
   boolean hasPublicPtrDomainName();
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public interface AccessConfigOrBuilder
    * @return The publicPtrDomainName.
    */
   java.lang.String getPublicPtrDomainName();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface AccessConfigOrBuilder
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
-
   /**
    *
    *
@@ -324,7 +311,6 @@ public interface AccessConfigOrBuilder
    * @return The enum numeric value on the wire for networkTier.
    */
   int getNetworkTierValue();
-
   /**
    *
    *

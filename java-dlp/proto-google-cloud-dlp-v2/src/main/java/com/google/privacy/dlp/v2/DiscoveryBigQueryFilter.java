@@ -35,7 +35,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryBigQueryFilter)
     DiscoveryBigQueryFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryBigQueryFilter.newBuilder() to construct.
   private DiscoveryBigQueryFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables)
       AllOtherBigQueryTablesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AllOtherBigQueryTables.newBuilder() to construct.
     private AllOtherBigQueryTables(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -274,7 +271,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -534,7 +530,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     private FilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -570,7 +565,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
   }
 
   public static final int TABLES_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -589,7 +583,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
   public boolean hasTables() {
     return filterCase_ == 1;
   }
-
   /**
    *
    *
@@ -611,7 +604,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.BigQueryTableCollection.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -633,7 +625,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
   }
 
   public static final int OTHER_TABLES_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
   public boolean hasOtherTables() {
     return filterCase_ == 2;
   }
-
   /**
    *
    *
@@ -677,7 +667,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -702,7 +691,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
   }
 
   public static final int TABLE_REFERENCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -720,7 +708,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
   public boolean hasTableReference() {
     return filterCase_ == 3;
   }
-
   /**
    *
    *
@@ -741,7 +728,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -967,7 +953,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1222,7 +1207,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.BigQueryTableCollection.Builder,
             com.google.privacy.dlp.v2.BigQueryTableCollectionOrBuilder>
         tablesBuilder_;
-
     /**
      *
      *
@@ -1241,7 +1225,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     public boolean hasTables() {
       return filterCase_ == 1;
     }
-
     /**
      *
      *
@@ -1270,7 +1253,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BigQueryTableCollection.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1278,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1301,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1336,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1364,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1379,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.BigQueryTableCollection.Builder getTablesBuilder() {
       return getTablesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1425,7 +1402,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BigQueryTableCollection.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1467,7 +1443,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables.Builder,
             com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTablesOrBuilder>
         otherTablesBuilder_;
-
     /**
      *
      *
@@ -1487,7 +1462,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     public boolean hasOtherTables() {
       return filterCase_ == 2;
     }
-
     /**
      *
      *
@@ -1520,7 +1494,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1521,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1574,7 +1546,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1615,7 +1586,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1615,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1632,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
         getOtherTablesBuilder() {
       return getOtherTablesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1690,7 +1658,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1735,7 +1702,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.TableReference.Builder,
             com.google.privacy.dlp.v2.TableReferenceOrBuilder>
         tableReferenceBuilder_;
-
     /**
      *
      *
@@ -1753,7 +1719,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     public boolean hasTableReference() {
       return filterCase_ == 3;
     }
-
     /**
      *
      *
@@ -1781,7 +1746,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1806,7 +1770,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1792,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1826,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1853,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1907,7 +1867,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.TableReference.Builder getTableReferenceBuilder() {
       return getTableReferenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1930,7 +1889,6 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.Config)
     ConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Config.newBuilder() to construct.
   private Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultKmsKeyName_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -344,7 +339,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -543,7 +537,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -566,7 +559,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultKmsKeyName_ = "";
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -706,7 +693,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.TaskTemplate)
     TaskTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaskTemplate.newBuilder() to construct.
   private TaskTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     private RetriesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,7 +119,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Container> containers_;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.run.v2.Container> getContainersList() {
     return containers_;
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       getContainersOrBuilderList() {
     return containers_;
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public int getContainersCount() {
     return containers_.size();
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.run.v2.Container getContainers(int index) {
     return containers_.get(index);
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.Volume> volumes_;
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.run.v2.Volume> getVolumesList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       getVolumesOrBuilderList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public int getVolumesCount() {
     return volumes_.size();
   }
-
   /**
    *
    *
@@ -267,7 +256,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.run.v2.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_RETRIES_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxRetries() {
     return retriesCase_ == 3;
   }
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration timeout_;
-
   /**
    *
    *
@@ -344,7 +329,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -363,7 +347,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
-
   /**
    *
    *
@@ -385,7 +368,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -412,7 +394,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -442,7 +423,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_ENVIRONMENT_FIELD_NUMBER = 6;
   private int executionEnvironment_ = 0;
-
   /**
    *
    *
@@ -460,7 +440,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public int getExecutionEnvironmentValue() {
     return executionEnvironment_;
   }
-
   /**
    *
    *
@@ -485,7 +464,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object encryptionKey_ = "";
-
   /**
    *
    *
@@ -511,7 +489,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -540,7 +517,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VPC_ACCESS_FIELD_NUMBER = 8;
   private com.google.cloud.run.v2.VpcAccess vpcAccess_;
-
   /**
    *
    *
@@ -559,7 +535,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVpcAccess() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -578,7 +553,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.run.v2.VpcAccess getVpcAccess() {
     return vpcAccess_ == null ? com.google.cloud.run.v2.VpcAccess.getDefaultInstance() : vpcAccess_;
   }
-
   /**
    *
    *
@@ -849,7 +823,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1297,7 +1270,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return containersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1287,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return containersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1304,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return containersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1327,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1348,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1403,7 +1371,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1394,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1414,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1470,7 +1435,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1456,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1476,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1496,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1548,7 +1509,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.run.v2.Container.Builder getContainersBuilder(int index) {
       return getContainersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1566,7 +1526,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return containersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1585,7 +1544,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(containers_);
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1558,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       return getContainersFieldBuilder()
           .addBuilder(com.google.cloud.run.v2.Container.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1615,7 +1572,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       return getContainersFieldBuilder()
           .addBuilder(index, com.google.cloud.run.v2.Container.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1681,7 +1637,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1700,7 +1655,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1719,7 +1673,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1744,7 +1697,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1718,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1742,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1816,7 +1766,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1838,7 +1787,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1808,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1830,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1905,7 +1851,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1927,7 +1872,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1942,7 +1886,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.run.v2.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1961,7 +1904,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1981,7 +1923,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
-
     /**
      *
      *
@@ -1997,7 +1938,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloud.run.v2.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2013,7 +1953,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.cloud.run.v2.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2061,7 +2000,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxRetries() {
       return retriesCase_ == 3;
     }
-
     /**
      *
      *
@@ -2080,7 +2018,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -2101,7 +2038,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2129,7 +2065,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
-
     /**
      *
      *
@@ -2147,7 +2082,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2169,7 +2103,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return timeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2195,7 +2128,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2218,7 +2150,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2249,7 +2180,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2272,7 +2202,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2219,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2310,7 +2238,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
-
     /**
      *
      *
@@ -2341,7 +2268,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -2367,7 +2293,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2393,7 +2318,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2418,7 +2342,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2439,7 +2362,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2467,7 +2389,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int executionEnvironment_ = 0;
-
     /**
      *
      *
@@ -2485,7 +2406,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public int getExecutionEnvironmentValue() {
       return executionEnvironment_;
     }
-
     /**
      *
      *
@@ -2506,7 +2426,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2526,7 +2445,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.run.v2.ExecutionEnvironment.forNumber(executionEnvironment_);
       return result == null ? com.google.cloud.run.v2.ExecutionEnvironment.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2550,7 +2468,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2489,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object encryptionKey_ = "";
-
     /**
      *
      *
@@ -2597,7 +2513,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2622,7 +2537,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2646,7 +2560,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2666,7 +2579,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2698,7 +2610,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.run.v2.VpcAccess.Builder,
             com.google.cloud.run.v2.VpcAccessOrBuilder>
         vpcAccessBuilder_;
-
     /**
      *
      *
@@ -2717,7 +2628,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVpcAccess() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2742,7 +2652,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         return vpcAccessBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2769,7 +2678,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2793,7 +2701,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2825,7 +2732,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2849,7 +2755,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2868,7 +2773,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVpcAccessFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2891,7 +2795,6 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
             : vpcAccess_;
       }
     }
-
     /**
      *
      *

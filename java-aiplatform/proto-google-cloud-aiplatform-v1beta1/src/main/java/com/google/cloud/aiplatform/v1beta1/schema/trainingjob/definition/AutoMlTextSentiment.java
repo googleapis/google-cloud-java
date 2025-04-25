@@ -34,7 +34,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextSentiment)
     AutoMlTextSentimentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlTextSentiment.newBuilder() to construct.
   private AutoMlTextSentiment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTextSentimentInputs
       inputs_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
             .AutoMlTextSentimentInputs.getDefaultInstance()
         : inputs_;
   }
-
   /**
    *
    *
@@ -320,7 +316,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -552,7 +547,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlTextSentimentInputsOrBuilder>
         inputsBuilder_;
-
     /**
      *
      *
@@ -569,7 +563,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -595,7 +588,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
         return inputsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -622,7 +614,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +638,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
             : inputs_;
       }
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.KeyOperationAttestation)
     KeyOperationAttestationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KeyOperationAttestation.newBuilder() to construct.
   private KeyOperationAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,7 +124,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>ATTESTATION_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int ATTESTATION_FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>
      */
     public static final int CAVIUM_V1_COMPRESSED_VALUE = 3;
-
     /**
      *
      *
@@ -256,7 +253,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return A list containing the caviumCerts.
      */
     java.util.List<java.lang.String> getCaviumCertsList();
-
     /**
      *
      *
@@ -269,7 +265,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return The count of caviumCerts.
      */
     int getCaviumCertsCount();
-
     /**
      *
      *
@@ -283,7 +278,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return The caviumCerts at the given index.
      */
     java.lang.String getCaviumCerts(int index);
-
     /**
      *
      *
@@ -310,7 +304,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return A list containing the googleCardCerts.
      */
     java.util.List<java.lang.String> getGoogleCardCertsList();
-
     /**
      *
      *
@@ -323,7 +316,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return The count of googleCardCerts.
      */
     int getGoogleCardCertsCount();
-
     /**
      *
      *
@@ -337,7 +329,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return The googleCardCerts at the given index.
      */
     java.lang.String getGoogleCardCerts(int index);
-
     /**
      *
      *
@@ -364,7 +355,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return A list containing the googlePartitionCerts.
      */
     java.util.List<java.lang.String> getGooglePartitionCertsList();
-
     /**
      *
      *
@@ -377,7 +367,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return The count of googlePartitionCerts.
      */
     int getGooglePartitionCertsCount();
-
     /**
      *
      *
@@ -391,7 +380,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return The googlePartitionCerts at the given index.
      */
     java.lang.String getGooglePartitionCerts(int index);
-
     /**
      *
      *
@@ -406,7 +394,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getGooglePartitionCertsBytes(int index);
   }
-
   /**
    *
    *
@@ -423,7 +410,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.KeyOperationAttestation.CertificateChains)
       CertificateChainsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CertificateChains.newBuilder() to construct.
     private CertificateChains(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -461,7 +447,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList caviumCerts_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -476,7 +461,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getCaviumCertsList() {
       return caviumCerts_;
     }
-
     /**
      *
      *
@@ -491,7 +475,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public int getCaviumCertsCount() {
       return caviumCerts_.size();
     }
-
     /**
      *
      *
@@ -507,7 +490,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public java.lang.String getCaviumCerts(int index) {
       return caviumCerts_.get(index);
     }
-
     /**
      *
      *
@@ -529,7 +511,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList googleCardCerts_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -544,7 +525,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getGoogleCardCertsList() {
       return googleCardCerts_;
     }
-
     /**
      *
      *
@@ -559,7 +539,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public int getGoogleCardCertsCount() {
       return googleCardCerts_.size();
     }
-
     /**
      *
      *
@@ -575,7 +554,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public java.lang.String getGoogleCardCerts(int index) {
       return googleCardCerts_.get(index);
     }
-
     /**
      *
      *
@@ -597,7 +575,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList googlePartitionCerts_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -612,7 +589,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getGooglePartitionCertsList() {
       return googlePartitionCerts_;
     }
-
     /**
      *
      *
@@ -627,7 +603,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public int getGooglePartitionCertsCount() {
       return googlePartitionCerts_.size();
     }
-
     /**
      *
      *
@@ -643,7 +618,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public java.lang.String getGooglePartitionCerts(int index) {
       return googlePartitionCerts_.get(index);
     }
-
     /**
      *
      *
@@ -862,7 +836,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1118,7 +1091,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -1134,7 +1106,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         caviumCerts_.makeImmutable();
         return caviumCerts_;
       }
-
       /**
        *
        *
@@ -1149,7 +1120,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public int getCaviumCertsCount() {
         return caviumCerts_.size();
       }
-
       /**
        *
        *
@@ -1165,7 +1135,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public java.lang.String getCaviumCerts(int index) {
         return caviumCerts_.get(index);
       }
-
       /**
        *
        *
@@ -1181,7 +1150,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getCaviumCertsBytes(int index) {
         return caviumCerts_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1205,7 +1173,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1228,7 +1195,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1248,7 +1214,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1267,7 +1232,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1301,7 +1265,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1317,7 +1280,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         googleCardCerts_.makeImmutable();
         return googleCardCerts_;
       }
-
       /**
        *
        *
@@ -1332,7 +1294,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public int getGoogleCardCertsCount() {
         return googleCardCerts_.size();
       }
-
       /**
        *
        *
@@ -1348,7 +1309,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public java.lang.String getGoogleCardCerts(int index) {
         return googleCardCerts_.get(index);
       }
-
       /**
        *
        *
@@ -1364,7 +1324,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getGoogleCardCertsBytes(int index) {
         return googleCardCerts_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1388,7 +1347,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1411,7 +1369,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1431,7 +1388,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1450,7 +1406,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1485,7 +1440,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -1501,7 +1455,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         googlePartitionCerts_.makeImmutable();
         return googlePartitionCerts_;
       }
-
       /**
        *
        *
@@ -1516,7 +1469,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public int getGooglePartitionCertsCount() {
         return googlePartitionCerts_.size();
       }
-
       /**
        *
        *
@@ -1532,7 +1484,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public java.lang.String getGooglePartitionCerts(int index) {
         return googlePartitionCerts_.get(index);
       }
-
       /**
        *
        *
@@ -1548,7 +1499,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getGooglePartitionCertsBytes(int index) {
         return googlePartitionCerts_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1572,7 +1522,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1595,7 +1544,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1615,7 +1563,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1634,7 +1581,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1729,7 +1675,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int FORMAT_FIELD_NUMBER = 4;
   private int format_ = 0;
-
   /**
    *
    *
@@ -1747,7 +1692,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -1772,7 +1716,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
   public static final int CONTENT_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1792,7 +1735,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
   public static final int CERT_CHAINS_FIELD_NUMBER = 6;
   private com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains certChains_;
-
   /**
    *
    *
@@ -1810,7 +1752,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   public boolean hasCertChains() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1830,7 +1771,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         ? com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.getDefaultInstance()
         : certChains_;
   }
-
   /**
    *
    *
@@ -2038,7 +1978,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2265,7 +2204,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -2283,7 +2221,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -2304,7 +2241,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2326,7 +2262,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           ? com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2351,7 +2286,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2373,7 +2307,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     }
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2390,7 +2323,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
-
     /**
      *
      *
@@ -2413,7 +2345,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2439,7 +2370,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
             com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder,
             com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder>
         certChainsBuilder_;
-
     /**
      *
      *
@@ -2456,7 +2386,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public boolean hasCertChains() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2479,7 +2408,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         return certChainsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2505,7 +2433,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2528,7 +2455,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2561,7 +2487,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2583,7 +2508,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2601,7 +2525,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       onChanged();
       return getCertChainsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2623,7 +2546,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
             : certChains_;
       }
     }
-
     /**
      *
      *

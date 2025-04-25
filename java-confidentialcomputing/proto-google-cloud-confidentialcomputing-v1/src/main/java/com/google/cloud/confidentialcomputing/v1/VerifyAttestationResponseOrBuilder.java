@@ -36,7 +36,6 @@ public interface VerifyAttestationResponseOrBuilder
    * @return The oidcClaimsToken.
    */
   java.lang.String getOidcClaimsToken();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface VerifyAttestationResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface VerifyAttestationResponseOrBuilder
    * </code>
    */
   com.google.rpc.Status getPartialErrors(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface VerifyAttestationResponseOrBuilder
    * </code>
    */
   int getPartialErrorsCount();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface VerifyAttestationResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
-
   /**
    *
    *

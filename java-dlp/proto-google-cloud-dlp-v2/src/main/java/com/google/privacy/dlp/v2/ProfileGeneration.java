@@ -72,7 +72,6 @@ public enum ProfileGeneration implements com.google.protobuf.ProtocolMessageEnum
    * <code>PROFILE_GENERATION_UNSPECIFIED = 0;</code>
    */
   public static final int PROFILE_GENERATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum ProfileGeneration implements com.google.protobuf.ProtocolMessageEnum
    * <code>PROFILE_GENERATION_NEW = 1;</code>
    */
   public static final int PROFILE_GENERATION_NEW_VALUE = 1;
-
   /**
    *
    *

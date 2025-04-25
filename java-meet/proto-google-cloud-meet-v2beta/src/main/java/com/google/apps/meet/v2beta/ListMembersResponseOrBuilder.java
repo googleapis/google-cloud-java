@@ -34,7 +34,6 @@ public interface ListMembersResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Member members = 1;</code>
    */
   java.util.List<com.google.apps.meet.v2beta.Member> getMembersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListMembersResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Member members = 1;</code>
    */
   com.google.apps.meet.v2beta.Member getMembers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListMembersResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Member members = 1;</code>
    */
   int getMembersCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListMembersResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.Member members = 1;</code>
    */
   java.util.List<? extends com.google.apps.meet.v2beta.MemberOrBuilder> getMembersOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListMembersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

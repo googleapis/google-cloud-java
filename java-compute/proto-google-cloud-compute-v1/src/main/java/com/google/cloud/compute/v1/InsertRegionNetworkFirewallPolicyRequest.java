@@ -34,7 +34,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionNetworkFirewallPolicyRequest)
     InsertRegionNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertRegionNetworkFirewallPolicyRequest.newBuilder() to construct.
   private InsertRegionNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
   private int bitField0_;
   public static final int FIREWALL_POLICY_RESOURCE_FIELD_NUMBER = 495049532;
   private com.google.cloud.compute.v1.FirewallPolicy firewallPolicyResource_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
   public boolean hasFirewallPolicyResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         ? com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()
         : firewallPolicyResource_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -511,7 +500,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -772,7 +760,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
             com.google.cloud.compute.v1.FirewallPolicy.Builder,
             com.google.cloud.compute.v1.FirewallPolicyOrBuilder>
         firewallPolicyResourceBuilder_;
-
     /**
      *
      *
@@ -789,7 +776,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     public boolean hasFirewallPolicyResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -812,7 +798,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return firewallPolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +844,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +895,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return getFirewallPolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -952,7 +932,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
             : firewallPolicyResource_;
       }
     }
-
     /**
      *
      *
@@ -982,7 +961,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1007,7 +985,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1009,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1032,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1128,7 +1101,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1125,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1148,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1167,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1193,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1239,7 +1207,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1262,7 +1229,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1285,7 +1251,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1307,7 +1272,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1289,6 @@ public final class InsertRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

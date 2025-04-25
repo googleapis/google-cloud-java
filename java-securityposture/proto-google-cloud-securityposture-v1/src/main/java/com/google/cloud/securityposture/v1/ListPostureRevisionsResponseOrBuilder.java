@@ -34,7 +34,6 @@ public interface ListPostureRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.securityposture.v1.Posture revisions = 1;</code>
    */
   java.util.List<com.google.cloud.securityposture.v1.Posture> getRevisionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPostureRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.securityposture.v1.Posture revisions = 1;</code>
    */
   com.google.cloud.securityposture.v1.Posture getRevisions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPostureRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.securityposture.v1.Posture revisions = 1;</code>
    */
   int getRevisionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPostureRevisionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PostureOrBuilder>
       getRevisionsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListPostureRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

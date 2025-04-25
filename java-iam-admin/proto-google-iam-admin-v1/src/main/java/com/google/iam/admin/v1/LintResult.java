@@ -33,7 +33,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.LintResult)
     LintResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LintResult.newBuilder() to construct.
   private LintResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,7 +111,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * <code>LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -304,7 +302,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -317,7 +314,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 1;</code>
      */
     public static final int ERROR_VALUE = 1;
-
     /**
      *
      *
@@ -336,7 +332,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 2;</code>
      */
     public static final int WARNING_VALUE = 2;
-
     /**
      *
      *
@@ -349,7 +344,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * <code>NOTICE = 3;</code>
      */
     public static final int NOTICE_VALUE = 3;
-
     /**
      *
      *
@@ -363,7 +357,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO = 4;</code>
      */
     public static final int INFO_VALUE = 4;
-
     /**
      *
      *
@@ -466,7 +459,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LEVEL_FIELD_NUMBER = 1;
   private int level_ = 0;
-
   /**
    *
    *
@@ -482,7 +474,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   public int getLevelValue() {
     return level_;
   }
-
   /**
    *
    *
@@ -505,7 +496,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationUnitName_ = "";
-
   /**
    *
    *
@@ -530,7 +520,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -558,7 +547,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -574,7 +562,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -597,7 +584,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fieldName_ = "";
-
   /**
    *
    *
@@ -627,7 +613,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -660,7 +645,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_OFFSET_FIELD_NUMBER = 6;
   private int locationOffset_ = 0;
-
   /**
    *
    *
@@ -683,7 +667,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object debugMessage_ = "";
-
   /**
    *
    *
@@ -707,7 +690,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -934,7 +916,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1184,7 +1165,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int level_ = 0;
-
     /**
      *
      *
@@ -1200,7 +1180,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     public int getLevelValue() {
       return level_;
     }
-
     /**
      *
      *
@@ -1219,7 +1198,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1215,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
           com.google.iam.admin.v1.LintResult.Level.forNumber(level_);
       return result == null ? com.google.iam.admin.v1.LintResult.Level.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1259,7 +1236,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1255,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object validationUnitName_ = "";
-
     /**
      *
      *
@@ -1303,7 +1278,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1327,7 +1301,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1350,7 +1323,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1341,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1366,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -1411,7 +1381,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -1430,7 +1399,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1416,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
           com.google.iam.admin.v1.LintResult.Severity.forNumber(severity_);
       return result == null ? com.google.iam.admin.v1.LintResult.Severity.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1470,7 +1437,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1456,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fieldName_ = "";
-
     /**
      *
      *
@@ -1519,7 +1484,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1512,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1576,7 +1539,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1562,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1592,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int locationOffset_;
-
     /**
      *
      *
@@ -1649,7 +1609,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     public int getLocationOffset() {
       return locationOffset_;
     }
-
     /**
      *
      *
@@ -1671,7 +1630,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1651,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object debugMessage_ = "";
-
     /**
      *
      *
@@ -1716,7 +1673,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1739,7 +1695,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1761,7 +1716,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1779,7 +1733,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

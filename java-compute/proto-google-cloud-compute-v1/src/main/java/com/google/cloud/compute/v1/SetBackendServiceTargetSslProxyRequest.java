@@ -34,7 +34,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest)
     SetBackendServiceTargetSslProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetBackendServiceTargetSslProxyRequest.newBuilder() to construct.
   private SetBackendServiceTargetSslProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class SetBackendServiceTargetSslProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SetBackendServiceTargetSslProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class SetBackendServiceTargetSslProxyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       139080868;
   private com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest
       targetSslProxiesSetBackendServiceRequestResource_;
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class SetBackendServiceTargetSslProxyRequest
   public boolean hasTargetSslProxiesSetBackendServiceRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         ? com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.getDefaultInstance()
         : targetSslProxiesSetBackendServiceRequestResource_;
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class SetBackendServiceTargetSslProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetSslProxy_ = "";
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -513,7 +502,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -771,7 +759,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -796,7 +783,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -821,7 +807,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -845,7 +830,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -953,7 +933,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +971,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class SetBackendServiceTargetSslProxyRequest
             com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.Builder,
             com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequestOrBuilder>
         targetSslProxiesSetBackendServiceRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1041,7 +1017,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     public boolean hasTargetSslProxiesSetBackendServiceRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return targetSslProxiesSetBackendServiceRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1066,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1090,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1122,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1143,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1160,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return getTargetSslProxiesSetBackendServiceRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1213,7 +1182,6 @@ public final class SetBackendServiceTargetSslProxyRequest
             : targetSslProxiesSetBackendServiceRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1213,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     }
 
     private java.lang.Object targetSslProxy_ = "";
-
     /**
      *
      *
@@ -1268,7 +1235,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1291,7 +1257,6 @@ public final class SetBackendServiceTargetSslProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1278,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1295,6 @@ public final class SetBackendServiceTargetSslProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

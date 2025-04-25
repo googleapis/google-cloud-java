@@ -33,7 +33,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.TimeUnitEnum)
     TimeUnitEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimeUnitEnum.newBuilder() to construct.
   private TimeUnitEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -176,7 +175,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>TIME_UNIT_UNSPECIFIED = 0;</code>
      */
     public static final int TIME_UNIT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -187,7 +185,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>MINUTE = 1;</code>
      */
     public static final int MINUTE_VALUE = 1;
-
     /**
      *
      *
@@ -198,7 +195,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>HOUR = 2;</code>
      */
     public static final int HOUR_VALUE = 2;
-
     /**
      *
      *
@@ -209,7 +205,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>DAY = 3;</code>
      */
     public static final int DAY_VALUE = 3;
-
     /**
      *
      *
@@ -220,7 +215,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>WEEK = 4;</code>
      */
     public static final int WEEK_VALUE = 4;
-
     /**
      *
      *
@@ -231,7 +225,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>MONTH = 5;</code>
      */
     public static final int MONTH_VALUE = 5;
-
     /**
      *
      *
@@ -242,7 +235,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>LIFETIME = 6;</code>
      */
     public static final int LIFETIME_VALUE = 6;
-
     /**
      *
      *
@@ -254,7 +246,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>POD = 7;</code>
      */
     public static final int POD_VALUE = 7;
-
     /**
      *
      *
@@ -510,7 +501,6 @@ public final class TimeUnitEnum extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

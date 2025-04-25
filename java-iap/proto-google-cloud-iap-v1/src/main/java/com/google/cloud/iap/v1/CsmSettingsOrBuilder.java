@@ -37,7 +37,6 @@ public interface CsmSettingsOrBuilder
    * @return Whether the rctokenAud field is set.
    */
   boolean hasRctokenAud();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CsmSettingsOrBuilder
    * @return The rctokenAud.
    */
   com.google.protobuf.StringValue getRctokenAud();
-
   /**
    *
    *

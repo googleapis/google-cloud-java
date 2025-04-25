@@ -36,7 +36,6 @@ public interface GetGlobalAddressRequestOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetGlobalAddressRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

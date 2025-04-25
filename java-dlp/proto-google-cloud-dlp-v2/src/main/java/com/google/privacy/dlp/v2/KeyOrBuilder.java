@@ -38,7 +38,6 @@ public interface KeyOrBuilder
    * @return Whether the partitionId field is set.
    */
   boolean hasPartitionId();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface KeyOrBuilder
    * @return The partitionId.
    */
   com.google.privacy.dlp.v2.PartitionId getPartitionId();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface KeyOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Key.PathElement> getPathList();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface KeyOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
   com.google.privacy.dlp.v2.Key.PathElement getPath(int index);
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface KeyOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
   int getPathCount();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface KeyOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.Key.PathElementOrBuilder>
       getPathOrBuilderList();
-
   /**
    *
    *

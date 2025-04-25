@@ -32,7 +32,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworksAddPeeringRequest)
     NetworksAddPeeringRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworksAddPeeringRequest.newBuilder() to construct.
   private NetworksAddPeeringRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int AUTO_CREATE_ROUTES_FIELD_NUMBER = 57454941;
   private boolean autoCreateRoutes_ = false;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
   public boolean hasAutoCreateRoutes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
 
   public static final int NETWORK_PEERING_FIELD_NUMBER = 328926767;
   private com.google.cloud.compute.v1.NetworkPeering networkPeering_;
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
   public boolean hasNetworkPeering() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.NetworkPeering.getDefaultInstance()
         : networkPeering_;
   }
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerNetwork_ = "";
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
   public boolean hasPeerNetwork() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -499,7 +487,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -744,7 +731,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private boolean autoCreateRoutes_;
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     public boolean hasAutoCreateRoutes() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     public boolean getAutoCreateRoutes() {
       return autoCreateRoutes_;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +878,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.NetworkPeering.Builder,
             com.google.cloud.compute.v1.NetworkPeeringOrBuilder>
         networkPeeringBuilder_;
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     public boolean hasNetworkPeering() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -983,7 +958,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
         return networkPeeringBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1027,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return getNetworkPeeringFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1109,7 +1078,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
             : networkPeering_;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1105,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object peerNetwork_ = "";
-
     /**
      *
      *
@@ -1152,7 +1119,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
     public boolean hasPeerNetwork() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1175,7 +1141,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1163,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1184,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1201,6 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

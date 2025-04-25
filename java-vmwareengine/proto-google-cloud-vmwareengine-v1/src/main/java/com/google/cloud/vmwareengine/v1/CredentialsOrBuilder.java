@@ -36,7 +36,6 @@ public interface CredentialsOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CredentialsOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *

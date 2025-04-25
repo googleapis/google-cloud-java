@@ -37,7 +37,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExecutableCode)
     ExecutableCodeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExecutableCode.newBuilder() to construct.
   private ExecutableCode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,7 +111,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
      * <code>LANGUAGE_UNSPECIFIED = 0;</code>
      */
     public static final int LANGUAGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -209,7 +207,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LANGUAGE_FIELD_NUMBER = 1;
   private int language_ = 0;
-
   /**
    *
    *
@@ -227,7 +224,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
   public int getLanguageValue() {
     return language_;
   }
-
   /**
    *
    *
@@ -254,7 +250,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -278,7 +273,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -475,7 +469,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -677,7 +670,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int language_ = 0;
-
     /**
      *
      *
@@ -695,7 +687,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageValue() {
       return language_;
     }
-
     /**
      *
      *
@@ -716,7 +707,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +728,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1beta1.ExecutableCode.Language.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -762,7 +751,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +772,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +816,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +837,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +854,6 @@ public final class ExecutableCode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

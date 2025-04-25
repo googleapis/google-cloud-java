@@ -34,7 +34,6 @@ public interface ListDataPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datapolicies.v1.DataPolicy data_policies = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.datapolicies.v1.DataPolicy> getDataPoliciesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDataPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datapolicies.v1.DataPolicy data_policies = 1;</code>
    */
   com.google.cloud.bigquery.datapolicies.v1.DataPolicy getDataPolicies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDataPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.datapolicies.v1.DataPolicy data_policies = 1;</code>
    */
   int getDataPoliciesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDataPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.datapolicies.v1.DataPolicyOrBuilder>
       getDataPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDataPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

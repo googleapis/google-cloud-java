@@ -36,7 +36,6 @@ public interface CheckActiveJobsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return A list containing the drainNatIpPortRanges.
    */
   java.util.List<java.lang.String> getDrainNatIpPortRangesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return The count of drainNatIpPortRanges.
    */
   int getDrainNatIpPortRangesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return The drainNatIpPortRanges at the given index.
    */
   java.lang.String getDrainNatIpPortRanges(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return A list containing the natIpPortRanges.
    */
   java.util.List<java.lang.String> getNatIpPortRangesList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return The count of natIpPortRanges.
    */
   int getNatIpPortRangesCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return The natIpPortRanges at the given index.
    */
   java.lang.String getNatIpPortRanges(int index);
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return Whether the numTotalDrainNatPorts field is set.
    */
   boolean hasNumTotalDrainNatPorts();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return Whether the numTotalNatPorts field is set.
    */
   boolean hasNumTotalNatPorts();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    * @return Whether the ruleNumber field is set.
    */
   boolean hasRuleNumber();
-
   /**
    *
    *

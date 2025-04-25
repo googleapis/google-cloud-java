@@ -36,7 +36,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface GcsDestinationConfigOrBuilder
    */
   @java.lang.Deprecated
   int getGcsFileFormatValue();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return Whether the fileRotationInterval field is set.
    */
   boolean hasFileRotationInterval();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return The fileRotationInterval.
    */
   com.google.protobuf.Duration getFileRotationInterval();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return Whether the avroFileFormat field is set.
    */
   boolean hasAvroFileFormat();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return The avroFileFormat.
    */
   com.google.cloud.datastream.v1alpha1.AvroFileFormat getAvroFileFormat();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return Whether the jsonFileFormat field is set.
    */
   boolean hasJsonFileFormat();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface GcsDestinationConfigOrBuilder
    * @return The jsonFileFormat.
    */
   com.google.cloud.datastream.v1alpha1.JsonFileFormat getJsonFileFormat();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.SetMaintenancePolicyRequest)
     SetMaintenancePolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetMaintenancePolicyRequest.newBuilder() to construct.
   private SetMaintenancePolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
 
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 4;
   private com.google.container.v1beta1.MaintenancePolicy maintenancePolicy_;
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
   public boolean hasMaintenancePolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +266,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         ? com.google.container.v1beta1.MaintenancePolicy.getDefaultInstance()
         : maintenancePolicy_;
   }
-
   /**
    *
    *
@@ -299,7 +289,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -553,7 +541,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -816,7 +803,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -840,7 +826,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +871,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -957,7 +938,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -982,7 +962,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1004,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1076,7 +1052,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1074,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1112,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1141,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
             com.google.container.v1beta1.MaintenancePolicy.Builder,
             com.google.container.v1beta1.MaintenancePolicyOrBuilder>
         maintenancePolicyBuilder_;
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     public boolean hasMaintenancePolicy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1211,7 +1181,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return maintenancePolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1206,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1229,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1260,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1282,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1299,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return getMaintenancePolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1356,7 +1320,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
             : maintenancePolicy_;
       }
     }
-
     /**
      *
      *
@@ -1387,7 +1350,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1412,7 +1374,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1437,7 +1398,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1461,7 +1421,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1481,7 +1440,6 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

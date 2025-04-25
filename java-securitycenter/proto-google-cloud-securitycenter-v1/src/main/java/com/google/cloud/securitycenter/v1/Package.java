@@ -33,7 +33,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Package)
     PackageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Package.newBuilder() to construct.
   private Package(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object packageName_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpeUri_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object packageType_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object packageVersion_ = "";
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -465,7 +456,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -694,7 +684,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object packageName_ = "";
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cpeUri_ = "";
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +896,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object packageType_ = "";
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -962,7 +940,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1002,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object packageVersion_ = "";
-
     /**
      *
      *
@@ -1050,7 +1024,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1046,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1067,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1084,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

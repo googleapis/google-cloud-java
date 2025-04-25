@@ -33,7 +33,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.LintResponse)
     LintResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LintResponse.newBuilder() to construct.
   private LintResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
-
     /**
      *
      *
@@ -116,7 +114,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
      */
     int getCount();
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.LintResponse.SummaryEntry)
       SummaryEntryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SummaryEntry.newBuilder() to construct.
     private SummaryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -164,7 +160,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SEVERITY_FIELD_NUMBER = 1;
     private int severity_ = 0;
-
     /**
      *
      *
@@ -182,7 +177,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -205,7 +199,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private int count_ = 0;
-
     /**
      *
      *
@@ -392,7 +385,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -591,7 +583,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int severity_ = 0;
-
       /**
        *
        *
@@ -609,7 +600,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       public int getSeverityValue() {
         return severity_;
       }
-
       /**
        *
        *
@@ -630,7 +620,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -650,7 +639,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.Severity.forNumber(severity_);
         return result == null ? com.google.cloud.apihub.v1.Severity.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -674,7 +662,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -696,7 +683,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int count_;
-
       /**
        *
        *
@@ -712,7 +698,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       public int getCount() {
         return count_;
       }
-
       /**
        *
        *
@@ -732,7 +717,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -820,7 +804,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.Issue> issues_;
-
   /**
    *
    *
@@ -836,7 +819,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.apihub.v1.Issue> getIssuesList() {
     return issues_;
   }
-
   /**
    *
    *
@@ -853,7 +835,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       getIssuesOrBuilderList() {
     return issues_;
   }
-
   /**
    *
    *
@@ -869,7 +850,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public int getIssuesCount() {
     return issues_.size();
   }
-
   /**
    *
    *
@@ -885,7 +865,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apihub.v1.Issue getIssues(int index) {
     return issues_.get(index);
   }
-
   /**
    *
    *
@@ -906,7 +885,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.LintResponse.SummaryEntry> summary_;
-
   /**
    *
    *
@@ -922,7 +900,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.apihub.v1.LintResponse.SummaryEntry> getSummaryList() {
     return summary_;
   }
-
   /**
    *
    *
@@ -939,7 +916,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       getSummaryOrBuilderList() {
     return summary_;
   }
-
   /**
    *
    *
@@ -955,7 +931,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public int getSummaryCount() {
     return summary_.size();
   }
-
   /**
    *
    *
@@ -971,7 +946,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apihub.v1.LintResponse.SummaryEntry getSummary(int index) {
     return summary_.get(index);
   }
-
   /**
    *
    *
@@ -991,7 +965,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1008,7 +981,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1032,7 +1004,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
-
   /**
    *
    *
@@ -1056,7 +1027,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1083,7 +1053,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINTER_FIELD_NUMBER = 5;
   private int linter_ = 0;
-
   /**
    *
    *
@@ -1100,7 +1069,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public int getLinterValue() {
     return linter_;
   }
-
   /**
    *
    *
@@ -1121,7 +1089,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1138,7 +1105,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1155,7 +1121,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1383,7 +1348,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1773,7 +1737,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return issuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1792,7 +1755,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return issuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1811,7 +1773,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return issuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1836,7 +1797,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1858,7 +1818,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1842,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1866,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1887,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1908,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1975,7 +1930,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1997,7 +1951,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2019,7 +1972,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2034,7 +1986,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Issue.Builder getIssuesBuilder(int index) {
       return getIssuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2053,7 +2004,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return issuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2073,7 +2023,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(issues_);
       }
     }
-
     /**
      *
      *
@@ -2089,7 +2038,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       return getIssuesFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.Issue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2105,7 +2053,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       return getIssuesFieldBuilder()
           .addBuilder(index, com.google.cloud.apihub.v1.Issue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2173,7 +2120,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return summaryBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2192,7 +2138,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return summaryBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2211,7 +2156,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return summaryBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2237,7 +2181,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2260,7 +2203,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2285,7 +2227,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2311,7 +2252,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2334,7 +2274,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2357,7 +2296,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2380,7 +2318,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2402,7 +2339,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2424,7 +2360,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2375,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSummaryFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2460,7 +2394,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return summaryBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2480,7 +2413,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(summary_);
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2428,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       return getSummaryFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.LintResponse.SummaryEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2514,7 +2445,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.apihub.v1.LintResponse.SummaryEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2549,7 +2479,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2566,7 +2495,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2586,7 +2514,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2605,7 +2532,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apihub.v1.LintState.forNumber(state_);
       return result == null ? com.google.cloud.apihub.v1.LintState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2628,7 +2554,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2649,7 +2574,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -2672,7 +2596,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2695,7 +2618,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2717,7 +2639,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2656,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2760,7 +2680,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int linter_ = 0;
-
     /**
      *
      *
@@ -2777,7 +2696,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     public int getLinterValue() {
       return linter_;
     }
-
     /**
      *
      *
@@ -2797,7 +2715,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2816,7 +2733,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apihub.v1.Linter.forNumber(linter_);
       return result == null ? com.google.cloud.apihub.v1.Linter.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2839,7 +2755,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2865,7 +2780,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2881,7 +2795,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2903,7 +2816,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2927,7 +2839,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2948,7 +2859,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2977,7 +2887,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2998,7 +2907,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3014,7 +2922,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3034,7 +2941,6 @@ public final class LintResponse extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *

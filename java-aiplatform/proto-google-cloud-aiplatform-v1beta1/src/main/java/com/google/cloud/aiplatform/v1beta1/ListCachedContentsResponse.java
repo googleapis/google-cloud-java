@@ -33,7 +33,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListCachedContentsResponse)
     ListCachedContentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCachedContentsResponse.newBuilder() to construct.
   private ListCachedContentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.CachedContent> cachedContents_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.aiplatform.v1beta1.CachedContent> getCachedContentsList() {
     return cachedContents_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       getCachedContentsOrBuilderList() {
     return cachedContents_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
   public int getCachedContentsCount() {
     return cachedContents_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
   public com.google.cloud.aiplatform.v1beta1.CachedContent getCachedContents(int index) {
     return cachedContents_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return cachedContentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return cachedContentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return cachedContentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         int index) {
       return getCachedContentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return cachedContentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(cachedContents_);
       }
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       return getCachedContentsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.CachedContent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.CachedContent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1021,7 +994,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1017,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1039,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1057,6 @@ public final class ListCachedContentsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

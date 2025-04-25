@@ -35,7 +35,6 @@ public interface ListFeatureMonitorJobsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureMonitorJob> getFeatureMonitorJobsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListFeatureMonitorJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureMonitorJob getFeatureMonitorJobs(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListFeatureMonitorJobsResponseOrBuilder
    * </code>
    */
   int getFeatureMonitorJobsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListFeatureMonitorJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureMonitorJobOrBuilder>
       getFeatureMonitorJobsOrBuilderList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface ListFeatureMonitorJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

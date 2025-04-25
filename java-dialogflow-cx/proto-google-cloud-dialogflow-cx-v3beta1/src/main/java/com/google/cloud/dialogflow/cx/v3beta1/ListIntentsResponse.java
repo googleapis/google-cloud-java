@@ -34,7 +34,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse)
     ListIntentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListIntentsResponse.newBuilder() to construct.
   private ListIntentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Intent> intents_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Intent> getIntentsList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       getIntentsOrBuilderList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
   public int getIntentsCount() {
     return intents_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dialogflow.cx.v3beta1.Intent getIntents(int index) {
     return intents_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return intentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return intentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return intentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(intents_);
       }
     }
-
     /**
      *
      *
@@ -956,7 +932,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       return getIntentsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       return getIntentsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1029,7 +1002,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1065,6 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

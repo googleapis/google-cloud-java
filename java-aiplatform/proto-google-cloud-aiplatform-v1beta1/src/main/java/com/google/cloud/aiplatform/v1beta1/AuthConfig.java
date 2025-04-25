@@ -33,7 +33,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AuthConfig)
     AuthConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuthConfig.newBuilder() to construct.
   private AuthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -120,7 +118,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The apiKeySecret.
      */
     java.lang.String getApiKeySecret();
-
     /**
      *
      *
@@ -157,7 +154,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for httpElementLocation.
      */
     int getHttpElementLocationValue();
-
     /**
      *
      *
@@ -173,7 +169,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.HttpElementLocation getHttpElementLocation();
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfig)
       ApiKeyConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ApiKeyConfig.newBuilder() to construct.
     private ApiKeyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -225,7 +219,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -251,7 +244,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -282,7 +274,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object apiKeySecret_ = "";
-
     /**
      *
      *
@@ -315,7 +306,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -351,7 +341,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HTTP_ELEMENT_LOCATION_FIELD_NUMBER = 3;
     private int httpElementLocation_ = 0;
-
     /**
      *
      *
@@ -369,7 +358,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public int getHttpElementLocationValue() {
       return httpElementLocation_;
     }
-
     /**
      *
      *
@@ -575,7 +563,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -794,7 +781,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -819,7 +805,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -844,7 +829,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -868,7 +852,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -888,7 +871,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -915,7 +897,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object apiKeySecret_ = "";
-
       /**
        *
        *
@@ -947,7 +928,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -979,7 +959,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1010,7 +989,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1037,7 +1015,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1071,7 +1048,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int httpElementLocation_ = 0;
-
       /**
        *
        *
@@ -1089,7 +1065,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       public int getHttpElementLocationValue() {
         return httpElementLocation_;
       }
-
       /**
        *
        *
@@ -1110,7 +1085,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1132,7 +1106,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1beta1.HttpElementLocation.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1157,7 +1130,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1269,7 +1241,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The credentialSecret.
      */
     java.lang.String getCredentialSecret();
-
     /**
      *
      *
@@ -1292,7 +1263,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCredentialSecretBytes();
   }
-
   /**
    *
    *
@@ -1307,7 +1277,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AuthConfig.HttpBasicAuthConfig)
       HttpBasicAuthConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use HttpBasicAuthConfig.newBuilder() to construct.
     private HttpBasicAuthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1342,7 +1311,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object credentialSecret_ = "";
-
     /**
      *
      *
@@ -1375,7 +1343,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1571,7 +1538,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1766,7 +1732,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object credentialSecret_ = "";
-
       /**
        *
        *
@@ -1798,7 +1763,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1830,7 +1794,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1861,7 +1824,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1888,7 +1850,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2015,7 +1976,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceAccount.
      */
     java.lang.String getServiceAccount();
-
     /**
      *
      *
@@ -2039,7 +1999,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getServiceAccountBytes();
   }
-
   /**
    *
    *
@@ -2055,7 +2014,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AuthConfig.GoogleServiceAccountConfig)
       GoogleServiceAccountConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GoogleServiceAccountConfig.newBuilder() to construct.
     private GoogleServiceAccountConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2091,7 +2049,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -2125,7 +2082,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2328,7 +2284,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2527,7 +2482,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object serviceAccount_ = "";
-
       /**
        *
        *
@@ -2560,7 +2514,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2593,7 +2546,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2625,7 +2577,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2653,7 +2604,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2774,7 +2724,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the accessToken field is set.
      */
     boolean hasAccessToken();
-
     /**
      *
      *
@@ -2789,7 +2738,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The accessToken.
      */
     java.lang.String getAccessToken();
-
     /**
      *
      *
@@ -2824,7 +2772,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceAccount field is set.
      */
     boolean hasServiceAccount();
-
     /**
      *
      *
@@ -2844,7 +2791,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceAccount.
      */
     java.lang.String getServiceAccount();
-
     /**
      *
      *
@@ -2867,7 +2813,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig.OauthConfigCase getOauthConfigCase();
   }
-
   /**
    *
    *
@@ -2882,7 +2827,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig)
       OauthConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OauthConfig.newBuilder() to construct.
     private OauthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2928,7 +2872,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       private OauthConfigCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2962,7 +2905,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -2979,7 +2921,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessToken() {
       return oauthConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -3009,7 +2950,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3041,7 +2981,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -3063,7 +3002,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceAccount() {
       return oauthConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -3098,7 +3036,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3321,7 +3258,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3570,7 +3506,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAccessToken() {
         return oauthConfigCase_ == 1;
       }
-
       /**
        *
        *
@@ -3601,7 +3536,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3632,7 +3566,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3656,7 +3589,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3678,7 +3610,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3726,7 +3657,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasServiceAccount() {
         return oauthConfigCase_ == 2;
       }
-
       /**
        *
        *
@@ -3762,7 +3692,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3798,7 +3727,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3827,7 +3755,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3854,7 +3781,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3969,7 +3895,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the idToken field is set.
      */
     boolean hasIdToken();
-
     /**
      *
      *
@@ -3984,7 +3909,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The idToken.
      */
     java.lang.String getIdToken();
-
     /**
      *
      *
@@ -4023,7 +3947,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceAccount field is set.
      */
     boolean hasServiceAccount();
-
     /**
      *
      *
@@ -4047,7 +3970,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceAccount.
      */
     java.lang.String getServiceAccount();
-
     /**
      *
      *
@@ -4074,7 +3996,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig.OidcConfigCase getOidcConfigCase();
   }
-
   /**
    *
    *
@@ -4089,7 +4010,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig)
       OidcConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OidcConfig.newBuilder() to construct.
     private OidcConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4135,7 +4055,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       private OidcConfigCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4169,7 +4088,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ID_TOKEN_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -4186,7 +4104,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIdToken() {
       return oidcConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -4216,7 +4133,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4248,7 +4164,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -4274,7 +4189,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceAccount() {
       return oidcConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -4313,7 +4227,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4540,7 +4453,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4786,7 +4698,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIdToken() {
         return oidcConfigCase_ == 1;
       }
-
       /**
        *
        *
@@ -4817,7 +4728,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4848,7 +4758,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4872,7 +4781,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4894,7 +4802,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4946,7 +4853,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasServiceAccount() {
         return oidcConfigCase_ == 2;
       }
-
       /**
        *
        *
@@ -4986,7 +4892,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5026,7 +4931,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5059,7 +4963,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5090,7 +4993,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5209,7 +5111,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     private AuthConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5249,7 +5150,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_KEY_CONFIG_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -5265,7 +5165,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApiKeyConfig() {
     return authConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -5284,7 +5183,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5304,7 +5202,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_BASIC_AUTH_CONFIG_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -5322,7 +5219,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpBasicAuthConfig() {
     return authConfigCase_ == 3;
   }
-
   /**
    *
    *
@@ -5344,7 +5240,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.AuthConfig.HttpBasicAuthConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5366,7 +5261,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_SERVICE_ACCOUNT_CONFIG_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -5384,7 +5278,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleServiceAccountConfig() {
     return authConfigCase_ == 4;
   }
-
   /**
    *
    *
@@ -5408,7 +5301,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.AuthConfig.GoogleServiceAccountConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5432,7 +5324,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OAUTH_CONFIG_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -5448,7 +5339,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOauthConfig() {
     return authConfigCase_ == 5;
   }
-
   /**
    *
    *
@@ -5467,7 +5357,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5487,7 +5376,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OIDC_CONFIG_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -5503,7 +5391,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOidcConfig() {
     return authConfigCase_ == 7;
   }
-
   /**
    *
    *
@@ -5522,7 +5409,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5543,7 +5429,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTH_TYPE_FIELD_NUMBER = 101;
   private int authType_ = 0;
-
   /**
    *
    *
@@ -5559,7 +5444,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAuthTypeValue() {
     return authType_;
   }
-
   /**
    *
    *
@@ -5832,7 +5716,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6133,7 +6016,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfigOrBuilder>
         apiKeyConfigBuilder_;
-
     /**
      *
      *
@@ -6149,7 +6031,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApiKeyConfig() {
       return authConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -6175,7 +6056,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6199,7 +6079,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6220,7 +6099,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6256,7 +6134,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6282,7 +6159,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6296,7 +6172,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         getApiKeyConfigBuilder() {
       return getApiKeyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6318,7 +6193,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.AuthConfig.ApiKeyConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6358,7 +6232,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.AuthConfig.HttpBasicAuthConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.AuthConfig.HttpBasicAuthConfigOrBuilder>
         httpBasicAuthConfigBuilder_;
-
     /**
      *
      *
@@ -6376,7 +6249,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpBasicAuthConfig() {
       return authConfigCase_ == 3;
     }
-
     /**
      *
      *
@@ -6407,7 +6279,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6433,7 +6304,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -6457,7 +6327,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -6496,7 +6365,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -6524,7 +6392,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6540,7 +6407,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         getHttpBasicAuthConfigBuilder() {
       return getHttpBasicAuthConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6565,7 +6431,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6608,7 +6473,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.AuthConfig.GoogleServiceAccountConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.AuthConfig.GoogleServiceAccountConfigOrBuilder>
         googleServiceAccountConfigBuilder_;
-
     /**
      *
      *
@@ -6626,7 +6490,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleServiceAccountConfig() {
       return authConfigCase_ == 4;
     }
-
     /**
      *
      *
@@ -6658,7 +6521,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6684,7 +6546,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -6708,7 +6569,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -6747,7 +6607,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -6775,7 +6634,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6791,7 +6649,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         getGoogleServiceAccountConfigBuilder() {
       return getGoogleServiceAccountConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6817,7 +6674,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6861,7 +6717,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfigOrBuilder>
         oauthConfigBuilder_;
-
     /**
      *
      *
@@ -6877,7 +6732,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOauthConfig() {
       return authConfigCase_ == 5;
     }
-
     /**
      *
      *
@@ -6903,7 +6757,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6927,7 +6780,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -6948,7 +6800,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -6984,7 +6835,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -7010,7 +6860,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7024,7 +6873,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         getOauthConfigBuilder() {
       return getOauthConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7046,7 +6894,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.AuthConfig.OauthConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7086,7 +6933,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfigOrBuilder>
         oidcConfigBuilder_;
-
     /**
      *
      *
@@ -7102,7 +6948,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOidcConfig() {
       return authConfigCase_ == 7;
     }
-
     /**
      *
      *
@@ -7128,7 +6973,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7151,7 +6995,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -7172,7 +7015,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -7207,7 +7049,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       authConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -7233,7 +7074,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7247,7 +7087,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         getOidcConfigBuilder() {
       return getOidcConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7269,7 +7108,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.AuthConfig.OidcConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7305,7 +7143,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int authType_ = 0;
-
     /**
      *
      *
@@ -7321,7 +7158,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAuthTypeValue() {
       return authType_;
     }
-
     /**
      *
      *
@@ -7340,7 +7176,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7358,7 +7193,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.AuthType.forNumber(authType_);
       return result == null ? com.google.cloud.aiplatform.v1beta1.AuthType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -7380,7 +7214,6 @@ public final class AuthConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

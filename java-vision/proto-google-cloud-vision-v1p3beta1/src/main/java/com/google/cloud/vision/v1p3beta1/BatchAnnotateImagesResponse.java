@@ -33,7 +33,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse)
     BatchAnnotateImagesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchAnnotateImagesResponse.newBuilder() to construct.
   private BatchAnnotateImagesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> responses_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       getResponsesList() {
     return responses_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       getResponsesOrBuilderList() {
     return responses_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
   public int getResponsesCount() {
     return responses_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
   public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse getResponses(int index) {
     return responses_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +566,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         return responsesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         return responsesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         return responsesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +800,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         int index) {
       return getResponsesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -837,7 +817,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(responses_);
       }
     }
-
     /**
      *
      *
@@ -870,7 +848,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       return getResponsesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -886,7 +863,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance());
     }
-
     /**
      *
      *

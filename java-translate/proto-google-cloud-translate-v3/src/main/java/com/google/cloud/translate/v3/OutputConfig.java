@@ -33,7 +33,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.OutputConfig)
     OutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OutputConfig.newBuilder() to construct.
   private OutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -196,7 +193,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -285,7 +281,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.translate.v3.GcsDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -547,7 +542,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -765,7 +759,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.translate.v3.GcsDestination.Builder,
             com.google.cloud.translate.v3.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
-
     /**
      *
      *
@@ -851,7 +844,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -947,7 +939,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1031,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1121,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1223,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1318,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1400,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.translate.v3.GcsDestination.Builder getGcsDestinationBuilder() {
       return getGcsDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1504,7 +1490,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *

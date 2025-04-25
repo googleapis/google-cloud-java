@@ -33,7 +33,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.ListImageVersionsResponse)
     ListImageVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListImageVersionsResponse.newBuilder() to construct.
   private ListImageVersionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.orchestration.airflow.service.v1.ImageVersion>
       imageVersions_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       getImageVersionsList() {
     return imageVersions_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       getImageVersionsOrBuilderList() {
     return imageVersions_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
   public int getImageVersionsCount() {
     return imageVersions_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       int index) {
     return imageVersions_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +375,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -677,7 +668,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return imageVersionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -696,7 +686,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return imageVersionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return imageVersionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -742,7 +730,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +848,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +871,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         getImageVersionsBuilder(int index) {
       return getImageVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -969,7 +947,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return imageVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(imageVersions_);
       }
     }
-
     /**
      *
      *
@@ -1008,7 +984,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
           .addBuilder(
               com.google.cloud.orchestration.airflow.service.v1.ImageVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1027,7 +1002,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
               index,
               com.google.cloud.orchestration.airflow.service.v1.ImageVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1088,7 +1061,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1104,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1121,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

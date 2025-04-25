@@ -40,7 +40,6 @@ public interface GetAnnotationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

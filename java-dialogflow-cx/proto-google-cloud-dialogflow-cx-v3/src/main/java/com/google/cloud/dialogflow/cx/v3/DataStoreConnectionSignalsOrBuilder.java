@@ -38,7 +38,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return Whether the rewriterModelCallSignals field is set.
    */
   boolean hasRewriterModelCallSignals();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.RewriterModelCallSignals
       getRewriterModelCallSignals();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return The rewrittenQuery.
    */
   java.lang.String getRewrittenQuery();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet>
       getSearchSnippetsList();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippet getSearchSnippets(
       int index);
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * </code>
    */
   int getSearchSnippetsCount();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface DataStoreConnectionSignalsOrBuilder
           ? extends
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SearchSnippetOrBuilder>
       getSearchSnippetsOrBuilderList();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return Whether the answerGenerationModelCallSignals field is set.
    */
   boolean hasAnswerGenerationModelCallSignals();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerGenerationModelCallSignals
       getAnswerGenerationModelCallSignals();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return The answer.
    */
   java.lang.String getAnswer();
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPart>
       getAnswerPartsList();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPart getAnswerParts(int index);
-
   /**
    *
    *
@@ -283,7 +271,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * </code>
    */
   int getAnswerPartsCount();
-
   /**
    *
    *
@@ -301,7 +288,6 @@ public interface DataStoreConnectionSignalsOrBuilder
           ? extends
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.AnswerPartOrBuilder>
       getAnswerPartsOrBuilderList();
-
   /**
    *
    *
@@ -332,7 +318,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippet>
       getCitedSnippetsList();
-
   /**
    *
    *
@@ -347,7 +332,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippet getCitedSnippets(
       int index);
-
   /**
    *
    *
@@ -361,7 +345,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * </code>
    */
   int getCitedSnippetsCount();
-
   /**
    *
    *
@@ -378,7 +361,6 @@ public interface DataStoreConnectionSignalsOrBuilder
           ? extends
               com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.CitedSnippetOrBuilder>
       getCitedSnippetsOrBuilderList();
-
   /**
    *
    *
@@ -408,7 +390,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return Whether the groundingSignals field is set.
    */
   boolean hasGroundingSignals();
-
   /**
    *
    *
@@ -424,7 +405,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.GroundingSignals
       getGroundingSignals();
-
   /**
    *
    *
@@ -453,7 +433,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return Whether the safetySignals field is set.
    */
   boolean hasSafetySignals();
-
   /**
    *
    *
@@ -468,7 +447,6 @@ public interface DataStoreConnectionSignalsOrBuilder
    * @return The safetySignals.
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignals.SafetySignals getSafetySignals();
-
   /**
    *
    *

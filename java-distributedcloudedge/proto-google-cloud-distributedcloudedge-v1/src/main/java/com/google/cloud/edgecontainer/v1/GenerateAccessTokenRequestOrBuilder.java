@@ -38,7 +38,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *

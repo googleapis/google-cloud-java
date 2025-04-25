@@ -33,7 +33,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.ListDeliveryVehiclesRequest)
     ListDeliveryVehiclesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDeliveryVehiclesRequest.newBuilder() to construct.
   private ListDeliveryVehiclesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader header_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         ? com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.getDefaultInstance()
         : header_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -315,7 +305,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -359,7 +348,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
 
   public static final int VIEWPORT_FIELD_NUMBER = 7;
   private com.google.geo.type.Viewport viewport_;
-
   /**
    *
    *
@@ -376,7 +364,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
   public boolean hasViewport() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -393,7 +380,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
   public com.google.geo.type.Viewport getViewport() {
     return viewport_ == null ? com.google.geo.type.Viewport.getDefaultInstance() : viewport_;
   }
-
   /**
    *
    *
@@ -625,7 +611,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -913,7 +898,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeaderOrBuilder>
         headerBuilder_;
-
     /**
      *
      *
@@ -930,7 +914,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -953,7 +936,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return headerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -978,7 +960,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +982,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1014,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1035,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1052,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1096,7 +1073,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
             : header_;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1102,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1153,7 +1128,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1154,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1206,7 +1179,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1200,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1228,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1275,7 +1245,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1297,7 +1266,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1287,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1346,7 +1313,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1373,7 +1339,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1399,7 +1364,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1385,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1413,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1490,7 +1452,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1530,7 +1491,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1529,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1563,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1609,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
             com.google.geo.type.Viewport.Builder,
             com.google.geo.type.ViewportOrBuilder>
         viewportBuilder_;
-
     /**
      *
      *
@@ -1668,7 +1625,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
     public boolean hasViewport() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1689,7 +1645,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return viewportBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1669,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1736,7 +1690,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1719,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1740,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1756,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
       onChanged();
       return getViewportFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1824,7 +1774,6 @@ public final class ListDeliveryVehiclesRequest extends com.google.protobuf.Gener
         return viewport_ == null ? com.google.geo.type.Viewport.getDefaultInstance() : viewport_;
       }
     }
-
     /**
      *
      *

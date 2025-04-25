@@ -33,7 +33,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.BigQueryLink)
     BigQueryLinkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryLink.newBuilder() to construct.
   private BigQueryLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DAILY_EXPORT_ENABLED_FIELD_NUMBER = 4;
   private boolean dailyExportEnabled_ = false;
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAMING_EXPORT_ENABLED_FIELD_NUMBER = 5;
   private boolean streamingExportEnabled_ = false;
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FRESH_DAILY_EXPORT_ENABLED_FIELD_NUMBER = 9;
   private boolean freshDailyExportEnabled_ = false;
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INCLUDE_ADVERTISING_ID_FIELD_NUMBER = 6;
   private boolean includeAdvertisingId_ = false;
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exportStreams_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExportStreamsList() {
     return exportStreams_;
   }
-
   /**
    *
    *
@@ -359,7 +345,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public int getExportStreamsCount() {
     return exportStreams_.size();
   }
-
   /**
    *
    *
@@ -378,7 +363,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExportStreams(int index) {
     return exportStreams_.get(index);
   }
-
   /**
    *
    *
@@ -403,7 +387,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludedEvents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -418,7 +401,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExcludedEventsList() {
     return excludedEvents_;
   }
-
   /**
    *
    *
@@ -433,7 +415,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public int getExcludedEventsCount() {
     return excludedEvents_.size();
   }
-
   /**
    *
    *
@@ -449,7 +430,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExcludedEvents(int index) {
     return excludedEvents_.get(index);
   }
-
   /**
    *
    *
@@ -470,7 +450,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datasetLocation_ = "";
-
   /**
    *
    *
@@ -498,7 +477,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -786,7 +764,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1126,7 +1103,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1151,7 +1127,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1151,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1174,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1193,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1219,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1275,7 +1246,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1303,7 +1273,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1330,7 +1299,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1321,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1355,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1405,7 +1371,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1428,7 +1393,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1453,7 +1417,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1475,7 +1438,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1467,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1488,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1504,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1565,7 +1524,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1595,7 +1553,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean dailyExportEnabled_;
-
     /**
      *
      *
@@ -1611,7 +1568,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public boolean getDailyExportEnabled() {
       return dailyExportEnabled_;
     }
-
     /**
      *
      *
@@ -1631,7 +1587,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1606,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean streamingExportEnabled_;
-
     /**
      *
      *
@@ -1667,7 +1621,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public boolean getStreamingExportEnabled() {
       return streamingExportEnabled_;
     }
-
     /**
      *
      *
@@ -1687,7 +1640,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1659,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean freshDailyExportEnabled_;
-
     /**
      *
      *
@@ -1723,7 +1674,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public boolean getFreshDailyExportEnabled() {
       return freshDailyExportEnabled_;
     }
-
     /**
      *
      *
@@ -1743,7 +1693,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1763,7 +1712,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean includeAdvertisingId_;
-
     /**
      *
      *
@@ -1780,7 +1728,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public boolean getIncludeAdvertisingId() {
       return includeAdvertisingId_;
     }
-
     /**
      *
      *
@@ -1801,7 +1748,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1830,7 +1776,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -1849,7 +1794,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       exportStreams_.makeImmutable();
       return exportStreams_;
     }
-
     /**
      *
      *
@@ -1867,7 +1811,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public int getExportStreamsCount() {
       return exportStreams_.size();
     }
-
     /**
      *
      *
@@ -1886,7 +1829,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExportStreams(int index) {
       return exportStreams_.get(index);
     }
-
     /**
      *
      *
@@ -1905,7 +1847,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExportStreamsBytes(int index) {
       return exportStreams_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1932,7 +1873,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1898,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1981,7 +1920,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1941,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1977,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -2056,7 +1992,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       excludedEvents_.makeImmutable();
       return excludedEvents_;
     }
-
     /**
      *
      *
@@ -2071,7 +2006,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public int getExcludedEventsCount() {
       return excludedEvents_.size();
     }
-
     /**
      *
      *
@@ -2087,7 +2021,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExcludedEvents(int index) {
       return excludedEvents_.get(index);
     }
-
     /**
      *
      *
@@ -2103,7 +2036,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExcludedEventsBytes(int index) {
       return excludedEvents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2127,7 +2059,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2081,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2170,7 +2100,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2189,7 +2118,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2143,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object datasetLocation_ = "";
-
     /**
      *
      *
@@ -2242,7 +2169,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2269,7 +2195,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2295,7 +2220,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2317,7 +2241,6 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence)
     DiscoveryInspectTemplateModifiedCadenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryInspectTemplateModifiedCadence.newBuilder() to construct.
   private DiscoveryInspectTemplateModifiedCadence(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
 
   public static final int FREQUENCY_FIELD_NUMBER = 1;
   private int frequency_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
   public int getFrequencyValue() {
     return frequency_;
   }
-
   /**
    *
    *
@@ -273,7 +270,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -462,7 +458,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
     private int bitField0_;
 
     private int frequency_ = 0;
-
     /**
      *
      *
@@ -479,7 +474,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
     public int getFrequencyValue() {
       return frequency_;
     }
-
     /**
      *
      *
@@ -499,7 +493,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -520,7 +513,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
           ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -543,7 +535,6 @@ public final class DiscoveryInspectTemplateModifiedCadence
       onChanged();
       return this;
     }
-
     /**
      *
      *

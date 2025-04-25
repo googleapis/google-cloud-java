@@ -36,7 +36,6 @@ public interface UpdateDataStreamRequestOrBuilder
    * @return Whether the dataStream field is set.
    */
   boolean hasDataStream();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateDataStreamRequestOrBuilder
    * @return The dataStream.
    */
   com.google.analytics.admin.v1alpha.DataStream getDataStream();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateDataStreamRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdateDataStreamRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

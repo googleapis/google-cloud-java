@@ -34,7 +34,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.Connection)
     ConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Connection.newBuilder() to construct.
   private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private PropertiesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -136,7 +134,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -161,7 +158,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +187,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object friendlyName_ = "";
-
   /**
    *
    *
@@ -215,7 +210,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +238,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -268,7 +261,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -294,7 +286,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_SQL_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -310,7 +301,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudSql() {
     return propertiesCase_ == 4;
   }
-
   /**
    *
    *
@@ -329,7 +319,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.CloudSqlProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -349,7 +338,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AWS_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -365,7 +353,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAws() {
     return propertiesCase_ == 8;
   }
-
   /**
    *
    *
@@ -384,7 +371,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -403,7 +389,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AZURE_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -419,7 +404,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAzure() {
     return propertiesCase_ == 11;
   }
-
   /**
    *
    *
@@ -438,7 +422,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -457,7 +440,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_SPANNER_FIELD_NUMBER = 21;
-
   /**
    *
    *
@@ -473,7 +455,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudSpanner() {
     return propertiesCase_ == 21;
   }
-
   /**
    *
    *
@@ -492,7 +473,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.CloudSpannerProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -512,7 +492,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_RESOURCE_FIELD_NUMBER = 22;
-
   /**
    *
    *
@@ -528,7 +507,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudResource() {
     return propertiesCase_ == 22;
   }
-
   /**
    *
    *
@@ -547,7 +525,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -567,7 +544,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPARK_FIELD_NUMBER = 23;
-
   /**
    *
    *
@@ -583,7 +559,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpark() {
     return propertiesCase_ == 23;
   }
-
   /**
    *
    *
@@ -602,7 +577,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -621,7 +595,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SALESFORCE_DATA_CLOUD_FIELD_NUMBER = 24;
-
   /**
    *
    *
@@ -641,7 +614,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSalesforceDataCloud() {
     return propertiesCase_ == 24;
   }
-
   /**
    *
    *
@@ -666,7 +638,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -692,7 +663,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_TIME_FIELD_NUMBER = 5;
   private long creationTime_ = 0L;
-
   /**
    *
    *
@@ -711,7 +681,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_MODIFIED_TIME_FIELD_NUMBER = 6;
   private long lastModifiedTime_ = 0L;
-
   /**
    *
    *
@@ -730,7 +699,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_CREDENTIAL_FIELD_NUMBER = 7;
   private boolean hasCredential_ = false;
-
   /**
    *
    *
@@ -1072,7 +1040,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1475,7 +1442,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1499,7 +1465,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1523,7 +1488,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1546,7 +1510,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1528,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1553,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object friendlyName_ = "";
-
     /**
      *
      *
@@ -1614,7 +1575,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1637,7 +1597,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1659,7 +1618,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1635,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1659,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1725,7 +1681,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1748,7 +1703,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1724,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1741,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1817,7 +1769,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.CloudSqlProperties.Builder,
             com.google.cloud.bigquery.connection.v1.CloudSqlPropertiesOrBuilder>
         cloudSqlBuilder_;
-
     /**
      *
      *
@@ -1833,7 +1784,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudSql() {
       return propertiesCase_ == 4;
     }
-
     /**
      *
      *
@@ -1859,7 +1809,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.CloudSqlProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1882,7 +1831,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1903,7 +1851,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1938,7 +1885,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1964,7 +1910,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1977,7 +1922,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.CloudSqlProperties.Builder getCloudSqlBuilder() {
       return getCloudSqlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1999,7 +1943,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.CloudSqlProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2039,7 +1982,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.AwsProperties.Builder,
             com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder>
         awsBuilder_;
-
     /**
      *
      *
@@ -2055,7 +1997,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAws() {
       return propertiesCase_ == 8;
     }
-
     /**
      *
      *
@@ -2081,7 +2022,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2104,7 +2044,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -2125,7 +2064,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -2159,7 +2097,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -2185,7 +2122,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2198,7 +2134,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.AwsProperties.Builder getAwsBuilder() {
       return getAwsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2219,7 +2154,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2258,7 +2192,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.AzureProperties.Builder,
             com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder>
         azureBuilder_;
-
     /**
      *
      *
@@ -2274,7 +2207,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAzure() {
       return propertiesCase_ == 11;
     }
-
     /**
      *
      *
@@ -2300,7 +2232,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2323,7 +2254,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2344,7 +2274,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2307,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2404,7 +2332,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2417,7 +2344,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.AzureProperties.Builder getAzureBuilder() {
       return getAzureFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2438,7 +2364,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2478,7 +2403,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.CloudSpannerProperties.Builder,
             com.google.cloud.bigquery.connection.v1.CloudSpannerPropertiesOrBuilder>
         cloudSpannerBuilder_;
-
     /**
      *
      *
@@ -2494,7 +2418,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudSpanner() {
       return propertiesCase_ == 21;
     }
-
     /**
      *
      *
@@ -2520,7 +2443,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.CloudSpannerProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2544,7 +2466,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -2565,7 +2486,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -2601,7 +2521,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -2627,7 +2546,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2641,7 +2559,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         getCloudSpannerBuilder() {
       return getCloudSpannerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2663,7 +2580,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.CloudSpannerProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2703,7 +2619,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.CloudResourceProperties.Builder,
             com.google.cloud.bigquery.connection.v1.CloudResourcePropertiesOrBuilder>
         cloudResourceBuilder_;
-
     /**
      *
      *
@@ -2720,7 +2635,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudResource() {
       return propertiesCase_ == 22;
     }
-
     /**
      *
      *
@@ -2747,7 +2661,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2772,7 +2685,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -2794,7 +2706,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -2831,7 +2742,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -2858,7 +2768,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2873,7 +2782,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         getCloudResourceBuilder() {
       return getCloudResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2896,7 +2804,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2937,7 +2844,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.SparkProperties.Builder,
             com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder>
         sparkBuilder_;
-
     /**
      *
      *
@@ -2953,7 +2859,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpark() {
       return propertiesCase_ == 23;
     }
-
     /**
      *
      *
@@ -2979,7 +2884,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3002,7 +2906,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -3023,7 +2926,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -3057,7 +2959,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 23;
       return this;
     }
-
     /**
      *
      *
@@ -3083,7 +2984,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3096,7 +2996,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.SparkProperties.Builder getSparkBuilder() {
       return getSparkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3117,7 +3016,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3157,7 +3055,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties.Builder,
             com.google.cloud.bigquery.connection.v1.SalesforceDataCloudPropertiesOrBuilder>
         salesforceDataCloudBuilder_;
-
     /**
      *
      *
@@ -3177,7 +3074,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSalesforceDataCloud() {
       return propertiesCase_ == 24;
     }
-
     /**
      *
      *
@@ -3211,7 +3107,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3239,7 +3134,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -3265,7 +3159,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -3306,7 +3199,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       propertiesCase_ = 24;
       return this;
     }
-
     /**
      *
      *
@@ -3336,7 +3228,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3354,7 +3245,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         getSalesforceDataCloudBuilder() {
       return getSalesforceDataCloudFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3382,7 +3272,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3423,7 +3312,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long creationTime_;
-
     /**
      *
      *
@@ -3439,7 +3327,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public long getCreationTime() {
       return creationTime_;
     }
-
     /**
      *
      *
@@ -3459,7 +3346,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3479,7 +3365,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long lastModifiedTime_;
-
     /**
      *
      *
@@ -3495,7 +3380,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public long getLastModifiedTime() {
       return lastModifiedTime_;
     }
-
     /**
      *
      *
@@ -3515,7 +3399,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3535,7 +3418,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasCredential_;
-
     /**
      *
      *
@@ -3551,7 +3433,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasCredential() {
       return hasCredential_;
     }
-
     /**
      *
      *
@@ -3571,7 +3452,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

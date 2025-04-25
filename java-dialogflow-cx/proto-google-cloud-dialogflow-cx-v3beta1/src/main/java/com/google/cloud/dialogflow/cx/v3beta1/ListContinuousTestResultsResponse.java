@@ -33,7 +33,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsResponse)
     ListContinuousTestResultsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListContinuousTestResultsResponse.newBuilder() to construct.
   private ListContinuousTestResultsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult>
       continuousTestResults_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       getContinuousTestResultsList() {
     return continuousTestResults_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       getContinuousTestResultsOrBuilderList() {
     return continuousTestResults_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
   public int getContinuousTestResultsCount() {
     return continuousTestResults_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       int index) {
     return continuousTestResults_.get(index);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +379,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +671,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return continuousTestResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -699,7 +689,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return continuousTestResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return continuousTestResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +806,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +828,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +851,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +931,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         getContinuousTestResultsBuilder(int index) {
       return getContinuousTestResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -972,7 +950,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return continuousTestResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -993,7 +970,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(continuousTestResults_);
       }
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
           .addBuilder(
               com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
               index,
               com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1068,7 +1042,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1092,7 +1065,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1116,7 +1088,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1128,6 @@ public final class ListContinuousTestResultsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

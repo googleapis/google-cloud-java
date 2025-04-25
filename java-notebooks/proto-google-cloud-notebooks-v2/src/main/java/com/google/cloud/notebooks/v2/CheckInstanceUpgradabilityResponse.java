@@ -33,7 +33,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.CheckInstanceUpgradabilityResponse)
     CheckInstanceUpgradabilityResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CheckInstanceUpgradabilityResponse.newBuilder() to construct.
   private CheckInstanceUpgradabilityResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
 
   public static final int UPGRADEABLE_FIELD_NUMBER = 1;
   private boolean upgradeable_ = false;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object upgradeVersion_ = "";
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object upgradeInfo_ = "";
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object upgradeImage_ = "";
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -438,7 +430,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -670,7 +661,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     private int bitField0_;
 
     private boolean upgradeable_;
-
     /**
      *
      *
@@ -686,7 +676,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     public boolean getUpgradeable() {
       return upgradeable_;
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     }
 
     private java.lang.Object upgradeVersion_ = "";
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     }
 
     private java.lang.Object upgradeInfo_ = "";
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
     }
 
     private java.lang.Object upgradeImage_ = "";
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +979,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1002,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class CheckInstanceUpgradabilityResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

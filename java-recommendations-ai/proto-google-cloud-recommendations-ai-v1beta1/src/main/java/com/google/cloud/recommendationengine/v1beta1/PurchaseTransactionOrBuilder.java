@@ -36,7 +36,6 @@ public interface PurchaseTransactionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getTaxesCount();
-
   /**
    *
    *
@@ -87,11 +85,9 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsTaxes(java.lang.String key);
-
   /** Use {@link #getTaxesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Float> getTaxes();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.Float> getTaxesMap();
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   float getTaxesOrDefault(java.lang.String key, float defaultValue);
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getCostsCount();
-
   /**
    *
    *
@@ -166,11 +159,9 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsCosts(java.lang.String key);
-
   /** Use {@link #getCostsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Float> getCosts();
-
   /**
    *
    *
@@ -191,7 +182,6 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.Float> getCostsMap();
-
   /**
    *
    *
@@ -212,7 +202,6 @@ public interface PurchaseTransactionOrBuilder
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   float getCostsOrDefault(java.lang.String key, float defaultValue);
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public interface PurchaseTransactionOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *

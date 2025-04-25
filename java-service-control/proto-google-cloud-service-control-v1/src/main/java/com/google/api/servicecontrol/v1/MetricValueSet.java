@@ -35,7 +35,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v1.MetricValueSet)
     MetricValueSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MetricValueSet.newBuilder() to construct.
   private MetricValueSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricName_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.MetricValue> metricValues_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.api.servicecontrol.v1.MetricValue> getMetricValuesList() {
     return metricValues_;
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       getMetricValuesOrBuilderList() {
     return metricValues_;
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
   public int getMetricValuesCount() {
     return metricValues_.size();
   }
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.api.servicecontrol.v1.MetricValue getMetricValues(int index) {
     return metricValues_.get(index);
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -614,7 +605,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object metricName_ = "";
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return metricValuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return metricValuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return metricValuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +901,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.MetricValue.Builder getMetricValuesBuilder(int index) {
       return getMetricValuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1015,7 +988,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return metricValuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1005,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(metricValues_);
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1018,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       return getMetricValuesFieldBuilder()
           .addBuilder(com.google.api.servicecontrol.v1.MetricValue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1061,7 +1031,6 @@ public final class MetricValueSet extends com.google.protobuf.GeneratedMessageV3
       return getMetricValuesFieldBuilder()
           .addBuilder(index, com.google.api.servicecontrol.v1.MetricValue.getDefaultInstance());
     }
-
     /**
      *
      *

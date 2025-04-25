@@ -313,8 +313,7 @@ public class ConversationModelEvaluationName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               conversationModelEvaluationName.pathTemplate, PROJECT_CONVERSATION_MODEL_EVALUATION),
-          "toBuilder is only supported when ConversationModelEvaluationName has the pattern of"
-              + " projects/{project}/conversationModels/{conversation_model}/evaluations/{evaluation}");
+          "toBuilder is only supported when ConversationModelEvaluationName has the pattern of projects/{project}/conversationModels/{conversation_model}/evaluations/{evaluation}");
       this.project = conversationModelEvaluationName.project;
       this.conversationModel = conversationModelEvaluationName.conversationModel;
       this.evaluation = conversationModelEvaluationName.evaluation;

@@ -37,7 +37,6 @@ public interface RenameDataPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RenameDataPolicyRequestOrBuilder
    * @return The newDataPolicyId.
    */
   java.lang.String getNewDataPolicyId();
-
   /**
    *
    *

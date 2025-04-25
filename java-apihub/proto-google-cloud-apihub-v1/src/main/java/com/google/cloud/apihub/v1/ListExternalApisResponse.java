@@ -34,7 +34,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ListExternalApisResponse)
     ListExternalApisResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListExternalApisResponse.newBuilder() to construct.
   private ListExternalApisResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.ExternalApi> externalApis_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.apihub.v1.ExternalApi> getExternalApisList() {
     return externalApis_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       getExternalApisOrBuilderList() {
     return externalApis_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
   public int getExternalApisCount() {
     return externalApis_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
   public com.google.cloud.apihub.v1.ExternalApi getExternalApis(int index) {
     return externalApis_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return externalApisBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return externalApisBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return externalApisBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +865,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
     public com.google.cloud.apihub.v1.ExternalApi.Builder getExternalApisBuilder(int index) {
       return getExternalApisFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return externalApisBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(externalApis_);
       }
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       return getExternalApisFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.ExternalApi.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -992,7 +967,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       return getExternalApisFieldBuilder()
           .addBuilder(index, com.google.cloud.apihub.v1.ExternalApi.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1027,7 +1001,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1051,7 +1024,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1047,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1087,6 @@ public final class ListExternalApisResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

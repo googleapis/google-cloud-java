@@ -33,7 +33,6 @@ public final class VolumeTypeEnum extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.VolumeTypeEnum)
     VolumeTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VolumeTypeEnum.newBuilder() to construct.
   private VolumeTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -105,7 +104,6 @@ public final class VolumeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>VOLUME_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int VOLUME_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -348,7 +346,6 @@ public final class VolumeTypeEnum extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

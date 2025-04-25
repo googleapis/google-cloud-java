@@ -39,7 +39,6 @@ public interface CreateDataStoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateDataStoreRequestOrBuilder
    * @return Whether the dataStore field is set.
    */
   boolean hasDataStore();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateDataStoreRequestOrBuilder
    * @return The dataStore.
    */
   com.google.cloud.discoveryengine.v1alpha.DataStore getDataStore();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface CreateDataStoreRequestOrBuilder
    * @return The dataStoreId.
    */
   java.lang.String getDataStoreId();
-
   /**
    *
    *

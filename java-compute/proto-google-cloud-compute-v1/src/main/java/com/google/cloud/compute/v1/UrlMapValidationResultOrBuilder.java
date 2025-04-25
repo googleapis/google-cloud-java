@@ -30,14 +30,12 @@ public interface UrlMapValidationResultOrBuilder
    * @return A list containing the loadErrors.
    */
   java.util.List<java.lang.String> getLoadErrorsList();
-
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
    * @return The count of loadErrors.
    */
   int getLoadErrorsCount();
-
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -45,7 +43,6 @@ public interface UrlMapValidationResultOrBuilder
    * @return The loadErrors at the given index.
    */
   java.lang.String getLoadErrors(int index);
-
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -66,7 +63,6 @@ public interface UrlMapValidationResultOrBuilder
    * @return Whether the loadSucceeded field is set.
    */
   boolean hasLoadSucceeded();
-
   /**
    *
    *
@@ -82,17 +78,13 @@ public interface UrlMapValidationResultOrBuilder
 
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList();
-
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   com.google.cloud.compute.v1.TestFailure getTestFailures(int index);
-
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   int getTestFailuresCount();
-
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
       getTestFailuresOrBuilderList();
-
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index);
 
@@ -108,7 +100,6 @@ public interface UrlMapValidationResultOrBuilder
    * @return Whether the testPassed field is set.
    */
   boolean hasTestPassed();
-
   /**
    *
    *

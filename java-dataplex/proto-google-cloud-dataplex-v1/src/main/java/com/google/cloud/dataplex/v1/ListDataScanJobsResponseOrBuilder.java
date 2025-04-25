@@ -34,7 +34,6 @@ public interface ListDataScanJobsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataScanJob> getDataScanJobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDataScanJobsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
    */
   com.google.cloud.dataplex.v1.DataScanJob getDataScanJobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDataScanJobsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
    */
   int getDataScanJobsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDataScanJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataScanJobOrBuilder>
       getDataScanJobsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDataScanJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

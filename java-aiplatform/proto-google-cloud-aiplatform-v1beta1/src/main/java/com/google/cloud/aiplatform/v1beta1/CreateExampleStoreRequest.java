@@ -34,7 +34,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateExampleStoreRequest)
     CreateExampleStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateExampleStoreRequest.newBuilder() to construct.
   private CreateExampleStoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
 
   public static final int EXAMPLE_STORE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ExampleStore exampleStore_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
   public boolean hasExampleStore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1beta1.ExampleStore.getDefaultInstance()
         : exampleStore_;
   }
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +572,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -633,7 +624,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.ExampleStore.Builder,
             com.google.cloud.aiplatform.v1beta1.ExampleStoreOrBuilder>
         exampleStoreBuilder_;
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
     public boolean hasExampleStore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
         return exampleStoreBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return getExampleStoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class CreateExampleStoreRequest extends com.google.protobuf.Generat
             : exampleStore_;
       }
     }
-
     /**
      *
      *

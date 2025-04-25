@@ -39,7 +39,6 @@ public interface ExperimentInfoOrBuilder
    * @return Whether the servingConfigExperiment field is set.
    */
   boolean hasServingConfigExperiment();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ExperimentInfoOrBuilder
    * @return The servingConfigExperiment.
    */
   com.google.cloud.retail.v2.ExperimentInfo.ServingConfigExperiment getServingConfigExperiment();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ExperimentInfoOrBuilder
    * @return The experiment.
    */
   java.lang.String getExperiment();
-
   /**
    *
    *

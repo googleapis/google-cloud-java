@@ -38,7 +38,6 @@ public interface ClipAssetResponseOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUri>
       getTimeIndexedUrisList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface ClipAssetResponseOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUri getTimeIndexedUris(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ClipAssetResponseOrBuilder
    * </code>
    */
   int getTimeIndexedUrisCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface ClipAssetResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUriOrBuilder>
       getTimeIndexedUrisOrBuilderList();
-
   /**
    *
    *

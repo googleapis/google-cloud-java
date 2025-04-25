@@ -34,7 +34,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringHelpfulnessInstance)
     QuestionAnsweringHelpfulnessInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuestionAnsweringHelpfulnessInstance.newBuilder() to construct.
   private QuestionAnsweringHelpfulnessInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class QuestionAnsweringHelpfulnessInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class QuestionAnsweringHelpfulnessInstance
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class QuestionAnsweringHelpfulnessInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class QuestionAnsweringHelpfulnessInstance
   public boolean hasReference() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class QuestionAnsweringHelpfulnessInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class QuestionAnsweringHelpfulnessInstance
   public boolean hasContext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public final class QuestionAnsweringHelpfulnessInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public final class QuestionAnsweringHelpfulnessInstance
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -321,7 +309,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -554,7 +541,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -797,7 +783,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -880,7 +862,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     }
 
     private java.lang.Object reference_ = "";
-
     /**
      *
      *
@@ -938,7 +917,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     public boolean hasReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +999,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1023,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     }
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1087,7 +1059,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1081,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1102,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1119,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1143,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     }
 
     private java.lang.Object instruction_ = "";
-
     /**
      *
      *
@@ -1190,7 +1157,6 @@ public final class QuestionAnsweringHelpfulnessInstance
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1213,7 +1179,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1201,6 @@ public final class QuestionAnsweringHelpfulnessInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1258,7 +1222,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1239,6 @@ public final class QuestionAnsweringHelpfulnessInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *

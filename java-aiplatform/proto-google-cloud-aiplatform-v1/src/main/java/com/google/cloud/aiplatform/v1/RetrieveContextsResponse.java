@@ -34,7 +34,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RetrieveContextsResponse)
     RetrieveContextsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetrieveContextsResponse.newBuilder() to construct.
   private RetrieveContextsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int CONTEXTS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.RagContexts contexts_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
   public boolean hasContexts() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
         ? com.google.cloud.aiplatform.v1.RagContexts.getDefaultInstance()
         : contexts_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +482,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
             com.google.cloud.aiplatform.v1.RagContexts.Builder,
             com.google.cloud.aiplatform.v1.RagContextsOrBuilder>
         contextsBuilder_;
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
     public boolean hasContexts() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
         return contextsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -566,7 +557,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +603,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +617,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
       onChanged();
       return getContextsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -648,7 +635,6 @@ public final class RetrieveContextsResponse extends com.google.protobuf.Generate
             : contexts_;
       }
     }
-
     /**
      *
      *

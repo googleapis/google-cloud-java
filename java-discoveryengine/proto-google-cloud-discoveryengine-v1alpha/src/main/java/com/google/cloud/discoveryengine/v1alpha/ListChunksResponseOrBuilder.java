@@ -34,7 +34,6 @@ public interface ListChunksResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Chunk chunks = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.Chunk> getChunksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListChunksResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Chunk chunks = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.Chunk getChunks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListChunksResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Chunk chunks = 1;</code>
    */
   int getChunksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListChunksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder>
       getChunksOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListChunksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

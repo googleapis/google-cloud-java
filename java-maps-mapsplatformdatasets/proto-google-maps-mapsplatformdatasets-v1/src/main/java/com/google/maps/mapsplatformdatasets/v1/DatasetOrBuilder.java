@@ -37,7 +37,6 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DatasetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface DatasetOrBuilder
    * @return The versionId.
    */
   java.lang.String getVersionId();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface DatasetOrBuilder
    * @return A list containing the usage.
    */
   java.util.List<com.google.maps.mapsplatformdatasets.v1.Usage> getUsageList();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface DatasetOrBuilder
    * @return The count of usage.
    */
   int getUsageCount();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface DatasetOrBuilder
    * @return The usage at the given index.
    */
   com.google.maps.mapsplatformdatasets.v1.Usage getUsage(int index);
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface DatasetOrBuilder
    * @return A list containing the enum numeric values on the wire for usage.
    */
   java.util.List<java.lang.Integer> getUsageValueList();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface DatasetOrBuilder
    * @return Whether the localFileSource field is set.
    */
   boolean hasLocalFileSource();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface DatasetOrBuilder
    * @return The localFileSource.
    */
   com.google.maps.mapsplatformdatasets.v1.LocalFileSource getLocalFileSource();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface DatasetOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public interface DatasetOrBuilder
    * @return The gcsSource.
    */
   com.google.maps.mapsplatformdatasets.v1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -289,7 +277,6 @@ public interface DatasetOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface DatasetOrBuilder
    * @return The status.
    */
   com.google.maps.mapsplatformdatasets.v1.Status getStatus();
-
   /**
    *
    *
@@ -331,7 +317,6 @@ public interface DatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface DatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -371,7 +355,6 @@ public interface DatasetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -385,7 +368,6 @@ public interface DatasetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -412,7 +394,6 @@ public interface DatasetOrBuilder
    * @return Whether the versionCreateTime field is set.
    */
   boolean hasVersionCreateTime();
-
   /**
    *
    *
@@ -427,7 +408,6 @@ public interface DatasetOrBuilder
    * @return The versionCreateTime.
    */
   com.google.protobuf.Timestamp getVersionCreateTime();
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public interface DatasetOrBuilder
    * @return The versionDescription.
    */
   java.lang.String getVersionDescription();
-
   /**
    *
    *

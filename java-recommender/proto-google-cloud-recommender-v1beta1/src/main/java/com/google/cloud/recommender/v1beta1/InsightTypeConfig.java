@@ -33,7 +33,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.InsightTypeConfig)
     InsightTypeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsightTypeConfig.newBuilder() to construct.
   private InsightTypeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
   public static final int INSIGHT_TYPE_GENERATION_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig
       insightTypeGenerationConfig_;
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasInsightTypeGenerationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig.getDefaultInstance()
         : insightTypeGenerationConfig_;
   }
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -275,7 +266,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +381,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -418,14 +404,12 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -446,7 +430,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -474,7 +457,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -507,7 +489,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -532,7 +513,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -793,7 +773,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1116,7 +1095,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1141,7 +1119,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1143,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1166,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1185,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1217,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfig.Builder,
             com.google.cloud.recommender.v1beta1.InsightTypeGenerationConfigOrBuilder>
         insightTypeGenerationConfigBuilder_;
-
     /**
      *
      *
@@ -1261,7 +1234,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasInsightTypeGenerationConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1286,7 +1258,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return insightTypeGenerationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1284,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1307,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1340,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1362,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1380,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getInsightTypeGenerationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1436,7 +1402,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
             : insightTypeGenerationConfig_;
       }
     }
-
     /**
      *
      *
@@ -1467,7 +1432,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1491,7 +1455,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1515,7 +1478,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1500,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1557,7 +1518,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1548,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1603,7 +1562,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1624,7 +1582,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1647,7 +1604,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1623,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1650,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1715,7 +1669,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1683,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1749,7 +1701,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1777,7 +1728,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object revisionId_ = "";
-
     /**
      *
      *
@@ -1804,7 +1754,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1831,7 +1780,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1857,7 +1805,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1879,7 +1826,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1935,7 +1881,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -1959,14 +1904,12 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -1987,7 +1930,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -2015,7 +1957,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2049,7 +1990,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2073,14 +2013,12 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000020;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -2108,7 +2046,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -2132,7 +2069,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2156,7 +2092,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2180,7 +2115,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2203,7 +2137,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2222,7 +2155,6 @@ public final class InsightTypeConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

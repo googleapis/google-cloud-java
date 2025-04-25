@@ -34,7 +34,6 @@ public interface FloatRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FloatRange float_ranges = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.FloatRange> getFloatRangesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FloatRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FloatRange float_ranges = 1;</code>
    */
   com.google.cloud.visionai.v1.FloatRange getFloatRanges(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FloatRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FloatRange float_ranges = 1;</code>
    */
   int getFloatRangesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FloatRangeArrayOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.FloatRangeOrBuilder>
       getFloatRangesOrBuilderList();
-
   /**
    *
    *

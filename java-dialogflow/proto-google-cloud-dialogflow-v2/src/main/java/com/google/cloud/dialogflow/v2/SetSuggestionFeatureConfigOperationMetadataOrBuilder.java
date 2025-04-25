@@ -38,7 +38,6 @@ public interface SetSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SetSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for participantRole.
    */
   int getParticipantRoleValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface SetSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for suggestionFeatureType.
    */
   int getSuggestionFeatureTypeValue();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface SetSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface SetSuggestionFeatureConfigOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface CreatePlaybookVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreatePlaybookVersionRequestOrBuilder
    * @return Whether the playbookVersion field is set.
    */
   boolean hasPlaybookVersion();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreatePlaybookVersionRequestOrBuilder
    * @return The playbookVersion.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion getPlaybookVersion();
-
   /**
    *
    *

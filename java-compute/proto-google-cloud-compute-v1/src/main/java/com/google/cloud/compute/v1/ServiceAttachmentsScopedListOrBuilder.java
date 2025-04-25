@@ -35,7 +35,6 @@ public interface ServiceAttachmentsScopedListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAttachment> getServiceAttachmentsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ServiceAttachmentsScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.ServiceAttachment getServiceAttachments(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ServiceAttachmentsScopedListOrBuilder
    * </code>
    */
   int getServiceAttachmentsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ServiceAttachmentsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAttachmentOrBuilder>
       getServiceAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface ServiceAttachmentsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -110,7 +105,6 @@ public interface ServiceAttachmentsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CreateDisplayVideo360AdvertiserLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateDisplayVideo360AdvertiserLinkRequestOrBuilder
    * @return Whether the displayVideo360AdvertiserLink field is set.
    */
   boolean hasDisplayVideo360AdvertiserLink();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface CreateDisplayVideo360AdvertiserLinkRequestOrBuilder
    */
   com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
       getDisplayVideo360AdvertiserLink();
-
   /**
    *
    *

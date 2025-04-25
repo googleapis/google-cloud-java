@@ -33,7 +33,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.ExportPreviewResultResponse)
     ExportPreviewResultResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportPreviewResultResponse.newBuilder() to construct.
   private ExportPreviewResultResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 1;
   private com.google.cloud.config.v1.PreviewResult result_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
         ? com.google.cloud.config.v1.PreviewResult.getDefaultInstance()
         : result_;
   }
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -491,7 +486,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
             com.google.cloud.config.v1.PreviewResult.Builder,
             com.google.cloud.config.v1.PreviewResultOrBuilder>
         resultBuilder_;
-
     /**
      *
      *
@@ -508,7 +502,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -531,7 +524,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
         return resultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -556,7 +548,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +619,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +635,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -668,7 +655,6 @@ public final class ExportPreviewResultResponse extends com.google.protobuf.Gener
             : result_;
       }
     }
-
     /**
      *
      *

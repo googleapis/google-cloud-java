@@ -32,7 +32,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ForwardingRulesScopedList)
     ForwardingRulesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ForwardingRulesScopedList.newBuilder() to construct.
   private ForwardingRulesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ForwardingRule> forwardingRules_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.compute.v1.ForwardingRule> getForwardingRulesList() {
     return forwardingRules_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       getForwardingRulesOrBuilderList() {
     return forwardingRules_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
   public int getForwardingRulesCount() {
     return forwardingRules_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.ForwardingRule getForwardingRules(int index) {
     return forwardingRules_.get(index);
   }
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +650,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
         return forwardingRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
         return forwardingRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
         return forwardingRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.ForwardingRule.Builder getForwardingRulesBuilder(int index) {
       return getForwardingRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
         return forwardingRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(forwardingRules_);
       }
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       return getForwardingRulesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -964,7 +938,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       return getForwardingRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1020,7 +992,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1041,7 +1012,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1034,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1053,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1080,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1099,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1113,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1166,7 +1131,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
             : warning_;
       }
     }
-
     /**
      *
      *

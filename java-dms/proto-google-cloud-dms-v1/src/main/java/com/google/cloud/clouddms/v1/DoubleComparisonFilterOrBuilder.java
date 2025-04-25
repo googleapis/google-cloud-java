@@ -38,7 +38,6 @@ public interface DoubleComparisonFilterOrBuilder
    * @return The enum numeric value on the wire for valueComparison.
    */
   int getValueComparisonValue();
-
   /**
    *
    *

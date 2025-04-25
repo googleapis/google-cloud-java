@@ -38,7 +38,6 @@ public interface UpdateSipTrunkRequestOrBuilder
    * @return Whether the sipTrunk field is set.
    */
   boolean hasSipTrunk();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateSipTrunkRequestOrBuilder
    * @return The sipTrunk.
    */
   com.google.cloud.dialogflow.v2beta1.SipTrunk getSipTrunk();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateSipTrunkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateSipTrunkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

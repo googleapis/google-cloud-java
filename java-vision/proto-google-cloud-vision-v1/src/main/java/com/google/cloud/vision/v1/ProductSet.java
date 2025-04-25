@@ -35,7 +35,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ProductSet)
     ProductSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductSet.newBuilder() to construct.
   private ProductSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEX_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp indexTime_;
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIndexTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEX_ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status indexError_;
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIndexError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getIndexError() {
     return indexError_ == null ? com.google.rpc.Status.getDefaultInstance() : indexError_;
   }
-
   /**
    *
    *
@@ -505,7 +494,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -754,7 +742,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -782,7 +769,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +796,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +844,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +873,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         indexTimeBuilder_;
-
     /**
      *
      *
@@ -1032,7 +1009,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIndexTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return indexTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1086,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1119,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1144,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1164,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIndexTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1216,7 +1186,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
       }
     }
-
     /**
      *
      *
@@ -1253,7 +1222,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         indexErrorBuilder_;
-
     /**
      *
      *
@@ -1271,7 +1239,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIndexError() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1293,7 +1260,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return indexErrorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1285,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1307,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1337,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1359,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1376,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIndexErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1434,7 +1395,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         return indexError_ == null ? com.google.rpc.Status.getDefaultInstance() : indexError_;
       }
     }
-
     /**
      *
      *

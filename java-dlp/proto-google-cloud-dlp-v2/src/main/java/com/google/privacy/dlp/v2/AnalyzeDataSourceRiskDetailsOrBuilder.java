@@ -36,7 +36,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the requestedPrivacyMetric field is set.
    */
   boolean hasRequestedPrivacyMetric();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return The requestedPrivacyMetric.
    */
   com.google.privacy.dlp.v2.PrivacyMetric getRequestedPrivacyMetric();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the requestedSourceTable field is set.
    */
   boolean hasRequestedSourceTable();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return The requestedSourceTable.
    */
   com.google.privacy.dlp.v2.BigQueryTable getRequestedSourceTable();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the numericalStatsResult field is set.
    */
   boolean hasNumericalStatsResult();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult
       getNumericalStatsResult();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the categoricalStatsResult field is set.
    */
   boolean hasCategoricalStatsResult();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
       getCategoricalStatsResult();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the kAnonymityResult field is set.
    */
   boolean hasKAnonymityResult();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return The kAnonymityResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult getKAnonymityResult();
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the lDiversityResult field is set.
    */
   boolean hasLDiversityResult();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return The lDiversityResult.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult getLDiversityResult();
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the kMapEstimationResult field is set.
    */
   boolean hasKMapEstimationResult();
-
   /**
    *
    *
@@ -306,7 +293,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
       getKMapEstimationResult();
-
   /**
    *
    *
@@ -335,7 +321,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the deltaPresenceEstimationResult field is set.
    */
   boolean hasDeltaPresenceEstimationResult();
-
   /**
    *
    *
@@ -351,7 +336,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
       getDeltaPresenceEstimationResult();
-
   /**
    *
    *
@@ -380,7 +364,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    * @return Whether the requestedOptions field is set.
    */
   boolean hasRequestedOptions();
-
   /**
    *
    *
@@ -396,7 +379,6 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
       getRequestedOptions();
-
   /**
    *
    *

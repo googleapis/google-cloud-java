@@ -36,7 +36,6 @@ public interface CustomJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CustomJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CustomJobOrBuilder
    * @return Whether the jobSpec field is set.
    */
   boolean hasJobSpec();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CustomJobOrBuilder
    * @return The jobSpec.
    */
   com.google.cloud.aiplatform.v1beta1.CustomJobSpec getJobSpec();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface CustomJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface CustomJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface CustomJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface CustomJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface CustomJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public interface CustomJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface CustomJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface CustomJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -306,7 +294,6 @@ public interface CustomJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public interface CustomJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public interface CustomJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -375,7 +360,6 @@ public interface CustomJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -392,11 +376,9 @@ public interface CustomJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -413,7 +395,6 @@ public interface CustomJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -434,7 +415,6 @@ public interface CustomJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -466,7 +446,6 @@ public interface CustomJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -481,7 +460,6 @@ public interface CustomJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *
@@ -518,7 +496,6 @@ public interface CustomJobOrBuilder
    * </code>
    */
   int getWebAccessUrisCount();
-
   /**
    *
    *
@@ -542,11 +519,9 @@ public interface CustomJobOrBuilder
    * </code>
    */
   boolean containsWebAccessUris(java.lang.String key);
-
   /** Use {@link #getWebAccessUrisMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getWebAccessUris();
-
   /**
    *
    *
@@ -570,7 +545,6 @@ public interface CustomJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getWebAccessUrisMap();
-
   /**
    *
    *
@@ -598,7 +572,6 @@ public interface CustomJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

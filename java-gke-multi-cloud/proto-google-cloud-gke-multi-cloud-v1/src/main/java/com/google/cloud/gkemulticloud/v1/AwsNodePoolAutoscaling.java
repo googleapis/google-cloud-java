@@ -34,7 +34,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsNodePoolAutoscaling)
     AwsNodePoolAutoscalingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsNodePoolAutoscaling.newBuilder() to construct.
   private AwsNodePoolAutoscaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
 
   public static final int MIN_NODE_COUNT_FIELD_NUMBER = 1;
   private int minNodeCount_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
 
   public static final int MAX_NODE_COUNT_FIELD_NUMBER = 2;
   private int maxNodeCount_ = 0;
-
   /**
    *
    *
@@ -272,7 +269,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -469,7 +465,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int minNodeCount_;
-
     /**
      *
      *
@@ -486,7 +481,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
     public int getMinNodeCount() {
       return minNodeCount_;
     }
-
     /**
      *
      *
@@ -507,7 +501,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
     }
 
     private int maxNodeCount_;
-
     /**
      *
      *
@@ -545,7 +537,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
     public int getMaxNodeCount() {
       return maxNodeCount_;
     }
-
     /**
      *
      *
@@ -566,7 +557,6 @@ public final class AwsNodePoolAutoscaling extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

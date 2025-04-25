@@ -33,7 +33,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)
     IngestConversationsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IngestConversationsMetadata.newBuilder() to construct.
   private IngestConversationsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,7 +123,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      */
     int getFailedIngestCount();
   }
-
   /**
    *
    *
@@ -140,7 +138,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats)
       IngestConversationsStatsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IngestConversationsStats.newBuilder() to construct.
     private IngestConversationsStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -173,7 +170,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
     public static final int PROCESSED_OBJECT_COUNT_FIELD_NUMBER = 1;
     private int processedObjectCount_ = 0;
-
     /**
      *
      *
@@ -192,7 +188,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
     public static final int DUPLICATES_SKIPPED_COUNT_FIELD_NUMBER = 2;
     private int duplicatesSkippedCount_ = 0;
-
     /**
      *
      *
@@ -212,7 +207,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
     public static final int SUCCESSFUL_INGEST_COUNT_FIELD_NUMBER = 3;
     private int successfulIngestCount_ = 0;
-
     /**
      *
      *
@@ -232,7 +226,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
     public static final int FAILED_INGEST_COUNT_FIELD_NUMBER = 4;
     private int failedIngestCount_ = 0;
-
     /**
      *
      *
@@ -464,7 +457,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -719,7 +711,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int processedObjectCount_;
-
       /**
        *
        *
@@ -735,7 +726,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       public int getProcessedObjectCount() {
         return processedObjectCount_;
       }
-
       /**
        *
        *
@@ -755,7 +745,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -775,7 +764,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
 
       private int duplicatesSkippedCount_;
-
       /**
        *
        *
@@ -793,7 +781,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       public int getDuplicatesSkippedCount() {
         return duplicatesSkippedCount_;
       }
-
       /**
        *
        *
@@ -815,7 +802,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -837,7 +823,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
 
       private int successfulIngestCount_;
-
       /**
        *
        *
@@ -855,7 +840,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       public int getSuccessfulIngestCount() {
         return successfulIngestCount_;
       }
-
       /**
        *
        *
@@ -877,7 +861,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -899,7 +882,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
 
       private int failedIngestCount_;
-
       /**
        *
        *
@@ -916,7 +898,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       public int getFailedIngestCount() {
         return failedIngestCount_;
       }
-
       /**
        *
        *
@@ -937,7 +918,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1032,7 +1012,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1049,7 +1028,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1066,7 +1044,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1084,7 +1061,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -1101,7 +1077,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1118,7 +1093,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -1136,7 +1110,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
   public static final int REQUEST_FIELD_NUMBER = 3;
   private com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request_;
-
   /**
    *
    *
@@ -1154,7 +1127,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public boolean hasRequest() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1174,7 +1146,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.getDefaultInstance()
         : request_;
   }
-
   /**
    *
    *
@@ -1198,7 +1169,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialErrors_;
-
   /**
    *
    *
@@ -1215,7 +1185,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
     return partialErrors_;
   }
-
   /**
    *
    *
@@ -1232,7 +1201,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList() {
     return partialErrors_;
   }
-
   /**
    *
    *
@@ -1249,7 +1217,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public int getPartialErrorsCount() {
     return partialErrors_.size();
   }
-
   /**
    *
    *
@@ -1266,7 +1233,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public com.google.rpc.Status getPartialErrors(int index) {
     return partialErrors_.get(index);
   }
-
   /**
    *
    *
@@ -1288,7 +1254,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   private com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
           .IngestConversationsStats
       ingestConversationsStats_;
-
   /**
    *
    *
@@ -1306,7 +1271,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   public boolean hasIngestConversationsStats() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1329,7 +1293,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             .IngestConversationsStats.getDefaultInstance()
         : ingestConversationsStats_;
   }
-
   /**
    *
    *
@@ -1572,7 +1535,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1905,7 +1867,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1922,7 +1883,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1945,7 +1905,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1970,7 +1929,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1992,7 +1950,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2022,7 +1979,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2044,7 +2000,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2061,7 +2016,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2082,7 +2036,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2117,7 +2070,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -2133,7 +2085,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2153,7 +2104,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2177,7 +2127,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2198,7 +2147,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2227,7 +2175,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2195,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2210,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2282,7 +2227,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -2316,7 +2260,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.Builder,
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder>
         requestBuilder_;
-
     /**
      *
      *
@@ -2333,7 +2276,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2357,7 +2299,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return requestBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2383,7 +2324,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2407,7 +2347,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2379,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2462,7 +2400,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2480,7 +2417,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2503,7 +2439,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             : request_;
       }
     }
-
     /**
      *
      *
@@ -2565,7 +2500,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return partialErrorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2585,7 +2519,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return partialErrorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2605,7 +2538,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return partialErrorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2631,7 +2563,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2654,7 +2585,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2680,7 +2610,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2706,7 +2635,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2729,7 +2657,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2752,7 +2679,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2775,7 +2701,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2798,7 +2723,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2745,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2837,7 +2760,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     public com.google.rpc.Status.Builder getPartialErrorsBuilder(int index) {
       return getPartialErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2857,7 +2779,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return partialErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2878,7 +2799,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(partialErrors_);
       }
     }
-
     /**
      *
      *
@@ -2894,7 +2814,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     public com.google.rpc.Status.Builder addPartialErrorsBuilder() {
       return getPartialErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2911,7 +2830,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       return getPartialErrorsFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2957,7 +2875,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
                 .IngestConversationsStatsOrBuilder>
         ingestConversationsStatsBuilder_;
-
     /**
      *
      *
@@ -2974,7 +2891,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     public boolean hasIngestConversationsStats() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3000,7 +2916,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         return ingestConversationsStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3028,7 +2943,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3053,7 +2967,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3088,7 +3001,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -3110,7 +3022,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3129,7 +3040,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getIngestConversationsStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3153,7 +3063,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             : ingestConversationsStats_;
       }
     }
-
     /**
      *
      *

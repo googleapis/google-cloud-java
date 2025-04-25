@@ -37,7 +37,6 @@ public interface AttributeValuesOrBuilder
    * @return Whether the enumValues field is set.
    */
   boolean hasEnumValues();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AttributeValuesOrBuilder
    * @return The enumValues.
    */
   com.google.cloud.apihub.v1.AttributeValues.EnumAttributeValues getEnumValues();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AttributeValuesOrBuilder
    * @return Whether the stringValues field is set.
    */
   boolean hasStringValues();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface AttributeValuesOrBuilder
    * @return The stringValues.
    */
   com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues getStringValues();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface AttributeValuesOrBuilder
    * @return Whether the jsonValues field is set.
    */
   boolean hasJsonValues();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface AttributeValuesOrBuilder
    * @return The jsonValues.
    */
   com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues getJsonValues();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface AttributeValuesOrBuilder
    * @return The attribute.
    */
   java.lang.String getAttribute();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1beta.TransferErrorSummary)
     TransferErrorSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferErrorSummary.newBuilder() to construct.
   private TransferErrorSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
 
   public static final int ERROR_CODE_FIELD_NUMBER = 1;
   private int errorCode_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
   public int getErrorCodeValue() {
     return errorCode_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
 
   public static final int ERROR_COUNT_FIELD_NUMBER = 2;
   private long errorCount_ = 0L;
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorLogEntry>
       errorLogEntries_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       getErrorLogEntriesList() {
     return errorLogEntries_;
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       getErrorLogEntriesOrBuilderList() {
     return errorLogEntries_;
   }
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
   public int getErrorLogEntriesCount() {
     return errorLogEntries_.size();
   }
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
   public com.google.cloud.parallelstore.v1beta.TransferErrorLogEntry getErrorLogEntries(int index) {
     return errorLogEntries_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +635,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int errorCode_ = 0;
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
     public int getErrorCodeValue() {
       return errorCode_;
     }
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       com.google.rpc.Code result = com.google.rpc.Code.forNumber(errorCode_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
     }
 
     private long errorCount_;
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
     public long getErrorCount() {
       return errorCount_;
     }
-
     /**
      *
      *
@@ -775,7 +758,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
         return errorLogEntriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
         return errorLogEntriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
         return errorLogEntriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +948,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +970,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +993,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1037,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1058,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
         getErrorLogEntriesBuilder(int index) {
       return getErrorLogEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
         return errorLogEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1112,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(errorLogEntries_);
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1129,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.parallelstore.v1beta.TransferErrorLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1181,7 +1147,6 @@ public final class TransferErrorSummary extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.parallelstore.v1beta.TransferErrorLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *

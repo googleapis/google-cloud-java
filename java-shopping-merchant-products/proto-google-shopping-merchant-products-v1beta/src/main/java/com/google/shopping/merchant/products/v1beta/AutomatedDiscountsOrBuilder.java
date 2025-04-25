@@ -38,7 +38,6 @@ public interface AutomatedDiscountsOrBuilder
    * @return Whether the priorPrice field is set.
    */
   boolean hasPriorPrice();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AutomatedDiscountsOrBuilder
    * @return The priorPrice.
    */
   com.google.shopping.type.Price getPriorPrice();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AutomatedDiscountsOrBuilder
    * @return Whether the priorPriceProgressive field is set.
    */
   boolean hasPriorPriceProgressive();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface AutomatedDiscountsOrBuilder
    * @return The priorPriceProgressive.
    */
   com.google.shopping.type.Price getPriorPriceProgressive();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface AutomatedDiscountsOrBuilder
    * @return Whether the gadPrice field is set.
    */
   boolean hasGadPrice();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface AutomatedDiscountsOrBuilder
    * @return The gadPrice.
    */
   com.google.shopping.type.Price getGadPrice();
-
   /**
    *
    *

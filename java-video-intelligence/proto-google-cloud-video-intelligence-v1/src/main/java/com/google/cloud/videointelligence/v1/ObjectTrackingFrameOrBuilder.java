@@ -37,7 +37,6 @@ public interface ObjectTrackingFrameOrBuilder
    * @return Whether the normalizedBoundingBox field is set.
    */
   boolean hasNormalizedBoundingBox();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ObjectTrackingFrameOrBuilder
    * @return The normalizedBoundingBox.
    */
   com.google.cloud.videointelligence.v1.NormalizedBoundingBox getNormalizedBoundingBox();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ObjectTrackingFrameOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ObjectTrackingFrameOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
-
   /**
    *
    *

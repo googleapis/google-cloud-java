@@ -37,7 +37,6 @@ public interface InputsOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InputsOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *

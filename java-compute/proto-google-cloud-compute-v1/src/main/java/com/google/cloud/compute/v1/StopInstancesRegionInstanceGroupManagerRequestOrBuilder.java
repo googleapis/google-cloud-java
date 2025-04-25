@@ -37,7 +37,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the regionInstanceGroupManagersStopInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersStopInstancesRequestResource();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest
       getRegionInstanceGroupManagersStopInstancesRequestResource();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface StopInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

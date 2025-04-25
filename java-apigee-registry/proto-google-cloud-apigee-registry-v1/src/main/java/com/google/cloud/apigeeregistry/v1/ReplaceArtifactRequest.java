@@ -33,7 +33,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeregistry.v1.ReplaceArtifactRequest)
     ReplaceArtifactRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplaceArtifactRequest.newBuilder() to construct.
   private ReplaceArtifactRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ARTIFACT_FIELD_NUMBER = 1;
   private com.google.cloud.apigeeregistry.v1.Artifact artifact_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
   public boolean hasArtifact() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.apigeeregistry.v1.Artifact.getDefaultInstance()
         : artifact_;
   }
-
   /**
    *
    *
@@ -296,7 +292,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -500,7 +495,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.apigeeregistry.v1.Artifact.Builder,
             com.google.cloud.apigeeregistry.v1.ArtifactOrBuilder>
         artifactBuilder_;
-
     /**
      *
      *
@@ -520,7 +514,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
     public boolean hasArtifact() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
         return artifactBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -574,7 +566,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +647,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getArtifactFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
             : artifact_;
       }
     }
-
     /**
      *
      *

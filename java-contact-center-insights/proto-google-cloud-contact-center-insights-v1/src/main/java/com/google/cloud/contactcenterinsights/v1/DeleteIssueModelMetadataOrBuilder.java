@@ -37,7 +37,6 @@ public interface DeleteIssueModelMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeleteIssueModelMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DeleteIssueModelMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface DeleteIssueModelMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface DeleteIssueModelMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface DeleteIssueModelMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest getRequest();
-
   /**
    *
    *

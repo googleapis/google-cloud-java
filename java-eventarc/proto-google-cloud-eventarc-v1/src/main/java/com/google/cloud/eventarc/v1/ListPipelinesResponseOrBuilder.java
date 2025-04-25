@@ -34,7 +34,6 @@ public interface ListPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Pipeline pipelines = 1;</code>
    */
   java.util.List<com.google.cloud.eventarc.v1.Pipeline> getPipelinesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Pipeline pipelines = 1;</code>
    */
   com.google.cloud.eventarc.v1.Pipeline getPipelines(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.Pipeline pipelines = 1;</code>
    */
   int getPipelinesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPipelinesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.PipelineOrBuilder>
       getPipelinesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListPipelinesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListPipelinesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListPipelinesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListPipelinesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListTasksResponse)
     ListTasksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTasksResponse.newBuilder() to construct.
   private ListTasksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.Task> tasks_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.dataplex.v1.Task> getTasksList() {
     return tasks_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       getTasksOrBuilderList() {
     return tasks_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   public int getTasksCount() {
     return tasks_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.dataplex.v1.Task getTasks(int index) {
     return tasks_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachableLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getUnreachableLocationsList() {
     return unreachableLocations_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   public int getUnreachableLocationsCount() {
     return unreachableLocations_.size();
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   public java.lang.String getUnreachableLocations(int index) {
     return unreachableLocations_.get(index);
   }
-
   /**
    *
    *
@@ -452,7 +440,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +736,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return tasksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return tasksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return tasksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +911,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +949,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.Task.Builder getTasksBuilder(int index) {
       return getTasksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1003,7 +977,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return tasksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1021,7 +994,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(tasks_);
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1007,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       return getTasksFieldBuilder()
           .addBuilder(com.google.cloud.dataplex.v1.Task.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       return getTasksFieldBuilder()
           .addBuilder(index, com.google.cloud.dataplex.v1.Task.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1105,7 +1074,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1097,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1119,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1137,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1170,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1221,7 +1185,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       unreachableLocations_.makeImmutable();
       return unreachableLocations_;
     }
-
     /**
      *
      *
@@ -1236,7 +1199,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     public int getUnreachableLocationsCount() {
       return unreachableLocations_.size();
     }
-
     /**
      *
      *
@@ -1252,7 +1214,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     public java.lang.String getUnreachableLocations(int index) {
       return unreachableLocations_.get(index);
     }
-
     /**
      *
      *
@@ -1268,7 +1229,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getUnreachableLocationsBytes(int index) {
       return unreachableLocations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1292,7 +1252,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1274,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1293,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1311,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface SearchResultOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SearchResultOrBuilder
    * @return The resource.
    */
   com.google.cloud.apihub.v1.ApiHubResource getResource();
-
   /**
    *
    *

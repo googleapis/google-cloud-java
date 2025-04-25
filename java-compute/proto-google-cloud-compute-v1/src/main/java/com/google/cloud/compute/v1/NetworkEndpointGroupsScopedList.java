@@ -32,7 +32,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupsScopedList)
     NetworkEndpointGroupsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkEndpointGroupsScopedList.newBuilder() to construct.
   private NetworkEndpointGroupsScopedList(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkEndpointGroup> networkEndpointGroups_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       getNetworkEndpointGroupsList() {
     return networkEndpointGroups_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       getNetworkEndpointGroupsOrBuilderList() {
     return networkEndpointGroups_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
   public int getNetworkEndpointGroupsCount() {
     return networkEndpointGroups_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
   public com.google.cloud.compute.v1.NetworkEndpointGroup getNetworkEndpointGroups(int index) {
     return networkEndpointGroups_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -380,7 +371,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -677,7 +667,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         return networkEndpointGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         return networkEndpointGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         return networkEndpointGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         int index) {
       return getNetworkEndpointGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         return networkEndpointGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(networkEndpointGroups_);
       }
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       return getNetworkEndpointGroupsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1019,7 +993,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       return getNetworkEndpointGroupsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1062,7 +1035,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1077,7 +1049,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1110,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1137,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1156,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1170,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1223,7 +1188,6 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
             : warning_;
       }
     }
-
     /**
      *
      *

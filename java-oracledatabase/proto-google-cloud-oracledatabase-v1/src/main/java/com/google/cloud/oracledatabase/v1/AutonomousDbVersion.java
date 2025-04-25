@@ -34,7 +34,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDbVersion)
     AutonomousDbVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutonomousDbVersion.newBuilder() to construct.
   private AutonomousDbVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
 
   public static final int DB_WORKLOAD_FIELD_NUMBER = 4;
   private int dbWorkload_ = 0;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
   public int getDbWorkloadValue() {
     return dbWorkload_;
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workloadUri_ = "";
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -463,7 +454,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -742,7 +730,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -836,7 +820,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     }
 
     private int dbWorkload_ = 0;
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     public int getDbWorkloadValue() {
       return dbWorkload_;
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
           com.google.cloud.oracledatabase.v1.DBWorkload.forNumber(dbWorkload_);
       return result == null ? com.google.cloud.oracledatabase.v1.DBWorkload.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1004,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object workloadUri_ = "";
-
     /**
      *
      *
@@ -1053,7 +1027,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1050,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1090,6 @@ public final class AutonomousDbVersion extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

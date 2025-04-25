@@ -37,7 +37,6 @@ public interface DeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DeploymentOrBuilder
    * @return A list containing the oauthScopes.
    */
   java.util.List<java.lang.String> getOauthScopesList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DeploymentOrBuilder
    * @return The count of oauthScopes.
    */
   int getOauthScopesCount();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface DeploymentOrBuilder
    * @return The oauthScopes at the given index.
    */
   java.lang.String getOauthScopes(int index);
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface DeploymentOrBuilder
    * @return Whether the addOns field is set.
    */
   boolean hasAddOns();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface DeploymentOrBuilder
    * @return The addOns.
    */
   com.google.cloud.gsuiteaddons.v1.AddOns getAddOns();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface DeploymentOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface CheckCloudIdentityAccountsExistResponseOrBuilder
    */
   java.util.List<com.google.cloud.channel.v1.CloudIdentityCustomerAccount>
       getCloudIdentityAccountsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface CheckCloudIdentityAccountsExistResponseOrBuilder
    * </code>
    */
   com.google.cloud.channel.v1.CloudIdentityCustomerAccount getCloudIdentityAccounts(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface CheckCloudIdentityAccountsExistResponseOrBuilder
    * </code>
    */
   int getCloudIdentityAccountsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface CheckCloudIdentityAccountsExistResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.CloudIdentityCustomerAccountOrBuilder>
       getCloudIdentityAccountsOrBuilderList();
-
   /**
    *
    *

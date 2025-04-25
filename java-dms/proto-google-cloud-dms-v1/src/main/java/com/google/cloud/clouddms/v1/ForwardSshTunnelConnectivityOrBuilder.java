@@ -36,7 +36,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    * @return Whether the password field is set.
    */
   boolean hasPassword();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    * @return Whether the privateKey field is set.
    */
   boolean hasPrivateKey();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    * @return The privateKey.
    */
   java.lang.String getPrivateKey();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateExternalSystemRequestOrBuilder
    * @return Whether the externalSystem field is set.
    */
   boolean hasExternalSystem();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateExternalSystemRequestOrBuilder
    * @return The externalSystem.
    */
   com.google.cloud.securitycenter.v2.ExternalSystem getExternalSystem();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateExternalSystemRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateExternalSystemRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

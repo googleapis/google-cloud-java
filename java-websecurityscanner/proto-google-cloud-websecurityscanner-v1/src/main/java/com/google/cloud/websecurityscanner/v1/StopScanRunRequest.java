@@ -33,7 +33,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.StopScanRunRequest)
     StopScanRunRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StopScanRunRequest.newBuilder() to construct.
   private StopScanRunRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -281,7 +278,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -466,7 +462,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -491,7 +486,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -516,7 +510,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -540,7 +533,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -560,7 +552,6 @@ public final class StopScanRunRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -77,7 +77,6 @@ public enum DomainOverrideStrategy implements com.google.protobuf.ProtocolMessag
    * <code>UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY = 0;</code>
    */
   public static final int UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY_VALUE = 0;
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public enum DomainOverrideStrategy implements com.google.protobuf.ProtocolMessag
    * <code>STRICT = 1;</code>
    */
   public static final int STRICT_VALUE = 1;
-
   /**
    *
    *

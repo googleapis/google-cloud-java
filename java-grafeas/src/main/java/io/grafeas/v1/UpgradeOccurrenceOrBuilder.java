@@ -37,7 +37,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return The package.
    */
   java.lang.String getPackage();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return Whether the parsedVersion field is set.
    */
   boolean hasParsedVersion();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return The parsedVersion.
    */
   io.grafeas.v1.Version getParsedVersion();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return Whether the distribution field is set.
    */
   boolean hasDistribution();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return The distribution.
    */
   io.grafeas.v1.UpgradeDistribution getDistribution();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return Whether the windowsUpdate field is set.
    */
   boolean hasWindowsUpdate();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface UpgradeOccurrenceOrBuilder
    * @return The windowsUpdate.
    */
   io.grafeas.v1.WindowsUpdate getWindowsUpdate();
-
   /**
    *
    *

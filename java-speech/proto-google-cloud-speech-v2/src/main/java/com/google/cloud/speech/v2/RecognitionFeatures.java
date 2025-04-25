@@ -33,7 +33,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.RecognitionFeatures)
     RecognitionFeaturesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecognitionFeatures.newBuilder() to construct.
   private RecognitionFeatures(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -113,7 +112,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * <code>MULTI_CHANNEL_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MULTI_CHANNEL_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -213,7 +211,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int PROFANITY_FILTER_FIELD_NUMBER = 1;
   private boolean profanityFilter_ = false;
-
   /**
    *
    *
@@ -235,7 +232,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER = 2;
   private boolean enableWordTimeOffsets_ = false;
-
   /**
    *
    *
@@ -256,7 +252,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_WORD_CONFIDENCE_FIELD_NUMBER = 3;
   private boolean enableWordConfidence_ = false;
-
   /**
    *
    *
@@ -277,7 +272,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 4;
   private boolean enableAutomaticPunctuation_ = false;
-
   /**
    *
    *
@@ -298,7 +292,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_SPOKEN_PUNCTUATION_FIELD_NUMBER = 14;
   private boolean enableSpokenPunctuation_ = false;
-
   /**
    *
    *
@@ -321,7 +314,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_SPOKEN_EMOJIS_FIELD_NUMBER = 15;
   private boolean enableSpokenEmojis_ = false;
-
   /**
    *
    *
@@ -343,7 +335,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int MULTI_CHANNEL_MODE_FIELD_NUMBER = 17;
   private int multiChannelMode_ = 0;
-
   /**
    *
    *
@@ -360,7 +351,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   public int getMultiChannelModeValue() {
     return multiChannelMode_;
   }
-
   /**
    *
    *
@@ -385,7 +375,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int DIARIZATION_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.speech.v2.SpeakerDiarizationConfig diarizationConfig_;
-
   /**
    *
    *
@@ -408,7 +397,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   public boolean hasDiarizationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -433,7 +421,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.speech.v2.SpeakerDiarizationConfig.getDefaultInstance()
         : diarizationConfig_;
   }
-
   /**
    *
    *
@@ -460,7 +447,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
 
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 16;
   private int maxAlternatives_ = 0;
-
   /**
    *
    *
@@ -722,7 +708,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1028,7 +1013,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean profanityFilter_;
-
     /**
      *
      *
@@ -1047,7 +1031,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean getProfanityFilter() {
       return profanityFilter_;
     }
-
     /**
      *
      *
@@ -1070,7 +1053,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1075,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enableWordTimeOffsets_;
-
     /**
      *
      *
@@ -1111,7 +1092,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean getEnableWordTimeOffsets() {
       return enableWordTimeOffsets_;
     }
-
     /**
      *
      *
@@ -1133,7 +1113,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1134,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enableWordConfidence_;
-
     /**
      *
      *
@@ -1173,7 +1151,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean getEnableWordConfidence() {
       return enableWordConfidence_;
     }
-
     /**
      *
      *
@@ -1195,7 +1172,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1193,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enableAutomaticPunctuation_;
-
     /**
      *
      *
@@ -1235,7 +1210,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean getEnableAutomaticPunctuation() {
       return enableAutomaticPunctuation_;
     }
-
     /**
      *
      *
@@ -1257,7 +1231,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1252,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enableSpokenPunctuation_;
-
     /**
      *
      *
@@ -1299,7 +1271,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean getEnableSpokenPunctuation() {
       return enableSpokenPunctuation_;
     }
-
     /**
      *
      *
@@ -1323,7 +1294,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1317,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enableSpokenEmojis_;
-
     /**
      *
      *
@@ -1366,7 +1335,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean getEnableSpokenEmojis() {
       return enableSpokenEmojis_;
     }
-
     /**
      *
      *
@@ -1389,7 +1357,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1412,7 +1379,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private int multiChannelMode_ = 0;
-
     /**
      *
      *
@@ -1429,7 +1395,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public int getMultiChannelModeValue() {
       return multiChannelMode_;
     }
-
     /**
      *
      *
@@ -1449,7 +1414,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1435,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1495,7 +1458,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1483,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             com.google.cloud.speech.v2.SpeakerDiarizationConfig.Builder,
             com.google.cloud.speech.v2.SpeakerDiarizationConfigOrBuilder>
         diarizationConfigBuilder_;
-
     /**
      *
      *
@@ -1543,7 +1504,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public boolean hasDiarizationConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1571,7 +1531,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
         return diarizationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1560,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1629,7 +1587,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1623,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1649,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1716,7 +1671,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDiarizationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1743,7 +1697,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             : diarizationConfig_;
       }
     }
-
     /**
      *
      *
@@ -1778,7 +1731,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     private int maxAlternatives_;
-
     /**
      *
      *
@@ -1797,7 +1749,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public int getMaxAlternatives() {
       return maxAlternatives_;
     }
-
     /**
      *
      *
@@ -1820,7 +1771,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.ModelEvaluationSlice>
       getModelEvaluationSlicesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ModelEvaluationSlice getModelEvaluationSlices(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    * </code>
    */
   int getModelEvaluationSlicesCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ModelEvaluationSliceOrBuilder>
       getModelEvaluationSlicesOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

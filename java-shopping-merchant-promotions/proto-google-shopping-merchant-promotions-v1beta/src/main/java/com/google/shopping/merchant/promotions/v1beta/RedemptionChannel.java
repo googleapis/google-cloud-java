@@ -73,7 +73,6 @@ public enum RedemptionChannel implements com.google.protobuf.ProtocolMessageEnum
    * <code>REDEMPTION_CHANNEL_UNSPECIFIED = 0;</code>
    */
   public static final int REDEMPTION_CHANNEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public enum RedemptionChannel implements com.google.protobuf.ProtocolMessageEnum
    * <code>IN_STORE = 1;</code>
    */
   public static final int IN_STORE_VALUE = 1;
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface PollAirflowCommandResponseOrBuilder
    */
   java.util.List<com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.Line>
       getOutputList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PollAirflowCommandResponseOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.Line getOutput(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface PollAirflowCommandResponseOrBuilder
    * </code>
    */
   int getOutputCount();
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface PollAirflowCommandResponseOrBuilder
               com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse
                   .LineOrBuilder>
       getOutputOrBuilderList();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface PollAirflowCommandResponseOrBuilder
    * @return Whether the exitInfo field is set.
    */
   boolean hasExitInfo();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface PollAirflowCommandResponseOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse.ExitInfo
       getExitInfo();
-
   /**
    *
    *

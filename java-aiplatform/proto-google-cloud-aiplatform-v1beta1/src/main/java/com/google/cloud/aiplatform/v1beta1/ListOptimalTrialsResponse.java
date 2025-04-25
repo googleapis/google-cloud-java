@@ -34,7 +34,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse)
     ListOptimalTrialsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListOptimalTrialsResponse.newBuilder() to construct.
   private ListOptimalTrialsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Trial> optimalTrials_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Trial> getOptimalTrialsList() {
     return optimalTrials_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       getOptimalTrialsOrBuilderList() {
     return optimalTrials_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
   public int getOptimalTrialsCount() {
     return optimalTrials_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
   public com.google.cloud.aiplatform.v1beta1.Trial getOptimalTrials(int index) {
     return optimalTrials_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
         return optimalTrialsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -608,7 +600,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
         return optimalTrialsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
         return optimalTrialsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.Trial.Builder getOptimalTrialsBuilder(int index) {
       return getOptimalTrialsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
         return optimalTrialsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(optimalTrials_);
       }
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       return getOptimalTrialsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Trial.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       return getOptimalTrialsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Trial.getDefaultInstance());
     }
-
     /**
      *
      *

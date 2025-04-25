@@ -41,7 +41,6 @@ public interface GetTenantRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

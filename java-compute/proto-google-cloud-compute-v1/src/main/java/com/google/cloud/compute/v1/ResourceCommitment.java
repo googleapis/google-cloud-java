@@ -33,7 +33,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourceCommitment)
     ResourceCommitmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceCommitment.newBuilder() to construct.
   private ResourceCommitment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,19 +107,14 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /** <code>ACCELERATOR = 429815371;</code> */
     public static final int ACCELERATOR_VALUE = 429815371;
-
     /** <code>LOCAL_SSD = 508934896;</code> */
     public static final int LOCAL_SSD_VALUE = 508934896;
-
     /** <code>MEMORY = 123056385;</code> */
     public static final int MEMORY_VALUE = 123056385;
-
     /** <code>UNSPECIFIED = 526786327;</code> */
     public static final int UNSPECIFIED_VALUE = 526786327;
-
     /** <code>VCPU = 2628978;</code> */
     public static final int VCPU_VALUE = 2628978;
 
@@ -218,7 +212,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object acceleratorType_ = "";
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   public boolean hasAcceleratorType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int AMOUNT_FIELD_NUMBER = 196759640;
   private long amount_ = 0L;
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   public boolean hasAmount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   public boolean hasType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -364,7 +351,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -582,7 +568,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -799,7 +784,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object acceleratorType_ = "";
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public boolean hasAcceleratorType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +904,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private long amount_;
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public long getAmount() {
       return amount_;
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1013,7 +987,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public boolean hasType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1037,7 +1010,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1055,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

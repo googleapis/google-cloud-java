@@ -37,7 +37,6 @@ public interface OutputInfoOrBuilder
    * @return Whether the gcsOutputDirectory field is set.
    */
   boolean hasGcsOutputDirectory();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface OutputInfoOrBuilder
    * @return The gcsOutputDirectory.
    */
   java.lang.String getGcsOutputDirectory();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CreateDeliveryVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateDeliveryVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface CreateDeliveryVehicleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateDeliveryVehicleRequestOrBuilder
    * @return The deliveryVehicleId.
    */
   java.lang.String getDeliveryVehicleId();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface CreateDeliveryVehicleRequestOrBuilder
    * @return Whether the deliveryVehicle field is set.
    */
   boolean hasDeliveryVehicle();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface CreateDeliveryVehicleRequestOrBuilder
    * @return The deliveryVehicle.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryVehicle getDeliveryVehicle();
-
   /**
    *
    *

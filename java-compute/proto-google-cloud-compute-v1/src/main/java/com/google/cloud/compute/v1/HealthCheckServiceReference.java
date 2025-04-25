@@ -33,7 +33,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthCheckServiceReference)
     HealthCheckServiceReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HealthCheckServiceReference.newBuilder() to construct.
   private HealthCheckServiceReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheckService_ = "";
-
   /**
    * <code>optional string health_check_service = 408374747;</code>
    *
@@ -79,7 +77,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
   public boolean hasHealthCheckService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional string health_check_service = 408374747;</code>
    *
@@ -97,7 +94,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    * <code>optional string health_check_service = 408374747;</code>
    *
@@ -282,7 +278,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -470,7 +465,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object healthCheckService_ = "";
-
     /**
      * <code>optional string health_check_service = 408374747;</code>
      *
@@ -479,7 +473,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     public boolean hasHealthCheckService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional string health_check_service = 408374747;</code>
      *
@@ -496,7 +489,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string health_check_service = 408374747;</code>
      *
@@ -513,7 +505,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string health_check_service = 408374747;</code>
      *
@@ -529,7 +520,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string health_check_service = 408374747;</code>
      *
@@ -541,7 +531,6 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string health_check_service = 408374747;</code>
      *

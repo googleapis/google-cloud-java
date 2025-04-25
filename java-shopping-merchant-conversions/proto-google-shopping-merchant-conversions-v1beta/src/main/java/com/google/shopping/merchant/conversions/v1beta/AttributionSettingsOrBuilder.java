@@ -53,7 +53,6 @@ public interface AttributionSettingsOrBuilder
    * @return The enum numeric value on the wire for attributionModel.
    */
   int getAttributionModelValue();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface AttributionSettingsOrBuilder
    */
   java.util.List<com.google.shopping.merchant.conversions.v1beta.AttributionSettings.ConversionType>
       getConversionTypeList();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface AttributionSettingsOrBuilder
    */
   com.google.shopping.merchant.conversions.v1beta.AttributionSettings.ConversionType
       getConversionType(int index);
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface AttributionSettingsOrBuilder
    * </code>
    */
   int getConversionTypeCount();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface AttributionSettingsOrBuilder
               com.google.shopping.merchant.conversions.v1beta.AttributionSettings
                   .ConversionTypeOrBuilder>
       getConversionTypeOrBuilderList();
-
   /**
    *
    *

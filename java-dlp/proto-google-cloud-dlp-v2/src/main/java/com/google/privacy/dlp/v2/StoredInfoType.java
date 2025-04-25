@@ -34,7 +34,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StoredInfoType)
     StoredInfoTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StoredInfoType.newBuilder() to construct.
   private StoredInfoType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_VERSION_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.StoredInfoTypeVersion currentVersion_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance()
         : currentVersion_;
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.StoredInfoTypeVersion> pendingVersions_;
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.StoredInfoTypeVersion> getPendingVersionsList() {
     return pendingVersions_;
   }
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       getPendingVersionsOrBuilderList() {
     return pendingVersions_;
   }
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
   public int getPendingVersionsCount() {
     return pendingVersions_.size();
   }
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.StoredInfoTypeVersion getPendingVersions(int index) {
     return pendingVersions_.get(index);
   }
-
   /**
    *
    *
@@ -438,7 +427,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -715,7 +703,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder,
             com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder>
         currentVersionBuilder_;
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentVersion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return currentVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +951,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             : currentVersion_;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return pendingVersionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1048,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return pendingVersionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1065,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return pendingVersionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1089,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1110,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1133,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1157,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1178,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1199,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1220,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1240,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1260,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1274,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getPendingVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1331,7 +1292,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return pendingVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1350,7 +1310,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pendingVersions_);
       }
     }
-
     /**
      *
      *
@@ -1365,7 +1324,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       return getPendingVersionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1381,7 +1339,6 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       return getPendingVersionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance());
     }
-
     /**
      *
      *

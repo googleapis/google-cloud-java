@@ -34,7 +34,6 @@ public final class ListRegionHealthCheckServicesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListRegionHealthCheckServicesRequest)
     ListRegionHealthCheckServicesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRegionHealthCheckServicesRequest.newBuilder() to construct.
   private ListRegionHealthCheckServicesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListRegionHealthCheckServicesRequest
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class ListRegionHealthCheckServicesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class ListRegionHealthCheckServicesRequest
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class ListRegionHealthCheckServicesRequest
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public final class ListRegionHealthCheckServicesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public final class ListRegionHealthCheckServicesRequest
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -288,7 +277,6 @@ public final class ListRegionHealthCheckServicesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public final class ListRegionHealthCheckServicesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +356,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -394,7 +379,6 @@ public final class ListRegionHealthCheckServicesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +405,6 @@ public final class ListRegionHealthCheckServicesRequest
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -437,7 +420,6 @@ public final class ListRegionHealthCheckServicesRequest
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -694,7 +676,6 @@ public final class ListRegionHealthCheckServicesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -976,7 +957,6 @@ public final class ListRegionHealthCheckServicesRequest
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -991,7 +971,6 @@ public final class ListRegionHealthCheckServicesRequest
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1014,7 +993,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1015,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1053,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1077,6 @@ public final class ListRegionHealthCheckServicesRequest
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class ListRegionHealthCheckServicesRequest
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1134,7 +1107,6 @@ public final class ListRegionHealthCheckServicesRequest
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -1154,7 +1126,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1145,6 @@ public final class ListRegionHealthCheckServicesRequest
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1189,7 +1159,6 @@ public final class ListRegionHealthCheckServicesRequest
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1212,7 +1181,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1203,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1224,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1241,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1265,6 @@ public final class ListRegionHealthCheckServicesRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1315,7 +1279,6 @@ public final class ListRegionHealthCheckServicesRequest
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1338,7 +1301,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1323,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1383,7 +1344,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1361,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1385,6 @@ public final class ListRegionHealthCheckServicesRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1449,7 +1407,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1429,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1494,7 +1450,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1467,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1537,7 +1491,6 @@ public final class ListRegionHealthCheckServicesRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1560,7 +1513,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1583,7 +1535,6 @@ public final class ListRegionHealthCheckServicesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1556,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1573,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1597,6 @@ public final class ListRegionHealthCheckServicesRequest
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -1664,7 +1612,6 @@ public final class ListRegionHealthCheckServicesRequest
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1680,7 +1627,6 @@ public final class ListRegionHealthCheckServicesRequest
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -1700,7 +1646,6 @@ public final class ListRegionHealthCheckServicesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

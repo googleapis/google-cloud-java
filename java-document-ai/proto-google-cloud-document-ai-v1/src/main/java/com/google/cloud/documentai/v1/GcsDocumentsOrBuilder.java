@@ -34,7 +34,6 @@ public interface GcsDocumentsOrBuilder
    * <code>repeated .google.cloud.documentai.v1.GcsDocument documents = 1;</code>
    */
   java.util.List<com.google.cloud.documentai.v1.GcsDocument> getDocumentsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface GcsDocumentsOrBuilder
    * <code>repeated .google.cloud.documentai.v1.GcsDocument documents = 1;</code>
    */
   com.google.cloud.documentai.v1.GcsDocument getDocuments(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface GcsDocumentsOrBuilder
    * <code>repeated .google.cloud.documentai.v1.GcsDocument documents = 1;</code>
    */
   int getDocumentsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface GcsDocumentsOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1.GcsDocumentOrBuilder>
       getDocumentsOrBuilderList();
-
   /**
    *
    *

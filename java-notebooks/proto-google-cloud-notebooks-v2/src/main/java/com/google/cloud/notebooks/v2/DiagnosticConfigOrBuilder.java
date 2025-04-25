@@ -48,7 +48,6 @@ public interface DiagnosticConfigOrBuilder
    * @return The gcsBucket.
    */
   java.lang.String getGcsBucket();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface DiagnosticConfigOrBuilder
    * @return The relativePath.
    */
   java.lang.String getRelativePath();
-
   /**
    *
    *

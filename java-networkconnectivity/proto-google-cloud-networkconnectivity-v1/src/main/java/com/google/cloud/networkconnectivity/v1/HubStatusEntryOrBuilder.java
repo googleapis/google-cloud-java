@@ -52,7 +52,6 @@ public interface HubStatusEntryOrBuilder
    * @return The groupBy.
    */
   java.lang.String getGroupBy();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface HubStatusEntryOrBuilder
    * @return Whether the pscPropagationStatus field is set.
    */
   boolean hasPscPropagationStatus();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface HubStatusEntryOrBuilder
    * @return The pscPropagationStatus.
    */
   com.google.cloud.networkconnectivity.v1.PscPropagationStatus getPscPropagationStatus();
-
   /**
    *
    *

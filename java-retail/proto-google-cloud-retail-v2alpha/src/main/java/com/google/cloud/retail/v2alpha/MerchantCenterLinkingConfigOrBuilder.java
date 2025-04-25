@@ -34,7 +34,6 @@ public interface MerchantCenterLinkingConfigOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterLink links = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterLink> getLinksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface MerchantCenterLinkingConfigOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterLink links = 1;</code>
    */
   com.google.cloud.retail.v2alpha.MerchantCenterLink getLinks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface MerchantCenterLinkingConfigOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterLink links = 1;</code>
    */
   int getLinksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface MerchantCenterLinkingConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.MerchantCenterLinkOrBuilder>
       getLinksOrBuilderList();
-
   /**
    *
    *

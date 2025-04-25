@@ -37,7 +37,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return Whether the base field is set.
    */
   boolean hasBase();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return The base.
    */
   java.lang.String getBase();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return Whether the mask field is set.
    */
   boolean hasMask();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return The mask.
    */
   java.lang.String getMask();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return Whether the offset field is set.
    */
   boolean hasOffset();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    * @return Whether the size field is set.
    */
   boolean hasSize();
-
   /**
    *
    *

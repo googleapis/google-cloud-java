@@ -37,7 +37,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return Whether the createdAfter field is set.
    */
   boolean hasCreatedAfter();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return The createdAfter.
    */
   com.google.protobuf.Timestamp getCreatedAfter();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return Whether the types field is set.
    */
   boolean hasTypes();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return The types.
    */
   com.google.privacy.dlp.v2.BigQueryTableTypes getTypes();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return Whether the typeCollection field is set.
    */
   boolean hasTypeCollection();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return The enum numeric value on the wire for typeCollection.
    */
   int getTypeCollectionValue();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return Whether the orConditions field is set.
    */
   boolean hasOrConditions();
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public interface DiscoveryBigQueryConditionsOrBuilder
    * @return The orConditions.
    */
   com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.OrConditions getOrConditions();
-
   /**
    *
    *

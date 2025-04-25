@@ -38,7 +38,6 @@ public interface BulkUploadFeedbackLabelsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface BulkUploadFeedbackLabelsRequestOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest.GcsSource
       getGcsSource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BulkUploadFeedbackLabelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

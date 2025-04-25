@@ -38,7 +38,6 @@ public interface MetricCompatibilityOrBuilder
    * @return Whether the metricMetadata field is set.
    */
   boolean hasMetricMetadata();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MetricCompatibilityOrBuilder
    * @return The metricMetadata.
    */
   com.google.analytics.data.v1beta.MetricMetadata getMetricMetadata();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface MetricCompatibilityOrBuilder
    * @return Whether the compatibility field is set.
    */
   boolean hasCompatibility();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface MetricCompatibilityOrBuilder
    * @return The enum numeric value on the wire for compatibility.
    */
   int getCompatibilityValue();
-
   /**
    *
    *

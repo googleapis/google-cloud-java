@@ -38,7 +38,6 @@ public final class RemoveLocalInventoriesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.RemoveLocalInventoriesResponse)
     RemoveLocalInventoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveLocalInventoriesResponse.newBuilder() to construct.
   private RemoveLocalInventoriesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -219,7 +218,6 @@ public final class RemoveLocalInventoriesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

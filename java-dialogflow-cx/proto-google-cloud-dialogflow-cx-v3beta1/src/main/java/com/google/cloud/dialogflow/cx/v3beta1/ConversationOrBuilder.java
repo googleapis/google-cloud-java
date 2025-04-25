@@ -39,7 +39,6 @@ public interface ConversationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ConversationOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ConversationOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ConversationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ConversationOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface ConversationOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface ConversationOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface ConversationOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface ConversationOrBuilder
    * @return The metrics.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Conversation.Metrics getMetrics();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent intents = 7;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Intent> getIntentsList();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent intents = 7;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Intent getIntents(int index);
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Intent intents = 7;</code>
    */
   int getIntentsCount();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface ConversationOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder>
       getIntentsOrBuilderList();
-
   /**
    *
    *
@@ -297,7 +284,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Flow flows = 8;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Flow> getFlowsList();
-
   /**
    *
    *
@@ -310,7 +296,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Flow flows = 8;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Flow getFlows(int index);
-
   /**
    *
    *
@@ -323,7 +308,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Flow flows = 8;</code>
    */
   int getFlowsCount();
-
   /**
    *
    *
@@ -337,7 +321,6 @@ public interface ConversationOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.FlowOrBuilder>
       getFlowsOrBuilderList();
-
   /**
    *
    *
@@ -363,7 +346,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Page pages = 9;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Page> getPagesList();
-
   /**
    *
    *
@@ -376,7 +358,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Page pages = 9;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Page getPages(int index);
-
   /**
    *
    *
@@ -389,7 +370,6 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Page pages = 9;</code>
    */
   int getPagesCount();
-
   /**
    *
    *
@@ -403,7 +383,6 @@ public interface ConversationOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.PageOrBuilder>
       getPagesOrBuilderList();
-
   /**
    *
    *
@@ -430,7 +409,6 @@ public interface ConversationOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction>
       getInteractionsList();
-
   /**
    *
    *
@@ -443,7 +421,6 @@ public interface ConversationOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction getInteractions(int index);
-
   /**
    *
    *
@@ -456,7 +433,6 @@ public interface ConversationOrBuilder
    * </code>
    */
   int getInteractionsCount();
-
   /**
    *
    *
@@ -470,7 +446,6 @@ public interface ConversationOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Conversation.InteractionOrBuilder>
       getInteractionsOrBuilderList();
-
   /**
    *
    *
@@ -498,7 +473,6 @@ public interface ConversationOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
-
   /**
    *
    *
@@ -512,7 +486,6 @@ public interface ConversationOrBuilder
    * @return The environment.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Environment getEnvironment();
-
   /**
    *
    *
@@ -535,7 +508,6 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, int64&gt; flow_versions = 12;</code>
    */
   int getFlowVersionsCount();
-
   /**
    *
    *
@@ -546,11 +518,9 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, int64&gt; flow_versions = 12;</code>
    */
   boolean containsFlowVersions(java.lang.String key);
-
   /** Use {@link #getFlowVersionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getFlowVersions();
-
   /**
    *
    *
@@ -561,7 +531,6 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, int64&gt; flow_versions = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getFlowVersionsMap();
-
   /**
    *
    *
@@ -572,7 +541,6 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, int64&gt; flow_versions = 12;</code>
    */
   long getFlowVersionsOrDefault(java.lang.String key, long defaultValue);
-
   /**
    *
    *

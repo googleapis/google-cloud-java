@@ -40,7 +40,6 @@ public interface CreateMetadataSchemaRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateMetadataSchemaRequestOrBuilder
    * @return Whether the metadataSchema field is set.
    */
   boolean hasMetadataSchema();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateMetadataSchemaRequestOrBuilder
    * @return The metadataSchema.
    */
   com.google.cloud.aiplatform.v1.MetadataSchema getMetadataSchema();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface CreateMetadataSchemaRequestOrBuilder
    * @return The metadataSchemaId.
    */
   java.lang.String getMetadataSchemaId();
-
   /**
    *
    *

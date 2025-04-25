@@ -38,7 +38,6 @@ public interface DelayedEventOrBuilder
    * @return The cause.
    */
   java.lang.String getCause();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface DelayedEventOrBuilder
    * @return A list containing the metrics.
    */
   java.util.List<java.lang.String> getMetricsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface DelayedEventOrBuilder
    * @return The count of metrics.
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface DelayedEventOrBuilder
    * @return The metrics at the given index.
    */
   java.lang.String getMetrics(int index);
-
   /**
    *
    *

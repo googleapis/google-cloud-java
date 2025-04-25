@@ -25,7 +25,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.iam.credentials.v1.SignBlobRequest)
     SignBlobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SignBlobRequest.newBuilder() to construct.
   private SignBlobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -62,7 +61,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList delegates_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getDelegatesList() {
     return delegates_;
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   public int getDelegatesCount() {
     return delegates_.size();
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getDelegates(int index) {
     return delegates_.get(index);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int PAYLOAD_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -428,7 +420,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.iam.credentials.v1.SignBlobRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -640,7 +631,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       delegates_.makeImmutable();
       return delegates_;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     public int getDelegatesCount() {
       return delegates_.size();
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getDelegates(int index) {
       return delegates_.get(index);
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getDelegatesBytes(int index) {
       return delegates_.getByteString(index);
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +983,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1017,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1056,7 +1032,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

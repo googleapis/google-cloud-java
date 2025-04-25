@@ -37,7 +37,6 @@ public interface ListDeliveryVehiclesResponseOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.DeliveryVehicle delivery_vehicles = 1;</code>
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicle> getDeliveryVehiclesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListDeliveryVehiclesResponseOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.DeliveryVehicle delivery_vehicles = 1;</code>
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryVehicle getDeliveryVehicles(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface ListDeliveryVehiclesResponseOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.DeliveryVehicle delivery_vehicles = 1;</code>
    */
   int getDeliveryVehiclesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListDeliveryVehiclesResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.DeliveryVehicleOrBuilder>
       getDeliveryVehiclesOrBuilderList();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ListDeliveryVehiclesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

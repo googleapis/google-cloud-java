@@ -40,7 +40,6 @@ public interface DnsForwardingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface DnsForwardingOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface DnsForwardingOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface DnsForwardingOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface DnsForwardingOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface DnsForwardingOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRule>
       getForwardingRulesList();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface DnsForwardingOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRule getForwardingRules(int index);
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface DnsForwardingOrBuilder
    * </code>
    */
   int getForwardingRulesCount();
-
   /**
    *
    *
@@ -191,7 +183,6 @@ public interface DnsForwardingOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRuleOrBuilder>
       getForwardingRulesOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SubmitBuildRequest)
     SubmitBuildRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubmitBuildRequest.newBuilder() to construct.
   private SubmitBuildRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.SubmitBuildRequest.DockerBuild)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SubmitBuildRequest.DockerBuild)
       DockerBuildOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DockerBuild.newBuilder() to construct.
     private DockerBuild(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -268,7 +265,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -514,7 +510,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Deprecated
     java.lang.String getRuntime();
-
     /**
      *
      *
@@ -544,7 +539,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * @return The functionTarget.
      */
     java.lang.String getFunctionTarget();
-
     /**
      *
      *
@@ -575,7 +569,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * @return The cacheImageUri.
      */
     java.lang.String getCacheImageUri();
-
     /**
      *
      *
@@ -605,7 +598,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * @return The baseImage.
      */
     java.lang.String getBaseImage();
-
     /**
      *
      *
@@ -631,7 +623,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     int getEnvironmentVariablesCount();
-
     /**
      *
      *
@@ -644,11 +635,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     boolean containsEnvironmentVariables(java.lang.String key);
-
     /** Use {@link #getEnvironmentVariablesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables();
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap();
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * @return The projectDescriptor.
      */
     java.lang.String getProjectDescriptor();
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getProjectDescriptorBytes();
   }
-
   /**
    *
    *
@@ -752,7 +737,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild)
       BuildpacksBuildOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BuildpacksBuild.newBuilder() to construct.
     private BuildpacksBuild(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -803,7 +787,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object runtime_ = "";
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object functionTarget_ = "";
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -917,7 +897,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cacheImageUri_ = "";
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object baseImage_ = "";
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public int getEnvironmentVariablesCount() {
       return internalGetEnvironmentVariables().getMap().size();
     }
-
     /**
      *
      *
@@ -1074,14 +1049,12 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       return internalGetEnvironmentVariables().getMap().containsKey(key);
     }
-
     /** Use {@link #getEnvironmentVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
       return getEnvironmentVariablesMap();
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
       return internalGetEnvironmentVariables().getMap();
     }
-
     /**
      *
      *
@@ -1121,7 +1093,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           internalGetEnvironmentVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int ENABLE_AUTOMATIC_UPDATES_FIELD_NUMBER = 6;
     private boolean enableAutomaticUpdates_ = false;
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object projectDescriptor_ = "";
-
     /**
      *
      *
@@ -1197,7 +1166,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1451,7 +1419,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1758,7 +1725,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object runtime_ = "";
-
       /**
        *
        *
@@ -1784,7 +1750,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1810,7 +1775,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1835,7 +1799,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1856,7 +1819,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1884,7 +1846,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object functionTarget_ = "";
-
       /**
        *
        *
@@ -1908,7 +1869,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1932,7 +1892,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1955,7 +1914,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1974,7 +1932,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2000,7 +1957,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object cacheImageUri_ = "";
-
       /**
        *
        *
@@ -2027,7 +1983,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2054,7 +2009,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2080,7 +2034,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2102,7 +2055,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2131,7 +2083,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object baseImage_ = "";
-
       /**
        *
        *
@@ -2154,7 +2105,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2177,7 +2127,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2199,7 +2148,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2217,7 +2165,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2271,7 +2218,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       public int getEnvironmentVariablesCount() {
         return internalGetEnvironmentVariables().getMap().size();
       }
-
       /**
        *
        *
@@ -2290,14 +2236,12 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         }
         return internalGetEnvironmentVariables().getMap().containsKey(key);
       }
-
       /** Use {@link #getEnvironmentVariablesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
         return getEnvironmentVariablesMap();
       }
-
       /**
        *
        *
@@ -2313,7 +2257,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
         return internalGetEnvironmentVariables().getMap();
       }
-
       /**
        *
        *
@@ -2337,7 +2280,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
             internalGetEnvironmentVariables().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -2367,7 +2309,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         internalGetMutableEnvironmentVariables().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -2386,14 +2327,12 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         internalGetMutableEnvironmentVariables().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironmentVariables() {
         bitField0_ |= 0x00000010;
         return internalGetMutableEnvironmentVariables().getMutableMap();
       }
-
       /**
        *
        *
@@ -2416,7 +2355,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
         return this;
       }
-
       /**
        *
        *
@@ -2436,7 +2374,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean enableAutomaticUpdates_;
-
       /**
        *
        *
@@ -2454,7 +2391,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       public boolean getEnableAutomaticUpdates() {
         return enableAutomaticUpdates_;
       }
-
       /**
        *
        *
@@ -2476,7 +2412,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2498,7 +2433,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object projectDescriptor_ = "";
-
       /**
        *
        *
@@ -2523,7 +2457,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2548,7 +2481,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2572,7 +2504,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2592,7 +2523,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2699,7 +2629,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2747,7 +2676,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     private BuildTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2784,7 +2712,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -2811,7 +2738,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2840,7 +2766,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STORAGE_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2858,7 +2783,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasStorageSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -2879,7 +2803,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.run.v2.StorageSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2903,7 +2826,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageUri_ = "";
-
   /**
    *
    *
@@ -2927,7 +2849,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2953,7 +2874,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BUILDPACK_BUILD_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -2969,7 +2889,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasBuildpackBuild() {
     return buildTypeCase_ == 4;
   }
-
   /**
    *
    *
@@ -2988,7 +2907,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3008,7 +2926,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DOCKER_BUILD_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -3024,7 +2941,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasDockerBuild() {
     return buildTypeCase_ == 5;
   }
-
   /**
    *
    *
@@ -3043,7 +2959,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.run.v2.SubmitBuildRequest.DockerBuild.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3065,7 +2980,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -3090,7 +3004,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -3120,7 +3033,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerPool_ = "";
-
   /**
    *
    *
@@ -3151,7 +3063,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -3188,7 +3099,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -3203,7 +3113,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
-
   /**
    *
    *
@@ -3218,7 +3127,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   public int getTagsCount() {
     return tags_.size();
   }
-
   /**
    *
    *
@@ -3234,7 +3142,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
   public java.lang.String getTags(int index) {
     return tags_.get(index);
   }
-
   /**
    *
    *
@@ -3517,7 +3424,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3871,7 +3777,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -3897,7 +3802,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3923,7 +3827,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3948,7 +3851,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3969,7 +3871,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4001,7 +3902,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.run.v2.StorageSource.Builder,
             com.google.cloud.run.v2.StorageSourceOrBuilder>
         storageSourceBuilder_;
-
     /**
      *
      *
@@ -4019,7 +3919,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasStorageSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -4047,7 +3946,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.run.v2.StorageSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4072,7 +3970,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4094,7 +3991,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4129,7 +4025,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4157,7 +4052,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4172,7 +4066,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.run.v2.StorageSource.Builder getStorageSourceBuilder() {
       return getStorageSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4195,7 +4088,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.run.v2.StorageSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4230,7 +4122,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object imageUri_ = "";
-
     /**
      *
      *
@@ -4253,7 +4144,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4276,7 +4166,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4298,7 +4187,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4316,7 +4204,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4345,7 +4232,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.Builder,
             com.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuildOrBuilder>
         buildpackBuildBuilder_;
-
     /**
      *
      *
@@ -4361,7 +4247,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasBuildpackBuild() {
       return buildTypeCase_ == 4;
     }
-
     /**
      *
      *
@@ -4387,7 +4272,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4411,7 +4295,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       buildTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4432,7 +4315,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       buildTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4468,7 +4350,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       buildTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4494,7 +4375,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4508,7 +4388,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         getBuildpackBuildBuilder() {
       return getBuildpackBuildFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4530,7 +4409,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4570,7 +4448,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.run.v2.SubmitBuildRequest.DockerBuild.Builder,
             com.google.cloud.run.v2.SubmitBuildRequest.DockerBuildOrBuilder>
         dockerBuildBuilder_;
-
     /**
      *
      *
@@ -4586,7 +4463,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasDockerBuild() {
       return buildTypeCase_ == 5;
     }
-
     /**
      *
      *
@@ -4612,7 +4488,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.run.v2.SubmitBuildRequest.DockerBuild.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4635,7 +4510,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       buildTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4656,7 +4530,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       buildTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4690,7 +4563,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       buildTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4716,7 +4588,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4729,7 +4600,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.run.v2.SubmitBuildRequest.DockerBuild.Builder getDockerBuildBuilder() {
       return getDockerBuildFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4751,7 +4621,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.run.v2.SubmitBuildRequest.DockerBuild.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4786,7 +4655,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -4810,7 +4678,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4834,7 +4701,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4857,7 +4723,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4876,7 +4741,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4902,7 +4766,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object workerPool_ = "";
-
     /**
      *
      *
@@ -4932,7 +4795,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4962,7 +4824,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4991,7 +4852,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5016,7 +4876,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5056,7 +4915,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -5072,7 +4930,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       tags_.makeImmutable();
       return tags_;
     }
-
     /**
      *
      *
@@ -5087,7 +4944,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public int getTagsCount() {
       return tags_.size();
     }
-
     /**
      *
      *
@@ -5103,7 +4959,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
-
     /**
      *
      *
@@ -5119,7 +4974,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5143,7 +4997,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5166,7 +5019,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5186,7 +5038,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5205,7 +5056,6 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

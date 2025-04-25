@@ -36,7 +36,6 @@ public interface SpaceUpdatedEventDataOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SpaceUpdatedEventDataOrBuilder
    * @return The space.
    */
   com.google.chat.v1.Space getSpace();
-
   /**
    *
    *

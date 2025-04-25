@@ -35,7 +35,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsResponse)
     PurgeCompletionSuggestionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeCompletionSuggestionsResponse.newBuilder() to construct.
   private PurgeCompletionSuggestionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
 
   public static final int PURGE_SUCCEEDED_FIELD_NUMBER = 1;
   private boolean purgeSucceeded_ = false;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -596,7 +588,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
     private int bitField0_;
 
     private boolean purgeSucceeded_;
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
     public boolean getPurgeSucceeded() {
       return purgeSucceeded_;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -963,7 +937,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +950,6 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *

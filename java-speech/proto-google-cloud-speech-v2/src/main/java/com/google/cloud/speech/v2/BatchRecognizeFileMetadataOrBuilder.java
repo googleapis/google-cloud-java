@@ -36,7 +36,6 @@ public interface BatchRecognizeFileMetadataOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BatchRecognizeFileMetadataOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface BatchRecognizeFileMetadataOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface BatchRecognizeFileMetadataOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v2.RecognitionConfig getConfig();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface BatchRecognizeFileMetadataOrBuilder
    * @return Whether the configMask field is set.
    */
   boolean hasConfigMask();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface BatchRecognizeFileMetadataOrBuilder
    * @return The configMask.
    */
   com.google.protobuf.FieldMask getConfigMask();
-
   /**
    *
    *

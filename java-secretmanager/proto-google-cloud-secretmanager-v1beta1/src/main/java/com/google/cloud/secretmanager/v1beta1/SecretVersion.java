@@ -33,7 +33,6 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.SecretVersion)
     SecretVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecretVersion.newBuilder() to construct.
   private SecretVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,8 +68,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The state of a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion],
-   * indicating if it can be accessed.
+   * The state of a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion], indicating if it can be accessed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.secrets.v1beta1.SecretVersion.State}
@@ -90,8 +88,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may be
-     * accessed.
+     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may be accessed.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -101,10 +98,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may not
-     * be accessed, but the secret data is still available and can be placed
-     * back into the
-     * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED]
+     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may not be accessed, but the secret data
+     * is still available and can be placed back into the [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED]
      * state.
      * </pre>
      *
@@ -115,9 +110,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] is
-     * destroyed and the secret data is no longer stored. A version may not
-     * leave this state once entered.
+     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] is destroyed and the secret data is no longer
+     * stored. A version may not leave this state once entered.
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -136,41 +130,34 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may be
-     * accessed.
+     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may be accessed.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may not
-     * be accessed, but the secret data is still available and can be placed
-     * back into the
-     * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED]
+     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] may not be accessed, but the secret data
+     * is still available and can be placed back into the [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED]
      * state.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
-
     /**
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] is
-     * destroyed and the secret data is no longer stored. A version may not
-     * leave this state once entered.
+     * The [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] is destroyed and the secret data is no longer
+     * stored. A version may not leave this state once entered.
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -269,18 +256,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    *
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-   * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-   * incremented for each subsequent version of the secret.
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+   * are incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -299,18 +283,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    *
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-   * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-   * incremented for each subsequent version of the secret.
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+   * are incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -332,13 +313,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+   * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -350,13 +329,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+   * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -368,13 +345,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+   * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -387,15 +362,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESTROY_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp destroyTime_;
-
   /**
    *
    *
    * <pre>
-   * Output only. The time this
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-   * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+   * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+   * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -407,15 +380,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDestroyTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The time this
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-   * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+   * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+   * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -427,15 +398,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDestroyTime() {
     return destroyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : destroyTime_;
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The time this
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-   * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+   * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+   * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -448,13 +417,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
-
   /**
    *
    *
    * <pre>
-   * Output only. The current state of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -467,13 +434,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The current state of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -691,7 +656,6 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -938,18 +902,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      *
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-     * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-     * incremented for each subsequent version of the secret.
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+     * are incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -967,18 +928,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      *
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-     * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-     * incremented for each subsequent version of the secret.
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+     * are incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -996,18 +954,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      *
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-     * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-     * incremented for each subsequent version of the secret.
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+     * are incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1024,18 +979,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      *
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-     * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-     * incremented for each subsequent version of the secret.
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+     * are incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1048,18 +1000,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
+     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      *
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
-     * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
-     * incremented for each subsequent version of the secret.
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
+     * are incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1084,13 +1033,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1102,13 +1049,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1126,13 +1071,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1152,13 +1095,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1175,13 +1116,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1206,13 +1145,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1229,13 +1166,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1247,13 +1182,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1269,13 +1202,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time at which the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+     * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1305,15 +1236,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         destroyTimeBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1325,15 +1254,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDestroyTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1351,15 +1278,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return destroyTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1379,15 +1304,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1404,15 +1327,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1437,15 +1358,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1462,15 +1381,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1482,15 +1399,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDestroyTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1506,15 +1421,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : destroyTime_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The time this
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
-     * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+     * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
      * </pre>
      *
      * <code>
@@ -1539,13 +1452,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
      * <pre>
-     * Output only. The current state of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1558,13 +1469,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The current state of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1580,13 +1489,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The current state of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1603,13 +1510,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.secretmanager.v1beta1.SecretVersion.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The current state of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1628,13 +1533,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The current state of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      *
      * <code>

@@ -34,7 +34,6 @@ public final class LabelImageSegmentationOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
     LabelImageSegmentationOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelImageSegmentationOperationMetadata.newBuilder() to construct.
   private LabelImageSegmentationOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class LabelImageSegmentationOperationMetadata
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class LabelImageSegmentationOperationMetadata
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class LabelImageSegmentationOperationMetadata
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
-
   /**
    *
    *
@@ -292,7 +288,6 @@ public final class LabelImageSegmentationOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -509,7 +504,6 @@ public final class LabelImageSegmentationOperationMetadata
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class LabelImageSegmentationOperationMetadata
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class LabelImageSegmentationOperationMetadata
         return basicConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class LabelImageSegmentationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -590,7 +581,6 @@ public final class LabelImageSegmentationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class LabelImageSegmentationOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class LabelImageSegmentationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +645,6 @@ public final class LabelImageSegmentationOperationMetadata
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -677,7 +664,6 @@ public final class LabelImageSegmentationOperationMetadata
             : basicConfig_;
       }
     }
-
     /**
      *
      *

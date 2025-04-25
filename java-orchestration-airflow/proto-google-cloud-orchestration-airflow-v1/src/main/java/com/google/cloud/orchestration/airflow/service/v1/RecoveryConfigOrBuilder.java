@@ -38,7 +38,6 @@ public interface RecoveryConfigOrBuilder
    * @return Whether the scheduledSnapshotsConfig field is set.
    */
   boolean hasScheduledSnapshotsConfig();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface RecoveryConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.ScheduledSnapshotsConfig
       getScheduledSnapshotsConfig();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface BatchImportEvaluatedAnnotationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BatchImportEvaluatedAnnotationsRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotation>
       getEvaluatedAnnotationsList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface BatchImportEvaluatedAnnotationsRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotation getEvaluatedAnnotations(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface BatchImportEvaluatedAnnotationsRequestOrBuilder
    * </code>
    */
   int getEvaluatedAnnotationsCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface BatchImportEvaluatedAnnotationsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotationOrBuilder>
       getEvaluatedAnnotationsOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectionRuleSet)
     InspectionRuleSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InspectionRuleSet.newBuilder() to construct.
   private InspectionRuleSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
     return infoTypes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       getInfoTypesOrBuilderList() {
     return infoTypes_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InspectionRule> rules_;
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.privacy.dlp.v2.InspectionRule> getRulesList() {
     return rules_;
   }
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       getRulesOrBuilderList() {
     return rules_;
   }
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   public int getRulesCount() {
     return rules_.size();
   }
-
   /**
    *
    *
@@ -203,7 +193,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
   public com.google.privacy.dlp.v2.InspectionRule getRules(int index) {
     return rules_.get(index);
   }
-
   /**
    *
    *
@@ -390,7 +379,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -707,7 +695,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return infoTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return infoTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return infoTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +910,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypesBuilder(int index) {
       return getInfoTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -963,7 +938,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return infoTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(infoTypes_);
       }
     }
-
     /**
      *
      *
@@ -995,7 +968,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       return getInfoTypesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1009,7 +981,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       return getInfoTypesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return rulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1059,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return rulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1075,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return rulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1097,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1117,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1139,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1161,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1180,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1200,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1220,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1239,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1258,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1270,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.InspectionRule.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1328,7 +1286,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1346,7 +1303,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(rules_);
       }
     }
-
     /**
      *
      *
@@ -1360,7 +1316,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       return getRulesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InspectionRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1374,7 +1329,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
       return getRulesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InspectionRule.getDefaultInstance());
     }
-
     /**
      *
      *

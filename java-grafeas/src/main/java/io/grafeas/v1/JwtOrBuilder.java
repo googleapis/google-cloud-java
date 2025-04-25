@@ -39,7 +39,6 @@ public interface JwtOrBuilder
    * @return The compactJwt.
    */
   java.lang.String getCompactJwt();
-
   /**
    *
    *

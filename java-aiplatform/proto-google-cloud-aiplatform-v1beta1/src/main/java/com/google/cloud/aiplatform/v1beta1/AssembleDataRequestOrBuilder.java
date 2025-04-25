@@ -38,7 +38,6 @@ public interface AssembleDataRequestOrBuilder
    * @return Whether the geminiTemplateConfig field is set.
    */
   boolean hasGeminiTemplateConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AssembleDataRequestOrBuilder
    * @return The geminiTemplateConfig.
    */
   com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig getGeminiTemplateConfig();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface AssembleDataRequestOrBuilder
    * @return Whether the requestColumnName field is set.
    */
   boolean hasRequestColumnName();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface AssembleDataRequestOrBuilder
    * @return The requestColumnName.
    */
   java.lang.String getRequestColumnName();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface AssembleDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface DefaultPoolOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface DefaultPoolOrBuilder
    * @return The artifactStorage.
    */
   java.lang.String getArtifactStorage();
-
   /**
    *
    *

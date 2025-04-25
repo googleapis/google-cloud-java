@@ -34,7 +34,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Job jobs = 1;</code>
    */
   java.util.List<com.google.cloud.run.v2.Job> getJobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Job jobs = 1;</code>
    */
   com.google.cloud.run.v2.Job getJobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Job jobs = 1;</code>
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Job jobs = 1;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.JobOrBuilder> getJobsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

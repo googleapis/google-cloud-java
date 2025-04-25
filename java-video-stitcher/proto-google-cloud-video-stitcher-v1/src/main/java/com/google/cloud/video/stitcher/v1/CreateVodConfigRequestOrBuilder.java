@@ -39,7 +39,6 @@ public interface CreateVodConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateVodConfigRequestOrBuilder
    * @return The vodConfigId.
    */
   java.lang.String getVodConfigId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateVodConfigRequestOrBuilder
    * @return Whether the vodConfig field is set.
    */
   boolean hasVodConfig();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateVodConfigRequestOrBuilder
    * @return The vodConfig.
    */
   com.google.cloud.video.stitcher.v1.VodConfig getVodConfig();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface CreateVodConfigRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

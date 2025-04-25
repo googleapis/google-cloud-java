@@ -47,7 +47,6 @@ public enum AnnotationSource implements com.google.protobuf.ProtocolMessageEnum 
 
   /** <code>ANNOTATION_SOURCE_UNSPECIFIED = 0;</code> */
   public static final int ANNOTATION_SOURCE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

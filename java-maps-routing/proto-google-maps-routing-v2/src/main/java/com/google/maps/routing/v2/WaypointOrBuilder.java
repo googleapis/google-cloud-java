@@ -37,7 +37,6 @@ public interface WaypointOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface WaypointOrBuilder
    * @return The location.
    */
   com.google.maps.routing.v2.Location getLocation();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface WaypointOrBuilder
    * @return Whether the placeId field is set.
    */
   boolean hasPlaceId();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface WaypointOrBuilder
    * @return The placeId.
    */
   java.lang.String getPlaceId();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface WaypointOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface WaypointOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *

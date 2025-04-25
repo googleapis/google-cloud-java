@@ -35,7 +35,6 @@ public interface FirewallPoliciesListAssociationsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyAssociation> getAssociationsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface FirewallPoliciesListAssociationsResponseOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.FirewallPolicyAssociation getAssociations(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface FirewallPoliciesListAssociationsResponseOrBuilder
    * </code>
    */
   int getAssociationsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface FirewallPoliciesListAssociationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyAssociationOrBuilder>
       getAssociationsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface FirewallPoliciesListAssociationsResponseOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -111,7 +106,6 @@ public interface FirewallPoliciesListAssociationsResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface AppEngineHttpTargetOrBuilder
    * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AppEngineHttpTargetOrBuilder
    * @return Whether the appEngineRouting field is set.
    */
   boolean hasAppEngineRouting();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AppEngineHttpTargetOrBuilder
    * @return The appEngineRouting.
    */
   com.google.cloud.scheduler.v1.AppEngineRouting getAppEngineRouting();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface AppEngineHttpTargetOrBuilder
    * @return The relativeUri.
    */
   java.lang.String getRelativeUri();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface AppEngineHttpTargetOrBuilder
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   int getHeadersCount();
-
   /**
    *
    *
@@ -214,11 +209,9 @@ public interface AppEngineHttpTargetOrBuilder
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   boolean containsHeaders(java.lang.String key);
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
-
   /**
    *
    *
@@ -263,7 +256,6 @@ public interface AppEngineHttpTargetOrBuilder
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
-
   /**
    *
    *
@@ -312,7 +304,6 @@ public interface AppEngineHttpTargetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

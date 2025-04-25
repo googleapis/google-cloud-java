@@ -34,7 +34,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectionRule)
     InspectionRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InspectionRule.newBuilder() to construct.
   private InspectionRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOTWORD_RULE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHotwordRule() {
     return typeCase_ == 1;
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUSION_RULE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExclusionRule() {
     return typeCase_ == 2;
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.ExclusionRule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -411,7 +403,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder>
         hotwordRuleBuilder_;
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHotwordRule() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
         getHotwordRuleBuilder() {
       return getHotwordRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -886,7 +868,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.ExclusionRule.Builder,
             com.google.privacy.dlp.v2.ExclusionRuleOrBuilder>
         exclusionRuleBuilder_;
-
     /**
      *
      *
@@ -902,7 +883,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExclusionRule() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ExclusionRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -951,7 +930,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +950,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +982,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1007,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ExclusionRule.Builder getExclusionRuleBuilder() {
       return getExclusionRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.ExclusionRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *

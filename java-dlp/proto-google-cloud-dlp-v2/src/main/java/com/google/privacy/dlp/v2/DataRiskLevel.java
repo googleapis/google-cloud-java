@@ -34,7 +34,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataRiskLevel)
     DataRiskLevelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataRiskLevel.newBuilder() to construct.
   private DataRiskLevel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,7 +143,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_SCORE_UNSPECIFIED = 0;</code>
      */
     public static final int RISK_SCORE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -157,7 +155,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_LOW = 10;</code>
      */
     public static final int RISK_LOW_VALUE = 10;
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_UNKNOWN = 12;</code>
      */
     public static final int RISK_UNKNOWN_VALUE = 12;
-
     /**
      *
      *
@@ -181,7 +177,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_MODERATE = 20;</code>
      */
     public static final int RISK_MODERATE_VALUE = 20;
-
     /**
      *
      *
@@ -287,7 +282,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private int score_ = 0;
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
   public int getScoreValue() {
     return score_;
   }
-
   /**
    *
    *
@@ -486,7 +479,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +661,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int score_ = 0;
-
     /**
      *
      *
@@ -685,7 +676,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
     public int getScoreValue() {
       return score_;
     }
-
     /**
      *
      *
@@ -704,7 +694,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.DataRiskLevel.DataRiskLevelScore.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -746,7 +734,6 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

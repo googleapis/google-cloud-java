@@ -40,7 +40,6 @@ public interface ReportConsentChangeRequestOrBuilder
    * @return The enum numeric value on the wire for consentChangeAction.
    */
   int getConsentChangeActionValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface ReportConsentChangeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface ReportConsentChangeRequestOrBuilder
    * @return The serviceTermId.
    */
   java.lang.String getServiceTermId();
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public interface ReportConsentChangeRequestOrBuilder
    * @return The serviceTermVersion.
    */
   java.lang.String getServiceTermVersion();
-
   /**
    *
    *

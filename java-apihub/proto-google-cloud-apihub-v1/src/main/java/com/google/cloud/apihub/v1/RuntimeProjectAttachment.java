@@ -36,7 +36,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.RuntimeProjectAttachment)
     RuntimeProjectAttachmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RuntimeProjectAttachment.newBuilder() to construct.
   private RuntimeProjectAttachment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object runtimeProject_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -421,7 +413,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
     }
 
     private java.lang.Object runtimeProject_ = "";
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +857,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -927,7 +907,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -950,7 +929,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +974,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1024,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1040,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class RuntimeProjectAttachment extends com.google.protobuf.Generate
             : createTime_;
       }
     }
-
     /**
      *
      *

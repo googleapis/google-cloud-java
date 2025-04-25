@@ -33,7 +33,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.HttpConfig)
     HttpConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpConfig.newBuilder() to construct.
   private HttpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_ENABLED_STATE_FIELD_NUMBER = 1;
   private int httpEnabledState_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
   public int getHttpEnabledStateValue() {
     return httpEnabledState_;
   }
-
   /**
    *
    *
@@ -260,7 +257,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -441,7 +437,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int httpEnabledState_ = 0;
-
     /**
      *
      *
@@ -458,7 +453,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
     public int getHttpEnabledStateValue() {
       return httpEnabledState_;
     }
-
     /**
      *
      *
@@ -478,7 +472,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -497,7 +490,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.iot.v1.HttpState.forNumber(httpEnabledState_);
       return result == null ? com.google.cloud.iot.v1.HttpState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -520,7 +512,6 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

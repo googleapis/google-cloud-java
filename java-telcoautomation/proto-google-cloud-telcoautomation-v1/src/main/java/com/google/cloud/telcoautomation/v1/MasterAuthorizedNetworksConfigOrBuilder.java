@@ -38,7 +38,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    */
   java.util.List<com.google.cloud.telcoautomation.v1.MasterAuthorizedNetworksConfig.CidrBlock>
       getCidrBlocksList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    */
   com.google.cloud.telcoautomation.v1.MasterAuthorizedNetworksConfig.CidrBlock getCidrBlocks(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * </code>
    */
   int getCidrBlocksCount();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
           ? extends
               com.google.cloud.telcoautomation.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
       getCidrBlocksOrBuilderList();
-
   /**
    *
    *

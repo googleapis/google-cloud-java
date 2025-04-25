@@ -39,7 +39,6 @@ public interface CreateLiveConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateLiveConfigRequestOrBuilder
    * @return The liveConfigId.
    */
   java.lang.String getLiveConfigId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateLiveConfigRequestOrBuilder
    * @return Whether the liveConfig field is set.
    */
   boolean hasLiveConfig();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateLiveConfigRequestOrBuilder
    * @return The liveConfig.
    */
   com.google.cloud.video.stitcher.v1.LiveConfig getLiveConfig();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface CreateLiveConfigRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

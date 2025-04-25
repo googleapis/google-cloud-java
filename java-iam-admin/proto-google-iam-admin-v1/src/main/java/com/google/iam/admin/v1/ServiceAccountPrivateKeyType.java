@@ -74,7 +74,6 @@ public enum ServiceAccountPrivateKeyType implements com.google.protobuf.Protocol
    * <code>TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum ServiceAccountPrivateKeyType implements com.google.protobuf.Protocol
    * <code>TYPE_PKCS12_FILE = 1;</code>
    */
   public static final int TYPE_PKCS12_FILE_VALUE = 1;
-
   /**
    *
    *

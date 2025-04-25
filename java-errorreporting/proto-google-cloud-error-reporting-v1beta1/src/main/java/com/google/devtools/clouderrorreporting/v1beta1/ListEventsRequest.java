@@ -33,7 +33,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ListEventsRequest)
     ListEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEventsRequest.newBuilder() to construct.
   private ListEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectName_ = "";
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupId_ = "";
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +206,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int SERVICE_FILTER_FIELD_NUMBER = 3;
   private com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter serviceFilter_;
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasServiceFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.getDefaultInstance()
         : serviceFilter_;
   }
-
   /**
    *
    *
@@ -277,7 +269,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int TIME_RANGE_FIELD_NUMBER = 4;
   private com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange timeRange_;
-
   /**
    *
    *
@@ -297,7 +288,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTimeRange() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -319,7 +309,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.getDefaultInstance()
         : timeRange_;
   }
-
   /**
    *
    *
@@ -343,7 +332,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 6;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -388,7 +375,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -629,7 +615,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -911,7 +896,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object projectName_ = "";
-
     /**
      *
      *
@@ -947,7 +931,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +966,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1018,7 +1000,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1030,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1067,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object groupId_ = "";
-
     /**
      *
      *
@@ -1115,7 +1094,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1121,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1147,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1169,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1203,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder>
         serviceFilterBuilder_;
-
     /**
      *
      *
@@ -1247,7 +1221,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasServiceFilter() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1273,7 +1246,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return serviceFilterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1273,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1298,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1332,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1355,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1374,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getServiceFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1431,7 +1398,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
             : serviceFilter_;
       }
     }
-
     /**
      *
      *
@@ -1468,7 +1434,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
             com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder>
         timeRangeBuilder_;
-
     /**
      *
      *
@@ -1487,7 +1452,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTimeRange() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1512,7 +1476,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return timeRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1540,7 +1503,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1527,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1561,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1584,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1603,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTimeRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1668,7 +1626,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
             : timeRange_;
       }
     }
-
     /**
      *
      *
@@ -1700,7 +1657,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1716,7 +1672,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1736,7 +1691,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1710,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1779,7 +1732,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1802,7 +1754,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1824,7 +1775,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1842,7 +1792,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

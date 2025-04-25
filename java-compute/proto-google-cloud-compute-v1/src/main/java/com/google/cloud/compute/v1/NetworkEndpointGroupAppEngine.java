@@ -33,7 +33,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupAppEngine)
     NetworkEndpointGroupAppEngineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkEndpointGroupAppEngine.newBuilder() to construct.
   private NetworkEndpointGroupAppEngine(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
   public boolean hasService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMask_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
   public boolean hasUrlMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -467,7 +457,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -687,7 +676,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public boolean hasService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     }
 
     private java.lang.Object urlMask_ = "";
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public boolean hasUrlMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +892,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +974,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +995,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

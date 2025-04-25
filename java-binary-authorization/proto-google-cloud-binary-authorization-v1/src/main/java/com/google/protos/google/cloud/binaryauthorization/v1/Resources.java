@@ -46,7 +46,6 @@ public final class Resources {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -73,7 +72,6 @@ public final class Resources {
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -104,7 +102,6 @@ public final class Resources {
      * @return The enum numeric value on the wire for globalPolicyEvaluationMode.
      */
     int getGlobalPolicyEvaluationModeValue();
-
     /**
      *
      *
@@ -142,7 +139,6 @@ public final class Resources {
             com.google.protos.google.cloud.binaryauthorization.v1.Resources
                 .AdmissionWhitelistPattern>
         getAdmissionWhitelistPatternsList();
-
     /**
      *
      *
@@ -158,7 +154,6 @@ public final class Resources {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionWhitelistPattern
         getAdmissionWhitelistPatterns(int index);
-
     /**
      *
      *
@@ -173,7 +168,6 @@ public final class Resources {
      * </code>
      */
     int getAdmissionWhitelistPatternsCount();
-
     /**
      *
      *
@@ -192,7 +186,6 @@ public final class Resources {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources
                     .AdmissionWhitelistPatternOrBuilder>
         getAdmissionWhitelistPatternsOrBuilderList();
-
     /**
      *
      *
@@ -228,7 +221,6 @@ public final class Resources {
      * </code>
      */
     int getClusterAdmissionRulesCount();
-
     /**
      *
      *
@@ -247,14 +239,12 @@ public final class Resources {
      * </code>
      */
     boolean containsClusterAdmissionRules(java.lang.String key);
-
     /** Use {@link #getClusterAdmissionRulesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getClusterAdmissionRules();
-
     /**
      *
      *
@@ -276,7 +266,6 @@ public final class Resources {
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getClusterAdmissionRulesMap();
-
     /**
      *
      *
@@ -301,7 +290,6 @@ public final class Resources {
             /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
-
     /**
      *
      *
@@ -335,7 +323,6 @@ public final class Resources {
      * </code>
      */
     int getKubernetesNamespaceAdmissionRulesCount();
-
     /**
      *
      *
@@ -349,14 +336,12 @@ public final class Resources {
      * </code>
      */
     boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key);
-
     /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getKubernetesNamespaceAdmissionRules();
-
     /**
      *
      *
@@ -373,7 +358,6 @@ public final class Resources {
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getKubernetesNamespaceAdmissionRulesMap();
-
     /**
      *
      *
@@ -393,7 +377,6 @@ public final class Resources {
             /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
-
     /**
      *
      *
@@ -422,7 +405,6 @@ public final class Resources {
      * </code>
      */
     int getKubernetesServiceAccountAdmissionRulesCount();
-
     /**
      *
      *
@@ -436,14 +418,12 @@ public final class Resources {
      * </code>
      */
     boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key);
-
     /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getKubernetesServiceAccountAdmissionRules();
-
     /**
      *
      *
@@ -460,7 +440,6 @@ public final class Resources {
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getKubernetesServiceAccountAdmissionRulesMap();
-
     /**
      *
      *
@@ -480,7 +459,6 @@ public final class Resources {
             /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
-
     /**
      *
      *
@@ -512,7 +490,6 @@ public final class Resources {
      * </code>
      */
     int getIstioServiceIdentityAdmissionRulesCount();
-
     /**
      *
      *
@@ -529,14 +506,12 @@ public final class Resources {
      * </code>
      */
     boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key);
-
     /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getIstioServiceIdentityAdmissionRules();
-
     /**
      *
      *
@@ -556,7 +531,6 @@ public final class Resources {
             java.lang.String,
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule>
         getIstioServiceIdentityAdmissionRulesMap();
-
     /**
      *
      *
@@ -579,7 +553,6 @@ public final class Resources {
             /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
-
     /**
      *
      *
@@ -613,7 +586,6 @@ public final class Resources {
      * @return Whether the defaultAdmissionRule field is set.
      */
     boolean hasDefaultAdmissionRule();
-
     /**
      *
      *
@@ -630,7 +602,6 @@ public final class Resources {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getDefaultAdmissionRule();
-
     /**
      *
      *
@@ -660,7 +631,6 @@ public final class Resources {
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
-
     /**
      *
      *
@@ -675,7 +645,6 @@ public final class Resources {
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
-
     /**
      *
      *
@@ -689,7 +658,6 @@ public final class Resources {
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -704,7 +672,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.Policy)
       PolicyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Policy.newBuilder() to construct.
     private Policy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -803,7 +770,6 @@ public final class Resources {
        * <code>GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0;</code>
        */
       public static final int GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -814,7 +780,6 @@ public final class Resources {
        * <code>ENABLE = 1;</code>
        */
       public static final int ENABLE_VALUE = 1;
-
       /**
        *
        *
@@ -920,7 +885,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -945,7 +909,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -975,7 +938,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -999,7 +961,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +987,6 @@ public final class Resources {
 
     public static final int GLOBAL_POLICY_EVALUATION_MODE_FIELD_NUMBER = 7;
     private int globalPolicyEvaluationMode_ = 0;
-
     /**
      *
      *
@@ -1047,7 +1007,6 @@ public final class Resources {
     public int getGlobalPolicyEvaluationModeValue() {
       return globalPolicyEvaluationMode_;
     }
-
     /**
      *
      *
@@ -1086,7 +1045,6 @@ public final class Resources {
             com.google.protos.google.cloud.binaryauthorization.v1.Resources
                 .AdmissionWhitelistPattern>
         admissionWhitelistPatterns_;
-
     /**
      *
      *
@@ -1107,7 +1065,6 @@ public final class Resources {
         getAdmissionWhitelistPatternsList() {
       return admissionWhitelistPatterns_;
     }
-
     /**
      *
      *
@@ -1129,7 +1086,6 @@ public final class Resources {
         getAdmissionWhitelistPatternsOrBuilderList() {
       return admissionWhitelistPatterns_;
     }
-
     /**
      *
      *
@@ -1147,7 +1103,6 @@ public final class Resources {
     public int getAdmissionWhitelistPatternsCount() {
       return admissionWhitelistPatterns_.size();
     }
-
     /**
      *
      *
@@ -1166,7 +1121,6 @@ public final class Resources {
         getAdmissionWhitelistPatterns(int index) {
       return admissionWhitelistPatterns_.get(index);
     }
-
     /**
      *
      *
@@ -1227,7 +1181,6 @@ public final class Resources {
     public int getClusterAdmissionRulesCount() {
       return internalGetClusterAdmissionRules().getMap().size();
     }
-
     /**
      *
      *
@@ -1252,7 +1205,6 @@ public final class Resources {
       }
       return internalGetClusterAdmissionRules().getMap().containsKey(key);
     }
-
     /** Use {@link #getClusterAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1262,7 +1214,6 @@ public final class Resources {
         getClusterAdmissionRules() {
       return getClusterAdmissionRulesMap();
     }
-
     /**
      *
      *
@@ -1287,7 +1238,6 @@ public final class Resources {
         getClusterAdmissionRulesMap() {
       return internalGetClusterAdmissionRules().getMap();
     }
-
     /**
      *
      *
@@ -1322,7 +1272,6 @@ public final class Resources {
           map = internalGetClusterAdmissionRules().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1396,7 +1345,6 @@ public final class Resources {
     public int getKubernetesNamespaceAdmissionRulesCount() {
       return internalGetKubernetesNamespaceAdmissionRules().getMap().size();
     }
-
     /**
      *
      *
@@ -1416,7 +1364,6 @@ public final class Resources {
       }
       return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
     }
-
     /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1426,7 +1373,6 @@ public final class Resources {
         getKubernetesNamespaceAdmissionRules() {
       return getKubernetesNamespaceAdmissionRulesMap();
     }
-
     /**
      *
      *
@@ -1446,7 +1392,6 @@ public final class Resources {
         getKubernetesNamespaceAdmissionRulesMap() {
       return internalGetKubernetesNamespaceAdmissionRules().getMap();
     }
-
     /**
      *
      *
@@ -1476,7 +1421,6 @@ public final class Resources {
           map = internalGetKubernetesNamespaceAdmissionRules().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1545,7 +1489,6 @@ public final class Resources {
     public int getKubernetesServiceAccountAdmissionRulesCount() {
       return internalGetKubernetesServiceAccountAdmissionRules().getMap().size();
     }
-
     /**
      *
      *
@@ -1565,7 +1508,6 @@ public final class Resources {
       }
       return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
     }
-
     /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1575,7 +1517,6 @@ public final class Resources {
         getKubernetesServiceAccountAdmissionRules() {
       return getKubernetesServiceAccountAdmissionRulesMap();
     }
-
     /**
      *
      *
@@ -1595,7 +1536,6 @@ public final class Resources {
         getKubernetesServiceAccountAdmissionRulesMap() {
       return internalGetKubernetesServiceAccountAdmissionRules().getMap();
     }
-
     /**
      *
      *
@@ -1625,7 +1565,6 @@ public final class Resources {
           map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1694,7 +1633,6 @@ public final class Resources {
     public int getIstioServiceIdentityAdmissionRulesCount() {
       return internalGetIstioServiceIdentityAdmissionRules().getMap().size();
     }
-
     /**
      *
      *
@@ -1717,7 +1655,6 @@ public final class Resources {
       }
       return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
     }
-
     /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1727,7 +1664,6 @@ public final class Resources {
         getIstioServiceIdentityAdmissionRules() {
       return getIstioServiceIdentityAdmissionRulesMap();
     }
-
     /**
      *
      *
@@ -1750,7 +1686,6 @@ public final class Resources {
         getIstioServiceIdentityAdmissionRulesMap() {
       return internalGetIstioServiceIdentityAdmissionRules().getMap();
     }
-
     /**
      *
      *
@@ -1783,7 +1718,6 @@ public final class Resources {
           map = internalGetIstioServiceIdentityAdmissionRules().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1818,7 +1752,6 @@ public final class Resources {
     public static final int DEFAULT_ADMISSION_RULE_FIELD_NUMBER = 4;
     private com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         defaultAdmissionRule_;
-
     /**
      *
      *
@@ -1837,7 +1770,6 @@ public final class Resources {
     public boolean hasDefaultAdmissionRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1860,7 +1792,6 @@ public final class Resources {
               .getDefaultInstance()
           : defaultAdmissionRule_;
     }
-
     /**
      *
      *
@@ -1884,7 +1815,6 @@ public final class Resources {
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp updateTime_;
-
     /**
      *
      *
@@ -1902,7 +1832,6 @@ public final class Resources {
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1920,7 +1849,6 @@ public final class Resources {
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
-
     /**
      *
      *
@@ -2279,7 +2207,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2769,7 +2696,6 @@ public final class Resources {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -2793,7 +2719,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2817,7 +2742,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2840,7 +2764,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2859,7 +2782,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2885,7 +2807,6 @@ public final class Resources {
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -2908,7 +2829,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2931,7 +2851,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2953,7 +2872,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2971,7 +2889,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2996,7 +2913,6 @@ public final class Resources {
       }
 
       private int globalPolicyEvaluationMode_ = 0;
-
       /**
        *
        *
@@ -3017,7 +2933,6 @@ public final class Resources {
       public int getGlobalPolicyEvaluationModeValue() {
         return globalPolicyEvaluationMode_;
       }
-
       /**
        *
        *
@@ -3041,7 +2956,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3072,7 +2986,6 @@ public final class Resources {
                 .GlobalPolicyEvaluationMode.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3102,7 +3015,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3173,7 +3085,6 @@ public final class Resources {
           return admissionWhitelistPatternsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3194,7 +3105,6 @@ public final class Resources {
           return admissionWhitelistPatternsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3217,7 +3127,6 @@ public final class Resources {
           return admissionWhitelistPatternsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3247,7 +3156,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3275,7 +3183,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3304,7 +3211,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3334,7 +3240,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3361,7 +3266,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3389,7 +3293,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3419,7 +3322,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3443,7 +3345,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3467,7 +3368,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -3486,7 +3386,6 @@ public final class Resources {
           getAdmissionWhitelistPatternsBuilder(int index) {
         return getAdmissionWhitelistPatternsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3509,7 +3408,6 @@ public final class Resources {
           return admissionWhitelistPatternsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3534,7 +3432,6 @@ public final class Resources {
           return java.util.Collections.unmodifiableList(admissionWhitelistPatterns_);
         }
       }
-
       /**
        *
        *
@@ -3556,7 +3453,6 @@ public final class Resources {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources
                     .AdmissionWhitelistPattern.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3579,7 +3475,6 @@ public final class Resources {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources
                     .AdmissionWhitelistPattern.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3655,8 +3550,7 @@ public final class Resources {
             defaultEntry() {
           return ClusterAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final ClusterAdmissionRulesConverter clusterAdmissionRulesConverter =
           new ClusterAdmissionRulesConverter();
@@ -3701,7 +3595,6 @@ public final class Resources {
       public int getClusterAdmissionRulesCount() {
         return internalGetClusterAdmissionRules().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -3726,7 +3619,6 @@ public final class Resources {
         }
         return internalGetClusterAdmissionRules().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getClusterAdmissionRulesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -3736,7 +3628,6 @@ public final class Resources {
           getClusterAdmissionRules() {
         return getClusterAdmissionRulesMap();
       }
-
       /**
        *
        *
@@ -3761,7 +3652,6 @@ public final class Resources {
           getClusterAdmissionRulesMap() {
         return internalGetClusterAdmissionRules().getImmutableMap();
       }
-
       /**
        *
        *
@@ -3799,7 +3689,6 @@ public final class Resources {
             ? clusterAdmissionRulesConverter.build(map.get(key))
             : defaultValue;
       }
-
       /**
        *
        *
@@ -3839,7 +3728,6 @@ public final class Resources {
         internalGetMutableClusterAdmissionRules().clear();
         return this;
       }
-
       /**
        *
        *
@@ -3864,7 +3752,6 @@ public final class Resources {
         internalGetMutableClusterAdmissionRules().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -3874,7 +3761,6 @@ public final class Resources {
         bitField0_ |= 0x00000010;
         return internalGetMutableClusterAdmissionRules().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -3905,7 +3791,6 @@ public final class Resources {
         bitField0_ |= 0x00000010;
         return this;
       }
-
       /**
        *
        *
@@ -3940,7 +3825,6 @@ public final class Resources {
         bitField0_ |= 0x00000010;
         return this;
       }
-
       /**
        *
        *
@@ -4016,8 +3900,7 @@ public final class Resources {
             defaultEntry() {
           return KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final KubernetesNamespaceAdmissionRulesConverter
           kubernetesNamespaceAdmissionRulesConverter =
@@ -4064,7 +3947,6 @@ public final class Resources {
       public int getKubernetesNamespaceAdmissionRulesCount() {
         return internalGetKubernetesNamespaceAdmissionRules().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -4084,7 +3966,6 @@ public final class Resources {
         }
         return internalGetKubernetesNamespaceAdmissionRules().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -4094,7 +3975,6 @@ public final class Resources {
           getKubernetesNamespaceAdmissionRules() {
         return getKubernetesNamespaceAdmissionRulesMap();
       }
-
       /**
        *
        *
@@ -4114,7 +3994,6 @@ public final class Resources {
           getKubernetesNamespaceAdmissionRulesMap() {
         return internalGetKubernetesNamespaceAdmissionRules().getImmutableMap();
       }
-
       /**
        *
        *
@@ -4147,7 +4026,6 @@ public final class Resources {
             ? kubernetesNamespaceAdmissionRulesConverter.build(map.get(key))
             : defaultValue;
       }
-
       /**
        *
        *
@@ -4182,7 +4060,6 @@ public final class Resources {
         internalGetMutableKubernetesNamespaceAdmissionRules().clear();
         return this;
       }
-
       /**
        *
        *
@@ -4202,7 +4079,6 @@ public final class Resources {
         internalGetMutableKubernetesNamespaceAdmissionRules().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -4212,7 +4088,6 @@ public final class Resources {
         bitField0_ |= 0x00000020;
         return internalGetMutableKubernetesNamespaceAdmissionRules().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -4238,7 +4113,6 @@ public final class Resources {
         bitField0_ |= 0x00000020;
         return this;
       }
-
       /**
        *
        *
@@ -4268,7 +4142,6 @@ public final class Resources {
         bitField0_ |= 0x00000020;
         return this;
       }
-
       /**
        *
        *
@@ -4339,8 +4212,7 @@ public final class Resources {
             defaultEntry() {
           return KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final KubernetesServiceAccountAdmissionRulesConverter
           kubernetesServiceAccountAdmissionRulesConverter =
@@ -4388,7 +4260,6 @@ public final class Resources {
       public int getKubernetesServiceAccountAdmissionRulesCount() {
         return internalGetKubernetesServiceAccountAdmissionRules().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -4410,7 +4281,6 @@ public final class Resources {
             .ensureBuilderMap()
             .containsKey(key);
       }
-
       /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -4420,7 +4290,6 @@ public final class Resources {
           getKubernetesServiceAccountAdmissionRules() {
         return getKubernetesServiceAccountAdmissionRulesMap();
       }
-
       /**
        *
        *
@@ -4440,7 +4309,6 @@ public final class Resources {
           getKubernetesServiceAccountAdmissionRulesMap() {
         return internalGetKubernetesServiceAccountAdmissionRules().getImmutableMap();
       }
-
       /**
        *
        *
@@ -4473,7 +4341,6 @@ public final class Resources {
             ? kubernetesServiceAccountAdmissionRulesConverter.build(map.get(key))
             : defaultValue;
       }
-
       /**
        *
        *
@@ -4508,7 +4375,6 @@ public final class Resources {
         internalGetMutableKubernetesServiceAccountAdmissionRules().clear();
         return this;
       }
-
       /**
        *
        *
@@ -4528,7 +4394,6 @@ public final class Resources {
         internalGetMutableKubernetesServiceAccountAdmissionRules().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -4538,7 +4403,6 @@ public final class Resources {
         bitField0_ |= 0x00000040;
         return internalGetMutableKubernetesServiceAccountAdmissionRules().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -4566,7 +4430,6 @@ public final class Resources {
         bitField0_ |= 0x00000040;
         return this;
       }
-
       /**
        *
        *
@@ -4598,7 +4461,6 @@ public final class Resources {
         bitField0_ |= 0x00000040;
         return this;
       }
-
       /**
        *
        *
@@ -4670,8 +4532,7 @@ public final class Resources {
             defaultEntry() {
           return IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final IstioServiceIdentityAdmissionRulesConverter
           istioServiceIdentityAdmissionRulesConverter =
@@ -4719,7 +4580,6 @@ public final class Resources {
       public int getIstioServiceIdentityAdmissionRulesCount() {
         return internalGetIstioServiceIdentityAdmissionRules().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -4742,7 +4602,6 @@ public final class Resources {
         }
         return internalGetIstioServiceIdentityAdmissionRules().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -4752,7 +4611,6 @@ public final class Resources {
           getIstioServiceIdentityAdmissionRules() {
         return getIstioServiceIdentityAdmissionRulesMap();
       }
-
       /**
        *
        *
@@ -4775,7 +4633,6 @@ public final class Resources {
           getIstioServiceIdentityAdmissionRulesMap() {
         return internalGetIstioServiceIdentityAdmissionRules().getImmutableMap();
       }
-
       /**
        *
        *
@@ -4811,7 +4668,6 @@ public final class Resources {
             ? istioServiceIdentityAdmissionRulesConverter.build(map.get(key))
             : defaultValue;
       }
-
       /**
        *
        *
@@ -4849,7 +4705,6 @@ public final class Resources {
         internalGetMutableIstioServiceIdentityAdmissionRules().clear();
         return this;
       }
-
       /**
        *
        *
@@ -4872,7 +4727,6 @@ public final class Resources {
         internalGetMutableIstioServiceIdentityAdmissionRules().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -4882,7 +4736,6 @@ public final class Resources {
         bitField0_ |= 0x00000080;
         return internalGetMutableIstioServiceIdentityAdmissionRules().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -4911,7 +4764,6 @@ public final class Resources {
         bitField0_ |= 0x00000080;
         return this;
       }
-
       /**
        *
        *
@@ -4944,7 +4796,6 @@ public final class Resources {
         bitField0_ |= 0x00000080;
         return this;
       }
-
       /**
        *
        *
@@ -4997,7 +4848,6 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources
                   .AdmissionRuleOrBuilder>
           defaultAdmissionRuleBuilder_;
-
       /**
        *
        *
@@ -5015,7 +4865,6 @@ public final class Resources {
       public boolean hasDefaultAdmissionRule() {
         return ((bitField0_ & 0x00000100) != 0);
       }
-
       /**
        *
        *
@@ -5041,7 +4890,6 @@ public final class Resources {
           return defaultAdmissionRuleBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5068,7 +4916,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5093,7 +4940,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5127,7 +4973,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5150,7 +4995,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5169,7 +5013,6 @@ public final class Resources {
         onChanged();
         return getDefaultAdmissionRuleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5193,7 +5036,6 @@ public final class Resources {
               : defaultAdmissionRule_;
         }
       }
-
       /**
        *
        *
@@ -5232,7 +5074,6 @@ public final class Resources {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
-
       /**
        *
        *
@@ -5249,7 +5090,6 @@ public final class Resources {
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000200) != 0);
       }
-
       /**
        *
        *
@@ -5272,7 +5112,6 @@ public final class Resources {
           return updateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5297,7 +5136,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5319,7 +5157,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5349,7 +5186,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5371,7 +5207,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5388,7 +5223,6 @@ public final class Resources {
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5409,7 +5243,6 @@ public final class Resources {
               : updateTime_;
         }
       }
-
       /**
        *
        *
@@ -5526,7 +5359,6 @@ public final class Resources {
      * @return The namePattern.
      */
     java.lang.String getNamePattern();
-
     /**
      *
      *
@@ -5543,7 +5375,6 @@ public final class Resources {
      */
     com.google.protobuf.ByteString getNamePatternBytes();
   }
-
   /**
    *
    *
@@ -5559,7 +5390,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern)
       AdmissionWhitelistPatternOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AdmissionWhitelistPattern.newBuilder() to construct.
     private AdmissionWhitelistPattern(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5596,7 +5426,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object namePattern_ = "";
-
     /**
      *
      *
@@ -5623,7 +5452,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -5837,7 +5665,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6051,7 +5878,6 @@ public final class Resources {
       private int bitField0_;
 
       private java.lang.Object namePattern_ = "";
-
       /**
        *
        *
@@ -6077,7 +5903,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6103,7 +5928,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6128,7 +5952,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6149,7 +5972,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6266,7 +6088,6 @@ public final class Resources {
      * @return The enum numeric value on the wire for evaluationMode.
      */
     int getEvaluationModeValue();
-
     /**
      *
      *
@@ -6303,7 +6124,6 @@ public final class Resources {
      * @return A list containing the requireAttestationsBy.
      */
     java.util.List<java.lang.String> getRequireAttestationsByList();
-
     /**
      *
      *
@@ -6324,7 +6144,6 @@ public final class Resources {
      * @return The count of requireAttestationsBy.
      */
     int getRequireAttestationsByCount();
-
     /**
      *
      *
@@ -6346,7 +6165,6 @@ public final class Resources {
      * @return The requireAttestationsBy at the given index.
      */
     java.lang.String getRequireAttestationsBy(int index);
-
     /**
      *
      *
@@ -6383,7 +6201,6 @@ public final class Resources {
      * @return The enum numeric value on the wire for enforcementMode.
      */
     int getEnforcementModeValue();
-
     /**
      *
      *
@@ -6400,7 +6217,6 @@ public final class Resources {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule.EnforcementMode
         getEnforcementMode();
   }
-
   /**
    *
    *
@@ -6421,7 +6237,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.AdmissionRule)
       AdmissionRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AdmissionRule.newBuilder() to construct.
     private AdmissionRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6512,7 +6327,6 @@ public final class Resources {
        * <code>EVALUATION_MODE_UNSPECIFIED = 0;</code>
        */
       public static final int EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -6523,7 +6337,6 @@ public final class Resources {
        * <code>ALWAYS_ALLOW = 1;</code>
        */
       public static final int ALWAYS_ALLOW_VALUE = 1;
-
       /**
        *
        *
@@ -6536,7 +6349,6 @@ public final class Resources {
        * <code>REQUIRE_ATTESTATION = 2;</code>
        */
       public static final int REQUIRE_ATTESTATION_VALUE = 2;
-
       /**
        *
        *
@@ -6693,7 +6505,6 @@ public final class Resources {
        * <code>ENFORCEMENT_MODE_UNSPECIFIED = 0;</code>
        */
       public static final int ENFORCEMENT_MODE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -6704,7 +6515,6 @@ public final class Resources {
        * <code>ENFORCED_BLOCK_AND_AUDIT_LOG = 1;</code>
        */
       public static final int ENFORCED_BLOCK_AND_AUDIT_LOG_VALUE = 1;
-
       /**
        *
        *
@@ -6808,7 +6618,6 @@ public final class Resources {
 
     public static final int EVALUATION_MODE_FIELD_NUMBER = 1;
     private int evaluationMode_ = 0;
-
     /**
      *
      *
@@ -6826,7 +6635,6 @@ public final class Resources {
     public int getEvaluationModeValue() {
       return evaluationMode_;
     }
-
     /**
      *
      *
@@ -6859,7 +6667,6 @@ public final class Resources {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList requireAttestationsBy_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -6882,7 +6689,6 @@ public final class Resources {
     public com.google.protobuf.ProtocolStringList getRequireAttestationsByList() {
       return requireAttestationsBy_;
     }
-
     /**
      *
      *
@@ -6905,7 +6711,6 @@ public final class Resources {
     public int getRequireAttestationsByCount() {
       return requireAttestationsBy_.size();
     }
-
     /**
      *
      *
@@ -6929,7 +6734,6 @@ public final class Resources {
     public java.lang.String getRequireAttestationsBy(int index) {
       return requireAttestationsBy_.get(index);
     }
-
     /**
      *
      *
@@ -6956,7 +6760,6 @@ public final class Resources {
 
     public static final int ENFORCEMENT_MODE_FIELD_NUMBER = 3;
     private int enforcementMode_ = 0;
-
     /**
      *
      *
@@ -6974,7 +6777,6 @@ public final class Resources {
     public int getEnforcementModeValue() {
       return enforcementMode_;
     }
-
     /**
      *
      *
@@ -7210,7 +7012,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7450,7 +7251,6 @@ public final class Resources {
       private int bitField0_;
 
       private int evaluationMode_ = 0;
-
       /**
        *
        *
@@ -7468,7 +7268,6 @@ public final class Resources {
       public int getEvaluationModeValue() {
         return evaluationMode_;
       }
-
       /**
        *
        *
@@ -7489,7 +7288,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7516,7 +7314,6 @@ public final class Resources {
                 .EvaluationMode.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7543,7 +7340,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7574,7 +7370,6 @@ public final class Resources {
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -7599,7 +7394,6 @@ public final class Resources {
         requireAttestationsBy_.makeImmutable();
         return requireAttestationsBy_;
       }
-
       /**
        *
        *
@@ -7623,7 +7417,6 @@ public final class Resources {
       public int getRequireAttestationsByCount() {
         return requireAttestationsBy_.size();
       }
-
       /**
        *
        *
@@ -7648,7 +7441,6 @@ public final class Resources {
       public java.lang.String getRequireAttestationsBy(int index) {
         return requireAttestationsBy_.get(index);
       }
-
       /**
        *
        *
@@ -7673,7 +7465,6 @@ public final class Resources {
       public com.google.protobuf.ByteString getRequireAttestationsByBytes(int index) {
         return requireAttestationsBy_.getByteString(index);
       }
-
       /**
        *
        *
@@ -7706,7 +7497,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7738,7 +7528,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7767,7 +7556,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7795,7 +7583,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7830,7 +7617,6 @@ public final class Resources {
       }
 
       private int enforcementMode_ = 0;
-
       /**
        *
        *
@@ -7848,7 +7634,6 @@ public final class Resources {
       public int getEnforcementModeValue() {
         return enforcementMode_;
       }
-
       /**
        *
        *
@@ -7869,7 +7654,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7897,7 +7681,6 @@ public final class Resources {
                 .EnforcementMode.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7924,7 +7707,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8032,7 +7814,6 @@ public final class Resources {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -8060,7 +7841,6 @@ public final class Resources {
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -8089,7 +7869,6 @@ public final class Resources {
      * @return Whether the userOwnedGrafeasNote field is set.
      */
     boolean hasUserOwnedGrafeasNote();
-
     /**
      *
      *
@@ -8105,7 +7884,6 @@ public final class Resources {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.UserOwnedGrafeasNote
         getUserOwnedGrafeasNote();
-
     /**
      *
      *
@@ -8134,7 +7912,6 @@ public final class Resources {
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
-
     /**
      *
      *
@@ -8149,7 +7926,6 @@ public final class Resources {
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
-
     /**
      *
      *
@@ -8166,7 +7942,6 @@ public final class Resources {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.AttestorTypeCase
         getAttestorTypeCase();
   }
-
   /**
    *
    *
@@ -8183,7 +7958,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.Attestor)
       AttestorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Attestor.newBuilder() to construct.
     private Attestor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8233,7 +8007,6 @@ public final class Resources {
       private AttestorTypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -8268,7 +8041,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -8293,7 +8065,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -8323,7 +8094,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -8348,7 +8118,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -8375,7 +8144,6 @@ public final class Resources {
     }
 
     public static final int USER_OWNED_GRAFEAS_NOTE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -8393,7 +8161,6 @@ public final class Resources {
     public boolean hasUserOwnedGrafeasNote() {
       return attestorTypeCase_ == 3;
     }
-
     /**
      *
      *
@@ -8418,7 +8185,6 @@ public final class Resources {
       return com.google.protos.google.cloud.binaryauthorization.v1.Resources.UserOwnedGrafeasNote
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -8445,7 +8211,6 @@ public final class Resources {
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp updateTime_;
-
     /**
      *
      *
@@ -8463,7 +8228,6 @@ public final class Resources {
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -8481,7 +8245,6 @@ public final class Resources {
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
-
     /**
      *
      *
@@ -8719,7 +8482,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -9012,7 +8774,6 @@ public final class Resources {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -9036,7 +8797,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9060,7 +8820,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9083,7 +8842,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9102,7 +8860,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9128,7 +8885,6 @@ public final class Resources {
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -9152,7 +8908,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9176,7 +8931,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9199,7 +8953,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9218,7 +8971,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9250,7 +9002,6 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources
                   .UserOwnedGrafeasNoteOrBuilder>
           userOwnedGrafeasNoteBuilder_;
-
       /**
        *
        *
@@ -9269,7 +9020,6 @@ public final class Resources {
       public boolean hasUserOwnedGrafeasNote() {
         return attestorTypeCase_ == 3;
       }
-
       /**
        *
        *
@@ -9303,7 +9053,6 @@ public final class Resources {
               .UserOwnedGrafeasNote.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -9331,7 +9080,6 @@ public final class Resources {
         attestorTypeCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -9357,7 +9105,6 @@ public final class Resources {
         attestorTypeCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -9400,7 +9147,6 @@ public final class Resources {
         attestorTypeCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -9429,7 +9175,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9447,7 +9192,6 @@ public final class Resources {
           getUserOwnedGrafeasNoteBuilder() {
         return getUserOwnedGrafeasNoteFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -9476,7 +9220,6 @@ public final class Resources {
               .UserOwnedGrafeasNote.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -9528,7 +9271,6 @@ public final class Resources {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
-
       /**
        *
        *
@@ -9545,7 +9287,6 @@ public final class Resources {
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -9568,7 +9309,6 @@ public final class Resources {
           return updateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -9593,7 +9333,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9615,7 +9354,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9645,7 +9383,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9667,7 +9404,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9684,7 +9420,6 @@ public final class Resources {
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -9705,7 +9440,6 @@ public final class Resources {
               : updateTime_;
         }
       }
-
       /**
        *
        *
@@ -9825,7 +9559,6 @@ public final class Resources {
      * @return The noteReference.
      */
     java.lang.String getNoteReference();
-
     /**
      *
      *
@@ -9867,7 +9600,6 @@ public final class Resources {
     java.util.List<
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey>
         getPublicKeysList();
-
     /**
      *
      *
@@ -9889,7 +9621,6 @@ public final class Resources {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey getPublicKeys(
         int index);
-
     /**
      *
      *
@@ -9910,7 +9641,6 @@ public final class Resources {
      * </code>
      */
     int getPublicKeysCount();
-
     /**
      *
      *
@@ -9935,7 +9665,6 @@ public final class Resources {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources
                     .AttestorPublicKeyOrBuilder>
         getPublicKeysOrBuilderList();
-
     /**
      *
      *
@@ -9980,7 +9709,6 @@ public final class Resources {
      * @return The delegationServiceAccountEmail.
      */
     java.lang.String getDelegationServiceAccountEmail();
-
     /**
      *
      *
@@ -10004,7 +9732,6 @@ public final class Resources {
      */
     com.google.protobuf.ByteString getDelegationServiceAccountEmailBytes();
   }
-
   /**
    *
    *
@@ -10020,7 +9747,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote)
       UserOwnedGrafeasNoteOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UserOwnedGrafeasNote.newBuilder() to construct.
     private UserOwnedGrafeasNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10059,7 +9785,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object noteReference_ = "";
-
     /**
      *
      *
@@ -10089,7 +9814,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -10126,7 +9850,6 @@ public final class Resources {
     private java.util.List<
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey>
         publicKeys_;
-
     /**
      *
      *
@@ -10152,7 +9875,6 @@ public final class Resources {
         getPublicKeysList() {
       return publicKeys_;
     }
-
     /**
      *
      *
@@ -10180,7 +9902,6 @@ public final class Resources {
         getPublicKeysOrBuilderList() {
       return publicKeys_;
     }
-
     /**
      *
      *
@@ -10204,7 +9925,6 @@ public final class Resources {
     public int getPublicKeysCount() {
       return publicKeys_.size();
     }
-
     /**
      *
      *
@@ -10229,7 +9949,6 @@ public final class Resources {
         getPublicKeys(int index) {
       return publicKeys_.get(index);
     }
-
     /**
      *
      *
@@ -10260,7 +9979,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object delegationServiceAccountEmail_ = "";
-
     /**
      *
      *
@@ -10294,7 +10012,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -10536,7 +10253,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -10825,7 +10541,6 @@ public final class Resources {
       private int bitField0_;
 
       private java.lang.Object noteReference_ = "";
-
       /**
        *
        *
@@ -10854,7 +10569,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10883,7 +10597,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -10911,7 +10624,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10935,7 +10647,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11015,7 +10726,6 @@ public final class Resources {
           return publicKeysBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -11042,7 +10752,6 @@ public final class Resources {
           return publicKeysBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -11070,7 +10779,6 @@ public final class Resources {
           return publicKeysBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -11105,7 +10813,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11138,7 +10845,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11172,7 +10878,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11207,7 +10912,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11239,7 +10943,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11272,7 +10975,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11307,7 +11009,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11337,7 +11038,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11367,7 +11067,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -11392,7 +11091,6 @@ public final class Resources {
           getPublicKeysBuilder(int index) {
         return getPublicKeysFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -11421,7 +11119,6 @@ public final class Resources {
           return publicKeysBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -11452,7 +11149,6 @@ public final class Resources {
           return java.util.Collections.unmodifiableList(publicKeys_);
         }
       }
-
       /**
        *
        *
@@ -11480,7 +11176,6 @@ public final class Resources {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -11509,7 +11204,6 @@ public final class Resources {
                 com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -11558,7 +11252,6 @@ public final class Resources {
       }
 
       private java.lang.Object delegationServiceAccountEmail_ = "";
-
       /**
        *
        *
@@ -11591,7 +11284,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11624,7 +11316,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11656,7 +11347,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11684,7 +11374,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11807,7 +11496,6 @@ public final class Resources {
      * @return The publicKeyPem.
      */
     java.lang.String getPublicKeyPem();
-
     /**
      *
      *
@@ -11840,7 +11528,6 @@ public final class Resources {
      * @return The enum numeric value on the wire for signatureAlgorithm.
      */
     int getSignatureAlgorithmValue();
-
     /**
      *
      *
@@ -11861,7 +11548,6 @@ public final class Resources {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.PkixPublicKey.SignatureAlgorithm
         getSignatureAlgorithm();
   }
-
   /**
    *
    *
@@ -11879,7 +11565,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.PkixPublicKey)
       PkixPublicKeyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PkixPublicKey.newBuilder() to construct.
     private PkixPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12060,7 +11745,6 @@ public final class Resources {
        * <code>EC_SIGN_P256_SHA256 = 9;</code>
        */
       public static final SignatureAlgorithm EC_SIGN_P256_SHA256 = ECDSA_P256_SHA256;
-
       /**
        *
        *
@@ -12071,7 +11755,6 @@ public final class Resources {
        * <code>EC_SIGN_P384_SHA384 = 10;</code>
        */
       public static final SignatureAlgorithm EC_SIGN_P384_SHA384 = ECDSA_P384_SHA384;
-
       /**
        *
        *
@@ -12082,7 +11765,6 @@ public final class Resources {
        * <code>EC_SIGN_P521_SHA512 = 11;</code>
        */
       public static final SignatureAlgorithm EC_SIGN_P521_SHA512 = ECDSA_P521_SHA512;
-
       /**
        *
        *
@@ -12093,7 +11775,6 @@ public final class Resources {
        * <code>SIGNATURE_ALGORITHM_UNSPECIFIED = 0;</code>
        */
       public static final int SIGNATURE_ALGORITHM_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -12104,7 +11785,6 @@ public final class Resources {
        * <code>RSA_PSS_2048_SHA256 = 1;</code>
        */
       public static final int RSA_PSS_2048_SHA256_VALUE = 1;
-
       /**
        *
        *
@@ -12115,7 +11795,6 @@ public final class Resources {
        * <code>RSA_PSS_3072_SHA256 = 2;</code>
        */
       public static final int RSA_PSS_3072_SHA256_VALUE = 2;
-
       /**
        *
        *
@@ -12126,7 +11805,6 @@ public final class Resources {
        * <code>RSA_PSS_4096_SHA256 = 3;</code>
        */
       public static final int RSA_PSS_4096_SHA256_VALUE = 3;
-
       /**
        *
        *
@@ -12137,7 +11815,6 @@ public final class Resources {
        * <code>RSA_PSS_4096_SHA512 = 4;</code>
        */
       public static final int RSA_PSS_4096_SHA512_VALUE = 4;
-
       /**
        *
        *
@@ -12148,7 +11825,6 @@ public final class Resources {
        * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
        */
       public static final int RSA_SIGN_PKCS1_2048_SHA256_VALUE = 5;
-
       /**
        *
        *
@@ -12159,7 +11835,6 @@ public final class Resources {
        * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
        */
       public static final int RSA_SIGN_PKCS1_3072_SHA256_VALUE = 6;
-
       /**
        *
        *
@@ -12170,7 +11845,6 @@ public final class Resources {
        * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
        */
       public static final int RSA_SIGN_PKCS1_4096_SHA256_VALUE = 7;
-
       /**
        *
        *
@@ -12181,7 +11855,6 @@ public final class Resources {
        * <code>RSA_SIGN_PKCS1_4096_SHA512 = 8;</code>
        */
       public static final int RSA_SIGN_PKCS1_4096_SHA512_VALUE = 8;
-
       /**
        *
        *
@@ -12192,7 +11865,6 @@ public final class Resources {
        * <code>ECDSA_P256_SHA256 = 9;</code>
        */
       public static final int ECDSA_P256_SHA256_VALUE = 9;
-
       /**
        *
        *
@@ -12203,7 +11875,6 @@ public final class Resources {
        * <code>EC_SIGN_P256_SHA256 = 9;</code>
        */
       public static final int EC_SIGN_P256_SHA256_VALUE = 9;
-
       /**
        *
        *
@@ -12214,7 +11885,6 @@ public final class Resources {
        * <code>ECDSA_P384_SHA384 = 10;</code>
        */
       public static final int ECDSA_P384_SHA384_VALUE = 10;
-
       /**
        *
        *
@@ -12225,7 +11895,6 @@ public final class Resources {
        * <code>EC_SIGN_P384_SHA384 = 10;</code>
        */
       public static final int EC_SIGN_P384_SHA384_VALUE = 10;
-
       /**
        *
        *
@@ -12236,7 +11905,6 @@ public final class Resources {
        * <code>ECDSA_P521_SHA512 = 11;</code>
        */
       public static final int ECDSA_P521_SHA512_VALUE = 11;
-
       /**
        *
        *
@@ -12381,7 +12049,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object publicKeyPem_ = "";
-
     /**
      *
      *
@@ -12406,7 +12073,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -12434,7 +12100,6 @@ public final class Resources {
 
     public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 2;
     private int signatureAlgorithm_ = 0;
-
     /**
      *
      *
@@ -12456,7 +12121,6 @@ public final class Resources {
     public int getSignatureAlgorithmValue() {
       return signatureAlgorithm_;
     }
-
     /**
      *
      *
@@ -12673,7 +12337,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -12890,7 +12553,6 @@ public final class Resources {
       private int bitField0_;
 
       private java.lang.Object publicKeyPem_ = "";
-
       /**
        *
        *
@@ -12914,7 +12576,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -12938,7 +12599,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -12961,7 +12621,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12980,7 +12639,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13006,7 +12664,6 @@ public final class Resources {
       }
 
       private int signatureAlgorithm_ = 0;
-
       /**
        *
        *
@@ -13028,7 +12685,6 @@ public final class Resources {
       public int getSignatureAlgorithmValue() {
         return signatureAlgorithm_;
       }
-
       /**
        *
        *
@@ -13053,7 +12709,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13085,7 +12740,6 @@ public final class Resources {
                 .SignatureAlgorithm.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -13116,7 +12770,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13227,7 +12880,6 @@ public final class Resources {
      * @return The comment.
      */
     java.lang.String getComment();
-
     /**
      *
      *
@@ -13259,7 +12911,6 @@ public final class Resources {
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -13298,7 +12949,6 @@ public final class Resources {
      * @return Whether the asciiArmoredPgpPublicKey field is set.
      */
     boolean hasAsciiArmoredPgpPublicKey();
-
     /**
      *
      *
@@ -13318,7 +12968,6 @@ public final class Resources {
      * @return The asciiArmoredPgpPublicKey.
      */
     java.lang.String getAsciiArmoredPgpPublicKey();
-
     /**
      *
      *
@@ -13356,7 +13005,6 @@ public final class Resources {
      * @return Whether the pkixPublicKey field is set.
      */
     boolean hasPkixPublicKey();
-
     /**
      *
      *
@@ -13375,7 +13023,6 @@ public final class Resources {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.PkixPublicKey
         getPkixPublicKey();
-
     /**
      *
      *
@@ -13396,7 +13043,6 @@ public final class Resources {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey.PublicKeyCase
         getPublicKeyCase();
   }
-
   /**
    *
    *
@@ -13412,7 +13058,6 @@ public final class Resources {
       // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1.AttestorPublicKey)
       AttestorPublicKeyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AttestorPublicKey.newBuilder() to construct.
     private AttestorPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13463,7 +13108,6 @@ public final class Resources {
       private PublicKeyCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -13500,7 +13144,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object comment_ = "";
-
     /**
      *
      *
@@ -13524,7 +13167,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -13553,7 +13195,6 @@ public final class Resources {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -13583,7 +13224,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -13615,7 +13255,6 @@ public final class Resources {
     }
 
     public static final int ASCII_ARMORED_PGP_PUBLIC_KEY_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -13637,7 +13276,6 @@ public final class Resources {
     public boolean hasAsciiArmoredPgpPublicKey() {
       return publicKeyCase_ == 3;
     }
-
     /**
      *
      *
@@ -13672,7 +13310,6 @@ public final class Resources {
         return s;
       }
     }
-
     /**
      *
      *
@@ -13709,7 +13346,6 @@ public final class Resources {
     }
 
     public static final int PKIX_PUBLIC_KEY_FIELD_NUMBER = 5;
-
     /**
      *
      *
@@ -13730,7 +13366,6 @@ public final class Resources {
     public boolean hasPkixPublicKey() {
       return publicKeyCase_ == 5;
     }
-
     /**
      *
      *
@@ -13757,7 +13392,6 @@ public final class Resources {
       return com.google.protos.google.cloud.binaryauthorization.v1.Resources.PkixPublicKey
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -14005,7 +13639,6 @@ public final class Resources {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -14287,7 +13920,6 @@ public final class Resources {
       private int bitField0_;
 
       private java.lang.Object comment_ = "";
-
       /**
        *
        *
@@ -14310,7 +13942,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14333,7 +13964,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14355,7 +13985,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14373,7 +14002,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14398,7 +14026,6 @@ public final class Resources {
       }
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -14427,7 +14054,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14456,7 +14082,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14484,7 +14109,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14508,7 +14132,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14560,7 +14183,6 @@ public final class Resources {
       public boolean hasAsciiArmoredPgpPublicKey() {
         return publicKeyCase_ == 3;
       }
-
       /**
        *
        *
@@ -14596,7 +14218,6 @@ public final class Resources {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14632,7 +14253,6 @@ public final class Resources {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14661,7 +14281,6 @@ public final class Resources {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14688,7 +14307,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -14725,7 +14343,6 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources
                   .PkixPublicKeyOrBuilder>
           pkixPublicKeyBuilder_;
-
       /**
        *
        *
@@ -14746,7 +14363,6 @@ public final class Resources {
       public boolean hasPkixPublicKey() {
         return publicKeyCase_ == 5;
       }
-
       /**
        *
        *
@@ -14781,7 +14397,6 @@ public final class Resources {
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -14810,7 +14425,6 @@ public final class Resources {
         publicKeyCase_ = 5;
         return this;
       }
-
       /**
        *
        *
@@ -14837,7 +14451,6 @@ public final class Resources {
         publicKeyCase_ = 5;
         return this;
       }
-
       /**
        *
        *
@@ -14881,7 +14494,6 @@ public final class Resources {
         publicKeyCase_ = 5;
         return this;
       }
-
       /**
        *
        *
@@ -14912,7 +14524,6 @@ public final class Resources {
         }
         return this;
       }
-
       /**
        *
        *
@@ -14931,7 +14542,6 @@ public final class Resources {
           getPkixPublicKeyBuilder() {
         return getPkixPublicKeyFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14960,7 +14570,6 @@ public final class Resources {
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -15127,118 +14736,104 @@ public final class Resources {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "3google/cloud/binaryauthorization/v1/resources.proto\022#google.cloud.binaryauthor"
+      "\n3google/cloud/binaryauthorization/v1/re"
+          + "sources.proto\022#google.cloud.binaryauthor"
           + "ization.v1\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\370\014\n"
-          + "\006Policy\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\030\n"
-          + "\013description\030\006 \001(\tB\003\340A\001\022r\n"
-          + "\035global_policy_evaluation_mode\030\007 \001(\0162F"
-          + ".google.cloud.binaryauthorization.v1.Policy.GlobalPolicyEvaluationModeB\003\340A\001\022i\n"
-          + "\034admission_whitelist_patterns\030\002 \003(\0132>.goog"
-          + "le.cloud.binaryauthorization.v1.AdmissionWhitelistPatternB\003\340A\001\022l\n"
-          + "\027cluster_admission_rules\030\003 \003(\0132F.google.cloud.binaryaut"
-          + "horization.v1.Policy.ClusterAdmissionRulesEntryB\003\340A\001\022\205\001\n"
-          + "$kubernetes_namespace_admission_rules\030\n"
-          + " \003(\0132R.google.cloud.binar"
-          + "yauthorization.v1.Policy.KubernetesNamespaceAdmissionRulesEntryB\003\340A\001\022\220\001\n"
-          + "*kubernetes_service_account_admission_rules\030\010 \003("
+          + "oto\032\031google/api/resource.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\370\014\n\006Policy\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\003\022\030\n\013description\030\006 \001(\tB\003\340A\001\022"
+          + "r\n\035global_policy_evaluation_mode\030\007 \001(\0162F"
+          + ".google.cloud.binaryauthorization.v1.Pol"
+          + "icy.GlobalPolicyEvaluationModeB\003\340A\001\022i\n\034a"
+          + "dmission_whitelist_patterns\030\002 \003(\0132>.goog"
+          + "le.cloud.binaryauthorization.v1.Admissio"
+          + "nWhitelistPatternB\003\340A\001\022l\n\027cluster_admiss"
+          + "ion_rules\030\003 \003(\0132F.google.cloud.binaryaut"
+          + "horization.v1.Policy.ClusterAdmissionRul"
+          + "esEntryB\003\340A\001\022\205\001\n$kubernetes_namespace_ad"
+          + "mission_rules\030\n \003(\0132R.google.cloud.binar"
+          + "yauthorization.v1.Policy.KubernetesNames"
+          + "paceAdmissionRulesEntryB\003\340A\001\022\220\001\n*kuberne"
+          + "tes_service_account_admission_rules\030\010 \003("
           + "\0132W.google.cloud.binaryauthorization.v1."
-          + "Policy.KubernetesServiceAccountAdmissionRulesEntryB\003\340A\001\022\210\001\n"
-          + "&istio_service_identity_admission_rules\030\t \003(\0132S.google.cloud."
-          + "binaryauthorization.v1.Policy.IstioServiceIdentityAdmissionRulesEntryB\003\340A\001\022W\n"
-          + "\026default_admission_rule\030\004 \001(\01322.google.clou"
-          + "d.binaryauthorization.v1.AdmissionRuleB\003\340A\002\0224\n"
-          + "\013update_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032p\n"
-          + "\032ClusterAdmissionRulesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002 \001(\01322.go"
-          + "ogle.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032|\n"
-          + "&KubernetesNamespaceAdmissionRulesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002 \001("
-          + "\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032\201\001\n"
-          + "+KubernetesServiceAccountAdmissionRulesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002"
-          + " \001(\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032}\n"
-          + "\'IstioServiceIdentityAdmissionRulesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002"
-          + " \001(\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\"d\n"
-          + "\032GlobalPolicyEvaluationMode\022-\n"
-          + ")GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED\020\000\022\n\n"
-          + "\006ENABLE\020\001\022\013\n"
-          + "\007DISABLE\020\002:f\352Ac\n"
-          + ")binaryauthorization.googleapis.com/Policy\022\031projects/{pr"
-          + "oject}/policy\022\033locations/{location}/policy\"1\n"
-          + "\031AdmissionWhitelistPattern\022\024\n"
-          + "\014name_pattern\030\001 \001(\t\"\332\003\n\r"
-          + "AdmissionRule\022_\n"
-          + "\017evaluation_mode\030\001 \001(\0162A.google.cloud.binaryau"
-          + "thorization.v1.AdmissionRule.EvaluationModeB\003\340A\002\022$\n"
-          + "\027require_attestations_by\030\002 \003(\tB\003\340A\001\022a\n"
-          + "\020enforcement_mode\030\003 \001(\0162B.googl"
-          + "e.cloud.binaryauthorization.v1.AdmissionRule.EnforcementModeB\003\340A\002\"m\n"
-          + "\016EvaluationMode\022\037\n"
-          + "\033EVALUATION_MODE_UNSPECIFIED\020\000\022\020\n"
-          + "\014ALWAYS_ALLOW\020\001\022\027\n"
-          + "\023REQUIRE_ATTESTATION\020\002\022\017\n"
-          + "\013ALWAYS_DENY\020\003\"p\n"
-          + "\017EnforcementMode\022 \n"
-          + "\034ENFORCEMENT_MODE_UNSPECIFIED\020\000\022 \n"
-          + "\034ENFORCED_BLOCK_AND_AUDIT_LOG\020\001\022\031\n"
-          + "\025DRYRUN_AUDIT_LOG_ONLY\020\002\"\267\002\n"
-          + "\010Attestor\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
-          + "\013description\030\006 \001(\tB\003\340A\001\022\\\n"
-          + "\027user_owned_grafeas_note\030\003 \001(\01329.google.cloud.bin"
-          + "aryauthorization.v1.UserOwnedGrafeasNoteH\000\0224\n"
-          + "\013update_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:Y\352AV\n"
-          + "+binaryauthorizati"
-          + "on.googleapis.com/Attestor\022\'projects/{project}/attestors/{attestor}B\017\n\r"
-          + "attestor_type\"\264\001\n"
-          + "\024UserOwnedGrafeasNote\022\033\n"
-          + "\016note_reference\030\001 \001(\tB\003\340A\002\022P\n"
-          + "\013public_keys\030\002 \003(\0132"
-          + "6.google.cloud.binaryauthorization.v1.AttestorPublicKeyB\003\340A\001\022-\n"
-          + " delegation_service_account_email\030\003 \001(\tB\003\340A\003\"\277\004\n\r"
-          + "PkixPublicKey\022\026\n"
-          + "\016public_key_pem\030\001 \001(\t\022b\n"
-          + "\023signature_algorithm\030\002 \001(\0162E.google.cloud.binary"
-          + "authorization.v1.PkixPublicKey.SignatureAlgorithm\"\261\003\n"
-          + "\022SignatureAlgorithm\022#\n"
-          + "\037SIGNATURE_ALGORITHM_UNSPECIFIED\020\000\022\027\n"
-          + "\023RSA_PSS_2048_SHA256\020\001\022\027\n"
-          + "\023RSA_PSS_3072_SHA256\020\002\022\027\n"
-          + "\023RSA_PSS_4096_SHA256\020\003\022\027\n"
-          + "\023RSA_PSS_4096_SHA512\020\004\022\036\n"
-          + "\032RSA_SIGN_PKCS1_2048_SHA256\020\005\022\036\n"
-          + "\032RSA_SIGN_PKCS1_3072_SHA256\020\006\022\036\n"
-          + "\032RSA_SIGN_PKCS1_4096_SHA256\020\007\022\036\n"
-          + "\032RSA_SIGN_PKCS1_4096_SHA512\020\010\022\025\n"
-          + "\021ECDSA_P256_SHA256\020\t\022\027\n"
-          + "\023EC_SIGN_P256_SHA256\020\t\022\025\n"
-          + "\021ECDSA_P384_SHA384\020\n"
-          + "\022\027\n"
-          + "\023EC_SIGN_P384_SHA384\020\n"
-          + "\022\025\n"
-          + "\021ECDSA_P521_SHA512\020\013\022\027\n"
-          + "\023EC_SIGN_P521_SHA512\020\013\032\002\020\001\"\272\001\n"
-          + "\021AttestorPublicKey\022\024\n"
-          + "\007comment\030\001 \001(\tB\003\340A\001\022\n\n"
-          + "\002id\030\002 \001(\t\022&\n"
-          + "\034ascii_armored_pgp_public_key\030\003 \001(\tH\000\022M\n"
-          + "\017pkix_public_key\030\005"
-          + " \001(\01322.google.cloud.binaryauthorization.v1.PkixPublicKeyH\000B\014\n\n"
-          + "public_keyB\214\002\n"
-          + "5com.google.protos.google.cloud.binaryauthorization.v1P\000ZYcloud.google.com/go/bina"
+          + "Policy.KubernetesServiceAccountAdmission"
+          + "RulesEntryB\003\340A\001\022\210\001\n&istio_service_identi"
+          + "ty_admission_rules\030\t \003(\0132S.google.cloud."
+          + "binaryauthorization.v1.Policy.IstioServi"
+          + "ceIdentityAdmissionRulesEntryB\003\340A\001\022W\n\026de"
+          + "fault_admission_rule\030\004 \001(\01322.google.clou"
+          + "d.binaryauthorization.v1.AdmissionRuleB\003"
+          + "\340A\002\0224\n\013update_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\032p\n\032ClusterAdmissionRul"
+          + "esEntry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.go"
+          + "ogle.cloud.binaryauthorization.v1.Admiss"
+          + "ionRule:\0028\001\032|\n&KubernetesNamespaceAdmiss"
+          + "ionRulesEntry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030\002 \001("
+          + "\01322.google.cloud.binaryauthorization.v1."
+          + "AdmissionRule:\0028\001\032\201\001\n+KubernetesServiceA"
+          + "ccountAdmissionRulesEntry\022\013\n\003key\030\001 \001(\t\022A"
+          + "\n\005value\030\002 \001(\01322.google.cloud.binaryautho"
+          + "rization.v1.AdmissionRule:\0028\001\032}\n\'IstioSe"
+          + "rviceIdentityAdmissionRulesEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022A\n\005value\030\002 \001(\01322.google.cloud.bina"
+          + "ryauthorization.v1.AdmissionRule:\0028\001\"d\n\032"
+          + "GlobalPolicyEvaluationMode\022-\n)GLOBAL_POL"
+          + "ICY_EVALUATION_MODE_UNSPECIFIED\020\000\022\n\n\006ENA"
+          + "BLE\020\001\022\013\n\007DISABLE\020\002:f\352Ac\n)binaryauthoriza"
+          + "tion.googleapis.com/Policy\022\031projects/{pr"
+          + "oject}/policy\022\033locations/{location}/poli"
+          + "cy\"1\n\031AdmissionWhitelistPattern\022\024\n\014name_"
+          + "pattern\030\001 \001(\t\"\332\003\n\rAdmissionRule\022_\n\017evalu"
+          + "ation_mode\030\001 \001(\0162A.google.cloud.binaryau"
+          + "thorization.v1.AdmissionRule.EvaluationM"
+          + "odeB\003\340A\002\022$\n\027require_attestations_by\030\002 \003("
+          + "\tB\003\340A\001\022a\n\020enforcement_mode\030\003 \001(\0162B.googl"
+          + "e.cloud.binaryauthorization.v1.Admission"
+          + "Rule.EnforcementModeB\003\340A\002\"m\n\016EvaluationM"
+          + "ode\022\037\n\033EVALUATION_MODE_UNSPECIFIED\020\000\022\020\n\014"
+          + "ALWAYS_ALLOW\020\001\022\027\n\023REQUIRE_ATTESTATION\020\002\022"
+          + "\017\n\013ALWAYS_DENY\020\003\"p\n\017EnforcementMode\022 \n\034E"
+          + "NFORCEMENT_MODE_UNSPECIFIED\020\000\022 \n\034ENFORCE"
+          + "D_BLOCK_AND_AUDIT_LOG\020\001\022\031\n\025DRYRUN_AUDIT_"
+          + "LOG_ONLY\020\002\"\267\002\n\010Attestor\022\021\n\004name\030\001 \001(\tB\003\340"
+          + "A\002\022\030\n\013description\030\006 \001(\tB\003\340A\001\022\\\n\027user_own"
+          + "ed_grafeas_note\030\003 \001(\01329.google.cloud.bin"
+          + "aryauthorization.v1.UserOwnedGrafeasNote"
+          + "H\000\0224\n\013update_time\030\004 \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003:Y\352AV\n+binaryauthorizati"
+          + "on.googleapis.com/Attestor\022\'projects/{pr"
+          + "oject}/attestors/{attestor}B\017\n\rattestor_"
+          + "type\"\264\001\n\024UserOwnedGrafeasNote\022\033\n\016note_re"
+          + "ference\030\001 \001(\tB\003\340A\002\022P\n\013public_keys\030\002 \003(\0132"
+          + "6.google.cloud.binaryauthorization.v1.At"
+          + "testorPublicKeyB\003\340A\001\022-\n delegation_servi"
+          + "ce_account_email\030\003 \001(\tB\003\340A\003\"\277\004\n\rPkixPubl"
+          + "icKey\022\026\n\016public_key_pem\030\001 \001(\t\022b\n\023signatu"
+          + "re_algorithm\030\002 \001(\0162E.google.cloud.binary"
+          + "authorization.v1.PkixPublicKey.Signature"
+          + "Algorithm\"\261\003\n\022SignatureAlgorithm\022#\n\037SIGN"
+          + "ATURE_ALGORITHM_UNSPECIFIED\020\000\022\027\n\023RSA_PSS"
+          + "_2048_SHA256\020\001\022\027\n\023RSA_PSS_3072_SHA256\020\002\022"
+          + "\027\n\023RSA_PSS_4096_SHA256\020\003\022\027\n\023RSA_PSS_4096"
+          + "_SHA512\020\004\022\036\n\032RSA_SIGN_PKCS1_2048_SHA256\020"
+          + "\005\022\036\n\032RSA_SIGN_PKCS1_3072_SHA256\020\006\022\036\n\032RSA"
+          + "_SIGN_PKCS1_4096_SHA256\020\007\022\036\n\032RSA_SIGN_PK"
+          + "CS1_4096_SHA512\020\010\022\025\n\021ECDSA_P256_SHA256\020\t"
+          + "\022\027\n\023EC_SIGN_P256_SHA256\020\t\022\025\n\021ECDSA_P384_"
+          + "SHA384\020\n\022\027\n\023EC_SIGN_P384_SHA384\020\n\022\025\n\021ECD"
+          + "SA_P521_SHA512\020\013\022\027\n\023EC_SIGN_P521_SHA512\020"
+          + "\013\032\002\020\001\"\272\001\n\021AttestorPublicKey\022\024\n\007comment\030\001"
+          + " \001(\tB\003\340A\001\022\n\n\002id\030\002 \001(\t\022&\n\034ascii_armored_p"
+          + "gp_public_key\030\003 \001(\tH\000\022M\n\017pkix_public_key"
+          + "\030\005 \001(\01322.google.cloud.binaryauthorizatio"
+          + "n.v1.PkixPublicKeyH\000B\014\n\npublic_keyB\214\002\n5c"
+          + "om.google.protos.google.cloud.binaryauth"
+          + "orization.v1P\000ZYcloud.google.com/go/bina"
           + "ryauthorization/apiv1/binaryauthorizatio"
           + "npb;binaryauthorizationpb\370\001\001\252\002#Google.Cl"
           + "oud.BinaryAuthorization.V1\312\002#Google\\Clou"
-          + "d\\BinaryAuthorization\\V1\352\002&Google::Cloud::BinaryAuthorization::V1b\006proto3"
+          + "d\\BinaryAuthorization\\V1\352\002&Google::Cloud"
+          + "::BinaryAuthorization::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

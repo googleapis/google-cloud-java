@@ -36,7 +36,6 @@ public interface CommitRepositoryChangesResponseOrBuilder
    * @return The commitSha.
    */
   java.lang.String getCommitSha();
-
   /**
    *
    *

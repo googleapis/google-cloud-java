@@ -36,7 +36,6 @@ public interface UpdateGlossaryMetadataOrBuilder
    * @return Whether the glossary field is set.
    */
   boolean hasGlossary();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateGlossaryMetadataOrBuilder
    * @return The glossary.
    */
   com.google.cloud.translate.v3.Glossary getGlossary();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface UpdateGlossaryMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateGlossaryMetadataOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface UpdateGlossaryMetadataOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
-
   /**
    *
    *

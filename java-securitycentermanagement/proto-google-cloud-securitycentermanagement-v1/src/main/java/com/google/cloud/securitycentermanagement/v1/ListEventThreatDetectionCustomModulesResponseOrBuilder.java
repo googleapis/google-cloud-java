@@ -37,7 +37,6 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    */
   java.util.List<com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule>
       getEventThreatDetectionCustomModulesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    */
   com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
       getEventThreatDetectionCustomModules(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    * </code>
    */
   int getEventThreatDetectionCustomModulesCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
               com.google.cloud.securitycentermanagement.v1
                   .EventThreatDetectionCustomModuleOrBuilder>
       getEventThreatDetectionCustomModulesOrBuilderList();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

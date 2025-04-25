@@ -34,7 +34,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ImportDocumentsRequest)
     ImportDocumentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDocumentsRequest.newBuilder() to construct.
   private ImportDocumentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,7 +115,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.dialogflow.v2.GcsSources.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int DOCUMENT_TEMPLATE_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2.ImportDocumentTemplate documentTemplate_;
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasDocumentTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dialogflow.v2.ImportDocumentTemplate.getDefaultInstance()
         : documentTemplate_;
   }
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
   private boolean importGcsCustomMetadata_ = false;
-
   /**
    *
    *
@@ -536,7 +525,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -811,7 +799,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -838,7 +825,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +851,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -891,7 +876,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +897,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +929,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.GcsSources.Builder,
             com.google.cloud.dialogflow.v2.GcsSourcesOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -969,7 +951,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1002,7 +983,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.dialogflow.v2.GcsSources.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1012,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1038,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1077,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1109,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1128,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2.GcsSources.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1180,7 +1155,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.dialogflow.v2.GcsSources.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1227,7 +1201,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.v2.ImportDocumentTemplate.Builder,
             com.google.cloud.dialogflow.v2.ImportDocumentTemplateOrBuilder>
         documentTemplateBuilder_;
-
     /**
      *
      *
@@ -1244,7 +1217,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasDocumentTemplate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1267,7 +1239,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return documentTemplateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1293,7 +1264,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1286,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1317,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1338,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1355,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getDocumentTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1410,7 +1376,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             : documentTemplate_;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1405,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean importGcsCustomMetadata_;
-
     /**
      *
      *
@@ -1457,7 +1421,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean getImportGcsCustomMetadata() {
       return importGcsCustomMetadata_;
     }
-
     /**
      *
      *
@@ -1478,7 +1441,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

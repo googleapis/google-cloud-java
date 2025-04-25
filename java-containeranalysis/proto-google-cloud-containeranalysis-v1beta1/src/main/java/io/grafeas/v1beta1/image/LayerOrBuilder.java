@@ -36,7 +36,6 @@ public interface LayerOrBuilder
    * @return The enum numeric value on the wire for directive.
    */
   int getDirectiveValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LayerOrBuilder
    * @return The arguments.
    */
   java.lang.String getArguments();
-
   /**
    *
    *

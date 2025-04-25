@@ -43,7 +43,6 @@ public interface GetServiceAccountKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface GetServiceAccountKeyRequestOrBuilder
    * @return The enum numeric value on the wire for publicKeyType.
    */
   int getPublicKeyTypeValue();
-
   /**
    *
    *

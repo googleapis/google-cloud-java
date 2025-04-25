@@ -39,7 +39,6 @@ public interface GroundedGenerationContentOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface GroundedGenerationContentOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part>
       getPartsList();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface GroundedGenerationContentOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part getParts(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface GroundedGenerationContentOrBuilder
    * </code>
    */
   int getPartsCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface GroundedGenerationContentOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.PartOrBuilder>
       getPartsOrBuilderList();
-
   /**
    *
    *

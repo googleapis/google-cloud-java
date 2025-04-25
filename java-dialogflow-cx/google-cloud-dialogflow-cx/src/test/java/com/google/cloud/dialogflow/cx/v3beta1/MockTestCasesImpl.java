@@ -95,8 +95,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchDeleteTestCases, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchDeleteTestCases, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

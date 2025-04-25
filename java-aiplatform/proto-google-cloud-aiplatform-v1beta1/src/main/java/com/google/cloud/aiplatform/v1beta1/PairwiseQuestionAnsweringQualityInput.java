@@ -34,7 +34,6 @@ public final class PairwiseQuestionAnsweringQualityInput
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInput)
     PairwiseQuestionAnsweringQualityInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PairwiseQuestionAnsweringQualityInput.newBuilder() to construct.
   private PairwiseQuestionAnsweringQualityInput(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class PairwiseQuestionAnsweringQualityInput
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualitySpec metricSpec_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class PairwiseQuestionAnsweringQualityInput
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class PairwiseQuestionAnsweringQualityInput
             .getDefaultInstance()
         : metricSpec_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class PairwiseQuestionAnsweringQualityInput
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInstance instance_;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class PairwiseQuestionAnsweringQualityInput
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class PairwiseQuestionAnsweringQualityInput
             .getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -372,7 +365,6 @@ public final class PairwiseQuestionAnsweringQualityInput
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -606,7 +598,6 @@ public final class PairwiseQuestionAnsweringQualityInput
             com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualitySpec.Builder,
             com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualitySpecOrBuilder>
         metricSpecBuilder_;
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class PairwiseQuestionAnsweringQualityInput
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class PairwiseQuestionAnsweringQualityInput
         return metricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class PairwiseQuestionAnsweringQualityInput
             : metricSpec_;
       }
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class PairwiseQuestionAnsweringQualityInput
             com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInstance.Builder,
             com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class PairwiseQuestionAnsweringQualityInput
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class PairwiseQuestionAnsweringQualityInput
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +970,6 @@ public final class PairwiseQuestionAnsweringQualityInput
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class PairwiseQuestionAnsweringQualityInput
             : instance_;
       }
     }
-
     /**
      *
      *

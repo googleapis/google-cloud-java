@@ -33,7 +33,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.CreateConnectorRequest)
     CreateConnectorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateConnectorRequest.newBuilder() to construct.
   private CreateConnectorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectorId_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
 
   public static final int CONNECTOR_FIELD_NUMBER = 3;
   private com.google.cloud.managedkafka.v1.Connector connector_;
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
   public boolean hasConnector() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.managedkafka.v1.Connector.getDefaultInstance()
         : connector_;
   }
-
   /**
    *
    *
@@ -432,7 +424,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -688,7 +678,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +704,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +729,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object connectorId_ = "";
-
     /**
      *
      *
@@ -820,7 +805,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.managedkafka.v1.Connector.Builder,
             com.google.cloud.managedkafka.v1.ConnectorOrBuilder>
         connectorBuilder_;
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     public boolean hasConnector() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         return connectorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1027,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1048,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getConnectorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1111,7 +1084,6 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
             : connector_;
       }
     }
-
     /**
      *
      *

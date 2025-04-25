@@ -36,7 +36,6 @@ public interface ListMerchantReviewsResponseOrBuilder
    */
   java.util.List<com.google.shopping.merchant.reviews.v1beta.MerchantReview>
       getMerchantReviewsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListMerchantReviewsResponseOrBuilder
    * </code>
    */
   com.google.shopping.merchant.reviews.v1beta.MerchantReview getMerchantReviews(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListMerchantReviewsResponseOrBuilder
    * </code>
    */
   int getMerchantReviewsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListMerchantReviewsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.reviews.v1beta.MerchantReviewOrBuilder>
       getMerchantReviewsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListMerchantReviewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

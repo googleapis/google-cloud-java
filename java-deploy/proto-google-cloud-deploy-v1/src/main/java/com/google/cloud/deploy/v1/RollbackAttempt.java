@@ -33,7 +33,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RollbackAttempt)
     RollbackAttemptOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RollbackAttempt.newBuilder() to construct.
   private RollbackAttempt(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationPhase_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutId_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDesc_ = "";
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
 
   public static final int DISABLE_ROLLBACK_IF_ROLLOUT_PENDING_FIELD_NUMBER = 5;
   private boolean disableRollbackIfRolloutPending_ = false;
-
   /**
    *
    *
@@ -488,7 +478,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -728,7 +717,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object destinationPhase_ = "";
-
     /**
      *
      *
@@ -751,7 +739,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object rolloutId_ = "";
-
     /**
      *
      *
@@ -862,7 +845,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +929,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.deploy.v1.RepairState.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.RepairState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1029,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object stateDesc_ = "";
-
     /**
      *
      *
@@ -1078,7 +1051,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1073,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1094,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1111,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1135,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean disableRollbackIfRolloutPending_;
-
     /**
      *
      *
@@ -1184,7 +1152,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
     public boolean getDisableRollbackIfRolloutPending() {
       return disableRollbackIfRolloutPending_;
     }
-
     /**
      *
      *
@@ -1206,7 +1173,6 @@ public final class RollbackAttempt extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

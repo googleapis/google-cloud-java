@@ -34,7 +34,6 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Accelerators> getAcceleratorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
    */
   com.google.cloud.compute.v1.Accelerators getAccelerators(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
    */
   int getAcceleratorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface MachineTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorsOrBuilder>
       getAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface MachineTypeOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface MachineTypeOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
-
   /**
    *
    *
@@ -186,7 +177,6 @@ public interface MachineTypeOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
-
   /**
    *
    *
@@ -210,7 +200,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -223,7 +212,6 @@ public interface MachineTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -249,7 +237,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the guestCpus field is set.
    */
   boolean hasGuestCpus();
-
   /**
    *
    *
@@ -275,7 +262,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -301,7 +287,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the imageSpaceGb field is set.
    */
   boolean hasImageSpaceGb();
-
   /**
    *
    *
@@ -327,7 +312,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the isSharedCpu field is set.
    */
   boolean hasIsSharedCpu();
-
   /**
    *
    *
@@ -353,7 +337,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -366,7 +349,6 @@ public interface MachineTypeOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -392,7 +374,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the maximumPersistentDisks field is set.
    */
   boolean hasMaximumPersistentDisks();
-
   /**
    *
    *
@@ -418,7 +399,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the maximumPersistentDisksSizeGb field is set.
    */
   boolean hasMaximumPersistentDisksSizeGb();
-
   /**
    *
    *
@@ -444,7 +424,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the memoryMb field is set.
    */
   boolean hasMemoryMb();
-
   /**
    *
    *
@@ -470,7 +449,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -483,7 +461,6 @@ public interface MachineTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -507,7 +484,6 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ScratchDisks> getScratchDisksList();
-
   /**
    *
    *
@@ -518,7 +494,6 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
    */
   com.google.cloud.compute.v1.ScratchDisks getScratchDisks(int index);
-
   /**
    *
    *
@@ -529,7 +504,6 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
    */
   int getScratchDisksCount();
-
   /**
    *
    *
@@ -541,7 +515,6 @@ public interface MachineTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ScratchDisksOrBuilder>
       getScratchDisksOrBuilderList();
-
   /**
    *
    *
@@ -565,7 +538,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -578,7 +550,6 @@ public interface MachineTypeOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -604,7 +575,6 @@ public interface MachineTypeOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -617,7 +587,6 @@ public interface MachineTypeOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

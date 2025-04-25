@@ -34,7 +34,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.Subnet)
     SubnetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Subnet.newBuilder() to construct.
   private Subnet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -163,7 +162,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -174,7 +172,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -185,7 +182,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
-
     /**
      *
      *
@@ -196,7 +192,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
-
     /**
      *
      *
@@ -207,7 +202,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
-
     /**
      *
      *
@@ -218,7 +212,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>RECONCILING = 5;</code>
      */
     public static final int RECONCILING_VALUE = 5;
-
     /**
      *
      *
@@ -326,7 +319,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -354,7 +346,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +378,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
-
   /**
    *
    *
@@ -411,7 +401,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -440,7 +429,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gatewayIp_ = "";
-
   /**
    *
    *
@@ -465,7 +453,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -495,7 +482,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -520,7 +506,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -548,7 +533,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 13;
   private int state_ = 0;
-
   /**
    *
    *
@@ -566,7 +550,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -589,7 +572,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VLAN_ID_FIELD_NUMBER = 16;
   private int vlanId_ = 0;
-
   /**
    *
    *
@@ -809,7 +791,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1065,7 +1046,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1092,7 +1072,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1098,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1123,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1144,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1172,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipCidrRange_ = "";
-
     /**
      *
      *
@@ -1219,7 +1194,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1216,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1237,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1254,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1278,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gatewayIp_ = "";
-
     /**
      *
      *
@@ -1331,7 +1301,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1355,7 +1324,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1378,7 +1346,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1364,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1389,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1447,7 +1412,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1435,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1494,7 +1457,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1475,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1500,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1557,7 +1517,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1578,7 +1537,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1556,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vmwareengine.v1.Subnet.State.forNumber(state_);
       return result == null ? com.google.cloud.vmwareengine.v1.Subnet.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1622,7 +1579,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1600,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vlanId_;
-
     /**
      *
      *
@@ -1660,7 +1615,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     public int getVlanId() {
       return vlanId_;
     }
-
     /**
      *
      *
@@ -1680,7 +1634,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

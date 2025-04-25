@@ -38,7 +38,6 @@ public interface ProductStructuredTitleOrBuilder
    * @return Whether the digitalSourceType field is set.
    */
   boolean hasDigitalSourceType();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProductStructuredTitleOrBuilder
    * @return The digitalSourceType.
    */
   java.lang.String getDigitalSourceType();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ProductStructuredTitleOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ProductStructuredTitleOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *

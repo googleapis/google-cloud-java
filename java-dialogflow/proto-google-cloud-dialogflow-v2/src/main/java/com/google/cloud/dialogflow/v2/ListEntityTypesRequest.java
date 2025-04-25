@@ -34,7 +34,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ListEntityTypesRequest)
     ListEntityTypesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEntityTypesRequest.newBuilder() to construct.
   private ListEntityTypesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -447,7 +439,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +667,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +788,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -971,7 +950,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1015,7 +992,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1014,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

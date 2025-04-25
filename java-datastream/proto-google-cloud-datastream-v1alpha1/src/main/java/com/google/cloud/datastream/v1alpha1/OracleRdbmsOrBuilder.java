@@ -34,7 +34,6 @@ public interface OracleRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleSchema oracle_schemas = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.OracleSchema> getOracleSchemasList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface OracleRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleSchema oracle_schemas = 1;</code>
    */
   com.google.cloud.datastream.v1alpha1.OracleSchema getOracleSchemas(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface OracleRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleSchema oracle_schemas = 1;</code>
    */
   int getOracleSchemasCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface OracleRdbmsOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.OracleSchemaOrBuilder>
       getOracleSchemasOrBuilderList();
-
   /**
    *
    *

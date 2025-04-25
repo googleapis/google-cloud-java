@@ -33,7 +33,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.CapacityConfig)
     CapacityConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CapacityConfig.newBuilder() to construct.
   private CapacityConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VCPU_COUNT_FIELD_NUMBER = 1;
   private long vcpuCount_ = 0L;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEMORY_BYTES_FIELD_NUMBER = 2;
   private long memoryBytes_ = 0L;
-
   /**
    *
    *
@@ -270,7 +267,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -466,7 +462,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long vcpuCount_;
-
     /**
      *
      *
@@ -482,7 +477,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
     public long getVcpuCount() {
       return vcpuCount_;
     }
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -522,7 +515,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long memoryBytes_;
-
     /**
      *
      *
@@ -540,7 +532,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
     public long getMemoryBytes() {
       return memoryBytes_;
     }
-
     /**
      *
      *
@@ -562,7 +553,6 @@ public final class CapacityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

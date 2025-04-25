@@ -34,7 +34,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest)
     ProcessOpenLineageRunEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProcessOpenLineageRunEventRequest.newBuilder() to construct.
   private ProcessOpenLineageRunEventRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
 
   public static final int OPEN_LINEAGE_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct openLineage_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
   public boolean hasOpenLineage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
   public com.google.protobuf.Struct getOpenLineage() {
     return openLineage_ == null ? com.google.protobuf.Struct.getDefaultInstance() : openLineage_;
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +413,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +654,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -687,7 +677,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         openLineageBuilder_;
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
     public boolean hasOpenLineage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
         return openLineageBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return getOpenLineageFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
             : openLineage_;
       }
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1016,7 +992,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1016,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

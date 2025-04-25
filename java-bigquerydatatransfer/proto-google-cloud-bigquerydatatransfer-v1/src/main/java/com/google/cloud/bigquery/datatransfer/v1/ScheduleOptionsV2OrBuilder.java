@@ -37,7 +37,6 @@ public interface ScheduleOptionsV2OrBuilder
    * @return Whether the timeBasedSchedule field is set.
    */
   boolean hasTimeBasedSchedule();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ScheduleOptionsV2OrBuilder
    * @return The timeBasedSchedule.
    */
   com.google.cloud.bigquery.datatransfer.v1.TimeBasedSchedule getTimeBasedSchedule();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface ScheduleOptionsV2OrBuilder
    * @return Whether the manualSchedule field is set.
    */
   boolean hasManualSchedule();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ScheduleOptionsV2OrBuilder
    * @return The manualSchedule.
    */
   com.google.cloud.bigquery.datatransfer.v1.ManualSchedule getManualSchedule();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ScheduleOptionsV2OrBuilder
    * @return Whether the eventDrivenSchedule field is set.
    */
   boolean hasEventDrivenSchedule();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ScheduleOptionsV2OrBuilder
    * @return The eventDrivenSchedule.
    */
   com.google.cloud.bigquery.datatransfer.v1.EventDrivenSchedule getEventDrivenSchedule();
-
   /**
    *
    *

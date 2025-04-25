@@ -242,8 +242,7 @@ public class MockModelArmorImpl extends ModelArmorImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SanitizeModelResponse, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SanitizeModelResponse, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SanitizeModelResponseResponse.class.getName(),
                   Exception.class.getName())));

@@ -33,7 +33,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyDailyCycle)
     ResourcePolicyDailyCycleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicyDailyCycle.newBuilder() to construct.
   private ResourcePolicyDailyCycle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int DAYS_IN_CYCLE_FIELD_NUMBER = 369790004;
   private int daysInCycle_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
   public boolean hasDaysInCycle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object duration_ = "";
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -431,7 +422,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +639,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int daysInCycle_;
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public boolean hasDaysInCycle() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public int getDaysInCycle() {
       return daysInCycle_;
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     }
 
     private java.lang.Object duration_ = "";
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -759,7 +743,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +786,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +803,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +827,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     }
 
     private java.lang.Object startTime_ = "";
-
     /**
      *
      *
@@ -862,7 +841,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -885,7 +863,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -908,7 +885,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -930,7 +906,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.ImageVersion)
     ImageVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageVersion.newBuilder() to construct.
   private ImageVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageVersionId_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_DEFAULT_FIELD_NUMBER = 2;
   private boolean isDefault_ = false;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList supportedPythonVersions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSupportedPythonVersionsList() {
     return supportedPythonVersions_;
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   public int getSupportedPythonVersionsCount() {
     return supportedPythonVersions_.size();
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSupportedPythonVersions(int index) {
     return supportedPythonVersions_.get(index);
   }
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RELEASE_DATE_FIELD_NUMBER = 4;
   private com.google.type.Date releaseDate_;
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReleaseDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getReleaseDate() {
     return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
   }
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_DISABLED_FIELD_NUMBER = 5;
   private boolean creationDisabled_ = false;
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPGRADE_DISABLED_FIELD_NUMBER = 6;
   private boolean upgradeDisabled_ = false;
-
   /**
    *
    *
@@ -517,7 +504,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -800,7 +786,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object imageVersionId_ = "";
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -871,7 +854,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isDefault_;
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsDefault() {
       return isDefault_;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +962,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       supportedPythonVersions_.makeImmutable();
       return supportedPythonVersions_;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public int getSupportedPythonVersionsCount() {
       return supportedPythonVersions_.size();
     }
-
     /**
      *
      *
@@ -1031,7 +1006,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSupportedPythonVersions(int index) {
       return supportedPythonVersions_.get(index);
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSupportedPythonVersionsBytes(int index) {
       return supportedPythonVersions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1071,7 +1044,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1066,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1085,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1103,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1131,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         releaseDateBuilder_;
-
     /**
      *
      *
@@ -1177,7 +1145,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReleaseDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1196,7 +1163,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
         return releaseDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1219,7 +1185,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1204,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1231,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1250,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1264,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReleaseDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1319,7 +1280,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
         return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1303,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean creationDisabled_;
-
     /**
      *
      *
@@ -1359,7 +1318,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean getCreationDisabled() {
       return creationDisabled_;
     }
-
     /**
      *
      *
@@ -1379,7 +1337,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1356,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean upgradeDisabled_;
-
     /**
      *
      *
@@ -1416,7 +1372,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean getUpgradeDisabled() {
       return upgradeDisabled_;
     }
-
     /**
      *
      *
@@ -1437,7 +1392,6 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

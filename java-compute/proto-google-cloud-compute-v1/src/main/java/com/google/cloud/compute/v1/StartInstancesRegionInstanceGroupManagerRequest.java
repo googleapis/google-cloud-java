@@ -34,7 +34,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StartInstancesRegionInstanceGroupManagerRequest)
     StartInstancesRegionInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartInstancesRegionInstanceGroupManagerRequest.newBuilder() to construct.
   private StartInstancesRegionInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       REGION_INSTANCE_GROUP_MANAGERS_START_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 497012118;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersStartInstancesRequest
       regionInstanceGroupManagersStartInstancesRequestResource_;
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
   public boolean hasRegionInstanceGroupManagersStartInstancesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
             .getDefaultInstance()
         : regionInstanceGroupManagersStartInstancesRequestResource_;
   }
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -349,7 +337,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +583,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -874,7 +860,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -898,7 +883,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +906,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -945,7 +928,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +946,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +971,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1015,7 +995,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1019,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1042,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1061,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1087,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1136,7 +1111,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1135,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1158,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1177,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1209,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersStartInstancesRequest.Builder,
             com.google.cloud.compute.v1.RegionInstanceGroupManagersStartInstancesRequestOrBuilder>
         regionInstanceGroupManagersStartInstancesRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1255,7 +1225,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     public boolean hasRegionInstanceGroupManagersStartInstancesRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1280,7 +1249,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return regionInstanceGroupManagersStartInstancesRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1306,7 +1274,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1298,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1330,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1351,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1368,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return getRegionInstanceGroupManagersStartInstancesRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1428,7 +1391,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
             : regionInstanceGroupManagersStartInstancesRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1462,7 +1424,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1477,7 +1438,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1500,7 +1460,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1523,7 +1482,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1545,7 +1503,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1563,7 +1520,6 @@ public final class StartInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

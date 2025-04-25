@@ -37,7 +37,6 @@ public interface InsertPromotionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertPromotionRequestOrBuilder
    * @return Whether the promotion field is set.
    */
   boolean hasPromotion();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertPromotionRequestOrBuilder
    * @return The promotion.
    */
   com.google.shopping.merchant.promotions.v1beta.Promotion getPromotion();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface InsertPromotionRequestOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
-
   /**
    *
    *

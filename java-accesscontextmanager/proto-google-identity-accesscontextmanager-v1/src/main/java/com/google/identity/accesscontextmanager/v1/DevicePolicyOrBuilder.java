@@ -53,7 +53,6 @@ public interface DevicePolicyOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus>
       getAllowedEncryptionStatusesList();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DevicePolicyOrBuilder
    * @return The count of allowedEncryptionStatuses.
    */
   int getAllowedEncryptionStatusesCount();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface DevicePolicyOrBuilder
    */
   com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus getAllowedEncryptionStatuses(
       int index);
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface DevicePolicyOrBuilder
    * @return A list containing the enum numeric values on the wire for allowedEncryptionStatuses.
    */
   java.util.List<java.lang.Integer> getAllowedEncryptionStatusesValueList();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface DevicePolicyOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.OsConstraint> getOsConstraintsList();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface DevicePolicyOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
   com.google.identity.accesscontextmanager.v1.OsConstraint getOsConstraints(int index);
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface DevicePolicyOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
   int getOsConstraintsCount();
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface DevicePolicyOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.OsConstraintOrBuilder>
       getOsConstraintsOrBuilderList();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface DevicePolicyOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.type.DeviceManagementLevel>
       getAllowedDeviceManagementLevelsList();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface DevicePolicyOrBuilder
    * @return The count of allowedDeviceManagementLevels.
    */
   int getAllowedDeviceManagementLevelsCount();
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public interface DevicePolicyOrBuilder
    */
   com.google.identity.accesscontextmanager.type.DeviceManagementLevel
       getAllowedDeviceManagementLevels(int index);
-
   /**
    *
    *
@@ -241,7 +230,6 @@ public interface DevicePolicyOrBuilder
    *     allowedDeviceManagementLevels.
    */
   java.util.List<java.lang.Integer> getAllowedDeviceManagementLevelsValueList();
-
   /**
    *
    *

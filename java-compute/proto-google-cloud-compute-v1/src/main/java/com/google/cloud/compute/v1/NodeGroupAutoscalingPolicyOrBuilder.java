@@ -36,7 +36,6 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * @return Whether the maxNodes field is set.
    */
   boolean hasMaxNodes();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * @return Whether the minNodes field is set.
    */
   boolean hasMinNodes();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *

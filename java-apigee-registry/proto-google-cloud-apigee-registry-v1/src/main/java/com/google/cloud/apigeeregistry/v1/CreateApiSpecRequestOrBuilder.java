@@ -39,7 +39,6 @@ public interface CreateApiSpecRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateApiSpecRequestOrBuilder
    * @return Whether the apiSpec field is set.
    */
   boolean hasApiSpec();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateApiSpecRequestOrBuilder
    * @return The apiSpec.
    */
   com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpec();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateApiSpecRequestOrBuilder
    * @return The apiSpecId.
    */
   java.lang.String getApiSpecId();
-
   /**
    *
    *

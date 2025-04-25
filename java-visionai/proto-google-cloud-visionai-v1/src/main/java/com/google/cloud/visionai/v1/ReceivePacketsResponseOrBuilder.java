@@ -36,7 +36,6 @@ public interface ReceivePacketsResponseOrBuilder
    * @return Whether the packet field is set.
    */
   boolean hasPacket();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ReceivePacketsResponseOrBuilder
    * @return The packet.
    */
   com.google.cloud.visionai.v1.Packet getPacket();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ReceivePacketsResponseOrBuilder
    * @return Whether the control field is set.
    */
   boolean hasControl();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ReceivePacketsResponseOrBuilder
    * @return The control.
    */
   com.google.cloud.visionai.v1.ReceivePacketsControlResponse getControl();
-
   /**
    *
    *

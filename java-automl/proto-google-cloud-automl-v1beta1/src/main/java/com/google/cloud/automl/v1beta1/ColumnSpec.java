@@ -36,7 +36,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ColumnSpec)
     ColumnSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ColumnSpec.newBuilder() to construct.
   private ColumnSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The columnSpecId.
      */
     java.lang.String getColumnSpecId();
-
     /**
      *
      *
@@ -115,7 +113,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the correlationStats field is set.
      */
     boolean hasCorrelationStats();
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * @return The correlationStats.
      */
     com.google.cloud.automl.v1beta1.CorrelationStats getCorrelationStats();
-
     /**
      *
      *
@@ -140,7 +136,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.automl.v1beta1.CorrelationStatsOrBuilder getCorrelationStatsOrBuilder();
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn)
       CorrelatedColumnOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CorrelatedColumn.newBuilder() to construct.
     private CorrelatedColumn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -192,7 +186,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object columnSpecId_ = "";
-
     /**
      *
      *
@@ -217,7 +210,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -245,7 +237,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CORRELATION_STATS_FIELD_NUMBER = 2;
     private com.google.cloud.automl.v1beta1.CorrelationStats correlationStats_;
-
     /**
      *
      *
@@ -261,7 +252,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCorrelationStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -279,7 +269,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.automl.v1beta1.CorrelationStats.getDefaultInstance()
           : correlationStats_;
     }
-
     /**
      *
      *
@@ -472,7 +461,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object columnSpecId_ = "";
-
       /**
        *
        *
@@ -721,7 +708,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -745,7 +731,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -768,7 +753,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -787,7 +771,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -818,7 +801,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.automl.v1beta1.CorrelationStats.Builder,
               com.google.cloud.automl.v1beta1.CorrelationStatsOrBuilder>
           correlationStatsBuilder_;
-
       /**
        *
        *
@@ -833,7 +815,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCorrelationStats() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -854,7 +835,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
           return correlationStatsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -877,7 +857,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -898,7 +877,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -927,7 +905,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -947,7 +924,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -962,7 +938,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCorrelationStatsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -982,7 +957,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
               : correlationStats_;
         }
       }
-
       /**
        *
        *
@@ -1079,7 +1053,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1106,7 +1079,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1136,7 +1108,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_TYPE_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1beta1.DataType dataType_;
-
   /**
    *
    *
@@ -1152,7 +1123,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1170,7 +1140,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.automl.v1beta1.DataType.getDefaultInstance()
         : dataType_;
   }
-
   /**
    *
    *
@@ -1191,7 +1160,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1218,7 +1186,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1248,7 +1215,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_STATS_FIELD_NUMBER = 4;
   private com.google.cloud.automl.v1beta1.DataStats dataStats_;
-
   /**
    *
    *
@@ -1267,7 +1233,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1288,7 +1253,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance()
         : dataStats_;
   }
-
   /**
    *
    *
@@ -1313,7 +1277,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn>
       topCorrelatedColumns_;
-
   /**
    *
    *
@@ -1330,7 +1293,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       getTopCorrelatedColumnsList() {
     return topCorrelatedColumns_;
   }
-
   /**
    *
    *
@@ -1348,7 +1310,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       getTopCorrelatedColumnsOrBuilderList() {
     return topCorrelatedColumns_;
   }
-
   /**
    *
    *
@@ -1364,7 +1325,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
   public int getTopCorrelatedColumnsCount() {
     return topCorrelatedColumns_.size();
   }
-
   /**
    *
    *
@@ -1381,7 +1341,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return topCorrelatedColumns_.get(index);
   }
-
   /**
    *
    *
@@ -1403,7 +1362,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1428,7 +1386,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1671,7 +1628,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1998,7 +1954,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2024,7 +1979,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2050,7 +2004,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2075,7 +2028,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2048,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2129,7 +2080,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.DataType.Builder,
             com.google.cloud.automl.v1beta1.DataTypeOrBuilder>
         dataTypeBuilder_;
-
     /**
      *
      *
@@ -2144,7 +2094,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2165,7 +2114,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return dataTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2188,7 +2136,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2208,7 +2155,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2236,7 +2182,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2201,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2271,7 +2215,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2290,7 +2233,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             : dataType_;
       }
     }
-
     /**
      *
      *
@@ -2318,7 +2260,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2344,7 +2285,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2370,7 +2310,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2395,7 +2334,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2416,7 +2354,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2449,7 +2386,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.DataStats.Builder,
             com.google.cloud.automl.v1beta1.DataStatsOrBuilder>
         dataStatsBuilder_;
-
     /**
      *
      *
@@ -2467,7 +2403,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataStats() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2491,7 +2426,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return dataStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2517,7 +2451,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2540,7 +2473,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2571,7 +2503,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2594,7 +2525,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2612,7 +2542,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2634,7 +2563,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             : dataStats_;
       }
     }
-
     /**
      *
      *
@@ -2701,7 +2629,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return topCorrelatedColumnsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2720,7 +2647,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return topCorrelatedColumnsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2740,7 +2666,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return topCorrelatedColumnsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2766,7 +2691,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2790,7 +2714,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2816,7 +2739,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2842,7 +2764,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2865,7 +2786,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2889,7 +2809,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2913,7 +2832,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2935,7 +2853,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2957,7 +2874,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2973,7 +2889,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         getTopCorrelatedColumnsBuilder(int index) {
       return getTopCorrelatedColumnsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2993,7 +2908,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return topCorrelatedColumnsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3014,7 +2928,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(topCorrelatedColumns_);
       }
     }
-
     /**
      *
      *
@@ -3032,7 +2945,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3051,7 +2963,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3089,7 +3000,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -3113,7 +3023,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3137,7 +3046,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3160,7 +3068,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3179,7 +3086,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

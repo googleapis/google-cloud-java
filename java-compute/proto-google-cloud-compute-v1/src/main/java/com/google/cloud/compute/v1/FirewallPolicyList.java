@@ -32,7 +32,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallPolicyList)
     FirewallPolicyListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FirewallPolicyList.newBuilder() to construct.
   private FirewallPolicyList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicy> items_;
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.compute.v1.FirewallPolicy> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.FirewallPolicy getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -301,7 +288,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -384,7 +367,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -616,7 +598,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -922,7 +903,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -937,7 +917,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -960,7 +939,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1005,7 +982,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1054,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1070,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1086,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1136,7 +1108,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1150,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1172,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1191,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1231,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1250,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1269,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1281,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.FirewallPolicy.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1335,7 +1297,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1314,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -1367,7 +1327,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1381,7 +1340,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1414,7 +1372,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1429,7 +1386,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1452,7 +1408,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1475,7 +1430,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1497,7 +1451,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1515,7 +1468,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1540,7 +1492,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1555,7 +1506,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1578,7 +1528,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1550,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1623,7 +1571,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1588,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1671,7 +1617,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1686,7 +1631,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1707,7 +1651,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1730,7 +1673,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1692,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1719,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1738,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1813,7 +1752,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1832,7 +1770,6 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
             : warning_;
       }
     }
-
     /**
      *
      *

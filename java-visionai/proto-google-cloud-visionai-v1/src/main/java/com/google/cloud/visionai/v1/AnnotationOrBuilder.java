@@ -38,7 +38,6 @@ public interface AnnotationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AnnotationOrBuilder
    * @return Whether the userSpecifiedAnnotation field is set.
    */
   boolean hasUserSpecifiedAnnotation();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AnnotationOrBuilder
    * @return The userSpecifiedAnnotation.
    */
   com.google.cloud.visionai.v1.UserSpecifiedAnnotation getUserSpecifiedAnnotation();
-
   /**
    *
    *

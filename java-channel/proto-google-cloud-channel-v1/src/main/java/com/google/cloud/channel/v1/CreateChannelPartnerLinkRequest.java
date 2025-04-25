@@ -34,7 +34,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CreateChannelPartnerLinkRequest)
     CreateChannelPartnerLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateChannelPartnerLinkRequest.newBuilder() to construct.
   private CreateChannelPartnerLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
 
   public static final int CHANNEL_PARTNER_LINK_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.ChannelPartnerLink channelPartnerLink_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
   public boolean hasChannelPartnerLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         ? com.google.cloud.channel.v1.ChannelPartnerLink.getDefaultInstance()
         : channelPartnerLink_;
   }
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +575,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
             com.google.cloud.channel.v1.ChannelPartnerLink.Builder,
             com.google.cloud.channel.v1.ChannelPartnerLinkOrBuilder>
         channelPartnerLinkBuilder_;
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
     public boolean hasChannelPartnerLink() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
         return channelPartnerLinkBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
       onChanged();
       return getChannelPartnerLinkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
             : channelPartnerLink_;
       }
     }
-
     /**
      *
      *

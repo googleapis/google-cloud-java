@@ -36,7 +36,6 @@ public interface JwkOrBuilder
    * @return The kty.
    */
   java.lang.String getKty();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface JwkOrBuilder
    * @return The alg.
    */
   java.lang.String getAlg();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface JwkOrBuilder
    * @return The use.
    */
   java.lang.String getUse();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface JwkOrBuilder
    * @return The kid.
    */
   java.lang.String getKid();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface JwkOrBuilder
    * @return The n.
    */
   java.lang.String getN();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface JwkOrBuilder
    * @return The e.
    */
   java.lang.String getE();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface JwkOrBuilder
    * @return The x.
    */
   java.lang.String getX();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface JwkOrBuilder
    * @return The y.
    */
   java.lang.String getY();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface JwkOrBuilder
    * @return The crv.
    */
   java.lang.String getCrv();
-
   /**
    *
    *

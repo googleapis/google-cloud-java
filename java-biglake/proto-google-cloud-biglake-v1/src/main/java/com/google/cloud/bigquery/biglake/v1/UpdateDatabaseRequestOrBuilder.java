@@ -42,7 +42,6 @@ public interface UpdateDatabaseRequestOrBuilder
    * @return Whether the database field is set.
    */
   boolean hasDatabase();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateDatabaseRequestOrBuilder
    * @return The database.
    */
   com.google.cloud.bigquery.biglake.v1.Database getDatabase();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface UpdateDatabaseRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface UpdateDatabaseRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

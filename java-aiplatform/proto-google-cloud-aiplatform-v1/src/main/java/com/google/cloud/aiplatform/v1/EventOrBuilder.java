@@ -38,7 +38,6 @@ public interface EventOrBuilder
    * @return The artifact.
    */
   java.lang.String getArtifact();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface EventOrBuilder
    * @return The execution.
    */
   java.lang.String getExecution();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface EventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface EventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -195,11 +189,9 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface EventOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -44,7 +44,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.ProductPerformanceView)
     ProductPerformanceViewOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductPerformanceView.newBuilder() to construct.
   private ProductPerformanceView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int MARKETING_METHOD_FIELD_NUMBER = 1;
   private int marketingMethod_ = 0;
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasMarketingMethod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public int getMarketingMethodValue() {
     return marketingMethod_;
   }
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int DATE_FIELD_NUMBER = 2;
   private com.google.type.Date date_;
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int WEEK_FIELD_NUMBER = 3;
   private com.google.type.Date week_;
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasWeek() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public com.google.type.Date getWeek() {
     return week_ == null ? com.google.type.Date.getDefaultInstance() : week_;
   }
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerCountryCode_ = "";
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCustomerCountryCode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object offerId_ = "";
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasOfferId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -391,7 +376,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +404,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -436,7 +419,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -460,7 +442,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -489,7 +470,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object brand_ = "";
-
   /**
    *
    *
@@ -505,7 +485,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasBrand() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -529,7 +508,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -558,7 +536,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL1_ = "";
-
   /**
    *
    *
@@ -576,7 +553,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCategoryL1() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -602,7 +578,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -633,7 +608,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL2_ = "";
-
   /**
    *
    *
@@ -651,7 +625,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCategoryL2() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -677,7 +650,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -708,7 +680,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL3_ = "";
-
   /**
    *
    *
@@ -726,7 +697,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCategoryL3() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -752,7 +722,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -783,7 +752,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL4_ = "";
-
   /**
    *
    *
@@ -801,7 +769,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCategoryL4() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -827,7 +794,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -858,7 +824,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL5_ = "";
-
   /**
    *
    *
@@ -876,7 +841,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCategoryL5() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -902,7 +866,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -933,7 +896,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL1_ = "";
-
   /**
    *
    *
@@ -951,7 +913,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasProductTypeL1() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -977,7 +938,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1008,7 +968,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL2_ = "";
-
   /**
    *
    *
@@ -1026,7 +985,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasProductTypeL2() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1052,7 +1010,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1083,7 +1040,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL3_ = "";
-
   /**
    *
    *
@@ -1101,7 +1057,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasProductTypeL3() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1127,7 +1082,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1158,7 +1112,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL4_ = "";
-
   /**
    *
    *
@@ -1176,7 +1129,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasProductTypeL4() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1202,7 +1154,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1233,7 +1184,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL5_ = "";
-
   /**
    *
    *
@@ -1251,7 +1201,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasProductTypeL5() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1277,7 +1226,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1308,7 +1256,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customLabel0_ = "";
-
   /**
    *
    *
@@ -1324,7 +1271,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCustomLabel0() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1348,7 +1294,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1377,7 +1322,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customLabel1_ = "";
-
   /**
    *
    *
@@ -1393,7 +1337,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCustomLabel1() {
     return ((bitField0_ & 0x00040000) != 0);
   }
-
   /**
    *
    *
@@ -1417,7 +1360,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1446,7 +1388,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customLabel2_ = "";
-
   /**
    *
    *
@@ -1462,7 +1403,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCustomLabel2() {
     return ((bitField0_ & 0x00080000) != 0);
   }
-
   /**
    *
    *
@@ -1486,7 +1426,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1515,7 +1454,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customLabel3_ = "";
-
   /**
    *
    *
@@ -1531,7 +1469,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCustomLabel3() {
     return ((bitField0_ & 0x00100000) != 0);
   }
-
   /**
    *
    *
@@ -1555,7 +1492,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1584,7 +1520,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customLabel4_ = "";
-
   /**
    *
    *
@@ -1600,7 +1535,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasCustomLabel4() {
     return ((bitField0_ & 0x00200000) != 0);
   }
-
   /**
    *
    *
@@ -1624,7 +1558,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -1651,7 +1584,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int CLICKS_FIELD_NUMBER = 23;
   private long clicks_ = 0L;
-
   /**
    *
    *
@@ -1667,7 +1599,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasClicks() {
     return ((bitField0_ & 0x00400000) != 0);
   }
-
   /**
    *
    *
@@ -1686,7 +1617,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int IMPRESSIONS_FIELD_NUMBER = 24;
   private long impressions_ = 0L;
-
   /**
    *
    *
@@ -1702,7 +1632,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasImpressions() {
     return ((bitField0_ & 0x00800000) != 0);
   }
-
   /**
    *
    *
@@ -1721,7 +1650,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int CLICK_THROUGH_RATE_FIELD_NUMBER = 25;
   private double clickThroughRate_ = 0D;
-
   /**
    *
    *
@@ -1739,7 +1667,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasClickThroughRate() {
     return ((bitField0_ & 0x01000000) != 0);
   }
-
   /**
    *
    *
@@ -1760,7 +1687,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int CONVERSIONS_FIELD_NUMBER = 26;
   private double conversions_ = 0D;
-
   /**
    *
    *
@@ -1781,7 +1707,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasConversions() {
     return ((bitField0_ & 0x02000000) != 0);
   }
-
   /**
    *
    *
@@ -1805,7 +1730,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int CONVERSION_VALUE_FIELD_NUMBER = 27;
   private com.google.shopping.type.Price conversionValue_;
-
   /**
    *
    *
@@ -1824,7 +1748,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasConversionValue() {
     return ((bitField0_ & 0x04000000) != 0);
   }
-
   /**
    *
    *
@@ -1845,7 +1768,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         ? com.google.shopping.type.Price.getDefaultInstance()
         : conversionValue_;
   }
-
   /**
    *
    *
@@ -1867,7 +1789,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
   public static final int CONVERSION_RATE_FIELD_NUMBER = 28;
   private double conversionRate_ = 0D;
-
   /**
    *
    *
@@ -1886,7 +1807,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   public boolean hasConversionRate() {
     return ((bitField0_ & 0x08000000) != 0);
   }
-
   /**
    *
    *
@@ -2462,7 +2382,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3106,7 +3025,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int marketingMethod_ = 0;
-
     /**
      *
      *
@@ -3124,7 +3042,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasMarketingMethod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3142,7 +3059,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public int getMarketingMethodValue() {
       return marketingMethod_;
     }
-
     /**
      *
      *
@@ -3163,7 +3079,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3188,7 +3103,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3213,7 +3127,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3238,7 +3151,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
-
     /**
      *
      *
@@ -3255,7 +3167,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3276,7 +3187,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return dateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3301,7 +3211,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3323,7 +3232,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3353,7 +3261,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3375,7 +3282,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3392,7 +3298,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3411,7 +3316,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
-
     /**
      *
      *
@@ -3440,7 +3344,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         weekBuilder_;
-
     /**
      *
      *
@@ -3456,7 +3359,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasWeek() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3476,7 +3378,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return weekBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3500,7 +3401,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3521,7 +3421,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3550,7 +3449,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3571,7 +3469,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3587,7 +3484,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return getWeekFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3605,7 +3501,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return week_ == null ? com.google.type.Date.getDefaultInstance() : week_;
       }
     }
-
     /**
      *
      *
@@ -3630,7 +3525,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object customerCountryCode_ = "";
-
     /**
      *
      *
@@ -3649,7 +3543,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCustomerCountryCode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3676,7 +3569,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3703,7 +3595,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3729,7 +3620,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3751,7 +3641,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3780,7 +3669,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object offerId_ = "";
-
     /**
      *
      *
@@ -3795,7 +3683,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasOfferId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3818,7 +3705,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3841,7 +3727,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3863,7 +3748,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3881,7 +3765,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3906,7 +3789,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -3921,7 +3803,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3944,7 +3825,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3967,7 +3847,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3989,7 +3868,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4007,7 +3885,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4032,7 +3909,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object brand_ = "";
-
     /**
      *
      *
@@ -4047,7 +3923,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasBrand() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4070,7 +3945,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4093,7 +3967,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4115,7 +3988,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4133,7 +4005,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4158,7 +4029,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object categoryL1_ = "";
-
     /**
      *
      *
@@ -4175,7 +4045,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCategoryL1() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4200,7 +4069,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4225,7 +4093,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4249,7 +4116,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4269,7 +4135,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4296,7 +4161,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object categoryL2_ = "";
-
     /**
      *
      *
@@ -4313,7 +4177,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCategoryL2() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4338,7 +4201,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4363,7 +4225,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4387,7 +4248,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4407,7 +4267,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4434,7 +4293,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object categoryL3_ = "";
-
     /**
      *
      *
@@ -4451,7 +4309,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCategoryL3() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4476,7 +4333,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4501,7 +4357,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4525,7 +4380,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4545,7 +4399,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4572,7 +4425,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object categoryL4_ = "";
-
     /**
      *
      *
@@ -4589,7 +4441,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCategoryL4() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4614,7 +4465,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4639,7 +4489,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4663,7 +4512,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4683,7 +4531,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4710,7 +4557,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object categoryL5_ = "";
-
     /**
      *
      *
@@ -4727,7 +4573,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCategoryL5() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4752,7 +4597,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4777,7 +4621,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4801,7 +4644,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4821,7 +4663,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4848,7 +4689,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object productTypeL1_ = "";
-
     /**
      *
      *
@@ -4865,7 +4705,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasProductTypeL1() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4890,7 +4729,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4915,7 +4753,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4939,7 +4776,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4959,7 +4795,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4986,7 +4821,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object productTypeL2_ = "";
-
     /**
      *
      *
@@ -5003,7 +4837,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasProductTypeL2() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5028,7 +4861,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5053,7 +4885,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5077,7 +4908,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5097,7 +4927,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5124,7 +4953,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object productTypeL3_ = "";
-
     /**
      *
      *
@@ -5141,7 +4969,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasProductTypeL3() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -5166,7 +4993,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5191,7 +5017,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5215,7 +5040,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5235,7 +5059,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5262,7 +5085,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object productTypeL4_ = "";
-
     /**
      *
      *
@@ -5279,7 +5101,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasProductTypeL4() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -5304,7 +5125,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5329,7 +5149,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5353,7 +5172,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5373,7 +5191,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5400,7 +5217,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object productTypeL5_ = "";
-
     /**
      *
      *
@@ -5417,7 +5233,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasProductTypeL5() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -5442,7 +5257,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5467,7 +5281,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5491,7 +5304,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5511,7 +5323,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5538,7 +5349,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object customLabel0_ = "";
-
     /**
      *
      *
@@ -5553,7 +5363,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCustomLabel0() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -5576,7 +5385,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5599,7 +5407,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5621,7 +5428,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5639,7 +5445,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5664,7 +5469,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object customLabel1_ = "";
-
     /**
      *
      *
@@ -5679,7 +5483,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCustomLabel1() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -5702,7 +5505,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5725,7 +5527,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5747,7 +5548,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5765,7 +5565,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5790,7 +5589,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object customLabel2_ = "";
-
     /**
      *
      *
@@ -5805,7 +5603,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCustomLabel2() {
       return ((bitField0_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -5828,7 +5625,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5851,7 +5647,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5873,7 +5668,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5891,7 +5685,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5916,7 +5709,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object customLabel3_ = "";
-
     /**
      *
      *
@@ -5931,7 +5723,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCustomLabel3() {
       return ((bitField0_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -5954,7 +5745,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5977,7 +5767,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5999,7 +5788,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6017,7 +5805,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6042,7 +5829,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object customLabel4_ = "";
-
     /**
      *
      *
@@ -6057,7 +5843,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasCustomLabel4() {
       return ((bitField0_ & 0x00200000) != 0);
     }
-
     /**
      *
      *
@@ -6080,7 +5865,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6103,7 +5887,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6125,7 +5908,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6143,7 +5925,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6168,7 +5949,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private long clicks_;
-
     /**
      *
      *
@@ -6184,7 +5964,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasClicks() {
       return ((bitField0_ & 0x00400000) != 0);
     }
-
     /**
      *
      *
@@ -6200,7 +5979,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public long getClicks() {
       return clicks_;
     }
-
     /**
      *
      *
@@ -6220,7 +5998,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6240,7 +6017,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private long impressions_;
-
     /**
      *
      *
@@ -6256,7 +6032,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasImpressions() {
       return ((bitField0_ & 0x00800000) != 0);
     }
-
     /**
      *
      *
@@ -6272,7 +6047,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public long getImpressions() {
       return impressions_;
     }
-
     /**
      *
      *
@@ -6292,7 +6066,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6312,7 +6085,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private double clickThroughRate_;
-
     /**
      *
      *
@@ -6330,7 +6102,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasClickThroughRate() {
       return ((bitField0_ & 0x01000000) != 0);
     }
-
     /**
      *
      *
@@ -6348,7 +6119,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public double getClickThroughRate() {
       return clickThroughRate_;
     }
-
     /**
      *
      *
@@ -6370,7 +6140,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6392,7 +6161,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private double conversions_;
-
     /**
      *
      *
@@ -6413,7 +6181,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasConversions() {
       return ((bitField0_ & 0x02000000) != 0);
     }
-
     /**
      *
      *
@@ -6434,7 +6201,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public double getConversions() {
       return conversions_;
     }
-
     /**
      *
      *
@@ -6459,7 +6225,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6489,7 +6254,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         conversionValueBuilder_;
-
     /**
      *
      *
@@ -6507,7 +6271,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasConversionValue() {
       return ((bitField0_ & 0x04000000) != 0);
     }
-
     /**
      *
      *
@@ -6531,7 +6294,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
         return conversionValueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6557,7 +6319,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6580,7 +6341,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6611,7 +6371,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -6634,7 +6393,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6652,7 +6410,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return getConversionValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6674,7 +6431,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
             : conversionValue_;
       }
     }
-
     /**
      *
      *
@@ -6705,7 +6461,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
 
     private double conversionRate_;
-
     /**
      *
      *
@@ -6724,7 +6479,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public boolean hasConversionRate() {
       return ((bitField0_ & 0x08000000) != 0);
     }
-
     /**
      *
      *
@@ -6743,7 +6497,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public double getConversionRate() {
       return conversionRate_;
     }
-
     /**
      *
      *
@@ -6766,7 +6519,6 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

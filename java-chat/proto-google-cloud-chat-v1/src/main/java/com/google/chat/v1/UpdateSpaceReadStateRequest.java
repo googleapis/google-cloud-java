@@ -33,7 +33,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.chat.v1.UpdateSpaceReadStateRequest)
     UpdateSpaceReadStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSpaceReadStateRequest.newBuilder() to construct.
   private UpdateSpaceReadStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int SPACE_READ_STATE_FIELD_NUMBER = 1;
   private com.google.chat.v1.SpaceReadState spaceReadState_;
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
   public boolean hasSpaceReadState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
         ? com.google.chat.v1.SpaceReadState.getDefaultInstance()
         : spaceReadState_;
   }
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -430,7 +423,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +645,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
             com.google.chat.v1.SpaceReadState.Builder,
             com.google.chat.v1.SpaceReadStateOrBuilder>
         spaceReadStateBuilder_;
-
     /**
      *
      *
@@ -684,7 +675,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
     public boolean hasSpaceReadState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -721,7 +711,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
         return spaceReadStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -760,7 +749,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +784,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +827,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +862,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +892,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return getSpaceReadStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -942,7 +926,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
             : spaceReadState_;
       }
     }
-
     /**
      *
      *
@@ -991,7 +974,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1019,7 +1001,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1053,7 +1034,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1069,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1101,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1141,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1173,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1200,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1256,7 +1231,6 @@ public final class UpdateSpaceReadStateRequest extends com.google.protobuf.Gener
             : updateMask_;
       }
     }
-
     /**
      *
      *

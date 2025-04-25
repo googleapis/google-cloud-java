@@ -36,7 +36,6 @@ public interface RawOutputOrBuilder
    * @return A list containing the rawOutput.
    */
   java.util.List<java.lang.String> getRawOutputList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RawOutputOrBuilder
    * @return The count of rawOutput.
    */
   int getRawOutputCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface RawOutputOrBuilder
    * @return The rawOutput at the given index.
    */
   java.lang.String getRawOutput(int index);
-
   /**
    *
    *

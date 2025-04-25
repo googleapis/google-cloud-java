@@ -40,7 +40,6 @@ public interface ResourceRuntimeOrBuilder
    * </code>
    */
   int getAccessUrisCount();
-
   /**
    *
    *
@@ -57,11 +56,9 @@ public interface ResourceRuntimeOrBuilder
    * </code>
    */
   boolean containsAccessUris(java.lang.String key);
-
   /** Use {@link #getAccessUrisMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAccessUris();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ResourceRuntimeOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAccessUrisMap();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ResourceRuntimeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

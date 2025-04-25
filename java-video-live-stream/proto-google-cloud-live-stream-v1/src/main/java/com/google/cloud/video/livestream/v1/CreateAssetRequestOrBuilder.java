@@ -39,7 +39,6 @@ public interface CreateAssetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateAssetRequestOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateAssetRequestOrBuilder
    * @return The asset.
    */
   com.google.cloud.video.livestream.v1.Asset getAsset();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateAssetRequestOrBuilder
    * @return The assetId.
    */
   java.lang.String getAssetId();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateAssetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

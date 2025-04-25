@@ -33,7 +33,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectContentRequest)
     InspectContentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InspectContentRequest.newBuilder() to construct.
   private InspectContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInspectConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
         : inspectConfig_;
   }
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ITEM_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.ContentItem item_;
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasItem() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inspectTemplateName_ = "";
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -838,7 +824,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -876,7 +861,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +898,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -951,7 +934,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +966,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1010,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.InspectConfig.Builder,
             com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         inspectConfigBuilder_;
-
     /**
      *
      *
@@ -1045,7 +1025,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInspectConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1067,7 +1046,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return inspectConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1069,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1090,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1118,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1138,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1153,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1199,7 +1172,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
             : inspectConfig_;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1205,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.ContentItem.Builder,
             com.google.privacy.dlp.v2.ContentItemOrBuilder>
         itemBuilder_;
-
     /**
      *
      *
@@ -1248,7 +1219,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasItem() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1267,7 +1237,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return itemBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1290,7 +1259,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1278,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1305,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1324,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1338,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1390,7 +1354,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
       }
     }
-
     /**
      *
      *
@@ -1418,7 +1381,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object inspectTemplateName_ = "";
-
     /**
      *
      *
@@ -1445,7 +1407,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1433,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1498,7 +1458,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1479,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1507,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -1572,7 +1529,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1595,7 +1551,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1617,7 +1572,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1589,6 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

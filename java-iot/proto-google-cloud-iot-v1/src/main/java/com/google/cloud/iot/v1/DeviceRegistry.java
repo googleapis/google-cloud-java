@@ -33,7 +33,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.DeviceRegistry)
     DeviceRegistryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeviceRegistry.newBuilder() to construct.
   private DeviceRegistry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> eventNotificationConfigs_;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       getEventNotificationConfigsList() {
     return eventNotificationConfigs_;
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       getEventNotificationConfigsOrBuilderList() {
     return eventNotificationConfigs_;
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public int getEventNotificationConfigsCount() {
     return eventNotificationConfigs_.size();
   }
-
   /**
    *
    *
@@ -275,7 +266,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.iot.v1.EventNotificationConfig getEventNotificationConfigs(int index) {
     return eventNotificationConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +292,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_NOTIFICATION_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.iot.v1.StateNotificationConfig stateNotificationConfig_;
-
   /**
    *
    *
@@ -323,7 +312,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStateNotificationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -346,7 +334,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance()
         : stateNotificationConfig_;
   }
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MQTT_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.iot.v1.MqttConfig mqttConfig_;
-
   /**
    *
    *
@@ -387,7 +373,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMqttConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -405,7 +390,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance()
         : mqttConfig_;
   }
-
   /**
    *
    *
@@ -424,7 +408,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.iot.v1.HttpConfig httpConfig_;
-
   /**
    *
    *
@@ -440,7 +423,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -458,7 +440,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance()
         : httpConfig_;
   }
-
   /**
    *
    *
@@ -477,7 +458,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_LEVEL_FIELD_NUMBER = 11;
   private int logLevel_ = 0;
-
   /**
    *
    *
@@ -496,7 +476,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public int getLogLevelValue() {
     return logLevel_;
   }
-
   /**
    *
    *
@@ -521,7 +500,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.RegistryCredential> credentials_;
-
   /**
    *
    *
@@ -545,7 +523,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.iot.v1.RegistryCredential> getCredentialsList() {
     return credentials_;
   }
-
   /**
    *
    *
@@ -570,7 +547,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       getCredentialsOrBuilderList() {
     return credentials_;
   }
-
   /**
    *
    *
@@ -594,7 +570,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public int getCredentialsCount() {
     return credentials_.size();
   }
-
   /**
    *
    *
@@ -618,7 +593,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.iot.v1.RegistryCredential getCredentials(int index) {
     return credentials_.get(index);
   }
-
   /**
    *
    *
@@ -887,7 +861,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1290,7 +1263,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1313,7 +1285,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1336,7 +1307,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1358,7 +1328,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1345,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1369,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1425,7 +1392,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1449,7 +1415,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1437,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1455,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1523,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return eventNotificationConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1548,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return eventNotificationConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1612,7 +1573,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return eventNotificationConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1645,7 +1605,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1634,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1708,7 +1666,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1698,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1727,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1756,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1831,7 +1785,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1813,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1889,7 +1841,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1912,7 +1863,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         getEventNotificationConfigsBuilder(int index) {
       return getEventNotificationConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1939,7 +1889,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return eventNotificationConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1966,7 +1915,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(eventNotificationConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1990,7 +1938,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return getEventNotificationConfigsFieldBuilder()
           .addBuilder(com.google.cloud.iot.v1.EventNotificationConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2014,7 +1961,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return getEventNotificationConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.iot.v1.EventNotificationConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2064,7 +2010,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iot.v1.StateNotificationConfig.Builder,
             com.google.cloud.iot.v1.StateNotificationConfigOrBuilder>
         stateNotificationConfigBuilder_;
-
     /**
      *
      *
@@ -2084,7 +2029,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStateNotificationConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2110,7 +2054,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return stateNotificationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2139,7 +2082,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2165,7 +2107,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2200,7 +2141,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2165,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2246,7 +2185,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateNotificationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2271,7 +2209,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             : stateNotificationConfig_;
       }
     }
-
     /**
      *
      *
@@ -2309,7 +2246,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iot.v1.MqttConfig.Builder,
             com.google.cloud.iot.v1.MqttConfigOrBuilder>
         mqttConfigBuilder_;
-
     /**
      *
      *
@@ -2324,7 +2260,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMqttConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2345,7 +2280,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return mqttConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2368,7 +2302,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2388,7 +2321,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2416,7 +2348,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2436,7 +2367,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2381,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMqttConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2470,7 +2399,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             : mqttConfig_;
       }
     }
-
     /**
      *
      *
@@ -2503,7 +2431,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iot.v1.HttpConfig.Builder,
             com.google.cloud.iot.v1.HttpConfigOrBuilder>
         httpConfigBuilder_;
-
     /**
      *
      *
@@ -2518,7 +2445,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2539,7 +2465,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return httpConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2562,7 +2487,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2506,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2610,7 +2533,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2630,7 +2552,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2645,7 +2566,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHttpConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2664,7 +2584,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             : httpConfig_;
       }
     }
-
     /**
      *
      *
@@ -2692,7 +2611,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int logLevel_ = 0;
-
     /**
      *
      *
@@ -2711,7 +2629,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     public int getLogLevelValue() {
       return logLevel_;
     }
-
     /**
      *
      *
@@ -2733,7 +2650,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2754,7 +2670,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.iot.v1.LogLevel.forNumber(logLevel_);
       return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2779,7 +2694,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2844,7 +2758,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return credentialsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2871,7 +2784,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return credentialsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2898,7 +2810,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return credentialsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2931,7 +2842,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2962,7 +2872,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2995,7 +2904,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3028,7 +2936,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3059,7 +2966,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3090,7 +2996,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3121,7 +3026,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3151,7 +3055,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3181,7 +3084,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3106,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.iot.v1.RegistryCredential.Builder getCredentialsBuilder(int index) {
       return getCredentialsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3231,7 +3132,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return credentialsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3259,7 +3159,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(credentials_);
       }
     }
-
     /**
      *
      *
@@ -3283,7 +3182,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return getCredentialsFieldBuilder()
           .addBuilder(com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3307,7 +3205,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return getCredentialsFieldBuilder()
           .addBuilder(index, com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance());
     }
-
     /**
      *
      *

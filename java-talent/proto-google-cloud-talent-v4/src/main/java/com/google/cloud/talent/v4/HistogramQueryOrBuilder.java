@@ -41,7 +41,6 @@ public interface HistogramQueryOrBuilder
    * @return The histogramQuery.
    */
   java.lang.String getHistogramQuery();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListExtensionsResponse)
     ListExtensionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListExtensionsResponse.newBuilder() to construct.
   private ListExtensionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Extension> extensions_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Extension> getExtensionsList() {
     return extensions_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       getExtensionsOrBuilderList() {
     return extensions_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
   public int getExtensionsCount() {
     return extensions_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.aiplatform.v1beta1.Extension getExtensions(int index) {
     return extensions_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return extensionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return extensionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return extensionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1beta1.Extension.Builder getExtensionsBuilder(int index) {
       return getExtensionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return extensionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(extensions_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       return getExtensionsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Extension.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       return getExtensionsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Extension.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1056,6 @@ public final class ListExtensionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

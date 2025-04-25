@@ -38,7 +38,6 @@ public interface CreateTaskRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateTaskRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface CreateTaskRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateTaskRequestOrBuilder
    * @return The taskId.
    */
   java.lang.String getTaskId();
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public interface CreateTaskRequestOrBuilder
    * @return Whether the task field is set.
    */
   boolean hasTask();
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public interface CreateTaskRequestOrBuilder
    * @return The task.
    */
   com.google.maps.fleetengine.delivery.v1.Task getTask();
-
   /**
    *
    *

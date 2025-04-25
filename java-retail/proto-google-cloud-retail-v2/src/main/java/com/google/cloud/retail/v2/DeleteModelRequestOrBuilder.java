@@ -40,7 +40,6 @@ public interface DeleteModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

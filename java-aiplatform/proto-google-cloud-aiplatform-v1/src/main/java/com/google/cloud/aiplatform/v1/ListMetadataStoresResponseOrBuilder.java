@@ -34,7 +34,6 @@ public interface ListMetadataStoresResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.MetadataStore metadata_stores = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.MetadataStore> getMetadataStoresList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListMetadataStoresResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.MetadataStore metadata_stores = 1;</code>
    */
   com.google.cloud.aiplatform.v1.MetadataStore getMetadataStores(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListMetadataStoresResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.MetadataStore metadata_stores = 1;</code>
    */
   int getMetadataStoresCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListMetadataStoresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.MetadataStoreOrBuilder>
       getMetadataStoresOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListMetadataStoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

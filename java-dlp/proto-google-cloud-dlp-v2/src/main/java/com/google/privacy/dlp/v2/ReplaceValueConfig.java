@@ -33,7 +33,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ReplaceValueConfig)
     ReplaceValueConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplaceValueConfig.newBuilder() to construct.
   private ReplaceValueConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int NEW_VALUE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.Value newValue_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasNewValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
   public com.google.privacy.dlp.v2.Value getNewValue() {
     return newValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : newValue_;
   }
-
   /**
    *
    *
@@ -276,7 +272,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -479,7 +474,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.Value.Builder,
             com.google.privacy.dlp.v2.ValueOrBuilder>
         newValueBuilder_;
-
     /**
      *
      *
@@ -494,7 +488,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasNewValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
         return newValueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -536,7 +528,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -556,7 +547,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +574,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +593,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +607,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNewValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -636,7 +623,6 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
         return newValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : newValue_;
       }
     }
-
     /**
      *
      *

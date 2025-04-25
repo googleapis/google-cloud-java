@@ -33,7 +33,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.BatchCreateTasksResponse)
     BatchCreateTasksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCreateTasksResponse.newBuilder() to construct.
   private BatchCreateTasksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.delivery.v1.Task> tasks_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.maps.fleetengine.delivery.v1.Task> getTasksList() {
     return tasks_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       getTasksOrBuilderList() {
     return tasks_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
   public int getTasksCount() {
     return tasks_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
   public com.google.maps.fleetengine.delivery.v1.Task getTasks(int index) {
     return tasks_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
         return tasksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
         return tasksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
         return tasksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +757,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +776,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +788,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
     public com.google.maps.fleetengine.delivery.v1.Task.Builder getTasksBuilder(int index) {
       return getTasksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -824,7 +804,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
         return tasksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -842,7 +821,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(tasks_);
       }
     }
-
     /**
      *
      *
@@ -856,7 +834,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       return getTasksFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.delivery.v1.Task.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -870,7 +847,6 @@ public final class BatchCreateTasksResponse extends com.google.protobuf.Generate
       return getTasksFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.delivery.v1.Task.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface VodAdTagDetailOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VodAdTagDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdRequest ad_requests = 2;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.AdRequest> getAdRequestsList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface VodAdTagDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdRequest ad_requests = 2;</code>
    */
   com.google.cloud.video.stitcher.v1.AdRequest getAdRequests(int index);
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface VodAdTagDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdRequest ad_requests = 2;</code>
    */
   int getAdRequestsCount();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface VodAdTagDetailOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.AdRequestOrBuilder>
       getAdRequestsOrBuilderList();
-
   /**
    *
    *

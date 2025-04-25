@@ -34,7 +34,6 @@ public interface TensorboardBlobSequenceOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardBlob values = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TensorboardBlob> getValuesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TensorboardBlobSequenceOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardBlob values = 1;</code>
    */
   com.google.cloud.aiplatform.v1.TensorboardBlob getValues(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TensorboardBlobSequenceOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardBlob values = 1;</code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TensorboardBlobSequenceOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TensorboardBlobOrBuilder>
       getValuesOrBuilderList();
-
   /**
    *
    *

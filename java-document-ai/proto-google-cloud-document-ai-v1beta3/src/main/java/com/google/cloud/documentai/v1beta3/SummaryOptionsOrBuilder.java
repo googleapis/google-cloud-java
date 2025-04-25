@@ -36,7 +36,6 @@ public interface SummaryOptionsOrBuilder
    * @return The enum numeric value on the wire for length.
    */
   int getLengthValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SummaryOptionsOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
-
   /**
    *
    *

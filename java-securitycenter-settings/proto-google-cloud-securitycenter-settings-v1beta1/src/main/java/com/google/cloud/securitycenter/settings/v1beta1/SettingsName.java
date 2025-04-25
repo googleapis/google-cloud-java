@@ -439,8 +439,7 @@ public class SettingsName implements ResourceName {
     private Builder(SettingsName settingsName) {
       Preconditions.checkArgument(
           Objects.equals(settingsName.pathTemplate, ORGANIZATION),
-          "toBuilder is only supported when SettingsName has the pattern of"
-              + " organizations/{organization}/settings");
+          "toBuilder is only supported when SettingsName has the pattern of organizations/{organization}/settings");
       this.organization = settingsName.organization;
     }
 

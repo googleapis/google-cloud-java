@@ -34,7 +34,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.FewShotExample)
     FewShotExampleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FewShotExample.newBuilder() to construct.
   private FewShotExample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,7 +91,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     private InstructionListCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,7 +123,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONVERSATION_CONTEXT_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2.ConversationContext conversationContext_;
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConversationContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2.ConversationContext.getDefaultInstance()
         : conversationContext_;
   }
-
   /**
    *
    *
@@ -209,7 +204,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
   public int getExtraInfoCount() {
     return internalGetExtraInfo().getMap().size();
   }
-
   /**
    *
    *
@@ -229,14 +223,12 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetExtraInfo().getMap().containsKey(key);
   }
-
   /** Use {@link #getExtraInfoMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getExtraInfo() {
     return getExtraInfoMap();
   }
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getExtraInfoMap() {
     return internalGetExtraInfo().getMap();
   }
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetExtraInfo().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUMMARIZATION_SECTION_LIST_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSummarizationSectionList() {
     return instructionListCase_ == 6;
   }
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2.SummarizationSectionList.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -362,7 +349,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OUTPUT_FIELD_NUMBER = 7;
   private com.google.cloud.dialogflow.v2.GeneratorSuggestion output_;
-
   /**
    *
    *
@@ -380,7 +366,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOutput() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -400,7 +385,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance()
         : output_;
   }
-
   /**
    *
    *
@@ -640,7 +624,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -954,7 +937,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2.ConversationContext.Builder,
             com.google.cloud.dialogflow.v2.ConversationContextOrBuilder>
         conversationContextBuilder_;
-
     /**
      *
      *
@@ -971,7 +953,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConversationContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -994,7 +975,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         return conversationContextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1020,7 +1000,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1022,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1053,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1074,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1091,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConversationContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
             : conversationContext_;
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1167,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     public int getExtraInfoCount() {
       return internalGetExtraInfo().getMap().size();
     }
-
     /**
      *
      *
@@ -1213,14 +1186,12 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetExtraInfo().getMap().containsKey(key);
     }
-
     /** Use {@link #getExtraInfoMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getExtraInfo() {
       return getExtraInfoMap();
     }
-
     /**
      *
      *
@@ -1237,7 +1208,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getExtraInfoMap() {
       return internalGetExtraInfo().getMap();
     }
-
     /**
      *
      *
@@ -1261,7 +1231,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetExtraInfo().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1291,7 +1260,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExtraInfo().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1311,14 +1279,12 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExtraInfo().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableExtraInfo() {
       bitField0_ |= 0x00000002;
       return internalGetMutableExtraInfo().getMutableMap();
     }
-
     /**
      *
      *
@@ -1342,7 +1308,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1331,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2.SummarizationSectionList.Builder,
             com.google.cloud.dialogflow.v2.SummarizationSectionListOrBuilder>
         summarizationSectionListBuilder_;
-
     /**
      *
      *
@@ -1383,7 +1347,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSummarizationSectionList() {
       return instructionListCase_ == 6;
     }
-
     /**
      *
      *
@@ -1410,7 +1373,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2.SummarizationSectionList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1435,7 +1397,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       instructionListCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1457,7 +1418,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       instructionListCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1493,7 +1453,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       instructionListCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1479,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1493,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         getSummarizationSectionListBuilder() {
       return getSummarizationSectionListFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1558,7 +1515,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2.SummarizationSectionList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1556,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder,
             com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder>
         outputBuilder_;
-
     /**
      *
      *
@@ -1617,7 +1572,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutput() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1640,7 +1594,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
         return outputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1665,7 +1618,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1688,7 +1640,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1669,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1740,7 +1690,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1706,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOutputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1778,7 +1726,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
             : output_;
       }
     }
-
     /**
      *
      *

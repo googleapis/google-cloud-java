@@ -33,7 +33,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.SdkVersion)
     SdkVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SdkVersion.newBuilder() to construct.
   private SdkVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,7 +139,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -151,7 +149,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>SUPPORTED = 1;</code>
      */
     public static final int SUPPORTED_VALUE = 1;
-
     /**
      *
      *
@@ -162,7 +159,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>STALE = 2;</code>
      */
     public static final int STALE_VALUE = 2;
-
     /**
      *
      *
@@ -174,7 +170,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPRECATED = 3;</code>
      */
     public static final int DEPRECATED_VALUE = 3;
-
     /**
      *
      *
@@ -279,7 +274,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -332,7 +325,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object versionDisplayName_ = "";
-
   /**
    *
    *
@@ -356,7 +348,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +374,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SDK_SUPPORT_STATUS_FIELD_NUMBER = 3;
   private int sdkSupportStatus_ = 0;
-
   /**
    *
    *
@@ -399,7 +389,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
   public int getSdkSupportStatusValue() {
     return sdkSupportStatus_;
   }
-
   /**
    *
    *
@@ -598,7 +587,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -810,7 +798,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -833,7 +820,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +842,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +880,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +904,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object versionDisplayName_ = "";
-
     /**
      *
      *
@@ -944,7 +926,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -967,7 +948,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -989,7 +969,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +986,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1010,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sdkSupportStatus_ = 0;
-
     /**
      *
      *
@@ -1048,7 +1025,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     public int getSdkSupportStatusValue() {
       return sdkSupportStatus_;
     }
-
     /**
      *
      *
@@ -1067,7 +1043,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
           ? com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

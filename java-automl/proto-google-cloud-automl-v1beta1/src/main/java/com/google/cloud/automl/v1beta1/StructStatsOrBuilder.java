@@ -35,7 +35,6 @@ public interface StructStatsOrBuilder
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
   int getFieldStatsCount();
-
   /**
    *
    *
@@ -47,11 +46,9 @@ public interface StructStatsOrBuilder
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
   boolean containsFieldStats(java.lang.String key);
-
   /** Use {@link #getFieldStatsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats> getFieldStats();
-
   /**
    *
    *
@@ -63,7 +60,6 @@ public interface StructStatsOrBuilder
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats> getFieldStatsMap();
-
   /**
    *
    *
@@ -79,7 +75,6 @@ public interface StructStatsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.automl.v1beta1.DataStats defaultValue);
-
   /**
    *
    *

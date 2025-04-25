@@ -36,7 +36,6 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface OperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface OperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface OperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface OperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface OperationMetadataOrBuilder
    * @return The statusDetail.
    */
   java.lang.String getStatusDetail();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface OperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface OperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; additional_status = 8;</code>
    */
   int getAdditionalStatusCount();
-
   /**
    *
    *
@@ -245,11 +236,9 @@ public interface OperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; additional_status = 8;</code>
    */
   boolean containsAdditionalStatus(java.lang.String key);
-
   /** Use {@link #getAdditionalStatusMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdditionalStatus();
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public interface OperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; additional_status = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdditionalStatusMap();
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public interface OperationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

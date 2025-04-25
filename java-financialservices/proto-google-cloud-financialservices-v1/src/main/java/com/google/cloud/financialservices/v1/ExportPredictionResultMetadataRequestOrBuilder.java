@@ -38,7 +38,6 @@ public interface ExportPredictionResultMetadataRequestOrBuilder
    * @return The predictionResult.
    */
   java.lang.String getPredictionResult();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ExportPredictionResultMetadataRequestOrBuilder
    * @return Whether the structuredMetadataDestination field is set.
    */
   boolean hasStructuredMetadataDestination();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ExportPredictionResultMetadataRequestOrBuilder
    * @return The structuredMetadataDestination.
    */
   com.google.cloud.financialservices.v1.BigQueryDestination getStructuredMetadataDestination();
-
   /**
    *
    *

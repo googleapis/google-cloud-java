@@ -38,7 +38,6 @@ public interface DeleteGitRepositoryLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface DeleteGitRepositoryLinkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -135,7 +133,6 @@ public interface DeleteGitRepositoryLinkRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

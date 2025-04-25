@@ -37,7 +37,6 @@ public interface TensorboardBlobOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

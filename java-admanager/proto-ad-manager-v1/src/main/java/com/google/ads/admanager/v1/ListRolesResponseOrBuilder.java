@@ -34,7 +34,6 @@ public interface ListRolesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Role roles = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.Role> getRolesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRolesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Role roles = 1;</code>
    */
   com.google.ads.admanager.v1.Role getRoles(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRolesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Role roles = 1;</code>
    */
   int getRolesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListRolesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Role roles = 1;</code>
    */
   java.util.List<? extends com.google.ads.admanager.v1.RoleOrBuilder> getRolesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListRolesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

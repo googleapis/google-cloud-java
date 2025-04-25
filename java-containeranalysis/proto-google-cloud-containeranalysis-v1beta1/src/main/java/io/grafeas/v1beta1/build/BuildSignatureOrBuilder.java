@@ -48,7 +48,6 @@ public interface BuildSignatureOrBuilder
    * @return The publicKey.
    */
   java.lang.String getPublicKey();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface BuildSignatureOrBuilder
    * @return The keyId.
    */
   java.lang.String getKeyId();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface BuildSignatureOrBuilder
    * @return The enum numeric value on the wire for keyType.
    */
   int getKeyTypeValue();
-
   /**
    *
    *

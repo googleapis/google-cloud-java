@@ -38,7 +38,6 @@ public interface RemoveGroupMigrationRequestOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface RemoveGroupMigrationRequestOrBuilder
    * @return The migratingVm.
    */
   java.lang.String getMigratingVm();
-
   /**
    *
    *

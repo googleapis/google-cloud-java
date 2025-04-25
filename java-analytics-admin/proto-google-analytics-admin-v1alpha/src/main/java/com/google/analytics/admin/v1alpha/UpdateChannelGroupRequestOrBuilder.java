@@ -40,7 +40,6 @@ public interface UpdateChannelGroupRequestOrBuilder
    * @return Whether the channelGroup field is set.
    */
   boolean hasChannelGroup();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateChannelGroupRequestOrBuilder
    * @return The channelGroup.
    */
   com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateChannelGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateChannelGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

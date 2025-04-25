@@ -30,14 +30,12 @@ public interface BackendServiceReferenceOrBuilder
    * @return Whether the backendService field is set.
    */
   boolean hasBackendService();
-
   /**
    * <code>optional string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
   java.lang.String getBackendService();
-
   /**
    * <code>optional string backend_service = 306946058;</code>
    *

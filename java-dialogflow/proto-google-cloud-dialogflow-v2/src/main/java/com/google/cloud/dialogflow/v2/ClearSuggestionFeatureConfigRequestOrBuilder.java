@@ -38,7 +38,6 @@ public interface ClearSuggestionFeatureConfigRequestOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ClearSuggestionFeatureConfigRequestOrBuilder
    * @return The enum numeric value on the wire for participantRole.
    */
   int getParticipantRoleValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ClearSuggestionFeatureConfigRequestOrBuilder
    * @return The enum numeric value on the wire for suggestionFeatureType.
    */
   int getSuggestionFeatureTypeValue();
-
   /**
    *
    *

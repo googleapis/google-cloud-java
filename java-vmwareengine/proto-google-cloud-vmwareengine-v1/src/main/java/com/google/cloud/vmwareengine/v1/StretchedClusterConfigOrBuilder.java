@@ -42,7 +42,6 @@ public interface StretchedClusterConfigOrBuilder
    * @return The preferredLocation.
    */
   java.lang.String getPreferredLocation();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface StretchedClusterConfigOrBuilder
    * @return The secondaryLocation.
    */
   java.lang.String getSecondaryLocation();
-
   /**
    *
    *

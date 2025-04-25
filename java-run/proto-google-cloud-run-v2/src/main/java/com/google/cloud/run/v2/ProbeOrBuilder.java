@@ -99,7 +99,6 @@ public interface ProbeOrBuilder
    * @return Whether the httpGet field is set.
    */
   boolean hasHttpGet();
-
   /**
    *
    *
@@ -115,7 +114,6 @@ public interface ProbeOrBuilder
    * @return The httpGet.
    */
   com.google.cloud.run.v2.HTTPGetAction getHttpGet();
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public interface ProbeOrBuilder
    * @return Whether the tcpSocket field is set.
    */
   boolean hasTcpSocket();
-
   /**
    *
    *
@@ -161,7 +158,6 @@ public interface ProbeOrBuilder
    * @return The tcpSocket.
    */
   com.google.cloud.run.v2.TCPSocketAction getTcpSocket();
-
   /**
    *
    *
@@ -190,7 +186,6 @@ public interface ProbeOrBuilder
    * @return Whether the grpc field is set.
    */
   boolean hasGrpc();
-
   /**
    *
    *
@@ -205,7 +200,6 @@ public interface ProbeOrBuilder
    * @return The grpc.
    */
   com.google.cloud.run.v2.GRPCAction getGrpc();
-
   /**
    *
    *

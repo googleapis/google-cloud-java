@@ -37,7 +37,6 @@ public interface ListOptimalTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial optimal_trials = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Trial> getOptimalTrialsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListOptimalTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial optimal_trials = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Trial getOptimalTrials(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface ListOptimalTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial optimal_trials = 1;</code>
    */
   int getOptimalTrialsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListOptimalTrialsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TrialOrBuilder>
       getOptimalTrialsOrBuilderList();
-
   /**
    *
    *

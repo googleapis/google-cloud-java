@@ -34,7 +34,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsResponse)
     ListGcpUserAccessBindingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListGcpUserAccessBindingsResponse.newBuilder() to construct.
   private ListGcpUserAccessBindingsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
   @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding>
       gcpUserAccessBindings_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       getGcpUserAccessBindingsList() {
     return gcpUserAccessBindings_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       getGcpUserAccessBindingsOrBuilderList() {
     return gcpUserAccessBindings_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
   public int getGcpUserAccessBindingsCount() {
     return gcpUserAccessBindings_.size();
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       int index) {
     return gcpUserAccessBindings_.get(index);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -397,7 +389,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -695,7 +686,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return gcpUserAccessBindingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -715,7 +705,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return gcpUserAccessBindingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -736,7 +725,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return gcpUserAccessBindingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -763,7 +751,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +827,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +850,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +899,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +921,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         getGcpUserAccessBindingsBuilder(int index) {
       return getGcpUserAccessBindingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return gcpUserAccessBindingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(gcpUserAccessBindings_);
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
               com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1064,7 +1039,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
               com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1126,7 +1099,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1149,7 +1121,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1159,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

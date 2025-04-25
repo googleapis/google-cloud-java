@@ -35,7 +35,6 @@ public final class EnableProcessorResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.EnableProcessorResponse)
     EnableProcessorResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnableProcessorResponse.newBuilder() to construct.
   private EnableProcessorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class EnableProcessorResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

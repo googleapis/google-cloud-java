@@ -38,7 +38,6 @@ public interface GetFeatureGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

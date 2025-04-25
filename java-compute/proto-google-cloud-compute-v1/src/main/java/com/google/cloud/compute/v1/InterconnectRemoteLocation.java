@@ -33,7 +33,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectRemoteLocation)
     InterconnectRemoteLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectRemoteLocation.newBuilder() to construct.
   private InterconnectRemoteLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,19 +120,14 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * <code>UNDEFINED_CONTINENT = 0;</code>
      */
     public static final int UNDEFINED_CONTINENT_VALUE = 0;
-
     /** <code>AFRICA = 317443706;</code> */
     public static final int AFRICA_VALUE = 317443706;
-
     /** <code>ASIA_PAC = 119782269;</code> */
     public static final int ASIA_PAC_VALUE = 119782269;
-
     /** <code>EUROPE = 445819298;</code> */
     public static final int EUROPE_VALUE = 445819298;
-
     /** <code>NORTH_AMERICA = 448015508;</code> */
     public static final int NORTH_AMERICA_VALUE = 448015508;
-
     /** <code>SOUTH_AMERICA = 32597340;</code> */
     public static final int SOUTH_AMERICA_VALUE = 32597340;
 
@@ -281,7 +275,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * <code>UNDEFINED_LACP = 0;</code>
      */
     public static final int UNDEFINED_LACP_VALUE = 0;
-
     /**
      *
      *
@@ -292,7 +285,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * <code>LACP_SUPPORTED = 339576113;</code>
      */
     public static final int LACP_SUPPORTED_VALUE = 339576113;
-
     /**
      *
      *
@@ -442,7 +434,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -453,7 +444,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * <code>AVAILABLE = 442079913;</code>
      */
     public static final int AVAILABLE_VALUE = 442079913;
-
     /**
      *
      *
@@ -555,7 +545,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
-
   /**
    *
    *
@@ -571,7 +560,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -595,7 +583,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -623,7 +610,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public static final int ATTACHMENT_CONFIGURATION_CONSTRAINTS_FIELD_NUMBER = 326825041;
   private com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
       attachmentConfigurationConstraints_;
-
   /**
    *
    *
@@ -641,7 +627,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasAttachmentConfigurationConstraints() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -663,7 +648,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             .getDefaultInstance()
         : attachmentConfigurationConstraints_;
   }
-
   /**
    *
    *
@@ -688,7 +672,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object city_ = "";
-
   /**
    *
    *
@@ -704,7 +687,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasCity() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -728,7 +710,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -755,7 +736,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   public static final int CONSTRAINTS_FIELD_NUMBER = 3909174;
   private com.google.cloud.compute.v1.InterconnectRemoteLocationConstraints constraints_;
-
   /**
    *
    *
@@ -773,7 +753,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasConstraints() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -793,7 +772,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.InterconnectRemoteLocationConstraints.getDefaultInstance()
         : constraints_;
   }
-
   /**
    *
    *
@@ -817,7 +795,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object continent_ = "";
-
   /**
    *
    *
@@ -834,7 +811,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasContinent() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -859,7 +835,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -889,7 +864,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -905,7 +879,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -929,7 +902,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -958,7 +930,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -974,7 +945,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -998,7 +968,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1027,7 +996,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object facilityProvider_ = "";
-
   /**
    *
    *
@@ -1043,7 +1011,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasFacilityProvider() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1067,7 +1034,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1096,7 +1062,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object facilityProviderFacilityId_ = "";
-
   /**
    *
    *
@@ -1112,7 +1077,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasFacilityProviderFacilityId() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1136,7 +1100,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1163,7 +1126,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -1179,7 +1141,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasId() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1200,7 +1161,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -1216,7 +1176,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasKind() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1240,7 +1199,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1269,7 +1227,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lacp_ = "";
-
   /**
    *
    *
@@ -1286,7 +1243,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasLacp() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1311,7 +1267,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1339,7 +1294,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   public static final int MAX_LAG_SIZE100_GBPS_FIELD_NUMBER = 245219253;
   private int maxLagSize100Gbps_ = 0;
-
   /**
    *
    *
@@ -1355,7 +1309,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasMaxLagSize100Gbps() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1374,7 +1327,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   public static final int MAX_LAG_SIZE10_GBPS_FIELD_NUMBER = 294007573;
   private int maxLagSize10Gbps_ = 0;
-
   /**
    *
    *
@@ -1390,7 +1342,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasMaxLagSize10Gbps() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1411,7 +1362,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1427,7 +1377,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasName() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1451,7 +1400,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1480,7 +1428,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peeringdbFacilityId_ = "";
-
   /**
    *
    *
@@ -1496,7 +1443,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasPeeringdbFacilityId() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1520,7 +1466,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1550,7 +1495,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections>
       permittedConnections_;
-
   /**
    *
    *
@@ -1567,7 +1511,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       getPermittedConnectionsList() {
     return permittedConnections_;
   }
-
   /**
    *
    *
@@ -1586,7 +1529,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       getPermittedConnectionsOrBuilderList() {
     return permittedConnections_;
   }
-
   /**
    *
    *
@@ -1602,7 +1544,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public int getPermittedConnectionsCount() {
     return permittedConnections_.size();
   }
-
   /**
    *
    *
@@ -1619,7 +1560,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       getPermittedConnections(int index) {
     return permittedConnections_.get(index);
   }
-
   /**
    *
    *
@@ -1641,7 +1581,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remoteService_ = "";
-
   /**
    *
    *
@@ -1657,7 +1596,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasRemoteService() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1681,7 +1619,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1710,7 +1647,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1726,7 +1662,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1750,7 +1685,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1779,7 +1713,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -1796,7 +1729,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
   public boolean hasStatus() {
     return ((bitField0_ & 0x00040000) != 0);
   }
-
   /**
    *
    *
@@ -1821,7 +1753,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -2288,7 +2219,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2842,7 +2772,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object address_ = "";
-
     /**
      *
      *
@@ -2857,7 +2786,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2880,7 +2808,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2903,7 +2830,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2925,7 +2851,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2943,7 +2868,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2974,7 +2898,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints.Builder,
             com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsOrBuilder>
         attachmentConfigurationConstraintsBuilder_;
-
     /**
      *
      *
@@ -2991,7 +2914,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasAttachmentConfigurationConstraints() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3016,7 +2938,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return attachmentConfigurationConstraintsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3042,7 +2963,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3066,7 +2986,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3099,7 +3018,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -3121,7 +3039,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3139,7 +3056,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return getAttachmentConfigurationConstraintsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3162,7 +3078,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             : attachmentConfigurationConstraints_;
       }
     }
-
     /**
      *
      *
@@ -3193,7 +3108,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object city_ = "";
-
     /**
      *
      *
@@ -3208,7 +3122,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasCity() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3231,7 +3144,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3254,7 +3166,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3276,7 +3187,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3294,7 +3204,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3324,7 +3233,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InterconnectRemoteLocationConstraints.Builder,
             com.google.cloud.compute.v1.InterconnectRemoteLocationConstraintsOrBuilder>
         constraintsBuilder_;
-
     /**
      *
      *
@@ -3341,7 +3249,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasConstraints() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3364,7 +3271,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return constraintsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3390,7 +3296,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3413,7 +3318,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3446,7 +3350,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -3468,7 +3371,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3486,7 +3388,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return getConstraintsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3508,7 +3409,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             : constraints_;
       }
     }
-
     /**
      *
      *
@@ -3538,7 +3438,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object continent_ = "";
-
     /**
      *
      *
@@ -3554,7 +3453,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasContinent() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3578,7 +3476,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3602,7 +3499,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3625,7 +3521,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3644,7 +3539,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3670,7 +3564,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -3685,7 +3578,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3708,7 +3600,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3731,7 +3622,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3753,7 +3643,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3771,7 +3660,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3796,7 +3684,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3811,7 +3698,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3834,7 +3720,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3857,7 +3742,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3879,7 +3763,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3897,7 +3780,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3922,7 +3804,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object facilityProvider_ = "";
-
     /**
      *
      *
@@ -3937,7 +3818,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasFacilityProvider() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3960,7 +3840,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3983,7 +3862,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4005,7 +3883,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4023,7 +3900,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4048,7 +3924,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object facilityProviderFacilityId_ = "";
-
     /**
      *
      *
@@ -4063,7 +3938,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasFacilityProviderFacilityId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4086,7 +3960,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4109,7 +3982,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4131,7 +4003,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4149,7 +4020,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4174,7 +4044,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private long id_;
-
     /**
      *
      *
@@ -4190,7 +4059,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasId() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4206,7 +4074,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -4226,7 +4093,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4246,7 +4112,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -4261,7 +4126,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasKind() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4284,7 +4148,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4307,7 +4170,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4329,7 +4191,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4347,7 +4208,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4372,7 +4232,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object lacp_ = "";
-
     /**
      *
      *
@@ -4388,7 +4247,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasLacp() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4412,7 +4270,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4436,7 +4293,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4459,7 +4315,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4478,7 +4333,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4504,7 +4358,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private int maxLagSize100Gbps_;
-
     /**
      *
      *
@@ -4520,7 +4373,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasMaxLagSize100Gbps() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4536,7 +4388,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public int getMaxLagSize100Gbps() {
       return maxLagSize100Gbps_;
     }
-
     /**
      *
      *
@@ -4556,7 +4407,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4576,7 +4426,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private int maxLagSize10Gbps_;
-
     /**
      *
      *
@@ -4592,7 +4441,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasMaxLagSize10Gbps() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4608,7 +4456,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public int getMaxLagSize10Gbps() {
       return maxLagSize10Gbps_;
     }
-
     /**
      *
      *
@@ -4628,7 +4475,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4648,7 +4494,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4663,7 +4508,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasName() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -4686,7 +4530,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4709,7 +4552,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4731,7 +4573,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4749,7 +4590,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4774,7 +4614,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object peeringdbFacilityId_ = "";
-
     /**
      *
      *
@@ -4789,7 +4628,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasPeeringdbFacilityId() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -4812,7 +4650,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4835,7 +4672,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4857,7 +4693,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4875,7 +4710,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4939,7 +4773,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return permittedConnectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4958,7 +4791,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return permittedConnectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4978,7 +4810,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return permittedConnectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5005,7 +4836,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5030,7 +4860,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5056,7 +4885,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5083,7 +4911,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5107,7 +4934,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5132,7 +4958,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5158,7 +4983,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5180,7 +5004,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5202,7 +5025,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5218,7 +5040,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         getPermittedConnectionsBuilder(int index) {
       return getPermittedConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5238,7 +5059,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return permittedConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5260,7 +5080,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(permittedConnections_);
       }
     }
-
     /**
      *
      *
@@ -5279,7 +5098,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
               com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5299,7 +5117,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
               com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5339,7 +5156,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object remoteService_ = "";
-
     /**
      *
      *
@@ -5354,7 +5170,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasRemoteService() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -5377,7 +5192,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5400,7 +5214,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5422,7 +5235,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5440,7 +5252,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5465,7 +5276,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -5480,7 +5290,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -5503,7 +5312,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5526,7 +5334,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5548,7 +5355,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5566,7 +5372,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5591,7 +5396,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -5607,7 +5411,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public boolean hasStatus() {
       return ((bitField0_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -5631,7 +5434,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5655,7 +5457,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5678,7 +5479,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5697,7 +5497,6 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

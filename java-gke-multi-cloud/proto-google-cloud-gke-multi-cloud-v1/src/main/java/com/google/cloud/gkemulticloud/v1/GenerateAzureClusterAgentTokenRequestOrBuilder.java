@@ -38,7 +38,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The azureCluster.
    */
   java.lang.String getAzureCluster();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The subjectToken.
    */
   java.lang.String getSubjectToken();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The subjectTokenType.
    */
   java.lang.String getSubjectTokenType();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The nodePoolId.
    */
   java.lang.String getNodePoolId();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The grantType.
    */
   java.lang.String getGrantType();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The requestedTokenType.
    */
   java.lang.String getRequestedTokenType();
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public interface GenerateAzureClusterAgentTokenRequestOrBuilder
    * @return The options.
    */
   java.lang.String getOptions();
-
   /**
    *
    *

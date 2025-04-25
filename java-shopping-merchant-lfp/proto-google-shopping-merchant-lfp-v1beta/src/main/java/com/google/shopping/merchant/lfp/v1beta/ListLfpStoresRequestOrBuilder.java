@@ -39,7 +39,6 @@ public interface ListLfpStoresRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface ListLfpStoresRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.TerminalLocation)
     TerminalLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TerminalLocation.newBuilder() to construct.
   private TerminalLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int POINT_FIELD_NUMBER = 1;
   private com.google.type.LatLng point_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
   public boolean hasPoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
   public com.google.type.LatLng getPoint() {
     return point_ == null ? com.google.type.LatLng.getDefaultInstance() : point_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
 
   public static final int TERMINAL_POINT_ID_FIELD_NUMBER = 2;
   private com.google.maps.fleetengine.v1.TerminalPointId terminalPointId_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
   public boolean hasTerminalPointId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.fleetengine.v1.TerminalPointId.getDefaultInstance()
         : terminalPointId_;
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessPointId_ = "";
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tripId_ = "";
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
 
   public static final int TERMINAL_LOCATION_TYPE_FIELD_NUMBER = 5;
   private int terminalLocationType_ = 0;
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
   public int getTerminalLocationTypeValue() {
     return terminalLocationType_;
   }
-
   /**
    *
    *
@@ -544,7 +531,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -809,7 +795,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         pointBuilder_;
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     public boolean hasPoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return pointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -866,7 +849,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +868,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +914,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -966,7 +944,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return point_ == null ? com.google.type.LatLng.getDefaultInstance() : point_;
       }
     }
-
     /**
      *
      *
@@ -996,7 +973,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
             com.google.maps.fleetengine.v1.TerminalPointId.Builder,
             com.google.maps.fleetengine.v1.TerminalPointIdOrBuilder>
         terminalPointIdBuilder_;
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     public boolean hasTerminalPointId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return terminalPointIdBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1036,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1057,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1086,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1106,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1121,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTerminalPointIdFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1171,7 +1140,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
             : terminalPointId_;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1167,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object accessPointId_ = "";
-
     /**
      *
      *
@@ -1225,7 +1192,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1217,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1241,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1261,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1288,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object tripId_ = "";
-
     /**
      *
      *
@@ -1351,7 +1313,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1377,7 +1338,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1402,7 +1362,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1382,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1451,7 +1409,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private int terminalLocationType_ = 0;
-
     /**
      *
      *
@@ -1471,7 +1428,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
     public int getTerminalLocationTypeValue() {
       return terminalLocationType_;
     }
-
     /**
      *
      *
@@ -1494,7 +1450,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1471,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
           com.google.maps.fleetengine.v1.WaypointType.forNumber(terminalLocationType_);
       return result == null ? com.google.maps.fleetengine.v1.WaypointType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1542,7 +1496,6 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

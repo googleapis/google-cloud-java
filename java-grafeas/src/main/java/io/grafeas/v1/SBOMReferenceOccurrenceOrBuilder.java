@@ -37,7 +37,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * @return The payload.
    */
   io.grafeas.v1.SbomReferenceIntotoPayload getPayload();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * @return The payloadType.
    */
   java.lang.String getPayloadType();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code>
    */
   java.util.List<io.grafeas.v1.EnvelopeSignature> getSignaturesList();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code>
    */
   io.grafeas.v1.EnvelopeSignature getSignatures(int index);
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code>
    */
   int getSignaturesCount();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface SBOMReferenceOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1.EnvelopeSignatureOrBuilder> getSignaturesOrBuilderList();
-
   /**
    *
    *

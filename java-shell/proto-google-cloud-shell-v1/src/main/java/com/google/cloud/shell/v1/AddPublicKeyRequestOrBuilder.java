@@ -37,7 +37,6 @@ public interface AddPublicKeyRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface AddPublicKeyRequestOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *

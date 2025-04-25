@@ -39,7 +39,6 @@ public interface EntityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface EntityOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface EntityOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface EntityOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface EntityOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface EntityOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface EntityOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface EntityOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public interface EntityOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public interface EntityOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -298,7 +288,6 @@ public interface EntityOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public interface EntityOrBuilder
    * @return The dataPath.
    */
   java.lang.String getDataPath();
-
   /**
    *
    *
@@ -368,7 +356,6 @@ public interface EntityOrBuilder
    * @return The dataPathPattern.
    */
   java.lang.String getDataPathPattern();
-
   /**
    *
    *
@@ -396,7 +383,6 @@ public interface EntityOrBuilder
    * @return The catalogEntry.
    */
   java.lang.String getCatalogEntry();
-
   /**
    *
    *
@@ -424,7 +410,6 @@ public interface EntityOrBuilder
    * @return The enum numeric value on the wire for system.
    */
   int getSystemValue();
-
   /**
    *
    *
@@ -455,7 +440,6 @@ public interface EntityOrBuilder
    * @return Whether the format field is set.
    */
   boolean hasFormat();
-
   /**
    *
    *
@@ -471,7 +455,6 @@ public interface EntityOrBuilder
    * @return The format.
    */
   com.google.cloud.dataplex.v1.StorageFormat getFormat();
-
   /**
    *
    *
@@ -500,7 +483,6 @@ public interface EntityOrBuilder
    * @return Whether the compatibility field is set.
    */
   boolean hasCompatibility();
-
   /**
    *
    *
@@ -515,7 +497,6 @@ public interface EntityOrBuilder
    * @return The compatibility.
    */
   com.google.cloud.dataplex.v1.Entity.CompatibilityStatus getCompatibility();
-
   /**
    *
    *
@@ -544,7 +525,6 @@ public interface EntityOrBuilder
    * @return Whether the access field is set.
    */
   boolean hasAccess();
-
   /**
    *
    *
@@ -560,7 +540,6 @@ public interface EntityOrBuilder
    * @return The access.
    */
   com.google.cloud.dataplex.v1.StorageAccess getAccess();
-
   /**
    *
    *
@@ -588,7 +567,6 @@ public interface EntityOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -618,7 +596,6 @@ public interface EntityOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
-
   /**
    *
    *
@@ -634,7 +611,6 @@ public interface EntityOrBuilder
    * @return The schema.
    */
   com.google.cloud.dataplex.v1.Schema getSchema();
-
   /**
    *
    *

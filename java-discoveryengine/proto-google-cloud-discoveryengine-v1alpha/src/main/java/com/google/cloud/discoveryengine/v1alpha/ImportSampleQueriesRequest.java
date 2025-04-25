@@ -35,7 +35,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportSampleQueriesRequest)
     ImportSampleQueriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportSampleQueriesRequest.newBuilder() to construct.
   private ImportSampleQueriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
      * </code>
      */
     java.util.List<com.google.cloud.discoveryengine.v1alpha.SampleQuery> getSampleQueriesList();
-
     /**
      *
      *
@@ -100,7 +98,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
      * </code>
      */
     com.google.cloud.discoveryengine.v1alpha.SampleQuery getSampleQueries(int index);
-
     /**
      *
      *
@@ -115,7 +112,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
      * </code>
      */
     int getSampleQueriesCount();
-
     /**
      *
      *
@@ -131,7 +127,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
      */
     java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.SampleQueryOrBuilder>
         getSampleQueriesOrBuilderList();
-
     /**
      *
      *
@@ -148,7 +143,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     com.google.cloud.discoveryengine.v1alpha.SampleQueryOrBuilder getSampleQueriesOrBuilder(
         int index);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportSampleQueriesRequest.InlineSource)
       InlineSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InlineSource.newBuilder() to construct.
     private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -202,7 +195,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1alpha.SampleQuery> sampleQueries_;
-
     /**
      *
      *
@@ -221,7 +213,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         getSampleQueriesList() {
       return sampleQueries_;
     }
-
     /**
      *
      *
@@ -240,7 +231,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         getSampleQueriesOrBuilderList() {
       return sampleQueries_;
     }
-
     /**
      *
      *
@@ -258,7 +248,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public int getSampleQueriesCount() {
       return sampleQueries_.size();
     }
-
     /**
      *
      *
@@ -276,7 +265,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public com.google.cloud.discoveryengine.v1alpha.SampleQuery getSampleQueries(int index) {
       return sampleQueries_.get(index);
     }
-
     /**
      *
      *
@@ -468,7 +456,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
           return sampleQueriesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -780,7 +766,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
           return sampleQueriesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -801,7 +786,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
           return sampleQueriesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -829,7 +813,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -854,7 +837,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -881,7 +863,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -909,7 +890,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -934,7 +914,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -959,7 +938,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -985,7 +963,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1009,7 +986,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1033,7 +1009,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -1051,7 +1026,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
           int index) {
         return getSampleQueriesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1073,7 +1047,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
           return sampleQueriesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1095,7 +1068,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
           return java.util.Collections.unmodifiableList(sampleQueries_);
         }
       }
-
       /**
        *
        *
@@ -1114,7 +1086,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return getSampleQueriesFieldBuilder()
             .addBuilder(com.google.cloud.discoveryengine.v1alpha.SampleQuery.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1134,7 +1105,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             .addBuilder(
                 index, com.google.cloud.discoveryengine.v1alpha.SampleQuery.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1261,7 +1231,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1297,7 +1266,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   }
 
   public static final int INLINE_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1315,7 +1283,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   public boolean hasInlineSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -1339,7 +1306,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     return com.google.cloud.discoveryengine.v1alpha.ImportSampleQueriesRequest.InlineSource
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1363,7 +1329,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1379,7 +1344,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -1398,7 +1362,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1417,7 +1380,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1433,7 +1395,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   public boolean hasBigquerySource() {
     return sourceCase_ == 4;
   }
-
   /**
    *
    *
@@ -1452,7 +1413,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     }
     return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1475,7 +1435,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1507,7 +1466,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1542,7 +1500,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig errorConfig_;
-
   /**
    *
    *
@@ -1558,7 +1515,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1576,7 +1532,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         ? com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
-
   /**
    *
    *
@@ -1828,7 +1783,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2138,7 +2092,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             com.google.cloud.discoveryengine.v1alpha.ImportSampleQueriesRequest
                 .InlineSourceOrBuilder>
         inlineSourceBuilder_;
-
     /**
      *
      *
@@ -2156,7 +2109,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public boolean hasInlineSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -2188,7 +2140,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2214,7 +2165,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2238,7 +2188,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2279,7 +2228,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2307,7 +2255,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -2323,7 +2270,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         getInlineSourceBuilder() {
       return getInlineSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2349,7 +2295,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2397,7 +2342,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder,
             com.google.cloud.discoveryengine.v1alpha.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -2413,7 +2357,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -2439,7 +2382,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2462,7 +2404,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2483,7 +2424,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2516,7 +2456,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2542,7 +2481,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -2555,7 +2493,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2576,7 +2513,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2615,7 +2551,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             com.google.cloud.discoveryengine.v1alpha.BigQuerySource.Builder,
             com.google.cloud.discoveryengine.v1alpha.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
-
     /**
      *
      *
@@ -2631,7 +2566,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public boolean hasBigquerySource() {
       return sourceCase_ == 4;
     }
-
     /**
      *
      *
@@ -2657,7 +2591,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2681,7 +2614,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2702,7 +2634,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2737,7 +2668,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2693,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -2777,7 +2706,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2799,7 +2727,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2834,7 +2761,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2865,7 +2791,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2896,7 +2821,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2926,7 +2850,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2952,7 +2875,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2990,7 +2912,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
-
     /**
      *
      *
@@ -3005,7 +2926,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3026,7 +2946,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
         return errorConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3050,7 +2969,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3071,7 +2989,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3102,7 +3019,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -3122,7 +3038,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3138,7 +3053,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3158,7 +3072,6 @@ public final class ImportSampleQueriesRequest extends com.google.protobuf.Genera
             : errorConfig_;
       }
     }
-
     /**
      *
      *

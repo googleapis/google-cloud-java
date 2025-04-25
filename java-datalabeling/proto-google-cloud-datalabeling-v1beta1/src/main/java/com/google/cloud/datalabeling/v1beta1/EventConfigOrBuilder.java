@@ -39,7 +39,6 @@ public interface EventConfigOrBuilder
    * @return A list containing the annotationSpecSets.
    */
   java.util.List<java.lang.String> getAnnotationSpecSetsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface EventConfigOrBuilder
    * @return The count of annotationSpecSets.
    */
   int getAnnotationSpecSetsCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface EventConfigOrBuilder
    * @return The annotationSpecSets at the given index.
    */
   java.lang.String getAnnotationSpecSets(int index);
-
   /**
    *
    *

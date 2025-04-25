@@ -34,7 +34,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Position)
     PositionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Position.newBuilder() to construct.
   private Position(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINE_NUMBER_FIELD_NUMBER = 1;
   private int lineNumber_ = 0;
-
   /**
    * <code>int32 line_number = 1;</code>
    *
@@ -78,7 +76,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COLUMN_NUMBER_FIELD_NUMBER = 2;
   private int columnNumber_ = 0;
-
   /**
    * <code>int32 column_number = 2;</code>
    *
@@ -257,7 +254,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -455,7 +451,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int lineNumber_;
-
     /**
      * <code>int32 line_number = 1;</code>
      *
@@ -465,7 +460,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public int getLineNumber() {
       return lineNumber_;
     }
-
     /**
      * <code>int32 line_number = 1;</code>
      *
@@ -479,7 +473,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 line_number = 1;</code>
      *
@@ -493,7 +486,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int columnNumber_;
-
     /**
      * <code>int32 column_number = 2;</code>
      *
@@ -503,7 +495,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public int getColumnNumber() {
       return columnNumber_;
     }
-
     /**
      * <code>int32 column_number = 2;</code>
      *
@@ -517,7 +508,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 column_number = 2;</code>
      *

@@ -33,7 +33,6 @@ public final class BinauthzConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig)
     BinauthzConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BinauthzConfig.newBuilder() to construct.
   private BinauthzConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class BinauthzConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class BinauthzConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -427,7 +424,6 @@ public final class BinauthzConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -443,7 +439,6 @@ public final class BinauthzConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class BinauthzConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

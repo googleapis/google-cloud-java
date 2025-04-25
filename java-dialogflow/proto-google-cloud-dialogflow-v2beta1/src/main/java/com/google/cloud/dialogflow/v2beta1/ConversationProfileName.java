@@ -267,8 +267,7 @@ public class ConversationProfileName implements ResourceName {
     private Builder(ConversationProfileName conversationProfileName) {
       Preconditions.checkArgument(
           Objects.equals(conversationProfileName.pathTemplate, PROJECT_CONVERSATION_PROFILE),
-          "toBuilder is only supported when ConversationProfileName has the pattern of"
-              + " projects/{project}/conversationProfiles/{conversation_profile}");
+          "toBuilder is only supported when ConversationProfileName has the pattern of projects/{project}/conversationProfiles/{conversation_profile}");
       this.project = conversationProfileName.project;
       this.conversationProfile = conversationProfileName.conversationProfile;
     }

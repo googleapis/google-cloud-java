@@ -37,7 +37,6 @@ public interface OperationMetadataOrBuilder
    * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String> getResourceNamesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface OperationMetadataOrBuilder
    * @return The count of resourceNames.
    */
   int getResourceNamesCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface OperationMetadataOrBuilder
    * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.OperationMetadata.Step steps = 2;</code>
    */
   java.util.List<com.google.api.servicemanagement.v1.OperationMetadata.Step> getStepsList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.OperationMetadata.Step steps = 2;</code>
    */
   com.google.api.servicemanagement.v1.OperationMetadata.Step getSteps(int index);
-
   /**
    *
    *
@@ -114,7 +109,6 @@ public interface OperationMetadataOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.OperationMetadata.Step steps = 2;</code>
    */
   int getStepsCount();
-
   /**
    *
    *
@@ -126,7 +120,6 @@ public interface OperationMetadataOrBuilder
    */
   java.util.List<? extends com.google.api.servicemanagement.v1.OperationMetadata.StepOrBuilder>
       getStepsOrBuilderList();
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface OperationMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface OperationMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *

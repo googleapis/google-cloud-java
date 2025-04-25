@@ -40,7 +40,6 @@ public interface BatchRemoveCatalogAttributesResponseOrBuilder
    * @return A list containing the deletedCatalogAttributes.
    */
   java.util.List<java.lang.String> getDeletedCatalogAttributesList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface BatchRemoveCatalogAttributesResponseOrBuilder
    * @return The count of deletedCatalogAttributes.
    */
   int getDeletedCatalogAttributesCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BatchRemoveCatalogAttributesResponseOrBuilder
    * @return The deletedCatalogAttributes at the given index.
    */
   java.lang.String getDeletedCatalogAttributes(int index);
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface BatchRemoveCatalogAttributesResponseOrBuilder
    * @return A list containing the resetCatalogAttributes.
    */
   java.util.List<java.lang.String> getResetCatalogAttributesList();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface BatchRemoveCatalogAttributesResponseOrBuilder
    * @return The count of resetCatalogAttributes.
    */
   int getResetCatalogAttributesCount();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface BatchRemoveCatalogAttributesResponseOrBuilder
    * @return The resetCatalogAttributes at the given index.
    */
   java.lang.String getResetCatalogAttributes(int index);
-
   /**
    *
    *

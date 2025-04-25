@@ -34,7 +34,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata)
     PurgeUserEventsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeUserEventsMetadata.newBuilder() to construct.
   private PurgeUserEventsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operationName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -343,7 +337,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object operationName_ = "";
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -717,7 +703,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +790,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +804,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -842,7 +822,6 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
             : createTime_;
       }
     }
-
     /**
      *
      *

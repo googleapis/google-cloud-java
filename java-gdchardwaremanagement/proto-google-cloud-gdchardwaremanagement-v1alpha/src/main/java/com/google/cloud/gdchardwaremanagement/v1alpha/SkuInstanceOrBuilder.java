@@ -37,7 +37,6 @@ public interface SkuInstanceOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SkuInstanceOrBuilder
    * @return The enum numeric value on the wire for powerSupply.
    */
   int getPowerSupplyValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface SkuInstanceOrBuilder
    * @return The billingSku.
    */
   java.lang.String getBillingSku();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface SkuInstanceOrBuilder
    * @return The billingSkuPerVcpu.
    */
   java.lang.String getBillingSkuPerVcpu();
-
   /**
    *
    *

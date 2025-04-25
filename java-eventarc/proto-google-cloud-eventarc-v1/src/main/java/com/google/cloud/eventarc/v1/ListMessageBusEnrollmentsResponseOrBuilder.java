@@ -36,7 +36,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return A list containing the enrollments.
    */
   java.util.List<java.lang.String> getEnrollmentsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return The count of enrollments.
    */
   int getEnrollmentsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return The enrollments at the given index.
    */
   java.lang.String getEnrollments(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public interface ListMessageBusEnrollmentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

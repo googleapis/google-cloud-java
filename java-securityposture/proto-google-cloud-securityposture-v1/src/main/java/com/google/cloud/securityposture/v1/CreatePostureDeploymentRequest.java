@@ -33,7 +33,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.CreatePostureDeploymentRequest)
     CreatePostureDeploymentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePostureDeploymentRequest.newBuilder() to construct.
   private CreatePostureDeploymentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postureDeploymentId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
 
   public static final int POSTURE_DEPLOYMENT_FIELD_NUMBER = 3;
   private com.google.cloud.securityposture.v1.PostureDeployment postureDeployment_;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
   public boolean hasPostureDeployment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
         ? com.google.cloud.securityposture.v1.PostureDeployment.getDefaultInstance()
         : postureDeployment_;
   }
-
   /**
    *
    *
@@ -425,7 +417,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -742,7 +730,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +777,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object postureDeploymentId_ = "";
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -862,7 +845,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
             com.google.cloud.securityposture.v1.PostureDeployment.Builder,
             com.google.cloud.securityposture.v1.PostureDeploymentOrBuilder>
         postureDeploymentBuilder_;
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
     public boolean hasPostureDeployment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -952,7 +931,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
         return postureDeploymentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +978,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1009,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1030,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1047,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
       onChanged();
       return getPostureDeploymentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1095,7 +1068,6 @@ public final class CreatePostureDeploymentRequest extends com.google.protobuf.Ge
             : postureDeployment_;
       }
     }
-
     /**
      *
      *

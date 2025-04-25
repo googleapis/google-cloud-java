@@ -36,7 +36,6 @@ public interface PurgeUserEventsMetadataOrBuilder
    * @return The operationName.
    */
   java.lang.String getOperationName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PurgeUserEventsMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PurgeUserEventsMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

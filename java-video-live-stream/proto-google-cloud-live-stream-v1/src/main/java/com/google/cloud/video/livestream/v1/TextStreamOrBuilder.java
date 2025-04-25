@@ -41,7 +41,6 @@ public interface TextStreamOrBuilder
    * @return The codec.
    */
   java.lang.String getCodec();
-
   /**
    *
    *

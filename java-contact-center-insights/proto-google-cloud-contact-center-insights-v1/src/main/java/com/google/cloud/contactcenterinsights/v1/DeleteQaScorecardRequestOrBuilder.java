@@ -38,7 +38,6 @@ public interface DeleteQaScorecardRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

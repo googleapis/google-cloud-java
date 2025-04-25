@@ -36,7 +36,6 @@ public interface MachineDetailsOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MachineDetailsOrBuilder
    * @return The machineName.
    */
   java.lang.String getMachineName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface MachineDetailsOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface MachineDetailsOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface MachineDetailsOrBuilder
    * @return The enum numeric value on the wire for powerState.
    */
   int getPowerStateValue();
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public interface MachineDetailsOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface MachineDetailsOrBuilder
    * @return The architecture.
    */
   com.google.cloud.migrationcenter.v1.MachineArchitectureDetails getArchitecture();
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public interface MachineDetailsOrBuilder
    * @return Whether the guestOs field is set.
    */
   boolean hasGuestOs();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface MachineDetailsOrBuilder
    * @return The guestOs.
    */
   com.google.cloud.migrationcenter.v1.GuestOsDetails getGuestOs();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface MachineDetailsOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface MachineDetailsOrBuilder
    * @return The network.
    */
   com.google.cloud.migrationcenter.v1.MachineNetworkDetails getNetwork();
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public interface MachineDetailsOrBuilder
    * @return Whether the disks field is set.
    */
   boolean hasDisks();
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public interface MachineDetailsOrBuilder
    * @return The disks.
    */
   com.google.cloud.migrationcenter.v1.MachineDiskDetails getDisks();
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public interface MachineDetailsOrBuilder
    * @return Whether the platform field is set.
    */
   boolean hasPlatform();
-
   /**
    *
    *
@@ -339,7 +325,6 @@ public interface MachineDetailsOrBuilder
    * @return The platform.
    */
   com.google.cloud.migrationcenter.v1.PlatformDetails getPlatform();
-
   /**
    *
    *

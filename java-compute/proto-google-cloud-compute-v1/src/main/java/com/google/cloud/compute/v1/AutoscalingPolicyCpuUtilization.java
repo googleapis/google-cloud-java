@@ -33,7 +33,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AutoscalingPolicyCpuUtilization)
     AutoscalingPolicyCpuUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoscalingPolicyCpuUtilization.newBuilder() to construct.
   private AutoscalingPolicyCpuUtilization(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -118,7 +117,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * <code>UNDEFINED_PREDICTIVE_METHOD = 0;</code>
      */
     public static final int UNDEFINED_PREDICTIVE_METHOD_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * <code>NONE = 2402104;</code>
      */
     public static final int NONE_VALUE = 2402104;
-
     /**
      *
      *
@@ -233,7 +230,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object predictiveMethod_ = "";
-
   /**
    *
    *
@@ -250,7 +246,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
   public boolean hasPredictiveMethod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +270,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
 
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
   private double utilizationTarget_ = 0D;
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
   public boolean hasUtilizationTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -521,7 +513,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -723,7 +714,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object predictiveMethod_ = "";
-
     /**
      *
      *
@@ -739,7 +729,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public boolean hasPredictiveMethod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -763,7 +752,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +775,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +797,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +815,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     }
 
     private double utilizationTarget_;
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public boolean hasUtilizationTarget() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public double getUtilizationTarget() {
       return utilizationTarget_;
     }
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface GetTensorFlowVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

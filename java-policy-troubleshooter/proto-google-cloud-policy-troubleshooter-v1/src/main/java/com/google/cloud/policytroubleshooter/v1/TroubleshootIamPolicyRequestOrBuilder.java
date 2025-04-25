@@ -37,7 +37,6 @@ public interface TroubleshootIamPolicyRequestOrBuilder
    * @return Whether the accessTuple field is set.
    */
   boolean hasAccessTuple();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TroubleshootIamPolicyRequestOrBuilder
    * @return The accessTuple.
    */
   google.cloud.policytroubleshooter.v1.Explanations.AccessTuple getAccessTuple();
-
   /**
    *
    *

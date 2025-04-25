@@ -36,7 +36,6 @@ public interface PrivateEndpointsOrBuilder
    * @return The predictHttpUri.
    */
   java.lang.String getPredictHttpUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PrivateEndpointsOrBuilder
    * @return The explainHttpUri.
    */
   java.lang.String getExplainHttpUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface PrivateEndpointsOrBuilder
    * @return The healthHttpUri.
    */
   java.lang.String getHealthHttpUri();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface PrivateEndpointsOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface KubernetesSecretOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface KubernetesSecretOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
-
   /**
    *
    *

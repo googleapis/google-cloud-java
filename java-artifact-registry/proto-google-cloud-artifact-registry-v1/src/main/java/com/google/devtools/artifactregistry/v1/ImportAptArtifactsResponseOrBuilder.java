@@ -34,7 +34,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.AptArtifact apt_artifacts = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.AptArtifact> getAptArtifactsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.AptArtifact apt_artifacts = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.AptArtifact getAptArtifacts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.AptArtifact apt_artifacts = 1;</code>
    */
   int getAptArtifactsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.AptArtifactOrBuilder>
       getAptArtifactsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    */
   java.util.List<com.google.devtools.artifactregistry.v1.ImportAptArtifactsErrorInfo>
       getErrorsList();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    * </code>
    */
   com.google.devtools.artifactregistry.v1.ImportAptArtifactsErrorInfo getErrors(int index);
-
   /**
    *
    *
@@ -116,7 +110,6 @@ public interface ImportAptArtifactsResponseOrBuilder
    * </code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -130,7 +123,6 @@ public interface ImportAptArtifactsResponseOrBuilder
   java.util.List<
           ? extends com.google.devtools.artifactregistry.v1.ImportAptArtifactsErrorInfoOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *

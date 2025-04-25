@@ -39,7 +39,6 @@ public interface ExtractPostureRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ExtractPostureRequestOrBuilder
    * @return The postureId.
    */
   java.lang.String getPostureId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ExtractPostureRequestOrBuilder
    * @return The workload.
    */
   java.lang.String getWorkload();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface CreatePrivateCloudRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface CreatePrivateCloudRequestOrBuilder
    * @return The privateCloudId.
    */
   java.lang.String getPrivateCloudId();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface CreatePrivateCloudRequestOrBuilder
    * @return Whether the privateCloud field is set.
    */
   boolean hasPrivateCloud();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface CreatePrivateCloudRequestOrBuilder
    * @return The privateCloud.
    */
   com.google.cloud.vmwareengine.v1.PrivateCloud getPrivateCloud();
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public interface CreatePrivateCloudRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

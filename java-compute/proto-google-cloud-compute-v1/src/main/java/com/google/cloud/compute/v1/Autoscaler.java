@@ -33,7 +33,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Autoscaler)
     AutoscalerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Autoscaler.newBuilder() to construct.
   private Autoscaler(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -158,7 +157,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -169,7 +167,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 314733318;</code>
      */
     public static final int ACTIVE_VALUE = 314733318;
-
     /**
      *
      *
@@ -180,7 +177,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 528602024;</code>
      */
     public static final int DELETING_VALUE = 528602024;
-
     /**
      *
      *
@@ -191,7 +187,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 66247144;</code>
      */
     public static final int ERROR_VALUE = 66247144;
-
     /**
      *
      *
@@ -293,7 +288,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUTOSCALING_POLICY_FIELD_NUMBER = 221950041;
   private com.google.cloud.compute.v1.AutoscalingPolicy autoscalingPolicy_;
-
   /**
    *
    *
@@ -310,7 +304,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutoscalingPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -329,7 +322,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.AutoscalingPolicy.getDefaultInstance()
         : autoscalingPolicy_;
   }
-
   /**
    *
    *
@@ -351,7 +343,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -367,7 +358,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -391,7 +381,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +409,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -436,7 +424,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -460,7 +447,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -487,7 +473,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -503,7 +488,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -524,7 +508,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -540,7 +523,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -564,7 +546,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -593,7 +574,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -609,7 +589,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -633,7 +612,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -660,7 +638,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECOMMENDED_SIZE_FIELD_NUMBER = 257915749;
   private int recommendedSize_ = 0;
-
   /**
    *
    *
@@ -676,7 +653,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRecommendedSize() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -697,7 +673,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -713,7 +688,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -737,7 +711,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -797,7 +770,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public int getScalingScheduleStatusCount() {
     return internalGetScalingScheduleStatus().getMap().size();
   }
-
   /**
    *
    *
@@ -816,7 +788,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetScalingScheduleStatus().getMap().containsKey(key);
   }
-
   /** Use {@link #getScalingScheduleStatusMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -824,7 +795,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       getScalingScheduleStatus() {
     return getScalingScheduleStatusMap();
   }
-
   /**
    *
    *
@@ -841,7 +811,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       getScalingScheduleStatusMap() {
     return internalGetScalingScheduleStatus().getMap();
   }
-
   /**
    *
    *
@@ -866,7 +835,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         internalGetScalingScheduleStatus().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -896,7 +864,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -912,7 +879,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -936,7 +902,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -965,7 +930,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -982,7 +946,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1007,7 +970,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1037,7 +999,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> statusDetails_;
-
   /**
    *
    *
@@ -1053,7 +1014,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       getStatusDetailsList() {
     return statusDetails_;
   }
-
   /**
    *
    *
@@ -1069,7 +1029,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       getStatusDetailsOrBuilderList() {
     return statusDetails_;
   }
-
   /**
    *
    *
@@ -1084,7 +1043,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public int getStatusDetailsCount() {
     return statusDetails_.size();
   }
-
   /**
    *
    *
@@ -1099,7 +1057,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.AutoscalerStatusDetails getStatusDetails(int index) {
     return statusDetails_.get(index);
   }
-
   /**
    *
    *
@@ -1120,7 +1077,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
-
   /**
    *
    *
@@ -1136,7 +1092,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1160,7 +1115,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1189,7 +1143,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -1205,7 +1158,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public boolean hasZone() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1229,7 +1181,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1612,7 +1563,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2097,7 +2047,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.AutoscalingPolicy.Builder,
             com.google.cloud.compute.v1.AutoscalingPolicyOrBuilder>
         autoscalingPolicyBuilder_;
-
     /**
      *
      *
@@ -2113,7 +2062,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutoscalingPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2135,7 +2083,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return autoscalingPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2159,7 +2106,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2181,7 +2127,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2211,7 +2156,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2232,7 +2176,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2191,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAutoscalingPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2268,7 +2210,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
             : autoscalingPolicy_;
       }
     }
-
     /**
      *
      *
@@ -2297,7 +2238,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2312,7 +2252,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2335,7 +2274,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2358,7 +2296,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2380,7 +2317,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2398,7 +2334,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2423,7 +2358,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2438,7 +2372,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2461,7 +2394,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2484,7 +2416,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2506,7 +2437,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2524,7 +2454,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2549,7 +2478,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2565,7 +2493,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2581,7 +2508,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2601,7 +2527,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2621,7 +2546,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -2636,7 +2560,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2659,7 +2582,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2682,7 +2604,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2704,7 +2625,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2722,7 +2642,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2747,7 +2666,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2762,7 +2680,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2785,7 +2702,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2808,7 +2724,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2830,7 +2745,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2848,7 +2762,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2873,7 +2786,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int recommendedSize_;
-
     /**
      *
      *
@@ -2889,7 +2801,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRecommendedSize() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2905,7 +2816,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public int getRecommendedSize() {
       return recommendedSize_;
     }
-
     /**
      *
      *
@@ -2925,7 +2835,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2945,7 +2854,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -2960,7 +2868,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2983,7 +2890,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3006,7 +2912,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3028,7 +2933,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3046,7 +2950,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3090,8 +2993,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ScalingScheduleStatusDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ScalingScheduleStatusConverter scalingScheduleStatusConverter =
         new ScalingScheduleStatusConverter();
@@ -3133,7 +3035,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public int getScalingScheduleStatusCount() {
       return internalGetScalingScheduleStatus().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -3152,7 +3053,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetScalingScheduleStatus().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getScalingScheduleStatusMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3160,7 +3060,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         getScalingScheduleStatus() {
       return getScalingScheduleStatusMap();
     }
-
     /**
      *
      *
@@ -3177,7 +3076,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         getScalingScheduleStatusMap() {
       return internalGetScalingScheduleStatus().getImmutableMap();
     }
-
     /**
      *
      *
@@ -3204,7 +3102,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           ? scalingScheduleStatusConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -3235,7 +3132,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScalingScheduleStatus().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3254,7 +3150,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScalingScheduleStatus().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
@@ -3262,7 +3157,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return internalGetMutableScalingScheduleStatus().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -3286,7 +3180,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -3310,7 +3203,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -3339,7 +3231,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -3354,7 +3245,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3377,7 +3267,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3400,7 +3289,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3422,7 +3310,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3440,7 +3327,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3465,7 +3351,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -3481,7 +3366,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3505,7 +3389,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3529,7 +3412,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3552,7 +3434,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3571,7 +3452,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3632,7 +3512,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return statusDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3650,7 +3529,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return statusDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3668,7 +3546,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return statusDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3693,7 +3570,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3715,7 +3591,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3739,7 +3614,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3764,7 +3638,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3786,7 +3659,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3808,7 +3680,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3830,7 +3701,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3851,7 +3721,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3872,7 +3741,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3887,7 +3755,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getStatusDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3906,7 +3773,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return statusDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3925,7 +3791,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(statusDetails_);
       }
     }
-
     /**
      *
      *
@@ -3940,7 +3805,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return getStatusDetailsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.AutoscalerStatusDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3957,7 +3821,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.AutoscalerStatusDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3994,7 +3857,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object target_ = "";
-
     /**
      *
      *
@@ -4009,7 +3871,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTarget() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4032,7 +3893,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4055,7 +3915,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4077,7 +3936,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4095,7 +3953,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4120,7 +3977,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -4135,7 +3991,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public boolean hasZone() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4158,7 +4013,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4181,7 +4035,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4203,7 +4056,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4221,7 +4073,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

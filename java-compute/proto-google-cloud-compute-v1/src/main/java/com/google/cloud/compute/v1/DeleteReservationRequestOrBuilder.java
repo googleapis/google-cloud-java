@@ -38,7 +38,6 @@ public interface DeleteReservationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeleteReservationRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DeleteReservationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DeleteReservationRequestOrBuilder
    * @return The reservation.
    */
   java.lang.String getReservation();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface DeleteReservationRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

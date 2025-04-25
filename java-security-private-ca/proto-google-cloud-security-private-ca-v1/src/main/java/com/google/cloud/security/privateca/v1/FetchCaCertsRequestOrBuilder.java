@@ -40,7 +40,6 @@ public interface FetchCaCertsRequestOrBuilder
    * @return The caPool.
    */
   java.lang.String getCaPool();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface FetchCaCertsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

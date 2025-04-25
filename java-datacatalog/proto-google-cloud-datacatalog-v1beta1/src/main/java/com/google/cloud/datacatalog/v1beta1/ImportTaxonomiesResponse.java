@@ -34,7 +34,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse)
     ImportTaxonomiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportTaxonomiesResponse.newBuilder() to construct.
   private ImportTaxonomiesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy> taxonomies_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy> getTaxonomiesList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       getTaxonomiesOrBuilderList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
   public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -570,7 +563,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
         return taxonomiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
         return taxonomiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
         return taxonomiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +741,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +779,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +791,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
     public com.google.cloud.datacatalog.v1beta1.Taxonomy.Builder getTaxonomiesBuilder(int index) {
       return getTaxonomiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -828,7 +808,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
         return taxonomiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -846,7 +825,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(taxonomies_);
       }
     }
-
     /**
      *
      *
@@ -860,7 +838,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       return getTaxonomiesFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -874,7 +851,6 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
       return getTaxonomiesFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance());
     }
-
     /**
      *
      *

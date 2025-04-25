@@ -40,7 +40,6 @@ public interface DeleteStoredInfoTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

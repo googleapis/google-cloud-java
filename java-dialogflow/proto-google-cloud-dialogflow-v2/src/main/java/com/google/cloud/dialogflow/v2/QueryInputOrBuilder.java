@@ -36,7 +36,6 @@ public interface QueryInputOrBuilder
    * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface QueryInputOrBuilder
    * @return The audioConfig.
    */
   com.google.cloud.dialogflow.v2.InputAudioConfig getAudioConfig();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface QueryInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface QueryInputOrBuilder
    * @return The text.
    */
   com.google.cloud.dialogflow.v2.TextInput getText();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface QueryInputOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface QueryInputOrBuilder
    * @return The event.
    */
   com.google.cloud.dialogflow.v2.EventInput getEvent();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface TargetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TargetOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TargetOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface TargetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface TargetOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -161,11 +156,9 @@ public interface TargetOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface TargetOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface TargetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface TargetOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -256,11 +246,9 @@ public interface TargetOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public interface TargetOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -306,7 +293,6 @@ public interface TargetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -354,7 +340,6 @@ public interface TargetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public interface TargetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -394,7 +378,6 @@ public interface TargetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -408,7 +391,6 @@ public interface TargetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -434,7 +416,6 @@ public interface TargetOrBuilder
    * @return Whether the gke field is set.
    */
   boolean hasGke();
-
   /**
    *
    *
@@ -448,7 +429,6 @@ public interface TargetOrBuilder
    * @return The gke.
    */
   com.google.cloud.deploy.v1.GkeCluster getGke();
-
   /**
    *
    *
@@ -475,7 +455,6 @@ public interface TargetOrBuilder
    * @return Whether the anthosCluster field is set.
    */
   boolean hasAnthosCluster();
-
   /**
    *
    *
@@ -490,7 +469,6 @@ public interface TargetOrBuilder
    * @return The anthosCluster.
    */
   com.google.cloud.deploy.v1.AnthosCluster getAnthosCluster();
-
   /**
    *
    *
@@ -518,7 +496,6 @@ public interface TargetOrBuilder
    * @return Whether the run field is set.
    */
   boolean hasRun();
-
   /**
    *
    *
@@ -533,7 +510,6 @@ public interface TargetOrBuilder
    * @return The run.
    */
   com.google.cloud.deploy.v1.CloudRunLocation getRun();
-
   /**
    *
    *
@@ -561,7 +537,6 @@ public interface TargetOrBuilder
    * @return Whether the multiTarget field is set.
    */
   boolean hasMultiTarget();
-
   /**
    *
    *
@@ -576,7 +551,6 @@ public interface TargetOrBuilder
    * @return The multiTarget.
    */
   com.google.cloud.deploy.v1.MultiTarget getMultiTarget();
-
   /**
    *
    *
@@ -604,7 +578,6 @@ public interface TargetOrBuilder
    * @return Whether the customTarget field is set.
    */
   boolean hasCustomTarget();
-
   /**
    *
    *
@@ -619,7 +592,6 @@ public interface TargetOrBuilder
    * @return The customTarget.
    */
   com.google.cloud.deploy.v1.CustomTarget getCustomTarget();
-
   /**
    *
    *
@@ -652,7 +624,6 @@ public interface TargetOrBuilder
    * </code>
    */
   int getAssociatedEntitiesCount();
-
   /**
    *
    *
@@ -672,12 +643,10 @@ public interface TargetOrBuilder
    * </code>
    */
   boolean containsAssociatedEntities(java.lang.String key);
-
   /** Use {@link #getAssociatedEntitiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
       getAssociatedEntities();
-
   /**
    *
    *
@@ -698,7 +667,6 @@ public interface TargetOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
       getAssociatedEntitiesMap();
-
   /**
    *
    *
@@ -722,7 +690,6 @@ public interface TargetOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.deploy.v1.AssociatedEntities defaultValue);
-
   /**
    *
    *
@@ -757,7 +724,6 @@ public interface TargetOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -791,7 +757,6 @@ public interface TargetOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.ExecutionConfig> getExecutionConfigsList();
-
   /**
    *
    *
@@ -810,7 +775,6 @@ public interface TargetOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.ExecutionConfig getExecutionConfigs(int index);
-
   /**
    *
    *
@@ -829,7 +793,6 @@ public interface TargetOrBuilder
    * </code>
    */
   int getExecutionConfigsCount();
-
   /**
    *
    *
@@ -849,7 +812,6 @@ public interface TargetOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.ExecutionConfigOrBuilder>
       getExecutionConfigsOrBuilderList();
-
   /**
    *
    *
@@ -881,7 +843,6 @@ public interface TargetOrBuilder
    * </code>
    */
   int getDeployParametersCount();
-
   /**
    *
    *
@@ -894,11 +855,9 @@ public interface TargetOrBuilder
    * </code>
    */
   boolean containsDeployParameters(java.lang.String key);
-
   /** Use {@link #getDeployParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDeployParameters();
-
   /**
    *
    *
@@ -911,7 +870,6 @@ public interface TargetOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap();
-
   /**
    *
    *
@@ -928,7 +886,6 @@ public interface TargetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

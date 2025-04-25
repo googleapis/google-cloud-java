@@ -38,7 +38,6 @@ public interface CancelDlpJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

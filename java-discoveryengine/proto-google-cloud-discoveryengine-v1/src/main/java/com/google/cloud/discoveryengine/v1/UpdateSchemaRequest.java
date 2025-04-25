@@ -35,7 +35,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.UpdateSchemaRequest)
     UpdateSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSchemaRequest.newBuilder() to construct.
   private UpdateSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int SCHEMA_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1.Schema schema_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSchema() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()
         : schema_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -319,7 +314,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -538,7 +532,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1.Schema.Builder,
             com.google.cloud.discoveryengine.v1.SchemaOrBuilder>
         schemaBuilder_;
-
     /**
      *
      *
@@ -555,7 +548,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSchema() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
         return schemaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
             : schema_;
       }
     }
-
     /**
      *
      *
@@ -745,7 +730,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -763,7 +747,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

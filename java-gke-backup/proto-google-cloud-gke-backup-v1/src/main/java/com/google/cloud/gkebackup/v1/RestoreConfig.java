@@ -33,7 +33,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig)
     RestoreConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestoreConfig.newBuilder() to construct.
   private RestoreConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTORE_VOLUME_DATA_FROM_BACKUP = 1;</code>
      */
     public static final int RESTORE_VOLUME_DATA_FROM_BACKUP_VALUE = 1;
-
     /**
      *
      *
@@ -163,7 +160,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>REUSE_VOLUME_HANDLE_FROM_BACKUP = 2;</code>
      */
     public static final int REUSE_VOLUME_HANDLE_FROM_BACKUP_VALUE = 2;
-
     /**
      *
      *
@@ -325,7 +321,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -336,7 +331,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>USE_EXISTING_VERSION = 1;</code>
      */
     public static final int USE_EXISTING_VERSION_VALUE = 1;
-
     /**
      *
      *
@@ -555,7 +549,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETE_AND_RESTORE = 1;</code>
      */
     public static final int DELETE_AND_RESTORE_VALUE = 1;
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>FAIL_ON_CONFLICT = 2;</code>
      */
     public static final int FAIL_ON_CONFLICT_VALUE = 2;
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MERGE_SKIP_ON_CONFLICT = 3;</code>
      */
     public static final int MERGE_SKIP_ON_CONFLICT_VALUE = 3;
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MERGE_REPLACE_VOLUME_ON_CONFLICT = 4;</code>
      */
     public static final int MERGE_REPLACE_VOLUME_ON_CONFLICT_VALUE = 4;
-
     /**
      *
      *
@@ -748,7 +737,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
-     * Note: use empty string for core API group.
+     * Note: use empty string for core API group
      * </pre>
      *
      * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -756,14 +745,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceGroup.
      */
     java.lang.String getResourceGroup();
-
     /**
      *
      *
      * <pre>
      * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
-     * Note: use empty string for core API group.
+     * Note: use empty string for core API group
      * </pre>
      *
      * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -786,7 +774,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceKind.
      */
     java.lang.String getResourceKind();
-
     /**
      *
      *
@@ -802,7 +789,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getResourceKindBytes();
   }
-
   /**
    *
    *
@@ -819,7 +805,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.GroupKind)
       GroupKindOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GroupKind.newBuilder() to construct.
     private GroupKind(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -855,14 +840,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceGroup_ = "";
-
     /**
      *
      *
      * <pre>
      * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
-     * Note: use empty string for core API group.
+     * Note: use empty string for core API group
      * </pre>
      *
      * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -881,14 +865,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
      * <pre>
      * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
-     * Note: use empty string for core API group.
+     * Note: use empty string for core API group
      * </pre>
      *
      * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -912,7 +895,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceKind_ = "";
-
     /**
      *
      *
@@ -938,7 +920,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1116,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1340,14 +1320,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object resourceGroup_ = "";
-
       /**
        *
        *
        * <pre>
        * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
-       * Note: use empty string for core API group.
+       * Note: use empty string for core API group
        * </pre>
        *
        * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1365,14 +1344,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
        * <pre>
        * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
-       * Note: use empty string for core API group.
+       * Note: use empty string for core API group
        * </pre>
        *
        * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1390,14 +1368,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
        * <pre>
        * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
-       * Note: use empty string for core API group.
+       * Note: use empty string for core API group
        * </pre>
        *
        * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1414,14 +1391,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
        * <pre>
        * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
-       * Note: use empty string for core API group.
+       * Note: use empty string for core API group
        * </pre>
        *
        * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1434,14 +1410,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
        * <pre>
        * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
-       * Note: use empty string for core API group.
+       * Note: use empty string for core API group
        * </pre>
        *
        * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1461,7 +1436,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceKind_ = "";
-
       /**
        *
        *
@@ -1486,7 +1460,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1511,7 +1484,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1535,7 +1507,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1555,7 +1526,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1665,7 +1635,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
         getSelectedGroupKindsList();
-
     /**
      *
      *
@@ -1680,7 +1649,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSelectedGroupKinds(int index);
-
     /**
      *
      *
@@ -1695,7 +1663,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getSelectedGroupKindsCount();
-
     /**
      *
      *
@@ -1711,7 +1678,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
         getSelectedGroupKindsOrBuilderList();
-
     /**
      *
      *
@@ -1744,7 +1710,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
         getExcludedGroupKindsList();
-
     /**
      *
      *
@@ -1760,7 +1725,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(int index);
-
     /**
      *
      *
@@ -1776,7 +1740,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getExcludedGroupKindsCount();
-
     /**
      *
      *
@@ -1793,7 +1756,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
         getExcludedGroupKindsOrBuilderList();
-
     /**
      *
      *
@@ -1840,7 +1802,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getNoGroupKinds();
   }
-
   /**
    *
    *
@@ -1850,16 +1811,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    * Some group kinds are not reasonable choices for a restore, and will cause
    * an error if selected here. Any scope selection that would restore
    * "all valid" resources automatically excludes these group kinds.
-   * - Node
-   * - ComponentStatus
    * - gkebackup.gke.io/BackupJob
    * - gkebackup.gke.io/RestoreJob
    * - metrics.k8s.io/NodeMetrics
    * - migration.k8s.io/StorageState
    * - migration.k8s.io/StorageVersionMigration
+   * - Node
    * - snapshot.storage.k8s.io/VolumeSnapshotContent
    * - storage.k8s.io/CSINode
-   * - storage.k8s.io/VolumeAttachment
    *
    * Some group kinds are driven by restore configuration elsewhere,
    * and will cause an error if selected here.
@@ -1875,7 +1834,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope)
       ClusterResourceRestoreScopeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ClusterResourceRestoreScope.newBuilder() to construct.
     private ClusterResourceRestoreScope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1913,7 +1871,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
         selectedGroupKinds_;
-
     /**
      *
      *
@@ -1932,7 +1889,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getSelectedGroupKindsList() {
       return selectedGroupKinds_;
     }
-
     /**
      *
      *
@@ -1951,7 +1907,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getSelectedGroupKindsOrBuilderList() {
       return selectedGroupKinds_;
     }
-
     /**
      *
      *
@@ -1969,7 +1924,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSelectedGroupKindsCount() {
       return selectedGroupKinds_.size();
     }
-
     /**
      *
      *
@@ -1987,7 +1941,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSelectedGroupKinds(int index) {
       return selectedGroupKinds_.get(index);
     }
-
     /**
      *
      *
@@ -2012,7 +1965,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
         excludedGroupKinds_;
-
     /**
      *
      *
@@ -2032,7 +1984,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getExcludedGroupKindsList() {
       return excludedGroupKinds_;
     }
-
     /**
      *
      *
@@ -2052,7 +2003,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getExcludedGroupKindsOrBuilderList() {
       return excludedGroupKinds_;
     }
-
     /**
      *
      *
@@ -2071,7 +2021,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getExcludedGroupKindsCount() {
       return excludedGroupKinds_.size();
     }
-
     /**
      *
      *
@@ -2090,7 +2039,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(int index) {
       return excludedGroupKinds_.get(index);
     }
-
     /**
      *
      *
@@ -2113,7 +2061,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALL_GROUP_KINDS_FIELD_NUMBER = 3;
     private boolean allGroupKinds_ = false;
-
     /**
      *
      *
@@ -2133,7 +2080,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NO_GROUP_KINDS_FIELD_NUMBER = 4;
     private boolean noGroupKinds_ = false;
-
     /**
      *
      *
@@ -2348,7 +2294,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2358,16 +2303,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * Some group kinds are not reasonable choices for a restore, and will cause
      * an error if selected here. Any scope selection that would restore
      * "all valid" resources automatically excludes these group kinds.
-     * - Node
-     * - ComponentStatus
      * - gkebackup.gke.io/BackupJob
      * - gkebackup.gke.io/RestoreJob
      * - metrics.k8s.io/NodeMetrics
      * - migration.k8s.io/StorageState
      * - migration.k8s.io/StorageVersionMigration
+     * - Node
      * - snapshot.storage.k8s.io/VolumeSnapshotContent
      * - storage.k8s.io/CSINode
-     * - storage.k8s.io/VolumeAttachment
      *
      * Some group kinds are driven by restore configuration elsewhere,
      * and will cause an error if selected here.
@@ -2734,7 +2677,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return selectedGroupKindsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2755,7 +2697,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return selectedGroupKindsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2777,7 +2718,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return selectedGroupKindsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2805,7 +2745,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2831,7 +2770,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2859,7 +2797,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2887,7 +2824,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2912,7 +2848,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2938,7 +2873,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2964,7 +2898,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2988,7 +2921,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3012,7 +2944,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3030,7 +2961,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           getSelectedGroupKindsBuilder(int index) {
         return getSelectedGroupKindsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3052,7 +2982,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return selectedGroupKindsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3075,7 +3004,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(selectedGroupKinds_);
         }
       }
-
       /**
        *
        *
@@ -3094,7 +3022,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return getSelectedGroupKindsFieldBuilder()
             .addBuilder(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3114,7 +3041,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3193,7 +3119,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return excludedGroupKindsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3215,7 +3140,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return excludedGroupKindsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3238,7 +3162,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return excludedGroupKindsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3267,7 +3190,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3294,7 +3216,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3323,7 +3244,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3352,7 +3272,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3378,7 +3297,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3405,7 +3323,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3432,7 +3349,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3457,7 +3373,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3482,7 +3397,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3501,7 +3415,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           getExcludedGroupKindsBuilder(int index) {
         return getExcludedGroupKindsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3524,7 +3437,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return excludedGroupKindsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3548,7 +3460,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(excludedGroupKinds_);
         }
       }
-
       /**
        *
        *
@@ -3568,7 +3479,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return getExcludedGroupKindsFieldBuilder()
             .addBuilder(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3589,7 +3499,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3630,7 +3539,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean allGroupKinds_;
-
       /**
        *
        *
@@ -3647,7 +3555,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getAllGroupKinds() {
         return allGroupKinds_;
       }
-
       /**
        *
        *
@@ -3668,7 +3575,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3689,7 +3595,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean noGroupKinds_;
-
       /**
        *
        *
@@ -3707,7 +3612,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getNoGroupKinds() {
         return noGroupKinds_;
       }
-
       /**
        *
        *
@@ -3729,7 +3633,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3841,7 +3744,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the targetNamespaces.
      */
     java.util.List<java.lang.String> getTargetNamespacesList();
-
     /**
      *
      *
@@ -3860,7 +3762,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The count of targetNamespaces.
      */
     int getTargetNamespacesCount();
-
     /**
      *
      *
@@ -3880,7 +3781,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The targetNamespaces at the given index.
      */
     java.lang.String getTargetNamespaces(int index);
-
     /**
      *
      *
@@ -3916,7 +3816,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> getTargetGroupKindsList();
-
     /**
      *
      *
@@ -3932,7 +3831,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getTargetGroupKinds(int index);
-
     /**
      *
      *
@@ -3948,7 +3846,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getTargetGroupKindsCount();
-
     /**
      *
      *
@@ -3965,7 +3862,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
         getTargetGroupKindsOrBuilderList();
-
     /**
      *
      *
@@ -4001,7 +3897,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The targetJsonPath.
      */
     java.lang.String getTargetJsonPath();
-
     /**
      *
      *
@@ -4041,7 +3936,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The originalValuePattern.
      */
     java.lang.String getOriginalValuePattern();
-
     /**
      *
      *
@@ -4078,7 +3972,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The newValue.
      */
     java.lang.String getNewValue();
-
     /**
      *
      *
@@ -4095,7 +3988,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNewValueBytes();
   }
-
   /**
    *
    *
@@ -4112,7 +4004,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule)
       SubstitutionRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SubstitutionRule.newBuilder() to construct.
     private SubstitutionRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4152,7 +4043,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList targetNamespaces_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -4173,7 +4063,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getTargetNamespacesList() {
       return targetNamespaces_;
     }
-
     /**
      *
      *
@@ -4194,7 +4083,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTargetNamespacesCount() {
       return targetNamespaces_.size();
     }
-
     /**
      *
      *
@@ -4216,7 +4104,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTargetNamespaces(int index) {
       return targetNamespaces_.get(index);
     }
-
     /**
      *
      *
@@ -4243,7 +4130,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> targetGroupKinds_;
-
     /**
      *
      *
@@ -4263,7 +4149,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getTargetGroupKindsList() {
       return targetGroupKinds_;
     }
-
     /**
      *
      *
@@ -4283,7 +4168,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getTargetGroupKindsOrBuilderList() {
       return targetGroupKinds_;
     }
-
     /**
      *
      *
@@ -4302,7 +4186,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTargetGroupKindsCount() {
       return targetGroupKinds_.size();
     }
-
     /**
      *
      *
@@ -4321,7 +4204,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getTargetGroupKinds(int index) {
       return targetGroupKinds_.get(index);
     }
-
     /**
      *
      *
@@ -4346,7 +4228,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object targetJsonPath_ = "";
-
     /**
      *
      *
@@ -4376,7 +4257,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4411,7 +4291,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object originalValuePattern_ = "";
-
     /**
      *
      *
@@ -4443,7 +4322,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4480,7 +4358,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object newValue_ = "";
-
     /**
      *
      *
@@ -4507,7 +4384,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4742,7 +4618,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5057,7 +4932,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -5080,7 +4954,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         targetNamespaces_.makeImmutable();
         return targetNamespaces_;
       }
-
       /**
        *
        *
@@ -5102,7 +4975,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public int getTargetNamespacesCount() {
         return targetNamespaces_.size();
       }
-
       /**
        *
        *
@@ -5125,7 +4997,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getTargetNamespaces(int index) {
         return targetNamespaces_.get(index);
       }
-
       /**
        *
        *
@@ -5148,7 +5019,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getTargetNamespacesBytes(int index) {
         return targetNamespaces_.getByteString(index);
       }
-
       /**
        *
        *
@@ -5179,7 +5049,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5209,7 +5078,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5236,7 +5104,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5262,7 +5129,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5334,7 +5200,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return targetGroupKindsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -5356,7 +5221,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return targetGroupKindsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -5378,7 +5242,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return targetGroupKindsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -5407,7 +5270,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5434,7 +5296,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5463,7 +5324,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5492,7 +5352,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5518,7 +5377,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5545,7 +5403,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5572,7 +5429,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5597,7 +5453,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5622,7 +5477,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5641,7 +5495,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           getTargetGroupKindsBuilder(int index) {
         return getTargetGroupKindsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -5664,7 +5517,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return targetGroupKindsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -5688,7 +5540,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(targetGroupKinds_);
         }
       }
-
       /**
        *
        *
@@ -5708,7 +5559,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return getTargetGroupKindsFieldBuilder()
             .addBuilder(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5729,7 +5579,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5770,7 +5619,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object targetJsonPath_ = "";
-
       /**
        *
        *
@@ -5799,7 +5647,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5828,7 +5675,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5856,7 +5702,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5880,7 +5725,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5911,7 +5755,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object originalValuePattern_ = "";
-
       /**
        *
        *
@@ -5942,7 +5785,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5973,7 +5815,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6003,7 +5844,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6029,7 +5869,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6062,7 +5901,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object newValue_ = "";
-
       /**
        *
        *
@@ -6088,7 +5926,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6114,7 +5951,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6139,7 +5975,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6160,7 +5995,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6273,7 +6107,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
-
     /**
      *
      *
@@ -6302,7 +6135,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The fromPath.
      */
     java.lang.String getFromPath();
-
     /**
      *
      *
@@ -6330,7 +6162,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The path.
      */
     java.lang.String getPath();
-
     /**
      *
      *
@@ -6358,7 +6189,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
-
     /**
      *
      *
@@ -6373,7 +6203,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getValueBytes();
   }
-
   /**
    *
    *
@@ -6389,7 +6218,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)
       TransformationRuleActionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TransformationRuleAction.newBuilder() to construct.
     private TransformationRuleAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6528,7 +6356,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>OP_UNSPECIFIED = 0;</code>
        */
       public static final int OP_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -6539,7 +6366,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>REMOVE = 1;</code>
        */
       public static final int REMOVE_VALUE = 1;
-
       /**
        *
        *
@@ -6551,7 +6377,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>MOVE = 2;</code>
        */
       public static final int MOVE_VALUE = 2;
-
       /**
        *
        *
@@ -6563,7 +6388,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>COPY = 3;</code>
        */
       public static final int COPY_VALUE = 3;
-
       /**
        *
        *
@@ -6581,7 +6405,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>ADD = 4;</code>
        */
       public static final int ADD_VALUE = 4;
-
       /**
        *
        *
@@ -6593,7 +6416,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>TEST = 5;</code>
        */
       public static final int TEST_VALUE = 5;
-
       /**
        *
        *
@@ -6702,7 +6524,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OP_FIELD_NUMBER = 1;
     private int op_ = 0;
-
     /**
      *
      *
@@ -6720,7 +6541,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getOpValue() {
       return op_;
     }
-
     /**
      *
      *
@@ -6747,7 +6567,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fromPath_ = "";
-
     /**
      *
      *
@@ -6772,7 +6591,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -6802,7 +6620,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -6827,7 +6644,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -6857,7 +6673,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -6882,7 +6697,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -7101,7 +6915,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7341,7 +7154,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int op_ = 0;
-
       /**
        *
        *
@@ -7359,7 +7171,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public int getOpValue() {
         return op_;
       }
-
       /**
        *
        *
@@ -7380,7 +7191,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7402,7 +7212,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7427,7 +7236,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7449,7 +7257,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object fromPath_ = "";
-
       /**
        *
        *
@@ -7473,7 +7280,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7497,7 +7303,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7520,7 +7325,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7539,7 +7343,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7565,7 +7368,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object path_ = "";
-
       /**
        *
        *
@@ -7589,7 +7391,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7613,7 +7414,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7636,7 +7436,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7655,7 +7454,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7681,7 +7479,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -7705,7 +7502,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7729,7 +7525,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7752,7 +7547,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7771,7 +7565,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7884,7 +7677,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the namespaces.
      */
     java.util.List<java.lang.String> getNamespacesList();
-
     /**
      *
      *
@@ -7901,7 +7693,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The count of namespaces.
      */
     int getNamespacesCount();
-
     /**
      *
      *
@@ -7919,7 +7710,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The namespaces at the given index.
      */
     java.lang.String getNamespaces(int index);
-
     /**
      *
      *
@@ -7953,7 +7743,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> getGroupKindsList();
-
     /**
      *
      *
@@ -7969,7 +7758,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index);
-
     /**
      *
      *
@@ -7985,7 +7773,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getGroupKindsCount();
-
     /**
      *
      *
@@ -8002,7 +7789,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
         getGroupKindsOrBuilderList();
-
     /**
      *
      *
@@ -8037,7 +7823,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The jsonPath.
      */
     java.lang.String getJsonPath();
-
     /**
      *
      *
@@ -8056,7 +7841,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getJsonPathBytes();
   }
-
   /**
    *
    *
@@ -8073,7 +7857,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)
       ResourceFilterOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ResourceFilter.newBuilder() to construct.
     private ResourceFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8111,7 +7894,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList namespaces_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -8130,7 +7912,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getNamespacesList() {
       return namespaces_;
     }
-
     /**
      *
      *
@@ -8149,7 +7930,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getNamespacesCount() {
       return namespaces_.size();
     }
-
     /**
      *
      *
@@ -8169,7 +7949,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNamespaces(int index) {
       return namespaces_.get(index);
     }
-
     /**
      *
      *
@@ -8194,7 +7973,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> groupKinds_;
-
     /**
      *
      *
@@ -8214,7 +7992,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getGroupKindsList() {
       return groupKinds_;
     }
-
     /**
      *
      *
@@ -8234,7 +8011,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getGroupKindsOrBuilderList() {
       return groupKinds_;
     }
-
     /**
      *
      *
@@ -8253,7 +8029,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getGroupKindsCount() {
       return groupKinds_.size();
     }
-
     /**
      *
      *
@@ -8272,7 +8047,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index) {
       return groupKinds_.get(index);
     }
-
     /**
      *
      *
@@ -8297,7 +8071,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object jsonPath_ = "";
-
     /**
      *
      *
@@ -8326,7 +8099,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8544,7 +8316,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -8829,7 +8600,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -8849,7 +8619,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         namespaces_.makeImmutable();
         return namespaces_;
       }
-
       /**
        *
        *
@@ -8868,7 +8637,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public int getNamespacesCount() {
         return namespaces_.size();
       }
-
       /**
        *
        *
@@ -8888,7 +8656,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getNamespaces(int index) {
         return namespaces_.get(index);
       }
-
       /**
        *
        *
@@ -8908,7 +8675,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getNamespacesBytes(int index) {
         return namespaces_.getByteString(index);
       }
-
       /**
        *
        *
@@ -8936,7 +8702,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8963,7 +8728,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8987,7 +8751,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9010,7 +8773,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9079,7 +8841,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -9101,7 +8862,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -9123,7 +8883,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -9152,7 +8911,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9179,7 +8937,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9207,7 +8964,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9236,7 +8992,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9262,7 +9017,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9289,7 +9043,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9316,7 +9069,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9341,7 +9093,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9366,7 +9117,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -9385,7 +9135,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getGroupKindsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -9408,7 +9157,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -9432,7 +9180,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(groupKinds_);
         }
       }
-
       /**
        *
        *
@@ -9451,7 +9198,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return getGroupKindsFieldBuilder()
             .addBuilder(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -9472,7 +9218,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -9510,7 +9255,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object jsonPath_ = "";
-
       /**
        *
        *
@@ -9538,7 +9282,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9566,7 +9309,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9593,7 +9335,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9616,7 +9357,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9731,7 +9471,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
         getFieldActionsList();
-
     /**
      *
      *
@@ -9747,7 +9486,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction getFieldActions(int index);
-
     /**
      *
      *
@@ -9763,7 +9501,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getFieldActionsCount();
-
     /**
      *
      *
@@ -9781,7 +9518,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>
         getFieldActionsOrBuilderList();
-
     /**
      *
      *
@@ -9816,7 +9552,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceFilter field is set.
      */
     boolean hasResourceFilter();
-
     /**
      *
      *
@@ -9834,7 +9569,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceFilter.
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter getResourceFilter();
-
     /**
      *
      *
@@ -9865,7 +9599,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -9880,7 +9613,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDescriptionBytes();
   }
-
   /**
    *
    *
@@ -9897,7 +9629,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)
       TransformationRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TransformationRule.newBuilder() to construct.
     private TransformationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9935,7 +9666,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
         fieldActions_;
-
     /**
      *
      *
@@ -9955,7 +9685,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getFieldActionsList() {
       return fieldActions_;
     }
-
     /**
      *
      *
@@ -9976,7 +9705,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getFieldActionsOrBuilderList() {
       return fieldActions_;
     }
-
     /**
      *
      *
@@ -9995,7 +9723,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getFieldActionsCount() {
       return fieldActions_.size();
     }
-
     /**
      *
      *
@@ -10015,7 +9742,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return fieldActions_.get(index);
     }
-
     /**
      *
      *
@@ -10038,7 +9764,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESOURCE_FILTER_FIELD_NUMBER = 2;
     private com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resourceFilter_;
-
     /**
      *
      *
@@ -10059,7 +9784,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -10082,7 +9806,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance()
           : resourceFilter_;
     }
-
     /**
      *
      *
@@ -10109,7 +9832,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -10134,7 +9856,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10346,7 +10067,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -10675,7 +10395,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return fieldActionsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -10697,7 +10416,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return fieldActionsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -10720,7 +10438,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return fieldActionsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -10749,7 +10466,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10777,7 +10493,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10806,7 +10521,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10835,7 +10549,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10862,7 +10575,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10890,7 +10602,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10918,7 +10629,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10943,7 +10653,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10968,7 +10677,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -10987,7 +10695,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           getFieldActionsBuilder(int index) {
         return getFieldActionsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -11010,7 +10717,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return fieldActionsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -11035,7 +10741,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(fieldActions_);
         }
       }
-
       /**
        *
        *
@@ -11057,7 +10762,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -11080,7 +10784,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -11127,7 +10830,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder,
               com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder>
           resourceFilterBuilder_;
-
       /**
        *
        *
@@ -11147,7 +10849,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasResourceFilter() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -11173,7 +10874,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return resourceFilterBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -11202,7 +10902,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11228,7 +10927,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11264,7 +10962,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11289,7 +10986,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11310,7 +11006,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getResourceFilterFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -11335,7 +11030,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
               : resourceFilter_;
         }
       }
-
       /**
        *
        *
@@ -11368,7 +11062,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -11392,7 +11085,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11416,7 +11108,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11439,7 +11130,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11458,7 +11148,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11570,7 +11259,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for policy.
      */
     int getPolicyValue();
-
     /**
      *
      *
@@ -11600,7 +11288,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the volumeType field is set.
      */
     boolean hasVolumeType();
-
     /**
      *
      *
@@ -11614,7 +11301,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for volumeType.
      */
     int getVolumeTypeValue();
-
     /**
      *
      *
@@ -11632,7 +11318,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.ScopeCase
         getScopeCase();
   }
-
   /**
    *
    *
@@ -11648,7 +11333,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)
       VolumeDataRestorePolicyBindingOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VolumeDataRestorePolicyBinding.newBuilder() to construct.
     private VolumeDataRestorePolicyBinding(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -11697,7 +11381,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private ScopeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -11730,7 +11413,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int POLICY_FIELD_NUMBER = 1;
     private int policy_ = 0;
-
     /**
      *
      *
@@ -11749,7 +11431,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPolicyValue() {
       return policy_;
     }
-
     /**
      *
      *
@@ -11774,7 +11455,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VOLUME_TYPE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -11790,7 +11470,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVolumeType() {
       return scopeCase_ == 2;
     }
-
     /**
      *
      *
@@ -11809,7 +11488,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -12031,7 +11709,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -12269,7 +11946,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int policy_ = 0;
-
       /**
        *
        *
@@ -12288,7 +11964,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public int getPolicyValue() {
         return policy_;
       }
-
       /**
        *
        *
@@ -12310,7 +11985,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12333,7 +12007,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -12359,7 +12032,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12397,7 +12069,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasVolumeType() {
         return scopeCase_ == 2;
       }
-
       /**
        *
        *
@@ -12417,7 +12088,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
-
       /**
        *
        *
@@ -12437,7 +12107,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12462,7 +12131,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.VOLUME_TYPE_UNSPECIFIED;
       }
-
       /**
        *
        *
@@ -12485,7 +12153,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12595,7 +12262,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
         getGroupKindDependenciesList();
-
     /**
      *
      *
@@ -12611,7 +12277,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
         getGroupKindDependencies(int index);
-
     /**
      *
      *
@@ -12626,7 +12291,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getGroupKindDependenciesCount();
-
     /**
      *
      *
@@ -12645,7 +12309,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
                     .GroupKindDependencyOrBuilder>
         getGroupKindDependenciesOrBuilderList();
-
     /**
      *
      *
@@ -12662,7 +12325,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder
         getGroupKindDependenciesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -12678,7 +12340,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)
       RestoreOrderOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RestoreOrder.newBuilder() to construct.
     private RestoreOrder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12729,7 +12390,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the satisfying field is set.
        */
       boolean hasSatisfying();
-
       /**
        *
        *
@@ -12745,7 +12405,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The satisfying.
        */
       com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSatisfying();
-
       /**
        *
        *
@@ -12775,7 +12434,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the requiring field is set.
        */
       boolean hasRequiring();
-
       /**
        *
        *
@@ -12791,7 +12449,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The requiring.
        */
       com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getRequiring();
-
       /**
        *
        *
@@ -12806,7 +12463,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getRequiringOrBuilder();
     }
-
     /**
      *
      *
@@ -12822,7 +12478,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
         GroupKindDependencyOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use GroupKindDependency.newBuilder() to construct.
       private GroupKindDependency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -12855,7 +12510,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int SATISFYING_FIELD_NUMBER = 1;
       private com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying_;
-
       /**
        *
        *
@@ -12874,7 +12528,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSatisfying() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -12895,7 +12548,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
             : satisfying_;
       }
-
       /**
        *
        *
@@ -12918,7 +12570,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
       public static final int REQUIRING_FIELD_NUMBER = 2;
       private com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring_;
-
       /**
        *
        *
@@ -12937,7 +12588,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRequiring() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -12958,7 +12608,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
             : requiring_;
       }
-
       /**
        *
        *
@@ -13169,7 +12818,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -13413,7 +13061,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
                 com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
             satisfyingBuilder_;
-
         /**
          *
          *
@@ -13431,7 +13078,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         public boolean hasSatisfying() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -13455,7 +13101,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             return satisfyingBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -13481,7 +13126,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -13505,7 +13149,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -13538,7 +13181,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -13561,7 +13203,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -13580,7 +13221,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getSatisfyingFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -13603,7 +13243,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 : satisfying_;
           }
         }
-
         /**
          *
          *
@@ -13639,7 +13278,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
                 com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
             requiringBuilder_;
-
         /**
          *
          *
@@ -13657,7 +13295,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRequiring() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -13681,7 +13318,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             return requiringBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -13707,7 +13343,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -13731,7 +13366,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -13763,7 +13397,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -13786,7 +13419,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -13804,7 +13436,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getRequiringFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -13827,7 +13458,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 : requiring_;
           }
         }
-
         /**
          *
          *
@@ -13932,7 +13562,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
         groupKindDependencies_;
-
     /**
      *
      *
@@ -13952,7 +13581,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getGroupKindDependenciesList() {
       return groupKindDependencies_;
     }
-
     /**
      *
      *
@@ -13974,7 +13602,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getGroupKindDependenciesOrBuilderList() {
       return groupKindDependencies_;
     }
-
     /**
      *
      *
@@ -13992,7 +13619,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getGroupKindDependenciesCount() {
       return groupKindDependencies_.size();
     }
-
     /**
      *
      *
@@ -14011,7 +13637,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getGroupKindDependencies(int index) {
       return groupKindDependencies_.get(index);
     }
-
     /**
      *
      *
@@ -14197,7 +13822,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -14475,7 +14099,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindDependenciesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -14496,7 +14119,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindDependenciesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -14518,7 +14140,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindDependenciesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -14547,7 +14168,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14574,7 +14194,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14602,7 +14221,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14631,7 +14249,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14657,7 +14274,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14684,7 +14300,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14712,7 +14327,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14736,7 +14350,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14760,7 +14373,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14778,7 +14390,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           getGroupKindDependenciesBuilder(int index) {
         return getGroupKindDependenciesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -14800,7 +14411,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return groupKindDependenciesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -14825,7 +14435,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(groupKindDependencies_);
         }
       }
-
       /**
        *
        *
@@ -14846,7 +14455,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -14868,7 +14476,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -14995,7 +14602,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     private NamespacedResourceRestoreScopeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -15036,7 +14642,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VOLUME_DATA_RESTORE_POLICY_FIELD_NUMBER = 1;
   private int volumeDataRestorePolicy_ = 0;
-
   /**
    *
    *
@@ -15056,7 +14661,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public int getVolumeDataRestorePolicyValue() {
     return volumeDataRestorePolicy_;
   }
-
   /**
    *
    *
@@ -15085,7 +14689,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLUSTER_RESOURCE_CONFLICT_POLICY_FIELD_NUMBER = 2;
   private int clusterResourceConflictPolicy_ = 0;
-
   /**
    *
    *
@@ -15108,7 +14711,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public int getClusterResourceConflictPolicyValue() {
     return clusterResourceConflictPolicy_;
   }
-
   /**
    *
    *
@@ -15140,7 +14742,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAMESPACED_RESOURCE_RESTORE_MODE_FIELD_NUMBER = 3;
   private int namespacedResourceRestoreMode_ = 0;
-
   /**
    *
    *
@@ -15161,7 +14762,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public int getNamespacedResourceRestoreModeValue() {
     return namespacedResourceRestoreMode_;
   }
-
   /**
    *
    *
@@ -15192,7 +14792,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int CLUSTER_RESOURCE_RESTORE_SCOPE_FIELD_NUMBER = 4;
   private com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope
       clusterResourceRestoreScope_;
-
   /**
    *
    *
@@ -15211,7 +14810,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClusterResourceRestoreScope() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -15234,7 +14832,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : clusterResourceRestoreScope_;
   }
-
   /**
    *
    *
@@ -15257,7 +14854,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALL_NAMESPACES_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -15274,7 +14870,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllNamespaces() {
     return namespacedResourceRestoreScopeCase_ == 5;
   }
-
   /**
    *
    *
@@ -15296,7 +14891,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELECTED_NAMESPACES_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -15313,7 +14907,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelectedNamespaces() {
     return namespacedResourceRestoreScopeCase_ == 6;
   }
-
   /**
    *
    *
@@ -15333,7 +14926,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -15353,7 +14945,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELECTED_APPLICATIONS_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -15371,7 +14962,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelectedApplications() {
     return namespacedResourceRestoreScopeCase_ == 7;
   }
-
   /**
    *
    *
@@ -15392,7 +14982,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -15413,7 +15002,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NO_NAMESPACES_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -15430,7 +15018,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNoNamespaces() {
     return namespacedResourceRestoreScopeCase_ == 9;
   }
-
   /**
    *
    *
@@ -15452,7 +15039,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUDED_NAMESPACES_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -15469,7 +15055,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExcludedNamespaces() {
     return namespacedResourceRestoreScopeCase_ == 10;
   }
-
   /**
    *
    *
@@ -15489,7 +15074,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -15513,7 +15097,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule>
       substitutionRules_;
-
   /**
    *
    *
@@ -15534,7 +15117,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getSubstitutionRulesList() {
     return substitutionRules_;
   }
-
   /**
    *
    *
@@ -15556,7 +15138,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getSubstitutionRulesOrBuilderList() {
     return substitutionRules_;
   }
-
   /**
    *
    *
@@ -15576,7 +15157,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public int getSubstitutionRulesCount() {
     return substitutionRules_.size();
   }
-
   /**
    *
    *
@@ -15597,7 +15177,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return substitutionRules_.get(index);
   }
-
   /**
    *
    *
@@ -15624,7 +15203,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
       transformationRules_;
-
   /**
    *
    *
@@ -15645,7 +15223,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getTransformationRulesList() {
     return transformationRules_;
   }
-
   /**
    *
    *
@@ -15667,7 +15244,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getTransformationRulesOrBuilderList() {
     return transformationRules_;
   }
-
   /**
    *
    *
@@ -15687,7 +15263,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public int getTransformationRulesCount() {
     return transformationRules_.size();
   }
-
   /**
    *
    *
@@ -15708,7 +15283,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return transformationRules_.get(index);
   }
-
   /**
    *
    *
@@ -15735,7 +15309,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
       volumeDataRestorePolicyBindings_;
-
   /**
    *
    *
@@ -15754,7 +15327,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getVolumeDataRestorePolicyBindingsList() {
     return volumeDataRestorePolicyBindings_;
   }
-
   /**
    *
    *
@@ -15775,7 +15347,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getVolumeDataRestorePolicyBindingsOrBuilderList() {
     return volumeDataRestorePolicyBindings_;
   }
-
   /**
    *
    *
@@ -15793,7 +15364,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public int getVolumeDataRestorePolicyBindingsCount() {
     return volumeDataRestorePolicyBindings_.size();
   }
-
   /**
    *
    *
@@ -15812,7 +15382,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       getVolumeDataRestorePolicyBindings(int index) {
     return volumeDataRestorePolicyBindings_.get(index);
   }
-
   /**
    *
    *
@@ -15834,7 +15403,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESTORE_ORDER_FIELD_NUMBER = 13;
   private com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restoreOrder_;
-
   /**
    *
    *
@@ -15852,7 +15420,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRestoreOrder() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -15872,7 +15439,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance()
         : restoreOrder_;
   }
-
   /**
    *
    *
@@ -16246,7 +15812,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -16792,7 +16357,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int volumeDataRestorePolicy_ = 0;
-
     /**
      *
      *
@@ -16812,7 +16376,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getVolumeDataRestorePolicyValue() {
       return volumeDataRestorePolicy_;
     }
-
     /**
      *
      *
@@ -16835,7 +16398,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16861,7 +16423,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -16888,7 +16449,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16912,7 +16472,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int clusterResourceConflictPolicy_ = 0;
-
     /**
      *
      *
@@ -16935,7 +16494,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getClusterResourceConflictPolicyValue() {
       return clusterResourceConflictPolicy_;
     }
-
     /**
      *
      *
@@ -16961,7 +16519,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16990,7 +16547,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -17020,7 +16576,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17047,7 +16602,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int namespacedResourceRestoreMode_ = 0;
-
     /**
      *
      *
@@ -17068,7 +16622,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public int getNamespacedResourceRestoreModeValue() {
       return namespacedResourceRestoreMode_;
     }
-
     /**
      *
      *
@@ -17092,7 +16645,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17119,7 +16671,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -17147,7 +16698,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17178,7 +16728,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope.Builder,
             com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScopeOrBuilder>
         clusterResourceRestoreScopeBuilder_;
-
     /**
      *
      *
@@ -17196,7 +16745,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClusterResourceRestoreScope() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -17222,7 +16770,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return clusterResourceRestoreScopeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17249,7 +16796,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17274,7 +16820,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17308,7 +16853,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17331,7 +16875,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17350,7 +16893,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getClusterResourceRestoreScopeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17374,7 +16916,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             : clusterResourceRestoreScope_;
       }
     }
-
     /**
      *
      *
@@ -17419,7 +16960,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllNamespaces() {
       return namespacedResourceRestoreScopeCase_ == 5;
     }
-
     /**
      *
      *
@@ -17438,7 +16978,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -17459,7 +16998,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17486,7 +17024,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkebackup.v1.Namespaces.Builder,
             com.google.cloud.gkebackup.v1.NamespacesOrBuilder>
         selectedNamespacesBuilder_;
-
     /**
      *
      *
@@ -17503,7 +17040,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelectedNamespaces() {
       return namespacedResourceRestoreScopeCase_ == 6;
     }
-
     /**
      *
      *
@@ -17530,7 +17066,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -17554,7 +17089,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -17576,7 +17110,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -17611,7 +17144,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -17638,7 +17170,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17652,7 +17183,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.Namespaces.Builder getSelectedNamespacesBuilder() {
       return getSelectedNamespacesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17674,7 +17204,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -17715,7 +17244,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkebackup.v1.NamespacedNames.Builder,
             com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder>
         selectedApplicationsBuilder_;
-
     /**
      *
      *
@@ -17733,7 +17261,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelectedApplications() {
       return namespacedResourceRestoreScopeCase_ == 7;
     }
-
     /**
      *
      *
@@ -17761,7 +17288,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -17786,7 +17312,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -17809,7 +17334,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -17846,7 +17370,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -17874,7 +17397,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17889,7 +17411,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.NamespacedNames.Builder getSelectedApplicationsBuilder() {
       return getSelectedApplicationsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17913,7 +17434,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -17965,7 +17485,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNoNamespaces() {
       return namespacedResourceRestoreScopeCase_ == 9;
     }
-
     /**
      *
      *
@@ -17984,7 +17503,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -18005,7 +17523,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18032,7 +17549,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkebackup.v1.Namespaces.Builder,
             com.google.cloud.gkebackup.v1.NamespacesOrBuilder>
         excludedNamespacesBuilder_;
-
     /**
      *
      *
@@ -18049,7 +17565,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExcludedNamespaces() {
       return namespacedResourceRestoreScopeCase_ == 10;
     }
-
     /**
      *
      *
@@ -18076,7 +17591,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -18100,7 +17614,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -18122,7 +17635,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -18157,7 +17669,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       namespacedResourceRestoreScopeCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -18184,7 +17695,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18198,7 +17708,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.Namespaces.Builder getExcludedNamespacesBuilder() {
       return getExcludedNamespacesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18220,7 +17729,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -18297,7 +17805,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return substitutionRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -18320,7 +17827,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return substitutionRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -18344,7 +17850,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return substitutionRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -18374,7 +17879,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18402,7 +17906,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18432,7 +17935,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18462,7 +17964,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18489,7 +17990,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18517,7 +18017,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18545,7 +18044,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18571,7 +18069,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18597,7 +18094,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18617,7 +18113,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getSubstitutionRulesBuilder(int index) {
       return getSubstitutionRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -18641,7 +18136,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return substitutionRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -18666,7 +18160,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(substitutionRules_);
       }
     }
-
     /**
      *
      *
@@ -18688,7 +18181,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18711,7 +18203,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18793,7 +18284,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return transformationRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -18816,7 +18306,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return transformationRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -18840,7 +18329,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return transformationRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -18870,7 +18358,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18898,7 +18385,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18928,7 +18414,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18958,7 +18443,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18985,7 +18469,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19013,7 +18496,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19041,7 +18523,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19067,7 +18548,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19093,7 +18573,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19113,7 +18592,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getTransformationRulesBuilder(int index) {
       return getTransformationRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -19137,7 +18615,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return transformationRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -19162,7 +18639,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(transformationRules_);
       }
     }
-
     /**
      *
      *
@@ -19184,7 +18660,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -19207,7 +18682,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -19290,7 +18764,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return volumeDataRestorePolicyBindingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -19311,7 +18784,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return volumeDataRestorePolicyBindingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -19333,7 +18805,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return volumeDataRestorePolicyBindingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -19362,7 +18833,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19389,7 +18859,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19417,7 +18886,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19446,7 +18914,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19472,7 +18939,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19499,7 +18965,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19528,7 +18993,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19552,7 +19016,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19576,7 +19039,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19594,7 +19056,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getVolumeDataRestorePolicyBindingsBuilder(int index) {
       return getVolumeDataRestorePolicyBindingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -19616,7 +19077,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return volumeDataRestorePolicyBindingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -19640,7 +19100,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(volumeDataRestorePolicyBindings_);
       }
     }
-
     /**
      *
      *
@@ -19661,7 +19120,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -19683,7 +19141,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -19730,7 +19187,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder,
             com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder>
         restoreOrderBuilder_;
-
     /**
      *
      *
@@ -19747,7 +19203,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRestoreOrder() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -19770,7 +19225,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return restoreOrderBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -19795,7 +19249,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19818,7 +19271,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19850,7 +19302,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19872,7 +19323,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19890,7 +19340,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRestoreOrderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -19912,7 +19361,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             : restoreOrder_;
       }
     }
-
     /**
      *
      *

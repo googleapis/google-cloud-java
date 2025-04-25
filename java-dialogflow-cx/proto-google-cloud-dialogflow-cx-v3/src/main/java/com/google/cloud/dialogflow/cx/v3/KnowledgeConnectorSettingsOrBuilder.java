@@ -55,7 +55,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * @return Whether the triggerFulfillment field is set.
    */
   boolean hasTriggerFulfillment();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * @return The triggerFulfillment.
    */
   com.google.cloud.dialogflow.cx.v3.Fulfillment getTriggerFulfillment();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * @return Whether the targetPage field is set.
    */
   boolean hasTargetPage();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * @return The targetPage.
    */
   java.lang.String getTargetPage();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * @return Whether the targetFlow field is set.
    */
   boolean hasTargetFlow();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * @return The targetFlow.
    */
   java.lang.String getTargetFlow();
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.DataStoreConnection>
       getDataStoreConnectionsList();
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnection getDataStoreConnections(int index);
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    * </code>
    */
   int getDataStoreConnectionsCount();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface KnowledgeConnectorSettingsOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.DataStoreConnectionOrBuilder>
       getDataStoreConnectionsOrBuilderList();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateBatchPredictionJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateBatchPredictionJobRequestOrBuilder
    * @return Whether the batchPredictionJob field is set.
    */
   boolean hasBatchPredictionJob();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateBatchPredictionJobRequestOrBuilder
    * @return The batchPredictionJob.
    */
   com.google.cloud.aiplatform.v1beta1.BatchPredictionJob getBatchPredictionJob();
-
   /**
    *
    *

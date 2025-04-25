@@ -34,7 +34,6 @@ public final class PairwiseSummarizationQualityInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PairwiseSummarizationQualityInstance)
     PairwiseSummarizationQualityInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PairwiseSummarizationQualityInstance.newBuilder() to construct.
   private PairwiseSummarizationQualityInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class PairwiseSummarizationQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class PairwiseSummarizationQualityInstance
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class PairwiseSummarizationQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class PairwiseSummarizationQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baselinePrediction_ = "";
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class PairwiseSummarizationQualityInstance
   public boolean hasBaselinePrediction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class PairwiseSummarizationQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class PairwiseSummarizationQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class PairwiseSummarizationQualityInstance
   public boolean hasReference() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class PairwiseSummarizationQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public final class PairwiseSummarizationQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public final class PairwiseSummarizationQualityInstance
   public boolean hasContext() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -322,7 +310,6 @@ public final class PairwiseSummarizationQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class PairwiseSummarizationQualityInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public final class PairwiseSummarizationQualityInstance
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -391,7 +376,6 @@ public final class PairwiseSummarizationQualityInstance
       return s;
     }
   }
-
   /**
    *
    *
@@ -638,7 +622,6 @@ public final class PairwiseSummarizationQualityInstance
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -897,7 +880,6 @@ public final class PairwiseSummarizationQualityInstance
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class PairwiseSummarizationQualityInstance
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class PairwiseSummarizationQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class PairwiseSummarizationQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class PairwiseSummarizationQualityInstance
     }
 
     private java.lang.Object baselinePrediction_ = "";
-
     /**
      *
      *
@@ -1039,7 +1015,6 @@ public final class PairwiseSummarizationQualityInstance
     public boolean hasBaselinePrediction() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1063,7 +1038,6 @@ public final class PairwiseSummarizationQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1061,6 @@ public final class PairwiseSummarizationQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1083,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1126,6 @@ public final class PairwiseSummarizationQualityInstance
     }
 
     private java.lang.Object reference_ = "";
-
     /**
      *
      *
@@ -1170,7 +1140,6 @@ public final class PairwiseSummarizationQualityInstance
     public boolean hasReference() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1193,7 +1162,6 @@ public final class PairwiseSummarizationQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1184,6 @@ public final class PairwiseSummarizationQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1205,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1222,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1246,6 @@ public final class PairwiseSummarizationQualityInstance
     }
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -1296,7 +1260,6 @@ public final class PairwiseSummarizationQualityInstance
     public boolean hasContext() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1319,7 +1282,6 @@ public final class PairwiseSummarizationQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1304,6 @@ public final class PairwiseSummarizationQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1325,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1342,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1366,6 @@ public final class PairwiseSummarizationQualityInstance
     }
 
     private java.lang.Object instruction_ = "";
-
     /**
      *
      *
@@ -1422,7 +1380,6 @@ public final class PairwiseSummarizationQualityInstance
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1445,7 +1402,6 @@ public final class PairwiseSummarizationQualityInstance
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1468,7 +1424,6 @@ public final class PairwiseSummarizationQualityInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1490,7 +1445,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1462,6 @@ public final class PairwiseSummarizationQualityInstance
       onChanged();
       return this;
     }
-
     /**
      *
      *

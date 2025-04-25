@@ -38,7 +38,6 @@ public interface UpdateInsightTypeConfigRequestOrBuilder
    * @return Whether the insightTypeConfig field is set.
    */
   boolean hasInsightTypeConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateInsightTypeConfigRequestOrBuilder
    * @return The insightTypeConfig.
    */
   com.google.cloud.recommender.v1.InsightTypeConfig getInsightTypeConfig();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateInsightTypeConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdateInsightTypeConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

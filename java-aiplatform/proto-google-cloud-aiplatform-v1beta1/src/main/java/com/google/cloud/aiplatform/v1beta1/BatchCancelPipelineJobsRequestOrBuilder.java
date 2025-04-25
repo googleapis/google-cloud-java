@@ -39,7 +39,6 @@ public interface BatchCancelPipelineJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface BatchCancelPipelineJobsRequestOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface BatchCancelPipelineJobsRequestOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface BatchCancelPipelineJobsRequestOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
-
   /**
    *
    *

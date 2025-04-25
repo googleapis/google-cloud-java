@@ -33,7 +33,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextExtractionEvaluationMetrics)
     TextExtractionEvaluationMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextExtractionEvaluationMetrics.newBuilder() to construct.
   private TextExtractionEvaluationMetrics(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -124,7 +123,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
      */
     float getF1Score();
   }
-
   /**
    *
    *
@@ -140,7 +138,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry)
       ConfidenceMetricsEntryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConfidenceMetricsEntry.newBuilder() to construct.
     private ConfidenceMetricsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -173,7 +170,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
     private float confidenceThreshold_ = 0F;
-
     /**
      *
      *
@@ -194,7 +190,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
     public static final int RECALL_FIELD_NUMBER = 3;
     private float recall_ = 0F;
-
     /**
      *
      *
@@ -213,7 +208,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
     public static final int PRECISION_FIELD_NUMBER = 4;
     private float precision_ = 0F;
-
     /**
      *
      *
@@ -232,7 +226,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
     public static final int F1_SCORE_FIELD_NUMBER = 5;
     private float f1Score_ = 0F;
-
     /**
      *
      *
@@ -450,7 +443,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -693,7 +685,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       private int bitField0_;
 
       private float confidenceThreshold_;
-
       /**
        *
        *
@@ -711,7 +702,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
-
       /**
        *
        *
@@ -733,7 +723,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -755,7 +744,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float recall_;
-
       /**
        *
        *
@@ -771,7 +759,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       public float getRecall() {
         return recall_;
       }
-
       /**
        *
        *
@@ -791,7 +778,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -811,7 +797,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float precision_;
-
       /**
        *
        *
@@ -827,7 +812,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       public float getPrecision() {
         return precision_;
       }
-
       /**
        *
        *
@@ -847,7 +831,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -867,7 +850,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
 
       private float f1Score_;
-
       /**
        *
        *
@@ -883,7 +865,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       public float getF1Score() {
         return f1Score_;
       }
-
       /**
        *
        *
@@ -903,7 +884,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -993,7 +973,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
   public static final int AU_PRC_FIELD_NUMBER = 1;
   private float auPrc_ = 0F;
-
   /**
    *
    *
@@ -1016,7 +995,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
   private java.util.List<
           com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry>
       confidenceMetricsEntries_;
-
   /**
    *
    *
@@ -1035,7 +1013,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       getConfidenceMetricsEntriesList() {
     return confidenceMetricsEntries_;
   }
-
   /**
    *
    *
@@ -1056,7 +1033,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       getConfidenceMetricsEntriesOrBuilderList() {
     return confidenceMetricsEntries_;
   }
-
   /**
    *
    *
@@ -1073,7 +1049,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
   public int getConfidenceMetricsEntriesCount() {
     return confidenceMetricsEntries_.size();
   }
-
   /**
    *
    *
@@ -1091,7 +1066,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       getConfidenceMetricsEntries(int index) {
     return confidenceMetricsEntries_.get(index);
   }
-
   /**
    *
    *
@@ -1285,7 +1259,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1533,7 +1506,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     private int bitField0_;
 
     private float auPrc_;
-
     /**
      *
      *
@@ -1549,7 +1521,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     public float getAuPrc() {
       return auPrc_;
     }
-
     /**
      *
      *
@@ -1569,7 +1540,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1601,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1620,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1672,7 +1640,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1700,7 +1667,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1726,7 +1692,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1753,7 +1718,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1745,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1769,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1832,7 +1794,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1821,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1843,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1906,7 +1865,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1923,7 +1881,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         getConfidenceMetricsEntriesBuilder(int index) {
       return getConfidenceMetricsEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1945,7 +1902,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         return confidenceMetricsEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1969,7 +1925,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
       }
     }
-
     /**
      *
      *
@@ -1989,7 +1944,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
               com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2010,7 +1964,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
               com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
-
     /**
      *
      *

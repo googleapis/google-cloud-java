@@ -135,7 +135,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int PIPELINE_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -147,7 +146,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_QUEUED = 1;</code>
    */
   public static final int PIPELINE_STATE_QUEUED_VALUE = 1;
-
   /**
    *
    *
@@ -158,7 +156,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_PENDING = 2;</code>
    */
   public static final int PIPELINE_STATE_PENDING_VALUE = 2;
-
   /**
    *
    *
@@ -169,7 +166,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_RUNNING = 3;</code>
    */
   public static final int PIPELINE_STATE_RUNNING_VALUE = 3;
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_SUCCEEDED = 4;</code>
    */
   public static final int PIPELINE_STATE_SUCCEEDED_VALUE = 4;
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_FAILED = 5;</code>
    */
   public static final int PIPELINE_STATE_FAILED_VALUE = 5;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_CANCELLING = 6;</code>
    */
   public static final int PIPELINE_STATE_CANCELLING_VALUE = 6;
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public enum PipelineState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PIPELINE_STATE_CANCELLED = 7;</code>
    */
   public static final int PIPELINE_STATE_CANCELLED_VALUE = 7;
-
   /**
    *
    *

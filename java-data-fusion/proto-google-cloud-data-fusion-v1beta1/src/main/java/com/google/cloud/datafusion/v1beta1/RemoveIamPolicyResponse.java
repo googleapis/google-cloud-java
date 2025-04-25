@@ -33,7 +33,6 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1beta1.RemoveIamPolicyResponse)
     RemoveIamPolicyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveIamPolicyResponse.newBuilder() to construct.
   private RemoveIamPolicyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class RemoveIamPolicyResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

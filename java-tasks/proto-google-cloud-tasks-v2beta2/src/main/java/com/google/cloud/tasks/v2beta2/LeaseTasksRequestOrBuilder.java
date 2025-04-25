@@ -39,7 +39,6 @@ public interface LeaseTasksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -113,7 +112,6 @@ public interface LeaseTasksRequestOrBuilder
    * @return Whether the leaseDuration field is set.
    */
   boolean hasLeaseDuration();
-
   /**
    *
    *
@@ -148,7 +146,6 @@ public interface LeaseTasksRequestOrBuilder
    * @return The leaseDuration.
    */
   com.google.protobuf.Duration getLeaseDuration();
-
   /**
    *
    *
@@ -206,7 +203,6 @@ public interface LeaseTasksRequestOrBuilder
    * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
-
   /**
    *
    *
@@ -274,7 +270,6 @@ public interface LeaseTasksRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

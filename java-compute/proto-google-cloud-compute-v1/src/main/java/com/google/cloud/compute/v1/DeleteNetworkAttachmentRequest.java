@@ -33,7 +33,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteNetworkAttachmentRequest)
     DeleteNetworkAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteNetworkAttachmentRequest.newBuilder() to construct.
   private DeleteNetworkAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkAttachment_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +488,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +720,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object networkAttachment_ = "";
-
     /**
      *
      *
@@ -754,7 +742,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +826,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +942,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -988,7 +966,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1013,7 +990,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1032,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1058,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1137,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1154,6 @@ public final class DeleteNetworkAttachmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

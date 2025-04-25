@@ -45,7 +45,6 @@ public interface ListPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface ListPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

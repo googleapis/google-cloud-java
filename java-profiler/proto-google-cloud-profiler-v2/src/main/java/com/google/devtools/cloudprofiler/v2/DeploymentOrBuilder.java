@@ -37,7 +37,6 @@ public interface DeploymentOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface DeploymentOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -133,11 +130,9 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface DeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

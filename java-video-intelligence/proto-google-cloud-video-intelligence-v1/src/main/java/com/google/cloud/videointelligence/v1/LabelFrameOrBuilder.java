@@ -37,7 +37,6 @@ public interface LabelFrameOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface LabelFrameOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
-
   /**
    *
    *

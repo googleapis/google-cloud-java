@@ -48,7 +48,6 @@ public enum NetworkArchitecture implements com.google.protobuf.ProtocolMessageEn
 
   /** <code>NETWORK_ARCHITECTURE_UNSPECIFIED = 0;</code> */
   public static final int NETWORK_ARCHITECTURE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public enum NetworkArchitecture implements com.google.protobuf.ProtocolMessageEn
    * <code>NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER = 1;</code>
    */
   public static final int NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER_VALUE = 1;
-
   /**
    *
    *

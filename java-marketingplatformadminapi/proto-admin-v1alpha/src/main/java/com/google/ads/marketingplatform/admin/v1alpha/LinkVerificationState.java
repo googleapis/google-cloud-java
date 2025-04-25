@@ -74,7 +74,6 @@ public enum LinkVerificationState implements com.google.protobuf.ProtocolMessage
    * <code>LINK_VERIFICATION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int LINK_VERIFICATION_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public enum LinkVerificationState implements com.google.protobuf.ProtocolMessage
    * <code>LINK_VERIFICATION_STATE_VERIFIED = 1;</code>
    */
   public static final int LINK_VERIFICATION_STATE_VERIFIED_VALUE = 1;
-
   /**
    *
    *

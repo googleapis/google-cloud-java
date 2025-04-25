@@ -38,7 +38,6 @@ public interface UpdateHydratedDeploymentRequestOrBuilder
    * @return Whether the hydratedDeployment field is set.
    */
   boolean hasHydratedDeployment();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateHydratedDeploymentRequestOrBuilder
    * @return The hydratedDeployment.
    */
   com.google.cloud.telcoautomation.v1.HydratedDeployment getHydratedDeployment();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateHydratedDeploymentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateHydratedDeploymentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

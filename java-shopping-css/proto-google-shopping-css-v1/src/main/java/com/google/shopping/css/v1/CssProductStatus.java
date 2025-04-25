@@ -34,7 +34,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.CssProductStatus)
     CssProductStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CssProductStatus.newBuilder() to construct.
   private CssProductStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The destination.
      */
     java.lang.String getDestination();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return A list containing the approvedCountries.
      */
     java.util.List<java.lang.String> getApprovedCountriesList();
-
     /**
      *
      *
@@ -124,7 +121,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The count of approvedCountries.
      */
     int getApprovedCountriesCount();
-
     /**
      *
      *
@@ -139,7 +135,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The approvedCountries at the given index.
      */
     java.lang.String getApprovedCountries(int index);
-
     /**
      *
      *
@@ -168,7 +163,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return A list containing the pendingCountries.
      */
     java.util.List<java.lang.String> getPendingCountriesList();
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The count of pendingCountries.
      */
     int getPendingCountriesCount();
-
     /**
      *
      *
@@ -197,7 +190,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The pendingCountries at the given index.
      */
     java.lang.String getPendingCountries(int index);
-
     /**
      *
      *
@@ -226,7 +218,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return A list containing the disapprovedCountries.
      */
     java.util.List<java.lang.String> getDisapprovedCountriesList();
-
     /**
      *
      *
@@ -240,7 +231,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The count of disapprovedCountries.
      */
     int getDisapprovedCountriesCount();
-
     /**
      *
      *
@@ -255,7 +245,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The disapprovedCountries at the given index.
      */
     java.lang.String getDisapprovedCountries(int index);
-
     /**
      *
      *
@@ -271,7 +260,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getDisapprovedCountriesBytes(int index);
   }
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.shopping.css.v1.CssProductStatus.DestinationStatus)
       DestinationStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DestinationStatus.newBuilder() to construct.
     private DestinationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -324,7 +311,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object destination_ = "";
-
     /**
      *
      *
@@ -348,7 +334,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -378,7 +363,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList approvedCountries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -394,7 +378,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ProtocolStringList getApprovedCountriesList() {
       return approvedCountries_;
     }
-
     /**
      *
      *
@@ -410,7 +393,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public int getApprovedCountriesCount() {
       return approvedCountries_.size();
     }
-
     /**
      *
      *
@@ -427,7 +409,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public java.lang.String getApprovedCountries(int index) {
       return approvedCountries_.get(index);
     }
-
     /**
      *
      *
@@ -450,7 +431,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList pendingCountries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -466,7 +446,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ProtocolStringList getPendingCountriesList() {
       return pendingCountries_;
     }
-
     /**
      *
      *
@@ -482,7 +461,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public int getPendingCountriesCount() {
       return pendingCountries_.size();
     }
-
     /**
      *
      *
@@ -499,7 +477,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public java.lang.String getPendingCountries(int index) {
       return pendingCountries_.get(index);
     }
-
     /**
      *
      *
@@ -522,7 +499,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList disapprovedCountries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -538,7 +514,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ProtocolStringList getDisapprovedCountriesList() {
       return disapprovedCountries_;
     }
-
     /**
      *
      *
@@ -554,7 +529,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public int getDisapprovedCountriesCount() {
       return disapprovedCountries_.size();
     }
-
     /**
      *
      *
@@ -571,7 +545,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public java.lang.String getDisapprovedCountries(int index) {
       return disapprovedCountries_.get(index);
     }
-
     /**
      *
      *
@@ -799,7 +772,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1057,7 +1029,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object destination_ = "";
-
       /**
        *
        *
@@ -1080,7 +1051,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1103,7 +1073,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1125,7 +1094,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1143,7 +1111,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1176,7 +1143,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1193,7 +1159,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         approvedCountries_.makeImmutable();
         return approvedCountries_;
       }
-
       /**
        *
        *
@@ -1209,7 +1174,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public int getApprovedCountriesCount() {
         return approvedCountries_.size();
       }
-
       /**
        *
        *
@@ -1226,7 +1190,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public java.lang.String getApprovedCountries(int index) {
         return approvedCountries_.get(index);
       }
-
       /**
        *
        *
@@ -1243,7 +1206,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ByteString getApprovedCountriesBytes(int index) {
         return approvedCountries_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1268,7 +1230,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1292,7 +1253,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1313,7 +1273,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1333,7 +1292,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1368,7 +1326,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -1385,7 +1342,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         pendingCountries_.makeImmutable();
         return pendingCountries_;
       }
-
       /**
        *
        *
@@ -1401,7 +1357,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public int getPendingCountriesCount() {
         return pendingCountries_.size();
       }
-
       /**
        *
        *
@@ -1418,7 +1373,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public java.lang.String getPendingCountries(int index) {
         return pendingCountries_.get(index);
       }
-
       /**
        *
        *
@@ -1435,7 +1389,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ByteString getPendingCountriesBytes(int index) {
         return pendingCountries_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1460,7 +1413,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1484,7 +1436,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1505,7 +1456,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1525,7 +1475,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1561,7 +1510,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -1578,7 +1526,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         disapprovedCountries_.makeImmutable();
         return disapprovedCountries_;
       }
-
       /**
        *
        *
@@ -1594,7 +1541,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public int getDisapprovedCountriesCount() {
         return disapprovedCountries_.size();
       }
-
       /**
        *
        *
@@ -1611,7 +1557,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public java.lang.String getDisapprovedCountries(int index) {
         return disapprovedCountries_.get(index);
       }
-
       /**
        *
        *
@@ -1628,7 +1573,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ByteString getDisapprovedCountriesBytes(int index) {
         return disapprovedCountries_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1653,7 +1597,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1677,7 +1620,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1698,7 +1640,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1718,7 +1659,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1828,7 +1768,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The code.
      */
     java.lang.String getCode();
-
     /**
      *
      *
@@ -1854,7 +1793,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The servability.
      */
     java.lang.String getServability();
-
     /**
      *
      *
@@ -1880,7 +1818,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The resolution.
      */
     java.lang.String getResolution();
-
     /**
      *
      *
@@ -1906,7 +1843,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The attribute.
      */
     java.lang.String getAttribute();
-
     /**
      *
      *
@@ -1932,7 +1868,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The destination.
      */
     java.lang.String getDestination();
-
     /**
      *
      *
@@ -1958,7 +1893,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -1984,7 +1918,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The detail.
      */
     java.lang.String getDetail();
-
     /**
      *
      *
@@ -2010,7 +1943,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The documentation.
      */
     java.lang.String getDocumentation();
-
     /**
      *
      *
@@ -2037,7 +1969,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return A list containing the applicableCountries.
      */
     java.util.List<java.lang.String> getApplicableCountriesList();
-
     /**
      *
      *
@@ -2051,7 +1982,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The count of applicableCountries.
      */
     int getApplicableCountriesCount();
-
     /**
      *
      *
@@ -2066,7 +1996,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      * @return The applicableCountries at the given index.
      */
     java.lang.String getApplicableCountries(int index);
-
     /**
      *
      *
@@ -2082,7 +2011,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getApplicableCountriesBytes(int index);
   }
-
   /**
    *
    *
@@ -2097,7 +2025,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.shopping.css.v1.CssProductStatus.ItemLevelIssue)
       ItemLevelIssueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ItemLevelIssue.newBuilder() to construct.
     private ItemLevelIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2140,7 +2067,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -2164,7 +2090,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2193,7 +2118,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object servability_ = "";
-
     /**
      *
      *
@@ -2217,7 +2141,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2246,7 +2169,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resolution_ = "";
-
     /**
      *
      *
@@ -2270,7 +2192,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2299,7 +2220,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attribute_ = "";
-
     /**
      *
      *
@@ -2323,7 +2243,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2352,7 +2271,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object destination_ = "";
-
     /**
      *
      *
@@ -2376,7 +2294,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2405,7 +2322,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2429,7 +2345,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2458,7 +2373,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object detail_ = "";
-
     /**
      *
      *
@@ -2482,7 +2396,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2511,7 +2424,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentation_ = "";
-
     /**
      *
      *
@@ -2535,7 +2447,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -2565,7 +2476,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList applicableCountries_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -2581,7 +2491,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ProtocolStringList getApplicableCountriesList() {
       return applicableCountries_;
     }
-
     /**
      *
      *
@@ -2597,7 +2506,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public int getApplicableCountriesCount() {
       return applicableCountries_.size();
     }
-
     /**
      *
      *
@@ -2614,7 +2522,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public java.lang.String getApplicableCountries(int index) {
       return applicableCountries_.get(index);
     }
-
     /**
      *
      *
@@ -2873,7 +2780,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3191,7 +3097,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object code_ = "";
-
       /**
        *
        *
@@ -3214,7 +3119,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3237,7 +3141,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3259,7 +3162,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3277,7 +3179,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3302,7 +3203,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object servability_ = "";
-
       /**
        *
        *
@@ -3325,7 +3225,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3348,7 +3247,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3370,7 +3268,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3388,7 +3285,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3413,7 +3309,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object resolution_ = "";
-
       /**
        *
        *
@@ -3436,7 +3331,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3459,7 +3353,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3481,7 +3374,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3499,7 +3391,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3524,7 +3415,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object attribute_ = "";
-
       /**
        *
        *
@@ -3547,7 +3437,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3570,7 +3459,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3592,7 +3480,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3610,7 +3497,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3635,7 +3521,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object destination_ = "";
-
       /**
        *
        *
@@ -3658,7 +3543,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3681,7 +3565,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3703,7 +3586,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3721,7 +3603,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3746,7 +3627,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -3769,7 +3649,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3792,7 +3671,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3814,7 +3692,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3832,7 +3709,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3857,7 +3733,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object detail_ = "";
-
       /**
        *
        *
@@ -3880,7 +3755,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3903,7 +3777,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3925,7 +3798,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3943,7 +3815,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3968,7 +3839,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object documentation_ = "";
-
       /**
        *
        *
@@ -3991,7 +3861,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4014,7 +3883,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4036,7 +3904,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4054,7 +3921,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4087,7 +3953,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         }
         bitField0_ |= 0x00000100;
       }
-
       /**
        *
        *
@@ -4104,7 +3969,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         applicableCountries_.makeImmutable();
         return applicableCountries_;
       }
-
       /**
        *
        *
@@ -4120,7 +3984,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public int getApplicableCountriesCount() {
         return applicableCountries_.size();
       }
-
       /**
        *
        *
@@ -4137,7 +4000,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public java.lang.String getApplicableCountries(int index) {
         return applicableCountries_.get(index);
       }
-
       /**
        *
        *
@@ -4154,7 +4016,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ByteString getApplicableCountriesBytes(int index) {
         return applicableCountries_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4179,7 +4040,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4203,7 +4063,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4224,7 +4083,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4244,7 +4102,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4341,7 +4198,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.css.v1.CssProductStatus.DestinationStatus>
       destinationStatuses_;
-
   /**
    *
    *
@@ -4358,7 +4214,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       getDestinationStatusesList() {
     return destinationStatuses_;
   }
-
   /**
    *
    *
@@ -4376,7 +4231,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       getDestinationStatusesOrBuilderList() {
     return destinationStatuses_;
   }
-
   /**
    *
    *
@@ -4392,7 +4246,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   public int getDestinationStatusesCount() {
     return destinationStatuses_.size();
   }
-
   /**
    *
    *
@@ -4409,7 +4262,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       int index) {
     return destinationStatuses_.get(index);
   }
-
   /**
    *
    *
@@ -4432,7 +4284,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.css.v1.CssProductStatus.ItemLevelIssue>
       itemLevelIssues_;
-
   /**
    *
    *
@@ -4448,7 +4299,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       getItemLevelIssuesList() {
     return itemLevelIssues_;
   }
-
   /**
    *
    *
@@ -4465,7 +4315,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       getItemLevelIssuesOrBuilderList() {
     return itemLevelIssues_;
   }
-
   /**
    *
    *
@@ -4480,7 +4329,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   public int getItemLevelIssuesCount() {
     return itemLevelIssues_.size();
   }
-
   /**
    *
    *
@@ -4495,7 +4343,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   public com.google.shopping.css.v1.CssProductStatus.ItemLevelIssue getItemLevelIssues(int index) {
     return itemLevelIssues_.get(index);
   }
-
   /**
    *
    *
@@ -4514,7 +4361,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATION_DATE_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp creationDate_;
-
   /**
    *
    *
@@ -4531,7 +4377,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   public boolean hasCreationDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4550,7 +4395,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : creationDate_;
   }
-
   /**
    *
    *
@@ -4570,7 +4414,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
   public static final int LAST_UPDATE_DATE_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp lastUpdateDate_;
-
   /**
    *
    *
@@ -4587,7 +4430,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   public boolean hasLastUpdateDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4606,7 +4448,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateDate_;
   }
-
   /**
    *
    *
@@ -4626,7 +4467,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
 
   public static final int GOOGLE_EXPIRATION_DATE_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp googleExpirationDate_;
-
   /**
    *
    *
@@ -4643,7 +4483,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
   public boolean hasGoogleExpirationDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -4662,7 +4501,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : googleExpirationDate_;
   }
-
   /**
    *
    *
@@ -4896,7 +4734,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5295,7 +5132,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return destinationStatusesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5314,7 +5150,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return destinationStatusesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5334,7 +5169,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return destinationStatusesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5360,7 +5194,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5384,7 +5217,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5410,7 +5242,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5436,7 +5267,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5459,7 +5289,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5483,7 +5312,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5507,7 +5335,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5529,7 +5356,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5551,7 +5377,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5567,7 +5392,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         getDestinationStatusesBuilder(int index) {
       return getDestinationStatusesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5587,7 +5411,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return destinationStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5608,7 +5431,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(destinationStatuses_);
       }
     }
-
     /**
      *
      *
@@ -5626,7 +5448,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.shopping.css.v1.CssProductStatus.DestinationStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5645,7 +5466,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
               index,
               com.google.shopping.css.v1.CssProductStatus.DestinationStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5718,7 +5538,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return itemLevelIssuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5736,7 +5555,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return itemLevelIssuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5755,7 +5573,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return itemLevelIssuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5780,7 +5597,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5803,7 +5619,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5828,7 +5643,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5853,7 +5667,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5875,7 +5688,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5898,7 +5710,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5921,7 +5732,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5942,7 +5752,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5963,7 +5772,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5978,7 +5786,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         getItemLevelIssuesBuilder(int index) {
       return getItemLevelIssuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5997,7 +5804,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return itemLevelIssuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6017,7 +5823,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(itemLevelIssues_);
       }
     }
-
     /**
      *
      *
@@ -6034,7 +5839,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.shopping.css.v1.CssProductStatus.ItemLevelIssue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6052,7 +5856,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
               index,
               com.google.shopping.css.v1.CssProductStatus.ItemLevelIssue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6094,7 +5897,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         creationDateBuilder_;
-
     /**
      *
      *
@@ -6110,7 +5912,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public boolean hasCreationDate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -6132,7 +5933,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return creationDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6156,7 +5956,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6177,7 +5976,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6206,7 +6004,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -6227,7 +6024,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6243,7 +6039,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreationDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6263,7 +6058,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
             : creationDate_;
       }
     }
-
     /**
      *
      *
@@ -6297,7 +6091,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateDateBuilder_;
-
     /**
      *
      *
@@ -6313,7 +6106,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public boolean hasLastUpdateDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -6335,7 +6127,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return lastUpdateDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6359,7 +6150,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6380,7 +6170,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6409,7 +6198,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -6430,7 +6218,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6446,7 +6233,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getLastUpdateDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6466,7 +6252,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
             : lastUpdateDate_;
       }
     }
-
     /**
      *
      *
@@ -6500,7 +6285,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         googleExpirationDateBuilder_;
-
     /**
      *
      *
@@ -6516,7 +6300,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
     public boolean hasGoogleExpirationDate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -6538,7 +6321,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
         return googleExpirationDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6562,7 +6344,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6583,7 +6364,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6612,7 +6392,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -6633,7 +6412,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6649,7 +6427,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getGoogleExpirationDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6669,7 +6446,6 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
             : googleExpirationDate_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateSessionRequestOrBuilder
    * @return Whether the session field is set.
    */
   boolean hasSession();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The session.
    */
   com.google.cloud.discoveryengine.v1.Session getSession();
-
   /**
    *
    *

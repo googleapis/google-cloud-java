@@ -39,7 +39,6 @@ public interface RenameInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface RenameInstanceRequestOrBuilder
    * @return The newInstanceId.
    */
   java.lang.String getNewInstanceId();
-
   /**
    *
    *

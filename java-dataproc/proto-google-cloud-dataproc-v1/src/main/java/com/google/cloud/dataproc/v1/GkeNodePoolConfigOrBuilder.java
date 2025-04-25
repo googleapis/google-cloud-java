@@ -38,7 +38,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return The config.
    */
   com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig getConfig();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String> getLocationsList();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return The count of locations.
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return The locations at the given index.
    */
   java.lang.String getLocations(int index);
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface GkeNodePoolConfigOrBuilder
    * @return The autoscaling.
    */
   com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig getAutoscaling();
-
   /**
    *
    *

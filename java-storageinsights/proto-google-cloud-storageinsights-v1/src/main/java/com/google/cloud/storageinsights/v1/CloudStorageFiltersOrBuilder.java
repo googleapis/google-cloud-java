@@ -36,7 +36,6 @@ public interface CloudStorageFiltersOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *

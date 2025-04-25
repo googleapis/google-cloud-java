@@ -36,7 +36,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AudienceFilterClause)
     AudienceFilterClauseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AudienceFilterClause.newBuilder() to construct.
   private AudienceFilterClause(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
      * <code>AUDIENCE_CLAUSE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int AUDIENCE_CLAUSE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
      * <code>INCLUDE = 1;</code>
      */
     public static final int INCLUDE_VALUE = 1;
-
     /**
      *
      *
@@ -248,7 +245,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     private FilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -282,7 +278,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SIMPLE_FILTER_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -298,7 +293,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   public boolean hasSimpleFilter() {
     return filterCase_ == 2;
   }
-
   /**
    *
    *
@@ -317,7 +311,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     }
     return com.google.analytics.admin.v1alpha.AudienceSimpleFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +330,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SEQUENCE_FILTER_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -354,7 +346,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   public boolean hasSequenceFilter() {
     return filterCase_ == 3;
   }
-
   /**
    *
    *
@@ -374,7 +365,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     }
     return com.google.analytics.admin.v1alpha.AudienceSequenceFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -396,7 +386,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
 
   public static final int CLAUSE_TYPE_FIELD_NUMBER = 1;
   private int clauseType_ = 0;
-
   /**
    *
    *
@@ -414,7 +403,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   public int getClauseTypeValue() {
     return clauseType_;
   }
-
   /**
    *
    *
@@ -644,7 +632,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -897,7 +884,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
             com.google.analytics.admin.v1alpha.AudienceSimpleFilter.Builder,
             com.google.analytics.admin.v1alpha.AudienceSimpleFilterOrBuilder>
         simpleFilterBuilder_;
-
     /**
      *
      *
@@ -913,7 +899,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     public boolean hasSimpleFilter() {
       return filterCase_ == 2;
     }
-
     /**
      *
      *
@@ -939,7 +924,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         return com.google.analytics.admin.v1alpha.AudienceSimpleFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -962,7 +946,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +966,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +1000,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1025,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1038,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         getSimpleFilterBuilder() {
       return getSimpleFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1080,7 +1059,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         return com.google.analytics.admin.v1alpha.AudienceSimpleFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1097,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
             com.google.analytics.admin.v1alpha.AudienceSequenceFilter.Builder,
             com.google.analytics.admin.v1alpha.AudienceSequenceFilterOrBuilder>
         sequenceFilterBuilder_;
-
     /**
      *
      *
@@ -1136,7 +1113,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     public boolean hasSequenceFilter() {
       return filterCase_ == 3;
     }
-
     /**
      *
      *
@@ -1163,7 +1139,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         return com.google.analytics.admin.v1alpha.AudienceSequenceFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1163,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       filterCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1184,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       filterCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1246,7 +1219,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       filterCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1245,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1259,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         getSequenceFilterBuilder() {
       return getSequenceFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1311,7 +1281,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         return com.google.analytics.admin.v1alpha.AudienceSequenceFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1316,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     }
 
     private int clauseType_ = 0;
-
     /**
      *
      *
@@ -1365,7 +1333,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     public int getClauseTypeValue() {
       return clauseType_;
     }
-
     /**
      *
      *
@@ -1386,7 +1353,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1376,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
           ? com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1435,7 +1400,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

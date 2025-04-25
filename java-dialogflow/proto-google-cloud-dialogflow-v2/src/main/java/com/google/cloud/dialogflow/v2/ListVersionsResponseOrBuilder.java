@@ -35,7 +35,6 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Version versions = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Version> getVersionsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Version versions = 1;</code>
    */
   com.google.cloud.dialogflow.v2.Version getVersions(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Version versions = 1;</code>
    */
   int getVersionsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.VersionOrBuilder>
       getVersionsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

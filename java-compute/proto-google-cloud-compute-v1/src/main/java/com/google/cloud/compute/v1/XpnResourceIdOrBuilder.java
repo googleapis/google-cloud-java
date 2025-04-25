@@ -36,7 +36,6 @@ public interface XpnResourceIdOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface XpnResourceIdOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface XpnResourceIdOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface XpnResourceIdOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

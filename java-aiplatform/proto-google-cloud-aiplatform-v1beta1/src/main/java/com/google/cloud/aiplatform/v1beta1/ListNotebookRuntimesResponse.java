@@ -34,7 +34,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListNotebookRuntimesResponse)
     ListNotebookRuntimesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotebookRuntimesResponse.newBuilder() to construct.
   private ListNotebookRuntimesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.NotebookRuntime> notebookRuntimes_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       getNotebookRuntimesList() {
     return notebookRuntimes_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       getNotebookRuntimesOrBuilderList() {
     return notebookRuntimes_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
   public int getNotebookRuntimesCount() {
     return notebookRuntimes_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
   public com.google.cloud.aiplatform.v1beta1.NotebookRuntime getNotebookRuntimes(int index) {
     return notebookRuntimes_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -374,7 +366,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return notebookRuntimesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return notebookRuntimesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return notebookRuntimesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         int index) {
       return getNotebookRuntimesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return notebookRuntimesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(notebookRuntimes_);
       }
     }
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       return getNotebookRuntimesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.NotebookRuntime.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -970,7 +945,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.NotebookRuntime.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1032,7 +1005,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1030,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1054,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1074,6 @@ public final class ListNotebookRuntimesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

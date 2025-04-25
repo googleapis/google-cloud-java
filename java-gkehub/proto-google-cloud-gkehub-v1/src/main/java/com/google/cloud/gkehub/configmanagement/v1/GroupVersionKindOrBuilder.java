@@ -36,7 +36,6 @@ public interface GroupVersionKindOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GroupVersionKindOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GroupVersionKindOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

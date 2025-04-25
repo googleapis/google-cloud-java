@@ -36,7 +36,6 @@ public interface VertexModelSpecOrBuilder
    * @return The versionId.
    */
   java.lang.String getVersionId();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface VertexModelSpecOrBuilder
    * @return A list containing the versionAliases.
    */
   java.util.List<java.lang.String> getVersionAliasesList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface VertexModelSpecOrBuilder
    * @return The count of versionAliases.
    */
   int getVersionAliasesCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface VertexModelSpecOrBuilder
    * @return The versionAliases at the given index.
    */
   java.lang.String getVersionAliases(int index);
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface VertexModelSpecOrBuilder
    * @return The versionDescription.
    */
   java.lang.String getVersionDescription();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface VertexModelSpecOrBuilder
    * @return Whether the vertexModelSourceInfo field is set.
    */
   boolean hasVertexModelSourceInfo();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface VertexModelSpecOrBuilder
    * @return The vertexModelSourceInfo.
    */
   com.google.cloud.datacatalog.v1.VertexModelSourceInfo getVertexModelSourceInfo();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface VertexModelSpecOrBuilder
    * @return The containerImageUri.
    */
   java.lang.String getContainerImageUri();
-
   /**
    *
    *

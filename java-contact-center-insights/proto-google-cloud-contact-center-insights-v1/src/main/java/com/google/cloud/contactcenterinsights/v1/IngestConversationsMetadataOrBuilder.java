@@ -37,7 +37,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest getRequest();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface IngestConversationsMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface IngestConversationsMetadataOrBuilder
    * </code>
    */
   com.google.rpc.Status getPartialErrors(int index);
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public interface IngestConversationsMetadataOrBuilder
    * </code>
    */
   int getPartialErrorsCount();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface IngestConversationsMetadataOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface IngestConversationsMetadataOrBuilder
    * @return Whether the ingestConversationsStats field is set.
    */
   boolean hasIngestConversationsStats();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface IngestConversationsMetadataOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats
       getIngestConversationsStats();
-
   /**
    *
    *

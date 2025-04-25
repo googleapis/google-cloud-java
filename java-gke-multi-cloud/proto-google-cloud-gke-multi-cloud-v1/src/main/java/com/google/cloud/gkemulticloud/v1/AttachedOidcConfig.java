@@ -43,7 +43,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AttachedOidcConfig)
     AttachedOidcConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttachedOidcConfig.newBuilder() to construct.
   private AttachedOidcConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issuerUrl_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int JWKS_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString jwks_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -321,7 +317,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -529,7 +524,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object issuerUrl_ = "";
-
     /**
      *
      *
@@ -552,7 +546,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -575,7 +568,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -597,7 +589,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +606,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private com.google.protobuf.ByteString jwks_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getJwks() {
       return jwks_;
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

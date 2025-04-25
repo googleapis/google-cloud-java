@@ -39,7 +39,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface DeliveryPipelineOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -135,11 +131,9 @@ public interface DeliveryPipelineOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface DeliveryPipelineOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface DeliveryPipelineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface DeliveryPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -224,11 +215,9 @@ public interface DeliveryPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface DeliveryPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface DeliveryPipelineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -309,7 +296,6 @@ public interface DeliveryPipelineOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -349,7 +334,6 @@ public interface DeliveryPipelineOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -363,7 +347,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -391,7 +374,6 @@ public interface DeliveryPipelineOrBuilder
    * @return Whether the serialPipeline field is set.
    */
   boolean hasSerialPipeline();
-
   /**
    *
    *
@@ -407,7 +389,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The serialPipeline.
    */
   com.google.cloud.deploy.v1.SerialPipeline getSerialPipeline();
-
   /**
    *
    *
@@ -436,7 +417,6 @@ public interface DeliveryPipelineOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -451,7 +431,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The condition.
    */
   com.google.cloud.deploy.v1.PipelineCondition getCondition();
-
   /**
    *
    *
@@ -479,7 +458,6 @@ public interface DeliveryPipelineOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

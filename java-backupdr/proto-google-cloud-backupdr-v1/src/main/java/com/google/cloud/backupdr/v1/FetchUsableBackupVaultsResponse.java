@@ -33,7 +33,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse)
     FetchUsableBackupVaultsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchUsableBackupVaultsResponse.newBuilder() to construct.
   private FetchUsableBackupVaultsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.BackupVault> backupVaults_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloud.backupdr.v1.BackupVault> getBackupVaultsList() {
     return backupVaults_;
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       getBackupVaultsOrBuilderList() {
     return backupVaults_;
   }
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   public int getBackupVaultsCount() {
     return backupVaults_.size();
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   public com.google.cloud.backupdr.v1.BackupVault getBackupVaults(int index) {
     return backupVaults_.get(index);
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -282,7 +271,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -486,7 +474,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -796,7 +783,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return backupVaultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -820,7 +806,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return backupVaultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -844,7 +829,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return backupVaultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -874,7 +858,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +885,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +943,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +970,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +997,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1024,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1050,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1076,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1095,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     public com.google.cloud.backupdr.v1.BackupVault.Builder getBackupVaultsBuilder(int index) {
       return getBackupVaultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1144,7 +1118,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return backupVaultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1169,7 +1142,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(backupVaults_);
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       return getBackupVaultsFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.BackupVault.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1211,7 +1182,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       return getBackupVaultsFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.BackupVault.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1251,7 +1221,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1274,7 +1243,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1265,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1286,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1303,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1335,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1386,7 +1350,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1401,7 +1364,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1417,7 +1379,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1433,7 +1394,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1457,7 +1417,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1439,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1458,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1476,6 @@ public final class FetchUsableBackupVaultsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

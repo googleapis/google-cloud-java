@@ -36,7 +36,6 @@ public interface ModelDeploymentMonitoringObjectiveConfigOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ModelDeploymentMonitoringObjectiveConfigOrBuilder
    * @return Whether the objectiveConfig field is set.
    */
   boolean hasObjectiveConfig();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ModelDeploymentMonitoringObjectiveConfigOrBuilder
    * @return The objectiveConfig.
    */
   com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig getObjectiveConfig();
-
   /**
    *
    *

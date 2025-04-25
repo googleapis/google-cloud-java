@@ -37,7 +37,6 @@ public interface DiskResourceStatusAsyncReplicationStatusOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DiskResourceStatusAsyncReplicationStatusOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *

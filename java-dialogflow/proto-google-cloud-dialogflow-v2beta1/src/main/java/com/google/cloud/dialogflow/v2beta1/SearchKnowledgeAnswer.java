@@ -33,7 +33,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer)
     SearchKnowledgeAnswerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchKnowledgeAnswer.newBuilder() to construct.
   private SearchKnowledgeAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * <code>ANSWER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ANSWER_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * <code>FAQ = 1;</code>
      */
     public static final int FAQ_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * <code>GENERATIVE = 2;</code>
      */
     public static final int GENERATIVE_VALUE = 2;
-
     /**
      *
      *
@@ -268,7 +264,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * @return The title.
      */
     java.lang.String getTitle();
-
     /**
      *
      *
@@ -294,7 +289,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -320,7 +314,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * @return The snippet.
      */
     java.lang.String getSnippet();
-
     /**
      *
      *
@@ -346,7 +339,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
-
     /**
      *
      *
@@ -359,7 +351,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * @return The metadata.
      */
     com.google.protobuf.Struct getMetadata();
-
     /**
      *
      *
@@ -371,7 +362,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
   }
-
   /**
    *
    *
@@ -386,7 +376,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSource)
       AnswerSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnswerSource.newBuilder() to construct.
     private AnswerSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -424,7 +413,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -448,7 +436,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -477,7 +464,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -501,7 +487,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -530,7 +515,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object snippet_ = "";
-
     /**
      *
      *
@@ -554,7 +538,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -581,7 +564,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
     public static final int METADATA_FIELD_NUMBER = 5;
     private com.google.protobuf.Struct metadata_;
-
     /**
      *
      *
@@ -597,7 +579,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -613,7 +594,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.Struct getMetadata() {
       return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
     }
-
     /**
      *
      *
@@ -823,7 +803,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1080,7 +1059,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object title_ = "";
-
       /**
        *
        *
@@ -1103,7 +1081,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1126,7 +1103,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1148,7 +1124,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1166,7 +1141,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1191,7 +1165,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -1214,7 +1187,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1237,7 +1209,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1259,7 +1230,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1277,7 +1247,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1302,7 +1271,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object snippet_ = "";
-
       /**
        *
        *
@@ -1325,7 +1293,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1348,7 +1315,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1370,7 +1336,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1388,7 +1353,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1418,7 +1382,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           metadataBuilder_;
-
       /**
        *
        *
@@ -1433,7 +1396,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       public boolean hasMetadata() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1452,7 +1414,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return metadataBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1475,7 +1436,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1495,7 +1455,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1523,7 +1482,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1543,7 +1501,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1558,7 +1515,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         onChanged();
         return getMetadataFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1575,7 +1531,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
         }
       }
-
       /**
        *
        *
@@ -1674,7 +1629,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answer_ = "";
-
   /**
    *
    *
@@ -1699,7 +1653,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -1727,7 +1680,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
   public static final int ANSWER_TYPE_FIELD_NUMBER = 2;
   private int answerType_ = 0;
-
   /**
    *
    *
@@ -1743,7 +1695,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
   public int getAnswerTypeValue() {
     return answerType_;
   }
-
   /**
    *
    *
@@ -1769,7 +1720,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSource>
       answerSources_;
-
   /**
    *
    *
@@ -1786,7 +1736,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       getAnswerSourcesList() {
     return answerSources_;
   }
-
   /**
    *
    *
@@ -1804,7 +1753,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       getAnswerSourcesOrBuilderList() {
     return answerSources_;
   }
-
   /**
    *
    *
@@ -1820,7 +1768,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
   public int getAnswerSourcesCount() {
     return answerSources_.size();
   }
-
   /**
    *
    *
@@ -1837,7 +1784,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       int index) {
     return answerSources_.get(index);
   }
-
   /**
    *
    *
@@ -1859,7 +1805,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
-
   /**
    *
    *
@@ -1885,7 +1830,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -2107,7 +2051,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2383,7 +2326,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object answer_ = "";
-
     /**
      *
      *
@@ -2407,7 +2349,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2431,7 +2372,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2454,7 +2394,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2412,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2499,7 +2437,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     }
 
     private int answerType_ = 0;
-
     /**
      *
      *
@@ -2516,7 +2453,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     public int getAnswerTypeValue() {
       return answerType_;
     }
-
     /**
      *
      *
@@ -2536,7 +2472,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2558,7 +2493,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2582,7 +2516,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2640,7 +2573,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return answerSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2659,7 +2591,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return answerSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2679,7 +2610,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return answerSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2705,7 +2635,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2659,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2756,7 +2684,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2782,7 +2709,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2806,7 +2732,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2831,7 +2756,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2856,7 +2780,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2878,7 +2801,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2900,7 +2822,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2916,7 +2837,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         getAnswerSourcesBuilder(int index) {
       return getAnswerSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2936,7 +2856,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return answerSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2958,7 +2877,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(answerSources_);
       }
     }
-
     /**
      *
      *
@@ -2977,7 +2895,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
               com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2997,7 +2914,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
               com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3036,7 +2952,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object answerRecord_ = "";
-
     /**
      *
      *
@@ -3061,7 +2976,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3086,7 +3000,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3110,7 +3023,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3130,7 +3042,6 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

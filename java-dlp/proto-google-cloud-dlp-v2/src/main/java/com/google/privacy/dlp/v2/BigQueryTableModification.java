@@ -64,7 +64,6 @@ public enum BigQueryTableModification implements com.google.protobuf.ProtocolMes
    * <code>TABLE_MODIFICATION_UNSPECIFIED = 0;</code>
    */
   public static final int TABLE_MODIFICATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

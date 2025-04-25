@@ -34,7 +34,6 @@ public final class ExportPredictionResultMetadataRequest
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportPredictionResultMetadataRequest)
     ExportPredictionResultMetadataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportPredictionResultMetadataRequest.newBuilder() to construct.
   private ExportPredictionResultMetadataRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ExportPredictionResultMetadataRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object predictionResult_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ExportPredictionResultMetadataRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ExportPredictionResultMetadataRequest
 
   public static final int STRUCTURED_METADATA_DESTINATION_FIELD_NUMBER = 2;
   private com.google.cloud.financialservices.v1.BigQueryDestination structuredMetadataDestination_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class ExportPredictionResultMetadataRequest
   public boolean hasStructuredMetadataDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class ExportPredictionResultMetadataRequest
         ? com.google.cloud.financialservices.v1.BigQueryDestination.getDefaultInstance()
         : structuredMetadataDestination_;
   }
-
   /**
    *
    *
@@ -371,7 +365,6 @@ public final class ExportPredictionResultMetadataRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -600,7 +593,6 @@ public final class ExportPredictionResultMetadataRequest
     private int bitField0_;
 
     private java.lang.Object predictionResult_ = "";
-
     /**
      *
      *
@@ -625,7 +617,6 @@ public final class ExportPredictionResultMetadataRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -650,7 +641,6 @@ public final class ExportPredictionResultMetadataRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class ExportPredictionResultMetadataRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class ExportPredictionResultMetadataRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class ExportPredictionResultMetadataRequest
             com.google.cloud.financialservices.v1.BigQueryDestination.Builder,
             com.google.cloud.financialservices.v1.BigQueryDestinationOrBuilder>
         structuredMetadataDestinationBuilder_;
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class ExportPredictionResultMetadataRequest
     public boolean hasStructuredMetadataDestination() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class ExportPredictionResultMetadataRequest
         return structuredMetadataDestinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ExportPredictionResultMetadataRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class ExportPredictionResultMetadataRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class ExportPredictionResultMetadataRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class ExportPredictionResultMetadataRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ExportPredictionResultMetadataRequest
       onChanged();
       return getStructuredMetadataDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class ExportPredictionResultMetadataRequest
             : structuredMetadataDestination_;
       }
     }
-
     /**
      *
      *

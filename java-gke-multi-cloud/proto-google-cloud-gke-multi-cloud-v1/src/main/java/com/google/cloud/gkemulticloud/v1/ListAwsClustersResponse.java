@@ -33,7 +33,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.ListAwsClustersResponse)
     ListAwsClustersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAwsClustersResponse.newBuilder() to construct.
   private ListAwsClustersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AwsCluster> awsClusters_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.gkemulticloud.v1.AwsCluster> getAwsClustersList() {
     return awsClusters_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       getAwsClustersOrBuilderList() {
     return awsClusters_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
   public int getAwsClustersCount() {
     return awsClusters_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
   public com.google.cloud.gkemulticloud.v1.AwsCluster getAwsClusters(int index) {
     return awsClusters_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return awsClustersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return awsClustersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return awsClustersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
     public com.google.cloud.gkemulticloud.v1.AwsCluster.Builder getAwsClustersBuilder(int index) {
       return getAwsClustersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return awsClustersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(awsClusters_);
       }
     }
-
     /**
      *
      *
@@ -956,7 +932,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       return getAwsClustersFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AwsCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       return getAwsClustersFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.AwsCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1029,7 +1002,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1065,6 @@ public final class ListAwsClustersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

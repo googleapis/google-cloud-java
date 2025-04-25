@@ -77,7 +77,6 @@ public enum JobType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_TYPE_UNKNOWN = 0;</code>
    */
   public static final int JOB_TYPE_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public enum JobType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_TYPE_BATCH = 1;</code>
    */
   public static final int JOB_TYPE_BATCH_VALUE = 1;
-
   /**
    *
    *

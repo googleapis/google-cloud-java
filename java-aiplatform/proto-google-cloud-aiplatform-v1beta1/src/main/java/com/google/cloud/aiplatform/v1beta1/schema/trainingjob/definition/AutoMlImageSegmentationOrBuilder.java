@@ -39,7 +39,6 @@ public interface AutoMlImageSegmentationOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutoMlImageSegmentationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs
       getInputs();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface AutoMlImageSegmentationOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface AutoMlImageSegmentationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata
       getMetadata();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.IntentBatch)
     IntentBatchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IntentBatch.newBuilder() to construct.
   private IntentBatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.v2.Intent> getIntentsList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       getIntentsOrBuilderList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
   public int getIntentsCount() {
     return intents_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.v2.Intent getIntents(int index) {
     return intents_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +672,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +691,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +711,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +731,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +750,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +769,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +781,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -817,7 +797,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -835,7 +814,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(intents_);
       }
     }
-
     /**
      *
      *
@@ -849,7 +827,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       return getIntentsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -863,7 +840,6 @@ public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
       return getIntentsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
-
     /**
      *
      *

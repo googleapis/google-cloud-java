@@ -33,7 +33,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1.DisableServiceRequest)
     DisableServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisableServiceRequest.newBuilder() to construct.
   private DisableServiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,7 +120,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      * <code>CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED = 0;</code>
      */
     public static final int CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -132,7 +130,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      * <code>SKIP = 1;</code>
      */
     public static final int SKIP_VALUE = 1;
-
     /**
      *
      *
@@ -238,7 +235,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -268,7 +264,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -301,7 +296,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DISABLE_DEPENDENT_SERVICES_FIELD_NUMBER = 2;
   private boolean disableDependentServices_ = false;
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CHECK_IF_SERVICE_HAS_USAGE_FIELD_NUMBER = 3;
   private int checkIfServiceHasUsage_ = 0;
-
   /**
    *
    *
@@ -342,7 +335,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
   public int getCheckIfServiceHasUsageValue() {
     return checkIfServiceHasUsage_;
   }
-
   /**
    *
    *
@@ -550,7 +542,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +752,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -790,7 +780,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +808,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -847,7 +835,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +858,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +888,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean disableDependentServices_;
-
     /**
      *
      *
@@ -922,7 +907,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     public boolean getDisableDependentServices() {
       return disableDependentServices_;
     }
-
     /**
      *
      *
@@ -946,7 +930,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +953,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int checkIfServiceHasUsage_ = 0;
-
     /**
      *
      *
@@ -988,7 +970,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     public int getCheckIfServiceHasUsageValue() {
       return checkIfServiceHasUsage_;
     }
-
     /**
      *
      *
@@ -1009,7 +990,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1013,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
           ? com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1058,7 +1037,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

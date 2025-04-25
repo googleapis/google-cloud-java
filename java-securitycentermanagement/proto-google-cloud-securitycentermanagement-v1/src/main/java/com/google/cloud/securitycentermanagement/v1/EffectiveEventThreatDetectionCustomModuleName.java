@@ -398,9 +398,7 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
           Objects.equals(
               effectiveEventThreatDetectionCustomModuleName.pathTemplate,
               ORGANIZATION_LOCATION_EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULE),
-          "toBuilder is only supported when EffectiveEventThreatDetectionCustomModuleName has the"
-              + " pattern of"
-              + " organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}");
+          "toBuilder is only supported when EffectiveEventThreatDetectionCustomModuleName has the pattern of organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}");
       this.organization = effectiveEventThreatDetectionCustomModuleName.organization;
       this.location = effectiveEventThreatDetectionCustomModuleName.location;
       this.effectiveEventThreatDetectionCustomModule =

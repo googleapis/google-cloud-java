@@ -33,7 +33,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.PriceByResource)
     PriceByResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PriceByResource.newBuilder() to construct.
   private PriceByResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
   private int resourceType_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   public int getResourceTypeValue() {
     return resourceType_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRICE_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.Price price_;
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   public boolean hasPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.channel.v1.Price getPrice() {
     return price_ == null ? com.google.cloud.channel.v1.Price.getDefaultInstance() : price_;
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.PricePhase> pricePhases_;
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.channel.v1.PricePhase> getPricePhasesList() {
     return pricePhases_;
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       getPricePhasesOrBuilderList() {
     return pricePhases_;
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   public int getPricePhasesCount() {
     return pricePhases_.size();
   }
-
   /**
    *
    *
@@ -213,7 +203,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.channel.v1.PricePhase getPricePhases(int index) {
     return pricePhases_.get(index);
   }
-
   /**
    *
    *
@@ -414,7 +403,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -686,7 +674,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int resourceType_ = 0;
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     public int getResourceTypeValue() {
       return resourceType_;
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.channel.v1.ResourceType.forNumber(resourceType_);
       return result == null ? com.google.cloud.channel.v1.ResourceType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.Price.Builder,
             com.google.cloud.channel.v1.PriceOrBuilder>
         priceBuilder_;
-
     /**
      *
      *
@@ -801,7 +783,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     public boolean hasPrice() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return priceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -843,7 +823,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +842,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +869,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +902,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -943,7 +918,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return price_ == null ? com.google.cloud.channel.v1.Price.getDefaultInstance() : price_;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +977,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return pricePhasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1020,7 +993,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return pricePhasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return pricePhasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1031,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1073,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1095,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1114,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1134,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1154,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1173,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1192,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1204,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.PricePhase.Builder getPricePhasesBuilder(int index) {
       return getPricePhasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1259,7 +1220,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return pricePhasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1277,7 +1237,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(pricePhases_);
       }
     }
-
     /**
      *
      *
@@ -1291,7 +1250,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       return getPricePhasesFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.PricePhase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1305,7 +1263,6 @@ public final class PriceByResource extends com.google.protobuf.GeneratedMessageV
       return getPricePhasesFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.PricePhase.getDefaultInstance());
     }
-
     /**
      *
      *

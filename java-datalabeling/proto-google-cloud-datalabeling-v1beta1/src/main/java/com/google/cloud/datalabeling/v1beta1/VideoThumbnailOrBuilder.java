@@ -50,7 +50,6 @@ public interface VideoThumbnailOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface VideoThumbnailOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UpdateIapSettingsRequestOrBuilder
    * @return Whether the iapSettings field is set.
    */
   boolean hasIapSettings();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateIapSettingsRequestOrBuilder
    * @return The iapSettings.
    */
   com.google.cloud.iap.v1.IapSettings getIapSettings();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateIapSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdateIapSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

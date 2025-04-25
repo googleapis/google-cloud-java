@@ -39,7 +39,6 @@ public interface UpdateConversionSourceRequestOrBuilder
    * @return Whether the conversionSource field is set.
    */
   boolean hasConversionSource();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateConversionSourceRequestOrBuilder
    * @return The conversionSource.
    */
   com.google.shopping.merchant.conversions.v1beta.ConversionSource getConversionSource();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateConversionSourceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface UpdateConversionSourceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

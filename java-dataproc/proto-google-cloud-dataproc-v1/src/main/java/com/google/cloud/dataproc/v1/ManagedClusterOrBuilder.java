@@ -41,7 +41,6 @@ public interface ManagedClusterOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface ManagedClusterOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ManagedClusterOrBuilder
    * @return The config.
    */
   com.google.cloud.dataproc.v1.ClusterConfig getConfig();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ManagedClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -142,11 +138,9 @@ public interface ManagedClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface ManagedClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface ManagedClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

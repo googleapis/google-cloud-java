@@ -32,7 +32,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkPerformanceConfig)
     NetworkPerformanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkPerformanceConfig.newBuilder() to construct.
   private NetworkPerformanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,10 +98,8 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
      * <code>UNDEFINED_TOTAL_EGRESS_BANDWIDTH_TIER = 0;</code>
      */
     public static final int UNDEFINED_TOTAL_EGRESS_BANDWIDTH_TIER_VALUE = 0;
-
     /** <code>DEFAULT = 115302945;</code> */
     public static final int DEFAULT_VALUE = 115302945;
-
     /** <code>TIER_1 = 326919444;</code> */
     public static final int TIER_1_VALUE = 326919444;
 
@@ -199,7 +196,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object totalEgressBandwidthTier_ = "";
-
   /**
    *
    *
@@ -216,7 +212,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
   public boolean hasTotalEgressBandwidthTier() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +236,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +428,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +614,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object totalEgressBandwidthTier_ = "";
-
     /**
      *
      *
@@ -637,7 +629,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
     public boolean hasTotalEgressBandwidthTier() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -661,7 +652,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class NetworkPerformanceConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

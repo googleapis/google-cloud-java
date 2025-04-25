@@ -44,7 +44,6 @@ public interface DeleteBigQueryExportRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

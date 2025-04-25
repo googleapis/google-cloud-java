@@ -33,7 +33,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.GenerateConfigReportRequest)
     GenerateConfigReportRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateConfigReportRequest.newBuilder() to construct.
   private GenerateConfigReportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int NEW_CONFIG_FIELD_NUMBER = 1;
   private com.google.protobuf.Any newConfig_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
   public boolean hasNewConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
   public com.google.protobuf.Any getNewConfig() {
     return newConfig_ == null ? com.google.protobuf.Any.getDefaultInstance() : newConfig_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
 
   public static final int OLD_CONFIG_FIELD_NUMBER = 2;
   private com.google.protobuf.Any oldConfig_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
   public boolean hasOldConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
   public com.google.protobuf.Any getOldConfig() {
     return oldConfig_ == null ? com.google.protobuf.Any.getDefaultInstance() : oldConfig_;
   }
-
   /**
    *
    *
@@ -364,7 +357,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +583,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         newConfigBuilder_;
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
     public boolean hasNewConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
         return newConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return getNewConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
         return newConfig_ == null ? com.google.protobuf.Any.getDefaultInstance() : newConfig_;
       }
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         oldConfigBuilder_;
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
     public boolean hasOldConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
         return oldConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +889,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +920,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +943,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
       onChanged();
       return getOldConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1006,7 +981,6 @@ public final class GenerateConfigReportRequest extends com.google.protobuf.Gener
         return oldConfig_ == null ? com.google.protobuf.Any.getDefaultInstance() : oldConfig_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface InstanceConsumptionInfoOrBuilder
    * @return Whether the guestCpus field is set.
    */
   boolean hasGuestCpus();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface InstanceConsumptionInfoOrBuilder
    * @return Whether the localSsdGb field is set.
    */
   boolean hasLocalSsdGb();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface InstanceConsumptionInfoOrBuilder
    * @return Whether the memoryMb field is set.
    */
   boolean hasMemoryMb();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface InstanceConsumptionInfoOrBuilder
    * @return Whether the minNodeCpus field is set.
    */
   boolean hasMinNodeCpus();
-
   /**
    *
    *

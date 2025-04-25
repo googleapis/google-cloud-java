@@ -38,7 +38,6 @@ public interface FingerprintOrBuilder
    * @return The v1Name.
    */
   java.lang.String getV1Name();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface FingerprintOrBuilder
    * @return A list containing the v2Blob.
    */
   java.util.List<java.lang.String> getV2BlobList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface FingerprintOrBuilder
    * @return The count of v2Blob.
    */
   int getV2BlobCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface FingerprintOrBuilder
    * @return The v2Blob at the given index.
    */
   java.lang.String getV2Blob(int index);
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface FingerprintOrBuilder
    * @return The v2Name.
    */
   java.lang.String getV2Name();
-
   /**
    *
    *

@@ -43,7 +43,6 @@ public interface ListHcxActivationKeysRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -97,7 +96,6 @@ public interface ListHcxActivationKeysRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

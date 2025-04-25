@@ -34,7 +34,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DedicatedResources)
     DedicatedResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DedicatedResources.newBuilder() to construct.
   private DedicatedResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int MACHINE_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.MachineSpec machineSpec_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   public boolean hasMachineSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.visionai.v1.MachineSpec.getDefaultInstance()
         : machineSpec_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
 
   public static final int MIN_REPLICA_COUNT_FIELD_NUMBER = 2;
   private int minReplicaCount_ = 0;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 3;
   private int maxReplicaCount_ = 0;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.AutoscalingMetricSpec>
       autoscalingMetricSpecs_;
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       getAutoscalingMetricSpecsList() {
     return autoscalingMetricSpecs_;
   }
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       getAutoscalingMetricSpecsOrBuilderList() {
     return autoscalingMetricSpecs_;
   }
-
   /**
    *
    *
@@ -308,7 +299,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   public int getAutoscalingMetricSpecsCount() {
     return autoscalingMetricSpecs_.size();
   }
-
   /**
    *
    *
@@ -346,7 +336,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.visionai.v1.AutoscalingMetricSpec getAutoscalingMetricSpecs(int index) {
     return autoscalingMetricSpecs_.get(index);
   }
-
   /**
    *
    *
@@ -582,7 +571,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -877,7 +865,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.MachineSpec.Builder,
             com.google.cloud.visionai.v1.MachineSpecOrBuilder>
         machineSpecBuilder_;
-
     /**
      *
      *
@@ -895,7 +882,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public boolean hasMachineSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -919,7 +905,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         return machineSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -945,7 +930,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +953,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +983,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1005,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1022,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1063,7 +1043,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             : machineSpec_;
       }
     }
-
     /**
      *
      *
@@ -1094,7 +1073,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     }
 
     private int minReplicaCount_;
-
     /**
      *
      *
@@ -1118,7 +1096,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public int getMinReplicaCount() {
       return minReplicaCount_;
     }
-
     /**
      *
      *
@@ -1146,7 +1123,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1150,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     }
 
     private int maxReplicaCount_;
-
     /**
      *
      *
@@ -1203,7 +1178,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public int getMaxReplicaCount() {
       return maxReplicaCount_;
     }
-
     /**
      *
      *
@@ -1236,7 +1210,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1300,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         return autoscalingMetricSpecsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1368,7 +1340,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         return autoscalingMetricSpecsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1409,7 +1380,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         return autoscalingMetricSpecsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1457,7 +1427,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1471,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1518,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1565,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1609,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1688,7 +1653,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1733,7 +1697,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1777,7 +1740,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1821,7 +1783,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1859,7 +1820,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         getAutoscalingMetricSpecsBuilder(int index) {
       return getAutoscalingMetricSpecsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1901,7 +1861,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         return autoscalingMetricSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1943,7 +1902,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
       }
     }
-
     /**
      *
      *
@@ -1982,7 +1940,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       return getAutoscalingMetricSpecsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.AutoscalingMetricSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2022,7 +1979,6 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.visionai.v1.AutoscalingMetricSpec.getDefaultInstance());
     }
-
     /**
      *
      *

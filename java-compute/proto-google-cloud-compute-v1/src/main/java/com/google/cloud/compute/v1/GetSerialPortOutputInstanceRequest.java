@@ -33,7 +33,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetSerialPortOutputInstanceRequest)
     GetSerialPortOutputInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetSerialPortOutputInstanceRequest.newBuilder() to construct.
   private GetSerialPortOutputInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_ = 0;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
   public boolean hasPort() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   public static final int START_FIELD_NUMBER = 109757538;
   private long start_ = 0L;
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
   public boolean hasStart() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -503,7 +492,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +739,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +845,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     }
 
     private int port_;
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     public boolean hasPort() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +995,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1019,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     }
 
     private long start_;
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     public boolean hasStart() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1077,7 +1049,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     public long getStart() {
       return start_;
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1087,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1140,7 +1109,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1131,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1152,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1169,6 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

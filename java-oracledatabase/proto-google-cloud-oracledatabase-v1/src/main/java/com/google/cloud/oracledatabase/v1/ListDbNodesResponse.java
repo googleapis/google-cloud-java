@@ -33,7 +33,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListDbNodesResponse)
     ListDbNodesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDbNodesResponse.newBuilder() to construct.
   private ListDbNodesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.DbNode> dbNodes_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.oracledatabase.v1.DbNode> getDbNodesList() {
     return dbNodes_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       getDbNodesOrBuilderList() {
     return dbNodes_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
   public int getDbNodesCount() {
     return dbNodes_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.oracledatabase.v1.DbNode getDbNodes(int index) {
     return dbNodes_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -642,7 +633,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return dbNodesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return dbNodesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return dbNodesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +829,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +848,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +860,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.oracledatabase.v1.DbNode.Builder getDbNodesBuilder(int index) {
       return getDbNodesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return dbNodesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(dbNodes_);
       }
     }
-
     /**
      *
      *
@@ -930,7 +906,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       return getDbNodesFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.DbNode.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -944,7 +919,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       return getDbNodesFieldBuilder()
           .addBuilder(index, com.google.cloud.oracledatabase.v1.DbNode.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +951,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1000,7 +973,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1023,7 +995,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1016,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1033,6 @@ public final class ListDbNodesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

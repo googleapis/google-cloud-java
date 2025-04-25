@@ -36,7 +36,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface ExternalVpnGatewayOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.ExternalVpnGatewayInterface> getInterfacesList();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface ExternalVpnGatewayOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.ExternalVpnGatewayInterface getInterfaces(int index);
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface ExternalVpnGatewayOrBuilder
    * </code>
    */
   int getInterfacesCount();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface ExternalVpnGatewayOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ExternalVpnGatewayInterfaceOrBuilder>
       getInterfacesOrBuilderList();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -215,7 +205,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -241,7 +230,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -254,7 +242,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -278,7 +265,6 @@ public interface ExternalVpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -289,11 +275,9 @@ public interface ExternalVpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -304,7 +288,6 @@ public interface ExternalVpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -319,7 +302,6 @@ public interface ExternalVpnGatewayOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -343,7 +325,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -356,7 +337,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -383,7 +363,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the redundancyType field is set.
    */
   boolean hasRedundancyType();
-
   /**
    *
    *
@@ -397,7 +376,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The redundancyType.
    */
   java.lang.String getRedundancyType();
-
   /**
    *
    *
@@ -424,7 +402,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -437,7 +414,6 @@ public interface ExternalVpnGatewayOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *

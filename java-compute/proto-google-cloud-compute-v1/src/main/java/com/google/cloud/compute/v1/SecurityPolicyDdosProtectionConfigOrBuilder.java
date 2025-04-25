@@ -37,7 +37,6 @@ public interface SecurityPolicyDdosProtectionConfigOrBuilder
    * @return Whether the ddosProtection field is set.
    */
   boolean hasDdosProtection();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SecurityPolicyDdosProtectionConfigOrBuilder
    * @return The ddosProtection.
    */
   java.lang.String getDdosProtection();
-
   /**
    *
    *

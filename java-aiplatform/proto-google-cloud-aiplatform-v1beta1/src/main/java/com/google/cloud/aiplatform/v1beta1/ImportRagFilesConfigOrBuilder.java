@@ -39,7 +39,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the googleDriveSource field is set.
    */
   boolean hasGoogleDriveSource();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The googleDriveSource.
    */
   com.google.cloud.aiplatform.v1beta1.GoogleDriveSource getGoogleDriveSource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the slackSource field is set.
    */
   boolean hasSlackSource();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The slackSource.
    */
   com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the jiraSource field is set.
    */
   boolean hasJiraSource();
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The jiraSource.
    */
   com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the sharePointSources field is set.
    */
   boolean hasSharePointSources();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The sharePointSources.
    */
   com.google.cloud.aiplatform.v1beta1.SharePointSources getSharePointSources();
-
   /**
    *
    *
@@ -239,7 +229,6 @@ public interface ImportRagFilesConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPartialFailureGcsSink();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface ImportRagFilesConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink();
-
   /**
    *
    *
@@ -297,7 +285,6 @@ public interface ImportRagFilesConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPartialFailureBigquerySink();
-
   /**
    *
    *
@@ -321,7 +308,6 @@ public interface ImportRagFilesConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink();
-
   /**
    *
    *
@@ -355,7 +341,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the importResultGcsSink field is set.
    */
   boolean hasImportResultGcsSink();
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The importResultGcsSink.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getImportResultGcsSink();
-
   /**
    *
    *
@@ -398,7 +382,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the importResultBigquerySink field is set.
    */
   boolean hasImportResultBigquerySink();
-
   /**
    *
    *
@@ -417,7 +400,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The importResultBigquerySink.
    */
   com.google.cloud.aiplatform.v1beta1.BigQueryDestination getImportResultBigquerySink();
-
   /**
    *
    *
@@ -453,7 +435,6 @@ public interface ImportRagFilesConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasRagFileChunkingConfig();
-
   /**
    *
    *
@@ -471,7 +452,6 @@ public interface ImportRagFilesConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig();
-
   /**
    *
    *
@@ -501,7 +481,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the ragFileTransformationConfig field is set.
    */
   boolean hasRagFileTransformationConfig();
-
   /**
    *
    *
@@ -516,7 +495,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The ragFileTransformationConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig getRagFileTransformationConfig();
-
   /**
    *
    *
@@ -546,7 +524,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the ragFileParsingConfig field is set.
    */
   boolean hasRagFileParsingConfig();
-
   /**
    *
    *
@@ -562,7 +539,6 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The ragFileParsingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig getRagFileParsingConfig();
-
   /**
    *
    *

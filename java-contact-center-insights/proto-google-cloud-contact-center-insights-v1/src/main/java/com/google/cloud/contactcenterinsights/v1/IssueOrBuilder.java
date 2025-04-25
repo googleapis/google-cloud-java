@@ -38,7 +38,6 @@ public interface IssueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface IssueOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface IssueOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface IssueOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface IssueOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface IssueOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface IssueOrBuilder
    * @return A list containing the sampleUtterances.
    */
   java.util.List<java.lang.String> getSampleUtterancesList();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface IssueOrBuilder
    * @return The count of sampleUtterances.
    */
   int getSampleUtterancesCount();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface IssueOrBuilder
    * @return The sampleUtterances at the given index.
    */
   java.lang.String getSampleUtterances(int index);
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface IssueOrBuilder
    * @return The displayDescription.
    */
   java.lang.String getDisplayDescription();
-
   /**
    *
    *

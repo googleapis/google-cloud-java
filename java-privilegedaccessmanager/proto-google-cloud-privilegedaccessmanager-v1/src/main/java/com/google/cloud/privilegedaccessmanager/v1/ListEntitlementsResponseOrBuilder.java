@@ -34,7 +34,6 @@ public interface ListEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Entitlement entitlements = 1;</code>
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.Entitlement> getEntitlementsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Entitlement entitlements = 1;</code>
    */
   com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlements(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEntitlementsResponseOrBuilder
    * <code>repeated .google.cloud.privilegedaccessmanager.v1.Entitlement entitlements = 1;</code>
    */
   int getEntitlementsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEntitlementsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privilegedaccessmanager.v1.EntitlementOrBuilder>
       getEntitlementsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListEntitlementsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ListEntitlementsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface ListEntitlementsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface ListEntitlementsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

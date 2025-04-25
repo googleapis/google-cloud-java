@@ -33,7 +33,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionDiskRequest)
     InsertRegionDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertRegionDiskRequest.newBuilder() to construct.
   private InsertRegionDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int DISK_RESOURCE_FIELD_NUMBER = 25880688;
   private com.google.cloud.compute.v1.Disk diskResource_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   public boolean hasDiskResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.Disk.getDefaultInstance()
         : diskResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceImage_ = "";
-
   /**
    *
    *
@@ -330,7 +318,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   public boolean hasSourceImage() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -354,7 +341,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -589,7 +575,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +841,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.Disk.Builder,
             com.google.cloud.compute.v1.DiskOrBuilder>
         diskResourceBuilder_;
-
     /**
      *
      *
@@ -873,7 +857,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     public boolean hasDiskResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -896,7 +879,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return diskResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -921,7 +903,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +924,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +953,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +974,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +990,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return getDiskResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1033,7 +1010,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
             : diskResource_;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1039,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1088,7 +1063,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1087,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1110,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1155,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1234,7 +1203,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1258,7 +1226,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1245,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1271,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1320,7 +1285,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1343,7 +1307,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1329,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1388,7 +1350,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1367,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1391,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object sourceImage_ = "";
-
     /**
      *
      *
@@ -1446,7 +1405,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     public boolean hasSourceImage() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1469,7 +1427,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1449,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1470,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1487,6 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

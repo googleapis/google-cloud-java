@@ -36,7 +36,6 @@ public interface ConfigSyncStateOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConfigSyncStateOrBuilder
    * @return The version.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncVersion getVersion();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ConfigSyncStateOrBuilder
    * @return Whether the deploymentState field is set.
    */
   boolean hasDeploymentState();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ConfigSyncStateOrBuilder
    * @return The deploymentState.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncDeploymentState getDeploymentState();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface ConfigSyncStateOrBuilder
    * @return Whether the syncState field is set.
    */
   boolean hasSyncState();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface ConfigSyncStateOrBuilder
    * @return The syncState.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.SyncState getSyncState();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The enum numeric value on the wire for jobType.
    */
   int getJobTypeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The enum numeric value on the wire for completionState.
    */
   int getCompletionStateValue();
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The completionComment.
    */
   java.lang.String getCompletionComment();
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return Whether the seedJobDetails field is set.
    */
   boolean hasSeedJobDetails();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The seedJobDetails.
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails getSeedJobDetails();
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return Whether the importRulesJobDetails field is set.
    */
   boolean hasImportRulesJobDetails();
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public interface BackgroundJobLogEntryOrBuilder
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails
       getImportRulesJobDetails();
-
   /**
    *
    *
@@ -327,7 +315,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return Whether the convertJobDetails field is set.
    */
   boolean hasConvertJobDetails();
-
   /**
    *
    *
@@ -342,7 +329,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The convertJobDetails.
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails getConvertJobDetails();
-
   /**
    *
    *
@@ -371,7 +357,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return Whether the applyJobDetails field is set.
    */
   boolean hasApplyJobDetails();
-
   /**
    *
    *
@@ -386,7 +371,6 @@ public interface BackgroundJobLogEntryOrBuilder
    * @return The applyJobDetails.
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails getApplyJobDetails();
-
   /**
    *
    *

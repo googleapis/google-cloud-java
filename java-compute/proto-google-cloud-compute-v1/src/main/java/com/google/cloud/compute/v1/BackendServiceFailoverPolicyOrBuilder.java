@@ -36,7 +36,6 @@ public interface BackendServiceFailoverPolicyOrBuilder
    * @return Whether the disableConnectionDrainOnFailover field is set.
    */
   boolean hasDisableConnectionDrainOnFailover();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BackendServiceFailoverPolicyOrBuilder
    * @return Whether the dropTrafficIfUnhealthy field is set.
    */
   boolean hasDropTrafficIfUnhealthy();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BackendServiceFailoverPolicyOrBuilder
    * @return Whether the failoverRatio field is set.
    */
   boolean hasFailoverRatio();
-
   /**
    *
    *

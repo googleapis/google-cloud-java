@@ -38,7 +38,6 @@ public interface TargetSiteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface TargetSiteOrBuilder
    * @return The providedUriPattern.
    */
   java.lang.String getProvidedUriPattern();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface TargetSiteOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface TargetSiteOrBuilder
    * @return The generatedUriPattern.
    */
   java.lang.String getGeneratedUriPattern();
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public interface TargetSiteOrBuilder
    * @return The rootDomainUri.
    */
   java.lang.String getRootDomainUri();
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public interface TargetSiteOrBuilder
    * @return Whether the siteVerificationInfo field is set.
    */
   boolean hasSiteVerificationInfo();
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public interface TargetSiteOrBuilder
    * @return The siteVerificationInfo.
    */
   com.google.cloud.discoveryengine.v1alpha.SiteVerificationInfo getSiteVerificationInfo();
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public interface TargetSiteOrBuilder
    * @return The enum numeric value on the wire for indexingStatus.
    */
   int getIndexingStatusValue();
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public interface TargetSiteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public interface TargetSiteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public interface TargetSiteOrBuilder
    * @return Whether the failureReason field is set.
    */
   boolean hasFailureReason();
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public interface TargetSiteOrBuilder
    * @return The failureReason.
    */
   com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason getFailureReason();
-
   /**
    *
    *

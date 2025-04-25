@@ -34,7 +34,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.PurgeProductsMetadata)
     PurgeProductsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeProductsMetadata.newBuilder() to construct.
   private PurgeProductsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 3;
   private long successCount_ = 0L;
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int FAILURE_COUNT_FIELD_NUMBER = 4;
   private long failureCount_ = 0L;
-
   /**
    *
    *
@@ -399,7 +390,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +639,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +714,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +760,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -810,7 +792,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -859,7 +839,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -881,7 +860,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +951,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +966,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1012,7 +985,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1013,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     }
 
     private long successCount_;
-
     /**
      *
      *
@@ -1057,7 +1028,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     public long getSuccessCount() {
       return successCount_;
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1066,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     }
 
     private long failureCount_;
-
     /**
      *
      *
@@ -1113,7 +1081,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
     public long getFailureCount() {
       return failureCount_;
     }
-
     /**
      *
      *
@@ -1133,7 +1100,6 @@ public final class PurgeProductsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface PubSubIODetailsOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PubSubIODetailsOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
-
   /**
    *
    *

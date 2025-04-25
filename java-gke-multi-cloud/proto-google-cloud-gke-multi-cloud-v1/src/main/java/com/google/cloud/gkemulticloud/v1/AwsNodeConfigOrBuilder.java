@@ -39,7 +39,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The instanceType.
    */
   java.lang.String getInstanceType();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the rootVolume field is set.
    */
   boolean hasRootVolume();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The rootVolume.
    */
   com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate getRootVolume();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface AwsNodeConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.NodeTaint> getTaintsList();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface AwsNodeConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.NodeTaint getTaints(int index);
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface AwsNodeConfigOrBuilder
    * </code>
    */
   int getTaintsCount();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface AwsNodeConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.NodeTaintOrBuilder>
       getTaintsOrBuilderList();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface AwsNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -202,11 +194,9 @@ public interface AwsNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public interface AwsNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -236,7 +225,6 @@ public interface AwsNodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -263,7 +251,6 @@ public interface AwsNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -277,11 +264,9 @@ public interface AwsNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsTags(java.lang.String key);
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
-
   /**
    *
    *
@@ -295,7 +280,6 @@ public interface AwsNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
-
   /**
    *
    *
@@ -313,7 +297,6 @@ public interface AwsNodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -341,7 +324,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The iamInstanceProfile.
    */
   java.lang.String getIamInstanceProfile();
-
   /**
    *
    *
@@ -371,7 +353,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The imageType.
    */
   java.lang.String getImageType();
-
   /**
    *
    *
@@ -402,7 +383,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the sshConfig field is set.
    */
   boolean hasSshConfig();
-
   /**
    *
    *
@@ -417,7 +397,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The sshConfig.
    */
   com.google.cloud.gkemulticloud.v1.AwsSshConfig getSshConfig();
-
   /**
    *
    *
@@ -445,7 +424,6 @@ public interface AwsNodeConfigOrBuilder
    * @return A list containing the securityGroupIds.
    */
   java.util.List<java.lang.String> getSecurityGroupIdsList();
-
   /**
    *
    *
@@ -460,7 +438,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The count of securityGroupIds.
    */
   int getSecurityGroupIdsCount();
-
   /**
    *
    *
@@ -476,7 +453,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The securityGroupIds at the given index.
    */
   java.lang.String getSecurityGroupIds(int index);
-
   /**
    *
    *
@@ -507,7 +483,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
-
   /**
    *
    *
@@ -522,7 +497,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AwsProxyConfig getProxyConfig();
-
   /**
    *
    *
@@ -550,7 +524,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the configEncryption field is set.
    */
   boolean hasConfigEncryption();
-
   /**
    *
    *
@@ -565,7 +538,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The configEncryption.
    */
   com.google.cloud.gkemulticloud.v1.AwsConfigEncryption getConfigEncryption();
-
   /**
    *
    *
@@ -594,7 +566,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the instancePlacement field is set.
    */
   boolean hasInstancePlacement();
-
   /**
    *
    *
@@ -610,7 +581,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The instancePlacement.
    */
   com.google.cloud.gkemulticloud.v1.AwsInstancePlacement getInstancePlacement();
-
   /**
    *
    *
@@ -642,7 +612,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the autoscalingMetricsCollection field is set.
    */
   boolean hasAutoscalingMetricsCollection();
-
   /**
    *
    *
@@ -661,7 +630,6 @@ public interface AwsNodeConfigOrBuilder
    */
   com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
       getAutoscalingMetricsCollection();
-
   /**
    *
    *
@@ -697,7 +665,6 @@ public interface AwsNodeConfigOrBuilder
    * @return Whether the spotConfig field is set.
    */
   boolean hasSpotConfig();
-
   /**
    *
    *
@@ -716,7 +683,6 @@ public interface AwsNodeConfigOrBuilder
    * @return The spotConfig.
    */
   com.google.cloud.gkemulticloud.v1.SpotConfig getSpotConfig();
-
   /**
    *
    *

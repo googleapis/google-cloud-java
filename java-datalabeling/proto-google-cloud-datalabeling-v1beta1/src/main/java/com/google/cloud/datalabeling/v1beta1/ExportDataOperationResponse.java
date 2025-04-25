@@ -33,7 +33,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ExportDataOperationResponse)
     ExportDataOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportDataOperationResponse.newBuilder() to construct.
   private ExportDataOperationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
 
   public static final int TOTAL_COUNT_FIELD_NUMBER = 2;
   private int totalCount_ = 0;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
 
   public static final int EXPORT_COUNT_FIELD_NUMBER = 3;
   private int exportCount_ = 0;
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
 
   public static final int LABEL_STATS_FIELD_NUMBER = 4;
   private com.google.cloud.datalabeling.v1beta1.LabelStats labelStats_;
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
   public boolean hasLabelStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         ? com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()
         : labelStats_;
   }
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.datalabeling.v1beta1.OutputConfig outputConfig_;
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         ? com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -471,7 +460,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -736,7 +724,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     }
 
     private int totalCount_;
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public int getTotalCount() {
       return totalCount_;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     }
 
     private int exportCount_;
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public int getExportCount() {
       return exportCount_;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
             com.google.cloud.datalabeling.v1beta1.LabelStats.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelStatsOrBuilder>
         labelStatsBuilder_;
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public boolean hasLabelStats() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1005,7 +980,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         return labelStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1022,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1050,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1083,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return getLabelStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1132,7 +1101,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
             : labelStats_;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1133,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
             com.google.cloud.datalabeling.v1beta1.OutputConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -1180,7 +1147,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1201,7 +1167,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1189,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1209,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1237,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1256,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1270,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1328,7 +1288,6 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
             : outputConfig_;
       }
     }
-
     /**
      *
      *

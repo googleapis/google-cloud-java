@@ -33,7 +33,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileClusterType)
     FileClusterTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileClusterType.newBuilder() to construct.
   private FileClusterType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -196,7 +195,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_UNSPECIFIED = 0;</code>
      */
     public static final int CLUSTER_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -207,7 +205,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_UNKNOWN = 1;</code>
      */
     public static final int CLUSTER_UNKNOWN_VALUE = 1;
-
     /**
      *
      *
@@ -218,7 +215,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_TEXT = 2;</code>
      */
     public static final int CLUSTER_TEXT_VALUE = 2;
-
     /**
      *
      *
@@ -229,7 +225,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_STRUCTURED_DATA = 3;</code>
      */
     public static final int CLUSTER_STRUCTURED_DATA_VALUE = 3;
-
     /**
      *
      *
@@ -240,7 +235,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_SOURCE_CODE = 4;</code>
      */
     public static final int CLUSTER_SOURCE_CODE_VALUE = 4;
-
     /**
      *
      *
@@ -251,7 +245,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_RICH_DOCUMENT = 5;</code>
      */
     public static final int CLUSTER_RICH_DOCUMENT_VALUE = 5;
-
     /**
      *
      *
@@ -262,7 +255,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_IMAGE = 6;</code>
      */
     public static final int CLUSTER_IMAGE_VALUE = 6;
-
     /**
      *
      *
@@ -273,7 +265,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_ARCHIVE = 7;</code>
      */
     public static final int CLUSTER_ARCHIVE_VALUE = 7;
-
     /**
      *
      *
@@ -284,7 +275,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_MULTIMEDIA = 8;</code>
      */
     public static final int CLUSTER_MULTIMEDIA_VALUE = 8;
-
     /**
      *
      *
@@ -295,7 +285,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_EXECUTABLE = 9;</code>
      */
     public static final int CLUSTER_EXECUTABLE_VALUE = 9;
-
     /**
      *
      *
@@ -422,7 +411,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
     private FileClusterTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -454,7 +442,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLUSTER_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -469,7 +456,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
   public boolean hasCluster() {
     return fileClusterTypeCase_ == 1;
   }
-
   /**
    *
    *
@@ -487,7 +473,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
     }
     return 0;
   }
-
   /**
    *
    *
@@ -685,7 +670,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -908,7 +892,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
     public boolean hasCluster() {
       return fileClusterTypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -927,7 +910,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
       }
       return 0;
     }
-
     /**
      *
      *
@@ -946,7 +928,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
       }
       return com.google.privacy.dlp.v2.FileClusterType.Cluster.CLUSTER_UNSPECIFIED;
     }
-
     /**
      *
      *
@@ -992,7 +972,6 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

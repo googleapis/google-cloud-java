@@ -33,7 +33,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.SourceSpec)
     SourceSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceSpec.newBuilder() to construct.
   private SourceSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BASE_URI_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBaseUri() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LITERAL_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLiteral() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.migration.v2.Literal.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object encoding_ = "";
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -490,7 +480,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -748,7 +737,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBaseUri() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -777,7 +765,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -806,7 +793,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +814,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.migration.v2.Literal.Builder,
             com.google.cloud.bigquery.migration.v2.LiteralOrBuilder>
         literalBuilder_;
-
     /**
      *
      *
@@ -893,7 +876,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLiteral() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.Literal.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +975,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +1000,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1012,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.Literal.Builder getLiteralBuilder() {
       return getLiteralFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1056,7 +1032,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.migration.v2.Literal.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1066,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object encoding_ = "";
-
     /**
      *
      *
@@ -1114,7 +1088,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1110,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1131,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1148,6 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
   java.util.List<
           com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.QuerySuggestion>
       getQuerySuggestionsList();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.QuerySuggestion
       getQuerySuggestions(int index);
-
   /**
    *
    *
@@ -68,7 +66,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    * </code>
    */
   int getQuerySuggestionsCount();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
                   .QuerySuggestionOrBuilder>
       getQuerySuggestionsOrBuilderList();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
   java.util.List<
           com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.PersonSuggestion>
       getPeopleSuggestionsList();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.PersonSuggestion
       getPeopleSuggestions(int index);
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    * </code>
    */
   int getPeopleSuggestionsCount();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
                   .PersonSuggestionOrBuilder>
       getPeopleSuggestionsOrBuilderList();
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
   java.util.List<
           com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.ContentSuggestion>
       getContentSuggestionsList();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.ContentSuggestion
       getContentSuggestions(int index);
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    * </code>
    */
   int getContentSuggestionsCount();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
                   .ContentSuggestionOrBuilder>
       getContentSuggestionsOrBuilderList();
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
           com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
               .RecentSearchSuggestion>
       getRecentSearchSuggestionsList();
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.RecentSearchSuggestion
       getRecentSearchSuggestions(int index);
-
   /**
    *
    *
@@ -319,7 +305,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
    * </code>
    */
   int getRecentSearchSuggestionsCount();
-
   /**
    *
    *
@@ -337,7 +322,6 @@ public interface AdvancedCompleteQueryResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
                   .RecentSearchSuggestionOrBuilder>
       getRecentSearchSuggestionsOrBuilderList();
-
   /**
    *
    *

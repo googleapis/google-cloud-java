@@ -38,7 +38,6 @@ public interface BackupPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the dailyBackupLimit field is set.
    */
   boolean hasDailyBackupLimit();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the weeklyBackupLimit field is set.
    */
   boolean hasWeeklyBackupLimit();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the monthlyBackupLimit field is set.
    */
   boolean hasMonthlyBackupLimit();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface BackupPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the assignedVolumeCount field is set.
    */
   boolean hasAssignedVolumeCount();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public interface BackupPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public interface BackupPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public interface BackupPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -296,11 +285,9 @@ public interface BackupPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -311,7 +298,6 @@ public interface BackupPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -326,7 +312,6 @@ public interface BackupPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface BackupPolicyOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

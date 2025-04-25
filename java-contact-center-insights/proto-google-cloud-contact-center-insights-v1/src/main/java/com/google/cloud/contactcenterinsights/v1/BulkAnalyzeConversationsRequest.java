@@ -33,7 +33,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest)
     BulkAnalyzeConversationsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BulkAnalyzeConversationsRequest.newBuilder() to construct.
   private BulkAnalyzeConversationsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
 
   public static final int ANALYSIS_PERCENTAGE_FIELD_NUMBER = 3;
   private float analysisPercentage_ = 0F;
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
 
   public static final int ANNOTATOR_SELECTOR_FIELD_NUMBER = 8;
   private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
   public boolean hasAnnotatorSelector() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
         : annotatorSelector_;
   }
-
   /**
    *
    *
@@ -450,7 +441,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -707,7 +697,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -732,7 +721,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -757,7 +745,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +768,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +787,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +878,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     }
 
     private float analysisPercentage_;
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     public float getAnalysisPercentage() {
       return analysisPercentage_;
     }
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +980,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
             com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
             com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>
         annotatorSelectorBuilder_;
-
     /**
      *
      *
@@ -1019,7 +995,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     public boolean hasAnnotatorSelector() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1041,7 +1016,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         return annotatorSelectorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1040,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1061,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1092,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1112,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1128,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       onChanged();
       return getAnnotatorSelectorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1179,7 +1148,6 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
             : annotatorSelector_;
       }
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.VehicleJourneySegment)
     VehicleJourneySegmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VehicleJourneySegment.newBuilder() to construct.
   private VehicleJourneySegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int STOP_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.VehicleStop stop_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public boolean hasStop() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         ? com.google.maps.fleetengine.delivery.v1.VehicleStop.getDefaultInstance()
         : stop_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
 
   public static final int DRIVING_DISTANCE_METERS_FIELD_NUMBER = 2;
   private com.google.protobuf.Int32Value drivingDistanceMeters_;
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public boolean hasDrivingDistanceMeters() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : drivingDistanceMeters_;
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
 
   public static final int DRIVING_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration drivingDuration_;
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public boolean hasDrivingDuration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Duration.getDefaultInstance()
         : drivingDuration_;
   }
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.type.LatLng> path_;
-
   /**
    *
    *
@@ -324,7 +313,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.type.LatLng> getPathList() {
     return path_;
   }
-
   /**
    *
    *
@@ -352,7 +340,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public java.util.List<? extends com.google.type.LatLngOrBuilder> getPathOrBuilderList() {
     return path_;
   }
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public int getPathCount() {
     return path_.size();
   }
-
   /**
    *
    *
@@ -408,7 +394,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
   public com.google.type.LatLng getPath(int index) {
     return path_.get(index);
   }
-
   /**
    *
    *
@@ -642,7 +627,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -955,7 +939,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
             com.google.maps.fleetengine.delivery.v1.VehicleStop.Builder,
             com.google.maps.fleetengine.delivery.v1.VehicleStopOrBuilder>
         stopBuilder_;
-
     /**
      *
      *
@@ -972,7 +955,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     public boolean hasStop() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -995,7 +977,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return stopBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1020,7 +1001,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1023,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1052,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1073,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1089,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return getStopFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1133,7 +1109,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
             : stop_;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         drivingDistanceMetersBuilder_;
-
     /**
      *
      *
@@ -1189,7 +1163,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     public boolean hasDrivingDistanceMeters() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1216,7 +1189,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return drivingDistanceMetersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1217,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1243,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1276,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1301,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1321,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDrivingDistanceMetersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1378,7 +1345,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
             : drivingDistanceMeters_;
       }
     }
-
     /**
      *
      *
@@ -1417,7 +1383,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         drivingDurationBuilder_;
-
     /**
      *
      *
@@ -1446,7 +1411,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     public boolean hasDrivingDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1481,7 +1445,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return drivingDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1518,7 +1481,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1514,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1594,7 +1555,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1588,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1657,7 +1616,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDrivingDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1690,7 +1648,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
             : drivingDuration_;
       }
     }
-
     /**
      *
      *
@@ -1774,7 +1731,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return pathBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1805,7 +1761,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return pathBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1836,7 +1791,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return pathBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1873,7 +1827,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1907,7 +1860,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1944,7 +1896,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1981,7 +1932,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2015,7 +1965,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +1998,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2031,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2117,7 +2064,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2151,7 +2097,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2123,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     public com.google.type.LatLng.Builder getPathBuilder(int index) {
       return getPathFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2209,7 +2153,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return pathBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2240,7 +2183,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(path_);
       }
     }
-
     /**
      *
      *
@@ -2267,7 +2209,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     public com.google.type.LatLng.Builder addPathBuilder() {
       return getPathFieldBuilder().addBuilder(com.google.type.LatLng.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2294,7 +2235,6 @@ public final class VehicleJourneySegment extends com.google.protobuf.GeneratedMe
     public com.google.type.LatLng.Builder addPathBuilder(int index) {
       return getPathFieldBuilder().addBuilder(index, com.google.type.LatLng.getDefaultInstance());
     }
-
     /**
      *
      *

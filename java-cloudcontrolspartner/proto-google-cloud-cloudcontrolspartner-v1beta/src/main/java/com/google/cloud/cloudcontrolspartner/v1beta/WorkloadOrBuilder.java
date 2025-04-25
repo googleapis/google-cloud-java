@@ -37,7 +37,6 @@ public interface WorkloadOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface WorkloadOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface WorkloadOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface WorkloadOrBuilder
    * @return The folder.
    */
   java.lang.String getFolder();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface WorkloadOrBuilder
    * @return Whether the workloadOnboardingState field is set.
    */
   boolean hasWorkloadOnboardingState();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface WorkloadOrBuilder
    * @return The workloadOnboardingState.
    */
   com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingState getWorkloadOnboardingState();
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public interface WorkloadOrBuilder
    * @return The keyManagementProjectId.
    */
   java.lang.String getKeyManagementProjectId();
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public interface WorkloadOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public interface WorkloadOrBuilder
    * @return The enum numeric value on the wire for partner.
    */
   int getPartnerValue();
-
   /**
    *
    *

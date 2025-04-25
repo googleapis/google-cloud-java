@@ -38,7 +38,6 @@ public interface DeleteSessionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface DeleteSessionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

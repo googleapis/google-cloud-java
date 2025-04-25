@@ -44,7 +44,6 @@ public interface PgpSignedAttestationOrBuilder
    * @return The signature.
    */
   java.lang.String getSignature();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface PgpSignedAttestationOrBuilder
    * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface PgpSignedAttestationOrBuilder
    * @return Whether the pgpKeyId field is set.
    */
   boolean hasPgpKeyId();
-
   /**
    *
    *
@@ -153,7 +150,6 @@ public interface PgpSignedAttestationOrBuilder
    * @return The pgpKeyId.
    */
   java.lang.String getPgpKeyId();
-
   /**
    *
    *

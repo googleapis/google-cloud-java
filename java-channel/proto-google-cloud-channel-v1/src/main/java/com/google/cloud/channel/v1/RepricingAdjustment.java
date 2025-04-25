@@ -33,7 +33,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RepricingAdjustment)
     RepricingAdjustmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RepricingAdjustment.newBuilder() to construct.
   private RepricingAdjustment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     private AdjustmentCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PERCENTAGE_ADJUSTMENT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
   public boolean hasPercentageAdjustment() {
     return adjustmentCase_ == 2;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.channel.v1.PercentageAdjustment.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -338,7 +333,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +552,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
             com.google.cloud.channel.v1.PercentageAdjustment.Builder,
             com.google.cloud.channel.v1.PercentageAdjustmentOrBuilder>
         percentageAdjustmentBuilder_;
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     public boolean hasPercentageAdjustment() {
       return adjustmentCase_ == 2;
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
         return com.google.cloud.channel.v1.PercentageAdjustment.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
       adjustmentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
       adjustmentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
       adjustmentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
         getPercentageAdjustmentBuilder() {
       return getPercentageAdjustmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
         return com.google.cloud.channel.v1.PercentageAdjustment.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface BreakRuleOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.BreakRule.BreakRequest>
       getBreakRequestsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface BreakRuleOrBuilder
    * </code>
    */
   com.google.maps.routeoptimization.v1.BreakRule.BreakRequest getBreakRequests(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface BreakRuleOrBuilder
    * </code>
    */
   int getBreakRequestsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface BreakRuleOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.BreakRule.BreakRequestOrBuilder>
       getBreakRequestsOrBuilderList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface BreakRuleOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.BreakRule.FrequencyConstraint>
       getFrequencyConstraintsList();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface BreakRuleOrBuilder
    */
   com.google.maps.routeoptimization.v1.BreakRule.FrequencyConstraint getFrequencyConstraints(
       int index);
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface BreakRuleOrBuilder
    * </code>
    */
   int getFrequencyConstraintsCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface BreakRuleOrBuilder
   java.util.List<
           ? extends com.google.maps.routeoptimization.v1.BreakRule.FrequencyConstraintOrBuilder>
       getFrequencyConstraintsOrBuilderList();
-
   /**
    *
    *

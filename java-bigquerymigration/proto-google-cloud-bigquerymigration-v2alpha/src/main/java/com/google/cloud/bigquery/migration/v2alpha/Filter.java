@@ -33,7 +33,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.Filter)
     FilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Filter.newBuilder() to construct.
   private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList inputFileExclusionPrefixes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getInputFileExclusionPrefixesList() {
     return inputFileExclusionPrefixes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getInputFileExclusionPrefixesCount() {
     return inputFileExclusionPrefixes_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getInputFileExclusionPrefixes(int index) {
     return inputFileExclusionPrefixes_.get(index);
   }
-
   /**
    *
    *
@@ -300,7 +295,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -501,7 +495,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -517,7 +510,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       inputFileExclusionPrefixes_.makeImmutable();
       return inputFileExclusionPrefixes_;
     }
-
     /**
      *
      *
@@ -532,7 +524,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getInputFileExclusionPrefixesCount() {
       return inputFileExclusionPrefixes_.size();
     }
-
     /**
      *
      *
@@ -548,7 +539,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getInputFileExclusionPrefixes(int index) {
       return inputFileExclusionPrefixes_.get(index);
     }
-
     /**
      *
      *
@@ -564,7 +554,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getInputFileExclusionPrefixesBytes(int index) {
       return inputFileExclusionPrefixes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -588,7 +577,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -611,7 +599,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +618,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +636,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

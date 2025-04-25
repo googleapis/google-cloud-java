@@ -41,7 +41,6 @@ public interface ColumnOrBuilder
    * @return The columnId.
    */
   java.lang.String getColumnId();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ColumnOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ColumnOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
-
   /**
    *
    *

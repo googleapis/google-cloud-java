@@ -42,7 +42,6 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index);
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * </code>
    */
   int getIntentsCount();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface BatchDeleteIntentsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
       getIntentsOrBuilderList();
-
   /**
    *
    *

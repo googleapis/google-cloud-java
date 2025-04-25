@@ -43,7 +43,6 @@ public interface CreateManagementDnsZoneBindingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CreateManagementDnsZoneBindingRequestOrBuilder
    * @return Whether the managementDnsZoneBinding field is set.
    */
   boolean hasManagementDnsZoneBinding();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateManagementDnsZoneBindingRequestOrBuilder
    * @return The managementDnsZoneBinding.
    */
   com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding getManagementDnsZoneBinding();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface CreateManagementDnsZoneBindingRequestOrBuilder
    * @return The managementDnsZoneBindingId.
    */
   java.lang.String getManagementDnsZoneBindingId();
-
   /**
    *
    *
@@ -183,7 +179,6 @@ public interface CreateManagementDnsZoneBindingRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

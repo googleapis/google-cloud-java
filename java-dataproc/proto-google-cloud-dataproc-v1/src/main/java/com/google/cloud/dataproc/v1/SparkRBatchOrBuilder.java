@@ -37,7 +37,6 @@ public interface SparkRBatchOrBuilder
    * @return The mainRFileUri.
    */
   java.lang.String getMainRFileUri();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SparkRBatchOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface SparkRBatchOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface SparkRBatchOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface SparkRBatchOrBuilder
    * @return A list containing the fileUris.
    */
   java.util.List<java.lang.String> getFileUrisList();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface SparkRBatchOrBuilder
    * @return The count of fileUris.
    */
   int getFileUrisCount();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface SparkRBatchOrBuilder
    * @return The fileUris at the given index.
    */
   java.lang.String getFileUris(int index);
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface SparkRBatchOrBuilder
    * @return A list containing the archiveUris.
    */
   java.util.List<java.lang.String> getArchiveUrisList();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface SparkRBatchOrBuilder
    * @return The count of archiveUris.
    */
   int getArchiveUrisCount();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public interface SparkRBatchOrBuilder
    * @return The archiveUris at the given index.
    */
   java.lang.String getArchiveUris(int index);
-
   /**
    *
    *

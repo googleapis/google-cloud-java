@@ -38,7 +38,6 @@ public interface ScanConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ScanConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface ScanConfigOrBuilder
    * @return A list containing the startingUrls.
    */
   java.util.List<java.lang.String> getStartingUrlsList();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface ScanConfigOrBuilder
    * @return The count of startingUrls.
    */
   int getStartingUrlsCount();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface ScanConfigOrBuilder
    * @return The startingUrls at the given index.
    */
   java.lang.String getStartingUrls(int index);
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface ScanConfigOrBuilder
    * @return Whether the authentication field is set.
    */
   boolean hasAuthentication();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface ScanConfigOrBuilder
    * @return The authentication.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getAuthentication();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface ScanConfigOrBuilder
    * @return The enum numeric value on the wire for userAgent.
    */
   int getUserAgentValue();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface ScanConfigOrBuilder
    * @return A list containing the blacklistPatterns.
    */
   java.util.List<java.lang.String> getBlacklistPatternsList();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface ScanConfigOrBuilder
    * @return The count of blacklistPatterns.
    */
   int getBlacklistPatternsCount();
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public interface ScanConfigOrBuilder
    * @return The blacklistPatterns at the given index.
    */
   java.lang.String getBlacklistPatterns(int index);
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface ScanConfigOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public interface ScanConfigOrBuilder
    * @return The schedule.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule();
-
   /**
    *
    *
@@ -331,7 +318,6 @@ public interface ScanConfigOrBuilder
    */
   java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
       getTargetPlatformsList();
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public interface ScanConfigOrBuilder
    * @return The count of targetPlatforms.
    */
   int getTargetPlatformsCount();
-
   /**
    *
    *
@@ -365,7 +350,6 @@ public interface ScanConfigOrBuilder
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
       int index);
-
   /**
    *
    *
@@ -381,7 +365,6 @@ public interface ScanConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for targetPlatforms.
    */
   java.util.List<java.lang.Integer> getTargetPlatformsValueList();
-
   /**
    *
    *
@@ -411,7 +394,6 @@ public interface ScanConfigOrBuilder
    * @return Whether the latestRun field is set.
    */
   boolean hasLatestRun();
-
   /**
    *
    *
@@ -424,7 +406,6 @@ public interface ScanConfigOrBuilder
    * @return The latestRun.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanRun getLatestRun();
-
   /**
    *
    *

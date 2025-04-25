@@ -38,7 +38,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the sourceParallelstore field is set.
    */
   boolean hasSourceParallelstore();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return The sourceParallelstore.
    */
   com.google.cloud.parallelstore.v1.SourceParallelstore getSourceParallelstore();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the sourceGcsBucket field is set.
    */
   boolean hasSourceGcsBucket();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return The sourceGcsBucket.
    */
   com.google.cloud.parallelstore.v1.SourceGcsBucket getSourceGcsBucket();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the destinationGcsBucket field is set.
    */
   boolean hasDestinationGcsBucket();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return The destinationGcsBucket.
    */
   com.google.cloud.parallelstore.v1.DestinationGcsBucket getDestinationGcsBucket();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the destinationParallelstore field is set.
    */
   boolean hasDestinationParallelstore();
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return The destinationParallelstore.
    */
   com.google.cloud.parallelstore.v1.DestinationParallelstore getDestinationParallelstore();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the counters field is set.
    */
   boolean hasCounters();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return The counters.
    */
   com.google.cloud.parallelstore.v1.TransferCounters getCounters();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface TransferOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for transferType.
    */
   int getTransferTypeValue();
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public interface TransferOperationMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.parallelstore.v1.TransferErrorSummary> getErrorSummaryList();
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public interface TransferOperationMetadataOrBuilder
    * </code>
    */
   com.google.cloud.parallelstore.v1.TransferErrorSummary getErrorSummary(int index);
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public interface TransferOperationMetadataOrBuilder
    * </code>
    */
   int getErrorSummaryCount();
-
   /**
    *
    *
@@ -327,7 +313,6 @@ public interface TransferOperationMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.parallelstore.v1.TransferErrorSummaryOrBuilder>
       getErrorSummaryOrBuilderList();
-
   /**
    *
    *

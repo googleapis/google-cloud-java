@@ -33,7 +33,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest)
     UpdateDataExchangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateDataExchangeRequest.newBuilder() to construct.
   private UpdateDataExchangeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
 
   public static final int DATA_EXCHANGE_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.analyticshub.v1.DataExchange dataExchange_;
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
   public boolean hasDataExchange() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
         ? com.google.cloud.bigquery.analyticshub.v1.DataExchange.getDefaultInstance()
         : dataExchange_;
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +584,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
             com.google.cloud.bigquery.analyticshub.v1.DataExchange.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DataExchangeOrBuilder>
         dataExchangeBuilder_;
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
     public boolean hasDataExchange() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
         return dataExchangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +910,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return getDataExchangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -993,7 +968,6 @@ public final class UpdateDataExchangeRequest extends com.google.protobuf.Generat
             : dataExchange_;
       }
     }
-
     /**
      *
      *

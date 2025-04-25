@@ -34,7 +34,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ListLocationsResponse)
     ListLocationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLocationsResponse.newBuilder() to construct.
   private ListLocationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.Location> locations_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.container.v1beta1.Location> getLocationsList() {
     return locations_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       getLocationsOrBuilderList() {
     return locations_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
   public int getLocationsCount() {
     return locations_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
   public com.google.container.v1beta1.Location getLocations(int index) {
     return locations_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return locationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return locationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return locationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
     public com.google.container.v1beta1.Location.Builder getLocationsBuilder(int index) {
       return getLocationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return locationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(locations_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       return getLocationsFieldBuilder()
           .addBuilder(com.google.container.v1beta1.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       return getLocationsFieldBuilder()
           .addBuilder(index, com.google.container.v1beta1.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1009,7 +982,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1007,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1031,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class ListLocationsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

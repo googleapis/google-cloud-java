@@ -40,7 +40,6 @@ public interface SetDefaultProcessorVersionRequestOrBuilder
    * @return The processor.
    */
   java.lang.String getProcessor();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface SetDefaultProcessorVersionRequestOrBuilder
    * @return The defaultProcessorVersion.
    */
   java.lang.String getDefaultProcessorVersion();
-
   /**
    *
    *

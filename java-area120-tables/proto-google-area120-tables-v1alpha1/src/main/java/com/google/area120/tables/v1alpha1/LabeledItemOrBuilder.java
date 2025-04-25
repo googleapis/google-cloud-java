@@ -36,7 +36,6 @@ public interface LabeledItemOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LabeledItemOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

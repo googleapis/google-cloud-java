@@ -34,7 +34,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse)
     FetchFeatureValuesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchFeatureValuesResponse.newBuilder() to construct.
   private FetchFeatureValuesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList
                 .FeatureNameValuePair>
         getFeaturesList();
-
     /**
      *
      *
@@ -98,7 +96,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList
             .FeatureNameValuePair
         getFeatures(int index);
-
     /**
      *
      *
@@ -111,7 +108,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
      * </code>
      */
     int getFeaturesCount();
-
     /**
      *
      *
@@ -128,7 +124,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
                 com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse
                     .FeatureNameValuePairList.FeatureNameValuePairOrBuilder>
         getFeaturesOrBuilderList();
-
     /**
      *
      *
@@ -144,7 +139,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             .FeatureNameValuePairOrBuilder
         getFeaturesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList)
       FeatureNameValuePairListOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FeatureNameValuePairList.newBuilder() to construct.
     private FeatureNameValuePairList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -211,7 +204,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
        * @return Whether the value field is set.
        */
       boolean hasValue();
-
       /**
        *
        *
@@ -224,7 +216,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
        * @return The value.
        */
       com.google.cloud.aiplatform.v1beta1.FeatureValue getValue();
-
       /**
        *
        *
@@ -248,7 +239,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
        * @return The name.
        */
       java.lang.String getName();
-
       /**
        *
        *
@@ -266,7 +256,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
               .FeatureNameValuePair.DataCase
           getDataCase();
     }
-
     /**
      *
      *
@@ -282,7 +271,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList.FeatureNameValuePair)
         FeatureNameValuePairOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use FeatureNameValuePair.newBuilder() to construct.
       private FeatureNameValuePair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -331,7 +319,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         private DataCase(int value) {
           this.value = value;
         }
-
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -363,7 +350,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       }
 
       public static final int VALUE_FIELD_NUMBER = 2;
-
       /**
        *
        *
@@ -379,7 +365,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       public boolean hasValue() {
         return dataCase_ == 2;
       }
-
       /**
        *
        *
@@ -398,7 +383,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
       }
-
       /**
        *
        *
@@ -420,7 +404,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -444,7 +427,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           return s;
         }
       }
-
       /**
        *
        *
@@ -683,7 +665,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -953,7 +934,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
                 com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder,
                 com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>
             valueBuilder_;
-
         /**
          *
          *
@@ -969,7 +949,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         public boolean hasValue() {
           return dataCase_ == 2;
         }
-
         /**
          *
          *
@@ -995,7 +974,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
           }
         }
-
         /**
          *
          *
@@ -1018,7 +996,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           dataCase_ = 2;
           return this;
         }
-
         /**
          *
          *
@@ -1039,7 +1016,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           dataCase_ = 2;
           return this;
         }
-
         /**
          *
          *
@@ -1072,7 +1048,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           dataCase_ = 2;
           return this;
         }
-
         /**
          *
          *
@@ -1098,7 +1073,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           }
           return this;
         }
-
         /**
          *
          *
@@ -1111,7 +1085,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         public com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder getValueBuilder() {
           return getValueFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1132,7 +1105,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
           }
         }
-
         /**
          *
          *
@@ -1167,7 +1139,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
 
         private java.lang.Object name_ = "";
-
         /**
          *
          *
@@ -1190,7 +1161,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1213,7 +1183,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1235,7 +1204,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1253,7 +1221,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1356,7 +1323,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList
                 .FeatureNameValuePair>
         features_;
-
     /**
      *
      *
@@ -1375,7 +1341,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         getFeaturesList() {
       return features_;
     }
-
     /**
      *
      *
@@ -1395,7 +1360,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         getFeaturesOrBuilderList() {
       return features_;
     }
-
     /**
      *
      *
@@ -1411,7 +1375,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     public int getFeaturesCount() {
       return features_.size();
     }
-
     /**
      *
      *
@@ -1429,7 +1392,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         getFeatures(int index) {
       return features_.get(index);
     }
-
     /**
      *
      *
@@ -1636,7 +1598,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1943,7 +1904,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           return featuresBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1962,7 +1922,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           return featuresBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1983,7 +1942,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           return featuresBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2012,7 +1970,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2038,7 +1995,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2066,7 +2022,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2095,7 +2050,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2120,7 +2074,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2146,7 +2099,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2173,7 +2125,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2195,7 +2146,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2217,7 +2167,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2234,7 +2183,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           getFeaturesBuilder(int index) {
         return getFeaturesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2255,7 +2203,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           return featuresBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2278,7 +2225,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           return java.util.Collections.unmodifiableList(features_);
         }
       }
-
       /**
        *
        *
@@ -2298,7 +2244,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
                 com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse
                     .FeatureNameValuePairList.FeatureNameValuePair.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2319,7 +2264,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
                 com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse
                     .FeatureNameValuePairList.FeatureNameValuePair.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2450,7 +2394,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     private FormatCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2484,7 +2427,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
   }
 
   public static final int KEY_VALUES_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -2502,7 +2444,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
   public boolean hasKeyValues() {
     return formatCase_ == 3;
   }
-
   /**
    *
    *
@@ -2527,7 +2468,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     return com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2553,7 +2493,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
   }
 
   public static final int PROTO_STRUCT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2569,7 +2508,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
   public boolean hasProtoStruct() {
     return formatCase_ == 2;
   }
-
   /**
    *
    *
@@ -2588,7 +2526,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2608,7 +2545,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
 
   public static final int DATA_KEY_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
-
   /**
    *
    *
@@ -2627,7 +2563,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
   public boolean hasDataKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2648,7 +2583,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
         : dataKey_;
   }
-
   /**
    *
    *
@@ -2878,7 +2812,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3150,7 +3083,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse
                 .FeatureNameValuePairListOrBuilder>
         keyValuesBuilder_;
-
     /**
      *
      *
@@ -3168,7 +3100,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     public boolean hasKeyValues() {
       return formatCase_ == 3;
     }
-
     /**
      *
      *
@@ -3201,7 +3132,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             .FeatureNameValuePairList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3228,7 +3158,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3253,7 +3182,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3295,7 +3223,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3323,7 +3250,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -3340,7 +3266,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         getKeyValuesBuilder() {
       return getKeyValuesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3368,7 +3293,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             .FeatureNameValuePairList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3418,7 +3342,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         protoStructBuilder_;
-
     /**
      *
      *
@@ -3434,7 +3357,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     public boolean hasProtoStruct() {
       return formatCase_ == 2;
     }
-
     /**
      *
      *
@@ -3460,7 +3382,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3483,7 +3404,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3503,7 +3423,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3534,7 +3453,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3560,7 +3478,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -3573,7 +3490,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     public com.google.protobuf.Struct.Builder getProtoStructBuilder() {
       return getProtoStructFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3594,7 +3510,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3632,7 +3547,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
         dataKeyBuilder_;
-
     /**
      *
      *
@@ -3650,7 +3564,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     public boolean hasDataKey() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3674,7 +3587,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
         return dataKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3700,7 +3612,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3724,7 +3635,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3756,7 +3666,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -3779,7 +3688,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3797,7 +3705,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       onChanged();
       return getDataKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3819,7 +3726,6 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
             : dataKey_;
       }
     }
-
     /**
      *
      *

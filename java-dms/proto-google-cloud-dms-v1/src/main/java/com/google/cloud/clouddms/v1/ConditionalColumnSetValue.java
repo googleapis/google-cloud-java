@@ -38,7 +38,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ConditionalColumnSetValue)
     ConditionalColumnSetValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConditionalColumnSetValue.newBuilder() to construct.
   private ConditionalColumnSetValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     private SourceFilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_TEXT_FILTER_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
   public boolean hasSourceTextFilter() {
     return sourceFilterCase_ == 100;
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     }
     return com.google.cloud.clouddms.v1.SourceTextFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_NUMERIC_FILTER_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
   public boolean hasSourceNumericFilter() {
     return sourceFilterCase_ == 101;
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     }
     return com.google.cloud.clouddms.v1.SourceNumericFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
 
   public static final int VALUE_TRANSFORMATION_FIELD_NUMBER = 1;
   private com.google.cloud.clouddms.v1.ValueTransformation valueTransformation_;
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
   public boolean hasValueTransformation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         ? com.google.cloud.clouddms.v1.ValueTransformation.getDefaultInstance()
         : valueTransformation_;
   }
-
   /**
    *
    *
@@ -307,7 +296,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct customFeatures_;
-
   /**
    *
    *
@@ -324,7 +312,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
-
   /**
    *
    *
@@ -579,7 +565,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -875,7 +860,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
             com.google.cloud.clouddms.v1.SourceTextFilter.Builder,
             com.google.cloud.clouddms.v1.SourceTextFilterOrBuilder>
         sourceTextFilterBuilder_;
-
     /**
      *
      *
@@ -894,7 +878,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     public boolean hasSourceTextFilter() {
       return sourceFilterCase_ == 100;
     }
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceTextFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -949,7 +931,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       sourceFilterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +954,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       sourceFilterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +990,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       sourceFilterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1018,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1033,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     public com.google.cloud.clouddms.v1.SourceTextFilter.Builder getSourceTextFilterBuilder() {
       return getSourceTextFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceTextFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1097,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
             com.google.cloud.clouddms.v1.SourceNumericFilter.Builder,
             com.google.cloud.clouddms.v1.SourceNumericFilterOrBuilder>
         sourceNumericFilterBuilder_;
-
     /**
      *
      *
@@ -1140,7 +1115,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     public boolean hasSourceNumericFilter() {
       return sourceFilterCase_ == 101;
     }
-
     /**
      *
      *
@@ -1169,7 +1143,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceNumericFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       sourceFilterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1191,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       sourceFilterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1228,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       sourceFilterCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1256,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1272,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         getSourceNumericFilterBuilder() {
       return getSourceNumericFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1328,7 +1296,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         return com.google.cloud.clouddms.v1.SourceNumericFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1371,7 +1338,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
             com.google.cloud.clouddms.v1.ValueTransformation.Builder,
             com.google.cloud.clouddms.v1.ValueTransformationOrBuilder>
         valueTransformationBuilder_;
-
     /**
      *
      *
@@ -1388,7 +1354,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     public boolean hasValueTransformation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1411,7 +1376,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         return valueTransformationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1436,7 +1400,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1422,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1453,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1474,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1531,7 +1491,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return getValueTransformationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1553,7 +1512,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
             : valueTransformation_;
       }
     }
-
     /**
      *
      *
@@ -1588,7 +1546,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
-
     /**
      *
      *
@@ -1604,7 +1561,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1626,7 +1582,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
         return customFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1650,7 +1605,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1671,7 +1625,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1653,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1673,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1688,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1757,7 +1707,6 @@ public final class ConditionalColumnSetValue extends com.google.protobuf.Generat
             : customFeatures_;
       }
     }
-
     /**
      *
      *

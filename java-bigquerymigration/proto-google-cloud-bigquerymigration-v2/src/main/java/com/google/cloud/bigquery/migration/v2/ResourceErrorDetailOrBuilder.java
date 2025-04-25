@@ -37,7 +37,6 @@ public interface ResourceErrorDetailOrBuilder
    * @return Whether the resourceInfo field is set.
    */
   boolean hasResourceInfo();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ResourceErrorDetailOrBuilder
    * @return The resourceInfo.
    */
   com.google.rpc.ResourceInfo getResourceInfo();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ResourceErrorDetailOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.ErrorDetail> getErrorDetailsList();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ResourceErrorDetailOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2.ErrorDetail getErrorDetails(int index);
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ResourceErrorDetailOrBuilder
    * </code>
    */
   int getErrorDetailsCount();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface ResourceErrorDetailOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.ErrorDetailOrBuilder>
       getErrorDetailsOrBuilderList();
-
   /**
    *
    *

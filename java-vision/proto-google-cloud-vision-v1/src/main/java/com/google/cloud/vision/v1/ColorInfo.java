@@ -34,7 +34,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ColorInfo)
     ColorInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ColorInfo.newBuilder() to construct.
   private ColorInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int COLOR_FIELD_NUMBER = 1;
   private com.google.type.Color color_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasColor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Color getColor() {
     return color_ == null ? com.google.type.Color.getDefaultInstance() : color_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 2;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PIXEL_FRACTION_FIELD_NUMBER = 3;
   private float pixelFraction_ = 0F;
-
   /**
    *
    *
@@ -334,7 +328,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Color, com.google.type.Color.Builder, com.google.type.ColorOrBuilder>
         colorBuilder_;
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasColor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
         return colorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +673,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +687,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getColorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
         return color_ == null ? com.google.type.Color.getDefaultInstance() : color_;
       }
     }
-
     /**
      *
      *
@@ -743,7 +727,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float score_;
-
     /**
      *
      *
@@ -759,7 +742,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -779,7 +761,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +780,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float pixelFraction_;
-
     /**
      *
      *
@@ -816,7 +796,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public float getPixelFraction() {
       return pixelFraction_;
     }
-
     /**
      *
      *
@@ -837,7 +816,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

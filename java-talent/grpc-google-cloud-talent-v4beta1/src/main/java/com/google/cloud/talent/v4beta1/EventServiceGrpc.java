@@ -94,19 +94,6 @@ public final class EventServiceGrpc {
     return EventServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static EventServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<EventServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<EventServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public EventServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new EventServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return EventServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -224,45 +211,6 @@ public final class EventServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EventService.
-   *
-   * <pre>
-   * A service handles client event report.
-   * </pre>
-   */
-  public static final class EventServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<EventServiceBlockingV2Stub> {
-    private EventServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected EventServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new EventServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Report events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution. You may inspect the created events in
-     * [self service
-     * tools](https://console.cloud.google.com/talent-solution/overview).
-     * [Learn
-     * more](https://cloud.google.com/talent-solution/docs/management-tools)
-     * about self service tools.
-     * </pre>
-     */
-    public com.google.cloud.talent.v4beta1.ClientEvent createClientEvent(
-        com.google.cloud.talent.v4beta1.CreateClientEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateClientEventMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service EventService.
    *
    * <pre>
    * A service handles client event report.

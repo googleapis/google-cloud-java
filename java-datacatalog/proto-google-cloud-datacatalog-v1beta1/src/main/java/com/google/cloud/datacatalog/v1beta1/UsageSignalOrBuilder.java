@@ -36,7 +36,6 @@ public interface UsageSignalOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UsageSignalOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface UsageSignalOrBuilder
    * </code>
    */
   int getUsageWithinTimeRangeCount();
-
   /**
    *
    *
@@ -88,12 +85,10 @@ public interface UsageSignalOrBuilder
    * </code>
    */
   boolean containsUsageWithinTimeRange(java.lang.String key);
-
   /** Use {@link #getUsageWithinTimeRangeMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.UsageStats>
       getUsageWithinTimeRange();
-
   /**
    *
    *
@@ -108,7 +103,6 @@ public interface UsageSignalOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.UsageStats>
       getUsageWithinTimeRangeMap();
-
   /**
    *
    *
@@ -126,7 +120,6 @@ public interface UsageSignalOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.datacatalog.v1beta1.UsageStats defaultValue);
-
   /**
    *
    *

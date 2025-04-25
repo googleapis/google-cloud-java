@@ -33,7 +33,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceHttpCookie)
     BackendServiceHttpCookieOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackendServiceHttpCookie.newBuilder() to construct.
   private BackendServiceHttpCookie(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
   public boolean hasPath() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
 
   public static final int TTL_FIELD_NUMBER = 115180;
   private com.google.cloud.compute.v1.Duration ttl_;
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
   public boolean hasTtl() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.Duration getTtl() {
     return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
   }
-
   /**
    *
    *
@@ -445,7 +435,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +665,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     }
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     public boolean hasPath() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +910,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         ttlBuilder_;
-
     /**
      *
      *
@@ -948,7 +924,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
     public boolean hasTtl() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -967,7 +942,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
         return ttlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -990,7 +964,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +983,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1010,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1029,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1090,7 +1059,6 @@ public final class BackendServiceHttpCookie extends com.google.protobuf.Generate
         return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
       }
     }
-
     /**
      *
      *

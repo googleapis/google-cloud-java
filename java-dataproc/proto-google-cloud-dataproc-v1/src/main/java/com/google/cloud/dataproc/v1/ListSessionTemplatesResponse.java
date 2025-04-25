@@ -33,7 +33,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ListSessionTemplatesResponse)
     ListSessionTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSessionTemplatesResponse.newBuilder() to construct.
   private ListSessionTemplatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.SessionTemplate> sessionTemplates_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.dataproc.v1.SessionTemplate> getSessionTemplatesList() {
     return sessionTemplates_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       getSessionTemplatesOrBuilderList() {
     return sessionTemplates_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
   public int getSessionTemplatesCount() {
     return sessionTemplates_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
   public com.google.cloud.dataproc.v1.SessionTemplate getSessionTemplates(int index) {
     return sessionTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +370,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return sessionTemplatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -678,7 +668,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return sessionTemplatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -697,7 +686,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return sessionTemplatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +905,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         int index) {
       return getSessionTemplatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -946,7 +924,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return sessionTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -966,7 +943,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(sessionTemplates_);
       }
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       return getSessionTemplatesFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.SessionTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       return getSessionTemplatesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.SessionTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1037,7 +1011,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1079,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class ListSessionTemplatesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

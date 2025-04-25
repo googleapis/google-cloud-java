@@ -36,7 +36,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    * @return Whether the documentSentiment field is set.
    */
   boolean hasDocumentSentiment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    * @return The documentSentiment.
    */
   com.google.cloud.language.v2.Sentiment getDocumentSentiment();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Sentence sentences = 3;</code>
    */
   java.util.List<com.google.cloud.language.v2.Sentence> getSentencesList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Sentence sentences = 3;</code>
    */
   com.google.cloud.language.v2.Sentence getSentences(int index);
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Sentence sentences = 3;</code>
    */
   int getSentencesCount();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface AnalyzeSentimentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v2.SentenceOrBuilder>
       getSentencesOrBuilderList();
-
   /**
    *
    *

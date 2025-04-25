@@ -82,7 +82,6 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_SCAN_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DATA_SCAN_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_QUALITY = 1;</code>
    */
   public static final int DATA_QUALITY_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_PROFILE = 2;</code>
    */
   public static final int DATA_PROFILE_VALUE = 2;
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateIndexEndpointRequestOrBuilder
    * @return Whether the indexEndpoint field is set.
    */
   boolean hasIndexEndpoint();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateIndexEndpointRequestOrBuilder
    * @return The indexEndpoint.
    */
   com.google.cloud.visionai.v1.IndexEndpoint getIndexEndpoint();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface UpdateIndexEndpointRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateIndexEndpointRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

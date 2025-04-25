@@ -34,7 +34,6 @@ public final class RemovePublicKeyResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.RemovePublicKeyResponse)
     RemovePublicKeyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemovePublicKeyResponse.newBuilder() to construct.
   private RemovePublicKeyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class RemovePublicKeyResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

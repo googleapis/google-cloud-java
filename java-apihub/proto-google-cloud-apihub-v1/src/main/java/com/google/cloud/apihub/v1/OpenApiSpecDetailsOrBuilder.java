@@ -38,7 +38,6 @@ public interface OpenApiSpecDetailsOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface OpenApiSpecDetailsOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface OpenApiSpecDetailsOrBuilder
    * @return Whether the owner field is set.
    */
   boolean hasOwner();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface OpenApiSpecDetailsOrBuilder
    * @return The owner.
    */
   com.google.cloud.apihub.v1.Owner getOwner();
-
   /**
    *
    *

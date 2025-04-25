@@ -37,7 +37,6 @@ public interface ChallengeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ChallengeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ChallengeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface ChallengeOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ChallengeOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface ChallengeOrBuilder
    * @return The tpmNonce.
    */
   java.lang.String getTpmNonce();
-
   /**
    *
    *

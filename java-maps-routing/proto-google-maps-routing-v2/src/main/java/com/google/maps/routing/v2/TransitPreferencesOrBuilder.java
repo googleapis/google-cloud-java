@@ -40,7 +40,6 @@ public interface TransitPreferencesOrBuilder
    */
   java.util.List<com.google.maps.routing.v2.TransitPreferences.TransitTravelMode>
       getAllowedTravelModesList();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface TransitPreferencesOrBuilder
    * @return The count of allowedTravelModes.
    */
   int getAllowedTravelModesCount();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface TransitPreferencesOrBuilder
    * @return The allowedTravelModes at the given index.
    */
   com.google.maps.routing.v2.TransitPreferences.TransitTravelMode getAllowedTravelModes(int index);
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface TransitPreferencesOrBuilder
    * @return A list containing the enum numeric values on the wire for allowedTravelModes.
    */
   java.util.List<java.lang.Integer> getAllowedTravelModesValueList();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface TransitPreferencesOrBuilder
    * @return The enum numeric value on the wire for routingPreference.
    */
   int getRoutingPreferenceValue();
-
   /**
    *
    *

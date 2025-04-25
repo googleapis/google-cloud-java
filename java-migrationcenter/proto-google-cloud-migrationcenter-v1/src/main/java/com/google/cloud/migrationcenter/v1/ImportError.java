@@ -34,7 +34,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ImportError)
     ImportErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportError.newBuilder() to construct.
   private ImportError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,13 +88,10 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>SEVERITY_UNSPECIFIED = 0;</code> */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /** <code>ERROR = 1;</code> */
     public static final int ERROR_VALUE = 1;
-
     /** <code>WARNING = 2;</code> */
     public static final int WARNING_VALUE = 2;
-
     /** <code>INFO = 3;</code> */
     public static final int INFO_VALUE = 3;
 
@@ -188,7 +184,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorDetails_ = "";
-
   /**
    *
    *
@@ -212,7 +207,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -239,7 +233,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 2;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -255,7 +248,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -448,7 +440,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object errorDetails_ = "";
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.ImportError.Severity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ImportError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

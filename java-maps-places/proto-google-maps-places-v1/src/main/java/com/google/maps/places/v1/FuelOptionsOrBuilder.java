@@ -35,7 +35,6 @@ public interface FuelOptionsOrBuilder
    * <code>repeated .google.maps.places.v1.FuelOptions.FuelPrice fuel_prices = 1;</code>
    */
   java.util.List<com.google.maps.places.v1.FuelOptions.FuelPrice> getFuelPricesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface FuelOptionsOrBuilder
    * <code>repeated .google.maps.places.v1.FuelOptions.FuelPrice fuel_prices = 1;</code>
    */
   com.google.maps.places.v1.FuelOptions.FuelPrice getFuelPrices(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface FuelOptionsOrBuilder
    * <code>repeated .google.maps.places.v1.FuelOptions.FuelPrice fuel_prices = 1;</code>
    */
   int getFuelPricesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface FuelOptionsOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.FuelOptions.FuelPriceOrBuilder>
       getFuelPricesOrBuilderList();
-
   /**
    *
    *

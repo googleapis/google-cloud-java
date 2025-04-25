@@ -33,7 +33,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ListRegionBackendServicesRequest)
     ListRegionBackendServicesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRegionBackendServicesRequest.newBuilder() to construct.
   private ListRegionBackendServicesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +355,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -393,7 +378,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +404,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -436,7 +419,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -693,7 +675,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -974,7 +955,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -989,7 +969,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1012,7 +991,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1013,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1051,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1075,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -1116,7 +1090,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1132,7 +1105,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -1152,7 +1124,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1143,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1187,7 +1157,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1210,7 +1179,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1201,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1255,7 +1222,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1239,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1263,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1313,7 +1277,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1336,7 +1299,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1359,7 +1321,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1381,7 +1342,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1359,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1383,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1447,7 +1405,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1470,7 +1427,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1448,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1510,7 +1465,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1489,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1558,7 +1511,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1581,7 +1533,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1603,7 +1554,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1571,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1595,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -1662,7 +1610,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1678,7 +1625,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -1698,7 +1644,6 @@ public final class ListRegionBackendServicesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

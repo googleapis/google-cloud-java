@@ -74,8 +74,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAuthorizationPolicies, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListAuthorizationPolicies, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAuthorizationPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAuthorizationPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetAuthorizationPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AuthorizationPolicy.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAuthorizationPolicy, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateAuthorizationPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAuthorizationPolicy, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateAuthorizationPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +158,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAuthorizationPolicy, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteAuthorizationPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -185,8 +180,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServerTlsPolicies, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListServerTlsPolicies, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServerTlsPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -228,8 +222,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServerTlsPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateServerTlsPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -250,8 +243,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateServerTlsPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateServerTlsPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -272,8 +264,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServerTlsPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteServerTlsPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -295,8 +286,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListClientTlsPolicies, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListClientTlsPolicies, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListClientTlsPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -338,8 +328,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateClientTlsPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateClientTlsPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -360,8 +349,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateClientTlsPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateClientTlsPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -382,8 +370,7 @@ public class MockNetworkSecurityImpl extends NetworkSecurityImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteClientTlsPolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteClientTlsPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

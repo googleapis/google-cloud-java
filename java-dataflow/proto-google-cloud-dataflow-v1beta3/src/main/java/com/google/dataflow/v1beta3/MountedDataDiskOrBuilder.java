@@ -39,7 +39,6 @@ public interface MountedDataDiskOrBuilder
    * @return The dataDisk.
    */
   java.lang.String getDataDisk();
-
   /**
    *
    *

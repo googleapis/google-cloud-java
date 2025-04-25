@@ -33,7 +33,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1beta.BackendMetastore)
     BackendMetastoreOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackendMetastore.newBuilder() to construct.
   private BackendMetastore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * <code>METASTORE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int METASTORE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * <code>DATAPLEX = 1;</code>
      */
     public static final int DATAPLEX_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * <code>BIGQUERY = 2;</code>
      */
     public static final int BIGQUERY_VALUE = 2;
-
     /**
      *
      *
@@ -253,7 +249,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -284,7 +279,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
 
   public static final int METASTORE_TYPE_FIELD_NUMBER = 2;
   private int metastoreType_ = 0;
-
   /**
    *
    *
@@ -334,7 +327,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
   public int getMetastoreTypeValue() {
     return metastoreType_;
   }
-
   /**
    *
    *
@@ -529,7 +521,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -727,7 +718,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -757,7 +747,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +776,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -816,7 +804,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +828,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +859,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
     }
 
     private int metastoreType_ = 0;
-
     /**
      *
      *
@@ -890,7 +875,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
     public int getMetastoreTypeValue() {
       return metastoreType_;
     }
-
     /**
      *
      *
@@ -910,7 +894,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +915,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.metastore.v1beta.BackendMetastore.MetastoreType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -956,7 +938,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface AutokeyConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface AutokeyConfigOrBuilder
    * @return The keyProject.
    */
   java.lang.String getKeyProject();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface AutokeyConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

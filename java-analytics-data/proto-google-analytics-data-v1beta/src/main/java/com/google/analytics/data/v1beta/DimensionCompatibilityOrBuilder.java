@@ -38,7 +38,6 @@ public interface DimensionCompatibilityOrBuilder
    * @return Whether the dimensionMetadata field is set.
    */
   boolean hasDimensionMetadata();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DimensionCompatibilityOrBuilder
    * @return The dimensionMetadata.
    */
   com.google.analytics.data.v1beta.DimensionMetadata getDimensionMetadata();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface DimensionCompatibilityOrBuilder
    * @return Whether the compatibility field is set.
    */
   boolean hasCompatibility();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface DimensionCompatibilityOrBuilder
    * @return The enum numeric value on the wire for compatibility.
    */
   int getCompatibilityValue();
-
   /**
    *
    *

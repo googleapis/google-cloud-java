@@ -41,7 +41,6 @@ public interface CostProjectionOrBuilder
    * @return Whether the cost field is set.
    */
   boolean hasCost();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface CostProjectionOrBuilder
    * @return The cost.
    */
   com.google.type.Money getCost();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface CostProjectionOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface CostProjectionOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface CostProjectionOrBuilder
    * @return Whether the costInLocalCurrency field is set.
    */
   boolean hasCostInLocalCurrency();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface CostProjectionOrBuilder
    * @return The costInLocalCurrency.
    */
   com.google.type.Money getCostInLocalCurrency();
-
   /**
    *
    *

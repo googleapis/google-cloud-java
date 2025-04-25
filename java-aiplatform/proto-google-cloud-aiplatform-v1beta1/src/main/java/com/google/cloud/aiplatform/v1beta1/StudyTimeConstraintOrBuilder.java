@@ -36,7 +36,6 @@ public interface StudyTimeConstraintOrBuilder
    * @return Whether the maxDuration field is set.
    */
   boolean hasMaxDuration();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StudyTimeConstraintOrBuilder
    * @return The maxDuration.
    */
   com.google.protobuf.Duration getMaxDuration();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface StudyTimeConstraintOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface StudyTimeConstraintOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.TaskRunnerSettings)
     TaskRunnerSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaskRunnerSettings.newBuilder() to construct.
   private TaskRunnerSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object taskUser_ = "";
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object taskGroup_ = "";
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList oauthScopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getOauthScopesList() {
     return oauthScopes_;
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   public int getOauthScopesCount() {
     return oauthScopes_.size();
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   public java.lang.String getOauthScopes(int index) {
     return oauthScopes_.get(index);
   }
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseUrl_ = "";
-
   /**
    *
    *
@@ -297,7 +287,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataflowApiVersion_ = "";
-
   /**
    *
    *
@@ -358,7 +346,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -385,7 +372,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int PARALLEL_WORKER_SETTINGS_FIELD_NUMBER = 6;
   private com.google.dataflow.v1beta3.WorkerSettings parallelWorkerSettings_;
-
   /**
    *
    *
@@ -401,7 +387,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   public boolean hasParallelWorkerSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -419,7 +404,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         ? com.google.dataflow.v1beta3.WorkerSettings.getDefaultInstance()
         : parallelWorkerSettings_;
   }
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseTaskDir_ = "";
-
   /**
    *
    *
@@ -464,7 +447,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -491,7 +473,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int CONTINUE_ON_EXCEPTION_FIELD_NUMBER = 8;
   private boolean continueOnException_ = false;
-
   /**
    *
    *
@@ -510,7 +491,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int LOG_TO_SERIALCONSOLE_FIELD_NUMBER = 9;
   private boolean logToSerialconsole_ = false;
-
   /**
    *
    *
@@ -530,7 +510,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int ALSOLOGTOSTDERR_FIELD_NUMBER = 10;
   private boolean alsologtostderr_ = false;
-
   /**
    *
    *
@@ -551,7 +530,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logUploadLocation_ = "";
-
   /**
    *
    *
@@ -582,7 +560,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -618,7 +595,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logDir_ = "";
-
   /**
    *
    *
@@ -642,7 +618,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -671,7 +646,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tempStoragePrefix_ = "";
-
   /**
    *
    *
@@ -702,7 +676,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -738,7 +711,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object harnessCommand_ = "";
-
   /**
    *
    *
@@ -762,7 +734,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -791,7 +762,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workflowFileName_ = "";
-
   /**
    *
    *
@@ -815,7 +785,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -844,7 +813,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commandlinesFileName_ = "";
-
   /**
    *
    *
@@ -868,7 +836,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -897,7 +864,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmId_ = "";
-
   /**
    *
    *
@@ -921,7 +887,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -950,7 +915,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageHint_ = "";
-
   /**
    *
    *
@@ -974,7 +938,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1003,7 +966,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object streamingWorkerMainClass_ = "";
-
   /**
    *
    *
@@ -1027,7 +989,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1387,7 +1348,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1860,7 +1820,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object taskUser_ = "";
-
     /**
      *
      *
@@ -1884,7 +1843,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1908,7 +1866,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1931,7 +1888,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1950,7 +1906,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1976,7 +1931,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object taskGroup_ = "";
-
     /**
      *
      *
@@ -2000,7 +1954,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2024,7 +1977,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2047,7 +1999,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2066,7 +2017,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2100,7 +2050,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2117,7 +2066,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       oauthScopes_.makeImmutable();
       return oauthScopes_;
     }
-
     /**
      *
      *
@@ -2133,7 +2081,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public int getOauthScopesCount() {
       return oauthScopes_.size();
     }
-
     /**
      *
      *
@@ -2150,7 +2097,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public java.lang.String getOauthScopes(int index) {
       return oauthScopes_.get(index);
     }
-
     /**
      *
      *
@@ -2167,7 +2113,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getOauthScopesBytes(int index) {
       return oauthScopes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2192,7 +2137,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2216,7 +2160,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2237,7 +2180,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2257,7 +2199,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2284,7 +2225,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object baseUrl_ = "";
-
     /**
      *
      *
@@ -2315,7 +2255,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2346,7 +2285,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2376,7 +2314,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2402,7 +2339,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2435,7 +2371,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object dataflowApiVersion_ = "";
-
     /**
      *
      *
@@ -2458,7 +2393,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2481,7 +2415,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2503,7 +2436,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2521,7 +2453,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2551,7 +2482,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
             com.google.dataflow.v1beta3.WorkerSettings.Builder,
             com.google.dataflow.v1beta3.WorkerSettingsOrBuilder>
         parallelWorkerSettingsBuilder_;
-
     /**
      *
      *
@@ -2566,7 +2496,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public boolean hasParallelWorkerSettings() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2587,7 +2516,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return parallelWorkerSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2610,7 +2538,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2558,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2660,7 +2586,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2680,7 +2605,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2619,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getParallelWorkerSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2715,7 +2638,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
             : parallelWorkerSettings_;
       }
     }
-
     /**
      *
      *
@@ -2743,7 +2665,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object baseTaskDir_ = "";
-
     /**
      *
      *
@@ -2766,7 +2687,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2789,7 +2709,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2811,7 +2730,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2829,7 +2747,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2854,7 +2771,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean continueOnException_;
-
     /**
      *
      *
@@ -2870,7 +2786,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public boolean getContinueOnException() {
       return continueOnException_;
     }
-
     /**
      *
      *
@@ -2890,7 +2805,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2910,7 +2824,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean logToSerialconsole_;
-
     /**
      *
      *
@@ -2927,7 +2840,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public boolean getLogToSerialconsole() {
       return logToSerialconsole_;
     }
-
     /**
      *
      *
@@ -2948,7 +2860,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2969,7 +2880,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean alsologtostderr_;
-
     /**
      *
      *
@@ -2985,7 +2895,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public boolean getAlsologtostderr() {
       return alsologtostderr_;
     }
-
     /**
      *
      *
@@ -3005,7 +2914,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3025,7 +2933,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object logUploadLocation_ = "";
-
     /**
      *
      *
@@ -3055,7 +2962,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3085,7 +2991,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3114,7 +3019,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3139,7 +3043,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3171,7 +3074,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object logDir_ = "";
-
     /**
      *
      *
@@ -3194,7 +3096,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3217,7 +3118,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3239,7 +3139,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3257,7 +3156,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3282,7 +3180,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object tempStoragePrefix_ = "";
-
     /**
      *
      *
@@ -3312,7 +3209,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3342,7 +3238,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3371,7 +3266,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3396,7 +3290,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3428,7 +3321,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object harnessCommand_ = "";
-
     /**
      *
      *
@@ -3451,7 +3343,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3474,7 +3365,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3496,7 +3386,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3514,7 +3403,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3539,7 +3427,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object workflowFileName_ = "";
-
     /**
      *
      *
@@ -3562,7 +3449,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3585,7 +3471,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3607,7 +3492,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3625,7 +3509,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3650,7 +3533,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object commandlinesFileName_ = "";
-
     /**
      *
      *
@@ -3673,7 +3555,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3696,7 +3577,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3718,7 +3598,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3736,7 +3615,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3761,7 +3639,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object vmId_ = "";
-
     /**
      *
      *
@@ -3784,7 +3661,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3807,7 +3683,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3829,7 +3704,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3847,7 +3721,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3872,7 +3745,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object languageHint_ = "";
-
     /**
      *
      *
@@ -3895,7 +3767,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3918,7 +3789,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3940,7 +3810,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3827,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3983,7 +3851,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object streamingWorkerMainClass_ = "";
-
     /**
      *
      *
@@ -4006,7 +3873,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4029,7 +3895,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4051,7 +3916,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4069,7 +3933,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

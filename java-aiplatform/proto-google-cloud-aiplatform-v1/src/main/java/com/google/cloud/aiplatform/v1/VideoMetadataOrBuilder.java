@@ -37,7 +37,6 @@ public interface VideoMetadataOrBuilder
    * @return Whether the startOffset field is set.
    */
   boolean hasStartOffset();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface VideoMetadataOrBuilder
    * @return The startOffset.
    */
   com.google.protobuf.Duration getStartOffset();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface VideoMetadataOrBuilder
    * @return Whether the endOffset field is set.
    */
   boolean hasEndOffset();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface VideoMetadataOrBuilder
    * @return The endOffset.
    */
   com.google.protobuf.Duration getEndOffset();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface GetRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetRuleRegionSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetRuleRegionSecurityPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GetRuleRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
-
   /**
    *
    *

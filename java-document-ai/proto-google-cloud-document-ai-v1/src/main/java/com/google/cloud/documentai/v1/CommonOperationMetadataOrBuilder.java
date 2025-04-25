@@ -36,7 +36,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface CommonOperationMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

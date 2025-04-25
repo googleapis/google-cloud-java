@@ -45,7 +45,6 @@ public interface SanitizationResultOrBuilder
    * @return The enum numeric value on the wire for filterMatchState.
    */
   int getFilterMatchStateValue();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface SanitizationResultOrBuilder
    * </code>
    */
   int getFilterResultsCount();
-
   /**
    *
    *
@@ -95,11 +93,9 @@ public interface SanitizationResultOrBuilder
    * </code>
    */
   boolean containsFilterResults(java.lang.String key);
-
   /** Use {@link #getFilterResultsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.modelarmor.v1.FilterResult> getFilterResults();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SanitizationResultOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.modelarmor.v1.FilterResult>
       getFilterResultsMap();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface SanitizationResultOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.modelarmor.v1.FilterResult defaultValue);
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface SanitizationResultOrBuilder
    * @return The enum numeric value on the wire for invocationResult.
    */
   int getInvocationResultValue();
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public interface SanitizationResultOrBuilder
    * @return Whether the sanitizationMetadata field is set.
    */
   boolean hasSanitizationMetadata();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface SanitizationResultOrBuilder
    * @return The sanitizationMetadata.
    */
   com.google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata getSanitizationMetadata();
-
   /**
    *
    *

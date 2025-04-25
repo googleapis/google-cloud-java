@@ -36,7 +36,6 @@ public interface WidgetOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface WidgetOrBuilder
    * @return Whether the xyChart field is set.
    */
   boolean hasXyChart();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface WidgetOrBuilder
    * @return The xyChart.
    */
   com.google.monitoring.dashboard.v1.XyChart getXyChart();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WidgetOrBuilder
    * @return Whether the scorecard field is set.
    */
   boolean hasScorecard();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface WidgetOrBuilder
    * @return The scorecard.
    */
   com.google.monitoring.dashboard.v1.Scorecard getScorecard();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface WidgetOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface WidgetOrBuilder
    * @return The text.
    */
   com.google.monitoring.dashboard.v1.Text getText();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface WidgetOrBuilder
    * @return Whether the blank field is set.
    */
   boolean hasBlank();
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface WidgetOrBuilder
    * @return The blank.
    */
   com.google.protobuf.Empty getBlank();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface WidgetOrBuilder
    * @return Whether the alertChart field is set.
    */
   boolean hasAlertChart();
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface WidgetOrBuilder
    * @return The alertChart.
    */
   com.google.monitoring.dashboard.v1.AlertChart getAlertChart();
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public interface WidgetOrBuilder
    * @return Whether the timeSeriesTable field is set.
    */
   boolean hasTimeSeriesTable();
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public interface WidgetOrBuilder
    * @return The timeSeriesTable.
    */
   com.google.monitoring.dashboard.v1.TimeSeriesTable getTimeSeriesTable();
-
   /**
    *
    *
@@ -285,7 +272,6 @@ public interface WidgetOrBuilder
    * @return Whether the collapsibleGroup field is set.
    */
   boolean hasCollapsibleGroup();
-
   /**
    *
    *
@@ -299,7 +285,6 @@ public interface WidgetOrBuilder
    * @return The collapsibleGroup.
    */
   com.google.monitoring.dashboard.v1.CollapsibleGroup getCollapsibleGroup();
-
   /**
    *
    *
@@ -324,7 +309,6 @@ public interface WidgetOrBuilder
    * @return Whether the logsPanel field is set.
    */
   boolean hasLogsPanel();
-
   /**
    *
    *
@@ -337,7 +321,6 @@ public interface WidgetOrBuilder
    * @return The logsPanel.
    */
   com.google.monitoring.dashboard.v1.LogsPanel getLogsPanel();
-
   /**
    *
    *
@@ -361,7 +344,6 @@ public interface WidgetOrBuilder
    * @return Whether the incidentList field is set.
    */
   boolean hasIncidentList();
-
   /**
    *
    *
@@ -374,7 +356,6 @@ public interface WidgetOrBuilder
    * @return The incidentList.
    */
   com.google.monitoring.dashboard.v1.IncidentList getIncidentList();
-
   /**
    *
    *
@@ -398,7 +379,6 @@ public interface WidgetOrBuilder
    * @return Whether the pieChart field is set.
    */
   boolean hasPieChart();
-
   /**
    *
    *
@@ -411,7 +391,6 @@ public interface WidgetOrBuilder
    * @return The pieChart.
    */
   com.google.monitoring.dashboard.v1.PieChart getPieChart();
-
   /**
    *
    *
@@ -435,7 +414,6 @@ public interface WidgetOrBuilder
    * @return Whether the errorReportingPanel field is set.
    */
   boolean hasErrorReportingPanel();
-
   /**
    *
    *
@@ -448,7 +426,6 @@ public interface WidgetOrBuilder
    * @return The errorReportingPanel.
    */
   com.google.monitoring.dashboard.v1.ErrorReportingPanel getErrorReportingPanel();
-
   /**
    *
    *
@@ -473,7 +450,6 @@ public interface WidgetOrBuilder
    * @return Whether the sectionHeader field is set.
    */
   boolean hasSectionHeader();
-
   /**
    *
    *
@@ -487,7 +463,6 @@ public interface WidgetOrBuilder
    * @return The sectionHeader.
    */
   com.google.monitoring.dashboard.v1.SectionHeader getSectionHeader();
-
   /**
    *
    *
@@ -512,7 +487,6 @@ public interface WidgetOrBuilder
    * @return Whether the singleViewGroup field is set.
    */
   boolean hasSingleViewGroup();
-
   /**
    *
    *
@@ -525,7 +499,6 @@ public interface WidgetOrBuilder
    * @return The singleViewGroup.
    */
   com.google.monitoring.dashboard.v1.SingleViewGroup getSingleViewGroup();
-
   /**
    *
    *
@@ -550,7 +523,6 @@ public interface WidgetOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

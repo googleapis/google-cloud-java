@@ -63,7 +63,6 @@ public interface AttributePropagationSettingsOrBuilder
    * @return Whether the expression field is set.
    */
   boolean hasExpression();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface AttributePropagationSettingsOrBuilder
    * @return The expression.
    */
   java.lang.String getExpression();
-
   /**
    *
    *
@@ -161,7 +159,6 @@ public interface AttributePropagationSettingsOrBuilder
    */
   java.util.List<com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials>
       getOutputCredentialsList();
-
   /**
    *
    *
@@ -178,7 +175,6 @@ public interface AttributePropagationSettingsOrBuilder
    * @return The count of outputCredentials.
    */
   int getOutputCredentialsCount();
-
   /**
    *
    *
@@ -197,7 +193,6 @@ public interface AttributePropagationSettingsOrBuilder
    */
   com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials getOutputCredentials(
       int index);
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public interface AttributePropagationSettingsOrBuilder
    * @return A list containing the enum numeric values on the wire for outputCredentials.
    */
   java.util.List<java.lang.Integer> getOutputCredentialsValueList();
-
   /**
    *
    *
@@ -247,7 +241,6 @@ public interface AttributePropagationSettingsOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.NormalizedVertex)
     NormalizedVertexOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NormalizedVertex.newBuilder() to construct.
   private NormalizedVertex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
 
   public static final int X_FIELD_NUMBER = 1;
   private float x_ = 0F;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
 
   public static final int Y_FIELD_NUMBER = 2;
   private float y_ = 0F;
-
   /**
    *
    *
@@ -274,7 +271,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -474,7 +470,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private float x_;
-
     /**
      *
      *
@@ -490,7 +485,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     public float getX() {
       return x_;
     }
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -530,7 +523,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     }
 
     private float y_;
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     public float getY() {
       return y_;
     }
-
     /**
      *
      *
@@ -566,7 +557,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

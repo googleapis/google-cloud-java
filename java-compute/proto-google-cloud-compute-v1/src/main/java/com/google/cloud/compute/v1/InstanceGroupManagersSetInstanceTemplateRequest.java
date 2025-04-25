@@ -33,7 +33,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest)
     InstanceGroupManagersSetInstanceTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersSetInstanceTemplateRequest.newBuilder() to construct.
   private InstanceGroupManagersSetInstanceTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceTemplate_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
   public boolean hasInstanceTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -309,7 +305,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -507,7 +502,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
     private int bitField0_;
 
     private java.lang.Object instanceTemplate_ = "";
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
     public boolean hasInstanceTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -568,7 +560,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -590,7 +581,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

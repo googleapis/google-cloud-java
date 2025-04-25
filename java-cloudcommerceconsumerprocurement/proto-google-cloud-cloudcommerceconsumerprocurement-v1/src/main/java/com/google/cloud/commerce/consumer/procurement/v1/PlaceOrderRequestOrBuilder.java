@@ -39,7 +39,6 @@ public interface PlaceOrderRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PlaceOrderRequestOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface PlaceOrderRequestOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo>
       getLineItemInfoList();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface PlaceOrderRequestOrBuilder
    * </code>
    */
   com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo getLineItemInfo(int index);
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface PlaceOrderRequestOrBuilder
    * </code>
    */
   int getLineItemInfoCount();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface PlaceOrderRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.commerce.consumer.procurement.v1.LineItemInfoOrBuilder>
       getLineItemInfoOrBuilderList();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface PlaceOrderRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

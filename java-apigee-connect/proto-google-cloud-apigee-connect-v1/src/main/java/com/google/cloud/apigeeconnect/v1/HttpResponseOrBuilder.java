@@ -36,7 +36,6 @@ public interface HttpResponseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HttpResponseOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface HttpResponseOrBuilder
    * <code>repeated .google.cloud.apigeeconnect.v1.Header headers = 5;</code>
    */
   java.util.List<com.google.cloud.apigeeconnect.v1.Header> getHeadersList();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface HttpResponseOrBuilder
    * <code>repeated .google.cloud.apigeeconnect.v1.Header headers = 5;</code>
    */
   com.google.cloud.apigeeconnect.v1.Header getHeaders(int index);
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface HttpResponseOrBuilder
    * <code>repeated .google.cloud.apigeeconnect.v1.Header headers = 5;</code>
    */
   int getHeadersCount();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface HttpResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigeeconnect.v1.HeaderOrBuilder>
       getHeadersOrBuilderList();
-
   /**
    *
    *

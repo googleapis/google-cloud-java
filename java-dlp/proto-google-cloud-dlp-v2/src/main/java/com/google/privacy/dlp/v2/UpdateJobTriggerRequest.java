@@ -33,7 +33,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.UpdateJobTriggerRequest)
     UpdateJobTriggerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateJobTriggerRequest.newBuilder() to construct.
   private UpdateJobTriggerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
 
   public static final int JOB_TRIGGER_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.JobTrigger jobTrigger_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
   public boolean hasJobTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()
         : jobTrigger_;
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -413,7 +404,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +636,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.JobTrigger.Builder,
             com.google.privacy.dlp.v2.JobTriggerOrBuilder>
         jobTriggerBuilder_;
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
     public boolean hasJobTrigger() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
         return jobTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return getJobTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
             : jobTrigger_;
       }
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1003,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1022,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1068,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1082,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1132,7 +1100,6 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
-
     /**
      *
      *

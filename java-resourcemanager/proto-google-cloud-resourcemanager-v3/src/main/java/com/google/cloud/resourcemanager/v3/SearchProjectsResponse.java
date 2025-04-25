@@ -39,7 +39,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.SearchProjectsResponse)
     SearchProjectsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchProjectsResponse.newBuilder() to construct.
   private SearchProjectsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.Project> projects_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.resourcemanager.v3.Project> getProjectsList() {
     return projects_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       getProjectsOrBuilderList() {
     return projects_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
   public int getProjectsCount() {
     return projects_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.resourcemanager.v3.Project getProjects(int index) {
     return projects_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -396,7 +388,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +671,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return projectsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -698,7 +688,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return projectsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return projectsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +878,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +898,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.resourcemanager.v3.Project.Builder getProjectsBuilder(int index) {
       return getProjectsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return projectsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(projects_);
       }
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       return getProjectsFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.Project.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       return getProjectsFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.Project.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1033,7 +1007,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1066,7 +1039,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1071,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1102,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1129,6 @@ public final class SearchProjectsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

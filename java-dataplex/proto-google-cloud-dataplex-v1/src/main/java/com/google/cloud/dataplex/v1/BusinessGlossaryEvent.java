@@ -33,7 +33,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.BusinessGlossaryEvent)
     BusinessGlossaryEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BusinessGlossaryEvent.newBuilder() to construct.
   private BusinessGlossaryEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -189,7 +188,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -200,7 +198,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_CREATE = 1;</code>
      */
     public static final int GLOSSARY_CREATE_VALUE = 1;
-
     /**
      *
      *
@@ -211,7 +208,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_UPDATE = 2;</code>
      */
     public static final int GLOSSARY_UPDATE_VALUE = 2;
-
     /**
      *
      *
@@ -222,7 +218,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_DELETE = 3;</code>
      */
     public static final int GLOSSARY_DELETE_VALUE = 3;
-
     /**
      *
      *
@@ -233,7 +228,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_CATEGORY_CREATE = 4;</code>
      */
     public static final int GLOSSARY_CATEGORY_CREATE_VALUE = 4;
-
     /**
      *
      *
@@ -244,7 +238,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_CATEGORY_UPDATE = 5;</code>
      */
     public static final int GLOSSARY_CATEGORY_UPDATE_VALUE = 5;
-
     /**
      *
      *
@@ -255,7 +248,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_CATEGORY_DELETE = 6;</code>
      */
     public static final int GLOSSARY_CATEGORY_DELETE_VALUE = 6;
-
     /**
      *
      *
@@ -266,7 +258,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_TERM_CREATE = 7;</code>
      */
     public static final int GLOSSARY_TERM_CREATE_VALUE = 7;
-
     /**
      *
      *
@@ -277,7 +268,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
      * <code>GLOSSARY_TERM_UPDATE = 8;</code>
      */
     public static final int GLOSSARY_TERM_UPDATE_VALUE = 8;
-
     /**
      *
      *
@@ -392,7 +382,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -416,7 +405,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -443,7 +431,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
   private int eventType_ = 0;
-
   /**
    *
    *
@@ -459,7 +446,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
   public int getEventTypeValue() {
     return eventType_;
   }
-
   /**
    *
    *
@@ -484,7 +470,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -508,7 +493,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -714,7 +698,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -927,7 +910,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -973,7 +954,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -995,7 +975,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +992,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1016,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
     }
 
     private int eventType_ = 0;
-
     /**
      *
      *
@@ -1054,7 +1031,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
     public int getEventTypeValue() {
       return eventType_;
     }
-
     /**
      *
      *
@@ -1073,7 +1049,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.dataplex.v1.BusinessGlossaryEvent.EventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1116,7 +1090,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1109,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1159,7 +1131,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1153,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1191,6 @@ public final class BusinessGlossaryEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

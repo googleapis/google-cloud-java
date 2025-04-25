@@ -215,8 +215,7 @@ public class DlpContentName implements ResourceName {
     private Builder(DlpContentName dlpContentName) {
       Preconditions.checkArgument(
           Objects.equals(dlpContentName.pathTemplate, PROJECT),
-          "toBuilder is only supported when DlpContentName has the pattern of"
-              + " projects/{project}/dlpContent");
+          "toBuilder is only supported when DlpContentName has the pattern of projects/{project}/dlpContent");
       this.project = dlpContentName.project;
     }
 

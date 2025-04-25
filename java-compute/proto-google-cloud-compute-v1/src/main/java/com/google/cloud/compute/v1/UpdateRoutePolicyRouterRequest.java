@@ -33,7 +33,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpdateRoutePolicyRouterRequest)
     UpdateRoutePolicyRouterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateRoutePolicyRouterRequest.newBuilder() to construct.
   private UpdateRoutePolicyRouterRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
 
   public static final int ROUTE_POLICY_RESOURCE_FIELD_NUMBER = 116219525;
   private com.google.cloud.compute.v1.RoutePolicy routePolicyResource_;
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
   public boolean hasRoutePolicyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.RoutePolicy.getDefaultInstance()
         : routePolicyResource_;
   }
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object router_ = "";
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -572,7 +559,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -836,7 +822,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +870,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +912,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +938,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -982,7 +962,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +986,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1009,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1028,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1054,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1116,7 +1090,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1112,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1133,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1150,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.RoutePolicy.Builder,
             com.google.cloud.compute.v1.RoutePolicyOrBuilder>
         routePolicyResourceBuilder_;
-
     /**
      *
      *
@@ -1226,7 +1195,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     public boolean hasRoutePolicyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1217,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return routePolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1241,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1263,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1293,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1314,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1330,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return getRoutePolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1388,7 +1350,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
             : routePolicyResource_;
       }
     }
-
     /**
      *
      *
@@ -1418,7 +1379,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object router_ = "";
-
     /**
      *
      *
@@ -1441,7 +1401,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1423,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1444,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1461,6 @@ public final class UpdateRoutePolicyRouterRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

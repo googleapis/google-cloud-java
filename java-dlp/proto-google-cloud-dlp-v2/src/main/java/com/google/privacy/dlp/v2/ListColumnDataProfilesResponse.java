@@ -33,7 +33,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListColumnDataProfilesResponse)
     ListColumnDataProfilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListColumnDataProfilesResponse.newBuilder() to construct.
   private ListColumnDataProfilesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.ColumnDataProfile> columnDataProfiles_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.privacy.dlp.v2.ColumnDataProfile> getColumnDataProfilesList() {
     return columnDataProfiles_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       getColumnDataProfilesOrBuilderList() {
     return columnDataProfiles_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
   public int getColumnDataProfilesCount() {
     return columnDataProfiles_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
   public com.google.privacy.dlp.v2.ColumnDataProfile getColumnDataProfiles(int index) {
     return columnDataProfiles_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return columnDataProfilesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return columnDataProfilesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return columnDataProfilesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         int index) {
       return getColumnDataProfilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return columnDataProfilesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(columnDataProfiles_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       return getColumnDataProfilesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.ColumnDataProfile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       return getColumnDataProfilesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.ColumnDataProfile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1030,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class ListColumnDataProfilesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

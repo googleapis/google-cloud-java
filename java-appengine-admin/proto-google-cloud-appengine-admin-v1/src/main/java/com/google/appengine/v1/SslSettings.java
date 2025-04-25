@@ -33,7 +33,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.SslSettings)
     SslSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SslSettings.newBuilder() to construct.
   private SslSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>SSL_MANAGEMENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SSL_MANAGEMENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOMATIC = 1;</code>
      */
     public static final int AUTOMATIC_VALUE = 1;
-
     /**
      *
      *
@@ -238,7 +235,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificateId_ = "";
-
   /**
    *
    *
@@ -270,7 +266,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -305,7 +300,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SSL_MANAGEMENT_TYPE_FIELD_NUMBER = 3;
   private int sslManagementType_ = 0;
-
   /**
    *
    *
@@ -323,7 +317,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
   public int getSslManagementTypeValue() {
     return sslManagementType_;
   }
-
   /**
    *
    *
@@ -350,7 +343,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pendingManagedCertificateId_ = "";
-
   /**
    *
    *
@@ -382,7 +374,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +587,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -807,7 +797,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object certificateId_ = "";
-
     /**
      *
      *
@@ -838,7 +827,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -869,7 +857,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +886,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +911,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +943,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sslManagementType_ = 0;
-
     /**
      *
      *
@@ -976,7 +960,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     public int getSslManagementTypeValue() {
       return sslManagementType_;
     }
-
     /**
      *
      *
@@ -997,7 +980,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +1001,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.appengine.v1.SslSettings.SslManagementType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1044,7 +1025,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1046,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pendingManagedCertificateId_ = "";
-
     /**
      *
      *
@@ -1097,7 +1076,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1128,7 +1106,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1158,7 +1135,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1160,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

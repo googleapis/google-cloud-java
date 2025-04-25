@@ -37,7 +37,6 @@ public interface OperationMetadataOrBuilder
    * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String> getResourceNamesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface OperationMetadataOrBuilder
    * @return The count of resourceNames.
    */
   int getResourceNamesCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface OperationMetadataOrBuilder
    * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
-
   /**
    *
    *

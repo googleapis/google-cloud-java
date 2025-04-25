@@ -73,8 +73,7 @@ public class MockAutomaticImprovementsServiceImpl extends AutomaticImprovementsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAutomaticImprovements, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetAutomaticImprovements, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AutomaticImprovements.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockAutomaticImprovementsServiceImpl extends AutomaticImprovementsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAutomaticImprovements, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method UpdateAutomaticImprovements, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AutomaticImprovements.class.getName(),
                   Exception.class.getName())));

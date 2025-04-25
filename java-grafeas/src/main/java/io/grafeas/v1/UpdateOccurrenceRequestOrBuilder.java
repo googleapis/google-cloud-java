@@ -40,7 +40,6 @@ public interface UpdateOccurrenceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateOccurrenceRequestOrBuilder
    * @return Whether the occurrence field is set.
    */
   boolean hasOccurrence();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateOccurrenceRequestOrBuilder
    * @return The occurrence.
    */
   io.grafeas.v1.Occurrence getOccurrence();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateOccurrenceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface UpdateOccurrenceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

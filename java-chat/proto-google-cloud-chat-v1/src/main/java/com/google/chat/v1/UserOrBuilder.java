@@ -57,7 +57,6 @@ public interface UserOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -104,7 +103,6 @@ public interface UserOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -130,7 +128,6 @@ public interface UserOrBuilder
    * @return The domainId.
    */
   java.lang.String getDomainId();
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public interface UserOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

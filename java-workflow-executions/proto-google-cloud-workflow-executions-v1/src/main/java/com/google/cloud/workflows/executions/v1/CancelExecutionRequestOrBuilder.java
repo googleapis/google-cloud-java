@@ -40,7 +40,6 @@ public interface CancelExecutionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

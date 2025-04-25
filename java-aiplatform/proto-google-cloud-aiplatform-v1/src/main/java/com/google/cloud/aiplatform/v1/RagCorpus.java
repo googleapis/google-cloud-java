@@ -34,7 +34,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagCorpus)
     RagCorpusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RagCorpus.newBuilder() to construct.
   private RagCorpus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     private BackendConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VECTOR_DB_CONFIG_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVectorDbConfig() {
     return backendConfigCase_ == 9;
   }
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.RagVectorDbConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTEX_AI_SEARCH_CONFIG_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVertexAiSearchConfig() {
     return backendConfigCase_ == 10;
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -353,7 +341,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -377,7 +364,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -404,7 +390,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -421,7 +406,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -438,7 +422,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -456,7 +439,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -473,7 +455,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -490,7 +471,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -508,7 +488,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CORPUS_STATUS_FIELD_NUMBER = 8;
   private com.google.cloud.aiplatform.v1.CorpusStatus corpusStatus_;
-
   /**
    *
    *
@@ -526,7 +505,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCorpusStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -546,7 +524,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.CorpusStatus.getDefaultInstance()
         : corpusStatus_;
   }
-
   /**
    *
    *
@@ -822,7 +799,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1172,7 +1148,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.RagVectorDbConfig.Builder,
             com.google.cloud.aiplatform.v1.RagVectorDbConfigOrBuilder>
         vectorDbConfigBuilder_;
-
     /**
      *
      *
@@ -1190,7 +1165,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVectorDbConfig() {
       return backendConfigCase_ == 9;
     }
-
     /**
      *
      *
@@ -1218,7 +1192,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.RagVectorDbConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1216,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1238,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1273,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1300,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1314,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.RagVectorDbConfig.Builder getVectorDbConfigBuilder() {
       return getVectorDbConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1368,7 +1336,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.RagVectorDbConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1409,7 +1376,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.VertexAiSearchConfig.Builder,
             com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder>
         vertexAiSearchConfigBuilder_;
-
     /**
      *
      *
@@ -1427,7 +1393,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVertexAiSearchConfig() {
       return backendConfigCase_ == 10;
     }
-
     /**
      *
      *
@@ -1455,7 +1420,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1445,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1467,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1541,7 +1503,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1530,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1585,7 +1545,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         getVertexAiSearchConfigBuilder() {
       return getVertexAiSearchConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1609,7 +1568,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1646,7 +1604,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1669,7 +1626,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1648,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1669,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1732,7 +1686,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1710,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1782,7 +1734,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1807,7 +1758,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1831,7 +1781,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1851,7 +1800,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1826,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1901,7 +1848,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1924,7 +1870,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1946,7 +1891,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1964,7 +1908,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1937,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2011,7 +1953,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2034,7 +1975,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2059,7 +1999,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2020,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2111,7 +2049,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2070,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2086,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2171,7 +2106,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2206,7 +2140,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2223,7 +2156,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2246,7 +2178,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2271,7 +2202,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2293,7 +2223,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2323,7 +2252,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2345,7 +2273,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2362,7 +2289,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2383,7 +2309,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2418,7 +2343,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.CorpusStatus.Builder,
             com.google.cloud.aiplatform.v1.CorpusStatusOrBuilder>
         corpusStatusBuilder_;
-
     /**
      *
      *
@@ -2435,7 +2359,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCorpusStatus() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2458,7 +2381,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         return corpusStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2483,7 +2405,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2506,7 +2427,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2536,7 +2456,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2558,7 +2477,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2575,7 +2493,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCorpusStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2596,7 +2513,6 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             : corpusStatus_;
       }
     }
-
     /**
      *
      *

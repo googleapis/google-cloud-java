@@ -37,7 +37,6 @@ public interface MetricStructuredNameOrBuilder
    * @return The origin.
    */
   java.lang.String getOrigin();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface MetricStructuredNameOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface MetricStructuredNameOrBuilder
    * <code>map&lt;string, string&gt; context = 3;</code>
    */
   int getContextCount();
-
   /**
    *
    *
@@ -109,11 +106,9 @@ public interface MetricStructuredNameOrBuilder
    * <code>map&lt;string, string&gt; context = 3;</code>
    */
   boolean containsContext(java.lang.String key);
-
   /** Use {@link #getContextMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getContext();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface MetricStructuredNameOrBuilder
    * <code>map&lt;string, string&gt; context = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getContextMap();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface MetricStructuredNameOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

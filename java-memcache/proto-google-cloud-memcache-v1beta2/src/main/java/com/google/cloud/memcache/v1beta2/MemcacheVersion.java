@@ -46,7 +46,6 @@ public enum MemcacheVersion implements com.google.protobuf.ProtocolMessageEnum {
 
   /** <code>MEMCACHE_VERSION_UNSPECIFIED = 0;</code> */
   public static final int MEMCACHE_VERSION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface StorageFormatOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface StorageFormatOrBuilder
    * @return The enum numeric value on the wire for compressionFormat.
    */
   int getCompressionFormatValue();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface StorageFormatOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public interface StorageFormatOrBuilder
    * @return Whether the csv field is set.
    */
   boolean hasCsv();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface StorageFormatOrBuilder
    * @return The csv.
    */
   com.google.cloud.dataplex.v1.StorageFormat.CsvOptions getCsv();
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public interface StorageFormatOrBuilder
    * @return Whether the json field is set.
    */
   boolean hasJson();
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public interface StorageFormatOrBuilder
    * @return The json.
    */
   com.google.cloud.dataplex.v1.StorageFormat.JsonOptions getJson();
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public interface StorageFormatOrBuilder
    * @return Whether the iceberg field is set.
    */
   boolean hasIceberg();
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public interface StorageFormatOrBuilder
    * @return The iceberg.
    */
   com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions getIceberg();
-
   /**
    *
    *

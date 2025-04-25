@@ -37,7 +37,6 @@ public interface AwsAccessRoleOrBuilder
    * @return The iamRoleId.
    */
   java.lang.String getIamRoleId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AwsAccessRoleOrBuilder
    * @return The identity.
    */
   java.lang.String getIdentity();
-
   /**
    *
    *

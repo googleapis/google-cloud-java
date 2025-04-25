@@ -33,7 +33,6 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.CheckActiveJobsResponse)
     CheckActiveJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CheckActiveJobsResponse.newBuilder() to construct.
   private CheckActiveJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
 
   public static final int ACTIVE_JOBS_EXIST_FIELD_NUMBER = 1;
   private boolean activeJobsExist_ = false;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean activeJobsExist_;
-
     /**
      *
      *
@@ -439,7 +435,6 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
     public boolean getActiveJobsExist() {
       return activeJobsExist_;
     }
-
     /**
      *
      *
@@ -459,7 +454,6 @@ public final class CheckActiveJobsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

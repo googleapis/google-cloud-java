@@ -37,7 +37,6 @@ public interface EnrollDataSourcesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface EnrollDataSourcesRequestOrBuilder
    * @return A list containing the dataSourceIds.
    */
   java.util.List<java.lang.String> getDataSourceIdsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface EnrollDataSourcesRequestOrBuilder
    * @return The count of dataSourceIds.
    */
   int getDataSourceIdsCount();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface EnrollDataSourcesRequestOrBuilder
    * @return The dataSourceIds at the given index.
    */
   java.lang.String getDataSourceIds(int index);
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return Whether the input field is set.
    */
   boolean hasInput();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return The input.
    */
   com.google.cloud.texttospeech.v1.SynthesisInput getInput();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return Whether the voice field is set.
    */
   boolean hasVoice();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return The voice.
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return The audioConfig.
    */
   com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return Whether the advancedVoiceOptions field is set.
    */
   boolean hasAdvancedVoiceOptions();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface SynthesizeSpeechRequestOrBuilder
    * @return The advancedVoiceOptions.
    */
   com.google.cloud.texttospeech.v1.AdvancedVoiceOptions getAdvancedVoiceOptions();
-
   /**
    *
    *

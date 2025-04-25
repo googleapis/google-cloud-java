@@ -34,7 +34,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CloudIdentityCustomerAccount)
     CloudIdentityCustomerAccountOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudIdentityCustomerAccount.newBuilder() to construct.
   private CloudIdentityCustomerAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
 
   public static final int EXISTING_FIELD_NUMBER = 1;
   private boolean existing_ = false;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
 
   public static final int OWNED_FIELD_NUMBER = 2;
   private boolean owned_ = false;
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerName_ = "";
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerCloudIdentityId_ = "";
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
 
   public static final int CUSTOMER_TYPE_FIELD_NUMBER = 5;
   private int customerType_ = 0;
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
   public int getCustomerTypeValue() {
     return customerType_;
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object channelPartnerCloudIdentityId_ = "";
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -525,7 +514,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -780,7 +768,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     private int bitField0_;
 
     private boolean existing_;
-
     /**
      *
      *
@@ -796,7 +783,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     public boolean getExisting() {
       return existing_;
     }
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     }
 
     private boolean owned_;
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     public boolean getOwned() {
       return owned_;
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     }
 
     private java.lang.Object customerName_ = "";
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +927,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -972,7 +951,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +971,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     }
 
     private java.lang.Object customerCloudIdentityId_ = "";
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1042,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1080,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     }
 
     private int customerType_ = 0;
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     public int getCustomerTypeValue() {
       return customerType_;
     }
-
     /**
      *
      *
@@ -1167,7 +1137,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1156,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
           ? com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1210,7 +1178,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1197,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     }
 
     private java.lang.Object channelPartnerCloudIdentityId_ = "";
-
     /**
      *
      *
@@ -1254,7 +1220,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1243,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1265,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1283,6 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

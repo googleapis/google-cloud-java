@@ -34,7 +34,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
     ExportEvaluatedExamplesOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportEvaluatedExamplesOperationMetadata.newBuilder() to construct.
   private ExportEvaluatedExamplesOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,7 +81,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * @return The bigqueryOutputDataset.
      */
     java.lang.String getBigqueryOutputDataset();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
      */
     com.google.protobuf.ByteString getBigqueryOutputDatasetBytes();
   }
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.ExportEvaluatedExamplesOutputInfo)
       ExportEvaluatedExamplesOutputInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExportEvaluatedExamplesOutputInfo.newBuilder() to construct.
     private ExportEvaluatedExamplesOutputInfo(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -155,7 +151,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bigqueryOutputDataset_ = "";
-
     /**
      *
      *
@@ -180,7 +175,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -394,7 +388,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -615,7 +608,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       private int bitField0_;
 
       private java.lang.Object bigqueryOutputDataset_ = "";
-
       /**
        *
        *
@@ -639,7 +631,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -663,7 +654,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -686,7 +676,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -705,7 +694,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -807,7 +795,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
   private com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
           .ExportEvaluatedExamplesOutputInfo
       outputInfo_;
-
   /**
    *
    *
@@ -826,7 +813,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
   public boolean hasOutputInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -850,7 +836,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
             .ExportEvaluatedExamplesOutputInfo.getDefaultInstance()
         : outputInfo_;
   }
-
   /**
    *
    *
@@ -1040,7 +1025,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1259,7 +1243,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
             com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
                 .ExportEvaluatedExamplesOutputInfoOrBuilder>
         outputInfoBuilder_;
-
     /**
      *
      *
@@ -1277,7 +1260,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     public boolean hasOutputInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1304,7 +1286,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
         return outputInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1314,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1339,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1374,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1396,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1438,7 +1415,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1463,7 +1439,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
             : outputInfo_;
       }
     }
-
     /**
      *
      *

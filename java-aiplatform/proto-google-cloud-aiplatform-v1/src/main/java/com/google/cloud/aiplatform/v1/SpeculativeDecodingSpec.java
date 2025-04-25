@@ -33,7 +33,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SpeculativeDecodingSpec)
     SpeculativeDecodingSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpeculativeDecodingSpec.newBuilder() to construct.
   private SpeculativeDecodingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
      * @return The draftModel.
      */
     java.lang.String getDraftModel();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getDraftModelBytes();
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculation)
       DraftModelSpeculationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DraftModelSpeculation.newBuilder() to construct.
     private DraftModelSpeculation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -149,7 +145,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object draftModel_ = "";
-
     /**
      *
      *
@@ -175,7 +170,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -371,7 +365,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object draftModel_ = "";
-
       /**
        *
        *
@@ -598,7 +590,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -623,7 +614,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -647,7 +637,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -667,7 +656,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -783,7 +771,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
      */
     int getNgramSize();
   }
-
   /**
    *
    *
@@ -800,7 +787,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculation)
       NgramSpeculationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NgramSpeculation.newBuilder() to construct.
     private NgramSpeculation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -832,7 +818,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
 
     public static final int NGRAM_SIZE_FIELD_NUMBER = 1;
     private int ngramSize_ = 0;
-
     /**
      *
      *
@@ -1015,7 +1000,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1214,7 +1198,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       private int bitField0_;
 
       private int ngramSize_;
-
       /**
        *
        *
@@ -1233,7 +1216,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       public int getNgramSize() {
         return ngramSize_;
       }
-
       /**
        *
        *
@@ -1256,7 +1238,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1363,7 +1344,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     private SpeculationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1397,7 +1377,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
   }
 
   public static final int DRAFT_MODEL_SPECULATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1415,7 +1394,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
   public boolean hasDraftModelSpeculation() {
     return speculationCase_ == 2;
   }
-
   /**
    *
    *
@@ -1439,7 +1417,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     return com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculation
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1463,7 +1440,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
   }
 
   public static final int NGRAM_SPECULATION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1481,7 +1457,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
   public boolean hasNgramSpeculation() {
     return speculationCase_ == 3;
   }
-
   /**
    *
    *
@@ -1504,7 +1479,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     return com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculation
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1528,7 +1502,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
 
   public static final int SPECULATIVE_TOKEN_COUNT_FIELD_NUMBER = 1;
   private int speculativeTokenCount_ = 0;
-
   /**
    *
    *
@@ -1753,7 +1726,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2004,7 +1976,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculation.Builder,
             com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculationOrBuilder>
         draftModelSpeculationBuilder_;
-
     /**
      *
      *
@@ -2022,7 +1993,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     public boolean hasDraftModelSpeculation() {
       return speculationCase_ == 2;
     }
-
     /**
      *
      *
@@ -2054,7 +2024,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2080,7 +2049,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       speculationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2104,7 +2072,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       speculationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2144,7 +2111,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       speculationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2172,7 +2138,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2188,7 +2153,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
         getDraftModelSpeculationBuilder() {
       return getDraftModelSpeculationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2214,7 +2178,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2260,7 +2223,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculation.Builder,
             com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculationOrBuilder>
         ngramSpeculationBuilder_;
-
     /**
      *
      *
@@ -2278,7 +2240,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     public boolean hasNgramSpeculation() {
       return speculationCase_ == 3;
     }
-
     /**
      *
      *
@@ -2310,7 +2271,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2336,7 +2296,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       speculationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2360,7 +2319,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       speculationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2399,7 +2357,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       speculationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2427,7 +2384,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2443,7 +2399,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
         getNgramSpeculationBuilder() {
       return getNgramSpeculationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2469,7 +2424,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2509,7 +2463,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     }
 
     private int speculativeTokenCount_;
-
     /**
      *
      *
@@ -2525,7 +2478,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
     public int getSpeculativeTokenCount() {
       return speculativeTokenCount_;
     }
-
     /**
      *
      *
@@ -2545,7 +2497,6 @@ public final class SpeculativeDecodingSpec extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.MutationRecord)
     MutationRecordOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MutationRecord.newBuilder() to construct.
   private MutationRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MUTATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp mutateTime_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMutateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getMutateTime() {
     return mutateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : mutateTime_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mutatedBy_ = "";
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -339,7 +333,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +550,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         mutateTimeBuilder_;
-
     /**
      *
      *
@@ -572,7 +564,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMutateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
         return mutateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +685,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMutateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
             : mutateTime_;
       }
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mutatedBy_ = "";
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +774,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +795,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +812,6 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

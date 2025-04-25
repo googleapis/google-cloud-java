@@ -33,7 +33,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LicenseResourceCommitment)
     LicenseResourceCommitmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LicenseResourceCommitment.newBuilder() to construct.
   private LicenseResourceCommitment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int AMOUNT_FIELD_NUMBER = 196759640;
   private long amount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   public boolean hasAmount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object coresPerLicense_ = "";
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   public boolean hasCoresPerLicense() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object license_ = "";
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
   public boolean hasLicense() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -432,7 +423,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +640,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long amount_;
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     public long getAmount() {
       return amount_;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     }
 
     private java.lang.Object coresPerLicense_ = "";
-
     /**
      *
      *
@@ -737,7 +722,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     public boolean hasCoresPerLicense() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +766,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +804,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     }
 
     private java.lang.Object license_ = "";
-
     /**
      *
      *
@@ -863,7 +842,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
     public boolean hasLicense() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -886,7 +864,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +924,6 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

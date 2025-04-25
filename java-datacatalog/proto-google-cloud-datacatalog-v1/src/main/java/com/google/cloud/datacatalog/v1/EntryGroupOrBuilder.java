@@ -39,7 +39,6 @@ public interface EntryGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface EntryGroupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface EntryGroupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface EntryGroupOrBuilder
    * @return Whether the dataCatalogTimestamps field is set.
    */
   boolean hasDataCatalogTimestamps();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface EntryGroupOrBuilder
    * @return The dataCatalogTimestamps.
    */
   com.google.cloud.datacatalog.v1.SystemTimestamps getDataCatalogTimestamps();
-
   /**
    *
    *

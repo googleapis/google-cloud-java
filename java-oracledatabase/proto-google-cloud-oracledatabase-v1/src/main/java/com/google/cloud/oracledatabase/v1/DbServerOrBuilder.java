@@ -37,7 +37,6 @@ public interface DbServerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DbServerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DbServerOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface DbServerOrBuilder
    * @return The properties.
    */
   com.google.cloud.oracledatabase.v1.DbServerProperties getProperties();
-
   /**
    *
    *

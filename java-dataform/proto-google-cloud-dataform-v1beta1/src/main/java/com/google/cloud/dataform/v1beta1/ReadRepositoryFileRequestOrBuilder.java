@@ -38,7 +38,6 @@ public interface ReadRepositoryFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ReadRepositoryFileRequestOrBuilder
    * @return The commitSha.
    */
   java.lang.String getCommitSha();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ReadRepositoryFileRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

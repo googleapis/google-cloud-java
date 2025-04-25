@@ -39,7 +39,6 @@ public interface ListDataLabelingJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface ListDataLabelingJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public interface ListDataLabelingJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -174,7 +171,6 @@ public interface ListDataLabelingJobsRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
-
   /**
    *
    *
@@ -190,7 +186,6 @@ public interface ListDataLabelingJobsRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
-
   /**
    *
    *
@@ -219,7 +214,6 @@ public interface ListDataLabelingJobsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

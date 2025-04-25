@@ -40,7 +40,6 @@ public interface RestrictAllowedResourcesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface RestrictAllowedResourcesRequestOrBuilder
    * @return The enum numeric value on the wire for restrictionType.
    */
   int getRestrictionTypeValue();
-
   /**
    *
    *

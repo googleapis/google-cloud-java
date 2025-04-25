@@ -41,7 +41,6 @@ public interface TransientCryptoKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

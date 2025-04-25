@@ -33,7 +33,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.PrefetchConfig)
     PrefetchConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrefetchConfig.newBuilder() to construct.
   private PrefetchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INITIAL_AD_REQUEST_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration initialAdRequestDuration_;
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInitialAdRequestDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : initialAdRequestDuration_;
   }
-
   /**
    *
    *
@@ -325,7 +320,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -541,7 +535,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -557,7 +550,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -577,7 +569,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         initialAdRequestDurationBuilder_;
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInitialAdRequestDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
         return initialAdRequestDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +745,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInitialAdRequestDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class PrefetchConfig extends com.google.protobuf.GeneratedMessageV3
             : initialAdRequestDuration_;
       }
     }
-
     /**
      *
      *

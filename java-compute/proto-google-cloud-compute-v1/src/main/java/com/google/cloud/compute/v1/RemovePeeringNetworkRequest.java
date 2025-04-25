@@ -33,7 +33,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RemovePeeringNetworkRequest)
     RemovePeeringNetworkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemovePeeringNetworkRequest.newBuilder() to construct.
   private RemovePeeringNetworkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
   public static final int NETWORKS_REMOVE_PEERING_REQUEST_RESOURCE_FIELD_NUMBER = 421162494;
   private com.google.cloud.compute.v1.NetworksRemovePeeringRequest
       networksRemovePeeringRequestResource_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
   public boolean hasNetworksRemovePeeringRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.NetworksRemovePeeringRequest.getDefaultInstance()
         : networksRemovePeeringRequestResource_;
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -509,7 +498,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +747,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -782,7 +769,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -827,7 +812,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +829,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.NetworksRemovePeeringRequest.Builder,
             com.google.cloud.compute.v1.NetworksRemovePeeringRequestOrBuilder>
         networksRemovePeeringRequestResourceBuilder_;
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     public boolean hasNetworksRemovePeeringRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -917,7 +898,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return networksRemovePeeringRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +997,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1014,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return getNetworksRemovePeeringRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
             : networksRemovePeeringRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1115,7 +1088,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1112,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1135,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1154,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1180,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1226,7 +1194,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1272,7 +1238,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1259,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1276,6 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

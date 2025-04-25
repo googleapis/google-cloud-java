@@ -36,7 +36,6 @@ public interface TaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for taskOutcome.
    */
   int getTaskOutcomeValue();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface TaskOrBuilder
    * @return Whether the taskOutcomeTime field is set.
    */
   boolean hasTaskOutcomeTime();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface TaskOrBuilder
    * @return The taskOutcomeTime.
    */
   com.google.protobuf.Timestamp getTaskOutcomeTime();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface TaskOrBuilder
    * @return Whether the taskOutcomeLocation field is set.
    */
   boolean hasTaskOutcomeLocation();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface TaskOrBuilder
    * @return The taskOutcomeLocation.
    */
   com.google.maps.fleetengine.delivery.v1.LocationInfo getTaskOutcomeLocation();
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for taskOutcomeLocationSource.
    */
   int getTaskOutcomeLocationSourceValue();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface TaskOrBuilder
    * @return The trackingId.
    */
   java.lang.String getTrackingId();
-
   /**
    *
    *
@@ -321,7 +311,6 @@ public interface TaskOrBuilder
    * @return The deliveryVehicleId.
    */
   java.lang.String getDeliveryVehicleId();
-
   /**
    *
    *
@@ -358,7 +347,6 @@ public interface TaskOrBuilder
    * @return Whether the plannedLocation field is set.
    */
   boolean hasPlannedLocation();
-
   /**
    *
    *
@@ -374,7 +362,6 @@ public interface TaskOrBuilder
    * @return The plannedLocation.
    */
   com.google.maps.fleetengine.delivery.v1.LocationInfo getPlannedLocation();
-
   /**
    *
    *
@@ -403,7 +390,6 @@ public interface TaskOrBuilder
    * @return Whether the taskDuration field is set.
    */
   boolean hasTaskDuration();
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public interface TaskOrBuilder
    * @return The taskDuration.
    */
   com.google.protobuf.Duration getTaskDuration();
-
   /**
    *
    *
@@ -444,7 +429,6 @@ public interface TaskOrBuilder
    * @return Whether the targetTimeWindow field is set.
    */
   boolean hasTargetTimeWindow();
-
   /**
    *
    *
@@ -457,7 +441,6 @@ public interface TaskOrBuilder
    * @return The targetTimeWindow.
    */
   com.google.maps.fleetengine.delivery.v1.TimeWindow getTargetTimeWindow();
-
   /**
    *
    *
@@ -484,7 +467,6 @@ public interface TaskOrBuilder
    * @return Whether the journeySharingInfo field is set.
    */
   boolean hasJourneySharingInfo();
-
   /**
    *
    *
@@ -500,7 +482,6 @@ public interface TaskOrBuilder
    * @return The journeySharingInfo.
    */
   com.google.maps.fleetengine.delivery.v1.Task.JourneySharingInfo getJourneySharingInfo();
-
   /**
    *
    *
@@ -530,7 +511,6 @@ public interface TaskOrBuilder
    * @return Whether the taskTrackingViewConfig field is set.
    */
   boolean hasTaskTrackingViewConfig();
-
   /**
    *
    *
@@ -545,7 +525,6 @@ public interface TaskOrBuilder
    * @return The taskTrackingViewConfig.
    */
   com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig getTaskTrackingViewConfig();
-
   /**
    *
    *
@@ -570,7 +549,6 @@ public interface TaskOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.TaskAttribute attributes = 15;</code>
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.TaskAttribute> getAttributesList();
-
   /**
    *
    *
@@ -581,7 +559,6 @@ public interface TaskOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.TaskAttribute attributes = 15;</code>
    */
   com.google.maps.fleetengine.delivery.v1.TaskAttribute getAttributes(int index);
-
   /**
    *
    *
@@ -592,7 +569,6 @@ public interface TaskOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.TaskAttribute attributes = 15;</code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -604,7 +580,6 @@ public interface TaskOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.TaskAttributeOrBuilder>
       getAttributesOrBuilderList();
-
   /**
    *
    *

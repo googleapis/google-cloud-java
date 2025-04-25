@@ -37,7 +37,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return Whether the outOfPocketCost field is set.
    */
   boolean hasOutOfPocketCost();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return The outOfPocketCost.
    */
   com.google.type.Money getOutOfPocketCost();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return Whether the upfrontCost field is set.
    */
   boolean hasUpfrontCost();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return The upfrontCost.
    */
   com.google.type.Money getUpfrontCost();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return Whether the rebateValue field is set.
    */
   boolean hasRebateValue();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return The rebateValue.
    */
   com.google.type.Money getRebateValue();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return Whether the paybackYears field is set.
    */
   boolean hasPaybackYears();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return Whether the savings field is set.
    */
   boolean hasSavings();
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface CashPurchaseSavingsOrBuilder
    * @return The savings.
    */
   com.google.maps.solar.v1.SavingsOverTime getSavings();
-
   /**
    *
    *

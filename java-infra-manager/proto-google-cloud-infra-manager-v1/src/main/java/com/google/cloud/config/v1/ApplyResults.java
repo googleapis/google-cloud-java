@@ -33,7 +33,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.ApplyResults)
     ApplyResultsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApplyResults.newBuilder() to construct.
   private ApplyResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifacts_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -218,7 +213,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
   public int getOutputsCount() {
     return internalGetOutputs().getMap().size();
   }
-
   /**
    *
    *
@@ -235,14 +229,12 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetOutputs().getMap().containsKey(key);
   }
-
   /** Use {@link #getOutputsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformOutput> getOutputs() {
     return getOutputsMap();
   }
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       getOutputsMap() {
     return internalGetOutputs().getMap();
   }
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         internalGetOutputs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -487,7 +477,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -728,7 +717,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object content_ = "";
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -776,7 +763,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +828,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object artifacts_ = "";
-
     /**
      *
      *
@@ -868,7 +851,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +914,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,8 +958,7 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return OutputsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final OutputsConverter outputsConverter = new OutputsConverter();
 
@@ -1020,7 +998,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
     public int getOutputsCount() {
       return internalGetOutputs().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetOutputs().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getOutputsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1045,7 +1021,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         getOutputs() {
       return getOutputsMap();
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
         getOutputsMap() {
       return internalGetOutputs().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1082,7 +1056,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableOutputs().ensureBuilderMap();
       return map.containsKey(key) ? outputsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1110,7 +1083,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableOutputs().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1099,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableOutputs().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformOutput>
@@ -1135,7 +1106,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableOutputs().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1148,6 @@ public final class ApplyResults extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface OverlayOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OverlayOrBuilder
    * @return The image.
    */
   com.google.cloud.video.transcoder.v1.Overlay.Image getImage();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface OverlayOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.Overlay.Animation animations = 2;</code>
    */
   java.util.List<com.google.cloud.video.transcoder.v1.Overlay.Animation> getAnimationsList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface OverlayOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.Overlay.Animation animations = 2;</code>
    */
   com.google.cloud.video.transcoder.v1.Overlay.Animation getAnimations(int index);
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface OverlayOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.Overlay.Animation animations = 2;</code>
    */
   int getAnimationsCount();
-
   /**
    *
    *
@@ -109,7 +104,6 @@ public interface OverlayOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.transcoder.v1.Overlay.AnimationOrBuilder>
       getAnimationsOrBuilderList();
-
   /**
    *
    *

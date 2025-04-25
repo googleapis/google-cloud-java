@@ -40,7 +40,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return Whether the override field is set.
    */
   boolean hasOverride();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return The override.
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getOverride();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return A list containing the forceOnly.
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaSafetyCheck> getForceOnlyList();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return The count of forceOnly.
    */
   int getForceOnlyCount();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return The forceOnly at the given index.
    */
   com.google.api.serviceusage.v1beta1.QuotaSafetyCheck getForceOnly(int index);
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for forceOnly.
    */
   java.util.List<java.lang.Integer> getForceOnlyValueList();
-
   /**
    *
    *

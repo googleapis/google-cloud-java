@@ -38,7 +38,6 @@ public interface InsertFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicyResource field is set.
    */
   boolean hasFirewallPolicyResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertFirewallPolicyRequestOrBuilder
    * @return The firewallPolicyResource.
    */
   com.google.cloud.compute.v1.FirewallPolicy getFirewallPolicyResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertFirewallPolicyRequestOrBuilder
    * @return The parentId.
    */
   java.lang.String getParentId();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface InsertFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

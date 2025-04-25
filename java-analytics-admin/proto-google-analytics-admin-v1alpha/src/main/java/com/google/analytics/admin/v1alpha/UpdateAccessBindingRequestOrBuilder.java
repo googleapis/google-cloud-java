@@ -38,7 +38,6 @@ public interface UpdateAccessBindingRequestOrBuilder
    * @return Whether the accessBinding field is set.
    */
   boolean hasAccessBinding();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateAccessBindingRequestOrBuilder
    * @return The accessBinding.
    */
   com.google.analytics.admin.v1alpha.AccessBinding getAccessBinding();
-
   /**
    *
    *

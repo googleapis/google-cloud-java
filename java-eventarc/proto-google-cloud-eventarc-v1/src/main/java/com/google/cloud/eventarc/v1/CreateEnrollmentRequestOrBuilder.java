@@ -38,7 +38,6 @@ public interface CreateEnrollmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateEnrollmentRequestOrBuilder
    * @return Whether the enrollment field is set.
    */
   boolean hasEnrollment();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateEnrollmentRequestOrBuilder
    * @return The enrollment.
    */
   com.google.cloud.eventarc.v1.Enrollment getEnrollment();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface CreateEnrollmentRequestOrBuilder
    * @return The enrollmentId.
    */
   java.lang.String getEnrollmentId();
-
   /**
    *
    *

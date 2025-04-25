@@ -32,8 +32,7 @@ public class ConstraintInfoTest {
   private static final String CONSTRAINT_DEFAULT = "ALLOW";
   private static final String DISPLAY_NAME = "constraints-display-name";
   private static final String DESCRIPTION =
-      "Detailed description of what this Constraint controls as well as how and where it is"
-          + " enforced";
+      "Detailed description of what this Constraint controls as well as how and where it is enforced";
   private static final Integer VERSION = 1;
   private static final ConstraintInfo.Constraints LIST_CONSTRAINT =
       new ConstraintInfo.Constraints("suggested-value", true);

@@ -52,7 +52,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.StreamingRecognizeRequest)
     StreamingRecognizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingRecognizeRequest.newBuilder() to construct.
   private StreamingRecognizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,7 +99,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     private StreamingRequestCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -137,7 +135,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object recognizer_ = "";
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +193,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   }
 
   public static final int STREAMING_CONFIG_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -215,7 +210,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   public boolean hasStreamingConfig() {
     return streamingRequestCase_ == 6;
   }
-
   /**
    *
    *
@@ -236,7 +230,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     }
     return com.google.cloud.speech.v2.StreamingRecognitionConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -258,7 +251,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   }
 
   public static final int AUDIO_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -275,7 +267,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   public boolean hasAudio() {
     return streamingRequestCase_ == 5;
   }
-
   /**
    *
    *
@@ -495,7 +486,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +745,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object recognizer_ = "";
-
     /**
      *
      *
@@ -783,7 +772,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +799,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -838,7 +825,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +847,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +880,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
             com.google.cloud.speech.v2.StreamingRecognitionConfig.Builder,
             com.google.cloud.speech.v2.StreamingRecognitionConfigOrBuilder>
         streamingConfigBuilder_;
-
     /**
      *
      *
@@ -913,7 +897,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     public boolean hasStreamingConfig() {
       return streamingRequestCase_ == 6;
     }
-
     /**
      *
      *
@@ -941,7 +924,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         return com.google.cloud.speech.v2.StreamingRecognitionConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       streamingRequestCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +970,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       streamingRequestCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1006,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       streamingRequestCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1033,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1048,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         getStreamingConfigBuilder() {
       return getStreamingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1094,7 +1071,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         return com.google.cloud.speech.v2.StreamingRecognitionConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1122,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     public boolean hasAudio() {
       return streamingRequestCase_ == 5;
     }
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
-
     /**
      *
      *
@@ -1188,7 +1162,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

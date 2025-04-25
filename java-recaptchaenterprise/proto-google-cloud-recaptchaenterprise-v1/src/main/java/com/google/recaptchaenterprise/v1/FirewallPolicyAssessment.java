@@ -33,7 +33,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment)
     FirewallPolicyAssessmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FirewallPolicyAssessment.newBuilder() to construct.
   private FirewallPolicyAssessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 5;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
 
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 8;
   private com.google.recaptchaenterprise.v1.FirewallPolicy firewallPolicy_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
   public boolean hasFirewallPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
         ? com.google.recaptchaenterprise.v1.FirewallPolicy.getDefaultInstance()
         : firewallPolicy_;
   }
-
   /**
    *
    *
@@ -359,7 +352,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +573,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +713,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
             com.google.recaptchaenterprise.v1.FirewallPolicy.Builder,
             com.google.recaptchaenterprise.v1.FirewallPolicyOrBuilder>
         firewallPolicyBuilder_;
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
     public boolean hasFirewallPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -821,7 +802,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
         return firewallPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +852,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +884,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +907,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +925,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
       onChanged();
       return getFirewallPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -972,7 +947,6 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
             : firewallPolicy_;
       }
     }
-
     /**
      *
      *

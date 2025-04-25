@@ -41,7 +41,6 @@ public interface NetworkPeeringOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface NetworkPeeringOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface NetworkPeeringOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface NetworkPeeringOrBuilder
    * @return The peerNetwork.
    */
   java.lang.String getPeerNetwork();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the exportCustomRoutes field is set.
    */
   boolean hasExportCustomRoutes();
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the importCustomRoutes field is set.
    */
   boolean hasImportCustomRoutes();
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the exchangeSubnetRoutes field is set.
    */
   boolean hasExchangeSubnetRoutes();
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the exportCustomRoutesWithPublicIp field is set.
    */
   boolean hasExportCustomRoutesWithPublicIp();
-
   /**
    *
    *
@@ -325,7 +315,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the importCustomRoutesWithPublicIp field is set.
    */
   boolean hasImportCustomRoutesWithPublicIp();
-
   /**
    *
    *
@@ -360,7 +349,6 @@ public interface NetworkPeeringOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -391,7 +379,6 @@ public interface NetworkPeeringOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *
@@ -435,7 +422,6 @@ public interface NetworkPeeringOrBuilder
    * @return The enum numeric value on the wire for peerNetworkType.
    */
   int getPeerNetworkTypeValue();
-
   /**
    *
    *
@@ -463,7 +449,6 @@ public interface NetworkPeeringOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -494,7 +479,6 @@ public interface NetworkPeeringOrBuilder
    * @return The vmwareEngineNetwork.
    */
   java.lang.String getVmwareEngineNetwork();
-
   /**
    *
    *
@@ -525,7 +509,6 @@ public interface NetworkPeeringOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

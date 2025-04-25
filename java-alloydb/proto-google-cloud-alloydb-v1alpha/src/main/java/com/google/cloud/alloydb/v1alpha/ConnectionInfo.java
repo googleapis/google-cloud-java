@@ -34,7 +34,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.ConnectionInfo)
     ConnectionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConnectionInfo.newBuilder() to construct.
   private ConnectionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicIpAddress_ = "";
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
     return pemCertificateChain_;
   }
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   public int getPemCertificateChainCount() {
     return pemCertificateChain_.size();
   }
-
   /**
    *
    *
@@ -314,7 +304,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPemCertificateChain(int index) {
     return pemCertificateChain_.get(index);
   }
-
   /**
    *
    *
@@ -341,7 +330,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceUid_ = "";
-
   /**
    *
    *
@@ -365,7 +353,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +381,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscDnsName_ = "";
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -654,7 +639,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -922,7 +906,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -947,7 +930,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -972,7 +954,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -996,7 +977,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +996,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1022,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -1068,7 +1046,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1070,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1138,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object publicIpAddress_ = "";
-
     /**
      *
      *
@@ -1191,7 +1164,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1218,7 +1190,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1244,7 +1215,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1236,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1272,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1325,7 +1293,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       pemCertificateChain_.makeImmutable();
       return pemCertificateChain_;
     }
-
     /**
      *
      *
@@ -1346,7 +1313,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public int getPemCertificateChainCount() {
       return pemCertificateChain_.size();
     }
-
     /**
      *
      *
@@ -1368,7 +1334,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPemCertificateChain(int index) {
       return pemCertificateChain_.get(index);
     }
-
     /**
      *
      *
@@ -1390,7 +1355,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPemCertificateChainBytes(int index) {
       return pemCertificateChain_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1420,7 +1384,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1412,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1475,7 +1437,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1461,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1492,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceUid_ = "";
-
     /**
      *
      *
@@ -1555,7 +1514,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1578,7 +1536,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1557,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1618,7 +1574,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1598,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pscDnsName_ = "";
-
     /**
      *
      *
@@ -1666,7 +1620,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1689,7 +1642,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1711,7 +1663,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1680,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface NetworkInterfaceOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
-
   /**
    *
    *

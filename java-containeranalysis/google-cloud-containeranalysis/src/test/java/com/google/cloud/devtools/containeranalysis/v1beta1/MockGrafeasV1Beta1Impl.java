@@ -181,8 +181,7 @@ public class MockGrafeasV1Beta1Impl extends GrafeasV1Beta1ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateOccurrences, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchCreateOccurrences, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCreateOccurrencesResponse.class.getName(),
                   Exception.class.getName())));
@@ -390,8 +389,7 @@ public class MockGrafeasV1Beta1Impl extends GrafeasV1Beta1ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VulnerabilityOccurrencesSummary.class.getName(),
                   Exception.class.getName())));

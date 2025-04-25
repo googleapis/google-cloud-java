@@ -34,7 +34,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.CertificateConfig)
     CertificateConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CertificateConfig.newBuilder() to construct.
   private CertificateConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the subject field is set.
      */
     boolean hasSubject();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      * @return The subject.
      */
     com.google.cloud.security.privateca.v1beta1.Subject getSubject();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      * @return The commonName.
      */
     java.lang.String getCommonName();
-
     /**
      *
      *
@@ -151,7 +147,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the subjectAltName field is set.
      */
     boolean hasSubjectAltName();
-
     /**
      *
      *
@@ -166,7 +161,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      * @return The subjectAltName.
      */
     com.google.cloud.security.privateca.v1beta1.SubjectAltNames getSubjectAltName();
-
     /**
      *
      *
@@ -181,7 +175,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.security.privateca.v1beta1.SubjectAltNamesOrBuilder
         getSubjectAltNameOrBuilder();
   }
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.CertificateConfig.SubjectConfig)
       SubjectConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SubjectConfig.newBuilder() to construct.
     private SubjectConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -232,7 +224,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int SUBJECT_FIELD_NUMBER = 1;
     private com.google.cloud.security.privateca.v1beta1.Subject subject_;
-
     /**
      *
      *
@@ -250,7 +241,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasSubject() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -270,7 +260,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.security.privateca.v1beta1.Subject.getDefaultInstance()
           : subject_;
     }
-
     /**
      *
      *
@@ -293,7 +282,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object commonName_ = "";
-
     /**
      *
      *
@@ -317,7 +305,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -344,7 +331,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
 
     public static final int SUBJECT_ALT_NAME_FIELD_NUMBER = 3;
     private com.google.cloud.security.privateca.v1beta1.SubjectAltNames subjectAltName_;
-
     /**
      *
      *
@@ -362,7 +348,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasSubjectAltName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -382,7 +367,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.security.privateca.v1beta1.SubjectAltNames.getDefaultInstance()
           : subjectAltName_;
     }
-
     /**
      *
      *
@@ -598,7 +582,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.security.privateca.v1beta1.Subject.Builder,
               com.google.cloud.security.privateca.v1beta1.SubjectOrBuilder>
           subjectBuilder_;
-
       /**
        *
        *
@@ -871,7 +853,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasSubject() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -894,7 +875,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
           return subjectBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -919,7 +899,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -942,7 +921,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -973,7 +951,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -995,7 +972,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1012,7 +988,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getSubjectFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1033,7 +1008,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
               : subject_;
         }
       }
-
       /**
        *
        *
@@ -1063,7 +1037,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object commonName_ = "";
-
       /**
        *
        *
@@ -1086,7 +1059,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1109,7 +1081,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1131,7 +1102,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1149,7 +1119,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1179,7 +1148,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.security.privateca.v1beta1.SubjectAltNames.Builder,
               com.google.cloud.security.privateca.v1beta1.SubjectAltNamesOrBuilder>
           subjectAltNameBuilder_;
-
       /**
        *
        *
@@ -1196,7 +1164,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasSubjectAltName() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1219,7 +1186,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
           return subjectAltNameBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1245,7 +1211,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1268,7 +1233,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1301,7 +1265,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1323,7 +1286,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1341,7 +1303,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getSubjectAltNameFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1363,7 +1324,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
               : subjectAltName_;
         }
       }
-
       /**
        *
        *
@@ -1464,7 +1424,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
   public static final int SUBJECT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.security.privateca.v1beta1.CertificateConfig.SubjectConfig
       subjectConfig_;
-
   /**
    *
    *
@@ -1483,7 +1442,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasSubjectConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1506,7 +1464,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : subjectConfig_;
   }
-
   /**
    *
    *
@@ -1530,7 +1487,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int REUSABLE_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper reusableConfig_;
-
   /**
    *
    *
@@ -1549,7 +1505,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasReusableConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1570,7 +1525,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper.getDefaultInstance()
         : reusableConfig_;
   }
-
   /**
    *
    *
@@ -1593,7 +1547,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 3;
   private com.google.cloud.security.privateca.v1beta1.PublicKey publicKey_;
-
   /**
    *
    *
@@ -1613,7 +1566,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPublicKey() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1635,7 +1587,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.security.privateca.v1beta1.PublicKey.getDefaultInstance()
         : publicKey_;
   }
-
   /**
    *
    *
@@ -1849,7 +1800,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2098,7 +2048,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.security.privateca.v1beta1.CertificateConfig.SubjectConfig.Builder,
             com.google.cloud.security.privateca.v1beta1.CertificateConfig.SubjectConfigOrBuilder>
         subjectConfigBuilder_;
-
     /**
      *
      *
@@ -2116,7 +2065,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasSubjectConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2142,7 +2090,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         return subjectConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2169,7 +2116,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2194,7 +2140,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2173,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2251,7 +2195,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2270,7 +2213,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSubjectConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2294,7 +2236,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             : subjectConfig_;
       }
     }
-
     /**
      *
      *
@@ -2330,7 +2271,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapper.Builder,
             com.google.cloud.security.privateca.v1beta1.ReusableConfigWrapperOrBuilder>
         reusableConfigBuilder_;
-
     /**
      *
      *
@@ -2348,7 +2288,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasReusableConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2372,7 +2311,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         return reusableConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2399,7 +2337,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2423,7 +2360,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2457,7 +2393,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2480,7 +2415,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2499,7 +2433,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getReusableConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2522,7 +2455,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             : reusableConfig_;
       }
     }
-
     /**
      *
      *
@@ -2558,7 +2490,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.security.privateca.v1beta1.PublicKey.Builder,
             com.google.cloud.security.privateca.v1beta1.PublicKeyOrBuilder>
         publicKeyBuilder_;
-
     /**
      *
      *
@@ -2577,7 +2508,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPublicKey() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2602,7 +2532,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         return publicKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2629,7 +2558,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2654,7 +2582,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2614,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2711,7 +2637,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2655,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPublicKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2753,7 +2677,6 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
             : publicKey_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListWorkspacesResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Workspace workspaces = 1;</code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.Workspace> getWorkspacesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListWorkspacesResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Workspace workspaces = 1;</code>
    */
   com.google.area120.tables.v1alpha1.Workspace getWorkspaces(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListWorkspacesResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Workspace workspaces = 1;</code>
    */
   int getWorkspacesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListWorkspacesResponseOrBuilder
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.WorkspaceOrBuilder>
       getWorkspacesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListWorkspacesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

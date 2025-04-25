@@ -39,7 +39,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileJobConfig)
     DataProfileJobConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataProfileJobConfig.newBuilder() to construct.
   private DataProfileJobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DataProfileLocation location_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         ? com.google.privacy.dlp.v2.DataProfileLocation.getDefaultInstance()
         : location_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
 
   public static final int OTHER_CLOUD_STARTING_LOCATION_FIELD_NUMBER = 8;
   private com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation otherCloudStartingLocation_;
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public boolean hasOtherCloudStartingLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         ? com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.getDefaultInstance()
         : otherCloudStartingLocation_;
   }
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList inspectTemplates_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getInspectTemplatesList() {
     return inspectTemplates_;
   }
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public int getInspectTemplatesCount() {
     return inspectTemplates_.size();
   }
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public java.lang.String getInspectTemplates(int index) {
     return inspectTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -376,7 +363,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DataProfileAction> dataProfileActions_;
-
   /**
    *
    *
@@ -390,7 +376,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.privacy.dlp.v2.DataProfileAction> getDataProfileActionsList() {
     return dataProfileActions_;
   }
-
   /**
    *
    *
@@ -405,7 +390,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       getDataProfileActionsOrBuilderList() {
     return dataProfileActions_;
   }
-
   /**
    *
    *
@@ -419,7 +403,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public int getDataProfileActionsCount() {
     return dataProfileActions_.size();
   }
-
   /**
    *
    *
@@ -433,7 +416,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public com.google.privacy.dlp.v2.DataProfileAction getDataProfileActions(int index) {
     return dataProfileActions_.get(index);
   }
-
   /**
    *
    *
@@ -667,7 +649,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -997,7 +978,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             com.google.privacy.dlp.v2.DataProfileLocation.Builder,
             com.google.privacy.dlp.v2.DataProfileLocationOrBuilder>
         locationBuilder_;
-
     /**
      *
      *
@@ -1012,7 +992,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1033,7 +1012,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return locationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1034,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1054,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1081,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1100,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             : location_;
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1159,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1212,7 +1183,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1207,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1230,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1249,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1281,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder,
             com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder>
         otherCloudStartingLocationBuilder_;
-
     /**
      *
      *
@@ -1331,7 +1297,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public boolean hasOtherCloudStartingLocation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1355,7 +1320,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return otherCloudStartingLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1381,7 +1345,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1367,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1399,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1420,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1437,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getOtherCloudStartingLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1499,7 +1458,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             : otherCloudStartingLocation_;
       }
     }
-
     /**
      *
      *
@@ -1537,7 +1495,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1568,7 +1525,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       inspectTemplates_.makeImmutable();
       return inspectTemplates_;
     }
-
     /**
      *
      *
@@ -1598,7 +1554,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public int getInspectTemplatesCount() {
       return inspectTemplates_.size();
     }
-
     /**
      *
      *
@@ -1629,7 +1584,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public java.lang.String getInspectTemplates(int index) {
       return inspectTemplates_.get(index);
     }
-
     /**
      *
      *
@@ -1660,7 +1614,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getInspectTemplatesBytes(int index) {
       return inspectTemplates_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1699,7 +1652,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1689,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1723,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1756,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1880,7 +1829,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return dataProfileActionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1897,7 +1845,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return dataProfileActionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1914,7 +1861,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return dataProfileActionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1938,7 +1884,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1959,7 +1904,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1926,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2006,7 +1949,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1969,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +1989,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2069,7 +2009,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2089,7 +2028,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2109,7 +2047,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2123,7 +2060,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         int index) {
       return getDataProfileActionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2141,7 +2077,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return dataProfileActionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2159,7 +2094,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(dataProfileActions_);
       }
     }
-
     /**
      *
      *
@@ -2173,7 +2107,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       return getDataProfileActionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.DataProfileAction.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2188,7 +2121,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       return getDataProfileActionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.DataProfileAction.getDefaultInstance());
     }
-
     /**
      *
      *

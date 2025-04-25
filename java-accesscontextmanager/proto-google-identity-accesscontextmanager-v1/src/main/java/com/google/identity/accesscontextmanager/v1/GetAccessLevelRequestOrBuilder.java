@@ -42,7 +42,6 @@ public interface GetAccessLevelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface GetAccessLevelRequestOrBuilder
    * @return The enum numeric value on the wire for accessLevelFormat.
    */
   int getAccessLevelFormatValue();
-
   /**
    *
    *

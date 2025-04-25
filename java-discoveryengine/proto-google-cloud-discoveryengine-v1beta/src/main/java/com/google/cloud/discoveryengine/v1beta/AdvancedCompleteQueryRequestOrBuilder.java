@@ -41,7 +41,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The completionConfig.
    */
   java.lang.String getCompletionConfig();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -128,7 +126,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The queryModel.
    */
   java.lang.String getQueryModel();
-
   /**
    *
    *
@@ -182,7 +179,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
-
   /**
    *
    *
@@ -227,7 +223,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
-
   /**
    *
    *
@@ -247,7 +242,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.discoveryengine.v1beta.UserInfo getUserInfo();
-
   /**
    *
    *
@@ -296,7 +290,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return Whether the boostSpec field is set.
    */
   boolean hasBoostSpec();
-
   /**
    *
    *
@@ -311,7 +304,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The boostSpec.
    */
   com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec getBoostSpec();
-
   /**
    *
    *
@@ -344,7 +336,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
   java.util.List<
           com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType>
       getSuggestionTypesList();
-
   /**
    *
    *
@@ -361,7 +352,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return The count of suggestionTypes.
    */
   int getSuggestionTypesCount();
-
   /**
    *
    *
@@ -380,7 +370,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
       getSuggestionTypes(int index);
-
   /**
    *
    *
@@ -397,7 +386,6 @@ public interface AdvancedCompleteQueryRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for suggestionTypes.
    */
   java.util.List<java.lang.Integer> getSuggestionTypesValueList();
-
   /**
    *
    *

@@ -43,7 +43,6 @@ public interface GrantOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface GrantOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface GrantOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface GrantOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface GrantOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface GrantOrBuilder
    * @return The requester.
    */
   java.lang.String getRequester();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface GrantOrBuilder
    * @return Whether the requestedDuration field is set.
    */
   boolean hasRequestedDuration();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface GrantOrBuilder
    * @return The requestedDuration.
    */
   com.google.protobuf.Duration getRequestedDuration();
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public interface GrantOrBuilder
    * @return Whether the justification field is set.
    */
   boolean hasJustification();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface GrantOrBuilder
    * @return The justification.
    */
   com.google.cloud.privilegedaccessmanager.v1.Justification getJustification();
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface GrantOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public interface GrantOrBuilder
    * @return Whether the timeline field is set.
    */
   boolean hasTimeline();
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public interface GrantOrBuilder
    * @return The timeline.
    */
   com.google.cloud.privilegedaccessmanager.v1.Grant.Timeline getTimeline();
-
   /**
    *
    *
@@ -346,7 +333,6 @@ public interface GrantOrBuilder
    * @return Whether the privilegedAccess field is set.
    */
   boolean hasPrivilegedAccess();
-
   /**
    *
    *
@@ -361,7 +347,6 @@ public interface GrantOrBuilder
    * @return The privilegedAccess.
    */
   com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess getPrivilegedAccess();
-
   /**
    *
    *
@@ -391,7 +376,6 @@ public interface GrantOrBuilder
    * @return Whether the auditTrail field is set.
    */
   boolean hasAuditTrail();
-
   /**
    *
    *
@@ -407,7 +391,6 @@ public interface GrantOrBuilder
    * @return The auditTrail.
    */
   com.google.cloud.privilegedaccessmanager.v1.Grant.AuditTrail getAuditTrail();
-
   /**
    *
    *
@@ -437,7 +420,6 @@ public interface GrantOrBuilder
    * @return A list containing the additionalEmailRecipients.
    */
   java.util.List<java.lang.String> getAdditionalEmailRecipientsList();
-
   /**
    *
    *
@@ -453,7 +435,6 @@ public interface GrantOrBuilder
    * @return The count of additionalEmailRecipients.
    */
   int getAdditionalEmailRecipientsCount();
-
   /**
    *
    *
@@ -470,7 +451,6 @@ public interface GrantOrBuilder
    * @return The additionalEmailRecipients at the given index.
    */
   java.lang.String getAdditionalEmailRecipients(int index);
-
   /**
    *
    *

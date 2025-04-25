@@ -38,7 +38,6 @@ public interface GetConferenceRecordRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

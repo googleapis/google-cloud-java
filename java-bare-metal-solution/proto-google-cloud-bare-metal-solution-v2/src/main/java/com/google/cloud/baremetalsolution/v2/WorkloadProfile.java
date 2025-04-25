@@ -72,7 +72,6 @@ public enum WorkloadProfile implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WORKLOAD_PROFILE_UNSPECIFIED = 0;</code>
    */
   public static final int WORKLOAD_PROFILE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum WorkloadProfile implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WORKLOAD_PROFILE_GENERIC = 1;</code>
    */
   public static final int WORKLOAD_PROFILE_GENERIC_VALUE = 1;
-
   /**
    *
    *

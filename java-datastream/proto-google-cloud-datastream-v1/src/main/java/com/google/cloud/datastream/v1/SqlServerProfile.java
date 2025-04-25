@@ -33,7 +33,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerProfile)
     SqlServerProfileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SqlServerProfile.newBuilder() to construct.
   private SqlServerProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secretManagerStoredPassword_ = "";
-
   /**
    *
    *
@@ -332,7 +321,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -566,7 +554,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -824,7 +811,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object hostname_ = "";
-
     /**
      *
      *
@@ -847,7 +833,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -870,7 +855,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +876,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
 
     private int port_;
-
     /**
      *
      *
@@ -951,7 +932,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -971,7 +951,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +970,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1052,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1076,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -1126,7 +1099,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1122,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1173,7 +1144,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1162,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1187,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object database_ = "";
-
     /**
      *
      *
@@ -1241,7 +1209,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1231,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1252,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1269,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1293,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object secretManagerStoredPassword_ = "";
-
     /**
      *
      *
@@ -1355,7 +1318,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1381,7 +1343,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1367,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1387,6 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

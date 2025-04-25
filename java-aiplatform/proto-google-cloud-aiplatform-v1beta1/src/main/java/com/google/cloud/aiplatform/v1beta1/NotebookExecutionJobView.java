@@ -72,7 +72,6 @@ public enum NotebookExecutionJobView implements com.google.protobuf.ProtocolMess
    * <code>NOTEBOOK_EXECUTION_JOB_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int NOTEBOOK_EXECUTION_JOB_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum NotebookExecutionJobView implements com.google.protobuf.ProtocolMess
    * <code>NOTEBOOK_EXECUTION_JOB_VIEW_BASIC = 1;</code>
    */
   public static final int NOTEBOOK_EXECUTION_JOB_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

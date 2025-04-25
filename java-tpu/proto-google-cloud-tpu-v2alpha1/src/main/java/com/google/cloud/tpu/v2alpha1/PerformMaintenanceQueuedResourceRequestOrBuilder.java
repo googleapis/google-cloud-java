@@ -39,7 +39,6 @@ public interface PerformMaintenanceQueuedResourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PerformMaintenanceQueuedResourceRequestOrBuilder
    * @return A list containing the nodeNames.
    */
   java.util.List<java.lang.String> getNodeNamesList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PerformMaintenanceQueuedResourceRequestOrBuilder
    * @return The count of nodeNames.
    */
   int getNodeNamesCount();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface PerformMaintenanceQueuedResourceRequestOrBuilder
    * @return The nodeNames at the given index.
    */
   java.lang.String getNodeNames(int index);
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface DeployParametersOrBuilder
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface DeployParametersOrBuilder
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean containsValues(java.lang.String key);
-
   /** Use {@link #getValuesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getValues();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface DeployParametersOrBuilder
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getValuesMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface DeployParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface DeployParametersOrBuilder
    * </code>
    */
   int getMatchTargetLabelsCount();
-
   /**
    *
    *
@@ -116,11 +110,9 @@ public interface DeployParametersOrBuilder
    * </code>
    */
   boolean containsMatchTargetLabels(java.lang.String key);
-
   /** Use {@link #getMatchTargetLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMatchTargetLabels();
-
   /**
    *
    *
@@ -135,7 +127,6 @@ public interface DeployParametersOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMatchTargetLabelsMap();
-
   /**
    *
    *
@@ -154,7 +145,6 @@ public interface DeployParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

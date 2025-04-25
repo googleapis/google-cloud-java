@@ -54,7 +54,6 @@ public interface ServiceAccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface ServiceAccountOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -129,7 +127,6 @@ public interface ServiceAccountOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public interface ServiceAccountOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *
@@ -187,7 +183,6 @@ public interface ServiceAccountOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -231,7 +226,6 @@ public interface ServiceAccountOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -258,7 +252,6 @@ public interface ServiceAccountOrBuilder
    * @return The oauth2ClientId.
    */
   java.lang.String getOauth2ClientId();
-
   /**
    *
    *

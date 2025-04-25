@@ -33,7 +33,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BleuMetricValue)
     BleuMetricValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BleuMetricValue.newBuilder() to construct.
   private BleuMetricValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -263,7 +260,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -448,7 +444,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -464,7 +459,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -480,7 +474,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -500,7 +493,6 @@ public final class BleuMetricValue extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

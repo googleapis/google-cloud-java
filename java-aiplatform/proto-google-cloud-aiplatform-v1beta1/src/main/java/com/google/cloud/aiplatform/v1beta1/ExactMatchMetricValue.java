@@ -33,7 +33,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExactMatchMetricValue)
     ExactMatchMetricValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExactMatchMetricValue.newBuilder() to construct.
   private ExactMatchMetricValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +261,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -450,7 +446,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -466,7 +461,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -482,7 +476,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -502,7 +495,6 @@ public final class ExactMatchMetricValue extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

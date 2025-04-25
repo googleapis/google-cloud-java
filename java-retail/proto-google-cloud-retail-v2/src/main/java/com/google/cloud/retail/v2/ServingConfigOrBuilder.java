@@ -37,7 +37,6 @@ public interface ServingConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ServingConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface ServingConfigOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
-
   /**
    *
    *
@@ -157,7 +154,6 @@ public interface ServingConfigOrBuilder
    * @return The priceRerankingLevel.
    */
   java.lang.String getPriceRerankingLevel();
-
   /**
    *
    *
@@ -210,7 +206,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the facetControlIds.
    */
   java.util.List<java.lang.String> getFacetControlIdsList();
-
   /**
    *
    *
@@ -233,7 +228,6 @@ public interface ServingConfigOrBuilder
    * @return The count of facetControlIds.
    */
   int getFacetControlIdsCount();
-
   /**
    *
    *
@@ -257,7 +251,6 @@ public interface ServingConfigOrBuilder
    * @return The facetControlIds at the given index.
    */
   java.lang.String getFacetControlIds(int index);
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the dynamicFacetSpec field is set.
    */
   boolean hasDynamicFacetSpec();
-
   /**
    *
    *
@@ -317,7 +309,6 @@ public interface ServingConfigOrBuilder
    * @return The dynamicFacetSpec.
    */
   com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec getDynamicFacetSpec();
-
   /**
    *
    *
@@ -361,7 +352,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the boostControlIds.
    */
   java.util.List<java.lang.String> getBoostControlIdsList();
-
   /**
    *
    *
@@ -389,7 +379,6 @@ public interface ServingConfigOrBuilder
    * @return The count of boostControlIds.
    */
   int getBoostControlIdsCount();
-
   /**
    *
    *
@@ -418,7 +407,6 @@ public interface ServingConfigOrBuilder
    * @return The boostControlIds at the given index.
    */
   java.lang.String getBoostControlIds(int index);
-
   /**
    *
    *
@@ -467,7 +455,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the filterControlIds.
    */
   java.util.List<java.lang.String> getFilterControlIdsList();
-
   /**
    *
    *
@@ -487,7 +474,6 @@ public interface ServingConfigOrBuilder
    * @return The count of filterControlIds.
    */
   int getFilterControlIdsCount();
-
   /**
    *
    *
@@ -508,7 +494,6 @@ public interface ServingConfigOrBuilder
    * @return The filterControlIds at the given index.
    */
   java.lang.String getFilterControlIds(int index);
-
   /**
    *
    *
@@ -548,7 +533,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the redirectControlIds.
    */
   java.util.List<java.lang.String> getRedirectControlIdsList();
-
   /**
    *
    *
@@ -567,7 +551,6 @@ public interface ServingConfigOrBuilder
    * @return The count of redirectControlIds.
    */
   int getRedirectControlIdsCount();
-
   /**
    *
    *
@@ -587,7 +570,6 @@ public interface ServingConfigOrBuilder
    * @return The redirectControlIds at the given index.
    */
   java.lang.String getRedirectControlIds(int index);
-
   /**
    *
    *
@@ -627,7 +609,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the twowaySynonymsControlIds.
    */
   java.util.List<java.lang.String> getTwowaySynonymsControlIdsList();
-
   /**
    *
    *
@@ -647,7 +628,6 @@ public interface ServingConfigOrBuilder
    * @return The count of twowaySynonymsControlIds.
    */
   int getTwowaySynonymsControlIdsCount();
-
   /**
    *
    *
@@ -668,7 +648,6 @@ public interface ServingConfigOrBuilder
    * @return The twowaySynonymsControlIds at the given index.
    */
   java.lang.String getTwowaySynonymsControlIds(int index);
-
   /**
    *
    *
@@ -709,7 +688,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the onewaySynonymsControlIds.
    */
   java.util.List<java.lang.String> getOnewaySynonymsControlIdsList();
-
   /**
    *
    *
@@ -729,7 +707,6 @@ public interface ServingConfigOrBuilder
    * @return The count of onewaySynonymsControlIds.
    */
   int getOnewaySynonymsControlIdsCount();
-
   /**
    *
    *
@@ -750,7 +727,6 @@ public interface ServingConfigOrBuilder
    * @return The onewaySynonymsControlIds at the given index.
    */
   java.lang.String getOnewaySynonymsControlIds(int index);
-
   /**
    *
    *
@@ -792,7 +768,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the doNotAssociateControlIds.
    */
   java.util.List<java.lang.String> getDoNotAssociateControlIdsList();
-
   /**
    *
    *
@@ -813,7 +788,6 @@ public interface ServingConfigOrBuilder
    * @return The count of doNotAssociateControlIds.
    */
   int getDoNotAssociateControlIdsCount();
-
   /**
    *
    *
@@ -835,7 +809,6 @@ public interface ServingConfigOrBuilder
    * @return The doNotAssociateControlIds at the given index.
    */
   java.lang.String getDoNotAssociateControlIds(int index);
-
   /**
    *
    *
@@ -877,7 +850,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the replacementControlIds.
    */
   java.util.List<java.lang.String> getReplacementControlIdsList();
-
   /**
    *
    *
@@ -897,7 +869,6 @@ public interface ServingConfigOrBuilder
    * @return The count of replacementControlIds.
    */
   int getReplacementControlIdsCount();
-
   /**
    *
    *
@@ -918,7 +889,6 @@ public interface ServingConfigOrBuilder
    * @return The replacementControlIds at the given index.
    */
   java.lang.String getReplacementControlIds(int index);
-
   /**
    *
    *
@@ -960,7 +930,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the ignoreControlIds.
    */
   java.util.List<java.lang.String> getIgnoreControlIdsList();
-
   /**
    *
    *
@@ -981,7 +950,6 @@ public interface ServingConfigOrBuilder
    * @return The count of ignoreControlIds.
    */
   int getIgnoreControlIdsCount();
-
   /**
    *
    *
@@ -1003,7 +971,6 @@ public interface ServingConfigOrBuilder
    * @return The ignoreControlIds at the given index.
    */
   java.lang.String getIgnoreControlIds(int index);
-
   /**
    *
    *
@@ -1052,7 +1019,6 @@ public interface ServingConfigOrBuilder
    * @return The diversityLevel.
    */
   java.lang.String getDiversityLevel();
-
   /**
    *
    *
@@ -1094,7 +1060,6 @@ public interface ServingConfigOrBuilder
    * @return The enum numeric value on the wire for diversityType.
    */
   int getDiversityTypeValue();
-
   /**
    *
    *
@@ -1135,7 +1100,6 @@ public interface ServingConfigOrBuilder
    * @return The enableCategoryFilterLevel.
    */
   java.lang.String getEnableCategoryFilterLevel();
-
   /**
    *
    *
@@ -1202,7 +1166,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the personalizationSpec field is set.
    */
   boolean hasPersonalizationSpec();
-
   /**
    *
    *
@@ -1229,7 +1192,6 @@ public interface ServingConfigOrBuilder
    * @return The personalizationSpec.
    */
   com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec getPersonalizationSpec();
-
   /**
    *
    *
@@ -1271,7 +1233,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the solutionTypes.
    */
   java.util.List<com.google.cloud.retail.v2.SolutionType> getSolutionTypesList();
-
   /**
    *
    *
@@ -1287,7 +1248,6 @@ public interface ServingConfigOrBuilder
    * @return The count of solutionTypes.
    */
   int getSolutionTypesCount();
-
   /**
    *
    *
@@ -1304,7 +1264,6 @@ public interface ServingConfigOrBuilder
    * @return The solutionTypes at the given index.
    */
   com.google.cloud.retail.v2.SolutionType getSolutionTypes(int index);
-
   /**
    *
    *
@@ -1320,7 +1279,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for solutionTypes.
    */
   java.util.List<java.lang.Integer> getSolutionTypesValueList();
-
   /**
    *
    *

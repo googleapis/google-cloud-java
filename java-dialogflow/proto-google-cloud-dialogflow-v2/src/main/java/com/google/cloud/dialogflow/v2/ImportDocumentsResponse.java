@@ -34,7 +34,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ImportDocumentsResponse)
     ImportDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDocumentsResponse.newBuilder() to construct.
   private ImportDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> warnings_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.rpc.Status> getWarningsList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getWarningsOrBuilderList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public int getWarningsCount() {
     return warnings_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
   public com.google.rpc.Status getWarnings(int index) {
     return warnings_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return warningsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return warningsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return warningsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +649,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +728,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +747,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +766,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +778,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     public com.google.rpc.Status.Builder getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -814,7 +794,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return warningsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -831,7 +810,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(warnings_);
       }
     }
-
     /**
      *
      *
@@ -844,7 +822,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     public com.google.rpc.Status.Builder addWarningsBuilder() {
       return getWarningsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -858,7 +835,6 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
       return getWarningsFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *

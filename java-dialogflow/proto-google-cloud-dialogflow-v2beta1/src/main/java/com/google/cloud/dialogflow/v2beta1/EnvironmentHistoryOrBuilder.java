@@ -40,7 +40,6 @@ public interface EnvironmentHistoryOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface EnvironmentHistoryOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry> getEntriesList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface EnvironmentHistoryOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.Entry getEntries(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface EnvironmentHistoryOrBuilder
    * </code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface EnvironmentHistoryOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EnvironmentHistory.EntryOrBuilder>
       getEntriesOrBuilderList();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface EnvironmentHistoryOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

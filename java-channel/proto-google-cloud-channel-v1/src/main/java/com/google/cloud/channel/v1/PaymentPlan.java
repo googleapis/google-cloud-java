@@ -102,7 +102,6 @@ public enum PaymentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PAYMENT_PLAN_UNSPECIFIED = 0;</code>
    */
   public static final int PAYMENT_PLAN_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -113,7 +112,6 @@ public enum PaymentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMMITMENT = 1;</code>
    */
   public static final int COMMITMENT_VALUE = 1;
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public enum PaymentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLEXIBLE = 2;</code>
    */
   public static final int FLEXIBLE_VALUE = 2;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public enum PaymentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FREE = 3;</code>
    */
   public static final int FREE_VALUE = 3;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public enum PaymentPlan implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRIAL = 4;</code>
    */
   public static final int TRIAL_VALUE = 4;
-
   /**
    *
    *

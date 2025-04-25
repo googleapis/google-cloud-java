@@ -38,7 +38,6 @@ public interface DeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DeploymentOrBuilder
    * @return The flowVersion.
    */
   java.lang.String getFlowVersion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface DeploymentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface DeploymentOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface DeploymentOrBuilder
    * @return The result.
    */
   com.google.cloud.dialogflow.cx.v3.Deployment.Result getResult();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface DeploymentOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface DeploymentOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface DeploymentOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface DeploymentOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

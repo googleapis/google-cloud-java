@@ -37,7 +37,6 @@ public interface WorkloadOnboardingStateOrBuilder
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingStep>
       getOnboardingStepsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface WorkloadOnboardingStateOrBuilder
    * </code>
    */
   com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingStep getOnboardingSteps(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface WorkloadOnboardingStateOrBuilder
    * </code>
    */
   int getOnboardingStepsCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface WorkloadOnboardingStateOrBuilder
   java.util.List<
           ? extends com.google.cloud.cloudcontrolspartner.v1beta.WorkloadOnboardingStepOrBuilder>
       getOnboardingStepsOrBuilderList();
-
   /**
    *
    *

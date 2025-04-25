@@ -33,7 +33,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig)
     RagVectorDbConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RagVectorDbConfig.newBuilder() to construct.
   private RagVectorDbConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedDb)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedDb)
       RagManagedDbOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RagManagedDb.newBuilder() to construct.
     private RagManagedDb(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -263,7 +260,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -517,7 +513,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return The httpEndpoint.
      */
     java.lang.String getHttpEndpoint();
-
     /**
      *
      *
@@ -546,7 +541,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return The collectionName.
      */
     java.lang.String getCollectionName();
-
     /**
      *
      *
@@ -561,7 +555,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getCollectionNameBytes();
   }
-
   /**
    *
    *
@@ -576,7 +569,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate)
       WeaviateOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Weaviate.newBuilder() to construct.
     private Weaviate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -612,7 +604,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object httpEndpoint_ = "";
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object collectionName_ = "";
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -890,7 +878,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1097,7 +1084,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object httpEndpoint_ = "";
-
       /**
        *
        *
@@ -1122,7 +1108,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1147,7 +1132,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1171,7 +1155,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1191,7 +1174,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1218,7 +1200,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object collectionName_ = "";
-
       /**
        *
        *
@@ -1242,7 +1223,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1266,7 +1246,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1289,7 +1268,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1308,7 +1286,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1418,7 +1395,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return The indexName.
      */
     java.lang.String getIndexName();
-
     /**
      *
      *
@@ -1433,7 +1409,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getIndexNameBytes();
   }
-
   /**
    *
    *
@@ -1448,7 +1423,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone)
       PineconeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Pinecone.newBuilder() to construct.
     private Pinecone(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1483,7 +1457,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object indexName_ = "";
-
     /**
      *
      *
@@ -1508,7 +1481,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1695,7 +1667,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1887,7 +1858,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object indexName_ = "";
-
       /**
        *
        *
@@ -1911,7 +1881,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1935,7 +1904,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1958,7 +1926,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1977,7 +1944,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2088,7 +2054,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return The featureViewResourceName.
      */
     java.lang.String getFeatureViewResourceName();
-
     /**
      *
      *
@@ -2104,7 +2069,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getFeatureViewResourceNameBytes();
   }
-
   /**
    *
    *
@@ -2119,7 +2083,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore)
       VertexFeatureStoreOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VertexFeatureStore.newBuilder() to construct.
     private VertexFeatureStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2155,7 +2118,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object featureViewResourceName_ = "";
-
     /**
      *
      *
@@ -2181,7 +2143,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -2377,7 +2338,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2576,7 +2536,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object featureViewResourceName_ = "";
-
       /**
        *
        *
@@ -2601,7 +2560,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2626,7 +2584,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2650,7 +2607,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2670,7 +2626,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2783,7 +2738,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return The indexEndpoint.
      */
     java.lang.String getIndexEndpoint();
-
     /**
      *
      *
@@ -2813,7 +2767,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return The index.
      */
     java.lang.String getIndex();
-
     /**
      *
      *
@@ -2829,7 +2782,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getIndexBytes();
   }
-
   /**
    *
    *
@@ -2844,7 +2796,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch)
       VertexVectorSearchOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VertexVectorSearch.newBuilder() to construct.
     private VertexVectorSearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2881,7 +2832,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object indexEndpoint_ = "";
-
     /**
      *
      *
@@ -2907,7 +2857,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -2938,7 +2887,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object index_ = "";
-
     /**
      *
      *
@@ -2964,7 +2912,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -3168,7 +3115,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3382,7 +3328,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object indexEndpoint_ = "";
-
       /**
        *
        *
@@ -3407,7 +3352,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3432,7 +3376,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3456,7 +3399,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3476,7 +3418,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3503,7 +3444,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object index_ = "";
-
       /**
        *
        *
@@ -3528,7 +3468,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3553,7 +3492,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3577,7 +3515,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3597,7 +3534,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3712,7 +3648,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     private VectorDbCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3752,7 +3687,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RAG_MANAGED_DB_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -3769,7 +3703,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRagManagedDb() {
     return vectorDbCase_ == 1;
   }
-
   /**
    *
    *
@@ -3789,7 +3722,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedDb.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3810,7 +3742,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int WEAVIATE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -3826,7 +3757,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasWeaviate() {
     return vectorDbCase_ == 2;
   }
-
   /**
    *
    *
@@ -3845,7 +3775,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3865,7 +3794,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PINECONE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -3881,7 +3809,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPinecone() {
     return vectorDbCase_ == 3;
   }
-
   /**
    *
    *
@@ -3900,7 +3827,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3920,7 +3846,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERTEX_FEATURE_STORE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -3938,7 +3863,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasVertexFeatureStore() {
     return vectorDbCase_ == 4;
   }
-
   /**
    *
    *
@@ -3961,7 +3885,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3984,7 +3907,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERTEX_VECTOR_SEARCH_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -4002,7 +3924,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasVertexVectorSearch() {
     return vectorDbCase_ == 6;
   }
-
   /**
    *
    *
@@ -4025,7 +3946,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4049,7 +3969,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int API_AUTH_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.ApiAuth apiAuth_;
-
   /**
    *
    *
@@ -4065,7 +3984,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasApiAuth() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4083,7 +4001,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.ApiAuth.getDefaultInstance()
         : apiAuth_;
   }
-
   /**
    *
    *
@@ -4102,7 +4019,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RAG_EMBEDDING_MODEL_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig ragEmbeddingModelConfig_;
-
   /**
    *
    *
@@ -4120,7 +4036,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRagEmbeddingModelConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4140,7 +4055,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.getDefaultInstance()
         : ragEmbeddingModelConfig_;
   }
-
   /**
    *
    *
@@ -4431,7 +4345,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4772,7 +4685,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedDb.Builder,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedDbOrBuilder>
         ragManagedDbBuilder_;
-
     /**
      *
      *
@@ -4789,7 +4701,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRagManagedDb() {
       return vectorDbCase_ == 1;
     }
-
     /**
      *
      *
@@ -4818,7 +4729,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4843,7 +4753,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4866,7 +4775,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4904,7 +4812,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4931,7 +4838,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4946,7 +4852,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         getRagManagedDbBuilder() {
       return getRagManagedDbFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4970,7 +4875,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5012,7 +4916,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate.Builder,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.WeaviateOrBuilder>
         weaviateBuilder_;
-
     /**
      *
      *
@@ -5028,7 +4931,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasWeaviate() {
       return vectorDbCase_ == 2;
     }
-
     /**
      *
      *
@@ -5054,7 +4956,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5078,7 +4979,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5099,7 +4999,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5135,7 +5034,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5161,7 +5059,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5175,7 +5072,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         getWeaviateBuilder() {
       return getWeaviateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5197,7 +5093,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Weaviate.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5237,7 +5132,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.Builder,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.PineconeOrBuilder>
         pineconeBuilder_;
-
     /**
      *
      *
@@ -5253,7 +5147,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPinecone() {
       return vectorDbCase_ == 3;
     }
-
     /**
      *
      *
@@ -5279,7 +5172,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5303,7 +5195,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5324,7 +5215,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5360,7 +5250,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5386,7 +5275,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5400,7 +5288,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         getPineconeBuilder() {
       return getPineconeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5422,7 +5309,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Pinecone.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5462,7 +5348,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStore.Builder,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexFeatureStoreOrBuilder>
         vertexFeatureStoreBuilder_;
-
     /**
      *
      *
@@ -5480,7 +5365,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasVertexFeatureStore() {
       return vectorDbCase_ == 4;
     }
-
     /**
      *
      *
@@ -5512,7 +5396,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5538,7 +5421,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5562,7 +5444,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5601,7 +5482,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5629,7 +5509,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5645,7 +5524,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         getVertexFeatureStoreBuilder() {
       return getVertexFeatureStoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5671,7 +5549,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5715,7 +5592,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearch.Builder,
             com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder>
         vertexVectorSearchBuilder_;
-
     /**
      *
      *
@@ -5733,7 +5609,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasVertexVectorSearch() {
       return vectorDbCase_ == 6;
     }
-
     /**
      *
      *
@@ -5765,7 +5640,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5791,7 +5665,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5815,7 +5688,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5854,7 +5726,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       vectorDbCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5882,7 +5753,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5898,7 +5768,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         getVertexVectorSearchBuilder() {
       return getVertexVectorSearchFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5924,7 +5793,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5969,7 +5837,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.ApiAuth.Builder,
             com.google.cloud.aiplatform.v1beta1.ApiAuthOrBuilder>
         apiAuthBuilder_;
-
     /**
      *
      *
@@ -5984,7 +5851,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasApiAuth() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -6005,7 +5871,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return apiAuthBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6028,7 +5893,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6048,7 +5912,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6076,7 +5939,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6096,7 +5958,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6111,7 +5972,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getApiAuthFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6130,7 +5990,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             : apiAuth_;
       }
     }
-
     /**
      *
      *
@@ -6163,7 +6022,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder>
         ragEmbeddingModelConfigBuilder_;
-
     /**
      *
      *
@@ -6180,7 +6038,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRagEmbeddingModelConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -6204,7 +6061,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         return ragEmbeddingModelConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6230,7 +6086,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6253,7 +6108,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6286,7 +6140,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6308,7 +6161,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6326,7 +6178,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRagEmbeddingModelConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6348,7 +6199,6 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             : ragEmbeddingModelConfig_;
       }
     }
-
     /**
      *
      *

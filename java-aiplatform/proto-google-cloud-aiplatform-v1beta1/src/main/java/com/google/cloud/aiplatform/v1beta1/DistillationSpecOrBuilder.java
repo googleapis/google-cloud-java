@@ -37,7 +37,6 @@ public interface DistillationSpecOrBuilder
    * @return Whether the baseTeacherModel field is set.
    */
   boolean hasBaseTeacherModel();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DistillationSpecOrBuilder
    * @return The baseTeacherModel.
    */
   java.lang.String getBaseTeacherModel();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DistillationSpecOrBuilder
    * @return Whether the tunedTeacherModelSource field is set.
    */
   boolean hasTunedTeacherModelSource();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface DistillationSpecOrBuilder
    * @return The tunedTeacherModelSource.
    */
   java.lang.String getTunedTeacherModelSource();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface DistillationSpecOrBuilder
    * @return The trainingDatasetUri.
    */
   java.lang.String getTrainingDatasetUri();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface DistillationSpecOrBuilder
    * @return Whether the validationDatasetUri field is set.
    */
   boolean hasValidationDatasetUri();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface DistillationSpecOrBuilder
    * @return The validationDatasetUri.
    */
   java.lang.String getValidationDatasetUri();
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public interface DistillationSpecOrBuilder
    * @return Whether the hyperParameters field is set.
    */
   boolean hasHyperParameters();
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface DistillationSpecOrBuilder
    * @return The hyperParameters.
    */
   com.google.cloud.aiplatform.v1beta1.DistillationHyperParameters getHyperParameters();
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public interface DistillationSpecOrBuilder
    * @return The studentModel.
    */
   java.lang.String getStudentModel();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface DistillationSpecOrBuilder
    * @return The pipelineRootDirectory.
    */
   java.lang.String getPipelineRootDirectory();
-
   /**
    *
    *

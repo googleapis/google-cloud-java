@@ -39,7 +39,6 @@ public interface LinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface LinkOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface LinkOrBuilder
    * @return The source.
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReference getSource();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface LinkOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface LinkOrBuilder
    * @return The target.
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReference getTarget();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface LinkOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface LinkOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface LinkOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface LinkOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface SearchTripsResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.Trip> getTripsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchTripsResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
   com.google.maps.fleetengine.v1.Trip getTrips(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchTripsResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
   int getTripsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface SearchTripsResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.TripOrBuilder> getTripsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface SearchTripsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface UserEventInlineSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent> getUserEventsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UserEventInlineSourceOrBuilder
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvents(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface UserEventInlineSourceOrBuilder
    * </code>
    */
   int getUserEventsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface UserEventInlineSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>
       getUserEventsOrBuilderList();
-
   /**
    *
    *

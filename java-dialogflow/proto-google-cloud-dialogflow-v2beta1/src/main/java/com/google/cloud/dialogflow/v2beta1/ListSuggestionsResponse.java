@@ -35,7 +35,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ListSuggestionsResponse)
     ListSuggestionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSuggestionsResponse.newBuilder() to construct.
   private ListSuggestionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion> suggestions_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion> getSuggestionsList() {
     return suggestions_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       getSuggestionsOrBuilderList() {
     return suggestions_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
   public int getSuggestionsCount() {
     return suggestions_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
   public com.google.cloud.dialogflow.v2beta1.Suggestion getSuggestions(int index) {
     return suggestions_.get(index);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +372,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return suggestionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return suggestionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return suggestionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +904,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
     public com.google.cloud.dialogflow.v2beta1.Suggestion.Builder getSuggestionsBuilder(int index) {
       return getSuggestionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return suggestionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(suggestions_);
       }
     }
-
     /**
      *
      *
@@ -981,7 +957,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       return getSuggestionsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.Suggestion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       return getSuggestionsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.Suggestion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1032,7 +1006,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1056,7 +1029,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1074,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1092,6 @@ public final class ListSuggestionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

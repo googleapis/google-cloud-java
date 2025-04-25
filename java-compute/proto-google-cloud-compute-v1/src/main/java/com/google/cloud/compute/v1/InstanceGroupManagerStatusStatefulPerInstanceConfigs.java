@@ -34,7 +34,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs)
     InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerStatusStatefulPerInstanceConfigs.newBuilder() to construct.
   private InstanceGroupManagerStatusStatefulPerInstanceConfigs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
   private int bitField0_;
   public static final int ALL_EFFECTIVE_FIELD_NUMBER = 516540553;
   private boolean allEffective_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
   public boolean hasAllEffective() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +271,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -476,7 +472,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     private int bitField0_;
 
     private boolean allEffective_;
-
     /**
      *
      *
@@ -492,7 +487,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     public boolean hasAllEffective() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -508,7 +502,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     public boolean getAllEffective() {
       return allEffective_;
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
       onChanged();
       return this;
     }
-
     /**
      *
      *

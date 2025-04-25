@@ -37,7 +37,6 @@ public interface ShippingSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ShippingSettingsOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Service> getServicesList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ShippingSettingsOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Service getServices(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ShippingSettingsOrBuilder
    * </code>
    */
   int getServicesCount();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ShippingSettingsOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.ServiceOrBuilder>
       getServicesOrBuilderList();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ShippingSettingsOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Warehouse> getWarehousesList();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ShippingSettingsOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Warehouse getWarehouses(int index);
-
   /**
    *
    *
@@ -156,7 +149,6 @@ public interface ShippingSettingsOrBuilder
    * </code>
    */
   int getWarehousesCount();
-
   /**
    *
    *
@@ -170,7 +162,6 @@ public interface ShippingSettingsOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.WarehouseOrBuilder>
       getWarehousesOrBuilderList();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface ShippingSettingsOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

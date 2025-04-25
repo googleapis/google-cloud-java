@@ -34,7 +34,6 @@ public interface NetworkEndpointGroupsAttachEndpointsRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkEndpoint network_endpoints = 149850285;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkEndpoint> getNetworkEndpointsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface NetworkEndpointGroupsAttachEndpointsRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkEndpoint network_endpoints = 149850285;</code>
    */
   com.google.cloud.compute.v1.NetworkEndpoint getNetworkEndpoints(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface NetworkEndpointGroupsAttachEndpointsRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.NetworkEndpoint network_endpoints = 149850285;</code>
    */
   int getNetworkEndpointsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface NetworkEndpointGroupsAttachEndpointsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkEndpointOrBuilder>
       getNetworkEndpointsOrBuilderList();
-
   /**
    *
    *

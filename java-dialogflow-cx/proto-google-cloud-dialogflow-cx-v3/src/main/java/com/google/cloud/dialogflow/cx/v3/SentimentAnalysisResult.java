@@ -35,7 +35,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.SentimentAnalysisResult)
     SentimentAnalysisResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SentimentAnalysisResult.newBuilder() to construct.
   private SentimentAnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
 
   public static final int MAGNITUDE_FIELD_NUMBER = 2;
   private float magnitude_ = 0F;
-
   /**
    *
    *
@@ -275,7 +272,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -473,7 +469,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -490,7 +485,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -511,7 +505,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -532,7 +525,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     }
 
     private float magnitude_;
-
     /**
      *
      *
@@ -549,7 +541,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     public float getMagnitude() {
       return magnitude_;
     }
-
     /**
      *
      *
@@ -570,7 +561,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

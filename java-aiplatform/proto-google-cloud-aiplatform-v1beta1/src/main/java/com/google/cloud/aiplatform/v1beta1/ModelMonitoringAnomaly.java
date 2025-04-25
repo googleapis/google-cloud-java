@@ -33,7 +33,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly)
     ModelMonitoringAnomalyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringAnomaly.newBuilder() to construct.
   private ModelMonitoringAnomaly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return The anomalyUri.
      */
     java.lang.String getAnomalyUri();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return The summary.
      */
     java.lang.String getSummary();
-
     /**
      *
      *
@@ -134,7 +131,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return Whether the anomaly field is set.
      */
     boolean hasAnomaly();
-
     /**
      *
      *
@@ -147,7 +143,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return The anomaly.
      */
     com.google.protobuf.Value getAnomaly();
-
     /**
      *
      *
@@ -171,7 +166,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return Whether the triggerTime field is set.
      */
     boolean hasTriggerTime();
-
     /**
      *
      *
@@ -184,7 +178,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return The triggerTime.
      */
     com.google.protobuf.Timestamp getTriggerTime();
-
     /**
      *
      *
@@ -208,7 +201,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return Whether the condition field is set.
      */
     boolean hasCondition();
-
     /**
      *
      *
@@ -221,7 +213,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
      * @return The condition.
      */
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertCondition getCondition();
-
     /**
      *
      *
@@ -234,7 +225,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConditionOrBuilder
         getConditionOrBuilder();
   }
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly.TabularAnomaly)
       TabularAnomalyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TabularAnomaly.newBuilder() to construct.
     private TabularAnomaly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -287,7 +276,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object anomalyUri_ = "";
-
     /**
      *
      *
@@ -311,7 +299,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         return s;
       }
     }
-
     /**
      *
      *
@@ -340,7 +327,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object summary_ = "";
-
     /**
      *
      *
@@ -364,7 +350,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         return s;
       }
     }
-
     /**
      *
      *
@@ -391,7 +376,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
     public static final int ANOMALY_FIELD_NUMBER = 3;
     private com.google.protobuf.Value anomaly_;
-
     /**
      *
      *
@@ -407,7 +391,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     public boolean hasAnomaly() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -423,7 +406,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     public com.google.protobuf.Value getAnomaly() {
       return anomaly_ == null ? com.google.protobuf.Value.getDefaultInstance() : anomaly_;
     }
-
     /**
      *
      *
@@ -440,7 +422,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
     public static final int TRIGGER_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp triggerTime_;
-
     /**
      *
      *
@@ -456,7 +437,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     public boolean hasTriggerTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -474,7 +454,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : triggerTime_;
     }
-
     /**
      *
      *
@@ -493,7 +472,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
     public static final int CONDITION_FIELD_NUMBER = 5;
     private com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertCondition condition_;
-
     /**
      *
      *
@@ -509,7 +487,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -527,7 +504,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertCondition.getDefaultInstance()
           : condition_;
     }
-
     /**
      *
      *
@@ -764,7 +740,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1046,7 +1021,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object anomalyUri_ = "";
-
       /**
        *
        *
@@ -1069,7 +1043,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1092,7 +1065,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1114,7 +1086,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1132,7 +1103,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1157,7 +1127,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object summary_ = "";
-
       /**
        *
        *
@@ -1180,7 +1149,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1203,7 +1171,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1225,7 +1192,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1243,7 +1209,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1273,7 +1238,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
               com.google.protobuf.Value.Builder,
               com.google.protobuf.ValueOrBuilder>
           anomalyBuilder_;
-
       /**
        *
        *
@@ -1288,7 +1252,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       public boolean hasAnomaly() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1307,7 +1270,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return anomalyBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1330,7 +1292,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1350,7 +1311,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1378,7 +1338,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -1398,7 +1357,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1413,7 +1371,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return getAnomalyFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1430,7 +1387,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return anomaly_ == null ? com.google.protobuf.Value.getDefaultInstance() : anomaly_;
         }
       }
-
       /**
        *
        *
@@ -1463,7 +1419,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           triggerTimeBuilder_;
-
       /**
        *
        *
@@ -1478,7 +1433,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       public boolean hasTriggerTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1499,7 +1453,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return triggerTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1522,7 +1475,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1542,7 +1494,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1570,7 +1521,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -1590,7 +1540,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1605,7 +1554,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return getTriggerTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1624,7 +1572,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
               : triggerTime_;
         }
       }
-
       /**
        *
        *
@@ -1657,7 +1604,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertCondition.Builder,
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConditionOrBuilder>
           conditionBuilder_;
-
       /**
        *
        *
@@ -1672,7 +1618,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       public boolean hasCondition() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1694,7 +1639,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
           return conditionBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1718,7 +1662,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1740,7 +1683,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1771,7 +1713,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -1791,7 +1732,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1807,7 +1747,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         onChanged();
         return getConditionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1828,7 +1767,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
               : condition_;
         }
       }
-
       /**
        *
        *
@@ -1939,7 +1877,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     private AnomalyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1971,7 +1908,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
   }
 
   public static final int TABULAR_ANOMALY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -1989,7 +1925,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
   public boolean hasTabularAnomaly() {
     return anomalyCase_ == 1;
   }
-
   /**
    *
    *
@@ -2012,7 +1947,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     return com.google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly.TabularAnomaly
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2038,7 +1972,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelMonitoringJob_ = "";
-
   /**
    *
    *
@@ -2062,7 +1995,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -2091,7 +2023,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object algorithm_ = "";
-
   /**
    *
    *
@@ -2116,7 +2047,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -2337,7 +2267,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2587,7 +2516,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly.TabularAnomaly.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly.TabularAnomalyOrBuilder>
         tabularAnomalyBuilder_;
-
     /**
      *
      *
@@ -2605,7 +2533,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     public boolean hasTabularAnomaly() {
       return anomalyCase_ == 1;
     }
-
     /**
      *
      *
@@ -2637,7 +2564,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2663,7 +2589,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       anomalyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2612,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       anomalyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2726,7 +2650,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       anomalyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2754,7 +2677,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2770,7 +2692,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         getTabularAnomalyBuilder() {
       return getTabularAnomalyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2796,7 +2717,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2836,7 +2756,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object modelMonitoringJob_ = "";
-
     /**
      *
      *
@@ -2859,7 +2778,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2882,7 +2800,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2904,7 +2821,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2922,7 +2838,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2947,7 +2862,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object algorithm_ = "";
-
     /**
      *
      *
@@ -2971,7 +2885,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2995,7 +2908,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3018,7 +2930,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3037,7 +2948,6 @@ public final class ModelMonitoringAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

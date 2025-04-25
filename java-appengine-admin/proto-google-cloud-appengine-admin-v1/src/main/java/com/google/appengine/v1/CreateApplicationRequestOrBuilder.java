@@ -36,7 +36,6 @@ public interface CreateApplicationRequestOrBuilder
    * @return Whether the application field is set.
    */
   boolean hasApplication();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CreateApplicationRequestOrBuilder
    * @return The application.
    */
   com.google.appengine.v1.Application getApplication();
-
   /**
    *
    *

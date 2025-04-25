@@ -35,7 +35,6 @@ public interface ListDeviceStatesResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
   java.util.List<com.google.cloud.iot.v1.DeviceState> getDeviceStatesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListDeviceStatesResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
   com.google.cloud.iot.v1.DeviceState getDeviceStates(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListDeviceStatesResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
   int getDeviceStatesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListDeviceStatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder>
       getDeviceStatesOrBuilderList();
-
   /**
    *
    *

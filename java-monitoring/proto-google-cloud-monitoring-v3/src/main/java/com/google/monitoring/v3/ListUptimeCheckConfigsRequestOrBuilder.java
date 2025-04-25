@@ -42,7 +42,6 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface PermissionsOrBuilder
    * @return A list containing the permissions.
    */
   java.util.List<java.lang.String> getPermissionsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PermissionsOrBuilder
    * @return The count of permissions.
    */
   int getPermissionsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface PermissionsOrBuilder
    * @return The permissions at the given index.
    */
   java.lang.String getPermissions(int index);
-
   /**
    *
    *

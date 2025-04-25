@@ -37,7 +37,6 @@ public interface ListNotificationConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
       getNotificationConfigsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListNotificationConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1p1beta1.NotificationConfig getNotificationConfigs(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListNotificationConfigsResponseOrBuilder
    * </code>
    */
   int getNotificationConfigsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListNotificationConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1p1beta1.NotificationConfigOrBuilder>
       getNotificationConfigsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListNotificationConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

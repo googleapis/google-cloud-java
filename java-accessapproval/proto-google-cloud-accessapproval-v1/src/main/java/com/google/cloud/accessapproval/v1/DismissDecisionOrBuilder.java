@@ -36,7 +36,6 @@ public interface DismissDecisionOrBuilder
    * @return Whether the dismissTime field is set.
    */
   boolean hasDismissTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DismissDecisionOrBuilder
    * @return The dismissTime.
    */
   com.google.protobuf.Timestamp getDismissTime();
-
   /**
    *
    *

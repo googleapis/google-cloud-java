@@ -37,7 +37,6 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ServiceOrBuilder
    * @return The serviceId.
    */
   java.lang.String getServiceId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ServiceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ServiceOrBuilder
    * @return The businessEntityName.
    */
   java.lang.String getBusinessEntityName();
-
   /**
    *
    *

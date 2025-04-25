@@ -33,7 +33,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.SetLocationsRequest)
     SetLocationsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetLocationsRequest.newBuilder() to construct.
   private SetLocationsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -266,7 +259,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList locations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -287,7 +279,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getLocationsList() {
     return locations_;
   }
-
   /**
    *
    *
@@ -308,7 +299,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   public int getLocationsCount() {
     return locations_.size();
   }
-
   /**
    *
    *
@@ -330,7 +320,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getLocations(int index) {
     return locations_.get(index);
   }
-
   /**
    *
    *
@@ -357,7 +346,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -382,7 +370,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -610,7 +597,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -862,7 +848,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -891,7 +876,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +904,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -948,7 +931,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +954,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1032,7 +1012,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1040,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1067,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1090,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1172,7 +1147,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1174,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1227,7 +1200,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1222,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1259,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1310,7 +1280,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       locations_.makeImmutable();
       return locations_;
     }
-
     /**
      *
      *
@@ -1331,7 +1300,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     public int getLocationsCount() {
       return locations_.size();
     }
-
     /**
      *
      *
@@ -1353,7 +1321,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getLocations(int index) {
       return locations_.get(index);
     }
-
     /**
      *
      *
@@ -1375,7 +1342,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getLocationsBytes(int index) {
       return locations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1405,7 +1371,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1399,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1424,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1485,7 +1448,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1517,7 +1479,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1541,7 +1502,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1565,7 +1525,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1588,7 +1547,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1607,7 +1565,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

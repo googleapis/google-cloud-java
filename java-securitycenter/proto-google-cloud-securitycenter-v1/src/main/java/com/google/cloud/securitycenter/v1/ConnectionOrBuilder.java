@@ -37,7 +37,6 @@ public interface ConnectionOrBuilder
    * @return The destinationIp.
    */
   java.lang.String getDestinationIp();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ConnectionOrBuilder
    * @return The sourceIp.
    */
   java.lang.String getSourceIp();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface ConnectionOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
-
   /**
    *
    *

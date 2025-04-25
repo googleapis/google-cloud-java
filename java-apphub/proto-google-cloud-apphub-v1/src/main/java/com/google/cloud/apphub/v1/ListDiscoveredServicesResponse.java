@@ -33,7 +33,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.ListDiscoveredServicesResponse)
     ListDiscoveredServicesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDiscoveredServicesResponse.newBuilder() to construct.
   private ListDiscoveredServicesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apphub.v1.DiscoveredService> discoveredServices_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.apphub.v1.DiscoveredService> getDiscoveredServicesList() {
     return discoveredServices_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       getDiscoveredServicesOrBuilderList() {
     return discoveredServices_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   public int getDiscoveredServicesCount() {
     return discoveredServices_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   public com.google.cloud.apphub.v1.DiscoveredService getDiscoveredServices(int index) {
     return discoveredServices_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -453,7 +441,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +742,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return discoveredServicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return discoveredServicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return discoveredServicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +960,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +973,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         int index) {
       return getDiscoveredServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1016,7 +990,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return discoveredServicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(discoveredServices_);
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       return getDiscoveredServicesFieldBuilder()
           .addBuilder(com.google.cloud.apphub.v1.DiscoveredService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1063,7 +1034,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       return getDiscoveredServicesFieldBuilder()
           .addBuilder(index, com.google.cloud.apphub.v1.DiscoveredService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1099,7 +1069,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1122,7 +1091,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1113,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1134,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1151,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1183,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1234,7 +1198,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1249,7 +1212,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1265,7 +1227,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1281,7 +1242,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1305,7 +1265,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1287,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1306,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1324,6 @@ public final class ListDiscoveredServicesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

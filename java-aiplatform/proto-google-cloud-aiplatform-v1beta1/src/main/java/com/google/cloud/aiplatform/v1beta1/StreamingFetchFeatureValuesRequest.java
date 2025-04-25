@@ -36,7 +36,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest)
     StreamingFetchFeatureValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingFetchFeatureValuesRequest.newBuilder() to construct.
   private StreamingFetchFeatureValuesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureView_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,32 +130,27 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey> dataKeys_;
-
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   @java.lang.Override
   public java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey> getDataKeysList() {
     return dataKeys_;
   }
-
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
       getDataKeysOrBuilderList() {
     return dataKeys_;
   }
-
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   @java.lang.Override
   public int getDataKeysCount() {
     return dataKeys_.size();
   }
-
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKeys(int index) {
     return dataKeys_.get(index);
   }
-
   /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeysOrBuilder(
@@ -168,7 +160,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 3;
   private int dataFormat_ = 0;
-
   /**
    *
    *
@@ -184,7 +175,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
   public int getDataFormatValue() {
     return dataFormat_;
   }
-
   /**
    *
    *
@@ -392,7 +382,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +652,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object featureView_ = "";
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return dataKeysBuilder_.getMessageList();
       }
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public int getDataKeysCount() {
       if (dataKeysBuilder_ == null) {
@@ -824,7 +807,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return dataKeysBuilder_.getCount();
       }
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKeys(int index) {
       if (dataKeysBuilder_ == null) {
@@ -833,7 +815,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return dataKeysBuilder_.getMessage(index);
       }
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder setDataKeys(
         int index, com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
@@ -849,7 +830,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder setDataKeys(
         int index, com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder builderForValue) {
@@ -862,7 +842,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder addDataKeys(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
       if (dataKeysBuilder_ == null) {
@@ -877,7 +856,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder addDataKeys(
         int index, com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
@@ -893,7 +871,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder addDataKeys(
         com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder builderForValue) {
@@ -906,7 +883,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder addDataKeys(
         int index, com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder builderForValue) {
@@ -919,7 +895,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder addAllDataKeys(
         java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey>
@@ -933,7 +908,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder clearDataKeys() {
       if (dataKeysBuilder_ == null) {
@@ -945,7 +919,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public Builder removeDataKeys(int index) {
       if (dataKeysBuilder_ == null) {
@@ -957,13 +930,11 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder getDataKeysBuilder(
         int index) {
       return getDataKeysFieldBuilder().getBuilder(index);
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeysOrBuilder(
         int index) {
@@ -973,7 +944,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return dataKeysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
         getDataKeysOrBuilderList() {
@@ -983,13 +953,11 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
         return java.util.Collections.unmodifiableList(dataKeys_);
       }
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder addDataKeysBuilder() {
       return getDataKeysFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance());
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder addDataKeysBuilder(
         int index) {
@@ -997,7 +965,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance());
     }
-
     /** <code>repeated .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_keys = 2;</code> */
     public java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder>
         getDataKeysBuilderList() {
@@ -1022,7 +989,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
     }
 
     private int dataFormat_ = 0;
-
     /**
      *
      *
@@ -1038,7 +1004,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
     public int getDataFormatValue() {
       return dataFormat_;
     }
-
     /**
      *
      *
@@ -1057,7 +1022,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1041,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
           ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1099,7 +1062,6 @@ public final class StreamingFetchFeatureValuesRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

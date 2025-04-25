@@ -34,7 +34,6 @@ public interface ListUsableSubnetworksResponseOrBuilder
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
   java.util.List<com.google.container.v1.UsableSubnetwork> getSubnetworksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListUsableSubnetworksResponseOrBuilder
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
   com.google.container.v1.UsableSubnetwork getSubnetworks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListUsableSubnetworksResponseOrBuilder
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
   int getSubnetworksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListUsableSubnetworksResponseOrBuilder
    */
   java.util.List<? extends com.google.container.v1.UsableSubnetworkOrBuilder>
       getSubnetworksOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListUsableSubnetworksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

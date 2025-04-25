@@ -36,7 +36,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GuestAttributesOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the queryPath field is set.
    */
   boolean hasQueryPath();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface GuestAttributesOrBuilder
    * @return The queryPath.
    */
   java.lang.String getQueryPath();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the queryValue field is set.
    */
   boolean hasQueryValue();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface GuestAttributesOrBuilder
    * @return The queryValue.
    */
   com.google.cloud.compute.v1.GuestAttributesValue getQueryValue();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface GuestAttributesOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the variableKey field is set.
    */
   boolean hasVariableKey();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface GuestAttributesOrBuilder
    * @return The variableKey.
    */
   java.lang.String getVariableKey();
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the variableValue field is set.
    */
   boolean hasVariableValue();
-
   /**
    *
    *
@@ -242,7 +231,6 @@ public interface GuestAttributesOrBuilder
    * @return The variableValue.
    */
   java.lang.String getVariableValue();
-
   /**
    *
    *

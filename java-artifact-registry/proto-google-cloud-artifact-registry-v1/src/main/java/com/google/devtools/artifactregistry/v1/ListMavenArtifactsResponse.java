@@ -33,7 +33,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.ListMavenArtifactsResponse)
     ListMavenArtifactsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMavenArtifactsResponse.newBuilder() to construct.
   private ListMavenArtifactsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1.MavenArtifact> mavenArtifacts_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       getMavenArtifactsList() {
     return mavenArtifacts_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       getMavenArtifactsOrBuilderList() {
     return mavenArtifacts_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
   public int getMavenArtifactsCount() {
     return mavenArtifacts_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
   public com.google.devtools.artifactregistry.v1.MavenArtifact getMavenArtifacts(int index) {
     return mavenArtifacts_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return mavenArtifactsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return mavenArtifactsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return mavenArtifactsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +868,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         int index) {
       return getMavenArtifactsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return mavenArtifactsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(mavenArtifacts_);
       }
     }
-
     /**
      *
      *
@@ -953,7 +929,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       return getMavenArtifactsFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1.MavenArtifact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -969,7 +944,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1.MavenArtifact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1029,7 +1002,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1025,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1065,6 @@ public final class ListMavenArtifactsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

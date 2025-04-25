@@ -32,7 +32,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouteAsPath)
     RouteAsPathOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouteAsPath.newBuilder() to construct.
   private RouteAsPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -105,16 +104,12 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PATH_SEGMENT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_PATH_SEGMENT_TYPE_VALUE = 0;
-
     /** <code>AS_CONFED_SEQUENCE = 222152624;</code> */
     public static final int AS_CONFED_SEQUENCE_VALUE = 222152624;
-
     /** <code>AS_CONFED_SET = 374040307;</code> */
     public static final int AS_CONFED_SET_VALUE = 374040307;
-
     /** <code>AS_SEQUENCE = 106735918;</code> */
     public static final int AS_SEQUENCE_VALUE = 106735918;
-
     /** <code>AS_SET = 329846453;</code> */
     public static final int AS_SET_VALUE = 329846453;
 
@@ -212,7 +207,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList asLists_ = emptyIntList();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAsListsList() {
     return asLists_;
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
   public int getAsListsCount() {
     return asLists_.size();
   }
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pathSegmentType_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPathSegmentType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -308,7 +298,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -523,7 +512,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -750,7 +738,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       asLists_.makeImmutable();
       return asLists_;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public int getAsListsCount() {
       return asLists_.size();
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public int getAsLists(int index) {
       return asLists_.getInt(index);
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pathSegmentType_ = "";
-
     /**
      *
      *
@@ -896,7 +876,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPathSegmentType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -920,7 +899,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +962,6 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

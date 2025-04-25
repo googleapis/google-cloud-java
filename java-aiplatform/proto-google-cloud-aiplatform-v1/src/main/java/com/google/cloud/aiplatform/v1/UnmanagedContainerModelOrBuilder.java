@@ -37,7 +37,6 @@ public interface UnmanagedContainerModelOrBuilder
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UnmanagedContainerModelOrBuilder
    * @return Whether the predictSchemata field is set.
    */
   boolean hasPredictSchemata();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UnmanagedContainerModelOrBuilder
    * @return The predictSchemata.
    */
   com.google.cloud.aiplatform.v1.PredictSchemata getPredictSchemata();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UnmanagedContainerModelOrBuilder
    * @return Whether the containerSpec field is set.
    */
   boolean hasContainerSpec();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface UnmanagedContainerModelOrBuilder
    * @return The containerSpec.
    */
   com.google.cloud.aiplatform.v1.ModelContainerSpec getContainerSpec();
-
   /**
    *
    *

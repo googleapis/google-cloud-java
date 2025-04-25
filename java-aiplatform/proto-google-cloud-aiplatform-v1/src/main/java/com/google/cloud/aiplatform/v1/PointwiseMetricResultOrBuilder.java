@@ -36,7 +36,6 @@ public interface PointwiseMetricResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PointwiseMetricResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
-
   /**
    *
    *

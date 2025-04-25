@@ -36,7 +36,6 @@ public interface TargetNotificationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TargetNotificationEventOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface TargetNotificationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

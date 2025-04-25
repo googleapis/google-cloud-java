@@ -36,7 +36,6 @@ public interface SearchTextRequestOrBuilder
    * @return The textQuery.
    */
   java.lang.String getTextQuery();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SearchTextRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface SearchTextRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface SearchTextRequestOrBuilder
    * @return The enum numeric value on the wire for rankPreference.
    */
   int getRankPreferenceValue();
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public interface SearchTextRequestOrBuilder
    * @return The includedType.
    */
   java.lang.String getIncludedType();
-
   /**
    *
    *
@@ -249,7 +244,6 @@ public interface SearchTextRequestOrBuilder
    * @return A list containing the priceLevels.
    */
   java.util.List<com.google.maps.places.v1.PriceLevel> getPriceLevelsList();
-
   /**
    *
    *
@@ -264,7 +258,6 @@ public interface SearchTextRequestOrBuilder
    * @return The count of priceLevels.
    */
   int getPriceLevelsCount();
-
   /**
    *
    *
@@ -280,7 +273,6 @@ public interface SearchTextRequestOrBuilder
    * @return The priceLevels at the given index.
    */
   com.google.maps.places.v1.PriceLevel getPriceLevels(int index);
-
   /**
    *
    *
@@ -295,7 +287,6 @@ public interface SearchTextRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for priceLevels.
    */
   java.util.List<java.lang.Integer> getPriceLevelsValueList();
-
   /**
    *
    *
@@ -340,7 +331,6 @@ public interface SearchTextRequestOrBuilder
    * @return Whether the locationBias field is set.
    */
   boolean hasLocationBias();
-
   /**
    *
    *
@@ -355,7 +345,6 @@ public interface SearchTextRequestOrBuilder
    * @return The locationBias.
    */
   com.google.maps.places.v1.SearchTextRequest.LocationBias getLocationBias();
-
   /**
    *
    *
@@ -384,7 +373,6 @@ public interface SearchTextRequestOrBuilder
    * @return Whether the locationRestriction field is set.
    */
   boolean hasLocationRestriction();
-
   /**
    *
    *
@@ -400,7 +388,6 @@ public interface SearchTextRequestOrBuilder
    * @return The locationRestriction.
    */
   com.google.maps.places.v1.SearchTextRequest.LocationRestriction getLocationRestriction();
-
   /**
    *
    *
@@ -430,7 +417,6 @@ public interface SearchTextRequestOrBuilder
    * @return Whether the evOptions field is set.
    */
   boolean hasEvOptions();
-
   /**
    *
    *
@@ -445,7 +431,6 @@ public interface SearchTextRequestOrBuilder
    * @return The evOptions.
    */
   com.google.maps.places.v1.SearchTextRequest.EVOptions getEvOptions();
-
   /**
    *
    *
@@ -473,7 +458,6 @@ public interface SearchTextRequestOrBuilder
    * @return Whether the routingParameters field is set.
    */
   boolean hasRoutingParameters();
-
   /**
    *
    *
@@ -488,7 +472,6 @@ public interface SearchTextRequestOrBuilder
    * @return The routingParameters.
    */
   com.google.maps.places.v1.RoutingParameters getRoutingParameters();
-
   /**
    *
    *
@@ -516,7 +499,6 @@ public interface SearchTextRequestOrBuilder
    * @return Whether the searchAlongRouteParameters field is set.
    */
   boolean hasSearchAlongRouteParameters();
-
   /**
    *
    *
@@ -532,7 +514,6 @@ public interface SearchTextRequestOrBuilder
    */
   com.google.maps.places.v1.SearchTextRequest.SearchAlongRouteParameters
       getSearchAlongRouteParameters();
-
   /**
    *
    *

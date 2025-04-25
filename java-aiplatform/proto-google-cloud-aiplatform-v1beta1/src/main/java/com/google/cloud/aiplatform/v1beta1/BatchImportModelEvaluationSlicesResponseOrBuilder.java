@@ -39,7 +39,6 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    * @return A list containing the importedModelEvaluationSlices.
    */
   java.util.List<java.lang.String> getImportedModelEvaluationSlicesList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    * @return The count of importedModelEvaluationSlices.
    */
   int getImportedModelEvaluationSlicesCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    * @return The importedModelEvaluationSlices at the given index.
    */
   java.lang.String getImportedModelEvaluationSlices(int index);
-
   /**
    *
    *

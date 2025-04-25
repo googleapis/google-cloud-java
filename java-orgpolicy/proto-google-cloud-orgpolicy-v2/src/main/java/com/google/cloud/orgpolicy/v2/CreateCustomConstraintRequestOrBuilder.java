@@ -40,7 +40,6 @@ public interface CreateCustomConstraintRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateCustomConstraintRequestOrBuilder
    * @return Whether the customConstraint field is set.
    */
   boolean hasCustomConstraint();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateCustomConstraintRequestOrBuilder
    * @return The customConstraint.
    */
   com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraint();
-
   /**
    *
    *

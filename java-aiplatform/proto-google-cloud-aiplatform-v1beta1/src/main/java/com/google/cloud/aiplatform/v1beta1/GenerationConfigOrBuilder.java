@@ -36,7 +36,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the temperature field is set.
    */
   boolean hasTemperature();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the topP field is set.
    */
   boolean hasTopP();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the topK field is set.
    */
   boolean hasTopK();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the candidateCount field is set.
    */
   boolean hasCandidateCount();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the maxOutputTokens field is set.
    */
   boolean hasMaxOutputTokens();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface GenerationConfigOrBuilder
    * @return A list containing the stopSequences.
    */
   java.util.List<java.lang.String> getStopSequencesList();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface GenerationConfigOrBuilder
    * @return The count of stopSequences.
    */
   int getStopSequencesCount();
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public interface GenerationConfigOrBuilder
    * @return The stopSequences at the given index.
    */
   java.lang.String getStopSequences(int index);
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the responseLogprobs field is set.
    */
   boolean hasResponseLogprobs();
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the logprobs field is set.
    */
   boolean hasLogprobs();
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the presencePenalty field is set.
    */
   boolean hasPresencePenalty();
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the frequencyPenalty field is set.
    */
   boolean hasFrequencyPenalty();
-
   /**
    *
    *
@@ -324,7 +312,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the seed field is set.
    */
   boolean hasSeed();
-
   /**
    *
    *
@@ -356,7 +343,6 @@ public interface GenerationConfigOrBuilder
    * @return The responseMimeType.
    */
   java.lang.String getResponseMimeType();
-
   /**
    *
    *
@@ -396,7 +382,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the responseSchema field is set.
    */
   boolean hasResponseSchema();
-
   /**
    *
    *
@@ -417,7 +402,6 @@ public interface GenerationConfigOrBuilder
    * @return The responseSchema.
    */
   com.google.cloud.aiplatform.v1beta1.Schema getResponseSchema();
-
   /**
    *
    *
@@ -451,7 +435,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the routingConfig field is set.
    */
   boolean hasRoutingConfig();
-
   /**
    *
    *
@@ -466,7 +449,6 @@ public interface GenerationConfigOrBuilder
    * @return The routingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfig getRoutingConfig();
-
   /**
    *
    *
@@ -494,7 +476,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the audioTimestamp field is set.
    */
   boolean hasAudioTimestamp();
-
   /**
    *
    *
@@ -524,7 +505,6 @@ public interface GenerationConfigOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.GenerationConfig.Modality>
       getResponseModalitiesList();
-
   /**
    *
    *
@@ -539,7 +519,6 @@ public interface GenerationConfigOrBuilder
    * @return The count of responseModalities.
    */
   int getResponseModalitiesCount();
-
   /**
    *
    *
@@ -555,7 +534,6 @@ public interface GenerationConfigOrBuilder
    * @return The responseModalities at the given index.
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig.Modality getResponseModalities(int index);
-
   /**
    *
    *
@@ -570,7 +548,6 @@ public interface GenerationConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for responseModalities.
    */
   java.util.List<java.lang.Integer> getResponseModalitiesValueList();
-
   /**
    *
    *
@@ -601,7 +578,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the mediaResolution field is set.
    */
   boolean hasMediaResolution();
-
   /**
    *
    *
@@ -616,7 +592,6 @@ public interface GenerationConfigOrBuilder
    * @return The enum numeric value on the wire for mediaResolution.
    */
   int getMediaResolutionValue();
-
   /**
    *
    *
@@ -646,7 +621,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the speechConfig field is set.
    */
   boolean hasSpeechConfig();
-
   /**
    *
    *
@@ -661,7 +635,6 @@ public interface GenerationConfigOrBuilder
    * @return The speechConfig.
    */
   com.google.cloud.aiplatform.v1beta1.SpeechConfig getSpeechConfig();
-
   /**
    *
    *
@@ -689,7 +662,6 @@ public interface GenerationConfigOrBuilder
    * @return Whether the modelConfig field is set.
    */
   boolean hasModelConfig();
-
   /**
    *
    *
@@ -704,7 +676,6 @@ public interface GenerationConfigOrBuilder
    * @return The modelConfig.
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig getModelConfig();
-
   /**
    *
    *

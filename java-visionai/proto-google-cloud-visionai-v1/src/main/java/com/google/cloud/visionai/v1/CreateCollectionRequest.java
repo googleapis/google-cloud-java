@@ -33,7 +33,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateCollectionRequest)
     CreateCollectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCollectionRequest.newBuilder() to construct.
   private CreateCollectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
 
   public static final int COLLECTION_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.Collection collection_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
   public boolean hasCollection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
         ? com.google.cloud.visionai.v1.Collection.getDefaultInstance()
         : collection_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object collectionId_ = "";
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
   public boolean hasCollectionId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -458,7 +449,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -714,7 +703,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -765,7 +752,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
             com.google.cloud.visionai.v1.Collection.Builder,
             com.google.cloud.visionai.v1.CollectionOrBuilder>
         collectionBuilder_;
-
     /**
      *
      *
@@ -836,7 +820,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
     public boolean hasCollection() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
         return collectionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -884,7 +866,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return getCollectionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -996,7 +973,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
             : collection_;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object collectionId_ = "";
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
     public boolean hasCollectionId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1078,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1105,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class CreateCollectionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

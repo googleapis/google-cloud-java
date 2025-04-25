@@ -36,7 +36,6 @@ public interface GetSerialPortOutputInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetSerialPortOutputInstanceRequestOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetSerialPortOutputInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GetSerialPortOutputInstanceRequestOrBuilder
    * @return Whether the start field is set.
    */
   boolean hasStart();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface GetSerialPortOutputInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

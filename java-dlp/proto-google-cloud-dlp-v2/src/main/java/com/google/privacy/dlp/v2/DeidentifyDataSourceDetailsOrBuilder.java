@@ -38,7 +38,6 @@ public interface DeidentifyDataSourceDetailsOrBuilder
    * @return Whether the requestedOptions field is set.
    */
   boolean hasRequestedOptions();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface DeidentifyDataSourceDetailsOrBuilder
    */
   com.google.privacy.dlp.v2.DeidentifyDataSourceDetails.RequestedDeidentifyOptions
       getRequestedOptions();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DeidentifyDataSourceDetailsOrBuilder
    * @return Whether the deidentifyStats field is set.
    */
   boolean hasDeidentifyStats();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface DeidentifyDataSourceDetailsOrBuilder
    * @return The deidentifyStats.
    */
   com.google.privacy.dlp.v2.DeidentifyDataSourceStats getDeidentifyStats();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface GetSearchConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class CreateIndexEndpointOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateIndexEndpointOperationMetadata)
     CreateIndexEndpointOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateIndexEndpointOperationMetadata.newBuilder() to construct.
   private CreateIndexEndpointOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class CreateIndexEndpointOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CreateIndexEndpointOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class CreateIndexEndpointOperationMetadata
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class CreateIndexEndpointOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -503,7 +498,6 @@ public final class CreateIndexEndpointOperationMetadata
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -518,7 +512,6 @@ public final class CreateIndexEndpointOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -539,7 +532,6 @@ public final class CreateIndexEndpointOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -563,7 +555,6 @@ public final class CreateIndexEndpointOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class CreateIndexEndpointOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class CreateIndexEndpointOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class CreateIndexEndpointOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class CreateIndexEndpointOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class CreateIndexEndpointOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

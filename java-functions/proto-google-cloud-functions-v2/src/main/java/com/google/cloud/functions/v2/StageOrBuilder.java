@@ -36,7 +36,6 @@ public interface StageOrBuilder
    * @return The enum numeric value on the wire for name.
    */
   int getNameValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StageOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface StageOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface StageOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface StageOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface StageOrBuilder
    * <code>repeated .google.cloud.functions.v2.StateMessage state_messages = 6;</code>
    */
   java.util.List<com.google.cloud.functions.v2.StateMessage> getStateMessagesList();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface StageOrBuilder
    * <code>repeated .google.cloud.functions.v2.StateMessage state_messages = 6;</code>
    */
   com.google.cloud.functions.v2.StateMessage getStateMessages(int index);
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface StageOrBuilder
    * <code>repeated .google.cloud.functions.v2.StateMessage state_messages = 6;</code>
    */
   int getStateMessagesCount();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface StageOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v2.StateMessageOrBuilder>
       getStateMessagesOrBuilderList();
-
   /**
    *
    *

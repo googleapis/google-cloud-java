@@ -39,7 +39,6 @@ public interface LongRunningRecognizeRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface LongRunningRecognizeRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionConfig getConfig();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface LongRunningRecognizeRequestOrBuilder
    * @return Whether the audio field is set.
    */
   boolean hasAudio();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface LongRunningRecognizeRequestOrBuilder
    * @return The audio.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionAudio getAudio();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface LongRunningRecognizeRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface LongRunningRecognizeRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig();
-
   /**
    *
    *

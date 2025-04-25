@@ -39,7 +39,6 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder
    * @return The gatewayId.
    */
   java.lang.String getGatewayId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder
    * @return The deviceId.
    */
   java.lang.String getDeviceId();
-
   /**
    *
    *

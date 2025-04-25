@@ -33,7 +33,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Int64RangeMatch)
     Int64RangeMatchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Int64RangeMatch.newBuilder() to construct.
   private Int64RangeMatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int RANGE_END_FIELD_NUMBER = 322439897;
   private long rangeEnd_ = 0L;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasRangeEnd() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
 
   public static final int RANGE_START_FIELD_NUMBER = 103333600;
   private long rangeStart_ = 0L;
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasRangeStart() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -311,7 +306,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +504,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private long rangeEnd_;
-
     /**
      *
      *
@@ -526,7 +519,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasRangeEnd() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -542,7 +534,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public long getRangeEnd() {
       return rangeEnd_;
     }
-
     /**
      *
      *
@@ -562,7 +553,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -582,7 +572,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private long rangeStart_;
-
     /**
      *
      *
@@ -598,7 +587,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasRangeStart() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -614,7 +602,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public long getRangeStart() {
       return rangeStart_;
     }
-
     /**
      *
      *
@@ -634,7 +621,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

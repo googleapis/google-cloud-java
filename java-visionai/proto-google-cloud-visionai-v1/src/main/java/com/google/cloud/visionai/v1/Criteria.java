@@ -33,7 +33,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Criteria)
     CriteriaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Criteria.newBuilder() to construct.
   private Criteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,7 +125,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_ARRAY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextArray() {
     return valueCase_ == 2;
   }
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.StringArray.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT_RANGE_ARRAY_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntRangeArray() {
     return valueCase_ == 3;
   }
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.IntRangeArray.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOAT_RANGE_ARRAY_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFloatRangeArray() {
     return valueCase_ == 4;
   }
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.FloatRangeArray.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATE_TIME_RANGE_ARRAY_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -305,7 +293,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDateTimeRangeArray() {
     return valueCase_ == 5;
   }
-
   /**
    *
    *
@@ -324,7 +311,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.DateTimeRangeArray.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GEO_LOCATION_ARRAY_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -359,7 +344,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGeoLocationArray() {
     return valueCase_ == 6;
   }
-
   /**
    *
    *
@@ -378,7 +362,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.GeoLocationArray.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -397,7 +380,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -413,7 +395,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolValue() {
     return valueCase_ == 7;
   }
-
   /**
    *
    *
@@ -432,7 +413,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.visionai.v1.BoolValue.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object field_ = "";
-
   /**
    *
    *
@@ -478,7 +457,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -505,7 +483,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FETCH_MATCHED_ANNOTATIONS_FIELD_NUMBER = 8;
   private boolean fetchMatchedAnnotations_ = false;
-
   /**
    *
    *
@@ -794,7 +771,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1127,7 +1103,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.StringArray.Builder,
             com.google.cloud.visionai.v1.StringArrayOrBuilder>
         textArrayBuilder_;
-
     /**
      *
      *
@@ -1143,7 +1118,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextArray() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -1169,7 +1143,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.StringArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1192,7 +1165,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1184,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1216,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1241,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1253,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.StringArray.Builder getTextArrayBuilder() {
       return getTextArrayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1305,7 +1273,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.StringArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1344,7 +1311,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.IntRangeArray.Builder,
             com.google.cloud.visionai.v1.IntRangeArrayOrBuilder>
         intRangeArrayBuilder_;
-
     /**
      *
      *
@@ -1360,7 +1326,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntRangeArray() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -1386,7 +1351,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.IntRangeArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1409,7 +1373,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1393,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1425,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1489,7 +1450,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1462,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.IntRangeArray.Builder getIntRangeArrayBuilder() {
       return getIntRangeArrayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1523,7 +1482,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.IntRangeArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1562,7 +1520,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.FloatRangeArray.Builder,
             com.google.cloud.visionai.v1.FloatRangeArrayOrBuilder>
         floatRangeArrayBuilder_;
-
     /**
      *
      *
@@ -1578,7 +1535,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFloatRangeArray() {
       return valueCase_ == 4;
     }
-
     /**
      *
      *
@@ -1604,7 +1560,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.FloatRangeArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1627,7 +1582,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1602,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1681,7 +1634,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1659,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1720,7 +1671,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.FloatRangeArray.Builder getFloatRangeArrayBuilder() {
       return getFloatRangeArrayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1741,7 +1691,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.FloatRangeArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1780,7 +1729,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.DateTimeRangeArray.Builder,
             com.google.cloud.visionai.v1.DateTimeRangeArrayOrBuilder>
         dateTimeRangeArrayBuilder_;
-
     /**
      *
      *
@@ -1796,7 +1744,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDateTimeRangeArray() {
       return valueCase_ == 5;
     }
-
     /**
      *
      *
@@ -1822,7 +1769,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.DateTimeRangeArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1845,7 +1791,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1866,7 +1811,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1843,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1925,7 +1868,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1938,7 +1880,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.DateTimeRangeArray.Builder getDateTimeRangeArrayBuilder() {
       return getDateTimeRangeArrayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1960,7 +1901,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.DateTimeRangeArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1999,7 +1939,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.GeoLocationArray.Builder,
             com.google.cloud.visionai.v1.GeoLocationArrayOrBuilder>
         geoLocationArrayBuilder_;
-
     /**
      *
      *
@@ -2015,7 +1954,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGeoLocationArray() {
       return valueCase_ == 6;
     }
-
     /**
      *
      *
@@ -2041,7 +1979,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.GeoLocationArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2064,7 +2001,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2085,7 +2021,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2118,7 +2053,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2144,7 +2078,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2157,7 +2090,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.GeoLocationArray.Builder getGeoLocationArrayBuilder() {
       return getGeoLocationArrayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2178,7 +2110,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.GeoLocationArray.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2217,7 +2148,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.BoolValue.Builder,
             com.google.cloud.visionai.v1.BoolValueOrBuilder>
         boolValueBuilder_;
-
     /**
      *
      *
@@ -2233,7 +2163,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return valueCase_ == 7;
     }
-
     /**
      *
      *
@@ -2259,7 +2188,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.BoolValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2282,7 +2210,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2302,7 +2229,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2335,7 +2261,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2361,7 +2286,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2374,7 +2298,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.visionai.v1.BoolValue.Builder getBoolValueBuilder() {
       return getBoolValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2395,7 +2318,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.visionai.v1.BoolValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2428,7 +2350,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object field_ = "";
-
     /**
      *
      *
@@ -2451,7 +2372,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2474,7 +2394,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2415,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2514,7 +2432,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2539,7 +2456,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean fetchMatchedAnnotations_;
-
     /**
      *
      *
@@ -2562,7 +2478,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
     public boolean getFetchMatchedAnnotations() {
       return fetchMatchedAnnotations_;
     }
-
     /**
      *
      *
@@ -2589,7 +2504,6 @@ public final class Criteria extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

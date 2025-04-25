@@ -36,7 +36,6 @@ public interface KeyRangeDataDiskAssignmentOrBuilder
    * @return The start.
    */
   java.lang.String getStart();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface KeyRangeDataDiskAssignmentOrBuilder
    * @return The end.
    */
   java.lang.String getEnd();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface KeyRangeDataDiskAssignmentOrBuilder
    * @return The dataDisk.
    */
   java.lang.String getDataDisk();
-
   /**
    *
    *

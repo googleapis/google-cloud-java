@@ -38,7 +38,6 @@ public interface StreamingAutomlClassificationConfigOrBuilder
    * @return The modelName.
    */
   java.lang.String getModelName();
-
   /**
    *
    *

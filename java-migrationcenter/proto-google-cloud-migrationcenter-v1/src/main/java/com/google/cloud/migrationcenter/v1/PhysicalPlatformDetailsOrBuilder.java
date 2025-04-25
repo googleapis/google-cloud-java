@@ -38,7 +38,6 @@ public interface PhysicalPlatformDetailsOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

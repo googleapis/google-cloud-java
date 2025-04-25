@@ -33,7 +33,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.WorkflowGraph)
     WorkflowGraphOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkflowGraph.newBuilder() to construct.
   private WorkflowGraph(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.WorkflowNode> nodes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dataproc.v1.WorkflowNode> getNodesList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       getNodesOrBuilderList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
   public int getNodesCount() {
     return nodes_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataproc.v1.WorkflowNode getNodes(int index) {
     return nodes_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +566,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +817,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.WorkflowNode.Builder getNodesBuilder(int index) {
       return getNodesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -855,7 +835,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nodes_);
       }
     }
-
     /**
      *
      *
@@ -891,7 +869,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       return getNodesFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.WorkflowNode.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -907,7 +884,6 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
       return getNodesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.WorkflowNode.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter)
     StoredContentsExampleFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StoredContentsExampleFilter.newBuilder() to construct.
   private StoredContentsExampleFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList searchKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getSearchKeysList() {
     return searchKeys_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
   public int getSearchKeysCount() {
     return searchKeys_.size();
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
   public java.lang.String getSearchKeys(int index) {
     return searchKeys_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
 
   public static final int FUNCTION_NAMES_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter functionNames_;
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
   public boolean hasFunctionNames() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter.getDefaultInstance()
         : functionNames_;
   }
-
   /**
    *
    *
@@ -388,7 +380,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -624,7 +615,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       searchKeys_.makeImmutable();
       return searchKeys_;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
     public int getSearchKeysCount() {
       return searchKeys_.size();
     }
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
     public java.lang.String getSearchKeys(int index) {
       return searchKeys_.get(index);
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getSearchKeysBytes(int index) {
       return searchKeys_.getByteString(index);
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +759,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter.Builder,
             com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilterOrBuilder>
         functionNamesBuilder_;
-
     /**
      *
      *
@@ -848,7 +829,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
     public boolean hasFunctionNames() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
         return functionNamesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +928,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +949,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +966,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
       onChanged();
       return getFunctionNamesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1013,7 +987,6 @@ public final class StoredContentsExampleFilter extends com.google.protobuf.Gener
             : functionNames_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface AssetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AssetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AssetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AssetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface AssetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -151,11 +145,9 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface AssetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -203,7 +193,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; attributes = 5;</code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -214,11 +203,9 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; attributes = 5;</code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
-
   /**
    *
    *
@@ -229,7 +216,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; attributes = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
-
   /**
    *
    *
@@ -244,7 +230,6 @@ public interface AssetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -271,7 +256,6 @@ public interface AssetOrBuilder
    * @return Whether the machineDetails field is set.
    */
   boolean hasMachineDetails();
-
   /**
    *
    *
@@ -287,7 +271,6 @@ public interface AssetOrBuilder
    * @return The machineDetails.
    */
   com.google.cloud.migrationcenter.v1.MachineDetails getMachineDetails();
-
   /**
    *
    *
@@ -316,7 +299,6 @@ public interface AssetOrBuilder
    * @return Whether the insightList field is set.
    */
   boolean hasInsightList();
-
   /**
    *
    *
@@ -331,7 +313,6 @@ public interface AssetOrBuilder
    * @return The insightList.
    */
   com.google.cloud.migrationcenter.v1.InsightList getInsightList();
-
   /**
    *
    *
@@ -359,7 +340,6 @@ public interface AssetOrBuilder
    * @return Whether the performanceData field is set.
    */
   boolean hasPerformanceData();
-
   /**
    *
    *
@@ -374,7 +354,6 @@ public interface AssetOrBuilder
    * @return The performanceData.
    */
   com.google.cloud.migrationcenter.v1.AssetPerformanceData getPerformanceData();
-
   /**
    *
    *
@@ -402,7 +381,6 @@ public interface AssetOrBuilder
    * @return A list containing the sources.
    */
   java.util.List<java.lang.String> getSourcesList();
-
   /**
    *
    *
@@ -417,7 +395,6 @@ public interface AssetOrBuilder
    * @return The count of sources.
    */
   int getSourcesCount();
-
   /**
    *
    *
@@ -433,7 +410,6 @@ public interface AssetOrBuilder
    * @return The sources at the given index.
    */
   java.lang.String getSources(int index);
-
   /**
    *
    *
@@ -464,7 +440,6 @@ public interface AssetOrBuilder
    * @return A list containing the assignedGroups.
    */
   java.util.List<java.lang.String> getAssignedGroupsList();
-
   /**
    *
    *
@@ -479,7 +454,6 @@ public interface AssetOrBuilder
    * @return The count of assignedGroups.
    */
   int getAssignedGroupsCount();
-
   /**
    *
    *
@@ -495,7 +469,6 @@ public interface AssetOrBuilder
    * @return The assignedGroups at the given index.
    */
   java.lang.String getAssignedGroups(int index);
-
   /**
    *
    *

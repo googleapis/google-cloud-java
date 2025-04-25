@@ -37,7 +37,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return Whether the regionInstanceGroupManagerUpdateInstanceConfigReqResource field is set.
    */
   boolean hasRegionInstanceGroupManagerUpdateInstanceConfigReqResource();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq
       getRegionInstanceGroupManagerUpdateInstanceConfigReqResource();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

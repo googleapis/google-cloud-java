@@ -38,7 +38,6 @@ public interface ReadFileRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ReadFileRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ReadFileRequestOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *

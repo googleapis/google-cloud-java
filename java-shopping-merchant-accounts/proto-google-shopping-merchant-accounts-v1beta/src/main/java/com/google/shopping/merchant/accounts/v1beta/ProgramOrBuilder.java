@@ -37,7 +37,6 @@ public interface ProgramOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ProgramOrBuilder
    * @return The documentationUri.
    */
   java.lang.String getDocumentationUri();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ProgramOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface ProgramOrBuilder
    * @return A list containing the activeRegionCodes.
    */
   java.util.List<java.lang.String> getActiveRegionCodesList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface ProgramOrBuilder
    * @return The count of activeRegionCodes.
    */
   int getActiveRegionCodesCount();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ProgramOrBuilder
    * @return The activeRegionCodes at the given index.
    */
   java.lang.String getActiveRegionCodes(int index);
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface ProgramOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Program.Requirement>
       getUnmetRequirementsList();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface ProgramOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Program.Requirement getUnmetRequirements(int index);
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface ProgramOrBuilder
    * </code>
    */
   int getUnmetRequirementsCount();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface ProgramOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.accounts.v1beta.Program.RequirementOrBuilder>
       getUnmetRequirementsOrBuilderList();
-
   /**
    *
    *

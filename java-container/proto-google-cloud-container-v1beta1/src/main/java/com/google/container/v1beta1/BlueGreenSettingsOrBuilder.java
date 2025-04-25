@@ -38,7 +38,6 @@ public interface BlueGreenSettingsOrBuilder
    * @return Whether the standardRolloutPolicy field is set.
    */
   boolean hasStandardRolloutPolicy();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface BlueGreenSettingsOrBuilder
    * @return The standardRolloutPolicy.
    */
   com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy getStandardRolloutPolicy();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface BlueGreenSettingsOrBuilder
    * @return Whether the autoscaledRolloutPolicy field is set.
    */
   boolean hasAutoscaledRolloutPolicy();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface BlueGreenSettingsOrBuilder
    */
   com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy
       getAutoscaledRolloutPolicy();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface BlueGreenSettingsOrBuilder
    * @return Whether the nodePoolSoakDuration field is set.
    */
   boolean hasNodePoolSoakDuration();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface BlueGreenSettingsOrBuilder
    * @return The nodePoolSoakDuration.
    */
   com.google.protobuf.Duration getNodePoolSoakDuration();
-
   /**
    *
    *

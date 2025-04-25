@@ -349,8 +349,7 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReceiveTriggerWebhook, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ReceiveTriggerWebhook, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReceiveTriggerWebhookResponse.class.getName(),
                   Exception.class.getName())));

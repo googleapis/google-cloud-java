@@ -39,7 +39,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface InstanceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public interface InstanceOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public interface InstanceOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.datafusion.v1beta1.NetworkConfig getNetworkConfig();
-
   /**
    *
    *
@@ -205,7 +200,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -218,11 +212,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; options = 9;</code>
    */
   int getOptionsCount();
-
   /**
    *
    *
@@ -289,11 +278,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; options = 9;</code>
    */
   boolean containsOptions(java.lang.String key);
-
   /** Use {@link #getOptionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getOptions();
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; options = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getOptionsMap();
-
   /**
    *
    *
@@ -321,7 +307,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -347,7 +332,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -361,7 +345,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -387,7 +370,6 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -428,7 +409,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -457,7 +437,6 @@ public interface InstanceOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
-
   /**
    *
    *
@@ -484,7 +463,6 @@ public interface InstanceOrBuilder
    * @return The serviceEndpoint.
    */
   java.lang.String getServiceEndpoint();
-
   /**
    *
    *
@@ -511,7 +489,6 @@ public interface InstanceOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -538,7 +515,6 @@ public interface InstanceOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -569,7 +545,6 @@ public interface InstanceOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -600,7 +575,6 @@ public interface InstanceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -625,7 +599,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.Version available_version = 19;</code>
    */
   java.util.List<com.google.cloud.datafusion.v1beta1.Version> getAvailableVersionList();
-
   /**
    *
    *
@@ -637,7 +610,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.Version available_version = 19;</code>
    */
   com.google.cloud.datafusion.v1beta1.Version getAvailableVersion(int index);
-
   /**
    *
    *
@@ -649,7 +621,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.Version available_version = 19;</code>
    */
   int getAvailableVersionCount();
-
   /**
    *
    *
@@ -662,7 +633,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.datafusion.v1beta1.VersionOrBuilder>
       getAvailableVersionOrBuilderList();
-
   /**
    *
    *
@@ -687,7 +657,6 @@ public interface InstanceOrBuilder
    * @return The apiEndpoint.
    */
   java.lang.String getApiEndpoint();
-
   /**
    *
    *
@@ -713,7 +682,6 @@ public interface InstanceOrBuilder
    * @return The gcsBucket.
    */
   java.lang.String getGcsBucket();
-
   /**
    *
    *
@@ -737,7 +705,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.Accelerator accelerators = 22;</code>
    */
   java.util.List<com.google.cloud.datafusion.v1beta1.Accelerator> getAcceleratorsList();
-
   /**
    *
    *
@@ -748,7 +715,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.Accelerator accelerators = 22;</code>
    */
   com.google.cloud.datafusion.v1beta1.Accelerator getAccelerators(int index);
-
   /**
    *
    *
@@ -759,7 +725,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.datafusion.v1beta1.Accelerator accelerators = 22;</code>
    */
   int getAcceleratorsCount();
-
   /**
    *
    *
@@ -771,7 +736,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.datafusion.v1beta1.AcceleratorOrBuilder>
       getAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -795,7 +759,6 @@ public interface InstanceOrBuilder
    * @return The p4ServiceAccount.
    */
   java.lang.String getP4ServiceAccount();
-
   /**
    *
    *
@@ -821,7 +784,6 @@ public interface InstanceOrBuilder
    * @return The tenantProjectId.
    */
   java.lang.String getTenantProjectId();
-
   /**
    *
    *
@@ -851,7 +813,6 @@ public interface InstanceOrBuilder
    * @return The dataprocServiceAccount.
    */
   java.lang.String getDataprocServiceAccount();
-
   /**
    *
    *
@@ -895,7 +856,6 @@ public interface InstanceOrBuilder
    * @return Whether the cryptoKeyConfig field is set.
    */
   boolean hasCryptoKeyConfig();
-
   /**
    *
    *
@@ -909,7 +869,6 @@ public interface InstanceOrBuilder
    * @return The cryptoKeyConfig.
    */
   com.google.cloud.datafusion.v1beta1.CryptoKeyConfig getCryptoKeyConfig();
-
   /**
    *
    *
@@ -937,7 +896,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<com.google.cloud.datafusion.v1beta1.Instance.DisabledReason>
       getDisabledReasonList();
-
   /**
    *
    *
@@ -952,7 +910,6 @@ public interface InstanceOrBuilder
    * @return The count of disabledReason.
    */
   int getDisabledReasonCount();
-
   /**
    *
    *
@@ -968,7 +925,6 @@ public interface InstanceOrBuilder
    * @return The disabledReason at the given index.
    */
   com.google.cloud.datafusion.v1beta1.Instance.DisabledReason getDisabledReason(int index);
-
   /**
    *
    *
@@ -983,7 +939,6 @@ public interface InstanceOrBuilder
    * @return A list containing the enum numeric values on the wire for disabledReason.
    */
   java.util.List<java.lang.Integer> getDisabledReasonValueList();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface BigtableSourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BigtableSourceOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface BigtableSourceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface BigtableSourceOrBuilder
    * @return Whether the bigtableOptions field is set.
    */
   boolean hasBigtableOptions();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface BigtableSourceOrBuilder
    * @return The bigtableOptions.
    */
   com.google.cloud.discoveryengine.v1beta.BigtableOptions getBigtableOptions();
-
   /**
    *
    *

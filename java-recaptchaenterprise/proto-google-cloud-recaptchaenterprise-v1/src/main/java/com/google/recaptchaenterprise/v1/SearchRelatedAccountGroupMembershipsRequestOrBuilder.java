@@ -40,7 +40,6 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * @return The accountId.
    */
   java.lang.String getAccountId();
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListDomainsResponseOrBuilder
    * <code>repeated .google.cloud.managedidentities.v1.Domain domains = 1;</code>
    */
   java.util.List<com.google.cloud.managedidentities.v1.Domain> getDomainsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDomainsResponseOrBuilder
    * <code>repeated .google.cloud.managedidentities.v1.Domain domains = 1;</code>
    */
   com.google.cloud.managedidentities.v1.Domain getDomains(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDomainsResponseOrBuilder
    * <code>repeated .google.cloud.managedidentities.v1.Domain domains = 1;</code>
    */
   int getDomainsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDomainsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.managedidentities.v1.DomainOrBuilder>
       getDomainsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDomainsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListDomainsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListDomainsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListDomainsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

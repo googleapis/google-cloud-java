@@ -33,7 +33,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureValueDestination)
     FeatureValueDestinationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureValueDestination.newBuilder() to construct.
   private FeatureValueDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   }
 
   public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   public boolean hasBigqueryDestination() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     }
     return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   }
 
   public static final int TFRECORD_DESTINATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   public boolean hasTfrecordDestination() {
     return destinationCase_ == 2;
   }
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     }
     return com.google.cloud.aiplatform.v1beta1.TFRecordDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -268,7 +260,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   }
 
   public static final int CSV_DESTINATION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   public boolean hasCsvDestination() {
     return destinationCase_ == 3;
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     }
     return com.google.cloud.aiplatform.v1beta1.CsvDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -531,7 +520,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -787,7 +775,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
         bigqueryDestinationBuilder_;
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     public boolean hasBigqueryDestination() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -837,7 +823,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -865,7 +850,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +912,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         getBigqueryDestinationBuilder() {
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1003,7 +983,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1026,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.TFRecordDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.TFRecordDestinationOrBuilder>
         tfrecordDestinationBuilder_;
-
     /**
      *
      *
@@ -1073,7 +1051,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     public boolean hasTfrecordDestination() {
       return destinationCase_ == 2;
     }
-
     /**
      *
      *
@@ -1109,7 +1086,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         return com.google.cloud.aiplatform.v1beta1.TFRecordDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1119,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1149,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1193,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1228,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1251,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         getTfrecordDestinationBuilder() {
       return getTfrecordDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1311,7 +1282,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         return com.google.cloud.aiplatform.v1beta1.TFRecordDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1331,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.CsvDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.CsvDestinationOrBuilder>
         csvDestinationBuilder_;
-
     /**
      *
      *
@@ -1378,7 +1347,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     public boolean hasCsvDestination() {
       return destinationCase_ == 3;
     }
-
     /**
      *
      *
@@ -1405,7 +1373,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         return com.google.cloud.aiplatform.v1beta1.CsvDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1429,7 +1396,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1451,7 +1417,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1451,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       destinationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1477,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1490,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.CsvDestination.Builder getCsvDestinationBuilder() {
       return getCsvDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1550,7 +1512,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
         return com.google.cloud.aiplatform.v1beta1.CsvDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *

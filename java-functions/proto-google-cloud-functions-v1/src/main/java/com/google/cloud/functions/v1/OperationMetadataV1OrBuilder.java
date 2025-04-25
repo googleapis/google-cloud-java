@@ -37,7 +37,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface OperationMetadataV1OrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The request.
    */
   com.google.protobuf.Any getRequest();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface OperationMetadataV1OrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The buildId.
    */
   java.lang.String getBuildId();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The sourceToken.
    */
   java.lang.String getSourceToken();
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public interface OperationMetadataV1OrBuilder
    * @return The buildName.
    */
   java.lang.String getBuildName();
-
   /**
    *
    *

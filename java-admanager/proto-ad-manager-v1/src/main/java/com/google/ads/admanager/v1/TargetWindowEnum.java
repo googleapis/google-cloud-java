@@ -34,7 +34,6 @@ public final class TargetWindowEnum extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.TargetWindowEnum)
     TargetWindowEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetWindowEnum.newBuilder() to construct.
   private TargetWindowEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class TargetWindowEnum extends com.google.protobuf.GeneratedMessage
      * <code>TARGET_WINDOW_UNSPECIFIED = 0;</code>
      */
     public static final int TARGET_WINDOW_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class TargetWindowEnum extends com.google.protobuf.GeneratedMessage
      * <code>TOP = 1;</code>
      */
     public static final int TOP_VALUE = 1;
-
     /**
      *
      *
@@ -373,7 +370,6 @@ public final class TargetWindowEnum extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

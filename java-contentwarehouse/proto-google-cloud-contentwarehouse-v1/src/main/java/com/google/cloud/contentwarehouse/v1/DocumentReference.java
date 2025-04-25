@@ -33,7 +33,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DocumentReference)
     DocumentReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentReference.newBuilder() to construct.
   private DocumentReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentName_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snippet_ = "";
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   public static final int DOCUMENT_IS_FOLDER_FIELD_NUMBER = 4;
   private boolean documentIsFolder_ = false;
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -345,7 +332,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -363,7 +349,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   public static final int DELETE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp deleteTime_;
-
   /**
    *
    *
@@ -380,7 +365,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -397,7 +381,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
-
   /**
    *
    *
@@ -415,7 +398,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   public static final int DOCUMENT_IS_RETENTION_FOLDER_FIELD_NUMBER = 8;
   private boolean documentIsRetentionFolder_ = false;
-
   /**
    *
    *
@@ -434,7 +416,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
 
   public static final int DOCUMENT_IS_LEGAL_HOLD_FOLDER_FIELD_NUMBER = 9;
   private boolean documentIsLegalHoldFolder_ = false;
-
   /**
    *
    *
@@ -698,7 +679,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1019,7 +999,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object documentName_ = "";
-
     /**
      *
      *
@@ -1044,7 +1023,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1047,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1070,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1089,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1115,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1165,7 +1139,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1163,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1214,7 +1186,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1205,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1231,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object snippet_ = "";
-
     /**
      *
      *
@@ -1286,7 +1255,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1311,7 +1279,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1335,7 +1302,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1321,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1347,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean documentIsFolder_;
-
     /**
      *
      *
@@ -1398,7 +1362,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     public boolean getDocumentIsFolder() {
       return documentIsFolder_;
     }
-
     /**
      *
      *
@@ -1418,7 +1381,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1405,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1460,7 +1421,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1483,7 +1443,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1508,7 +1467,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1530,7 +1488,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1517,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1538,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1554,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1620,7 +1574,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1655,7 +1608,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1672,7 +1624,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1695,7 +1646,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1720,7 +1670,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1691,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1720,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1794,7 +1741,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1811,7 +1757,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1832,7 +1777,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1867,7 +1811,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
-
     /**
      *
      *
@@ -1884,7 +1827,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1907,7 +1849,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
         return deleteTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1932,7 +1873,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1954,7 +1894,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1923,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2006,7 +1944,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2023,7 +1960,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2044,7 +1980,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
             : deleteTime_;
       }
     }
-
     /**
      *
      *
@@ -2074,7 +2009,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean documentIsRetentionFolder_;
-
     /**
      *
      *
@@ -2090,7 +2024,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     public boolean getDocumentIsRetentionFolder() {
       return documentIsRetentionFolder_;
     }
-
     /**
      *
      *
@@ -2110,7 +2043,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2130,7 +2062,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean documentIsLegalHoldFolder_;
-
     /**
      *
      *
@@ -2146,7 +2077,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     public boolean getDocumentIsLegalHoldFolder() {
       return documentIsLegalHoldFolder_;
     }
-
     /**
      *
      *
@@ -2166,7 +2096,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

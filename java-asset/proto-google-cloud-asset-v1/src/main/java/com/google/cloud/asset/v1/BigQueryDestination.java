@@ -33,7 +33,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.BigQueryDestination)
     BigQueryDestinationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryDestination.newBuilder() to construct.
   private BigQueryDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object table_ = "";
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   public static final int PARTITION_SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.asset.v1.PartitionSpec partitionSpec_;
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   public boolean hasPartitionSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +272,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.asset.v1.PartitionSpec.getDefaultInstance()
         : partitionSpec_;
   }
-
   /**
    *
    *
@@ -315,7 +306,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
   public static final int SEPARATE_TABLES_PER_ASSET_TYPE_FIELD_NUMBER = 5;
   private boolean separateTablesPerAssetType_ = false;
-
   /**
    *
    *
@@ -558,7 +548,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -813,7 +802,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -843,7 +831,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +860,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -902,7 +888,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +912,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +943,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object table_ = "";
-
     /**
      *
      *
@@ -984,7 +967,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1009,7 +991,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1014,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1033,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1059,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -1099,7 +1077,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -1122,7 +1099,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1126,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
             com.google.cloud.asset.v1.PartitionSpec.Builder,
             com.google.cloud.asset.v1.PartitionSpecOrBuilder>
         partitionSpecBuilder_;
-
     /**
      *
      *
@@ -1181,7 +1156,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public boolean hasPartitionSpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1218,7 +1192,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         return partitionSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1230,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1266,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1309,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1344,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1374,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPartitionSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1440,7 +1408,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
             : partitionSpec_;
       }
     }
-
     /**
      *
      *
@@ -1484,7 +1451,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
 
     private boolean separateTablesPerAssetType_;
-
     /**
      *
      *
@@ -1526,7 +1492,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public boolean getSeparateTablesPerAssetType() {
       return separateTablesPerAssetType_;
     }
-
     /**
      *
      *
@@ -1572,7 +1537,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

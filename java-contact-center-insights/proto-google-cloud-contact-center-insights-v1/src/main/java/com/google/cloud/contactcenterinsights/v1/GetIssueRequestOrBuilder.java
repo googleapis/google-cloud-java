@@ -38,7 +38,6 @@ public interface GetIssueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

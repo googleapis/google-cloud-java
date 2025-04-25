@@ -37,7 +37,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -153,11 +147,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public interface InstanceOrBuilder
    * @return Whether the stateInfo field is set.
    */
   boolean hasStateInfo();
-
   /**
    *
    *
@@ -254,7 +242,6 @@ public interface InstanceOrBuilder
    * @return The stateInfo.
    */
   com.google.cloud.memorystore.v1beta.Instance.StateInfo getStateInfo();
-
   /**
    *
    *
@@ -282,7 +269,6 @@ public interface InstanceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -311,7 +297,6 @@ public interface InstanceOrBuilder
    * @return Whether the replicaCount field is set.
    */
   boolean hasReplicaCount();
-
   /**
    *
    *
@@ -340,7 +325,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for authorizationMode.
    */
   int getAuthorizationModeValue();
-
   /**
    *
    *
@@ -370,7 +354,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for transitEncryptionMode.
    */
   int getTransitEncryptionModeValue();
-
   /**
    *
    *
@@ -412,7 +395,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.memorystore.v1beta.DiscoveryEndpoint> getDiscoveryEndpointsList();
-
   /**
    *
    *
@@ -426,7 +408,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.memorystore.v1beta.DiscoveryEndpoint getDiscoveryEndpoints(int index);
-
   /**
    *
    *
@@ -440,7 +421,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getDiscoveryEndpointsCount();
-
   /**
    *
    *
@@ -455,7 +435,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.memorystore.v1beta.DiscoveryEndpointOrBuilder>
       getDiscoveryEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -485,7 +464,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for nodeType.
    */
   int getNodeTypeValue();
-
   /**
    *
    *
@@ -515,7 +493,6 @@ public interface InstanceOrBuilder
    * @return Whether the persistenceConfig field is set.
    */
   boolean hasPersistenceConfig();
-
   /**
    *
    *
@@ -530,7 +507,6 @@ public interface InstanceOrBuilder
    * @return The persistenceConfig.
    */
   com.google.cloud.memorystore.v1beta.PersistenceConfig getPersistenceConfig();
-
   /**
    *
    *
@@ -558,7 +534,6 @@ public interface InstanceOrBuilder
    * @return The engineVersion.
    */
   java.lang.String getEngineVersion();
-
   /**
    *
    *
@@ -585,7 +560,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getEngineConfigsCount();
-
   /**
    *
    *
@@ -597,11 +571,9 @@ public interface InstanceOrBuilder
    * </code>
    */
   boolean containsEngineConfigs(java.lang.String key);
-
   /** Use {@link #getEngineConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEngineConfigs();
-
   /**
    *
    *
@@ -613,7 +585,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEngineConfigsMap();
-
   /**
    *
    *
@@ -629,7 +600,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -656,7 +626,6 @@ public interface InstanceOrBuilder
    * @return Whether the nodeConfig field is set.
    */
   boolean hasNodeConfig();
-
   /**
    *
    *
@@ -671,7 +640,6 @@ public interface InstanceOrBuilder
    * @return The nodeConfig.
    */
   com.google.cloud.memorystore.v1beta.NodeConfig getNodeConfig();
-
   /**
    *
    *
@@ -700,7 +668,6 @@ public interface InstanceOrBuilder
    * @return Whether the zoneDistributionConfig field is set.
    */
   boolean hasZoneDistributionConfig();
-
   /**
    *
    *
@@ -716,7 +683,6 @@ public interface InstanceOrBuilder
    * @return The zoneDistributionConfig.
    */
   com.google.cloud.memorystore.v1beta.ZoneDistributionConfig getZoneDistributionConfig();
-
   /**
    *
    *
@@ -745,7 +711,6 @@ public interface InstanceOrBuilder
    * @return Whether the deletionProtectionEnabled field is set.
    */
   boolean hasDeletionProtectionEnabled();
-
   /**
    *
    *
@@ -773,7 +738,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.memorystore.v1beta.PscAutoConnection> getPscAutoConnectionsList();
-
   /**
    *
    *
@@ -787,7 +751,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.memorystore.v1beta.PscAutoConnection getPscAutoConnections(int index);
-
   /**
    *
    *
@@ -801,7 +764,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getPscAutoConnectionsCount();
-
   /**
    *
    *
@@ -816,7 +778,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.memorystore.v1beta.PscAutoConnectionOrBuilder>
       getPscAutoConnectionsOrBuilderList();
-
   /**
    *
    *
@@ -844,7 +805,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.memorystore.v1beta.Instance.InstanceEndpoint> getEndpointsList();
-
   /**
    *
    *
@@ -857,7 +817,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.memorystore.v1beta.Instance.InstanceEndpoint getEndpoints(int index);
-
   /**
    *
    *
@@ -870,7 +829,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getEndpointsCount();
-
   /**
    *
    *
@@ -884,7 +842,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.memorystore.v1beta.Instance.InstanceEndpointOrBuilder>
       getEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -913,7 +870,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *

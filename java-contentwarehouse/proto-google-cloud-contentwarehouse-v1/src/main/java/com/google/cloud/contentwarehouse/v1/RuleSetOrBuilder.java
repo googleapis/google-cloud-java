@@ -40,7 +40,6 @@ public interface RuleSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface RuleSetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface RuleSetOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface RuleSetOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule rules = 3;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.Rule> getRulesList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface RuleSetOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule rules = 3;</code>
    */
   com.google.cloud.contentwarehouse.v1.Rule getRules(int index);
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface RuleSetOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule rules = 3;</code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface RuleSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.RuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *

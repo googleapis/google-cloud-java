@@ -33,7 +33,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.SpannerIODetails)
     SpannerIODetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpannerIODetails.newBuilder() to construct.
   private SpannerIODetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -402,7 +395,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -616,7 +608,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -639,7 +630,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object databaseId_ = "";
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

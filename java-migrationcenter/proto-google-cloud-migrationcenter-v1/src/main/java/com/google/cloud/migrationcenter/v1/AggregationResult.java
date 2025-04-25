@@ -33,7 +33,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregationResult)
     AggregationResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AggregationResult.newBuilder() to construct.
   private AggregationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      */
     long getValue();
   }
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregationResult.Count)
       CountOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Count.newBuilder() to construct.
     private Count(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -122,7 +119,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
     public static final int VALUE_FIELD_NUMBER = 1;
     private long value_ = 0L;
-
     /**
      * <code>int64 value = 1;</code>
      *
@@ -294,7 +290,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -483,7 +478,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private long value_;
-
       /**
        * <code>int64 value = 1;</code>
        *
@@ -493,7 +487,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       public long getValue() {
         return value_;
       }
-
       /**
        * <code>int64 value = 1;</code>
        *
@@ -507,7 +500,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        * <code>int64 value = 1;</code>
        *
@@ -597,7 +589,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      */
     double getValue();
   }
-
   /**
    *
    *
@@ -612,7 +603,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregationResult.Sum)
       SumOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Sum.newBuilder() to construct.
     private Sum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -643,7 +633,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
     public static final int VALUE_FIELD_NUMBER = 1;
     private double value_ = 0D;
-
     /**
      * <code>double value = 1;</code>
      *
@@ -819,7 +808,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1005,7 +993,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private double value_;
-
       /**
        * <code>double value = 1;</code>
        *
@@ -1015,7 +1002,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       public double getValue() {
         return value_;
       }
-
       /**
        * <code>double value = 1;</code>
        *
@@ -1029,7 +1015,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        * <code>double value = 1;</code>
        *
@@ -1128,7 +1113,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      */
     java.util.List<com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Bucket>
         getBucketsList();
-
     /**
      *
      *
@@ -1145,7 +1129,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Bucket getBuckets(int index);
-
     /**
      *
      *
@@ -1162,7 +1145,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     int getBucketsCount();
-
     /**
      *
      *
@@ -1182,7 +1164,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             ? extends
                 com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.BucketOrBuilder>
         getBucketsOrBuilderList();
-
     /**
      *
      *
@@ -1201,7 +1182,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.BucketOrBuilder
         getBucketsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1216,7 +1196,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregationResult.Histogram)
       HistogramOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Histogram.newBuilder() to construct.
     private Histogram(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1291,7 +1270,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
        */
       long getCount();
     }
-
     /**
      *
      *
@@ -1309,7 +1287,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregationResult.Histogram.Bucket)
         BucketOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Bucket.newBuilder() to construct.
       private Bucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1341,7 +1318,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
       public static final int LOWER_BOUND_FIELD_NUMBER = 1;
       private double lowerBound_ = 0D;
-
       /**
        *
        *
@@ -1360,7 +1336,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
       public static final int UPPER_BOUND_FIELD_NUMBER = 2;
       private double upperBound_ = 0D;
-
       /**
        *
        *
@@ -1379,7 +1354,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
       public static final int COUNT_FIELD_NUMBER = 3;
       private long count_ = 0L;
-
       /**
        *
        *
@@ -1592,7 +1566,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1818,7 +1791,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private double lowerBound_;
-
         /**
          *
          *
@@ -1834,7 +1806,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         public double getLowerBound() {
           return lowerBound_;
         }
-
         /**
          *
          *
@@ -1854,7 +1825,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1874,7 +1844,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
 
         private double upperBound_;
-
         /**
          *
          *
@@ -1890,7 +1859,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         public double getUpperBound() {
           return upperBound_;
         }
-
         /**
          *
          *
@@ -1910,7 +1878,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1930,7 +1897,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
 
         private long count_;
-
         /**
          *
          *
@@ -1946,7 +1912,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         public long getCount() {
           return count_;
         }
-
         /**
          *
          *
@@ -1966,7 +1931,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2058,7 +2022,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Bucket>
         buckets_;
-
     /**
      *
      *
@@ -2079,7 +2042,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         getBucketsList() {
       return buckets_;
     }
-
     /**
      *
      *
@@ -2102,7 +2064,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         getBucketsOrBuilderList() {
       return buckets_;
     }
-
     /**
      *
      *
@@ -2122,7 +2083,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public int getBucketsCount() {
       return buckets_.size();
     }
-
     /**
      *
      *
@@ -2143,7 +2103,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         int index) {
       return buckets_.get(index);
     }
-
     /**
      *
      *
@@ -2329,7 +2288,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2610,7 +2568,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           return bucketsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2633,7 +2590,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           return bucketsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2657,7 +2613,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           return bucketsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2687,7 +2642,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2716,7 +2670,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2746,7 +2699,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2776,7 +2728,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2804,7 +2755,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2833,7 +2783,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2862,7 +2811,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2888,7 +2836,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2914,7 +2861,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2934,7 +2880,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           getBucketsBuilder(int index) {
         return getBucketsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2958,7 +2903,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           return bucketsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2984,7 +2928,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           return java.util.Collections.unmodifiableList(buckets_);
         }
       }
-
       /**
        *
        *
@@ -3007,7 +2950,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Bucket
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3031,7 +2973,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Bucket
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3144,24 +3085,18 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     int getValuesCount();
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     boolean containsValues(java.lang.String key);
-
     /** Use {@link #getValuesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.Long> getValues();
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     java.util.Map<java.lang.String, java.lang.Long> getValuesMap();
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     long getValuesOrDefault(java.lang.String key, long defaultValue);
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     long getValuesOrThrow(java.lang.String key);
   }
-
   /**
    *
    *
@@ -3176,7 +3111,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.AggregationResult.Frequency)
       FrequencyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Frequency.newBuilder() to construct.
     private Frequency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3243,7 +3177,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public int getValuesCount() {
       return internalGetValues().getMap().size();
     }
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     @java.lang.Override
     public boolean containsValues(java.lang.String key) {
@@ -3252,20 +3185,17 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       return internalGetValues().getMap().containsKey(key);
     }
-
     /** Use {@link #getValuesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getValues() {
       return getValuesMap();
     }
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Long> getValuesMap() {
       return internalGetValues().getMap();
     }
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     @java.lang.Override
     public long getValuesOrDefault(java.lang.String key, long defaultValue) {
@@ -3275,7 +3205,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetValues().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /** <code>map&lt;string, int64&gt; values = 1;</code> */
     @java.lang.Override
     public long getValuesOrThrow(java.lang.String key) {
@@ -3459,7 +3388,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3702,7 +3630,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       public int getValuesCount() {
         return internalGetValues().getMap().size();
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       @java.lang.Override
       public boolean containsValues(java.lang.String key) {
@@ -3711,20 +3638,17 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         }
         return internalGetValues().getMap().containsKey(key);
       }
-
       /** Use {@link #getValuesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Long> getValues() {
         return getValuesMap();
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.Long> getValuesMap() {
         return internalGetValues().getMap();
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       @java.lang.Override
       public long getValuesOrDefault(java.lang.String key, long defaultValue) {
@@ -3734,7 +3658,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         java.util.Map<java.lang.String, java.lang.Long> map = internalGetValues().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       @java.lang.Override
       public long getValuesOrThrow(java.lang.String key) {
@@ -3753,7 +3676,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         internalGetMutableValues().getMutableMap().clear();
         return this;
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       public Builder removeValues(java.lang.String key) {
         if (key == null) {
@@ -3762,14 +3684,12 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         internalGetMutableValues().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Long> getMutableValues() {
         bitField0_ |= 0x00000001;
         return internalGetMutableValues().getMutableMap();
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       public Builder putValues(java.lang.String key, long value) {
         if (key == null) {
@@ -3780,7 +3700,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /** <code>map&lt;string, int64&gt; values = 1;</code> */
       public Builder putAllValues(java.util.Map<java.lang.String, java.lang.Long> values) {
         internalGetMutableValues().getMutableMap().putAll(values);
@@ -3874,7 +3793,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     private ResultCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3915,7 +3833,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object field_ = "";
-
   /**
    * <code>string field = 1;</code>
    *
@@ -3933,7 +3850,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    * <code>string field = 1;</code>
    *
@@ -3953,7 +3869,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int COUNT_FIELD_NUMBER = 2;
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code>
    *
@@ -3963,7 +3878,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasCount() {
     return resultCase_ == 2;
   }
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code>
    *
@@ -3976,7 +3890,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.migrationcenter.v1.AggregationResult.Count.getDefaultInstance();
   }
-
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
   @java.lang.Override
   public com.google.cloud.migrationcenter.v1.AggregationResult.CountOrBuilder getCountOrBuilder() {
@@ -3987,7 +3900,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SUM_FIELD_NUMBER = 3;
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code>
    *
@@ -3997,7 +3909,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasSum() {
     return resultCase_ == 3;
   }
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code>
    *
@@ -4010,7 +3921,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.migrationcenter.v1.AggregationResult.Sum.getDefaultInstance();
   }
-
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
   @java.lang.Override
   public com.google.cloud.migrationcenter.v1.AggregationResult.SumOrBuilder getSumOrBuilder() {
@@ -4021,7 +3931,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int HISTOGRAM_FIELD_NUMBER = 4;
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code>
    *
@@ -4031,7 +3940,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasHistogram() {
     return resultCase_ == 4;
   }
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code>
    *
@@ -4044,7 +3952,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.getDefaultInstance();
   }
-
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
   @java.lang.Override
   public com.google.cloud.migrationcenter.v1.AggregationResult.HistogramOrBuilder
@@ -4056,7 +3963,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FREQUENCY_FIELD_NUMBER = 5;
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code>
    *
@@ -4066,7 +3972,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   public boolean hasFrequency() {
     return resultCase_ == 5;
   }
-
   /**
    * <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code>
    *
@@ -4079,7 +3984,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.migrationcenter.v1.AggregationResult.Frequency.getDefaultInstance();
   }
-
   /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
   @java.lang.Override
   public com.google.cloud.migrationcenter.v1.AggregationResult.FrequencyOrBuilder
@@ -4321,7 +4225,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4602,7 +4505,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object field_ = "";
-
     /**
      * <code>string field = 1;</code>
      *
@@ -4619,7 +4521,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string field = 1;</code>
      *
@@ -4636,7 +4537,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string field = 1;</code>
      *
@@ -4652,7 +4552,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      * <code>string field = 1;</code>
      *
@@ -4664,7 +4563,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      * <code>string field = 1;</code>
      *
@@ -4687,7 +4585,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.AggregationResult.Count.Builder,
             com.google.cloud.migrationcenter.v1.AggregationResult.CountOrBuilder>
         countBuilder_;
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code>
      *
@@ -4697,7 +4594,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasCount() {
       return resultCase_ == 2;
     }
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code>
      *
@@ -4717,7 +4613,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Count.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     public Builder setCount(com.google.cloud.migrationcenter.v1.AggregationResult.Count value) {
       if (countBuilder_ == null) {
@@ -4732,7 +4627,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 2;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     public Builder setCount(
         com.google.cloud.migrationcenter.v1.AggregationResult.Count.Builder builderForValue) {
@@ -4745,7 +4639,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 2;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     public Builder mergeCount(com.google.cloud.migrationcenter.v1.AggregationResult.Count value) {
       if (countBuilder_ == null) {
@@ -4772,7 +4665,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 2;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     public Builder clearCount() {
       if (countBuilder_ == null) {
@@ -4790,12 +4682,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     public com.google.cloud.migrationcenter.v1.AggregationResult.Count.Builder getCountBuilder() {
       return getCountFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     @java.lang.Override
     public com.google.cloud.migrationcenter.v1.AggregationResult.CountOrBuilder
@@ -4809,7 +4699,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Count.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Count count = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.migrationcenter.v1.AggregationResult.Count,
@@ -4841,7 +4730,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.AggregationResult.Sum.Builder,
             com.google.cloud.migrationcenter.v1.AggregationResult.SumOrBuilder>
         sumBuilder_;
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code>
      *
@@ -4851,7 +4739,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasSum() {
       return resultCase_ == 3;
     }
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code>
      *
@@ -4871,7 +4758,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Sum.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     public Builder setSum(com.google.cloud.migrationcenter.v1.AggregationResult.Sum value) {
       if (sumBuilder_ == null) {
@@ -4886,7 +4772,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 3;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     public Builder setSum(
         com.google.cloud.migrationcenter.v1.AggregationResult.Sum.Builder builderForValue) {
@@ -4899,7 +4784,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 3;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     public Builder mergeSum(com.google.cloud.migrationcenter.v1.AggregationResult.Sum value) {
       if (sumBuilder_ == null) {
@@ -4925,7 +4809,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 3;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     public Builder clearSum() {
       if (sumBuilder_ == null) {
@@ -4943,12 +4826,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     public com.google.cloud.migrationcenter.v1.AggregationResult.Sum.Builder getSumBuilder() {
       return getSumFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     @java.lang.Override
     public com.google.cloud.migrationcenter.v1.AggregationResult.SumOrBuilder getSumOrBuilder() {
@@ -4961,7 +4842,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Sum.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Sum sum = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.migrationcenter.v1.AggregationResult.Sum,
@@ -4992,7 +4872,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Builder,
             com.google.cloud.migrationcenter.v1.AggregationResult.HistogramOrBuilder>
         histogramBuilder_;
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code>
      *
@@ -5002,7 +4881,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasHistogram() {
       return resultCase_ == 4;
     }
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code>
      *
@@ -5022,7 +4900,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     public Builder setHistogram(
         com.google.cloud.migrationcenter.v1.AggregationResult.Histogram value) {
@@ -5038,7 +4915,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 4;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     public Builder setHistogram(
         com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Builder builderForValue) {
@@ -5051,7 +4927,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 4;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     public Builder mergeHistogram(
         com.google.cloud.migrationcenter.v1.AggregationResult.Histogram value) {
@@ -5079,7 +4954,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 4;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     public Builder clearHistogram() {
       if (histogramBuilder_ == null) {
@@ -5097,13 +4971,11 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     public com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.Builder
         getHistogramBuilder() {
       return getHistogramFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     @java.lang.Override
     public com.google.cloud.migrationcenter.v1.AggregationResult.HistogramOrBuilder
@@ -5117,7 +4989,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Histogram.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Histogram histogram = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.migrationcenter.v1.AggregationResult.Histogram,
@@ -5149,7 +5020,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             com.google.cloud.migrationcenter.v1.AggregationResult.Frequency.Builder,
             com.google.cloud.migrationcenter.v1.AggregationResult.FrequencyOrBuilder>
         frequencyBuilder_;
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code>
      *
@@ -5159,7 +5029,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public boolean hasFrequency() {
       return resultCase_ == 5;
     }
-
     /**
      * <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code>
      *
@@ -5179,7 +5048,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Frequency.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     public Builder setFrequency(
         com.google.cloud.migrationcenter.v1.AggregationResult.Frequency value) {
@@ -5195,7 +5063,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 5;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     public Builder setFrequency(
         com.google.cloud.migrationcenter.v1.AggregationResult.Frequency.Builder builderForValue) {
@@ -5208,7 +5075,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 5;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     public Builder mergeFrequency(
         com.google.cloud.migrationcenter.v1.AggregationResult.Frequency value) {
@@ -5236,7 +5102,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       resultCase_ = 5;
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     public Builder clearFrequency() {
       if (frequencyBuilder_ == null) {
@@ -5254,13 +5119,11 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     public com.google.cloud.migrationcenter.v1.AggregationResult.Frequency.Builder
         getFrequencyBuilder() {
       return getFrequencyFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     @java.lang.Override
     public com.google.cloud.migrationcenter.v1.AggregationResult.FrequencyOrBuilder
@@ -5274,7 +5137,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.migrationcenter.v1.AggregationResult.Frequency.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.migrationcenter.v1.AggregationResult.Frequency frequency = 5;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.migrationcenter.v1.AggregationResult.Frequency,

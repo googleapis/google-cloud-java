@@ -33,7 +33,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse)
     FetchRepositoryHistoryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchRepositoryHistoryResponse.newBuilder() to construct.
   private FetchRepositoryHistoryResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.CommitLogEntry> commits_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.dataform.v1beta1.CommitLogEntry> getCommitsList() {
     return commits_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       getCommitsOrBuilderList() {
     return commits_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
   public int getCommitsCount() {
     return commits_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
   public com.google.cloud.dataform.v1beta1.CommitLogEntry getCommits(int index) {
     return commits_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return commitsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return commitsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return commitsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
     public com.google.cloud.dataform.v1beta1.CommitLogEntry.Builder getCommitsBuilder(int index) {
       return getCommitsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return commitsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(commits_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       return getCommitsFieldBuilder()
           .addBuilder(com.google.cloud.dataform.v1beta1.CommitLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       return getCommitsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataform.v1beta1.CommitLogEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1012,7 +985,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1008,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1030,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1048,6 @@ public final class FetchRepositoryHistoryResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

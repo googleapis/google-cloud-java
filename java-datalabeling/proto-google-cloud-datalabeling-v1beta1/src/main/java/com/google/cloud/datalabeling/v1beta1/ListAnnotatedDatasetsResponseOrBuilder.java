@@ -35,7 +35,6 @@ public interface ListAnnotatedDatasetsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotatedDataset> getAnnotatedDatasetsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAnnotatedDatasetsResponseOrBuilder
    * </code>
    */
   com.google.cloud.datalabeling.v1beta1.AnnotatedDataset getAnnotatedDatasets(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAnnotatedDatasetsResponseOrBuilder
    * </code>
    */
   int getAnnotatedDatasetsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAnnotatedDatasetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetOrBuilder>
       getAnnotatedDatasetsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListAnnotatedDatasetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

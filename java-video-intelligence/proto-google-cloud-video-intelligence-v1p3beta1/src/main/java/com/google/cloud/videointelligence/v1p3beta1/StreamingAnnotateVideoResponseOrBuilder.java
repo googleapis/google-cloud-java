@@ -37,7 +37,6 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * @return Whether the annotationResults field is set.
    */
   boolean hasAnnotationResults();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
       getAnnotationResults();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface StreamingAnnotateVideoResponseOrBuilder
    * @return The annotationResultsUri.
    */
   java.lang.String getAnnotationResultsUri();
-
   /**
    *
    *

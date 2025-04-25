@@ -44,7 +44,6 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return The rawText.
    */
   java.lang.String getRawText();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

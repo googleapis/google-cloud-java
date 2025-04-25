@@ -40,7 +40,6 @@ public interface GetCertificateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

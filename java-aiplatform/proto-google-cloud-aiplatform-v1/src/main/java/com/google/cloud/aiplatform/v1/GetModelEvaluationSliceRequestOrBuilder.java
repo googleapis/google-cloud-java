@@ -40,7 +40,6 @@ public interface GetModelEvaluationSliceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

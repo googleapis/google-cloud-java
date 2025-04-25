@@ -36,7 +36,6 @@ public interface DataplexExternalTableOrBuilder
    * @return The enum numeric value on the wire for system.
    */
   int getSystemValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DataplexExternalTableOrBuilder
    * @return The fullyQualifiedName.
    */
   java.lang.String getFullyQualifiedName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DataplexExternalTableOrBuilder
    * @return The googleCloudResource.
    */
   java.lang.String getGoogleCloudResource();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface DataplexExternalTableOrBuilder
    * @return The dataCatalogEntry.
    */
   java.lang.String getDataCatalogEntry();
-
   /**
    *
    *

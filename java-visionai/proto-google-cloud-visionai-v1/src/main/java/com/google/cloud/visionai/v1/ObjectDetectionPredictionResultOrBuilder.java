@@ -36,7 +36,6 @@ public interface ObjectDetectionPredictionResultOrBuilder
    * @return Whether the currentTime field is set.
    */
   boolean hasCurrentTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ObjectDetectionPredictionResultOrBuilder
    * @return The currentTime.
    */
   com.google.protobuf.Timestamp getCurrentTime();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ObjectDetectionPredictionResultOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox>
       getIdentifiedBoxesList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ObjectDetectionPredictionResultOrBuilder
    */
   com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBox getIdentifiedBoxes(
       int index);
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface ObjectDetectionPredictionResultOrBuilder
    * </code>
    */
   int getIdentifiedBoxesCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface ObjectDetectionPredictionResultOrBuilder
           ? extends
               com.google.cloud.visionai.v1.ObjectDetectionPredictionResult.IdentifiedBoxOrBuilder>
       getIdentifiedBoxesOrBuilderList();
-
   /**
    *
    *

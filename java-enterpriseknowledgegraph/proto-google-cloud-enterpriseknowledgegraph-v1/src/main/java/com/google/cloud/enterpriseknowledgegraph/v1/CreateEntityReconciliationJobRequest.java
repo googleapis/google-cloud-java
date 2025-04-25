@@ -35,7 +35,6 @@ public final class CreateEntityReconciliationJobRequest
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest)
     CreateEntityReconciliationJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEntityReconciliationJobRequest.newBuilder() to construct.
   private CreateEntityReconciliationJobRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class CreateEntityReconciliationJobRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateEntityReconciliationJobRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CreateEntityReconciliationJobRequest
   public static final int ENTITY_RECONCILIATION_JOB_FIELD_NUMBER = 2;
   private com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
       entityReconciliationJob_;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class CreateEntityReconciliationJobRequest
   public boolean hasEntityReconciliationJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class CreateEntityReconciliationJobRequest
         ? com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob.getDefaultInstance()
         : entityReconciliationJob_;
   }
-
   /**
    *
    *
@@ -375,7 +369,6 @@ public final class CreateEntityReconciliationJobRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -610,7 +603,6 @@ public final class CreateEntityReconciliationJobRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -637,7 +629,6 @@ public final class CreateEntityReconciliationJobRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -664,7 +655,6 @@ public final class CreateEntityReconciliationJobRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -690,7 +680,6 @@ public final class CreateEntityReconciliationJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class CreateEntityReconciliationJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +735,6 @@ public final class CreateEntityReconciliationJobRequest
             com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob.Builder,
             com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJobOrBuilder>
         entityReconciliationJobBuilder_;
-
     /**
      *
      *
@@ -764,7 +751,6 @@ public final class CreateEntityReconciliationJobRequest
     public boolean hasEntityReconciliationJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class CreateEntityReconciliationJobRequest
         return entityReconciliationJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class CreateEntityReconciliationJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class CreateEntityReconciliationJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class CreateEntityReconciliationJobRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +876,6 @@ public final class CreateEntityReconciliationJobRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class CreateEntityReconciliationJobRequest
       onChanged();
       return getEntityReconciliationJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -935,7 +915,6 @@ public final class CreateEntityReconciliationJobRequest
             : entityReconciliationJob_;
       }
     }
-
     /**
      *
      *

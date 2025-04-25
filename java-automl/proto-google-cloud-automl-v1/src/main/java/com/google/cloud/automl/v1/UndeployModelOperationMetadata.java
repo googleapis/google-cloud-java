@@ -33,7 +33,6 @@ public final class UndeployModelOperationMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.UndeployModelOperationMetadata)
     UndeployModelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UndeployModelOperationMetadata.newBuilder() to construct.
   private UndeployModelOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,7 +213,6 @@ public final class UndeployModelOperationMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

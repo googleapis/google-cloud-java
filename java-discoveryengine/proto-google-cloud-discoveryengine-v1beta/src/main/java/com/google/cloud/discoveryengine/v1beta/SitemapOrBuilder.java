@@ -36,7 +36,6 @@ public interface SitemapOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SitemapOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface SitemapOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface SitemapOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface SitemapOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

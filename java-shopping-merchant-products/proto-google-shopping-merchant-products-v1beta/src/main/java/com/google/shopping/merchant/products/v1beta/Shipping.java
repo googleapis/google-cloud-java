@@ -33,7 +33,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.Shipping)
     ShippingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Shipping.newBuilder() to construct.
   private Shipping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PRICE_FIELD_NUMBER = 1;
   private com.google.shopping.type.Price price_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Price getPrice() {
     return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object country_ = "";
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_ID_FIELD_NUMBER = 5;
   private long locationId_ = 0L;
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationGroupName_ = "";
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +352,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postalCode_ = "";
-
   /**
    *
    *
@@ -391,7 +377,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +405,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_HANDLING_TIME_FIELD_NUMBER = 8;
   private long minHandlingTime_ = 0L;
-
   /**
    *
    *
@@ -444,7 +428,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinHandlingTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -471,7 +454,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_HANDLING_TIME_FIELD_NUMBER = 9;
   private long maxHandlingTime_ = 0L;
-
   /**
    *
    *
@@ -497,7 +479,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxHandlingTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -526,7 +507,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_TRANSIT_TIME_FIELD_NUMBER = 10;
   private long minTransitTime_ = 0L;
-
   /**
    *
    *
@@ -550,7 +530,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinTransitTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -577,7 +556,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_TRANSIT_TIME_FIELD_NUMBER = 11;
   private long maxTransitTime_ = 0L;
-
   /**
    *
    *
@@ -603,7 +581,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxTransitTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -905,7 +882,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1253,7 +1229,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priceBuilder_;
-
     /**
      *
      *
@@ -1268,7 +1243,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1287,7 +1261,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return priceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1310,7 +1283,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1302,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1329,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1348,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1362,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1410,7 +1378,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1405,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object country_ = "";
-
     /**
      *
      *
@@ -1463,7 +1429,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1488,7 +1453,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1476,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1495,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1521,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1584,7 +1545,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1609,7 +1569,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1633,7 +1592,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1611,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1637,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -1703,7 +1659,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1726,7 +1681,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1748,7 +1702,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1719,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1743,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long locationId_;
-
     /**
      *
      *
@@ -1809,7 +1760,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public long getLocationId() {
       return locationId_;
     }
-
     /**
      *
      *
@@ -1831,7 +1781,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1853,7 +1802,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object locationGroupName_ = "";
-
     /**
      *
      *
@@ -1877,7 +1825,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1901,7 +1848,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1924,7 +1870,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1943,7 +1888,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1969,7 +1913,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object postalCode_ = "";
-
     /**
      *
      *
@@ -1994,7 +1937,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2019,7 +1961,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2043,7 +1984,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2063,7 +2003,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2090,7 +2029,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long minHandlingTime_;
-
     /**
      *
      *
@@ -2114,7 +2052,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinHandlingTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2138,7 +2075,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public long getMinHandlingTime() {
       return minHandlingTime_;
     }
-
     /**
      *
      *
@@ -2166,7 +2102,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2194,7 +2129,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long maxHandlingTime_;
-
     /**
      *
      *
@@ -2220,7 +2154,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxHandlingTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2246,7 +2179,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public long getMaxHandlingTime() {
       return maxHandlingTime_;
     }
-
     /**
      *
      *
@@ -2276,7 +2208,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2237,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long minTransitTime_;
-
     /**
      *
      *
@@ -2330,7 +2260,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinTransitTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2354,7 +2283,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public long getMinTransitTime() {
       return minTransitTime_;
     }
-
     /**
      *
      *
@@ -2382,7 +2310,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2410,7 +2337,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long maxTransitTime_;
-
     /**
      *
      *
@@ -2436,7 +2362,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxTransitTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -2462,7 +2387,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public long getMaxTransitTime() {
       return maxTransitTime_;
     }
-
     /**
      *
      *
@@ -2492,7 +2416,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

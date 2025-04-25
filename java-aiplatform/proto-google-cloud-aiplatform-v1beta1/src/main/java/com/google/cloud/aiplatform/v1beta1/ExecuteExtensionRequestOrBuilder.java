@@ -40,7 +40,6 @@ public interface ExecuteExtensionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ExecuteExtensionRequestOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface ExecuteExtensionRequestOrBuilder
    * @return Whether the operationParams field is set.
    */
   boolean hasOperationParams();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface ExecuteExtensionRequestOrBuilder
    * @return The operationParams.
    */
   com.google.protobuf.Struct getOperationParams();
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface ExecuteExtensionRequestOrBuilder
    * @return Whether the runtimeAuthConfig field is set.
    */
   boolean hasRuntimeAuthConfig();
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public interface ExecuteExtensionRequestOrBuilder
    * @return The runtimeAuthConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AuthConfig getRuntimeAuthConfig();
-
   /**
    *
    *

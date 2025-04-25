@@ -34,7 +34,6 @@ public final class ImageClassificationModelDeploymentMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata)
     ImageClassificationModelDeploymentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageClassificationModelDeploymentMetadata.newBuilder() to construct.
   private ImageClassificationModelDeploymentMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class ImageClassificationModelDeploymentMetadata
 
   public static final int NODE_COUNT_FIELD_NUMBER = 1;
   private long nodeCount_ = 0L;
-
   /**
    *
    *
@@ -248,7 +246,6 @@ public final class ImageClassificationModelDeploymentMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -438,7 +435,6 @@ public final class ImageClassificationModelDeploymentMetadata
     private int bitField0_;
 
     private long nodeCount_;
-
     /**
      *
      *
@@ -458,7 +454,6 @@ public final class ImageClassificationModelDeploymentMetadata
     public long getNodeCount() {
       return nodeCount_;
     }
-
     /**
      *
      *
@@ -482,7 +477,6 @@ public final class ImageClassificationModelDeploymentMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *

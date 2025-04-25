@@ -36,7 +36,6 @@ public interface SdkVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SdkVersionOrBuilder
    * @return The versionDisplayName.
    */
   java.lang.String getVersionDisplayName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SdkVersionOrBuilder
    * @return The enum numeric value on the wire for sdkSupportStatus.
    */
   int getSdkSupportStatusValue();
-
   /**
    *
    *

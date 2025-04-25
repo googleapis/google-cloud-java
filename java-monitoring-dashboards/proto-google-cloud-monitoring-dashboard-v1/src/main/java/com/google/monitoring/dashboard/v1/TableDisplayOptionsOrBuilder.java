@@ -42,7 +42,6 @@ public interface TableDisplayOptionsOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getShownColumnsList();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface TableDisplayOptionsOrBuilder
    */
   @java.lang.Deprecated
   int getShownColumnsCount();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface TableDisplayOptionsOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getShownColumns(int index);
-
   /**
    *
    *

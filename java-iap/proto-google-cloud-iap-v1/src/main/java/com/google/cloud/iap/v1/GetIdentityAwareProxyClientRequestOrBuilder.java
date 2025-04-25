@@ -38,7 +38,6 @@ public interface GetIdentityAwareProxyClientRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

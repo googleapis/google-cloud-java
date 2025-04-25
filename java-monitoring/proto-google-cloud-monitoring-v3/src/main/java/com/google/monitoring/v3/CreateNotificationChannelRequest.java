@@ -33,7 +33,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateNotificationChannelRequest)
     CreateNotificationChannelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNotificationChannelRequest.newBuilder() to construct.
   private CreateNotificationChannelRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
 
   public static final int NOTIFICATION_CHANNEL_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.NotificationChannel notificationChannel_;
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
   public boolean hasNotificationChannel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         ? com.google.monitoring.v3.NotificationChannel.getDefaultInstance()
         : notificationChannel_;
   }
-
   /**
    *
    *
@@ -374,7 +368,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +585,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -626,7 +618,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +651,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +683,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +711,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +751,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
             com.google.monitoring.v3.NotificationChannel.Builder,
             com.google.monitoring.v3.NotificationChannelOrBuilder>
         notificationChannelBuilder_;
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     public boolean hasNotificationChannel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         return notificationChannelBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       onChanged();
       return getNotificationChannelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
             : notificationChannel_;
       }
     }
-
     /**
      *
      *

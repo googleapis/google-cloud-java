@@ -47,7 +47,6 @@ public interface PriceInfoOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -152,7 +151,6 @@ public interface PriceInfoOrBuilder
    * @return Whether the priceEffectiveTime field is set.
    */
   boolean hasPriceEffectiveTime();
-
   /**
    *
    *
@@ -178,7 +176,6 @@ public interface PriceInfoOrBuilder
    * @return The priceEffectiveTime.
    */
   com.google.protobuf.Timestamp getPriceEffectiveTime();
-
   /**
    *
    *
@@ -228,7 +225,6 @@ public interface PriceInfoOrBuilder
    * @return Whether the priceExpireTime field is set.
    */
   boolean hasPriceExpireTime();
-
   /**
    *
    *
@@ -254,7 +250,6 @@ public interface PriceInfoOrBuilder
    * @return The priceExpireTime.
    */
   com.google.protobuf.Timestamp getPriceExpireTime();
-
   /**
    *
    *
@@ -303,7 +298,6 @@ public interface PriceInfoOrBuilder
    * @return Whether the priceRange field is set.
    */
   boolean hasPriceRange();
-
   /**
    *
    *
@@ -328,7 +322,6 @@ public interface PriceInfoOrBuilder
    * @return The priceRange.
    */
   com.google.cloud.retail.v2beta.PriceInfo.PriceRange getPriceRange();
-
   /**
    *
    *

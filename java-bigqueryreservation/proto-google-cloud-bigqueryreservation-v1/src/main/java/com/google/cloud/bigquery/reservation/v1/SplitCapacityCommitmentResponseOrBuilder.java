@@ -36,7 +36,6 @@ public interface SplitCapacityCommitmentResponseOrBuilder
    * @return Whether the first field is set.
    */
   boolean hasFirst();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SplitCapacityCommitmentResponseOrBuilder
    * @return The first.
    */
   com.google.cloud.bigquery.reservation.v1.CapacityCommitment getFirst();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SplitCapacityCommitmentResponseOrBuilder
    * @return Whether the second field is set.
    */
   boolean hasSecond();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SplitCapacityCommitmentResponseOrBuilder
    * @return The second.
    */
   com.google.cloud.bigquery.reservation.v1.CapacityCommitment getSecond();
-
   /**
    *
    *

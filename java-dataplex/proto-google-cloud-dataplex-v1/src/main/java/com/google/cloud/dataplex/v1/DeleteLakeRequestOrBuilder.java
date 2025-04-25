@@ -39,7 +39,6 @@ public interface DeleteLakeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

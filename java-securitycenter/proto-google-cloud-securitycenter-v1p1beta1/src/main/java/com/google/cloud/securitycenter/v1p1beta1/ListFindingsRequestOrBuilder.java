@@ -44,7 +44,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -127,7 +126,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -219,7 +217,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -265,7 +262,6 @@ public interface ListFindingsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
-
   /**
    *
    *
@@ -281,7 +277,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public interface ListFindingsRequestOrBuilder
    * @return Whether the compareDuration field is set.
    */
   boolean hasCompareDuration();
-
   /**
    *
    *
@@ -379,7 +373,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The compareDuration.
    */
   com.google.protobuf.Duration getCompareDuration();
-
   /**
    *
    *
@@ -433,7 +426,6 @@ public interface ListFindingsRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
-
   /**
    *
    *
@@ -447,7 +439,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
-
   /**
    *
    *
@@ -474,7 +465,6 @@ public interface ListFindingsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

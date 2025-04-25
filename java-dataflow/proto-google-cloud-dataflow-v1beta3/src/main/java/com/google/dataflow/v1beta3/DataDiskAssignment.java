@@ -33,7 +33,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.DataDiskAssignment)
     DataDiskAssignmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataDiskAssignment.newBuilder() to construct.
   private DataDiskAssignment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmInstance_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dataDisks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getDataDisksList() {
     return dataDisks_;
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
   public int getDataDisksCount() {
     return dataDisks_.size();
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
   public java.lang.String getDataDisks(int index) {
     return dataDisks_.get(index);
   }
-
   /**
    *
    *
@@ -375,7 +368,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +573,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object vmInstance_ = "";
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -652,7 +641,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       dataDisks_.makeImmutable();
       return dataDisks_;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     public int getDataDisksCount() {
       return dataDisks_.size();
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     public java.lang.String getDataDisks(int index) {
       return dataDisks_.get(index);
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getDataDisksBytes(int index) {
       return dataDisks_.getByteString(index);
     }
-
     /**
      *
      *
@@ -807,7 +789,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +814,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +836,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +857,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

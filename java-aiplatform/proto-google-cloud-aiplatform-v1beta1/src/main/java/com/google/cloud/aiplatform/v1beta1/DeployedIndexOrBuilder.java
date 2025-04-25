@@ -39,7 +39,6 @@ public interface DeployedIndexOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface DeployedIndexOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface DeployedIndexOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface DeployedIndexOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface DeployedIndexOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface DeployedIndexOrBuilder
    * @return Whether the privateEndpoints field is set.
    */
   boolean hasPrivateEndpoints();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface DeployedIndexOrBuilder
    * @return The privateEndpoints.
    */
   com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints getPrivateEndpoints();
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public interface DeployedIndexOrBuilder
    * @return Whether the indexSyncTime field is set.
    */
   boolean hasIndexSyncTime();
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public interface DeployedIndexOrBuilder
    * @return The indexSyncTime.
    */
   com.google.protobuf.Timestamp getIndexSyncTime();
-
   /**
    *
    *
@@ -313,7 +304,6 @@ public interface DeployedIndexOrBuilder
    * @return Whether the automaticResources field is set.
    */
   boolean hasAutomaticResources();
-
   /**
    *
    *
@@ -334,7 +324,6 @@ public interface DeployedIndexOrBuilder
    * @return The automaticResources.
    */
   com.google.cloud.aiplatform.v1beta1.AutomaticResources getAutomaticResources();
-
   /**
    *
    *
@@ -385,7 +374,6 @@ public interface DeployedIndexOrBuilder
    * @return Whether the dedicatedResources field is set.
    */
   boolean hasDedicatedResources();
-
   /**
    *
    *
@@ -417,7 +405,6 @@ public interface DeployedIndexOrBuilder
    * @return The dedicatedResources.
    */
   com.google.cloud.aiplatform.v1beta1.DedicatedResources getDedicatedResources();
-
   /**
    *
    *
@@ -483,7 +470,6 @@ public interface DeployedIndexOrBuilder
    * @return Whether the deployedIndexAuthConfig field is set.
    */
   boolean hasDeployedIndexAuthConfig();
-
   /**
    *
    *
@@ -498,7 +484,6 @@ public interface DeployedIndexOrBuilder
    * @return The deployedIndexAuthConfig.
    */
   com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig getDeployedIndexAuthConfig();
-
   /**
    *
    *
@@ -537,7 +522,6 @@ public interface DeployedIndexOrBuilder
    * @return A list containing the reservedIpRanges.
    */
   java.util.List<java.lang.String> getReservedIpRangesList();
-
   /**
    *
    *
@@ -562,7 +546,6 @@ public interface DeployedIndexOrBuilder
    * @return The count of reservedIpRanges.
    */
   int getReservedIpRangesCount();
-
   /**
    *
    *
@@ -588,7 +571,6 @@ public interface DeployedIndexOrBuilder
    * @return The reservedIpRanges at the given index.
    */
   java.lang.String getReservedIpRanges(int index);
-
   /**
    *
    *
@@ -638,7 +620,6 @@ public interface DeployedIndexOrBuilder
    * @return The deploymentGroup.
    */
   java.lang.String getDeploymentGroup();
-
   /**
    *
    *
@@ -678,7 +659,6 @@ public interface DeployedIndexOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>
       getPscAutomationConfigsList();
-
   /**
    *
    *
@@ -693,7 +673,6 @@ public interface DeployedIndexOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig getPscAutomationConfigs(int index);
-
   /**
    *
    *
@@ -708,7 +687,6 @@ public interface DeployedIndexOrBuilder
    * </code>
    */
   int getPscAutomationConfigsCount();
-
   /**
    *
    *
@@ -724,7 +702,6 @@ public interface DeployedIndexOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>
       getPscAutomationConfigsOrBuilderList();
-
   /**
    *
    *

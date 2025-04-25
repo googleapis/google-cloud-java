@@ -39,7 +39,6 @@ public interface SegmentSettingsOrBuilder
    * @return Whether the segmentDuration field is set.
    */
   boolean hasSegmentDuration();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface SegmentSettingsOrBuilder
    * @return The segmentDuration.
    */
   com.google.protobuf.Duration getSegmentDuration();
-
   /**
    *
    *

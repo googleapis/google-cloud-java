@@ -40,7 +40,6 @@ public interface CreateAspectTypeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateAspectTypeRequestOrBuilder
    * @return The aspectTypeId.
    */
   java.lang.String getAspectTypeId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateAspectTypeRequestOrBuilder
    * @return Whether the aspectType field is set.
    */
   boolean hasAspectType();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateAspectTypeRequestOrBuilder
    * @return The aspectType.
    */
   com.google.cloud.dataplex.v1.AspectType getAspectType();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.BackupConfig)
     BackupConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackupConfig.newBuilder() to construct.
   private BackupConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList backupPolicies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getBackupPoliciesList() {
     return backupPolicies_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
   public int getBackupPoliciesCount() {
     return backupPolicies_.size();
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBackupPolicies(int index) {
     return backupPolicies_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupVault_ = "";
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULED_BACKUP_ENABLED_FIELD_NUMBER = 3;
   private boolean scheduledBackupEnabled_ = false;
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduledBackupEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BACKUP_CHAIN_BYTES_FIELD_NUMBER = 4;
   private long backupChainBytes_ = 0L;
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackupChainBytes() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -487,7 +476,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +719,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       backupPolicies_.makeImmutable();
       return backupPolicies_;
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public int getBackupPoliciesCount() {
       return backupPolicies_.size();
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBackupPolicies(int index) {
       return backupPolicies_.get(index);
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBackupPoliciesBytes(int index) {
       return backupPolicies_.getByteString(index);
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +912,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object backupVault_ = "";
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1010,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1038,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean scheduledBackupEnabled_;
-
     /**
      *
      *
@@ -1082,7 +1055,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduledBackupEnabled() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getScheduledBackupEnabled() {
       return scheduledBackupEnabled_;
     }
-
     /**
      *
      *
@@ -1122,7 +1093,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1114,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long backupChainBytes_;
-
     /**
      *
      *
@@ -1162,7 +1131,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackupChainBytes() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1180,7 +1148,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public long getBackupChainBytes() {
       return backupChainBytes_;
     }
-
     /**
      *
      *
@@ -1202,7 +1169,6 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

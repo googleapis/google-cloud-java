@@ -36,7 +36,6 @@ public interface ImportRagFilesOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImportRagFilesOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ImportRagFilesOperationMetadataOrBuilder
    * @return Whether the importRagFilesConfig field is set.
    */
   boolean hasImportRagFilesConfig();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface ImportRagFilesOperationMetadataOrBuilder
    * @return The importRagFilesConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig getImportRagFilesConfig();
-
   /**
    *
    *

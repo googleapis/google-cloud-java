@@ -36,7 +36,6 @@ public interface ExportDataOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExportDataOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ExportDataOperationMetadataOrBuilder
    * @return The gcsOutputDirectory.
    */
   java.lang.String getGcsOutputDirectory();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.ListFoldersResponse)
     ListFoldersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFoldersResponse.newBuilder() to construct.
   private ListFoldersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.Folder> folders_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.resourcemanager.v3.Folder> getFoldersList() {
     return folders_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       getFoldersOrBuilderList() {
     return folders_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
   public int getFoldersCount() {
     return folders_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.resourcemanager.v3.Folder getFolders(int index) {
     return folders_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return foldersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return foldersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return foldersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.resourcemanager.v3.Folder.Builder getFoldersBuilder(int index) {
       return getFoldersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return foldersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(folders_);
       }
     }
-
     /**
      *
      *
@@ -953,7 +929,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       return getFoldersFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -968,7 +943,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       return getFoldersFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1002,7 +976,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1026,7 +999,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1022,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class ListFoldersResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface CreatePipelineJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreatePipelineJobRequestOrBuilder
    * @return Whether the pipelineJob field is set.
    */
   boolean hasPipelineJob();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreatePipelineJobRequestOrBuilder
    * @return The pipelineJob.
    */
   com.google.cloud.aiplatform.v1beta1.PipelineJob getPipelineJob();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface CreatePipelineJobRequestOrBuilder
    * @return The pipelineJobId.
    */
   java.lang.String getPipelineJobId();
-
   /**
    *
    *

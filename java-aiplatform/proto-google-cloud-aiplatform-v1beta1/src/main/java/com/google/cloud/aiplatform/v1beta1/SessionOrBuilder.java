@@ -40,7 +40,6 @@ public interface SessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface SessionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SessionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SessionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface SessionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface SessionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface SessionOrBuilder
    * @return Whether the sessionState field is set.
    */
   boolean hasSessionState();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface SessionOrBuilder
    * @return The sessionState.
    */
   com.google.protobuf.Struct getSessionState();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface SessionOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
-
   /**
    *
    *

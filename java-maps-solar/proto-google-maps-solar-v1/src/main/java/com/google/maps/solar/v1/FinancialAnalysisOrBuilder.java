@@ -36,7 +36,6 @@ public interface FinancialAnalysisOrBuilder
    * @return Whether the monthlyBill field is set.
    */
   boolean hasMonthlyBill();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FinancialAnalysisOrBuilder
    * @return The monthlyBill.
    */
   com.google.type.Money getMonthlyBill();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface FinancialAnalysisOrBuilder
    * @return Whether the panelConfigIndex field is set.
    */
   boolean hasPanelConfigIndex();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface FinancialAnalysisOrBuilder
    * @return Whether the financialDetails field is set.
    */
   boolean hasFinancialDetails();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface FinancialAnalysisOrBuilder
    * @return The financialDetails.
    */
   com.google.maps.solar.v1.FinancialDetails getFinancialDetails();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface FinancialAnalysisOrBuilder
    * @return Whether the leasingSavings field is set.
    */
   boolean hasLeasingSavings();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface FinancialAnalysisOrBuilder
    * @return The leasingSavings.
    */
   com.google.maps.solar.v1.LeasingSavings getLeasingSavings();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface FinancialAnalysisOrBuilder
    * @return Whether the cashPurchaseSavings field is set.
    */
   boolean hasCashPurchaseSavings();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface FinancialAnalysisOrBuilder
    * @return The cashPurchaseSavings.
    */
   com.google.maps.solar.v1.CashPurchaseSavings getCashPurchaseSavings();
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public interface FinancialAnalysisOrBuilder
    * @return Whether the financedPurchaseSavings field is set.
    */
   boolean hasFinancedPurchaseSavings();
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public interface FinancialAnalysisOrBuilder
    * @return The financedPurchaseSavings.
    */
   com.google.maps.solar.v1.FinancedPurchaseSavings getFinancedPurchaseSavings();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CancelDeviceSessionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

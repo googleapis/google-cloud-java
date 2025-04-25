@@ -37,7 +37,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding>
       getManagementDnsZoneBindingsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding getManagementDnsZoneBindings(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    * </code>
    */
   int getManagementDnsZoneBindingsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.ManagementDnsZoneBindingOrBuilder>
       getManagementDnsZoneBindingsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface ListManagementDnsZoneBindingsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

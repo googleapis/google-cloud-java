@@ -33,7 +33,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.HostsEntry)
     HostsEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HostsEntry.newBuilder() to construct.
   private HostsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ip_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList hostNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getHostNamesList() {
     return hostNames_;
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
   public int getHostNamesCount() {
     return hostNames_.size();
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getHostNames(int index) {
     return hostNames_.get(index);
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +559,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object ip_ = "";
-
     /**
      *
      *
@@ -590,7 +581,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +641,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +673,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -702,7 +688,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       hostNames_.makeImmutable();
       return hostNames_;
     }
-
     /**
      *
      *
@@ -717,7 +702,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
     public int getHostNamesCount() {
       return hostNames_.size();
     }
-
     /**
      *
      *
@@ -733,7 +717,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getHostNames(int index) {
       return hostNames_.get(index);
     }
-
     /**
      *
      *
@@ -749,7 +732,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getHostNamesBytes(int index) {
       return hostNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -773,7 +755,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +777,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +796,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +814,6 @@ public final class HostsEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

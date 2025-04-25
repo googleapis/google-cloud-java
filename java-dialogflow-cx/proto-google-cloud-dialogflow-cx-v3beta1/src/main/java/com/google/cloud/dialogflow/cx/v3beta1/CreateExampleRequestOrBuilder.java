@@ -40,7 +40,6 @@ public interface CreateExampleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateExampleRequestOrBuilder
    * @return Whether the example field is set.
    */
   boolean hasExample();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateExampleRequestOrBuilder
    * @return The example.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Example getExample();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListTracesResponseOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
   java.util.List<com.google.devtools.cloudtrace.v1.Trace> getTracesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTracesResponseOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
   com.google.devtools.cloudtrace.v1.Trace getTraces(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTracesResponseOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
   int getTracesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTracesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceOrBuilder>
       getTracesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListTracesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

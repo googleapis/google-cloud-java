@@ -39,7 +39,6 @@ public interface BatchCreateInstancesMetadataOrBuilder
    * @return A list containing the instanceTargets.
    */
   java.util.List<java.lang.String> getInstanceTargetsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface BatchCreateInstancesMetadataOrBuilder
    * @return The count of instanceTargets.
    */
   int getInstanceTargetsCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface BatchCreateInstancesMetadataOrBuilder
    * @return The instanceTargets at the given index.
    */
   java.lang.String getInstanceTargets(int index);
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface BatchCreateInstancesMetadataOrBuilder
    * </code>
    */
   int getInstanceStatusesCount();
-
   /**
    *
    *
@@ -125,12 +121,10 @@ public interface BatchCreateInstancesMetadataOrBuilder
    * </code>
    */
   boolean containsInstanceStatuses(java.lang.String key);
-
   /** Use {@link #getInstanceStatusesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.alloydb.v1alpha.BatchCreateInstanceStatus>
       getInstanceStatuses();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface BatchCreateInstancesMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.alloydb.v1alpha.BatchCreateInstanceStatus>
       getInstanceStatusesMap();
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public interface BatchCreateInstancesMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.alloydb.v1alpha.BatchCreateInstanceStatus defaultValue);
-
   /**
    *
    *

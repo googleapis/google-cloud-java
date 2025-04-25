@@ -179,8 +179,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UndeletePrivateCloud, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UndeletePrivateCloud, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -347,8 +346,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListExternalAddresses, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListExternalAddresses, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListExternalAddressesResponse.class.getName(),
                   Exception.class.getName())));
@@ -370,8 +368,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchNetworkPolicyExternalAddresses,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method FetchNetworkPolicyExternalAddresses, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchNetworkPolicyExternalAddressesResponse.class.getName(),
                   Exception.class.getName())));
@@ -413,8 +410,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateExternalAddress, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateExternalAddress, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -435,8 +431,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateExternalAddress, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateExternalAddress, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -457,8 +452,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteExternalAddress, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteExternalAddress, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -542,8 +536,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListExternalAccessRules, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListExternalAccessRules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListExternalAccessRulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -564,8 +557,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetExternalAccessRule, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetExternalAccessRule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExternalAccessRule.class.getName(),
                   Exception.class.getName())));
@@ -586,8 +578,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateExternalAccessRule, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateExternalAccessRule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -608,8 +599,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateExternalAccessRule, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateExternalAccessRule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -630,8 +620,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteExternalAccessRule, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteExternalAccessRule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -820,8 +809,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ShowVcenterCredentials, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ShowVcenterCredentials, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Credentials.class.getName(),
                   Exception.class.getName())));
@@ -863,8 +851,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResetVcenterCredentials, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ResetVcenterCredentials, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -970,8 +957,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNetworkPeering, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateNetworkPeering, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -992,8 +978,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNetworkPeering, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteNetworkPeering, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1014,8 +999,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateNetworkPeering, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateNetworkPeering, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1058,8 +1042,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateHcxActivationKey, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateHcxActivationKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1081,8 +1064,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListHcxActivationKeys, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListHcxActivationKeys, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListHcxActivationKeysResponse.class.getName(),
                   Exception.class.getName())));
@@ -1231,8 +1213,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListManagementDnsZoneBindings, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListManagementDnsZoneBindings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListManagementDnsZoneBindingsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1254,8 +1235,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetManagementDnsZoneBinding, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method GetManagementDnsZoneBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ManagementDnsZoneBinding.class.getName(),
                   Exception.class.getName())));
@@ -1276,8 +1256,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateManagementDnsZoneBinding,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method CreateManagementDnsZoneBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1298,8 +1277,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateManagementDnsZoneBinding,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method UpdateManagementDnsZoneBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1320,8 +1298,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteManagementDnsZoneBinding,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method DeleteManagementDnsZoneBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1342,8 +1319,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RepairManagementDnsZoneBinding,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method RepairManagementDnsZoneBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1364,8 +1340,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateVmwareEngineNetwork, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateVmwareEngineNetwork, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1386,8 +1361,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateVmwareEngineNetwork, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateVmwareEngineNetwork, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1408,8 +1382,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteVmwareEngineNetwork, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteVmwareEngineNetwork, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1430,8 +1403,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetVmwareEngineNetwork, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetVmwareEngineNetwork, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VmwareEngineNetwork.class.getName(),
                   Exception.class.getName())));
@@ -1453,8 +1425,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListVmwareEngineNetworks, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListVmwareEngineNetworks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListVmwareEngineNetworksResponse.class.getName(),
                   Exception.class.getName())));
@@ -1475,8 +1446,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1497,8 +1467,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PrivateConnection.class.getName(),
                   Exception.class.getName())));
@@ -1520,8 +1489,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPrivateConnectionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1542,8 +1510,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdatePrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdatePrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1564,8 +1531,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1587,8 +1553,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPrivateConnectionPeeringRoutes,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ListPrivateConnectionPeeringRoutes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPrivateConnectionPeeringRoutesResponse.class.getName(),
                   Exception.class.getName())));
@@ -1609,8 +1574,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GrantDnsBindPermission, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GrantDnsBindPermission, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1631,8 +1595,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDnsBindPermission, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetDnsBindPermission, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DnsBindPermission.class.getName(),
                   Exception.class.getName())));
@@ -1653,8 +1616,7 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RevokeDnsBindPermission, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method RevokeDnsBindPermission, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

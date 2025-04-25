@@ -33,7 +33,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.BatchTransferResourcesResponse)
     BatchTransferResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchTransferResourcesResponse.newBuilder() to construct.
   private BatchTransferResourcesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,7 +81,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
      * @return The source.
      */
     java.lang.String getSource();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
      * @return The target.
      */
     java.lang.String getTarget();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
      * @return Whether the error field is set.
      */
     boolean hasError();
-
     /**
      *
      *
@@ -149,7 +145,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
      * @return The error.
      */
     com.google.rpc.Status getError();
-
     /**
      *
      *
@@ -161,7 +156,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
      */
     com.google.rpc.StatusOrBuilder getErrorOrBuilder();
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.BatchTransferResourcesResponse.TransferResourceResponse)
       TransferResourceResponseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TransferResourceResponse.newBuilder() to construct.
     private TransferResourceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -216,7 +209,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -240,7 +232,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return s;
       }
     }
-
     /**
      *
      *
@@ -269,7 +260,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object target_ = "";
-
     /**
      *
      *
@@ -294,7 +284,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return s;
       }
     }
-
     /**
      *
      *
@@ -322,7 +311,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
 
     public static final int ERROR_FIELD_NUMBER = 3;
     private com.google.rpc.Status error_;
-
     /**
      *
      *
@@ -338,7 +326,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -354,7 +341,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
     public com.google.rpc.Status getError() {
       return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
     }
-
     /**
      *
      *
@@ -575,7 +561,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       private int bitField0_;
 
       private java.lang.Object source_ = "";
-
       /**
        *
        *
@@ -852,7 +836,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -875,7 +858,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -897,7 +879,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -915,7 +896,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -940,7 +920,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
 
       private java.lang.Object target_ = "";
-
       /**
        *
        *
@@ -964,7 +943,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -988,7 +966,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1011,7 +988,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1030,7 +1006,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1059,7 +1034,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           errorBuilder_;
-
       /**
        *
        *
@@ -1074,7 +1048,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       public boolean hasError() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1093,7 +1066,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
           return errorBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1116,7 +1088,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1136,7 +1107,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1164,7 +1134,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         }
         return this;
       }
-
       /**
        *
        *
@@ -1184,7 +1153,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1199,7 +1167,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         onChanged();
         return getErrorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1216,7 +1183,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
           return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
         }
       }
-
       /**
        *
        *
@@ -1317,7 +1283,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
   private java.util.List<
           com.google.cloud.translate.v3.BatchTransferResourcesResponse.TransferResourceResponse>
       responses_;
-
   /**
    *
    *
@@ -1335,7 +1300,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       getResponsesList() {
     return responses_;
   }
-
   /**
    *
    *
@@ -1355,7 +1319,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       getResponsesOrBuilderList() {
     return responses_;
   }
-
   /**
    *
    *
@@ -1371,7 +1334,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
   public int getResponsesCount() {
     return responses_.size();
   }
-
   /**
    *
    *
@@ -1388,7 +1350,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       getResponses(int index) {
     return responses_.get(index);
   }
-
   /**
    *
    *
@@ -1569,7 +1530,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1848,7 +1808,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return responsesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1867,7 +1826,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return responsesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1887,7 +1845,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return responsesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1915,7 +1872,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1941,7 +1897,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1923,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1996,7 +1950,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2021,7 +1974,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1999,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2074,7 +2025,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2046,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2118,7 +2067,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2135,7 +2083,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         getResponsesBuilder(int index) {
       return getResponsesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2156,7 +2103,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2179,7 +2125,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(responses_);
       }
     }
-
     /**
      *
      *
@@ -2199,7 +2144,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
               com.google.cloud.translate.v3.BatchTransferResourcesResponse.TransferResourceResponse
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2220,7 +2164,6 @@ public final class BatchTransferResourcesResponse extends com.google.protobuf.Ge
               com.google.cloud.translate.v3.BatchTransferResourcesResponse.TransferResourceResponse
                   .getDefaultInstance());
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface DeleteDiscoveryConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

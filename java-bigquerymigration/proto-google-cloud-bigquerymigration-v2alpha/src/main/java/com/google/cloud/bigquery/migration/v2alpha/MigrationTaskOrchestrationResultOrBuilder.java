@@ -38,7 +38,6 @@ public interface MigrationTaskOrchestrationResultOrBuilder
    * @return Whether the assessmentDetails field is set.
    */
   boolean hasAssessmentDetails();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface MigrationTaskOrchestrationResultOrBuilder
    */
   com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails
       getAssessmentDetails();
-
   /**
    *
    *

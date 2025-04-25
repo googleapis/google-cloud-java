@@ -33,7 +33,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.OutdatedLibrary)
     OutdatedLibraryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OutdatedLibrary.newBuilder() to construct.
   private OutdatedLibrary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object libraryName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList learnMoreUrls_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getLearnMoreUrlsList() {
     return learnMoreUrls_;
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   public int getLearnMoreUrlsCount() {
     return learnMoreUrls_.size();
   }
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getLearnMoreUrls(int index) {
     return learnMoreUrls_.get(index);
   }
-
   /**
    *
    *
@@ -425,7 +416,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +637,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object libraryName_ = "";
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +825,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       learnMoreUrls_.makeImmutable();
       return learnMoreUrls_;
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     public int getLearnMoreUrlsCount() {
       return learnMoreUrls_.size();
     }
-
     /**
      *
      *
@@ -924,7 +901,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getLearnMoreUrls(int index) {
       return learnMoreUrls_.get(index);
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getLearnMoreUrlsBytes(int index) {
       return learnMoreUrls_.getByteString(index);
     }
-
     /**
      *
      *
@@ -964,7 +939,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +961,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.LatLngBox)
     LatLngBoxOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LatLngBox.newBuilder() to construct.
   private LatLngBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SW_FIELD_NUMBER = 1;
   private com.google.type.LatLng sw_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSw() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getSw() {
     return sw_ == null ? com.google.type.LatLng.getDefaultInstance() : sw_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NE_FIELD_NUMBER = 2;
   private com.google.type.LatLng ne_;
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNe() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getNe() {
     return ne_ == null ? com.google.type.LatLng.getDefaultInstance() : ne_;
   }
-
   /**
    *
    *
@@ -337,7 +330,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +548,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         swBuilder_;
-
     /**
      *
      *
@@ -571,7 +562,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSw() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -590,7 +580,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
         return swBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -613,7 +602,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -633,7 +621,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +648,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +667,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +681,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSwFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -713,7 +697,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
         return sw_ == null ? com.google.type.LatLng.getDefaultInstance() : sw_;
       }
     }
-
     /**
      *
      *
@@ -741,7 +724,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         neBuilder_;
-
     /**
      *
      *
@@ -756,7 +738,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNe() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -775,7 +756,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
         return neBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -798,7 +778,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +797,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +824,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +843,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +857,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -898,7 +873,6 @@ public final class LatLngBox extends com.google.protobuf.GeneratedMessageV3
         return ne_ == null ? com.google.type.LatLng.getDefaultInstance() : ne_;
       }
     }
-
     /**
      *
      *

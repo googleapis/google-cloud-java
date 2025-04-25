@@ -33,7 +33,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.Permission)
     PermissionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Permission.newBuilder() to construct.
   private Permission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>ALPHA = 0;</code>
      */
     public static final int ALPHA_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>BETA = 1;</code>
      */
     public static final int BETA_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>GA = 2;</code>
      */
     public static final int GA_VALUE = 2;
-
     /**
      *
      *
@@ -306,7 +302,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>SUPPORTED = 0;</code>
      */
     public static final int SUPPORTED_VALUE = 0;
-
     /**
      *
      *
@@ -317,7 +312,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>TESTING = 1;</code>
      */
     public static final int TESTING_VALUE = 1;
-
     /**
      *
      *
@@ -419,7 +413,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -443,7 +436,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -472,7 +464,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -496,7 +487,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -525,7 +515,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -550,7 +539,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -578,7 +566,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ONLY_IN_PREDEFINED_ROLES_FIELD_NUMBER = 4;
   private boolean onlyInPredefinedRoles_ = false;
-
   /**
    * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
    *
@@ -594,7 +581,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STAGE_FIELD_NUMBER = 5;
   private int stage_ = 0;
-
   /**
    *
    *
@@ -610,7 +596,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
   public int getStageValue() {
     return stage_;
   }
-
   /**
    *
    *
@@ -633,7 +618,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_ROLES_SUPPORT_LEVEL_FIELD_NUMBER = 6;
   private int customRolesSupportLevel_ = 0;
-
   /**
    *
    *
@@ -650,7 +634,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
   public int getCustomRolesSupportLevelValue() {
     return customRolesSupportLevel_;
   }
-
   /**
    *
    *
@@ -675,7 +658,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   public static final int API_DISABLED_FIELD_NUMBER = 7;
   private boolean apiDisabled_ = false;
-
   /**
    *
    *
@@ -696,7 +678,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryPermission_ = "";
-
   /**
    *
    *
@@ -721,7 +702,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -969,7 +949,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1247,7 +1226,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1270,7 +1248,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1293,7 +1270,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1291,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1308,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1358,7 +1332,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -1381,7 +1354,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1404,7 +1376,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1426,7 +1397,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1414,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1438,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1493,7 +1461,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1484,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1540,7 +1506,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1524,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1585,7 +1549,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean onlyInPredefinedRoles_;
-
     /**
      * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      *
@@ -1598,7 +1561,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     public boolean getOnlyInPredefinedRoles() {
       return onlyInPredefinedRoles_;
     }
-
     /**
      * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      *
@@ -1615,7 +1577,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      *
@@ -1632,7 +1593,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int stage_ = 0;
-
     /**
      *
      *
@@ -1648,7 +1608,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     public int getStageValue() {
       return stage_;
     }
-
     /**
      *
      *
@@ -1667,7 +1626,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1645,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
           ? com.google.iam.admin.v1.Permission.PermissionLaunchStage.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1709,7 +1666,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1685,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int customRolesSupportLevel_ = 0;
-
     /**
      *
      *
@@ -1746,7 +1701,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     public int getCustomRolesSupportLevelValue() {
       return customRolesSupportLevel_;
     }
-
     /**
      *
      *
@@ -1766,7 +1720,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1741,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
           ? com.google.iam.admin.v1.Permission.CustomRolesSupportLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1812,7 +1764,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1784,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean apiDisabled_;
-
     /**
      *
      *
@@ -1849,7 +1799,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     public boolean getApiDisabled() {
       return apiDisabled_;
     }
-
     /**
      *
      *
@@ -1869,7 +1818,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1889,7 +1837,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object primaryPermission_ = "";
-
     /**
      *
      *
@@ -1913,7 +1860,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1937,7 +1883,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1960,7 +1905,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1979,7 +1923,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

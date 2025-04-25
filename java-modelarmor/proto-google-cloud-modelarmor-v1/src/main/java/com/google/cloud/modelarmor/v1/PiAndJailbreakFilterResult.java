@@ -33,7 +33,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.PiAndJailbreakFilterResult)
     PiAndJailbreakFilterResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PiAndJailbreakFilterResult.newBuilder() to construct.
   private PiAndJailbreakFilterResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 1;
   private int executionState_ = 0;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
   public int getExecutionStateValue() {
     return executionState_;
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.MessageItem> messageItems_;
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       getMessageItemsOrBuilderList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
   public int getMessageItemsCount() {
     return messageItems_.size();
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
   public com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index) {
     return messageItems_.get(index);
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
 
   public static final int MATCH_STATE_FIELD_NUMBER = 3;
   private int matchState_ = 0;
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
   public int getMatchStateValue() {
     return matchState_;
   }
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
 
   public static final int CONFIDENCE_LEVEL_FIELD_NUMBER = 5;
   private int confidenceLevel_ = 0;
-
   /**
    *
    *
@@ -262,7 +251,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
   public int getConfidenceLevelValue() {
     return confidenceLevel_;
   }
-
   /**
    *
    *
@@ -486,7 +474,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +743,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int executionState_ = 0;
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     public int getExecutionStateValue() {
       return executionState_;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
           ? com.google.cloud.modelarmor.v1.FilterExecutionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +885,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
         return messageItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
         return messageItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
         return messageItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +971,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1044,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1067,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1090,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1112,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1134,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     public com.google.cloud.modelarmor.v1.MessageItem.Builder getMessageItemsBuilder(int index) {
       return getMessageItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1199,7 +1168,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
         return messageItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1188,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(messageItems_);
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1204,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       return getMessageItemsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1254,7 +1220,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       return getMessageItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1290,7 +1255,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     }
 
     private int matchState_ = 0;
-
     /**
      *
      *
@@ -1308,7 +1272,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     public int getMatchStateValue() {
       return matchState_;
     }
-
     /**
      *
      *
@@ -1329,7 +1292,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1311,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(matchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1373,7 +1334,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1355,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     }
 
     private int confidenceLevel_ = 0;
-
     /**
      *
      *
@@ -1411,7 +1370,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
     public int getConfidenceLevelValue() {
       return confidenceLevel_;
     }
-
     /**
      *
      *
@@ -1430,7 +1388,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1407,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
           ? com.google.cloud.modelarmor.v1.DetectionConfidenceLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1473,7 +1429,6 @@ public final class PiAndJailbreakFilterResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

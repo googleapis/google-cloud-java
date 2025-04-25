@@ -33,7 +33,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig)
     StreamingStorageConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingStorageConfig.newBuilder() to construct.
   private StreamingStorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
 
   public static final int ENABLE_STORAGE_ANNOTATION_RESULT_FIELD_NUMBER = 1;
   private boolean enableStorageAnnotationResult_ = false;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationResultStorageDirectory_ = "";
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -331,7 +327,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -536,7 +531,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enableStorageAnnotationResult_;
-
     /**
      *
      *
@@ -552,7 +546,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     public boolean getEnableStorageAnnotationResult() {
       return enableStorageAnnotationResult_;
     }
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object annotationResultStorageDirectory_ = "";
-
     /**
      *
      *
@@ -624,7 +615,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class StreamingStorageConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the direction field is set.
    */
   boolean hasDirection();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The direction.
    */
   java.lang.String getDirection();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the enableLogging field is set.
    */
   boolean hasEnableLogging();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the match field is set.
    */
   boolean hasMatch();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The match.
    */
   com.google.cloud.compute.v1.FirewallPolicyRuleMatcher getMatch();
-
   /**
    *
    *
@@ -284,7 +272,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the ruleName field is set.
    */
   boolean hasRuleName();
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The ruleName.
    */
   java.lang.String getRuleName();
-
   /**
    *
    *
@@ -349,7 +334,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the ruleTupleCount field is set.
    */
   boolean hasRuleTupleCount();
-
   /**
    *
    *
@@ -375,7 +359,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the securityProfileGroup field is set.
    */
   boolean hasSecurityProfileGroup();
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The securityProfileGroup.
    */
   java.lang.String getSecurityProfileGroup();
-
   /**
    *
    *
@@ -414,7 +396,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return A list containing the targetResources.
    */
   java.util.List<java.lang.String> getTargetResourcesList();
-
   /**
    *
    *
@@ -427,7 +408,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The count of targetResources.
    */
   int getTargetResourcesCount();
-
   /**
    *
    *
@@ -441,7 +421,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The targetResources at the given index.
    */
   java.lang.String getTargetResources(int index);
-
   /**
    *
    *
@@ -468,7 +447,6 @@ public interface FirewallPolicyRuleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> getTargetSecureTagsList();
-
   /**
    *
    *
@@ -481,7 +459,6 @@ public interface FirewallPolicyRuleOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getTargetSecureTags(int index);
-
   /**
    *
    *
@@ -494,7 +471,6 @@ public interface FirewallPolicyRuleOrBuilder
    * </code>
    */
   int getTargetSecureTagsCount();
-
   /**
    *
    *
@@ -508,7 +484,6 @@ public interface FirewallPolicyRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
       getTargetSecureTagsOrBuilderList();
-
   /**
    *
    *
@@ -535,7 +510,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return A list containing the targetServiceAccounts.
    */
   java.util.List<java.lang.String> getTargetServiceAccountsList();
-
   /**
    *
    *
@@ -548,7 +522,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The count of targetServiceAccounts.
    */
   int getTargetServiceAccountsCount();
-
   /**
    *
    *
@@ -562,7 +535,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The targetServiceAccounts at the given index.
    */
   java.lang.String getTargetServiceAccounts(int index);
-
   /**
    *
    *
@@ -589,7 +561,6 @@ public interface FirewallPolicyRuleOrBuilder
    * @return Whether the tlsInspect field is set.
    */
   boolean hasTlsInspect();
-
   /**
    *
    *

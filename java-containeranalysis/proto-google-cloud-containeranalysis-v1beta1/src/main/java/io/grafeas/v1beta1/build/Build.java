@@ -34,7 +34,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.build.Build)
     BuildOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Build.newBuilder() to construct.
   private Build(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object builderVersion_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIGNATURE_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.build.BuildSignature signature_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSignature() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.build.BuildSignature.getDefaultInstance()
         : signature_;
   }
-
   /**
    *
    *
@@ -345,7 +339,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +550,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object builderVersion_ = "";
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.build.BuildSignature.Builder,
             io.grafeas.v1beta1.build.BuildSignatureOrBuilder>
         signatureBuilder_;
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSignature() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         return signatureBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +803,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSignatureFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -842,7 +822,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             : signature_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface BundleInstallSpecOrBuilder
    * @return A list containing the exemptedNamespaces.
    */
   java.util.List<java.lang.String> getExemptedNamespacesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BundleInstallSpecOrBuilder
    * @return The count of exemptedNamespaces.
    */
   int getExemptedNamespacesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface BundleInstallSpecOrBuilder
    * @return The exemptedNamespaces at the given index.
    */
   java.lang.String getExemptedNamespaces(int index);
-
   /**
    *
    *

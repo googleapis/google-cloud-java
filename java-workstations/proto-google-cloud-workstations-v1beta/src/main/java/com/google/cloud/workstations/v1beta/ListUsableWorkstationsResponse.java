@@ -33,7 +33,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.ListUsableWorkstationsResponse)
     ListUsableWorkstationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListUsableWorkstationsResponse.newBuilder() to construct.
   private ListUsableWorkstationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.workstations.v1beta.Workstation> workstations_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.workstations.v1beta.Workstation> getWorkstationsList() {
     return workstations_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       getWorkstationsOrBuilderList() {
     return workstations_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   public int getWorkstationsCount() {
     return workstations_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   public com.google.cloud.workstations.v1beta.Workstation getWorkstations(int index) {
     return workstations_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -250,7 +239,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -764,7 +751,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return workstationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return workstationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return workstationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +950,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +982,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         int index) {
       return getWorkstationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1025,7 +999,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return workstationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(workstations_);
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1029,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       return getWorkstationsFieldBuilder()
           .addBuilder(com.google.cloud.workstations.v1beta.Workstation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       return getWorkstationsFieldBuilder()
           .addBuilder(index, com.google.cloud.workstations.v1beta.Workstation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1105,7 +1075,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1129,7 +1098,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1121,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1143,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1161,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1194,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1245,7 +1209,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1260,7 +1223,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1276,7 +1238,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1292,7 +1253,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1316,7 +1276,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1298,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1317,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1335,6 @@ public final class ListUsableWorkstationsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

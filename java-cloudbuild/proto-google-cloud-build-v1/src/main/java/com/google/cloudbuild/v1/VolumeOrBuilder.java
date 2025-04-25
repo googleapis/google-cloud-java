@@ -39,7 +39,6 @@ public interface VolumeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface VolumeOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

@@ -75,7 +75,6 @@ public enum AssetView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ASSET_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int ASSET_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum AssetView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ASSET_VIEW_BASIC = 1;</code>
    */
   public static final int ASSET_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

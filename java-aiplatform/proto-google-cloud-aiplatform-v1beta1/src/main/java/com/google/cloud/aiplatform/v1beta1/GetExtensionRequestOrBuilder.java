@@ -40,7 +40,6 @@ public interface GetExtensionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

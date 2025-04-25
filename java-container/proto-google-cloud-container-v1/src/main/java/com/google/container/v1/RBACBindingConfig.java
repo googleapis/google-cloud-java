@@ -34,7 +34,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1.RBACBindingConfig)
     RBACBindingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RBACBindingConfig.newBuilder() to construct.
   private RBACBindingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ENABLE_INSECURE_BINDING_SYSTEM_UNAUTHENTICATED_FIELD_NUMBER = 1;
   private boolean enableInsecureBindingSystemUnauthenticated_ = false;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasEnableInsecureBindingSystemUnauthenticated() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int ENABLE_INSECURE_BINDING_SYSTEM_AUTHENTICATED_FIELD_NUMBER = 2;
   private boolean enableInsecureBindingSystemAuthenticated_ = false;
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasEnableInsecureBindingSystemAuthenticated() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -330,7 +325,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -534,7 +528,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean enableInsecureBindingSystemUnauthenticated_;
-
     /**
      *
      *
@@ -551,7 +544,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasEnableInsecureBindingSystemUnauthenticated() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -568,7 +560,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     public boolean getEnableInsecureBindingSystemUnauthenticated() {
       return enableInsecureBindingSystemUnauthenticated_;
     }
-
     /**
      *
      *
@@ -589,7 +580,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean enableInsecureBindingSystemAuthenticated_;
-
     /**
      *
      *
@@ -627,7 +616,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasEnableInsecureBindingSystemAuthenticated() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -644,7 +632,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
     public boolean getEnableInsecureBindingSystemAuthenticated() {
       return enableInsecureBindingSystemAuthenticated_;
     }
-
     /**
      *
      *
@@ -665,7 +652,6 @@ public final class RBACBindingConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

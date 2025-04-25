@@ -38,7 +38,6 @@ public interface InstallationStateOrBuilder
    * @return The enum numeric value on the wire for stage.
    */
   int getStageValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface InstallationStateOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface InstallationStateOrBuilder
    * @return The actionUri.
    */
   java.lang.String getActionUri();
-
   /**
    *
    *

@@ -46,7 +46,6 @@ public interface SparkPropertiesOrBuilder
    * @return The serviceAccountId.
    */
   java.lang.String getServiceAccountId();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface SparkPropertiesOrBuilder
    * @return Whether the metastoreServiceConfig field is set.
    */
   boolean hasMetastoreServiceConfig();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface SparkPropertiesOrBuilder
    * @return The metastoreServiceConfig.
    */
   com.google.cloud.bigquery.connection.v1.MetastoreServiceConfig getMetastoreServiceConfig();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface SparkPropertiesOrBuilder
    * @return Whether the sparkHistoryServerConfig field is set.
    */
   boolean hasSparkHistoryServerConfig();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface SparkPropertiesOrBuilder
    * @return The sparkHistoryServerConfig.
    */
   com.google.cloud.bigquery.connection.v1.SparkHistoryServerConfig getSparkHistoryServerConfig();
-
   /**
    *
    *

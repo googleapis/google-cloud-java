@@ -37,7 +37,6 @@ public interface PubsubLocationOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface PubsubLocationOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface PubsubLocationOrBuilder
    * @return The timestampLabel.
    */
   java.lang.String getTimestampLabel();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface PubsubLocationOrBuilder
    * @return The idLabel.
    */
   java.lang.String getIdLabel();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface PubsubLocationOrBuilder
    * @return The trackingSubscription.
    */
   java.lang.String getTrackingSubscription();
-
   /**
    *
    *

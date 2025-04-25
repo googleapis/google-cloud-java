@@ -35,7 +35,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.chat.v1.SpaceUpdatedEventData)
     SpaceUpdatedEventDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpaceUpdatedEventData.newBuilder() to construct.
   private SpaceUpdatedEventData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SPACE_FIELD_NUMBER = 1;
   private com.google.chat.v1.Space space_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
   public boolean hasSpace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
   public com.google.chat.v1.Space getSpace() {
     return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
   }
-
   /**
    *
    *
@@ -277,7 +273,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +477,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
             com.google.chat.v1.Space.Builder,
             com.google.chat.v1.SpaceOrBuilder>
         spaceBuilder_;
-
     /**
      *
      *
@@ -497,7 +491,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
     public boolean hasSpace() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -516,7 +509,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
         return spaceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -539,7 +531,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -559,7 +550,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +577,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +596,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +610,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSpaceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -639,7 +626,6 @@ public final class SpaceUpdatedEventData extends com.google.protobuf.GeneratedMe
         return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface GetWorkflowRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface GetWorkflowRequestOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *

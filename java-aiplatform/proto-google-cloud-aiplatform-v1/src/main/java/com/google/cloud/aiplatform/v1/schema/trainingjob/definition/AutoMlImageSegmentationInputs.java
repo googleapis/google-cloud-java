@@ -28,7 +28,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs)
     AutoMlImageSegmentationInputsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlImageSegmentationInputs.newBuilder() to construct.
   private AutoMlImageSegmentationInputs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * <code>CLOUD_HIGH_ACCURACY_1 = 1;</code>
      */
     public static final int CLOUD_HIGH_ACCURACY_1_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * <code>CLOUD_LOW_ACCURACY_1 = 2;</code>
      */
     public static final int CLOUD_LOW_ACCURACY_1_VALUE = 2;
-
     /**
      *
      *
@@ -258,7 +254,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -270,7 +265,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
   public int getModelTypeValue() {
     return modelType_;
   }
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -295,7 +289,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
 
   public static final int BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 2;
   private long budgetMilliNodeHours_ = 0L;
-
   /**
    *
    *
@@ -328,7 +321,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseModelId_ = "";
-
   /**
    *
    *
@@ -356,7 +348,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -594,7 +585,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs}
@@ -828,7 +818,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int modelType_ = 0;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -840,7 +829,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     public int getModelTypeValue() {
       return modelType_;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -855,7 +843,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -877,7 +864,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
               .AutoMlImageSegmentationInputs.ModelType.UNRECOGNIZED
           : result;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -898,7 +884,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -914,7 +899,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     }
 
     private long budgetMilliNodeHours_;
-
     /**
      *
      *
@@ -942,7 +926,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     public long getBudgetMilliNodeHours() {
       return budgetMilliNodeHours_;
     }
-
     /**
      *
      *
@@ -974,7 +957,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +988,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     }
 
     private java.lang.Object baseModelId_ = "";
-
     /**
      *
      *
@@ -1033,7 +1014,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1040,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1065,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1086,6 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

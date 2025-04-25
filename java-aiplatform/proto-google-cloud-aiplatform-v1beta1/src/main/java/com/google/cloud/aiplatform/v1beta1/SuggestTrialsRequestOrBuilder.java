@@ -39,7 +39,6 @@ public interface SuggestTrialsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface SuggestTrialsRequestOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
-
   /**
    *
    *
@@ -150,7 +148,6 @@ public interface SuggestTrialsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrialContext> getContextsList();
-
   /**
    *
    *
@@ -198,7 +195,6 @@ public interface SuggestTrialsRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TrialContext getContexts(int index);
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public interface SuggestTrialsRequestOrBuilder
    * </code>
    */
   int getContextsCount();
-
   /**
    *
    *
@@ -295,7 +290,6 @@ public interface SuggestTrialsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder>
       getContextsOrBuilderList();
-
   /**
    *
    *

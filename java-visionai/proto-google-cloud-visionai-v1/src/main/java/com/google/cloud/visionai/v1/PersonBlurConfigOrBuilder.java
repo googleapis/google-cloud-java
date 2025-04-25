@@ -36,7 +36,6 @@ public interface PersonBlurConfigOrBuilder
    * @return The enum numeric value on the wire for personBlurType.
    */
   int getPersonBlurTypeValue();
-
   /**
    *
    *

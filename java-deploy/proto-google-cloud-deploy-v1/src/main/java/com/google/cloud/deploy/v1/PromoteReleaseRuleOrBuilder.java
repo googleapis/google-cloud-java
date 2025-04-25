@@ -38,7 +38,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return Whether the wait field is set.
    */
   boolean hasWait();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return The wait.
    */
   com.google.protobuf.Duration getWait();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return The destinationTargetId.
    */
   java.lang.String getDestinationTargetId();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return The condition.
    */
   com.google.cloud.deploy.v1.AutomationRuleCondition getCondition();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface PromoteReleaseRuleOrBuilder
    * @return The destinationPhase.
    */
   java.lang.String getDestinationPhase();
-
   /**
    *
    *

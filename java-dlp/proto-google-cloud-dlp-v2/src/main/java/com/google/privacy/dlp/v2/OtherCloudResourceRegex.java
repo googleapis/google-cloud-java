@@ -36,7 +36,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudResourceRegex)
     OtherCloudResourceRegexOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OtherCloudResourceRegex.newBuilder() to construct.
   private OtherCloudResourceRegex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
     private ResourceRegexCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
   }
 
   public static final int AMAZON_S3_BUCKET_REGEX_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
   public boolean hasAmazonS3BucketRegex() {
     return resourceRegexCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.AmazonS3BucketRegex.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +557,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.AmazonS3BucketRegex.Builder,
             com.google.privacy.dlp.v2.AmazonS3BucketRegexOrBuilder>
         amazonS3BucketRegexBuilder_;
-
     /**
      *
      *
@@ -579,7 +572,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
     public boolean hasAmazonS3BucketRegex() {
       return resourceRegexCase_ == 1;
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.AmazonS3BucketRegex.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
       resourceRegexCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
       resourceRegexCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
       resourceRegexCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.AmazonS3BucketRegex.Builder getAmazonS3BucketRegexBuilder() {
       return getAmazonS3BucketRegexFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class OtherCloudResourceRegex extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.AmazonS3BucketRegex.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudSqlDiscoveryTarget)
     CloudSqlDiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudSqlDiscoveryTarget.newBuilder() to construct.
   private CloudSqlDiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     private CadenceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
 
   public static final int FILTER_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DiscoveryCloudSqlFilter filter_;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.DiscoveryCloudSqlFilter.getDefaultInstance()
         : filter_;
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
 
   public static final int CONDITIONS_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions conditions_;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasConditions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.getDefaultInstance()
         : conditions_;
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
   }
 
   public static final int GENERATION_CADENCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasGenerationCadence() {
     return cadenceCase_ == 3;
   }
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
   }
 
   public static final int DISABLED_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
   public boolean hasDisabled() {
     return cadenceCase_ == 4;
   }
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -564,7 +550,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -850,7 +835,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryCloudSqlFilter.Builder,
             com.google.privacy.dlp.v2.DiscoveryCloudSqlFilterOrBuilder>
         filterBuilder_;
-
     /**
      *
      *
@@ -868,7 +852,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         return filterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -918,7 +900,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +953,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +975,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
             : filter_;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1048,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.Builder,
             com.google.privacy.dlp.v2.DiscoveryCloudSqlConditionsOrBuilder>
         conditionsBuilder_;
-
     /**
      *
      *
@@ -1088,7 +1063,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasConditions() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         return conditionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1107,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1128,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1177,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1192,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       onChanged();
       return getConditionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1243,7 +1211,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
             : conditions_;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1243,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadenceOrBuilder>
         generationCadenceBuilder_;
-
     /**
      *
      *
@@ -1295,7 +1261,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasGenerationCadence() {
       return cadenceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1324,7 +1289,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1315,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       cadenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1338,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       cadenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1376,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       cadenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1404,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1420,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         getGenerationCadenceBuilder() {
       return getGenerationCadenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1485,7 +1444,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1528,7 +1486,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.Disabled.Builder,
             com.google.privacy.dlp.v2.DisabledOrBuilder>
         disabledBuilder_;
-
     /**
      *
      *
@@ -1544,7 +1501,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     public boolean hasDisabled() {
       return cadenceCase_ == 4;
     }
-
     /**
      *
      *
@@ -1570,7 +1526,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1593,7 +1548,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       cadenceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1567,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       cadenceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1599,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       cadenceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1624,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1685,7 +1636,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.Disabled.Builder getDisabledBuilder() {
       return getDisabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1706,7 +1656,6 @@ public final class CloudSqlDiscoveryTarget extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
-
     /**
      *
      *

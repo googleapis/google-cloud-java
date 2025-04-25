@@ -33,7 +33,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation)
     TextEntityExtractionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextEntityExtractionAnnotation.newBuilder() to construct.
   private TextEntityExtractionAnnotation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
 
   public static final int SEQUENTIAL_SEGMENT_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.SequentialSegment sequentialSegment_;
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
   public boolean hasSequentialSegment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
         ? com.google.cloud.datalabeling.v1beta1.SequentialSegment.getDefaultInstance()
         : sequentialSegment_;
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +579,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
         return annotationSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +702,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
             : annotationSpec_;
       }
     }
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
             com.google.cloud.datalabeling.v1beta1.SequentialSegment.Builder,
             com.google.cloud.datalabeling.v1beta1.SequentialSegmentOrBuilder>
         sequentialSegmentBuilder_;
-
     /**
      *
      *
@@ -799,7 +781,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
     public boolean hasSequentialSegment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
         return sequentialSegmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -844,7 +824,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +844,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +873,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return getSequentialSegmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
             : sequentialSegment_;
       }
     }
-
     /**
      *
      *

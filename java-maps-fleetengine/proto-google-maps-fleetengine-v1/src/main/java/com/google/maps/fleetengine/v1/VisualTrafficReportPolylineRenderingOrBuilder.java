@@ -42,7 +42,6 @@ public interface VisualTrafficReportPolylineRenderingOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch>
       getRoadStretchList();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface VisualTrafficReportPolylineRenderingOrBuilder
    */
   com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch getRoadStretch(
       int index);
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface VisualTrafficReportPolylineRenderingOrBuilder
    * </code>
    */
   int getRoadStretchCount();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface VisualTrafficReportPolylineRenderingOrBuilder
               com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering
                   .RoadStretchOrBuilder>
       getRoadStretchOrBuilderList();
-
   /**
    *
    *

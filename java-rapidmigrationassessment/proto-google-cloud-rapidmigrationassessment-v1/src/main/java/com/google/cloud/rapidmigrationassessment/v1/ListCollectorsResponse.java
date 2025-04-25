@@ -33,7 +33,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.rapidmigrationassessment.v1.ListCollectorsResponse)
     ListCollectorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCollectorsResponse.newBuilder() to construct.
   private ListCollectorsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.rapidmigrationassessment.v1.Collector> collectors_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       getCollectorsList() {
     return collectors_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       getCollectorsOrBuilderList() {
     return collectors_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
   public int getCollectorsCount() {
     return collectors_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.rapidmigrationassessment.v1.Collector getCollectors(int index) {
     return collectors_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -453,7 +441,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +750,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return collectorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return collectorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return collectorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +950,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +982,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getCollectorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1025,7 +999,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return collectorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(collectors_);
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1029,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       return getCollectorsFieldBuilder()
           .addBuilder(com.google.cloud.rapidmigrationassessment.v1.Collector.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.rapidmigrationassessment.v1.Collector.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1106,7 +1076,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1129,7 +1098,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1120,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1141,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1158,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1190,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1241,7 +1205,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1256,7 +1219,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1272,7 +1234,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1288,7 +1249,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1312,7 +1272,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1294,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1313,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1331,6 @@ public final class ListCollectorsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

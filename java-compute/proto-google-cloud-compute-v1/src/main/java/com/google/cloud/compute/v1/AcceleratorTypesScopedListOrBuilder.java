@@ -34,7 +34,6 @@ public interface AcceleratorTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorType> getAcceleratorTypesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface AcceleratorTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
    */
   com.google.cloud.compute.v1.AcceleratorType getAcceleratorTypes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface AcceleratorTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
    */
   int getAcceleratorTypesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface AcceleratorTypesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorTypeOrBuilder>
       getAcceleratorTypesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface AcceleratorTypesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface AcceleratorTypesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

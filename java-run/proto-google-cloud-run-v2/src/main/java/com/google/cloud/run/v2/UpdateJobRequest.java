@@ -33,7 +33,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.UpdateJobRequest)
     UpdateJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateJobRequest.newBuilder() to construct.
   private UpdateJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int JOB_FIELD_NUMBER = 1;
   private com.google.cloud.run.v2.Job job_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.run.v2.Job getJob() {
     return job_ == null ? com.google.cloud.run.v2.Job.getDefaultInstance() : job_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -334,7 +328,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.Job.Builder,
             com.google.cloud.run.v2.JobOrBuilder>
         jobBuilder_;
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return jobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -620,7 +610,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +689,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -720,7 +705,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         return job_ == null ? com.google.cloud.run.v2.Job.getDefaultInstance() : job_;
       }
     }
-
     /**
      *
      *
@@ -747,7 +731,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -764,7 +747,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -785,7 +767,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +787,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -824,7 +804,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -846,7 +825,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

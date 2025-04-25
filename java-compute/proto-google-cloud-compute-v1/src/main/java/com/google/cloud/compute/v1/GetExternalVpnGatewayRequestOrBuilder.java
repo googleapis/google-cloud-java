@@ -36,7 +36,6 @@ public interface GetExternalVpnGatewayRequestOrBuilder
    * @return The externalVpnGateway.
    */
   java.lang.String getExternalVpnGateway();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetExternalVpnGatewayRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

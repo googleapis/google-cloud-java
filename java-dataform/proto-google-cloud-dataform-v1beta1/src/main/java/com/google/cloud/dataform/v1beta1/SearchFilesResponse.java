@@ -33,7 +33,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.SearchFilesResponse)
     SearchFilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchFilesResponse.newBuilder() to construct.
   private SearchFilesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.SearchResult> searchResults_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.dataform.v1beta1.SearchResult> getSearchResultsList() {
     return searchResults_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       getSearchResultsOrBuilderList() {
     return searchResults_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
   public int getSearchResultsCount() {
     return searchResults_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dataform.v1beta1.SearchResult getSearchResults(int index) {
     return searchResults_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return searchResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return searchResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return searchResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +868,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         int index) {
       return getSearchResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return searchResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -925,7 +902,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(searchResults_);
       }
     }
-
     /**
      *
      *
@@ -939,7 +915,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       return getSearchResultsFieldBuilder()
           .addBuilder(com.google.cloud.dataform.v1beta1.SearchResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -954,7 +929,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       return getSearchResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataform.v1beta1.SearchResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -990,7 +964,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1010,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1032,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1050,6 @@ public final class SearchFilesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

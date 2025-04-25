@@ -72,7 +72,6 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NF_DEPLOY_RESOURCE = 1;</code>
    */
   public static final int NF_DEPLOY_RESOURCE_VALUE = 1;
-
   /**
    *
    *

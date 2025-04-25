@@ -36,7 +36,6 @@ public interface ReleaseConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ReleaseConfigOrBuilder
    * @return The gitCommitish.
    */
   java.lang.String getGitCommitish();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface ReleaseConfigOrBuilder
    * @return Whether the codeCompilationConfig field is set.
    */
   boolean hasCodeCompilationConfig();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface ReleaseConfigOrBuilder
    * @return The codeCompilationConfig.
    */
   com.google.cloud.dataform.v1beta1.CodeCompilationConfig getCodeCompilationConfig();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ReleaseConfigOrBuilder
    * @return The cronSchedule.
    */
   java.lang.String getCronSchedule();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface ReleaseConfigOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public interface ReleaseConfigOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1beta1.ReleaseConfig.ScheduledReleaseRecord>
       getRecentScheduledReleaseRecordsList();
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public interface ReleaseConfigOrBuilder
    */
   com.google.cloud.dataform.v1beta1.ReleaseConfig.ScheduledReleaseRecord
       getRecentScheduledReleaseRecords(int index);
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public interface ReleaseConfigOrBuilder
    * </code>
    */
   int getRecentScheduledReleaseRecordsCount();
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public interface ReleaseConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.dataform.v1beta1.ReleaseConfig.ScheduledReleaseRecordOrBuilder>
       getRecentScheduledReleaseRecordsOrBuilderList();
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public interface ReleaseConfigOrBuilder
    * @return The releaseCompilationResult.
    */
   java.lang.String getReleaseCompilationResult();
-
   /**
    *
    *
@@ -341,7 +330,6 @@ public interface ReleaseConfigOrBuilder
    * @return Whether the internalMetadata field is set.
    */
   boolean hasInternalMetadata();
-
   /**
    *
    *
@@ -357,7 +345,6 @@ public interface ReleaseConfigOrBuilder
    * @return The internalMetadata.
    */
   java.lang.String getInternalMetadata();
-
   /**
    *
    *

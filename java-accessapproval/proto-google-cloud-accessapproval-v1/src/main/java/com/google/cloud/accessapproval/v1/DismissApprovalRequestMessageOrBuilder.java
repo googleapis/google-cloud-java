@@ -36,7 +36,6 @@ public interface DismissApprovalRequestMessageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

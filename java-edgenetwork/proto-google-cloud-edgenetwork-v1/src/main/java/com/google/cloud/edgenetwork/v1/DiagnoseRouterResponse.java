@@ -33,7 +33,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.DiagnoseRouterResponse)
     DiagnoseRouterResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiagnoseRouterResponse.newBuilder() to construct.
   private DiagnoseRouterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int UPDATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
 
   public static final int RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.edgenetwork.v1.RouterStatus result_;
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.edgenetwork.v1.RouterStatus.getDefaultInstance()
         : result_;
   }
-
   /**
    *
    *
@@ -344,7 +337,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +559,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -603,7 +593,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -626,7 +615,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +634,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +661,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +680,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +694,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -728,7 +712,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -761,7 +744,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.edgenetwork.v1.RouterStatus.Builder,
             com.google.cloud.edgenetwork.v1.RouterStatusOrBuilder>
         resultBuilder_;
-
     /**
      *
      *
@@ -776,7 +758,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
     public boolean hasResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -797,7 +778,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
         return resultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -820,7 +800,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +819,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +846,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +865,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +879,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -922,7 +897,6 @@ public final class DiagnoseRouterResponse extends com.google.protobuf.GeneratedM
             : result_;
       }
     }
-
     /**
      *
      *

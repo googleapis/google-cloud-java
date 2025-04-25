@@ -36,7 +36,6 @@ public interface GetAssociationFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetAssociationFirewallPolicyRequestOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GetAssociationFirewallPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

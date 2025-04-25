@@ -33,7 +33,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertPacketMirroringRequest)
     InsertPacketMirroringRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertPacketMirroringRequest.newBuilder() to construct.
   private InsertPacketMirroringRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int PACKET_MIRRORING_RESOURCE_FIELD_NUMBER = 493501985;
   private com.google.cloud.compute.v1.PacketMirroring packetMirroringResource_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
   public boolean hasPacketMirroringResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.PacketMirroring.getDefaultInstance()
         : packetMirroringResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -509,7 +498,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +751,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.PacketMirroring.Builder,
             com.google.cloud.compute.v1.PacketMirroringOrBuilder>
         packetMirroringResourceBuilder_;
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     public boolean hasPacketMirroringResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return packetMirroringResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return getPacketMirroringResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
             : packetMirroringResource_;
       }
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1023,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1042,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1068,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1119,7 +1092,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1116,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1139,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1158,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1184,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1230,7 +1198,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1253,7 +1220,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1242,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1263,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1280,6 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

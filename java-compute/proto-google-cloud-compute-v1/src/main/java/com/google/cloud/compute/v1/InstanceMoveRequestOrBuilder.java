@@ -36,7 +36,6 @@ public interface InstanceMoveRequestOrBuilder
    * @return Whether the destinationZone field is set.
    */
   boolean hasDestinationZone();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceMoveRequestOrBuilder
    * @return The destinationZone.
    */
   java.lang.String getDestinationZone();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InstanceMoveRequestOrBuilder
    * @return Whether the targetInstance field is set.
    */
   boolean hasTargetInstance();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InstanceMoveRequestOrBuilder
    * @return The targetInstance.
    */
   java.lang.String getTargetInstance();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ApplyHashOrBuilder
    * @return Whether the uuidFromBytes field is set.
    */
   boolean hasUuidFromBytes();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ApplyHashOrBuilder
    * @return The uuidFromBytes.
    */
   com.google.protobuf.Empty getUuidFromBytes();
-
   /**
    *
    *

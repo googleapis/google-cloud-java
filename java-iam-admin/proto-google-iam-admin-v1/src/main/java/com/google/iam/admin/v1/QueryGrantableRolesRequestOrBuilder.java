@@ -40,7 +40,6 @@ public interface QueryGrantableRolesRequestOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface QueryGrantableRolesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    * <code>.google.iam.admin.v1.RoleView view = 2;</code>
    *
@@ -100,7 +98,6 @@ public interface QueryGrantableRolesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

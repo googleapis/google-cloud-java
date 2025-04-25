@@ -35,7 +35,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.LocationFilter)
     LocationFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocationFilter.newBuilder() to construct.
   private LocationFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latLng field is set.
      */
     boolean hasLatLng();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return The latLng.
      */
     com.google.type.LatLng getLatLng();
-
     /**
      *
      *
@@ -110,9 +107,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-     * is the unique identifier of a place. For example:
-     * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+     * The Place resource name of the center of the circle. Only point places
+     * are supported.
      * </pre>
      *
      * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -120,14 +116,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the place field is set.
      */
     boolean hasPlace();
-
     /**
      *
      *
      * <pre>
-     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-     * is the unique identifier of a place. For example:
-     * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+     * The Place resource name of the center of the circle. Only point places
+     * are supported.
      * </pre>
      *
      * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -135,14 +129,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return The place.
      */
     java.lang.String getPlace();
-
     /**
      *
      *
      * <pre>
-     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-     * is the unique identifier of a place. For example:
-     * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+     * The Place resource name of the center of the circle. Only point places
+     * are supported.
      * </pre>
      *
      * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -166,7 +158,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
     com.google.maps.areainsights.v1.LocationFilter.Circle.CenterCase getCenterCase();
   }
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.LocationFilter.Circle)
       CircleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Circle.newBuilder() to construct.
     private Circle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -227,7 +217,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       private CenterCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -261,7 +250,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LAT_LNG_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -277,7 +265,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatLng() {
       return centerCase_ == 1;
     }
-
     /**
      *
      *
@@ -296,7 +283,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.type.LatLng.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -315,14 +301,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PLACE_FIELD_NUMBER = 2;
-
     /**
      *
      *
      * <pre>
-     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-     * is the unique identifier of a place. For example:
-     * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+     * The Place resource name of the center of the circle. Only point places
+     * are supported.
      * </pre>
      *
      * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -332,14 +316,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlace() {
       return centerCase_ == 2;
     }
-
     /**
      *
      *
      * <pre>
-     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-     * is the unique identifier of a place. For example:
-     * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+     * The Place resource name of the center of the circle. Only point places
+     * are supported.
      * </pre>
      *
      * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -362,14 +344,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-     * is the unique identifier of a place. For example:
-     * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+     * The Place resource name of the center of the circle. Only point places
+     * are supported.
      * </pre>
      *
      * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -395,7 +375,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RADIUS_FIELD_NUMBER = 3;
     private int radius_ = 0;
-
     /**
      *
      *
@@ -610,7 +589,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -860,7 +838,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
               com.google.type.LatLng.Builder,
               com.google.type.LatLngOrBuilder>
           latLngBuilder_;
-
       /**
        *
        *
@@ -876,7 +853,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLatLng() {
         return centerCase_ == 1;
       }
-
       /**
        *
        *
@@ -902,7 +878,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return com.google.type.LatLng.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -925,7 +900,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         centerCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -945,7 +919,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         centerCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -976,7 +949,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         centerCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1002,7 +974,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1015,7 +986,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public com.google.type.LatLng.Builder getLatLngBuilder() {
         return getLatLngFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1036,7 +1006,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return com.google.type.LatLng.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1072,9 +1041,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-       * is the unique identifier of a place. For example:
-       * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+       * The Place resource name of the center of the circle. Only point places
+       * are supported.
        * </pre>
        *
        * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1085,14 +1053,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPlace() {
         return centerCase_ == 2;
       }
-
       /**
        *
        *
        * <pre>
-       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-       * is the unique identifier of a place. For example:
-       * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+       * The Place resource name of the center of the circle. Only point places
+       * are supported.
        * </pre>
        *
        * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1116,14 +1082,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
        * <pre>
-       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-       * is the unique identifier of a place. For example:
-       * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+       * The Place resource name of the center of the circle. Only point places
+       * are supported.
        * </pre>
        *
        * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1147,14 +1111,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
        * <pre>
-       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-       * is the unique identifier of a place. For example:
-       * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+       * The Place resource name of the center of the circle. Only point places
+       * are supported.
        * </pre>
        *
        * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1171,14 +1133,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
        * <pre>
-       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-       * is the unique identifier of a place. For example:
-       * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+       * The Place resource name of the center of the circle. Only point places
+       * are supported.
        * </pre>
        *
        * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1193,14 +1153,12 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
        * <pre>
-       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
-       * is the unique identifier of a place. For example:
-       * `places/ChIJgUbEo8cfqokR5lP9_Wh_DaM`.
+       * The Place resource name of the center of the circle. Only point places
+       * are supported.
        * </pre>
        *
        * <code>string place = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1220,7 +1178,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int radius_;
-
       /**
        *
        *
@@ -1236,7 +1193,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public int getRadius() {
         return radius_;
       }
-
       /**
        *
        *
@@ -1256,7 +1212,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1348,7 +1303,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The Place resource name of a region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1356,12 +1311,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the place field is set.
      */
     boolean hasPlace();
-
     /**
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The Place resource name of a region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1369,12 +1323,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return The place.
      */
     java.lang.String getPlace();
-
     /**
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The Place resource name of a region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1385,7 +1338,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
     com.google.maps.areainsights.v1.LocationFilter.Region.RegionCase getRegionCase();
   }
-
   /**
    *
    *
@@ -1401,7 +1353,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.LocationFilter.Region)
       RegionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Region.newBuilder() to construct.
     private Region(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1446,7 +1397,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       private RegionCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1478,12 +1428,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PLACE_FIELD_NUMBER = 1;
-
     /**
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The Place resource name of a region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1493,12 +1442,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlace() {
       return regionCase_ == 1;
     }
-
     /**
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The Place resource name of a region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1521,12 +1469,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The Place resource name of a region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1724,7 +1671,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1944,7 +1890,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The Place resource name of a region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1955,12 +1901,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPlace() {
         return regionCase_ == 1;
       }
-
       /**
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The Place resource name of a region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1984,12 +1929,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The Place resource name of a region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2013,12 +1957,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The Place resource name of a region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2035,12 +1978,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The Place resource name of a region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2055,12 +1997,11 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The Place resource name of a region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2162,7 +2103,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the polygon field is set.
      */
     boolean hasPolygon();
-
     /**
      *
      *
@@ -2177,7 +2117,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * @return The polygon.
      */
     com.google.maps.areainsights.v1.LocationFilter.CustomArea.Polygon getPolygon();
-
     /**
      *
      *
@@ -2192,7 +2131,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     com.google.maps.areainsights.v1.LocationFilter.CustomArea.PolygonOrBuilder
         getPolygonOrBuilder();
   }
-
   /**
    *
    *
@@ -2207,7 +2145,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.LocationFilter.CustomArea)
       CustomAreaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CustomArea.newBuilder() to construct.
     private CustomArea(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2253,7 +2190,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       java.util.List<com.google.type.LatLng> getCoordinatesList();
-
       /**
        *
        *
@@ -2266,7 +2202,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       com.google.type.LatLng getCoordinates(int index);
-
       /**
        *
        *
@@ -2279,7 +2214,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       int getCoordinatesCount();
-
       /**
        *
        *
@@ -2292,7 +2226,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       java.util.List<? extends com.google.type.LatLngOrBuilder> getCoordinatesOrBuilderList();
-
       /**
        *
        *
@@ -2306,7 +2239,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.type.LatLngOrBuilder getCoordinatesOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -2326,7 +2258,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.LocationFilter.CustomArea.Polygon)
         PolygonOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Polygon.newBuilder() to construct.
       private Polygon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2361,7 +2292,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.type.LatLng> coordinates_;
-
       /**
        *
        *
@@ -2377,7 +2307,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<com.google.type.LatLng> getCoordinatesList() {
         return coordinates_;
       }
-
       /**
        *
        *
@@ -2394,7 +2323,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           getCoordinatesOrBuilderList() {
         return coordinates_;
       }
-
       /**
        *
        *
@@ -2410,7 +2338,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public int getCoordinatesCount() {
         return coordinates_.size();
       }
-
       /**
        *
        *
@@ -2426,7 +2353,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public com.google.type.LatLng getCoordinates(int index) {
         return coordinates_.get(index);
       }
-
       /**
        *
        *
@@ -2608,7 +2534,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2886,7 +2811,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             return coordinatesBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -2905,7 +2829,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             return coordinatesBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -2924,7 +2847,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             return coordinatesBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -2949,7 +2871,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2971,7 +2892,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2996,7 +2916,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3021,7 +2940,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3043,7 +2961,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3065,7 +2982,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3088,7 +3004,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3110,7 +3025,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3132,7 +3046,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -3147,7 +3060,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         public com.google.type.LatLng.Builder getCoordinatesBuilder(int index) {
           return getCoordinatesFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -3166,7 +3078,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             return coordinatesBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -3186,7 +3097,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(coordinates_);
           }
         }
-
         /**
          *
          *
@@ -3202,7 +3112,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return getCoordinatesFieldBuilder()
               .addBuilder(com.google.type.LatLng.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -3218,7 +3127,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return getCoordinatesFieldBuilder()
               .addBuilder(index, com.google.type.LatLng.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -3324,7 +3232,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int POLYGON_FIELD_NUMBER = 1;
     private com.google.maps.areainsights.v1.LocationFilter.CustomArea.Polygon polygon_;
-
     /**
      *
      *
@@ -3342,7 +3249,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolygon() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3362,7 +3268,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.areainsights.v1.LocationFilter.CustomArea.Polygon.getDefaultInstance()
           : polygon_;
     }
-
     /**
      *
      *
@@ -3548,7 +3453,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3755,7 +3659,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.areainsights.v1.LocationFilter.CustomArea.Polygon.Builder,
               com.google.maps.areainsights.v1.LocationFilter.CustomArea.PolygonOrBuilder>
           polygonBuilder_;
-
       /**
        *
        *
@@ -3772,7 +3675,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPolygon() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3796,7 +3698,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           return polygonBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3822,7 +3723,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3846,7 +3746,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3879,7 +3778,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3901,7 +3799,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3919,7 +3816,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getPolygonFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3942,7 +3838,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
               : polygon_;
         }
       }
-
       /**
        *
        *
@@ -4053,7 +3948,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     private AreaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4089,7 +3983,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CIRCLE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -4105,7 +3998,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCircle() {
     return areaCase_ == 1;
   }
-
   /**
    *
    *
@@ -4124,7 +4016,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.maps.areainsights.v1.LocationFilter.Circle.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4143,7 +4034,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -4159,7 +4049,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return areaCase_ == 2;
   }
-
   /**
    *
    *
@@ -4178,7 +4067,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.maps.areainsights.v1.LocationFilter.Region.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4197,7 +4085,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_AREA_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -4213,7 +4100,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomArea() {
     return areaCase_ == 3;
   }
-
   /**
    *
    *
@@ -4232,7 +4118,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.maps.areainsights.v1.LocationFilter.CustomArea.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4455,7 +4340,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4709,7 +4593,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.areainsights.v1.LocationFilter.Circle.Builder,
             com.google.maps.areainsights.v1.LocationFilter.CircleOrBuilder>
         circleBuilder_;
-
     /**
      *
      *
@@ -4725,7 +4608,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCircle() {
       return areaCase_ == 1;
     }
-
     /**
      *
      *
@@ -4751,7 +4633,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.areainsights.v1.LocationFilter.Circle.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4774,7 +4655,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4795,7 +4675,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4829,7 +4708,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4855,7 +4733,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4868,7 +4745,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.areainsights.v1.LocationFilter.Circle.Builder getCircleBuilder() {
       return getCircleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4889,7 +4765,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.areainsights.v1.LocationFilter.Circle.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4928,7 +4803,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.areainsights.v1.LocationFilter.Region.Builder,
             com.google.maps.areainsights.v1.LocationFilter.RegionOrBuilder>
         regionBuilder_;
-
     /**
      *
      *
@@ -4944,7 +4818,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return areaCase_ == 2;
     }
-
     /**
      *
      *
@@ -4970,7 +4843,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.areainsights.v1.LocationFilter.Region.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4993,7 +4865,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5014,7 +4885,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5048,7 +4918,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5074,7 +4943,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5087,7 +4955,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.areainsights.v1.LocationFilter.Region.Builder getRegionBuilder() {
       return getRegionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5108,7 +4975,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.areainsights.v1.LocationFilter.Region.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5147,7 +5013,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.areainsights.v1.LocationFilter.CustomArea.Builder,
             com.google.maps.areainsights.v1.LocationFilter.CustomAreaOrBuilder>
         customAreaBuilder_;
-
     /**
      *
      *
@@ -5163,7 +5028,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomArea() {
       return areaCase_ == 3;
     }
-
     /**
      *
      *
@@ -5189,7 +5053,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.areainsights.v1.LocationFilter.CustomArea.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5212,7 +5075,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5233,7 +5095,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5268,7 +5129,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       areaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5294,7 +5154,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5308,7 +5167,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         getCustomAreaBuilder() {
       return getCustomAreaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5330,7 +5188,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return com.google.maps.areainsights.v1.LocationFilter.CustomArea.getDefaultInstance();
       }
     }
-
     /**
      *
      *

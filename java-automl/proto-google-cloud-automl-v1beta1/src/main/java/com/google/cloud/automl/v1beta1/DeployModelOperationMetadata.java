@@ -33,7 +33,6 @@ public final class DeployModelOperationMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.DeployModelOperationMetadata)
     DeployModelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployModelOperationMetadata.newBuilder() to construct.
   private DeployModelOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DeployModelOperationMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface NotebookRuntimeTemplateRefOrBuilder
    * @return The notebookRuntimeTemplate.
    */
   java.lang.String getNotebookRuntimeTemplate();
-
   /**
    *
    *

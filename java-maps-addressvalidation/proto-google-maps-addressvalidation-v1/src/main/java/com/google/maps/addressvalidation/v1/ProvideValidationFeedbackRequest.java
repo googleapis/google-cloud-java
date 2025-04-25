@@ -33,7 +33,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest)
     ProvideValidationFeedbackRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProvideValidationFeedbackRequest.newBuilder() to construct.
   private ProvideValidationFeedbackRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -150,7 +149,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * <code>VALIDATION_CONCLUSION_UNSPECIFIED = 0;</code>
      */
     public static final int VALIDATION_CONCLUSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -162,7 +160,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * <code>VALIDATED_VERSION_USED = 1;</code>
      */
     public static final int VALIDATED_VERSION_USED_VALUE = 1;
-
     /**
      *
      *
@@ -174,7 +171,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * <code>USER_VERSION_USED = 2;</code>
      */
     public static final int USER_VERSION_USED_VALUE = 2;
-
     /**
      *
      *
@@ -186,7 +182,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * <code>UNVALIDATED_VERSION_USED = 3;</code>
      */
     public static final int UNVALIDATED_VERSION_USED_VALUE = 3;
-
     /**
      *
      *
@@ -292,7 +287,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
 
   public static final int CONCLUSION_FIELD_NUMBER = 1;
   private int conclusion_ = 0;
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
   public int getConclusionValue() {
     return conclusion_;
   }
-
   /**
    *
    *
@@ -347,7 +340,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseId_ = "";
-
   /**
    *
    *
@@ -374,7 +366,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -578,7 +569,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -783,7 +773,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     private int bitField0_;
 
     private int conclusion_ = 0;
-
     /**
      *
      *
@@ -804,7 +793,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     public int getConclusionValue() {
       return conclusion_;
     }
-
     /**
      *
      *
@@ -828,7 +816,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +845,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
               .ValidationConclusion.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -887,7 +873,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +897,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     }
 
     private java.lang.Object responseId_ = "";
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -964,7 +947,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -989,7 +971,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +991,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

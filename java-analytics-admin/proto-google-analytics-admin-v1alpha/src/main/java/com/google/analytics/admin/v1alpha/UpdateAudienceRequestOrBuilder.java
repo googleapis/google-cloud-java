@@ -39,7 +39,6 @@ public interface UpdateAudienceRequestOrBuilder
    * @return Whether the audience field is set.
    */
   boolean hasAudience();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateAudienceRequestOrBuilder
    * @return The audience.
    */
   com.google.analytics.admin.v1alpha.Audience getAudience();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface UpdateAudienceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateAudienceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

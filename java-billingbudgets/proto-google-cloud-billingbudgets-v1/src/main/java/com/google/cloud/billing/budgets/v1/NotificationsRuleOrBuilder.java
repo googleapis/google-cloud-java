@@ -61,7 +61,6 @@ public interface NotificationsRuleOrBuilder
    * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
-
   /**
    *
    *
@@ -117,7 +116,6 @@ public interface NotificationsRuleOrBuilder
    * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
-
   /**
    *
    *
@@ -171,7 +169,6 @@ public interface NotificationsRuleOrBuilder
    * @return A list containing the monitoringNotificationChannels.
    */
   java.util.List<java.lang.String> getMonitoringNotificationChannelsList();
-
   /**
    *
    *
@@ -207,7 +204,6 @@ public interface NotificationsRuleOrBuilder
    * @return The count of monitoringNotificationChannels.
    */
   int getMonitoringNotificationChannelsCount();
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public interface NotificationsRuleOrBuilder
    * @return The monitoringNotificationChannels at the given index.
    */
   java.lang.String getMonitoringNotificationChannels(int index);
-
   /**
    *
    *

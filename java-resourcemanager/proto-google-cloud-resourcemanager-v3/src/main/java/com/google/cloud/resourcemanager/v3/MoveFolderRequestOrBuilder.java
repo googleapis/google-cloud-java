@@ -39,7 +39,6 @@ public interface MoveFolderRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface MoveFolderRequestOrBuilder
    * @return The destinationParent.
    */
   java.lang.String getDestinationParent();
-
   /**
    *
    *

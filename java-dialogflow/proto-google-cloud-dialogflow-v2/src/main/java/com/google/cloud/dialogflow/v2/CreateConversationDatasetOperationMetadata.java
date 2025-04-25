@@ -34,7 +34,6 @@ public final class CreateConversationDatasetOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata)
     CreateConversationDatasetOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateConversationDatasetOperationMetadata.newBuilder() to construct.
   private CreateConversationDatasetOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateConversationDatasetOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationDataset_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateConversationDatasetOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +283,6 @@ public final class CreateConversationDatasetOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +478,6 @@ public final class CreateConversationDatasetOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationDataset_ = "";
-
     /**
      *
      *
@@ -507,7 +502,6 @@ public final class CreateConversationDatasetOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -532,7 +526,6 @@ public final class CreateConversationDatasetOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -556,7 +549,6 @@ public final class CreateConversationDatasetOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class CreateConversationDatasetOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *

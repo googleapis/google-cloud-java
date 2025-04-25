@@ -74,8 +74,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeliveryPipelines, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListDeliveryPipelines, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeliveryPipelinesResponse.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +116,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDeliveryPipeline, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateDeliveryPipeline, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -139,8 +137,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDeliveryPipeline, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateDeliveryPipeline, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -161,8 +158,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDeliveryPipeline, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteDeliveryPipeline, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -309,8 +305,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCustomTargetTypes, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListCustomTargetTypes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCustomTargetTypesResponse.class.getName(),
                   Exception.class.getName())));
@@ -352,8 +347,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCustomTargetType, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateCustomTargetType, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -374,8 +368,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCustomTargetType, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateCustomTargetType, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -396,8 +389,7 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCustomTargetType, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteCustomTargetType, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

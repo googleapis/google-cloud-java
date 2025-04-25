@@ -39,7 +39,6 @@ public interface PackageOccurrenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PackageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
   java.util.List<io.grafeas.v1.Location> getLocationList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface PackageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
   io.grafeas.v1.Location getLocation(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface PackageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
   int getLocationCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface PackageOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
   java.util.List<? extends io.grafeas.v1.LocationOrBuilder> getLocationOrBuilderList();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface PackageOccurrenceOrBuilder
    * @return The packageType.
    */
   java.lang.String getPackageType();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface PackageOccurrenceOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface PackageOccurrenceOrBuilder
    * @return The enum numeric value on the wire for architecture.
    */
   int getArchitectureValue();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface PackageOccurrenceOrBuilder
    * @return Whether the license field is set.
    */
   boolean hasLicense();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface PackageOccurrenceOrBuilder
    * @return The license.
    */
   io.grafeas.v1.License getLicense();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface PackageOccurrenceOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface PackageOccurrenceOrBuilder
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
-
   /**
    *
    *

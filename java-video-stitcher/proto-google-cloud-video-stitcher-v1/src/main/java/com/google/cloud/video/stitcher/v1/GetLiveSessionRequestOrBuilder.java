@@ -39,7 +39,6 @@ public interface GetLiveSessionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

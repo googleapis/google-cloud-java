@@ -38,7 +38,6 @@ public interface ExportSBOMResponseOrBuilder
    * @return The discoveryOccurrenceId.
    */
   java.lang.String getDiscoveryOccurrenceId();
-
   /**
    *
    *

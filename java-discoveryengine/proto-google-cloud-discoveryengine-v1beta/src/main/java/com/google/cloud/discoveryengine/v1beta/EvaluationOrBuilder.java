@@ -41,7 +41,6 @@ public interface EvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface EvaluationOrBuilder
    * @return Whether the evaluationSpec field is set.
    */
   boolean hasEvaluationSpec();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface EvaluationOrBuilder
    * @return The evaluationSpec.
    */
   com.google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec getEvaluationSpec();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface EvaluationOrBuilder
    * @return Whether the qualityMetrics field is set.
    */
   boolean hasQualityMetrics();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface EvaluationOrBuilder
    * @return The qualityMetrics.
    */
   com.google.cloud.discoveryengine.v1beta.QualityMetrics getQualityMetrics();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface EvaluationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public interface EvaluationOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface EvaluationOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface EvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public interface EvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public interface EvaluationOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -306,7 +295,6 @@ public interface EvaluationOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public interface EvaluationOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
-
   /**
    *
    *
@@ -346,7 +333,6 @@ public interface EvaluationOrBuilder
    * </code>
    */
   com.google.rpc.Status getErrorSamples(int index);
-
   /**
    *
    *
@@ -359,7 +345,6 @@ public interface EvaluationOrBuilder
    * </code>
    */
   int getErrorSamplesCount();
-
   /**
    *
    *
@@ -372,7 +357,6 @@ public interface EvaluationOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
-
   /**
    *
    *

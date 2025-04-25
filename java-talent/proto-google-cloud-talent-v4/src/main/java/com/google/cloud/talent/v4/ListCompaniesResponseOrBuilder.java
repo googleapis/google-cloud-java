@@ -34,7 +34,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.Company companies = 1;</code>
    */
   java.util.List<com.google.cloud.talent.v4.Company> getCompaniesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.Company companies = 1;</code>
    */
   com.google.cloud.talent.v4.Company getCompanies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.Company companies = 1;</code>
    */
   int getCompaniesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.Company companies = 1;</code>
    */
   java.util.List<? extends com.google.cloud.talent.v4.CompanyOrBuilder> getCompaniesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListCompaniesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListCompaniesResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface ListCompaniesResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.talent.v4.ResponseMetadata getMetadata();
-
   /**
    *
    *

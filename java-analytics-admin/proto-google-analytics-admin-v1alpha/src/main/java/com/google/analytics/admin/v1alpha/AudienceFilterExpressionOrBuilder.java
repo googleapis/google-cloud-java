@@ -38,7 +38,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.admin.v1alpha.AudienceFilterExpressionList getAndGroup();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.admin.v1alpha.AudienceFilterExpressionList getOrGroup();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.admin.v1alpha.AudienceFilterExpression getNotExpression();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return Whether the dimensionOrMetricFilter field is set.
    */
   boolean hasDimensionOrMetricFilter();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return The dimensionOrMetricFilter.
    */
   com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter getDimensionOrMetricFilter();
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return Whether the eventFilter field is set.
    */
   boolean hasEventFilter();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface AudienceFilterExpressionOrBuilder
    * @return The eventFilter.
    */
   com.google.analytics.admin.v1alpha.AudienceEventFilter getEventFilter();
-
   /**
    *
    *

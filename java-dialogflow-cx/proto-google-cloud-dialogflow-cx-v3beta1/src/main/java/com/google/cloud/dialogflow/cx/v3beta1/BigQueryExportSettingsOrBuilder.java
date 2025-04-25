@@ -50,7 +50,6 @@ public interface BigQueryExportSettingsOrBuilder
    * @return The bigqueryTable.
    */
   java.lang.String getBigqueryTable();
-
   /**
    *
    *

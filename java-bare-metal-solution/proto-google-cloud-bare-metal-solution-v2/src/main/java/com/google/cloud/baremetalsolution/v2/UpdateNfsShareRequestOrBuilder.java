@@ -41,7 +41,6 @@ public interface UpdateNfsShareRequestOrBuilder
    * @return Whether the nfsShare field is set.
    */
   boolean hasNfsShare();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateNfsShareRequestOrBuilder
    * @return The nfsShare.
    */
   com.google.cloud.baremetalsolution.v2.NfsShare getNfsShare();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateNfsShareRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateNfsShareRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return Whether the entityTypesUri field is set.
    */
   boolean hasEntityTypesUri();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return The entityTypesUri.
    */
   java.lang.String getEntityTypesUri();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return Whether the entityTypesContent field is set.
    */
   boolean hasEntityTypesContent();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return The entityTypesContent.
    */
   com.google.cloud.dialogflow.cx.v3.InlineSource getEntityTypesContent();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return The enum numeric value on the wire for mergeOption.
    */
   int getMergeOptionValue();
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public interface ImportEntityTypesRequestOrBuilder
    * @return The targetEntityType.
    */
   java.lang.String getTargetEntityType();
-
   /**
    *
    *

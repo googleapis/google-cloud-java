@@ -33,7 +33,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CorroborateContentResponse)
     CorroborateContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CorroborateContentResponse.newBuilder() to construct.
   private CorroborateContentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int CORROBORATION_SCORE_FIELD_NUMBER = 1;
   private float corroborationScore_ = 0F;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
   public boolean hasCorroborationScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Claim> claims_;
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.aiplatform.v1.Claim> getClaimsList() {
     return claims_;
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       getClaimsOrBuilderList() {
     return claims_;
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
   public int getClaimsCount() {
     return claims_.size();
   }
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
   public com.google.cloud.aiplatform.v1.Claim getClaims(int index) {
     return claims_.get(index);
   }
-
   /**
    *
    *
@@ -360,7 +352,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -607,7 +598,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
     private int bitField0_;
 
     private float corroborationScore_;
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
     public boolean hasCorroborationScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
     public float getCorroborationScore() {
       return corroborationScore_;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
         return claimsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
         return claimsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
         return claimsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -775,7 +759,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +888,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +928,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +941,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1.Claim.Builder getClaimsBuilder(int index) {
       return getClaimsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
         return claimsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(claims_);
       }
     }
-
     /**
      *
      *
@@ -1018,7 +990,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       return getClaimsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Claim.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1033,7 +1004,6 @@ public final class CorroborateContentResponse extends com.google.protobuf.Genera
       return getClaimsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Claim.getDefaultInstance());
     }
-
     /**
      *
      *

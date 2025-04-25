@@ -36,7 +36,6 @@ public interface EventOrBuilder
    * @return Whether the reportTime field is set.
    */
   boolean hasReportTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EventOrBuilder
    * @return The reportTime.
    */
   com.google.protobuf.Timestamp getReportTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getDetailsCount();
-
   /**
    *
    *
@@ -108,11 +104,9 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsDetails(java.lang.String key);
-
   /** Use {@link #getDetailsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDetails();
-
   /**
    *
    *
@@ -123,7 +117,6 @@ public interface EventOrBuilder
    * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDetailsMap();
-
   /**
    *
    *
@@ -138,7 +131,6 @@ public interface EventOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

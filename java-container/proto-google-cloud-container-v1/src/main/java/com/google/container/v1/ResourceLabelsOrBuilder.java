@@ -34,7 +34,6 @@ public interface ResourceLabelsOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface ResourceLabelsOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface ResourceLabelsOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface ResourceLabelsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface FunnelEventFilterOrBuilder
    * @return Whether the eventName field is set.
    */
   boolean hasEventName();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface FunnelEventFilterOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface FunnelEventFilterOrBuilder
    * @return Whether the funnelParameterFilterExpression field is set.
    */
   boolean hasFunnelParameterFilterExpression();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface FunnelEventFilterOrBuilder
    */
   com.google.analytics.data.v1alpha.FunnelParameterFilterExpression
       getFunnelParameterFilterExpression();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface GetAnnotationSpecSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

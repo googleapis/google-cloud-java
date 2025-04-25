@@ -40,7 +40,6 @@ public interface GetDatasetSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

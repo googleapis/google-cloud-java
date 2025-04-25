@@ -34,7 +34,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetSecurityPolicyTargetInstanceRequest)
     SetSecurityPolicyTargetInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetSecurityPolicyTargetInstanceRequest.newBuilder() to construct.
   private SetSecurityPolicyTargetInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
 
   public static final int SECURITY_POLICY_REFERENCE_RESOURCE_FIELD_NUMBER = 204135024;
   private com.google.cloud.compute.v1.SecurityPolicyReference securityPolicyReferenceResource_;
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
   public boolean hasSecurityPolicyReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         ? com.google.cloud.compute.v1.SecurityPolicyReference.getDefaultInstance()
         : securityPolicyReferenceResource_;
   }
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetInstance_ = "";
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -577,7 +564,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -849,7 +835,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -874,7 +859,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +883,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +925,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -985,7 +965,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1009,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1076,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
             com.google.cloud.compute.v1.SecurityPolicyReference.Builder,
             com.google.cloud.compute.v1.SecurityPolicyReferenceOrBuilder>
         securityPolicyReferenceResourceBuilder_;
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     public boolean hasSecurityPolicyReferenceResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1142,7 +1115,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return securityPolicyReferenceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1140,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1162,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1193,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1214,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1231,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return getSecurityPolicyReferenceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1285,7 +1252,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
             : securityPolicyReferenceResource_;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1281,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     }
 
     private java.lang.Object targetInstance_ = "";
-
     /**
      *
      *
@@ -1338,7 +1303,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1325,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1383,7 +1346,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1363,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1387,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1451,7 +1411,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1458,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1477,6 @@ public final class SetSecurityPolicyTargetInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

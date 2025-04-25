@@ -37,7 +37,6 @@ public interface TranscriptNormalizationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry> getEntriesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TranscriptNormalizationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code>
    */
   com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry getEntries(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface TranscriptNormalizationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface TranscriptNormalizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.TranscriptNormalization.EntryOrBuilder>
       getEntriesOrBuilderList();
-
   /**
    *
    *

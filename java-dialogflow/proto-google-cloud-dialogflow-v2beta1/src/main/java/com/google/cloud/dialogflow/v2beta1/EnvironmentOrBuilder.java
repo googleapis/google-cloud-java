@@ -40,7 +40,6 @@ public interface EnvironmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface EnvironmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface EnvironmentOrBuilder
    * @return The agentVersion.
    */
   java.lang.String getAgentVersion();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface EnvironmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public interface EnvironmentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the textToSpeechSettings field is set.
    */
   boolean hasTextToSpeechSettings();
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public interface EnvironmentOrBuilder
    * @return The textToSpeechSettings.
    */
   com.google.cloud.dialogflow.v2beta1.TextToSpeechSettings getTextToSpeechSettings();
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the fulfillment field is set.
    */
   boolean hasFulfillment();
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public interface EnvironmentOrBuilder
    * @return The fulfillment.
    */
   com.google.cloud.dialogflow.v2beta1.Fulfillment getFulfillment();
-
   /**
    *
    *

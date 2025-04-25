@@ -33,7 +33,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerState)
     PolicyControllerStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PolicyControllerState.newBuilder() to construct.
   private PolicyControllerState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int VERSION_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerVersion version_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : version_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.configmanagement.v1alpha.GatekeeperDeploymentState
       deploymentState_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public boolean hasDeploymentState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : deploymentState_;
   }
-
   /**
    *
    *
@@ -363,7 +356,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +587,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerVersion.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerVersionOrBuilder>
         versionBuilder_;
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         return versionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             : version_;
       }
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             com.google.cloud.gkehub.configmanagement.v1alpha.GatekeeperDeploymentState.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.GatekeeperDeploymentStateOrBuilder>
         deploymentStateBuilder_;
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public boolean hasDeploymentState() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         return deploymentStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +933,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDeploymentStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             : deploymentState_;
       }
     }
-
     /**
      *
      *

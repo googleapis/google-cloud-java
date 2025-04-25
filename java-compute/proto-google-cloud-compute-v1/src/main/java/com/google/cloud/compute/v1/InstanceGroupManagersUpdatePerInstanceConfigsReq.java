@@ -34,7 +34,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq)
     InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder() to construct.
   private InstanceGroupManagersUpdatePerInstanceConfigsReq(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> perInstanceConfigs_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
   public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getPerInstanceConfigsList() {
     return perInstanceConfigs_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       getPerInstanceConfigsOrBuilderList() {
     return perInstanceConfigs_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
   public int getPerInstanceConfigsCount() {
     return perInstanceConfigs_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
   public com.google.cloud.compute.v1.PerInstanceConfig getPerInstanceConfigs(int index) {
     return perInstanceConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -320,7 +314,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -597,7 +590,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
         return perInstanceConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -615,7 +607,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
         return perInstanceConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -633,7 +624,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
         return perInstanceConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
         int index) {
       return getPerInstanceConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
         return perInstanceConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
         return java.util.Collections.unmodifiableList(perInstanceConfigs_);
       }
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       return getPerInstanceConfigsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -921,7 +898,6 @@ public final class InstanceGroupManagersUpdatePerInstanceConfigsReq
       return getPerInstanceConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *

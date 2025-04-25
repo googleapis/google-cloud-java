@@ -36,7 +36,6 @@ public interface RolloutConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep> getRolloutStepsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RolloutConfigOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStep getRolloutSteps(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface RolloutConfigOrBuilder
    * </code>
    */
   int getRolloutStepsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface RolloutConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.RolloutConfig.RolloutStepOrBuilder>
       getRolloutStepsOrBuilderList();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface RolloutConfigOrBuilder
    * @return The rolloutCondition.
    */
   java.lang.String getRolloutCondition();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface RolloutConfigOrBuilder
    * @return The failureCondition.
    */
   java.lang.String getFailureCondition();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface ServiceDirectoryConfigOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface OrderByOrBuilder
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OrderByOrBuilder
    * @return The metric.
    */
   com.google.analytics.data.v1alpha.OrderBy.MetricOrderBy getMetric();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface OrderByOrBuilder
    * @return Whether the dimension field is set.
    */
   boolean hasDimension();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface OrderByOrBuilder
    * @return The dimension.
    */
   com.google.analytics.data.v1alpha.OrderBy.DimensionOrderBy getDimension();
-
   /**
    *
    *

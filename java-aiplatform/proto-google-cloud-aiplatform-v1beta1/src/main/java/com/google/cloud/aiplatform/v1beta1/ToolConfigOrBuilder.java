@@ -38,7 +38,6 @@ public interface ToolConfigOrBuilder
    * @return Whether the functionCallingConfig field is set.
    */
   boolean hasFunctionCallingConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ToolConfigOrBuilder
    * @return The functionCallingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.FunctionCallingConfig getFunctionCallingConfig();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ToolConfigOrBuilder
    * @return Whether the retrievalConfig field is set.
    */
   boolean hasRetrievalConfig();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ToolConfigOrBuilder
    * @return The retrievalConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RetrievalConfig getRetrievalConfig();
-
   /**
    *
    *

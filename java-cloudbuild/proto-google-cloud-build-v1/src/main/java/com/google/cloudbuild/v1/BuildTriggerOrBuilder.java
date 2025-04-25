@@ -38,7 +38,6 @@ public interface BuildTriggerOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BuildTriggerOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface BuildTriggerOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface BuildTriggerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface BuildTriggerOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface BuildTriggerOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface BuildTriggerOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the triggerTemplate field is set.
    */
   boolean hasTriggerTemplate();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface BuildTriggerOrBuilder
    * @return The triggerTemplate.
    */
   com.google.cloudbuild.v1.RepoSource getTriggerTemplate();
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the github field is set.
    */
   boolean hasGithub();
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public interface BuildTriggerOrBuilder
    * @return The github.
    */
   com.google.cloudbuild.v1.GitHubEventsConfig getGithub();
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the pubsubConfig field is set.
    */
   boolean hasPubsubConfig();
-
   /**
    *
    *
@@ -324,7 +312,6 @@ public interface BuildTriggerOrBuilder
    * @return The pubsubConfig.
    */
   com.google.cloudbuild.v1.PubsubConfig getPubsubConfig();
-
   /**
    *
    *
@@ -350,7 +337,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the webhookConfig field is set.
    */
   boolean hasWebhookConfig();
-
   /**
    *
    *
@@ -364,7 +350,6 @@ public interface BuildTriggerOrBuilder
    * @return The webhookConfig.
    */
   com.google.cloudbuild.v1.WebhookConfig getWebhookConfig();
-
   /**
    *
    *
@@ -397,7 +382,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the autodetect field is set.
    */
   boolean hasAutodetect();
-
   /**
    *
    *
@@ -431,7 +415,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the build field is set.
    */
   boolean hasBuild();
-
   /**
    *
    *
@@ -444,7 +427,6 @@ public interface BuildTriggerOrBuilder
    * @return The build.
    */
   com.google.cloudbuild.v1.Build getBuild();
-
   /**
    *
    *
@@ -469,7 +451,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the filename field is set.
    */
   boolean hasFilename();
-
   /**
    *
    *
@@ -483,7 +464,6 @@ public interface BuildTriggerOrBuilder
    * @return The filename.
    */
   java.lang.String getFilename();
-
   /**
    *
    *
@@ -510,7 +490,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the gitFileSource field is set.
    */
   boolean hasGitFileSource();
-
   /**
    *
    *
@@ -523,7 +502,6 @@ public interface BuildTriggerOrBuilder
    * @return The gitFileSource.
    */
   com.google.cloudbuild.v1.GitFileSource getGitFileSource();
-
   /**
    *
    *
@@ -548,7 +526,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -562,7 +539,6 @@ public interface BuildTriggerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -599,7 +575,6 @@ public interface BuildTriggerOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
   int getSubstitutionsCount();
-
   /**
    *
    *
@@ -611,11 +586,9 @@ public interface BuildTriggerOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
   boolean containsSubstitutions(java.lang.String key);
-
   /** Use {@link #getSubstitutionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSubstitutions();
-
   /**
    *
    *
@@ -627,7 +600,6 @@ public interface BuildTriggerOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap();
-
   /**
    *
    *
@@ -643,7 +615,6 @@ public interface BuildTriggerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -676,7 +647,6 @@ public interface BuildTriggerOrBuilder
    * @return A list containing the ignoredFiles.
    */
   java.util.List<java.lang.String> getIgnoredFilesList();
-
   /**
    *
    *
@@ -697,7 +667,6 @@ public interface BuildTriggerOrBuilder
    * @return The count of ignoredFiles.
    */
   int getIgnoredFilesCount();
-
   /**
    *
    *
@@ -719,7 +688,6 @@ public interface BuildTriggerOrBuilder
    * @return The ignoredFiles at the given index.
    */
   java.lang.String getIgnoredFiles(int index);
-
   /**
    *
    *
@@ -761,7 +729,6 @@ public interface BuildTriggerOrBuilder
    * @return A list containing the includedFiles.
    */
   java.util.List<java.lang.String> getIncludedFilesList();
-
   /**
    *
    *
@@ -781,7 +748,6 @@ public interface BuildTriggerOrBuilder
    * @return The count of includedFiles.
    */
   int getIncludedFilesCount();
-
   /**
    *
    *
@@ -802,7 +768,6 @@ public interface BuildTriggerOrBuilder
    * @return The includedFiles at the given index.
    */
   java.lang.String getIncludedFiles(int index);
-
   /**
    *
    *
@@ -836,7 +801,6 @@ public interface BuildTriggerOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -867,7 +831,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the sourceToBuild field is set.
    */
   boolean hasSourceToBuild();
-
   /**
    *
    *
@@ -885,7 +848,6 @@ public interface BuildTriggerOrBuilder
    * @return The sourceToBuild.
    */
   com.google.cloudbuild.v1.GitRepoSource getSourceToBuild();
-
   /**
    *
    *
@@ -919,7 +881,6 @@ public interface BuildTriggerOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -951,7 +912,6 @@ public interface BuildTriggerOrBuilder
    * @return Whether the repositoryEventConfig field is set.
    */
   boolean hasRepositoryEventConfig();
-
   /**
    *
    *
@@ -965,7 +925,6 @@ public interface BuildTriggerOrBuilder
    * @return The repositoryEventConfig.
    */
   com.google.cloudbuild.v1.RepositoryEventConfig getRepositoryEventConfig();
-
   /**
    *
    *

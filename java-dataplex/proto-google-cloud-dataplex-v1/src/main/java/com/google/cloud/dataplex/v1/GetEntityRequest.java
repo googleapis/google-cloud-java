@@ -33,7 +33,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.GetEntityRequest)
     GetEntityRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetEntityRequest.newBuilder() to construct.
   private GetEntityRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
      * <code>ENTITY_VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int ENTITY_VIEW_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
      * <code>SCHEMA = 2;</code>
      */
     public static final int SCHEMA_VALUE = 2;
-
     /**
      *
      *
@@ -251,7 +247,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -278,7 +273,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -308,7 +302,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -327,7 +320,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -523,7 +515,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -720,7 +711,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -746,7 +736,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -772,7 +761,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +785,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +805,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +832,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -865,7 +850,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -887,7 +871,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dataplex.v1.GetEntityRequest.EntityView.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class GetEntityRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    * @return Whether the regionDisksRemoveResourcePoliciesRequestResource field is set.
    */
   boolean hasRegionDisksRemoveResourcePoliciesRequestResource();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest
       getRegionDisksRemoveResourcePoliciesRequestResource();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

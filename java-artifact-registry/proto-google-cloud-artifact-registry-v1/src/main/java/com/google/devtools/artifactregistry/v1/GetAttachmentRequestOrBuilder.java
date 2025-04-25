@@ -38,7 +38,6 @@ public interface GetAttachmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

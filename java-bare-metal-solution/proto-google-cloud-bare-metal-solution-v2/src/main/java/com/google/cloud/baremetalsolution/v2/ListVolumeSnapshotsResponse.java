@@ -33,7 +33,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse)
     ListVolumeSnapshotsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVolumeSnapshotsResponse.newBuilder() to construct.
   private ListVolumeSnapshotsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.VolumeSnapshot> volumeSnapshots_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       getVolumeSnapshotsList() {
     return volumeSnapshots_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       getVolumeSnapshotsOrBuilderList() {
     return volumeSnapshots_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
   public int getVolumeSnapshotsCount() {
     return volumeSnapshots_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
   public com.google.cloud.baremetalsolution.v2.VolumeSnapshot getVolumeSnapshots(int index) {
     return volumeSnapshots_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -453,7 +441,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +748,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return volumeSnapshotsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return volumeSnapshotsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return volumeSnapshotsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +947,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +966,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +979,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         int index) {
       return getVolumeSnapshotsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1022,7 +996,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return volumeSnapshotsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1013,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(volumeSnapshots_);
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1027,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       return getVolumeSnapshotsFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.VolumeSnapshot.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.baremetalsolution.v2.VolumeSnapshot.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1107,7 +1077,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1130,7 +1099,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1121,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1142,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1159,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1191,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1242,7 +1206,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1257,7 +1220,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1273,7 +1235,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1289,7 +1250,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1313,7 +1273,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1295,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1314,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1332,6 @@ public final class ListVolumeSnapshotsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

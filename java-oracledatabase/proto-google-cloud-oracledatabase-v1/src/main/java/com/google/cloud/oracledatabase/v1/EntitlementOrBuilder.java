@@ -37,7 +37,6 @@ public interface EntitlementOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface EntitlementOrBuilder
    * @return Whether the cloudAccountDetails field is set.
    */
   boolean hasCloudAccountDetails();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface EntitlementOrBuilder
    * @return The cloudAccountDetails.
    */
   com.google.cloud.oracledatabase.v1.CloudAccountDetails getCloudAccountDetails();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface EntitlementOrBuilder
    * @return The entitlementId.
    */
   java.lang.String getEntitlementId();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface EntitlementOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

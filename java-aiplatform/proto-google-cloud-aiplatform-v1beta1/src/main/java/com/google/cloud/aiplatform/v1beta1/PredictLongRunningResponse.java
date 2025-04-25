@@ -33,7 +33,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PredictLongRunningResponse)
     PredictLongRunningResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PredictLongRunningResponse.newBuilder() to construct.
   private PredictLongRunningResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
     private ResponseCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
   }
 
   public static final int GENERATE_VIDEO_RESPONSE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
   public boolean hasGenerateVideoResponse() {
     return responseCase_ == 1;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
     }
     return com.google.cloud.aiplatform.v1beta1.GenerateVideoResponse.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -342,7 +337,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -566,7 +560,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.GenerateVideoResponse.Builder,
             com.google.cloud.aiplatform.v1beta1.GenerateVideoResponseOrBuilder>
         generateVideoResponseBuilder_;
-
     /**
      *
      *
@@ -583,7 +576,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
     public boolean hasGenerateVideoResponse() {
       return responseCase_ == 1;
     }
-
     /**
      *
      *
@@ -610,7 +602,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.GenerateVideoResponse.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
       responseCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
       responseCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
       responseCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
         getGenerateVideoResponseBuilder() {
       return getGenerateVideoResponseFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class PredictLongRunningResponse extends com.google.protobuf.Genera
         return com.google.cloud.aiplatform.v1beta1.GenerateVideoResponse.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -83,7 +83,6 @@ public enum ConnectionErrorType implements com.google.protobuf.ProtocolMessageEn
    * <code>CONNECTION_ERROR_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int CONNECTION_ERROR_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public enum ConnectionErrorType implements com.google.protobuf.ProtocolMessageEn
    * <code>ERROR_INTERNAL = 1;</code>
    */
   public static final int ERROR_INTERNAL_VALUE = 1;
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public enum ConnectionErrorType implements com.google.protobuf.ProtocolMessageEn
    * <code>ERROR_CONSUMER_SIDE = 2;</code>
    */
   public static final int ERROR_CONSUMER_SIDE_VALUE = 2;
-
   /**
    *
    *

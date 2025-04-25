@@ -39,7 +39,6 @@ public interface CreateUserWorkloadsConfigMapRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateUserWorkloadsConfigMapRequestOrBuilder
    * @return Whether the userWorkloadsConfigMap field is set.
    */
   boolean hasUserWorkloadsConfigMap();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface CreateUserWorkloadsConfigMapRequestOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
       getUserWorkloadsConfigMap();
-
   /**
    *
    *

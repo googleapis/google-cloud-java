@@ -38,7 +38,6 @@ public interface StrategyOrBuilder
    * @return Whether the standard field is set.
    */
   boolean hasStandard();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface StrategyOrBuilder
    * @return The standard.
    */
   com.google.cloud.deploy.v1.Standard getStandard();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface StrategyOrBuilder
    * @return Whether the canary field is set.
    */
   boolean hasCanary();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface StrategyOrBuilder
    * @return The canary.
    */
   com.google.cloud.deploy.v1.Canary getCanary();
-
   /**
    *
    *

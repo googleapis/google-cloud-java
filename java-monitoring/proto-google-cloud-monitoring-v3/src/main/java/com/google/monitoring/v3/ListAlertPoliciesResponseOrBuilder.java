@@ -34,7 +34,6 @@ public interface ListAlertPoliciesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
   java.util.List<com.google.monitoring.v3.AlertPolicy> getAlertPoliciesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAlertPoliciesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAlertPoliciesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
   int getAlertPoliciesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAlertPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder>
       getAlertPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListAlertPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

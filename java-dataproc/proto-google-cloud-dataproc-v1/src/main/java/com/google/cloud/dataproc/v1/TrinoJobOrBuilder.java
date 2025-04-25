@@ -36,7 +36,6 @@ public interface TrinoJobOrBuilder
    * @return Whether the queryFileUri field is set.
    */
   boolean hasQueryFileUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TrinoJobOrBuilder
    * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TrinoJobOrBuilder
    * @return Whether the queryList field is set.
    */
   boolean hasQueryList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TrinoJobOrBuilder
    * @return The queryList.
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface TrinoJobOrBuilder
    * @return The outputFormat.
    */
   java.lang.String getOutputFormat();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface TrinoJobOrBuilder
    * @return A list containing the clientTags.
    */
   java.util.List<java.lang.String> getClientTagsList();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface TrinoJobOrBuilder
    * @return The count of clientTags.
    */
   int getClientTagsCount();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface TrinoJobOrBuilder
    * @return The clientTags at the given index.
    */
   java.lang.String getClientTags(int index);
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface TrinoJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -224,11 +215,9 @@ public interface TrinoJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
-
   /**
    *
    *
@@ -242,7 +231,6 @@ public interface TrinoJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public interface TrinoJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -289,7 +276,6 @@ public interface TrinoJobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface TrinoJobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
-
   /**
    *
    *

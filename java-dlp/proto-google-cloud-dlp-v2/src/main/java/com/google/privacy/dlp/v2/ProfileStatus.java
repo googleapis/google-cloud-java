@@ -33,7 +33,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ProfileStatus)
     ProfileStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProfileStatus.newBuilder() to construct.
   private ProfileStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESTAMP_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp timestamp_;
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
-
   /**
    *
    *
@@ -341,7 +334,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +553,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -597,7 +587,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -621,7 +610,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +630,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +678,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +693,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -726,7 +710,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *
@@ -757,7 +740,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampBuilder_;
-
     /**
      *
      *
@@ -772,7 +754,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -791,7 +772,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
         return timestampBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -814,7 +794,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +813,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +840,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +859,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +873,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -914,7 +889,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
         return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
-
     /**
      *
      *

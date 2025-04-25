@@ -36,7 +36,6 @@ public interface PointwiseMetricResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PointwiseMetricResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface PointwiseMetricResultOrBuilder
    * @return Whether the customOutput field is set.
    */
   boolean hasCustomOutput();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface PointwiseMetricResultOrBuilder
    * @return The customOutput.
    */
   com.google.cloud.aiplatform.v1beta1.CustomOutput getCustomOutput();
-
   /**
    *
    *

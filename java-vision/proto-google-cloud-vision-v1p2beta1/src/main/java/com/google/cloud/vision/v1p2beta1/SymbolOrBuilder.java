@@ -36,7 +36,6 @@ public interface SymbolOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SymbolOrBuilder
    * @return The property.
    */
   com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty getProperty();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface SymbolOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface SymbolOrBuilder
    * @return The boundingBox.
    */
   com.google.cloud.vision.v1p2beta1.BoundingPoly getBoundingBox();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface SymbolOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *

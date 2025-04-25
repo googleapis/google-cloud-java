@@ -34,7 +34,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetGlobalPublicDelegatedPrefixeRequest)
     GetGlobalPublicDelegatedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetGlobalPublicDelegatedPrefixeRequest.newBuilder() to construct.
   private GetGlobalPublicDelegatedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicDelegatedPrefix_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -347,7 +342,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -577,7 +570,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -622,7 +613,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object publicDelegatedPrefix_ = "";
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class GetGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

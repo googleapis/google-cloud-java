@@ -38,7 +38,6 @@ public interface DiagnoseRouterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

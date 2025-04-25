@@ -36,7 +36,6 @@ public interface InterconnectAttachmentPrivateInfoOrBuilder
    * @return Whether the tag8021q field is set.
    */
   boolean hasTag8021Q();
-
   /**
    *
    *

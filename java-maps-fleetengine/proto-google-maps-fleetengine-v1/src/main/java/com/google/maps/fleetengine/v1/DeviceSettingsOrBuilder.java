@@ -37,7 +37,6 @@ public interface DeviceSettingsOrBuilder
    * @return The enum numeric value on the wire for locationPowerSaveMode.
    */
   int getLocationPowerSaveModeValue();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface DeviceSettingsOrBuilder
    * @return Whether the batteryInfo field is set.
    */
   boolean hasBatteryInfo();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface DeviceSettingsOrBuilder
    * @return The batteryInfo.
    */
   com.google.maps.fleetengine.v1.BatteryInfo getBatteryInfo();
-
   /**
    *
    *

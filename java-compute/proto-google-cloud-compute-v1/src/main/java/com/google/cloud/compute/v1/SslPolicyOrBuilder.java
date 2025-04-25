@@ -36,7 +36,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SslPolicyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SslPolicyOrBuilder
    * @return A list containing the customFeatures.
    */
   java.util.List<java.lang.String> getCustomFeaturesList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SslPolicyOrBuilder
    * @return The count of customFeatures.
    */
   int getCustomFeaturesCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface SslPolicyOrBuilder
    * @return The customFeatures at the given index.
    */
   java.lang.String getCustomFeatures(int index);
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public interface SslPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface SslPolicyOrBuilder
    * @return A list containing the enabledFeatures.
    */
   java.util.List<java.lang.String> getEnabledFeaturesList();
-
   /**
    *
    *
@@ -181,7 +173,6 @@ public interface SslPolicyOrBuilder
    * @return The count of enabledFeatures.
    */
   int getEnabledFeaturesCount();
-
   /**
    *
    *
@@ -195,7 +186,6 @@ public interface SslPolicyOrBuilder
    * @return The enabledFeatures at the given index.
    */
   java.lang.String getEnabledFeatures(int index);
-
   /**
    *
    *
@@ -222,7 +212,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public interface SslPolicyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -261,7 +249,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -287,7 +274,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -300,7 +286,6 @@ public interface SslPolicyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -327,7 +312,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the minTlsVersion field is set.
    */
   boolean hasMinTlsVersion();
-
   /**
    *
    *
@@ -341,7 +325,6 @@ public interface SslPolicyOrBuilder
    * @return The minTlsVersion.
    */
   java.lang.String getMinTlsVersion();
-
   /**
    *
    *
@@ -368,7 +351,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -381,7 +363,6 @@ public interface SslPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -408,7 +389,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the profile field is set.
    */
   boolean hasProfile();
-
   /**
    *
    *
@@ -422,7 +402,6 @@ public interface SslPolicyOrBuilder
    * @return The profile.
    */
   java.lang.String getProfile();
-
   /**
    *
    *
@@ -449,7 +428,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -462,7 +440,6 @@ public interface SslPolicyOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -488,7 +465,6 @@ public interface SslPolicyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -501,7 +477,6 @@ public interface SslPolicyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -525,7 +500,6 @@ public interface SslPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
-
   /**
    *
    *
@@ -536,7 +510,6 @@ public interface SslPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
-
   /**
    *
    *
@@ -547,7 +520,6 @@ public interface SslPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -559,7 +531,6 @@ public interface SslPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
-
   /**
    *
    *

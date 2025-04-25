@@ -43,7 +43,6 @@ public interface KeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface KeyOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface KeyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface KeyOrBuilder
    * @return The keyString.
    */
   java.lang.String getKeyString();
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public interface KeyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface KeyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface KeyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface KeyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public interface KeyOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface KeyOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public interface KeyOrBuilder
    * <code>map&lt;string, string&gt; annotations = 8;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -300,11 +289,9 @@ public interface KeyOrBuilder
    * <code>map&lt;string, string&gt; annotations = 8;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -317,7 +304,6 @@ public interface KeyOrBuilder
    * <code>map&lt;string, string&gt; annotations = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -334,7 +320,6 @@ public interface KeyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -360,7 +345,6 @@ public interface KeyOrBuilder
    * @return Whether the restrictions field is set.
    */
   boolean hasRestrictions();
-
   /**
    *
    *
@@ -373,7 +357,6 @@ public interface KeyOrBuilder
    * @return The restrictions.
    */
   com.google.api.apikeys.v2.Restrictions getRestrictions();
-
   /**
    *
    *
@@ -400,7 +383,6 @@ public interface KeyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

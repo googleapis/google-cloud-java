@@ -42,7 +42,6 @@ public interface UpdateCollectionRequestOrBuilder
    * @return Whether the collection field is set.
    */
   boolean hasCollection();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateCollectionRequestOrBuilder
    * @return The collection.
    */
   com.google.cloud.visionai.v1.Collection getCollection();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface UpdateCollectionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface UpdateCollectionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

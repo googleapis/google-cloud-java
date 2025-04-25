@@ -38,7 +38,6 @@ public interface MigrateResourceRequestOrBuilder
    * @return Whether the migrateMlEngineModelVersionConfig field is set.
    */
   boolean hasMigrateMlEngineModelVersionConfig();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface MigrateResourceRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig
       getMigrateMlEngineModelVersionConfig();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface MigrateResourceRequestOrBuilder
    * @return Whether the migrateAutomlModelConfig field is set.
    */
   boolean hasMigrateAutomlModelConfig();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface MigrateResourceRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig
       getMigrateAutomlModelConfig();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface MigrateResourceRequestOrBuilder
    * @return Whether the migrateAutomlDatasetConfig field is set.
    */
   boolean hasMigrateAutomlDatasetConfig();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface MigrateResourceRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlDatasetConfig
       getMigrateAutomlDatasetConfig();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface MigrateResourceRequestOrBuilder
    * @return Whether the migrateDataLabelingDatasetConfig field is set.
    */
   boolean hasMigrateDataLabelingDatasetConfig();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface MigrateResourceRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig
       getMigrateDataLabelingDatasetConfig();
-
   /**
    *
    *

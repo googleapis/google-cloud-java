@@ -36,7 +36,6 @@ public interface UserMentionMetadataOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UserMentionMetadataOrBuilder
    * @return The user.
    */
   com.google.chat.v1.User getUser();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface UserMentionMetadataOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetRuleRegionSecurityPolicyRequest)
     GetRuleRegionSecurityPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetRuleRegionSecurityPolicyRequest.newBuilder() to construct.
   private GetRuleRegionSecurityPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
   private int bitField0_;
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object securityPolicy_ = "";
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -454,7 +445,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     private int bitField0_;
 
     private int priority_;
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
     }
 
     private java.lang.Object securityPolicy_ = "";
-
     /**
      *
      *
@@ -1005,7 +980,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1023,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1040,6 @@ public final class GetRuleRegionSecurityPolicyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

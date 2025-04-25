@@ -40,7 +40,6 @@ public interface ListConsumerGroupsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface ListConsumerGroupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

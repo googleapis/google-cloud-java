@@ -41,7 +41,6 @@ public interface SetLabelsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface SetLabelsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface SetLabelsRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    */
   int getResourceLabelsCount();
-
   /**
    *
    *
@@ -155,11 +151,9 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    */
   boolean containsResourceLabels(java.lang.String key);
-
   /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface SetLabelsRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface SetLabelsRequestOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public interface SetLabelsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

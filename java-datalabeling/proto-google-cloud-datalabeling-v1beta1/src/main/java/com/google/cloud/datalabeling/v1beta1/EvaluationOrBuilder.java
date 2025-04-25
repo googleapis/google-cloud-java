@@ -39,7 +39,6 @@ public interface EvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface EvaluationOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface EvaluationOrBuilder
    * @return The config.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationConfig getConfig();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface EvaluationOrBuilder
    * @return Whether the evaluationJobRunTime field is set.
    */
   boolean hasEvaluationJobRunTime();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface EvaluationOrBuilder
    * @return The evaluationJobRunTime.
    */
   com.google.protobuf.Timestamp getEvaluationJobRunTime();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface EvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface EvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface EvaluationOrBuilder
    * @return Whether the evaluationMetrics field is set.
    */
   boolean hasEvaluationMetrics();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface EvaluationOrBuilder
    * @return The evaluationMetrics.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationMetrics getEvaluationMetrics();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface EvaluationOrBuilder
    * @return The enum numeric value on the wire for annotationType.
    */
   int getAnnotationTypeValue();
-
   /**
    *
    *

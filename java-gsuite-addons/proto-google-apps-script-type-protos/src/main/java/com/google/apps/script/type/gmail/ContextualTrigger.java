@@ -35,7 +35,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.apps.script.type.gmail.ContextualTrigger)
     ContextualTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContextualTrigger.newBuilder() to construct.
   private ContextualTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     private TriggerCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UNCONDITIONAL_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
   public boolean hasUnconditional() {
     return triggerCase_ == 1;
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     }
     return com.google.apps.script.type.gmail.UnconditionalTrigger.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object onTriggerFunction_ = "";
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -406,7 +399,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -642,7 +634,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
             com.google.apps.script.type.gmail.UnconditionalTrigger.Builder,
             com.google.apps.script.type.gmail.UnconditionalTriggerOrBuilder>
         unconditionalBuilder_;
-
     /**
      *
      *
@@ -658,7 +649,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     public boolean hasUnconditional() {
       return triggerCase_ == 1;
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         return com.google.apps.script.type.gmail.UnconditionalTrigger.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       triggerCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       triggerCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       triggerCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         getUnconditionalBuilder() {
       return getUnconditionalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         return com.google.apps.script.type.gmail.UnconditionalTrigger.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object onTriggerFunction_ = "";
-
     /**
      *
      *
@@ -884,7 +866,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -908,7 +889,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -931,7 +911,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +929,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

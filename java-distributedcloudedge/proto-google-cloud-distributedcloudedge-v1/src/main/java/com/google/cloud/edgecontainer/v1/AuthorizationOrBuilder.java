@@ -40,7 +40,6 @@ public interface AuthorizationOrBuilder
    * @return Whether the adminUsers field is set.
    */
   boolean hasAdminUsers();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface AuthorizationOrBuilder
    * @return The adminUsers.
    */
   com.google.cloud.edgecontainer.v1.ClusterUser getAdminUsers();
-
   /**
    *
    *

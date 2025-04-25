@@ -34,7 +34,6 @@ public interface ListReservationsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.reservation.v1.Reservation> getReservationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReservationsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
   com.google.cloud.bigquery.reservation.v1.Reservation getReservations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReservationsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
   int getReservationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListReservationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.reservation.v1.ReservationOrBuilder>
       getReservationsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListReservationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

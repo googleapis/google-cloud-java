@@ -34,7 +34,6 @@ public interface ListTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Trial> getTrialsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Trial getTrials(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   int getTrialsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TrialOrBuilder> getTrialsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTrialsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

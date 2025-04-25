@@ -33,7 +33,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse)
     ListOSPolicyAssignmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListOSPolicyAssignmentsResponse.newBuilder() to construct.
   private ListOSPolicyAssignmentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1.OSPolicyAssignment> osPolicyAssignments_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       getOsPolicyAssignmentsList() {
     return osPolicyAssignments_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       getOsPolicyAssignmentsOrBuilderList() {
     return osPolicyAssignments_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
   public int getOsPolicyAssignmentsCount() {
     return osPolicyAssignments_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
   public com.google.cloud.osconfig.v1.OSPolicyAssignment getOsPolicyAssignments(int index) {
     return osPolicyAssignments_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return osPolicyAssignmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return osPolicyAssignmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return osPolicyAssignmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +824,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         int index) {
       return getOsPolicyAssignmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -914,7 +892,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return osPolicyAssignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -932,7 +909,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(osPolicyAssignments_);
       }
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       return getOsPolicyAssignmentsFieldBuilder()
           .addBuilder(com.google.cloud.osconfig.v1.OSPolicyAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       return getOsPolicyAssignmentsFieldBuilder()
           .addBuilder(index, com.google.cloud.osconfig.v1.OSPolicyAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1020,7 +993,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1053,6 @@ public final class ListOSPolicyAssignmentsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

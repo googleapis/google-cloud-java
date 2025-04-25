@@ -36,7 +36,6 @@ public interface BinauthzVersionOrBuilder
    * @return The webhookVersion.
    */
   java.lang.String getWebhookVersion();
-
   /**
    *
    *

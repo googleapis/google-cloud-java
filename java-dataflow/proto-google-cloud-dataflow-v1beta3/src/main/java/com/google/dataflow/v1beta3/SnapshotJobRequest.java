@@ -33,7 +33,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.SnapshotJobRequest)
     SnapshotJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SnapshotJobRequest.newBuilder() to construct.
   private SnapshotJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int TTL_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration ttl_;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTtl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SNAPSHOT_SOURCES_FIELD_NUMBER = 5;
   private boolean snapshotSources_ = false;
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -557,7 +544,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -828,7 +814,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -851,7 +836,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +858,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +879,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +920,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +985,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
-
     /**
      *
      *
@@ -1070,7 +1045,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTtl() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return ttlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1085,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1131,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1150,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1164,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1212,7 +1180,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1206,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1262,7 +1228,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1285,7 +1250,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1307,7 +1271,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1288,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1312,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean snapshotSources_;
-
     /**
      *
      *
@@ -1366,7 +1327,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     public boolean getSnapshotSources() {
       return snapshotSources_;
     }
-
     /**
      *
      *
@@ -1386,7 +1346,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1365,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1429,7 +1387,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1452,7 +1409,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1474,7 +1430,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1447,6 @@ public final class SnapshotJobRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

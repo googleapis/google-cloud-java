@@ -34,7 +34,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.GcpUserAccessBinding)
     GcpUserAccessBindingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcpUserAccessBinding.newBuilder() to construct.
   private GcpUserAccessBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupKey_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList accessLevels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getAccessLevelsList() {
     return accessLevels_;
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   public int getAccessLevelsCount() {
     return accessLevels_.size();
   }
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   public java.lang.String getAccessLevels(int index) {
     return accessLevels_.get(index);
   }
-
   /**
    *
    *
@@ -470,7 +461,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -697,7 +687,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -751,7 +739,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object groupKey_ = "";
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +873,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +902,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +927,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       accessLevels_.makeImmutable();
       return accessLevels_;
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     public int getAccessLevelsCount() {
       return accessLevels_.size();
     }
-
     /**
      *
      *
@@ -1049,7 +1026,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     public java.lang.String getAccessLevels(int index) {
       return accessLevels_.get(index);
     }
-
     /**
      *
      *
@@ -1070,7 +1046,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getAccessLevelsBytes(int index) {
       return accessLevels_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1099,7 +1074,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1101,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1125,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1148,6 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

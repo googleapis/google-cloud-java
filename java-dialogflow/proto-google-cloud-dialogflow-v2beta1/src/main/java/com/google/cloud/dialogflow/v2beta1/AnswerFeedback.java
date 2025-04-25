@@ -34,7 +34,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AnswerFeedback)
     AnswerFeedbackOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnswerFeedback.newBuilder() to construct.
   private AnswerFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>CORRECTNESS_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int CORRECTNESS_LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_CORRECT = 1;</code>
      */
     public static final int NOT_CORRECT_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTIALLY_CORRECT = 2;</code>
      */
     public static final int PARTIALLY_CORRECT_VALUE = 2;
-
     /**
      *
      *
@@ -268,7 +264,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     private DetailFeedbackCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -301,7 +296,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CORRECTNESS_LEVEL_FIELD_NUMBER = 1;
   private int correctnessLevel_ = 0;
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public int getCorrectnessLevelValue() {
     return correctnessLevel_;
   }
-
   /**
    *
    *
@@ -342,7 +335,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AGENT_ASSISTANT_DETAIL_FEEDBACK_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -360,7 +352,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAgentAssistantDetailFeedback() {
     return detailFeedbackCase_ == 2;
   }
-
   /**
    *
    *
@@ -382,7 +373,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -405,7 +395,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLICKED_FIELD_NUMBER = 3;
   private boolean clicked_ = false;
-
   /**
    *
    *
@@ -427,7 +416,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLICK_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp clickTime_;
-
   /**
    *
    *
@@ -443,7 +431,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClickTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -459,7 +446,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getClickTime() {
     return clickTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clickTime_;
   }
-
   /**
    *
    *
@@ -476,7 +462,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISPLAYED_FIELD_NUMBER = 4;
   private boolean displayed_ = false;
-
   /**
    *
    *
@@ -496,7 +481,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISPLAY_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp displayTime_;
-
   /**
    *
    *
@@ -512,7 +496,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisplayTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -528,7 +511,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDisplayTime() {
     return displayTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : displayTime_;
   }
-
   /**
    *
    *
@@ -780,7 +762,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1085,7 +1066,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int correctnessLevel_ = 0;
-
     /**
      *
      *
@@ -1102,7 +1082,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public int getCorrectnessLevelValue() {
       return correctnessLevel_;
     }
-
     /**
      *
      *
@@ -1122,7 +1101,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1123,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.v2beta1.AnswerFeedback.CorrectnessLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1169,7 +1146,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1170,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.Builder,
             com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedbackOrBuilder>
         agentAssistantDetailFeedbackBuilder_;
-
     /**
      *
      *
@@ -1212,7 +1187,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAgentAssistantDetailFeedback() {
       return detailFeedbackCase_ == 2;
     }
-
     /**
      *
      *
@@ -1241,7 +1215,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1267,7 +1240,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       detailFeedbackCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1262,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       detailFeedbackCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1299,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       detailFeedbackCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1326,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1341,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         getAgentAssistantDetailFeedbackBuilder() {
       return getAgentAssistantDetailFeedbackFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1396,7 +1364,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1401,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clicked_;
-
     /**
      *
      *
@@ -1453,7 +1419,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean getClicked() {
       return clicked_;
     }
-
     /**
      *
      *
@@ -1476,7 +1441,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1468,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         clickTimeBuilder_;
-
     /**
      *
      *
@@ -1519,7 +1482,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClickTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1538,7 +1500,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return clickTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1561,7 +1522,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1541,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1568,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1629,7 +1587,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1601,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getClickTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1661,7 +1617,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return clickTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clickTime_;
       }
     }
-
     /**
      *
      *
@@ -1689,7 +1644,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean displayed_;
-
     /**
      *
      *
@@ -1706,7 +1660,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisplayed() {
       return displayed_;
     }
-
     /**
      *
      *
@@ -1727,7 +1680,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1753,7 +1705,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         displayTimeBuilder_;
-
     /**
      *
      *
@@ -1768,7 +1719,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisplayTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1789,7 +1739,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return displayTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1812,7 +1761,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1832,7 +1780,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1860,7 +1807,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1880,7 +1826,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1895,7 +1840,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDisplayTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1914,7 +1858,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             : displayTime_;
       }
     }
-
     /**
      *
      *

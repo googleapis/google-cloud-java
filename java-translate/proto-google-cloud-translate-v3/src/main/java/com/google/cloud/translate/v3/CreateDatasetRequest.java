@@ -33,7 +33,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.CreateDatasetRequest)
     CreateDatasetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDatasetRequest.newBuilder() to construct.
   private CreateDatasetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
 
   public static final int DATASET_FIELD_NUMBER = 2;
   private com.google.cloud.translate.v3.Dataset dataset_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
   public boolean hasDataset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.translate.v3.Dataset getDataset() {
     return dataset_ == null ? com.google.cloud.translate.v3.Dataset.getDefaultInstance() : dataset_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -638,7 +628,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +647,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.translate.v3.Dataset.Builder,
             com.google.cloud.translate.v3.DatasetOrBuilder>
         datasetBuilder_;
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     public boolean hasDataset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
         return datasetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getDatasetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
             : dataset_;
       }
     }
-
     /**
      *
      *

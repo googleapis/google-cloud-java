@@ -36,7 +36,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The currentVersion.
    */
   java.lang.String getCurrentVersion();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The targetVersion.
    */
   java.lang.String getTargetVersion();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -244,7 +235,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public interface UpgradeInfoEventOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

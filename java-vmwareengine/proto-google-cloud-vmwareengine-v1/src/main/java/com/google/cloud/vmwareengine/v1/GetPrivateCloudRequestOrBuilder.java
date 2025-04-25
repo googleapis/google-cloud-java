@@ -42,7 +42,6 @@ public interface GetPrivateCloudRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

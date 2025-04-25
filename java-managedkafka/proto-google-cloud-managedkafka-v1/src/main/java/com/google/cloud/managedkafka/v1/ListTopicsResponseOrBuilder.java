@@ -35,7 +35,6 @@ public interface ListTopicsResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.Topic topics = 1;</code>
    */
   java.util.List<com.google.cloud.managedkafka.v1.Topic> getTopicsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListTopicsResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.Topic topics = 1;</code>
    */
   com.google.cloud.managedkafka.v1.Topic getTopics(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListTopicsResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.Topic topics = 1;</code>
    */
   int getTopicsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListTopicsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.managedkafka.v1.TopicOrBuilder>
       getTopicsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListTopicsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

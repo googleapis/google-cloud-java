@@ -39,7 +39,6 @@ public interface UpdateAutokeyConfigRequestOrBuilder
    * @return Whether the autokeyConfig field is set.
    */
   boolean hasAutokeyConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateAutokeyConfigRequestOrBuilder
    * @return The autokeyConfig.
    */
   com.google.cloud.kms.v1.AutokeyConfig getAutokeyConfig();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateAutokeyConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateAutokeyConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

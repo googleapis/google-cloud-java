@@ -38,7 +38,6 @@ public interface RemoveDirectoryRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface RemoveDirectoryRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

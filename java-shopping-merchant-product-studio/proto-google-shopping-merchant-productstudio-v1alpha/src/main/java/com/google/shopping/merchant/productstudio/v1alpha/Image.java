@@ -33,7 +33,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.productstudio.v1alpha.Image)
     ImageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Image.newBuilder() to construct.
   private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     private ImageCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUri() {
     return imageCase_ == 1;
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   public boolean hasData() {
     return imageCase_ == 2;
   }
-
   /**
    *
    *
@@ -410,7 +403,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +640,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return imageCase_ == 1;
     }
-
     /**
      *
      *
@@ -677,7 +668,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -706,7 +696,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public boolean hasData() {
       return imageCase_ == 2;
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
-
     /**
      *
      *
@@ -826,7 +811,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

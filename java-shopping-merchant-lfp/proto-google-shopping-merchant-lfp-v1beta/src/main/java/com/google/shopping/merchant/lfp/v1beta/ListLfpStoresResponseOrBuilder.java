@@ -34,7 +34,6 @@ public interface ListLfpStoresResponseOrBuilder
    * <code>repeated .google.shopping.merchant.lfp.v1beta.LfpStore lfp_stores = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpStore> getLfpStoresList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListLfpStoresResponseOrBuilder
    * <code>repeated .google.shopping.merchant.lfp.v1beta.LfpStore lfp_stores = 1;</code>
    */
   com.google.shopping.merchant.lfp.v1beta.LfpStore getLfpStores(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListLfpStoresResponseOrBuilder
    * <code>repeated .google.shopping.merchant.lfp.v1beta.LfpStore lfp_stores = 1;</code>
    */
   int getLfpStoresCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListLfpStoresResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.lfp.v1beta.LfpStoreOrBuilder>
       getLfpStoresOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListLfpStoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

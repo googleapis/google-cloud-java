@@ -33,7 +33,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.IdentifierSettings)
     IdentifierSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IdentifierSettings.newBuilder() to construct.
   private IdentifierSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * <code>IDENTIFIER_CASE_UNSPECIFIED = 0;</code>
      */
     public static final int IDENTIFIER_CASE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * <code>ORIGINAL = 1;</code>
      */
     public static final int ORIGINAL_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * <code>UPPER = 2;</code>
      */
     public static final int UPPER_VALUE = 2;
-
     /**
      *
      *
@@ -303,7 +299,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * <code>IDENTIFIER_REWRITE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int IDENTIFIER_REWRITE_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -314,7 +309,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
      * <code>NONE = 1;</code>
      */
     public static final int NONE_VALUE = 1;
-
     /**
      *
      *
@@ -416,7 +410,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int OUTPUT_IDENTIFIER_CASE_FIELD_NUMBER = 1;
   private int outputIdentifierCase_ = 0;
-
   /**
    *
    *
@@ -434,7 +427,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
   public int getOutputIdentifierCaseValue() {
     return outputIdentifierCase_;
   }
-
   /**
    *
    *
@@ -461,7 +453,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
 
   public static final int IDENTIFIER_REWRITE_MODE_FIELD_NUMBER = 2;
   private int identifierRewriteMode_ = 0;
-
   /**
    *
    *
@@ -479,7 +470,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
   public int getIdentifierRewriteModeValue() {
     return identifierRewriteMode_;
   }
-
   /**
    *
    *
@@ -686,7 +676,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -885,7 +874,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int outputIdentifierCase_ = 0;
-
     /**
      *
      *
@@ -903,7 +891,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     public int getOutputIdentifierCaseValue() {
       return outputIdentifierCase_;
     }
-
     /**
      *
      *
@@ -924,7 +911,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +935,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -974,7 +959,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +980,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     }
 
     private int identifierRewriteMode_ = 0;
-
     /**
      *
      *
@@ -1014,7 +997,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
     public int getIdentifierRewriteModeValue() {
       return identifierRewriteMode_;
     }
-
     /**
      *
      *
@@ -1035,7 +1017,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1041,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1086,7 +1066,6 @@ public final class IdentifierSettings extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

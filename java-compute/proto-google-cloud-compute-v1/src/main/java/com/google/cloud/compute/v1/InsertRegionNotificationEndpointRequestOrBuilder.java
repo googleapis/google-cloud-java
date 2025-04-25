@@ -38,7 +38,6 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
    * @return Whether the notificationEndpointResource field is set.
    */
   boolean hasNotificationEndpointResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
    * @return The notificationEndpointResource.
    */
   com.google.cloud.compute.v1.NotificationEndpoint getNotificationEndpointResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

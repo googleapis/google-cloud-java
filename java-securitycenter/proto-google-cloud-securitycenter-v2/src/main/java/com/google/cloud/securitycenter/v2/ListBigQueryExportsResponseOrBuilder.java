@@ -34,7 +34,6 @@ public interface ListBigQueryExportsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.BigQueryExport big_query_exports = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.BigQueryExport> getBigQueryExportsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBigQueryExportsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.BigQueryExport big_query_exports = 1;</code>
    */
   com.google.cloud.securitycenter.v2.BigQueryExport getBigQueryExports(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBigQueryExportsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.BigQueryExport big_query_exports = 1;</code>
    */
   int getBigQueryExportsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListBigQueryExportsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.BigQueryExportOrBuilder>
       getBigQueryExportsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListBigQueryExportsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

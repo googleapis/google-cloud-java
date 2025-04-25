@@ -34,7 +34,6 @@ public interface ListDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Deployment deployments = 1;</code>
    */
   java.util.List<com.google.cloud.config.v1.Deployment> getDeploymentsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Deployment deployments = 1;</code>
    */
   com.google.cloud.config.v1.Deployment getDeployments(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.Deployment deployments = 1;</code>
    */
   int getDeploymentsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDeploymentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.config.v1.DeploymentOrBuilder>
       getDeploymentsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDeploymentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListDeploymentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListDeploymentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListDeploymentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

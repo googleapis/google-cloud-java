@@ -33,7 +33,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.CreateGrantRequest)
     CreateGrantRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateGrantRequest.newBuilder() to construct.
   private CreateGrantRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int GRANT_FIELD_NUMBER = 2;
   private com.google.cloud.privilegedaccessmanager.v1.Grant grant_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasGrant() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.privilegedaccessmanager.v1.Grant.getDefaultInstance()
         : grant_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -444,7 +436,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +667,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +793,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.privilegedaccessmanager.v1.Grant.Builder,
             com.google.cloud.privilegedaccessmanager.v1.GrantOrBuilder>
         grantBuilder_;
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasGrant() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
         return grantBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +906,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +927,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGrantFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -985,7 +963,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
             : grant_;
       }
     }
-
     /**
      *
      *
@@ -1015,7 +992,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1050,7 +1026,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1060,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1122,6 @@ public final class CreateGrantRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

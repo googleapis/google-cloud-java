@@ -33,7 +33,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.RomanizeTextResponse)
     RomanizeTextResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RomanizeTextResponse.newBuilder() to construct.
   private RomanizeTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.Romanization> romanizations_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.translate.v3.Romanization> getRomanizationsList() {
     return romanizations_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       getRomanizationsOrBuilderList() {
     return romanizations_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
   public int getRomanizationsCount() {
     return romanizations_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.translate.v3.Romanization getRomanizations(int index) {
     return romanizations_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +569,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
         return romanizationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
         return romanizationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
         return romanizationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.translate.v3.Romanization.Builder getRomanizationsBuilder(int index) {
       return getRomanizationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
         return romanizationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(romanizations_);
       }
     }
-
     /**
      *
      *
@@ -896,7 +874,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       return getRomanizationsFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.Romanization.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -912,7 +889,6 @@ public final class RomanizeTextResponse extends com.google.protobuf.GeneratedMes
       return getRomanizationsFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.Romanization.getDefaultInstance());
     }
-
     /**
      *
      *

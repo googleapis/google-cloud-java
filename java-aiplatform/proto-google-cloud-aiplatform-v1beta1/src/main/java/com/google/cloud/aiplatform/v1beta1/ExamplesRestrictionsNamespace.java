@@ -33,7 +33,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExamplesRestrictionsNamespace)
     ExamplesRestrictionsNamespaceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExamplesRestrictionsNamespace.newBuilder() to construct.
   private ExamplesRestrictionsNamespace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object namespaceName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allow_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getAllowList() {
     return allow_;
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public int getAllowCount() {
     return allow_.size();
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public java.lang.String getAllow(int index) {
     return allow_.get(index);
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList deny_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getDenyList() {
     return deny_;
   }
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public int getDenyCount() {
     return deny_.size();
   }
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public java.lang.String getDeny(int index) {
     return deny_.get(index);
   }
-
   /**
    *
    *
@@ -448,7 +437,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,7 +670,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object namespaceName_ = "";
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +714,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +752,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       allow_.makeImmutable();
       return allow_;
     }
-
     /**
      *
      *
@@ -832,7 +813,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public int getAllowCount() {
       return allow_.size();
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public java.lang.String getAllow(int index) {
       return allow_.get(index);
     }
-
     /**
      *
      *
@@ -864,7 +843,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getAllowBytes(int index) {
       return allow_.getByteString(index);
     }
-
     /**
      *
      *
@@ -888,7 +866,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1000,7 +973,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       deny_.makeImmutable();
       return deny_;
     }
-
     /**
      *
      *
@@ -1015,7 +987,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public int getDenyCount() {
       return deny_.size();
     }
-
     /**
      *
      *
@@ -1031,7 +1002,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public java.lang.String getDeny(int index) {
       return deny_.get(index);
     }
-
     /**
      *
      *
@@ -1047,7 +1017,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getDenyBytes(int index) {
       return deny_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1071,7 +1040,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1062,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1081,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1099,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

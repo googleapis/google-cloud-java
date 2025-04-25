@@ -38,7 +38,6 @@ public interface HardwarePhysicalInfoOrBuilder
    * @return The enum numeric value on the wire for powerReceptacle.
    */
   int getPowerReceptacleValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface HardwarePhysicalInfoOrBuilder
    * @return The enum numeric value on the wire for networkUplink.
    */
   int getNetworkUplinkValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface HardwarePhysicalInfoOrBuilder
    * @return The enum numeric value on the wire for voltage.
    */
   int getVoltageValue();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface HardwarePhysicalInfoOrBuilder
    * @return The enum numeric value on the wire for amperes.
    */
   int getAmperesValue();
-
   /**
    *
    *

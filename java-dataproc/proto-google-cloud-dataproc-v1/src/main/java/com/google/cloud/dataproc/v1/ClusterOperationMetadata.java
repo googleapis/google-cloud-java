@@ -33,7 +33,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ClusterOperationMetadata)
     ClusterOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClusterOperationMetadata.newBuilder() to construct.
   private ClusterOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterName_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterUuid_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   public static final int STATUS_FIELD_NUMBER = 9;
   private com.google.cloud.dataproc.v1.ClusterOperationStatus status_;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         ? com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance()
         : status_;
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> statusHistory_;
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       getStatusHistoryList() {
     return statusHistory_;
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       getStatusHistoryOrBuilderList() {
     return statusHistory_;
   }
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public int getStatusHistoryCount() {
     return statusHistory_.size();
   }
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index) {
     return statusHistory_.get(index);
   }
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operationType_ = "";
-
   /**
    *
    *
@@ -364,7 +350,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +378,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -417,7 +401,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -468,7 +451,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -486,14 +468,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -508,7 +488,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -530,7 +509,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -558,7 +536,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList warnings_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -573,7 +550,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getWarningsList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -588,7 +564,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public int getWarningsCount() {
     return warnings_.size();
   }
-
   /**
    *
    *
@@ -604,7 +579,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public java.lang.String getWarnings(int index) {
     return warnings_.get(index);
   }
-
   /**
    *
    *
@@ -626,7 +600,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList childOperationIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -642,7 +615,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getChildOperationIdsList() {
     return childOperationIds_;
   }
-
   /**
    *
    *
@@ -658,7 +630,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public int getChildOperationIdsCount() {
     return childOperationIds_.size();
   }
-
   /**
    *
    *
@@ -675,7 +646,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public java.lang.String getChildOperationIds(int index) {
     return childOperationIds_.get(index);
   }
-
   /**
    *
    *
@@ -954,7 +924,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1361,7 +1330,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object clusterName_ = "";
-
     /**
      *
      *
@@ -1384,7 +1352,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1374,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1429,7 +1395,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1412,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1436,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object clusterUuid_ = "";
-
     /**
      *
      *
@@ -1495,7 +1458,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1518,7 +1480,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1540,7 +1501,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1518,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1547,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder,
             com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -1605,7 +1563,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1628,7 +1585,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1653,7 +1609,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1676,7 +1631,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1661,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1682,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1746,7 +1698,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1767,7 +1718,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             : status_;
       }
     }
-
     /**
      *
      *
@@ -1833,7 +1783,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return statusHistoryBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1852,7 +1801,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return statusHistoryBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1871,7 +1819,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return statusHistoryBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1897,7 +1844,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1920,7 +1866,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1945,7 +1890,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1971,7 +1915,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1937,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2017,7 +1959,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1981,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2062,7 +2002,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2084,7 +2023,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2100,7 +2038,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         int index) {
       return getStatusHistoryFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2120,7 +2057,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return statusHistoryBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2140,7 +2076,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(statusHistory_);
       }
     }
-
     /**
      *
      *
@@ -2156,7 +2091,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return getStatusHistoryFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2174,7 +2108,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2212,7 +2145,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object operationType_ = "";
-
     /**
      *
      *
@@ -2235,7 +2167,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2258,7 +2189,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2280,7 +2210,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2298,7 +2227,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2323,7 +2251,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2346,7 +2273,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2369,7 +2295,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2391,7 +2316,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2409,7 +2333,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2458,7 +2381,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2476,14 +2398,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2498,7 +2418,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2520,7 +2439,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2548,7 +2466,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2566,14 +2483,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2595,7 +2510,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -2621,7 +2535,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2637,7 +2550,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       warnings_.makeImmutable();
       return warnings_;
     }
-
     /**
      *
      *
@@ -2652,7 +2564,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public int getWarningsCount() {
       return warnings_.size();
     }
-
     /**
      *
      *
@@ -2668,7 +2579,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
     }
-
     /**
      *
      *
@@ -2684,7 +2594,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getWarningsBytes(int index) {
       return warnings_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2708,7 +2617,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2731,7 +2639,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2751,7 +2658,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2770,7 +2676,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2804,7 +2709,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -2821,7 +2725,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       childOperationIds_.makeImmutable();
       return childOperationIds_;
     }
-
     /**
      *
      *
@@ -2837,7 +2740,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public int getChildOperationIdsCount() {
       return childOperationIds_.size();
     }
-
     /**
      *
      *
@@ -2854,7 +2756,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public java.lang.String getChildOperationIds(int index) {
       return childOperationIds_.get(index);
     }
-
     /**
      *
      *
@@ -2871,7 +2772,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getChildOperationIdsBytes(int index) {
       return childOperationIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2896,7 +2796,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2920,7 +2819,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2941,7 +2839,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2961,7 +2858,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

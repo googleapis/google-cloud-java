@@ -35,7 +35,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig)
     SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.newBuilder() to construct.
   private SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -108,10 +107,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      * <code>UNDEFINED_RULE_VISIBILITY = 0;</code>
      */
     public static final int UNDEFINED_RULE_VISIBILITY_VALUE = 0;
-
     /** <code>PREMIUM = 399530551;</code> */
     public static final int PREMIUM_VALUE = 399530551;
-
     /** <code>STANDARD = 484642493;</code> */
     public static final int STANDARD_VALUE = 484642493;
 
@@ -204,7 +201,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_ = false;
-
   /**
    *
    *
@@ -220,7 +216,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +236,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleVisibility_ = "";
-
   /**
    *
    *
@@ -258,7 +252,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public boolean hasRuleVisibility() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +276,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +308,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
           com.google.cloud.compute.v1
               .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig>
       thresholdConfigs_;
-
   /**
    *
    *
@@ -335,7 +326,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getThresholdConfigsList() {
     return thresholdConfigs_;
   }
-
   /**
    *
    *
@@ -355,7 +345,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getThresholdConfigsOrBuilderList() {
     return thresholdConfigs_;
   }
-
   /**
    *
    *
@@ -371,7 +360,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
   public int getThresholdConfigsCount() {
     return thresholdConfigs_.size();
   }
-
   /**
    *
    *
@@ -389,7 +377,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       getThresholdConfigs(int index) {
     return thresholdConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -625,7 +612,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -918,7 +904,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     private int bitField0_;
 
     private boolean enable_;
-
     /**
      *
      *
@@ -934,7 +919,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -950,7 +934,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean getEnable() {
       return enable_;
     }
-
     /**
      *
      *
@@ -970,7 +953,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +972,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
 
     private java.lang.Object ruleVisibility_ = "";
-
     /**
      *
      *
@@ -1006,7 +987,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     public boolean hasRuleVisibility() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1030,7 +1010,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1033,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1055,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1073,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1144,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return thresholdConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1162,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return thresholdConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1208,7 +1182,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return thresholdConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1210,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1236,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1292,7 +1263,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1291,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1316,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1342,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1368,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1389,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1410,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1426,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         getThresholdConfigsBuilder(int index) {
       return getThresholdConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1483,7 +1446,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return thresholdConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1506,7 +1468,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         return java.util.Collections.unmodifiableList(thresholdConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1488,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1549,7 +1509,6 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *

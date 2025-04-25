@@ -93,8 +93,7 @@ public class MockMetricsV1Beta3Impl extends MetricsV1Beta3ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetJobExecutionDetails, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetJobExecutionDetails, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   JobExecutionDetails.class.getName(),
                   Exception.class.getName())));
@@ -116,8 +115,7 @@ public class MockMetricsV1Beta3Impl extends MetricsV1Beta3ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetStageExecutionDetails, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetStageExecutionDetails, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   StageExecutionDetails.class.getName(),
                   Exception.class.getName())));

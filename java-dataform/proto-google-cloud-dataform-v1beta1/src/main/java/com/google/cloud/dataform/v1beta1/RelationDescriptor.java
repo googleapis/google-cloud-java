@@ -33,7 +33,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.RelationDescriptor)
     RelationDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RelationDescriptor.newBuilder() to construct.
   private RelationDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return A list containing the path.
      */
     java.util.List<java.lang.String> getPathList();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return The count of path.
      */
     int getPathCount();
-
     /**
      *
      *
@@ -124,7 +121,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return The path at the given index.
      */
     java.lang.String getPath(int index);
-
     /**
      *
      *
@@ -152,7 +148,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -178,7 +173,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return A list containing the bigqueryPolicyTags.
      */
     java.util.List<java.lang.String> getBigqueryPolicyTagsList();
-
     /**
      *
      *
@@ -191,7 +185,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return The count of bigqueryPolicyTags.
      */
     int getBigqueryPolicyTagsCount();
-
     /**
      *
      *
@@ -205,7 +198,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return The bigqueryPolicyTags at the given index.
      */
     java.lang.String getBigqueryPolicyTags(int index);
-
     /**
      *
      *
@@ -220,7 +212,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getBigqueryPolicyTagsBytes(int index);
   }
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor)
       ColumnDescriptorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ColumnDescriptor.newBuilder() to construct.
     private ColumnDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -273,7 +263,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList path_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -289,7 +278,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getPathList() {
       return path_;
     }
-
     /**
      *
      *
@@ -305,7 +293,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public int getPathCount() {
       return path_.size();
     }
-
     /**
      *
      *
@@ -322,7 +309,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public java.lang.String getPath(int index) {
       return path_.get(index);
     }
-
     /**
      *
      *
@@ -344,7 +330,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -368,7 +353,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -398,7 +382,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList bigqueryPolicyTags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -413,7 +396,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getBigqueryPolicyTagsList() {
       return bigqueryPolicyTags_;
     }
-
     /**
      *
      *
@@ -428,7 +410,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public int getBigqueryPolicyTagsCount() {
       return bigqueryPolicyTags_.size();
     }
-
     /**
      *
      *
@@ -444,7 +425,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public java.lang.String getBigqueryPolicyTags(int index) {
       return bigqueryPolicyTags_.get(index);
     }
-
     /**
      *
      *
@@ -656,7 +636,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -923,7 +901,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         path_.makeImmutable();
         return path_;
       }
-
       /**
        *
        *
@@ -939,7 +916,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public int getPathCount() {
         return path_.size();
       }
-
       /**
        *
        *
@@ -956,7 +932,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public java.lang.String getPath(int index) {
         return path_.get(index);
       }
-
       /**
        *
        *
@@ -973,7 +948,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getPathBytes(int index) {
         return path_.getByteString(index);
       }
-
       /**
        *
        *
@@ -998,7 +972,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1022,7 +995,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1043,7 +1015,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1063,7 +1034,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1090,7 +1060,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -1113,7 +1082,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1136,7 +1104,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1158,7 +1125,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1176,7 +1142,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1209,7 +1174,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -1225,7 +1189,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         bigqueryPolicyTags_.makeImmutable();
         return bigqueryPolicyTags_;
       }
-
       /**
        *
        *
@@ -1240,7 +1203,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public int getBigqueryPolicyTagsCount() {
         return bigqueryPolicyTags_.size();
       }
-
       /**
        *
        *
@@ -1256,7 +1218,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public java.lang.String getBigqueryPolicyTags(int index) {
         return bigqueryPolicyTags_.get(index);
       }
-
       /**
        *
        *
@@ -1272,7 +1233,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getBigqueryPolicyTagsBytes(int index) {
         return bigqueryPolicyTags_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1296,7 +1256,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1319,7 +1278,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1339,7 +1297,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1358,7 +1315,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1455,7 +1411,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1479,7 +1434,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1509,7 +1463,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor>
       columns_;
-
   /**
    *
    *
@@ -1525,7 +1478,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       getColumnsList() {
     return columns_;
   }
-
   /**
    *
    *
@@ -1542,7 +1494,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       getColumnsOrBuilderList() {
     return columns_;
   }
-
   /**
    *
    *
@@ -1557,7 +1508,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   public int getColumnsCount() {
     return columns_.size();
   }
-
   /**
    *
    *
@@ -1573,7 +1523,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       int index) {
     return columns_.get(index);
   }
-
   /**
    *
    *
@@ -1618,7 +1567,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   public int getBigqueryLabelsCount() {
     return internalGetBigqueryLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1635,14 +1583,12 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     }
     return internalGetBigqueryLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getBigqueryLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getBigqueryLabels() {
     return getBigqueryLabelsMap();
   }
-
   /**
    *
    *
@@ -1656,7 +1602,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getBigqueryLabelsMap() {
     return internalGetBigqueryLabels().getMap();
   }
-
   /**
    *
    *
@@ -1677,7 +1622,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetBigqueryLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1886,7 +1830,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2175,7 +2118,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2198,7 +2140,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2221,7 +2162,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2243,7 +2183,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2261,7 +2200,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2322,7 +2260,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return columnsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2341,7 +2278,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return columnsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2361,7 +2297,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return columnsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2387,7 +2322,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2412,7 +2346,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2438,7 +2371,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2464,7 +2396,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2488,7 +2419,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2513,7 +2443,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2467,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2560,7 +2488,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2509,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2598,7 +2524,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         getColumnsBuilder(int index) {
       return getColumnsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2618,7 +2543,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return columnsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2640,7 +2564,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(columns_);
       }
     }
-
     /**
      *
      *
@@ -2659,7 +2582,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
               com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2679,7 +2601,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
               com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2742,7 +2663,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public int getBigqueryLabelsCount() {
       return internalGetBigqueryLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2759,14 +2679,12 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       }
       return internalGetBigqueryLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getBigqueryLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getBigqueryLabels() {
       return getBigqueryLabelsMap();
     }
-
     /**
      *
      *
@@ -2780,7 +2698,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getBigqueryLabelsMap() {
       return internalGetBigqueryLabels().getMap();
     }
-
     /**
      *
      *
@@ -2801,7 +2718,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetBigqueryLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2828,7 +2744,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       internalGetMutableBigqueryLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2845,14 +2760,12 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       internalGetMutableBigqueryLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableBigqueryLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableBigqueryLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2873,7 +2786,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

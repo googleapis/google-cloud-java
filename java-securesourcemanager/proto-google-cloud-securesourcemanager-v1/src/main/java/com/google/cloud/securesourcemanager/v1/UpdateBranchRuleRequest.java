@@ -33,7 +33,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest)
     UpdateBranchRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateBranchRuleRequest.newBuilder() to construct.
   private UpdateBranchRuleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int BRANCH_RULE_FIELD_NUMBER = 1;
   private com.google.cloud.securesourcemanager.v1.BranchRule branchRule_;
-
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -77,7 +75,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
   public boolean hasBranchRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -91,7 +88,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
         ? com.google.cloud.securesourcemanager.v1.BranchRule.getDefaultInstance()
         : branchRule_;
   }
-
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -106,7 +102,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -616,7 +607,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
             com.google.cloud.securesourcemanager.v1.BranchRule.Builder,
             com.google.cloud.securesourcemanager.v1.BranchRuleOrBuilder>
         branchRuleBuilder_;
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -627,7 +617,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
     public boolean hasBranchRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -644,7 +633,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
         return branchRuleBuilder_.getMessage();
       }
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -663,7 +651,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -680,7 +667,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -705,7 +691,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -721,7 +706,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -732,7 +716,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return getBranchRuleFieldBuilder().getBuilder();
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -747,7 +730,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
             : branchRule_;
       }
     }
-
     /**
      * <code>
      * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -771,7 +753,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -788,7 +769,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -809,7 +789,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +814,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -855,7 +833,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -881,7 +858,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -909,7 +885,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +909,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +941,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +965,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +984,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1036,7 +1007,6 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
-
     /**
      *
      *

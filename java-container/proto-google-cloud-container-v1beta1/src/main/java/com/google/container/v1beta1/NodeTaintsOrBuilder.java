@@ -34,7 +34,6 @@ public interface NodeTaintsOrBuilder
    * <code>repeated .google.container.v1beta1.NodeTaint taints = 1;</code>
    */
   java.util.List<com.google.container.v1beta1.NodeTaint> getTaintsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface NodeTaintsOrBuilder
    * <code>repeated .google.container.v1beta1.NodeTaint taints = 1;</code>
    */
   com.google.container.v1beta1.NodeTaint getTaints(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface NodeTaintsOrBuilder
    * <code>repeated .google.container.v1beta1.NodeTaint taints = 1;</code>
    */
   int getTaintsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface NodeTaintsOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.NodeTaintOrBuilder>
       getTaintsOrBuilderList();
-
   /**
    *
    *

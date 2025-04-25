@@ -38,7 +38,6 @@ public interface BatchGetDocumentsMetadataResponseOrBuilder
   java.util.List<
           com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataResponse.DocumentMetadata>
       getDocumentsMetadataList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface BatchGetDocumentsMetadataResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataResponse.DocumentMetadata
       getDocumentsMetadata(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface BatchGetDocumentsMetadataResponseOrBuilder
    * </code>
    */
   int getDocumentsMetadataCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface BatchGetDocumentsMetadataResponseOrBuilder
               com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataResponse
                   .DocumentMetadataOrBuilder>
       getDocumentsMetadataOrBuilderList();
-
   /**
    *
    *

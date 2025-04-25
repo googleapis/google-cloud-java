@@ -34,7 +34,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerRequest)
     SetInstanceTemplateInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetInstanceTemplateInstanceGroupManagerRequest.newBuilder() to construct.
   private SetInstanceTemplateInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       INSTANCE_GROUP_MANAGERS_SET_INSTANCE_TEMPLATE_REQUEST_RESOURCE_FIELD_NUMBER = 9809093;
   private com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest
       instanceGroupManagersSetInstanceTemplateRequestResource_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersSetInstanceTemplateRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
             .getDefaultInstance()
         : instanceGroupManagersSetInstanceTemplateRequestResource_;
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -347,7 +335,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -594,7 +581,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -872,7 +858,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -896,7 +881,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +904,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -943,7 +926,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +944,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +975,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequestOrBuilder>
         instanceGroupManagersSetInstanceTemplateRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1011,7 +991,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersSetInstanceTemplateRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1036,7 +1015,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return instanceGroupManagersSetInstanceTemplateRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1040,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1064,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1096,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1117,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1134,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersSetInstanceTemplateRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1184,7 +1157,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
             : instanceGroupManagersSetInstanceTemplateRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1189,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1242,7 +1213,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1267,7 +1237,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1291,7 +1260,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1279,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1305,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1353,7 +1319,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1376,7 +1341,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1399,7 +1363,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1421,7 +1384,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1401,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1425,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1489,7 +1449,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1473,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1496,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1515,6 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

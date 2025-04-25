@@ -33,7 +33,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.GenerateSshScriptRequest)
     GenerateSshScriptRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateSshScriptRequest.newBuilder() to construct.
   private GenerateSshScriptRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     private VmConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object migrationJob_ = "";
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vm_ = "";
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   }
 
   public static final int VM_CREATION_CONFIG_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   public boolean hasVmCreationConfig() {
     return vmConfigCase_ == 100;
   }
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     }
     return com.google.cloud.clouddms.v1.VmCreationConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   }
 
   public static final int VM_SELECTION_CONFIG_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   public boolean hasVmSelectionConfig() {
     return vmConfigCase_ == 101;
   }
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     }
     return com.google.cloud.clouddms.v1.VmSelectionConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -331,7 +319,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
 
   public static final int VM_PORT_FIELD_NUMBER = 3;
   private int vmPort_ = 0;
-
   /**
    *
    *
@@ -565,7 +552,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -842,7 +828,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object migrationJob_ = "";
-
     /**
      *
      *
@@ -865,7 +850,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +910,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +934,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object vm_ = "";
-
     /**
      *
      *
@@ -976,7 +956,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +978,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +999,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1044,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
             com.google.cloud.clouddms.v1.VmCreationConfig.Builder,
             com.google.cloud.clouddms.v1.VmCreationConfigOrBuilder>
         vmCreationConfigBuilder_;
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public boolean hasVmCreationConfig() {
       return vmConfigCase_ == 100;
     }
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return com.google.cloud.clouddms.v1.VmCreationConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1106,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       vmConfigCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1126,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       vmConfigCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       vmConfigCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1183,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1195,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public com.google.cloud.clouddms.v1.VmCreationConfig.Builder getVmCreationConfigBuilder() {
       return getVmCreationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1247,7 +1215,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return com.google.cloud.clouddms.v1.VmCreationConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1253,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
             com.google.cloud.clouddms.v1.VmSelectionConfig.Builder,
             com.google.cloud.clouddms.v1.VmSelectionConfigOrBuilder>
         vmSelectionConfigBuilder_;
-
     /**
      *
      *
@@ -1302,7 +1268,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public boolean hasVmSelectionConfig() {
       return vmConfigCase_ == 101;
     }
-
     /**
      *
      *
@@ -1328,7 +1293,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return com.google.cloud.clouddms.v1.VmSelectionConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1315,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       vmConfigCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1335,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       vmConfigCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1367,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       vmConfigCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1392,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1404,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public com.google.cloud.clouddms.v1.VmSelectionConfig.Builder getVmSelectionConfigBuilder() {
       return getVmSelectionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1465,7 +1424,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return com.google.cloud.clouddms.v1.VmSelectionConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1458,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     }
 
     private int vmPort_;
-
     /**
      *
      *
@@ -1516,7 +1473,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public int getVmPort() {
       return vmPort_;
     }
-
     /**
      *
      *
@@ -1536,7 +1492,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public final class ImportConversationDataOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata)
     ImportConversationDataOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportConversationDataOperationMetadata.newBuilder() to construct.
   private ImportConversationDataOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ImportConversationDataOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationDataset_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class ImportConversationDataOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class ImportConversationDataOperationMetadata
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class ImportConversationDataOperationMetadata
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class ImportConversationDataOperationMetadata
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class ImportConversationDataOperationMetadata
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class ImportConversationDataOperationMetadata
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public final class ImportConversationDataOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class ImportConversationDataOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public final class ImportConversationDataOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -446,7 +435,6 @@ public final class ImportConversationDataOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +719,6 @@ public final class ImportConversationDataOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationDataset_ = "";
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class ImportConversationDataOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class ImportConversationDataOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class ImportConversationDataOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class ImportConversationDataOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class ImportConversationDataOperationMetadata
         return partialFailuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -900,7 +882,6 @@ public final class ImportConversationDataOperationMetadata
         return partialFailuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -918,7 +899,6 @@ public final class ImportConversationDataOperationMetadata
         return partialFailuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +942,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +965,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +988,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1008,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1028,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1049,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1102,6 @@ public final class ImportConversationDataOperationMetadata
     public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1149,7 +1119,6 @@ public final class ImportConversationDataOperationMetadata
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1137,6 @@ public final class ImportConversationDataOperationMetadata
         return java.util.Collections.unmodifiableList(partialFailures_);
       }
     }
-
     /**
      *
      *
@@ -1183,7 +1151,6 @@ public final class ImportConversationDataOperationMetadata
       return getPartialFailuresFieldBuilder()
           .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1198,7 +1165,6 @@ public final class ImportConversationDataOperationMetadata
       return getPartialFailuresFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1237,7 +1203,6 @@ public final class ImportConversationDataOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1253,7 +1218,6 @@ public final class ImportConversationDataOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1275,7 +1239,6 @@ public final class ImportConversationDataOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1299,7 +1262,6 @@ public final class ImportConversationDataOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1282,6 @@ public final class ImportConversationDataOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1310,6 @@ public final class ImportConversationDataOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1330,6 @@ public final class ImportConversationDataOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1345,6 @@ public final class ImportConversationDataOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1406,7 +1364,6 @@ public final class ImportConversationDataOperationMetadata
             : createTime_;
       }
     }
-
     /**
      *
      *

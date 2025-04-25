@@ -36,7 +36,6 @@ public interface SecurityHealthAnalyticsModuleOrBuilder
    * @return The moduleName.
    */
   java.lang.String getModuleName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SecurityHealthAnalyticsModuleOrBuilder
    * @return The enum numeric value on the wire for moduleEnablementState.
    */
   int getModuleEnablementStateValue();
-
   /**
    *
    *

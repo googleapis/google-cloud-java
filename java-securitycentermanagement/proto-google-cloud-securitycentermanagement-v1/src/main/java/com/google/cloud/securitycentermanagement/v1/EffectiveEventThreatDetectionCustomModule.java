@@ -41,7 +41,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule)
     EffectiveEventThreatDetectionCustomModuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EffectiveEventThreatDetectionCustomModule.newBuilder() to construct.
   private EffectiveEventThreatDetectionCustomModule(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -133,7 +132,6 @@ public final class EffectiveEventThreatDetectionCustomModule
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class EffectiveEventThreatDetectionCustomModule
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -249,7 +246,6 @@ public final class EffectiveEventThreatDetectionCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -278,7 +274,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +305,6 @@ public final class EffectiveEventThreatDetectionCustomModule
 
   public static final int CONFIG_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct config_;
-
   /**
    *
    *
@@ -326,7 +320,6 @@ public final class EffectiveEventThreatDetectionCustomModule
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -342,7 +335,6 @@ public final class EffectiveEventThreatDetectionCustomModule
   public com.google.protobuf.Struct getConfig() {
     return config_ == null ? com.google.protobuf.Struct.getDefaultInstance() : config_;
   }
-
   /**
    *
    *
@@ -359,7 +351,6 @@ public final class EffectiveEventThreatDetectionCustomModule
 
   public static final int ENABLEMENT_STATE_FIELD_NUMBER = 3;
   private int enablementState_ = 0;
-
   /**
    *
    *
@@ -378,7 +369,6 @@ public final class EffectiveEventThreatDetectionCustomModule
   public int getEnablementStateValue() {
     return enablementState_;
   }
-
   /**
    *
    *
@@ -412,7 +402,6 @@ public final class EffectiveEventThreatDetectionCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -436,7 +425,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       return s;
     }
   }
-
   /**
    *
    *
@@ -465,7 +453,6 @@ public final class EffectiveEventThreatDetectionCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -489,7 +476,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       return s;
     }
   }
-
   /**
    *
    *
@@ -518,7 +504,6 @@ public final class EffectiveEventThreatDetectionCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -542,7 +527,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       return s;
     }
   }
-
   /**
    *
    *
@@ -805,7 +789,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1104,7 +1087,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1132,7 +1114,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1141,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1167,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1189,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1223,6 @@ public final class EffectiveEventThreatDetectionCustomModule
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -1260,7 +1237,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1279,7 +1255,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1302,7 +1277,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1296,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1323,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1342,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1356,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1402,7 +1372,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return config_ == null ? com.google.protobuf.Struct.getDefaultInstance() : config_;
       }
     }
-
     /**
      *
      *
@@ -1430,7 +1399,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     }
 
     private int enablementState_ = 0;
-
     /**
      *
      *
@@ -1449,7 +1417,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     public int getEnablementStateValue() {
       return enablementState_;
     }
-
     /**
      *
      *
@@ -1471,7 +1438,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1466,6 @@ public final class EffectiveEventThreatDetectionCustomModule
               .EnablementState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1528,7 +1493,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1515,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1574,7 +1537,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1597,7 +1559,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1619,7 +1580,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1637,7 +1597,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1621,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1685,7 +1643,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1708,7 +1665,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1730,7 +1686,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1748,7 +1703,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1727,6 @@ public final class EffectiveEventThreatDetectionCustomModule
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1796,7 +1749,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1771,6 @@ public final class EffectiveEventThreatDetectionCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1841,7 +1792,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1859,7 +1809,6 @@ public final class EffectiveEventThreatDetectionCustomModule
       onChanged();
       return this;
     }
-
     /**
      *
      *

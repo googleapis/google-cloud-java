@@ -33,7 +33,6 @@ public final class RejoinUserEventsMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.RejoinUserEventsMetadata)
     RejoinUserEventsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RejoinUserEventsMetadata.newBuilder() to construct.
   private RejoinUserEventsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class RejoinUserEventsMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

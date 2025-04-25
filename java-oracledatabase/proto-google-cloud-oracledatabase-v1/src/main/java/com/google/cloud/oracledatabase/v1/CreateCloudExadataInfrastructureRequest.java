@@ -34,7 +34,6 @@ public final class CreateCloudExadataInfrastructureRequest
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest)
     CreateCloudExadataInfrastructureRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCloudExadataInfrastructureRequest.newBuilder() to construct.
   private CreateCloudExadataInfrastructureRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class CreateCloudExadataInfrastructureRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateCloudExadataInfrastructureRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CreateCloudExadataInfrastructureRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudExadataInfrastructureId_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class CreateCloudExadataInfrastructureRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class CreateCloudExadataInfrastructureRequest
 
   public static final int CLOUD_EXADATA_INFRASTRUCTURE_FIELD_NUMBER = 3;
   private com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure cloudExadataInfrastructure_;
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class CreateCloudExadataInfrastructureRequest
   public boolean hasCloudExadataInfrastructure() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class CreateCloudExadataInfrastructureRequest
         ? com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure.getDefaultInstance()
         : cloudExadataInfrastructure_;
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class CreateCloudExadataInfrastructureRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public final class CreateCloudExadataInfrastructureRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -527,7 +517,6 @@ public final class CreateCloudExadataInfrastructureRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -786,7 +775,6 @@ public final class CreateCloudExadataInfrastructureRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -812,7 +800,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -838,7 +825,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +849,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +869,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class CreateCloudExadataInfrastructureRequest
     }
 
     private java.lang.Object cloudExadataInfrastructureId_ = "";
-
     /**
      *
      *
@@ -939,7 +922,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -992,7 +973,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +994,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1028,6 @@ public final class CreateCloudExadataInfrastructureRequest
             com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure.Builder,
             com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureOrBuilder>
         cloudExadataInfrastructureBuilder_;
-
     /**
      *
      *
@@ -1066,7 +1044,6 @@ public final class CreateCloudExadataInfrastructureRequest
     public boolean hasCloudExadataInfrastructure() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return cloudExadataInfrastructureBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1116,7 +1092,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1146,6 @@ public final class CreateCloudExadataInfrastructureRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1167,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1184,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return getCloudExadataInfrastructureFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1234,7 +1205,6 @@ public final class CreateCloudExadataInfrastructureRequest
             : cloudExadataInfrastructure_;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1234,6 @@ public final class CreateCloudExadataInfrastructureRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1296,7 +1265,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1296,6 @@ public final class CreateCloudExadataInfrastructureRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1359,7 +1326,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1352,6 @@ public final class CreateCloudExadataInfrastructureRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

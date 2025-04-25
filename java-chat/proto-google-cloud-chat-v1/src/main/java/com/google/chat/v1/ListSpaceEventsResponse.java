@@ -33,7 +33,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.chat.v1.ListSpaceEventsResponse)
     ListSpaceEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSpaceEventsResponse.newBuilder() to construct.
   private ListSpaceEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.SpaceEvent> spaceEvents_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.chat.v1.SpaceEvent> getSpaceEventsList() {
     return spaceEvents_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       getSpaceEventsOrBuilderList() {
     return spaceEvents_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
   public int getSpaceEventsCount() {
     return spaceEvents_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
   public com.google.chat.v1.SpaceEvent getSpaceEvents(int index) {
     return spaceEvents_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return spaceEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return spaceEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return spaceEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
     public com.google.chat.v1.SpaceEvent.Builder getSpaceEventsBuilder(int index) {
       return getSpaceEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return spaceEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(spaceEvents_);
       }
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       return getSpaceEventsFieldBuilder()
           .addBuilder(com.google.chat.v1.SpaceEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       return getSpaceEventsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.SpaceEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1044,7 +1017,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1040,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1062,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1080,6 @@ public final class ListSpaceEventsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

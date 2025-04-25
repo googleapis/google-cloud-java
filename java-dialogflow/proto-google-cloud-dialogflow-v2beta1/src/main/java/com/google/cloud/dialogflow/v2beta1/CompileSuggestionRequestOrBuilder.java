@@ -39,7 +39,6 @@ public interface CompileSuggestionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CompileSuggestionRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
-
   /**
    *
    *

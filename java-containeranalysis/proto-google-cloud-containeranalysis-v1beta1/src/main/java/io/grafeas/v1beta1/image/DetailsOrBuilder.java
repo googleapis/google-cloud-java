@@ -36,7 +36,6 @@ public interface DetailsOrBuilder
    * @return Whether the derivedImage field is set.
    */
   boolean hasDerivedImage();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DetailsOrBuilder
    * @return The derivedImage.
    */
   io.grafeas.v1beta1.image.Derived getDerivedImage();
-
   /**
    *
    *

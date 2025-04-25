@@ -33,7 +33,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.CreateServiceConfigRequest)
     CreateServiceConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateServiceConfigRequest.newBuilder() to construct.
   private CreateServiceConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
 
   public static final int SERVICE_CONFIG_FIELD_NUMBER = 2;
   private com.google.api.Service serviceConfig_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
   public boolean hasServiceConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
   public com.google.api.Service getServiceConfig() {
     return serviceConfig_ == null ? com.google.api.Service.getDefaultInstance() : serviceConfig_;
   }
-
   /**
    *
    *
@@ -345,7 +339,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.Service, com.google.api.Service.Builder, com.google.api.ServiceOrBuilder>
         serviceConfigBuilder_;
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
     public boolean hasServiceConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
         return serviceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +754,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +802,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +817,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return getServiceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -856,7 +836,6 @@ public final class CreateServiceConfigRequest extends com.google.protobuf.Genera
             : serviceConfig_;
       }
     }
-
     /**
      *
      *

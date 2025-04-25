@@ -33,7 +33,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateSearchHypernymRequest)
     CreateSearchHypernymRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSearchHypernymRequest.newBuilder() to construct.
   private CreateSearchHypernymRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
 
   public static final int SEARCH_HYPERNYM_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.SearchHypernym searchHypernym_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
   public boolean hasSearchHypernym() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
         ? com.google.cloud.visionai.v1.SearchHypernym.getDefaultInstance()
         : searchHypernym_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object searchHypernymId_ = "";
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
   public boolean hasSearchHypernymId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -444,7 +435,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -675,7 +665,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
             com.google.cloud.visionai.v1.SearchHypernym.Builder,
             com.google.cloud.visionai.v1.SearchHypernymOrBuilder>
         searchHypernymBuilder_;
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
     public boolean hasSearchHypernym() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
         return searchHypernymBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return getSearchHypernymFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -985,7 +962,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
             : searchHypernym_;
       }
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object searchHypernymId_ = "";
-
     /**
      *
      *
@@ -1032,7 +1007,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
     public boolean hasSearchHypernymId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1055,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1078,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1097,6 @@ public final class CreateSearchHypernymRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

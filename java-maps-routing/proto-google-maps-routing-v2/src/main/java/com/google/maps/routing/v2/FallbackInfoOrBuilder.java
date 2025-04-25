@@ -38,7 +38,6 @@ public interface FallbackInfoOrBuilder
    * @return The enum numeric value on the wire for routingMode.
    */
   int getRoutingModeValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface FallbackInfoOrBuilder
    * @return The enum numeric value on the wire for reason.
    */
   int getReasonValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DistributionPolicyZoneConfiguration
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DistributionPolicyZoneConfiguration)
     DistributionPolicyZoneConfigurationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DistributionPolicyZoneConfiguration.newBuilder() to construct.
   private DistributionPolicyZoneConfiguration(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DistributionPolicyZoneConfiguration
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class DistributionPolicyZoneConfiguration
   public boolean hasZone() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class DistributionPolicyZoneConfiguration
       return s;
     }
   }
-
   /**
    *
    *
@@ -300,7 +296,6 @@ public final class DistributionPolicyZoneConfiguration
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -491,7 +486,6 @@ public final class DistributionPolicyZoneConfiguration
     private int bitField0_;
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class DistributionPolicyZoneConfiguration
     public boolean hasZone() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class DistributionPolicyZoneConfiguration
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -552,7 +544,6 @@ public final class DistributionPolicyZoneConfiguration
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class DistributionPolicyZoneConfiguration
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +582,6 @@ public final class DistributionPolicyZoneConfiguration
       onChanged();
       return this;
     }
-
     /**
      *
      *

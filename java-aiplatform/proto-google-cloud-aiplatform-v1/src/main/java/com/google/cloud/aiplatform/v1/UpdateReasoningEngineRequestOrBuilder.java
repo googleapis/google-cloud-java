@@ -38,7 +38,6 @@ public interface UpdateReasoningEngineRequestOrBuilder
    * @return Whether the reasoningEngine field is set.
    */
   boolean hasReasoningEngine();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateReasoningEngineRequestOrBuilder
    * @return The reasoningEngine.
    */
   com.google.cloud.aiplatform.v1.ReasoningEngine getReasoningEngine();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateReasoningEngineRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateReasoningEngineRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

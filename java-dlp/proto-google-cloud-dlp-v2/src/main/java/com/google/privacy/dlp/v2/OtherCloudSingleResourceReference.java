@@ -33,7 +33,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherCloudSingleResourceReference)
     OtherCloudSingleResourceReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OtherCloudSingleResourceReference.newBuilder() to construct.
   private OtherCloudSingleResourceReference(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -79,7 +78,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
     private ResourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
   }
 
   public static final int AMAZON_S3_BUCKET_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
   public boolean hasAmazonS3Bucket() {
     return resourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
     }
     return com.google.privacy.dlp.v2.AmazonS3Bucket.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -339,7 +334,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -559,7 +553,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
             com.google.privacy.dlp.v2.AmazonS3Bucket.Builder,
             com.google.privacy.dlp.v2.AmazonS3BucketOrBuilder>
         amazonS3BucketBuilder_;
-
     /**
      *
      *
@@ -575,7 +568,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
     public boolean hasAmazonS3Bucket() {
       return resourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
         return com.google.privacy.dlp.v2.AmazonS3Bucket.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -624,7 +615,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
       resourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
       resourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
       resourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
     public com.google.privacy.dlp.v2.AmazonS3Bucket.Builder getAmazonS3BucketBuilder() {
       return getAmazonS3BucketFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class OtherCloudSingleResourceReference extends com.google.protobuf
         return com.google.privacy.dlp.v2.AmazonS3Bucket.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListMappingRulesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.MappingRule mapping_rules = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.MappingRule> getMappingRulesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListMappingRulesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.MappingRule mapping_rules = 1;</code>
    */
   com.google.cloud.clouddms.v1.MappingRule getMappingRules(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListMappingRulesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.MappingRule mapping_rules = 1;</code>
    */
   int getMappingRulesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListMappingRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.MappingRuleOrBuilder>
       getMappingRulesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListMappingRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

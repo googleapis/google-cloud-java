@@ -115,8 +115,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTransferConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateTransferConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TransferConfig.class.getName(),
                   Exception.class.getName())));
@@ -137,8 +136,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTransferConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateTransferConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TransferConfig.class.getName(),
                   Exception.class.getName())));
@@ -159,8 +157,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTransferConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteTransferConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -225,8 +222,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ScheduleTransferRuns, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ScheduleTransferRuns, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ScheduleTransferRunsResponse.class.getName(),
                   Exception.class.getName())));
@@ -248,8 +244,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method StartManualTransferRuns, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method StartManualTransferRuns, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   StartManualTransferRunsResponse.class.getName(),
                   Exception.class.getName())));

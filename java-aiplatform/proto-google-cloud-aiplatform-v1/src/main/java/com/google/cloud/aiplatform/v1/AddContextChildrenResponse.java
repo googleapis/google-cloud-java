@@ -34,7 +34,6 @@ public final class AddContextChildrenResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AddContextChildrenResponse)
     AddContextChildrenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddContextChildrenResponse.newBuilder() to construct.
   private AddContextChildrenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class AddContextChildrenResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

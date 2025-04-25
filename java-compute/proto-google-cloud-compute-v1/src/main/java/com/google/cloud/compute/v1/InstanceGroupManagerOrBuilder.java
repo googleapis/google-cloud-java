@@ -38,7 +38,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the allInstancesConfig field is set.
    */
   boolean hasAllInstancesConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The allInstancesConfig.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerAllInstancesConfig getAllInstancesConfig();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InstanceGroupManagerOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy>
       getAutoHealingPoliciesList();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface InstanceGroupManagerOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy getAutoHealingPolicies(
       int index);
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface InstanceGroupManagerOrBuilder
    * </code>
    */
   int getAutoHealingPoliciesCount();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface InstanceGroupManagerOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicyOrBuilder>
       getAutoHealingPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the baseInstanceName field is set.
    */
   boolean hasBaseInstanceName();
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The baseInstanceName.
    */
   java.lang.String getBaseInstanceName();
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the currentActions field is set.
    */
   boolean hasCurrentActions();
-
   /**
    *
    *
@@ -245,7 +234,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The currentActions.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary getCurrentActions();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -285,7 +272,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -312,7 +298,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the distributionPolicy field is set.
    */
   boolean hasDistributionPolicy();
-
   /**
    *
    *
@@ -326,7 +311,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The distributionPolicy.
    */
   com.google.cloud.compute.v1.DistributionPolicy getDistributionPolicy();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -364,7 +347,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -390,7 +372,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -418,7 +399,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the instanceFlexibilityPolicy field is set.
    */
   boolean hasInstanceFlexibilityPolicy();
-
   /**
    *
    *
@@ -434,7 +414,6 @@ public interface InstanceGroupManagerOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicy
       getInstanceFlexibilityPolicy();
-
   /**
    *
    *
@@ -461,7 +440,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the instanceGroup field is set.
    */
   boolean hasInstanceGroup();
-
   /**
    *
    *
@@ -474,7 +452,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The instanceGroup.
    */
   java.lang.String getInstanceGroup();
-
   /**
    *
    *
@@ -502,7 +479,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the instanceLifecyclePolicy field is set.
    */
   boolean hasInstanceLifecyclePolicy();
-
   /**
    *
    *
@@ -518,7 +494,6 @@ public interface InstanceGroupManagerOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy
       getInstanceLifecyclePolicy();
-
   /**
    *
    *
@@ -545,7 +520,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the instanceTemplate field is set.
    */
   boolean hasInstanceTemplate();
-
   /**
    *
    *
@@ -558,7 +532,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
-
   /**
    *
    *
@@ -584,7 +557,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -597,7 +569,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -624,7 +595,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the listManagedInstancesResults field is set.
    */
   boolean hasListManagedInstancesResults();
-
   /**
    *
    *
@@ -638,7 +608,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The listManagedInstancesResults.
    */
   java.lang.String getListManagedInstancesResults();
-
   /**
    *
    *
@@ -665,7 +634,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -678,7 +646,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -702,7 +669,6 @@ public interface InstanceGroupManagerOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
-
   /**
    *
    *
@@ -713,7 +679,6 @@ public interface InstanceGroupManagerOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
-
   /**
    *
    *
@@ -724,7 +689,6 @@ public interface InstanceGroupManagerOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
-
   /**
    *
    *
@@ -736,7 +700,6 @@ public interface InstanceGroupManagerOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
-
   /**
    *
    *
@@ -760,7 +723,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -773,7 +735,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -801,7 +762,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the resourcePolicies field is set.
    */
   boolean hasResourcePolicies();
-
   /**
    *
    *
@@ -816,7 +776,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The resourcePolicies.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerResourcePolicies getResourcePolicies();
-
   /**
    *
    *
@@ -843,7 +802,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
-
   /**
    *
    *
@@ -869,7 +827,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -895,7 +852,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -908,7 +864,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -936,7 +891,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the standbyPolicy field is set.
    */
   boolean hasStandbyPolicy();
-
   /**
    *
    *
@@ -951,7 +905,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The standbyPolicy.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy getStandbyPolicy();
-
   /**
    *
    *
@@ -978,7 +931,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the statefulPolicy field is set.
    */
   boolean hasStatefulPolicy();
-
   /**
    *
    *
@@ -991,7 +943,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The statefulPolicy.
    */
   com.google.cloud.compute.v1.StatefulPolicy getStatefulPolicy();
-
   /**
    *
    *
@@ -1015,7 +966,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -1028,7 +978,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The status.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatus getStatus();
-
   /**
    *
    *
@@ -1052,7 +1001,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return A list containing the targetPools.
    */
   java.util.List<java.lang.String> getTargetPoolsList();
-
   /**
    *
    *
@@ -1065,7 +1013,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The count of targetPools.
    */
   int getTargetPoolsCount();
-
   /**
    *
    *
@@ -1079,7 +1026,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The targetPools at the given index.
    */
   java.lang.String getTargetPools(int index);
-
   /**
    *
    *
@@ -1106,7 +1052,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the targetSize field is set.
    */
   boolean hasTargetSize();
-
   /**
    *
    *
@@ -1132,7 +1077,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the targetStoppedSize field is set.
    */
   boolean hasTargetStoppedSize();
-
   /**
    *
    *
@@ -1158,7 +1102,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the targetSuspendedSize field is set.
    */
   boolean hasTargetSuspendedSize();
-
   /**
    *
    *
@@ -1186,7 +1129,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the updatePolicy field is set.
    */
   boolean hasUpdatePolicy();
-
   /**
    *
    *
@@ -1201,7 +1143,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The updatePolicy.
    */
   com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy getUpdatePolicy();
-
   /**
    *
    *
@@ -1226,7 +1167,6 @@ public interface InstanceGroupManagerOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerVersion> getVersionsList();
-
   /**
    *
    *
@@ -1238,7 +1178,6 @@ public interface InstanceGroupManagerOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerVersion getVersions(int index);
-
   /**
    *
    *
@@ -1250,7 +1189,6 @@ public interface InstanceGroupManagerOrBuilder
    * </code>
    */
   int getVersionsCount();
-
   /**
    *
    *
@@ -1263,7 +1201,6 @@ public interface InstanceGroupManagerOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupManagerVersionOrBuilder>
       getVersionsOrBuilderList();
-
   /**
    *
    *
@@ -1288,7 +1225,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -1301,7 +1237,6 @@ public interface InstanceGroupManagerOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

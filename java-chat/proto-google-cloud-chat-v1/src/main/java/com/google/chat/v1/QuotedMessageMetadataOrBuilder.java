@@ -40,7 +40,6 @@ public interface QuotedMessageMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface QuotedMessageMetadataOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface QuotedMessageMetadataOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
-
   /**
    *
    *

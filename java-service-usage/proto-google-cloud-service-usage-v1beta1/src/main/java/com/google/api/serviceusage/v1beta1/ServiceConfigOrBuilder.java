@@ -39,7 +39,6 @@ public interface ServiceConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ServiceConfigOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.protobuf.Api apis = 3;</code>
    */
   java.util.List<com.google.protobuf.Api> getApisList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.protobuf.Api apis = 3;</code>
    */
   com.google.protobuf.Api getApis(int index);
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.protobuf.Api apis = 3;</code>
    */
   int getApisCount();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.protobuf.Api apis = 3;</code>
    */
   java.util.List<? extends com.google.protobuf.ApiOrBuilder> getApisOrBuilderList();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ServiceConfigOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface ServiceConfigOrBuilder
    * @return The documentation.
    */
   com.google.api.Documentation getDocumentation();
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface ServiceConfigOrBuilder
    * @return Whether the quota field is set.
    */
   boolean hasQuota();
-
   /**
    *
    *
@@ -207,7 +198,6 @@ public interface ServiceConfigOrBuilder
    * @return The quota.
    */
   com.google.api.Quota getQuota();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface ServiceConfigOrBuilder
    * @return Whether the authentication field is set.
    */
   boolean hasAuthentication();
-
   /**
    *
    *
@@ -244,7 +233,6 @@ public interface ServiceConfigOrBuilder
    * @return The authentication.
    */
   com.google.api.Authentication getAuthentication();
-
   /**
    *
    *
@@ -268,7 +256,6 @@ public interface ServiceConfigOrBuilder
    * @return Whether the usage field is set.
    */
   boolean hasUsage();
-
   /**
    *
    *
@@ -281,7 +268,6 @@ public interface ServiceConfigOrBuilder
    * @return The usage.
    */
   com.google.api.Usage getUsage();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.Endpoint endpoints = 18;</code>
    */
   java.util.List<com.google.api.Endpoint> getEndpointsList();
-
   /**
    *
    *
@@ -316,7 +301,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.Endpoint endpoints = 18;</code>
    */
   com.google.api.Endpoint getEndpoints(int index);
-
   /**
    *
    *
@@ -328,7 +312,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.Endpoint endpoints = 18;</code>
    */
   int getEndpointsCount();
-
   /**
    *
    *
@@ -340,7 +323,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.Endpoint endpoints = 18;</code>
    */
   java.util.List<? extends com.google.api.EndpointOrBuilder> getEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -365,7 +347,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
    */
   java.util.List<com.google.api.MonitoredResourceDescriptor> getMonitoredResourcesList();
-
   /**
    *
    *
@@ -378,7 +359,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
    */
   com.google.api.MonitoredResourceDescriptor getMonitoredResources(int index);
-
   /**
    *
    *
@@ -391,7 +371,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
    */
   int getMonitoredResourcesCount();
-
   /**
    *
    *
@@ -405,7 +384,6 @@ public interface ServiceConfigOrBuilder
    */
   java.util.List<? extends com.google.api.MonitoredResourceDescriptorOrBuilder>
       getMonitoredResourcesOrBuilderList();
-
   /**
    *
    *
@@ -432,7 +410,6 @@ public interface ServiceConfigOrBuilder
    * @return Whether the monitoring field is set.
    */
   boolean hasMonitoring();
-
   /**
    *
    *
@@ -446,7 +423,6 @@ public interface ServiceConfigOrBuilder
    * @return The monitoring.
    */
   com.google.api.Monitoring getMonitoring();
-
   /**
    *
    *

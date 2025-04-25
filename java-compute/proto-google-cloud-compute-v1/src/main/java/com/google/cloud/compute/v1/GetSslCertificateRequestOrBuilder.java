@@ -36,7 +36,6 @@ public interface GetSslCertificateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetSslCertificateRequestOrBuilder
    * @return The sslCertificate.
    */
   java.lang.String getSslCertificate();
-
   /**
    *
    *

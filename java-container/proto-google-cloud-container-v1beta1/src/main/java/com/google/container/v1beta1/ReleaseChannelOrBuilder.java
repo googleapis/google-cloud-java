@@ -36,7 +36,6 @@ public interface ReleaseChannelOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
-
   /**
    *
    *

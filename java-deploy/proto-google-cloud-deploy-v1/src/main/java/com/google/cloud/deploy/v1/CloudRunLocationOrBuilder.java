@@ -39,7 +39,6 @@ public interface CloudRunLocationOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

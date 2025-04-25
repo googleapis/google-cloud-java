@@ -34,7 +34,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.AttestorPublicKey)
     AttestorPublicKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttestorPublicKey.newBuilder() to construct.
   private AttestorPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     private PublicKeyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object comment_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +229,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ASCII_ARMORED_PGP_PUBLIC_KEY_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   public boolean hasAsciiArmoredPgpPublicKey() {
     return publicKeyCase_ == 3;
   }
-
   /**
    *
    *
@@ -292,7 +284,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -329,7 +320,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PKIX_PUBLIC_KEY_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -350,7 +340,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   public boolean hasPkixPublicKey() {
     return publicKeyCase_ == 5;
   }
-
   /**
    *
    *
@@ -374,7 +363,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -606,7 +594,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -870,7 +857,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object comment_ = "";
-
     /**
      *
      *
@@ -893,7 +879,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +901,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +939,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +963,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1010,7 +991,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1019,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1046,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1069,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1120,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     public boolean hasAsciiArmoredPgpPublicKey() {
       return publicKeyCase_ == 3;
     }
-
     /**
      *
      *
@@ -1179,7 +1155,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1190,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1244,7 +1218,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1244,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1279,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
             com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.Builder,
             com.google.cloud.binaryauthorization.v1beta1.PkixPublicKeyOrBuilder>
         pkixPublicKeyBuilder_;
-
     /**
      *
      *
@@ -1328,7 +1299,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     public boolean hasPkixPublicKey() {
       return publicKeyCase_ == 5;
     }
-
     /**
      *
      *
@@ -1359,7 +1329,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1388,7 +1357,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       publicKeyCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1382,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       publicKeyCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1422,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       publicKeyCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1452,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1470,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         getPkixPublicKeyBuilder() {
       return getPkixPublicKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1532,7 +1496,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *

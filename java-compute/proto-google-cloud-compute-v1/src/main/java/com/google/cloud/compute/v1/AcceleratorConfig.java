@@ -33,7 +33,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AcceleratorConfig)
     AcceleratorConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AcceleratorConfig.newBuilder() to construct.
   private AcceleratorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 504879675;
   private int acceleratorCount_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAcceleratorCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object acceleratorType_ = "";
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAcceleratorType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -347,7 +341,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -548,7 +541,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int acceleratorCount_;
-
     /**
      *
      *
@@ -564,7 +556,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAcceleratorCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -580,7 +571,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public int getAcceleratorCount() {
       return acceleratorCount_;
     }
-
     /**
      *
      *
@@ -600,7 +590,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -620,7 +609,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object acceleratorType_ = "";
-
     /**
      *
      *
@@ -635,7 +623,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAcceleratorType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -658,7 +645,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -681,7 +667,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -703,7 +688,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +705,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * @return Whether the day field is set.
    */
   boolean hasDay();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * @return The day.
    */
   java.lang.String getDay();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * @return The duration.
    */
   java.lang.String getDuration();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *

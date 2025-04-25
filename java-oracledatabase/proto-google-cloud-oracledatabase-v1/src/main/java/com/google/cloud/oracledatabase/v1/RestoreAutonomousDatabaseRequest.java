@@ -33,7 +33,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest)
     RestoreAutonomousDatabaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestoreAutonomousDatabaseRequest.newBuilder() to construct.
   private RestoreAutonomousDatabaseRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
 
   public static final int RESTORE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp restoreTime_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
   public boolean hasRestoreTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
   public com.google.protobuf.Timestamp getRestoreTime() {
     return restoreTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : restoreTime_;
   }
-
   /**
    *
    *
@@ -352,7 +346,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         restoreTimeBuilder_;
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
     public boolean hasRestoreTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
         return restoreTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
       onChanged();
       return getRestoreTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class RestoreAutonomousDatabaseRequest extends com.google.protobuf.
             : restoreTime_;
       }
     }
-
     /**
      *
      *

@@ -29,7 +29,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>
@@ -39,13 +39,12 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>
@@ -62,7 +61,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
+   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -73,14 +72,13 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return A list containing the partyTables.
    */
   java.util.List<java.lang.String> getPartyTablesList();
-
   /**
    *
    *
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
+   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -91,14 +89,13 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The count of partyTables.
    */
   int getPartyTablesCount();
-
   /**
    *
    *
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
+   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -110,14 +107,13 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The partyTables at the given index.
    */
   java.lang.String getPartyTables(int index);
-
   /**
    *
    *
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
+   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -144,7 +140,6 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *
@@ -164,8 +159,8 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If the request will not register the parties, just determine what
-   * would happen.
+   * Optional. Is the request will not register the parties, just determine what
+   * woud happen.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -188,7 +183,6 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
-
   /**
    *
    *

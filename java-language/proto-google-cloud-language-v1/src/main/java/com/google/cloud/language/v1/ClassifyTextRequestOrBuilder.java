@@ -38,7 +38,6 @@ public interface ClassifyTextRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ClassifyTextRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v1.Document getDocument();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ClassifyTextRequestOrBuilder
    * @return Whether the classificationModelOptions field is set.
    */
   boolean hasClassificationModelOptions();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ClassifyTextRequestOrBuilder
    * @return The classificationModelOptions.
    */
   com.google.cloud.language.v1.ClassificationModelOptions getClassificationModelOptions();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateSnoozeRequest)
     CreateSnoozeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSnoozeRequest.newBuilder() to construct.
   private CreateSnoozeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SNOOZE_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.Snooze snooze_;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSnooze() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
   public com.google.monitoring.v3.Snooze getSnooze() {
     return snooze_ == null ? com.google.monitoring.v3.Snooze.getDefaultInstance() : snooze_;
   }
-
   /**
    *
    *
@@ -356,7 +350,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -570,7 +563,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
             com.google.monitoring.v3.Snooze.Builder,
             com.google.monitoring.v3.SnoozeOrBuilder>
         snoozeBuilder_;
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSnooze() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
         return snoozeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSnoozeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
         return snooze_ == null ? com.google.monitoring.v3.Snooze.getDefaultInstance() : snooze_;
       }
     }
-
     /**
      *
      *

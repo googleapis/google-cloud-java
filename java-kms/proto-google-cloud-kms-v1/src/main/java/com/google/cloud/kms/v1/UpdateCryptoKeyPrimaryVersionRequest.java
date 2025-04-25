@@ -35,7 +35,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest)
     UpdateCryptoKeyPrimaryVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateCryptoKeyPrimaryVersionRequest.newBuilder() to construct.
   private UpdateCryptoKeyPrimaryVersionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoKeyVersionId_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +346,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -555,7 +549,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -581,7 +574,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +643,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
     }
 
     private java.lang.Object cryptoKeyVersionId_ = "";
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

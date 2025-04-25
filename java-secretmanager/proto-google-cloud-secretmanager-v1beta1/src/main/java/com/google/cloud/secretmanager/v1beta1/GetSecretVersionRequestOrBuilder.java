@@ -28,8 +28,7 @@ public interface GetSecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
@@ -42,13 +41,11 @@ public interface GetSecretVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].

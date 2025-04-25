@@ -37,7 +37,6 @@ public interface DeleteTripRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeleteTripRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DeleteTripRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

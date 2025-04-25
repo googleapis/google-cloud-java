@@ -36,7 +36,6 @@ public interface GetApplicationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

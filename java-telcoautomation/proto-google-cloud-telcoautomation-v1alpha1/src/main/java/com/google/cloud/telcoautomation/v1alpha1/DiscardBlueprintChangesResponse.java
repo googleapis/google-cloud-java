@@ -33,7 +33,6 @@ public final class DiscardBlueprintChangesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.DiscardBlueprintChangesResponse)
     DiscardBlueprintChangesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscardBlueprintChangesResponse.newBuilder() to construct.
   private DiscardBlueprintChangesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -217,7 +216,6 @@ public final class DiscardBlueprintChangesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

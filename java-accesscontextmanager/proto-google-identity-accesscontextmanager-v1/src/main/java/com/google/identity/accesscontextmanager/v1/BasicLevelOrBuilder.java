@@ -34,7 +34,6 @@ public interface BasicLevelOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.Condition> getConditionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BasicLevelOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
   com.google.identity.accesscontextmanager.v1.Condition getConditions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BasicLevelOrBuilder
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
   int getConditionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BasicLevelOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.ConditionOrBuilder>
       getConditionsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface BasicLevelOrBuilder
    * @return The enum numeric value on the wire for combiningFunction.
    */
   int getCombiningFunctionValue();
-
   /**
    *
    *

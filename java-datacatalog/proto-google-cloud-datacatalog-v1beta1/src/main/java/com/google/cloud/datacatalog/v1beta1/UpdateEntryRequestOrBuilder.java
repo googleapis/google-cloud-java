@@ -38,7 +38,6 @@ public interface UpdateEntryRequestOrBuilder
    * @return Whether the entry field is set.
    */
   boolean hasEntry();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateEntryRequestOrBuilder
    * @return The entry.
    */
   com.google.cloud.datacatalog.v1beta1.Entry getEntry();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface UpdateEntryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface UpdateEntryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

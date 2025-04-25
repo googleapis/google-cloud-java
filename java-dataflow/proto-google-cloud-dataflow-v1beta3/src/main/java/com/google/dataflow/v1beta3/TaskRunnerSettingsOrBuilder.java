@@ -37,7 +37,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The taskUser.
    */
   java.lang.String getTaskUser();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The taskGroup.
    */
   java.lang.String getTaskGroup();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return A list containing the oauthScopes.
    */
   java.util.List<java.lang.String> getOauthScopesList();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The count of oauthScopes.
    */
   int getOauthScopesCount();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The oauthScopes at the given index.
    */
   java.lang.String getOauthScopes(int index);
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The baseUrl.
    */
   java.lang.String getBaseUrl();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The dataflowApiVersion.
    */
   java.lang.String getDataflowApiVersion();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return Whether the parallelWorkerSettings field is set.
    */
   boolean hasParallelWorkerSettings();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The parallelWorkerSettings.
    */
   com.google.dataflow.v1beta3.WorkerSettings getParallelWorkerSettings();
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The baseTaskDir.
    */
   java.lang.String getBaseTaskDir();
-
   /**
    *
    *
@@ -328,7 +318,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The logUploadLocation.
    */
   java.lang.String getLogUploadLocation();
-
   /**
    *
    *
@@ -361,7 +350,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The logDir.
    */
   java.lang.String getLogDir();
-
   /**
    *
    *
@@ -394,7 +382,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The tempStoragePrefix.
    */
   java.lang.String getTempStoragePrefix();
-
   /**
    *
    *
@@ -427,7 +414,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The harnessCommand.
    */
   java.lang.String getHarnessCommand();
-
   /**
    *
    *
@@ -453,7 +439,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The workflowFileName.
    */
   java.lang.String getWorkflowFileName();
-
   /**
    *
    *
@@ -479,7 +464,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The commandlinesFileName.
    */
   java.lang.String getCommandlinesFileName();
-
   /**
    *
    *
@@ -505,7 +489,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
-
   /**
    *
    *
@@ -531,7 +514,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The languageHint.
    */
   java.lang.String getLanguageHint();
-
   /**
    *
    *
@@ -557,7 +539,6 @@ public interface TaskRunnerSettingsOrBuilder
    * @return The streamingWorkerMainClass.
    */
   java.lang.String getStreamingWorkerMainClass();
-
   /**
    *
    *

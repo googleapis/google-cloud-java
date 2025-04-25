@@ -36,7 +36,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ColumnDataProfileOrBuilder
    * @return Whether the profileStatus field is set.
    */
   boolean hasProfileStatus();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The profileStatus.
    */
   com.google.privacy.dlp.v2.ProfileStatus getProfileStatus();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ColumnDataProfileOrBuilder
    * @return Whether the profileLastGenerated field is set.
    */
   boolean hasProfileLastGenerated();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The profileLastGenerated.
    */
   com.google.protobuf.Timestamp getProfileLastGenerated();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The tableDataProfile.
    */
   java.lang.String getTableDataProfile();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The tableFullResource.
    */
   java.lang.String getTableFullResource();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The datasetProjectId.
    */
   java.lang.String getDatasetProjectId();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The datasetLocation.
    */
   java.lang.String getDatasetLocation();
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *
@@ -325,7 +313,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public interface ColumnDataProfileOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
-
   /**
    *
    *
@@ -364,7 +350,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
-
   /**
    *
    *
@@ -388,7 +373,6 @@ public interface ColumnDataProfileOrBuilder
    * @return Whether the dataRiskLevel field is set.
    */
   boolean hasDataRiskLevel();
-
   /**
    *
    *
@@ -401,7 +385,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The dataRiskLevel.
    */
   com.google.privacy.dlp.v2.DataRiskLevel getDataRiskLevel();
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public interface ColumnDataProfileOrBuilder
    * @return Whether the columnInfoType field is set.
    */
   boolean hasColumnInfoType();
-
   /**
    *
    *
@@ -442,7 +424,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The columnInfoType.
    */
   com.google.privacy.dlp.v2.InfoTypeSummary getColumnInfoType();
-
   /**
    *
    *
@@ -466,7 +447,6 @@ public interface ColumnDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherInfoTypeSummary other_matches = 10;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.OtherInfoTypeSummary> getOtherMatchesList();
-
   /**
    *
    *
@@ -477,7 +457,6 @@ public interface ColumnDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherInfoTypeSummary other_matches = 10;</code>
    */
   com.google.privacy.dlp.v2.OtherInfoTypeSummary getOtherMatches(int index);
-
   /**
    *
    *
@@ -488,7 +467,6 @@ public interface ColumnDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.OtherInfoTypeSummary other_matches = 10;</code>
    */
   int getOtherMatchesCount();
-
   /**
    *
    *
@@ -500,7 +478,6 @@ public interface ColumnDataProfileOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.OtherInfoTypeSummaryOrBuilder>
       getOtherMatchesOrBuilderList();
-
   /**
    *
    *
@@ -524,7 +501,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The enum numeric value on the wire for estimatedNullPercentage.
    */
   int getEstimatedNullPercentageValue();
-
   /**
    *
    *
@@ -550,7 +526,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The enum numeric value on the wire for estimatedUniquenessScore.
    */
   int getEstimatedUniquenessScoreValue();
-
   /**
    *
    *
@@ -592,7 +567,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The enum numeric value on the wire for columnType.
    */
   int getColumnTypeValue();
-
   /**
    *
    *
@@ -618,7 +592,6 @@ public interface ColumnDataProfileOrBuilder
    * @return The enum numeric value on the wire for policyState.
    */
   int getPolicyStateValue();
-
   /**
    *
    *

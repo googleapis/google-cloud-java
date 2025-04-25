@@ -36,7 +36,6 @@ public interface ApiDeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ApiDeploymentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ApiDeploymentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface ApiDeploymentOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface ApiDeploymentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface ApiDeploymentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface ApiDeploymentOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface ApiDeploymentOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface ApiDeploymentOrBuilder
    * @return Whether the revisionUpdateTime field is set.
    */
   boolean hasRevisionUpdateTime();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface ApiDeploymentOrBuilder
    * @return The revisionUpdateTime.
    */
   com.google.protobuf.Timestamp getRevisionUpdateTime();
-
   /**
    *
    *
@@ -276,7 +266,6 @@ public interface ApiDeploymentOrBuilder
    * @return The apiSpecRevision.
    */
   java.lang.String getApiSpecRevision();
-
   /**
    *
    *
@@ -305,7 +294,6 @@ public interface ApiDeploymentOrBuilder
    * @return The endpointUri.
    */
   java.lang.String getEndpointUri();
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public interface ApiDeploymentOrBuilder
    * @return The externalChannelUri.
    */
   java.lang.String getExternalChannelUri();
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public interface ApiDeploymentOrBuilder
    * @return The intendedAudience.
    */
   java.lang.String getIntendedAudience();
-
   /**
    *
    *
@@ -389,7 +375,6 @@ public interface ApiDeploymentOrBuilder
    * @return The accessGuidance.
    */
   java.lang.String getAccessGuidance();
-
   /**
    *
    *
@@ -425,7 +410,6 @@ public interface ApiDeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -447,11 +431,9 @@ public interface ApiDeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -473,7 +455,6 @@ public interface ApiDeploymentOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -499,7 +480,6 @@ public interface ApiDeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -536,7 +516,6 @@ public interface ApiDeploymentOrBuilder
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -551,11 +530,9 @@ public interface ApiDeploymentOrBuilder
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -570,7 +547,6 @@ public interface ApiDeploymentOrBuilder
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -589,7 +565,6 @@ public interface ApiDeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

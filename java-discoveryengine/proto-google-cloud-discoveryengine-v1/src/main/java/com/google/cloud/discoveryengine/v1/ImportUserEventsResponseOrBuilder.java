@@ -34,7 +34,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   com.google.rpc.Status getErrorSamples(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   int getErrorSamplesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ImportUserEventsResponseOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
-
   /**
    *
    *
@@ -106,7 +101,6 @@ public interface ImportUserEventsResponseOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1.ImportErrorConfig getErrorConfig();
-
   /**
    *
    *

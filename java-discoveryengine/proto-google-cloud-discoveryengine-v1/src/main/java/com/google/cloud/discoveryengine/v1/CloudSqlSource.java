@@ -33,7 +33,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.CloudSqlSource)
     CloudSqlSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudSqlSource.newBuilder() to construct.
   private CloudSqlSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableId_ = "";
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsStagingDir_ = "";
-
   /**
    *
    *
@@ -323,7 +313,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -355,7 +344,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OFFLOAD_FIELD_NUMBER = 6;
   private boolean offload_ = false;
-
   /**
    *
    *
@@ -578,7 +566,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -836,7 +823,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -861,7 +847,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +871,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +894,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +913,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +939,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -981,7 +962,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1005,7 +985,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1007,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1025,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1050,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object databaseId_ = "";
-
     /**
      *
      *
@@ -1097,7 +1073,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1096,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1118,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1136,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1161,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tableId_ = "";
-
     /**
      *
      *
@@ -1213,7 +1184,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1207,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1229,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1247,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1272,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gcsStagingDir_ = "";
-
     /**
      *
      *
@@ -1333,7 +1299,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1326,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1388,7 +1352,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1374,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1403,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean offload_;
-
     /**
      *
      *
@@ -1459,7 +1420,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
     public boolean getOffload() {
       return offload_;
     }
-
     /**
      *
      *
@@ -1481,7 +1441,6 @@ public final class CloudSqlSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface MetricsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface MetricsOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface MetricsOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface MetricsOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.ScoreMetrics score_metrics = 2;</code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.ScoreMetrics> getScoreMetricsList();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface MetricsOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.ScoreMetrics score_metrics = 2;</code>
    */
   com.google.recaptchaenterprise.v1.ScoreMetrics getScoreMetrics(int index);
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface MetricsOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.ScoreMetrics score_metrics = 2;</code>
    */
   int getScoreMetricsCount();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface MetricsOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.ScoreMetricsOrBuilder>
       getScoreMetricsOrBuilderList();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface MetricsOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.ChallengeMetrics> getChallengeMetricsList();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface MetricsOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.ChallengeMetrics getChallengeMetrics(int index);
-
   /**
    *
    *
@@ -198,7 +189,6 @@ public interface MetricsOrBuilder
    * </code>
    */
   int getChallengeMetricsCount();
-
   /**
    *
    *
@@ -213,7 +203,6 @@ public interface MetricsOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.ChallengeMetricsOrBuilder>
       getChallengeMetricsOrBuilderList();
-
   /**
    *
    *

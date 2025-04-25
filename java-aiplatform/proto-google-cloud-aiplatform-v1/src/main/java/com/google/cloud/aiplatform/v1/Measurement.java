@@ -35,7 +35,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Measurement)
     MeasurementOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Measurement.newBuilder() to construct.
   private Measurement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      * @return The metricId.
      */
     java.lang.String getMetricId();
-
     /**
      *
      *
@@ -112,7 +110,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
      */
     double getValue();
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Measurement.Metric)
       MetricOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Metric.newBuilder() to construct.
     private Metric(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -162,7 +158,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object metricId_ = "";
-
     /**
      *
      *
@@ -187,7 +182,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -215,7 +209,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VALUE_FIELD_NUMBER = 2;
     private double value_ = 0D;
-
     /**
      *
      *
@@ -405,7 +398,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object metricId_ = "";
-
       /**
        *
        *
@@ -630,7 +621,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -654,7 +644,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -677,7 +666,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -696,7 +684,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -722,7 +709,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double value_;
-
       /**
        *
        *
@@ -738,7 +724,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       public double getValue() {
         return value_;
       }
-
       /**
        *
        *
@@ -758,7 +743,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -844,7 +828,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ELAPSED_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration elapsedDuration_;
-
   /**
    *
    *
@@ -863,7 +846,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasElapsedDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -884,7 +866,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : elapsedDuration_;
   }
-
   /**
    *
    *
@@ -906,7 +887,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STEP_COUNT_FIELD_NUMBER = 2;
   private long stepCount_ = 0L;
-
   /**
    *
    *
@@ -928,7 +908,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Measurement.Metric> metrics_;
-
   /**
    *
    *
@@ -945,7 +924,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.Measurement.Metric> getMetricsList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -963,7 +941,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       getMetricsOrBuilderList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -980,7 +957,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
   public int getMetricsCount() {
     return metrics_.size();
   }
-
   /**
    *
    *
@@ -997,7 +973,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.Measurement.Metric getMetrics(int index) {
     return metrics_.get(index);
   }
-
   /**
    *
    *
@@ -1199,7 +1174,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1480,7 +1454,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         elapsedDurationBuilder_;
-
     /**
      *
      *
@@ -1498,7 +1471,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasElapsedDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1522,7 +1494,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return elapsedDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1519,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1571,7 +1541,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1571,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1625,7 +1593,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1610,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getElapsedDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1665,7 +1631,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
             : elapsedDuration_;
       }
     }
-
     /**
      *
      *
@@ -1696,7 +1661,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long stepCount_;
-
     /**
      *
      *
@@ -1713,7 +1677,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public long getStepCount() {
       return stepCount_;
     }
-
     /**
      *
      *
@@ -1734,7 +1697,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1752,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1810,7 +1771,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1830,7 +1790,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1856,7 +1815,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1880,7 +1838,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1906,7 +1863,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1932,7 +1888,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1911,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1980,7 +1934,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2004,7 +1957,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1979,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2050,7 +2001,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2066,7 +2016,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Measurement.Metric.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2087,7 +2036,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2108,7 +2056,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
-
     /**
      *
      *
@@ -2125,7 +2072,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Measurement.Metric.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2143,7 +2089,6 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.Measurement.Metric.getDefaultInstance());
     }
-
     /**
      *
      *

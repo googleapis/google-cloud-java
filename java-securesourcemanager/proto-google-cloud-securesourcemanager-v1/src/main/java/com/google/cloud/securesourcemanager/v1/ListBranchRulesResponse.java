@@ -33,7 +33,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.ListBranchRulesResponse)
     ListBranchRulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBranchRulesResponse.newBuilder() to construct.
   private ListBranchRulesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securesourcemanager.v1.BranchRule> branchRules_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.securesourcemanager.v1.BranchRule> getBranchRulesList() {
     return branchRules_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       getBranchRulesOrBuilderList() {
     return branchRules_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
   public int getBranchRulesCount() {
     return branchRules_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
   public com.google.cloud.securesourcemanager.v1.BranchRule getBranchRules(int index) {
     return branchRules_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return branchRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return branchRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return branchRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         int index) {
       return getBranchRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -911,7 +889,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return branchRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -929,7 +906,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(branchRules_);
       }
     }
-
     /**
      *
      *
@@ -943,7 +919,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       return getBranchRulesFieldBuilder()
           .addBuilder(com.google.cloud.securesourcemanager.v1.BranchRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -959,7 +934,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.securesourcemanager.v1.BranchRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -992,7 +966,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1015,7 +988,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1010,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1031,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1048,6 @@ public final class ListBranchRulesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

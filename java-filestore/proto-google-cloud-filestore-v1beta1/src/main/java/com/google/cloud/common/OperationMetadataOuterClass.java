@@ -41,20 +41,19 @@ public final class OperationMetadataOuterClass {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ",google/cloud/common/operation_metadata"
+      "\n,google/cloud/common/operation_metadata"
           + ".proto\022\023google.cloud.common\032\037google/api/"
-          + "field_behavior.proto\032\037google/protobuf/timestamp.proto\"\371\001\n"
-          + "\021OperationMetadata\0224\n"
-          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
-          + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
-          + "\004verb\030\004 \001(\tB\003\340A\003\022\032\n\r"
-          + "status_detail\030\005 \001(\tB\003\340A\003\022\035\n"
-          + "\020cancel_requested\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\003BV\n"
-          + "\027com.google.cloud.commonP\001Z9google.golang.org/genpro"
-          + "to/googleapis/cloud/common;commonb\006proto3"
+          + "field_behavior.proto\032\037google/protobuf/ti"
+          + "mestamp.proto\"\371\001\n\021OperationMetadata\0224\n\013c"
+          + "reate_time\030\001 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A"
+          + "\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\032\n\rstatus_detail\030\005 "
+          + "\001(\tB\003\340A\003\022\035\n\020cancel_requested\030\006 \001(\010B\003\340A\003\022"
+          + "\030\n\013api_version\030\007 \001(\tB\003\340A\003BV\n\027com.google."
+          + "cloud.commonP\001Z9google.golang.org/genpro"
+          + "to/googleapis/cloud/common;commonb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

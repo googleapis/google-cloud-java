@@ -35,7 +35,6 @@ public final class AwsAutoscalingGroupMetricsCollection
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection)
     AwsAutoscalingGroupMetricsCollectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsAutoscalingGroupMetricsCollection.newBuilder() to construct.
   private AwsAutoscalingGroupMetricsCollection(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class AwsAutoscalingGroupMetricsCollection
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object granularity_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class AwsAutoscalingGroupMetricsCollection
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList metrics_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class AwsAutoscalingGroupMetricsCollection
   public com.google.protobuf.ProtocolStringList getMetricsList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class AwsAutoscalingGroupMetricsCollection
   public int getMetricsCount() {
     return metrics_.size();
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class AwsAutoscalingGroupMetricsCollection
   public java.lang.String getMetrics(int index) {
     return metrics_.get(index);
   }
-
   /**
    *
    *
@@ -380,7 +373,6 @@ public final class AwsAutoscalingGroupMetricsCollection
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -596,7 +588,6 @@ public final class AwsAutoscalingGroupMetricsCollection
     private int bitField0_;
 
     private java.lang.Object granularity_ = "";
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class AwsAutoscalingGroupMetricsCollection
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class AwsAutoscalingGroupMetricsCollection
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       metrics_.makeImmutable();
       return metrics_;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class AwsAutoscalingGroupMetricsCollection
     public int getMetricsCount() {
       return metrics_.size();
     }
-
     /**
      *
      *
@@ -776,7 +760,6 @@ public final class AwsAutoscalingGroupMetricsCollection
     public java.lang.String getMetrics(int index) {
       return metrics_.get(index);
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class AwsAutoscalingGroupMetricsCollection
     public com.google.protobuf.ByteString getMetricsBytes(int index) {
       return metrics_.getByteString(index);
     }
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +829,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class AwsAutoscalingGroupMetricsCollection
       onChanged();
       return this;
     }
-
     /**
      *
      *

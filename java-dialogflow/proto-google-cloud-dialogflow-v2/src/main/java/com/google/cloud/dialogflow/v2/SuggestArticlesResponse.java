@@ -34,7 +34,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SuggestArticlesResponse)
     SuggestArticlesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestArticlesResponse.newBuilder() to construct.
   private SuggestArticlesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.ArticleAnswer> articleAnswers_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.dialogflow.v2.ArticleAnswer> getArticleAnswersList() {
     return articleAnswers_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       getArticleAnswersOrBuilderList() {
     return articleAnswers_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   public int getArticleAnswersCount() {
     return articleAnswers_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   public com.google.cloud.dialogflow.v2.ArticleAnswer getArticleAnswers(int index) {
     return articleAnswers_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
-
   /**
    *
    *
@@ -408,7 +399,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -700,7 +690,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return articleAnswersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return articleAnswersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return articleAnswersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         int index) {
       return getArticleAnswersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return articleAnswersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -979,7 +955,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(articleAnswers_);
       }
     }
-
     /**
      *
      *
@@ -993,7 +968,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       return getArticleAnswersFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.ArticleAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1008,7 +982,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       return getArticleAnswersFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.ArticleAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1044,7 +1017,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -1071,7 +1043,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1115,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1143,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     }
 
     private int contextSize_;
-
     /**
      *
      *
@@ -1196,7 +1163,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
     public int getContextSize() {
       return contextSize_;
     }
-
     /**
      *
      *
@@ -1221,7 +1187,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface SslPolicyReferenceOrBuilder
    * @return Whether the sslPolicy field is set.
    */
   boolean hasSslPolicy();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SslPolicyReferenceOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
-
   /**
    *
    *

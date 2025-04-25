@@ -36,7 +36,6 @@ public interface SchedulingOnInstanceStopActionOrBuilder
    * @return Whether the discardLocalSsd field is set.
    */
   boolean hasDiscardLocalSsd();
-
   /**
    *
    *

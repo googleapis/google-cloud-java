@@ -35,7 +35,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.RoutingParameters)
     RoutingParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoutingParameters.newBuilder() to construct.
   private RoutingParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ORIGIN_FIELD_NUMBER = 1;
   private com.google.type.LatLng origin_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
   public boolean hasOrigin() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
   public com.google.type.LatLng getOrigin() {
     return origin_ == null ? com.google.type.LatLng.getDefaultInstance() : origin_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
 
   public static final int TRAVEL_MODE_FIELD_NUMBER = 2;
   private int travelMode_ = 0;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
   public int getTravelModeValue() {
     return travelMode_;
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
 
   public static final int ROUTE_MODIFIERS_FIELD_NUMBER = 3;
   private com.google.maps.places.v1.RouteModifiers routeModifiers_;
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
   public boolean hasRouteModifiers() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.places.v1.RouteModifiers.getDefaultInstance()
         : routeModifiers_;
   }
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
 
   public static final int ROUTING_PREFERENCE_FIELD_NUMBER = 4;
   private int routingPreference_ = 0;
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
   public int getRoutingPreferenceValue() {
     return routingPreference_;
   }
-
   /**
    *
    *
@@ -465,7 +454,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -714,7 +702,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         originBuilder_;
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     public boolean hasOrigin() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
         return originBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getOriginFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
         return origin_ == null ? com.google.type.LatLng.getDefaultInstance() : origin_;
       }
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     }
 
     private int travelMode_ = 0;
-
     /**
      *
      *
@@ -923,7 +901,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     public int getTravelModeValue() {
       return travelMode_;
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
           com.google.maps.places.v1.TravelMode.forNumber(travelMode_);
       return result == null ? com.google.maps.places.v1.TravelMode.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +989,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
             com.google.maps.places.v1.RouteModifiers.Builder,
             com.google.maps.places.v1.RouteModifiersOrBuilder>
         routeModifiersBuilder_;
-
     /**
      *
      *
@@ -1032,7 +1005,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     public boolean hasRouteModifiers() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1055,7 +1027,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
         return routeModifiersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1051,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1102,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1123,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1139,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRouteModifiersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1193,7 +1159,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
             : routeModifiers_;
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1188,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     }
 
     private int routingPreference_ = 0;
-
     /**
      *
      *
@@ -1244,7 +1208,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
     public int getRoutingPreferenceValue() {
       return routingPreference_;
     }
-
     /**
      *
      *
@@ -1268,7 +1231,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1253,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
           com.google.maps.places.v1.RoutingPreference.forNumber(routingPreference_);
       return result == null ? com.google.maps.places.v1.RoutingPreference.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1318,7 +1279,6 @@ public final class RoutingParameters extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

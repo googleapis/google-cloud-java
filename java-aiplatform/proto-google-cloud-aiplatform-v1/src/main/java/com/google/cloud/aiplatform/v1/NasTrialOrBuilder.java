@@ -36,7 +36,6 @@ public interface NasTrialOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface NasTrialOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface NasTrialOrBuilder
    * @return Whether the finalMeasurement field is set.
    */
   boolean hasFinalMeasurement();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface NasTrialOrBuilder
    * @return The finalMeasurement.
    */
   com.google.cloud.aiplatform.v1.Measurement getFinalMeasurement();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface NasTrialOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface NasTrialOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface NasTrialOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface NasTrialOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ResourcesOrBuilder
    * @return A list containing the regions.
    */
   java.util.List<java.lang.String> getRegionsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ResourcesOrBuilder
    * @return The count of regions.
    */
   int getRegionsCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ResourcesOrBuilder
    * @return The regions at the given index.
    */
   java.lang.String getRegions(int index);
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ResourcesOrBuilder
    * @return A list containing the zones.
    */
   java.util.List<java.lang.String> getZonesList();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface ResourcesOrBuilder
    * @return The count of zones.
    */
   int getZonesCount();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface ResourcesOrBuilder
    * @return The zones at the given index.
    */
   java.lang.String getZones(int index);
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface ResourcesOrBuilder
    * @return Whether the virtualMachine field is set.
    */
   boolean hasVirtualMachine();
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public interface ResourcesOrBuilder
    * @return The virtualMachine.
    */
   com.google.cloud.lifesciences.v2beta.VirtualMachine getVirtualMachine();
-
   /**
    *
    *

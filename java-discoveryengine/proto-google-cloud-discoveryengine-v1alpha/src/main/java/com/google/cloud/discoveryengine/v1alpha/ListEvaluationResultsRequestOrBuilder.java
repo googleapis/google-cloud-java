@@ -43,7 +43,6 @@ public interface ListEvaluationResultsRequestOrBuilder
    * @return The evaluation.
    */
   java.lang.String getEvaluation();
-
   /**
    *
    *
@@ -102,7 +101,6 @@ public interface ListEvaluationResultsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

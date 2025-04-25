@@ -151,19 +151,6 @@ public final class MigrationServiceGrpc {
     return MigrationServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static MigrationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public MigrationServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MigrationServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return MigrationServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -312,58 +299,6 @@ public final class MigrationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MigrationService.
-   *
-   * <pre>
-   * A service that migrates resources from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
-   * </pre>
-   */
-  public static final class MigrationServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<MigrationServiceBlockingV2Stub> {
-    private MigrationServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected MigrationServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MigrationServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Searches all of the resources in automl.googleapis.com,
-     * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-     * Vertex AI's given location.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse
-        searchMigratableResources(
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSearchMigratableResourcesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-     * and datalabeling.googleapis.com to Vertex AI.
-     * </pre>
-     */
-    public com.google.longrunning.Operation batchMigrateResources(
-        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBatchMigrateResourcesMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service MigrationService.
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,

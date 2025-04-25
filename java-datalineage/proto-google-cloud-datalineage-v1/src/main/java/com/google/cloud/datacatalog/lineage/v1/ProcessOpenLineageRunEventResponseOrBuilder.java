@@ -37,7 +37,6 @@ public interface ProcessOpenLineageRunEventResponseOrBuilder
    * @return The process.
    */
   java.lang.String getProcess();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ProcessOpenLineageRunEventResponseOrBuilder
    * @return The run.
    */
   java.lang.String getRun();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ProcessOpenLineageRunEventResponseOrBuilder
    * @return A list containing the lineageEvents.
    */
   java.util.List<java.lang.String> getLineageEventsList();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface ProcessOpenLineageRunEventResponseOrBuilder
    * @return The count of lineageEvents.
    */
   int getLineageEventsCount();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ProcessOpenLineageRunEventResponseOrBuilder
    * @return The lineageEvents at the given index.
    */
   java.lang.String getLineageEvents(int index);
-
   /**
    *
    *

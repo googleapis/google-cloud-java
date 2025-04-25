@@ -33,7 +33,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest)
     CreateBackupPlanAssociationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBackupPlanAssociationRequest.newBuilder() to construct.
   private CreateBackupPlanAssociationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupPlanAssociationId_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
 
   public static final int BACKUP_PLAN_ASSOCIATION_FIELD_NUMBER = 3;
   private com.google.cloud.backupdr.v1.BackupPlanAssociation backupPlanAssociation_;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
   public boolean hasBackupPlanAssociation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         ? com.google.cloud.backupdr.v1.BackupPlanAssociation.getDefaultInstance()
         : backupPlanAssociation_;
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -518,7 +508,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -770,7 +759,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -797,7 +785,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -824,7 +811,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -850,7 +836,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +857,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +885,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
     }
 
     private java.lang.Object backupPlanAssociationId_ = "";
-
     /**
      *
      *
@@ -925,7 +908,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +931,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -972,7 +953,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +971,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +1001,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
             com.google.cloud.backupdr.v1.BackupPlanAssociation.Builder,
             com.google.cloud.backupdr.v1.BackupPlanAssociationOrBuilder>
         backupPlanAssociationBuilder_;
-
     /**
      *
      *
@@ -1039,7 +1017,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
     public boolean hasBackupPlanAssociation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1062,7 +1039,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return backupPlanAssociationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1064,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1086,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1117,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1138,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1155,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return getBackupPlanAssociationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1205,7 +1176,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
             : backupPlanAssociation_;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1205,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1272,7 +1241,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1277,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1343,6 @@ public final class CreateBackupPlanAssociationRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ListOnlineReturnPoliciesResponseOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
       getOnlineReturnPoliciesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListOnlineReturnPoliciesResponseOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy getOnlineReturnPolicies(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListOnlineReturnPoliciesResponseOrBuilder
    * </code>
    */
   int getOnlineReturnPoliciesCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListOnlineReturnPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyOrBuilder>
       getOnlineReturnPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ListOnlineReturnPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

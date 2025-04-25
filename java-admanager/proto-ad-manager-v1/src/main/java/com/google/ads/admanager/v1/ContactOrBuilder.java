@@ -37,7 +37,6 @@ public interface ContactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

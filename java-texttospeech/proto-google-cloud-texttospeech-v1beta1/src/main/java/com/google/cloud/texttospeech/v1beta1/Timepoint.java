@@ -34,7 +34,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.Timepoint)
     TimepointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Timepoint.newBuilder() to construct.
   private Timepoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object markName_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_SECONDS_FIELD_NUMBER = 3;
   private double timeSeconds_ = 0D;
-
   /**
    *
    *
@@ -309,7 +305,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -508,7 +503,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object markName_ = "";
-
     /**
      *
      *
@@ -531,7 +525,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -554,7 +547,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +609,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double timeSeconds_;
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
     public double getTimeSeconds() {
       return timeSeconds_;
     }
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class Timepoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

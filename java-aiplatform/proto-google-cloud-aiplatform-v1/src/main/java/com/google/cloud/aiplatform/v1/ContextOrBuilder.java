@@ -36,7 +36,6 @@ public interface ContextOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ContextOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ContextOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ContextOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -139,11 +135,9 @@ public interface ContextOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface ContextOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface ContextOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface ContextOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface ContextOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface ContextOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface ContextOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public interface ContextOrBuilder
    * @return A list containing the parentContexts.
    */
   java.util.List<java.lang.String> getParentContextsList();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface ContextOrBuilder
    * @return The count of parentContexts.
    */
   int getParentContextsCount();
-
   /**
    *
    *
@@ -327,7 +313,6 @@ public interface ContextOrBuilder
    * @return The parentContexts at the given index.
    */
   java.lang.String getParentContexts(int index);
-
   /**
    *
    *
@@ -361,7 +346,6 @@ public interface ContextOrBuilder
    * @return The schemaTitle.
    */
   java.lang.String getSchemaTitle();
-
   /**
    *
    *
@@ -395,7 +379,6 @@ public interface ContextOrBuilder
    * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public interface ContextOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -442,7 +424,6 @@ public interface ContextOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
-
   /**
    *
    *
@@ -468,7 +449,6 @@ public interface ContextOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

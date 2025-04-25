@@ -92,7 +92,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int CONTENT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE = 1;</code>
    */
   public static final int RESOURCE_VALUE = 1;
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IAM_POLICY = 2;</code>
    */
   public static final int IAM_POLICY_VALUE = 2;
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ORG_POLICY = 4;</code>
    */
   public static final int ORG_POLICY_VALUE = 4;
-
   /**
    *
    *

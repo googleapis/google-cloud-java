@@ -33,7 +33,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings)
     LlmModelSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LlmModelSettings.newBuilder() to construct.
   private LlmModelSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object promptText_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -540,7 +534,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object promptText_ = "";
-
     /**
      *
      *
@@ -674,7 +662,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +722,6 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

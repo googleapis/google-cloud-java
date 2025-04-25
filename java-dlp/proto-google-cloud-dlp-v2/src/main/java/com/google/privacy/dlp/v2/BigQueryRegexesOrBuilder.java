@@ -35,7 +35,6 @@ public interface BigQueryRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BigQueryRegex patterns = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.BigQueryRegex> getPatternsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface BigQueryRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BigQueryRegex patterns = 1;</code>
    */
   com.google.privacy.dlp.v2.BigQueryRegex getPatterns(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface BigQueryRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.BigQueryRegex patterns = 1;</code>
    */
   int getPatternsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface BigQueryRegexesOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.BigQueryRegexOrBuilder>
       getPatternsOrBuilderList();
-
   /**
    *
    *

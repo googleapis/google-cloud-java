@@ -36,7 +36,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return Whether the slice field is set.
    */
   boolean hasSlice();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return The slice.
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice getSlice();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return The metricsSchemaUri.
    */
   java.lang.String getMetricsSchemaUri();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return The metrics.
    */
   com.google.protobuf.Value getMetrics();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return Whether the modelExplanation field is set.
    */
   boolean hasModelExplanation();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface ModelEvaluationSliceOrBuilder
    * @return The modelExplanation.
    */
   com.google.cloud.aiplatform.v1beta1.ModelExplanation getModelExplanation();
-
   /**
    *
    *

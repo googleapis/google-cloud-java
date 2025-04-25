@@ -54,7 +54,6 @@ public interface ToxicCombinationOrBuilder
    * @return A list containing the relatedFindings.
    */
   java.util.List<java.lang.String> getRelatedFindingsList();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ToxicCombinationOrBuilder
    * @return The count of relatedFindings.
    */
   int getRelatedFindingsCount();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ToxicCombinationOrBuilder
    * @return The relatedFindings at the given index.
    */
   java.lang.String getRelatedFindings(int index);
-
   /**
    *
    *

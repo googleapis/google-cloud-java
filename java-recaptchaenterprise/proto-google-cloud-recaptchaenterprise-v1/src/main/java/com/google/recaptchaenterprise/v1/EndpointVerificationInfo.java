@@ -33,7 +33,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo)
     EndpointVerificationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EndpointVerificationInfo.newBuilder() to construct.
   private EndpointVerificationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     private EndpointCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   }
 
   public static final int EMAIL_ADDRESS_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   public boolean hasEmailAddress() {
     return endpointCase_ == 1;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   }
 
   public static final int PHONE_NUMBER_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   public boolean hasPhoneNumber() {
     return endpointCase_ == 2;
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -268,7 +260,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestToken_ = "";
-
   /**
    *
    *
@@ -293,7 +284,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -321,7 +311,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
 
   public static final int LAST_VERIFICATION_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp lastVerificationTime_;
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   public boolean hasLastVerificationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -361,7 +349,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastVerificationTime_;
   }
-
   /**
    *
    *
@@ -591,7 +578,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -880,7 +866,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     public boolean hasEmailAddress() {
       return endpointCase_ == 1;
     }
-
     /**
      *
      *
@@ -909,7 +894,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -960,7 +943,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +962,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +1001,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     public boolean hasPhoneNumber() {
       return endpointCase_ == 2;
     }
-
     /**
      *
      *
@@ -1050,7 +1030,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1059,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1081,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1101,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1126,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestToken_ = "";
-
     /**
      *
      *
@@ -1174,7 +1149,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1172,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1194,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1240,7 +1212,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1242,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastVerificationTimeBuilder_;
-
     /**
      *
      *
@@ -1289,7 +1259,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     public boolean hasLastVerificationTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1313,7 +1282,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
         return lastVerificationTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1339,7 +1307,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1329,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1359,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1381,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1398,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
       onChanged();
       return getLastVerificationTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1456,7 +1419,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
             : lastVerificationTime_;
       }
     }
-
     /**
      *
      *

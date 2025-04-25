@@ -37,7 +37,6 @@ public interface DeployConversationModelOperationMetadataOrBuilder
    * @return The conversationModel.
    */
   java.lang.String getConversationModel();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DeployConversationModelOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DeployConversationModelOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

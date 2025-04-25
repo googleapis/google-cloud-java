@@ -33,7 +33,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.RunAssetDiscoveryResponse)
     RunAssetDiscoveryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunAssetDiscoveryResponse.newBuilder() to construct.
   private RunAssetDiscoveryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * <code>COMPLETED = 1;</code>
      */
     public static final int COMPLETED_VALUE = 1;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * <code>SUPERSEDED = 2;</code>
      */
     public static final int SUPERSEDED_VALUE = 2;
-
     /**
      *
      *
@@ -253,7 +249,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -292,7 +286,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
 
   public static final int DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration duration_;
-
   /**
    *
    *
@@ -308,7 +301,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -324,7 +316,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
-
   /**
    *
    *
@@ -518,7 +509,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -735,7 +725,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -751,7 +740,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -770,7 +758,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
           ? com.google.cloud.securitycenter.v1beta1.RunAssetDiscoveryResponse.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
         return durationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +942,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -995,7 +972,6 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
-
     /**
      *
      *

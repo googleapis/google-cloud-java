@@ -40,7 +40,6 @@ public interface GetCloudExadataInfrastructureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

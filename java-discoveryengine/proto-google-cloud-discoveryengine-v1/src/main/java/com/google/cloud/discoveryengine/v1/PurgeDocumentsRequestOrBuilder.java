@@ -39,7 +39,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.discoveryengine.v1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The inlineSource.
    */
   com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest.InlineSource getInlineSource();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1.PurgeErrorConfig getErrorConfig();
-
   /**
    *
    *

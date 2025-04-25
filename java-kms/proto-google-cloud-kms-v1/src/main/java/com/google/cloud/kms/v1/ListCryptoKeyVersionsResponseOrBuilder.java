@@ -34,7 +34,6 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
   java.util.List<com.google.cloud.kms.v1.CryptoKeyVersion> getCryptoKeyVersionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
   int getCryptoKeyVersionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder>
       getCryptoKeyVersionsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

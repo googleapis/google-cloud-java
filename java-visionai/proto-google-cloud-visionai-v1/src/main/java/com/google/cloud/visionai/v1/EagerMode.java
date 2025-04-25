@@ -33,7 +33,6 @@ public final class EagerMode extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.EagerMode)
     EagerModeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EagerMode.newBuilder() to construct.
   private EagerMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,7 +210,6 @@ public final class EagerMode extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

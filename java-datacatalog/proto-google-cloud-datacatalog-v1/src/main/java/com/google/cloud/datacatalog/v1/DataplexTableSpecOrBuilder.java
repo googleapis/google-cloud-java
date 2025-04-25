@@ -37,7 +37,6 @@ public interface DataplexTableSpecOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.DataplexExternalTable external_tables = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.DataplexExternalTable> getExternalTablesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DataplexTableSpecOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.DataplexExternalTable external_tables = 1;</code>
    */
   com.google.cloud.datacatalog.v1.DataplexExternalTable getExternalTables(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface DataplexTableSpecOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.DataplexExternalTable external_tables = 1;</code>
    */
   int getExternalTablesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface DataplexTableSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.DataplexExternalTableOrBuilder>
       getExternalTablesOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface DataplexTableSpecOrBuilder
    * @return Whether the dataplexSpec field is set.
    */
   boolean hasDataplexSpec();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface DataplexTableSpecOrBuilder
    * @return The dataplexSpec.
    */
   com.google.cloud.datacatalog.v1.DataplexSpec getDataplexSpec();
-
   /**
    *
    *

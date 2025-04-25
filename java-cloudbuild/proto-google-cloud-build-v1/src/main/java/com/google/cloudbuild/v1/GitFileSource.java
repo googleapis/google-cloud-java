@@ -33,7 +33,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.GitFileSource)
     GitFileSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GitFileSource.newBuilder() to construct.
   private GitFileSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,7 +143,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -155,7 +153,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SOURCE_REPOSITORIES = 1;</code>
      */
     public static final int CLOUD_SOURCE_REPOSITORIES_VALUE = 1;
-
     /**
      *
      *
@@ -167,7 +164,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
      * <code>GITHUB = 2;</code>
      */
     public static final int GITHUB_VALUE = 2;
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
      * <code>BITBUCKET_SERVER = 3;</code>
      */
     public static final int BITBUCKET_SERVER_VALUE = 3;
-
     /**
      *
      *
@@ -293,7 +288,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -340,7 +334,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     private EnterpriseConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -375,7 +368,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -399,7 +391,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -428,7 +419,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -455,7 +445,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -484,7 +473,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPOSITORY_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -502,7 +490,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRepository() {
     return sourceCase_ == 7;
   }
-
   /**
    *
    *
@@ -533,7 +520,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -567,7 +553,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPO_TYPE_FIELD_NUMBER = 3;
   private int repoType_ = 0;
-
   /**
    *
    *
@@ -583,7 +568,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
   public int getRepoTypeValue() {
     return repoType_;
   }
-
   /**
    *
    *
@@ -606,7 +590,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
-
   /**
    *
    *
@@ -635,7 +618,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -666,7 +648,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GITHUB_ENTERPRISE_CONFIG_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -684,7 +665,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGithubEnterpriseConfig() {
     return enterpriseConfigCase_ == 5;
   }
-
   /**
    *
    *
@@ -715,7 +695,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -976,7 +955,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1283,7 +1261,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -1306,7 +1283,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1305,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1326,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1343,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1367,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -1420,7 +1392,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1446,7 +1417,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1441,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1461,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1537,7 +1505,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRepository() {
       return sourceCase_ == 7;
     }
-
     /**
      *
      *
@@ -1569,7 +1536,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1567,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1626,7 +1591,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1613,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1640,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int repoType_ = 0;
-
     /**
      *
      *
@@ -1693,7 +1655,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     public int getRepoTypeValue() {
       return repoType_;
     }
-
     /**
      *
      *
@@ -1712,7 +1673,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1690,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
           com.google.cloudbuild.v1.GitFileSource.RepoType.forNumber(repoType_);
       return result == null ? com.google.cloudbuild.v1.GitFileSource.RepoType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1752,7 +1711,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1730,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revision_ = "";
-
     /**
      *
      *
@@ -1800,7 +1757,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1828,7 +1784,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1855,7 +1810,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1832,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1925,7 +1878,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGithubEnterpriseConfig() {
       return enterpriseConfigCase_ == 5;
     }
-
     /**
      *
      *
@@ -1957,7 +1909,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1989,7 +1940,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2014,7 +1964,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2037,7 +1986,6 @@ public final class GitFileSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *

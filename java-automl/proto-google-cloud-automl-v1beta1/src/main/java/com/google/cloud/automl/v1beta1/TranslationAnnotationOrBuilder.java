@@ -36,7 +36,6 @@ public interface TranslationAnnotationOrBuilder
    * @return Whether the translatedContent field is set.
    */
   boolean hasTranslatedContent();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TranslationAnnotationOrBuilder
    * @return The translatedContent.
    */
   com.google.cloud.automl.v1beta1.TextSnippet getTranslatedContent();
-
   /**
    *
    *

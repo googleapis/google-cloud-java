@@ -36,7 +36,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return Whether the projectsListXpnHostsRequestResource field is set.
    */
   boolean hasProjectsListXpnHostsRequestResource();
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return The projectsListXpnHostsRequestResource.
    */
   com.google.cloud.compute.v1.ProjectsListXpnHostsRequest getProjectsListXpnHostsRequestResource();
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public interface ListXpnHostsProjectsRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *

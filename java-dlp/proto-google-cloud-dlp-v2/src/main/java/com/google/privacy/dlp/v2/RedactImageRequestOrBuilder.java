@@ -51,7 +51,6 @@ public interface RedactImageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface RedactImageRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface RedactImageRequestOrBuilder
    * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface RedactImageRequestOrBuilder
    * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface RedactImageRequestOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>
       getImageRedactionConfigsList();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface RedactImageRequestOrBuilder
    */
   com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig getImageRedactionConfigs(
       int index);
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface RedactImageRequestOrBuilder
    * </code>
    */
   int getImageRedactionConfigsCount();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface RedactImageRequestOrBuilder
   java.util.List<
           ? extends com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>
       getImageRedactionConfigsOrBuilderList();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface RedactImageRequestOrBuilder
    * @return Whether the byteItem field is set.
    */
   boolean hasByteItem();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface RedactImageRequestOrBuilder
    * @return The byteItem.
    */
   com.google.privacy.dlp.v2.ByteContentItem getByteItem();
-
   /**
    *
    *

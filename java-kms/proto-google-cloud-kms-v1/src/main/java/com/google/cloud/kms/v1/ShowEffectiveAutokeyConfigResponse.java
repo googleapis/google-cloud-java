@@ -34,7 +34,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ShowEffectiveAutokeyConfigResponse)
     ShowEffectiveAutokeyConfigResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShowEffectiveAutokeyConfigResponse.newBuilder() to construct.
   private ShowEffectiveAutokeyConfigResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyProject_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -281,7 +278,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -467,7 +463,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object keyProject_ = "";
-
     /**
      *
      *
@@ -491,7 +486,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -515,7 +509,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -538,7 +531,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -557,7 +549,6 @@ public final class ShowEffectiveAutokeyConfigResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

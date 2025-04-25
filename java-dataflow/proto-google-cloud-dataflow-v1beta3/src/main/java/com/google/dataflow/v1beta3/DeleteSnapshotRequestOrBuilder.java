@@ -36,7 +36,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface GetReplicationCycleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

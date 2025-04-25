@@ -33,7 +33,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SafetySetting)
     SafetySettingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SafetySetting.newBuilder() to construct.
   private SafetySetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,7 +148,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_BLOCK_THRESHOLD_UNSPECIFIED = 0;</code>
      */
     public static final int HARM_BLOCK_THRESHOLD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -160,7 +158,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK_LOW_AND_ABOVE = 1;</code>
      */
     public static final int BLOCK_LOW_AND_ABOVE_VALUE = 1;
-
     /**
      *
      *
@@ -171,7 +168,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK_MEDIUM_AND_ABOVE = 2;</code>
      */
     public static final int BLOCK_MEDIUM_AND_ABOVE_VALUE = 2;
-
     /**
      *
      *
@@ -182,7 +178,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK_ONLY_HIGH = 3;</code>
      */
     public static final int BLOCK_ONLY_HIGH_VALUE = 3;
-
     /**
      *
      *
@@ -193,7 +188,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCK_NONE = 4;</code>
      */
     public static final int BLOCK_NONE_VALUE = 4;
-
     /**
      *
      *
@@ -350,7 +344,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>HARM_BLOCK_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int HARM_BLOCK_METHOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -361,7 +354,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
      * <code>SEVERITY = 1;</code>
      */
     public static final int SEVERITY_VALUE = 1;
-
     /**
      *
      *
@@ -460,7 +452,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORY_FIELD_NUMBER = 1;
   private int category_ = 0;
-
   /**
    *
    *
@@ -478,7 +469,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
   public int getCategoryValue() {
     return category_;
   }
-
   /**
    *
    *
@@ -501,7 +491,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THRESHOLD_FIELD_NUMBER = 2;
   private int threshold_ = 0;
-
   /**
    *
    *
@@ -519,7 +508,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
   public int getThresholdValue() {
     return threshold_;
   }
-
   /**
    *
    *
@@ -544,7 +532,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METHOD_FIELD_NUMBER = 4;
   private int method_ = 0;
-
   /**
    *
    *
@@ -563,7 +550,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
   public int getMethodValue() {
     return method_;
   }
-
   /**
    *
    *
@@ -778,7 +764,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -986,7 +971,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int category_ = 0;
-
     /**
      *
      *
@@ -1004,7 +988,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     public int getCategoryValue() {
       return category_;
     }
-
     /**
      *
      *
@@ -1025,7 +1008,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1027,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1.HarmCategory.forNumber(category_);
       return result == null ? com.google.cloud.aiplatform.v1.HarmCategory.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1069,7 +1050,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1071,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int threshold_ = 0;
-
     /**
      *
      *
@@ -1109,7 +1088,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     public int getThresholdValue() {
       return threshold_;
     }
-
     /**
      *
      *
@@ -1130,7 +1108,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1129,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.SafetySetting.HarmBlockThreshold.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1177,7 +1153,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1199,7 +1174,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int method_ = 0;
-
     /**
      *
      *
@@ -1218,7 +1192,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
     public int getMethodValue() {
       return method_;
     }
-
     /**
      *
      *
@@ -1240,7 +1213,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1235,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.SafetySetting.HarmBlockMethod.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1288,7 +1259,6 @@ public final class SafetySetting extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

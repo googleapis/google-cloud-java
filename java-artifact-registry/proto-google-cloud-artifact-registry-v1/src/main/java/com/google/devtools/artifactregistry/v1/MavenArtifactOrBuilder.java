@@ -43,7 +43,6 @@ public interface MavenArtifactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface MavenArtifactOrBuilder
    * @return The pomUri.
    */
   java.lang.String getPomUri();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface MavenArtifactOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface MavenArtifactOrBuilder
    * @return The artifactId.
    */
   java.lang.String getArtifactId();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface MavenArtifactOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface MavenArtifactOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface MavenArtifactOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public interface MavenArtifactOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public interface MavenArtifactOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

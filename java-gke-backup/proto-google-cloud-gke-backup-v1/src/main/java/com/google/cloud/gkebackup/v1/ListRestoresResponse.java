@@ -33,7 +33,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.ListRestoresResponse)
     ListRestoresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRestoresResponse.newBuilder() to construct.
   private ListRestoresResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.Restore> restores_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.gkebackup.v1.Restore> getRestoresList() {
     return restores_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       getRestoresOrBuilderList() {
     return restores_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   public int getRestoresCount() {
     return restores_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.gkebackup.v1.Restore getRestores(int index) {
     return restores_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -754,7 +741,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return restoresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return restoresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return restoresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +968,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkebackup.v1.Restore.Builder getRestoresBuilder(int index) {
       return getRestoresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1010,7 +984,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return restoresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1001,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(restores_);
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       return getRestoresFieldBuilder()
           .addBuilder(com.google.cloud.gkebackup.v1.Restore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1056,7 +1027,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       return getRestoresFieldBuilder()
           .addBuilder(index, com.google.cloud.gkebackup.v1.Restore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1088,7 +1058,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1114,7 +1083,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1108,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1132,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1152,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1187,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1238,7 +1202,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1253,7 +1216,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1269,7 +1231,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1285,7 +1246,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1309,7 +1269,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1291,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1310,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1328,6 @@ public final class ListRestoresResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

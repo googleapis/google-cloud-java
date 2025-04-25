@@ -36,7 +36,6 @@ public interface DeployIndexOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DeployIndexOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DeployIndexOperationMetadataOrBuilder
    * @return The deployedIndexId.
    */
   java.lang.String getDeployedIndexId();
-
   /**
    *
    *

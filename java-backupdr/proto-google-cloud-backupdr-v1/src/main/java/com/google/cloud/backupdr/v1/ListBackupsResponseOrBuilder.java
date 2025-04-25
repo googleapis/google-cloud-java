@@ -41,7 +41,6 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.Backup backups = 1;</code>
    */
   java.util.List<com.google.cloud.backupdr.v1.Backup> getBackupsList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.Backup backups = 1;</code>
    */
   com.google.cloud.backupdr.v1.Backup getBackups(int index);
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.Backup backups = 1;</code>
    */
   int getBackupsCount();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.backupdr.v1.Backup backups = 1;</code>
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.BackupOrBuilder> getBackupsOrBuilderList();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface ListBackupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface ListBackupsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface ListBackupsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface ListBackupsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

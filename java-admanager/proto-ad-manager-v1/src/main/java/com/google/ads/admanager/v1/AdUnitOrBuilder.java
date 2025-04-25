@@ -37,7 +37,6 @@ public interface AdUnitOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface AdUnitOrBuilder
    * @return The parentAdUnit.
    */
   java.lang.String getParentAdUnit();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AdUnitParent> getParentPathList();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AdUnitParent getParentPath(int index);
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   int getParentPathCount();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AdUnitParentOrBuilder>
       getParentPathOrBuilderList();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface AdUnitOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface AdUnitOrBuilder
    * @return The adUnitCode.
    */
   java.lang.String getAdUnitCode();
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public interface AdUnitOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *
@@ -281,7 +272,6 @@ public interface AdUnitOrBuilder
    * @return The enum numeric value on the wire for appliedTargetWindow.
    */
   int getAppliedTargetWindowValue();
-
   /**
    *
    *
@@ -315,7 +305,6 @@ public interface AdUnitOrBuilder
    * @return The enum numeric value on the wire for effectiveTargetWindow.
    */
   int getEffectiveTargetWindowValue();
-
   /**
    *
    *
@@ -348,7 +337,6 @@ public interface AdUnitOrBuilder
    * @return A list containing the appliedTeams.
    */
   java.util.List<java.lang.String> getAppliedTeamsList();
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public interface AdUnitOrBuilder
    * @return The count of appliedTeams.
    */
   int getAppliedTeamsCount();
-
   /**
    *
    *
@@ -381,7 +368,6 @@ public interface AdUnitOrBuilder
    * @return The appliedTeams at the given index.
    */
   java.lang.String getAppliedTeams(int index);
-
   /**
    *
    *
@@ -415,7 +401,6 @@ public interface AdUnitOrBuilder
    * @return A list containing the teams.
    */
   java.util.List<java.lang.String> getTeamsList();
-
   /**
    *
    *
@@ -432,7 +417,6 @@ public interface AdUnitOrBuilder
    * @return The count of teams.
    */
   int getTeamsCount();
-
   /**
    *
    *
@@ -450,7 +434,6 @@ public interface AdUnitOrBuilder
    * @return The teams at the given index.
    */
   java.lang.String getTeams(int index);
-
   /**
    *
    *
@@ -482,7 +465,6 @@ public interface AdUnitOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -539,7 +521,6 @@ public interface AdUnitOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -553,7 +534,6 @@ public interface AdUnitOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -578,7 +558,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AdUnitSize> getAdUnitSizesList();
-
   /**
    *
    *
@@ -591,7 +570,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AdUnitSize getAdUnitSizes(int index);
-
   /**
    *
    *
@@ -604,7 +582,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   int getAdUnitSizesCount();
-
   /**
    *
    *
@@ -618,7 +595,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AdUnitSizeOrBuilder>
       getAdUnitSizesOrBuilderList();
-
   /**
    *
    *
@@ -646,7 +622,6 @@ public interface AdUnitOrBuilder
    * @return The externalSetTopBoxChannelId.
    */
   java.lang.String getExternalSetTopBoxChannelId();
-
   /**
    *
    *
@@ -677,7 +652,6 @@ public interface AdUnitOrBuilder
    * @return Whether the refreshDelay field is set.
    */
   boolean hasRefreshDelay();
-
   /**
    *
    *
@@ -693,7 +667,6 @@ public interface AdUnitOrBuilder
    * @return The refreshDelay.
    */
   com.google.protobuf.Duration getRefreshDelay();
-
   /**
    *
    *
@@ -720,7 +693,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList();
-
   /**
    *
    *
@@ -733,7 +705,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index);
-
   /**
    *
    *
@@ -746,7 +717,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   int getAppliedLabelsCount();
-
   /**
    *
    *
@@ -760,7 +730,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
       getAppliedLabelsOrBuilderList();
-
   /**
    *
    *
@@ -789,7 +758,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AppliedLabel> getEffectiveAppliedLabelsList();
-
   /**
    *
    *
@@ -805,7 +773,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AppliedLabel getEffectiveAppliedLabels(int index);
-
   /**
    *
    *
@@ -821,7 +788,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   int getEffectiveAppliedLabelsCount();
-
   /**
    *
    *
@@ -838,7 +804,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
       getEffectiveAppliedLabelsOrBuilderList();
-
   /**
    *
    *
@@ -868,7 +833,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.LabelFrequencyCap> getAppliedLabelFrequencyCapsList();
-
   /**
    *
    *
@@ -882,7 +846,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.LabelFrequencyCap getAppliedLabelFrequencyCaps(int index);
-
   /**
    *
    *
@@ -896,7 +859,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   int getAppliedLabelFrequencyCapsCount();
-
   /**
    *
    *
@@ -911,7 +873,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.LabelFrequencyCapOrBuilder>
       getAppliedLabelFrequencyCapsOrBuilderList();
-
   /**
    *
    *
@@ -941,7 +902,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<com.google.ads.admanager.v1.LabelFrequencyCap>
       getEffectiveLabelFrequencyCapsList();
-
   /**
    *
    *
@@ -955,7 +915,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.LabelFrequencyCap getEffectiveLabelFrequencyCaps(int index);
-
   /**
    *
    *
@@ -969,7 +928,6 @@ public interface AdUnitOrBuilder
    * </code>
    */
   int getEffectiveLabelFrequencyCapsCount();
-
   /**
    *
    *
@@ -984,7 +942,6 @@ public interface AdUnitOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.LabelFrequencyCapOrBuilder>
       getEffectiveLabelFrequencyCapsOrBuilderList();
-
   /**
    *
    *
@@ -1015,7 +972,6 @@ public interface AdUnitOrBuilder
    * @return The enum numeric value on the wire for smartSizeMode.
    */
   int getSmartSizeModeValue();
-
   /**
    *
    *
@@ -1047,7 +1003,6 @@ public interface AdUnitOrBuilder
    * @return Whether the appliedAdsenseEnabled field is set.
    */
   boolean hasAppliedAdsenseEnabled();
-
   /**
    *
    *

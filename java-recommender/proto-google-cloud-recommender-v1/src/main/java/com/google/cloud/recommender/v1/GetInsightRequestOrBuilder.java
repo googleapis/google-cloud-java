@@ -38,7 +38,6 @@ public interface GetInsightRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

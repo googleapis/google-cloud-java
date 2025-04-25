@@ -50,7 +50,6 @@ public interface SustainabilityProjectionOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SustainabilityProjectionOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
-
   /**
    *
    *

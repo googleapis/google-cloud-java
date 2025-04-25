@@ -39,7 +39,6 @@ public interface CelebrityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CelebrityOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface CelebrityOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

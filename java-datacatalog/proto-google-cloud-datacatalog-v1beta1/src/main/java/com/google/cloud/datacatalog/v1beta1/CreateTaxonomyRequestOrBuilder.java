@@ -38,7 +38,6 @@ public interface CreateTaxonomyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateTaxonomyRequestOrBuilder
    * @return Whether the taxonomy field is set.
    */
   boolean hasTaxonomy();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CreateTaxonomyRequestOrBuilder
    * @return The taxonomy.
    */
   com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomy();
-
   /**
    *
    *

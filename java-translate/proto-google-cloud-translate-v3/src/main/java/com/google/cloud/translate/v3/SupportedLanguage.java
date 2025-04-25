@@ -34,7 +34,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.SupportedLanguage)
     SupportedLanguageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SupportedLanguage.newBuilder() to construct.
   private SupportedLanguage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
 
   public static final int SUPPORT_SOURCE_FIELD_NUMBER = 3;
   private boolean supportSource_ = false;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
 
   public static final int SUPPORT_TARGET_FIELD_NUMBER = 4;
   private boolean supportTarget_ = false;
-
   /**
    *
    *
@@ -404,7 +397,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -631,7 +623,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -657,7 +648,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean supportSource_;
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     public boolean getSupportSource() {
       return supportSource_;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean supportTarget_;
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
     public boolean getSupportTarget() {
       return supportTarget_;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

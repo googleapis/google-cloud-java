@@ -37,7 +37,6 @@ public interface SearchPublicKgResponseOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SearchPublicKgResponseOrBuilder
    * @return The context.
    */
   com.google.protobuf.Value getContext();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SearchPublicKgResponseOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface SearchPublicKgResponseOrBuilder
    * @return The type.
    */
   com.google.protobuf.Value getType();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface SearchPublicKgResponseOrBuilder
    * @return Whether the itemListElement field is set.
    */
   boolean hasItemListElement();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface SearchPublicKgResponseOrBuilder
    * @return The itemListElement.
    */
   com.google.protobuf.ListValue getItemListElement();
-
   /**
    *
    *

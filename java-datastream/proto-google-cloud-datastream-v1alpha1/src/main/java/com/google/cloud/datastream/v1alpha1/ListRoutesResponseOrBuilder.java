@@ -34,7 +34,6 @@ public interface ListRoutesResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.Route routes = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.Route> getRoutesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRoutesResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.Route routes = 1;</code>
    */
   com.google.cloud.datastream.v1alpha1.Route getRoutes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRoutesResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.Route routes = 1;</code>
    */
   int getRoutesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.RouteOrBuilder>
       getRoutesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListRoutesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListRoutesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListRoutesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

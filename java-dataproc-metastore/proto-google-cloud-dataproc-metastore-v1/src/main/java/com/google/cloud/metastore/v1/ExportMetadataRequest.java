@@ -34,7 +34,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.ExportMetadataRequest)
     ExportMetadataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportMetadataRequest.newBuilder() to construct.
   private ExportMetadataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DESTINATION_GCS_FOLDER_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDestinationGcsFolder() {
     return destinationCase_ == 2;
   }
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -295,7 +287,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -333,7 +324,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DATABASE_DUMP_TYPE_FIELD_NUMBER = 4;
   private int databaseDumpType_ = 0;
-
   /**
    *
    *
@@ -352,7 +342,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
   public int getDatabaseDumpTypeValue() {
     return databaseDumpType_;
   }
-
   /**
    *
    *
@@ -577,7 +566,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -849,7 +837,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDestinationGcsFolder() {
       return destinationCase_ == 2;
     }
-
     /**
      *
      *
@@ -880,7 +867,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -911,7 +897,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -935,7 +920,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +941,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +967,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -1012,7 +994,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1021,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1047,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1069,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1098,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1154,7 +1131,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1164,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1196,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1224,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1259,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int databaseDumpType_ = 0;
-
     /**
      *
      *
@@ -1305,7 +1277,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     public int getDatabaseDumpTypeValue() {
       return databaseDumpType_;
     }
-
     /**
      *
      *
@@ -1327,7 +1298,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1320,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1375,7 +1344,6 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

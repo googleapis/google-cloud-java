@@ -35,7 +35,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails)
     PolylineDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PolylineDetails.newBuilder() to construct.
   private PolylineDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * <code>ROAD_FEATURE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ROAD_FEATURE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * <code>EXISTS = 1;</code>
      */
     public static final int EXISTS_VALUE = 1;
-
     /**
      *
      *
@@ -245,7 +242,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return Whether the startIndex field is set.
      */
     boolean hasStartIndex();
-
     /**
      *
      *
@@ -271,7 +267,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return Whether the endIndex field is set.
      */
     boolean hasEndIndex();
-
     /**
      *
      *
@@ -285,7 +280,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      */
     int getEndIndex();
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails.PolylinePointIndex)
       PolylinePointIndexOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PolylinePointIndex.newBuilder() to construct.
     private PolylinePointIndex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -334,7 +327,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int START_INDEX_FIELD_NUMBER = 1;
     private int startIndex_ = 0;
-
     /**
      *
      *
@@ -350,7 +342,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasStartIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -369,7 +360,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
 
     public static final int END_INDEX_FIELD_NUMBER = 2;
     private int endIndex_ = 0;
-
     /**
      *
      *
@@ -385,7 +375,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasEndIndex() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -582,7 +571,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -791,7 +779,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int startIndex_;
-
       /**
        *
        *
@@ -807,7 +794,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public boolean hasStartIndex() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -823,7 +809,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public int getStartIndex() {
         return startIndex_;
       }
-
       /**
        *
        *
@@ -843,7 +828,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -863,7 +847,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
 
       private int endIndex_;
-
       /**
        *
        *
@@ -879,7 +862,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public boolean hasEndIndex() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -895,7 +877,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public int getEndIndex() {
         return endIndex_;
       }
-
       /**
        *
        *
@@ -915,7 +896,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1021,7 +1001,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for flyoverPresence.
      */
     int getFlyoverPresenceValue();
-
     /**
      *
      *
@@ -1051,7 +1030,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return Whether the polylinePointIndex field is set.
      */
     boolean hasPolylinePointIndex();
-
     /**
      *
      *
@@ -1065,7 +1043,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return The polylinePointIndex.
      */
     com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex();
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
         getPolylinePointIndexOrBuilder();
   }
-
   /**
    *
    *
@@ -1094,7 +1070,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails.FlyoverInfo)
       FlyoverInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FlyoverInfo.newBuilder() to construct.
     private FlyoverInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1128,7 +1103,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int FLYOVER_PRESENCE_FIELD_NUMBER = 1;
     private int flyoverPresence_ = 0;
-
     /**
      *
      *
@@ -1147,7 +1121,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     public int getFlyoverPresenceValue() {
       return flyoverPresence_;
     }
-
     /**
      *
      *
@@ -1173,7 +1146,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
 
     public static final int POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
     private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasPolylinePointIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1209,7 +1180,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
           ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
           : polylinePointIndex_;
     }
-
     /**
      *
      *
@@ -1410,7 +1380,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1629,7 +1598,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int flyoverPresence_ = 0;
-
       /**
        *
        *
@@ -1648,7 +1616,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public int getFlyoverPresenceValue() {
         return flyoverPresence_;
       }
-
       /**
        *
        *
@@ -1670,7 +1637,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1693,7 +1659,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
             ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1719,7 +1684,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1747,7 +1711,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
               com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
               com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
           polylinePointIndexBuilder_;
-
       /**
        *
        *
@@ -1763,7 +1726,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public boolean hasPolylinePointIndex() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1785,7 +1747,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
           return polylinePointIndexBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1810,7 +1771,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1832,7 +1792,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1864,7 +1823,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1885,7 +1843,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1902,7 +1859,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getPolylinePointIndexFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1923,7 +1879,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
               : polylinePointIndex_;
         }
       }
-
       /**
        *
        *
@@ -2035,7 +1990,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for narrowRoadPresence.
      */
     int getNarrowRoadPresenceValue();
-
     /**
      *
      *
@@ -2065,7 +2019,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return Whether the polylinePointIndex field is set.
      */
     boolean hasPolylinePointIndex();
-
     /**
      *
      *
@@ -2079,7 +2032,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
      * @return The polylinePointIndex.
      */
     com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex();
-
     /**
      *
      *
@@ -2093,7 +2045,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
         getPolylinePointIndexOrBuilder();
   }
-
   /**
    *
    *
@@ -2108,7 +2059,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails.NarrowRoadInfo)
       NarrowRoadInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NarrowRoadInfo.newBuilder() to construct.
     private NarrowRoadInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2142,7 +2092,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int NARROW_ROAD_PRESENCE_FIELD_NUMBER = 1;
     private int narrowRoadPresence_ = 0;
-
     /**
      *
      *
@@ -2161,7 +2110,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     public int getNarrowRoadPresenceValue() {
       return narrowRoadPresence_;
     }
-
     /**
      *
      *
@@ -2188,7 +2136,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
 
     public static final int POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
     private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
-
     /**
      *
      *
@@ -2205,7 +2152,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasPolylinePointIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2224,7 +2170,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
           ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
           : polylinePointIndex_;
     }
-
     /**
      *
      *
@@ -2425,7 +2370,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2644,7 +2588,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int narrowRoadPresence_ = 0;
-
       /**
        *
        *
@@ -2663,7 +2606,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public int getNarrowRoadPresenceValue() {
         return narrowRoadPresence_;
       }
-
       /**
        *
        *
@@ -2685,7 +2627,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2709,7 +2650,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
             ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2735,7 +2675,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2763,7 +2702,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
               com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
               com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
           polylinePointIndexBuilder_;
-
       /**
        *
        *
@@ -2779,7 +2717,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       public boolean hasPolylinePointIndex() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2801,7 +2738,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
           return polylinePointIndexBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2826,7 +2762,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2848,7 +2783,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2880,7 +2814,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -2901,7 +2834,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2918,7 +2850,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getPolylinePointIndexFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2939,7 +2870,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
               : polylinePointIndex_;
         }
       }
-
       /**
        *
        *
@@ -3035,7 +2965,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.PolylineDetails.FlyoverInfo> flyoverInfo_;
-
   /**
    *
    *
@@ -3050,7 +2979,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       getFlyoverInfoList() {
     return flyoverInfo_;
   }
-
   /**
    *
    *
@@ -3065,7 +2993,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       getFlyoverInfoOrBuilderList() {
     return flyoverInfo_;
   }
-
   /**
    *
    *
@@ -3079,7 +3006,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
   public int getFlyoverInfoCount() {
     return flyoverInfo_.size();
   }
-
   /**
    *
    *
@@ -3093,7 +3019,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
   public com.google.maps.routing.v2.PolylineDetails.FlyoverInfo getFlyoverInfo(int index) {
     return flyoverInfo_.get(index);
   }
-
   /**
    *
    *
@@ -3113,7 +3038,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo> narrowRoadInfo_;
-
   /**
    *
    *
@@ -3129,7 +3053,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       getNarrowRoadInfoList() {
     return narrowRoadInfo_;
   }
-
   /**
    *
    *
@@ -3146,7 +3069,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       getNarrowRoadInfoOrBuilderList() {
     return narrowRoadInfo_;
   }
-
   /**
    *
    *
@@ -3161,7 +3083,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
   public int getNarrowRoadInfoCount() {
     return narrowRoadInfo_.size();
   }
-
   /**
    *
    *
@@ -3176,7 +3097,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
   public com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo getNarrowRoadInfo(int index) {
     return narrowRoadInfo_.get(index);
   }
-
   /**
    *
    *
@@ -3365,7 +3285,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3688,7 +3607,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return flyoverInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3705,7 +3623,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return flyoverInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3722,7 +3639,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return flyoverInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3746,7 +3662,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3767,7 +3682,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3790,7 +3704,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3814,7 +3727,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3835,7 +3747,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3856,7 +3767,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3878,7 +3788,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3898,7 +3807,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3918,7 +3826,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3932,7 +3839,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getFlyoverInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3950,7 +3856,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return flyoverInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3968,7 +3873,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(flyoverInfo_);
       }
     }
-
     /**
      *
      *
@@ -3982,7 +3886,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       return getFlyoverInfoFieldBuilder()
           .addBuilder(com.google.maps.routing.v2.PolylineDetails.FlyoverInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3998,7 +3901,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.maps.routing.v2.PolylineDetails.FlyoverInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4066,7 +3968,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return narrowRoadInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4084,7 +3985,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return narrowRoadInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4102,7 +4002,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return narrowRoadInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4127,7 +4026,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4150,7 +4048,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4175,7 +4072,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4200,7 +4096,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4222,7 +4117,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4245,7 +4139,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4268,7 +4161,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4289,7 +4181,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4310,7 +4201,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4325,7 +4215,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         getNarrowRoadInfoBuilder(int index) {
       return getNarrowRoadInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4344,7 +4233,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return narrowRoadInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4364,7 +4252,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(narrowRoadInfo_);
       }
     }
-
     /**
      *
      *
@@ -4381,7 +4268,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4399,7 +4285,6 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo.getDefaultInstance());
     }
-
     /**
      *
      *

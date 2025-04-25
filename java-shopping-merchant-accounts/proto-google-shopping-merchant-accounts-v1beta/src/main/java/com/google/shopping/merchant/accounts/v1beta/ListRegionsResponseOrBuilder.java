@@ -34,7 +34,6 @@ public interface ListRegionsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Region regions = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Region> getRegionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRegionsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Region regions = 1;</code>
    */
   com.google.shopping.merchant.accounts.v1beta.Region getRegions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRegionsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Region regions = 1;</code>
    */
   int getRegionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRegionsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.RegionOrBuilder>
       getRegionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRegionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

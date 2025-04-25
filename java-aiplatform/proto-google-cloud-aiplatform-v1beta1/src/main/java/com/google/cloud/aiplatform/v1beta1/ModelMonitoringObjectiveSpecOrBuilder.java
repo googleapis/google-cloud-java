@@ -38,7 +38,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return Whether the tabularObjective field is set.
    */
   boolean hasTabularObjective();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveSpec.TabularObjective
       getTabularObjective();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return Whether the explanationSpec field is set.
    */
   boolean hasExplanationSpec();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return The explanationSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return Whether the baselineDataset field is set.
    */
   boolean hasBaselineDataset();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return The baselineDataset.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput getBaselineDataset();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return Whether the targetDataset field is set.
    */
   boolean hasTargetDataset();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface ModelMonitoringObjectiveSpecOrBuilder
    * @return The targetDataset.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput getTargetDataset();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory)
     InventoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Inventory.newBuilder() to construct.
   private Inventory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,7 +98,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The hostname.
      */
     java.lang.String getHostname();
-
     /**
      *
      *
@@ -127,7 +125,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The longName.
      */
     java.lang.String getLongName();
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The shortName.
      */
     java.lang.String getShortName();
-
     /**
      *
      *
@@ -183,7 +179,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The version.
      */
     java.lang.String getVersion();
-
     /**
      *
      *
@@ -209,7 +204,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The architecture.
      */
     java.lang.String getArchitecture();
-
     /**
      *
      *
@@ -235,7 +229,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The kernelVersion.
      */
     java.lang.String getKernelVersion();
-
     /**
      *
      *
@@ -261,7 +254,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The kernelRelease.
      */
     java.lang.String getKernelRelease();
-
     /**
      *
      *
@@ -287,7 +279,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The osconfigAgentVersion.
      */
     java.lang.String getOsconfigAgentVersion();
-
     /**
      *
      *
@@ -301,7 +292,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getOsconfigAgentVersionBytes();
   }
-
   /**
    *
    *
@@ -316,7 +306,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.OsInfo)
       OsInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OsInfo.newBuilder() to construct.
     private OsInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -358,7 +347,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object hostname_ = "";
-
     /**
      *
      *
@@ -382,7 +370,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -411,7 +398,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object longName_ = "";
-
     /**
      *
      *
@@ -437,7 +423,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -468,7 +453,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object shortName_ = "";
-
     /**
      *
      *
@@ -493,7 +477,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -523,7 +506,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -547,7 +529,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -576,7 +557,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object architecture_ = "";
-
     /**
      *
      *
@@ -600,7 +580,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -629,7 +608,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kernelVersion_ = "";
-
     /**
      *
      *
@@ -653,7 +631,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -682,7 +659,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kernelRelease_ = "";
-
     /**
      *
      *
@@ -706,7 +682,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -735,7 +710,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object osconfigAgentVersion_ = "";
-
     /**
      *
      *
@@ -759,7 +733,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1300,7 +1272,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object hostname_ = "";
-
       /**
        *
        *
@@ -1323,7 +1294,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1346,7 +1316,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1368,7 +1337,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1386,7 +1354,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1411,7 +1378,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object longName_ = "";
-
       /**
        *
        *
@@ -1436,7 +1402,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1461,7 +1426,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1485,7 +1449,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1505,7 +1468,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1532,7 +1494,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object shortName_ = "";
-
       /**
        *
        *
@@ -1556,7 +1517,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1580,7 +1540,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1603,7 +1562,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1622,7 +1580,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1648,7 +1605,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object version_ = "";
-
       /**
        *
        *
@@ -1671,7 +1627,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1694,7 +1649,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1716,7 +1670,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1734,7 +1687,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1759,7 +1711,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object architecture_ = "";
-
       /**
        *
        *
@@ -1782,7 +1733,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1805,7 +1755,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1827,7 +1776,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1845,7 +1793,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1870,7 +1817,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object kernelVersion_ = "";
-
       /**
        *
        *
@@ -1893,7 +1839,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1916,7 +1861,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1938,7 +1882,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1956,7 +1899,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1981,7 +1923,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object kernelRelease_ = "";
-
       /**
        *
        *
@@ -2004,7 +1945,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2027,7 +1967,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2049,7 +1988,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2067,7 +2005,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2092,7 +2029,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object osconfigAgentVersion_ = "";
-
       /**
        *
        *
@@ -2115,7 +2051,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2138,7 +2073,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2160,7 +2094,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2178,7 +2111,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2283,7 +2215,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -2309,7 +2240,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for originType.
      */
     int getOriginTypeValue();
-
     /**
      *
      *
@@ -2335,7 +2265,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     boolean hasCreateTime();
-
     /**
      *
      *
@@ -2348,7 +2277,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The createTime.
      */
     com.google.protobuf.Timestamp getCreateTime();
-
     /**
      *
      *
@@ -2372,7 +2300,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
-
     /**
      *
      *
@@ -2385,7 +2312,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
-
     /**
      *
      *
@@ -2409,7 +2335,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -2435,7 +2360,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the installedPackage field is set.
      */
     boolean hasInstalledPackage();
-
     /**
      *
      *
@@ -2448,7 +2372,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The installedPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.SoftwarePackage getInstalledPackage();
-
     /**
      *
      *
@@ -2472,7 +2395,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the availablePackage field is set.
      */
     boolean hasAvailablePackage();
-
     /**
      *
      *
@@ -2485,7 +2407,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The availablePackage.
      */
     com.google.cloud.osconfig.v1.Inventory.SoftwarePackage getAvailablePackage();
-
     /**
      *
      *
@@ -2499,7 +2420,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.osconfig.v1.Inventory.Item.DetailsCase getDetailsCase();
   }
-
   /**
    *
    *
@@ -2514,7 +2434,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.Item)
       ItemOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Item.newBuilder() to construct.
     private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2591,7 +2510,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>ORIGIN_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int ORIGIN_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2738,7 +2656,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2749,7 +2666,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * <code>INSTALLED_PACKAGE = 1;</code>
        */
       public static final int INSTALLED_PACKAGE_VALUE = 1;
-
       /**
        *
        *
@@ -2862,7 +2778,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private DetailsCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2899,7 +2814,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -2923,7 +2837,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2950,7 +2863,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ORIGIN_TYPE_FIELD_NUMBER = 2;
     private int originType_ = 0;
-
     /**
      *
      *
@@ -2966,7 +2878,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public int getOriginTypeValue() {
       return originType_;
     }
-
     /**
      *
      *
@@ -2989,7 +2900,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CREATE_TIME_FIELD_NUMBER = 8;
     private com.google.protobuf.Timestamp createTime_;
-
     /**
      *
      *
@@ -3005,7 +2915,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3021,7 +2930,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
-
     /**
      *
      *
@@ -3038,7 +2946,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 9;
     private com.google.protobuf.Timestamp updateTime_;
-
     /**
      *
      *
@@ -3054,7 +2961,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3070,7 +2976,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
-
     /**
      *
      *
@@ -3087,7 +2992,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 5;
     private int type_ = 0;
-
     /**
      *
      *
@@ -3103,7 +3007,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -3125,7 +3028,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INSTALLED_PACKAGE_FIELD_NUMBER = 6;
-
     /**
      *
      *
@@ -3141,7 +3043,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstalledPackage() {
       return detailsCase_ == 6;
     }
-
     /**
      *
      *
@@ -3160,7 +3061,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -3180,7 +3080,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AVAILABLE_PACKAGE_FIELD_NUMBER = 7;
-
     /**
      *
      *
@@ -3196,7 +3095,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvailablePackage() {
       return detailsCase_ == 7;
     }
-
     /**
      *
      *
@@ -3215,7 +3113,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -3483,7 +3380,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3810,7 +3706,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -3833,7 +3728,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3856,7 +3750,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3878,7 +3771,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3896,7 +3788,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3921,7 +3812,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int originType_ = 0;
-
       /**
        *
        *
@@ -3937,7 +3827,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public int getOriginTypeValue() {
         return originType_;
       }
-
       /**
        *
        *
@@ -3956,7 +3845,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3976,7 +3864,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.osconfig.v1.Inventory.Item.OriginType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3998,7 +3885,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4023,7 +3909,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           createTimeBuilder_;
-
       /**
        *
        *
@@ -4038,7 +3923,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCreateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -4059,7 +3943,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return createTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4082,7 +3965,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4102,7 +3984,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4130,7 +4011,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4150,7 +4030,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4165,7 +4044,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4184,7 +4062,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               : createTime_;
         }
       }
-
       /**
        *
        *
@@ -4217,7 +4094,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
-
       /**
        *
        *
@@ -4232,7 +4108,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -4253,7 +4128,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4276,7 +4150,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4296,7 +4169,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4324,7 +4196,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4344,7 +4215,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4359,7 +4229,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4378,7 +4247,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
-
       /**
        *
        *
@@ -4406,7 +4274,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -4422,7 +4289,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -4441,7 +4307,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4461,7 +4326,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.osconfig.v1.Inventory.Item.Type.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4483,7 +4347,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4507,7 +4370,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.SoftwarePackageOrBuilder>
           installedPackageBuilder_;
-
       /**
        *
        *
@@ -4523,7 +4385,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInstalledPackage() {
         return detailsCase_ == 6;
       }
-
       /**
        *
        *
@@ -4549,7 +4410,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4573,7 +4433,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -4594,7 +4453,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -4629,7 +4487,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -4655,7 +4512,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4669,7 +4525,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getInstalledPackageBuilder() {
         return getInstalledPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4691,7 +4546,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4730,7 +4584,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.SoftwarePackageOrBuilder>
           availablePackageBuilder_;
-
       /**
        *
        *
@@ -4746,7 +4599,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAvailablePackage() {
         return detailsCase_ == 7;
       }
-
       /**
        *
        *
@@ -4772,7 +4624,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4796,7 +4647,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -4817,7 +4667,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -4852,7 +4701,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -4878,7 +4726,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4892,7 +4739,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getAvailablePackageBuilder() {
         return getAvailablePackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4914,7 +4760,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5031,7 +4876,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the yumPackage field is set.
      */
     boolean hasYumPackage();
-
     /**
      *
      *
@@ -5046,7 +4890,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The yumPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.VersionedPackage getYumPackage();
-
     /**
      *
      *
@@ -5074,7 +4917,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the aptPackage field is set.
      */
     boolean hasAptPackage();
-
     /**
      *
      *
@@ -5089,7 +4931,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The aptPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.VersionedPackage getAptPackage();
-
     /**
      *
      *
@@ -5117,7 +4958,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zypperPackage field is set.
      */
     boolean hasZypperPackage();
-
     /**
      *
      *
@@ -5132,7 +4972,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The zypperPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.VersionedPackage getZypperPackage();
-
     /**
      *
      *
@@ -5160,7 +4999,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the googetPackage field is set.
      */
     boolean hasGoogetPackage();
-
     /**
      *
      *
@@ -5175,7 +5013,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The googetPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.VersionedPackage getGoogetPackage();
-
     /**
      *
      *
@@ -5203,7 +5040,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zypperPatch field is set.
      */
     boolean hasZypperPatch();
-
     /**
      *
      *
@@ -5218,7 +5054,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The zypperPatch.
      */
     com.google.cloud.osconfig.v1.Inventory.ZypperPatch getZypperPatch();
-
     /**
      *
      *
@@ -5246,7 +5081,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the wuaPackage field is set.
      */
     boolean hasWuaPackage();
-
     /**
      *
      *
@@ -5261,7 +5095,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The wuaPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage getWuaPackage();
-
     /**
      *
      *
@@ -5291,7 +5124,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the qfePackage field is set.
      */
     boolean hasQfePackage();
-
     /**
      *
      *
@@ -5308,7 +5140,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The qfePackage.
      */
     com.google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackage getQfePackage();
-
     /**
      *
      *
@@ -5337,7 +5168,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cosPackage field is set.
      */
     boolean hasCosPackage();
-
     /**
      *
      *
@@ -5350,7 +5180,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The cosPackage.
      */
     com.google.cloud.osconfig.v1.Inventory.VersionedPackage getCosPackage();
-
     /**
      *
      *
@@ -5374,7 +5203,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the windowsApplication field is set.
      */
     boolean hasWindowsApplication();
-
     /**
      *
      *
@@ -5387,7 +5215,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The windowsApplication.
      */
     com.google.cloud.osconfig.v1.Inventory.WindowsApplication getWindowsApplication();
-
     /**
      *
      *
@@ -5402,7 +5229,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.osconfig.v1.Inventory.SoftwarePackage.DetailsCase getDetailsCase();
   }
-
   /**
    *
    *
@@ -5417,7 +5243,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.SoftwarePackage)
       SoftwarePackageOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SoftwarePackage.newBuilder() to construct.
     private SoftwarePackage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5470,7 +5295,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private DetailsCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5518,7 +5342,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int YUM_PACKAGE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -5536,7 +5359,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasYumPackage() {
       return detailsCase_ == 1;
     }
-
     /**
      *
      *
@@ -5557,7 +5379,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5579,7 +5400,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int APT_PACKAGE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -5597,7 +5417,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAptPackage() {
       return detailsCase_ == 2;
     }
-
     /**
      *
      *
@@ -5618,7 +5437,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5640,7 +5458,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ZYPPER_PACKAGE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -5658,7 +5475,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasZypperPackage() {
       return detailsCase_ == 3;
     }
-
     /**
      *
      *
@@ -5679,7 +5495,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5701,7 +5516,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOOGET_PACKAGE_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -5719,7 +5533,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogetPackage() {
       return detailsCase_ == 4;
     }
-
     /**
      *
      *
@@ -5740,7 +5553,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5762,7 +5574,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ZYPPER_PATCH_FIELD_NUMBER = 5;
-
     /**
      *
      *
@@ -5780,7 +5591,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasZypperPatch() {
       return detailsCase_ == 5;
     }
-
     /**
      *
      *
@@ -5801,7 +5611,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5822,7 +5631,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WUA_PACKAGE_FIELD_NUMBER = 6;
-
     /**
      *
      *
@@ -5840,7 +5648,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWuaPackage() {
       return detailsCase_ == 6;
     }
-
     /**
      *
      *
@@ -5861,7 +5668,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5883,7 +5689,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int QFE_PACKAGE_FIELD_NUMBER = 7;
-
     /**
      *
      *
@@ -5903,7 +5708,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQfePackage() {
       return detailsCase_ == 7;
     }
-
     /**
      *
      *
@@ -5928,7 +5732,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackage
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5953,7 +5756,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COS_PACKAGE_FIELD_NUMBER = 8;
-
     /**
      *
      *
@@ -5969,7 +5771,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCosPackage() {
       return detailsCase_ == 8;
     }
-
     /**
      *
      *
@@ -5988,7 +5789,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -6008,7 +5808,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WINDOWS_APPLICATION_FIELD_NUMBER = 9;
-
     /**
      *
      *
@@ -6024,7 +5823,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWindowsApplication() {
       return detailsCase_ == 9;
     }
-
     /**
      *
      *
@@ -6043,7 +5841,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -6363,7 +6160,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6723,7 +6519,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.VersionedPackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.VersionedPackageOrBuilder>
           yumPackageBuilder_;
-
       /**
        *
        *
@@ -6741,7 +6536,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasYumPackage() {
         return detailsCase_ == 1;
       }
-
       /**
        *
        *
@@ -6769,7 +6563,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -6794,7 +6587,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -6817,7 +6609,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -6854,7 +6645,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -6882,7 +6672,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6898,7 +6687,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getYumPackageBuilder() {
         return getYumPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -6922,7 +6710,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -6963,7 +6750,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.VersionedPackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.VersionedPackageOrBuilder>
           aptPackageBuilder_;
-
       /**
        *
        *
@@ -6981,7 +6767,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAptPackage() {
         return detailsCase_ == 2;
       }
-
       /**
        *
        *
@@ -7009,7 +6794,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7034,7 +6818,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -7057,7 +6840,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -7094,7 +6876,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -7122,7 +6903,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7138,7 +6918,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getAptPackageBuilder() {
         return getAptPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -7162,7 +6941,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7203,7 +6981,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.VersionedPackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.VersionedPackageOrBuilder>
           zypperPackageBuilder_;
-
       /**
        *
        *
@@ -7221,7 +6998,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasZypperPackage() {
         return detailsCase_ == 3;
       }
-
       /**
        *
        *
@@ -7249,7 +7025,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7275,7 +7050,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -7298,7 +7072,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -7335,7 +7108,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -7363,7 +7135,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7379,7 +7150,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getZypperPackageBuilder() {
         return getZypperPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -7403,7 +7173,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7444,7 +7213,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.VersionedPackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.VersionedPackageOrBuilder>
           googetPackageBuilder_;
-
       /**
        *
        *
@@ -7462,7 +7230,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGoogetPackage() {
         return detailsCase_ == 4;
       }
-
       /**
        *
        *
@@ -7490,7 +7257,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7516,7 +7282,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -7539,7 +7304,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -7576,7 +7340,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -7604,7 +7367,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7620,7 +7382,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getGoogetPackageBuilder() {
         return getGoogetPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -7644,7 +7405,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7685,7 +7445,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.ZypperPatch.Builder,
               com.google.cloud.osconfig.v1.Inventory.ZypperPatchOrBuilder>
           zypperPatchBuilder_;
-
       /**
        *
        *
@@ -7703,7 +7462,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasZypperPatch() {
         return detailsCase_ == 5;
       }
-
       /**
        *
        *
@@ -7731,7 +7489,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7756,7 +7513,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 5;
         return this;
       }
-
       /**
        *
        *
@@ -7779,7 +7535,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 5;
         return this;
       }
-
       /**
        *
        *
@@ -7815,7 +7570,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 5;
         return this;
       }
-
       /**
        *
        *
@@ -7843,7 +7597,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7858,7 +7611,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.osconfig.v1.Inventory.ZypperPatch.Builder getZypperPatchBuilder() {
         return getZypperPatchFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -7881,7 +7633,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.ZypperPatch.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7922,7 +7673,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackageOrBuilder>
           wuaPackageBuilder_;
-
       /**
        *
        *
@@ -7940,7 +7690,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasWuaPackage() {
         return detailsCase_ == 6;
       }
-
       /**
        *
        *
@@ -7968,7 +7717,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -7994,7 +7742,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -8017,7 +7764,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -8055,7 +7801,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -8083,7 +7828,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8099,7 +7843,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getWuaPackageBuilder() {
         return getWuaPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8123,7 +7866,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8165,7 +7907,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackageOrBuilder>
           qfePackageBuilder_;
-
       /**
        *
        *
@@ -8186,7 +7927,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasQfePackage() {
         return detailsCase_ == 7;
       }
-
       /**
        *
        *
@@ -8221,7 +7961,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8250,7 +7989,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -8277,7 +8015,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -8319,7 +8056,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -8350,7 +8086,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8369,7 +8104,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getQfePackageBuilder() {
         return getQfePackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8398,7 +8132,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8446,7 +8179,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.VersionedPackage.Builder,
               com.google.cloud.osconfig.v1.Inventory.VersionedPackageOrBuilder>
           cosPackageBuilder_;
-
       /**
        *
        *
@@ -8462,7 +8194,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCosPackage() {
         return detailsCase_ == 8;
       }
-
       /**
        *
        *
@@ -8488,7 +8219,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8511,7 +8241,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 8;
         return this;
       }
-
       /**
        *
        *
@@ -8532,7 +8261,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 8;
         return this;
       }
-
       /**
        *
        *
@@ -8567,7 +8295,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 8;
         return this;
       }
-
       /**
        *
        *
@@ -8593,7 +8320,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8607,7 +8333,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getCosPackageBuilder() {
         return getCosPackageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8629,7 +8354,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.VersionedPackage.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8668,7 +8392,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.osconfig.v1.Inventory.WindowsApplication.Builder,
               com.google.cloud.osconfig.v1.Inventory.WindowsApplicationOrBuilder>
           windowsApplicationBuilder_;
-
       /**
        *
        *
@@ -8685,7 +8408,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasWindowsApplication() {
         return detailsCase_ == 9;
       }
-
       /**
        *
        *
@@ -8712,7 +8434,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8737,7 +8458,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 9;
         return this;
       }
-
       /**
        *
        *
@@ -8759,7 +8479,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 9;
         return this;
       }
-
       /**
        *
        *
@@ -8796,7 +8515,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         detailsCase_ = 9;
         return this;
       }
-
       /**
        *
        *
@@ -8823,7 +8541,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -8838,7 +8555,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getWindowsApplicationBuilder() {
         return getWindowsApplicationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8861,7 +8577,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.osconfig.v1.Inventory.WindowsApplication.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8978,7 +8693,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The packageName.
      */
     java.lang.String getPackageName();
-
     /**
      *
      *
@@ -9004,7 +8718,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The architecture.
      */
     java.lang.String getArchitecture();
-
     /**
      *
      *
@@ -9030,7 +8743,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The version.
      */
     java.lang.String getVersion();
-
     /**
      *
      *
@@ -9044,7 +8756,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getVersionBytes();
   }
-
   /**
    *
    *
@@ -9060,7 +8771,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.VersionedPackage)
       VersionedPackageOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VersionedPackage.newBuilder() to construct.
     private VersionedPackage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9097,7 +8807,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object packageName_ = "";
-
     /**
      *
      *
@@ -9121,7 +8830,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -9150,7 +8858,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object architecture_ = "";
-
     /**
      *
      *
@@ -9174,7 +8881,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -9203,7 +8909,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -9227,7 +8932,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -9431,7 +9135,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -9650,7 +9353,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object packageName_ = "";
-
       /**
        *
        *
@@ -9673,7 +9375,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9696,7 +9397,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9718,7 +9418,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9736,7 +9435,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9761,7 +9459,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object architecture_ = "";
-
       /**
        *
        *
@@ -9784,7 +9481,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9807,7 +9503,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9829,7 +9524,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9847,7 +9541,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9872,7 +9565,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object version_ = "";
-
       /**
        *
        *
@@ -9895,7 +9587,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9918,7 +9609,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9940,7 +9630,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9958,7 +9647,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10063,7 +9751,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The patchName.
      */
     java.lang.String getPatchName();
-
     /**
      *
      *
@@ -10089,7 +9776,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The category.
      */
     java.lang.String getCategory();
-
     /**
      *
      *
@@ -10115,7 +9801,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The severity.
      */
     java.lang.String getSeverity();
-
     /**
      *
      *
@@ -10141,7 +9826,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The summary.
      */
     java.lang.String getSummary();
-
     /**
      *
      *
@@ -10155,7 +9839,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSummaryBytes();
   }
-
   /**
    *
    *
@@ -10170,7 +9853,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.ZypperPatch)
       ZypperPatchOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ZypperPatch.newBuilder() to construct.
     private ZypperPatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10208,7 +9890,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object patchName_ = "";
-
     /**
      *
      *
@@ -10232,7 +9913,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10261,7 +9941,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object category_ = "";
-
     /**
      *
      *
@@ -10285,7 +9964,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10314,7 +9992,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object severity_ = "";
-
     /**
      *
      *
@@ -10338,7 +10015,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10367,7 +10043,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object summary_ = "";
-
     /**
      *
      *
@@ -10391,7 +10066,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10603,7 +10277,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -10836,7 +10509,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object patchName_ = "";
-
       /**
        *
        *
@@ -10859,7 +10531,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10882,7 +10553,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -10904,7 +10574,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10922,7 +10591,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10947,7 +10615,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object category_ = "";
-
       /**
        *
        *
@@ -10970,7 +10637,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10993,7 +10659,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11015,7 +10680,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11033,7 +10697,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11058,7 +10721,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object severity_ = "";
-
       /**
        *
        *
@@ -11081,7 +10743,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11104,7 +10765,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11126,7 +10786,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11144,7 +10803,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11169,7 +10827,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object summary_ = "";
-
       /**
        *
        *
@@ -11192,7 +10849,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11215,7 +10871,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11237,7 +10892,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11255,7 +10909,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11360,7 +11013,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
-
     /**
      *
      *
@@ -11386,7 +11038,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -11414,7 +11065,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory>
         getCategoriesList();
-
     /**
      *
      *
@@ -11428,7 +11078,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory getCategories(
         int index);
-
     /**
      *
      *
@@ -11441,7 +11090,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getCategoriesCount();
-
     /**
      *
      *
@@ -11458,7 +11106,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage
                     .WindowsUpdateCategoryOrBuilder>
         getCategoriesOrBuilderList();
-
     /**
      *
      *
@@ -11486,7 +11133,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the kbArticleIds.
      */
     java.util.List<java.lang.String> getKbArticleIdsList();
-
     /**
      *
      *
@@ -11500,7 +11146,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The count of kbArticleIds.
      */
     int getKbArticleIdsCount();
-
     /**
      *
      *
@@ -11515,7 +11160,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The kbArticleIds at the given index.
      */
     java.lang.String getKbArticleIds(int index);
-
     /**
      *
      *
@@ -11543,7 +11187,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The supportUrl.
      */
     java.lang.String getSupportUrl();
-
     /**
      *
      *
@@ -11570,7 +11213,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the moreInfoUrls.
      */
     java.util.List<java.lang.String> getMoreInfoUrlsList();
-
     /**
      *
      *
@@ -11584,7 +11226,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The count of moreInfoUrls.
      */
     int getMoreInfoUrlsCount();
-
     /**
      *
      *
@@ -11599,7 +11240,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The moreInfoUrls at the given index.
      */
     java.lang.String getMoreInfoUrls(int index);
-
     /**
      *
      *
@@ -11628,7 +11268,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The updateId.
      */
     java.lang.String getUpdateId();
-
     /**
      *
      *
@@ -11668,7 +11307,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastDeploymentChangeTime field is set.
      */
     boolean hasLastDeploymentChangeTime();
-
     /**
      *
      *
@@ -11681,7 +11319,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The lastDeploymentChangeTime.
      */
     com.google.protobuf.Timestamp getLastDeploymentChangeTime();
-
     /**
      *
      *
@@ -11693,7 +11330,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getLastDeploymentChangeTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -11712,7 +11348,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage)
       WindowsUpdatePackageOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WindowsUpdatePackage.newBuilder() to construct.
     private WindowsUpdatePackage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11766,7 +11401,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return The id.
        */
       java.lang.String getId();
-
       /**
        *
        *
@@ -11792,7 +11426,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return The name.
        */
       java.lang.String getName();
-
       /**
        *
        *
@@ -11806,7 +11439,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getNameBytes();
     }
-
     /**
      *
      *
@@ -11822,7 +11454,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory)
         WindowsUpdateCategoryOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use WindowsUpdateCategory.newBuilder() to construct.
       private WindowsUpdateCategory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -11860,7 +11491,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -11884,7 +11514,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -11913,7 +11542,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -11937,7 +11565,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -12155,7 +11782,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -12378,7 +12004,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object id_ = "";
-
         /**
          *
          *
@@ -12401,7 +12026,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -12424,7 +12048,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -12446,7 +12069,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12464,7 +12086,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12489,7 +12110,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object name_ = "";
-
         /**
          *
          *
@@ -12512,7 +12132,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -12535,7 +12154,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -12557,7 +12175,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12575,7 +12192,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12674,7 +12290,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -12698,7 +12313,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -12727,7 +12341,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -12751,7 +12364,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -12782,7 +12394,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory>
         categories_;
-
     /**
      *
      *
@@ -12800,7 +12411,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         getCategoriesList() {
       return categories_;
     }
-
     /**
      *
      *
@@ -12820,7 +12430,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         getCategoriesOrBuilderList() {
       return categories_;
     }
-
     /**
      *
      *
@@ -12836,7 +12445,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public int getCategoriesCount() {
       return categories_.size();
     }
-
     /**
      *
      *
@@ -12853,7 +12461,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         getCategories(int index) {
       return categories_.get(index);
     }
-
     /**
      *
      *
@@ -12877,7 +12484,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList kbArticleIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -12893,7 +12499,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getKbArticleIdsList() {
       return kbArticleIds_;
     }
-
     /**
      *
      *
@@ -12909,7 +12514,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public int getKbArticleIdsCount() {
       return kbArticleIds_.size();
     }
-
     /**
      *
      *
@@ -12926,7 +12530,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getKbArticleIds(int index) {
       return kbArticleIds_.get(index);
     }
-
     /**
      *
      *
@@ -12948,7 +12551,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object supportUrl_ = "";
-
     /**
      *
      *
@@ -12972,7 +12574,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -13002,7 +12603,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList moreInfoUrls_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -13018,7 +12618,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getMoreInfoUrlsList() {
       return moreInfoUrls_;
     }
-
     /**
      *
      *
@@ -13034,7 +12633,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public int getMoreInfoUrlsCount() {
       return moreInfoUrls_.size();
     }
-
     /**
      *
      *
@@ -13051,7 +12649,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMoreInfoUrls(int index) {
       return moreInfoUrls_.get(index);
     }
-
     /**
      *
      *
@@ -13073,7 +12670,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object updateId_ = "";
-
     /**
      *
      *
@@ -13098,7 +12694,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -13126,7 +12721,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REVISION_NUMBER_FIELD_NUMBER = 7;
     private int revisionNumber_ = 0;
-
     /**
      *
      *
@@ -13145,7 +12739,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_DEPLOYMENT_CHANGE_TIME_FIELD_NUMBER = 10;
     private com.google.protobuf.Timestamp lastDeploymentChangeTime_;
-
     /**
      *
      *
@@ -13161,7 +12754,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastDeploymentChangeTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -13179,7 +12771,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : lastDeploymentChangeTime_;
     }
-
     /**
      *
      *
@@ -13453,7 +13044,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -13848,7 +13438,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object title_ = "";
-
       /**
        *
        *
@@ -13871,7 +13460,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -13894,7 +13482,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -13916,7 +13503,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13934,7 +13520,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13959,7 +13544,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -13982,7 +13566,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14005,7 +13588,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14027,7 +13609,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14045,7 +13626,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14111,7 +13691,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return categoriesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -14130,7 +13709,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return categoriesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -14150,7 +13728,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return categoriesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -14177,7 +13754,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14202,7 +13778,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14228,7 +13803,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14255,7 +13829,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14279,7 +13852,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14304,7 +13876,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14331,7 +13902,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14353,7 +13923,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14375,7 +13944,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -14392,7 +13960,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           getCategoriesBuilder(int index) {
         return getCategoriesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -14413,7 +13980,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return categoriesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -14436,7 +14002,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(categories_);
         }
       }
-
       /**
        *
        *
@@ -14456,7 +14021,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -14477,7 +14041,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.osconfig.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -14526,7 +14089,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -14543,7 +14105,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         kbArticleIds_.makeImmutable();
         return kbArticleIds_;
       }
-
       /**
        *
        *
@@ -14559,7 +14120,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public int getKbArticleIdsCount() {
         return kbArticleIds_.size();
       }
-
       /**
        *
        *
@@ -14576,7 +14136,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getKbArticleIds(int index) {
         return kbArticleIds_.get(index);
       }
-
       /**
        *
        *
@@ -14593,7 +14152,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getKbArticleIdsBytes(int index) {
         return kbArticleIds_.getByteString(index);
       }
-
       /**
        *
        *
@@ -14618,7 +14176,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14642,7 +14199,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14663,7 +14219,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14683,7 +14238,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14710,7 +14264,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object supportUrl_ = "";
-
       /**
        *
        *
@@ -14733,7 +14286,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14756,7 +14308,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14778,7 +14329,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14796,7 +14346,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14829,7 +14378,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000020;
       }
-
       /**
        *
        *
@@ -14846,7 +14394,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         moreInfoUrls_.makeImmutable();
         return moreInfoUrls_;
       }
-
       /**
        *
        *
@@ -14862,7 +14409,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public int getMoreInfoUrlsCount() {
         return moreInfoUrls_.size();
       }
-
       /**
        *
        *
@@ -14879,7 +14425,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getMoreInfoUrls(int index) {
         return moreInfoUrls_.get(index);
       }
-
       /**
        *
        *
@@ -14896,7 +14441,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getMoreInfoUrlsBytes(int index) {
         return moreInfoUrls_.getByteString(index);
       }
-
       /**
        *
        *
@@ -14921,7 +14465,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14945,7 +14488,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14966,7 +14508,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14986,7 +14527,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15013,7 +14553,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object updateId_ = "";
-
       /**
        *
        *
@@ -15037,7 +14576,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -15061,7 +14599,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -15084,7 +14621,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15103,7 +14639,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15129,7 +14664,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int revisionNumber_;
-
       /**
        *
        *
@@ -15145,7 +14679,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public int getRevisionNumber() {
         return revisionNumber_;
       }
-
       /**
        *
        *
@@ -15165,7 +14698,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15190,7 +14722,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           lastDeploymentChangeTimeBuilder_;
-
       /**
        *
        *
@@ -15205,7 +14736,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLastDeploymentChangeTime() {
         return ((bitField0_ & 0x00000100) != 0);
       }
-
       /**
        *
        *
@@ -15226,7 +14756,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return lastDeploymentChangeTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15249,7 +14778,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15270,7 +14798,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15298,7 +14825,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -15318,7 +14844,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15333,7 +14858,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLastDeploymentChangeTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15352,7 +14876,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               : lastDeploymentChangeTime_;
         }
       }
-
       /**
        *
        *
@@ -15461,7 +14984,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The caption.
      */
     java.lang.String getCaption();
-
     /**
      *
      *
@@ -15487,7 +15009,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -15513,7 +15034,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The hotFixId.
      */
     java.lang.String getHotFixId();
-
     /**
      *
      *
@@ -15539,7 +15059,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the installTime field is set.
      */
     boolean hasInstallTime();
-
     /**
      *
      *
@@ -15552,7 +15071,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The installTime.
      */
     com.google.protobuf.Timestamp getInstallTime();
-
     /**
      *
      *
@@ -15564,7 +15082,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getInstallTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -15583,7 +15100,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.WindowsQuickFixEngineeringPackage)
       WindowsQuickFixEngineeringPackageOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WindowsQuickFixEngineeringPackage.newBuilder() to construct.
     private WindowsQuickFixEngineeringPackage(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -15623,7 +15139,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object caption_ = "";
-
     /**
      *
      *
@@ -15647,7 +15162,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -15676,7 +15190,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -15700,7 +15213,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -15729,7 +15241,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object hotFixId_ = "";
-
     /**
      *
      *
@@ -15753,7 +15264,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -15780,7 +15290,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INSTALL_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp installTime_;
-
     /**
      *
      *
@@ -15796,7 +15305,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstallTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -15814,7 +15322,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : installTime_;
     }
-
     /**
      *
      *
@@ -16031,7 +15538,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -16293,7 +15799,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object caption_ = "";
-
       /**
        *
        *
@@ -16316,7 +15821,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -16339,7 +15843,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -16361,7 +15864,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16379,7 +15881,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16404,7 +15905,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -16427,7 +15927,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -16450,7 +15949,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -16472,7 +15970,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16490,7 +15987,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16515,7 +16011,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object hotFixId_ = "";
-
       /**
        *
        *
@@ -16538,7 +16033,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -16561,7 +16055,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -16583,7 +16076,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16601,7 +16093,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16631,7 +16122,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           installTimeBuilder_;
-
       /**
        *
        *
@@ -16646,7 +16136,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInstallTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -16667,7 +16156,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return installTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -16690,7 +16178,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16710,7 +16197,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16738,7 +16224,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -16758,7 +16243,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16773,7 +16257,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getInstallTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -16792,7 +16275,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
               : installTime_;
         }
       }
-
       /**
        *
        *
@@ -16904,7 +16386,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -16930,7 +16411,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The displayVersion.
      */
     java.lang.String getDisplayVersion();
-
     /**
      *
      *
@@ -16956,7 +16436,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The publisher.
      */
     java.lang.String getPublisher();
-
     /**
      *
      *
@@ -16984,7 +16463,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the installDate field is set.
      */
     boolean hasInstallDate();
-
     /**
      *
      *
@@ -16999,7 +16477,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The installDate.
      */
     com.google.type.Date getInstallDate();
-
     /**
      *
      *
@@ -17025,7 +16502,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      * @return The helpLink.
      */
     java.lang.String getHelpLink();
-
     /**
      *
      *
@@ -17039,7 +16515,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getHelpLinkBytes();
   }
-
   /**
    *
    *
@@ -17056,7 +16531,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Inventory.WindowsApplication)
       WindowsApplicationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WindowsApplication.newBuilder() to construct.
     private WindowsApplication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -17095,7 +16569,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -17119,7 +16592,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -17148,7 +16620,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayVersion_ = "";
-
     /**
      *
      *
@@ -17172,7 +16643,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -17201,7 +16671,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object publisher_ = "";
-
     /**
      *
      *
@@ -17225,7 +16694,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -17252,7 +16720,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INSTALL_DATE_FIELD_NUMBER = 4;
     private com.google.type.Date installDate_;
-
     /**
      *
      *
@@ -17270,7 +16737,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstallDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -17288,7 +16754,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Date getInstallDate() {
       return installDate_ == null ? com.google.type.Date.getDefaultInstance() : installDate_;
     }
-
     /**
      *
      *
@@ -17309,7 +16774,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object helpLink_ = "";
-
     /**
      *
      *
@@ -17333,7 +16797,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -17560,7 +17023,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -17825,7 +17287,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -17848,7 +17309,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -17871,7 +17331,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -17893,7 +17352,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -17911,7 +17369,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -17936,7 +17393,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayVersion_ = "";
-
       /**
        *
        *
@@ -17959,7 +17415,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -17982,7 +17437,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -18004,7 +17458,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18022,7 +17475,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18047,7 +17499,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object publisher_ = "";
-
       /**
        *
        *
@@ -18070,7 +17521,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -18093,7 +17543,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -18115,7 +17564,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18133,7 +17581,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18161,7 +17608,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           installDateBuilder_;
-
       /**
        *
        *
@@ -18178,7 +17624,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInstallDate() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -18199,7 +17644,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return installDateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -18224,7 +17668,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18246,7 +17689,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18276,7 +17718,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -18298,7 +17739,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18315,7 +17755,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getInstallDateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -18334,7 +17773,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return installDate_ == null ? com.google.type.Date.getDefaultInstance() : installDate_;
         }
       }
-
       /**
        *
        *
@@ -18362,7 +17800,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object helpLink_ = "";
-
       /**
        *
        *
@@ -18385,7 +17822,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -18408,7 +17844,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -18430,7 +17865,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18448,7 +17882,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18541,7 +17974,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -18568,7 +18000,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -18598,7 +18029,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OS_INFO_FIELD_NUMBER = 1;
   private com.google.cloud.osconfig.v1.Inventory.OsInfo osInfo_;
-
   /**
    *
    *
@@ -18614,7 +18044,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOsInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -18632,7 +18061,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.osconfig.v1.Inventory.OsInfo.getDefaultInstance()
         : osInfo_;
   }
-
   /**
    *
    *
@@ -18682,7 +18110,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
-
   /**
    *
    *
@@ -18702,14 +18129,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetItems().getMap().containsKey(key);
   }
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.osconfig.v1.Inventory.Item> getItems() {
     return getItemsMap();
   }
-
   /**
    *
    *
@@ -18727,7 +18152,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       getItemsMap() {
     return internalGetItems().getMap();
   }
-
   /**
    *
    *
@@ -18752,7 +18176,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -18780,7 +18203,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -18797,7 +18219,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -18814,7 +18235,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -19034,7 +18454,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -19314,7 +18733,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -19340,7 +18758,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -19366,7 +18783,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -19391,7 +18807,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19412,7 +18827,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19445,7 +18859,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1.Inventory.OsInfo.Builder,
             com.google.cloud.osconfig.v1.Inventory.OsInfoOrBuilder>
         osInfoBuilder_;
-
     /**
      *
      *
@@ -19460,7 +18873,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOsInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -19481,7 +18893,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return osInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -19504,7 +18915,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19525,7 +18935,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19553,7 +18962,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19573,7 +18981,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19588,7 +18995,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOsInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -19607,7 +19013,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             : osInfo_;
       }
     }
-
     /**
      *
      *
@@ -19654,8 +19059,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ItemsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ItemsConverter itemsConverter = new ItemsConverter();
 
@@ -19695,7 +19099,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public int getItemsCount() {
       return internalGetItems().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -19715,14 +19118,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetItems().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.osconfig.v1.Inventory.Item> getItems() {
       return getItemsMap();
     }
-
     /**
      *
      *
@@ -19740,7 +19141,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         getItemsMap() {
       return internalGetItems().getImmutableMap();
     }
-
     /**
      *
      *
@@ -19765,7 +19165,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableItems().ensureBuilderMap();
       return map.containsKey(key) ? itemsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -19796,7 +19195,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableItems().clear();
       return this;
     }
-
     /**
      *
      *
@@ -19816,7 +19214,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableItems().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.osconfig.v1.Inventory.Item>
@@ -19824,7 +19221,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableItems().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -19849,7 +19245,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -19874,7 +19269,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -19909,7 +19303,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -19926,7 +19319,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -19949,7 +19341,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -19974,7 +19365,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19996,7 +19386,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -20026,7 +19415,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -20048,7 +19436,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -20065,7 +19452,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -20086,7 +19472,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *

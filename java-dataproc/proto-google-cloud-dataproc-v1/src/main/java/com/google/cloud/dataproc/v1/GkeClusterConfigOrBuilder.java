@@ -41,7 +41,6 @@ public interface GkeClusterConfigOrBuilder
    * @return The gkeClusterTarget.
    */
   java.lang.String getGkeClusterTarget();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface GkeClusterConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.GkeNodePoolTarget> getNodePoolTargetList();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface GkeClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.GkeNodePoolTarget getNodePoolTarget(int index);
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface GkeClusterConfigOrBuilder
    * </code>
    */
   int getNodePoolTargetCount();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface GkeClusterConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.GkeNodePoolTargetOrBuilder>
       getNodePoolTargetOrBuilderList();
-
   /**
    *
    *

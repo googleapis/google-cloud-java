@@ -39,7 +39,6 @@ public interface CreateEntityRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateEntityRequestOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateEntityRequestOrBuilder
    * @return The entity.
    */
   com.google.cloud.dataplex.v1.Entity getEntity();
-
   /**
    *
    *

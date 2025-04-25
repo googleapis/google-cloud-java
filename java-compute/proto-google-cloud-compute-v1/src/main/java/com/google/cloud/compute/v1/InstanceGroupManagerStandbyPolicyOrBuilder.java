@@ -36,7 +36,6 @@ public interface InstanceGroupManagerStandbyPolicyOrBuilder
    * @return Whether the initialDelaySec field is set.
    */
   boolean hasInitialDelaySec();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface InstanceGroupManagerStandbyPolicyOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface InstanceGroupManagerStandbyPolicyOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *

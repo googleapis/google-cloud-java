@@ -33,7 +33,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.GetDocumentRequest)
     GetDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetDocumentRequest.newBuilder() to construct.
   private GetDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
-
   /**
    *
    *
@@ -359,7 +353,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return requestMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             : requestMetadata_;
       }
     }
-
     /**
      *
      *

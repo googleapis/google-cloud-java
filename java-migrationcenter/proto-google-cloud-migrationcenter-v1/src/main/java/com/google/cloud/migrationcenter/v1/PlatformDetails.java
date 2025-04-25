@@ -33,7 +33,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.PlatformDetails)
     PlatformDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PlatformDetails.newBuilder() to construct.
   private PlatformDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     private VendorDetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,7 +120,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VMWARE_DETAILS_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasVmwareDetails() {
     return vendorDetailsCase_ == 1;
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.migrationcenter.v1.VmwarePlatformDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AWS_EC2_DETAILS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasAwsEc2Details() {
     return vendorDetailsCase_ == 2;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.migrationcenter.v1.AwsEc2PlatformDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AZURE_VM_DETAILS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasAzureVmDetails() {
     return vendorDetailsCase_ == 3;
   }
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.migrationcenter.v1.AzureVmPlatformDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GENERIC_DETAILS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasGenericDetails() {
     return vendorDetailsCase_ == 4;
   }
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.migrationcenter.v1.GenericPlatformDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PHYSICAL_DETAILS_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -358,7 +343,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasPhysicalDetails() {
     return vendorDetailsCase_ == 5;
   }
-
   /**
    *
    *
@@ -377,7 +361,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.migrationcenter.v1.PhysicalPlatformDetails.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -635,7 +618,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -922,7 +904,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.migrationcenter.v1.VmwarePlatformDetails.Builder,
             com.google.cloud.migrationcenter.v1.VmwarePlatformDetailsOrBuilder>
         vmwareDetailsBuilder_;
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasVmwareDetails() {
       return vendorDetailsCase_ == 1;
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.VmwarePlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -988,7 +967,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1046,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         getVmwareDetailsBuilder() {
       return getVmwareDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1106,7 +1080,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.VmwarePlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1119,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.migrationcenter.v1.AwsEc2PlatformDetails.Builder,
             com.google.cloud.migrationcenter.v1.AwsEc2PlatformDetailsOrBuilder>
         awsEc2DetailsBuilder_;
-
     /**
      *
      *
@@ -1162,7 +1134,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasAwsEc2Details() {
       return vendorDetailsCase_ == 2;
     }
-
     /**
      *
      *
@@ -1188,7 +1159,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.AwsEc2PlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1236,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1261,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         getAwsEc2DetailsBuilder() {
       return getAwsEc2DetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1330,7 +1295,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.AwsEc2PlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1370,7 +1334,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.migrationcenter.v1.AzureVmPlatformDetails.Builder,
             com.google.cloud.migrationcenter.v1.AzureVmPlatformDetailsOrBuilder>
         azureVmDetailsBuilder_;
-
     /**
      *
      *
@@ -1386,7 +1349,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasAzureVmDetails() {
       return vendorDetailsCase_ == 3;
     }
-
     /**
      *
      *
@@ -1412,7 +1374,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.AzureVmPlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1436,7 +1397,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1457,7 +1417,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1493,7 +1452,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1477,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1533,7 +1490,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         getAzureVmDetailsBuilder() {
       return getAzureVmDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1555,7 +1511,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.AzureVmPlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1595,7 +1550,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.migrationcenter.v1.GenericPlatformDetails.Builder,
             com.google.cloud.migrationcenter.v1.GenericPlatformDetailsOrBuilder>
         genericDetailsBuilder_;
-
     /**
      *
      *
@@ -1611,7 +1565,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasGenericDetails() {
       return vendorDetailsCase_ == 4;
     }
-
     /**
      *
      *
@@ -1637,7 +1590,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.GenericPlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1661,7 +1613,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1633,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1668,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1744,7 +1693,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1706,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         getGenericDetailsBuilder() {
       return getGenericDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1780,7 +1727,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.GenericPlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1820,7 +1766,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.migrationcenter.v1.PhysicalPlatformDetails.Builder,
             com.google.cloud.migrationcenter.v1.PhysicalPlatformDetailsOrBuilder>
         physicalDetailsBuilder_;
-
     /**
      *
      *
@@ -1836,7 +1781,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasPhysicalDetails() {
       return vendorDetailsCase_ == 5;
     }
-
     /**
      *
      *
@@ -1862,7 +1806,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.PhysicalPlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1886,7 +1829,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1907,7 +1849,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1943,7 +1884,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       vendorDetailsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1969,7 +1909,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1983,7 +1922,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         getPhysicalDetailsBuilder() {
       return getPhysicalDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2005,7 +1943,6 @@ public final class PlatformDetails extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.migrationcenter.v1.PhysicalPlatformDetails.getDefaultInstance();
       }
     }
-
     /**
      *
      *

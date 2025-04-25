@@ -36,7 +36,6 @@ public interface ListSubscribersResponseOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ListSubscribersResponseOrBuilder
    * @return A list containing the serviceAccounts.
    */
   java.util.List<java.lang.String> getServiceAccountsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ListSubscribersResponseOrBuilder
    * @return The count of serviceAccounts.
    */
   int getServiceAccountsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ListSubscribersResponseOrBuilder
    * @return The serviceAccounts at the given index.
    */
   java.lang.String getServiceAccounts(int index);
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ListSubscribersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

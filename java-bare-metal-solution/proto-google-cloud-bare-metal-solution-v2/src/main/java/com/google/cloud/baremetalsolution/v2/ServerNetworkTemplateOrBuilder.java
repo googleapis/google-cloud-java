@@ -40,7 +40,6 @@ public interface ServerNetworkTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ServerNetworkTemplateOrBuilder
    * @return A list containing the applicableInstanceTypes.
    */
   java.util.List<java.lang.String> getApplicableInstanceTypesList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ServerNetworkTemplateOrBuilder
    * @return The count of applicableInstanceTypes.
    */
   int getApplicableInstanceTypesCount();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ServerNetworkTemplateOrBuilder
    * @return The applicableInstanceTypes at the given index.
    */
   java.lang.String getApplicableInstanceTypes(int index);
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ServerNetworkTemplateOrBuilder
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface>
       getLogicalInterfacesList();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface ServerNetworkTemplateOrBuilder
    */
   com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface getLogicalInterfaces(
       int index);
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface ServerNetworkTemplateOrBuilder
    * </code>
    */
   int getLogicalInterfacesCount();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface ServerNetworkTemplateOrBuilder
           ? extends
               com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterfaceOrBuilder>
       getLogicalInterfacesOrBuilderList();
-
   /**
    *
    *

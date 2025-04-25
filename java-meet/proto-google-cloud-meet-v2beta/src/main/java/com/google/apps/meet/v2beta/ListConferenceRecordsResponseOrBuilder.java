@@ -34,7 +34,6 @@ public interface ListConferenceRecordsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.ConferenceRecord conference_records = 1;</code>
    */
   java.util.List<com.google.apps.meet.v2beta.ConferenceRecord> getConferenceRecordsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConferenceRecordsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.ConferenceRecord conference_records = 1;</code>
    */
   com.google.apps.meet.v2beta.ConferenceRecord getConferenceRecords(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConferenceRecordsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2beta.ConferenceRecord conference_records = 1;</code>
    */
   int getConferenceRecordsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConferenceRecordsResponseOrBuilder
    */
   java.util.List<? extends com.google.apps.meet.v2beta.ConferenceRecordOrBuilder>
       getConferenceRecordsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListConferenceRecordsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

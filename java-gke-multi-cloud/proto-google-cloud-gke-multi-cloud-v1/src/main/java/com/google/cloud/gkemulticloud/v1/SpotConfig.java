@@ -33,7 +33,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.SpotConfig)
     SpotConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpotConfig.newBuilder() to construct.
   private SpotConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instanceTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getInstanceTypesList() {
     return instanceTypes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
   public int getInstanceTypesCount() {
     return instanceTypes_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getInstanceTypes(int index) {
     return instanceTypes_.get(index);
   }
-
   /**
    *
    *
@@ -298,7 +293,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +491,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
       instanceTypes_.makeImmutable();
       return instanceTypes_;
     }
-
     /**
      *
      *
@@ -528,7 +520,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
     public int getInstanceTypesCount() {
       return instanceTypes_.size();
     }
-
     /**
      *
      *
@@ -544,7 +535,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getInstanceTypes(int index) {
       return instanceTypes_.get(index);
     }
-
     /**
      *
      *
@@ -560,7 +550,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getInstanceTypesBytes(int index) {
       return instanceTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -584,7 +573,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +595,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +614,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +632,6 @@ public final class SpotConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface ConsumerGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ConsumerGroupOrBuilder
    * </code>
    */
   int getTopicsCount();
-
   /**
    *
    *
@@ -83,12 +81,10 @@ public interface ConsumerGroupOrBuilder
    * </code>
    */
   boolean containsTopics(java.lang.String key);
-
   /** Use {@link #getTopicsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.managedkafka.v1.ConsumerTopicMetadata>
       getTopics();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ConsumerGroupOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.managedkafka.v1.ConsumerTopicMetadata>
       getTopicsMap();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ConsumerGroupOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.managedkafka.v1.ConsumerTopicMetadata defaultValue);
-
   /**
    *
    *

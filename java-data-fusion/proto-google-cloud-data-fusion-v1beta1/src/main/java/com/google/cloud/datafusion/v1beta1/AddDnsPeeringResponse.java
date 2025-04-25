@@ -33,7 +33,6 @@ public final class AddDnsPeeringResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1beta1.AddDnsPeeringResponse)
     AddDnsPeeringResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddDnsPeeringResponse.newBuilder() to construct.
   private AddDnsPeeringResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class AddDnsPeeringResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

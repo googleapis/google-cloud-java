@@ -38,7 +38,6 @@ public interface QueuedResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface QueuedResourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the tpu field is set.
    */
   boolean hasTpu();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface QueuedResourceOrBuilder
    * @return The tpu.
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu getTpu();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the bestEffort field is set.
    */
   boolean hasBestEffort();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface QueuedResourceOrBuilder
    * @return The bestEffort.
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.BestEffort getBestEffort();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the guaranteed field is set.
    */
   boolean hasGuaranteed();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface QueuedResourceOrBuilder
    * @return The guaranteed.
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed getGuaranteed();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the spot field is set.
    */
   boolean hasSpot();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface QueuedResourceOrBuilder
    * @return The spot.
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.Spot getSpot();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the queueingPolicy field is set.
    */
   boolean hasQueueingPolicy();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface QueuedResourceOrBuilder
    * @return The queueingPolicy.
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy getQueueingPolicy();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface QueuedResourceOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -314,7 +300,6 @@ public interface QueuedResourceOrBuilder
    * @return The state.
    */
   com.google.cloud.tpu.v2alpha1.QueuedResourceState getState();
-
   /**
    *
    *
@@ -341,7 +326,6 @@ public interface QueuedResourceOrBuilder
    * @return The reservationName.
    */
   java.lang.String getReservationName();
-
   /**
    *
    *

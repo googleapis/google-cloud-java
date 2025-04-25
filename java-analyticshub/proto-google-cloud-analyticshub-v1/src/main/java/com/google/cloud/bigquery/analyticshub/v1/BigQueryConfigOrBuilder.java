@@ -37,7 +37,6 @@ public interface BigQueryConfigOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
-
   /**
    *
    *
@@ -133,7 +132,6 @@ public interface BigQueryConfigOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *

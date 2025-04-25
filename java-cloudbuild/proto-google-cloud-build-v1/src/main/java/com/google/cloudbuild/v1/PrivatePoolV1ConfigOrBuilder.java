@@ -36,7 +36,6 @@ public interface PrivatePoolV1ConfigOrBuilder
    * @return Whether the workerConfig field is set.
    */
   boolean hasWorkerConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PrivatePoolV1ConfigOrBuilder
    * @return The workerConfig.
    */
   com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig getWorkerConfig();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface PrivatePoolV1ConfigOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PrivatePoolV1ConfigOrBuilder
    * @return The networkConfig.
    */
   com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig getNetworkConfig();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface PrivatePoolV1ConfigOrBuilder
    * @return Whether the privateServiceConnect field is set.
    */
   boolean hasPrivateServiceConnect();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface PrivatePoolV1ConfigOrBuilder
    * @return The privateServiceConnect.
    */
   com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect getPrivateServiceConnect();
-
   /**
    *
    *

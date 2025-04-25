@@ -33,7 +33,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.WriteUserEventRequest)
     WriteUserEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WriteUserEventRequest.newBuilder() to construct.
   private WriteUserEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
 
   public static final int USER_EVENT_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.UserEvent userEvent_;
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUserEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.discoveryengine.v1.UserEvent.getDefaultInstance()
         : userEvent_;
   }
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
 
   public static final int WRITE_ASYNC_FIELD_NUMBER = 3;
   private boolean writeAsync_ = false;
-
   /**
    *
    *
@@ -402,7 +395,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +621,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -663,7 +654,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -730,7 +719,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +747,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +787,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1.UserEvent.Builder,
             com.google.cloud.discoveryengine.v1.UserEventOrBuilder>
         userEventBuilder_;
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUserEvent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -840,7 +825,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         return userEventBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +900,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +921,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +937,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUserEventFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -978,7 +957,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
             : userEvent_;
       }
     }
-
     /**
      *
      *
@@ -1008,7 +986,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean writeAsync_;
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     public boolean getWriteAsync() {
       return writeAsync_;
     }
-
     /**
      *
      *
@@ -1046,7 +1022,6 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

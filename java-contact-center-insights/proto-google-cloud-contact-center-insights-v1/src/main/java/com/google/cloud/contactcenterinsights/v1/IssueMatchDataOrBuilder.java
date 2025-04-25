@@ -36,7 +36,6 @@ public interface IssueMatchDataOrBuilder
    * @return Whether the issueAssignment field is set.
    */
   boolean hasIssueAssignment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface IssueMatchDataOrBuilder
    * @return The issueAssignment.
    */
   com.google.cloud.contactcenterinsights.v1.IssueAssignment getIssueAssignment();
-
   /**
    *
    *

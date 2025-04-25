@@ -166,7 +166,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EMPLOYMENT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int EMPLOYMENT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -178,7 +177,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FULL_TIME = 1;</code>
    */
   public static final int FULL_TIME_VALUE = 1;
-
   /**
    *
    *
@@ -190,7 +188,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PART_TIME = 2;</code>
    */
   public static final int PART_TIME_VALUE = 2;
-
   /**
    *
    *
@@ -202,7 +199,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTRACTOR = 3;</code>
    */
   public static final int CONTRACTOR_VALUE = 3;
-
   /**
    *
    *
@@ -217,7 +213,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTRACT_TO_HIRE = 4;</code>
    */
   public static final int CONTRACT_TO_HIRE_VALUE = 4;
-
   /**
    *
    *
@@ -229,7 +224,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEMPORARY = 5;</code>
    */
   public static final int TEMPORARY_VALUE = 5;
-
   /**
    *
    *
@@ -242,7 +236,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INTERN = 6;</code>
    */
   public static final int INTERN_VALUE = 6;
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VOLUNTEER = 7;</code>
    */
   public static final int VOLUNTEER_VALUE = 7;
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PER_DIEM = 8;</code>
    */
   public static final int PER_DIEM_VALUE = 8;
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLY_IN_FLY_OUT = 9;</code>
    */
   public static final int FLY_IN_FLY_OUT_VALUE = 9;
-
   /**
    *
    *

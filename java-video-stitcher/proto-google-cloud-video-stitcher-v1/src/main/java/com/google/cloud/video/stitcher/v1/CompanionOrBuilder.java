@@ -36,7 +36,6 @@ public interface CompanionOrBuilder
    * @return Whether the iframeAdResource field is set.
    */
   boolean hasIframeAdResource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CompanionOrBuilder
    * @return The iframeAdResource.
    */
   com.google.cloud.video.stitcher.v1.IframeAdResource getIframeAdResource();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface CompanionOrBuilder
    * @return Whether the staticAdResource field is set.
    */
   boolean hasStaticAdResource();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface CompanionOrBuilder
    * @return The staticAdResource.
    */
   com.google.cloud.video.stitcher.v1.StaticAdResource getStaticAdResource();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface CompanionOrBuilder
    * @return Whether the htmlAdResource field is set.
    */
   boolean hasHtmlAdResource();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface CompanionOrBuilder
    * @return The htmlAdResource.
    */
   com.google.cloud.video.stitcher.v1.HtmlAdResource getHtmlAdResource();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface CompanionOrBuilder
    * @return The apiFramework.
    */
   java.lang.String getApiFramework();
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public interface CompanionOrBuilder
    * @return The adSlotId.
    */
   java.lang.String getAdSlotId();
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public interface CompanionOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event events = 9;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.Event> getEventsList();
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public interface CompanionOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event events = 9;</code>
    */
   com.google.cloud.video.stitcher.v1.Event getEvents(int index);
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public interface CompanionOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event events = 9;</code>
    */
   int getEventsCount();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface CompanionOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.EventOrBuilder>
       getEventsOrBuilderList();
-
   /**
    *
    *

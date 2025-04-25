@@ -40,7 +40,6 @@ public interface ReadTensorboardUsageRequestOrBuilder
    * @return The tensorboard.
    */
   java.lang.String getTensorboard();
-
   /**
    *
    *

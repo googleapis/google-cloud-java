@@ -38,7 +38,6 @@ public interface PropertySummaryOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PropertySummaryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface PropertySummaryOrBuilder
    * @return The enum numeric value on the wire for propertyType.
    */
   int getPropertyTypeValue();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface PropertySummaryOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

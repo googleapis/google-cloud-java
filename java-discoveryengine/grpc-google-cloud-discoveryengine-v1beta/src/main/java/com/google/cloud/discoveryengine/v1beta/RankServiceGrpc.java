@@ -94,19 +94,6 @@ public final class RankServiceGrpc {
     return RankServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static RankServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<RankServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<RankServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public RankServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new RankServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return RankServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -211,39 +198,6 @@ public final class RankServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RankService.
-   *
-   * <pre>
-   * Service for ranking text records.
-   * </pre>
-   */
-  public static final class RankServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<RankServiceBlockingV2Stub> {
-    private RankServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected RankServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new RankServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Ranks a list of text records based on the given input query.
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.RankResponse rank(
-        com.google.cloud.discoveryengine.v1beta.RankRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRankMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service RankService.
    *
    * <pre>
    * Service for ranking text records.

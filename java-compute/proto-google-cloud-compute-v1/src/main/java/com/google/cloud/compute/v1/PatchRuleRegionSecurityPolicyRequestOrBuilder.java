@@ -36,7 +36,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the securityPolicyRuleResource field is set.
    */
   boolean hasSecurityPolicyRuleResource();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return The securityPolicyRuleResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyRule getSecurityPolicyRuleResource();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public interface PatchRuleRegionSecurityPolicyRequestOrBuilder
    * @return Whether the validateOnly field is set.
    */
   boolean hasValidateOnly();
-
   /**
    *
    *

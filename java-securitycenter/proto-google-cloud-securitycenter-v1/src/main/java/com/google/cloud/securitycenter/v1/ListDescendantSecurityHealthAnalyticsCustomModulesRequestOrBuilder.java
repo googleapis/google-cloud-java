@@ -41,7 +41,6 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesRequestOrBuil
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface ListDescendantSecurityHealthAnalyticsCustomModulesRequestOrBuil
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

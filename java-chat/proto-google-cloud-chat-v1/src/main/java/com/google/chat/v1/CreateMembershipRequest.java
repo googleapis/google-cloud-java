@@ -33,7 +33,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.chat.v1.CreateMembershipRequest)
     CreateMembershipRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateMembershipRequest.newBuilder() to construct.
   private CreateMembershipRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
 
   public static final int MEMBERSHIP_FIELD_NUMBER = 2;
   private com.google.chat.v1.Membership membership_;
-
   /**
    *
    *
@@ -183,7 +179,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
   public boolean hasMembership() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -236,7 +231,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
   public com.google.chat.v1.Membership getMembership() {
     return membership_ == null ? com.google.chat.v1.Membership.getDefaultInstance() : membership_;
   }
-
   /**
    *
    *
@@ -290,7 +284,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
 
   public static final int USE_ADMIN_ACCESS_FIELD_NUMBER = 5;
   private boolean useAdminAccess_ = false;
-
   /**
    *
    *
@@ -501,7 +494,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -727,7 +719,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -755,7 +746,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +773,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +799,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +821,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +855,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
             com.google.chat.v1.Membership.Builder,
             com.google.chat.v1.MembershipOrBuilder>
         membershipBuilder_;
-
     /**
      *
      *
@@ -920,7 +906,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     public boolean hasMembership() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -978,7 +963,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         return membershipBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1022,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1078,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1142,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1198,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1249,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return getMembershipFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1325,7 +1304,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
             : membership_;
       }
     }
-
     /**
      *
      *
@@ -1390,7 +1368,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     }
 
     private boolean useAdminAccess_;
-
     /**
      *
      *
@@ -1418,7 +1395,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     public boolean getUseAdminAccess() {
       return useAdminAccess_;
     }
-
     /**
      *
      *
@@ -1450,7 +1426,6 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

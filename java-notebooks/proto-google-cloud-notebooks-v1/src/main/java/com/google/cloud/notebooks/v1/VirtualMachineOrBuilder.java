@@ -36,7 +36,6 @@ public interface VirtualMachineOrBuilder
    * @return The instanceName.
    */
   java.lang.String getInstanceName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VirtualMachineOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface VirtualMachineOrBuilder
    * @return Whether the virtualMachineConfig field is set.
    */
   boolean hasVirtualMachineConfig();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface VirtualMachineOrBuilder
    * @return The virtualMachineConfig.
    */
   com.google.cloud.notebooks.v1.VirtualMachineConfig getVirtualMachineConfig();
-
   /**
    *
    *

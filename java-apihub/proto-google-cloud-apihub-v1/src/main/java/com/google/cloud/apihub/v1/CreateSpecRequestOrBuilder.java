@@ -40,7 +40,6 @@ public interface CreateSpecRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface CreateSpecRequestOrBuilder
    * @return The specId.
    */
   java.lang.String getSpecId();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface CreateSpecRequestOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface CreateSpecRequestOrBuilder
    * @return The spec.
    */
   com.google.cloud.apihub.v1.Spec getSpec();
-
   /**
    *
    *

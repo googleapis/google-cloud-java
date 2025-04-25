@@ -67,7 +67,6 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>
       getBoundingBoxMetricsEntriesList();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry getBoundingBoxMetricsEntries(int index);
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    * </code>
    */
   int getBoundingBoxMetricsEntriesCount();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface VideoObjectTrackingEvaluationMetricsOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntryOrBuilder>
       getBoundingBoxMetricsEntriesOrBuilderList();
-
   /**
    *
    *

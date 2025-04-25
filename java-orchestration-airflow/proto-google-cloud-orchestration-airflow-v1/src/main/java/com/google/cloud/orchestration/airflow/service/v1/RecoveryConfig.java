@@ -33,7 +33,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.RecoveryConfig)
     RecoveryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecoveryConfig.newBuilder() to construct.
   private RecoveryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int SCHEDULED_SNAPSHOTS_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.orchestration.airflow.service.v1.ScheduledSnapshotsConfig
       scheduledSnapshotsConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduledSnapshotsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : scheduledSnapshotsConfig_;
   }
-
   /**
    *
    *
@@ -294,7 +290,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -507,7 +502,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orchestration.airflow.service.v1.ScheduledSnapshotsConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1.ScheduledSnapshotsConfigOrBuilder>
         scheduledSnapshotsConfigBuilder_;
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduledSnapshotsConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
         return scheduledSnapshotsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScheduledSnapshotsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class RecoveryConfig extends com.google.protobuf.GeneratedMessageV3
             : scheduledSnapshotsConfig_;
       }
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface DatabaseConfigOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface DatabaseConfigOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

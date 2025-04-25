@@ -33,7 +33,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.DependencyErrorDetail)
     DependencyErrorDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DependencyErrorDetail.newBuilder() to construct.
   private DependencyErrorDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
      * <code>ERROR_UNSPECIFIED = 0;</code>
      */
     public static final int ERROR_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
      * <code>SUPPLIER_NOT_FOUND = 1;</code>
      */
     public static final int SUPPLIER_NOT_FOUND_VALUE = 1;
-
     /**
      *
      *
@@ -226,7 +223,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 1;
   private int error_ = 0;
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
   public int getErrorValue() {
     return error_;
   }
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
 
   public static final int ERROR_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp errorTime_;
-
   /**
    *
    *
@@ -286,7 +280,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
   public boolean hasErrorTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -303,7 +296,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getErrorTime() {
     return errorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : errorTime_;
   }
-
   /**
    *
    *
@@ -494,7 +486,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -706,7 +697,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int error_ = 0;
-
     /**
      *
      *
@@ -724,7 +714,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
     public int getErrorValue() {
       return error_;
     }
-
     /**
      *
      *
@@ -745,7 +734,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +755,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.apihub.v1.DependencyErrorDetail.Error.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -791,7 +778,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         errorTimeBuilder_;
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
     public boolean hasErrorTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +838,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
         return errorTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -878,7 +861,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +929,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
       onChanged();
       return getErrorTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class DependencyErrorDetail extends com.google.protobuf.GeneratedMe
         return errorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : errorTime_;
       }
     }
-
     /**
      *
      *

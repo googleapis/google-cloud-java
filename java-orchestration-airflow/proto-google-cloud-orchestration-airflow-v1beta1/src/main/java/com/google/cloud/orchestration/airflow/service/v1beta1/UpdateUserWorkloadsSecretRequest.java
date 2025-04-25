@@ -34,7 +34,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.UpdateUserWorkloadsSecretRequest)
     UpdateUserWorkloadsSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateUserWorkloadsSecretRequest.newBuilder() to construct.
   private UpdateUserWorkloadsSecretRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
   public static final int USER_WORKLOADS_SECRET_FIELD_NUMBER = 1;
   private com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
       userWorkloadsSecret_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
   public boolean hasUserWorkloadsSecret() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
             .getDefaultInstance()
         : userWorkloadsSecret_;
   }
-
   /**
    *
    *
@@ -318,7 +314,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -549,7 +544,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
             com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecretOrBuilder>
         userWorkloadsSecretBuilder_;
-
     /**
      *
      *
@@ -566,7 +560,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
     public boolean hasUserWorkloadsSecret() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -591,7 +584,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
         return userWorkloadsSecretBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -617,7 +609,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +632,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
       onChanged();
       return getUserWorkloadsSecretFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class UpdateUserWorkloadsSecretRequest extends com.google.protobuf.
             : userWorkloadsSecret_;
       }
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface BoostSpecOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.BoostSpec.ConditionBoostSpec>
       getConditionBoostSpecsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface BoostSpecOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.BoostSpec.ConditionBoostSpec getConditionBoostSpecs(
       int index);
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface BoostSpecOrBuilder
    * </code>
    */
   int getConditionBoostSpecsCount();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface BoostSpecOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.cx.v3beta1.BoostSpec.ConditionBoostSpecOrBuilder>
       getConditionBoostSpecsOrBuilderList();
-
   /**
    *
    *

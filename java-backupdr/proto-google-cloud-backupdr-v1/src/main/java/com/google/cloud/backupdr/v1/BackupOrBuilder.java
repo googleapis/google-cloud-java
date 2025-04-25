@@ -41,7 +41,6 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface BackupOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface BackupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface BackupOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface BackupOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -211,11 +203,9 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -227,7 +217,6 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -243,7 +232,6 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -270,7 +258,6 @@ public interface BackupOrBuilder
    * @return Whether the enforcedRetentionEndTime field is set.
    */
   boolean hasEnforcedRetentionEndTime();
-
   /**
    *
    *
@@ -285,7 +272,6 @@ public interface BackupOrBuilder
    * @return The enforcedRetentionEndTime.
    */
   com.google.protobuf.Timestamp getEnforcedRetentionEndTime();
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public interface BackupOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -328,7 +313,6 @@ public interface BackupOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -357,7 +341,6 @@ public interface BackupOrBuilder
    * @return Whether the consistencyTime field is set.
    */
   boolean hasConsistencyTime();
-
   /**
    *
    *
@@ -373,7 +356,6 @@ public interface BackupOrBuilder
    * @return The consistencyTime.
    */
   com.google.protobuf.Timestamp getConsistencyTime();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface BackupOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -415,7 +396,6 @@ public interface BackupOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -444,7 +424,6 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -473,7 +452,6 @@ public interface BackupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.BackupLock> getServiceLocksList();
-
   /**
    *
    *
@@ -487,7 +465,6 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.BackupLock getServiceLocks(int index);
-
   /**
    *
    *
@@ -501,7 +478,6 @@ public interface BackupOrBuilder
    * </code>
    */
   int getServiceLocksCount();
-
   /**
    *
    *
@@ -516,7 +492,6 @@ public interface BackupOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.BackupLockOrBuilder>
       getServiceLocksOrBuilderList();
-
   /**
    *
    *
@@ -543,7 +518,6 @@ public interface BackupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.BackupLock> getBackupApplianceLocksList();
-
   /**
    *
    *
@@ -556,7 +530,6 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.BackupLock getBackupApplianceLocks(int index);
-
   /**
    *
    *
@@ -569,7 +542,6 @@ public interface BackupOrBuilder
    * </code>
    */
   int getBackupApplianceLocksCount();
-
   /**
    *
    *
@@ -583,7 +555,6 @@ public interface BackupOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.BackupLockOrBuilder>
       getBackupApplianceLocksOrBuilderList();
-
   /**
    *
    *
@@ -611,7 +582,6 @@ public interface BackupOrBuilder
    * @return Whether the computeInstanceBackupProperties field is set.
    */
   boolean hasComputeInstanceBackupProperties();
-
   /**
    *
    *
@@ -626,7 +596,6 @@ public interface BackupOrBuilder
    * @return The computeInstanceBackupProperties.
    */
   com.google.cloud.backupdr.v1.ComputeInstanceBackupProperties getComputeInstanceBackupProperties();
-
   /**
    *
    *
@@ -655,7 +624,6 @@ public interface BackupOrBuilder
    * @return Whether the backupApplianceBackupProperties field is set.
    */
   boolean hasBackupApplianceBackupProperties();
-
   /**
    *
    *
@@ -670,7 +638,6 @@ public interface BackupOrBuilder
    * @return The backupApplianceBackupProperties.
    */
   com.google.cloud.backupdr.v1.BackupApplianceBackupProperties getBackupApplianceBackupProperties();
-
   /**
    *
    *
@@ -699,7 +666,6 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for backupType.
    */
   int getBackupTypeValue();
-
   /**
    *
    *
@@ -729,7 +695,6 @@ public interface BackupOrBuilder
    * @return Whether the gcpBackupPlanInfo field is set.
    */
   boolean hasGcpBackupPlanInfo();
-
   /**
    *
    *
@@ -744,7 +709,6 @@ public interface BackupOrBuilder
    * @return The gcpBackupPlanInfo.
    */
   com.google.cloud.backupdr.v1.Backup.GCPBackupPlanInfo getGcpBackupPlanInfo();
-
   /**
    *
    *

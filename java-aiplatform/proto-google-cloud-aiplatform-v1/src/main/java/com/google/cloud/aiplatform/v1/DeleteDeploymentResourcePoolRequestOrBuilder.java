@@ -40,7 +40,6 @@ public interface DeleteDeploymentResourcePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

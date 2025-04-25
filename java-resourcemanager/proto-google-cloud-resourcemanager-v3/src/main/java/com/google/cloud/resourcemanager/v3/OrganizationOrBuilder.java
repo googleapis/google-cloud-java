@@ -38,7 +38,6 @@ public interface OrganizationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface OrganizationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface OrganizationOrBuilder
    * @return Whether the directoryCustomerId field is set.
    */
   boolean hasDirectoryCustomerId();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface OrganizationOrBuilder
    * @return The directoryCustomerId.
    */
   java.lang.String getDirectoryCustomerId();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface OrganizationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface OrganizationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface OrganizationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public interface OrganizationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface OrganizationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface OrganizationOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public interface OrganizationOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public interface OrganizationOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

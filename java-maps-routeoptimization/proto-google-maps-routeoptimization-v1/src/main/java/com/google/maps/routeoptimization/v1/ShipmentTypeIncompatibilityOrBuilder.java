@@ -37,7 +37,6 @@ public interface ShipmentTypeIncompatibilityOrBuilder
    * @return A list containing the types.
    */
   java.util.List<java.lang.String> getTypesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ShipmentTypeIncompatibilityOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ShipmentTypeIncompatibilityOrBuilder
    * @return The types at the given index.
    */
   java.lang.String getTypes(int index);
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ShipmentTypeIncompatibilityOrBuilder
    * @return The enum numeric value on the wire for incompatibilityMode.
    */
   int getIncompatibilityModeValue();
-
   /**
    *
    *

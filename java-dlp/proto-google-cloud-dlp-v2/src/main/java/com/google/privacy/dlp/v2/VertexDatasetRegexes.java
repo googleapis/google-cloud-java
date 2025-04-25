@@ -34,7 +34,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.VertexDatasetRegexes)
     VertexDatasetRegexesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VertexDatasetRegexes.newBuilder() to construct.
   private VertexDatasetRegexes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.VertexDatasetRegex> patterns_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.privacy.dlp.v2.VertexDatasetRegex> getPatternsList() {
     return patterns_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       getPatternsOrBuilderList() {
     return patterns_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
   public int getPatternsCount() {
     return patterns_.size();
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
   public com.google.privacy.dlp.v2.VertexDatasetRegex getPatterns(int index) {
     return patterns_.get(index);
   }
-
   /**
    *
    *
@@ -322,7 +316,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
         return patternsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
         return patternsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
         return patternsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.VertexDatasetRegex.Builder getPatternsBuilder(int index) {
       return getPatternsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
         return patternsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(patterns_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       return getPatternsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.VertexDatasetRegex.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class VertexDatasetRegexes extends com.google.protobuf.GeneratedMes
       return getPatternsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.VertexDatasetRegex.getDefaultInstance());
     }
-
     /**
      *
      *

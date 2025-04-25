@@ -34,7 +34,6 @@ public final class SetCommonInstanceMetadataProjectRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest)
     SetCommonInstanceMetadataProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetCommonInstanceMetadataProjectRequest.newBuilder() to construct.
   private SetCommonInstanceMetadataProjectRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class SetCommonInstanceMetadataProjectRequest
   private int bitField0_;
   public static final int METADATA_RESOURCE_FIELD_NUMBER = 291086110;
   private com.google.cloud.compute.v1.Metadata metadataResource_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SetCommonInstanceMetadataProjectRequest
   public boolean hasMetadataResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class SetCommonInstanceMetadataProjectRequest
         ? com.google.cloud.compute.v1.Metadata.getDefaultInstance()
         : metadataResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SetCommonInstanceMetadataProjectRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class SetCommonInstanceMetadataProjectRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class SetCommonInstanceMetadataProjectRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -444,7 +435,6 @@ public final class SetCommonInstanceMetadataProjectRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class SetCommonInstanceMetadataProjectRequest
             com.google.cloud.compute.v1.Metadata.Builder,
             com.google.cloud.compute.v1.MetadataOrBuilder>
         metadataResourceBuilder_;
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class SetCommonInstanceMetadataProjectRequest
     public boolean hasMetadataResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class SetCommonInstanceMetadataProjectRequest
         return metadataResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return getMetadataResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class SetCommonInstanceMetadataProjectRequest
             : metadataResource_;
       }
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class SetCommonInstanceMetadataProjectRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class SetCommonInstanceMetadataProjectRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class SetCommonInstanceMetadataProjectRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class SetCommonInstanceMetadataProjectRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1032,7 +1007,6 @@ public final class SetCommonInstanceMetadataProjectRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1055,7 +1029,6 @@ public final class SetCommonInstanceMetadataProjectRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1051,6 @@ public final class SetCommonInstanceMetadataProjectRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1089,6 @@ public final class SetCommonInstanceMetadataProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

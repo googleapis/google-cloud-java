@@ -302,19 +302,6 @@ public final class TripServiceGrpc {
     return TripServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TripServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TripServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<TripServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public TripServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new TripServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return TripServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -564,106 +551,6 @@ public final class TripServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TripService.
-   *
-   * <pre>
-   * Trip management service.
-   * </pre>
-   */
-  public static final class TripServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TripServiceBlockingV2Stub> {
-    private TripServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TripServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TripServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a trip in the Fleet Engine and returns the new trip.
-     * </pre>
-     */
-    public com.google.maps.fleetengine.v1.Trip createTrip(
-        com.google.maps.fleetengine.v1.CreateTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateTripMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get information about a single trip.
-     * </pre>
-     */
-    public com.google.maps.fleetengine.v1.Trip getTrip(
-        com.google.maps.fleetengine.v1.GetTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetTripMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single Trip.
-     * Returns FAILED_PRECONDITION if the Trip is active and assigned to a
-     * vehicle.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteTrip(
-        com.google.maps.fleetengine.v1.DeleteTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteTripMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Report billable trip usage.
-     * </pre>
-     */
-    public com.google.protobuf.Empty reportBillableTrip(
-        com.google.maps.fleetengine.v1.ReportBillableTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getReportBillableTripMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get all the trips for a specific vehicle.
-     * </pre>
-     */
-    public com.google.maps.fleetengine.v1.SearchTripsResponse searchTrips(
-        com.google.maps.fleetengine.v1.SearchTripsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSearchTripsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates trip data.
-     * </pre>
-     */
-    public com.google.maps.fleetengine.v1.Trip updateTrip(
-        com.google.maps.fleetengine.v1.UpdateTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateTripMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service TripService.
    *
    * <pre>
    * Trip management service.

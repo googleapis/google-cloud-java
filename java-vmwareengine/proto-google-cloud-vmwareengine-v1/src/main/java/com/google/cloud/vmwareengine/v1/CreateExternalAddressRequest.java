@@ -34,7 +34,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.CreateExternalAddressRequest)
     CreateExternalAddressRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateExternalAddressRequest.newBuilder() to construct.
   private CreateExternalAddressRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
 
   public static final int EXTERNAL_ADDRESS_FIELD_NUMBER = 2;
   private com.google.cloud.vmwareengine.v1.ExternalAddress externalAddress_;
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
   public boolean hasExternalAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         ? com.google.cloud.vmwareengine.v1.ExternalAddress.getDefaultInstance()
         : externalAddress_;
   }
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalAddressId_ = "";
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -308,7 +299,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -538,7 +528,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -787,7 +776,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -817,7 +805,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -847,7 +834,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +862,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +886,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +922,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
             com.google.cloud.vmwareengine.v1.ExternalAddress.Builder,
             com.google.cloud.vmwareengine.v1.ExternalAddressOrBuilder>
         externalAddressBuilder_;
-
     /**
      *
      *
@@ -955,7 +938,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
     public boolean hasExternalAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -978,7 +960,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return externalAddressBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1006,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1036,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1057,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1073,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return getExternalAddressFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
             : externalAddress_;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1122,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object externalAddressId_ = "";
-
     /**
      *
      *
@@ -1180,7 +1154,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1186,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1217,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1244,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1278,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1344,7 +1313,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1348,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1415,7 +1382,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1412,6 @@ public final class CreateExternalAddressRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

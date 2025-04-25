@@ -34,7 +34,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ProtectConfig)
     ProtectConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProtectConfig.newBuilder() to construct.
   private ProtectConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int WORKLOAD_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.WorkloadConfig workloadConfig_;
-
   /**
    *
    *
@@ -247,7 +243,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkloadConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -266,7 +261,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.WorkloadConfig.getDefaultInstance()
         : workloadConfig_;
   }
-
   /**
    *
    *
@@ -286,7 +280,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WORKLOAD_VULNERABILITY_MODE_FIELD_NUMBER = 2;
   private int workloadVulnerabilityMode_ = 0;
-
   /**
    *
    *
@@ -304,7 +297,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkloadVulnerabilityMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -322,7 +314,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
   public int getWorkloadVulnerabilityModeValue() {
     return workloadVulnerabilityMode_;
   }
-
   /**
    *
    *
@@ -525,7 +516,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -744,7 +734,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.WorkloadConfig.Builder,
             com.google.container.v1beta1.WorkloadConfigOrBuilder>
         workloadConfigBuilder_;
-
     /**
      *
      *
@@ -760,7 +749,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkloadConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -782,7 +770,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         return workloadConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -806,7 +793,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +814,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +843,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWorkloadConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
             : workloadConfig_;
       }
     }
-
     /**
      *
      *
@@ -944,7 +925,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int workloadVulnerabilityMode_ = 0;
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkloadVulnerabilityMode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     public int getWorkloadVulnerabilityModeValue() {
       return workloadVulnerabilityMode_;
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1050,7 +1026,6 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

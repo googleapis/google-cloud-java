@@ -26,7 +26,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoProvenance)
     InTotoProvenanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InTotoProvenance.newBuilder() to construct.
   private InTotoProvenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -59,7 +58,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int BUILDER_CONFIG_FIELD_NUMBER = 1;
   private io.grafeas.v1.BuilderConfig builderConfig_;
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public boolean hasBuilderConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         ? io.grafeas.v1.BuilderConfig.getDefaultInstance()
         : builderConfig_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
 
   public static final int RECIPE_FIELD_NUMBER = 2;
   private io.grafeas.v1.Recipe recipe_;
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public boolean hasRecipe() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public io.grafeas.v1.Recipe getRecipe() {
     return recipe_ == null ? io.grafeas.v1.Recipe.getDefaultInstance() : recipe_;
   }
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private io.grafeas.v1.Metadata metadata_;
-
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
    *
@@ -180,7 +172,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
    *
@@ -190,7 +181,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public io.grafeas.v1.Metadata getMetadata() {
     return metadata_ == null ? io.grafeas.v1.Metadata.getDefaultInstance() : metadata_;
   }
-
   /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder() {
@@ -202,7 +192,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList materials_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -220,7 +209,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getMaterialsList() {
     return materials_;
   }
-
   /**
    *
    *
@@ -238,7 +226,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public int getMaterialsCount() {
     return materials_.size();
   }
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public java.lang.String getMaterials(int index) {
     return materials_.get(index);
   }
-
   /**
    *
    *
@@ -483,7 +469,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code grafeas.v1.InTotoProvenance} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -737,7 +722,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
             io.grafeas.v1.BuilderConfig.Builder,
             io.grafeas.v1.BuilderConfigOrBuilder>
         builderConfigBuilder_;
-
     /**
      *
      *
@@ -752,7 +736,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public boolean hasBuilderConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -773,7 +756,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         return builderConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +797,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +824,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +843,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +857,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getBuilderConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -898,7 +875,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
             : builderConfig_;
       }
     }
-
     /**
      *
      *
@@ -929,7 +905,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder>
         recipeBuilder_;
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public boolean hasRecipe() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -969,7 +943,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         return recipeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -995,7 +968,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +990,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1042,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1059,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getRecipeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1110,7 +1078,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         return recipe_ == null ? io.grafeas.v1.Recipe.getDefaultInstance() : recipe_;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1107,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder>
         metadataBuilder_;
-
     /**
      * <code>.grafeas.v1.Metadata metadata = 3;</code>
      *
@@ -1149,7 +1115,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      * <code>.grafeas.v1.Metadata metadata = 3;</code>
      *
@@ -1162,7 +1127,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         return metadataBuilder_.getMessage();
       }
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -1177,7 +1141,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.Metadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
@@ -1189,7 +1152,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder mergeMetadata(io.grafeas.v1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -1209,7 +1171,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder clearMetadata() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1221,14 +1182,12 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public io.grafeas.v1.Metadata.Builder getMetadataBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -1237,7 +1196,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         return metadata_ == null ? io.grafeas.v1.Metadata.getDefaultInstance() : metadata_;
       }
     }
-
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder>
@@ -1262,7 +1220,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1281,7 +1238,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       materials_.makeImmutable();
       return materials_;
     }
-
     /**
      *
      *
@@ -1299,7 +1255,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public int getMaterialsCount() {
       return materials_.size();
     }
-
     /**
      *
      *
@@ -1318,7 +1273,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public java.lang.String getMaterials(int index) {
       return materials_.get(index);
     }
-
     /**
      *
      *
@@ -1337,7 +1291,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getMaterialsBytes(int index) {
       return materials_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1364,7 +1317,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1342,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1364,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1385,6 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

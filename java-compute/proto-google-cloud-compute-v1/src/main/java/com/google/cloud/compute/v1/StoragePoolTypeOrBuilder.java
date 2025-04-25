@@ -36,7 +36,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the maxPoolProvisionedCapacityGb field is set.
    */
   boolean hasMaxPoolProvisionedCapacityGb();
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the maxPoolProvisionedIops field is set.
    */
   boolean hasMaxPoolProvisionedIops();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the maxPoolProvisionedThroughput field is set.
    */
   boolean hasMaxPoolProvisionedThroughput();
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the minPoolProvisionedCapacityGb field is set.
    */
   boolean hasMinPoolProvisionedCapacityGb();
-
   /**
    *
    *
@@ -320,7 +307,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the minPoolProvisionedIops field is set.
    */
   boolean hasMinPoolProvisionedIops();
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the minPoolProvisionedThroughput field is set.
    */
   boolean hasMinPoolProvisionedThroughput();
-
   /**
    *
    *
@@ -372,7 +357,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the minSizeGb field is set.
    */
   boolean hasMinSizeGb();
-
   /**
    *
    *
@@ -398,7 +382,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -411,7 +394,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -437,7 +419,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -450,7 +431,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -476,7 +456,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
-
   /**
    *
    *
@@ -489,7 +468,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
-
   /**
    *
    *
@@ -515,7 +493,6 @@ public interface StoragePoolTypeOrBuilder
    * @return A list containing the supportedDiskTypes.
    */
   java.util.List<java.lang.String> getSupportedDiskTypesList();
-
   /**
    *
    *
@@ -528,7 +505,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The count of supportedDiskTypes.
    */
   int getSupportedDiskTypesCount();
-
   /**
    *
    *
@@ -542,7 +518,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The supportedDiskTypes at the given index.
    */
   java.lang.String getSupportedDiskTypes(int index);
-
   /**
    *
    *
@@ -569,7 +544,6 @@ public interface StoragePoolTypeOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -582,7 +556,6 @@ public interface StoragePoolTypeOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

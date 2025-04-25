@@ -33,7 +33,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest)
     RestrictAllowedResourcesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestrictAllowedResourcesRequest.newBuilder() to construct.
   private RestrictAllowedResourcesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -125,7 +124,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
      * <code>RESTRICTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESTRICTION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
      * <code>ALLOW_ALL_GCP_RESOURCES = 1;</code>
      */
     public static final int ALLOW_ALL_GCP_RESOURCES_VALUE = 1;
-
     /**
      *
      *
@@ -244,7 +241,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -272,7 +268,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -303,7 +298,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
 
   public static final int RESTRICTION_TYPE_FIELD_NUMBER = 2;
   private int restrictionType_ = 0;
-
   /**
    *
    *
@@ -321,7 +315,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
   public int getRestrictionTypeValue() {
     return restrictionType_;
   }
-
   /**
    *
    *
@@ -525,7 +518,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -734,7 +726,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -761,7 +752,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -788,7 +778,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +803,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +824,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +852,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
     }
 
     private int restrictionType_ = 0;
-
     /**
      *
      *
@@ -883,7 +869,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
     public int getRestrictionTypeValue() {
       return restrictionType_;
     }
-
     /**
      *
      *
@@ -904,7 +889,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +914,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
               .RestrictionType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -956,7 +939,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

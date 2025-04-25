@@ -36,7 +36,6 @@ public interface TagsOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TagsOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TagsOrBuilder
    * @return A list containing the items.
    */
   java.util.List<java.lang.String> getItemsList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TagsOrBuilder
    * @return The count of items.
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface TagsOrBuilder
    * @return The items at the given index.
    */
   java.lang.String getItems(int index);
-
   /**
    *
    *

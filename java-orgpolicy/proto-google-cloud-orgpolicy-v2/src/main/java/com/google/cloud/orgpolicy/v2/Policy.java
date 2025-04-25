@@ -34,7 +34,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Policy)
     PolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Policy.newBuilder() to construct.
   private Policy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,12 +143,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.orgpolicy.v2.PolicySpec spec_;
-
   /**
    *
    *
    * <pre>
-   * Basic information about the organization policy.
+   * Basic information about the Organization Policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -162,12 +158,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Basic information about the organization policy.
+   * Basic information about the Organization Policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -178,12 +173,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.orgpolicy.v2.PolicySpec getSpec() {
     return spec_ == null ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance() : spec_;
   }
-
   /**
    *
    *
    * <pre>
-   * Basic information about the organization policy.
+   * Basic information about the Organization Policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -195,7 +189,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALTERNATE_FIELD_NUMBER = 3;
   private com.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate_;
-
   /**
    *
    *
@@ -206,7 +199,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
    * @return Whether the alternate field is set.
    */
   @java.lang.Override
@@ -214,7 +207,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAlternate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +217,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
    * @return The alternate.
    */
   @java.lang.Override
@@ -235,7 +227,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.orgpolicy.v2.AlternatePolicySpec.getDefaultInstance()
         : alternate_;
   }
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DRY_RUN_SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.orgpolicy.v2.PolicySpec dryRunSpec_;
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDryRunSpec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()
         : dryRunSpec_;
   }
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -579,7 +565,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -845,7 +830,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -880,7 +864,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +931,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +960,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,12 +1001,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.PolicySpec.Builder,
             com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder>
         specBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1036,12 +1015,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1057,12 +1035,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return specBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1080,12 +1057,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1100,12 +1076,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1128,12 +1103,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1148,12 +1122,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1163,12 +1136,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1182,12 +1154,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             : spec_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Basic information about the organization policy.
+     * Basic information about the Organization Policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1215,7 +1186,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.AlternatePolicySpec.Builder,
             com.google.cloud.orgpolicy.v2.AlternatePolicySpecOrBuilder>
         alternateBuilder_;
-
     /**
      *
      *
@@ -1227,14 +1197,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
      * @return Whether the alternate field is set.
      */
     @java.lang.Deprecated
     public boolean hasAlternate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1246,7 +1215,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
      * @return The alternate.
      */
     @java.lang.Deprecated
@@ -1259,7 +1228,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return alternateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1252,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1274,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1304,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1325,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1341,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAlternateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1398,7 +1361,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             : alternate_;
       }
     }
-
     /**
      *
      *
@@ -1432,7 +1394,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.PolicySpec.Builder,
             com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder>
         dryRunSpecBuilder_;
-
     /**
      *
      *
@@ -1449,7 +1410,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDryRunSpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1472,7 +1432,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return dryRunSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1497,7 +1456,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1477,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1506,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1571,7 +1527,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1543,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDryRunSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1609,7 +1563,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             : dryRunSpec_;
       }
     }
-
     /**
      *
      *
@@ -1639,7 +1592,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1665,7 +1617,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1691,7 +1642,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1716,7 +1666,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1686,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

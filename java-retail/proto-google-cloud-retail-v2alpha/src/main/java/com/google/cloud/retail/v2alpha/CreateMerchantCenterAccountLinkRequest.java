@@ -36,7 +36,6 @@ public final class CreateMerchantCenterAccountLinkRequest
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CreateMerchantCenterAccountLinkRequest)
     CreateMerchantCenterAccountLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateMerchantCenterAccountLinkRequest.newBuilder() to construct.
   private CreateMerchantCenterAccountLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class CreateMerchantCenterAccountLinkRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateMerchantCenterAccountLinkRequest
 
   public static final int MERCHANT_CENTER_ACCOUNT_LINK_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.MerchantCenterAccountLink merchantCenterAccountLink_;
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CreateMerchantCenterAccountLinkRequest
   public boolean hasMerchantCenterAccountLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class CreateMerchantCenterAccountLinkRequest
         ? com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.getDefaultInstance()
         : merchantCenterAccountLink_;
   }
-
   /**
    *
    *
@@ -389,7 +383,6 @@ public final class CreateMerchantCenterAccountLinkRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -617,7 +610,6 @@ public final class CreateMerchantCenterAccountLinkRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -644,7 +636,6 @@ public final class CreateMerchantCenterAccountLinkRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -671,7 +662,6 @@ public final class CreateMerchantCenterAccountLinkRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class CreateMerchantCenterAccountLinkRequest
             com.google.cloud.retail.v2alpha.MerchantCenterAccountLink.Builder,
             com.google.cloud.retail.v2alpha.MerchantCenterAccountLinkOrBuilder>
         merchantCenterAccountLinkBuilder_;
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class CreateMerchantCenterAccountLinkRequest
     public boolean hasMerchantCenterAccountLink() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -808,7 +794,6 @@ public final class CreateMerchantCenterAccountLinkRequest
         return merchantCenterAccountLinkBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -841,7 +826,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class CreateMerchantCenterAccountLinkRequest
       onChanged();
       return getMerchantCenterAccountLinkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class CreateMerchantCenterAccountLinkRequest
             : merchantCenterAccountLink_;
       }
     }
-
     /**
      *
      *

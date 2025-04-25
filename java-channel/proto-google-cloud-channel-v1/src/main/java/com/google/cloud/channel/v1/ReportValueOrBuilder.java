@@ -37,7 +37,6 @@ public interface ReportValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ReportValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ReportValueOrBuilder
    * @return Whether the intValue field is set.
    */
   boolean hasIntValue();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ReportValueOrBuilder
    * @return Whether the decimalValue field is set.
    */
   boolean hasDecimalValue();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ReportValueOrBuilder
    * @return The decimalValue.
    */
   com.google.type.Decimal getDecimalValue();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface ReportValueOrBuilder
    * @return Whether the moneyValue field is set.
    */
   boolean hasMoneyValue();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface ReportValueOrBuilder
    * @return The moneyValue.
    */
   com.google.type.Money getMoneyValue();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface ReportValueOrBuilder
    * @return Whether the dateValue field is set.
    */
   boolean hasDateValue();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface ReportValueOrBuilder
    * @return The dateValue.
    */
   com.google.type.Date getDateValue();
-
   /**
    *
    *
@@ -220,7 +211,6 @@ public interface ReportValueOrBuilder
    * @return Whether the dateTimeValue field is set.
    */
   boolean hasDateTimeValue();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface ReportValueOrBuilder
    * @return The dateTimeValue.
    */
   com.google.type.DateTime getDateTimeValue();
-
   /**
    *
    *

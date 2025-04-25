@@ -38,7 +38,6 @@ public interface DeleteChannelConnectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

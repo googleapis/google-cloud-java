@@ -40,7 +40,6 @@ public interface MutateDeployedIndexRequestOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface MutateDeployedIndexRequestOrBuilder
    * @return Whether the deployedIndex field is set.
    */
   boolean hasDeployedIndex();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface MutateDeployedIndexRequestOrBuilder
    * @return The deployedIndex.
    */
   com.google.cloud.aiplatform.v1.DeployedIndex getDeployedIndex();
-
   /**
    *
    *

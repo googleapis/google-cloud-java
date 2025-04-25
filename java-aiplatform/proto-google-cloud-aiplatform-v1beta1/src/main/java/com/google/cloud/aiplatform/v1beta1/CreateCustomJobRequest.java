@@ -34,7 +34,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateCustomJobRequest)
     CreateCustomJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCustomJobRequest.newBuilder() to construct.
   private CreateCustomJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
 
   public static final int CUSTOM_JOB_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.CustomJob customJob_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
   public boolean hasCustomJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.aiplatform.v1beta1.CustomJob.getDefaultInstance()
         : customJob_;
   }
-
   /**
    *
    *
@@ -358,7 +352,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +566,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.CustomJob.Builder,
             com.google.cloud.aiplatform.v1beta1.CustomJobOrBuilder>
         customJobBuilder_;
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
     public boolean hasCustomJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
         return customJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getCustomJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
             : customJob_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface ExportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface ExportDataRequestOrBuilder
    * @return The annotatedDataset.
    */
   java.lang.String getAnnotatedDataset();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface ExportDataRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface ExportDataRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface ExportDataRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface ExportDataRequestOrBuilder
    * @return The userEmailAddress.
    */
   java.lang.String getUserEmailAddress();
-
   /**
    *
    *

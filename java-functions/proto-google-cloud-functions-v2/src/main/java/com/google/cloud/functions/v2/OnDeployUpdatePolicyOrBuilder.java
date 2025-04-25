@@ -37,7 +37,6 @@ public interface OnDeployUpdatePolicyOrBuilder
    * @return The runtimeVersion.
    */
   java.lang.String getRuntimeVersion();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface AppliedLabelOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateGoogleChannelConfigRequestOrBuilder
    * @return Whether the googleChannelConfig field is set.
    */
   boolean hasGoogleChannelConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateGoogleChannelConfigRequestOrBuilder
    * @return The googleChannelConfig.
    */
   com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateGoogleChannelConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateGoogleChannelConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

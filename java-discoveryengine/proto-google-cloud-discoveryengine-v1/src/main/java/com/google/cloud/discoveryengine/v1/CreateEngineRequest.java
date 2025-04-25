@@ -35,7 +35,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.CreateEngineRequest)
     CreateEngineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEngineRequest.newBuilder() to construct.
   private CreateEngineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ENGINE_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.Engine engine_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
   public boolean hasEngine() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.discoveryengine.v1.Engine.getDefaultInstance()
         : engine_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object engineId_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -436,7 +428,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +658,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -693,7 +683,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +752,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1.Engine.Builder,
             com.google.cloud.discoveryengine.v1.EngineOrBuilder>
         engineBuilder_;
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
     public boolean hasEngine() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
         return engineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +917,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getEngineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
             : engine_;
       }
     }
-
     /**
      *
      *
@@ -1005,7 +982,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object engineId_ = "";
-
     /**
      *
      *
@@ -1035,7 +1011,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1040,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1094,7 +1068,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1092,6 @@ public final class CreateEngineRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

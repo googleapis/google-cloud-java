@@ -35,7 +35,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep)
     OSPolicyResourceConfigStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OSPolicyResourceConfigStep.newBuilder() to construct.
   private OSPolicyResourceConfigStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -148,7 +147,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -159,7 +157,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <code>VALIDATION = 1;</code>
      */
     public static final int VALIDATION_VALUE = 1;
-
     /**
      *
      *
@@ -170,7 +167,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <code>DESIRED_STATE_CHECK = 2;</code>
      */
     public static final int DESIRED_STATE_CHECK_VALUE = 2;
-
     /**
      *
      *
@@ -181,7 +177,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <code>DESIRED_STATE_ENFORCEMENT = 3;</code>
      */
     public static final int DESIRED_STATE_ENFORCEMENT_VALUE = 3;
-
     /**
      *
      *
@@ -342,7 +337,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <code>OUTCOME_UNSPECIFIED = 0;</code>
      */
     public static final int OUTCOME_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -353,7 +347,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -452,7 +445,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -468,7 +460,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -491,7 +482,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
 
   public static final int OUTCOME_FIELD_NUMBER = 2;
   private int outcome_ = 0;
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
   public int getOutcomeValue() {
     return outcome_;
   }
-
   /**
    *
    *
@@ -532,7 +521,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
-
   /**
    *
    *
@@ -557,7 +545,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -769,7 +756,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -984,7 +970,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1000,7 +985,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1019,7 +1003,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1022,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
           ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1062,7 +1044,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1063,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     }
 
     private int outcome_ = 0;
-
     /**
      *
      *
@@ -1098,7 +1078,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     public int getOutcomeValue() {
       return outcome_;
     }
-
     /**
      *
      *
@@ -1117,7 +1096,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1115,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
           ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1160,7 +1137,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1156,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     }
 
     private java.lang.Object errorMessage_ = "";
-
     /**
      *
      *
@@ -1204,7 +1179,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1202,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1224,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1242,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

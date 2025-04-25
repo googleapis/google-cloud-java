@@ -36,7 +36,6 @@ public interface ReliabilityProjectionOrBuilder
    * @return A list containing the risks.
    */
   java.util.List<com.google.cloud.recommender.v1.ReliabilityProjection.RiskType> getRisksList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ReliabilityProjectionOrBuilder
    * @return The count of risks.
    */
   int getRisksCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ReliabilityProjectionOrBuilder
    * @return The risks at the given index.
    */
   com.google.cloud.recommender.v1.ReliabilityProjection.RiskType getRisks(int index);
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ReliabilityProjectionOrBuilder
    * @return A list containing the enum numeric values on the wire for risks.
    */
   java.util.List<java.lang.Integer> getRisksValueList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ReliabilityProjectionOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface ReliabilityProjectionOrBuilder
    * @return The details.
    */
   com.google.protobuf.Struct getDetails();
-
   /**
    *
    *

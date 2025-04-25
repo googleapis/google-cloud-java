@@ -34,7 +34,6 @@ public interface ListRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Revision revisions = 1;</code>
    */
   java.util.List<com.google.cloud.run.v2.Revision> getRevisionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Revision revisions = 1;</code>
    */
   com.google.cloud.run.v2.Revision getRevisions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Revision revisions = 1;</code>
    */
   int getRevisionsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Revision revisions = 1;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.RevisionOrBuilder> getRevisionsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

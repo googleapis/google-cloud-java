@@ -33,7 +33,6 @@ public final class AllOtherResources extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AllOtherResources)
     AllOtherResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllOtherResources.newBuilder() to construct.
   private AllOtherResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class AllOtherResources extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

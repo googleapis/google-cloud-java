@@ -36,7 +36,6 @@ public interface SearchResultOrBuilder
    * @return Whether the file field is set.
    */
   boolean hasFile();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SearchResultOrBuilder
    * @return The file.
    */
   com.google.cloud.dataform.v1beta1.FileSearchResult getFile();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SearchResultOrBuilder
    * @return Whether the directory field is set.
    */
   boolean hasDirectory();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SearchResultOrBuilder
    * @return The directory.
    */
   com.google.cloud.dataform.v1beta1.DirectorySearchResult getDirectory();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface RegisterSubscriberRequestOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface RegisterSubscriberRequestOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

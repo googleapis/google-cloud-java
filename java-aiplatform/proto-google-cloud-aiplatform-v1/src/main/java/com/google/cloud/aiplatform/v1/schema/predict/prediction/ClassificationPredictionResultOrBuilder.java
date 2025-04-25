@@ -36,7 +36,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.Long> getIdsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return A list containing the displayNames.
    */
   java.util.List<java.lang.String> getDisplayNamesList();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return The count of displayNames.
    */
   int getDisplayNamesCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return The displayNames at the given index.
    */
   java.lang.String getDisplayNames(int index);
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return A list containing the confidences.
    */
   java.util.List<java.lang.Float> getConfidencesList();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface ClassificationPredictionResultOrBuilder
    * @return The count of confidences.
    */
   int getConfidencesCount();
-
   /**
    *
    *

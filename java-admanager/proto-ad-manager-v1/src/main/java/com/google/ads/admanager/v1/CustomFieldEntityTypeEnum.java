@@ -34,7 +34,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomFieldEntityTypeEnum)
     CustomFieldEntityTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomFieldEntityTypeEnum.newBuilder() to construct.
   private CustomFieldEntityTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,7 +145,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
      * <code>CUSTOM_FIELD_ENTITY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_FIELD_ENTITY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -157,7 +155,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
      * <code>LINE_ITEM = 1;</code>
      */
     public static final int LINE_ITEM_VALUE = 1;
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
      * <code>ORDER = 2;</code>
      */
     public static final int ORDER_VALUE = 2;
-
     /**
      *
      *
@@ -179,7 +175,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
      * <code>CREATIVE = 3;</code>
      */
     public static final int CREATIVE_VALUE = 3;
-
     /**
      *
      *
@@ -190,7 +185,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
      * <code>PROPOSAL = 4;</code>
      */
     public static final int PROPOSAL_VALUE = 4;
-
     /**
      *
      *
@@ -447,7 +441,6 @@ public final class CustomFieldEntityTypeEnum extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

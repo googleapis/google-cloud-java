@@ -34,7 +34,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.DbSystemShape)
     DbSystemShapeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DbSystemShape.newBuilder() to construct.
   private DbSystemShape(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shape_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_NODE_COUNT_FIELD_NUMBER = 3;
   private int minNodeCount_ = 0;
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_NODE_COUNT_FIELD_NUMBER = 4;
   private int maxNodeCount_ = 0;
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_STORAGE_COUNT_FIELD_NUMBER = 5;
   private int minStorageCount_ = 0;
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_STORAGE_COUNT_FIELD_NUMBER = 6;
   private int maxStorageCount_ = 0;
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABLE_CORE_COUNT_PER_NODE_FIELD_NUMBER = 7;
   private int availableCoreCountPerNode_ = 0;
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABLE_MEMORY_PER_NODE_GB_FIELD_NUMBER = 8;
   private int availableMemoryPerNodeGb_ = 0;
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABLE_DATA_STORAGE_TB_FIELD_NUMBER = 9;
   private int availableDataStorageTb_ = 0;
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_CORE_COUNT_PER_NODE_FIELD_NUMBER = 10;
   private int minCoreCountPerNode_ = 0;
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_MEMORY_PER_NODE_GB_FIELD_NUMBER = 11;
   private int minMemoryPerNodeGb_ = 0;
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_DB_NODE_STORAGE_PER_NODE_GB_FIELD_NUMBER = 12;
   private int minDbNodeStoragePerNodeGb_ = 0;
-
   /**
    *
    *
@@ -624,7 +609,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -955,7 +939,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -979,7 +962,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +985,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1007,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1025,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1050,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object shape_ = "";
-
     /**
      *
      *
@@ -1094,7 +1072,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1094,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1115,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1132,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1156,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minNodeCount_;
-
     /**
      *
      *
@@ -1198,7 +1171,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMinNodeCount() {
       return minNodeCount_;
     }
-
     /**
      *
      *
@@ -1218,7 +1190,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1209,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxNodeCount_;
-
     /**
      *
      *
@@ -1254,7 +1224,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMaxNodeCount() {
       return maxNodeCount_;
     }
-
     /**
      *
      *
@@ -1274,7 +1243,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1262,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minStorageCount_;
-
     /**
      *
      *
@@ -1310,7 +1277,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMinStorageCount() {
       return minStorageCount_;
     }
-
     /**
      *
      *
@@ -1330,7 +1296,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1315,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxStorageCount_;
-
     /**
      *
      *
@@ -1366,7 +1330,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMaxStorageCount() {
       return maxStorageCount_;
     }
-
     /**
      *
      *
@@ -1386,7 +1349,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1368,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availableCoreCountPerNode_;
-
     /**
      *
      *
@@ -1423,7 +1384,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableCoreCountPerNode() {
       return availableCoreCountPerNode_;
     }
-
     /**
      *
      *
@@ -1444,7 +1404,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1424,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availableMemoryPerNodeGb_;
-
     /**
      *
      *
@@ -1482,7 +1440,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableMemoryPerNodeGb() {
       return availableMemoryPerNodeGb_;
     }
-
     /**
      *
      *
@@ -1503,7 +1460,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1524,7 +1480,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availableDataStorageTb_;
-
     /**
      *
      *
@@ -1540,7 +1495,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableDataStorageTb() {
       return availableDataStorageTb_;
     }
-
     /**
      *
      *
@@ -1560,7 +1514,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1533,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minCoreCountPerNode_;
-
     /**
      *
      *
@@ -1596,7 +1548,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMinCoreCountPerNode() {
       return minCoreCountPerNode_;
     }
-
     /**
      *
      *
@@ -1616,7 +1567,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1586,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minMemoryPerNodeGb_;
-
     /**
      *
      *
@@ -1652,7 +1601,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMinMemoryPerNodeGb() {
       return minMemoryPerNodeGb_;
     }
-
     /**
      *
      *
@@ -1672,7 +1620,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1639,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minDbNodeStoragePerNodeGb_;
-
     /**
      *
      *
@@ -1709,7 +1655,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
     public int getMinDbNodeStoragePerNodeGb() {
       return minDbNodeStoragePerNodeGb_;
     }
-
     /**
      *
      *
@@ -1730,7 +1675,6 @@ public final class DbSystemShape extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

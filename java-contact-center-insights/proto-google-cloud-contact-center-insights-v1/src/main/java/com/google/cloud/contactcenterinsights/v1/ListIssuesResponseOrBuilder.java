@@ -34,7 +34,6 @@ public interface ListIssuesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Issue issues = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.Issue> getIssuesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListIssuesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Issue issues = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.Issue getIssues(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListIssuesResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.Issue issues = 1;</code>
    */
   int getIssuesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListIssuesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.IssueOrBuilder>
       getIssuesOrBuilderList();
-
   /**
    *
    *

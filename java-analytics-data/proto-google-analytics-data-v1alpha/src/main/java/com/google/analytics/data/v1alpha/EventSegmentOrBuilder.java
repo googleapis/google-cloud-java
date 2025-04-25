@@ -36,7 +36,6 @@ public interface EventSegmentOrBuilder
    * @return Whether the eventInclusionCriteria field is set.
    */
   boolean hasEventInclusionCriteria();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EventSegmentOrBuilder
    * @return The eventInclusionCriteria.
    */
   com.google.analytics.data.v1alpha.EventSegmentCriteria getEventInclusionCriteria();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface EventSegmentOrBuilder
    * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface EventSegmentOrBuilder
    * @return The exclusion.
    */
   com.google.analytics.data.v1alpha.EventSegmentExclusion getExclusion();
-
   /**
    *
    *

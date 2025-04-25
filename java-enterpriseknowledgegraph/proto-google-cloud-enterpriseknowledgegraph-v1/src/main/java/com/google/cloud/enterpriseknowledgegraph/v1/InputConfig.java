@@ -33,7 +33,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.InputConfig)
     InputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InputConfig.newBuilder() to construct.
   private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -174,7 +173,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTITY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ENTITY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -185,7 +183,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PEOPLE = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int PEOPLE_VALUE = 1;
-
     /**
      *
      *
@@ -196,7 +193,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ESTABLISHMENT = 2 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int ESTABLISHMENT_VALUE = 2;
-
     /**
      *
      *
@@ -207,7 +203,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPERTY = 3 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int PROPERTY_VALUE = 3;
-
     /**
      *
      *
@@ -218,7 +213,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PRODUCT = 4;</code>
      */
     public static final int PRODUCT_VALUE = 4;
-
     /**
      *
      *
@@ -229,7 +223,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ORGANIZATION = 5;</code>
      */
     public static final int ORGANIZATION_VALUE = 5;
-
     /**
      *
      *
@@ -240,7 +233,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCAL_BUSINESS = 6;</code>
      */
     public static final int LOCAL_BUSINESS_VALUE = 6;
-
     /**
      *
      *
@@ -352,7 +344,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig>
       bigqueryInputConfigs_;
-
   /**
    *
    *
@@ -369,7 +360,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       getBigqueryInputConfigsList() {
     return bigqueryInputConfigs_;
   }
-
   /**
    *
    *
@@ -387,7 +377,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       getBigqueryInputConfigsOrBuilderList() {
     return bigqueryInputConfigs_;
   }
-
   /**
    *
    *
@@ -403,7 +392,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public int getBigqueryInputConfigsCount() {
     return bigqueryInputConfigs_.size();
   }
-
   /**
    *
    *
@@ -420,7 +408,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return bigqueryInputConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -440,7 +427,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 2;
   private int entityType_ = 0;
-
   /**
    *
    *
@@ -456,7 +442,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public int getEntityTypeValue() {
     return entityType_;
   }
-
   /**
    *
    *
@@ -481,7 +466,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object previousResultBigqueryTable_ = "";
-
   /**
    *
    *
@@ -509,7 +493,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -727,7 +710,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1024,7 +1006,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return bigqueryInputConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1024,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return bigqueryInputConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1043,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return bigqueryInputConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1068,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1091,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1116,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1141,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1163,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1186,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1210,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1231,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1252,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1267,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         getBigqueryInputConfigsBuilder(int index) {
       return getBigqueryInputConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1317,7 +1286,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return bigqueryInputConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1338,7 +1306,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bigqueryInputConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1324,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1377,7 +1343,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1415,7 +1380,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int entityType_ = 0;
-
     /**
      *
      *
@@ -1432,7 +1396,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public int getEntityTypeValue() {
       return entityType_;
     }
-
     /**
      *
      *
@@ -1452,7 +1415,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1474,7 +1436,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1498,7 +1459,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1479,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object previousResultBigqueryTable_ = "";
-
     /**
      *
      *
@@ -1546,7 +1505,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1573,7 +1531,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1599,7 +1556,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1577,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

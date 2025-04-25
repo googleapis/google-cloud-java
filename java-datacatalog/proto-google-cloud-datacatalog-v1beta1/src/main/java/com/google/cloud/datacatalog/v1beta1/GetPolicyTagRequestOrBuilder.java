@@ -38,7 +38,6 @@ public interface GetPolicyTagRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

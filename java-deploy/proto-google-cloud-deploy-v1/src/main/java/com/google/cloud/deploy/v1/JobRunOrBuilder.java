@@ -37,7 +37,6 @@ public interface JobRunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface JobRunOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface JobRunOrBuilder
    * @return The phaseId.
    */
   java.lang.String getPhaseId();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface JobRunOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface JobRunOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface JobRunOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface JobRunOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public interface JobRunOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface JobRunOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public interface JobRunOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface JobRunOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public interface JobRunOrBuilder
    * @return Whether the deployJobRun field is set.
    */
   boolean hasDeployJobRun();
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public interface JobRunOrBuilder
    * @return The deployJobRun.
    */
   com.google.cloud.deploy.v1.DeployJobRun getDeployJobRun();
-
   /**
    *
    *
@@ -337,7 +324,6 @@ public interface JobRunOrBuilder
    * @return Whether the verifyJobRun field is set.
    */
   boolean hasVerifyJobRun();
-
   /**
    *
    *
@@ -352,7 +338,6 @@ public interface JobRunOrBuilder
    * @return The verifyJobRun.
    */
   com.google.cloud.deploy.v1.VerifyJobRun getVerifyJobRun();
-
   /**
    *
    *
@@ -380,7 +365,6 @@ public interface JobRunOrBuilder
    * @return Whether the predeployJobRun field is set.
    */
   boolean hasPredeployJobRun();
-
   /**
    *
    *
@@ -395,7 +379,6 @@ public interface JobRunOrBuilder
    * @return The predeployJobRun.
    */
   com.google.cloud.deploy.v1.PredeployJobRun getPredeployJobRun();
-
   /**
    *
    *
@@ -423,7 +406,6 @@ public interface JobRunOrBuilder
    * @return Whether the postdeployJobRun field is set.
    */
   boolean hasPostdeployJobRun();
-
   /**
    *
    *
@@ -438,7 +420,6 @@ public interface JobRunOrBuilder
    * @return The postdeployJobRun.
    */
   com.google.cloud.deploy.v1.PostdeployJobRun getPostdeployJobRun();
-
   /**
    *
    *
@@ -466,7 +447,6 @@ public interface JobRunOrBuilder
    * @return Whether the createChildRolloutJobRun field is set.
    */
   boolean hasCreateChildRolloutJobRun();
-
   /**
    *
    *
@@ -481,7 +461,6 @@ public interface JobRunOrBuilder
    * @return The createChildRolloutJobRun.
    */
   com.google.cloud.deploy.v1.CreateChildRolloutJobRun getCreateChildRolloutJobRun();
-
   /**
    *
    *
@@ -510,7 +489,6 @@ public interface JobRunOrBuilder
    * @return Whether the advanceChildRolloutJobRun field is set.
    */
   boolean hasAdvanceChildRolloutJobRun();
-
   /**
    *
    *
@@ -525,7 +503,6 @@ public interface JobRunOrBuilder
    * @return The advanceChildRolloutJobRun.
    */
   com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun getAdvanceChildRolloutJobRun();
-
   /**
    *
    *
@@ -554,7 +531,6 @@ public interface JobRunOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

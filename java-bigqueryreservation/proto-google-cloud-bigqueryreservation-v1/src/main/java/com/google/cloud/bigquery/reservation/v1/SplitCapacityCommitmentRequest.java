@@ -34,7 +34,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest)
     SplitCapacityCommitmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SplitCapacityCommitmentRequest.newBuilder() to construct.
   private SplitCapacityCommitmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
 
   public static final int SLOT_COUNT_FIELD_NUMBER = 2;
   private long slotCount_ = 0L;
-
   /**
    *
    *
@@ -314,7 +310,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -523,7 +518,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -549,7 +543,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -575,7 +568,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     }
 
     private long slotCount_;
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     public long getSlotCount() {
       return slotCount_;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -76,7 +76,6 @@ public enum FallbackRoutingMode implements com.google.protobuf.ProtocolMessageEn
    * <code>FALLBACK_ROUTING_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int FALLBACK_ROUTING_MODE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public enum FallbackRoutingMode implements com.google.protobuf.ProtocolMessageEn
    * <code>FALLBACK_TRAFFIC_UNAWARE = 1;</code>
    */
   public static final int FALLBACK_TRAFFIC_UNAWARE_VALUE = 1;
-
   /**
    *
    *

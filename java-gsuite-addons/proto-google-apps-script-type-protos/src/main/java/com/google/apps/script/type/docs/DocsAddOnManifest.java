@@ -33,7 +33,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.apps.script.type.docs.DocsAddOnManifest)
     DocsAddOnManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocsAddOnManifest.newBuilder() to construct.
   private DocsAddOnManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int HOMEPAGE_TRIGGER_FIELD_NUMBER = 1;
   private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
   public boolean hasHomepageTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
         ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
         : homepageTrigger_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
 
   public static final int ON_FILE_SCOPE_GRANTED_TRIGGER_FIELD_NUMBER = 2;
   private com.google.apps.script.type.docs.DocsExtensionPoint onFileScopeGrantedTrigger_;
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
   public boolean hasOnFileScopeGrantedTrigger() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
         ? com.google.apps.script.type.docs.DocsExtensionPoint.getDefaultInstance()
         : onFileScopeGrantedTrigger_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +580,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
             com.google.apps.script.type.HomepageExtensionPoint.Builder,
             com.google.apps.script.type.HomepageExtensionPointOrBuilder>
         homepageTriggerBuilder_;
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
     public boolean hasHomepageTrigger() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
         return homepageTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
             : homepageTrigger_;
       }
     }
-
     /**
      *
      *
@@ -794,7 +777,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
             com.google.apps.script.type.docs.DocsExtensionPoint.Builder,
             com.google.apps.script.type.docs.DocsExtensionPointOrBuilder>
         onFileScopeGrantedTriggerBuilder_;
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
     public boolean hasOnFileScopeGrantedTrigger() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -834,7 +815,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
         return onFileScopeGrantedTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getOnFileScopeGrantedTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
             : onFileScopeGrantedTrigger_;
       }
     }
-
     /**
      *
      *

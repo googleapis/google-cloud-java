@@ -34,7 +34,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.GPUSharingConfig)
     GPUSharingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GPUSharingConfig.newBuilder() to construct.
   private GPUSharingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * <code>GPU_SHARING_STRATEGY_UNSPECIFIED = 0;</code>
      */
     public static final int GPU_SHARING_STRATEGY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * <code>TIME_SHARING = 1;</code>
      */
     public static final int TIME_SHARING_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int MAX_SHARED_CLIENTS_PER_GPU_FIELD_NUMBER = 1;
   private long maxSharedClientsPerGpu_ = 0L;
-
   /**
    *
    *
@@ -249,7 +245,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int GPU_SHARING_STRATEGY_FIELD_NUMBER = 2;
   private int gpuSharingStrategy_ = 0;
-
   /**
    *
    *
@@ -267,7 +262,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasGpuSharingStrategy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
   public int getGpuSharingStrategyValue() {
     return gpuSharingStrategy_;
   }
-
   /**
    *
    *
@@ -482,7 +475,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +673,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long maxSharedClientsPerGpu_;
-
     /**
      *
      *
@@ -697,7 +688,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     public long getMaxSharedClientsPerGpu() {
       return maxSharedClientsPerGpu_;
     }
-
     /**
      *
      *
@@ -717,7 +707,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +726,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int gpuSharingStrategy_ = 0;
-
     /**
      *
      *
@@ -755,7 +743,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasGpuSharingStrategy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     public int getGpuSharingStrategyValue() {
       return gpuSharingStrategy_;
     }
-
     /**
      *
      *
@@ -794,7 +780,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

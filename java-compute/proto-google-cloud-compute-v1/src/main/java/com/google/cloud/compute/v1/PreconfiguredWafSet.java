@@ -32,7 +32,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PreconfiguredWafSet)
     PreconfiguredWafSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PreconfiguredWafSet.newBuilder() to construct.
   private PreconfiguredWafSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.WafExpressionSet> expressionSets_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.compute.v1.WafExpressionSet> getExpressionSetsList() {
     return expressionSets_;
   }
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       getExpressionSetsOrBuilderList() {
     return expressionSets_;
   }
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
   public int getExpressionSetsCount() {
     return expressionSets_.size();
   }
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.WafExpressionSet getExpressionSets(int index) {
     return expressionSets_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
         return expressionSetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
         return expressionSetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
         return expressionSetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +757,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +776,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +789,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
         int index) {
       return getExpressionSetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -826,7 +806,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
         return expressionSetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -844,7 +823,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(expressionSets_);
       }
     }
-
     /**
      *
      *
@@ -858,7 +836,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       return getExpressionSetsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.WafExpressionSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -873,7 +850,6 @@ public final class PreconfiguredWafSet extends com.google.protobuf.GeneratedMess
       return getExpressionSetsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.WafExpressionSet.getDefaultInstance());
     }
-
     /**
      *
      *

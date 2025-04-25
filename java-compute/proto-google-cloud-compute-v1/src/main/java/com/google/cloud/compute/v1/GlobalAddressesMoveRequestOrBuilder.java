@@ -36,7 +36,6 @@ public interface GlobalAddressesMoveRequestOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GlobalAddressesMoveRequestOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GlobalAddressesMoveRequestOrBuilder
    * @return Whether the destinationAddress field is set.
    */
   boolean hasDestinationAddress();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface GlobalAddressesMoveRequestOrBuilder
    * @return The destinationAddress.
    */
   java.lang.String getDestinationAddress();
-
   /**
    *
    *

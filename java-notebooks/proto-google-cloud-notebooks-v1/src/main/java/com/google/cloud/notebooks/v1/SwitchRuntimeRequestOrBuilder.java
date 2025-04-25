@@ -37,7 +37,6 @@ public interface SwitchRuntimeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SwitchRuntimeRequestOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface SwitchRuntimeRequestOrBuilder
    * @return Whether the acceleratorConfig field is set.
    */
   boolean hasAcceleratorConfig();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface SwitchRuntimeRequestOrBuilder
    * @return The acceleratorConfig.
    */
   com.google.cloud.notebooks.v1.RuntimeAcceleratorConfig getAcceleratorConfig();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface SwitchRuntimeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

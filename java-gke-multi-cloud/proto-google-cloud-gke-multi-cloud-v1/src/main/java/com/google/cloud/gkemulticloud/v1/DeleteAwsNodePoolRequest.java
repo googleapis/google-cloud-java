@@ -33,7 +33,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest)
     DeleteAwsNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteAwsNodePoolRequest.newBuilder() to construct.
   private DeleteAwsNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
 
   public static final int IGNORE_ERRORS_FIELD_NUMBER = 5;
   private boolean ignoreErrors_ = false;
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -463,7 +455,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -702,7 +693,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -734,7 +724,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +755,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +785,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +811,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +844,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -896,7 +880,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -938,7 +920,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -963,7 +944,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +968,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     }
 
     private boolean ignoreErrors_;
-
     /**
      *
      *
@@ -1007,7 +986,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     public boolean getIgnoreErrors() {
       return ignoreErrors_;
     }
-
     /**
      *
      *
@@ -1030,7 +1008,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1082,7 +1058,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1086,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1113,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1136,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

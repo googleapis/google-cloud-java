@@ -35,7 +35,6 @@ public final class GetCertificateRevocationListRequest
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.GetCertificateRevocationListRequest)
     GetCertificateRevocationListRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetCertificateRevocationListRequest.newBuilder() to construct.
   private GetCertificateRevocationListRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class GetCertificateRevocationListRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GetCertificateRevocationListRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -295,7 +292,6 @@ public final class GetCertificateRevocationListRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -495,7 +491,6 @@ public final class GetCertificateRevocationListRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -521,7 +516,6 @@ public final class GetCertificateRevocationListRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -547,7 +541,6 @@ public final class GetCertificateRevocationListRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class GetCertificateRevocationListRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class GetCertificateRevocationListRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

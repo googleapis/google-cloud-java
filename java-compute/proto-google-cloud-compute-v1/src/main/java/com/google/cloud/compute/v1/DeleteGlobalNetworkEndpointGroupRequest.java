@@ -34,7 +34,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest)
     DeleteGlobalNetworkEndpointGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteGlobalNetworkEndpointGroupRequest.newBuilder() to construct.
   private DeleteGlobalNetworkEndpointGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkEndpointGroup_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -436,7 +428,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     private int bitField0_;
 
     private java.lang.Object networkEndpointGroup_ = "";
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -732,7 +720,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -913,7 +893,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class DeleteGlobalNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

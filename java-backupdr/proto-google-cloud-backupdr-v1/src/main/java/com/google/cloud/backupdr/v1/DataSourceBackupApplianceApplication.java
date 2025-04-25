@@ -35,7 +35,6 @@ public final class DataSourceBackupApplianceApplication
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.DataSourceBackupApplianceApplication)
     DataSourceBackupApplianceApplicationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSourceBackupApplianceApplication.newBuilder() to construct.
   private DataSourceBackupApplianceApplication(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class DataSourceBackupApplianceApplication
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object applicationName_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DataSourceBackupApplianceApplication
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DataSourceBackupApplianceApplication
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupAppliance_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class DataSourceBackupApplianceApplication
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class DataSourceBackupApplianceApplication
 
   public static final int APPLIANCE_ID_FIELD_NUMBER = 3;
   private long applianceId_ = 0L;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class DataSourceBackupApplianceApplication
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class DataSourceBackupApplianceApplication
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public final class DataSourceBackupApplianceApplication
 
   public static final int APPLICATION_ID_FIELD_NUMBER = 8;
   private long applicationId_ = 0L;
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public final class DataSourceBackupApplianceApplication
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public final class DataSourceBackupApplianceApplication
       return s;
     }
   }
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public final class DataSourceBackupApplianceApplication
 
   public static final int HOST_ID_FIELD_NUMBER = 7;
   private long hostId_ = 0L;
-
   /**
    *
    *
@@ -554,7 +542,6 @@ public final class DataSourceBackupApplianceApplication
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -829,7 +816,6 @@ public final class DataSourceBackupApplianceApplication
     private int bitField0_;
 
     private java.lang.Object applicationName_ = "";
-
     /**
      *
      *
@@ -852,7 +838,6 @@ public final class DataSourceBackupApplianceApplication
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class DataSourceBackupApplianceApplication
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +881,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +922,6 @@ public final class DataSourceBackupApplianceApplication
     }
 
     private java.lang.Object backupAppliance_ = "";
-
     /**
      *
      *
@@ -963,7 +944,6 @@ public final class DataSourceBackupApplianceApplication
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -986,7 +966,6 @@ public final class DataSourceBackupApplianceApplication
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1004,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1028,6 @@ public final class DataSourceBackupApplianceApplication
     }
 
     private long applianceId_;
-
     /**
      *
      *
@@ -1067,7 +1043,6 @@ public final class DataSourceBackupApplianceApplication
     public long getApplianceId() {
       return applianceId_;
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1081,6 @@ public final class DataSourceBackupApplianceApplication
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class DataSourceBackupApplianceApplication
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1125,6 @@ public final class DataSourceBackupApplianceApplication
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1146,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1163,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1187,6 @@ public final class DataSourceBackupApplianceApplication
     }
 
     private long applicationId_;
-
     /**
      *
      *
@@ -1234,7 +1202,6 @@ public final class DataSourceBackupApplianceApplication
     public long getApplicationId() {
       return applicationId_;
     }
-
     /**
      *
      *
@@ -1254,7 +1221,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1240,6 @@ public final class DataSourceBackupApplianceApplication
     }
 
     private java.lang.Object hostname_ = "";
-
     /**
      *
      *
@@ -1297,7 +1262,6 @@ public final class DataSourceBackupApplianceApplication
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1320,7 +1284,6 @@ public final class DataSourceBackupApplianceApplication
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1305,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1322,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1346,6 @@ public final class DataSourceBackupApplianceApplication
     }
 
     private long hostId_;
-
     /**
      *
      *
@@ -1401,7 +1361,6 @@ public final class DataSourceBackupApplianceApplication
     public long getHostId() {
       return hostId_;
     }
-
     /**
      *
      *
@@ -1421,7 +1380,6 @@ public final class DataSourceBackupApplianceApplication
       onChanged();
       return this;
     }
-
     /**
      *
      *

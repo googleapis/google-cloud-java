@@ -39,7 +39,6 @@ public interface UploadModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UploadModelRequestOrBuilder
    * @return The parentModel.
    */
   java.lang.String getParentModel();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface UploadModelRequestOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface UploadModelRequestOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface UploadModelRequestOrBuilder
    * @return The model.
    */
   com.google.cloud.aiplatform.v1.Model getModel();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface UploadModelRequestOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse)
     ListOSPolicyAssignmentRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListOSPolicyAssignmentRevisionsResponse.newBuilder() to construct.
   private ListOSPolicyAssignmentRevisionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyAssignment> osPolicyAssignments_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       getOsPolicyAssignmentsList() {
     return osPolicyAssignments_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       getOsPolicyAssignmentsOrBuilderList() {
     return osPolicyAssignments_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
   public int getOsPolicyAssignmentsCount() {
     return osPolicyAssignments_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
   public com.google.cloud.osconfig.v1alpha.OSPolicyAssignment getOsPolicyAssignments(int index) {
     return osPolicyAssignments_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +372,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +664,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return osPolicyAssignmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return osPolicyAssignmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return osPolicyAssignmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         getOsPolicyAssignmentsBuilder(int index) {
       return getOsPolicyAssignmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return osPolicyAssignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return java.util.Collections.unmodifiableList(osPolicyAssignments_);
       }
     }
-
     /**
      *
      *
@@ -983,7 +959,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       return getOsPolicyAssignmentsFieldBuilder()
           .addBuilder(com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1000,7 +975,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
           .addBuilder(
               index, com.google.cloud.osconfig.v1alpha.OSPolicyAssignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1037,7 +1011,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1079,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class ListOSPolicyAssignmentRevisionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

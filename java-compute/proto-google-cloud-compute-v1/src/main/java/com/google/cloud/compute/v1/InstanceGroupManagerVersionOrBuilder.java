@@ -36,7 +36,6 @@ public interface InstanceGroupManagerVersionOrBuilder
    * @return Whether the instanceTemplate field is set.
    */
   boolean hasInstanceTemplate();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceGroupManagerVersionOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InstanceGroupManagerVersionOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InstanceGroupManagerVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface InstanceGroupManagerVersionOrBuilder
    * @return Whether the targetSize field is set.
    */
   boolean hasTargetSize();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface InstanceGroupManagerVersionOrBuilder
    * @return The targetSize.
    */
   com.google.cloud.compute.v1.FixedOrPercent getTargetSize();
-
   /**
    *
    *

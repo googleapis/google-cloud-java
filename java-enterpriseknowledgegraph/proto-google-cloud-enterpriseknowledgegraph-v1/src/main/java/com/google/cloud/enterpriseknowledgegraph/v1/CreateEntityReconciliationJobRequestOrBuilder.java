@@ -40,7 +40,6 @@ public interface CreateEntityReconciliationJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateEntityReconciliationJobRequestOrBuilder
    * @return Whether the entityReconciliationJob field is set.
    */
   boolean hasEntityReconciliationJob();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateEntityReconciliationJobRequestOrBuilder
    * @return The entityReconciliationJob.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob getEntityReconciliationJob();
-
   /**
    *
    *

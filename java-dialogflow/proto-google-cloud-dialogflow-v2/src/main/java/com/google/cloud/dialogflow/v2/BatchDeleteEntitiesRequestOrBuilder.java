@@ -39,7 +39,6 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * @return A list containing the entityValues.
    */
   java.util.List<java.lang.String> getEntityValuesList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * @return The count of entityValues.
    */
   int getEntityValuesCount();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * @return The entityValues at the given index.
    */
   java.lang.String getEntityValues(int index);
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

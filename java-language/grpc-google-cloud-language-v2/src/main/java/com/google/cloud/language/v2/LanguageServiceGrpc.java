@@ -284,19 +284,6 @@ public final class LanguageServiceGrpc {
     return LanguageServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static LanguageServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LanguageServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<LanguageServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public LanguageServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new LanguageServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return LanguageServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -539,95 +526,6 @@ public final class LanguageServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LanguageService.
-   *
-   * <pre>
-   * Provides text analysis operations such as sentiment analysis and entity
-   * recognition.
-   * </pre>
-   */
-  public static final class LanguageServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<LanguageServiceBlockingV2Stub> {
-    private LanguageServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected LanguageServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LanguageServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Analyzes the sentiment of the provided text.
-     * </pre>
-     */
-    public com.google.cloud.language.v2.AnalyzeSentimentResponse analyzeSentiment(
-        com.google.cloud.language.v2.AnalyzeSentimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAnalyzeSentimentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Finds named entities (currently proper names and common nouns) in the text
-     * along with entity types, probability, mentions for each entity, and
-     * other properties.
-     * </pre>
-     */
-    public com.google.cloud.language.v2.AnalyzeEntitiesResponse analyzeEntities(
-        com.google.cloud.language.v2.AnalyzeEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Classifies a document into categories.
-     * </pre>
-     */
-    public com.google.cloud.language.v2.ClassifyTextResponse classifyText(
-        com.google.cloud.language.v2.ClassifyTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getClassifyTextMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Moderates a document for harmful and sensitive categories.
-     * </pre>
-     */
-    public com.google.cloud.language.v2.ModerateTextResponse moderateText(
-        com.google.cloud.language.v2.ModerateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getModerateTextMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A convenience method that provides all features in one call.
-     * </pre>
-     */
-    public com.google.cloud.language.v2.AnnotateTextResponse annotateText(
-        com.google.cloud.language.v2.AnnotateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service LanguageService.
    *
    * <pre>
    * Provides text analysis operations such as sentiment analysis and entity

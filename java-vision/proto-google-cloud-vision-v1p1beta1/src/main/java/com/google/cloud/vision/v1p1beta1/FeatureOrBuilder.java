@@ -36,7 +36,6 @@ public interface FeatureOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface FeatureOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

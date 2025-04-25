@@ -32,7 +32,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.WafExpressionSet)
     WafExpressionSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WafExpressionSet.newBuilder() to construct.
   private WafExpressionSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList aliases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getAliasesList() {
     return aliases_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public int getAliasesCount() {
     return aliases_.size();
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public java.lang.String getAliases(int index) {
     return aliases_.get(index);
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.WafExpressionSetExpression> expressions_;
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       getExpressionsList() {
     return expressions_;
   }
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       getExpressionsOrBuilderList() {
     return expressions_;
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public int getExpressionsCount() {
     return expressions_.size();
   }
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.compute.v1.WafExpressionSetExpression getExpressions(int index) {
     return expressions_.get(index);
   }
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -237,7 +226,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -261,7 +249,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -478,7 +465,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +741,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       aliases_.makeImmutable();
       return aliases_;
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public int getAliasesCount() {
       return aliases_.size();
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public java.lang.String getAliases(int index) {
       return aliases_.get(index);
     }
-
     /**
      *
      *
@@ -818,7 +800,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getAliasesBytes(int index) {
       return aliases_.getByteString(index);
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +845,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return expressionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -983,7 +959,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return expressionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1001,7 +976,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return expressionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1000,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1021,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1044,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1089,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1110,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1132,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1152,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1172,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1186,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         int index) {
       return getExpressionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1240,7 +1204,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return expressionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1259,7 +1222,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(expressions_);
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1236,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       return getExpressionsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.WafExpressionSetExpression.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1291,7 +1252,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.compute.v1.WafExpressionSetExpression.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1325,7 +1285,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1340,7 +1299,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public boolean hasId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1363,7 +1321,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1386,7 +1343,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1364,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1381,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

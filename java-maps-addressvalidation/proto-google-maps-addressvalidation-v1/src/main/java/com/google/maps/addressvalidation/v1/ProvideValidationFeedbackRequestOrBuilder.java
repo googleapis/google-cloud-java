@@ -41,7 +41,6 @@ public interface ProvideValidationFeedbackRequestOrBuilder
    * @return The enum numeric value on the wire for conclusion.
    */
   int getConclusionValue();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface ProvideValidationFeedbackRequestOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
-
   /**
    *
    *

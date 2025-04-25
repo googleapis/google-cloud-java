@@ -34,7 +34,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.LineageEvent)
     LineageEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LineageEvent.newBuilder() to construct.
   private LineageEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.lineage.v1.EventLink> links_;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datacatalog.lineage.v1.EventLink> getLinksList() {
     return links_;
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       getLinksOrBuilderList() {
     return links_;
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public int getLinksCount() {
     return links_.size();
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.lineage.v1.EventLink getLinks(int index) {
     return links_.get(index);
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -527,7 +513,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -824,7 +809,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -880,7 +863,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1012,7 +991,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1009,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1033,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1079,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1103,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1125,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1147,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1190,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1211,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1225,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.lineage.v1.EventLink.Builder getLinksBuilder(int index) {
       return getLinksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1276,7 +1243,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return linksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1262,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(links_);
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1277,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       return getLinksFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.lineage.v1.EventLink.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1329,7 +1293,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datacatalog.lineage.v1.EventLink.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1369,7 +1332,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1387,7 +1349,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1409,7 +1370,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1435,7 +1395,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1417,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1489,7 +1447,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1469,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1530,7 +1486,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1550,7 +1505,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1540,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1604,7 +1557,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1626,7 +1578,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1652,7 +1603,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1625,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1706,7 +1655,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1677,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1747,7 +1694,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1767,7 +1713,6 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

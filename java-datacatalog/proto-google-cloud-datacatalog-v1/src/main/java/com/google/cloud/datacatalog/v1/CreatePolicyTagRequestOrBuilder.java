@@ -38,7 +38,6 @@ public interface CreatePolicyTagRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreatePolicyTagRequestOrBuilder
    * @return Whether the policyTag field is set.
    */
   boolean hasPolicyTag();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CreatePolicyTagRequestOrBuilder
    * @return The policyTag.
    */
   com.google.cloud.datacatalog.v1.PolicyTag getPolicyTag();
-
   /**
    *
    *

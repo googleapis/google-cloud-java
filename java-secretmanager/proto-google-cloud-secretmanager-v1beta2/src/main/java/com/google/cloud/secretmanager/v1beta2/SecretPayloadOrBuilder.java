@@ -64,7 +64,6 @@ public interface SecretPayloadOrBuilder
    * @return Whether the dataCrc32c field is set.
    */
   boolean hasDataCrc32C();
-
   /**
    *
    *

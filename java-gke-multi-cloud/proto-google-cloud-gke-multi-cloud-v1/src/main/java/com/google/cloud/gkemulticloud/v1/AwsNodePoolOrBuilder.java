@@ -42,7 +42,6 @@ public interface AwsNodePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface AwsNodePoolOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface AwsNodePoolOrBuilder
    * @return The config.
    */
   com.google.cloud.gkemulticloud.v1.AwsNodeConfig getConfig();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface AwsNodePoolOrBuilder
    * @return The autoscaling.
    */
   com.google.cloud.gkemulticloud.v1.AwsNodePoolAutoscaling getAutoscaling();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface AwsNodePoolOrBuilder
    * @return The subnetId.
    */
   java.lang.String getSubnetId();
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public interface AwsNodePoolOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public interface AwsNodePoolOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -293,7 +284,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public interface AwsNodePoolOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -347,7 +335,6 @@ public interface AwsNodePoolOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -376,7 +363,6 @@ public interface AwsNodePoolOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -413,7 +399,6 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -433,11 +418,9 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -457,7 +440,6 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -481,7 +463,6 @@ public interface AwsNodePoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -517,7 +498,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the maxPodsConstraint field is set.
    */
   boolean hasMaxPodsConstraint();
-
   /**
    *
    *
@@ -533,7 +513,6 @@ public interface AwsNodePoolOrBuilder
    * @return The maxPodsConstraint.
    */
   com.google.cloud.gkemulticloud.v1.MaxPodsConstraint getMaxPodsConstraint();
-
   /**
    *
    *
@@ -560,7 +539,6 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError> getErrorsList();
-
   /**
    *
    *
@@ -573,7 +551,6 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AwsNodePoolError getErrors(int index);
-
   /**
    *
    *
@@ -586,7 +563,6 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -600,7 +576,6 @@ public interface AwsNodePoolOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *
@@ -628,7 +603,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the management field is set.
    */
   boolean hasManagement();
-
   /**
    *
    *
@@ -643,7 +617,6 @@ public interface AwsNodePoolOrBuilder
    * @return The management.
    */
   com.google.cloud.gkemulticloud.v1.AwsNodeManagement getManagement();
-
   /**
    *
    *
@@ -671,7 +644,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the kubeletConfig field is set.
    */
   boolean hasKubeletConfig();
-
   /**
    *
    *
@@ -686,7 +658,6 @@ public interface AwsNodePoolOrBuilder
    * @return The kubeletConfig.
    */
   com.google.cloud.gkemulticloud.v1.NodeKubeletConfig getKubeletConfig();
-
   /**
    *
    *
@@ -714,7 +685,6 @@ public interface AwsNodePoolOrBuilder
    * @return Whether the updateSettings field is set.
    */
   boolean hasUpdateSettings();
-
   /**
    *
    *
@@ -729,7 +699,6 @@ public interface AwsNodePoolOrBuilder
    * @return The updateSettings.
    */
   com.google.cloud.gkemulticloud.v1.UpdateSettings getUpdateSettings();
-
   /**
    *
    *

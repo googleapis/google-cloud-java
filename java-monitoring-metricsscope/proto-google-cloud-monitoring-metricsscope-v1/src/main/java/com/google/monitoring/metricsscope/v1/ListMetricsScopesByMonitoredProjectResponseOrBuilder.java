@@ -35,7 +35,6 @@ public interface ListMetricsScopesByMonitoredProjectResponseOrBuilder
    * <code>repeated .google.monitoring.metricsscope.v1.MetricsScope metrics_scopes = 1;</code>
    */
   java.util.List<com.google.monitoring.metricsscope.v1.MetricsScope> getMetricsScopesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListMetricsScopesByMonitoredProjectResponseOrBuilder
    * <code>repeated .google.monitoring.metricsscope.v1.MetricsScope metrics_scopes = 1;</code>
    */
   com.google.monitoring.metricsscope.v1.MetricsScope getMetricsScopes(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListMetricsScopesByMonitoredProjectResponseOrBuilder
    * <code>repeated .google.monitoring.metricsscope.v1.MetricsScope metrics_scopes = 1;</code>
    */
   int getMetricsScopesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListMetricsScopesByMonitoredProjectResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.metricsscope.v1.MetricsScopeOrBuilder>
       getMetricsScopesOrBuilderList();
-
   /**
    *
    *

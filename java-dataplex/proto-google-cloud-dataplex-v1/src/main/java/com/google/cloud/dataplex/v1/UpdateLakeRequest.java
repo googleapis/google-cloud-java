@@ -33,7 +33,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.UpdateLakeRequest)
     UpdateLakeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateLakeRequest.newBuilder() to construct.
   private UpdateLakeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int LAKE_FIELD_NUMBER = 2;
   private com.google.cloud.dataplex.v1.Lake lake_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasLake() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.dataplex.v1.Lake getLake() {
     return lake_ == null ? com.google.cloud.dataplex.v1.Lake.getDefaultInstance() : lake_;
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -374,7 +366,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +600,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +742,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -778,7 +761,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataplex.v1.Lake.Builder,
             com.google.cloud.dataplex.v1.LakeOrBuilder>
         lakeBuilder_;
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasLake() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -850,7 +830,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
         return lakeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +925,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +941,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLakeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -985,7 +959,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
         return lake_ == null ? com.google.cloud.dataplex.v1.Lake.getDefaultInstance() : lake_;
       }
     }
-
     /**
      *
      *
@@ -1015,7 +988,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class UpdateLakeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

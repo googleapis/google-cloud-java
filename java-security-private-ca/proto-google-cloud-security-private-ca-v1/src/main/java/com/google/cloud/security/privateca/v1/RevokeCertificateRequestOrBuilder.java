@@ -40,7 +40,6 @@ public interface RevokeCertificateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface RevokeCertificateRequestOrBuilder
    * @return The enum numeric value on the wire for reason.
    */
   int getReasonValue();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface RevokeCertificateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

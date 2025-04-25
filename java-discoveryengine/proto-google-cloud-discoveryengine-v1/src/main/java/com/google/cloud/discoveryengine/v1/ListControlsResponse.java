@@ -33,7 +33,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.ListControlsResponse)
     ListControlsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListControlsResponse.newBuilder() to construct.
   private ListControlsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1.Control> controls_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.discoveryengine.v1.Control> getControlsList() {
     return controls_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       getControlsOrBuilderList() {
     return controls_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
   public int getControlsCount() {
     return controls_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.discoveryengine.v1.Control getControls(int index) {
     return controls_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -642,7 +633,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return controlsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return controlsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return controlsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.discoveryengine.v1.Control.Builder getControlsBuilder(int index) {
       return getControlsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return controlsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(controls_);
       }
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       return getControlsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1.Control.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -945,7 +920,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       return getControlsFieldBuilder()
           .addBuilder(index, com.google.cloud.discoveryengine.v1.Control.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -978,7 +952,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1001,7 +974,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1024,7 +996,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1017,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1034,6 @@ public final class ListControlsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

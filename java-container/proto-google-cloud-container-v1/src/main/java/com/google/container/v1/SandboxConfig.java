@@ -33,7 +33,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.SandboxConfig)
     SandboxConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SandboxConfig.newBuilder() to construct.
   private SandboxConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,7 +106,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -202,7 +200,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -218,7 +215,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -394,7 +390,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +571,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -592,7 +586,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -611,7 +604,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +621,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1.SandboxConfig.Type.forNumber(type_);
       return result == null ? com.google.container.v1.SandboxConfig.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -651,7 +642,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,7 @@ public class AsyncDeleteSessionLRO {
       DeleteSessionRequest request =
           DeleteSessionRequest.newBuilder()
               .setName(
-                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+                  SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
                       .toString())
               .build();
       OperationFuture<Empty, DeleteOperationMetadata> future =

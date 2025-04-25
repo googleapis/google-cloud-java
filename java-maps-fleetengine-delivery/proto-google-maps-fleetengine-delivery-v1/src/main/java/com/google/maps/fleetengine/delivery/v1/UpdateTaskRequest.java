@@ -33,7 +33,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.UpdateTaskRequest)
     UpdateTaskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateTaskRequest.newBuilder() to construct.
   private UpdateTaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader header_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.getDefaultInstance()
         : header_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int TASK_FIELD_NUMBER = 3;
   private com.google.maps.fleetengine.delivery.v1.Task task_;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.fleetengine.delivery.v1.Task.getDefaultInstance()
         : task_;
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -481,7 +471,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -723,7 +712,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeaderOrBuilder>
         headerBuilder_;
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
         return headerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -788,7 +774,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +828,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +849,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +866,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
             : header_;
       }
     }
-
     /**
      *
      *
@@ -941,7 +921,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.fleetengine.delivery.v1.Task.Builder,
             com.google.maps.fleetengine.delivery.v1.TaskOrBuilder>
         taskBuilder_;
-
     /**
      *
      *
@@ -972,7 +951,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
         return taskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1025,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1103,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1138,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1230,7 +1202,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
             : task_;
       }
     }
-
     /**
      *
      *
@@ -1279,7 +1250,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1299,7 +1269,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1325,7 +1294,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1321,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1345,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1377,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1436,7 +1401,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1420,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1480,7 +1443,6 @@ public final class UpdateTaskRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *

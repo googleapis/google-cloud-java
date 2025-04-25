@@ -32,7 +32,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DiskAsyncReplicationList)
     DiskAsyncReplicationListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskAsyncReplicationList.newBuilder() to construct.
   private DiskAsyncReplicationList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ASYNC_REPLICATION_DISK_FIELD_NUMBER = 231794067;
   private com.google.cloud.compute.v1.DiskAsyncReplication asyncReplicationDisk_;
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -76,7 +74,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
   public boolean hasAsyncReplicationDisk() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -90,7 +87,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.DiskAsyncReplication.getDefaultInstance()
         : asyncReplicationDisk_;
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -270,7 +266,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -477,7 +472,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.DiskAsyncReplication.Builder,
             com.google.cloud.compute.v1.DiskAsyncReplicationOrBuilder>
         asyncReplicationDiskBuilder_;
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -488,7 +482,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
     public boolean hasAsyncReplicationDisk() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -505,7 +498,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
         return asyncReplicationDiskBuilder_.getMessage();
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -524,7 +516,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -541,7 +532,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -567,7 +557,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -583,7 +572,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -595,7 +583,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
       onChanged();
       return getAsyncReplicationDiskFieldBuilder().getBuilder();
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -611,7 +598,6 @@ public final class DiskAsyncReplicationList extends com.google.protobuf.Generate
             : asyncReplicationDisk_;
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;

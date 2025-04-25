@@ -41,7 +41,6 @@ public interface CompleteIPRotationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CompleteIPRotationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface CompleteIPRotationRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public interface CompleteIPRotationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

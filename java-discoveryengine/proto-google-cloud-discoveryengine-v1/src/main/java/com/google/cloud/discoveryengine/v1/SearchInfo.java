@@ -33,7 +33,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchInfo)
     SearchInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchInfo.newBuilder() to construct.
   private SearchInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object searchQuery_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -183,7 +179,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -220,7 +215,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OFFSET_FIELD_NUMBER = 3;
   private int offset_ = 0;
-
   /**
    *
    *
@@ -246,7 +240,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -455,7 +448,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -670,7 +662,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object searchQuery_ = "";
-
     /**
      *
      *
@@ -706,7 +697,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -742,7 +732,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +766,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +796,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +833,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -879,7 +865,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +897,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +928,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +955,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +989,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int offset_;
-
     /**
      *
      *
@@ -1033,7 +1014,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1059,7 +1039,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     public int getOffset() {
       return offset_;
     }
-
     /**
      *
      *
@@ -1089,7 +1068,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

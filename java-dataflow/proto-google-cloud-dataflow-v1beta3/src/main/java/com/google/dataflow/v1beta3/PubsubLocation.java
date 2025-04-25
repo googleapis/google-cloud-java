@@ -34,7 +34,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.PubsubLocation)
     PubsubLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PubsubLocation.newBuilder() to construct.
   private PubsubLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscription_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timestampLabel_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object idLabel_ = "";
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DROP_LATE_DATA_FIELD_NUMBER = 5;
   private boolean dropLateData_ = false;
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trackingSubscription_ = "";
-
   /**
    *
    *
@@ -337,7 +326,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +353,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WITH_ATTRIBUTES_FIELD_NUMBER = 7;
   private boolean withAttributes_ = false;
-
   /**
    *
    *
@@ -595,7 +582,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -866,7 +852,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object topic_ = "";
-
     /**
      *
      *
@@ -890,7 +875,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +898,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -937,7 +920,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +938,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +963,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subscription_ = "";
-
     /**
      *
      *
@@ -1006,7 +986,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1009,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1031,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1049,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1074,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object timestampLabel_ = "";
-
     /**
      *
      *
@@ -1122,7 +1097,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1120,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1169,7 +1142,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1160,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1185,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object idLabel_ = "";
-
     /**
      *
      *
@@ -1238,7 +1208,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1262,7 +1231,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1285,7 +1253,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1271,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1296,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean dropLateData_;
-
     /**
      *
      *
@@ -1346,7 +1311,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean getDropLateData() {
       return dropLateData_;
     }
-
     /**
      *
      *
@@ -1366,7 +1330,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1349,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object trackingSubscription_ = "";
-
     /**
      *
      *
@@ -1410,7 +1372,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1395,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1457,7 +1417,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1460,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean withAttributes_;
-
     /**
      *
      *
@@ -1518,7 +1475,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
     public boolean getWithAttributes() {
       return withAttributes_;
     }
-
     /**
      *
      *
@@ -1538,7 +1494,6 @@ public final class PubsubLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListTableSpecsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.TableSpec> getTableSpecsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTableSpecsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
   com.google.cloud.automl.v1beta1.TableSpec getTableSpecs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTableSpecsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
   int getTableSpecsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTableSpecsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.TableSpecOrBuilder>
       getTableSpecsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTableSpecsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

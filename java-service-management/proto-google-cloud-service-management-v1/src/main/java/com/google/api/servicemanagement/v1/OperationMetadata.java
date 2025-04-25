@@ -33,7 +33,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.OperationMetadata)
     OperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,7 +148,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -160,7 +158,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>DONE = 1;</code>
      */
     public static final int DONE_VALUE = 1;
-
     /**
      *
      *
@@ -171,7 +168,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>NOT_STARTED = 2;</code>
      */
     public static final int NOT_STARTED_VALUE = 2;
-
     /**
      *
      *
@@ -182,7 +178,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>IN_PROGRESS = 3;</code>
      */
     public static final int IN_PROGRESS_VALUE = 3;
-
     /**
      *
      *
@@ -194,7 +189,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -314,7 +308,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -340,7 +333,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
-
     /**
      *
      *
@@ -354,7 +346,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     com.google.api.servicemanagement.v1.OperationMetadata.Status getStatus();
   }
-
   /**
    *
    *
@@ -369,7 +360,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.OperationMetadata.Step)
       StepOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Step.newBuilder() to construct.
     private Step(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -405,7 +395,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -429,7 +418,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -456,7 +444,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     public static final int STATUS_FIELD_NUMBER = 4;
     private int status_ = 0;
-
     /**
      *
      *
@@ -472,7 +459,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -667,7 +653,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -871,7 +856,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -894,7 +878,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -917,7 +900,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -939,7 +921,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -957,7 +938,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -982,7 +962,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
 
       private int status_ = 0;
-
       /**
        *
        *
@@ -998,7 +977,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       public int getStatusValue() {
         return status_;
       }
-
       /**
        *
        *
@@ -1017,7 +995,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1037,7 +1014,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             ? com.google.api.servicemanagement.v1.OperationMetadata.Status.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1059,7 +1035,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1149,7 +1124,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1165,7 +1139,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getResourceNamesList() {
     return resourceNames_;
   }
-
   /**
    *
    *
@@ -1181,7 +1154,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public int getResourceNamesCount() {
     return resourceNames_.size();
   }
-
   /**
    *
    *
@@ -1198,7 +1170,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public java.lang.String getResourceNames(int index) {
     return resourceNames_.get(index);
   }
-
   /**
    *
    *
@@ -1220,7 +1191,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicemanagement.v1.OperationMetadata.Step> steps_;
-
   /**
    *
    *
@@ -1234,7 +1204,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.api.servicemanagement.v1.OperationMetadata.Step> getStepsList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -1250,7 +1219,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       getStepsOrBuilderList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -1264,7 +1232,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public int getStepsCount() {
     return steps_.size();
   }
-
   /**
    *
    *
@@ -1278,7 +1245,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.api.servicemanagement.v1.OperationMetadata.Step getSteps(int index) {
     return steps_.get(index);
   }
-
   /**
    *
    *
@@ -1296,7 +1262,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int PROGRESS_PERCENTAGE_FIELD_NUMBER = 3;
   private int progressPercentage_ = 0;
-
   /**
    *
    *
@@ -1315,7 +1280,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -1331,7 +1295,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1347,7 +1310,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -1563,7 +1525,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1868,7 +1829,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -1885,7 +1845,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       resourceNames_.makeImmutable();
       return resourceNames_;
     }
-
     /**
      *
      *
@@ -1901,7 +1860,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getResourceNamesCount() {
       return resourceNames_.size();
     }
-
     /**
      *
      *
@@ -1918,7 +1876,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public java.lang.String getResourceNames(int index) {
       return resourceNames_.get(index);
     }
-
     /**
      *
      *
@@ -1935,7 +1892,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
       return resourceNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1960,7 +1916,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1939,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1959,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2025,7 +1978,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2086,7 +2038,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return stepsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2103,7 +2054,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return stepsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2120,7 +2070,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return stepsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2144,7 +2093,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2114,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2189,7 +2136,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2213,7 +2159,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2179,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2200,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2278,7 +2221,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2298,7 +2240,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2318,7 +2259,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2332,7 +2272,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         int index) {
       return getStepsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2350,7 +2289,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return stepsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2369,7 +2307,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(steps_);
       }
     }
-
     /**
      *
      *
@@ -2384,7 +2321,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.api.servicemanagement.v1.OperationMetadata.Step.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2401,7 +2337,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
               index,
               com.google.api.servicemanagement.v1.OperationMetadata.Step.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2434,7 +2369,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private int progressPercentage_;
-
     /**
      *
      *
@@ -2450,7 +2384,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getProgressPercentage() {
       return progressPercentage_;
     }
-
     /**
      *
      *
@@ -2470,7 +2403,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2495,7 +2427,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -2510,7 +2441,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2529,7 +2459,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2552,7 +2481,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2500,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2527,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2620,7 +2546,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2635,7 +2560,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2652,7 +2576,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *

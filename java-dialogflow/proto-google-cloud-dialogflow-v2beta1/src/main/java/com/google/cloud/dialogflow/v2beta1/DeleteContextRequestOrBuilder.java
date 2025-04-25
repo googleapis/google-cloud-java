@@ -51,7 +51,6 @@ public interface DeleteContextRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

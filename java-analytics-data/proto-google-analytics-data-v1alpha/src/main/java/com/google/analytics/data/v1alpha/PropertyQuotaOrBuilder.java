@@ -38,7 +38,6 @@ public interface PropertyQuotaOrBuilder
    * @return Whether the tokensPerDay field is set.
    */
   boolean hasTokensPerDay();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PropertyQuotaOrBuilder
    * @return The tokensPerDay.
    */
   com.google.analytics.data.v1alpha.QuotaStatus getTokensPerDay();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface PropertyQuotaOrBuilder
    * @return Whether the tokensPerHour field is set.
    */
   boolean hasTokensPerHour();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface PropertyQuotaOrBuilder
    * @return The tokensPerHour.
    */
   com.google.analytics.data.v1alpha.QuotaStatus getTokensPerHour();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface PropertyQuotaOrBuilder
    * @return Whether the concurrentRequests field is set.
    */
   boolean hasConcurrentRequests();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface PropertyQuotaOrBuilder
    * @return The concurrentRequests.
    */
   com.google.analytics.data.v1alpha.QuotaStatus getConcurrentRequests();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface PropertyQuotaOrBuilder
    * @return Whether the serverErrorsPerProjectPerHour field is set.
    */
   boolean hasServerErrorsPerProjectPerHour();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface PropertyQuotaOrBuilder
    * @return The serverErrorsPerProjectPerHour.
    */
   com.google.analytics.data.v1alpha.QuotaStatus getServerErrorsPerProjectPerHour();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface PropertyQuotaOrBuilder
    * @return Whether the potentiallyThresholdedRequestsPerHour field is set.
    */
   boolean hasPotentiallyThresholdedRequestsPerHour();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface PropertyQuotaOrBuilder
    * @return The potentiallyThresholdedRequestsPerHour.
    */
   com.google.analytics.data.v1alpha.QuotaStatus getPotentiallyThresholdedRequestsPerHour();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface PropertyQuotaOrBuilder
    * @return Whether the tokensPerProjectPerHour field is set.
    */
   boolean hasTokensPerProjectPerHour();
-
   /**
    *
    *
@@ -282,7 +271,6 @@ public interface PropertyQuotaOrBuilder
    * @return The tokensPerProjectPerHour.
    */
   com.google.analytics.data.v1alpha.QuotaStatus getTokensPerProjectPerHour();
-
   /**
    *
    *

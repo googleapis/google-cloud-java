@@ -33,7 +33,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.language.v2.AnalyzeEntitiesResponse)
     AnalyzeEntitiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeEntitiesResponse.newBuilder() to construct.
   private AnalyzeEntitiesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.Entity> entities_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.language.v2.Entity> getEntitiesList() {
     return entities_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       getEntitiesOrBuilderList() {
     return entities_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
   public int getEntitiesCount() {
     return entities_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
   public com.google.cloud.language.v2.Entity getEntities(int index) {
     return entities_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
 
   public static final int LANGUAGE_SUPPORTED_FIELD_NUMBER = 3;
   private boolean languageSupported_ = false;
-
   /**
    *
    *
@@ -398,7 +389,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return entitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return entitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return entitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -745,7 +732,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
     public com.google.cloud.language.v2.Entity.Builder getEntitiesBuilder(int index) {
       return getEntitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return entitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(entities_);
       }
     }
-
     /**
      *
      *
@@ -976,7 +951,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       return getEntitiesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.Entity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -990,7 +964,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       return getEntitiesFieldBuilder()
           .addBuilder(index, com.google.cloud.language.v2.Entity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1022,7 +995,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1047,7 +1019,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1085,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1111,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
     }
 
     private boolean languageSupported_;
-
     /**
      *
      *
@@ -1161,7 +1128,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
     public boolean getLanguageSupported() {
       return languageSupported_;
     }
-
     /**
      *
      *
@@ -1183,7 +1149,6 @@ public final class AnalyzeEntitiesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

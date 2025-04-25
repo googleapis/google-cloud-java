@@ -39,7 +39,6 @@ public interface CreateRollupPropertySourceLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateRollupPropertySourceLinkRequestOrBuilder
    * @return Whether the rollupPropertySourceLink field is set.
    */
   boolean hasRollupPropertySourceLink();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateRollupPropertySourceLinkRequestOrBuilder
    * @return The rollupPropertySourceLink.
    */
   com.google.analytics.admin.v1alpha.RollupPropertySourceLink getRollupPropertySourceLink();
-
   /**
    *
    *

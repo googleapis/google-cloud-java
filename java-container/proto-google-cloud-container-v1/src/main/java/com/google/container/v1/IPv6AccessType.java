@@ -72,7 +72,6 @@ public enum IPv6AccessType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IPV6_ACCESS_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int IPV6_ACCESS_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum IPv6AccessType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INTERNAL = 1;</code>
    */
   public static final int INTERNAL_VALUE = 1;
-
   /**
    *
    *

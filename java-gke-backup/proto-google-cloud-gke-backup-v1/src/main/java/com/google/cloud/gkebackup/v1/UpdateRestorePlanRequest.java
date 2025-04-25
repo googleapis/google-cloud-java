@@ -33,7 +33,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.UpdateRestorePlanRequest)
     UpdateRestorePlanRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateRestorePlanRequest.newBuilder() to construct.
   private UpdateRestorePlanRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int RESTORE_PLAN_FIELD_NUMBER = 1;
   private com.google.cloud.gkebackup.v1.RestorePlan restorePlan_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
   public boolean hasRestorePlan() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
         ? com.google.cloud.gkebackup.v1.RestorePlan.getDefaultInstance()
         : restorePlan_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -377,7 +370,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -601,7 +593,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
             com.google.cloud.gkebackup.v1.RestorePlan.Builder,
             com.google.cloud.gkebackup.v1.RestorePlanOrBuilder>
         restorePlanBuilder_;
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
     public boolean hasRestorePlan() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
         return restorePlanBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return getRestorePlanFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
             : restorePlan_;
       }
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1048,7 +1023,6 @@ public final class UpdateRestorePlanRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *

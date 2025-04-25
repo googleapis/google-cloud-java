@@ -36,7 +36,6 @@ public interface TpmAttestationOrBuilder
    */
   java.util.List<com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote>
       getQuotesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface TpmAttestationOrBuilder
    * </code>
    */
   com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Quote getQuotes(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface TpmAttestationOrBuilder
    * </code>
    */
   int getQuotesCount();
-
   /**
    *
    *
@@ -74,7 +71,6 @@ public interface TpmAttestationOrBuilder
   java.util.List<
           ? extends com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.QuoteOrBuilder>
       getQuotesOrBuilderList();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface TpmAttestationOrBuilder
    * @return A list containing the certChain.
    */
   java.util.List<com.google.protobuf.ByteString> getCertChainList();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface TpmAttestationOrBuilder
    * @return The count of certChain.
    */
   int getCertChainCount();
-
   /**
    *
    *

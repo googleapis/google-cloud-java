@@ -39,7 +39,6 @@ public interface AutoMlVideoClassificationOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutoMlVideoClassificationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoClassificationInputs
       getInputs();
-
   /**
    *
    *

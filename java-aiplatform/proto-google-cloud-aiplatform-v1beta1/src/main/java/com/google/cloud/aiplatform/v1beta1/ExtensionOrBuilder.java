@@ -36,7 +36,6 @@ public interface ExtensionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ExtensionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ExtensionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ExtensionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ExtensionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface ExtensionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface ExtensionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface ExtensionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface ExtensionOrBuilder
    * @return Whether the manifest field is set.
    */
   boolean hasManifest();
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public interface ExtensionOrBuilder
    * @return The manifest.
    */
   com.google.cloud.aiplatform.v1beta1.ExtensionManifest getManifest();
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public interface ExtensionOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ExtensionOperation>
       getExtensionOperationsList();
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public interface ExtensionOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ExtensionOperation getExtensionOperations(int index);
-
   /**
    *
    *
@@ -296,7 +284,6 @@ public interface ExtensionOrBuilder
    * </code>
    */
   int getExtensionOperationsCount();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface ExtensionOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExtensionOperationOrBuilder>
       getExtensionOperationsOrBuilderList();
-
   /**
    *
    *
@@ -340,7 +326,6 @@ public interface ExtensionOrBuilder
    * @return Whether the runtimeConfig field is set.
    */
   boolean hasRuntimeConfig();
-
   /**
    *
    *
@@ -356,7 +341,6 @@ public interface ExtensionOrBuilder
    * @return The runtimeConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RuntimeConfig getRuntimeConfig();
-
   /**
    *
    *
@@ -383,7 +367,6 @@ public interface ExtensionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ToolUseExample> getToolUseExamplesList();
-
   /**
    *
    *
@@ -396,7 +379,6 @@ public interface ExtensionOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ToolUseExample getToolUseExamples(int index);
-
   /**
    *
    *
@@ -409,7 +391,6 @@ public interface ExtensionOrBuilder
    * </code>
    */
   int getToolUseExamplesCount();
-
   /**
    *
    *
@@ -423,7 +404,6 @@ public interface ExtensionOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolUseExampleOrBuilder>
       getToolUseExamplesOrBuilderList();
-
   /**
    *
    *
@@ -460,7 +440,6 @@ public interface ExtensionOrBuilder
    * @return Whether the privateServiceConnectConfig field is set.
    */
   boolean hasPrivateServiceConnectConfig();
-
   /**
    *
    *
@@ -484,7 +463,6 @@ public interface ExtensionOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ExtensionPrivateServiceConnectConfig
       getPrivateServiceConnectConfig();
-
   /**
    *
    *

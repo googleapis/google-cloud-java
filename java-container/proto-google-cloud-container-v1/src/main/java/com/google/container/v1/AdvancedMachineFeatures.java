@@ -33,7 +33,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.container.v1.AdvancedMachineFeatures)
     AdvancedMachineFeaturesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdvancedMachineFeatures.newBuilder() to construct.
   private AdvancedMachineFeatures(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int THREADS_PER_CORE_FIELD_NUMBER = 1;
   private long threadsPerCore_ = 0L;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasThreadsPerCore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   public static final int ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER = 2;
   private boolean enableNestedVirtualization_ = false;
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public boolean hasEnableNestedVirtualization() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +311,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -516,7 +510,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long threadsPerCore_;
-
     /**
      *
      *
@@ -534,7 +527,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasThreadsPerCore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -552,7 +544,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public long getThreadsPerCore() {
       return threadsPerCore_;
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     }
 
     private boolean enableNestedVirtualization_;
-
     /**
      *
      *
@@ -612,7 +601,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean hasEnableNestedVirtualization() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -628,7 +616,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public boolean getEnableNestedVirtualization() {
       return enableNestedVirtualization_;
     }
-
     /**
      *
      *
@@ -648,7 +635,6 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

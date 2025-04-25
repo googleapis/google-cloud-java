@@ -34,7 +34,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.BindingExplanation)
     BindingExplanationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BindingExplanation.newBuilder() to construct.
   private BindingExplanation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,7 +145,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>ROLE_PERMISSION_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_PERMISSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -157,7 +155,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>ROLE_PERMISSION_INCLUDED = 1;</code>
      */
     public static final int ROLE_PERMISSION_INCLUDED_VALUE = 1;
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>ROLE_PERMISSION_NOT_INCLUDED = 2;</code>
      */
     public static final int ROLE_PERMISSION_NOT_INCLUDED_VALUE = 2;
-
     /**
      *
      *
@@ -351,7 +347,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>MEMBERSHIP_UNSPECIFIED = 0;</code>
      */
     public static final int MEMBERSHIP_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -368,7 +363,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>MEMBERSHIP_INCLUDED = 1;</code>
      */
     public static final int MEMBERSHIP_INCLUDED_VALUE = 1;
-
     /**
      *
      *
@@ -379,7 +373,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>MEMBERSHIP_NOT_INCLUDED = 2;</code>
      */
     public static final int MEMBERSHIP_NOT_INCLUDED_VALUE = 2;
-
     /**
      *
      *
@@ -392,7 +385,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * <code>MEMBERSHIP_UNKNOWN_INFO_DENIED = 3;</code>
      */
     public static final int MEMBERSHIP_UNKNOWN_INFO_DENIED_VALUE = 3;
-
     /**
      *
      *
@@ -511,7 +503,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for membership.
      */
     int getMembershipValue();
-
     /**
      *
      *
@@ -538,7 +529,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for relevance.
      */
     int getRelevanceValue();
-
     /**
      *
      *
@@ -553,7 +543,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.policysimulator.v1.HeuristicRelevance getRelevance();
   }
-
   /**
    *
    *
@@ -568,7 +557,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.BindingExplanation.AnnotatedMembership)
       AnnotatedMembershipOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnnotatedMembership.newBuilder() to construct.
     private AnnotatedMembership(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -603,7 +591,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
     public static final int MEMBERSHIP_FIELD_NUMBER = 1;
     private int membership_ = 0;
-
     /**
      *
      *
@@ -619,7 +606,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getMembershipValue() {
       return membership_;
     }
-
     /**
      *
      *
@@ -642,7 +628,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
     public static final int RELEVANCE_FIELD_NUMBER = 2;
     private int relevance_ = 0;
-
     /**
      *
      *
@@ -659,7 +644,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getRelevanceValue() {
       return relevance_;
     }
-
     /**
      *
      *
@@ -868,7 +852,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1078,7 +1061,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private int membership_ = 0;
-
       /**
        *
        *
@@ -1094,7 +1076,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       public int getMembershipValue() {
         return membership_;
       }
-
       /**
        *
        *
@@ -1113,7 +1094,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1134,7 +1114,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
             ? com.google.cloud.policysimulator.v1.BindingExplanation.Membership.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1157,7 +1136,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1177,7 +1155,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       }
 
       private int relevance_ = 0;
-
       /**
        *
        *
@@ -1194,7 +1171,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       public int getRelevanceValue() {
         return relevance_;
       }
-
       /**
        *
        *
@@ -1214,7 +1190,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1235,7 +1210,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
             ? com.google.cloud.policysimulator.v1.HeuristicRelevance.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1258,7 +1232,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1349,7 +1322,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ACCESS_FIELD_NUMBER = 1;
   private int access_ = 0;
-
   /**
    *
    *
@@ -1374,7 +1346,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public int getAccessValue() {
     return access_;
   }
-
   /**
    *
    *
@@ -1406,7 +1377,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object role_ = "";
-
   /**
    *
    *
@@ -1434,7 +1404,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1465,7 +1434,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
   public static final int ROLE_PERMISSION_FIELD_NUMBER = 3;
   private int rolePermission_ = 0;
-
   /**
    *
    *
@@ -1483,7 +1451,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public int getRolePermissionValue() {
     return rolePermission_;
   }
-
   /**
    *
    *
@@ -1509,7 +1476,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
   public static final int ROLE_PERMISSION_RELEVANCE_FIELD_NUMBER = 4;
   private int rolePermissionRelevance_ = 0;
-
   /**
    *
    *
@@ -1526,7 +1492,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public int getRolePermissionRelevanceValue() {
     return rolePermissionRelevance_;
   }
-
   /**
    *
    *
@@ -1587,7 +1552,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public int getMembershipsCount() {
     return internalGetMemberships().getMap().size();
   }
-
   /**
    *
    *
@@ -1625,7 +1589,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     }
     return internalGetMemberships().getMap().containsKey(key);
   }
-
   /** Use {@link #getMembershipsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1635,7 +1598,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       getMemberships() {
     return getMembershipsMap();
   }
-
   /**
    *
    *
@@ -1673,7 +1635,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       getMembershipsMap() {
     return internalGetMemberships().getMap();
   }
-
   /**
    *
    *
@@ -1719,7 +1680,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         map = internalGetMemberships().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1768,7 +1728,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
   public static final int RELEVANCE_FIELD_NUMBER = 6;
   private int relevance_ = 0;
-
   /**
    *
    *
@@ -1785,7 +1744,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public int getRelevanceValue() {
     return relevance_;
   }
-
   /**
    *
    *
@@ -1809,7 +1767,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
 
   public static final int CONDITION_FIELD_NUMBER = 7;
   private com.google.type.Expr condition_;
-
   /**
    *
    *
@@ -1829,7 +1786,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1849,7 +1805,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
   public com.google.type.Expr getCondition() {
     return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
   }
-
   /**
    *
    *
@@ -2116,7 +2071,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2427,7 +2381,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int access_ = 0;
-
     /**
      *
      *
@@ -2452,7 +2405,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getAccessValue() {
       return access_;
     }
-
     /**
      *
      *
@@ -2480,7 +2432,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2507,7 +2458,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           com.google.cloud.policysimulator.v1.AccessState.forNumber(access_);
       return result == null ? com.google.cloud.policysimulator.v1.AccessState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2538,7 +2488,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2567,7 +2516,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object role_ = "";
-
     /**
      *
      *
@@ -2594,7 +2542,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2621,7 +2568,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2647,7 +2593,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2669,7 +2614,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2698,7 +2642,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     }
 
     private int rolePermission_ = 0;
-
     /**
      *
      *
@@ -2716,7 +2659,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getRolePermissionValue() {
       return rolePermission_;
     }
-
     /**
      *
      *
@@ -2737,7 +2679,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2761,7 +2702,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.policysimulator.v1.BindingExplanation.RolePermission.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2786,7 +2726,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2808,7 +2747,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     }
 
     private int rolePermissionRelevance_ = 0;
-
     /**
      *
      *
@@ -2826,7 +2764,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getRolePermissionRelevanceValue() {
       return rolePermissionRelevance_;
     }
-
     /**
      *
      *
@@ -2847,7 +2784,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2870,7 +2806,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.policysimulator.v1.HeuristicRelevance.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2895,7 +2830,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2940,8 +2874,7 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return MembershipsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MembershipsConverter membershipsConverter = new MembershipsConverter();
 
@@ -2981,7 +2914,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getMembershipsCount() {
       return internalGetMemberships().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -3019,7 +2951,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       }
       return internalGetMemberships().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getMembershipsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3029,7 +2960,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         getMemberships() {
       return getMembershipsMap();
     }
-
     /**
      *
      *
@@ -3067,7 +2997,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         getMembershipsMap() {
       return internalGetMemberships().getImmutableMap();
     }
-
     /**
      *
      *
@@ -3114,7 +3043,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           map = internalGetMutableMemberships().ensureBuilderMap();
       return map.containsKey(key) ? membershipsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -3166,7 +3094,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       internalGetMutableMemberships().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3131,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       internalGetMutableMemberships().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3214,7 +3140,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       return internalGetMutableMemberships().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -3258,7 +3183,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -3306,7 +3230,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -3362,7 +3285,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     }
 
     private int relevance_ = 0;
-
     /**
      *
      *
@@ -3379,7 +3301,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public int getRelevanceValue() {
       return relevance_;
     }
-
     /**
      *
      *
@@ -3399,7 +3320,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3420,7 +3340,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.policysimulator.v1.HeuristicRelevance.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3443,7 +3362,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3467,7 +3385,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -3486,7 +3403,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3509,7 +3425,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         return conditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3536,7 +3451,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3560,7 +3474,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3592,7 +3505,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3616,7 +3528,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3635,7 +3546,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3656,7 +3566,6 @@ public final class BindingExplanation extends com.google.protobuf.GeneratedMessa
         return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
       }
     }
-
     /**
      *
      *

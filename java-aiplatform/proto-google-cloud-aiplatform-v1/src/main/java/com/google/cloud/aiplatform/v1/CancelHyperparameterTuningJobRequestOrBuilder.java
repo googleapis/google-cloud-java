@@ -40,7 +40,6 @@ public interface CancelHyperparameterTuningJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListEntitlementChangesResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.EntitlementChange entitlement_changes = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.EntitlementChange> getEntitlementChangesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEntitlementChangesResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.EntitlementChange entitlement_changes = 1;</code>
    */
   com.google.cloud.channel.v1.EntitlementChange getEntitlementChanges(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEntitlementChangesResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.EntitlementChange entitlement_changes = 1;</code>
    */
   int getEntitlementChangesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEntitlementChangesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.EntitlementChangeOrBuilder>
       getEntitlementChangesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListEntitlementChangesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

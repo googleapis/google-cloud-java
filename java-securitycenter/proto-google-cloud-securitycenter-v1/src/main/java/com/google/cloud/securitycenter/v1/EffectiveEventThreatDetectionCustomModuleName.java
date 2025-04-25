@@ -298,9 +298,7 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
       Preconditions.checkArgument(
           Objects.equals(
               effectiveEventThreatDetectionCustomModuleName.pathTemplate, ORGANIZATION_MODULE),
-          "toBuilder is only supported when EffectiveEventThreatDetectionCustomModuleName has the"
-              + " pattern of"
-              + " organizations/{organization}/eventThreatDetectionSettings/effectiveCustomModules/{module}");
+          "toBuilder is only supported when EffectiveEventThreatDetectionCustomModuleName has the pattern of organizations/{organization}/eventThreatDetectionSettings/effectiveCustomModules/{module}");
       this.organization = effectiveEventThreatDetectionCustomModuleName.organization;
       this.module = effectiveEventThreatDetectionCustomModuleName.module;
     }

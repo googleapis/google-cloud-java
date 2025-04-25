@@ -34,7 +34,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.BackupPolicy backup_policies = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.BackupPolicy> getBackupPoliciesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.BackupPolicy backup_policies = 1;</code>
    */
   com.google.cloud.netapp.v1.BackupPolicy getBackupPolicies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.BackupPolicy backup_policies = 1;</code>
    */
   int getBackupPoliciesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.BackupPolicyOrBuilder>
       getBackupPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListBackupPoliciesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

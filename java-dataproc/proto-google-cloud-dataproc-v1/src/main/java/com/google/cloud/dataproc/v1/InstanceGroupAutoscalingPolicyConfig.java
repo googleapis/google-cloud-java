@@ -35,7 +35,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig)
     InstanceGroupAutoscalingPolicyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupAutoscalingPolicyConfig.newBuilder() to construct.
   private InstanceGroupAutoscalingPolicyConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 1;
   private int minInstances_ = 0;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 2;
   private int maxInstances_ = 0;
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
 
   public static final int WEIGHT_FIELD_NUMBER = 3;
   private int weight_ = 0;
-
   /**
    *
    *
@@ -326,7 +322,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -541,7 +536,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     private int bitField0_;
 
     private int minInstances_;
-
     /**
      *
      *
@@ -560,7 +554,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public int getMinInstances() {
       return minInstances_;
     }
-
     /**
      *
      *
@@ -583,7 +576,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     }
 
     private int maxInstances_;
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public int getMaxInstances() {
       return maxInstances_;
     }
-
     /**
      *
      *
@@ -652,7 +642,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     }
 
     private int weight_;
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public int getWeight() {
       return weight_;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class InstanceGroupAutoscalingPolicyConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface GetClientGatewayRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

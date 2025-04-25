@@ -36,7 +36,6 @@ public interface ValueOrBuilder
    * @return Whether the floatValue field is set.
    */
   boolean hasFloatValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ValueOrBuilder
    * @return Whether the intValue field is set.
    */
   boolean hasIntValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ValueOrBuilder
    * @return Whether the enumValue field is set.
    */
   boolean hasEnumValue();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ValueOrBuilder
    * @return The enumValue.
    */
   com.google.cloud.contentwarehouse.v1.EnumValue getEnumValue();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface ValueOrBuilder
    * @return Whether the datetimeValue field is set.
    */
   boolean hasDatetimeValue();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface ValueOrBuilder
    * @return The datetimeValue.
    */
   com.google.type.DateTime getDatetimeValue();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface ValueOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public interface ValueOrBuilder
    * @return The timestampValue.
    */
   com.google.cloud.contentwarehouse.v1.TimestampValue getTimestampValue();
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public interface ValueOrBuilder
    * @return Whether the booleanValue field is set.
    */
   boolean hasBooleanValue();
-
   /**
    *
    *

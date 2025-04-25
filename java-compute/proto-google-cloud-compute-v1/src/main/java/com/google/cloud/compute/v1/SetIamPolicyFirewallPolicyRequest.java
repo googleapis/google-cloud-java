@@ -33,7 +33,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest)
     SetIamPolicyFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetIamPolicyFirewallPolicyRequest.newBuilder() to construct.
   private SetIamPolicyFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
   public static final int GLOBAL_ORGANIZATION_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 177408606;
   private com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest
       globalOrganizationSetPolicyRequestResource_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
   public boolean hasGlobalOrganizationSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest.getDefaultInstance()
         : globalOrganizationSetPolicyRequestResource_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -359,7 +353,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
             com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequestOrBuilder>
         globalOrganizationSetPolicyRequestResourceBuilder_;
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     public boolean hasGlobalOrganizationSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
         return globalOrganizationSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       onChanged();
       return getGlobalOrganizationSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
             : globalOrganizationSetPolicyRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

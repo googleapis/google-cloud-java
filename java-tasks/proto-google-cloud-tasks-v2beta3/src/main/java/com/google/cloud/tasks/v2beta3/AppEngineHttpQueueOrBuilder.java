@@ -43,7 +43,6 @@ public interface AppEngineHttpQueueOrBuilder
    * @return Whether the appEngineRoutingOverride field is set.
    */
   boolean hasAppEngineRoutingOverride();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AppEngineHttpQueueOrBuilder
    * @return The appEngineRoutingOverride.
    */
   com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRoutingOverride();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface GetSnapshotSettingRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

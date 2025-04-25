@@ -33,7 +33,6 @@ public final class RestrictAllowedResourcesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse)
     RestrictAllowedResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestrictAllowedResourcesResponse.newBuilder() to construct.
   private RestrictAllowedResourcesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -222,7 +221,6 @@ public final class RestrictAllowedResourcesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

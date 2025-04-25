@@ -34,7 +34,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1beta.QuotaAdjusterSettings)
     QuotaAdjusterSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuotaAdjusterSettings.newBuilder() to construct.
   private QuotaAdjusterSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
      * <code>ENABLEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int ENABLEMENT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
      * <code>ENABLED = 2;</code>
      */
     public static final int ENABLED_VALUE = 2;
-
     /**
      *
      *
@@ -233,7 +230,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -259,7 +255,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +283,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
 
   public static final int ENABLEMENT_FIELD_NUMBER = 2;
   private int enablement_ = 0;
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
   public int getEnablementValue() {
     return enablement_;
   }
-
   /**
    *
    *
@@ -331,7 +324,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -349,7 +341,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -367,7 +358,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -388,7 +378,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -415,7 +404,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -639,7 +627,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -882,7 +869,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -907,7 +893,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -932,7 +917,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +940,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +959,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +985,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     }
 
     private int enablement_ = 0;
-
     /**
      *
      *
@@ -1021,7 +1002,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     public int getEnablementValue() {
       return enablement_;
     }
-
     /**
      *
      *
@@ -1042,7 +1022,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1043,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
           ? com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings.Enablement.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1089,7 +1067,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1093,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1134,7 +1110,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1158,7 +1133,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1158,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1180,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1210,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1232,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1249,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1301,7 +1270,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1332,7 +1300,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1358,7 +1325,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1384,7 +1350,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1409,7 +1374,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1394,6 @@ public final class QuotaAdjusterSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -32,7 +32,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RoutersScopedList)
     RoutersScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoutersScopedList.newBuilder() to construct.
   private RoutersScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Router> routers_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.compute.v1.Router> getRoutersList() {
     return routers_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       getRoutersOrBuilderList() {
     return routers_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
   public int getRoutersCount() {
     return routers_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.compute.v1.Router getRouters(int index) {
     return routers_.get(index);
   }
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -364,7 +355,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +643,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
         return routersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
         return routersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
         return routersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +800,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +839,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +858,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +870,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.Router.Builder getRoutersBuilder(int index) {
       return getRoutersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
         return routersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +903,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(routers_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +916,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       return getRoutersFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Router.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +929,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       return getRoutersFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Router.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -992,7 +965,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1007,7 +979,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1028,7 +999,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1021,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1040,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1067,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1086,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1100,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1153,7 +1118,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
             : warning_;
       }
     }
-
     /**
      *
      *

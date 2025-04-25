@@ -36,7 +36,6 @@ public interface ValidationResultOrBuilder
    * @return Whether the verdict field is set.
    */
   boolean hasVerdict();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ValidationResultOrBuilder
    * @return The verdict.
    */
   com.google.maps.addressvalidation.v1.Verdict getVerdict();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ValidationResultOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ValidationResultOrBuilder
    * @return The address.
    */
   com.google.maps.addressvalidation.v1.Address getAddress();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ValidationResultOrBuilder
    * @return Whether the geocode field is set.
    */
   boolean hasGeocode();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ValidationResultOrBuilder
    * @return The geocode.
    */
   com.google.maps.addressvalidation.v1.Geocode getGeocode();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface ValidationResultOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface ValidationResultOrBuilder
    * @return The metadata.
    */
   com.google.maps.addressvalidation.v1.AddressMetadata getMetadata();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface ValidationResultOrBuilder
    * @return Whether the uspsData field is set.
    */
   boolean hasUspsData();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface ValidationResultOrBuilder
    * @return The uspsData.
    */
   com.google.maps.addressvalidation.v1.UspsData getUspsData();
-
   /**
    *
    *

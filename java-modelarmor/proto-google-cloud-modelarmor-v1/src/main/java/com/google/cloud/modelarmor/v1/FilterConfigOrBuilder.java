@@ -38,7 +38,6 @@ public interface FilterConfigOrBuilder
    * @return Whether the raiSettings field is set.
    */
   boolean hasRaiSettings();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface FilterConfigOrBuilder
    * @return The raiSettings.
    */
   com.google.cloud.modelarmor.v1.RaiFilterSettings getRaiSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface FilterConfigOrBuilder
    * @return Whether the sdpSettings field is set.
    */
   boolean hasSdpSettings();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface FilterConfigOrBuilder
    * @return The sdpSettings.
    */
   com.google.cloud.modelarmor.v1.SdpFilterSettings getSdpSettings();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface FilterConfigOrBuilder
    * @return Whether the piAndJailbreakFilterSettings field is set.
    */
   boolean hasPiAndJailbreakFilterSettings();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface FilterConfigOrBuilder
    * @return The piAndJailbreakFilterSettings.
    */
   com.google.cloud.modelarmor.v1.PiAndJailbreakFilterSettings getPiAndJailbreakFilterSettings();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface FilterConfigOrBuilder
    * @return Whether the maliciousUriFilterSettings field is set.
    */
   boolean hasMaliciousUriFilterSettings();
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public interface FilterConfigOrBuilder
    * @return The maliciousUriFilterSettings.
    */
   com.google.cloud.modelarmor.v1.MaliciousUriFilterSettings getMaliciousUriFilterSettings();
-
   /**
    *
    *

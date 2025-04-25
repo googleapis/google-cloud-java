@@ -34,7 +34,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.License)
     LicenseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use License.newBuilder() to construct.
   private License(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expression_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object comments_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -343,7 +338,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -537,7 +531,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object expression_ = "";
-
     /**
      *
      *
@@ -564,7 +557,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -591,7 +583,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object comments_ = "";
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

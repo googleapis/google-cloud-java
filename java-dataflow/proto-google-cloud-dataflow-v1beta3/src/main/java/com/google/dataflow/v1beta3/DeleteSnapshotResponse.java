@@ -33,7 +33,6 @@ public final class DeleteSnapshotResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.DeleteSnapshotResponse)
     DeleteSnapshotResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteSnapshotResponse.newBuilder() to construct.
   private DeleteSnapshotResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class DeleteSnapshotResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface ExpirationPolicyOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ExpirationPolicyOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
-
   /**
    *
    *

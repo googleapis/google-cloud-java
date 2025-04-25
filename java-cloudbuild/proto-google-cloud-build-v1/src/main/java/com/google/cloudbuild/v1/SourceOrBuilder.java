@@ -36,7 +36,6 @@ public interface SourceOrBuilder
    * @return Whether the storageSource field is set.
    */
   boolean hasStorageSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SourceOrBuilder
    * @return The storageSource.
    */
   com.google.cloudbuild.v1.StorageSource getStorageSource();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface SourceOrBuilder
    * @return Whether the repoSource field is set.
    */
   boolean hasRepoSource();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SourceOrBuilder
    * @return The repoSource.
    */
   com.google.cloudbuild.v1.RepoSource getRepoSource();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface SourceOrBuilder
    * @return Whether the gitSource field is set.
    */
   boolean hasGitSource();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface SourceOrBuilder
    * @return The gitSource.
    */
   com.google.cloudbuild.v1.GitSource getGitSource();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface SourceOrBuilder
    * @return Whether the storageSourceManifest field is set.
    */
   boolean hasStorageSourceManifest();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface SourceOrBuilder
    * @return The storageSourceManifest.
    */
   com.google.cloudbuild.v1.StorageSourceManifest getStorageSourceManifest();
-
   /**
    *
    *

@@ -46,7 +46,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return A list containing the targetLanguageCodes.
    */
   java.util.List<java.lang.String> getTargetLanguageCodesList();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return The count of targetLanguageCodes.
    */
   int getTargetLanguageCodesCount();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return The targetLanguageCodes at the given index.
    */
   java.lang.String getTargetLanguageCodes(int index);
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getModelsCount();
-
   /**
    *
    *
@@ -203,11 +197,9 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsModels(java.lang.String key);
-
   /** Use {@link #getModelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getModels();
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getModelsMap();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface BatchTranslateTextRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -302,7 +292,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3beta1.InputConfig> getInputConfigsList();
-
   /**
    *
    *
@@ -318,7 +307,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3beta1.InputConfig getInputConfigs(int index);
-
   /**
    *
    *
@@ -334,7 +322,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * </code>
    */
   int getInputConfigsCount();
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public interface BatchTranslateTextRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList();
-
   /**
    *
    *
@@ -384,7 +370,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -401,7 +386,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.translate.v3beta1.OutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -430,7 +414,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * </code>
    */
   int getGlossariesCount();
-
   /**
    *
    *
@@ -444,12 +427,10 @@ public interface BatchTranslateTextRequestOrBuilder
    * </code>
    */
   boolean containsGlossaries(java.lang.String key);
-
   /** Use {@link #getGlossariesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
       getGlossaries();
-
   /**
    *
    *
@@ -464,7 +445,6 @@ public interface BatchTranslateTextRequestOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
       getGlossariesMap();
-
   /**
    *
    *
@@ -482,7 +462,6 @@ public interface BatchTranslateTextRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig defaultValue);
-
   /**
    *
    *
@@ -515,7 +494,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -533,11 +511,9 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -555,7 +531,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -577,7 +552,6 @@ public interface BatchTranslateTextRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface QuotaGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -107,7 +106,6 @@ public interface QuotaGroupOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.quota.v1beta.MethodDetails> getMethodDetailsList();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface QuotaGroupOrBuilder
    * </code>
    */
   com.google.shopping.merchant.quota.v1beta.MethodDetails getMethodDetails(int index);
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface QuotaGroupOrBuilder
    * </code>
    */
   int getMethodDetailsCount();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface QuotaGroupOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.quota.v1beta.MethodDetailsOrBuilder>
       getMethodDetailsOrBuilderList();
-
   /**
    *
    *

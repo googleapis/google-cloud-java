@@ -33,7 +33,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest)
     StartManualTransferRunsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartManualTransferRunsRequest.newBuilder() to construct.
   private StartManualTransferRunsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -85,7 +84,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
-
     /**
      *
      *
@@ -131,7 +128,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
-
     /**
      *
      *
@@ -147,7 +143,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
-
     /**
      *
      *
@@ -162,7 +157,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      */
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange)
       TimeRangeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeRange.newBuilder() to construct.
     private TimeRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -213,7 +206,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     private int bitField0_;
     public static final int START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTime_;
-
     /**
      *
      *
@@ -232,7 +224,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -251,7 +242,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
-
     /**
      *
      *
@@ -271,7 +261,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
 
     public static final int END_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp endTime_;
-
     /**
      *
      *
@@ -290,7 +279,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -309,7 +297,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
-
     /**
      *
      *
@@ -516,7 +503,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimeBuilder_;
-
       /**
        *
        *
@@ -781,7 +766,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -805,7 +789,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
           return startTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -831,7 +814,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -854,7 +836,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -885,7 +866,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         }
         return this;
       }
-
       /**
        *
        *
@@ -908,7 +888,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -926,7 +905,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -948,7 +926,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
               : startTime_;
         }
       }
-
       /**
        *
        *
@@ -984,7 +961,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           endTimeBuilder_;
-
       /**
        *
        *
@@ -1002,7 +978,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1024,7 +999,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
           return endTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1050,7 +1024,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1073,7 +1046,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1104,7 +1076,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         }
         return this;
       }
-
       /**
        *
        *
@@ -1127,7 +1098,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1145,7 +1115,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1165,7 +1134,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
           return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
         }
       }
-
       /**
        *
        *
@@ -1281,7 +1249,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     private TimeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1318,7 +1285,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1346,7 +1312,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -1376,7 +1341,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   }
 
   public static final int REQUESTED_TIME_RANGE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1397,7 +1361,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   public boolean hasRequestedTimeRange() {
     return timeCase_ == 3;
   }
-
   /**
    *
    *
@@ -1424,7 +1387,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     return com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1451,7 +1413,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   }
 
   public static final int REQUESTED_RUN_TIME_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1470,7 +1431,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   public boolean hasRequestedRunTime() {
     return timeCase_ == 4;
   }
-
   /**
    *
    *
@@ -1492,7 +1452,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1719,7 +1678,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1979,7 +1937,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2006,7 +1963,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2033,7 +1989,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2059,7 +2014,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2035,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2116,7 +2069,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
             com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest
                 .TimeRangeOrBuilder>
         requestedTimeRangeBuilder_;
-
     /**
      *
      *
@@ -2137,7 +2089,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public boolean hasRequestedTimeRange() {
       return timeCase_ == 3;
     }
-
     /**
      *
      *
@@ -2173,7 +2124,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2202,7 +2152,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       timeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2229,7 +2178,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       timeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2273,7 +2221,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       timeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2304,7 +2251,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2324,7 +2270,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         getRequestedTimeRangeBuilder() {
       return getRequestedTimeRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2355,7 +2300,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2406,7 +2350,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         requestedRunTimeBuilder_;
-
     /**
      *
      *
@@ -2425,7 +2368,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public boolean hasRequestedRunTime() {
       return timeCase_ == 4;
     }
-
     /**
      *
      *
@@ -2454,7 +2396,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2480,7 +2421,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       timeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2503,7 +2443,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       timeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2537,7 +2476,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       timeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2566,7 +2504,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2519,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     public com.google.protobuf.Timestamp.Builder getRequestedRunTimeBuilder() {
       return getRequestedRunTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2606,7 +2542,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *

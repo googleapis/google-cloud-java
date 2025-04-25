@@ -49,7 +49,6 @@ public interface InstallmentOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface InstallmentOrBuilder
    * @return The amount.
    */
   com.google.shopping.type.Price getAmount();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface InstallmentOrBuilder
    * @return Whether the downpayment field is set.
    */
   boolean hasDownpayment();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface InstallmentOrBuilder
    * @return The downpayment.
    */
   com.google.shopping.type.Price getDownpayment();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface InstallmentOrBuilder
    * @return Whether the creditType field is set.
    */
   boolean hasCreditType();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface InstallmentOrBuilder
    * @return The creditType.
    */
   java.lang.String getCreditType();
-
   /**
    *
    *

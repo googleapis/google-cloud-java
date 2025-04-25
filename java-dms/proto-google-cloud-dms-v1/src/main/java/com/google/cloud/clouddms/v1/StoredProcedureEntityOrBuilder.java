@@ -36,7 +36,6 @@ public interface StoredProcedureEntityOrBuilder
    * @return The sqlCode.
    */
   java.lang.String getSqlCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StoredProcedureEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface StoredProcedureEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *

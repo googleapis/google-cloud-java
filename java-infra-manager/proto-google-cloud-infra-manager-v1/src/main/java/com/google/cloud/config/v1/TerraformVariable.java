@@ -33,7 +33,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.TerraformVariable)
     TerraformVariableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TerraformVariable.newBuilder() to construct.
   private TerraformVariable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int INPUT_VALUE_FIELD_NUMBER = 5;
   private com.google.protobuf.Value inputValue_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
   public boolean hasInputValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Value getInputValue() {
     return inputValue_ == null ? com.google.protobuf.Value.getDefaultInstance() : inputValue_;
   }
-
   /**
    *
    *
@@ -276,7 +272,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -479,7 +474,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         inputValueBuilder_;
-
     /**
      *
      *
@@ -494,7 +488,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
     public boolean hasInputValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
         return inputValueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -536,7 +528,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -556,7 +547,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +574,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +593,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +607,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getInputValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -636,7 +623,6 @@ public final class TerraformVariable extends com.google.protobuf.GeneratedMessag
         return inputValue_ == null ? com.google.protobuf.Value.getDefaultInstance() : inputValue_;
       }
     }
-
     /**
      *
      *

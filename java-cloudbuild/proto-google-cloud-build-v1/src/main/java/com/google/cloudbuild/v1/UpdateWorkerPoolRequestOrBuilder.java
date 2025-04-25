@@ -41,7 +41,6 @@ public interface UpdateWorkerPoolRequestOrBuilder
    * @return Whether the workerPool field is set.
    */
   boolean hasWorkerPool();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateWorkerPoolRequestOrBuilder
    * @return The workerPool.
    */
   com.google.cloudbuild.v1.WorkerPool getWorkerPool();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateWorkerPoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateWorkerPoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

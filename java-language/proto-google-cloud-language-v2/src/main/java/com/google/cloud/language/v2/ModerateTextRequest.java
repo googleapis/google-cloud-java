@@ -33,7 +33,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.language.v2.ModerateTextRequest)
     ModerateTextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModerateTextRequest.newBuilder() to construct.
   private ModerateTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,7 +120,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
      * <code>MODEL_VERSION_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_VERSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
      * <code>MODEL_VERSION_1 = 1;</code>
      */
     public static final int MODEL_VERSION_1_VALUE = 1;
-
     /**
      *
      *
@@ -234,7 +231,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v2.Document document_;
-
   /**
    *
    *
@@ -252,7 +248,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -272,7 +267,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.language.v2.Document.getDefaultInstance()
         : document_;
   }
-
   /**
    *
    *
@@ -293,7 +287,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
 
   public static final int MODEL_VERSION_FIELD_NUMBER = 2;
   private int modelVersion_ = 0;
-
   /**
    *
    *
@@ -311,7 +304,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
   public int getModelVersionValue() {
     return modelVersion_;
   }
-
   /**
    *
    *
@@ -511,7 +503,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -728,7 +719,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.language.v2.Document.Builder,
             com.google.cloud.language.v2.DocumentOrBuilder>
         documentBuilder_;
-
     /**
      *
      *
@@ -745,7 +735,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -768,7 +757,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
         return documentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -793,7 +781,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +802,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +831,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +852,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +868,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -905,7 +888,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
             : document_;
       }
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int modelVersion_ = 0;
-
     /**
      *
      *
@@ -953,7 +934,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     public int getModelVersionValue() {
       return modelVersion_;
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +975,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1021,7 +999,6 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

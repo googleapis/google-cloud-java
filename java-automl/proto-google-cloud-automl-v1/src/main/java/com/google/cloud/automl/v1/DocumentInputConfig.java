@@ -33,7 +33,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.DocumentInputConfig)
     DocumentInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentInputConfig.newBuilder() to construct.
   private DocumentInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.automl.v1.GcsSource gcsSource_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   public boolean hasGcsSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.automl.v1.GcsSource.getDefaultInstance()
         : gcsSource_;
   }
-
   /**
    *
    *
@@ -295,7 +291,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -498,7 +493,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1.GcsSource.Builder,
             com.google.cloud.automl.v1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -518,7 +512,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     public boolean hasGcsSource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -544,7 +537,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
         return gcsSourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -572,7 +564,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
             : gcsSource_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the backupPool field is set.
    */
   boolean hasBackupPool();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetPoolOrBuilder
    * @return The backupPool.
    */
   java.lang.String getBackupPool();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TargetPoolOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface TargetPoolOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the failoverRatio field is set.
    */
   boolean hasFailoverRatio();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface TargetPoolOrBuilder
    * @return A list containing the healthChecks.
    */
   java.util.List<java.lang.String> getHealthChecksList();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface TargetPoolOrBuilder
    * @return The count of healthChecks.
    */
   int getHealthChecksCount();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface TargetPoolOrBuilder
    * @return The healthChecks at the given index.
    */
   java.lang.String getHealthChecks(int index);
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface TargetPoolOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface TargetPoolOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -286,7 +273,6 @@ public interface TargetPoolOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -326,7 +311,6 @@ public interface TargetPoolOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -352,7 +336,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -365,7 +348,6 @@ public interface TargetPoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -391,7 +373,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -404,7 +385,6 @@ public interface TargetPoolOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -430,7 +410,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
-
   /**
    *
    *
@@ -443,7 +422,6 @@ public interface TargetPoolOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
-
   /**
    *
    *
@@ -469,7 +447,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -482,7 +459,6 @@ public interface TargetPoolOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -509,7 +485,6 @@ public interface TargetPoolOrBuilder
    * @return Whether the sessionAffinity field is set.
    */
   boolean hasSessionAffinity();
-
   /**
    *
    *
@@ -523,7 +498,6 @@ public interface TargetPoolOrBuilder
    * @return The sessionAffinity.
    */
   java.lang.String getSessionAffinity();
-
   /**
    *
    *

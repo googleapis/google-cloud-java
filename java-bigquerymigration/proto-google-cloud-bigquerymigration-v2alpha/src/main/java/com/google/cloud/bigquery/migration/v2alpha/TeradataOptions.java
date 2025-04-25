@@ -33,7 +33,6 @@ public final class TeradataOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.TeradataOptions)
     TeradataOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TeradataOptions.newBuilder() to construct.
   private TeradataOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class TeradataOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

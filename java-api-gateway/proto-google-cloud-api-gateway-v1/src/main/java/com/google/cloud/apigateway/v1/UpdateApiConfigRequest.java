@@ -33,7 +33,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.apigateway.v1.UpdateApiConfigRequest)
     UpdateApiConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateApiConfigRequest.newBuilder() to construct.
   private UpdateApiConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
 
   public static final int API_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.apigateway.v1.ApiConfig apiConfig_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
   public boolean hasApiConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.apigateway.v1.ApiConfig.getDefaultInstance()
         : apiConfig_;
   }
-
   /**
    *
    *
@@ -362,7 +355,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +577,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.apigateway.v1.ApiConfig.Builder,
             com.google.cloud.apigateway.v1.ApiConfigOrBuilder>
         apiConfigBuilder_;
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
     public boolean hasApiConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
         return apiConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +910,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getApiConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -992,7 +967,6 @@ public final class UpdateApiConfigRequest extends com.google.protobuf.GeneratedM
             : apiConfig_;
       }
     }
-
     /**
      *
      *

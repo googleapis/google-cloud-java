@@ -36,7 +36,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest> getItemsList();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest getItems(int index);
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -111,7 +106,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestOrBuilder>
       getItemsOrBuilderList();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -215,7 +205,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -228,7 +217,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -254,7 +242,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -267,7 +254,6 @@ public interface InstanceGroupManagerResizeRequestsListResponseOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

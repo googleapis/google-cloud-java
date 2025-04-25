@@ -41,7 +41,6 @@ public interface GetAccessBindingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

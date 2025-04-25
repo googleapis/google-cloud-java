@@ -38,7 +38,6 @@ public interface UpdateGeneratorRequestOrBuilder
    * @return Whether the generator field is set.
    */
   boolean hasGenerator();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateGeneratorRequestOrBuilder
    * @return The generator.
    */
   com.google.cloud.dialogflow.cx.v3.Generator getGenerator();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateGeneratorRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateGeneratorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface UpdateGeneratorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

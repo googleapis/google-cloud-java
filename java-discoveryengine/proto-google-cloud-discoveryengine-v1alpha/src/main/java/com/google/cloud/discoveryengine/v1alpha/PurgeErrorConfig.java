@@ -33,7 +33,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.PurgeErrorConfig)
     PurgeErrorConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeErrorConfig.newBuilder() to construct.
   private PurgeErrorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GCS_PREFIX_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasGcsPrefix() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -364,7 +359,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +588,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasGcsPrefix() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -626,7 +619,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -658,7 +650,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -683,7 +674,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +696,6 @@ public final class PurgeErrorConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *

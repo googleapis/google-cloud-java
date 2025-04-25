@@ -34,7 +34,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportRagFilesOperationMetadata)
     ImportRagFilesOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportRagFilesOperationMetadata.newBuilder() to construct.
   private ImportRagFilesOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
 
   public static final int RAG_CORPUS_ID_FIELD_NUMBER = 2;
   private long ragCorpusId_ = 0L;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
 
   public static final int IMPORT_RAG_FILES_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig importRagFilesConfig_;
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
   public boolean hasImportRagFilesConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.getDefaultInstance()
         : importRagFilesConfig_;
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
 
   public static final int PROGRESS_PERCENTAGE_FIELD_NUMBER = 4;
   private int progressPercentage_ = 0;
-
   /**
    *
    *
@@ -418,7 +409,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +670,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
             : genericMetadata_;
       }
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     }
 
     private long ragCorpusId_;
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     public long getRagCorpusId() {
       return ragCorpusId_;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder>
         importRagFilesConfigBuilder_;
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     public boolean hasImportRagFilesConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         return importRagFilesConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1000,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return getImportRagFilesConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1120,7 +1090,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
             : importRagFilesConfig_;
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1119,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     }
 
     private int progressPercentage_;
-
     /**
      *
      *
@@ -1168,7 +1136,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     public int getProgressPercentage() {
       return progressPercentage_;
     }
-
     /**
      *
      *
@@ -1190,7 +1157,6 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

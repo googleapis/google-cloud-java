@@ -38,7 +38,6 @@ public interface QueryDeployedModelsRequestOrBuilder
    * @return The deploymentResourcePool.
    */
   java.lang.String getDeploymentResourcePool();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface QueryDeployedModelsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

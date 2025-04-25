@@ -39,7 +39,6 @@ public interface GetControlRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

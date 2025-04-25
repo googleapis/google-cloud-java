@@ -221,8 +221,7 @@ public class MockRepositoryManagerImpl extends RepositoryManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateRepositories, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchCreateRepositories, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -350,8 +349,7 @@ public class MockRepositoryManagerImpl extends RepositoryManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchLinkableRepositories, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method FetchLinkableRepositories, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchLinkableRepositoriesResponse.class.getName(),
                   Exception.class.getName())));

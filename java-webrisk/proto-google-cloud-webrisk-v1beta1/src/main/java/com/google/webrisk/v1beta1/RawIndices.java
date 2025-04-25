@@ -33,7 +33,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.RawIndices)
     RawIndicesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RawIndices.newBuilder() to construct.
   private RawIndices(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList indices_ = emptyIntList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getIndicesList() {
     return indices_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
   public int getIndicesCount() {
     return indices_.size();
   }
-
   /**
    *
    *
@@ -291,7 +287,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -501,7 +496,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -517,7 +511,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
       indices_.makeImmutable();
       return indices_;
     }
-
     /**
      *
      *
@@ -532,7 +525,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
     public int getIndicesCount() {
       return indices_.size();
     }
-
     /**
      *
      *
@@ -548,7 +540,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
     public int getIndices(int index) {
       return indices_.getInt(index);
     }
-
     /**
      *
      *
@@ -570,7 +561,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -591,7 +581,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -611,7 +600,6 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

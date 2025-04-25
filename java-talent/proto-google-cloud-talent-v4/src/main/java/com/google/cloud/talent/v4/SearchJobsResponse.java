@@ -33,7 +33,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.SearchJobsResponse)
     SearchJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchJobsResponse.newBuilder() to construct.
   private SearchJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the job field is set.
      */
     boolean hasJob();
-
     /**
      *
      *
@@ -99,7 +97,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The job.
      */
     com.google.cloud.talent.v4.Job getJob();
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The jobSummary.
      */
     java.lang.String getJobSummary();
-
     /**
      *
      *
@@ -155,7 +151,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The jobTitleSnippet.
      */
     java.lang.String getJobTitleSnippet();
-
     /**
      *
      *
@@ -188,7 +183,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The searchTextSnippet.
      */
     java.lang.String getSearchTextSnippet();
-
     /**
      *
      *
@@ -219,7 +213,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the commuteInfo field is set.
      */
     boolean hasCommuteInfo();
-
     /**
      *
      *
@@ -233,7 +226,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The commuteInfo.
      */
     com.google.cloud.talent.v4.SearchJobsResponse.CommuteInfo getCommuteInfo();
-
     /**
      *
      *
@@ -246,7 +238,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.talent.v4.SearchJobsResponse.CommuteInfoOrBuilder getCommuteInfoOrBuilder();
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.SearchJobsResponse.MatchingJob)
       MatchingJobOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MatchingJob.newBuilder() to construct.
     private MatchingJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -298,7 +288,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int JOB_FIELD_NUMBER = 1;
     private com.google.cloud.talent.v4.Job job_;
-
     /**
      *
      *
@@ -315,7 +304,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -332,7 +320,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4.Job.getDefaultInstance() : job_;
     }
-
     /**
      *
      *
@@ -352,7 +339,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object jobSummary_ = "";
-
     /**
      *
      *
@@ -377,7 +363,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -407,7 +392,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object jobTitleSnippet_ = "";
-
     /**
      *
      *
@@ -434,7 +418,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -466,7 +449,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object searchTextSnippet_ = "";
-
     /**
      *
      *
@@ -494,7 +476,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -525,7 +506,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int COMMUTE_INFO_FIELD_NUMBER = 5;
     private com.google.cloud.talent.v4.SearchJobsResponse.CommuteInfo commuteInfo_;
-
     /**
      *
      *
@@ -542,7 +522,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasCommuteInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -561,7 +540,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.talent.v4.SearchJobsResponse.CommuteInfo.getDefaultInstance()
           : commuteInfo_;
     }
-
     /**
      *
      *
@@ -787,7 +765,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               com.google.cloud.talent.v4.Job.Builder,
               com.google.cloud.talent.v4.JobOrBuilder>
           jobBuilder_;
-
       /**
        *
        *
@@ -1076,7 +1052,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasJob() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1096,7 +1071,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return jobBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1120,7 +1094,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1141,7 +1114,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1170,7 +1142,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1191,7 +1162,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1207,7 +1177,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getJobFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1225,7 +1194,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return job_ == null ? com.google.cloud.talent.v4.Job.getDefaultInstance() : job_;
         }
       }
-
       /**
        *
        *
@@ -1254,7 +1222,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object jobSummary_ = "";
-
       /**
        *
        *
@@ -1278,7 +1245,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1302,7 +1268,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1325,7 +1290,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1344,7 +1308,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1370,7 +1333,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object jobTitleSnippet_ = "";
-
       /**
        *
        *
@@ -1396,7 +1358,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1422,7 +1383,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1447,7 +1407,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1468,7 +1427,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1496,7 +1454,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object searchTextSnippet_ = "";
-
       /**
        *
        *
@@ -1523,7 +1480,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1550,7 +1506,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1576,7 +1531,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1598,7 +1552,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1632,7 +1585,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               com.google.cloud.talent.v4.SearchJobsResponse.CommuteInfo.Builder,
               com.google.cloud.talent.v4.SearchJobsResponse.CommuteInfoOrBuilder>
           commuteInfoBuilder_;
-
       /**
        *
        *
@@ -1648,7 +1600,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasCommuteInfo() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1670,7 +1621,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return commuteInfoBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1695,7 +1645,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1717,7 +1666,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1749,7 +1697,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1770,7 +1717,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1787,7 +1733,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getCommuteInfoFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1808,7 +1753,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               : commuteInfo_;
         }
       }
-
       /**
        *
        *
@@ -1917,7 +1861,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the jobLocation field is set.
      */
     boolean hasJobLocation();
-
     /**
      *
      *
@@ -1930,7 +1873,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The jobLocation.
      */
     com.google.cloud.talent.v4.Location getJobLocation();
-
     /**
      *
      *
@@ -1957,7 +1899,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the travelDuration field is set.
      */
     boolean hasTravelDuration();
-
     /**
      *
      *
@@ -1973,7 +1914,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return The travelDuration.
      */
     com.google.protobuf.Duration getTravelDuration();
-
     /**
      *
      *
@@ -1988,7 +1928,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder();
   }
-
   /**
    *
    *
@@ -2003,7 +1942,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.SearchJobsResponse.CommuteInfo)
       CommuteInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CommuteInfo.newBuilder() to construct.
     private CommuteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2035,7 +1973,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int JOB_LOCATION_FIELD_NUMBER = 1;
     private com.google.cloud.talent.v4.Location jobLocation_;
-
     /**
      *
      *
@@ -2051,7 +1988,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasJobLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2069,7 +2005,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.talent.v4.Location.getDefaultInstance()
           : jobLocation_;
     }
-
     /**
      *
      *
@@ -2088,7 +2023,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int TRAVEL_DURATION_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration travelDuration_;
-
     /**
      *
      *
@@ -2107,7 +2041,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasTravelDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2128,7 +2061,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           ? com.google.protobuf.Duration.getDefaultInstance()
           : travelDuration_;
     }
-
     /**
      *
      *
@@ -2328,7 +2260,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2557,7 +2488,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               com.google.cloud.talent.v4.Location.Builder,
               com.google.cloud.talent.v4.LocationOrBuilder>
           jobLocationBuilder_;
-
       /**
        *
        *
@@ -2572,7 +2502,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasJobLocation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2593,7 +2522,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return jobLocationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2616,7 +2544,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2636,7 +2563,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2664,7 +2590,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -2684,7 +2609,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2699,7 +2623,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getJobLocationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2718,7 +2641,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               : jobLocation_;
         }
       }
-
       /**
        *
        *
@@ -2751,7 +2673,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           travelDurationBuilder_;
-
       /**
        *
        *
@@ -2769,7 +2690,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasTravelDuration() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2793,7 +2713,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           return travelDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2819,7 +2738,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2842,7 +2760,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2873,7 +2790,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -2896,7 +2812,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2914,7 +2829,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getTravelDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2936,7 +2850,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               : travelDuration_;
         }
       }
-
       /**
        *
        *
@@ -3035,7 +2948,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.SearchJobsResponse.MatchingJob> matchingJobs_;
-
   /**
    *
    *
@@ -3051,7 +2963,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       getMatchingJobsList() {
     return matchingJobs_;
   }
-
   /**
    *
    *
@@ -3068,7 +2979,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       getMatchingJobsOrBuilderList() {
     return matchingJobs_;
   }
-
   /**
    *
    *
@@ -3083,7 +2993,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public int getMatchingJobsCount() {
     return matchingJobs_.size();
   }
-
   /**
    *
    *
@@ -3098,7 +3007,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.talent.v4.SearchJobsResponse.MatchingJob getMatchingJobs(int index) {
     return matchingJobs_.get(index);
   }
-
   /**
    *
    *
@@ -3119,7 +3027,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.HistogramQueryResult> histogramQueryResults_;
-
   /**
    *
    *
@@ -3135,7 +3042,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       getHistogramQueryResultsList() {
     return histogramQueryResults_;
   }
-
   /**
    *
    *
@@ -3151,7 +3057,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       getHistogramQueryResultsOrBuilderList() {
     return histogramQueryResults_;
   }
-
   /**
    *
    *
@@ -3166,7 +3071,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public int getHistogramQueryResultsCount() {
     return histogramQueryResults_.size();
   }
-
   /**
    *
    *
@@ -3181,7 +3085,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.talent.v4.HistogramQueryResult getHistogramQueryResults(int index) {
     return histogramQueryResults_.get(index);
   }
-
   /**
    *
    *
@@ -3202,7 +3105,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -3227,7 +3129,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -3257,7 +3158,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.Location> locationFilters_;
-
   /**
    *
    *
@@ -3274,7 +3174,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.talent.v4.Location> getLocationFiltersList() {
     return locationFilters_;
   }
-
   /**
    *
    *
@@ -3292,7 +3191,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       getLocationFiltersOrBuilderList() {
     return locationFilters_;
   }
-
   /**
    *
    *
@@ -3309,7 +3207,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public int getLocationFiltersCount() {
     return locationFilters_.size();
   }
-
   /**
    *
    *
@@ -3326,7 +3223,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.talent.v4.Location getLocationFilters(int index) {
     return locationFilters_.get(index);
   }
-
   /**
    *
    *
@@ -3346,7 +3242,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 6;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -3367,7 +3262,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int METADATA_FIELD_NUMBER = 7;
   private com.google.cloud.talent.v4.ResponseMetadata metadata_;
-
   /**
    *
    *
@@ -3384,7 +3278,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3403,7 +3296,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.talent.v4.ResponseMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -3423,7 +3315,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int BROADENED_QUERY_JOBS_COUNT_FIELD_NUMBER = 8;
   private int broadenedQueryJobsCount_ = 0;
-
   /**
    *
    *
@@ -3448,7 +3339,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int SPELL_CORRECTION_FIELD_NUMBER = 9;
   private com.google.cloud.talent.v4.SpellingCorrection spellCorrection_;
-
   /**
    *
    *
@@ -3464,7 +3354,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasSpellCorrection() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3482,7 +3371,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.talent.v4.SpellingCorrection.getDefaultInstance()
         : spellCorrection_;
   }
-
   /**
    *
    *
@@ -3739,7 +3627,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4211,7 +4098,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return matchingJobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4230,7 +4116,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return matchingJobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4249,7 +4134,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return matchingJobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4275,7 +4159,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4299,7 +4182,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4325,7 +4207,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4351,7 +4232,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4374,7 +4254,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4398,7 +4277,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4422,7 +4300,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4444,7 +4321,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4466,7 +4342,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4482,7 +4357,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         int index) {
       return getMatchingJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4502,7 +4376,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return matchingJobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4523,7 +4396,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(matchingJobs_);
       }
     }
-
     /**
      *
      *
@@ -4541,7 +4413,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.talent.v4.SearchJobsResponse.MatchingJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4560,7 +4431,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.talent.v4.SearchJobsResponse.MatchingJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4631,7 +4501,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return histogramQueryResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4650,7 +4519,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return histogramQueryResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4669,7 +4537,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return histogramQueryResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4695,7 +4562,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4718,7 +4584,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4743,7 +4608,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4769,7 +4633,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4792,7 +4655,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4815,7 +4677,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4838,7 +4699,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4860,7 +4720,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4882,7 +4741,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4898,7 +4756,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         int index) {
       return getHistogramQueryResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4918,7 +4775,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return histogramQueryResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4938,7 +4794,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
     }
-
     /**
      *
      *
@@ -4955,7 +4810,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return getHistogramQueryResultsFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4.HistogramQueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4972,7 +4826,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return getHistogramQueryResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4.HistogramQueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5010,7 +4863,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -5034,7 +4886,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5058,7 +4909,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5081,7 +4931,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5100,7 +4949,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5161,7 +5009,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return locationFiltersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5181,7 +5028,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return locationFiltersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5201,7 +5047,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return locationFiltersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5227,7 +5072,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5251,7 +5095,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5277,7 +5120,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5303,7 +5145,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5326,7 +5167,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5350,7 +5190,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5374,7 +5213,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5397,7 +5235,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5420,7 +5257,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5436,7 +5272,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4.Location.Builder getLocationFiltersBuilder(int index) {
       return getLocationFiltersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5456,7 +5291,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return locationFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5477,7 +5311,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(locationFilters_);
       }
     }
-
     /**
      *
      *
@@ -5494,7 +5327,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return getLocationFiltersFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5511,7 +5343,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return getLocationFiltersFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5550,7 +5381,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -5568,7 +5398,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -5590,7 +5419,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5617,7 +5445,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.talent.v4.ResponseMetadata.Builder,
             com.google.cloud.talent.v4.ResponseMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -5633,7 +5460,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -5655,7 +5481,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5679,7 +5504,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5701,7 +5525,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5730,7 +5553,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5751,7 +5573,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5767,7 +5588,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5787,7 +5607,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -5816,7 +5635,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private int broadenedQueryJobsCount_;
-
     /**
      *
      *
@@ -5838,7 +5656,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public int getBroadenedQueryJobsCount() {
       return broadenedQueryJobsCount_;
     }
-
     /**
      *
      *
@@ -5864,7 +5681,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5895,7 +5711,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.talent.v4.SpellingCorrection.Builder,
             com.google.cloud.talent.v4.SpellingCorrectionOrBuilder>
         spellCorrectionBuilder_;
-
     /**
      *
      *
@@ -5910,7 +5725,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasSpellCorrection() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5931,7 +5745,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return spellCorrectionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5954,7 +5767,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5975,7 +5787,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6004,7 +5815,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -6024,7 +5834,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6039,7 +5848,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSpellCorrectionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6058,7 +5866,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             : spellCorrection_;
       }
     }
-
     /**
      *
      *

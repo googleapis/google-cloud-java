@@ -39,7 +39,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return A list containing the domainNames.
    */
   java.util.List<java.lang.String> getDomainNamesList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The count of domainNames.
    */
   int getDomainNamesCount();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The domainNames at the given index.
    */
   java.lang.String getDomainNames(int index);
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return Whether the certificateRawData field is set.
    */
   boolean hasCertificateRawData();
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The certificateRawData.
    */
   com.google.appengine.v1.CertificateRawData getCertificateRawData();
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return Whether the managedCertificate field is set.
    */
   boolean hasManagedCertificate();
-
   /**
    *
    *
@@ -306,7 +295,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The managedCertificate.
    */
   com.google.appengine.v1.ManagedCertificate getManagedCertificate();
-
   /**
    *
    *
@@ -345,7 +333,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return A list containing the visibleDomainMappings.
    */
   java.util.List<java.lang.String> getVisibleDomainMappingsList();
-
   /**
    *
    *
@@ -368,7 +355,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The count of visibleDomainMappings.
    */
   int getVisibleDomainMappingsCount();
-
   /**
    *
    *
@@ -392,7 +378,6 @@ public interface AuthorizedCertificateOrBuilder
    * @return The visibleDomainMappings at the given index.
    */
   java.lang.String getVisibleDomainMappings(int index);
-
   /**
    *
    *

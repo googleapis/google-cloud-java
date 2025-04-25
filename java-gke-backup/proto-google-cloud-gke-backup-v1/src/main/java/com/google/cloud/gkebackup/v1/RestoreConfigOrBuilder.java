@@ -40,7 +40,6 @@ public interface RestoreConfigOrBuilder
    * @return The enum numeric value on the wire for volumeDataRestorePolicy.
    */
   int getVolumeDataRestorePolicyValue();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface RestoreConfigOrBuilder
    * @return The enum numeric value on the wire for clusterResourceConflictPolicy.
    */
   int getClusterResourceConflictPolicyValue();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface RestoreConfigOrBuilder
    * @return The enum numeric value on the wire for namespacedResourceRestoreMode.
    */
   int getNamespacedResourceRestoreModeValue();
-
   /**
    *
    *
@@ -151,7 +148,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the clusterResourceRestoreScope field is set.
    */
   boolean hasClusterResourceRestoreScope();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface RestoreConfigOrBuilder
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope
       getClusterResourceRestoreScope();
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the allNamespaces field is set.
    */
   boolean hasAllNamespaces();
-
   /**
    *
    *
@@ -225,7 +219,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the selectedNamespaces field is set.
    */
   boolean hasSelectedNamespaces();
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public interface RestoreConfigOrBuilder
    * @return The selectedNamespaces.
    */
   com.google.cloud.gkebackup.v1.Namespaces getSelectedNamespaces();
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the selectedApplications field is set.
    */
   boolean hasSelectedApplications();
-
   /**
    *
    *
@@ -281,7 +272,6 @@ public interface RestoreConfigOrBuilder
    * @return The selectedApplications.
    */
   com.google.cloud.gkebackup.v1.NamespacedNames getSelectedApplications();
-
   /**
    *
    *
@@ -308,7 +298,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the noNamespaces field is set.
    */
   boolean hasNoNamespaces();
-
   /**
    *
    *
@@ -336,7 +325,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the excludedNamespaces field is set.
    */
   boolean hasExcludedNamespaces();
-
   /**
    *
    *
@@ -350,7 +338,6 @@ public interface RestoreConfigOrBuilder
    * @return The excludedNamespaces.
    */
   com.google.cloud.gkebackup.v1.Namespaces getExcludedNamespaces();
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public interface RestoreConfigOrBuilder
    */
   java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule>
       getSubstitutionRulesList();
-
   /**
    *
    *
@@ -397,7 +383,6 @@ public interface RestoreConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule getSubstitutionRules(int index);
-
   /**
    *
    *
@@ -414,7 +399,6 @@ public interface RestoreConfigOrBuilder
    * </code>
    */
   int getSubstitutionRulesCount();
-
   /**
    *
    *
@@ -432,7 +416,6 @@ public interface RestoreConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder>
       getSubstitutionRulesOrBuilderList();
-
   /**
    *
    *
@@ -468,7 +451,6 @@ public interface RestoreConfigOrBuilder
    */
   java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
       getTransformationRulesList();
-
   /**
    *
    *
@@ -485,7 +467,6 @@ public interface RestoreConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule getTransformationRules(int index);
-
   /**
    *
    *
@@ -502,7 +483,6 @@ public interface RestoreConfigOrBuilder
    * </code>
    */
   int getTransformationRulesCount();
-
   /**
    *
    *
@@ -520,7 +500,6 @@ public interface RestoreConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
       getTransformationRulesOrBuilderList();
-
   /**
    *
    *
@@ -554,7 +533,6 @@ public interface RestoreConfigOrBuilder
    */
   java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
       getVolumeDataRestorePolicyBindingsList();
-
   /**
    *
    *
@@ -570,7 +548,6 @@ public interface RestoreConfigOrBuilder
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
       getVolumeDataRestorePolicyBindings(int index);
-
   /**
    *
    *
@@ -585,7 +562,6 @@ public interface RestoreConfigOrBuilder
    * </code>
    */
   int getVolumeDataRestorePolicyBindingsCount();
-
   /**
    *
    *
@@ -603,7 +579,6 @@ public interface RestoreConfigOrBuilder
           ? extends
               com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder>
       getVolumeDataRestorePolicyBindingsOrBuilderList();
-
   /**
    *
    *
@@ -634,7 +609,6 @@ public interface RestoreConfigOrBuilder
    * @return Whether the restoreOrder field is set.
    */
   boolean hasRestoreOrder();
-
   /**
    *
    *
@@ -649,7 +623,6 @@ public interface RestoreConfigOrBuilder
    * @return The restoreOrder.
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getRestoreOrder();
-
   /**
    *
    *

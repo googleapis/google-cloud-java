@@ -39,7 +39,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.PriceCompetitivenessProductView)
     PriceCompetitivenessProductViewOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PriceCompetitivenessProductView.newBuilder() to construct.
   private PriceCompetitivenessProductView(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -91,7 +90,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportCountryCode_ = "";
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasReportCountryCode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object offerId_ = "";
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasOfferId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +306,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -332,7 +321,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -356,7 +344,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -385,7 +372,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object brand_ = "";
-
   /**
    *
    *
@@ -401,7 +387,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasBrand() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -425,7 +410,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -454,7 +438,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL1_ = "";
-
   /**
    *
    *
@@ -471,7 +454,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasCategoryL1() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -496,7 +478,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -526,7 +507,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL2_ = "";
-
   /**
    *
    *
@@ -543,7 +523,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasCategoryL2() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -568,7 +547,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -598,7 +576,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL3_ = "";
-
   /**
    *
    *
@@ -615,7 +592,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasCategoryL3() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -640,7 +616,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -670,7 +645,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL4_ = "";
-
   /**
    *
    *
@@ -687,7 +661,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasCategoryL4() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -712,7 +685,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -742,7 +714,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL5_ = "";
-
   /**
    *
    *
@@ -759,7 +730,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasCategoryL5() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -784,7 +754,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -814,7 +783,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL1_ = "";
-
   /**
    *
    *
@@ -831,7 +799,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasProductTypeL1() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -856,7 +823,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -886,7 +852,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL2_ = "";
-
   /**
    *
    *
@@ -903,7 +868,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasProductTypeL2() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -928,7 +892,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -958,7 +921,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL3_ = "";
-
   /**
    *
    *
@@ -975,7 +937,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasProductTypeL3() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1000,7 +961,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -1030,7 +990,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL4_ = "";
-
   /**
    *
    *
@@ -1047,7 +1006,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasProductTypeL4() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1072,7 +1030,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -1102,7 +1059,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL5_ = "";
-
   /**
    *
    *
@@ -1119,7 +1075,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasProductTypeL5() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1144,7 +1099,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -1172,7 +1126,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   public static final int PRICE_FIELD_NUMBER = 16;
   private com.google.shopping.type.Price price_;
-
   /**
    *
    *
@@ -1188,7 +1141,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasPrice() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1204,7 +1156,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public com.google.shopping.type.Price getPrice() {
     return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
   }
-
   /**
    *
    *
@@ -1221,7 +1172,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
 
   public static final int BENCHMARK_PRICE_FIELD_NUMBER = 17;
   private com.google.shopping.type.Price benchmarkPrice_;
-
   /**
    *
    *
@@ -1238,7 +1188,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
   public boolean hasBenchmarkPrice() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1257,7 +1206,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         ? com.google.shopping.type.Price.getDefaultInstance()
         : benchmarkPrice_;
   }
-
   /**
    *
    *
@@ -1671,7 +1619,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2147,7 +2094,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object reportCountryCode_ = "";
-
     /**
      *
      *
@@ -2164,7 +2110,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasReportCountryCode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2189,7 +2134,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2214,7 +2158,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2238,7 +2181,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2258,7 +2200,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2285,7 +2226,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -2304,7 +2244,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2331,7 +2270,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2358,7 +2296,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2384,7 +2321,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2342,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2435,7 +2370,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object offerId_ = "";
-
     /**
      *
      *
@@ -2450,7 +2384,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasOfferId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2473,7 +2406,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2428,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2518,7 +2449,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2536,7 +2466,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2561,7 +2490,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -2576,7 +2504,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2599,7 +2526,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2622,7 +2548,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2644,7 +2569,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2662,7 +2586,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2610,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object brand_ = "";
-
     /**
      *
      *
@@ -2702,7 +2624,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasBrand() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2725,7 +2646,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2748,7 +2668,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2770,7 +2689,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2788,7 +2706,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2813,7 +2730,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object categoryL1_ = "";
-
     /**
      *
      *
@@ -2829,7 +2745,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasCategoryL1() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2853,7 +2768,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2877,7 +2791,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2900,7 +2813,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2919,7 +2831,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2945,7 +2856,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object categoryL2_ = "";
-
     /**
      *
      *
@@ -2961,7 +2871,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasCategoryL2() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2985,7 +2894,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3009,7 +2917,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3032,7 +2939,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3051,7 +2957,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3077,7 +2982,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object categoryL3_ = "";
-
     /**
      *
      *
@@ -3093,7 +2997,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasCategoryL3() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3117,7 +3020,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3141,7 +3043,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3164,7 +3065,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3183,7 +3083,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3209,7 +3108,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object categoryL4_ = "";
-
     /**
      *
      *
@@ -3225,7 +3123,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasCategoryL4() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3249,7 +3146,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3273,7 +3169,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3296,7 +3191,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3315,7 +3209,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3341,7 +3234,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object categoryL5_ = "";
-
     /**
      *
      *
@@ -3357,7 +3249,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasCategoryL5() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3381,7 +3272,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3405,7 +3295,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3428,7 +3317,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3447,7 +3335,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3473,7 +3360,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object productTypeL1_ = "";
-
     /**
      *
      *
@@ -3489,7 +3375,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasProductTypeL1() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3513,7 +3398,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3537,7 +3421,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3560,7 +3443,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3579,7 +3461,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3605,7 +3486,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object productTypeL2_ = "";
-
     /**
      *
      *
@@ -3621,7 +3501,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasProductTypeL2() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3645,7 +3524,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3669,7 +3547,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3692,7 +3569,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3711,7 +3587,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3737,7 +3612,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object productTypeL3_ = "";
-
     /**
      *
      *
@@ -3753,7 +3627,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasProductTypeL3() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -3777,7 +3650,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3801,7 +3673,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3824,7 +3695,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3843,7 +3713,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3869,7 +3738,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object productTypeL4_ = "";
-
     /**
      *
      *
@@ -3885,7 +3753,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasProductTypeL4() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -3909,7 +3776,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3933,7 +3799,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3956,7 +3821,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3975,7 +3839,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4001,7 +3864,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     }
 
     private java.lang.Object productTypeL5_ = "";
-
     /**
      *
      *
@@ -4017,7 +3879,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasProductTypeL5() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -4041,7 +3902,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4065,7 +3925,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4088,7 +3947,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4107,7 +3965,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4138,7 +3995,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priceBuilder_;
-
     /**
      *
      *
@@ -4153,7 +4009,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasPrice() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -4172,7 +4027,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return priceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4195,7 +4049,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4215,7 +4068,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4243,7 +4095,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4263,7 +4114,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4278,7 +4128,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4295,7 +4144,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
       }
     }
-
     /**
      *
      *
@@ -4328,7 +4176,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         benchmarkPriceBuilder_;
-
     /**
      *
      *
@@ -4344,7 +4191,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
     public boolean hasBenchmarkPrice() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -4366,7 +4212,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
         return benchmarkPriceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4390,7 +4235,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4411,7 +4255,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4440,7 +4283,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -4461,7 +4303,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4477,7 +4318,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
       onChanged();
       return getBenchmarkPriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4497,7 +4337,6 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
             : benchmarkPrice_;
       }
     }
-
     /**
      *
      *

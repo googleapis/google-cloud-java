@@ -26,7 +26,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse)
     GenerateAttachedClusterAgentTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateAttachedClusterAgentTokenResponse.newBuilder() to construct.
   private GenerateAttachedClusterAgentTokenResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -64,7 +63,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
-
   /**
    * <code>string access_token = 1;</code>
    *
@@ -82,7 +80,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       return s;
     }
   }
-
   /**
    * <code>string access_token = 1;</code>
    *
@@ -103,7 +100,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
 
   public static final int EXPIRES_IN_FIELD_NUMBER = 2;
   private int expiresIn_ = 0;
-
   /**
    * <code>int32 expires_in = 2;</code>
    *
@@ -118,7 +114,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tokenType_ = "";
-
   /**
    * <code>string token_type = 3;</code>
    *
@@ -136,7 +131,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       return s;
     }
   }
-
   /**
    * <code>string token_type = 3;</code>
    *
@@ -340,7 +334,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse}
    */
@@ -558,7 +551,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
     private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -575,7 +567,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -592,7 +583,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -608,7 +598,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -620,7 +609,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -639,7 +627,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
     }
 
     private int expiresIn_;
-
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -649,7 +636,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
     public int getExpiresIn() {
       return expiresIn_;
     }
-
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -663,7 +649,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -677,7 +662,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
     }
 
     private java.lang.Object tokenType_ = "";
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -694,7 +678,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -711,7 +694,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -727,7 +709,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -739,7 +720,6 @@ public final class GenerateAttachedClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string token_type = 3;</code>
      *

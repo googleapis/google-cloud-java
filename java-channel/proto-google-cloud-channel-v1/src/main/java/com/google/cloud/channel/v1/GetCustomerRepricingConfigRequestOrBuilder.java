@@ -40,7 +40,6 @@ public interface GetCustomerRepricingConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListGroupsResponse)
     ListGroupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListGroupsResponse.newBuilder() to construct.
   private ListGroupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.Group> group_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.monitoring.v3.Group> getGroupList() {
     return group_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<? extends com.google.monitoring.v3.GroupOrBuilder> getGroupOrBuilderList() {
     return group_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
   public int getGroupCount() {
     return group_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.monitoring.v3.Group getGroup(int index) {
     return group_.get(index);
   }
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -641,7 +632,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return groupBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return groupBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return groupBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +845,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +857,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.monitoring.v3.Group.Builder getGroupBuilder(int index) {
       return getGroupFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -895,7 +873,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return groupBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -913,7 +890,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(group_);
       }
     }
-
     /**
      *
      *
@@ -926,7 +902,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.monitoring.v3.Group.Builder addGroupBuilder() {
       return getGroupFieldBuilder().addBuilder(com.google.monitoring.v3.Group.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -940,7 +915,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       return getGroupFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.Group.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -972,7 +946,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -997,7 +970,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +994,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1017,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1036,6 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface Int64RangeMatchOrBuilder
    * @return Whether the rangeEnd field is set.
    */
   boolean hasRangeEnd();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface Int64RangeMatchOrBuilder
    * @return Whether the rangeStart field is set.
    */
   boolean hasRangeStart();
-
   /**
    *
    *

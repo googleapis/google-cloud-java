@@ -87,7 +87,6 @@ public enum Visibility implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VISIBILITY_UNSPECIFIED = 0;</code>
    */
   public static final int VISIBILITY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public enum Visibility implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCOUNT_ONLY = 1;</code>
    */
   public static final int ACCOUNT_ONLY_VALUE = 1;
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public enum Visibility implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHARED_WITH_GOOGLE = 2;</code>
    */
   public static final int SHARED_WITH_GOOGLE_VALUE = 2;
-
   /**
    *
    *

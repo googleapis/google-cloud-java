@@ -46,7 +46,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodeVersion.
    */
   java.lang.String getDesiredNodeVersion();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredMonitoringService.
    */
   java.lang.String getDesiredMonitoringService();
-
   /**
    *
    *
@@ -128,7 +126,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredAddonsConfig field is set.
    */
   boolean hasDesiredAddonsConfig();
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredAddonsConfig.
    */
   com.google.container.v1beta1.AddonsConfig getDesiredAddonsConfig();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodePoolId.
    */
   java.lang.String getDesiredNodePoolId();
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredImageType.
    */
   java.lang.String getDesiredImageType();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNodePoolAutoscaling field is set.
    */
   boolean hasDesiredNodePoolAutoscaling();
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodePoolAutoscaling.
    */
   com.google.container.v1beta1.NodePoolAutoscaling getDesiredNodePoolAutoscaling();
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public interface ClusterUpdateOrBuilder
    * @return A list containing the desiredLocations.
    */
   java.util.List<java.lang.String> getDesiredLocationsList();
-
   /**
    *
    *
@@ -299,7 +290,6 @@ public interface ClusterUpdateOrBuilder
    * @return The count of desiredLocations.
    */
   int getDesiredLocationsCount();
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredLocations at the given index.
    */
   java.lang.String getDesiredLocations(int index);
-
   /**
    *
    *
@@ -356,7 +345,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   boolean hasDesiredMasterAuthorizedNetworksConfig();
-
   /**
    *
    *
@@ -372,7 +360,6 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.MasterAuthorizedNetworksConfig
       getDesiredMasterAuthorizedNetworksConfig();
-
   /**
    *
    *
@@ -401,7 +388,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredPodSecurityPolicyConfig field is set.
    */
   boolean hasDesiredPodSecurityPolicyConfig();
-
   /**
    *
    *
@@ -416,7 +402,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredPodSecurityPolicyConfig.
    */
   com.google.container.v1beta1.PodSecurityPolicyConfig getDesiredPodSecurityPolicyConfig();
-
   /**
    *
    *
@@ -443,7 +428,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredClusterAutoscaling field is set.
    */
   boolean hasDesiredClusterAutoscaling();
-
   /**
    *
    *
@@ -456,7 +440,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredClusterAutoscaling.
    */
   com.google.container.v1beta1.ClusterAutoscaling getDesiredClusterAutoscaling();
-
   /**
    *
    *
@@ -480,7 +463,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredBinaryAuthorization field is set.
    */
   boolean hasDesiredBinaryAuthorization();
-
   /**
    *
    *
@@ -493,7 +475,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredBinaryAuthorization.
    */
   com.google.container.v1beta1.BinaryAuthorization getDesiredBinaryAuthorization();
-
   /**
    *
    *
@@ -528,7 +509,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredLoggingService.
    */
   java.lang.String getDesiredLoggingService();
-
   /**
    *
    *
@@ -566,7 +546,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredResourceUsageExportConfig field is set.
    */
   boolean hasDesiredResourceUsageExportConfig();
-
   /**
    *
    *
@@ -581,7 +560,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredResourceUsageExportConfig.
    */
   com.google.container.v1beta1.ResourceUsageExportConfig getDesiredResourceUsageExportConfig();
-
   /**
    *
    *
@@ -609,7 +587,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredVerticalPodAutoscaling field is set.
    */
   boolean hasDesiredVerticalPodAutoscaling();
-
   /**
    *
    *
@@ -623,7 +600,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredVerticalPodAutoscaling.
    */
   com.google.container.v1beta1.VerticalPodAutoscaling getDesiredVerticalPodAutoscaling();
-
   /**
    *
    *
@@ -655,7 +631,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   boolean hasDesiredPrivateClusterConfig();
-
   /**
    *
    *
@@ -674,7 +649,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredPrivateClusterConfig.
    */
   com.google.container.v1beta1.PrivateClusterConfig getDesiredPrivateClusterConfig();
-
   /**
    *
    *
@@ -707,7 +681,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredIntraNodeVisibilityConfig field is set.
    */
   boolean hasDesiredIntraNodeVisibilityConfig();
-
   /**
    *
    *
@@ -722,7 +695,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredIntraNodeVisibilityConfig.
    */
   com.google.container.v1beta1.IntraNodeVisibilityConfig getDesiredIntraNodeVisibilityConfig();
-
   /**
    *
    *
@@ -749,7 +721,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredDefaultSnatStatus field is set.
    */
   boolean hasDesiredDefaultSnatStatus();
-
   /**
    *
    *
@@ -762,7 +733,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredDefaultSnatStatus.
    */
   com.google.container.v1beta1.DefaultSnatStatus getDesiredDefaultSnatStatus();
-
   /**
    *
    *
@@ -786,7 +756,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredClusterTelemetry field is set.
    */
   boolean hasDesiredClusterTelemetry();
-
   /**
    *
    *
@@ -799,7 +768,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredClusterTelemetry.
    */
   com.google.container.v1beta1.ClusterTelemetry getDesiredClusterTelemetry();
-
   /**
    *
    *
@@ -823,7 +791,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredReleaseChannel field is set.
    */
   boolean hasDesiredReleaseChannel();
-
   /**
    *
    *
@@ -836,7 +803,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredReleaseChannel.
    */
   com.google.container.v1beta1.ReleaseChannel getDesiredReleaseChannel();
-
   /**
    *
    *
@@ -867,7 +833,6 @@ public interface ClusterUpdateOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPrivateClusterConfig();
-
   /**
    *
    *
@@ -887,7 +852,6 @@ public interface ClusterUpdateOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.PrivateClusterConfig getPrivateClusterConfig();
-
   /**
    *
    *
@@ -916,7 +880,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredTpuConfig field is set.
    */
   boolean hasDesiredTpuConfig();
-
   /**
    *
    *
@@ -929,7 +892,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredTpuConfig.
    */
   com.google.container.v1beta1.TpuConfig getDesiredTpuConfig();
-
   /**
    *
    *
@@ -954,7 +916,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredL4ilbSubsettingConfig field is set.
    */
   boolean hasDesiredL4IlbSubsettingConfig();
-
   /**
    *
    *
@@ -968,7 +929,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredL4ilbSubsettingConfig.
    */
   com.google.container.v1beta1.ILBSubsettingConfig getDesiredL4IlbSubsettingConfig();
-
   /**
    *
    *
@@ -994,7 +954,6 @@ public interface ClusterUpdateOrBuilder
    * @return The enum numeric value on the wire for desiredDatapathProvider.
    */
   int getDesiredDatapathProviderValue();
-
   /**
    *
    *
@@ -1022,7 +981,6 @@ public interface ClusterUpdateOrBuilder
    * @return The enum numeric value on the wire for desiredPrivateIpv6GoogleAccess.
    */
   int getDesiredPrivateIpv6GoogleAccessValue();
-
   /**
    *
    *
@@ -1050,7 +1008,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNotificationConfig field is set.
    */
   boolean hasDesiredNotificationConfig();
-
   /**
    *
    *
@@ -1063,7 +1020,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNotificationConfig.
    */
   com.google.container.v1beta1.NotificationConfig getDesiredNotificationConfig();
-
   /**
    *
    *
@@ -1097,7 +1053,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredMasterVersion.
    */
   java.lang.String getDesiredMasterVersion();
-
   /**
    *
    *
@@ -1133,7 +1088,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredGcfsConfig field is set.
    */
   boolean hasDesiredGcfsConfig();
-
   /**
    *
    *
@@ -1146,7 +1100,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredGcfsConfig.
    */
   com.google.container.v1beta1.GcfsConfig getDesiredGcfsConfig();
-
   /**
    *
    *
@@ -1170,7 +1123,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredDatabaseEncryption field is set.
    */
   boolean hasDesiredDatabaseEncryption();
-
   /**
    *
    *
@@ -1183,7 +1135,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredDatabaseEncryption.
    */
   com.google.container.v1beta1.DatabaseEncryption getDesiredDatabaseEncryption();
-
   /**
    *
    *
@@ -1208,7 +1159,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredWorkloadIdentityConfig field is set.
    */
   boolean hasDesiredWorkloadIdentityConfig();
-
   /**
    *
    *
@@ -1222,7 +1172,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredWorkloadIdentityConfig.
    */
   com.google.container.v1beta1.WorkloadIdentityConfig getDesiredWorkloadIdentityConfig();
-
   /**
    *
    *
@@ -1249,7 +1198,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredWorkloadCertificates field is set.
    */
   boolean hasDesiredWorkloadCertificates();
-
   /**
    *
    *
@@ -1263,7 +1211,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredWorkloadCertificates.
    */
   com.google.container.v1beta1.WorkloadCertificates getDesiredWorkloadCertificates();
-
   /**
    *
    *
@@ -1290,7 +1237,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredMeshCertificates field is set.
    */
   boolean hasDesiredMeshCertificates();
-
   /**
    *
    *
@@ -1304,7 +1250,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredMeshCertificates.
    */
   com.google.container.v1beta1.MeshCertificates getDesiredMeshCertificates();
-
   /**
    *
    *
@@ -1329,7 +1274,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredWorkloadAltsConfig field is set.
    */
   boolean hasDesiredWorkloadAltsConfig();
-
   /**
    *
    *
@@ -1342,7 +1286,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredWorkloadAltsConfig.
    */
   com.google.container.v1beta1.WorkloadALTSConfig getDesiredWorkloadAltsConfig();
-
   /**
    *
    *
@@ -1366,7 +1309,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredShieldedNodes field is set.
    */
   boolean hasDesiredShieldedNodes();
-
   /**
    *
    *
@@ -1379,7 +1321,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredShieldedNodes.
    */
   com.google.container.v1beta1.ShieldedNodes getDesiredShieldedNodes();
-
   /**
    *
    *
@@ -1404,7 +1345,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredCostManagementConfig field is set.
    */
   boolean hasDesiredCostManagementConfig();
-
   /**
    *
    *
@@ -1418,7 +1358,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredCostManagementConfig.
    */
   com.google.container.v1beta1.CostManagementConfig getDesiredCostManagementConfig();
-
   /**
    *
    *
@@ -1444,7 +1383,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredMaster field is set.
    */
   boolean hasDesiredMaster();
-
   /**
    *
    *
@@ -1457,7 +1395,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredMaster.
    */
   com.google.container.v1beta1.Master getDesiredMaster();
-
   /**
    *
    *
@@ -1481,7 +1418,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredDnsConfig field is set.
    */
   boolean hasDesiredDnsConfig();
-
   /**
    *
    *
@@ -1494,7 +1430,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredDnsConfig.
    */
   com.google.container.v1beta1.DNSConfig getDesiredDnsConfig();
-
   /**
    *
    *
@@ -1521,7 +1456,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredServiceExternalIpsConfig field is set.
    */
   boolean hasDesiredServiceExternalIpsConfig();
-
   /**
    *
    *
@@ -1537,7 +1471,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredServiceExternalIpsConfig.
    */
   com.google.container.v1beta1.ServiceExternalIPsConfig getDesiredServiceExternalIpsConfig();
-
   /**
    *
    *
@@ -1568,7 +1501,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredAuthenticatorGroupsConfig field is set.
    */
   boolean hasDesiredAuthenticatorGroupsConfig();
-
   /**
    *
    *
@@ -1584,7 +1516,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredAuthenticatorGroupsConfig.
    */
   com.google.container.v1beta1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig();
-
   /**
    *
    *
@@ -1612,7 +1543,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredLoggingConfig field is set.
    */
   boolean hasDesiredLoggingConfig();
-
   /**
    *
    *
@@ -1625,7 +1555,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredLoggingConfig.
    */
   com.google.container.v1beta1.LoggingConfig getDesiredLoggingConfig();
-
   /**
    *
    *
@@ -1649,7 +1578,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredMonitoringConfig field is set.
    */
   boolean hasDesiredMonitoringConfig();
-
   /**
    *
    *
@@ -1662,7 +1590,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredMonitoringConfig.
    */
   com.google.container.v1beta1.MonitoringConfig getDesiredMonitoringConfig();
-
   /**
    *
    *
@@ -1687,7 +1614,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredIdentityServiceConfig field is set.
    */
   boolean hasDesiredIdentityServiceConfig();
-
   /**
    *
    *
@@ -1701,7 +1627,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredIdentityServiceConfig.
    */
   com.google.container.v1beta1.IdentityServiceConfig getDesiredIdentityServiceConfig();
-
   /**
    *
    *
@@ -1727,7 +1652,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   boolean hasDesiredEnablePrivateEndpoint();
-
   /**
    *
    *
@@ -1755,7 +1679,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
    */
   boolean hasDesiredNodePoolAutoConfigNetworkTags();
-
   /**
    *
    *
@@ -1770,7 +1693,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodePoolAutoConfigNetworkTags.
    */
   com.google.container.v1beta1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags();
-
   /**
    *
    *
@@ -1803,7 +1725,6 @@ public interface ClusterUpdateOrBuilder
    */
   @java.lang.Deprecated
   boolean hasDesiredProtectConfig();
-
   /**
    *
    *
@@ -1822,7 +1743,6 @@ public interface ClusterUpdateOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig();
-
   /**
    *
    *
@@ -1850,7 +1770,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredGatewayApiConfig field is set.
    */
   boolean hasDesiredGatewayApiConfig();
-
   /**
    *
    *
@@ -1863,7 +1782,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredGatewayApiConfig.
    */
   com.google.container.v1beta1.GatewayAPIConfig getDesiredGatewayApiConfig();
-
   /**
    *
    *
@@ -1889,7 +1807,6 @@ public interface ClusterUpdateOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -1918,7 +1835,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNodePoolLoggingConfig field is set.
    */
   boolean hasDesiredNodePoolLoggingConfig();
-
   /**
    *
    *
@@ -1932,7 +1848,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodePoolLoggingConfig.
    */
   com.google.container.v1beta1.NodePoolLoggingConfig getDesiredNodePoolLoggingConfig();
-
   /**
    *
    *
@@ -1958,7 +1873,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredFleet field is set.
    */
   boolean hasDesiredFleet();
-
   /**
    *
    *
@@ -1971,7 +1885,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredFleet.
    */
   com.google.container.v1beta1.Fleet getDesiredFleet();
-
   /**
    *
    *
@@ -1997,7 +1910,6 @@ public interface ClusterUpdateOrBuilder
    * @return The enum numeric value on the wire for desiredStackType.
    */
   int getDesiredStackTypeValue();
-
   /**
    *
    *
@@ -2027,7 +1939,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the additionalPodRangesConfig field is set.
    */
   boolean hasAdditionalPodRangesConfig();
-
   /**
    *
    *
@@ -2042,7 +1953,6 @@ public interface ClusterUpdateOrBuilder
    * @return The additionalPodRangesConfig.
    */
   com.google.container.v1beta1.AdditionalPodRangesConfig getAdditionalPodRangesConfig();
-
   /**
    *
    *
@@ -2073,7 +1983,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the removedAdditionalPodRangesConfig field is set.
    */
   boolean hasRemovedAdditionalPodRangesConfig();
-
   /**
    *
    *
@@ -2090,7 +1999,6 @@ public interface ClusterUpdateOrBuilder
    * @return The removedAdditionalPodRangesConfig.
    */
   com.google.container.v1beta1.AdditionalPodRangesConfig getRemovedAdditionalPodRangesConfig();
-
   /**
    *
    *
@@ -2119,7 +2027,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the enableK8sBetaApis field is set.
    */
   boolean hasEnableK8SBetaApis();
-
   /**
    *
    *
@@ -2132,7 +2039,6 @@ public interface ClusterUpdateOrBuilder
    * @return The enableK8sBetaApis.
    */
   com.google.container.v1beta1.K8sBetaAPIConfig getEnableK8SBetaApis();
-
   /**
    *
    *
@@ -2157,7 +2063,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredSecurityPostureConfig field is set.
    */
   boolean hasDesiredSecurityPostureConfig();
-
   /**
    *
    *
@@ -2171,7 +2076,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredSecurityPostureConfig.
    */
   com.google.container.v1beta1.SecurityPostureConfig getDesiredSecurityPostureConfig();
-
   /**
    *
    *
@@ -2199,7 +2103,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNetworkPerformanceConfig field is set.
    */
   boolean hasDesiredNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -2215,7 +2118,6 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
       getDesiredNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -2242,7 +2144,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredEnableFqdnNetworkPolicy field is set.
    */
   boolean hasDesiredEnableFqdnNetworkPolicy();
-
   /**
    *
    *
@@ -2270,7 +2171,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredAutopilotWorkloadPolicyConfig field is set.
    */
   boolean hasDesiredAutopilotWorkloadPolicyConfig();
-
   /**
    *
    *
@@ -2285,7 +2185,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredAutopilotWorkloadPolicyConfig.
    */
   com.google.container.v1beta1.WorkloadPolicyConfig getDesiredAutopilotWorkloadPolicyConfig();
-
   /**
    *
    *
@@ -2312,7 +2211,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredK8sBetaApis field is set.
    */
   boolean hasDesiredK8SBetaApis();
-
   /**
    *
    *
@@ -2325,7 +2223,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredK8sBetaApis.
    */
   com.google.container.v1beta1.K8sBetaAPIConfig getDesiredK8SBetaApis();
-
   /**
    *
    *
@@ -2351,7 +2248,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredHostMaintenancePolicy field is set.
    */
   boolean hasDesiredHostMaintenancePolicy();
-
   /**
    *
    *
@@ -2366,7 +2262,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredHostMaintenancePolicy.
    */
   com.google.container.v1beta1.HostMaintenancePolicy getDesiredHostMaintenancePolicy();
-
   /**
    *
    *
@@ -2393,7 +2288,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredContainerdConfig field is set.
    */
   boolean hasDesiredContainerdConfig();
-
   /**
    *
    *
@@ -2406,7 +2300,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredContainerdConfig.
    */
   com.google.container.v1beta1.ContainerdConfig getDesiredContainerdConfig();
-
   /**
    *
    *
@@ -2430,7 +2323,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredEnableMultiNetworking field is set.
    */
   boolean hasDesiredEnableMultiNetworking();
-
   /**
    *
    *
@@ -2459,7 +2351,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
    */
   boolean hasDesiredNodePoolAutoConfigResourceManagerTags();
-
   /**
    *
    *
@@ -2476,7 +2367,6 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.ResourceManagerTags
       getDesiredNodePoolAutoConfigResourceManagerTags();
-
   /**
    *
    *
@@ -2507,7 +2397,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredInTransitEncryptionConfig field is set.
    */
   boolean hasDesiredInTransitEncryptionConfig();
-
   /**
    *
    *
@@ -2523,7 +2412,6 @@ public interface ClusterUpdateOrBuilder
    * @return The enum numeric value on the wire for desiredInTransitEncryptionConfig.
    */
   int getDesiredInTransitEncryptionConfigValue();
-
   /**
    *
    *
@@ -2552,7 +2440,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
    */
   boolean hasDesiredEnableCiliumClusterwideNetworkPolicy();
-
   /**
    *
    *
@@ -2580,7 +2467,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredSecretManagerConfig field is set.
    */
   boolean hasDesiredSecretManagerConfig();
-
   /**
    *
    *
@@ -2595,7 +2481,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredSecretManagerConfig.
    */
   com.google.container.v1beta1.SecretManagerConfig getDesiredSecretManagerConfig();
-
   /**
    *
    *
@@ -2622,7 +2507,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNodeKubeletConfig field is set.
    */
   boolean hasDesiredNodeKubeletConfig();
-
   /**
    *
    *
@@ -2635,7 +2519,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodeKubeletConfig.
    */
   com.google.container.v1beta1.NodeKubeletConfig getDesiredNodeKubeletConfig();
-
   /**
    *
    *
@@ -2662,7 +2545,6 @@ public interface ClusterUpdateOrBuilder
    * @return Whether the desiredNodePoolAutoConfigKubeletConfig field is set.
    */
   boolean hasDesiredNodePoolAutoConfigKubeletConfig();
-
   /**
    *
    *
@@ -2678,7 +2560,6 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredNodePoolAutoConfigKubeletConfig.
    */
   com.google.container.v1beta1.NodeKubeletConfig getDesiredNodePoolAutoConfigKubeletConfig();
-
   /**
    *
    *

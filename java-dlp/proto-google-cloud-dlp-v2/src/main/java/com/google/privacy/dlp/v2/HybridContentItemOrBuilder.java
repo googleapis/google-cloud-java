@@ -36,7 +36,6 @@ public interface HybridContentItemOrBuilder
    * @return Whether the item field is set.
    */
   boolean hasItem();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HybridContentItemOrBuilder
    * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface HybridContentItemOrBuilder
    * @return Whether the findingDetails field is set.
    */
   boolean hasFindingDetails();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface HybridContentItemOrBuilder
    * @return The findingDetails.
    */
   com.google.privacy.dlp.v2.HybridFindingDetails getFindingDetails();
-
   /**
    *
    *

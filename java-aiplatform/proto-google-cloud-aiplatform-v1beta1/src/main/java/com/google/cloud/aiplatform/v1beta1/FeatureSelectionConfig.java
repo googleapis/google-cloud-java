@@ -33,7 +33,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureSelectionConfig)
     FeatureSelectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureSelectionConfig.newBuilder() to construct.
   private FeatureSelectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
      * @return The featureId.
      */
     java.lang.String getFeatureId();
-
     /**
      *
      *
@@ -112,7 +110,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
      */
     double getDriftThreshold();
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfig)
       FeatureConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FeatureConfig.newBuilder() to construct.
     private FeatureConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -163,7 +159,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object featureId_ = "";
-
     /**
      *
      *
@@ -188,7 +183,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         return s;
       }
     }
-
     /**
      *
      *
@@ -216,7 +210,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
 
     public static final int DRIFT_THRESHOLD_FIELD_NUMBER = 2;
     private double driftThreshold_ = 0D;
-
     /**
      *
      *
@@ -416,7 +409,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -628,7 +620,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object featureId_ = "";
-
       /**
        *
        *
@@ -652,7 +643,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -676,7 +666,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -699,7 +688,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -718,7 +706,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -744,7 +731,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
 
       private double driftThreshold_;
-
       /**
        *
        *
@@ -762,7 +748,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       public double getDriftThreshold() {
         return driftThreshold_;
       }
-
       /**
        *
        *
@@ -784,7 +769,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -878,7 +862,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfig>
       featureConfigs_;
-
   /**
    *
    *
@@ -896,7 +879,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       getFeatureConfigsList() {
     return featureConfigs_;
   }
-
   /**
    *
    *
@@ -916,7 +898,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       getFeatureConfigsOrBuilderList() {
     return featureConfigs_;
   }
-
   /**
    *
    *
@@ -933,7 +914,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
   public int getFeatureConfigsCount() {
     return featureConfigs_.size();
   }
-
   /**
    *
    *
@@ -951,7 +931,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       int index) {
     return featureConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -1132,7 +1111,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1403,7 +1381,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         return featureConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1423,7 +1400,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         return featureConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1444,7 +1420,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         return featureConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1446,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1471,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1524,7 +1497,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1523,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1547,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1572,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1597,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1619,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1674,7 +1641,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1657,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         getFeatureConfigsBuilder(int index) {
       return getFeatureConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1712,7 +1677,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         return featureConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1735,7 +1699,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(featureConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1755,7 +1718,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1776,7 +1738,6 @@ public final class FeatureSelectionConfig extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig.FeatureConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *

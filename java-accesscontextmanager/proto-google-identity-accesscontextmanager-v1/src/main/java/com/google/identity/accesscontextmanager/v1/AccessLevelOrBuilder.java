@@ -39,7 +39,6 @@ public interface AccessLevelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AccessLevelOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface AccessLevelOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface AccessLevelOrBuilder
    * @return Whether the basic field is set.
    */
   boolean hasBasic();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface AccessLevelOrBuilder
    * @return The basic.
    */
   com.google.identity.accesscontextmanager.v1.BasicLevel getBasic();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface AccessLevelOrBuilder
    * @return Whether the custom field is set.
    */
   boolean hasCustom();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface AccessLevelOrBuilder
    * @return The custom.
    */
   com.google.identity.accesscontextmanager.v1.CustomLevel getCustom();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface AccessLevelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface AccessLevelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public interface AccessLevelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface AccessLevelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies)
     ModelMonitoringStatsAnomaliesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringStatsAnomalies.newBuilder() to construct.
   private ModelMonitoringStatsAnomalies(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return The featureDisplayName.
      */
     java.lang.String getFeatureDisplayName();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return Whether the threshold field is set.
      */
     boolean hasThreshold();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return The threshold.
      */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getThreshold();
-
     /**
      *
      *
@@ -146,7 +142,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return Whether the trainingStats field is set.
      */
     boolean hasTrainingStats();
-
     /**
      *
      *
@@ -159,7 +154,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return The trainingStats.
      */
     com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly getTrainingStats();
-
     /**
      *
      *
@@ -184,7 +178,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly>
         getPredictionStatsList();
-
     /**
      *
      *
@@ -197,7 +190,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly getPredictionStats(int index);
-
     /**
      *
      *
@@ -210,7 +202,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * </code>
      */
     int getPredictionStatsCount();
-
     /**
      *
      *
@@ -224,7 +215,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder>
         getPredictionStatsOrBuilderList();
-
     /**
      *
      *
@@ -239,7 +229,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder getPredictionStatsOrBuilder(
         int index);
   }
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies)
       FeatureHistoricStatsAnomaliesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FeatureHistoricStatsAnomalies.newBuilder() to construct.
     private FeatureHistoricStatsAnomalies(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -296,7 +284,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object featureDisplayName_ = "";
-
     /**
      *
      *
@@ -320,7 +307,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return s;
       }
     }
-
     /**
      *
      *
@@ -347,7 +333,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
 
     public static final int THRESHOLD_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1beta1.ThresholdConfig threshold_;
-
     /**
      *
      *
@@ -363,7 +348,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public boolean hasThreshold() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -381,7 +365,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
           : threshold_;
     }
-
     /**
      *
      *
@@ -400,7 +383,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
 
     public static final int TRAINING_STATS_FIELD_NUMBER = 4;
     private com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly trainingStats_;
-
     /**
      *
      *
@@ -416,7 +398,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public boolean hasTrainingStats() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -434,7 +415,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           ? com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.getDefaultInstance()
           : trainingStats_;
     }
-
     /**
      *
      *
@@ -457,7 +437,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly>
         predictionStats_;
-
     /**
      *
      *
@@ -474,7 +453,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         getPredictionStatsList() {
       return predictionStats_;
     }
-
     /**
      *
      *
@@ -492,7 +470,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         getPredictionStatsOrBuilderList() {
       return predictionStats_;
     }
-
     /**
      *
      *
@@ -508,7 +485,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public int getPredictionStatsCount() {
       return predictionStats_.size();
     }
-
     /**
      *
      *
@@ -524,7 +500,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly getPredictionStats(int index) {
       return predictionStats_.get(index);
     }
-
     /**
      *
      *
@@ -770,7 +745,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1102,7 +1076,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       private int bitField0_;
 
       private java.lang.Object featureDisplayName_ = "";
-
       /**
        *
        *
@@ -1125,7 +1098,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1148,7 +1120,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1170,7 +1141,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1188,7 +1158,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1218,7 +1187,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
               com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>
           thresholdBuilder_;
-
       /**
        *
        *
@@ -1233,7 +1201,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       public boolean hasThreshold() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1254,7 +1221,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return thresholdBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1277,7 +1243,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1298,7 +1263,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1327,7 +1291,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1347,7 +1310,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1362,7 +1324,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return getThresholdFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1381,7 +1342,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               : threshold_;
         }
       }
-
       /**
        *
        *
@@ -1414,7 +1374,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.Builder,
               com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomalyOrBuilder>
           trainingStatsBuilder_;
-
       /**
        *
        *
@@ -1429,7 +1388,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       public boolean hasTrainingStats() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1450,7 +1408,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return trainingStatsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1474,7 +1431,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1495,7 +1451,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1525,7 +1480,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1545,7 +1499,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1561,7 +1514,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         onChanged();
         return getTrainingStatsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1581,7 +1533,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               : trainingStats_;
         }
       }
-
       /**
        *
        *
@@ -1645,7 +1596,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return predictionStatsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1664,7 +1614,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return predictionStatsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1683,7 +1632,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return predictionStatsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1709,7 +1657,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1733,7 +1680,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1759,7 +1705,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1785,7 +1730,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1808,7 +1752,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1832,7 +1775,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1856,7 +1798,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1878,7 +1819,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1900,7 +1840,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1916,7 +1855,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           getPredictionStatsBuilder(int index) {
         return getPredictionStatsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1936,7 +1874,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return predictionStatsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1957,7 +1894,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           return java.util.Collections.unmodifiableList(predictionStats_);
         }
       }
-
       /**
        *
        *
@@ -1975,7 +1911,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
             .addBuilder(
                 com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1994,7 +1929,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
                 index,
                 com.google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2105,7 +2039,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
 
   public static final int OBJECTIVE_FIELD_NUMBER = 1;
   private int objective_ = 0;
-
   /**
    *
    *
@@ -2122,7 +2055,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
   public int getObjectiveValue() {
     return objective_;
   }
-
   /**
    *
    *
@@ -2149,7 +2081,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployedModelId_ = "";
-
   /**
    *
    *
@@ -2173,7 +2104,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -2200,7 +2130,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
 
   public static final int ANOMALY_COUNT_FIELD_NUMBER = 3;
   private int anomalyCount_ = 0;
-
   /**
    *
    *
@@ -2224,7 +2153,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
               .FeatureHistoricStatsAnomalies>
       featureStats_;
-
   /**
    *
    *
@@ -2243,7 +2171,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       getFeatureStatsList() {
     return featureStats_;
   }
-
   /**
    *
    *
@@ -2263,7 +2190,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       getFeatureStatsOrBuilderList() {
     return featureStats_;
   }
-
   /**
    *
    *
@@ -2279,7 +2205,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
   public int getFeatureStatsCount() {
     return featureStats_.size();
   }
-
   /**
    *
    *
@@ -2297,7 +2222,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       getFeatureStats(int index) {
     return featureStats_.get(index);
   }
-
   /**
    *
    *
@@ -2512,7 +2436,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2793,7 +2716,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int objective_ = 0;
-
     /**
      *
      *
@@ -2810,7 +2732,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public int getObjectiveValue() {
       return objective_;
     }
-
     /**
      *
      *
@@ -2830,7 +2751,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2853,7 +2773,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2877,7 +2796,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2898,7 +2816,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     }
 
     private java.lang.Object deployedModelId_ = "";
-
     /**
      *
      *
@@ -2921,7 +2838,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2944,7 +2860,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2966,7 +2881,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2984,7 +2898,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3009,7 +2922,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     }
 
     private int anomalyCount_;
-
     /**
      *
      *
@@ -3025,7 +2937,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public int getAnomalyCount() {
       return anomalyCount_;
     }
-
     /**
      *
      *
@@ -3045,7 +2956,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3109,7 +3019,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return featureStatsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3128,7 +3037,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return featureStatsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3149,7 +3057,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return featureStatsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3178,7 +3085,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3110,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3232,7 +3137,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3261,7 +3165,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3286,7 +3189,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3312,7 +3214,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3339,7 +3240,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3361,7 +3261,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3383,7 +3282,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3400,7 +3298,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         getFeatureStatsBuilder(int index) {
       return getFeatureStatsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3421,7 +3318,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return featureStatsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3444,7 +3340,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(featureStats_);
       }
     }
-
     /**
      *
      *
@@ -3464,7 +3359,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
                   .FeatureHistoricStatsAnomalies.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3485,7 +3379,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
                   .FeatureHistoricStatsAnomalies.getDefaultInstance());
     }
-
     /**
      *
      *

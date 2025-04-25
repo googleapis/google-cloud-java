@@ -40,7 +40,6 @@ public interface PlaybookInvocationOrBuilder
    * @return The playbook.
    */
   java.lang.String getPlaybook();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface PlaybookInvocationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface PlaybookInvocationOrBuilder
    * @return Whether the playbookInput field is set.
    */
   boolean hasPlaybookInput();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface PlaybookInvocationOrBuilder
    * @return The playbookInput.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput getPlaybookInput();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface PlaybookInvocationOrBuilder
    * @return Whether the playbookOutput field is set.
    */
   boolean hasPlaybookOutput();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface PlaybookInvocationOrBuilder
    * @return The playbookOutput.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PlaybookOutput getPlaybookOutput();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface PlaybookInvocationOrBuilder
    * @return The enum numeric value on the wire for playbookState.
    */
   int getPlaybookStateValue();
-
   /**
    *
    *

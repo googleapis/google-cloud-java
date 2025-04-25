@@ -33,7 +33,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.DomainMapping)
     DomainMappingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DomainMapping.newBuilder() to construct.
   private DomainMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SSL_SETTINGS_FIELD_NUMBER = 3;
   private com.google.appengine.v1.SslSettings sslSettings_;
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSslSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         ? com.google.appengine.v1.SslSettings.getDefaultInstance()
         : sslSettings_;
   }
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.ResourceRecord> resourceRecords_;
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.appengine.v1.ResourceRecord> getResourceRecordsList() {
     return resourceRecords_;
   }
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       getResourceRecordsOrBuilderList() {
     return resourceRecords_;
   }
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
   public int getResourceRecordsCount() {
     return resourceRecords_.size();
   }
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
   public com.google.appengine.v1.ResourceRecord getResourceRecords(int index) {
     return resourceRecords_.get(index);
   }
-
   /**
    *
    *
@@ -524,7 +511,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -814,7 +800,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -840,7 +825,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -866,7 +850,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +921,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -988,7 +967,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1007,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.SslSettings.Builder,
             com.google.appengine.v1.SslSettingsOrBuilder>
         sslSettingsBuilder_;
-
     /**
      *
      *
@@ -1077,7 +1052,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSslSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return sslSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1096,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1116,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1144,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1164,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1179,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSslSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1230,7 +1198,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
             : sslSettings_;
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return resourceRecordsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1316,7 +1282,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return resourceRecordsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return resourceRecordsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1328,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1352,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1378,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1404,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1428,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1493,7 +1452,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1518,7 +1476,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1542,7 +1499,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1522,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1538,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.ResourceRecord.Builder getResourceRecordsBuilder(int index) {
       return getResourceRecordsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1604,7 +1558,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return resourceRecordsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1626,7 +1579,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(resourceRecords_);
       }
     }
-
     /**
      *
      *
@@ -1644,7 +1596,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       return getResourceRecordsFieldBuilder()
           .addBuilder(com.google.appengine.v1.ResourceRecord.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1662,7 +1613,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       return getResourceRecordsFieldBuilder()
           .addBuilder(index, com.google.appengine.v1.ResourceRecord.getDefaultInstance());
     }
-
     /**
      *
      *

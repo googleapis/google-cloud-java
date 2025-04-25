@@ -37,7 +37,6 @@ public interface OciConfigOrBuilder
    * @return The syncRepo.
    */
   java.lang.String getSyncRepo();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface OciConfigOrBuilder
    * @return The policyDir.
    */
   java.lang.String getPolicyDir();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface OciConfigOrBuilder
    * @return The secretType.
    */
   java.lang.String getSecretType();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface OciConfigOrBuilder
    * @return The gcpServiceAccountEmail.
    */
   java.lang.String getGcpServiceAccountEmail();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.ListMigrationWorkflowsResponse)
     ListMigrationWorkflowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMigrationWorkflowsResponse.newBuilder() to construct.
   private ListMigrationWorkflowsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow>
       migrationWorkflows_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       getMigrationWorkflowsList() {
     return migrationWorkflows_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       getMigrationWorkflowsOrBuilderList() {
     return migrationWorkflows_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
   public int getMigrationWorkflowsCount() {
     return migrationWorkflows_.size();
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       int index) {
     return migrationWorkflows_.get(index);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -392,7 +384,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -686,7 +677,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return migrationWorkflowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -705,7 +695,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return migrationWorkflowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -725,7 +714,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return migrationWorkflowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -751,7 +739,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +762,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +787,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +812,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         getMigrationWorkflowsBuilder(int index) {
       return getMigrationWorkflowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return migrationWorkflowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -999,7 +976,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(migrationWorkflows_);
       }
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
           .addBuilder(
               com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1036,7 +1011,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
               index,
               com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1098,7 +1071,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1134,6 @@ public final class ListMigrationWorkflowsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

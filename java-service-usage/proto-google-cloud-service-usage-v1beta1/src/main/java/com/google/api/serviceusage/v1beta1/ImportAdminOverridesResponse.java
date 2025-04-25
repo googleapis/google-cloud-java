@@ -33,7 +33,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ImportAdminOverridesResponse)
     ImportAdminOverridesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportAdminOverridesResponse.newBuilder() to construct.
   private ImportAdminOverridesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> overrides_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> getOverridesList() {
     return overrides_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       getOverridesOrBuilderList() {
     return overrides_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
   public int getOverridesCount() {
     return overrides_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
   public com.google.api.serviceusage.v1beta1.QuotaOverride getOverrides(int index) {
     return overrides_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -571,7 +564,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
         return overridesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
         return overridesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
         return overridesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +782,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +795,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
         int index) {
       return getOverridesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -832,7 +812,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
         return overridesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -850,7 +829,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(overrides_);
       }
     }
-
     /**
      *
      *
@@ -864,7 +842,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
       return getOverridesFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -880,7 +857,6 @@ public final class ImportAdminOverridesResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance());
     }
-
     /**
      *
      *

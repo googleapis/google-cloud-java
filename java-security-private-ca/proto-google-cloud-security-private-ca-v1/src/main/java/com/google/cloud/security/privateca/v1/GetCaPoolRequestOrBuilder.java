@@ -39,7 +39,6 @@ public interface GetCaPoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

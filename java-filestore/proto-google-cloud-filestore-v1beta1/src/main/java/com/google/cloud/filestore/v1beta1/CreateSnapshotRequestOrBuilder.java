@@ -39,7 +39,6 @@ public interface CreateSnapshotRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateSnapshotRequestOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CreateSnapshotRequestOrBuilder
    * @return Whether the snapshot field is set.
    */
   boolean hasSnapshot();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateSnapshotRequestOrBuilder
    * @return The snapshot.
    */
   com.google.cloud.filestore.v1beta1.Snapshot getSnapshot();
-
   /**
    *
    *

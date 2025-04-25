@@ -37,7 +37,6 @@ public interface DataPolicyOrBuilder
    * @return Whether the policyTag field is set.
    */
   boolean hasPolicyTag();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DataPolicyOrBuilder
    * @return The policyTag.
    */
   java.lang.String getPolicyTag();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface DataPolicyOrBuilder
    * @return Whether the dataMaskingPolicy field is set.
    */
   boolean hasDataMaskingPolicy();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface DataPolicyOrBuilder
    * @return The dataMaskingPolicy.
    */
   com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy getDataMaskingPolicy();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface DataPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface DataPolicyOrBuilder
    * @return The enum numeric value on the wire for dataPolicyType.
    */
   int getDataPolicyTypeValue();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface DataPolicyOrBuilder
    * @return The dataPolicyId.
    */
   java.lang.String getDataPolicyId();
-
   /**
    *
    *

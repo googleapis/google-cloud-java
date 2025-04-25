@@ -33,7 +33,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.GetEntryRequest)
     GetEntryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetEntryRequest.newBuilder() to construct.
   private GetEntryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList aspectTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getAspectTypesList() {
     return aspectTypes_;
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public int getAspectTypesCount() {
     return aspectTypes_.size();
   }
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getAspectTypes(int index) {
     return aspectTypes_.get(index);
   }
-
   /**
    *
    *
@@ -244,7 +235,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList paths_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getPathsList() {
     return paths_;
   }
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public int getPathsCount() {
     return paths_.size();
   }
-
   /**
    *
    *
@@ -293,7 +281,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getPaths(int index) {
     return paths_.get(index);
   }
-
   /**
    *
    *
@@ -511,7 +498,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -752,7 +738,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -896,7 +876,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.dataplex.v1.EntryView.forNumber(view_);
       return result == null ? com.google.cloud.dataplex.v1.EntryView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1008,7 +983,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       aspectTypes_.makeImmutable();
       return aspectTypes_;
     }
-
     /**
      *
      *
@@ -1024,7 +998,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public int getAspectTypesCount() {
       return aspectTypes_.size();
     }
-
     /**
      *
      *
@@ -1041,7 +1014,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getAspectTypes(int index) {
       return aspectTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1058,7 +1030,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getAspectTypesBytes(int index) {
       return aspectTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1083,7 +1054,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1077,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1097,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1116,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1150,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1200,7 +1166,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       paths_.makeImmutable();
       return paths_;
     }
-
     /**
      *
      *
@@ -1216,7 +1181,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public int getPathsCount() {
       return paths_.size();
     }
-
     /**
      *
      *
@@ -1233,7 +1197,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getPaths(int index) {
       return paths_.get(index);
     }
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getPathsBytes(int index) {
       return paths_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1275,7 +1237,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1260,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1280,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1299,6 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

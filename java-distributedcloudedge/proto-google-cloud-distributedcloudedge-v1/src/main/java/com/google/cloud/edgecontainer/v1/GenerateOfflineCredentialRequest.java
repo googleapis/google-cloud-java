@@ -33,7 +33,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest)
     GenerateOfflineCredentialRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateOfflineCredentialRequest.newBuilder() to construct.
   private GenerateOfflineCredentialRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cluster_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +280,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -475,7 +471,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object cluster_ = "";
-
     /**
      *
      *
@@ -500,7 +495,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -525,7 +519,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class GenerateOfflineCredentialRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

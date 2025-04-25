@@ -38,7 +38,6 @@ public interface ResumeModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

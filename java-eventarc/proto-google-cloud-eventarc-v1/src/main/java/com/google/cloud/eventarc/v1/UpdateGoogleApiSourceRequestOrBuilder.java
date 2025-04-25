@@ -38,7 +38,6 @@ public interface UpdateGoogleApiSourceRequestOrBuilder
    * @return Whether the googleApiSource field is set.
    */
   boolean hasGoogleApiSource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateGoogleApiSourceRequestOrBuilder
    * @return The googleApiSource.
    */
   com.google.cloud.eventarc.v1.GoogleApiSource getGoogleApiSource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateGoogleApiSourceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface UpdateGoogleApiSourceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

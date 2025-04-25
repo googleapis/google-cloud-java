@@ -37,7 +37,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return Whether the finalStatus field is set.
    */
   boolean hasFinalStatus();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The finalStatus.
    */
   com.google.rpc.Status getFinalStatus();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return Whether the jobSummary field is set.
    */
   boolean hasJobSummary();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The jobSummary.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureMonitorJob.JobSummary getJobSummary();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface FeatureMonitorJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -220,11 +212,9 @@ public interface FeatureMonitorJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface FeatureMonitorJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public interface FeatureMonitorJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -347,7 +334,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return Whether the driftBaseSnapshotTime field is set.
    */
   boolean hasDriftBaseSnapshotTime();
-
   /**
    *
    *
@@ -362,7 +348,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The driftBaseSnapshotTime.
    */
   com.google.protobuf.Timestamp getDriftBaseSnapshotTime();
-
   /**
    *
    *
@@ -390,7 +375,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return Whether the featureSelectionConfig field is set.
    */
   boolean hasFeatureSelectionConfig();
-
   /**
    *
    *
@@ -405,7 +389,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The featureSelectionConfig.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig getFeatureSelectionConfig();
-
   /**
    *
    *
@@ -434,7 +417,6 @@ public interface FeatureMonitorJobOrBuilder
    * @return The enum numeric value on the wire for triggerType.
    */
   int getTriggerTypeValue();
-
   /**
    *
    *

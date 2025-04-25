@@ -33,7 +33,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ExecutionTemplate)
     ExecutionTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExecutionTemplate.newBuilder() to construct.
   private ExecutionTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -187,7 +186,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>SCALE_TIER_UNSPECIFIED = 0;</code>
      */
     public static final int SCALE_TIER_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -199,7 +197,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>BASIC = 1;</code>
      */
     public static final int BASIC_VALUE = 1;
-
     /**
      *
      *
@@ -210,7 +207,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>STANDARD_1 = 2;</code>
      */
     public static final int STANDARD_1_VALUE = 2;
-
     /**
      *
      *
@@ -221,7 +217,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>PREMIUM_1 = 3;</code>
      */
     public static final int PREMIUM_1_VALUE = 3;
-
     /**
      *
      *
@@ -232,7 +227,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>BASIC_GPU = 4;</code>
      */
     public static final int BASIC_GPU_VALUE = 4;
-
     /**
      *
      *
@@ -243,7 +237,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>BASIC_TPU = 5;</code>
      */
     public static final int BASIC_TPU_VALUE = 5;
-
     /**
      *
      *
@@ -465,7 +458,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>SCHEDULER_ACCELERATOR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SCHEDULER_ACCELERATOR_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -476,7 +468,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_K80 = 1;</code>
      */
     public static final int NVIDIA_TESLA_K80_VALUE = 1;
-
     /**
      *
      *
@@ -487,7 +478,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_P100 = 2;</code>
      */
     public static final int NVIDIA_TESLA_P100_VALUE = 2;
-
     /**
      *
      *
@@ -498,7 +488,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_V100 = 3;</code>
      */
     public static final int NVIDIA_TESLA_V100_VALUE = 3;
-
     /**
      *
      *
@@ -509,7 +498,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_P4 = 4;</code>
      */
     public static final int NVIDIA_TESLA_P4_VALUE = 4;
-
     /**
      *
      *
@@ -520,7 +508,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_T4 = 5;</code>
      */
     public static final int NVIDIA_TESLA_T4_VALUE = 5;
-
     /**
      *
      *
@@ -531,7 +518,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>NVIDIA_TESLA_A100 = 10;</code>
      */
     public static final int NVIDIA_TESLA_A100_VALUE = 10;
-
     /**
      *
      *
@@ -542,7 +528,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>TPU_V2 = 6;</code>
      */
     public static final int TPU_V2_VALUE = 6;
-
     /**
      *
      *
@@ -707,7 +692,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>JOB_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int JOB_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -719,7 +703,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>VERTEX_AI = 1;</code>
      */
     public static final int VERTEX_AI_VALUE = 1;
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      */
     long getCoreCount();
   }
-
   /**
    *
    *
@@ -878,7 +859,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ExecutionTemplate.SchedulerAcceleratorConfig)
       SchedulerAcceleratorConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SchedulerAcceleratorConfig.newBuilder() to construct.
     private SchedulerAcceleratorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -912,7 +892,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
     public static final int CORE_COUNT_FIELD_NUMBER = 2;
     private long coreCount_ = 0L;
-
     /**
      *
      *
@@ -1151,7 +1128,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1364,7 +1340,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -1381,7 +1356,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -1401,7 +1375,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1423,7 +1396,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             ? com.google.cloud.notebooks.v1.ExecutionTemplate.SchedulerAcceleratorType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1447,7 +1419,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1468,7 +1439,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
 
       private long coreCount_;
-
       /**
        *
        *
@@ -1484,7 +1454,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       public long getCoreCount() {
         return coreCount_;
       }
-
       /**
        *
        *
@@ -1504,7 +1473,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1609,7 +1577,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * @return The cluster.
      */
     java.lang.String getCluster();
-
     /**
      *
      *
@@ -1624,7 +1591,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getClusterBytes();
   }
-
   /**
    *
    *
@@ -1639,7 +1605,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters)
       DataprocParametersOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DataprocParameters.newBuilder() to construct.
     private DataprocParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1674,7 +1639,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cluster_ = "";
-
     /**
      *
      *
@@ -1699,7 +1663,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1887,7 +1850,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2082,7 +2044,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object cluster_ = "";
-
       /**
        *
        *
@@ -2106,7 +2067,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2130,7 +2090,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2153,7 +2112,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2172,7 +2130,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2291,7 +2248,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * @return The network.
      */
     java.lang.String getNetwork();
-
     /**
      *
      *
@@ -2327,7 +2283,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; env = 2;</code>
      */
     int getEnvCount();
-
     /**
      *
      *
@@ -2340,11 +2295,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; env = 2;</code>
      */
     boolean containsEnv(java.lang.String key);
-
     /** Use {@link #getEnvMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getEnv();
-
     /**
      *
      *
@@ -2357,7 +2310,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; env = 2;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getEnvMap();
-
     /**
      *
      *
@@ -2374,7 +2326,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -2388,7 +2339,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      */
     java.lang.String getEnvOrThrow(java.lang.String key);
   }
-
   /**
    *
    *
@@ -2403,7 +2353,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
       VertexAIParametersOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VertexAIParameters.newBuilder() to construct.
     private VertexAIParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2450,7 +2399,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -2484,7 +2432,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -2545,7 +2492,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getEnvCount() {
       return internalGetEnv().getMap().size();
     }
-
     /**
      *
      *
@@ -2564,14 +2510,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return internalGetEnv().getMap().containsKey(key);
     }
-
     /** Use {@link #getEnvMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnv() {
       return getEnvMap();
     }
-
     /**
      *
      *
@@ -2587,7 +2531,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
       return internalGetEnv().getMap();
     }
-
     /**
      *
      *
@@ -2610,7 +2553,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2813,7 +2755,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3046,7 +2987,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object network_ = "";
-
       /**
        *
        *
@@ -3079,7 +3019,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3112,7 +3051,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3144,7 +3082,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3172,7 +3109,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3231,7 +3167,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       public int getEnvCount() {
         return internalGetEnv().getMap().size();
       }
-
       /**
        *
        *
@@ -3250,14 +3185,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         }
         return internalGetEnv().getMap().containsKey(key);
       }
-
       /** Use {@link #getEnvMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getEnv() {
         return getEnvMap();
       }
-
       /**
        *
        *
@@ -3273,7 +3206,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
         return internalGetEnv().getMap();
       }
-
       /**
        *
        *
@@ -3296,7 +3228,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -3325,7 +3256,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         internalGetMutableEnv().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -3344,14 +3274,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         internalGetMutableEnv().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableEnv() {
         bitField0_ |= 0x00000002;
         return internalGetMutableEnv().getMutableMap();
       }
-
       /**
        *
        *
@@ -3374,7 +3302,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /**
        *
        *
@@ -3477,7 +3404,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     private JobParametersCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3512,7 +3438,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int SCALE_TIER_FIELD_NUMBER = 1;
   private int scaleTier_ = 0;
-
   /**
    *
    *
@@ -3534,7 +3459,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public int getScaleTierValue() {
     return scaleTier_;
   }
-
   /**
    *
    *
@@ -3565,7 +3489,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object masterType_ = "";
-
   /**
    *
    *
@@ -3636,7 +3559,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3711,7 +3633,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public static final int ACCELERATOR_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.notebooks.v1.ExecutionTemplate.SchedulerAcceleratorConfig
       acceleratorConfig_;
-
   /**
    *
    *
@@ -3730,7 +3651,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public boolean hasAcceleratorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3753,7 +3673,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : acceleratorConfig_;
   }
-
   /**
    *
    *
@@ -3801,7 +3720,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -3822,14 +3740,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -3847,7 +3763,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -3872,7 +3787,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3902,7 +3816,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputNotebookFile_ = "";
-
   /**
    *
    *
@@ -3929,7 +3842,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3961,7 +3873,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerImageUri_ = "";
-
   /**
    *
    *
@@ -3988,7 +3899,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4020,7 +3930,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputNotebookFolder_ = "";
-
   /**
    *
    *
@@ -4047,7 +3956,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4079,7 +3987,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object paramsYamlFile_ = "";
-
   /**
    *
    *
@@ -4107,7 +4014,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4140,7 +4046,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parameters_ = "";
-
   /**
    *
    *
@@ -4164,7 +4069,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4193,7 +4097,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -4219,7 +4122,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4248,7 +4150,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   public static final int JOB_TYPE_FIELD_NUMBER = 11;
   private int jobType_ = 0;
-
   /**
    *
    *
@@ -4264,7 +4165,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public int getJobTypeValue() {
     return jobType_;
   }
-
   /**
    *
    *
@@ -4286,7 +4186,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DATAPROC_PARAMETERS_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -4303,7 +4202,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public boolean hasDataprocParameters() {
     return jobParametersCase_ == 12;
   }
-
   /**
    *
    *
@@ -4324,7 +4222,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4345,7 +4242,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERTEX_AI_PARAMETERS_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -4363,7 +4259,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   public boolean hasVertexAiParameters() {
     return jobParametersCase_ == 13;
   }
-
   /**
    *
    *
@@ -4385,7 +4280,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4410,7 +4304,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kernelSpec_ = "";
-
   /**
    *
    *
@@ -4436,7 +4329,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4467,7 +4359,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tensorboard_ = "";
-
   /**
    *
    *
@@ -4494,7 +4385,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4853,7 +4743,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5322,7 +5211,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int scaleTier_ = 0;
-
     /**
      *
      *
@@ -5344,7 +5232,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getScaleTierValue() {
       return scaleTier_;
     }
-
     /**
      *
      *
@@ -5369,7 +5256,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5395,7 +5281,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5423,7 +5308,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5449,7 +5333,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object masterType_ = "";
-
     /**
      *
      *
@@ -5519,7 +5402,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5589,7 +5471,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5658,7 +5539,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5723,7 +5603,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5801,7 +5680,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             com.google.cloud.notebooks.v1.ExecutionTemplate.SchedulerAcceleratorConfig.Builder,
             com.google.cloud.notebooks.v1.ExecutionTemplate.SchedulerAcceleratorConfigOrBuilder>
         acceleratorConfigBuilder_;
-
     /**
      *
      *
@@ -5819,7 +5697,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public boolean hasAcceleratorConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5845,7 +5722,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return acceleratorConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5872,7 +5748,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5897,7 +5772,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5931,7 +5805,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5954,7 +5827,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5973,7 +5845,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getAcceleratorConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5997,7 +5868,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             : acceleratorConfig_;
       }
     }
-
     /**
      *
      *
@@ -6053,7 +5923,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -6074,14 +5943,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -6099,7 +5966,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -6124,7 +5990,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -6155,7 +6020,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -6176,14 +6040,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -6208,7 +6070,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -6229,7 +6090,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object inputNotebookFile_ = "";
-
     /**
      *
      *
@@ -6255,7 +6115,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6281,7 +6140,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6306,7 +6164,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6327,7 +6184,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6355,7 +6211,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object containerImageUri_ = "";
-
     /**
      *
      *
@@ -6381,7 +6236,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6407,7 +6261,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6432,7 +6285,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6453,7 +6305,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6481,7 +6332,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object outputNotebookFolder_ = "";
-
     /**
      *
      *
@@ -6507,7 +6357,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6533,7 +6382,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6558,7 +6406,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6579,7 +6426,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6607,7 +6453,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object paramsYamlFile_ = "";
-
     /**
      *
      *
@@ -6634,7 +6479,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6661,7 +6505,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6687,7 +6530,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6709,7 +6551,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6738,7 +6579,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object parameters_ = "";
-
     /**
      *
      *
@@ -6761,7 +6601,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6784,7 +6623,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6806,7 +6644,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6824,7 +6661,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6849,7 +6685,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -6874,7 +6709,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6899,7 +6733,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6923,7 +6756,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6943,7 +6775,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6970,7 +6801,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private int jobType_ = 0;
-
     /**
      *
      *
@@ -6986,7 +6816,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public int getJobTypeValue() {
       return jobType_;
     }
-
     /**
      *
      *
@@ -7005,7 +6834,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7025,7 +6853,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.notebooks.v1.ExecutionTemplate.JobType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7047,7 +6874,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7071,7 +6897,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters.Builder,
             com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParametersOrBuilder>
         dataprocParametersBuilder_;
-
     /**
      *
      *
@@ -7089,7 +6914,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public boolean hasDataprocParameters() {
       return jobParametersCase_ == 12;
     }
-
     /**
      *
      *
@@ -7121,7 +6945,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7147,7 +6970,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       jobParametersCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -7171,7 +6993,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       jobParametersCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -7210,7 +7031,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       jobParametersCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -7238,7 +7058,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7254,7 +7073,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         getDataprocParametersBuilder() {
       return getDataprocParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7280,7 +7098,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7323,7 +7140,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder,
             com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder>
         vertexAiParametersBuilder_;
-
     /**
      *
      *
@@ -7341,7 +7157,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public boolean hasVertexAiParameters() {
       return jobParametersCase_ == 13;
     }
-
     /**
      *
      *
@@ -7373,7 +7188,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7399,7 +7213,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       jobParametersCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -7423,7 +7236,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       jobParametersCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -7462,7 +7274,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       jobParametersCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -7490,7 +7301,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7506,7 +7316,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         getVertexAiParametersBuilder() {
       return getVertexAiParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7532,7 +7341,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7571,7 +7379,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kernelSpec_ = "";
-
     /**
      *
      *
@@ -7596,7 +7403,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7621,7 +7427,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7645,7 +7450,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7665,7 +7469,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7692,7 +7495,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object tensorboard_ = "";
-
     /**
      *
      *
@@ -7718,7 +7520,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7744,7 +7545,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7769,7 +7569,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7790,7 +7589,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

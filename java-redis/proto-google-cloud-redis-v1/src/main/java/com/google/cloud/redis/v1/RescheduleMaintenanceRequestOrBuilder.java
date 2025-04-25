@@ -40,7 +40,6 @@ public interface RescheduleMaintenanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface RescheduleMaintenanceRequestOrBuilder
    * @return The enum numeric value on the wire for rescheduleType.
    */
   int getRescheduleTypeValue();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface RescheduleMaintenanceRequestOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface RescheduleMaintenanceRequestOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
-
   /**
    *
    *

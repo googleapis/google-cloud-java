@@ -39,7 +39,6 @@ public interface ConnectClusterOrBuilder
    * @return Whether the gcpConfig field is set.
    */
   boolean hasGcpConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ConnectClusterOrBuilder
    * @return The gcpConfig.
    */
   com.google.cloud.managedkafka.v1.ConnectGcpConfig getGcpConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ConnectClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ConnectClusterOrBuilder
    * @return The kafkaCluster.
    */
   java.lang.String getKafkaCluster();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface ConnectClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface ConnectClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface ConnectClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface ConnectClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface ConnectClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -233,11 +224,9 @@ public interface ConnectClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface ConnectClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -263,7 +251,6 @@ public interface ConnectClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -289,7 +276,6 @@ public interface ConnectClusterOrBuilder
    * @return Whether the capacityConfig field is set.
    */
   boolean hasCapacityConfig();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface ConnectClusterOrBuilder
    * @return The capacityConfig.
    */
   com.google.cloud.managedkafka.v1.CapacityConfig getCapacityConfig();
-
   /**
    *
    *
@@ -332,7 +317,6 @@ public interface ConnectClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -360,7 +344,6 @@ public interface ConnectClusterOrBuilder
    * <code>map&lt;string, string&gt; config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getConfigCount();
-
   /**
    *
    *
@@ -373,11 +356,9 @@ public interface ConnectClusterOrBuilder
    * <code>map&lt;string, string&gt; config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsConfig(java.lang.String key);
-
   /** Use {@link #getConfigMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConfig();
-
   /**
    *
    *
@@ -390,7 +371,6 @@ public interface ConnectClusterOrBuilder
    * <code>map&lt;string, string&gt; config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConfigMap();
-
   /**
    *
    *
@@ -407,7 +387,6 @@ public interface ConnectClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

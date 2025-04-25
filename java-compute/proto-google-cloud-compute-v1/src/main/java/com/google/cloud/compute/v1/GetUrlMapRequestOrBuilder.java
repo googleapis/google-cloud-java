@@ -36,7 +36,6 @@ public interface GetUrlMapRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetUrlMapRequestOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *

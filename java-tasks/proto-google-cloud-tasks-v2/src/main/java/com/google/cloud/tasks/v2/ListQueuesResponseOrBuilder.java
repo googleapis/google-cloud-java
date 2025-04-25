@@ -34,7 +34,6 @@ public interface ListQueuesResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2.Queue queues = 1;</code>
    */
   java.util.List<com.google.cloud.tasks.v2.Queue> getQueuesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListQueuesResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2.Queue queues = 1;</code>
    */
   com.google.cloud.tasks.v2.Queue getQueues(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListQueuesResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2.Queue queues = 1;</code>
    */
   int getQueuesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListQueuesResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2.Queue queues = 1;</code>
    */
   java.util.List<? extends com.google.cloud.tasks.v2.QueueOrBuilder> getQueuesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListQueuesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

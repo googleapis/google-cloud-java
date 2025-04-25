@@ -44,7 +44,6 @@ public interface EncryptRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -146,7 +145,6 @@ public interface EncryptRequestOrBuilder
    * @return Whether the plaintextCrc32c field is set.
    */
   boolean hasPlaintextCrc32C();
-
   /**
    *
    *
@@ -179,7 +177,6 @@ public interface EncryptRequestOrBuilder
    * @return The plaintextCrc32c.
    */
   com.google.protobuf.Int64Value getPlaintextCrc32C();
-
   /**
    *
    *
@@ -243,7 +240,6 @@ public interface EncryptRequestOrBuilder
    * @return Whether the additionalAuthenticatedDataCrc32c field is set.
    */
   boolean hasAdditionalAuthenticatedDataCrc32C();
-
   /**
    *
    *
@@ -276,7 +272,6 @@ public interface EncryptRequestOrBuilder
    * @return The additionalAuthenticatedDataCrc32c.
    */
   com.google.protobuf.Int64Value getAdditionalAuthenticatedDataCrc32C();
-
   /**
    *
    *

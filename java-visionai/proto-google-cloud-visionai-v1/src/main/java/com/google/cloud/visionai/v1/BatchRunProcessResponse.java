@@ -33,7 +33,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.BatchRunProcessResponse)
     BatchRunProcessResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRunProcessResponse.newBuilder() to construct.
   private BatchRunProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object batchId_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Process> processes_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.visionai.v1.Process> getProcessesList() {
     return processes_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       getProcessesOrBuilderList() {
     return processes_;
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
   public int getProcessesCount() {
     return processes_.size();
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
   public com.google.cloud.visionai.v1.Process getProcesses(int index) {
     return processes_.get(index);
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -610,7 +601,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object batchId_ = "";
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return processesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return processesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return processesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
     public com.google.cloud.visionai.v1.Process.Builder getProcessesBuilder(int index) {
       return getProcessesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return processesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(processes_);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1011,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       return getProcessesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Process.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1054,7 +1024,6 @@ public final class BatchRunProcessResponse extends com.google.protobuf.Generated
       return getProcessesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Process.getDefaultInstance());
     }
-
     /**
      *
      *

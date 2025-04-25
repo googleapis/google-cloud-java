@@ -73,7 +73,6 @@ public enum PolylineFormatType implements com.google.protobuf.ProtocolMessageEnu
    * <code>UNKNOWN_FORMAT_TYPE = 0;</code>
    */
   public static final int UNKNOWN_FORMAT_TYPE_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum PolylineFormatType implements com.google.protobuf.ProtocolMessageEnu
    * <code>LAT_LNG_LIST_TYPE = 1;</code>
    */
   public static final int LAT_LNG_LIST_TYPE_VALUE = 1;
-
   /**
    *
    *

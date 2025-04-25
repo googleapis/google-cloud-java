@@ -34,7 +34,6 @@ public final class RubricBasedInstructionFollowingInput
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput)
     RubricBasedInstructionFollowingInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RubricBasedInstructionFollowingInput.newBuilder() to construct.
   private RubricBasedInstructionFollowingInput(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class RubricBasedInstructionFollowingInput
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingSpec metricSpec_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class RubricBasedInstructionFollowingInput
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class RubricBasedInstructionFollowingInput
             .getDefaultInstance()
         : metricSpec_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class RubricBasedInstructionFollowingInput
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInstance instance_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class RubricBasedInstructionFollowingInput
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class RubricBasedInstructionFollowingInput
             .getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -370,7 +363,6 @@ public final class RubricBasedInstructionFollowingInput
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -603,7 +595,6 @@ public final class RubricBasedInstructionFollowingInput
             com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingSpecOrBuilder>
         metricSpecBuilder_;
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class RubricBasedInstructionFollowingInput
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class RubricBasedInstructionFollowingInput
         return metricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class RubricBasedInstructionFollowingInput
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class RubricBasedInstructionFollowingInput
             : metricSpec_;
       }
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class RubricBasedInstructionFollowingInput
             com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInstance.Builder,
             com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -842,7 +824,6 @@ public final class RubricBasedInstructionFollowingInput
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class RubricBasedInstructionFollowingInput
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class RubricBasedInstructionFollowingInput
       }
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +966,6 @@ public final class RubricBasedInstructionFollowingInput
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1013,7 +988,6 @@ public final class RubricBasedInstructionFollowingInput
             : instance_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.AwsVmsDetails)
     AwsVmsDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsVmsDetails.newBuilder() to construct.
   private AwsVmsDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.AwsVmDetails> details_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vmmigration.v1.AwsVmDetails> getDetailsList() {
     return details_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       getDetailsOrBuilderList() {
     return details_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
   public int getDetailsCount() {
     return details_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vmmigration.v1.AwsVmDetails getDetails(int index) {
     return details_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +672,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +692,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +712,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +732,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +751,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +770,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +782,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.AwsVmDetails.Builder getDetailsBuilder(int index) {
       return getDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -818,7 +798,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
         return detailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -836,7 +815,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(details_);
       }
     }
-
     /**
      *
      *
@@ -850,7 +828,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       return getDetailsFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.AwsVmDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -864,7 +841,6 @@ public final class AwsVmsDetails extends com.google.protobuf.GeneratedMessageV3
       return getDetailsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.AwsVmDetails.getDefaultInstance());
     }
-
     /**
      *
      *

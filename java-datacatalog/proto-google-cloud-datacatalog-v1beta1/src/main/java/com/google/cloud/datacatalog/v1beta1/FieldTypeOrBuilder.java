@@ -36,7 +36,6 @@ public interface FieldTypeOrBuilder
    * @return Whether the primitiveType field is set.
    */
   boolean hasPrimitiveType();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FieldTypeOrBuilder
    * @return The enum numeric value on the wire for primitiveType.
    */
   int getPrimitiveTypeValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FieldTypeOrBuilder
    * @return Whether the enumType field is set.
    */
   boolean hasEnumType();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface FieldTypeOrBuilder
    * @return The enumType.
    */
   com.google.cloud.datacatalog.v1beta1.FieldType.EnumType getEnumType();
-
   /**
    *
    *

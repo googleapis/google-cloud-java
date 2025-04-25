@@ -41,7 +41,6 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    * @return The certificateAuthorityId.
    */
   java.lang.String getCertificateAuthorityId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    * @return Whether the certificateAuthority field is set.
    */
   boolean hasCertificateAuthority();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    * @return The certificateAuthority.
    */
   com.google.cloud.security.privateca.v1.CertificateAuthority getCertificateAuthority();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

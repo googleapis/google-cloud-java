@@ -33,7 +33,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SqlIpConfig)
     SqlIpConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SqlIpConfig.newBuilder() to construct.
   private SqlIpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENABLE_IPV4_FIELD_NUMBER = 1;
   private com.google.protobuf.BoolValue enableIpv4_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnableIpv4() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.BoolValue getEnableIpv4() {
     return enableIpv4_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableIpv4_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateNetwork_ = "";
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allocatedIpRange_ = "";
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_SSL_FIELD_NUMBER = 3;
   private com.google.protobuf.BoolValue requireSsl_;
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequireSsl() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.BoolValue getRequireSsl() {
     return requireSsl_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : requireSsl_;
   }
-
   /**
    *
    *
@@ -291,7 +280,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.SqlAclEntry> authorizedNetworks_;
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.SqlAclEntry> getAuthorizedNetworksList() {
     return authorizedNetworks_;
   }
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       getAuthorizedNetworksOrBuilderList() {
     return authorizedNetworks_;
   }
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAuthorizedNetworksCount() {
     return authorizedNetworks_.size();
   }
-
   /**
    *
    *
@@ -360,7 +345,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.SqlAclEntry getAuthorizedNetworks(int index) {
     return authorizedNetworks_.get(index);
   }
-
   /**
    *
    *
@@ -586,7 +570,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -899,7 +882,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         enableIpv4Builder_;
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnableIpv4() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return enableIpv4Builder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +957,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +984,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1017,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnableIpv4FieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             : enableIpv4_;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1062,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object privateNetwork_ = "";
-
     /**
      *
      *
@@ -1114,7 +1087,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1112,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1136,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1156,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1183,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object allocatedIpRange_ = "";
-
     /**
      *
      *
@@ -1242,7 +1210,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1237,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1263,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1285,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1319,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         requireSslBuilder_;
-
     /**
      *
      *
@@ -1370,7 +1333,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequireSsl() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1391,7 +1353,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return requireSslBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1414,7 +1375,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1394,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1421,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1482,7 +1440,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1454,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequireSslFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1516,7 +1472,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             : requireSsl_;
       }
     }
-
     /**
      *
      *
@@ -1579,7 +1534,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return authorizedNetworksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1599,7 +1553,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return authorizedNetworksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1619,7 +1572,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return authorizedNetworksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1646,7 +1598,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1621,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1646,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1723,7 +1672,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1747,7 +1695,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1718,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1795,7 +1741,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1763,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1785,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1858,7 +1801,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAuthorizedNetworksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1879,7 +1821,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return authorizedNetworksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1900,7 +1841,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(authorizedNetworks_);
       }
     }
-
     /**
      *
      *
@@ -1917,7 +1857,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       return getAuthorizedNetworksFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.SqlAclEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1935,7 +1874,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       return getAuthorizedNetworksFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.SqlAclEntry.getDefaultInstance());
     }
-
     /**
      *
      *

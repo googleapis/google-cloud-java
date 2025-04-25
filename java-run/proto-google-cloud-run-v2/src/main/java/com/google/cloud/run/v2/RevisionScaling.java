@@ -33,7 +33,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.RevisionScaling)
     RevisionScalingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RevisionScaling.newBuilder() to construct.
   private RevisionScaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
 
   public static final int MIN_INSTANCE_COUNT_FIELD_NUMBER = 1;
   private int minInstanceCount_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_INSTANCE_COUNT_FIELD_NUMBER = 2;
   private int maxInstanceCount_ = 0;
-
   /**
    *
    *
@@ -271,7 +268,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -466,7 +462,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int minInstanceCount_;
-
     /**
      *
      *
@@ -483,7 +478,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     public int getMinInstanceCount() {
       return minInstanceCount_;
     }
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     }
 
     private int maxInstanceCount_;
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
     public int getMaxInstanceCount() {
       return maxInstanceCount_;
     }
-
     /**
      *
      *
@@ -567,7 +558,6 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

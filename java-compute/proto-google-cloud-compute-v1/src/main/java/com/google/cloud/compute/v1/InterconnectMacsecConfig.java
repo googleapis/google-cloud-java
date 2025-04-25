@@ -33,7 +33,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectMacsecConfig)
     InterconnectMacsecConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectMacsecConfig.newBuilder() to construct.
   private InterconnectMacsecConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey>
       preSharedKeys_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       getPreSharedKeysList() {
     return preSharedKeys_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       getPreSharedKeysOrBuilderList() {
     return preSharedKeys_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
   public int getPreSharedKeysCount() {
     return preSharedKeys_.size();
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       int index) {
     return preSharedKeys_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +579,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
         return preSharedKeysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
         return preSharedKeysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
         return preSharedKeysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
         getPreSharedKeysBuilder(int index) {
       return getPreSharedKeysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
         return preSharedKeysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -900,7 +879,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(preSharedKeys_);
       }
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
               com.google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
               com.google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey
                   .getDefaultInstance());
     }
-
     /**
      *
      *

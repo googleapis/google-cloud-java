@@ -38,7 +38,6 @@ public interface ResizeNodeGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface ResizeNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -142,7 +140,6 @@ public interface ResizeNodeGroupRequestOrBuilder
    * @return Whether the gracefulDecommissionTimeout field is set.
    */
   boolean hasGracefulDecommissionTimeout();
-
   /**
    *
    *
@@ -168,7 +165,6 @@ public interface ResizeNodeGroupRequestOrBuilder
    * @return The gracefulDecommissionTimeout.
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class OSPolicyAssignmentOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata)
     OSPolicyAssignmentOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OSPolicyAssignmentOperationMetadata.newBuilder() to construct.
   private OSPolicyAssignmentOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -133,7 +132,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>API_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int API_METHOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>CREATE = 1;</code>
      */
     public static final int CREATE_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>UPDATE = 2;</code>
      */
     public static final int UPDATE_VALUE = 2;
-
     /**
      *
      *
@@ -328,7 +324,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>ROLLOUT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ROLLOUT_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -339,7 +334,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>IN_PROGRESS = 1;</code>
      */
     public static final int IN_PROGRESS_VALUE = 1;
-
     /**
      *
      *
@@ -350,7 +344,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>CANCELLING = 2;</code>
      */
     public static final int CANCELLING_VALUE = 2;
-
     /**
      *
      *
@@ -361,7 +354,6 @@ public final class OSPolicyAssignmentOperationMetadata
      * <code>CANCELLED = 3;</code>
      */
     public static final int CANCELLED_VALUE = 3;
-
     /**
      *
      *
@@ -467,7 +459,6 @@ public final class OSPolicyAssignmentOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object osPolicyAssignment_ = "";
-
   /**
    *
    *
@@ -494,7 +485,6 @@ public final class OSPolicyAssignmentOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -524,7 +514,6 @@ public final class OSPolicyAssignmentOperationMetadata
 
   public static final int API_METHOD_FIELD_NUMBER = 2;
   private int apiMethod_ = 0;
-
   /**
    *
    *
@@ -542,7 +531,6 @@ public final class OSPolicyAssignmentOperationMetadata
   public int getApiMethodValue() {
     return apiMethod_;
   }
-
   /**
    *
    *
@@ -570,7 +558,6 @@ public final class OSPolicyAssignmentOperationMetadata
 
   public static final int ROLLOUT_STATE_FIELD_NUMBER = 3;
   private int rolloutState_ = 0;
-
   /**
    *
    *
@@ -588,7 +575,6 @@ public final class OSPolicyAssignmentOperationMetadata
   public int getRolloutStateValue() {
     return rolloutState_;
   }
-
   /**
    *
    *
@@ -616,7 +602,6 @@ public final class OSPolicyAssignmentOperationMetadata
 
   public static final int ROLLOUT_START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp rolloutStartTime_;
-
   /**
    *
    *
@@ -632,7 +617,6 @@ public final class OSPolicyAssignmentOperationMetadata
   public boolean hasRolloutStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -650,7 +634,6 @@ public final class OSPolicyAssignmentOperationMetadata
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : rolloutStartTime_;
   }
-
   /**
    *
    *
@@ -669,7 +652,6 @@ public final class OSPolicyAssignmentOperationMetadata
 
   public static final int ROLLOUT_UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp rolloutUpdateTime_;
-
   /**
    *
    *
@@ -685,7 +667,6 @@ public final class OSPolicyAssignmentOperationMetadata
   public boolean hasRolloutUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -703,7 +684,6 @@ public final class OSPolicyAssignmentOperationMetadata
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : rolloutUpdateTime_;
   }
-
   /**
    *
    *
@@ -939,7 +919,6 @@ public final class OSPolicyAssignmentOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1212,7 +1191,6 @@ public final class OSPolicyAssignmentOperationMetadata
     private int bitField0_;
 
     private java.lang.Object osPolicyAssignment_ = "";
-
     /**
      *
      *
@@ -1238,7 +1216,6 @@ public final class OSPolicyAssignmentOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1241,6 @@ public final class OSPolicyAssignmentOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1265,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1285,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1312,6 @@ public final class OSPolicyAssignmentOperationMetadata
     }
 
     private int apiMethod_ = 0;
-
     /**
      *
      *
@@ -1356,7 +1329,6 @@ public final class OSPolicyAssignmentOperationMetadata
     public int getApiMethodValue() {
       return apiMethod_;
     }
-
     /**
      *
      *
@@ -1377,7 +1349,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1373,6 @@ public final class OSPolicyAssignmentOperationMetadata
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1427,7 +1397,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1418,6 @@ public final class OSPolicyAssignmentOperationMetadata
     }
 
     private int rolloutState_ = 0;
-
     /**
      *
      *
@@ -1467,7 +1435,6 @@ public final class OSPolicyAssignmentOperationMetadata
     public int getRolloutStateValue() {
       return rolloutState_;
     }
-
     /**
      *
      *
@@ -1488,7 +1455,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1479,6 @@ public final class OSPolicyAssignmentOperationMetadata
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1538,7 +1503,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1529,6 @@ public final class OSPolicyAssignmentOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         rolloutStartTimeBuilder_;
-
     /**
      *
      *
@@ -1580,7 +1543,6 @@ public final class OSPolicyAssignmentOperationMetadata
     public boolean hasRolloutStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1601,7 +1563,6 @@ public final class OSPolicyAssignmentOperationMetadata
         return rolloutStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1624,7 +1585,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1604,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1631,6 @@ public final class OSPolicyAssignmentOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1650,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1664,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return getRolloutStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1726,7 +1682,6 @@ public final class OSPolicyAssignmentOperationMetadata
             : rolloutStartTime_;
       }
     }
-
     /**
      *
      *
@@ -1759,7 +1714,6 @@ public final class OSPolicyAssignmentOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         rolloutUpdateTimeBuilder_;
-
     /**
      *
      *
@@ -1774,7 +1728,6 @@ public final class OSPolicyAssignmentOperationMetadata
     public boolean hasRolloutUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1795,7 +1748,6 @@ public final class OSPolicyAssignmentOperationMetadata
         return rolloutUpdateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1818,7 +1770,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1838,7 +1789,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1866,7 +1816,6 @@ public final class OSPolicyAssignmentOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1835,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1901,7 +1849,6 @@ public final class OSPolicyAssignmentOperationMetadata
       onChanged();
       return getRolloutUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1920,7 +1867,6 @@ public final class OSPolicyAssignmentOperationMetadata
             : rolloutUpdateTime_;
       }
     }
-
     /**
      *
      *

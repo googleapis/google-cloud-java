@@ -40,7 +40,6 @@ public interface DeleteTensorboardTimeSeriesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

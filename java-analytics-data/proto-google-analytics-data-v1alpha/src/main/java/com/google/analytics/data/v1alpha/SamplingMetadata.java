@@ -38,7 +38,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SamplingMetadata)
     SamplingMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SamplingMetadata.newBuilder() to construct.
   private SamplingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int SAMPLES_READ_COUNT_FIELD_NUMBER = 1;
   private long samplesReadCount_ = 0L;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int SAMPLING_SPACE_SIZE_FIELD_NUMBER = 2;
   private long samplingSpaceSize_ = 0L;
-
   /**
    *
    *
@@ -281,7 +278,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +478,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long samplesReadCount_;
-
     /**
      *
      *
@@ -500,7 +495,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     public long getSamplesReadCount() {
       return samplesReadCount_;
     }
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -544,7 +537,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private long samplingSpaceSize_;
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     public long getSamplingSpaceSize() {
       return samplingSpaceSize_;
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

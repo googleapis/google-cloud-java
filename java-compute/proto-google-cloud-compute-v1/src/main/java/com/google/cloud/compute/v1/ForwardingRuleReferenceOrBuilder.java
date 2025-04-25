@@ -30,14 +30,12 @@ public interface ForwardingRuleReferenceOrBuilder
    * @return Whether the forwardingRule field is set.
    */
   boolean hasForwardingRule();
-
   /**
    * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
-
   /**
    * <code>optional string forwarding_rule = 269964030;</code>
    *

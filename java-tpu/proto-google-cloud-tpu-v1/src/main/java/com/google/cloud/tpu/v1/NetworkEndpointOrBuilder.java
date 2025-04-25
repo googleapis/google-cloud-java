@@ -36,7 +36,6 @@ public interface NetworkEndpointOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface CustomModuleValidationErrorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CustomModuleValidationErrorOrBuilder
    * @return The fieldPath.
    */
   java.lang.String getFieldPath();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CustomModuleValidationErrorOrBuilder
    * @return Whether the start field is set.
    */
   boolean hasStart();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface CustomModuleValidationErrorOrBuilder
    * @return The start.
    */
   com.google.cloud.securitycenter.v1.Position getStart();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface CustomModuleValidationErrorOrBuilder
    * @return Whether the end field is set.
    */
   boolean hasEnd();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface CustomModuleValidationErrorOrBuilder
    * @return The end.
    */
   com.google.cloud.securitycenter.v1.Position getEnd();
-
   /**
    *
    *

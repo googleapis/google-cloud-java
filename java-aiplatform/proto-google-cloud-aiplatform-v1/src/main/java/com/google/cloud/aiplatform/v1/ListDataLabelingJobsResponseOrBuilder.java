@@ -35,7 +35,6 @@ public interface ListDataLabelingJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DataLabelingJob data_labeling_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.DataLabelingJob> getDataLabelingJobsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListDataLabelingJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DataLabelingJob data_labeling_jobs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.DataLabelingJob getDataLabelingJobs(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListDataLabelingJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DataLabelingJob data_labeling_jobs = 1;</code>
    */
   int getDataLabelingJobsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListDataLabelingJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DataLabelingJobOrBuilder>
       getDataLabelingJobsOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface ListDataLabelingJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

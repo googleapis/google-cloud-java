@@ -33,7 +33,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.MessageAnnotation)
     MessageAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MessageAnnotation.newBuilder() to construct.
   private MessageAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.AnnotatedMessagePart> parts_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.dialogflow.v2.AnnotatedMessagePart> getPartsList() {
     return parts_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       getPartsOrBuilderList() {
     return parts_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
   public int getPartsCount() {
     return parts_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.dialogflow.v2.AnnotatedMessagePart getParts(int index) {
     return parts_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
 
   public static final int CONTAIN_ENTITIES_FIELD_NUMBER = 2;
   private boolean containEntities_ = false;
-
   /**
    *
    *
@@ -339,7 +332,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -618,7 +610,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
         return partsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -637,7 +628,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
         return partsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
         return partsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dialogflow.v2.AnnotatedMessagePart.Builder getPartsBuilder(int index) {
       return getPartsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
         return partsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(parts_);
       }
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       return getPartsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.AnnotatedMessagePart.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.dialogflow.v2.AnnotatedMessagePart.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean containEntities_;
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
     public boolean getContainEntities() {
       return containEntities_;
     }
-
     /**
      *
      *
@@ -1026,7 +999,6 @@ public final class MessageAnnotation extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

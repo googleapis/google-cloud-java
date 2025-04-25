@@ -33,7 +33,6 @@ public final class RestartConnectorResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.RestartConnectorResponse)
     RestartConnectorResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestartConnectorResponse.newBuilder() to construct.
   private RestartConnectorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class RestartConnectorResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

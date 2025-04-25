@@ -66,7 +66,6 @@ public interface NodeNetworkConfigOrBuilder
    * @return The podRange.
    */
   java.lang.String getPodRange();
-
   /**
    *
    *
@@ -114,7 +113,6 @@ public interface NodeNetworkConfigOrBuilder
    * @return The podIpv4CidrBlock.
    */
   java.lang.String getPodIpv4CidrBlock();
-
   /**
    *
    *
@@ -157,7 +155,6 @@ public interface NodeNetworkConfigOrBuilder
    * @return Whether the enablePrivateNodes field is set.
    */
   boolean hasEnablePrivateNodes();
-
   /**
    *
    *
@@ -187,7 +184,6 @@ public interface NodeNetworkConfigOrBuilder
    * @return Whether the networkPerformanceConfig field is set.
    */
   boolean hasNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -203,7 +199,6 @@ public interface NodeNetworkConfigOrBuilder
    */
   com.google.container.v1beta1.NodeNetworkConfig.NetworkPerformanceConfig
       getNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -242,7 +237,6 @@ public interface NodeNetworkConfigOrBuilder
    * @return Whether the podCidrOverprovisionConfig field is set.
    */
   boolean hasPodCidrOverprovisionConfig();
-
   /**
    *
    *
@@ -267,7 +261,6 @@ public interface NodeNetworkConfigOrBuilder
    * @return The podCidrOverprovisionConfig.
    */
   com.google.container.v1beta1.PodCIDROverprovisionConfig getPodCidrOverprovisionConfig();
-
   /**
    *
    *
@@ -306,7 +299,6 @@ public interface NodeNetworkConfigOrBuilder
    */
   java.util.List<com.google.container.v1beta1.AdditionalNodeNetworkConfig>
       getAdditionalNodeNetworkConfigsList();
-
   /**
    *
    *
@@ -321,7 +313,6 @@ public interface NodeNetworkConfigOrBuilder
    */
   com.google.container.v1beta1.AdditionalNodeNetworkConfig getAdditionalNodeNetworkConfigs(
       int index);
-
   /**
    *
    *
@@ -335,7 +326,6 @@ public interface NodeNetworkConfigOrBuilder
    * </code>
    */
   int getAdditionalNodeNetworkConfigsCount();
-
   /**
    *
    *
@@ -350,7 +340,6 @@ public interface NodeNetworkConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.AdditionalNodeNetworkConfigOrBuilder>
       getAdditionalNodeNetworkConfigsOrBuilderList();
-
   /**
    *
    *
@@ -380,7 +369,6 @@ public interface NodeNetworkConfigOrBuilder
    */
   java.util.List<com.google.container.v1beta1.AdditionalPodNetworkConfig>
       getAdditionalPodNetworkConfigsList();
-
   /**
    *
    *
@@ -394,7 +382,6 @@ public interface NodeNetworkConfigOrBuilder
    * </code>
    */
   com.google.container.v1beta1.AdditionalPodNetworkConfig getAdditionalPodNetworkConfigs(int index);
-
   /**
    *
    *
@@ -408,7 +395,6 @@ public interface NodeNetworkConfigOrBuilder
    * </code>
    */
   int getAdditionalPodNetworkConfigsCount();
-
   /**
    *
    *
@@ -423,7 +409,6 @@ public interface NodeNetworkConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.AdditionalPodNetworkConfigOrBuilder>
       getAdditionalPodNetworkConfigsOrBuilderList();
-
   /**
    *
    *

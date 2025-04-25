@@ -33,7 +33,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VpnGateway)
     VpnGatewayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VpnGateway.newBuilder() to construct.
   private VpnGateway(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_GATEWAY_IP_VERSION = 0;</code>
      */
     public static final int UNDEFINED_GATEWAY_IP_VERSION_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4 = 2254341;</code>
      */
     public static final int IPV4_VALUE = 2254341;
-
     /**
      *
      *
@@ -310,7 +307,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STACK_TYPE = 0;</code>
      */
     public static final int UNDEFINED_STACK_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -321,7 +317,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4_IPV6 = 22197249;</code>
      */
     public static final int IPV4_IPV6_VALUE = 22197249;
-
     /**
      *
      *
@@ -332,7 +327,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
-
     /**
      *
      *
@@ -434,7 +428,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -450,7 +443,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -474,7 +466,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -503,7 +494,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -519,7 +509,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -543,7 +532,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -572,7 +560,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gatewayIpVersion_ = "";
-
   /**
    *
    *
@@ -589,7 +576,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGatewayIpVersion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -614,7 +600,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -642,7 +627,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -658,7 +642,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -679,7 +662,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -695,7 +677,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -719,7 +700,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -748,7 +728,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelFingerprint_ = "";
-
   /**
    *
    *
@@ -764,7 +743,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLabelFingerprint() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -788,7 +766,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -839,7 +816,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -856,14 +832,12 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -877,7 +851,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -898,7 +871,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -924,7 +896,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -940,7 +911,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -964,7 +934,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -993,7 +962,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -1009,7 +977,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1033,7 +1000,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1062,7 +1028,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -1078,7 +1043,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1102,7 +1066,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1131,7 +1094,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1147,7 +1109,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1171,7 +1132,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1200,7 +1160,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stackType_ = "";
-
   /**
    *
    *
@@ -1217,7 +1176,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStackType() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1242,7 +1200,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1272,7 +1229,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface> vpnInterfaces_;
-
   /**
    *
    *
@@ -1289,7 +1245,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       getVpnInterfacesList() {
     return vpnInterfaces_;
   }
-
   /**
    *
    *
@@ -1307,7 +1262,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       getVpnInterfacesOrBuilderList() {
     return vpnInterfaces_;
   }
-
   /**
    *
    *
@@ -1323,7 +1277,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public int getVpnInterfacesCount() {
     return vpnInterfaces_.size();
   }
-
   /**
    *
    *
@@ -1339,7 +1292,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface getVpnInterfaces(int index) {
     return vpnInterfaces_.get(index);
   }
-
   /**
    *
    *
@@ -1691,7 +1643,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2138,7 +2089,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2153,7 +2103,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2176,7 +2125,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2199,7 +2147,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2221,7 +2168,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2185,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2209,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2279,7 +2223,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2302,7 +2245,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2325,7 +2267,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2347,7 +2288,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2365,7 +2305,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2390,7 +2329,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gatewayIpVersion_ = "";
-
     /**
      *
      *
@@ -2406,7 +2344,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGatewayIpVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2430,7 +2367,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2454,7 +2390,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2477,7 +2412,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2496,7 +2430,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2522,7 +2455,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2538,7 +2470,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2554,7 +2485,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2574,7 +2504,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2594,7 +2523,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -2609,7 +2537,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2632,7 +2559,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2655,7 +2581,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2677,7 +2602,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2619,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2720,7 +2643,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object labelFingerprint_ = "";
-
     /**
      *
      *
@@ -2735,7 +2657,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLabelFingerprint() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2758,7 +2679,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2781,7 +2701,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2803,7 +2722,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2739,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2870,7 +2787,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2887,14 +2803,12 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2908,7 +2822,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2929,7 +2842,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2956,7 +2868,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2973,14 +2884,12 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3001,7 +2910,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -3018,7 +2926,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3033,7 +2940,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3056,7 +2962,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3079,7 +2984,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3101,7 +3005,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3119,7 +3022,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3144,7 +3046,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -3159,7 +3060,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3182,7 +3082,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3205,7 +3104,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3227,7 +3125,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3245,7 +3142,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3270,7 +3166,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -3285,7 +3180,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3308,7 +3202,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3331,7 +3224,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3353,7 +3245,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3371,7 +3262,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3396,7 +3286,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -3411,7 +3300,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3434,7 +3322,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3457,7 +3344,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3479,7 +3365,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3497,7 +3382,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3522,7 +3406,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stackType_ = "";
-
     /**
      *
      *
@@ -3538,7 +3421,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStackType() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3562,7 +3444,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3586,7 +3467,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3609,7 +3489,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3628,7 +3507,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3690,7 +3568,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return vpnInterfacesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3709,7 +3586,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return vpnInterfacesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3728,7 +3604,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return vpnInterfacesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3754,7 +3629,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3778,7 +3652,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3804,7 +3677,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3830,7 +3702,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3853,7 +3724,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3877,7 +3747,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3901,7 +3770,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3923,7 +3791,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3945,7 +3812,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3961,7 +3827,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         getVpnInterfacesBuilder(int index) {
       return getVpnInterfacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3981,7 +3846,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return vpnInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4002,7 +3866,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vpnInterfaces_);
       }
     }
-
     /**
      *
      *
@@ -4020,7 +3883,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4039,7 +3901,6 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface.getDefaultInstance());
     }
-
     /**
      *
      *

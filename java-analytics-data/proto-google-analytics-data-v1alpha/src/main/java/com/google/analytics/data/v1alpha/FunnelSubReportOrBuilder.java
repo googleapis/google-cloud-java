@@ -36,7 +36,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> getDimensionHeadersList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
    */
   com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
    */
   int getDimensionHeadersCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface FunnelSubReportOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
       getDimensionHeadersOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.MetricHeader> getMetricHeadersList();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
    */
   com.google.analytics.data.v1alpha.MetricHeader getMetricHeaders(int index);
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
    */
   int getMetricHeadersCount();
-
   /**
    *
    *
@@ -143,7 +136,6 @@ public interface FunnelSubReportOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.MetricHeaderOrBuilder>
       getMetricHeadersOrBuilderList();
-
   /**
    *
    *
@@ -167,7 +159,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.Row> getRowsList();
-
   /**
    *
    *
@@ -178,7 +169,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   com.google.analytics.data.v1alpha.Row getRows(int index);
-
   /**
    *
    *
@@ -189,7 +179,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -200,7 +189,6 @@ public interface FunnelSubReportOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.RowOrBuilder> getRowsOrBuilderList();
-
   /**
    *
    *
@@ -224,7 +212,6 @@ public interface FunnelSubReportOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -237,7 +224,6 @@ public interface FunnelSubReportOrBuilder
    * @return The metadata.
    */
   com.google.analytics.data.v1alpha.FunnelResponseMetadata getMetadata();
-
   /**
    *
    *

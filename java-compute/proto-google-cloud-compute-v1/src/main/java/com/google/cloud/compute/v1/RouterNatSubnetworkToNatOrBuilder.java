@@ -36,7 +36,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return A list containing the secondaryIpRangeNames.
    */
   java.util.List<java.lang.String> getSecondaryIpRangeNamesList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return The count of secondaryIpRangeNames.
    */
   int getSecondaryIpRangeNamesCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return The secondaryIpRangeNames at the given index.
    */
   java.lang.String getSecondaryIpRangeNames(int index);
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return A list containing the sourceIpRangesToNat.
    */
   java.util.List<java.lang.String> getSourceIpRangesToNatList();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return The count of sourceIpRangesToNat.
    */
   int getSourceIpRangesToNatCount();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * @return The sourceIpRangesToNat at the given index.
    */
   java.lang.String getSourceIpRangesToNat(int index);
-
   /**
    *
    *

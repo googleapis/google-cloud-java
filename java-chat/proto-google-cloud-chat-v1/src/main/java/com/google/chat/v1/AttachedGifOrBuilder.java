@@ -36,7 +36,6 @@ public interface AttachedGifOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

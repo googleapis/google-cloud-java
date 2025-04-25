@@ -33,7 +33,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DisableXpnResourceProjectRequest)
     DisableXpnResourceProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisableXpnResourceProjectRequest.newBuilder() to construct.
   private DisableXpnResourceProjectRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
   public static final int PROJECTS_DISABLE_XPN_RESOURCE_REQUEST_RESOURCE_FIELD_NUMBER = 209136170;
   private com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest
       projectsDisableXpnResourceRequestResource_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
   public boolean hasProjectsDisableXpnResourceRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         ? com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest.getDefaultInstance()
         : projectsDisableXpnResourceRequestResource_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -447,7 +438,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -686,7 +676,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -711,7 +700,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest.Builder,
             com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequestOrBuilder>
         projectsDisableXpnResourceRequestResourceBuilder_;
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     public boolean hasProjectsDisableXpnResourceRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         return projectsDisableXpnResourceRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -880,7 +862,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +884,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return getProjectsDisableXpnResourceRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
             : projectsDisableXpnResourceRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1043,7 +1018,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1066,7 +1040,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1062,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1100,6 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

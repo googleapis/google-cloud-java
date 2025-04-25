@@ -39,7 +39,6 @@ public interface TieringPolicyOrBuilder
    * @return Whether the tierAction field is set.
    */
   boolean hasTierAction();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface TieringPolicyOrBuilder
    * @return The enum numeric value on the wire for tierAction.
    */
   int getTierActionValue();
-
   /**
    *
    *
@@ -77,7 +75,7 @@ public interface TieringPolicyOrBuilder
    *
    * <pre>
    * Optional. Time in days to mark the volume's data block as cold and make it
-   * eligible for tiering, can be range from 2-183. Default is 31.
+   * eligible for tiering, can be range from 7-183. Default is 31.
    * </pre>
    *
    * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -86,13 +84,12 @@ public interface TieringPolicyOrBuilder
    * @return Whether the coolingThresholdDays field is set.
    */
   boolean hasCoolingThresholdDays();
-
   /**
    *
    *
    * <pre>
    * Optional. Time in days to mark the volume's data block as cold and make it
-   * eligible for tiering, can be range from 2-183. Default is 31.
+   * eligible for tiering, can be range from 7-183. Default is 31.
    * </pre>
    *
    * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];

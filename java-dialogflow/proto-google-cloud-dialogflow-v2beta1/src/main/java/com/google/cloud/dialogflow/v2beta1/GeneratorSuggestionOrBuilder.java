@@ -38,7 +38,6 @@ public interface GeneratorSuggestionOrBuilder
    * @return Whether the freeFormSuggestion field is set.
    */
   boolean hasFreeFormSuggestion();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GeneratorSuggestionOrBuilder
    * @return The freeFormSuggestion.
    */
   com.google.cloud.dialogflow.v2beta1.FreeFormSuggestion getFreeFormSuggestion();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface GeneratorSuggestionOrBuilder
    * @return Whether the summarySuggestion field is set.
    */
   boolean hasSummarySuggestion();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface GeneratorSuggestionOrBuilder
    * @return The summarySuggestion.
    */
   com.google.cloud.dialogflow.v2beta1.SummarySuggestion getSummarySuggestion();
-
   /**
    *
    *

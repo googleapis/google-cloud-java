@@ -37,7 +37,6 @@ public interface ValidationCAOrBuilder
    * @return Whether the grpcEndpoint field is set.
    */
   boolean hasGrpcEndpoint();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ValidationCAOrBuilder
    * @return The grpcEndpoint.
    */
   com.google.cloud.networksecurity.v1.GrpcEndpoint getGrpcEndpoint();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface ValidationCAOrBuilder
    * @return Whether the certificateProviderInstance field is set.
    */
   boolean hasCertificateProviderInstance();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ValidationCAOrBuilder
    * @return The certificateProviderInstance.
    */
   com.google.cloud.networksecurity.v1.CertificateProviderInstance getCertificateProviderInstance();
-
   /**
    *
    *

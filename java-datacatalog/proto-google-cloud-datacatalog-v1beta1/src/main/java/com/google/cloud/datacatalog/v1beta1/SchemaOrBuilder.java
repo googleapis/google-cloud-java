@@ -37,7 +37,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.ColumnSchema> getColumnsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1beta1.ColumnSchema getColumns(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getColumnsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface SchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.ColumnSchemaOrBuilder>
       getColumnsOrBuilderList();
-
   /**
    *
    *

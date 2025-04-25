@@ -34,7 +34,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.GitHubEventsConfig)
     GitHubEventsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GitHubEventsConfig.newBuilder() to construct.
   private GitHubEventsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     private EventCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int INSTALLATION_ID_FIELD_NUMBER = 1;
   private long installationId_ = 0L;
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object owner_ = "";
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PULL_REQUEST_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -267,7 +259,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasPullRequest() {
     return eventCase_ == 4;
   }
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PUSH_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasPush() {
     return eventCase_ == 5;
   }
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloudbuild.v1.PushFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -849,7 +835,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private long installationId_;
-
     /**
      *
      *
@@ -868,7 +853,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public long getInstallationId() {
       return installationId_;
     }
-
     /**
      *
      *
@@ -891,7 +875,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object owner_ = "";
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -988,7 +968,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1013,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1099,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1128,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloudbuild.v1.PullRequestFilter.Builder,
             com.google.cloudbuild.v1.PullRequestFilterOrBuilder>
         pullRequestBuilder_;
-
     /**
      *
      *
@@ -1171,7 +1143,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasPullRequest() {
       return eventCase_ == 4;
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1190,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       eventCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       eventCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1242,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       eventCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1267,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloudbuild.v1.PullRequestFilter.Builder getPullRequestBuilder() {
       return getPullRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1334,7 +1299,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloudbuild.v1.PullRequestFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1373,7 +1337,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloudbuild.v1.PushFilter.Builder,
             com.google.cloudbuild.v1.PushFilterOrBuilder>
         pushBuilder_;
-
     /**
      *
      *
@@ -1389,7 +1352,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasPush() {
       return eventCase_ == 5;
     }
-
     /**
      *
      *
@@ -1415,7 +1377,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloudbuild.v1.PushFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1399,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       eventCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1418,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       eventCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1449,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       eventCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1474,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1486,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloudbuild.v1.PushFilter.Builder getPushBuilder() {
       return getPushFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1550,7 +1506,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloudbuild.v1.PushFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *

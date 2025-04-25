@@ -38,7 +38,6 @@ public interface GetWorkstationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

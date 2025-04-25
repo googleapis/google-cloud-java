@@ -36,7 +36,6 @@ public interface AudienceFilterClauseOrBuilder
    * @return Whether the simpleFilter field is set.
    */
   boolean hasSimpleFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AudienceFilterClauseOrBuilder
    * @return The simpleFilter.
    */
   com.google.analytics.admin.v1alpha.AudienceSimpleFilter getSimpleFilter();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface AudienceFilterClauseOrBuilder
    * @return Whether the sequenceFilter field is set.
    */
   boolean hasSequenceFilter();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface AudienceFilterClauseOrBuilder
    * @return The sequenceFilter.
    */
   com.google.analytics.admin.v1alpha.AudienceSequenceFilter getSequenceFilter();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface AudienceFilterClauseOrBuilder
    * @return The enum numeric value on the wire for clauseType.
    */
   int getClauseTypeValue();
-
   /**
    *
    *

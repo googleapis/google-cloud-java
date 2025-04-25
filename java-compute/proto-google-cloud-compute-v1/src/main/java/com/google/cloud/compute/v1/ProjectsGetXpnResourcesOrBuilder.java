@@ -36,7 +36,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * <code>repeated .google.cloud.compute.v1.XpnResourceId resources = 164412965;</code>
    */
   java.util.List<com.google.cloud.compute.v1.XpnResourceId> getResourcesList();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * <code>repeated .google.cloud.compute.v1.XpnResourceId resources = 164412965;</code>
    */
   com.google.cloud.compute.v1.XpnResourceId getResources(int index);
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    * <code>repeated .google.cloud.compute.v1.XpnResourceId resources = 164412965;</code>
    */
   int getResourcesCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface ProjectsGetXpnResourcesOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.XpnResourceIdOrBuilder>
       getResourcesOrBuilderList();
-
   /**
    *
    *

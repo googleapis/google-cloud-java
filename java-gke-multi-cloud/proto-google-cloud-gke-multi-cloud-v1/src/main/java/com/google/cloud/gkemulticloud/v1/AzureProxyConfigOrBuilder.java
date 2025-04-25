@@ -39,7 +39,6 @@ public interface AzureProxyConfigOrBuilder
    * @return The resourceGroupId.
    */
   java.lang.String getResourceGroupId();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface AzureProxyConfigOrBuilder
    * @return The secretId.
    */
   java.lang.String getSecretId();
-
   /**
    *
    *

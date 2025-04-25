@@ -33,7 +33,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.BatchRunReportsResponse)
     BatchRunReportsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRunReportsResponse.newBuilder() to construct.
   private BatchRunReportsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.RunReportResponse> reports_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1beta.RunReportResponse> getReportsList() {
     return reports_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       getReportsOrBuilderList() {
     return reports_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
   public int getReportsCount() {
     return reports_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1beta.RunReportResponse getReports(int index) {
     return reports_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return reportsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return reportsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return reportsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +868,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1beta.RunReportResponse.Builder getReportsBuilder(int index) {
       return getReportsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return reportsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -925,7 +902,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(reports_);
       }
     }
-
     /**
      *
      *
@@ -939,7 +915,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       return getReportsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.RunReportResponse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -954,7 +929,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.analytics.data.v1beta.RunReportResponse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -987,7 +961,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1012,7 +985,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1032,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

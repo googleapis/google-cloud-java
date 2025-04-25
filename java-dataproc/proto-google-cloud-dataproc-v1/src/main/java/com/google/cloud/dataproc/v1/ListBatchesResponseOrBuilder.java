@@ -34,7 +34,6 @@ public interface ListBatchesResponseOrBuilder
    * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Batch> getBatchesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBatchesResponseOrBuilder
    * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
    */
   com.google.cloud.dataproc.v1.Batch getBatches(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBatchesResponseOrBuilder
    * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
    */
   int getBatchesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListBatchesResponseOrBuilder
    * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.BatchOrBuilder> getBatchesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListBatchesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListBatchesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -136,7 +130,6 @@ public interface ListBatchesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -152,7 +145,6 @@ public interface ListBatchesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

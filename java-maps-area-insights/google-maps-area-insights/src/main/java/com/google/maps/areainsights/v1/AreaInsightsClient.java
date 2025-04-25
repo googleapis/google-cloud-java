@@ -26,7 +26,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service definition for the Places Aggregate RPC.
+ * Service Description: Service definition for the Places Insights API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -59,7 +59,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ComputeInsights</td>
- *      <td><p> This method lets you retrieve insights about areas using a variety of filter such as: area, place type, operating status, price level and ratings. Currently "count" and "places" insights are supported. With "count" insights you can answer questions such as "How many restaurant are located in California that are operational, are inexpensive and have an average rating of at least 4 stars" (see `insight` enum for more details). With "places" insights, you can determine which places match the requested filter. Clients can then use those place resource names to fetch more details about each individual place using the Places API.</td>
+ *      <td><p> Compute Insights RPC
+ * <p>  This method lets you retrieve insights about areas using a variaty of filter such as: area, place type, operating status, price level and ratings. Currently "count" and "places" insights are supported. With "count" insights you can answer questions such as "How many restaurant are located in California that are operational, are inexpensive and have an average rating of at least 4 stars" (see `insight` enum for more details). With "places" insights, you can determine which places match the requested filter. Clients can then use those place resource names to fetch more details about each individual place using the Places API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -176,7 +177,9 @@ public class AreaInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * This method lets you retrieve insights about areas using a variety of filter such as: area,
+   * Compute Insights RPC
+   *
+   * <p>This method lets you retrieve insights about areas using a variaty of filter such as: area,
    * place type, operating status, price level and ratings. Currently "count" and "places" insights
    * are supported. With "count" insights you can answer questions such as "How many restaurant are
    * located in California that are operational, are inexpensive and have an average rating of at
@@ -211,7 +214,9 @@ public class AreaInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * This method lets you retrieve insights about areas using a variety of filter such as: area,
+   * Compute Insights RPC
+   *
+   * <p>This method lets you retrieve insights about areas using a variaty of filter such as: area,
    * place type, operating status, price level and ratings. Currently "count" and "places" insights
    * are supported. With "count" insights you can answer questions such as "How many restaurant are
    * located in California that are operational, are inexpensive and have an average rating of at

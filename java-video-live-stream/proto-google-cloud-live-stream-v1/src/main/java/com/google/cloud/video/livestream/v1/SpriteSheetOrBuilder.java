@@ -40,7 +40,6 @@ public interface SpriteSheetOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface SpriteSheetOrBuilder
    * @return The filePrefix.
    */
   java.lang.String getFilePrefix();
-
   /**
    *
    *
@@ -160,7 +158,6 @@ public interface SpriteSheetOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
-
   /**
    *
    *
@@ -174,7 +171,6 @@ public interface SpriteSheetOrBuilder
    * @return The interval.
    */
   com.google.protobuf.Duration getInterval();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface QueryInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface QueryInputOrBuilder
    * @return The text.
    */
   com.google.cloud.dialogflow.cx.v3.TextInput getText();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface QueryInputOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface QueryInputOrBuilder
    * @return The intent.
    */
   com.google.cloud.dialogflow.cx.v3.IntentInput getIntent();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface QueryInputOrBuilder
    * @return Whether the audio field is set.
    */
   boolean hasAudio();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface QueryInputOrBuilder
    * @return The audio.
    */
   com.google.cloud.dialogflow.cx.v3.AudioInput getAudio();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface QueryInputOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface QueryInputOrBuilder
    * @return The event.
    */
   com.google.cloud.dialogflow.cx.v3.EventInput getEvent();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface QueryInputOrBuilder
    * @return Whether the dtmf field is set.
    */
   boolean hasDtmf();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface QueryInputOrBuilder
    * @return The dtmf.
    */
   com.google.cloud.dialogflow.cx.v3.DtmfInput getDtmf();
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public interface QueryInputOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

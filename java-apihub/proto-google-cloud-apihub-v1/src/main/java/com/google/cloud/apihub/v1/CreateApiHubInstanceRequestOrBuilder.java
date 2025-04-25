@@ -39,7 +39,6 @@ public interface CreateApiHubInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateApiHubInstanceRequestOrBuilder
    * @return The apiHubInstanceId.
    */
   java.lang.String getApiHubInstanceId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface CreateApiHubInstanceRequestOrBuilder
    * @return Whether the apiHubInstance field is set.
    */
   boolean hasApiHubInstance();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateApiHubInstanceRequestOrBuilder
    * @return The apiHubInstance.
    */
   com.google.cloud.apihub.v1.ApiHubInstance getApiHubInstance();
-
   /**
    *
    *

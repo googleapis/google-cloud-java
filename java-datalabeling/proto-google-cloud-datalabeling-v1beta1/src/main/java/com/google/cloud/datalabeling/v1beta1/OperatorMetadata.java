@@ -33,7 +33,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.OperatorMetadata)
     OperatorMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OperatorMetadata.newBuilder() to construct.
   private OperatorMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int TOTAL_VOTES_FIELD_NUMBER = 2;
   private int totalVotes_ = 0;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int LABEL_VOTES_FIELD_NUMBER = 3;
   private int labelVotes_ = 0;
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList comments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getCommentsList() {
     return comments_;
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   public int getCommentsCount() {
     return comments_.size();
   }
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   public java.lang.String getComments(int index) {
     return comments_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -617,7 +608,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private int totalVotes_;
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public int getTotalVotes() {
       return totalVotes_;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private int labelVotes_;
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public int getLabelVotes() {
       return labelVotes_;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +781,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -815,7 +796,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       comments_.makeImmutable();
       return comments_;
     }
-
     /**
      *
      *
@@ -830,7 +810,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public int getCommentsCount() {
       return comments_.size();
     }
-
     /**
      *
      *
@@ -846,7 +825,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public java.lang.String getComments(int index) {
       return comments_.get(index);
     }
-
     /**
      *
      *
@@ -862,7 +840,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getCommentsBytes(int index) {
       return comments_.getByteString(index);
     }
-
     /**
      *
      *
@@ -886,7 +863,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +885,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +904,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +922,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

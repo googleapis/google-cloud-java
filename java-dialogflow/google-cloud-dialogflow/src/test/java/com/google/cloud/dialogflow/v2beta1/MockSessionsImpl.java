@@ -96,8 +96,7 @@ public class MockSessionsImpl extends SessionsImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingDetectIntent, expected"
-                              + " %s or %s",
+                          "Unrecognized response type %s for method StreamingDetectIntent, expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingDetectIntentResponse.class.getName(),
                           Exception.class.getName())));

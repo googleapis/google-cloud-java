@@ -37,7 +37,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ServerTlsPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -179,11 +172,9 @@ public interface ServerTlsPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -194,7 +185,6 @@ public interface ServerTlsPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface ServerTlsPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return Whether the serverCertificate field is set.
    */
   boolean hasServerCertificate();
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return The serverCertificate.
    */
   com.google.cloud.networksecurity.v1beta1.CertificateProvider getServerCertificate();
-
   /**
    *
    *
@@ -307,7 +294,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return Whether the mtlsPolicy field is set.
    */
   boolean hasMtlsPolicy();
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface ServerTlsPolicyOrBuilder
    * @return The mtlsPolicy.
    */
   com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy.MTLSPolicy getMtlsPolicy();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface VmwareSourceDetailsOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface VmwareSourceDetailsOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface VmwareSourceDetailsOrBuilder
    * @return The vcenterIp.
    */
   java.lang.String getVcenterIp();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface VmwareSourceDetailsOrBuilder
    * @return The thumbprint.
    */
   java.lang.String getThumbprint();
-
   /**
    *
    *

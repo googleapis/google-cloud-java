@@ -33,7 +33,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1.ListOperationsResponse)
     ListOperationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListOperationsResponse.newBuilder() to construct.
   private ListOperationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.Operation> operations_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.container.v1.Operation> getOperationsList() {
     return operations_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       getOperationsOrBuilderList() {
     return operations_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   public int getOperationsCount() {
     return operations_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   public com.google.container.v1.Operation getOperations(int index) {
     return operations_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList missingZones_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getMissingZonesList() {
     return missingZones_;
   }
-
   /**
    *
    *
@@ -178,7 +170,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   public int getMissingZonesCount() {
     return missingZones_.size();
   }
-
   /**
    *
    *
@@ -195,7 +186,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getMissingZones(int index) {
     return missingZones_.get(index);
   }
-
   /**
    *
    *
@@ -390,7 +380,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -672,7 +661,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
         return operationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -689,7 +677,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
         return operationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -706,7 +693,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
         return operationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +779,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +798,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +838,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +857,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
     public com.google.container.v1.Operation.Builder getOperationsBuilder(int index) {
       return getOperationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -928,7 +904,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
         return operationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(operations_);
       }
     }
-
     /**
      *
      *
@@ -960,7 +934,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       return getOperationsFieldBuilder()
           .addBuilder(com.google.container.v1.Operation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -974,7 +947,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       return getOperationsFieldBuilder()
           .addBuilder(index, com.google.container.v1.Operation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1014,7 +986,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1031,7 +1002,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       missingZones_.makeImmutable();
       return missingZones_;
     }
-
     /**
      *
      *
@@ -1047,7 +1017,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
     public int getMissingZonesCount() {
       return missingZones_.size();
     }
-
     /**
      *
      *
@@ -1064,7 +1033,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getMissingZones(int index) {
       return missingZones_.get(index);
     }
-
     /**
      *
      *
@@ -1081,7 +1049,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getMissingZonesBytes(int index) {
       return missingZones_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1106,7 +1073,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1096,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1116,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1135,6 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

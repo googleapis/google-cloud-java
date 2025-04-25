@@ -41,7 +41,6 @@ public interface SpeechContextOrBuilder
    * @return A list containing the phrases.
    */
   java.util.List<java.lang.String> getPhrasesList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface SpeechContextOrBuilder
    * @return The count of phrases.
    */
   int getPhrasesCount();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SpeechContextOrBuilder
    * @return The phrases at the given index.
    */
   java.lang.String getPhrases(int index);
-
   /**
    *
    *

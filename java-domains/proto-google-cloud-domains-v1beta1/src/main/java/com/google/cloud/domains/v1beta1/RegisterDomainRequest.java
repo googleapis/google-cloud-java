@@ -33,7 +33,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1beta1.RegisterDomainRequest)
     RegisterDomainRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegisterDomainRequest.newBuilder() to construct.
   private RegisterDomainRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
 
   public static final int REGISTRATION_FIELD_NUMBER = 2;
   private com.google.cloud.domains.v1beta1.Registration registration_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRegistration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.domains.v1beta1.Registration.getDefaultInstance()
         : registration_;
   }
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
                   : result;
             }
           };
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         java.lang.Integer, com.google.cloud.domains.v1beta1.DomainNotice>(
         domainNotices_, domainNotices_converter_);
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public int getDomainNoticesCount() {
     return domainNotices_.size();
   }
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public com.google.cloud.domains.v1beta1.DomainNotice getDomainNotices(int index) {
     return domainNotices_converter_.convert(domainNotices_.get(index));
   }
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public java.util.List<java.lang.Integer> getDomainNoticesValueList() {
     return domainNotices_;
   }
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
                   : result;
             }
           };
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         java.lang.Integer, com.google.cloud.domains.v1beta1.ContactNotice>(
         contactNotices_, contactNotices_converter_);
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public int getContactNoticesCount() {
     return contactNotices_.size();
   }
-
   /**
    *
    *
@@ -370,7 +356,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public com.google.cloud.domains.v1beta1.ContactNotice getContactNotices(int index) {
     return contactNotices_converter_.convert(contactNotices_.get(index));
   }
-
   /**
    *
    *
@@ -388,7 +373,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public java.util.List<java.lang.Integer> getContactNoticesValueList() {
     return contactNotices_;
   }
-
   /**
    *
    *
@@ -412,7 +396,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
 
   public static final int YEARLY_PRICE_FIELD_NUMBER = 5;
   private com.google.type.Money yearlyPrice_;
-
   /**
    *
    *
@@ -430,7 +413,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public boolean hasYearlyPrice() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -448,7 +430,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
   public com.google.type.Money getYearlyPrice() {
     return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
   }
-
   /**
    *
    *
@@ -467,7 +448,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 6;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -734,7 +714,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1059,7 +1038,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1085,7 +1063,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1088,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1136,7 +1112,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1132,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1164,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.domains.v1beta1.Registration.Builder,
             com.google.cloud.domains.v1beta1.RegistrationOrBuilder>
         registrationBuilder_;
-
     /**
      *
      *
@@ -1207,7 +1180,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRegistration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1230,7 +1202,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         return registrationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1255,7 +1226,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1248,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1278,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1299,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1315,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRegistrationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1369,7 +1335,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
             : registration_;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1371,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1424,7 +1388,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
           java.lang.Integer, com.google.cloud.domains.v1beta1.DomainNotice>(
           domainNotices_, domainNotices_converter_);
     }
-
     /**
      *
      *
@@ -1440,7 +1403,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public int getDomainNoticesCount() {
       return domainNotices_.size();
     }
-
     /**
      *
      *
@@ -1457,7 +1419,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.domains.v1beta1.DomainNotice getDomainNotices(int index) {
       return domainNotices_converter_.convert(domainNotices_.get(index));
     }
-
     /**
      *
      *
@@ -1482,7 +1443,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1465,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1487,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1547,7 +1505,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1563,7 +1520,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public java.util.List<java.lang.Integer> getDomainNoticesValueList() {
       return java.util.Collections.unmodifiableList(domainNotices_);
     }
-
     /**
      *
      *
@@ -1580,7 +1536,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public int getDomainNoticesValue(int index) {
       return domainNotices_.get(index);
     }
-
     /**
      *
      *
@@ -1601,7 +1556,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1575,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1605,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000008;
       }
     }
-
     /**
      *
      *
@@ -1671,7 +1623,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
           java.lang.Integer, com.google.cloud.domains.v1beta1.ContactNotice>(
           contactNotices_, contactNotices_converter_);
     }
-
     /**
      *
      *
@@ -1688,7 +1639,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public int getContactNoticesCount() {
       return contactNotices_.size();
     }
-
     /**
      *
      *
@@ -1706,7 +1656,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.domains.v1beta1.ContactNotice getContactNotices(int index) {
       return contactNotices_converter_.convert(contactNotices_.get(index));
     }
-
     /**
      *
      *
@@ -1732,7 +1681,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1704,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1780,7 +1727,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1746,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1817,7 +1762,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public java.util.List<java.lang.Integer> getContactNoticesValueList() {
       return java.util.Collections.unmodifiableList(contactNotices_);
     }
-
     /**
      *
      *
@@ -1835,7 +1779,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public int getContactNoticesValue(int index) {
       return contactNotices_.get(index);
     }
-
     /**
      *
      *
@@ -1857,7 +1800,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1820,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1906,7 +1847,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         yearlyPriceBuilder_;
-
     /**
      *
      *
@@ -1923,7 +1863,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public boolean hasYearlyPrice() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1944,7 +1883,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         return yearlyPriceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1969,7 +1907,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1928,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2021,7 +1957,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2043,7 +1978,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2060,7 +1994,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getYearlyPriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2079,7 +2012,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
         return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
       }
     }
-
     /**
      *
      *
@@ -2107,7 +2039,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -2125,7 +2056,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -2147,7 +2077,6 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

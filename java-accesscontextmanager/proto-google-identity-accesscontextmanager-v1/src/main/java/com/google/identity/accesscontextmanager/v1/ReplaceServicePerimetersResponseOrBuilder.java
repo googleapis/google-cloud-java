@@ -38,7 +38,6 @@ public interface ReplaceServicePerimetersResponseOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeter>
       getServicePerimetersList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface ReplaceServicePerimetersResponseOrBuilder
    * </code>
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeters(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ReplaceServicePerimetersResponseOrBuilder
    * </code>
    */
   int getServicePerimetersCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface ReplaceServicePerimetersResponseOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>
       getServicePerimetersOrBuilderList();
-
   /**
    *
    *

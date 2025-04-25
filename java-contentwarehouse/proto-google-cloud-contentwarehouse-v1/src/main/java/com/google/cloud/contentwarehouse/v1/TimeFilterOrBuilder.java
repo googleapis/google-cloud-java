@@ -30,14 +30,12 @@ public interface TimeFilterOrBuilder
    * @return Whether the timeRange field is set.
    */
   boolean hasTimeRange();
-
   /**
    * <code>.google.type.Interval time_range = 1;</code>
    *
    * @return The timeRange.
    */
   com.google.type.Interval getTimeRange();
-
   /** <code>.google.type.Interval time_range = 1;</code> */
   com.google.type.IntervalOrBuilder getTimeRangeOrBuilder();
 
@@ -55,7 +53,6 @@ public interface TimeFilterOrBuilder
    * @return The enum numeric value on the wire for timeField.
    */
   int getTimeFieldValue();
-
   /**
    *
    *

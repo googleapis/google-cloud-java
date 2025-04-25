@@ -34,7 +34,6 @@ public final class PredictRequestResponseLoggingConfig
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig)
     PredictRequestResponseLoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PredictRequestResponseLoggingConfig.newBuilder() to construct.
   private PredictRequestResponseLoggingConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class PredictRequestResponseLoggingConfig
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class PredictRequestResponseLoggingConfig
 
   public static final int SAMPLING_RATE_FIELD_NUMBER = 2;
   private double samplingRate_ = 0D;
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class PredictRequestResponseLoggingConfig
 
   public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.BigQueryDestination bigqueryDestination_;
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class PredictRequestResponseLoggingConfig
   public boolean hasBigqueryDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class PredictRequestResponseLoggingConfig
         ? com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance()
         : bigqueryDestination_;
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class PredictRequestResponseLoggingConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestResponseLoggingSchemaVersion_ = "";
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class PredictRequestResponseLoggingConfig
       return s;
     }
   }
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public final class PredictRequestResponseLoggingConfig
 
   public static final int ENABLE_OTEL_LOGGING_FIELD_NUMBER = 6;
   private boolean enableOtelLogging_ = false;
-
   /**
    *
    *
@@ -469,7 +460,6 @@ public final class PredictRequestResponseLoggingConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -736,7 +726,6 @@ public final class PredictRequestResponseLoggingConfig
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -752,7 +741,6 @@ public final class PredictRequestResponseLoggingConfig
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -772,7 +760,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +779,6 @@ public final class PredictRequestResponseLoggingConfig
     }
 
     private double samplingRate_;
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class PredictRequestResponseLoggingConfig
     public double getSamplingRate() {
       return samplingRate_;
     }
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class PredictRequestResponseLoggingConfig
             com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
         bigqueryDestinationBuilder_;
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class PredictRequestResponseLoggingConfig
     public boolean hasBigqueryDestination() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class PredictRequestResponseLoggingConfig
         return bigqueryDestinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -931,7 +912,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +937,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +971,6 @@ public final class PredictRequestResponseLoggingConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +995,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1015,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1063,7 +1039,6 @@ public final class PredictRequestResponseLoggingConfig
             : bigqueryDestination_;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class PredictRequestResponseLoggingConfig
     }
 
     private java.lang.Object requestResponseLoggingSchemaVersion_ = "";
-
     /**
      *
      *
@@ -1123,7 +1097,6 @@ public final class PredictRequestResponseLoggingConfig
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1123,6 @@ public final class PredictRequestResponseLoggingConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1148,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1199,7 +1170,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1199,6 @@ public final class PredictRequestResponseLoggingConfig
     }
 
     private boolean enableOtelLogging_;
-
     /**
      *
      *
@@ -1247,7 +1216,6 @@ public final class PredictRequestResponseLoggingConfig
     public boolean getEnableOtelLogging() {
       return enableOtelLogging_;
     }
-
     /**
      *
      *
@@ -1269,7 +1237,6 @@ public final class PredictRequestResponseLoggingConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *

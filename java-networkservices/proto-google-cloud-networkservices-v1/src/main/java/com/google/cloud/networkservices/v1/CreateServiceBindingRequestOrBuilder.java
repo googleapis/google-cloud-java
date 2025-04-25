@@ -39,7 +39,6 @@ public interface CreateServiceBindingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateServiceBindingRequestOrBuilder
    * @return The serviceBindingId.
    */
   java.lang.String getServiceBindingId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateServiceBindingRequestOrBuilder
    * @return Whether the serviceBinding field is set.
    */
   boolean hasServiceBinding();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateServiceBindingRequestOrBuilder
    * @return The serviceBinding.
    */
   com.google.cloud.networkservices.v1.ServiceBinding getServiceBinding();
-
   /**
    *
    *

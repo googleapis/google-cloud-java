@@ -33,7 +33,6 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Scalar)
     ScalarOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Scalar.newBuilder() to construct.
   private Scalar(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private double value_ = 0D;
-
   /**
    *
    *
@@ -243,7 +241,6 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -425,7 +422,6 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double value_;
-
     /**
      *
      *
@@ -441,7 +437,6 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
     public double getValue() {
       return value_;
     }
-
     /**
      *
      *
@@ -461,7 +456,6 @@ public final class Scalar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

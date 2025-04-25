@@ -34,7 +34,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummary)
     AutonomousDatabaseStandbySummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutonomousDatabaseStandbySummary.newBuilder() to construct.
   private AutonomousDatabaseStandbySummary(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
   private int bitField0_;
   public static final int LAG_TIME_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration lagTimeDuration_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
   public boolean hasLagTimeDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         ? com.google.protobuf.Duration.getDefaultInstance()
         : lagTimeDuration_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lifecycleDetails_ = "";
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
 
   public static final int DATA_GUARD_ROLE_CHANGED_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp dataGuardRoleChangedTime_;
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
   public boolean hasDataGuardRoleChangedTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : dataGuardRoleChangedTime_;
   }
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
 
   public static final int DISASTER_RECOVERY_ROLE_CHANGED_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp disasterRecoveryRoleChangedTime_;
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
   public boolean hasDisasterRecoveryRoleChangedTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : disasterRecoveryRoleChangedTime_;
   }
-
   /**
    *
    *
@@ -568,7 +554,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +841,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         lagTimeDurationBuilder_;
-
     /**
      *
      *
@@ -874,7 +858,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     public boolean hasLagTimeDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         return lagTimeDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -924,7 +906,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +928,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +958,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +980,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +997,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return getLagTimeDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
             : lagTimeDuration_;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1048,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     }
 
     private java.lang.Object lifecycleDetails_ = "";
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1120,7 +1094,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1134,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1159,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1206,7 +1176,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1227,7 +1196,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1215,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
           com.google.cloud.oracledatabase.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.oracledatabase.v1.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1271,7 +1238,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1264,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         dataGuardRoleChangedTimeBuilder_;
-
     /**
      *
      *
@@ -1316,7 +1281,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     public boolean hasDataGuardRoleChangedTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1340,7 +1304,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         return dataGuardRoleChangedTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1329,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1352,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1382,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1404,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1421,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return getDataGuardRoleChangedTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1484,7 +1442,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
             : dataGuardRoleChangedTime_;
       }
     }
-
     /**
      *
      *
@@ -1520,7 +1477,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         disasterRecoveryRoleChangedTimeBuilder_;
-
     /**
      *
      *
@@ -1538,7 +1494,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
     public boolean hasDisasterRecoveryRoleChangedTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1562,7 +1517,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
         return disasterRecoveryRoleChangedTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1588,7 +1542,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1612,7 +1565,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1596,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1618,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1685,7 +1635,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
       onChanged();
       return getDisasterRecoveryRoleChangedTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1707,7 +1656,6 @@ public final class AutonomousDatabaseStandbySummary extends com.google.protobuf.
             : disasterRecoveryRoleChangedTime_;
       }
     }
-
     /**
      *
      *

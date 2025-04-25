@@ -33,7 +33,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SdpInspectResult)
     SdpInspectResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SdpInspectResult.newBuilder() to construct.
   private SdpInspectResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 1;
   private int executionState_ = 0;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public int getExecutionStateValue() {
     return executionState_;
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.MessageItem> messageItems_;
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       getMessageItemsOrBuilderList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public int getMessageItemsCount() {
     return messageItems_.size();
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index) {
     return messageItems_.get(index);
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
 
   public static final int MATCH_STATE_FIELD_NUMBER = 3;
   private int matchState_ = 0;
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public int getMatchStateValue() {
     return matchState_;
   }
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.SdpFinding> findings_;
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.modelarmor.v1.SdpFinding> getFindingsList() {
     return findings_;
   }
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       getFindingsOrBuilderList() {
     return findings_;
   }
-
   /**
    *
    *
@@ -295,7 +282,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public int getFindingsCount() {
     return findings_.size();
   }
-
   /**
    *
    *
@@ -309,7 +295,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.modelarmor.v1.SdpFinding getFindings(int index) {
     return findings_.get(index);
   }
-
   /**
    *
    *
@@ -326,7 +311,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
 
   public static final int FINDINGS_TRUNCATED_FIELD_NUMBER = 5;
   private boolean findingsTruncated_ = false;
-
   /**
    *
    *
@@ -554,7 +538,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -880,7 +863,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int executionState_ = 0;
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     public int getExecutionStateValue() {
       return executionState_;
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.modelarmor.v1.FilterExecutionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1005,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return messageItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1024,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return messageItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1043,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return messageItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1091,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1141,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1164,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1187,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1232,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1269,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.modelarmor.v1.MessageItem.Builder getMessageItemsBuilder(int index) {
       return getMessageItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1323,7 +1288,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return messageItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1344,7 +1308,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(messageItems_);
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1324,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       return getMessageItemsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1378,7 +1340,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       return getMessageItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1414,7 +1375,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     }
 
     private int matchState_ = 0;
-
     /**
      *
      *
@@ -1434,7 +1394,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     public int getMatchStateValue() {
       return matchState_;
     }
-
     /**
      *
      *
@@ -1457,7 +1416,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1437,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(matchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1505,7 +1462,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1516,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return findingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1577,7 +1532,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return findingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1594,7 +1548,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return findingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1617,7 +1570,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1638,7 +1590,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1612,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1684,7 +1634,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1653,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1673,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1746,7 +1693,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1712,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1786,7 +1731,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1743,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.modelarmor.v1.SdpFinding.Builder getFindingsBuilder(int index) {
       return getFindingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1816,7 +1759,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return findingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1834,7 +1776,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(findings_);
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1789,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       return getFindingsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.SdpFinding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1862,7 +1802,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       return getFindingsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.SdpFinding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1895,7 +1834,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean findingsTruncated_;
-
     /**
      *
      *
@@ -1915,7 +1853,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
     public boolean getFindingsTruncated() {
       return findingsTruncated_;
     }
-
     /**
      *
      *
@@ -1939,7 +1876,6 @@ public final class SdpInspectResult extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

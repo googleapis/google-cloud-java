@@ -38,7 +38,6 @@ public interface EventCreateRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface EventCreateRuleOrBuilder
    * @return The destinationEvent.
    */
   java.lang.String getDestinationEvent();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface EventCreateRuleOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.MatchingCondition> getEventConditionsList();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface EventCreateRuleOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.MatchingCondition getEventConditions(int index);
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface EventCreateRuleOrBuilder
    * </code>
    */
   int getEventConditionsCount();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface EventCreateRuleOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.MatchingConditionOrBuilder>
       getEventConditionsOrBuilderList();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface EventCreateRuleOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ParameterMutation> getParameterMutationsList();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface EventCreateRuleOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.ParameterMutation getParameterMutations(int index);
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public interface EventCreateRuleOrBuilder
    * </code>
    */
   int getParameterMutationsCount();
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface EventCreateRuleOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ParameterMutationOrBuilder>
       getParameterMutationsOrBuilderList();
-
   /**
    *
    *

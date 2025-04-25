@@ -37,7 +37,6 @@ public interface BuildNoteOrBuilder
    * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface SearchModelMonitoringStatsRequestOrBuilder
    * @return The modelMonitor.
    */
   java.lang.String getModelMonitor();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface SearchModelMonitoringStatsRequestOrBuilder
    * @return Whether the statsFilter field is set.
    */
   boolean hasStatsFilter();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SearchModelMonitoringStatsRequestOrBuilder
    * @return The statsFilter.
    */
   com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsFilter getStatsFilter();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SearchModelMonitoringStatsRequestOrBuilder
    * @return Whether the timeInterval field is set.
    */
   boolean hasTimeInterval();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface SearchModelMonitoringStatsRequestOrBuilder
    * @return The timeInterval.
    */
   com.google.type.Interval getTimeInterval();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface SearchModelMonitoringStatsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

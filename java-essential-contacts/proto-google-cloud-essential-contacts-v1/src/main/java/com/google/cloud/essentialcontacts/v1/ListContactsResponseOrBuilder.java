@@ -34,7 +34,6 @@ public interface ListContactsResponseOrBuilder
    * <code>repeated .google.cloud.essentialcontacts.v1.Contact contacts = 1;</code>
    */
   java.util.List<com.google.cloud.essentialcontacts.v1.Contact> getContactsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListContactsResponseOrBuilder
    * <code>repeated .google.cloud.essentialcontacts.v1.Contact contacts = 1;</code>
    */
   com.google.cloud.essentialcontacts.v1.Contact getContacts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListContactsResponseOrBuilder
    * <code>repeated .google.cloud.essentialcontacts.v1.Contact contacts = 1;</code>
    */
   int getContactsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListContactsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.essentialcontacts.v1.ContactOrBuilder>
       getContactsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListContactsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

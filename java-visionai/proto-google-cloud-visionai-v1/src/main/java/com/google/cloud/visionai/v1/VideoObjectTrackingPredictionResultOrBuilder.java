@@ -37,7 +37,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return Whether the segmentStartTime field is set.
    */
   boolean hasSegmentStartTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The segmentStartTime.
    */
   com.google.protobuf.Timestamp getSegmentStartTime();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return Whether the segmentEndTime field is set.
    */
   boolean hasSegmentEndTime();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * @return The segmentEndTime.
    */
   com.google.protobuf.Timestamp getSegmentEndTime();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.VideoObjectTrackingPredictionResult.DetectedObject>
       getObjectsList();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    */
   com.google.cloud.visionai.v1.VideoObjectTrackingPredictionResult.DetectedObject getObjects(
       int index);
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
    * </code>
    */
   int getObjectsCount();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface VideoObjectTrackingPredictionResultOrBuilder
               com.google.cloud.visionai.v1.VideoObjectTrackingPredictionResult
                   .DetectedObjectOrBuilder>
       getObjectsOrBuilderList();
-
   /**
    *
    *

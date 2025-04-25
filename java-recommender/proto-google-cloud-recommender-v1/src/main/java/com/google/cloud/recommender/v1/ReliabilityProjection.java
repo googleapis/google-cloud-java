@@ -33,7 +33,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.ReliabilityProjection)
     ReliabilityProjectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReliabilityProjection.newBuilder() to construct.
   private ReliabilityProjection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
      * <code>RISK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RISK_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
      * <code>SERVICE_DISRUPTION = 1;</code>
      */
     public static final int SERVICE_DISRUPTION_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
      * <code>DATA_LOSS = 2;</code>
      */
     public static final int DATA_LOSS_VALUE = 2;
-
     /**
      *
      *
@@ -270,7 +266,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
                   : result;
             }
           };
-
   /**
    *
    *
@@ -289,7 +284,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
         java.lang.Integer, com.google.cloud.recommender.v1.ReliabilityProjection.RiskType>(
         risks_, risks_converter_);
   }
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
   public int getRisksCount() {
     return risks_.size();
   }
-
   /**
    *
    *
@@ -322,7 +315,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
   public com.google.cloud.recommender.v1.ReliabilityProjection.RiskType getRisks(int index) {
     return risks_converter_.convert(risks_.get(index));
   }
-
   /**
    *
    *
@@ -338,7 +330,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
   public java.util.List<java.lang.Integer> getRisksValueList() {
     return risks_;
   }
-
   /**
    *
    *
@@ -360,7 +351,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
 
   public static final int DETAILS_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct details_;
-
   /**
    *
    *
@@ -376,7 +366,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
   public boolean hasDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -392,7 +381,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Struct getDetails() {
     return details_ == null ? com.google.protobuf.Struct.getDefaultInstance() : details_;
   }
-
   /**
    *
    *
@@ -597,7 +585,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -844,7 +831,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -862,7 +848,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
           java.lang.Integer, com.google.cloud.recommender.v1.ReliabilityProjection.RiskType>(
           risks_, risks_converter_);
     }
-
     /**
      *
      *
@@ -877,7 +862,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     public int getRisksCount() {
       return risks_.size();
     }
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     public com.google.cloud.recommender.v1.ReliabilityProjection.RiskType getRisks(int index) {
       return risks_converter_.convert(risks_.get(index));
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +943,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +974,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     public java.util.List<java.lang.Integer> getRisksValueList() {
       return java.util.Collections.unmodifiableList(risks_);
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     public int getRisksValue(int index) {
       return risks_.get(index);
     }
-
     /**
      *
      *
@@ -1031,7 +1008,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1026,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         detailsBuilder_;
-
     /**
      *
      *
@@ -1093,7 +1067,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
     public boolean hasDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1112,7 +1085,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
         return detailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1107,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1126,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1153,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1172,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1186,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class ReliabilityProjection extends com.google.protobuf.GeneratedMe
         return details_ == null ? com.google.protobuf.Struct.getDefaultInstance() : details_;
       }
     }
-
     /**
      *
      *

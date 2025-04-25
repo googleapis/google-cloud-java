@@ -36,7 +36,6 @@ public interface EduDataOrBuilder
    * @return The enum numeric value on the wire for instituteType.
    */
   int getInstituteTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EduDataOrBuilder
    * @return The enum numeric value on the wire for instituteSize.
    */
   int getInstituteSizeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface EduDataOrBuilder
    * @return The website.
    */
   java.lang.String getWebsite();
-
   /**
    *
    *

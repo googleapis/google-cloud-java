@@ -43,7 +43,6 @@ public interface BigQueryExportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface BigQueryExportOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface BigQueryExportOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -169,7 +166,6 @@ public interface BigQueryExportOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -201,7 +197,6 @@ public interface BigQueryExportOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -217,7 +212,6 @@ public interface BigQueryExportOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -247,7 +241,6 @@ public interface BigQueryExportOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -263,7 +256,6 @@ public interface BigQueryExportOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -292,7 +284,6 @@ public interface BigQueryExportOrBuilder
    * @return The mostRecentEditor.
    */
   java.lang.String getMostRecentEditor();
-
   /**
    *
    *
@@ -321,7 +312,6 @@ public interface BigQueryExportOrBuilder
    * @return The principal.
    */
   java.lang.String getPrincipal();
-
   /**
    *
    *

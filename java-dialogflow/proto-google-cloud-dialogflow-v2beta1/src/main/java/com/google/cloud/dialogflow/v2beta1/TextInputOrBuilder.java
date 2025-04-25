@@ -37,7 +37,6 @@ public interface TextInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface TextInputOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

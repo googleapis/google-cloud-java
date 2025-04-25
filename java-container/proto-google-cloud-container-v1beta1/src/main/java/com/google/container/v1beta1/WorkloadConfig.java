@@ -34,7 +34,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.WorkloadConfig)
     WorkloadConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkloadConfig.newBuilder() to construct.
   private WorkloadConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,7 +142,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -155,7 +153,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -166,7 +163,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>BASIC = 4;</code>
      */
     public static final int BASIC_VALUE = 4;
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>BASELINE = 2 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int BASELINE_VALUE = 2;
-
     /**
      *
      *
@@ -281,7 +276,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUDIT_MODE_FIELD_NUMBER = 1;
   private int auditMode_ = 0;
-
   /**
    *
    *
@@ -297,7 +291,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuditMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -313,7 +306,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAuditModeValue() {
     return auditMode_;
   }
-
   /**
    *
    *
@@ -496,7 +488,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,7 +673,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int auditMode_ = 0;
-
     /**
      *
      *
@@ -698,7 +688,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuditMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -714,7 +703,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAuditModeValue() {
       return auditMode_;
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.WorkloadConfig.Mode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

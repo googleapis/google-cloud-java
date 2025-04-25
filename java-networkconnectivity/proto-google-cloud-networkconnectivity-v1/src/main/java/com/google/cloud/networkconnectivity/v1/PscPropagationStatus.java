@@ -34,7 +34,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.PscPropagationStatus)
     PscPropagationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PscPropagationStatus.newBuilder() to construct.
   private PscPropagationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -175,7 +174,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
      * <code>CODE_UNSPECIFIED = 0;</code>
      */
     public static final int CODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -186,7 +184,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
      * <code>READY = 1;</code>
      */
     public static final int READY_VALUE = 1;
-
     /**
      *
      *
@@ -198,7 +195,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
      * <code>PROPAGATING = 2;</code>
      */
     public static final int PROPAGATING_VALUE = 2;
-
     /**
      *
      *
@@ -211,7 +207,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
      * <code>ERROR_PRODUCER_PROPAGATED_CONNECTION_LIMIT_EXCEEDED = 3;</code>
      */
     public static final int ERROR_PRODUCER_PROPAGATED_CONNECTION_LIMIT_EXCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -225,7 +220,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
      * <code>ERROR_PRODUCER_NAT_IP_SPACE_EXHAUSTED = 4;</code>
      */
     public static final int ERROR_PRODUCER_NAT_IP_SPACE_EXHAUSTED_VALUE = 4;
-
     /**
      *
      *
@@ -238,7 +232,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
      * <code>ERROR_PRODUCER_QUOTA_EXCEEDED = 5;</code>
      */
     public static final int ERROR_PRODUCER_QUOTA_EXCEEDED_VALUE = 5;
-
     /**
      *
      *
@@ -349,7 +342,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceSpoke_ = "";
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -402,7 +393,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceGroup_ = "";
-
   /**
    *
    *
@@ -426,7 +416,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -455,7 +444,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceForwardingRule_ = "";
-
   /**
    *
    *
@@ -479,7 +467,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -508,7 +495,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetSpoke_ = "";
-
   /**
    *
    *
@@ -532,7 +518,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -561,7 +546,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetGroup_ = "";
-
   /**
    *
    *
@@ -585,7 +569,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -612,7 +595,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   public static final int CODE_FIELD_NUMBER = 6;
   private int code_ = 0;
-
   /**
    *
    *
@@ -628,7 +610,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
   public int getCodeValue() {
     return code_;
   }
-
   /**
    *
    *
@@ -653,7 +634,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -678,7 +658,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -922,7 +901,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1199,7 +1177,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object sourceSpoke_ = "";
-
     /**
      *
      *
@@ -1222,7 +1199,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1221,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1267,7 +1242,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1259,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1283,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object sourceGroup_ = "";
-
     /**
      *
      *
@@ -1333,7 +1305,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1356,7 +1327,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1378,7 +1348,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1365,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1389,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object sourceForwardingRule_ = "";
-
     /**
      *
      *
@@ -1444,7 +1411,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1467,7 +1433,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1489,7 +1454,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1471,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1495,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object targetSpoke_ = "";
-
     /**
      *
      *
@@ -1555,7 +1517,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1578,7 +1539,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1560,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1618,7 +1577,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1601,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object targetGroup_ = "";
-
     /**
      *
      *
@@ -1666,7 +1623,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1689,7 +1645,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1711,7 +1666,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1683,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1707,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private int code_ = 0;
-
     /**
      *
      *
@@ -1770,7 +1722,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     public int getCodeValue() {
       return code_;
     }
-
     /**
      *
      *
@@ -1789,7 +1740,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1809,7 +1759,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.networkconnectivity.v1.PscPropagationStatus.Code.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1832,7 +1781,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1852,7 +1800,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1876,7 +1823,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1900,7 +1846,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1923,7 +1868,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1942,7 +1886,6 @@ public final class PscPropagationStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

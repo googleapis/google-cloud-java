@@ -422,8 +422,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListModelEvaluations, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListModelEvaluations, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListModelEvaluationsResponse.class.getName(),
                   Exception.class.getName())));

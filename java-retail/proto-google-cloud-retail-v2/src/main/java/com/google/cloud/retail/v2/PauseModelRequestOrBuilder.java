@@ -40,7 +40,6 @@ public interface PauseModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

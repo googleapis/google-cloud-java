@@ -36,7 +36,6 @@ public interface FaceSegmentOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FaceSegmentOrBuilder
    * @return The segment.
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getSegment();
-
   /**
    *
    *

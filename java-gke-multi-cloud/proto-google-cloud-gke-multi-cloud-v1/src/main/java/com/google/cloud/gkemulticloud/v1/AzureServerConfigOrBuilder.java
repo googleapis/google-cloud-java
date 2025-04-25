@@ -42,7 +42,6 @@ public interface AzureServerConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface AzureServerConfigOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureK8sVersionInfo valid_versions = 2;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfo> getValidVersionsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface AzureServerConfigOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureK8sVersionInfo valid_versions = 2;</code>
    */
   com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfo getValidVersions(int index);
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AzureServerConfigOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureK8sVersionInfo valid_versions = 2;</code>
    */
   int getValidVersionsCount();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface AzureServerConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfoOrBuilder>
       getValidVersionsOrBuilderList();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface AzureServerConfigOrBuilder
    * @return A list containing the supportedAzureRegions.
    */
   java.util.List<java.lang.String> getSupportedAzureRegionsList();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface AzureServerConfigOrBuilder
    * @return The count of supportedAzureRegions.
    */
   int getSupportedAzureRegionsCount();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface AzureServerConfigOrBuilder
    * @return The supportedAzureRegions at the given index.
    */
   java.lang.String getSupportedAzureRegions(int index);
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest)
     GenerateStatelessSuggestionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateStatelessSuggestionRequest.newBuilder() to construct.
   private GenerateStatelessSuggestionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -97,7 +96,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     private GeneratorResourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -134,7 +132,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -161,7 +158,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +186,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   }
 
   public static final int GENERATOR_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -207,7 +202,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public boolean hasGenerator() {
     return generatorResourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     }
     return com.google.cloud.dialogflow.v2beta1.Generator.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   }
 
   public static final int GENERATOR_NAME_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public boolean hasGeneratorName() {
     return generatorResourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -359,7 +349,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public int getContextReferencesCount() {
     return internalGetContextReferences().getMap().size();
   }
-
   /**
    *
    *
@@ -381,7 +370,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     }
     return internalGetContextReferences().getMap().containsKey(key);
   }
-
   /** Use {@link #getContextReferencesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -390,7 +378,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       getContextReferences() {
     return getContextReferencesMap();
   }
-
   /**
    *
    *
@@ -411,7 +398,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       getContextReferencesMap() {
     return internalGetContextReferences().getMap();
   }
-
   /**
    *
    *
@@ -440,7 +426,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         map = internalGetContextReferences().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -472,7 +457,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
 
   public static final int CONVERSATION_CONTEXT_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.v2beta1.ConversationContext conversationContext_;
-
   /**
    *
    *
@@ -490,7 +474,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public boolean hasConversationContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -510,7 +493,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         ? com.google.cloud.dialogflow.v2beta1.ConversationContext.getDefaultInstance()
         : conversationContext_;
   }
-
   /**
    *
    *
@@ -549,7 +531,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
                   : result;
             }
           };
-
   /**
    *
    *
@@ -570,7 +551,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         java.lang.Integer, com.google.cloud.dialogflow.v2beta1.TriggerEvent>(
         triggerEvents_, triggerEvents_converter_);
   }
-
   /**
    *
    *
@@ -589,7 +569,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public int getTriggerEventsCount() {
     return triggerEvents_.size();
   }
-
   /**
    *
    *
@@ -609,7 +588,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public com.google.cloud.dialogflow.v2beta1.TriggerEvent getTriggerEvents(int index) {
     return triggerEvents_converter_.convert(triggerEvents_.get(index));
   }
-
   /**
    *
    *
@@ -628,7 +606,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   public java.util.List<java.lang.Integer> getTriggerEventsValueList() {
     return triggerEvents_;
   }
-
   /**
    *
    *
@@ -912,7 +889,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1284,7 +1260,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1310,7 +1285,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1336,7 +1310,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1334,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1354,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1385,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
             com.google.cloud.dialogflow.v2beta1.Generator.Builder,
             com.google.cloud.dialogflow.v2beta1.GeneratorOrBuilder>
         generatorBuilder_;
-
     /**
      *
      *
@@ -1431,7 +1401,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public boolean hasGenerator() {
       return generatorResourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1458,7 +1427,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return com.google.cloud.dialogflow.v2beta1.Generator.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1450,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       generatorResourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1471,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       generatorResourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1505,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       generatorResourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1531,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1544,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public com.google.cloud.dialogflow.v2beta1.Generator.Builder getGeneratorBuilder() {
       return getGeneratorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1602,7 +1565,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return com.google.cloud.dialogflow.v2beta1.Generator.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1653,7 +1615,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public boolean hasGeneratorName() {
       return generatorResourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1683,7 +1644,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1673,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1736,7 +1695,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1715,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1803,8 +1760,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
           defaultEntry() {
         return ContextReferencesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ContextReferencesConverter contextReferencesConverter =
         new ContextReferencesConverter();
@@ -1845,7 +1801,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public int getContextReferencesCount() {
       return internalGetContextReferences().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1867,7 +1822,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       }
       return internalGetContextReferences().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getContextReferencesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1876,7 +1830,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         getContextReferences() {
       return getContextReferencesMap();
     }
-
     /**
      *
      *
@@ -1897,7 +1850,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         getContextReferencesMap() {
       return internalGetContextReferences().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1927,7 +1879,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
           map = internalGetMutableContextReferences().ensureBuilderMap();
       return map.containsKey(key) ? contextReferencesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1963,7 +1914,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       internalGetMutableContextReferences().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1985,7 +1935,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       internalGetMutableContextReferences().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1994,7 +1943,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       bitField0_ |= 0x00000008;
       return internalGetMutableContextReferences().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2022,7 +1970,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2052,7 +1999,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2039,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
             com.google.cloud.dialogflow.v2beta1.ConversationContext.Builder,
             com.google.cloud.dialogflow.v2beta1.ConversationContextOrBuilder>
         conversationContextBuilder_;
-
     /**
      *
      *
@@ -2110,7 +2055,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public boolean hasConversationContext() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2133,7 +2077,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         return conversationContextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2159,7 +2102,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2124,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2214,7 +2155,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -2236,7 +2176,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2254,7 +2193,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return getConversationContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2276,7 +2214,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
             : conversationContext_;
       }
     }
-
     /**
      *
      *
@@ -2313,7 +2250,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         bitField0_ |= 0x00000020;
       }
     }
-
     /**
      *
      *
@@ -2333,7 +2269,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
           java.lang.Integer, com.google.cloud.dialogflow.v2beta1.TriggerEvent>(
           triggerEvents_, triggerEvents_converter_);
     }
-
     /**
      *
      *
@@ -2351,7 +2286,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public int getTriggerEventsCount() {
       return triggerEvents_.size();
     }
-
     /**
      *
      *
@@ -2370,7 +2304,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public com.google.cloud.dialogflow.v2beta1.TriggerEvent getTriggerEvents(int index) {
       return triggerEvents_converter_.convert(triggerEvents_.get(index));
     }
-
     /**
      *
      *
@@ -2397,7 +2330,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2422,7 +2354,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2447,7 +2378,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2468,7 +2398,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2486,7 +2415,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public java.util.List<java.lang.Integer> getTriggerEventsValueList() {
       return java.util.Collections.unmodifiableList(triggerEvents_);
     }
-
     /**
      *
      *
@@ -2505,7 +2433,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public int getTriggerEventsValue(int index) {
       return triggerEvents_.get(index);
     }
-
     /**
      *
      *
@@ -2528,7 +2455,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2476,6 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

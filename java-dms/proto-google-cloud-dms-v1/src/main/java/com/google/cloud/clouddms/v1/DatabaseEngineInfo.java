@@ -33,7 +33,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.DatabaseEngineInfo)
     DatabaseEngineInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatabaseEngineInfo.newBuilder() to construct.
   private DatabaseEngineInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
 
   public static final int ENGINE_FIELD_NUMBER = 1;
   private int engine_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
   public int getEngineValue() {
     return engine_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -329,7 +324,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -527,7 +521,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int engine_ = 0;
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
     public int getEngineValue() {
       return engine_;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +577,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
           com.google.cloud.clouddms.v1.DatabaseEngine.forNumber(engine_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseEngine.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -678,7 +665,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -700,7 +686,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

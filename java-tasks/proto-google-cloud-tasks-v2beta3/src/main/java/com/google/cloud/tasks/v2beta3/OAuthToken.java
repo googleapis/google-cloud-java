@@ -36,7 +36,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.OAuthToken)
     OAuthTokenOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OAuthToken.newBuilder() to construct.
   private OAuthToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -354,7 +349,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +550,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object serviceAccountEmail_ = "";
-
     /**
      *
      *
@@ -583,7 +576,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -610,7 +602,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object scope_ = "";
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

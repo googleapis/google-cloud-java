@@ -33,7 +33,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupMaintenanceWindow)
     NodeGroupMaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeGroupMaintenanceWindow.newBuilder() to construct.
   private NodeGroupMaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int MAINTENANCE_DURATION_FIELD_NUMBER = 525291840;
   private com.google.cloud.compute.v1.Duration maintenanceDuration_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
   public boolean hasMaintenanceDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : maintenanceDuration_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +361,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -592,7 +584,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         maintenanceDurationBuilder_;
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     public boolean hasMaintenanceDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         return maintenanceDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +706,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       onChanged();
       return getMaintenanceDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
             : maintenanceDuration_;
       }
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     }
 
     private java.lang.Object startTime_ = "";
-
     /**
      *
      *
@@ -797,7 +779,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -843,7 +823,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +844,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +861,6 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

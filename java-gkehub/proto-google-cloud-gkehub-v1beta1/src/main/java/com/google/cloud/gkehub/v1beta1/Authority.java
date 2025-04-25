@@ -35,7 +35,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1beta1.Authority)
     AuthorityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Authority.newBuilder() to construct.
   private Authority(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issuer_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workloadIdentityPool_ = "";
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -209,7 +204,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object identityProvider_ = "";
-
   /**
    *
    *
@@ -234,7 +228,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -262,7 +255,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OIDC_JWKS_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -469,7 +461,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +689,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object issuer_ = "";
-
     /**
      *
      *
@@ -730,7 +720,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -762,7 +751,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -793,7 +781,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +807,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +840,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object workloadIdentityPool_ = "";
-
     /**
      *
      *
@@ -883,7 +868,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +946,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +976,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object identityProvider_ = "";
-
     /**
      *
      *
@@ -1019,7 +999,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1022,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1044,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1062,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1087,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1131,7 +1106,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getOidcJwks() {
       return oidcJwks_;
     }
-
     /**
      *
      *
@@ -1157,7 +1131,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

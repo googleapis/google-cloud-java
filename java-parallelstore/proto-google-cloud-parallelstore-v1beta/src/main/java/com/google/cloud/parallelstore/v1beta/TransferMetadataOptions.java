@@ -33,7 +33,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1beta.TransferMetadataOptions)
     TransferMetadataOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferMetadataOptions.newBuilder() to construct.
   private TransferMetadataOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
      * <code>UID_UNSPECIFIED = 0;</code>
      */
     public static final int UID_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
      * <code>UID_SKIP = 1;</code>
      */
     public static final int UID_SKIP_VALUE = 1;
-
     /**
      *
      *
@@ -280,7 +277,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
      * <code>GID_UNSPECIFIED = 0;</code>
      */
     public static final int GID_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -291,7 +287,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
      * <code>GID_SKIP = 1;</code>
      */
     public static final int GID_SKIP_VALUE = 1;
-
     /**
      *
      *
@@ -441,7 +436,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -452,7 +446,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
      * <code>MODE_SKIP = 1;</code>
      */
     public static final int MODE_SKIP_VALUE = 1;
-
     /**
      *
      *
@@ -551,7 +544,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
 
   public static final int UID_FIELD_NUMBER = 1;
   private int uid_ = 0;
-
   /**
    *
    *
@@ -569,7 +561,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
   public int getUidValue() {
     return uid_;
   }
-
   /**
    *
    *
@@ -594,7 +585,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
 
   public static final int GID_FIELD_NUMBER = 2;
   private int gid_ = 0;
-
   /**
    *
    *
@@ -612,7 +602,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
   public int getGidValue() {
     return gid_;
   }
-
   /**
    *
    *
@@ -637,7 +626,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
 
   public static final int MODE_FIELD_NUMBER = 3;
   private int mode_ = 0;
-
   /**
    *
    *
@@ -655,7 +643,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
   public int getModeValue() {
     return mode_;
   }
-
   /**
    *
    *
@@ -868,7 +855,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1080,7 +1066,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int uid_ = 0;
-
     /**
      *
      *
@@ -1098,7 +1083,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     public int getUidValue() {
       return uid_;
     }
-
     /**
      *
      *
@@ -1119,7 +1103,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1124,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
           ? com.google.cloud.parallelstore.v1beta.TransferMetadataOptions.Uid.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1165,7 +1147,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1168,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     }
 
     private int gid_ = 0;
-
     /**
      *
      *
@@ -1205,7 +1185,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     public int getGidValue() {
       return gid_;
     }
-
     /**
      *
      *
@@ -1226,7 +1205,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1226,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
           ? com.google.cloud.parallelstore.v1beta.TransferMetadataOptions.Gid.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1272,7 +1249,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1270,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     }
 
     private int mode_ = 0;
-
     /**
      *
      *
@@ -1312,7 +1287,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -1333,7 +1307,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1328,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
           ? com.google.cloud.parallelstore.v1beta.TransferMetadataOptions.Mode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1380,7 +1352,6 @@ public final class TransferMetadataOptions extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

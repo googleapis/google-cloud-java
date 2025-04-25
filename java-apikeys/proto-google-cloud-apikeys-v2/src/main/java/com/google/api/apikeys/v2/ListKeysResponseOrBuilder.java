@@ -34,7 +34,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.api.apikeys.v2.Key keys = 1;</code>
    */
   java.util.List<com.google.api.apikeys.v2.Key> getKeysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.api.apikeys.v2.Key keys = 1;</code>
    */
   com.google.api.apikeys.v2.Key getKeys(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.api.apikeys.v2.Key keys = 1;</code>
    */
   int getKeysCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.api.apikeys.v2.Key keys = 1;</code>
    */
   java.util.List<? extends com.google.api.apikeys.v2.KeyOrBuilder> getKeysOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

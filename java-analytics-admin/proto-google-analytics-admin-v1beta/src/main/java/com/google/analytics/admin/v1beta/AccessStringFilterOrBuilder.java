@@ -36,7 +36,6 @@ public interface AccessStringFilterOrBuilder
    * @return The enum numeric value on the wire for matchType.
    */
   int getMatchTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AccessStringFilterOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

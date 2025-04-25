@@ -39,7 +39,6 @@ public interface CreateChannelGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateChannelGroupRequestOrBuilder
    * @return Whether the channelGroup field is set.
    */
   boolean hasChannelGroup();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateChannelGroupRequestOrBuilder
    * @return The channelGroup.
    */
   com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup();
-
   /**
    *
    *

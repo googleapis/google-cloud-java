@@ -39,7 +39,6 @@ public interface DeleteFolderRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

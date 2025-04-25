@@ -53,7 +53,6 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -153,7 +151,6 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -216,7 +213,6 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -265,7 +261,6 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -291,7 +286,6 @@ public interface ListJobTriggersRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

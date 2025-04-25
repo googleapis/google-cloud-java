@@ -40,7 +40,6 @@ public interface ListTransitionRouteGroupsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
       getTransitionRouteGroupsList();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface ListTransitionRouteGroupsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup getTransitionRouteGroups(int index);
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface ListTransitionRouteGroupsResponseOrBuilder
    * </code>
    */
   int getTransitionRouteGroupsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ListTransitionRouteGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupOrBuilder>
       getTransitionRouteGroupsOrBuilderList();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface ListTransitionRouteGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

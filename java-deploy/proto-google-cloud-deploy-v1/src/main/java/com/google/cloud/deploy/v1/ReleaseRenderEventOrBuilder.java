@@ -37,7 +37,6 @@ public interface ReleaseRenderEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ReleaseRenderEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ReleaseRenderEventOrBuilder
    * @return The release.
    */
   java.lang.String getRelease();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ReleaseRenderEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ReleaseRenderEventOrBuilder
    * @return The enum numeric value on the wire for releaseRenderState.
    */
   int getReleaseRenderStateValue();
-
   /**
    *
    *

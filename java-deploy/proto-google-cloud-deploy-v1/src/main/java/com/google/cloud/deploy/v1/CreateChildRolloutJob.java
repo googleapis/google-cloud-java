@@ -33,7 +33,6 @@ public final class CreateChildRolloutJob extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CreateChildRolloutJob)
     CreateChildRolloutJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateChildRolloutJob.newBuilder() to construct.
   private CreateChildRolloutJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class CreateChildRolloutJob extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

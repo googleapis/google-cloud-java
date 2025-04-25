@@ -37,7 +37,6 @@ public interface GceSetupOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v2.AcceleratorConfig> getAcceleratorConfigsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v2.AcceleratorConfig getAcceleratorConfigs(int index);
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   int getAcceleratorConfigsCount();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface GceSetupOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v2.AcceleratorConfigOrBuilder>
       getAcceleratorConfigsOrBuilderList();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v2.ServiceAccount> getServiceAccountsList();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v2.ServiceAccount getServiceAccounts(int index);
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   int getServiceAccountsCount();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface GceSetupOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v2.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface GceSetupOrBuilder
    * @return Whether the vmImage field is set.
    */
   boolean hasVmImage();
-
   /**
    *
    *
@@ -239,7 +229,6 @@ public interface GceSetupOrBuilder
    * @return The vmImage.
    */
   com.google.cloud.notebooks.v2.VmImage getVmImage();
-
   /**
    *
    *
@@ -267,7 +256,6 @@ public interface GceSetupOrBuilder
    * @return Whether the containerImage field is set.
    */
   boolean hasContainerImage();
-
   /**
    *
    *
@@ -282,7 +270,6 @@ public interface GceSetupOrBuilder
    * @return The containerImage.
    */
   com.google.cloud.notebooks.v2.ContainerImage getContainerImage();
-
   /**
    *
    *
@@ -310,7 +297,6 @@ public interface GceSetupOrBuilder
    * @return Whether the bootDisk field is set.
    */
   boolean hasBootDisk();
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface GceSetupOrBuilder
    * @return The bootDisk.
    */
   com.google.cloud.notebooks.v2.BootDisk getBootDisk();
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v2.DataDisk> getDataDisksList();
-
   /**
    *
    *
@@ -366,7 +350,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v2.DataDisk getDataDisks(int index);
-
   /**
    *
    *
@@ -380,7 +363,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   int getDataDisksCount();
-
   /**
    *
    *
@@ -395,7 +377,6 @@ public interface GceSetupOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v2.DataDiskOrBuilder>
       getDataDisksOrBuilderList();
-
   /**
    *
    *
@@ -426,7 +407,6 @@ public interface GceSetupOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
-
   /**
    *
    *
@@ -443,7 +423,6 @@ public interface GceSetupOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.notebooks.v2.ShieldedInstanceConfig getShieldedInstanceConfig();
-
   /**
    *
    *
@@ -473,7 +452,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v2.NetworkInterface> getNetworkInterfacesList();
-
   /**
    *
    *
@@ -487,7 +465,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v2.NetworkInterface getNetworkInterfaces(int index);
-
   /**
    *
    *
@@ -501,7 +478,6 @@ public interface GceSetupOrBuilder
    * </code>
    */
   int getNetworkInterfacesCount();
-
   /**
    *
    *
@@ -516,7 +492,6 @@ public interface GceSetupOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v2.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
-
   /**
    *
    *
@@ -557,7 +532,6 @@ public interface GceSetupOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -571,7 +545,6 @@ public interface GceSetupOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -586,7 +559,6 @@ public interface GceSetupOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -612,7 +584,6 @@ public interface GceSetupOrBuilder
    * <code>map&lt;string, string&gt; metadata = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -623,11 +594,9 @@ public interface GceSetupOrBuilder
    * <code>map&lt;string, string&gt; metadata = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -638,7 +607,6 @@ public interface GceSetupOrBuilder
    * <code>map&lt;string, string&gt; metadata = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -653,7 +621,6 @@ public interface GceSetupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -693,7 +660,6 @@ public interface GceSetupOrBuilder
    * @return Whether the gpuDriverConfig field is set.
    */
   boolean hasGpuDriverConfig();
-
   /**
    *
    *
@@ -708,7 +674,6 @@ public interface GceSetupOrBuilder
    * @return The gpuDriverConfig.
    */
   com.google.cloud.notebooks.v2.GPUDriverConfig getGpuDriverConfig();
-
   /**
    *
    *

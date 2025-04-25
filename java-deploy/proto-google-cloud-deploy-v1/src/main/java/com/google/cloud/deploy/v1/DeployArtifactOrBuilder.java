@@ -37,7 +37,6 @@ public interface DeployArtifactOrBuilder
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DeployArtifactOrBuilder
    * @return A list containing the manifestPaths.
    */
   java.util.List<java.lang.String> getManifestPathsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DeployArtifactOrBuilder
    * @return The count of manifestPaths.
    */
   int getManifestPathsCount();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface DeployArtifactOrBuilder
    * @return The manifestPaths at the given index.
    */
   java.lang.String getManifestPaths(int index);
-
   /**
    *
    *

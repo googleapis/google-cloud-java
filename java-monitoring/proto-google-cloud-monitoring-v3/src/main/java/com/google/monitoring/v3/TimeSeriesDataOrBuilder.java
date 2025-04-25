@@ -37,7 +37,6 @@ public interface TimeSeriesDataOrBuilder
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.LabelValue> getLabelValuesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TimeSeriesDataOrBuilder
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
   com.google.monitoring.v3.LabelValue getLabelValues(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface TimeSeriesDataOrBuilder
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
   int getLabelValuesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface TimeSeriesDataOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.LabelValueOrBuilder>
       getLabelValuesOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface TimeSeriesDataOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
   java.util.List<com.google.monitoring.v3.TimeSeriesData.PointData> getPointDataList();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface TimeSeriesDataOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
   com.google.monitoring.v3.TimeSeriesData.PointData getPointData(int index);
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public interface TimeSeriesDataOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
   int getPointDataCount();
-
   /**
    *
    *
@@ -139,7 +132,6 @@ public interface TimeSeriesDataOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.TimeSeriesData.PointDataOrBuilder>
       getPointDataOrBuilderList();
-
   /**
    *
    *

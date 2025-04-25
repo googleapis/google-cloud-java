@@ -36,7 +36,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return The accessConfig.
    */
   java.lang.String getAccessConfig();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return The networkInterface.
    */
   java.lang.String getNetworkInterface();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListTableDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TableDataProfile table_data_profiles = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.TableDataProfile> getTableDataProfilesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTableDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TableDataProfile table_data_profiles = 1;</code>
    */
   com.google.privacy.dlp.v2.TableDataProfile getTableDataProfiles(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTableDataProfilesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.TableDataProfile table_data_profiles = 1;</code>
    */
   int getTableDataProfilesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTableDataProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.TableDataProfileOrBuilder>
       getTableDataProfilesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListTableDataProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -46,7 +46,6 @@ public interface ControlledModeOrBuilder
    * @return Whether the startingLogicalOffset field is set.
    */
   boolean hasStartingLogicalOffset();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ControlledModeOrBuilder
    * @return The startingLogicalOffset.
    */
   java.lang.String getStartingLogicalOffset();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface ControlledModeOrBuilder
    * @return The fallbackStartingOffset.
    */
   java.lang.String getFallbackStartingOffset();
-
   /**
    *
    *

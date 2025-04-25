@@ -33,7 +33,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertHealthCheckRequest)
     InsertHealthCheckRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertHealthCheckRequest.newBuilder() to construct.
   private InsertHealthCheckRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int HEALTH_CHECK_RESOURCE_FIELD_NUMBER = 201925032;
   private com.google.cloud.compute.v1.HealthCheck healthCheckResource_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
   public boolean hasHealthCheckResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.HealthCheck.getDefaultInstance()
         : healthCheckResource_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -440,7 +431,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -679,7 +669,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.HealthCheck.Builder,
             com.google.cloud.compute.v1.HealthCheckOrBuilder>
         healthCheckResourceBuilder_;
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
     public boolean hasHealthCheckResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
         return healthCheckResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return getHealthCheckResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
             : healthCheckResource_;
       }
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -913,7 +893,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +917,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -962,7 +940,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1024,7 +999,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1043,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1064,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1081,6 @@ public final class InsertHealthCheckRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

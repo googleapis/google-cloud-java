@@ -37,7 +37,6 @@ public interface AccessDimensionValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

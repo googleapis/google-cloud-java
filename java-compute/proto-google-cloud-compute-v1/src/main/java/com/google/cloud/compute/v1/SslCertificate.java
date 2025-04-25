@@ -33,7 +33,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SslCertificate)
     SslCertificateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SslCertificate.newBuilder() to construct.
   private SslCertificate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGED = 479501183;</code>
      */
     public static final int MANAGED_VALUE = 479501183;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>SELF_MANAGED = 434437516;</code>
      */
     public static final int SELF_MANAGED_VALUE = 434437516;
-
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
 
@@ -245,7 +241,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificate_ = "";
-
   /**
    *
    *
@@ -261,7 +256,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCertificate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +307,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -330,7 +322,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -354,7 +345,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +373,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -399,7 +388,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -423,7 +411,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -452,7 +439,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expireTime_ = "";
-
   /**
    *
    *
@@ -468,7 +454,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -492,7 +477,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -519,7 +503,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -535,7 +518,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -556,7 +538,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -572,7 +553,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -596,7 +576,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -623,7 +602,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANAGED_FIELD_NUMBER = 298389407;
   private com.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed_;
-
   /**
    *
    *
@@ -641,7 +619,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasManaged() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -661,7 +638,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.getDefaultInstance()
         : managed_;
   }
-
   /**
    *
    *
@@ -685,7 +661,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -701,7 +676,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -725,7 +699,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -754,7 +727,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateKey_ = "";
-
   /**
    *
    *
@@ -770,7 +742,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrivateKey() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -794,7 +765,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -823,7 +793,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -839,7 +808,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -863,7 +831,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -892,7 +859,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -908,7 +874,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -932,7 +897,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -959,7 +923,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SELF_MANAGED_FIELD_NUMBER = 329284012;
   private com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate selfManaged_;
-
   /**
    *
    *
@@ -977,7 +940,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfManaged() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -997,7 +959,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate.getDefaultInstance()
         : selfManaged_;
   }
-
   /**
    *
    *
@@ -1022,7 +983,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subjectAlternativeNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1037,7 +997,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSubjectAlternativeNamesList() {
     return subjectAlternativeNames_;
   }
-
   /**
    *
    *
@@ -1052,7 +1011,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public int getSubjectAlternativeNamesCount() {
     return subjectAlternativeNames_.size();
   }
-
   /**
    *
    *
@@ -1068,7 +1026,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSubjectAlternativeNames(int index) {
     return subjectAlternativeNames_.get(index);
   }
-
   /**
    *
    *
@@ -1089,7 +1046,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -1106,7 +1062,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1131,7 +1086,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1508,7 +1462,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1922,7 +1875,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object certificate_ = "";
-
     /**
      *
      *
@@ -1937,7 +1889,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCertificate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1960,7 +1911,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1983,7 +1933,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2005,7 +1954,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2023,7 +1971,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +1995,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2063,7 +2009,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2086,7 +2031,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2109,7 +2053,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2131,7 +2074,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2149,7 +2091,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2174,7 +2115,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2189,7 +2129,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2212,7 +2151,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2235,7 +2173,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2257,7 +2194,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2275,7 +2211,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2300,7 +2235,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object expireTime_ = "";
-
     /**
      *
      *
@@ -2315,7 +2249,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2338,7 +2271,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2361,7 +2293,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2383,7 +2314,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2401,7 +2331,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2355,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2442,7 +2370,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2458,7 +2385,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2478,7 +2404,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2498,7 +2423,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -2513,7 +2437,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2536,7 +2459,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2559,7 +2481,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2581,7 +2502,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2599,7 +2519,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2629,7 +2548,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Builder,
             com.google.cloud.compute.v1.SslCertificateManagedSslCertificateOrBuilder>
         managedBuilder_;
-
     /**
      *
      *
@@ -2646,7 +2564,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManaged() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2669,7 +2586,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return managedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2695,7 +2611,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2718,7 +2633,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2751,7 +2665,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2773,7 +2686,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2703,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getManagedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2813,7 +2724,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             : managed_;
       }
     }
-
     /**
      *
      *
@@ -2843,7 +2753,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2858,7 +2767,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2881,7 +2789,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2904,7 +2811,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2926,7 +2832,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2944,7 +2849,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2969,7 +2873,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object privateKey_ = "";
-
     /**
      *
      *
@@ -2984,7 +2887,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrivateKey() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3007,7 +2909,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3030,7 +2931,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3052,7 +2952,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3070,7 +2969,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3095,7 +2993,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -3110,7 +3007,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3133,7 +3029,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3156,7 +3051,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3178,7 +3072,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3196,7 +3089,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3221,7 +3113,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -3236,7 +3127,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3259,7 +3149,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3282,7 +3171,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3304,7 +3192,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3322,7 +3209,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3352,7 +3238,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate.Builder,
             com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificateOrBuilder>
         selfManagedBuilder_;
-
     /**
      *
      *
@@ -3369,7 +3254,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfManaged() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3393,7 +3277,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return selfManagedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3419,7 +3302,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3443,7 +3325,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3476,7 +3357,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3498,7 +3378,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3516,7 +3395,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSelfManagedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3539,7 +3417,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             : selfManaged_;
       }
     }
-
     /**
      *
      *
@@ -3578,7 +3455,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00001000;
     }
-
     /**
      *
      *
@@ -3594,7 +3470,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       subjectAlternativeNames_.makeImmutable();
       return subjectAlternativeNames_;
     }
-
     /**
      *
      *
@@ -3609,7 +3484,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public int getSubjectAlternativeNamesCount() {
       return subjectAlternativeNames_.size();
     }
-
     /**
      *
      *
@@ -3625,7 +3499,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSubjectAlternativeNames(int index) {
       return subjectAlternativeNames_.get(index);
     }
-
     /**
      *
      *
@@ -3641,7 +3514,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSubjectAlternativeNamesBytes(int index) {
       return subjectAlternativeNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3665,7 +3537,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3688,7 +3559,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3708,7 +3578,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3727,7 +3596,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3753,7 +3621,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -3769,7 +3636,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -3793,7 +3659,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3817,7 +3682,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3840,7 +3704,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3859,7 +3722,6 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

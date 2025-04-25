@@ -34,7 +34,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.OneTimeWindow)
     OneTimeWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OneTimeWindow.newBuilder() to construct.
   private OneTimeWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_DATE_FIELD_NUMBER = 1;
   private com.google.type.Date startDate_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.type.TimeOfDay startTime_;
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeOfDay getStartTime() {
     return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_DATE_FIELD_NUMBER = 3;
   private com.google.type.Date endDate_;
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -196,7 +187,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
-
   /**
    *
    *
@@ -213,7 +203,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 4;
   private com.google.type.TimeOfDay endTime_;
-
   /**
    *
    *
@@ -229,7 +218,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -245,7 +233,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeOfDay getEndTime() {
     return endTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -465,7 +452,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -724,7 +710,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         startDateBuilder_;
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -758,7 +742,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return startDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -781,7 +764,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +783,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +829,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +843,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -881,7 +859,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
       }
     }
-
     /**
      *
      *
@@ -910,7 +887,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -925,7 +901,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -944,7 +919,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -967,7 +941,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +960,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +987,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1006,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1020,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1067,7 +1036,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1066,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endDateBuilder_;
-
     /**
      *
      *
@@ -1113,7 +1080,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndDate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1132,7 +1098,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return endDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1120,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1139,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1166,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1185,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1199,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1255,7 +1215,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1243,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1299,7 +1257,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1318,7 +1275,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1341,7 +1297,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1316,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1343,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1362,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1376,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1441,7 +1392,6 @@ public final class OneTimeWindow extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

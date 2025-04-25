@@ -33,7 +33,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PushFilter)
     PushFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PushFilter.newBuilder() to construct.
   private PushFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     private GitRefCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BRANCH_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBranch() {
     return gitRefCase_ == 2;
   }
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAG_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTag() {
     return gitRefCase_ == 3;
   }
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -278,7 +270,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INVERT_REGEX_FIELD_NUMBER = 4;
   private boolean invertRegex_ = false;
-
   /**
    *
    *
@@ -488,7 +479,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -742,7 +732,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBranch() {
       return gitRefCase_ == 2;
     }
-
     /**
      *
      *
@@ -774,7 +763,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -806,7 +794,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +818,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +840,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +884,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTag() {
       return gitRefCase_ == 3;
     }
-
     /**
      *
      *
@@ -931,7 +915,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -963,7 +946,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -988,7 +970,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +992,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1019,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean invertRegex_;
-
     /**
      *
      *
@@ -1056,7 +1035,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean getInvertRegex() {
       return invertRegex_;
     }
-
     /**
      *
      *
@@ -1077,7 +1055,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -32,7 +32,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RoutePolicyPolicyTerm)
     RoutePolicyPolicyTermOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoutePolicyPolicyTerm.newBuilder() to construct.
   private RoutePolicyPolicyTerm(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Expr> actions_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.compute.v1.Expr> getActionsList() {
     return actions_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       getActionsOrBuilderList() {
     return actions_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
   public int getActionsCount() {
     return actions_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.Expr getActions(int index) {
     return actions_.get(index);
   }
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
 
   public static final int MATCH_FIELD_NUMBER = 103668165;
   private com.google.cloud.compute.v1.Expr match_;
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
   public boolean hasMatch() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
   public com.google.cloud.compute.v1.Expr getMatch() {
     return match_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : match_;
   }
-
   /**
    *
    *
@@ -191,7 +182,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -413,7 +402,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -717,7 +705,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.Expr.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -989,7 +963,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       return getActionsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Expr.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1017,7 +989,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       return getActionsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Expr.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1054,7 +1025,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.Expr.Builder,
             com.google.cloud.compute.v1.ExprOrBuilder>
         matchBuilder_;
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     public boolean hasMatch() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1088,7 +1057,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return matchBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1079,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1098,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1125,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1144,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1158,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       onChanged();
       return getMatchFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1211,7 +1174,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
         return match_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : match_;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1201,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     }
 
     private int priority_;
-
     /**
      *
      *
@@ -1255,7 +1216,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1271,7 +1231,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -1291,7 +1250,6 @@ public final class RoutePolicyPolicyTerm extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

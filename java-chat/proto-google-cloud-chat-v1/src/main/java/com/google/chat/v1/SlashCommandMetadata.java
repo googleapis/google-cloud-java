@@ -33,7 +33,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.chat.v1.SlashCommandMetadata)
     SlashCommandMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SlashCommandMetadata.newBuilder() to construct.
   private SlashCommandMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,7 +109,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -121,7 +119,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
      * <code>ADD = 1;</code>
      */
     public static final int ADD_VALUE = 1;
-
     /**
      *
      *
@@ -219,7 +216,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int BOT_FIELD_NUMBER = 1;
   private com.google.chat.v1.User bot_;
-
   /**
    *
    *
@@ -235,7 +231,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasBot() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +246,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
   public com.google.chat.v1.User getBot() {
     return bot_ == null ? com.google.chat.v1.User.getDefaultInstance() : bot_;
   }
-
   /**
    *
    *
@@ -268,7 +262,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -284,7 +277,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -307,7 +299,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commandName_ = "";
-
   /**
    *
    *
@@ -331,7 +322,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -358,7 +348,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int COMMAND_ID_FIELD_NUMBER = 4;
   private long commandId_ = 0L;
-
   /**
    *
    *
@@ -377,7 +366,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int TRIGGERS_DIALOG_FIELD_NUMBER = 5;
   private boolean triggersDialog_ = false;
-
   /**
    *
    *
@@ -593,7 +581,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -850,7 +837,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
             com.google.chat.v1.User.Builder,
             com.google.chat.v1.UserOrBuilder>
         botBuilder_;
-
     /**
      *
      *
@@ -865,7 +851,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasBot() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -884,7 +869,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
         return botBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -907,7 +891,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +910,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +937,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +956,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +970,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getBotFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1007,7 +986,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
         return bot_ == null ? com.google.chat.v1.User.getDefaultInstance() : bot_;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1012,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1050,7 +1027,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1069,7 +1045,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
           com.google.chat.v1.SlashCommandMetadata.Type.forNumber(type_);
       return result == null ? com.google.chat.v1.SlashCommandMetadata.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1109,7 +1083,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1102,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object commandName_ = "";
-
     /**
      *
      *
@@ -1152,7 +1124,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1146,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1167,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1184,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1240,7 +1208,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private long commandId_;
-
     /**
      *
      *
@@ -1256,7 +1223,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     public long getCommandId() {
       return commandId_;
     }
-
     /**
      *
      *
@@ -1276,7 +1242,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1261,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private boolean triggersDialog_;
-
     /**
      *
      *
@@ -1312,7 +1276,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
     public boolean getTriggersDialog() {
       return triggersDialog_;
     }
-
     /**
      *
      *
@@ -1332,7 +1295,6 @@ public final class SlashCommandMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

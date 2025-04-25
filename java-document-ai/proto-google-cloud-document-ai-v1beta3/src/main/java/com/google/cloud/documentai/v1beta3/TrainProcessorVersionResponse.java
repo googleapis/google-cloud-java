@@ -34,7 +34,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.TrainProcessorVersionResponse)
     TrainProcessorVersionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrainProcessorVersionResponse.newBuilder() to construct.
   private TrainProcessorVersionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processorVersion_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -279,7 +276,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -470,7 +466,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object processorVersion_ = "";
-
     /**
      *
      *
@@ -493,7 +488,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -516,7 +510,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -538,7 +531,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -556,7 +548,6 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface PacketHeaderOrBuilder
    * @return Whether the captureTime field is set.
    */
   boolean hasCaptureTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PacketHeaderOrBuilder
    * @return The captureTime.
    */
   com.google.protobuf.Timestamp getCaptureTime();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface PacketHeaderOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface PacketHeaderOrBuilder
    * @return The type.
    */
   com.google.cloud.visionai.v1.PacketType getType();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface PacketHeaderOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface PacketHeaderOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface PacketHeaderOrBuilder
    * @return Whether the serverMetadata field is set.
    */
   boolean hasServerMetadata();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface PacketHeaderOrBuilder
    * @return The serverMetadata.
    */
   com.google.cloud.visionai.v1.ServerMetadata getServerMetadata();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface PacketHeaderOrBuilder
    * @return Whether the seriesMetadata field is set.
    */
   boolean hasSeriesMetadata();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface PacketHeaderOrBuilder
    * @return The seriesMetadata.
    */
   com.google.cloud.visionai.v1.SeriesMetadata getSeriesMetadata();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface PacketHeaderOrBuilder
    * @return The traceContext.
    */
   java.lang.String getTraceContext();
-
   /**
    *
    *

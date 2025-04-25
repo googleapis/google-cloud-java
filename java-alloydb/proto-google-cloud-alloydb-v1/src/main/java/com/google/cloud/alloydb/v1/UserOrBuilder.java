@@ -37,7 +37,6 @@ public interface UserOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UserOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UserOrBuilder
    * @return A list containing the databaseRoles.
    */
   java.util.List<java.lang.String> getDatabaseRolesList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UserOrBuilder
    * @return The count of databaseRoles.
    */
   int getDatabaseRolesCount();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface UserOrBuilder
    * @return The databaseRoles at the given index.
    */
   java.lang.String getDatabaseRoles(int index);
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface UserOrBuilder
    * @return The enum numeric value on the wire for userType.
    */
   int getUserTypeValue();
-
   /**
    *
    *

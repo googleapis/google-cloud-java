@@ -38,7 +38,6 @@ public interface UpdateMigrationJobRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateMigrationJobRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateMigrationJobRequestOrBuilder
    * @return Whether the migrationJob field is set.
    */
   boolean hasMigrationJob();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateMigrationJobRequestOrBuilder
    * @return The migrationJob.
    */
   com.google.cloud.clouddms.v1.MigrationJob getMigrationJob();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface UpdateMigrationJobRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

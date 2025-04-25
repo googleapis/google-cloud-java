@@ -33,7 +33,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.EventLink)
     EventLinkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EventLink.newBuilder() to construct.
   private EventLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.datacatalog.lineage.v1.EntityReference source_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()
         : source_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.lineage.v1.EntityReference target_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()
         : target_;
   }
-
   /**
    *
    *
@@ -359,7 +352,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +574,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder,
             com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder>
         sourceBuilder_;
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
         return sourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
             : source_;
       }
     }
-
     /**
      *
      *
@@ -796,7 +779,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder,
             com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder>
         targetBuilder_;
-
     /**
      *
      *
@@ -813,7 +795,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -836,7 +817,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
         return targetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -975,7 +950,6 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
             : target_;
       }
     }
-
     /**
      *
      *

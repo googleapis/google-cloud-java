@@ -33,7 +33,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse)
     ListVodStitchDetailsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVodStitchDetailsResponse.newBuilder() to construct.
   private ListVodStitchDetailsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.VodStitchDetail> vodStitchDetails_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       getVodStitchDetailsList() {
     return vodStitchDetails_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       getVodStitchDetailsOrBuilderList() {
     return vodStitchDetails_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
   public int getVodStitchDetailsCount() {
     return vodStitchDetails_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
   public com.google.cloud.video.stitcher.v1.VodStitchDetail getVodStitchDetails(int index) {
     return vodStitchDetails_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return vodStitchDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -669,7 +659,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return vodStitchDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return vodStitchDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         int index) {
       return getVodStitchDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return vodStitchDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -931,7 +908,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(vodStitchDetails_);
       }
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       return getVodStitchDetailsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.VodStitchDetail.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.video.stitcher.v1.VodStitchDetail.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1020,7 +993,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1053,6 @@ public final class ListVodStitchDetailsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

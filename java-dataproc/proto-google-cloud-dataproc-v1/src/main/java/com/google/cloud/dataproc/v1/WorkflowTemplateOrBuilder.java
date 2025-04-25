@@ -30,7 +30,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -59,7 +58,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface WorkflowTemplateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface WorkflowTemplateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface WorkflowTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -226,11 +219,9 @@ public interface WorkflowTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface WorkflowTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public interface WorkflowTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public interface WorkflowTemplateOrBuilder
    * @return Whether the placement field is set.
    */
   boolean hasPlacement();
-
   /**
    *
    *
@@ -330,7 +318,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The placement.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplatePlacement getPlacement();
-
   /**
    *
    *
@@ -356,7 +343,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.OrderedJob> getJobsList();
-
   /**
    *
    *
@@ -369,7 +355,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.OrderedJob getJobs(int index);
-
   /**
    *
    *
@@ -382,7 +367,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -395,7 +379,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.OrderedJobOrBuilder> getJobsOrBuilderList();
-
   /**
    *
    *
@@ -423,7 +406,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.TemplateParameter> getParametersList();
-
   /**
    *
    *
@@ -438,7 +420,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.TemplateParameter getParameters(int index);
-
   /**
    *
    *
@@ -453,7 +434,6 @@ public interface WorkflowTemplateOrBuilder
    * </code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -469,7 +449,6 @@ public interface WorkflowTemplateOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.TemplateParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -507,7 +486,6 @@ public interface WorkflowTemplateOrBuilder
    * @return Whether the dagTimeout field is set.
    */
   boolean hasDagTimeout();
-
   /**
    *
    *
@@ -530,7 +508,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The dagTimeout.
    */
   com.google.protobuf.Duration getDagTimeout();
-
   /**
    *
    *
@@ -567,7 +544,6 @@ public interface WorkflowTemplateOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
-
   /**
    *
    *
@@ -583,7 +559,6 @@ public interface WorkflowTemplateOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig getEncryptionConfig();
-
   /**
    *
    *

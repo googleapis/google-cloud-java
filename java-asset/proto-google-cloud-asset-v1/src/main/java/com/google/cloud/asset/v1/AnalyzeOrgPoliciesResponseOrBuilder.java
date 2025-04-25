@@ -40,7 +40,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
    */
   java.util.List<com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult>
       getOrgPolicyResultsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
    */
   com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult getOrgPolicyResults(
       int index);
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
    * </code>
    */
   int getOrgPolicyResultsCount();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResultOrBuilder>
       getOrgPolicyResultsOrBuilderList();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
    * @return Whether the constraint field is set.
    */
   boolean hasConstraint();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
    * @return The constraint.
    */
   com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint getConstraint();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface AnalyzeOrgPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

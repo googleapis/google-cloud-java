@@ -34,7 +34,6 @@ public interface ListBuildsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v1.Build> getBuildsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBuildsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
   com.google.cloudbuild.v1.Build getBuilds(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBuildsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
   int getBuildsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListBuildsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.BuildOrBuilder> getBuildsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListBuildsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ComparisonOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ComparisonOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ComparisonOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface ComparisonOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getDimensionFilter();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ComparisonOrBuilder
    * @return Whether the comparison field is set.
    */
   boolean hasComparison();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface ComparisonOrBuilder
    * @return The comparison.
    */
   java.lang.String getComparison();
-
   /**
    *
    *

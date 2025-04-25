@@ -33,7 +33,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse)
     ListOnlineReturnPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListOnlineReturnPoliciesResponse.newBuilder() to construct.
   private ListOnlineReturnPoliciesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy>
       onlineReturnPolicies_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       getOnlineReturnPoliciesList() {
     return onlineReturnPolicies_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       getOnlineReturnPoliciesOrBuilderList() {
     return onlineReturnPolicies_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
   public int getOnlineReturnPoliciesCount() {
     return onlineReturnPolicies_.size();
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       int index) {
     return onlineReturnPolicies_.get(index);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -392,7 +384,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +679,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return onlineReturnPoliciesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -707,7 +697,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return onlineReturnPoliciesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -727,7 +716,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return onlineReturnPoliciesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +925,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +940,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         getOnlineReturnPoliciesBuilder(int index) {
       return getOnlineReturnPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -981,7 +959,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return onlineReturnPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(onlineReturnPolicies_);
       }
     }
-
     /**
      *
      *
@@ -1020,7 +996,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
           .addBuilder(
               com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1039,7 +1014,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
               index,
               com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1077,7 +1051,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1101,7 +1074,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1097,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1137,6 @@ public final class ListOnlineReturnPoliciesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

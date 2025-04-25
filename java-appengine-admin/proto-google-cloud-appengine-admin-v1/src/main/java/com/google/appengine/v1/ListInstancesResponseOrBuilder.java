@@ -34,7 +34,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Instance instances = 1;</code>
    */
   java.util.List<com.google.appengine.v1.Instance> getInstancesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Instance instances = 1;</code>
    */
   com.google.appengine.v1.Instance getInstances(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Instance instances = 1;</code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.appengine.v1.Instance instances = 1;</code>
    */
   java.util.List<? extends com.google.appengine.v1.InstanceOrBuilder> getInstancesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListInstancesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

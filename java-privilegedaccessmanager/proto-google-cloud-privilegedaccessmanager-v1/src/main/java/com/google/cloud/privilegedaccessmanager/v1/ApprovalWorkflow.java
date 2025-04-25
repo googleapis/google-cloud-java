@@ -34,7 +34,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.ApprovalWorkflow)
     ApprovalWorkflowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApprovalWorkflow.newBuilder() to construct.
   private ApprovalWorkflow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
     private ApprovalWorkflowCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MANUAL_APPROVALS_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
   public boolean hasManualApprovals() {
     return approvalWorkflowCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -344,7 +339,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +562,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
             com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Builder,
             com.google.cloud.privilegedaccessmanager.v1.ManualApprovalsOrBuilder>
         manualApprovalsBuilder_;
-
     /**
      *
      *
@@ -585,7 +578,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
     public boolean hasManualApprovals() {
       return approvalWorkflowCase_ == 1;
     }
-
     /**
      *
      *
@@ -612,7 +604,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -637,7 +628,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
       approvalWorkflowCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
       approvalWorkflowCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +686,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
       approvalWorkflowCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
         getManualApprovalsBuilder() {
       return getManualApprovalsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class ApprovalWorkflow extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.getDefaultInstance();
       }
     }
-
     /**
      *
      *

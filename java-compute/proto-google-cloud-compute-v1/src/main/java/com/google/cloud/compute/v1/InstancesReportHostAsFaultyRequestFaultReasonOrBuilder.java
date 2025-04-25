@@ -37,7 +37,6 @@ public interface InstancesReportHostAsFaultyRequestFaultReasonOrBuilder
    * @return Whether the behavior field is set.
    */
   boolean hasBehavior();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InstancesReportHostAsFaultyRequestFaultReasonOrBuilder
    * @return The behavior.
    */
   java.lang.String getBehavior();
-
   /**
    *
    *
@@ -72,14 +70,12 @@ public interface InstancesReportHostAsFaultyRequestFaultReasonOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    * <code>optional string description = 422937596;</code>
    *

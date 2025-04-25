@@ -34,7 +34,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig)
     TranslateSpeechConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslateSpeechConfig.newBuilder() to construct.
   private TranslateSpeechConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object audioEncoding_ = "";
-
   /**
    *
    *
@@ -131,7 +129,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +192,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLanguageCode_ = "";
-
   /**
    *
    *
@@ -219,7 +215,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +243,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetLanguageCode_ = "";
-
   /**
    *
    *
@@ -272,7 +266,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 4;
   private int sampleRateHertz_ = 0;
-
   /**
    *
    *
@@ -323,7 +315,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -349,7 +340,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -572,7 +562,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -820,7 +809,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object audioEncoding_ = "";
-
     /**
      *
      *
@@ -878,7 +866,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -936,7 +923,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -993,7 +979,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1031,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1090,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object sourceLanguageCode_ = "";
-
     /**
      *
      *
@@ -1129,7 +1112,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1134,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1155,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1172,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1196,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object targetLanguageCode_ = "";
-
     /**
      *
      *
@@ -1240,7 +1218,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1263,7 +1240,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1285,7 +1261,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1278,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1302,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int sampleRateHertz_;
-
     /**
      *
      *
@@ -1347,7 +1320,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
-
     /**
      *
      *
@@ -1370,7 +1342,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1364,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -1418,7 +1388,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1443,7 +1412,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1467,7 +1435,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1454,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

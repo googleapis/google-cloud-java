@@ -39,7 +39,6 @@ public interface AnalyzeOrgPoliciesRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface AnalyzeOrgPoliciesRequestOrBuilder
    * @return The constraint.
    */
   java.lang.String getConstraint();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface AnalyzeOrgPoliciesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public interface AnalyzeOrgPoliciesRequestOrBuilder
    * @return Whether the pageSize field is set.
    */
   boolean hasPageSize();
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public interface AnalyzeOrgPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

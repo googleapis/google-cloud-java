@@ -34,7 +34,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.container.v1.StatusCondition)
     StatusConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StatusCondition.newBuilder() to construct.
   private StatusCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -163,7 +162,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -175,7 +173,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>GCE_STOCKOUT = 1;</code>
      */
     public static final int GCE_STOCKOUT_VALUE = 1;
-
     /**
      *
      *
@@ -187,7 +184,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>GKE_SERVICE_ACCOUNT_DELETED = 2;</code>
      */
     public static final int GKE_SERVICE_ACCOUNT_DELETED_VALUE = 2;
-
     /**
      *
      *
@@ -198,7 +194,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>GCE_QUOTA_EXCEEDED = 3;</code>
      */
     public static final int GCE_QUOTA_EXCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -209,7 +204,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>SET_BY_OPERATOR = 4;</code>
      */
     public static final int SET_BY_OPERATOR_VALUE = 4;
-
     /**
      *
      *
@@ -221,7 +215,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     public static final int CLOUD_KMS_KEY_ERROR_VALUE = 7;
-
     /**
      *
      *
@@ -326,7 +319,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
   public int getCodeValue() {
     return code_;
   }
-
   /**
    *
    *
@@ -373,7 +364,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -397,7 +387,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -424,7 +413,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
 
   public static final int CANONICAL_CODE_FIELD_NUMBER = 3;
   private int canonicalCode_ = 0;
-
   /**
    *
    *
@@ -440,7 +428,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
   public int getCanonicalCodeValue() {
     return canonicalCode_;
   }
-
   /**
    *
    *
@@ -634,7 +621,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -845,7 +831,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int code_ = 0;
-
     /**
      *
      *
@@ -865,7 +850,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     public int getCodeValue() {
       return code_;
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
           com.google.container.v1.StatusCondition.Code.forNumber(code_);
       return result == null ? com.google.container.v1.StatusCondition.Code.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -936,7 +918,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +941,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1023,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     private int canonicalCode_ = 0;
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
     public int getCanonicalCodeValue() {
       return canonicalCode_;
     }
-
     /**
      *
      *
@@ -1106,7 +1080,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1096,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       com.google.rpc.Code result = com.google.rpc.Code.forNumber(canonicalCode_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1145,7 +1117,6 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

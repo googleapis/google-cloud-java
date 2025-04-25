@@ -40,7 +40,6 @@ public interface DeleteRagCorpusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

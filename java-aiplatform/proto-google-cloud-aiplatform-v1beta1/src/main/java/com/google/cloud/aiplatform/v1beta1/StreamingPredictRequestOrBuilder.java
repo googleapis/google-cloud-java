@@ -40,7 +40,6 @@ public interface StreamingPredictRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface StreamingPredictRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor inputs = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> getInputsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface StreamingPredictRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor inputs = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Tensor getInputs(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface StreamingPredictRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor inputs = 2;</code>
    */
   int getInputsCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface StreamingPredictRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TensorOrBuilder>
       getInputsOrBuilderList();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface StreamingPredictRequestOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface StreamingPredictRequestOrBuilder
    * @return The parameters.
    */
   com.google.cloud.aiplatform.v1beta1.Tensor getParameters();
-
   /**
    *
    *

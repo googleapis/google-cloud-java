@@ -40,7 +40,6 @@ public interface AnswerRecordOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface AnswerRecordOrBuilder
    * @return Whether the answerFeedback field is set.
    */
   boolean hasAnswerFeedback();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface AnswerRecordOrBuilder
    * @return The answerFeedback.
    */
   com.google.cloud.dialogflow.v2beta1.AnswerFeedback getAnswerFeedback();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface AnswerRecordOrBuilder
    * @return Whether the agentAssistantRecord field is set.
    */
   boolean hasAgentAssistantRecord();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface AnswerRecordOrBuilder
    * @return The agentAssistantRecord.
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantRecord getAgentAssistantRecord();
-
   /**
    *
    *

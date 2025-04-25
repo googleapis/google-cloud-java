@@ -36,7 +36,6 @@ public interface BulkInsertOperationStatusOrBuilder
    * @return Whether the createdVmCount field is set.
    */
   boolean hasCreatedVmCount();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BulkInsertOperationStatusOrBuilder
    * @return Whether the deletedVmCount field is set.
    */
   boolean hasDeletedVmCount();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BulkInsertOperationStatusOrBuilder
    * @return Whether the failedToCreateVmCount field is set.
    */
   boolean hasFailedToCreateVmCount();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface BulkInsertOperationStatusOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface BulkInsertOperationStatusOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface BulkInsertOperationStatusOrBuilder
    * @return Whether the targetVmCount field is set.
    */
   boolean hasTargetVmCount();
-
   /**
    *
    *

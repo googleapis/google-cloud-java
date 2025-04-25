@@ -36,7 +36,6 @@ public interface StateConditionOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StateConditionOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

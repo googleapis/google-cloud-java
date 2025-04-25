@@ -39,7 +39,6 @@ public interface IgnoreJobRequestOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface IgnoreJobRequestOrBuilder
    * @return The phaseId.
    */
   java.lang.String getPhaseId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface IgnoreJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface IgnoreJobRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface IgnoreJobRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface IgnoreJobRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
-
   /**
    *
    *

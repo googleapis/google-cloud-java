@@ -33,7 +33,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.GkeClusterConfig)
     GkeClusterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GkeClusterConfig.newBuilder() to construct.
   private GkeClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gkeClusterTarget_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.GkeNodePoolTarget> nodePoolTarget_;
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.dataproc.v1.GkeNodePoolTarget> getNodePoolTargetList() {
     return nodePoolTarget_;
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       getNodePoolTargetOrBuilderList() {
     return nodePoolTarget_;
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
   public int getNodePoolTargetCount() {
     return nodePoolTarget_.size();
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.dataproc.v1.GkeNodePoolTarget getNodePoolTarget(int index) {
     return nodePoolTarget_.get(index);
   }
-
   /**
    *
    *
@@ -410,7 +402,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -654,7 +645,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object gkeClusterTarget_ = "";
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -737,7 +725,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +816,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return nodePoolTargetBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return nodePoolTargetBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -878,7 +862,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return nodePoolTargetBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +948,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +978,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1005,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1032,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1059,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1085,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1111,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1131,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         int index) {
       return getNodePoolTargetFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1182,7 +1155,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return nodePoolTargetBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1179,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(nodePoolTarget_);
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1199,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       return getNodePoolTargetFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.GkeNodePoolTarget.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1250,7 +1220,6 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
       return getNodePoolTargetFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.GkeNodePoolTarget.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface ProductTextGenerationMetadataOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ProductTextGenerationMetadataOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
-
   /**
    *
    *

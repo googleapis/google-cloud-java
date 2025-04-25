@@ -35,7 +35,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse)
     PurgeUserEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeUserEventsResponse.newBuilder() to construct.
   private PurgeUserEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
 
   public static final int PURGED_EVENTS_COUNT_FIELD_NUMBER = 1;
   private long purgedEventsCount_ = 0L;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent> userEventsSample_;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       getUserEventsSampleList() {
     return userEventsSample_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       getUserEventsSampleOrBuilderList() {
     return userEventsSample_;
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
   public int getUserEventsSampleCount() {
     return userEventsSample_.size();
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEventsSample(int index) {
     return userEventsSample_.get(index);
   }
-
   /**
    *
    *
@@ -345,7 +338,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -599,7 +591,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long purgedEventsCount_;
-
     /**
      *
      *
@@ -615,7 +606,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     public long getPurgedEventsCount() {
       return purgedEventsCount_;
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         return userEventsSampleBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         return userEventsSampleBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         return userEventsSampleBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +924,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +939,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         getUserEventsSampleBuilder(int index) {
       return getUserEventsSampleFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         return userEventsSampleBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(userEventsSample_);
       }
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       return getUserEventsSampleFieldBuilder()
           .addBuilder(com.google.cloud.recommendationengine.v1beta1.UserEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.recommendationengine.v1beta1.UserEvent.getDefaultInstance());
     }
-
     /**
      *
      *

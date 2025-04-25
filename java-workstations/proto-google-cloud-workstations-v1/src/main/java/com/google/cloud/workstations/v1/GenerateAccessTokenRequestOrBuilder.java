@@ -39,7 +39,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    * @return The workstation.
    */
   java.lang.String getWorkstation();
-
   /**
    *
    *

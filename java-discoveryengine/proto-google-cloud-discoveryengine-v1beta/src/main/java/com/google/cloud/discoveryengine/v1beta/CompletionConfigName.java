@@ -359,8 +359,7 @@ public class CompletionConfigName implements ResourceName {
     private Builder(CompletionConfigName completionConfigName) {
       Preconditions.checkArgument(
           Objects.equals(completionConfigName.pathTemplate, PROJECT_LOCATION_DATA_STORE),
-          "toBuilder is only supported when CompletionConfigName has the pattern of"
-              + " projects/{project}/locations/{location}/dataStores/{data_store}/completionConfig");
+          "toBuilder is only supported when CompletionConfigName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/completionConfig");
       this.project = completionConfigName.project;
       this.location = completionConfigName.location;
       this.dataStore = completionConfigName.dataStore;

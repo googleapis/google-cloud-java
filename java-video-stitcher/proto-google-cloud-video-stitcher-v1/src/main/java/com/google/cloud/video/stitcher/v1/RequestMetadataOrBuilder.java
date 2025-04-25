@@ -36,7 +36,6 @@ public interface RequestMetadataOrBuilder
    * @return Whether the headers field is set.
    */
   boolean hasHeaders();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RequestMetadataOrBuilder
    * @return The headers.
    */
   com.google.protobuf.Struct getHeaders();
-
   /**
    *
    *

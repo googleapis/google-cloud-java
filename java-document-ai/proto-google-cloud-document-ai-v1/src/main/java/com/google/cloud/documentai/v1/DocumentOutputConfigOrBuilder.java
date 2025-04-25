@@ -37,7 +37,6 @@ public interface DocumentOutputConfigOrBuilder
    * @return Whether the gcsOutputConfig field is set.
    */
   boolean hasGcsOutputConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DocumentOutputConfigOrBuilder
    * @return The gcsOutputConfig.
    */
   com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig getGcsOutputConfig();
-
   /**
    *
    *

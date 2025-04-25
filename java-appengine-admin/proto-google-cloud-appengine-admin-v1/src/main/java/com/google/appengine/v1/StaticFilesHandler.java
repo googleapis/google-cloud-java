@@ -36,7 +36,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.appengine.v1.StaticFilesHandler)
     StaticFilesHandlerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StaticFilesHandler.newBuilder() to construct.
   private StaticFilesHandler(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uploadPathRegex_ = "";
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -221,7 +216,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   public int getHttpHeadersCount() {
     return internalGetHttpHeaders().getMap().size();
   }
-
   /**
    *
    *
@@ -238,14 +232,12 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     }
     return internalGetHttpHeaders().getMap().containsKey(key);
   }
-
   /** Use {@link #getHttpHeadersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHttpHeaders() {
     return getHttpHeadersMap();
   }
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getHttpHeadersMap() {
     return internalGetHttpHeaders().getMap();
   }
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHttpHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -363,7 +351,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   public static final int EXPIRATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration expiration_;
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   public boolean hasExpiration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -397,7 +383,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Duration getExpiration() {
     return expiration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : expiration_;
   }
-
   /**
    *
    *
@@ -415,7 +400,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   public static final int REQUIRE_MATCHING_FILE_FIELD_NUMBER = 6;
   private boolean requireMatchingFile_ = false;
-
   /**
    *
    *
@@ -435,7 +419,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
   public static final int APPLICATION_READABLE_FIELD_NUMBER = 7;
   private boolean applicationReadable_ = false;
-
   /**
    *
    *
@@ -682,7 +665,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -995,7 +977,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -1020,7 +1001,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1025,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1048,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1067,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1093,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object uploadPathRegex_ = "";
-
     /**
      *
      *
@@ -1140,7 +1116,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1139,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1161,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1179,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1231,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public int getHttpHeadersCount() {
       return internalGetHttpHeaders().getMap().size();
     }
-
     /**
      *
      *
@@ -1276,14 +1247,12 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       }
       return internalGetHttpHeaders().getMap().containsKey(key);
     }
-
     /** Use {@link #getHttpHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHttpHeaders() {
       return getHttpHeadersMap();
     }
-
     /**
      *
      *
@@ -1297,7 +1266,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getHttpHeadersMap() {
       return internalGetHttpHeaders().getMap();
     }
-
     /**
      *
      *
@@ -1318,7 +1286,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHttpHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       internalGetMutableHttpHeaders().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1362,14 +1328,12 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       internalGetMutableHttpHeaders().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHttpHeaders() {
       bitField0_ |= 0x00000004;
       return internalGetMutableHttpHeaders().getMutableMap();
     }
-
     /**
      *
      *
@@ -1390,7 +1354,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1370,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -1433,7 +1395,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1459,7 +1420,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1484,7 +1444,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1464,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1496,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         expirationBuilder_;
-
     /**
      *
      *
@@ -1554,7 +1511,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public boolean hasExpiration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1576,7 +1532,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         return expirationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1555,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1575,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1650,7 +1603,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1671,7 +1623,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1638,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getExpirationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1707,7 +1657,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
             : expiration_;
       }
     }
-
     /**
      *
      *
@@ -1736,7 +1685,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean requireMatchingFile_;
-
     /**
      *
      *
@@ -1753,7 +1701,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public boolean getRequireMatchingFile() {
       return requireMatchingFile_;
     }
-
     /**
      *
      *
@@ -1774,7 +1721,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1795,7 +1741,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean applicationReadable_;
-
     /**
      *
      *
@@ -1815,7 +1760,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public boolean getApplicationReadable() {
       return applicationReadable_;
     }
-
     /**
      *
      *
@@ -1839,7 +1783,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelMonitoringAlertConfig)
     ModelMonitoringAlertConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringAlertConfig.newBuilder() to construct.
   private ModelMonitoringAlertConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
      * @return A list containing the userEmails.
      */
     java.util.List<java.lang.String> getUserEmailsList();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
      * @return The count of userEmails.
      */
     int getUserEmailsCount();
-
     /**
      *
      *
@@ -108,7 +105,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
      * @return The userEmails at the given index.
      */
     java.lang.String getUserEmails(int index);
-
     /**
      *
      *
@@ -123,7 +119,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getUserEmailsBytes(int index);
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig)
       EmailAlertConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EmailAlertConfig.newBuilder() to construct.
     private EmailAlertConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -175,7 +169,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList userEmails_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -190,7 +183,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public com.google.protobuf.ProtocolStringList getUserEmailsList() {
       return userEmails_;
     }
-
     /**
      *
      *
@@ -205,7 +197,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public int getUserEmailsCount() {
       return userEmails_.size();
     }
-
     /**
      *
      *
@@ -221,7 +212,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public java.lang.String getUserEmails(int index) {
       return userEmails_.get(index);
     }
-
     /**
      *
      *
@@ -413,7 +403,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -627,7 +616,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -643,7 +631,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         userEmails_.makeImmutable();
         return userEmails_;
       }
-
       /**
        *
        *
@@ -658,7 +645,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       public int getUserEmailsCount() {
         return userEmails_.size();
       }
-
       /**
        *
        *
@@ -674,7 +660,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       public java.lang.String getUserEmails(int index) {
         return userEmails_.get(index);
       }
-
       /**
        *
        *
@@ -690,7 +675,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       public com.google.protobuf.ByteString getUserEmailsBytes(int index) {
         return userEmails_.getByteString(index);
       }
-
       /**
        *
        *
@@ -714,7 +698,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -737,7 +720,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -757,7 +739,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -776,7 +757,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -885,7 +865,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     private AlertCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -917,7 +896,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   }
 
   public static final int EMAIL_ALERT_CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -935,7 +913,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   public boolean hasEmailAlertConfig() {
     return alertCase_ == 1;
   }
-
   /**
    *
    *
@@ -958,7 +935,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     return com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -982,7 +958,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
 
   public static final int ENABLE_LOGGING_FIELD_NUMBER = 2;
   private boolean enableLogging_ = false;
-
   /**
    *
    *
@@ -1008,7 +983,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList notificationChannels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1026,7 +1000,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getNotificationChannelsList() {
     return notificationChannels_;
   }
-
   /**
    *
    *
@@ -1044,7 +1017,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   public int getNotificationChannelsCount() {
     return notificationChannels_.size();
   }
-
   /**
    *
    *
@@ -1063,7 +1035,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   public java.lang.String getNotificationChannels(int index) {
     return notificationChannels_.get(index);
   }
-
   /**
    *
    *
@@ -1286,7 +1257,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1542,7 +1512,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig.Builder,
             com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfigOrBuilder>
         emailAlertConfigBuilder_;
-
     /**
      *
      *
@@ -1560,7 +1529,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public boolean hasEmailAlertConfig() {
       return alertCase_ == 1;
     }
-
     /**
      *
      *
@@ -1592,7 +1560,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1618,7 +1585,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       alertCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1642,7 +1608,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       alertCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1681,7 +1646,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       alertCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1709,7 +1673,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1688,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         getEmailAlertConfigBuilder() {
       return getEmailAlertConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1751,7 +1713,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1791,7 +1752,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     }
 
     private boolean enableLogging_;
-
     /**
      *
      *
@@ -1811,7 +1771,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public boolean getEnableLogging() {
       return enableLogging_;
     }
-
     /**
      *
      *
@@ -1835,7 +1794,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1867,7 +1825,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1886,7 +1843,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       notificationChannels_.makeImmutable();
       return notificationChannels_;
     }
-
     /**
      *
      *
@@ -1904,7 +1860,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public int getNotificationChannelsCount() {
       return notificationChannels_.size();
     }
-
     /**
      *
      *
@@ -1923,7 +1878,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public java.lang.String getNotificationChannels(int index) {
       return notificationChannels_.get(index);
     }
-
     /**
      *
      *
@@ -1942,7 +1896,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getNotificationChannelsBytes(int index) {
       return notificationChannels_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1969,7 +1922,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1947,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1969,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1990,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

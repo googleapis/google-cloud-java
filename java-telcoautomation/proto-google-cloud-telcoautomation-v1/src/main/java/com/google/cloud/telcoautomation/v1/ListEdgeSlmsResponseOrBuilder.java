@@ -34,7 +34,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1.EdgeSlm edge_slms = 1;</code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1.EdgeSlm> getEdgeSlmsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1.EdgeSlm edge_slms = 1;</code>
    */
   com.google.cloud.telcoautomation.v1.EdgeSlm getEdgeSlms(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1.EdgeSlm edge_slms = 1;</code>
    */
   int getEdgeSlmsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1.EdgeSlmOrBuilder>
       getEdgeSlmsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListEdgeSlmsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnswerFeedback)
     AnswerFeedbackOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnswerFeedback.newBuilder() to construct.
   private AnswerFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>CORRECTNESS_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int CORRECTNESS_LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_CORRECT = 1;</code>
      */
     public static final int NOT_CORRECT_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTIALLY_CORRECT = 2;</code>
      */
     public static final int PARTIALLY_CORRECT_VALUE = 2;
-
     /**
      *
      *
@@ -253,7 +249,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CORRECTNESS_LEVEL_FIELD_NUMBER = 1;
   private int correctnessLevel_ = 0;
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public int getCorrectnessLevelValue() {
     return correctnessLevel_;
   }
-
   /**
    *
    *
@@ -298,7 +292,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLICKED_FIELD_NUMBER = 2;
   private boolean clicked_ = false;
-
   /**
    *
    *
@@ -317,7 +310,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISPLAYED_FIELD_NUMBER = 3;
   private boolean displayed_ = false;
-
   /**
    *
    *
@@ -519,7 +511,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -729,7 +720,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int correctnessLevel_ = 0;
-
     /**
      *
      *
@@ -747,7 +737,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public int getCorrectnessLevelValue() {
       return correctnessLevel_;
     }
-
     /**
      *
      *
@@ -768,7 +757,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +780,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.AnswerFeedback.CorrectnessLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -817,7 +804,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +825,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clicked_;
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean getClicked() {
       return clicked_;
     }
-
     /**
      *
      *
@@ -875,7 +859,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean displayed_;
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisplayed() {
       return displayed_;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

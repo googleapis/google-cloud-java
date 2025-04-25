@@ -33,7 +33,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.MetricCompatibility)
     MetricCompatibilityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MetricCompatibility.newBuilder() to construct.
   private MetricCompatibility(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int METRIC_METADATA_FIELD_NUMBER = 1;
   private com.google.analytics.data.v1beta.MetricMetadata metricMetadata_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
   public boolean hasMetricMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
         ? com.google.analytics.data.v1beta.MetricMetadata.getDefaultInstance()
         : metricMetadata_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
 
   public static final int COMPATIBILITY_FIELD_NUMBER = 2;
   private int compatibility_ = 0;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
   public boolean hasCompatibility() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
   public int getCompatibilityValue() {
     return compatibility_;
   }
-
   /**
    *
    *
@@ -358,7 +351,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +569,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
             com.google.analytics.data.v1beta.MetricMetadata.Builder,
             com.google.analytics.data.v1beta.MetricMetadataOrBuilder>
         metricMetadataBuilder_;
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
     public boolean hasMetricMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
         return metricMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMetricMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
             : metricMetadata_;
       }
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
     }
 
     private int compatibility_ = 0;
-
     /**
      *
      *
@@ -803,7 +785,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
     public boolean hasCompatibility() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
     public int getCompatibilityValue() {
       return compatibility_;
     }
-
     /**
      *
      *
@@ -840,7 +820,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +838,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
           com.google.analytics.data.v1beta.Compatibility.forNumber(compatibility_);
       return result == null ? com.google.analytics.data.v1beta.Compatibility.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -882,7 +860,6 @@ public final class MetricCompatibility extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource)
     LocalInventoryDataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocalInventoryDataSource.newBuilder() to construct.
   private LocalInventoryDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object feedLabel_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentLanguage_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +361,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +570,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object feedLabel_ = "";
-
     /**
      *
      *
@@ -608,7 +601,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -640,7 +632,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -671,7 +662,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +688,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +721,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
     }
 
     private java.lang.Object contentLanguage_ = "";
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -784,7 +771,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class LocalInventoryDataSource extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

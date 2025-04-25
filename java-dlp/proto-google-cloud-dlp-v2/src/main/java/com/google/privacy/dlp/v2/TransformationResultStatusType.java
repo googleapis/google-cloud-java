@@ -99,7 +99,6 @@ public enum TransformationResultStatusType implements com.google.protobuf.Protoc
    * <code>STATE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int STATE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -111,7 +110,6 @@ public enum TransformationResultStatusType implements com.google.protobuf.Protoc
    * <code>INVALID_TRANSFORM = 1;</code>
    */
   public static final int INVALID_TRANSFORM_VALUE = 1;
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public enum TransformationResultStatusType implements com.google.protobuf.Protoc
    * <code>BIGQUERY_MAX_ROW_SIZE_EXCEEDED = 2;</code>
    */
   public static final int BIGQUERY_MAX_ROW_SIZE_EXCEEDED_VALUE = 2;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public enum TransformationResultStatusType implements com.google.protobuf.Protoc
    * <code>METADATA_UNRETRIEVABLE = 3;</code>
    */
   public static final int METADATA_UNRETRIEVABLE_VALUE = 3;
-
   /**
    *
    *

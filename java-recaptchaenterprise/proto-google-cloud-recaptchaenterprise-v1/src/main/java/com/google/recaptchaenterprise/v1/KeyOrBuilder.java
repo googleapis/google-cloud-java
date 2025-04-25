@@ -37,7 +37,6 @@ public interface KeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface KeyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface KeyOrBuilder
    * @return Whether the webSettings field is set.
    */
   boolean hasWebSettings();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface KeyOrBuilder
    * @return The webSettings.
    */
   com.google.recaptchaenterprise.v1.WebKeySettings getWebSettings();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface KeyOrBuilder
    * @return Whether the androidSettings field is set.
    */
   boolean hasAndroidSettings();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface KeyOrBuilder
    * @return The androidSettings.
    */
   com.google.recaptchaenterprise.v1.AndroidKeySettings getAndroidSettings();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface KeyOrBuilder
    * @return Whether the iosSettings field is set.
    */
   boolean hasIosSettings();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface KeyOrBuilder
    * @return The iosSettings.
    */
   com.google.recaptchaenterprise.v1.IOSKeySettings getIosSettings();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface KeyOrBuilder
    * @return Whether the expressSettings field is set.
    */
   boolean hasExpressSettings();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public interface KeyOrBuilder
    * @return The expressSettings.
    */
   com.google.recaptchaenterprise.v1.ExpressKeySettings getExpressSettings();
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public interface KeyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -249,11 +238,9 @@ public interface KeyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -265,7 +252,6 @@ public interface KeyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -281,7 +267,6 @@ public interface KeyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -307,7 +292,6 @@ public interface KeyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -321,7 +305,6 @@ public interface KeyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -348,7 +331,6 @@ public interface KeyOrBuilder
    * @return Whether the testingOptions field is set.
    */
   boolean hasTestingOptions();
-
   /**
    *
    *
@@ -363,7 +345,6 @@ public interface KeyOrBuilder
    * @return The testingOptions.
    */
   com.google.recaptchaenterprise.v1.TestingOptions getTestingOptions();
-
   /**
    *
    *
@@ -391,7 +372,6 @@ public interface KeyOrBuilder
    * @return Whether the wafSettings field is set.
    */
   boolean hasWafSettings();
-
   /**
    *
    *
@@ -406,7 +386,6 @@ public interface KeyOrBuilder
    * @return The wafSettings.
    */
   com.google.recaptchaenterprise.v1.WafSettings getWafSettings();
-
   /**
    *
    *

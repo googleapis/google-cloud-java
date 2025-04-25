@@ -37,7 +37,6 @@ public interface CopyModelResponseOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CopyModelResponseOrBuilder
    * @return The modelVersionId.
    */
   java.lang.String getModelVersionId();
-
   /**
    *
    *

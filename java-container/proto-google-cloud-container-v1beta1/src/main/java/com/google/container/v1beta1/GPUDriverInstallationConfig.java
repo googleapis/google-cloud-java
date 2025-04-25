@@ -34,7 +34,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.GPUDriverInstallationConfig)
     GPUDriverInstallationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GPUDriverInstallationConfig.newBuilder() to construct.
   private GPUDriverInstallationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
      * <code>GPU_DRIVER_VERSION_UNSPECIFIED = 0;</code>
      */
     public static final int GPU_DRIVER_VERSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
      * <code>INSTALLATION_DISABLED = 1;</code>
      */
     public static final int INSTALLATION_DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
      * <code>DEFAULT = 2;</code>
      */
     public static final int DEFAULT_VALUE = 2;
-
     /**
      *
      *
@@ -254,7 +250,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int GPU_DRIVER_VERSION_FIELD_NUMBER = 1;
   private int gpuDriverVersion_ = 0;
-
   /**
    *
    *
@@ -272,7 +267,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
   public boolean hasGpuDriverVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -290,7 +284,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
   public int getGpuDriverVersionValue() {
     return gpuDriverVersion_;
   }
-
   /**
    *
    *
@@ -480,7 +473,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +659,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int gpuDriverVersion_ = 0;
-
     /**
      *
      *
@@ -685,7 +676,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
     public boolean hasGpuDriverVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -703,7 +693,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
     public int getGpuDriverVersionValue() {
       return gpuDriverVersion_;
     }
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
           ? com.google.container.v1beta1.GPUDriverInstallationConfig.GPUDriverVersion.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class GPUDriverInstallationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

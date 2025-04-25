@@ -46,7 +46,6 @@ public interface GenerateAzureAccessTokenRequestOrBuilder
    * @return The azureCluster.
    */
   java.lang.String getAzureCluster();
-
   /**
    *
    *

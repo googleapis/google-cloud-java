@@ -32,7 +32,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthStatus)
     HealthStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HealthStatus.newBuilder() to construct.
   private HealthStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,10 +122,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATE_VALUE = 0;
-
     /** <code>HEALTHY = 439801213;</code> */
     public static final int HEALTHY_VALUE = 439801213;
-
     /** <code>UNHEALTHY = 462118084;</code> */
     public static final int UNHEALTHY_VALUE = 462118084;
 
@@ -403,7 +400,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     public static final int UNDEFINED_WEIGHT_ERROR_VALUE = 0;
-
     /**
      *
      *
@@ -414,7 +410,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>INVALID_WEIGHT = 383698400;</code>
      */
     public static final int INVALID_WEIGHT_VALUE = 383698400;
-
     /**
      *
      *
@@ -425,7 +420,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>MISSING_WEIGHT = 384027537;</code>
      */
     public static final int MISSING_WEIGHT_VALUE = 384027537;
-
     /**
      *
      *
@@ -436,7 +430,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
      */
     public static final int UNAVAILABLE_WEIGHT_VALUE = 439464295;
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -580,14 +572,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -601,7 +591,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -622,7 +611,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -648,7 +636,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
-
   /**
    *
    *
@@ -664,7 +651,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForwardingRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -688,7 +674,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -717,7 +702,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRuleIp_ = "";
-
   /**
    *
    *
@@ -733,7 +717,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForwardingRuleIp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -757,7 +740,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -786,7 +768,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthState_ = "";
-
   /**
    *
    *
@@ -803,7 +784,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHealthState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -828,7 +808,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -858,7 +837,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -874,7 +852,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -898,7 +875,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -927,7 +903,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
-
   /**
    *
    *
@@ -943,7 +918,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIpAddress() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -967,7 +941,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -996,7 +969,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6Address_ = "";
-
   /**
    * <code>optional string ipv6_address = 341563804;</code>
    *
@@ -1006,7 +978,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIpv6Address() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    * <code>optional string ipv6_address = 341563804;</code>
    *
@@ -1024,7 +995,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    * <code>optional string ipv6_address = 341563804;</code>
    *
@@ -1047,7 +1017,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6HealthState_ = "";
-
   /**
    *
    *
@@ -1064,7 +1033,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIpv6HealthState() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1089,7 +1057,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1117,7 +1084,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_ = 0;
-
   /**
    *
    *
@@ -1133,7 +1099,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPort() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1154,7 +1119,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object weight_ = "";
-
   /**
    * <code>optional string weight = 282149496;</code>
    *
@@ -1164,7 +1128,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWeight() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    * <code>optional string weight = 282149496;</code>
    *
@@ -1182,7 +1145,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    * <code>optional string weight = 282149496;</code>
    *
@@ -1205,7 +1167,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object weightError_ = "";
-
   /**
    *
    *
@@ -1222,7 +1183,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWeightError() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1247,7 +1207,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1580,7 +1539,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1976,7 +1934,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -1993,14 +1950,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -2014,7 +1969,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -2035,7 +1989,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2062,7 +2015,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2079,14 +2031,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000001;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -2107,7 +2057,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -2124,7 +2073,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object forwardingRule_ = "";
-
     /**
      *
      *
@@ -2139,7 +2087,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForwardingRule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2162,7 +2109,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2185,7 +2131,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2207,7 +2152,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2169,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2250,7 +2193,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object forwardingRuleIp_ = "";
-
     /**
      *
      *
@@ -2265,7 +2207,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForwardingRuleIp() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2288,7 +2229,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2311,7 +2251,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2333,7 +2272,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2351,7 +2289,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2376,7 +2313,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object healthState_ = "";
-
     /**
      *
      *
@@ -2392,7 +2328,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHealthState() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2416,7 +2351,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2440,7 +2374,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2463,7 +2396,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2482,7 +2414,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2508,7 +2439,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -2523,7 +2453,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2546,7 +2475,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2569,7 +2497,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2591,7 +2518,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2609,7 +2535,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2559,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -2649,7 +2573,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2672,7 +2595,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2695,7 +2617,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2717,7 +2638,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2655,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2760,7 +2679,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipv6Address_ = "";
-
     /**
      * <code>optional string ipv6_address = 341563804;</code>
      *
@@ -2769,7 +2687,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIpv6Address() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      * <code>optional string ipv6_address = 341563804;</code>
      *
@@ -2786,7 +2703,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string ipv6_address = 341563804;</code>
      *
@@ -2803,7 +2719,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string ipv6_address = 341563804;</code>
      *
@@ -2819,7 +2734,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string ipv6_address = 341563804;</code>
      *
@@ -2831,7 +2745,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string ipv6_address = 341563804;</code>
      *
@@ -2850,7 +2763,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipv6HealthState_ = "";
-
     /**
      *
      *
@@ -2866,7 +2778,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIpv6HealthState() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2890,7 +2801,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2914,7 +2824,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2937,7 +2846,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2956,7 +2864,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2982,7 +2889,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int port_;
-
     /**
      *
      *
@@ -2998,7 +2904,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPort() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3014,7 +2919,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -3034,7 +2938,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3054,7 +2957,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object weight_ = "";
-
     /**
      * <code>optional string weight = 282149496;</code>
      *
@@ -3063,7 +2965,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWeight() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      * <code>optional string weight = 282149496;</code>
      *
@@ -3080,7 +2981,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string weight = 282149496;</code>
      *
@@ -3097,7 +2997,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string weight = 282149496;</code>
      *
@@ -3113,7 +3012,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string weight = 282149496;</code>
      *
@@ -3125,7 +3023,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string weight = 282149496;</code>
      *
@@ -3144,7 +3041,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object weightError_ = "";
-
     /**
      *
      *
@@ -3160,7 +3056,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWeightError() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3184,7 +3079,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3208,7 +3102,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3231,7 +3124,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3250,7 +3142,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

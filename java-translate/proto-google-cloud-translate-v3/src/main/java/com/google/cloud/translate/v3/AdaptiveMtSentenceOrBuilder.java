@@ -39,7 +39,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return The sourceSentence.
    */
   java.lang.String getSourceSentence();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return The targetSentence.
    */
   java.lang.String getTargetSentence();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface AdaptiveMtSentenceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

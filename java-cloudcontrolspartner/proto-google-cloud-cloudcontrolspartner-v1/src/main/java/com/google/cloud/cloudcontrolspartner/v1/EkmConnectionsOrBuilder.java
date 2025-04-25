@@ -37,7 +37,6 @@ public interface EkmConnectionsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EkmConnectionsOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.EkmConnection ekm_connections = 2;</code>
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1.EkmConnection> getEkmConnectionsList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface EkmConnectionsOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.EkmConnection ekm_connections = 2;</code>
    */
   com.google.cloud.cloudcontrolspartner.v1.EkmConnection getEkmConnections(int index);
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface EkmConnectionsOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.EkmConnection ekm_connections = 2;</code>
    */
   int getEkmConnectionsCount();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface EkmConnectionsOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1.EkmConnectionOrBuilder>
       getEkmConnectionsOrBuilderList();
-
   /**
    *
    *

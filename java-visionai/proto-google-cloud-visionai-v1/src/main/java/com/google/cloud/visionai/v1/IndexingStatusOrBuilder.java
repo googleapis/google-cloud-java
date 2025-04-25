@@ -38,7 +38,6 @@ public interface IndexingStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface IndexingStatusOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *

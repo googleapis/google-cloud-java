@@ -33,7 +33,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.MysqlSourceConfig)
     MysqlSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MysqlSourceConfig.newBuilder() to construct.
   private MysqlSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int ALLOWLIST_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1alpha1.MysqlRdbms allowlist_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAllowlist() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance()
         : allowlist_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int REJECTLIST_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1alpha1.MysqlRdbms rejectlist_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRejectlist() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance()
         : rejectlist_;
   }
-
   /**
    *
    *
@@ -348,7 +341,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -571,7 +563,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder>
         allowlistBuilder_;
-
     /**
      *
      *
@@ -586,7 +577,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAllowlist() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -607,7 +597,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         return allowlistBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -630,7 +619,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +666,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +685,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +699,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getAllowlistFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -733,7 +717,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             : allowlist_;
       }
     }
-
     /**
      *
      *
@@ -766,7 +749,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder>
         rejectlistBuilder_;
-
     /**
      *
      *
@@ -781,7 +763,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRejectlist() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -802,7 +783,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         return rejectlistBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -825,7 +805,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +825,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +853,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +872,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +886,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRejectlistFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -929,7 +904,6 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             : rejectlist_;
       }
     }
-
     /**
      *
      *

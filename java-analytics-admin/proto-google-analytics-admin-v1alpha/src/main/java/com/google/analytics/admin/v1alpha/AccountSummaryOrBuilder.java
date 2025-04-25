@@ -38,7 +38,6 @@ public interface AccountSummaryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AccountSummaryOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface AccountSummaryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface AccountSummaryOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.PropertySummary property_summaries = 4;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.PropertySummary> getPropertySummariesList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface AccountSummaryOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.PropertySummary property_summaries = 4;</code>
    */
   com.google.analytics.admin.v1alpha.PropertySummary getPropertySummaries(int index);
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AccountSummaryOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.PropertySummary property_summaries = 4;</code>
    */
   int getPropertySummariesCount();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface AccountSummaryOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.PropertySummaryOrBuilder>
       getPropertySummariesOrBuilderList();
-
   /**
    *
    *

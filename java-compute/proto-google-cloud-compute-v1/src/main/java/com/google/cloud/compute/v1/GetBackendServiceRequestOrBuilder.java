@@ -36,7 +36,6 @@ public interface GetBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ListSKAdNetworkConversionValueSchemasResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
       getSkadnetworkConversionValueSchemasList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ListSKAdNetworkConversionValueSchemasResponseOrBuilder
    */
   com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
       getSkadnetworkConversionValueSchemas(int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface ListSKAdNetworkConversionValueSchemasResponseOrBuilder
    * </code>
    */
   int getSkadnetworkConversionValueSchemasCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface ListSKAdNetworkConversionValueSchemasResponseOrBuilder
   java.util.List<
           ? extends com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder>
       getSkadnetworkConversionValueSchemasOrBuilderList();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface ListSKAdNetworkConversionValueSchemasResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpcomingMaintenance)
     UpcomingMaintenanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpcomingMaintenance.newBuilder() to construct.
   private UpcomingMaintenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_MAINTENANCE_STATUS = 0;</code>
      */
     public static final int UNDEFINED_MAINTENANCE_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>ONGOING = 473158491;</code>
      */
     public static final int ONGOING_VALUE = 473158491;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>PENDING = 35394935;</code>
      */
     public static final int PENDING_VALUE = 35394935;
-
     /**
      *
      *
@@ -315,7 +311,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -326,7 +321,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>SCHEDULED = 478400653;</code>
      */
     public static final int SCHEDULED_VALUE = 478400653;
-
     /**
      *
      *
@@ -337,7 +331,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>UNKNOWN_TYPE = 490705455;</code>
      */
     public static final int UNKNOWN_TYPE_VALUE = 490705455;
-
     /**
      *
      *
@@ -437,7 +430,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CAN_RESCHEDULE_FIELD_NUMBER = 95981977;
   private boolean canReschedule_ = false;
-
   /**
    *
    *
@@ -453,7 +445,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   public boolean hasCanReschedule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -474,7 +465,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestWindowStartTime_ = "";
-
   /**
    *
    *
@@ -490,7 +480,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   public boolean hasLatestWindowStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -514,7 +503,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -543,7 +531,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object maintenanceStatus_ = "";
-
   /**
    *
    *
@@ -560,7 +547,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   public boolean hasMaintenanceStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -585,7 +571,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -615,7 +600,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -632,7 +616,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   public boolean hasType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -657,7 +640,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -687,7 +669,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object windowEndTime_ = "";
-
   /**
    *
    *
@@ -703,7 +684,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   public boolean hasWindowEndTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -727,7 +707,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -756,7 +735,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object windowStartTime_ = "";
-
   /**
    *
    *
@@ -772,7 +750,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
   public boolean hasWindowStartTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -796,7 +773,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1058,7 +1034,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1324,7 +1299,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean canReschedule_;
-
     /**
      *
      *
@@ -1340,7 +1314,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean hasCanReschedule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1356,7 +1329,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean getCanReschedule() {
       return canReschedule_;
     }
-
     /**
      *
      *
@@ -1376,7 +1348,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1367,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object latestWindowStartTime_ = "";
-
     /**
      *
      *
@@ -1411,7 +1381,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean hasLatestWindowStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1434,7 +1403,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1457,7 +1425,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1479,7 +1446,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1463,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1487,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object maintenanceStatus_ = "";
-
     /**
      *
      *
@@ -1538,7 +1502,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean hasMaintenanceStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1562,7 +1525,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1548,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1609,7 +1570,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1588,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1654,7 +1613,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1670,7 +1628,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean hasType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1694,7 +1651,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1718,7 +1674,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1741,7 +1696,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1714,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1786,7 +1739,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object windowEndTime_ = "";
-
     /**
      *
      *
@@ -1801,7 +1753,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean hasWindowEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1824,7 +1775,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1847,7 +1797,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1869,7 +1818,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1887,7 +1835,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1912,7 +1859,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object windowStartTime_ = "";
-
     /**
      *
      *
@@ -1927,7 +1873,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
     public boolean hasWindowStartTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1950,7 +1895,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1973,7 +1917,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1995,7 +1938,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2013,7 +1955,6 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

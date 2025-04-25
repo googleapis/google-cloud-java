@@ -37,7 +37,6 @@ public interface WindowsUpdateOrBuilder
    * @return Whether the identity field is set.
    */
   boolean hasIdentity();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface WindowsUpdateOrBuilder
    * @return The identity.
    */
   io.grafeas.v1.WindowsUpdate.Identity getIdentity();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface WindowsUpdateOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface WindowsUpdateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface WindowsUpdateOrBuilder
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
   java.util.List<io.grafeas.v1.WindowsUpdate.Category> getCategoriesList();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface WindowsUpdateOrBuilder
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
   io.grafeas.v1.WindowsUpdate.Category getCategories(int index);
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public interface WindowsUpdateOrBuilder
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
   int getCategoriesCount();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface WindowsUpdateOrBuilder
    */
   java.util.List<? extends io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>
       getCategoriesOrBuilderList();
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public interface WindowsUpdateOrBuilder
    * @return A list containing the kbArticleIds.
    */
   java.util.List<java.lang.String> getKbArticleIdsList();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface WindowsUpdateOrBuilder
    * @return The count of kbArticleIds.
    */
   int getKbArticleIdsCount();
-
   /**
    *
    *
@@ -212,7 +202,6 @@ public interface WindowsUpdateOrBuilder
    * @return The kbArticleIds at the given index.
    */
   java.lang.String getKbArticleIds(int index);
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface WindowsUpdateOrBuilder
    * @return The supportUrl.
    */
   java.lang.String getSupportUrl();
-
   /**
    *
    *
@@ -266,7 +254,6 @@ public interface WindowsUpdateOrBuilder
    * @return Whether the lastPublishedTimestamp field is set.
    */
   boolean hasLastPublishedTimestamp();
-
   /**
    *
    *
@@ -279,7 +266,6 @@ public interface WindowsUpdateOrBuilder
    * @return The lastPublishedTimestamp.
    */
   com.google.protobuf.Timestamp getLastPublishedTimestamp();
-
   /**
    *
    *

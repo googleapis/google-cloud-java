@@ -34,7 +34,6 @@ public interface PolylineOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Vertex vertices = 1;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Vertex> getVerticesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface PolylineOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Vertex vertices = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Vertex getVertices(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface PolylineOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Vertex vertices = 1;</code>
    */
   int getVerticesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface PolylineOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.VertexOrBuilder>
       getVerticesOrBuilderList();
-
   /**
    *
    *

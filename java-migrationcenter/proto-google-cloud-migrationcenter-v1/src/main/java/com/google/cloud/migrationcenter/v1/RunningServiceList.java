@@ -33,7 +33,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.RunningServiceList)
     RunningServiceListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunningServiceList.newBuilder() to construct.
   private RunningServiceList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.RunningService> entries_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.migrationcenter.v1.RunningService> getEntriesList() {
     return entries_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       getEntriesOrBuilderList() {
     return entries_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
   public int getEntriesCount() {
     return entries_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.migrationcenter.v1.RunningService getEntries(int index) {
     return entries_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +757,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +776,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +788,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.migrationcenter.v1.RunningService.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -825,7 +805,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -843,7 +822,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
-
     /**
      *
      *
@@ -857,7 +835,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
       return getEntriesFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.RunningService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -872,7 +849,6 @@ public final class RunningServiceList extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.RunningService.getDefaultInstance());
     }
-
     /**
      *
      *

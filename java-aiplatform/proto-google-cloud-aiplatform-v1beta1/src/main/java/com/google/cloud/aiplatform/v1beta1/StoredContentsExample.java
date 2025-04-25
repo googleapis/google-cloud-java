@@ -34,7 +34,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StoredContentsExample)
     StoredContentsExampleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StoredContentsExample.newBuilder() to construct.
   private StoredContentsExample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
      * @return Whether the lastEntry field is set.
      */
     boolean hasLastEntry();
-
     /**
      *
      *
@@ -102,7 +100,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod.LastEntry
         getLastEntry();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod.MethodCase
         getMethodCase();
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod)
       SearchKeyGenerationMethodOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SearchKeyGenerationMethod.newBuilder() to construct.
     private SearchKeyGenerationMethod(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -173,7 +168,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod.LastEntry)
         com.google.protobuf.MessageOrBuilder {}
-
     /**
      *
      *
@@ -190,7 +184,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod.LastEntry)
         LastEntryOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use LastEntry.newBuilder() to construct.
       private LastEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -402,7 +395,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -680,7 +672,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       private MethodCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -712,7 +703,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     }
 
     public static final int LAST_ENTRY_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -731,7 +721,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     public boolean hasLastEntry() {
       return methodCase_ == 1;
     }
-
     /**
      *
      *
@@ -758,7 +747,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       return com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod
           .LastEntry.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -988,7 +976,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1235,7 +1222,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
               com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod
                   .LastEntryOrBuilder>
           lastEntryBuilder_;
-
       /**
        *
        *
@@ -1254,7 +1240,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       public boolean hasLastEntry() {
         return methodCase_ == 1;
       }
-
       /**
        *
        *
@@ -1289,7 +1274,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
               .LastEntry.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1318,7 +1302,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         methodCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1344,7 +1327,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         methodCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1388,7 +1370,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         methodCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1417,7 +1398,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1435,7 +1415,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
           getLastEntryBuilder() {
         return getLastEntryFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1464,7 +1443,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
               .LastEntry.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1586,7 +1564,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object searchKey_ = "";
-
   /**
    *
    *
@@ -1614,7 +1591,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -1645,7 +1621,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
 
   public static final int CONTENTS_EXAMPLE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ContentsExample contentsExample_;
-
   /**
    *
    *
@@ -1663,7 +1638,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
   public boolean hasContentsExample() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1683,7 +1657,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.aiplatform.v1beta1.ContentsExample.getDefaultInstance()
         : contentsExample_;
   }
-
   /**
    *
    *
@@ -1706,7 +1679,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
   public static final int SEARCH_KEY_GENERATION_METHOD_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod
       searchKeyGenerationMethod_;
-
   /**
    *
    *
@@ -1726,7 +1698,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
   public boolean hasSearchKeyGenerationMethod() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1750,7 +1721,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : searchKeyGenerationMethod_;
   }
-
   /**
    *
    *
@@ -1965,7 +1935,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2204,7 +2173,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object searchKey_ = "";
-
     /**
      *
      *
@@ -2231,7 +2199,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2258,7 +2225,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2284,7 +2250,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2271,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2340,7 +2304,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.ContentsExample.Builder,
             com.google.cloud.aiplatform.v1beta1.ContentsExampleOrBuilder>
         contentsExampleBuilder_;
-
     /**
      *
      *
@@ -2357,7 +2320,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     public boolean hasContentsExample() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2380,7 +2342,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         return contentsExampleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2405,7 +2366,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2428,7 +2388,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2459,7 +2418,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2481,7 +2439,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2498,7 +2455,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return getContentsExampleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2520,7 +2476,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
             : contentsExample_;
       }
     }
-
     /**
      *
      *
@@ -2558,7 +2513,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.StoredContentsExample
                 .SearchKeyGenerationMethodOrBuilder>
         searchKeyGenerationMethodBuilder_;
-
     /**
      *
      *
@@ -2577,7 +2531,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
     public boolean hasSearchKeyGenerationMethod() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2604,7 +2557,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
         return searchKeyGenerationMethodBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2632,7 +2584,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2658,7 +2609,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2693,7 +2643,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2717,7 +2666,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2738,7 +2686,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSearchKeyGenerationMethodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2764,7 +2711,6 @@ public final class StoredContentsExample extends com.google.protobuf.GeneratedMe
             : searchKeyGenerationMethod_;
       }
     }
-
     /**
      *
      *

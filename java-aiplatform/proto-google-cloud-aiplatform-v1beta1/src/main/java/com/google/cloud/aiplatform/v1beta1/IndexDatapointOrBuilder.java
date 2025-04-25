@@ -36,7 +36,6 @@ public interface IndexDatapointOrBuilder
    * @return The datapointId.
    */
   java.lang.String getDatapointId();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface IndexDatapointOrBuilder
    * @return A list containing the featureVector.
    */
   java.util.List<java.lang.Float> getFeatureVectorList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface IndexDatapointOrBuilder
    * @return The count of featureVector.
    */
   int getFeatureVectorCount();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface IndexDatapointOrBuilder
    * @return Whether the sparseEmbedding field is set.
    */
   boolean hasSparseEmbedding();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface IndexDatapointOrBuilder
    * @return The sparseEmbedding.
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding getSparseEmbedding();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface IndexDatapointOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction> getRestrictsList();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface IndexDatapointOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction getRestricts(int index);
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface IndexDatapointOrBuilder
    * </code>
    */
   int getRestrictsCount();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface IndexDatapointOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.IndexDatapoint.RestrictionOrBuilder>
       getRestrictsOrBuilderList();
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface IndexDatapointOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestriction>
       getNumericRestrictsList();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface IndexDatapointOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestriction getNumericRestricts(
       int index);
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface IndexDatapointOrBuilder
    * </code>
    */
   int getNumericRestrictsCount();
-
   /**
    *
    *
@@ -282,7 +270,6 @@ public interface IndexDatapointOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestrictionOrBuilder>
       getNumericRestrictsOrBuilderList();
-
   /**
    *
    *
@@ -314,7 +301,6 @@ public interface IndexDatapointOrBuilder
    * @return Whether the crowdingTag field is set.
    */
   boolean hasCrowdingTag();
-
   /**
    *
    *
@@ -330,7 +316,6 @@ public interface IndexDatapointOrBuilder
    * @return The crowdingTag.
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapoint.CrowdingTag getCrowdingTag();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface LiveConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface LiveConfigOrBuilder
    * @return The sourceUri.
    */
   java.lang.String getSourceUri();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface LiveConfigOrBuilder
    * @return The adTagUri.
    */
   java.lang.String getAdTagUri();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface LiveConfigOrBuilder
    * @return Whether the gamLiveConfig field is set.
    */
   boolean hasGamLiveConfig();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface LiveConfigOrBuilder
    * @return The gamLiveConfig.
    */
   com.google.cloud.video.stitcher.v1.GamLiveConfig getGamLiveConfig();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface LiveConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface LiveConfigOrBuilder
    * @return The enum numeric value on the wire for adTracking.
    */
   int getAdTrackingValue();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface LiveConfigOrBuilder
    * @return The defaultSlate.
    */
   java.lang.String getDefaultSlate();
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public interface LiveConfigOrBuilder
    * @return The enum numeric value on the wire for stitchingPolicy.
    */
   int getStitchingPolicyValue();
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public interface LiveConfigOrBuilder
    * @return Whether the prefetchConfig field is set.
    */
   boolean hasPrefetchConfig();
-
   /**
    *
    *
@@ -289,7 +279,6 @@ public interface LiveConfigOrBuilder
    * @return The prefetchConfig.
    */
   com.google.cloud.video.stitcher.v1.PrefetchConfig getPrefetchConfig();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface LiveConfigOrBuilder
    * @return Whether the sourceFetchOptions field is set.
    */
   boolean hasSourceFetchOptions();
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public interface LiveConfigOrBuilder
    * @return The sourceFetchOptions.
    */
   com.google.cloud.video.stitcher.v1.FetchOptions getSourceFetchOptions();
-
   /**
    *
    *

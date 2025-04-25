@@ -38,7 +38,6 @@ public interface NotificationConfigOrBuilder
    * @return Whether the pubsubNotification field is set.
    */
   boolean hasPubsubNotification();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface NotificationConfigOrBuilder
    */
   com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig.CloudPubSubNotificationConfig
       getPubsubNotification();
-
   /**
    *
    *

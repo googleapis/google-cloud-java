@@ -40,7 +40,6 @@ public interface CreateConversationModelEvaluationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateConversationModelEvaluationRequestOrBuilder
    * @return Whether the conversationModelEvaluation field is set.
    */
   boolean hasConversationModelEvaluation();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateConversationModelEvaluationRequestOrBuilder
    * @return The conversationModelEvaluation.
    */
   com.google.cloud.dialogflow.v2.ConversationModelEvaluation getConversationModelEvaluation();
-
   /**
    *
    *

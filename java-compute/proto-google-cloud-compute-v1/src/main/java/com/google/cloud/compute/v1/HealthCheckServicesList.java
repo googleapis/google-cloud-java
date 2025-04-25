@@ -32,7 +32,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthCheckServicesList)
     HealthCheckServicesListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HealthCheckServicesList.newBuilder() to construct.
   private HealthCheckServicesList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthCheckService> items_;
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.compute.v1.HealthCheckService> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.HealthCheckService getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -326,7 +312,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -355,7 +340,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -371,7 +355,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -395,7 +378,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +404,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -438,7 +419,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -700,7 +679,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1024,7 +1002,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1062,7 +1038,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1060,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1107,7 +1081,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1098,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1153,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1207,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1227,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1249,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1271,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1311,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1331,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1350,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1408,7 +1369,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1381,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.HealthCheckService.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1438,7 +1397,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1456,7 +1414,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -1470,7 +1427,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HealthCheckService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1484,7 +1440,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HealthCheckService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1517,7 +1472,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1532,7 +1486,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1555,7 +1508,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1578,7 +1530,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1551,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1618,7 +1568,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1592,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1658,7 +1606,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1681,7 +1628,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1704,7 +1650,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1726,7 +1671,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1744,7 +1688,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1769,7 +1712,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -1784,7 +1726,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1807,7 +1748,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1830,7 +1770,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1852,7 +1791,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1870,7 +1808,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1900,7 +1837,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1915,7 +1851,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1936,7 +1871,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1959,7 +1893,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1979,7 +1912,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2007,7 +1939,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1958,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2042,7 +1972,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2061,7 +1990,6 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
             : warning_;
       }
     }
-
     /**
      *
      *

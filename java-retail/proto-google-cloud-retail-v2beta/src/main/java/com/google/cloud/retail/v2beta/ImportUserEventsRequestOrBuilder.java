@@ -38,7 +38,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.retail.v2beta.UserEventInputConfig getInputConfig();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return Whether the errorsConfig field is set.
    */
   boolean hasErrorsConfig();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ImportUserEventsRequestOrBuilder
    * @return The errorsConfig.
    */
   com.google.cloud.retail.v2beta.ImportErrorsConfig getErrorsConfig();
-
   /**
    *
    *

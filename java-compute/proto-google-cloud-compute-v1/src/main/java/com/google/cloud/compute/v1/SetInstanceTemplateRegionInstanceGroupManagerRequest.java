@@ -35,7 +35,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerRequest)
     SetInstanceTemplateRegionInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder() to construct.
   private SetInstanceTemplateRegionInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,7 +75,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       REGION_INSTANCE_GROUP_MANAGERS_SET_TEMPLATE_REQUEST_RESOURCE_FIELD_NUMBER = 187310412;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest
       regionInstanceGroupManagersSetTemplateRequestResource_;
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
   public boolean hasRegionInstanceGroupManagersSetTemplateRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
             .getDefaultInstance()
         : regionInstanceGroupManagersSetTemplateRequestResource_;
   }
-
   /**
    *
    *
@@ -310,7 +300,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -326,7 +315,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -350,7 +338,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +583,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -880,7 +866,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -904,7 +889,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -928,7 +912,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -951,7 +934,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +952,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +977,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1021,7 +1001,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1025,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1048,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1142,7 +1117,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1141,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1164,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1183,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1215,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest.Builder,
             com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequestOrBuilder>
         regionInstanceGroupManagersSetTemplateRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1261,7 +1231,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     public boolean hasRegionInstanceGroupManagersSetTemplateRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1286,7 +1255,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return regionInstanceGroupManagersSetTemplateRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1280,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1304,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1336,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1357,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1374,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return getRegionInstanceGroupManagersSetTemplateRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1433,7 +1396,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
             : regionInstanceGroupManagersSetTemplateRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1427,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1480,7 +1441,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1503,7 +1463,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1526,7 +1485,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1506,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1523,6 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

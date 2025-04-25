@@ -33,7 +33,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ImportRowError)
     ImportRowErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportRowError.newBuilder() to construct.
   private ImportRowError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_NUMBER_FIELD_NUMBER = 1;
   private int rowNumber_ = 0;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmName_ = "";
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmUuid_ = "";
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.ImportError> errors_;
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.migrationcenter.v1.ImportError> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.migrationcenter.v1.ImportError getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -458,7 +447,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -733,7 +721,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int rowNumber_;
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     public int getRowNumber() {
       return rowNumber_;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vmName_ = "";
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +865,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vmUuid_ = "";
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -977,7 +954,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +971,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1042,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1080,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1100,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1122,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1144,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1164,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1184,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1204,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1223,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1242,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1254,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.ImportError.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1308,7 +1270,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1326,7 +1287,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -1340,7 +1300,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.ImportError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1354,7 +1313,6 @@ public final class ImportRowError extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.migrationcenter.v1.ImportError.getDefaultInstance());
     }
-
     /**
      *
      *

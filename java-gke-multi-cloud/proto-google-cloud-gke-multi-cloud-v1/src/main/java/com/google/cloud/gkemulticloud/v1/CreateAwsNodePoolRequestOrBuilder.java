@@ -45,7 +45,6 @@ public interface CreateAwsNodePoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CreateAwsNodePoolRequestOrBuilder
    * @return Whether the awsNodePool field is set.
    */
   boolean hasAwsNodePool();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CreateAwsNodePoolRequestOrBuilder
    * @return The awsNodePool.
    */
   com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface CreateAwsNodePoolRequestOrBuilder
    * @return The awsNodePoolId.
    */
   java.lang.String getAwsNodePoolId();
-
   /**
    *
    *

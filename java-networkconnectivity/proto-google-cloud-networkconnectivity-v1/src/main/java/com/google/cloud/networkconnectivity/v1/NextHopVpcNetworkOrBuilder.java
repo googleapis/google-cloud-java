@@ -36,7 +36,6 @@ public interface NextHopVpcNetworkOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsResponse)
     BatchDeletePipelineJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDeletePipelineJobsResponse.newBuilder() to construct.
   private BatchDeletePipelineJobsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineJob> pipelineJobs_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineJob> getPipelineJobsList() {
     return pipelineJobs_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       getPipelineJobsOrBuilderList() {
     return pipelineJobs_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
   public int getPipelineJobsCount() {
     return pipelineJobs_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1beta1.PipelineJob getPipelineJobs(int index) {
     return pipelineJobs_.get(index);
   }
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -578,7 +571,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
         return pipelineJobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
         return pipelineJobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
         return pipelineJobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +731,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +751,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +789,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +802,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
         int index) {
       return getPipelineJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -839,7 +819,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
         return pipelineJobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -857,7 +836,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(pipelineJobs_);
       }
     }
-
     /**
      *
      *
@@ -871,7 +849,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       return getPipelineJobsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.PipelineJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -886,7 +863,6 @@ public final class BatchDeletePipelineJobsResponse extends com.google.protobuf.G
       return getPipelineJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.PipelineJob.getDefaultInstance());
     }
-
     /**
      *
      *

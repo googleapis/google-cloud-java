@@ -38,7 +38,6 @@ public interface TextFrameOrBuilder
    * @return Whether the rotatedBoundingBox field is set.
    */
   boolean hasRotatedBoundingBox();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TextFrameOrBuilder
    * @return The rotatedBoundingBox.
    */
   com.google.cloud.videointelligence.v1p3beta1.NormalizedBoundingPoly getRotatedBoundingBox();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface TextFrameOrBuilder
    * @return Whether the timeOffset field is set.
    */
   boolean hasTimeOffset();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface TextFrameOrBuilder
    * @return The timeOffset.
    */
   com.google.protobuf.Duration getTimeOffset();
-
   /**
    *
    *

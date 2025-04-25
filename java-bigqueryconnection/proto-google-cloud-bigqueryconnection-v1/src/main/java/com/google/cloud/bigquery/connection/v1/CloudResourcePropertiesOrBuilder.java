@@ -46,7 +46,6 @@ public interface CloudResourcePropertiesOrBuilder
    * @return The serviceAccountId.
    */
   java.lang.String getServiceAccountId();
-
   /**
    *
    *

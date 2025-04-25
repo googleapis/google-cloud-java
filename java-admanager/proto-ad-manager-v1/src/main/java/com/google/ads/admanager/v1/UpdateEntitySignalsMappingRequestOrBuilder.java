@@ -43,7 +43,6 @@ public interface UpdateEntitySignalsMappingRequestOrBuilder
    * @return Whether the entitySignalsMapping field is set.
    */
   boolean hasEntitySignalsMapping();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UpdateEntitySignalsMappingRequestOrBuilder
    * @return The entitySignalsMapping.
    */
   com.google.ads.admanager.v1.EntitySignalsMapping getEntitySignalsMapping();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface UpdateEntitySignalsMappingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface UpdateEntitySignalsMappingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

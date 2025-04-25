@@ -37,7 +37,6 @@ public interface BlueprintOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface BlueprintOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface BlueprintOrBuilder
    * @return The sourceBlueprint.
    */
   java.lang.String getSourceBlueprint();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface BlueprintOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface BlueprintOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface BlueprintOrBuilder
    * @return The enum numeric value on the wire for approvalState.
    */
   int getApprovalStateValue();
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public interface BlueprintOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public interface BlueprintOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public interface BlueprintOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> getFilesList();
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public interface BlueprintOrBuilder
    * </code>
    */
   com.google.cloud.telcoautomation.v1alpha1.File getFiles(int index);
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public interface BlueprintOrBuilder
    * </code>
    */
   int getFilesCount();
-
   /**
    *
    *
@@ -305,7 +294,6 @@ public interface BlueprintOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.FileOrBuilder>
       getFilesOrBuilderList();
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public interface BlueprintOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -345,11 +332,9 @@ public interface BlueprintOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -361,7 +346,6 @@ public interface BlueprintOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -377,7 +361,6 @@ public interface BlueprintOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -403,7 +386,6 @@ public interface BlueprintOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -417,7 +399,6 @@ public interface BlueprintOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -443,7 +424,6 @@ public interface BlueprintOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -457,7 +437,6 @@ public interface BlueprintOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -483,7 +462,6 @@ public interface BlueprintOrBuilder
    * @return The sourceProvider.
    */
   java.lang.String getSourceProvider();
-
   /**
    *
    *
@@ -513,7 +491,6 @@ public interface BlueprintOrBuilder
    * @return The enum numeric value on the wire for deploymentLevel.
    */
   int getDeploymentLevelValue();
-
   /**
    *
    *

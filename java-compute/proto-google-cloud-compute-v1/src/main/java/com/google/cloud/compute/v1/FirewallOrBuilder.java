@@ -34,7 +34,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Allowed allowed = 162398632;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Allowed> getAllowedList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Allowed allowed = 162398632;</code>
    */
   com.google.cloud.compute.v1.Allowed getAllowed(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Allowed allowed = 162398632;</code>
    */
   int getAllowedCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Allowed allowed = 162398632;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AllowedOrBuilder> getAllowedOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface FirewallOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface FirewallOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Denied> getDeniedList();
-
   /**
    *
    *
@@ -139,7 +132,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   com.google.cloud.compute.v1.Denied getDenied(int index);
-
   /**
    *
    *
@@ -150,7 +142,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   int getDeniedCount();
-
   /**
    *
    *
@@ -161,7 +152,6 @@ public interface FirewallOrBuilder
    * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.DeniedOrBuilder> getDeniedOrBuilderList();
-
   /**
    *
    *
@@ -185,7 +175,6 @@ public interface FirewallOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -198,7 +187,6 @@ public interface FirewallOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -224,7 +212,6 @@ public interface FirewallOrBuilder
    * @return A list containing the destinationRanges.
    */
   java.util.List<java.lang.String> getDestinationRangesList();
-
   /**
    *
    *
@@ -237,7 +224,6 @@ public interface FirewallOrBuilder
    * @return The count of destinationRanges.
    */
   int getDestinationRangesCount();
-
   /**
    *
    *
@@ -251,7 +237,6 @@ public interface FirewallOrBuilder
    * @return The destinationRanges at the given index.
    */
   java.lang.String getDestinationRanges(int index);
-
   /**
    *
    *
@@ -279,7 +264,6 @@ public interface FirewallOrBuilder
    * @return Whether the direction field is set.
    */
   boolean hasDirection();
-
   /**
    *
    *
@@ -293,7 +277,6 @@ public interface FirewallOrBuilder
    * @return The direction.
    */
   java.lang.String getDirection();
-
   /**
    *
    *
@@ -320,7 +303,6 @@ public interface FirewallOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -346,7 +328,6 @@ public interface FirewallOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -372,7 +353,6 @@ public interface FirewallOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -385,7 +365,6 @@ public interface FirewallOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -411,7 +390,6 @@ public interface FirewallOrBuilder
    * @return Whether the logConfig field is set.
    */
   boolean hasLogConfig();
-
   /**
    *
    *
@@ -424,7 +402,6 @@ public interface FirewallOrBuilder
    * @return The logConfig.
    */
   com.google.cloud.compute.v1.FirewallLogConfig getLogConfig();
-
   /**
    *
    *
@@ -448,7 +425,6 @@ public interface FirewallOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -461,7 +437,6 @@ public interface FirewallOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -487,7 +462,6 @@ public interface FirewallOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -500,7 +474,6 @@ public interface FirewallOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -526,7 +499,6 @@ public interface FirewallOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *
@@ -552,7 +524,6 @@ public interface FirewallOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -565,7 +536,6 @@ public interface FirewallOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -591,7 +561,6 @@ public interface FirewallOrBuilder
    * @return A list containing the sourceRanges.
    */
   java.util.List<java.lang.String> getSourceRangesList();
-
   /**
    *
    *
@@ -604,7 +573,6 @@ public interface FirewallOrBuilder
    * @return The count of sourceRanges.
    */
   int getSourceRangesCount();
-
   /**
    *
    *
@@ -618,7 +586,6 @@ public interface FirewallOrBuilder
    * @return The sourceRanges at the given index.
    */
   java.lang.String getSourceRanges(int index);
-
   /**
    *
    *
@@ -645,7 +612,6 @@ public interface FirewallOrBuilder
    * @return A list containing the sourceServiceAccounts.
    */
   java.util.List<java.lang.String> getSourceServiceAccountsList();
-
   /**
    *
    *
@@ -658,7 +624,6 @@ public interface FirewallOrBuilder
    * @return The count of sourceServiceAccounts.
    */
   int getSourceServiceAccountsCount();
-
   /**
    *
    *
@@ -672,7 +637,6 @@ public interface FirewallOrBuilder
    * @return The sourceServiceAccounts at the given index.
    */
   java.lang.String getSourceServiceAccounts(int index);
-
   /**
    *
    *
@@ -699,7 +663,6 @@ public interface FirewallOrBuilder
    * @return A list containing the sourceTags.
    */
   java.util.List<java.lang.String> getSourceTagsList();
-
   /**
    *
    *
@@ -712,7 +675,6 @@ public interface FirewallOrBuilder
    * @return The count of sourceTags.
    */
   int getSourceTagsCount();
-
   /**
    *
    *
@@ -726,7 +688,6 @@ public interface FirewallOrBuilder
    * @return The sourceTags at the given index.
    */
   java.lang.String getSourceTags(int index);
-
   /**
    *
    *
@@ -753,7 +714,6 @@ public interface FirewallOrBuilder
    * @return A list containing the targetServiceAccounts.
    */
   java.util.List<java.lang.String> getTargetServiceAccountsList();
-
   /**
    *
    *
@@ -766,7 +726,6 @@ public interface FirewallOrBuilder
    * @return The count of targetServiceAccounts.
    */
   int getTargetServiceAccountsCount();
-
   /**
    *
    *
@@ -780,7 +739,6 @@ public interface FirewallOrBuilder
    * @return The targetServiceAccounts at the given index.
    */
   java.lang.String getTargetServiceAccounts(int index);
-
   /**
    *
    *
@@ -807,7 +765,6 @@ public interface FirewallOrBuilder
    * @return A list containing the targetTags.
    */
   java.util.List<java.lang.String> getTargetTagsList();
-
   /**
    *
    *
@@ -820,7 +777,6 @@ public interface FirewallOrBuilder
    * @return The count of targetTags.
    */
   int getTargetTagsCount();
-
   /**
    *
    *
@@ -834,7 +790,6 @@ public interface FirewallOrBuilder
    * @return The targetTags at the given index.
    */
   java.lang.String getTargetTags(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.TranslateDocumentResponse)
     TranslateDocumentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranslateDocumentResponse.newBuilder() to construct.
   private TranslateDocumentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int DOCUMENT_TRANSLATION_FIELD_NUMBER = 1;
   private com.google.cloud.translate.v3beta1.DocumentTranslation documentTranslation_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
   public boolean hasDocumentTranslation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         ? com.google.cloud.translate.v3beta1.DocumentTranslation.getDefaultInstance()
         : documentTranslation_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
 
   public static final int GLOSSARY_DOCUMENT_TRANSLATION_FIELD_NUMBER = 2;
   private com.google.cloud.translate.v3beta1.DocumentTranslation glossaryDocumentTranslation_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
   public boolean hasGlossaryDocumentTranslation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         ? com.google.cloud.translate.v3beta1.DocumentTranslation.getDefaultInstance()
         : glossaryDocumentTranslation_;
   }
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
 
   public static final int GLOSSARY_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig glossaryConfig_;
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
   public boolean hasGlossaryConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         ? com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig.getDefaultInstance()
         : glossaryConfig_;
   }
-
   /**
    *
    *
@@ -508,7 +496,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -777,7 +764,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
             com.google.cloud.translate.v3beta1.DocumentTranslation.Builder,
             com.google.cloud.translate.v3beta1.DocumentTranslationOrBuilder>
         documentTranslationBuilder_;
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     public boolean hasDocumentTranslation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         return documentTranslationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +889,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return getDocumentTranslationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -944,7 +923,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
             : documentTranslation_;
       }
     }
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
             com.google.cloud.translate.v3beta1.DocumentTranslation.Builder,
             com.google.cloud.translate.v3beta1.DocumentTranslationOrBuilder>
         glossaryDocumentTranslationBuilder_;
-
     /**
      *
      *
@@ -996,7 +973,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     public boolean hasGlossaryDocumentTranslation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         return glossaryDocumentTranslationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1024,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1123,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return getGlossaryDocumentTranslationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1176,7 +1146,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
             : glossaryDocumentTranslation_;
       }
     }
-
     /**
      *
      *
@@ -1208,7 +1177,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -1238,7 +1206,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1268,7 +1235,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1263,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1287,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1323,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
             com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig.Builder,
             com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfigOrBuilder>
         glossaryConfigBuilder_;
-
     /**
      *
      *
@@ -1375,7 +1338,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     public boolean hasGlossaryConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1397,7 +1359,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
         return glossaryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1422,7 +1383,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1404,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1455,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1471,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
       onChanged();
       return getGlossaryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1535,7 +1491,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
             : glossaryConfig_;
       }
     }
-
     /**
      *
      *

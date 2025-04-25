@@ -36,7 +36,6 @@ public interface UploadAttachmentResponseOrBuilder
    * @return Whether the attachmentDataRef field is set.
    */
   boolean hasAttachmentDataRef();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UploadAttachmentResponseOrBuilder
    * @return The attachmentDataRef.
    */
   com.google.chat.v1.AttachmentDataRef getAttachmentDataRef();
-
   /**
    *
    *

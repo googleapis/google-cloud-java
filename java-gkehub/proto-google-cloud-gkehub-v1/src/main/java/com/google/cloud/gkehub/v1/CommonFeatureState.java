@@ -33,7 +33,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.CommonFeatureState)
     CommonFeatureStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommonFeatureState.newBuilder() to construct.
   private CommonFeatureState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.v1.FeatureState state_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
   public boolean hasState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.gkehub.v1.FeatureState getState() {
     return state_ == null ? com.google.cloud.gkehub.v1.FeatureState.getDefaultInstance() : state_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.v1.FeatureState.Builder,
             com.google.cloud.gkehub.v1.FeatureStateOrBuilder>
         stateBuilder_;
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     public boolean hasState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
         return stateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -550,7 +542,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -572,7 +563,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +629,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -662,7 +649,6 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
             : state_;
       }
     }
-
     /**
      *
      *

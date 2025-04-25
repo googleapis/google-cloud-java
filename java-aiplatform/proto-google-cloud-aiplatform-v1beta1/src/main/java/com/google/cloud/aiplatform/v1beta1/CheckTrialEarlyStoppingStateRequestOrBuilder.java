@@ -40,7 +40,6 @@ public interface CheckTrialEarlyStoppingStateRequestOrBuilder
    * @return The trialName.
    */
   java.lang.String getTrialName();
-
   /**
    *
    *

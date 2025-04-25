@@ -38,7 +38,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * @return The inputPath.
    */
   java.lang.String getInputPath();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * @return Whether the splitClassifyProcessorInfo field is set.
    */
   boolean hasSplitClassifyProcessorInfo();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * @return The splitClassifyProcessorInfo.
    */
   com.google.cloud.contentwarehouse.v1.ProcessorInfo getSplitClassifyProcessorInfo();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.ProcessorInfo> getExtractProcessorInfosList();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * </code>
    */
   com.google.cloud.contentwarehouse.v1.ProcessorInfo getExtractProcessorInfos(int index);
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * </code>
    */
   int getExtractProcessorInfosCount();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.ProcessorInfoOrBuilder>
       getExtractProcessorInfosOrBuilderList();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * @return The processorResultsFolderPath.
    */
   java.lang.String getProcessorResultsFolderPath();
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * @return Whether the pipelineConfig field is set.
    */
   boolean hasPipelineConfig();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface GcsIngestWithDocAiProcessorsPipelineOrBuilder
    * @return The pipelineConfig.
    */
   com.google.cloud.contentwarehouse.v1.IngestPipelineConfig getPipelineConfig();
-
   /**
    *
    *

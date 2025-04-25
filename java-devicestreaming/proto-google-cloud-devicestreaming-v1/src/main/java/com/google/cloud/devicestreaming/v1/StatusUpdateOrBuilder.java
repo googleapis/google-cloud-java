@@ -36,7 +36,6 @@ public interface StatusUpdateOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface StatusUpdateOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -71,11 +69,9 @@ public interface StatusUpdateOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
-
   /**
    *
    *
@@ -86,7 +82,6 @@ public interface StatusUpdateOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface StatusUpdateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -125,7 +119,6 @@ public interface StatusUpdateOrBuilder
    * @return The features.
    */
   java.lang.String getFeatures();
-
   /**
    *
    *

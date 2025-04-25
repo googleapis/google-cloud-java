@@ -36,7 +36,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * <code>repeated .google.cloud.compute.v1.VmEndpointNatMappings result = 139315229;</code>
    */
   java.util.List<com.google.cloud.compute.v1.VmEndpointNatMappings> getResultList();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * <code>repeated .google.cloud.compute.v1.VmEndpointNatMappings result = 139315229;</code>
    */
   com.google.cloud.compute.v1.VmEndpointNatMappings getResult(int index);
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * <code>repeated .google.cloud.compute.v1.VmEndpointNatMappings result = 139315229;</code>
    */
   int getResultCount();
-
   /**
    *
    *
@@ -185,7 +176,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.VmEndpointNatMappingsOrBuilder>
       getResultOrBuilderList();
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -222,7 +211,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -248,7 +236,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -261,7 +248,6 @@ public interface VmEndpointNatMappingsListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface GetLoginProfileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetLoginProfileRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface GetLoginProfileRequestOrBuilder
    * @return The systemId.
    */
   java.lang.String getSystemId();
-
   /**
    *
    *

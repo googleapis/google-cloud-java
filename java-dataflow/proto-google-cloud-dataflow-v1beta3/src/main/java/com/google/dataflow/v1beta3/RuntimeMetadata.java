@@ -33,7 +33,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.RuntimeMetadata)
     RuntimeMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RuntimeMetadata.newBuilder() to construct.
   private RuntimeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SDK_INFO_FIELD_NUMBER = 1;
   private com.google.dataflow.v1beta3.SDKInfo sdkInfo_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasSdkInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
   public com.google.dataflow.v1beta3.SDKInfo getSdkInfo() {
     return sdkInfo_ == null ? com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance() : sdkInfo_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> parameters_;
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> getParametersList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       getParametersOrBuilderList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
   public int getParametersCount() {
     return parameters_.size();
   }
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
   public com.google.dataflow.v1beta3.ParameterMetadata getParameters(int index) {
     return parameters_.get(index);
   }
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +619,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
             com.google.dataflow.v1beta3.SDKInfo.Builder,
             com.google.dataflow.v1beta3.SDKInfoOrBuilder>
         sdkInfoBuilder_;
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasSdkInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         return sdkInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSdkInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
             : sdkInfo_;
       }
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         return parametersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         return parametersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         return parametersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +969,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +989,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1028,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1059,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     public com.google.dataflow.v1beta3.ParameterMetadata.Builder getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1108,7 +1076,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1093,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1106,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       return getParametersFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.ParameterMetadata.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1154,7 +1119,6 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
       return getParametersFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.ParameterMetadata.getDefaultInstance());
     }
-
     /**
      *
      *

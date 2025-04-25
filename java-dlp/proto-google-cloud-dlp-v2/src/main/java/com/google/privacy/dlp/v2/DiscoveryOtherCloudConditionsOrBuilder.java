@@ -37,7 +37,6 @@ public interface DiscoveryOtherCloudConditionsOrBuilder
    * @return Whether the minAge field is set.
    */
   boolean hasMinAge();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DiscoveryOtherCloudConditionsOrBuilder
    * @return The minAge.
    */
   com.google.protobuf.Duration getMinAge();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface DiscoveryOtherCloudConditionsOrBuilder
    * @return Whether the amazonS3BucketConditions field is set.
    */
   boolean hasAmazonS3BucketConditions();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface DiscoveryOtherCloudConditionsOrBuilder
    * @return The amazonS3BucketConditions.
    */
   com.google.privacy.dlp.v2.AmazonS3BucketConditions getAmazonS3BucketConditions();
-
   /**
    *
    *

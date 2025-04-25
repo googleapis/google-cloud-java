@@ -37,7 +37,6 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption>
       getRequestHeadersToAddsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       getRequestHeadersToAdds(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    * </code>
    */
   int getRequestHeadersToAddsCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRuleHttpHeaderActionHttpHeaderOptionOrBuilder>
       getRequestHeadersToAddsOrBuilderList();
-
   /**
    *
    *

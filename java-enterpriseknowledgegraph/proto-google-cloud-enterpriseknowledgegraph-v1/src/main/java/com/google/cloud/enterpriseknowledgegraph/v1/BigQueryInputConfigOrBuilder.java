@@ -38,7 +38,6 @@ public interface BigQueryInputConfigOrBuilder
    * @return The bigqueryTable.
    */
   java.lang.String getBigqueryTable();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BigQueryInputConfigOrBuilder
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
-
   /**
    *
    *

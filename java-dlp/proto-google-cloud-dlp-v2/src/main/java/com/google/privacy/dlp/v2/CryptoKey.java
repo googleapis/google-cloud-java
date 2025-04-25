@@ -38,7 +38,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CryptoKey)
     CryptoKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CryptoKey.newBuilder() to construct.
   private CryptoKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,7 +119,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSIENT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransient() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNWRAPPED_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnwrapped() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_WRAPPED_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKmsWrapped() {
     return sourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -484,7 +473,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -740,7 +728,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.TransientCryptoKey.Builder,
             com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder>
         transientBuilder_;
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransient() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.TransientCryptoKey.Builder getTransientBuilder() {
       return getTransientFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -919,7 +899,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder,
             com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder>
         unwrappedBuilder_;
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnwrapped() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1051,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1076,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1088,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder getUnwrappedBuilder() {
       return getUnwrappedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1137,7 +1108,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1146,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder,
             com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder>
         kmsWrappedBuilder_;
-
     /**
      *
      *
@@ -1192,7 +1161,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKmsWrapped() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1218,7 +1186,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1208,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1228,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1260,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1285,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1297,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder getKmsWrappedBuilder() {
       return getKmsWrappedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1355,7 +1317,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface MysqlDatabaseOrBuilder
    * @return The databaseName.
    */
   java.lang.String getDatabaseName();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface MysqlDatabaseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.MysqlTable mysql_tables = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.MysqlTable> getMysqlTablesList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface MysqlDatabaseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.MysqlTable mysql_tables = 2;</code>
    */
   com.google.cloud.datastream.v1alpha1.MysqlTable getMysqlTables(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface MysqlDatabaseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.MysqlTable mysql_tables = 2;</code>
    */
   int getMysqlTablesCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface MysqlDatabaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.MysqlTableOrBuilder>
       getMysqlTablesOrBuilderList();
-
   /**
    *
    *

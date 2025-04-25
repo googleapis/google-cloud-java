@@ -39,7 +39,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.contentwarehouse.v1.Document getDocument();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the cloudAiDocumentOption field is set.
    */
   boolean hasCloudAiDocumentOption();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The cloudAiDocumentOption.
    */
   com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption getCloudAiDocumentOption();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the createMask field is set.
    */
   boolean hasCreateMask();
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public interface CreateDocumentRequestOrBuilder
    * @return The createMask.
    */
   com.google.protobuf.FieldMask getCreateMask();
-
   /**
    *
    *

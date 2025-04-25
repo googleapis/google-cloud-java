@@ -40,7 +40,6 @@ public interface DeleteDataSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

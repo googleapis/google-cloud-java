@@ -36,7 +36,6 @@ public interface MigrationConfigOrBuilder
    * @return The enum numeric value on the wire for tagTemplateMigration.
    */
   int getTagTemplateMigrationValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MigrationConfigOrBuilder
    * @return The enum numeric value on the wire for catalogUiExperience.
    */
   int getCatalogUiExperienceValue();
-
   /**
    *
    *
@@ -75,44 +73,4 @@ public interface MigrationConfigOrBuilder
    * @return The catalogUiExperience.
    */
   com.google.cloud.datacatalog.v1.CatalogUIExperience getCatalogUiExperience();
-
-  /**
-   *
-   *
-   * <pre>
-   * The time when the Tag Template migration was enabled.
-   * If the Tag Template migration is not enabled, this field is not set.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-   *
-   * @return Whether the templateMigrationEnabledTime field is set.
-   */
-  boolean hasTemplateMigrationEnabledTime();
-
-  /**
-   *
-   *
-   * <pre>
-   * The time when the Tag Template migration was enabled.
-   * If the Tag Template migration is not enabled, this field is not set.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-   *
-   * @return The templateMigrationEnabledTime.
-   */
-  com.google.protobuf.Timestamp getTemplateMigrationEnabledTime();
-
-  /**
-   *
-   *
-   * <pre>
-   * The time when the Tag Template migration was enabled.
-   * If the Tag Template migration is not enabled, this field is not set.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp template_migration_enabled_time = 3;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getTemplateMigrationEnabledTimeOrBuilder();
 }

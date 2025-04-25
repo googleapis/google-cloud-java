@@ -39,7 +39,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return Whether the intentBatchUri field is set.
    */
   boolean hasIntentBatchUri();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return The intentBatchUri.
    */
   java.lang.String getIntentBatchUri();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return Whether the intentBatchInline field is set.
    */
   boolean hasIntentBatchInline();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return The intentBatchInline.
    */
   com.google.cloud.dialogflow.v2.IntentBatch getIntentBatchInline();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
-
   /**
    *
    *

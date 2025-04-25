@@ -33,7 +33,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ListConsumerGroupsResponse)
     ListConsumerGroupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConsumerGroupsResponse.newBuilder() to construct.
   private ListConsumerGroupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.managedkafka.v1.ConsumerGroup> consumerGroups_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.managedkafka.v1.ConsumerGroup> getConsumerGroupsList() {
     return consumerGroups_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       getConsumerGroupsOrBuilderList() {
     return consumerGroups_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
   public int getConsumerGroupsCount() {
     return consumerGroups_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
   public com.google.cloud.managedkafka.v1.ConsumerGroup getConsumerGroups(int index) {
     return consumerGroups_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return consumerGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return consumerGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return consumerGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +887,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         int index) {
       return getConsumerGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return consumerGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(consumerGroups_);
       }
     }
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       return getConsumerGroupsFieldBuilder()
           .addBuilder(com.google.cloud.managedkafka.v1.ConsumerGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       return getConsumerGroupsFieldBuilder()
           .addBuilder(index, com.google.cloud.managedkafka.v1.ConsumerGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1014,7 +988,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1034,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1056,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1074,6 @@ public final class ListConsumerGroupsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

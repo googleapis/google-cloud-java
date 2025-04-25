@@ -35,7 +35,6 @@ public final class SetAutomatedGa4ConfigurationOptOutResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse)
     SetAutomatedGa4ConfigurationOptOutResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetAutomatedGa4ConfigurationOptOutResponse.newBuilder() to construct.
   private SetAutomatedGa4ConfigurationOptOutResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -224,7 +223,6 @@ public final class SetAutomatedGa4ConfigurationOptOutResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

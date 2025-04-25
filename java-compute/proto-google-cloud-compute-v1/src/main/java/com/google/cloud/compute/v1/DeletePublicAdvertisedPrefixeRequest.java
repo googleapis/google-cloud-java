@@ -34,7 +34,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest)
     DeletePublicAdvertisedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeletePublicAdvertisedPrefixeRequest.newBuilder() to construct.
   private DeletePublicAdvertisedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicAdvertisedPrefix_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -436,7 +428,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -732,7 +720,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
     }
 
     private java.lang.Object publicAdvertisedPrefix_ = "";
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +876,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -933,7 +912,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +972,6 @@ public final class DeletePublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

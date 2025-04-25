@@ -34,7 +34,6 @@ public interface ListViolationsResponseOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.Violation violations = 1;</code>
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1.Violation> getViolationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListViolationsResponseOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.Violation violations = 1;</code>
    */
   com.google.cloud.cloudcontrolspartner.v1.Violation getViolations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListViolationsResponseOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.Violation violations = 1;</code>
    */
   int getViolationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListViolationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1.ViolationOrBuilder>
       getViolationsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListViolationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListViolationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface ListViolationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface ListViolationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

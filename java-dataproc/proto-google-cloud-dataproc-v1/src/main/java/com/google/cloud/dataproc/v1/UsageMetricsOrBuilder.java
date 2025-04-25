@@ -81,7 +81,6 @@ public interface UsageMetricsOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface RagEngineConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface RagEngineConfigOrBuilder
    * @return Whether the ragManagedDbConfig field is set.
    */
   boolean hasRagManagedDbConfig();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface RagEngineConfigOrBuilder
    * @return The ragManagedDbConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig getRagManagedDbConfig();
-
   /**
    *
    *

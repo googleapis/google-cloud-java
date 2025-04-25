@@ -94,7 +94,6 @@ public interface SetInventoryRequestOrBuilder
    * @return Whether the inventory field is set.
    */
   boolean hasInventory();
-
   /**
    *
    *
@@ -165,7 +164,6 @@ public interface SetInventoryRequestOrBuilder
    * @return The inventory.
    */
   com.google.cloud.retail.v2.Product getInventory();
-
   /**
    *
    *
@@ -253,7 +251,6 @@ public interface SetInventoryRequestOrBuilder
    * @return Whether the setMask field is set.
    */
   boolean hasSetMask();
-
   /**
    *
    *
@@ -272,7 +269,6 @@ public interface SetInventoryRequestOrBuilder
    * @return The setMask.
    */
   com.google.protobuf.FieldMask getSetMask();
-
   /**
    *
    *
@@ -304,7 +300,6 @@ public interface SetInventoryRequestOrBuilder
    * @return Whether the setTime field is set.
    */
   boolean hasSetTime();
-
   /**
    *
    *
@@ -319,7 +314,6 @@ public interface SetInventoryRequestOrBuilder
    * @return The setTime.
    */
   com.google.protobuf.Timestamp getSetTime();
-
   /**
    *
    *

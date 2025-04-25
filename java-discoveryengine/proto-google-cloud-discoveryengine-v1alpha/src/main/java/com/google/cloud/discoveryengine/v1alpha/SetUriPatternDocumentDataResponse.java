@@ -35,7 +35,6 @@ public final class SetUriPatternDocumentDataResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataResponse)
     SetUriPatternDocumentDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetUriPatternDocumentDataResponse.newBuilder() to construct.
   private SetUriPatternDocumentDataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -224,7 +223,6 @@ public final class SetUriPatternDocumentDataResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

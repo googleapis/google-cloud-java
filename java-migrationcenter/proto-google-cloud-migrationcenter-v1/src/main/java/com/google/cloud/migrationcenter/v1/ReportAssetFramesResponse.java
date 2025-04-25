@@ -33,7 +33,6 @@ public final class ReportAssetFramesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportAssetFramesResponse)
     ReportAssetFramesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportAssetFramesResponse.newBuilder() to construct.
   private ReportAssetFramesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ReportAssetFramesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

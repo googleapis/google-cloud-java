@@ -38,7 +38,6 @@ public interface ListPrebuiltProcessorsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

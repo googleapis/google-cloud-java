@@ -34,7 +34,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest)
     SuggestSmartRepliesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestSmartRepliesRequest.newBuilder() to construct.
   private SuggestSmartRepliesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
 
   public static final int CURRENT_TEXT_INPUT_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.TextInput currentTextInput_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
   public boolean hasCurrentTextInput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         ? com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance()
         : currentTextInput_;
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
-
   /**
    *
    *
@@ -461,7 +452,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -709,7 +699,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -736,7 +725,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -763,7 +751,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -789,7 +776,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +830,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2beta1.TextInput.Builder,
             com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>
         currentTextInputBuilder_;
-
     /**
      *
      *
@@ -862,7 +846,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     public boolean hasCurrentTextInput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         return currentTextInputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return getCurrentTextInputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
             : currentTextInput_;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1030,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -1081,7 +1056,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1082,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1107,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1128,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1156,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     }
 
     private int contextSize_;
-
     /**
      *
      *
@@ -1203,7 +1173,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
     public int getContextSize() {
       return contextSize_;
     }
-
     /**
      *
      *
@@ -1225,7 +1194,6 @@ public final class SuggestSmartRepliesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

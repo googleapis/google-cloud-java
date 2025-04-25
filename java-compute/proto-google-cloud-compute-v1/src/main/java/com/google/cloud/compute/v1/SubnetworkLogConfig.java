@@ -33,7 +33,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SubnetworkLogConfig)
     SubnetworkLogConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubnetworkLogConfig.newBuilder() to construct.
   private SubnetworkLogConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,22 +111,16 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_AGGREGATION_INTERVAL = 0;</code>
      */
     public static final int UNDEFINED_AGGREGATION_INTERVAL_VALUE = 0;
-
     /** <code>INTERVAL_10_MIN = 487155916;</code> */
     public static final int INTERVAL_10_MIN_VALUE = 487155916;
-
     /** <code>INTERVAL_15_MIN = 491773521;</code> */
     public static final int INTERVAL_15_MIN_VALUE = 491773521;
-
     /** <code>INTERVAL_1_MIN = 69052714;</code> */
     public static final int INTERVAL_1_MIN_VALUE = 69052714;
-
     /** <code>INTERVAL_30_SEC = 7548937;</code> */
     public static final int INTERVAL_30_SEC_VALUE = 7548937;
-
     /** <code>INTERVAL_5_MIN = 72746798;</code> */
     public static final int INTERVAL_5_MIN_VALUE = 72746798;
-
     /** <code>INTERVAL_5_SEC = 72752429;</code> */
     public static final int INTERVAL_5_SEC_VALUE = 72752429;
 
@@ -264,13 +257,10 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_METADATA = 0;</code>
      */
     public static final int UNDEFINED_METADATA_VALUE = 0;
-
     /** <code>CUSTOM_METADATA = 62450749;</code> */
     public static final int CUSTOM_METADATA_VALUE = 62450749;
-
     /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
     public static final int EXCLUDE_ALL_METADATA_VALUE = 334519954;
-
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     public static final int INCLUDE_ALL_METADATA_VALUE = 164619908;
 
@@ -364,7 +354,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object aggregationInterval_ = "";
-
   /**
    *
    *
@@ -381,7 +370,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public boolean hasAggregationInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -406,7 +394,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +421,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_ = false;
-
   /**
    *
    *
@@ -450,7 +436,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -471,7 +456,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filterExpr_ = "";
-
   /**
    *
    *
@@ -487,7 +471,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public boolean hasFilterExpr() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -511,7 +494,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -538,7 +520,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   public static final int FLOW_SAMPLING_FIELD_NUMBER = 530150360;
   private float flowSampling_ = 0F;
-
   /**
    *
    *
@@ -554,7 +535,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public boolean hasFlowSampling() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -575,7 +555,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metadata_ = "";
-
   /**
    *
    *
@@ -592,7 +571,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -617,7 +595,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -648,7 +625,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList metadataFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -663,7 +639,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getMetadataFieldsList() {
     return metadataFields_;
   }
-
   /**
    *
    *
@@ -678,7 +653,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public int getMetadataFieldsCount() {
     return metadataFields_.size();
   }
-
   /**
    *
    *
@@ -694,7 +668,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public java.lang.String getMetadataFields(int index) {
     return metadataFields_.get(index);
   }
-
   /**
    *
    *
@@ -950,7 +923,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1220,7 +1192,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object aggregationInterval_ = "";
-
     /**
      *
      *
@@ -1236,7 +1207,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public boolean hasAggregationInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1260,7 +1230,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1253,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1307,7 +1275,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1293,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1318,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
 
     private boolean enable_;
-
     /**
      *
      *
@@ -1368,7 +1333,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1384,7 +1348,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public boolean getEnable() {
       return enable_;
     }
-
     /**
      *
      *
@@ -1404,7 +1367,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1386,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filterExpr_ = "";
-
     /**
      *
      *
@@ -1439,7 +1400,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public boolean hasFilterExpr() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1462,7 +1422,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1485,7 +1444,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1507,7 +1465,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1525,7 +1482,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1506,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
 
     private float flowSampling_;
-
     /**
      *
      *
@@ -1566,7 +1521,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public boolean hasFlowSampling() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1582,7 +1536,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public float getFlowSampling() {
       return flowSampling_;
     }
-
     /**
      *
      *
@@ -1602,7 +1555,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1574,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object metadata_ = "";
-
     /**
      *
      *
@@ -1638,7 +1589,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1662,7 +1612,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1686,7 +1635,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1709,7 +1657,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1728,7 +1675,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1708,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -1778,7 +1723,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       metadataFields_.makeImmutable();
       return metadataFields_;
     }
-
     /**
      *
      *
@@ -1793,7 +1737,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public int getMetadataFieldsCount() {
       return metadataFields_.size();
     }
-
     /**
      *
      *
@@ -1809,7 +1752,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public java.lang.String getMetadataFields(int index) {
       return metadataFields_.get(index);
     }
-
     /**
      *
      *
@@ -1825,7 +1767,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getMetadataFieldsBytes(int index) {
       return metadataFields_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1849,7 +1790,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1872,7 +1812,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1831,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1911,7 +1849,6 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

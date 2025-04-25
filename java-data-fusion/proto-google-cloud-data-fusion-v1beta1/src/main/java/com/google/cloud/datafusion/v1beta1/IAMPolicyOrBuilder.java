@@ -37,7 +37,6 @@ public interface IAMPolicyOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface IAMPolicyOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface IAMPolicyOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface IAMPolicyOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *

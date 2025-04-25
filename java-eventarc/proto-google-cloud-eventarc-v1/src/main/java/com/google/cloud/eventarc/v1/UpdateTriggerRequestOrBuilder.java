@@ -36,7 +36,6 @@ public interface UpdateTriggerRequestOrBuilder
    * @return Whether the trigger field is set.
    */
   boolean hasTrigger();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateTriggerRequestOrBuilder
    * @return The trigger.
    */
   com.google.cloud.eventarc.v1.Trigger getTrigger();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface UpdateTriggerRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface UpdateTriggerRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

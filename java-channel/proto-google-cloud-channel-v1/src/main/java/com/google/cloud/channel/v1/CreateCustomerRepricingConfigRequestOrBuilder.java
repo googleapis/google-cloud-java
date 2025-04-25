@@ -40,7 +40,6 @@ public interface CreateCustomerRepricingConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateCustomerRepricingConfigRequestOrBuilder
    * @return Whether the customerRepricingConfig field is set.
    */
   boolean hasCustomerRepricingConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateCustomerRepricingConfigRequestOrBuilder
    * @return The customerRepricingConfig.
    */
   com.google.cloud.channel.v1.CustomerRepricingConfig getCustomerRepricingConfig();
-
   /**
    *
    *

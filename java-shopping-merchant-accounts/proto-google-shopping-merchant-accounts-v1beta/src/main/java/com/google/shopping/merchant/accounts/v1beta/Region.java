@@ -38,7 +38,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Region)
     RegionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Region.newBuilder() to construct.
   private Region(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return The regionCode.
      */
     java.lang.String getRegionCode();
-
     /**
      *
      *
@@ -119,7 +117,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRange>
         getPostalCodesList();
-
     /**
      *
      *
@@ -133,7 +130,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRange
         getPostalCodes(int index);
-
     /**
      *
      *
@@ -146,7 +142,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPostalCodesCount();
-
     /**
      *
      *
@@ -163,7 +158,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea
                     .PostalCodeRangeOrBuilder>
         getPostalCodesOrBuilderList();
-
     /**
      *
      *
@@ -178,7 +172,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRangeOrBuilder
         getPostalCodesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea)
       PostalCodeAreaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PostalCodeArea.newBuilder() to construct.
     private PostalCodeArea(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -246,7 +238,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
        * @return The begin.
        */
       java.lang.String getBegin();
-
       /**
        *
        *
@@ -281,7 +272,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
        * @return The end.
        */
       java.lang.String getEnd();
-
       /**
        *
        *
@@ -302,7 +292,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getEndBytes();
     }
-
     /**
      *
      *
@@ -318,7 +307,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRange)
         PostalCodeRangeOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use PostalCodeRange.newBuilder() to construct.
       private PostalCodeRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -356,7 +344,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object begin_ = "";
-
       /**
        *
        *
@@ -382,7 +369,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -413,7 +399,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object end_ = "";
-
       /**
        *
        *
@@ -444,7 +429,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -670,7 +654,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -894,7 +877,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object begin_ = "";
-
         /**
          *
          *
@@ -919,7 +901,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -944,7 +925,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -968,7 +948,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -988,7 +967,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1015,7 +993,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object end_ = "";
-
         /**
          *
          *
@@ -1045,7 +1022,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1075,7 +1051,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1104,7 +1079,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1129,7 +1103,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1235,7 +1208,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -1261,7 +1233,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1265,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRange>
         postalCodes_;
-
     /**
      *
      *
@@ -1312,7 +1282,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         getPostalCodesList() {
       return postalCodes_;
     }
-
     /**
      *
      *
@@ -1332,7 +1301,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         getPostalCodesOrBuilderList() {
       return postalCodes_;
     }
-
     /**
      *
      *
@@ -1348,7 +1316,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public int getPostalCodesCount() {
       return postalCodes_.size();
     }
-
     /**
      *
      *
@@ -1365,7 +1332,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         getPostalCodes(int index) {
       return postalCodes_.get(index);
     }
-
     /**
      *
      *
@@ -1557,7 +1523,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1818,7 +1783,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object regionCode_ = "";
-
       /**
        *
        *
@@ -1843,7 +1807,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1868,7 +1831,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1892,7 +1854,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1912,7 +1873,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1980,7 +1940,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return postalCodesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1999,7 +1958,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return postalCodesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2019,7 +1977,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return postalCodesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2047,7 +2004,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2072,7 +2028,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2099,7 +2054,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2127,7 +2081,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2151,7 +2104,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2176,7 +2128,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2203,7 +2154,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2225,7 +2175,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2247,7 +2196,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2264,7 +2212,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           getPostalCodesBuilder(int index) {
         return getPostalCodesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2285,7 +2232,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return postalCodesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2308,7 +2254,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(postalCodes_);
         }
       }
-
       /**
        *
        *
@@ -2328,7 +2273,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRange
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2349,7 +2293,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.PostalCodeRange
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2480,7 +2423,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the geotargetCriteriaIds.
      */
     java.util.List<java.lang.Long> getGeotargetCriteriaIdsList();
-
     /**
      *
      *
@@ -2496,7 +2438,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return The count of geotargetCriteriaIds.
      */
     int getGeotargetCriteriaIdsCount();
-
     /**
      *
      *
@@ -2514,7 +2455,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     long getGeotargetCriteriaIds(int index);
   }
-
   /**
    *
    *
@@ -2529,7 +2469,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Region.GeoTargetArea)
       GeoTargetAreaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GeoTargetArea.newBuilder() to construct.
     private GeoTargetArea(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2564,7 +2503,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList geotargetCriteriaIds_ = emptyLongList();
-
     /**
      *
      *
@@ -2583,7 +2521,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Long> getGeotargetCriteriaIdsList() {
       return geotargetCriteriaIds_;
     }
-
     /**
      *
      *
@@ -2601,7 +2538,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public int getGeotargetCriteriaIdsCount() {
       return geotargetCriteriaIds_.size();
     }
-
     /**
      *
      *
@@ -2803,7 +2739,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3024,7 +2959,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -3043,7 +2977,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         geotargetCriteriaIds_.makeImmutable();
         return geotargetCriteriaIds_;
       }
-
       /**
        *
        *
@@ -3061,7 +2994,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       public int getGeotargetCriteriaIdsCount() {
         return geotargetCriteriaIds_.size();
       }
-
       /**
        *
        *
@@ -3080,7 +3012,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       public long getGeotargetCriteriaIds(int index) {
         return geotargetCriteriaIds_.getLong(index);
       }
-
       /**
        *
        *
@@ -3105,7 +3036,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3129,7 +3059,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3153,7 +3082,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3247,7 +3175,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3272,7 +3199,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3302,7 +3228,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -3318,7 +3243,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisplayName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3342,7 +3266,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3369,7 +3292,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSTAL_CODE_AREA_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea postalCodeArea_;
-
   /**
    *
    *
@@ -3387,7 +3309,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostalCodeArea() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3407,7 +3328,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.getDefaultInstance()
         : postalCodeArea_;
   }
-
   /**
    *
    *
@@ -3429,7 +3349,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GEOTARGET_AREA_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.accounts.v1beta.Region.GeoTargetArea geotargetArea_;
-
   /**
    *
    *
@@ -3447,7 +3366,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGeotargetArea() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3467,7 +3385,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.Region.GeoTargetArea.getDefaultInstance()
         : geotargetArea_;
   }
-
   /**
    *
    *
@@ -3489,7 +3406,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REGIONAL_INVENTORY_ELIGIBLE_FIELD_NUMBER = 5;
   private com.google.protobuf.BoolValue regionalInventoryEligible_;
-
   /**
    *
    *
@@ -3508,7 +3424,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegionalInventoryEligible() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3529,7 +3444,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : regionalInventoryEligible_;
   }
-
   /**
    *
    *
@@ -3551,7 +3465,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHIPPING_ELIGIBLE_FIELD_NUMBER = 6;
   private com.google.protobuf.BoolValue shippingEligible_;
-
   /**
    *
    *
@@ -3570,7 +3483,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShippingEligible() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -3591,7 +3503,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : shippingEligible_;
   }
-
   /**
    *
    *
@@ -3843,7 +3754,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4143,7 +4053,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4167,7 +4076,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4191,7 +4099,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4214,7 +4121,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4233,7 +4139,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4259,7 +4164,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -4274,7 +4178,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4297,7 +4200,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4320,7 +4222,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4342,7 +4243,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4360,7 +4260,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4390,7 +4289,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeArea.Builder,
             com.google.shopping.merchant.accounts.v1beta.Region.PostalCodeAreaOrBuilder>
         postalCodeAreaBuilder_;
-
     /**
      *
      *
@@ -4407,7 +4305,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostalCodeArea() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4431,7 +4328,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return postalCodeAreaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4457,7 +4353,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4481,7 +4376,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4514,7 +4408,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4536,7 +4429,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4554,7 +4446,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPostalCodeAreaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4577,7 +4468,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             : postalCodeArea_;
       }
     }
-
     /**
      *
      *
@@ -4612,7 +4502,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.Region.GeoTargetArea.Builder,
             com.google.shopping.merchant.accounts.v1beta.Region.GeoTargetAreaOrBuilder>
         geotargetAreaBuilder_;
-
     /**
      *
      *
@@ -4629,7 +4518,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGeotargetArea() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4652,7 +4540,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return geotargetAreaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4678,7 +4565,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4701,7 +4587,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4734,7 +4619,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4756,7 +4640,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4774,7 +4657,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGeotargetAreaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4796,7 +4678,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             : geotargetArea_;
       }
     }
-
     /**
      *
      *
@@ -4831,7 +4712,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         regionalInventoryEligibleBuilder_;
-
     /**
      *
      *
@@ -4849,7 +4729,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegionalInventoryEligible() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4873,7 +4752,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return regionalInventoryEligibleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4899,7 +4777,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4923,7 +4800,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4954,7 +4830,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4977,7 +4852,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4995,7 +4869,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRegionalInventoryEligibleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5017,7 +4890,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             : regionalInventoryEligible_;
       }
     }
-
     /**
      *
      *
@@ -5053,7 +4925,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         shippingEligibleBuilder_;
-
     /**
      *
      *
@@ -5071,7 +4942,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShippingEligible() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -5095,7 +4965,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         return shippingEligibleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5121,7 +4990,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5144,7 +5012,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5175,7 +5042,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5198,7 +5064,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5216,7 +5081,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getShippingEligibleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5238,7 +5102,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             : shippingEligible_;
       }
     }
-
     /**
      *
      *

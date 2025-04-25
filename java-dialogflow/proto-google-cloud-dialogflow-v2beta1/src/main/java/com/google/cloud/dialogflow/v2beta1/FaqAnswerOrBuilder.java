@@ -36,7 +36,6 @@ public interface FaqAnswerOrBuilder
    * @return The answer.
    */
   java.lang.String getAnswer();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface FaqAnswerOrBuilder
    * @return The question.
    */
   java.lang.String getQuestion();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface FaqAnswerOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface FaqAnswerOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -146,11 +142,9 @@ public interface FaqAnswerOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface FaqAnswerOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface FaqAnswerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface FaqAnswerOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.chat.v1.CreateReactionRequest)
     CreateReactionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateReactionRequest.newBuilder() to construct.
   private CreateReactionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
 
   public static final int REACTION_FIELD_NUMBER = 2;
   private com.google.chat.v1.Reaction reaction_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
   public boolean hasReaction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
   public com.google.chat.v1.Reaction getReaction() {
     return reaction_ == null ? com.google.chat.v1.Reaction.getDefaultInstance() : reaction_;
   }
-
   /**
    *
    *
@@ -347,7 +341,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -560,7 +553,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +684,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
             com.google.chat.v1.Reaction.Builder,
             com.google.chat.v1.ReactionOrBuilder>
         reactionBuilder_;
-
     /**
      *
      *
@@ -711,7 +698,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
     public boolean hasReaction() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
         return reactionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +817,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getReactionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -853,7 +833,6 @@ public final class CreateReactionRequest extends com.google.protobuf.GeneratedMe
         return reaction_ == null ? com.google.chat.v1.Reaction.getDefaultInstance() : reaction_;
       }
     }
-
     /**
      *
      *

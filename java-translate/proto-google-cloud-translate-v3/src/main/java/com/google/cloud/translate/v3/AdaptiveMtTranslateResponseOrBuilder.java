@@ -36,7 +36,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.AdaptiveMtTranslation> getTranslationsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.AdaptiveMtTranslation getTranslations(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * </code>
    */
   int getTranslationsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.AdaptiveMtTranslationOrBuilder>
       getTranslationsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.AdaptiveMtTranslation> getGlossaryTranslationsList();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.AdaptiveMtTranslation getGlossaryTranslations(int index);
-
   /**
    *
    *
@@ -154,7 +147,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * </code>
    */
   int getGlossaryTranslationsCount();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.AdaptiveMtTranslationOrBuilder>
       getGlossaryTranslationsOrBuilderList();
-
   /**
    *
    *

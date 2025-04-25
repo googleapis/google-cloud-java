@@ -41,7 +41,6 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Struct&gt; document_data_map = 2;</code>
    */
   int getDocumentDataMapCount();
-
   /**
    *
    *
@@ -123,11 +121,9 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Struct&gt; document_data_map = 2;</code>
    */
   boolean containsDocumentDataMap(java.lang.String key);
-
   /** Use {@link #getDocumentDataMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMap();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
    * <code>map&lt;string, .google.protobuf.Struct&gt; document_data_map = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Struct> getDocumentDataMapMap();
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Struct defaultValue);
-
   /**
    *
    *
@@ -259,7 +253,6 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
-
   /**
    *
    *
@@ -276,7 +269,6 @@ public interface SetUriPatternDocumentDataRequestOrBuilder
    * @return The schema.
    */
   com.google.protobuf.Struct getSchema();
-
   /**
    *
    *

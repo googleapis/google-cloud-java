@@ -35,7 +35,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse)
     ListDisplayVideo360AdvertiserLinkProposalsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDisplayVideo360AdvertiserLinkProposalsResponse.newBuilder() to construct.
   private ListDisplayVideo360AdvertiserLinkProposalsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
       displayVideo360AdvertiserLinkProposals_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       getDisplayVideo360AdvertiserLinkProposalsList() {
     return displayVideo360AdvertiserLinkProposals_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       getDisplayVideo360AdvertiserLinkProposalsOrBuilderList() {
     return displayVideo360AdvertiserLinkProposals_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
   public int getDisplayVideo360AdvertiserLinkProposalsCount() {
     return displayVideo360AdvertiserLinkProposals_.size();
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       getDisplayVideo360AdvertiserLinkProposals(int index) {
     return displayVideo360AdvertiserLinkProposals_.get(index);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -412,7 +404,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -722,7 +713,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return displayVideo360AdvertiserLinkProposalsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -741,7 +731,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return displayVideo360AdvertiserLinkProposalsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -761,7 +750,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return displayVideo360AdvertiserLinkProposalsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -787,7 +775,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +799,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +824,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +896,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +942,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +978,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         getDisplayVideo360AdvertiserLinkProposalsBuilder(int index) {
       return getDisplayVideo360AdvertiserLinkProposalsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1019,7 +997,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return displayVideo360AdvertiserLinkProposalsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return java.util.Collections.unmodifiableList(displayVideo360AdvertiserLinkProposals_);
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1080,7 +1055,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1161,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class ListDisplayVideo360AdvertiserLinkProposalsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

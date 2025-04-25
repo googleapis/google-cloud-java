@@ -33,7 +33,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.HeadlineOfferInstallment)
     HeadlineOfferInstallmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HeadlineOfferInstallment.newBuilder() to construct.
   private HeadlineOfferInstallment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int MONTHS_FIELD_NUMBER = 1;
   private long months_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
   private com.google.shopping.type.Price amount_;
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
   public boolean hasAmount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
   public com.google.shopping.type.Price getAmount() {
     return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
 
   public static final int DOWNPAYMENT_FIELD_NUMBER = 3;
   private com.google.shopping.type.Price downpayment_;
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
   public boolean hasDownpayment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
         ? com.google.shopping.type.Price.getDefaultInstance()
         : downpayment_;
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -603,7 +594,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
     private int bitField0_;
 
     private long months_;
-
     /**
      *
      *
@@ -619,7 +609,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
     public long getMonths() {
       return months_;
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         amountBuilder_;
-
     /**
      *
      *
@@ -679,7 +666,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -698,7 +684,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
         return amountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -721,7 +706,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +725,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +771,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return getAmountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
         return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
       }
     }
-
     /**
      *
      *
@@ -854,7 +833,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         downpaymentBuilder_;
-
     /**
      *
      *
@@ -869,7 +847,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
     public boolean hasDownpayment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -890,7 +867,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
         return downpaymentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -913,7 +889,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +908,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +935,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +954,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +968,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
       onChanged();
       return getDownpaymentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1015,7 +986,6 @@ public final class HeadlineOfferInstallment extends com.google.protobuf.Generate
             : downpayment_;
       }
     }
-
     /**
      *
      *

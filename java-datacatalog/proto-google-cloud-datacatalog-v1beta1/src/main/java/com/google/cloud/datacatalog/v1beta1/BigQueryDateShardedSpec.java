@@ -35,7 +35,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec)
     BigQueryDateShardedSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryDateShardedSpec.newBuilder() to construct.
   private BigQueryDateShardedSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tablePrefix_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
 
   public static final int SHARD_COUNT_FIELD_NUMBER = 3;
   private long shardCount_ = 0L;
-
   /**
    *
    *
@@ -384,7 +378,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -602,7 +595,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -629,7 +621,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +647,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     }
 
     private java.lang.Object tablePrefix_ = "";
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     }
 
     private long shardCount_;
-
     /**
      *
      *
@@ -875,7 +857,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     public long getShardCount() {
       return shardCount_;
     }
-
     /**
      *
      *
@@ -895,7 +876,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

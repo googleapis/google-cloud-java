@@ -37,7 +37,6 @@ public interface RawDiskOrBuilder
    * @return Whether the containerType field is set.
    */
   boolean hasContainerType();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RawDiskOrBuilder
    * @return The containerType.
    */
   java.lang.String getContainerType();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface RawDiskOrBuilder
    * @return Whether the sha1Checksum field is set.
    */
   boolean hasSha1Checksum();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface RawDiskOrBuilder
    * @return The sha1Checksum.
    */
   java.lang.String getSha1Checksum();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface RawDiskOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface RawDiskOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListLocksResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1alpha1.Lock locks = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.biglake.v1alpha1.Lock> getLocksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListLocksResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1alpha1.Lock locks = 1;</code>
    */
   com.google.cloud.bigquery.biglake.v1alpha1.Lock getLocks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListLocksResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.biglake.v1alpha1.Lock locks = 1;</code>
    */
   int getLocksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListLocksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.biglake.v1alpha1.LockOrBuilder>
       getLocksOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListLocksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface SearchProductsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Product products = 1;</code>
    */
   java.util.List<com.google.cloud.privatecatalog.v1beta1.Product> getProductsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchProductsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Product products = 1;</code>
    */
   com.google.cloud.privatecatalog.v1beta1.Product getProducts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchProductsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Product products = 1;</code>
    */
   int getProductsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchProductsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privatecatalog.v1beta1.ProductOrBuilder>
       getProductsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface SearchProductsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

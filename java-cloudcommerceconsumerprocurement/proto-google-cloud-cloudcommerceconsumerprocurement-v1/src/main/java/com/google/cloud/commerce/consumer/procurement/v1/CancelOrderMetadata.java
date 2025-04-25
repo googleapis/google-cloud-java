@@ -34,7 +34,6 @@ public final class CancelOrderMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.CancelOrderMetadata)
     CancelOrderMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CancelOrderMetadata.newBuilder() to construct.
   private CancelOrderMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class CancelOrderMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface MinimumOrderValueTableOrBuilder
   java.util.List<
           com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable.StoreCodeSetWithMov>
       getStoreCodeSetWithMovsList();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface MinimumOrderValueTableOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable.StoreCodeSetWithMov
       getStoreCodeSetWithMovs(int index);
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface MinimumOrderValueTableOrBuilder
    * </code>
    */
   int getStoreCodeSetWithMovsCount();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface MinimumOrderValueTableOrBuilder
               com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable
                   .StoreCodeSetWithMovOrBuilder>
       getStoreCodeSetWithMovsOrBuilderList();
-
   /**
    *
    *

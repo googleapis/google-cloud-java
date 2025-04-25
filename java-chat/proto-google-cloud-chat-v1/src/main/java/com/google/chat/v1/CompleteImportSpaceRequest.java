@@ -33,7 +33,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.chat.v1.CompleteImportSpaceRequest)
     CompleteImportSpaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompleteImportSpaceRequest.newBuilder() to construct.
   private CompleteImportSpaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -284,7 +281,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -468,7 +464,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -495,7 +490,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -548,7 +541,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -570,7 +562,6 @@ public final class CompleteImportSpaceRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

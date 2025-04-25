@@ -41,7 +41,6 @@ public interface GetValuedResourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

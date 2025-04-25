@@ -39,7 +39,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -167,7 +165,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The enum numeric value on the wire for retrievalImportance.
    */
   int getRetrievalImportanceValue();
-
   /**
    *
    *
@@ -196,7 +193,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the integerTypeOptions field is set.
    */
   boolean hasIntegerTypeOptions();
-
   /**
    *
    *
@@ -209,7 +205,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The integerTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.IntegerTypeOptions getIntegerTypeOptions();
-
   /**
    *
    *
@@ -233,7 +228,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the floatTypeOptions field is set.
    */
   boolean hasFloatTypeOptions();
-
   /**
    *
    *
@@ -246,7 +240,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The floatTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.FloatTypeOptions getFloatTypeOptions();
-
   /**
    *
    *
@@ -270,7 +263,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the textTypeOptions field is set.
    */
   boolean hasTextTypeOptions();
-
   /**
    *
    *
@@ -283,7 +275,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The textTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.TextTypeOptions getTextTypeOptions();
-
   /**
    *
    *
@@ -307,7 +298,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the propertyTypeOptions field is set.
    */
   boolean hasPropertyTypeOptions();
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The propertyTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.PropertyTypeOptions getPropertyTypeOptions();
-
   /**
    *
    *
@@ -345,7 +334,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the enumTypeOptions field is set.
    */
   boolean hasEnumTypeOptions();
-
   /**
    *
    *
@@ -358,7 +346,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The enumTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.EnumTypeOptions getEnumTypeOptions();
-
   /**
    *
    *
@@ -383,7 +370,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the dateTimeTypeOptions field is set.
    */
   boolean hasDateTimeTypeOptions();
-
   /**
    *
    *
@@ -397,7 +383,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The dateTimeTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.DateTimeTypeOptions getDateTimeTypeOptions();
-
   /**
    *
    *
@@ -423,7 +408,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the mapTypeOptions field is set.
    */
   boolean hasMapTypeOptions();
-
   /**
    *
    *
@@ -436,7 +420,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The mapTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.MapTypeOptions getMapTypeOptions();
-
   /**
    *
    *
@@ -462,7 +445,6 @@ public interface PropertyDefinitionOrBuilder
    * @return Whether the timestampTypeOptions field is set.
    */
   boolean hasTimestampTypeOptions();
-
   /**
    *
    *
@@ -477,7 +459,6 @@ public interface PropertyDefinitionOrBuilder
    * @return The timestampTypeOptions.
    */
   com.google.cloud.contentwarehouse.v1.TimestampTypeOptions getTimestampTypeOptions();
-
   /**
    *
    *
@@ -505,7 +486,6 @@ public interface PropertyDefinitionOrBuilder
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
       getSchemaSourcesList();
-
   /**
    *
    *
@@ -518,7 +498,6 @@ public interface PropertyDefinitionOrBuilder
    * </code>
    */
   com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource getSchemaSources(int index);
-
   /**
    *
    *
@@ -531,7 +510,6 @@ public interface PropertyDefinitionOrBuilder
    * </code>
    */
   int getSchemaSourcesCount();
-
   /**
    *
    *
@@ -546,7 +524,6 @@ public interface PropertyDefinitionOrBuilder
   java.util.List<
           ? extends com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>
       getSchemaSourcesOrBuilderList();
-
   /**
    *
    *

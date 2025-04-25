@@ -37,7 +37,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.WindowsUpdate)
     WindowsUpdateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WindowsUpdate.newBuilder() to construct.
   private WindowsUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return The updateId.
      */
     java.lang.String getUpdateId();
-
     /**
      *
      *
@@ -113,7 +111,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     int getRevision();
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1.WindowsUpdate.Identity)
       IdentityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Identity.newBuilder() to construct.
     private Identity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -162,7 +158,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object updateId_ = "";
-
     /**
      *
      *
@@ -186,7 +181,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -213,7 +207,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REVISION_FIELD_NUMBER = 2;
     private int revision_ = 0;
-
     /**
      *
      *
@@ -398,7 +391,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -596,7 +588,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object updateId_ = "";
-
       /**
        *
        *
@@ -619,7 +610,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -642,7 +632,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -664,7 +653,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -682,7 +670,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -707,7 +694,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int revision_;
-
       /**
        *
        *
@@ -723,7 +709,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       public int getRevision() {
         return revision_;
       }
-
       /**
        *
        *
@@ -743,7 +728,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -843,7 +827,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return The categoryId.
      */
     java.lang.String getCategoryId();
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -898,7 +879,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1.WindowsUpdate.Category)
       CategoryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Category.newBuilder() to construct.
     private Category(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -933,7 +913,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object categoryId_ = "";
-
     /**
      *
      *
@@ -957,7 +936,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -986,7 +964,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1203,7 +1179,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1403,7 +1378,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object categoryId_ = "";
-
       /**
        *
        *
@@ -1426,7 +1400,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1449,7 +1422,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1471,7 +1443,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1489,7 +1460,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1514,7 +1484,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1537,7 +1506,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1560,7 +1528,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1582,7 +1549,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1600,7 +1566,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1691,7 +1656,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int IDENTITY_FIELD_NUMBER = 1;
   private io.grafeas.v1.WindowsUpdate.Identity identity_;
-
   /**
    *
    *
@@ -1707,7 +1671,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIdentity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1725,7 +1688,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()
         : identity_;
   }
-
   /**
    *
    *
@@ -1746,7 +1708,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -1770,7 +1731,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1799,7 +1759,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1823,7 +1782,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1852,7 +1810,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.WindowsUpdate.Category> categories_;
-
   /**
    *
    *
@@ -1866,7 +1823,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1.WindowsUpdate.Category> getCategoriesList() {
     return categories_;
   }
-
   /**
    *
    *
@@ -1881,7 +1837,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       getCategoriesOrBuilderList() {
     return categories_;
   }
-
   /**
    *
    *
@@ -1895,7 +1850,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getCategoriesCount() {
     return categories_.size();
   }
-
   /**
    *
    *
@@ -1909,7 +1863,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.WindowsUpdate.Category getCategories(int index) {
     return categories_.get(index);
   }
-
   /**
    *
    *
@@ -1929,7 +1882,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList kbArticleIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1945,7 +1897,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getKbArticleIdsList() {
     return kbArticleIds_;
   }
-
   /**
    *
    *
@@ -1961,7 +1912,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getKbArticleIdsCount() {
     return kbArticleIds_.size();
   }
-
   /**
    *
    *
@@ -1978,7 +1928,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getKbArticleIds(int index) {
     return kbArticleIds_.get(index);
   }
-
   /**
    *
    *
@@ -2000,7 +1949,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object supportUrl_ = "";
-
   /**
    *
    *
@@ -2024,7 +1972,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2051,7 +1998,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_PUBLISHED_TIMESTAMP_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp lastPublishedTimestamp_;
-
   /**
    *
    *
@@ -2067,7 +2013,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastPublishedTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2085,7 +2030,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastPublishedTimestamp_;
   }
-
   /**
    *
    *
@@ -2333,7 +2277,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2685,7 +2628,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.WindowsUpdate.Identity.Builder,
             io.grafeas.v1.WindowsUpdate.IdentityOrBuilder>
         identityBuilder_;
-
     /**
      *
      *
@@ -2700,7 +2642,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIdentity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2721,7 +2662,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return identityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2744,7 +2684,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2764,7 +2703,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2792,7 +2730,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2812,7 +2749,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2827,7 +2763,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIdentityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2846,7 +2781,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             : identity_;
       }
     }
-
     /**
      *
      *
@@ -2874,7 +2808,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -2897,7 +2830,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2920,7 +2852,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2942,7 +2873,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2960,7 +2890,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2985,7 +2914,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3008,7 +2936,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3031,7 +2958,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3053,7 +2979,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3071,7 +2996,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3127,7 +3051,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return categoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3144,7 +3067,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return categoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3161,7 +3083,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return categoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3184,7 +3105,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3205,7 +3125,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3228,7 +3147,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3169,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3271,7 +3188,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3292,7 +3208,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3228,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3333,7 +3247,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3353,7 +3266,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3366,7 +3278,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.WindowsUpdate.Category.Builder getCategoriesBuilder(int index) {
       return getCategoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3383,7 +3294,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3401,7 +3311,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(categories_);
       }
     }
-
     /**
      *
      *
@@ -3415,7 +3324,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return getCategoriesFieldBuilder()
           .addBuilder(io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3429,7 +3337,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return getCategoriesFieldBuilder()
           .addBuilder(index, io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3469,7 +3376,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -3486,7 +3392,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       kbArticleIds_.makeImmutable();
       return kbArticleIds_;
     }
-
     /**
      *
      *
@@ -3502,7 +3407,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getKbArticleIdsCount() {
       return kbArticleIds_.size();
     }
-
     /**
      *
      *
@@ -3519,7 +3423,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getKbArticleIds(int index) {
       return kbArticleIds_.get(index);
     }
-
     /**
      *
      *
@@ -3536,7 +3439,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getKbArticleIdsBytes(int index) {
       return kbArticleIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3561,7 +3463,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3585,7 +3486,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3606,7 +3506,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3626,7 +3525,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3653,7 +3551,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object supportUrl_ = "";
-
     /**
      *
      *
@@ -3676,7 +3573,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3699,7 +3595,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3721,7 +3616,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3739,7 +3633,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3769,7 +3662,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastPublishedTimestampBuilder_;
-
     /**
      *
      *
@@ -3784,7 +3676,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastPublishedTimestamp() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3805,7 +3696,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return lastPublishedTimestampBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3828,7 +3718,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3849,7 +3738,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3877,7 +3765,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3897,7 +3784,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3912,7 +3798,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastPublishedTimestampFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3931,7 +3816,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             : lastPublishedTimestamp_;
       }
     }
-
     /**
      *
      *

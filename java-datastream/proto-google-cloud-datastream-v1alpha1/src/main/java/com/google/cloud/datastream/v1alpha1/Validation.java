@@ -25,7 +25,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.Validation)
     ValidationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Validation.newBuilder() to construct.
   private Validation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_EXECUTED = 1;</code>
      */
     public static final int NOT_EXECUTED_VALUE = 1;
-
     /**
      *
      *
@@ -144,7 +141,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 2;</code>
      */
     public static final int FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -245,7 +241,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +290,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private int status_ = 0;
-
   /**
    *
    *
@@ -312,7 +305,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -337,7 +329,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.ValidationMessage> message_;
-
   /**
    *
    *
@@ -351,7 +342,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1alpha1.ValidationMessage> getMessageList() {
     return message_;
   }
-
   /**
    *
    *
@@ -366,7 +356,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       getMessageOrBuilderList() {
     return message_;
   }
-
   /**
    *
    *
@@ -380,7 +369,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   public int getMessageCount() {
     return message_.size();
   }
-
   /**
    *
    *
@@ -394,7 +382,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1alpha1.ValidationMessage getMessage(int index) {
     return message_.get(index);
   }
-
   /**
    *
    *
@@ -414,7 +401,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -438,7 +424,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -653,7 +638,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.datastream.v1alpha1.Validation} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -920,7 +904,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -943,7 +926,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -988,7 +969,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +986,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1010,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -1047,7 +1025,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datastream.v1alpha1.Validation.Status.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1135,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return messageBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1151,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return messageBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1167,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return messageBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1219,7 +1190,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1240,7 +1210,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1232,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1255,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1275,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1295,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1316,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1335,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1354,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1367,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getMessageFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1423,7 +1384,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return messageBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1441,7 +1401,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(message_);
       }
     }
-
     /**
      *
      *
@@ -1455,7 +1414,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       return getMessageFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1alpha1.ValidationMessage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1471,7 +1429,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datastream.v1alpha1.ValidationMessage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1504,7 +1461,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -1527,7 +1483,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1550,7 +1505,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1572,7 +1526,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1590,7 +1543,6 @@ public final class Validation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

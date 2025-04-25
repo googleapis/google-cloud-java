@@ -33,7 +33,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest)
     LoadSnapshotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoadSnapshotRequest.newBuilder() to construct.
   private LoadSnapshotRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object environment_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshotPath_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SKIP_PYPI_PACKAGES_INSTALLATION_FIELD_NUMBER = 3;
   private boolean skipPypiPackagesInstallation_ = false;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SKIP_ENVIRONMENT_VARIABLES_SETTING_FIELD_NUMBER = 4;
   private boolean skipEnvironmentVariablesSetting_ = false;
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SKIP_AIRFLOW_OVERRIDES_SETTING_FIELD_NUMBER = 5;
   private boolean skipAirflowOverridesSetting_ = false;
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SKIP_GCS_DATA_COPYING_FIELD_NUMBER = 6;
   private boolean skipGcsDataCopying_ = false;
-
   /**
    *
    *
@@ -476,7 +467,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -739,7 +729,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object environment_ = "";
-
     /**
      *
      *
@@ -763,7 +752,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +775,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +797,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +815,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object snapshotPath_ = "";
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -926,7 +908,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +926,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +951,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean skipPypiPackagesInstallation_;
-
     /**
      *
      *
@@ -988,7 +967,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     public boolean getSkipPypiPackagesInstallation() {
       return skipPypiPackagesInstallation_;
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1007,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean skipEnvironmentVariablesSetting_;
-
     /**
      *
      *
@@ -1047,7 +1023,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     public boolean getSkipEnvironmentVariablesSetting() {
       return skipEnvironmentVariablesSetting_;
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean skipAirflowOverridesSetting_;
-
     /**
      *
      *
@@ -1106,7 +1079,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     public boolean getSkipAirflowOverridesSetting() {
       return skipAirflowOverridesSetting_;
     }
-
     /**
      *
      *
@@ -1127,7 +1099,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean skipGcsDataCopying_;
-
     /**
      *
      *
@@ -1165,7 +1135,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
     public boolean getSkipGcsDataCopying() {
       return skipGcsDataCopying_;
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class LoadSnapshotRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

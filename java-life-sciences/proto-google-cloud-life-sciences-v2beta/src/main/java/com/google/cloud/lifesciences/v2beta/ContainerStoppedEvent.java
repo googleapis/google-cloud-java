@@ -33,7 +33,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.ContainerStoppedEvent)
     ContainerStoppedEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContainerStoppedEvent.newBuilder() to construct.
   private ContainerStoppedEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
   private int actionId_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
 
   public static final int EXIT_STATUS_FIELD_NUMBER = 2;
   private int exitStatus_ = 0;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stderr_ = "";
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -347,7 +342,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +552,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int actionId_;
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     public int getActionId() {
       return actionId_;
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     }
 
     private int exitStatus_;
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     public int getExitStatus() {
       return exitStatus_;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object stderr_ = "";
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface GlobalSetLabelsRequestOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GlobalSetLabelsRequestOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface GlobalSetLabelsRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -84,11 +81,9 @@ public interface GlobalSetLabelsRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -99,7 +94,6 @@ public interface GlobalSetLabelsRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -114,7 +108,6 @@ public interface GlobalSetLabelsRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

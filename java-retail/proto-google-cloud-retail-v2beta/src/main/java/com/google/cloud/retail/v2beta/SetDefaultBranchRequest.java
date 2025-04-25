@@ -33,7 +33,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.SetDefaultBranchRequest)
     SetDefaultBranchRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetDefaultBranchRequest.newBuilder() to construct.
   private SetDefaultBranchRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalog_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branchId_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object note_ = "";
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
 
   public static final int FORCE_FIELD_NUMBER = 4;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -459,7 +451,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -687,7 +678,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object catalog_ = "";
-
     /**
      *
      *
@@ -711,7 +701,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -735,7 +724,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object branchId_ = "";
-
     /**
      *
      *
@@ -833,7 +818,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +847,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +899,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +930,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object note_ = "";
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1010,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1061,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -1103,7 +1078,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -1125,7 +1099,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

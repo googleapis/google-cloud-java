@@ -34,7 +34,6 @@ public interface RoutersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Router> getRoutersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RoutersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
    */
   com.google.cloud.compute.v1.Router getRouters(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RoutersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
    */
   int getRoutersCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface RoutersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterOrBuilder> getRoutersOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface RoutersScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface RoutersScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

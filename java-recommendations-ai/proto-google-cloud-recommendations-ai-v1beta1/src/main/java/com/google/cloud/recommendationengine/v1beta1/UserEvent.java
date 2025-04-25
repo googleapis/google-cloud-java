@@ -34,7 +34,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.UserEvent)
     UserEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserEvent.newBuilder() to construct.
   private UserEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_SOURCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOML = 1;</code>
      */
     public static final int AUTOML_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ECOMMERCE = 2;</code>
      */
     public static final int ECOMMERCE_VALUE = 2;
-
     /**
      *
      *
@@ -259,7 +255,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventType_ = "";
-
   /**
    *
    *
@@ -300,7 +295,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -344,7 +338,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.recommendationengine.v1beta1.UserInfo userInfo_;
-
   /**
    *
    *
@@ -362,7 +355,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -382,7 +374,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.recommendationengine.v1beta1.UserInfo.getDefaultInstance()
         : userInfo_;
   }
-
   /**
    *
    *
@@ -403,7 +394,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_DETAIL_FIELD_NUMBER = 3;
   private com.google.cloud.recommendationengine.v1beta1.EventDetail eventDetail_;
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventDetail() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -443,7 +432,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.recommendationengine.v1beta1.EventDetail.getDefaultInstance()
         : eventDetail_;
   }
-
   /**
    *
    *
@@ -466,7 +454,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCT_EVENT_DETAIL_FIELD_NUMBER = 4;
   private com.google.cloud.recommendationengine.v1beta1.ProductEventDetail productEventDetail_;
-
   /**
    *
    *
@@ -507,7 +494,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductEventDetail() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -550,7 +536,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.recommendationengine.v1beta1.ProductEventDetail.getDefaultInstance()
         : productEventDetail_;
   }
-
   /**
    *
    *
@@ -595,7 +580,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp eventTime_;
-
   /**
    *
    *
@@ -613,7 +597,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -631,7 +614,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
-
   /**
    *
    *
@@ -650,7 +632,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_SOURCE_FIELD_NUMBER = 6;
   private int eventSource_ = 0;
-
   /**
    *
    *
@@ -669,7 +650,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   public int getEventSourceValue() {
     return eventSource_;
   }
-
   /**
    *
    *
@@ -924,7 +904,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1214,7 +1193,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object eventType_ = "";
-
     /**
      *
      *
@@ -1254,7 +1232,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1271,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1309,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1343,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1389,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommendationengine.v1beta1.UserInfo.Builder,
             com.google.cloud.recommendationengine.v1beta1.UserInfoOrBuilder>
         userInfoBuilder_;
-
     /**
      *
      *
@@ -1432,7 +1405,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1455,7 +1427,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return userInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1480,7 +1451,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1503,7 +1473,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1503,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1556,7 +1524,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1540,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1594,7 +1560,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             : userInfo_;
       }
     }
-
     /**
      *
      *
@@ -1629,7 +1594,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommendationengine.v1beta1.EventDetail.Builder,
             com.google.cloud.recommendationengine.v1beta1.EventDetailOrBuilder>
         eventDetailBuilder_;
-
     /**
      *
      *
@@ -1647,7 +1611,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventDetail() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1671,7 +1634,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return eventDetailBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1697,7 +1659,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1682,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1714,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1777,7 +1736,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1754,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventDetailFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1819,7 +1776,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             : eventDetail_;
       }
     }
-
     /**
      *
      *
@@ -1855,7 +1811,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommendationengine.v1beta1.ProductEventDetail.Builder,
             com.google.cloud.recommendationengine.v1beta1.ProductEventDetailOrBuilder>
         productEventDetailBuilder_;
-
     /**
      *
      *
@@ -1895,7 +1850,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductEventDetail() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1942,7 +1896,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return productEventDetailBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1991,7 +1944,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2037,7 +1989,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2044,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2138,7 +2088,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2179,7 +2128,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductEventDetailFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2224,7 +2172,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             : productEventDetail_;
       }
     }
-
     /**
      *
      *
@@ -2282,7 +2229,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
-
     /**
      *
      *
@@ -2299,7 +2245,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2320,7 +2265,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2345,7 +2289,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2367,7 +2310,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2397,7 +2339,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2419,7 +2360,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2436,7 +2376,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2455,7 +2394,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
-
     /**
      *
      *
@@ -2485,7 +2423,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int eventSource_ = 0;
-
     /**
      *
      *
@@ -2504,7 +2441,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     public int getEventSourceValue() {
       return eventSource_;
     }
-
     /**
      *
      *
@@ -2526,7 +2462,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2485,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.recommendationengine.v1beta1.UserEvent.EventSource.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2576,7 +2510,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

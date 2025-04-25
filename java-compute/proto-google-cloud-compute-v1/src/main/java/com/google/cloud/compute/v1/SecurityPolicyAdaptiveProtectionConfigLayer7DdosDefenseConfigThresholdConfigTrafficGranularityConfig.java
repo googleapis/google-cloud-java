@@ -36,7 +36,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig)
     SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use
   // SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig.newBuilder() to construct.
   private
@@ -116,13 +115,10 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /** <code>HTTP_HEADER_HOST = 374321891;</code> */
     public static final int HTTP_HEADER_HOST_VALUE = 374321891;
-
     /** <code>HTTP_PATH = 311503228;</code> */
     public static final int HTTP_PATH_VALUE = 311503228;
-
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     public static final int UNSPECIFIED_TYPE_VALUE = 53933922;
 
@@ -218,7 +214,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
   private int bitField0_;
   public static final int ENABLE_EACH_UNIQUE_VALUE_FIELD_NUMBER = 469206341;
   private boolean enableEachUniqueValue_ = false;
-
   /**
    *
    *
@@ -234,7 +229,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
   public boolean hasEnableEachUniqueValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -255,7 +249,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -272,7 +265,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -297,7 +289,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       return s;
     }
   }
-
   /**
    *
    *
@@ -327,7 +318,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
-
   /**
    *
    *
@@ -343,7 +333,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
   public boolean hasValue() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -367,7 +356,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       return s;
     }
   }
-
   /**
    *
    *
@@ -613,7 +601,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -866,7 +853,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     private int bitField0_;
 
     private boolean enableEachUniqueValue_;
-
     /**
      *
      *
@@ -882,7 +868,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     public boolean hasEnableEachUniqueValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -898,7 +883,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     public boolean getEnableEachUniqueValue() {
       return enableEachUniqueValue_;
     }
-
     /**
      *
      *
@@ -918,7 +902,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +921,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -954,7 +936,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -978,7 +959,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +982,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1004,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1022,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1047,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     }
 
     private java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -1085,7 +1061,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     public boolean hasValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1126,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1143,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
       onChanged();
       return this;
     }
-
     /**
      *
      *

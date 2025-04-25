@@ -38,7 +38,6 @@ public interface ConnectionInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ConnectionInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ConnectionInfoOrBuilder
    * @return The publicIpAddress.
    */
   java.lang.String getPublicIpAddress();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface ConnectionInfoOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getPemCertificateChainList();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ConnectionInfoOrBuilder
    */
   @java.lang.Deprecated
   int getPemCertificateChainCount();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface ConnectionInfoOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPemCertificateChain(int index);
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public interface ConnectionInfoOrBuilder
    * @return The instanceUid.
    */
   java.lang.String getInstanceUid();
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public interface ConnectionInfoOrBuilder
    * @return The pscDnsName.
    */
   java.lang.String getPscDnsName();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class ExportModelResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExportModelResponse)
     ExportModelResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportModelResponse.newBuilder() to construct.
   private ExportModelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class ExportModelResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

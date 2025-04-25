@@ -34,7 +34,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListIndexesResponse)
     ListIndexesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListIndexesResponse.newBuilder() to construct.
   private ListIndexesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Index> indexes_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.aiplatform.v1.Index> getIndexesList() {
     return indexes_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       getIndexesOrBuilderList() {
     return indexes_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
   public int getIndexesCount() {
     return indexes_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.aiplatform.v1.Index getIndexes(int index) {
     return indexes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return indexesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return indexesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return indexesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1.Index.Builder getIndexesBuilder(int index) {
       return getIndexesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return indexesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(indexes_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       return getIndexesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Index.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       return getIndexesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Index.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1009,7 +982,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1007,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1031,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

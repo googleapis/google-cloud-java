@@ -39,7 +39,6 @@ public interface CheckGroundingRequestOrBuilder
    * @return The groundingConfig.
    */
   java.lang.String getGroundingConfig();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CheckGroundingRequestOrBuilder
    * @return The answerCandidate.
    */
   java.lang.String getAnswerCandidate();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CheckGroundingRequestOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.GroundingFact facts = 3;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.GroundingFact> getFactsList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface CheckGroundingRequestOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.GroundingFact facts = 3;</code>
    */
   com.google.cloud.discoveryengine.v1.GroundingFact getFacts(int index);
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface CheckGroundingRequestOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.GroundingFact facts = 3;</code>
    */
   int getFactsCount();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface CheckGroundingRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.GroundingFactOrBuilder>
       getFactsOrBuilderList();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface CheckGroundingRequestOrBuilder
    * @return Whether the groundingSpec field is set.
    */
   boolean hasGroundingSpec();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface CheckGroundingRequestOrBuilder
    * @return The groundingSpec.
    */
   com.google.cloud.discoveryengine.v1.CheckGroundingSpec getGroundingSpec();
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface CheckGroundingRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 5;</code>
    */
   int getUserLabelsCount();
-
   /**
    *
    *
@@ -233,11 +224,9 @@ public interface CheckGroundingRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 5;</code>
    */
   boolean containsUserLabels(java.lang.String key);
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public interface CheckGroundingRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
-
   /**
    *
    *
@@ -295,7 +283,6 @@ public interface CheckGroundingRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

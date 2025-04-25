@@ -34,7 +34,6 @@ public final class GetMeasurementProtocolSecretRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest)
     GetMeasurementProtocolSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetMeasurementProtocolSecretRequest.newBuilder() to construct.
   private GetMeasurementProtocolSecretRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GetMeasurementProtocolSecretRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class GetMeasurementProtocolSecretRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +285,6 @@ public final class GetMeasurementProtocolSecretRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +477,6 @@ public final class GetMeasurementProtocolSecretRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -508,7 +503,6 @@ public final class GetMeasurementProtocolSecretRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -535,7 +529,6 @@ public final class GetMeasurementProtocolSecretRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -561,7 +554,6 @@ public final class GetMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class GetMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

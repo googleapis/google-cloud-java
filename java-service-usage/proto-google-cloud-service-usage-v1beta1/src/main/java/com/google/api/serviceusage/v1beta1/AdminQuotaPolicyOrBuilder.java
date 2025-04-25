@@ -40,7 +40,6 @@ public interface AdminQuotaPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface AdminQuotaPolicyOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   int getDimensionsCount();
-
   /**
    *
    *
@@ -117,11 +115,9 @@ public interface AdminQuotaPolicyOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   boolean containsDimensions(java.lang.String key);
-
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDimensions();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface AdminQuotaPolicyOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface AdminQuotaPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public interface AdminQuotaPolicyOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public interface AdminQuotaPolicyOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
-
   /**
    *
    *
@@ -276,7 +268,6 @@ public interface AdminQuotaPolicyOrBuilder
    * @return The container.
    */
   java.lang.String getContainer();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1.ClusterMaintenanceSchedule)
     ClusterMaintenanceScheduleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClusterMaintenanceSchedule.newBuilder() to construct.
   private ClusterMaintenanceSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -578,7 +570,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +651,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -803,7 +785,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -824,7 +805,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -849,7 +829,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +850,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -959,7 +934,6 @@ public final class ClusterMaintenanceSchedule extends com.google.protobuf.Genera
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

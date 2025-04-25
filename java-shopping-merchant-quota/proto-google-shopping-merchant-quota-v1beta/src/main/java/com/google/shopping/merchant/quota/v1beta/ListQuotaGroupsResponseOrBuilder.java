@@ -37,7 +37,6 @@ public interface ListQuotaGroupsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.quota.v1beta.QuotaGroup quota_groups = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.quota.v1beta.QuotaGroup> getQuotaGroupsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListQuotaGroupsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.quota.v1beta.QuotaGroup quota_groups = 1;</code>
    */
   com.google.shopping.merchant.quota.v1beta.QuotaGroup getQuotaGroups(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface ListQuotaGroupsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.quota.v1beta.QuotaGroup quota_groups = 1;</code>
    */
   int getQuotaGroupsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListQuotaGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.quota.v1beta.QuotaGroupOrBuilder>
       getQuotaGroupsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListQuotaGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

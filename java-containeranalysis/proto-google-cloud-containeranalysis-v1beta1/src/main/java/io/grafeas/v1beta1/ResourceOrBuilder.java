@@ -37,7 +37,6 @@ public interface ResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ResourceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ResourceOrBuilder
    * @return Whether the contentHash field is set.
    */
   boolean hasContentHash();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ResourceOrBuilder
    * @return The contentHash.
    */
   io.grafeas.v1beta1.provenance.Hash getContentHash();
-
   /**
    *
    *

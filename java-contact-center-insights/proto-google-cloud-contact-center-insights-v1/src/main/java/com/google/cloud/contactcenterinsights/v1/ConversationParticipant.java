@@ -33,7 +33,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ConversationParticipant)
     ConversationParticipantOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConversationParticipant.newBuilder() to construct.
   private ConversationParticipant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * <code>ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * <code>HUMAN_AGENT = 1;</code>
      */
     public static final int HUMAN_AGENT_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * <code>AUTOMATED_AGENT = 2;</code>
      */
     public static final int AUTOMATED_AGENT_VALUE = 2;
-
     /**
      *
      *
@@ -172,7 +168,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * <code>END_USER = 3;</code>
      */
     public static final int END_USER_VALUE = 3;
-
     /**
      *
      *
@@ -290,7 +285,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     private ParticipantCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -324,7 +318,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   }
 
   public static final int DIALOGFLOW_PARTICIPANT_NAME_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   public boolean hasDialogflowParticipantName() {
     return participantCase_ == 5;
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -400,7 +391,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   }
 
   public static final int USER_ID_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -415,7 +405,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   public boolean hasUserId() {
     return participantCase_ == 6;
   }
-
   /**
    *
    *
@@ -443,7 +432,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -476,7 +464,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dialogflowParticipant_ = "";
-
   /**
    *
    *
@@ -506,7 +493,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -541,7 +527,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object obfuscatedExternalUserId_ = "";
-
   /**
    *
    *
@@ -565,7 +550,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -592,7 +576,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
 
   public static final int ROLE_FIELD_NUMBER = 2;
   private int role_ = 0;
-
   /**
    *
    *
@@ -608,7 +591,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   public int getRoleValue() {
     return role_;
   }
-
   /**
    *
    *
@@ -849,7 +831,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1140,7 +1121,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     public boolean hasDialogflowParticipantName() {
       return participantCase_ == 5;
     }
-
     /**
      *
      *
@@ -1171,7 +1151,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1202,7 +1181,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1226,7 +1204,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1225,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1265,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     public boolean hasUserId() {
       return participantCase_ == 6;
     }
-
     /**
      *
      *
@@ -1318,7 +1293,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1321,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1369,7 +1342,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1361,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1385,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     }
 
     private java.lang.Object dialogflowParticipant_ = "";
-
     /**
      *
      *
@@ -1443,7 +1413,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1441,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1468,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1524,7 +1491,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1521,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     }
 
     private java.lang.Object obfuscatedExternalUserId_ = "";
-
     /**
      *
      *
@@ -1578,7 +1543,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1565,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1623,7 +1586,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1603,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1627,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     }
 
     private int role_ = 0;
-
     /**
      *
      *
@@ -1682,7 +1642,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     public int getRoleValue() {
       return role_;
     }
-
     /**
      *
      *
@@ -1701,7 +1660,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1679,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
           ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1744,7 +1701,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceivePacketsRequest)
     ReceivePacketsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReceivePacketsRequest.newBuilder() to construct.
   private ReceivePacketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the eagerReceiveMode field is set.
      */
     boolean hasEagerReceiveMode();
-
     /**
      *
      *
@@ -92,7 +90,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return The eagerReceiveMode.
      */
     com.google.cloud.visionai.v1.EagerMode getEagerReceiveMode();
-
     /**
      *
      *
@@ -116,7 +113,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the controlledReceiveMode field is set.
      */
     boolean hasControlledReceiveMode();
-
     /**
      *
      *
@@ -129,7 +125,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return The controlledReceiveMode.
      */
     com.google.cloud.visionai.v1.ControlledMode getControlledReceiveMode();
-
     /**
      *
      *
@@ -153,7 +148,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
-
     /**
      *
      *
@@ -166,7 +160,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return The metadata.
      */
     com.google.cloud.visionai.v1.RequestMetadata getMetadata();
-
     /**
      *
      *
@@ -192,7 +185,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return The receiver.
      */
     java.lang.String getReceiver();
-
     /**
      *
      *
@@ -225,7 +217,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the heartbeatInterval field is set.
      */
     boolean hasHeartbeatInterval();
-
     /**
      *
      *
@@ -243,7 +234,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return The heartbeatInterval.
      */
     com.google.protobuf.Duration getHeartbeatInterval();
-
     /**
      *
      *
@@ -277,7 +267,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the writesDoneGracePeriod field is set.
      */
     boolean hasWritesDoneGracePeriod();
-
     /**
      *
      *
@@ -295,7 +284,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
      * @return The writesDoneGracePeriod.
      */
     com.google.protobuf.Duration getWritesDoneGracePeriod();
-
     /**
      *
      *
@@ -315,7 +303,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest.ConsumerModeCase
         getConsumerModeCase();
   }
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest)
       SetupRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SetupRequest.newBuilder() to construct.
     private SetupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -379,7 +365,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       private ConsumerModeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -413,7 +398,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     }
 
     public static final int EAGER_RECEIVE_MODE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -429,7 +413,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasEagerReceiveMode() {
       return consumerModeCase_ == 3;
     }
-
     /**
      *
      *
@@ -448,7 +431,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       }
       return com.google.cloud.visionai.v1.EagerMode.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -467,7 +449,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     }
 
     public static final int CONTROLLED_RECEIVE_MODE_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -483,7 +464,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasControlledReceiveMode() {
       return consumerModeCase_ == 4;
     }
-
     /**
      *
      *
@@ -502,7 +482,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       }
       return com.google.cloud.visionai.v1.ControlledMode.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -523,7 +502,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
 
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.google.cloud.visionai.v1.RequestMetadata metadata_;
-
     /**
      *
      *
@@ -539,7 +517,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -557,7 +534,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.visionai.v1.RequestMetadata.getDefaultInstance()
           : metadata_;
     }
-
     /**
      *
      *
@@ -578,7 +554,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object receiver_ = "";
-
     /**
      *
      *
@@ -604,7 +579,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -633,7 +607,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
 
     public static final int HEARTBEAT_INTERVAL_FIELD_NUMBER = 5;
     private com.google.protobuf.Duration heartbeatInterval_;
-
     /**
      *
      *
@@ -654,7 +627,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasHeartbeatInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -677,7 +649,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Duration.getDefaultInstance()
           : heartbeatInterval_;
     }
-
     /**
      *
      *
@@ -701,7 +672,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
 
     public static final int WRITES_DONE_GRACE_PERIOD_FIELD_NUMBER = 6;
     private com.google.protobuf.Duration writesDoneGracePeriod_;
-
     /**
      *
      *
@@ -722,7 +692,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasWritesDoneGracePeriod() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -745,7 +714,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Duration.getDefaultInstance()
           : writesDoneGracePeriod_;
     }
-
     /**
      *
      *
@@ -1011,7 +979,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1348,7 +1315,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               com.google.cloud.visionai.v1.EagerMode.Builder,
               com.google.cloud.visionai.v1.EagerModeOrBuilder>
           eagerReceiveModeBuilder_;
-
       /**
        *
        *
@@ -1364,7 +1330,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public boolean hasEagerReceiveMode() {
         return consumerModeCase_ == 3;
       }
-
       /**
        *
        *
@@ -1390,7 +1355,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return com.google.cloud.visionai.v1.EagerMode.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1413,7 +1377,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         consumerModeCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1434,7 +1397,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         consumerModeCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1467,7 +1429,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         consumerModeCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1493,7 +1454,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1506,7 +1466,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public com.google.cloud.visionai.v1.EagerMode.Builder getEagerReceiveModeBuilder() {
         return getEagerReceiveModeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1527,7 +1486,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return com.google.cloud.visionai.v1.EagerMode.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1566,7 +1524,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               com.google.cloud.visionai.v1.ControlledMode.Builder,
               com.google.cloud.visionai.v1.ControlledModeOrBuilder>
           controlledReceiveModeBuilder_;
-
       /**
        *
        *
@@ -1582,7 +1539,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public boolean hasControlledReceiveMode() {
         return consumerModeCase_ == 4;
       }
-
       /**
        *
        *
@@ -1608,7 +1564,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return com.google.cloud.visionai.v1.ControlledMode.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1631,7 +1586,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         consumerModeCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -1652,7 +1606,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         consumerModeCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -1686,7 +1639,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         consumerModeCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -1712,7 +1664,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1725,7 +1676,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public com.google.cloud.visionai.v1.ControlledMode.Builder getControlledReceiveModeBuilder() {
         return getControlledReceiveModeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1747,7 +1697,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return com.google.cloud.visionai.v1.ControlledMode.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1787,7 +1736,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               com.google.cloud.visionai.v1.RequestMetadata.Builder,
               com.google.cloud.visionai.v1.RequestMetadataOrBuilder>
           metadataBuilder_;
-
       /**
        *
        *
@@ -1802,7 +1750,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public boolean hasMetadata() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1823,7 +1770,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return metadataBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1846,7 +1792,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1867,7 +1812,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1895,7 +1839,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1915,7 +1858,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1930,7 +1872,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return getMetadataFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1949,7 +1890,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               : metadata_;
         }
       }
-
       /**
        *
        *
@@ -1977,7 +1917,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object receiver_ = "";
-
       /**
        *
        *
@@ -2002,7 +1941,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2027,7 +1965,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2051,7 +1988,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2071,7 +2007,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2103,7 +2038,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           heartbeatIntervalBuilder_;
-
       /**
        *
        *
@@ -2123,7 +2057,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public boolean hasHeartbeatInterval() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -2149,7 +2082,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return heartbeatIntervalBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2177,7 +2109,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2202,7 +2133,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2235,7 +2165,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2260,7 +2189,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2280,7 +2208,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return getHeartbeatIntervalFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2304,7 +2231,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               : heartbeatInterval_;
         }
       }
-
       /**
        *
        *
@@ -2342,7 +2268,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           writesDoneGracePeriodBuilder_;
-
       /**
        *
        *
@@ -2362,7 +2287,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       public boolean hasWritesDoneGracePeriod() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -2388,7 +2312,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
           return writesDoneGracePeriodBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2416,7 +2339,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2442,7 +2364,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2475,7 +2396,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -2500,7 +2420,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2520,7 +2439,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return getWritesDoneGracePeriodFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2544,7 +2462,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
               : writesDoneGracePeriod_;
         }
       }
-
       /**
        *
        *
@@ -2660,7 +2577,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     private RequestCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2694,7 +2610,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SETUP_REQUEST_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -2712,7 +2627,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSetupRequest() {
     return requestCase_ == 6;
   }
-
   /**
    *
    *
@@ -2733,7 +2647,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2755,7 +2668,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMMIT_REQUEST_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -2771,7 +2683,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCommitRequest() {
     return requestCase_ == 7;
   }
-
   /**
    *
    *
@@ -2790,7 +2701,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.visionai.v1.CommitRequest.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2998,7 +2908,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3234,7 +3143,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest.Builder,
             com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequestOrBuilder>
         setupRequestBuilder_;
-
     /**
      *
      *
@@ -3252,7 +3160,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSetupRequest() {
       return requestCase_ == 6;
     }
-
     /**
      *
      *
@@ -3280,7 +3187,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3306,7 +3212,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       requestCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3329,7 +3234,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       requestCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3367,7 +3271,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       requestCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3395,7 +3298,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3411,7 +3313,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         getSetupRequestBuilder() {
       return getSetupRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3435,7 +3336,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.ReceivePacketsRequest.SetupRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3477,7 +3377,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.CommitRequest.Builder,
             com.google.cloud.visionai.v1.CommitRequestOrBuilder>
         commitRequestBuilder_;
-
     /**
      *
      *
@@ -3493,7 +3392,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCommitRequest() {
       return requestCase_ == 7;
     }
-
     /**
      *
      *
@@ -3519,7 +3417,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.CommitRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3542,7 +3439,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       requestCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3563,7 +3459,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       requestCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3596,7 +3491,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       requestCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -3622,7 +3516,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3635,7 +3528,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.visionai.v1.CommitRequest.Builder getCommitRequestBuilder() {
       return getCommitRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3656,7 +3548,6 @@ public final class ReceivePacketsRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.visionai.v1.CommitRequest.getDefaultInstance();
       }
     }
-
     /**
      *
      *

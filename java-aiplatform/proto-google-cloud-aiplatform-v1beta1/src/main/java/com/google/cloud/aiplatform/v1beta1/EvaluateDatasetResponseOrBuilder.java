@@ -38,7 +38,6 @@ public interface EvaluateDatasetResponseOrBuilder
    * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface EvaluateDatasetResponseOrBuilder
    * @return The outputInfo.
    */
   com.google.cloud.aiplatform.v1beta1.OutputInfo getOutputInfo();
-
   /**
    *
    *

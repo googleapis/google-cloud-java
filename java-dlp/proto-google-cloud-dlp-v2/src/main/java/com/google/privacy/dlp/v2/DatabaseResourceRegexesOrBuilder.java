@@ -37,7 +37,6 @@ public interface DatabaseResourceRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DatabaseResourceRegex patterns = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DatabaseResourceRegex> getPatternsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DatabaseResourceRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DatabaseResourceRegex patterns = 1;</code>
    */
   com.google.privacy.dlp.v2.DatabaseResourceRegex getPatterns(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface DatabaseResourceRegexesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DatabaseResourceRegex patterns = 1;</code>
    */
   int getPatternsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface DatabaseResourceRegexesOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DatabaseResourceRegexOrBuilder>
       getPatternsOrBuilderList();
-
   /**
    *
    *

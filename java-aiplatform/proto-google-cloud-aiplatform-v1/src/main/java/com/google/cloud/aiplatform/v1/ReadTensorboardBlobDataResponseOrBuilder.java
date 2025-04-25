@@ -34,7 +34,6 @@ public interface ReadTensorboardBlobDataResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardBlob blobs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TensorboardBlob> getBlobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ReadTensorboardBlobDataResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardBlob blobs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.TensorboardBlob getBlobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ReadTensorboardBlobDataResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardBlob blobs = 1;</code>
    */
   int getBlobsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ReadTensorboardBlobDataResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TensorboardBlobOrBuilder>
       getBlobsOrBuilderList();
-
   /**
    *
    *

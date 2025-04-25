@@ -33,7 +33,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.GetDataLayersRequest)
     GetDataLayersRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetDataLayersRequest.newBuilder() to construct.
   private GetDataLayersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int LOCATION_FIELD_NUMBER = 1;
   private com.google.type.LatLng location_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
   public com.google.type.LatLng getLocation() {
     return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
 
   public static final int RADIUS_METERS_FIELD_NUMBER = 2;
   private float radiusMeters_ = 0F;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private int view_ = 0;
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
 
   public static final int REQUIRED_QUALITY_FIELD_NUMBER = 5;
   private int requiredQuality_ = 0;
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
   public int getRequiredQualityValue() {
     return requiredQuality_;
   }
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PIXEL_SIZE_METERS_FIELD_NUMBER = 6;
   private float pixelSizeMeters_ = 0F;
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
 
   public static final int EXACT_QUALITY_REQUIRED_FIELD_NUMBER = 7;
   private boolean exactQualityRequired_ = false;
-
   /**
    *
    *
@@ -491,7 +480,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -757,7 +745,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         locationBuilder_;
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
         return locationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +885,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
         return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
       }
     }
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     }
 
     private float radiusMeters_;
-
     /**
      *
      *
@@ -972,7 +950,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     public float getRadiusMeters() {
       return radiusMeters_;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1045,7 +1020,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1057,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
           com.google.maps.solar.v1.DataLayerView.forNumber(view_);
       return result == null ? com.google.maps.solar.v1.DataLayerView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1099,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int requiredQuality_ = 0;
-
     /**
      *
      *
@@ -1148,7 +1118,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     public int getRequiredQualityValue() {
       return requiredQuality_;
     }
-
     /**
      *
      *
@@ -1171,7 +1140,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1161,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
           com.google.maps.solar.v1.ImageryQuality.forNumber(requiredQuality_);
       return result == null ? com.google.maps.solar.v1.ImageryQuality.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1219,7 +1186,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1209,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     }
 
     private float pixelSizeMeters_;
-
     /**
      *
      *
@@ -1265,7 +1230,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     public float getPixelSizeMeters() {
       return pixelSizeMeters_;
     }
-
     /**
      *
      *
@@ -1291,7 +1255,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1280,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean exactQualityRequired_;
-
     /**
      *
      *
@@ -1338,7 +1300,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
     public boolean getExactQualityRequired() {
       return exactQualityRequired_;
     }
-
     /**
      *
      *
@@ -1363,7 +1324,6 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CreateCustomerRequest)
     CreateCustomerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCustomerRequest.newBuilder() to construct.
   private CreateCustomerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CUSTOMER_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.Customer customer_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCustomer() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.channel.v1.Customer.getDefaultInstance()
         : customer_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.channel.v1.Customer.Builder,
             com.google.cloud.channel.v1.CustomerOrBuilder>
         customerBuilder_;
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCustomer() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
         return customerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +807,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCustomerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
             : customer_;
       }
     }
-
     /**
      *
      *

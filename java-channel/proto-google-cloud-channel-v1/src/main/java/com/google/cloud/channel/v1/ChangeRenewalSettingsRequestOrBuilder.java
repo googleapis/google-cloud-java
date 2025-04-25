@@ -38,7 +38,6 @@ public interface ChangeRenewalSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ChangeRenewalSettingsRequestOrBuilder
    * @return Whether the renewalSettings field is set.
    */
   boolean hasRenewalSettings();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ChangeRenewalSettingsRequestOrBuilder
    * @return The renewalSettings.
    */
   com.google.cloud.channel.v1.RenewalSettings getRenewalSettings();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ChangeRenewalSettingsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

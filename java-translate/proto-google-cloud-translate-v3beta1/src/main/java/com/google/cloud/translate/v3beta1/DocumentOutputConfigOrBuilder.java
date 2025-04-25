@@ -80,7 +80,6 @@ public interface DocumentOutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -137,7 +136,6 @@ public interface DocumentOutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.translate.v3beta1.GcsDestination getGcsDestination();
-
   /**
    *
    *
@@ -213,7 +211,6 @@ public interface DocumentOutputConfigOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

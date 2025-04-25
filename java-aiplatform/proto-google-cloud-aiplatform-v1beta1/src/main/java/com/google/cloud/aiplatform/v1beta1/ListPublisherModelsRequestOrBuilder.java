@@ -37,7 +37,6 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

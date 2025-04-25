@@ -36,7 +36,6 @@ public interface GKEMasterInfoOrBuilder
    * @return The clusterUri.
    */
   java.lang.String getClusterUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GKEMasterInfoOrBuilder
    * @return The clusterNetworkUri.
    */
   java.lang.String getClusterNetworkUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GKEMasterInfoOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GKEMasterInfoOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface GKEMasterInfoOrBuilder
    * @return The dnsEndpoint.
    */
   java.lang.String getDnsEndpoint();
-
   /**
    *
    *

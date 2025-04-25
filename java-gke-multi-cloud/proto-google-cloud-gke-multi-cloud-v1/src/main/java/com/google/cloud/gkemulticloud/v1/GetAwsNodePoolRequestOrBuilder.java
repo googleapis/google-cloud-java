@@ -46,7 +46,6 @@ public interface GetAwsNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

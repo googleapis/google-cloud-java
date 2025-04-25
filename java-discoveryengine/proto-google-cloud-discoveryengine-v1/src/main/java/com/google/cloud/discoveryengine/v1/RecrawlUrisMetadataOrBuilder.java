@@ -36,7 +36,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return A list containing the invalidUris.
    */
   java.util.List<java.lang.String> getInvalidUris3List();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The count of invalidUris.
    */
   int getInvalidUris3Count();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The invalidUris at the given index.
    */
   java.lang.String getInvalidUris3(int index);
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return A list containing the noindexUris.
    */
   java.util.List<java.lang.String> getNoindexUris11List();
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The count of noindexUris.
    */
   int getNoindexUris11Count();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The noindexUris at the given index.
    */
   java.lang.String getNoindexUris11(int index);
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return A list containing the urisNotMatchingTargetSites.
    */
   java.util.List<java.lang.String> getUrisNotMatchingTargetSites9List();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The count of urisNotMatchingTargetSites.
    */
   int getUrisNotMatchingTargetSites9Count();
-
   /**
    *
    *
@@ -284,7 +272,6 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The urisNotMatchingTargetSites at the given index.
    */
   java.lang.String getUrisNotMatchingTargetSites9(int index);
-
   /**
    *
    *

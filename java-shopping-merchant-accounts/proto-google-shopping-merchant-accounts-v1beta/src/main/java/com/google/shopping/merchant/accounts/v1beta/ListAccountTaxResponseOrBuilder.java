@@ -34,7 +34,6 @@ public interface ListAccountTaxResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.AccountTax account_taxes = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.AccountTax> getAccountTaxesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAccountTaxResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.AccountTax account_taxes = 1;</code>
    */
   com.google.shopping.merchant.accounts.v1beta.AccountTax getAccountTaxes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAccountTaxResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.AccountTax account_taxes = 1;</code>
    */
   int getAccountTaxesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAccountTaxResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.AccountTaxOrBuilder>
       getAccountTaxesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAccountTaxResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

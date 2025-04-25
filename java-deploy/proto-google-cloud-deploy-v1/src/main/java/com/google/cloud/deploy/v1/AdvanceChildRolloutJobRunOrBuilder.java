@@ -37,7 +37,6 @@ public interface AdvanceChildRolloutJobRunOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AdvanceChildRolloutJobRunOrBuilder
    * @return The rolloutPhaseId.
    */
   java.lang.String getRolloutPhaseId();
-
   /**
    *
    *

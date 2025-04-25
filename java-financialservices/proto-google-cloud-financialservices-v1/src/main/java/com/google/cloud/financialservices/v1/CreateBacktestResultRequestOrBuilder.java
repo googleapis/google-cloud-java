@@ -38,7 +38,6 @@ public interface CreateBacktestResultRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateBacktestResultRequestOrBuilder
    * @return The backtestResultId.
    */
   java.lang.String getBacktestResultId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateBacktestResultRequestOrBuilder
    * @return Whether the backtestResult field is set.
    */
   boolean hasBacktestResult();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateBacktestResultRequestOrBuilder
    * @return The backtestResult.
    */
   com.google.cloud.financialservices.v1.BacktestResult getBacktestResult();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateBacktestResultRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DisksStartAsyncReplicationRequestOrBuilder
    * @return Whether the asyncSecondaryDisk field is set.
    */
   boolean hasAsyncSecondaryDisk();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DisksStartAsyncReplicationRequestOrBuilder
    * @return The asyncSecondaryDisk.
    */
   java.lang.String getAsyncSecondaryDisk();
-
   /**
    *
    *

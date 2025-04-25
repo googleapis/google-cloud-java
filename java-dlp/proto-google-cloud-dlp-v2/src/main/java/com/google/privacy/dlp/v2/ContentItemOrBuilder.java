@@ -36,7 +36,6 @@ public interface ContentItemOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ContentItemOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ContentItemOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ContentItemOrBuilder
    * @return The table.
    */
   com.google.privacy.dlp.v2.Table getTable();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface ContentItemOrBuilder
    * @return Whether the byteItem field is set.
    */
   boolean hasByteItem();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface ContentItemOrBuilder
    * @return The byteItem.
    */
   com.google.privacy.dlp.v2.ByteContentItem getByteItem();
-
   /**
    *
    *

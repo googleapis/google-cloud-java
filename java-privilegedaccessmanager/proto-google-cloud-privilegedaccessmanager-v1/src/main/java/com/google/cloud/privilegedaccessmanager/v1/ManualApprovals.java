@@ -47,7 +47,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.ManualApprovals)
     ManualApprovalsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManualApprovals.newBuilder() to construct.
   private ManualApprovals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      */
     java.util.List<com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry>
         getApproversList();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry getApprovers(int index);
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     int getApproversCount();
-
     /**
      *
      *
@@ -141,7 +137,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     java.util.List<
             ? extends com.google.cloud.privilegedaccessmanager.v1.AccessControlEntryOrBuilder>
         getApproversOrBuilderList();
-
     /**
      *
      *
@@ -187,7 +182,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the approverEmailRecipients.
      */
     java.util.List<java.lang.String> getApproverEmailRecipientsList();
-
     /**
      *
      *
@@ -203,7 +197,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      * @return The count of approverEmailRecipients.
      */
     int getApproverEmailRecipientsCount();
-
     /**
      *
      *
@@ -220,7 +213,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      * @return The approverEmailRecipients at the given index.
      */
     java.lang.String getApproverEmailRecipients(int index);
-
     /**
      *
      *
@@ -238,7 +230,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getApproverEmailRecipientsBytes(int index);
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step)
       StepOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Step.newBuilder() to construct.
     private Step(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -290,7 +280,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry>
         approvers_;
-
     /**
      *
      *
@@ -308,7 +297,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         getApproversList() {
       return approvers_;
     }
-
     /**
      *
      *
@@ -327,7 +315,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         getApproversOrBuilderList() {
       return approvers_;
     }
-
     /**
      *
      *
@@ -344,7 +331,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     public int getApproversCount() {
       return approvers_.size();
     }
-
     /**
      *
      *
@@ -361,7 +347,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry getApprovers(int index) {
       return approvers_.get(index);
     }
-
     /**
      *
      *
@@ -382,7 +367,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
 
     public static final int APPROVALS_NEEDED_FIELD_NUMBER = 2;
     private int approvalsNeeded_ = 0;
-
     /**
      *
      *
@@ -406,7 +390,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList approverEmailRecipients_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -424,7 +407,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ProtocolStringList getApproverEmailRecipientsList() {
       return approverEmailRecipients_;
     }
-
     /**
      *
      *
@@ -442,7 +424,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     public int getApproverEmailRecipientsCount() {
       return approverEmailRecipients_.size();
     }
-
     /**
      *
      *
@@ -461,7 +442,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getApproverEmailRecipients(int index) {
       return approverEmailRecipients_.get(index);
     }
-
     /**
      *
      *
@@ -672,7 +652,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
           return approversBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1006,7 +984,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
           return approversBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1027,7 +1004,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
           return approversBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1054,7 +1030,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1079,7 +1054,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1106,7 +1080,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1133,7 +1106,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1157,7 +1129,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1182,7 +1153,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1208,7 +1178,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1231,7 +1200,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1254,7 +1222,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1271,7 +1238,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
           getApproversBuilder(int index) {
         return getApproversFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1292,7 +1258,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
           return approversBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1314,7 +1279,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
           return java.util.Collections.unmodifiableList(approvers_);
         }
       }
-
       /**
        *
        *
@@ -1334,7 +1298,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1355,7 +1318,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.privilegedaccessmanager.v1.AccessControlEntry
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1391,7 +1353,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
 
       private int approvalsNeeded_;
-
       /**
        *
        *
@@ -1409,7 +1370,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       public int getApprovalsNeeded() {
         return approvalsNeeded_;
       }
-
       /**
        *
        *
@@ -1431,7 +1391,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1462,7 +1421,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -1481,7 +1439,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         approverEmailRecipients_.makeImmutable();
         return approverEmailRecipients_;
       }
-
       /**
        *
        *
@@ -1499,7 +1456,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       public int getApproverEmailRecipientsCount() {
         return approverEmailRecipients_.size();
       }
-
       /**
        *
        *
@@ -1518,7 +1474,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       public java.lang.String getApproverEmailRecipients(int index) {
         return approverEmailRecipients_.get(index);
       }
-
       /**
        *
        *
@@ -1537,7 +1492,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.ByteString getApproverEmailRecipientsBytes(int index) {
         return approverEmailRecipients_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1564,7 +1518,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1590,7 +1543,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1613,7 +1565,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1635,7 +1586,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1732,7 +1682,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUIRE_APPROVER_JUSTIFICATION_FIELD_NUMBER = 1;
   private boolean requireApproverJustification_ = false;
-
   /**
    *
    *
@@ -1754,7 +1703,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step> steps_;
-
   /**
    *
    *
@@ -1772,7 +1720,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       getStepsList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -1791,7 +1738,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       getStepsOrBuilderList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -1808,7 +1754,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
   public int getStepsCount() {
     return steps_.size();
   }
-
   /**
    *
    *
@@ -1825,7 +1770,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step getSteps(int index) {
     return steps_.get(index);
   }
-
   /**
    *
    *
@@ -2017,7 +1961,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2276,7 +2219,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private boolean requireApproverJustification_;
-
     /**
      *
      *
@@ -2294,7 +2236,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
     public boolean getRequireApproverJustification() {
       return requireApproverJustification_;
     }
-
     /**
      *
      *
@@ -2316,7 +2257,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2375,7 +2315,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         return stepsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2395,7 +2334,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         return stepsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2415,7 +2353,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         return stepsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2442,7 +2379,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2467,7 +2403,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2494,7 +2429,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2521,7 +2455,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2545,7 +2478,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2570,7 +2502,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2596,7 +2527,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2619,7 +2549,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2642,7 +2571,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2587,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getStepsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2680,7 +2607,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         return stepsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2702,7 +2628,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(steps_);
       }
     }
-
     /**
      *
      *
@@ -2722,7 +2647,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2743,7 +2667,6 @@ public final class ManualApprovals extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.privilegedaccessmanager.v1.ManualApprovals.Step
                   .getDefaultInstance());
     }
-
     /**
      *
      *

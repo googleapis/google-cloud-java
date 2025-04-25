@@ -40,7 +40,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.Detector)
     DetectorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Detector.newBuilder() to construct.
   private Detector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detector_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object component_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BILLING_TIER_FIELD_NUMBER = 3;
   private int billingTier_ = 0;
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   public int getBillingTierValue() {
     return billingTier_;
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList detectorLabels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDetectorLabelsList() {
     return detectorLabels_;
   }
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   public int getDetectorLabelsCount() {
     return detectorLabels_.size();
   }
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDetectorLabels(int index) {
     return detectorLabels_.get(index);
   }
-
   /**
    *
    *
@@ -505,7 +494,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -747,7 +735,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object detector_ = "";
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object component_ = "";
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int billingTier_ = 0;
-
     /**
      *
      *
@@ -993,7 +970,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public int getBillingTierValue() {
       return billingTier_;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.settings.v1beta1.BillingTier.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1064,7 +1038,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1068,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1115,7 +1087,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       detectorLabels_.makeImmutable();
       return detectorLabels_;
     }
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public int getDetectorLabelsCount() {
       return detectorLabels_.size();
     }
-
     /**
      *
      *
@@ -1154,7 +1124,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDetectorLabels(int index) {
       return detectorLabels_.get(index);
     }
-
     /**
      *
      *
@@ -1174,7 +1143,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDetectorLabelsBytes(int index) {
       return detectorLabels_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1202,7 +1170,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1196,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1219,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1241,6 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

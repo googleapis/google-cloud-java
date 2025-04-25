@@ -33,7 +33,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.PersistenceConfig)
     PersistenceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PersistenceConfig.newBuilder() to construct.
   private PersistenceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>PERSISTENCE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int PERSISTENCE_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>RDB = 2;</code>
      */
     public static final int RDB_VALUE = 2;
-
     /**
      *
      *
@@ -269,7 +265,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for rdbSnapshotPeriod.
      */
     int getRdbSnapshotPeriodValue();
-
     /**
      *
      *
@@ -302,7 +297,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the rdbSnapshotStartTime field is set.
      */
     boolean hasRdbSnapshotStartTime();
-
     /**
      *
      *
@@ -319,7 +313,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return The rdbSnapshotStartTime.
      */
     com.google.protobuf.Timestamp getRdbSnapshotStartTime();
-
     /**
      *
      *
@@ -335,7 +328,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.TimestampOrBuilder getRdbSnapshotStartTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -350,7 +342,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.PersistenceConfig.RDBConfig)
       RDBConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RDBConfig.newBuilder() to construct.
     private RDBConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -454,7 +445,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>SNAPSHOT_PERIOD_UNSPECIFIED = 0;</code>
        */
       public static final int SNAPSHOT_PERIOD_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -465,7 +455,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>ONE_HOUR = 1;</code>
        */
       public static final int ONE_HOUR_VALUE = 1;
-
       /**
        *
        *
@@ -476,7 +465,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>SIX_HOURS = 2;</code>
        */
       public static final int SIX_HOURS_VALUE = 2;
-
       /**
        *
        *
@@ -487,7 +475,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>TWELVE_HOURS = 3;</code>
        */
       public static final int TWELVE_HOURS_VALUE = 3;
-
       /**
        *
        *
@@ -593,7 +580,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int RDB_SNAPSHOT_PERIOD_FIELD_NUMBER = 1;
     private int rdbSnapshotPeriod_ = 0;
-
     /**
      *
      *
@@ -611,7 +597,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public int getRdbSnapshotPeriodValue() {
       return rdbSnapshotPeriod_;
     }
-
     /**
      *
      *
@@ -638,7 +623,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
     public static final int RDB_SNAPSHOT_START_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp rdbSnapshotStartTime_;
-
     /**
      *
      *
@@ -658,7 +642,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRdbSnapshotStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -680,7 +663,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : rdbSnapshotStartTime_;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1105,7 +1086,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int rdbSnapshotPeriod_ = 0;
-
       /**
        *
        *
@@ -1123,7 +1103,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       public int getRdbSnapshotPeriodValue() {
         return rdbSnapshotPeriod_;
       }
-
       /**
        *
        *
@@ -1144,7 +1123,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1169,7 +1147,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1194,7 +1171,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1221,7 +1197,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           rdbSnapshotStartTimeBuilder_;
-
       /**
        *
        *
@@ -1240,7 +1215,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasRdbSnapshotStartTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1265,7 +1239,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           return rdbSnapshotStartTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1292,7 +1265,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1317,7 +1289,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1349,7 +1320,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1373,7 +1343,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1392,7 +1361,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getRdbSnapshotStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1415,7 +1383,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
               : rdbSnapshotStartTime_;
         }
       }
-
       /**
        *
        *
@@ -1530,7 +1497,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for appendFsync.
      */
     int getAppendFsyncValue();
-
     /**
      *
      *
@@ -1546,7 +1512,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.memorystore.v1.PersistenceConfig.AOFConfig.AppendFsync getAppendFsync();
   }
-
   /**
    *
    *
@@ -1561,7 +1526,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.PersistenceConfig.AOFConfig)
       AOFConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AOFConfig.newBuilder() to construct.
     private AOFConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1658,7 +1622,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>APPEND_FSYNC_UNSPECIFIED = 0;</code>
        */
       public static final int APPEND_FSYNC_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1670,7 +1633,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>NEVER = 1;</code>
        */
       public static final int NEVER_VALUE = 1;
-
       /**
        *
        *
@@ -1682,7 +1644,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
        * <code>EVERY_SEC = 2;</code>
        */
       public static final int EVERY_SEC_VALUE = 2;
-
       /**
        *
        *
@@ -1784,7 +1745,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
     public static final int APPEND_FSYNC_FIELD_NUMBER = 1;
     private int appendFsync_ = 0;
-
     /**
      *
      *
@@ -1802,7 +1762,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public int getAppendFsyncValue() {
       return appendFsync_;
     }
-
     /**
      *
      *
@@ -1994,7 +1953,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2183,7 +2141,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int appendFsync_ = 0;
-
       /**
        *
        *
@@ -2201,7 +2158,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       public int getAppendFsyncValue() {
         return appendFsync_;
       }
-
       /**
        *
        *
@@ -2222,7 +2178,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2246,7 +2201,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             ? com.google.cloud.memorystore.v1.PersistenceConfig.AOFConfig.AppendFsync.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2271,7 +2225,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2360,7 +2313,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
-
   /**
    *
    *
@@ -2378,7 +2330,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public int getModeValue() {
     return mode_;
   }
-
   /**
    *
    *
@@ -2403,7 +2354,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RDB_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.memorystore.v1.PersistenceConfig.RDBConfig rdbConfig_;
-
   /**
    *
    *
@@ -2421,7 +2371,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRdbConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2441,7 +2390,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.memorystore.v1.PersistenceConfig.RDBConfig.getDefaultInstance()
         : rdbConfig_;
   }
-
   /**
    *
    *
@@ -2463,7 +2411,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int AOF_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.memorystore.v1.PersistenceConfig.AOFConfig aofConfig_;
-
   /**
    *
    *
@@ -2481,7 +2428,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasAofConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2501,7 +2447,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.memorystore.v1.PersistenceConfig.AOFConfig.getDefaultInstance()
         : aofConfig_;
   }
-
   /**
    *
    *
@@ -2714,7 +2659,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2945,7 +2889,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int mode_ = 0;
-
     /**
      *
      *
@@ -2963,7 +2906,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -2984,7 +2926,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3006,7 +2947,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.memorystore.v1.PersistenceConfig.PersistenceMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3031,7 +2971,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3058,7 +2997,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.memorystore.v1.PersistenceConfig.RDBConfig.Builder,
             com.google.cloud.memorystore.v1.PersistenceConfig.RDBConfigOrBuilder>
         rdbConfigBuilder_;
-
     /**
      *
      *
@@ -3075,7 +3013,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRdbConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3098,7 +3035,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         return rdbConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3123,7 +3059,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3146,7 +3081,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3179,7 +3113,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3201,7 +3134,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3219,7 +3151,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRdbConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3241,7 +3172,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             : rdbConfig_;
       }
     }
-
     /**
      *
      *
@@ -3276,7 +3206,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.memorystore.v1.PersistenceConfig.AOFConfig.Builder,
             com.google.cloud.memorystore.v1.PersistenceConfig.AOFConfigOrBuilder>
         aofConfigBuilder_;
-
     /**
      *
      *
@@ -3293,7 +3222,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasAofConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3316,7 +3244,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         return aofConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3341,7 +3268,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3364,7 +3290,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3397,7 +3322,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3419,7 +3343,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3437,7 +3360,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getAofConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3459,7 +3381,6 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             : aofConfig_;
       }
     }
-
     /**
      *
      *

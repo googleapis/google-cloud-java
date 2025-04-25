@@ -34,7 +34,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpsertDatapointsRequest)
     UpsertDatapointsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpsertDatapointsRequest.newBuilder() to construct.
   private UpsertDatapointsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object index_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint> datapoints_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint> getDatapointsList() {
     return datapoints_;
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       getDatapointsOrBuilderList() {
     return datapoints_;
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   public int getDatapointsCount() {
     return datapoints_.size();
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   public com.google.cloud.aiplatform.v1.IndexDatapoint getDatapoints(int index) {
     return datapoints_.get(index);
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -459,7 +448,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -736,7 +724,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object index_ = "";
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -790,7 +776,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +882,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return datapointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -916,7 +898,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return datapointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return datapointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +978,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1040,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1079,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1098,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.IndexDatapoint.Builder getDatapointsBuilder(int index) {
       return getDatapointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return datapointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1144,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(datapoints_);
       }
     }
-
     /**
      *
      *
@@ -1189,7 +1157,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       return getDatapointsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.IndexDatapoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1203,7 +1170,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       return getDatapointsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.IndexDatapoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1241,7 +1207,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1263,7 +1228,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1291,7 +1255,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1321,7 +1284,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1310,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1344,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1370,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1391,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1458,7 +1416,6 @@ public final class UpsertDatapointsRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
-
     /**
      *
      *

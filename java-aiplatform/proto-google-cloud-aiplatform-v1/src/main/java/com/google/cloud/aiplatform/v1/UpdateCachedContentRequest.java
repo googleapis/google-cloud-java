@@ -35,7 +35,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdateCachedContentRequest)
     UpdateCachedContentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateCachedContentRequest.newBuilder() to construct.
   private UpdateCachedContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int CACHED_CONTENT_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.CachedContent cachedContent_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
   public boolean hasCachedContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
         ? com.google.cloud.aiplatform.v1.CachedContent.getDefaultInstance()
         : cachedContent_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -355,7 +348,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +573,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1.CachedContent.Builder,
             com.google.cloud.aiplatform.v1.CachedContentOrBuilder>
         cachedContentBuilder_;
-
     /**
      *
      *
@@ -598,7 +589,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
     public boolean hasCachedContent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
         return cachedContentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return getCachedContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
             : cachedContent_;
       }
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -833,7 +814,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +857,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +920,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -964,7 +939,6 @@ public final class UpdateCachedContentRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.NodeGroup)
     NodeGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NodeGroup.newBuilder() to construct.
   private NodeGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,7 +122,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -221,7 +219,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -245,7 +242,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +284,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -307,7 +302,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.dataproc.v1.NodeGroup.Role>(roles_, roles_converter_);
   }
-
   /**
    *
    *
@@ -325,7 +319,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public int getRolesCount() {
     return roles_.size();
   }
-
   /**
    *
    *
@@ -344,7 +337,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataproc.v1.NodeGroup.Role getRoles(int index) {
     return roles_converter_.convert(roles_.get(index));
   }
-
   /**
    *
    *
@@ -362,7 +354,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getRolesValueList() {
     return roles_;
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NODE_GROUP_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.dataproc.v1.InstanceGroupConfig nodeGroupConfig_;
-
   /**
    *
    *
@@ -404,7 +394,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNodeGroupConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -424,7 +413,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.InstanceGroupConfig.getDefaultInstance()
         : nodeGroupConfig_;
   }
-
   /**
    *
    *
@@ -469,7 +457,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -493,14 +480,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -521,7 +506,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -549,7 +533,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -792,7 +775,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1090,7 +1072,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1113,7 +1094,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1136,7 +1116,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1158,7 +1137,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1154,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1185,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1226,7 +1202,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.cloud.dataproc.v1.NodeGroup.Role>(roles_, roles_converter_);
     }
-
     /**
      *
      *
@@ -1243,7 +1218,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public int getRolesCount() {
       return roles_.size();
     }
-
     /**
      *
      *
@@ -1261,7 +1235,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.NodeGroup.Role getRoles(int index) {
       return roles_converter_.convert(roles_.get(index));
     }
-
     /**
      *
      *
@@ -1286,7 +1259,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1282,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1305,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1324,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1340,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getRolesValueList() {
       return java.util.Collections.unmodifiableList(roles_);
     }
-
     /**
      *
      *
@@ -1389,7 +1357,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public int getRolesValue(int index) {
       return roles_.get(index);
     }
-
     /**
      *
      *
@@ -1411,7 +1378,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1398,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1427,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder,
             com.google.cloud.dataproc.v1.InstanceGroupConfigOrBuilder>
         nodeGroupConfigBuilder_;
-
     /**
      *
      *
@@ -1479,7 +1443,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNodeGroupConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1502,7 +1465,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         return nodeGroupConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1489,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1511,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1541,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1562,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1578,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNodeGroupConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1641,7 +1598,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             : nodeGroupConfig_;
       }
     }
-
     /**
      *
      *
@@ -1695,7 +1651,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1719,14 +1674,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1747,7 +1700,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1775,7 +1727,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1809,7 +1760,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1833,14 +1783,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1868,7 +1816,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

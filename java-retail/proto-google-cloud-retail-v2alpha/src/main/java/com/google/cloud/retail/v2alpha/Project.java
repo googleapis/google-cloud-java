@@ -33,7 +33,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Project)
     ProjectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Project.newBuilder() to construct.
   private Project(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
         enrolledSolutions_, enrolledSolutions_converter_);
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   public int getEnrolledSolutionsCount() {
     return enrolledSolutions_.size();
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2alpha.SolutionType getEnrolledSolutions(int index) {
     return enrolledSolutions_converter_.convert(enrolledSolutions_.get(index));
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getEnrolledSolutionsValueList() {
     return enrolledSolutions_;
   }
-
   /**
    *
    *
@@ -419,7 +411,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
           enrolledSolutions_, enrolledSolutions_converter_);
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     public int getEnrolledSolutionsCount() {
       return enrolledSolutions_.size();
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.SolutionType getEnrolledSolutions(int index) {
       return enrolledSolutions_converter_.convert(enrolledSolutions_.get(index));
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +910,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getEnrolledSolutionsValueList() {
       return java.util.Collections.unmodifiableList(enrolledSolutions_);
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     public int getEnrolledSolutionsValue(int index) {
       return enrolledSolutions_.get(index);
     }
-
     /**
      *
      *
@@ -972,7 +948,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +968,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ImportDataResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1beta.ImportDataResponse)
     ImportDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDataResponse.newBuilder() to construct.
   private ImportDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ImportDataResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.AudioStream)
     AudioStreamOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AudioStream.newBuilder() to construct.
   private AudioStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * @return The inputKey.
      */
     java.lang.String getInputKey();
-
     /**
      *
      *
@@ -163,7 +161,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      */
     double getGainDb();
   }
-
   /**
    *
    *
@@ -178,7 +175,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.AudioStream.AudioMapping)
       AudioMappingOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AudioMapping.newBuilder() to construct.
     private AudioMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -213,7 +209,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputKey_ = "";
-
     /**
      *
      *
@@ -241,7 +236,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -272,7 +266,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INPUT_TRACK_FIELD_NUMBER = 2;
     private int inputTrack_ = 0;
-
     /**
      *
      *
@@ -294,7 +287,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INPUT_CHANNEL_FIELD_NUMBER = 3;
     private int inputChannel_ = 0;
-
     /**
      *
      *
@@ -313,7 +305,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OUTPUT_CHANNEL_FIELD_NUMBER = 4;
     private int outputChannel_ = 0;
-
     /**
      *
      *
@@ -334,7 +325,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int GAIN_DB_FIELD_NUMBER = 5;
     private double gainDb_ = 0D;
-
     /**
      *
      *
@@ -553,7 +543,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -797,7 +786,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object inputKey_ = "";
-
       /**
        *
        *
@@ -824,7 +812,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -851,7 +838,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -877,7 +863,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -899,7 +884,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +912,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int inputTrack_;
-
       /**
        *
        *
@@ -947,7 +930,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       public int getInputTrack() {
         return inputTrack_;
       }
-
       /**
        *
        *
@@ -970,7 +952,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -993,7 +974,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int inputChannel_;
-
       /**
        *
        *
@@ -1009,7 +989,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       public int getInputChannel() {
         return inputChannel_;
       }
-
       /**
        *
        *
@@ -1029,7 +1008,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1049,7 +1027,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int outputChannel_;
-
       /**
        *
        *
@@ -1067,7 +1044,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       public int getOutputChannel() {
         return outputChannel_;
       }
-
       /**
        *
        *
@@ -1089,7 +1065,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1111,7 +1086,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double gainDb_;
-
       /**
        *
        *
@@ -1128,7 +1102,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       public double getGainDb() {
         return gainDb_;
       }
-
       /**
        *
        *
@@ -1149,7 +1122,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1238,7 +1210,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSMUX_FIELD_NUMBER = 8;
   private boolean transmux_ = false;
-
   /**
    *
    *
@@ -1261,7 +1232,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object codec_ = "";
-
   /**
    *
    *
@@ -1289,7 +1259,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1320,7 +1289,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BITRATE_BPS_FIELD_NUMBER = 2;
   private int bitrateBps_ = 0;
-
   /**
    *
    *
@@ -1340,7 +1308,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANNEL_COUNT_FIELD_NUMBER = 3;
   private int channelCount_ = 0;
-
   /**
    *
    *
@@ -1362,7 +1329,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList channelLayout_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1388,7 +1354,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getChannelLayoutList() {
     return channelLayout_;
   }
-
   /**
    *
    *
@@ -1414,7 +1379,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   public int getChannelLayoutCount() {
     return channelLayout_.size();
   }
-
   /**
    *
    *
@@ -1441,7 +1405,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getChannelLayout(int index) {
     return channelLayout_.get(index);
   }
-
   /**
    *
    *
@@ -1473,7 +1436,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.AudioStream.AudioMapping> mapping_;
-
   /**
    *
    *
@@ -1488,7 +1450,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       getMappingList() {
     return mapping_;
   }
-
   /**
    *
    *
@@ -1504,7 +1465,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       getMappingOrBuilderList() {
     return mapping_;
   }
-
   /**
    *
    *
@@ -1518,7 +1478,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   public int getMappingCount() {
     return mapping_.size();
   }
-
   /**
    *
    *
@@ -1532,7 +1491,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.AudioStream.AudioMapping getMapping(int index) {
     return mapping_.get(index);
   }
-
   /**
    *
    *
@@ -1550,7 +1508,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 6;
   private int sampleRateHertz_ = 0;
-
   /**
    *
    *
@@ -1789,7 +1746,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2110,7 +2066,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean transmux_;
-
     /**
      *
      *
@@ -2128,7 +2083,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public boolean getTransmux() {
       return transmux_;
     }
-
     /**
      *
      *
@@ -2150,7 +2104,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2172,7 +2125,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object codec_ = "";
-
     /**
      *
      *
@@ -2199,7 +2151,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2226,7 +2177,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2252,7 +2202,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2274,7 +2223,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2303,7 +2251,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitrateBps_;
-
     /**
      *
      *
@@ -2320,7 +2267,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public int getBitrateBps() {
       return bitrateBps_;
     }
-
     /**
      *
      *
@@ -2341,7 +2287,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2362,7 +2307,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int channelCount_;
-
     /**
      *
      *
@@ -2378,7 +2322,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public int getChannelCount() {
       return channelCount_;
     }
-
     /**
      *
      *
@@ -2398,7 +2341,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2368,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2453,7 +2394,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       channelLayout_.makeImmutable();
       return channelLayout_;
     }
-
     /**
      *
      *
@@ -2479,7 +2419,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public int getChannelLayoutCount() {
       return channelLayout_.size();
     }
-
     /**
      *
      *
@@ -2506,7 +2445,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getChannelLayout(int index) {
       return channelLayout_.get(index);
     }
-
     /**
      *
      *
@@ -2533,7 +2471,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getChannelLayoutBytes(int index) {
       return channelLayout_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2568,7 +2505,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2602,7 +2538,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2633,7 +2568,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2663,7 +2597,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2734,7 +2667,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return mappingBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2751,7 +2683,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return mappingBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2768,7 +2699,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return mappingBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2792,7 +2722,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2814,7 +2743,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2837,7 +2765,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2861,7 +2788,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2882,7 +2808,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2904,7 +2829,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2926,7 +2850,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2946,7 +2869,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2966,7 +2888,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2980,7 +2901,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getMappingFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2998,7 +2918,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return mappingBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3017,7 +2936,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mapping_);
       }
     }
-
     /**
      *
      *
@@ -3033,7 +2951,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.video.livestream.v1.AudioStream.AudioMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3050,7 +2967,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.video.livestream.v1.AudioStream.AudioMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3083,7 +2999,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sampleRateHertz_;
-
     /**
      *
      *
@@ -3099,7 +3014,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
-
     /**
      *
      *
@@ -3119,7 +3033,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

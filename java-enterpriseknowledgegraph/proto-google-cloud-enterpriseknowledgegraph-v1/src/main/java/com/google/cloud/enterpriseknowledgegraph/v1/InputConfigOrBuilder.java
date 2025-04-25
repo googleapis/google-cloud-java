@@ -37,7 +37,6 @@ public interface InputConfigOrBuilder
    */
   java.util.List<com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig>
       getBigqueryInputConfigsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InputConfigOrBuilder
    */
   com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig getBigqueryInputConfigs(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface InputConfigOrBuilder
    * </code>
    */
   int getBigqueryInputConfigsCount();
-
   /**
    *
    *
@@ -79,7 +76,6 @@ public interface InputConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfigOrBuilder>
       getBigqueryInputConfigsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface InputConfigOrBuilder
    * @return The enum numeric value on the wire for entityType.
    */
   int getEntityTypeValue();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface InputConfigOrBuilder
    * @return The previousResultBigqueryTable.
    */
   java.lang.String getPreviousResultBigqueryTable();
-
   /**
    *
    *

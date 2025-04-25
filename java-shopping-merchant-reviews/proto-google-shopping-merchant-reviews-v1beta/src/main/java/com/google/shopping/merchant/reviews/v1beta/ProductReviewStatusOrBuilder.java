@@ -39,7 +39,6 @@ public interface ProductReviewStatusOrBuilder
           com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
               .ProductReviewDestinationStatus>
       getDestinationStatusesList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProductReviewStatusOrBuilder
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus.ProductReviewDestinationStatus
       getDestinationStatuses(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ProductReviewStatusOrBuilder
    * </code>
    */
   int getDestinationStatusesCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface ProductReviewStatusOrBuilder
               com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
                   .ProductReviewDestinationStatusOrBuilder>
       getDestinationStatusesOrBuilderList();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ProductReviewStatusOrBuilder
           com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
               .ProductReviewItemLevelIssue>
       getItemLevelIssuesList();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface ProductReviewStatusOrBuilder
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus.ProductReviewItemLevelIssue
       getItemLevelIssues(int index);
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface ProductReviewStatusOrBuilder
    * </code>
    */
   int getItemLevelIssuesCount();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface ProductReviewStatusOrBuilder
               com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
                   .ProductReviewItemLevelIssueOrBuilder>
       getItemLevelIssuesOrBuilderList();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface ProductReviewStatusOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface ProductReviewStatusOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface ProductReviewStatusOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface ProductReviewStatusOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
-
   /**
    *
    *

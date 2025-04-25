@@ -34,7 +34,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateDatasetVersionRequest)
     CreateDatasetVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDatasetVersionRequest.newBuilder() to construct.
   private CreateDatasetVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
 
   public static final int DATASET_VERSION_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.DatasetVersion datasetVersion_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
   public boolean hasDatasetVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1.DatasetVersion.getDefaultInstance()
         : datasetVersion_;
   }
-
   /**
    *
    *
@@ -366,7 +360,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +575,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1.DatasetVersion.Builder,
             com.google.cloud.aiplatform.v1.DatasetVersionOrBuilder>
         datasetVersionBuilder_;
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
     public boolean hasDatasetVersion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
         return datasetVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return getDatasetVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -913,7 +893,6 @@ public final class CreateDatasetVersionRequest extends com.google.protobuf.Gener
             : datasetVersion_;
       }
     }
-
     /**
      *
      *

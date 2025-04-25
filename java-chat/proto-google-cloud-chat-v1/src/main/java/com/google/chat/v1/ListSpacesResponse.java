@@ -33,7 +33,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.chat.v1.ListSpacesResponse)
     ListSpacesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSpacesResponse.newBuilder() to construct.
   private ListSpacesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.Space> spaces_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.chat.v1.Space> getSpacesList() {
     return spaces_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<? extends com.google.chat.v1.SpaceOrBuilder> getSpacesOrBuilderList() {
     return spaces_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
   public int getSpacesCount() {
     return spaces_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
   public com.google.chat.v1.Space getSpaces(int index) {
     return spaces_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return spacesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return spacesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return spacesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +887,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
     public com.google.chat.v1.Space.Builder getSpacesBuilder(int index) {
       return getSpacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return spacesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(spaces_);
       }
     }
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
     public com.google.chat.v1.Space.Builder addSpacesBuilder() {
       return getSpacesFieldBuilder().addBuilder(com.google.chat.v1.Space.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       return getSpacesFieldBuilder()
           .addBuilder(index, com.google.chat.v1.Space.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1011,7 +985,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1031,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1053,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class ListSpacesResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

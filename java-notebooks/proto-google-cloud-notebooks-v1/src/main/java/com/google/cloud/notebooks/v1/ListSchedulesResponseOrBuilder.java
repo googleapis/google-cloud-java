@@ -34,7 +34,6 @@ public interface ListSchedulesResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1.Schedule schedules = 1;</code>
    */
   java.util.List<com.google.cloud.notebooks.v1.Schedule> getSchedulesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSchedulesResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1.Schedule schedules = 1;</code>
    */
   com.google.cloud.notebooks.v1.Schedule getSchedules(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSchedulesResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1.Schedule schedules = 1;</code>
    */
   int getSchedulesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSchedulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1.ScheduleOrBuilder>
       getSchedulesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSchedulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ListSchedulesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface ListSchedulesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -156,7 +149,6 @@ public interface ListSchedulesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

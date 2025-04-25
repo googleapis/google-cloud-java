@@ -33,7 +33,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.language.v2.ModerateTextResponse)
     ModerateTextResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModerateTextResponse.newBuilder() to construct.
   private ModerateTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v2.ClassificationCategory> moderationCategories_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       getModerationCategoriesList() {
     return moderationCategories_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       getModerationCategoriesOrBuilderList() {
     return moderationCategories_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
   public int getModerationCategoriesCount() {
     return moderationCategories_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.language.v2.ClassificationCategory getModerationCategories(int index) {
     return moderationCategories_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
 
   public static final int LANGUAGE_SUPPORTED_FIELD_NUMBER = 3;
   private boolean languageSupported_ = false;
-
   /**
    *
    *
@@ -406,7 +397,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +691,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -737,7 +725,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         getModerationCategoriesBuilder(int index) {
       return getModerationCategoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return moderationCategoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -995,7 +971,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(moderationCategories_);
       }
     }
-
     /**
      *
      *
@@ -1011,7 +986,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       return getModerationCategoriesFieldBuilder()
           .addBuilder(com.google.cloud.language.v2.ClassificationCategory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.language.v2.ClassificationCategory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1065,7 +1038,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1090,7 +1062,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1086,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1109,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1128,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1154,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
     }
 
     private boolean languageSupported_;
-
     /**
      *
      *
@@ -1204,7 +1171,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
     public boolean getLanguageSupported() {
       return languageSupported_;
     }
-
     /**
      *
      *
@@ -1226,7 +1192,6 @@ public final class ModerateTextResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

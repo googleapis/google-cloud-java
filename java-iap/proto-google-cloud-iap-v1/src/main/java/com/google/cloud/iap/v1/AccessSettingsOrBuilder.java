@@ -39,7 +39,6 @@ public interface AccessSettingsOrBuilder
    * @return Whether the gcipSettings field is set.
    */
   boolean hasGcipSettings();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AccessSettingsOrBuilder
    * @return The gcipSettings.
    */
   com.google.cloud.iap.v1.GcipSettings getGcipSettings();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface AccessSettingsOrBuilder
    * @return Whether the corsSettings field is set.
    */
   boolean hasCorsSettings();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface AccessSettingsOrBuilder
    * @return The corsSettings.
    */
   com.google.cloud.iap.v1.CorsSettings getCorsSettings();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface AccessSettingsOrBuilder
    * @return Whether the oauthSettings field is set.
    */
   boolean hasOauthSettings();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AccessSettingsOrBuilder
    * @return The oauthSettings.
    */
   com.google.cloud.iap.v1.OAuthSettings getOauthSettings();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface AccessSettingsOrBuilder
    * @return Whether the reauthSettings field is set.
    */
   boolean hasReauthSettings();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface AccessSettingsOrBuilder
    * @return The reauthSettings.
    */
   com.google.cloud.iap.v1.ReauthSettings getReauthSettings();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface AccessSettingsOrBuilder
    * @return Whether the allowedDomainsSettings field is set.
    */
   boolean hasAllowedDomainsSettings();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface AccessSettingsOrBuilder
    * @return The allowedDomainsSettings.
    */
   com.google.cloud.iap.v1.AllowedDomainsSettings getAllowedDomainsSettings();
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public interface AccessSettingsOrBuilder
    * @return Whether the workforceIdentitySettings field is set.
    */
   boolean hasWorkforceIdentitySettings();
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public interface AccessSettingsOrBuilder
    * @return The workforceIdentitySettings.
    */
   com.google.cloud.iap.v1.WorkforceIdentitySettings getWorkforceIdentitySettings();
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public interface AccessSettingsOrBuilder
    * @return A list containing the identitySources.
    */
   java.util.List<com.google.cloud.iap.v1.AccessSettings.IdentitySource> getIdentitySourcesList();
-
   /**
    *
    *
@@ -320,7 +307,6 @@ public interface AccessSettingsOrBuilder
    * @return The count of identitySources.
    */
   int getIdentitySourcesCount();
-
   /**
    *
    *
@@ -337,7 +323,6 @@ public interface AccessSettingsOrBuilder
    * @return The identitySources at the given index.
    */
   com.google.cloud.iap.v1.AccessSettings.IdentitySource getIdentitySources(int index);
-
   /**
    *
    *
@@ -353,7 +338,6 @@ public interface AccessSettingsOrBuilder
    * @return A list containing the enum numeric values on the wire for identitySources.
    */
   java.util.List<java.lang.Integer> getIdentitySourcesValueList();
-
   /**
    *
    *

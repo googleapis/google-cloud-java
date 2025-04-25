@@ -34,7 +34,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.SubnetStatus)
     SubnetStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubnetStatus.newBuilder() to construct.
   private SubnetStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object macAddress_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgenetwork.v1.LinkLayerAddress> linkLayerAddresses_;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       getLinkLayerAddressesList() {
     return linkLayerAddresses_;
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       getLinkLayerAddressesOrBuilderList() {
     return linkLayerAddresses_;
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
   public int getLinkLayerAddressesCount() {
     return linkLayerAddresses_.size();
   }
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.edgenetwork.v1.LinkLayerAddress getLinkLayerAddresses(int index) {
     return linkLayerAddresses_.get(index);
   }
-
   /**
    *
    *
@@ -436,7 +426,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -697,7 +686,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object macAddress_ = "";
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return linkLayerAddressesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -972,7 +950,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return linkLayerAddressesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return linkLayerAddressesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1035,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1059,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1080,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1101,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1122,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1142,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1162,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1176,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getLinkLayerAddressesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1228,7 +1194,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return linkLayerAddressesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1247,7 +1212,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(linkLayerAddresses_);
       }
     }
-
     /**
      *
      *
@@ -1262,7 +1226,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       return getLinkLayerAddressesFieldBuilder()
           .addBuilder(com.google.cloud.edgenetwork.v1.LinkLayerAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1278,7 +1241,6 @@ public final class SubnetStatus extends com.google.protobuf.GeneratedMessageV3
       return getLinkLayerAddressesFieldBuilder()
           .addBuilder(index, com.google.cloud.edgenetwork.v1.LinkLayerAddress.getDefaultInstance());
     }
-
     /**
      *
      *

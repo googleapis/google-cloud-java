@@ -34,7 +34,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchemaDetails)
     DataSchemaDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSchemaDetails.newBuilder() to construct.
   private DataSchemaDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -251,7 +250,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -266,7 +264,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>INTEGER = 1;</code>
      */
     public static final int INTEGER_VALUE = 1;
-
     /**
      *
      *
@@ -281,7 +278,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>FLOAT = 2;</code>
      */
     public static final int FLOAT_VALUE = 2;
-
     /**
      *
      *
@@ -296,7 +292,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>STRING = 3;</code>
      */
     public static final int STRING_VALUE = 3;
-
     /**
      *
      *
@@ -321,7 +316,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>DATETIME = 5;</code>
      */
     public static final int DATETIME_VALUE = 5;
-
     /**
      *
      *
@@ -336,7 +330,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>GEO_COORDINATE = 7;</code>
      */
     public static final int GEO_COORDINATE_VALUE = 7;
-
     /**
      *
      *
@@ -364,7 +357,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>PROTO_ANY = 8;</code>
      */
     public static final int PROTO_ANY_VALUE = 8;
-
     /**
      *
      *
@@ -378,7 +370,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>BOOLEAN = 9;</code>
      */
     public static final int BOOLEAN_VALUE = 9;
-
     /**
      *
      *
@@ -394,7 +385,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>LIST = 10;</code>
      */
     public static final int LIST_VALUE = 10;
-
     /**
      *
      *
@@ -563,7 +553,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>GRANULARITY_UNSPECIFIED = 0;</code>
      */
     public static final int GRANULARITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -574,7 +563,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * <code>GRANULARITY_ASSET_LEVEL = 1;</code>
      */
     public static final int GRANULARITY_ASSET_LEVEL_VALUE = 1;
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * @return The typeUri.
      */
     java.lang.String getTypeUri();
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getTypeUriBytes();
   }
-
   /**
    *
    *
@@ -715,7 +701,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchemaDetails.ProtoAnyConfig)
       ProtoAnyConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ProtoAnyConfig.newBuilder() to construct.
     private ProtoAnyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -750,7 +735,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object typeUri_ = "";
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -960,7 +943,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1152,7 +1134,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object typeUri_ = "";
-
       /**
        *
        *
@@ -1175,7 +1156,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1198,7 +1178,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1220,7 +1199,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1238,7 +1216,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1346,7 +1323,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * @return Whether the valueSchema field is set.
      */
     boolean hasValueSchema();
-
     /**
      *
      *
@@ -1359,7 +1335,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * @return The valueSchema.
      */
     com.google.cloud.visionai.v1.DataSchemaDetails getValueSchema();
-
     /**
      *
      *
@@ -1371,7 +1346,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.visionai.v1.DataSchemaDetailsOrBuilder getValueSchemaOrBuilder();
   }
-
   /**
    *
    *
@@ -1386,7 +1360,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchemaDetails.ListConfig)
       ListConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListConfig.newBuilder() to construct.
     private ListConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1418,7 +1391,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int VALUE_SCHEMA_FIELD_NUMBER = 1;
     private com.google.cloud.visionai.v1.DataSchemaDetails valueSchema_;
-
     /**
      *
      *
@@ -1434,7 +1406,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasValueSchema() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1452,7 +1423,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.visionai.v1.DataSchemaDetails.getDefaultInstance()
           : valueSchema_;
     }
-
     /**
      *
      *
@@ -1635,7 +1605,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1843,7 +1812,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
               com.google.cloud.visionai.v1.DataSchemaDetails.Builder,
               com.google.cloud.visionai.v1.DataSchemaDetailsOrBuilder>
           valueSchemaBuilder_;
-
       /**
        *
        *
@@ -1858,7 +1826,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       public boolean hasValueSchema() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1879,7 +1846,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           return valueSchemaBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1902,7 +1868,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1923,7 +1888,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1952,7 +1916,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1972,7 +1935,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1987,7 +1949,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getValueSchemaFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2006,7 +1967,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
               : valueSchema_;
         }
       }
-
       /**
        *
        *
@@ -2113,7 +2073,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     int getFieldSchemasCount();
-
     /**
      *
      *
@@ -2125,12 +2084,10 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     boolean containsFieldSchemas(java.lang.String key);
-
     /** Use {@link #getFieldSchemasMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.visionai.v1.DataSchemaDetails>
         getFieldSchemas();
-
     /**
      *
      *
@@ -2143,7 +2100,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      */
     java.util.Map<java.lang.String, com.google.cloud.visionai.v1.DataSchemaDetails>
         getFieldSchemasMap();
-
     /**
      *
      *
@@ -2159,7 +2115,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         /* nullable */
         com.google.cloud.visionai.v1.DataSchemaDetails defaultValue);
-
     /**
      *
      *
@@ -2172,7 +2127,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.visionai.v1.DataSchemaDetails getFieldSchemasOrThrow(java.lang.String key);
   }
-
   /**
    *
    *
@@ -2187,7 +2141,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchemaDetails.CustomizedStructConfig)
       CustomizedStructConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CustomizedStructConfig.newBuilder() to construct.
     private CustomizedStructConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2263,7 +2216,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public int getFieldSchemasCount() {
       return internalGetFieldSchemas().getMap().size();
     }
-
     /**
      *
      *
@@ -2281,7 +2233,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       }
       return internalGetFieldSchemas().getMap().containsKey(key);
     }
-
     /** Use {@link #getFieldSchemasMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2289,7 +2240,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         getFieldSchemas() {
       return getFieldSchemasMap();
     }
-
     /**
      *
      *
@@ -2305,7 +2255,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         getFieldSchemasMap() {
       return internalGetFieldSchemas().getMap();
     }
-
     /**
      *
      *
@@ -2328,7 +2277,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           internalGetFieldSchemas().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2525,7 +2473,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2770,8 +2717,7 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             defaultEntry() {
           return FieldSchemasDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final FieldSchemasConverter fieldSchemasConverter =
           new FieldSchemasConverter();
@@ -2812,7 +2758,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       public int getFieldSchemasCount() {
         return internalGetFieldSchemas().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -2830,7 +2775,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         }
         return internalGetFieldSchemas().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getFieldSchemasMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -2838,7 +2782,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           getFieldSchemas() {
         return getFieldSchemasMap();
       }
-
       /**
        *
        *
@@ -2854,7 +2797,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           getFieldSchemasMap() {
         return internalGetFieldSchemas().getImmutableMap();
       }
-
       /**
        *
        *
@@ -2877,7 +2819,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             map = internalGetMutableFieldSchemas().ensureBuilderMap();
         return map.containsKey(key) ? fieldSchemasConverter.build(map.get(key)) : defaultValue;
       }
-
       /**
        *
        *
@@ -2907,7 +2848,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         internalGetMutableFieldSchemas().clear();
         return this;
       }
-
       /**
        *
        *
@@ -2925,7 +2865,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         internalGetMutableFieldSchemas().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.visionai.v1.DataSchemaDetails>
@@ -2933,7 +2872,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         return internalGetMutableFieldSchemas().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -2956,7 +2894,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -2979,7 +2916,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         return this;
       }
-
       /**
        *
        *
@@ -3097,7 +3033,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * @return Whether the searchStrategyType field is set.
      */
     boolean hasSearchStrategyType();
-
     /**
      *
      *
@@ -3116,7 +3051,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for searchStrategyType.
      */
     int getSearchStrategyTypeValue();
-
     /**
      *
      *
@@ -3154,7 +3088,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      * @return Whether the confidenceScoreIndexConfig field is set.
      */
     boolean hasConfidenceScoreIndexConfig();
-
     /**
      *
      *
@@ -3173,7 +3106,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy.ConfidenceScoreIndexConfig
         getConfidenceScoreIndexConfig();
-
     /**
      *
      *
@@ -3192,7 +3124,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             .ConfidenceScoreIndexConfigOrBuilder
         getConfidenceScoreIndexConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -3207,7 +3138,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy)
       SearchStrategyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SearchStrategy.newBuilder() to construct.
     private SearchStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3294,7 +3224,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
        * <code>NO_SEARCH = 0;</code>
        */
       public static final int NO_SEARCH_VALUE = 0;
-
       /**
        *
        *
@@ -3306,7 +3235,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
        * <code>EXACT_SEARCH = 1;</code>
        */
       public static final int EXACT_SEARCH_VALUE = 1;
-
       /**
        *
        *
@@ -3457,7 +3385,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
        * @return The fieldPath.
        */
       java.lang.String getFieldPath();
-
       /**
        *
        *
@@ -3517,7 +3444,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
        */
       float getThreshold();
     }
-
     /**
      *
      *
@@ -3559,7 +3485,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy.ConfidenceScoreIndexConfig)
         ConfidenceScoreIndexConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ConfidenceScoreIndexConfig.newBuilder() to construct.
       private ConfidenceScoreIndexConfig(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3597,7 +3522,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object fieldPath_ = "";
-
       /**
        *
        *
@@ -3654,7 +3578,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -3714,7 +3637,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
       public static final int THRESHOLD_FIELD_NUMBER = 2;
       private float threshold_ = 0F;
-
       /**
        *
        *
@@ -3929,7 +3851,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4181,7 +4102,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private java.lang.Object fieldPath_ = "";
-
         /**
          *
          *
@@ -4237,7 +4157,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -4293,7 +4212,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -4348,7 +4266,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4399,7 +4316,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4457,7 +4373,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         }
 
         private float threshold_;
-
         /**
          *
          *
@@ -4473,7 +4388,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         public float getThreshold() {
           return threshold_;
         }
-
         /**
          *
          *
@@ -4493,7 +4407,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4587,7 +4500,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int SEARCH_STRATEGY_TYPE_FIELD_NUMBER = 1;
     private int searchStrategyType_ = 0;
-
     /**
      *
      *
@@ -4609,7 +4521,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasSearchStrategyType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4631,7 +4542,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public int getSearchStrategyTypeValue() {
       return searchStrategyType_;
     }
-
     /**
      *
      *
@@ -4664,7 +4574,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public static final int CONFIDENCE_SCORE_INDEX_CONFIG_FIELD_NUMBER = 2;
     private com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy.ConfidenceScoreIndexConfig
         confidenceScoreIndexConfig_;
-
     /**
      *
      *
@@ -4685,7 +4594,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasConfidenceScoreIndexConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4710,7 +4618,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance()
           : confidenceScoreIndexConfig_;
     }
-
     /**
      *
      *
@@ -4918,7 +4825,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5142,7 +5048,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int searchStrategyType_ = 0;
-
       /**
        *
        *
@@ -5164,7 +5069,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       public boolean hasSearchStrategyType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -5186,7 +5090,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       public int getSearchStrategyTypeValue() {
         return searchStrategyType_;
       }
-
       /**
        *
        *
@@ -5211,7 +5114,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5240,7 +5142,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -5269,7 +5170,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5305,7 +5205,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
               com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy
                   .ConfidenceScoreIndexConfigOrBuilder>
           confidenceScoreIndexConfigBuilder_;
-
       /**
        *
        *
@@ -5325,7 +5224,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       public boolean hasConfidenceScoreIndexConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -5354,7 +5252,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           return confidenceScoreIndexConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5384,7 +5281,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5412,7 +5308,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5449,7 +5344,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -5474,7 +5368,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5496,7 +5389,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getConfidenceScoreIndexConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5523,7 +5415,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
               : confidenceScoreIndexConfig_;
         }
       }
-
       /**
        *
        *
@@ -5631,7 +5522,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -5647,7 +5537,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5663,7 +5552,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -5686,7 +5574,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
   public static final int PROTO_ANY_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.visionai.v1.DataSchemaDetails.ProtoAnyConfig protoAnyConfig_;
-
   /**
    *
    *
@@ -5702,7 +5589,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public boolean hasProtoAnyConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -5720,7 +5606,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.visionai.v1.DataSchemaDetails.ProtoAnyConfig.getDefaultInstance()
         : protoAnyConfig_;
   }
-
   /**
    *
    *
@@ -5740,7 +5625,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
   public static final int LIST_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.visionai.v1.DataSchemaDetails.ListConfig listConfig_;
-
   /**
    *
    *
@@ -5756,7 +5640,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public boolean hasListConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -5774,7 +5657,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.visionai.v1.DataSchemaDetails.ListConfig.getDefaultInstance()
         : listConfig_;
   }
-
   /**
    *
    *
@@ -5795,7 +5677,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public static final int CUSTOMIZED_STRUCT_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.visionai.v1.DataSchemaDetails.CustomizedStructConfig
       customizedStructConfig_;
-
   /**
    *
    *
@@ -5813,7 +5694,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public boolean hasCustomizedStructConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -5834,7 +5714,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.visionai.v1.DataSchemaDetails.CustomizedStructConfig.getDefaultInstance()
         : customizedStructConfig_;
   }
-
   /**
    *
    *
@@ -5856,7 +5735,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
   public static final int GRANULARITY_FIELD_NUMBER = 5;
   private int granularity_ = 0;
-
   /**
    *
    *
@@ -5872,7 +5750,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public boolean hasGranularity() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -5888,7 +5765,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public int getGranularityValue() {
     return granularity_;
   }
-
   /**
    *
    *
@@ -5911,7 +5787,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
 
   public static final int SEARCH_STRATEGY_FIELD_NUMBER = 7;
   private com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy searchStrategy_;
-
   /**
    *
    *
@@ -5927,7 +5802,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
   public boolean hasSearchStrategy() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -5945,7 +5819,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy.getDefaultInstance()
         : searchStrategy_;
   }
-
   /**
    *
    *
@@ -6198,7 +6071,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6488,7 +6360,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -6504,7 +6375,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6520,7 +6390,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -6539,7 +6408,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6559,7 +6427,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.visionai.v1.DataSchemaDetails.DataType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6581,7 +6448,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6606,7 +6472,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             com.google.cloud.visionai.v1.DataSchemaDetails.ProtoAnyConfig.Builder,
             com.google.cloud.visionai.v1.DataSchemaDetails.ProtoAnyConfigOrBuilder>
         protoAnyConfigBuilder_;
-
     /**
      *
      *
@@ -6621,7 +6486,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasProtoAnyConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -6642,7 +6506,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         return protoAnyConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6666,7 +6529,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6687,7 +6549,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6718,7 +6579,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6738,7 +6598,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6754,7 +6613,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getProtoAnyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6774,7 +6632,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             : protoAnyConfig_;
       }
     }
-
     /**
      *
      *
@@ -6807,7 +6664,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             com.google.cloud.visionai.v1.DataSchemaDetails.ListConfig.Builder,
             com.google.cloud.visionai.v1.DataSchemaDetails.ListConfigOrBuilder>
         listConfigBuilder_;
-
     /**
      *
      *
@@ -6822,7 +6678,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasListConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -6843,7 +6698,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         return listConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6866,7 +6720,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6887,7 +6740,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6917,7 +6769,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6937,7 +6788,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6953,7 +6803,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getListConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6973,7 +6822,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             : listConfig_;
       }
     }
-
     /**
      *
      *
@@ -7007,7 +6855,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             com.google.cloud.visionai.v1.DataSchemaDetails.CustomizedStructConfig.Builder,
             com.google.cloud.visionai.v1.DataSchemaDetails.CustomizedStructConfigOrBuilder>
         customizedStructConfigBuilder_;
-
     /**
      *
      *
@@ -7024,7 +6871,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasCustomizedStructConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -7049,7 +6895,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         return customizedStructConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7075,7 +6920,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7099,7 +6943,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7132,7 +6975,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7154,7 +6996,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7172,7 +7013,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCustomizedStructConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7195,7 +7035,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             : customizedStructConfig_;
       }
     }
-
     /**
      *
      *
@@ -7225,7 +7064,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     }
 
     private int granularity_ = 0;
-
     /**
      *
      *
@@ -7242,7 +7080,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasGranularity() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -7259,7 +7096,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public int getGranularityValue() {
       return granularity_;
     }
-
     /**
      *
      *
@@ -7279,7 +7115,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7300,7 +7135,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.visionai.v1.DataSchemaDetails.Granularity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7324,7 +7158,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7350,7 +7183,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategy.Builder,
             com.google.cloud.visionai.v1.DataSchemaDetails.SearchStrategyOrBuilder>
         searchStrategyBuilder_;
-
     /**
      *
      *
@@ -7365,7 +7197,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
     public boolean hasSearchStrategy() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -7386,7 +7217,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
         return searchStrategyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7410,7 +7240,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7431,7 +7260,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7462,7 +7290,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -7482,7 +7309,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7498,7 +7324,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSearchStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7518,7 +7343,6 @@ public final class DataSchemaDetails extends com.google.protobuf.GeneratedMessag
             : searchStrategy_;
       }
     }
-
     /**
      *
      *

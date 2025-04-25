@@ -33,7 +33,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSslConfig)
     OracleSslConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OracleSslConfig.newBuilder() to construct.
   private OracleSslConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object caCertificate_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CA_CERTIFICATE_SET_FIELD_NUMBER = 2;
   private boolean caCertificateSet_ = false;
-
   /**
    *
    *
@@ -307,7 +303,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object caCertificate_ = "";
-
     /**
      *
      *
@@ -528,7 +522,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -552,7 +545,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -620,7 +610,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean caCertificateSet_;
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
     public boolean getCaCertificateSet() {
       return caCertificateSet_;
     }
-
     /**
      *
      *
@@ -658,7 +646,6 @@ public final class OracleSslConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

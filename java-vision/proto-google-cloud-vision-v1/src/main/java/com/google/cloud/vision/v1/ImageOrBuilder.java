@@ -56,7 +56,6 @@ public interface ImageOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ImageOrBuilder
    * @return The source.
    */
   com.google.cloud.vision.v1.ImageSource getSource();
-
   /**
    *
    *

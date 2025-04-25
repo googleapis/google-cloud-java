@@ -37,7 +37,6 @@ public interface AttachmentDataRefOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AttachmentDataRefOrBuilder
    * @return The attachmentUploadToken.
    */
   java.lang.String getAttachmentUploadToken();
-
   /**
    *
    *

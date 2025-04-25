@@ -33,7 +33,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest)
     CreateGitRepositoryLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateGitRepositoryLinkRequest.newBuilder() to construct.
   private CreateGitRepositoryLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
 
   public static final int GIT_REPOSITORY_LINK_FIELD_NUMBER = 2;
   private com.google.cloud.developerconnect.v1.GitRepositoryLink gitRepositoryLink_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
   public boolean hasGitRepositoryLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         ? com.google.cloud.developerconnect.v1.GitRepositoryLink.getDefaultInstance()
         : gitRepositoryLink_;
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gitRepositoryLinkId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -327,7 +317,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -546,7 +535,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -814,7 +802,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -839,7 +826,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +850,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +873,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +892,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
             com.google.cloud.developerconnect.v1.GitRepositoryLink.Builder,
             com.google.cloud.developerconnect.v1.GitRepositoryLinkOrBuilder>
         gitRepositoryLinkBuilder_;
-
     /**
      *
      *
@@ -957,7 +939,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     public boolean hasGitRepositoryLink() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -980,7 +961,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return gitRepositoryLinkBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1006,7 +986,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1039,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1060,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1077,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return getGitRepositoryLinkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1123,7 +1098,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
             : gitRepositoryLink_;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1127,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object gitRepositoryLinkId_ = "";
-
     /**
      *
      *
@@ -1179,7 +1152,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1177,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1201,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1221,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1248,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1316,7 +1284,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1320,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1355,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1386,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1424,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1476,7 +1439,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1496,7 +1458,6 @@ public final class CreateGitRepositoryLinkRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

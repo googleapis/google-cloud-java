@@ -34,7 +34,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SimulateMaintenanceEventNodeGroupRequest)
     SimulateMaintenanceEventNodeGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SimulateMaintenanceEventNodeGroupRequest.newBuilder() to construct.
   private SimulateMaintenanceEventNodeGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeGroup_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       351468764;
   private com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest
       nodeGroupsSimulateMaintenanceEventRequestResource_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
   public boolean hasNodeGroupsSimulateMaintenanceEventRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         ? com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest.getDefaultInstance()
         : nodeGroupsSimulateMaintenanceEventRequestResource_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -580,7 +567,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -853,7 +839,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     private int bitField0_;
 
     private java.lang.Object nodeGroup_ = "";
-
     /**
      *
      *
@@ -876,7 +861,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +883,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -921,7 +904,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
             com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest.Builder,
             com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequestOrBuilder>
         nodeGroupsSimulateMaintenanceEventRequestResourceBuilder_;
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     public boolean hasNodeGroupsSimulateMaintenanceEventRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1012,7 +991,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return nodeGroupsSimulateMaintenanceEventRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1016,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1040,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1072,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1093,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1110,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return getNodeGroupsSimulateMaintenanceEventRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
             : nodeGroupsSimulateMaintenanceEventRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1163,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1216,7 +1187,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1211,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1265,7 +1234,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1253,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1279,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1327,7 +1293,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1350,7 +1315,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1373,7 +1337,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1395,7 +1358,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1375,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1438,7 +1399,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1463,7 +1423,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1488,7 +1447,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1470,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1489,6 @@ public final class SimulateMaintenanceEventNodeGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface EventSegmentExclusionOrBuilder
    * @return The enum numeric value on the wire for eventExclusionDuration.
    */
   int getEventExclusionDurationValue();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface EventSegmentExclusionOrBuilder
    * @return Whether the eventExclusionCriteria field is set.
    */
   boolean hasEventExclusionCriteria();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface EventSegmentExclusionOrBuilder
    * @return The eventExclusionCriteria.
    */
   com.google.analytics.data.v1alpha.EventSegmentCriteria getEventExclusionCriteria();
-
   /**
    *
    *

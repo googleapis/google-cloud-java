@@ -34,7 +34,6 @@ public interface ListServiceLevelObjectivesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.ServiceLevelObjective> getServiceLevelObjectivesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServiceLevelObjectivesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
   com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjectives(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServiceLevelObjectivesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
   int getServiceLevelObjectivesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListServiceLevelObjectivesResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder>
       getServiceLevelObjectivesOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListServiceLevelObjectivesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

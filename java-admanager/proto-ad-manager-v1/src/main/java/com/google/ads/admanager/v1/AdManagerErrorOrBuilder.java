@@ -36,7 +36,6 @@ public interface AdManagerErrorOrBuilder
    * @return The errorCode.
    */
   java.lang.String getErrorCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AdManagerErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface AdManagerErrorOrBuilder
    * @return The fieldPath.
    */
   java.lang.String getFieldPath();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface AdManagerErrorOrBuilder
    * @return The trigger.
    */
   java.lang.String getTrigger();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface AdManagerErrorOrBuilder
    * @return The stackTrace.
    */
   java.lang.String getStackTrace();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface AdManagerErrorOrBuilder
    * <code>repeated .google.protobuf.Any details = 6;</code>
    */
   java.util.List<com.google.protobuf.Any> getDetailsList();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface AdManagerErrorOrBuilder
    * <code>repeated .google.protobuf.Any details = 6;</code>
    */
   com.google.protobuf.Any getDetails(int index);
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface AdManagerErrorOrBuilder
    * <code>repeated .google.protobuf.Any details = 6;</code>
    */
   int getDetailsCount();
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface AdManagerErrorOrBuilder
    * <code>repeated .google.protobuf.Any details = 6;</code>
    */
   java.util.List<? extends com.google.protobuf.AnyOrBuilder> getDetailsOrBuilderList();
-
   /**
    *
    *

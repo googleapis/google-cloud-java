@@ -302,8 +302,7 @@ public class ApprovalRequestName implements ResourceName {
     private Builder(ApprovalRequestName approvalRequestName) {
       Preconditions.checkArgument(
           Objects.equals(approvalRequestName.pathTemplate, PROJECT_APPROVAL_REQUEST),
-          "toBuilder is only supported when ApprovalRequestName has the pattern of"
-              + " projects/{project}/approvalRequests/{approval_request}");
+          "toBuilder is only supported when ApprovalRequestName has the pattern of projects/{project}/approvalRequests/{approval_request}");
       this.project = approvalRequestName.project;
       this.approvalRequest = approvalRequestName.approvalRequest;
     }

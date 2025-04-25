@@ -38,7 +38,6 @@ public interface FaceDetectionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

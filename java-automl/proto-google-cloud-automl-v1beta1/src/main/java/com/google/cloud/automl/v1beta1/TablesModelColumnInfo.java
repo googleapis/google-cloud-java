@@ -34,7 +34,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TablesModelColumnInfo)
     TablesModelColumnInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TablesModelColumnInfo.newBuilder() to construct.
   private TablesModelColumnInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object columnSpecName_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object columnDisplayName_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
 
   public static final int FEATURE_IMPORTANCE_FIELD_NUMBER = 3;
   private float featureImportance_ = 0F;
-
   /**
    *
    *
@@ -390,7 +384,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -604,7 +597,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object columnSpecName_ = "";
-
     /**
      *
      *
@@ -628,7 +620,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object columnDisplayName_ = "";
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     }
 
     private float featureImportance_;
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     public float getFeatureImportance() {
       return featureImportance_;
     }
-
     /**
      *
      *
@@ -904,7 +885,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

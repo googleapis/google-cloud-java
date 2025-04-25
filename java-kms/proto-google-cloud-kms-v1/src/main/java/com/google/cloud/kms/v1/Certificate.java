@@ -34,7 +34,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.Certificate)
     CertificateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Certificate.newBuilder() to construct.
   private Certificate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int RAW_DER_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString rawDer_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARSED_FIELD_NUMBER = 2;
   private boolean parsed_ = false;
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issuer_ = "";
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subject_ = "";
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subjectAlternativeDnsNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSubjectAlternativeDnsNamesList() {
     return subjectAlternativeDnsNames_;
   }
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public int getSubjectAlternativeDnsNamesCount() {
     return subjectAlternativeDnsNames_.size();
   }
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSubjectAlternativeDnsNames(int index) {
     return subjectAlternativeDnsNames_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NOT_BEFORE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp notBeforeTime_;
-
   /**
    *
    *
@@ -320,7 +308,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNotBeforeTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : notBeforeTime_;
   }
-
   /**
    *
    *
@@ -363,7 +349,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NOT_AFTER_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp notAfterTime_;
-
   /**
    *
    *
@@ -382,7 +367,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNotAfterTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -403,7 +387,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : notAfterTime_;
   }
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serialNumber_ = "";
-
   /**
    *
    *
@@ -452,7 +434,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -482,7 +463,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sha256Fingerprint_ = "";
-
   /**
    *
    *
@@ -507,7 +487,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -781,7 +760,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1108,7 +1086,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString rawDer_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1124,7 +1101,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRawDer() {
       return rawDer_;
     }
-
     /**
      *
      *
@@ -1146,7 +1122,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1141,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean parsed_;
-
     /**
      *
      *
@@ -1182,7 +1156,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public boolean getParsed() {
       return parsed_;
     }
-
     /**
      *
      *
@@ -1202,7 +1175,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1194,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object issuer_ = "";
-
     /**
      *
      *
@@ -1246,7 +1217,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1240,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1293,7 +1262,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1280,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1305,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subject_ = "";
-
     /**
      *
      *
@@ -1362,7 +1328,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1386,7 +1351,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1409,7 +1373,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1391,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1425,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1482,7 +1443,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       subjectAlternativeDnsNames_.makeImmutable();
       return subjectAlternativeDnsNames_;
     }
-
     /**
      *
      *
@@ -1500,7 +1460,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public int getSubjectAlternativeDnsNamesCount() {
       return subjectAlternativeDnsNames_.size();
     }
-
     /**
      *
      *
@@ -1519,7 +1478,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSubjectAlternativeDnsNames(int index) {
       return subjectAlternativeDnsNames_.get(index);
     }
-
     /**
      *
      *
@@ -1538,7 +1496,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSubjectAlternativeDnsNamesBytes(int index) {
       return subjectAlternativeDnsNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1565,7 +1522,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1547,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1569,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1590,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1623,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         notBeforeTimeBuilder_;
-
     /**
      *
      *
@@ -1688,7 +1640,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNotBeforeTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1712,7 +1663,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return notBeforeTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1738,7 +1688,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1710,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1792,7 +1740,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1815,7 +1762,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1779,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNotBeforeTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1855,7 +1800,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             : notBeforeTime_;
       }
     }
-
     /**
      *
      *
@@ -1891,7 +1835,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         notAfterTimeBuilder_;
-
     /**
      *
      *
@@ -1909,7 +1852,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNotAfterTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1933,7 +1875,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return notAfterTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1959,7 +1900,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1922,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2013,7 +1952,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2036,7 +1974,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2054,7 +1991,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNotAfterTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2076,7 +2012,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             : notAfterTime_;
       }
     }
-
     /**
      *
      *
@@ -2107,7 +2042,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serialNumber_ = "";
-
     /**
      *
      *
@@ -2131,7 +2065,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2155,7 +2088,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2178,7 +2110,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2197,7 +2128,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2223,7 +2153,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sha256Fingerprint_ = "";
-
     /**
      *
      *
@@ -2247,7 +2176,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2271,7 +2199,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2294,7 +2221,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2313,7 +2239,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

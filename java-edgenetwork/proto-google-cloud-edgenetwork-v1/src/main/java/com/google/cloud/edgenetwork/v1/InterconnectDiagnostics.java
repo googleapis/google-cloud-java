@@ -34,7 +34,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.InterconnectDiagnostics)
     InterconnectDiagnosticsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectDiagnostics.newBuilder() to construct.
   private InterconnectDiagnostics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The circuitId.
      */
     java.lang.String getCircuitId();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return Whether the lacpStatus field is set.
      */
     boolean hasLacpStatus();
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The lacpStatus.
      */
     com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLACPStatus getLacpStatus();
-
     /**
      *
      *
@@ -153,7 +149,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      */
     java.util.List<com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatus>
         getLldpStatusesList();
-
     /**
      *
      *
@@ -168,7 +163,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      */
     com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatus getLldpStatuses(
         int index);
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </code>
      */
     int getLldpStatusesCount();
-
     /**
      *
      *
@@ -199,7 +192,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
             ? extends
                 com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatusOrBuilder>
         getLldpStatusesOrBuilderList();
-
     /**
      *
      *
@@ -228,7 +220,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return Whether the packetCounts field is set.
      */
     boolean hasPacketCounts();
-
     /**
      *
      *
@@ -242,7 +233,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The packetCounts.
      */
     com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.PacketCounts getPacketCounts();
-
     /**
      *
      *
@@ -256,7 +246,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.PacketCountsOrBuilder
         getPacketCountsOrBuilder();
   }
-
   /**
    *
    *
@@ -271,7 +260,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus)
       LinkStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LinkStatus.newBuilder() to construct.
     private LinkStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -308,7 +296,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object circuitId_ = "";
-
     /**
      *
      *
@@ -332,7 +319,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -359,7 +345,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int LACP_STATUS_FIELD_NUMBER = 2;
     private com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLACPStatus lacpStatus_;
-
     /**
      *
      *
@@ -376,7 +361,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public boolean hasLacpStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -396,7 +380,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               .getDefaultInstance()
           : lacpStatus_;
     }
-
     /**
      *
      *
@@ -421,7 +404,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatus>
         lldpStatuses_;
-
     /**
      *
      *
@@ -439,7 +421,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         getLldpStatusesList() {
       return lldpStatuses_;
     }
-
     /**
      *
      *
@@ -459,7 +440,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         getLldpStatusesOrBuilderList() {
       return lldpStatuses_;
     }
-
     /**
      *
      *
@@ -476,7 +456,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public int getLldpStatusesCount() {
       return lldpStatuses_.size();
     }
-
     /**
      *
      *
@@ -494,7 +473,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         int index) {
       return lldpStatuses_.get(index);
     }
-
     /**
      *
      *
@@ -515,7 +493,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int PACKET_COUNTS_FIELD_NUMBER = 4;
     private com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.PacketCounts packetCounts_;
-
     /**
      *
      *
@@ -532,7 +509,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public boolean hasPacketCounts() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -552,7 +528,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               .getDefaultInstance()
           : packetCounts_;
     }
-
     /**
      *
      *
@@ -773,7 +748,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1082,7 +1056,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object circuitId_ = "";
-
       /**
        *
        *
@@ -1105,7 +1078,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1128,7 +1100,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1150,7 +1121,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1168,7 +1138,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1198,7 +1167,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLACPStatus.Builder,
               com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLACPStatusOrBuilder>
           lacpStatusBuilder_;
-
       /**
        *
        *
@@ -1214,7 +1182,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public boolean hasLacpStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1238,7 +1205,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return lacpStatusBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1263,7 +1229,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1286,7 +1251,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1318,7 +1282,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1339,7 +1302,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1356,7 +1318,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return getLacpStatusFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1378,7 +1339,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               : lacpStatus_;
         }
       }
-
       /**
        *
        *
@@ -1445,7 +1405,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return lldpStatusesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1465,7 +1424,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return lldpStatusesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1486,7 +1444,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return lldpStatusesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1513,7 +1470,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1539,7 +1495,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1566,7 +1521,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1593,7 +1547,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1618,7 +1571,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1644,7 +1596,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1670,7 +1621,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1693,7 +1643,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1716,7 +1665,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1733,7 +1681,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           getLldpStatusesBuilder(int index) {
         return getLldpStatusesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1754,7 +1701,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return lldpStatusesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1777,7 +1723,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(lldpStatuses_);
         }
       }
-
       /**
        *
        *
@@ -1797,7 +1742,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                 com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatus
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1818,7 +1762,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                 com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatus
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1863,7 +1806,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.PacketCounts.Builder,
               com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.PacketCountsOrBuilder>
           packetCountsBuilder_;
-
       /**
        *
        *
@@ -1879,7 +1821,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public boolean hasPacketCounts() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1903,7 +1844,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return packetCountsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1928,7 +1868,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1951,7 +1890,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1983,7 +1921,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2004,7 +1941,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2021,7 +1957,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return getPacketCountsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2043,7 +1978,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               : packetCounts_;
         }
       }
-
       /**
        *
        *
@@ -2224,7 +2158,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      */
     long getOutboundDiscards();
   }
-
   /**
    *
    *
@@ -2239,7 +2172,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.InterconnectDiagnostics.PacketCounts)
       PacketCountsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PacketCounts.newBuilder() to construct.
     private PacketCounts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2270,7 +2202,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int INBOUND_UNICAST_FIELD_NUMBER = 1;
     private long inboundUnicast_ = 0L;
-
     /**
      *
      *
@@ -2289,7 +2220,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int INBOUND_ERRORS_FIELD_NUMBER = 2;
     private long inboundErrors_ = 0L;
-
     /**
      *
      *
@@ -2308,7 +2238,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int INBOUND_DISCARDS_FIELD_NUMBER = 3;
     private long inboundDiscards_ = 0L;
-
     /**
      *
      *
@@ -2328,7 +2257,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int OUTBOUND_UNICAST_FIELD_NUMBER = 4;
     private long outboundUnicast_ = 0L;
-
     /**
      *
      *
@@ -2347,7 +2275,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int OUTBOUND_ERRORS_FIELD_NUMBER = 5;
     private long outboundErrors_ = 0L;
-
     /**
      *
      *
@@ -2367,7 +2294,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int OUTBOUND_DISCARDS_FIELD_NUMBER = 6;
     private long outboundDiscards_ = 0L;
-
     /**
      *
      *
@@ -2592,7 +2518,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2851,7 +2776,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       private int bitField0_;
 
       private long inboundUnicast_;
-
       /**
        *
        *
@@ -2867,7 +2791,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public long getInboundUnicast() {
         return inboundUnicast_;
       }
-
       /**
        *
        *
@@ -2887,7 +2810,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2907,7 +2829,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private long inboundErrors_;
-
       /**
        *
        *
@@ -2923,7 +2844,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public long getInboundErrors() {
         return inboundErrors_;
       }
-
       /**
        *
        *
@@ -2943,7 +2863,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2963,7 +2882,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private long inboundDiscards_;
-
       /**
        *
        *
@@ -2980,7 +2898,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public long getInboundDiscards() {
         return inboundDiscards_;
       }
-
       /**
        *
        *
@@ -3001,7 +2918,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3022,7 +2938,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private long outboundUnicast_;
-
       /**
        *
        *
@@ -3038,7 +2953,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public long getOutboundUnicast() {
         return outboundUnicast_;
       }
-
       /**
        *
        *
@@ -3058,7 +2972,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3078,7 +2991,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private long outboundErrors_;
-
       /**
        *
        *
@@ -3095,7 +3007,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public long getOutboundErrors() {
         return outboundErrors_;
       }
-
       /**
        *
        *
@@ -3116,7 +3027,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3137,7 +3047,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private long outboundDiscards_;
-
       /**
        *
        *
@@ -3154,7 +3063,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public long getOutboundDiscards() {
         return outboundDiscards_;
       }
-
       /**
        *
        *
@@ -3175,7 +3083,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3280,7 +3187,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
-
     /**
      *
      *
@@ -3307,7 +3213,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The googleSystemId.
      */
     java.lang.String getGoogleSystemId();
-
     /**
      *
      *
@@ -3333,7 +3238,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The neighborSystemId.
      */
     java.lang.String getNeighborSystemId();
-
     /**
      *
      *
@@ -3390,7 +3294,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      */
     boolean getDistributing();
   }
-
   /**
    *
    *
@@ -3405,7 +3308,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLACPStatus)
       LinkLACPStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LinkLACPStatus.newBuilder() to construct.
     private LinkLACPStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3493,7 +3395,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
        * <code>UNKNOWN = 0;</code>
        */
       public static final int UNKNOWN_VALUE = 0;
-
       /**
        *
        *
@@ -3504,7 +3405,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
-
       /**
        *
        *
@@ -3605,7 +3505,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
-
     /**
      *
      *
@@ -3622,7 +3521,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3650,7 +3548,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object googleSystemId_ = "";
-
     /**
      *
      *
@@ -3674,7 +3571,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -3703,7 +3599,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object neighborSystemId_ = "";
-
     /**
      *
      *
@@ -3727,7 +3622,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -3754,7 +3648,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int AGGREGATABLE_FIELD_NUMBER = 4;
     private boolean aggregatable_ = false;
-
     /**
      *
      *
@@ -3775,7 +3668,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int COLLECTING_FIELD_NUMBER = 5;
     private boolean collecting_ = false;
-
     /**
      *
      *
@@ -3795,7 +3687,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     public static final int DISTRIBUTING_FIELD_NUMBER = 6;
     private boolean distributing_ = false;
-
     /**
      *
      *
@@ -4025,7 +3916,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4290,7 +4180,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       private int bitField0_;
 
       private int state_ = 0;
-
       /**
        *
        *
@@ -4307,7 +4196,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public int getStateValue() {
         return state_;
       }
-
       /**
        *
        *
@@ -4327,7 +4215,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4351,7 +4238,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4375,7 +4261,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4396,7 +4281,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object googleSystemId_ = "";
-
       /**
        *
        *
@@ -4419,7 +4303,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4442,7 +4325,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4464,7 +4346,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4482,7 +4363,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4507,7 +4387,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object neighborSystemId_ = "";
-
       /**
        *
        *
@@ -4530,7 +4409,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4553,7 +4431,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4575,7 +4452,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4593,7 +4469,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4618,7 +4493,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private boolean aggregatable_;
-
       /**
        *
        *
@@ -4636,7 +4510,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public boolean getAggregatable() {
         return aggregatable_;
       }
-
       /**
        *
        *
@@ -4658,7 +4531,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4680,7 +4552,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private boolean collecting_;
-
       /**
        *
        *
@@ -4697,7 +4568,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public boolean getCollecting() {
         return collecting_;
       }
-
       /**
        *
        *
@@ -4718,7 +4588,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4739,7 +4608,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private boolean distributing_;
-
       /**
        *
        *
@@ -4756,7 +4624,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       public boolean getDistributing() {
         return distributing_;
       }
-
       /**
        *
        *
@@ -4777,7 +4644,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4882,7 +4748,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The peerSystemName.
      */
     java.lang.String getPeerSystemName();
-
     /**
      *
      *
@@ -4908,7 +4773,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The peerSystemDescription.
      */
     java.lang.String getPeerSystemDescription();
-
     /**
      *
      *
@@ -4935,7 +4799,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The peerChassisId.
      */
     java.lang.String getPeerChassisId();
-
     /**
      *
      *
@@ -4962,7 +4825,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The peerChassisIdType.
      */
     java.lang.String getPeerChassisIdType();
-
     /**
      *
      *
@@ -4990,7 +4852,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The peerPortId.
      */
     java.lang.String getPeerPortId();
-
     /**
      *
      *
@@ -5018,7 +4879,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return The peerPortIdType.
      */
     java.lang.String getPeerPortIdType();
-
     /**
      *
      *
@@ -5032,7 +4892,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getPeerPortIdTypeBytes();
   }
-
   /**
    *
    *
@@ -5047,7 +4906,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkLLDPStatus)
       LinkLLDPStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LinkLLDPStatus.newBuilder() to construct.
     private LinkLLDPStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5087,7 +4945,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerSystemName_ = "";
-
     /**
      *
      *
@@ -5111,7 +4968,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -5140,7 +4996,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerSystemDescription_ = "";
-
     /**
      *
      *
@@ -5164,7 +5019,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -5193,7 +5047,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerChassisId_ = "";
-
     /**
      *
      *
@@ -5218,7 +5071,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -5248,7 +5100,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerChassisIdType_ = "";
-
     /**
      *
      *
@@ -5272,7 +5123,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -5301,7 +5151,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerPortId_ = "";
-
     /**
      *
      *
@@ -5327,7 +5176,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -5358,7 +5206,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerPortIdType_ = "";
-
     /**
      *
      *
@@ -5382,7 +5229,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -5615,7 +5461,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5888,7 +5733,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object peerSystemName_ = "";
-
       /**
        *
        *
@@ -5911,7 +5755,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5934,7 +5777,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5956,7 +5798,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5974,7 +5815,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5999,7 +5839,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object peerSystemDescription_ = "";
-
       /**
        *
        *
@@ -6022,7 +5861,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6045,7 +5883,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6067,7 +5904,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6085,7 +5921,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6110,7 +5945,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object peerChassisId_ = "";
-
       /**
        *
        *
@@ -6134,7 +5968,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6158,7 +5991,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6181,7 +6013,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6200,7 +6031,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6226,7 +6056,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object peerChassisIdType_ = "";
-
       /**
        *
        *
@@ -6249,7 +6078,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6272,7 +6100,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6294,7 +6121,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6312,7 +6138,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6337,7 +6162,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object peerPortId_ = "";
-
       /**
        *
        *
@@ -6362,7 +6186,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6387,7 +6210,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6411,7 +6233,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6431,7 +6252,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6458,7 +6278,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
 
       private java.lang.Object peerPortIdType_ = "";
-
       /**
        *
        *
@@ -6481,7 +6300,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6504,7 +6322,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6526,7 +6343,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6544,7 +6360,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6640,7 +6455,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object macAddress_ = "";
-
   /**
    *
    *
@@ -6664,7 +6478,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -6693,7 +6506,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgenetwork.v1.LinkLayerAddress> linkLayerAddresses_;
-
   /**
    *
    *
@@ -6709,7 +6521,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getLinkLayerAddressesList() {
     return linkLayerAddresses_;
   }
-
   /**
    *
    *
@@ -6725,7 +6536,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getLinkLayerAddressesOrBuilderList() {
     return linkLayerAddresses_;
   }
-
   /**
    *
    *
@@ -6740,7 +6550,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public int getLinkLayerAddressesCount() {
     return linkLayerAddresses_.size();
   }
-
   /**
    *
    *
@@ -6755,7 +6564,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public com.google.cloud.edgenetwork.v1.LinkLayerAddress getLinkLayerAddresses(int index) {
     return linkLayerAddresses_.get(index);
   }
-
   /**
    *
    *
@@ -6776,7 +6584,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus> links_;
-
   /**
    *
    *
@@ -6793,7 +6600,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getLinksList() {
     return links_;
   }
-
   /**
    *
    *
@@ -6811,7 +6617,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       getLinksOrBuilderList() {
     return links_;
   }
-
   /**
    *
    *
@@ -6827,7 +6632,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public int getLinksCount() {
     return links_.size();
   }
-
   /**
    *
    *
@@ -6843,7 +6647,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus getLinks(int index) {
     return links_.get(index);
   }
-
   /**
    *
    *
@@ -7044,7 +6847,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7349,7 +7151,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object macAddress_ = "";
-
     /**
      *
      *
@@ -7372,7 +7173,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7395,7 +7195,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7417,7 +7216,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7435,7 +7233,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7495,7 +7292,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linkLayerAddressesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7513,7 +7309,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linkLayerAddressesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7531,7 +7326,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linkLayerAddressesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7556,7 +7350,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7578,7 +7371,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7602,7 +7394,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7627,7 +7418,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7649,7 +7439,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7671,7 +7460,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7693,7 +7481,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7714,7 +7501,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7735,7 +7521,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7750,7 +7535,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         int index) {
       return getLinkLayerAddressesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7769,7 +7553,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linkLayerAddressesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7788,7 +7571,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(linkLayerAddresses_);
       }
     }
-
     /**
      *
      *
@@ -7803,7 +7585,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return getLinkLayerAddressesFieldBuilder()
           .addBuilder(com.google.cloud.edgenetwork.v1.LinkLayerAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7819,7 +7600,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return getLinkLayerAddressesFieldBuilder()
           .addBuilder(index, com.google.cloud.edgenetwork.v1.LinkLayerAddress.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7892,7 +7672,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7911,7 +7690,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7930,7 +7708,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7956,7 +7733,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -7981,7 +7757,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8007,7 +7782,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8033,7 +7807,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8057,7 +7830,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8082,7 +7854,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8107,7 +7878,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8129,7 +7899,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8151,7 +7920,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -8167,7 +7935,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         getLinksBuilder(int index) {
       return getLinksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8187,7 +7954,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return linksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8208,7 +7974,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(links_);
       }
     }
-
     /**
      *
      *
@@ -8227,7 +7992,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8247,7 +8011,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
               com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus
                   .getDefaultInstance());
     }
-
     /**
      *
      *

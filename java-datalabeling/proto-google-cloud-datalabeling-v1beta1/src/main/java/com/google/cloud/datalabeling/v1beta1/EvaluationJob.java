@@ -36,7 +36,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.EvaluationJob)
     EvaluationJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EvaluationJob.newBuilder() to construct.
   private EvaluationJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -162,7 +161,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>STATE_UNSPECIFIED = 0;</code> */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -178,7 +176,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEDULED = 1;</code>
      */
     public static final int SCHEDULED_VALUE = 1;
-
     /**
      *
      *
@@ -214,7 +211,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -227,7 +223,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 3;</code>
      */
     public static final int PAUSED_VALUE = 3;
-
     /**
      *
      *
@@ -333,7 +328,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -392,7 +385,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -417,7 +409,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -445,7 +436,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -461,7 +451,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -486,7 +475,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schedule_ = "";
-
   /**
    *
    *
@@ -520,7 +508,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -559,7 +546,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelVersion_ = "";
-
   /**
    *
    *
@@ -590,7 +576,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -624,7 +609,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVALUATION_JOB_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluationJobConfig_;
-
   /**
    *
    *
@@ -640,7 +624,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEvaluationJobConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -658,7 +641,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig.getDefaultInstance()
         : evaluationJobConfig_;
   }
-
   /**
    *
    *
@@ -680,7 +662,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationSpecSet_ = "";
-
   /**
    *
    *
@@ -709,7 +690,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -741,7 +721,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LABEL_MISSING_GROUND_TRUTH_FIELD_NUMBER = 8;
   private boolean labelMissingGroundTruth_ = false;
-
   /**
    *
    *
@@ -766,7 +745,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.Attempt> attempts_;
-
   /**
    *
    *
@@ -781,7 +759,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Attempt> getAttemptsList() {
     return attempts_;
   }
-
   /**
    *
    *
@@ -797,7 +774,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       getAttemptsOrBuilderList() {
     return attempts_;
   }
-
   /**
    *
    *
@@ -812,7 +788,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public int getAttemptsCount() {
     return attempts_.size();
   }
-
   /**
    *
    *
@@ -827,7 +802,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datalabeling.v1beta1.Attempt getAttempts(int index) {
     return attempts_.get(index);
   }
-
   /**
    *
    *
@@ -845,7 +819,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -861,7 +834,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -877,7 +849,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1148,7 +1119,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1536,7 +1506,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1562,7 +1531,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1588,7 +1556,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1613,7 +1580,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1600,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1627,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1686,7 +1650,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1710,7 +1673,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1733,7 +1695,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1752,7 +1713,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1738,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1794,7 +1753,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1813,7 +1771,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1790,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datalabeling.v1beta1.EvaluationJob.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1855,7 +1811,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1875,7 +1830,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object schedule_ = "";
-
     /**
      *
      *
@@ -1908,7 +1862,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1941,7 +1894,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1973,7 +1925,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1952,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2036,7 +1986,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object modelVersion_ = "";
-
     /**
      *
      *
@@ -2066,7 +2015,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2096,7 +2044,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2125,7 +2072,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2096,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2187,7 +2132,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.EvaluationJobConfigOrBuilder>
         evaluationJobConfigBuilder_;
-
     /**
      *
      *
@@ -2203,7 +2147,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEvaluationJobConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2225,7 +2168,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return evaluationJobConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2250,7 +2192,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2272,7 +2213,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2303,7 +2243,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2324,7 +2263,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2341,7 +2279,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEvaluationJobConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2362,7 +2299,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             : evaluationJobConfig_;
       }
     }
-
     /**
      *
      *
@@ -2391,7 +2327,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object annotationSpecSet_ = "";
-
     /**
      *
      *
@@ -2419,7 +2354,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2447,7 +2381,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2474,7 +2407,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2497,7 +2429,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2527,7 +2458,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean labelMissingGroundTruth_;
-
     /**
      *
      *
@@ -2547,7 +2477,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     public boolean getLabelMissingGroundTruth() {
       return labelMissingGroundTruth_;
     }
-
     /**
      *
      *
@@ -2571,7 +2500,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2628,7 +2556,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2646,7 +2573,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2664,7 +2590,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2688,7 +2613,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2710,7 +2634,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2734,7 +2657,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2758,7 +2680,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2780,7 +2701,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2802,7 +2722,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2824,7 +2743,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2845,7 +2763,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2866,7 +2783,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2880,7 +2796,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.Attempt.Builder getAttemptsBuilder(int index) {
       return getAttemptsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2898,7 +2813,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return attemptsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2917,7 +2831,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(attempts_);
       }
     }
-
     /**
      *
      *
@@ -2932,7 +2845,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return getAttemptsFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.Attempt.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2947,7 +2859,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       return getAttemptsFieldBuilder()
           .addBuilder(index, com.google.cloud.datalabeling.v1beta1.Attempt.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2986,7 +2897,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3001,7 +2911,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3022,7 +2931,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3045,7 +2953,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3065,7 +2972,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3093,7 +2999,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3113,7 +3018,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3128,7 +3032,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3147,7 +3050,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *

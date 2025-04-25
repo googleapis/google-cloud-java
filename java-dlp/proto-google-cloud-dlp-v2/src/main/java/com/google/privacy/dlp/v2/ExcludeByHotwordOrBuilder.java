@@ -36,7 +36,6 @@ public interface ExcludeByHotwordOrBuilder
    * @return Whether the hotwordRegex field is set.
    */
   boolean hasHotwordRegex();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExcludeByHotwordOrBuilder
    * @return The hotwordRegex.
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ExcludeByHotwordOrBuilder
    * @return Whether the proximity field is set.
    */
   boolean hasProximity();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ExcludeByHotwordOrBuilder
    * @return The proximity.
    */
   com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity();
-
   /**
    *
    *

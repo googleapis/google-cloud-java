@@ -38,7 +38,6 @@ public interface UpgradeDistributionOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface UpgradeDistributionOrBuilder
    * @return The classification.
    */
   java.lang.String getClassification();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface UpgradeDistributionOrBuilder
    * @return The severity.
    */
   java.lang.String getSeverity();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface UpgradeDistributionOrBuilder
    * @return A list containing the cve.
    */
   java.util.List<java.lang.String> getCveList();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface UpgradeDistributionOrBuilder
    * @return The count of cve.
    */
   int getCveCount();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface UpgradeDistributionOrBuilder
    * @return The cve at the given index.
    */
   java.lang.String getCve(int index);
-
   /**
    *
    *

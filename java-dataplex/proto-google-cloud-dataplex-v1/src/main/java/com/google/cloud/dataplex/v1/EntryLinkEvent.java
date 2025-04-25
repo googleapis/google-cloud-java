@@ -33,7 +33,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.EntryLinkEvent)
     EntryLinkEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EntryLinkEvent.newBuilder() to construct.
   private EntryLinkEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTRY_LINK_CREATE = 1;</code>
      */
     public static final int ENTRY_LINK_CREATE_VALUE = 1;
-
     /**
      *
      *
@@ -229,7 +226,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -253,7 +249,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -280,7 +275,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
   private int eventType_ = 0;
-
   /**
    *
    *
@@ -296,7 +290,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
   public int getEventTypeValue() {
     return eventType_;
   }
-
   /**
    *
    *
@@ -321,7 +314,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -345,7 +337,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -551,7 +542,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +753,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -786,7 +775,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +797,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +818,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +835,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +859,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int eventType_ = 0;
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
     public int getEventTypeValue() {
       return eventType_;
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.EntryLinkEvent.EventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -951,7 +932,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +951,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -994,7 +973,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1017,7 +995,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class EntryLinkEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

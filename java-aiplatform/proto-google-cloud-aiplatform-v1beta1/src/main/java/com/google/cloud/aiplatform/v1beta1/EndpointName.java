@@ -310,8 +310,7 @@ public class EndpointName implements ResourceName {
     private Builder(EndpointName endpointName) {
       Preconditions.checkArgument(
           Objects.equals(endpointName.pathTemplate, PROJECT_LOCATION_ENDPOINT),
-          "toBuilder is only supported when EndpointName has the pattern of"
-              + " projects/{project}/locations/{location}/endpoints/{endpoint}");
+          "toBuilder is only supported when EndpointName has the pattern of projects/{project}/locations/{location}/endpoints/{endpoint}");
       this.project = endpointName.project;
       this.location = endpointName.location;
       this.endpoint = endpointName.endpoint;

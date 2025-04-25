@@ -36,7 +36,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return Whether the fullPathMatch field is set.
    */
   boolean hasFullPathMatch();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return The fullPathMatch.
    */
   java.lang.String getFullPathMatch();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch> getHeaderMatchesList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderMatch getHeaderMatches(int index);
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   int getHeaderMatchesCount();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface HttpRouteRuleMatchOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder>
       getHeaderMatchesOrBuilderList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return Whether the ignoreCase field is set.
    */
   boolean hasIgnoreCase();
-
   /**
    *
    *
@@ -155,7 +148,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index);
-
   /**
    *
    *
@@ -177,7 +168,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   int getMetadataFiltersCount();
-
   /**
    *
    *
@@ -189,7 +179,6 @@ public interface HttpRouteRuleMatchOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
       getMetadataFiltersOrBuilderList();
-
   /**
    *
    *
@@ -213,7 +202,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return Whether the pathTemplateMatch field is set.
    */
   boolean hasPathTemplateMatch();
-
   /**
    *
    *
@@ -226,7 +214,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return The pathTemplateMatch.
    */
   java.lang.String getPathTemplateMatch();
-
   /**
    *
    *
@@ -252,7 +239,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return Whether the prefixMatch field is set.
    */
   boolean hasPrefixMatch();
-
   /**
    *
    *
@@ -265,7 +251,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return The prefixMatch.
    */
   java.lang.String getPrefixMatch();
-
   /**
    *
    *
@@ -292,7 +277,6 @@ public interface HttpRouteRuleMatchOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.HttpQueryParameterMatch>
       getQueryParameterMatchesList();
-
   /**
    *
    *
@@ -305,7 +289,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.HttpQueryParameterMatch getQueryParameterMatches(int index);
-
   /**
    *
    *
@@ -318,7 +301,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * </code>
    */
   int getQueryParameterMatchesCount();
-
   /**
    *
    *
@@ -332,7 +314,6 @@ public interface HttpRouteRuleMatchOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder>
       getQueryParameterMatchesOrBuilderList();
-
   /**
    *
    *
@@ -359,7 +340,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return Whether the regexMatch field is set.
    */
   boolean hasRegexMatch();
-
   /**
    *
    *
@@ -372,7 +352,6 @@ public interface HttpRouteRuleMatchOrBuilder
    * @return The regexMatch.
    */
   java.lang.String getRegexMatch();
-
   /**
    *
    *

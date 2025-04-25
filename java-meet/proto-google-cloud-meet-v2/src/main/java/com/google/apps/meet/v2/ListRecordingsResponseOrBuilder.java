@@ -34,7 +34,6 @@ public interface ListRecordingsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Recording recordings = 1;</code>
    */
   java.util.List<com.google.apps.meet.v2.Recording> getRecordingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRecordingsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Recording recordings = 1;</code>
    */
   com.google.apps.meet.v2.Recording getRecordings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRecordingsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Recording recordings = 1;</code>
    */
   int getRecordingsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListRecordingsResponseOrBuilder
    * <code>repeated .google.apps.meet.v2.Recording recordings = 1;</code>
    */
   java.util.List<? extends com.google.apps.meet.v2.RecordingOrBuilder> getRecordingsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListRecordingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

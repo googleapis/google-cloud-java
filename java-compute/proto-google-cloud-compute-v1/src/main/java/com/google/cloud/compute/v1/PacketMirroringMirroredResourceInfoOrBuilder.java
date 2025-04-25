@@ -37,7 +37,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo>
       getInstancesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    */
   com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo getInstances(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
           ? extends
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo>
       getSubnetworksList();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    */
   com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo getSubnetworks(
       int index);
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </code>
    */
   int getSubnetworksCount();
-
   /**
    *
    *
@@ -151,7 +144,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
           ? extends
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder>
       getSubnetworksOrBuilderList();
-
   /**
    *
    *
@@ -178,7 +170,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -191,7 +182,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -205,7 +195,6 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *

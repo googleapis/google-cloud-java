@@ -198,20 +198,6 @@ public final class ConsumerProcurementServiceGrpc {
     return ConsumerProcurementServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ConsumerProcurementServiceBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ConsumerProcurementServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ConsumerProcurementServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public ConsumerProcurementServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ConsumerProcurementServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ConsumerProcurementServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -418,85 +404,6 @@ public final class ConsumerProcurementServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConsumerProcurementService.
-   *
-   * <pre>
-   * ConsumerProcurementService allows customers to make purchases of products
-   * served by the Cloud Commerce platform.
-   * When purchases are made, the
-   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
-   * programs the appropriate backends, including both Google's own
-   * infrastructure, as well as third-party systems, and to enable billing setup
-   * for charging for the procured item.
-   * </pre>
-   */
-  public static final class ConsumerProcurementServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ConsumerProcurementServiceBlockingV2Stub> {
-    private ConsumerProcurementServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ConsumerProcurementServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ConsumerProcurementServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new
-     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
-     * This API only supports GCP spend-based committed use
-     * discounts specified by GCP documentation.
-     * The returned long-running operation is in-progress until the backend
-     * completes the creation of the resource. Once completed, the order is
-     * in
-     * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
-     * In case of failure, the order resource will be removed.
-     * </pre>
-     */
-    public com.google.longrunning.Operation placeOrder(
-        com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPlaceOrderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the requested
-     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
-     * resource.
-     * </pre>
-     */
-    public com.google.cloud.commerce.consumer.procurement.v1alpha1.Order getOrder(
-        com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetOrderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
-     * resources that the user has access to, within the scope of the parent
-     * resource.
-     * </pre>
-     */
-    public com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersResponse listOrders(
-        com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListOrdersMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * ConsumerProcurementService.
    *
    * <pre>
    * ConsumerProcurementService allows customers to make purchases of products

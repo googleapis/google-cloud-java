@@ -33,7 +33,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnalysisResult)
     AnalysisResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalysisResult.newBuilder() to construct.
   private AnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.contactcenterinsights.v1.CallAnnotation annotations = 2;</code>
      */
     java.util.List<com.google.cloud.contactcenterinsights.v1.CallAnnotation> getAnnotationsList();
-
     /**
      *
      *
@@ -88,7 +86,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.contactcenterinsights.v1.CallAnnotation annotations = 2;</code>
      */
     com.google.cloud.contactcenterinsights.v1.CallAnnotation getAnnotations(int index);
-
     /**
      *
      *
@@ -99,7 +96,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.contactcenterinsights.v1.CallAnnotation annotations = 2;</code>
      */
     int getAnnotationsCount();
-
     /**
      *
      *
@@ -111,7 +107,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.contactcenterinsights.v1.CallAnnotationOrBuilder>
         getAnnotationsOrBuilderList();
-
     /**
      *
      *
@@ -134,7 +129,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.Entity&gt; entities = 3;</code>
      */
     int getEntitiesCount();
-
     /**
      *
      *
@@ -145,11 +139,9 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.Entity&gt; entities = 3;</code>
      */
     boolean containsEntities(java.lang.String key);
-
     /** Use {@link #getEntitiesMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity> getEntities();
-
     /**
      *
      *
@@ -161,7 +153,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity>
         getEntitiesMap();
-
     /**
      *
      *
@@ -176,7 +167,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         com.google.cloud.contactcenterinsights.v1.Entity defaultValue);
-
     /**
      *
      *
@@ -201,7 +191,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment>
         getSentimentsList();
-
     /**
      *
      *
@@ -214,7 +203,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment getSentiments(int index);
-
     /**
      *
      *
@@ -227,7 +215,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getSentimentsCount();
-
     /**
      *
      *
@@ -242,7 +229,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.contactcenterinsights.v1.ConversationLevelSentimentOrBuilder>
         getSentimentsOrBuilderList();
-
     /**
      *
      *
@@ -269,7 +255,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the silence field is set.
      */
     boolean hasSilence();
-
     /**
      *
      *
@@ -282,7 +267,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * @return The silence.
      */
     com.google.cloud.contactcenterinsights.v1.ConversationLevelSilence getSilence();
-
     /**
      *
      *
@@ -305,7 +289,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.Intent&gt; intents = 6;</code>
      */
     int getIntentsCount();
-
     /**
      *
      *
@@ -316,11 +299,9 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.Intent&gt; intents = 6;</code>
      */
     boolean containsIntents(java.lang.String key);
-
     /** Use {@link #getIntentsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent> getIntents();
-
     /**
      *
      *
@@ -332,7 +313,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent>
         getIntentsMap();
-
     /**
      *
      *
@@ -347,7 +327,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         com.google.cloud.contactcenterinsights.v1.Intent defaultValue);
-
     /**
      *
      *
@@ -371,7 +350,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPhraseMatchersCount();
-
     /**
      *
      *
@@ -384,12 +362,10 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     boolean containsPhraseMatchers(java.lang.String key);
-
     /** Use {@link #getPhraseMatchersMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.PhraseMatchData>
         getPhraseMatchers();
-
     /**
      *
      *
@@ -403,7 +379,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.PhraseMatchData>
         getPhraseMatchersMap();
-
     /**
      *
      *
@@ -420,7 +395,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         com.google.cloud.contactcenterinsights.v1.PhraseMatchData defaultValue);
-
     /**
      *
      *
@@ -447,7 +421,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the issueModelResult field is set.
      */
     boolean hasIssueModelResult();
-
     /**
      *
      *
@@ -460,7 +433,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * @return The issueModelResult.
      */
     com.google.cloud.contactcenterinsights.v1.IssueModelResult getIssueModelResult();
-
     /**
      *
      *
@@ -486,7 +458,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
         getQaScorecardResultsList();
-
     /**
      *
      *
@@ -499,7 +470,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.contactcenterinsights.v1.QaScorecardResult getQaScorecardResults(int index);
-
     /**
      *
      *
@@ -512,7 +482,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getQaScorecardResultsCount();
-
     /**
      *
      *
@@ -526,7 +495,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>
         getQaScorecardResultsOrBuilderList();
-
     /**
      *
      *
@@ -541,7 +509,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder
         getQaScorecardResultsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -556,7 +523,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnalysisResult.CallAnalysisMetadata)
       CallAnalysisMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CallAnalysisMetadata.newBuilder() to construct.
     private CallAnalysisMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -611,7 +577,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.contactcenterinsights.v1.CallAnnotation> annotations_;
-
     /**
      *
      *
@@ -626,7 +591,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getAnnotationsList() {
       return annotations_;
     }
-
     /**
      *
      *
@@ -642,7 +606,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getAnnotationsOrBuilderList() {
       return annotations_;
     }
-
     /**
      *
      *
@@ -656,7 +619,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return annotations_.size();
     }
-
     /**
      *
      *
@@ -670,7 +632,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.CallAnnotation getAnnotations(int index) {
       return annotations_.get(index);
     }
-
     /**
      *
      *
@@ -720,7 +681,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public int getEntitiesCount() {
       return internalGetEntities().getMap().size();
     }
-
     /**
      *
      *
@@ -737,7 +697,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetEntities().getMap().containsKey(key);
     }
-
     /** Use {@link #getEntitiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -745,7 +704,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getEntities() {
       return getEntitiesMap();
     }
-
     /**
      *
      *
@@ -760,7 +718,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getEntitiesMap() {
       return internalGetEntities().getMap();
     }
-
     /**
      *
      *
@@ -782,7 +739,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           internalGetEntities().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -811,7 +767,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment>
         sentiments_;
-
     /**
      *
      *
@@ -828,7 +783,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getSentimentsList() {
       return sentiments_;
     }
-
     /**
      *
      *
@@ -846,7 +800,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getSentimentsOrBuilderList() {
       return sentiments_;
     }
-
     /**
      *
      *
@@ -862,7 +815,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public int getSentimentsCount() {
       return sentiments_.size();
     }
-
     /**
      *
      *
@@ -879,7 +831,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return sentiments_.get(index);
     }
-
     /**
      *
      *
@@ -899,7 +850,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SILENCE_FIELD_NUMBER = 11;
     private com.google.cloud.contactcenterinsights.v1.ConversationLevelSilence silence_;
-
     /**
      *
      *
@@ -915,7 +865,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSilence() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -933,7 +882,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.ConversationLevelSilence.getDefaultInstance()
           : silence_;
     }
-
     /**
      *
      *
@@ -985,7 +933,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public int getIntentsCount() {
       return internalGetIntents().getMap().size();
     }
-
     /**
      *
      *
@@ -1002,7 +949,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetIntents().getMap().containsKey(key);
     }
-
     /** Use {@link #getIntentsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1010,7 +956,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getIntents() {
       return getIntentsMap();
     }
-
     /**
      *
      *
@@ -1025,7 +970,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getIntentsMap() {
       return internalGetIntents().getMap();
     }
-
     /**
      *
      *
@@ -1047,7 +991,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           internalGetIntents().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1107,7 +1050,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public int getPhraseMatchersCount() {
       return internalGetPhraseMatchers().getMap().size();
     }
-
     /**
      *
      *
@@ -1126,7 +1068,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPhraseMatchers().getMap().containsKey(key);
     }
-
     /** Use {@link #getPhraseMatchersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1135,7 +1076,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getPhraseMatchers() {
       return getPhraseMatchersMap();
     }
-
     /**
      *
      *
@@ -1153,7 +1093,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getPhraseMatchersMap() {
       return internalGetPhraseMatchers().getMap();
     }
-
     /**
      *
      *
@@ -1178,7 +1117,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           map = internalGetPhraseMatchers().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1206,7 +1144,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ISSUE_MODEL_RESULT_FIELD_NUMBER = 8;
     private com.google.cloud.contactcenterinsights.v1.IssueModelResult issueModelResult_;
-
     /**
      *
      *
@@ -1222,7 +1159,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIssueModelResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1240,7 +1176,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.IssueModelResult.getDefaultInstance()
           : issueModelResult_;
     }
-
     /**
      *
      *
@@ -1263,7 +1198,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
         qaScorecardResults_;
-
     /**
      *
      *
@@ -1280,7 +1214,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getQaScorecardResultsList() {
       return qaScorecardResults_;
     }
-
     /**
      *
      *
@@ -1298,7 +1231,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getQaScorecardResultsOrBuilderList() {
       return qaScorecardResults_;
     }
-
     /**
      *
      *
@@ -1314,7 +1246,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public int getQaScorecardResultsCount() {
       return qaScorecardResults_.size();
     }
-
     /**
      *
      *
@@ -1331,7 +1262,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return qaScorecardResults_.get(index);
     }
-
     /**
      *
      *
@@ -1630,7 +1560,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2176,7 +2105,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return annotationsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2194,7 +2122,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return annotationsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2212,7 +2139,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return annotationsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2237,7 +2163,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2260,7 +2185,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2285,7 +2209,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2310,7 +2233,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2332,7 +2254,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2355,7 +2276,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2378,7 +2298,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2399,7 +2318,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2420,7 +2338,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2435,7 +2352,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getAnnotationsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2454,7 +2370,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return annotationsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2474,7 +2389,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(annotations_);
         }
       }
-
       /**
        *
        *
@@ -2491,7 +2405,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.contactcenterinsights.v1.CallAnnotation.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2509,7 +2422,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.contactcenterinsights.v1.CallAnnotation.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2565,8 +2477,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return EntitiesDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final EntitiesConverter entitiesConverter = new EntitiesConverter();
 
@@ -2606,7 +2517,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public int getEntitiesCount() {
         return internalGetEntities().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -2623,7 +2533,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetEntities().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getEntitiesMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -2631,7 +2540,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getEntities() {
         return getEntitiesMap();
       }
-
       /**
        *
        *
@@ -2646,7 +2554,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getEntitiesMap() {
         return internalGetEntities().getImmutableMap();
       }
-
       /**
        *
        *
@@ -2668,7 +2575,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             map = internalGetMutableEntities().ensureBuilderMap();
         return map.containsKey(key) ? entitiesConverter.build(map.get(key)) : defaultValue;
       }
-
       /**
        *
        *
@@ -2697,7 +2603,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableEntities().clear();
         return this;
       }
-
       /**
        *
        *
@@ -2714,7 +2619,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableEntities().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity>
@@ -2722,7 +2626,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return internalGetMutableEntities().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -2744,7 +2647,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /**
        *
        *
@@ -2767,7 +2669,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
-
       /**
        *
        *
@@ -2831,7 +2732,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return sentimentsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2850,7 +2750,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return sentimentsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2870,7 +2769,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return sentimentsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2896,7 +2794,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2921,7 +2818,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2947,7 +2843,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2973,7 +2868,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2997,7 +2891,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3022,7 +2915,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3047,7 +2939,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3069,7 +2960,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3091,7 +2981,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3107,7 +2996,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getSentimentsBuilder(int index) {
         return getSentimentsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3127,7 +3015,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return sentimentsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3149,7 +3036,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(sentiments_);
         }
       }
-
       /**
        *
        *
@@ -3168,7 +3054,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3188,7 +3073,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.contactcenterinsights.v1.ConversationLevelSentiment
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3229,7 +3113,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.contactcenterinsights.v1.ConversationLevelSilence.Builder,
               com.google.cloud.contactcenterinsights.v1.ConversationLevelSilenceOrBuilder>
           silenceBuilder_;
-
       /**
        *
        *
@@ -3244,7 +3127,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSilence() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -3266,7 +3148,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return silenceBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3290,7 +3171,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3312,7 +3192,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3343,7 +3222,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3363,7 +3241,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3379,7 +3256,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSilenceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3400,7 +3276,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
               : silence_;
         }
       }
-
       /**
        *
        *
@@ -3447,8 +3322,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return IntentsDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final IntentsConverter intentsConverter = new IntentsConverter();
 
@@ -3488,7 +3362,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public int getIntentsCount() {
         return internalGetIntents().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -3505,7 +3378,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetIntents().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getIntentsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -3513,7 +3385,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getIntents() {
         return getIntentsMap();
       }
-
       /**
        *
        *
@@ -3528,7 +3399,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getIntentsMap() {
         return internalGetIntents().getImmutableMap();
       }
-
       /**
        *
        *
@@ -3550,7 +3420,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             map = internalGetMutableIntents().ensureBuilderMap();
         return map.containsKey(key) ? intentsConverter.build(map.get(key)) : defaultValue;
       }
-
       /**
        *
        *
@@ -3579,7 +3448,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableIntents().clear();
         return this;
       }
-
       /**
        *
        *
@@ -3596,7 +3464,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableIntents().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent>
@@ -3604,7 +3471,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         return internalGetMutableIntents().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -3626,7 +3492,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         return this;
       }
-
       /**
        *
        *
@@ -3649,7 +3514,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         return this;
       }
-
       /**
        *
        *
@@ -3695,8 +3559,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return PhraseMatchersDefaultEntryHolder.defaultEntry;
         }
-      }
-      ;
+      };
 
       private static final PhraseMatchersConverter phraseMatchersConverter =
           new PhraseMatchersConverter();
@@ -3737,7 +3600,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public int getPhraseMatchersCount() {
         return internalGetPhraseMatchers().ensureBuilderMap().size();
       }
-
       /**
        *
        *
@@ -3756,7 +3618,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetPhraseMatchers().ensureBuilderMap().containsKey(key);
       }
-
       /** Use {@link #getPhraseMatchersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -3765,7 +3626,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getPhraseMatchers() {
         return getPhraseMatchersMap();
       }
-
       /**
        *
        *
@@ -3783,7 +3643,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getPhraseMatchersMap() {
         return internalGetPhraseMatchers().getImmutableMap();
       }
-
       /**
        *
        *
@@ -3810,7 +3669,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             map = internalGetMutablePhraseMatchers().ensureBuilderMap();
         return map.containsKey(key) ? phraseMatchersConverter.build(map.get(key)) : defaultValue;
       }
-
       /**
        *
        *
@@ -3843,7 +3701,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         internalGetMutablePhraseMatchers().clear();
         return this;
       }
-
       /**
        *
        *
@@ -3862,7 +3719,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         internalGetMutablePhraseMatchers().ensureBuilderMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -3871,7 +3727,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         return internalGetMutablePhraseMatchers().ensureMessageMap();
       }
-
       /**
        *
        *
@@ -3895,7 +3750,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         return this;
       }
-
       /**
        *
        *
@@ -3921,7 +3775,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         return this;
       }
-
       /**
        *
        *
@@ -3958,7 +3811,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.contactcenterinsights.v1.IssueModelResult.Builder,
               com.google.cloud.contactcenterinsights.v1.IssueModelResultOrBuilder>
           issueModelResultBuilder_;
-
       /**
        *
        *
@@ -3974,7 +3826,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIssueModelResult() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -3996,7 +3847,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return issueModelResultBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4021,7 +3871,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4043,7 +3892,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4075,7 +3923,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4096,7 +3943,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4113,7 +3959,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getIssueModelResultFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4134,7 +3979,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
               : issueModelResult_;
         }
       }
-
       /**
        *
        *
@@ -4199,7 +4043,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return qaScorecardResultsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -4218,7 +4061,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return qaScorecardResultsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -4238,7 +4080,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return qaScorecardResultsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -4264,7 +4105,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4288,7 +4128,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4314,7 +4153,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4340,7 +4178,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4363,7 +4200,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4387,7 +4223,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4411,7 +4246,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4433,7 +4267,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4455,7 +4288,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4471,7 +4303,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getQaScorecardResultsBuilder(int index) {
         return getQaScorecardResultsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -4491,7 +4322,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return qaScorecardResultsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -4512,7 +4342,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(qaScorecardResults_);
         }
       }
-
       /**
        *
        *
@@ -4530,7 +4359,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.cloud.contactcenterinsights.v1.QaScorecardResult.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4549,7 +4377,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.cloud.contactcenterinsights.v1.QaScorecardResult.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4672,7 +4499,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     private MetadataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4704,7 +4530,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CALL_ANALYSIS_METADATA_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -4722,7 +4547,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCallAnalysisMetadata() {
     return metadataCase_ == 2;
   }
-
   /**
    *
    *
@@ -4746,7 +4570,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.contactcenterinsights.v1.AnalysisResult.CallAnalysisMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4771,7 +4594,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -4787,7 +4609,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4803,7 +4624,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -5012,7 +4832,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5262,7 +5081,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.AnalysisResult.CallAnalysisMetadata.Builder,
             com.google.cloud.contactcenterinsights.v1.AnalysisResult.CallAnalysisMetadataOrBuilder>
         callAnalysisMetadataBuilder_;
-
     /**
      *
      *
@@ -5280,7 +5098,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCallAnalysisMetadata() {
       return metadataCase_ == 2;
     }
-
     /**
      *
      *
@@ -5312,7 +5129,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5338,7 +5154,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5362,7 +5177,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5403,7 +5217,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5431,7 +5244,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5447,7 +5259,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         getCallAnalysisMetadataBuilder() {
       return getCallAnalysisMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5473,7 +5284,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5520,7 +5330,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -5535,7 +5344,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -5554,7 +5362,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5577,7 +5384,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5597,7 +5403,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5625,7 +5430,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5645,7 +5449,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5660,7 +5463,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5677,7 +5479,6 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

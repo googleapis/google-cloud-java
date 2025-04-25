@@ -37,7 +37,6 @@ public interface SubmissionOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SubmissionOrBuilder
    * @return A list containing the threatTypes.
    */
   java.util.List<com.google.webrisk.v1.ThreatType> getThreatTypesList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SubmissionOrBuilder
    * @return The count of threatTypes.
    */
   int getThreatTypesCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface SubmissionOrBuilder
    * @return The threatTypes at the given index.
    */
   com.google.webrisk.v1.ThreatType getThreatTypes(int index);
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface SubmissionOrBuilder
    * @return A list containing the enum numeric values on the wire for threatTypes.
    */
   java.util.List<java.lang.Integer> getThreatTypesValueList();
-
   /**
    *
    *

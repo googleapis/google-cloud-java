@@ -73,8 +73,7 @@ public class MockPersistentResourceServiceImpl extends PersistentResourceService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePersistentResource, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreatePersistentResource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -95,8 +94,7 @@ public class MockPersistentResourceServiceImpl extends PersistentResourceService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPersistentResource, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetPersistentResource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PersistentResource.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockPersistentResourceServiceImpl extends PersistentResourceService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPersistentResources, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListPersistentResources, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPersistentResourcesResponse.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockPersistentResourceServiceImpl extends PersistentResourceService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePersistentResource, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeletePersistentResource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +158,7 @@ public class MockPersistentResourceServiceImpl extends PersistentResourceService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdatePersistentResource, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdatePersistentResource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -184,8 +179,7 @@ public class MockPersistentResourceServiceImpl extends PersistentResourceService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RebootPersistentResource, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method RebootPersistentResource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

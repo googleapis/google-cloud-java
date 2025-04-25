@@ -33,7 +33,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeMoveResponse)
     AnalyzeMoveResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeMoveResponse.newBuilder() to construct.
   private AnalyzeMoveResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.MoveAnalysis> moveAnalysis_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.asset.v1.MoveAnalysis> getMoveAnalysisList() {
     return moveAnalysis_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       getMoveAnalysisOrBuilderList() {
     return moveAnalysis_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
   public int getMoveAnalysisCount() {
     return moveAnalysis_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.asset.v1.MoveAnalysis getMoveAnalysis(int index) {
     return moveAnalysis_.get(index);
   }
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
         return moveAnalysisBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
         return moveAnalysisBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
         return moveAnalysisBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +662,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +726,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +747,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +800,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.asset.v1.MoveAnalysis.Builder getMoveAnalysisBuilder(int index) {
       return getMoveAnalysisFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -837,7 +817,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
         return moveAnalysisBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(moveAnalysis_);
       }
     }
-
     /**
      *
      *
@@ -871,7 +849,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       return getMoveAnalysisFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.MoveAnalysis.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -886,7 +863,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
       return getMoveAnalysisFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.MoveAnalysis.getDefaultInstance());
     }
-
     /**
      *
      *

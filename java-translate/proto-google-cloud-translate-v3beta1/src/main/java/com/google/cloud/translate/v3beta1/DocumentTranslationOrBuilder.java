@@ -38,7 +38,6 @@ public interface DocumentTranslationOrBuilder
    * @return A list containing the byteStreamOutputs.
    */
   java.util.List<com.google.protobuf.ByteString> getByteStreamOutputsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DocumentTranslationOrBuilder
    * @return The count of byteStreamOutputs.
    */
   int getByteStreamOutputsCount();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface DocumentTranslationOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface DocumentTranslationOrBuilder
    * @return The detectedLanguageCode.
    */
   java.lang.String getDetectedLanguageCode();
-
   /**
    *
    *

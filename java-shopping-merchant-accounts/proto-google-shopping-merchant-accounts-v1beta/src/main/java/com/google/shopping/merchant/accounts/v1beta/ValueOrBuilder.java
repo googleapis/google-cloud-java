@@ -37,7 +37,6 @@ public interface ValueOrBuilder
    * @return Whether the noShipping field is set.
    */
   boolean hasNoShipping();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ValueOrBuilder
    * @return Whether the flatRate field is set.
    */
   boolean hasFlatRate();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ValueOrBuilder
    * @return The flatRate.
    */
   com.google.shopping.type.Price getFlatRate();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ValueOrBuilder
    * @return Whether the pricePercentage field is set.
    */
   boolean hasPricePercentage();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface ValueOrBuilder
    * @return The pricePercentage.
    */
   java.lang.String getPricePercentage();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ValueOrBuilder
    * @return Whether the carrierRate field is set.
    */
   boolean hasCarrierRate();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface ValueOrBuilder
    * @return The carrierRate.
    */
   java.lang.String getCarrierRate();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface ValueOrBuilder
    * @return Whether the subtable field is set.
    */
   boolean hasSubtable();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface ValueOrBuilder
    * @return The subtable.
    */
   java.lang.String getSubtable();
-
   /**
    *
    *

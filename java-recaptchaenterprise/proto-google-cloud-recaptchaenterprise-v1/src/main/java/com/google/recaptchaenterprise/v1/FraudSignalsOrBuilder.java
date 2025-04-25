@@ -38,7 +38,6 @@ public interface FraudSignalsOrBuilder
    * @return Whether the userSignals field is set.
    */
   boolean hasUserSignals();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface FraudSignalsOrBuilder
    * @return The userSignals.
    */
   com.google.recaptchaenterprise.v1.FraudSignals.UserSignals getUserSignals();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface FraudSignalsOrBuilder
    * @return Whether the cardSignals field is set.
    */
   boolean hasCardSignals();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface FraudSignalsOrBuilder
    * @return The cardSignals.
    */
   com.google.recaptchaenterprise.v1.FraudSignals.CardSignals getCardSignals();
-
   /**
    *
    *

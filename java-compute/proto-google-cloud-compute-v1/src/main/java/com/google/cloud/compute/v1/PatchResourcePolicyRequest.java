@@ -33,7 +33,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchResourcePolicyRequest)
     PatchResourcePolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchResourcePolicyRequest.newBuilder() to construct.
   private PatchResourcePolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourcePolicy_ = "";
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
 
   public static final int RESOURCE_POLICY_RESOURCE_FIELD_NUMBER = 76826186;
   private com.google.cloud.compute.v1.ResourcePolicy resourcePolicyResource_;
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
   public boolean hasResourcePolicyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -345,7 +333,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.ResourcePolicy.getDefaultInstance()
         : resourcePolicyResource_;
   }
-
   /**
    *
    *
@@ -368,7 +355,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object updateMask_ = "";
-
   /**
    *
    *
@@ -384,7 +370,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -408,7 +393,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -655,7 +639,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -935,7 +918,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -960,7 +942,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -985,7 +966,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1009,7 +989,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1034,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1081,7 +1058,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1082,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1130,7 +1105,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1124,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1150,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1192,7 +1164,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1215,7 +1186,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1208,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1229,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1246,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1270,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object resourcePolicy_ = "";
-
     /**
      *
      *
@@ -1326,7 +1292,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1349,7 +1314,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1371,7 +1335,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1352,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1419,7 +1381,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.ResourcePolicy.Builder,
             com.google.cloud.compute.v1.ResourcePolicyOrBuilder>
         resourcePolicyResourceBuilder_;
-
     /**
      *
      *
@@ -1436,7 +1397,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     public boolean hasResourcePolicyResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1459,7 +1419,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return resourcePolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1484,7 +1443,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1465,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1495,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1516,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1577,7 +1532,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return getResourcePolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1599,7 +1553,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
             : resourcePolicyResource_;
       }
     }
-
     /**
      *
      *
@@ -1629,7 +1582,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object updateMask_ = "";
-
     /**
      *
      *
@@ -1644,7 +1596,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1667,7 +1618,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1690,7 +1640,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1712,7 +1661,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1678,6 @@ public final class PatchResourcePolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RuntimeConfig)
     RuntimeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RuntimeConfig.newBuilder() to construct.
   private RuntimeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The fileInputGcsBucket.
      */
     java.lang.String getFileInputGcsBucket();
-
     /**
      *
      *
@@ -119,7 +117,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The fileOutputGcsBucket.
      */
     java.lang.String getFileOutputGcsBucket();
-
     /**
      *
      *
@@ -137,7 +134,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getFileOutputGcsBucketBytes();
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfig}
@@ -148,7 +144,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfig)
       CodeInterpreterRuntimeConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CodeInterpreterRuntimeConfig.newBuilder() to construct.
     private CodeInterpreterRuntimeConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -186,7 +181,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fileInputGcsBucket_ = "";
-
     /**
      *
      *
@@ -215,7 +209,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -249,7 +242,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fileOutputGcsBucket_ = "";
-
     /**
      *
      *
@@ -277,7 +269,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -484,7 +475,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfig}
@@ -698,7 +688,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object fileInputGcsBucket_ = "";
-
       /**
        *
        *
@@ -726,7 +715,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -754,7 +742,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -781,7 +768,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -804,7 +790,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -834,7 +819,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object fileOutputGcsBucket_ = "";
-
       /**
        *
        *
@@ -861,7 +845,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -888,7 +871,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -914,7 +896,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -936,7 +917,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1051,7 +1031,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The servingConfigName.
      */
     java.lang.String getServingConfigName();
-
     /**
      *
      *
@@ -1081,7 +1060,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The engineId.
      */
     java.lang.String getEngineId();
-
     /**
      *
      *
@@ -1098,7 +1076,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEngineIdBytes();
   }
-
   /**
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig}
    */
@@ -1108,7 +1085,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig)
       VertexAISearchRuntimeConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VertexAISearchRuntimeConfig.newBuilder() to construct.
     private VertexAISearchRuntimeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1145,7 +1121,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object servingConfigName_ = "";
-
     /**
      *
      *
@@ -1170,7 +1145,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1174,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object engineId_ = "";
-
     /**
      *
      *
@@ -1227,7 +1200,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1405,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig}
@@ -1644,7 +1615,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object servingConfigName_ = "";
-
       /**
        *
        *
@@ -1668,7 +1638,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1692,7 +1661,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1715,7 +1683,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1734,7 +1701,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1760,7 +1726,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object engineId_ = "";
-
       /**
        *
        *
@@ -1786,7 +1751,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1812,7 +1776,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1837,7 +1800,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1858,7 +1820,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1972,7 +1933,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     private GoogleFirstPartyExtensionConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2006,7 +1966,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_INTERPRETER_RUNTIME_CONFIG_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2024,7 +1983,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCodeInterpreterRuntimeConfig() {
     return googleFirstPartyExtensionConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -2048,7 +2006,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2072,7 +2029,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTEX_AI_SEARCH_RUNTIME_CONFIG_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -2090,7 +2046,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVertexAiSearchRuntimeConfig() {
     return googleFirstPartyExtensionConfigCase_ == 6;
   }
-
   /**
    *
    *
@@ -2114,7 +2069,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2139,7 +2093,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_PARAMS_FIELD_NUMBER = 4;
   private com.google.protobuf.Struct defaultParams_;
-
   /**
    *
    *
@@ -2163,7 +2116,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2189,7 +2141,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : defaultParams_;
   }
-
   /**
    *
    *
@@ -2430,7 +2381,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2700,7 +2650,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RuntimeConfig.CodeInterpreterRuntimeConfigOrBuilder>
         codeInterpreterRuntimeConfigBuilder_;
-
     /**
      *
      *
@@ -2718,7 +2667,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCodeInterpreterRuntimeConfig() {
       return googleFirstPartyExtensionConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -2750,7 +2698,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2776,7 +2723,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       googleFirstPartyExtensionConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2800,7 +2746,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       googleFirstPartyExtensionConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2841,7 +2786,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       googleFirstPartyExtensionConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2869,7 +2813,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2885,7 +2828,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         getCodeInterpreterRuntimeConfigBuilder() {
       return getCodeInterpreterRuntimeConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2912,7 +2854,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2958,7 +2899,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfigOrBuilder>
         vertexAiSearchRuntimeConfigBuilder_;
-
     /**
      *
      *
@@ -2976,7 +2916,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVertexAiSearchRuntimeConfig() {
       return googleFirstPartyExtensionConfigCase_ == 6;
     }
-
     /**
      *
      *
@@ -3008,7 +2947,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3034,7 +2972,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       googleFirstPartyExtensionConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3058,7 +2995,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       googleFirstPartyExtensionConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3099,7 +3035,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       googleFirstPartyExtensionConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3127,7 +3062,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3143,7 +3077,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         getVertexAiSearchRuntimeConfigBuilder() {
       return getVertexAiSearchRuntimeConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3170,7 +3103,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3217,7 +3149,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         defaultParamsBuilder_;
-
     /**
      *
      *
@@ -3240,7 +3171,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultParams() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3269,7 +3199,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return defaultParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3300,7 +3229,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3328,7 +3256,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3364,7 +3291,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3392,7 +3318,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3415,7 +3340,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3442,7 +3366,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             : defaultParams_;
       }
     }
-
     /**
      *
      *

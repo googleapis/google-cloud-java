@@ -33,7 +33,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GenericInsight)
     GenericInsightOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenericInsight.newBuilder() to construct.
   private GenericInsight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MESSAGE_ID_FIELD_NUMBER = 1;
   private long messageId_ = 0L;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultMessage_ = "";
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalInformation_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAdditionalInformationList() {
     return additionalInformation_;
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
   public int getAdditionalInformationCount() {
     return additionalInformation_.size();
   }
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAdditionalInformation(int index) {
     return additionalInformation_.get(index);
   }
-
   /**
    *
    *
@@ -406,7 +398,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -626,7 +617,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long messageId_;
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     public long getMessageId() {
       return messageId_;
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +676,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultMessage_ = "";
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       additionalInformation_.makeImmutable();
       return additionalInformation_;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     public int getAdditionalInformationCount() {
       return additionalInformation_.size();
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAdditionalInformation(int index) {
       return additionalInformation_.get(index);
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAdditionalInformationBytes(int index) {
       return additionalInformation_.getByteString(index);
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class GenericInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

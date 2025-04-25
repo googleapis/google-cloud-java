@@ -33,7 +33,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.ZoneNetworkConfig)
     ZoneNetworkConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ZoneNetworkConfig.newBuilder() to construct.
   private ZoneNetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineMgmtIpv4Range_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kubernetesNodeIpv4Range_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kubernetesControlPlaneIpv4Range_ = "";
-
   /**
    *
    *
@@ -232,7 +226,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int MANAGEMENT_IPV4_SUBNET_FIELD_NUMBER = 4;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Subnet managementIpv4Subnet_;
-
   /**
    *
    *
@@ -283,7 +275,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasManagementIpv4Subnet() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -303,7 +294,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Subnet.getDefaultInstance()
         : managementIpv4Subnet_;
   }
-
   /**
    *
    *
@@ -325,7 +315,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int KUBERNETES_IPV4_SUBNET_FIELD_NUMBER = 5;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Subnet kubernetesIpv4Subnet_;
-
   /**
    *
    *
@@ -345,7 +334,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasKubernetesIpv4Subnet() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -367,7 +355,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Subnet.getDefaultInstance()
         : kubernetesIpv4Subnet_;
   }
-
   /**
    *
    *
@@ -394,7 +381,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dnsIpv4Addresses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -413,7 +399,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getDnsIpv4AddressesList() {
     return dnsIpv4Addresses_;
   }
-
   /**
    *
    *
@@ -432,7 +417,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
   public int getDnsIpv4AddressesCount() {
     return dnsIpv4Addresses_.size();
   }
-
   /**
    *
    *
@@ -452,7 +436,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
   public java.lang.String getDnsIpv4Addresses(int index) {
     return dnsIpv4Addresses_.get(index);
   }
-
   /**
    *
    *
@@ -475,7 +458,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int KUBERNETES_PRIMARY_VLAN_ID_FIELD_NUMBER = 7;
   private int kubernetesPrimaryVlanId_ = 0;
-
   /**
    *
    *
@@ -732,7 +714,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1042,7 +1023,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object machineMgmtIpv4Range_ = "";
-
     /**
      *
      *
@@ -1071,7 +1051,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1079,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1128,7 +1106,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1129,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1159,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kubernetesNodeIpv4Range_ = "";
-
     /**
      *
      *
@@ -1212,7 +1187,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1215,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1269,7 +1242,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1265,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1295,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kubernetesControlPlaneIpv4Range_ = "";
-
     /**
      *
      *
@@ -1353,7 +1323,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1382,7 +1351,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1410,7 +1378,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1401,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1470,7 +1436,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gdchardwaremanagement.v1alpha.Subnet.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.SubnetOrBuilder>
         managementIpv4SubnetBuilder_;
-
     /**
      *
      *
@@ -1487,7 +1452,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasManagementIpv4Subnet() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1510,7 +1474,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return managementIpv4SubnetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1536,7 +1499,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1521,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1552,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1573,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1590,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getManagementIpv4SubnetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1653,7 +1611,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
             : managementIpv4Subnet_;
       }
     }
-
     /**
      *
      *
@@ -1688,7 +1645,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gdchardwaremanagement.v1alpha.Subnet.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.SubnetOrBuilder>
         kubernetesIpv4SubnetBuilder_;
-
     /**
      *
      *
@@ -1707,7 +1663,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasKubernetesIpv4Subnet() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1732,7 +1687,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
         return kubernetesIpv4SubnetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1760,7 +1714,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1785,7 +1738,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1819,7 +1771,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1843,7 +1794,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1813,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getKubernetesIpv4SubnetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1887,7 +1836,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
             : kubernetesIpv4Subnet_;
       }
     }
-
     /**
      *
      *
@@ -1927,7 +1875,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -1947,7 +1894,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       dnsIpv4Addresses_.makeImmutable();
       return dnsIpv4Addresses_;
     }
-
     /**
      *
      *
@@ -1966,7 +1912,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     public int getDnsIpv4AddressesCount() {
       return dnsIpv4Addresses_.size();
     }
-
     /**
      *
      *
@@ -1986,7 +1931,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getDnsIpv4Addresses(int index) {
       return dnsIpv4Addresses_.get(index);
     }
-
     /**
      *
      *
@@ -2006,7 +1950,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getDnsIpv4AddressesBytes(int index) {
       return dnsIpv4Addresses_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2034,7 +1977,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2061,7 +2003,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2085,7 +2026,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2108,7 +2048,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2138,7 +2077,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int kubernetesPrimaryVlanId_;
-
     /**
      *
      *
@@ -2157,7 +2095,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
     public int getKubernetesPrimaryVlanId() {
       return kubernetesPrimaryVlanId_;
     }
-
     /**
      *
      *
@@ -2180,7 +2117,6 @@ public final class ZoneNetworkConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

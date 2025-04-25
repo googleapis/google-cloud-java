@@ -33,7 +33,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ReportDefinition)
     ReportDefinitionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportDefinition.newBuilder() to construct.
   private ReportDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         java.lang.Integer, com.google.ads.admanager.v1.Report.Dimension>(
         dimensions_, dimensions_converter_);
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getDimensionsCount() {
     return dimensions_.size();
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public com.google.ads.admanager.v1.Report.Dimension getDimensions(int index) {
     return dimensions_converter_.convert(dimensions_.get(index));
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getDimensionsValueList() {
     return dimensions_;
   }
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.ads.admanager.v1.Report.Metric>(metrics_, metrics_converter_);
   }
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getMetricsCount() {
     return metrics_.size();
   }
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public com.google.ads.admanager.v1.Report.Metric getMetrics(int index) {
     return metrics_converter_.convert(metrics_.get(index));
   }
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getMetricsValueList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.Filter> filters_;
-
   /**
    *
    *
@@ -336,7 +324,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.ads.admanager.v1.Report.Filter> getFiltersList() {
     return filters_;
   }
-
   /**
    *
    *
@@ -353,7 +340,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       getFiltersOrBuilderList() {
     return filters_;
   }
-
   /**
    *
    *
@@ -369,7 +355,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getFiltersCount() {
     return filters_.size();
   }
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public com.google.ads.admanager.v1.Report.Filter getFilters(int index) {
     return filters_.get(index);
   }
-
   /**
    *
    *
@@ -406,7 +390,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
-
   /**
    *
    *
@@ -434,7 +417,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -467,7 +449,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
-
   /**
    *
    *
@@ -492,7 +473,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -520,7 +500,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   public static final int DATE_RANGE_FIELD_NUMBER = 6;
   private com.google.ads.admanager.v1.Report.DateRange dateRange_;
-
   /**
    *
    *
@@ -538,7 +517,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public boolean hasDateRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -558,7 +536,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         ? com.google.ads.admanager.v1.Report.DateRange.getDefaultInstance()
         : dateRange_;
   }
-
   /**
    *
    *
@@ -579,7 +556,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   public static final int COMPARISON_DATE_RANGE_FIELD_NUMBER = 9;
   private com.google.ads.admanager.v1.Report.DateRange comparisonDateRange_;
-
   /**
    *
    *
@@ -598,7 +574,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public boolean hasComparisonDateRange() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -619,7 +594,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         ? com.google.ads.admanager.v1.Report.DateRange.getDefaultInstance()
         : comparisonDateRange_;
   }
-
   /**
    *
    *
@@ -643,7 +617,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList customDimensionKeyIds_ = emptyLongList();
-
   /**
    *
    *
@@ -663,7 +636,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Long> getCustomDimensionKeyIdsList() {
     return customDimensionKeyIds_;
   }
-
   /**
    *
    *
@@ -682,7 +654,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getCustomDimensionKeyIdsCount() {
     return customDimensionKeyIds_.size();
   }
-
   /**
    *
    *
@@ -709,7 +680,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList lineItemCustomFieldIds_ = emptyLongList();
-
   /**
    *
    *
@@ -729,7 +699,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Long> getLineItemCustomFieldIdsList() {
     return lineItemCustomFieldIds_;
   }
-
   /**
    *
    *
@@ -748,7 +717,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getLineItemCustomFieldIdsCount() {
     return lineItemCustomFieldIds_.size();
   }
-
   /**
    *
    *
@@ -775,7 +743,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList orderCustomFieldIds_ = emptyLongList();
-
   /**
    *
    *
@@ -795,7 +762,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Long> getOrderCustomFieldIdsList() {
     return orderCustomFieldIds_;
   }
-
   /**
    *
    *
@@ -814,7 +780,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getOrderCustomFieldIdsCount() {
     return orderCustomFieldIds_.size();
   }
-
   /**
    *
    *
@@ -841,7 +806,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList creativeCustomFieldIds_ = emptyLongList();
-
   /**
    *
    *
@@ -861,7 +825,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Long> getCreativeCustomFieldIdsList() {
     return creativeCustomFieldIds_;
   }
-
   /**
    *
    *
@@ -880,7 +843,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getCreativeCustomFieldIdsCount() {
     return creativeCustomFieldIds_.size();
   }
-
   /**
    *
    *
@@ -905,7 +867,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   public static final int REPORT_TYPE_FIELD_NUMBER = 8;
   private int reportType_ = 0;
-
   /**
    *
    *
@@ -923,7 +884,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getReportTypeValue() {
     return reportType_;
   }
-
   /**
    *
    *
@@ -946,7 +906,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   public static final int TIME_PERIOD_COLUMN_FIELD_NUMBER = 10;
   private int timePeriodColumn_ = 0;
-
   /**
    *
    *
@@ -969,7 +928,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getTimePeriodColumnValue() {
     return timePeriodColumn_;
   }
-
   /**
    *
    *
@@ -1001,7 +959,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.Flag> flags_;
-
   /**
    *
    *
@@ -1018,7 +975,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList() {
     return flags_;
   }
-
   /**
    *
    *
@@ -1036,7 +992,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       getFlagsOrBuilderList() {
     return flags_;
   }
-
   /**
    *
    *
@@ -1053,7 +1008,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getFlagsCount() {
     return flags_.size();
   }
-
   /**
    *
    *
@@ -1070,7 +1024,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public com.google.ads.admanager.v1.Report.Flag getFlags(int index) {
     return flags_.get(index);
   }
-
   /**
    *
    *
@@ -1092,7 +1045,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.Sort> sorts_;
-
   /**
    *
    *
@@ -1108,7 +1060,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.ads.admanager.v1.Report.Sort> getSortsList() {
     return sorts_;
   }
-
   /**
    *
    *
@@ -1125,7 +1076,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       getSortsOrBuilderList() {
     return sorts_;
   }
-
   /**
    *
    *
@@ -1141,7 +1091,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public int getSortsCount() {
     return sorts_.size();
   }
-
   /**
    *
    *
@@ -1157,7 +1106,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
   public com.google.ads.admanager.v1.Report.Sort getSorts(int index) {
     return sorts_.get(index);
   }
-
   /**
    *
    *
@@ -1582,7 +1530,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2249,7 +2196,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -2269,7 +2215,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           java.lang.Integer, com.google.ads.admanager.v1.Report.Dimension>(
           dimensions_, dimensions_converter_);
     }
-
     /**
      *
      *
@@ -2287,7 +2232,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getDimensionsCount() {
       return dimensions_.size();
     }
-
     /**
      *
      *
@@ -2306,7 +2250,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public com.google.ads.admanager.v1.Report.Dimension getDimensions(int index) {
       return dimensions_converter_.convert(dimensions_.get(index));
     }
-
     /**
      *
      *
@@ -2332,7 +2275,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2357,7 +2299,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2382,7 +2323,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2403,7 +2343,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2421,7 +2360,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getDimensionsValueList() {
       return java.util.Collections.unmodifiableList(dimensions_);
     }
-
     /**
      *
      *
@@ -2440,7 +2378,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getDimensionsValue(int index) {
       return dimensions_.get(index);
     }
-
     /**
      *
      *
@@ -2463,7 +2400,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2485,7 +2421,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2518,7 +2453,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -2538,7 +2472,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           java.lang.Integer, com.google.ads.admanager.v1.Report.Metric>(
           metrics_, metrics_converter_);
     }
-
     /**
      *
      *
@@ -2556,7 +2489,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getMetricsCount() {
       return metrics_.size();
     }
-
     /**
      *
      *
@@ -2575,7 +2507,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public com.google.ads.admanager.v1.Report.Metric getMetrics(int index) {
       return metrics_converter_.convert(metrics_.get(index));
     }
-
     /**
      *
      *
@@ -2601,7 +2532,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2626,7 +2556,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2651,7 +2580,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2672,7 +2600,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2690,7 +2617,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getMetricsValueList() {
       return java.util.Collections.unmodifiableList(metrics_);
     }
-
     /**
      *
      *
@@ -2709,7 +2635,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getMetricsValue(int index) {
       return metrics_.get(index);
     }
-
     /**
      *
      *
@@ -2732,7 +2657,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2754,7 +2678,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2813,7 +2736,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return filtersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2832,7 +2754,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return filtersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2851,7 +2772,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return filtersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2876,7 +2796,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2899,7 +2818,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2924,7 +2842,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2949,7 +2866,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2971,7 +2887,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2994,7 +2909,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2931,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3039,7 +2952,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3061,7 +2973,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3076,7 +2987,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public com.google.ads.admanager.v1.Report.Filter.Builder getFiltersBuilder(int index) {
       return getFiltersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3095,7 +3005,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return filtersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3115,7 +3024,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(filters_);
       }
     }
-
     /**
      *
      *
@@ -3131,7 +3039,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return getFiltersFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Report.Filter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3147,7 +3054,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return getFiltersFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Report.Filter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3182,7 +3088,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object timeZone_ = "";
-
     /**
      *
      *
@@ -3209,7 +3114,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3236,7 +3140,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3262,7 +3165,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3284,7 +3186,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3214,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object currencyCode_ = "";
-
     /**
      *
      *
@@ -3337,7 +3237,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3361,7 +3260,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3384,7 +3282,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3403,7 +3300,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3434,7 +3330,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
             com.google.ads.admanager.v1.Report.DateRange.Builder,
             com.google.ads.admanager.v1.Report.DateRangeOrBuilder>
         dateRangeBuilder_;
-
     /**
      *
      *
@@ -3451,7 +3346,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public boolean hasDateRange() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3474,7 +3368,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return dateRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3499,7 +3392,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3522,7 +3414,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3552,7 +3443,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3574,7 +3464,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3591,7 +3480,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDateRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3612,7 +3500,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
             : dateRange_;
       }
     }
-
     /**
      *
      *
@@ -3647,7 +3534,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
             com.google.ads.admanager.v1.Report.DateRange.Builder,
             com.google.ads.admanager.v1.Report.DateRangeOrBuilder>
         comparisonDateRangeBuilder_;
-
     /**
      *
      *
@@ -3665,7 +3551,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public boolean hasComparisonDateRange() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3689,7 +3574,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return comparisonDateRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3715,7 +3599,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3739,7 +3622,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3771,7 +3653,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3794,7 +3675,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3812,7 +3692,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getComparisonDateRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3834,7 +3713,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
             : comparisonDateRange_;
       }
     }
-
     /**
      *
      *
@@ -3872,7 +3750,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -3892,7 +3769,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       customDimensionKeyIds_.makeImmutable();
       return customDimensionKeyIds_;
     }
-
     /**
      *
      *
@@ -3911,7 +3787,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getCustomDimensionKeyIdsCount() {
       return customDimensionKeyIds_.size();
     }
-
     /**
      *
      *
@@ -3931,7 +3806,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public long getCustomDimensionKeyIds(int index) {
       return customDimensionKeyIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -3957,7 +3831,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3982,7 +3855,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4007,7 +3879,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4038,7 +3909,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -4059,7 +3929,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       lineItemCustomFieldIds_.makeImmutable();
       return lineItemCustomFieldIds_;
     }
-
     /**
      *
      *
@@ -4079,7 +3948,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getLineItemCustomFieldIdsCount() {
       return lineItemCustomFieldIds_.size();
     }
-
     /**
      *
      *
@@ -4100,7 +3968,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public long getLineItemCustomFieldIds(int index) {
       return lineItemCustomFieldIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -4127,7 +3994,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4153,7 +4019,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4179,7 +4044,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4211,7 +4075,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000200;
     }
-
     /**
      *
      *
@@ -4231,7 +4094,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       orderCustomFieldIds_.makeImmutable();
       return orderCustomFieldIds_;
     }
-
     /**
      *
      *
@@ -4250,7 +4112,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getOrderCustomFieldIdsCount() {
       return orderCustomFieldIds_.size();
     }
-
     /**
      *
      *
@@ -4270,7 +4131,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public long getOrderCustomFieldIds(int index) {
       return orderCustomFieldIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -4296,7 +4156,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4321,7 +4180,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4345,7 +4203,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4376,7 +4233,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000400;
     }
-
     /**
      *
      *
@@ -4397,7 +4253,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       creativeCustomFieldIds_.makeImmutable();
       return creativeCustomFieldIds_;
     }
-
     /**
      *
      *
@@ -4417,7 +4272,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getCreativeCustomFieldIdsCount() {
       return creativeCustomFieldIds_.size();
     }
-
     /**
      *
      *
@@ -4438,7 +4292,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public long getCreativeCustomFieldIds(int index) {
       return creativeCustomFieldIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -4465,7 +4318,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4491,7 +4343,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4517,7 +4368,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4542,7 +4392,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     }
 
     private int reportType_ = 0;
-
     /**
      *
      *
@@ -4560,7 +4409,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getReportTypeValue() {
       return reportType_;
     }
-
     /**
      *
      *
@@ -4581,7 +4429,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4601,7 +4448,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           com.google.ads.admanager.v1.Report.ReportType.forNumber(reportType_);
       return result == null ? com.google.ads.admanager.v1.Report.ReportType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4625,7 +4471,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4647,7 +4492,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     }
 
     private int timePeriodColumn_ = 0;
-
     /**
      *
      *
@@ -4670,7 +4514,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public int getTimePeriodColumnValue() {
       return timePeriodColumn_;
     }
-
     /**
      *
      *
@@ -4696,7 +4539,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4723,7 +4565,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           ? com.google.ads.admanager.v1.Report.TimePeriodColumn.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4752,7 +4593,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4813,7 +4653,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return flagsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4833,7 +4672,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return flagsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4853,7 +4691,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return flagsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4879,7 +4716,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4903,7 +4739,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4929,7 +4764,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4955,7 +4789,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4978,7 +4811,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5002,7 +4834,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5026,7 +4857,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5049,7 +4879,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5072,7 +4901,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5088,7 +4916,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public com.google.ads.admanager.v1.Report.Flag.Builder getFlagsBuilder(int index) {
       return getFlagsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5108,7 +4935,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return flagsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5129,7 +4955,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(flags_);
       }
     }
-
     /**
      *
      *
@@ -5146,7 +4971,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return getFlagsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Report.Flag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5163,7 +4987,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return getFlagsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Report.Flag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5231,7 +5054,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return sortsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5250,7 +5072,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return sortsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5269,7 +5090,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return sortsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5294,7 +5114,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5317,7 +5136,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5342,7 +5160,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5367,7 +5184,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5389,7 +5205,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5412,7 +5227,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5435,7 +5249,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5457,7 +5270,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5479,7 +5291,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5494,7 +5305,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public com.google.ads.admanager.v1.Report.Sort.Builder getSortsBuilder(int index) {
       return getSortsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5513,7 +5323,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return sortsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5533,7 +5342,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(sorts_);
       }
     }
-
     /**
      *
      *
@@ -5549,7 +5357,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return getSortsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Report.Sort.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5565,7 +5372,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return getSortsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Report.Sort.getDefaultInstance());
     }
-
     /**
      *
      *

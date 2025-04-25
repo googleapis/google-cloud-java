@@ -37,7 +37,6 @@ public interface OutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface OutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.datalabeling.v1beta1.GcsDestination getGcsDestination();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface OutputConfigOrBuilder
    * @return Whether the gcsFolderDestination field is set.
    */
   boolean hasGcsFolderDestination();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface OutputConfigOrBuilder
    * @return The gcsFolderDestination.
    */
   com.google.cloud.datalabeling.v1beta1.GcsFolderDestination getGcsFolderDestination();
-
   /**
    *
    *

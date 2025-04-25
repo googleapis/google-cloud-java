@@ -39,7 +39,6 @@ public interface ApiOperationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ApiOperationOrBuilder
    * @return The spec.
    */
   java.lang.String getSpec();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface ApiOperationOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ApiOperationOrBuilder
    * @return The details.
    */
   com.google.cloud.apihub.v1.OperationDetails getDetails();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ApiOperationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface ApiOperationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface ApiOperationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface ApiOperationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface ApiOperationOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -244,11 +235,9 @@ public interface ApiOperationOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public interface ApiOperationOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
-
   /**
    *
    *
@@ -284,7 +272,6 @@ public interface ApiOperationOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
-
   /**
    *
    *

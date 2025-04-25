@@ -34,7 +34,6 @@ public interface ListAccountsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.Account accounts = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.Account> getAccountsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAccountsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.Account accounts = 1;</code>
    */
   com.google.analytics.admin.v1beta.Account getAccounts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAccountsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.Account accounts = 1;</code>
    */
   int getAccountsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAccountsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.AccountOrBuilder>
       getAccountsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAccountsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

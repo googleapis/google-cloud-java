@@ -37,7 +37,6 @@ public interface UpdateInstanceConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateInstanceConfigRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UpdateInstanceConfigRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.notebooks.v1.InstanceConfig getConfig();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The protocol.
    */
   java.lang.String getProtocol();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The oldSourceIp.
    */
   java.lang.String getOldSourceIp();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The newSourceIp.
    */
   java.lang.String getNewSourceIp();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The oldDestinationIp.
    */
   java.lang.String getOldDestinationIp();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The newDestinationIp.
    */
   java.lang.String getNewDestinationIp();
-
   /**
    *
    *
@@ -221,7 +216,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The subnetUri.
    */
   java.lang.String getSubnetUri();
-
   /**
    *
    *
@@ -247,7 +241,6 @@ public interface ProxyConnectionInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *

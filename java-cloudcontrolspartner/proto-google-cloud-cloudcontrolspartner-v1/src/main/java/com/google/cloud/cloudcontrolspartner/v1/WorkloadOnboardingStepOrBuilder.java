@@ -36,7 +36,6 @@ public interface WorkloadOnboardingStepOrBuilder
    * @return The enum numeric value on the wire for step.
    */
   int getStepValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface WorkloadOnboardingStepOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface WorkloadOnboardingStepOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WorkloadOnboardingStepOrBuilder
    * @return Whether the completionTime field is set.
    */
   boolean hasCompletionTime();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface WorkloadOnboardingStepOrBuilder
    * @return The completionTime.
    */
   com.google.protobuf.Timestamp getCompletionTime();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface WorkloadOnboardingStepOrBuilder
    * @return The enum numeric value on the wire for completionState.
    */
   int getCompletionStateValue();
-
   /**
    *
    *

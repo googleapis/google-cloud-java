@@ -36,7 +36,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return Whether the scalar field is set.
    */
   boolean hasScalar();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return The scalar.
    */
   com.google.cloud.aiplatform.v1.Scalar getScalar();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return Whether the tensor field is set.
    */
   boolean hasTensor();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return The tensor.
    */
   com.google.cloud.aiplatform.v1.TensorboardTensor getTensor();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return Whether the blobs field is set.
    */
   boolean hasBlobs();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return The blobs.
    */
   com.google.cloud.aiplatform.v1.TensorboardBlobSequence getBlobs();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return Whether the wallTime field is set.
    */
   boolean hasWallTime();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface TimeSeriesDataPointOrBuilder
    * @return The wallTime.
    */
   com.google.protobuf.Timestamp getWallTime();
-
   /**
    *
    *

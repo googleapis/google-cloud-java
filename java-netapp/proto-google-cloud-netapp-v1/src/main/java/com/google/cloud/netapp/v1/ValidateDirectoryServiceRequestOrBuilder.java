@@ -38,7 +38,6 @@ public interface ValidateDirectoryServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ValidateDirectoryServiceRequestOrBuilder
    * @return The enum numeric value on the wire for directoryServiceType.
    */
   int getDirectoryServiceTypeValue();
-
   /**
    *
    *

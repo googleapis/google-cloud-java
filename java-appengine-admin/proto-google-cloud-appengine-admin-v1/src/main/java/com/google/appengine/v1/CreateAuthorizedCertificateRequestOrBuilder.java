@@ -36,7 +36,6 @@ public interface CreateAuthorizedCertificateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CreateAuthorizedCertificateRequestOrBuilder
    * @return Whether the certificate field is set.
    */
   boolean hasCertificate();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CreateAuthorizedCertificateRequestOrBuilder
    * @return The certificate.
    */
   com.google.appengine.v1.AuthorizedCertificate getCertificate();
-
   /**
    *
    *

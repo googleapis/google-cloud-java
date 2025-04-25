@@ -46,7 +46,6 @@ public interface PolicySpecOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface PolicySpecOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface PolicySpecOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface PolicySpecOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.PolicySpec.PolicyRule rules = 3;</code>
    */
   java.util.List<com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule> getRulesList();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface PolicySpecOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.PolicySpec.PolicyRule rules = 3;</code>
    */
   com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule getRules(int index);
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface PolicySpecOrBuilder
    * <code>repeated .google.cloud.orgpolicy.v2.PolicySpec.PolicyRule rules = 3;</code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface PolicySpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ValidationErrorOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface ValidationErrorOrBuilder
    * @return A list containing the entries.
    */
   java.util.List<java.lang.String> getEntriesList();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ValidationErrorOrBuilder
    * @return The count of entries.
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface ValidationErrorOrBuilder
    * @return The entries at the given index.
    */
   java.lang.String getEntries(int index);
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface ValidationErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
-
   /**
    *
    *

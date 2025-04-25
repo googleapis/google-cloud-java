@@ -37,7 +37,6 @@ public interface DistributionOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DistributionOrBuilder
    * @return The enum numeric value on the wire for architecture.
    */
   int getArchitectureValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DistributionOrBuilder
    * @return Whether the latestVersion field is set.
    */
   boolean hasLatestVersion();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DistributionOrBuilder
    * @return The latestVersion.
    */
   io.grafeas.v1beta1.pkg.Version getLatestVersion();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface DistributionOrBuilder
    * @return The maintainer.
    */
   java.lang.String getMaintainer();
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface DistributionOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface DistributionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

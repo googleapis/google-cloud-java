@@ -33,7 +33,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.SyncError)
     SyncErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SyncError.newBuilder() to construct.
   private SyncError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource>
       errorResources_;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       getErrorResourcesList() {
     return errorResources_;
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       getErrorResourcesOrBuilderList() {
     return errorResources_;
   }
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
   public int getErrorResourcesCount() {
     return errorResources_.size();
   }
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return errorResources_.get(index);
   }
-
   /**
    *
    *
@@ -438,7 +428,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -700,7 +689,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorMessage_ = "";
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return errorResourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return errorResourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -997,7 +974,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return errorResourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1047,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1117,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1140,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1161,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1182,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1197,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         getErrorResourcesBuilder(int index) {
       return getErrorResourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1250,7 +1216,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return errorResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1271,7 +1236,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errorResources_);
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1253,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1308,7 +1271,6 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource.getDefaultInstance());
     }
-
     /**
      *
      *

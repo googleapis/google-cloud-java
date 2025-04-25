@@ -37,7 +37,6 @@ public interface ExpandedDataSetFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ExpandedDataSetFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilter.StringFilter getStringFilter();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ExpandedDataSetFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface ExpandedDataSetFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilter.InListFilter getInListFilter();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ExpandedDataSetFilterOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
-
   /**
    *
    *

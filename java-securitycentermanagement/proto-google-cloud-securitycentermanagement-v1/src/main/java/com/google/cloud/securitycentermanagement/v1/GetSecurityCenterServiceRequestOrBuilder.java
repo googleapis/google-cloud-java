@@ -51,7 +51,6 @@ public interface GetSecurityCenterServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

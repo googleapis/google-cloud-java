@@ -36,7 +36,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The releaseUid.
    */
   java.lang.String getReleaseUid();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The release.
    */
   java.lang.String getRelease();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The rolloutUid.
    */
   java.lang.String getRolloutUid();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface RolloutNotificationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

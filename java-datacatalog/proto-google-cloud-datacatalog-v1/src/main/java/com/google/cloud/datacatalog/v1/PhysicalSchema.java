@@ -34,7 +34,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema)
     PhysicalSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PhysicalSchema.newBuilder() to construct.
   private PhysicalSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema)
       AvroSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AvroSchema.newBuilder() to construct.
     private AvroSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -144,7 +140,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -168,7 +163,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -354,7 +348,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -542,7 +535,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object text_ = "";
-
       /**
        *
        *
@@ -565,7 +557,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -588,7 +579,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -610,7 +600,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -628,7 +617,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -733,7 +721,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
   }
-
   /**
    *
    *
@@ -762,7 +748,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema)
       ThriftSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ThriftSchema.newBuilder() to construct.
     private ThriftSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -797,7 +782,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +990,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1198,7 +1180,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object text_ = "";
-
       /**
        *
        *
@@ -1221,7 +1202,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1244,7 +1224,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1266,7 +1245,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1284,7 +1262,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1390,7 +1367,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -1404,7 +1380,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
   }
-
   /**
    *
    *
@@ -1419,7 +1394,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema)
       ProtobufSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ProtobufSchema.newBuilder() to construct.
     private ProtobufSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1454,7 +1428,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -1478,7 +1451,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1664,7 +1636,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1856,7 +1827,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object text_ = "";
-
       /**
        *
        *
@@ -1879,7 +1849,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1902,7 +1871,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1924,7 +1892,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1942,7 +1909,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2037,7 +2003,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -2052,7 +2017,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema)
       ParquetSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ParquetSchema.newBuilder() to construct.
     private ParquetSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2233,7 +2197,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2468,7 +2431,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -2483,7 +2445,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema)
       OrcSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OrcSchema.newBuilder() to construct.
     private OrcSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2664,7 +2625,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2894,7 +2854,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -2909,7 +2868,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema)
       CsvSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CsvSchema.newBuilder() to construct.
     private CsvSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3090,7 +3048,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3337,7 +3294,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     private SchemaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3379,7 +3335,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVRO_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -3395,7 +3350,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAvro() {
     return schemaCase_ == 1;
   }
-
   /**
    *
    *
@@ -3414,7 +3368,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3433,7 +3386,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int THRIFT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -3449,7 +3401,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasThrift() {
     return schemaCase_ == 2;
   }
-
   /**
    *
    *
@@ -3468,7 +3419,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3487,7 +3437,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTOBUF_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -3503,7 +3452,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProtobuf() {
     return schemaCase_ == 3;
   }
-
   /**
    *
    *
@@ -3522,7 +3470,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3542,7 +3489,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARQUET_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -3558,7 +3504,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasParquet() {
     return schemaCase_ == 4;
   }
-
   /**
    *
    *
@@ -3577,7 +3522,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3597,7 +3541,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORC_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -3613,7 +3556,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOrc() {
     return schemaCase_ == 5;
   }
-
   /**
    *
    *
@@ -3632,7 +3574,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3651,7 +3592,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CSV_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -3667,7 +3607,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCsv() {
     return schemaCase_ == 6;
   }
-
   /**
    *
    *
@@ -3686,7 +3625,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3955,7 +3893,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4259,7 +4196,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchemaOrBuilder>
         avroBuilder_;
-
     /**
      *
      *
@@ -4275,7 +4211,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvro() {
       return schemaCase_ == 1;
     }
-
     /**
      *
      *
@@ -4301,7 +4236,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4324,7 +4258,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4345,7 +4278,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4379,7 +4311,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -4405,7 +4336,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4418,7 +4348,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema.Builder getAvroBuilder() {
       return getAvroFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4439,7 +4368,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4478,7 +4406,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchemaOrBuilder>
         thriftBuilder_;
-
     /**
      *
      *
@@ -4494,7 +4421,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasThrift() {
       return schemaCase_ == 2;
     }
-
     /**
      *
      *
@@ -4520,7 +4446,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4543,7 +4468,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4564,7 +4488,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4599,7 +4522,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4625,7 +4547,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4638,7 +4559,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema.Builder getThriftBuilder() {
       return getThriftFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4660,7 +4580,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4700,7 +4619,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchemaOrBuilder>
         protobufBuilder_;
-
     /**
      *
      *
@@ -4716,7 +4634,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProtobuf() {
       return schemaCase_ == 3;
     }
-
     /**
      *
      *
@@ -4742,7 +4659,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4766,7 +4682,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4787,7 +4702,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4823,7 +4737,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4849,7 +4762,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4863,7 +4775,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         getProtobufBuilder() {
       return getProtobufFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4885,7 +4796,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4925,7 +4835,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchemaOrBuilder>
         parquetBuilder_;
-
     /**
      *
      *
@@ -4941,7 +4850,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasParquet() {
       return schemaCase_ == 4;
     }
-
     /**
      *
      *
@@ -4967,7 +4875,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4990,7 +4897,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5011,7 +4917,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5047,7 +4952,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5073,7 +4977,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5087,7 +4990,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         getParquetBuilder() {
       return getParquetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5109,7 +5011,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.ParquetSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5149,7 +5050,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchemaOrBuilder>
         orcBuilder_;
-
     /**
      *
      *
@@ -5165,7 +5065,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrc() {
       return schemaCase_ == 5;
     }
-
     /**
      *
      *
@@ -5191,7 +5090,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5214,7 +5112,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -5235,7 +5132,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -5269,7 +5165,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -5295,7 +5190,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5308,7 +5202,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema.Builder getOrcBuilder() {
       return getOrcFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5329,7 +5222,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.OrcSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5368,7 +5260,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema.Builder,
             com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchemaOrBuilder>
         csvBuilder_;
-
     /**
      *
      *
@@ -5384,7 +5275,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCsv() {
       return schemaCase_ == 6;
     }
-
     /**
      *
      *
@@ -5410,7 +5300,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5433,7 +5322,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5454,7 +5342,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5488,7 +5375,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5514,7 +5400,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5527,7 +5412,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema.Builder getCsvBuilder() {
       return getCsvFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5548,7 +5432,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *

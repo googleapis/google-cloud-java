@@ -33,7 +33,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.CustomerConstraints)
     CustomerConstraintsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomerConstraints.newBuilder() to construct.
   private CustomerConstraints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedRegions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getAllowedRegionsList() {
     return allowedRegions_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public int getAllowedRegionsCount() {
     return allowedRegions_.size();
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public java.lang.String getAllowedRegions(int index) {
     return allowedRegions_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType>(
         allowedCustomerTypes_, allowedCustomerTypes_converter_);
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public int getAllowedCustomerTypesCount() {
     return allowedCustomerTypes_.size();
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       int index) {
     return allowedCustomerTypes_converter_.convert(allowedCustomerTypes_.get(index));
   }
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getAllowedCustomerTypesValueList() {
     return allowedCustomerTypes_;
   }
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
-
   /**
    *
    *
@@ -291,7 +280,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.cloud.channel.v1.PromotionalOrderType>(
         promotionalOrderTypes_, promotionalOrderTypes_converter_);
   }
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public int getPromotionalOrderTypesCount() {
     return promotionalOrderTypes_.size();
   }
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public com.google.cloud.channel.v1.PromotionalOrderType getPromotionalOrderTypes(int index) {
     return promotionalOrderTypes_converter_.convert(promotionalOrderTypes_.get(index));
   }
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getPromotionalOrderTypesValueList() {
     return promotionalOrderTypes_;
   }
-
   /**
    *
    *
@@ -583,7 +568,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -860,7 +844,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       allowedRegions_.makeImmutable();
       return allowedRegions_;
     }
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public int getAllowedRegionsCount() {
       return allowedRegions_.size();
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public java.lang.String getAllowedRegions(int index) {
       return allowedRegions_.get(index);
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getAllowedRegionsBytes(int index) {
       return allowedRegions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1018,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1037,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.cloud.channel.v1.CloudIdentityInfo.CustomerType>(
           allowedCustomerTypes_, allowedCustomerTypes_converter_);
     }
-
     /**
      *
      *
@@ -1080,7 +1053,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public int getAllowedCustomerTypesCount() {
       return allowedCustomerTypes_.size();
     }
-
     /**
      *
      *
@@ -1099,7 +1071,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
         int index) {
       return allowedCustomerTypes_converter_.convert(allowedCustomerTypes_.get(index));
     }
-
     /**
      *
      *
@@ -1125,7 +1096,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1120,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1144,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1163,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1179,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getAllowedCustomerTypesValueList() {
       return java.util.Collections.unmodifiableList(allowedCustomerTypes_);
     }
-
     /**
      *
      *
@@ -1230,7 +1196,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public int getAllowedCustomerTypesValue(int index) {
       return allowedCustomerTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1252,7 +1217,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1237,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1269,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1325,7 +1287,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.cloud.channel.v1.PromotionalOrderType>(
           promotionalOrderTypes_, promotionalOrderTypes_converter_);
     }
-
     /**
      *
      *
@@ -1341,7 +1302,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public int getPromotionalOrderTypesCount() {
       return promotionalOrderTypes_.size();
     }
-
     /**
      *
      *
@@ -1358,7 +1318,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public com.google.cloud.channel.v1.PromotionalOrderType getPromotionalOrderTypes(int index) {
       return promotionalOrderTypes_converter_.convert(promotionalOrderTypes_.get(index));
     }
-
     /**
      *
      *
@@ -1383,7 +1342,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1365,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1387,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1405,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1420,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getPromotionalOrderTypesValueList() {
       return java.util.Collections.unmodifiableList(promotionalOrderTypes_);
     }
-
     /**
      *
      *
@@ -1482,7 +1436,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public int getPromotionalOrderTypesValue(int index) {
       return promotionalOrderTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1503,7 +1456,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1475,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

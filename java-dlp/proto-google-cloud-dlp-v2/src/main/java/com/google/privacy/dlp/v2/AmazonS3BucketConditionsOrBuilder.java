@@ -40,7 +40,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.AmazonS3BucketConditions.BucketType>
       getBucketTypesList();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    * @return The count of bucketTypes.
    */
   int getBucketTypesCount();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    * @return The bucketTypes at the given index.
    */
   com.google.privacy.dlp.v2.AmazonS3BucketConditions.BucketType getBucketTypes(int index);
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    * @return A list containing the enum numeric values on the wire for bucketTypes.
    */
   java.util.List<java.lang.Integer> getBucketTypesValueList();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.AmazonS3BucketConditions.ObjectStorageClass>
       getObjectStorageClassesList();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    * @return The count of objectStorageClasses.
    */
   int getObjectStorageClassesCount();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    */
   com.google.privacy.dlp.v2.AmazonS3BucketConditions.ObjectStorageClass getObjectStorageClasses(
       int index);
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface AmazonS3BucketConditionsOrBuilder
    * @return A list containing the enum numeric values on the wire for objectStorageClasses.
    */
   java.util.List<java.lang.Integer> getObjectStorageClassesValueList();
-
   /**
    *
    *

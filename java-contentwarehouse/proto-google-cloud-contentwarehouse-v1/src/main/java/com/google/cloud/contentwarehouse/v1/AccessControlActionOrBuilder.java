@@ -37,7 +37,6 @@ public interface AccessControlActionOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AccessControlActionOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AccessControlActionOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface GeocodedWaypointOrBuilder
    * @return Whether the geocoderStatus field is set.
    */
   boolean hasGeocoderStatus();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GeocodedWaypointOrBuilder
    * @return The geocoderStatus.
    */
   com.google.rpc.Status getGeocoderStatus();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GeocodedWaypointOrBuilder
    * @return Whether the intermediateWaypointRequestIndex field is set.
    */
   boolean hasIntermediateWaypointRequestIndex();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface GeocodedWaypointOrBuilder
    * @return A list containing the type.
    */
   java.util.List<java.lang.String> getTypeList();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface GeocodedWaypointOrBuilder
    * @return The count of type.
    */
   int getTypeCount();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface GeocodedWaypointOrBuilder
    * @return The type at the given index.
    */
   java.lang.String getType(int index);
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface GeocodedWaypointOrBuilder
    * @return The placeId.
    */
   java.lang.String getPlaceId();
-
   /**
    *
    *

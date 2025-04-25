@@ -33,7 +33,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TableLocation)
     TableLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TableLocation.newBuilder() to construct.
   private TableLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_INDEX_FIELD_NUMBER = 1;
   private long rowIndex_ = 0L;
-
   /**
    *
    *
@@ -244,7 +242,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -426,7 +423,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long rowIndex_;
-
     /**
      *
      *
@@ -447,7 +443,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
     public long getRowIndex() {
       return rowIndex_;
     }
-
     /**
      *
      *
@@ -472,7 +467,6 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

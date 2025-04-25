@@ -36,7 +36,6 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

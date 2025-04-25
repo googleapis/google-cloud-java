@@ -37,7 +37,6 @@ public interface QueryEligibleBillingAccountsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.SkuPurchaseGroup sku_purchase_groups = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.SkuPurchaseGroup> getSkuPurchaseGroupsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface QueryEligibleBillingAccountsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.SkuPurchaseGroup sku_purchase_groups = 1;</code>
    */
   com.google.cloud.channel.v1.SkuPurchaseGroup getSkuPurchaseGroups(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface QueryEligibleBillingAccountsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.SkuPurchaseGroup sku_purchase_groups = 1;</code>
    */
   int getSkuPurchaseGroupsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface QueryEligibleBillingAccountsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.SkuPurchaseGroupOrBuilder>
       getSkuPurchaseGroupsOrBuilderList();
-
   /**
    *
    *

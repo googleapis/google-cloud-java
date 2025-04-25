@@ -37,7 +37,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.DistributionCut)
     DistributionCutOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DistributionCut.newBuilder() to construct.
   private DistributionCut(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object distributionFilter_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
 
   public static final int RANGE_FIELD_NUMBER = 5;
   private com.google.monitoring.v3.Range range_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
   public boolean hasRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
   public com.google.monitoring.v3.Range getRange() {
     return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object distributionFilter_ = "";
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
             com.google.monitoring.v3.Range.Builder,
             com.google.monitoring.v3.RangeOrBuilder>
         rangeBuilder_;
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     public boolean hasRange() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
         return rangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -858,7 +838,6 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
         return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
       }
     }
-
     /**
      *
      *

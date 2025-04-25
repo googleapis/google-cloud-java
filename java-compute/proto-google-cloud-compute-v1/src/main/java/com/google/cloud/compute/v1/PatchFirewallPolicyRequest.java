@@ -33,7 +33,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchFirewallPolicyRequest)
     PatchFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchFirewallPolicyRequest.newBuilder() to construct.
   private PatchFirewallPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
 
   public static final int FIREWALL_POLICY_RESOURCE_FIELD_NUMBER = 495049532;
   private com.google.cloud.compute.v1.FirewallPolicy firewallPolicyResource_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
   public boolean hasFirewallPolicyResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()
         : firewallPolicyResource_;
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -437,7 +428,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -671,7 +661,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.FirewallPolicy.Builder,
             com.google.cloud.compute.v1.FirewallPolicyOrBuilder>
         firewallPolicyResourceBuilder_;
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     public boolean hasFirewallPolicyResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         return firewallPolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -852,7 +834,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return getFirewallPolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
             : firewallPolicyResource_;
       }
     }
-
     /**
      *
      *
@@ -997,7 +973,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1012,7 +987,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1035,7 +1009,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class PatchFirewallPolicyRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

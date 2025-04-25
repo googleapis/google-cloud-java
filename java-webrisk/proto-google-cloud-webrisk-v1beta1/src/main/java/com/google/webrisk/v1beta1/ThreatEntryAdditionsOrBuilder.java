@@ -35,7 +35,6 @@ public interface ThreatEntryAdditionsOrBuilder
    * <code>repeated .google.cloud.webrisk.v1beta1.RawHashes raw_hashes = 1;</code>
    */
   java.util.List<com.google.webrisk.v1beta1.RawHashes> getRawHashesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ThreatEntryAdditionsOrBuilder
    * <code>repeated .google.cloud.webrisk.v1beta1.RawHashes raw_hashes = 1;</code>
    */
   com.google.webrisk.v1beta1.RawHashes getRawHashes(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ThreatEntryAdditionsOrBuilder
    * <code>repeated .google.cloud.webrisk.v1beta1.RawHashes raw_hashes = 1;</code>
    */
   int getRawHashesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ThreatEntryAdditionsOrBuilder
    */
   java.util.List<? extends com.google.webrisk.v1beta1.RawHashesOrBuilder>
       getRawHashesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ThreatEntryAdditionsOrBuilder
    * @return Whether the riceHashes field is set.
    */
   boolean hasRiceHashes();
-
   /**
    *
    *
@@ -114,7 +109,6 @@ public interface ThreatEntryAdditionsOrBuilder
    * @return The riceHashes.
    */
   com.google.webrisk.v1beta1.RiceDeltaEncoding getRiceHashes();
-
   /**
    *
    *

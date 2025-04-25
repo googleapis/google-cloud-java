@@ -39,7 +39,6 @@ public interface RevisionTemplateOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface RevisionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -97,11 +95,9 @@ public interface RevisionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface RevisionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface RevisionTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -212,11 +205,9 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface RevisionTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface RevisionTemplateOrBuilder
    * @return Whether the scaling field is set.
    */
   boolean hasScaling();
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public interface RevisionTemplateOrBuilder
    * @return The scaling.
    */
   com.google.cloud.run.v2.RevisionScaling getScaling();
-
   /**
    *
    *
@@ -345,7 +332,6 @@ public interface RevisionTemplateOrBuilder
    * @return Whether the vpcAccess field is set.
    */
   boolean hasVpcAccess();
-
   /**
    *
    *
@@ -361,7 +347,6 @@ public interface RevisionTemplateOrBuilder
    * @return The vpcAccess.
    */
   com.google.cloud.run.v2.VpcAccess getVpcAccess();
-
   /**
    *
    *
@@ -388,7 +373,6 @@ public interface RevisionTemplateOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -401,7 +385,6 @@ public interface RevisionTemplateOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *
@@ -428,7 +411,6 @@ public interface RevisionTemplateOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -456,7 +438,6 @@ public interface RevisionTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 10;</code>
    */
   java.util.List<com.google.cloud.run.v2.Container> getContainersList();
-
   /**
    *
    *
@@ -468,7 +449,6 @@ public interface RevisionTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 10;</code>
    */
   com.google.cloud.run.v2.Container getContainers(int index);
-
   /**
    *
    *
@@ -480,7 +460,6 @@ public interface RevisionTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 10;</code>
    */
   int getContainersCount();
-
   /**
    *
    *
@@ -492,7 +471,6 @@ public interface RevisionTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 10;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ContainerOrBuilder> getContainersOrBuilderList();
-
   /**
    *
    *
@@ -517,7 +495,6 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Volume> getVolumesList();
-
   /**
    *
    *
@@ -530,7 +507,6 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Volume getVolumes(int index);
-
   /**
    *
    *
@@ -543,7 +519,6 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   int getVolumesCount();
-
   /**
    *
    *
@@ -556,7 +531,6 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder> getVolumesOrBuilderList();
-
   /**
    *
    *
@@ -584,7 +558,6 @@ public interface RevisionTemplateOrBuilder
    * @return The enum numeric value on the wire for executionEnvironment.
    */
   int getExecutionEnvironmentValue();
-
   /**
    *
    *
@@ -614,7 +587,6 @@ public interface RevisionTemplateOrBuilder
    * @return The encryptionKey.
    */
   java.lang.String getEncryptionKey();
-
   /**
    *
    *
@@ -660,7 +632,6 @@ public interface RevisionTemplateOrBuilder
    * @return Whether the serviceMesh field is set.
    */
   boolean hasServiceMesh();
-
   /**
    *
    *
@@ -675,7 +646,6 @@ public interface RevisionTemplateOrBuilder
    * @return The serviceMesh.
    */
   com.google.cloud.run.v2.ServiceMesh getServiceMesh();
-
   /**
    *
    *
@@ -703,7 +673,6 @@ public interface RevisionTemplateOrBuilder
    * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
    */
   int getEncryptionKeyRevocationActionValue();
-
   /**
    *
    *
@@ -734,7 +703,6 @@ public interface RevisionTemplateOrBuilder
    * @return Whether the encryptionKeyShutdownDuration field is set.
    */
   boolean hasEncryptionKeyShutdownDuration();
-
   /**
    *
    *
@@ -750,7 +718,6 @@ public interface RevisionTemplateOrBuilder
    * @return The encryptionKeyShutdownDuration.
    */
   com.google.protobuf.Duration getEncryptionKeyShutdownDuration();
-
   /**
    *
    *
@@ -805,7 +772,6 @@ public interface RevisionTemplateOrBuilder
    * @return Whether the nodeSelector field is set.
    */
   boolean hasNodeSelector();
-
   /**
    *
    *
@@ -820,7 +786,6 @@ public interface RevisionTemplateOrBuilder
    * @return The nodeSelector.
    */
   com.google.cloud.run.v2.NodeSelector getNodeSelector();
-
   /**
    *
    *

@@ -76,7 +76,6 @@ public interface StratifiedSplitOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *

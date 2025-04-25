@@ -36,7 +36,6 @@ public interface RefreshSubscriptionResponseOrBuilder
    * @return Whether the subscription field is set.
    */
   boolean hasSubscription();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RefreshSubscriptionResponseOrBuilder
    * @return The subscription.
    */
   com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription();
-
   /**
    *
    *

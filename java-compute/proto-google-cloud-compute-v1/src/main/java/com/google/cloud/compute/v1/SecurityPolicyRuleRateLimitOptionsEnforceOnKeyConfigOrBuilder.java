@@ -36,7 +36,6 @@ public interface SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
    * @return Whether the enforceOnKeyName field is set.
    */
   boolean hasEnforceOnKeyName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
    * @return The enforceOnKeyName.
    */
   java.lang.String getEnforceOnKeyName();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
    * @return Whether the enforceOnKeyType field is set.
    */
   boolean hasEnforceOnKeyType();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
    * @return The enforceOnKeyType.
    */
   java.lang.String getEnforceOnKeyType();
-
   /**
    *
    *

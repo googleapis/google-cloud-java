@@ -34,7 +34,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TargetsTypeCondition)
     TargetsTypeConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetsTypeCondition.newBuilder() to construct.
   private TargetsTypeCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
 
   public static final int STATUS_FIELD_NUMBER = 1;
   private boolean status_ = false;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorDetails_ = "";
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -307,7 +303,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -506,7 +501,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean status_;
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
     public boolean getStatus() {
       return status_;
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +560,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object errorDetails_ = "";
-
     /**
      *
      *
@@ -591,7 +582,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +642,6 @@ public final class TargetsTypeCondition extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

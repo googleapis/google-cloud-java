@@ -34,7 +34,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportConfig)
     ReportConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportConfig.newBuilder() to construct.
   private ReportConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The group.
      */
     java.lang.String getGroup();
-
     /**
      *
      *
@@ -117,7 +115,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The preferenceSet.
      */
     java.lang.String getPreferenceSet();
-
     /**
      *
      *
@@ -133,7 +130,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPreferenceSetBytes();
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportConfig.GroupPreferenceSetAssignment)
       GroupPreferenceSetAssignmentOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GroupPreferenceSetAssignment.newBuilder() to construct.
     private GroupPreferenceSetAssignment(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -187,7 +182,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object group_ = "";
-
     /**
      *
      *
@@ -213,7 +207,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -244,7 +237,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object preferenceSet_ = "";
-
     /**
      *
      *
@@ -270,7 +262,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -475,7 +466,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -692,7 +682,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object group_ = "";
-
       /**
        *
        *
@@ -717,7 +706,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -742,7 +730,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -766,7 +753,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -786,7 +772,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -813,7 +798,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object preferenceSet_ = "";
-
       /**
        *
        *
@@ -838,7 +822,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -863,7 +846,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -887,7 +869,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -907,7 +888,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1007,7 +987,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1031,7 +1010,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1058,7 +1036,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1075,7 +1052,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1092,7 +1068,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1110,7 +1085,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1127,7 +1101,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1144,7 +1117,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1164,7 +1136,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1188,7 +1159,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1217,7 +1187,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1241,7 +1210,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1272,7 +1240,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   private java.util.List<
           com.google.cloud.migrationcenter.v1.ReportConfig.GroupPreferenceSetAssignment>
       groupPreferencesetAssignments_;
-
   /**
    *
    *
@@ -1290,7 +1257,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       getGroupPreferencesetAssignmentsList() {
     return groupPreferencesetAssignments_;
   }
-
   /**
    *
    *
@@ -1310,7 +1276,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       getGroupPreferencesetAssignmentsOrBuilderList() {
     return groupPreferencesetAssignments_;
   }
-
   /**
    *
    *
@@ -1326,7 +1291,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   public int getGroupPreferencesetAssignmentsCount() {
     return groupPreferencesetAssignments_.size();
   }
-
   /**
    *
    *
@@ -1343,7 +1307,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       getGroupPreferencesetAssignments(int index) {
     return groupPreferencesetAssignments_.get(index);
   }
-
   /**
    *
    *
@@ -1580,7 +1543,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1910,7 +1872,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1933,7 +1894,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1956,7 +1916,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1978,7 +1937,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1996,7 +1954,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2026,7 +1983,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2043,7 +1999,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2066,7 +2021,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2091,7 +2045,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2113,7 +2066,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2143,7 +2095,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2165,7 +2116,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2132,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2203,7 +2152,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2238,7 +2186,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2255,7 +2202,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2278,7 +2224,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2303,7 +2248,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2325,7 +2269,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2355,7 +2298,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2377,7 +2319,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2394,7 +2335,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2415,7 +2355,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2445,7 +2384,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2468,7 +2406,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2491,7 +2428,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2513,7 +2449,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2531,7 +2466,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2556,7 +2490,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2579,7 +2512,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2602,7 +2534,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2624,7 +2555,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2642,7 +2572,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2706,7 +2635,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return groupPreferencesetAssignmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2725,7 +2653,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return groupPreferencesetAssignmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2745,7 +2672,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return groupPreferencesetAssignmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2772,7 +2698,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2797,7 +2722,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2823,7 +2747,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2850,7 +2773,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2874,7 +2796,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2899,7 +2820,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2926,7 +2846,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2948,7 +2867,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2970,7 +2888,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2986,7 +2903,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         getGroupPreferencesetAssignmentsBuilder(int index) {
       return getGroupPreferencesetAssignmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3006,7 +2922,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return groupPreferencesetAssignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3029,7 +2944,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(groupPreferencesetAssignments_);
       }
     }
-
     /**
      *
      *
@@ -3048,7 +2962,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportConfig.GroupPreferenceSetAssignment
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3068,7 +2981,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.migrationcenter.v1.ReportConfig.GroupPreferenceSetAssignment
                   .getDefaultInstance());
     }
-
     /**
      *
      *

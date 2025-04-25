@@ -36,7 +36,6 @@ public interface MetadataSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface MetadataSchemaOrBuilder
    * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface MetadataSchemaOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface MetadataSchemaOrBuilder
    * @return The enum numeric value on the wire for schemaType.
    */
   int getSchemaTypeValue();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface MetadataSchemaOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface MetadataSchemaOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface MetadataSchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

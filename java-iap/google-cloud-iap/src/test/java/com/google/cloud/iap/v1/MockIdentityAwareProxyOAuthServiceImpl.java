@@ -135,8 +135,7 @@ public class MockIdentityAwareProxyOAuthServiceImpl extends IdentityAwareProxyOA
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateIdentityAwareProxyClient,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method CreateIdentityAwareProxyClient, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   IdentityAwareProxyClient.class.getName(),
                   Exception.class.getName())));
@@ -158,8 +157,7 @@ public class MockIdentityAwareProxyOAuthServiceImpl extends IdentityAwareProxyOA
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListIdentityAwareProxyClients, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListIdentityAwareProxyClients, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListIdentityAwareProxyClientsResponse.class.getName(),
                   Exception.class.getName())));
@@ -181,8 +179,7 @@ public class MockIdentityAwareProxyOAuthServiceImpl extends IdentityAwareProxyOA
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetIdentityAwareProxyClient, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method GetIdentityAwareProxyClient, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   IdentityAwareProxyClient.class.getName(),
                   Exception.class.getName())));
@@ -204,8 +201,7 @@ public class MockIdentityAwareProxyOAuthServiceImpl extends IdentityAwareProxyOA
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResetIdentityAwareProxyClientSecret,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ResetIdentityAwareProxyClientSecret, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   IdentityAwareProxyClient.class.getName(),
                   Exception.class.getName())));
@@ -226,8 +222,7 @@ public class MockIdentityAwareProxyOAuthServiceImpl extends IdentityAwareProxyOA
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteIdentityAwareProxyClient,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method DeleteIdentityAwareProxyClient, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

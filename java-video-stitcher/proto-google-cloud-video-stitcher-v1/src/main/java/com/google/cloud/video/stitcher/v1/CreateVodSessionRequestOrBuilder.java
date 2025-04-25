@@ -39,7 +39,6 @@ public interface CreateVodSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateVodSessionRequestOrBuilder
    * @return Whether the vodSession field is set.
    */
   boolean hasVodSession();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateVodSessionRequestOrBuilder
    * @return The vodSession.
    */
   com.google.cloud.video.stitcher.v1.VodSession getVodSession();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RetrievalMetadata)
     RetrievalMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetrievalMetadata.newBuilder() to construct.
   private RetrievalMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int GOOGLE_SEARCH_DYNAMIC_RETRIEVAL_SCORE_FIELD_NUMBER = 2;
   private float googleSearchDynamicRetrievalScore_ = 0F;
-
   /**
    *
    *
@@ -250,7 +248,6 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -433,7 +430,6 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private float googleSearchDynamicRetrievalScore_;
-
     /**
      *
      *
@@ -455,7 +451,6 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
     public float getGoogleSearchDynamicRetrievalScore() {
       return googleSearchDynamicRetrievalScore_;
     }
-
     /**
      *
      *
@@ -481,7 +476,6 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

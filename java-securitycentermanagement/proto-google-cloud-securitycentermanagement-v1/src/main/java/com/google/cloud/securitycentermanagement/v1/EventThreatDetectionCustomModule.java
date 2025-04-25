@@ -35,7 +35,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule)
     EventThreatDetectionCustomModuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EventThreatDetectionCustomModule.newBuilder() to construct.
   private EventThreatDetectionCustomModule(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -142,7 +141,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +151,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -164,7 +161,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
-
     /**
      *
      *
@@ -275,7 +271,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -304,7 +299,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -336,7 +330,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   public static final int CONFIG_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct config_;
-
   /**
    *
    *
@@ -354,7 +347,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
   public com.google.protobuf.Struct getConfig() {
     return config_ == null ? com.google.protobuf.Struct.getDefaultInstance() : config_;
   }
-
   /**
    *
    *
@@ -393,7 +384,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ancestorModule_ = "";
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -454,7 +443,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   public static final int ENABLEMENT_STATE_FIELD_NUMBER = 4;
   private int enablementState_ = 0;
-
   /**
    *
    *
@@ -473,7 +461,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
   public int getEnablementStateValue() {
     return enablementState_;
   }
-
   /**
    *
    *
@@ -506,7 +493,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -530,7 +516,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -559,7 +544,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -583,7 +567,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -612,7 +595,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -636,7 +618,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -663,7 +644,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -680,7 +660,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -697,7 +676,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -717,7 +695,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastEditor_ = "";
-
   /**
    *
    *
@@ -741,7 +718,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -1021,7 +997,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1356,7 +1331,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1384,7 +1358,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1412,7 +1385,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1439,7 +1411,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1433,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1467,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -1514,7 +1483,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1535,7 +1503,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1560,7 +1527,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1548,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1612,7 +1577,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1598,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1614,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1670,7 +1632,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return config_ == null ? com.google.protobuf.Struct.getDefaultInstance() : config_;
       }
     }
-
     /**
      *
      *
@@ -1700,7 +1661,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     }
 
     private java.lang.Object ancestorModule_ = "";
-
     /**
      *
      *
@@ -1728,7 +1688,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1756,7 +1715,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1783,7 +1741,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1763,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1836,7 +1792,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     }
 
     private int enablementState_ = 0;
-
     /**
      *
      *
@@ -1855,7 +1810,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     public int getEnablementStateValue() {
       return enablementState_;
     }
-
     /**
      *
      *
@@ -1877,7 +1831,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1905,7 +1858,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
               .EnablementState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1933,7 +1885,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1907,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1979,7 +1929,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2002,7 +1951,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2024,7 +1972,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2042,7 +1989,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2067,7 +2013,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2090,7 +2035,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2113,7 +2057,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2135,7 +2078,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2153,7 +2095,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2119,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2201,7 +2141,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2224,7 +2163,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2246,7 +2184,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2201,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2294,7 +2230,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2311,7 +2246,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2334,7 +2268,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2359,7 +2292,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2381,7 +2313,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2411,7 +2342,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -2433,7 +2363,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2450,7 +2379,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2471,7 +2399,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2501,7 +2428,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
     }
 
     private java.lang.Object lastEditor_ = "";
-
     /**
      *
      *
@@ -2524,7 +2450,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2547,7 +2472,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2569,7 +2493,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2587,7 +2510,6 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -42,7 +42,6 @@ public interface TruncatableStringOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

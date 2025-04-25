@@ -152,7 +152,6 @@ public interface SolarPotentialOrBuilder
    * @return Whether the wholeRoofStats field is set.
    */
   boolean hasWholeRoofStats();
-
   /**
    *
    *
@@ -168,7 +167,6 @@ public interface SolarPotentialOrBuilder
    * @return The wholeRoofStats.
    */
   com.google.maps.solar.v1.SizeAndSunshineStats getWholeRoofStats();
-
   /**
    *
    *
@@ -204,7 +202,6 @@ public interface SolarPotentialOrBuilder
    * @return Whether the buildingStats field is set.
    */
   boolean hasBuildingStats();
-
   /**
    *
    *
@@ -226,7 +223,6 @@ public interface SolarPotentialOrBuilder
    * @return The buildingStats.
    */
   com.google.maps.solar.v1.SizeAndSunshineStats getBuildingStats();
-
   /**
    *
    *
@@ -259,7 +255,6 @@ public interface SolarPotentialOrBuilder
    */
   java.util.List<com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats>
       getRoofSegmentStatsList();
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public interface SolarPotentialOrBuilder
    * </code>
    */
   com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats getRoofSegmentStats(int index);
-
   /**
    *
    *
@@ -283,7 +277,6 @@ public interface SolarPotentialOrBuilder
    * </code>
    */
   int getRoofSegmentStatsCount();
-
   /**
    *
    *
@@ -296,7 +289,6 @@ public interface SolarPotentialOrBuilder
    */
   java.util.List<? extends com.google.maps.solar.v1.RoofSegmentSizeAndSunshineStatsOrBuilder>
       getRoofSegmentStatsOrBuilderList();
-
   /**
    *
    *
@@ -323,7 +315,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.SolarPanel solar_panels = 14;</code>
    */
   java.util.List<com.google.maps.solar.v1.SolarPanel> getSolarPanelsList();
-
   /**
    *
    *
@@ -337,7 +328,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.SolarPanel solar_panels = 14;</code>
    */
   com.google.maps.solar.v1.SolarPanel getSolarPanels(int index);
-
   /**
    *
    *
@@ -351,7 +341,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.SolarPanel solar_panels = 14;</code>
    */
   int getSolarPanelsCount();
-
   /**
    *
    *
@@ -366,7 +355,6 @@ public interface SolarPotentialOrBuilder
    */
   java.util.List<? extends com.google.maps.solar.v1.SolarPanelOrBuilder>
       getSolarPanelsOrBuilderList();
-
   /**
    *
    *
@@ -398,7 +386,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.SolarPanelConfig solar_panel_configs = 7;</code>
    */
   java.util.List<com.google.maps.solar.v1.SolarPanelConfig> getSolarPanelConfigsList();
-
   /**
    *
    *
@@ -416,7 +403,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.SolarPanelConfig solar_panel_configs = 7;</code>
    */
   com.google.maps.solar.v1.SolarPanelConfig getSolarPanelConfigs(int index);
-
   /**
    *
    *
@@ -434,7 +420,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.SolarPanelConfig solar_panel_configs = 7;</code>
    */
   int getSolarPanelConfigsCount();
-
   /**
    *
    *
@@ -453,7 +438,6 @@ public interface SolarPotentialOrBuilder
    */
   java.util.List<? extends com.google.maps.solar.v1.SolarPanelConfigOrBuilder>
       getSolarPanelConfigsOrBuilderList();
-
   /**
    *
    *
@@ -488,7 +472,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.FinancialAnalysis financial_analyses = 8;</code>
    */
   java.util.List<com.google.maps.solar.v1.FinancialAnalysis> getFinancialAnalysesList();
-
   /**
    *
    *
@@ -505,7 +488,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.FinancialAnalysis financial_analyses = 8;</code>
    */
   com.google.maps.solar.v1.FinancialAnalysis getFinancialAnalyses(int index);
-
   /**
    *
    *
@@ -522,7 +504,6 @@ public interface SolarPotentialOrBuilder
    * <code>repeated .google.maps.solar.v1.FinancialAnalysis financial_analyses = 8;</code>
    */
   int getFinancialAnalysesCount();
-
   /**
    *
    *
@@ -540,7 +521,6 @@ public interface SolarPotentialOrBuilder
    */
   java.util.List<? extends com.google.maps.solar.v1.FinancialAnalysisOrBuilder>
       getFinancialAnalysesOrBuilderList();
-
   /**
    *
    *

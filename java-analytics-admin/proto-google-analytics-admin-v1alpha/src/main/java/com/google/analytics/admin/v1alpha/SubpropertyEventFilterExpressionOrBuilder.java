@@ -37,7 +37,6 @@ public interface SubpropertyEventFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SubpropertyEventFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterExpressionList getOrGroup();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface SubpropertyEventFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface SubpropertyEventFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterExpression getNotExpression();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface SubpropertyEventFilterExpressionOrBuilder
    * @return Whether the filterCondition field is set.
    */
   boolean hasFilterCondition();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface SubpropertyEventFilterExpressionOrBuilder
    * @return The filterCondition.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterCondition getFilterCondition();
-
   /**
    *
    *

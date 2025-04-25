@@ -38,7 +38,6 @@ public interface DeleteCachedContentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

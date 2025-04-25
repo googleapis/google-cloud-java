@@ -33,7 +33,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.LatencyPercentile)
     LatencyPercentileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LatencyPercentile.newBuilder() to construct.
   private LatencyPercentile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
 
   public static final int PERCENT_FIELD_NUMBER = 1;
   private int percent_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
 
   public static final int LATENCY_MICROS_FIELD_NUMBER = 2;
   private long latencyMicros_ = 0L;
-
   /**
    *
    *
@@ -271,7 +268,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -467,7 +463,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int percent_;
-
     /**
      *
      *
@@ -483,7 +478,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     public int getPercent() {
       return percent_;
     }
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     }
 
     private long latencyMicros_;
-
     /**
      *
      *
@@ -541,7 +533,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     public long getLatencyMicros() {
       return latencyMicros_;
     }
-
     /**
      *
      *
@@ -563,7 +554,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

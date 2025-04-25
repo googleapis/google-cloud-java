@@ -33,7 +33,6 @@ public final class DeleteTagValueMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.DeleteTagValueMetadata)
     DeleteTagValueMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteTagValueMetadata.newBuilder() to construct.
   private DeleteTagValueMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DeleteTagValueMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

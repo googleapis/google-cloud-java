@@ -34,7 +34,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.ContinuousBackupConfig)
     ContinuousBackupConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContinuousBackupConfig.newBuilder() to construct.
   private ContinuousBackupConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
 
   public static final int RECOVERY_WINDOW_DAYS_FIELD_NUMBER = 4;
   private int recoveryWindowDays_ = 0;
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.alloydb.v1beta.EncryptionConfig encryptionConfig_;
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.alloydb.v1beta.EncryptionConfig.getDefaultInstance()
         : encryptionConfig_;
   }
-
   /**
    *
    *
@@ -370,7 +363,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -599,7 +591,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -615,7 +606,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     }
 
     private int recoveryWindowDays_;
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     public int getRecoveryWindowDays() {
       return recoveryWindowDays_;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +723,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.alloydb.v1beta.EncryptionConfig.Builder,
             com.google.cloud.alloydb.v1beta.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
         return encryptionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +811,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
             : encryptionConfig_;
       }
     }
-
     /**
      *
      *

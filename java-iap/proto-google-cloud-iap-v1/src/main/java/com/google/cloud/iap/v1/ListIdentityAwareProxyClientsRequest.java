@@ -34,7 +34,6 @@ public final class ListIdentityAwareProxyClientsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ListIdentityAwareProxyClientsRequest)
     ListIdentityAwareProxyClientsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListIdentityAwareProxyClientsRequest.newBuilder() to construct.
   private ListIdentityAwareProxyClientsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListIdentityAwareProxyClientsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ListIdentityAwareProxyClientsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ListIdentityAwareProxyClientsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class ListIdentityAwareProxyClientsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class ListIdentityAwareProxyClientsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -385,7 +379,6 @@ public final class ListIdentityAwareProxyClientsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -601,7 +594,6 @@ public final class ListIdentityAwareProxyClientsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -625,7 +617,6 @@ public final class ListIdentityAwareProxyClientsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -649,7 +640,6 @@ public final class ListIdentityAwareProxyClientsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class ListIdentityAwareProxyClientsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class ListIdentityAwareProxyClientsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class ListIdentityAwareProxyClientsRequest
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class ListIdentityAwareProxyClientsRequest
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class ListIdentityAwareProxyClientsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class ListIdentityAwareProxyClientsRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class ListIdentityAwareProxyClientsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class ListIdentityAwareProxyClientsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class ListIdentityAwareProxyClientsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListIdentityAwareProxyClientsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

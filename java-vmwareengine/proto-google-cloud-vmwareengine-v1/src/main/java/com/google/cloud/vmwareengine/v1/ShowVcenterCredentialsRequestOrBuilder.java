@@ -43,7 +43,6 @@ public interface ShowVcenterCredentialsRequestOrBuilder
    * @return The privateCloud.
    */
   java.lang.String getPrivateCloud();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface ShowVcenterCredentialsRequestOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *

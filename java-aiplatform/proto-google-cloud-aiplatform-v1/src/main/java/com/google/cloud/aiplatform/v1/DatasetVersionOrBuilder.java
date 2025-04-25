@@ -38,7 +38,6 @@ public interface DatasetVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface DatasetVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DatasetVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface DatasetVersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface DatasetVersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface DatasetVersionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface DatasetVersionOrBuilder
    * @return The bigQueryDatasetName.
    */
   java.lang.String getBigQueryDatasetName();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface DatasetVersionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface DatasetVersionOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface DatasetVersionOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface DatasetVersionOrBuilder
    * @return The modelReference.
    */
   java.lang.String getModelReference();
-
   /**
    *
    *

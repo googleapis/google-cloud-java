@@ -30,7 +30,7 @@ public interface ModelOrBuilder
    * <pre>
    * Output only. The resource name of the Model.
    * format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -38,14 +38,13 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
    * Output only. The resource name of the Model.
    * format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -67,7 +66,6 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -155,11 +149,9 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -170,7 +162,6 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -185,7 +176,6 @@ public interface ModelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -211,7 +201,6 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -242,7 +231,6 @@ public interface ModelOrBuilder
    * @return The engineVersion.
    */
   java.lang.String getEngineVersion();
-
   /**
    *
    *
@@ -265,7 +253,7 @@ public interface ModelOrBuilder
    * <pre>
    * Required. The resource name of the EngineConfig the model training will be
    * based on. Format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
    * </pre>
    *
    * <code>
@@ -275,14 +263,13 @@ public interface ModelOrBuilder
    * @return The engineConfig.
    */
   java.lang.String getEngineConfig();
-
   /**
    *
    *
    * <pre>
    * Required. The resource name of the EngineConfig the model training will be
    * based on. Format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
    * </pre>
    *
    * <code>
@@ -300,7 +287,7 @@ public interface ModelOrBuilder
    * Required. The resource name of the Primary Dataset used in this model
    * training. For information about how primary and auxiliary datasets are
    * used, refer to the engine version's documentation.  Format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
    * </pre>
    *
    * <code>
@@ -310,7 +297,6 @@ public interface ModelOrBuilder
    * @return The primaryDataset.
    */
   java.lang.String getPrimaryDataset();
-
   /**
    *
    *
@@ -318,7 +304,7 @@ public interface ModelOrBuilder
    * Required. The resource name of the Primary Dataset used in this model
    * training. For information about how primary and auxiliary datasets are
    * used, refer to the engine version's documentation.  Format:
-   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
+   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
    * </pre>
    *
    * <code>
@@ -344,7 +330,6 @@ public interface ModelOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -360,7 +345,6 @@ public interface ModelOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -390,7 +374,6 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
-
   /**
    *
    *

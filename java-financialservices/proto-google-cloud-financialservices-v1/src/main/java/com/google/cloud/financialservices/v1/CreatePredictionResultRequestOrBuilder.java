@@ -38,7 +38,6 @@ public interface CreatePredictionResultRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreatePredictionResultRequestOrBuilder
    * @return The predictionResultId.
    */
   java.lang.String getPredictionResultId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreatePredictionResultRequestOrBuilder
    * @return Whether the predictionResult field is set.
    */
   boolean hasPredictionResult();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreatePredictionResultRequestOrBuilder
    * @return The predictionResult.
    */
   com.google.cloud.financialservices.v1.PredictionResult getPredictionResult();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreatePredictionResultRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

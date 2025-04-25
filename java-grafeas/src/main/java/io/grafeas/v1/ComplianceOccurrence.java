@@ -35,7 +35,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:grafeas.v1.ComplianceOccurrence)
     ComplianceOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComplianceOccurrence.newBuilder() to construct.
   private ComplianceOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,32 +70,27 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.NonCompliantFile> nonCompliantFiles_;
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   @java.lang.Override
   public java.util.List<io.grafeas.v1.NonCompliantFile> getNonCompliantFilesList() {
     return nonCompliantFiles_;
   }
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.NonCompliantFileOrBuilder>
       getNonCompliantFilesOrBuilderList() {
     return nonCompliantFiles_;
   }
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   @java.lang.Override
   public int getNonCompliantFilesCount() {
     return nonCompliantFiles_.size();
   }
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.NonCompliantFile getNonCompliantFiles(int index) {
     return nonCompliantFiles_.get(index);
   }
-
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.NonCompliantFileOrBuilder getNonCompliantFilesOrBuilder(int index) {
@@ -107,7 +101,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nonComplianceReason_ = "";
-
   /**
    * <code>string non_compliance_reason = 3;</code>
    *
@@ -125,7 +118,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    * <code>string non_compliance_reason = 3;</code>
    *
@@ -146,7 +138,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
 
   public static final int VERSION_FIELD_NUMBER = 4;
   private io.grafeas.v1.ComplianceVersion version_;
-
   /**
    *
    *
@@ -162,7 +153,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +168,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
   public io.grafeas.v1.ComplianceVersion getVersion() {
     return version_ == null ? io.grafeas.v1.ComplianceVersion.getDefaultInstance() : version_;
   }
-
   /**
    *
    *
@@ -376,7 +365,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -671,7 +659,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return nonCompliantFilesBuilder_.getMessageList();
       }
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public int getNonCompliantFilesCount() {
       if (nonCompliantFilesBuilder_ == null) {
@@ -680,7 +667,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return nonCompliantFilesBuilder_.getCount();
       }
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public io.grafeas.v1.NonCompliantFile getNonCompliantFiles(int index) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -689,7 +675,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return nonCompliantFilesBuilder_.getMessage(index);
       }
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder setNonCompliantFiles(int index, io.grafeas.v1.NonCompliantFile value) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -704,7 +689,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder setNonCompliantFiles(
         int index, io.grafeas.v1.NonCompliantFile.Builder builderForValue) {
@@ -717,7 +701,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder addNonCompliantFiles(io.grafeas.v1.NonCompliantFile value) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -732,7 +715,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder addNonCompliantFiles(int index, io.grafeas.v1.NonCompliantFile value) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -747,7 +729,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder addNonCompliantFiles(io.grafeas.v1.NonCompliantFile.Builder builderForValue) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -759,7 +740,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder addNonCompliantFiles(
         int index, io.grafeas.v1.NonCompliantFile.Builder builderForValue) {
@@ -772,7 +752,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder addAllNonCompliantFiles(
         java.lang.Iterable<? extends io.grafeas.v1.NonCompliantFile> values) {
@@ -785,7 +764,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder clearNonCompliantFiles() {
       if (nonCompliantFilesBuilder_ == null) {
@@ -797,7 +775,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public Builder removeNonCompliantFiles(int index) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -809,12 +786,10 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public io.grafeas.v1.NonCompliantFile.Builder getNonCompliantFilesBuilder(int index) {
       return getNonCompliantFilesFieldBuilder().getBuilder(index);
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public io.grafeas.v1.NonCompliantFileOrBuilder getNonCompliantFilesOrBuilder(int index) {
       if (nonCompliantFilesBuilder_ == null) {
@@ -823,7 +798,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return nonCompliantFilesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public java.util.List<? extends io.grafeas.v1.NonCompliantFileOrBuilder>
         getNonCompliantFilesOrBuilderList() {
@@ -833,19 +807,16 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(nonCompliantFiles_);
       }
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public io.grafeas.v1.NonCompliantFile.Builder addNonCompliantFilesBuilder() {
       return getNonCompliantFilesFieldBuilder()
           .addBuilder(io.grafeas.v1.NonCompliantFile.getDefaultInstance());
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public io.grafeas.v1.NonCompliantFile.Builder addNonCompliantFilesBuilder(int index) {
       return getNonCompliantFilesFieldBuilder()
           .addBuilder(index, io.grafeas.v1.NonCompliantFile.getDefaultInstance());
     }
-
     /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
     public java.util.List<io.grafeas.v1.NonCompliantFile.Builder>
         getNonCompliantFilesBuilderList() {
@@ -873,7 +844,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nonComplianceReason_ = "";
-
     /**
      * <code>string non_compliance_reason = 3;</code>
      *
@@ -890,7 +860,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string non_compliance_reason = 3;</code>
      *
@@ -907,7 +876,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string non_compliance_reason = 3;</code>
      *
@@ -923,7 +891,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      * <code>string non_compliance_reason = 3;</code>
      *
@@ -935,7 +902,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      * <code>string non_compliance_reason = 3;</code>
      *
@@ -959,7 +925,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
             io.grafeas.v1.ComplianceVersion.Builder,
             io.grafeas.v1.ComplianceVersionOrBuilder>
         versionBuilder_;
-
     /**
      *
      *
@@ -974,7 +939,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -993,7 +957,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return versionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1016,7 +979,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +998,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1025,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1044,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1058,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1116,7 +1074,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         return version_ == null ? io.grafeas.v1.ComplianceVersion.getDefaultInstance() : version_;
       }
     }
-
     /**
      *
      *

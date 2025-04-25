@@ -33,7 +33,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.EnrollSolutionRequest)
     EnrollSolutionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnrollSolutionRequest.newBuilder() to construct.
   private EnrollSolutionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
 
   public static final int SOLUTION_FIELD_NUMBER = 2;
   private int solution_ = 0;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
   public int getSolutionValue() {
     return solution_;
   }
-
   /**
    *
    *
@@ -336,7 +331,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -534,7 +528,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -560,7 +553,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int solution_ = 0;
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
     public int getSolutionValue() {
       return solution_;
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
           com.google.cloud.retail.v2alpha.SolutionType.forNumber(solution_);
       return result == null ? com.google.cloud.retail.v2alpha.SolutionType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class EnrollSolutionRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

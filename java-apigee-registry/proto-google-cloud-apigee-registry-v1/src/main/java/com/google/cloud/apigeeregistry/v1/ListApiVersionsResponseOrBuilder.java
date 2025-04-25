@@ -34,7 +34,6 @@ public interface ListApiVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiVersion api_versions = 1;</code>
    */
   java.util.List<com.google.cloud.apigeeregistry.v1.ApiVersion> getApiVersionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListApiVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiVersion api_versions = 1;</code>
    */
   com.google.cloud.apigeeregistry.v1.ApiVersion getApiVersions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListApiVersionsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiVersion api_versions = 1;</code>
    */
   int getApiVersionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListApiVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigeeregistry.v1.ApiVersionOrBuilder>
       getApiVersionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListApiVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

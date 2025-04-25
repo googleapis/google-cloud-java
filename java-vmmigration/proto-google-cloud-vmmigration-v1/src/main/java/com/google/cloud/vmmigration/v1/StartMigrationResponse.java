@@ -33,7 +33,6 @@ public final class StartMigrationResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.StartMigrationResponse)
     StartMigrationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartMigrationResponse.newBuilder() to construct.
   private StartMigrationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class StartMigrationResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The importer.
    */
   java.lang.String getImporter();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The syncer.
    */
   java.lang.String getSyncer();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The gitSync.
    */
   java.lang.String getGitSync();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The monitor.
    */
   java.lang.String getMonitor();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The reconcilerManager.
    */
   java.lang.String getReconcilerManager();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The rootReconciler.
    */
   java.lang.String getRootReconciler();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface ConfigSyncVersionOrBuilder
    * @return The admissionWebhook.
    */
   java.lang.String getAdmissionWebhook();
-
   /**
    *
    *

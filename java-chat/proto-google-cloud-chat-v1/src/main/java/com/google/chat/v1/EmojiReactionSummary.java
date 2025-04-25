@@ -33,7 +33,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.chat.v1.EmojiReactionSummary)
     EmojiReactionSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EmojiReactionSummary.newBuilder() to construct.
   private EmojiReactionSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int EMOJI_FIELD_NUMBER = 1;
   private com.google.chat.v1.Emoji emoji_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
   public boolean hasEmoji() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
   public com.google.chat.v1.Emoji getEmoji() {
     return emoji_ == null ? com.google.chat.v1.Emoji.getDefaultInstance() : emoji_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
 
   public static final int REACTION_COUNT_FIELD_NUMBER = 2;
   private int reactionCount_ = 0;
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
   public boolean hasReactionCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -541,7 +534,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
             com.google.chat.v1.Emoji.Builder,
             com.google.chat.v1.EmojiOrBuilder>
         emojiBuilder_;
-
     /**
      *
      *
@@ -556,7 +548,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
     public boolean hasEmoji() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -575,7 +566,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
         return emojiBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +607,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +634,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +653,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +667,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return getEmojiFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -698,7 +683,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
         return emoji_ == null ? com.google.chat.v1.Emoji.getDefaultInstance() : emoji_;
       }
     }
-
     /**
      *
      *
@@ -725,7 +709,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
     }
 
     private int reactionCount_;
-
     /**
      *
      *
@@ -741,7 +724,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
     public boolean hasReactionCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -757,7 +739,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
     public int getReactionCount() {
       return reactionCount_;
     }
-
     /**
      *
      *
@@ -777,7 +758,6 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

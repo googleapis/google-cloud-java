@@ -35,7 +35,6 @@ public interface ConsumableTrafficPolylineOrBuilder
    * <code>repeated .maps.fleetengine.v1.SpeedReadingInterval speed_reading_interval = 1;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.SpeedReadingInterval> getSpeedReadingIntervalList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ConsumableTrafficPolylineOrBuilder
    * <code>repeated .maps.fleetengine.v1.SpeedReadingInterval speed_reading_interval = 1;</code>
    */
   com.google.maps.fleetengine.v1.SpeedReadingInterval getSpeedReadingInterval(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ConsumableTrafficPolylineOrBuilder
    * <code>repeated .maps.fleetengine.v1.SpeedReadingInterval speed_reading_interval = 1;</code>
    */
   int getSpeedReadingIntervalCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ConsumableTrafficPolylineOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.SpeedReadingIntervalOrBuilder>
       getSpeedReadingIntervalOrBuilderList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface ConsumableTrafficPolylineOrBuilder
    * @return The encodedPathToWaypoint.
    */
   java.lang.String getEncodedPathToWaypoint();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface RouterAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RouterAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.RoutersScopedList&gt; items = 100526016;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -84,11 +81,9 @@ public interface RouterAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.RoutersScopedList&gt; items = 100526016;</code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.RoutersScopedList> getItems();
-
   /**
    *
    *
@@ -99,7 +94,6 @@ public interface RouterAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.RoutersScopedList&gt; items = 100526016;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.RoutersScopedList> getItemsMap();
-
   /**
    *
    *
@@ -114,7 +108,6 @@ public interface RouterAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.RoutersScopedList defaultValue);
-
   /**
    *
    *
@@ -138,7 +131,6 @@ public interface RouterAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -151,7 +143,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -177,7 +168,6 @@ public interface RouterAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -190,7 +180,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -216,7 +205,6 @@ public interface RouterAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -229,7 +217,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -255,7 +242,6 @@ public interface RouterAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -268,7 +254,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -282,7 +267,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -309,7 +293,6 @@ public interface RouterAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -322,7 +305,6 @@ public interface RouterAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

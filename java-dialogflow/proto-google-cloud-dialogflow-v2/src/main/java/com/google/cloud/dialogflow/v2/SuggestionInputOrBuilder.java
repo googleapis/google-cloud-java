@@ -41,7 +41,6 @@ public interface SuggestionInputOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
-
   /**
    *
    *

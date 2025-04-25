@@ -39,7 +39,6 @@ public interface AddControlRequestOrBuilder
    * @return The servingConfig.
    */
   java.lang.String getServingConfig();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface AddControlRequestOrBuilder
    * @return The controlId.
    */
   java.lang.String getControlId();
-
   /**
    *
    *

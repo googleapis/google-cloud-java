@@ -38,7 +38,6 @@ public interface AuxiliaryNodeGroupOrBuilder
    * @return Whether the nodeGroup field is set.
    */
   boolean hasNodeGroup();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AuxiliaryNodeGroupOrBuilder
    * @return The nodeGroup.
    */
   com.google.cloud.dataproc.v1.NodeGroup getNodeGroup();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface AuxiliaryNodeGroupOrBuilder
    * @return The nodeGroupId.
    */
   java.lang.String getNodeGroupId();
-
   /**
    *
    *

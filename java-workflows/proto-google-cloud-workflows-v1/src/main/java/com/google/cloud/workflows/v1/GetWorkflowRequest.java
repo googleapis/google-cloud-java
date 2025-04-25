@@ -34,7 +34,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.workflows.v1.GetWorkflowRequest)
     GetWorkflowRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetWorkflowRequest.newBuilder() to construct.
   private GetWorkflowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -354,7 +349,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -555,7 +549,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -581,7 +574,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +643,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object revisionId_ = "";
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

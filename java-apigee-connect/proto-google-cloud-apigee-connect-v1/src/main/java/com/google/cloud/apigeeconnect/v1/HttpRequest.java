@@ -33,7 +33,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeconnect.v1.HttpRequest)
     HttpRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpRequest.newBuilder() to construct.
   private HttpRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object method_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URL_FIELD_NUMBER = 3;
   private com.google.cloud.apigeeconnect.v1.Url url_;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUrl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apigeeconnect.v1.Url getUrl() {
     return url_ == null ? com.google.cloud.apigeeconnect.v1.Url.getDefaultInstance() : url_;
   }
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apigeeconnect.v1.Header> headers_;
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.apigeeconnect.v1.Header> getHeadersList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -258,7 +248,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       getHeadersOrBuilderList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -272,7 +261,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   public int getHeadersCount() {
     return headers_.size();
   }
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.apigeeconnect.v1.Header getHeaders(int index) {
     return headers_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +290,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BODY_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -522,7 +508,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -824,7 +809,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -870,7 +853,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +915,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object method_ = "";
-
     /**
      *
      *
@@ -959,7 +938,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1001,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1031,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apigeeconnect.v1.Url.Builder,
             com.google.cloud.apigeeconnect.v1.UrlOrBuilder>
         urlBuilder_;
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUrl() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1090,7 +1063,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return urlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1085,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1104,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1131,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1150,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1164,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUrlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1213,7 +1180,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return url_ == null ? com.google.cloud.apigeeconnect.v1.Url.getDefaultInstance() : url_;
       }
     }
-
     /**
      *
      *
@@ -1272,7 +1238,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1254,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1306,7 +1270,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1292,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1312,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1334,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1356,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1375,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1395,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1415,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1434,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1453,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1465,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.Header.Builder getHeadersBuilder(int index) {
       return getHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1528,7 +1481,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1546,7 +1498,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(headers_);
       }
     }
-
     /**
      *
      *
@@ -1560,7 +1511,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       return getHeadersFieldBuilder()
           .addBuilder(com.google.cloud.apigeeconnect.v1.Header.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1574,7 +1524,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       return getHeadersFieldBuilder()
           .addBuilder(index, com.google.cloud.apigeeconnect.v1.Header.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1607,7 +1556,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1623,7 +1571,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
-
     /**
      *
      *
@@ -1645,7 +1592,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

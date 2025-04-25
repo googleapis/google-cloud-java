@@ -43,7 +43,6 @@ public interface MinuteRangeOrBuilder
    * @return Whether the startMinutesAgo field is set.
    */
   boolean hasStartMinutesAgo();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface MinuteRangeOrBuilder
    * @return Whether the endMinutesAgo field is set.
    */
   boolean hasEndMinutesAgo();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface MinuteRangeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface GuestAttributesOrBuilder
    * @return The queryPath.
    */
   java.lang.String getQueryPath();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GuestAttributesOrBuilder
    * @return Whether the queryValue field is set.
    */
   boolean hasQueryValue();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GuestAttributesOrBuilder
    * @return The queryValue.
    */
   com.google.cloud.tpu.v2.GuestAttributesValue getQueryValue();
-
   /**
    *
    *

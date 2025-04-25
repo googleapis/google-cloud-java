@@ -45,7 +45,6 @@ public interface CustomConstraintOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CustomConstraintOrBuilder
    * @return A list containing the resourceTypes.
    */
   java.util.List<java.lang.String> getResourceTypesList();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CustomConstraintOrBuilder
    * @return The count of resourceTypes.
    */
   int getResourceTypesCount();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface CustomConstraintOrBuilder
    * @return The resourceTypes at the given index.
    */
   java.lang.String getResourceTypes(int index);
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface CustomConstraintOrBuilder
    */
   java.util.List<com.google.cloud.securityposture.v1.CustomConstraint.MethodType>
       getMethodTypesList();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface CustomConstraintOrBuilder
    * @return The count of methodTypes.
    */
   int getMethodTypesCount();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface CustomConstraintOrBuilder
    * @return The methodTypes at the given index.
    */
   com.google.cloud.securityposture.v1.CustomConstraint.MethodType getMethodTypes(int index);
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface CustomConstraintOrBuilder
    * @return A list containing the enum numeric values on the wire for methodTypes.
    */
   java.util.List<java.lang.Integer> getMethodTypesValueList();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface CustomConstraintOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface CustomConstraintOrBuilder
    * @return The enum numeric value on the wire for actionType.
    */
   int getActionTypeValue();
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public interface CustomConstraintOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public interface CustomConstraintOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public interface CustomConstraintOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -354,7 +341,6 @@ public interface CustomConstraintOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

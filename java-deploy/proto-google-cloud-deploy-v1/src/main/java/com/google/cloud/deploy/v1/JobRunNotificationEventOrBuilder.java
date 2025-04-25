@@ -36,7 +36,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The jobRun.
    */
   java.lang.String getJobRun();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The releaseUid.
    */
   java.lang.String getReleaseUid();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The release.
    */
   java.lang.String getRelease();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The rolloutUid.
    */
   java.lang.String getRolloutUid();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface JobRunNotificationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ViewEntity)
     ViewEntityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ViewEntity.newBuilder() to construct.
   private ViewEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sqlCode_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct customFeatures_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.ConstraintEntity> constraints_;
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.clouddms.v1.ConstraintEntity> getConstraintsList() {
     return constraints_;
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       getConstraintsOrBuilderList() {
     return constraints_;
   }
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
   public int getConstraintsCount() {
     return constraints_.size();
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.clouddms.v1.ConstraintEntity getConstraints(int index) {
     return constraints_.get(index);
   }
-
   /**
    *
    *
@@ -431,7 +420,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -706,7 +694,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sqlCode_ = "";
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return customFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +907,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +926,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -983,7 +958,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
             : customFeatures_;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1017,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1033,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1049,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1071,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1113,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1135,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1155,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1175,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1195,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1214,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1233,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1245,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.ConstraintEntity.Builder getConstraintsBuilder(int index) {
       return getConstraintsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1301,7 +1262,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return constraintsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1279,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(constraints_);
       }
     }
-
     /**
      *
      *
@@ -1333,7 +1292,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       return getConstraintsFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.ConstraintEntity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1347,7 +1305,6 @@ public final class ViewEntity extends com.google.protobuf.GeneratedMessageV3
       return getConstraintsFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.ConstraintEntity.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1.ListQuotaInfosResponse)
     ListQuotaInfosResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListQuotaInfosResponse.newBuilder() to construct.
   private ListQuotaInfosResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.cloudquotas.v1.QuotaInfo> quotaInfos_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.api.cloudquotas.v1.QuotaInfo> getQuotaInfosList() {
     return quotaInfos_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       getQuotaInfosOrBuilderList() {
     return quotaInfos_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
   public int getQuotaInfosCount() {
     return quotaInfos_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
   public com.google.api.cloudquotas.v1.QuotaInfo getQuotaInfos(int index) {
     return quotaInfos_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return quotaInfosBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return quotaInfosBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return quotaInfosBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
     public com.google.api.cloudquotas.v1.QuotaInfo.Builder getQuotaInfosBuilder(int index) {
       return getQuotaInfosFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return quotaInfosBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(quotaInfos_);
       }
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       return getQuotaInfosFieldBuilder()
           .addBuilder(com.google.api.cloudquotas.v1.QuotaInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -945,7 +920,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       return getQuotaInfosFieldBuilder()
           .addBuilder(index, com.google.api.cloudquotas.v1.QuotaInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -978,7 +952,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1002,7 +975,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1038,6 @@ public final class ListQuotaInfosResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

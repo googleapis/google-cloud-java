@@ -36,7 +36,6 @@ public interface PreviewOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for step.
    */
   int getStepValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PreviewOperationMetadataOrBuilder
    * @return Whether the previewArtifacts field is set.
    */
   boolean hasPreviewArtifacts();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PreviewOperationMetadataOrBuilder
    * @return The previewArtifacts.
    */
   com.google.cloud.config.v1.PreviewArtifacts getPreviewArtifacts();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface PreviewOperationMetadataOrBuilder
    * @return The logs.
    */
   java.lang.String getLogs();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface PreviewOperationMetadataOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
-
   /**
    *
    *

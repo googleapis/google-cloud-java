@@ -40,7 +40,6 @@ public interface SkuGroupConditionOrBuilder
    * @return The skuGroup.
    */
   java.lang.String getSkuGroup();
-
   /**
    *
    *

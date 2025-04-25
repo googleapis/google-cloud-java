@@ -38,7 +38,6 @@ public interface CoherenceInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CoherenceInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.CoherenceSpec getMetricSpec();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CoherenceInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface CoherenceInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1beta1.CoherenceInstance getInstance();
-
   /**
    *
    *

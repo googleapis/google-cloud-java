@@ -36,7 +36,6 @@ public interface MetadataFilterLabelMatchOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MetadataFilterLabelMatchOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface MetadataFilterLabelMatchOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface MetadataFilterLabelMatchOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

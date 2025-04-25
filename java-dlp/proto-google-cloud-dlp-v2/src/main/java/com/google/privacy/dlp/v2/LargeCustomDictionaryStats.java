@@ -33,7 +33,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.LargeCustomDictionaryStats)
     LargeCustomDictionaryStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LargeCustomDictionaryStats.newBuilder() to construct.
   private LargeCustomDictionaryStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
 
   public static final int APPROX_NUM_PHRASES_FIELD_NUMBER = 1;
   private long approxNumPhrases_ = 0L;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     private int bitField0_;
 
     private long approxNumPhrases_;
-
     /**
      *
      *
@@ -439,7 +435,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     public long getApproxNumPhrases() {
       return approxNumPhrases_;
     }
-
     /**
      *
      *
@@ -459,7 +454,6 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

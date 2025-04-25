@@ -39,7 +39,6 @@ public interface ListEnrolledSolutionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

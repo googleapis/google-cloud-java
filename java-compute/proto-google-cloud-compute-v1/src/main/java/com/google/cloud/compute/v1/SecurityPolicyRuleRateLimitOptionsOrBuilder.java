@@ -36,7 +36,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the banDurationSec field is set.
    */
   boolean hasBanDurationSec();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the banThreshold field is set.
    */
   boolean hasBanThreshold();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The banThreshold.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold getBanThreshold();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the conformAction field is set.
    */
   boolean hasConformAction();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The conformAction.
    */
   java.lang.String getConformAction();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the enforceOnKey field is set.
    */
   boolean hasEnforceOnKey();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The enforceOnKey.
    */
   java.lang.String getEnforceOnKey();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
       getEnforceOnKeyConfigsList();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
       getEnforceOnKeyConfigs(int index);
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * </code>
    */
   int getEnforceOnKeyConfigsCount();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>
       getEnforceOnKeyConfigsOrBuilderList();
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the enforceOnKeyName field is set.
    */
   boolean hasEnforceOnKeyName();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The enforceOnKeyName.
    */
   java.lang.String getEnforceOnKeyName();
-
   /**
    *
    *
@@ -298,7 +285,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the exceedAction field is set.
    */
   boolean hasExceedAction();
-
   /**
    *
    *
@@ -311,7 +297,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The exceedAction.
    */
   java.lang.String getExceedAction();
-
   /**
    *
    *
@@ -339,7 +324,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the exceedRedirectOptions field is set.
    */
   boolean hasExceedRedirectOptions();
-
   /**
    *
    *
@@ -354,7 +338,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The exceedRedirectOptions.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions getExceedRedirectOptions();
-
   /**
    *
    *
@@ -383,7 +366,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return Whether the rateLimitThreshold field is set.
    */
   boolean hasRateLimitThreshold();
-
   /**
    *
    *
@@ -398,7 +380,6 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    * @return The rateLimitThreshold.
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold getRateLimitThreshold();
-
   /**
    *
    *

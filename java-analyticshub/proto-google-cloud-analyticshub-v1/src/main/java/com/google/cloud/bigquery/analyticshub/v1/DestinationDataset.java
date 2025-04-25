@@ -33,7 +33,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.DestinationDataset)
     DestinationDatasetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DestinationDataset.newBuilder() to construct.
   private DestinationDataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int DATASET_REFERENCE_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference datasetReference_;
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   public boolean hasDatasetReference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference.getDefaultInstance()
         : datasetReference_;
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
 
   public static final int FRIENDLY_NAME_FIELD_NUMBER = 2;
   private com.google.protobuf.StringValue friendlyName_;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   public boolean hasFriendlyName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.StringValue.getDefaultInstance()
         : friendlyName_;
   }
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
   private com.google.protobuf.StringValue description_;
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.StringValue.getDefaultInstance()
         : description_;
   }
-
   /**
    *
    *
@@ -276,7 +266,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -297,14 +286,12 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -377,7 +362,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -403,7 +387,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -649,7 +632,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -954,7 +936,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReferenceOrBuilder>
         datasetReferenceBuilder_;
-
     /**
      *
      *
@@ -971,7 +952,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public boolean hasDatasetReference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -996,7 +976,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         return datasetReferenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1022,7 +1001,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1024,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1077,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1094,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDatasetReferenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1142,7 +1116,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             : datasetReference_;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1150,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         friendlyNameBuilder_;
-
     /**
      *
      *
@@ -1194,7 +1166,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public boolean hasFriendlyName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1217,7 +1188,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         return friendlyNameBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1212,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1233,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1262,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1283,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1299,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFriendlyNameFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1354,7 +1319,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             : friendlyName_;
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1353,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         descriptionBuilder_;
-
     /**
      *
      *
@@ -1405,7 +1368,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1427,7 +1389,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         return descriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1451,7 +1412,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1432,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1501,7 +1460,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1480,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1495,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDescriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1558,7 +1514,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             : description_;
       }
     }
-
     /**
      *
      *
@@ -1611,7 +1566,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1632,14 +1586,12 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1657,7 +1609,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1682,7 +1633,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1713,7 +1663,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1734,14 +1683,12 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1766,7 +1713,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1787,7 +1733,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1812,7 +1757,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1837,7 +1781,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1804,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1881,7 +1823,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

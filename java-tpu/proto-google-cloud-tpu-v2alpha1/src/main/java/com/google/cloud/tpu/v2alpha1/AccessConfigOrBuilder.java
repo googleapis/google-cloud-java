@@ -36,7 +36,6 @@ public interface AccessConfigOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The hostUri.
    */
   java.lang.String getHostUri();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The webhookSecretSecretVersion.
    */
   java.lang.String getWebhookSecretSecretVersion();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return Whether the readAuthorizerCredential field is set.
    */
   boolean hasReadAuthorizerCredential();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The readAuthorizerCredential.
    */
   com.google.cloudbuild.v2.UserCredential getReadAuthorizerCredential();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return Whether the authorizerCredential field is set.
    */
   boolean hasAuthorizerCredential();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The authorizerCredential.
    */
   com.google.cloudbuild.v2.UserCredential getAuthorizerCredential();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return Whether the serviceDirectoryConfig field is set.
    */
   boolean hasServiceDirectoryConfig();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The serviceDirectoryConfig.
    */
   com.google.cloudbuild.v2.ServiceDirectoryConfig getServiceDirectoryConfig();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The sslCa.
    */
   java.lang.String getSslCa();
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public interface BitbucketDataCenterConfigOrBuilder
    * @return The serverVersion.
    */
   java.lang.String getServerVersion();
-
   /**
    *
    *

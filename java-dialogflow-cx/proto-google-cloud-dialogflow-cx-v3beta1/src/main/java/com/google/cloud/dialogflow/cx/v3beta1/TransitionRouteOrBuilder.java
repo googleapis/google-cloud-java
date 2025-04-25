@@ -36,7 +36,6 @@ public interface TransitionRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface TransitionRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface TransitionRouteOrBuilder
    * @return The intent.
    */
   java.lang.String getIntent();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface TransitionRouteOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public interface TransitionRouteOrBuilder
    * @return Whether the triggerFulfillment field is set.
    */
   boolean hasTriggerFulfillment();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface TransitionRouteOrBuilder
    * @return The triggerFulfillment.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Fulfillment getTriggerFulfillment();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface TransitionRouteOrBuilder
    * @return Whether the targetPage field is set.
    */
   boolean hasTargetPage();
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public interface TransitionRouteOrBuilder
    * @return The targetPage.
    */
   java.lang.String getTargetPage();
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public interface TransitionRouteOrBuilder
    * @return Whether the targetFlow field is set.
    */
   boolean hasTargetFlow();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface TransitionRouteOrBuilder
    * @return The targetFlow.
    */
   java.lang.String getTargetFlow();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ManagementConfigOrBuilder
    * @return Whether the standardManagementConfig field is set.
    */
   boolean hasStandardManagementConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ManagementConfigOrBuilder
    * @return The standardManagementConfig.
    */
   com.google.cloud.telcoautomation.v1.StandardManagementConfig getStandardManagementConfig();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ManagementConfigOrBuilder
    * @return Whether the fullManagementConfig field is set.
    */
   boolean hasFullManagementConfig();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ManagementConfigOrBuilder
    * @return The fullManagementConfig.
    */
   com.google.cloud.telcoautomation.v1.FullManagementConfig getFullManagementConfig();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.FaceRecognitionParams)
     FaceRecognitionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FaceRecognitionParams.newBuilder() to construct.
   private FaceRecognitionParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList celebritySet_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getCelebritySetList() {
     return celebritySet_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   public int getCelebritySetCount() {
     return celebritySet_.size();
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   public java.lang.String getCelebritySet(int index) {
     return celebritySet_.get(index);
   }
-
   /**
    *
    *
@@ -315,7 +310,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -515,7 +509,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       celebritySet_.makeImmutable();
       return celebritySet_;
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public int getCelebritySetCount() {
       return celebritySet_.size();
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public java.lang.String getCelebritySet(int index) {
       return celebritySet_.get(index);
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getCelebritySetBytes(int index) {
       return celebritySet_.getByteString(index);
     }
-
     /**
      *
      *
@@ -622,7 +611,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +637,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +660,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +682,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

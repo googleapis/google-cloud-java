@@ -38,7 +38,6 @@ public interface ContinuousBackupSourceOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ContinuousBackupSourceOrBuilder
    * @return Whether the pointInTime field is set.
    */
   boolean hasPointInTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ContinuousBackupSourceOrBuilder
    * @return The pointInTime.
    */
   com.google.protobuf.Timestamp getPointInTime();
-
   /**
    *
    *

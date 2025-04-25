@@ -36,7 +36,6 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.TensorboardTimeSeries>
       getTensorboardTimeSeriesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.TensorboardTimeSeries getTensorboardTimeSeries(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    * </code>
    */
   int getTensorboardTimeSeriesCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TensorboardTimeSeriesOrBuilder>
       getTensorboardTimeSeriesOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

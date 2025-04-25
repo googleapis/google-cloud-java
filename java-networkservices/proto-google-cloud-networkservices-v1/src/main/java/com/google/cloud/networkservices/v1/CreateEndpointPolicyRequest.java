@@ -33,7 +33,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.CreateEndpointPolicyRequest)
     CreateEndpointPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEndpointPolicyRequest.newBuilder() to construct.
   private CreateEndpointPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpointPolicyId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
 
   public static final int ENDPOINT_POLICY_FIELD_NUMBER = 3;
   private com.google.cloud.networkservices.v1.EndpointPolicy endpointPolicy_;
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
   public boolean hasEndpointPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.networkservices.v1.EndpointPolicy.getDefaultInstance()
         : endpointPolicy_;
   }
-
   /**
    *
    *
@@ -422,7 +414,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +741,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object endpointPolicyId_ = "";
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +884,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
             com.google.cloud.networkservices.v1.EndpointPolicy.Builder,
             com.google.cloud.networkservices.v1.EndpointPolicyOrBuilder>
         endpointPolicyBuilder_;
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
     public boolean hasEndpointPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
         return endpointPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +998,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1035,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
       onChanged();
       return getEndpointPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1083,7 +1056,6 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
             : endpointPolicy_;
       }
     }
-
     /**
      *
      *

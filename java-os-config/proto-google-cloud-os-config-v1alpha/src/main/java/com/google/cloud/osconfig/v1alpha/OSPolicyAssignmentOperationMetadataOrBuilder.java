@@ -39,7 +39,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return The osPolicyAssignment.
    */
   java.lang.String getOsPolicyAssignment();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for apiMethod.
    */
   int getApiMethodValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for rolloutState.
    */
   int getRolloutStateValue();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return Whether the rolloutStartTime field is set.
    */
   boolean hasRolloutStartTime();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return The rolloutStartTime.
    */
   com.google.protobuf.Timestamp getRolloutStartTime();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return Whether the rolloutUpdateTime field is set.
    */
   boolean hasRolloutUpdateTime();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    * @return The rolloutUpdateTime.
    */
   com.google.protobuf.Timestamp getRolloutUpdateTime();
-
   /**
    *
    *

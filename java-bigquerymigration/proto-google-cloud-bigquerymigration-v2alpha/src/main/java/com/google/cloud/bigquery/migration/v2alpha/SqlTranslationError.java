@@ -33,7 +33,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.SqlTranslationError)
     SqlTranslationErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SqlTranslationError.newBuilder() to construct.
   private SqlTranslationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
      * <code>SQL_TRANSLATION_ERROR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SQL_TRANSLATION_ERROR_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
      * <code>SQL_PARSE_ERROR = 1;</code>
      */
     public static final int SQL_PARSE_ERROR_VALUE = 1;
-
     /**
      *
      *
@@ -234,7 +231,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int ERROR_TYPE_FIELD_NUMBER = 1;
   private int errorType_ = 0;
-
   /**
    *
    *
@@ -252,7 +248,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
   public int getErrorTypeValue() {
     return errorType_;
   }
-
   /**
    *
    *
@@ -280,7 +275,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
 
   public static final int ERROR_DETAIL_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetail errorDetail_;
-
   /**
    *
    *
@@ -298,7 +292,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
   public boolean hasErrorDetail() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -318,7 +311,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetail.getDefaultInstance()
         : errorDetail_;
   }
-
   /**
    *
    *
@@ -518,7 +510,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -735,7 +726,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int errorType_ = 0;
-
     /**
      *
      *
@@ -753,7 +743,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
     public int getErrorTypeValue() {
       return errorType_;
     }
-
     /**
      *
      *
@@ -774,7 +763,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +788,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -826,7 +813,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +839,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
             com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetail.Builder,
             com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetailOrBuilder>
         errorDetailBuilder_;
-
     /**
      *
      *
@@ -870,7 +855,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
     public boolean hasErrorDetail() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -894,7 +878,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
         return errorDetailBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -920,7 +903,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +926,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +996,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
       onChanged();
       return getErrorDetailFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class SqlTranslationError extends com.google.protobuf.GeneratedMess
             : errorDetail_;
       }
     }
-
     /**
      *
      *

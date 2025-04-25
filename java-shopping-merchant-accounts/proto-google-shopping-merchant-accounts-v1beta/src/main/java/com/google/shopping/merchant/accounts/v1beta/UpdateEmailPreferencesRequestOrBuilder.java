@@ -38,7 +38,6 @@ public interface UpdateEmailPreferencesRequestOrBuilder
    * @return Whether the emailPreferences field is set.
    */
   boolean hasEmailPreferences();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateEmailPreferencesRequestOrBuilder
    * @return The emailPreferences.
    */
   com.google.shopping.merchant.accounts.v1beta.EmailPreferences getEmailPreferences();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateEmailPreferencesRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface UpdateEmailPreferencesRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.ResponseMetadata)
     ResponseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResponseMetadata.newBuilder() to construct.
   private ResponseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object error_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int HEADERS_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct headers_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   public boolean hasHeaders() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Struct getHeaders() {
     return headers_ == null ? com.google.protobuf.Struct.getDefaultInstance() : headers_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusCode_ = "";
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 4;
   private int sizeBytes_ = 0;
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int DURATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration duration_;
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object body_ = "";
-
   /**
    *
    *
@@ -318,7 +305,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -557,7 +543,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -833,7 +818,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object error_ = "";
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +862,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +900,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +929,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         headersBuilder_;
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public boolean hasHeaders() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return headersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1062,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getHeadersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1106,7 +1078,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return headers_ == null ? com.google.protobuf.Struct.getDefaultInstance() : headers_;
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object statusCode_ = "";
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1149,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1202,7 +1170,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1187,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1211,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private int sizeBytes_;
-
     /**
      *
      *
@@ -1261,7 +1226,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public int getSizeBytes() {
       return sizeBytes_;
     }
-
     /**
      *
      *
@@ -1281,7 +1245,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1269,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
-
     /**
      *
      *
@@ -1321,7 +1283,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1340,7 +1301,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return durationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1363,7 +1323,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1342,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1369,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1388,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1402,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1463,7 +1418,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
-
     /**
      *
      *
@@ -1491,7 +1445,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object body_ = "";
-
     /**
      *
      *
@@ -1514,7 +1467,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1537,7 +1489,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1559,7 +1510,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1577,7 +1527,6 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

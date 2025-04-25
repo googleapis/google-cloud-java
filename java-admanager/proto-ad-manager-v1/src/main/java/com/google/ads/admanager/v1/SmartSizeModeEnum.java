@@ -34,7 +34,6 @@ public final class SmartSizeModeEnum extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.SmartSizeModeEnum)
     SmartSizeModeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SmartSizeModeEnum.newBuilder() to construct.
   private SmartSizeModeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class SmartSizeModeEnum extends com.google.protobuf.GeneratedMessag
      * <code>SMART_SIZE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int SMART_SIZE_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class SmartSizeModeEnum extends com.google.protobuf.GeneratedMessag
      * <code>NONE = 1;</code>
      */
     public static final int NONE_VALUE = 1;
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class SmartSizeModeEnum extends com.google.protobuf.GeneratedMessag
      * <code>SMART_BANNER = 2;</code>
      */
     public static final int SMART_BANNER_VALUE = 2;
-
     /**
      *
      *
@@ -396,7 +392,6 @@ public final class SmartSizeModeEnum extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

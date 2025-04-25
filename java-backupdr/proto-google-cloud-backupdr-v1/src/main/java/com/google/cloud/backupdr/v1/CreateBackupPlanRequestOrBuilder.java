@@ -40,7 +40,6 @@ public interface CreateBackupPlanRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateBackupPlanRequestOrBuilder
    * @return The backupPlanId.
    */
   java.lang.String getBackupPlanId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CreateBackupPlanRequestOrBuilder
    * @return Whether the backupPlan field is set.
    */
   boolean hasBackupPlan();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateBackupPlanRequestOrBuilder
    * @return The backupPlan.
    */
   com.google.cloud.backupdr.v1.BackupPlan getBackupPlan();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface CreateBackupPlanRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

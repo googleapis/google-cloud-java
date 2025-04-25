@@ -34,7 +34,6 @@ public interface ListLunsResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.Lun luns = 1;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.Lun> getLunsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListLunsResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.Lun luns = 1;</code>
    */
   com.google.cloud.baremetalsolution.v2.Lun getLuns(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListLunsResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.Lun luns = 1;</code>
    */
   int getLunsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListLunsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.LunOrBuilder>
       getLunsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListLunsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListLunsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListLunsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListLunsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

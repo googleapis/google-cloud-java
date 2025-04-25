@@ -34,7 +34,6 @@ public interface PostgresqlRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlSchema postgresql_schemas = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.PostgresqlSchema> getPostgresqlSchemasList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface PostgresqlRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlSchema postgresql_schemas = 1;</code>
    */
   com.google.cloud.datastream.v1.PostgresqlSchema getPostgresqlSchemas(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface PostgresqlRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlSchema postgresql_schemas = 1;</code>
    */
   int getPostgresqlSchemasCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface PostgresqlRdbmsOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.PostgresqlSchemaOrBuilder>
       getPostgresqlSchemasOrBuilderList();
-
   /**
    *
    *

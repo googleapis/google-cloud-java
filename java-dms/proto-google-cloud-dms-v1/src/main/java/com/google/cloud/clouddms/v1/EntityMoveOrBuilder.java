@@ -36,7 +36,6 @@ public interface EntityMoveOrBuilder
    * @return The newSchema.
    */
   java.lang.String getNewSchema();
-
   /**
    *
    *

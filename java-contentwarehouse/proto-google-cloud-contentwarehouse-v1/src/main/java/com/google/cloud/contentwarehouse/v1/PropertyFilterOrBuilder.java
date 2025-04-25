@@ -39,7 +39,6 @@ public interface PropertyFilterOrBuilder
    * @return The documentSchemaName.
    */
   java.lang.String getDocumentSchemaName();
-
   /**
    *
    *
@@ -109,7 +108,6 @@ public interface PropertyFilterOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *

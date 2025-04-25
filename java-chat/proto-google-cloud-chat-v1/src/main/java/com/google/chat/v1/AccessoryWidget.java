@@ -35,7 +35,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.chat.v1.AccessoryWidget)
     AccessoryWidgetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessoryWidget.newBuilder() to construct.
   private AccessoryWidget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
     private ActionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,7 +110,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BUTTON_LIST_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
   public boolean hasButtonList() {
     return actionCase_ == 1;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.apps.card.v1.ButtonList.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +550,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
             com.google.apps.card.v1.ButtonList.Builder,
             com.google.apps.card.v1.ButtonListOrBuilder>
         buttonListBuilder_;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
     public boolean hasButtonList() {
       return actionCase_ == 1;
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
         return com.google.apps.card.v1.ButtonList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
       actionCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
       actionCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
       actionCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
     public com.google.apps.card.v1.ButtonList.Builder getButtonListBuilder() {
       return getButtonListFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
         return com.google.apps.card.v1.ButtonList.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringQualityInput)
     QuestionAnsweringQualityInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuestionAnsweringQualityInput.newBuilder() to construct.
   private QuestionAnsweringQualityInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.QuestionAnsweringQualitySpec metricSpec_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
         ? com.google.cloud.aiplatform.v1.QuestionAnsweringQualitySpec.getDefaultInstance()
         : metricSpec_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.QuestionAnsweringQualityInstance instance_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
         ? com.google.cloud.aiplatform.v1.QuestionAnsweringQualityInstance.getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -362,7 +355,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +580,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1.QuestionAnsweringQualitySpec.Builder,
             com.google.cloud.aiplatform.v1.QuestionAnsweringQualitySpecOrBuilder>
         metricSpecBuilder_;
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
         return metricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
             : metricSpec_;
       }
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1.QuestionAnsweringQualityInstance.Builder,
             com.google.cloud.aiplatform.v1.QuestionAnsweringQualityInstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +907,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +928,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +945,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -991,7 +966,6 @@ public final class QuestionAnsweringQualityInput extends com.google.protobuf.Gen
             : instance_;
       }
     }
-
     /**
      *
      *

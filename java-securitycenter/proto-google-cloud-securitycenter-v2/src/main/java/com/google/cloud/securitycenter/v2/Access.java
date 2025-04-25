@@ -33,7 +33,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Access)
     AccessOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Access.newBuilder() to construct.
   private Access(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object principalEmail_ = "";
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object callerIp_ = "";
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CALLER_IP_GEO_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v2.Geolocation callerIpGeo_;
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCallerIpGeo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.Geolocation.getDefaultInstance()
         : callerIpGeo_;
   }
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userAgentFamily_ = "";
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userAgent_ = "";
-
   /**
    *
    *
@@ -330,7 +319,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -359,7 +347,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
-
   /**
    *
    *
@@ -384,7 +371,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -414,7 +400,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object methodName_ = "";
-
   /**
    *
    *
@@ -438,7 +423,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -467,7 +451,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object principalSubject_ = "";
-
   /**
    *
    *
@@ -498,7 +481,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -534,7 +516,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountKeyName_ = "";
-
   /**
    *
    *
@@ -562,7 +543,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +576,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.ServiceAccountDelegationInfo>
       serviceAccountDelegationInfo_;
-
   /**
    *
    *
@@ -618,7 +597,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       getServiceAccountDelegationInfoList() {
     return serviceAccountDelegationInfo_;
   }
-
   /**
    *
    *
@@ -641,7 +619,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       getServiceAccountDelegationInfoOrBuilderList() {
     return serviceAccountDelegationInfo_;
   }
-
   /**
    *
    *
@@ -662,7 +639,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
   public int getServiceAccountDelegationInfoCount() {
     return serviceAccountDelegationInfo_.size();
   }
-
   /**
    *
    *
@@ -684,7 +660,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       getServiceAccountDelegationInfo(int index) {
     return serviceAccountDelegationInfo_.get(index);
   }
-
   /**
    *
    *
@@ -711,7 +686,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userName_ = "";
-
   /**
    *
    *
@@ -738,7 +712,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1025,7 +998,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1423,7 +1395,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object principalEmail_ = "";
-
     /**
      *
      *
@@ -1453,7 +1424,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1483,7 +1453,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1481,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1537,7 +1505,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1536,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object callerIp_ = "";
-
     /**
      *
      *
@@ -1592,7 +1558,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1615,7 +1580,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1637,7 +1601,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1618,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1685,7 +1647,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.Geolocation.Builder,
             com.google.cloud.securitycenter.v2.GeolocationOrBuilder>
         callerIpGeoBuilder_;
-
     /**
      *
      *
@@ -1700,7 +1661,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCallerIpGeo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1721,7 +1681,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return callerIpGeoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1744,7 +1703,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1765,7 +1723,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1794,7 +1751,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1814,7 +1770,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1784,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCallerIpGeoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1848,7 +1802,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
             : callerIpGeo_;
       }
     }
-
     /**
      *
      *
@@ -1876,7 +1829,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userAgentFamily_ = "";
-
     /**
      *
      *
@@ -1900,7 +1852,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1924,7 +1875,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1947,7 +1897,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1966,7 +1915,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1992,7 +1940,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userAgent_ = "";
-
     /**
      *
      *
@@ -2015,7 +1962,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2038,7 +1984,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2060,7 +2005,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2078,7 +2022,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2046,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceName_ = "";
-
     /**
      *
      *
@@ -2127,7 +2069,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2151,7 +2092,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2174,7 +2114,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2193,7 +2132,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2219,7 +2157,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object methodName_ = "";
-
     /**
      *
      *
@@ -2242,7 +2179,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2265,7 +2201,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2287,7 +2222,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2239,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2330,7 +2263,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object principalSubject_ = "";
-
     /**
      *
      *
@@ -2360,7 +2292,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2390,7 +2321,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2419,7 +2349,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2444,7 +2373,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2476,7 +2404,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccountKeyName_ = "";
-
     /**
      *
      *
@@ -2503,7 +2430,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2530,7 +2456,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2556,7 +2481,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2578,7 +2502,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2649,7 +2572,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountDelegationInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2673,7 +2595,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountDelegationInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2698,7 +2619,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountDelegationInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2729,7 +2649,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2758,7 +2677,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2789,7 +2707,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2820,7 +2737,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2848,7 +2764,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2877,7 +2792,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2908,7 +2822,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2935,7 +2848,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2962,7 +2874,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2983,7 +2894,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         getServiceAccountDelegationInfoBuilder(int index) {
       return getServiceAccountDelegationInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3008,7 +2918,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountDelegationInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3034,7 +2943,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
       }
     }
-
     /**
      *
      *
@@ -3057,7 +2965,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.securitycenter.v2.ServiceAccountDelegationInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3081,7 +2988,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.securitycenter.v2.ServiceAccountDelegationInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3124,7 +3030,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userName_ = "";
-
     /**
      *
      *
@@ -3150,7 +3055,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3176,7 +3080,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3201,7 +3104,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3222,7 +3124,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

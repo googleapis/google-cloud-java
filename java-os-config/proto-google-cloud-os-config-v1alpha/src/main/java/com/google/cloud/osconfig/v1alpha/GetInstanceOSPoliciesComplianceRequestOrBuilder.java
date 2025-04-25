@@ -47,7 +47,6 @@ public interface GetInstanceOSPoliciesComplianceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

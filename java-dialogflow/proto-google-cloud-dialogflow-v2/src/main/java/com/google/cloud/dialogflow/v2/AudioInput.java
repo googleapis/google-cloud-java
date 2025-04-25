@@ -33,7 +33,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AudioInput)
     AudioInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AudioInput.newBuilder() to construct.
   private AudioInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.InputAudioConfig config_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2.InputAudioConfig.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUDIO_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString audio_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -319,7 +314,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -535,7 +529,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2.InputAudioConfig.Builder,
             com.google.cloud.dialogflow.v2.InputAudioConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -552,7 +545,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString audio_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -762,7 +746,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAudio() {
       return audio_;
     }
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

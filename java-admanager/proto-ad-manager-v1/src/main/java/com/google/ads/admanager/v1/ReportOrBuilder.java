@@ -38,7 +38,6 @@ public interface ReportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface ReportOrBuilder
    * @return The enum numeric value on the wire for visibility.
    */
   int getVisibilityValue();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface ReportOrBuilder
    * @return Whether the reportDefinition field is set.
    */
   boolean hasReportDefinition();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface ReportOrBuilder
    * @return The reportDefinition.
    */
   com.google.ads.admanager.v1.ReportDefinition getReportDefinition();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface ReportOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface ReportOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface ReportOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface ReportOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface ReportOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public interface ReportOrBuilder
    * @return The locale.
    */
   java.lang.String getLocale();
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public interface ReportOrBuilder
    * @return Whether the scheduleOptions field is set.
    */
   boolean hasScheduleOptions();
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public interface ReportOrBuilder
    * @return The scheduleOptions.
    */
   com.google.ads.admanager.v1.ScheduleOptions getScheduleOptions();
-
   /**
    *
    *

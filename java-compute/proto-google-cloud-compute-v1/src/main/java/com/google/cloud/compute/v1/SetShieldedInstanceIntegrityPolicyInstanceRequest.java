@@ -34,7 +34,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest)
     SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder() to construct.
   private SetShieldedInstanceIntegrityPolicyInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
   public static final int SHIELDED_INSTANCE_INTEGRITY_POLICY_RESOURCE_FIELD_NUMBER = 409169462;
   private com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy
       shieldedInstanceIntegrityPolicyResource_;
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
   public boolean hasShieldedInstanceIntegrityPolicyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         ? com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.getDefaultInstance()
         : shieldedInstanceIntegrityPolicyResource_;
   }
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -586,7 +573,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -864,7 +850,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -887,7 +872,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +894,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -932,7 +915,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +956,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1000,7 +980,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1004,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1027,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1046,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1072,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1111,7 +1086,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1134,7 +1108,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1130,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
             com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.Builder,
             com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicyOrBuilder>
         shieldedInstanceIntegrityPolicyResourceBuilder_;
-
     /**
      *
      *
@@ -1245,7 +1214,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     public boolean hasShieldedInstanceIntegrityPolicyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1269,7 +1237,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return shieldedInstanceIntegrityPolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1284,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1316,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1337,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1354,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return getShieldedInstanceIntegrityPolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1413,7 +1375,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
             : shieldedInstanceIntegrityPolicyResource_;
       }
     }
-
     /**
      *
      *
@@ -1443,7 +1404,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1468,7 +1428,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1493,7 +1452,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1475,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1537,7 +1494,6 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

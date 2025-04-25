@@ -33,7 +33,6 @@ public final class DeployIndexResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeployIndexResponse)
     DeployIndexResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployIndexResponse.newBuilder() to construct.
   private DeployIndexResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class DeployIndexResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

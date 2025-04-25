@@ -34,7 +34,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.TrafficSplit)
     TrafficSplitOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrafficSplit.newBuilder() to construct.
   private TrafficSplit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,7 +143,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -156,7 +154,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
      * <code>COOKIE = 1;</code>
      */
     public static final int COOKIE_VALUE = 1;
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
      * <code>IP = 2;</code>
      */
     public static final int IP_VALUE = 2;
-
     /**
      *
      *
@@ -269,7 +265,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHARD_BY_FIELD_NUMBER = 1;
   private int shardBy_ = 0;
-
   /**
    *
    *
@@ -287,7 +282,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
   public int getShardByValue() {
     return shardBy_;
   }
-
   /**
    *
    *
@@ -335,7 +329,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
   public int getAllocationsCount() {
     return internalGetAllocations().getMap().size();
   }
-
   /**
    *
    *
@@ -359,14 +352,12 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAllocations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAllocationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Double> getAllocations() {
     return getAllocationsMap();
   }
-
   /**
    *
    *
@@ -387,7 +378,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Double> getAllocationsMap() {
     return internalGetAllocations().getMap();
   }
-
   /**
    *
    *
@@ -412,7 +402,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetAllocations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -615,7 +604,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -838,7 +826,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int shardBy_ = 0;
-
     /**
      *
      *
@@ -856,7 +843,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     public int getShardByValue() {
       return shardBy_;
     }
-
     /**
      *
      *
@@ -877,7 +863,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +882,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
           com.google.appengine.v1.TrafficSplit.ShardBy.forNumber(shardBy_);
       return result == null ? com.google.appengine.v1.TrafficSplit.ShardBy.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -921,7 +905,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +953,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     public int getAllocationsCount() {
       return internalGetAllocations().getMap().size();
     }
-
     /**
      *
      *
@@ -994,14 +976,12 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAllocations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAllocationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getAllocations() {
       return getAllocationsMap();
     }
-
     /**
      *
      *
@@ -1022,7 +1002,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Double> getAllocationsMap() {
       return internalGetAllocations().getMap();
     }
-
     /**
      *
      *
@@ -1047,7 +1026,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetAllocations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1081,7 +1059,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAllocations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1105,14 +1082,12 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAllocations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getMutableAllocations() {
       bitField0_ |= 0x00000002;
       return internalGetMutableAllocations().getMutableMap();
     }
-
     /**
      *
      *
@@ -1138,7 +1113,6 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

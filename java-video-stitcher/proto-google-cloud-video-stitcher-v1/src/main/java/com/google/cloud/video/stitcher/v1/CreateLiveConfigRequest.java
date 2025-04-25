@@ -33,7 +33,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.CreateLiveConfigRequest)
     CreateLiveConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateLiveConfigRequest.newBuilder() to construct.
   private CreateLiveConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object liveConfigId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
 
   public static final int LIVE_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.video.stitcher.v1.LiveConfig liveConfig_;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
   public boolean hasLiveConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         ? com.google.cloud.video.stitcher.v1.LiveConfig.getDefaultInstance()
         : liveConfig_;
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +740,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -777,7 +765,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +790,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +814,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +834,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object liveConfigId_ = "";
-
     /**
      *
      *
@@ -900,7 +883,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +905,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -945,7 +926,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +943,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
             com.google.cloud.video.stitcher.v1.LiveConfig.Builder,
             com.google.cloud.video.stitcher.v1.LiveConfigOrBuilder>
         liveConfigBuilder_;
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
     public boolean hasLiveConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1033,7 +1010,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return liveConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1034,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1056,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1085,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1106,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1122,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return getLiveConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
             : liveConfig_;
       }
     }
-
     /**
      *
      *
@@ -1201,7 +1171,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1236,7 +1205,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1271,7 +1239,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1272,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1301,6 @@ public final class CreateLiveConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

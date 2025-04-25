@@ -240,19 +240,6 @@ public final class EvaluationServiceGrpc {
     return EvaluationServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static EvaluationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public EvaluationServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new EvaluationServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return EvaluationServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -470,85 +457,6 @@ public final class EvaluationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EvaluationService.
-   *
-   * <pre>
-   * Service for managing
-   * [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation]s,
-   * </pre>
-   */
-  public static final class EvaluationServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<EvaluationServiceBlockingV2Stub> {
-    private EvaluationServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected EvaluationServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new EvaluationServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation].
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1alpha.Evaluation getEvaluation(
-        com.google.cloud.discoveryengine.v1alpha.GetEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetEvaluationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a list of
-     * [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation]s.
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1alpha.ListEvaluationsResponse listEvaluations(
-        com.google.cloud.discoveryengine.v1alpha.ListEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEvaluationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation].
-     * Upon creation, the evaluation will be automatically triggered and begin
-     * execution.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createEvaluation(
-        com.google.cloud.discoveryengine.v1alpha.CreateEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateEvaluationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a list of results for a given a
-     * [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation].
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1alpha.ListEvaluationResultsResponse
-        listEvaluationResults(
-            com.google.cloud.discoveryengine.v1alpha.ListEvaluationResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEvaluationResultsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service EvaluationService.
    *
    * <pre>
    * Service for managing

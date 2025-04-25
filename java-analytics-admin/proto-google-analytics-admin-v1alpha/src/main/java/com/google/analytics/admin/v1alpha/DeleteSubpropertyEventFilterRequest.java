@@ -34,7 +34,6 @@ public final class DeleteSubpropertyEventFilterRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest)
     DeleteSubpropertyEventFilterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteSubpropertyEventFilterRequest.newBuilder() to construct.
   private DeleteSubpropertyEventFilterRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DeleteSubpropertyEventFilterRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DeleteSubpropertyEventFilterRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -290,7 +287,6 @@ public final class DeleteSubpropertyEventFilterRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +479,6 @@ public final class DeleteSubpropertyEventFilterRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -511,7 +506,6 @@ public final class DeleteSubpropertyEventFilterRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -539,7 +533,6 @@ public final class DeleteSubpropertyEventFilterRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -566,7 +559,6 @@ public final class DeleteSubpropertyEventFilterRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class DeleteSubpropertyEventFilterRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

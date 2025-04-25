@@ -72,7 +72,6 @@ public enum PermissionPatternMatchingState implements com.google.protobuf.Protoc
    * <code>PERMISSION_PATTERN_MATCHING_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int PERMISSION_PATTERN_MATCHING_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum PermissionPatternMatchingState implements com.google.protobuf.Protoc
    * <code>PERMISSION_PATTERN_MATCHED = 1;</code>
    */
   public static final int PERMISSION_PATTERN_MATCHED_VALUE = 1;
-
   /**
    *
    *

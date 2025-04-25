@@ -40,7 +40,6 @@ public interface CancelNasJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ContactOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *

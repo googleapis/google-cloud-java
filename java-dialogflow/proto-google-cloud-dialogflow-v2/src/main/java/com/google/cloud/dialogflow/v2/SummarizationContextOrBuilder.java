@@ -38,7 +38,6 @@ public interface SummarizationContextOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2.SummarizationSection>
       getSummarizationSectionsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface SummarizationContextOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.SummarizationSection getSummarizationSections(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface SummarizationContextOrBuilder
    * </code>
    */
   int getSummarizationSectionsCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface SummarizationContextOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SummarizationSectionOrBuilder>
       getSummarizationSectionsOrBuilderList();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface SummarizationContextOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.FewShotExample> getFewShotExamplesList();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface SummarizationContextOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.FewShotExample getFewShotExamples(int index);
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface SummarizationContextOrBuilder
    * </code>
    */
   int getFewShotExamplesCount();
-
   /**
    *
    *
@@ -149,7 +142,6 @@ public interface SummarizationContextOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.FewShotExampleOrBuilder>
       getFewShotExamplesOrBuilderList();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface SummarizationContextOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface SummarizationContextOrBuilder
    * @return The outputLanguageCode.
    */
   java.lang.String getOutputLanguageCode();
-
   /**
    *
    *

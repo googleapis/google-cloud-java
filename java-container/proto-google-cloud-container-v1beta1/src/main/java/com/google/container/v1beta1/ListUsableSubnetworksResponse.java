@@ -34,7 +34,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ListUsableSubnetworksResponse)
     ListUsableSubnetworksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListUsableSubnetworksResponse.newBuilder() to construct.
   private ListUsableSubnetworksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.UsableSubnetwork> subnetworks_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.container.v1beta1.UsableSubnetwork> getSubnetworksList() {
     return subnetworks_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       getSubnetworksOrBuilderList() {
     return subnetworks_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
   public int getSubnetworksCount() {
     return subnetworks_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
   public com.google.container.v1beta1.UsableSubnetwork getSubnetworks(int index) {
     return subnetworks_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return subnetworksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return subnetworksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return subnetworksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
     public com.google.container.v1beta1.UsableSubnetwork.Builder getSubnetworksBuilder(int index) {
       return getSubnetworksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return subnetworksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(subnetworks_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       return getSubnetworksFieldBuilder()
           .addBuilder(com.google.container.v1beta1.UsableSubnetwork.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       return getSubnetworksFieldBuilder()
           .addBuilder(index, com.google.container.v1beta1.UsableSubnetwork.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1014,7 +987,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1036,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1056,6 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

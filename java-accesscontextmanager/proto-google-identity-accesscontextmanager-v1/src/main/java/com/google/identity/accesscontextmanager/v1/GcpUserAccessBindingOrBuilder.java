@@ -40,7 +40,6 @@ public interface GcpUserAccessBindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface GcpUserAccessBindingOrBuilder
    * @return The groupKey.
    */
   java.lang.String getGroupKey();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface GcpUserAccessBindingOrBuilder
    * @return A list containing the accessLevels.
    */
   java.util.List<java.lang.String> getAccessLevelsList();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface GcpUserAccessBindingOrBuilder
    * @return The count of accessLevels.
    */
   int getAccessLevelsCount();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface GcpUserAccessBindingOrBuilder
    * @return The accessLevels at the given index.
    */
   java.lang.String getAccessLevels(int index);
-
   /**
    *
    *

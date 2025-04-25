@@ -33,7 +33,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.TelephonyDtmfEvents)
     TelephonyDtmfEventsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TelephonyDtmfEvents.newBuilder() to construct.
   private TelephonyDtmfEvents(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.cloud.dialogflow.v2.TelephonyDtmf>(
         dtmfEvents_, dtmfEvents_converter_);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
   public int getDtmfEventsCount() {
     return dtmfEvents_.size();
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dialogflow.v2.TelephonyDtmf getDtmfEvents(int index) {
     return dtmfEvents_converter_.convert(dtmfEvents_.get(index));
   }
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getDtmfEventsValueList() {
     return dtmfEvents_;
   }
-
   /**
    *
    *
@@ -344,7 +338,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -562,7 +555,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -579,7 +571,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.cloud.dialogflow.v2.TelephonyDtmf>(
           dtmfEvents_, dtmfEvents_converter_);
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     public int getDtmfEventsCount() {
       return dtmfEvents_.size();
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2.TelephonyDtmf getDtmfEvents(int index) {
       return dtmfEvents_converter_.convert(dtmfEvents_.get(index));
     }
-
     /**
      *
      *
@@ -633,7 +622,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +664,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +681,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +695,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getDtmfEventsValueList() {
       return java.util.Collections.unmodifiableList(dtmfEvents_);
     }
-
     /**
      *
      *
@@ -726,7 +710,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     public int getDtmfEventsValue(int index) {
       return dtmfEvents_.get(index);
     }
-
     /**
      *
      *
@@ -746,7 +729,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +747,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

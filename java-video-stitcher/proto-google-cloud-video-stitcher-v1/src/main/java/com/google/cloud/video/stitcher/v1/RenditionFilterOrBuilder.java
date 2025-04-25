@@ -51,7 +51,6 @@ public interface RenditionFilterOrBuilder
    * @return The codecs.
    */
   java.lang.String getCodecs();
-
   /**
    *
    *

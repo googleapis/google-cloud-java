@@ -33,7 +33,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.EntityIdSelector)
     EntityIdSelectorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EntityIdSelector.newBuilder() to construct.
   private EntityIdSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     private EntityIdsSourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,7 +110,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CSV_SOURCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
   public boolean hasCsvSource() {
     return entityIdsSourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityIdField_ = "";
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -403,7 +396,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -637,7 +629,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.CsvSource.Builder,
             com.google.cloud.aiplatform.v1beta1.CsvSourceOrBuilder>
         csvSourceBuilder_;
-
     /**
      *
      *
@@ -653,7 +644,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     public boolean hasCsvSource() {
       return entityIdsSourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       entityIdsSourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       entityIdsSourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       entityIdsSourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.CsvSource.Builder getCsvSourceBuilder() {
       return getCsvSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.CsvSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object entityIdField_ = "";
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

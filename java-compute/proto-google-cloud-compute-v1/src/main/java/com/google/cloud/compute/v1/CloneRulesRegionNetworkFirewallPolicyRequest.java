@@ -34,7 +34,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CloneRulesRegionNetworkFirewallPolicyRequest)
     CloneRulesRegionNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloneRulesRegionNetworkFirewallPolicyRequest.newBuilder() to construct.
   private CloneRulesRegionNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceFirewallPolicy_ = "";
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
   public boolean hasSourceFirewallPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -351,7 +339,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -585,7 +572,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -844,7 +830,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
-
     /**
      *
      *
@@ -867,7 +852,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +895,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +912,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +936,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1007,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1026,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1052,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1101,7 +1076,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1123,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1142,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1235,7 +1204,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1258,7 +1226,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1247,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1264,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1288,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object sourceFirewallPolicy_ = "";
-
     /**
      *
      *
@@ -1338,7 +1302,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
     public boolean hasSourceFirewallPolicy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1361,7 +1324,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1384,7 +1346,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1367,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1384,6 @@ public final class CloneRulesRegionNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

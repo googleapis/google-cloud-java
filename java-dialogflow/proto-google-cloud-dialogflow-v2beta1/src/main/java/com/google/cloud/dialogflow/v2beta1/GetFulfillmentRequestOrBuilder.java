@@ -42,7 +42,6 @@ public interface GetFulfillmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

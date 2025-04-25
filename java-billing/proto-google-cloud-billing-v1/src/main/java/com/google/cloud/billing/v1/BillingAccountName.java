@@ -227,8 +227,7 @@ public class BillingAccountName implements ResourceName {
     private Builder(BillingAccountName billingAccountName) {
       Preconditions.checkArgument(
           Objects.equals(billingAccountName.pathTemplate, BILLING_ACCOUNT),
-          "toBuilder is only supported when BillingAccountName has the pattern of"
-              + " billingAccounts/{billing_account}");
+          "toBuilder is only supported when BillingAccountName has the pattern of billingAccounts/{billing_account}");
       this.billingAccount = billingAccountName.billingAccount;
     }
 

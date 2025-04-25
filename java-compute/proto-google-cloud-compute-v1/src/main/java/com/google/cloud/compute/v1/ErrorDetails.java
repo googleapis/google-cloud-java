@@ -32,7 +32,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ErrorDetails)
     ErrorDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ErrorDetails.newBuilder() to construct.
   private ErrorDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ERROR_INFO_FIELD_NUMBER = 25251973;
   private com.google.cloud.compute.v1.ErrorInfo errorInfo_;
-
   /**
    * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
    *
@@ -74,7 +72,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
    *
@@ -86,7 +83,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.ErrorInfo.getDefaultInstance()
         : errorInfo_;
   }
-
   /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.ErrorInfoOrBuilder getErrorInfoOrBuilder() {
@@ -97,7 +93,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HELP_FIELD_NUMBER = 3198785;
   private com.google.cloud.compute.v1.Help help_;
-
   /**
    * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
    *
@@ -107,7 +102,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHelp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
    *
@@ -117,7 +111,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Help getHelp() {
     return help_ == null ? com.google.cloud.compute.v1.Help.getDefaultInstance() : help_;
   }
-
   /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.HelpOrBuilder getHelpOrBuilder() {
@@ -126,7 +119,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCALIZED_MESSAGE_FIELD_NUMBER = 404537155;
   private com.google.cloud.compute.v1.LocalizedMessage localizedMessage_;
-
   /**
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    *
@@ -136,7 +128,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocalizedMessage() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    *
@@ -148,7 +139,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.LocalizedMessage.getDefaultInstance()
         : localizedMessage_;
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    */
@@ -161,7 +151,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUOTA_INFO_FIELD_NUMBER = 93923861;
   private com.google.cloud.compute.v1.QuotaExceededInfo quotaInfo_;
-
   /**
    * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
    *
@@ -171,7 +160,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuotaInfo() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
    *
@@ -183,7 +171,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()
         : quotaInfo_;
   }
-
   /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder getQuotaInfoOrBuilder() {
@@ -399,7 +386,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +646,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.ErrorInfo.Builder,
             com.google.cloud.compute.v1.ErrorInfoOrBuilder>
         errorInfoBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
      *
@@ -669,7 +654,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
      *
@@ -684,7 +668,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         return errorInfoBuilder_.getMessage();
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public Builder setErrorInfo(com.google.cloud.compute.v1.ErrorInfo value) {
       if (errorInfoBuilder_ == null) {
@@ -699,7 +682,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public Builder setErrorInfo(com.google.cloud.compute.v1.ErrorInfo.Builder builderForValue) {
       if (errorInfoBuilder_ == null) {
@@ -711,7 +693,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public Builder mergeErrorInfo(com.google.cloud.compute.v1.ErrorInfo value) {
       if (errorInfoBuilder_ == null) {
@@ -731,7 +712,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public Builder clearErrorInfo() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -743,14 +723,12 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public com.google.cloud.compute.v1.ErrorInfo.Builder getErrorInfoBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getErrorInfoFieldBuilder().getBuilder();
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     public com.google.cloud.compute.v1.ErrorInfoOrBuilder getErrorInfoOrBuilder() {
       if (errorInfoBuilder_ != null) {
@@ -761,7 +739,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             : errorInfo_;
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ErrorInfo,
@@ -786,7 +763,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Help.Builder,
             com.google.cloud.compute.v1.HelpOrBuilder>
         helpBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
      *
@@ -795,7 +771,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHelp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
      *
@@ -808,7 +783,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         return helpBuilder_.getMessage();
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public Builder setHelp(com.google.cloud.compute.v1.Help value) {
       if (helpBuilder_ == null) {
@@ -823,7 +797,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public Builder setHelp(com.google.cloud.compute.v1.Help.Builder builderForValue) {
       if (helpBuilder_ == null) {
@@ -835,7 +808,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public Builder mergeHelp(com.google.cloud.compute.v1.Help value) {
       if (helpBuilder_ == null) {
@@ -855,7 +827,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public Builder clearHelp() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -867,14 +838,12 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public com.google.cloud.compute.v1.Help.Builder getHelpBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getHelpFieldBuilder().getBuilder();
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     public com.google.cloud.compute.v1.HelpOrBuilder getHelpOrBuilder() {
       if (helpBuilder_ != null) {
@@ -883,7 +852,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         return help_ == null ? com.google.cloud.compute.v1.Help.getDefaultInstance() : help_;
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Help,
@@ -908,7 +876,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.LocalizedMessage.Builder,
             com.google.cloud.compute.v1.LocalizedMessageOrBuilder>
         localizedMessageBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -918,7 +885,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocalizedMessage() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -934,7 +900,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         return localizedMessageBuilder_.getMessage();
       }
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -952,7 +917,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -968,7 +932,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -992,7 +955,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -1007,7 +969,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -1017,7 +978,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocalizedMessageFieldBuilder().getBuilder();
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -1031,7 +991,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             : localizedMessage_;
       }
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;
      * </code>
@@ -1059,7 +1018,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.QuotaExceededInfo.Builder,
             com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder>
         quotaInfoBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
      *
@@ -1068,7 +1026,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuotaInfo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
      *
@@ -1083,7 +1040,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         return quotaInfoBuilder_.getMessage();
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public Builder setQuotaInfo(com.google.cloud.compute.v1.QuotaExceededInfo value) {
       if (quotaInfoBuilder_ == null) {
@@ -1098,7 +1054,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public Builder setQuotaInfo(
         com.google.cloud.compute.v1.QuotaExceededInfo.Builder builderForValue) {
@@ -1111,7 +1066,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public Builder mergeQuotaInfo(com.google.cloud.compute.v1.QuotaExceededInfo value) {
       if (quotaInfoBuilder_ == null) {
@@ -1131,7 +1085,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public Builder clearQuotaInfo() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1143,14 +1096,12 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public com.google.cloud.compute.v1.QuotaExceededInfo.Builder getQuotaInfoBuilder() {
       bitField0_ |= 0x00000008;
       onChanged();
       return getQuotaInfoFieldBuilder().getBuilder();
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     public com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder getQuotaInfoOrBuilder() {
       if (quotaInfoBuilder_ != null) {
@@ -1161,7 +1112,6 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
             : quotaInfo_;
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.QuotaExceededInfo,

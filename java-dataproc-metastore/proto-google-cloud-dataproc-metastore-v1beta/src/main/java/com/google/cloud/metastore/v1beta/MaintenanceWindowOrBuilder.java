@@ -36,7 +36,6 @@ public interface MaintenanceWindowOrBuilder
    * @return Whether the hourOfDay field is set.
    */
   boolean hasHourOfDay();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The hourOfDay.
    */
   com.google.protobuf.Int32Value getHourOfDay();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The enum numeric value on the wire for dayOfWeek.
    */
   int getDayOfWeekValue();
-
   /**
    *
    *

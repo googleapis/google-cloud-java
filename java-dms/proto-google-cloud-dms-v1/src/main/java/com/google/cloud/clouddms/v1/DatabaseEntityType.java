@@ -202,7 +202,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -213,7 +212,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_SCHEMA = 1;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_SCHEMA_VALUE = 1;
-
   /**
    *
    *
@@ -224,7 +222,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_TABLE = 2;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_TABLE_VALUE = 2;
-
   /**
    *
    *
@@ -235,7 +232,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_COLUMN = 3;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_COLUMN_VALUE = 3;
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_CONSTRAINT = 4;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_CONSTRAINT_VALUE = 4;
-
   /**
    *
    *
@@ -257,7 +252,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_INDEX = 5;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_INDEX_VALUE = 5;
-
   /**
    *
    *
@@ -268,7 +262,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_TRIGGER = 6;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_TRIGGER_VALUE = 6;
-
   /**
    *
    *
@@ -279,7 +272,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_VIEW = 7;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_VIEW_VALUE = 7;
-
   /**
    *
    *
@@ -290,7 +282,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_SEQUENCE = 8;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_SEQUENCE_VALUE = 8;
-
   /**
    *
    *
@@ -301,7 +292,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_STORED_PROCEDURE = 9;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_STORED_PROCEDURE_VALUE = 9;
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_FUNCTION = 10;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_FUNCTION_VALUE = 10;
-
   /**
    *
    *
@@ -323,7 +312,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_SYNONYM = 11;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_SYNONYM_VALUE = 11;
-
   /**
    *
    *
@@ -334,7 +322,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_DATABASE_PACKAGE = 12;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_DATABASE_PACKAGE_VALUE = 12;
-
   /**
    *
    *
@@ -345,7 +332,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_UDT = 13;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_UDT_VALUE = 13;
-
   /**
    *
    *
@@ -356,7 +342,6 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_TYPE_MATERIALIZED_VIEW = 14;</code>
    */
   public static final int DATABASE_ENTITY_TYPE_MATERIALIZED_VIEW_VALUE = 14;
-
   /**
    *
    *

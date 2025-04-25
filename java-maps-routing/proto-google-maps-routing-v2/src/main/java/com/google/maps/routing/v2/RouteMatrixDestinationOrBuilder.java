@@ -37,7 +37,6 @@ public interface RouteMatrixDestinationOrBuilder
    * @return Whether the waypoint field is set.
    */
   boolean hasWaypoint();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RouteMatrixDestinationOrBuilder
    * @return The waypoint.
    */
   com.google.maps.routing.v2.Waypoint getWaypoint();
-
   /**
    *
    *

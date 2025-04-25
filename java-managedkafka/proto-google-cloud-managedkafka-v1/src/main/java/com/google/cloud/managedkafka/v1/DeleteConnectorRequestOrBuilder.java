@@ -40,7 +40,6 @@ public interface DeleteConnectorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

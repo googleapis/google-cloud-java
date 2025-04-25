@@ -38,7 +38,6 @@ public interface UpdateConversationRequestOrBuilder
    * @return Whether the conversation field is set.
    */
   boolean hasConversation();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateConversationRequestOrBuilder
    * @return The conversation.
    */
   com.google.cloud.discoveryengine.v1.Conversation getConversation();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateConversationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateConversationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

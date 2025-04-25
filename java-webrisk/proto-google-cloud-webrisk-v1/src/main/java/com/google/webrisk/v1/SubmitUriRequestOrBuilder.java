@@ -39,7 +39,6 @@ public interface SubmitUriRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SubmitUriRequestOrBuilder
    * @return Whether the submission field is set.
    */
   boolean hasSubmission();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SubmitUriRequestOrBuilder
    * @return The submission.
    */
   com.google.webrisk.v1.Submission getSubmission();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SubmitUriRequestOrBuilder
    * @return Whether the threatInfo field is set.
    */
   boolean hasThreatInfo();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface SubmitUriRequestOrBuilder
    * @return The threatInfo.
    */
   com.google.webrisk.v1.ThreatInfo getThreatInfo();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface SubmitUriRequestOrBuilder
    * @return Whether the threatDiscovery field is set.
    */
   boolean hasThreatDiscovery();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface SubmitUriRequestOrBuilder
    * @return The threatDiscovery.
    */
   com.google.webrisk.v1.ThreatDiscovery getThreatDiscovery();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata)
     PipelineTemplateMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PipelineTemplateMetadata.newBuilder() to construct.
   private PipelineTemplateMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -292,7 +289,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +479,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -512,7 +507,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -541,7 +535,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -569,7 +562,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface DeletePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeletePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface DeletePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface DeletePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    * @return Whether the regionInstanceGroupManagerDeleteInstanceConfigReqResource field is set.
    */
   boolean hasRegionInstanceGroupManagerDeleteInstanceConfigReqResource();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface DeletePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq
       getRegionInstanceGroupManagerDeleteInstanceConfigReqResource();
-
   /**
    *
    *

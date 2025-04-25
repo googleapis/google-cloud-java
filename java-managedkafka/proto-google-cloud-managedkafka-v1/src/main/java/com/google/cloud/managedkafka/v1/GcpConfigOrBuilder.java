@@ -38,7 +38,6 @@ public interface GcpConfigOrBuilder
    * @return Whether the accessConfig field is set.
    */
   boolean hasAccessConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GcpConfigOrBuilder
    * @return The accessConfig.
    */
   com.google.cloud.managedkafka.v1.AccessConfig getAccessConfig();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface GcpConfigOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *

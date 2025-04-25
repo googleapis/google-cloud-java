@@ -171,22 +171,6 @@ public final class TermsOfServiceAgreementStateServiceGrpc {
     return TermsOfServiceAgreementStateServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TermsOfServiceAgreementStateServiceBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TermsOfServiceAgreementStateServiceBlockingV2Stub>
-        factory =
-            new io.grpc.stub.AbstractStub.StubFactory<
-                TermsOfServiceAgreementStateServiceBlockingV2Stub>() {
-              @java.lang.Override
-              public TermsOfServiceAgreementStateServiceBlockingV2Stub newStub(
-                  io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-                return new TermsOfServiceAgreementStateServiceBlockingV2Stub(channel, callOptions);
-              }
-            };
-    return TermsOfServiceAgreementStateServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -342,62 +326,6 @@ public final class TermsOfServiceAgreementStateServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
-   * TermsOfServiceAgreementStateService.
-   *
-   * <pre>
-   * Service to support `TermsOfServiceAgreementState` API.
-   * </pre>
-   */
-  public static final class TermsOfServiceAgreementStateServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TermsOfServiceAgreementStateServiceBlockingV2Stub> {
-    private TermsOfServiceAgreementStateServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TermsOfServiceAgreementStateServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TermsOfServiceAgreementStateServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the state of a terms of service agreement.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementState
-        getTermsOfServiceAgreementState(
-            com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceAgreementStateRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetTermsOfServiceAgreementStateMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the state of the agreement for the application terms of service.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementState
-        retrieveForApplicationTermsOfServiceAgreementState(
-            com.google.shopping.merchant.accounts.v1beta
-                    .RetrieveForApplicationTermsOfServiceAgreementStateRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(),
-          getRetrieveForApplicationTermsOfServiceAgreementStateMethod(),
-          getCallOptions(),
-          request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
    * TermsOfServiceAgreementStateService.
    *
    * <pre>

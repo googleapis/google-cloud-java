@@ -36,7 +36,6 @@ public interface IntegerArrayOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.Integer> getValuesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface IntegerArrayOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
-
   /**
    *
    *

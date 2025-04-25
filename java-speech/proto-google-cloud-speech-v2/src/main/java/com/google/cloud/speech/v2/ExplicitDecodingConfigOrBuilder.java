@@ -38,7 +38,6 @@ public interface ExplicitDecodingConfigOrBuilder
    * @return The enum numeric value on the wire for encoding.
    */
   int getEncodingValue();
-
   /**
    *
    *

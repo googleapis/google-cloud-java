@@ -33,7 +33,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo)
     PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PacketMirroringMirroredResourceInfoSubnetInfo.newBuilder() to construct.
   private PacketMirroringMirroredResourceInfoSubnetInfo(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object canonicalUrl_ = "";
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
   public boolean hasCanonicalUrl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object url_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
   public boolean hasUrl() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +380,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -601,7 +593,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
     private int bitField0_;
 
     private java.lang.Object canonicalUrl_ = "";
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
     public boolean hasCanonicalUrl() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +713,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
     }
 
     private java.lang.Object url_ = "";
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
     public boolean hasUrl() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +792,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class PacketMirroringMirroredResourceInfoSubnetInfo
       onChanged();
       return this;
     }
-
     /**
      *
      *

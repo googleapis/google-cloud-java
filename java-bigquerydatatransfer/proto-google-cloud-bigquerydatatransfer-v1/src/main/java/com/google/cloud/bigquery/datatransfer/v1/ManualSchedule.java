@@ -33,7 +33,6 @@ public final class ManualSchedule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ManualSchedule)
     ManualScheduleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManualSchedule.newBuilder() to construct.
   private ManualSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ManualSchedule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

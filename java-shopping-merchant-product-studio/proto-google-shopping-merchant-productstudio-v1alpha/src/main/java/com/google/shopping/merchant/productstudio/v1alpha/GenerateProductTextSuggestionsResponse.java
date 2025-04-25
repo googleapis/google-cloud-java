@@ -35,7 +35,6 @@ public final class GenerateProductTextSuggestionsResponse
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.productstudio.v1alpha.GenerateProductTextSuggestionsResponse)
     GenerateProductTextSuggestionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateProductTextSuggestionsResponse.newBuilder() to construct.
   private GenerateProductTextSuggestionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,7 +81,6 @@ public final class GenerateProductTextSuggestionsResponse
   private int bitField0_;
   public static final int TITLE_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationSuggestion title_;
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GenerateProductTextSuggestionsResponse
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class GenerateProductTextSuggestionsResponse
             .getDefaultInstance()
         : title_;
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class GenerateProductTextSuggestionsResponse
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationSuggestion
       description_;
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class GenerateProductTextSuggestionsResponse
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class GenerateProductTextSuggestionsResponse
             .getDefaultInstance()
         : description_;
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class GenerateProductTextSuggestionsResponse
   public int getAttributesCount() {
     return internalGetAttributes().getMap().size();
   }
-
   /**
    *
    *
@@ -250,14 +242,12 @@ public final class GenerateProductTextSuggestionsResponse
     }
     return internalGetAttributes().getMap().containsKey(key);
   }
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
   }
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class GenerateProductTextSuggestionsResponse
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public final class GenerateProductTextSuggestionsResponse
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public final class GenerateProductTextSuggestionsResponse
   public static final int METADATA_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationMetadata
       metadata_;
-
   /**
    *
    *
@@ -335,7 +322,6 @@ public final class GenerateProductTextSuggestionsResponse
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -357,7 +343,6 @@ public final class GenerateProductTextSuggestionsResponse
             .getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -613,7 +598,6 @@ public final class GenerateProductTextSuggestionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -923,7 +907,6 @@ public final class GenerateProductTextSuggestionsResponse
             com.google.shopping.merchant.productstudio.v1alpha
                 .ProductTextGenerationSuggestionOrBuilder>
         titleBuilder_;
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class GenerateProductTextSuggestionsResponse
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -965,7 +947,6 @@ public final class GenerateProductTextSuggestionsResponse
         return titleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -991,7 +972,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +995,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1027,6 @@ public final class GenerateProductTextSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1048,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1066,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return getTitleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1113,7 +1089,6 @@ public final class GenerateProductTextSuggestionsResponse
             : title_;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1130,6 @@ public final class GenerateProductTextSuggestionsResponse
             com.google.shopping.merchant.productstudio.v1alpha
                 .ProductTextGenerationSuggestionOrBuilder>
         descriptionBuilder_;
-
     /**
      *
      *
@@ -1172,7 +1146,6 @@ public final class GenerateProductTextSuggestionsResponse
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1197,7 +1170,6 @@ public final class GenerateProductTextSuggestionsResponse
         return descriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1195,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1218,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1250,6 @@ public final class GenerateProductTextSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1271,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1289,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return getDescriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class GenerateProductTextSuggestionsResponse
             : description_;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1372,6 @@ public final class GenerateProductTextSuggestionsResponse
     public int getAttributesCount() {
       return internalGetAttributes().getMap().size();
     }
-
     /**
      *
      *
@@ -1423,14 +1388,12 @@ public final class GenerateProductTextSuggestionsResponse
       }
       return internalGetAttributes().getMap().containsKey(key);
     }
-
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
     }
-
     /**
      *
      *
@@ -1444,7 +1407,6 @@ public final class GenerateProductTextSuggestionsResponse
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
-
     /**
      *
      *
@@ -1465,7 +1427,6 @@ public final class GenerateProductTextSuggestionsResponse
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1492,7 +1453,6 @@ public final class GenerateProductTextSuggestionsResponse
       internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1509,14 +1469,12 @@ public final class GenerateProductTextSuggestionsResponse
       internalGetMutableAttributes().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
       bitField0_ |= 0x00000004;
       return internalGetMutableAttributes().getMutableMap();
     }
-
     /**
      *
      *
@@ -1537,7 +1495,6 @@ public final class GenerateProductTextSuggestionsResponse
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1562,7 +1519,6 @@ public final class GenerateProductTextSuggestionsResponse
             com.google.shopping.merchant.productstudio.v1alpha
                 .ProductTextGenerationMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1579,7 +1535,6 @@ public final class GenerateProductTextSuggestionsResponse
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1604,7 +1559,6 @@ public final class GenerateProductTextSuggestionsResponse
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1630,7 +1584,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1654,7 +1607,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1639,6 @@ public final class GenerateProductTextSuggestionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1709,7 +1660,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1677,6 @@ public final class GenerateProductTextSuggestionsResponse
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1750,7 +1699,6 @@ public final class GenerateProductTextSuggestionsResponse
             : metadata_;
       }
     }
-
     /**
      *
      *

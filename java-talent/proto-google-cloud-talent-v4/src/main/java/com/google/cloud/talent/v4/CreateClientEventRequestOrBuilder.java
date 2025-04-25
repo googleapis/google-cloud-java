@@ -41,7 +41,6 @@ public interface CreateClientEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateClientEventRequestOrBuilder
    * @return Whether the clientEvent field is set.
    */
   boolean hasClientEvent();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateClientEventRequestOrBuilder
    * @return The clientEvent.
    */
   com.google.cloud.talent.v4.ClientEvent getClientEvent();
-
   /**
    *
    *

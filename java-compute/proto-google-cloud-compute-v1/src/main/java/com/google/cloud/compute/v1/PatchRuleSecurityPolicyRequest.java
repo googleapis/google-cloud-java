@@ -33,7 +33,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRuleSecurityPolicyRequest)
     PatchRuleSecurityPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchRuleSecurityPolicyRequest.newBuilder() to construct.
   private PatchRuleSecurityPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object securityPolicy_ = "";
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   public static final int SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER = 402693443;
   private com.google.cloud.compute.v1.SecurityPolicyRule securityPolicyRuleResource_;
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
   public boolean hasSecurityPolicyRuleResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance()
         : securityPolicyRuleResource_;
   }
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object updateMask_ = "";
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -344,7 +331,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 242744629;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -360,7 +346,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
   public boolean hasValidateOnly() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -605,7 +590,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -882,7 +866,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private int priority_;
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -934,7 +915,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -979,7 +958,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1004,7 +982,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1005,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1050,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object securityPolicy_ = "";
-
     /**
      *
      *
@@ -1098,7 +1072,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1094,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1115,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1161,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.SecurityPolicyRule.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>
         securityPolicyRuleResourceBuilder_;
-
     /**
      *
      *
@@ -1208,7 +1177,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public boolean hasSecurityPolicyRuleResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1231,7 +1199,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return securityPolicyRuleResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1224,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1246,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1277,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1298,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1315,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return getSecurityPolicyRuleResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1374,7 +1336,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
             : securityPolicyRuleResource_;
       }
     }
-
     /**
      *
      *
@@ -1404,7 +1365,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object updateMask_ = "";
-
     /**
      *
      *
@@ -1419,7 +1379,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1442,7 +1401,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1423,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1487,7 +1444,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1461,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1530,7 +1485,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1546,7 +1500,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public boolean hasValidateOnly() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1562,7 +1515,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1582,7 +1534,6 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

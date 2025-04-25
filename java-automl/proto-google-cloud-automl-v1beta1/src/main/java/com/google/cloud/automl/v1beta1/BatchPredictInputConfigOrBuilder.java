@@ -36,7 +36,6 @@ public interface BatchPredictInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BatchPredictInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.automl.v1beta1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface BatchPredictInputConfigOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface BatchPredictInputConfigOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource();
-
   /**
    *
    *

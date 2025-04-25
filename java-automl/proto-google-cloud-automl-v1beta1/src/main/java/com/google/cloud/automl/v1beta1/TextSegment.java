@@ -33,7 +33,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TextSegment)
     TextSegmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextSegment.newBuilder() to construct.
   private TextSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_OFFSET_FIELD_NUMBER = 1;
   private long startOffset_ = 0L;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_OFFSET_FIELD_NUMBER = 2;
   private long endOffset_ = 0L;
-
   /**
    *
    *
@@ -335,7 +330,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -545,7 +539,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object content_ = "";
-
     /**
      *
      *
@@ -568,7 +561,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -591,7 +583,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long startOffset_;
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public long getStartOffset() {
       return startOffset_;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long endOffset_;
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public long getEndOffset() {
       return endOffset_;
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

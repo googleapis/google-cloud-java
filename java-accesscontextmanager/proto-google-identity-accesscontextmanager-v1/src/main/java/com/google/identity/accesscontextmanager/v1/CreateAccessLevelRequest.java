@@ -33,7 +33,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.CreateAccessLevelRequest)
     CreateAccessLevelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAccessLevelRequest.newBuilder() to construct.
   private CreateAccessLevelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
 
   public static final int ACCESS_LEVEL_FIELD_NUMBER = 2;
   private com.google.identity.accesscontextmanager.v1.AccessLevel accessLevel_;
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
   public boolean hasAccessLevel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
         ? com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance()
         : accessLevel_;
   }
-
   /**
    *
    *
@@ -375,7 +369,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -597,7 +590,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -625,7 +617,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -653,7 +644,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
             com.google.identity.accesscontextmanager.v1.AccessLevel.Builder,
             com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>
         accessLevelBuilder_;
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
     public boolean hasAccessLevel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
         return accessLevelBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +826,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +885,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +905,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
       onChanged();
       return getAccessLevelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class CreateAccessLevelRequest extends com.google.protobuf.Generate
             : accessLevel_;
       }
     }
-
     /**
      *
      *

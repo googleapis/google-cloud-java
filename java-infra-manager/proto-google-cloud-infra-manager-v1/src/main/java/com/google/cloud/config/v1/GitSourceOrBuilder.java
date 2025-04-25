@@ -37,7 +37,6 @@ public interface GitSourceOrBuilder
    * @return Whether the repo field is set.
    */
   boolean hasRepo();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface GitSourceOrBuilder
    * @return The repo.
    */
   java.lang.String getRepo();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GitSourceOrBuilder
    * @return Whether the directory field is set.
    */
   boolean hasDirectory();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface GitSourceOrBuilder
    * @return The directory.
    */
   java.lang.String getDirectory();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface GitSourceOrBuilder
    * @return Whether the ref field is set.
    */
   boolean hasRef();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface GitSourceOrBuilder
    * @return The ref.
    */
   java.lang.String getRef();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface UserIdOrBuilder
    * @return Whether the email field is set.
    */
   boolean hasEmail();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UserIdOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface UserIdOrBuilder
    * @return Whether the phoneNumber field is set.
    */
   boolean hasPhoneNumber();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface UserIdOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface UserIdOrBuilder
    * @return Whether the username field is set.
    */
   boolean hasUsername();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface UserIdOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *

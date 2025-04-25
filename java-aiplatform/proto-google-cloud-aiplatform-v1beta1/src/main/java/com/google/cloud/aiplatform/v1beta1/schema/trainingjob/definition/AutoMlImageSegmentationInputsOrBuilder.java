@@ -33,7 +33,6 @@ public interface AutoMlImageSegmentationInputsOrBuilder
    * @return The enum numeric value on the wire for modelType.
    */
   int getModelTypeValue();
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -86,7 +85,6 @@ public interface AutoMlImageSegmentationInputsOrBuilder
    * @return The baseModelId.
    */
   java.lang.String getBaseModelId();
-
   /**
    *
    *

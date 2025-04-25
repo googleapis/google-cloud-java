@@ -33,7 +33,6 @@ public final class PredictLongRunningMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PredictLongRunningMetadata)
     PredictLongRunningMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PredictLongRunningMetadata.newBuilder() to construct.
   private PredictLongRunningMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class PredictLongRunningMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

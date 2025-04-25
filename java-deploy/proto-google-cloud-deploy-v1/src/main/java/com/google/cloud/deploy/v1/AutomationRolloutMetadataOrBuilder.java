@@ -37,7 +37,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return The promoteAutomationRun.
    */
   java.lang.String getPromoteAutomationRun();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return A list containing the advanceAutomationRuns.
    */
   java.util.List<java.lang.String> getAdvanceAutomationRunsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return The count of advanceAutomationRuns.
    */
   int getAdvanceAutomationRunsCount();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return The advanceAutomationRuns at the given index.
    */
   java.lang.String getAdvanceAutomationRuns(int index);
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return A list containing the repairAutomationRuns.
    */
   java.util.List<java.lang.String> getRepairAutomationRunsList();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return The count of repairAutomationRuns.
    */
   int getRepairAutomationRunsCount();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface AutomationRolloutMetadataOrBuilder
    * @return The repairAutomationRuns at the given index.
    */
   java.lang.String getRepairAutomationRuns(int index);
-
   /**
    *
    *

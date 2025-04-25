@@ -33,7 +33,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse)
     GenerateClientCertificateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateClientCertificateResponse.newBuilder() to construct.
   private GenerateClientCertificateResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pemCertificate_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
   public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
     return pemCertificateChain_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
   public int getPemCertificateChainCount() {
     return pemCertificateChain_.size();
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
   public java.lang.String getPemCertificateChain(int index) {
     return pemCertificateChain_.get(index);
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object caCert_ = "";
-
   /**
    *
    *
@@ -234,7 +226,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -445,7 +436,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -674,7 +664,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object pemCertificate_ = "";
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -836,7 +820,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       pemCertificateChain_.makeImmutable();
       return pemCertificateChain_;
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     public int getPemCertificateChainCount() {
       return pemCertificateChain_.size();
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     public java.lang.String getPemCertificateChain(int index) {
       return pemCertificateChain_.get(index);
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     public com.google.protobuf.ByteString getPemCertificateChainBytes(int index) {
       return pemCertificateChain_.getByteString(index);
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +940,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     }
 
     private java.lang.Object caCert_ = "";
-
     /**
      *
      *
@@ -1034,7 +1009,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1052,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1069,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

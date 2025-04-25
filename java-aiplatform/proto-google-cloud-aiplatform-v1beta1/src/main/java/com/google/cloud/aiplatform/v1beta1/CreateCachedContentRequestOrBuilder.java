@@ -38,7 +38,6 @@ public interface CreateCachedContentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateCachedContentRequestOrBuilder
    * @return Whether the cachedContent field is set.
    */
   boolean hasCachedContent();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateCachedContentRequestOrBuilder
    * @return The cachedContent.
    */
   com.google.cloud.aiplatform.v1beta1.CachedContent getCachedContent();
-
   /**
    *
    *

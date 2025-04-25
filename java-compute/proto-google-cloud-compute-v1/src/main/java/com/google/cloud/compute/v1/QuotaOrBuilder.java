@@ -36,7 +36,6 @@ public interface QuotaOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface QuotaOrBuilder
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface QuotaOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface QuotaOrBuilder
    * @return Whether the owner field is set.
    */
   boolean hasOwner();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface QuotaOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface QuotaOrBuilder
    * @return Whether the usage field is set.
    */
   boolean hasUsage();
-
   /**
    *
    *

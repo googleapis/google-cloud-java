@@ -36,7 +36,6 @@ public interface ResourceStatusOrBuilder
    * @return Whether the physicalHost field is set.
    */
   boolean hasPhysicalHost();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ResourceStatusOrBuilder
    * @return The physicalHost.
    */
   java.lang.String getPhysicalHost();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ResourceStatusOrBuilder
    * @return Whether the physicalHostTopology field is set.
    */
   boolean hasPhysicalHostTopology();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ResourceStatusOrBuilder
    * @return The physicalHostTopology.
    */
   com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology getPhysicalHostTopology();
-
   /**
    *
    *
@@ -113,14 +109,12 @@ public interface ResourceStatusOrBuilder
    * @return Whether the scheduling field is set.
    */
   boolean hasScheduling();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
    *
    * @return The scheduling.
    */
   com.google.cloud.compute.v1.ResourceStatusScheduling getScheduling();
-
   /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
    */
@@ -133,7 +127,6 @@ public interface ResourceStatusOrBuilder
    * @return Whether the upcomingMaintenance field is set.
    */
   boolean hasUpcomingMaintenance();
-
   /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>
@@ -141,7 +134,6 @@ public interface ResourceStatusOrBuilder
    * @return The upcomingMaintenance.
    */
   com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingMaintenance();
-
   /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>

@@ -39,7 +39,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ListDevicesRequestOrBuilder
    * @return A list containing the deviceNumIds.
    */
   java.util.List<java.lang.Long> getDeviceNumIdsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The count of deviceNumIds.
    */
   int getDeviceNumIdsCount();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface ListDevicesRequestOrBuilder
    * @return A list containing the deviceIds.
    */
   java.util.List<java.lang.String> getDeviceIdsList();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The count of deviceIds.
    */
   int getDeviceIdsCount();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The deviceIds at the given index.
    */
   java.lang.String getDeviceIds(int index);
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface ListDevicesRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface ListDevicesRequestOrBuilder
    * @return Whether the gatewayListOptions field is set.
    */
   boolean hasGatewayListOptions();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The gatewayListOptions.
    */
   com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions();
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public interface ListDevicesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

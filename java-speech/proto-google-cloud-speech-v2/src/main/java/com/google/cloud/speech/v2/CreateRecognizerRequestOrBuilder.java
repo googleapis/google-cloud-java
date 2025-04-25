@@ -38,7 +38,6 @@ public interface CreateRecognizerRequestOrBuilder
    * @return Whether the recognizer field is set.
    */
   boolean hasRecognizer();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateRecognizerRequestOrBuilder
    * @return The recognizer.
    */
   com.google.cloud.speech.v2.Recognizer getRecognizer();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CreateRecognizerRequestOrBuilder
    * @return The recognizerId.
    */
   java.lang.String getRecognizerId();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface CreateRecognizerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

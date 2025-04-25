@@ -36,7 +36,6 @@ public interface GetBackendBucketRequestOrBuilder
    * @return The backendBucket.
    */
   java.lang.String getBackendBucket();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetBackendBucketRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

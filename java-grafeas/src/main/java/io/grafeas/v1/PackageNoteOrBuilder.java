@@ -39,7 +39,6 @@ public interface PackageNoteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
   java.util.List<io.grafeas.v1.Distribution> getDistributionList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
   io.grafeas.v1.Distribution getDistribution(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
   int getDistributionCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
   java.util.List<? extends io.grafeas.v1.DistributionOrBuilder> getDistributionOrBuilderList();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface PackageNoteOrBuilder
    * @return The packageType.
    */
   java.lang.String getPackageType();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface PackageNoteOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface PackageNoteOrBuilder
    * @return The enum numeric value on the wire for architecture.
    */
   int getArchitectureValue();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface PackageNoteOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface PackageNoteOrBuilder
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface PackageNoteOrBuilder
    * @return The maintainer.
    */
   java.lang.String getMaintainer();
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public interface PackageNoteOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public interface PackageNoteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public interface PackageNoteOrBuilder
    * @return Whether the license field is set.
    */
   boolean hasLicense();
-
   /**
    *
    *
@@ -341,7 +327,6 @@ public interface PackageNoteOrBuilder
    * @return The license.
    */
   io.grafeas.v1.License getLicense();
-
   /**
    *
    *
@@ -364,7 +349,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
   java.util.List<io.grafeas.v1.Digest> getDigestList();
-
   /**
    *
    *
@@ -376,7 +360,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
   io.grafeas.v1.Digest getDigest(int index);
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
   int getDigestCount();
-
   /**
    *
    *
@@ -400,7 +382,6 @@ public interface PackageNoteOrBuilder
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
   java.util.List<? extends io.grafeas.v1.DigestOrBuilder> getDigestOrBuilderList();
-
   /**
    *
    *

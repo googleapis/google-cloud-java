@@ -36,7 +36,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VpnTunnelOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface VpnTunnelOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the detailedStatus field is set.
    */
   boolean hasDetailedStatus();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface VpnTunnelOrBuilder
    * @return The detailedStatus.
    */
   java.lang.String getDetailedStatus();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the ikeVersion field is set.
    */
   boolean hasIkeVersion();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface VpnTunnelOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface VpnTunnelOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public interface VpnTunnelOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -292,11 +279,9 @@ public interface VpnTunnelOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -307,7 +292,6 @@ public interface VpnTunnelOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -322,7 +306,6 @@ public interface VpnTunnelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -346,7 +329,6 @@ public interface VpnTunnelOrBuilder
    * @return A list containing the localTrafficSelector.
    */
   java.util.List<java.lang.String> getLocalTrafficSelectorList();
-
   /**
    *
    *
@@ -359,7 +341,6 @@ public interface VpnTunnelOrBuilder
    * @return The count of localTrafficSelector.
    */
   int getLocalTrafficSelectorCount();
-
   /**
    *
    *
@@ -373,7 +354,6 @@ public interface VpnTunnelOrBuilder
    * @return The localTrafficSelector at the given index.
    */
   java.lang.String getLocalTrafficSelector(int index);
-
   /**
    *
    *
@@ -400,7 +380,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -413,7 +392,6 @@ public interface VpnTunnelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -439,7 +417,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the peerExternalGateway field is set.
    */
   boolean hasPeerExternalGateway();
-
   /**
    *
    *
@@ -452,7 +429,6 @@ public interface VpnTunnelOrBuilder
    * @return The peerExternalGateway.
    */
   java.lang.String getPeerExternalGateway();
-
   /**
    *
    *
@@ -478,7 +454,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the peerExternalGatewayInterface field is set.
    */
   boolean hasPeerExternalGatewayInterface();
-
   /**
    *
    *
@@ -504,7 +479,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the peerGcpGateway field is set.
    */
   boolean hasPeerGcpGateway();
-
   /**
    *
    *
@@ -517,7 +491,6 @@ public interface VpnTunnelOrBuilder
    * @return The peerGcpGateway.
    */
   java.lang.String getPeerGcpGateway();
-
   /**
    *
    *
@@ -543,7 +516,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the peerIp field is set.
    */
   boolean hasPeerIp();
-
   /**
    *
    *
@@ -556,7 +528,6 @@ public interface VpnTunnelOrBuilder
    * @return The peerIp.
    */
   java.lang.String getPeerIp();
-
   /**
    *
    *
@@ -582,7 +553,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -595,7 +565,6 @@ public interface VpnTunnelOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -621,7 +590,6 @@ public interface VpnTunnelOrBuilder
    * @return A list containing the remoteTrafficSelector.
    */
   java.util.List<java.lang.String> getRemoteTrafficSelectorList();
-
   /**
    *
    *
@@ -634,7 +602,6 @@ public interface VpnTunnelOrBuilder
    * @return The count of remoteTrafficSelector.
    */
   int getRemoteTrafficSelectorCount();
-
   /**
    *
    *
@@ -648,7 +615,6 @@ public interface VpnTunnelOrBuilder
    * @return The remoteTrafficSelector at the given index.
    */
   java.lang.String getRemoteTrafficSelector(int index);
-
   /**
    *
    *
@@ -675,7 +641,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the router field is set.
    */
   boolean hasRouter();
-
   /**
    *
    *
@@ -688,7 +653,6 @@ public interface VpnTunnelOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
-
   /**
    *
    *
@@ -714,7 +678,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -727,7 +690,6 @@ public interface VpnTunnelOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -753,7 +715,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the sharedSecret field is set.
    */
   boolean hasSharedSecret();
-
   /**
    *
    *
@@ -766,7 +727,6 @@ public interface VpnTunnelOrBuilder
    * @return The sharedSecret.
    */
   java.lang.String getSharedSecret();
-
   /**
    *
    *
@@ -792,7 +752,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the sharedSecretHash field is set.
    */
   boolean hasSharedSecretHash();
-
   /**
    *
    *
@@ -805,7 +764,6 @@ public interface VpnTunnelOrBuilder
    * @return The sharedSecretHash.
    */
   java.lang.String getSharedSecretHash();
-
   /**
    *
    *
@@ -832,7 +790,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -846,7 +803,6 @@ public interface VpnTunnelOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -873,7 +829,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the targetVpnGateway field is set.
    */
   boolean hasTargetVpnGateway();
-
   /**
    *
    *
@@ -886,7 +841,6 @@ public interface VpnTunnelOrBuilder
    * @return The targetVpnGateway.
    */
   java.lang.String getTargetVpnGateway();
-
   /**
    *
    *
@@ -912,7 +866,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the vpnGateway field is set.
    */
   boolean hasVpnGateway();
-
   /**
    *
    *
@@ -925,7 +878,6 @@ public interface VpnTunnelOrBuilder
    * @return The vpnGateway.
    */
   java.lang.String getVpnGateway();
-
   /**
    *
    *
@@ -951,7 +903,6 @@ public interface VpnTunnelOrBuilder
    * @return Whether the vpnGatewayInterface field is set.
    */
   boolean hasVpnGatewayInterface();
-
   /**
    *
    *

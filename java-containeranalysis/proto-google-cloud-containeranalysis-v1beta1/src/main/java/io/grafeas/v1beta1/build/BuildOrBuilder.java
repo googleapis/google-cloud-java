@@ -36,7 +36,6 @@ public interface BuildOrBuilder
    * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface BuildOrBuilder
    * @return Whether the signature field is set.
    */
   boolean hasSignature();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface BuildOrBuilder
    * @return The signature.
    */
   io.grafeas.v1beta1.build.BuildSignature getSignature();
-
   /**
    *
    *

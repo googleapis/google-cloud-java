@@ -34,7 +34,6 @@ public interface ReservationsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ReservationsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   com.google.cloud.compute.v1.Reservation getReservations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ReservationsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   int getReservationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ReservationsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
       getReservationsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ReservationsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface ReservationsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

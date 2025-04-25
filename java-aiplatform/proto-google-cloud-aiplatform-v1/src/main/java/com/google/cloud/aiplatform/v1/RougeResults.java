@@ -33,7 +33,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RougeResults)
     RougeResultsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RougeResults.newBuilder() to construct.
   private RougeResults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.RougeMetricValue> rougeMetricValues_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       getRougeMetricValuesList() {
     return rougeMetricValues_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       getRougeMetricValuesOrBuilderList() {
     return rougeMetricValues_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
   public int getRougeMetricValuesCount() {
     return rougeMetricValues_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.RougeMetricValue getRougeMetricValues(int index) {
     return rougeMetricValues_.get(index);
   }
-
   /**
    *
    *
@@ -314,7 +308,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
         return rougeMetricValuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
         return rougeMetricValuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -618,7 +609,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
         return rougeMetricValuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRougeMetricValuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
         return rougeMetricValuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rougeMetricValues_);
       }
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       return getRougeMetricValuesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.RougeMetricValue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class RougeResults extends com.google.protobuf.GeneratedMessageV3
       return getRougeMetricValuesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.RougeMetricValue.getDefaultInstance());
     }
-
     /**
      *
      *

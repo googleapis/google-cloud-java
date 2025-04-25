@@ -36,7 +36,6 @@ public interface MetadataOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MetadataOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.compute.v1.Items items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Items> getItemsList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.compute.v1.Items items = 100526016;</code>
    */
   com.google.cloud.compute.v1.Items getItems(int index);
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.compute.v1.Items items = 100526016;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -106,7 +101,6 @@ public interface MetadataOrBuilder
    * <code>repeated .google.cloud.compute.v1.Items items = 100526016;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ItemsOrBuilder> getItemsOrBuilderList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface MetadataOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -143,7 +136,6 @@ public interface MetadataOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

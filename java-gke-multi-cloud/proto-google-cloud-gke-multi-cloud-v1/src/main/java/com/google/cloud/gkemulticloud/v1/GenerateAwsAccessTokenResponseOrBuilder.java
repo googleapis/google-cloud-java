@@ -36,7 +36,6 @@ public interface GenerateAwsAccessTokenResponseOrBuilder
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface GenerateAwsAccessTokenResponseOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GenerateAwsAccessTokenResponseOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
-
   /**
    *
    *

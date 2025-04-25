@@ -161,8 +161,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
@@ -183,8 +182,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateServiceAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
@@ -226,8 +224,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -249,8 +246,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UndeleteServiceAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UndeleteServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UndeleteServiceAccountResponse.class.getName(),
                   Exception.class.getName())));
@@ -271,8 +267,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EnableServiceAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method EnableServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -293,8 +288,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DisableServiceAccount, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DisableServiceAccount, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -316,8 +310,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServiceAccountKeys, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListServiceAccountKeys, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServiceAccountKeysResponse.class.getName(),
                   Exception.class.getName())));
@@ -338,8 +331,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetServiceAccountKey, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceAccountKey.class.getName(),
                   Exception.class.getName())));
@@ -360,8 +352,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceAccountKey, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceAccountKey.class.getName(),
                   Exception.class.getName())));
@@ -382,8 +373,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UploadServiceAccountKey, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UploadServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceAccountKey.class.getName(),
                   Exception.class.getName())));
@@ -404,8 +394,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceAccountKey, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -426,8 +415,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DisableServiceAccountKey, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DisableServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -448,8 +436,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EnableServiceAccountKey, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method EnableServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -716,8 +703,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryTestablePermissions, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method QueryTestablePermissions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryTestablePermissionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -739,8 +725,7 @@ public class MockIAMImpl extends IAMImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryAuditableServices, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method QueryAuditableServices, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryAuditableServicesResponse.class.getName(),
                   Exception.class.getName())));

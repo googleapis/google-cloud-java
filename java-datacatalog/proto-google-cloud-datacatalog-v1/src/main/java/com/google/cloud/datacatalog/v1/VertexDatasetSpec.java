@@ -33,7 +33,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.VertexDatasetSpec)
     VertexDatasetSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VertexDatasetSpec.newBuilder() to construct.
   private VertexDatasetSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -221,7 +220,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -232,7 +230,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>TABLE = 1;</code>
      */
     public static final int TABLE_VALUE = 1;
-
     /**
      *
      *
@@ -244,7 +241,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>IMAGE = 2;</code>
      */
     public static final int IMAGE_VALUE = 2;
-
     /**
      *
      *
@@ -256,7 +252,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>TEXT = 3;</code>
      */
     public static final int TEXT_VALUE = 3;
-
     /**
      *
      *
@@ -268,7 +263,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>VIDEO = 4;</code>
      */
     public static final int VIDEO_VALUE = 4;
-
     /**
      *
      *
@@ -279,7 +273,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>CONVERSATION = 5;</code>
      */
     public static final int CONVERSATION_VALUE = 5;
-
     /**
      *
      *
@@ -290,7 +283,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>TIME_SERIES = 6;</code>
      */
     public static final int TIME_SERIES_VALUE = 6;
-
     /**
      *
      *
@@ -301,7 +293,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>DOCUMENT = 7;</code>
      */
     public static final int DOCUMENT_VALUE = 7;
-
     /**
      *
      *
@@ -312,7 +303,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>TEXT_TO_SPEECH = 8;</code>
      */
     public static final int TEXT_TO_SPEECH_VALUE = 8;
-
     /**
      *
      *
@@ -323,7 +313,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>TRANSLATION = 9;</code>
      */
     public static final int TRANSLATION_VALUE = 9;
-
     /**
      *
      *
@@ -334,7 +323,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>STORE_VISION = 10;</code>
      */
     public static final int STORE_VISION_VALUE = 10;
-
     /**
      *
      *
@@ -346,7 +334,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
      * <code>ENTERPRISE_KNOWLEDGE_GRAPH = 11;</code>
      */
     public static final int ENTERPRISE_KNOWLEDGE_GRAPH_VALUE = 11;
-
     /**
      *
      *
@@ -465,7 +452,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int DATA_ITEM_COUNT_FIELD_NUMBER = 1;
   private long dataItemCount_ = 0L;
-
   /**
    *
    *
@@ -485,7 +471,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int DATA_TYPE_FIELD_NUMBER = 2;
   private int dataType_ = 0;
-
   /**
    *
    *
@@ -501,7 +486,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
   public int getDataTypeValue() {
     return dataType_;
   }
-
   /**
    *
    *
@@ -694,7 +678,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -890,7 +873,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private long dataItemCount_;
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
     public long getDataItemCount() {
       return dataItemCount_;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +929,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
     }
 
     private int dataType_ = 0;
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
     public int getDataTypeValue() {
       return dataType_;
     }
-
     /**
      *
      *
@@ -984,7 +962,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.datacatalog.v1.VertexDatasetSpec.DataType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class VertexDatasetSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

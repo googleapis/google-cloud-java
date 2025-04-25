@@ -72,7 +72,6 @@ public enum Billing implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BILLING_UNSPECIFIED = 0;</code>
    */
   public static final int BILLING_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum Billing implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PAY_AS_YOU_GO = 1;</code>
    */
   public static final int PAY_AS_YOU_GO_VALUE = 1;
-
   /**
    *
    *

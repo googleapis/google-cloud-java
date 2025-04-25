@@ -37,7 +37,6 @@ public interface GetRegionNetworkEndpointGroupRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface GetRegionNetworkEndpointGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface GetRegionNetworkEndpointGroupRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

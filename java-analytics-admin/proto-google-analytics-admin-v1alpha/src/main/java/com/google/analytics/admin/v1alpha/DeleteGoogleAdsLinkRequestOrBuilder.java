@@ -38,7 +38,6 @@ public interface DeleteGoogleAdsLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class InstanceGroupManagerResourcePolicies
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerResourcePolicies)
     InstanceGroupManagerResourcePoliciesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerResourcePolicies.newBuilder() to construct.
   private InstanceGroupManagerResourcePolicies(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class InstanceGroupManagerResourcePolicies
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workloadPolicy_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class InstanceGroupManagerResourcePolicies
   public boolean hasWorkloadPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class InstanceGroupManagerResourcePolicies
       return s;
     }
   }
-
   /**
    *
    *
@@ -300,7 +296,6 @@ public final class InstanceGroupManagerResourcePolicies
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -491,7 +486,6 @@ public final class InstanceGroupManagerResourcePolicies
     private int bitField0_;
 
     private java.lang.Object workloadPolicy_ = "";
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class InstanceGroupManagerResourcePolicies
     public boolean hasWorkloadPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class InstanceGroupManagerResourcePolicies
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -552,7 +544,6 @@ public final class InstanceGroupManagerResourcePolicies
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class InstanceGroupManagerResourcePolicies
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +582,6 @@ public final class InstanceGroupManagerResourcePolicies
       onChanged();
       return this;
     }
-
     /**
      *
      *

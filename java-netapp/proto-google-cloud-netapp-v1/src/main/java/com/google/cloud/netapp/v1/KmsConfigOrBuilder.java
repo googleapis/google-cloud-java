@@ -36,7 +36,6 @@ public interface KmsConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface KmsConfigOrBuilder
    * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface KmsConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface KmsConfigOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface KmsConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface KmsConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface KmsConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface KmsConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -221,11 +213,9 @@ public interface KmsConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface KmsConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public interface KmsConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -276,7 +264,6 @@ public interface KmsConfigOrBuilder
    * @return The instructions.
    */
   java.lang.String getInstructions();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface KmsConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

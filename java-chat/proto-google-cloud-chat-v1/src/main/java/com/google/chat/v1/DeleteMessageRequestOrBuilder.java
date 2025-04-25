@@ -45,7 +45,6 @@ public interface DeleteMessageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

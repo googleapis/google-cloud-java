@@ -39,7 +39,6 @@ public interface GetBiReservationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

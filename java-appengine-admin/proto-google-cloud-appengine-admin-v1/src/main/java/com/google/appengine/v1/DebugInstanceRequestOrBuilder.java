@@ -37,7 +37,6 @@ public interface DebugInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface DebugInstanceRequestOrBuilder
    * @return The sshKey.
    */
   java.lang.String getSshKey();
-
   /**
    *
    *

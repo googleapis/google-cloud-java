@@ -33,7 +33,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata)
     ExportDataOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportDataOperationMetadata.newBuilder() to construct.
   private ExportDataOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -442,7 +431,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -722,7 +710,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return partialFailuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return partialFailuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return partialFailuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1023,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1066,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1087,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1101,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1149,7 +1119,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1169,7 +1138,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(partialFailures_);
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1153,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       return getPartialFailuresFieldBuilder()
           .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1201,7 +1168,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       return getPartialFailuresFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1241,7 +1207,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1256,7 +1221,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1277,7 +1241,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1300,7 +1263,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1282,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1309,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1328,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1342,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1402,7 +1360,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
             : createTime_;
       }
     }
-
     /**
      *
      *

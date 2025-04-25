@@ -33,7 +33,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes)
     KubernetesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Kubernetes.newBuilder() to construct.
   private Kubernetes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The ns.
      */
     java.lang.String getNs();
-
     /**
      *
      *
@@ -113,7 +111,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -138,7 +135,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Label labels = 3;</code>
      */
     java.util.List<com.google.cloud.securitycenter.v2.Label> getLabelsList();
-
     /**
      *
      *
@@ -150,7 +146,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Label labels = 3;</code>
      */
     com.google.cloud.securitycenter.v2.Label getLabels(int index);
-
     /**
      *
      *
@@ -162,7 +157,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Label labels = 3;</code>
      */
     int getLabelsCount();
-
     /**
      *
      *
@@ -175,7 +169,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.securitycenter.v2.LabelOrBuilder>
         getLabelsOrBuilderList();
-
     /**
      *
      *
@@ -198,7 +191,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Container containers = 4;</code>
      */
     java.util.List<com.google.cloud.securitycenter.v2.Container> getContainersList();
-
     /**
      *
      *
@@ -209,7 +201,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Container containers = 4;</code>
      */
     com.google.cloud.securitycenter.v2.Container getContainers(int index);
-
     /**
      *
      *
@@ -220,7 +211,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Container containers = 4;</code>
      */
     int getContainersCount();
-
     /**
      *
      *
@@ -232,7 +222,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.securitycenter.v2.ContainerOrBuilder>
         getContainersOrBuilderList();
-
     /**
      *
      *
@@ -244,7 +233,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v2.ContainerOrBuilder getContainersOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -259,7 +247,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.Pod)
       PodOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Pod.newBuilder() to construct.
     private Pod(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -297,7 +284,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ns_ = "";
-
     /**
      *
      *
@@ -321,7 +307,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -350,7 +335,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -374,7 +358,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -403,7 +386,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v2.Label> labels_;
-
     /**
      *
      *
@@ -418,7 +400,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.securitycenter.v2.Label> getLabelsList() {
       return labels_;
     }
-
     /**
      *
      *
@@ -434,7 +415,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         getLabelsOrBuilderList() {
       return labels_;
     }
-
     /**
      *
      *
@@ -449,7 +429,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return labels_.size();
     }
-
     /**
      *
      *
@@ -464,7 +443,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Label getLabels(int index) {
       return labels_.get(index);
     }
-
     /**
      *
      *
@@ -484,7 +462,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v2.Container> containers_;
-
     /**
      *
      *
@@ -498,7 +475,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.securitycenter.v2.Container> getContainersList() {
       return containers_;
     }
-
     /**
      *
      *
@@ -513,7 +489,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         getContainersOrBuilderList() {
       return containers_;
     }
-
     /**
      *
      *
@@ -527,7 +502,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getContainersCount() {
       return containers_.size();
     }
-
     /**
      *
      *
@@ -541,7 +515,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Container getContainers(int index) {
       return containers_.get(index);
     }
-
     /**
      *
      *
@@ -747,7 +720,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1067,7 +1039,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object ns_ = "";
-
       /**
        *
        *
@@ -1090,7 +1061,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1113,7 +1083,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1135,7 +1104,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1153,7 +1121,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1178,7 +1145,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1201,7 +1167,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1224,7 +1189,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1246,7 +1210,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1264,7 +1227,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1321,7 +1283,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return labelsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1339,7 +1300,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return labelsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1357,7 +1317,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return labelsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1381,7 +1340,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1403,7 +1361,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1427,7 +1384,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1451,7 +1407,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1472,7 +1427,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1494,7 +1448,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1516,7 +1469,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1537,7 +1489,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1558,7 +1509,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1572,7 +1522,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v2.Label.Builder getLabelsBuilder(int index) {
         return getLabelsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1590,7 +1539,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return labelsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1609,7 +1557,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(labels_);
         }
       }
-
       /**
        *
        *
@@ -1624,7 +1571,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getLabelsFieldBuilder()
             .addBuilder(com.google.cloud.securitycenter.v2.Label.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1639,7 +1585,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getLabelsFieldBuilder()
             .addBuilder(index, com.google.cloud.securitycenter.v2.Label.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1705,7 +1650,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1722,7 +1666,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1739,7 +1682,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1762,7 +1704,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1783,7 +1724,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1806,7 +1746,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1829,7 +1768,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1850,7 +1788,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1871,7 +1808,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1892,7 +1828,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1912,7 +1847,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1932,7 +1866,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1945,7 +1878,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v2.Container.Builder getContainersBuilder(int index) {
         return getContainersFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1963,7 +1895,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1981,7 +1912,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(containers_);
         }
       }
-
       /**
        *
        *
@@ -1995,7 +1925,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getContainersFieldBuilder()
             .addBuilder(com.google.cloud.securitycenter.v2.Container.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2009,7 +1938,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getContainersFieldBuilder()
             .addBuilder(index, com.google.cloud.securitycenter.v2.Container.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2123,7 +2051,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -2138,7 +2065,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -2153,7 +2079,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.Node)
       NodeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Node.newBuilder() to construct.
     private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2188,7 +2113,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2213,7 +2137,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2399,7 +2322,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2587,7 +2509,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -2611,7 +2532,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2635,7 +2555,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2658,7 +2577,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2677,7 +2595,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2783,7 +2700,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -2807,7 +2723,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Kubernetes.Node nodes = 2;</code>
      */
     java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Node> getNodesList();
-
     /**
      *
      *
@@ -2818,7 +2733,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Kubernetes.Node nodes = 2;</code>
      */
     com.google.cloud.securitycenter.v2.Kubernetes.Node getNodes(int index);
-
     /**
      *
      *
@@ -2829,7 +2743,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Kubernetes.Node nodes = 2;</code>
      */
     int getNodesCount();
-
     /**
      *
      *
@@ -2841,7 +2754,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.securitycenter.v2.Kubernetes.NodeOrBuilder>
         getNodesOrBuilderList();
-
     /**
      *
      *
@@ -2853,7 +2765,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v2.Kubernetes.NodeOrBuilder getNodesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -2868,7 +2779,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.NodePool)
       NodePoolOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NodePool.newBuilder() to construct.
     private NodePool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2904,7 +2814,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2928,7 +2837,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2957,7 +2865,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Node> nodes_;
-
     /**
      *
      *
@@ -2971,7 +2878,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Node> getNodesList() {
       return nodes_;
     }
-
     /**
      *
      *
@@ -2986,7 +2892,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         getNodesOrBuilderList() {
       return nodes_;
     }
-
     /**
      *
      *
@@ -3000,7 +2905,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getNodesCount() {
       return nodes_.size();
     }
-
     /**
      *
      *
@@ -3014,7 +2918,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Kubernetes.Node getNodes(int index) {
       return nodes_.get(index);
     }
-
     /**
      *
      *
@@ -3202,7 +3105,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3452,7 +3354,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -3475,7 +3376,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3498,7 +3398,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3520,7 +3419,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3538,7 +3436,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3595,7 +3492,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return nodesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3612,7 +3508,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return nodesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3629,7 +3524,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return nodesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3652,7 +3546,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3673,7 +3566,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3696,7 +3588,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3719,7 +3610,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3740,7 +3630,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3761,7 +3650,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3782,7 +3670,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3802,7 +3689,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3822,7 +3708,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3835,7 +3720,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v2.Kubernetes.Node.Builder getNodesBuilder(int index) {
         return getNodesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3853,7 +3737,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return nodesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3871,7 +3754,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(nodes_);
         }
       }
-
       /**
        *
        *
@@ -3885,7 +3767,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getNodesFieldBuilder()
             .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Node.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3900,7 +3781,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.securitycenter.v2.Kubernetes.Node.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4013,7 +3893,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for kind.
      */
     int getKindValue();
-
     /**
      *
      *
@@ -4039,7 +3918,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The ns.
      */
     java.lang.String getNs();
-
     /**
      *
      *
@@ -4065,7 +3943,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -4079,7 +3956,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -4094,7 +3970,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.Role)
       RoleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Role.newBuilder() to construct.
     private Role(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4180,7 +4055,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>KIND_UNSPECIFIED = 0;</code>
        */
       public static final int KIND_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -4191,7 +4065,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>ROLE = 1;</code>
        */
       public static final int ROLE_VALUE = 1;
-
       /**
        *
        *
@@ -4290,7 +4163,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     public static final int KIND_FIELD_NUMBER = 1;
     private int kind_ = 0;
-
     /**
      *
      *
@@ -4306,7 +4178,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
-
     /**
      *
      *
@@ -4331,7 +4202,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ns_ = "";
-
     /**
      *
      *
@@ -4355,7 +4225,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4384,7 +4253,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4408,7 +4276,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4613,7 +4480,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4829,7 +4695,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int kind_ = 0;
-
       /**
        *
        *
@@ -4845,7 +4710,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public int getKindValue() {
         return kind_;
       }
-
       /**
        *
        *
@@ -4864,7 +4728,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4884,7 +4747,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.securitycenter.v2.Kubernetes.Role.Kind.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4906,7 +4768,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4926,7 +4787,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object ns_ = "";
-
       /**
        *
        *
@@ -4949,7 +4809,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4972,7 +4831,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4994,7 +4852,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5012,7 +4869,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5037,7 +4893,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -5060,7 +4915,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5083,7 +4937,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5105,7 +4958,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5123,7 +4975,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5228,7 +5079,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The ns.
      */
     java.lang.String getNs();
-
     /**
      *
      *
@@ -5254,7 +5104,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -5280,7 +5129,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the role field is set.
      */
     boolean hasRole();
-
     /**
      *
      *
@@ -5293,7 +5141,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The role.
      */
     com.google.cloud.securitycenter.v2.Kubernetes.Role getRole();
-
     /**
      *
      *
@@ -5316,7 +5163,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Kubernetes.Subject subjects = 4;</code>
      */
     java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Subject> getSubjectsList();
-
     /**
      *
      *
@@ -5328,7 +5174,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Kubernetes.Subject subjects = 4;</code>
      */
     com.google.cloud.securitycenter.v2.Kubernetes.Subject getSubjects(int index);
-
     /**
      *
      *
@@ -5340,7 +5185,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Kubernetes.Subject subjects = 4;</code>
      */
     int getSubjectsCount();
-
     /**
      *
      *
@@ -5353,7 +5197,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.securitycenter.v2.Kubernetes.SubjectOrBuilder>
         getSubjectsOrBuilderList();
-
     /**
      *
      *
@@ -5366,7 +5209,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v2.Kubernetes.SubjectOrBuilder getSubjectsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -5381,7 +5223,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.Binding)
       BindingOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Binding.newBuilder() to construct.
     private Binding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5419,7 +5260,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ns_ = "";
-
     /**
      *
      *
@@ -5443,7 +5283,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -5472,7 +5311,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -5496,7 +5334,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -5523,7 +5360,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ROLE_FIELD_NUMBER = 3;
     private com.google.cloud.securitycenter.v2.Kubernetes.Role role_;
-
     /**
      *
      *
@@ -5539,7 +5375,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRole() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -5557,7 +5392,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v2.Kubernetes.Role.getDefaultInstance()
           : role_;
     }
-
     /**
      *
      *
@@ -5578,7 +5412,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Subject> subjects_;
-
     /**
      *
      *
@@ -5593,7 +5426,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Subject> getSubjectsList() {
       return subjects_;
     }
-
     /**
      *
      *
@@ -5609,7 +5441,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         getSubjectsOrBuilderList() {
       return subjects_;
     }
-
     /**
      *
      *
@@ -5624,7 +5455,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getSubjectsCount() {
       return subjects_.size();
     }
-
     /**
      *
      *
@@ -5639,7 +5469,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Kubernetes.Subject getSubjects(int index) {
       return subjects_.get(index);
     }
-
     /**
      *
      *
@@ -5851,7 +5680,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6146,7 +5974,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object ns_ = "";
-
       /**
        *
        *
@@ -6169,7 +5996,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6192,7 +6018,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6214,7 +6039,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6232,7 +6056,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6257,7 +6080,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -6280,7 +6102,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6303,7 +6124,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6325,7 +6145,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6343,7 +6162,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6373,7 +6191,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.Kubernetes.Role.Builder,
               com.google.cloud.securitycenter.v2.Kubernetes.RoleOrBuilder>
           roleBuilder_;
-
       /**
        *
        *
@@ -6388,7 +6205,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRole() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -6409,7 +6225,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return roleBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -6432,7 +6247,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6453,7 +6267,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6481,7 +6294,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6501,7 +6313,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6516,7 +6327,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRoleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -6535,7 +6345,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               : role_;
         }
       }
-
       /**
        *
        *
@@ -6598,7 +6407,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return subjectsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -6616,7 +6424,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return subjectsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -6634,7 +6441,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return subjectsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -6659,7 +6465,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6682,7 +6487,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6706,7 +6510,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6731,7 +6534,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6753,7 +6555,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6776,7 +6577,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6799,7 +6599,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6820,7 +6619,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6841,7 +6639,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6856,7 +6653,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getSubjectsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -6875,7 +6671,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return subjectsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -6895,7 +6690,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(subjects_);
         }
       }
-
       /**
        *
        *
@@ -6910,7 +6704,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getSubjectsFieldBuilder()
             .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Subject.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6927,7 +6720,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.securitycenter.v2.Kubernetes.Subject.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7041,7 +6833,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for kind.
      */
     int getKindValue();
-
     /**
      *
      *
@@ -7067,7 +6858,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The ns.
      */
     java.lang.String getNs();
-
     /**
      *
      *
@@ -7093,7 +6883,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -7107,7 +6896,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -7122,7 +6910,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.Subject)
       SubjectOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Subject.newBuilder() to construct.
     private Subject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7218,7 +7005,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>AUTH_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int AUTH_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -7229,7 +7015,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>USER = 1;</code>
        */
       public static final int USER_VALUE = 1;
-
       /**
        *
        *
@@ -7240,7 +7025,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        * <code>SERVICEACCOUNT = 2;</code>
        */
       public static final int SERVICEACCOUNT_VALUE = 2;
-
       /**
        *
        *
@@ -7341,7 +7125,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     public static final int KIND_FIELD_NUMBER = 1;
     private int kind_ = 0;
-
     /**
      *
      *
@@ -7357,7 +7140,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
-
     /**
      *
      *
@@ -7382,7 +7164,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ns_ = "";
-
     /**
      *
      *
@@ -7406,7 +7187,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -7435,7 +7215,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -7459,7 +7238,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -7667,7 +7445,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7883,7 +7660,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int kind_ = 0;
-
       /**
        *
        *
@@ -7899,7 +7675,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public int getKindValue() {
         return kind_;
       }
-
       /**
        *
        *
@@ -7918,7 +7693,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7938,7 +7712,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.securitycenter.v2.Kubernetes.Subject.AuthType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7960,7 +7733,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7980,7 +7752,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object ns_ = "";
-
       /**
        *
        *
@@ -8003,7 +7774,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8026,7 +7796,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8048,7 +7817,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8066,7 +7834,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8091,7 +7858,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -8114,7 +7880,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8137,7 +7902,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8159,7 +7923,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8177,7 +7940,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8282,7 +8044,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The group.
      */
     java.lang.String getGroup();
-
     /**
      *
      *
@@ -8310,7 +8071,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The ns.
      */
     java.lang.String getNs();
-
     /**
      *
      *
@@ -8338,7 +8098,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -8364,7 +8123,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The resource.
      */
     java.lang.String getResource();
-
     /**
      *
      *
@@ -8390,7 +8148,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The subresource.
      */
     java.lang.String getSubresource();
-
     /**
      *
      *
@@ -8417,7 +8174,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The verb.
      */
     java.lang.String getVerb();
-
     /**
      *
      *
@@ -8444,7 +8200,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The version.
      */
     java.lang.String getVersion();
-
     /**
      *
      *
@@ -8458,7 +8213,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getVersionBytes();
   }
-
   /**
    *
    *
@@ -8476,7 +8230,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.AccessReview)
       AccessReviewOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AccessReview.newBuilder() to construct.
     private AccessReview(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8517,7 +8270,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object group_ = "";
-
     /**
      *
      *
@@ -8541,7 +8293,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8570,7 +8321,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ns_ = "";
-
     /**
      *
      *
@@ -8596,7 +8346,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8627,7 +8376,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -8651,7 +8399,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8680,7 +8427,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -8704,7 +8450,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8733,7 +8478,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object subresource_ = "";
-
     /**
      *
      *
@@ -8757,7 +8501,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8786,7 +8529,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object verb_ = "";
-
     /**
      *
      *
@@ -8811,7 +8553,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -8841,7 +8582,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -8865,7 +8605,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -9105,7 +8844,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -9389,7 +9127,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object group_ = "";
-
       /**
        *
        *
@@ -9412,7 +9149,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9435,7 +9171,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9457,7 +9192,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9475,7 +9209,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9500,7 +9233,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object ns_ = "";
-
       /**
        *
        *
@@ -9525,7 +9257,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9550,7 +9281,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9574,7 +9304,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9594,7 +9323,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9621,7 +9349,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -9644,7 +9371,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9667,7 +9393,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9689,7 +9414,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9707,7 +9431,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9732,7 +9455,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resource_ = "";
-
       /**
        *
        *
@@ -9755,7 +9477,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9778,7 +9499,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9800,7 +9520,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9818,7 +9537,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9843,7 +9561,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object subresource_ = "";
-
       /**
        *
        *
@@ -9866,7 +9583,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9889,7 +9605,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9911,7 +9626,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9929,7 +9643,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9954,7 +9667,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object verb_ = "";
-
       /**
        *
        *
@@ -9978,7 +9690,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10002,7 +9713,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -10025,7 +9735,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10044,7 +9753,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10070,7 +9778,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object version_ = "";
-
       /**
        *
        *
@@ -10093,7 +9800,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10116,7 +9822,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -10138,7 +9843,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10156,7 +9860,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10262,7 +9965,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The group.
      */
     java.lang.String getGroup();
-
     /**
      *
      *
@@ -10288,7 +9990,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The kind.
      */
     java.lang.String getKind();
-
     /**
      *
      *
@@ -10316,7 +10017,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The ns.
      */
     java.lang.String getNs();
-
     /**
      *
      *
@@ -10345,7 +10045,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -10370,7 +10069,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Container containers = 5;</code>
      */
     java.util.List<com.google.cloud.securitycenter.v2.Container> getContainersList();
-
     /**
      *
      *
@@ -10381,7 +10079,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Container containers = 5;</code>
      */
     com.google.cloud.securitycenter.v2.Container getContainers(int index);
-
     /**
      *
      *
@@ -10392,7 +10089,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v2.Container containers = 5;</code>
      */
     int getContainersCount();
-
     /**
      *
      *
@@ -10404,7 +10100,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.securitycenter.v2.ContainerOrBuilder>
         getContainersOrBuilderList();
-
     /**
      *
      *
@@ -10416,7 +10111,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v2.ContainerOrBuilder getContainersOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -10433,7 +10127,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Kubernetes.Object)
       ObjectOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Object.newBuilder() to construct.
     private Object(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10472,7 +10165,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object group_ = "";
-
     /**
      *
      *
@@ -10496,7 +10188,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10525,7 +10216,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -10549,7 +10239,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10578,7 +10267,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ns_ = "";
-
     /**
      *
      *
@@ -10604,7 +10292,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10635,7 +10322,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -10660,7 +10346,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -10690,7 +10375,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.securitycenter.v2.Container> containers_;
-
     /**
      *
      *
@@ -10704,7 +10388,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.securitycenter.v2.Container> getContainersList() {
       return containers_;
     }
-
     /**
      *
      *
@@ -10719,7 +10402,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         getContainersOrBuilderList() {
       return containers_;
     }
-
     /**
      *
      *
@@ -10733,7 +10415,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public int getContainersCount() {
       return containers_.size();
     }
-
     /**
      *
      *
@@ -10747,7 +10428,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Container getContainers(int index) {
       return containers_.get(index);
     }
-
     /**
      *
      *
@@ -10961,7 +10641,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -11257,7 +10936,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object group_ = "";
-
       /**
        *
        *
@@ -11280,7 +10958,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11303,7 +10980,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11325,7 +11001,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11343,7 +11018,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11368,7 +11042,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object kind_ = "";
-
       /**
        *
        *
@@ -11391,7 +11064,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11414,7 +11086,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11436,7 +11107,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11454,7 +11124,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11479,7 +11148,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object ns_ = "";
-
       /**
        *
        *
@@ -11504,7 +11172,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11529,7 +11196,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11553,7 +11219,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11573,7 +11238,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11600,7 +11264,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -11624,7 +11287,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11648,7 +11310,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11671,7 +11332,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11690,7 +11350,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11748,7 +11407,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -11765,7 +11423,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -11782,7 +11439,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -11805,7 +11461,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11826,7 +11481,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11849,7 +11503,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11872,7 +11525,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11893,7 +11545,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11914,7 +11565,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11935,7 +11585,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11955,7 +11604,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11975,7 +11623,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -11988,7 +11635,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v2.Container.Builder getContainersBuilder(int index) {
         return getContainersFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -12006,7 +11652,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return containersBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -12024,7 +11669,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(containers_);
         }
       }
-
       /**
        *
        *
@@ -12038,7 +11682,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getContainersFieldBuilder()
             .addBuilder(com.google.cloud.securitycenter.v2.Container.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -12052,7 +11695,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return getContainersFieldBuilder()
             .addBuilder(index, com.google.cloud.securitycenter.v2.Container.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -12152,7 +11794,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Pod> pods_;
-
   /**
    *
    *
@@ -12169,7 +11810,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Pod> getPodsList() {
     return pods_;
   }
-
   /**
    *
    *
@@ -12187,7 +11827,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getPodsOrBuilderList() {
     return pods_;
   }
-
   /**
    *
    *
@@ -12204,7 +11843,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getPodsCount() {
     return pods_.size();
   }
-
   /**
    *
    *
@@ -12221,7 +11859,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.Pod getPods(int index) {
     return pods_.get(index);
   }
-
   /**
    *
    *
@@ -12243,7 +11880,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Node> nodes_;
-
   /**
    *
    *
@@ -12259,7 +11895,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Node> getNodesList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -12276,7 +11911,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getNodesOrBuilderList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -12292,7 +11926,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getNodesCount() {
     return nodes_.size();
   }
-
   /**
    *
    *
@@ -12308,7 +11941,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.Node getNodes(int index) {
     return nodes_.get(index);
   }
-
   /**
    *
    *
@@ -12329,7 +11961,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.NodePool> nodePools_;
-
   /**
    *
    *
@@ -12346,7 +11977,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.NodePool> getNodePoolsList() {
     return nodePools_;
   }
-
   /**
    *
    *
@@ -12364,7 +11994,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getNodePoolsOrBuilderList() {
     return nodePools_;
   }
-
   /**
    *
    *
@@ -12381,7 +12010,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getNodePoolsCount() {
     return nodePools_.size();
   }
-
   /**
    *
    *
@@ -12398,7 +12026,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.NodePool getNodePools(int index) {
     return nodePools_.get(index);
   }
-
   /**
    *
    *
@@ -12421,7 +12048,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Role> roles_;
-
   /**
    *
    *
@@ -12436,7 +12062,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Role> getRolesList() {
     return roles_;
   }
-
   /**
    *
    *
@@ -12452,7 +12077,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getRolesOrBuilderList() {
     return roles_;
   }
-
   /**
    *
    *
@@ -12467,7 +12091,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getRolesCount() {
     return roles_.size();
   }
-
   /**
    *
    *
@@ -12482,7 +12105,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.Role getRoles(int index) {
     return roles_.get(index);
   }
-
   /**
    *
    *
@@ -12502,7 +12124,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Binding> bindings_;
-
   /**
    *
    *
@@ -12518,7 +12139,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Binding> getBindingsList() {
     return bindings_;
   }
-
   /**
    *
    *
@@ -12535,7 +12155,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getBindingsOrBuilderList() {
     return bindings_;
   }
-
   /**
    *
    *
@@ -12551,7 +12170,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getBindingsCount() {
     return bindings_.size();
   }
-
   /**
    *
    *
@@ -12567,7 +12185,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.Binding getBindings(int index) {
     return bindings_.get(index);
   }
-
   /**
    *
    *
@@ -12589,7 +12206,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.AccessReview> accessReviews_;
-
   /**
    *
    *
@@ -12606,7 +12222,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getAccessReviewsList() {
     return accessReviews_;
   }
-
   /**
    *
    *
@@ -12624,7 +12239,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getAccessReviewsOrBuilderList() {
     return accessReviews_;
   }
-
   /**
    *
    *
@@ -12640,7 +12254,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getAccessReviewsCount() {
     return accessReviews_.size();
   }
-
   /**
    *
    *
@@ -12656,7 +12269,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.AccessReview getAccessReviews(int index) {
     return accessReviews_.get(index);
   }
-
   /**
    *
    *
@@ -12678,7 +12290,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Object> objects_;
-
   /**
    *
    *
@@ -12692,7 +12303,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Kubernetes.Object> getObjectsList() {
     return objects_;
   }
-
   /**
    *
    *
@@ -12707,7 +12317,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       getObjectsOrBuilderList() {
     return objects_;
   }
-
   /**
    *
    *
@@ -12721,7 +12330,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public int getObjectsCount() {
     return objects_.size();
   }
-
   /**
    *
    *
@@ -12735,7 +12343,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Kubernetes.Object getObjects(int index) {
     return objects_.get(index);
   }
-
   /**
    *
    *
@@ -12978,7 +12585,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -13584,7 +13190,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return podsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -13604,7 +13209,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return podsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -13624,7 +13228,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return podsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -13650,7 +13253,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13674,7 +13276,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13700,7 +13301,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13726,7 +13326,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13750,7 +13349,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13774,7 +13372,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13798,7 +13395,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13821,7 +13417,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13844,7 +13439,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13860,7 +13454,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Kubernetes.Pod.Builder getPodsBuilder(int index) {
       return getPodsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -13880,7 +13473,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return podsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -13901,7 +13493,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pods_);
       }
     }
-
     /**
      *
      *
@@ -13918,7 +13509,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return getPodsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Pod.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -13936,7 +13526,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.Kubernetes.Pod.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -14006,7 +13595,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -14025,7 +13613,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -14044,7 +13631,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -14069,7 +13655,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14092,7 +13677,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14117,7 +13701,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14142,7 +13725,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14165,7 +13747,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14188,7 +13769,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14211,7 +13791,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14233,7 +13812,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14255,7 +13833,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14270,7 +13847,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Kubernetes.Node.Builder getNodesBuilder(int index) {
       return getNodesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -14290,7 +13866,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -14310,7 +13885,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nodes_);
       }
     }
-
     /**
      *
      *
@@ -14326,7 +13900,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return getNodesFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Node.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -14343,7 +13916,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.Kubernetes.Node.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -14415,7 +13987,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodePoolsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -14435,7 +14006,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodePoolsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -14455,7 +14025,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodePoolsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -14482,7 +14051,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14506,7 +14074,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14532,7 +14099,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14559,7 +14125,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14583,7 +14148,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14607,7 +14171,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14632,7 +14195,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14655,7 +14217,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14678,7 +14239,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14695,7 +14255,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNodePoolsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -14716,7 +14275,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return nodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -14737,7 +14295,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nodePools_);
       }
     }
-
     /**
      *
      *
@@ -14754,7 +14311,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return getNodePoolsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.NodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -14773,7 +14329,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.Kubernetes.NodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -14842,7 +14397,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return rolesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -14860,7 +14414,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return rolesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -14878,7 +14431,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return rolesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -14902,7 +14454,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14924,7 +14475,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14948,7 +14498,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14972,7 +14521,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14994,7 +14542,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15016,7 +14563,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15038,7 +14584,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15059,7 +14604,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15080,7 +14624,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15094,7 +14637,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Kubernetes.Role.Builder getRolesBuilder(int index) {
       return getRolesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -15113,7 +14655,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return rolesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -15132,7 +14673,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(roles_);
       }
     }
-
     /**
      *
      *
@@ -15147,7 +14687,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return getRolesFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Role.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -15163,7 +14702,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.Kubernetes.Role.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -15232,7 +14770,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return bindingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -15251,7 +14788,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return bindingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -15270,7 +14806,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return bindingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -15296,7 +14831,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15319,7 +14853,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15344,7 +14877,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15370,7 +14902,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15393,7 +14924,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15416,7 +14946,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15440,7 +14969,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15462,7 +14990,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15484,7 +15011,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15500,7 +15026,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBindingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -15520,7 +15045,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return bindingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -15540,7 +15064,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bindings_);
       }
     }
-
     /**
      *
      *
@@ -15556,7 +15079,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return getBindingsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Binding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -15574,7 +15096,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.Kubernetes.Binding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -15645,7 +15166,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return accessReviewsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -15664,7 +15184,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return accessReviewsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -15683,7 +15202,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return accessReviewsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -15709,7 +15227,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15733,7 +15250,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15759,7 +15275,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15785,7 +15300,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15808,7 +15322,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15832,7 +15345,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15856,7 +15368,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15878,7 +15389,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15900,7 +15410,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15916,7 +15425,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         getAccessReviewsBuilder(int index) {
       return getAccessReviewsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -15936,7 +15444,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return accessReviewsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -15957,7 +15464,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(accessReviews_);
       }
     }
-
     /**
      *
      *
@@ -15975,7 +15481,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.securitycenter.v2.Kubernetes.AccessReview.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -15994,7 +15499,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.securitycenter.v2.Kubernetes.AccessReview.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -16064,7 +15568,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -16081,7 +15584,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -16098,7 +15600,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -16122,7 +15623,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16143,7 +15643,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16166,7 +15665,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16190,7 +15688,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16211,7 +15708,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16232,7 +15728,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16253,7 +15748,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16273,7 +15767,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16293,7 +15786,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16307,7 +15799,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getObjectsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -16325,7 +15816,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -16343,7 +15833,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(objects_);
       }
     }
-
     /**
      *
      *
@@ -16357,7 +15846,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return getObjectsFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Kubernetes.Object.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -16373,7 +15861,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securitycenter.v2.Kubernetes.Object.getDefaultInstance());
     }
-
     /**
      *
      *

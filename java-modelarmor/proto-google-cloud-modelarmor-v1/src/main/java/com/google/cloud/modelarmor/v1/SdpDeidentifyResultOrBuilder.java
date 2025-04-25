@@ -39,7 +39,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SdpDeidentifyResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface SdpDeidentifyResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface SdpDeidentifyResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   int getMessageItemsCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SdpDeidentifyResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.MessageItemOrBuilder>
       getMessageItemsOrBuilderList();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return The enum numeric value on the wire for matchState.
    */
   int getMatchStateValue();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return Whether the data field is set.
    */
   boolean hasData();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return The data.
    */
   com.google.cloud.modelarmor.v1.DataItem getData();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return A list containing the infoTypes.
    */
   java.util.List<java.lang.String> getInfoTypesList();
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return The count of infoTypes.
    */
   int getInfoTypesCount();
-
   /**
    *
    *
@@ -248,7 +238,6 @@ public interface SdpDeidentifyResultOrBuilder
    * @return The infoTypes at the given index.
    */
   java.lang.String getInfoTypes(int index);
-
   /**
    *
    *

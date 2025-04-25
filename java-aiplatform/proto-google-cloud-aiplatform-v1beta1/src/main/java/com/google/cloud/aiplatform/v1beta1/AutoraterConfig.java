@@ -34,7 +34,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AutoraterConfig)
     AutoraterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoraterConfig.newBuilder() to construct.
   private AutoraterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SAMPLING_COUNT_FIELD_NUMBER = 1;
   private int samplingCount_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasSamplingCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int FLIP_ENABLED_FIELD_NUMBER = 2;
   private boolean flipEnabled_ = false;
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasFlipEnabled() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autoraterModel_ = "";
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -404,7 +397,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -620,7 +612,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int samplingCount_;
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasSamplingCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     public int getSamplingCount() {
       return samplingCount_;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean flipEnabled_;
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasFlipEnabled() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     public boolean getFlipEnabled() {
       return flipEnabled_;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object autoraterModel_ = "";
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +834,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

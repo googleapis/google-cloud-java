@@ -36,7 +36,6 @@ public interface UpdateIndexOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateIndexOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface UpdateIndexOperationMetadataOrBuilder
    * @return Whether the nearestNeighborSearchOperationMetadata field is set.
    */
   boolean hasNearestNeighborSearchOperationMetadata();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface UpdateIndexOperationMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1.NearestNeighborSearchOperationMetadata
       getNearestNeighborSearchOperationMetadata();
-
   /**
    *
    *

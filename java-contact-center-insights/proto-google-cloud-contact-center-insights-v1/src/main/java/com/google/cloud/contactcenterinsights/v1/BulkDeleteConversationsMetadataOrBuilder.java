@@ -36,7 +36,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest getRequest();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   com.google.rpc.Status getPartialErrors(int index);
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   int getPartialErrorsCount();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface BulkDeleteConversationsMetadataOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
-
   /**
    *
    *

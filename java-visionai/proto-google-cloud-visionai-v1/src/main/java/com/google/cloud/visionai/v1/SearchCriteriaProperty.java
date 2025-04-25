@@ -33,7 +33,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchCriteriaProperty)
     SearchCriteriaPropertyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchCriteriaProperty.newBuilder() to construct.
   private SearchCriteriaProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList mappedFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getMappedFieldsList() {
     return mappedFields_;
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
   public int getMappedFieldsCount() {
     return mappedFields_.size();
   }
-
   /**
    *
    *
@@ -178,7 +174,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
   public java.lang.String getMappedFields(int index) {
     return mappedFields_.get(index);
   }
-
   /**
    *
    *
@@ -382,7 +377,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +576,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -619,7 +612,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
       mappedFields_.makeImmutable();
       return mappedFields_;
     }
-
     /**
      *
      *
@@ -655,7 +647,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
     public int getMappedFieldsCount() {
       return mappedFields_.size();
     }
-
     /**
      *
      *
@@ -692,7 +683,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
     public java.lang.String getMappedFields(int index) {
       return mappedFields_.get(index);
     }
-
     /**
      *
      *
@@ -729,7 +719,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getMappedFieldsBytes(int index) {
       return mappedFields_.getByteString(index);
     }
-
     /**
      *
      *
@@ -774,7 +763,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +806,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +846,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +885,6 @@ public final class SearchCriteriaProperty extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

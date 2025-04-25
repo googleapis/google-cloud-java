@@ -30,14 +30,12 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -57,7 +55,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -70,7 +67,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -107,11 +102,9 @@ public interface SslPoliciesAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.SslPoliciesScopedList> getItems();
-
   /**
    *
    *
@@ -123,7 +116,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.SslPoliciesScopedList> getItemsMap();
-
   /**
    *
    *
@@ -139,7 +131,6 @@ public interface SslPoliciesAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.SslPoliciesScopedList defaultValue);
-
   /**
    *
    *
@@ -164,7 +155,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -177,7 +167,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -203,7 +192,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -216,7 +204,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -242,7 +229,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -255,7 +241,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -281,7 +266,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -294,7 +278,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -308,7 +291,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -335,7 +317,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -348,7 +329,6 @@ public interface SslPoliciesAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

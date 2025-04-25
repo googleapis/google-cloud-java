@@ -35,7 +35,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.Waypoint)
     WaypointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Waypoint.newBuilder() to construct.
   private Waypoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LAT_LNG_FIELD_NUMBER = 1;
   private com.google.type.LatLng latLng_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatLng() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ETA_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp eta_;
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEta() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEta() {
     return eta_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eta_;
   }
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -562,7 +554,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         latLngBuilder_;
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatLng() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return latLngBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -619,7 +608,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +627,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +654,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +673,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +687,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -719,7 +703,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
       }
     }
-
     /**
      *
      *
@@ -749,7 +732,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         etaBuilder_;
-
     /**
      *
      *
@@ -764,7 +746,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEta() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -783,7 +764,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return etaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -806,7 +786,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +805,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +832,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +851,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +865,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEtaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -906,7 +881,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         return eta_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eta_;
       }
     }
-
     /**
      *
      *

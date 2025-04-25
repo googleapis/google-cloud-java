@@ -42,7 +42,6 @@ public interface UserInfoOrBuilder
    * @return The visitorId.
    */
   java.lang.String getVisitorId();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface UserInfoOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface UserInfoOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface UserInfoOrBuilder
    * @return The userAgent.
    */
   java.lang.String getUserAgent();
-
   /**
    *
    *

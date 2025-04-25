@@ -38,7 +38,6 @@ public interface GetBackupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

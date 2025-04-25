@@ -33,7 +33,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.MysqlRdbms)
     MysqlRdbmsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MysqlRdbms.newBuilder() to construct.
   private MysqlRdbms(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.MysqlDatabase> mysqlDatabases_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       getMysqlDatabasesList() {
     return mysqlDatabases_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       getMysqlDatabasesOrBuilderList() {
     return mysqlDatabases_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
   public int getMysqlDatabasesCount() {
     return mysqlDatabases_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1alpha1.MysqlDatabase getMysqlDatabases(int index) {
     return mysqlDatabases_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
         return mysqlDatabasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
         return mysqlDatabasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
         return mysqlDatabasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +702,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +722,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +742,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +761,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +780,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +793,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getMysqlDatabasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -830,7 +810,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
         return mysqlDatabasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -848,7 +827,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mysqlDatabases_);
       }
     }
-
     /**
      *
      *
@@ -862,7 +840,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       return getMysqlDatabasesFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1alpha1.MysqlDatabase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -878,7 +855,6 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datastream.v1alpha1.MysqlDatabase.getDefaultInstance());
     }
-
     /**
      *
      *

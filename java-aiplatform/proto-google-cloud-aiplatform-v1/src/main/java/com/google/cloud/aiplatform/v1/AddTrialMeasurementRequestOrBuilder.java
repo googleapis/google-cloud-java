@@ -40,7 +40,6 @@ public interface AddTrialMeasurementRequestOrBuilder
    * @return The trialName.
    */
   java.lang.String getTrialName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface AddTrialMeasurementRequestOrBuilder
    * @return Whether the measurement field is set.
    */
   boolean hasMeasurement();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface AddTrialMeasurementRequestOrBuilder
    * @return The measurement.
    */
   com.google.cloud.aiplatform.v1.Measurement getMeasurement();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface QueryCompilationResultActionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dataform.v1beta1.CompilationResultAction>
       getCompilationResultActionsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface QueryCompilationResultActionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataform.v1beta1.CompilationResultAction getCompilationResultActions(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface QueryCompilationResultActionsResponseOrBuilder
    * </code>
    */
   int getCompilationResultActionsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface QueryCompilationResultActionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.CompilationResultActionOrBuilder>
       getCompilationResultActionsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface QueryCompilationResultActionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

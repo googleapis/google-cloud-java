@@ -33,7 +33,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DetectLanguageResponse)
     DetectLanguageResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DetectLanguageResponse.newBuilder() to construct.
   private DetectLanguageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.DetectedLanguage> languages_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.translate.v3.DetectedLanguage> getLanguagesList() {
     return languages_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       getLanguagesOrBuilderList() {
     return languages_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
   public int getLanguagesCount() {
     return languages_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.translate.v3.DetectedLanguage getLanguages(int index) {
     return languages_.get(index);
   }
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -570,7 +563,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
         return languagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
         return languagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
         return languagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -652,7 +641,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +750,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +790,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +803,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.translate.v3.DetectedLanguage.Builder getLanguagesBuilder(int index) {
       return getLanguagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -841,7 +821,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
         return languagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -860,7 +839,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(languages_);
       }
     }
-
     /**
      *
      *
@@ -875,7 +853,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       return getLanguagesFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.DetectedLanguage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -890,7 +867,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
       return getLanguagesFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.DetectedLanguage.getDefaultInstance());
     }
-
     /**
      *
      *

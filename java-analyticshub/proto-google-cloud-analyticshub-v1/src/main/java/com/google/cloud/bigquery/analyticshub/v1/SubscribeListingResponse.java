@@ -33,7 +33,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse)
     SubscribeListingResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubscribeListingResponse.newBuilder() to construct.
   private SubscribeListingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.analyticshub.v1.Subscription subscription_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
   public boolean hasSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
         ? com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()
         : subscription_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -495,7 +490,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
             com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder,
             com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder>
         subscriptionBuilder_;
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     public boolean hasSubscription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -531,7 +524,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
         return subscriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -575,7 +566,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +594,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +627,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
       onChanged();
       return getSubscriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -659,7 +646,6 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
             : subscription_;
       }
     }
-
     /**
      *
      *

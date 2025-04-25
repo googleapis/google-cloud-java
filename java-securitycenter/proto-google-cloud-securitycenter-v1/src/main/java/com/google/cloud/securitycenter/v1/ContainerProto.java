@@ -41,21 +41,21 @@ public final class ContainerProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ".google/cloud/securitycenter/v1/container.proto\022\036google.cloud.securitycenter.v1"
+      "\n.google/cloud/securitycenter/v1/contain"
+          + "er.proto\022\036google.cloud.securitycenter.v1"
           + "\032*google/cloud/securitycenter/v1/label.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"\240\001\n"
-          + "\tContainer\022\014\n"
-          + "\004name\030\001 \001(\t\022\013\n"
-          + "\003uri\030\002 \001(\t\022\020\n"
-          + "\010image_id\030\003 \001(\t\0225\n"
-          + "\006labels\030\004 \003(\0132%.google.cloud.securitycenter.v1.Label\022/\n"
-          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\350\001\n"
-          + "\"com.google.cloud.securitycenter.v1B\016ContainerProtoP\001ZJcloud.google.com/go/s"
+          + "roto\032\037google/protobuf/timestamp.proto\"\240\001"
+          + "\n\tContainer\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\020"
+          + "\n\010image_id\030\003 \001(\t\0225\n\006labels\030\004 \003(\0132%.googl"
+          + "e.cloud.securitycenter.v1.Label\022/\n\013creat"
+          + "e_time\030\005 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\350\001\n\"com.google.cloud.securitycenter.v1B"
+          + "\016ContainerProtoP\001ZJcloud.google.com/go/s"
           + "ecuritycenter/apiv1/securitycenterpb;sec"
           + "uritycenterpb\252\002\036Google.Cloud.SecurityCen"
           + "ter.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352"
-          + "\002!Google::Cloud::SecurityCenter::V1b\006proto3"
+          + "\002!Google::Cloud::SecurityCenter::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

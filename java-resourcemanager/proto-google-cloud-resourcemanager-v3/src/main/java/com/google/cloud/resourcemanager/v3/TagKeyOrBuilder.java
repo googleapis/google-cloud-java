@@ -38,7 +38,6 @@ public interface TagKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface TagKeyOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface TagKeyOrBuilder
    * @return The shortName.
    */
   java.lang.String getShortName();
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public interface TagKeyOrBuilder
    * @return The namespacedName.
    */
   java.lang.String getNamespacedName();
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public interface TagKeyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public interface TagKeyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface TagKeyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public interface TagKeyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public interface TagKeyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public interface TagKeyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public interface TagKeyOrBuilder
    * @return The enum numeric value on the wire for purpose.
    */
   int getPurposeValue();
-
   /**
    *
    *
@@ -356,7 +345,6 @@ public interface TagKeyOrBuilder
    * </code>
    */
   int getPurposeDataCount();
-
   /**
    *
    *
@@ -371,11 +359,9 @@ public interface TagKeyOrBuilder
    * </code>
    */
   boolean containsPurposeData(java.lang.String key);
-
   /** Use {@link #getPurposeDataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getPurposeData();
-
   /**
    *
    *
@@ -390,7 +376,6 @@ public interface TagKeyOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPurposeDataMap();
-
   /**
    *
    *
@@ -409,7 +394,6 @@ public interface TagKeyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

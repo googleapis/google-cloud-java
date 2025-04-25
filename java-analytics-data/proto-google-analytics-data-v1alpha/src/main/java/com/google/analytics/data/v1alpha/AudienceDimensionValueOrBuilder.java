@@ -36,7 +36,6 @@ public interface AudienceDimensionValueOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AudienceDimensionValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

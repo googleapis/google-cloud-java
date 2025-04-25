@@ -73,7 +73,6 @@ public enum OfferType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OFFER_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int OFFER_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum OfferType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NO_CODE = 1;</code>
    */
   public static final int NO_CODE_VALUE = 1;
-
   /**
    *
    *

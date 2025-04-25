@@ -38,7 +38,6 @@ public interface AdmissionRuleOrBuilder
    * @return The enum numeric value on the wire for evaluationMode.
    */
   int getEvaluationModeValue();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface AdmissionRuleOrBuilder
    * @return A list containing the requireAttestationsBy.
    */
   java.util.List<java.lang.String> getRequireAttestationsByList();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AdmissionRuleOrBuilder
    * @return The count of requireAttestationsBy.
    */
   int getRequireAttestationsByCount();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface AdmissionRuleOrBuilder
    * @return The requireAttestationsBy at the given index.
    */
   java.lang.String getRequireAttestationsBy(int index);
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface AdmissionRuleOrBuilder
    * @return The enum numeric value on the wire for enforcementMode.
    */
   int getEnforcementModeValue();
-
   /**
    *
    *

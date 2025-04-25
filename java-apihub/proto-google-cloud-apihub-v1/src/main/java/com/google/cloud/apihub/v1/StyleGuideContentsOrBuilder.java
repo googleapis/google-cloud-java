@@ -49,7 +49,6 @@ public interface StyleGuideContentsOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

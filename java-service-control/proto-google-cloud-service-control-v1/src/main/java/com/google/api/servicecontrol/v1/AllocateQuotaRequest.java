@@ -33,7 +33,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v1.AllocateQuotaRequest)
     AllocateQuotaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllocateQuotaRequest.newBuilder() to construct.
   private AllocateQuotaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ALLOCATE_OPERATION_FIELD_NUMBER = 2;
   private com.google.api.servicecontrol.v1.QuotaOperation allocateOperation_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
   public boolean hasAllocateOperation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         ? com.google.api.servicecontrol.v1.QuotaOperation.getDefaultInstance()
         : allocateOperation_;
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceConfigId_ = "";
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -418,7 +410,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
             com.google.api.servicecontrol.v1.QuotaOperation.Builder,
             com.google.api.servicecontrol.v1.QuotaOperationOrBuilder>
         allocateOperationBuilder_;
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     public boolean hasAllocateOperation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         return allocateOperationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +905,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAllocateOperationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -946,7 +924,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
             : allocateOperation_;
       }
     }
-
     /**
      *
      *
@@ -974,7 +951,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object serviceConfigId_ = "";
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1024,7 +999,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1022,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1041,6 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

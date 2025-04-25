@@ -35,7 +35,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.DeleteGlossaryResponse)
     DeleteGlossaryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteGlossaryResponse.newBuilder() to construct.
   private DeleteGlossaryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
 
   public static final int SUBMIT_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp submitTime_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
   public boolean hasSubmitTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
 
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -412,7 +403,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +637,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         submitTimeBuilder_;
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
     public boolean hasSubmitTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
         return submitTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -924,7 +901,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
             : submitTime_;
       }
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -995,7 +969,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1020,7 +993,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1064,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1080,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1130,7 +1098,6 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    * @return Whether the schemaModifiedCadence field is set.
    */
   boolean hasSchemaModifiedCadence();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence
       getSchemaModifiedCadence();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    * @return The enum numeric value on the wire for refreshFrequency.
    */
   int getRefreshFrequencyValue();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    * @return Whether the inspectTemplateModifiedCadence field is set.
    */
   boolean hasInspectTemplateModifiedCadence();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
       getInspectTemplateModifiedCadence();
-
   /**
    *
    *

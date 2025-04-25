@@ -38,7 +38,6 @@ public interface PolicyRuleOrBuilder
    * @return Whether the rolloutRestriction field is set.
    */
   boolean hasRolloutRestriction();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PolicyRuleOrBuilder
    * @return The rolloutRestriction.
    */
   com.google.cloud.deploy.v1.RolloutRestriction getRolloutRestriction();
-
   /**
    *
    *

@@ -74,7 +74,6 @@ public enum RouteMatrixElementCondition implements com.google.protobuf.ProtocolM
    * <code>ROUTE_MATRIX_ELEMENT_CONDITION_UNSPECIFIED = 0;</code>
    */
   public static final int ROUTE_MATRIX_ELEMENT_CONDITION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum RouteMatrixElementCondition implements com.google.protobuf.ProtocolM
    * <code>ROUTE_EXISTS = 1;</code>
    */
   public static final int ROUTE_EXISTS_VALUE = 1;
-
   /**
    *
    *

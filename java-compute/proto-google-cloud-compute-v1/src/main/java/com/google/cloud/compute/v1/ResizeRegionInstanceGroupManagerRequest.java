@@ -34,7 +34,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResizeRegionInstanceGroupManagerRequest)
     ResizeRegionInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResizeRegionInstanceGroupManagerRequest.newBuilder() to construct.
   private ResizeRegionInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +300,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
 
   public static final int SIZE_FIELD_NUMBER = 3530753;
   private int size_ = 0;
-
   /**
    *
    *
@@ -531,7 +520,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -784,7 +772,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -808,7 +795,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +858,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +883,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -925,7 +907,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +973,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +999,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1046,7 +1023,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1070,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1089,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1115,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1180,7 +1151,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1203,7 +1173,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1225,7 +1194,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1211,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1235,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     }
 
     private int size_;
-
     /**
      *
      *
@@ -1284,7 +1250,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
     public int getSize() {
       return size_;
     }
-
     /**
      *
      *
@@ -1304,7 +1269,6 @@ public final class ResizeRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

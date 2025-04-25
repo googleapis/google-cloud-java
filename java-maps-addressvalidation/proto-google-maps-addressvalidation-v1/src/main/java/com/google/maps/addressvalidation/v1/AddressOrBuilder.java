@@ -37,7 +37,6 @@ public interface AddressOrBuilder
    * @return The formattedAddress.
    */
   java.lang.String getFormattedAddress();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AddressOrBuilder
    * @return Whether the postalAddress field is set.
    */
   boolean hasPostalAddress();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AddressOrBuilder
    * @return The postalAddress.
    */
   com.google.type.PostalAddress getPostalAddress();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface AddressOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.addressvalidation.v1.AddressComponent> getAddressComponentsList();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface AddressOrBuilder
    * </code>
    */
   com.google.maps.addressvalidation.v1.AddressComponent getAddressComponents(int index);
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AddressOrBuilder
    * </code>
    */
   int getAddressComponentsCount();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface AddressOrBuilder
    */
   java.util.List<? extends com.google.maps.addressvalidation.v1.AddressComponentOrBuilder>
       getAddressComponentsOrBuilderList();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface AddressOrBuilder
    * @return A list containing the missingComponentTypes.
    */
   java.util.List<java.lang.String> getMissingComponentTypesList();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface AddressOrBuilder
    * @return The count of missingComponentTypes.
    */
   int getMissingComponentTypesCount();
-
   /**
    *
    *
@@ -238,7 +229,6 @@ public interface AddressOrBuilder
    * @return The missingComponentTypes at the given index.
    */
   java.lang.String getMissingComponentTypes(int index);
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public interface AddressOrBuilder
    * @return A list containing the unconfirmedComponentTypes.
    */
   java.util.List<java.lang.String> getUnconfirmedComponentTypesList();
-
   /**
    *
    *
@@ -304,7 +293,6 @@ public interface AddressOrBuilder
    * @return The count of unconfirmedComponentTypes.
    */
   int getUnconfirmedComponentTypesCount();
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public interface AddressOrBuilder
    * @return The unconfirmedComponentTypes at the given index.
    */
   java.lang.String getUnconfirmedComponentTypes(int index);
-
   /**
    *
    *
@@ -369,7 +356,6 @@ public interface AddressOrBuilder
    * @return A list containing the unresolvedTokens.
    */
   java.util.List<java.lang.String> getUnresolvedTokensList();
-
   /**
    *
    *
@@ -386,7 +372,6 @@ public interface AddressOrBuilder
    * @return The count of unresolvedTokens.
    */
   int getUnresolvedTokensCount();
-
   /**
    *
    *
@@ -404,7 +389,6 @@ public interface AddressOrBuilder
    * @return The unresolvedTokens at the given index.
    */
   java.lang.String getUnresolvedTokens(int index);
-
   /**
    *
    *

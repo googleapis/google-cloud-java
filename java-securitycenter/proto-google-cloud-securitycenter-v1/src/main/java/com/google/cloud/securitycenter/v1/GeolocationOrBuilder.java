@@ -36,7 +36,6 @@ public interface GeolocationOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *

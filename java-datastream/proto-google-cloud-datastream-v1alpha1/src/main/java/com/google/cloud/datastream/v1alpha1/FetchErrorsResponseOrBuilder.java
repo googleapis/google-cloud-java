@@ -34,7 +34,6 @@ public interface FetchErrorsResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.Error errors = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.Error> getErrorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FetchErrorsResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.Error errors = 1;</code>
    */
   com.google.cloud.datastream.v1alpha1.Error getErrors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FetchErrorsResponseOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.Error errors = 1;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FetchErrorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.ErrorOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.Action)
     ActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Action.newBuilder() to construct.
   private Action(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private ActionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -133,7 +131,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object actionId_ = "";
-
   /**
    *
    *
@@ -157,7 +154,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +179,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACCESS_CONTROL_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessControl() {
     return actionCase_ == 2;
   }
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.AccessControlAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_VALIDATION_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataValidation() {
     return actionCase_ == 3;
   }
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.DataValidationAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_UPDATE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataUpdate() {
     return actionCase_ == 4;
   }
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.DataUpdateAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -347,7 +334,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADD_TO_FOLDER_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -363,7 +349,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAddToFolder() {
     return actionCase_ == 5;
   }
-
   /**
    *
    *
@@ -382,7 +367,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.AddToFolderAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -401,7 +385,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLISH_TO_PUB_SUB_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -417,7 +400,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishToPubSub() {
     return actionCase_ == 6;
   }
-
   /**
    *
    *
@@ -436,7 +418,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.PublishAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -455,7 +436,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOVE_FROM_FOLDER_ACTION_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -472,7 +452,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemoveFromFolderAction() {
     return actionCase_ == 9;
   }
-
   /**
    *
    *
@@ -492,7 +471,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -513,7 +491,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELETE_DOCUMENT_ACTION_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -530,7 +507,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteDocumentAction() {
     return actionCase_ == 10;
   }
-
   /**
    *
    *
@@ -550,7 +526,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.contentwarehouse.v1.DeleteDocumentAction.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -843,7 +818,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1176,7 +1150,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object actionId_ = "";
-
     /**
      *
      *
@@ -1199,7 +1172,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1194,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1244,7 +1215,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1232,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1260,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.AccessControlAction.Builder,
             com.google.cloud.contentwarehouse.v1.AccessControlActionOrBuilder>
         accessControlBuilder_;
-
     /**
      *
      *
@@ -1307,7 +1275,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessControl() {
       return actionCase_ == 2;
     }
-
     /**
      *
      *
@@ -1333,7 +1300,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.AccessControlAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1323,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1343,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1377,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1402,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1453,7 +1415,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getAccessControlBuilder() {
       return getAccessControlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1475,7 +1436,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.AccessControlAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1474,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.DataValidationAction.Builder,
             com.google.cloud.contentwarehouse.v1.DataValidationActionOrBuilder>
         dataValidationBuilder_;
-
     /**
      *
      *
@@ -1530,7 +1489,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataValidation() {
       return actionCase_ == 3;
     }
-
     /**
      *
      *
@@ -1556,7 +1514,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.DataValidationAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1580,7 +1537,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1557,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1591,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1616,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1676,7 +1629,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getDataValidationBuilder() {
       return getDataValidationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1698,7 +1650,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.DataValidationAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1737,7 +1688,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.DataUpdateAction.Builder,
             com.google.cloud.contentwarehouse.v1.DataUpdateActionOrBuilder>
         dataUpdateBuilder_;
-
     /**
      *
      *
@@ -1753,7 +1703,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataUpdate() {
       return actionCase_ == 4;
     }
-
     /**
      *
      *
@@ -1779,7 +1728,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.DataUpdateAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1802,7 +1750,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1823,7 +1770,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1803,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1828,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1896,7 +1840,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.DataUpdateAction.Builder getDataUpdateBuilder() {
       return getDataUpdateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1917,7 +1860,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.DataUpdateAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1956,7 +1898,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.AddToFolderAction.Builder,
             com.google.cloud.contentwarehouse.v1.AddToFolderActionOrBuilder>
         addToFolderBuilder_;
-
     /**
      *
      *
@@ -1972,7 +1913,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAddToFolder() {
       return actionCase_ == 5;
     }
-
     /**
      *
      *
@@ -1998,7 +1938,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.AddToFolderAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2021,7 +1960,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2042,7 +1980,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2076,7 +2013,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2038,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2115,7 +2050,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.AddToFolderAction.Builder getAddToFolderBuilder() {
       return getAddToFolderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2137,7 +2071,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.AddToFolderAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2176,7 +2109,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.PublishAction.Builder,
             com.google.cloud.contentwarehouse.v1.PublishActionOrBuilder>
         publishToPubSubBuilder_;
-
     /**
      *
      *
@@ -2192,7 +2124,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishToPubSub() {
       return actionCase_ == 6;
     }
-
     /**
      *
      *
@@ -2218,7 +2149,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.PublishAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2241,7 +2171,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2262,7 +2191,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2295,7 +2223,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2321,7 +2248,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2334,7 +2260,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.PublishAction.Builder getPublishToPubSubBuilder() {
       return getPublishToPubSubFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2356,7 +2281,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.PublishAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2395,7 +2319,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction.Builder,
             com.google.cloud.contentwarehouse.v1.RemoveFromFolderActionOrBuilder>
         removeFromFolderActionBuilder_;
-
     /**
      *
      *
@@ -2412,7 +2335,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemoveFromFolderAction() {
       return actionCase_ == 9;
     }
-
     /**
      *
      *
@@ -2439,7 +2361,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2464,7 +2385,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -2486,7 +2406,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -2523,7 +2442,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2468,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2565,7 +2482,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getRemoveFromFolderActionBuilder() {
       return getRemoveFromFolderActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2588,7 +2504,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2629,7 +2544,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.DeleteDocumentAction.Builder,
             com.google.cloud.contentwarehouse.v1.DeleteDocumentActionOrBuilder>
         deleteDocumentActionBuilder_;
-
     /**
      *
      *
@@ -2646,7 +2560,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteDocumentAction() {
       return actionCase_ == 10;
     }
-
     /**
      *
      *
@@ -2673,7 +2586,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.DeleteDocumentAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2698,7 +2610,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -2720,7 +2631,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -2756,7 +2666,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -2783,7 +2692,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2798,7 +2706,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getDeleteDocumentActionBuilder() {
       return getDeleteDocumentActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2821,7 +2728,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.contentwarehouse.v1.DeleteDocumentAction.getDefaultInstance();
       }
     }
-
     /**
      *
      *

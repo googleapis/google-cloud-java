@@ -36,7 +36,6 @@ public interface SpotConfigOrBuilder
    * @return A list containing the instanceTypes.
    */
   java.util.List<java.lang.String> getInstanceTypesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SpotConfigOrBuilder
    * @return The count of instanceTypes.
    */
   int getInstanceTypesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface SpotConfigOrBuilder
    * @return The instanceTypes at the given index.
    */
   java.lang.String getInstanceTypes(int index);
-
   /**
    *
    *

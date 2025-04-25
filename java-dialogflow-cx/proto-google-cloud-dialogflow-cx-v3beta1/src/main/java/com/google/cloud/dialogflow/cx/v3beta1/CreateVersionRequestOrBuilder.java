@@ -40,7 +40,6 @@ public interface CreateVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateVersionRequestOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateVersionRequestOrBuilder
    * @return The version.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Version getVersion();
-
   /**
    *
    *

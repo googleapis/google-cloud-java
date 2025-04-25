@@ -36,7 +36,6 @@ public interface AzureClusterResourcesOrBuilder
    * @return The networkSecurityGroupId.
    */
   java.lang.String getNetworkSecurityGroupId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AzureClusterResourcesOrBuilder
    * @return The controlPlaneApplicationSecurityGroupId.
    */
   java.lang.String getControlPlaneApplicationSecurityGroupId();
-
   /**
    *
    *

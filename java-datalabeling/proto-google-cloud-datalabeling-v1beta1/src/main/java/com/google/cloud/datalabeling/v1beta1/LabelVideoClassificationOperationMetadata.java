@@ -34,7 +34,6 @@ public final class LabelVideoClassificationOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata)
     LabelVideoClassificationOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelVideoClassificationOperationMetadata.newBuilder() to construct.
   private LabelVideoClassificationOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class LabelVideoClassificationOperationMetadata
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class LabelVideoClassificationOperationMetadata
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class LabelVideoClassificationOperationMetadata
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
-
   /**
    *
    *
@@ -293,7 +289,6 @@ public final class LabelVideoClassificationOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -512,7 +507,6 @@ public final class LabelVideoClassificationOperationMetadata
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
-
     /**
      *
      *
@@ -527,7 +521,6 @@ public final class LabelVideoClassificationOperationMetadata
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -548,7 +541,6 @@ public final class LabelVideoClassificationOperationMetadata
         return basicConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -572,7 +564,6 @@ public final class LabelVideoClassificationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class LabelVideoClassificationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class LabelVideoClassificationOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class LabelVideoClassificationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class LabelVideoClassificationOperationMetadata
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -680,7 +667,6 @@ public final class LabelVideoClassificationOperationMetadata
             : basicConfig_;
       }
     }
-
     /**
      *
      *

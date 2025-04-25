@@ -29,7 +29,7 @@ public interface CreateSessionRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location to create the session in.
-   * Format:
+   * Format: `projects/{project}/locations/{location}` or
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
@@ -40,13 +40,12 @@ public interface CreateSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
    * <pre>
    * Required. The resource name of the location to create the session in.
-   * Format:
+   * Format: `projects/{project}/locations/{location}` or
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
@@ -72,7 +71,6 @@ public interface CreateSessionRequestOrBuilder
    * @return Whether the session field is set.
    */
   boolean hasSession();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The session.
    */
   com.google.cloud.aiplatform.v1beta1.Session getSession();
-
   /**
    *
    *

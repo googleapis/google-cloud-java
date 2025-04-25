@@ -37,7 +37,6 @@ public interface StreamingAutomlActionRecognitionConfigOrBuilder
    * @return The modelName.
    */
   java.lang.String getModelName();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface MetadataExchangeResponseOrBuilder
    * @return The enum numeric value on the wire for responseCode.
    */
   int getResponseCodeValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface MetadataExchangeResponseOrBuilder
    * @return The error.
    */
   java.lang.String getError();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface CreateFeedRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateFeedRequestOrBuilder
    * @return The feedId.
    */
   java.lang.String getFeedId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CreateFeedRequestOrBuilder
    * @return Whether the feed field is set.
    */
   boolean hasFeed();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateFeedRequestOrBuilder
    * @return The feed.
    */
   com.google.cloud.asset.v1.Feed getFeed();
-
   /**
    *
    *

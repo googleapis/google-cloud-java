@@ -37,7 +37,6 @@ public interface LookerSystemSpecOrBuilder
    * @return The parentInstanceId.
    */
   java.lang.String getParentInstanceId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface LookerSystemSpecOrBuilder
    * @return The parentInstanceDisplayName.
    */
   java.lang.String getParentInstanceDisplayName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface LookerSystemSpecOrBuilder
    * @return The parentModelId.
    */
   java.lang.String getParentModelId();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface LookerSystemSpecOrBuilder
    * @return The parentModelDisplayName.
    */
   java.lang.String getParentModelDisplayName();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface LookerSystemSpecOrBuilder
    * @return The parentViewId.
    */
   java.lang.String getParentViewId();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface LookerSystemSpecOrBuilder
    * @return The parentViewDisplayName.
    */
   java.lang.String getParentViewDisplayName();
-
   /**
    *
    *

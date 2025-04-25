@@ -33,7 +33,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.CdcStrategy)
     CdcStrategyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CdcStrategy.newBuilder() to construct.
   private CdcStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.CdcStrategy.MostRecentStartPosition)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.CdcStrategy.MostRecentStartPosition)
       MostRecentStartPositionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MostRecentStartPosition.newBuilder() to construct.
     private MostRecentStartPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -264,7 +261,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -504,7 +500,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.CdcStrategy.NextAvailableStartPosition)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -521,7 +516,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.CdcStrategy.NextAvailableStartPosition)
       NextAvailableStartPositionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NextAvailableStartPosition.newBuilder() to construct.
     private NextAvailableStartPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -703,7 +697,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -960,7 +953,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mysqlLogPosition field is set.
      */
     boolean hasMysqlLogPosition();
-
     /**
      *
      *
@@ -973,7 +965,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return The mysqlLogPosition.
      */
     com.google.cloud.datastream.v1.MysqlLogPosition getMysqlLogPosition();
-
     /**
      *
      *
@@ -997,7 +988,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the oracleScnPosition field is set.
      */
     boolean hasOracleScnPosition();
-
     /**
      *
      *
@@ -1010,7 +1000,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return The oracleScnPosition.
      */
     com.google.cloud.datastream.v1.OracleScnPosition getOracleScnPosition();
-
     /**
      *
      *
@@ -1034,7 +1023,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sqlServerLsnPosition field is set.
      */
     boolean hasSqlServerLsnPosition();
-
     /**
      *
      *
@@ -1047,7 +1035,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return The sqlServerLsnPosition.
      */
     com.google.cloud.datastream.v1.SqlServerLsnPosition getSqlServerLsnPosition();
-
     /**
      *
      *
@@ -1071,7 +1058,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mysqlGtidPosition field is set.
      */
     boolean hasMysqlGtidPosition();
-
     /**
      *
      *
@@ -1084,7 +1070,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      * @return The mysqlGtidPosition.
      */
     com.google.cloud.datastream.v1.MysqlGtidPosition getMysqlGtidPosition();
-
     /**
      *
      *
@@ -1098,7 +1083,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition.PositionCase getPositionCase();
   }
-
   /**
    *
    *
@@ -1113,7 +1097,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition)
       SpecificStartPositionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SpecificStartPosition.newBuilder() to construct.
     private SpecificStartPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1161,7 +1144,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       private PositionCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1199,7 +1181,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MYSQL_LOG_POSITION_FIELD_NUMBER = 101;
-
     /**
      *
      *
@@ -1215,7 +1196,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMysqlLogPosition() {
       return positionCase_ == 101;
     }
-
     /**
      *
      *
@@ -1234,7 +1214,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.datastream.v1.MysqlLogPosition.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1253,7 +1232,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ORACLE_SCN_POSITION_FIELD_NUMBER = 102;
-
     /**
      *
      *
@@ -1269,7 +1247,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOracleScnPosition() {
       return positionCase_ == 102;
     }
-
     /**
      *
      *
@@ -1288,7 +1265,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.datastream.v1.OracleScnPosition.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1308,7 +1284,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SQL_SERVER_LSN_POSITION_FIELD_NUMBER = 103;
-
     /**
      *
      *
@@ -1324,7 +1299,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSqlServerLsnPosition() {
       return positionCase_ == 103;
     }
-
     /**
      *
      *
@@ -1343,7 +1317,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.datastream.v1.SqlServerLsnPosition.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1363,7 +1336,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MYSQL_GTID_POSITION_FIELD_NUMBER = 104;
-
     /**
      *
      *
@@ -1379,7 +1351,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMysqlGtidPosition() {
       return positionCase_ == 104;
     }
-
     /**
      *
      *
@@ -1398,7 +1369,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1639,7 +1609,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1924,7 +1893,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datastream.v1.MysqlLogPosition.Builder,
               com.google.cloud.datastream.v1.MysqlLogPositionOrBuilder>
           mysqlLogPositionBuilder_;
-
       /**
        *
        *
@@ -1940,7 +1908,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMysqlLogPosition() {
         return positionCase_ == 101;
       }
-
       /**
        *
        *
@@ -1966,7 +1933,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.MysqlLogPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1989,7 +1955,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 101;
         return this;
       }
-
       /**
        *
        *
@@ -2010,7 +1975,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 101;
         return this;
       }
-
       /**
        *
        *
@@ -2044,7 +2008,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 101;
         return this;
       }
-
       /**
        *
        *
@@ -2070,7 +2033,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2083,7 +2045,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datastream.v1.MysqlLogPosition.Builder getMysqlLogPositionBuilder() {
         return getMysqlLogPositionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2105,7 +2066,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.MysqlLogPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2144,7 +2104,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datastream.v1.OracleScnPosition.Builder,
               com.google.cloud.datastream.v1.OracleScnPositionOrBuilder>
           oracleScnPositionBuilder_;
-
       /**
        *
        *
@@ -2160,7 +2119,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOracleScnPosition() {
         return positionCase_ == 102;
       }
-
       /**
        *
        *
@@ -2186,7 +2144,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.OracleScnPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2209,7 +2166,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 102;
         return this;
       }
-
       /**
        *
        *
@@ -2230,7 +2186,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 102;
         return this;
       }
-
       /**
        *
        *
@@ -2265,7 +2220,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 102;
         return this;
       }
-
       /**
        *
        *
@@ -2291,7 +2245,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2305,7 +2258,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           getOracleScnPositionBuilder() {
         return getOracleScnPositionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2327,7 +2279,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.OracleScnPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2366,7 +2317,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datastream.v1.SqlServerLsnPosition.Builder,
               com.google.cloud.datastream.v1.SqlServerLsnPositionOrBuilder>
           sqlServerLsnPositionBuilder_;
-
       /**
        *
        *
@@ -2383,7 +2333,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSqlServerLsnPosition() {
         return positionCase_ == 103;
       }
-
       /**
        *
        *
@@ -2410,7 +2359,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.SqlServerLsnPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2435,7 +2383,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 103;
         return this;
       }
-
       /**
        *
        *
@@ -2457,7 +2404,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 103;
         return this;
       }
-
       /**
        *
        *
@@ -2493,7 +2439,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 103;
         return this;
       }
-
       /**
        *
        *
@@ -2520,7 +2465,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2535,7 +2479,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           getSqlServerLsnPositionBuilder() {
         return getSqlServerLsnPositionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2558,7 +2501,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.SqlServerLsnPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2598,7 +2540,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.datastream.v1.MysqlGtidPosition.Builder,
               com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder>
           mysqlGtidPositionBuilder_;
-
       /**
        *
        *
@@ -2614,7 +2555,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMysqlGtidPosition() {
         return positionCase_ == 104;
       }
-
       /**
        *
        *
@@ -2640,7 +2580,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2663,7 +2602,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 104;
         return this;
       }
-
       /**
        *
        *
@@ -2684,7 +2622,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 104;
         return this;
       }
-
       /**
        *
        *
@@ -2719,7 +2656,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 104;
         return this;
       }
-
       /**
        *
        *
@@ -2745,7 +2681,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2759,7 +2694,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           getMysqlGtidPositionBuilder() {
         return getMysqlGtidPositionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2781,7 +2715,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2900,7 +2833,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     private StartPositionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2936,7 +2868,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOST_RECENT_START_POSITION_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -2954,7 +2885,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMostRecentStartPosition() {
     return startPositionCase_ == 101;
   }
-
   /**
    *
    *
@@ -2976,7 +2906,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1.CdcStrategy.MostRecentStartPosition.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2998,7 +2927,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEXT_AVAILABLE_START_POSITION_FIELD_NUMBER = 102;
-
   /**
    *
    *
@@ -3017,7 +2945,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNextAvailableStartPosition() {
     return startPositionCase_ == 102;
   }
-
   /**
    *
    *
@@ -3041,7 +2968,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datastream.v1.CdcStrategy.NextAvailableStartPosition
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3065,7 +2991,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPECIFIC_START_POSITION_FIELD_NUMBER = 103;
-
   /**
    *
    *
@@ -3083,7 +3008,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpecificStartPosition() {
     return startPositionCase_ == 103;
   }
-
   /**
    *
    *
@@ -3105,7 +3029,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3339,7 +3262,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3594,7 +3516,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.CdcStrategy.MostRecentStartPosition.Builder,
             com.google.cloud.datastream.v1.CdcStrategy.MostRecentStartPositionOrBuilder>
         mostRecentStartPositionBuilder_;
-
     /**
      *
      *
@@ -3612,7 +3533,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMostRecentStartPosition() {
       return startPositionCase_ == 101;
     }
-
     /**
      *
      *
@@ -3644,7 +3564,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3670,7 +3589,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -3694,7 +3612,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -3733,7 +3650,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -3761,7 +3677,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3777,7 +3692,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         getMostRecentStartPositionBuilder() {
       return getMostRecentStartPositionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3803,7 +3717,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3846,7 +3759,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.CdcStrategy.NextAvailableStartPosition.Builder,
             com.google.cloud.datastream.v1.CdcStrategy.NextAvailableStartPositionOrBuilder>
         nextAvailableStartPositionBuilder_;
-
     /**
      *
      *
@@ -3865,7 +3777,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextAvailableStartPosition() {
       return startPositionCase_ == 102;
     }
-
     /**
      *
      *
@@ -3898,7 +3809,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3925,7 +3835,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -3950,7 +3859,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -3990,7 +3898,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 102;
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3926,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4036,7 +3942,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         getNextAvailableStartPositionBuilder() {
       return getNextAvailableStartPositionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4063,7 +3968,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4108,7 +4012,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition.Builder,
             com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPositionOrBuilder>
         specificStartPositionBuilder_;
-
     /**
      *
      *
@@ -4126,7 +4029,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpecificStartPosition() {
       return startPositionCase_ == 103;
     }
-
     /**
      *
      *
@@ -4157,7 +4059,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4183,7 +4084,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -4206,7 +4106,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -4245,7 +4144,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       startPositionCase_ = 103;
       return this;
     }
-
     /**
      *
      *
@@ -4273,7 +4171,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4289,7 +4186,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         getSpecificStartPositionBuilder() {
       return getSpecificStartPositionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4314,7 +4210,6 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.Secret)
     SecretOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Secret.newBuilder() to construct.
   private Secret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_SECRET_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudSecret() {
     return valueCase_ == 2;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -361,7 +356,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +582,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudSecret() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -620,7 +613,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -652,7 +644,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -677,7 +668,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +690,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *

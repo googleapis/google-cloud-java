@@ -36,7 +36,6 @@ public interface ChangeHistoryEventOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ChangeHistoryEventOrBuilder
    * @return Whether the changeTime field is set.
    */
   boolean hasChangeTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ChangeHistoryEventOrBuilder
    * @return The changeTime.
    */
   com.google.protobuf.Timestamp getChangeTime();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ChangeHistoryEventOrBuilder
    * @return The enum numeric value on the wire for actorType.
    */
   int getActorTypeValue();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ChangeHistoryEventOrBuilder
    * @return The userActorEmail.
    */
   java.lang.String getUserActorEmail();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ChangeHistoryEventOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ChangeHistoryChange changes = 6;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ChangeHistoryChange> getChangesList();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface ChangeHistoryEventOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ChangeHistoryChange changes = 6;</code>
    */
   com.google.analytics.admin.v1alpha.ChangeHistoryChange getChanges(int index);
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface ChangeHistoryEventOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ChangeHistoryChange changes = 6;</code>
    */
   int getChangesCount();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface ChangeHistoryEventOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ChangeHistoryChangeOrBuilder>
       getChangesOrBuilderList();
-
   /**
    *
    *

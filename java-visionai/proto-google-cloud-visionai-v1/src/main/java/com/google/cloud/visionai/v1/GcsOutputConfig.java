@@ -33,7 +33,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GcsOutputConfig)
     GcsOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsOutputConfig.newBuilder() to construct.
   private GcsOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsPath_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -276,7 +273,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -460,7 +456,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object gcsPath_ = "";
-
     /**
      *
      *
@@ -483,7 +478,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

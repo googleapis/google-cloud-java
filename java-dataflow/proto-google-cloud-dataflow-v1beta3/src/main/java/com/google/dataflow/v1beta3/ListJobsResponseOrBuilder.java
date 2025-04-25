@@ -34,7 +34,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Job jobs = 1;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.Job> getJobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Job jobs = 1;</code>
    */
   com.google.dataflow.v1beta3.Job getJobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Job jobs = 1;</code>
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Job jobs = 1;</code>
    */
   java.util.List<? extends com.google.dataflow.v1beta3.JobOrBuilder> getJobsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.FailedLocation failed_location = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.FailedLocation> getFailedLocationList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.FailedLocation failed_location = 3;</code>
    */
   com.google.dataflow.v1beta3.FailedLocation getFailedLocation(int index);
-
   /**
    *
    *
@@ -143,7 +136,6 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.dataflow.v1beta3.FailedLocation failed_location = 3;</code>
    */
   int getFailedLocationCount();
-
   /**
    *
    *
@@ -157,7 +149,6 @@ public interface ListJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.FailedLocationOrBuilder>
       getFailedLocationOrBuilderList();
-
   /**
    *
    *

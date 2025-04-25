@@ -36,7 +36,6 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.redis.v1beta1.GcsSource getGcsSource();
-
   /**
    *
    *

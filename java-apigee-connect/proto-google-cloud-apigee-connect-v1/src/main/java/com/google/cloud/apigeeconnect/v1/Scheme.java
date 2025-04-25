@@ -62,7 +62,6 @@ public enum Scheme implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SCHEME_UNSPECIFIED = 0;</code>
    */
   public static final int SCHEME_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

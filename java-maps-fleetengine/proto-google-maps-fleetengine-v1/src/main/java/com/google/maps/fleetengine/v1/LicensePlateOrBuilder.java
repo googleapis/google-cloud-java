@@ -37,7 +37,6 @@ public interface LicensePlateOrBuilder
    * @return The countryCode.
    */
   java.lang.String getCountryCode();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface LicensePlateOrBuilder
    * @return The lastCharacter.
    */
   java.lang.String getLastCharacter();
-
   /**
    *
    *

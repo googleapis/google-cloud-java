@@ -39,7 +39,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.Disk)
     DiskOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Disk.newBuilder() to construct.
   private Disk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_GB_FIELD_NUMBER = 2;
   private int sizeGb_ = 0;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceImage_ = "";
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -446,7 +438,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -679,7 +670,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -704,7 +694,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +718,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +786,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sizeGb_;
-
     /**
      *
      *
@@ -822,7 +807,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public int getSizeGb() {
       return sizeGb_;
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +939,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +963,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceImage_ = "";
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1007,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1028,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

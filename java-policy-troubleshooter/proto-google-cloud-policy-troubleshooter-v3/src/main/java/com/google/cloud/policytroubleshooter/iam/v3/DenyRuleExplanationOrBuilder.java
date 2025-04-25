@@ -45,7 +45,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return The enum numeric value on the wire for denyAccessState.
    */
   int getDenyAccessStateValue();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return Whether the combinedDeniedPermission field is set.
    */
   boolean hasCombinedDeniedPermission();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface DenyRuleExplanationOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation.AnnotatedPermissionMatching
       getCombinedDeniedPermission();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   int getDeniedPermissionsCount();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   boolean containsDeniedPermissions(java.lang.String key);
-
   /** Use {@link #getDeniedPermissionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -160,7 +155,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedPermissionMatching>
       getDeniedPermissions();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedPermissionMatching>
       getDeniedPermissionsMap();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                   .AnnotatedPermissionMatching
               defaultValue);
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return Whether the combinedExceptionPermission field is set.
    */
   boolean hasCombinedExceptionPermission();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public interface DenyRuleExplanationOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation.AnnotatedPermissionMatching
       getCombinedExceptionPermission();
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   int getExceptionPermissionsCount();
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   boolean containsExceptionPermissions(java.lang.String key);
-
   /** Use {@link #getExceptionPermissionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -319,7 +307,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedPermissionMatching>
       getExceptionPermissions();
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedPermissionMatching>
       getExceptionPermissionsMap();
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                   .AnnotatedPermissionMatching
               defaultValue);
-
   /**
    *
    *
@@ -401,7 +386,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return Whether the combinedDeniedPrincipal field is set.
    */
   boolean hasCombinedDeniedPrincipal();
-
   /**
    *
    *
@@ -418,7 +402,6 @@ public interface DenyRuleExplanationOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation.AnnotatedDenyPrincipalMatching
       getCombinedDeniedPrincipal();
-
   /**
    *
    *
@@ -453,7 +436,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   int getDeniedPrincipalsCount();
-
   /**
    *
    *
@@ -472,7 +454,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   boolean containsDeniedPrincipals(java.lang.String key);
-
   /** Use {@link #getDeniedPrincipalsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -480,7 +461,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedDenyPrincipalMatching>
       getDeniedPrincipals();
-
   /**
    *
    *
@@ -503,7 +483,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedDenyPrincipalMatching>
       getDeniedPrincipalsMap();
-
   /**
    *
    *
@@ -529,7 +508,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                   .AnnotatedDenyPrincipalMatching
               defaultValue);
-
   /**
    *
    *
@@ -565,7 +543,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return Whether the combinedExceptionPrincipal field is set.
    */
   boolean hasCombinedExceptionPrincipal();
-
   /**
    *
    *
@@ -582,7 +559,6 @@ public interface DenyRuleExplanationOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation.AnnotatedDenyPrincipalMatching
       getCombinedExceptionPrincipal();
-
   /**
    *
    *
@@ -617,7 +593,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   int getExceptionPrincipalsCount();
-
   /**
    *
    *
@@ -636,7 +611,6 @@ public interface DenyRuleExplanationOrBuilder
    * </code>
    */
   boolean containsExceptionPrincipals(java.lang.String key);
-
   /** Use {@link #getExceptionPrincipalsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -644,7 +618,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedDenyPrincipalMatching>
       getExceptionPrincipals();
-
   /**
    *
    *
@@ -667,7 +640,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
               .AnnotatedDenyPrincipalMatching>
       getExceptionPrincipalsMap();
-
   /**
    *
    *
@@ -693,7 +665,6 @@ public interface DenyRuleExplanationOrBuilder
           com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation
                   .AnnotatedDenyPrincipalMatching
               defaultValue);
-
   /**
    *
    *
@@ -727,7 +698,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
-
   /**
    *
    *
@@ -758,7 +728,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -775,7 +744,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return The condition.
    */
   com.google.type.Expr getCondition();
-
   /**
    *
    *
@@ -805,7 +773,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return Whether the conditionExplanation field is set.
    */
   boolean hasConditionExplanation();
-
   /**
    *
    *
@@ -820,7 +787,6 @@ public interface DenyRuleExplanationOrBuilder
    * @return The conditionExplanation.
    */
   com.google.cloud.policytroubleshooter.iam.v3.ConditionExplanation getConditionExplanation();
-
   /**
    *
    *

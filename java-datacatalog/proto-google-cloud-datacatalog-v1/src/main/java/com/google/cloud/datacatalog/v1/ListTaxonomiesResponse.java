@@ -34,7 +34,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ListTaxonomiesResponse)
     ListTaxonomiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTaxonomiesResponse.newBuilder() to construct.
   private ListTaxonomiesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.Taxonomy> taxonomies_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.datacatalog.v1.Taxonomy> getTaxonomiesList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       getTaxonomiesOrBuilderList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.datacatalog.v1.Taxonomy getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return taxonomiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return taxonomiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return taxonomiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.datacatalog.v1.Taxonomy.Builder getTaxonomiesBuilder(int index) {
       return getTaxonomiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return taxonomiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +898,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(taxonomies_);
       }
     }
-
     /**
      *
      *
@@ -935,7 +911,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       return getTaxonomiesFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.Taxonomy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -949,7 +924,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       return getTaxonomiesFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.Taxonomy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -982,7 +956,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1006,7 +979,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1002,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1042,6 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

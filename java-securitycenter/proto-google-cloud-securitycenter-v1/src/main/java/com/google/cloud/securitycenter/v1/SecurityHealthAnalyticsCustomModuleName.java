@@ -315,8 +315,7 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               securityHealthAnalyticsCustomModuleName.pathTemplate, ORGANIZATION_CUSTOM_MODULE),
-          "toBuilder is only supported when SecurityHealthAnalyticsCustomModuleName has the pattern"
-              + " of organizations/{organization}/securityHealthAnalyticsSettings/customModules/{custom_module}");
+          "toBuilder is only supported when SecurityHealthAnalyticsCustomModuleName has the pattern of organizations/{organization}/securityHealthAnalyticsSettings/customModules/{custom_module}");
       this.organization = securityHealthAnalyticsCustomModuleName.organization;
       this.customModule = securityHealthAnalyticsCustomModuleName.customModule;
     }

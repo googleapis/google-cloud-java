@@ -34,7 +34,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.ListInventoriesResponse)
     ListInventoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListInventoriesResponse.newBuilder() to construct.
   private ListInventoriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.Inventory> inventories_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.osconfig.v1alpha.Inventory> getInventoriesList() {
     return inventories_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       getInventoriesOrBuilderList() {
     return inventories_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
   public int getInventoriesCount() {
     return inventories_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
   public com.google.cloud.osconfig.v1alpha.Inventory getInventories(int index) {
     return inventories_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return inventoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return inventoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return inventoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
     public com.google.cloud.osconfig.v1alpha.Inventory.Builder getInventoriesBuilder(int index) {
       return getInventoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return inventoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(inventories_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       return getInventoriesFieldBuilder()
           .addBuilder(com.google.cloud.osconfig.v1alpha.Inventory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       return getInventoriesFieldBuilder()
           .addBuilder(index, com.google.cloud.osconfig.v1alpha.Inventory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1004,7 +977,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1037,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

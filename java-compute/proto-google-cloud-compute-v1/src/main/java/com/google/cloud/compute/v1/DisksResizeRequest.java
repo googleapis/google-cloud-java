@@ -32,7 +32,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DisksResizeRequest)
     DisksResizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisksResizeRequest.newBuilder() to construct.
   private DisksResizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SIZE_GB_FIELD_NUMBER = 494929369;
   private long sizeGb_ = 0L;
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSizeGb() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -261,7 +258,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -445,7 +441,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private long sizeGb_;
-
     /**
      *
      *
@@ -461,7 +456,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSizeGb() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -477,7 +471,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     public long getSizeGb() {
       return sizeGb_;
     }
-
     /**
      *
      *
@@ -497,7 +490,6 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

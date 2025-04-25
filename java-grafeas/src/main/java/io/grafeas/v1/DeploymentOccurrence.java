@@ -34,7 +34,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:grafeas.v1.DeploymentOccurrence)
     DeploymentOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeploymentOccurrence.newBuilder() to construct.
   private DeploymentOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>PLATFORM_UNSPECIFIED = 0;</code>
      */
     public static final int PLATFORM_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>GKE = 1;</code>
      */
     public static final int GKE_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>FLEX = 2;</code>
      */
     public static final int FLEX_VALUE = 2;
-
     /**
      *
      *
@@ -255,7 +251,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userEmail_ = "";
-
   /**
    *
    *
@@ -279,7 +274,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   public static final int DEPLOY_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp deployTime_;
-
   /**
    *
    *
@@ -322,7 +315,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public boolean hasDeployTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -338,7 +330,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getDeployTime() {
     return deployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
   }
-
   /**
    *
    *
@@ -355,7 +346,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   public static final int UNDEPLOY_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp undeployTime_;
-
   /**
    *
    *
@@ -371,7 +361,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public boolean hasUndeployTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -389,7 +378,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : undeployTime_;
   }
-
   /**
    *
    *
@@ -410,7 +398,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object config_ = "";
-
   /**
    *
    *
@@ -434,7 +421,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -463,7 +449,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
-
   /**
    *
    *
@@ -487,7 +472,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -517,7 +501,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceUri_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -533,7 +516,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getResourceUriList() {
     return resourceUri_;
   }
-
   /**
    *
    *
@@ -549,7 +531,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public int getResourceUriCount() {
     return resourceUri_.size();
   }
-
   /**
    *
    *
@@ -566,7 +547,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public java.lang.String getResourceUri(int index) {
     return resourceUri_.get(index);
   }
-
   /**
    *
    *
@@ -586,7 +566,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   public static final int PLATFORM_FIELD_NUMBER = 7;
   private int platform_ = 0;
-
   /**
    *
    *
@@ -602,7 +581,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public int getPlatformValue() {
     return platform_;
   }
-
   /**
    *
    *
@@ -849,7 +827,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1144,7 +1121,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object userEmail_ = "";
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1165,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1186,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1203,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1232,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deployTimeBuilder_;
-
     /**
      *
      *
@@ -1275,7 +1246,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public boolean hasDeployTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1296,7 +1266,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return deployTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1288,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1307,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1334,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1353,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1367,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return getDeployTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1421,7 +1385,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
             : deployTime_;
       }
     }
-
     /**
      *
      *
@@ -1454,7 +1417,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         undeployTimeBuilder_;
-
     /**
      *
      *
@@ -1469,7 +1431,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public boolean hasUndeployTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1490,7 +1451,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return undeployTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1513,7 +1473,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1533,7 +1492,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1561,7 +1519,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1538,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1552,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUndeployTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1615,7 +1570,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
             : undeployTime_;
       }
     }
-
     /**
      *
      *
@@ -1643,7 +1597,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object config_ = "";
-
     /**
      *
      *
@@ -1666,7 +1619,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1689,7 +1641,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1711,7 +1662,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1679,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1703,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object address_ = "";
-
     /**
      *
      *
@@ -1777,7 +1725,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1800,7 +1747,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1822,7 +1768,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1840,7 +1785,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1873,7 +1817,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -1890,7 +1833,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       resourceUri_.makeImmutable();
       return resourceUri_;
     }
-
     /**
      *
      *
@@ -1906,7 +1848,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public int getResourceUriCount() {
       return resourceUri_.size();
     }
-
     /**
      *
      *
@@ -1923,7 +1864,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public java.lang.String getResourceUri(int index) {
       return resourceUri_.get(index);
     }
-
     /**
      *
      *
@@ -1940,7 +1880,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getResourceUriBytes(int index) {
       return resourceUri_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1965,7 +1904,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1989,7 +1927,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2010,7 +1947,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2030,7 +1966,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2057,7 +1992,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     private int platform_ = 0;
-
     /**
      *
      *
@@ -2073,7 +2007,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public int getPlatformValue() {
       return platform_;
     }
-
     /**
      *
      *
@@ -2092,7 +2025,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2110,7 +2042,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
           io.grafeas.v1.DeploymentOccurrence.Platform.forNumber(platform_);
       return result == null ? io.grafeas.v1.DeploymentOccurrence.Platform.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2132,7 +2063,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

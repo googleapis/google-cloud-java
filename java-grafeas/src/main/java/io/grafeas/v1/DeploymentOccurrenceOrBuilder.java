@@ -37,7 +37,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The userEmail.
    */
   java.lang.String getUserEmail();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return Whether the deployTime field is set.
    */
   boolean hasDeployTime();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The deployTime.
    */
   com.google.protobuf.Timestamp getDeployTime();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return Whether the undeployTime field is set.
    */
   boolean hasUndeployTime();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The undeployTime.
    */
   com.google.protobuf.Timestamp getUndeployTime();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The config.
    */
   java.lang.String getConfig();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return A list containing the resourceUri.
    */
   java.util.List<java.lang.String> getResourceUriList();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The count of resourceUri.
    */
   int getResourceUriCount();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The resourceUri at the given index.
    */
   java.lang.String getResourceUri(int index);
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface DeploymentOccurrenceOrBuilder
    * @return The enum numeric value on the wire for platform.
    */
   int getPlatformValue();
-
   /**
    *
    *

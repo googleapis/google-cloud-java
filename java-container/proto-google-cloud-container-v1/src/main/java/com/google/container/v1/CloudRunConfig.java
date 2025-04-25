@@ -33,7 +33,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.CloudRunConfig)
     CloudRunConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudRunConfig.newBuilder() to construct.
   private CloudRunConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOAD_BALANCER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LOAD_BALANCER_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOAD_BALANCER_TYPE_EXTERNAL = 1;</code>
      */
     public static final int LOAD_BALANCER_TYPE_EXTERNAL_VALUE = 1;
-
     /**
      *
      *
@@ -227,7 +224,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 1;
   private boolean disabled_ = false;
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 3;
   private int loadBalancerType_ = 0;
-
   /**
    *
    *
@@ -262,7 +257,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLoadBalancerTypeValue() {
     return loadBalancerType_;
   }
-
   /**
    *
    *
@@ -454,7 +448,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +642,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean disabled_;
-
     /**
      *
      *
@@ -665,7 +657,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
-
     /**
      *
      *
@@ -685,7 +676,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +695,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int loadBalancerType_ = 0;
-
     /**
      *
      *
@@ -721,7 +710,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLoadBalancerTypeValue() {
       return loadBalancerType_;
     }
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1.CloudRunConfig.LoadBalancerType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface CpuUtilizationOrBuilder
    * @return Whether the aggregationWindowLength field is set.
    */
   boolean hasAggregationWindowLength();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CpuUtilizationOrBuilder
    * @return The aggregationWindowLength.
    */
   com.google.protobuf.Duration getAggregationWindowLength();
-
   /**
    *
    *

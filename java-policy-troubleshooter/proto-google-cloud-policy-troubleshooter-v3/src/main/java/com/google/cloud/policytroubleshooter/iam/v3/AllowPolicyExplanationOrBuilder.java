@@ -37,7 +37,6 @@ public interface AllowPolicyExplanationOrBuilder
    * @return The enum numeric value on the wire for allowAccessState.
    */
   int getAllowAccessStateValue();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface AllowPolicyExplanationOrBuilder
    */
   java.util.List<com.google.cloud.policytroubleshooter.iam.v3.ExplainedAllowPolicy>
       getExplainedPoliciesList();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface AllowPolicyExplanationOrBuilder
    * </code>
    */
   com.google.cloud.policytroubleshooter.iam.v3.ExplainedAllowPolicy getExplainedPolicies(int index);
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface AllowPolicyExplanationOrBuilder
    * </code>
    */
   int getExplainedPoliciesCount();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface AllowPolicyExplanationOrBuilder
   java.util.List<
           ? extends com.google.cloud.policytroubleshooter.iam.v3.ExplainedAllowPolicyOrBuilder>
       getExplainedPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface AllowPolicyExplanationOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ListVpcFlowLogsConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface ListVpcFlowLogsConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface ListVpcFlowLogsConfigsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface ListVpcFlowLogsConfigsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

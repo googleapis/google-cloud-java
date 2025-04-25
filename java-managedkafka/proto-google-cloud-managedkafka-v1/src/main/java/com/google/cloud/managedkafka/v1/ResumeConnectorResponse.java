@@ -33,7 +33,6 @@ public final class ResumeConnectorResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ResumeConnectorResponse)
     ResumeConnectorResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResumeConnectorResponse.newBuilder() to construct.
   private ResumeConnectorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ResumeConnectorResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

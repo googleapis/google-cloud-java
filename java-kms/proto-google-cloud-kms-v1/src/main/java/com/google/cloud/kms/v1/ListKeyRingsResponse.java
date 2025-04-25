@@ -34,7 +34,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListKeyRingsResponse)
     ListKeyRingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListKeyRingsResponse.newBuilder() to construct.
   private ListKeyRingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.kms.v1.KeyRing> keyRings_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.kms.v1.KeyRing> getKeyRingsList() {
     return keyRings_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       getKeyRingsOrBuilderList() {
     return keyRings_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
   public int getKeyRingsCount() {
     return keyRings_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.kms.v1.KeyRing getKeyRings(int index) {
     return keyRings_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -398,7 +389,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -686,7 +676,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return keyRingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return keyRingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return keyRingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +889,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +901,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.kms.v1.KeyRing.Builder getKeyRingsBuilder(int index) {
       return getKeyRingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return keyRingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(keyRings_);
       }
     }
-
     /**
      *
      *
@@ -972,7 +947,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       return getKeyRingsFieldBuilder()
           .addBuilder(com.google.cloud.kms.v1.KeyRing.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +960,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       return getKeyRingsFieldBuilder()
           .addBuilder(index, com.google.cloud.kms.v1.KeyRing.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1018,7 +991,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1039,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1081,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1107,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1156,7 +1123,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1177,7 +1143,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

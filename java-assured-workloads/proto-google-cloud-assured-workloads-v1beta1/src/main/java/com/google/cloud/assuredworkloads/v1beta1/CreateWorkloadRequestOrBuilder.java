@@ -39,7 +39,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return Whether the workload field is set.
    */
   boolean hasWorkload();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The workload.
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload getWorkload();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
-
   /**
    *
    *

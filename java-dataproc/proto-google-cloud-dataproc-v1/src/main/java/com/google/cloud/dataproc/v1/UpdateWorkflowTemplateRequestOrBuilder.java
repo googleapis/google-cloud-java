@@ -40,7 +40,6 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * @return The template.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate();
-
   /**
    *
    *

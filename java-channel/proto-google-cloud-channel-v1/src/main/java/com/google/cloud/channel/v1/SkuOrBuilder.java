@@ -37,7 +37,6 @@ public interface SkuOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SkuOrBuilder
    * @return Whether the marketingInfo field is set.
    */
   boolean hasMarketingInfo();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface SkuOrBuilder
    * @return The marketingInfo.
    */
   com.google.cloud.channel.v1.MarketingInfo getMarketingInfo();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface SkuOrBuilder
    * @return Whether the product field is set.
    */
   boolean hasProduct();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SkuOrBuilder
    * @return The product.
    */
   com.google.cloud.channel.v1.Product getProduct();
-
   /**
    *
    *

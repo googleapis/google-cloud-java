@@ -34,7 +34,6 @@ public interface SearchVersionsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Version versions = 1;</code>
    */
   java.util.List<com.google.cloud.privatecatalog.v1beta1.Version> getVersionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchVersionsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Version versions = 1;</code>
    */
   com.google.cloud.privatecatalog.v1beta1.Version getVersions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchVersionsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Version versions = 1;</code>
    */
   int getVersionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privatecatalog.v1beta1.VersionOrBuilder>
       getVersionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface SearchVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -54,7 +54,6 @@ public interface FraudPreventionAssessmentOrBuilder
    * @return Whether the stolenInstrumentVerdict field is set.
    */
   boolean hasStolenInstrumentVerdict();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface FraudPreventionAssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict
       getStolenInstrumentVerdict();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface FraudPreventionAssessmentOrBuilder
    * @return Whether the cardTestingVerdict field is set.
    */
   boolean hasCardTestingVerdict();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface FraudPreventionAssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict
       getCardTestingVerdict();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface FraudPreventionAssessmentOrBuilder
    * @return Whether the behavioralTrustVerdict field is set.
    */
   boolean hasBehavioralTrustVerdict();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface FraudPreventionAssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict
       getBehavioralTrustVerdict();
-
   /**
    *
    *

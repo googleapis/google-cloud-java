@@ -34,7 +34,6 @@ public interface PreconfiguredWafSetOrBuilder
    * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
    */
   java.util.List<com.google.cloud.compute.v1.WafExpressionSet> getExpressionSetsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface PreconfiguredWafSetOrBuilder
    * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
    */
   com.google.cloud.compute.v1.WafExpressionSet getExpressionSets(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface PreconfiguredWafSetOrBuilder
    * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
    */
   int getExpressionSetsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface PreconfiguredWafSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.WafExpressionSetOrBuilder>
       getExpressionSetsOrBuilderList();
-
   /**
    *
    *

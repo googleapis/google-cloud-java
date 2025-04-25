@@ -36,7 +36,6 @@ public interface CommonFeatureStateOrBuilder
    * @return Whether the servicemesh field is set.
    */
   boolean hasServicemesh();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CommonFeatureStateOrBuilder
    * @return The servicemesh.
    */
   com.google.cloud.gkehub.servicemesh.v1alpha.FeatureState getServicemesh();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CommonFeatureStateOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface CommonFeatureStateOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.v1alpha.FeatureState getState();
-
   /**
    *
    *

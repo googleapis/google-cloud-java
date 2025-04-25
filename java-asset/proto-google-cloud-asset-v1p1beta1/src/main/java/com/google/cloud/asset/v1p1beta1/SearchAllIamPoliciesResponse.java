@@ -33,7 +33,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse)
     SearchAllIamPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchAllIamPoliciesResponse.newBuilder() to construct.
   private SearchAllIamPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1p1beta1.IamPolicySearchResult> results_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.asset.v1p1beta1.IamPolicySearchResult> getResultsList() {
     return results_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       getResultsOrBuilderList() {
     return results_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
   public int getResultsCount() {
     return results_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
   public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult getResults(int index) {
     return results_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return resultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return resultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return resultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(results_);
       }
     }
-
     /**
      *
      *
@@ -968,7 +944,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -985,7 +960,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1019,7 +993,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1044,7 +1017,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1041,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1064,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1083,6 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

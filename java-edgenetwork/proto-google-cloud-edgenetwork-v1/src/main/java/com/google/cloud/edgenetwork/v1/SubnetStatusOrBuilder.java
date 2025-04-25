@@ -36,7 +36,6 @@ public interface SubnetStatusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SubnetStatusOrBuilder
    * @return The macAddress.
    */
   java.lang.String getMacAddress();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface SubnetStatusOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.LinkLayerAddress link_layer_addresses = 3;</code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.LinkLayerAddress> getLinkLayerAddressesList();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface SubnetStatusOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.LinkLayerAddress link_layer_addresses = 3;</code>
    */
   com.google.cloud.edgenetwork.v1.LinkLayerAddress getLinkLayerAddresses(int index);
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface SubnetStatusOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.LinkLayerAddress link_layer_addresses = 3;</code>
    */
   int getLinkLayerAddressesCount();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface SubnetStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.LinkLayerAddressOrBuilder>
       getLinkLayerAddressesOrBuilderList();
-
   /**
    *
    *

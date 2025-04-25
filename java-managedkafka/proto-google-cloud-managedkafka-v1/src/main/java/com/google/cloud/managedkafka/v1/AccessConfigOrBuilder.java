@@ -38,7 +38,6 @@ public interface AccessConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.managedkafka.v1.NetworkConfig> getNetworkConfigsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AccessConfigOrBuilder
    * </code>
    */
   com.google.cloud.managedkafka.v1.NetworkConfig getNetworkConfigs(int index);
-
   /**
    *
    *
@@ -68,7 +66,6 @@ public interface AccessConfigOrBuilder
    * </code>
    */
   int getNetworkConfigsCount();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface AccessConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.managedkafka.v1.NetworkConfigOrBuilder>
       getNetworkConfigsOrBuilderList();
-
   /**
    *
    *

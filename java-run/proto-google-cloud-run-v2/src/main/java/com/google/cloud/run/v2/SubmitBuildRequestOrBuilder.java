@@ -39,7 +39,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return Whether the storageSource field is set.
    */
   boolean hasStorageSource();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The storageSource.
    */
   com.google.cloud.run.v2.StorageSource getStorageSource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return Whether the buildpackBuild field is set.
    */
   boolean hasBuildpackBuild();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The buildpackBuild.
    */
   com.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild getBuildpackBuild();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return Whether the dockerBuild field is set.
    */
   boolean hasDockerBuild();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The dockerBuild.
    */
   com.google.cloud.run.v2.SubmitBuildRequest.DockerBuild getDockerBuild();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -306,7 +294,6 @@ public interface SubmitBuildRequestOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.NetworkPeering network_peerings = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.NetworkPeering> getNetworkPeeringsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.NetworkPeering network_peerings = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.NetworkPeering getNetworkPeerings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.NetworkPeering network_peerings = 1;</code>
    */
   int getNetworkPeeringsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.NetworkPeeringOrBuilder>
       getNetworkPeeringsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListNetworkPeeringsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

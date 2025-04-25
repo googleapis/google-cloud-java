@@ -34,7 +34,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TimedPromoteReleaseRule)
     TimedPromoteReleaseRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimedPromoteReleaseRule.newBuilder() to construct.
   private TimedPromoteReleaseRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationTargetId_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schedule_ = "";
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timeZone_ = "";
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -302,7 +293,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
 
   public static final int CONDITION_FIELD_NUMBER = 5;
   private com.google.cloud.deploy.v1.AutomationRuleCondition condition_;
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         ? com.google.cloud.deploy.v1.AutomationRuleCondition.getDefaultInstance()
         : condition_;
   }
-
   /**
    *
    *
@@ -363,7 +351,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationPhase_ = "";
-
   /**
    *
    *
@@ -388,7 +375,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -623,7 +609,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -898,7 +883,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -923,7 +907,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -948,7 +931,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -972,7 +954,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +973,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +999,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     }
 
     private java.lang.Object destinationTargetId_ = "";
-
     /**
      *
      *
@@ -1047,7 +1026,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1053,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1079,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1101,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1130,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     }
 
     private java.lang.Object schedule_ = "";
-
     /**
      *
      *
@@ -1179,7 +1153,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1203,7 +1176,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1226,7 +1198,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1216,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1241,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     }
 
     private java.lang.Object timeZone_ = "";
-
     /**
      *
      *
@@ -1295,7 +1264,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1287,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1309,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1327,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1357,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
             com.google.cloud.deploy.v1.AutomationRuleCondition.Builder,
             com.google.cloud.deploy.v1.AutomationRuleConditionOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -1409,7 +1373,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1432,7 +1395,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return conditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1457,7 +1419,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1441,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1471,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1533,7 +1492,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1508,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1571,7 +1528,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
             : condition_;
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1557,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
     }
 
     private java.lang.Object destinationPhase_ = "";
-
     /**
      *
      *
@@ -1625,7 +1580,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1649,7 +1603,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1672,7 +1625,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1643,6 @@ public final class TimedPromoteReleaseRule extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

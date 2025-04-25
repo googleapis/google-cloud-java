@@ -33,7 +33,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.XpnResourceId)
     XpnResourceIdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use XpnResourceId.newBuilder() to construct.
   private XpnResourceId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,10 +101,8 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /** <code>PROJECT = 408671993;</code> */
     public static final int PROJECT_VALUE = 408671993;
-
     /** <code>XPN_RESOURCE_TYPE_UNSPECIFIED = 151607034;</code> */
     public static final int XPN_RESOURCE_TYPE_UNSPECIFIED_VALUE = 151607034;
 
@@ -197,7 +194,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -213,7 +209,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -237,7 +232,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -266,7 +260,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -283,7 +276,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -308,7 +300,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -512,7 +503,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -715,7 +705,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -730,7 +719,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -776,7 +763,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -857,7 +840,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

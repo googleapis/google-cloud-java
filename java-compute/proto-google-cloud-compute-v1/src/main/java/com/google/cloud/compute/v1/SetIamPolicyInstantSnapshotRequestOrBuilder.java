@@ -36,7 +36,6 @@ public interface SetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface SetIamPolicyInstantSnapshotRequestOrBuilder
    * @return Whether the zoneSetPolicyRequestResource field is set.
    */
   boolean hasZoneSetPolicyRequestResource();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface SetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The zoneSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.ZoneSetPolicyRequest getZoneSetPolicyRequestResource();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SnowflakeDialect extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.SnowflakeDialect)
     SnowflakeDialectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SnowflakeDialect.newBuilder() to construct.
   private SnowflakeDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class SnowflakeDialect extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

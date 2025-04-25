@@ -34,7 +34,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.RankRequest)
     RankRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RankRequest.newBuilder() to construct.
   private RankRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rankingConfig_ = "";
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOP_N_FIELD_NUMBER = 3;
   private int topN_ = 0;
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1.RankingRecord> records_;
-
   /**
    *
    *
@@ -295,7 +286,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.discoveryengine.v1.RankingRecord> getRecordsList() {
     return records_;
   }
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       getRecordsOrBuilderList() {
     return records_;
   }
-
   /**
    *
    *
@@ -328,7 +317,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
   public int getRecordsCount() {
     return records_.size();
   }
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1.RankingRecord getRecords(int index) {
     return records_.get(index);
   }
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IGNORE_RECORD_DETAILS_IN_RESPONSE_FIELD_NUMBER = 6;
   private boolean ignoreRecordDetailsInResponse_ = false;
-
   /**
    *
    *
@@ -407,7 +393,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
   public int getUserLabelsCount() {
     return internalGetUserLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -440,14 +425,12 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
     return getUserLabelsMap();
   }
-
   /**
    *
    *
@@ -477,7 +460,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
     return internalGetUserLabels().getMap();
   }
-
   /**
    *
    *
@@ -514,7 +496,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -778,7 +759,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1123,7 +1103,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object rankingConfig_ = "";
-
     /**
      *
      *
@@ -1149,7 +1128,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1153,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1177,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1197,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1224,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -1277,7 +1251,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1278,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1332,7 +1304,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1326,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1355,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int topN_;
-
     /**
      *
      *
@@ -1402,7 +1371,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     public int getTopN() {
       return topN_;
     }
-
     /**
      *
      *
@@ -1423,7 +1391,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1411,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -1467,7 +1433,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1490,7 +1455,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1476,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1530,7 +1493,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1551,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1608,7 +1569,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1627,7 +1587,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1652,7 +1611,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1633,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1657,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1681,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1748,7 +1703,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1725,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1794,7 +1747,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1816,7 +1768,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1838,7 +1789,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1853,7 +1803,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.RankingRecord.Builder getRecordsBuilder(int index) {
       return getRecordsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1873,7 +1822,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1893,7 +1841,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(records_);
       }
     }
-
     /**
      *
      *
@@ -1909,7 +1856,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       return getRecordsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1.RankingRecord.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1926,7 +1872,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1.RankingRecord.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1961,7 +1906,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean ignoreRecordDetailsInResponse_;
-
     /**
      *
      *
@@ -1978,7 +1922,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean getIgnoreRecordDetailsInResponse() {
       return ignoreRecordDetailsInResponse_;
     }
-
     /**
      *
      *
@@ -1999,7 +1942,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1989,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     public int getUserLabelsCount() {
       return internalGetUserLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2080,14 +2021,12 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
       return getUserLabelsMap();
     }
-
     /**
      *
      *
@@ -2117,7 +2056,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
       return internalGetUserLabels().getMap();
     }
-
     /**
      *
      *
@@ -2154,7 +2092,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2197,7 +2134,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2230,14 +2166,12 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableUserLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2274,7 +2208,6 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *

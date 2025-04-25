@@ -34,7 +34,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.NetworkInterface)
     NetworkInterfaceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkInterface.newBuilder() to construct.
   private NetworkInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>STACK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int STACK_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>IPV4_ONLY = 1;</code>
      */
     public static final int IPV4_ONLY_VALUE = 1;
-
     /**
      *
      *
@@ -290,7 +287,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 0;</code>
      */
     public static final int UNSPECIFIED_IPV6_ACCESS_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -301,7 +297,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL = 1;</code>
      */
     public static final int INTERNAL_VALUE = 1;
-
     /**
      *
      *
@@ -449,7 +444,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>NIC_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NIC_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -460,7 +454,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>VIRTIO_NET = 1;</code>
      */
     public static final int VIRTIO_NET_VALUE = 1;
-
     /**
      *
      *
@@ -560,7 +553,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -576,7 +568,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -600,7 +591,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -629,7 +619,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
-
   /**
    *
    *
@@ -645,7 +634,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasSubnetwork() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -669,7 +657,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -698,7 +685,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
-
   /**
    *
    *
@@ -718,7 +704,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasIpAddress() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -746,7 +731,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -779,7 +763,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6Address_ = "";
-
   /**
    *
    *
@@ -800,7 +783,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasIpv6Address() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -829,7 +811,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -861,7 +842,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int INTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER = 5;
   private int internalIpv6PrefixLength_ = 0;
-
   /**
    *
    *
@@ -878,7 +858,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasInternalIpv6PrefixLength() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -900,7 +879,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -917,7 +895,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -942,7 +919,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -972,7 +948,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.AccessConfig> accessConfigs_;
-
   /**
    *
    *
@@ -991,7 +966,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.backupdr.v1.AccessConfig> getAccessConfigsList() {
     return accessConfigs_;
   }
-
   /**
    *
    *
@@ -1011,7 +985,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       getAccessConfigsOrBuilderList() {
     return accessConfigs_;
   }
-
   /**
    *
    *
@@ -1030,7 +1003,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getAccessConfigsCount() {
     return accessConfigs_.size();
   }
-
   /**
    *
    *
@@ -1049,7 +1021,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.backupdr.v1.AccessConfig getAccessConfigs(int index) {
     return accessConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -1073,7 +1044,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.AccessConfig> ipv6AccessConfigs_;
-
   /**
    *
    *
@@ -1092,7 +1062,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.backupdr.v1.AccessConfig> getIpv6AccessConfigsList() {
     return ipv6AccessConfigs_;
   }
-
   /**
    *
    *
@@ -1112,7 +1081,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       getIpv6AccessConfigsOrBuilderList() {
     return ipv6AccessConfigs_;
   }
-
   /**
    *
    *
@@ -1131,7 +1099,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getIpv6AccessConfigsCount() {
     return ipv6AccessConfigs_.size();
   }
-
   /**
    *
    *
@@ -1150,7 +1117,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.backupdr.v1.AccessConfig getIpv6AccessConfigs(int index) {
     return ipv6AccessConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -1175,7 +1141,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.AliasIpRange> aliasIpRanges_;
-
   /**
    *
    *
@@ -1192,7 +1157,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.backupdr.v1.AliasIpRange> getAliasIpRangesList() {
     return aliasIpRanges_;
   }
-
   /**
    *
    *
@@ -1210,7 +1174,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       getAliasIpRangesOrBuilderList() {
     return aliasIpRanges_;
   }
-
   /**
    *
    *
@@ -1227,7 +1190,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getAliasIpRangesCount() {
     return aliasIpRanges_.size();
   }
-
   /**
    *
    *
@@ -1244,7 +1206,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.backupdr.v1.AliasIpRange getAliasIpRanges(int index) {
     return aliasIpRanges_.get(index);
   }
-
   /**
    *
    *
@@ -1264,7 +1225,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int STACK_TYPE_FIELD_NUMBER = 10;
   private int stackType_ = 0;
-
   /**
    *
    *
@@ -1280,7 +1240,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasStackType() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1296,7 +1255,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getStackTypeValue() {
     return stackType_;
   }
-
   /**
    *
    *
@@ -1319,7 +1277,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 11;
   private int ipv6AccessType_ = 0;
-
   /**
    *
    *
@@ -1339,7 +1296,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasIpv6AccessType() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1359,7 +1315,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getIpv6AccessTypeValue() {
     return ipv6AccessType_;
   }
-
   /**
    *
    *
@@ -1386,7 +1341,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int QUEUE_COUNT_FIELD_NUMBER = 12;
   private int queueCount_ = 0;
-
   /**
    *
    *
@@ -1404,7 +1358,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasQueueCount() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1425,7 +1378,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int NIC_TYPE_FIELD_NUMBER = 13;
   private int nicType_ = 0;
-
   /**
    *
    *
@@ -1444,7 +1396,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasNicType() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1463,7 +1414,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getNicTypeValue() {
     return nicType_;
   }
-
   /**
    *
    *
@@ -1491,7 +1441,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkAttachment_ = "";
-
   /**
    *
    *
@@ -1509,7 +1458,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public boolean hasNetworkAttachment() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1535,7 +1483,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1900,7 +1847,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2410,7 +2356,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -2425,7 +2370,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2448,7 +2392,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2471,7 +2414,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2493,7 +2435,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2511,7 +2452,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2536,7 +2476,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object subnetwork_ = "";
-
     /**
      *
      *
@@ -2551,7 +2490,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasSubnetwork() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2574,7 +2512,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2597,7 +2534,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2619,7 +2555,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2637,7 +2572,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2662,7 +2596,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -2681,7 +2614,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2708,7 +2640,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2735,7 +2666,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2761,7 +2691,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2783,7 +2712,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2812,7 +2740,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object ipv6Address_ = "";
-
     /**
      *
      *
@@ -2832,7 +2759,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasIpv6Address() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2860,7 +2786,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2888,7 +2813,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2915,7 +2839,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2938,7 +2861,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2968,7 +2890,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int internalIpv6PrefixLength_;
-
     /**
      *
      *
@@ -2986,7 +2907,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasInternalIpv6PrefixLength() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3004,7 +2924,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public int getInternalIpv6PrefixLength() {
       return internalIpv6PrefixLength_;
     }
-
     /**
      *
      *
@@ -3026,7 +2945,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3048,7 +2966,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3064,7 +2981,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3088,7 +3004,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3112,7 +3027,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3135,7 +3049,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3154,7 +3067,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3217,7 +3129,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return accessConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3239,7 +3150,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return accessConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3261,7 +3171,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return accessConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3289,7 +3198,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3315,7 +3223,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3343,7 +3250,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3371,7 +3277,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3397,7 +3302,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3423,7 +3327,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3449,7 +3352,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3474,7 +3376,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3499,7 +3400,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3517,7 +3417,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.backupdr.v1.AccessConfig.Builder getAccessConfigsBuilder(int index) {
       return getAccessConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3539,7 +3438,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return accessConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3562,7 +3460,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(accessConfigs_);
       }
     }
-
     /**
      *
      *
@@ -3581,7 +3478,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return getAccessConfigsFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.AccessConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3600,7 +3496,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return getAccessConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.AccessConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3678,7 +3573,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return ipv6AccessConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3700,7 +3594,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return ipv6AccessConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3722,7 +3615,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return ipv6AccessConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3751,7 +3643,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3777,7 +3668,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3805,7 +3695,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3834,7 +3723,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3860,7 +3748,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3886,7 +3773,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3912,7 +3798,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3937,7 +3822,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3962,7 +3846,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3981,7 +3864,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         int index) {
       return getIpv6AccessConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4004,7 +3886,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return ipv6AccessConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4027,7 +3908,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(ipv6AccessConfigs_);
       }
     }
-
     /**
      *
      *
@@ -4046,7 +3926,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return getIpv6AccessConfigsFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.AccessConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4066,7 +3945,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return getIpv6AccessConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.AccessConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4142,7 +4020,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return aliasIpRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4162,7 +4039,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return aliasIpRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4182,7 +4058,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return aliasIpRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4208,7 +4083,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4232,7 +4106,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4258,7 +4131,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4284,7 +4156,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4308,7 +4179,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4332,7 +4202,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4356,7 +4225,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4379,7 +4247,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4402,7 +4269,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4418,7 +4284,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.backupdr.v1.AliasIpRange.Builder getAliasIpRangesBuilder(int index) {
       return getAliasIpRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4438,7 +4303,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return aliasIpRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4459,7 +4323,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(aliasIpRanges_);
       }
     }
-
     /**
      *
      *
@@ -4476,7 +4339,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return getAliasIpRangesFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.AliasIpRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4493,7 +4355,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return getAliasIpRangesFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.AliasIpRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4532,7 +4393,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int stackType_ = 0;
-
     /**
      *
      *
@@ -4548,7 +4408,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasStackType() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4564,7 +4423,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public int getStackTypeValue() {
       return stackType_;
     }
-
     /**
      *
      *
@@ -4583,7 +4441,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4603,7 +4460,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.backupdr.v1.NetworkInterface.StackType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4625,7 +4481,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4645,7 +4500,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int ipv6AccessType_ = 0;
-
     /**
      *
      *
@@ -4665,7 +4519,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasIpv6AccessType() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4685,7 +4538,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public int getIpv6AccessTypeValue() {
       return ipv6AccessType_;
     }
-
     /**
      *
      *
@@ -4708,7 +4560,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4732,7 +4583,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.backupdr.v1.NetworkInterface.Ipv6AccessType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4759,7 +4609,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4783,7 +4632,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int queueCount_;
-
     /**
      *
      *
@@ -4801,7 +4649,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasQueueCount() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4819,7 +4666,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public int getQueueCount() {
       return queueCount_;
     }
-
     /**
      *
      *
@@ -4841,7 +4687,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4863,7 +4708,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int nicType_ = 0;
-
     /**
      *
      *
@@ -4882,7 +4726,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasNicType() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4901,7 +4744,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public int getNicTypeValue() {
       return nicType_;
     }
-
     /**
      *
      *
@@ -4923,7 +4765,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4946,7 +4787,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.backupdr.v1.NetworkInterface.NicType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4971,7 +4811,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4994,7 +4833,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object networkAttachment_ = "";
-
     /**
      *
      *
@@ -5012,7 +4850,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public boolean hasNetworkAttachment() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5038,7 +4875,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5064,7 +4900,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5089,7 +4924,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5110,7 +4944,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.AutoAccept)
     AutoAcceptOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoAccept.newBuilder() to construct.
   private AutoAccept(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList autoAcceptProjects_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAutoAcceptProjectsList() {
     return autoAcceptProjects_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
   public int getAutoAcceptProjectsCount() {
     return autoAcceptProjects_.size();
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAutoAcceptProjects(int index) {
     return autoAcceptProjects_.get(index);
   }
-
   /**
    *
    *
@@ -316,7 +311,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -522,7 +516,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -541,7 +534,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       autoAcceptProjects_.makeImmutable();
       return autoAcceptProjects_;
     }
-
     /**
      *
      *
@@ -559,7 +551,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     public int getAutoAcceptProjectsCount() {
       return autoAcceptProjects_.size();
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAutoAcceptProjects(int index) {
       return autoAcceptProjects_.get(index);
     }
-
     /**
      *
      *
@@ -597,7 +587,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAutoAcceptProjectsBytes(int index) {
       return autoAcceptProjects_.getByteString(index);
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +638,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +660,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +681,6 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

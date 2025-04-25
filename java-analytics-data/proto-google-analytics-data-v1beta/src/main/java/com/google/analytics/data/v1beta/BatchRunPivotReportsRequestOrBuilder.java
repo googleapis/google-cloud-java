@@ -44,7 +44,6 @@ public interface BatchRunPivotReportsRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface BatchRunPivotReportsRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunPivotReportRequest requests = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.RunPivotReportRequest> getRequestsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface BatchRunPivotReportsRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunPivotReportRequest requests = 2;</code>
    */
   com.google.analytics.data.v1beta.RunPivotReportRequest getRequests(int index);
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BatchRunPivotReportsRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.RunPivotReportRequest requests = 2;</code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface BatchRunPivotReportsRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RunPivotReportRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

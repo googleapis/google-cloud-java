@@ -42,7 +42,6 @@ public interface GmailAddOnManifestOrBuilder
    * @return Whether the homepageTrigger field is set.
    */
   boolean hasHomepageTrigger();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface GmailAddOnManifestOrBuilder
    * @return The homepageTrigger.
    */
   com.google.apps.script.type.HomepageExtensionPoint getHomepageTrigger();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface GmailAddOnManifestOrBuilder
    * <code>repeated .google.apps.script.type.gmail.ContextualTrigger contextual_triggers = 3;</code>
    */
   java.util.List<com.google.apps.script.type.gmail.ContextualTrigger> getContextualTriggersList();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface GmailAddOnManifestOrBuilder
    * <code>repeated .google.apps.script.type.gmail.ContextualTrigger contextual_triggers = 3;</code>
    */
   com.google.apps.script.type.gmail.ContextualTrigger getContextualTriggers(int index);
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface GmailAddOnManifestOrBuilder
    * <code>repeated .google.apps.script.type.gmail.ContextualTrigger contextual_triggers = 3;</code>
    */
   int getContextualTriggersCount();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface GmailAddOnManifestOrBuilder
    */
   java.util.List<? extends com.google.apps.script.type.gmail.ContextualTriggerOrBuilder>
       getContextualTriggersOrBuilderList();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface GmailAddOnManifestOrBuilder
    * <code>repeated .google.apps.script.type.gmail.UniversalAction universal_actions = 4;</code>
    */
   java.util.List<com.google.apps.script.type.gmail.UniversalAction> getUniversalActionsList();
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface GmailAddOnManifestOrBuilder
    * <code>repeated .google.apps.script.type.gmail.UniversalAction universal_actions = 4;</code>
    */
   com.google.apps.script.type.gmail.UniversalAction getUniversalActions(int index);
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public interface GmailAddOnManifestOrBuilder
    * <code>repeated .google.apps.script.type.gmail.UniversalAction universal_actions = 4;</code>
    */
   int getUniversalActionsCount();
-
   /**
    *
    *
@@ -188,7 +179,6 @@ public interface GmailAddOnManifestOrBuilder
    */
   java.util.List<? extends com.google.apps.script.type.gmail.UniversalActionOrBuilder>
       getUniversalActionsOrBuilderList();
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public interface GmailAddOnManifestOrBuilder
    * @return Whether the composeTrigger field is set.
    */
   boolean hasComposeTrigger();
-
   /**
    *
    *
@@ -238,7 +227,6 @@ public interface GmailAddOnManifestOrBuilder
    * @return The composeTrigger.
    */
   com.google.apps.script.type.gmail.ComposeTrigger getComposeTrigger();
-
   /**
    *
    *
@@ -271,7 +259,6 @@ public interface GmailAddOnManifestOrBuilder
    * @return The authorizationCheckFunction.
    */
   java.lang.String getAuthorizationCheckFunction();
-
   /**
    *
    *

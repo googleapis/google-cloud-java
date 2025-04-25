@@ -40,7 +40,6 @@ public interface BiosDetailsOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getBiosName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface BiosDetailsOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface BiosDetailsOrBuilder
    * @return The manufacturer.
    */
   java.lang.String getManufacturer();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface BiosDetailsOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface BiosDetailsOrBuilder
    * @return Whether the releaseDate field is set.
    */
   boolean hasReleaseDate();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface BiosDetailsOrBuilder
    * @return The releaseDate.
    */
   com.google.type.Date getReleaseDate();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface BiosDetailsOrBuilder
    * @return The smbiosUuid.
    */
   java.lang.String getSmbiosUuid();
-
   /**
    *
    *

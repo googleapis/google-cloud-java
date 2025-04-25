@@ -37,7 +37,6 @@ public interface ImageConfigOrBuilder
    * @return The targetImage.
    */
   java.lang.String getTargetImage();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ImageConfigOrBuilder
    * @return The stableImage.
    */
   java.lang.String getStableImage();
-
   /**
    *
    *

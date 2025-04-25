@@ -36,7 +36,6 @@ public interface MetricxInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MetricxInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface MetricxInstanceOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface MetricxInstanceOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface MetricxInstanceOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface MetricxInstanceOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

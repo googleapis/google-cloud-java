@@ -291,19 +291,6 @@ public final class GenAiCacheServiceGrpc {
     return GenAiCacheServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static GenAiCacheServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GenAiCacheServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<GenAiCacheServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public GenAiCacheServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new GenAiCacheServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return GenAiCacheServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -540,93 +527,6 @@ public final class GenAiCacheServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GenAiCacheService.
-   *
-   * <pre>
-   * Service for managing Vertex AI's CachedContent resource.
-   * </pre>
-   */
-  public static final class GenAiCacheServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<GenAiCacheServiceBlockingV2Stub> {
-    private GenAiCacheServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected GenAiCacheServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new GenAiCacheServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates cached content, this call will initialize the cached content in the
-     * data storage, and users need to pay for the cache data storage.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.CachedContent createCachedContent(
-        com.google.cloud.aiplatform.v1beta1.CreateCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateCachedContentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets cached content configurations
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.CachedContent getCachedContent(
-        com.google.cloud.aiplatform.v1beta1.GetCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCachedContentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates cached content configurations
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.CachedContent updateCachedContent(
-        com.google.cloud.aiplatform.v1beta1.UpdateCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateCachedContentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes cached content
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteCachedContent(
-        com.google.cloud.aiplatform.v1beta1.DeleteCachedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteCachedContentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists cached contents in a project
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.ListCachedContentsResponse listCachedContents(
-        com.google.cloud.aiplatform.v1beta1.ListCachedContentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListCachedContentsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service GenAiCacheService.
    *
    * <pre>
    * Service for managing Vertex AI's CachedContent resource.

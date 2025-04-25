@@ -37,7 +37,6 @@ public interface RBACBindingConfigOrBuilder
    * @return Whether the enableInsecureBindingSystemUnauthenticated field is set.
    */
   boolean hasEnableInsecureBindingSystemUnauthenticated();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface RBACBindingConfigOrBuilder
    * @return Whether the enableInsecureBindingSystemAuthenticated field is set.
    */
   boolean hasEnableInsecureBindingSystemAuthenticated();
-
   /**
    *
    *

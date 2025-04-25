@@ -33,7 +33,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.UpdateLicensePoolRequest)
     UpdateLicensePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateLicensePoolRequest.newBuilder() to construct.
   private UpdateLicensePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int LICENSE_POOL_FIELD_NUMBER = 1;
   private com.google.cloud.commerce.consumer.procurement.v1.LicensePool licensePool_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
   public boolean hasLicensePool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
         ? com.google.cloud.commerce.consumer.procurement.v1.LicensePool.getDefaultInstance()
         : licensePool_;
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -374,7 +367,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +601,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
             com.google.cloud.commerce.consumer.procurement.v1.LicensePool.Builder,
             com.google.cloud.commerce.consumer.procurement.v1.LicensePoolOrBuilder>
         licensePoolBuilder_;
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
     public boolean hasLicensePool() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
         return licensePoolBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return getLicensePoolFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
             : licensePool_;
       }
     }
-
     /**
      *
      *
@@ -864,7 +847,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -880,7 +862,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -902,7 +883,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +926,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +974,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class UpdateLicensePoolRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *

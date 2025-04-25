@@ -38,7 +38,6 @@ public interface CreateIndexEndpointRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateIndexEndpointRequestOrBuilder
    * @return The indexEndpointId.
    */
   java.lang.String getIndexEndpointId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface CreateIndexEndpointRequestOrBuilder
    * @return Whether the indexEndpoint field is set.
    */
   boolean hasIndexEndpoint();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateIndexEndpointRequestOrBuilder
    * @return The indexEndpoint.
    */
   com.google.cloud.visionai.v1.IndexEndpoint getIndexEndpoint();
-
   /**
    *
    *

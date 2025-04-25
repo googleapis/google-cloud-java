@@ -34,7 +34,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsResponse)
     ListAutonomousDatabaseCharacterSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAutonomousDatabaseCharacterSetsResponse.newBuilder() to construct.
   private ListAutonomousDatabaseCharacterSetsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet>
       autonomousDatabaseCharacterSets_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       getAutonomousDatabaseCharacterSetsList() {
     return autonomousDatabaseCharacterSets_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       getAutonomousDatabaseCharacterSetsOrBuilderList() {
     return autonomousDatabaseCharacterSets_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
   public int getAutonomousDatabaseCharacterSetsCount() {
     return autonomousDatabaseCharacterSets_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       getAutonomousDatabaseCharacterSets(int index) {
     return autonomousDatabaseCharacterSets_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +386,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -693,7 +684,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return autonomousDatabaseCharacterSetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -712,7 +702,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return autonomousDatabaseCharacterSetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -732,7 +721,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return autonomousDatabaseCharacterSetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +769,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +794,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +841,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +889,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +931,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +946,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         getAutonomousDatabaseCharacterSetsBuilder(int index) {
       return getAutonomousDatabaseCharacterSetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -987,7 +965,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return autonomousDatabaseCharacterSetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return java.util.Collections.unmodifiableList(autonomousDatabaseCharacterSets_);
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
               com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
               com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1085,7 +1059,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1103,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1124,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class ListAutonomousDatabaseCharacterSetsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

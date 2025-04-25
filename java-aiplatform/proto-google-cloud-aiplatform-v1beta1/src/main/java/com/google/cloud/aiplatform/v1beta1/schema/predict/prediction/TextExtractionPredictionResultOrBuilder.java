@@ -37,7 +37,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.Long> getIdsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return A list containing the displayNames.
    */
   java.util.List<java.lang.String> getDisplayNamesList();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return The count of displayNames.
    */
   int getDisplayNamesCount();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return The displayNames at the given index.
    */
   java.lang.String getDisplayNames(int index);
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return A list containing the textSegmentStartOffsets.
    */
   java.util.List<java.lang.Long> getTextSegmentStartOffsetsList();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return The count of textSegmentStartOffsets.
    */
   int getTextSegmentStartOffsetsCount();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return A list containing the textSegmentEndOffsets.
    */
   java.util.List<java.lang.Long> getTextSegmentEndOffsetsList();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return The count of textSegmentEndOffsets.
    */
   int getTextSegmentEndOffsetsCount();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return A list containing the confidences.
    */
   java.util.List<java.lang.Float> getConfidencesList();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface TextExtractionPredictionResultOrBuilder
    * @return The count of confidences.
    */
   int getConfidencesCount();
-
   /**
    *
    *

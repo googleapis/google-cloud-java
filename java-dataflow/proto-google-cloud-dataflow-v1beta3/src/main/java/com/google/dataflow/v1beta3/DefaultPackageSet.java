@@ -83,7 +83,6 @@ public enum DefaultPackageSet implements com.google.protobuf.ProtocolMessageEnum
    * <code>DEFAULT_PACKAGE_SET_UNKNOWN = 0;</code>
    */
   public static final int DEFAULT_PACKAGE_SET_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -95,7 +94,6 @@ public enum DefaultPackageSet implements com.google.protobuf.ProtocolMessageEnum
    * <code>DEFAULT_PACKAGE_SET_NONE = 1;</code>
    */
   public static final int DEFAULT_PACKAGE_SET_NONE_VALUE = 1;
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public enum DefaultPackageSet implements com.google.protobuf.ProtocolMessageEnum
    * <code>DEFAULT_PACKAGE_SET_JAVA = 2;</code>
    */
   public static final int DEFAULT_PACKAGE_SET_JAVA_VALUE = 2;
-
   /**
    *
    *

@@ -25,7 +25,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DestinationFeatureSetting)
     DestinationFeatureSettingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DestinationFeatureSetting.newBuilder() to construct.
   private DestinationFeatureSetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -61,7 +60,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureId_ = "";
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationField_ = "";
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -334,7 +329,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.aiplatform.v1.DestinationFeatureSetting} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -526,7 +520,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object featureId_ = "";
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -572,7 +564,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -612,7 +602,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
     }
 
     private java.lang.Object destinationField_ = "";
-
     /**
      *
      *
@@ -661,7 +649,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -685,7 +672,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +712,6 @@ public final class DestinationFeatureSetting extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

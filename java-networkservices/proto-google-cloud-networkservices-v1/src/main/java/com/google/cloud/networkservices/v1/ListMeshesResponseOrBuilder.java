@@ -34,7 +34,6 @@ public interface ListMeshesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.Mesh meshes = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.Mesh> getMeshesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListMeshesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.Mesh meshes = 1;</code>
    */
   com.google.cloud.networkservices.v1.Mesh getMeshes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListMeshesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.Mesh meshes = 1;</code>
    */
   int getMeshesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListMeshesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.MeshOrBuilder>
       getMeshesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListMeshesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

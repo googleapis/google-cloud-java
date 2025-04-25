@@ -33,7 +33,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SdpFinding)
     SdpFindingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SdpFinding.newBuilder() to construct.
   private SdpFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the byteRange field is set.
      */
     boolean hasByteRange();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
      * @return The byteRange.
      */
     com.google.cloud.modelarmor.v1.RangeInfo getByteRange();
-
     /**
      *
      *
@@ -130,7 +127,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the codepointRange field is set.
      */
     boolean hasCodepointRange();
-
     /**
      *
      *
@@ -145,7 +141,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
      * @return The codepointRange.
      */
     com.google.cloud.modelarmor.v1.RangeInfo getCodepointRange();
-
     /**
      *
      *
@@ -159,7 +154,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.modelarmor.v1.RangeInfoOrBuilder getCodepointRangeOrBuilder();
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation)
       SdpFindingLocationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SdpFindingLocation.newBuilder() to construct.
     private SdpFindingLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -206,7 +199,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int BYTE_RANGE_FIELD_NUMBER = 1;
     private com.google.cloud.modelarmor.v1.RangeInfo byteRange_;
-
     /**
      *
      *
@@ -225,7 +217,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasByteRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -246,7 +237,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.RangeInfo.getDefaultInstance()
           : byteRange_;
     }
-
     /**
      *
      *
@@ -268,7 +258,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CODEPOINT_RANGE_FIELD_NUMBER = 2;
     private com.google.cloud.modelarmor.v1.RangeInfo codepointRange_;
-
     /**
      *
      *
@@ -286,7 +275,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCodepointRange() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -306,7 +294,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.RangeInfo.getDefaultInstance()
           : codepointRange_;
     }
-
     /**
      *
      *
@@ -505,7 +492,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.modelarmor.v1.RangeInfo.Builder,
               com.google.cloud.modelarmor.v1.RangeInfoOrBuilder>
           byteRangeBuilder_;
-
       /**
        *
        *
@@ -754,7 +739,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       public boolean hasByteRange() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -778,7 +762,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
           return byteRangeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -804,7 +787,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -828,7 +810,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -859,7 +840,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -882,7 +862,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -900,7 +879,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getByteRangeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -922,7 +900,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
               : byteRange_;
         }
       }
-
       /**
        *
        *
@@ -958,7 +935,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.modelarmor.v1.RangeInfo.Builder,
               com.google.cloud.modelarmor.v1.RangeInfoOrBuilder>
           codepointRangeBuilder_;
-
       /**
        *
        *
@@ -975,7 +951,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCodepointRange() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -998,7 +973,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
           return codepointRangeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1023,7 +997,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1019,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1076,7 +1048,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1098,7 +1069,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1115,7 +1085,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCodepointRangeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1136,7 +1105,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
               : codepointRange_;
         }
       }
-
       /**
        *
        *
@@ -1237,7 +1205,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object infoType_ = "";
-
   /**
    *
    *
@@ -1261,7 +1228,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1288,7 +1254,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIKELIHOOD_FIELD_NUMBER = 2;
   private int likelihood_ = 0;
-
   /**
    *
    *
@@ -1304,7 +1269,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
   public int getLikelihoodValue() {
     return likelihood_;
   }
-
   /**
    *
    *
@@ -1327,7 +1291,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_FIELD_NUMBER = 3;
   private com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation location_;
-
   /**
    *
    *
@@ -1343,7 +1306,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1361,7 +1323,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation.getDefaultInstance()
         : location_;
   }
-
   /**
    *
    *
@@ -1565,7 +1526,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1791,7 +1751,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object infoType_ = "";
-
     /**
      *
      *
@@ -1814,7 +1773,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1837,7 +1795,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1859,7 +1816,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1877,7 +1833,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1902,7 +1857,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int likelihood_ = 0;
-
     /**
      *
      *
@@ -1918,7 +1872,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     public int getLikelihoodValue() {
       return likelihood_;
     }
-
     /**
      *
      *
@@ -1937,7 +1890,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1957,7 +1909,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.SdpFindingLikelihood.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1979,7 +1930,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2004,7 +1954,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation.Builder,
             com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocationOrBuilder>
         locationBuilder_;
-
     /**
      *
      *
@@ -2019,7 +1968,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2040,7 +1988,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2063,7 +2010,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2084,7 +2030,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2115,7 +2060,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2135,7 +2079,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2151,7 +2094,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2171,7 +2113,6 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessageV3
             : location_;
       }
     }
-
     /**
      *
      *

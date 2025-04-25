@@ -33,7 +33,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ReplaceDictionaryConfig)
     ReplaceDictionaryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReplaceDictionaryConfig.newBuilder() to construct.
   private ReplaceDictionaryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     private TypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
   }
 
   public static final int WORD_LIST_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
   public boolean hasWordList() {
     return typeCase_ == 1;
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -344,7 +339,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +557,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder>
         wordListBuilder_;
-
     /**
      *
      *
@@ -581,7 +574,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     public boolean hasWordList() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
       typeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
         getWordListBuilder() {
       return getWordListFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
       }
     }
-
     /**
      *
      *

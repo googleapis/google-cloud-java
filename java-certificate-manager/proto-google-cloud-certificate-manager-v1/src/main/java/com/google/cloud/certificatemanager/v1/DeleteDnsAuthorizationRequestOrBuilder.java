@@ -39,7 +39,6 @@ public interface DeleteDnsAuthorizationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

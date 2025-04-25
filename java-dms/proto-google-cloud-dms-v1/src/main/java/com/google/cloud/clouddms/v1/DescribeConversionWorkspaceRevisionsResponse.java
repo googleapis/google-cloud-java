@@ -34,7 +34,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsResponse)
     DescribeConversionWorkspaceRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DescribeConversionWorkspaceRevisionsResponse.newBuilder() to construct.
   private DescribeConversionWorkspaceRevisionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.clouddms.v1.ConversionWorkspace> revisions_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
   public java.util.List<com.google.cloud.clouddms.v1.ConversionWorkspace> getRevisionsList() {
     return revisions_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       getRevisionsOrBuilderList() {
     return revisions_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
   public int getRevisionsCount() {
     return revisions_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
   public com.google.cloud.clouddms.v1.ConversionWorkspace getRevisions(int index) {
     return revisions_.get(index);
   }
-
   /**
    *
    *
@@ -308,7 +302,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +576,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
         return revisionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
         return revisionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
         return revisionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +714,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +754,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +773,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +792,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +804,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
     public com.google.cloud.clouddms.v1.ConversionWorkspace.Builder getRevisionsBuilder(int index) {
       return getRevisionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -841,7 +821,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
         return revisionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -859,7 +838,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
         return java.util.Collections.unmodifiableList(revisions_);
       }
     }
-
     /**
      *
      *
@@ -873,7 +851,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       return getRevisionsFieldBuilder()
           .addBuilder(com.google.cloud.clouddms.v1.ConversionWorkspace.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -887,7 +864,6 @@ public final class DescribeConversionWorkspaceRevisionsResponse
       return getRevisionsFieldBuilder()
           .addBuilder(index, com.google.cloud.clouddms.v1.ConversionWorkspace.getDefaultInstance());
     }
-
     /**
      *
      *

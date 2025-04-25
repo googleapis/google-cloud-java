@@ -38,7 +38,6 @@ public interface GetRuntimeVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

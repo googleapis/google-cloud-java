@@ -33,7 +33,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.UpdateRoleRequest)
     UpdateRoleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateRoleRequest.newBuilder() to construct.
   private UpdateRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int ROLE_FIELD_NUMBER = 2;
   private com.google.iam.admin.v1.Role role_;
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRole() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
   public com.google.iam.admin.v1.Role getRole() {
     return role_ == null ? com.google.iam.admin.v1.Role.getDefaultInstance() : role_;
   }
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -447,7 +438,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -679,7 +669,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -769,7 +757,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +800,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +839,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +890,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
             com.google.iam.admin.v1.Role.Builder,
             com.google.iam.admin.v1.RoleOrBuilder>
         roleBuilder_;
-
     /**
      *
      *
@@ -920,7 +904,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRole() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -939,7 +922,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
         return roleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -962,7 +944,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +963,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +990,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1009,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRoleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1062,7 +1039,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
         return role_ == null ? com.google.iam.admin.v1.Role.getDefaultInstance() : role_;
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1071,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1110,7 +1085,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1127,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1146,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1173,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1192,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1206,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1256,7 +1224,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *

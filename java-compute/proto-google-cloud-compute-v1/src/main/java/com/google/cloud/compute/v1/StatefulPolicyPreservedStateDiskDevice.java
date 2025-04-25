@@ -33,7 +33,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice)
     StatefulPolicyPreservedStateDiskDeviceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StatefulPolicyPreservedStateDiskDevice.newBuilder() to construct.
   private StatefulPolicyPreservedStateDiskDevice(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -102,10 +101,8 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * <code>UNDEFINED_AUTO_DELETE = 0;</code>
      */
     public static final int UNDEFINED_AUTO_DELETE_VALUE = 0;
-
     /** <code>NEVER = 74175084;</code> */
     public static final int NEVER_VALUE = 74175084;
-
     /** <code>ON_PERMANENT_INSTANCE_DELETION = 95727719;</code> */
     public static final int ON_PERMANENT_INSTANCE_DELETION_VALUE = 95727719;
 
@@ -199,7 +196,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autoDelete_ = "";
-
   /**
    *
    *
@@ -216,7 +212,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
   public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +236,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
       return s;
     }
   }
-
   /**
    *
    *
@@ -433,7 +427,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -627,7 +620,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
     private int bitField0_;
 
     private java.lang.Object autoDelete_ = "";
-
     /**
      *
      *
@@ -643,7 +635,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
     public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -667,7 +658,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +703,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class StatefulPolicyPreservedStateDiskDevice
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.FindingTypeStats)
     FindingTypeStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FindingTypeStats.newBuilder() to construct.
   private FindingTypeStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object findingType_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
 
   public static final int FINDING_COUNT_FIELD_NUMBER = 2;
   private int findingCount_ = 0;
-
   /**
    *
    *
@@ -306,7 +302,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -505,7 +500,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object findingType_ = "";
-
     /**
      *
      *
@@ -528,7 +522,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -551,7 +544,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -573,7 +565,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -591,7 +582,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     }
 
     private int findingCount_;
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     public int getFindingCount() {
       return findingCount_;
     }
-
     /**
      *
      *
@@ -652,7 +640,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

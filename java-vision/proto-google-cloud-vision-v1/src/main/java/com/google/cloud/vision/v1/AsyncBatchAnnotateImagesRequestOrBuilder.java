@@ -36,7 +36,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> getRequestsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.AnnotateImageRequest getRequests(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.vision.v1.OutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -212,11 +204,9 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

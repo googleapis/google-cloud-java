@@ -36,7 +36,6 @@ public interface RouterBgpPeerCustomLearnedIpRangeOrBuilder
    * @return Whether the range field is set.
    */
   boolean hasRange();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RouterBgpPeerCustomLearnedIpRangeOrBuilder
    * @return The range.
    */
   java.lang.String getRange();
-
   /**
    *
    *

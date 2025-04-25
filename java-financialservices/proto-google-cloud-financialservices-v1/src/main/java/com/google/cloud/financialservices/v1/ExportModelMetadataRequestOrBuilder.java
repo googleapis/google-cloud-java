@@ -38,7 +38,6 @@ public interface ExportModelMetadataRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ExportModelMetadataRequestOrBuilder
    * @return Whether the structuredMetadataDestination field is set.
    */
   boolean hasStructuredMetadataDestination();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ExportModelMetadataRequestOrBuilder
    * @return The structuredMetadataDestination.
    */
   com.google.cloud.financialservices.v1.BigQueryDestination getStructuredMetadataDestination();
-
   /**
    *
    *

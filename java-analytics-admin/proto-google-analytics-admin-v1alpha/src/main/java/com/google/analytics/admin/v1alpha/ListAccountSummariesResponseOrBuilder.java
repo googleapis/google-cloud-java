@@ -34,7 +34,6 @@ public interface ListAccountSummariesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccountSummary account_summaries = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.AccountSummary> getAccountSummariesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAccountSummariesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccountSummary account_summaries = 1;</code>
    */
   com.google.analytics.admin.v1alpha.AccountSummary getAccountSummaries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAccountSummariesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccountSummary account_summaries = 1;</code>
    */
   int getAccountSummariesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAccountSummariesResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.AccountSummaryOrBuilder>
       getAccountSummariesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListAccountSummariesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

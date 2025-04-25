@@ -34,7 +34,6 @@ public final class LabelTextClassificationOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
     LabelTextClassificationOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelTextClassificationOperationMetadata.newBuilder() to construct.
   private LabelTextClassificationOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class LabelTextClassificationOperationMetadata
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class LabelTextClassificationOperationMetadata
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class LabelTextClassificationOperationMetadata
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
-
   /**
    *
    *
@@ -293,7 +289,6 @@ public final class LabelTextClassificationOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +506,6 @@ public final class LabelTextClassificationOperationMetadata
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
-
     /**
      *
      *
@@ -526,7 +520,6 @@ public final class LabelTextClassificationOperationMetadata
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -547,7 +540,6 @@ public final class LabelTextClassificationOperationMetadata
         return basicConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -571,7 +563,6 @@ public final class LabelTextClassificationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class LabelTextClassificationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class LabelTextClassificationOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class LabelTextClassificationOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +647,6 @@ public final class LabelTextClassificationOperationMetadata
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -679,7 +666,6 @@ public final class LabelTextClassificationOperationMetadata
             : basicConfig_;
       }
     }
-
     /**
      *
      *

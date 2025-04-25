@@ -36,7 +36,6 @@ public interface CollectorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface CollectorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CollectorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface CollectorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface CollectorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface CollectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -151,11 +145,9 @@ public interface CollectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface CollectorOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface CollectorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -205,7 +195,6 @@ public interface CollectorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -231,7 +220,6 @@ public interface CollectorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -257,7 +245,6 @@ public interface CollectorOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -284,7 +271,6 @@ public interface CollectorOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *
@@ -326,7 +312,6 @@ public interface CollectorOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -354,7 +339,6 @@ public interface CollectorOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
-
   /**
    *
    *
@@ -382,7 +366,6 @@ public interface CollectorOrBuilder
    * @return Whether the guestOsScan field is set.
    */
   boolean hasGuestOsScan();
-
   /**
    *
    *
@@ -397,7 +380,6 @@ public interface CollectorOrBuilder
    * @return The guestOsScan.
    */
   com.google.cloud.rapidmigrationassessment.v1.GuestOsScan getGuestOsScan();
-
   /**
    *
    *
@@ -425,7 +407,6 @@ public interface CollectorOrBuilder
    * @return Whether the vsphereScan field is set.
    */
   boolean hasVsphereScan();
-
   /**
    *
    *
@@ -440,7 +421,6 @@ public interface CollectorOrBuilder
    * @return The vsphereScan.
    */
   com.google.cloud.rapidmigrationassessment.v1.VSphereScan getVsphereScan();
-
   /**
    *
    *
@@ -479,7 +459,6 @@ public interface CollectorOrBuilder
    * @return The eulaUri.
    */
   java.lang.String getEulaUri();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ClassifyTextRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ClassifyTextRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v2.Document getDocument();
-
   /**
    *
    *

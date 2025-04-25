@@ -36,7 +36,6 @@ public interface OperationMetadataOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListSubscribersResponse)
     ListSubscribersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSubscribersResponse.newBuilder() to construct.
   private ListSubscribersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceAccounts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getServiceAccountsList() {
     return serviceAccounts_;
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   public int getServiceAccountsCount() {
     return serviceAccounts_.size();
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   public java.lang.String getServiceAccounts(int index) {
     return serviceAccounts_.get(index);
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -426,7 +417,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +638,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object topic_ = "";
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       serviceAccounts_.makeImmutable();
       return serviceAccounts_;
     }
-
     /**
      *
      *
@@ -798,7 +781,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     public int getServiceAccountsCount() {
       return serviceAccounts_.size();
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     public java.lang.String getServiceAccounts(int index) {
       return serviceAccounts_.get(index);
     }
-
     /**
      *
      *
@@ -830,7 +811,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getServiceAccountsBytes(int index) {
       return serviceAccounts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -854,7 +834,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +856,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +918,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -966,7 +941,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -990,7 +964,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1013,7 +986,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

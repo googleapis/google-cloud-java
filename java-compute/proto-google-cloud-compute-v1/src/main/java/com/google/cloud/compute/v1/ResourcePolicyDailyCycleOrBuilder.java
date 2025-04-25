@@ -36,7 +36,6 @@ public interface ResourcePolicyDailyCycleOrBuilder
    * @return Whether the daysInCycle field is set.
    */
   boolean hasDaysInCycle();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ResourcePolicyDailyCycleOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ResourcePolicyDailyCycleOrBuilder
    * @return The duration.
    */
   java.lang.String getDuration();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ResourcePolicyDailyCycleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ResourcePolicyDailyCycleOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *

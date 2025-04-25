@@ -33,7 +33,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.Contacts)
     ContactsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Contacts.newBuilder() to construct.
   private Contacts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      * @return The designation.
      */
     java.lang.String getDesignation();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      * @return The email.
      */
     java.lang.String getEmail();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEmailBytes();
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.Contacts.Person)
       PersonOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Person.newBuilder() to construct.
     private Person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -174,7 +169,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object designation_ = "";
-
     /**
      *
      *
@@ -198,7 +192,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -227,7 +220,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object email_ = "";
-
     /**
      *
      *
@@ -252,7 +244,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -447,7 +438,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object designation_ = "";
-
       /**
        *
        *
@@ -673,7 +662,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -696,7 +684,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -718,7 +705,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -736,7 +722,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -761,7 +746,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object email_ = "";
-
       /**
        *
        *
@@ -785,7 +769,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -809,7 +792,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -832,7 +814,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -851,7 +832,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -944,7 +924,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.Contacts.Person> people_;
-
   /**
    *
    *
@@ -958,7 +937,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datacatalog.v1.Contacts.Person> getPeopleList() {
     return people_;
   }
-
   /**
    *
    *
@@ -973,7 +951,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       getPeopleOrBuilderList() {
     return people_;
   }
-
   /**
    *
    *
@@ -987,7 +964,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
   public int getPeopleCount() {
     return people_.size();
   }
-
   /**
    *
    *
@@ -1001,7 +977,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.Contacts.Person getPeople(int index) {
     return people_.get(index);
   }
-
   /**
    *
    *
@@ -1176,7 +1151,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1437,7 +1411,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return peopleBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1454,7 +1427,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return peopleBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1443,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return peopleBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1494,7 +1465,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1515,7 +1485,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1507,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1561,7 +1529,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1549,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1569,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1589,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1608,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1664,7 +1627,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1639,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.Contacts.Person.Builder getPeopleBuilder(int index) {
       return getPeopleFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1694,7 +1655,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return peopleBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1712,7 +1672,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(people_);
       }
     }
-
     /**
      *
      *
@@ -1726,7 +1685,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       return getPeopleFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.Contacts.Person.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1740,7 +1698,6 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       return getPeopleFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.Contacts.Person.getDefaultInstance());
     }
-
     /**
      *
      *

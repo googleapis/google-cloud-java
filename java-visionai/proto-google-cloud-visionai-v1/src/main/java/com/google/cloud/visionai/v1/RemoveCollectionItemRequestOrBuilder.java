@@ -38,7 +38,6 @@ public interface RemoveCollectionItemRequestOrBuilder
    * @return Whether the item field is set.
    */
   boolean hasItem();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface RemoveCollectionItemRequestOrBuilder
    * @return The item.
    */
   com.google.cloud.visionai.v1.CollectionItem getItem();
-
   /**
    *
    *

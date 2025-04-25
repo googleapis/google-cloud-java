@@ -44,7 +44,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BucketingConfig)
     BucketingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BucketingConfig.newBuilder() to construct.
   private BucketingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the min field is set.
      */
     boolean hasMin();
-
     /**
      *
      *
@@ -107,7 +105,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      * @return The min.
      */
     com.google.privacy.dlp.v2.Value getMin();
-
     /**
      *
      *
@@ -132,7 +129,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the max field is set.
      */
     boolean hasMax();
-
     /**
      *
      *
@@ -145,7 +141,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      * @return The max.
      */
     com.google.privacy.dlp.v2.Value getMax();
-
     /**
      *
      *
@@ -171,7 +166,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the replacementValue field is set.
      */
     boolean hasReplacementValue();
-
     /**
      *
      *
@@ -186,7 +180,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      * @return The replacementValue.
      */
     com.google.privacy.dlp.v2.Value getReplacementValue();
-
     /**
      *
      *
@@ -200,7 +193,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      */
     com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder();
   }
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BucketingConfig.Bucket)
       BucketOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Bucket.newBuilder() to construct.
     private Bucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -247,7 +238,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int MIN_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.Value min_;
-
     /**
      *
      *
@@ -264,7 +254,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasMin() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -281,7 +270,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.Value getMin() {
       return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
     }
-
     /**
      *
      *
@@ -299,7 +287,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
 
     public static final int MAX_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.Value max_;
-
     /**
      *
      *
@@ -315,7 +302,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasMax() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -331,7 +317,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.Value getMax() {
       return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
     }
-
     /**
      *
      *
@@ -348,7 +333,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
 
     public static final int REPLACEMENT_VALUE_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.Value replacementValue_;
-
     /**
      *
      *
@@ -366,7 +350,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasReplacementValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -386,7 +369,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.privacy.dlp.v2.Value.getDefaultInstance()
           : replacementValue_;
     }
-
     /**
      *
      *
@@ -598,7 +580,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.Value.Builder,
               com.google.privacy.dlp.v2.ValueOrBuilder>
           minBuilder_;
-
       /**
        *
        *
@@ -863,7 +843,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public boolean hasMin() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -883,7 +862,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           return minBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -907,7 +885,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +905,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -957,7 +933,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -978,7 +953,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -994,7 +968,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getMinFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1012,7 +985,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
         }
       }
-
       /**
        *
        *
@@ -1046,7 +1018,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.Value.Builder,
               com.google.privacy.dlp.v2.ValueOrBuilder>
           maxBuilder_;
-
       /**
        *
        *
@@ -1061,7 +1032,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public boolean hasMax() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1080,7 +1050,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           return maxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1103,7 +1072,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1123,7 +1091,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1151,7 +1118,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1171,7 +1137,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1186,7 +1151,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getMaxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1203,7 +1167,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
         }
       }
-
       /**
        *
        *
@@ -1236,7 +1199,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.Value.Builder,
               com.google.privacy.dlp.v2.ValueOrBuilder>
           replacementValueBuilder_;
-
       /**
        *
        *
@@ -1253,7 +1215,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       public boolean hasReplacementValue() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1276,7 +1237,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           return replacementValueBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1301,7 +1261,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1323,7 +1282,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1353,7 +1311,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1375,7 +1332,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1392,7 +1348,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getReplacementValueFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1413,7 +1368,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
               : replacementValue_;
         }
       }
-
       /**
        *
        *
@@ -1510,7 +1464,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> buckets_;
-
   /**
    *
    *
@@ -1524,7 +1477,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> getBucketsList() {
     return buckets_;
   }
-
   /**
    *
    *
@@ -1539,7 +1491,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       getBucketsOrBuilderList() {
     return buckets_;
   }
-
   /**
    *
    *
@@ -1553,7 +1504,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
   public int getBucketsCount() {
     return buckets_.size();
   }
-
   /**
    *
    *
@@ -1567,7 +1517,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.BucketingConfig.Bucket getBuckets(int index) {
     return buckets_.get(index);
   }
-
   /**
    *
    *
@@ -1743,7 +1692,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2016,7 +1964,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return bucketsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2033,7 +1980,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return bucketsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2050,7 +1996,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return bucketsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2073,7 +2018,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2094,7 +2038,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2117,7 +2060,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2140,7 +2082,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2102,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2122,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2142,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2223,7 +2161,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2243,7 +2180,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2192,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder getBucketsBuilder(int index) {
       return getBucketsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2274,7 +2209,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return bucketsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2292,7 +2226,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(buckets_);
       }
     }
-
     /**
      *
      *
@@ -2306,7 +2239,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       return getBucketsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2320,7 +2252,6 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       return getBucketsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance());
     }
-
     /**
      *
      *

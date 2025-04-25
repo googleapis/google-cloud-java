@@ -34,7 +34,6 @@ public interface SqlServerRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerSchema schemas = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.SqlServerSchema> getSchemasList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SqlServerRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerSchema schemas = 1;</code>
    */
   com.google.cloud.datastream.v1.SqlServerSchema getSchemas(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SqlServerRdbmsOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerSchema schemas = 1;</code>
    */
   int getSchemasCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SqlServerRdbmsOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.SqlServerSchemaOrBuilder>
       getSchemasOrBuilderList();
-
   /**
    *
    *

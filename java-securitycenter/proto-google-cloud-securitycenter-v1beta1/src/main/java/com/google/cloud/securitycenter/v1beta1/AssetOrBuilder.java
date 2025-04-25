@@ -39,7 +39,6 @@ public interface AssetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface AssetOrBuilder
    * @return Whether the securityCenterProperties field is set.
    */
   boolean hasSecurityCenterProperties();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface AssetOrBuilder
    */
   com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
       getSecurityCenterProperties();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
   int getResourcePropertiesCount();
-
   /**
    *
    *
@@ -127,11 +123,9 @@ public interface AssetOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
   boolean containsResourceProperties(java.lang.String key);
-
   /** Use {@link #getResourcePropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface AssetOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public interface AssetOrBuilder
    * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public interface AssetOrBuilder
    * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks();
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public interface AssetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -237,7 +226,6 @@ public interface AssetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -262,7 +250,6 @@ public interface AssetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -276,7 +263,6 @@ public interface AssetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

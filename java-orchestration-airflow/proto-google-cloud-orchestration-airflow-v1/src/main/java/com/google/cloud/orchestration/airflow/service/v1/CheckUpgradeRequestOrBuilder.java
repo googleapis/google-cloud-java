@@ -38,7 +38,6 @@ public interface CheckUpgradeRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface CheckUpgradeRequestOrBuilder
    * @return The imageVersion.
    */
   java.lang.String getImageVersion();
-
   /**
    *
    *

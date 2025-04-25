@@ -82,7 +82,6 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATIONTYPE_UNSPECIFIED = 0;</code>
    */
   public static final int OPERATIONTYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATE_FUNCTION = 1;</code>
    */
   public static final int CREATE_FUNCTION_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_FUNCTION = 2;</code>
    */
   public static final int UPDATE_FUNCTION_VALUE = 2;
-
   /**
    *
    *

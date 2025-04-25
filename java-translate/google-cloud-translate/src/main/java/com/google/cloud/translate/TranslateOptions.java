@@ -155,8 +155,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       } else if (getDefaultApiKey() != null) {
         logger.log(
             Level.WARNING,
-            "Ignoring API key set in environment variable {0}: using explicit setting for"
-                + " credentials instead.",
+            "Ignoring API key set in environment variable {0}: using explicit setting for credentials instead.",
             API_KEY_ENV_NAME);
       }
     } else if (builder.apiKey != null) {
@@ -167,8 +166,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       if (getDefaultApiKey() != null) {
         logger.log(
             Level.WARNING,
-            "Ignoring API key set in environment variable {0}: using Application Default"
-                + " Credentials instead.",
+            "Ignoring API key set in environment variable {0}: using Application Default Credentials instead.",
             API_KEY_ENV_NAME);
       }
     } else {

@@ -41,7 +41,6 @@ public interface SendTestMessageRequestOrBuilder
    * @return A list containing the contacts.
    */
   java.util.List<java.lang.String> getContactsList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface SendTestMessageRequestOrBuilder
    * @return The count of contacts.
    */
   int getContactsCount();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SendTestMessageRequestOrBuilder
    * @return The contacts at the given index.
    */
   java.lang.String getContacts(int index);
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface SendTestMessageRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface SendTestMessageRequestOrBuilder
    * @return The enum numeric value on the wire for notificationCategory.
    */
   int getNotificationCategoryValue();
-
   /**
    *
    *

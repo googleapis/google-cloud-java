@@ -37,7 +37,6 @@ public interface ConnectionDetailOrBuilder
    * @return Whether the pscAutoConnection field is set.
    */
   boolean hasPscAutoConnection();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ConnectionDetailOrBuilder
    * @return The pscAutoConnection.
    */
   com.google.cloud.redis.cluster.v1.PscAutoConnection getPscAutoConnection();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ConnectionDetailOrBuilder
    * @return Whether the pscConnection field is set.
    */
   boolean hasPscConnection();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ConnectionDetailOrBuilder
    * @return The pscConnection.
    */
   com.google.cloud.redis.cluster.v1.PscConnection getPscConnection();
-
   /**
    *
    *

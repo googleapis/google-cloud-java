@@ -38,7 +38,6 @@ public interface BatchPredictRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface BatchPredictRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BatchPredictRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.automl.v1beta1.BatchPredictInputConfig getInputConfig();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface BatchPredictRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface BatchPredictRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.automl.v1beta1.BatchPredictOutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -222,7 +217,6 @@ public interface BatchPredictRequestOrBuilder
    * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getParamsCount();
-
   /**
    *
    *
@@ -302,11 +296,9 @@ public interface BatchPredictRequestOrBuilder
    * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean containsParams(java.lang.String key);
-
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParams();
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public interface BatchPredictRequestOrBuilder
    * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParamsMap();
-
   /**
    *
    *
@@ -470,7 +461,6 @@ public interface BatchPredictRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

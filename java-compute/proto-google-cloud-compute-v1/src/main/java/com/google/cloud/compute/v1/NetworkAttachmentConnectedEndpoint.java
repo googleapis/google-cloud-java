@@ -33,7 +33,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint)
     NetworkAttachmentConnectedEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkAttachmentConnectedEndpoint.newBuilder() to construct.
   private NetworkAttachmentConnectedEndpoint(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -156,7 +155,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -167,7 +165,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>ACCEPTED = 246714279;</code>
      */
     public static final int ACCEPTED_VALUE = 246714279;
-
     /**
      *
      *
@@ -178,7 +175,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>CLOSED = 380163436;</code>
      */
     public static final int CLOSED_VALUE = 380163436;
-
     /**
      *
      *
@@ -189,7 +185,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>NEEDS_ATTENTION = 344491452;</code>
      */
     public static final int NEEDS_ATTENTION_VALUE = 344491452;
-
     /**
      *
      *
@@ -200,7 +195,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>PENDING = 35394935;</code>
      */
     public static final int PENDING_VALUE = 35394935;
-
     /**
      *
      *
@@ -211,7 +205,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>REJECTED = 174130302;</code>
      */
     public static final int REJECTED_VALUE = 174130302;
-
     /** <code>STATUS_UNSPECIFIED = 42133066;</code> */
     public static final int STATUS_UNSPECIFIED_VALUE = 42133066;
 
@@ -313,7 +306,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
-
   /**
    *
    *
@@ -329,7 +321,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasIpAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -353,7 +344,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -382,7 +372,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6Address_ = "";
-
   /**
    *
    *
@@ -398,7 +387,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasIpv6Address() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -422,7 +410,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -451,7 +438,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectIdOrNum_ = "";
-
   /**
    *
    *
@@ -467,7 +453,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasProjectIdOrNum() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -491,7 +476,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -521,7 +505,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList secondaryIpCidrRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -536,7 +519,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public com.google.protobuf.ProtocolStringList getSecondaryIpCidrRangesList() {
     return secondaryIpCidrRanges_;
   }
-
   /**
    *
    *
@@ -551,7 +533,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public int getSecondaryIpCidrRangesCount() {
     return secondaryIpCidrRanges_.size();
   }
-
   /**
    *
    *
@@ -567,7 +548,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public java.lang.String getSecondaryIpCidrRanges(int index) {
     return secondaryIpCidrRanges_.get(index);
   }
-
   /**
    *
    *
@@ -588,7 +568,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -605,7 +584,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -630,7 +608,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -660,7 +637,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
-
   /**
    *
    *
@@ -676,7 +652,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasSubnetwork() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -700,7 +675,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -729,7 +703,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetworkCidrRange_ = "";
-
   /**
    *
    *
@@ -745,7 +718,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public boolean hasSubnetworkCidrRange() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -769,7 +741,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -1047,7 +1018,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1340,7 +1310,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -1355,7 +1324,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1378,7 +1346,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1401,7 +1368,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1423,7 +1389,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1406,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1430,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object ipv6Address_ = "";
-
     /**
      *
      *
@@ -1481,7 +1444,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasIpv6Address() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1504,7 +1466,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1488,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1549,7 +1509,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1567,7 +1526,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1550,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object projectIdOrNum_ = "";
-
     /**
      *
      *
@@ -1607,7 +1564,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasProjectIdOrNum() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1630,7 +1586,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1653,7 +1608,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1675,7 +1629,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1646,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1679,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1743,7 +1694,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       secondaryIpCidrRanges_.makeImmutable();
       return secondaryIpCidrRanges_;
     }
-
     /**
      *
      *
@@ -1758,7 +1708,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public int getSecondaryIpCidrRangesCount() {
       return secondaryIpCidrRanges_.size();
     }
-
     /**
      *
      *
@@ -1774,7 +1723,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public java.lang.String getSecondaryIpCidrRanges(int index) {
       return secondaryIpCidrRanges_.get(index);
     }
-
     /**
      *
      *
@@ -1790,7 +1738,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public com.google.protobuf.ByteString getSecondaryIpCidrRangesBytes(int index) {
       return secondaryIpCidrRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1814,7 +1761,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1837,7 +1783,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1802,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1876,7 +1820,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1902,7 +1845,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -1918,7 +1860,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1942,7 +1883,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1966,7 +1906,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1989,7 +1928,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2008,7 +1946,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2034,7 +1971,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object subnetwork_ = "";
-
     /**
      *
      *
@@ -2049,7 +1985,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasSubnetwork() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2072,7 +2007,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2095,7 +2029,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2117,7 +2050,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2135,7 +2067,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2160,7 +2091,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     }
 
     private java.lang.Object subnetworkCidrRange_ = "";
-
     /**
      *
      *
@@ -2175,7 +2105,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public boolean hasSubnetworkCidrRange() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2198,7 +2127,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2221,7 +2149,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2243,7 +2170,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2261,7 +2187,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListDataStreamsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.DataStream data_streams = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.DataStream> getDataStreamsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDataStreamsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.DataStream data_streams = 1;</code>
    */
   com.google.analytics.admin.v1alpha.DataStream getDataStreams(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDataStreamsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.DataStream data_streams = 1;</code>
    */
   int getDataStreamsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDataStreamsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.DataStreamOrBuilder>
       getDataStreamsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDataStreamsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

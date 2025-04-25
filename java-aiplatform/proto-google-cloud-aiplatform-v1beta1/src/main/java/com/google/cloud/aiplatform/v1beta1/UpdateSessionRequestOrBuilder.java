@@ -40,7 +40,6 @@ public interface UpdateSessionRequestOrBuilder
    * @return Whether the session field is set.
    */
   boolean hasSession();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateSessionRequestOrBuilder
    * @return The session.
    */
   com.google.cloud.aiplatform.v1beta1.Session getSession();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateSessionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface UpdateSessionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

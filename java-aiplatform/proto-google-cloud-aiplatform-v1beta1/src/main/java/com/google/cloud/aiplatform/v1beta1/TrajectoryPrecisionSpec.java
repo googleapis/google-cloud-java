@@ -34,7 +34,6 @@ public final class TrajectoryPrecisionSpec extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryPrecisionSpec)
     TrajectoryPrecisionSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrajectoryPrecisionSpec.newBuilder() to construct.
   private TrajectoryPrecisionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class TrajectoryPrecisionSpec extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

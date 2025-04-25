@@ -33,7 +33,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse)
     ListAwsNodePoolsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAwsNodePoolsResponse.newBuilder() to construct.
   private ListAwsNodePoolsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePool> awsNodePools_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePool> getAwsNodePoolsList() {
     return awsNodePools_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       getAwsNodePoolsOrBuilderList() {
     return awsNodePools_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
   public int getAwsNodePoolsCount() {
     return awsNodePools_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
   public com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePools(int index) {
     return awsNodePools_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +643,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return awsNodePoolsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return awsNodePoolsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return awsNodePoolsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
     public com.google.cloud.gkemulticloud.v1.AwsNodePool.Builder getAwsNodePoolsBuilder(int index) {
       return getAwsNodePoolsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -923,7 +901,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return awsNodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -942,7 +919,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(awsNodePools_);
       }
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       return getAwsNodePoolsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -972,7 +947,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       return getAwsNodePoolsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1030,7 +1003,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1048,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class ListAwsNodePoolsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.ListProjectBillingInfoResponse)
     ListProjectBillingInfoResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListProjectBillingInfoResponse.newBuilder() to construct.
   private ListProjectBillingInfoResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.v1.ProjectBillingInfo> projectBillingInfo_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       getProjectBillingInfoList() {
     return projectBillingInfo_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       getProjectBillingInfoOrBuilderList() {
     return projectBillingInfo_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
   public int getProjectBillingInfoCount() {
     return projectBillingInfo_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
   public com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo(int index) {
     return projectBillingInfo_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +370,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return projectBillingInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return projectBillingInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return projectBillingInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         int index) {
       return getProjectBillingInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -933,7 +911,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return projectBillingInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -952,7 +929,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(projectBillingInfo_);
       }
     }
-
     /**
      *
      *
@@ -967,7 +943,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       return getProjectBillingInfoFieldBuilder()
           .addBuilder(com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +958,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       return getProjectBillingInfoFieldBuilder()
           .addBuilder(index, com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1045,7 +1018,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1042,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1094,7 +1065,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1084,6 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

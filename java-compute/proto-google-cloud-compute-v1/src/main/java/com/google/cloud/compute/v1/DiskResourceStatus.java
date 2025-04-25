@@ -32,7 +32,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DiskResourceStatus)
     DiskResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskResourceStatus.newBuilder() to construct.
   private DiskResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ASYNC_PRIMARY_DISK_FIELD_NUMBER = 180517533;
   private com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus asyncPrimaryDisk_;
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -88,7 +86,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
   public boolean hasAsyncPrimaryDisk() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -103,7 +100,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus.getDefaultInstance()
         : asyncPrimaryDisk_;
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -154,7 +150,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
   public int getAsyncSecondaryDisksCount() {
     return internalGetAsyncSecondaryDisks().getMap().size();
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
     }
     return internalGetAsyncSecondaryDisks().getMap().containsKey(key);
   }
-
   /** Use {@link #getAsyncSecondaryDisksMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -182,7 +176,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       getAsyncSecondaryDisks() {
     return getAsyncSecondaryDisksMap();
   }
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       getAsyncSecondaryDisksMap() {
     return internalGetAsyncSecondaryDisks().getMap();
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
         map = internalGetAsyncSecondaryDisks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -446,7 +437,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -695,7 +685,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus.Builder,
             com.google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatusOrBuilder>
         asyncPrimaryDiskBuilder_;
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -706,7 +695,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
     public boolean hasAsyncPrimaryDisk() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -725,7 +713,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
         return asyncPrimaryDiskBuilder_.getMessage();
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -745,7 +732,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -763,7 +749,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -790,7 +775,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -806,7 +790,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -818,7 +801,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAsyncPrimaryDiskFieldBuilder().getBuilder();
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -835,7 +817,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
             : asyncPrimaryDisk_;
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.DiskResourceStatusAsyncReplicationStatus async_primary_disk = 180517533;
@@ -880,8 +861,7 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return AsyncSecondaryDisksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AsyncSecondaryDisksConverter asyncSecondaryDisksConverter =
         new AsyncSecondaryDisksConverter();
@@ -923,7 +903,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
     public int getAsyncSecondaryDisksCount() {
       return internalGetAsyncSecondaryDisks().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       }
       return internalGetAsyncSecondaryDisks().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getAsyncSecondaryDisksMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -951,7 +929,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
         getAsyncSecondaryDisks() {
       return getAsyncSecondaryDisksMap();
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
         getAsyncSecondaryDisksMap() {
       return internalGetAsyncSecondaryDisks().getImmutableMap();
     }
-
     /**
      *
      *
@@ -996,7 +972,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
           map = internalGetMutableAsyncSecondaryDisks().ensureBuilderMap();
       return map.containsKey(key) ? asyncSecondaryDisksConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1029,7 +1004,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       internalGetMutableAsyncSecondaryDisks().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1022,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       internalGetMutableAsyncSecondaryDisks().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1057,7 +1030,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return internalGetMutableAsyncSecondaryDisks().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1082,7 +1054,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1082,6 @@ public final class DiskResourceStatus extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

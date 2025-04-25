@@ -33,7 +33,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.WorkflowNode)
     WorkflowNodeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkflowNode.newBuilder() to construct.
   private WorkflowNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -152,7 +151,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * <code>NODE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int NODE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -163,7 +161,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCKED = 1;</code>
      */
     public static final int BLOCKED_VALUE = 1;
-
     /**
      *
      *
@@ -174,7 +171,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNABLE = 2;</code>
      */
     public static final int RUNNABLE_VALUE = 2;
-
     /**
      *
      *
@@ -185,7 +181,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 3;</code>
      */
     public static final int RUNNING_VALUE = 3;
-
     /**
      *
      *
@@ -196,7 +191,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLETED = 4;</code>
      */
     public static final int COMPLETED_VALUE = 4;
-
     /**
      *
      *
@@ -302,7 +296,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stepId_ = "";
-
   /**
    *
    *
@@ -326,7 +319,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -356,7 +348,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList prerequisiteStepIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -372,7 +363,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
     return prerequisiteStepIds_;
   }
-
   /**
    *
    *
@@ -388,7 +378,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   public int getPrerequisiteStepIdsCount() {
     return prerequisiteStepIds_.size();
   }
-
   /**
    *
    *
@@ -405,7 +394,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPrerequisiteStepIds(int index) {
     return prerequisiteStepIds_.get(index);
   }
-
   /**
    *
    *
@@ -427,7 +415,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -451,7 +438,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -478,7 +464,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -496,7 +481,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -523,7 +507,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object error_ = "";
-
   /**
    *
    *
@@ -547,7 +530,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -776,7 +758,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1025,7 +1006,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object stepId_ = "";
-
     /**
      *
      *
@@ -1048,7 +1028,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1050,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1071,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1088,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1161,7 +1136,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       prerequisiteStepIds_.makeImmutable();
       return prerequisiteStepIds_;
     }
-
     /**
      *
      *
@@ -1177,7 +1151,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     public int getPrerequisiteStepIdsCount() {
       return prerequisiteStepIds_.size();
     }
-
     /**
      *
      *
@@ -1194,7 +1167,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPrerequisiteStepIds(int index) {
       return prerequisiteStepIds_.get(index);
     }
-
     /**
      *
      *
@@ -1211,7 +1183,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
       return prerequisiteStepIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1236,7 +1207,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1230,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1250,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1269,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1295,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -1351,7 +1317,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1374,7 +1339,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1396,7 +1360,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1377,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1401,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1457,7 +1418,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1478,7 +1438,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1459,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataproc.v1.WorkflowNode.NodeState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1524,7 +1482,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1503,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object error_ = "";
-
     /**
      *
      *
@@ -1569,7 +1525,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1592,7 +1547,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1614,7 +1568,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1585,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

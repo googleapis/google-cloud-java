@@ -36,7 +36,6 @@ public interface GuestAttributesEntryOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GuestAttributesEntryOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GuestAttributesEntryOrBuilder
    * @return Whether the namespace field is set.
    */
   boolean hasNamespace();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface GuestAttributesEntryOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface GuestAttributesEntryOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface GuestAttributesEntryOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class InstantiatingMigratedVMStep extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.InstantiatingMigratedVMStep)
     InstantiatingMigratedVMStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstantiatingMigratedVMStep.newBuilder() to construct.
   private InstantiatingMigratedVMStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class InstantiatingMigratedVMStep extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface VehicleMatchOrBuilder
    * @return Whether the vehicle field is set.
    */
   boolean hasVehicle();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface VehicleMatchOrBuilder
    * @return The vehicle.
    */
   com.google.maps.fleetengine.v1.Vehicle getVehicle();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface VehicleMatchOrBuilder
    * @return Whether the vehiclePickupEta field is set.
    */
   boolean hasVehiclePickupEta();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface VehicleMatchOrBuilder
    * @return The vehiclePickupEta.
    */
   com.google.protobuf.Timestamp getVehiclePickupEta();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface VehicleMatchOrBuilder
    * @return Whether the vehiclePickupDistanceMeters field is set.
    */
   boolean hasVehiclePickupDistanceMeters();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface VehicleMatchOrBuilder
    * @return The vehiclePickupDistanceMeters.
    */
   com.google.protobuf.Int32Value getVehiclePickupDistanceMeters();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface VehicleMatchOrBuilder
    * @return Whether the vehiclePickupStraightLineDistanceMeters field is set.
    */
   boolean hasVehiclePickupStraightLineDistanceMeters();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface VehicleMatchOrBuilder
    * @return The vehiclePickupStraightLineDistanceMeters.
    */
   com.google.protobuf.Int32Value getVehiclePickupStraightLineDistanceMeters();
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public interface VehicleMatchOrBuilder
    * @return Whether the vehicleDropoffEta field is set.
    */
   boolean hasVehicleDropoffEta();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface VehicleMatchOrBuilder
    * @return The vehicleDropoffEta.
    */
   com.google.protobuf.Timestamp getVehicleDropoffEta();
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public interface VehicleMatchOrBuilder
    * @return Whether the vehiclePickupToDropoffDistanceMeters field is set.
    */
   boolean hasVehiclePickupToDropoffDistanceMeters();
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public interface VehicleMatchOrBuilder
    * @return The vehiclePickupToDropoffDistanceMeters.
    */
   com.google.protobuf.Int32Value getVehiclePickupToDropoffDistanceMeters();
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public interface VehicleMatchOrBuilder
    * @return The enum numeric value on the wire for tripType.
    */
   int getTripTypeValue();
-
   /**
    *
    *
@@ -365,7 +352,6 @@ public interface VehicleMatchOrBuilder
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.Waypoint> getVehicleTripsWaypointsList();
-
   /**
    *
    *
@@ -380,7 +366,6 @@ public interface VehicleMatchOrBuilder
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
   com.google.maps.fleetengine.v1.Waypoint getVehicleTripsWaypoints(int index);
-
   /**
    *
    *
@@ -395,7 +380,6 @@ public interface VehicleMatchOrBuilder
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
   int getVehicleTripsWaypointsCount();
-
   /**
    *
    *
@@ -411,7 +395,6 @@ public interface VehicleMatchOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.WaypointOrBuilder>
       getVehicleTripsWaypointsOrBuilderList();
-
   /**
    *
    *
@@ -439,7 +422,6 @@ public interface VehicleMatchOrBuilder
    * @return The enum numeric value on the wire for vehicleMatchType.
    */
   int getVehicleMatchTypeValue();
-
   /**
    *
    *
@@ -467,7 +449,6 @@ public interface VehicleMatchOrBuilder
    * @return The enum numeric value on the wire for requestedOrderedBy.
    */
   int getRequestedOrderedByValue();
-
   /**
    *
    *
@@ -496,7 +477,6 @@ public interface VehicleMatchOrBuilder
    * @return The enum numeric value on the wire for orderedBy.
    */
   int getOrderedByValue();
-
   /**
    *
    *

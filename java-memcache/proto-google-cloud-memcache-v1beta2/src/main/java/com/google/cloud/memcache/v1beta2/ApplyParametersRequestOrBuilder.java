@@ -39,7 +39,6 @@ public interface ApplyParametersRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ApplyParametersRequestOrBuilder
    * @return A list containing the nodeIds.
    */
   java.util.List<java.lang.String> getNodeIdsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ApplyParametersRequestOrBuilder
    * @return The count of nodeIds.
    */
   int getNodeIdsCount();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ApplyParametersRequestOrBuilder
    * @return The nodeIds at the given index.
    */
   java.lang.String getNodeIds(int index);
-
   /**
    *
    *

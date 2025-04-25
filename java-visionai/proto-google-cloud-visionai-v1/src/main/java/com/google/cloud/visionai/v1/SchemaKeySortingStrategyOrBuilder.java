@@ -34,7 +34,6 @@ public interface SchemaKeySortingStrategyOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SchemaKeySortingStrategy.Option options = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option> getOptionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SchemaKeySortingStrategyOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SchemaKeySortingStrategy.Option options = 1;</code>
    */
   com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option getOptions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SchemaKeySortingStrategyOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SchemaKeySortingStrategy.Option options = 1;</code>
    */
   int getOptionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SchemaKeySortingStrategyOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.SchemaKeySortingStrategy.OptionOrBuilder>
       getOptionsOrBuilderList();
-
   /**
    *
    *

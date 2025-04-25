@@ -39,7 +39,6 @@ public interface CreateConnectivityTestRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateConnectivityTestRequestOrBuilder
    * @return The testId.
    */
   java.lang.String getTestId();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CreateConnectivityTestRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CreateConnectivityTestRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.networkmanagement.v1beta1.ConnectivityTest getResource();
-
   /**
    *
    *

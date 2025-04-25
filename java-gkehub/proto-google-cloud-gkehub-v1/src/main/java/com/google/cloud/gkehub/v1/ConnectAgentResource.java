@@ -34,7 +34,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.ConnectAgentResource)
     ConnectAgentResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConnectAgentResource.newBuilder() to construct.
   private ConnectAgentResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.v1.TypeMeta type_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
   public com.google.cloud.gkehub.v1.TypeMeta getType() {
     return type_ == null ? com.google.cloud.gkehub.v1.TypeMeta.getDefaultInstance() : type_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object manifest_ = "";
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -341,7 +335,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +554,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
             com.google.cloud.gkehub.v1.TypeMeta.Builder,
             com.google.cloud.gkehub.v1.TypeMetaOrBuilder>
         typeBuilder_;
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
         return typeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +673,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +687,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
         return type_ == null ? com.google.cloud.gkehub.v1.TypeMeta.getDefaultInstance() : type_;
       }
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object manifest_ = "";
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +774,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +795,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +812,6 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

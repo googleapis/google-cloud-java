@@ -33,7 +33,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ListAccessLevelsResponse)
     ListAccessLevelsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAccessLevelsResponse.newBuilder() to construct.
   private ListAccessLevelsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.AccessLevel> accessLevels_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       getAccessLevelsList() {
     return accessLevels_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       getAccessLevelsOrBuilderList() {
     return accessLevels_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
   public int getAccessLevelsCount() {
     return accessLevels_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
   public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevels(int index) {
     return accessLevels_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return accessLevelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return accessLevelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return accessLevelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         int index) {
       return getAccessLevelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return accessLevelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(accessLevels_);
       }
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       return getAccessLevelsFieldBuilder()
           .addBuilder(com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
           .addBuilder(
               index, com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1028,7 +1002,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1052,7 +1025,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1048,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1070,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1088,6 @@ public final class ListAccessLevelsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.VerifyKmsConfigResponse)
     VerifyKmsConfigResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VerifyKmsConfigResponse.newBuilder() to construct.
   private VerifyKmsConfigResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
 
   public static final int HEALTHY_FIELD_NUMBER = 1;
   private boolean healthy_ = false;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthError_ = "";
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instructions_ = "";
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +365,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean healthy_;
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
     public boolean getHealthy() {
       return healthy_;
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object healthError_ = "";
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object instructions_ = "";
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class VerifyKmsConfigResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

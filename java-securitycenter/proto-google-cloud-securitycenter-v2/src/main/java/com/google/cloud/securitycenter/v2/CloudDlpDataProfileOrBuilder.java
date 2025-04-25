@@ -37,7 +37,6 @@ public interface CloudDlpDataProfileOrBuilder
    * @return The dataProfile.
    */
   java.lang.String getDataProfile();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CloudDlpDataProfileOrBuilder
    * @return The enum numeric value on the wire for parentType.
    */
   int getParentTypeValue();
-
   /**
    *
    *

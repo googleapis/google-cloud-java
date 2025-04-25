@@ -36,7 +36,6 @@ public interface SchemaOrBuilder
    * @return Whether the structSchema field is set.
    */
   boolean hasStructSchema();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SchemaOrBuilder
    * @return The structSchema.
    */
   com.google.protobuf.Struct getStructSchema();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SchemaOrBuilder
    * @return Whether the jsonSchema field is set.
    */
   boolean hasJsonSchema();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SchemaOrBuilder
    * @return The jsonSchema.
    */
   java.lang.String getJsonSchema();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface SchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

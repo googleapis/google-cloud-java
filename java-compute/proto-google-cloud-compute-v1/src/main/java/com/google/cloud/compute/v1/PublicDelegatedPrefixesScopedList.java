@@ -32,7 +32,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PublicDelegatedPrefixesScopedList)
     PublicDelegatedPrefixesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublicDelegatedPrefixesScopedList.newBuilder() to construct.
   private PublicDelegatedPrefixesScopedList(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PublicDelegatedPrefix>
       publicDelegatedPrefixes_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       getPublicDelegatedPrefixesList() {
     return publicDelegatedPrefixes_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       getPublicDelegatedPrefixesOrBuilderList() {
     return publicDelegatedPrefixes_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
   public int getPublicDelegatedPrefixesCount() {
     return publicDelegatedPrefixes_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
   public com.google.cloud.compute.v1.PublicDelegatedPrefix getPublicDelegatedPrefixes(int index) {
     return publicDelegatedPrefixes_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -382,7 +373,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -683,7 +673,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         return publicDelegatedPrefixesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         return publicDelegatedPrefixesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         return publicDelegatedPrefixesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +893,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         getPublicDelegatedPrefixesBuilder(int index) {
       return getPublicDelegatedPrefixesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         return publicDelegatedPrefixesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         return java.util.Collections.unmodifiableList(publicDelegatedPrefixes_);
       }
     }
-
     /**
      *
      *
@@ -1008,7 +983,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       return getPublicDelegatedPrefixesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1026,7 +1000,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
           .addBuilder(
               index, com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1069,7 +1042,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1128,7 +1098,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1117,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1144,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1163,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1177,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1230,7 +1195,6 @@ public final class PublicDelegatedPrefixesScopedList extends com.google.protobuf
             : warning_;
       }
     }
-
     /**
      *
      *

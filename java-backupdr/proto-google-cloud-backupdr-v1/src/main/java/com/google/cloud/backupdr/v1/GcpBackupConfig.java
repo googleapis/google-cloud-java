@@ -35,7 +35,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.GcpBackupConfig)
     GcpBackupConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcpBackupConfig.newBuilder() to construct.
   private GcpBackupConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupPlan_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupPlanDescription_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupPlanAssociation_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList backupPlanRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getBackupPlanRulesList() {
     return backupPlanRules_;
   }
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
   public int getBackupPlanRulesCount() {
     return backupPlanRules_.size();
   }
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getBackupPlanRules(int index) {
     return backupPlanRules_.get(index);
   }
-
   /**
    *
    *
@@ -489,7 +478,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -727,7 +715,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object backupPlan_ = "";
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object backupPlanDescription_ = "";
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -884,7 +865,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object backupPlanAssociation_ = "";
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -995,7 +971,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1009,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1041,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       backupPlanRules_.makeImmutable();
       return backupPlanRules_;
     }
-
     /**
      *
      *
@@ -1099,7 +1070,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     public int getBackupPlanRulesCount() {
       return backupPlanRules_.size();
     }
-
     /**
      *
      *
@@ -1115,7 +1085,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getBackupPlanRules(int index) {
       return backupPlanRules_.get(index);
     }
-
     /**
      *
      *
@@ -1131,7 +1100,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getBackupPlanRulesBytes(int index) {
       return backupPlanRules_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1155,7 +1123,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1145,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1182,6 @@ public final class GcpBackupConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

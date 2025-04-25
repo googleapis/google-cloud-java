@@ -38,7 +38,6 @@ public interface UpdateQuotaAdjusterSettingsRequestOrBuilder
    * @return Whether the quotaAdjusterSettings field is set.
    */
   boolean hasQuotaAdjusterSettings();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateQuotaAdjusterSettingsRequestOrBuilder
    * @return The quotaAdjusterSettings.
    */
   com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings getQuotaAdjusterSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateQuotaAdjusterSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface UpdateQuotaAdjusterSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

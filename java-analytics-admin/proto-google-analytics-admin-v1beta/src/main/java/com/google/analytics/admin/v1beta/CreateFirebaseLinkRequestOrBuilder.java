@@ -40,7 +40,6 @@ public interface CreateFirebaseLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateFirebaseLinkRequestOrBuilder
    * @return Whether the firebaseLink field is set.
    */
   boolean hasFirebaseLink();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateFirebaseLinkRequestOrBuilder
    * @return The firebaseLink.
    */
   com.google.analytics.admin.v1beta.FirebaseLink getFirebaseLink();
-
   /**
    *
    *

@@ -45,7 +45,6 @@ public final class Common {
      * @return Whether the fixed field is set.
      */
     boolean hasFixed();
-
     /**
      *
      *
@@ -72,7 +71,6 @@ public final class Common {
      * @return Whether the percent field is set.
      */
     boolean hasPercent();
-
     /**
      *
      *
@@ -89,7 +87,6 @@ public final class Common {
 
     com.google.cloud.osconfig.v1beta.Common.FixedOrPercent.ModeCase getModeCase();
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class Common {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1beta.FixedOrPercent)
       FixedOrPercentOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FixedOrPercent.newBuilder() to construct.
     private FixedOrPercent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -151,7 +147,6 @@ public final class Common {
       private ModeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -185,7 +180,6 @@ public final class Common {
     }
 
     public static final int FIXED_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -201,7 +195,6 @@ public final class Common {
     public boolean hasFixed() {
       return modeCase_ == 1;
     }
-
     /**
      *
      *
@@ -222,7 +215,6 @@ public final class Common {
     }
 
     public static final int PERCENT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -239,7 +231,6 @@ public final class Common {
     public boolean hasPercent() {
       return modeCase_ == 2;
     }
-
     /**
      *
      *
@@ -451,7 +442,6 @@ public final class Common {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -689,7 +679,6 @@ public final class Common {
       public boolean hasFixed() {
         return modeCase_ == 1;
       }
-
       /**
        *
        *
@@ -707,7 +696,6 @@ public final class Common {
         }
         return 0;
       }
-
       /**
        *
        *
@@ -727,7 +715,6 @@ public final class Common {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -763,7 +750,6 @@ public final class Common {
       public boolean hasPercent() {
         return modeCase_ == 2;
       }
-
       /**
        *
        *
@@ -782,7 +768,6 @@ public final class Common {
         }
         return 0;
       }
-
       /**
        *
        *
@@ -803,7 +788,6 @@ public final class Common {
         onChanged();
         return this;
       }
-
       /**
        *
        *

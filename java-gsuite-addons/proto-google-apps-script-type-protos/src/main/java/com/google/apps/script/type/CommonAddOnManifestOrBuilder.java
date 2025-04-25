@@ -36,7 +36,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return The logoUrl.
    */
   java.lang.String getLogoUrl();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return Whether the layoutProperties field is set.
    */
   boolean hasLayoutProperties();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return The layoutProperties.
    */
   com.google.apps.script.type.LayoutProperties getLayoutProperties();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return Whether the addOnWidgetSet field is set.
    */
   boolean hasAddOnWidgetSet();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return The addOnWidgetSet.
    */
   com.google.apps.script.type.AddOnWidgetSet getAddOnWidgetSet();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return Whether the homepageTrigger field is set.
    */
   boolean hasHomepageTrigger();
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return The homepageTrigger.
    */
   com.google.apps.script.type.HomepageExtensionPoint getHomepageTrigger();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface CommonAddOnManifestOrBuilder
    */
   java.util.List<com.google.apps.script.type.UniversalActionExtensionPoint>
       getUniversalActionsList();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface CommonAddOnManifestOrBuilder
    * </code>
    */
   com.google.apps.script.type.UniversalActionExtensionPoint getUniversalActions(int index);
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public interface CommonAddOnManifestOrBuilder
    * </code>
    */
   int getUniversalActionsCount();
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public interface CommonAddOnManifestOrBuilder
    */
   java.util.List<? extends com.google.apps.script.type.UniversalActionExtensionPointOrBuilder>
       getUniversalActionsOrBuilderList();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return Whether the openLinkUrlPrefixes field is set.
    */
   boolean hasOpenLinkUrlPrefixes();
-
   /**
    *
    *
@@ -327,7 +314,6 @@ public interface CommonAddOnManifestOrBuilder
    * @return The openLinkUrlPrefixes.
    */
   com.google.protobuf.ListValue getOpenLinkUrlPrefixes();
-
   /**
    *
    *

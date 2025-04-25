@@ -33,7 +33,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsServerConfig)
     AwsServerConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsServerConfig.newBuilder() to construct.
   private AwsServerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo> validVersions_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       getValidVersionsList() {
     return validVersions_;
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       getValidVersionsOrBuilderList() {
     return validVersions_;
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   public int getValidVersionsCount() {
     return validVersions_.size();
   }
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo getValidVersions(int index) {
     return validVersions_.get(index);
   }
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList supportedAwsRegions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSupportedAwsRegionsList() {
     return supportedAwsRegions_;
   }
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   public int getSupportedAwsRegionsCount() {
     return supportedAwsRegions_.size();
   }
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSupportedAwsRegions(int index) {
     return supportedAwsRegions_.get(index);
   }
-
   /**
    *
    *
@@ -466,7 +454,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -735,7 +722,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return validVersionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -903,7 +884,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return validVersionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return validVersionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -950,7 +929,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1049,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1132,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getValidVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1183,7 +1152,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return validVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1172,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(validVersions_);
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1188,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       return getValidVersionsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1240,7 +1206,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1287,7 +1252,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1303,7 +1267,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       supportedAwsRegions_.makeImmutable();
       return supportedAwsRegions_;
     }
-
     /**
      *
      *
@@ -1318,7 +1281,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     public int getSupportedAwsRegionsCount() {
       return supportedAwsRegions_.size();
     }
-
     /**
      *
      *
@@ -1334,7 +1296,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSupportedAwsRegions(int index) {
       return supportedAwsRegions_.get(index);
     }
-
     /**
      *
      *
@@ -1350,7 +1311,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSupportedAwsRegionsBytes(int index) {
       return supportedAwsRegions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1374,7 +1334,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1356,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1375,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1436,7 +1393,6 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

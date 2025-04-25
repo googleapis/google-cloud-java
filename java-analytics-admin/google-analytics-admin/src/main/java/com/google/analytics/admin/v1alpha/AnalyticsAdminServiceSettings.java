@@ -38,7 +38,6 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
@@ -1132,50 +1131,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       deleteSubpropertyEventFilterSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .deleteSubpropertyEventFilterSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createReportingDataAnnotation. */
-  public UnaryCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      createReportingDataAnnotationSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .createReportingDataAnnotationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getReportingDataAnnotation. */
-  public UnaryCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-      getReportingDataAnnotationSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .getReportingDataAnnotationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listReportingDataAnnotations. */
-  public PagedCallSettings<
-          ListReportingDataAnnotationsRequest,
-          ListReportingDataAnnotationsResponse,
-          ListReportingDataAnnotationsPagedResponse>
-      listReportingDataAnnotationsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .listReportingDataAnnotationsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateReportingDataAnnotation. */
-  public UnaryCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      updateReportingDataAnnotationSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .updateReportingDataAnnotationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteReportingDataAnnotation. */
-  public UnaryCallSettings<DeleteReportingDataAnnotationRequest, Empty>
-      deleteReportingDataAnnotationSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .deleteReportingDataAnnotationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to submitUserDeletion. */
-  public UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-      submitUserDeletionSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).submitUserDeletionSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -2318,45 +2273,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
         deleteSubpropertyEventFilterSettings() {
       return getStubSettingsBuilder().deleteSubpropertyEventFilterSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        createReportingDataAnnotationSettings() {
-      return getStubSettingsBuilder().createReportingDataAnnotationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-        getReportingDataAnnotationSettings() {
-      return getStubSettingsBuilder().getReportingDataAnnotationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listReportingDataAnnotations. */
-    public PagedCallSettings.Builder<
-            ListReportingDataAnnotationsRequest,
-            ListReportingDataAnnotationsResponse,
-            ListReportingDataAnnotationsPagedResponse>
-        listReportingDataAnnotationsSettings() {
-      return getStubSettingsBuilder().listReportingDataAnnotationsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        updateReportingDataAnnotationSettings() {
-      return getStubSettingsBuilder().updateReportingDataAnnotationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<DeleteReportingDataAnnotationRequest, Empty>
-        deleteReportingDataAnnotationSettings() {
-      return getStubSettingsBuilder().deleteReportingDataAnnotationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to submitUserDeletion. */
-    public UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-        submitUserDeletionSettings() {
-      return getStubSettingsBuilder().submitUserDeletionSettings();
     }
 
     @Override

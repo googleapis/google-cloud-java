@@ -33,7 +33,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ContainerSpec)
     ContainerSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContainerSpec.newBuilder() to construct.
   private ContainerSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object image_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 2;
   private com.google.dataflow.v1beta3.TemplateMetadata metadata_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.TemplateMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SDK_INFO_FIELD_NUMBER = 3;
   private com.google.dataflow.v1beta3.SDKInfo sdkInfo_;
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdkInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.SDKInfo getSdkInfo() {
     return sdkInfo_ == null ? com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance() : sdkInfo_;
   }
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_ENVIRONMENT_FIELD_NUMBER = 4;
   private com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment defaultEnvironment_;
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultEnvironment() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.getDefaultInstance()
         : defaultEnvironment_;
   }
-
   /**
    *
    *
@@ -475,7 +463,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -730,7 +717,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object image_ = "";
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +799,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.TemplateMetadata.Builder,
             com.google.dataflow.v1beta3.TemplateMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +904,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +964,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1008,7 +982,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1014,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.SDKInfo.Builder,
             com.google.dataflow.v1beta3.SDKInfoOrBuilder>
         sdkInfoBuilder_;
-
     /**
      *
      *
@@ -1056,7 +1028,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdkInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1077,7 +1048,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return sdkInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1070,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1089,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1116,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1135,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1149,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSdkInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1202,7 +1167,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             : sdkInfo_;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1199,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder,
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironmentOrBuilder>
         defaultEnvironmentBuilder_;
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultEnvironment() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1271,7 +1233,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return defaultEnvironmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1256,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1276,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1306,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1325,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1340,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultEnvironmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1403,7 +1359,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             : defaultEnvironment_;
       }
     }
-
     /**
      *
      *

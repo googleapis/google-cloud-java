@@ -40,7 +40,6 @@ public interface DeleteMeasurementProtocolSecretRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

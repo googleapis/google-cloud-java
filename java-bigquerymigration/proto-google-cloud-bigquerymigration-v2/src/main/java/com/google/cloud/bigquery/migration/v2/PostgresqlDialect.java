@@ -33,7 +33,6 @@ public final class PostgresqlDialect extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.PostgresqlDialect)
     PostgresqlDialectOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostgresqlDialect.newBuilder() to construct.
   private PostgresqlDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class PostgresqlDialect extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

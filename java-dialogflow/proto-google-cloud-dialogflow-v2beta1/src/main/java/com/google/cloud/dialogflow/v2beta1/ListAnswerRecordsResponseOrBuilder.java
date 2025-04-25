@@ -34,7 +34,6 @@ public interface ListAnswerRecordsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.AnswerRecord answer_records = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.AnswerRecord> getAnswerRecordsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAnswerRecordsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.AnswerRecord answer_records = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.AnswerRecord getAnswerRecords(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAnswerRecordsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.AnswerRecord answer_records = 1;</code>
    */
   int getAnswerRecordsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAnswerRecordsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.AnswerRecordOrBuilder>
       getAnswerRecordsOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface ListAnswerRecordsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CloudSqlSourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CloudSqlSourceOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface CloudSqlSourceOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface CloudSqlSourceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface CloudSqlSourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
-
   /**
    *
    *

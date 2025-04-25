@@ -37,7 +37,6 @@ public interface UpdatePolicyRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdatePolicyRequestOrBuilder
    * @return The policy.
    */
   com.google.cloud.orgpolicy.v2.Policy getPolicy();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface UpdatePolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface UpdatePolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

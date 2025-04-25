@@ -37,7 +37,6 @@ public interface ListJobsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ListJobsRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface ListJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface ListJobsRequestOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public interface ListJobsRequestOrBuilder
    * @return The enum numeric value on the wire for jobStateMatcher.
    */
   int getJobStateMatcherValue();
-
   /**
    *
    *
@@ -208,7 +203,6 @@ public interface ListJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ListMigratingVmsResponse)
     ListMigratingVmsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMigratingVmsResponse.newBuilder() to construct.
   private ListMigratingVmsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.MigratingVm> migratingVms_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.vmmigration.v1.MigratingVm> getMigratingVmsList() {
     return migratingVms_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       getMigratingVmsOrBuilderList() {
     return migratingVms_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   public int getMigratingVmsCount() {
     return migratingVms_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   public com.google.cloud.vmmigration.v1.MigratingVm getMigratingVms(int index) {
     return migratingVms_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -764,7 +751,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return migratingVmsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return migratingVmsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return migratingVmsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +857,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +947,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1003,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     public com.google.cloud.vmmigration.v1.MigratingVm.Builder getMigratingVmsBuilder(int index) {
       return getMigratingVmsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1048,7 +1022,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return migratingVmsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1041,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(migratingVms_);
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       return getMigratingVmsFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1100,7 +1071,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       return getMigratingVmsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1135,7 +1105,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1159,7 +1128,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1183,7 +1151,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1206,7 +1173,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1191,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1224,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1275,7 +1239,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1290,7 +1253,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1306,7 +1268,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1322,7 +1283,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1346,7 +1306,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1328,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1347,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1408,7 +1365,6 @@ public final class ListMigratingVmsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

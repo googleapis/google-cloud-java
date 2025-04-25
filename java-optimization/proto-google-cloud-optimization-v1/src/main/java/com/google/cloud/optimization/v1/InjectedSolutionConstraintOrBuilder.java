@@ -36,7 +36,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute routes = 1;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> getRoutesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute routes = 1;</code>
    */
   com.google.cloud.optimization.v1.ShipmentRoute getRoutes(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute routes = 1;</code>
    */
   int getRoutesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface InjectedSolutionConstraintOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRouteOrBuilder>
       getRoutesOrBuilderList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * <code>repeated .google.cloud.optimization.v1.SkippedShipment skipped_shipments = 2;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.SkippedShipment> getSkippedShipmentsList();
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * <code>repeated .google.cloud.optimization.v1.SkippedShipment skipped_shipments = 2;</code>
    */
   com.google.cloud.optimization.v1.SkippedShipment getSkippedShipments(int index);
-
   /**
    *
    *
@@ -125,7 +119,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * <code>repeated .google.cloud.optimization.v1.SkippedShipment skipped_shipments = 2;</code>
    */
   int getSkippedShipmentsCount();
-
   /**
    *
    *
@@ -138,7 +131,6 @@ public interface InjectedSolutionConstraintOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.SkippedShipmentOrBuilder>
       getSkippedShipmentsOrBuilderList();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface InjectedSolutionConstraintOrBuilder
    */
   java.util.List<com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation>
       getConstraintRelaxationsList();
-
   /**
    *
    *
@@ -182,7 +173,6 @@ public interface InjectedSolutionConstraintOrBuilder
    */
   com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
       getConstraintRelaxations(int index);
-
   /**
    *
    *
@@ -197,7 +187,6 @@ public interface InjectedSolutionConstraintOrBuilder
    * </code>
    */
   int getConstraintRelaxationsCount();
-
   /**
    *
    *
@@ -216,7 +205,6 @@ public interface InjectedSolutionConstraintOrBuilder
               com.google.cloud.optimization.v1.InjectedSolutionConstraint
                   .ConstraintRelaxationOrBuilder>
       getConstraintRelaxationsOrBuilderList();
-
   /**
    *
    *

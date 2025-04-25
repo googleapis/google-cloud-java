@@ -40,7 +40,6 @@ public interface DeleteDataLabelingJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

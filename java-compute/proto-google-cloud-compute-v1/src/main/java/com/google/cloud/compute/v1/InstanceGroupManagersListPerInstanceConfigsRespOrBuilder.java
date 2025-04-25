@@ -34,7 +34,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getItemsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig items = 100526016;</code>
    */
   com.google.cloud.compute.v1.PerInstanceConfig getItems(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig items = 100526016;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
       getItemsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

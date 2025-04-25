@@ -35,7 +35,6 @@ public interface BatchCreateJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.JobResult job_results = 1;</code>
    */
   java.util.List<com.google.cloud.talent.v4.JobResult> getJobResultsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface BatchCreateJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.JobResult job_results = 1;</code>
    */
   com.google.cloud.talent.v4.JobResult getJobResults(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface BatchCreateJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4.JobResult job_results = 1;</code>
    */
   int getJobResultsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface BatchCreateJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4.JobResultOrBuilder>
       getJobResultsOrBuilderList();
-
   /**
    *
    *

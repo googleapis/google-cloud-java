@@ -34,7 +34,6 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.cloud.commerce.consumer.procurement.v1.Order orders = 1;</code>
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1.Order> getOrdersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.cloud.commerce.consumer.procurement.v1.Order orders = 1;</code>
    */
   com.google.cloud.commerce.consumer.procurement.v1.Order getOrders(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.cloud.commerce.consumer.procurement.v1.Order orders = 1;</code>
    */
   int getOrdersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListOrdersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.commerce.consumer.procurement.v1.OrderOrBuilder>
       getOrdersOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListOrdersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

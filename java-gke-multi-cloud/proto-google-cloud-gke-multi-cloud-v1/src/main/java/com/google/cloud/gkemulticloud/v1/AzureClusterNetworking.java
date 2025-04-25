@@ -33,7 +33,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureClusterNetworking)
     AzureClusterNetworkingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureClusterNetworking.newBuilder() to construct.
   private AzureClusterNetworking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object virtualNetworkId_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList podAddressCidrBlocks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getPodAddressCidrBlocksList() {
     return podAddressCidrBlocks_;
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public int getPodAddressCidrBlocksCount() {
     return podAddressCidrBlocks_.size();
   }
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public java.lang.String getPodAddressCidrBlocks(int index) {
     return podAddressCidrBlocks_.get(index);
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceAddressCidrBlocks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getServiceAddressCidrBlocksList() {
     return serviceAddressCidrBlocks_;
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public int getServiceAddressCidrBlocksCount() {
     return serviceAddressCidrBlocks_.size();
   }
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public java.lang.String getServiceAddressCidrBlocks(int index) {
     return serviceAddressCidrBlocks_.get(index);
   }
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceLoadBalancerSubnetId_ = "";
-
   /**
    *
    *
@@ -368,7 +356,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -605,7 +592,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -849,7 +835,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object virtualNetworkId_ = "";
-
     /**
      *
      *
@@ -881,7 +866,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -913,7 +897,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +927,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +953,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +994,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1036,7 +1016,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       podAddressCidrBlocks_.makeImmutable();
       return podAddressCidrBlocks_;
     }
-
     /**
      *
      *
@@ -1058,7 +1037,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public int getPodAddressCidrBlocksCount() {
       return podAddressCidrBlocks_.size();
     }
-
     /**
      *
      *
@@ -1081,7 +1059,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public java.lang.String getPodAddressCidrBlocks(int index) {
       return podAddressCidrBlocks_.get(index);
     }
-
     /**
      *
      *
@@ -1104,7 +1081,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getPodAddressCidrBlocksBytes(int index) {
       return podAddressCidrBlocks_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1135,7 +1111,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1166,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1191,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1232,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1284,7 +1255,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       serviceAddressCidrBlocks_.makeImmutable();
       return serviceAddressCidrBlocks_;
     }
-
     /**
      *
      *
@@ -1307,7 +1277,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public int getServiceAddressCidrBlocksCount() {
       return serviceAddressCidrBlocks_.size();
     }
-
     /**
      *
      *
@@ -1331,7 +1300,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public java.lang.String getServiceAddressCidrBlocks(int index) {
       return serviceAddressCidrBlocks_.get(index);
     }
-
     /**
      *
      *
@@ -1355,7 +1323,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getServiceAddressCidrBlocksBytes(int index) {
       return serviceAddressCidrBlocks_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1387,7 +1354,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1384,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1411,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1473,7 +1437,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1470,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object serviceLoadBalancerSubnetId_ = "";
-
     /**
      *
      *
@@ -1536,7 +1498,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1565,7 +1526,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1593,7 +1553,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1576,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

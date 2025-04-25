@@ -36,7 +36,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.apihub.v1.Issue> getIssuesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.Issue getIssues(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   int getIssuesCount();
-
   /**
    *
    *
@@ -75,7 +72,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.apihub.v1.IssueOrBuilder> getIssuesOrBuilderList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.apihub.v1.LintResponse.SummaryEntry> getSummaryList();
-
   /**
    *
    *
@@ -114,7 +109,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.LintResponse.SummaryEntry getSummary(int index);
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public interface LintResponseOrBuilder
    * </code>
    */
   int getSummaryCount();
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public interface LintResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.LintResponse.SummaryEntryOrBuilder>
       getSummaryOrBuilderList();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface LintResponseOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -195,7 +186,6 @@ public interface LintResponseOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *
@@ -222,7 +212,6 @@ public interface LintResponseOrBuilder
    * @return The enum numeric value on the wire for linter.
    */
   int getLinterValue();
-
   /**
    *
    *
@@ -250,7 +239,6 @@ public interface LintResponseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -264,7 +252,6 @@ public interface LintResponseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

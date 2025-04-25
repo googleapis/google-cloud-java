@@ -33,7 +33,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p2beta1.ObjectTrackingAnnotation)
     ObjectTrackingAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ObjectTrackingAnnotation.newBuilder() to construct.
   private ObjectTrackingAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     private TrackInfoCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   }
 
   public static final int SEGMENT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   public boolean hasSegment() {
     return trackInfoCase_ == 3;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     }
     return com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   }
 
   public static final int TRACK_ID_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   public boolean hasTrackId() {
     return trackInfoCase_ == 5;
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
   public static final int ENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p2beta1.Entity entity_;
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   public boolean hasEntity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         ? com.google.cloud.videointelligence.v1p2beta1.Entity.getDefaultInstance()
         : entity_;
   }
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -295,7 +284,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame> frames_;
-
   /**
    *
    *
@@ -310,7 +298,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       getFramesList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       getFramesOrBuilderList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -340,7 +326,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   public int getFramesCount() {
     return frames_.size();
   }
-
   /**
    *
    *
@@ -354,7 +339,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame getFrames(int index) {
     return frames_.get(index);
   }
-
   /**
    *
    *
@@ -597,7 +581,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -940,7 +923,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder,
             com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder>
         segmentBuilder_;
-
     /**
      *
      *
@@ -957,7 +939,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public boolean hasSegment() {
       return trackInfoCase_ == 3;
     }
-
     /**
      *
      *
@@ -984,7 +965,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1008,7 +988,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       trackInfoCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1009,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       trackInfoCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1043,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       trackInfoCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1069,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1082,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder getSegmentBuilder() {
       return getSegmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1129,7 +1104,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1158,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public boolean hasTrackId() {
       return trackInfoCase_ == 5;
     }
-
     /**
      *
      *
@@ -1207,7 +1180,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -1232,7 +1204,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1235,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             com.google.cloud.videointelligence.v1p2beta1.Entity.Builder,
             com.google.cloud.videointelligence.v1p2beta1.EntityOrBuilder>
         entityBuilder_;
-
     /**
      *
      *
@@ -1279,7 +1249,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public boolean hasEntity() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1300,7 +1269,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return entityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1323,7 +1291,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1311,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1339,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1358,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1408,7 +1372,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1427,7 +1390,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             : entity_;
       }
     }
-
     /**
      *
      *
@@ -1455,7 +1417,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -1471,7 +1432,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -1491,7 +1451,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1505,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return framesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1564,7 +1522,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return framesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1539,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return framesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1607,7 +1563,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1585,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1609,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1633,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1654,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1676,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1699,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1719,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1739,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1753,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         getFramesBuilder(int index) {
       return getFramesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1825,7 +1771,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1845,7 +1790,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(frames_);
       }
     }
-
     /**
      *
      *
@@ -1863,7 +1807,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
               com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1882,7 +1825,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
               com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame
                   .getDefaultInstance());
     }
-
     /**
      *
      *

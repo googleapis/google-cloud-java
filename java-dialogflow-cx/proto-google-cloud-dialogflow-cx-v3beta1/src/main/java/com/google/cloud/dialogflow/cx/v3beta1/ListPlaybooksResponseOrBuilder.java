@@ -35,7 +35,6 @@ public interface ListPlaybooksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook playbooks = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook> getPlaybooksList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListPlaybooksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook playbooks = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybooks(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListPlaybooksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook playbooks = 1;</code>
    */
   int getPlaybooksCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListPlaybooksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.PlaybookOrBuilder>
       getPlaybooksOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListPlaybooksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

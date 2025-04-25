@@ -38,7 +38,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return Whether the customDocumentExtractionOptions field is set.
    */
   boolean hasCustomDocumentExtractionOptions();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    */
   com.google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions
       getCustomDocumentExtractionOptions();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return Whether the foundationModelTuningOptions field is set.
    */
   boolean hasFoundationModelTuningOptions();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    */
   com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
       getFoundationModelTuningOptions();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return Whether the processorVersion field is set.
    */
   boolean hasProcessorVersion();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return The processorVersion.
    */
   com.google.cloud.documentai.v1.ProcessorVersion getProcessorVersion();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return Whether the documentSchema field is set.
    */
   boolean hasDocumentSchema();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return The documentSchema.
    */
   com.google.cloud.documentai.v1.DocumentSchema getDocumentSchema();
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return Whether the inputData field is set.
    */
   boolean hasInputData();
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return The inputData.
    */
   com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData getInputData();
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return The baseProcessorVersion.
    */
   java.lang.String getBaseProcessorVersion();
-
   /**
    *
    *

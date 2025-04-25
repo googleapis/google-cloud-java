@@ -39,7 +39,6 @@ public interface DeleteChannelPartnerRepricingConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return A list containing the assetNames.
    */
   java.util.List<java.lang.String> getAssetNamesList();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The count of assetNames.
    */
   int getAssetNamesCount();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The assetNames at the given index.
    */
   java.lang.String getAssetNames(int index);
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return Whether the readTimeWindow field is set.
    */
   boolean hasReadTimeWindow();
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The readTimeWindow.
    */
   com.google.cloud.asset.v1.TimeWindow getReadTimeWindow();
-
   /**
    *
    *
@@ -255,7 +248,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return A list containing the relationshipTypes.
    */
   java.util.List<java.lang.String> getRelationshipTypesList();
-
   /**
    *
    *
@@ -283,7 +275,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The count of relationshipTypes.
    */
   int getRelationshipTypesCount();
-
   /**
    *
    *
@@ -312,7 +303,6 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * @return The relationshipTypes at the given index.
    */
   java.lang.String getRelationshipTypes(int index);
-
   /**
    *
    *

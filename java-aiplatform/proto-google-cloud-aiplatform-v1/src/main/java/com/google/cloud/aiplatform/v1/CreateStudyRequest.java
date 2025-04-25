@@ -34,7 +34,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateStudyRequest)
     CreateStudyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateStudyRequest.newBuilder() to construct.
   private CreateStudyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int STUDY_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.Study study_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasStudy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1.Study getStudy() {
     return study_ == null ? com.google.cloud.aiplatform.v1.Study.getDefaultInstance() : study_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -591,7 +583,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +684,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.Study.Builder,
             com.google.cloud.aiplatform.v1.StudyOrBuilder>
         studyBuilder_;
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasStudy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
         return studyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStudyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
         return study_ == null ? com.google.cloud.aiplatform.v1.Study.getDefaultInstance() : study_;
       }
     }
-
     /**
      *
      *

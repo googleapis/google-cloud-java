@@ -34,7 +34,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.CreateCustomConstraintRequest)
     CreateCustomConstraintRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCustomConstraintRequest.newBuilder() to construct.
   private CreateCustomConstraintRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
 
   public static final int CUSTOM_CONSTRAINT_FIELD_NUMBER = 2;
   private com.google.cloud.orgpolicy.v2.CustomConstraint customConstraint_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
   public boolean hasCustomConstraint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
         ? com.google.cloud.orgpolicy.v2.CustomConstraint.getDefaultInstance()
         : customConstraint_;
   }
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +570,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -604,7 +596,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +701,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
             com.google.cloud.orgpolicy.v2.CustomConstraint.Builder,
             com.google.cloud.orgpolicy.v2.CustomConstraintOrBuilder>
         customConstraintBuilder_;
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
     public boolean hasCustomConstraint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
         return customConstraintBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
       onChanged();
       return getCustomConstraintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class CreateCustomConstraintRequest extends com.google.protobuf.Gen
             : customConstraint_;
       }
     }
-
     /**
      *
      *

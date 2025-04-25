@@ -36,7 +36,6 @@ public interface MetadataLocationOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MetadataLocationOrBuilder
    * @return Whether the storageLabel field is set.
    */
   boolean hasStorageLabel();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface MetadataLocationOrBuilder
    * @return The storageLabel.
    */
   com.google.privacy.dlp.v2.StorageMetadataLabel getStorageLabel();
-
   /**
    *
    *

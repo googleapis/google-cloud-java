@@ -36,7 +36,6 @@ public interface ListSubscribersRequestOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface ListSubscribersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

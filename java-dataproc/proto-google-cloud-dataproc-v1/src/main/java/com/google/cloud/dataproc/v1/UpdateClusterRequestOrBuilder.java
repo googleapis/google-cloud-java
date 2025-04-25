@@ -37,7 +37,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.cloud.dataproc.v1.Cluster getCluster();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return Whether the gracefulDecommissionTimeout field is set.
    */
   boolean hasGracefulDecommissionTimeout();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The gracefulDecommissionTimeout.
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -338,7 +330,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -424,7 +415,6 @@ public interface UpdateClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

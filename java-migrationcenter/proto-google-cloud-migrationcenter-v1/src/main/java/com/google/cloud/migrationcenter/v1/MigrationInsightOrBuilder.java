@@ -39,7 +39,6 @@ public interface MigrationInsightOrBuilder
    * @return Whether the fit field is set.
    */
   boolean hasFit();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface MigrationInsightOrBuilder
    * @return The fit.
    */
   com.google.cloud.migrationcenter.v1.FitDescriptor getFit();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface MigrationInsightOrBuilder
    * @return Whether the computeEngineTarget field is set.
    */
   boolean hasComputeEngineTarget();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface MigrationInsightOrBuilder
    * @return The computeEngineTarget.
    */
   com.google.cloud.migrationcenter.v1.ComputeEngineMigrationTarget getComputeEngineTarget();
-
   /**
    *
    *

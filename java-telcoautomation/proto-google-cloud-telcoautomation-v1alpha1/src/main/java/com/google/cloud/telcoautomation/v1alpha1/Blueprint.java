@@ -40,7 +40,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.Blueprint)
     BlueprintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Blueprint.newBuilder() to construct.
   private Blueprint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -161,7 +160,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVAL_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int APPROVAL_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -173,7 +171,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
      * <code>DRAFT = 1;</code>
      */
     public static final int DRAFT_VALUE = 1;
-
     /**
      *
      *
@@ -185,7 +182,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPOSED = 2;</code>
      */
     public static final int PROPOSED_VALUE = 2;
-
     /**
      *
      *
@@ -293,7 +289,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -348,7 +342,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
-
   /**
    *
    *
@@ -375,7 +368,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -407,7 +399,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceBlueprint_ = "";
-
   /**
    *
    *
@@ -434,7 +425,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -464,7 +454,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVISION_CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp revisionCreateTime_;
-
   /**
    *
    *
@@ -482,7 +471,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -502,7 +490,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : revisionCreateTime_;
   }
-
   /**
    *
    *
@@ -523,7 +510,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPROVAL_STATE_FIELD_NUMBER = 6;
   private int approvalState_ = 0;
-
   /**
    *
    *
@@ -541,7 +527,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public int getApprovalStateValue() {
     return approvalState_;
   }
-
   /**
    *
    *
@@ -568,7 +553,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -592,7 +576,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -621,7 +604,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object repository_ = "";
-
   /**
    *
    *
@@ -645,7 +627,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -674,7 +655,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> files_;
-
   /**
    *
    *
@@ -693,7 +673,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.telcoautomation.v1alpha1.File> getFilesList() {
     return files_;
   }
-
   /**
    *
    *
@@ -713,7 +692,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       getFilesOrBuilderList() {
     return files_;
   }
-
   /**
    *
    *
@@ -732,7 +710,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public int getFilesCount() {
     return files_.size();
   }
-
   /**
    *
    *
@@ -751,7 +728,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.telcoautomation.v1alpha1.File getFiles(int index) {
     return files_.get(index);
   }
-
   /**
    *
    *
@@ -797,7 +773,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -815,14 +790,12 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -837,7 +810,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -859,7 +831,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -884,7 +855,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -901,7 +871,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -918,7 +887,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -936,7 +904,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -953,7 +920,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -970,7 +936,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -990,7 +955,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceProvider_ = "";
-
   /**
    *
    *
@@ -1015,7 +979,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1043,7 +1006,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOYMENT_LEVEL_FIELD_NUMBER = 14;
   private int deploymentLevel_ = 0;
-
   /**
    *
    *
@@ -1062,7 +1024,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
   public int getDeploymentLevelValue() {
     return deploymentLevel_;
   }
-
   /**
    *
    *
@@ -1088,7 +1049,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLLBACK_SUPPORT_FIELD_NUMBER = 15;
   private boolean rollbackSupport_ = false;
-
   /**
    *
    *
@@ -1417,7 +1377,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1897,7 +1856,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1921,7 +1879,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1945,7 +1902,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1968,7 +1924,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1987,7 +1942,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2013,7 +1967,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revisionId_ = "";
-
     /**
      *
      *
@@ -2039,7 +1992,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2065,7 +2017,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2090,7 +2041,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2111,7 +2061,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2088,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceBlueprint_ = "";
-
     /**
      *
      *
@@ -2165,7 +2113,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2191,7 +2138,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2216,7 +2162,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2237,7 +2182,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2270,7 +2214,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         revisionCreateTimeBuilder_;
-
     /**
      *
      *
@@ -2287,7 +2230,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2310,7 +2252,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return revisionCreateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2335,7 +2276,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2357,7 +2297,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2387,7 +2326,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2409,7 +2347,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2363,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2447,7 +2383,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
             : revisionCreateTime_;
       }
     }
-
     /**
      *
      *
@@ -2477,7 +2412,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int approvalState_ = 0;
-
     /**
      *
      *
@@ -2495,7 +2429,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public int getApprovalStateValue() {
       return approvalState_;
     }
-
     /**
      *
      *
@@ -2516,7 +2449,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2539,7 +2471,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.telcoautomation.v1alpha1.Blueprint.ApprovalState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2564,7 +2495,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2586,7 +2516,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2609,7 +2538,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2632,7 +2560,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2654,7 +2581,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2672,7 +2598,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2697,7 +2622,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object repository_ = "";
-
     /**
      *
      *
@@ -2720,7 +2644,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2743,7 +2666,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2765,7 +2687,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2783,7 +2704,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2844,7 +2764,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2866,7 +2785,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2888,7 +2806,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2916,7 +2833,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2942,7 +2858,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2970,7 +2885,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2998,7 +2912,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3024,7 +2937,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3050,7 +2962,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3076,7 +2987,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3101,7 +3011,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3126,7 +3035,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3144,7 +3052,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.telcoautomation.v1alpha1.File.Builder getFilesBuilder(int index) {
       return getFilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3166,7 +3073,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return filesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3189,7 +3095,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(files_);
       }
     }
-
     /**
      *
      *
@@ -3208,7 +3113,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return getFilesFieldBuilder()
           .addBuilder(com.google.cloud.telcoautomation.v1alpha1.File.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3227,7 +3131,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       return getFilesFieldBuilder()
           .addBuilder(index, com.google.cloud.telcoautomation.v1alpha1.File.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3289,7 +3192,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3307,14 +3209,12 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3329,7 +3229,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3351,7 +3250,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3379,7 +3277,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3397,14 +3294,12 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3426,7 +3321,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -3449,7 +3343,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3466,7 +3359,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3489,7 +3381,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3514,7 +3405,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3536,7 +3426,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3566,7 +3455,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3588,7 +3476,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3605,7 +3492,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3626,7 +3512,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3661,7 +3546,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3678,7 +3562,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3701,7 +3584,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3726,7 +3608,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3748,7 +3629,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3778,7 +3658,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3800,7 +3679,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3817,7 +3695,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3838,7 +3715,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3868,7 +3744,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceProvider_ = "";
-
     /**
      *
      *
@@ -3892,7 +3767,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3916,7 +3790,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3939,7 +3812,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3830,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3984,7 +3855,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int deploymentLevel_ = 0;
-
     /**
      *
      *
@@ -4003,7 +3873,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public int getDeploymentLevelValue() {
       return deploymentLevel_;
     }
-
     /**
      *
      *
@@ -4025,7 +3894,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4048,7 +3916,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.telcoautomation.v1alpha1.DeploymentLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4074,7 +3941,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4097,7 +3963,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean rollbackSupport_;
-
     /**
      *
      *
@@ -4114,7 +3979,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
     public boolean getRollbackSupport() {
       return rollbackSupport_;
     }
-
     /**
      *
      *
@@ -4135,7 +3999,6 @@ public final class Blueprint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -88,7 +88,6 @@ public enum ReportView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPORT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int REPORT_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -100,7 +99,6 @@ public enum ReportView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPORT_VIEW_BASIC = 1;</code>
    */
   public static final int REPORT_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public enum ReportView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REPORT_VIEW_FULL = 2;</code>
    */
   public static final int REPORT_VIEW_FULL_VALUE = 2;
-
   /**
    *
    *

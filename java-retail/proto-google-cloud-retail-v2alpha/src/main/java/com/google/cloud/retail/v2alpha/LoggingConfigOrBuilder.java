@@ -39,7 +39,6 @@ public interface LoggingConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface LoggingConfigOrBuilder
    * @return Whether the defaultLogGenerationRule field is set.
    */
   boolean hasDefaultLogGenerationRule();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface LoggingConfigOrBuilder
    * @return The defaultLogGenerationRule.
    */
   com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule getDefaultLogGenerationRule();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface LoggingConfigOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRule>
       getServiceLogGenerationRulesList();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface LoggingConfigOrBuilder
    */
   com.google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRule
       getServiceLogGenerationRules(int index);
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface LoggingConfigOrBuilder
    * </code>
    */
   int getServiceLogGenerationRulesCount();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface LoggingConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRuleOrBuilder>
       getServiceLogGenerationRulesOrBuilderList();
-
   /**
    *
    *

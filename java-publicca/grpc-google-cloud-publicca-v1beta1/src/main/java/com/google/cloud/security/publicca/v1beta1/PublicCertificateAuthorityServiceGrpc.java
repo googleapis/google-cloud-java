@@ -105,21 +105,6 @@ public final class PublicCertificateAuthorityServiceGrpc {
     return PublicCertificateAuthorityServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static PublicCertificateAuthorityServiceBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PublicCertificateAuthorityServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<
-            PublicCertificateAuthorityServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public PublicCertificateAuthorityServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PublicCertificateAuthorityServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return PublicCertificateAuthorityServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -237,43 +222,6 @@ public final class PublicCertificateAuthorityServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
-   * PublicCertificateAuthorityService.
-   *
-   * <pre>
-   * Manages the resources required for ACME [external account
-   * binding](https://tools.ietf.org/html/rfc8555#section-7.3.4) for
-   * the public certificate authority service.
-   * </pre>
-   */
-  public static final class PublicCertificateAuthorityServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<PublicCertificateAuthorityServiceBlockingV2Stub> {
-    private PublicCertificateAuthorityServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected PublicCertificateAuthorityServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PublicCertificateAuthorityServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
-     * </pre>
-     */
-    public com.google.cloud.security.publicca.v1beta1.ExternalAccountKey createExternalAccountKey(
-        com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateExternalAccountKeyMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
    * PublicCertificateAuthorityService.
    *
    * <pre>

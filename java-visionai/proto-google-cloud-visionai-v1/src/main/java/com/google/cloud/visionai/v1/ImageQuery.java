@@ -33,7 +33,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ImageQuery)
     ImageQueryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageQuery.newBuilder() to construct.
   private ImageQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
     private ImageCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_IMAGE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInputImage() {
     return imageCase_ == 1;
   }
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAsset() {
     return imageCase_ == 2;
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -414,7 +407,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +641,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputImage() {
       return imageCase_ == 1;
     }
-
     /**
      *
      *
@@ -667,7 +658,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
-
     /**
      *
      *
@@ -689,7 +679,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +716,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAsset() {
       return imageCase_ == 2;
     }
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -789,7 +776,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +820,6 @@ public final class ImageQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *

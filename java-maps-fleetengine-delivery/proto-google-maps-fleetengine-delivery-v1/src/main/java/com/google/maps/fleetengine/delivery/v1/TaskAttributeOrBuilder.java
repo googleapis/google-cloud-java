@@ -36,7 +36,6 @@ public interface TaskAttributeOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TaskAttributeOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TaskAttributeOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface TaskAttributeOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface TaskAttributeOrBuilder
    * @return Whether the numberValue field is set.
    */
   boolean hasNumberValue();
-
   /**
    *
    *

@@ -32,7 +32,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VpnGatewaysGetStatusResponse)
     VpnGatewaysGetStatusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VpnGatewaysGetStatusResponse.newBuilder() to construct.
   private VpnGatewaysGetStatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 139315229;
   private com.google.cloud.compute.v1.VpnGatewayStatus result_;
-
   /**
    * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
    *
@@ -74,7 +72,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
    *
@@ -86,7 +83,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.VpnGatewayStatus.getDefaultInstance()
         : result_;
   }
-
   /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.VpnGatewayStatusOrBuilder getResultOrBuilder() {
@@ -260,7 +256,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -463,7 +458,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.VpnGatewayStatus.Builder,
             com.google.cloud.compute.v1.VpnGatewayStatusOrBuilder>
         resultBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
      *
@@ -472,7 +466,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
      *
@@ -487,7 +480,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
         return resultBuilder_.getMessage();
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     public Builder setResult(com.google.cloud.compute.v1.VpnGatewayStatus value) {
       if (resultBuilder_ == null) {
@@ -502,7 +494,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     public Builder setResult(com.google.cloud.compute.v1.VpnGatewayStatus.Builder builderForValue) {
       if (resultBuilder_ == null) {
@@ -514,7 +505,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     public Builder mergeResult(com.google.cloud.compute.v1.VpnGatewayStatus value) {
       if (resultBuilder_ == null) {
@@ -534,7 +524,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     public Builder clearResult() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -546,14 +535,12 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     public com.google.cloud.compute.v1.VpnGatewayStatus.Builder getResultBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     public com.google.cloud.compute.v1.VpnGatewayStatusOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
@@ -564,7 +551,6 @@ public final class VpnGatewaysGetStatusResponse extends com.google.protobuf.Gene
             : result_;
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.VpnGatewayStatus,

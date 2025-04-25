@@ -35,7 +35,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.DeviceInfo)
     DeviceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeviceInfo.newBuilder() to construct.
   private DeviceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -163,7 +162,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>DEVICE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DEVICE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -175,7 +173,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>WEB = 1;</code>
      */
     public static final int WEB_VALUE = 1;
-
     /**
      *
      *
@@ -187,7 +184,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>MOBILE_WEB = 2;</code>
      */
     public static final int MOBILE_WEB_VALUE = 2;
-
     /**
      *
      *
@@ -198,7 +194,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ANDROID = 3;</code>
      */
     public static final int ANDROID_VALUE = 3;
-
     /**
      *
      *
@@ -209,7 +204,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>IOS = 4;</code>
      */
     public static final int IOS_VALUE = 4;
-
     /**
      *
      *
@@ -221,7 +215,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>BOT = 5;</code>
      */
     public static final int BOT_VALUE = 5;
-
     /**
      *
      *
@@ -326,7 +319,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEVICE_TYPE_FIELD_NUMBER = 1;
   private int deviceType_ = 0;
-
   /**
    *
    *
@@ -342,7 +334,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
   public int getDeviceTypeValue() {
     return deviceType_;
   }
-
   /**
    *
    *
@@ -367,7 +358,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -392,7 +382,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -590,7 +579,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -789,7 +777,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int deviceType_ = 0;
-
     /**
      *
      *
@@ -805,7 +792,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     public int getDeviceTypeValue() {
       return deviceType_;
     }
-
     /**
      *
      *
@@ -824,7 +810,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +829,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.talent.v4beta1.DeviceInfo.DeviceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -866,7 +850,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -934,7 +915,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -957,7 +937,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +955,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

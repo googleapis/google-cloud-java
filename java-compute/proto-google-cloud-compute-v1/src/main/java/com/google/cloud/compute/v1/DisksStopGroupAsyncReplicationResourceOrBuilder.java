@@ -36,7 +36,6 @@ public interface DisksStopGroupAsyncReplicationResourceOrBuilder
    * @return Whether the resourcePolicy field is set.
    */
   boolean hasResourcePolicy();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DisksStopGroupAsyncReplicationResourceOrBuilder
    * @return The resourcePolicy.
    */
   java.lang.String getResourcePolicy();
-
   /**
    *
    *

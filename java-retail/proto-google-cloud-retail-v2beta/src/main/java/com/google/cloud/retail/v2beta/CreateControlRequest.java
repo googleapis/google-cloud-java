@@ -33,7 +33,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.CreateControlRequest)
     CreateControlRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateControlRequest.newBuilder() to construct.
   private CreateControlRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
 
   public static final int CONTROL_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2beta.Control control_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
   public boolean hasControl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.retail.v2beta.Control.getDefaultInstance()
         : control_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object controlId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -427,7 +419,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +741,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.retail.v2beta.Control.Builder,
             com.google.cloud.retail.v2beta.ControlOrBuilder>
         controlBuilder_;
-
     /**
      *
      *
@@ -804,7 +789,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     public boolean hasControl() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         return controlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +885,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getControlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
             : control_;
       }
     }
-
     /**
      *
      *
@@ -994,7 +971,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object controlId_ = "";
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1023,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

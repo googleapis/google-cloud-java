@@ -34,7 +34,6 @@ public interface ListRagCorporaResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagCorpus rag_corpora = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.RagCorpus> getRagCorporaList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRagCorporaResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagCorpus rag_corpora = 1;</code>
    */
   com.google.cloud.aiplatform.v1.RagCorpus getRagCorpora(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRagCorporaResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagCorpus rag_corpora = 1;</code>
    */
   int getRagCorporaCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRagCorporaResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.RagCorpusOrBuilder>
       getRagCorporaOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListRagCorporaResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

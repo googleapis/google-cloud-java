@@ -37,7 +37,6 @@ public interface FirewallActionOrBuilder
    * @return Whether the allow field is set.
    */
   boolean hasAllow();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface FirewallActionOrBuilder
    * @return The allow.
    */
   com.google.recaptchaenterprise.v1.FirewallAction.AllowAction getAllow();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface FirewallActionOrBuilder
    * @return Whether the block field is set.
    */
   boolean hasBlock();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface FirewallActionOrBuilder
    * @return The block.
    */
   com.google.recaptchaenterprise.v1.FirewallAction.BlockAction getBlock();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface FirewallActionOrBuilder
    * @return Whether the includeRecaptchaScript field is set.
    */
   boolean hasIncludeRecaptchaScript();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface FirewallActionOrBuilder
    */
   com.google.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction
       getIncludeRecaptchaScript();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface FirewallActionOrBuilder
    * @return Whether the redirect field is set.
    */
   boolean hasRedirect();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface FirewallActionOrBuilder
    * @return The redirect.
    */
   com.google.recaptchaenterprise.v1.FirewallAction.RedirectAction getRedirect();
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface FirewallActionOrBuilder
    * @return Whether the substitute field is set.
    */
   boolean hasSubstitute();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface FirewallActionOrBuilder
    * @return The substitute.
    */
   com.google.recaptchaenterprise.v1.FirewallAction.SubstituteAction getSubstitute();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface FirewallActionOrBuilder
    * @return Whether the setHeader field is set.
    */
   boolean hasSetHeader();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface FirewallActionOrBuilder
    * @return The setHeader.
    */
   com.google.recaptchaenterprise.v1.FirewallAction.SetHeaderAction getSetHeader();
-
   /**
    *
    *

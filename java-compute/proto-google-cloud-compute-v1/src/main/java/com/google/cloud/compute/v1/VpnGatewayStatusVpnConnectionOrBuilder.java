@@ -36,7 +36,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * @return Whether the peerExternalGateway field is set.
    */
   boolean hasPeerExternalGateway();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * @return The peerExternalGateway.
    */
   java.lang.String getPeerExternalGateway();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * @return Whether the peerGcpGateway field is set.
    */
   boolean hasPeerGcpGateway();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * @return The peerGcpGateway.
    */
   java.lang.String getPeerGcpGateway();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * @return The state.
    */
   com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState getState();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * <code>repeated .google.cloud.compute.v1.VpnGatewayStatusTunnel tunnels = 104561931;</code>
    */
   java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusTunnel> getTunnelsList();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * <code>repeated .google.cloud.compute.v1.VpnGatewayStatusTunnel tunnels = 104561931;</code>
    */
   com.google.cloud.compute.v1.VpnGatewayStatusTunnel getTunnels(int index);
-
   /**
    *
    *
@@ -178,7 +170,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * <code>repeated .google.cloud.compute.v1.VpnGatewayStatusTunnel tunnels = 104561931;</code>
    */
   int getTunnelsCount();
-
   /**
    *
    *
@@ -190,7 +181,6 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.VpnGatewayStatusTunnelOrBuilder>
       getTunnelsOrBuilderList();
-
   /**
    *
    *

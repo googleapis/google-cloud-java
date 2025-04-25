@@ -36,7 +36,6 @@ public interface AssetFrameOrBuilder
    * @return Whether the machineDetails field is set.
    */
   boolean hasMachineDetails();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AssetFrameOrBuilder
    * @return The machineDetails.
    */
   com.google.cloud.migrationcenter.v1.MachineDetails getMachineDetails();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AssetFrameOrBuilder
    * @return Whether the reportTime field is set.
    */
   boolean hasReportTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AssetFrameOrBuilder
    * @return The reportTime.
    */
   com.google.protobuf.Timestamp getReportTime();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface AssetFrameOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -119,11 +114,9 @@ public interface AssetFrameOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -134,7 +127,6 @@ public interface AssetFrameOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -149,7 +141,6 @@ public interface AssetFrameOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -171,7 +162,6 @@ public interface AssetFrameOrBuilder
    * <code>map&lt;string, string&gt; attributes = 12;</code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -182,11 +172,9 @@ public interface AssetFrameOrBuilder
    * <code>map&lt;string, string&gt; attributes = 12;</code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
-
   /**
    *
    *
@@ -197,7 +185,6 @@ public interface AssetFrameOrBuilder
    * <code>map&lt;string, string&gt; attributes = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
-
   /**
    *
    *
@@ -212,7 +199,6 @@ public interface AssetFrameOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -236,7 +222,6 @@ public interface AssetFrameOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.PerformanceSample> getPerformanceSamplesList();
-
   /**
    *
    *
@@ -249,7 +234,6 @@ public interface AssetFrameOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.PerformanceSample getPerformanceSamples(int index);
-
   /**
    *
    *
@@ -262,7 +246,6 @@ public interface AssetFrameOrBuilder
    * </code>
    */
   int getPerformanceSamplesCount();
-
   /**
    *
    *
@@ -276,7 +259,6 @@ public interface AssetFrameOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.PerformanceSampleOrBuilder>
       getPerformanceSamplesOrBuilderList();
-
   /**
    *
    *
@@ -304,7 +286,6 @@ public interface AssetFrameOrBuilder
    * @return The traceToken.
    */
   java.lang.String getTraceToken();
-
   /**
    *
    *

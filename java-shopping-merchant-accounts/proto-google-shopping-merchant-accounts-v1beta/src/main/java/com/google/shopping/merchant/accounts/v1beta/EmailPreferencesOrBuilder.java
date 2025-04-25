@@ -37,7 +37,6 @@ public interface EmailPreferencesOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface EmailPreferencesOrBuilder
    * @return The enum numeric value on the wire for newsAndTips.
    */
   int getNewsAndTipsValue();
-
   /**
    *
    *

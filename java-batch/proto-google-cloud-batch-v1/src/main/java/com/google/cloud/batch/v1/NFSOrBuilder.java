@@ -36,7 +36,6 @@ public interface NFSOrBuilder
    * @return The server.
    */
   java.lang.String getServer();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NFSOrBuilder
    * @return The remotePath.
    */
   java.lang.String getRemotePath();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface AssetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AssetOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface AssetOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface AssetOrBuilder
    * @return Whether the assetGcsSource field is set.
    */
   boolean hasAssetGcsSource();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface AssetOrBuilder
    * @return The assetGcsSource.
    */
   com.google.cloud.visionai.v1.AssetSource.AssetGcsSource getAssetGcsSource();
-
   /**
    *
    *

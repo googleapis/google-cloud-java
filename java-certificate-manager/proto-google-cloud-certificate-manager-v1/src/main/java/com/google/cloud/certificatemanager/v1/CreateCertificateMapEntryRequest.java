@@ -33,7 +33,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest)
     CreateCertificateMapEntryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCertificateMapEntryRequest.newBuilder() to construct.
   private CreateCertificateMapEntryRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificateMapEntryId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
 
   public static final int CERTIFICATE_MAP_ENTRY_FIELD_NUMBER = 3;
   private com.google.cloud.certificatemanager.v1.CertificateMapEntry certificateMapEntry_;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
   public boolean hasCertificateMapEntry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
         ? com.google.cloud.certificatemanager.v1.CertificateMapEntry.getDefaultInstance()
         : certificateMapEntry_;
   }
-
   /**
    *
    *
@@ -423,7 +415,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -666,7 +657,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -692,7 +682,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -718,7 +707,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +731,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +751,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
     }
 
     private java.lang.Object certificateMapEntryId_ = "";
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +860,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +889,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
             com.google.cloud.certificatemanager.v1.CertificateMapEntry.Builder,
             com.google.cloud.certificatemanager.v1.CertificateMapEntryOrBuilder>
         certificateMapEntryBuilder_;
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
     public boolean hasCertificateMapEntry() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
         return certificateMapEntryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +974,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1006,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1027,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1044,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
       onChanged();
       return getCertificateMapEntryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1092,7 +1065,6 @@ public final class CreateCertificateMapEntryRequest extends com.google.protobuf.
             : certificateMapEntry_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ManagedService services = 1;</code>
    */
   java.util.List<com.google.api.servicemanagement.v1.ManagedService> getServicesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ManagedService services = 1;</code>
    */
   com.google.api.servicemanagement.v1.ManagedService getServices(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ManagedService services = 1;</code>
    */
   int getServicesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListServicesResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicemanagement.v1.ManagedServiceOrBuilder>
       getServicesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListServicesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

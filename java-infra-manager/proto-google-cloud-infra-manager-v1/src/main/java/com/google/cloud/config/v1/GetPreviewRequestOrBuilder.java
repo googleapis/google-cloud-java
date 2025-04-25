@@ -39,7 +39,6 @@ public interface GetPreviewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

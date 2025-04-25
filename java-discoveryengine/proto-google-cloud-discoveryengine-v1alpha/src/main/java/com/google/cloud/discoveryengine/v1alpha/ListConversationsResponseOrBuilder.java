@@ -34,7 +34,6 @@ public interface ListConversationsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Conversation conversations = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.Conversation> getConversationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConversationsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Conversation conversations = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.Conversation getConversations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConversationsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Conversation conversations = 1;</code>
    */
   int getConversationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConversationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.ConversationOrBuilder>
       getConversationsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListConversationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

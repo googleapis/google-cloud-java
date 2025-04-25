@@ -39,7 +39,6 @@ public interface CreateApiDeploymentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateApiDeploymentRequestOrBuilder
    * @return Whether the apiDeployment field is set.
    */
   boolean hasApiDeployment();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateApiDeploymentRequestOrBuilder
    * @return The apiDeployment.
    */
   com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployment();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateApiDeploymentRequestOrBuilder
    * @return The apiDeploymentId.
    */
   java.lang.String getApiDeploymentId();
-
   /**
    *
    *

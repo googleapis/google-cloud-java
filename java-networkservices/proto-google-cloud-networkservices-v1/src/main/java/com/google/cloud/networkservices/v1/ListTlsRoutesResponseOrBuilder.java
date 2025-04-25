@@ -34,7 +34,6 @@ public interface ListTlsRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.TlsRoute tls_routes = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.TlsRoute> getTlsRoutesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTlsRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.TlsRoute tls_routes = 1;</code>
    */
   com.google.cloud.networkservices.v1.TlsRoute getTlsRoutes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTlsRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.TlsRoute tls_routes = 1;</code>
    */
   int getTlsRoutesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTlsRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.TlsRouteOrBuilder>
       getTlsRoutesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListTlsRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

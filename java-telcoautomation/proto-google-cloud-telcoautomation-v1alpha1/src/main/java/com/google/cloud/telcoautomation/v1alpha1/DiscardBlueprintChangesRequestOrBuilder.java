@@ -38,7 +38,6 @@ public interface DiscardBlueprintChangesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

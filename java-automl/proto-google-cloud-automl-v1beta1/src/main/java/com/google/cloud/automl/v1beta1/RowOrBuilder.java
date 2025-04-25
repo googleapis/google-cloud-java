@@ -43,7 +43,6 @@ public interface RowOrBuilder
    * @return A list containing the columnSpecIds.
    */
   java.util.List<java.lang.String> getColumnSpecIdsList();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface RowOrBuilder
    * @return The count of columnSpecIds.
    */
   int getColumnSpecIdsCount();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface RowOrBuilder
    * @return The columnSpecIds at the given index.
    */
   java.lang.String getColumnSpecIds(int index);
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface RowOrBuilder
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
   java.util.List<com.google.protobuf.Value> getValuesList();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface RowOrBuilder
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
   com.google.protobuf.Value getValues(int index);
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface RowOrBuilder
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface RowOrBuilder
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList();
-
   /**
    *
    *

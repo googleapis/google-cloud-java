@@ -156,8 +156,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetInstanceAccelerator, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SetInstanceAccelerator, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -178,8 +177,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetInstanceMachineType, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SetInstanceMachineType, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -200,8 +198,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateInstanceConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateInstanceConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -222,8 +219,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateShieldedInstanceConfig, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method UpdateShieldedInstanceConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -266,8 +262,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateInstanceMetadataItems, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method UpdateInstanceMetadataItems, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   UpdateInstanceMetadataItemsResponse.class.getName(),
                   Exception.class.getName())));
@@ -394,8 +389,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method IsInstanceUpgradeable, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method IsInstanceUpgradeable, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   IsInstanceUpgradeableResponse.class.getName(),
                   Exception.class.getName())));
@@ -501,8 +495,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpgradeInstanceInternal, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpgradeInstanceInternal, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

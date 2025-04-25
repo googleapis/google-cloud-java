@@ -44,7 +44,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.cloud.redis.v1.Instance instances = 1;</code>
    */
   java.util.List<com.google.cloud.redis.v1.Instance> getInstancesList();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.cloud.redis.v1.Instance instances = 1;</code>
    */
   com.google.cloud.redis.v1.Instance getInstances(int index);
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.cloud.redis.v1.Instance instances = 1;</code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.cloud.redis.v1.Instance instances = 1;</code>
    */
   java.util.List<? extends com.google.cloud.redis.v1.InstanceOrBuilder> getInstancesOrBuilderList();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface ListInstancesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface ListInstancesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface ListInstancesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface ListInstancesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

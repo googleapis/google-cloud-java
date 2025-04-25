@@ -40,7 +40,6 @@ public interface VerifyJobRunOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface VerifyJobRunOrBuilder
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface VerifyJobRunOrBuilder
    * @return The eventLogPath.
    */
   java.lang.String getEventLogPath();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface VerifyJobRunOrBuilder
    * @return The enum numeric value on the wire for failureCause.
    */
   int getFailureCauseValue();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface VerifyJobRunOrBuilder
    * @return The failureMessage.
    */
   java.lang.String getFailureMessage();
-
   /**
    *
    *

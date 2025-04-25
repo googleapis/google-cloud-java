@@ -38,7 +38,6 @@ public interface UpdateCustomerRepricingConfigRequestOrBuilder
    * @return Whether the customerRepricingConfig field is set.
    */
   boolean hasCustomerRepricingConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateCustomerRepricingConfigRequestOrBuilder
    * @return The customerRepricingConfig.
    */
   com.google.cloud.channel.v1.CustomerRepricingConfig getCustomerRepricingConfig();
-
   /**
    *
    *

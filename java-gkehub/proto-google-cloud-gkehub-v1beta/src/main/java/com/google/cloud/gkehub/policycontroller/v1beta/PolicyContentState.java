@@ -33,7 +33,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.PolicyContentState)
     PolicyContentStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PolicyContentState.newBuilder() to construct.
   private PolicyContentState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int TEMPLATE_LIBRARY_STATE_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState templateLibraryState_;
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
   public boolean hasTemplateLibraryState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState.getDefaultInstance()
         : templateLibraryState_;
   }
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
   public int getBundleStatesCount() {
     return internalGetBundleStates().getMap().size();
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
     }
     return internalGetBundleStates().getMap().containsKey(key);
   }
-
   /** Use {@link #getBundleStatesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -197,7 +191,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       getBundleStates() {
     return getBundleStatesMap();
   }
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       getBundleStatesMap() {
     return internalGetBundleStates().getMap();
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         map = internalGetBundleStates().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
   public static final int REFERENTIAL_SYNC_CONFIG_STATE_FIELD_NUMBER = 3;
   private com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState
       referentialSyncConfigState_;
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
   public boolean hasReferentialSyncConfigState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState.getDefaultInstance()
         : referentialSyncConfigState_;
   }
-
   /**
    *
    *
@@ -541,7 +529,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -823,7 +810,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.OnClusterStateOrBuilder>
         templateLibraryStateBuilder_;
-
     /**
      *
      *
@@ -839,7 +825,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
     public boolean hasTemplateLibraryState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -862,7 +847,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         return templateLibraryStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -887,7 +871,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +943,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +959,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTemplateLibraryStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1000,7 +979,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
             : templateLibraryState_;
       }
     }
-
     /**
      *
      *
@@ -1049,8 +1027,7 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return BundleStatesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final BundleStatesConverter bundleStatesConverter = new BundleStatesConverter();
 
@@ -1090,7 +1067,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
     public int getBundleStatesCount() {
       return internalGetBundleStates().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1110,7 +1086,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       }
       return internalGetBundleStates().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getBundleStatesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1119,7 +1094,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         getBundleStates() {
       return getBundleStatesMap();
     }
-
     /**
      *
      *
@@ -1138,7 +1112,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         getBundleStatesMap() {
       return internalGetBundleStates().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1166,7 +1139,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
           map = internalGetMutableBundleStates().ensureBuilderMap();
       return map.containsKey(key) ? bundleStatesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1200,7 +1172,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       internalGetMutableBundleStates().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1191,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       internalGetMutableBundleStates().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1229,7 +1199,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return internalGetMutableBundleStates().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1255,7 +1224,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1251,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1290,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.OnClusterStateOrBuilder>
         referentialSyncConfigStateBuilder_;
-
     /**
      *
      *
@@ -1342,7 +1308,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
     public boolean hasReferentialSyncConfigState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1368,7 +1333,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
         return referentialSyncConfigStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1396,7 +1360,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1384,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1418,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1441,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1460,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getReferentialSyncConfigStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1524,7 +1483,6 @@ public final class PolicyContentState extends com.google.protobuf.GeneratedMessa
             : referentialSyncConfigState_;
       }
     }
-
     /**
      *
      *

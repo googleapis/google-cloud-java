@@ -38,7 +38,6 @@ public interface GetServiceConfigRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface GetServiceConfigRequestOrBuilder
    * @return The configId.
    */
   java.lang.String getConfigId();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface GetServiceConfigRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

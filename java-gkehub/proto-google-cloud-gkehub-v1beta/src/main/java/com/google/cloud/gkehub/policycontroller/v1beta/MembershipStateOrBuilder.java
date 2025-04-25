@@ -39,7 +39,6 @@ public interface MembershipStateOrBuilder
    * </code>
    */
   int getComponentStatesCount();
-
   /**
    *
    *
@@ -55,12 +54,10 @@ public interface MembershipStateOrBuilder
    * </code>
    */
   boolean containsComponentStates(java.lang.String key);
-
   /** Use {@link #getComponentStatesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState>
       getComponentStates();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface MembershipStateOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState>
       getComponentStatesMap();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface MembershipStateOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.gkehub.policycontroller.v1beta.OnClusterState defaultValue);
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface MembershipStateOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the policyContentState field is set.
    */
   boolean hasPolicyContentState();
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public interface MembershipStateOrBuilder
    * @return The policyContentState.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentState getPolicyContentState();
-
   /**
    *
    *

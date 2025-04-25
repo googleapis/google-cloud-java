@@ -38,7 +38,6 @@ public interface StopGroupAsyncReplicationDiskRequestOrBuilder
    * @return Whether the disksStopGroupAsyncReplicationResourceResource field is set.
    */
   boolean hasDisksStopGroupAsyncReplicationResourceResource();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface StopGroupAsyncReplicationDiskRequestOrBuilder
    */
   com.google.cloud.compute.v1.DisksStopGroupAsyncReplicationResource
       getDisksStopGroupAsyncReplicationResourceResource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface StopGroupAsyncReplicationDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface StopGroupAsyncReplicationDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface StopGroupAsyncReplicationDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface StopGroupAsyncReplicationDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

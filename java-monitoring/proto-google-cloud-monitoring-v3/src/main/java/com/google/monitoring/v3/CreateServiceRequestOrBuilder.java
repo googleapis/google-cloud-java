@@ -42,7 +42,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The serviceId.
    */
   java.lang.String getServiceId();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface CreateServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The service.
    */
   com.google.monitoring.v3.Service getService();
-
   /**
    *
    *

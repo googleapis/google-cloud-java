@@ -37,7 +37,6 @@ public interface DocumentIdOrBuilder
    * @return Whether the gcsManagedDocId field is set.
    */
   boolean hasGcsManagedDocId();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DocumentIdOrBuilder
    * @return The gcsManagedDocId.
    */
   com.google.cloud.documentai.v1beta3.DocumentId.GCSManagedDocumentId getGcsManagedDocId();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface DocumentIdOrBuilder
    * @return Whether the unmanagedDocId field is set.
    */
   boolean hasUnmanagedDocId();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface DocumentIdOrBuilder
    * @return The unmanagedDocId.
    */
   com.google.cloud.documentai.v1beta3.DocumentId.UnmanagedDocumentId getUnmanagedDocId();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface DocumentIdOrBuilder
    * @return Whether the revisionRef field is set.
    */
   boolean hasRevisionRef();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface DocumentIdOrBuilder
    * @return The revisionRef.
    */
   com.google.cloud.documentai.v1beta3.RevisionRef getRevisionRef();
-
   /**
    *
    *

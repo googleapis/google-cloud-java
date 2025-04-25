@@ -35,7 +35,6 @@ public final class FetchAutomatedGa4ConfigurationOptOutResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse)
     FetchAutomatedGa4ConfigurationOptOutResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchAutomatedGa4ConfigurationOptOutResponse.newBuilder() to construct.
   private FetchAutomatedGa4ConfigurationOptOutResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class FetchAutomatedGa4ConfigurationOptOutResponse
 
   public static final int OPT_OUT_FIELD_NUMBER = 1;
   private boolean optOut_ = false;
-
   /**
    *
    *
@@ -253,7 +251,6 @@ public final class FetchAutomatedGa4ConfigurationOptOutResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -451,7 +448,6 @@ public final class FetchAutomatedGa4ConfigurationOptOutResponse
     private int bitField0_;
 
     private boolean optOut_;
-
     /**
      *
      *
@@ -467,7 +463,6 @@ public final class FetchAutomatedGa4ConfigurationOptOutResponse
     public boolean getOptOut() {
       return optOut_;
     }
-
     /**
      *
      *
@@ -487,7 +482,6 @@ public final class FetchAutomatedGa4ConfigurationOptOutResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

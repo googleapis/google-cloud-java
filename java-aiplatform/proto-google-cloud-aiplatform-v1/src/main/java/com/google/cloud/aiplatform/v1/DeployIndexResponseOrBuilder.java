@@ -36,7 +36,6 @@ public interface DeployIndexResponseOrBuilder
    * @return Whether the deployedIndex field is set.
    */
   boolean hasDeployedIndex();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DeployIndexResponseOrBuilder
    * @return The deployedIndex.
    */
   com.google.cloud.aiplatform.v1.DeployedIndex getDeployedIndex();
-
   /**
    *
    *

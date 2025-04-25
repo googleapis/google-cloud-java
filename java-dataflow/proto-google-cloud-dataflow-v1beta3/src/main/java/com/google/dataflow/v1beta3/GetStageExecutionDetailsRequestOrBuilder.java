@@ -36,7 +36,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The stageId.
    */
   java.lang.String getStageId();
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface GetStageExecutionDetailsRequestOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ReplaceTaxonomyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ReplaceTaxonomyRequestOrBuilder
    * @return Whether the serializedTaxonomy field is set.
    */
   boolean hasSerializedTaxonomy();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ReplaceTaxonomyRequestOrBuilder
    * @return The serializedTaxonomy.
    */
   com.google.cloud.datacatalog.v1.SerializedTaxonomy getSerializedTaxonomy();
-
   /**
    *
    *

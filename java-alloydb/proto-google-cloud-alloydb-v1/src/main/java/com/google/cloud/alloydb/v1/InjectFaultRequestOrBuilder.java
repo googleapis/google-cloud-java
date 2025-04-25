@@ -38,7 +38,6 @@ public interface InjectFaultRequestOrBuilder
    * @return The enum numeric value on the wire for faultType.
    */
   int getFaultTypeValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface InjectFaultRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface InjectFaultRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

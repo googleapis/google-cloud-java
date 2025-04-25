@@ -34,7 +34,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.Company> getCompaniesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
    */
   com.google.ads.admanager.v1.Company getCompanies(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCompaniesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
    */
   int getCompaniesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCompaniesResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.CompanyOrBuilder>
       getCompaniesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListCompaniesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

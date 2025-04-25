@@ -40,7 +40,6 @@ public interface GetExampleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

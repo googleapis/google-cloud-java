@@ -37,7 +37,6 @@ public interface ServerKeyRestrictionsOrBuilder
    * @return A list containing the allowedIps.
    */
   java.util.List<java.lang.String> getAllowedIpsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ServerKeyRestrictionsOrBuilder
    * @return The count of allowedIps.
    */
   int getAllowedIpsCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ServerKeyRestrictionsOrBuilder
    * @return The allowedIps at the given index.
    */
   java.lang.String getAllowedIps(int index);
-
   /**
    *
    *

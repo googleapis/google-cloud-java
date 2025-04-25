@@ -53,7 +53,6 @@ public interface DeviceConfigOrBuilder
    * @return Whether the cloudUpdateTime field is set.
    */
   boolean hasCloudUpdateTime();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface DeviceConfigOrBuilder
    * @return The cloudUpdateTime.
    */
   com.google.protobuf.Timestamp getCloudUpdateTime();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface DeviceConfigOrBuilder
    * @return Whether the deviceAckTime field is set.
    */
   boolean hasDeviceAckTime();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface DeviceConfigOrBuilder
    * @return The deviceAckTime.
    */
   com.google.protobuf.Timestamp getDeviceAckTime();
-
   /**
    *
    *

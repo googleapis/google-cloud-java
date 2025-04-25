@@ -38,7 +38,6 @@ public interface UpdateGenerativeSettingsRequestOrBuilder
    * @return Whether the generativeSettings field is set.
    */
   boolean hasGenerativeSettings();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateGenerativeSettingsRequestOrBuilder
    * @return The generativeSettings.
    */
   com.google.cloud.dialogflow.cx.v3.GenerativeSettings getGenerativeSettings();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateGenerativeSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateGenerativeSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

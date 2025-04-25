@@ -34,7 +34,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Examples)
     ExamplesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Examples.newBuilder() to construct.
   private Examples(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for dataFormat.
      */
     int getDataFormatValue();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gcsSource field is set.
      */
     boolean hasGcsSource();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return The gcsSource.
      */
     com.google.cloud.aiplatform.v1.GcsSource getGcsSource();
-
     /**
      *
      *
@@ -135,7 +131,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.GcsSourceOrBuilder getGcsSourceOrBuilder();
   }
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Examples.ExampleGcsSource)
       ExampleGcsSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExampleGcsSource.newBuilder() to construct.
     private ExampleGcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -224,7 +218,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
        * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
        */
       public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -322,7 +315,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int DATA_FORMAT_FIELD_NUMBER = 1;
     private int dataFormat_ = 0;
-
     /**
      *
      *
@@ -340,7 +332,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public int getDataFormatValue() {
       return dataFormat_;
     }
-
     /**
      *
      *
@@ -366,7 +357,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
 
     public static final int GCS_SOURCE_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1.GcsSource gcsSource_;
-
     /**
      *
      *
@@ -382,7 +372,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -400,7 +389,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance()
           : gcsSource_;
     }
-
     /**
      *
      *
@@ -598,7 +586,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -813,7 +800,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int dataFormat_ = 0;
-
       /**
        *
        *
@@ -831,7 +817,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       public int getDataFormatValue() {
         return dataFormat_;
       }
-
       /**
        *
        *
@@ -852,7 +837,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -875,7 +859,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.aiplatform.v1.Examples.ExampleGcsSource.DataFormat.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -900,7 +883,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -927,7 +909,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.GcsSource.Builder,
               com.google.cloud.aiplatform.v1.GcsSourceOrBuilder>
           gcsSourceBuilder_;
-
       /**
        *
        *
@@ -942,7 +923,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGcsSource() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -963,7 +943,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
           return gcsSourceBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -986,7 +965,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1007,7 +985,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1035,7 +1012,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1055,7 +1031,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1070,7 +1045,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getGcsSourceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1089,7 +1063,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
               : gcsSource_;
         }
       }
-
       /**
        *
        *
@@ -1196,7 +1169,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1244,7 +1216,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     private ConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1278,7 +1249,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXAMPLE_GCS_SOURCE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1294,7 +1264,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExampleGcsSource() {
     return sourceCase_ == 5;
   }
-
   /**
    *
    *
@@ -1313,7 +1282,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.Examples.ExampleGcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1333,7 +1301,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1352,7 +1319,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNearestNeighborSearchConfig() {
     return configCase_ == 2;
   }
-
   /**
    *
    *
@@ -1374,7 +1340,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Value.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1396,7 +1361,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRESETS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1413,7 +1377,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPresets() {
     return configCase_ == 4;
   }
-
   /**
    *
    *
@@ -1433,7 +1396,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.Presets.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1454,7 +1416,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 3;
   private int neighborCount_ = 0;
-
   /**
    *
    *
@@ -1693,7 +1654,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1985,7 +1945,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.Examples.ExampleGcsSource.Builder,
             com.google.cloud.aiplatform.v1.Examples.ExampleGcsSourceOrBuilder>
         exampleGcsSourceBuilder_;
-
     /**
      *
      *
@@ -2001,7 +1960,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExampleGcsSource() {
       return sourceCase_ == 5;
     }
-
     /**
      *
      *
@@ -2027,7 +1985,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.Examples.ExampleGcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2051,7 +2008,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2072,7 +2028,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2107,7 +2062,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2087,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2147,7 +2100,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         getExampleGcsSourceBuilder() {
       return getExampleGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2169,7 +2121,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.Examples.ExampleGcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2208,7 +2159,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         nearestNeighborSearchConfigBuilder_;
-
     /**
      *
      *
@@ -2227,7 +2177,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNearestNeighborSearchConfig() {
       return configCase_ == 2;
     }
-
     /**
      *
      *
@@ -2256,7 +2205,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Value.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2282,7 +2230,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2253,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2340,7 +2286,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2369,7 +2314,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2385,7 +2329,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value.Builder getNearestNeighborSearchConfigBuilder() {
       return getNearestNeighborSearchConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2409,7 +2352,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Value.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2449,7 +2391,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.Presets.Builder,
             com.google.cloud.aiplatform.v1.PresetsOrBuilder>
         presetsBuilder_;
-
     /**
      *
      *
@@ -2466,7 +2407,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPresets() {
       return configCase_ == 4;
     }
-
     /**
      *
      *
@@ -2493,7 +2433,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.Presets.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2517,7 +2456,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2476,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2509,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2599,7 +2535,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2613,7 +2548,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Presets.Builder getPresetsBuilder() {
       return getPresetsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2635,7 +2569,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.Presets.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2671,7 +2604,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int neighborCount_;
-
     /**
      *
      *
@@ -2687,7 +2619,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public int getNeighborCount() {
       return neighborCount_;
     }
-
     /**
      *
      *
@@ -2707,7 +2638,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

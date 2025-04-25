@@ -34,7 +34,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.File)
     FileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use File.newBuilder() to construct.
   private File(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return The partitionUuid.
      */
     java.lang.String getPartitionUuid();
-
     /**
      *
      *
@@ -113,7 +111,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      * @return The relativePath.
      */
     java.lang.String getRelativePath();
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRelativePathBytes();
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.File.DiskPath)
       DiskPathOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DiskPath.newBuilder() to construct.
     private DiskPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -179,7 +174,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object partitionUuid_ = "";
-
     /**
      *
      *
@@ -204,7 +198,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -234,7 +227,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object relativePath_ = "";
-
     /**
      *
      *
@@ -259,7 +251,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -454,7 +445,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object partitionUuid_ = "";
-
       /**
        *
        *
@@ -681,7 +670,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -705,7 +693,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -728,7 +715,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -747,7 +733,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -773,7 +758,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object relativePath_ = "";
-
       /**
        *
        *
@@ -797,7 +781,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -821,7 +804,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -844,7 +826,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -863,7 +844,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -957,7 +937,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -981,7 +960,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1008,7 +986,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_FIELD_NUMBER = 2;
   private long size_ = 0L;
-
   /**
    *
    *
@@ -1029,7 +1006,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sha256_ = "";
-
   /**
    *
    *
@@ -1055,7 +1031,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1084,7 +1059,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HASHED_SIZE_FIELD_NUMBER = 4;
   private long hashedSize_ = 0L;
-
   /**
    *
    *
@@ -1105,7 +1079,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARTIALLY_HASHED_FIELD_NUMBER = 5;
   private boolean partiallyHashed_ = false;
-
   /**
    *
    *
@@ -1126,7 +1099,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contents_ = "";
-
   /**
    *
    *
@@ -1150,7 +1122,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1177,7 +1148,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_PATH_FIELD_NUMBER = 7;
   private com.google.cloud.securitycenter.v1.File.DiskPath diskPath_;
-
   /**
    *
    *
@@ -1193,7 +1163,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiskPath() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1211,7 +1180,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance()
         : diskPath_;
   }
-
   /**
    *
    *
@@ -1445,7 +1413,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1728,7 +1695,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -1751,7 +1717,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1774,7 +1739,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1796,7 +1760,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1814,7 +1777,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1839,7 +1801,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long size_;
-
     /**
      *
      *
@@ -1855,7 +1816,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public long getSize() {
       return size_;
     }
-
     /**
      *
      *
@@ -1875,7 +1835,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1895,7 +1854,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sha256_ = "";
-
     /**
      *
      *
@@ -1920,7 +1878,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1945,7 +1902,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1969,7 +1925,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1989,7 +1944,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2016,7 +1970,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long hashedSize_;
-
     /**
      *
      *
@@ -2034,7 +1987,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public long getHashedSize() {
       return hashedSize_;
     }
-
     /**
      *
      *
@@ -2056,7 +2008,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2078,7 +2029,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean partiallyHashed_;
-
     /**
      *
      *
@@ -2094,7 +2044,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public boolean getPartiallyHashed() {
       return partiallyHashed_;
     }
-
     /**
      *
      *
@@ -2114,7 +2063,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2134,7 +2082,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contents_ = "";
-
     /**
      *
      *
@@ -2157,7 +2104,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2180,7 +2126,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2202,7 +2147,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2164,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2250,7 +2193,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.File.DiskPath.Builder,
             com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder>
         diskPathBuilder_;
-
     /**
      *
      *
@@ -2265,7 +2207,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiskPath() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2286,7 +2227,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         return diskPathBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2309,7 +2249,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2330,7 +2269,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2358,7 +2296,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2315,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2393,7 +2329,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDiskPathFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2412,7 +2347,6 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
             : diskPath_;
       }
     }
-
     /**
      *
      *

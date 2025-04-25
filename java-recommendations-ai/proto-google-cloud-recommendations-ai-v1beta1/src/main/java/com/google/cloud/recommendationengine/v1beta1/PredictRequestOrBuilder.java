@@ -66,7 +66,6 @@ public interface PredictRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -127,7 +126,6 @@ public interface PredictRequestOrBuilder
    * @return Whether the userEvent field is set.
    */
   boolean hasUserEvent();
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public interface PredictRequestOrBuilder
    * @return The userEvent.
    */
   com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvent();
-
   /**
    *
    *
@@ -189,7 +186,6 @@ public interface PredictRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -232,7 +228,6 @@ public interface PredictRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -303,7 +298,6 @@ public interface PredictRequestOrBuilder
    * </code>
    */
   int getParamsCount();
-
   /**
    *
    *
@@ -328,11 +322,9 @@ public interface PredictRequestOrBuilder
    * </code>
    */
   boolean containsParams(java.lang.String key);
-
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParams();
-
   /**
    *
    *
@@ -357,7 +349,6 @@ public interface PredictRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap();
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public interface PredictRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *
@@ -430,7 +420,6 @@ public interface PredictRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -449,11 +438,9 @@ public interface PredictRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -472,7 +459,6 @@ public interface PredictRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -495,7 +481,6 @@ public interface PredictRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

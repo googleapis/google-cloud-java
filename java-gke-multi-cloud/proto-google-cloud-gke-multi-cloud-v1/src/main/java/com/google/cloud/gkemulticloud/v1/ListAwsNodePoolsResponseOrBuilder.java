@@ -35,7 +35,6 @@ public interface ListAwsNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsNodePool aws_node_pools = 1;</code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePool> getAwsNodePoolsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAwsNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsNodePool aws_node_pools = 1;</code>
    */
   com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePools(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAwsNodePoolsResponseOrBuilder
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsNodePool aws_node_pools = 1;</code>
    */
   int getAwsNodePoolsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAwsNodePoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsNodePoolOrBuilder>
       getAwsNodePoolsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListAwsNodePoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

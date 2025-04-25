@@ -33,7 +33,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.Error)
     ErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Error.newBuilder() to construct.
   private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorUuid_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp errorTime_;
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getErrorTime() {
     return errorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : errorTime_;
   }
-
   /**
    *
    *
@@ -315,7 +305,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public int getDetailsCount() {
     return internalGetDetails().getMap().size();
   }
-
   /**
    *
    *
@@ -332,14 +321,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDetails().getMap().containsKey(key);
   }
-
   /** Use {@link #getDetailsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDetails() {
     return getDetailsMap();
   }
-
   /**
    *
    *
@@ -353,7 +340,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getDetailsMap() {
     return internalGetDetails().getMap();
   }
-
   /**
    *
    *
@@ -374,7 +360,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -604,7 +589,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -888,7 +872,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object reason_ = "";
-
     /**
      *
      *
@@ -911,7 +894,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -934,7 +916,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +978,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorUuid_ = "";
-
     /**
      *
      *
@@ -1023,7 +1001,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1024,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1046,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1064,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1089,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1138,7 +1111,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1133,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1171,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1200,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         errorTimeBuilder_;
-
     /**
      *
      *
@@ -1246,7 +1214,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1265,7 +1232,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return errorTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1288,7 +1254,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1273,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1300,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1319,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1333,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1388,7 +1349,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return errorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : errorTime_;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1400,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public int getDetailsCount() {
       return internalGetDetails().getMap().size();
     }
-
     /**
      *
      *
@@ -1457,14 +1416,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDetails().getMap().containsKey(key);
     }
-
     /** Use {@link #getDetailsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDetails() {
       return getDetailsMap();
     }
-
     /**
      *
      *
@@ -1478,7 +1435,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getDetailsMap() {
       return internalGetDetails().getMap();
     }
-
     /**
      *
      *
@@ -1499,7 +1455,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1526,7 +1481,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDetails().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1543,14 +1497,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDetails().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDetails() {
       bitField0_ |= 0x00000010;
       return internalGetMutableDetails().getMutableMap();
     }
-
     /**
      *
      *
@@ -1571,7 +1523,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *

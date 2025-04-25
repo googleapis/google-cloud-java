@@ -38,7 +38,6 @@ public interface AlertChartOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

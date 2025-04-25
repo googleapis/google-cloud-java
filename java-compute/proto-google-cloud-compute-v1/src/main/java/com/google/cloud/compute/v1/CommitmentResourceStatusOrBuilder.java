@@ -36,7 +36,6 @@ public interface CommitmentResourceStatusOrBuilder
    * @return Whether the customTermEligibilityEndTimestamp field is set.
    */
   boolean hasCustomTermEligibilityEndTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CommitmentResourceStatusOrBuilder
    * @return The customTermEligibilityEndTimestamp.
    */
   java.lang.String getCustomTermEligibilityEndTimestamp();
-
   /**
    *
    *

@@ -320,19 +320,6 @@ public final class StreamingServiceGrpc {
     return StreamingServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static StreamingServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<StreamingServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<StreamingServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public StreamingServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new StreamingServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return StreamingServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -586,114 +573,6 @@ public final class StreamingServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service StreamingService.
-   *
-   * <pre>
-   * Streaming service for receiving and sending packets.
-   * </pre>
-   */
-  public static final class StreamingServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<StreamingServiceBlockingV2Stub> {
-    private StreamingServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected StreamingServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new StreamingServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Send packets to the series.
-     * </pre>
-     */
-    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
-    public io.grpc.stub.BlockingClientCall<
-            com.google.cloud.visionai.v1.SendPacketsRequest,
-            com.google.cloud.visionai.v1.SendPacketsResponse>
-        sendPackets() {
-      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
-          getChannel(), getSendPacketsMethod(), getCallOptions());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Receive packets from the series.
-     * </pre>
-     */
-    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
-    public io.grpc.stub.BlockingClientCall<
-            com.google.cloud.visionai.v1.ReceivePacketsRequest,
-            com.google.cloud.visionai.v1.ReceivePacketsResponse>
-        receivePackets() {
-      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
-          getChannel(), getReceivePacketsMethod(), getCallOptions());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Receive events given the stream name.
-     * </pre>
-     */
-    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
-    public io.grpc.stub.BlockingClientCall<
-            com.google.cloud.visionai.v1.ReceiveEventsRequest,
-            com.google.cloud.visionai.v1.ReceiveEventsResponse>
-        receiveEvents() {
-      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
-          getChannel(), getReceiveEventsMethod(), getCallOptions());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * AcquireLease acquires a lease.
-     * </pre>
-     */
-    public com.google.cloud.visionai.v1.Lease acquireLease(
-        com.google.cloud.visionai.v1.AcquireLeaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAcquireLeaseMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * RenewLease renews a lease.
-     * </pre>
-     */
-    public com.google.cloud.visionai.v1.Lease renewLease(
-        com.google.cloud.visionai.v1.RenewLeaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRenewLeaseMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * RleaseLease releases a lease.
-     * </pre>
-     */
-    public com.google.cloud.visionai.v1.ReleaseLeaseResponse releaseLease(
-        com.google.cloud.visionai.v1.ReleaseLeaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getReleaseLeaseMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service StreamingService.
    *
    * <pre>
    * Streaming service for receiving and sending packets.

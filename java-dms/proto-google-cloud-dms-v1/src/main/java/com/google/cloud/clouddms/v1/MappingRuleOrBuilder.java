@@ -37,7 +37,6 @@ public interface MappingRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface MappingRuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface MappingRuleOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface MappingRuleOrBuilder
    * @return The enum numeric value on the wire for ruleScope.
    */
   int getRuleScopeValue();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface MappingRuleOrBuilder
    * @return The filter.
    */
   com.google.cloud.clouddms.v1.MappingRuleFilter getFilter();
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public interface MappingRuleOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public interface MappingRuleOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the singleEntityRename field is set.
    */
   boolean hasSingleEntityRename();
-
   /**
    *
    *
@@ -297,7 +287,6 @@ public interface MappingRuleOrBuilder
    * @return The singleEntityRename.
    */
   com.google.cloud.clouddms.v1.SingleEntityRename getSingleEntityRename();
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the multiEntityRename field is set.
    */
   boolean hasMultiEntityRename();
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public interface MappingRuleOrBuilder
    * @return The multiEntityRename.
    */
   com.google.cloud.clouddms.v1.MultiEntityRename getMultiEntityRename();
-
   /**
    *
    *
@@ -369,7 +356,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the entityMove field is set.
    */
   boolean hasEntityMove();
-
   /**
    *
    *
@@ -385,7 +371,6 @@ public interface MappingRuleOrBuilder
    * @return The entityMove.
    */
   com.google.cloud.clouddms.v1.EntityMove getEntityMove();
-
   /**
    *
    *
@@ -414,7 +399,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the singleColumnChange field is set.
    */
   boolean hasSingleColumnChange();
-
   /**
    *
    *
@@ -429,7 +413,6 @@ public interface MappingRuleOrBuilder
    * @return The singleColumnChange.
    */
   com.google.cloud.clouddms.v1.SingleColumnChange getSingleColumnChange();
-
   /**
    *
    *
@@ -458,7 +441,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the multiColumnDataTypeChange field is set.
    */
   boolean hasMultiColumnDataTypeChange();
-
   /**
    *
    *
@@ -474,7 +456,6 @@ public interface MappingRuleOrBuilder
    * @return The multiColumnDataTypeChange.
    */
   com.google.cloud.clouddms.v1.MultiColumnDatatypeChange getMultiColumnDataTypeChange();
-
   /**
    *
    *
@@ -506,7 +487,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the conditionalColumnSetValue field is set.
    */
   boolean hasConditionalColumnSetValue();
-
   /**
    *
    *
@@ -523,7 +503,6 @@ public interface MappingRuleOrBuilder
    * @return The conditionalColumnSetValue.
    */
   com.google.cloud.clouddms.v1.ConditionalColumnSetValue getConditionalColumnSetValue();
-
   /**
    *
    *
@@ -555,7 +534,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the convertRowidColumn field is set.
    */
   boolean hasConvertRowidColumn();
-
   /**
    *
    *
@@ -571,7 +549,6 @@ public interface MappingRuleOrBuilder
    * @return The convertRowidColumn.
    */
   com.google.cloud.clouddms.v1.ConvertRowIdToColumn getConvertRowidColumn();
-
   /**
    *
    *
@@ -600,7 +577,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the setTablePrimaryKey field is set.
    */
   boolean hasSetTablePrimaryKey();
-
   /**
    *
    *
@@ -615,7 +591,6 @@ public interface MappingRuleOrBuilder
    * @return The setTablePrimaryKey.
    */
   com.google.cloud.clouddms.v1.SetTablePrimaryKey getSetTablePrimaryKey();
-
   /**
    *
    *
@@ -643,7 +618,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the singlePackageChange field is set.
    */
   boolean hasSinglePackageChange();
-
   /**
    *
    *
@@ -658,7 +632,6 @@ public interface MappingRuleOrBuilder
    * @return The singlePackageChange.
    */
   com.google.cloud.clouddms.v1.SinglePackageChange getSinglePackageChange();
-
   /**
    *
    *
@@ -687,7 +660,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the sourceSqlChange field is set.
    */
   boolean hasSourceSqlChange();
-
   /**
    *
    *
@@ -703,7 +675,6 @@ public interface MappingRuleOrBuilder
    * @return The sourceSqlChange.
    */
   com.google.cloud.clouddms.v1.SourceSqlChange getSourceSqlChange();
-
   /**
    *
    *
@@ -733,7 +704,6 @@ public interface MappingRuleOrBuilder
    * @return Whether the filterTableColumns field is set.
    */
   boolean hasFilterTableColumns();
-
   /**
    *
    *
@@ -749,7 +719,6 @@ public interface MappingRuleOrBuilder
    * @return The filterTableColumns.
    */
   com.google.cloud.clouddms.v1.FilterTableColumns getFilterTableColumns();
-
   /**
    *
    *

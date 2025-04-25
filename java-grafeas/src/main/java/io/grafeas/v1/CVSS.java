@@ -37,7 +37,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.CVSS)
     CVSSOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CVSS.newBuilder() to construct.
   private CVSS(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,16 +89,12 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code> */
     public static final int ATTACK_VECTOR_UNSPECIFIED_VALUE = 0;
-
     /** <code>ATTACK_VECTOR_NETWORK = 1;</code> */
     public static final int ATTACK_VECTOR_NETWORK_VALUE = 1;
-
     /** <code>ATTACK_VECTOR_ADJACENT = 2;</code> */
     public static final int ATTACK_VECTOR_ADJACENT_VALUE = 2;
-
     /** <code>ATTACK_VECTOR_LOCAL = 3;</code> */
     public static final int ATTACK_VECTOR_LOCAL_VALUE = 3;
-
     /** <code>ATTACK_VECTOR_PHYSICAL = 4;</code> */
     public static final int ATTACK_VECTOR_PHYSICAL_VALUE = 4;
 
@@ -205,13 +200,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>ATTACK_COMPLEXITY_UNSPECIFIED = 0;</code> */
     public static final int ATTACK_COMPLEXITY_UNSPECIFIED_VALUE = 0;
-
     /** <code>ATTACK_COMPLEXITY_LOW = 1;</code> */
     public static final int ATTACK_COMPLEXITY_LOW_VALUE = 1;
-
     /** <code>ATTACK_COMPLEXITY_HIGH = 2;</code> */
     public static final int ATTACK_COMPLEXITY_HIGH_VALUE = 2;
-
     /** <code>ATTACK_COMPLEXITY_MEDIUM = 3;</code> */
     public static final int ATTACK_COMPLEXITY_MEDIUM_VALUE = 3;
 
@@ -317,13 +309,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>AUTHENTICATION_UNSPECIFIED = 0;</code> */
     public static final int AUTHENTICATION_UNSPECIFIED_VALUE = 0;
-
     /** <code>AUTHENTICATION_MULTIPLE = 1;</code> */
     public static final int AUTHENTICATION_MULTIPLE_VALUE = 1;
-
     /** <code>AUTHENTICATION_SINGLE = 2;</code> */
     public static final int AUTHENTICATION_SINGLE_VALUE = 2;
-
     /** <code>AUTHENTICATION_NONE = 3;</code> */
     public static final int AUTHENTICATION_NONE_VALUE = 3;
 
@@ -427,13 +416,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>PRIVILEGES_REQUIRED_UNSPECIFIED = 0;</code> */
     public static final int PRIVILEGES_REQUIRED_UNSPECIFIED_VALUE = 0;
-
     /** <code>PRIVILEGES_REQUIRED_NONE = 1;</code> */
     public static final int PRIVILEGES_REQUIRED_NONE_VALUE = 1;
-
     /** <code>PRIVILEGES_REQUIRED_LOW = 2;</code> */
     public static final int PRIVILEGES_REQUIRED_LOW_VALUE = 2;
-
     /** <code>PRIVILEGES_REQUIRED_HIGH = 3;</code> */
     public static final int PRIVILEGES_REQUIRED_HIGH_VALUE = 3;
 
@@ -538,10 +524,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>USER_INTERACTION_UNSPECIFIED = 0;</code> */
     public static final int USER_INTERACTION_UNSPECIFIED_VALUE = 0;
-
     /** <code>USER_INTERACTION_NONE = 1;</code> */
     public static final int USER_INTERACTION_NONE_VALUE = 1;
-
     /** <code>USER_INTERACTION_REQUIRED = 2;</code> */
     public static final int USER_INTERACTION_REQUIRED_VALUE = 2;
 
@@ -643,10 +627,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>SCOPE_UNSPECIFIED = 0;</code> */
     public static final int SCOPE_UNSPECIFIED_VALUE = 0;
-
     /** <code>SCOPE_UNCHANGED = 1;</code> */
     public static final int SCOPE_UNCHANGED_VALUE = 1;
-
     /** <code>SCOPE_CHANGED = 2;</code> */
     public static final int SCOPE_CHANGED_VALUE = 2;
 
@@ -752,19 +734,14 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>IMPACT_UNSPECIFIED = 0;</code> */
     public static final int IMPACT_UNSPECIFIED_VALUE = 0;
-
     /** <code>IMPACT_HIGH = 1;</code> */
     public static final int IMPACT_HIGH_VALUE = 1;
-
     /** <code>IMPACT_LOW = 2;</code> */
     public static final int IMPACT_LOW_VALUE = 2;
-
     /** <code>IMPACT_NONE = 3;</code> */
     public static final int IMPACT_NONE_VALUE = 3;
-
     /** <code>IMPACT_PARTIAL = 4;</code> */
     public static final int IMPACT_PARTIAL_VALUE = 4;
-
     /** <code>IMPACT_COMPLETE = 5;</code> */
     public static final int IMPACT_COMPLETE_VALUE = 5;
 
@@ -859,7 +836,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BASE_SCORE_FIELD_NUMBER = 1;
   private float baseScore_ = 0F;
-
   /**
    *
    *
@@ -878,7 +854,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPLOITABILITY_SCORE_FIELD_NUMBER = 2;
   private float exploitabilityScore_ = 0F;
-
   /**
    * <code>float exploitability_score = 2;</code>
    *
@@ -891,7 +866,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPACT_SCORE_FIELD_NUMBER = 3;
   private float impactScore_ = 0F;
-
   /**
    * <code>float impact_score = 3;</code>
    *
@@ -904,7 +878,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTACK_VECTOR_FIELD_NUMBER = 4;
   private int attackVector_ = 0;
-
   /**
    *
    *
@@ -922,7 +895,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getAttackVectorValue() {
     return attackVector_;
   }
-
   /**
    *
    *
@@ -945,7 +917,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTACK_COMPLEXITY_FIELD_NUMBER = 5;
   private int attackComplexity_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
    *
@@ -955,7 +926,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getAttackComplexityValue() {
     return attackComplexity_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
    *
@@ -970,7 +940,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHENTICATION_FIELD_NUMBER = 6;
   private int authentication_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
    *
@@ -980,7 +949,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getAuthenticationValue() {
     return authentication_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
    *
@@ -995,7 +963,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVILEGES_REQUIRED_FIELD_NUMBER = 7;
   private int privilegesRequired_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
    *
@@ -1005,7 +972,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getPrivilegesRequiredValue() {
     return privilegesRequired_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
    *
@@ -1020,7 +986,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_INTERACTION_FIELD_NUMBER = 8;
   private int userInteraction_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
    *
@@ -1030,7 +995,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getUserInteractionValue() {
     return userInteraction_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
    *
@@ -1045,7 +1009,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCOPE_FIELD_NUMBER = 9;
   private int scope_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
    *
@@ -1055,7 +1018,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getScopeValue() {
     return scope_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
    *
@@ -1069,7 +1031,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENTIALITY_IMPACT_FIELD_NUMBER = 10;
   private int confidentialityImpact_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
    *
@@ -1079,7 +1040,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getConfidentialityImpactValue() {
     return confidentialityImpact_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
    *
@@ -1093,7 +1053,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTEGRITY_IMPACT_FIELD_NUMBER = 11;
   private int integrityImpact_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
    *
@@ -1103,7 +1062,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getIntegrityImpactValue() {
     return integrityImpact_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
    *
@@ -1117,7 +1075,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABILITY_IMPACT_FIELD_NUMBER = 12;
   private int availabilityImpact_ = 0;
-
   /**
    * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
    *
@@ -1127,7 +1084,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public int getAvailabilityImpactValue() {
     return availabilityImpact_;
   }
-
   /**
    * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
    *
@@ -1405,7 +1361,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1728,7 +1683,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float baseScore_;
-
     /**
      *
      *
@@ -1744,7 +1698,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public float getBaseScore() {
       return baseScore_;
     }
-
     /**
      *
      *
@@ -1764,7 +1717,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1736,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float exploitabilityScore_;
-
     /**
      * <code>float exploitability_score = 2;</code>
      *
@@ -1794,7 +1745,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public float getExploitabilityScore() {
       return exploitabilityScore_;
     }
-
     /**
      * <code>float exploitability_score = 2;</code>
      *
@@ -1808,7 +1758,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>float exploitability_score = 2;</code>
      *
@@ -1822,7 +1771,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float impactScore_;
-
     /**
      * <code>float impact_score = 3;</code>
      *
@@ -1832,7 +1780,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public float getImpactScore() {
       return impactScore_;
     }
-
     /**
      * <code>float impact_score = 3;</code>
      *
@@ -1846,7 +1793,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>float impact_score = 3;</code>
      *
@@ -1860,7 +1806,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attackVector_ = 0;
-
     /**
      *
      *
@@ -1878,7 +1823,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getAttackVectorValue() {
       return attackVector_;
     }
-
     /**
      *
      *
@@ -1899,7 +1843,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1919,7 +1862,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1.CVSS.AttackVector.forNumber(attackVector_);
       return result == null ? io.grafeas.v1.CVSS.AttackVector.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1943,7 +1885,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1965,7 +1906,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attackComplexity_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
      *
@@ -1975,7 +1915,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getAttackComplexityValue() {
       return attackComplexity_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
      *
@@ -1988,7 +1927,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
      *
@@ -2000,7 +1938,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1.CVSS.AttackComplexity.forNumber(attackComplexity_);
       return result == null ? io.grafeas.v1.CVSS.AttackComplexity.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
      *
@@ -2016,7 +1953,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
      *
@@ -2030,7 +1966,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int authentication_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
      *
@@ -2040,7 +1975,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getAuthenticationValue() {
       return authentication_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
      *
@@ -2053,7 +1987,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
      *
@@ -2065,7 +1998,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1.CVSS.Authentication.forNumber(authentication_);
       return result == null ? io.grafeas.v1.CVSS.Authentication.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
      *
@@ -2081,7 +2013,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
      *
@@ -2095,7 +2026,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int privilegesRequired_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
      *
@@ -2105,7 +2035,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getPrivilegesRequiredValue() {
       return privilegesRequired_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
      *
@@ -2118,7 +2047,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
      *
@@ -2130,7 +2058,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1.CVSS.PrivilegesRequired.forNumber(privilegesRequired_);
       return result == null ? io.grafeas.v1.CVSS.PrivilegesRequired.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
      *
@@ -2146,7 +2073,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
      *
@@ -2160,7 +2086,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int userInteraction_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
      *
@@ -2170,7 +2095,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getUserInteractionValue() {
       return userInteraction_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
      *
@@ -2183,7 +2107,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
      *
@@ -2195,7 +2118,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1.CVSS.UserInteraction.forNumber(userInteraction_);
       return result == null ? io.grafeas.v1.CVSS.UserInteraction.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
      *
@@ -2211,7 +2133,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
      *
@@ -2225,7 +2146,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int scope_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
      *
@@ -2235,7 +2155,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getScopeValue() {
       return scope_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
      *
@@ -2248,7 +2167,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
      *
@@ -2259,7 +2177,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1.CVSS.Scope result = io.grafeas.v1.CVSS.Scope.forNumber(scope_);
       return result == null ? io.grafeas.v1.CVSS.Scope.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
      *
@@ -2275,7 +2192,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
      *
@@ -2289,7 +2205,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int confidentialityImpact_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
      *
@@ -2299,7 +2214,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getConfidentialityImpactValue() {
       return confidentialityImpact_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
      *
@@ -2312,7 +2226,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
      *
@@ -2324,7 +2237,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1.CVSS.Impact.forNumber(confidentialityImpact_);
       return result == null ? io.grafeas.v1.CVSS.Impact.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
      *
@@ -2340,7 +2252,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
      *
@@ -2354,7 +2265,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int integrityImpact_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
      *
@@ -2364,7 +2274,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getIntegrityImpactValue() {
       return integrityImpact_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
      *
@@ -2377,7 +2286,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
      *
@@ -2388,7 +2296,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1.CVSS.Impact result = io.grafeas.v1.CVSS.Impact.forNumber(integrityImpact_);
       return result == null ? io.grafeas.v1.CVSS.Impact.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
      *
@@ -2404,7 +2311,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
      *
@@ -2418,7 +2324,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availabilityImpact_ = 0;
-
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
      *
@@ -2428,7 +2333,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public int getAvailabilityImpactValue() {
       return availabilityImpact_;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
      *
@@ -2441,7 +2345,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
      *
@@ -2452,7 +2355,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1.CVSS.Impact result = io.grafeas.v1.CVSS.Impact.forNumber(availabilityImpact_);
       return result == null ? io.grafeas.v1.CVSS.Impact.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
      *
@@ -2468,7 +2370,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
      *

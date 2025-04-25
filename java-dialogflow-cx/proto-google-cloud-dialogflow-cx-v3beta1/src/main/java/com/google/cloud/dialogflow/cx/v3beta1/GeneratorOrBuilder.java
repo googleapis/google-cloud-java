@@ -41,7 +41,6 @@ public interface GeneratorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface GeneratorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface GeneratorOrBuilder
    * @return Whether the promptText field is set.
    */
   boolean hasPromptText();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface GeneratorOrBuilder
    * @return The promptText.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Phrase getPromptText();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface GeneratorOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Generator.Placeholder>
       getPlaceholdersList();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface GeneratorOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Generator.Placeholder getPlaceholders(int index);
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface GeneratorOrBuilder
    * </code>
    */
   int getPlaceholdersCount();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface GeneratorOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Generator.PlaceholderOrBuilder>
       getPlaceholdersOrBuilderList();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface GeneratorOrBuilder
    * @return Whether the llmModelSettings field is set.
    */
   boolean hasLlmModelSettings();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface GeneratorOrBuilder
    * @return The llmModelSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface GeneratorOrBuilder
    * @return Whether the modelParameter field is set.
    */
   boolean hasModelParameter();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface GeneratorOrBuilder
    * @return The modelParameter.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter getModelParameter();
-
   /**
    *
    *

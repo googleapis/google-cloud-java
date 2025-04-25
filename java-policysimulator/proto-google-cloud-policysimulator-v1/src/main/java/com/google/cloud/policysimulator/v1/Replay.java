@@ -33,7 +33,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.Replay)
     ReplayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Replay.newBuilder() to construct.
   private Replay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -171,7 +167,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -341,7 +336,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the oldestDate field is set.
      */
     boolean hasOldestDate();
-
     /**
      *
      *
@@ -354,7 +348,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * @return The oldestDate.
      */
     com.google.type.Date getOldestDate();
-
     /**
      *
      *
@@ -378,7 +371,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the newestDate field is set.
      */
     boolean hasNewestDate();
-
     /**
      *
      *
@@ -391,7 +383,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      * @return The newestDate.
      */
     com.google.type.Date getNewestDate();
-
     /**
      *
      *
@@ -403,7 +394,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.type.DateOrBuilder getNewestDateOrBuilder();
   }
-
   /**
    *
    *
@@ -418,7 +408,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.Replay.ResultsSummary)
       ResultsSummaryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ResultsSummary.newBuilder() to construct.
     private ResultsSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -450,7 +439,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int LOG_COUNT_FIELD_NUMBER = 1;
     private int logCount_ = 0;
-
     /**
      *
      *
@@ -469,7 +457,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UNCHANGED_COUNT_FIELD_NUMBER = 2;
     private int unchangedCount_ = 0;
-
     /**
      *
      *
@@ -489,7 +476,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DIFFERENCE_COUNT_FIELD_NUMBER = 3;
     private int differenceCount_ = 0;
-
     /**
      *
      *
@@ -509,7 +495,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ERROR_COUNT_FIELD_NUMBER = 4;
     private int errorCount_ = 0;
-
     /**
      *
      *
@@ -528,7 +513,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OLDEST_DATE_FIELD_NUMBER = 5;
     private com.google.type.Date oldestDate_;
-
     /**
      *
      *
@@ -544,7 +528,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOldestDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -560,7 +543,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Date getOldestDate() {
       return oldestDate_ == null ? com.google.type.Date.getDefaultInstance() : oldestDate_;
     }
-
     /**
      *
      *
@@ -577,7 +559,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NEWEST_DATE_FIELD_NUMBER = 6;
     private com.google.type.Date newestDate_;
-
     /**
      *
      *
@@ -593,7 +574,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNewestDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -609,7 +589,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Date getNewestDate() {
       return newestDate_ == null ? com.google.type.Date.getDefaultInstance() : newestDate_;
     }
-
     /**
      *
      *
@@ -840,7 +819,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1115,7 +1093,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int logCount_;
-
       /**
        *
        *
@@ -1131,7 +1108,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       public int getLogCount() {
         return logCount_;
       }
-
       /**
        *
        *
@@ -1151,7 +1127,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1171,7 +1146,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int unchangedCount_;
-
       /**
        *
        *
@@ -1188,7 +1162,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       public int getUnchangedCount() {
         return unchangedCount_;
       }
-
       /**
        *
        *
@@ -1209,7 +1182,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1230,7 +1202,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int differenceCount_;
-
       /**
        *
        *
@@ -1247,7 +1218,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       public int getDifferenceCount() {
         return differenceCount_;
       }
-
       /**
        *
        *
@@ -1268,7 +1238,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1289,7 +1258,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int errorCount_;
-
       /**
        *
        *
@@ -1305,7 +1273,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       public int getErrorCount() {
         return errorCount_;
       }
-
       /**
        *
        *
@@ -1325,7 +1292,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1348,7 +1314,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           oldestDateBuilder_;
-
       /**
        *
        *
@@ -1363,7 +1328,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOldestDate() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1382,7 +1346,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
           return oldestDateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1405,7 +1368,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1425,7 +1387,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1453,7 +1414,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1473,7 +1433,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1488,7 +1447,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOldestDateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1505,7 +1463,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
           return oldestDate_ == null ? com.google.type.Date.getDefaultInstance() : oldestDate_;
         }
       }
-
       /**
        *
        *
@@ -1534,7 +1491,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           newestDateBuilder_;
-
       /**
        *
        *
@@ -1549,7 +1505,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNewestDate() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -1568,7 +1523,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
           return newestDateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1591,7 +1545,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1611,7 +1564,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1639,7 +1591,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1659,7 +1610,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1674,7 +1624,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getNewestDateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1691,7 +1640,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
           return newestDate_ == null ? com.google.type.Date.getDefaultInstance() : newestDate_;
         }
       }
-
       /**
        *
        *
@@ -1785,7 +1733,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1817,7 +1764,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1852,7 +1798,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1870,7 +1815,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1893,7 +1837,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.policysimulator.v1.ReplayConfig config_;
-
   /**
    *
    *
@@ -1911,7 +1854,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1931,7 +1873,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.policysimulator.v1.ReplayConfig.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -1952,7 +1893,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESULTS_SUMMARY_FIELD_NUMBER = 5;
   private com.google.cloud.policysimulator.v1.Replay.ResultsSummary resultsSummary_;
-
   /**
    *
    *
@@ -1970,7 +1910,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResultsSummary() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1990,7 +1929,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.policysimulator.v1.Replay.ResultsSummary.getDefaultInstance()
         : resultsSummary_;
   }
-
   /**
    *
    *
@@ -2206,7 +2144,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2452,7 +2389,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2483,7 +2419,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2514,7 +2449,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2544,7 +2478,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2570,7 +2503,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2603,7 +2535,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2621,7 +2552,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2642,7 +2572,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2664,7 +2593,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.policysimulator.v1.Replay.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2688,7 +2616,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2715,7 +2642,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.policysimulator.v1.ReplayConfig.Builder,
             com.google.cloud.policysimulator.v1.ReplayConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -2732,7 +2658,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2755,7 +2680,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2780,7 +2704,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2803,7 +2726,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2833,7 +2755,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2855,7 +2776,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2872,7 +2792,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2893,7 +2812,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
-
     /**
      *
      *
@@ -2928,7 +2846,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.policysimulator.v1.Replay.ResultsSummary.Builder,
             com.google.cloud.policysimulator.v1.Replay.ResultsSummaryOrBuilder>
         resultsSummaryBuilder_;
-
     /**
      *
      *
@@ -2945,7 +2862,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResultsSummary() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2968,7 +2884,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
         return resultsSummaryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2994,7 +2909,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2931,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3049,7 +2962,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3071,7 +2983,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3089,7 +3000,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResultsSummaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3111,7 +3021,6 @@ public final class Replay extends com.google.protobuf.GeneratedMessageV3
             : resultsSummary_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.CreateChannelRequest)
     CreateChannelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateChannelRequest.newBuilder() to construct.
   private CreateChannelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
 
   public static final int CHANNEL_FIELD_NUMBER = 2;
   private com.google.cloud.eventarc.v1.Channel channel_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
   public boolean hasChannel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.eventarc.v1.Channel getChannel() {
     return channel_ == null ? com.google.cloud.eventarc.v1.Channel.getDefaultInstance() : channel_;
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object channelId_ = "";
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -439,7 +430,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +671,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.eventarc.v1.Channel.Builder,
             com.google.cloud.eventarc.v1.ChannelOrBuilder>
         channelBuilder_;
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     public boolean hasChannel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         return channelBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getChannelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
             : channel_;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object channelId_ = "";
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1034,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1055,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1096,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1142,7 +1112,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1163,7 +1132,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

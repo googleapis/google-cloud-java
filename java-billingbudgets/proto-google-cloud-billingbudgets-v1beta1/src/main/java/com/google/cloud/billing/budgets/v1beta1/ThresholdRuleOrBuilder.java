@@ -54,7 +54,6 @@ public interface ThresholdRuleOrBuilder
    * @return The enum numeric value on the wire for spendBasis.
    */
   int getSpendBasisValue();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface BackupOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface BackupOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface BackupOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -196,11 +189,9 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public interface BackupOrBuilder
    * @return Whether the deleteLockExpireTime field is set.
    */
   boolean hasDeleteLockExpireTime();
-
   /**
    *
    *
@@ -293,7 +281,6 @@ public interface BackupOrBuilder
    * @return The deleteLockExpireTime.
    */
   com.google.protobuf.Timestamp getDeleteLockExpireTime();
-
   /**
    *
    *
@@ -350,7 +337,6 @@ public interface BackupOrBuilder
    * @return Whether the retainExpireTime field is set.
    */
   boolean hasRetainExpireTime();
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public interface BackupOrBuilder
    * @return The retainExpireTime.
    */
   com.google.protobuf.Timestamp getRetainExpireTime();
-
   /**
    *
    *
@@ -400,7 +385,6 @@ public interface BackupOrBuilder
    * @return Whether the encryptionKey field is set.
    */
   boolean hasEncryptionKey();
-
   /**
    *
    *
@@ -418,7 +402,6 @@ public interface BackupOrBuilder
    * @return The encryptionKey.
    */
   com.google.cloud.gkebackup.v1.EncryptionKey getEncryptionKey();
-
   /**
    *
    *
@@ -447,7 +430,6 @@ public interface BackupOrBuilder
    * @return Whether the allNamespaces field is set.
    */
   boolean hasAllNamespaces();
-
   /**
    *
    *
@@ -476,7 +458,6 @@ public interface BackupOrBuilder
    * @return Whether the selectedNamespaces field is set.
    */
   boolean hasSelectedNamespaces();
-
   /**
    *
    *
@@ -492,7 +473,6 @@ public interface BackupOrBuilder
    * @return The selectedNamespaces.
    */
   com.google.cloud.gkebackup.v1.Namespaces getSelectedNamespaces();
-
   /**
    *
    *
@@ -522,7 +502,6 @@ public interface BackupOrBuilder
    * @return Whether the selectedApplications field is set.
    */
   boolean hasSelectedApplications();
-
   /**
    *
    *
@@ -538,7 +517,6 @@ public interface BackupOrBuilder
    * @return The selectedApplications.
    */
   com.google.cloud.gkebackup.v1.NamespacedNames getSelectedApplications();
-
   /**
    *
    *
@@ -600,7 +578,6 @@ public interface BackupOrBuilder
    * @return Whether the clusterMetadata field is set.
    */
   boolean hasClusterMetadata();
-
   /**
    *
    *
@@ -616,7 +593,6 @@ public interface BackupOrBuilder
    * @return The clusterMetadata.
    */
   com.google.cloud.gkebackup.v1.Backup.ClusterMetadata getClusterMetadata();
-
   /**
    *
    *
@@ -645,7 +621,6 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -666,8 +641,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Output only. Human-readable description of why the backup is in the current
-   * `state`. This field is only meant for human readability and should not be
-   * used programmatically as this field is not guaranteed to be consistent.
+   * `state`.
    * </pre>
    *
    * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -675,14 +649,12 @@ public interface BackupOrBuilder
    * @return The stateReason.
    */
   java.lang.String getStateReason();
-
   /**
    *
    *
    * <pre>
    * Output only. Human-readable description of why the backup is in the current
-   * `state`. This field is only meant for human readability and should not be
-   * used programmatically as this field is not guaranteed to be consistent.
+   * `state`.
    * </pre>
    *
    * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -705,7 +677,6 @@ public interface BackupOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
-
   /**
    *
    *
@@ -720,7 +691,6 @@ public interface BackupOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
-
   /**
    *
    *
@@ -794,7 +764,6 @@ public interface BackupOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -827,7 +796,6 @@ public interface BackupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -885,32 +853,6 @@ public interface BackupOrBuilder
    * @return The permissiveMode.
    */
   boolean getPermissiveMode();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. [Output Only] Reserved for future use.
-   * </pre>
-   *
-   * <code>bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The satisfiesPzs.
-   */
-  boolean getSatisfiesPzs();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. [Output Only] Reserved for future use.
-   * </pre>
-   *
-   * <code>bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The satisfiesPzi.
-   */
-  boolean getSatisfiesPzi();
 
   com.google.cloud.gkebackup.v1.Backup.BackupScopeCase getBackupScopeCase();
 }

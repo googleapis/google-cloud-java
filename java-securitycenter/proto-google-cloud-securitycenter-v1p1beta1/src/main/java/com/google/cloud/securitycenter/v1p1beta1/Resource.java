@@ -33,7 +33,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1p1beta1.Resource)
     ResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Resource.newBuilder() to construct.
   private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectDisplayName_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentDisplayName_ = "";
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1p1beta1.Folder> folders_;
-
   /**
    *
    *
@@ -358,7 +346,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v1p1beta1.Folder> getFoldersList() {
     return folders_;
   }
-
   /**
    *
    *
@@ -377,7 +364,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       getFoldersOrBuilderList() {
     return folders_;
   }
-
   /**
    *
    *
@@ -395,7 +381,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   public int getFoldersCount() {
     return folders_.size();
   }
-
   /**
    *
    *
@@ -413,7 +398,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v1p1beta1.Folder getFolders(int index) {
     return folders_.get(index);
   }
-
   /**
    *
    *
@@ -638,7 +622,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -945,7 +928,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -969,7 +951,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -993,7 +974,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1016,7 +996,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1014,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1039,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1084,7 +1061,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1107,7 +1083,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1104,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1121,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1145,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectDisplayName_ = "";
-
     /**
      *
      *
@@ -1195,7 +1167,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1218,7 +1189,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1210,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1227,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1251,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1306,7 +1273,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1295,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1316,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1333,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1357,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parentDisplayName_ = "";
-
     /**
      *
      *
@@ -1417,7 +1379,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1401,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1462,7 +1422,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1439,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1541,7 +1499,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return foldersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1562,7 +1519,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return foldersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1583,7 +1539,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return foldersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1610,7 +1565,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1589,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1615,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1641,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1714,7 +1665,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1739,7 +1689,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1764,7 +1713,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1736,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1759,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1775,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1p1beta1.Folder.Builder getFoldersBuilder(int index) {
       return getFoldersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1851,7 +1796,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return foldersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1873,7 +1817,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(folders_);
       }
     }
-
     /**
      *
      *
@@ -1891,7 +1834,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return getFoldersFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v1p1beta1.Folder.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1909,7 +1851,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return getFoldersFieldBuilder()
           .addBuilder(index, com.google.cloud.securitycenter.v1p1beta1.Folder.getDefaultInstance());
     }
-
     /**
      *
      *

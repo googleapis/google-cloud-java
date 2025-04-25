@@ -33,7 +33,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Reaction)
     ReactionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Reaction.newBuilder() to construct.
   private Reaction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_FIELD_NUMBER = 2;
   private com.google.chat.v1.User user_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUser() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
   public com.google.chat.v1.User getUser() {
     return user_ == null ? com.google.chat.v1.User.getDefaultInstance() : user_;
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EMOJI_FIELD_NUMBER = 3;
   private com.google.chat.v1.Emoji emoji_;
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEmoji() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
   public com.google.chat.v1.Emoji getEmoji() {
     return emoji_ == null ? com.google.chat.v1.Emoji.getDefaultInstance() : emoji_;
   }
-
   /**
    *
    *
@@ -403,7 +394,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -631,7 +621,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.User.Builder,
             com.google.chat.v1.UserOrBuilder>
         userBuilder_;
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUser() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
         return userBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +815,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -914,7 +891,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
         return user_ == null ? com.google.chat.v1.User.getDefaultInstance() : user_;
       }
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Emoji.Builder,
             com.google.chat.v1.EmojiOrBuilder>
         emojiBuilder_;
-
     /**
      *
      *
@@ -961,7 +936,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEmoji() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -980,7 +954,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
         return emojiBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +995,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1022,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1041,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1055,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEmojiFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1103,7 +1071,6 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
         return emoji_ == null ? com.google.chat.v1.Emoji.getDefaultInstance() : emoji_;
       }
     }
-
     /**
      *
      *

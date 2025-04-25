@@ -36,7 +36,6 @@ public interface WorkloadConfigOrBuilder
    * @return Whether the auditMode field is set.
    */
   boolean hasAuditMode();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WorkloadConfigOrBuilder
    * @return The enum numeric value on the wire for auditMode.
    */
   int getAuditModeValue();
-
   /**
    *
    *

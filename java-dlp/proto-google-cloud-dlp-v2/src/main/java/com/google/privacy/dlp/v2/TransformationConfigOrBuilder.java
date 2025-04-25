@@ -41,7 +41,6 @@ public interface TransformationConfigOrBuilder
    * @return The deidentifyTemplate.
    */
   java.lang.String getDeidentifyTemplate();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface TransformationConfigOrBuilder
    * @return The structuredDeidentifyTemplate.
    */
   java.lang.String getStructuredDeidentifyTemplate();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface TransformationConfigOrBuilder
    * @return The imageRedactTemplate.
    */
   java.lang.String getImageRedactTemplate();
-
   /**
    *
    *

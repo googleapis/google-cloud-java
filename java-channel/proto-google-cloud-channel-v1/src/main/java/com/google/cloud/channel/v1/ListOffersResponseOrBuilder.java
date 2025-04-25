@@ -34,7 +34,6 @@ public interface ListOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Offer> getOffersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
    */
   com.google.cloud.channel.v1.Offer getOffers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
    */
   int getOffersCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
    */
   java.util.List<? extends com.google.cloud.channel.v1.OfferOrBuilder> getOffersOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListOffersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

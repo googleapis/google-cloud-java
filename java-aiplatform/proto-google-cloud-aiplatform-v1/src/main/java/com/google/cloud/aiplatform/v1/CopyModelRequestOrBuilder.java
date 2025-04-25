@@ -40,7 +40,6 @@ public interface CopyModelRequestOrBuilder
    * @return Whether the modelId field is set.
    */
   boolean hasModelId();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface CopyModelRequestOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CopyModelRequestOrBuilder
    * @return Whether the parentModel field is set.
    */
   boolean hasParentModel();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface CopyModelRequestOrBuilder
    * @return The parentModel.
    */
   java.lang.String getParentModel();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface CopyModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface CopyModelRequestOrBuilder
    * @return The sourceModel.
    */
   java.lang.String getSourceModel();
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public interface CopyModelRequestOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface CopyModelRequestOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *

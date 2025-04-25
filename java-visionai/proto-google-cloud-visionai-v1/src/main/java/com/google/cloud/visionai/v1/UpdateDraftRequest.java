@@ -33,7 +33,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateDraftRequest)
     UpdateDraftRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateDraftRequest.newBuilder() to construct.
   private UpdateDraftRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int DRAFT_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.Draft draft_;
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasDraft() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.visionai.v1.Draft getDraft() {
     return draft_ == null ? com.google.cloud.visionai.v1.Draft.getDefaultInstance() : draft_;
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -474,7 +464,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -725,7 +714,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +841,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -926,7 +907,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.Draft.Builder,
             com.google.cloud.visionai.v1.DraftOrBuilder>
         draftBuilder_;
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasDraft() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1000,7 +978,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
         return draftBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1049,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1084,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDraftFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
         return draft_ == null ? com.google.cloud.visionai.v1.Draft.getDefaultInstance() : draft_;
       }
     }
-
     /**
      *
      *
@@ -1158,7 +1129,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1193,7 +1163,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1197,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1262,7 +1230,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1292,7 +1259,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1295,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -1346,7 +1311,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -1367,7 +1331,6 @@ public final class UpdateDraftRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

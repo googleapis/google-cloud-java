@@ -36,7 +36,6 @@ public interface LeaseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LeaseOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface LeaseOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface LeaseOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface LeaseOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface LeaseOrBuilder
    * @return The enum numeric value on the wire for leaseType.
    */
   int getLeaseTypeValue();
-
   /**
    *
    *

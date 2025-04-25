@@ -36,7 +36,6 @@ public interface SubscriberEventOrBuilder
    * @return Whether the customerEvent field is set.
    */
   boolean hasCustomerEvent();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SubscriberEventOrBuilder
    * @return The customerEvent.
    */
   com.google.cloud.channel.v1.CustomerEvent getCustomerEvent();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SubscriberEventOrBuilder
    * @return Whether the entitlementEvent field is set.
    */
   boolean hasEntitlementEvent();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SubscriberEventOrBuilder
    * @return The entitlementEvent.
    */
   com.google.cloud.channel.v1.EntitlementEvent getEntitlementEvent();
-
   /**
    *
    *

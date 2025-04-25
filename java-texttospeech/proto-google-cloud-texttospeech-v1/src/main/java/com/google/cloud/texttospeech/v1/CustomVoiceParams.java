@@ -33,7 +33,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.CustomVoiceParams)
     CustomVoiceParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomVoiceParams.newBuilder() to construct.
   private CustomVoiceParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * <code>REPORTED_USAGE_UNSPECIFIED = 0;</code>
      */
     public static final int REPORTED_USAGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * <code>REALTIME = 1;</code>
      */
     public static final int REALTIME_VALUE = 1;
-
     /**
      *
      *
@@ -237,7 +234,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -263,7 +259,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -292,7 +287,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
 
   public static final int REPORTED_USAGE_FIELD_NUMBER = 3;
   private int reportedUsage_ = 0;
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
   public int getReportedUsageValue() {
     return reportedUsage_;
   }
-
   /**
    *
    *
@@ -513,7 +506,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -711,7 +703,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -736,7 +727,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +751,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +774,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +793,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +819,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     }
 
     private int reportedUsage_ = 0;
-
     /**
      *
      *
@@ -853,7 +839,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     public int getReportedUsageValue() {
       return reportedUsage_;
     }
-
     /**
      *
      *
@@ -877,7 +862,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +887,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.texttospeech.v1.CustomVoiceParams.ReportedUsage.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -931,7 +914,6 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

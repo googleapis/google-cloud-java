@@ -36,7 +36,6 @@ public interface UpdateCaseRequestOrBuilder
    * @return Whether the case field is set.
    */
   boolean hasCase();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateCaseRequestOrBuilder
    * @return The case.
    */
   com.google.cloud.support.v2.Case getCase();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateCaseRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface UpdateCaseRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

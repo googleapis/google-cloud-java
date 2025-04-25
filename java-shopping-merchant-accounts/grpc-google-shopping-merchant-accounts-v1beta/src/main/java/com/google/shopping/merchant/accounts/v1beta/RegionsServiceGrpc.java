@@ -284,19 +284,6 @@ public final class RegionsServiceGrpc {
     return RegionsServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static RegionsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<RegionsServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<RegionsServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public RegionsServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new RegionsServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return RegionsServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -541,96 +528,6 @@ public final class RegionsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RegionsService.
-   *
-   * <pre>
-   * Manages regions configuration.
-   * This API defines the following resource model:
-   * - [Region][google.shopping.merchant.accounts.v1main.Region]
-   * </pre>
-   */
-  public static final class RegionsServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<RegionsServiceBlockingV2Stub> {
-    private RegionsServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected RegionsServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new RegionsServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves a region defined in your Merchant Center account.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Region getRegion(
-        com.google.shopping.merchant.accounts.v1beta.GetRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetRegionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a region definition in your Merchant Center account. Executing this
-     * method requires admin access.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Region createRegion(
-        com.google.shopping.merchant.accounts.v1beta.CreateRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateRegionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a region definition in your Merchant Center account. Executing this
-     * method requires admin access.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.Region updateRegion(
-        com.google.shopping.merchant.accounts.v1beta.UpdateRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateRegionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a region definition from your Merchant Center account. Executing
-     * this method requires admin access.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteRegion(
-        com.google.shopping.merchant.accounts.v1beta.DeleteRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteRegionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the regions in your Merchant Center account.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.ListRegionsResponse listRegions(
-        com.google.shopping.merchant.accounts.v1beta.ListRegionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListRegionsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service RegionsService.
    *
    * <pre>
    * Manages regions configuration.

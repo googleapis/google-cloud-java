@@ -41,7 +41,6 @@ public interface UndeletePhoneNumberRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

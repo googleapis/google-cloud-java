@@ -40,7 +40,6 @@ public interface ListSkusRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ListSkusRequestOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface ListSkusRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface ListSkusRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

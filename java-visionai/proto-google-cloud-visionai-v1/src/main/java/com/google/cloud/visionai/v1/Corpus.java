@@ -35,7 +35,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Corpus)
     CorpusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Corpus.newBuilder() to construct.
   private Corpus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,7 +133,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -145,7 +143,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAM_VIDEO = 1;</code>
      */
     public static final int STREAM_VIDEO_VALUE = 1;
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
      * <code>IMAGE = 2;</code>
      */
     public static final int IMAGE_VALUE = 2;
-
     /**
      *
      *
@@ -258,7 +254,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -284,7 +279,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -315,7 +309,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -394,7 +385,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +411,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_TTL_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration defaultTtl_;
-
   /**
    *
    *
@@ -441,7 +430,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultTtl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -461,7 +449,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getDefaultTtl() {
     return defaultTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : defaultTtl_;
   }
-
   /**
    *
    *
@@ -482,7 +469,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 7;
   private int type_ = 0;
-
   /**
    *
    *
@@ -499,7 +485,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -521,7 +506,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEARCH_CAPABILITY_SETTING_FIELD_NUMBER = 8;
   private com.google.cloud.visionai.v1.SearchCapabilitySetting searchCapabilitySetting_;
-
   /**
    *
    *
@@ -537,7 +521,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSearchCapabilitySetting() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -555,7 +538,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.SearchCapabilitySetting.getDefaultInstance()
         : searchCapabilitySetting_;
   }
-
   /**
    *
    *
@@ -575,7 +557,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 11;
   private boolean satisfiesPzs_ = false;
-
   /**
    *
    *
@@ -593,7 +574,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSatisfiesPzs() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -614,7 +594,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 12;
   private boolean satisfiesPzi_ = false;
-
   /**
    *
    *
@@ -632,7 +611,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSatisfiesPzi() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -892,7 +870,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1200,7 +1177,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1225,7 +1201,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1225,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1248,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1267,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1293,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1345,7 +1316,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1369,7 +1339,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1361,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1379,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1404,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1460,7 +1426,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1483,7 +1448,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1505,7 +1469,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1486,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1553,7 +1515,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         defaultTtlBuilder_;
-
     /**
      *
      *
@@ -1572,7 +1533,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultTtl() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1597,7 +1557,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return defaultTtlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1624,7 +1583,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1606,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1637,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1660,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1723,7 +1678,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1746,7 +1700,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
             : defaultTtl_;
       }
     }
-
     /**
      *
      *
@@ -1778,7 +1731,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1796,7 +1748,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1817,7 +1768,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1837,7 +1787,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.Corpus.Type.forNumber(type_);
       return result == null ? com.google.cloud.visionai.v1.Corpus.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1861,7 +1810,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1888,7 +1836,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.SearchCapabilitySetting.Builder,
             com.google.cloud.visionai.v1.SearchCapabilitySettingOrBuilder>
         searchCapabilitySettingBuilder_;
-
     /**
      *
      *
@@ -1903,7 +1850,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSearchCapabilitySetting() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1924,7 +1870,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         return searchCapabilitySettingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1948,7 +1893,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1969,7 +1913,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1999,7 +1942,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2019,7 +1961,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2035,7 +1976,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSearchCapabilitySettingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2055,7 +1995,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
             : searchCapabilitySetting_;
       }
     }
-
     /**
      *
      *
@@ -2083,7 +2022,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzs_;
-
     /**
      *
      *
@@ -2101,7 +2039,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSatisfiesPzs() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2119,7 +2056,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
-
     /**
      *
      *
@@ -2141,7 +2077,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2163,7 +2098,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzi_;
-
     /**
      *
      *
@@ -2181,7 +2115,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSatisfiesPzi() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2199,7 +2132,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
-
     /**
      *
      *
@@ -2221,7 +2153,6 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

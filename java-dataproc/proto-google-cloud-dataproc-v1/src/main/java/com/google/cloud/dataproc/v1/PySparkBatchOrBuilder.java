@@ -37,7 +37,6 @@ public interface PySparkBatchOrBuilder
    * @return The mainPythonFileUri.
    */
   java.lang.String getMainPythonFileUri();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PySparkBatchOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PySparkBatchOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface PySparkBatchOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface PySparkBatchOrBuilder
    * @return A list containing the pythonFileUris.
    */
   java.util.List<java.lang.String> getPythonFileUrisList();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface PySparkBatchOrBuilder
    * @return The count of pythonFileUris.
    */
   int getPythonFileUrisCount();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface PySparkBatchOrBuilder
    * @return The pythonFileUris at the given index.
    */
   java.lang.String getPythonFileUris(int index);
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface PySparkBatchOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface PySparkBatchOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public interface PySparkBatchOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface PySparkBatchOrBuilder
    * @return A list containing the fileUris.
    */
   java.util.List<java.lang.String> getFileUrisList();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface PySparkBatchOrBuilder
    * @return The count of fileUris.
    */
   int getFileUrisCount();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface PySparkBatchOrBuilder
    * @return The fileUris at the given index.
    */
   java.lang.String getFileUris(int index);
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public interface PySparkBatchOrBuilder
    * @return A list containing the archiveUris.
    */
   java.util.List<java.lang.String> getArchiveUrisList();
-
   /**
    *
    *
@@ -317,7 +303,6 @@ public interface PySparkBatchOrBuilder
    * @return The count of archiveUris.
    */
   int getArchiveUrisCount();
-
   /**
    *
    *
@@ -333,7 +318,6 @@ public interface PySparkBatchOrBuilder
    * @return The archiveUris at the given index.
    */
   java.lang.String getArchiveUris(int index);
-
   /**
    *
    *

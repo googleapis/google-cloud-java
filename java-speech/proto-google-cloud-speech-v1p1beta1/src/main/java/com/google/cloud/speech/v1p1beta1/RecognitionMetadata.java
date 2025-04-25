@@ -34,7 +34,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.RecognitionMetadata)
     RecognitionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecognitionMetadata.newBuilder() to construct.
   private RecognitionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -193,7 +192,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>INTERACTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INTERACTION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -207,7 +205,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>DISCUSSION = 1;</code>
      */
     public static final int DISCUSSION_VALUE = 1;
-
     /**
      *
      *
@@ -219,7 +216,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>PRESENTATION = 2;</code>
      */
     public static final int PRESENTATION_VALUE = 2;
-
     /**
      *
      *
@@ -231,7 +227,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>PHONE_CALL = 3;</code>
      */
     public static final int PHONE_CALL_VALUE = 3;
-
     /**
      *
      *
@@ -242,7 +237,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>VOICEMAIL = 4;</code>
      */
     public static final int VOICEMAIL_VALUE = 4;
-
     /**
      *
      *
@@ -253,7 +247,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>PROFESSIONALLY_PRODUCED = 5;</code>
      */
     public static final int PROFESSIONALLY_PRODUCED_VALUE = 5;
-
     /**
      *
      *
@@ -264,7 +257,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>VOICE_SEARCH = 6;</code>
      */
     public static final int VOICE_SEARCH_VALUE = 6;
-
     /**
      *
      *
@@ -275,7 +267,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>VOICE_COMMAND = 7;</code>
      */
     public static final int VOICE_COMMAND_VALUE = 7;
-
     /**
      *
      *
@@ -452,7 +443,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>MICROPHONE_DISTANCE_UNSPECIFIED = 0;</code>
      */
     public static final int MICROPHONE_DISTANCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -465,7 +455,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>NEARFIELD = 1;</code>
      */
     public static final int NEARFIELD_VALUE = 1;
-
     /**
      *
      *
@@ -476,7 +465,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>MIDFIELD = 2;</code>
      */
     public static final int MIDFIELD_VALUE = 2;
-
     /**
      *
      *
@@ -631,7 +619,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>ORIGINAL_MEDIA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ORIGINAL_MEDIA_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -642,7 +629,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>AUDIO = 1;</code>
      */
     public static final int AUDIO_VALUE = 1;
-
     /**
      *
      *
@@ -835,7 +821,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>RECORDING_DEVICE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RECORDING_DEVICE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>SMARTPHONE = 1;</code>
      */
     public static final int SMARTPHONE_VALUE = 1;
-
     /**
      *
      *
@@ -857,7 +841,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>PC = 2;</code>
      */
     public static final int PC_VALUE = 2;
-
     /**
      *
      *
@@ -868,7 +851,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>PHONE_LINE = 3;</code>
      */
     public static final int PHONE_LINE_VALUE = 3;
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>VEHICLE = 4;</code>
      */
     public static final int VEHICLE_VALUE = 4;
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>OTHER_OUTDOOR_DEVICE = 5;</code>
      */
     public static final int OTHER_OUTDOOR_DEVICE_VALUE = 5;
-
     /**
      *
      *
@@ -1000,7 +980,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int INTERACTION_TYPE_FIELD_NUMBER = 1;
   private int interactionType_ = 0;
-
   /**
    *
    *
@@ -1017,7 +996,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
   public int getInteractionTypeValue() {
     return interactionType_;
   }
-
   /**
    *
    *
@@ -1043,7 +1021,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int INDUSTRY_NAICS_CODE_OF_AUDIO_FIELD_NUMBER = 3;
   private int industryNaicsCodeOfAudio_ = 0;
-
   /**
    *
    *
@@ -1065,7 +1042,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int MICROPHONE_DISTANCE_FIELD_NUMBER = 4;
   private int microphoneDistance_ = 0;
-
   /**
    *
    *
@@ -1083,7 +1059,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
   public int getMicrophoneDistanceValue() {
     return microphoneDistance_;
   }
-
   /**
    *
    *
@@ -1110,7 +1085,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int ORIGINAL_MEDIA_TYPE_FIELD_NUMBER = 5;
   private int originalMediaType_ = 0;
-
   /**
    *
    *
@@ -1128,7 +1102,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
   public int getOriginalMediaTypeValue() {
     return originalMediaType_;
   }
-
   /**
    *
    *
@@ -1155,7 +1128,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int RECORDING_DEVICE_TYPE_FIELD_NUMBER = 6;
   private int recordingDeviceType_ = 0;
-
   /**
    *
    *
@@ -1173,7 +1145,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
   public int getRecordingDeviceTypeValue() {
     return recordingDeviceType_;
   }
-
   /**
    *
    *
@@ -1202,7 +1173,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object recordingDeviceName_ = "";
-
   /**
    *
    *
@@ -1228,7 +1198,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1259,7 +1228,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object originalMimeType_ = "";
-
   /**
    *
    *
@@ -1286,7 +1254,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1316,7 +1283,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int OBFUSCATED_ID_FIELD_NUMBER = 9;
   private long obfuscatedId_ = 0L;
-
   /**
    *
    *
@@ -1341,7 +1307,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object audioTopic_ = "";
-
   /**
    *
    *
@@ -1366,7 +1331,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1648,7 +1612,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1941,7 +1904,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int interactionType_ = 0;
-
     /**
      *
      *
@@ -1959,7 +1921,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     public int getInteractionTypeValue() {
       return interactionType_;
     }
-
     /**
      *
      *
@@ -1980,7 +1941,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2004,7 +1964,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2029,7 +1988,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2051,7 +2009,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int industryNaicsCodeOfAudio_;
-
     /**
      *
      *
@@ -2070,7 +2027,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     public int getIndustryNaicsCodeOfAudio() {
       return industryNaicsCodeOfAudio_;
     }
-
     /**
      *
      *
@@ -2093,7 +2049,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2116,7 +2071,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int microphoneDistance_ = 0;
-
     /**
      *
      *
@@ -2134,7 +2088,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     public int getMicrophoneDistanceValue() {
       return microphoneDistance_;
     }
-
     /**
      *
      *
@@ -2155,7 +2108,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2179,7 +2131,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2204,7 +2155,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2226,7 +2176,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int originalMediaType_ = 0;
-
     /**
      *
      *
@@ -2244,7 +2193,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     public int getOriginalMediaTypeValue() {
       return originalMediaType_;
     }
-
     /**
      *
      *
@@ -2265,7 +2213,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2289,7 +2236,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2314,7 +2260,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2336,7 +2281,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int recordingDeviceType_ = 0;
-
     /**
      *
      *
@@ -2354,7 +2298,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     public int getRecordingDeviceTypeValue() {
       return recordingDeviceType_;
     }
-
     /**
      *
      *
@@ -2375,7 +2318,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2399,7 +2341,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2424,7 +2365,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2446,7 +2386,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object recordingDeviceName_ = "";
-
     /**
      *
      *
@@ -2471,7 +2410,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2434,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2520,7 +2457,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2540,7 +2476,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2567,7 +2502,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object originalMimeType_ = "";
-
     /**
      *
      *
@@ -2593,7 +2527,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2619,7 +2552,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2644,7 +2576,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2665,7 +2596,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2693,7 +2623,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private long obfuscatedId_;
-
     /**
      *
      *
@@ -2713,7 +2642,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     public long getObfuscatedId() {
       return obfuscatedId_;
     }
-
     /**
      *
      *
@@ -2737,7 +2665,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2761,7 +2688,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object audioTopic_ = "";
-
     /**
      *
      *
@@ -2785,7 +2711,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2809,7 +2734,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2832,7 +2756,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2851,7 +2774,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

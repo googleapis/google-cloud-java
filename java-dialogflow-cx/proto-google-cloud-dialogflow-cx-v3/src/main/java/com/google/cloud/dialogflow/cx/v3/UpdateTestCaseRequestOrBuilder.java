@@ -38,7 +38,6 @@ public interface UpdateTestCaseRequestOrBuilder
    * @return Whether the testCase field is set.
    */
   boolean hasTestCase();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateTestCaseRequestOrBuilder
    * @return The testCase.
    */
   com.google.cloud.dialogflow.cx.v3.TestCase getTestCase();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateTestCaseRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface UpdateTestCaseRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

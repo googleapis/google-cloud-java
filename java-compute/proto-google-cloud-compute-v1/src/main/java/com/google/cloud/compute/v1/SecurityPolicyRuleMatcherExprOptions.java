@@ -33,7 +33,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptions)
     SecurityPolicyRuleMatcherExprOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyRuleMatcherExprOptions.newBuilder() to construct.
   private SecurityPolicyRuleMatcherExprOptions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
   public static final int RECAPTCHA_OPTIONS_FIELD_NUMBER = 389151558;
   private com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       recaptchaOptions_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
   public boolean hasRecaptchaOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
             .getDefaultInstance()
         : recaptchaOptions_;
   }
-
   /**
    *
    *
@@ -295,7 +291,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -507,7 +502,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
             com.google.cloud.compute.v1
                 .SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder>
         recaptchaOptionsBuilder_;
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
     public boolean hasRecaptchaOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
         return recaptchaOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
       }
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
       onChanged();
       return getRecaptchaOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class SecurityPolicyRuleMatcherExprOptions
             : recaptchaOptions_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface RedactionConfigOrBuilder
    * @return The deidentifyTemplate.
    */
   java.lang.String getDeidentifyTemplate();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface RedactionConfigOrBuilder
    * @return The inspectTemplate.
    */
   java.lang.String getInspectTemplate();
-
   /**
    *
    *

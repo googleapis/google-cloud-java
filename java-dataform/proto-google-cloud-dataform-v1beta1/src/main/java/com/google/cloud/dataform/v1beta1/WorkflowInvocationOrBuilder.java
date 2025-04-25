@@ -40,7 +40,6 @@ public interface WorkflowInvocationOrBuilder
    * @return Whether the compilationResult field is set.
    */
   boolean hasCompilationResult();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The compilationResult.
    */
   java.lang.String getCompilationResult();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface WorkflowInvocationOrBuilder
    * @return Whether the workflowConfig field is set.
    */
   boolean hasWorkflowConfig();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The workflowConfig.
    */
   java.lang.String getWorkflowConfig();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface WorkflowInvocationOrBuilder
    * @return Whether the invocationConfig field is set.
    */
   boolean hasInvocationConfig();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The invocationConfig.
    */
   com.google.cloud.dataform.v1beta1.InvocationConfig getInvocationConfig();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public interface WorkflowInvocationOrBuilder
    * @return Whether the invocationTiming field is set.
    */
   boolean hasInvocationTiming();
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The invocationTiming.
    */
   com.google.type.Interval getInvocationTiming();
-
   /**
    *
    *
@@ -278,7 +268,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The resolvedCompilationResult.
    */
   java.lang.String getResolvedCompilationResult();
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public interface WorkflowInvocationOrBuilder
    * @return Whether the dataEncryptionState field is set.
    */
   boolean hasDataEncryptionState();
-
   /**
    *
    *
@@ -325,7 +313,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The dataEncryptionState.
    */
   com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState();
-
   /**
    *
    *
@@ -354,7 +341,6 @@ public interface WorkflowInvocationOrBuilder
    * @return Whether the internalMetadata field is set.
    */
   boolean hasInternalMetadata();
-
   /**
    *
    *
@@ -370,7 +356,6 @@ public interface WorkflowInvocationOrBuilder
    * @return The internalMetadata.
    */
   java.lang.String getInternalMetadata();
-
   /**
    *
    *

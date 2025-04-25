@@ -36,7 +36,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the exactMatch field is set.
    */
   boolean hasExactMatch();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return The exactMatch.
    */
   java.lang.String getExactMatch();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the headerName field is set.
    */
   boolean hasHeaderName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return The headerName.
    */
   java.lang.String getHeaderName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the invertMatch field is set.
    */
   boolean hasInvertMatch();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the prefixMatch field is set.
    */
   boolean hasPrefixMatch();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return The prefixMatch.
    */
   java.lang.String getPrefixMatch();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the presentMatch field is set.
    */
   boolean hasPresentMatch();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the rangeMatch field is set.
    */
   boolean hasRangeMatch();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return The rangeMatch.
    */
   com.google.cloud.compute.v1.Int64RangeMatch getRangeMatch();
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the regexMatch field is set.
    */
   boolean hasRegexMatch();
-
   /**
    *
    *
@@ -255,7 +244,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return The regexMatch.
    */
   java.lang.String getRegexMatch();
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return Whether the suffixMatch field is set.
    */
   boolean hasSuffixMatch();
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface HttpHeaderMatchOrBuilder
    * @return The suffixMatch.
    */
   java.lang.String getSuffixMatch();
-
   /**
    *
    *

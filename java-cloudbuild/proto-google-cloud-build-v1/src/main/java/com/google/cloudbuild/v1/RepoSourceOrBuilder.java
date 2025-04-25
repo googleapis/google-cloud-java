@@ -37,7 +37,6 @@ public interface RepoSourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RepoSourceOrBuilder
    * @return The repoName.
    */
   java.lang.String getRepoName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface RepoSourceOrBuilder
    * @return Whether the branchName field is set.
    */
   boolean hasBranchName();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface RepoSourceOrBuilder
    * @return The branchName.
    */
   java.lang.String getBranchName();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface RepoSourceOrBuilder
    * @return Whether the tagName field is set.
    */
   boolean hasTagName();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface RepoSourceOrBuilder
    * @return The tagName.
    */
   java.lang.String getTagName();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface RepoSourceOrBuilder
    * @return Whether the commitSha field is set.
    */
   boolean hasCommitSha();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface RepoSourceOrBuilder
    * @return The commitSha.
    */
   java.lang.String getCommitSha();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface RepoSourceOrBuilder
    * @return The dir.
    */
   java.lang.String getDir();
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public interface RepoSourceOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
   int getSubstitutionsCount();
-
   /**
    *
    *
@@ -282,11 +272,9 @@ public interface RepoSourceOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
   boolean containsSubstitutions(java.lang.String key);
-
   /** Use {@link #getSubstitutionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSubstitutions();
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public interface RepoSourceOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap();
-
   /**
    *
    *
@@ -314,7 +301,6 @@ public interface RepoSourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

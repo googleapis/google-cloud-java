@@ -36,7 +36,6 @@ public interface GetRegionInstanceTemplateRequestOrBuilder
    * @return The instanceTemplate.
    */
   java.lang.String getInstanceTemplate();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetRegionInstanceTemplateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetRegionInstanceTemplateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

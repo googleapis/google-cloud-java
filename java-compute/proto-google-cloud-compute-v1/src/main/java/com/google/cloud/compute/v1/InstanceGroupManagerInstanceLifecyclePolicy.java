@@ -33,7 +33,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy)
     InstanceGroupManagerInstanceLifecyclePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerInstanceLifecyclePolicy.newBuilder() to construct.
   private InstanceGroupManagerInstanceLifecyclePolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -120,7 +119,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      * <code>UNDEFINED_DEFAULT_ACTION_ON_FAILURE = 0;</code>
      */
     public static final int UNDEFINED_DEFAULT_ACTION_ON_FAILURE_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      * <code>DO_NOTHING = 451307513;</code>
      */
     public static final int DO_NOTHING_VALUE = 451307513;
-
     /**
      *
      *
@@ -269,10 +266,8 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      * <code>UNDEFINED_FORCE_UPDATE_ON_REPAIR = 0;</code>
      */
     public static final int UNDEFINED_FORCE_UPDATE_ON_REPAIR_VALUE = 0;
-
     /** <code>NO = 2497;</code> */
     public static final int NO_VALUE = 2497;
-
     /** <code>YES = 87751;</code> */
     public static final int YES_VALUE = 87751;
 
@@ -369,7 +364,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultActionOnFailure_ = "";
-
   /**
    *
    *
@@ -386,7 +380,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
   public boolean hasDefaultActionOnFailure() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -411,7 +404,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       return s;
     }
   }
-
   /**
    *
    *
@@ -441,7 +433,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forceUpdateOnRepair_ = "";
-
   /**
    *
    *
@@ -458,7 +449,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
   public boolean hasForceUpdateOnRepair() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -483,7 +473,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       return s;
     }
   }
-
   /**
    *
    *
@@ -692,7 +681,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -905,7 +893,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     private int bitField0_;
 
     private java.lang.Object defaultActionOnFailure_ = "";
-
     /**
      *
      *
@@ -921,7 +908,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     public boolean hasDefaultActionOnFailure() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -945,7 +931,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +954,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -992,7 +976,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +994,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1019,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     }
 
     private java.lang.Object forceUpdateOnRepair_ = "";
-
     /**
      *
      *
@@ -1053,7 +1034,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     public boolean hasForceUpdateOnRepair() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1077,7 +1057,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1080,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1102,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1120,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *

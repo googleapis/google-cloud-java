@@ -36,7 +36,6 @@ public interface PreviewResultOrBuilder
    * @return The binarySignedUri.
    */
   java.lang.String getBinarySignedUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PreviewResultOrBuilder
    * @return The jsonSignedUri.
    */
   java.lang.String getJsonSignedUri();
-
   /**
    *
    *

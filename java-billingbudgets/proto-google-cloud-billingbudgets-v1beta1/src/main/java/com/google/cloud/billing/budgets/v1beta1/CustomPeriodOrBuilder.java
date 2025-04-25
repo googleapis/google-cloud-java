@@ -36,7 +36,6 @@ public interface CustomPeriodOrBuilder
    * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CustomPeriodOrBuilder
    * @return The startDate.
    */
   com.google.type.Date getStartDate();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CustomPeriodOrBuilder
    * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface CustomPeriodOrBuilder
    * @return The endDate.
    */
   com.google.type.Date getEndDate();
-
   /**
    *
    *

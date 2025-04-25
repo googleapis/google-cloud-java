@@ -37,7 +37,6 @@ public interface ProductDetailOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ProductDetailOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface ProductDetailOrBuilder
    * @return The enum numeric value on the wire for stockState.
    */
   int getStockStateValue();
-
   /**
    *
    *
@@ -190,7 +187,6 @@ public interface ProductDetailOrBuilder
    * @return Whether the itemAttributes field is set.
    */
   boolean hasItemAttributes();
-
   /**
    *
    *
@@ -205,7 +201,6 @@ public interface ProductDetailOrBuilder
    * @return The itemAttributes.
    */
   com.google.cloud.recommendationengine.v1beta1.FeatureMap getItemAttributes();
-
   /**
    *
    *

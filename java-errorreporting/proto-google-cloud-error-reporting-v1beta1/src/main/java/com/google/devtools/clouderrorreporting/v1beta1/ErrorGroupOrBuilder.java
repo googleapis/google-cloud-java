@@ -51,7 +51,6 @@ public interface ErrorGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -99,7 +98,6 @@ public interface ErrorGroupOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
-
   /**
    *
    *
@@ -132,7 +130,6 @@ public interface ErrorGroupOrBuilder
    */
   java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
       getTrackingIssuesList();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface ErrorGroupOrBuilder
    * </code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getTrackingIssues(int index);
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface ErrorGroupOrBuilder
    * </code>
    */
   int getTrackingIssuesCount();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface ErrorGroupOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>
       getTrackingIssuesOrBuilderList();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface ErrorGroupOrBuilder
    * @return The enum numeric value on the wire for resolutionStatus.
    */
   int getResolutionStatusValue();
-
   /**
    *
    *

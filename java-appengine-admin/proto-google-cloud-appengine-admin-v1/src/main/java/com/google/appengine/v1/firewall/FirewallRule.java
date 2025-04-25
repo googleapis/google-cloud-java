@@ -34,7 +34,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.FirewallRule)
     FirewallRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FirewallRule.newBuilder() to construct.
   private FirewallRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,7 +103,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>UNSPECIFIED_ACTION = 0;</code> */
     public static final int UNSPECIFIED_ACTION_VALUE = 0;
-
     /**
      *
      *
@@ -115,7 +113,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
      * <code>ALLOW = 1;</code>
      */
     public static final int ALLOW_VALUE = 1;
-
     /**
      *
      *
@@ -212,7 +209,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIORITY_FIELD_NUMBER = 1;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -236,7 +232,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTION_FIELD_NUMBER = 2;
   private int action_ = 0;
-
   /**
    *
    *
@@ -252,7 +247,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
   public int getActionValue() {
     return action_;
   }
-
   /**
    *
    *
@@ -277,7 +271,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceRange_ = "";
-
   /**
    *
    *
@@ -311,7 +304,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -350,7 +342,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -375,7 +366,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -589,7 +579,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -815,7 +804,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int priority_;
-
     /**
      *
      *
@@ -836,7 +824,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -861,7 +848,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +872,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int action_ = 0;
-
     /**
      *
      *
@@ -902,7 +887,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     public int getActionValue() {
       return action_;
     }
-
     /**
      *
      *
@@ -921,7 +905,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +924,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
           ? com.google.appengine.v1.firewall.FirewallRule.Action.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -963,7 +945,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +964,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceRange_ = "";
-
     /**
      *
      *
@@ -1016,7 +996,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1028,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1059,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1086,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1192,7 +1166,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1188,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1206,6 @@ public final class FirewallRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

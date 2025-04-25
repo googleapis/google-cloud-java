@@ -33,7 +33,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.ListRolesRequest)
     ListRolesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRolesRequest.newBuilder() to construct.
   private ListRolesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +176,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -202,7 +198,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -226,7 +221,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -253,7 +247,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int VIEW_FIELD_NUMBER = 4;
   private int view_ = 0;
-
   /**
    *
    *
@@ -272,7 +265,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -295,7 +287,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int SHOW_DELETED_FIELD_NUMBER = 6;
   private boolean showDeleted_ = false;
-
   /**
    *
    *
@@ -506,7 +497,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -744,7 +734,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -796,7 +785,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -848,7 +836,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +886,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +932,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +985,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1018,7 +1002,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1040,7 +1023,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1044,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1085,7 +1066,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1088,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1130,7 +1109,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1126,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1150,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1192,7 +1168,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1214,7 +1189,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1208,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       com.google.iam.admin.v1.RoleView result = com.google.iam.admin.v1.RoleView.forNumber(view_);
       return result == null ? com.google.iam.admin.v1.RoleView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1259,7 +1232,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1254,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean showDeleted_;
-
     /**
      *
      *
@@ -1298,7 +1269,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
     public boolean getShowDeleted() {
       return showDeleted_;
     }
-
     /**
      *
      *
@@ -1318,7 +1288,6 @@ public final class ListRolesRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

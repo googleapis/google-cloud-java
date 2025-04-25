@@ -36,7 +36,6 @@ public interface VulnerableParametersOrBuilder
    * @return A list containing the parameterNames.
    */
   java.util.List<java.lang.String> getParameterNamesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VulnerableParametersOrBuilder
    * @return The count of parameterNames.
    */
   int getParameterNamesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface VulnerableParametersOrBuilder
    * @return The parameterNames at the given index.
    */
   java.lang.String getParameterNames(int index);
-
   /**
    *
    *

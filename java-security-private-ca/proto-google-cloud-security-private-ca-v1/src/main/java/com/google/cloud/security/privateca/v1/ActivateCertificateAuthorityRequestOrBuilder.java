@@ -40,7 +40,6 @@ public interface ActivateCertificateAuthorityRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ActivateCertificateAuthorityRequestOrBuilder
    * @return The pemCaCertificate.
    */
   java.lang.String getPemCaCertificate();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ActivateCertificateAuthorityRequestOrBuilder
    * @return Whether the subordinateConfig field is set.
    */
   boolean hasSubordinateConfig();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface ActivateCertificateAuthorityRequestOrBuilder
    * @return The subordinateConfig.
    */
   com.google.cloud.security.privateca.v1.SubordinateConfig getSubordinateConfig();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface ActivateCertificateAuthorityRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

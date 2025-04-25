@@ -34,7 +34,6 @@ public interface GetGuestAttributesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.GuestAttributes guest_attributes = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.GuestAttributes> getGuestAttributesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface GetGuestAttributesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.GuestAttributes guest_attributes = 1;</code>
    */
   com.google.cloud.tpu.v2alpha1.GuestAttributes getGuestAttributes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface GetGuestAttributesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.GuestAttributes guest_attributes = 1;</code>
    */
   int getGuestAttributesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface GetGuestAttributesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.GuestAttributesOrBuilder>
       getGuestAttributesOrBuilderList();
-
   /**
    *
    *

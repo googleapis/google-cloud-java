@@ -43,7 +43,6 @@ public interface SettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface SettingsOrBuilder
    * @return Whether the billingSettings field is set.
    */
   boolean hasBillingSettings();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface SettingsOrBuilder
    * @return The billingSettings.
    */
   com.google.cloud.securitycenter.settings.v1beta1.BillingSettings getBillingSettings();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface SettingsOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface SettingsOrBuilder
    * @return The orgServiceAccount.
    */
   java.lang.String getOrgServiceAccount();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface SettingsOrBuilder
    * @return Whether the sinkSettings field is set.
    */
   boolean hasSinkSettings();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface SettingsOrBuilder
    * @return The sinkSettings.
    */
   com.google.cloud.securitycenter.settings.v1beta1.SinkSettings getSinkSettings();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface SettingsOrBuilder
    * </code>
    */
   int getComponentSettingsCount();
-
   /**
    *
    *
@@ -223,13 +215,11 @@ public interface SettingsOrBuilder
    * </code>
    */
   boolean containsComponentSettings(java.lang.String key);
-
   /** Use {@link #getComponentSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
       getComponentSettings();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface SettingsOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
       getComponentSettingsMap();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface SettingsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings defaultValue);
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public interface SettingsOrBuilder
    * </code>
    */
   int getDetectorGroupSettingsCount();
-
   /**
    *
    *
@@ -305,14 +292,12 @@ public interface SettingsOrBuilder
    * </code>
    */
   boolean containsDetectorGroupSettings(java.lang.String key);
-
   /** Use {@link #getDetectorGroupSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings>
       getDetectorGroupSettings();
-
   /**
    *
    *
@@ -330,7 +315,6 @@ public interface SettingsOrBuilder
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings>
       getDetectorGroupSettingsMap();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface SettingsOrBuilder
           /* nullable */
           com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
               defaultValue);
-
   /**
    *
    *
@@ -381,7 +364,6 @@ public interface SettingsOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -409,7 +391,6 @@ public interface SettingsOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -423,7 +404,6 @@ public interface SettingsOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

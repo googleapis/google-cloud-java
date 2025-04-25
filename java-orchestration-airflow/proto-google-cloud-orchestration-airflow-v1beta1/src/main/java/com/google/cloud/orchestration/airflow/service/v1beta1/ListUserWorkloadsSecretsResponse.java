@@ -34,7 +34,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsResponse)
     ListUserWorkloadsSecretsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListUserWorkloadsSecretsResponse.newBuilder() to construct.
   private ListUserWorkloadsSecretsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret>
       userWorkloadsSecrets_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       getUserWorkloadsSecretsList() {
     return userWorkloadsSecrets_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       getUserWorkloadsSecretsOrBuilderList() {
     return userWorkloadsSecrets_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
   public int getUserWorkloadsSecretsCount() {
     return userWorkloadsSecrets_.size();
   }
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       getUserWorkloadsSecrets(int index) {
     return userWorkloadsSecrets_.get(index);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -408,7 +400,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -718,7 +709,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return userWorkloadsSecretsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -737,7 +727,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return userWorkloadsSecretsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -757,7 +746,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return userWorkloadsSecretsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -784,7 +772,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +796,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +821,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +847,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +870,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +894,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +940,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +961,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         getUserWorkloadsSecretsBuilder(int index) {
       return getUserWorkloadsSecretsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1017,7 +995,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return userWorkloadsSecretsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(userWorkloadsSecrets_);
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1034,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
               com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
               com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1141,7 +1114,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class ListUserWorkloadsSecretsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

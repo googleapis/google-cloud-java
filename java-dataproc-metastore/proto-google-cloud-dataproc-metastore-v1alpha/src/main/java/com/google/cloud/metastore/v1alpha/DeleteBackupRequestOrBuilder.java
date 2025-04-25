@@ -41,7 +41,6 @@ public interface DeleteBackupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface DeleteBackupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

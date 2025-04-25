@@ -35,7 +35,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest)
     AnswerQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnswerQueryRequest.newBuilder() to construct.
   private AnswerQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,7 +98,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     boolean getEnable();
   }
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SafetySpec)
       SafetySpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SafetySpec.newBuilder() to construct.
     private SafetySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -145,7 +142,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int ENABLE_FIELD_NUMBER = 1;
     private boolean enable_ = false;
-
     /**
      *
      *
@@ -325,7 +321,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -521,7 +516,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private boolean enable_;
-
       /**
        *
        *
@@ -538,7 +532,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getEnable() {
         return enable_;
       }
-
       /**
        *
        *
@@ -559,7 +552,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -665,7 +657,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     boolean getEnable();
   }
-
   /**
    *
    *
@@ -681,7 +672,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.RelatedQuestionsSpec)
       RelatedQuestionsSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RelatedQuestionsSpec.newBuilder() to construct.
     private RelatedQuestionsSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -713,7 +703,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int ENABLE_FIELD_NUMBER = 1;
     private boolean enable_ = false;
-
     /**
      *
      *
@@ -899,7 +888,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1102,7 +1090,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private boolean enable_;
-
       /**
        *
        *
@@ -1118,7 +1105,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getEnable() {
         return enable_;
       }
-
       /**
        *
        *
@@ -1138,7 +1124,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1263,7 +1248,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for filteringLevel.
      */
     int getFilteringLevelValue();
-
     /**
      *
      *
@@ -1281,7 +1265,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
         getFilteringLevel();
   }
-
   /**
    *
    *
@@ -1296,7 +1279,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)
       GroundingSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GroundingSpec.newBuilder() to construct.
     private GroundingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1382,7 +1364,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * <code>FILTERING_LEVEL_UNSPECIFIED = 0;</code>
        */
       public static final int FILTERING_LEVEL_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1393,7 +1374,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * <code>FILTERING_LEVEL_LOW = 1;</code>
        */
       public static final int FILTERING_LEVEL_LOW_VALUE = 1;
-
       /**
        *
        *
@@ -1495,7 +1475,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int INCLUDE_GROUNDING_SUPPORTS_FIELD_NUMBER = 2;
     private boolean includeGroundingSupports_ = false;
-
     /**
      *
      *
@@ -1518,7 +1497,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int FILTERING_LEVEL_FIELD_NUMBER = 3;
     private int filteringLevel_ = 0;
-
     /**
      *
      *
@@ -1537,7 +1515,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public int getFilteringLevelValue() {
       return filteringLevel_;
     }
-
     /**
      *
      *
@@ -1748,7 +1725,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1958,7 +1934,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private boolean includeGroundingSupports_;
-
       /**
        *
        *
@@ -1978,7 +1953,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getIncludeGroundingSupports() {
         return includeGroundingSupports_;
       }
-
       /**
        *
        *
@@ -2002,7 +1976,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2026,7 +1999,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private int filteringLevel_ = 0;
-
       /**
        *
        *
@@ -2045,7 +2017,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public int getFilteringLevelValue() {
         return filteringLevel_;
       }
-
       /**
        *
        *
@@ -2067,7 +2038,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2094,7 +2064,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 .FilteringLevel.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2121,7 +2090,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2230,7 +2198,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the modelSpec field is set.
      */
     boolean hasModelSpec();
-
     /**
      *
      *
@@ -2246,7 +2213,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.ModelSpec
         getModelSpec();
-
     /**
      *
      *
@@ -2276,7 +2242,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the promptSpec field is set.
      */
     boolean hasPromptSpec();
-
     /**
      *
      *
@@ -2292,7 +2257,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.PromptSpec
         getPromptSpec();
-
     /**
      *
      *
@@ -2336,7 +2300,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return The answerLanguageCode.
      */
     java.lang.String getAnswerLanguageCode();
-
     /**
      *
      *
@@ -2410,7 +2373,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the ignoreLowRelevantContent field is set.
      */
     boolean hasIgnoreLowRelevantContent();
-
     /**
      *
      *
@@ -2451,7 +2413,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     boolean getIgnoreJailBreakingQuery();
   }
-
   /**
    *
    *
@@ -2467,7 +2428,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec)
       AnswerGenerationSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnswerGenerationSpec.newBuilder() to construct.
     private AnswerGenerationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2517,7 +2477,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The modelVersion.
        */
       java.lang.String getModelVersion();
-
       /**
        *
        *
@@ -2532,7 +2491,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       com.google.protobuf.ByteString getModelVersionBytes();
     }
-
     /**
      *
      *
@@ -2548,7 +2506,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.ModelSpec)
         ModelSpecOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ModelSpec.newBuilder() to construct.
       private ModelSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2585,7 +2542,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object modelVersion_ = "";
-
       /**
        *
        *
@@ -2610,7 +2566,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -2824,7 +2779,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3040,7 +2994,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object modelVersion_ = "";
-
         /**
          *
          *
@@ -3064,7 +3017,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3088,7 +3040,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3111,7 +3062,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3130,7 +3080,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3244,7 +3193,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The preamble.
        */
       java.lang.String getPreamble();
-
       /**
        *
        *
@@ -3258,7 +3206,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       com.google.protobuf.ByteString getPreambleBytes();
     }
-
     /**
      *
      *
@@ -3274,7 +3221,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.PromptSpec)
         PromptSpecOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use PromptSpec.newBuilder() to construct.
       private PromptSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3311,7 +3257,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object preamble_ = "";
-
       /**
        *
        *
@@ -3335,7 +3280,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -3548,7 +3492,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3764,7 +3707,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object preamble_ = "";
-
         /**
          *
          *
@@ -3787,7 +3729,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3810,7 +3751,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3832,7 +3772,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3850,7 +3789,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3951,7 +3889,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
             .ModelSpec
         modelSpec_;
-
     /**
      *
      *
@@ -3969,7 +3906,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasModelSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3991,7 +3927,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .ModelSpec.getDefaultInstance()
           : modelSpec_;
     }
-
     /**
      *
      *
@@ -4017,7 +3952,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
             .PromptSpec
         promptSpec_;
-
     /**
      *
      *
@@ -4035,7 +3969,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasPromptSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4058,7 +3991,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .PromptSpec.getDefaultInstance()
           : promptSpec_;
     }
-
     /**
      *
      *
@@ -4082,7 +4014,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int INCLUDE_CITATIONS_FIELD_NUMBER = 3;
     private boolean includeCitations_ = false;
-
     /**
      *
      *
@@ -4104,7 +4035,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answerLanguageCode_ = "";
-
     /**
      *
      *
@@ -4130,7 +4060,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -4159,7 +4088,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int IGNORE_ADVERSARIAL_QUERY_FIELD_NUMBER = 5;
     private boolean ignoreAdversarialQuery_ = false;
-
     /**
      *
      *
@@ -4187,7 +4115,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int IGNORE_NON_ANSWER_SEEKING_QUERY_FIELD_NUMBER = 6;
     private boolean ignoreNonAnswerSeekingQuery_ = false;
-
     /**
      *
      *
@@ -4213,7 +4140,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER = 7;
     private boolean ignoreLowRelevantContent_ = false;
-
     /**
      *
      *
@@ -4233,7 +4159,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasIgnoreLowRelevantContent() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4256,7 +4181,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int IGNORE_JAIL_BREAKING_QUERY_FIELD_NUMBER = 8;
     private boolean ignoreJailBreakingQuery_ = false;
-
     /**
      *
      *
@@ -4533,7 +4457,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4863,7 +4786,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
                   .ModelSpecOrBuilder>
           modelSpecBuilder_;
-
       /**
        *
        *
@@ -4880,7 +4802,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasModelSpec() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -4906,7 +4827,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return modelSpecBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4933,7 +4853,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4958,7 +4877,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4992,7 +4910,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5014,7 +4931,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5033,7 +4949,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getModelSpecFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5057,7 +4972,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               : modelSpec_;
         }
       }
-
       /**
        *
        *
@@ -5102,7 +5016,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
                   .PromptSpecOrBuilder>
           promptSpecBuilder_;
-
       /**
        *
        *
@@ -5119,7 +5032,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasPromptSpec() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -5145,7 +5057,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return promptSpecBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5172,7 +5083,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5197,7 +5107,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5231,7 +5140,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5253,7 +5161,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5272,7 +5179,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getPromptSpecFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5296,7 +5202,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               : promptSpec_;
         }
       }
-
       /**
        *
        *
@@ -5331,7 +5236,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean includeCitations_;
-
       /**
        *
        *
@@ -5348,7 +5252,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getIncludeCitations() {
         return includeCitations_;
       }
-
       /**
        *
        *
@@ -5369,7 +5272,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5390,7 +5292,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object answerLanguageCode_ = "";
-
       /**
        *
        *
@@ -5415,7 +5316,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5440,7 +5340,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5464,7 +5363,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5484,7 +5382,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5511,7 +5408,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean ignoreAdversarialQuery_;
-
       /**
        *
        *
@@ -5536,7 +5432,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getIgnoreAdversarialQuery() {
         return ignoreAdversarialQuery_;
       }
-
       /**
        *
        *
@@ -5565,7 +5460,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5594,7 +5488,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean ignoreNonAnswerSeekingQuery_;
-
       /**
        *
        *
@@ -5617,7 +5510,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getIgnoreNonAnswerSeekingQuery() {
         return ignoreNonAnswerSeekingQuery_;
       }
-
       /**
        *
        *
@@ -5644,7 +5536,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5671,7 +5562,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean ignoreLowRelevantContent_;
-
       /**
        *
        *
@@ -5691,7 +5581,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasIgnoreLowRelevantContent() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -5711,7 +5600,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getIgnoreLowRelevantContent() {
         return ignoreLowRelevantContent_;
       }
-
       /**
        *
        *
@@ -5735,7 +5623,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5759,7 +5646,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private boolean ignoreJailBreakingQuery_;
-
       /**
        *
        *
@@ -5785,7 +5671,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean getIgnoreJailBreakingQuery() {
         return ignoreJailBreakingQuery_;
       }
-
       /**
        *
        *
@@ -5815,7 +5700,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5932,7 +5816,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the searchParams field is set.
      */
     boolean hasSearchParams();
-
     /**
      *
      *
@@ -5948,7 +5831,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParams
         getSearchParams();
-
     /**
      *
      *
@@ -5977,7 +5859,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the searchResultList field is set.
      */
     boolean hasSearchResultList();
-
     /**
      *
      *
@@ -5993,7 +5874,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
         getSearchResultList();
-
     /**
      *
      *
@@ -6010,7 +5890,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.InputCase getInputCase();
   }
-
   /**
    *
    *
@@ -6025,7 +5904,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec)
       SearchSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SearchSpec.newBuilder() to construct.
     private SearchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6101,7 +5979,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The filter.
        */
       java.lang.String getFilter();
-
       /**
        *
        *
@@ -6145,7 +6022,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return Whether the boostSpec field is set.
        */
       boolean hasBoostSpec();
-
       /**
        *
        *
@@ -6160,7 +6036,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The boostSpec.
        */
       com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec getBoostSpec();
-
       /**
        *
        *
@@ -6194,7 +6069,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The orderBy.
        */
       java.lang.String getOrderBy();
-
       /**
        *
        *
@@ -6232,7 +6106,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The enum numeric value on the wire for searchResultMode.
        */
       int getSearchResultModeValue();
-
       /**
        *
        *
@@ -6268,7 +6141,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
           getDataStoreSpecsList();
-
       /**
        *
        *
@@ -6285,7 +6157,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec getDataStoreSpecs(
           int index);
-
       /**
        *
        *
@@ -6301,7 +6172,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * </code>
        */
       int getDataStoreSpecsCount();
-
       /**
        *
        *
@@ -6320,7 +6190,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               ? extends
                   com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
           getDataStoreSpecsOrBuilderList();
-
       /**
        *
        *
@@ -6353,7 +6222,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return Whether the naturalLanguageQueryUnderstandingSpec field is set.
        */
       boolean hasNaturalLanguageQueryUnderstandingSpec();
-
       /**
        *
        *
@@ -6370,7 +6238,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       com.google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec
           getNaturalLanguageQueryUnderstandingSpec();
-
       /**
        *
        *
@@ -6387,7 +6254,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .NaturalLanguageQueryUnderstandingSpecOrBuilder
           getNaturalLanguageQueryUnderstandingSpecOrBuilder();
     }
-
     /**
      *
      *
@@ -6403,7 +6269,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParams)
         SearchParamsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use SearchParams.newBuilder() to construct.
       private SearchParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -6442,7 +6307,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
       public static final int MAX_RETURN_RESULTS_FIELD_NUMBER = 1;
       private int maxReturnResults_ = 0;
-
       /**
        *
        *
@@ -6464,7 +6328,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -6504,7 +6367,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -6547,7 +6409,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       public static final int BOOST_SPEC_FIELD_NUMBER = 3;
       private com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boostSpec_;
-
       /**
        *
        *
@@ -6565,7 +6426,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasBoostSpec() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -6585,7 +6445,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             ? com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.getDefaultInstance()
             : boostSpec_;
       }
-
       /**
        *
        *
@@ -6609,7 +6468,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object orderBy_ = "";
-
       /**
        *
        *
@@ -6640,7 +6498,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -6674,7 +6531,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       public static final int SEARCH_RESULT_MODE_FIELD_NUMBER = 5;
       private int searchResultMode_ = 0;
-
       /**
        *
        *
@@ -6695,7 +6551,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public int getSearchResultModeValue() {
         return searchResultMode_;
       }
-
       /**
        *
        *
@@ -6731,7 +6586,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
           dataStoreSpecs_;
-
       /**
        *
        *
@@ -6751,7 +6605,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getDataStoreSpecsList() {
         return dataStoreSpecs_;
       }
-
       /**
        *
        *
@@ -6773,7 +6626,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getDataStoreSpecsOrBuilderList() {
         return dataStoreSpecs_;
       }
-
       /**
        *
        *
@@ -6792,7 +6644,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public int getDataStoreSpecsCount() {
         return dataStoreSpecs_.size();
       }
-
       /**
        *
        *
@@ -6812,7 +6663,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           int index) {
         return dataStoreSpecs_.get(index);
       }
-
       /**
        *
        *
@@ -6837,7 +6687,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private com.google.cloud.discoveryengine.v1beta.SearchRequest
               .NaturalLanguageQueryUnderstandingSpec
           naturalLanguageQueryUnderstandingSpec_;
-
       /**
        *
        *
@@ -6856,7 +6705,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasNaturalLanguageQueryUnderstandingSpec() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -6880,7 +6728,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 .NaturalLanguageQueryUnderstandingSpec.getDefaultInstance()
             : naturalLanguageQueryUnderstandingSpec_;
       }
-
       /**
        *
        *
@@ -7165,7 +7012,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -7534,7 +7380,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private int maxReturnResults_;
-
         /**
          *
          *
@@ -7551,7 +7396,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public int getMaxReturnResults() {
           return maxReturnResults_;
         }
-
         /**
          *
          *
@@ -7572,7 +7416,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7593,7 +7436,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
 
         private java.lang.Object filter_ = "";
-
         /**
          *
          *
@@ -7632,7 +7474,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -7671,7 +7512,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -7709,7 +7549,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7743,7 +7582,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7789,7 +7627,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder,
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder>
             boostSpecBuilder_;
-
         /**
          *
          *
@@ -7806,7 +7643,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public boolean hasBoostSpec() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -7830,7 +7666,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return boostSpecBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -7856,7 +7691,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7880,7 +7714,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7913,7 +7746,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -7935,7 +7767,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7953,7 +7784,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return getBoostSpecFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -7976,7 +7806,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 : boostSpec_;
           }
         }
-
         /**
          *
          *
@@ -8006,7 +7835,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
 
         private java.lang.Object orderBy_ = "";
-
         /**
          *
          *
@@ -8036,7 +7864,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -8066,7 +7893,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -8095,7 +7921,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8120,7 +7945,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8152,7 +7976,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
 
         private int searchResultMode_ = 0;
-
         /**
          *
          *
@@ -8173,7 +7996,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public int getSearchResultModeValue() {
           return searchResultMode_;
         }
-
         /**
          *
          *
@@ -8197,7 +8019,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8227,7 +8048,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResultMode.UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -8256,7 +8076,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8321,7 +8140,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return dataStoreSpecsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -8343,7 +8161,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return dataStoreSpecsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -8366,7 +8183,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return dataStoreSpecsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -8395,7 +8211,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8423,7 +8238,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8452,7 +8266,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8481,7 +8294,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8508,7 +8320,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8536,7 +8347,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8564,7 +8374,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8589,7 +8398,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8614,7 +8422,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8633,7 +8440,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             getDataStoreSpecsBuilder(int index) {
           return getDataStoreSpecsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -8656,7 +8462,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return dataStoreSpecsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -8681,7 +8486,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return java.util.Collections.unmodifiableList(dataStoreSpecs_);
           }
         }
-
         /**
          *
          *
@@ -8703,7 +8507,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8726,7 +8529,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8778,7 +8580,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.discoveryengine.v1beta.SearchRequest
                     .NaturalLanguageQueryUnderstandingSpecOrBuilder>
             naturalLanguageQueryUnderstandingSpecBuilder_;
-
         /**
          *
          *
@@ -8796,7 +8597,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public boolean hasNaturalLanguageQueryUnderstandingSpec() {
           return ((bitField0_ & 0x00000040) != 0);
         }
-
         /**
          *
          *
@@ -8823,7 +8623,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return naturalLanguageQueryUnderstandingSpecBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -8852,7 +8651,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8878,7 +8676,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8914,7 +8711,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -8937,7 +8733,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8957,7 +8752,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return getNaturalLanguageQueryUnderstandingSpecFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -8982,7 +8776,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 : naturalLanguageQueryUnderstandingSpec_;
           }
         }
-
         /**
          *
          *
@@ -9109,7 +8902,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult>
           getSearchResultsList();
-
       /**
        *
        *
@@ -9124,7 +8916,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
               .SearchResult
           getSearchResults(int index);
-
       /**
        *
        *
@@ -9137,7 +8928,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * </code>
        */
       int getSearchResultsCount();
-
       /**
        *
        *
@@ -9154,7 +8944,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResultOrBuilder>
           getSearchResultsOrBuilderList();
-
       /**
        *
        *
@@ -9170,7 +8959,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .SearchResultOrBuilder
           getSearchResultsOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -9186,7 +8974,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList)
         SearchResultListOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use SearchResultList.newBuilder() to construct.
       private SearchResultList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -9238,7 +9025,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * @return Whether the unstructuredDocumentInfo field is set.
          */
         boolean hasUnstructuredDocumentInfo();
-
         /**
          *
          *
@@ -9255,7 +9041,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                 .SearchResult.UnstructuredDocumentInfo
             getUnstructuredDocumentInfo();
-
         /**
          *
          *
@@ -9285,7 +9070,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * @return Whether the chunkInfo field is set.
          */
         boolean hasChunkInfo();
-
         /**
          *
          *
@@ -9302,7 +9086,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                 .SearchResult.ChunkInfo
             getChunkInfo();
-
         /**
          *
          *
@@ -9322,7 +9105,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 .SearchResult.ContentCase
             getContentCase();
       }
-
       /**
        *
        *
@@ -9338,7 +9120,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult)
           SearchResultOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use SearchResult.newBuilder() to construct.
         private SearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -9386,7 +9167,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return The document.
            */
           java.lang.String getDocument();
-
           /**
            *
            *
@@ -9412,7 +9192,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return The uri.
            */
           java.lang.String getUri();
-
           /**
            *
            *
@@ -9438,7 +9217,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return The title.
            */
           java.lang.String getTitle();
-
           /**
            *
            *
@@ -9469,7 +9247,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.DocumentContext>
               getDocumentContextsList();
-
           /**
            *
            *
@@ -9486,7 +9263,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult.UnstructuredDocumentInfo.DocumentContext
               getDocumentContexts(int index);
-
           /**
            *
            *
@@ -9501,7 +9277,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * </code>
            */
           int getDocumentContextsCount();
-
           /**
            *
            *
@@ -9521,7 +9296,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo
                           .DocumentContextOrBuilder>
               getDocumentContextsOrBuilderList();
-
           /**
            *
            *
@@ -9554,7 +9328,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveSegment>
               getExtractiveSegmentsList();
-
           /**
            *
            *
@@ -9569,7 +9342,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult.UnstructuredDocumentInfo.ExtractiveSegment
               getExtractiveSegments(int index);
-
           /**
            *
            *
@@ -9582,7 +9354,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * </code>
            */
           int getExtractiveSegmentsCount();
-
           /**
            *
            *
@@ -9600,7 +9371,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo
                           .ExtractiveSegmentOrBuilder>
               getExtractiveSegmentsOrBuilderList();
-
           /**
            *
            *
@@ -9635,7 +9405,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer>
               getExtractiveAnswersList();
-
           /**
            *
            *
@@ -9654,7 +9423,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
               getExtractiveAnswers(int index);
-
           /**
            *
            *
@@ -9671,7 +9439,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            */
           @java.lang.Deprecated
           int getExtractiveAnswersCount();
-
           /**
            *
            *
@@ -9693,7 +9460,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo
                           .ExtractiveAnswerOrBuilder>
               getExtractiveAnswersOrBuilderList();
-
           /**
            *
            *
@@ -9713,7 +9479,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResult.UnstructuredDocumentInfo.ExtractiveAnswerOrBuilder
               getExtractiveAnswersOrBuilder(int index);
         }
-
         /**
          *
          *
@@ -9730,7 +9495,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo)
             UnstructuredDocumentInfoOrBuilder {
           private static final long serialVersionUID = 0L;
-
           // Use UnstructuredDocumentInfo.newBuilder() to construct.
           private UnstructuredDocumentInfo(
               com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -9786,7 +9550,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The pageIdentifier.
              */
             java.lang.String getPageIdentifier();
-
             /**
              *
              *
@@ -9812,7 +9575,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The content.
              */
             java.lang.String getContent();
-
             /**
              *
              *
@@ -9826,7 +9588,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              */
             com.google.protobuf.ByteString getContentBytes();
           }
-
           /**
            *
            *
@@ -9842,7 +9603,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.DocumentContext)
               DocumentContextOrBuilder {
             private static final long serialVersionUID = 0L;
-
             // Use DocumentContext.newBuilder() to construct.
             private DocumentContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
               super(builder);
@@ -9882,7 +9642,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object pageIdentifier_ = "";
-
             /**
              *
              *
@@ -9906,7 +9665,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -9935,7 +9693,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object content_ = "";
-
             /**
              *
              *
@@ -9959,7 +9716,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -10188,7 +9944,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               Builder builder = new Builder(parent);
               return builder;
             }
-
             /**
              *
              *
@@ -10428,7 +10183,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               private int bitField0_;
 
               private java.lang.Object pageIdentifier_ = "";
-
               /**
                *
                *
@@ -10451,7 +10205,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -10474,7 +10227,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -10496,7 +10248,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -10514,7 +10265,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -10539,7 +10289,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
 
               private java.lang.Object content_ = "";
-
               /**
                *
                *
@@ -10562,7 +10311,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -10585,7 +10333,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -10607,7 +10354,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -10625,7 +10371,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -10739,7 +10484,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The pageIdentifier.
              */
             java.lang.String getPageIdentifier();
-
             /**
              *
              *
@@ -10765,7 +10509,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The content.
              */
             java.lang.String getContent();
-
             /**
              *
              *
@@ -10779,7 +10522,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              */
             com.google.protobuf.ByteString getContentBytes();
           }
-
           /**
            *
            *
@@ -10798,7 +10540,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveSegment)
               ExtractiveSegmentOrBuilder {
             private static final long serialVersionUID = 0L;
-
             // Use ExtractiveSegment.newBuilder() to construct.
             private ExtractiveSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
               super(builder);
@@ -10838,7 +10579,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object pageIdentifier_ = "";
-
             /**
              *
              *
@@ -10862,7 +10602,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -10891,7 +10630,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object content_ = "";
-
             /**
              *
              *
@@ -10915,7 +10653,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -11144,7 +10881,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               Builder builder = new Builder(parent);
               return builder;
             }
-
             /**
              *
              *
@@ -11387,7 +11123,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               private int bitField0_;
 
               private java.lang.Object pageIdentifier_ = "";
-
               /**
                *
                *
@@ -11410,7 +11145,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -11433,7 +11167,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -11455,7 +11188,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -11473,7 +11205,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -11498,7 +11229,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
 
               private java.lang.Object content_ = "";
-
               /**
                *
                *
@@ -11521,7 +11251,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -11544,7 +11273,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -11566,7 +11294,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -11584,7 +11311,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -11698,7 +11424,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The pageIdentifier.
              */
             java.lang.String getPageIdentifier();
-
             /**
              *
              *
@@ -11724,7 +11449,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The content.
              */
             java.lang.String getContent();
-
             /**
              *
              *
@@ -11738,7 +11462,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              */
             com.google.protobuf.ByteString getContentBytes();
           }
-
           /**
            *
            *
@@ -11755,7 +11478,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer)
               ExtractiveAnswerOrBuilder {
             private static final long serialVersionUID = 0L;
-
             // Use ExtractiveAnswer.newBuilder() to construct.
             private ExtractiveAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
               super(builder);
@@ -11795,7 +11517,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object pageIdentifier_ = "";
-
             /**
              *
              *
@@ -11819,7 +11540,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -11848,7 +11568,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object content_ = "";
-
             /**
              *
              *
@@ -11872,7 +11591,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -12101,7 +11819,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               Builder builder = new Builder(parent);
               return builder;
             }
-
             /**
              *
              *
@@ -12342,7 +12059,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               private int bitField0_;
 
               private java.lang.Object pageIdentifier_ = "";
-
               /**
                *
                *
@@ -12365,7 +12081,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -12388,7 +12103,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -12410,7 +12124,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -12428,7 +12141,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -12453,7 +12165,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
 
               private java.lang.Object content_ = "";
-
               /**
                *
                *
@@ -12476,7 +12187,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -12499,7 +12209,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -12521,7 +12230,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -12539,7 +12247,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -12640,7 +12347,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object document_ = "";
-
           /**
            *
            *
@@ -12664,7 +12370,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return s;
             }
           }
-
           /**
            *
            *
@@ -12693,7 +12398,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object uri_ = "";
-
           /**
            *
            *
@@ -12717,7 +12421,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return s;
             }
           }
-
           /**
            *
            *
@@ -12746,7 +12449,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object title_ = "";
-
           /**
            *
            *
@@ -12770,7 +12472,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return s;
             }
           }
-
           /**
            *
            *
@@ -12802,7 +12503,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.DocumentContext>
               documentContexts_;
-
           /**
            *
            *
@@ -12823,7 +12523,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getDocumentContextsList() {
             return documentContexts_;
           }
-
           /**
            *
            *
@@ -12846,7 +12545,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getDocumentContextsOrBuilderList() {
             return documentContexts_;
           }
-
           /**
            *
            *
@@ -12864,7 +12562,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           public int getDocumentContextsCount() {
             return documentContexts_.size();
           }
-
           /**
            *
            *
@@ -12884,7 +12581,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getDocumentContexts(int index) {
             return documentContexts_.get(index);
           }
-
           /**
            *
            *
@@ -12912,7 +12608,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveSegment>
               extractiveSegments_;
-
           /**
            *
            *
@@ -12931,7 +12626,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getExtractiveSegmentsList() {
             return extractiveSegments_;
           }
-
           /**
            *
            *
@@ -12952,7 +12646,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getExtractiveSegmentsOrBuilderList() {
             return extractiveSegments_;
           }
-
           /**
            *
            *
@@ -12968,7 +12661,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           public int getExtractiveSegmentsCount() {
             return extractiveSegments_.size();
           }
-
           /**
            *
            *
@@ -12986,7 +12678,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getExtractiveSegments(int index) {
             return extractiveSegments_.get(index);
           }
-
           /**
            *
            *
@@ -13012,7 +12703,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer>
               extractiveAnswers_;
-
           /**
            *
            *
@@ -13035,7 +12725,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getExtractiveAnswersList() {
             return extractiveAnswers_;
           }
-
           /**
            *
            *
@@ -13060,7 +12749,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getExtractiveAnswersOrBuilderList() {
             return extractiveAnswers_;
           }
-
           /**
            *
            *
@@ -13080,7 +12768,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           public int getExtractiveAnswersCount() {
             return extractiveAnswers_.size();
           }
-
           /**
            *
            *
@@ -13102,7 +12789,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getExtractiveAnswers(int index) {
             return extractiveAnswers_.get(index);
           }
-
           /**
            *
            *
@@ -13376,7 +13062,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             Builder builder = new Builder(parent);
             return builder;
           }
-
           /**
            *
            *
@@ -13818,7 +13503,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             private int bitField0_;
 
             private java.lang.Object document_ = "";
-
             /**
              *
              *
@@ -13841,7 +13525,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -13864,7 +13547,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -13886,7 +13568,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -13904,7 +13585,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -13929,7 +13609,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
 
             private java.lang.Object uri_ = "";
-
             /**
              *
              *
@@ -13952,7 +13631,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -13975,7 +13653,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -13997,7 +13674,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -14015,7 +13691,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -14040,7 +13715,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
 
             private java.lang.Object title_ = "";
-
             /**
              *
              *
@@ -14063,7 +13737,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -14086,7 +13759,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -14108,7 +13780,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -14126,7 +13797,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -14200,7 +13870,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return documentContextsBuilder_.getMessageList();
               }
             }
-
             /**
              *
              *
@@ -14221,7 +13890,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return documentContextsBuilder_.getCount();
               }
             }
-
             /**
              *
              *
@@ -14244,7 +13912,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return documentContextsBuilder_.getMessage(index);
               }
             }
-
             /**
              *
              *
@@ -14275,7 +13942,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14304,7 +13970,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14334,7 +13999,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14365,7 +14029,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14393,7 +14056,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14422,7 +14084,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14452,7 +14113,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14476,7 +14136,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14500,7 +14159,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14519,7 +14177,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 getDocumentContextsBuilder(int index) {
               return getDocumentContextsFieldBuilder().getBuilder(index);
             }
-
             /**
              *
              *
@@ -14542,7 +14199,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return documentContextsBuilder_.getMessageOrBuilder(index);
               }
             }
-
             /**
              *
              *
@@ -14568,7 +14224,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return java.util.Collections.unmodifiableList(documentContexts_);
               }
             }
-
             /**
              *
              *
@@ -14591,7 +14246,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo.DocumentContext
                           .getDefaultInstance());
             }
-
             /**
              *
              *
@@ -14615,7 +14269,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo.DocumentContext
                           .getDefaultInstance());
             }
-
             /**
              *
              *
@@ -14715,7 +14368,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveSegmentsBuilder_.getMessageList();
               }
             }
-
             /**
              *
              *
@@ -14734,7 +14386,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveSegmentsBuilder_.getCount();
               }
             }
-
             /**
              *
              *
@@ -14755,7 +14406,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveSegmentsBuilder_.getMessage(index);
               }
             }
-
             /**
              *
              *
@@ -14784,7 +14434,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14811,7 +14460,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14839,7 +14487,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14868,7 +14515,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14894,7 +14540,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14921,7 +14566,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14949,7 +14593,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14971,7 +14614,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -14993,7 +14635,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15011,7 +14652,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 getExtractiveSegmentsBuilder(int index) {
               return getExtractiveSegmentsFieldBuilder().getBuilder(index);
             }
-
             /**
              *
              *
@@ -15033,7 +14673,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveSegmentsBuilder_.getMessageOrBuilder(index);
               }
             }
-
             /**
              *
              *
@@ -15057,7 +14696,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return java.util.Collections.unmodifiableList(extractiveSegments_);
               }
             }
-
             /**
              *
              *
@@ -15079,7 +14717,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveSegment
                           .getDefaultInstance());
             }
-
             /**
              *
              *
@@ -15102,7 +14739,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveSegment
                           .getDefaultInstance());
             }
-
             /**
              *
              *
@@ -15205,7 +14841,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveAnswersBuilder_.getMessageList();
               }
             }
-
             /**
              *
              *
@@ -15228,7 +14863,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveAnswersBuilder_.getCount();
               }
             }
-
             /**
              *
              *
@@ -15253,7 +14887,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveAnswersBuilder_.getMessage(index);
               }
             }
-
             /**
              *
              *
@@ -15286,7 +14919,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15317,7 +14949,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15349,7 +14980,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15382,7 +15012,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15412,7 +15041,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15443,7 +15071,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15475,7 +15102,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15501,7 +15127,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15527,7 +15152,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -15548,7 +15172,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 getExtractiveAnswersBuilder(int index) {
               return getExtractiveAnswersFieldBuilder().getBuilder(index);
             }
-
             /**
              *
              *
@@ -15574,7 +15197,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return extractiveAnswersBuilder_.getMessageOrBuilder(index);
               }
             }
-
             /**
              *
              *
@@ -15602,7 +15224,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return java.util.Collections.unmodifiableList(extractiveAnswers_);
               }
             }
-
             /**
              *
              *
@@ -15627,7 +15248,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
                           .getDefaultInstance());
             }
-
             /**
              *
              *
@@ -15653,7 +15273,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                           .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
                           .getDefaultInstance());
             }
-
             /**
              *
              *
@@ -15797,7 +15416,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return The chunk.
            */
           java.lang.String getChunk();
-
           /**
            *
            *
@@ -15823,7 +15441,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return The content.
            */
           java.lang.String getContent();
-
           /**
            *
            *
@@ -15851,7 +15468,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return Whether the documentMetadata field is set.
            */
           boolean hasDocumentMetadata();
-
           /**
            *
            *
@@ -15868,7 +15484,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult.ChunkInfo.DocumentMetadata
               getDocumentMetadata();
-
           /**
            *
            *
@@ -15884,7 +15499,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResult.ChunkInfo.DocumentMetadataOrBuilder
               getDocumentMetadataOrBuilder();
         }
-
         /**
          *
          *
@@ -15900,7 +15514,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo)
             ChunkInfoOrBuilder {
           private static final long serialVersionUID = 0L;
-
           // Use ChunkInfo.newBuilder() to construct.
           private ChunkInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
@@ -15951,7 +15564,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The uri.
              */
             java.lang.String getUri();
-
             /**
              *
              *
@@ -15977,7 +15589,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * @return The title.
              */
             java.lang.String getTitle();
-
             /**
              *
              *
@@ -15991,7 +15602,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              */
             com.google.protobuf.ByteString getTitleBytes();
           }
-
           /**
            *
            *
@@ -16008,7 +15618,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
               DocumentMetadataOrBuilder {
             private static final long serialVersionUID = 0L;
-
             // Use DocumentMetadata.newBuilder() to construct.
             private DocumentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
               super(builder);
@@ -16046,7 +15655,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object uri_ = "";
-
             /**
              *
              *
@@ -16070,7 +15678,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -16099,7 +15706,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             @SuppressWarnings("serial")
             private volatile java.lang.Object title_ = "";
-
             /**
              *
              *
@@ -16123,7 +15729,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return s;
               }
             }
-
             /**
              *
              *
@@ -16350,7 +15955,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               Builder builder = new Builder(parent);
               return builder;
             }
-
             /**
              *
              *
@@ -16586,7 +16190,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               private int bitField0_;
 
               private java.lang.Object uri_ = "";
-
               /**
                *
                *
@@ -16609,7 +16212,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -16632,7 +16234,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -16654,7 +16255,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -16672,7 +16272,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -16697,7 +16296,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
 
               private java.lang.Object title_ = "";
-
               /**
                *
                *
@@ -16720,7 +16318,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (java.lang.String) ref;
                 }
               }
-
               /**
                *
                *
@@ -16743,7 +16340,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   return (com.google.protobuf.ByteString) ref;
                 }
               }
-
               /**
                *
                *
@@ -16765,7 +16361,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -16783,7 +16378,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 onChanged();
                 return this;
               }
-
               /**
                *
                *
@@ -16884,7 +16478,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object chunk_ = "";
-
           /**
            *
            *
@@ -16908,7 +16501,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return s;
             }
           }
-
           /**
            *
            *
@@ -16937,7 +16529,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object content_ = "";
-
           /**
            *
            *
@@ -16961,7 +16552,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return s;
             }
           }
-
           /**
            *
            *
@@ -16990,7 +16580,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                   .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
               documentMetadata_;
-
           /**
            *
            *
@@ -17008,7 +16597,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           public boolean hasDocumentMetadata() {
             return ((bitField0_ & 0x00000001) != 0);
           }
-
           /**
            *
            *
@@ -17031,7 +16619,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.getDefaultInstance()
                 : documentMetadata_;
           }
-
           /**
            *
            *
@@ -17271,7 +16858,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             Builder builder = new Builder(parent);
             return builder;
           }
-
           /**
            *
            *
@@ -17537,7 +17123,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             private int bitField0_;
 
             private java.lang.Object chunk_ = "";
-
             /**
              *
              *
@@ -17560,7 +17145,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -17583,7 +17167,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -17605,7 +17188,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17623,7 +17205,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17648,7 +17229,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
 
             private java.lang.Object content_ = "";
-
             /**
              *
              *
@@ -17671,7 +17251,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -17694,7 +17273,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -17716,7 +17294,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17734,7 +17311,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17769,7 +17345,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                         .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder>
                 documentMetadataBuilder_;
-
             /**
              *
              *
@@ -17786,7 +17361,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             public boolean hasDocumentMetadata() {
               return ((bitField0_ & 0x00000004) != 0);
             }
-
             /**
              *
              *
@@ -17813,7 +17387,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 return documentMetadataBuilder_.getMessage();
               }
             }
-
             /**
              *
              *
@@ -17841,7 +17414,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17866,7 +17438,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17902,7 +17473,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
               return this;
             }
-
             /**
              *
              *
@@ -17924,7 +17494,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -17943,7 +17512,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               onChanged();
               return getDocumentMetadataFieldBuilder().getBuilder();
             }
-
             /**
              *
              *
@@ -17968,7 +17536,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     : documentMetadata_;
               }
             }
-
             /**
              *
              *
@@ -18092,7 +17659,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           private ContentCase(int value) {
             this.value = value;
           }
-
           /**
            * @param value The number of the enum to look for.
            * @return The enum associated with the given number.
@@ -18126,7 +17692,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
 
         public static final int UNSTRUCTURED_DOCUMENT_INFO_FIELD_NUMBER = 1;
-
         /**
          *
          *
@@ -18144,7 +17709,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public boolean hasUnstructuredDocumentInfo() {
           return contentCase_ == 1;
         }
-
         /**
          *
          *
@@ -18170,7 +17734,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
               .SearchResultList.SearchResult.UnstructuredDocumentInfo.getDefaultInstance();
         }
-
         /**
          *
          *
@@ -18196,7 +17759,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
 
         public static final int CHUNK_INFO_FIELD_NUMBER = 2;
-
         /**
          *
          *
@@ -18214,7 +17776,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public boolean hasChunkInfo() {
           return contentCase_ == 2;
         }
-
         /**
          *
          *
@@ -18240,7 +17801,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
               .SearchResultList.SearchResult.ChunkInfo.getDefaultInstance();
         }
-
         /**
          *
          *
@@ -18503,7 +18063,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -18780,7 +18339,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfoOrBuilder>
               unstructuredDocumentInfoBuilder_;
-
           /**
            *
            *
@@ -18798,7 +18356,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           public boolean hasUnstructuredDocumentInfo() {
             return contentCase_ == 1;
           }
-
           /**
            *
            *
@@ -18832,7 +18389,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResultList.SearchResult.UnstructuredDocumentInfo.getDefaultInstance();
             }
           }
-
           /**
            *
            *
@@ -18860,7 +18416,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             contentCase_ = 1;
             return this;
           }
-
           /**
            *
            *
@@ -18885,7 +18440,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             contentCase_ = 1;
             return this;
           }
-
           /**
            *
            *
@@ -18929,7 +18483,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             contentCase_ = 1;
             return this;
           }
-
           /**
            *
            *
@@ -18957,7 +18510,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
             return this;
           }
-
           /**
            *
            *
@@ -18974,7 +18526,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getUnstructuredDocumentInfoBuilder() {
             return getUnstructuredDocumentInfoFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -19002,7 +18553,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResultList.SearchResult.UnstructuredDocumentInfo.getDefaultInstance();
             }
           }
-
           /**
            *
            *
@@ -19057,7 +18607,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.ChunkInfoOrBuilder>
               chunkInfoBuilder_;
-
           /**
            *
            *
@@ -19075,7 +18624,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           public boolean hasChunkInfo() {
             return contentCase_ == 2;
           }
-
           /**
            *
            *
@@ -19109,7 +18657,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResultList.SearchResult.ChunkInfo.getDefaultInstance();
             }
           }
-
           /**
            *
            *
@@ -19137,7 +18684,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             contentCase_ = 2;
             return this;
           }
-
           /**
            *
            *
@@ -19162,7 +18708,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             contentCase_ = 2;
             return this;
           }
-
           /**
            *
            *
@@ -19205,7 +18750,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             contentCase_ = 2;
             return this;
           }
-
           /**
            *
            *
@@ -19233,7 +18777,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
             return this;
           }
-
           /**
            *
            *
@@ -19250,7 +18793,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               getChunkInfoBuilder() {
             return getChunkInfoFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -19278,7 +18820,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   .SearchResultList.SearchResult.ChunkInfo.getDefaultInstance();
             }
           }
-
           /**
            *
            *
@@ -19403,7 +18944,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult>
           searchResults_;
-
       /**
        *
        *
@@ -19422,7 +18962,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getSearchResultsList() {
         return searchResults_;
       }
-
       /**
        *
        *
@@ -19442,7 +18981,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getSearchResultsOrBuilderList() {
         return searchResults_;
       }
-
       /**
        *
        *
@@ -19458,7 +18996,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public int getSearchResultsCount() {
         return searchResults_.size();
       }
-
       /**
        *
        *
@@ -19476,7 +19013,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getSearchResults(int index) {
         return searchResults_.get(index);
       }
-
       /**
        *
        *
@@ -19686,7 +19222,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -19995,7 +19530,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return searchResultsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -20014,7 +19548,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return searchResultsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -20035,7 +19568,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return searchResultsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -20064,7 +19596,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20090,7 +19621,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20118,7 +19648,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20147,7 +19676,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20172,7 +19700,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20198,7 +19725,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20225,7 +19751,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20247,7 +19772,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20269,7 +19793,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           return this;
         }
-
         /**
          *
          *
@@ -20286,7 +19809,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             getSearchResultsBuilder(int index) {
           return getSearchResultsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -20307,7 +19829,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return searchResultsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -20330,7 +19851,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             return java.util.Collections.unmodifiableList(searchResults_);
           }
         }
-
         /**
          *
          *
@@ -20350,7 +19870,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -20371,7 +19890,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -20504,7 +20022,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private InputCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -20538,7 +20055,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int SEARCH_PARAMS_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -20556,7 +20072,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSearchParams() {
       return inputCase_ == 1;
     }
-
     /**
      *
      *
@@ -20580,7 +20095,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParams
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -20605,7 +20119,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int SEARCH_RESULT_LIST_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -20623,7 +20136,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSearchResultList() {
       return inputCase_ == 2;
     }
-
     /**
      *
      *
@@ -20648,7 +20160,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -20876,7 +20387,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -21129,7 +20639,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                   .SearchParamsOrBuilder>
           searchParamsBuilder_;
-
       /**
        *
        *
@@ -21147,7 +20656,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasSearchParams() {
         return inputCase_ == 1;
       }
-
       /**
        *
        *
@@ -21180,7 +20688,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -21207,7 +20714,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         inputCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -21231,7 +20737,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         inputCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -21273,7 +20778,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         inputCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -21301,7 +20805,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -21318,7 +20821,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getSearchParamsBuilder() {
         return getSearchParamsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -21346,7 +20848,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -21399,7 +20900,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                   .SearchResultListOrBuilder>
           searchResultListBuilder_;
-
       /**
        *
        *
@@ -21417,7 +20917,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasSearchResultList() {
         return inputCase_ == 2;
       }
-
       /**
        *
        *
@@ -21450,7 +20949,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .SearchResultList.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -21477,7 +20975,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         inputCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -21502,7 +20999,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         inputCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -21544,7 +21040,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         inputCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -21572,7 +21067,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -21589,7 +21083,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getSearchResultListBuilder() {
         return getSearchResultListFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -21617,7 +21110,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .SearchResultList.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -21750,7 +21242,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the queryClassificationSpec field is set.
      */
     boolean hasQueryClassificationSpec();
-
     /**
      *
      *
@@ -21767,7 +21258,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
             .QueryClassificationSpec
         getQueryClassificationSpec();
-
     /**
      *
      *
@@ -21797,7 +21287,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the queryRephraserSpec field is set.
      */
     boolean hasQueryRephraserSpec();
-
     /**
      *
      *
@@ -21814,7 +21303,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
             .QueryRephraserSpec
         getQueryRephraserSpec();
-
     /**
      *
      *
@@ -21830,7 +21318,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             .QueryRephraserSpecOrBuilder
         getQueryRephraserSpecOrBuilder();
   }
-
   /**
    *
    *
@@ -21846,7 +21333,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec)
       QueryUnderstandingSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use QueryUnderstandingSpec.newBuilder() to construct.
     private QueryUnderstandingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -21899,7 +21385,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
                   .QueryClassificationSpec.Type>
           getTypesList();
-
       /**
        *
        *
@@ -21914,7 +21399,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The count of types.
        */
       int getTypesCount();
-
       /**
        *
        *
@@ -21932,7 +21416,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
               .QueryClassificationSpec.Type
           getTypes(int index);
-
       /**
        *
        *
@@ -21947,7 +21430,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return A list containing the enum numeric values on the wire for types.
        */
       java.util.List<java.lang.Integer> getTypesValueList();
-
       /**
        *
        *
@@ -21964,7 +21446,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       int getTypesValue(int index);
     }
-
     /**
      *
      *
@@ -21980,7 +21461,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryClassificationSpec)
         QueryClassificationSpecOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use QueryClassificationSpec.newBuilder() to construct.
       private QueryClassificationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -22087,7 +21567,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>TYPE_UNSPECIFIED = 0;</code>
          */
         public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -22098,7 +21577,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>ADVERSARIAL_QUERY = 1;</code>
          */
         public static final int ADVERSARIAL_QUERY_VALUE = 1;
-
         /**
          *
          *
@@ -22109,7 +21587,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
          */
         public static final int NON_ANSWER_SEEKING_QUERY_VALUE = 2;
-
         /**
          *
          *
@@ -22120,7 +21597,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         public static final int JAIL_BREAKING_QUERY_VALUE = 3;
-
         /**
          *
          *
@@ -22251,7 +21727,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                       : result;
                 }
               };
-
       /**
        *
        *
@@ -22275,7 +21750,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
                 .QueryClassificationSpec.Type>(types_, types_converter_);
       }
-
       /**
        *
        *
@@ -22293,7 +21767,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public int getTypesCount() {
         return types_.size();
       }
-
       /**
        *
        *
@@ -22314,7 +21787,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           getTypes(int index) {
         return types_converter_.convert(types_.get(index));
       }
-
       /**
        *
        *
@@ -22332,7 +21804,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public java.util.List<java.lang.Integer> getTypesValueList() {
         return types_;
       }
-
       /**
        *
        *
@@ -22560,7 +22031,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -22813,7 +22283,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             bitField0_ |= 0x00000001;
           }
         }
-
         /**
          *
          *
@@ -22836,7 +22305,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
                   .QueryClassificationSpec.Type>(types_, types_converter_);
         }
-
         /**
          *
          *
@@ -22853,7 +22321,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public int getTypesCount() {
           return types_.size();
         }
-
         /**
          *
          *
@@ -22873,7 +22340,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             getTypes(int index) {
           return types_converter_.convert(types_.get(index));
         }
-
         /**
          *
          *
@@ -22902,7 +22368,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -22929,7 +22394,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -22959,7 +22423,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -22979,7 +22442,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -22996,7 +22458,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public java.util.List<java.lang.Integer> getTypesValueList() {
           return java.util.Collections.unmodifiableList(types_);
         }
-
         /**
          *
          *
@@ -23014,7 +22475,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public int getTypesValue(int index) {
           return types_.get(index);
         }
-
         /**
          *
          *
@@ -23036,7 +22496,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -23057,7 +22516,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -23186,7 +22644,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       int getMaxRephraseSteps();
     }
-
     /**
      *
      *
@@ -23202,7 +22659,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec)
         QueryRephraserSpecOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use QueryRephraserSpec.newBuilder() to construct.
       private QueryRephraserSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -23235,7 +22691,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       public static final int DISABLE_FIELD_NUMBER = 1;
       private boolean disable_ = false;
-
       /**
        *
        *
@@ -23254,7 +22709,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
       public static final int MAX_REPHRASE_STEPS_FIELD_NUMBER = 2;
       private int maxRephraseSteps_ = 0;
-
       /**
        *
        *
@@ -23472,7 +22926,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -23701,7 +23154,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private boolean disable_;
-
         /**
          *
          *
@@ -23717,7 +23169,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public boolean getDisable() {
           return disable_;
         }
-
         /**
          *
          *
@@ -23737,7 +23188,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -23757,7 +23207,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
 
         private int maxRephraseSteps_;
-
         /**
          *
          *
@@ -23775,7 +23224,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public int getMaxRephraseSteps() {
           return maxRephraseSteps_;
         }
-
         /**
          *
          *
@@ -23797,7 +23245,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -23895,7 +23342,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
             .QueryClassificationSpec
         queryClassificationSpec_;
-
     /**
      *
      *
@@ -23913,7 +23359,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasQueryClassificationSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -23936,7 +23381,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .QueryClassificationSpec.getDefaultInstance()
           : queryClassificationSpec_;
     }
-
     /**
      *
      *
@@ -23962,7 +23406,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
             .QueryRephraserSpec
         queryRephraserSpec_;
-
     /**
      *
      *
@@ -23980,7 +23423,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasQueryRephraserSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -24003,7 +23445,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               .QueryRephraserSpec.getDefaultInstance()
           : queryRephraserSpec_;
     }
-
     /**
      *
      *
@@ -24217,7 +23658,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -24474,7 +23914,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
                   .QueryClassificationSpecOrBuilder>
           queryClassificationSpecBuilder_;
-
       /**
        *
        *
@@ -24491,7 +23930,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasQueryClassificationSpec() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -24517,7 +23955,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return queryClassificationSpecBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -24545,7 +23982,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24570,7 +24006,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24605,7 +24040,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -24627,7 +24061,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24646,7 +24079,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getQueryClassificationSpecFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -24670,7 +24102,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               : queryClassificationSpec_;
         }
       }
-
       /**
        *
        *
@@ -24716,7 +24147,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
                   .QueryRephraserSpecOrBuilder>
           queryRephraserSpecBuilder_;
-
       /**
        *
        *
@@ -24733,7 +24163,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasQueryRephraserSpec() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -24759,7 +24188,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return queryRephraserSpecBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -24787,7 +24215,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24812,7 +24239,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24847,7 +24273,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -24869,7 +24294,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24888,7 +24312,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getQueryRephraserSpecFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -24912,7 +24335,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               : queryRephraserSpec_;
         }
       }
-
       /**
        *
        *
@@ -25021,7 +24443,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object servingConfig_ = "";
-
   /**
    *
    *
@@ -25052,7 +24473,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -25086,7 +24506,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int QUERY_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.Query query_;
-
   /**
    *
    *
@@ -25104,7 +24523,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -25124,7 +24542,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.discoveryengine.v1beta.Query.getDefaultInstance()
         : query_;
   }
-
   /**
    *
    *
@@ -25147,7 +24564,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object session_ = "";
-
   /**
    *
    *
@@ -25176,7 +24592,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -25208,7 +24623,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SAFETY_SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SafetySpec safetySpec_;
-
   /**
    *
    *
@@ -25225,7 +24639,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSafetySpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -25244,7 +24657,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SafetySpec.getDefaultInstance()
         : safetySpec_;
   }
-
   /**
    *
    *
@@ -25266,7 +24678,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public static final int RELATED_QUESTIONS_SPEC_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.RelatedQuestionsSpec
       relatedQuestionsSpec_;
-
   /**
    *
    *
@@ -25284,7 +24695,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRelatedQuestionsSpec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -25306,7 +24716,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : relatedQuestionsSpec_;
   }
-
   /**
    *
    *
@@ -25329,7 +24738,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int GROUNDING_SPEC_FIELD_NUMBER = 6;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec groundingSpec_;
-
   /**
    *
    *
@@ -25347,7 +24755,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasGroundingSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -25369,7 +24776,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : groundingSpec_;
   }
-
   /**
    *
    *
@@ -25393,7 +24799,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public static final int ANSWER_GENERATION_SPEC_FIELD_NUMBER = 7;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
       answerGenerationSpec_;
-
   /**
    *
    *
@@ -25411,7 +24816,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasAnswerGenerationSpec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -25433,7 +24837,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : answerGenerationSpec_;
   }
-
   /**
    *
    *
@@ -25456,7 +24859,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SEARCH_SPEC_FIELD_NUMBER = 8;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec searchSpec_;
-
   /**
    *
    *
@@ -25473,7 +24875,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSearchSpec() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -25492,7 +24893,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.getDefaultInstance()
         : searchSpec_;
   }
-
   /**
    *
    *
@@ -25514,7 +24914,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public static final int QUERY_UNDERSTANDING_SPEC_FIELD_NUMBER = 9;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
       queryUnderstandingSpec_;
-
   /**
    *
    *
@@ -25532,7 +24931,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasQueryUnderstandingSpec() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -25554,7 +24952,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : queryUnderstandingSpec_;
   }
-
   /**
    *
    *
@@ -25577,7 +24974,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ASYNCHRONOUS_MODE_FIELD_NUMBER = 10;
   private boolean asynchronousMode_ = false;
-
   /**
    *
    *
@@ -25613,7 +25009,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userPseudoId_ = "";
-
   /**
    *
    *
@@ -25645,7 +25040,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -25704,7 +25098,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public int getUserLabelsCount() {
     return internalGetUserLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -25737,14 +25130,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
     return getUserLabelsMap();
   }
-
   /**
    *
    *
@@ -25774,7 +25165,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
     return internalGetUserLabels().getMap();
   }
-
   /**
    *
    *
@@ -25811,7 +25201,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -26154,7 +25543,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -26581,7 +25969,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object servingConfig_ = "";
-
     /**
      *
      *
@@ -26611,7 +25998,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -26641,7 +26027,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -26670,7 +26055,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -26695,7 +26079,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -26732,7 +26115,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.Query.Builder,
             com.google.cloud.discoveryengine.v1beta.QueryOrBuilder>
         queryBuilder_;
-
     /**
      *
      *
@@ -26749,7 +26131,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -26772,7 +26153,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return queryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -26797,7 +26177,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -26819,7 +26198,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -26849,7 +26227,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -26871,7 +26248,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -26888,7 +26264,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -26909,7 +26284,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : query_;
       }
     }
-
     /**
      *
      *
@@ -26939,7 +26313,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object session_ = "";
-
     /**
      *
      *
@@ -26967,7 +26340,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -26995,7 +26367,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -27022,7 +26393,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27045,7 +26415,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27080,7 +26449,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SafetySpec.Builder,
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SafetySpecOrBuilder>
         safetySpecBuilder_;
-
     /**
      *
      *
@@ -27096,7 +26464,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSafetySpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -27119,7 +26486,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return safetySpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -27144,7 +26510,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27167,7 +26532,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27199,7 +26563,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -27220,7 +26583,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27237,7 +26599,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSafetySpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -27259,7 +26620,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : safetySpec_;
       }
     }
-
     /**
      *
      *
@@ -27295,7 +26655,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest
                 .RelatedQuestionsSpecOrBuilder>
         relatedQuestionsSpecBuilder_;
-
     /**
      *
      *
@@ -27312,7 +26671,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRelatedQuestionsSpec() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -27337,7 +26695,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return relatedQuestionsSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -27363,7 +26720,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27387,7 +26743,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27420,7 +26775,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -27442,7 +26796,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27460,7 +26813,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRelatedQuestionsSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -27483,7 +26835,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : relatedQuestionsSpec_;
       }
     }
-
     /**
      *
      *
@@ -27521,7 +26872,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder,
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder>
         groundingSpecBuilder_;
-
     /**
      *
      *
@@ -27538,7 +26888,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasGroundingSpec() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -27563,7 +26912,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return groundingSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -27589,7 +26937,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27613,7 +26960,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27646,7 +26992,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -27668,7 +27013,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27686,7 +27030,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGroundingSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -27709,7 +27052,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : groundingSpec_;
       }
     }
-
     /**
      *
      *
@@ -27746,7 +27088,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest
                 .AnswerGenerationSpecOrBuilder>
         answerGenerationSpecBuilder_;
-
     /**
      *
      *
@@ -27763,7 +27104,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasAnswerGenerationSpec() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -27788,7 +27128,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return answerGenerationSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -27814,7 +27153,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27838,7 +27176,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27871,7 +27208,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -27893,7 +27229,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -27911,7 +27246,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAnswerGenerationSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -27934,7 +27268,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : answerGenerationSpec_;
       }
     }
-
     /**
      *
      *
@@ -27972,7 +27305,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.Builder,
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpecOrBuilder>
         searchSpecBuilder_;
-
     /**
      *
      *
@@ -27988,7 +27320,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSearchSpec() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -28011,7 +27342,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return searchSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -28036,7 +27366,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28059,7 +27388,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28091,7 +27419,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -28112,7 +27439,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28129,7 +27455,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSearchSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -28151,7 +27476,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : searchSpec_;
       }
     }
-
     /**
      *
      *
@@ -28188,7 +27512,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest
                 .QueryUnderstandingSpecOrBuilder>
         queryUnderstandingSpecBuilder_;
-
     /**
      *
      *
@@ -28205,7 +27528,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasQueryUnderstandingSpec() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -28230,7 +27552,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return queryUnderstandingSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -28256,7 +27577,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28280,7 +27600,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28313,7 +27632,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -28335,7 +27653,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28353,7 +27670,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getQueryUnderstandingSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -28377,7 +27693,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             : queryUnderstandingSpec_;
       }
     }
-
     /**
      *
      *
@@ -28411,7 +27726,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean asynchronousMode_;
-
     /**
      *
      *
@@ -28442,7 +27756,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public boolean getAsynchronousMode() {
       return asynchronousMode_;
     }
-
     /**
      *
      *
@@ -28477,7 +27790,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28512,7 +27824,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object userPseudoId_ = "";
-
     /**
      *
      *
@@ -28543,7 +27854,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -28574,7 +27884,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -28604,7 +27913,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28630,7 +27938,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -28690,7 +27997,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public int getUserLabelsCount() {
       return internalGetUserLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -28723,14 +28029,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
       return getUserLabelsMap();
     }
-
     /**
      *
      *
@@ -28760,7 +28064,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
       return internalGetUserLabels().getMap();
     }
-
     /**
      *
      *
@@ -28797,7 +28100,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -28840,7 +28142,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -28873,14 +28174,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
       bitField0_ |= 0x00000800;
       return internalGetMutableUserLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -28917,7 +28216,6 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000800;
       return this;
     }
-
     /**
      *
      *

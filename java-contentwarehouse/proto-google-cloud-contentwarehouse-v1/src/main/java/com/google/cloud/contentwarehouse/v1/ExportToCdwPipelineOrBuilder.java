@@ -38,7 +38,6 @@ public interface ExportToCdwPipelineOrBuilder
    * @return A list containing the documents.
    */
   java.util.List<java.lang.String> getDocumentsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ExportToCdwPipelineOrBuilder
    * @return The count of documents.
    */
   int getDocumentsCount();
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface ExportToCdwPipelineOrBuilder
    * @return The documents at the given index.
    */
   java.lang.String getDocuments(int index);
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface ExportToCdwPipelineOrBuilder
    * @return The exportFolderPath.
    */
   java.lang.String getExportFolderPath();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface ExportToCdwPipelineOrBuilder
    * @return The docAiDataset.
    */
   java.lang.String getDocAiDataset();
-
   /**
    *
    *

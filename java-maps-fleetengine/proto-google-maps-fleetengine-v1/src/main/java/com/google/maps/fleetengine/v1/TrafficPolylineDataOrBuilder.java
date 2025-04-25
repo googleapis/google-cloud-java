@@ -37,7 +37,6 @@ public interface TrafficPolylineDataOrBuilder
    * @return Whether the trafficRendering field is set.
    */
   boolean hasTrafficRendering();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TrafficPolylineDataOrBuilder
    * @return The trafficRendering.
    */
   com.google.maps.fleetengine.v1.VisualTrafficReportPolylineRendering getTrafficRendering();
-
   /**
    *
    *

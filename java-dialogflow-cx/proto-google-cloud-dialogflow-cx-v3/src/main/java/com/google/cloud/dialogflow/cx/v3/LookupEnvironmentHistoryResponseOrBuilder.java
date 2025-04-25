@@ -36,7 +36,6 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.Environment> getEnvironmentsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.Environment getEnvironments(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Environment environments = 1;</code>
    */
   int getEnvironmentsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.EnvironmentOrBuilder>
       getEnvironmentsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface LookupEnvironmentHistoryResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

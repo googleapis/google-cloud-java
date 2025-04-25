@@ -34,7 +34,6 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.View views = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.View> getViewsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.View views = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.View getViews(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.View views = 1;</code>
    */
   int getViewsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListViewsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.ViewOrBuilder>
       getViewsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListViewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

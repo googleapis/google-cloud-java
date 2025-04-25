@@ -38,7 +38,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * @return Whether the account field is set.
    */
   boolean hasAccount();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * @return The account.
    */
   com.google.shopping.merchant.accounts.v1beta.Account getAccount();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.CreateUserRequest> getUsersList();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.CreateUserRequest getUsers(int index);
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * </code>
    */
   int getUsersCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.CreateUserRequestOrBuilder>
       getUsersOrBuilderList();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * @return Whether the acceptTermsOfService field is set.
    */
   boolean hasAcceptTermsOfService();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest.AcceptTermsOfService
       getAcceptTermsOfService();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
           com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
               .AddAccountService>
       getServiceList();
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest.AddAccountService
       getService(int index);
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
    * </code>
    */
   int getServiceCount();
-
   /**
    *
    *
@@ -262,7 +251,6 @@ public interface CreateAndConfigureAccountRequestOrBuilder
               com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest
                   .AddAccountServiceOrBuilder>
       getServiceOrBuilderList();
-
   /**
    *
    *

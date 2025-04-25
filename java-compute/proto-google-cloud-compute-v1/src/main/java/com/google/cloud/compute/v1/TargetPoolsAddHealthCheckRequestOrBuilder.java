@@ -34,7 +34,6 @@ public interface TargetPoolsAddHealthCheckRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthCheckReference> getHealthChecksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TargetPoolsAddHealthCheckRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
    */
   com.google.cloud.compute.v1.HealthCheckReference getHealthChecks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TargetPoolsAddHealthCheckRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
    */
   int getHealthChecksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TargetPoolsAddHealthCheckRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder>
       getHealthChecksOrBuilderList();
-
   /**
    *
    *

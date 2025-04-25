@@ -28,8 +28,7 @@ public interface DeleteSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
    * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
@@ -40,13 +39,11 @@ public interface DeleteSecretRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
    * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *

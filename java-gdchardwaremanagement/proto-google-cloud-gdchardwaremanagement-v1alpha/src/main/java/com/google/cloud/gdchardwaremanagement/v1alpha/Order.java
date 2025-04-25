@@ -33,7 +33,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Order)
     OrderOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Order.newBuilder() to construct.
   private Order(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -50,7 +49,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     type_ = 0;
     billingId_ = "";
     existingHardware_ = java.util.Collections.emptyList();
-    deploymentType_ = 0;
   }
 
   @java.lang.Override
@@ -242,7 +240,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -253,7 +250,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>DRAFT = 1;</code>
      */
     public static final int DRAFT_VALUE = 1;
-
     /**
      *
      *
@@ -264,7 +260,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>SUBMITTED = 2;</code>
      */
     public static final int SUBMITTED_VALUE = 2;
-
     /**
      *
      *
@@ -276,7 +271,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO_COMPLETE = 12;</code>
      */
     public static final int INFO_COMPLETE_VALUE = 12;
-
     /**
      *
      *
@@ -287,7 +281,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCEPTED = 3;</code>
      */
     public static final int ACCEPTED_VALUE = 3;
-
     /**
      *
      *
@@ -298,7 +291,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_INFO_NEEDED = 4;</code>
      */
     public static final int ADDITIONAL_INFO_NEEDED_VALUE = 4;
-
     /**
      *
      *
@@ -309,7 +301,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>BUILDING = 5;</code>
      */
     public static final int BUILDING_VALUE = 5;
-
     /**
      *
      *
@@ -320,7 +311,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>SHIPPING = 6;</code>
      */
     public static final int SHIPPING_VALUE = 6;
-
     /**
      *
      *
@@ -331,7 +321,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALLING = 7;</code>
      */
     public static final int INSTALLING_VALUE = 7;
-
     /**
      *
      *
@@ -343,7 +332,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 8;</code>
      */
     public static final int FAILED_VALUE = 8;
-
     /**
      *
      *
@@ -355,7 +343,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTIALLY_COMPLETED = 9;</code>
      */
     public static final int PARTIALLY_COMPLETED_VALUE = 9;
-
     /**
      *
      *
@@ -366,7 +353,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLETED = 10;</code>
      */
     public static final int COMPLETED_VALUE = 10;
-
     /**
      *
      *
@@ -530,24 +516,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Not billed.
-     * </pre>
-     *
-     * <code>UNPAID = 2;</code>
-     */
-    public static final Type UNPAID = POC;
-
-    /**
-     *
-     *
-     * <pre>
      * Type of the order is unspecified.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -558,7 +532,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>PAID = 1;</code>
      */
     public static final int PAID_VALUE = 1;
-
     /**
      *
      *
@@ -569,17 +542,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>POC = 2;</code>
      */
     public static final int POC_VALUE = 2;
-
-    /**
-     *
-     *
-     * <pre>
-     * Not billed.
-     * </pre>
-     *
-     * <code>UNPAID = 2;</code>
-     */
-    public static final int UNPAID_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -645,13 +607,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           .get(1);
     }
 
-    private static final Type[] VALUES = getStaticValuesArray();
-
-    private static Type[] getStaticValuesArray() {
-      return new Type[] {
-        TYPE_UNSPECIFIED, PAID, POC, UNPAID,
-      };
-    }
+    private static final Type[] VALUES = values();
 
     public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -672,219 +628,11 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Order.Type)
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Valid types of a deployment.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType}
-   */
-  public enum DeploymentType implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * Deployment type is unspecified.
-     * </pre>
-     *
-     * <code>DEPLOYMENT_TYPE_UNSPECIFIED = 0;</code>
-     */
-    DEPLOYMENT_TYPE_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * Prod deployment with SLOs.
-     * </pre>
-     *
-     * <code>FULL_PRODUCTION = 1;</code>
-     */
-    FULL_PRODUCTION(1),
-    /**
-     *
-     *
-     * <pre>
-     * Deployment with best-effort support and no SLOs.
-     * </pre>
-     *
-     * <code>PROOF_OF_CONCEPT = 2;</code>
-     */
-    PROOF_OF_CONCEPT(2),
-    /**
-     *
-     *
-     * <pre>
-     * Internal deployment with best-effort support and no SLOs.
-     * </pre>
-     *
-     * <code>INTERNAL = 3;</code>
-     */
-    INTERNAL(3),
-    /**
-     *
-     *
-     * <pre>
-     * Customer lab deployment that we support as though it's prod.
-     * </pre>
-     *
-     * <code>CUSTOMER_LAB = 4;</code>
-     */
-    CUSTOMER_LAB(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * Deployment type is unspecified.
-     * </pre>
-     *
-     * <code>DEPLOYMENT_TYPE_UNSPECIFIED = 0;</code>
-     */
-    public static final int DEPLOYMENT_TYPE_UNSPECIFIED_VALUE = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * Prod deployment with SLOs.
-     * </pre>
-     *
-     * <code>FULL_PRODUCTION = 1;</code>
-     */
-    public static final int FULL_PRODUCTION_VALUE = 1;
-
-    /**
-     *
-     *
-     * <pre>
-     * Deployment with best-effort support and no SLOs.
-     * </pre>
-     *
-     * <code>PROOF_OF_CONCEPT = 2;</code>
-     */
-    public static final int PROOF_OF_CONCEPT_VALUE = 2;
-
-    /**
-     *
-     *
-     * <pre>
-     * Internal deployment with best-effort support and no SLOs.
-     * </pre>
-     *
-     * <code>INTERNAL = 3;</code>
-     */
-    public static final int INTERNAL_VALUE = 3;
-
-    /**
-     *
-     *
-     * <pre>
-     * Customer lab deployment that we support as though it's prod.
-     * </pre>
-     *
-     * <code>CUSTOMER_LAB = 4;</code>
-     */
-    public static final int CUSTOMER_LAB_VALUE = 4;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static DeploymentType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static DeploymentType forNumber(int value) {
-      switch (value) {
-        case 0:
-          return DEPLOYMENT_TYPE_UNSPECIFIED;
-        case 1:
-          return FULL_PRODUCTION;
-        case 2:
-          return PROOF_OF_CONCEPT;
-        case 3:
-          return INTERNAL;
-        case 4:
-          return CUSTOMER_LAB;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<DeploymentType> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<DeploymentType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<DeploymentType>() {
-          public DeploymentType findValueByNumber(int number) {
-            return DeploymentType.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.gdchardwaremanagement.v1alpha.Order.getDescriptor()
-          .getEnumTypes()
-          .get(2);
-    }
-
-    private static final DeploymentType[] VALUES = values();
-
-    public static DeploymentType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private DeploymentType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType)
-  }
-
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -909,7 +657,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -939,7 +686,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -963,7 +709,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -990,7 +735,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1007,7 +751,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1024,7 +767,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1042,7 +784,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1059,7 +800,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1076,7 +816,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1118,7 +857,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1137,14 +875,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1160,7 +896,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1183,7 +918,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1209,7 +943,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1228,7 +961,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1254,7 +986,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORGANIZATION_CONTACT_FIELD_NUMBER = 6;
   private com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact organizationContact_;
-
   /**
    *
    *
@@ -1272,7 +1003,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOrganizationContact() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1293,7 +1023,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.getDefaultInstance()
         : organizationContact_;
   }
-
   /**
    *
    *
@@ -1318,7 +1047,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetWorkloads_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1335,7 +1063,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTargetWorkloadsList() {
     return targetWorkloads_;
   }
-
   /**
    *
    *
@@ -1352,7 +1079,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public int getTargetWorkloadsCount() {
     return targetWorkloads_.size();
   }
-
   /**
    *
    *
@@ -1370,7 +1096,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTargetWorkloads(int index) {
     return targetWorkloads_.get(index);
   }
-
   /**
    *
    *
@@ -1393,7 +1118,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerMotivation_ = "";
-
   /**
    *
    *
@@ -1418,7 +1142,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1446,7 +1169,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FULFILLMENT_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp fulfillmentTime_;
-
   /**
    *
    *
@@ -1465,7 +1187,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFulfillmentTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1486,7 +1207,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : fulfillmentTime_;
   }
-
   /**
    *
    *
@@ -1510,7 +1230,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -1537,7 +1256,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1569,7 +1287,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderFormUri_ = "";
-
   /**
    *
    *
@@ -1593,7 +1310,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1620,7 +1336,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 12;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1638,7 +1353,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1663,7 +1377,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBMIT_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp submitTime_;
-
   /**
    *
    *
@@ -1681,7 +1394,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubmitTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1699,7 +1411,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
-
   /**
    *
    *
@@ -1720,15 +1431,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object billingId_ = "";
-
   /**
    *
    *
    * <pre>
-   * Output only. The Google Cloud Billing ID to be charged for this order.
+   * Required. The Google Cloud Billing ID to be charged for this order.
    * </pre>
    *
-   * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The billingId.
    */
@@ -1744,15 +1454,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
-   * Output only. The Google Cloud Billing ID to be charged for this order.
+   * Required. The Google Cloud Billing ID to be charged for this order.
    * </pre>
    *
-   * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for billingId.
    */
@@ -1774,7 +1483,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation>
       existingHardware_;
-
   /**
    *
    *
@@ -1792,7 +1500,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       getExistingHardwareList() {
     return existingHardware_;
   }
-
   /**
    *
    *
@@ -1811,7 +1518,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       getExistingHardwareOrBuilderList() {
     return existingHardware_;
   }
-
   /**
    *
    *
@@ -1828,7 +1534,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public int getExistingHardwareCount() {
     return existingHardware_.size();
   }
-
   /**
    *
    *
@@ -1846,7 +1551,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return existingHardware_.get(index);
   }
-
   /**
    *
    *
@@ -1863,168 +1567,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocationOrBuilder
       getExistingHardwareOrBuilder(int index) {
     return existingHardware_.get(index);
-  }
-
-  public static final int DEPLOYMENT_TYPE_FIELD_NUMBER = 18;
-  private int deploymentType_ = 0;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The deployment type of this order.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for deploymentType.
-   */
-  @java.lang.Override
-  public int getDeploymentTypeValue() {
-    return deploymentType_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The deployment type of this order.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The deploymentType.
-   */
-  @java.lang.Override
-  public com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType getDeploymentType() {
-    com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType result =
-        com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.forNumber(
-            deploymentType_);
-    return result == null
-        ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.UNRECOGNIZED
-        : result;
-  }
-
-  public static final int ACTUAL_INSTALLATION_DATE_FIELD_NUMBER = 19;
-  private com.google.type.Date actualInstallationDate_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Actual installation date for this order.
-   * </pre>
-   *
-   * <code>
-   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the actualInstallationDate field is set.
-   */
-  @java.lang.Override
-  public boolean hasActualInstallationDate() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Actual installation date for this order.
-   * </pre>
-   *
-   * <code>
-   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The actualInstallationDate.
-   */
-  @java.lang.Override
-  public com.google.type.Date getActualInstallationDate() {
-    return actualInstallationDate_ == null
-        ? com.google.type.Date.getDefaultInstance()
-        : actualInstallationDate_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Actual installation date for this order.
-   * </pre>
-   *
-   * <code>
-   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.type.DateOrBuilder getActualInstallationDateOrBuilder() {
-    return actualInstallationDate_ == null
-        ? com.google.type.Date.getDefaultInstance()
-        : actualInstallationDate_;
-  }
-
-  public static final int ESTIMATED_INSTALLATION_DATE_FIELD_NUMBER = 20;
-  private com.google.type.Date estimatedInstallationDate_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Estimated installation date for this order.
-   * </pre>
-   *
-   * <code>
-   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the estimatedInstallationDate field is set.
-   */
-  @java.lang.Override
-  public boolean hasEstimatedInstallationDate() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Estimated installation date for this order.
-   * </pre>
-   *
-   * <code>
-   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The estimatedInstallationDate.
-   */
-  @java.lang.Override
-  public com.google.type.Date getEstimatedInstallationDate() {
-    return estimatedInstallationDate_ == null
-        ? com.google.type.Date.getDefaultInstance()
-        : estimatedInstallationDate_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Estimated installation date for this order.
-   * </pre>
-   *
-   * <code>
-   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.type.DateOrBuilder getEstimatedInstallationDateOrBuilder() {
-    return estimatedInstallationDate_ == null
-        ? com.google.type.Date.getDefaultInstance()
-        : estimatedInstallationDate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2090,18 +1632,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < existingHardware_.size(); i++) {
       output.writeMessage(16, existingHardware_.get(i));
-    }
-    if (deploymentType_
-        != com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType
-            .DEPLOYMENT_TYPE_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(18, deploymentType_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeMessage(19, getActualInstallationDate());
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(20, getEstimatedInstallationDate());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2176,21 +1706,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(16, existingHardware_.get(i));
     }
-    if (deploymentType_
-        != com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType
-            .DEPLOYMENT_TYPE_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, deploymentType_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(19, getActualInstallationDate());
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              20, getEstimatedInstallationDate());
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2238,16 +1753,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getBillingId().equals(other.getBillingId())) return false;
     if (!getExistingHardwareList().equals(other.getExistingHardwareList())) return false;
-    if (deploymentType_ != other.deploymentType_) return false;
-    if (hasActualInstallationDate() != other.hasActualInstallationDate()) return false;
-    if (hasActualInstallationDate()) {
-      if (!getActualInstallationDate().equals(other.getActualInstallationDate())) return false;
-    }
-    if (hasEstimatedInstallationDate() != other.hasEstimatedInstallationDate()) return false;
-    if (hasEstimatedInstallationDate()) {
-      if (!getEstimatedInstallationDate().equals(other.getEstimatedInstallationDate()))
-        return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2306,16 +1811,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (getExistingHardwareCount() > 0) {
       hash = (37 * hash) + EXISTING_HARDWARE_FIELD_NUMBER;
       hash = (53 * hash) + getExistingHardwareList().hashCode();
-    }
-    hash = (37 * hash) + DEPLOYMENT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + deploymentType_;
-    if (hasActualInstallationDate()) {
-      hash = (37 * hash) + ACTUAL_INSTALLATION_DATE_FIELD_NUMBER;
-      hash = (53 * hash) + getActualInstallationDate().hashCode();
-    }
-    if (hasEstimatedInstallationDate()) {
-      hash = (37 * hash) + ESTIMATED_INSTALLATION_DATE_FIELD_NUMBER;
-      hash = (53 * hash) + getEstimatedInstallationDate().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2417,7 +1912,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2486,8 +1980,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         getFulfillmentTimeFieldBuilder();
         getSubmitTimeFieldBuilder();
         getExistingHardwareFieldBuilder();
-        getActualInstallationDateFieldBuilder();
-        getEstimatedInstallationDateFieldBuilder();
       }
     }
 
@@ -2537,17 +2029,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         existingHardwareBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00008000);
-      deploymentType_ = 0;
-      actualInstallationDate_ = null;
-      if (actualInstallationDateBuilder_ != null) {
-        actualInstallationDateBuilder_.dispose();
-        actualInstallationDateBuilder_ = null;
-      }
-      estimatedInstallationDate_ = null;
-      if (estimatedInstallationDateBuilder_ != null) {
-        estimatedInstallationDateBuilder_.dispose();
-        estimatedInstallationDateBuilder_ = null;
-      }
       return this;
     }
 
@@ -2654,23 +2135,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.billingId_ = billingId_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.deploymentType_ = deploymentType_;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.actualInstallationDate_ =
-            actualInstallationDateBuilder_ == null
-                ? actualInstallationDate_
-                : actualInstallationDateBuilder_.build();
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.estimatedInstallationDate_ =
-            estimatedInstallationDateBuilder_ == null
-                ? estimatedInstallationDate_
-                : estimatedInstallationDateBuilder_.build();
-        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2811,15 +2275,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.deploymentType_ != 0) {
-        setDeploymentTypeValue(other.getDeploymentTypeValue());
-      }
-      if (other.hasActualInstallationDate()) {
-        mergeActualInstallationDate(other.getActualInstallationDate());
-      }
-      if (other.hasEstimatedInstallationDate()) {
-        mergeEstimatedInstallationDate(other.getEstimatedInstallationDate());
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2958,26 +2413,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 130
-            case 144:
-              {
-                deploymentType_ = input.readEnum();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 144
-            case 154:
-              {
-                input.readMessage(
-                    getActualInstallationDateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
-                break;
-              } // case 154
-            case 162:
-              {
-                input.readMessage(
-                    getEstimatedInstallationDateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
-                break;
-              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2998,7 +2433,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3022,7 +2456,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3046,7 +2479,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3069,7 +2501,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3088,7 +2519,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3114,7 +2544,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3137,7 +2566,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3160,7 +2588,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3182,7 +2609,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3200,7 +2626,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3230,7 +2655,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3247,7 +2671,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3270,7 +2693,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3295,7 +2717,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3317,7 +2738,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3347,7 +2767,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3369,7 +2788,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3386,7 +2804,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3407,7 +2824,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3442,7 +2858,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3459,7 +2874,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3482,7 +2896,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3507,7 +2920,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3529,7 +2941,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3559,7 +2970,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3581,7 +2991,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3598,7 +3007,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3619,7 +3027,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3673,7 +3080,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3692,14 +3098,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3715,7 +3119,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3738,7 +3141,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3767,7 +3169,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3786,14 +3187,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3816,7 +3215,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -3835,7 +3233,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3854,7 +3251,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3876,7 +3272,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3899,7 +3294,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3924,7 +3318,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3952,7 +3345,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder>
         organizationContactBuilder_;
-
     /**
      *
      *
@@ -3969,7 +3361,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrganizationContact() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3994,7 +3385,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return organizationContactBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4020,7 +3410,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4044,7 +3433,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4077,7 +3465,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4099,7 +3486,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4117,7 +3503,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOrganizationContactFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4140,7 +3525,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             : organizationContact_;
       }
     }
-
     /**
      *
      *
@@ -4178,7 +3562,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -4196,7 +3579,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       targetWorkloads_.makeImmutable();
       return targetWorkloads_;
     }
-
     /**
      *
      *
@@ -4213,7 +3595,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public int getTargetWorkloadsCount() {
       return targetWorkloads_.size();
     }
-
     /**
      *
      *
@@ -4231,7 +3612,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTargetWorkloads(int index) {
       return targetWorkloads_.get(index);
     }
-
     /**
      *
      *
@@ -4249,7 +3629,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTargetWorkloadsBytes(int index) {
       return targetWorkloads_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4275,7 +3654,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4300,7 +3678,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4322,7 +3699,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4343,7 +3719,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4371,7 +3746,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customerMotivation_ = "";
-
     /**
      *
      *
@@ -4395,7 +3769,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4419,7 +3792,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4442,7 +3814,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4461,7 +3832,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4492,7 +3862,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         fulfillmentTimeBuilder_;
-
     /**
      *
      *
@@ -4510,7 +3879,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFulfillmentTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4534,7 +3902,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return fulfillmentTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4560,7 +3927,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4583,7 +3949,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4614,7 +3979,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4637,7 +4001,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4655,7 +4018,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFulfillmentTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4677,7 +4039,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             : fulfillmentTime_;
       }
     }
-
     /**
      *
      *
@@ -4708,7 +4069,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -4734,7 +4094,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4760,7 +4119,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4785,7 +4143,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4806,7 +4163,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4834,7 +4190,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object orderFormUri_ = "";
-
     /**
      *
      *
@@ -4857,7 +4212,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4880,7 +4234,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4902,7 +4255,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4920,7 +4272,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4945,7 +4296,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -4963,7 +4313,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -4984,7 +4333,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5006,7 +4354,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5030,7 +4377,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5057,7 +4403,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         submitTimeBuilder_;
-
     /**
      *
      *
@@ -5075,7 +4420,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubmitTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5099,7 +4443,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return submitTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5125,7 +4468,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5148,7 +4490,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5179,7 +4520,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5202,7 +4542,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5220,7 +4559,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5242,7 +4580,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             : submitTime_;
       }
     }
-
     /**
      *
      *
@@ -5273,15 +4610,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object billingId_ = "";
-
     /**
      *
      *
      * <pre>
-     * Output only. The Google Cloud Billing ID to be charged for this order.
+     * Required. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The billingId.
      */
@@ -5296,15 +4632,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The Google Cloud Billing ID to be charged for this order.
+     * Required. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for billingId.
      */
@@ -5319,15 +4654,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The Google Cloud Billing ID to be charged for this order.
+     * Required. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The billingId to set.
      * @return This builder for chaining.
@@ -5341,15 +4675,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The Google Cloud Billing ID to be charged for this order.
+     * Required. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -5359,15 +4692,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Output only. The Google Cloud Billing ID to be charged for this order.
+     * Required. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for billingId to set.
      * @return This builder for chaining.
@@ -5421,7 +4753,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return existingHardwareBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5441,7 +4772,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return existingHardwareBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5462,7 +4792,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return existingHardwareBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5489,7 +4818,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5514,7 +4842,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5541,7 +4868,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5568,7 +4894,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5592,7 +4917,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5617,7 +4941,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5643,7 +4966,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5666,7 +4988,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5689,7 +5010,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5706,7 +5026,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         getExistingHardwareBuilder(int index) {
       return getExistingHardwareFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5727,7 +5046,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return existingHardwareBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5749,7 +5067,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(existingHardware_);
       }
     }
-
     /**
      *
      *
@@ -5768,7 +5085,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5788,7 +5104,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5824,527 +5139,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         existingHardware_ = null;
       }
       return existingHardwareBuilder_;
-    }
-
-    private int deploymentType_ = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The deployment type of this order.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The enum numeric value on the wire for deploymentType.
-     */
-    @java.lang.Override
-    public int getDeploymentTypeValue() {
-      return deploymentType_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The deployment type of this order.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for deploymentType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeploymentTypeValue(int value) {
-      deploymentType_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The deployment type of this order.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The deploymentType.
-     */
-    @java.lang.Override
-    public com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType getDeploymentType() {
-      com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType result =
-          com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.forNumber(
-              deploymentType_);
-      return result == null
-          ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.UNRECOGNIZED
-          : result;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The deployment type of this order.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @param value The deploymentType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeploymentType(
-        com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00010000;
-      deploymentType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The deployment type of this order.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDeploymentType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      deploymentType_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private com.google.type.Date actualInstallationDate_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
-        actualInstallationDateBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return Whether the actualInstallationDate field is set.
-     */
-    public boolean hasActualInstallationDate() {
-      return ((bitField0_ & 0x00020000) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The actualInstallationDate.
-     */
-    public com.google.type.Date getActualInstallationDate() {
-      if (actualInstallationDateBuilder_ == null) {
-        return actualInstallationDate_ == null
-            ? com.google.type.Date.getDefaultInstance()
-            : actualInstallationDate_;
-      } else {
-        return actualInstallationDateBuilder_.getMessage();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setActualInstallationDate(com.google.type.Date value) {
-      if (actualInstallationDateBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        actualInstallationDate_ = value;
-      } else {
-        actualInstallationDateBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00020000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setActualInstallationDate(com.google.type.Date.Builder builderForValue) {
-      if (actualInstallationDateBuilder_ == null) {
-        actualInstallationDate_ = builderForValue.build();
-      } else {
-        actualInstallationDateBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00020000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder mergeActualInstallationDate(com.google.type.Date value) {
-      if (actualInstallationDateBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
-            && actualInstallationDate_ != null
-            && actualInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
-          getActualInstallationDateBuilder().mergeFrom(value);
-        } else {
-          actualInstallationDate_ = value;
-        }
-      } else {
-        actualInstallationDateBuilder_.mergeFrom(value);
-      }
-      if (actualInstallationDate_ != null) {
-        bitField0_ |= 0x00020000;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearActualInstallationDate() {
-      bitField0_ = (bitField0_ & ~0x00020000);
-      actualInstallationDate_ = null;
-      if (actualInstallationDateBuilder_ != null) {
-        actualInstallationDateBuilder_.dispose();
-        actualInstallationDateBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.type.Date.Builder getActualInstallationDateBuilder() {
-      bitField0_ |= 0x00020000;
-      onChanged();
-      return getActualInstallationDateFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.type.DateOrBuilder getActualInstallationDateOrBuilder() {
-      if (actualInstallationDateBuilder_ != null) {
-        return actualInstallationDateBuilder_.getMessageOrBuilder();
-      } else {
-        return actualInstallationDate_ == null
-            ? com.google.type.Date.getDefaultInstance()
-            : actualInstallationDate_;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Actual installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
-        getActualInstallationDateFieldBuilder() {
-      if (actualInstallationDateBuilder_ == null) {
-        actualInstallationDateBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
-                getActualInstallationDate(), getParentForChildren(), isClean());
-        actualInstallationDate_ = null;
-      }
-      return actualInstallationDateBuilder_;
-    }
-
-    private com.google.type.Date estimatedInstallationDate_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
-        estimatedInstallationDateBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return Whether the estimatedInstallationDate field is set.
-     */
-    public boolean hasEstimatedInstallationDate() {
-      return ((bitField0_ & 0x00040000) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The estimatedInstallationDate.
-     */
-    public com.google.type.Date getEstimatedInstallationDate() {
-      if (estimatedInstallationDateBuilder_ == null) {
-        return estimatedInstallationDate_ == null
-            ? com.google.type.Date.getDefaultInstance()
-            : estimatedInstallationDate_;
-      } else {
-        return estimatedInstallationDateBuilder_.getMessage();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setEstimatedInstallationDate(com.google.type.Date value) {
-      if (estimatedInstallationDateBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        estimatedInstallationDate_ = value;
-      } else {
-        estimatedInstallationDateBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setEstimatedInstallationDate(com.google.type.Date.Builder builderForValue) {
-      if (estimatedInstallationDateBuilder_ == null) {
-        estimatedInstallationDate_ = builderForValue.build();
-      } else {
-        estimatedInstallationDateBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder mergeEstimatedInstallationDate(com.google.type.Date value) {
-      if (estimatedInstallationDateBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
-            && estimatedInstallationDate_ != null
-            && estimatedInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
-          getEstimatedInstallationDateBuilder().mergeFrom(value);
-        } else {
-          estimatedInstallationDate_ = value;
-        }
-      } else {
-        estimatedInstallationDateBuilder_.mergeFrom(value);
-      }
-      if (estimatedInstallationDate_ != null) {
-        bitField0_ |= 0x00040000;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearEstimatedInstallationDate() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      estimatedInstallationDate_ = null;
-      if (estimatedInstallationDateBuilder_ != null) {
-        estimatedInstallationDateBuilder_.dispose();
-        estimatedInstallationDateBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.type.Date.Builder getEstimatedInstallationDateBuilder() {
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return getEstimatedInstallationDateFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.type.DateOrBuilder getEstimatedInstallationDateOrBuilder() {
-      if (estimatedInstallationDateBuilder_ != null) {
-        return estimatedInstallationDateBuilder_.getMessageOrBuilder();
-      } else {
-        return estimatedInstallationDate_ == null
-            ? com.google.type.Date.getDefaultInstance()
-            : estimatedInstallationDate_;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Estimated installation date for this order.
-     * </pre>
-     *
-     * <code>
-     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
-        getEstimatedInstallationDateFieldBuilder() {
-      if (estimatedInstallationDateBuilder_ == null) {
-        estimatedInstallationDateBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
-                getEstimatedInstallationDate(), getParentForChildren(), isClean());
-        estimatedInstallationDate_ = null;
-      }
-      return estimatedInstallationDateBuilder_;
     }
 
     @java.lang.Override

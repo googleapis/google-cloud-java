@@ -38,7 +38,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the creatingData field is set.
    */
   boolean hasCreatingData();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The creatingData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.CreatingData getCreatingData();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the acceptedData field is set.
    */
   boolean hasAcceptedData();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The acceptedData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.AcceptedData getAcceptedData();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the provisioningData field is set.
    */
   boolean hasProvisioningData();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The provisioningData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.ProvisioningData getProvisioningData();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the failedData field is set.
    */
   boolean hasFailedData();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The failedData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.FailedData getFailedData();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the deletingData field is set.
    */
   boolean hasDeletingData();
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The deletingData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.DeletingData getDeletingData();
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the activeData field is set.
    */
   boolean hasActiveData();
-
   /**
    *
    *
@@ -299,7 +287,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The activeData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.ActiveData getActiveData();
-
   /**
    *
    *
@@ -327,7 +314,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the suspendingData field is set.
    */
   boolean hasSuspendingData();
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The suspendingData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.SuspendingData getSuspendingData();
-
   /**
    *
    *
@@ -370,7 +355,6 @@ public interface QueuedResourceStateOrBuilder
    * @return Whether the suspendedData field is set.
    */
   boolean hasSuspendedData();
-
   /**
    *
    *
@@ -385,7 +369,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The suspendedData.
    */
   com.google.cloud.tpu.v2.QueuedResourceState.SuspendedData getSuspendedData();
-
   /**
    *
    *
@@ -415,7 +398,6 @@ public interface QueuedResourceStateOrBuilder
    * @return The enum numeric value on the wire for stateInitiator.
    */
   int getStateInitiatorValue();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SecurityBulletinOrBuilder
    * @return The bulletinId.
    */
   java.lang.String getBulletinId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SecurityBulletinOrBuilder
    * @return Whether the submissionTime field is set.
    */
   boolean hasSubmissionTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SecurityBulletinOrBuilder
    * @return The submissionTime.
    */
   com.google.protobuf.Timestamp getSubmissionTime();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface SecurityBulletinOrBuilder
    * @return The suggestedUpgradeVersion.
    */
   java.lang.String getSuggestedUpgradeVersion();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return Whether the timeSeriesFilter field is set.
    */
   boolean hasTimeSeriesFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return The timeSeriesFilter.
    */
   com.google.monitoring.dashboard.v1.TimeSeriesFilter getTimeSeriesFilter();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return Whether the timeSeriesFilterRatio field is set.
    */
   boolean hasTimeSeriesFilterRatio();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return The timeSeriesFilterRatio.
    */
   com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio getTimeSeriesFilterRatio();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return Whether the timeSeriesQueryLanguage field is set.
    */
   boolean hasTimeSeriesQueryLanguage();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return The timeSeriesQueryLanguage.
    */
   java.lang.String getTimeSeriesQueryLanguage();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return Whether the prometheusQuery field is set.
    */
   boolean hasPrometheusQuery();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return The prometheusQuery.
    */
   java.lang.String getPrometheusQuery();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface TimeSeriesQueryOrBuilder
    * @return The unitOverride.
    */
   java.lang.String getUnitOverride();
-
   /**
    *
    *

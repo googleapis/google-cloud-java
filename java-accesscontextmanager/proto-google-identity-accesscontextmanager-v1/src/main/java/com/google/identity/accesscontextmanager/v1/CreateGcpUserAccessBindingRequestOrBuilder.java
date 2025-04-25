@@ -38,7 +38,6 @@ public interface CreateGcpUserAccessBindingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateGcpUserAccessBindingRequestOrBuilder
    * @return Whether the gcpUserAccessBinding field is set.
    */
   boolean hasGcpUserAccessBinding();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateGcpUserAccessBindingRequestOrBuilder
    * @return The gcpUserAccessBinding.
    */
   com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding getGcpUserAccessBinding();
-
   /**
    *
    *

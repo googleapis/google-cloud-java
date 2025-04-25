@@ -41,7 +41,6 @@ public interface AnalyzeMoveRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface AnalyzeMoveRequestOrBuilder
    * @return The destinationParent.
    */
   java.lang.String getDestinationParent();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface AnalyzeMoveRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

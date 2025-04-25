@@ -36,7 +36,6 @@ public interface TableOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface TableOrBuilder
    * @return Whether the rowHeaders field is set.
    */
   boolean hasRowHeaders();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface TableOrBuilder
    * @return The rowHeaders.
    */
   com.google.shopping.merchant.accounts.v1beta.Headers getRowHeaders();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface TableOrBuilder
    * @return Whether the columnHeaders field is set.
    */
   boolean hasColumnHeaders();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface TableOrBuilder
    * @return The columnHeaders.
    */
   com.google.shopping.merchant.accounts.v1beta.Headers getColumnHeaders();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface TableOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Row> getRowsList();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface TableOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Row getRows(int index);
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface TableOrBuilder
    * </code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface TableOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.RowOrBuilder>
       getRowsOrBuilderList();
-
   /**
    *
    *

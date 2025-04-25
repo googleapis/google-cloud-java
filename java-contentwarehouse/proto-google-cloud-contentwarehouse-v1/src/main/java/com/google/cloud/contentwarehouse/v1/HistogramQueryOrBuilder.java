@@ -41,7 +41,6 @@ public interface HistogramQueryOrBuilder
    * @return The histogramQuery.
    */
   java.lang.String getHistogramQuery();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface HistogramQueryOrBuilder
    * @return Whether the filters field is set.
    */
   boolean hasFilters();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface HistogramQueryOrBuilder
    * @return The filters.
    */
   com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter getFilters();
-
   /**
    *
    *

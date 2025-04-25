@@ -33,7 +33,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.VideoEventAnnotation)
     VideoEventAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoEventAnnotation.newBuilder() to construct.
   private VideoEventAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
 
   public static final int TIME_SEGMENT_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.TimeSegment timeSegment_;
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
   public boolean hasTimeSegment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.datalabeling.v1beta1.TimeSegment.getDefaultInstance()
         : timeSegment_;
   }
-
   /**
    *
    *
@@ -349,7 +342,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +566,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
-
     /**
      *
      *
@@ -589,7 +580,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
         return annotationSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -633,7 +622,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +642,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +670,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +689,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +703,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -738,7 +722,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
             : annotationSpec_;
       }
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
             com.google.cloud.datalabeling.v1beta1.TimeSegment.Builder,
             com.google.cloud.datalabeling.v1beta1.TimeSegmentOrBuilder>
         timeSegmentBuilder_;
-
     /**
      *
      *
@@ -786,7 +768,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
     public boolean hasTimeSegment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -807,7 +788,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
         return timeSegmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -830,7 +810,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +830,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +858,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +877,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +891,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
       onChanged();
       return getTimeSegmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -934,7 +909,6 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
             : timeSegment_;
       }
     }
-
     /**
      *
      *

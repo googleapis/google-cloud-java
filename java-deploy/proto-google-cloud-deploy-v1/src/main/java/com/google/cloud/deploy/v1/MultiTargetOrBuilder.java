@@ -36,7 +36,6 @@ public interface MultiTargetOrBuilder
    * @return A list containing the targetIds.
    */
   java.util.List<java.lang.String> getTargetIdsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MultiTargetOrBuilder
    * @return The count of targetIds.
    */
   int getTargetIdsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface MultiTargetOrBuilder
    * @return The targetIds at the given index.
    */
   java.lang.String getTargetIds(int index);
-
   /**
    *
    *

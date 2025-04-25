@@ -36,7 +36,6 @@ public interface JobOperationResultOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.JobOperationResult.JobResult> getJobResultsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface JobOperationResultOrBuilder
    * </code>
    */
   com.google.cloud.talent.v4beta1.JobOperationResult.JobResult getJobResults(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface JobOperationResultOrBuilder
    * </code>
    */
   int getJobResultsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface JobOperationResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.JobOperationResult.JobResultOrBuilder>
       getJobResultsOrBuilderList();
-
   /**
    *
    *

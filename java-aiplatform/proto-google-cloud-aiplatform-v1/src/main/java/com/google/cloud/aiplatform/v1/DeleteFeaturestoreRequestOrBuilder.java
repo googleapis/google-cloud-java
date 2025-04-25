@@ -40,7 +40,6 @@ public interface DeleteFeaturestoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

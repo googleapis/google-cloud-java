@@ -33,7 +33,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.StartBackfillJobResponse)
     StartBackfillJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartBackfillJobResponse.newBuilder() to construct.
   private StartBackfillJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int OBJECT_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.StreamObject object_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
   public boolean hasObject() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
         ? com.google.cloud.datastream.v1.StreamObject.getDefaultInstance()
         : object_;
   }
-
   /**
    *
    *
@@ -281,7 +277,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
             com.google.cloud.datastream.v1.StreamObject.Builder,
             com.google.cloud.datastream.v1.StreamObjectOrBuilder>
         objectBuilder_;
-
     /**
      *
      *
@@ -500,7 +494,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
     public boolean hasObject() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -521,7 +514,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
         return objectBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -564,7 +555,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +582,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -612,7 +601,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +615,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
       onChanged();
       return getObjectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -646,7 +633,6 @@ public final class StartBackfillJobResponse extends com.google.protobuf.Generate
             : object_;
       }
     }
-
     /**
      *
      *

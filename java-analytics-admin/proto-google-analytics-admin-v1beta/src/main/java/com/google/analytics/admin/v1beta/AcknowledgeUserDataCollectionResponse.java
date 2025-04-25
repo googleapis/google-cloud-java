@@ -34,7 +34,6 @@ public final class AcknowledgeUserDataCollectionResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.AcknowledgeUserDataCollectionResponse)
     AcknowledgeUserDataCollectionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AcknowledgeUserDataCollectionResponse.newBuilder() to construct.
   private AcknowledgeUserDataCollectionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,7 +215,6 @@ public final class AcknowledgeUserDataCollectionResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

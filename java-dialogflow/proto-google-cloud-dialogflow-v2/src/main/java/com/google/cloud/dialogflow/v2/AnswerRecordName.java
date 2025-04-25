@@ -253,8 +253,7 @@ public class AnswerRecordName implements ResourceName {
     private Builder(AnswerRecordName answerRecordName) {
       Preconditions.checkArgument(
           Objects.equals(answerRecordName.pathTemplate, PROJECT_ANSWER_RECORD),
-          "toBuilder is only supported when AnswerRecordName has the pattern of"
-              + " projects/{project}/answerRecords/{answer_record}");
+          "toBuilder is only supported when AnswerRecordName has the pattern of projects/{project}/answerRecords/{answer_record}");
       this.project = answerRecordName.project;
       this.answerRecord = answerRecordName.answerRecord;
     }

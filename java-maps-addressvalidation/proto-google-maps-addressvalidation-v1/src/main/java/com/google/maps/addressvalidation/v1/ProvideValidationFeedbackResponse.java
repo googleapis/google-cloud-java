@@ -35,7 +35,6 @@ public final class ProvideValidationFeedbackResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse)
     ProvideValidationFeedbackResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProvideValidationFeedbackResponse.newBuilder() to construct.
   private ProvideValidationFeedbackResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -217,7 +216,6 @@ public final class ProvideValidationFeedbackResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

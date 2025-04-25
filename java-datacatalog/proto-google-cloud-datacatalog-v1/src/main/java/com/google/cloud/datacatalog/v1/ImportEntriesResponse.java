@@ -35,7 +35,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ImportEntriesResponse)
     ImportEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportEntriesResponse.newBuilder() to construct.
   private ImportEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int UPSERTED_ENTRIES_COUNT_FIELD_NUMBER = 5;
   private long upsertedEntriesCount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
   public boolean hasUpsertedEntriesCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
 
   public static final int DELETED_ENTRIES_COUNT_FIELD_NUMBER = 6;
   private long deletedEntriesCount_ = 0L;
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
   public boolean hasDeletedEntriesCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +311,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -518,7 +512,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private long upsertedEntriesCount_;
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     public boolean hasUpsertedEntriesCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -552,7 +544,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     public long getUpsertedEntriesCount() {
       return upsertedEntriesCount_;
     }
-
     /**
      *
      *
@@ -573,7 +564,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private long deletedEntriesCount_;
-
     /**
      *
      *
@@ -610,7 +599,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     public boolean hasDeletedEntriesCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -626,7 +614,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
     public long getDeletedEntriesCount() {
       return deletedEntriesCount_;
     }
-
     /**
      *
      *
@@ -646,7 +633,6 @@ public final class ImportEntriesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

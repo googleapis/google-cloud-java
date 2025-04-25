@@ -39,7 +39,6 @@ public interface UnlockDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

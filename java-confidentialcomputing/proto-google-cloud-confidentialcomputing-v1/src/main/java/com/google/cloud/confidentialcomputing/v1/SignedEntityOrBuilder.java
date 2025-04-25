@@ -38,7 +38,6 @@ public interface SignedEntityOrBuilder
    */
   java.util.List<com.google.cloud.confidentialcomputing.v1.ContainerImageSignature>
       getContainerImageSignaturesList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SignedEntityOrBuilder
    */
   com.google.cloud.confidentialcomputing.v1.ContainerImageSignature getContainerImageSignatures(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface SignedEntityOrBuilder
    * </code>
    */
   int getContainerImageSignaturesCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface SignedEntityOrBuilder
   java.util.List<
           ? extends com.google.cloud.confidentialcomputing.v1.ContainerImageSignatureOrBuilder>
       getContainerImageSignaturesOrBuilderList();
-
   /**
    *
    *

@@ -291,8 +291,7 @@ public class ConnectionName implements ResourceName {
     private Builder(ConnectionName connectionName) {
       Preconditions.checkArgument(
           Objects.equals(connectionName.pathTemplate, PROJECT_LOCATION_CONNECTION),
-          "toBuilder is only supported when ConnectionName has the pattern of"
-              + " projects/{project}/locations/{location}/connections/{connection}");
+          "toBuilder is only supported when ConnectionName has the pattern of projects/{project}/locations/{location}/connections/{connection}");
       this.project = connectionName.project;
       this.location = connectionName.location;
       this.connection = connectionName.connection;

@@ -35,7 +35,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudStorageConditions)
     DiscoveryCloudStorageConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryCloudStorageConditions.newBuilder() to construct.
   private DiscoveryCloudStorageConditions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -188,7 +187,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>CLOUD_STORAGE_OBJECT_ATTRIBUTE_UNSPECIFIED = 0;</code>
      */
     public static final int CLOUD_STORAGE_OBJECT_ATTRIBUTE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -199,7 +197,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>ALL_SUPPORTED_OBJECTS = 1;</code>
      */
     public static final int ALL_SUPPORTED_OBJECTS_VALUE = 1;
-
     /**
      *
      *
@@ -210,7 +207,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>STANDARD = 2;</code>
      */
     public static final int STANDARD_VALUE = 2;
-
     /**
      *
      *
@@ -222,7 +218,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>NEARLINE = 3;</code>
      */
     public static final int NEARLINE_VALUE = 3;
-
     /**
      *
      *
@@ -234,7 +229,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>COLDLINE = 4;</code>
      */
     public static final int COLDLINE_VALUE = 4;
-
     /**
      *
      *
@@ -246,7 +240,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>ARCHIVE = 5;</code>
      */
     public static final int ARCHIVE_VALUE = 5;
-
     /**
      *
      *
@@ -257,7 +250,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>REGIONAL = 6;</code>
      */
     public static final int REGIONAL_VALUE = 6;
-
     /**
      *
      *
@@ -268,7 +260,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>MULTI_REGIONAL = 7;</code>
      */
     public static final int MULTI_REGIONAL_VALUE = 7;
-
     /**
      *
      *
@@ -450,7 +441,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>CLOUD_STORAGE_BUCKET_ATTRIBUTE_UNSPECIFIED = 0;</code>
      */
     public static final int CLOUD_STORAGE_BUCKET_ATTRIBUTE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -461,7 +451,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>ALL_SUPPORTED_BUCKETS = 1;</code>
      */
     public static final int ALL_SUPPORTED_BUCKETS_VALUE = 1;
-
     /**
      *
      *
@@ -474,7 +463,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      * <code>AUTOCLASS_DISABLED = 2;</code>
      */
     public static final int AUTOCLASS_DISABLED_VALUE = 2;
-
     /**
      *
      *
@@ -605,7 +593,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
                   : result;
             }
           };
-
   /**
    *
    *
@@ -632,7 +619,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
         com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageObjectAttribute>(
         includedObjectAttributes_, includedObjectAttributes_converter_);
   }
-
   /**
    *
    *
@@ -654,7 +640,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
   public int getIncludedObjectAttributesCount() {
     return includedObjectAttributes_.size();
   }
-
   /**
    *
    *
@@ -678,7 +663,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       getIncludedObjectAttributes(int index) {
     return includedObjectAttributes_converter_.convert(includedObjectAttributes_.get(index));
   }
-
   /**
    *
    *
@@ -700,7 +684,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
   public java.util.List<java.lang.Integer> getIncludedObjectAttributesValueList() {
     return includedObjectAttributes_;
   }
-
   /**
    *
    *
@@ -752,7 +735,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
                   : result;
             }
           };
-
   /**
    *
    *
@@ -776,7 +758,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
         com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageBucketAttribute>(
         includedBucketAttributes_, includedBucketAttributes_converter_);
   }
-
   /**
    *
    *
@@ -795,7 +776,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
   public int getIncludedBucketAttributesCount() {
     return includedBucketAttributes_.size();
   }
-
   /**
    *
    *
@@ -816,7 +796,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       getIncludedBucketAttributes(int index) {
     return includedBucketAttributes_converter_.convert(includedBucketAttributes_.get(index));
   }
-
   /**
    *
    *
@@ -835,7 +814,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
   public java.util.List<java.lang.Integer> getIncludedBucketAttributesValueList() {
     return includedBucketAttributes_;
   }
-
   /**
    *
    *
@@ -1062,7 +1040,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1322,7 +1299,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -1348,7 +1324,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
           com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageObjectAttribute>(
           includedObjectAttributes_, includedObjectAttributes_converter_);
     }
-
     /**
      *
      *
@@ -1369,7 +1344,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     public int getIncludedObjectAttributesCount() {
       return includedObjectAttributes_.size();
     }
-
     /**
      *
      *
@@ -1392,7 +1366,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
         getIncludedObjectAttributes(int index) {
       return includedObjectAttributes_converter_.convert(includedObjectAttributes_.get(index));
     }
-
     /**
      *
      *
@@ -1424,7 +1397,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1426,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1458,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1481,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1501,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     public java.util.List<java.lang.Integer> getIncludedObjectAttributesValueList() {
       return java.util.Collections.unmodifiableList(includedObjectAttributes_);
     }
-
     /**
      *
      *
@@ -1554,7 +1522,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     public int getIncludedObjectAttributesValue(int index) {
       return includedObjectAttributes_.get(index);
     }
-
     /**
      *
      *
@@ -1580,7 +1547,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1571,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1609,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1667,7 +1631,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
           com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.CloudStorageBucketAttribute>(
           includedBucketAttributes_, includedBucketAttributes_converter_);
     }
-
     /**
      *
      *
@@ -1685,7 +1648,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     public int getIncludedBucketAttributesCount() {
       return includedBucketAttributes_.size();
     }
-
     /**
      *
      *
@@ -1705,7 +1667,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
         getIncludedBucketAttributes(int index) {
       return includedBucketAttributes_converter_.convert(includedBucketAttributes_.get(index));
     }
-
     /**
      *
      *
@@ -1734,7 +1695,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1721,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1750,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1770,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1830,7 +1787,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     public java.util.List<java.lang.Integer> getIncludedBucketAttributesValueList() {
       return java.util.Collections.unmodifiableList(includedBucketAttributes_);
     }
-
     /**
      *
      *
@@ -1849,7 +1805,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
     public int getIncludedBucketAttributesValue(int index) {
       return includedBucketAttributes_.get(index);
     }
-
     /**
      *
      *
@@ -1872,7 +1827,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1848,6 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

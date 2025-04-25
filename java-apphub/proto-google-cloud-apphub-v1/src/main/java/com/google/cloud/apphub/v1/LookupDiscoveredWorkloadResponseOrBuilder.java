@@ -36,7 +36,6 @@ public interface LookupDiscoveredWorkloadResponseOrBuilder
    * @return Whether the discoveredWorkload field is set.
    */
   boolean hasDiscoveredWorkload();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LookupDiscoveredWorkloadResponseOrBuilder
    * @return The discoveredWorkload.
    */
   com.google.cloud.apphub.v1.DiscoveredWorkload getDiscoveredWorkload();
-
   /**
    *
    *

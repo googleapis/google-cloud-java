@@ -73,7 +73,6 @@ public interface ResourcesOrBuilder
    * <code>repeated .google.appengine.v1.Volume volumes = 4;</code>
    */
   java.util.List<com.google.appengine.v1.Volume> getVolumesList();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface ResourcesOrBuilder
    * <code>repeated .google.appengine.v1.Volume volumes = 4;</code>
    */
   com.google.appengine.v1.Volume getVolumes(int index);
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ResourcesOrBuilder
    * <code>repeated .google.appengine.v1.Volume volumes = 4;</code>
    */
   int getVolumesCount();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface ResourcesOrBuilder
    * <code>repeated .google.appengine.v1.Volume volumes = 4;</code>
    */
   java.util.List<? extends com.google.appengine.v1.VolumeOrBuilder> getVolumesOrBuilderList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface ResourcesOrBuilder
    * @return The kmsKeyReference.
    */
   java.lang.String getKmsKeyReference();
-
   /**
    *
    *

@@ -75,7 +75,6 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
-
   /**
    *
    *
@@ -101,7 +100,6 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor> getStorageList();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
    */
   com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor getStorage(int index);
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
    */
   int getStorageCount();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>
       getStorageOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.shopping.merchant.datasources.v1beta.DataSource data_sources = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.datasources.v1beta.DataSource> getDataSourcesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.shopping.merchant.datasources.v1beta.DataSource data_sources = 1;</code>
    */
   com.google.shopping.merchant.datasources.v1beta.DataSource getDataSources(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDataSourcesResponseOrBuilder
    * <code>repeated .google.shopping.merchant.datasources.v1beta.DataSource data_sources = 1;</code>
    */
   int getDataSourcesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDataSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.datasources.v1beta.DataSourceOrBuilder>
       getDataSourcesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListDataSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

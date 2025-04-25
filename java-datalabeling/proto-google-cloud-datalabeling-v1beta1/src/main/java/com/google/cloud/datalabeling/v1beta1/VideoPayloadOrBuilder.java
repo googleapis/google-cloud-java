@@ -36,7 +36,6 @@ public interface VideoPayloadOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VideoPayloadOrBuilder
    * @return The videoUri.
    */
   java.lang.String getVideoUri();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface VideoPayloadOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.VideoThumbnail> getVideoThumbnailsList();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface VideoPayloadOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
   com.google.cloud.datalabeling.v1beta1.VideoThumbnail getVideoThumbnails(int index);
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface VideoPayloadOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
   int getVideoThumbnailsCount();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface VideoPayloadOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.VideoThumbnailOrBuilder>
       getVideoThumbnailsOrBuilderList();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface VideoPayloadOrBuilder
    * @return The signedUri.
    */
   java.lang.String getSignedUri();
-
   /**
    *
    *

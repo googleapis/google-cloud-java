@@ -34,7 +34,6 @@ public interface ListInventoriesResponseOrBuilder
    * <code>repeated .google.cloud.osconfig.v1alpha.Inventory inventories = 1;</code>
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.Inventory> getInventoriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListInventoriesResponseOrBuilder
    * <code>repeated .google.cloud.osconfig.v1alpha.Inventory inventories = 1;</code>
    */
   com.google.cloud.osconfig.v1alpha.Inventory getInventories(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListInventoriesResponseOrBuilder
    * <code>repeated .google.cloud.osconfig.v1alpha.Inventory inventories = 1;</code>
    */
   int getInventoriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListInventoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.osconfig.v1alpha.InventoryOrBuilder>
       getInventoriesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListInventoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

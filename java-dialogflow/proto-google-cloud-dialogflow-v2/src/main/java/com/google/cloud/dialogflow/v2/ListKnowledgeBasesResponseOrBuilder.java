@@ -34,7 +34,6 @@ public interface ListKnowledgeBasesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.KnowledgeBase knowledge_bases = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.KnowledgeBase> getKnowledgeBasesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListKnowledgeBasesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.KnowledgeBase knowledge_bases = 1;</code>
    */
   com.google.cloud.dialogflow.v2.KnowledgeBase getKnowledgeBases(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListKnowledgeBasesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.KnowledgeBase knowledge_bases = 1;</code>
    */
   int getKnowledgeBasesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListKnowledgeBasesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.KnowledgeBaseOrBuilder>
       getKnowledgeBasesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListKnowledgeBasesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

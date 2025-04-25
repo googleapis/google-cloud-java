@@ -33,7 +33,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.Location)
     LocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Location.newBuilder() to construct.
   private Location(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LAT_LNG_FIELD_NUMBER = 1;
   private com.google.type.LatLng latLng_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatLng() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEADING_FIELD_NUMBER = 2;
   private int heading_ = 0;
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHeading() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -331,7 +325,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -546,7 +539,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         latLngBuilder_;
-
     /**
      *
      *
@@ -561,7 +553,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatLng() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -580,7 +571,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return latLngBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -603,7 +593,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +612,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +672,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -703,7 +688,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
       }
     }
-
     /**
      *
      *
@@ -728,7 +712,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int heading_;
-
     /**
      *
      *
@@ -747,7 +730,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHeading() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -766,7 +748,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public int getHeading() {
       return heading_;
     }
-
     /**
      *
      *
@@ -789,7 +770,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

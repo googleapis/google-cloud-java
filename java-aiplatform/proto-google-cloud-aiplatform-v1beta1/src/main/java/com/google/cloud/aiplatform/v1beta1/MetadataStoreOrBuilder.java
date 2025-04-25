@@ -36,7 +36,6 @@ public interface MetadataStoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface MetadataStoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface MetadataStoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface MetadataStoreOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface MetadataStoreOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface MetadataStoreOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface MetadataStoreOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public interface MetadataStoreOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface MetadataStoreOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface MetadataStoreOrBuilder
    * @return The state.
    */
   com.google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreState getState();
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public interface MetadataStoreOrBuilder
    * @return Whether the dataplexConfig field is set.
    */
   boolean hasDataplexConfig();
-
   /**
    *
    *
@@ -271,7 +260,6 @@ public interface MetadataStoreOrBuilder
    * @return The dataplexConfig.
    */
   com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig getDataplexConfig();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return The sourceDataTypeFilter.
    */
   java.lang.String getSourceDataTypeFilter();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return Whether the sourceTextFilter field is set.
    */
   boolean hasSourceTextFilter();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return The sourceTextFilter.
    */
   com.google.cloud.clouddms.v1.SourceTextFilter getSourceTextFilter();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return Whether the sourceNumericFilter field is set.
    */
   boolean hasSourceNumericFilter();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return The sourceNumericFilter.
    */
   com.google.cloud.clouddms.v1.SourceNumericFilter getSourceNumericFilter();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return The newDataType.
    */
   java.lang.String getNewDataType();
-
   /**
    *
    *
@@ -237,7 +231,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public interface MultiColumnDatatypeChangeOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *

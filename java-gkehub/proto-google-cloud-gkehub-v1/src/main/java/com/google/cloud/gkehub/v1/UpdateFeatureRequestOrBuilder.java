@@ -37,7 +37,6 @@ public interface UpdateFeatureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateFeatureRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UpdateFeatureRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdateFeatureRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface UpdateFeatureRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.gkehub.v1.Feature getResource();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface UpdateFeatureRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

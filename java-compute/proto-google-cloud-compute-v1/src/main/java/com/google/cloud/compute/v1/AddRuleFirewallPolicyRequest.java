@@ -33,7 +33,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddRuleFirewallPolicyRequest)
     AddRuleFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddRuleFirewallPolicyRequest.newBuilder() to construct.
   private AddRuleFirewallPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
 
   public static final int FIREWALL_POLICY_RULE_RESOURCE_FIELD_NUMBER = 250523523;
   private com.google.cloud.compute.v1.FirewallPolicyRule firewallPolicyRuleResource_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
   public boolean hasFirewallPolicyRuleResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance()
         : firewallPolicyRuleResource_;
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -439,7 +430,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +663,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
             com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
         firewallPolicyRuleResourceBuilder_;
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     public boolean hasFirewallPolicyRuleResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return firewallPolicyRuleResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return getFirewallPolicyRuleResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
             : firewallPolicyRuleResource_;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1040,7 +1014,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1036,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1057,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1074,6 @@ public final class AddRuleFirewallPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

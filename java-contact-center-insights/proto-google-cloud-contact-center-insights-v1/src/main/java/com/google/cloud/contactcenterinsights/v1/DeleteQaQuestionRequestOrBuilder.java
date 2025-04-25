@@ -38,7 +38,6 @@ public interface DeleteQaQuestionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

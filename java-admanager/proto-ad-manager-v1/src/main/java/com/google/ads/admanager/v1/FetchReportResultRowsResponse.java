@@ -33,7 +33,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.FetchReportResultRowsResponse)
     FetchReportResultRowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchReportResultRowsResponse.newBuilder() to construct.
   private FetchReportResultRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> rows_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> getRowsList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       getRowsOrBuilderList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public int getRowsCount() {
     return rows_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public com.google.ads.admanager.v1.Report.DataTable.Row getRows(int index) {
     return rows_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
 
   public static final int RUN_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp runTime_;
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public boolean hasRunTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public com.google.protobuf.Timestamp getRunTime() {
     return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
   }
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange> dateRanges_;
-
   /**
    *
    *
@@ -217,7 +207,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       getDateRangesList() {
     return dateRanges_;
   }
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       getDateRangesOrBuilderList() {
     return dateRanges_;
   }
-
   /**
    *
    *
@@ -251,7 +239,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public int getDateRangesCount() {
     return dateRanges_.size();
   }
-
   /**
    *
    *
@@ -267,7 +254,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getDateRanges(int index) {
     return dateRanges_.get(index);
   }
-
   /**
    *
    *
@@ -290,7 +276,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
       comparisonDateRanges_;
-
   /**
    *
    *
@@ -309,7 +294,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       getComparisonDateRangesList() {
     return comparisonDateRanges_;
   }
-
   /**
    *
    *
@@ -329,7 +313,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       getComparisonDateRangesOrBuilderList() {
     return comparisonDateRanges_;
   }
-
   /**
    *
    *
@@ -347,7 +330,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public int getComparisonDateRangesCount() {
     return comparisonDateRanges_.size();
   }
-
   /**
    *
    *
@@ -366,7 +348,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       int index) {
     return comparisonDateRanges_.get(index);
   }
-
   /**
    *
    *
@@ -388,7 +369,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
 
   public static final int TOTAL_ROW_COUNT_FIELD_NUMBER = 5;
   private int totalRowCount_ = 0;
-
   /**
    *
    *
@@ -412,7 +392,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -437,7 +416,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -680,7 +658,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1117,7 +1094,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return rowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1110,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return rowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1126,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return rowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1148,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1190,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1212,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1232,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1252,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1272,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1291,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1310,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1322,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     public com.google.ads.admanager.v1.Report.DataTable.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1374,7 +1338,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1355,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1368,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       return getRowsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Report.DataTable.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1420,7 +1381,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Report.DataTable.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1458,7 +1418,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         runTimeBuilder_;
-
     /**
      *
      *
@@ -1474,7 +1433,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     public boolean hasRunTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1494,7 +1452,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return runTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1518,7 +1475,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1495,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1568,7 +1523,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1543,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1558,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1623,7 +1575,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
       }
     }
-
     /**
      *
      *
@@ -1689,7 +1640,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return dateRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1709,7 +1659,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return dateRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1729,7 +1678,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return dateRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1756,7 +1704,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1728,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1808,7 +1754,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1835,7 +1780,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1859,7 +1803,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1827,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1851,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1932,7 +1873,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1955,7 +1895,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1972,7 +1911,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         int index) {
       return getDateRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1993,7 +1931,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return dateRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2015,7 +1952,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(dateRanges_);
       }
     }
-
     /**
      *
      *
@@ -2034,7 +1970,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
           .addBuilder(
               com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2054,7 +1989,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
               index,
               com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2128,7 +2062,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return comparisonDateRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2149,7 +2082,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return comparisonDateRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2171,7 +2103,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return comparisonDateRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2199,7 +2130,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2155,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2253,7 +2182,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2281,7 +2209,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2233,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2332,7 +2258,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2358,7 +2283,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2382,7 +2306,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2329,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2424,7 +2346,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         getComparisonDateRangesBuilder(int index) {
       return getComparisonDateRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2446,7 +2367,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return comparisonDateRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2469,7 +2389,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(comparisonDateRanges_);
       }
     }
-
     /**
      *
      *
@@ -2489,7 +2408,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
           .addBuilder(
               com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2510,7 +2428,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
               index,
               com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2550,7 +2467,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     }
 
     private int totalRowCount_;
-
     /**
      *
      *
@@ -2569,7 +2485,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     public int getTotalRowCount() {
       return totalRowCount_;
     }
-
     /**
      *
      *
@@ -2592,7 +2507,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2615,7 +2529,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -2639,7 +2552,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2663,7 +2575,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2686,7 +2597,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2705,7 +2615,6 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

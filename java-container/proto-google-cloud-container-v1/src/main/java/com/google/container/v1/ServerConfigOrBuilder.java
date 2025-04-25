@@ -36,7 +36,6 @@ public interface ServerConfigOrBuilder
    * @return The defaultClusterVersion.
    */
   java.lang.String getDefaultClusterVersion();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ServerConfigOrBuilder
    * @return A list containing the validNodeVersions.
    */
   java.util.List<java.lang.String> getValidNodeVersionsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ServerConfigOrBuilder
    * @return The count of validNodeVersions.
    */
   int getValidNodeVersionsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ServerConfigOrBuilder
    * @return The validNodeVersions at the given index.
    */
   java.lang.String getValidNodeVersions(int index);
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ServerConfigOrBuilder
    * @return The defaultImageType.
    */
   java.lang.String getDefaultImageType();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ServerConfigOrBuilder
    * @return A list containing the validImageTypes.
    */
   java.util.List<java.lang.String> getValidImageTypesList();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ServerConfigOrBuilder
    * @return The count of validImageTypes.
    */
   int getValidImageTypesCount();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface ServerConfigOrBuilder
    * @return The validImageTypes at the given index.
    */
   java.lang.String getValidImageTypes(int index);
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface ServerConfigOrBuilder
    * @return A list containing the validMasterVersions.
    */
   java.util.List<java.lang.String> getValidMasterVersionsList();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface ServerConfigOrBuilder
    * @return The count of validMasterVersions.
    */
   int getValidMasterVersionsCount();
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface ServerConfigOrBuilder
    * @return The validMasterVersions at the given index.
    */
   java.lang.String getValidMasterVersions(int index);
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public interface ServerConfigOrBuilder
    * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
    */
   java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig> getChannelsList();
-
   /**
    *
    *
@@ -259,7 +247,6 @@ public interface ServerConfigOrBuilder
    * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
    */
   com.google.container.v1.ServerConfig.ReleaseChannelConfig getChannels(int index);
-
   /**
    *
    *
@@ -270,7 +257,6 @@ public interface ServerConfigOrBuilder
    * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
    */
   int getChannelsCount();
-
   /**
    *
    *
@@ -282,7 +268,6 @@ public interface ServerConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>
       getChannelsOrBuilderList();
-
   /**
    *
    *

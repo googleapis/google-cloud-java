@@ -33,7 +33,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ImportProductSetsRequest)
     ImportProductSetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportProductSetsRequest.newBuilder() to construct.
   private ImportProductSetsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig inputConfig_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
         ? com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
             com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.Builder,
             com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
             : inputConfig_;
       }
     }
-
     /**
      *
      *

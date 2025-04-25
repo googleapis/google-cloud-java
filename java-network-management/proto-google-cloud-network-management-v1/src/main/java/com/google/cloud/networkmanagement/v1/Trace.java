@@ -43,7 +43,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Trace)
     TraceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Trace.newBuilder() to construct.
   private Trace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENDPOINT_INFO_FIELD_NUMBER = 1;
   private com.google.cloud.networkmanagement.v1.EndpointInfo endpointInfo_;
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndpointInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkmanagement.v1.EndpointInfo.getDefaultInstance()
         : endpointInfo_;
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1.Step> steps_;
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.networkmanagement.v1.Step> getStepsList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       getStepsOrBuilderList() {
     return steps_;
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public int getStepsCount() {
     return steps_.size();
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.networkmanagement.v1.Step getSteps(int index) {
     return steps_.get(index);
   }
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORWARD_TRACE_ID_FIELD_NUMBER = 4;
   private int forwardTraceId_ = 0;
-
   /**
    *
    *
@@ -443,7 +433,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +720,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.EndpointInfo.Builder,
             com.google.cloud.networkmanagement.v1.EndpointInfoOrBuilder>
         endpointInfoBuilder_;
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndpointInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return endpointInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +861,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +878,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndpointInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -918,7 +899,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
             : endpointInfo_;
       }
     }
-
     /**
      *
      *
@@ -985,7 +965,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1007,7 +986,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1007,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1086,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1113,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1137,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1187,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1211,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1235,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1252,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.Step.Builder getStepsBuilder(int index) {
       return getStepsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1306,7 +1273,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1295,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(steps_);
       }
     }
-
     /**
      *
      *
@@ -1348,7 +1313,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       return getStepsFieldBuilder()
           .addBuilder(com.google.cloud.networkmanagement.v1.Step.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1367,7 +1331,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       return getStepsFieldBuilder()
           .addBuilder(index, com.google.cloud.networkmanagement.v1.Step.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1405,7 +1368,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int forwardTraceId_;
-
     /**
      *
      *
@@ -1423,7 +1385,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public int getForwardTraceId() {
       return forwardTraceId_;
     }
-
     /**
      *
      *
@@ -1445,7 +1406,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.FunnelNextAction)
     FunnelNextActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FunnelNextAction.newBuilder() to construct.
   private FunnelNextAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int NEXT_ACTION_DIMENSION_FIELD_NUMBER = 1;
   private com.google.analytics.data.v1alpha.Dimension nextActionDimension_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
   public boolean hasNextActionDimension() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
         ? com.google.analytics.data.v1alpha.Dimension.getDefaultInstance()
         : nextActionDimension_;
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
 
   public static final int LIMIT_FIELD_NUMBER = 2;
   private long limit_ = 0L;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
   public boolean hasLimit() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -356,7 +350,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +576,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
             com.google.analytics.data.v1alpha.Dimension.Builder,
             com.google.analytics.data.v1alpha.DimensionOrBuilder>
         nextActionDimensionBuilder_;
-
     /**
      *
      *
@@ -604,7 +596,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     public boolean hasNextActionDimension() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
         return nextActionDimensionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getNextActionDimensionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
             : nextActionDimension_;
       }
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     }
 
     private long limit_;
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     public long getLimit() {
       return limit_;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

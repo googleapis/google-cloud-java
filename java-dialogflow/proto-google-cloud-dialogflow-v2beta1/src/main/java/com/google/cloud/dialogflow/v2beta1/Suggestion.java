@@ -34,7 +34,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Suggestion)
     SuggestionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Suggestion.newBuilder() to construct.
   private Suggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -137,7 +134,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the snippets.
      */
     java.util.List<java.lang.String> getSnippetsList();
-
     /**
      *
      *
@@ -150,7 +146,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The count of snippets.
      */
     int getSnippetsCount();
-
     /**
      *
      *
@@ -164,7 +159,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The snippets at the given index.
      */
     java.lang.String getSnippets(int index);
-
     /**
      *
      *
@@ -190,7 +184,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     int getMetadataCount();
-
     /**
      *
      *
@@ -202,11 +195,9 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     boolean containsMetadata(java.lang.String key);
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
     /**
      *
      *
@@ -218,7 +209,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
     /**
      *
      *
@@ -234,7 +224,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -261,7 +250,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The answerRecord.
      */
     java.lang.String getAnswerRecord();
-
     /**
      *
      *
@@ -277,7 +265,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAnswerRecordBytes();
   }
-
   /**
    *
    *
@@ -292,7 +279,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Suggestion.Article)
       ArticleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Article.newBuilder() to construct.
     private Article(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -342,7 +328,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -366,7 +351,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -395,7 +379,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -419,7 +402,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -449,7 +431,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList snippets_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -464,7 +445,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSnippetsList() {
       return snippets_;
     }
-
     /**
      *
      *
@@ -479,7 +459,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public int getSnippetsCount() {
       return snippets_.size();
     }
-
     /**
      *
      *
@@ -495,7 +474,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSnippets(int index) {
       return snippets_.get(index);
     }
-
     /**
      *
      *
@@ -538,7 +516,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -556,14 +533,12 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -578,7 +553,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -600,7 +574,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -627,7 +600,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answerRecord_ = "";
-
     /**
      *
      *
@@ -653,7 +625,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -892,7 +863,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1173,7 +1143,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object title_ = "";
-
       /**
        *
        *
@@ -1196,7 +1165,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1219,7 +1187,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1241,7 +1208,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1259,7 +1225,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1284,7 +1249,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -1307,7 +1271,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1330,7 +1293,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1352,7 +1314,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1370,7 +1331,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1403,7 +1363,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -1419,7 +1378,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         snippets_.makeImmutable();
         return snippets_;
       }
-
       /**
        *
        *
@@ -1434,7 +1392,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public int getSnippetsCount() {
         return snippets_.size();
       }
-
       /**
        *
        *
@@ -1450,7 +1407,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSnippets(int index) {
         return snippets_.get(index);
       }
-
       /**
        *
        *
@@ -1466,7 +1422,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSnippetsBytes(int index) {
         return snippets_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1490,7 +1445,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1513,7 +1467,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1533,7 +1486,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1552,7 +1504,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1605,7 +1556,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public int getMetadataCount() {
         return internalGetMetadata().getMap().size();
       }
-
       /**
        *
        *
@@ -1623,14 +1573,12 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetMetadata().getMap().containsKey(key);
       }
-
       /** Use {@link #getMetadataMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
         return getMetadataMap();
       }
-
       /**
        *
        *
@@ -1645,7 +1593,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
         return internalGetMetadata().getMap();
       }
-
       /**
        *
        *
@@ -1667,7 +1614,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -1695,7 +1641,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableMetadata().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -1713,14 +1658,12 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableMetadata().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
         bitField0_ |= 0x00000008;
         return internalGetMutableMetadata().getMutableMap();
       }
-
       /**
        *
        *
@@ -1742,7 +1685,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         return this;
       }
-
       /**
        *
        *
@@ -1760,7 +1702,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object answerRecord_ = "";
-
       /**
        *
        *
@@ -1785,7 +1726,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1810,7 +1750,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1834,7 +1773,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1854,7 +1792,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1961,7 +1898,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The answer.
      */
     java.lang.String getAnswer();
-
     /**
      *
      *
@@ -2002,7 +1938,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The question.
      */
     java.lang.String getQuestion();
-
     /**
      *
      *
@@ -2031,7 +1966,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The source.
      */
     java.lang.String getSource();
-
     /**
      *
      *
@@ -2059,7 +1993,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     int getMetadataCount();
-
     /**
      *
      *
@@ -2071,11 +2004,9 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     boolean containsMetadata(java.lang.String key);
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
     /**
      *
      *
@@ -2087,7 +2018,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
     /**
      *
      *
@@ -2103,7 +2033,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -2130,7 +2059,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      * @return The answerRecord.
      */
     java.lang.String getAnswerRecord();
-
     /**
      *
      *
@@ -2146,7 +2074,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAnswerRecordBytes();
   }
-
   /**
    *
    *
@@ -2161,7 +2088,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer)
       FaqAnswerOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FaqAnswer.newBuilder() to construct.
     private FaqAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2211,7 +2137,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answer_ = "";
-
     /**
      *
      *
@@ -2235,7 +2160,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2186,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CONFIDENCE_FIELD_NUMBER = 2;
     private float confidence_ = 0F;
-
     /**
      *
      *
@@ -2285,7 +2208,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object question_ = "";
-
     /**
      *
      *
@@ -2309,7 +2231,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2338,7 +2259,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -2365,7 +2285,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2419,7 +2338,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -2437,14 +2355,12 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -2459,7 +2375,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -2481,7 +2396,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2508,7 +2422,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answerRecord_ = "";
-
     /**
      *
      *
@@ -2534,7 +2447,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2776,7 +2688,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3063,7 +2974,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object answer_ = "";
-
       /**
        *
        *
@@ -3086,7 +2996,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3109,7 +3018,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3131,7 +3039,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3149,7 +3056,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3174,7 +3080,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float confidence_;
-
       /**
        *
        *
@@ -3192,7 +3097,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public float getConfidence() {
         return confidence_;
       }
-
       /**
        *
        *
@@ -3214,7 +3118,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3236,7 +3139,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object question_ = "";
-
       /**
        *
        *
@@ -3259,7 +3161,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3282,7 +3183,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3304,7 +3204,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3322,7 +3221,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3347,7 +3245,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object source_ = "";
-
       /**
        *
        *
@@ -3373,7 +3270,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3399,7 +3295,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3424,7 +3319,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3445,7 +3339,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3500,7 +3393,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public int getMetadataCount() {
         return internalGetMetadata().getMap().size();
       }
-
       /**
        *
        *
@@ -3518,14 +3410,12 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetMetadata().getMap().containsKey(key);
       }
-
       /** Use {@link #getMetadataMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
         return getMetadataMap();
       }
-
       /**
        *
        *
@@ -3540,7 +3430,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
         return internalGetMetadata().getMap();
       }
-
       /**
        *
        *
@@ -3562,7 +3451,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -3590,7 +3478,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableMetadata().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -3608,14 +3495,12 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableMetadata().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
         bitField0_ |= 0x00000010;
         return internalGetMutableMetadata().getMutableMap();
       }
-
       /**
        *
        *
@@ -3637,7 +3522,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         return this;
       }
-
       /**
        *
        *
@@ -3655,7 +3539,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object answerRecord_ = "";
-
       /**
        *
        *
@@ -3680,7 +3563,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3705,7 +3587,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3729,7 +3610,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3749,7 +3629,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3844,7 +3723,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3871,7 +3749,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3903,7 +3780,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion.Article> articles_;
-
   /**
    *
    *
@@ -3917,7 +3793,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion.Article> getArticlesList() {
     return articles_;
   }
-
   /**
    *
    *
@@ -3932,7 +3807,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       getArticlesOrBuilderList() {
     return articles_;
   }
-
   /**
    *
    *
@@ -3946,7 +3820,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public int getArticlesCount() {
     return articles_.size();
   }
-
   /**
    *
    *
@@ -3960,7 +3833,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.v2beta1.Suggestion.Article getArticles(int index) {
     return articles_.get(index);
   }
-
   /**
    *
    *
@@ -3980,7 +3852,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer> faqAnswers_;
-
   /**
    *
    *
@@ -3995,7 +3866,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       getFaqAnswersList() {
     return faqAnswers_;
   }
-
   /**
    *
    *
@@ -4010,7 +3880,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       getFaqAnswersOrBuilderList() {
     return faqAnswers_;
   }
-
   /**
    *
    *
@@ -4024,7 +3893,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public int getFaqAnswersCount() {
     return faqAnswers_.size();
   }
-
   /**
    *
    *
@@ -4038,7 +3906,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer getFaqAnswers(int index) {
     return faqAnswers_.get(index);
   }
-
   /**
    *
    *
@@ -4056,7 +3923,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -4072,7 +3938,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4088,7 +3953,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -4107,7 +3971,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -4134,7 +3997,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4366,7 +4228,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4714,7 +4575,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4740,7 +4600,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4766,7 +4625,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4791,7 +4649,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4812,7 +4669,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4874,7 +4730,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return articlesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4891,7 +4746,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return articlesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4908,7 +4762,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return articlesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4932,7 +4785,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4953,7 +4805,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4976,7 +4827,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5000,7 +4850,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5021,7 +4870,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5042,7 +4890,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5064,7 +4911,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5084,7 +4930,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5104,7 +4949,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5118,7 +4962,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getArticlesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5136,7 +4979,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return articlesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5154,7 +4996,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(articles_);
       }
     }
-
     /**
      *
      *
@@ -5168,7 +5009,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       return getArticlesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.Suggestion.Article.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5184,7 +5024,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.Suggestion.Article.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5251,7 +5090,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return faqAnswersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5268,7 +5106,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return faqAnswersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5285,7 +5122,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return faqAnswersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5309,7 +5145,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5331,7 +5166,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5354,7 +5188,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5378,7 +5211,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5399,7 +5231,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5421,7 +5252,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5443,7 +5273,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5463,7 +5292,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5483,7 +5311,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5497,7 +5324,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFaqAnswersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5515,7 +5341,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return faqAnswersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5534,7 +5359,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(faqAnswers_);
       }
     }
-
     /**
      *
      *
@@ -5549,7 +5373,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5565,7 +5388,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5603,7 +5425,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5618,7 +5439,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -5639,7 +5459,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5662,7 +5481,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5682,7 +5500,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5710,7 +5527,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5730,7 +5546,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5745,7 +5560,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5764,7 +5578,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5792,7 +5605,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -5818,7 +5630,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5844,7 +5655,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5869,7 +5679,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5890,7 +5699,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

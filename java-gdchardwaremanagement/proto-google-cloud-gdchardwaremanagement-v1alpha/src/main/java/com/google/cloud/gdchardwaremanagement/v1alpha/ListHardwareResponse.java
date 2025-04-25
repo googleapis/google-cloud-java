@@ -33,7 +33,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.ListHardwareResponse)
     ListHardwareResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListHardwareResponse.newBuilder() to construct.
   private ListHardwareResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware> hardware_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware> getHardwareList() {
     return hardware_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       getHardwareOrBuilderList() {
     return hardware_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   public int getHardwareCount() {
     return hardware_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware getHardware(int index) {
     return hardware_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -250,7 +239,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -456,7 +444,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -766,7 +753,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return hardwareBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return hardwareBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return hardwareBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +987,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getHardwareFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1030,7 +1004,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return hardwareBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1022,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(hardware_);
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1035,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       return getHardwareFieldBuilder()
           .addBuilder(com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1079,7 +1050,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1112,7 +1082,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1135,7 +1104,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1158,7 +1126,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1147,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1196,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1248,7 +1212,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1264,7 +1227,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1281,7 +1243,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1298,7 +1259,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1323,7 +1283,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1306,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1326,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1345,6 @@ public final class ListHardwareResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

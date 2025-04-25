@@ -38,7 +38,6 @@ public interface FetchCaCertsResponseOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain>
       getCaCertsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface FetchCaCertsResponseOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain getCaCerts(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface FetchCaCertsResponseOrBuilder
    * </code>
    */
   int getCaCertsCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface FetchCaCertsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChainOrBuilder>
       getCaCertsOrBuilderList();
-
   /**
    *
    *

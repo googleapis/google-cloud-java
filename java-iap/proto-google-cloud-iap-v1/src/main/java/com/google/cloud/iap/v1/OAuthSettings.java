@@ -34,7 +34,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.OAuthSettings)
     OAuthSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OAuthSettings.newBuilder() to construct.
   private OAuthSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LOGIN_HINT_FIELD_NUMBER = 2;
   private com.google.protobuf.StringValue loginHint_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoginHint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.StringValue getLoginHint() {
     return loginHint_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : loginHint_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList programmaticClients_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getProgrammaticClientsList() {
     return programmaticClients_;
   }
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   public int getProgrammaticClientsCount() {
     return programmaticClients_.size();
   }
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getProgrammaticClients(int index) {
     return programmaticClients_.get(index);
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -603,7 +594,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         loginHintBuilder_;
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoginHint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
         return loginHintBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -674,7 +662,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLoginHintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -796,7 +779,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
             : loginHint_;
       }
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       programmaticClients_.makeImmutable();
       return programmaticClients_;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
     public int getProgrammaticClientsCount() {
       return programmaticClients_.size();
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProgrammaticClients(int index) {
       return programmaticClients_.get(index);
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getProgrammaticClientsBytes(int index) {
       return programmaticClients_.getByteString(index);
     }
-
     /**
      *
      *
@@ -928,7 +905,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +928,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +948,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +967,6 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

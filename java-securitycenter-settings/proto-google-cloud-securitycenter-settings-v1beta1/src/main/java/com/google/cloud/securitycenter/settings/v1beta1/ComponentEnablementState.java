@@ -82,7 +82,6 @@ public enum ComponentEnablementState implements com.google.protobuf.ProtocolMess
    * <code>COMPONENT_ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int COMPONENT_ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum ComponentEnablementState implements com.google.protobuf.ProtocolMess
    * <code>DISABLE = 1;</code>
    */
   public static final int DISABLE_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum ComponentEnablementState implements com.google.protobuf.ProtocolMess
    * <code>ENABLE = 2;</code>
    */
   public static final int ENABLE_VALUE = 2;
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RepairRolloutRule)
     RepairRolloutRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RepairRolloutRule.newBuilder() to construct.
   private RepairRolloutRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList phases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getPhasesList() {
     return phases_;
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public int getPhasesCount() {
     return phases_.size();
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public java.lang.String getPhases(int index) {
     return phases_.get(index);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList jobs_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getJobsList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public int getJobsCount() {
     return jobs_.size();
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public java.lang.String getJobs(int index) {
     return jobs_.get(index);
   }
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
 
   public static final int CONDITION_FIELD_NUMBER = 6;
   private com.google.cloud.deploy.v1.AutomationRuleCondition condition_;
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -346,7 +333,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.deploy.v1.AutomationRuleCondition.getDefaultInstance()
         : condition_;
   }
-
   /**
    *
    *
@@ -369,7 +355,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.RepairPhaseConfig> repairPhases_;
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.deploy.v1.RepairPhaseConfig> getRepairPhasesList() {
     return repairPhases_;
   }
-
   /**
    *
    *
@@ -402,7 +386,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       getRepairPhasesOrBuilderList() {
     return repairPhases_;
   }
-
   /**
    *
    *
@@ -418,7 +401,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public int getRepairPhasesCount() {
     return repairPhases_.size();
   }
-
   /**
    *
    *
@@ -434,7 +416,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.deploy.v1.RepairPhaseConfig getRepairPhases(int index) {
     return repairPhases_.get(index);
   }
-
   /**
    *
    *
@@ -667,7 +648,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -986,7 +966,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1011,7 +990,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1014,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1056,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1136,7 +1110,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       phases_.makeImmutable();
       return phases_;
     }
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public int getPhasesCount() {
       return phases_.size();
     }
-
     /**
      *
      *
@@ -1177,7 +1149,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public java.lang.String getPhases(int index) {
       return phases_.get(index);
     }
-
     /**
      *
      *
@@ -1198,7 +1169,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getPhasesBytes(int index) {
       return phases_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1227,7 +1197,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1224,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1248,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1271,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1309,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1365,7 +1330,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       jobs_.makeImmutable();
       return jobs_;
     }
-
     /**
      *
      *
@@ -1386,7 +1350,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public int getJobsCount() {
       return jobs_.size();
     }
-
     /**
      *
      *
@@ -1408,7 +1371,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public java.lang.String getJobs(int index) {
       return jobs_.get(index);
     }
-
     /**
      *
      *
@@ -1430,7 +1392,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getJobsBytes(int index) {
       return jobs_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1460,7 +1421,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1489,7 +1449,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1515,7 +1474,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1540,7 +1498,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1577,7 +1534,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
             com.google.cloud.deploy.v1.AutomationRuleCondition.Builder,
             com.google.cloud.deploy.v1.AutomationRuleConditionOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -1594,7 +1550,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1617,7 +1572,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return conditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1642,7 +1596,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1618,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1648,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1669,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1685,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1756,7 +1705,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
             : condition_;
       }
     }
-
     /**
      *
      *
@@ -1820,7 +1768,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return repairPhasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1839,7 +1786,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return repairPhasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1858,7 +1804,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return repairPhasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1883,7 +1828,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1906,7 +1850,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1931,7 +1874,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1898,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1979,7 +1920,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2002,7 +1942,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2025,7 +1964,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1985,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2069,7 +2006,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2084,7 +2020,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.deploy.v1.RepairPhaseConfig.Builder getRepairPhasesBuilder(int index) {
       return getRepairPhasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2104,7 +2039,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return repairPhasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2124,7 +2058,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(repairPhases_);
       }
     }
-
     /**
      *
      *
@@ -2140,7 +2073,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       return getRepairPhasesFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.RepairPhaseConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2156,7 +2088,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       return getRepairPhasesFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.RepairPhaseConfig.getDefaultInstance());
     }
-
     /**
      *
      *

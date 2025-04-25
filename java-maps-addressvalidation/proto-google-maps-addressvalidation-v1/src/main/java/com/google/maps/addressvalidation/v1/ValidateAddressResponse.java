@@ -33,7 +33,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.maps.addressvalidation.v1.ValidateAddressResponse)
     ValidateAddressResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ValidateAddressResponse.newBuilder() to construct.
   private ValidateAddressResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 1;
   private com.google.maps.addressvalidation.v1.ValidationResult result_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
         ? com.google.maps.addressvalidation.v1.ValidationResult.getDefaultInstance()
         : result_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseId_ = "";
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -347,7 +341,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
             com.google.maps.addressvalidation.v1.ValidationResult.Builder,
             com.google.maps.addressvalidation.v1.ValidationResultOrBuilder>
         resultBuilder_;
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
         return resultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +638,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
             : result_;
       }
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object responseId_ = "";
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -808,7 +790,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +812,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +830,6 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -73,8 +73,7 @@ public class MockAnalyticsServiceImpl extends AnalyticsServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportAnalyticsMetrics, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ExportAnalyticsMetrics, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

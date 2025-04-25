@@ -37,7 +37,6 @@ public interface AppConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AppConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AppConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AppConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface AppConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AppConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -153,11 +147,9 @@ public interface AppConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface AppConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface AppConnectionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -208,7 +198,6 @@ public interface AppConnectionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -236,7 +225,6 @@ public interface AppConnectionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public interface AppConnectionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -296,7 +283,6 @@ public interface AppConnectionOrBuilder
    * @return Whether the applicationEndpoint field is set.
    */
   boolean hasApplicationEndpoint();
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public interface AppConnectionOrBuilder
    */
   com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint
       getApplicationEndpoint();
-
   /**
    *
    *
@@ -342,7 +327,6 @@ public interface AppConnectionOrBuilder
    * @return A list containing the connectors.
    */
   java.util.List<java.lang.String> getConnectorsList();
-
   /**
    *
    *
@@ -356,7 +340,6 @@ public interface AppConnectionOrBuilder
    * @return The count of connectors.
    */
   int getConnectorsCount();
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public interface AppConnectionOrBuilder
    * @return The connectors at the given index.
    */
   java.lang.String getConnectors(int index);
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public interface AppConnectionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -431,7 +412,6 @@ public interface AppConnectionOrBuilder
    * @return Whether the gateway field is set.
    */
   boolean hasGateway();
-
   /**
    *
    *
@@ -446,7 +426,6 @@ public interface AppConnectionOrBuilder
    * @return The gateway.
    */
   com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway getGateway();
-
   /**
    *
    *

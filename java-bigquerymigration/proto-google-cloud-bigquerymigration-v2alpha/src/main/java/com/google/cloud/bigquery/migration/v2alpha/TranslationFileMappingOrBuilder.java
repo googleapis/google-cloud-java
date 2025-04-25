@@ -36,7 +36,6 @@ public interface TranslationFileMappingOrBuilder
    * @return The inputPath.
    */
   java.lang.String getInputPath();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TranslationFileMappingOrBuilder
    * @return The outputPath.
    */
   java.lang.String getOutputPath();
-
   /**
    *
    *

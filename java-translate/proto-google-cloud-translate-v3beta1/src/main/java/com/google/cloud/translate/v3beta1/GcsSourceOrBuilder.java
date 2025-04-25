@@ -36,7 +36,6 @@ public interface GcsSourceOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface RaySpecOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface RaySpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> getNfsMountsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface RaySpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.NfsMount getNfsMounts(int index);
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface RaySpecOrBuilder
    * </code>
    */
   int getNfsMountsCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface RaySpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
       getNfsMountsOrBuilderList();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface RaySpecOrBuilder
    * </code>
    */
   int getResourcePoolImagesCount();
-
   /**
    *
    *
@@ -167,11 +161,9 @@ public interface RaySpecOrBuilder
    * </code>
    */
   boolean containsResourcePoolImages(java.lang.String key);
-
   /** Use {@link #getResourcePoolImagesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourcePoolImages();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface RaySpecOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourcePoolImagesMap();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public interface RaySpecOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public interface RaySpecOrBuilder
    * @return The headNodeResourcePoolId.
    */
   java.lang.String getHeadNodeResourcePoolId();
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public interface RaySpecOrBuilder
    * @return Whether the rayMetricSpec field is set.
    */
   boolean hasRayMetricSpec();
-
   /**
    *
    *
@@ -300,7 +288,6 @@ public interface RaySpecOrBuilder
    * @return The rayMetricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.RayMetricSpec getRayMetricSpec();
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public interface RaySpecOrBuilder
    * @return Whether the rayLogsSpec field is set.
    */
   boolean hasRayLogsSpec();
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public interface RaySpecOrBuilder
    * @return The rayLogsSpec.
    */
   com.google.cloud.aiplatform.v1beta1.RayLogsSpec getRayLogsSpec();
-
   /**
    *
    *

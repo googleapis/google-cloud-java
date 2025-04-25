@@ -36,7 +36,6 @@ public interface FacetValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FacetValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FacetValueOrBuilder
    * @return Whether the integerValue field is set.
    */
   boolean hasIntegerValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface FacetValueOrBuilder
    * @return Whether the datetimeValue field is set.
    */
   boolean hasDatetimeValue();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface FacetValueOrBuilder
    * @return The datetimeValue.
    */
   com.google.type.DateTime getDatetimeValue();
-
   /**
    *
    *

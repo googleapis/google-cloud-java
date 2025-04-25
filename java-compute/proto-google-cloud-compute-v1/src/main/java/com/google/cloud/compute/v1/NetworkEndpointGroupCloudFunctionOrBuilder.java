@@ -36,7 +36,6 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    * @return Whether the function field is set.
    */
   boolean hasFunction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    * @return The function.
    */
   java.lang.String getFunction();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    * @return Whether the urlMask field is set.
    */
   boolean hasUrlMask();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    * @return The urlMask.
    */
   java.lang.String getUrlMask();
-
   /**
    *
    *

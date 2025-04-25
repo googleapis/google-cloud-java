@@ -39,7 +39,6 @@ public interface InputConfigOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.translate.v3beta1.GcsSource getGcsSource();
-
   /**
    *
    *

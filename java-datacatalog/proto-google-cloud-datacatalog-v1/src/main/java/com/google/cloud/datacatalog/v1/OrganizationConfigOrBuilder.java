@@ -36,7 +36,6 @@ public interface OrganizationConfigOrBuilder
    * <code>map&lt;string, .google.cloud.datacatalog.v1.MigrationConfig&gt; config = 1;</code>
    */
   int getConfigCount();
-
   /**
    *
    *
@@ -49,11 +48,9 @@ public interface OrganizationConfigOrBuilder
    * <code>map&lt;string, .google.cloud.datacatalog.v1.MigrationConfig&gt; config = 1;</code>
    */
   boolean containsConfig(java.lang.String key);
-
   /** Use {@link #getConfigMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.MigrationConfig> getConfig();
-
   /**
    *
    *
@@ -66,7 +63,6 @@ public interface OrganizationConfigOrBuilder
    * <code>map&lt;string, .google.cloud.datacatalog.v1.MigrationConfig&gt; config = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.MigrationConfig> getConfigMap();
-
   /**
    *
    *
@@ -83,7 +79,6 @@ public interface OrganizationConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.datacatalog.v1.MigrationConfig defaultValue);
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface GetLoggingServerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface AcknowledgeTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface AcknowledgeTaskRequestOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface AcknowledgeTaskRequestOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
-
   /**
    *
    *

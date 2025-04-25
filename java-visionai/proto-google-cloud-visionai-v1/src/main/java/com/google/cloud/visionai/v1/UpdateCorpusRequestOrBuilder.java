@@ -37,7 +37,6 @@ public interface UpdateCorpusRequestOrBuilder
    * @return Whether the corpus field is set.
    */
   boolean hasCorpus();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateCorpusRequestOrBuilder
    * @return The corpus.
    */
   com.google.cloud.visionai.v1.Corpus getCorpus();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateCorpusRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface UpdateCorpusRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

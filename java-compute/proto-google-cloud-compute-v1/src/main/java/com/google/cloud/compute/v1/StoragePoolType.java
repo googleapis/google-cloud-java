@@ -32,7 +32,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StoragePoolType)
     StoragePoolTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StoragePoolType.newBuilder() to construct.
   private StoragePoolType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int DEPRECATED_FIELD_NUMBER = 515138995;
   private com.google.cloud.compute.v1.DeprecationStatus deprecated_;
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasDeprecated() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()
         : deprecated_;
   }
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -317,7 +304,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -341,7 +327,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_POOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER = 182139085;
   private long maxPoolProvisionedCapacityGb_ = 0L;
-
   /**
    *
    *
@@ -384,7 +368,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxPoolProvisionedCapacityGb() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -403,7 +386,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_POOL_PROVISIONED_IOPS_FIELD_NUMBER = 515270652;
   private long maxPoolProvisionedIops_ = 0L;
-
   /**
    *
    *
@@ -419,7 +401,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxPoolProvisionedIops() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -438,7 +419,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAX_POOL_PROVISIONED_THROUGHPUT_FIELD_NUMBER = 228928061;
   private long maxPoolProvisionedThroughput_ = 0L;
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMaxPoolProvisionedThroughput() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -473,7 +452,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MIN_POOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER = 191022751;
   private long minPoolProvisionedCapacityGb_ = 0L;
-
   /**
    *
    *
@@ -489,7 +467,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMinPoolProvisionedCapacityGb() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -508,7 +485,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MIN_POOL_PROVISIONED_IOPS_FIELD_NUMBER = 416473706;
   private long minPoolProvisionedIops_ = 0L;
-
   /**
    *
    *
@@ -524,7 +500,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMinPoolProvisionedIops() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -543,7 +518,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MIN_POOL_PROVISIONED_THROUGHPUT_FIELD_NUMBER = 367761963;
   private long minPoolProvisionedThroughput_ = 0L;
-
   /**
    *
    *
@@ -559,7 +533,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMinPoolProvisionedThroughput() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -578,7 +551,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   public static final int MIN_SIZE_GB_FIELD_NUMBER = 385278188;
   private long minSizeGb_ = 0L;
-
   /**
    *
    *
@@ -594,7 +566,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasMinSizeGb() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -615,7 +586,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -631,7 +601,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasName() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -655,7 +624,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -684,7 +652,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -700,7 +667,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -724,7 +690,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -753,7 +718,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
-
   /**
    *
    *
@@ -769,7 +733,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -793,7 +756,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -823,7 +785,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList supportedDiskTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -838,7 +799,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSupportedDiskTypesList() {
     return supportedDiskTypes_;
   }
-
   /**
    *
    *
@@ -853,7 +813,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public int getSupportedDiskTypesCount() {
     return supportedDiskTypes_.size();
   }
-
   /**
    *
    *
@@ -869,7 +828,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSupportedDiskTypes(int index) {
     return supportedDiskTypes_.get(index);
   }
-
   /**
    *
    *
@@ -890,7 +848,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -906,7 +863,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
   public boolean hasZone() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -930,7 +886,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -1363,7 +1318,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1806,7 +1760,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -1821,7 +1774,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1844,7 +1796,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1867,7 +1818,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1889,7 +1839,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1907,7 +1856,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1937,7 +1885,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.DeprecationStatus.Builder,
             com.google.cloud.compute.v1.DeprecationStatusOrBuilder>
         deprecatedBuilder_;
-
     /**
      *
      *
@@ -1952,7 +1899,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasDeprecated() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1973,7 +1919,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return deprecatedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1996,7 +1941,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2017,7 +1961,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2045,7 +1988,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2065,7 +2007,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2080,7 +2021,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDeprecatedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2099,7 +2039,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
             : deprecated_;
       }
     }
-
     /**
      *
      *
@@ -2127,7 +2066,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2142,7 +2080,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2165,7 +2102,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2188,7 +2124,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2210,7 +2145,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2162,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2253,7 +2186,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2269,7 +2201,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2285,7 +2216,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2305,7 +2235,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2325,7 +2254,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -2340,7 +2268,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2363,7 +2290,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2386,7 +2312,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2408,7 +2333,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2350,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2374,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long maxPoolProvisionedCapacityGb_;
-
     /**
      *
      *
@@ -2467,7 +2389,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxPoolProvisionedCapacityGb() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2483,7 +2404,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMaxPoolProvisionedCapacityGb() {
       return maxPoolProvisionedCapacityGb_;
     }
-
     /**
      *
      *
@@ -2503,7 +2423,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2523,7 +2442,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long maxPoolProvisionedIops_;
-
     /**
      *
      *
@@ -2539,7 +2457,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxPoolProvisionedIops() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2555,7 +2472,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMaxPoolProvisionedIops() {
       return maxPoolProvisionedIops_;
     }
-
     /**
      *
      *
@@ -2575,7 +2491,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2595,7 +2510,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long maxPoolProvisionedThroughput_;
-
     /**
      *
      *
@@ -2611,7 +2525,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMaxPoolProvisionedThroughput() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2627,7 +2540,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMaxPoolProvisionedThroughput() {
       return maxPoolProvisionedThroughput_;
     }
-
     /**
      *
      *
@@ -2647,7 +2559,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2667,7 +2578,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long minPoolProvisionedCapacityGb_;
-
     /**
      *
      *
@@ -2683,7 +2593,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMinPoolProvisionedCapacityGb() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2699,7 +2608,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMinPoolProvisionedCapacityGb() {
       return minPoolProvisionedCapacityGb_;
     }
-
     /**
      *
      *
@@ -2719,7 +2627,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2739,7 +2646,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long minPoolProvisionedIops_;
-
     /**
      *
      *
@@ -2755,7 +2661,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMinPoolProvisionedIops() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2771,7 +2676,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMinPoolProvisionedIops() {
       return minPoolProvisionedIops_;
     }
-
     /**
      *
      *
@@ -2791,7 +2695,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2811,7 +2714,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long minPoolProvisionedThroughput_;
-
     /**
      *
      *
@@ -2827,7 +2729,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMinPoolProvisionedThroughput() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -2843,7 +2744,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMinPoolProvisionedThroughput() {
       return minPoolProvisionedThroughput_;
     }
-
     /**
      *
      *
@@ -2863,7 +2763,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2883,7 +2782,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private long minSizeGb_;
-
     /**
      *
      *
@@ -2899,7 +2797,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasMinSizeGb() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -2915,7 +2812,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public long getMinSizeGb() {
       return minSizeGb_;
     }
-
     /**
      *
      *
@@ -2935,7 +2831,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2955,7 +2850,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2970,7 +2864,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasName() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -2993,7 +2886,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3016,7 +2908,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3038,7 +2929,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3056,7 +2946,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3081,7 +2970,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -3096,7 +2984,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -3119,7 +3006,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3142,7 +3028,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3164,7 +3049,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3182,7 +3066,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3207,7 +3090,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object selfLinkWithId_ = "";
-
     /**
      *
      *
@@ -3222,7 +3104,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -3245,7 +3126,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3268,7 +3148,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3290,7 +3169,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3308,7 +3186,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3341,7 +3218,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00008000;
     }
-
     /**
      *
      *
@@ -3357,7 +3233,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       supportedDiskTypes_.makeImmutable();
       return supportedDiskTypes_;
     }
-
     /**
      *
      *
@@ -3372,7 +3247,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public int getSupportedDiskTypesCount() {
       return supportedDiskTypes_.size();
     }
-
     /**
      *
      *
@@ -3388,7 +3262,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSupportedDiskTypes(int index) {
       return supportedDiskTypes_.get(index);
     }
-
     /**
      *
      *
@@ -3404,7 +3277,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSupportedDiskTypesBytes(int index) {
       return supportedDiskTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3428,7 +3300,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3451,7 +3322,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3471,7 +3341,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3490,7 +3359,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3516,7 +3384,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -3531,7 +3398,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
     public boolean hasZone() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -3554,7 +3420,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3577,7 +3442,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3599,7 +3463,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3617,7 +3480,6 @@ public final class StoragePoolType extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

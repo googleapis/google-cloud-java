@@ -40,7 +40,6 @@ public interface CloudSqlInstanceOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface CloudSqlInstanceOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CloudSqlInstanceOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *

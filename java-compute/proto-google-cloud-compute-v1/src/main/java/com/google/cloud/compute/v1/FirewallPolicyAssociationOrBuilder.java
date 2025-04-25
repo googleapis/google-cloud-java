@@ -36,7 +36,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return Whether the attachmentTarget field is set.
    */
   boolean hasAttachmentTarget();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return The attachmentTarget.
    */
   java.lang.String getAttachmentTarget();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return Whether the firewallPolicyId field is set.
    */
   boolean hasFirewallPolicyId();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return The firewallPolicyId.
    */
   java.lang.String getFirewallPolicyId();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return Whether the shortName field is set.
    */
   boolean hasShortName();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface FirewallPolicyAssociationOrBuilder
    * @return The shortName.
    */
   java.lang.String getShortName();
-
   /**
    *
    *

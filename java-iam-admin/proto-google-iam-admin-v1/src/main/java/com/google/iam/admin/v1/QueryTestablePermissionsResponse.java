@@ -33,7 +33,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.QueryTestablePermissionsResponse)
     QueryTestablePermissionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryTestablePermissionsResponse.newBuilder() to construct.
   private QueryTestablePermissionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.iam.admin.v1.Permission> permissions_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
   public java.util.List<com.google.iam.admin.v1.Permission> getPermissionsList() {
     return permissions_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       getPermissionsOrBuilderList() {
     return permissions_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
   public int getPermissionsCount() {
     return permissions_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
   public com.google.iam.admin.v1.Permission getPermissions(int index) {
     return permissions_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return permissionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return permissionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return permissionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
     public com.google.iam.admin.v1.Permission.Builder getPermissionsBuilder(int index) {
       return getPermissionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return permissionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(permissions_);
       }
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       return getPermissionsFieldBuilder()
           .addBuilder(com.google.iam.admin.v1.Permission.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       return getPermissionsFieldBuilder()
           .addBuilder(index, com.google.iam.admin.v1.Permission.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class QueryTestablePermissionsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata)
     AnalyzeIamPolicyLongrunningMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeIamPolicyLongrunningMetadata.newBuilder() to construct.
   private AnalyzeIamPolicyLongrunningMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -491,7 +486,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -508,7 +502,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -531,7 +524,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -556,7 +548,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +619,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +635,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -668,7 +655,6 @@ public final class AnalyzeIamPolicyLongrunningMetadata
             : createTime_;
       }
     }
-
     /**
      *
      *

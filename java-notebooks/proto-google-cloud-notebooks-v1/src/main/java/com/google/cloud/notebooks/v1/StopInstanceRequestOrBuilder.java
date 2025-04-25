@@ -37,7 +37,6 @@ public interface StopInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

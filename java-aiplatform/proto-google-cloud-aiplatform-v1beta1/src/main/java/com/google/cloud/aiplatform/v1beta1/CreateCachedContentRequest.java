@@ -34,7 +34,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateCachedContentRequest)
     CreateCachedContentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCachedContentRequest.newBuilder() to construct.
   private CreateCachedContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
 
   public static final int CACHED_CONTENT_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.CachedContent cachedContent_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
   public boolean hasCachedContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
         ? com.google.cloud.aiplatform.v1beta1.CachedContent.getDefaultInstance()
         : cachedContent_;
   }
-
   /**
    *
    *
@@ -356,7 +350,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -649,7 +639,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.CachedContent.Builder,
             com.google.cloud.aiplatform.v1beta1.CachedContentOrBuilder>
         cachedContentBuilder_;
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
     public boolean hasCachedContent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
         return cachedContentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +824,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
       onChanged();
       return getCachedContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class CreateCachedContentRequest extends com.google.protobuf.Genera
             : cachedContent_;
       }
     }
-
     /**
      *
      *

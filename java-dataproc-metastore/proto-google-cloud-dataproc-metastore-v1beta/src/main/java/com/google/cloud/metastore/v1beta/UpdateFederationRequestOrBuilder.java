@@ -40,7 +40,6 @@ public interface UpdateFederationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateFederationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateFederationRequestOrBuilder
    * @return Whether the federation field is set.
    */
   boolean hasFederation();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface UpdateFederationRequestOrBuilder
    * @return The federation.
    */
   com.google.cloud.metastore.v1beta.Federation getFederation();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface UpdateFederationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

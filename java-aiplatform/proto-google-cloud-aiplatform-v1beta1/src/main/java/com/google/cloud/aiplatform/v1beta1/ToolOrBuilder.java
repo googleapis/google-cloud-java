@@ -46,7 +46,6 @@ public interface ToolOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FunctionDeclaration>
       getFunctionDeclarationsList();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ToolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FunctionDeclaration getFunctionDeclarations(int index);
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ToolOrBuilder
    * </code>
    */
   int getFunctionDeclarationsCount();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ToolOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FunctionDeclarationOrBuilder>
       getFunctionDeclarationsOrBuilderList();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface ToolOrBuilder
    * @return Whether the retrieval field is set.
    */
   boolean hasRetrieval();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface ToolOrBuilder
    * @return The retrieval.
    */
   com.google.cloud.aiplatform.v1beta1.Retrieval getRetrieval();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface ToolOrBuilder
    * @return Whether the googleSearch field is set.
    */
   boolean hasGoogleSearch();
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public interface ToolOrBuilder
    * @return The googleSearch.
    */
   com.google.cloud.aiplatform.v1beta1.Tool.GoogleSearch getGoogleSearch();
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public interface ToolOrBuilder
    * @return Whether the googleSearchRetrieval field is set.
    */
   boolean hasGoogleSearchRetrieval();
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public interface ToolOrBuilder
    * @return The googleSearchRetrieval.
    */
   com.google.cloud.aiplatform.v1beta1.GoogleSearchRetrieval getGoogleSearchRetrieval();
-
   /**
    *
    *
@@ -297,7 +287,6 @@ public interface ToolOrBuilder
    * @return Whether the enterpriseWebSearch field is set.
    */
   boolean hasEnterpriseWebSearch();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface ToolOrBuilder
    * @return The enterpriseWebSearch.
    */
   com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch getEnterpriseWebSearch();
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public interface ToolOrBuilder
    * @return Whether the codeExecution field is set.
    */
   boolean hasCodeExecution();
-
   /**
    *
    *
@@ -360,7 +347,6 @@ public interface ToolOrBuilder
    * @return The codeExecution.
    */
   com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution getCodeExecution();
-
   /**
    *
    *

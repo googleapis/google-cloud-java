@@ -34,7 +34,6 @@ public interface CheckAutopilotCompatibilityResponseOrBuilder
    * <code>repeated .google.container.v1.AutopilotCompatibilityIssue issues = 1;</code>
    */
   java.util.List<com.google.container.v1.AutopilotCompatibilityIssue> getIssuesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface CheckAutopilotCompatibilityResponseOrBuilder
    * <code>repeated .google.container.v1.AutopilotCompatibilityIssue issues = 1;</code>
    */
   com.google.container.v1.AutopilotCompatibilityIssue getIssues(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface CheckAutopilotCompatibilityResponseOrBuilder
    * <code>repeated .google.container.v1.AutopilotCompatibilityIssue issues = 1;</code>
    */
   int getIssuesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface CheckAutopilotCompatibilityResponseOrBuilder
    */
   java.util.List<? extends com.google.container.v1.AutopilotCompatibilityIssueOrBuilder>
       getIssuesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface CheckAutopilotCompatibilityResponseOrBuilder
    * @return The summary.
    */
   java.lang.String getSummary();
-
   /**
    *
    *

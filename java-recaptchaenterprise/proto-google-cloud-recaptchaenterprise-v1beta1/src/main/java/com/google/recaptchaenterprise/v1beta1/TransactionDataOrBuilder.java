@@ -39,7 +39,6 @@ public interface TransactionDataOrBuilder
    * @return Whether the transactionId field is set.
    */
   boolean hasTransactionId();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface TransactionDataOrBuilder
    * @return The transactionId.
    */
   java.lang.String getTransactionId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TransactionDataOrBuilder
    * @return The paymentMethod.
    */
   java.lang.String getPaymentMethod();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface TransactionDataOrBuilder
    * @return The cardBin.
    */
   java.lang.String getCardBin();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface TransactionDataOrBuilder
    * @return The cardLastFour.
    */
   java.lang.String getCardLastFour();
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public interface TransactionDataOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -233,7 +227,6 @@ public interface TransactionDataOrBuilder
    * @return Whether the shippingAddress field is set.
    */
   boolean hasShippingAddress();
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public interface TransactionDataOrBuilder
    * @return The shippingAddress.
    */
   com.google.recaptchaenterprise.v1beta1.TransactionData.Address getShippingAddress();
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public interface TransactionDataOrBuilder
    * @return Whether the billingAddress field is set.
    */
   boolean hasBillingAddress();
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public interface TransactionDataOrBuilder
    * @return The billingAddress.
    */
   com.google.recaptchaenterprise.v1beta1.TransactionData.Address getBillingAddress();
-
   /**
    *
    *
@@ -314,7 +304,6 @@ public interface TransactionDataOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public interface TransactionDataOrBuilder
    * @return The user.
    */
   com.google.recaptchaenterprise.v1beta1.TransactionData.User getUser();
-
   /**
    *
    *
@@ -350,7 +338,6 @@ public interface TransactionDataOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1beta1.TransactionData.User> getMerchantsList();
-
   /**
    *
    *
@@ -362,7 +349,6 @@ public interface TransactionDataOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1beta1.TransactionData.User getMerchants(int index);
-
   /**
    *
    *
@@ -374,7 +360,6 @@ public interface TransactionDataOrBuilder
    * </code>
    */
   int getMerchantsCount();
-
   /**
    *
    *
@@ -387,7 +372,6 @@ public interface TransactionDataOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1beta1.TransactionData.UserOrBuilder>
       getMerchantsOrBuilderList();
-
   /**
    *
    *
@@ -412,7 +396,6 @@ public interface TransactionDataOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1beta1.TransactionData.Item> getItemsList();
-
   /**
    *
    *
@@ -424,7 +407,6 @@ public interface TransactionDataOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1beta1.TransactionData.Item getItems(int index);
-
   /**
    *
    *
@@ -436,7 +418,6 @@ public interface TransactionDataOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -449,7 +430,6 @@ public interface TransactionDataOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1beta1.TransactionData.ItemOrBuilder>
       getItemsOrBuilderList();
-
   /**
    *
    *
@@ -475,7 +455,6 @@ public interface TransactionDataOrBuilder
    * @return Whether the gatewayInfo field is set.
    */
   boolean hasGatewayInfo();
-
   /**
    *
    *
@@ -489,7 +468,6 @@ public interface TransactionDataOrBuilder
    * @return The gatewayInfo.
    */
   com.google.recaptchaenterprise.v1beta1.TransactionData.GatewayInfo getGatewayInfo();
-
   /**
    *
    *

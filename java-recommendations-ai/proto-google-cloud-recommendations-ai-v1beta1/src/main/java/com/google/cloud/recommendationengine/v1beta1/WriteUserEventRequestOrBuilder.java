@@ -39,7 +39,6 @@ public interface WriteUserEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface WriteUserEventRequestOrBuilder
    * @return Whether the userEvent field is set.
    */
   boolean hasUserEvent();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface WriteUserEventRequestOrBuilder
    * @return The userEvent.
    */
   com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvent();
-
   /**
    *
    *

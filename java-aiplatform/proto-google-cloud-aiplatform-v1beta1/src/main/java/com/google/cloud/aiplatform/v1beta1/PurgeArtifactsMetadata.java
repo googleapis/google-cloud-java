@@ -34,7 +34,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata)
     PurgeArtifactsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeArtifactsMetadata.newBuilder() to construct.
   private PurgeArtifactsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +484,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -549,7 +541,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -570,7 +561,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -601,7 +591,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +610,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +625,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -657,7 +644,6 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

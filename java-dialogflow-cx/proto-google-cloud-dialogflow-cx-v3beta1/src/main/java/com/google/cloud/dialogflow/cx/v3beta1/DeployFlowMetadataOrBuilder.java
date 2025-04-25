@@ -34,7 +34,6 @@ public interface DeployFlowMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestError test_errors = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestError> getTestErrorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface DeployFlowMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestError test_errors = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TestError getTestErrors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface DeployFlowMetadataOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestError test_errors = 1;</code>
    */
   int getTestErrorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface DeployFlowMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TestErrorOrBuilder>
       getTestErrorsOrBuilderList();
-
   /**
    *
    *

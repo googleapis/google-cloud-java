@@ -34,7 +34,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse)
     ListLineageEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLineageEventsResponse.newBuilder() to construct.
   private ListLineageEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.lineage.v1.LineageEvent> lineageEvents_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       getLineageEventsList() {
     return lineageEvents_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       getLineageEventsOrBuilderList() {
     return lineageEvents_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
   public int getLineageEventsCount() {
     return lineageEvents_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
   public com.google.cloud.datacatalog.lineage.v1.LineageEvent getLineageEvents(int index) {
     return lineageEvents_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return lineageEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return lineageEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return lineageEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +724,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         int index) {
       return getLineageEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return lineageEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(lineageEvents_);
       }
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       return getLineageEventsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.lineage.v1.LineageEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -967,7 +942,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.datacatalog.lineage.v1.LineageEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1003,7 +977,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1023,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1045,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1063,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

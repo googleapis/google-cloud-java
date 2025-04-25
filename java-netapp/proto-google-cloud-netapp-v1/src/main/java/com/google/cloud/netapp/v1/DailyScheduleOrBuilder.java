@@ -36,7 +36,6 @@ public interface DailyScheduleOrBuilder
    * @return Whether the snapshotsToKeep field is set.
    */
   boolean hasSnapshotsToKeep();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DailyScheduleOrBuilder
    * @return Whether the minute field is set.
    */
   boolean hasMinute();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface DailyScheduleOrBuilder
    * @return Whether the hour field is set.
    */
   boolean hasHour();
-
   /**
    *
    *

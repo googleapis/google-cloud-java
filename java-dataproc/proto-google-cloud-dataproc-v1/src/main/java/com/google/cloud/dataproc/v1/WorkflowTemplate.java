@@ -33,7 +33,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.WorkflowTemplate)
     WorkflowTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkflowTemplate.newBuilder() to construct.
   private WorkflowTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,7 +124,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * @return The kmsKey.
      */
     java.lang.String getKmsKey();
-
     /**
      *
      *
@@ -168,7 +166,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getKmsKeyBytes();
   }
-
   /**
    *
    *
@@ -183,7 +180,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig)
       EncryptionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EncryptionConfig.newBuilder() to construct.
     private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -218,7 +214,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kmsKey_ = "";
-
     /**
      *
      *
@@ -271,7 +266,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -486,7 +480,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -678,7 +671,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object kmsKey_ = "";
-
       /**
        *
        *
@@ -730,7 +722,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -782,7 +773,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -833,7 +823,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -880,7 +869,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1005,7 +993,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -1023,7 +1010,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -1046,7 +1032,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1079,7 +1064,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1115,7 +1099,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int VERSION_FIELD_NUMBER = 3;
   private int version_ = 0;
-
   /**
    *
    *
@@ -1142,7 +1125,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1159,7 +1141,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1176,7 +1157,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1194,7 +1174,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1211,7 +1190,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1228,7 +1206,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1270,7 +1247,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1298,14 +1274,12 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1330,7 +1304,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1362,7 +1335,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1397,7 +1369,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int PLACEMENT_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1.WorkflowTemplatePlacement placement_;
-
   /**
    *
    *
@@ -1415,7 +1386,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasPlacement() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1435,7 +1405,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.WorkflowTemplatePlacement.getDefaultInstance()
         : placement_;
   }
-
   /**
    *
    *
@@ -1458,7 +1427,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.OrderedJob> jobs_;
-
   /**
    *
    *
@@ -1474,7 +1442,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.dataproc.v1.OrderedJob> getJobsList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -1491,7 +1458,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       getJobsOrBuilderList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -1507,7 +1473,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public int getJobsCount() {
     return jobs_.size();
   }
-
   /**
    *
    *
@@ -1523,7 +1488,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.dataproc.v1.OrderedJob getJobs(int index) {
     return jobs_.get(index);
   }
-
   /**
    *
    *
@@ -1544,7 +1508,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.TemplateParameter> parameters_;
-
   /**
    *
    *
@@ -1562,7 +1525,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.dataproc.v1.TemplateParameter> getParametersList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -1581,7 +1543,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       getParametersOrBuilderList() {
     return parameters_;
   }
-
   /**
    *
    *
@@ -1599,7 +1560,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public int getParametersCount() {
     return parameters_.size();
   }
-
   /**
    *
    *
@@ -1617,7 +1577,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.dataproc.v1.TemplateParameter getParameters(int index) {
     return parameters_.get(index);
   }
-
   /**
    *
    *
@@ -1638,7 +1597,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int DAG_TIMEOUT_FIELD_NUMBER = 10;
   private com.google.protobuf.Duration dagTimeout_;
-
   /**
    *
    *
@@ -1664,7 +1622,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasDagTimeout() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1690,7 +1647,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Duration getDagTimeout() {
     return dagTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
   }
-
   /**
    *
    *
@@ -1717,7 +1673,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig encryptionConfig_;
-
   /**
    *
    *
@@ -1736,7 +1691,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1757,7 +1711,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.getDefaultInstance()
         : encryptionConfig_;
   }
-
   /**
    *
    *
@@ -2064,7 +2017,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2542,7 +2494,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -2559,7 +2510,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -2576,7 +2526,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -2592,7 +2541,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -2604,7 +2552,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -2623,7 +2570,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2655,7 +2601,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2687,7 +2632,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2718,7 +2662,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2745,7 +2688,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2779,7 +2721,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private int version_;
-
     /**
      *
      *
@@ -2803,7 +2744,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public int getVersion() {
       return version_;
     }
-
     /**
      *
      *
@@ -2831,7 +2771,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2864,7 +2803,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2881,7 +2819,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2904,7 +2841,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2929,7 +2865,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2951,7 +2886,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2981,7 +2915,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3003,7 +2936,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3020,7 +2952,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3041,7 +2972,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3076,7 +3006,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3093,7 +3022,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3116,7 +3044,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3141,7 +3068,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3163,7 +3089,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3193,7 +3118,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3215,7 +3139,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3232,7 +3155,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3253,7 +3175,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3307,7 +3228,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3335,14 +3255,12 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3367,7 +3285,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3399,7 +3316,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3437,7 +3353,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3465,14 +3380,12 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3504,7 +3417,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -3537,7 +3449,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.WorkflowTemplatePlacement.Builder,
             com.google.cloud.dataproc.v1.WorkflowTemplatePlacementOrBuilder>
         placementBuilder_;
-
     /**
      *
      *
@@ -3554,7 +3465,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasPlacement() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3577,7 +3487,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return placementBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3602,7 +3511,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3625,7 +3533,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3656,7 +3563,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3678,7 +3584,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3695,7 +3600,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPlacementFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3716,7 +3620,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             : placement_;
       }
     }
-
     /**
      *
      *
@@ -3779,7 +3682,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return jobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3798,7 +3700,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return jobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3817,7 +3718,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return jobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3842,7 +3742,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3865,7 +3764,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3890,7 +3788,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3915,7 +3812,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3937,7 +3833,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3960,7 +3855,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3983,7 +3877,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4005,7 +3898,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4027,7 +3919,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4042,7 +3933,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.OrderedJob.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4061,7 +3951,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return jobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4081,7 +3970,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(jobs_);
       }
     }
-
     /**
      *
      *
@@ -4097,7 +3985,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return getJobsFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.OrderedJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4113,7 +4000,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return getJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.OrderedJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4183,7 +4069,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4204,7 +4089,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4225,7 +4109,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4252,7 +4135,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4277,7 +4159,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4304,7 +4185,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4331,7 +4211,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4356,7 +4235,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4381,7 +4259,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4406,7 +4283,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4430,7 +4306,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4454,7 +4329,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4471,7 +4345,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.TemplateParameter.Builder getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4493,7 +4366,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4515,7 +4387,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
-
     /**
      *
      *
@@ -4533,7 +4404,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return getParametersFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.TemplateParameter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4551,7 +4421,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return getParametersFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.TemplateParameter.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4593,7 +4462,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         dagTimeoutBuilder_;
-
     /**
      *
      *
@@ -4618,7 +4486,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasDagTimeout() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4649,7 +4516,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return dagTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4682,7 +4548,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4712,7 +4577,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4750,7 +4614,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4780,7 +4643,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4805,7 +4667,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDagTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4834,7 +4695,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             : dagTimeout_;
       }
     }
-
     /**
      *
      *
@@ -4877,7 +4737,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfig.Builder,
             com.google.cloud.dataproc.v1.WorkflowTemplate.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
-
     /**
      *
      *
@@ -4895,7 +4754,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4919,7 +4777,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
         return encryptionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4946,7 +4803,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4970,7 +4826,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5004,7 +4859,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5027,7 +4881,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5046,7 +4899,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5069,7 +4921,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
             : encryptionConfig_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListLakesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Lake lakes = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Lake> getLakesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListLakesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Lake lakes = 1;</code>
    */
   com.google.cloud.dataplex.v1.Lake getLakes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListLakesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Lake lakes = 1;</code>
    */
   int getLakesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListLakesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Lake lakes = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.LakeOrBuilder> getLakesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListLakesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ListLakesResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface ListLakesResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface ListLakesResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
-
   /**
    *
    *

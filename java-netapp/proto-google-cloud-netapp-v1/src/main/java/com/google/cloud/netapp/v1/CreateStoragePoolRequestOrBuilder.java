@@ -38,7 +38,6 @@ public interface CreateStoragePoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateStoragePoolRequestOrBuilder
    * @return The storagePoolId.
    */
   java.lang.String getStoragePoolId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CreateStoragePoolRequestOrBuilder
    * @return Whether the storagePool field is set.
    */
   boolean hasStoragePool();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateStoragePoolRequestOrBuilder
    * @return The storagePool.
    */
   com.google.cloud.netapp.v1.StoragePool getStoragePool();
-
   /**
    *
    *

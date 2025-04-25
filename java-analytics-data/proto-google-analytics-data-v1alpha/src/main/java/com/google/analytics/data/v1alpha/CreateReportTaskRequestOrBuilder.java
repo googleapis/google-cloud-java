@@ -39,7 +39,6 @@ public interface CreateReportTaskRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateReportTaskRequestOrBuilder
    * @return Whether the reportTask field is set.
    */
   boolean hasReportTask();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateReportTaskRequestOrBuilder
    * @return The reportTask.
    */
   com.google.analytics.data.v1alpha.ReportTask getReportTask();
-
   /**
    *
    *

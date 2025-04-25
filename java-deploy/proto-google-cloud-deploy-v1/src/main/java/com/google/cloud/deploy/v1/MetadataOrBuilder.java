@@ -39,7 +39,6 @@ public interface MetadataOrBuilder
    * @return Whether the cloudRun field is set.
    */
   boolean hasCloudRun();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface MetadataOrBuilder
    * @return The cloudRun.
    */
   com.google.cloud.deploy.v1.CloudRunMetadata getCloudRun();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface MetadataOrBuilder
    * @return Whether the automation field is set.
    */
   boolean hasAutomation();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface MetadataOrBuilder
    * @return The automation.
    */
   com.google.cloud.deploy.v1.AutomationRolloutMetadata getAutomation();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface MetadataOrBuilder
    * @return Whether the custom field is set.
    */
   boolean hasCustom();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface MetadataOrBuilder
    * @return The custom.
    */
   com.google.cloud.deploy.v1.CustomMetadata getCustom();
-
   /**
    *
    *

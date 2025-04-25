@@ -40,7 +40,6 @@ public interface SuggestKnowledgeAssistRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface SuggestKnowledgeAssistRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface SuggestKnowledgeAssistRequestOrBuilder
    * @return The previousSuggestedQuery.
    */
   java.lang.String getPreviousSuggestedQuery();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.workflows.v1.ListWorkflowRevisionsResponse)
     ListWorkflowRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListWorkflowRevisionsResponse.newBuilder() to construct.
   private ListWorkflowRevisionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.workflows.v1.Workflow> workflows_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.workflows.v1.Workflow> getWorkflowsList() {
     return workflows_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       getWorkflowsOrBuilderList() {
     return workflows_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
   public int getWorkflowsCount() {
     return workflows_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
   public com.google.cloud.workflows.v1.Workflow getWorkflows(int index) {
     return workflows_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return workflowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return workflowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return workflowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
     public com.google.cloud.workflows.v1.Workflow.Builder getWorkflowsBuilder(int index) {
       return getWorkflowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return workflowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +899,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(workflows_);
       }
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       return getWorkflowsFieldBuilder()
           .addBuilder(com.google.cloud.workflows.v1.Workflow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       return getWorkflowsFieldBuilder()
           .addBuilder(index, com.google.cloud.workflows.v1.Workflow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1003,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1025,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class ListWorkflowRevisionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

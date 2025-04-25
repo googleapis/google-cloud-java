@@ -36,7 +36,6 @@ public interface DeploymentOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for step.
    */
   int getStepValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeploymentOperationMetadataOrBuilder
    * @return Whether the applyResults field is set.
    */
   boolean hasApplyResults();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DeploymentOperationMetadataOrBuilder
    * @return The applyResults.
    */
   com.google.cloud.config.v1.ApplyResults getApplyResults();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface DeploymentOperationMetadataOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface DeploymentOperationMetadataOrBuilder
    * @return The logs.
    */
   java.lang.String getLogs();
-
   /**
    *
    *

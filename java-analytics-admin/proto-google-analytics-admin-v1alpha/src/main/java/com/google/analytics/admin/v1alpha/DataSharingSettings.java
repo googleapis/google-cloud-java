@@ -34,7 +34,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataSharingSettings)
     DataSharingSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSharingSettings.newBuilder() to construct.
   private DataSharingSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,17 +121,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_SUPPORT_ENABLED_FIELD_NUMBER = 2;
   private boolean sharingWithGoogleSupportEnabled_ = false;
-
   /**
    *
    *
    * <pre>
-   * Allows Google technical support representatives access to your Google
-   * Analytics data and account when necessary to provide service and find
-   * solutions to technical issues.
-   *
-   * This field maps to the "Technical support" field in the Google Analytics
-   * Admin UI.
+   * Allows Google support to access the data in order to help troubleshoot
+   * issues.
    * </pre>
    *
    * <code>bool sharing_with_google_support_enabled = 2;</code>
@@ -148,20 +140,13 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_ASSIGNED_SALES_ENABLED_FIELD_NUMBER = 3;
   private boolean sharingWithGoogleAssignedSalesEnabled_ = false;
-
   /**
    *
    *
    * <pre>
-   * Allows Google access to your Google Analytics account data, including
-   * account usage and configuration data, product spending, and users
-   * associated with your Google Analytics account, so that Google can help you
-   * make the most of Google products, providing you with insights, offers,
-   * recommendations, and optimization tips across Google Analytics and other
-   * Google products for business.
-   *
-   * This field maps to the "Recommendations for your business" field in the
-   * Google Analytics Admin UI.
+   * Allows Google sales teams that are assigned to the customer to access the
+   * data in order to suggest configuration changes to improve results.
+   * Sales team restrictions still apply when enabled.
    * </pre>
    *
    * <code>bool sharing_with_google_assigned_sales_enabled = 3;</code>
@@ -175,38 +160,30 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_ANY_SALES_ENABLED_FIELD_NUMBER = 4;
   private boolean sharingWithGoogleAnySalesEnabled_ = false;
-
   /**
    *
    *
    * <pre>
-   * Deprecated. This field is no longer used and always returns false.
+   * Allows any of Google sales to access the data in order to suggest
+   * configuration changes to improve results.
    * </pre>
    *
-   * <code>bool sharing_with_google_any_sales_enabled = 4 [deprecated = true];</code>
+   * <code>bool sharing_with_google_any_sales_enabled = 4;</code>
    *
-   * @deprecated
-   *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled is
-   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=701
    * @return The sharingWithGoogleAnySalesEnabled.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean getSharingWithGoogleAnySalesEnabled() {
     return sharingWithGoogleAnySalesEnabled_;
   }
 
   public static final int SHARING_WITH_GOOGLE_PRODUCTS_ENABLED_FIELD_NUMBER = 5;
   private boolean sharingWithGoogleProductsEnabled_ = false;
-
   /**
    *
    *
    * <pre>
    * Allows Google to use the data to improve other Google products or services.
-   *
-   * This fields maps to the "Google products &amp; services" field in the Google
-   * Analytics Admin UI.
    * </pre>
    *
    * <code>bool sharing_with_google_products_enabled = 5;</code>
@@ -220,19 +197,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_OTHERS_ENABLED_FIELD_NUMBER = 6;
   private boolean sharingWithOthersEnabled_ = false;
-
   /**
    *
    *
    * <pre>
-   * Enable features like predictions, modeled data, and benchmarking that can
-   * provide you with richer business insights when you contribute aggregated
-   * measurement data. The data you share (including information about the
-   * property from which it is shared) is aggregated and de-identified before
-   * being used to generate business insights.
-   *
-   * This field maps to the "Modeling contributions &amp; business insights" field
-   * in the Google Analytics Admin UI.
+   * Allows Google to share the data anonymously in aggregate form with others.
    * </pre>
    *
    * <code>bool sharing_with_others_enabled = 6;</code>
@@ -469,7 +438,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -720,7 +688,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -745,7 +712,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -770,7 +736,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -794,7 +759,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +778,6 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,17 +804,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleSupportEnabled_;
-
     /**
      *
      *
      * <pre>
-     * Allows Google technical support representatives access to your Google
-     * Analytics data and account when necessary to provide service and find
-     * solutions to technical issues.
-     *
-     * This field maps to the "Technical support" field in the Google Analytics
-     * Admin UI.
+     * Allows Google support to access the data in order to help troubleshoot
+     * issues.
      * </pre>
      *
      * <code>bool sharing_with_google_support_enabled = 2;</code>
@@ -862,17 +820,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleSupportEnabled() {
       return sharingWithGoogleSupportEnabled_;
     }
-
     /**
      *
      *
      * <pre>
-     * Allows Google technical support representatives access to your Google
-     * Analytics data and account when necessary to provide service and find
-     * solutions to technical issues.
-     *
-     * This field maps to the "Technical support" field in the Google Analytics
-     * Admin UI.
+     * Allows Google support to access the data in order to help troubleshoot
+     * issues.
      * </pre>
      *
      * <code>bool sharing_with_google_support_enabled = 2;</code>
@@ -887,17 +840,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Allows Google technical support representatives access to your Google
-     * Analytics data and account when necessary to provide service and find
-     * solutions to technical issues.
-     *
-     * This field maps to the "Technical support" field in the Google Analytics
-     * Admin UI.
+     * Allows Google support to access the data in order to help troubleshoot
+     * issues.
      * </pre>
      *
      * <code>bool sharing_with_google_support_enabled = 2;</code>
@@ -912,20 +860,13 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleAssignedSalesEnabled_;
-
     /**
      *
      *
      * <pre>
-     * Allows Google access to your Google Analytics account data, including
-     * account usage and configuration data, product spending, and users
-     * associated with your Google Analytics account, so that Google can help you
-     * make the most of Google products, providing you with insights, offers,
-     * recommendations, and optimization tips across Google Analytics and other
-     * Google products for business.
-     *
-     * This field maps to the "Recommendations for your business" field in the
-     * Google Analytics Admin UI.
+     * Allows Google sales teams that are assigned to the customer to access the
+     * data in order to suggest configuration changes to improve results.
+     * Sales team restrictions still apply when enabled.
      * </pre>
      *
      * <code>bool sharing_with_google_assigned_sales_enabled = 3;</code>
@@ -936,20 +877,13 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleAssignedSalesEnabled() {
       return sharingWithGoogleAssignedSalesEnabled_;
     }
-
     /**
      *
      *
      * <pre>
-     * Allows Google access to your Google Analytics account data, including
-     * account usage and configuration data, product spending, and users
-     * associated with your Google Analytics account, so that Google can help you
-     * make the most of Google products, providing you with insights, offers,
-     * recommendations, and optimization tips across Google Analytics and other
-     * Google products for business.
-     *
-     * This field maps to the "Recommendations for your business" field in the
-     * Google Analytics Admin UI.
+     * Allows Google sales teams that are assigned to the customer to access the
+     * data in order to suggest configuration changes to improve results.
+     * Sales team restrictions still apply when enabled.
      * </pre>
      *
      * <code>bool sharing_with_google_assigned_sales_enabled = 3;</code>
@@ -964,20 +898,13 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Allows Google access to your Google Analytics account data, including
-     * account usage and configuration data, product spending, and users
-     * associated with your Google Analytics account, so that Google can help you
-     * make the most of Google products, providing you with insights, offers,
-     * recommendations, and optimization tips across Google Analytics and other
-     * Google products for business.
-     *
-     * This field maps to the "Recommendations for your business" field in the
-     * Google Analytics Admin UI.
+     * Allows Google sales teams that are assigned to the customer to access the
+     * data in order to suggest configuration changes to improve results.
+     * Sales team restrictions still apply when enabled.
      * </pre>
      *
      * <code>bool sharing_with_google_assigned_sales_enabled = 3;</code>
@@ -992,43 +919,35 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleAnySalesEnabled_;
-
     /**
      *
      *
      * <pre>
-     * Deprecated. This field is no longer used and always returns false.
+     * Allows any of Google sales to access the data in order to suggest
+     * configuration changes to improve results.
      * </pre>
      *
-     * <code>bool sharing_with_google_any_sales_enabled = 4 [deprecated = true];</code>
+     * <code>bool sharing_with_google_any_sales_enabled = 4;</code>
      *
-     * @deprecated
-     *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled
-     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=701
      * @return The sharingWithGoogleAnySalesEnabled.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public boolean getSharingWithGoogleAnySalesEnabled() {
       return sharingWithGoogleAnySalesEnabled_;
     }
-
     /**
      *
      *
      * <pre>
-     * Deprecated. This field is no longer used and always returns false.
+     * Allows any of Google sales to access the data in order to suggest
+     * configuration changes to improve results.
      * </pre>
      *
-     * <code>bool sharing_with_google_any_sales_enabled = 4 [deprecated = true];</code>
+     * <code>bool sharing_with_google_any_sales_enabled = 4;</code>
      *
-     * @deprecated
-     *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled
-     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=701
      * @param value The sharingWithGoogleAnySalesEnabled to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder setSharingWithGoogleAnySalesEnabled(boolean value) {
 
       sharingWithGoogleAnySalesEnabled_ = value;
@@ -1036,22 +955,18 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Deprecated. This field is no longer used and always returns false.
+     * Allows any of Google sales to access the data in order to suggest
+     * configuration changes to improve results.
      * </pre>
      *
-     * <code>bool sharing_with_google_any_sales_enabled = 4 [deprecated = true];</code>
+     * <code>bool sharing_with_google_any_sales_enabled = 4;</code>
      *
-     * @deprecated
-     *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled
-     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=701
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder clearSharingWithGoogleAnySalesEnabled() {
       bitField0_ = (bitField0_ & ~0x00000008);
       sharingWithGoogleAnySalesEnabled_ = false;
@@ -1060,15 +975,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleProductsEnabled_;
-
     /**
      *
      *
      * <pre>
      * Allows Google to use the data to improve other Google products or services.
-     *
-     * This fields maps to the "Google products &amp; services" field in the Google
-     * Analytics Admin UI.
      * </pre>
      *
      * <code>bool sharing_with_google_products_enabled = 5;</code>
@@ -1079,15 +990,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleProductsEnabled() {
       return sharingWithGoogleProductsEnabled_;
     }
-
     /**
      *
      *
      * <pre>
      * Allows Google to use the data to improve other Google products or services.
-     *
-     * This fields maps to the "Google products &amp; services" field in the Google
-     * Analytics Admin UI.
      * </pre>
      *
      * <code>bool sharing_with_google_products_enabled = 5;</code>
@@ -1102,15 +1009,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * Allows Google to use the data to improve other Google products or services.
-     *
-     * This fields maps to the "Google products &amp; services" field in the Google
-     * Analytics Admin UI.
      * </pre>
      *
      * <code>bool sharing_with_google_products_enabled = 5;</code>
@@ -1125,19 +1028,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithOthersEnabled_;
-
     /**
      *
      *
      * <pre>
-     * Enable features like predictions, modeled data, and benchmarking that can
-     * provide you with richer business insights when you contribute aggregated
-     * measurement data. The data you share (including information about the
-     * property from which it is shared) is aggregated and de-identified before
-     * being used to generate business insights.
-     *
-     * This field maps to the "Modeling contributions &amp; business insights" field
-     * in the Google Analytics Admin UI.
+     * Allows Google to share the data anonymously in aggregate form with others.
      * </pre>
      *
      * <code>bool sharing_with_others_enabled = 6;</code>
@@ -1148,19 +1043,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithOthersEnabled() {
       return sharingWithOthersEnabled_;
     }
-
     /**
      *
      *
      * <pre>
-     * Enable features like predictions, modeled data, and benchmarking that can
-     * provide you with richer business insights when you contribute aggregated
-     * measurement data. The data you share (including information about the
-     * property from which it is shared) is aggregated and de-identified before
-     * being used to generate business insights.
-     *
-     * This field maps to the "Modeling contributions &amp; business insights" field
-     * in the Google Analytics Admin UI.
+     * Allows Google to share the data anonymously in aggregate form with others.
      * </pre>
      *
      * <code>bool sharing_with_others_enabled = 6;</code>
@@ -1175,19 +1062,11 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Enable features like predictions, modeled data, and benchmarking that can
-     * provide you with richer business insights when you contribute aggregated
-     * measurement data. The data you share (including information about the
-     * property from which it is shared) is aggregated and de-identified before
-     * being used to generate business insights.
-     *
-     * This field maps to the "Modeling contributions &amp; business insights" field
-     * in the Google Analytics Admin UI.
+     * Allows Google to share the data anonymously in aggregate form with others.
      * </pre>
      *
      * <code>bool sharing_with_others_enabled = 6;</code>

@@ -44,7 +44,6 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
           com.google.cloud.aiplatform.v1.NearestNeighborSearchOperationMetadata
               .ContentValidationStats>
       getContentValidationStatsList();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1.NearestNeighborSearchOperationMetadata.ContentValidationStats
       getContentValidationStats(int index);
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    * </code>
    */
   int getContentValidationStatsCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
               com.google.cloud.aiplatform.v1.NearestNeighborSearchOperationMetadata
                   .ContentValidationStatsOrBuilder>
       getContentValidationStatsOrBuilderList();
-
   /**
    *
    *

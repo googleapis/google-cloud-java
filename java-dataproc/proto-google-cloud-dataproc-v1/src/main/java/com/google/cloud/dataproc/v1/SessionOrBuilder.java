@@ -36,7 +36,6 @@ public interface SessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SessionOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface SessionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SessionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface SessionOrBuilder
    * @return Whether the jupyterSession field is set.
    */
   boolean hasJupyterSession();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface SessionOrBuilder
    * @return The jupyterSession.
    */
   com.google.cloud.dataproc.v1.JupyterConfig getJupyterSession();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface SessionOrBuilder
    * @return Whether the sparkConnectSession field is set.
    */
   boolean hasSparkConnectSession();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface SessionOrBuilder
    * @return The sparkConnectSession.
    */
   com.google.cloud.dataproc.v1.SparkConnectConfig getSparkConnectSession();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface SessionOrBuilder
    * @return Whether the runtimeInfo field is set.
    */
   boolean hasRuntimeInfo();
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public interface SessionOrBuilder
    * @return The runtimeInfo.
    */
   com.google.cloud.dataproc.v1.RuntimeInfo getRuntimeInfo();
-
   /**
    *
    *
@@ -261,7 +251,6 @@ public interface SessionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface SessionOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public interface SessionOrBuilder
    * @return Whether the stateTime field is set.
    */
   boolean hasStateTime();
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public interface SessionOrBuilder
    * @return The stateTime.
    */
   com.google.protobuf.Timestamp getStateTime();
-
   /**
    *
    *
@@ -357,7 +343,6 @@ public interface SessionOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
-
   /**
    *
    *
@@ -387,7 +372,6 @@ public interface SessionOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -404,11 +388,9 @@ public interface SessionOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -425,7 +407,6 @@ public interface SessionOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -446,7 +427,6 @@ public interface SessionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -478,7 +458,6 @@ public interface SessionOrBuilder
    * @return Whether the runtimeConfig field is set.
    */
   boolean hasRuntimeConfig();
-
   /**
    *
    *
@@ -493,7 +472,6 @@ public interface SessionOrBuilder
    * @return The runtimeConfig.
    */
   com.google.cloud.dataproc.v1.RuntimeConfig getRuntimeConfig();
-
   /**
    *
    *
@@ -521,7 +499,6 @@ public interface SessionOrBuilder
    * @return Whether the environmentConfig field is set.
    */
   boolean hasEnvironmentConfig();
-
   /**
    *
    *
@@ -536,7 +513,6 @@ public interface SessionOrBuilder
    * @return The environmentConfig.
    */
   com.google.cloud.dataproc.v1.EnvironmentConfig getEnvironmentConfig();
-
   /**
    *
    *
@@ -562,7 +538,6 @@ public interface SessionOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -588,7 +563,6 @@ public interface SessionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Session.SessionStateHistory> getStateHistoryList();
-
   /**
    *
    *
@@ -601,7 +575,6 @@ public interface SessionOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.Session.SessionStateHistory getStateHistory(int index);
-
   /**
    *
    *
@@ -614,7 +587,6 @@ public interface SessionOrBuilder
    * </code>
    */
   int getStateHistoryCount();
-
   /**
    *
    *
@@ -628,7 +600,6 @@ public interface SessionOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.Session.SessionStateHistoryOrBuilder>
       getStateHistoryOrBuilderList();
-
   /**
    *
    *
@@ -666,7 +637,6 @@ public interface SessionOrBuilder
    * @return The sessionTemplate.
    */
   java.lang.String getSessionTemplate();
-
   /**
    *
    *

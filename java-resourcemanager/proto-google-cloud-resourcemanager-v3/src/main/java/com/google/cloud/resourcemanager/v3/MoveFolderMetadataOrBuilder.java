@@ -36,7 +36,6 @@ public interface MoveFolderMetadataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MoveFolderMetadataOrBuilder
    * @return The sourceParent.
    */
   java.lang.String getSourceParent();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface MoveFolderMetadataOrBuilder
    * @return The destinationParent.
    */
   java.lang.String getDestinationParent();
-
   /**
    *
    *

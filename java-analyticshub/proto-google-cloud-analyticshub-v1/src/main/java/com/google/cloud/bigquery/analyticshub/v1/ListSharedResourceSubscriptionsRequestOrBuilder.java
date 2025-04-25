@@ -41,7 +41,6 @@ public interface ListSharedResourceSubscriptionsRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -99,7 +98,6 @@ public interface ListSharedResourceSubscriptionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

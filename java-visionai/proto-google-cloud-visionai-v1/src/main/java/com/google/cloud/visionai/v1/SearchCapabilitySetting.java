@@ -33,7 +33,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchCapabilitySetting)
     SearchCapabilitySettingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchCapabilitySetting.newBuilder() to construct.
   private SearchCapabilitySetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.SearchCapability> searchCapabilities_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.visionai.v1.SearchCapability> getSearchCapabilitiesList() {
     return searchCapabilities_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       getSearchCapabilitiesOrBuilderList() {
     return searchCapabilities_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
   public int getSearchCapabilitiesCount() {
     return searchCapabilities_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
   public com.google.cloud.visionai.v1.SearchCapability getSearchCapabilities(int index) {
     return searchCapabilities_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
         return searchCapabilitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
         return searchCapabilitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
         return searchCapabilitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +741,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +779,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +792,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
         int index) {
       return getSearchCapabilitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -829,7 +809,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
         return searchCapabilitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -847,7 +826,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(searchCapabilities_);
       }
     }
-
     /**
      *
      *
@@ -861,7 +839,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       return getSearchCapabilitiesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.SearchCapability.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -876,7 +853,6 @@ public final class SearchCapabilitySetting extends com.google.protobuf.Generated
       return getSearchCapabilitiesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.SearchCapability.getDefaultInstance());
     }
-
     /**
      *
      *

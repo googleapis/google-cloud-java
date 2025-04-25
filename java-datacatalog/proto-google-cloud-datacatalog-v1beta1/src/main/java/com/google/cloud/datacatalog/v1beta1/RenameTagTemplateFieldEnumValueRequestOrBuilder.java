@@ -40,7 +40,6 @@ public interface RenameTagTemplateFieldEnumValueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface RenameTagTemplateFieldEnumValueRequestOrBuilder
    * @return The newEnumValueDisplayName.
    */
   java.lang.String getNewEnumValueDisplayName();
-
   /**
    *
    *

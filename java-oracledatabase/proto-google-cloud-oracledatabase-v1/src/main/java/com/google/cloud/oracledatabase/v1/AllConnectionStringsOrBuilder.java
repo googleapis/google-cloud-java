@@ -37,7 +37,6 @@ public interface AllConnectionStringsOrBuilder
    * @return The high.
    */
   java.lang.String getHigh();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AllConnectionStringsOrBuilder
    * @return The low.
    */
   java.lang.String getLow();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface AllConnectionStringsOrBuilder
    * @return The medium.
    */
   java.lang.String getMedium();
-
   /**
    *
    *

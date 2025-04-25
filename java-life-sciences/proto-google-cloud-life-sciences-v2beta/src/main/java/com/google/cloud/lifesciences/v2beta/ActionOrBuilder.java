@@ -39,7 +39,6 @@ public interface ActionOrBuilder
    * @return The containerName.
    */
   java.lang.String getContainerName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface ActionOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface ActionOrBuilder
    * @return A list containing the commands.
    */
   java.util.List<java.lang.String> getCommandsList();
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public interface ActionOrBuilder
    * @return The count of commands.
    */
   int getCommandsCount();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface ActionOrBuilder
    * @return The commands at the given index.
    */
   java.lang.String getCommands(int index);
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public interface ActionOrBuilder
    * @return The entrypoint.
    */
   java.lang.String getEntrypoint();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public interface ActionOrBuilder
    * <code>map&lt;string, string&gt; environment = 5;</code>
    */
   int getEnvironmentCount();
-
   /**
    *
    *
@@ -255,11 +248,9 @@ public interface ActionOrBuilder
    * <code>map&lt;string, string&gt; environment = 5;</code>
    */
   boolean containsEnvironment(java.lang.String key);
-
   /** Use {@link #getEnvironmentMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironment();
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public interface ActionOrBuilder
    * <code>map&lt;string, string&gt; environment = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentMap();
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public interface ActionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -365,7 +354,6 @@ public interface ActionOrBuilder
    * @return Whether the encryptedEnvironment field is set.
    */
   boolean hasEncryptedEnvironment();
-
   /**
    *
    *
@@ -386,7 +374,6 @@ public interface ActionOrBuilder
    * @return The encryptedEnvironment.
    */
   com.google.cloud.lifesciences.v2beta.Secret getEncryptedEnvironment();
-
   /**
    *
    *
@@ -420,7 +407,6 @@ public interface ActionOrBuilder
    * @return The pidNamespace.
    */
   java.lang.String getPidNamespace();
-
   /**
    *
    *
@@ -452,7 +438,6 @@ public interface ActionOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 8;</code>
    */
   int getPortMappingsCount();
-
   /**
    *
    *
@@ -469,11 +454,9 @@ public interface ActionOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 8;</code>
    */
   boolean containsPortMappings(int key);
-
   /** Use {@link #getPortMappingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappings();
-
   /**
    *
    *
@@ -490,7 +473,6 @@ public interface ActionOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 8;</code>
    */
   java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappingsMap();
-
   /**
    *
    *
@@ -507,7 +489,6 @@ public interface ActionOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 8;</code>
    */
   int getPortMappingsOrDefault(int key, int defaultValue);
-
   /**
    *
    *
@@ -551,7 +532,6 @@ public interface ActionOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Mount mounts = 9;</code>
    */
   java.util.List<com.google.cloud.lifesciences.v2beta.Mount> getMountsList();
-
   /**
    *
    *
@@ -578,7 +558,6 @@ public interface ActionOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Mount mounts = 9;</code>
    */
   com.google.cloud.lifesciences.v2beta.Mount getMounts(int index);
-
   /**
    *
    *
@@ -605,7 +584,6 @@ public interface ActionOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Mount mounts = 9;</code>
    */
   int getMountsCount();
-
   /**
    *
    *
@@ -633,7 +611,6 @@ public interface ActionOrBuilder
    */
   java.util.List<? extends com.google.cloud.lifesciences.v2beta.MountOrBuilder>
       getMountsOrBuilderList();
-
   /**
    *
    *
@@ -674,7 +651,6 @@ public interface ActionOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -688,11 +664,9 @@ public interface ActionOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -706,7 +680,6 @@ public interface ActionOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -724,7 +697,6 @@ public interface ActionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -756,7 +728,6 @@ public interface ActionOrBuilder
    * @return Whether the credentials field is set.
    */
   boolean hasCredentials();
-
   /**
    *
    *
@@ -774,7 +745,6 @@ public interface ActionOrBuilder
    * @return The credentials.
    */
   com.google.cloud.lifesciences.v2beta.Secret getCredentials();
-
   /**
    *
    *
@@ -806,7 +776,6 @@ public interface ActionOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -822,7 +791,6 @@ public interface ActionOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *

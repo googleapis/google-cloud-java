@@ -34,7 +34,6 @@ public interface ListIpOverridesResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.IpOverrideData ip_overrides = 1;</code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.IpOverrideData> getIpOverridesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListIpOverridesResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.IpOverrideData ip_overrides = 1;</code>
    */
   com.google.recaptchaenterprise.v1.IpOverrideData getIpOverrides(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListIpOverridesResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.IpOverrideData ip_overrides = 1;</code>
    */
   int getIpOverridesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListIpOverridesResponseOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.IpOverrideDataOrBuilder>
       getIpOverridesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListIpOverridesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

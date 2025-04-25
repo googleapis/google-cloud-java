@@ -36,7 +36,6 @@ public interface DetectorOrBuilder
    * @return The detector.
    */
   java.lang.String getDetector();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DetectorOrBuilder
    * @return The component.
    */
   java.lang.String getComponent();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface DetectorOrBuilder
    * @return The enum numeric value on the wire for billingTier.
    */
   int getBillingTierValue();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface DetectorOrBuilder
    * @return A list containing the detectorLabels.
    */
   java.util.List<java.lang.String> getDetectorLabelsList();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface DetectorOrBuilder
    * @return The count of detectorLabels.
    */
   int getDetectorLabelsCount();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface DetectorOrBuilder
    * @return The detectorLabels at the given index.
    */
   java.lang.String getDetectorLabels(int index);
-
   /**
    *
    *

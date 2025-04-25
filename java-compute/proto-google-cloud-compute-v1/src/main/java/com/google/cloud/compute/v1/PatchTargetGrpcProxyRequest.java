@@ -33,7 +33,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchTargetGrpcProxyRequest)
     PatchTargetGrpcProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchTargetGrpcProxyRequest.newBuilder() to construct.
   private PatchTargetGrpcProxyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetGrpcProxy_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
 
   public static final int TARGET_GRPC_PROXY_RESOURCE_FIELD_NUMBER = 328922450;
   private com.google.cloud.compute.v1.TargetGrpcProxy targetGrpcProxyResource_;
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
   public boolean hasTargetGrpcProxyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.TargetGrpcProxy.getDefaultInstance()
         : targetGrpcProxyResource_;
   }
-
   /**
    *
    *
@@ -505,7 +494,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -754,7 +742,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -779,7 +766,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -913,7 +894,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +978,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object targetGrpcProxy_ = "";
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1043,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetGrpcProxy.Builder,
             com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder>
         targetGrpcProxyResourceBuilder_;
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
     public boolean hasTargetGrpcProxyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
         return targetGrpcProxyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1151,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1173,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1203,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1224,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1240,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
       onChanged();
       return getTargetGrpcProxyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1297,7 +1261,6 @@ public final class PatchTargetGrpcProxyRequest extends com.google.protobuf.Gener
             : targetGrpcProxyResource_;
       }
     }
-
     /**
      *
      *

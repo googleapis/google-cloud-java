@@ -33,7 +33,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.CreateKeyEventRequest)
     CreateKeyEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateKeyEventRequest.newBuilder() to construct.
   private CreateKeyEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int KEY_EVENT_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1beta.KeyEvent keyEvent_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
   public boolean hasKeyEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
         ? com.google.analytics.admin.v1beta.KeyEvent.getDefaultInstance()
         : keyEvent_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +569,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
             com.google.analytics.admin.v1beta.KeyEvent.Builder,
             com.google.analytics.admin.v1beta.KeyEventOrBuilder>
         keyEventBuilder_;
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
     public boolean hasKeyEvent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
         return keyEventBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getKeyEventFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
             : keyEvent_;
       }
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class CreateKeyEventRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

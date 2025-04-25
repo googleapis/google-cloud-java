@@ -35,7 +35,6 @@ public interface RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getPerInstanceConfigsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.PerInstanceConfig getPerInstanceConfigs(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder
    * </code>
    */
   int getPerInstanceConfigsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
       getPerInstanceConfigsOrBuilderList();
-
   /**
    *
    *

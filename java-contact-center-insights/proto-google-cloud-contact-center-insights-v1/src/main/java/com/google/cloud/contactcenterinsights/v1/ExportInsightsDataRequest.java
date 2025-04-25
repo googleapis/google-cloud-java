@@ -33,7 +33,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest)
     ExportInsightsDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportInsightsDataRequest.newBuilder() to construct.
   private ExportInsightsDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * <code>WRITE_DISPOSITION_UNSPECIFIED = 0;</code>
      */
     public static final int WRITE_DISPOSITION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * <code>WRITE_TRUNCATE = 1;</code>
      */
     public static final int WRITE_TRUNCATE_VALUE = 1;
-
     /**
      *
      *
@@ -252,7 +249,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return The projectId.
      */
     java.lang.String getProjectId();
-
     /**
      *
      *
@@ -282,7 +278,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return The dataset.
      */
     java.lang.String getDataset();
-
     /**
      *
      *
@@ -312,7 +307,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return The table.
      */
     java.lang.String getTable();
-
     /**
      *
      *
@@ -328,7 +322,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getTableBytes();
   }
-
   /**
    *
    *
@@ -344,7 +337,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination)
       BigQueryDestinationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BigQueryDestination.newBuilder() to construct.
     private BigQueryDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -383,7 +375,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -409,7 +400,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -440,7 +430,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -466,7 +455,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -497,7 +485,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
-
     /**
      *
      *
@@ -523,7 +510,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -995,7 +980,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object projectId_ = "";
-
       /**
        *
        *
@@ -1020,7 +1004,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1045,7 +1028,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1069,7 +1051,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1089,7 +1070,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1116,7 +1096,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       }
 
       private java.lang.Object dataset_ = "";
-
       /**
        *
        *
@@ -1141,7 +1120,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1166,7 +1144,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1190,7 +1167,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1210,7 +1186,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1237,7 +1212,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       }
 
       private java.lang.Object table_ = "";
-
       /**
        *
        *
@@ -1262,7 +1236,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1287,7 +1260,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1311,7 +1283,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1331,7 +1302,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1444,7 +1414,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1476,7 +1445,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   }
 
   public static final int BIG_QUERY_DESTINATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1494,7 +1462,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   public boolean hasBigQueryDestination() {
     return destinationCase_ == 2;
   }
-
   /**
    *
    *
@@ -1519,7 +1486,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     return com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1548,7 +1514,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1574,7 +1539,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -1605,7 +1569,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -1630,7 +1593,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -1660,7 +1622,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKey_ = "";
-
   /**
    *
    *
@@ -1686,7 +1647,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -1715,7 +1675,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
 
   public static final int WRITE_DISPOSITION_FIELD_NUMBER = 5;
   private int writeDisposition_ = 0;
-
   /**
    *
    *
@@ -1733,7 +1692,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   public int getWriteDispositionValue() {
     return writeDisposition_;
   }
-
   /**
    *
    *
@@ -1983,7 +1941,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2271,7 +2228,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
             com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest
                 .BigQueryDestinationOrBuilder>
         bigQueryDestinationBuilder_;
-
     /**
      *
      *
@@ -2289,7 +2245,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     public boolean hasBigQueryDestination() {
       return destinationCase_ == 2;
     }
-
     /**
      *
      *
@@ -2322,7 +2277,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
             .BigQueryDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2349,7 +2303,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2374,7 +2327,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2416,7 +2368,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       destinationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2444,7 +2395,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2461,7 +2411,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         getBigQueryDestinationBuilder() {
       return getBigQueryDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2489,7 +2438,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
             .BigQueryDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2535,7 +2483,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2560,7 +2507,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2585,7 +2531,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2609,7 +2554,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2629,7 +2573,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2656,7 +2599,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -2680,7 +2622,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2704,7 +2645,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2727,7 +2667,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2746,7 +2685,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2772,7 +2710,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object kmsKey_ = "";
-
     /**
      *
      *
@@ -2797,7 +2734,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2822,7 +2758,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2846,7 +2781,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2866,7 +2800,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2893,7 +2826,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     private int writeDisposition_ = 0;
-
     /**
      *
      *
@@ -2911,7 +2843,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     public int getWriteDispositionValue() {
       return writeDisposition_;
     }
-
     /**
      *
      *
@@ -2932,7 +2863,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2957,7 +2887,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2983,7 +2912,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

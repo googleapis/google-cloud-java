@@ -38,7 +38,6 @@ public interface FlowValidationResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface FlowValidationResultOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ValidationMessage>
       getValidationMessagesList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface FlowValidationResultOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.ValidationMessage getValidationMessages(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface FlowValidationResultOrBuilder
    * </code>
    */
   int getValidationMessagesCount();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface FlowValidationResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ValidationMessageOrBuilder>
       getValidationMessagesOrBuilderList();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface FlowValidationResultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public interface FlowValidationResultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

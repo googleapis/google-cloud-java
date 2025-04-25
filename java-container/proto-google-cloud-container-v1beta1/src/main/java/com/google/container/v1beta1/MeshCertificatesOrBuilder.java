@@ -44,7 +44,6 @@ public interface MeshCertificatesOrBuilder
    * @return Whether the enableCertificates field is set.
    */
   boolean hasEnableCertificates();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface MeshCertificatesOrBuilder
    * @return The enableCertificates.
    */
   com.google.protobuf.BoolValue getEnableCertificates();
-
   /**
    *
    *

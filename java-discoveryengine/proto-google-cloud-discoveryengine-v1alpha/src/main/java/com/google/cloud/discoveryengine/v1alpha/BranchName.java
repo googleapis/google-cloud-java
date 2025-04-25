@@ -342,8 +342,7 @@ public class BranchName implements ResourceName {
     private Builder(BranchName branchName) {
       Preconditions.checkArgument(
           Objects.equals(branchName.pathTemplate, PROJECT_LOCATION_DATA_STORE_BRANCH),
-          "toBuilder is only supported when BranchName has the pattern of"
-              + " projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}");
+          "toBuilder is only supported when BranchName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}");
       this.project = branchName.project;
       this.location = branchName.location;
       this.dataStore = branchName.dataStore;

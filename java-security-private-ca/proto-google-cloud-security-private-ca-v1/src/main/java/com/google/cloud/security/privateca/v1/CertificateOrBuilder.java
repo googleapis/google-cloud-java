@@ -40,7 +40,6 @@ public interface CertificateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CertificateOrBuilder
    * @return Whether the pemCsr field is set.
    */
   boolean hasPemCsr();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CertificateOrBuilder
    * @return The pemCsr.
    */
   java.lang.String getPemCsr();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface CertificateOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface CertificateOrBuilder
    * @return The config.
    */
   com.google.cloud.security.privateca.v1.CertificateConfig getConfig();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface CertificateOrBuilder
    * @return The issuerCertificateAuthority.
    */
   java.lang.String getIssuerCertificateAuthority();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface CertificateOrBuilder
    * @return Whether the lifetime field is set.
    */
   boolean hasLifetime();
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public interface CertificateOrBuilder
    * @return The lifetime.
    */
   com.google.protobuf.Duration getLifetime();
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public interface CertificateOrBuilder
    * @return The certificateTemplate.
    */
   java.lang.String getCertificateTemplate();
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public interface CertificateOrBuilder
    * @return The enum numeric value on the wire for subjectMode.
    */
   int getSubjectModeValue();
-
   /**
    *
    *
@@ -326,7 +316,6 @@ public interface CertificateOrBuilder
    * @return Whether the revocationDetails field is set.
    */
   boolean hasRevocationDetails();
-
   /**
    *
    *
@@ -344,7 +333,6 @@ public interface CertificateOrBuilder
    * @return The revocationDetails.
    */
   com.google.cloud.security.privateca.v1.Certificate.RevocationDetails getRevocationDetails();
-
   /**
    *
    *
@@ -374,7 +362,6 @@ public interface CertificateOrBuilder
    * @return The pemCertificate.
    */
   java.lang.String getPemCertificate();
-
   /**
    *
    *
@@ -402,7 +389,6 @@ public interface CertificateOrBuilder
    * @return Whether the certificateDescription field is set.
    */
   boolean hasCertificateDescription();
-
   /**
    *
    *
@@ -417,7 +403,6 @@ public interface CertificateOrBuilder
    * @return The certificateDescription.
    */
   com.google.cloud.security.privateca.v1.CertificateDescription getCertificateDescription();
-
   /**
    *
    *
@@ -446,7 +431,6 @@ public interface CertificateOrBuilder
    * @return A list containing the pemCertificateChain.
    */
   java.util.List<java.lang.String> getPemCertificateChainList();
-
   /**
    *
    *
@@ -461,7 +445,6 @@ public interface CertificateOrBuilder
    * @return The count of pemCertificateChain.
    */
   int getPemCertificateChainCount();
-
   /**
    *
    *
@@ -477,7 +460,6 @@ public interface CertificateOrBuilder
    * @return The pemCertificateChain at the given index.
    */
   java.lang.String getPemCertificateChain(int index);
-
   /**
    *
    *
@@ -508,7 +490,6 @@ public interface CertificateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -523,7 +504,6 @@ public interface CertificateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -551,7 +531,6 @@ public interface CertificateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -566,7 +545,6 @@ public interface CertificateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -590,7 +568,6 @@ public interface CertificateOrBuilder
    * <code>map&lt;string, string&gt; labels = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -601,11 +578,9 @@ public interface CertificateOrBuilder
    * <code>map&lt;string, string&gt; labels = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -616,7 +591,6 @@ public interface CertificateOrBuilder
    * <code>map&lt;string, string&gt; labels = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -631,7 +605,6 @@ public interface CertificateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

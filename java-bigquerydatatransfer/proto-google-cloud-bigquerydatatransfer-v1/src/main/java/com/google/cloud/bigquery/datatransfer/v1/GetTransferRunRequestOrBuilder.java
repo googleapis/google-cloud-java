@@ -41,7 +41,6 @@ public interface GetTransferRunRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

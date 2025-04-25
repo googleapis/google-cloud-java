@@ -34,7 +34,6 @@ public interface StreamingPredictResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Tensor outputs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Tensor> getOutputsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface StreamingPredictResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Tensor outputs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Tensor getOutputs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface StreamingPredictResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Tensor outputs = 1;</code>
    */
   int getOutputsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface StreamingPredictResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TensorOrBuilder>
       getOutputsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface StreamingPredictResponseOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface StreamingPredictResponseOrBuilder
    * @return The parameters.
    */
   com.google.cloud.aiplatform.v1.Tensor getParameters();
-
   /**
    *
    *

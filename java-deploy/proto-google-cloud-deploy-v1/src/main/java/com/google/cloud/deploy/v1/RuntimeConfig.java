@@ -34,7 +34,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RuntimeConfig)
     RuntimeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RuntimeConfig.newBuilder() to construct.
   private RuntimeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     private RuntimeConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KUBERNETES_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKubernetes() {
     return runtimeConfigCase_ == 1;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.KubernetesConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_RUN_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRun() {
     return runtimeConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.CloudRunConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -421,7 +413,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.KubernetesConfig.Builder,
             com.google.cloud.deploy.v1.KubernetesConfigOrBuilder>
         kubernetesBuilder_;
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKubernetes() {
       return runtimeConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.KubernetesConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       runtimeConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       runtimeConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       runtimeConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.KubernetesConfig.Builder getKubernetesBuilder() {
       return getKubernetesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.KubernetesConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.CloudRunConfig.Builder,
             com.google.cloud.deploy.v1.CloudRunConfigOrBuilder>
         cloudRunBuilder_;
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRun() {
       return runtimeConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.CloudRunConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       runtimeConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +964,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       runtimeConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       runtimeConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1025,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1039,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.CloudRunConfig.Builder getCloudRunBuilder() {
       return getCloudRunFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1087,7 +1061,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.CloudRunConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

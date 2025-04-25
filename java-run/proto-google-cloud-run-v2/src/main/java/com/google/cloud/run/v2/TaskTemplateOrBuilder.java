@@ -35,7 +35,6 @@ public interface TaskTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 1;</code>
    */
   java.util.List<com.google.cloud.run.v2.Container> getContainersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface TaskTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 1;</code>
    */
   com.google.cloud.run.v2.Container getContainers(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface TaskTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 1;</code>
    */
   int getContainersCount();
-
   /**
    *
    *
@@ -71,7 +68,6 @@ public interface TaskTemplateOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 1;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ContainerOrBuilder> getContainersOrBuilderList();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface TaskTemplateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Volume> getVolumesList();
-
   /**
    *
    *
@@ -109,7 +104,6 @@ public interface TaskTemplateOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Volume getVolumes(int index);
-
   /**
    *
    *
@@ -122,7 +116,6 @@ public interface TaskTemplateOrBuilder
    * </code>
    */
   int getVolumesCount();
-
   /**
    *
    *
@@ -135,7 +128,6 @@ public interface TaskTemplateOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder> getVolumesOrBuilderList();
-
   /**
    *
    *
@@ -162,7 +154,6 @@ public interface TaskTemplateOrBuilder
    * @return Whether the maxRetries field is set.
    */
   boolean hasMaxRetries();
-
   /**
    *
    *
@@ -192,7 +183,6 @@ public interface TaskTemplateOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -208,7 +198,6 @@ public interface TaskTemplateOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *
@@ -238,7 +227,6 @@ public interface TaskTemplateOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -269,7 +257,6 @@ public interface TaskTemplateOrBuilder
    * @return The enum numeric value on the wire for executionEnvironment.
    */
   int getExecutionEnvironmentValue();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface TaskTemplateOrBuilder
    * @return The encryptionKey.
    */
   java.lang.String getEncryptionKey();
-
   /**
    *
    *
@@ -330,7 +316,6 @@ public interface TaskTemplateOrBuilder
    * @return Whether the vpcAccess field is set.
    */
   boolean hasVpcAccess();
-
   /**
    *
    *
@@ -346,7 +331,6 @@ public interface TaskTemplateOrBuilder
    * @return The vpcAccess.
    */
   com.google.cloud.run.v2.VpcAccess getVpcAccess();
-
   /**
    *
    *

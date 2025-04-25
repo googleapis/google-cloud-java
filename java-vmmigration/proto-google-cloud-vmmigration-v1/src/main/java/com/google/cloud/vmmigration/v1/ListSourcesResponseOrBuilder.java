@@ -36,7 +36,6 @@ public interface ListSourcesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.Source> getSourcesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListSourcesResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.Source getSources(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListSourcesResponseOrBuilder
    * </code>
    */
   int getSourcesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.SourceOrBuilder>
       getSourcesOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ListSourcesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ListSourcesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface ListSourcesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

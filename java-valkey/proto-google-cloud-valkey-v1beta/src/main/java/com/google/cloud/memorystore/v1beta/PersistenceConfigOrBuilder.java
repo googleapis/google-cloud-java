@@ -38,7 +38,6 @@ public interface PersistenceConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PersistenceConfigOrBuilder
    * @return Whether the rdbConfig field is set.
    */
   boolean hasRdbConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface PersistenceConfigOrBuilder
    * @return The rdbConfig.
    */
   com.google.cloud.memorystore.v1beta.PersistenceConfig.RDBConfig getRdbConfig();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface PersistenceConfigOrBuilder
    * @return Whether the aofConfig field is set.
    */
   boolean hasAofConfig();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface PersistenceConfigOrBuilder
    * @return The aofConfig.
    */
   com.google.cloud.memorystore.v1beta.PersistenceConfig.AOFConfig getAofConfig();
-
   /**
    *
    *

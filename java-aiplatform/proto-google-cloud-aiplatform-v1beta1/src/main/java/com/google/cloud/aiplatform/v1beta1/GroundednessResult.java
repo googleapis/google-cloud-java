@@ -33,7 +33,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundednessResult)
     GroundednessResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundednessResult.newBuilder() to construct.
   private GroundednessResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -378,7 +371,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -593,7 +585,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object explanation_ = "";
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -792,7 +774,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -808,7 +789,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -828,7 +808,6 @@ public final class GroundednessResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

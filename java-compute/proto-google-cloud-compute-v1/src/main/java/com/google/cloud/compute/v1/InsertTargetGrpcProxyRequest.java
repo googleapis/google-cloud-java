@@ -33,7 +33,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertTargetGrpcProxyRequest)
     InsertTargetGrpcProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertTargetGrpcProxyRequest.newBuilder() to construct.
   private InsertTargetGrpcProxyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
 
   public static final int TARGET_GRPC_PROXY_RESOURCE_FIELD_NUMBER = 328922450;
   private com.google.cloud.compute.v1.TargetGrpcProxy targetGrpcProxyResource_;
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
   public boolean hasTargetGrpcProxyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.TargetGrpcProxy.getDefaultInstance()
         : targetGrpcProxyResource_;
   }
-
   /**
    *
    *
@@ -442,7 +433,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +666,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.TargetGrpcProxy.Builder,
             com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder>
         targetGrpcProxyResourceBuilder_;
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     public boolean hasTargetGrpcProxyResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -968,7 +945,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         return targetGrpcProxyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1042,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1058,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return getTargetGrpcProxyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1108,7 +1079,6 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
             : targetGrpcProxyResource_;
       }
     }
-
     /**
      *
      *

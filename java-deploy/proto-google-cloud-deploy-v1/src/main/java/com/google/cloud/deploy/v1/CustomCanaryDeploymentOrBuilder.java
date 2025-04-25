@@ -38,7 +38,6 @@ public interface CustomCanaryDeploymentOrBuilder
    */
   java.util.List<com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig>
       getPhaseConfigsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface CustomCanaryDeploymentOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig getPhaseConfigs(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface CustomCanaryDeploymentOrBuilder
    * </code>
    */
   int getPhaseConfigsCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface CustomCanaryDeploymentOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfigOrBuilder>
       getPhaseConfigsOrBuilderList();
-
   /**
    *
    *

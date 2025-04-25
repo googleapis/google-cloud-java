@@ -23,8 +23,7 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [SecretManagerService.DestroySecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DestroySecretVersion].
+ * Request message for [SecretManagerService.DestroySecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DestroySecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.DestroySecretVersionRequest}
@@ -34,7 +33,6 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.DestroySecretVersionRequest)
     DestroySecretVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DestroySecretVersionRequest.newBuilder() to construct.
   private DestroySecretVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,14 +67,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -97,14 +93,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -287,13 +281,11 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
-   * Request message for
-   * [SecretManagerService.DestroySecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DestroySecretVersion].
+   * Request message for [SecretManagerService.DestroySecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DestroySecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.DestroySecretVersionRequest}
@@ -480,14 +472,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -507,14 +497,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -534,14 +522,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -560,14 +546,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -582,14 +566,12 @@ public final class DestroySecretVersionRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in
-     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to destroy in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>

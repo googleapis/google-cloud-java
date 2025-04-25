@@ -84,7 +84,6 @@ public enum IndustryVertical implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INDUSTRY_VERTICAL_UNSPECIFIED = 0;</code>
    */
   public static final int INDUSTRY_VERTICAL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public enum IndustryVertical implements com.google.protobuf.ProtocolMessageEnum 
    * <code>GENERIC = 1;</code>
    */
   public static final int GENERIC_VALUE = 1;
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public enum IndustryVertical implements com.google.protobuf.ProtocolMessageEnum 
    * <code>MEDIA = 2;</code>
    */
   public static final int MEDIA_VALUE = 2;
-
   /**
    *
    *

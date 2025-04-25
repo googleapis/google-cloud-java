@@ -38,7 +38,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.BasicSli)
     BasicSliOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BasicSli.newBuilder() to construct.
   private BasicSli(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.BasicSli.AvailabilityCriteria)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.BasicSli.AvailabilityCriteria)
       AvailabilityCriteriaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AvailabilityCriteria.newBuilder() to construct.
     private AvailabilityCriteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -271,7 +268,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -515,7 +511,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the threshold field is set.
      */
     boolean hasThreshold();
-
     /**
      *
      *
@@ -529,7 +524,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return The threshold.
      */
     com.google.protobuf.Duration getThreshold();
-
     /**
      *
      *
@@ -542,7 +536,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getThresholdOrBuilder();
   }
-
   /**
    *
    *
@@ -557,7 +550,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.BasicSli.LatencyCriteria)
       LatencyCriteriaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LatencyCriteria.newBuilder() to construct.
     private LatencyCriteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -589,7 +581,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int THRESHOLD_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration threshold_;
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public boolean hasThreshold() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration getThreshold() {
       return threshold_ == null ? com.google.protobuf.Duration.getDefaultInstance() : threshold_;
     }
-
     /**
      *
      *
@@ -804,7 +793,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1011,7 +999,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           thresholdBuilder_;
-
       /**
        *
        *
@@ -1027,7 +1014,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       public boolean hasThreshold() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1049,7 +1035,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
           return thresholdBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1073,7 +1058,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1094,7 +1078,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1123,7 +1106,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1144,7 +1126,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1160,7 +1141,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getThresholdFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1180,7 +1160,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
               : threshold_;
         }
       }
-
       /**
        *
        *
@@ -1289,7 +1268,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     private SliCriteriaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1327,7 +1305,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList method_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1346,7 +1323,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMethodList() {
     return method_;
   }
-
   /**
    *
    *
@@ -1365,7 +1341,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public int getMethodCount() {
     return method_.size();
   }
-
   /**
    *
    *
@@ -1385,7 +1360,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMethod(int index) {
     return method_.get(index);
   }
-
   /**
    *
    *
@@ -1411,7 +1385,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList location_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1430,7 +1403,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLocationList() {
     return location_;
   }
-
   /**
    *
    *
@@ -1449,7 +1421,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public int getLocationCount() {
     return location_.size();
   }
-
   /**
    *
    *
@@ -1469,7 +1440,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLocation(int index) {
     return location_.get(index);
   }
-
   /**
    *
    *
@@ -1495,7 +1465,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList version_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1514,7 +1483,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getVersionList() {
     return version_;
   }
-
   /**
    *
    *
@@ -1533,7 +1501,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public int getVersionCount() {
     return version_.size();
   }
-
   /**
    *
    *
@@ -1553,7 +1520,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getVersion(int index) {
     return version_.get(index);
   }
-
   /**
    *
    *
@@ -1575,7 +1541,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVAILABILITY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1592,7 +1557,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAvailability() {
     return sliCriteriaCase_ == 2;
   }
-
   /**
    *
    *
@@ -1612,7 +1576,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.v3.BasicSli.AvailabilityCriteria.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1633,7 +1596,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LATENCY_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1650,7 +1612,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatency() {
     return sliCriteriaCase_ == 3;
   }
-
   /**
    *
    *
@@ -1670,7 +1631,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.v3.BasicSli.LatencyCriteria.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1924,7 +1884,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2233,7 +2192,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -2253,7 +2211,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       method_.makeImmutable();
       return method_;
     }
-
     /**
      *
      *
@@ -2272,7 +2229,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public int getMethodCount() {
       return method_.size();
     }
-
     /**
      *
      *
@@ -2292,7 +2248,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMethod(int index) {
       return method_.get(index);
     }
-
     /**
      *
      *
@@ -2312,7 +2267,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMethodBytes(int index) {
       return method_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2340,7 +2294,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2367,7 +2320,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2391,7 +2343,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2414,7 +2365,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2452,7 +2402,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -2472,7 +2421,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       location_.makeImmutable();
       return location_;
     }
-
     /**
      *
      *
@@ -2491,7 +2439,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public int getLocationCount() {
       return location_.size();
     }
-
     /**
      *
      *
@@ -2511,7 +2458,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLocation(int index) {
       return location_.get(index);
     }
-
     /**
      *
      *
@@ -2531,7 +2477,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLocationBytes(int index) {
       return location_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2559,7 +2504,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2586,7 +2530,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2610,7 +2553,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2633,7 +2575,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2671,7 +2612,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2691,7 +2631,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       version_.makeImmutable();
       return version_;
     }
-
     /**
      *
      *
@@ -2710,7 +2649,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public int getVersionCount() {
       return version_.size();
     }
-
     /**
      *
      *
@@ -2730,7 +2668,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getVersion(int index) {
       return version_.get(index);
     }
-
     /**
      *
      *
@@ -2750,7 +2687,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getVersionBytes(int index) {
       return version_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2778,7 +2714,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2740,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2829,7 +2763,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2852,7 +2785,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2886,7 +2818,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.BasicSli.AvailabilityCriteria.Builder,
             com.google.monitoring.v3.BasicSli.AvailabilityCriteriaOrBuilder>
         availabilityBuilder_;
-
     /**
      *
      *
@@ -2903,7 +2834,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvailability() {
       return sliCriteriaCase_ == 2;
     }
-
     /**
      *
      *
@@ -2930,7 +2860,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.v3.BasicSli.AvailabilityCriteria.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2954,7 +2883,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       sliCriteriaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2976,7 +2904,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       sliCriteriaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3011,7 +2938,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       sliCriteriaCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3038,7 +2964,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3052,7 +2977,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.BasicSli.AvailabilityCriteria.Builder getAvailabilityBuilder() {
       return getAvailabilityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3075,7 +2999,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.v3.BasicSli.AvailabilityCriteria.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3116,7 +3039,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.v3.BasicSli.LatencyCriteria.Builder,
             com.google.monitoring.v3.BasicSli.LatencyCriteriaOrBuilder>
         latencyBuilder_;
-
     /**
      *
      *
@@ -3133,7 +3055,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatency() {
       return sliCriteriaCase_ == 3;
     }
-
     /**
      *
      *
@@ -3160,7 +3081,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.v3.BasicSli.LatencyCriteria.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3184,7 +3104,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       sliCriteriaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3206,7 +3125,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       sliCriteriaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3241,7 +3159,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       sliCriteriaCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3268,7 +3185,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3282,7 +3198,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.BasicSli.LatencyCriteria.Builder getLatencyBuilder() {
       return getLatencyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3304,7 +3219,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.v3.BasicSli.LatencyCriteria.getDefaultInstance();
       }
     }
-
     /**
      *
      *

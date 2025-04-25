@@ -39,7 +39,6 @@ public interface CreateHardwareGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateHardwareGroupRequestOrBuilder
    * @return The hardwareGroupId.
    */
   java.lang.String getHardwareGroupId();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CreateHardwareGroupRequestOrBuilder
    * @return Whether the hardwareGroup field is set.
    */
   boolean hasHardwareGroup();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CreateHardwareGroupRequestOrBuilder
    * @return The hardwareGroup.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup getHardwareGroup();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface CreateHardwareGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

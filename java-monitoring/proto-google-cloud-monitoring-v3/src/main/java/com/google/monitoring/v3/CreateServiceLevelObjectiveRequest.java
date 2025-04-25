@@ -33,7 +33,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateServiceLevelObjectiveRequest)
     CreateServiceLevelObjectiveRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateServiceLevelObjectiveRequest.newBuilder() to construct.
   private CreateServiceLevelObjectiveRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceLevelObjectiveId_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
 
   public static final int SERVICE_LEVEL_OBJECTIVE_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.ServiceLevelObjective serviceLevelObjective_;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
   public boolean hasServiceLevelObjective() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         ? com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()
         : serviceLevelObjective_;
   }
-
   /**
    *
    *
@@ -435,7 +427,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -668,7 +659,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -695,7 +685,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -722,7 +711,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     }
 
     private java.lang.Object serviceLevelObjectiveId_ = "";
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -849,7 +833,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +856,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +906,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
             com.google.monitoring.v3.ServiceLevelObjective.Builder,
             com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder>
         serviceLevelObjectiveBuilder_;
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     public boolean hasServiceLevelObjective() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         return serviceLevelObjectiveBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1054,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return getServiceLevelObjectiveFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1123,7 +1096,6 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
             : serviceLevelObjective_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface CreateSourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateSourceRequestOrBuilder
    * @return The sourceId.
    */
   java.lang.String getSourceId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface CreateSourceRequestOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateSourceRequestOrBuilder
    * @return The source.
    */
   com.google.cloud.migrationcenter.v1.Source getSource();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface CreateSourceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ModelMonitoringTabularStatsOrBuilder
    * @return The statsName.
    */
   java.lang.String getStatsName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ModelMonitoringTabularStatsOrBuilder
    * @return The objectiveType.
    */
   java.lang.String getObjectiveType();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ModelMonitoringTabularStatsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint>
       getDataPointsList();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface ModelMonitoringTabularStatsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPoint getDataPoints(int index);
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ModelMonitoringTabularStatsOrBuilder
    * </code>
    */
   int getDataPointsCount();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface ModelMonitoringTabularStatsOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsDataPointOrBuilder>
       getDataPointsOrBuilderList();
-
   /**
    *
    *

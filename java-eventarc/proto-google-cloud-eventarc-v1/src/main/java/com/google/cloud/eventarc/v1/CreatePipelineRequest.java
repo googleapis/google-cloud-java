@@ -33,7 +33,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.CreatePipelineRequest)
     CreatePipelineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePipelineRequest.newBuilder() to construct.
   private CreatePipelineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
 
   public static final int PIPELINE_FIELD_NUMBER = 2;
   private com.google.cloud.eventarc.v1.Pipeline pipeline_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
   public boolean hasPipeline() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.eventarc.v1.Pipeline.getDefaultInstance()
         : pipeline_;
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineId_ = "";
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -446,7 +437,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -713,7 +702,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -762,7 +749,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.eventarc.v1.Pipeline.Builder,
             com.google.cloud.eventarc.v1.PipelineOrBuilder>
         pipelineBuilder_;
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     public boolean hasPipeline() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
         return pipelineBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +911,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPipelineFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
             : pipeline_;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object pipelineId_ = "";
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1041,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1089,7 +1062,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1103,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1149,7 +1119,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1170,7 +1139,6 @@ public final class CreatePipelineRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

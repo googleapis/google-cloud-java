@@ -33,7 +33,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.MetadataManagementActivity)
     MetadataManagementActivityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MetadataManagementActivity.newBuilder() to construct.
   private MetadataManagementActivity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1alpha.MetadataExport> metadataExports_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       getMetadataExportsList() {
     return metadataExports_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       getMetadataExportsOrBuilderList() {
     return metadataExports_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   public int getMetadataExportsCount() {
     return metadataExports_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   public com.google.cloud.metastore.v1alpha.MetadataExport getMetadataExports(int index) {
     return metadataExports_.get(index);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1alpha.Restore> restores_;
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.metastore.v1alpha.Restore> getRestoresList() {
     return restores_;
   }
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       getRestoresOrBuilderList() {
     return restores_;
   }
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   public int getRestoresCount() {
     return restores_.size();
   }
-
   /**
    *
    *
@@ -222,7 +212,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   public com.google.cloud.metastore.v1alpha.Restore getRestores(int index) {
     return restores_.get(index);
   }
-
   /**
    *
    *
@@ -412,7 +401,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -739,7 +727,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return metadataExportsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return metadataExportsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return metadataExportsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +859,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         int index) {
       return getMetadataExportsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1026,7 +1001,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return metadataExportsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1020,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(metadataExports_);
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1035,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       return getMetadataExportsFieldBuilder()
           .addBuilder(com.google.cloud.metastore.v1alpha.MetadataExport.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.metastore.v1alpha.MetadataExport.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1151,7 +1122,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return restoresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1140,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return restoresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1189,7 +1158,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return restoresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1214,7 +1182,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1204,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1228,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1252,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1273,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1295,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1317,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1338,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1359,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1373,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     public com.google.cloud.metastore.v1alpha.Restore.Builder getRestoresBuilder(int index) {
       return getRestoresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1433,7 +1391,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return restoresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1453,7 +1410,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(restores_);
       }
     }
-
     /**
      *
      *
@@ -1469,7 +1425,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       return getRestoresFieldBuilder()
           .addBuilder(com.google.cloud.metastore.v1alpha.Restore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1485,7 +1440,6 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       return getRestoresFieldBuilder()
           .addBuilder(index, com.google.cloud.metastore.v1alpha.Restore.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateGroupRequest)
     CreateGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateGroupRequest.newBuilder() to construct.
   private CreateGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int GROUP_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.Group group_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasGroup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
   public com.google.monitoring.v3.Group getGroup() {
     return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -383,7 +376,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -609,7 +601,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
             com.google.monitoring.v3.Group.Builder,
             com.google.monitoring.v3.GroupOrBuilder>
         groupBuilder_;
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasGroup() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         return groupBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -920,7 +899,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
       }
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

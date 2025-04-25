@@ -37,7 +37,6 @@ public interface AutomationRunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AutomationRunOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface AutomationRunOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface AutomationRunOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface AutomationRunOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the automationSnapshot field is set.
    */
   boolean hasAutomationSnapshot();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface AutomationRunOrBuilder
    * @return The automationSnapshot.
    */
   com.google.cloud.deploy.v1.Automation getAutomationSnapshot();
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public interface AutomationRunOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public interface AutomationRunOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public interface AutomationRunOrBuilder
    * @return The stateDescription.
    */
   java.lang.String getStateDescription();
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the policyViolation field is set.
    */
   boolean hasPolicyViolation();
-
   /**
    *
    *
@@ -357,7 +344,6 @@ public interface AutomationRunOrBuilder
    * @return The policyViolation.
    */
   com.google.cloud.deploy.v1.PolicyViolation getPolicyViolation();
-
   /**
    *
    *
@@ -386,7 +372,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -401,7 +386,6 @@ public interface AutomationRunOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -427,7 +411,6 @@ public interface AutomationRunOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
-
   /**
    *
    *
@@ -453,7 +436,6 @@ public interface AutomationRunOrBuilder
    * @return The automationId.
    */
   java.lang.String getAutomationId();
-
   /**
    *
    *
@@ -481,7 +463,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the promoteReleaseOperation field is set.
    */
   boolean hasPromoteReleaseOperation();
-
   /**
    *
    *
@@ -496,7 +477,6 @@ public interface AutomationRunOrBuilder
    * @return The promoteReleaseOperation.
    */
   com.google.cloud.deploy.v1.PromoteReleaseOperation getPromoteReleaseOperation();
-
   /**
    *
    *
@@ -524,7 +504,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the advanceRolloutOperation field is set.
    */
   boolean hasAdvanceRolloutOperation();
-
   /**
    *
    *
@@ -539,7 +518,6 @@ public interface AutomationRunOrBuilder
    * @return The advanceRolloutOperation.
    */
   com.google.cloud.deploy.v1.AdvanceRolloutOperation getAdvanceRolloutOperation();
-
   /**
    *
    *
@@ -567,7 +545,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the repairRolloutOperation field is set.
    */
   boolean hasRepairRolloutOperation();
-
   /**
    *
    *
@@ -582,7 +559,6 @@ public interface AutomationRunOrBuilder
    * @return The repairRolloutOperation.
    */
   com.google.cloud.deploy.v1.RepairRolloutOperation getRepairRolloutOperation();
-
   /**
    *
    *
@@ -611,7 +587,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the timedPromoteReleaseOperation field is set.
    */
   boolean hasTimedPromoteReleaseOperation();
-
   /**
    *
    *
@@ -627,7 +602,6 @@ public interface AutomationRunOrBuilder
    * @return The timedPromoteReleaseOperation.
    */
   com.google.cloud.deploy.v1.TimedPromoteReleaseOperation getTimedPromoteReleaseOperation();
-
   /**
    *
    *
@@ -658,7 +632,6 @@ public interface AutomationRunOrBuilder
    * @return Whether the waitUntilTime field is set.
    */
   boolean hasWaitUntilTime();
-
   /**
    *
    *
@@ -674,7 +647,6 @@ public interface AutomationRunOrBuilder
    * @return The waitUntilTime.
    */
   com.google.protobuf.Timestamp getWaitUntilTime();
-
   /**
    *
    *

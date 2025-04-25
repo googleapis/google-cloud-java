@@ -38,7 +38,6 @@ public interface CreateVpnConnectionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateVpnConnectionRequestOrBuilder
    * @return The vpnConnectionId.
    */
   java.lang.String getVpnConnectionId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateVpnConnectionRequestOrBuilder
    * @return Whether the vpnConnection field is set.
    */
   boolean hasVpnConnection();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateVpnConnectionRequestOrBuilder
    * @return The vpnConnection.
    */
   com.google.cloud.edgecontainer.v1.VpnConnection getVpnConnection();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface CreateVpnConnectionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

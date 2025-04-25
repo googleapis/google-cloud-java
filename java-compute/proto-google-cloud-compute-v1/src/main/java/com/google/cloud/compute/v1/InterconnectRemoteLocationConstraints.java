@@ -33,7 +33,6 @@ public final class InterconnectRemoteLocationConstraints
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectRemoteLocationConstraints)
     InterconnectRemoteLocationConstraintsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectRemoteLocationConstraints.newBuilder() to construct.
   private InterconnectRemoteLocationConstraints(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -120,7 +119,6 @@ public final class InterconnectRemoteLocationConstraints
      * <code>UNDEFINED_PORT_PAIR_REMOTE_LOCATION = 0;</code>
      */
     public static final int UNDEFINED_PORT_PAIR_REMOTE_LOCATION_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class InterconnectRemoteLocationConstraints
      * <code>PORT_PAIR_MATCHING_REMOTE_LOCATION = 207291859;</code>
      */
     public static final int PORT_PAIR_MATCHING_REMOTE_LOCATION_VALUE = 207291859;
-
     /**
      *
      *
@@ -285,7 +282,6 @@ public final class InterconnectRemoteLocationConstraints
      * <code>UNDEFINED_PORT_PAIR_VLAN = 0;</code>
      */
     public static final int UNDEFINED_PORT_PAIR_VLAN_VALUE = 0;
-
     /**
      *
      *
@@ -296,7 +292,6 @@ public final class InterconnectRemoteLocationConstraints
      * <code>PORT_PAIR_MATCHING_VLAN = 250295358;</code>
      */
     public static final int PORT_PAIR_MATCHING_VLAN_VALUE = 250295358;
-
     /**
      *
      *
@@ -398,7 +393,6 @@ public final class InterconnectRemoteLocationConstraints
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object portPairRemoteLocation_ = "";
-
   /**
    *
    *
@@ -415,7 +409,6 @@ public final class InterconnectRemoteLocationConstraints
   public boolean hasPortPairRemoteLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -440,7 +433,6 @@ public final class InterconnectRemoteLocationConstraints
       return s;
     }
   }
-
   /**
    *
    *
@@ -470,7 +462,6 @@ public final class InterconnectRemoteLocationConstraints
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object portPairVlan_ = "";
-
   /**
    *
    *
@@ -487,7 +478,6 @@ public final class InterconnectRemoteLocationConstraints
   public boolean hasPortPairVlan() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -512,7 +502,6 @@ public final class InterconnectRemoteLocationConstraints
       return s;
     }
   }
-
   /**
    *
    *
@@ -541,7 +530,6 @@ public final class InterconnectRemoteLocationConstraints
   public static final int SUBNET_LENGTH_RANGE_FIELD_NUMBER = 184473670;
   private com.google.cloud.compute.v1.InterconnectRemoteLocationConstraintsSubnetLengthRange
       subnetLengthRange_;
-
   /**
    *
    *
@@ -559,7 +547,6 @@ public final class InterconnectRemoteLocationConstraints
   public boolean hasSubnetLengthRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -581,7 +568,6 @@ public final class InterconnectRemoteLocationConstraints
             .getDefaultInstance()
         : subnetLengthRange_;
   }
-
   /**
    *
    *
@@ -801,7 +787,6 @@ public final class InterconnectRemoteLocationConstraints
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1040,7 +1025,6 @@ public final class InterconnectRemoteLocationConstraints
     private int bitField0_;
 
     private java.lang.Object portPairRemoteLocation_ = "";
-
     /**
      *
      *
@@ -1056,7 +1040,6 @@ public final class InterconnectRemoteLocationConstraints
     public boolean hasPortPairRemoteLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1080,7 +1063,6 @@ public final class InterconnectRemoteLocationConstraints
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1086,6 @@ public final class InterconnectRemoteLocationConstraints
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1127,7 +1108,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1126,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1151,6 @@ public final class InterconnectRemoteLocationConstraints
     }
 
     private java.lang.Object portPairVlan_ = "";
-
     /**
      *
      *
@@ -1188,7 +1166,6 @@ public final class InterconnectRemoteLocationConstraints
     public boolean hasPortPairVlan() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1212,7 +1189,6 @@ public final class InterconnectRemoteLocationConstraints
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1212,6 @@ public final class InterconnectRemoteLocationConstraints
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1259,7 +1234,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1252,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1285,6 @@ public final class InterconnectRemoteLocationConstraints
             com.google.cloud.compute.v1
                 .InterconnectRemoteLocationConstraintsSubnetLengthRangeOrBuilder>
         subnetLengthRangeBuilder_;
-
     /**
      *
      *
@@ -1329,7 +1301,6 @@ public final class InterconnectRemoteLocationConstraints
     public boolean hasSubnetLengthRange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1354,7 +1325,6 @@ public final class InterconnectRemoteLocationConstraints
         return subnetLengthRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1350,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1373,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1405,6 @@ public final class InterconnectRemoteLocationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1426,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1444,6 @@ public final class InterconnectRemoteLocationConstraints
       onChanged();
       return getSubnetLengthRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1502,7 +1467,6 @@ public final class InterconnectRemoteLocationConstraints
             : subnetLengthRange_;
       }
     }
-
     /**
      *
      *

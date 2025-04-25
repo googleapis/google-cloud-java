@@ -33,7 +33,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RolloutOptions)
     RolloutOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RolloutOptions.newBuilder() to construct.
   private RolloutOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     private MaxUnavailableCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -131,7 +129,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     private MaxSurgeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -165,7 +162,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_UNAVAILABLE_REPLICAS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxUnavailableReplicas() {
     return maxUnavailableCase_ == 3;
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_UNAVAILABLE_PERCENTAGE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxUnavailablePercentage() {
     return maxUnavailableCase_ == 4;
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_SURGE_REPLICAS_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxSurgeReplicas() {
     return maxSurgeCase_ == 5;
   }
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_SURGE_PERCENTAGE_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxSurgePercentage() {
     return maxSurgeCase_ == 6;
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object previousDeployedModel_ = "";
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVISION_NUMBER_FIELD_NUMBER = 2;
   private int revisionNumber_ = 0;
-
   /**
    *
    *
@@ -636,7 +622,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -943,7 +928,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxUnavailableReplicas() {
       return maxUnavailableCase_ == 3;
     }
-
     /**
      *
      *
@@ -961,7 +945,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -981,7 +964,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +999,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxUnavailablePercentage() {
       return maxUnavailableCase_ == 4;
     }
-
     /**
      *
      *
@@ -1036,7 +1017,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -1057,7 +1037,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1072,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxSurgeReplicas() {
       return maxSurgeCase_ == 5;
     }
-
     /**
      *
      *
@@ -1111,7 +1089,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -1131,7 +1108,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxSurgePercentage() {
       return maxSurgeCase_ == 6;
     }
-
     /**
      *
      *
@@ -1186,7 +1161,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -1207,7 +1181,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1203,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object previousDeployedModel_ = "";
-
     /**
      *
      *
@@ -1253,7 +1225,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1247,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1268,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1285,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1309,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int revisionNumber_;
-
     /**
      *
      *
@@ -1359,7 +1326,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
     public int getRevisionNumber() {
       return revisionNumber_;
     }
-
     /**
      *
      *
@@ -1381,7 +1347,6 @@ public final class RolloutOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

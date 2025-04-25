@@ -36,7 +36,6 @@ public interface TextSegmentOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TextSegmentOrBuilder
    * @return The segment.
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface TextSegmentOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.TextFrame frames = 3;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.TextFrame> getFramesList();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface TextSegmentOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.TextFrame frames = 3;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.TextFrame getFrames(int index);
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface TextSegmentOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.TextFrame frames = 3;</code>
    */
   int getFramesCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface TextSegmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TextFrameOrBuilder>
       getFramesOrBuilderList();
-
   /**
    *
    *

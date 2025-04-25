@@ -37,7 +37,6 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.optimization.v1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface InputConfigOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> getArpCachesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </code>
    */
   int getArpCachesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder>
       getArpCachesOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the circuitId field is set.
    */
   boolean hasCircuitId();
-
   /**
    *
    *
@@ -111,7 +106,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The circuitId.
    */
   java.lang.String getCircuitId();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the googleDemarc field is set.
    */
   boolean hasGoogleDemarc();
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The googleDemarc.
    */
   java.lang.String getGoogleDemarc();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the lacpStatus field is set.
    */
   boolean hasLacpStatus();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
@@ -181,7 +172,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The lacpStatus.
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus getLacpStatus();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
@@ -203,7 +193,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the macsec field is set.
    */
   boolean hasMacsec();
-
   /**
    *
    *
@@ -217,7 +206,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The macsec.
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatus getMacsec();
-
   /**
    *
    *
@@ -243,7 +231,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the operationalStatus field is set.
    */
   boolean hasOperationalStatus();
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The operationalStatus.
    */
   java.lang.String getOperationalStatus();
-
   /**
    *
    *
@@ -286,7 +272,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the receivingOpticalPower field is set.
    */
   boolean hasReceivingOpticalPower();
-
   /**
    *
    *
@@ -301,7 +286,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The receivingOpticalPower.
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower getReceivingOpticalPower();
-
   /**
    *
    *
@@ -330,7 +314,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return Whether the transmittingOpticalPower field is set.
    */
   boolean hasTransmittingOpticalPower();
-
   /**
    *
    *
@@ -345,7 +328,6 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * @return The transmittingOpticalPower.
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower getTransmittingOpticalPower();
-
   /**
    *
    *

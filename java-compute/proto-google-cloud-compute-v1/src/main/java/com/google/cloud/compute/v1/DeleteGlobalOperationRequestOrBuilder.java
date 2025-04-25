@@ -36,7 +36,6 @@ public interface DeleteGlobalOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeleteGlobalOperationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

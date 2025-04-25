@@ -33,7 +33,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRouterRequest)
     PatchRouterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchRouterRequest.newBuilder() to construct.
   private PatchRouterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object router_ = "";
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ROUTER_RESOURCE_FIELD_NUMBER = 155222084;
   private com.google.cloud.compute.v1.Router routerResource_;
-
   /**
    *
    *
@@ -324,7 +313,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasRouterResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.Router.getDefaultInstance()
         : routerResource_;
   }
-
   /**
    *
    *
@@ -569,7 +556,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -829,7 +815,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +905,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +979,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1002,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1109,7 +1083,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1105,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1126,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1143,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1167,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object router_ = "";
-
     /**
      *
      *
@@ -1220,7 +1189,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1211,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1265,7 +1232,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1249,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1278,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.Router.Builder,
             com.google.cloud.compute.v1.RouterOrBuilder>
         routerResourceBuilder_;
-
     /**
      *
      *
@@ -1330,7 +1294,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasRouterResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1353,7 +1316,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
         return routerResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1378,7 +1340,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1361,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1390,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1411,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1427,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRouterResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1490,7 +1447,6 @@ public final class PatchRouterRequest extends com.google.protobuf.GeneratedMessa
             : routerResource_;
       }
     }
-
     /**
      *
      *

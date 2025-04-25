@@ -34,7 +34,6 @@ public interface ListSecuritySettingsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.SecuritySettings security_settings = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.SecuritySettings> getSecuritySettingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSecuritySettingsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.SecuritySettings security_settings = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSecuritySettingsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.SecuritySettings security_settings = 1;</code>
    */
   int getSecuritySettingsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSecuritySettingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.SecuritySettingsOrBuilder>
       getSecuritySettingsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListSecuritySettingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

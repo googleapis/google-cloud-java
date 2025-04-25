@@ -38,7 +38,6 @@ public interface ProcessingLocationOrBuilder
    * @return Whether the imageFallbackLocation field is set.
    */
   boolean hasImageFallbackLocation();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProcessingLocationOrBuilder
    * @return The imageFallbackLocation.
    */
   com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation getImageFallbackLocation();
-
   /**
    *
    *

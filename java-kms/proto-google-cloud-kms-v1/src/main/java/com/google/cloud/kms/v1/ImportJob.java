@@ -65,7 +65,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ImportJob)
     ImportJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportJob.newBuilder() to construct.
   private ImportJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,7 +219,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORT_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int IMPORT_METHOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -236,7 +234,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_3072_SHA1_AES_256 = 1;</code>
      */
     public static final int RSA_OAEP_3072_SHA1_AES_256_VALUE = 1;
-
     /**
      *
      *
@@ -252,7 +249,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_4096_SHA1_AES_256 = 2;</code>
      */
     public static final int RSA_OAEP_4096_SHA1_AES_256_VALUE = 2;
-
     /**
      *
      *
@@ -268,7 +264,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_3072_SHA256_AES_256 = 3;</code>
      */
     public static final int RSA_OAEP_3072_SHA256_AES_256_VALUE = 3;
-
     /**
      *
      *
@@ -284,7 +279,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_4096_SHA256_AES_256 = 4;</code>
      */
     public static final int RSA_OAEP_4096_SHA256_AES_256_VALUE = 4;
-
     /**
      *
      *
@@ -298,7 +292,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_3072_SHA256 = 5;</code>
      */
     public static final int RSA_OAEP_3072_SHA256_VALUE = 5;
-
     /**
      *
      *
@@ -475,7 +468,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORT_JOB_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int IMPORT_JOB_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -489,7 +481,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_GENERATION = 1;</code>
      */
     public static final int PENDING_GENERATION_VALUE = 1;
-
     /**
      *
      *
@@ -504,7 +495,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return The pem.
      */
     java.lang.String getPem();
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPemBytes();
   }
-
   /**
    *
    *
@@ -657,7 +645,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ImportJob.WrappingPublicKey)
       WrappingPublicKeyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WrappingPublicKey.newBuilder() to construct.
     private WrappingPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -692,7 +679,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pem_ = "";
-
     /**
      *
      *
@@ -720,7 +706,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -910,7 +895,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1100,7 +1084,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object pem_ = "";
-
       /**
        *
        *
@@ -1127,7 +1110,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1154,7 +1136,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1180,7 +1161,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1202,7 +1182,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1299,7 +1278,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1325,7 +1303,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1354,7 +1331,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORT_METHOD_FIELD_NUMBER = 2;
   private int importMethod_ = 0;
-
   /**
    *
    *
@@ -1373,7 +1349,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public int getImportMethodValue() {
     return importMethod_;
   }
-
   /**
    *
    *
@@ -1397,7 +1372,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 9;
   private int protectionLevel_ = 0;
-
   /**
    *
    *
@@ -1420,7 +1394,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
-
   /**
    *
    *
@@ -1448,7 +1421,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1466,7 +1438,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1484,7 +1455,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1503,7 +1473,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GENERATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp generateTime_;
-
   /**
    *
    *
@@ -1522,7 +1491,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGenerateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1543,7 +1511,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : generateTime_;
   }
-
   /**
    *
    *
@@ -1565,7 +1532,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp expireTime_;
-
   /**
    *
    *
@@ -1584,7 +1550,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1603,7 +1568,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
-
   /**
    *
    *
@@ -1623,7 +1587,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_EVENT_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp expireEventTime_;
-
   /**
    *
    *
@@ -1643,7 +1606,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireEventTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1665,7 +1627,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expireEventTime_;
   }
-
   /**
    *
    *
@@ -1688,7 +1649,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1707,7 +1667,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1731,7 +1690,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 7;
   private com.google.cloud.kms.v1.ImportJob.WrappingPublicKey publicKey_;
-
   /**
    *
    *
@@ -1751,7 +1709,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublicKey() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1773,7 +1730,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.getDefaultInstance()
         : publicKey_;
   }
-
   /**
    *
    *
@@ -1796,7 +1752,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTESTATION_FIELD_NUMBER = 8;
   private com.google.cloud.kms.v1.KeyOperationAttestation attestation_;
-
   /**
    *
    *
@@ -1819,7 +1774,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttestation() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1844,7 +1798,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance()
         : attestation_;
   }
-
   /**
    *
    *
@@ -2144,7 +2097,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2525,7 +2477,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2550,7 +2501,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2575,7 +2525,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2599,7 +2548,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2619,7 +2567,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2646,7 +2593,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int importMethod_ = 0;
-
     /**
      *
      *
@@ -2665,7 +2611,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public int getImportMethodValue() {
       return importMethod_;
     }
-
     /**
      *
      *
@@ -2687,7 +2632,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2708,7 +2652,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.kms.v1.ImportJob.ImportMethod.forNumber(importMethod_);
       return result == null ? com.google.cloud.kms.v1.ImportJob.ImportMethod.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2733,7 +2676,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2756,7 +2698,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int protectionLevel_ = 0;
-
     /**
      *
      *
@@ -2779,7 +2720,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
-
     /**
      *
      *
@@ -2805,7 +2745,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2830,7 +2769,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2859,7 +2797,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2891,7 +2828,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2909,7 +2845,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2933,7 +2868,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2959,7 +2893,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2982,7 +2915,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3013,7 +2945,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3036,7 +2967,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3054,7 +2984,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3076,7 +3005,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3112,7 +3040,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         generateTimeBuilder_;
-
     /**
      *
      *
@@ -3130,7 +3057,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGenerateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3154,7 +3080,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return generateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3180,7 +3105,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3203,7 +3127,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3234,7 +3157,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3257,7 +3179,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3275,7 +3196,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGenerateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3297,7 +3217,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             : generateTime_;
       }
     }
-
     /**
      *
      *
@@ -3333,7 +3252,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -3352,7 +3270,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3377,7 +3294,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3404,7 +3320,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3428,7 +3343,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3460,7 +3374,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3484,7 +3397,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3503,7 +3415,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3526,7 +3437,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
-
     /**
      *
      *
@@ -3563,7 +3473,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireEventTimeBuilder_;
-
     /**
      *
      *
@@ -3582,7 +3491,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireEventTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3607,7 +3515,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return expireEventTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3634,7 +3541,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3658,7 +3564,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3690,7 +3595,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3714,7 +3618,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3733,7 +3636,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireEventTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3756,7 +3658,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             : expireEventTime_;
       }
     }
-
     /**
      *
      *
@@ -3788,7 +3689,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3807,7 +3707,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3829,7 +3728,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3852,7 +3750,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.kms.v1.ImportJob.ImportJobState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3877,7 +3774,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3905,7 +3801,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.Builder,
             com.google.cloud.kms.v1.ImportJob.WrappingPublicKeyOrBuilder>
         publicKeyBuilder_;
-
     /**
      *
      *
@@ -3924,7 +3819,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublicKey() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3949,7 +3843,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return publicKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3976,7 +3869,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4001,7 +3893,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4034,7 +3925,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4058,7 +3948,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4077,7 +3966,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPublicKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4100,7 +3988,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             : publicKey_;
       }
     }
-
     /**
      *
      *
@@ -4137,7 +4024,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.kms.v1.KeyOperationAttestation.Builder,
             com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder>
         attestationBuilder_;
-
     /**
      *
      *
@@ -4159,7 +4045,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttestation() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4187,7 +4072,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         return attestationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4217,7 +4101,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4245,7 +4128,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4281,7 +4163,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4308,7 +4189,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4330,7 +4210,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAttestationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4356,7 +4235,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             : attestation_;
       }
     }
-
     /**
      *
      *

@@ -76,7 +76,6 @@ public enum SubscriptionType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SUBSCRIPTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int SUBSCRIPTION_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum SubscriptionType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STANDARD = 1;</code>
    */
   public static final int STANDARD_VALUE = 1;
-
   /**
    *
    *

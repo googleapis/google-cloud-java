@@ -36,7 +36,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest)
     SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder() to construct.
   private SimulateSecurityHealthAnalyticsCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -88,7 +87,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * @return The resourceType.
      */
     java.lang.String getResourceType();
-
     /**
      *
      *
@@ -117,7 +115,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * @return Whether the resourceData field is set.
      */
     boolean hasResourceData();
-
     /**
      *
      *
@@ -132,7 +129,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * @return The resourceData.
      */
     com.google.protobuf.Struct getResourceData();
-
     /**
      *
      *
@@ -159,7 +155,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * @return Whether the iamPolicyData field is set.
      */
     boolean hasIamPolicyData();
-
     /**
      *
      *
@@ -173,7 +168,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * @return The iamPolicyData.
      */
     com.google.iam.v1.Policy getIamPolicyData();
-
     /**
      *
      *
@@ -186,7 +180,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      */
     com.google.iam.v1.PolicyOrBuilder getIamPolicyDataOrBuilder();
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource)
       SimulatedResourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SimulatedResource.newBuilder() to construct.
     private SimulatedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -242,7 +234,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceType_ = "";
-
     /**
      *
      *
@@ -267,7 +258,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         return s;
       }
     }
-
     /**
      *
      *
@@ -295,7 +285,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
 
     public static final int RESOURCE_DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.Struct resourceData_;
-
     /**
      *
      *
@@ -313,7 +302,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasResourceData() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -333,7 +321,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
           ? com.google.protobuf.Struct.getDefaultInstance()
           : resourceData_;
     }
-
     /**
      *
      *
@@ -354,7 +341,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
 
     public static final int IAM_POLICY_DATA_FIELD_NUMBER = 3;
     private com.google.iam.v1.Policy iamPolicyData_;
-
     /**
      *
      *
@@ -371,7 +357,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasIamPolicyData() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -390,7 +375,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
           ? com.google.iam.v1.Policy.getDefaultInstance()
           : iamPolicyData_;
     }
-
     /**
      *
      *
@@ -624,7 +608,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       private int bitField0_;
 
       private java.lang.Object resourceType_ = "";
-
       /**
        *
        *
@@ -919,7 +901,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -943,7 +924,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -966,7 +946,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -985,7 +964,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1016,7 +994,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           resourceDataBuilder_;
-
       /**
        *
        *
@@ -1033,7 +1010,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       public boolean hasResourceData() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1056,7 +1032,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
           return resourceDataBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1081,7 +1056,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1103,7 +1077,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1133,7 +1106,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -1155,7 +1127,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1172,7 +1143,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return getResourceDataFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1193,7 +1163,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
               : resourceData_;
         }
       }
-
       /**
        *
        *
@@ -1228,7 +1197,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
               com.google.iam.v1.Policy.Builder,
               com.google.iam.v1.PolicyOrBuilder>
           iamPolicyDataBuilder_;
-
       /**
        *
        *
@@ -1244,7 +1212,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       public boolean hasIamPolicyData() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1266,7 +1233,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
           return iamPolicyDataBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1290,7 +1256,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1311,7 +1276,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1340,7 +1304,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         }
         return this;
       }
-
       /**
        *
        *
@@ -1361,7 +1324,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1377,7 +1339,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         onChanged();
         return getIamPolicyDataFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1397,7 +1358,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
               : iamPolicyData_;
         }
       }
-
       /**
        *
        *
@@ -1502,7 +1462,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1530,7 +1489,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -1561,7 +1519,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
 
   public static final int CUSTOM_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.v1.CustomConfig customConfig_;
-
   /**
    *
    *
@@ -1579,7 +1536,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
   public boolean hasCustomConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1599,7 +1555,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         ? com.google.cloud.securitycenter.v1.CustomConfig.getDefaultInstance()
         : customConfig_;
   }
-
   /**
    *
    *
@@ -1622,7 +1577,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
   private com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
           .SimulatedResource
       resource_;
-
   /**
    *
    *
@@ -1640,7 +1594,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
   public boolean hasResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1663,7 +1616,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
             .SimulatedResource.getDefaultInstance()
         : resource_;
   }
-
   /**
    *
    *
@@ -1894,7 +1846,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2149,7 +2100,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2176,7 +2126,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2203,7 +2152,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2229,7 +2177,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2251,7 +2198,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2285,7 +2231,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
             com.google.cloud.securitycenter.v1.CustomConfig.Builder,
             com.google.cloud.securitycenter.v1.CustomConfigOrBuilder>
         customConfigBuilder_;
-
     /**
      *
      *
@@ -2302,7 +2247,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasCustomConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2325,7 +2269,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         return customConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2350,7 +2293,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2373,7 +2315,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2404,7 +2345,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -2426,7 +2366,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2443,7 +2382,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return getCustomConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2464,7 +2402,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
             : customConfig_;
       }
     }
-
     /**
      *
      *
@@ -2504,7 +2441,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
             com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
                 .SimulatedResourceOrBuilder>
         resourceBuilder_;
-
     /**
      *
      *
@@ -2521,7 +2457,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
     public boolean hasResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2547,7 +2482,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
         return resourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2575,7 +2509,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2533,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2636,7 +2568,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -2658,7 +2589,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2677,7 +2607,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2701,7 +2630,6 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
             : resource_;
       }
     }
-
     /**
      *
      *

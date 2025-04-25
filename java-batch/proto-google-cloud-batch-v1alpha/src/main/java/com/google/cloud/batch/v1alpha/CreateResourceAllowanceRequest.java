@@ -33,7 +33,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.CreateResourceAllowanceRequest)
     CreateResourceAllowanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateResourceAllowanceRequest.newBuilder() to construct.
   private CreateResourceAllowanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceAllowanceId_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
 
   public static final int RESOURCE_ALLOWANCE_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1alpha.ResourceAllowance resourceAllowance_;
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
   public boolean hasResourceAllowance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         ? com.google.cloud.batch.v1alpha.ResourceAllowance.getDefaultInstance()
         : resourceAllowance_;
   }
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -299,7 +290,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -530,7 +520,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -781,7 +770,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -807,7 +795,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +820,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +844,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +864,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +891,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object resourceAllowanceId_ = "";
-
     /**
      *
      *
@@ -939,7 +922,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -971,7 +953,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +983,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1009,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1047,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
             com.google.cloud.batch.v1alpha.ResourceAllowance.Builder,
             com.google.cloud.batch.v1alpha.ResourceAllowanceOrBuilder>
         resourceAllowanceBuilder_;
-
     /**
      *
      *
@@ -1085,7 +1063,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
     public boolean hasResourceAllowance() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1108,7 +1085,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return resourceAllowanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1109,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1131,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1161,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1182,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1198,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return getResourceAllowanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1248,7 +1219,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
             : resourceAllowance_;
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1248,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1315,7 +1284,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1352,7 +1320,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1388,7 +1355,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1420,7 +1386,6 @@ public final class CreateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

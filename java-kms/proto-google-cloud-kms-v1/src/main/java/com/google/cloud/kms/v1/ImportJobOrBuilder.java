@@ -38,7 +38,6 @@ public interface ImportJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ImportJobOrBuilder
    * @return The enum numeric value on the wire for importMethod.
    */
   int getImportMethodValue();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface ImportJobOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface ImportJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface ImportJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public interface ImportJobOrBuilder
    * @return Whether the generateTime field is set.
    */
   boolean hasGenerateTime();
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public interface ImportJobOrBuilder
    * @return The generateTime.
    */
   com.google.protobuf.Timestamp getGenerateTime();
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public interface ImportJobOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public interface ImportJobOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public interface ImportJobOrBuilder
    * @return Whether the expireEventTime field is set.
    */
   boolean hasExpireEventTime();
-
   /**
    *
    *
@@ -294,7 +284,6 @@ public interface ImportJobOrBuilder
    * @return The expireEventTime.
    */
   com.google.protobuf.Timestamp getExpireEventTime();
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public interface ImportJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -358,7 +346,6 @@ public interface ImportJobOrBuilder
    * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
-
   /**
    *
    *
@@ -375,7 +362,6 @@ public interface ImportJobOrBuilder
    * @return The publicKey.
    */
   com.google.cloud.kms.v1.ImportJob.WrappingPublicKey getPublicKey();
-
   /**
    *
    *
@@ -410,7 +396,6 @@ public interface ImportJobOrBuilder
    * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
-
   /**
    *
    *
@@ -430,7 +415,6 @@ public interface ImportJobOrBuilder
    * @return The attestation.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation getAttestation();
-
   /**
    *
    *

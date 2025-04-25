@@ -39,7 +39,6 @@ public interface DeleteRegionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

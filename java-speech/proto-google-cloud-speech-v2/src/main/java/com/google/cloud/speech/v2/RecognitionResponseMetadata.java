@@ -33,7 +33,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.RecognitionResponseMetadata)
     RecognitionResponseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecognitionResponseMetadata.newBuilder() to construct.
   private RecognitionResponseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
 
   public static final int TOTAL_BILLED_DURATION_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration totalBilledDuration_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
   public boolean hasTotalBilledDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         ? com.google.protobuf.Duration.getDefaultInstance()
         : totalBilledDuration_;
   }
-
   /**
    *
    *
@@ -345,7 +339,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +638,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         totalBilledDurationBuilder_;
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     public boolean hasTotalBilledDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         return totalBilledDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -738,7 +723,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +742,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +788,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +802,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       onChanged();
       return getTotalBilledDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -840,7 +820,6 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
             : totalBilledDuration_;
       }
     }
-
     /**
      *
      *

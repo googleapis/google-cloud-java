@@ -34,7 +34,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ChannelPartnerLink)
     ChannelPartnerLinkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ChannelPartnerLink.newBuilder() to construct.
   private ChannelPartnerLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resellerCloudIdentityId_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   public static final int LINK_STATE_FIELD_NUMBER = 3;
   private int linkState_ = 0;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
   public int getLinkStateValue() {
     return linkState_;
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inviteLinkUri_ = "";
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -345,7 +332,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -362,7 +348,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -382,7 +367,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicId_ = "";
-
   /**
    *
    *
@@ -407,7 +391,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -435,7 +418,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
 
   public static final int CHANNEL_PARTNER_CLOUD_IDENTITY_INFO_FIELD_NUMBER = 8;
   private com.google.cloud.channel.v1.CloudIdentityInfo channelPartnerCloudIdentityInfo_;
-
   /**
    *
    *
@@ -453,7 +435,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
   public boolean hasChannelPartnerCloudIdentityInfo() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -473,7 +454,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.channel.v1.CloudIdentityInfo.getDefaultInstance()
         : channelPartnerCloudIdentityInfo_;
   }
-
   /**
    *
    *
@@ -740,7 +720,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1055,7 +1034,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1079,7 +1057,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1080,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1102,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1120,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1145,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object resellerCloudIdentityId_ = "";
-
     /**
      *
      *
@@ -1194,7 +1167,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1189,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1210,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1227,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1251,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     }
 
     private int linkState_ = 0;
-
     /**
      *
      *
@@ -1300,7 +1268,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     public int getLinkStateValue() {
       return linkState_;
     }
-
     /**
      *
      *
@@ -1321,7 +1288,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1309,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.channel.v1.ChannelPartnerLinkState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1367,7 +1332,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1353,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object inviteLinkUri_ = "";
-
     /**
      *
      *
@@ -1412,7 +1375,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1435,7 +1397,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1457,7 +1418,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1475,7 +1435,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1464,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1522,7 +1480,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1545,7 +1502,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1570,7 +1526,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1547,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1576,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1597,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1613,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1682,7 +1633,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1717,7 +1667,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1734,7 +1683,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1757,7 +1705,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1782,7 +1729,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1804,7 +1750,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1834,7 +1779,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1856,7 +1800,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1873,7 +1816,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1894,7 +1836,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1924,7 +1865,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object publicId_ = "";
-
     /**
      *
      *
@@ -1948,7 +1888,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1911,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1995,7 +1933,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1951,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2045,7 +1981,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
             com.google.cloud.channel.v1.CloudIdentityInfo.Builder,
             com.google.cloud.channel.v1.CloudIdentityInfoOrBuilder>
         channelPartnerCloudIdentityInfoBuilder_;
-
     /**
      *
      *
@@ -2062,7 +1997,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
     public boolean hasChannelPartnerCloudIdentityInfo() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2085,7 +2019,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
         return channelPartnerCloudIdentityInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2111,7 +2044,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2134,7 +2066,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2097,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2188,7 +2118,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2206,7 +2135,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getChannelPartnerCloudIdentityInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2228,7 +2156,6 @@ public final class ChannelPartnerLink extends com.google.protobuf.GeneratedMessa
             : channelPartnerCloudIdentityInfo_;
       }
     }
-
     /**
      *
      *

@@ -32,7 +32,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceMoveRequest)
     InstanceMoveRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceMoveRequest.newBuilder() to construct.
   private InstanceMoveRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationZone_ = "";
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
   public boolean hasDestinationZone() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetInstance_ = "";
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
   public boolean hasTargetInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -381,7 +374,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -584,7 +576,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object destinationZone_ = "";
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     public boolean hasDestinationZone() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +672,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object targetInstance_ = "";
-
     /**
      *
      *
@@ -725,7 +710,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     public boolean hasTargetInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -748,7 +732,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -793,7 +775,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +792,6 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

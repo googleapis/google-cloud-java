@@ -39,7 +39,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return The filter.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudSqlFilter getFilter();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return Whether the conditions field is set.
    */
   boolean hasConditions();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return The conditions.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions getConditions();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return Whether the generationCadence field is set.
    */
   boolean hasGenerationCadence();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return The generationCadence.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence getGenerationCadence();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface CloudSqlDiscoveryTargetOrBuilder
    * @return The disabled.
    */
   com.google.privacy.dlp.v2.Disabled getDisabled();
-
   /**
    *
    *

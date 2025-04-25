@@ -33,7 +33,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.ModelExportOutputConfig)
     ModelExportOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelExportOutputConfig.newBuilder() to construct.
   private ModelExportOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,7 +91,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -124,7 +122,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -151,7 +148,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     }
     return com.google.cloud.automl.v1.GcsDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelFormat_ = "";
-
   /**
    *
    *
@@ -268,7 +262,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -349,7 +342,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   public int getParamsCount() {
     return internalGetParams().getMap().size();
   }
-
   /**
    *
    *
@@ -372,14 +364,12 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     }
     return internalGetParams().getMap().containsKey(key);
   }
-
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
   }
-
   /**
    *
    *
@@ -399,7 +389,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
-
   /**
    *
    *
@@ -426,7 +415,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -654,7 +642,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -929,7 +916,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.automl.v1.GcsDestination.Builder,
             com.google.cloud.automl.v1.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
-
     /**
      *
      *
@@ -956,7 +942,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -993,7 +978,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         return com.google.cloud.automl.v1.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1011,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1042,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1085,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1121,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1144,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1.GcsDestination.Builder getGcsDestinationBuilder() {
       return getGcsDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1196,7 +1175,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         return com.google.cloud.automl.v1.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1220,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     }
 
     private java.lang.Object modelFormat_ = "";
-
     /**
      *
      *
@@ -1295,7 +1272,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1348,7 +1324,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1400,7 +1375,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1422,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1500,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     public int getParamsCount() {
       return internalGetParams().getMap().size();
     }
-
     /**
      *
      *
@@ -1550,14 +1522,12 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       }
       return internalGetParams().getMap().containsKey(key);
     }
-
     /** Use {@link #getParamsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
     }
-
     /**
      *
      *
@@ -1577,7 +1547,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
-
     /**
      *
      *
@@ -1604,7 +1573,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1637,7 +1605,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1660,14 +1627,12 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       internalGetMutableParams().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
       bitField0_ |= 0x00000004;
       return internalGetMutableParams().getMutableMap();
     }
-
     /**
      *
      *
@@ -1694,7 +1659,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

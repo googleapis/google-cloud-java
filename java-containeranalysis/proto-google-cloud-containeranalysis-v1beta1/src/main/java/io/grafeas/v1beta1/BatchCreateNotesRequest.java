@@ -33,7 +33,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.BatchCreateNotesRequest)
     BatchCreateNotesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCreateNotesRequest.newBuilder() to construct.
   private BatchCreateNotesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   public int getNotesCount() {
     return internalGetNotes().getMap().size();
   }
-
   /**
    *
    *
@@ -177,14 +173,12 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     }
     return internalGetNotes().getMap().containsKey(key);
   }
-
   /** Use {@link #getNotesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotes() {
     return getNotesMap();
   }
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotesMap() {
     return internalGetNotes().getMap();
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> map = internalGetNotes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -417,7 +409,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -640,7 +631,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,8 +757,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
           defaultEntry() {
         return NotesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final NotesConverter notesConverter = new NotesConverter();
 
@@ -812,7 +797,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     public int getNotesCount() {
       return internalGetNotes().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -829,14 +813,12 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       }
       return internalGetNotes().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getNotesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotes() {
       return getNotesMap();
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotesMap() {
       return internalGetNotes().getImmutableMap();
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
           internalGetMutableNotes().ensureBuilderMap();
       return map.containsKey(key) ? notesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       internalGetMutableNotes().clear();
       return this;
     }
-
     /**
      *
      *
@@ -917,14 +896,12 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       internalGetMutableNotes().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getMutableNotes() {
       bitField0_ |= 0x00000002;
       return internalGetMutableNotes().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -945,7 +922,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

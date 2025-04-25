@@ -33,7 +33,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.QueryGrantableRolesRequest)
     QueryGrantableRolesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryGrantableRolesRequest.newBuilder() to construct.
   private QueryGrantableRolesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullResourceName_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    * <code>.google.iam.admin.v1.RoleView view = 2;</code>
    *
@@ -139,7 +135,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
   public int getViewValue() {
     return view_;
   }
-
   /**
    * <code>.google.iam.admin.v1.RoleView view = 2;</code>
    *
@@ -153,7 +148,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -413,7 +405,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -639,7 +630,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object fullResourceName_ = "";
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     }
 
     private int view_ = 0;
-
     /**
      * <code>.google.iam.admin.v1.RoleView view = 2;</code>
      *
@@ -780,7 +765,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     public int getViewValue() {
       return view_;
     }
-
     /**
      * <code>.google.iam.admin.v1.RoleView view = 2;</code>
      *
@@ -793,7 +777,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      * <code>.google.iam.admin.v1.RoleView view = 2;</code>
      *
@@ -804,7 +787,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       com.google.iam.admin.v1.RoleView result = com.google.iam.admin.v1.RoleView.forNumber(view_);
       return result == null ? com.google.iam.admin.v1.RoleView.UNRECOGNIZED : result;
     }
-
     /**
      * <code>.google.iam.admin.v1.RoleView view = 2;</code>
      *
@@ -820,7 +802,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      * <code>.google.iam.admin.v1.RoleView view = 2;</code>
      *
@@ -834,7 +815,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -852,7 +832,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -874,7 +853,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +874,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +920,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -967,7 +942,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +960,6 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

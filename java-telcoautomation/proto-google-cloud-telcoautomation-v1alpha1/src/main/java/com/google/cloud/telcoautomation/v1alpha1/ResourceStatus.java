@@ -33,7 +33,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.ResourceStatus)
     ResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceStatus.newBuilder() to construct.
   private ResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceNamespace_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object group_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 6;
   private int resourceType_ = 0;
-
   /**
    *
    *
@@ -356,7 +344,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   public int getResourceTypeValue() {
     return resourceType_;
   }
-
   /**
    *
    *
@@ -381,7 +368,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 7;
   private int status_ = 0;
-
   /**
    *
    *
@@ -399,7 +385,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -422,7 +407,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NF_DEPLOY_STATUS_FIELD_NUMBER = 8;
   private com.google.cloud.telcoautomation.v1alpha1.NFDeployStatus nfDeployStatus_;
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNfDeployStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -460,7 +443,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.telcoautomation.v1alpha1.NFDeployStatus.getDefaultInstance()
         : nfDeployStatus_;
   }
-
   /**
    *
    *
@@ -714,7 +696,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1015,7 +996,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1038,7 +1018,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1040,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1061,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1078,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1102,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceNamespace_ = "";
-
     /**
      *
      *
@@ -1149,7 +1124,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1146,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1167,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1184,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1208,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object group_ = "";
-
     /**
      *
      *
@@ -1260,7 +1230,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1283,7 +1252,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1273,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1290,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1314,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1371,7 +1336,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1394,7 +1358,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1416,7 +1379,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1396,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1420,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1482,7 +1442,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1505,7 +1464,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1485,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1502,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1570,7 +1526,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int resourceType_ = 0;
-
     /**
      *
      *
@@ -1588,7 +1543,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public int getResourceTypeValue() {
       return resourceType_;
     }
-
     /**
      *
      *
@@ -1609,7 +1563,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1584,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.telcoautomation.v1alpha1.ResourceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1655,7 +1607,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1628,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -1695,7 +1645,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -1716,7 +1665,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1738,7 +1686,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.telcoautomation.v1alpha1.Status.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1762,7 +1709,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1789,7 +1735,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.telcoautomation.v1alpha1.NFDeployStatus.Builder,
             com.google.cloud.telcoautomation.v1alpha1.NFDeployStatusOrBuilder>
         nfDeployStatusBuilder_;
-
     /**
      *
      *
@@ -1806,7 +1751,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNfDeployStatus() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1829,7 +1773,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         return nfDeployStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1855,7 +1798,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1820,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1910,7 +1851,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1932,7 +1872,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1950,7 +1889,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNfDeployStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1972,7 +1910,6 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             : nfDeployStatus_;
       }
     }
-
     /**
      *
      *

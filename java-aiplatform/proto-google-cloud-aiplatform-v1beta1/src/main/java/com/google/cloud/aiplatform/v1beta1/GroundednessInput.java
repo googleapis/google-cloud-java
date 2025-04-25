@@ -33,7 +33,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundednessInput)
     GroundednessInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundednessInput.newBuilder() to construct.
   private GroundednessInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GroundednessSpec metricSpec_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.GroundednessSpec.getDefaultInstance()
         : metricSpec_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.GroundednessInstance instance_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.GroundednessInstance.getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +575,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.GroundednessSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.GroundednessSpecOrBuilder>
         metricSpecBuilder_;
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
         return metricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +726,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -762,7 +746,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
             : metricSpec_;
       }
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.GroundednessInstance.Builder,
             com.google.cloud.aiplatform.v1beta1.GroundednessInstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class GroundednessInput extends com.google.protobuf.GeneratedMessag
             : instance_;
       }
     }
-
     /**
      *
      *

@@ -308,8 +308,7 @@ public class TableDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               tableDataProfileName.pathTemplate, ORGANIZATION_LOCATION_TABLE_DATA_PROFILE),
-          "toBuilder is only supported when TableDataProfileName has the pattern of"
-              + " organizations/{organization}/locations/{location}/tableDataProfiles/{table_data_profile}");
+          "toBuilder is only supported when TableDataProfileName has the pattern of organizations/{organization}/locations/{location}/tableDataProfiles/{table_data_profile}");
       this.organization = tableDataProfileName.organization;
       this.location = tableDataProfileName.location;
       this.tableDataProfile = tableDataProfileName.tableDataProfile;

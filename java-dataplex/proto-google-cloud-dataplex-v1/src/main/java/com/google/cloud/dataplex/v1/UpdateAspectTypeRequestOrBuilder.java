@@ -38,7 +38,6 @@ public interface UpdateAspectTypeRequestOrBuilder
    * @return Whether the aspectType field is set.
    */
   boolean hasAspectType();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateAspectTypeRequestOrBuilder
    * @return The aspectType.
    */
   com.google.cloud.dataplex.v1.AspectType getAspectType();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateAspectTypeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateAspectTypeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

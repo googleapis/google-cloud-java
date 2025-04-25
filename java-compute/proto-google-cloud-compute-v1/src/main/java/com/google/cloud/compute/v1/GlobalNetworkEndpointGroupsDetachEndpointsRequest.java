@@ -33,7 +33,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest)
     GlobalNetworkEndpointGroupsDetachEndpointsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder() to construct.
   private GlobalNetworkEndpointGroupsDetachEndpointsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkEndpoint> networkEndpoints_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
   public java.util.List<com.google.cloud.compute.v1.NetworkEndpoint> getNetworkEndpointsList() {
     return networkEndpoints_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       getNetworkEndpointsOrBuilderList() {
     return networkEndpoints_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
   public int getNetworkEndpointsCount() {
     return networkEndpoints_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
   public com.google.cloud.compute.v1.NetworkEndpoint getNetworkEndpoints(int index) {
     return networkEndpoints_.get(index);
   }
-
   /**
    *
    *
@@ -314,7 +308,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
         return networkEndpointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
         return networkEndpointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -622,7 +613,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
         return networkEndpointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +812,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
         int index) {
       return getNetworkEndpointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -849,7 +829,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
         return networkEndpointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -867,7 +846,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
         return java.util.Collections.unmodifiableList(networkEndpoints_);
       }
     }
-
     /**
      *
      *
@@ -881,7 +859,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       return getNetworkEndpointsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -896,7 +873,6 @@ public final class GlobalNetworkEndpointGroupsDetachEndpointsRequest
       return getNetworkEndpointsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance());
     }
-
     /**
      *
      *

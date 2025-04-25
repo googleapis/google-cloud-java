@@ -36,7 +36,6 @@ public interface RegisterParametersOrBuilder
    * @return The domainName.
    */
   java.lang.String getDomainName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RegisterParametersOrBuilder
    * @return The enum numeric value on the wire for availability.
    */
   int getAvailabilityValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface RegisterParametersOrBuilder
    * @return A list containing the supportedPrivacy.
    */
   java.util.List<com.google.cloud.domains.v1.ContactPrivacy> getSupportedPrivacyList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface RegisterParametersOrBuilder
    * @return The count of supportedPrivacy.
    */
   int getSupportedPrivacyCount();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface RegisterParametersOrBuilder
    * @return The supportedPrivacy at the given index.
    */
   com.google.cloud.domains.v1.ContactPrivacy getSupportedPrivacy(int index);
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface RegisterParametersOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedPrivacy.
    */
   java.util.List<java.lang.Integer> getSupportedPrivacyValueList();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface RegisterParametersOrBuilder
    * @return A list containing the domainNotices.
    */
   java.util.List<com.google.cloud.domains.v1.DomainNotice> getDomainNoticesList();
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public interface RegisterParametersOrBuilder
    * @return The count of domainNotices.
    */
   int getDomainNoticesCount();
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface RegisterParametersOrBuilder
    * @return The domainNotices at the given index.
    */
   com.google.cloud.domains.v1.DomainNotice getDomainNotices(int index);
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public interface RegisterParametersOrBuilder
    * @return A list containing the enum numeric values on the wire for domainNotices.
    */
   java.util.List<java.lang.Integer> getDomainNoticesValueList();
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public interface RegisterParametersOrBuilder
    * @return Whether the yearlyPrice field is set.
    */
   boolean hasYearlyPrice();
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public interface RegisterParametersOrBuilder
    * @return The yearlyPrice.
    */
   com.google.type.Money getYearlyPrice();
-
   /**
    *
    *

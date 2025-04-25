@@ -36,7 +36,6 @@ public interface DisableServiceResponseOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DisableServiceResponseOrBuilder
    * @return The service.
    */
   com.google.api.serviceusage.v1.Service getService();
-
   /**
    *
    *

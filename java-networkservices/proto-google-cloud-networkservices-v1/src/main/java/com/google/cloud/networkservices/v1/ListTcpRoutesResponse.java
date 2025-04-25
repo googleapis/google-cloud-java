@@ -33,7 +33,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.ListTcpRoutesResponse)
     ListTcpRoutesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTcpRoutesResponse.newBuilder() to construct.
   private ListTcpRoutesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkservices.v1.TcpRoute> tcpRoutes_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.networkservices.v1.TcpRoute> getTcpRoutesList() {
     return tcpRoutes_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       getTcpRoutesOrBuilderList() {
     return tcpRoutes_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
   public int getTcpRoutesCount() {
     return tcpRoutes_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.networkservices.v1.TcpRoute getTcpRoutes(int index) {
     return tcpRoutes_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return tcpRoutesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return tcpRoutesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return tcpRoutesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.networkservices.v1.TcpRoute.Builder getTcpRoutesBuilder(int index) {
       return getTcpRoutesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return tcpRoutesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +899,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(tcpRoutes_);
       }
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       return getTcpRoutesFieldBuilder()
           .addBuilder(com.google.cloud.networkservices.v1.TcpRoute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       return getTcpRoutesFieldBuilder()
           .addBuilder(index, com.google.cloud.networkservices.v1.TcpRoute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1005,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1028,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1047,6 @@ public final class ListTcpRoutesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

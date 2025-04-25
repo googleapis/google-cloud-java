@@ -38,7 +38,6 @@ public interface InsertLicenseRequestOrBuilder
    * @return Whether the licenseResource field is set.
    */
   boolean hasLicenseResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertLicenseRequestOrBuilder
    * @return The licenseResource.
    */
   com.google.cloud.compute.v1.License getLicenseResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertLicenseRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface InsertLicenseRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertLicenseRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

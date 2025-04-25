@@ -38,7 +38,6 @@ public interface RemoveAssetsFromGroupRequestOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface RemoveAssetsFromGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface RemoveAssetsFromGroupRequestOrBuilder
    * @return Whether the assets field is set.
    */
   boolean hasAssets();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface RemoveAssetsFromGroupRequestOrBuilder
    * @return The assets.
    */
   com.google.cloud.migrationcenter.v1.AssetList getAssets();
-
   /**
    *
    *

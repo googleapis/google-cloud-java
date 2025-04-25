@@ -41,7 +41,6 @@ public interface LookupApiHubInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

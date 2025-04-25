@@ -39,7 +39,6 @@ public interface ListSchemasRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface ListSchemasRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

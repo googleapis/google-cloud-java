@@ -33,7 +33,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.QuotaExceededInfo)
     QuotaExceededInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuotaExceededInfo.newBuilder() to construct.
   private QuotaExceededInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_ROLLOUT_STATUS = 0;</code>
      */
     public static final int UNDEFINED_ROLLOUT_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * <code>IN_PROGRESS = 469193735;</code>
      */
     public static final int IN_PROGRESS_VALUE = 469193735;
-
     /**
      *
      *
@@ -264,7 +261,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public int getDimensionsCount() {
     return internalGetDimensions().getMap().size();
   }
-
   /**
    *
    *
@@ -281,14 +277,12 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
     return internalGetDimensions().getMap().containsKey(key);
   }
-
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
     return getDimensionsMap();
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
     return internalGetDimensions().getMap();
   }
-
   /**
    *
    *
@@ -323,7 +316,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDimensions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -347,7 +339,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int FUTURE_LIMIT_FIELD_NUMBER = 456564287;
   private double futureLimit_ = 0D;
-
   /**
    *
    *
@@ -363,7 +354,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasFutureLimit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -382,7 +372,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int LIMIT_FIELD_NUMBER = 102976443;
   private double limit_ = 0D;
-
   /**
    *
    *
@@ -398,7 +387,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasLimit() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -419,7 +407,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object limitName_ = "";
-
   /**
    *
    *
@@ -435,7 +422,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasLimitName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -459,7 +445,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -488,7 +473,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricName_ = "";
-
   /**
    *
    *
@@ -504,7 +488,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasMetricName() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -528,7 +511,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -557,7 +539,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutStatus_ = "";
-
   /**
    *
    *
@@ -574,7 +555,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasRolloutStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -599,7 +579,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -870,7 +849,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1185,7 +1163,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public int getDimensionsCount() {
       return internalGetDimensions().getMap().size();
     }
-
     /**
      *
      *
@@ -1202,14 +1179,12 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       }
       return internalGetDimensions().getMap().containsKey(key);
     }
-
     /** Use {@link #getDimensionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
       return getDimensionsMap();
     }
-
     /**
      *
      *
@@ -1223,7 +1198,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
       return internalGetDimensions().getMap();
     }
-
     /**
      *
      *
@@ -1244,7 +1218,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDimensions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1271,7 +1244,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       internalGetMutableDimensions().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1288,14 +1260,12 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       internalGetMutableDimensions().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDimensions() {
       bitField0_ |= 0x00000001;
       return internalGetMutableDimensions().getMutableMap();
     }
-
     /**
      *
      *
@@ -1316,7 +1286,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1302,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private double futureLimit_;
-
     /**
      *
      *
@@ -1349,7 +1317,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasFutureLimit() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1365,7 +1332,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public double getFutureLimit() {
       return futureLimit_;
     }
-
     /**
      *
      *
@@ -1385,7 +1351,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1370,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private double limit_;
-
     /**
      *
      *
@@ -1421,7 +1385,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1437,7 +1400,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public double getLimit() {
       return limit_;
     }
-
     /**
      *
      *
@@ -1457,7 +1419,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1438,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object limitName_ = "";
-
     /**
      *
      *
@@ -1492,7 +1452,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasLimitName() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1515,7 +1474,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1496,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1560,7 +1517,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1578,7 +1534,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1558,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object metricName_ = "";
-
     /**
      *
      *
@@ -1618,7 +1572,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasMetricName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1641,7 +1594,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1664,7 +1616,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1686,7 +1637,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1654,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1678,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object rolloutStatus_ = "";
-
     /**
      *
      *
@@ -1745,7 +1693,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasRolloutStatus() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1769,7 +1716,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1739,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1816,7 +1761,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1835,7 +1779,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

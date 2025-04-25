@@ -39,7 +39,6 @@ public interface CreateNodeGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateNodeGroupRequestOrBuilder
    * @return Whether the nodeGroup field is set.
    */
   boolean hasNodeGroup();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateNodeGroupRequestOrBuilder
    * @return The nodeGroup.
    */
   com.google.cloud.dataproc.v1.NodeGroup getNodeGroup();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateNodeGroupRequestOrBuilder
    * @return The nodeGroupId.
    */
   java.lang.String getNodeGroupId();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface CreateNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

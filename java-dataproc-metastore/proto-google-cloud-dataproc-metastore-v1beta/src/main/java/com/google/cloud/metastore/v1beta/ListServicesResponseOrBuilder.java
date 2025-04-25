@@ -34,7 +34,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1beta.Service services = 1;</code>
    */
   java.util.List<com.google.cloud.metastore.v1beta.Service> getServicesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1beta.Service services = 1;</code>
    */
   com.google.cloud.metastore.v1beta.Service getServices(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.metastore.v1beta.Service services = 1;</code>
    */
   int getServicesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListServicesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.metastore.v1beta.ServiceOrBuilder>
       getServicesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListServicesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListServicesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListServicesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListServicesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface HealthStatusOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface HealthStatusOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface HealthStatusOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface HealthStatusOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -99,7 +94,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the forwardingRule field is set.
    */
   boolean hasForwardingRule();
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface HealthStatusOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
-
   /**
    *
    *
@@ -138,7 +131,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the forwardingRuleIp field is set.
    */
   boolean hasForwardingRuleIp();
-
   /**
    *
    *
@@ -151,7 +143,6 @@ public interface HealthStatusOrBuilder
    * @return The forwardingRuleIp.
    */
   java.lang.String getForwardingRuleIp();
-
   /**
    *
    *
@@ -178,7 +169,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the healthState field is set.
    */
   boolean hasHealthState();
-
   /**
    *
    *
@@ -192,7 +182,6 @@ public interface HealthStatusOrBuilder
    * @return The healthState.
    */
   java.lang.String getHealthState();
-
   /**
    *
    *
@@ -219,7 +208,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -232,7 +220,6 @@ public interface HealthStatusOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -258,7 +245,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
-
   /**
    *
    *
@@ -271,7 +257,6 @@ public interface HealthStatusOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -291,14 +276,12 @@ public interface HealthStatusOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
-
   /**
    * <code>optional string ipv6_address = 341563804;</code>
    *
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
-
   /**
    * <code>optional string ipv6_address = 341563804;</code>
    *
@@ -319,7 +302,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the ipv6HealthState field is set.
    */
   boolean hasIpv6HealthState();
-
   /**
    *
    *
@@ -333,7 +315,6 @@ public interface HealthStatusOrBuilder
    * @return The ipv6HealthState.
    */
   java.lang.String getIpv6HealthState();
-
   /**
    *
    *
@@ -360,7 +341,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
-
   /**
    *
    *
@@ -380,14 +360,12 @@ public interface HealthStatusOrBuilder
    * @return Whether the weight field is set.
    */
   boolean hasWeight();
-
   /**
    * <code>optional string weight = 282149496;</code>
    *
    * @return The weight.
    */
   java.lang.String getWeight();
-
   /**
    * <code>optional string weight = 282149496;</code>
    *
@@ -408,7 +386,6 @@ public interface HealthStatusOrBuilder
    * @return Whether the weightError field is set.
    */
   boolean hasWeightError();
-
   /**
    *
    *
@@ -422,7 +399,6 @@ public interface HealthStatusOrBuilder
    * @return The weightError.
    */
   java.lang.String getWeightError();
-
   /**
    *
    *

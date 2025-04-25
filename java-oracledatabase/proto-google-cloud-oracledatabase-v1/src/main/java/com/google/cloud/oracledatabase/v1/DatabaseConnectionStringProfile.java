@@ -34,7 +34,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile)
     DatabaseConnectionStringProfileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatabaseConnectionStringProfile.newBuilder() to construct.
   private DatabaseConnectionStringProfile(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -157,7 +156,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>CONSUMER_GROUP_UNSPECIFIED = 0;</code>
      */
     public static final int CONSUMER_GROUP_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -168,7 +166,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>HIGH = 1;</code>
      */
     public static final int HIGH_VALUE = 1;
-
     /**
      *
      *
@@ -179,7 +176,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>MEDIUM = 2;</code>
      */
     public static final int MEDIUM_VALUE = 2;
-
     /**
      *
      *
@@ -190,7 +186,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>LOW = 3;</code>
      */
     public static final int LOW_VALUE = 3;
-
     /**
      *
      *
@@ -201,7 +196,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>TP = 4;</code>
      */
     public static final int TP_VALUE = 4;
-
     /**
      *
      *
@@ -357,7 +351,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>HOST_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int HOST_FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -368,7 +361,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>FQDN = 1;</code>
      */
     public static final int FQDN_VALUE = 1;
-
     /**
      *
      *
@@ -518,7 +510,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>PROTOCOL_UNSPECIFIED = 0;</code>
      */
     public static final int PROTOCOL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -529,7 +520,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>TCP = 1;</code>
      */
     public static final int TCP_VALUE = 1;
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>SESSION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int SESSION_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>DIRECT = 1;</code>
      */
     public static final int DIRECT_VALUE = 1;
-
     /**
      *
      *
@@ -852,7 +840,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>SYNTAX_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int SYNTAX_FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -863,7 +850,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>LONG = 1;</code>
      */
     public static final int LONG_VALUE = 1;
-
     /**
      *
      *
@@ -874,7 +860,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>EZCONNECT = 2;</code>
      */
     public static final int EZCONNECT_VALUE = 2;
-
     /**
      *
      *
@@ -1027,7 +1012,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>TLS_AUTHENTICATION_UNSPECIFIED = 0;</code>
      */
     public static final int TLS_AUTHENTICATION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -1038,7 +1022,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
      * <code>SERVER = 1;</code>
      */
     public static final int SERVER_VALUE = 1;
-
     /**
      *
      *
@@ -1140,7 +1123,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int CONSUMER_GROUP_FIELD_NUMBER = 1;
   private int consumerGroup_ = 0;
-
   /**
    *
    *
@@ -1158,7 +1140,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
   public int getConsumerGroupValue() {
     return consumerGroup_;
   }
-
   /**
    *
    *
@@ -1188,7 +1169,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1212,7 +1192,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -1239,7 +1218,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int HOST_FORMAT_FIELD_NUMBER = 3;
   private int hostFormat_ = 0;
-
   /**
    *
    *
@@ -1258,7 +1236,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
   public int getHostFormatValue() {
     return hostFormat_;
   }
-
   /**
    *
    *
@@ -1286,7 +1263,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int IS_REGIONAL_FIELD_NUMBER = 4;
   private boolean isRegional_ = false;
-
   /**
    *
    *
@@ -1306,7 +1282,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int PROTOCOL_FIELD_NUMBER = 5;
   private int protocol_ = 0;
-
   /**
    *
    *
@@ -1324,7 +1299,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
   public int getProtocolValue() {
     return protocol_;
   }
-
   /**
    *
    *
@@ -1350,7 +1324,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int SESSION_MODE_FIELD_NUMBER = 6;
   private int sessionMode_ = 0;
-
   /**
    *
    *
@@ -1368,7 +1341,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
   public int getSessionModeValue() {
     return sessionMode_;
   }
-
   /**
    *
    *
@@ -1396,7 +1368,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int SYNTAX_FORMAT_FIELD_NUMBER = 7;
   private int syntaxFormat_ = 0;
-
   /**
    *
    *
@@ -1414,7 +1385,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
   public int getSyntaxFormatValue() {
     return syntaxFormat_;
   }
-
   /**
    *
    *
@@ -1442,7 +1412,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   public static final int TLS_AUTHENTICATION_FIELD_NUMBER = 8;
   private int tlsAuthentication_ = 0;
-
   /**
    *
    *
@@ -1461,7 +1430,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
   public int getTlsAuthenticationValue() {
     return tlsAuthentication_;
   }
-
   /**
    *
    *
@@ -1492,7 +1460,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
-
   /**
    *
    *
@@ -1516,7 +1483,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -1810,7 +1776,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2109,7 +2074,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     private int bitField0_;
 
     private int consumerGroup_ = 0;
-
     /**
      *
      *
@@ -2127,7 +2091,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public int getConsumerGroupValue() {
       return consumerGroup_;
     }
-
     /**
      *
      *
@@ -2148,7 +2111,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2173,7 +2135,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2198,7 +2159,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2180,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2243,7 +2202,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2266,7 +2224,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2288,7 +2245,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2262,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2331,7 +2286,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private int hostFormat_ = 0;
-
     /**
      *
      *
@@ -2350,7 +2304,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public int getHostFormatValue() {
       return hostFormat_;
     }
-
     /**
      *
      *
@@ -2372,7 +2325,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2398,7 +2350,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2424,7 +2375,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2447,7 +2397,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private boolean isRegional_;
-
     /**
      *
      *
@@ -2464,7 +2413,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public boolean getIsRegional() {
       return isRegional_;
     }
-
     /**
      *
      *
@@ -2485,7 +2433,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2506,7 +2453,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private int protocol_ = 0;
-
     /**
      *
      *
@@ -2524,7 +2470,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public int getProtocolValue() {
       return protocol_;
     }
-
     /**
      *
      *
@@ -2545,7 +2490,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2569,7 +2513,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
           ? com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile.Protocol.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2594,7 +2537,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2616,7 +2558,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private int sessionMode_ = 0;
-
     /**
      *
      *
@@ -2634,7 +2575,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public int getSessionModeValue() {
       return sessionMode_;
     }
-
     /**
      *
      *
@@ -2655,7 +2595,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2680,7 +2619,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2705,7 +2643,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2727,7 +2664,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private int syntaxFormat_ = 0;
-
     /**
      *
      *
@@ -2745,7 +2681,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public int getSyntaxFormatValue() {
       return syntaxFormat_;
     }
-
     /**
      *
      *
@@ -2766,7 +2701,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2725,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2816,7 +2749,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2838,7 +2770,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private int tlsAuthentication_ = 0;
-
     /**
      *
      *
@@ -2857,7 +2788,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     public int getTlsAuthenticationValue() {
       return tlsAuthentication_;
     }
-
     /**
      *
      *
@@ -2879,7 +2809,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2905,7 +2834,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2932,7 +2860,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2955,7 +2882,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
     }
 
     private java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -2978,7 +2904,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3001,7 +2926,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3023,7 +2947,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3041,7 +2964,6 @@ public final class DatabaseConnectionStringProfile extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface FirewallPolicyRuleMatcherLayer4ConfigOrBuilder
    * @return Whether the ipProtocol field is set.
    */
   boolean hasIpProtocol();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FirewallPolicyRuleMatcherLayer4ConfigOrBuilder
    * @return The ipProtocol.
    */
   java.lang.String getIpProtocol();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FirewallPolicyRuleMatcherLayer4ConfigOrBuilder
    * @return A list containing the ports.
    */
   java.util.List<java.lang.String> getPortsList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface FirewallPolicyRuleMatcherLayer4ConfigOrBuilder
    * @return The count of ports.
    */
   int getPortsCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface FirewallPolicyRuleMatcherLayer4ConfigOrBuilder
    * @return The ports at the given index.
    */
   java.lang.String getPorts(int index);
-
   /**
    *
    *

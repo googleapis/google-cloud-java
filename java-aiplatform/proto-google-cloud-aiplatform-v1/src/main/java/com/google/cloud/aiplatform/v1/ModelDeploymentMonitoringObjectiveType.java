@@ -97,7 +97,6 @@ public enum ModelDeploymentMonitoringObjectiveType
    * <code>MODEL_DEPLOYMENT_MONITORING_OBJECTIVE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int MODEL_DEPLOYMENT_MONITORING_OBJECTIVE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -109,7 +108,6 @@ public enum ModelDeploymentMonitoringObjectiveType
    * <code>RAW_FEATURE_SKEW = 1;</code>
    */
   public static final int RAW_FEATURE_SKEW_VALUE = 1;
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public enum ModelDeploymentMonitoringObjectiveType
    * <code>RAW_FEATURE_DRIFT = 2;</code>
    */
   public static final int RAW_FEATURE_DRIFT_VALUE = 2;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public enum ModelDeploymentMonitoringObjectiveType
    * <code>FEATURE_ATTRIBUTION_SKEW = 3;</code>
    */
   public static final int FEATURE_ATTRIBUTION_SKEW_VALUE = 3;
-
   /**
    *
    *

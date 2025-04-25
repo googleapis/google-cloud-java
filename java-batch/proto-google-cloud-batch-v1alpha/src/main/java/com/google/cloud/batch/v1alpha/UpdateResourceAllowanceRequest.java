@@ -33,7 +33,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest)
     UpdateResourceAllowanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateResourceAllowanceRequest.newBuilder() to construct.
   private UpdateResourceAllowanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int RESOURCE_ALLOWANCE_FIELD_NUMBER = 1;
   private com.google.cloud.batch.v1alpha.ResourceAllowance resourceAllowance_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
   public boolean hasResourceAllowance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
         ? com.google.cloud.batch.v1alpha.ResourceAllowance.getDefaultInstance()
         : resourceAllowance_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -476,7 +467,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -721,7 +711,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
             com.google.cloud.batch.v1alpha.ResourceAllowance.Builder,
             com.google.cloud.batch.v1alpha.ResourceAllowanceOrBuilder>
         resourceAllowanceBuilder_;
-
     /**
      *
      *
@@ -740,7 +729,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
     public boolean hasResourceAllowance() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
         return resourceAllowanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -792,7 +779,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +858,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +876,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return getResourceAllowanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -917,7 +899,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
             : resourceAllowance_;
       }
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -978,7 +958,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1046,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1082,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1110,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1133,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1187,7 +1160,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1196,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1261,7 +1232,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1298,7 +1268,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1303,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1334,6 @@ public final class UpdateResourceAllowanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

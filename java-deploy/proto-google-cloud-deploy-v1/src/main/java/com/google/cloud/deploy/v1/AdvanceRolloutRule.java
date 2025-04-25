@@ -34,7 +34,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AdvanceRolloutRule)
     AdvanceRolloutRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdvanceRolloutRule.newBuilder() to construct.
   private AdvanceRolloutRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourcePhases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getSourcePhasesList() {
     return sourcePhases_;
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   public int getSourcePhasesCount() {
     return sourcePhases_.size();
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   public java.lang.String getSourcePhases(int index) {
     return sourcePhases_.get(index);
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
 
   public static final int WAIT_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration wait_;
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   public boolean hasWait() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Duration getWait() {
     return wait_ == null ? com.google.protobuf.Duration.getDefaultInstance() : wait_;
   }
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
 
   public static final int CONDITION_FIELD_NUMBER = 5;
   private com.google.cloud.deploy.v1.AutomationRuleCondition condition_;
-
   /**
    *
    *
@@ -277,7 +266,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -297,7 +285,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.deploy.v1.AutomationRuleCondition.getDefaultInstance()
         : condition_;
   }
-
   /**
    *
    *
@@ -519,7 +506,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -774,7 +760,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -848,7 +831,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +884,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       sourcePhases_.makeImmutable();
       return sourcePhases_;
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     public int getSourcePhasesCount() {
       return sourcePhases_.size();
     }
-
     /**
      *
      *
@@ -962,7 +940,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     public java.lang.String getSourcePhases(int index) {
       return sourcePhases_.get(index);
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getSourcePhasesBytes(int index) {
       return sourcePhases_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1010,7 +986,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1035,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1057,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1091,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         waitBuilder_;
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     public boolean hasWait() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1153,7 +1123,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
         return waitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1145,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1164,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1191,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1210,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1224,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getWaitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1276,7 +1240,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
         return wait_ == null ? com.google.protobuf.Duration.getDefaultInstance() : wait_;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1272,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.deploy.v1.AutomationRuleCondition.Builder,
             com.google.cloud.deploy.v1.AutomationRuleConditionOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -1326,7 +1288,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1349,7 +1310,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
         return conditionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1374,7 +1334,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1356,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1386,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1407,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1423,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1488,7 +1443,6 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
             : condition_;
       }
     }
-
     /**
      *
      *

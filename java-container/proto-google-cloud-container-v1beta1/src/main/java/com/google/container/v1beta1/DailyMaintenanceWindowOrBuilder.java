@@ -37,7 +37,6 @@ public interface DailyMaintenanceWindowOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DailyMaintenanceWindowOrBuilder
    * @return The duration.
    */
   java.lang.String getDuration();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.GroundedGenerationContent)
     GroundedGenerationContentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundedGenerationContent.newBuilder() to construct.
   private GroundedGenerationContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
      * @return Whether the text field is set.
      */
     boolean hasText();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -111,7 +108,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
 
     com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part.DataCase getDataCase();
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part)
       PartOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Part.newBuilder() to construct.
     private Part(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -171,7 +166,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       private DataCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -203,7 +197,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -218,7 +211,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
     public boolean hasText() {
       return dataCase_ == 1;
     }
-
     /**
      *
      *
@@ -246,7 +238,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -451,7 +442,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       public boolean hasText() {
         return dataCase_ == 1;
       }
-
       /**
        *
        *
@@ -720,7 +709,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -749,7 +737,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -771,7 +758,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -791,7 +777,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -887,7 +872,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object role_ = "";
-
   /**
    *
    *
@@ -914,7 +898,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -947,7 +930,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part>
       parts_;
-
   /**
    *
    *
@@ -963,7 +945,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       getPartsList() {
     return parts_;
   }
-
   /**
    *
    *
@@ -980,7 +961,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       getPartsOrBuilderList() {
     return parts_;
   }
-
   /**
    *
    *
@@ -995,7 +975,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
   public int getPartsCount() {
     return parts_.size();
   }
-
   /**
    *
    *
@@ -1011,7 +990,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       int index) {
     return parts_.get(index);
   }
-
   /**
    *
    *
@@ -1200,7 +1178,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1453,7 +1430,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object role_ = "";
-
     /**
      *
      *
@@ -1479,7 +1455,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1505,7 +1480,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1530,7 +1504,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1524,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1586,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return partsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1603,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return partsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1621,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return partsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1676,7 +1645,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1668,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1692,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1716,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1738,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1761,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1821,7 +1784,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1842,7 +1804,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1824,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1838,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         getPartsBuilder(int index) {
       return getPartsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1897,7 +1856,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return partsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1918,7 +1876,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(parts_);
       }
     }
-
     /**
      *
      *
@@ -1936,7 +1893,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
               com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1955,7 +1911,6 @@ public final class GroundedGenerationContent extends com.google.protobuf.Generat
               com.google.cloud.discoveryengine.v1beta.GroundedGenerationContent.Part
                   .getDefaultInstance());
     }
-
     /**
      *
      *

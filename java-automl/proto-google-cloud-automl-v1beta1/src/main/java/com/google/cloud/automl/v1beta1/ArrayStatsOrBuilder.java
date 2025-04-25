@@ -37,7 +37,6 @@ public interface ArrayStatsOrBuilder
    * @return Whether the memberStats field is set.
    */
   boolean hasMemberStats();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ArrayStatsOrBuilder
    * @return The memberStats.
    */
   com.google.cloud.automl.v1beta1.DataStats getMemberStats();
-
   /**
    *
    *

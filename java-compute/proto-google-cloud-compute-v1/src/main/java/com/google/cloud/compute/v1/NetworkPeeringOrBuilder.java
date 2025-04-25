@@ -36,7 +36,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the autoCreateRoutes field is set.
    */
   boolean hasAutoCreateRoutes();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the exchangeSubnetRoutes field is set.
    */
   boolean hasExchangeSubnetRoutes();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the exportCustomRoutes field is set.
    */
   boolean hasExportCustomRoutes();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the exportSubnetRoutesWithPublicIp field is set.
    */
   boolean hasExportSubnetRoutesWithPublicIp();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the importCustomRoutes field is set.
    */
   boolean hasImportCustomRoutes();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the importSubnetRoutesWithPublicIp field is set.
    */
   boolean hasImportSubnetRoutesWithPublicIp();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface NetworkPeeringOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -244,7 +235,6 @@ public interface NetworkPeeringOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -262,7 +252,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
+   * Maximum Transmission Unit in bytes.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -270,12 +260,11 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the peerMtu field is set.
    */
   boolean hasPeerMtu();
-
   /**
    *
    *
    * <pre>
-   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
+   * Maximum Transmission Unit in bytes.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -297,7 +286,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public interface NetworkPeeringOrBuilder
    * @return The stackType.
    */
   java.lang.String getStackType();
-
   /**
    *
    *
@@ -339,7 +326,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -353,7 +339,6 @@ public interface NetworkPeeringOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *
@@ -380,7 +365,6 @@ public interface NetworkPeeringOrBuilder
    * @return Whether the stateDetails field is set.
    */
   boolean hasStateDetails();
-
   /**
    *
    *
@@ -393,7 +377,6 @@ public interface NetworkPeeringOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *

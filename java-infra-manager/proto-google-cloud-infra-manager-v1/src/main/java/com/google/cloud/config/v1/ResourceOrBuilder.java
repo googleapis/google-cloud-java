@@ -38,7 +38,6 @@ public interface ResourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ResourceOrBuilder
    * @return Whether the terraformInfo field is set.
    */
   boolean hasTerraformInfo();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ResourceOrBuilder
    * @return The terraformInfo.
    */
   com.google.cloud.config.v1.ResourceTerraformInfo getTerraformInfo();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   int getCaiAssetsCount();
-
   /**
    *
    *
@@ -129,11 +125,9 @@ public interface ResourceOrBuilder
    * </code>
    */
   boolean containsCaiAssets(java.lang.String key);
-
   /** Use {@link #getCaiAssetsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.config.v1.ResourceCAIInfo> getCaiAssets();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface ResourceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.config.v1.ResourceCAIInfo> getCaiAssetsMap();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface ResourceOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.config.v1.ResourceCAIInfo defaultValue);
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface ResourceOrBuilder
    * @return The enum numeric value on the wire for intent.
    */
   int getIntentValue();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public interface ResourceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListDlpJobsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DlpJob> getJobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDlpJobsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
   com.google.privacy.dlp.v2.DlpJob getJobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDlpJobsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListDlpJobsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DlpJobOrBuilder> getJobsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListDlpJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

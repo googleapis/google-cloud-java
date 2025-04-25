@@ -49,7 +49,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return The backupApplianceName.
    */
   java.lang.String getBackupApplianceName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return The lockReason.
    */
   java.lang.String getLockReason();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return Whether the jobName field is set.
    */
   boolean hasJobName();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return The jobName.
    */
   java.lang.String getJobName();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return Whether the backupImage field is set.
    */
   boolean hasBackupImage();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return The backupImage.
    */
   java.lang.String getBackupImage();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface BackupApplianceLockInfoOrBuilder
    * @return Whether the slaId field is set.
    */
   boolean hasSlaId();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface UpdateNoteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateNoteRequestOrBuilder
    * @return Whether the note field is set.
    */
   boolean hasNote();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UpdateNoteRequestOrBuilder
    * @return The note.
    */
   io.grafeas.v1beta1.Note getNote();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateNoteRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface UpdateNoteRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

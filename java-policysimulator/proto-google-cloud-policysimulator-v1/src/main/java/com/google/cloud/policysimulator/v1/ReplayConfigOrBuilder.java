@@ -47,7 +47,6 @@ public interface ReplayConfigOrBuilder
    * <code>map&lt;string, .google.iam.v1.Policy&gt; policy_overlay = 1;</code>
    */
   int getPolicyOverlayCount();
-
   /**
    *
    *
@@ -71,11 +70,9 @@ public interface ReplayConfigOrBuilder
    * <code>map&lt;string, .google.iam.v1.Policy&gt; policy_overlay = 1;</code>
    */
   boolean containsPolicyOverlay(java.lang.String key);
-
   /** Use {@link #getPolicyOverlayMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.iam.v1.Policy> getPolicyOverlay();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ReplayConfigOrBuilder
    * <code>map&lt;string, .google.iam.v1.Policy&gt; policy_overlay = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.iam.v1.Policy> getPolicyOverlayMap();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ReplayConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.iam.v1.Policy defaultValue);
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface ReplayConfigOrBuilder
    * @return The enum numeric value on the wire for logSource.
    */
   int getLogSourceValue();
-
   /**
    *
    *

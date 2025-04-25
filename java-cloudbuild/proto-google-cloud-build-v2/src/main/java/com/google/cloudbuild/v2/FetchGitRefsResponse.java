@@ -33,7 +33,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.FetchGitRefsResponse)
     FetchGitRefsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchGitRefsResponse.newBuilder() to construct.
   private FetchGitRefsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList refNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getRefNamesList() {
     return refNames_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
   public int getRefNamesCount() {
     return refNames_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
   public java.lang.String getRefNames(int index) {
     return refNames_.get(index);
   }
-
   /**
    *
    *
@@ -298,7 +293,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +491,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
       refNames_.makeImmutable();
       return refNames_;
     }
-
     /**
      *
      *
@@ -528,7 +520,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
     public int getRefNamesCount() {
       return refNames_.size();
     }
-
     /**
      *
      *
@@ -544,7 +535,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getRefNames(int index) {
       return refNames_.get(index);
     }
-
     /**
      *
      *
@@ -560,7 +550,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getRefNamesBytes(int index) {
       return refNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -584,7 +573,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +595,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +614,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +632,6 @@ public final class FetchGitRefsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

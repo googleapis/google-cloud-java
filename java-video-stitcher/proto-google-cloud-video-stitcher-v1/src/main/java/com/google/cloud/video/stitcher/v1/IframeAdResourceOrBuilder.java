@@ -36,7 +36,6 @@ public interface IframeAdResourceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

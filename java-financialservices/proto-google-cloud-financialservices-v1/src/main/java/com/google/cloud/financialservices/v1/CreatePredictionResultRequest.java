@@ -33,7 +33,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.CreatePredictionResultRequest)
     CreatePredictionResultRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePredictionResultRequest.newBuilder() to construct.
   private CreatePredictionResultRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object predictionResultId_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
 
   public static final int PREDICTION_RESULT_FIELD_NUMBER = 3;
   private com.google.cloud.financialservices.v1.PredictionResult predictionResult_;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
   public boolean hasPredictionResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         ? com.google.cloud.financialservices.v1.PredictionResult.getDefaultInstance()
         : predictionResult_;
   }
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -760,7 +749,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -785,7 +773,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +797,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +820,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +865,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object predictionResultId_ = "";
-
     /**
      *
      *
@@ -904,7 +887,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +909,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +930,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +947,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
             com.google.cloud.financialservices.v1.PredictionResult.Builder,
             com.google.cloud.financialservices.v1.PredictionResultOrBuilder>
         predictionResultBuilder_;
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
     public boolean hasPredictionResult() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return predictionResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1039,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1113,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1158,7 +1130,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return getPredictionResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1180,7 +1151,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
             : predictionResult_;
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1180,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1245,7 +1214,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1248,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1314,7 +1281,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1310,6 @@ public final class CreatePredictionResultRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

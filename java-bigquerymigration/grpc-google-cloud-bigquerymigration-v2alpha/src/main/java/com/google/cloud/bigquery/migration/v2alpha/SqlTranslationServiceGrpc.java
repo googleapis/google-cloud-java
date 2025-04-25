@@ -96,19 +96,6 @@ public final class SqlTranslationServiceGrpc {
     return SqlTranslationServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static SqlTranslationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SqlTranslationServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<SqlTranslationServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public SqlTranslationServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new SqlTranslationServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return SqlTranslationServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -219,40 +206,6 @@ public final class SqlTranslationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SqlTranslationService.
-   *
-   * <pre>
-   * Provides other SQL dialects to GoogleSQL translation operations.
-   * </pre>
-   */
-  public static final class SqlTranslationServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<SqlTranslationServiceBlockingV2Stub> {
-    private SqlTranslationServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected SqlTranslationServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SqlTranslationServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Translates input queries from source dialects to GoogleSQL.
-     * </pre>
-     */
-    public com.google.cloud.bigquery.migration.v2alpha.TranslateQueryResponse translateQuery(
-        com.google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getTranslateQueryMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service SqlTranslationService.
    *
    * <pre>
    * Provides other SQL dialects to GoogleSQL translation operations.

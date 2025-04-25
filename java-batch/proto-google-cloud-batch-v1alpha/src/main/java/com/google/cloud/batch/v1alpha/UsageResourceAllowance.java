@@ -33,7 +33,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowance)
     UsageResourceAllowanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UsageResourceAllowance.newBuilder() to construct.
   private UsageResourceAllowance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec spec_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
         ? com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.getDefaultInstance()
         : spec_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus status_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
         ? com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.getDefaultInstance()
         : status_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +575,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Builder,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpecOrBuilder>
         specBuilder_;
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
         return specBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +726,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -762,7 +746,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
             : spec_;
       }
     }
-
     /**
      *
      *
@@ -797,7 +780,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.Builder,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +932,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class UsageResourceAllowance extends com.google.protobuf.GeneratedM
             : status_;
       }
     }
-
     /**
      *
      *

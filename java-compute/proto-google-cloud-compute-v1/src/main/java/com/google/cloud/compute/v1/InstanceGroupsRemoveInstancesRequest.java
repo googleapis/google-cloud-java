@@ -33,7 +33,6 @@ public final class InstanceGroupsRemoveInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest)
     InstanceGroupsRemoveInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupsRemoveInstancesRequest.newBuilder() to construct.
   private InstanceGroupsRemoveInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class InstanceGroupsRemoveInstancesRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceReference> instances_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class InstanceGroupsRemoveInstancesRequest
   public java.util.List<com.google.cloud.compute.v1.InstanceReference> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class InstanceGroupsRemoveInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class InstanceGroupsRemoveInstancesRequest
   public com.google.cloud.compute.v1.InstanceReference getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class InstanceGroupsRemoveInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class InstanceGroupsRemoveInstancesRequest
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class InstanceGroupsRemoveInstancesRequest
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class InstanceGroupsRemoveInstancesRequest
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +790,6 @@ public final class InstanceGroupsRemoveInstancesRequest
     public com.google.cloud.compute.v1.InstanceReference.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -826,7 +806,6 @@ public final class InstanceGroupsRemoveInstancesRequest
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -844,7 +823,6 @@ public final class InstanceGroupsRemoveInstancesRequest
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -858,7 +836,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceReference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -872,7 +849,6 @@ public final class InstanceGroupsRemoveInstancesRequest
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.InstanceReference.getDefaultInstance());
     }
-
     /**
      *
      *

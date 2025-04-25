@@ -30,7 +30,6 @@ public interface InterconnectAttachmentConfigurationConstraintsBgpPeerASNRangeOr
    * @return Whether the max field is set.
    */
   boolean hasMax();
-
   /**
    * <code>optional uint32 max = 107876;</code>
    *
@@ -44,7 +43,6 @@ public interface InterconnectAttachmentConfigurationConstraintsBgpPeerASNRangeOr
    * @return Whether the min field is set.
    */
   boolean hasMin();
-
   /**
    * <code>optional uint32 min = 108114;</code>
    *

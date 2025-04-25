@@ -179,8 +179,7 @@ public class MockParameterManagerImpl extends ParameterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListParameterVersions, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListParameterVersions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListParameterVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -223,8 +222,7 @@ public class MockParameterManagerImpl extends ParameterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RenderParameterVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method RenderParameterVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RenderParameterVersionResponse.class.getName(),
                   Exception.class.getName())));
@@ -245,8 +243,7 @@ public class MockParameterManagerImpl extends ParameterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateParameterVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateParameterVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ParameterVersion.class.getName(),
                   Exception.class.getName())));
@@ -267,8 +264,7 @@ public class MockParameterManagerImpl extends ParameterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateParameterVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateParameterVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ParameterVersion.class.getName(),
                   Exception.class.getName())));
@@ -289,8 +285,7 @@ public class MockParameterManagerImpl extends ParameterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteParameterVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteParameterVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

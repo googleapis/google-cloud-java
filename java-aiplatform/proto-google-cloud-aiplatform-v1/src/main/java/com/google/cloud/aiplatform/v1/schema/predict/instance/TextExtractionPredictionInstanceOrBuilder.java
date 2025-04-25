@@ -36,7 +36,6 @@ public interface TextExtractionPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface TextExtractionPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface TextExtractionPredictionInstanceOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *

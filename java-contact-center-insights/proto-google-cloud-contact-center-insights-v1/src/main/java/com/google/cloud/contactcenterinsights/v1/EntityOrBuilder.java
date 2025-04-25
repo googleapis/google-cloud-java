@@ -36,7 +36,6 @@ public interface EntityOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EntityOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface EntityOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -105,11 +102,9 @@ public interface EntityOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface EntityOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface EntityOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface EntityOrBuilder
    * @return Whether the sentiment field is set.
    */
   boolean hasSentiment();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface EntityOrBuilder
    * @return The sentiment.
    */
   com.google.cloud.contactcenterinsights.v1.SentimentData getSentiment();
-
   /**
    *
    *

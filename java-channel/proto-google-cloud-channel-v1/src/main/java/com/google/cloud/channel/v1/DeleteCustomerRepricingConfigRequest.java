@@ -35,7 +35,6 @@ public final class DeleteCustomerRepricingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest)
     DeleteCustomerRepricingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteCustomerRepricingConfigRequest.newBuilder() to construct.
   private DeleteCustomerRepricingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DeleteCustomerRepricingConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DeleteCustomerRepricingConfigRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +285,6 @@ public final class DeleteCustomerRepricingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -478,7 +474,6 @@ public final class DeleteCustomerRepricingConfigRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -505,7 +500,6 @@ public final class DeleteCustomerRepricingConfigRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -532,7 +526,6 @@ public final class DeleteCustomerRepricingConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -558,7 +551,6 @@ public final class DeleteCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class DeleteCustomerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

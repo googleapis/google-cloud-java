@@ -40,7 +40,6 @@ public interface LoggingConfigOrBuilder
    * </code>
    */
   int getDriverLogLevelsCount();
-
   /**
    *
    *
@@ -57,12 +56,10 @@ public interface LoggingConfigOrBuilder
    * </code>
    */
   boolean containsDriverLogLevels(java.lang.String key);
-
   /** Use {@link #getDriverLogLevelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
       getDriverLogLevels();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface LoggingConfigOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
       getDriverLogLevelsMap();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface LoggingConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue);
-
   /**
    *
    *
@@ -118,11 +113,9 @@ public interface LoggingConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrThrow(java.lang.String key);
-
   /** Use {@link #getDriverLogLevelsValueMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue();
-
   /**
    *
    *
@@ -139,7 +132,6 @@ public interface LoggingConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap();
-
   /**
    *
    *
@@ -156,7 +148,6 @@ public interface LoggingConfigOrBuilder
    * </code>
    */
   int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue);
-
   /**
    *
    *

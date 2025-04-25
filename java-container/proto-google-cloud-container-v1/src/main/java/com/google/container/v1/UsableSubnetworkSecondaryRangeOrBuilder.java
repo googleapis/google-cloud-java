@@ -37,7 +37,6 @@ public interface UsableSubnetworkSecondaryRangeOrBuilder
    * @return The rangeName.
    */
   java.lang.String getRangeName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UsableSubnetworkSecondaryRangeOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UsableSubnetworkSecondaryRangeOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization)
     AutoscalingPolicyCustomMetricUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoscalingPolicyCustomMetricUtilization.newBuilder() to construct.
   private AutoscalingPolicyCustomMetricUtilization(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -132,7 +131,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * <code>UNDEFINED_UTILIZATION_TARGET_TYPE = 0;</code>
      */
     public static final int UNDEFINED_UTILIZATION_TARGET_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * <code>DELTA_PER_MINUTE = 87432861;</code>
      */
     public static final int DELTA_PER_MINUTE_VALUE = 87432861;
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * <code>DELTA_PER_SECOND = 255180029;</code>
      */
     public static final int DELTA_PER_SECOND_VALUE = 255180029;
-
     /**
      *
      *
@@ -261,7 +257,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -277,7 +272,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       return s;
     }
   }
-
   /**
    *
    *
@@ -330,7 +323,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metric_ = "";
-
   /**
    *
    *
@@ -346,7 +338,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
   public boolean hasMetric() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -370,7 +361,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       return s;
     }
   }
-
   /**
    *
    *
@@ -397,7 +387,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
 
   public static final int SINGLE_INSTANCE_ASSIGNMENT_FIELD_NUMBER = 504768064;
   private double singleInstanceAssignment_ = 0D;
-
   /**
    *
    *
@@ -413,7 +402,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
   public boolean hasSingleInstanceAssignment() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -432,7 +420,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
 
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
   private double utilizationTarget_ = 0D;
-
   /**
    *
    *
@@ -448,7 +435,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
   public boolean hasUtilizationTarget() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -469,7 +455,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object utilizationTargetType_ = "";
-
   /**
    *
    *
@@ -486,7 +471,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
   public boolean hasUtilizationTargetType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -511,7 +495,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       return s;
     }
   }
-
   /**
    *
    *
@@ -772,7 +755,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1027,7 +1009,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1042,7 +1023,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1065,7 +1045,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1067,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1088,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1105,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1129,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
 
     private java.lang.Object metric_ = "";
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public boolean hasMetric() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1191,7 +1165,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1214,7 +1187,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1208,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1225,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1249,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
 
     private double singleInstanceAssignment_;
-
     /**
      *
      *
@@ -1295,7 +1264,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public boolean hasSingleInstanceAssignment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1311,7 +1279,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public double getSingleInstanceAssignment() {
       return singleInstanceAssignment_;
     }
-
     /**
      *
      *
@@ -1331,7 +1298,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1317,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
 
     private double utilizationTarget_;
-
     /**
      *
      *
@@ -1367,7 +1332,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public boolean hasUtilizationTarget() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1383,7 +1347,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public double getUtilizationTarget() {
       return utilizationTarget_;
     }
-
     /**
      *
      *
@@ -1403,7 +1366,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1385,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
 
     private java.lang.Object utilizationTargetType_ = "";
-
     /**
      *
      *
@@ -1439,7 +1400,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public boolean hasUtilizationTargetType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1463,7 +1423,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1487,7 +1446,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1510,7 +1468,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1486,6 @@ public final class AutoscalingPolicyCustomMetricUtilization
       onChanged();
       return this;
     }
-
     /**
      *
      *

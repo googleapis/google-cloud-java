@@ -74,7 +74,6 @@ public enum NotebookRuntimeType implements com.google.protobuf.ProtocolMessageEn
    * <code>NOTEBOOK_RUNTIME_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int NOTEBOOK_RUNTIME_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public enum NotebookRuntimeType implements com.google.protobuf.ProtocolMessageEn
    * <code>USER_DEFINED = 1;</code>
    */
   public static final int USER_DEFINED_VALUE = 1;
-
   /**
    *
    *

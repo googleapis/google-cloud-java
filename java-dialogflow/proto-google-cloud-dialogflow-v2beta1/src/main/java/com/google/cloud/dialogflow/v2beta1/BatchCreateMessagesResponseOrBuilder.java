@@ -34,7 +34,6 @@ public interface BatchCreateMessagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Message messages = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Message> getMessagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchCreateMessagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Message messages = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Message getMessages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchCreateMessagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Message messages = 1;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchCreateMessagesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.MessageOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *

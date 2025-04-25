@@ -39,7 +39,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.BestSellersBrandView)
     BestSellersBrandViewOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BestSellersBrandView.newBuilder() to construct.
   private BestSellersBrandView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int REPORT_DATE_FIELD_NUMBER = 1;
   private com.google.type.Date reportDate_;
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasReportDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public com.google.type.Date getReportDate() {
     return reportDate_ == null ? com.google.type.Date.getDefaultInstance() : reportDate_;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int REPORT_GRANULARITY_FIELD_NUMBER = 2;
   private int reportGranularity_ = 0;
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasReportGranularity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public int getReportGranularityValue() {
     return reportGranularity_;
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportCountryCode_ = "";
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasReportCountryCode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int REPORT_CATEGORY_ID_FIELD_NUMBER = 4;
   private long reportCategoryId_ = 0L;
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasReportCategoryId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -354,7 +342,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object brand_ = "";
-
   /**
    *
    *
@@ -370,7 +357,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasBrand() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -394,7 +380,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +406,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int RANK_FIELD_NUMBER = 7;
   private long rank_ = 0L;
-
   /**
    *
    *
@@ -438,7 +422,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasRank() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -458,7 +441,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int PREVIOUS_RANK_FIELD_NUMBER = 8;
   private long previousRank_ = 0L;
-
   /**
    *
    *
@@ -474,7 +456,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasPreviousRank() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -493,7 +474,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int RELATIVE_DEMAND_FIELD_NUMBER = 9;
   private int relativeDemand_ = 0;
-
   /**
    *
    *
@@ -512,7 +492,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasRelativeDemand() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -531,7 +510,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public int getRelativeDemandValue() {
     return relativeDemand_;
   }
-
   /**
    *
    *
@@ -559,7 +537,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int PREVIOUS_RELATIVE_DEMAND_FIELD_NUMBER = 10;
   private int previousRelativeDemand_ = 0;
-
   /**
    *
    *
@@ -578,7 +555,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasPreviousRelativeDemand() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -597,7 +573,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public int getPreviousRelativeDemandValue() {
     return previousRelativeDemand_;
   }
-
   /**
    *
    *
@@ -625,7 +600,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
 
   public static final int RELATIVE_DEMAND_CHANGE_FIELD_NUMBER = 11;
   private int relativeDemandChange_ = 0;
-
   /**
    *
    *
@@ -643,7 +617,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public boolean hasRelativeDemandChange() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -661,7 +634,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   public int getRelativeDemandChangeValue() {
     return relativeDemandChange_;
   }
-
   /**
    *
    *
@@ -981,7 +953,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1323,7 +1294,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         reportDateBuilder_;
-
     /**
      *
      *
@@ -1345,7 +1315,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasReportDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1371,7 +1340,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         return reportDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1401,7 +1369,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1395,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1429,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1455,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1476,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return getReportDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1536,7 +1499,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         return reportDate_ == null ? com.google.type.Date.getDefaultInstance() : reportDate_;
       }
     }
-
     /**
      *
      *
@@ -1567,7 +1529,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private int reportGranularity_ = 0;
-
     /**
      *
      *
@@ -1589,7 +1550,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasReportGranularity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1611,7 +1571,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public int getReportGranularityValue() {
       return reportGranularity_;
     }
-
     /**
      *
      *
@@ -1636,7 +1595,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1623,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1694,7 +1651,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1720,7 +1676,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object reportCountryCode_ = "";
-
     /**
      *
      *
@@ -1739,7 +1694,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasReportCountryCode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1766,7 +1720,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1746,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1771,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1792,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1870,7 +1820,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private long reportCategoryId_;
-
     /**
      *
      *
@@ -1892,7 +1841,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasReportCategoryId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1914,7 +1862,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public long getReportCategoryId() {
       return reportCategoryId_;
     }
-
     /**
      *
      *
@@ -1940,7 +1887,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1966,7 +1912,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object brand_ = "";
-
     /**
      *
      *
@@ -1981,7 +1926,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasBrand() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2004,7 +1948,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2027,7 +1970,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2049,7 +1991,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2067,7 +2008,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2092,7 +2032,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private long rank_;
-
     /**
      *
      *
@@ -2109,7 +2048,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasRank() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2126,7 +2064,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public long getRank() {
       return rank_;
     }
-
     /**
      *
      *
@@ -2147,7 +2084,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2168,7 +2104,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private long previousRank_;
-
     /**
      *
      *
@@ -2184,7 +2119,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasPreviousRank() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2200,7 +2134,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public long getPreviousRank() {
       return previousRank_;
     }
-
     /**
      *
      *
@@ -2220,7 +2153,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2240,7 +2172,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private int relativeDemand_ = 0;
-
     /**
      *
      *
@@ -2259,7 +2190,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasRelativeDemand() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2278,7 +2208,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public int getRelativeDemandValue() {
       return relativeDemand_;
     }
-
     /**
      *
      *
@@ -2300,7 +2229,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2326,7 +2254,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2352,7 +2279,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2375,7 +2301,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private int previousRelativeDemand_ = 0;
-
     /**
      *
      *
@@ -2394,7 +2319,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasPreviousRelativeDemand() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2413,7 +2337,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public int getPreviousRelativeDemandValue() {
       return previousRelativeDemand_;
     }
-
     /**
      *
      *
@@ -2435,7 +2358,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2461,7 +2383,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2487,7 +2408,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2510,7 +2430,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     }
 
     private int relativeDemandChange_ = 0;
-
     /**
      *
      *
@@ -2528,7 +2447,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public boolean hasRelativeDemandChange() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2546,7 +2464,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public int getRelativeDemandChangeValue() {
       return relativeDemandChange_;
     }
-
     /**
      *
      *
@@ -2567,7 +2484,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2595,7 +2511,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
               .RelativeDemandChangeTypeEnum.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2622,7 +2537,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

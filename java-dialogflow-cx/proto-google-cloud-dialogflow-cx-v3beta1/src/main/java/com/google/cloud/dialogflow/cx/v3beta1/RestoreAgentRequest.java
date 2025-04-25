@@ -34,7 +34,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest)
     RestoreAgentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RestoreAgentRequest.newBuilder() to construct.
   private RestoreAgentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * <code>RESTORE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int RESTORE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * <code>KEEP = 1;</code>
      */
     public static final int KEEP_VALUE = 1;
-
     /**
      *
      *
@@ -250,7 +247,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * @return The trackingBranch.
      */
     java.lang.String getTrackingBranch();
-
     /**
      *
      *
@@ -264,7 +260,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getTrackingBranchBytes();
   }
-
   /**
    *
    *
@@ -279,7 +274,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource)
       GitSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GitSource.newBuilder() to construct.
     private GitSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -314,7 +308,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object trackingBranch_ = "";
-
     /**
      *
      *
@@ -338,7 +331,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -525,7 +517,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -721,7 +712,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object trackingBranch_ = "";
-
       /**
        *
        *
@@ -744,7 +734,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -767,7 +756,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -789,7 +777,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -807,7 +794,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -916,7 +902,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     private AgentCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -955,7 +940,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -982,7 +966,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1011,7 +994,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int AGENT_URI_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1034,7 +1016,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasAgentUri() {
     return agentCase_ == 2;
   }
-
   /**
    *
    *
@@ -1070,7 +1051,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1108,7 +1088,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int AGENT_CONTENT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1124,7 +1103,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasAgentContent() {
     return agentCase_ == 3;
   }
-
   /**
    *
    *
@@ -1145,7 +1123,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GIT_SOURCE_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -1161,7 +1138,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasGitSource() {
     return agentCase_ == 6;
   }
-
   /**
    *
    *
@@ -1181,7 +1157,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     return com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1203,7 +1178,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int RESTORE_OPTION_FIELD_NUMBER = 5;
   private int restoreOption_ = 0;
-
   /**
    *
    *
@@ -1220,7 +1194,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   public int getRestoreOptionValue() {
     return restoreOption_;
   }
-
   /**
    *
    *
@@ -1472,7 +1445,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1742,7 +1714,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1768,7 +1739,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1794,7 +1764,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1788,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1840,7 +1808,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1890,7 +1857,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasAgentUri() {
       return agentCase_ == 2;
     }
-
     /**
      *
      *
@@ -1927,7 +1893,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1964,7 +1929,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1994,7 +1958,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2022,7 +1985,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2068,7 +2030,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasAgentContent() {
       return agentCase_ == 3;
     }
-
     /**
      *
      *
@@ -2086,7 +2047,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
-
     /**
      *
      *
@@ -2108,7 +2068,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2134,7 +2093,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSource.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.GitSourceOrBuilder>
         gitSourceBuilder_;
-
     /**
      *
      *
@@ -2151,7 +2109,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasGitSource() {
       return agentCase_ == 6;
     }
-
     /**
      *
      *
@@ -2180,7 +2137,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2205,7 +2161,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       agentCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2183,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       agentCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2265,7 +2219,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       agentCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2292,7 +2245,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2307,7 +2259,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
         getGitSourceBuilder() {
       return getGitSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2331,7 +2282,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2369,7 +2319,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int restoreOption_ = 0;
-
     /**
      *
      *
@@ -2387,7 +2336,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     public int getRestoreOptionValue() {
       return restoreOption_;
     }
-
     /**
      *
      *
@@ -2408,7 +2356,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2432,7 +2379,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2457,7 +2403,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

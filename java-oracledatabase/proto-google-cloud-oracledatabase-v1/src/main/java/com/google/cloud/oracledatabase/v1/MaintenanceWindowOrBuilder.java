@@ -38,7 +38,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The enum numeric value on the wire for preference.
    */
   int getPreferenceValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface MaintenanceWindowOrBuilder
    * @return A list containing the months.
    */
   java.util.List<com.google.type.Month> getMonthsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The count of months.
    */
   int getMonthsCount();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The months at the given index.
    */
   com.google.type.Month getMonths(int index);
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface MaintenanceWindowOrBuilder
    * @return A list containing the enum numeric values on the wire for months.
    */
   java.util.List<java.lang.Integer> getMonthsValueList();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface MaintenanceWindowOrBuilder
    * @return A list containing the weeksOfMonth.
    */
   java.util.List<java.lang.Integer> getWeeksOfMonthList();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The count of weeksOfMonth.
    */
   int getWeeksOfMonthCount();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface MaintenanceWindowOrBuilder
    * @return A list containing the daysOfWeek.
    */
   java.util.List<com.google.type.DayOfWeek> getDaysOfWeekList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The count of daysOfWeek.
    */
   int getDaysOfWeekCount();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The daysOfWeek at the given index.
    */
   com.google.type.DayOfWeek getDaysOfWeek(int index);
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public interface MaintenanceWindowOrBuilder
    * @return A list containing the enum numeric values on the wire for daysOfWeek.
    */
   java.util.List<java.lang.Integer> getDaysOfWeekValueList();
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface MaintenanceWindowOrBuilder
    * @return A list containing the hoursOfDay.
    */
   java.util.List<java.lang.Integer> getHoursOfDayList();
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The count of hoursOfDay.
    */
   int getHoursOfDayCount();
-
   /**
    *
    *
@@ -337,7 +324,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The enum numeric value on the wire for patchingMode.
    */
   int getPatchingModeValue();
-
   /**
    *
    *

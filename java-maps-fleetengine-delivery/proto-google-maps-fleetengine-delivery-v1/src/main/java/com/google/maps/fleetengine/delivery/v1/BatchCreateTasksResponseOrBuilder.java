@@ -34,7 +34,6 @@ public interface BatchCreateTasksResponseOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.Task tasks = 1;</code>
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.Task> getTasksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchCreateTasksResponseOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.Task tasks = 1;</code>
    */
   com.google.maps.fleetengine.delivery.v1.Task getTasks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchCreateTasksResponseOrBuilder
    * <code>repeated .maps.fleetengine.delivery.v1.Task tasks = 1;</code>
    */
   int getTasksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchCreateTasksResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.TaskOrBuilder>
       getTasksOrBuilderList();
-
   /**
    *
    *

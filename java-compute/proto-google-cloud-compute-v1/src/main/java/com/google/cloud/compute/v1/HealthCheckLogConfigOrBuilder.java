@@ -36,7 +36,6 @@ public interface HealthCheckLogConfigOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
-
   /**
    *
    *

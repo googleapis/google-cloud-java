@@ -33,7 +33,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.BasicLevel)
     BasicLevelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BasicLevel.newBuilder() to construct.
   private BasicLevel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,7 +109,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>AND = 0;</code>
      */
     public static final int AND_VALUE = 0;
-
     /**
      *
      *
@@ -212,7 +210,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.Condition> conditions_;
-
   /**
    *
    *
@@ -226,7 +223,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.identity.accesscontextmanager.v1.Condition> getConditionsList() {
     return conditions_;
   }
-
   /**
    *
    *
@@ -241,7 +237,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       getConditionsOrBuilderList() {
     return conditions_;
   }
-
   /**
    *
    *
@@ -255,7 +250,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   public int getConditionsCount() {
     return conditions_.size();
   }
-
   /**
    *
    *
@@ -269,7 +263,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   public com.google.identity.accesscontextmanager.v1.Condition getConditions(int index) {
     return conditions_.get(index);
   }
-
   /**
    *
    *
@@ -287,7 +280,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMBINING_FUNCTION_FIELD_NUMBER = 2;
   private int combiningFunction_ = 0;
-
   /**
    *
    *
@@ -309,7 +301,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   public int getCombiningFunctionValue() {
     return combiningFunction_;
   }
-
   /**
    *
    *
@@ -514,7 +505,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -793,7 +783,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -810,7 +799,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -827,7 +815,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -851,7 +838,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +858,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +880,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +903,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +943,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +964,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +983,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1002,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1015,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getConditionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1049,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(conditions_);
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       return getConditionsFieldBuilder()
           .addBuilder(com.google.identity.accesscontextmanager.v1.Condition.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.identity.accesscontextmanager.v1.Condition.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1136,7 +1109,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int combiningFunction_ = 0;
-
     /**
      *
      *
@@ -1158,7 +1130,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     public int getCombiningFunctionValue() {
       return combiningFunction_;
     }
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

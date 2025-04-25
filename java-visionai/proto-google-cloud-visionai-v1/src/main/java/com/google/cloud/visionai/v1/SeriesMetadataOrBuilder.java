@@ -37,7 +37,6 @@ public interface SeriesMetadataOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
-
   /**
    *
    *

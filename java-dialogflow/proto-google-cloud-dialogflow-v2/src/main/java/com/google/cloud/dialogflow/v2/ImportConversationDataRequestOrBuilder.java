@@ -40,7 +40,6 @@ public interface ImportConversationDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ImportConversationDataRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ImportConversationDataRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.dialogflow.v2.InputConfig getInputConfig();
-
   /**
    *
    *

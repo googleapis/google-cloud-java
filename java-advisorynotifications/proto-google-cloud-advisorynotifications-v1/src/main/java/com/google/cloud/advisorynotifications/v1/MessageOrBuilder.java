@@ -36,7 +36,6 @@ public interface MessageOrBuilder
    * @return Whether the body field is set.
    */
   boolean hasBody();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MessageOrBuilder
    * @return The body.
    */
   com.google.cloud.advisorynotifications.v1.Message.Body getBody();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface MessageOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Attachment attachments = 2;</code>
    */
   java.util.List<com.google.cloud.advisorynotifications.v1.Attachment> getAttachmentsList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface MessageOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Attachment attachments = 2;</code>
    */
   com.google.cloud.advisorynotifications.v1.Attachment getAttachments(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface MessageOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Attachment attachments = 2;</code>
    */
   int getAttachmentsCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface MessageOrBuilder
    */
   java.util.List<? extends com.google.cloud.advisorynotifications.v1.AttachmentOrBuilder>
       getAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface MessageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface MessageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface MessageOrBuilder
    * @return Whether the localizationTime field is set.
    */
   boolean hasLocalizationTime();
-
   /**
    *
    *
@@ -179,7 +170,6 @@ public interface MessageOrBuilder
    * @return The localizationTime.
    */
   com.google.protobuf.Timestamp getLocalizationTime();
-
   /**
    *
    *

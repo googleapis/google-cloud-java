@@ -37,7 +37,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return Whether the optimizationObjectiveRecallValue field is set.
    */
   boolean hasOptimizationObjectiveRecallValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return Whether the optimizationObjectivePrecisionValue field is set.
    */
   boolean hasOptimizationObjectivePrecisionValue();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return The predictionType.
    */
   java.lang.String getPredictionType();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return The targetColumn.
    */
   java.lang.String getTargetColumn();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface AutoMlTablesInputsOrBuilder
           com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
               .Transformation>
       getTransformationsList();
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface AutoMlTablesInputsOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation
       getTransformations(int index);
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public interface AutoMlTablesInputsOrBuilder
    * </code>
    */
   int getTransformationsCount();
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public interface AutoMlTablesInputsOrBuilder
               com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
                   .TransformationOrBuilder>
       getTransformationsOrBuilderList();
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return The optimizationObjective.
    */
   java.lang.String getOptimizationObjective();
-
   /**
    *
    *
@@ -364,7 +355,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return The weightColumnName.
    */
   java.lang.String getWeightColumnName();
-
   /**
    *
    *
@@ -398,7 +388,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return Whether the exportEvaluatedDataItemsConfig field is set.
    */
   boolean hasExportEvaluatedDataItemsConfig();
-
   /**
    *
    *
@@ -415,7 +404,6 @@ public interface AutoMlTablesInputsOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig
       getExportEvaluatedDataItemsConfig();
-
   /**
    *
    *
@@ -444,7 +432,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return A list containing the additionalExperiments.
    */
   java.util.List<java.lang.String> getAdditionalExperimentsList();
-
   /**
    *
    *
@@ -457,7 +444,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return The count of additionalExperiments.
    */
   int getAdditionalExperimentsCount();
-
   /**
    *
    *
@@ -471,7 +457,6 @@ public interface AutoMlTablesInputsOrBuilder
    * @return The additionalExperiments at the given index.
    */
   java.lang.String getAdditionalExperiments(int index);
-
   /**
    *
    *

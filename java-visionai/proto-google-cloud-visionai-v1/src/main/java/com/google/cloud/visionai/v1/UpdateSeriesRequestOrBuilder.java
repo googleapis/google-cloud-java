@@ -41,7 +41,6 @@ public interface UpdateSeriesRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateSeriesRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateSeriesRequestOrBuilder
    * @return Whether the series field is set.
    */
   boolean hasSeries();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateSeriesRequestOrBuilder
    * @return The series.
    */
   com.google.cloud.visionai.v1.Series getSeries();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface UpdateSeriesRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

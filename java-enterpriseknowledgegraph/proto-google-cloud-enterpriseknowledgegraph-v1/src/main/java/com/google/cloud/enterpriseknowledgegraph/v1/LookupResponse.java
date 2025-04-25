@@ -34,7 +34,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.LookupResponse)
     LookupResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LookupResponse.newBuilder() to construct.
   private LookupResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CONTEXT_FIELD_NUMBER = 1;
   private com.google.protobuf.Value context_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getContext() {
     return context_ == null ? com.google.protobuf.Value.getDefaultInstance() : context_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private com.google.protobuf.Value type_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getType() {
     return type_ == null ? com.google.protobuf.Value.getDefaultInstance() : type_;
   }
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ITEM_LIST_ELEMENT_FIELD_NUMBER = 3;
   private com.google.protobuf.ListValue itemListElement_;
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasItemListElement() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.ListValue.getDefaultInstance()
         : itemListElement_;
   }
-
   /**
    *
    *
@@ -411,7 +401,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +644,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +784,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         return context_ == null ? com.google.protobuf.Value.getDefaultInstance() : context_;
       }
     }
-
     /**
      *
      *
@@ -854,7 +834,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         typeBuilder_;
-
     /**
      *
      *
@@ -869,7 +848,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -888,7 +866,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         return typeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +934,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +967,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1011,7 +983,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         return type_ == null ? com.google.protobuf.Value.getDefaultInstance() : type_;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1014,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.ListValue.Builder,
             com.google.protobuf.ListValueOrBuilder>
         itemListElementBuilder_;
-
     /**
      *
      *
@@ -1058,7 +1028,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasItemListElement() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1079,7 +1048,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         return itemListElementBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1070,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1089,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1116,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1135,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1149,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getItemListElementFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1204,7 +1167,6 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             : itemListElement_;
       }
     }
-
     /**
      *
      *

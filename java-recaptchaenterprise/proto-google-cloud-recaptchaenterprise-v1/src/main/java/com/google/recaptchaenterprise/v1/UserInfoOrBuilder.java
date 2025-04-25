@@ -40,7 +40,6 @@ public interface UserInfoOrBuilder
    * @return Whether the createAccountTime field is set.
    */
   boolean hasCreateAccountTime();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UserInfoOrBuilder
    * @return The createAccountTime.
    */
   com.google.protobuf.Timestamp getCreateAccountTime();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UserInfoOrBuilder
    * @return The accountId.
    */
   java.lang.String getAccountId();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface UserInfoOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.UserId> getUserIdsList();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface UserInfoOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.UserId getUserIds(int index);
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface UserInfoOrBuilder
    * </code>
    */
   int getUserIdsCount();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface UserInfoOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.UserIdOrBuilder>
       getUserIdsOrBuilderList();
-
   /**
    *
    *

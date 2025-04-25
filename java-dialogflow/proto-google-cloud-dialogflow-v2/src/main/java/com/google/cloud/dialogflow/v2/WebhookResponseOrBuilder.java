@@ -40,7 +40,6 @@ public interface WebhookResponseOrBuilder
    * @return The fulfillmentText.
    */
   java.lang.String getFulfillmentText();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getFulfillmentMessagesList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
    */
   com.google.cloud.dialogflow.v2.Intent.Message getFulfillmentMessages(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
    */
   int getFulfillmentMessagesCount();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface WebhookResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface WebhookResponseOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface WebhookResponseOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList();
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
    */
   com.google.cloud.dialogflow.v2.Context getOutputContexts(int index);
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
    */
   int getOutputContextsCount();
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public interface WebhookResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList();
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public interface WebhookResponseOrBuilder
    * @return Whether the followupEventInput field is set.
    */
   boolean hasFollowupEventInput();
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public interface WebhookResponseOrBuilder
    * @return The followupEventInput.
    */
   com.google.cloud.dialogflow.v2.EventInput getFollowupEventInput();
-
   /**
    *
    *
@@ -362,7 +348,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> getSessionEntityTypesList();
-
   /**
    *
    *
@@ -379,7 +364,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index);
-
   /**
    *
    *
@@ -396,7 +380,6 @@ public interface WebhookResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 10;</code>
    */
   int getSessionEntityTypesCount();
-
   /**
    *
    *
@@ -414,7 +397,6 @@ public interface WebhookResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
-
   /**
    *
    *

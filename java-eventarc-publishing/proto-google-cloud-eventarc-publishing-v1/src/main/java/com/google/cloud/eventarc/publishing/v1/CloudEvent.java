@@ -34,7 +34,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.CloudEvent)
     CloudEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudEvent.newBuilder() to construct.
   private CloudEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceBoolean field is set.
      */
     boolean hasCeBoolean();
-
     /**
      *
      *
@@ -123,7 +121,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceInteger field is set.
      */
     boolean hasCeInteger();
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceString field is set.
      */
     boolean hasCeString();
-
     /**
      *
      *
@@ -162,7 +158,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The ceString.
      */
     java.lang.String getCeString();
-
     /**
      *
      *
@@ -188,7 +183,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceBytes field is set.
      */
     boolean hasCeBytes();
-
     /**
      *
      *
@@ -214,7 +208,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceUri field is set.
      */
     boolean hasCeUri();
-
     /**
      *
      *
@@ -227,7 +220,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The ceUri.
      */
     java.lang.String getCeUri();
-
     /**
      *
      *
@@ -253,7 +245,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceUriRef field is set.
      */
     boolean hasCeUriRef();
-
     /**
      *
      *
@@ -266,7 +257,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The ceUriRef.
      */
     java.lang.String getCeUriRef();
-
     /**
      *
      *
@@ -292,7 +282,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ceTimestamp field is set.
      */
     boolean hasCeTimestamp();
-
     /**
      *
      *
@@ -305,7 +294,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The ceTimestamp.
      */
     com.google.protobuf.Timestamp getCeTimestamp();
-
     /**
      *
      *
@@ -320,7 +308,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue.AttrCase
         getAttrCase();
   }
-
   /**
    *
    *
@@ -335,7 +322,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue)
       CloudEventAttributeValueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CloudEventAttributeValue.newBuilder() to construct.
     private CloudEventAttributeValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -387,7 +373,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       private AttrCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -431,7 +416,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_BOOLEAN_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -447,7 +431,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeBoolean() {
       return attrCase_ == 1;
     }
-
     /**
      *
      *
@@ -468,7 +451,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_INTEGER_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -484,7 +466,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeInteger() {
       return attrCase_ == 2;
     }
-
     /**
      *
      *
@@ -505,7 +486,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_STRING_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -520,7 +500,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeString() {
       return attrCase_ == 3;
     }
-
     /**
      *
      *
@@ -548,7 +527,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -578,7 +556,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_BYTES_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -594,7 +571,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeBytes() {
       return attrCase_ == 4;
     }
-
     /**
      *
      *
@@ -615,7 +591,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_URI_FIELD_NUMBER = 5;
-
     /**
      *
      *
@@ -630,7 +605,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeUri() {
       return attrCase_ == 5;
     }
-
     /**
      *
      *
@@ -658,7 +632,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -688,7 +661,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_URI_REF_FIELD_NUMBER = 6;
-
     /**
      *
      *
@@ -703,7 +675,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeUriRef() {
       return attrCase_ == 6;
     }
-
     /**
      *
      *
@@ -731,7 +702,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -761,7 +731,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CE_TIMESTAMP_FIELD_NUMBER = 7;
-
     /**
      *
      *
@@ -777,7 +746,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCeTimestamp() {
       return attrCase_ == 7;
     }
-
     /**
      *
      *
@@ -796,7 +764,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Timestamp.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1081,7 +1048,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1400,7 +1366,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeBoolean() {
         return attrCase_ == 1;
       }
-
       /**
        *
        *
@@ -1418,7 +1383,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return false;
       }
-
       /**
        *
        *
@@ -1438,7 +1402,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1473,7 +1436,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeInteger() {
         return attrCase_ == 2;
       }
-
       /**
        *
        *
@@ -1491,7 +1453,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
-
       /**
        *
        *
@@ -1511,7 +1472,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1547,7 +1507,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeString() {
         return attrCase_ == 3;
       }
-
       /**
        *
        *
@@ -1576,7 +1535,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1605,7 +1563,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1627,7 +1584,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1647,7 +1603,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1685,7 +1640,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeBytes() {
         return attrCase_ == 4;
       }
-
       /**
        *
        *
@@ -1703,7 +1657,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.protobuf.ByteString.EMPTY;
       }
-
       /**
        *
        *
@@ -1725,7 +1678,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1761,7 +1713,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeUri() {
         return attrCase_ == 5;
       }
-
       /**
        *
        *
@@ -1790,7 +1741,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1819,7 +1769,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1841,7 +1790,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1861,7 +1809,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1900,7 +1847,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeUriRef() {
         return attrCase_ == 6;
       }
-
       /**
        *
        *
@@ -1929,7 +1875,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1958,7 +1903,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1980,7 +1924,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2000,7 +1943,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2029,7 +1971,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           ceTimestampBuilder_;
-
       /**
        *
        *
@@ -2045,7 +1986,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCeTimestamp() {
         return attrCase_ == 7;
       }
-
       /**
        *
        *
@@ -2071,7 +2011,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2094,7 +2033,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         attrCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -2114,7 +2052,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         attrCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -2145,7 +2082,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         attrCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -2171,7 +2107,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2184,7 +2119,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Timestamp.Builder getCeTimestampBuilder() {
         return getCeTimestampFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2205,7 +2139,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2323,7 +2256,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     private DataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2362,7 +2294,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -2387,7 +2318,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2417,7 +2347,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
-
   /**
    *
    *
@@ -2442,7 +2371,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2472,7 +2400,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object specVersion_ = "";
-
   /**
    *
    *
@@ -2497,7 +2424,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2527,7 +2453,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -2552,7 +2477,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2617,7 +2541,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return internalGetAttributes().getMap().size();
   }
-
   /**
    *
    *
@@ -2636,7 +2559,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAttributes().getMap().containsKey(key);
   }
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2646,7 +2568,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       getAttributes() {
     return getAttributesMap();
   }
-
   /**
    *
    *
@@ -2665,7 +2586,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       getAttributesMap() {
     return internalGetAttributes().getMap();
   }
-
   /**
    *
    *
@@ -2693,7 +2613,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         map = internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2722,7 +2641,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BINARY_DATA_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -2738,7 +2656,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBinaryData() {
     return dataCase_ == 6;
   }
-
   /**
    *
    *
@@ -2759,7 +2676,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_DATA_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -2774,7 +2690,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextData() {
     return dataCase_ == 7;
   }
-
   /**
    *
    *
@@ -2802,7 +2717,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2832,7 +2746,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTO_DATA_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -2848,7 +2761,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProtoData() {
     return dataCase_ == 8;
   }
-
   /**
    *
    *
@@ -2867,7 +2779,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Any.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3145,7 +3056,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3490,7 +3400,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -3514,7 +3423,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3538,7 +3446,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3561,7 +3468,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3580,7 +3486,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3606,7 +3511,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -3630,7 +3534,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3654,7 +3557,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3677,7 +3579,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3696,7 +3597,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3722,7 +3622,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object specVersion_ = "";
-
     /**
      *
      *
@@ -3746,7 +3645,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3770,7 +3668,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3793,7 +3690,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3812,7 +3708,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3838,7 +3733,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -3862,7 +3756,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3886,7 +3779,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3909,7 +3801,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3928,7 +3819,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3980,8 +3870,7 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AttributesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final AttributesConverter attributesConverter = new AttributesConverter();
 
@@ -4021,7 +3910,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public int getAttributesCount() {
       return internalGetAttributes().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -4040,7 +3928,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAttributes().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -4050,7 +3937,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         getAttributes() {
       return getAttributesMap();
     }
-
     /**
      *
      *
@@ -4069,7 +3955,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         getAttributesMap() {
       return internalGetAttributes().getImmutableMap();
     }
-
     /**
      *
      *
@@ -4098,7 +3983,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableAttributes().ensureBuilderMap();
       return map.containsKey(key) ? attributesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -4131,7 +4015,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4150,7 +4033,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -4160,7 +4042,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return internalGetMutableAttributes().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -4185,7 +4066,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -4214,7 +4094,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -4265,7 +4144,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBinaryData() {
       return dataCase_ == 6;
     }
-
     /**
      *
      *
@@ -4283,7 +4161,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
-
     /**
      *
      *
@@ -4305,7 +4182,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4341,7 +4217,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextData() {
       return dataCase_ == 7;
     }
-
     /**
      *
      *
@@ -4370,7 +4245,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4399,7 +4273,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4421,7 +4294,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4441,7 +4313,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4470,7 +4341,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         protoDataBuilder_;
-
     /**
      *
      *
@@ -4486,7 +4356,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProtoData() {
       return dataCase_ == 8;
     }
-
     /**
      *
      *
@@ -4512,7 +4381,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Any.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4535,7 +4403,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4555,7 +4422,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4586,7 +4452,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       dataCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4612,7 +4477,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4625,7 +4489,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Any.Builder getProtoDataBuilder() {
       return getProtoDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4646,7 +4509,6 @@ public final class CloudEvent extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Any.getDefaultInstance();
       }
     }
-
     /**
      *
      *

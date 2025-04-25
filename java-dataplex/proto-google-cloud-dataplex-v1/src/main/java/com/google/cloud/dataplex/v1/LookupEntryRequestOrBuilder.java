@@ -37,7 +37,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface LookupEntryRequestOrBuilder
    * @return A list containing the aspectTypes.
    */
   java.util.List<java.lang.String> getAspectTypesList();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The count of aspectTypes.
    */
   int getAspectTypesCount();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The aspectTypes at the given index.
    */
   java.lang.String getAspectTypes(int index);
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface LookupEntryRequestOrBuilder
    * @return A list containing the paths.
    */
   java.util.List<java.lang.String> getPathsList();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The count of paths.
    */
   int getPathsCount();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The paths at the given index.
    */
   java.lang.String getPaths(int index);
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface LookupEntryRequestOrBuilder
    * @return The entry.
    */
   java.lang.String getEntry();
-
   /**
    *
    *

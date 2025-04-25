@@ -34,7 +34,6 @@ public final class CreateServiceConnectionPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.CreateServiceConnectionPolicyRequest)
     CreateServiceConnectionPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateServiceConnectionPolicyRequest.newBuilder() to construct.
   private CreateServiceConnectionPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class CreateServiceConnectionPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateServiceConnectionPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CreateServiceConnectionPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceConnectionPolicyId_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class CreateServiceConnectionPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class CreateServiceConnectionPolicyRequest
 
   public static final int SERVICE_CONNECTION_POLICY_FIELD_NUMBER = 3;
   private com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy serviceConnectionPolicy_;
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class CreateServiceConnectionPolicyRequest
   public boolean hasServiceConnectionPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class CreateServiceConnectionPolicyRequest
         ? com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy.getDefaultInstance()
         : serviceConnectionPolicy_;
   }
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class CreateServiceConnectionPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class CreateServiceConnectionPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -527,7 +517,6 @@ public final class CreateServiceConnectionPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -786,7 +775,6 @@ public final class CreateServiceConnectionPolicyRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -812,7 +800,6 @@ public final class CreateServiceConnectionPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -838,7 +825,6 @@ public final class CreateServiceConnectionPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +849,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +869,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +896,6 @@ public final class CreateServiceConnectionPolicyRequest
     }
 
     private java.lang.Object serviceConnectionPolicyId_ = "";
-
     /**
      *
      *
@@ -939,7 +922,6 @@ public final class CreateServiceConnectionPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class CreateServiceConnectionPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -992,7 +973,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +994,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1028,6 @@ public final class CreateServiceConnectionPolicyRequest
             com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy.Builder,
             com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicyOrBuilder>
         serviceConnectionPolicyBuilder_;
-
     /**
      *
      *
@@ -1066,7 +1044,6 @@ public final class CreateServiceConnectionPolicyRequest
     public boolean hasServiceConnectionPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class CreateServiceConnectionPolicyRequest
         return serviceConnectionPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1116,7 +1092,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1146,6 @@ public final class CreateServiceConnectionPolicyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1167,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1184,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return getServiceConnectionPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1234,7 +1205,6 @@ public final class CreateServiceConnectionPolicyRequest
             : serviceConnectionPolicy_;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1234,6 @@ public final class CreateServiceConnectionPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1299,7 +1268,6 @@ public final class CreateServiceConnectionPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1302,6 @@ public final class CreateServiceConnectionPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1368,7 +1335,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1364,6 @@ public final class CreateServiceConnectionPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

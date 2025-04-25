@@ -190,19 +190,6 @@ public final class PromotionsServiceGrpc {
     return PromotionsServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static PromotionsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PromotionsServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PromotionsServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public PromotionsServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PromotionsServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return PromotionsServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -391,73 +378,6 @@ public final class PromotionsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PromotionsService.
-   *
-   * <pre>
-   * Service to manage promotions for products.
-   * </pre>
-   */
-  public static final class PromotionsServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<PromotionsServiceBlockingV2Stub> {
-    private PromotionsServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected PromotionsServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PromotionsServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Inserts a promotion for your Merchant Center account. If the promotion
-     * already exists, then it updates the promotion instead.
-     * </pre>
-     */
-    public com.google.shopping.merchant.promotions.v1beta.Promotion insertPromotion(
-        com.google.shopping.merchant.promotions.v1beta.InsertPromotionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInsertPromotionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the promotion from your Merchant Center account.
-     * After inserting or updating a promotion input, it may take several
-     * minutes before the updated promotion can be retrieved.
-     * </pre>
-     */
-    public com.google.shopping.merchant.promotions.v1beta.Promotion getPromotion(
-        com.google.shopping.merchant.promotions.v1beta.GetPromotionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetPromotionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the promotions in your Merchant Center account. The
-     * response might contain fewer items than specified by `pageSize`. Rely on
-     * `pageToken` to determine if there are more items to be requested.
-     * After inserting or updating a promotion, it may take several minutes before
-     * the updated processed promotion can be retrieved.
-     * </pre>
-     */
-    public com.google.shopping.merchant.promotions.v1beta.ListPromotionsResponse listPromotions(
-        com.google.shopping.merchant.promotions.v1beta.ListPromotionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListPromotionsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service PromotionsService.
    *
    * <pre>
    * Service to manage promotions for products.

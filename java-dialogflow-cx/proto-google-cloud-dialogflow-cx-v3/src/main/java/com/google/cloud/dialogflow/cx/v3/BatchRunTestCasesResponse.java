@@ -34,7 +34,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse)
     BatchRunTestCasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRunTestCasesResponse.newBuilder() to construct.
   private BatchRunTestCasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.TestCaseResult> results_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.dialogflow.cx.v3.TestCaseResult> getResultsList() {
     return results_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       getResultsOrBuilderList() {
     return results_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
   public int getResultsCount() {
     return results_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
   public com.google.cloud.dialogflow.cx.v3.TestCaseResult getResults(int index) {
     return results_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +312,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +579,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
         return resultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
         return resultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
         return resultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -652,7 +642,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
     public com.google.cloud.dialogflow.cx.v3.TestCaseResult.Builder getResultsBuilder(int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(results_);
       }
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
       return getResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance());
     }
-
     /**
      *
      *

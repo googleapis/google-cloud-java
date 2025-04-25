@@ -34,7 +34,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1alpha1.VerifyAttestationRequest)
     VerifyAttestationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VerifyAttestationRequest.newBuilder() to construct.
   private VerifyAttestationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object challenge_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
 
   public static final int GCP_CREDENTIALS_FIELD_NUMBER = 2;
   private com.google.cloud.confidentialcomputing.v1alpha1.GcpCredentials gcpCredentials_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
   public boolean hasGcpCredentials() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.confidentialcomputing.v1alpha1.GcpCredentials.getDefaultInstance()
         : gcpCredentials_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
 
   public static final int TPM_ATTESTATION_FIELD_NUMBER = 3;
   private com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation tpmAttestation_;
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
   public boolean hasTpmAttestation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.getDefaultInstance()
         : tpmAttestation_;
   }
-
   /**
    *
    *
@@ -443,7 +434,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -689,7 +679,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object challenge_ = "";
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +731,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +777,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +810,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             com.google.cloud.confidentialcomputing.v1alpha1.GcpCredentials.Builder,
             com.google.cloud.confidentialcomputing.v1alpha1.GcpCredentialsOrBuilder>
         gcpCredentialsBuilder_;
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public boolean hasGcpCredentials() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         return gcpCredentialsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -894,7 +876,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +899,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +932,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return getGcpCredentialsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             : gcpCredentials_;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1029,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestation.Builder,
             com.google.cloud.confidentialcomputing.v1alpha1.TpmAttestationOrBuilder>
         tpmAttestationBuilder_;
-
     /**
      *
      *
@@ -1071,7 +1046,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public boolean hasTpmAttestation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         return tpmAttestationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1095,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1118,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1151,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1173,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1191,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       onChanged();
       return getTpmAttestationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1245,7 +1213,6 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             : tpmAttestation_;
       }
     }
-
     /**
      *
      *

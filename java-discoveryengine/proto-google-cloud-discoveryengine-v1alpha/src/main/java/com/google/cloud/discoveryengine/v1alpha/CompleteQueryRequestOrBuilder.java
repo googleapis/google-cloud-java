@@ -40,7 +40,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The dataStore.
    */
   java.lang.String getDataStore();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The queryModel.
    */
   java.lang.String getQueryModel();
-
   /**
    *
    *
@@ -169,7 +166,6 @@ public interface CompleteQueryRequestOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
-
   /**
    *
    *

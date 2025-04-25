@@ -30,14 +30,12 @@ public interface GetDocumentResponseOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    * <code>.google.cloud.documentai.v1beta3.Document document = 1;</code>
    *
    * @return The document.
    */
   com.google.cloud.documentai.v1beta3.Document getDocument();
-
   /** <code>.google.cloud.documentai.v1beta3.Document document = 1;</code> */
   com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder();
 }

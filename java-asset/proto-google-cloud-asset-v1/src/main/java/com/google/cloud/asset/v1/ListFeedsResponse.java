@@ -25,7 +25,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.ListFeedsResponse)
     ListFeedsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFeedsResponse.newBuilder() to construct.
   private ListFeedsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -60,7 +59,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.Feed> feeds_;
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.asset.v1.Feed> getFeedsList() {
     return feeds_;
   }
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.cloud.asset.v1.FeedOrBuilder> getFeedsOrBuilderList() {
     return feeds_;
   }
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
   public int getFeedsCount() {
     return feeds_.size();
   }
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.asset.v1.Feed getFeeds(int index) {
     return feeds_.get(index);
   }
-
   /**
    *
    *
@@ -292,7 +286,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.asset.v1.ListFeedsResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -543,7 +536,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
         return feedsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -560,7 +552,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
         return feedsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
         return feedsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -600,7 +590,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -620,7 +609,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +631,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +653,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +672,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +691,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +711,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +730,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +749,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +761,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1.Feed.Builder getFeedsBuilder(int index) {
       return getFeedsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -797,7 +777,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
         return feedsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -815,7 +794,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(feeds_);
       }
     }
-
     /**
      *
      *
@@ -828,7 +806,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1.Feed.Builder addFeedsBuilder() {
       return getFeedsFieldBuilder().addBuilder(com.google.cloud.asset.v1.Feed.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -842,7 +819,6 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       return getFeedsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.Feed.getDefaultInstance());
     }
-
     /**
      *
      *

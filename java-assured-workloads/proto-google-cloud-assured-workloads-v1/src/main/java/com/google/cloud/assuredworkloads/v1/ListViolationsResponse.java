@@ -33,7 +33,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.ListViolationsResponse)
     ListViolationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListViolationsResponse.newBuilder() to construct.
   private ListViolationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1.Violation> violations_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.assuredworkloads.v1.Violation> getViolationsList() {
     return violations_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       getViolationsOrBuilderList() {
     return violations_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
   public int getViolationsCount() {
     return violations_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.assuredworkloads.v1.Violation getViolations(int index) {
     return violations_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return violationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return violationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return violationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.assuredworkloads.v1.Violation.Builder getViolationsBuilder(int index) {
       return getViolationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return violationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(violations_);
       }
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       return getViolationsFieldBuilder()
           .addBuilder(com.google.cloud.assuredworkloads.v1.Violation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       return getViolationsFieldBuilder()
           .addBuilder(index, com.google.cloud.assuredworkloads.v1.Violation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -980,7 +954,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1019,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1036,6 @@ public final class ListViolationsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

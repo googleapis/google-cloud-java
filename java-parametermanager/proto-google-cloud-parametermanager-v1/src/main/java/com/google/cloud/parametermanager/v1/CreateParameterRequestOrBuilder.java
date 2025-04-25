@@ -39,7 +39,6 @@ public interface CreateParameterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateParameterRequestOrBuilder
    * @return The parameterId.
    */
   java.lang.String getParameterId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateParameterRequestOrBuilder
    * @return Whether the parameter field is set.
    */
   boolean hasParameter();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateParameterRequestOrBuilder
    * @return The parameter.
    */
   com.google.cloud.parametermanager.v1.Parameter getParameter();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface CreateParameterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

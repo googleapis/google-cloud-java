@@ -34,7 +34,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig)
     PrivateEnvironmentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrivateEnvironmentConfig.newBuilder() to construct.
   private PrivateEnvironmentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ENABLE_PRIVATE_ENVIRONMENT_FIELD_NUMBER = 1;
   private boolean enablePrivateEnvironment_ = false;
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   public static final int ENABLE_PRIVATE_BUILDS_ONLY_FIELD_NUMBER = 11;
   private boolean enablePrivateBuildsOnly_ = false;
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   public static final int PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.orchestration.airflow.service.v1beta1.PrivateClusterConfig
       privateClusterConfig_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   public boolean hasPrivateClusterConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             .getDefaultInstance()
         : privateClusterConfig_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webServerIpv4CidrBlock_ = "";
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudSqlIpv4CidrBlock_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +304,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webServerIpv4ReservedRange_ = "";
-
   /**
    *
    *
@@ -342,7 +331,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +363,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudComposerNetworkIpv4CidrBlock_ = "";
-
   /**
    *
    *
@@ -407,7 +394,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -444,7 +430,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudComposerNetworkIpv4ReservedRange_ = "";
-
   /**
    *
    *
@@ -474,7 +459,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -507,7 +491,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   public static final int ENABLE_PRIVATELY_USED_PUBLIC_IPS_FIELD_NUMBER = 6;
   private boolean enablePrivatelyUsedPublicIps_ = false;
-
   /**
    *
    *
@@ -531,7 +514,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudComposerConnectionSubnetwork_ = "";
-
   /**
    *
    *
@@ -560,7 +542,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -592,7 +573,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
   public static final int NETWORKING_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.orchestration.airflow.service.v1beta1.NetworkingConfig networkingConfig_;
-
   /**
    *
    *
@@ -611,7 +591,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   public boolean hasNetworkingConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -634,7 +613,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             .getDefaultInstance()
         : networkingConfig_;
   }
-
   /**
    *
    *
@@ -943,7 +921,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1311,7 +1288,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean enablePrivateEnvironment_;
-
     /**
      *
      *
@@ -1330,7 +1306,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public boolean getEnablePrivateEnvironment() {
       return enablePrivateEnvironment_;
     }
-
     /**
      *
      *
@@ -1353,7 +1328,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1350,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private boolean enablePrivateBuildsOnly_;
-
     /**
      *
      *
@@ -1400,7 +1373,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public boolean getEnablePrivateBuildsOnly() {
       return enablePrivateBuildsOnly_;
     }
-
     /**
      *
      *
@@ -1428,7 +1400,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1433,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             com.google.cloud.orchestration.airflow.service.v1beta1.PrivateClusterConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.PrivateClusterConfigOrBuilder>
         privateClusterConfigBuilder_;
-
     /**
      *
      *
@@ -1480,7 +1450,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public boolean hasPrivateClusterConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1506,7 +1475,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return privateClusterConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1533,7 +1501,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1525,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1558,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1615,7 +1580,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1598,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return getPrivateClusterConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1658,7 +1621,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             : privateClusterConfig_;
       }
     }
-
     /**
      *
      *
@@ -1690,7 +1652,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object webServerIpv4CidrBlock_ = "";
-
     /**
      *
      *
@@ -1719,7 +1680,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1748,7 +1708,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1776,7 +1735,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1758,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1831,7 +1788,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object cloudSqlIpv4CidrBlock_ = "";
-
     /**
      *
      *
@@ -1856,7 +1812,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1881,7 +1836,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1905,7 +1859,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1925,7 +1878,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1904,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object webServerIpv4ReservedRange_ = "";
-
     /**
      *
      *
@@ -1979,7 +1930,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2006,7 +1956,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2032,7 +1981,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2054,7 +2002,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2030,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object cloudComposerNetworkIpv4CidrBlock_ = "";
-
     /**
      *
      *
@@ -2114,7 +2060,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2145,7 +2090,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2175,7 +2119,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2202,7 +2145,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2235,7 +2177,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object cloudComposerNetworkIpv4ReservedRange_ = "";
-
     /**
      *
      *
@@ -2264,7 +2205,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2293,7 +2233,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2321,7 +2260,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2346,7 +2284,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2315,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private boolean enablePrivatelyUsedPublicIps_;
-
     /**
      *
      *
@@ -2397,7 +2333,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public boolean getEnablePrivatelyUsedPublicIps() {
       return enablePrivatelyUsedPublicIps_;
     }
-
     /**
      *
      *
@@ -2420,7 +2355,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2443,7 +2377,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object cloudComposerConnectionSubnetwork_ = "";
-
     /**
      *
      *
@@ -2471,7 +2404,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2499,7 +2431,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2526,7 +2457,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2480,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2586,7 +2515,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             com.google.cloud.orchestration.airflow.service.v1beta1.NetworkingConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.NetworkingConfigOrBuilder>
         networkingConfigBuilder_;
-
     /**
      *
      *
@@ -2604,7 +2532,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     public boolean hasNetworkingConfig() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -2630,7 +2557,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         return networkingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2657,7 +2583,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2682,7 +2607,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2716,7 +2640,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2739,7 +2662,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2758,7 +2680,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       onChanged();
       return getNetworkingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2782,7 +2703,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
             : networkingConfig_;
       }
     }
-
     /**
      *
      *

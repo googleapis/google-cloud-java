@@ -36,7 +36,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return Whether the andGroup field is set.
    */
   boolean hasAndGroup();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return The andGroup.
    */
   com.google.analytics.admin.v1beta.AccessFilterExpressionList getAndGroup();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return Whether the orGroup field is set.
    */
   boolean hasOrGroup();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return The orGroup.
    */
   com.google.analytics.admin.v1beta.AccessFilterExpressionList getOrGroup();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return Whether the notExpression field is set.
    */
   boolean hasNotExpression();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return The notExpression.
    */
   com.google.analytics.admin.v1beta.AccessFilterExpression getNotExpression();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return Whether the accessFilter field is set.
    */
   boolean hasAccessFilter();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface AccessFilterExpressionOrBuilder
    * @return The accessFilter.
    */
   com.google.analytics.admin.v1beta.AccessFilter getAccessFilter();
-
   /**
    *
    *

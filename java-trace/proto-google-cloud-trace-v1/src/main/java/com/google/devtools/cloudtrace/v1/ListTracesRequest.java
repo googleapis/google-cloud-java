@@ -34,7 +34,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.ListTracesRequest)
     ListTracesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTracesRequest.newBuilder() to construct.
   private ListTracesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <code>VIEW_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int VIEW_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <code>MINIMAL = 1;</code>
      */
     public static final int MINIMAL_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <code>ROOTSPAN = 2;</code>
      */
     public static final int ROOTSPAN_VALUE = 2;
-
     /**
      *
      *
@@ -266,7 +262,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -290,7 +285,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -317,7 +311,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -336,7 +329,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -362,7 +354,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -385,7 +376,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -438,7 +427,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -472,7 +459,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -490,7 +476,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -507,7 +492,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -524,7 +508,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -544,7 +527,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -597,7 +579,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -655,7 +636,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -691,7 +671,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -964,7 +943,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1269,7 +1247,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1292,7 +1269,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1291,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1337,7 +1312,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1329,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1353,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1399,7 +1371,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1421,7 +1392,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1414,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1469,7 +1438,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1460,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1510,7 +1477,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1532,7 +1498,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1554,7 +1519,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1578,7 +1542,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1602,7 +1565,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1625,7 +1587,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1605,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1635,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1691,7 +1650,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1711,7 +1669,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1735,7 +1692,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1712,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1785,7 +1740,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1760,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1775,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1840,7 +1792,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1874,7 +1825,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1890,7 +1840,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1910,7 +1859,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1934,7 +1882,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1955,7 +1902,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1930,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1950,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2021,7 +1965,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2039,7 +1982,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -2068,7 +2010,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -2120,7 +2061,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2172,7 +2112,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2223,7 +2162,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2270,7 +2208,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2324,7 +2261,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -2359,7 +2295,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2394,7 +2329,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2428,7 +2362,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2458,7 +2391,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

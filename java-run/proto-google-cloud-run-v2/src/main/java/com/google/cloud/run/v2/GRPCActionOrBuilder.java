@@ -54,7 +54,6 @@ public interface GRPCActionOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *

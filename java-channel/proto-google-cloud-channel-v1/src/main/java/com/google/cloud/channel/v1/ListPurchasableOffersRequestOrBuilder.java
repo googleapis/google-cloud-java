@@ -38,7 +38,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    * @return Whether the createEntitlementPurchase field is set.
    */
   boolean hasCreateEntitlementPurchase();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    */
   com.google.cloud.channel.v1.ListPurchasableOffersRequest.CreateEntitlementPurchase
       getCreateEntitlementPurchase();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    * @return Whether the changeOfferPurchase field is set.
    */
   boolean hasChangeOfferPurchase();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    */
   com.google.cloud.channel.v1.ListPurchasableOffersRequest.ChangeOfferPurchase
       getChangeOfferPurchase();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    * @return The customer.
    */
   java.lang.String getCustomer();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

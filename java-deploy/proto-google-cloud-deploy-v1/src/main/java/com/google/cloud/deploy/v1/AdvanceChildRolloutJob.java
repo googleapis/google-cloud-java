@@ -33,7 +33,6 @@ public final class AdvanceChildRolloutJob extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AdvanceChildRolloutJob)
     AdvanceChildRolloutJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdvanceChildRolloutJob.newBuilder() to construct.
   private AdvanceChildRolloutJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class AdvanceChildRolloutJob extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

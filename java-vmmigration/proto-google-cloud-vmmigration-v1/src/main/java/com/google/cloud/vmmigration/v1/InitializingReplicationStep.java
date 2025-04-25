@@ -33,7 +33,6 @@ public final class InitializingReplicationStep extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.InitializingReplicationStep)
     InitializingReplicationStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InitializingReplicationStep.newBuilder() to construct.
   private InitializingReplicationStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class InitializingReplicationStep extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

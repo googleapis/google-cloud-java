@@ -37,7 +37,6 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ServiceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ServiceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ServiceOrBuilder
    * @return Whether the serviceReference field is set.
    */
   boolean hasServiceReference();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface ServiceOrBuilder
    * @return The serviceReference.
    */
   com.google.cloud.apphub.v1.ServiceReference getServiceReference();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface ServiceOrBuilder
    * @return Whether the serviceProperties field is set.
    */
   boolean hasServiceProperties();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface ServiceOrBuilder
    * @return The serviceProperties.
    */
   com.google.cloud.apphub.v1.ServiceProperties getServiceProperties();
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public interface ServiceOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface ServiceOrBuilder
    * @return The attributes.
    */
   com.google.cloud.apphub.v1.Attributes getAttributes();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface ServiceOrBuilder
    * @return The discoveredService.
    */
   java.lang.String getDiscoveredService();
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public interface ServiceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public interface ServiceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public interface ServiceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public interface ServiceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -368,7 +354,6 @@ public interface ServiceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -399,7 +384,6 @@ public interface ServiceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

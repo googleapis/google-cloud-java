@@ -36,7 +36,6 @@ public interface ListVehiclesResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.Vehicle> getVehiclesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListVehiclesResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
   com.google.maps.fleetengine.v1.Vehicle getVehicles(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListVehiclesResponseOrBuilder
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
   int getVehiclesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListVehiclesResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleOrBuilder>
       getVehiclesOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListVehiclesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

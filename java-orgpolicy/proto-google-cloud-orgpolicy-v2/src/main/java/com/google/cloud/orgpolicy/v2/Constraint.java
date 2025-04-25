@@ -31,8 +31,8 @@ package com.google.cloud.orgpolicy.v2;
  * organization by setting a policy that includes constraints at different
  * locations in the organization's resource hierarchy. Policies are inherited
  * down the resource hierarchy from higher levels, but can also be overridden.
- * For details about the inheritance rules, see
- * [`Policy`][google.cloud.orgpolicy.v2.Policy].
+ * For details about the inheritance rules please read about
+ * [`policies`][google.cloud.OrgPolicy.v2.Policy].
  *
  * Constraints have a default behavior determined by the `constraint_default`
  * field, which is the enforcement behavior that is used in the absence of a
@@ -46,7 +46,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint)
     ConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Constraint.newBuilder() to construct.
   private Constraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -57,7 +56,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     constraintDefault_ = 0;
-    equivalentConstraint_ = "";
   }
 
   @java.lang.Override
@@ -99,7 +97,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is only used for distinguishing unset values and should never be
-     * used. Results in an error.
+     * used.
      * </pre>
      *
      * <code>CONSTRAINT_DEFAULT_UNSPECIFIED = 0;</code>
@@ -135,13 +133,12 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is only used for distinguishing unset values and should never be
-     * used. Results in an error.
+     * used.
      * </pre>
      *
      * <code>CONSTRAINT_DEFAULT_UNSPECIFIED = 0;</code>
      */
     public static final int CONSTRAINT_DEFAULT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <code>ALLOW = 1;</code>
      */
     public static final int ALLOW_VALUE = 1;
-
     /**
      *
      *
@@ -288,14 +284,12 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getSupportsUnder();
   }
-
   /**
    *
    *
    * <pre>
-   * A constraint type that allows or disallows a list of string values, which
-   * are configured in the
-   * [`PolicyRule`][google.cloud.orgpolicy.v2.PolicySpec.PolicyRule].
+   * A constraint that allows or disallows a list of string values, which are
+   * configured by an Organization Policy administrator with a policy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.ListConstraint}
@@ -305,7 +299,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.ListConstraint)
       ListConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListConstraint.newBuilder() to construct.
     private ListConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -336,7 +329,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SUPPORTS_IN_FIELD_NUMBER = 1;
     private boolean supportsIn_ = false;
-
     /**
      *
      *
@@ -357,7 +349,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SUPPORTS_UNDER_FIELD_NUMBER = 2;
     private boolean supportsUnder_ = false;
-
     /**
      *
      *
@@ -547,14 +538,12 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
      * <pre>
-     * A constraint type that allows or disallows a list of string values, which
-     * are configured in the
-     * [`PolicyRule`][google.cloud.orgpolicy.v2.PolicySpec.PolicyRule].
+     * A constraint that allows or disallows a list of string values, which are
+     * configured by an Organization Policy administrator with a policy.
      * </pre>
      *
      * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.ListConstraint}
@@ -748,7 +737,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean supportsIn_;
-
       /**
        *
        *
@@ -766,7 +754,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public boolean getSupportsIn() {
         return supportsIn_;
       }
-
       /**
        *
        *
@@ -788,7 +775,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -810,7 +796,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean supportsUnder_;
-
       /**
        *
        *
@@ -829,7 +814,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public boolean getSupportsUnder() {
         return supportsUnder_;
       }
-
       /**
        *
        *
@@ -852,7 +836,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -938,5795 +921,19 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public interface CustomConstraintDefinitionOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @return A list containing the resourceTypes.
-     */
-    java.util.List<java.lang.String> getResourceTypesList();
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @return The count of resourceTypes.
-     */
-    int getResourceTypesCount();
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The resourceTypes at the given index.
-     */
-    java.lang.String getResourceTypes(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the resourceTypes at the given index.
-     */
-    com.google.protobuf.ByteString getResourceTypesBytes(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @return A list containing the methodTypes.
-     */
-    java.util.List<com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>
-        getMethodTypesList();
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @return The count of methodTypes.
-     */
-    int getMethodTypesCount();
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @param index The index of the element to return.
-     * @return The methodTypes at the given index.
-     */
-    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType getMethodTypes(
-        int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @return A list containing the enum numeric values on the wire for methodTypes.
-     */
-    java.util.List<java.lang.Integer> getMethodTypesValueList();
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of methodTypes at the given index.
-     */
-    int getMethodTypesValue(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * Org policy condition/expression. For example:
-     * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-     * `resource.management.auto_upgrade == true`
-     *
-     * The max length of the condition is 1000 characters.
-     * </pre>
-     *
-     * <code>string condition = 3;</code>
-     *
-     * @return The condition.
-     */
-    java.lang.String getCondition();
-
-    /**
-     *
-     *
-     * <pre>
-     * Org policy condition/expression. For example:
-     * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-     * `resource.management.auto_upgrade == true`
-     *
-     * The max length of the condition is 1000 characters.
-     * </pre>
-     *
-     * <code>string condition = 3;</code>
-     *
-     * @return The bytes for condition.
-     */
-    com.google.protobuf.ByteString getConditionBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Allow or deny type.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-     * </code>
-     *
-     * @return The enum numeric value on the wire for actionType.
-     */
-    int getActionTypeValue();
-
-    /**
-     *
-     *
-     * <pre>
-     * Allow or deny type.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-     * </code>
-     *
-     * @return The actionType.
-     */
-    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType getActionType();
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    int getParametersCount();
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    boolean containsParameters(java.lang.String key);
-
-    /** Use {@link #getParametersMap()} instead. */
-    @java.lang.Deprecated
-    java.util.Map<
-            java.lang.String,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-        getParameters();
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    java.util.Map<
-            java.lang.String,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-        getParametersMap();
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    /* nullable */
-    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-        getParametersOrDefault(
-            java.lang.String key,
-            /* nullable */
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                defaultValue);
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-        getParametersOrThrow(java.lang.String key);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Custom constraint definition. Defines this as a managed constraint.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition}
-   */
-  public static final class CustomConstraintDefinition
-      extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition)
-      CustomConstraintDefinitionOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    // Use CustomConstraintDefinition.newBuilder() to construct.
-    private CustomConstraintDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private CustomConstraintDefinition() {
-      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      methodTypes_ = java.util.Collections.emptyList();
-      condition_ = "";
-      actionType_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new CustomConstraintDefinition();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.orgpolicy.v2.ConstraintProto
-          .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 5:
-          return internalGetParameters();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.orgpolicy.v2.ConstraintProto
-          .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.class,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder.class);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The operation for which this constraint will be applied. To apply this
-     * constraint only when creating new resources, the `method_types` should be
-     * `CREATE` only. To apply this constraint when creating or deleting
-     * resources, the `method_types` should be `CREATE` and `DELETE`.
-     *
-     * `UPDATE`-only custom constraints are not supported. Use `CREATE` or
-     * `CREATE, UPDATE`.
-     * </pre>
-     *
-     * Protobuf enum {@code
-     * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType}
-     */
-    public enum MethodType implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       *
-       *
-       * <pre>
-       * This is only used for distinguishing unset values and should never be
-       * used. Results in an error.
-       * </pre>
-       *
-       * <code>METHOD_TYPE_UNSPECIFIED = 0;</code>
-       */
-      METHOD_TYPE_UNSPECIFIED(0),
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when creating the resource.
-       * </pre>
-       *
-       * <code>CREATE = 1;</code>
-       */
-      CREATE(1),
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when updating the resource.
-       * </pre>
-       *
-       * <code>UPDATE = 2;</code>
-       */
-      UPDATE(2),
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when deleting the resource.
-       * Not currently supported.
-       * </pre>
-       *
-       * <code>DELETE = 3;</code>
-       */
-      DELETE(3),
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when removing an IAM grant.
-       * </pre>
-       *
-       * <code>REMOVE_GRANT = 4;</code>
-       */
-      REMOVE_GRANT(4),
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when enforcing forced tagging.
-       * </pre>
-       *
-       * <code>GOVERN_TAGS = 5;</code>
-       */
-      GOVERN_TAGS(5),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       *
-       *
-       * <pre>
-       * This is only used for distinguishing unset values and should never be
-       * used. Results in an error.
-       * </pre>
-       *
-       * <code>METHOD_TYPE_UNSPECIFIED = 0;</code>
-       */
-      public static final int METHOD_TYPE_UNSPECIFIED_VALUE = 0;
-
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when creating the resource.
-       * </pre>
-       *
-       * <code>CREATE = 1;</code>
-       */
-      public static final int CREATE_VALUE = 1;
-
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when updating the resource.
-       * </pre>
-       *
-       * <code>UPDATE = 2;</code>
-       */
-      public static final int UPDATE_VALUE = 2;
-
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when deleting the resource.
-       * Not currently supported.
-       * </pre>
-       *
-       * <code>DELETE = 3;</code>
-       */
-      public static final int DELETE_VALUE = 3;
-
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when removing an IAM grant.
-       * </pre>
-       *
-       * <code>REMOVE_GRANT = 4;</code>
-       */
-      public static final int REMOVE_GRANT_VALUE = 4;
-
-      /**
-       *
-       *
-       * <pre>
-       * Constraint applied when enforcing forced tagging.
-       * </pre>
-       *
-       * <code>GOVERN_TAGS = 5;</code>
-       */
-      public static final int GOVERN_TAGS_VALUE = 5;
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static MethodType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static MethodType forNumber(int value) {
-        switch (value) {
-          case 0:
-            return METHOD_TYPE_UNSPECIFIED;
-          case 1:
-            return CREATE;
-          case 2:
-            return UPDATE;
-          case 3:
-            return DELETE;
-          case 4:
-            return REMOVE_GRANT;
-          case 5:
-            return GOVERN_TAGS;
-          default:
-            return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<MethodType> internalGetValueMap() {
-        return internalValueMap;
-      }
-
-      private static final com.google.protobuf.Internal.EnumLiteMap<MethodType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<MethodType>() {
-            public MethodType findValueByNumber(int number) {
-              return MethodType.forNumber(number);
-            }
-          };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-
-      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-        return getDescriptor();
-      }
-
-      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-        return com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.getDescriptor()
-            .getEnumTypes()
-            .get(0);
-      }
-
-      private static final MethodType[] VALUES = values();
-
-      public static MethodType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private MethodType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType)
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Allow or deny type.
-     * </pre>
-     *
-     * Protobuf enum {@code
-     * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType}
-     */
-    public enum ActionType implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       *
-       *
-       * <pre>
-       * This is only used for distinguishing unset values and should never be
-       * used. Results in an error.
-       * </pre>
-       *
-       * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
-       */
-      ACTION_TYPE_UNSPECIFIED(0),
-      /**
-       *
-       *
-       * <pre>
-       * Allowed action type.
-       * </pre>
-       *
-       * <code>ALLOW = 1;</code>
-       */
-      ALLOW(1),
-      /**
-       *
-       *
-       * <pre>
-       * Deny action type.
-       * </pre>
-       *
-       * <code>DENY = 2;</code>
-       */
-      DENY(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       *
-       *
-       * <pre>
-       * This is only used for distinguishing unset values and should never be
-       * used. Results in an error.
-       * </pre>
-       *
-       * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
-       */
-      public static final int ACTION_TYPE_UNSPECIFIED_VALUE = 0;
-
-      /**
-       *
-       *
-       * <pre>
-       * Allowed action type.
-       * </pre>
-       *
-       * <code>ALLOW = 1;</code>
-       */
-      public static final int ALLOW_VALUE = 1;
-
-      /**
-       *
-       *
-       * <pre>
-       * Deny action type.
-       * </pre>
-       *
-       * <code>DENY = 2;</code>
-       */
-      public static final int DENY_VALUE = 2;
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ActionType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ActionType forNumber(int value) {
-        switch (value) {
-          case 0:
-            return ACTION_TYPE_UNSPECIFIED;
-          case 1:
-            return ALLOW;
-          case 2:
-            return DENY;
-          default:
-            return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ActionType> internalGetValueMap() {
-        return internalValueMap;
-      }
-
-      private static final com.google.protobuf.Internal.EnumLiteMap<ActionType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ActionType>() {
-            public ActionType findValueByNumber(int number) {
-              return ActionType.forNumber(number);
-            }
-          };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-
-      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-        return getDescriptor();
-      }
-
-      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-        return com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.getDescriptor()
-            .getEnumTypes()
-            .get(1);
-      }
-
-      private static final ActionType[] VALUES = values();
-
-      public static ActionType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private ActionType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType)
-    }
-
-    public interface ParameterOrBuilder
-        extends
-        // @@protoc_insertion_point(interface_extends:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       *
-       *
-       * <pre>
-       * Type of the parameter.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-       * </code>
-       *
-       * @return The enum numeric value on the wire for type.
-       */
-      int getTypeValue();
-
-      /**
-       *
-       *
-       * <pre>
-       * Type of the parameter.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-       * </code>
-       *
-       * @return The type.
-       */
-      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type getType();
-
-      /**
-       *
-       *
-       * <pre>
-       * Sets the value of the parameter in an assignment if no value is given.
-       * </pre>
-       *
-       * <code>.google.protobuf.Value default_value = 2;</code>
-       *
-       * @return Whether the defaultValue field is set.
-       */
-      boolean hasDefaultValue();
-
-      /**
-       *
-       *
-       * <pre>
-       * Sets the value of the parameter in an assignment if no value is given.
-       * </pre>
-       *
-       * <code>.google.protobuf.Value default_value = 2;</code>
-       *
-       * @return The defaultValue.
-       */
-      com.google.protobuf.Value getDefaultValue();
-
-      /**
-       *
-       *
-       * <pre>
-       * Sets the value of the parameter in an assignment if no value is given.
-       * </pre>
-       *
-       * <code>.google.protobuf.Value default_value = 2;</code>
-       */
-      com.google.protobuf.ValueOrBuilder getDefaultValueOrBuilder();
-
-      /**
-       *
-       *
-       * <pre>
-       * Provides a CEL expression to specify the acceptable parameter values
-       * during assignment.
-       * For example, parameterName in ("parameterValue1", "parameterValue2")
-       * </pre>
-       *
-       * <code>string valid_values_expr = 3;</code>
-       *
-       * @return The validValuesExpr.
-       */
-      java.lang.String getValidValuesExpr();
-
-      /**
-       *
-       *
-       * <pre>
-       * Provides a CEL expression to specify the acceptable parameter values
-       * during assignment.
-       * For example, parameterName in ("parameterValue1", "parameterValue2")
-       * </pre>
-       *
-       * <code>string valid_values_expr = 3;</code>
-       *
-       * @return The bytes for validValuesExpr.
-       */
-      com.google.protobuf.ByteString getValidValuesExprBytes();
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines subproperties primarily used by the UI to display user-friendly
-       * information.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-       * </code>
-       *
-       * @return Whether the metadata field is set.
-       */
-      boolean hasMetadata();
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines subproperties primarily used by the UI to display user-friendly
-       * information.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-       * </code>
-       *
-       * @return The metadata.
-       */
-      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-          getMetadata();
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines subproperties primarily used by the UI to display user-friendly
-       * information.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-       * </code>
-       */
-      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-              .MetadataOrBuilder
-          getMetadataOrBuilder();
-
-      /**
-       *
-       *
-       * <pre>
-       * Determines the parameter's value structure.
-       * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-       * and `item: STRING`.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-       * </code>
-       *
-       * @return The enum numeric value on the wire for item.
-       */
-      int getItemValue();
-
-      /**
-       *
-       *
-       * <pre>
-       * Determines the parameter's value structure.
-       * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-       * and `item: STRING`.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-       * </code>
-       *
-       * @return The item.
-       */
-      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type getItem();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Defines a parameter structure.
-     * </pre>
-     *
-     * Protobuf type {@code
-     * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter}
-     */
-    public static final class Parameter extends com.google.protobuf.GeneratedMessageV3
-        implements
-        // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-        ParameterOrBuilder {
-      private static final long serialVersionUID = 0L;
-
-      // Use Parameter.newBuilder() to construct.
-      private Parameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-
-      private Parameter() {
-        type_ = 0;
-        validValuesExpr_ = "";
-        item_ = 0;
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new Parameter();
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.orgpolicy.v2.ConstraintProto
-            .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.orgpolicy.v2.ConstraintProto
-            .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.class,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Builder.class);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All valid types of parameter.
-       * </pre>
-       *
-       * Protobuf enum {@code
-       * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type}
-       */
-      public enum Type implements com.google.protobuf.ProtocolMessageEnum {
-        /**
-         *
-         *
-         * <pre>
-         * This is only used for distinguishing unset values and should never be
-         * used. Results in an error.
-         * </pre>
-         *
-         * <code>TYPE_UNSPECIFIED = 0;</code>
-         */
-        TYPE_UNSPECIFIED(0),
-        /**
-         *
-         *
-         * <pre>
-         * List parameter type.
-         * </pre>
-         *
-         * <code>LIST = 1;</code>
-         */
-        LIST(1),
-        /**
-         *
-         *
-         * <pre>
-         * String parameter type.
-         * </pre>
-         *
-         * <code>STRING = 2;</code>
-         */
-        STRING(2),
-        /**
-         *
-         *
-         * <pre>
-         * Boolean parameter type.
-         * </pre>
-         *
-         * <code>BOOLEAN = 3;</code>
-         */
-        BOOLEAN(3),
-        UNRECOGNIZED(-1),
-        ;
-
-        /**
-         *
-         *
-         * <pre>
-         * This is only used for distinguishing unset values and should never be
-         * used. Results in an error.
-         * </pre>
-         *
-         * <code>TYPE_UNSPECIFIED = 0;</code>
-         */
-        public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
-        /**
-         *
-         *
-         * <pre>
-         * List parameter type.
-         * </pre>
-         *
-         * <code>LIST = 1;</code>
-         */
-        public static final int LIST_VALUE = 1;
-
-        /**
-         *
-         *
-         * <pre>
-         * String parameter type.
-         * </pre>
-         *
-         * <code>STRING = 2;</code>
-         */
-        public static final int STRING_VALUE = 2;
-
-        /**
-         *
-         *
-         * <pre>
-         * Boolean parameter type.
-         * </pre>
-         *
-         * <code>BOOLEAN = 3;</code>
-         */
-        public static final int BOOLEAN_VALUE = 3;
-
-        public final int getNumber() {
-          if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalArgumentException(
-                "Can't get the number of an unknown enum value.");
-          }
-          return value;
-        }
-
-        /**
-         * @param value The numeric wire value of the corresponding enum entry.
-         * @return The enum associated with the given numeric wire value.
-         * @deprecated Use {@link #forNumber(int)} instead.
-         */
-        @java.lang.Deprecated
-        public static Type valueOf(int value) {
-          return forNumber(value);
-        }
-
-        /**
-         * @param value The numeric wire value of the corresponding enum entry.
-         * @return The enum associated with the given numeric wire value.
-         */
-        public static Type forNumber(int value) {
-          switch (value) {
-            case 0:
-              return TYPE_UNSPECIFIED;
-            case 1:
-              return LIST;
-            case 2:
-              return STRING;
-            case 3:
-              return BOOLEAN;
-            default:
-              return null;
-          }
-        }
-
-        public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
-          return internalValueMap;
-        }
-
-        private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
-              }
-            };
-
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-          if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalStateException(
-                "Can't get the descriptor of an unrecognized enum value.");
-          }
-          return getDescriptor().getValues().get(ordinal());
-        }
-
-        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-          return getDescriptor();
-        }
-
-        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-          return com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-              .getDescriptor()
-              .getEnumTypes()
-              .get(0);
-        }
-
-        private static final Type[] VALUES = values();
-
-        public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-                "EnumValueDescriptor is not for this type.");
-          }
-          if (desc.getIndex() == -1) {
-            return UNRECOGNIZED;
-          }
-          return VALUES[desc.getIndex()];
-        }
-
-        private final int value;
-
-        private Type(int value) {
-          this.value = value;
-        }
-
-        // @@protoc_insertion_point(enum_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type)
-      }
-
-      public interface MetadataOrBuilder
-          extends
-          // @@protoc_insertion_point(interface_extends:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata)
-          com.google.protobuf.MessageOrBuilder {
-
-        /**
-         *
-         *
-         * <pre>
-         * Detailed description of what this `parameter` is and use of it.
-         * Mutable.
-         * </pre>
-         *
-         * <code>string description = 1;</code>
-         *
-         * @return The description.
-         */
-        java.lang.String getDescription();
-
-        /**
-         *
-         *
-         * <pre>
-         * Detailed description of what this `parameter` is and use of it.
-         * Mutable.
-         * </pre>
-         *
-         * <code>string description = 1;</code>
-         *
-         * @return The bytes for description.
-         */
-        com.google.protobuf.ByteString getDescriptionBytes();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines Metadata structure.
-       * </pre>
-       *
-       * Protobuf type {@code
-       * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata}
-       */
-      public static final class Metadata extends com.google.protobuf.GeneratedMessageV3
-          implements
-          // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata)
-          MetadataOrBuilder {
-        private static final long serialVersionUID = 0L;
-
-        // Use Metadata.newBuilder() to construct.
-        private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
-
-        private Metadata() {
-          description_ = "";
-        }
-
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-          return new Metadata();
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.orgpolicy.v2.ConstraintProto
-              .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.google.cloud.orgpolicy.v2.ConstraintProto
-              .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                      .Metadata.class,
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                      .Metadata.Builder.class);
-        }
-
-        public static final int DESCRIPTION_FIELD_NUMBER = 1;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object description_ = "";
-
-        /**
-         *
-         *
-         * <pre>
-         * Detailed description of what this `parameter` is and use of it.
-         * Mutable.
-         * </pre>
-         *
-         * <code>string description = 1;</code>
-         *
-         * @return The description.
-         */
-        @java.lang.Override
-        public java.lang.String getDescription() {
-          java.lang.Object ref = description_;
-          if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-          } else {
-            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            description_ = s;
-            return s;
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Detailed description of what this `parameter` is and use of it.
-         * Mutable.
-         * </pre>
-         *
-         * <code>string description = 1;</code>
-         *
-         * @return The bytes for description.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString getDescriptionBytes() {
-          java.lang.Object ref = description_;
-          if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-            description_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
-
-          memoizedIsInitialized = 1;
-          return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
-          }
-          getUnknownFields().writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-          int size = memoizedSize;
-          if (size != -1) return size;
-
-          size = 0;
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
-          }
-          size += getUnknownFields().getSerializedSize();
-          memoizedSize = size;
-          return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-          if (obj == this) {
-            return true;
-          }
-          if (!(obj
-              instanceof
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .Metadata)) {
-            return super.equals(obj);
-          }
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-              other =
-                  (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                          .Metadata)
-                      obj;
-
-          if (!getDescription().equals(other.getDescription())) return false;
-          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-          return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-          if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptor().hashCode();
-          hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-          hash = (53 * hash) + getDescription().hashCode();
-          hash = (29 * hash) + getUnknownFields().hashCode();
-          memoizedHashCode = hash;
-          return hash;
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(java.io.InputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-              PARSER, input, extensionRegistry);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-              PARSER, input);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-              PARSER, input, extensionRegistry);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-              PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-          return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-          return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                prototype) {
-          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines Metadata structure.
-         * </pre>
-         *
-         * Protobuf type {@code
-         * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata}
-         */
-        public static final class Builder
-            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-            implements
-            // @@protoc_insertion_point(builder_implements:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata)
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .MetadataOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return com.google.cloud.orgpolicy.v2.ConstraintProto
-                .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_descriptor;
-          }
-
-          @java.lang.Override
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return com.google.cloud.orgpolicy.v2.ConstraintProto
-                .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                        .Metadata.class,
-                    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                        .Metadata.Builder.class);
-          }
-
-          // Construct using
-          // com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata.newBuilder()
-          private Builder() {}
-
-          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-          }
-
-          @java.lang.Override
-          public Builder clear() {
-            super.clear();
-            bitField0_ = 0;
-            description_ = "";
-            return this;
-          }
-
-          @java.lang.Override
-          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return com.google.cloud.orgpolicy.v2.ConstraintProto
-                .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_descriptor;
-          }
-
-          @java.lang.Override
-          public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .Metadata
-              getDefaultInstanceForType() {
-            return com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata.getDefaultInstance();
-          }
-
-          @java.lang.Override
-          public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .Metadata
-              build() {
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          @java.lang.Override
-          public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .Metadata
-              buildPartial() {
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                result =
-                    new com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                        .Parameter.Metadata(this);
-            if (bitField0_ != 0) {
-              buildPartial0(result);
-            }
-            onBuilt();
-            return result;
-          }
-
-          private void buildPartial0(
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                  result) {
-            int from_bitField0_ = bitField0_;
-            if (((from_bitField0_ & 0x00000001) != 0)) {
-              result.description_ = description_;
-            }
-          }
-
-          @java.lang.Override
-          public Builder clone() {
-            return super.clone();
-          }
-
-          @java.lang.Override
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return super.setField(field, value);
-          }
-
-          @java.lang.Override
-          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return super.clearField(field);
-          }
-
-          @java.lang.Override
-          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return super.clearOneof(oneof);
-          }
-
-          @java.lang.Override
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index,
-              java.lang.Object value) {
-            return super.setRepeatedField(field, index, value);
-          }
-
-          @java.lang.Override
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return super.addRepeatedField(field, value);
-          }
-
-          @java.lang.Override
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other
-                instanceof
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata) {
-              return mergeFrom(
-                  (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                          .Metadata)
-                      other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                  other) {
-            if (other
-                == com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata.getDefaultInstance()) return this;
-            if (!other.getDescription().isEmpty()) {
-              description_ = other.description_;
-              bitField0_ |= 0x00000001;
-              onChanged();
-            }
-            this.mergeUnknownFields(other.getUnknownFields());
-            onChanged();
-            return this;
-          }
-
-          @java.lang.Override
-          public final boolean isInitialized() {
-            return true;
-          }
-
-          @java.lang.Override
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            if (extensionRegistry == null) {
-              throw new java.lang.NullPointerException();
-            }
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  case 10:
-                    {
-                      description_ = input.readStringRequireUtf8();
-                      bitField0_ |= 0x00000001;
-                      break;
-                    } // case 10
-                  default:
-                    {
-                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                        done = true; // was an endgroup tag
-                      }
-                      break;
-                    } // default:
-                } // switch (tag)
-              } // while (!done)
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.unwrapIOException();
-            } finally {
-              onChanged();
-            } // finally
-            return this;
-          }
-
-          private int bitField0_;
-
-          private java.lang.Object description_ = "";
-
-          /**
-           *
-           *
-           * <pre>
-           * Detailed description of what this `parameter` is and use of it.
-           * Mutable.
-           * </pre>
-           *
-           * <code>string description = 1;</code>
-           *
-           * @return The description.
-           */
-          public java.lang.String getDescription() {
-            java.lang.Object ref = description_;
-            if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              description_ = s;
-              return s;
-            } else {
-              return (java.lang.String) ref;
-            }
-          }
-
-          /**
-           *
-           *
-           * <pre>
-           * Detailed description of what this `parameter` is and use of it.
-           * Mutable.
-           * </pre>
-           *
-           * <code>string description = 1;</code>
-           *
-           * @return The bytes for description.
-           */
-          public com.google.protobuf.ByteString getDescriptionBytes() {
-            java.lang.Object ref = description_;
-            if (ref instanceof String) {
-              com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-              description_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
-          }
-
-          /**
-           *
-           *
-           * <pre>
-           * Detailed description of what this `parameter` is and use of it.
-           * Mutable.
-           * </pre>
-           *
-           * <code>string description = 1;</code>
-           *
-           * @param value The description to set.
-           * @return This builder for chaining.
-           */
-          public Builder setDescription(java.lang.String value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            description_ = value;
-            bitField0_ |= 0x00000001;
-            onChanged();
-            return this;
-          }
-
-          /**
-           *
-           *
-           * <pre>
-           * Detailed description of what this `parameter` is and use of it.
-           * Mutable.
-           * </pre>
-           *
-           * <code>string description = 1;</code>
-           *
-           * @return This builder for chaining.
-           */
-          public Builder clearDescription() {
-            description_ = getDefaultInstance().getDescription();
-            bitField0_ = (bitField0_ & ~0x00000001);
-            onChanged();
-            return this;
-          }
-
-          /**
-           *
-           *
-           * <pre>
-           * Detailed description of what this `parameter` is and use of it.
-           * Mutable.
-           * </pre>
-           *
-           * <code>string description = 1;</code>
-           *
-           * @param value The bytes for description to set.
-           * @return This builder for chaining.
-           */
-          public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            checkByteStringIsUtf8(value);
-            description_ = value;
-            bitField0_ |= 0x00000001;
-            onChanged();
-            return this;
-          }
-
-          @java.lang.Override
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFields(unknownFields);
-          }
-
-          @java.lang.Override
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.mergeUnknownFields(unknownFields);
-          }
-
-          // @@protoc_insertion_point(builder_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata)
-        }
-
-        // @@protoc_insertion_point(class_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata)
-        private static final com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                .Parameter.Metadata
-            DEFAULT_INSTANCE;
-
-        static {
-          DEFAULT_INSTANCE =
-              new com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .Metadata();
-        }
-
-        public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            getDefaultInstance() {
-          return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<Metadata> PARSER =
-            new com.google.protobuf.AbstractParser<Metadata>() {
-              @java.lang.Override
-              public Metadata parsePartialFrom(
-                  com.google.protobuf.CodedInputStream input,
-                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                  throws com.google.protobuf.InvalidProtocolBufferException {
-                Builder builder = newBuilder();
-                try {
-                  builder.mergeFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                  throw e.setUnfinishedMessage(builder.buildPartial());
-                } catch (com.google.protobuf.UninitializedMessageException e) {
-                  throw e.asInvalidProtocolBufferException()
-                      .setUnfinishedMessage(builder.buildPartial());
-                } catch (java.io.IOException e) {
-                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                      .setUnfinishedMessage(builder.buildPartial());
-                }
-                return builder.buildPartial();
-              }
-            };
-
-        public static com.google.protobuf.Parser<Metadata> parser() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Metadata> getParserForType() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-      }
-
-      private int bitField0_;
-      public static final int TYPE_FIELD_NUMBER = 1;
-      private int type_ = 0;
-
-      /**
-       *
-       *
-       * <pre>
-       * Type of the parameter.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-       * </code>
-       *
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override
-      public int getTypeValue() {
-        return type_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Type of the parameter.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-       * </code>
-       *
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-          getType() {
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type result =
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .forNumber(type_);
-        return result == null
-            ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .UNRECOGNIZED
-            : result;
-      }
-
-      public static final int DEFAULT_VALUE_FIELD_NUMBER = 2;
-      private com.google.protobuf.Value defaultValue_;
-
-      /**
-       *
-       *
-       * <pre>
-       * Sets the value of the parameter in an assignment if no value is given.
-       * </pre>
-       *
-       * <code>.google.protobuf.Value default_value = 2;</code>
-       *
-       * @return Whether the defaultValue field is set.
-       */
-      @java.lang.Override
-      public boolean hasDefaultValue() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Sets the value of the parameter in an assignment if no value is given.
-       * </pre>
-       *
-       * <code>.google.protobuf.Value default_value = 2;</code>
-       *
-       * @return The defaultValue.
-       */
-      @java.lang.Override
-      public com.google.protobuf.Value getDefaultValue() {
-        return defaultValue_ == null
-            ? com.google.protobuf.Value.getDefaultInstance()
-            : defaultValue_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Sets the value of the parameter in an assignment if no value is given.
-       * </pre>
-       *
-       * <code>.google.protobuf.Value default_value = 2;</code>
-       */
-      @java.lang.Override
-      public com.google.protobuf.ValueOrBuilder getDefaultValueOrBuilder() {
-        return defaultValue_ == null
-            ? com.google.protobuf.Value.getDefaultInstance()
-            : defaultValue_;
-      }
-
-      public static final int VALID_VALUES_EXPR_FIELD_NUMBER = 3;
-
-      @SuppressWarnings("serial")
-      private volatile java.lang.Object validValuesExpr_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Provides a CEL expression to specify the acceptable parameter values
-       * during assignment.
-       * For example, parameterName in ("parameterValue1", "parameterValue2")
-       * </pre>
-       *
-       * <code>string valid_values_expr = 3;</code>
-       *
-       * @return The validValuesExpr.
-       */
-      @java.lang.Override
-      public java.lang.String getValidValuesExpr() {
-        java.lang.Object ref = validValuesExpr_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          validValuesExpr_ = s;
-          return s;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Provides a CEL expression to specify the acceptable parameter values
-       * during assignment.
-       * For example, parameterName in ("parameterValue1", "parameterValue2")
-       * </pre>
-       *
-       * <code>string valid_values_expr = 3;</code>
-       *
-       * @return The bytes for validValuesExpr.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getValidValuesExprBytes() {
-        java.lang.Object ref = validValuesExpr_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          validValuesExpr_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int METADATA_FIELD_NUMBER = 4;
-      private com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-          metadata_;
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines subproperties primarily used by the UI to display user-friendly
-       * information.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-       * </code>
-       *
-       * @return Whether the metadata field is set.
-       */
-      @java.lang.Override
-      public boolean hasMetadata() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines subproperties primarily used by the UI to display user-friendly
-       * information.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-       * </code>
-       *
-       * @return The metadata.
-       */
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-          getMetadata() {
-        return metadata_ == null
-            ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                .getDefaultInstance()
-            : metadata_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines subproperties primarily used by the UI to display user-friendly
-       * information.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-       * </code>
-       */
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-              .MetadataOrBuilder
-          getMetadataOrBuilder() {
-        return metadata_ == null
-            ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                .getDefaultInstance()
-            : metadata_;
-      }
-
-      public static final int ITEM_FIELD_NUMBER = 5;
-      private int item_ = 0;
-
-      /**
-       *
-       *
-       * <pre>
-       * Determines the parameter's value structure.
-       * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-       * and `item: STRING`.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-       * </code>
-       *
-       * @return The enum numeric value on the wire for item.
-       */
-      @java.lang.Override
-      public int getItemValue() {
-        return item_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Determines the parameter's value structure.
-       * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-       * and `item: STRING`.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-       * </code>
-       *
-       * @return The item.
-       */
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-          getItem() {
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type result =
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .forNumber(item_);
-        return result == null
-            ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .UNRECOGNIZED
-            : result;
-      }
-
-      private byte memoizedIsInitialized = -1;
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (type_
-            != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .TYPE_UNSPECIFIED
-                .getNumber()) {
-          output.writeEnum(1, type_);
-        }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          output.writeMessage(2, getDefaultValue());
-        }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validValuesExpr_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, validValuesExpr_);
-        }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          output.writeMessage(4, getMetadata());
-        }
-        if (item_
-            != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .TYPE_UNSPECIFIED
-                .getNumber()) {
-          output.writeEnum(5, item_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (type_
-            != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .TYPE_UNSPECIFIED
-                .getNumber()) {
-          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
-        }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDefaultValue());
-        }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validValuesExpr_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, validValuesExpr_);
-        }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMetadata());
-        }
-        if (item_
-            != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                .TYPE_UNSPECIFIED
-                .getNumber()) {
-          size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, item_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-          return true;
-        }
-        if (!(obj
-            instanceof
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)) {
-          return super.equals(obj);
-        }
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter other =
-            (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter) obj;
-
-        if (type_ != other.type_) return false;
-        if (hasDefaultValue() != other.hasDefaultValue()) return false;
-        if (hasDefaultValue()) {
-          if (!getDefaultValue().equals(other.getDefaultValue())) return false;
-        }
-        if (!getValidValuesExpr().equals(other.getValidValuesExpr())) return false;
-        if (hasMetadata() != other.hasMetadata()) return false;
-        if (hasMetadata()) {
-          if (!getMetadata().equals(other.getMetadata())) return false;
-        }
-        if (item_ != other.item_) return false;
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + type_;
-        if (hasDefaultValue()) {
-          hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
-          hash = (53 * hash) + getDefaultValue().hashCode();
-        }
-        hash = (37 * hash) + VALID_VALUES_EXPR_FIELD_NUMBER;
-        hash = (53 * hash) + getValidValuesExpr().hashCode();
-        if (hasMetadata()) {
-          hash = (37 * hash) + METADATA_FIELD_NUMBER;
-          hash = (53 * hash) + getMetadata().hashCode();
-        }
-        hash = (37 * hash) + ITEM_FIELD_NUMBER;
-        hash = (53 * hash) + item_;
-        hash = (29 * hash) + getUnknownFields().hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(java.nio.ByteBuffer data)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(
-              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(com.google.protobuf.ByteString data)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(
-              com.google.protobuf.ByteString data,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(
-              java.io.InputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-            PARSER, input, extensionRegistry);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseDelimitedFrom(
-              java.io.InputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-            PARSER, input, extensionRegistry);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          parseFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-            PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() {
-        return newBuilder();
-      }
-
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-
-      public static Builder newBuilder(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Defines a parameter structure.
-       * </pre>
-       *
-       * Protobuf type {@code
-       * google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter}
-       */
-      public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-          implements
-          // @@protoc_insertion_point(builder_implements:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ParameterOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-          return com.google.cloud.orgpolicy.v2.ConstraintProto
-              .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.google.cloud.orgpolicy.v2.ConstraintProto
-              .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                      .class,
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                      .Builder.class);
-        }
-
-        // Construct using
-        // com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDefaultValueFieldBuilder();
-            getMetadataFieldBuilder();
-          }
-        }
-
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          bitField0_ = 0;
-          type_ = 0;
-          defaultValue_ = null;
-          if (defaultValueBuilder_ != null) {
-            defaultValueBuilder_.dispose();
-            defaultValueBuilder_ = null;
-          }
-          validValuesExpr_ = "";
-          metadata_ = null;
-          if (metadataBuilder_ != null) {
-            metadataBuilder_.dispose();
-            metadataBuilder_ = null;
-          }
-          item_ = 0;
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-          return com.google.cloud.orgpolicy.v2.ConstraintProto
-              .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor;
-        }
-
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-            getDefaultInstanceForType() {
-          return com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-              .getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-            build() {
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter result =
-              buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-            buildPartial() {
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter result =
-              new com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter(
-                  this);
-          if (bitField0_ != 0) {
-            buildPartial0(result);
-          }
-          onBuilt();
-          return result;
-        }
-
-        private void buildPartial0(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter result) {
-          int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.type_ = type_;
-          }
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.defaultValue_ =
-                defaultValueBuilder_ == null ? defaultValue_ : defaultValueBuilder_.build();
-            to_bitField0_ |= 0x00000001;
-          }
-          if (((from_bitField0_ & 0x00000004) != 0)) {
-            result.validValuesExpr_ = validValuesExpr_;
-          }
-          if (((from_bitField0_ & 0x00000008) != 0)) {
-            result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
-            to_bitField0_ |= 0x00000002;
-          }
-          if (((from_bitField0_ & 0x00000010) != 0)) {
-            result.item_ = item_;
-          }
-          result.bitField0_ |= to_bitField0_;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other
-              instanceof
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter) {
-            return mergeFrom(
-                (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-                    other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter other) {
-          if (other
-              == com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .getDefaultInstance()) return this;
-          if (other.type_ != 0) {
-            setTypeValue(other.getTypeValue());
-          }
-          if (other.hasDefaultValue()) {
-            mergeDefaultValue(other.getDefaultValue());
-          }
-          if (!other.getValidValuesExpr().isEmpty()) {
-            validValuesExpr_ = other.validValuesExpr_;
-            bitField0_ |= 0x00000004;
-            onChanged();
-          }
-          if (other.hasMetadata()) {
-            mergeMetadata(other.getMetadata());
-          }
-          if (other.item_ != 0) {
-            setItemValue(other.getItemValue());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8:
-                  {
-                    type_ = input.readEnum();
-                    bitField0_ |= 0x00000001;
-                    break;
-                  } // case 8
-                case 18:
-                  {
-                    input.readMessage(
-                        getDefaultValueFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000002;
-                    break;
-                  } // case 18
-                case 26:
-                  {
-                    validValuesExpr_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000004;
-                    break;
-                  } // case 26
-                case 34:
-                  {
-                    input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000008;
-                    break;
-                  } // case 34
-                case 40:
-                  {
-                    item_ = input.readEnum();
-                    bitField0_ |= 0x00000010;
-                    break;
-                  } // case 40
-                default:
-                  {
-                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                      done = true; // was an endgroup tag
-                    }
-                    break;
-                  } // default:
-              } // switch (tag)
-            } // while (!done)
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.unwrapIOException();
-          } finally {
-            onChanged();
-          } // finally
-          return this;
-        }
-
-        private int bitField0_;
-
-        private int type_ = 0;
-
-        /**
-         *
-         *
-         * <pre>
-         * Type of the parameter.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-         * </code>
-         *
-         * @return The enum numeric value on the wire for type.
-         */
-        @java.lang.Override
-        public int getTypeValue() {
-          return type_;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Type of the parameter.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-         * </code>
-         *
-         * @param value The enum numeric value on the wire for type to set.
-         * @return This builder for chaining.
-         */
-        public Builder setTypeValue(int value) {
-          type_ = value;
-          bitField0_ |= 0x00000001;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Type of the parameter.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-         * </code>
-         *
-         * @return The type.
-         */
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-            getType() {
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-              result =
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                      .forNumber(type_);
-          return result == null
-              ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                  .UNRECOGNIZED
-              : result;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Type of the parameter.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-         * </code>
-         *
-         * @param value The type to set.
-         * @return This builder for chaining.
-         */
-        public Builder setType(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000001;
-          type_ = value.getNumber();
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Type of the parameter.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type type = 1;
-         * </code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearType() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          type_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private com.google.protobuf.Value defaultValue_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Value,
-                com.google.protobuf.Value.Builder,
-                com.google.protobuf.ValueOrBuilder>
-            defaultValueBuilder_;
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         *
-         * @return Whether the defaultValue field is set.
-         */
-        public boolean hasDefaultValue() {
-          return ((bitField0_ & 0x00000002) != 0);
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         *
-         * @return The defaultValue.
-         */
-        public com.google.protobuf.Value getDefaultValue() {
-          if (defaultValueBuilder_ == null) {
-            return defaultValue_ == null
-                ? com.google.protobuf.Value.getDefaultInstance()
-                : defaultValue_;
-          } else {
-            return defaultValueBuilder_.getMessage();
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        public Builder setDefaultValue(com.google.protobuf.Value value) {
-          if (defaultValueBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            defaultValue_ = value;
-          } else {
-            defaultValueBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000002;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        public Builder setDefaultValue(com.google.protobuf.Value.Builder builderForValue) {
-          if (defaultValueBuilder_ == null) {
-            defaultValue_ = builderForValue.build();
-          } else {
-            defaultValueBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000002;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        public Builder mergeDefaultValue(com.google.protobuf.Value value) {
-          if (defaultValueBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)
-                && defaultValue_ != null
-                && defaultValue_ != com.google.protobuf.Value.getDefaultInstance()) {
-              getDefaultValueBuilder().mergeFrom(value);
-            } else {
-              defaultValue_ = value;
-            }
-          } else {
-            defaultValueBuilder_.mergeFrom(value);
-          }
-          if (defaultValue_ != null) {
-            bitField0_ |= 0x00000002;
-            onChanged();
-          }
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        public Builder clearDefaultValue() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          defaultValue_ = null;
-          if (defaultValueBuilder_ != null) {
-            defaultValueBuilder_.dispose();
-            defaultValueBuilder_ = null;
-          }
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        public com.google.protobuf.Value.Builder getDefaultValueBuilder() {
-          bitField0_ |= 0x00000002;
-          onChanged();
-          return getDefaultValueFieldBuilder().getBuilder();
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        public com.google.protobuf.ValueOrBuilder getDefaultValueOrBuilder() {
-          if (defaultValueBuilder_ != null) {
-            return defaultValueBuilder_.getMessageOrBuilder();
-          } else {
-            return defaultValue_ == null
-                ? com.google.protobuf.Value.getDefaultInstance()
-                : defaultValue_;
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Sets the value of the parameter in an assignment if no value is given.
-         * </pre>
-         *
-         * <code>.google.protobuf.Value default_value = 2;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Value,
-                com.google.protobuf.Value.Builder,
-                com.google.protobuf.ValueOrBuilder>
-            getDefaultValueFieldBuilder() {
-          if (defaultValueBuilder_ == null) {
-            defaultValueBuilder_ =
-                new com.google.protobuf.SingleFieldBuilderV3<
-                    com.google.protobuf.Value,
-                    com.google.protobuf.Value.Builder,
-                    com.google.protobuf.ValueOrBuilder>(
-                    getDefaultValue(), getParentForChildren(), isClean());
-            defaultValue_ = null;
-          }
-          return defaultValueBuilder_;
-        }
-
-        private java.lang.Object validValuesExpr_ = "";
-
-        /**
-         *
-         *
-         * <pre>
-         * Provides a CEL expression to specify the acceptable parameter values
-         * during assignment.
-         * For example, parameterName in ("parameterValue1", "parameterValue2")
-         * </pre>
-         *
-         * <code>string valid_values_expr = 3;</code>
-         *
-         * @return The validValuesExpr.
-         */
-        public java.lang.String getValidValuesExpr() {
-          java.lang.Object ref = validValuesExpr_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            validValuesExpr_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Provides a CEL expression to specify the acceptable parameter values
-         * during assignment.
-         * For example, parameterName in ("parameterValue1", "parameterValue2")
-         * </pre>
-         *
-         * <code>string valid_values_expr = 3;</code>
-         *
-         * @return The bytes for validValuesExpr.
-         */
-        public com.google.protobuf.ByteString getValidValuesExprBytes() {
-          java.lang.Object ref = validValuesExpr_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-            validValuesExpr_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Provides a CEL expression to specify the acceptable parameter values
-         * during assignment.
-         * For example, parameterName in ("parameterValue1", "parameterValue2")
-         * </pre>
-         *
-         * <code>string valid_values_expr = 3;</code>
-         *
-         * @param value The validValuesExpr to set.
-         * @return This builder for chaining.
-         */
-        public Builder setValidValuesExpr(java.lang.String value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          validValuesExpr_ = value;
-          bitField0_ |= 0x00000004;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Provides a CEL expression to specify the acceptable parameter values
-         * during assignment.
-         * For example, parameterName in ("parameterValue1", "parameterValue2")
-         * </pre>
-         *
-         * <code>string valid_values_expr = 3;</code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearValidValuesExpr() {
-          validValuesExpr_ = getDefaultInstance().getValidValuesExpr();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Provides a CEL expression to specify the acceptable parameter values
-         * during assignment.
-         * For example, parameterName in ("parameterValue1", "parameterValue2")
-         * </pre>
-         *
-         * <code>string valid_values_expr = 3;</code>
-         *
-         * @param value The bytes for validValuesExpr to set.
-         * @return This builder for chaining.
-         */
-        public Builder setValidValuesExprBytes(com.google.protobuf.ByteString value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          checkByteStringIsUtf8(value);
-          validValuesExpr_ = value;
-          bitField0_ |= 0x00000004;
-          onChanged();
-          return this;
-        }
-
-        private com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            metadata_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata.Builder,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .MetadataOrBuilder>
-            metadataBuilder_;
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         *
-         * @return Whether the metadata field is set.
-         */
-        public boolean hasMetadata() {
-          return ((bitField0_ & 0x00000008) != 0);
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         *
-         * @return The metadata.
-         */
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata
-            getMetadata() {
-          if (metadataBuilder_ == null) {
-            return metadata_ == null
-                ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata.getDefaultInstance()
-                : metadata_;
-          } else {
-            return metadataBuilder_.getMessage();
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        public Builder setMetadata(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                value) {
-          if (metadataBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            metadata_ = value;
-          } else {
-            metadataBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000008;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        public Builder setMetadata(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                    .Builder
-                builderForValue) {
-          if (metadataBuilder_ == null) {
-            metadata_ = builderForValue.build();
-          } else {
-            metadataBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000008;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        public Builder mergeMetadata(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata
-                value) {
-          if (metadataBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)
-                && metadata_ != null
-                && metadata_
-                    != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                        .Metadata.getDefaultInstance()) {
-              getMetadataBuilder().mergeFrom(value);
-            } else {
-              metadata_ = value;
-            }
-          } else {
-            metadataBuilder_.mergeFrom(value);
-          }
-          if (metadata_ != null) {
-            bitField0_ |= 0x00000008;
-            onChanged();
-          }
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        public Builder clearMetadata() {
-          bitField0_ = (bitField0_ & ~0x00000008);
-          metadata_ = null;
-          if (metadataBuilder_ != null) {
-            metadataBuilder_.dispose();
-            metadataBuilder_ = null;
-          }
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Metadata.Builder
-            getMetadataBuilder() {
-          bitField0_ |= 0x00000008;
-          onChanged();
-          return getMetadataFieldBuilder().getBuilder();
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .MetadataOrBuilder
-            getMetadataOrBuilder() {
-          if (metadataBuilder_ != null) {
-            return metadataBuilder_.getMessageOrBuilder();
-          } else {
-            return metadata_ == null
-                ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata.getDefaultInstance()
-                : metadata_;
-          }
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Defines subproperties primarily used by the UI to display user-friendly
-         * information.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Metadata metadata = 4;
-         * </code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .Metadata.Builder,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                    .MetadataOrBuilder>
-            getMetadataFieldBuilder() {
-          if (metadataBuilder_ == null) {
-            metadataBuilder_ =
-                new com.google.protobuf.SingleFieldBuilderV3<
-                    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                        .Metadata,
-                    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                        .Metadata.Builder,
-                    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                        .MetadataOrBuilder>(getMetadata(), getParentForChildren(), isClean());
-            metadata_ = null;
-          }
-          return metadataBuilder_;
-        }
-
-        private int item_ = 0;
-
-        /**
-         *
-         *
-         * <pre>
-         * Determines the parameter's value structure.
-         * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-         * and `item: STRING`.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-         * </code>
-         *
-         * @return The enum numeric value on the wire for item.
-         */
-        @java.lang.Override
-        public int getItemValue() {
-          return item_;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Determines the parameter's value structure.
-         * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-         * and `item: STRING`.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-         * </code>
-         *
-         * @param value The enum numeric value on the wire for item to set.
-         * @return This builder for chaining.
-         */
-        public Builder setItemValue(int value) {
-          item_ = value;
-          bitField0_ |= 0x00000010;
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Determines the parameter's value structure.
-         * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-         * and `item: STRING`.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-         * </code>
-         *
-         * @return The item.
-         */
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-            getItem() {
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-              result =
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                      .forNumber(item_);
-          return result == null
-              ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                  .UNRECOGNIZED
-              : result;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Determines the parameter's value structure.
-         * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-         * and `item: STRING`.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-         * </code>
-         *
-         * @param value The item to set.
-         * @return This builder for chaining.
-         */
-        public Builder setItem(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type
-                value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000010;
-          item_ = value.getNumber();
-          onChanged();
-          return this;
-        }
-
-        /**
-         *
-         *
-         * <pre>
-         * Determines the parameter's value structure.
-         * For example, `LIST&lt;STRING&gt;` can be specified by defining `type: LIST`,
-         * and `item: STRING`.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Type item = 5;
-         * </code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearItem() {
-          bitField0_ = (bitField0_ & ~0x00000010);
-          item_ = 0;
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-        // @@protoc_insertion_point(builder_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-      }
-
-      // @@protoc_insertion_point(class_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-      private static final com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-              .Parameter
-          DEFAULT_INSTANCE;
-
-      static {
-        DEFAULT_INSTANCE =
-            new com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter();
-      }
-
-      public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<Parameter> PARSER =
-          new com.google.protobuf.AbstractParser<Parameter>() {
-            @java.lang.Override
-            public Parameter parsePartialFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-              Builder builder = newBuilder();
-              try {
-                builder.mergeFrom(input, extensionRegistry);
-              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(builder.buildPartial());
-              } catch (com.google.protobuf.UninitializedMessageException e) {
-                throw e.asInvalidProtocolBufferException()
-                    .setUnfinishedMessage(builder.buildPartial());
-              } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                    .setUnfinishedMessage(builder.buildPartial());
-              }
-              return builder.buildPartial();
-            }
-          };
-
-      public static com.google.protobuf.Parser<Parameter> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Parameter> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-    }
-
-    public static final int RESOURCE_TYPES_FIELD_NUMBER = 1;
-
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList resourceTypes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @return A list containing the resourceTypes.
-     */
-    public com.google.protobuf.ProtocolStringList getResourceTypesList() {
-      return resourceTypes_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @return The count of resourceTypes.
-     */
-    public int getResourceTypesCount() {
-      return resourceTypes_.size();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The resourceTypes at the given index.
-     */
-    public java.lang.String getResourceTypes(int index) {
-      return resourceTypes_.get(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The resource instance type on which this policy applies. Format will be
-     * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-     *
-     *  * `compute.googleapis.com/Instance`.
-     * </pre>
-     *
-     * <code>repeated string resource_types = 1;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the resourceTypes at the given index.
-     */
-    public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
-      return resourceTypes_.getByteString(index);
-    }
-
-    public static final int METHOD_TYPES_FIELD_NUMBER = 2;
-
-    @SuppressWarnings("serial")
-    private java.util.List<java.lang.Integer> methodTypes_;
-
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-            java.lang.Integer,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>
-        methodTypes_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>() {
-              public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType
-                  convert(java.lang.Integer from) {
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType
-                    result =
-                        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                            .MethodType.forNumber(from);
-                return result == null
-                    ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType
-                        .UNRECOGNIZED
-                    : result;
-              }
-            };
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @return A list containing the methodTypes.
-     */
-    @java.lang.Override
-    public java.util.List<
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>
-        getMethodTypesList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer,
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>(
-          methodTypes_, methodTypes_converter_);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @return The count of methodTypes.
-     */
-    @java.lang.Override
-    public int getMethodTypesCount() {
-      return methodTypes_.size();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @param index The index of the element to return.
-     * @return The methodTypes at the given index.
-     */
-    @java.lang.Override
-    public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType
-        getMethodTypes(int index) {
-      return methodTypes_converter_.convert(methodTypes_.get(index));
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @return A list containing the enum numeric values on the wire for methodTypes.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer> getMethodTypesValueList() {
-      return methodTypes_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * All the operations being applied for this constraint.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-     * </code>
-     *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of methodTypes at the given index.
-     */
-    @java.lang.Override
-    public int getMethodTypesValue(int index) {
-      return methodTypes_.get(index);
-    }
-
-    private int methodTypesMemoizedSerializedSize;
-
-    public static final int CONDITION_FIELD_NUMBER = 3;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object condition_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Org policy condition/expression. For example:
-     * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-     * `resource.management.auto_upgrade == true`
-     *
-     * The max length of the condition is 1000 characters.
-     * </pre>
-     *
-     * <code>string condition = 3;</code>
-     *
-     * @return The condition.
-     */
-    @java.lang.Override
-    public java.lang.String getCondition() {
-      java.lang.Object ref = condition_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        condition_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Org policy condition/expression. For example:
-     * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-     * `resource.management.auto_upgrade == true`
-     *
-     * The max length of the condition is 1000 characters.
-     * </pre>
-     *
-     * <code>string condition = 3;</code>
-     *
-     * @return The bytes for condition.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getConditionBytes() {
-      java.lang.Object ref = condition_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        condition_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ACTION_TYPE_FIELD_NUMBER = 4;
-    private int actionType_ = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * Allow or deny type.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-     * </code>
-     *
-     * @return The enum numeric value on the wire for actionType.
-     */
-    @java.lang.Override
-    public int getActionTypeValue() {
-      return actionType_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Allow or deny type.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-     * </code>
-     *
-     * @return The actionType.
-     */
-    @java.lang.Override
-    public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-        getActionType() {
-      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType result =
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType.forNumber(
-              actionType_);
-      return result == null
-          ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-              .UNRECOGNIZED
-          : result;
-    }
-
-    public static final int PARAMETERS_FIELD_NUMBER = 5;
-
-    private static final class ParametersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          defaultEntry =
-              com.google.protobuf.MapEntry
-                  .<java.lang.String,
-                      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-                      newDefaultInstance(
-                          com.google.cloud.orgpolicy.v2.ConstraintProto
-                              .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_ParametersEntry_descriptor,
-                          com.google.protobuf.WireFormat.FieldType.STRING,
-                          "",
-                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                              .Parameter.getDefaultInstance());
-    }
-
-    @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<
-            java.lang.String,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-        parameters_;
-
-    private com.google.protobuf.MapField<
-            java.lang.String,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-        internalGetParameters() {
-      if (parameters_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ParametersDefaultEntryHolder.defaultEntry);
-      }
-      return parameters_;
-    }
-
-    public int getParametersCount() {
-      return internalGetParameters().getMap().size();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    @java.lang.Override
-    public boolean containsParameters(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      return internalGetParameters().getMap().containsKey(key);
-    }
-
-    /** Use {@link #getParametersMap()} instead. */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<
-            java.lang.String,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-        getParameters() {
-      return getParametersMap();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    @java.lang.Override
-    public java.util.Map<
-            java.lang.String,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-        getParametersMap() {
-      return internalGetParameters().getMap();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    @java.lang.Override
-    public /* nullable */ com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-            .Parameter
-        getParametersOrDefault(
-            java.lang.String key,
-            /* nullable */
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          map = internalGetParameters().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Stores the structure of
-     * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-     * used by the constraint condition. The key of `map` represents the name of
-     * the parameter.
-     * </pre>
-     *
-     * <code>
-     * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-        getParametersOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          map = internalGetParameters().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      getSerializedSize();
-      for (int i = 0; i < resourceTypes_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceTypes_.getRaw(i));
-      }
-      if (getMethodTypesList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(methodTypesMemoizedSerializedSize);
-      }
-      for (int i = 0; i < methodTypes_.size(); i++) {
-        output.writeEnumNoTag(methodTypes_.get(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, condition_);
-      }
-      if (actionType_
-          != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-              .ACTION_TYPE_UNSPECIFIED
-              .getNumber()) {
-        output.writeEnum(4, actionType_);
-      }
-      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-          output, internalGetParameters(), ParametersDefaultEntryHolder.defaultEntry, 5);
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < resourceTypes_.size(); i++) {
-          dataSize += computeStringSizeNoTag(resourceTypes_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getResourceTypesList().size();
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < methodTypes_.size(); i++) {
-          dataSize +=
-              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(methodTypes_.get(i));
-        }
-        size += dataSize;
-        if (!getMethodTypesList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
-        }
-        methodTypesMemoizedSerializedSize = dataSize;
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, condition_);
-      }
-      if (actionType_
-          != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-              .ACTION_TYPE_UNSPECIFIED
-              .getNumber()) {
-        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, actionType_);
-      }
-      for (java.util.Map.Entry<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          entry : internalGetParameters().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<
-                java.lang.String,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-            parameters__ =
-                ParametersDefaultEntryHolder.defaultEntry
-                    .newBuilderForType()
-                    .setKey(entry.getKey())
-                    .setValue(entry.getValue())
-                    .build();
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, parameters__);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition other =
-          (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition) obj;
-
-      if (!getResourceTypesList().equals(other.getResourceTypesList())) return false;
-      if (!methodTypes_.equals(other.methodTypes_)) return false;
-      if (!getCondition().equals(other.getCondition())) return false;
-      if (actionType_ != other.actionType_) return false;
-      if (!internalGetParameters().equals(other.internalGetParameters())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getResourceTypesCount() > 0) {
-        hash = (37 * hash) + RESOURCE_TYPES_FIELD_NUMBER;
-        hash = (53 * hash) + getResourceTypesList().hashCode();
-      }
-      if (getMethodTypesCount() > 0) {
-        hash = (37 * hash) + METHOD_TYPES_FIELD_NUMBER;
-        hash = (53 * hash) + methodTypes_.hashCode();
-      }
-      hash = (37 * hash) + CONDITION_FIELD_NUMBER;
-      hash = (53 * hash) + getCondition().hashCode();
-      hash = (37 * hash) + ACTION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + actionType_;
-      if (!internalGetParameters().getMap().isEmpty()) {
-        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetParameters().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition)
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.orgpolicy.v2.ConstraintProto
-            .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 5:
-            return internalGetParameters();
-          default:
-            throw new RuntimeException("Invalid map field number: " + number);
-        }
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 5:
-            return internalGetMutableParameters();
-          default:
-            throw new RuntimeException("Invalid map field number: " + number);
-        }
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.orgpolicy.v2.ConstraintProto
-            .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.class,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        methodTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        condition_ = "";
-        actionType_ = 0;
-        internalGetMutableParameters().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.orgpolicy.v2.ConstraintProto
-            .internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-          getDefaultInstanceForType() {
-        return com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition build() {
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition buildPartial() {
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition result =
-            new com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          methodTypes_ = java.util.Collections.unmodifiableList(methodTypes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.methodTypes_ = methodTypes_;
-      }
-
-      private void buildPartial0(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          resourceTypes_.makeImmutable();
-          result.resourceTypes_ = resourceTypes_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.condition_ = condition_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.actionType_ = actionType_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.parameters_ =
-              internalGetParameters().build(ParametersDefaultEntryHolder.defaultEntry);
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition) {
-          return mergeFrom(
-              (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition other) {
-        if (other
-            == com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                .getDefaultInstance()) return this;
-        if (!other.resourceTypes_.isEmpty()) {
-          if (resourceTypes_.isEmpty()) {
-            resourceTypes_ = other.resourceTypes_;
-            bitField0_ |= 0x00000001;
-          } else {
-            ensureResourceTypesIsMutable();
-            resourceTypes_.addAll(other.resourceTypes_);
-          }
-          onChanged();
-        }
-        if (!other.methodTypes_.isEmpty()) {
-          if (methodTypes_.isEmpty()) {
-            methodTypes_ = other.methodTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureMethodTypesIsMutable();
-            methodTypes_.addAll(other.methodTypes_);
-          }
-          onChanged();
-        }
-        if (!other.getCondition().isEmpty()) {
-          condition_ = other.condition_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (other.actionType_ != 0) {
-          setActionTypeValue(other.getActionTypeValue());
-        }
-        internalGetMutableParameters().mergeFrom(other.internalGetParameters());
-        bitField0_ |= 0x00000010;
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  ensureResourceTypesIsMutable();
-                  resourceTypes_.add(s);
-                  break;
-                } // case 10
-              case 16:
-                {
-                  int tmpRaw = input.readEnum();
-                  ensureMethodTypesIsMutable();
-                  methodTypes_.add(tmpRaw);
-                  break;
-                } // case 16
-              case 18:
-                {
-                  int length = input.readRawVarint32();
-                  int oldLimit = input.pushLimit(length);
-                  while (input.getBytesUntilLimit() > 0) {
-                    int tmpRaw = input.readEnum();
-                    ensureMethodTypesIsMutable();
-                    methodTypes_.add(tmpRaw);
-                  }
-                  input.popLimit(oldLimit);
-                  break;
-                } // case 18
-              case 26:
-                {
-                  condition_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 26
-              case 32:
-                {
-                  actionType_ = input.readEnum();
-                  bitField0_ |= 0x00000008;
-                  break;
-                } // case 32
-              case 42:
-                {
-                  com.google.protobuf.MapEntry<
-                          java.lang.String,
-                          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                              .Parameter>
-                      parameters__ =
-                          input.readMessage(
-                              ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
-                              extensionRegistry);
-                  internalGetMutableParameters()
-                      .ensureBuilderMap()
-                      .put(parameters__.getKey(), parameters__.getValue());
-                  bitField0_ |= 0x00000010;
-                  break;
-                } // case 42
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.protobuf.LazyStringArrayList resourceTypes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-
-      private void ensureResourceTypesIsMutable() {
-        if (!resourceTypes_.isModifiable()) {
-          resourceTypes_ = new com.google.protobuf.LazyStringArrayList(resourceTypes_);
-        }
-        bitField0_ |= 0x00000001;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @return A list containing the resourceTypes.
-       */
-      public com.google.protobuf.ProtocolStringList getResourceTypesList() {
-        resourceTypes_.makeImmutable();
-        return resourceTypes_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @return The count of resourceTypes.
-       */
-      public int getResourceTypesCount() {
-        return resourceTypes_.size();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @param index The index of the element to return.
-       * @return The resourceTypes at the given index.
-       */
-      public java.lang.String getResourceTypes(int index) {
-        return resourceTypes_.get(index);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @param index The index of the value to return.
-       * @return The bytes of the resourceTypes at the given index.
-       */
-      public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
-        return resourceTypes_.getByteString(index);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @param index The index to set the value at.
-       * @param value The resourceTypes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResourceTypes(int index, java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureResourceTypesIsMutable();
-        resourceTypes_.set(index, value);
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @param value The resourceTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addResourceTypes(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureResourceTypesIsMutable();
-        resourceTypes_.add(value);
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @param values The resourceTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllResourceTypes(java.lang.Iterable<java.lang.String> values) {
-        ensureResourceTypesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceTypes_);
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearResourceTypes() {
-        resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        ;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The resource instance type on which this policy applies. Format will be
-       * of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
-       *
-       *  * `compute.googleapis.com/Instance`.
-       * </pre>
-       *
-       * <code>repeated string resource_types = 1;</code>
-       *
-       * @param value The bytes of the resourceTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addResourceTypesBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        ensureResourceTypesIsMutable();
-        resourceTypes_.add(value);
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<java.lang.Integer> methodTypes_ = java.util.Collections.emptyList();
-
-      private void ensureMethodTypesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          methodTypes_ = new java.util.ArrayList<java.lang.Integer>(methodTypes_);
-          bitField0_ |= 0x00000002;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @return A list containing the methodTypes.
-       */
-      public java.util.List<
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>
-          getMethodTypesList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer,
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType>(
-            methodTypes_, methodTypes_converter_);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @return The count of methodTypes.
-       */
-      public int getMethodTypesCount() {
-        return methodTypes_.size();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param index The index of the element to return.
-       * @return The methodTypes at the given index.
-       */
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType
-          getMethodTypes(int index) {
-        return methodTypes_converter_.convert(methodTypes_.get(index));
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param index The index to set the value at.
-       * @param value The methodTypes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMethodTypes(
-          int index,
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureMethodTypesIsMutable();
-        methodTypes_.set(index, value.getNumber());
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param value The methodTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMethodTypes(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureMethodTypesIsMutable();
-        methodTypes_.add(value.getNumber());
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param values The methodTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMethodTypes(
-          java.lang.Iterable<
-                  ? extends
-                      com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                          .MethodType>
-              values) {
-        ensureMethodTypesIsMutable();
-        for (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType value :
-            values) {
-          methodTypes_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearMethodTypes() {
-        methodTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @return A list containing the enum numeric values on the wire for methodTypes.
-       */
-      public java.util.List<java.lang.Integer> getMethodTypesValueList() {
-        return java.util.Collections.unmodifiableList(methodTypes_);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of methodTypes at the given index.
-       */
-      public int getMethodTypesValue(int index) {
-        return methodTypes_.get(index);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param index The index to set the value at.
-       * @param value The enum numeric value on the wire for methodTypes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMethodTypesValue(int index, int value) {
-        ensureMethodTypesIsMutable();
-        methodTypes_.set(index, value);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param value The enum numeric value on the wire for methodTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMethodTypesValue(int value) {
-        ensureMethodTypesIsMutable();
-        methodTypes_.add(value);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * All the operations being applied for this constraint.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.MethodType method_types = 2;
-       * </code>
-       *
-       * @param values The enum numeric values on the wire for methodTypes to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMethodTypesValue(java.lang.Iterable<java.lang.Integer> values) {
-        ensureMethodTypesIsMutable();
-        for (int value : values) {
-          methodTypes_.add(value);
-        }
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object condition_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Org policy condition/expression. For example:
-       * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-       * `resource.management.auto_upgrade == true`
-       *
-       * The max length of the condition is 1000 characters.
-       * </pre>
-       *
-       * <code>string condition = 3;</code>
-       *
-       * @return The condition.
-       */
-      public java.lang.String getCondition() {
-        java.lang.Object ref = condition_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          condition_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Org policy condition/expression. For example:
-       * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-       * `resource.management.auto_upgrade == true`
-       *
-       * The max length of the condition is 1000 characters.
-       * </pre>
-       *
-       * <code>string condition = 3;</code>
-       *
-       * @return The bytes for condition.
-       */
-      public com.google.protobuf.ByteString getConditionBytes() {
-        java.lang.Object ref = condition_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          condition_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Org policy condition/expression. For example:
-       * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-       * `resource.management.auto_upgrade == true`
-       *
-       * The max length of the condition is 1000 characters.
-       * </pre>
-       *
-       * <code>string condition = 3;</code>
-       *
-       * @param value The condition to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCondition(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        condition_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Org policy condition/expression. For example:
-       * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-       * `resource.management.auto_upgrade == true`
-       *
-       * The max length of the condition is 1000 characters.
-       * </pre>
-       *
-       * <code>string condition = 3;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearCondition() {
-        condition_ = getDefaultInstance().getCondition();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Org policy condition/expression. For example:
-       * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
-       * `resource.management.auto_upgrade == true`
-       *
-       * The max length of the condition is 1000 characters.
-       * </pre>
-       *
-       * <code>string condition = 3;</code>
-       *
-       * @param value The bytes for condition to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConditionBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        condition_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private int actionType_ = 0;
-
-      /**
-       *
-       *
-       * <pre>
-       * Allow or deny type.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-       * </code>
-       *
-       * @return The enum numeric value on the wire for actionType.
-       */
-      @java.lang.Override
-      public int getActionTypeValue() {
-        return actionType_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Allow or deny type.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-       * </code>
-       *
-       * @param value The enum numeric value on the wire for actionType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActionTypeValue(int value) {
-        actionType_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Allow or deny type.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-       * </code>
-       *
-       * @return The actionType.
-       */
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-          getActionType() {
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType result =
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-                .forNumber(actionType_);
-        return result == null
-            ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType
-                .UNRECOGNIZED
-            : result;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Allow or deny type.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-       * </code>
-       *
-       * @param value The actionType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActionType(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000008;
-        actionType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Allow or deny type.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ActionType action_type = 4;
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearActionType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        actionType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private static final class ParametersConverter
-          implements com.google.protobuf.MapFieldBuilder.Converter<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                  .ParameterOrBuilder,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter> {
-        @java.lang.Override
-        public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter build(
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ParameterOrBuilder
-                val) {
-          if (val
-              instanceof
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter) {
-            return (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-                val;
-          }
-          return ((com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                      .Builder)
-                  val)
-              .build();
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.MapEntry<
-                java.lang.String,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-            defaultEntry() {
-          return ParametersDefaultEntryHolder.defaultEntry;
-        }
-      }
-      ;
-
-      private static final ParametersConverter parametersConverter = new ParametersConverter();
-
-      private com.google.protobuf.MapFieldBuilder<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                  .ParameterOrBuilder,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Builder>
-          parameters_;
-
-      private com.google.protobuf.MapFieldBuilder<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                  .ParameterOrBuilder,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Builder>
-          internalGetParameters() {
-        if (parameters_ == null) {
-          return new com.google.protobuf.MapFieldBuilder<>(parametersConverter);
-        }
-        return parameters_;
-      }
-
-      private com.google.protobuf.MapFieldBuilder<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                  .ParameterOrBuilder,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Builder>
-          internalGetMutableParameters() {
-        if (parameters_ == null) {
-          parameters_ = new com.google.protobuf.MapFieldBuilder<>(parametersConverter);
-        }
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return parameters_;
-      }
-
-      public int getParametersCount() {
-        return internalGetParameters().ensureBuilderMap().size();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      @java.lang.Override
-      public boolean containsParameters(java.lang.String key) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        return internalGetParameters().ensureBuilderMap().containsKey(key);
-      }
-
-      /** Use {@link #getParametersMap()} instead. */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          getParameters() {
-        return getParametersMap();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      @java.lang.Override
-      public java.util.Map<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          getParametersMap() {
-        return internalGetParameters().getImmutableMap();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      @java.lang.Override
-      public /* nullable */ com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-              .Parameter
-          getParametersOrDefault(
-              java.lang.String key,
-              /* nullable */
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  defaultValue) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        java.util.Map<
-                java.lang.String,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                    .ParameterOrBuilder>
-            map = internalGetMutableParameters().ensureBuilderMap();
-        return map.containsKey(key) ? parametersConverter.build(map.get(key)) : defaultValue;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      @java.lang.Override
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-          getParametersOrThrow(java.lang.String key) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        java.util.Map<
-                java.lang.String,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                    .ParameterOrBuilder>
-            map = internalGetMutableParameters().ensureBuilderMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return parametersConverter.build(map.get(key));
-      }
-
-      public Builder clearParameters() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        internalGetMutableParameters().clear();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      public Builder removeParameters(java.lang.String key) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        internalGetMutableParameters().ensureBuilderMap().remove(key);
-        return this;
-      }
-
-      /** Use alternate mutation accessors instead. */
-      @java.lang.Deprecated
-      public java.util.Map<
-              java.lang.String,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-          getMutableParameters() {
-        bitField0_ |= 0x00000010;
-        return internalGetMutableParameters().ensureMessageMap();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      public Builder putParameters(
-          java.lang.String key,
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter value) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        if (value == null) {
-          throw new NullPointerException("map value");
-        }
-        internalGetMutableParameters().ensureBuilderMap().put(key, value);
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      public Builder putAllParameters(
-          java.util.Map<
-                  java.lang.String,
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-              values) {
-        for (java.util.Map.Entry<
-                java.lang.String,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter>
-            e : values.entrySet()) {
-          if (e.getKey() == null || e.getValue() == null) {
-            throw new NullPointerException();
-          }
-        }
-        internalGetMutableParameters().ensureBuilderMap().putAll(values);
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Stores the structure of
-       * [`Parameters`][google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter]
-       * used by the constraint condition. The key of `map` represents the name of
-       * the parameter.
-       * </pre>
-       *
-       * <code>
-       * map&lt;string, .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter&gt; parameters = 5;
-       * </code>
-       */
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter.Builder
-          putParametersBuilderIfAbsent(java.lang.String key) {
-        java.util.Map<
-                java.lang.String,
-                com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                    .ParameterOrBuilder>
-            builderMap = internalGetMutableParameters().ensureBuilderMap();
-        com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.ParameterOrBuilder
-            entry = builderMap.get(key);
-        if (entry == null) {
-          entry =
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                  .newBuilder();
-          builderMap.put(key, entry);
-        }
-        if (entry
-            instanceof
-            com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter) {
-          entry =
-              ((com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter)
-                      entry)
-                  .toBuilder();
-          builderMap.put(key, entry);
-        }
-        return (com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Parameter
-                .Builder)
-            entry;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition)
-    private static final com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition();
-    }
-
-    public static com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CustomConstraintDefinition> PARSER =
-        new com.google.protobuf.AbstractParser<CustomConstraintDefinition>() {
-          @java.lang.Override
-          public CustomConstraintDefinition parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<CustomConstraintDefinition> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CustomConstraintDefinition> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   public interface BooleanConstraintOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.orgpolicy.v2.Constraint.BooleanConstraint)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-     * </code>
-     *
-     * @return Whether the customConstraintDefinition field is set.
-     */
-    boolean hasCustomConstraintDefinition();
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-     * </code>
-     *
-     * @return The customConstraintDefinition.
-     */
-    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        getCustomConstraintDefinition();
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-     * </code>
-     */
-    com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder
-        getCustomConstraintDefinitionOrBuilder();
-  }
-
+      com.google.protobuf.MessageOrBuilder {}
   /**
    *
    *
    * <pre>
-   * A constraint type is enforced or not enforced, which is configured in the
-   * [`PolicyRule`][google.cloud.orgpolicy.v2.PolicySpec.PolicyRule].
+   * A constraint that is either enforced or not.
    *
-   * If `customConstraintDefinition` is defined, this constraint is a managed
-   * constraint.
+   * For example, a constraint `constraints/compute.disableSerialPortAccess`.
+   * If it is enforced on a VM instance, serial port connections will not be
+   * opened to that instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.BooleanConstraint}
@@ -6736,7 +943,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.Constraint.BooleanConstraint)
       BooleanConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BooleanConstraint.newBuilder() to construct.
     private BooleanConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6765,69 +971,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int CUSTOM_CONSTRAINT_DEFINITION_FIELD_NUMBER = 1;
-    private com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        customConstraintDefinition_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-     * </code>
-     *
-     * @return Whether the customConstraintDefinition field is set.
-     */
-    @java.lang.Override
-    public boolean hasCustomConstraintDefinition() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-     * </code>
-     *
-     * @return The customConstraintDefinition.
-     */
-    @java.lang.Override
-    public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-        getCustomConstraintDefinition() {
-      return customConstraintDefinition_ == null
-          ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.getDefaultInstance()
-          : customConstraintDefinition_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom constraint definition. Defines this as a managed constraint.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder
-        getCustomConstraintDefinitionOrBuilder() {
-      return customConstraintDefinition_ == null
-          ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.getDefaultInstance()
-          : customConstraintDefinition_;
-    }
-
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6842,9 +985,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(1, getCustomConstraintDefinition());
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6854,11 +994,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                1, getCustomConstraintDefinition());
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6875,11 +1010,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint other =
           (com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint) obj;
 
-      if (hasCustomConstraintDefinition() != other.hasCustomConstraintDefinition()) return false;
-      if (hasCustomConstraintDefinition()) {
-        if (!getCustomConstraintDefinition().equals(other.getCustomConstraintDefinition()))
-          return false;
-      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6891,10 +1021,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCustomConstraintDefinition()) {
-        hash = (37 * hash) + CUSTOM_CONSTRAINT_DEFINITION_FIELD_NUMBER;
-        hash = (53 * hash) + getCustomConstraintDefinition().hashCode();
-      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6997,16 +1123,15 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
      * <pre>
-     * A constraint type is enforced or not enforced, which is configured in the
-     * [`PolicyRule`][google.cloud.orgpolicy.v2.PolicySpec.PolicyRule].
+     * A constraint that is either enforced or not.
      *
-     * If `customConstraintDefinition` is defined, this constraint is a managed
-     * constraint.
+     * For example, a constraint `constraints/compute.disableSerialPortAccess`.
+     * If it is enforced on a VM instance, serial port connections will not be
+     * opened to that instance.
      * </pre>
      *
      * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.BooleanConstraint}
@@ -7032,30 +1157,15 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getCustomConstraintDefinitionFieldBuilder();
-        }
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        customConstraintDefinition_ = null;
-        if (customConstraintDefinitionBuilder_ != null) {
-          customConstraintDefinitionBuilder_.dispose();
-          customConstraintDefinitionBuilder_ = null;
-        }
         return this;
       }
 
@@ -7084,25 +1194,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint buildPartial() {
         com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint result =
             new com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(
-          com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.customConstraintDefinition_ =
-              customConstraintDefinitionBuilder_ == null
-                  ? customConstraintDefinition_
-                  : customConstraintDefinitionBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -7154,9 +1247,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance())
           return this;
-        if (other.hasCustomConstraintDefinition()) {
-          mergeCustomConstraintDefinition(other.getCustomConstraintDefinition());
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7183,13 +1273,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
-              case 10:
-                {
-                  input.readMessage(
-                      getCustomConstraintDefinitionFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7205,232 +1288,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
           onChanged();
         } // finally
         return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-          customConstraintDefinition_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder>
-          customConstraintDefinitionBuilder_;
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       *
-       * @return Whether the customConstraintDefinition field is set.
-       */
-      public boolean hasCustomConstraintDefinition() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       *
-       * @return The customConstraintDefinition.
-       */
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-          getCustomConstraintDefinition() {
-        if (customConstraintDefinitionBuilder_ == null) {
-          return customConstraintDefinition_ == null
-              ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                  .getDefaultInstance()
-              : customConstraintDefinition_;
-        } else {
-          return customConstraintDefinitionBuilder_.getMessage();
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      public Builder setCustomConstraintDefinition(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition value) {
-        if (customConstraintDefinitionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          customConstraintDefinition_ = value;
-        } else {
-          customConstraintDefinitionBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      public Builder setCustomConstraintDefinition(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder
-              builderForValue) {
-        if (customConstraintDefinitionBuilder_ == null) {
-          customConstraintDefinition_ = builderForValue.build();
-        } else {
-          customConstraintDefinitionBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      public Builder mergeCustomConstraintDefinition(
-          com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition value) {
-        if (customConstraintDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)
-              && customConstraintDefinition_ != null
-              && customConstraintDefinition_
-                  != com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                      .getDefaultInstance()) {
-            getCustomConstraintDefinitionBuilder().mergeFrom(value);
-          } else {
-            customConstraintDefinition_ = value;
-          }
-        } else {
-          customConstraintDefinitionBuilder_.mergeFrom(value);
-        }
-        if (customConstraintDefinition_ != null) {
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      public Builder clearCustomConstraintDefinition() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        customConstraintDefinition_ = null;
-        if (customConstraintDefinitionBuilder_ != null) {
-          customConstraintDefinitionBuilder_.dispose();
-          customConstraintDefinitionBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder
-          getCustomConstraintDefinitionBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getCustomConstraintDefinitionFieldBuilder().getBuilder();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      public com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder
-          getCustomConstraintDefinitionOrBuilder() {
-        if (customConstraintDefinitionBuilder_ != null) {
-          return customConstraintDefinitionBuilder_.getMessageOrBuilder();
-        } else {
-          return customConstraintDefinition_ == null
-              ? com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition
-                  .getDefaultInstance()
-              : customConstraintDefinition_;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Custom constraint definition. Defines this as a managed constraint.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition custom_constraint_definition = 1;
-       * </code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder,
-              com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder>
-          getCustomConstraintDefinitionFieldBuilder() {
-        if (customConstraintDefinitionBuilder_ == null) {
-          customConstraintDefinitionBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition,
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinition.Builder,
-                  com.google.cloud.orgpolicy.v2.Constraint.CustomConstraintDefinitionOrBuilder>(
-                  getCustomConstraintDefinition(), getParentForChildren(), isClean());
-          customConstraintDefinition_ = null;
-        }
-        return customConstraintDefinitionBuilder_;
       }
 
       @java.lang.Override
@@ -7515,7 +1372,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     private ConstraintTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -7552,7 +1408,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -7583,7 +1438,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -7619,7 +1473,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -7645,7 +1498,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -7676,7 +1528,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -7703,7 +1554,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -7733,7 +1583,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSTRAINT_DEFAULT_FIELD_NUMBER = 4;
   private int constraintDefault_ = 0;
-
   /**
    *
    *
@@ -7749,7 +1598,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public int getConstraintDefaultValue() {
     return constraintDefault_;
   }
-
   /**
    *
    *
@@ -7771,12 +1619,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIST_CONSTRAINT_FIELD_NUMBER = 5;
-
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a list constraint.
+   * Defines this constraint as being a ListConstraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -7787,12 +1634,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasListConstraint() {
     return constraintTypeCase_ == 5;
   }
-
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a list constraint.
+   * Defines this constraint as being a ListConstraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -7806,12 +1652,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.getDefaultInstance();
   }
-
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a list constraint.
+   * Defines this constraint as being a ListConstraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -7826,12 +1671,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOLEAN_CONSTRAINT_FIELD_NUMBER = 6;
-
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a boolean constraint.
+   * Defines this constraint as being a BooleanConstraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -7842,12 +1686,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBooleanConstraint() {
     return constraintTypeCase_ == 6;
   }
-
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a boolean constraint.
+   * Defines this constraint as being a BooleanConstraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -7861,12 +1704,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
   }
-
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a boolean constraint.
+   * Defines this constraint as being a BooleanConstraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -7882,7 +1724,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUPPORTS_DRY_RUN_FIELD_NUMBER = 7;
   private boolean supportsDryRun_ = false;
-
   /**
    *
    *
@@ -7897,80 +1738,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getSupportsDryRun() {
     return supportsDryRun_;
-  }
-
-  public static final int EQUIVALENT_CONSTRAINT_FIELD_NUMBER = 8;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object equivalentConstraint_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * Managed constraint and canned constraint sometimes can have
-   * equivalents. This field is used to store the equivalent constraint name.
-   * </pre>
-   *
-   * <code>string equivalent_constraint = 8;</code>
-   *
-   * @return The equivalentConstraint.
-   */
-  @java.lang.Override
-  public java.lang.String getEquivalentConstraint() {
-    java.lang.Object ref = equivalentConstraint_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      equivalentConstraint_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Managed constraint and canned constraint sometimes can have
-   * equivalents. This field is used to store the equivalent constraint name.
-   * </pre>
-   *
-   * <code>string equivalent_constraint = 8;</code>
-   *
-   * @return The bytes for equivalentConstraint.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getEquivalentConstraintBytes() {
-    java.lang.Object ref = equivalentConstraint_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      equivalentConstraint_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SUPPORTS_SIMULATION_FIELD_NUMBER = 9;
-  private boolean supportsSimulation_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Shows if simulation is supported for this constraint or not.
-   * </pre>
-   *
-   * <code>bool supports_simulation = 9;</code>
-   *
-   * @return The supportsSimulation.
-   */
-  @java.lang.Override
-  public boolean getSupportsSimulation() {
-    return supportsSimulation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -8012,12 +1779,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     if (supportsDryRun_ != false) {
       output.writeBool(7, supportsDryRun_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(equivalentConstraint_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, equivalentConstraint_);
-    }
-    if (supportsSimulation_ != false) {
-      output.writeBool(9, supportsSimulation_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8054,12 +1815,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     if (supportsDryRun_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, supportsDryRun_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(equivalentConstraint_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, equivalentConstraint_);
-    }
-    if (supportsSimulation_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, supportsSimulation_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8080,8 +1835,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (constraintDefault_ != other.constraintDefault_) return false;
     if (getSupportsDryRun() != other.getSupportsDryRun()) return false;
-    if (!getEquivalentConstraint().equals(other.getEquivalentConstraint())) return false;
-    if (getSupportsSimulation() != other.getSupportsSimulation()) return false;
     if (!getConstraintTypeCase().equals(other.getConstraintTypeCase())) return false;
     switch (constraintTypeCase_) {
       case 5:
@@ -8114,10 +1867,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + constraintDefault_;
     hash = (37 * hash) + SUPPORTS_DRY_RUN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsDryRun());
-    hash = (37 * hash) + EQUIVALENT_CONSTRAINT_FIELD_NUMBER;
-    hash = (53 * hash) + getEquivalentConstraint().hashCode();
-    hash = (37 * hash) + SUPPORTS_SIMULATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsSimulation());
     switch (constraintTypeCase_) {
       case 5:
         hash = (37 * hash) + LIST_CONSTRAINT_FIELD_NUMBER;
@@ -8230,7 +1979,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -8243,8 +1991,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * organization by setting a policy that includes constraints at different
    * locations in the organization's resource hierarchy. Policies are inherited
    * down the resource hierarchy from higher levels, but can also be overridden.
-   * For details about the inheritance rules, see
-   * [`Policy`][google.cloud.orgpolicy.v2.Policy].
+   * For details about the inheritance rules please read about
+   * [`policies`][google.cloud.OrgPolicy.v2.Policy].
    *
    * Constraints have a default behavior determined by the `constraint_default`
    * field, which is the enforcement behavior that is used in the absence of a
@@ -8294,8 +2042,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         booleanConstraintBuilder_.clear();
       }
       supportsDryRun_ = false;
-      equivalentConstraint_ = "";
-      supportsSimulation_ = false;
       constraintTypeCase_ = 0;
       constraintType_ = null;
       return this;
@@ -8349,12 +2095,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.supportsDryRun_ = supportsDryRun_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.equivalentConstraint_ = equivalentConstraint_;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.supportsSimulation_ = supportsSimulation_;
       }
     }
 
@@ -8434,14 +2174,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSupportsDryRun() != false) {
         setSupportsDryRun(other.getSupportsDryRun());
-      }
-      if (!other.getEquivalentConstraint().isEmpty()) {
-        equivalentConstraint_ = other.equivalentConstraint_;
-        bitField0_ |= 0x00000080;
-        onChanged();
-      }
-      if (other.getSupportsSimulation() != false) {
-        setSupportsSimulation(other.getSupportsSimulation());
       }
       switch (other.getConstraintTypeCase()) {
         case LIST_CONSTRAINT:
@@ -8528,18 +2260,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
-            case 66:
-              {
-                equivalentConstraint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 66
-            case 72:
-              {
-                supportsSimulation_ = input.readBool();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8574,7 +2294,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -8604,7 +2323,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8634,7 +2352,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8663,7 +2380,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8688,7 +2404,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8720,7 +2435,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -8745,7 +2459,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8770,7 +2483,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8794,7 +2506,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8814,7 +2525,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8841,7 +2551,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -8867,7 +2576,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8893,7 +2601,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8918,7 +2625,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8939,7 +2645,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8967,7 +2672,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int constraintDefault_ = 0;
-
     /**
      *
      *
@@ -8983,7 +2687,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public int getConstraintDefaultValue() {
       return constraintDefault_;
     }
-
     /**
      *
      *
@@ -9002,7 +2705,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9022,7 +2724,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -9045,7 +2746,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9069,12 +2769,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.Builder,
             com.google.cloud.orgpolicy.v2.Constraint.ListConstraintOrBuilder>
         listConstraintBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9085,12 +2784,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasListConstraint() {
       return constraintTypeCase_ == 5;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9111,12 +2809,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.getDefaultInstance();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9135,12 +2832,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9156,12 +2852,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9191,12 +2886,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9217,12 +2911,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9231,12 +2924,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getListConstraintBuilder() {
       return getListConstraintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9253,12 +2945,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.ListConstraint.getDefaultInstance();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a list constraint.
+     * Defines this constraint as being a ListConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -9293,12 +2984,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.Builder,
             com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraintOrBuilder>
         booleanConstraintBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9309,12 +2999,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBooleanConstraint() {
       return constraintTypeCase_ == 6;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9335,12 +3024,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9359,12 +3047,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9380,12 +3067,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9416,12 +3102,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9442,12 +3127,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9456,12 +3140,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         getBooleanConstraintBuilder() {
       return getBooleanConstraintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9478,12 +3161,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Defines this constraint as being a boolean constraint.
+     * Defines this constraint as being a BooleanConstraint.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -9514,7 +3196,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean supportsDryRun_;
-
     /**
      *
      *
@@ -9530,7 +3211,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public boolean getSupportsDryRun() {
       return supportsDryRun_;
     }
-
     /**
      *
      *
@@ -9550,7 +3230,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9565,178 +3244,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSupportsDryRun() {
       bitField0_ = (bitField0_ & ~0x00000040);
       supportsDryRun_ = false;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object equivalentConstraint_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Managed constraint and canned constraint sometimes can have
-     * equivalents. This field is used to store the equivalent constraint name.
-     * </pre>
-     *
-     * <code>string equivalent_constraint = 8;</code>
-     *
-     * @return The equivalentConstraint.
-     */
-    public java.lang.String getEquivalentConstraint() {
-      java.lang.Object ref = equivalentConstraint_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        equivalentConstraint_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Managed constraint and canned constraint sometimes can have
-     * equivalents. This field is used to store the equivalent constraint name.
-     * </pre>
-     *
-     * <code>string equivalent_constraint = 8;</code>
-     *
-     * @return The bytes for equivalentConstraint.
-     */
-    public com.google.protobuf.ByteString getEquivalentConstraintBytes() {
-      java.lang.Object ref = equivalentConstraint_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        equivalentConstraint_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Managed constraint and canned constraint sometimes can have
-     * equivalents. This field is used to store the equivalent constraint name.
-     * </pre>
-     *
-     * <code>string equivalent_constraint = 8;</code>
-     *
-     * @param value The equivalentConstraint to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEquivalentConstraint(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      equivalentConstraint_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Managed constraint and canned constraint sometimes can have
-     * equivalents. This field is used to store the equivalent constraint name.
-     * </pre>
-     *
-     * <code>string equivalent_constraint = 8;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearEquivalentConstraint() {
-      equivalentConstraint_ = getDefaultInstance().getEquivalentConstraint();
-      bitField0_ = (bitField0_ & ~0x00000080);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Managed constraint and canned constraint sometimes can have
-     * equivalents. This field is used to store the equivalent constraint name.
-     * </pre>
-     *
-     * <code>string equivalent_constraint = 8;</code>
-     *
-     * @param value The bytes for equivalentConstraint to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEquivalentConstraintBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      equivalentConstraint_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-
-    private boolean supportsSimulation_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Shows if simulation is supported for this constraint or not.
-     * </pre>
-     *
-     * <code>bool supports_simulation = 9;</code>
-     *
-     * @return The supportsSimulation.
-     */
-    @java.lang.Override
-    public boolean getSupportsSimulation() {
-      return supportsSimulation_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Shows if simulation is supported for this constraint or not.
-     * </pre>
-     *
-     * <code>bool supports_simulation = 9;</code>
-     *
-     * @param value The supportsSimulation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSupportsSimulation(boolean value) {
-
-      supportsSimulation_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Shows if simulation is supported for this constraint or not.
-     * </pre>
-     *
-     * <code>bool supports_simulation = 9;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSupportsSimulation() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      supportsSimulation_ = false;
       onChanged();
       return this;
     }

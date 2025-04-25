@@ -33,7 +33,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterNatSubnetworkToNat)
     RouterNatSubnetworkToNatOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterNatSubnetworkToNat.newBuilder() to construct.
   private RouterNatSubnetworkToNat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * <code>UNDEFINED_SOURCE_IP_RANGES_TO_NAT = 0;</code>
      */
     public static final int UNDEFINED_SOURCE_IP_RANGES_TO_NAT_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * <code>ALL_IP_RANGES = 35608496;</code>
      */
     public static final int ALL_IP_RANGES_VALUE = 35608496;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code>
      */
     public static final int LIST_OF_SECONDARY_IP_RANGES_VALUE = 192289308;
-
     /**
      *
      *
@@ -257,7 +253,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -273,7 +268,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -297,7 +291,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -327,7 +320,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList secondaryIpRangeNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -342,7 +334,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getSecondaryIpRangeNamesList() {
     return secondaryIpRangeNames_;
   }
-
   /**
    *
    *
@@ -357,7 +348,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public int getSecondaryIpRangeNamesCount() {
     return secondaryIpRangeNames_.size();
   }
-
   /**
    *
    *
@@ -373,7 +363,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public java.lang.String getSecondaryIpRangeNames(int index) {
     return secondaryIpRangeNames_.get(index);
   }
-
   /**
    *
    *
@@ -395,7 +384,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceIpRangesToNat_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -411,7 +399,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getSourceIpRangesToNatList() {
     return sourceIpRangesToNat_;
   }
-
   /**
    *
    *
@@ -427,7 +414,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public int getSourceIpRangesToNatCount() {
     return sourceIpRangesToNat_.size();
   }
-
   /**
    *
    *
@@ -444,7 +430,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public java.lang.String getSourceIpRangesToNat(int index) {
     return sourceIpRangesToNat_.get(index);
   }
-
   /**
    *
    *
@@ -660,7 +645,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -892,7 +876,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -930,7 +912,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -953,7 +934,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1005,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1043,7 +1020,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       secondaryIpRangeNames_.makeImmutable();
       return secondaryIpRangeNames_;
     }
-
     /**
      *
      *
@@ -1058,7 +1034,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public int getSecondaryIpRangeNamesCount() {
       return secondaryIpRangeNames_.size();
     }
-
     /**
      *
      *
@@ -1074,7 +1049,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public java.lang.String getSecondaryIpRangeNames(int index) {
       return secondaryIpRangeNames_.get(index);
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getSecondaryIpRangeNamesBytes(int index) {
       return secondaryIpRangeNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1114,7 +1087,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1109,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1146,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1179,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1227,7 +1195,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       sourceIpRangesToNat_.makeImmutable();
       return sourceIpRangesToNat_;
     }
-
     /**
      *
      *
@@ -1243,7 +1210,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public int getSourceIpRangesToNatCount() {
       return sourceIpRangesToNat_.size();
     }
-
     /**
      *
      *
@@ -1260,7 +1226,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public java.lang.String getSourceIpRangesToNat(int index) {
       return sourceIpRangesToNat_.get(index);
     }
-
     /**
      *
      *
@@ -1277,7 +1242,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getSourceIpRangesToNatBytes(int index) {
       return sourceIpRangesToNat_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1302,7 +1266,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1289,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1309,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1328,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

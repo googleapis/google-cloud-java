@@ -36,7 +36,6 @@ public interface NodeGroupsAddNodesRequestOrBuilder
    * @return Whether the additionalNodeCount field is set.
    */
   boolean hasAdditionalNodeCount();
-
   /**
    *
    *

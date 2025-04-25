@@ -45,7 +45,6 @@ public interface AuthorityOrBuilder
    * @return The issuer.
    */
   java.lang.String getIssuer();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface AuthorityOrBuilder
    * @return The workloadIdentityPool.
    */
   java.lang.String getWorkloadIdentityPool();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface AuthorityOrBuilder
    * @return The identityProvider.
    */
   java.lang.String getIdentityProvider();
-
   /**
    *
    *

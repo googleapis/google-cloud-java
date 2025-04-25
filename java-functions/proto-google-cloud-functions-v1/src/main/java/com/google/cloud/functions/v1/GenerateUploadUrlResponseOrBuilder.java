@@ -38,7 +38,6 @@ public interface GenerateUploadUrlResponseOrBuilder
    * @return The uploadUrl.
    */
   java.lang.String getUploadUrl();
-
   /**
    *
    *

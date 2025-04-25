@@ -35,7 +35,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ListSampleQueriesResponse)
     ListSampleQueriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSampleQueriesResponse.newBuilder() to construct.
   private ListSampleQueriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1beta.SampleQuery> sampleQueries_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       getSampleQueriesList() {
     return sampleQueries_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       getSampleQueriesOrBuilderList() {
     return sampleQueries_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
   public int getSampleQueriesCount() {
     return sampleQueries_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
   public com.google.cloud.discoveryengine.v1beta.SampleQuery getSampleQueries(int index) {
     return sampleQueries_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return sampleQueriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return sampleQueriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return sampleQueriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         int index) {
       return getSampleQueriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -925,7 +903,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return sampleQueriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(sampleQueries_);
       }
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       return getSampleQueriesFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1beta.SampleQuery.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -973,7 +948,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1beta.SampleQuery.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1009,7 +983,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1057,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1077,6 @@ public final class ListSampleQueriesResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

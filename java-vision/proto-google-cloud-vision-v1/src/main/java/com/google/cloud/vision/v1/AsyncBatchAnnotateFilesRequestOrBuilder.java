@@ -36,7 +36,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileRequest> getRequestsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.AsyncAnnotateFileRequest getRequests(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.AsyncAnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -169,11 +163,9 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateFulfillmentRequestOrBuilder
    * @return Whether the fulfillment field is set.
    */
   boolean hasFulfillment();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateFulfillmentRequestOrBuilder
    * @return The fulfillment.
    */
   com.google.cloud.dialogflow.v2beta1.Fulfillment getFulfillment();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateFulfillmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateFulfillmentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

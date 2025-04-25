@@ -38,7 +38,6 @@ public interface ImageOrBuilder
    * @return Whether the imageBytes field is set.
    */
   boolean hasImageBytes();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ImageOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ImageOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.automl.v1beta1.InputConfig getInputConfig();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ImageOrBuilder
    * @return The thumbnailUri.
    */
   java.lang.String getThumbnailUri();
-
   /**
    *
    *
